@@ -50,22 +50,22 @@ To do this, one must expose data and then rely on a parent context to
 initialize it:
 
 1. Connect to a signal. Extremely safe, but should be used only to "respond" to
-   behavior, not start it. Note that signal names are usually past-tense verbs
+   behavior, not start it. By convention, signal names are usually past-tense verbs
    like "entered", "skill_activated", or "item_collected".
 
    .. tabs::
      .. code-tab:: gdscript GDScript
 
        # Parent
-       $Child.connect("signal_name", object_with_method, "method_on_the_object")
+       $Child.signal_name.connect(method_on_the_object)
 
        # Child
-       emit_signal("signal_name") # Triggers parent-defined behavior.
+       signal_name.emit() # Triggers parent-defined behavior.
 
      .. code-tab:: csharp
 
        // Parent
-       GetNode("Child").Connect("SignalName", ObjectWithMethod, "MethodOnTheObject");
+       GetNode("Child").Connect("SignalName", Callable.From(ObjectWithMethod.MethodOnTheObject));
 
        // Child
        EmitSignal("SignalName"); // Triggers parent-defined behavior.
@@ -89,25 +89,25 @@ initialize it:
        // Child
        Call(MethodName); // Call parent-defined method (which child must own).
 
-3. Initialize a :ref:`FuncRef <class_FuncRef>` property. Safer than a method
+3. Initialize a :ref:`Callable <class_Callable>` property. Safer than a method
    as ownership of the method is unnecessary. Used to start behavior.
 
    .. tabs::
      .. code-tab:: gdscript GDScript
 
        # Parent
-       $Child.func_property = funcref(object_with_method, "method_on_the_object")
+       $Child.func_property = object_with_method.method_on_the_object
 
        # Child
-       func_property.call_func() # Call parent-defined method (can come from anywhere).
+       func_property.call() # Call parent-defined method (can come from anywhere).
 
      .. code-tab:: csharp
 
        // Parent
-       GetNode("Child").Set("FuncProperty", GD.FuncRef(ObjectWithMethod, "MethodOnTheObject"));
+       GetNode("Child").Set("FuncProperty", Callable.From(ObjectWithMethod.MethodOnTheObject));
 
        // Child
-       FuncProperty.CallFunc(); // Call parent-defined method (can come from anywhere).
+       FuncProperty.Call(); // Call parent-defined method (can come from anywhere).
 
 4. Initialize a Node or other Object reference.
 
@@ -148,7 +148,7 @@ initialize it:
        GetNode(TargetPath); // Use parent-defined NodePath.
 
 These options hide the points of access from the child node. This in turn
-keeps the child **loosely coupled** to its environment. One can re-use it
+keeps the child **loosely coupled** to its environment. One can reuse it
 in another context without any extra changes to its API.
 
 .. note::
@@ -179,7 +179,7 @@ in another context without any extra changes to its API.
       // Parent
       GetNode<Left>("Left").Target = GetNode("Right/Receiver");
 
-      public class Left : Node
+      public partial class Left : Node
       {
           public Node Target = null;
 
@@ -189,7 +189,7 @@ in another context without any extra changes to its API.
           }
       }
 
-      public class Right : Node
+      public partial class Right : Node
       {
           public Node Receiver = null;
 
@@ -217,9 +217,9 @@ in another context without any extra changes to its API.
 
   To avoid creating and maintaining such documentation, one converts the
   dependent node ("child" above) into a tool script that implements
-  :ref:`_get_configuration_warning() <class_Node_method__get_configuration_warning>`.
-  Returning a non-empty string from it will make the Scene dock generate a
-  warning icon with the string as a tooltip by the node. This is the same icon
+  ``_get_configuration_warnings()``.
+  Returning a non-empty PackedStringArray from it will make the Scene dock generate a
+  warning icon with the string(s) as a tooltip by the node. This is the same icon
   that appears for nodes such as the
   :ref:`Area2D <class_Area2D>` node when it has no child
   :ref:`CollisionShape2D <class_CollisionShape2D>` nodes defined. The editor
@@ -231,14 +231,14 @@ in another context without any extra changes to its API.
   satisfied? Other programmers, and especially designers and writers, will need
   clear instructions in the messages telling them what to do to configure it.
 
-So, why do all this complex switcharoo work? Well, because scenes operate
+So, why does all this complex switcheroo work? Well, because scenes operate
 best when they operate alone. If unable to work alone, then working with
 others anonymously (with minimal hard dependencies, i.e. loose coupling)
 is the next best thing. Inevitably, changes may need to be made to a class and
 if these changes cause it to interact with other scenes in unforeseen ways,
 then things will start to break down. The whole point of all this indirection
 is to avoid ending up in a situation where changing one class results in
-adversely effecting other classes.
+adversely effecting other classes dependent on it.
 
 Scripts and scenes, as extensions of engine classes, should abide
 by *all* OOP principles. Examples include...
@@ -274,7 +274,7 @@ of Main. In addition, one will need a primary GUI for their game that manages
 the various menus and widgets the project needs.
 
     - Node "Main" (main.gd)
-        - Node2D/Spatial "World" (game_world.gd)
+        - Node2D/Node3D "World" (game_world.gd)
         - Control "GUI" (gui.gd)
 
 When changing levels, one can then swap out the children of the "World" node.
@@ -294,7 +294,7 @@ If one has a system that...
 
   For smaller games, a simpler alternative with less control would be to have
   a "Game" singleton that simply calls the
-  :ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>` method
+  :ref:`SceneTree.change_scene_to_file() <class_SceneTree_method_change_scene_to_file>` method
   to swap out the main scene's content. This structure more or less keeps
   the "World" as the main game node.
 
@@ -319,7 +319,7 @@ own place in the hierarchy as a sibling or some other relation.
 
   In some cases, one needs these separated nodes to *also* position themselves
   relative to each other. One can use the
-  :ref:`RemoteTransform <class_RemoteTransform>` /
+  :ref:`RemoteTransform <class_RemoteTransform3D>` /
   :ref:`RemoteTransform2D <class_RemoteTransform2D>` nodes for this purpose.
   They will allow a target node to conditionally inherit selected transform
   elements from the Remote\* node. To assign the ``target``
@@ -370,9 +370,9 @@ own place in the hierarchy as a sibling or some other relation.
   1. The **declarative** solution: place a :ref:`Node <class_Node>` in between
      them. As nodes with no transform, Nodes will not pass along such
      information to their children.
-  2. The **imperative** solution: Use the ``set_as_toplevel`` setter for the
-     :ref:`CanvasItem <class_CanvasItem_method_set_as_toplevel>` or
-     :ref:`Spatial <class_Spatial_method_set_as_toplevel>` node. This will make
+  2. The **imperative** solution: Use the ``top_level`` property for the
+     :ref:`CanvasItem <class_CanvasItem_property_top_level>` or
+     :ref:`Node3D <class_Node3D_property_top_level>` node. This will make
      the node ignore its inherited transform.
 
 .. note::

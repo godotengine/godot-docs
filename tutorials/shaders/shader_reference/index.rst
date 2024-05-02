@@ -1,3 +1,5 @@
+:allow_comments: False
+
 Shading reference
 =================
 
@@ -6,6 +8,7 @@ Shading reference
    :name: toc-shading-reference
 
    shading_language
+   shader_preprocessor
    spatial_shader
    canvas_item_shader
    particle_shader

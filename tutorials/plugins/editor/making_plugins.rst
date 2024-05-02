@@ -32,16 +32,19 @@ placing them where they need to be.
 
 In the main toolbar, click the ``Project`` dropdown. Then click
 ``Project Settings...``. Go to the ``Plugins`` tab and then click
-on the ``Create`` button in the top-right.
+on the ``Create New Plugin`` button in the top-right.
 
 You will see the dialog appear, like so:
 
-.. image:: img/making_plugins-create_plugin_dialog.png
+.. image:: img/making_plugins-create_plugin_dialog.webp
 
 The placeholder text in each field describes how it affects the plugin's
 creation of the files and the config file's values.
 
-To continue with the example, use the following values::
+To continue with the example, use the following values:
+
+.. tabs::
+ .. code-tab:: ini GDScript
 
     Plugin Name: My Custom Node
     Subfolder: my_custom_node
@@ -52,9 +55,27 @@ To continue with the example, use the following values::
     Script Name: custom_node.gd
     Activate now: No
 
+ .. code-tab:: ini C#
+
+    Plugin Name: My Custom Node
+    Subfolder: MyCustomNode
+    Description: A custom node made to extend the Godot Engine.
+    Author: Your Name Here
+    Version: 1.0.0
+    Language: C#
+    Script Name: CustomNode.cs
+    Activate now: No
+
+.. warning::
+
+    Unchecking the ``Activate now?`` option in C# is always required because,
+    like every other C# script, the EditorPlugin script needs to be compiled which
+    requires building the project. After building the project the plugin can be
+    enabled in the ``Plugins`` tab of ``Project Settings``.
+
 You should end up with a directory structure like this:
 
-.. image:: img/making_plugins-my_custom_mode_folder.png
+.. image:: img/making_plugins-my_custom_mode_folder.webp
 
 ``plugin.cfg`` is an INI file with metadata about your plugin.
 The name and description help people understand what it does.
@@ -75,13 +96,13 @@ editor, and it must inherit from :ref:`class_EditorPlugin`.
 .. warning::
 
     In addition to the EditorPlugin script, any other GDScript that your plugin uses
-    must *also* be a tool. Any GDScript without ``@tool`` imported into the editor
+    must *also* be a tool. Any GDScript without ``@tool`` used by the editor
     will act like an empty file!
 
 It's important to deal with initialization and clean-up of resources.
 A good practice is to use the virtual function
-:ref:`_enter_tree() <class_Node_method__enter_tree>` to initialize your plugin and
-:ref:`_exit_tree() <class_Node_method__exit_tree>` to clean it up. Thankfully,
+:ref:`_enter_tree() <class_Node_private_method__enter_tree>` to initialize your plugin and
+:ref:`_exit_tree() <class_Node_private_method__exit_tree>` to clean it up. Thankfully,
 the dialog generates these callbacks for you. Your script should look something
 like this:
 
@@ -106,10 +127,9 @@ like this:
 
     #if TOOLS
     using Godot;
-    using System;
 
     [Tool]
-    public class CustomNode : EditorPlugin
+    public partial class CustomNode : EditorPlugin
     {
         public override void _EnterTree()
         {
@@ -146,7 +166,7 @@ To create a new node type, you can use the function
 :ref:`class_EditorPlugin` class. This function can add new types to the editor
 (nodes or resources). However, before you can create the type, you need a script
 that will act as the logic for the type. While that script doesn't have to use
-the ``@tool`` keyword, it can be added so the script runs in the editor.
+the ``@tool`` annotation, it can be added so the script runs in the editor.
 
 For this tutorial, we'll create a button that prints a message when
 clicked. For that, we'll need a script that extends from
@@ -161,7 +181,7 @@ clicked. For that, we'll need a script that extends from
 
 
     func _enter_tree():
-        connect("pressed", self, "clicked")
+        pressed.connect(clicked)
 
 
     func clicked():
@@ -170,17 +190,16 @@ clicked. For that, we'll need a script that extends from
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
     [Tool]
-    public class MyButton : Button
+    public partial class MyButton : Button
     {
         public override void _EnterTree()
         {
-            Connect("pressed", this, "clicked");
+            Pressed += Clicked;
         }
 
-        public void clicked()
+        public void Clicked()
         {
             GD.Print("You clicked me!");
         }
@@ -190,7 +209,15 @@ That's it for our basic button. You can save this as ``my_button.gd`` inside the
 plugin folder. You'll also need a 16×16 icon to show in the scene tree. If you
 don't have one, you can grab the default one from the engine and save it in your
 `addons/my_custom_node` folder as `icon.png`, or use the default Godot logo
-(`preload("res://icon.png")`). You can also use SVG icons if desired.
+(`preload("res://icon.svg")`).
+
+.. tip::
+
+    SVG images that are used as custom node icons should have the
+    **Editor > Scale With Editor Scale** and **Editor > Convert Icons With Editor Theme**
+    :ref:`import options <doc_importing_images_editor_import_options>` enabled. This allows
+    icons to follow the editor's scale and theming settings if the icons are designed with
+    the same color palette as Godot's own icons.
 
 .. image:: img/making_plugins-custom_node_icon.png
 
@@ -219,17 +246,16 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
 
     #if TOOLS
     using Godot;
-    using System;
 
     [Tool]
-    public class CustomNode : EditorPlugin
+    public partial class CustomNode : EditorPlugin
     {
         public override void _EnterTree()
         {
             // Initialization of the plugin goes here.
             // Add the new type with a name, a parent type, a script and an icon.
-            var script = GD.Load<Script>("MyButton.cs");
-            var texture = GD.Load<Texture>("icon.png");
+            var script = GD.Load<Script>("res://addons/MyCustomNode/MyButton.cs");
+            var texture = GD.Load<Texture2D>("res://addons/MyCustomNode/Icon.png");
             AddCustomType("MyButton", "Button", script, texture);
         }
 
@@ -247,13 +273,13 @@ With that done, the plugin should already be available in the plugin list in the
 
 Then try it out by adding your new node:
 
-.. image:: img/making_plugins-custom_node_create.png
+.. image:: img/making_plugins-custom_node_create.webp
 
 When you add the node, you can see that it already has the script you created
 attached to it. Set a text to the button, save and run the scene. When you
 click the button, you can see some text in the console:
 
-.. image:: img/making_plugins-custom_node_console.png
+.. image:: img/making_plugins-custom_node_console.webp
 
 A custom dock
 ^^^^^^^^^^^^^
@@ -301,7 +327,7 @@ The name of the root node will also be the name that appears on the dock tab,
 so be sure to give it a short and descriptive name.
 Also, don't forget to add some text to your button.
 
-.. image:: img/making_plugins-my_custom_dock_scene.png
+.. image:: img/making_plugins-my_custom_dock_scene.webp
 
 Save this scene as ``my_dock.tscn``. Now, we need to grab the scene we created
 then add it as a dock in the editor. For this, you can rely on the function
@@ -326,8 +352,8 @@ The script could look like this:
 
     func _enter_tree():
         # Initialization of the plugin goes here.
-        # Load the dock scene and instance it.
-        dock = preload("res://addons/my_custom_dock/my_dock.tscn").instance()
+        # Load the dock scene and instantiate it.
+        dock = preload("res://addons/my_custom_dock/my_dock.tscn").instantiate()
 
         # Add the loaded scene to the docks.
         add_control_to_dock(DOCK_SLOT_LEFT_UL, dock)
@@ -345,26 +371,25 @@ The script could look like this:
 
     #if TOOLS
     using Godot;
-    using System;
 
     [Tool]
-    public class CustomDock : EditorPlugin
+    public partial class CustomDock : EditorPlugin
     {
-        Control dock;
+        private Control _dock;
 
         public override void _EnterTree()
         {
-            dock = (Control)GD.Load<PackedScene>("addons/my_custom_dock/my_dock.tscn").Instance();
-            AddControlToDock(DockSlot.LeftUl, dock);
+            _dock = GD.Load<PackedScene>("res://addons/MyCustomDock/MyDock.tscn").Instantiate<Control>();
+            AddControlToDock(DockSlot.LeftUl, _dock);
         }
 
         public override void _ExitTree()
         {
             // Clean-up of the plugin goes here.
             // Remove the dock.
-            RemoveControlFromDocks(dock);
+            RemoveControlFromDocks(_dock);
             // Erase the control from the memory.
-            dock.Free();
+            _dock.Free();
         }
     }
     #endif
@@ -377,16 +402,16 @@ Checking the results
 
 It's now time to check the results of your work. Open the **Project
 Settings** and click on the **Plugins** tab. Your plugin should be the only one
-on the list. If it is not showing, click on the **Update** button in the
-top-right corner.
+on the list.
 
-.. image:: img/making_plugins-project_settings.png
+.. image:: img/making_plugins-project_settings.webp
 
-You can see the plugin is inactive on the **Status** column; click on the status
-to select **Active**. The dock should become visible before you even close
+You can see the plugin is not enabled.
+Click the **Enable** checkbox to activate the plugin.
+The dock should become visible before you even close
 the settings window. You should now have a custom dock:
 
-.. image:: img/making_plugins-custom_dock.png
+.. image:: img/making_plugins-custom_dock.webp
 
 Going beyond
 ~~~~~~~~~~~~
@@ -399,3 +424,60 @@ C++ modules.
 You can make your own plugins to help yourself and share them in the
 `Asset Library <https://godotengine.org/asset-library/>`_ so that people
 can benefit from your work.
+
+.. _doc_making_plugins_autoload:
+
+Registering autoloads/singletons in plugins
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It is possible for editor plugins to automatically register
+:ref:`autoloads <doc_singletons_autoload>` when the plugin is enabled.
+This also includes unregistering the autoload when the plugin is disabled.
+
+This makes setting up plugins faster for users, as they no longer have to manually
+add autoloads to their project settings if your editor plugin requires the use of
+an autoload.
+
+Use the following code to register a singleton from an editor plugin:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    @tool
+    extends EditorPlugin
+
+    # Replace this value with a PascalCase autoload name, as per the GDScript style guide.
+    const AUTOLOAD_NAME = "SomeAutoload"
+
+
+    func _enter_tree():
+        # The autoload can be a scene or script file.
+        add_autoload_singleton(AUTOLOAD_NAME, "res://addons/my_addon/some_autoload.tscn")
+
+
+    func _exit_tree():
+        remove_autoload_singleton(AUTOLOAD_NAME)
+
+ .. code-tab:: csharp
+
+    #if TOOLS
+    using Godot;
+
+    [Tool]
+    public partial class MyEditorPlugin : EditorPlugin
+    {
+        // Replace this value with a PascalCase autoload name.
+        private const string AutoloadName = "SomeAutoload";
+
+        public override void _EnterTree()
+        {
+            // The autoload can be a scene or script file.
+            AddAutoloadSingleton(AutoloadName, "res://addons/MyAddon/SomeAutoload.tscn");
+        }
+
+        public override void _ExitTree()
+        {
+            RemoveAutoloadSingleton(AutoloadName);
+        }
+    }
+    #endif

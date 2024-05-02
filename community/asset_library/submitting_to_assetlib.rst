@@ -7,7 +7,8 @@ Introduction
 ------------
 
 This tutorial aims to serve as a guide on how you can submit your own assets
-to the Godot Asset Library and share them with the Godot community.
+to the `Godot Asset Library <https://godotengine.org/asset-library/asset>`_
+and share them with the Godot community.
 
 As mentioned in the :ref:`doc_using_assetlib` document, in order to be able to
 submit assets to the AssetLib, you need to have a registered account, and be
@@ -58,6 +59,11 @@ These things are not required for your asset to be approved, but
 if you follow these recommendations, you can help make the asset
 library a better place for all users.
 
+* When creating non-project assets, it is common practice to place your files
+  inside of an **addons/asset_name/** folder. Do this to avoid having your files 
+  clash with other assets, or with the files of users installing your asset. 
+  This folder will **not** be automatically generated when a user installs your asset.
+
 * Fix or suppress all script **warnings**. The warning system is there to
   help identify issues with your code, but people using your asset
   don't need to see them.
@@ -79,35 +85,35 @@ library a better place for all users.
 * Consider adding a **.gitattributes** file to your repo. This file allows
   giving extra instructions to Git, such as specifying line endings and listing
   files not required for your asset to function with the ``export-ignore``
-  directive. This directive removes such files from the resulting ZIP file
-  and prevents them from being downloaded by the asset library users.
-  For a typical plugin **.gitattributes** may look like this:
+  directive. This directive removes such files from the resulting ZIP file,
+  preventing them from being downloaded by the asset library users.
+  These are common examples of **.gitattributes**:
 
-  .. code-block:: none
+  .. tabs::
 
-    # Normalize EOL for all files that Git considers text files.
-    * text=auto eol=lf
+   .. tab:: Projects / Templates
 
-    # Ignore some files when exporting to a ZIP.
-    /.gitattributes     export-ignore
-    /.gitignore         export-ignore
-    /LICENSE            export-ignore
-    /LICENSE.md         export-ignore
-    /README.md          export-ignore
-    /project.godot      export-ignore
-    /icon.png           export-ignore
-    /icon.svg           export-ignore
+      .. code-block:: shell
 
-  Other types of assets may require a different configuration (e.g.
-  a project template requires **project.godot**).
+        # Normalize line endings for all files that Git considers text files.
+        * text=auto eol=lf
+
+   .. tab:: Addons / Asset Packs
+
+      .. code-block:: shell
+
+        # Normalize line endings for all files that Git considers text files.
+        * text=auto eol=lf
+
+        # Only include the addons folder when downloading from the Asset Library.
+        /**        export-ignore
+        /addons    !export-ignore
+        /addons/** !export-ignore
 
 * If you are submitting a plugin, add a **copy** of your license and readme
   to the plugin folder itself. This is the folder that users are guaranteed to
   keep with their project, so a copy ensures they always have those files handy
   (and helps them fulfill your licensing terms).
-
-* The **icon** should be a square, its aspect ratio should be 1:1. It should
-  also ideally have a minimum resolution of 64x64 pixels.
 
 * While the asset library allows more than just GitHub, consider
   hosting your asset's source code on **GitHub**. Other services may not
@@ -168,9 +174,17 @@ is required in the submission form here as well.
     The URL to your asset's icon (which will be used as a thumbnail
     in the AssetLib search results and on the asset's page). Should be an image
     in either the PNG or JPG format.
+
+    The **icon** must be square (1:1 aspect ratio). It should have a minimum
+    resolution of 128×128 pixels.
+
+.. note::
+
+    For icons hosted on GitHub, URLs must be provided in the form of `https://raw.githubusercontent.com/<user>/<project>/<branch>/Icon.png`.
+
 * **License**:
     The license under which you are distributing the asset. The list
-    includes a variety of free and open-source software licenses, such as GPL
+    includes a variety of free and open source software licenses, such as GPL
     (v2 and v3), MIT, BSD and Boost Software License. You can visit `OpenSource.org <https://opensource.org>`_
     for a detailed description of each of the listed licenses.
 * **Description**:

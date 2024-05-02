@@ -1,6 +1,8 @@
+:allow_comments: False
+
 .. _doc_user_interface:
 
-User Interface (UI)
+User interface (UI)
 ===================
 
 In this section of the tutorial we explain the basics of creating a graphical
@@ -11,7 +13,7 @@ UI building blocks
 
 Like everything else in Godot the user interface is built using nodes, specifically
 :ref:`Control <class_Control>` nodes. There are many different types of controls
-which are useful for creating specific types of the GUI. For simplicity we can
+which are useful for creating specific types of GUIs. For simplicity we can
 separate them into two groups: content and layout.
 
 Typical content controls include:
@@ -52,6 +54,7 @@ explain the benefits of that system and how to set it up in your projects.
 
    gui_skinning
    gui_using_theme_editor
+   gui_theme_type_variations
    gui_using_fonts
 
 Control node tutorials

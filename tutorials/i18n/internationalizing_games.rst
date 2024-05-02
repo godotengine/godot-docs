@@ -14,16 +14,16 @@ often require localization. Godot offers many tools to make this process
 more straightforward, so this tutorial is more like a collection of
 tips and tricks.
 
-Localization is usually done by specific studios hired for the job and,
-despite the huge amount of software and file formats available for this,
-the most common way to do localization to this day is still with
-spreadsheets. The process of creating the spreadsheets and importing
-them is already covered in the :ref:`doc_importing_translations` tutorial,
-so this one could be seen more like a follow-up to that one.
-
+Localization is usually done by specific studios hired for the job. Despite the
+huge amount of software and file formats available for this, the most common way
+to do localization to this day is still with spreadsheets. The process of
+creating the spreadsheets and importing them is already covered in the
+:ref:`doc_importing_translations` tutorial. If you haven't read the Importing
+translations page before, we recommend you give it a read before reading this
+page.
 
 .. note:: We will be using the official demo as an example; you can
-          `download it from the Asset Library <https://godotengine.org/asset-library/asset/134>`_.
+          `download it from the Asset Library <https://godotengine.org/asset-library/asset/2776>`_.
 
 Configuring the imported translation
 ------------------------------------
@@ -71,35 +71,16 @@ in the current translation, then the text will automatically be translated.
 This automatic translation behavior may be undesirable in certain cases. For
 instance, when using a Label to display a player's name, you most likely don't
 want the player's name to be translated if it matches a translation key. To
-disable automatic translation on a specific node, use
-:ref:`Object.set_message_translation<class_Object_method_set_message_translation>`
-and send a :ref:`Object.notification<class_Object_method_notification>` to update the
-translation::
+disable automatic translation on a specific node, disable **Localization > Auto
+Translate** in the inspector.
 
-    func _ready():
-        # This assumes you have a node called "Label" as a child of the node
-        # that has the script attached.
-        var label = get_node("Label")
-        label.set_message_translation(false)
-        label.notification(NOTIFICATION_TRANSLATION_CHANGED)
-
-For more complex UI nodes such as OptionButtons, you may have to use this instead::
-
-    func _ready():
-        var option_button = get_node("OptionButton")
-        option_button.set_message_translation(false)
-        option_button.notification(NOTIFICATION_TRANSLATION_CHANGED)
-        option_button.get_popup().set_message_translation(false)
-        option_button.get_popup().notification(NOTIFICATION_TRANSLATION_CHANGED)
-
-In code, the :ref:`Object.tr() <class_Object_method_tr>`
-function can be used. This will just look up the text in the
-translations and convert it if found:
+In code, the :ref:`Object.tr() <class_Object_method_tr>` function can be used.
+This will just look up the text in the translations and convert it if found:
 
 ::
 
-    level.set_text(tr("LEVEL_5_NAME"))
-    status.set_text(tr("GAME_STATUS_" + str(status_index)))
+    level.text = tr("LEVEL_5_NAME")
+    status.text = tr("GAME_STATUS_%d" % status_index)
 
 .. note::
 
@@ -116,14 +97,110 @@ translations and convert it if found:
     reusability, associate a new a Theme resource to your root Control node and
     define the DynamicFont as the Default Font in the theme.
 
+Placeholders
+^^^^^^^^^^^^
+
+To feature placeholders in your translated strings, use
+:ref:`doc_gdscript_printf` or the equivalent feature in C#. This lets
+translators move the location of the placeholder in the string freely, which
+allows translations to sound more natural. Named placeholders with the
+``String.format()`` function should be used whenever possible, as they also
+allow translators to choose the *order* in which placeholders appear:
+
+::
+
+    # The placeholder's locations can be changed, but not their order.
+    # This will probably not suffice for some target languages.
+    message.text = tr("%s picked up the %s") % ["Ogre", "Sword"]
+
+    # The placeholder's locations and order can be changed.
+    # Additionally, this form gives more context for translators to work with.
+    message.text = tr("{character} picked up the {weapon}").format({character = "Ogre", weapon = "Sword"})
+
+Translation contexts
+^^^^^^^^^^^^^^^^^^^^
+
+If you're using plain English as source strings (rather than message codes
+``LIKE_THIS``), you may run into ambiguities when you have to translate the same
+English string to different strings in certain target languages. You can
+optionally specify a *translation context* to resolve this ambiguity and allow
+target languages to use different strings, even though the source string is
+identical:
+
+::
+
+    # "Close", as in an action (to close something).
+    button.set_text(tr("Close", "Actions"))
+
+    # "Close", as in a distance (opposite of "far").
+    distance_label.set_text(tr("Close", "Distance"))
+
+Pluralization
+^^^^^^^^^^^^^
+
+Most languages require different strings depending on whether an object is in
+singular or plural form. However, hardcoding the "is plural" condition depending
+on whether there is more than 1 object is not valid in all languages.
+
+Some languages have more than two plural forms, and the rules on the number of
+objects required for each plural form vary. Godot offers support for
+*pluralization* so that the target locales can handle this automatically.
+
+Pluralization is meant to be used with positive (or zero) integer numbers only.
+Negative and floating-point values usually represent physical entities for which
+singular and plural don't clearly apply.
+
+::
+
+    var num_apples = 5
+    label.text = tr_n("There is %d apple", "There are %d apples", num_apples) % num_apples
+
+This can be combined with a context if needed:
+
+::
+
+    var num_jobs = 1
+    label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs
+
+.. note::
+
+    Providing pluralized translations is only supported with
+    :ref:`doc_localization_using_gettext`, not CSV.
+
 Making controls resizable
---------------------------
+-------------------------
 
 The same text in different languages can vary greatly in length. For
 this, make sure to read the tutorial on :ref:`doc_size_and_anchors`, as
 dynamically adjusting control sizes may help.
 :ref:`Container <class_Container>` can be useful, as well as the text wrapping
 options available in :ref:`Label <class_Label>`.
+
+To check whether your UI can accommodate translations with longer strings than
+the original, you can enable *pseudolocalization* in the advanced Project
+Settings. This will replace all your localizable strings with longer versions of
+themselves, while also replacing some characters in the original strings with
+accented versions (while still being readable). Placeholders are kept as-is,
+so that they keep working when pseudolocalization is enabled.
+
+For example, the string ``Hello world, this is %s!`` becomes
+``[Ĥéłłô ŵôŕłd́, ŧh̀íš íš %s!]`` when pseudolocalization is enabled.
+
+While looking strange at first, pseudolocalization has several benefits:
+
+- It lets you spot non-localizable strings quickly, so you can go over them and
+  make them localizable (if it makes sense to do so).
+- It lets you check UI elements that can't fit long strings. Many languages will
+  feature much longer translations than the source text, so it's important to
+  ensure your UI can accommodate longer-than-usual strings.
+- It lets you check whether your font contains all the characters required to
+  support various languages. However, since the goal of pseudolocalization is to
+  keep the original strings readable, it's not an effective test for checking
+  whether a font can support :abbr:`CJK (Chinese, Japanese, Korean)` or
+  right-to-left languages.
+
+The project settings allow you to tune pseudolocalization behavior, so that you
+can disable parts of it if desired.
 
 TranslationServer
 -----------------
@@ -132,6 +209,8 @@ Godot has a server handling low-level translation management
 called the :ref:`TranslationServer <class_TranslationServer>`.
 Translations can be added or removed during run-time;
 the current language can also be changed at run-time.
+
+.. _doc_internationalizing_games_bidi:
 
 Bidirectional text and UI Mirroring
 -----------------------------------
@@ -149,16 +228,21 @@ For RTL languages, Godot will automatically do the following changes to the UI:
 -  Swaps left and right text alignment.
 -  Mirrors horizontal order of the child controls in the containers, and items in Tree/ItemList controls.
 -  Uses mirrored order of the internal control elements (e.g. OptionButton dropdown button, checkbox alignment, List column order, Tree item icons and connecting line alignment, e.t.c.), in some cases mirrored controls use separate theme styles.
--  Coordinate system is not mirrored, and non-UI nodes (sprites, e.t.c) are not affected.x
+-  Coordinate system is not mirrored, and non-UI nodes (sprites, e.t.c) are not affected.
 
 It is possible to override text and control layout direction by using the following control properties:
 
 -  ``text_direction``, sets the base text direction. When set to "auto", direction depends on the first strong directional character in the text according to the Unicode Bidirectional Algorithm,
 -  ``language``, overrides current project locale.
--  ``structured_text_bidi_override property`` and ``_structured_text_parser callback``, enables special handling for structured text.
+-  ``structured_text_bidi_override`` property and ``_structured_text_parser`` callback, enables special handling for structured text.
 -  ``layout_direction``, overrides control mirroring.
 
 .. image:: img/ui_mirror.png
+
+.. seealso::
+
+    You can see how right-to-left typesetting works in action using the
+    `BiDI and Font Features demo project <https://github.com/godotengine/godot-demo-projects/tree/master/gui/bidi_and_font_features>`__.
 
 Adding break iterator data to exported project
 ----------------------------------------------
@@ -200,12 +284,26 @@ Localizing icons and images
 
 Icons with left and right pointing arrows which may need to be reversed for Arabic
 and Hebrew locales, in case they indicate movement or direction (e.g. back/forward
-buttons), otherwise they can remain the same.
+buttons). Otherwise, they can remain the same.
 
-Command line
-------------
+Testing translations
+--------------------
 
-Language can be tested when running Godot from the command line.
+You may want to test a project's translation before releasing it. Godot provides two ways
+to do this.
+
+First, in the Project Settings, under **Internationalization > Locale** (with advanced settings enabled), there is a **Test**
+property. Set this property to the locale code of the language you want to test. Godot will
+run the project with that locale when the project is run (either from the editor or when
+exported).
+
+.. image:: img/locale_test.webp
+
+Keep in mind that since this is a project setting, it will show up in version control when
+it is set to a non-empty value. Therefore, it should be set back to an empty value before
+committing changes to version control.
+
+Translations can also be tested when :ref:`running Godot from the command line <doc_command_line_tutorial>`.
 For example, to test a game in French, the following argument can be
 supplied:
 
@@ -218,11 +316,14 @@ Translating the project name
 
 The project name becomes the app name when exporting to different
 operating systems and platforms. To specify the project name in more
-than one language, create a new setting ``application/name`` in the **Project
-Settings** and append the locale identifier to it.
-For instance, for Spanish, this would be ``application/name_es``:
+than one language go to **Project > Project Settings> Application >
+Config**. From here click on the button that says ``Localizable String
+(Size 0)``. Now there should be a button below that which says ``Add
+Translation``. Click on that and it will take you to a page where you
+can choose the language (and country if needed) for your project name
+translation. After doing that you can now type in the localized name.
 
-.. image:: img/localized_name.png
+.. image:: img/localized_name.webp
 
 If you are unsure about the language code to use, refer to the
 :ref:`list of locale codes <doc_locales>`.

@@ -18,7 +18,7 @@ For a full list of these parameters see the :ref:`spatial shader
 A difference between the vertex function and a fragment function is that the
 vertex function runs per vertex and sets properties such as ``VERTEX``
 (position) and ``NORMAL``, while the fragment shader runs per pixel and, most
-importantly, sets the ``ALBEDO`` color of the :ref:`Mesh<class_MeshInstance>`.
+importantly, sets the ``ALBEDO`` color of the :ref:`MeshInstance3D<class_MeshInstance3D>`.
 
 Your first spatial fragment function
 ------------------------------------
@@ -141,7 +141,7 @@ watery effect.
 
 .. image:: img/rim.png
 
-In order to add fresnal reflectance, we will compute a fresnel term in our
+In order to add fresnel reflectance, we will compute a fresnel term in our
 fragment shader. Here, we aren't going to use a real fresnel term for
 performance reasons. Instead, we'll approximate it using the dot product of the
 ``NORMAL`` and ``VIEW`` vectors. The ``NORMAL`` vector points away from the

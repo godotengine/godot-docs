@@ -1,0 +1,51 @@
+GD0301: The generic type argument must be a Variant compatible type
+===================================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0301
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+An unsupported type is specified for a generic type argument when a
+:ref:`Variant-compatible type <c_sharp_variant_compatible_types>` is expected.
+
+Rule description
+----------------
+
+When a generic type parameter is annotated with the ``[MustBeVariant]`` attribute,
+the generic type is required to be a Variant-compatible type. For example,
+the generic ``Godot.Collections.Array<T>`` type only supports items of a type
+that can be converted to Variant.
+
+.. code-block:: csharp
+
+    class SomeType { }
+
+    // SomeType is not a valid type because it doesn't derive from GodotObject,
+    // so it's not compatible with Variant.
+    var invalidArray = new Godot.Collections.Array<SomeType>();
+
+    // System.Int32 is a valid type because it's compatible with Variant.
+    var validArray = new Godot.Collections.Array<int>();
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, change the generic type argument to be a
+Variant-compatible type or use a different API that doesn't require the generic
+type argument to be a Variant-compatible type.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. API that contains generic type arguments
+annotated with the ``[MustBeVariant]`` attribute usually has this requirement
+because the values will be passed to the engine, if the type can't be marshalled
+it will result in runtime errors.

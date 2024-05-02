@@ -9,42 +9,28 @@ Note that some of these channels are run and moderated by members of the Godot c
 
 A brief overview over these and other channels is also available on the `Godot website <https://godotengine.org/community>`_.
 
-Q&A
----
+Forums
+------
 
-- `Official Godot Questions & Answers <https://godotengine.org/qa/>`_
+- `Official Godot Forum <https://forum.godotengine.org/>`_
+- `Community Forum <https://godotforums.org/>`_
 
-Rocket.Chat
------------
+Chats
+-----
 
 - `Godot Contributors Chat <https://chat.godotengine.org/>`_
-
-IRC on Libera.Chat
-------------------
+- `Discord <https://discord.gg/4JBkykG>`_
+- `Matrix (IRC compatible) <https://matrix.to/#/#godotengine:matrix.org>`_
+- `IRC (#godotengine on Libera.Chat) <https://web.libera.chat/?channels=#godotengine>`_
 
 .. note::
 
     As of January 2021, core developer chat has moved to the Godot Contributors Chat platform listed above.
+    IRC is less active. Please stick around to get an answer,
+    as it may take several hours for someone to see and answer your questions.
 
-- `General: #godotengine <https://web.libera.chat/?channels=#godotengine>`_
-
-IRC is less active than Discord. Please stick around to get an answer, as
-it may take several hours for someone to see and answer your questions.
-
-Other chats
------------
-
-- `Discord <https://discord.gg/4JBkykG>`_
-- `Matrix (IRC compatible) <https://matrix.to/#/#godotengine:matrix.org>`_
-
-Language-based communities
---------------------------
-
-See the `User groups <https://godotengine.org/community/user-groups>`_ page of
-the website for a list of local communities.
-
-Social networks
----------------
+Social networks and other sites
+-------------------------------
 
 - `GitHub <https://github.com/godotengine/>`_
 - `Facebook group <https://www.facebook.com/groups/godotengine/>`_
@@ -53,8 +39,11 @@ Social networks
 - `Reddit <https://www.reddit.com/r/godot>`_
 - `YouTube <https://www.youtube.com/c/GodotEngineOfficial>`_
 - `Steam <https://steamcommunity.com/app/404790>`_
+- `itch.io <https://godotengine.itch.io/godot>`_
+- `Links <https://links.godotengine.org>`_
 
-Forum
------
+Language-based communities
+--------------------------
 
-- `Godot Forums <https://godotforums.org/>`_
+See the `User groups <https://godotengine.org/community/user-groups>`_ page of
+the website for a list of local communities.

@@ -1,0 +1,60 @@
+GD0202: The parameter of the delegate signature of the signal is not supported
+==============================================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0202
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Breaking - If the parameter type is changed
+
+                                      Non-breaking - If the ``[Signal]`` attribute is removed
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+An unsupported type is specified for a parameter of a delegate annotated with
+the ``[Signal]`` attribute when a
+:ref:`Variant-compatible type <c_sharp_variant_compatible_types>` is expected.
+
+Rule description
+----------------
+
+Every signal parameter must be Variant-compatible so it can be marshalled when
+emitting the signal and invoking the callbacks.
+
+.. code-block:: csharp
+
+    class SomeType { }
+
+    // SomeType is not a valid parameter type because it doesn't derive from GodotObject,
+    // so it's not compatible with Variant.
+    public void InvalidSignalEventHandler(SomeType someType);
+
+    // System.Int32 is a valid type because it's compatible with Variant.
+    public void ValidSignalEventHandler(int someInt);
+
+Take a look at the :ref:`C# signals <doc_c_sharp_signals>` documentation for more
+information about how to declare and use signals.
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, change the parameter type to be Variant-compatible
+or remove the ``[Signal]`` attribute from the delegate. Note that removing the
+attribute will mean the signal is not registered.
+
+.. tip::
+
+    If the signal doesn't need to interact with Godot, consider using
+    `C# events <https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/events/>`_
+    directly. Pure C# events allow you to use any C# type for its parameters.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Signal delegates with parameters that
+can't be marshalled will result in runtime errors when emitting the signal or
+invoking the callbacks.

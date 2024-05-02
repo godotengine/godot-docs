@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_recording_with_microphone:
 
 Recording with microphone
@@ -9,6 +11,8 @@ iOS.
 A simple demo is included in the official demo projects and will be used as
 support for this tutorial:
 `<https://github.com/godotengine/godot-demo-projects/tree/master/audio/mic_record>`_.
+
+You will need to enable audio input in the project settings ``Project Settings -> Audio -> Driver -> Enable Input``, or you'll just get empty audio files.
 
 The structure of the demo
 -------------------------
@@ -61,7 +65,7 @@ and :ref:`set_recording_active() <class_AudioEffectRecord_method_set_recording_a
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    func _on_RecordButton_pressed():
+    func _on_record_button_pressed():
         if effect.is_recording_active():
             recording = effect.get_recording()
             $PlayButton.disabled = false
@@ -78,7 +82,7 @@ and :ref:`set_recording_active() <class_AudioEffectRecord_method_set_recording_a
 
   .. code-tab:: csharp
 
-    public void OnRecordButtonPressed()
+    private void OnRecordButtonPressed()
     {
         if (_effect.IsRecordingActive())
         {
@@ -110,27 +114,25 @@ the recorded stream can be stored into the ``recording`` variable by calling
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    func _on_PlayButton_pressed():
+    func _on_play_button_pressed():
         print(recording)
         print(recording.format)
         print(recording.mix_rate)
         print(recording.stereo)
         var data = recording.get_data()
-        print(data)
         print(data.size())
         $AudioStreamPlayer.stream = recording
         $AudioStreamPlayer.play()
 
   .. code-tab:: csharp
 
-    public void OnPlayButtonPressed()
+    private void OnPlayButtonPressed()
     {
         GD.Print(_recording);
         GD.Print(_recording.Format);
         GD.Print(_recording.MixRate);
         GD.Print(_recording.Stereo);
         byte[] data = _recording.Data;
-        GD.Print(data);
         GD.Print(data.Length);
         var audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
         audioStreamPlayer.Stream = _recording;
@@ -143,14 +145,14 @@ To playback the recording, you assign the recording as the stream of the
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    func _on_SaveButton_pressed():
+    func _on_save_button_pressed():
         var save_path = $SaveButton/Filename.text
         recording.save_to_wav(save_path)
         $Status.text = "Saved WAV file to: %s\n(%s)" % [save_path, ProjectSettings.globalize_path(save_path)]
 
   .. code-tab:: csharp
 
-    public void OnSavebuttonPressed()
+    private void OnSaveButtonPressed()
     {
         string savePath = GetNode<LineEdit>("SaveButton/Filename").Text;
         _recording.SaveToWav(savePath);

@@ -18,7 +18,7 @@ rule, a scene's root node should reflect the object's desired functionality -
 what the object *is*. Click the "Other Node" button and add an :ref:`Area2D
 <class_Area2D>` node to the scene.
 
-.. image:: img/add_node.png
+.. image:: img/add_node.webp
 
 Godot will display a warning icon next to the node in the scene tree. You can
 ignore it for now. We will address it later.
@@ -30,10 +30,11 @@ functionality.
 
 Before we add any children to the ``Player`` node, we want to make sure we don't
 accidentally move or resize them by clicking on them. Select the node and click
-the icon to the right of the lock; its tooltip says "Makes sure the object's
-children are not selectable."
+the icon to the right of the lock. Its tooltip says "Groups the selected node 
+with its children. This causes the parent to be to be selected when any child
+node is clicked in 2D and 3D view."
 
-.. image:: img/lock_children.png
+.. image:: img/lock_children.webp
 
 Save the scene. Click Scene -> Save, or press :kbd:`Ctrl + S` on Windows/Linux
 or :kbd:`Cmd + S` on macOS.
@@ -53,45 +54,47 @@ or :kbd:`Cmd + S` on macOS.
 Sprite animation
 ~~~~~~~~~~~~~~~~
 
-Click on the ``Player`` node and add an :ref:`AnimatedSprite2D
-<class_AnimatedSprite2D>` node as a child. The ``AnimatedSprite2D`` will handle the
+Click on the ``Player`` node and add (:kbd:`Ctrl + A` on Windows/Linux or
+:kbd:`Cmd + A` on macOS) a child node :ref:`AnimatedSprite2D
+<class_AnimatedSprite2D>`. The ``AnimatedSprite2D`` will handle the
 appearance and animations for our player. Notice that there is a warning symbol
 next to the node. An ``AnimatedSprite2D`` requires a :ref:`SpriteFrames
 <class_SpriteFrames>` resource, which is a list of the animations it can
-display. To create one, find the ``Frames`` property in the Inspector and click
-"[empty]" -> "New SpriteFrames". Click again to open the "SpriteFrames" panel:
+display. To create one, find the ``Sprite Frames`` property under the ``Animation`` tab in the Inspector and click
+"[empty]" -> "New SpriteFrames". Click on the ``SpriteFrames`` you just
+created to open the "SpriteFrames" panel:
 
-.. image:: img/spriteframes_panel.png
+.. image:: img/spriteframes_panel.webp
 
 
 On the left is a list of animations. Click the "default" one and rename it to
-"walk". Then click the "New Animation" button to create a second animation named
+"walk". Then click the "Add Animation" button to create a second animation named
 "up". Find the player images in the "FileSystem" tab - they're in the ``art``
 folder you unzipped earlier. Drag the two images for each animation, named
 ``playerGrey_up[1/2]`` and ``playerGrey_walk[1/2]``, into the "Animation Frames"
 side of the panel for the corresponding animation:
 
-.. image:: img/spriteframes_panel2.png
+.. image:: img/spriteframes_panel2.webp
 
 The player images are a bit too large for the game window, so we need to scale
 them down. Click on the ``AnimatedSprite2D`` node and set the ``Scale`` property
 to ``(0.5, 0.5)``. You can find it in the Inspector under the ``Node2D``
 heading.
 
-.. image:: img/player_scale.png
+.. image:: img/player_scale.webp
 
 Finally, add a :ref:`CollisionShape2D <class_CollisionShape2D>` as a child of
 ``Player``. This will determine the player's "hitbox", or the bounds of its
 collision area. For this character, a ``CapsuleShape2D`` node gives the best
-fit, so next to "Shape" in the Inspector, click "[empty]"" -> "New
+fit, so next to "Shape" in the Inspector, click "[empty]" -> "New
 CapsuleShape2D". Using the two size handles, resize the shape to cover the
 sprite:
 
-.. image:: img/player_coll_shape.png
+.. image:: img/player_coll_shape.webp
 
 When you're finished, your ``Player`` scene should look like this:
 
-.. image:: img/player_scene_nodes.png
+.. image:: img/player_scene_nodes.webp
 
 Make sure to save the scene again after these changes.
 

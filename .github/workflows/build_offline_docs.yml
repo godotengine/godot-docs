@@ -8,15 +8,15 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         branch:
           - master
           - stable
+          - 3.6
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: ${{ matrix.branch }}
 
@@ -24,16 +24,38 @@ jobs:
         run: |
           sudo pip3 install -r requirements.txt
           sudo pip3 install codespell
+          sudo apt update
+          sudo apt install parallel libwebp7
 
-      # Build the HTML to upload it.
-      - name: Sphinx build
-        run: |
-          sphinx-build --color -d _build/doctrees . _build/html
+      - name: Sphinx - Build HTML
+        run: make SPHINXOPTS='--color' html
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: godot-docs-html-${{ matrix.branch }}
           path: _build/html
+          # Keep the current build and the previous build (in case a scheduled build failed).
+          # This makes it more likely to have at least one successful build available at all times.
+          retention-days: 15
+
+      - name: Sphinx - Build ePub
+        run: |
+          # Convert WebP images to PNG and replace references, so that ePub readers can display those images.
+          # The ePub 3.0 specification has WebP support, but it's not widely supported by apps and e-readers yet.
+          shopt -s globstar nullglob
+          parallel --will-cite convert {} {.}.png ::: {about,community,contributing,getting_started,img,tutorials}/**/*.webp
+          parallel --will-cite sed -i "s/\\.webp$/\\.png/g" ::: {about,community,contributing,getting_started,tutorials}/**/*.rst
+
+          # Remove banners at the top of each page when building `latest`.
+          sed -i 's/"godot_is_latest": True/"godot_is_latest": False/' conf.py
+          sed -i 's/"godot_show_article_status": True/"godot_show_article_status": False/' conf.py
+
+          make SPHINXOPTS='--color' epub
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: godot-docs-epub-${{ matrix.branch }}
+          path: _build/epub/GodotEngine.epub
           # Keep the current build and the previous build (in case a scheduled build failed).
           # This makes it more likely to have at least one successful build available at all times.
           retention-days: 15

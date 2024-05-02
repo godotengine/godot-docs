@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_using_the_web_editor:
 
 Using the Web editor
@@ -28,8 +30,8 @@ proper threading support is added.
 
 **Mobile browsers are currently not supported.**
 
-The web editor supports both the GLES3 and GLES2 renderers, although GLES2 is
-recommended for better performance and compatibility with old/low-end hardware.
+The web editor only supports the Compatibility rendering method, as there is no
+stable way to run Vulkan applications on the web yet.
 
 .. note::
 
@@ -46,7 +48,7 @@ Due to limitations on the Godot or Web platform side, the following features
 are currently missing:
 
 - No C#/Mono support.
-- No GDNative support.
+- No GDExtension support.
 - No debugging support. This means GDScript debugging/profiling, live scene
   editing, the Remote Scene tree dock and other features that rely on the debugger
   protocol will not work.
@@ -77,7 +79,7 @@ To import an existing project, the current process is as follows:
 - Specify a ZIP file to preload on the HTML5 filesystem using the
   **Preload project ZIP** input.
 - Run the editor by clicking **Start Godot editor**.
-  The Godot project manager should appear after 10-20 seconds.
+  The Godot Project Manager should appear after 10-20 seconds.
   On slower machines or connections, loading may take up to a minute.
 - In the dialog that appears at the middle of the window, specify a name for
   the folder to create then click the **Create Folder** button

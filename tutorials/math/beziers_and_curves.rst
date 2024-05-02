@@ -31,8 +31,16 @@ change the value of ``t`` from 0 to 1.
  .. code-tab:: gdscript GDScript
 
     func _quadratic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, t: float):
-        var q0 = p0.linear_interpolate(p1, t)
-        var q1 = p1.linear_interpolate(p2, t)
+        var q0 = p0.lerp(p1, t)
+        var q1 = p1.lerp(p2, t)
+
+ .. code-tab:: csharp
+
+    private Vector2 QuadraticBezier(Vector2 p0, Vector2 p1, Vector2 p2, float t)
+    {
+        Vector2 q0 = p0.Lerp(p1, t);
+        Vector2 q1 = p1.Lerp(p2, t);
+    }
 
 We then interpolate ``q0`` and ``q1`` to obtain a single point ``r`` that moves
 along a curve.
@@ -40,10 +48,15 @@ along a curve.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        var r = q0.linear_interpolate(q1, t)
+        var r = q0.lerp(q1, t)
         return r
 
-This type of is called a *Quadratic Bezier* curve.
+ .. code-tab:: csharp
+
+        Vector2 r = q0.Lerp(q1, t);
+        return r;
+
+This type of curve is called a *Quadratic Bezier* curve.
 
 .. image:: img/bezier_quadratic_points2.gif
 
@@ -65,31 +78,54 @@ We first use a function with four parameters to take four points as an input,
 
     func _cubic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2, t: float):
 
+ .. code-tab:: csharp
+
+    public Vector2 CubicBezier(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3, float t)
+    {
+
+    }
+
 We apply a linear interpolation to each couple of points to reduce them to
 three:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        var q0 = p0.linear_interpolate(p1, t)
-        var q1 = p1.linear_interpolate(p2, t)
-        var q2 = p2.linear_interpolate(p3, t)
+        var q0 = p0.lerp(p1, t)
+        var q1 = p1.lerp(p2, t)
+        var q2 = p2.lerp(p3, t)
+
+ .. code-tab:: csharp
+
+        Vector2 q0 = p0.Lerp(p1, t);
+        Vector2 q1 = p1.Lerp(p2, t);
+        Vector2 q2 = p2.Lerp(p3, t);
 
 We then take our three points and reduce them to two:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        var r0 = q0.linear_interpolate(q1, t)
-        var r1 = q1.linear_interpolate(q2, t)
+        var r0 = q0.lerp(q1, t)
+        var r1 = q1.lerp(q2, t)
+
+ .. code-tab:: csharp
+
+        Vector2 r0 = q0.Lerp(q1, t);
+        Vector2 r1 = q1.Lerp(q2, t);
 
 And to one:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        var s = r0.linear_interpolate(r1, t)
+        var s = r0.lerp(r1, t)
         return s
+
+ .. code-tab:: csharp
+
+        Vector2 s = r0.Lerp(r1, t);
+        return s;
 
 Here is the full function:
 
@@ -97,15 +133,30 @@ Here is the full function:
  .. code-tab:: gdscript GDScript
 
     func _cubic_bezier(p0: Vector2, p1: Vector2, p2: Vector2, p3: Vector2, t: float):
-        var q0 = p0.linear_interpolate(p1, t)
-        var q1 = p1.linear_interpolate(p2, t)
-        var q2 = p2.linear_interpolate(p3, t)
+        var q0 = p0.lerp(p1, t)
+        var q1 = p1.lerp(p2, t)
+        var q2 = p2.lerp(p3, t)
 
-        var r0 = q0.linear_interpolate(q1, t)
-        var r1 = q1.linear_interpolate(q2, t)
+        var r0 = q0.lerp(q1, t)
+        var r1 = q1.lerp(q2, t)
 
-        var s = r0.linear_interpolate(r1, t)
+        var s = r0.lerp(r1, t)
         return s
+
+ .. code-tab:: csharp
+
+    private Vector2 CubicBezier(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3, float t)
+    {
+        Vector2 q0 = p0.Lerp(p1, t);
+        Vector2 q1 = p1.Lerp(p2, t);
+        Vector2 q2 = p2.Lerp(p3, t);
+
+        Vector2 r0 = q0.Lerp(q1, t);
+        Vector2 r1 = q1.Lerp(q2, t);
+
+        Vector2 s = r0.Lerp(r1, t);
+        return s;
+    }
 
 The result will be a smooth curve interpolating between all four points:
 
@@ -142,7 +193,7 @@ Curve2D, Curve3D, Path and Path2D
 
 There are two objects that contain curves: :ref:`Curve3D <class_Curve3D>` and :ref:`Curve2D <class_Curve2D>` (for 3D and 2D respectively).
 
-They can contain several points, allowing for longer paths. It is also possible to set them to nodes: :ref:`Path <class_Path>` and :ref:`Path2D <class_Path2D>` (also for 3D and 2D respectively):
+They can contain several points, allowing for longer paths. It is also possible to set them to nodes: :ref:`Path3D <class_Path3D>` and :ref:`Path2D <class_Path2D>` (also for 3D and 2D respectively):
 
 .. image:: img/bezier_path_2d.png
 
@@ -164,6 +215,15 @@ Let's do an example with the following pseudocode:
         t += delta
         position = _cubic_bezier(p0, p1, p2, p3, t)
 
+ .. code-tab:: csharp
+
+    private float _t = 0.0f;
+
+    public override void _Process(double delta)
+    {
+        _t += (float)delta;
+        Position = CubicBezier(p0, p1, p2, p3, _t);
+    }
 
 .. image:: img/bezier_interpolation_speed.gif
 
@@ -190,7 +250,7 @@ Traversal
 
 The last common use case for the curves is to traverse them. Because of what was mentioned before regarding constant speed, this is also difficult.
 
-To make this easier, the curves need to be *baked* into equidistant points. This way, they can be approximated with regular interpolation (which can be improved further with a cubic option). To do this, just use the :ref:`Curve.interpolate_baked()<class_Curve_method_interpolate_baked>` method together with
+To make this easier, the curves need to be *baked* into equidistant points. This way, they can be approximated with regular interpolation (which can be improved further with a cubic option). To do this, just use the :ref:`Curve3D.sample_baked()<class_Curve3D_method_sample_baked>` method together with
 :ref:`Curve2D.get_baked_length()<class_Curve2D_method_get_baked_length>`. The first call to either of them will bake the curve internally.
 
 Traversal at constant speed, then, can be done with the following pseudo-code:
@@ -202,7 +262,17 @@ Traversal at constant speed, then, can be done with the following pseudo-code:
 
     func _process(delta):
         t += delta
-        position = curve.interpolate_baked(t * curve.get_baked_length(), true)
+        position = curve.sample_baked(t * curve.get_baked_length(), true)
+
+ .. code-tab:: csharp
+
+    private float _t = 0.0f;
+
+    public override void _Process(double delta)
+    {
+        _t += (float)delta;
+        Position = curve.SampleBaked(_t * curve.GetBakedLength(), true);
+    }
 
 And the output will, then, move at constant speed:
 

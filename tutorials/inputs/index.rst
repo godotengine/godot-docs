@@ -1,5 +1,7 @@
-Inputs
-======
+:allow_comments: False
+
+Input handling
+==============
 
 .. toctree::
    :maxdepth: 1

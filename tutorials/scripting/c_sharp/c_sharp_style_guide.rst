@@ -20,9 +20,10 @@ of the language, we encourage you to do the same, especially if you do not have 
 Language specification
 ----------------------
 
-Godot currently uses **C# version 7.0** in its engine and example source code. So, before we move to
-a newer version, care must be taken to avoid mixing language features only available in C# 7.1 or
-later.
+Godot currently uses **C# version 10.0** in its engine and example source code,
+as this is the version supported by .NET 6.0 (the current baseline requirement).
+So, before we move to a newer version, care must be taken to avoid mixing
+language features only available in C# 11.0 or later.
 
 For detailed information on C# features in different versions, please see
 `What's New in C# <https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/>`_.
@@ -143,7 +144,7 @@ Using spaces
 
 Insert a space:
 
-* Around a binary and tertiary operator.
+* Around a binary and ternary operator.
 * Between an opening parenthesis and ``if``, ``for``, ``foreach``, ``catch``, ``while``, ``lock`` or ``using`` keywords.
 * Before and within a single line accessor block.
 * Between accessors in a single line accessor block.
@@ -153,11 +154,11 @@ Insert a space:
 * Around a colon in a type declaration.
 * Around a lambda arrow.
 * After a single-line comment symbol (``//``), and before it if used at the end of a line.
+* After the opening brace, and before the closing brace in a single line initializer.
 
 Do not use a space:
 
 * After type cast parentheses.
-* Within single line initializer braces.
 
 The following example shows a proper use of spaces, according to some of the above mentioned conventions:
 
@@ -174,7 +175,7 @@ The following example shows a proper use of spaces, according to some of the abo
 
         public void MyMethod()
         {
-            int[] values = {1, 2, 3, 4}; // No space within initializer brackets.
+            int[] values = { 1, 2, 3, 4 };
             int sum = 0;
 
             // Single line comment.

@@ -52,7 +52,7 @@ difficulties in implementation, which are:
 
 Sometimes materials may not be valid for exporting (e.g. has some unsupported node) or it
 is using Blender Internal Engine, only the diffuse color and a few flags (e.g. unshaded) are
-exported and form a Spatial Material.
+exported and form a StandardMaterial3D.
 
 
 Generate external materials
@@ -64,6 +64,6 @@ file when the ``escn`` file opens in Godot.
 
 .. image:: img/external_mat_option.jpg
 
-``.material`` file can be assigned to any material slot to be a external resource.
+``.material`` file can be assigned to any material slot to be an external resource.
 
 .. image:: img/gd_dot_material.jpg

@@ -1,10 +1,12 @@
+:article_outdated: True
+
 .. _doc_gui_containers:
 
 Using Containers
 ================
 
 :ref:`Anchors <doc_size_and_anchors>` are an efficient way to handle
-different aspect ratios for basic multiple resolution handling in GUIs,
+different aspect ratios for basic multiple resolution handling in GUIs.
 
 For more complex user interfaces, they can become difficult to use.
 
@@ -34,24 +36,30 @@ Example of *HBoxContainer* resizing children buttons.
 
 The real strength of containers is that they can be nested (as nodes), allowing the creation of very complex layouts that resize effortlessly.
 
-Size flags
-----------
+Sizing options
+--------------
 
-When adding a node to a container, the way the container treats each child depends mainly on their *size flags*. These flags
-can be found by inspecting any control that is a child of a *Container*.
+When adding a node to a container, the way the container treats each child depends mainly on their *container sizing options*. These options
+can be found by inspecting the layout of any *Control* that is a child of a *Container*.
 
-   .. image:: img/container_size_flags.png
+   .. image:: img/container_sizing_options.webp
 
-Size flags are independent for vertical and horizontal sizing and not all containers make use of them (but most do):
+Sizing options are independent for vertical and horizontal sizing and not all containers make use of them (but most do):
 
 * **Fill**: Ensures the control *fills* the designated area within the container. No matter if
   a control *expands* or not (see below), it will only *fill* the designated area when this is toggled on (it is by default).
 * **Expand**: Attempts to use as much space as possible in the parent container (in each axis).
   Controls that don't expand will be pushed away by those that do. Between expanding controls, the
-  amount of space they take from each other is determined by the *Ratio* (see below).
-* **Shrink Center** When expanding (and if not filling), try to remain at the center of the expanded
-  area (by default it remains at the left or top).
-* **Ratio**: The ratio of how much expanded controls take up the available space in relation to each
+  amount of space they take from each other is determined by the *Stretch Ratio* (see below).
+  This option is only available when the parent Container is of the right type, for example the *HBoxContainer* has this option
+  for horizontal sizing.
+* **Shrink Begin** When expanding, try to remain at the left or top of the expanded
+  area.
+* **Shrink Center** When expanding, try to remain at the center of the expanded
+  area.
+* **Shrink End** When expanding, try to remain at the right or bottom of the expanded
+  area.
+* **Stretch Ratio**: The ratio of how much expanded controls take up the available space in relation to each
   other. A control with "2", will take up twice as much available space as one with "1".
 
 Experimenting with these flags and different containers is recommended to get a better grasp on how they work.
@@ -66,7 +74,7 @@ Box Containers
 
 Arranges child controls vertically or horizontally (via :ref:`HBoxContainer <class_HBoxContainer>` and
 :ref:`VBoxContainer <class_VBoxContainer>`). In the opposite of the designated direction
-(as in, vertical for an horizontal container), it just expands the children.
+(as in, vertical for a horizontal container), it just expands the children.
 
    .. image:: img/containers_box.png
 
@@ -129,7 +137,7 @@ PanelContainer
 
 A container that draws a *StyleBox*, then expands children to cover its whole area
 (via :ref:`PanelContainer <class_PanelContainer>`, respecting the *StyleBox* margins).
-It respects both the horizontal and vertical size flags.
+It respects both the horizontal and vertical sizing options.
 
    .. image:: img/containers_panel.png
 
@@ -140,7 +148,7 @@ ScrollContainer
 
 Accepts a single child node. If this node is bigger than the container, scrollbars will be added
 to allow panning the node around (via :ref:`ScrollContainer <class_ScrollContainer>`). Both
-vertical and horizontal size flags are respected, and the behavior can be turned on or off
+vertical and horizontal size options are respected, and the behavior can be turned on or off
 per axis in the properties.
 
    .. image:: img/containers_scroll.png
@@ -151,18 +159,58 @@ Mouse wheel and touch drag (when touch is available) are also valid ways to pan 
 
 As in the example above, one of the most common ways to use this container is together with a *VBoxContainer* as child.
 
+AspectRatioContainer
+^^^^^^^^^^^^^^^^^^^^
 
-ViewportContainer
-^^^^^^^^^^^^^^^^^
+A container type that arranges its child controls in a way that preserves their proportions
+automatically when the container is resized.
+(via :ref:`AspectRatioContainer <class_AspectRatioContainer>`).
+It has multiple stretch modes, providing options for adjusting the child controls' sizes concerning the container:
+"fill," "width control height," "height control width," and "cover."
+
+   .. image:: img/containers_aspectratio.webp
+
+useful when you have a container that needs to be dynamic and responsive to different screen sizes,
+and you want the child elements to scale proportionally without losing their intended shapes.
+
+   .. image:: img/containers_aspectratio_drag.webp
+
+FlowContainer
+^^^^^^^^^^^^^^
+
+FlowContainer is a container that arranges its child controls either horizontally or vertically,
+(via :ref:`HFlowContainer <class_HFlowContainer>` and via :ref:`VFlowContainer <class_VFlowContainer>`).
+and when the available space runs out, it wraps the children to the next line or column, similar to how text wraps in a book.
+
+
+   .. image:: img/containers_hflow.webp
+
+useful for creating flexible layouts where the child controls adjust automatically to the available space without overlapping.
+
+   .. image:: img/containers_hflow_drag.webp
+
+CenterContainer
+^^^^^^^^^^^^^^^^^^^^
+
+CenterContainer is a container that automatically keeps all of its child controls centered within it at their minimum size.
+It ensures that the child controls are always aligned to the center, making it easier to create centered layouts without manual positioning.
+(via :ref:`CenterContainer <class_CenterContainer>`).
+
+   .. image:: img/containers_center.webp
+
+   .. image:: img/containers_center_drag.webp
+
+SubViewportContainer
+^^^^^^^^^^^^^^^^^^^^
 
 This is a special control that will only accept a single *Viewport* node as child, and it will display
-it as if it was an image (via :ref:`ViewportContainer <class_ViewportContainer>`).
+it as if it was an image (via :ref:`SubViewportContainer <class_SubViewportContainer>`).
 
 Creating custom Containers
 --------------------------
 
-It is possible to easily create a custom container using script. Here is an example of a container that fits children
-to its rect size:
+It is possible to create a custom container using a script.
+Here is an example of a container that fits children to its rect size:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -174,8 +222,34 @@ to its rect size:
             # Must re-sort the children
             for c in get_children():
                 # Fit to own size
-                fit_child_in_rect( c, Rect2( Vector2(), rect_size ) )
+                fit_child_in_rect(c, Rect2(Vector2(), rect_size))
 
     func set_some_setting():
-        # Some setting changed, ask for children re-sort
+        # Some setting changed, ask for children re-sort.
         queue_sort()
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class CustomContainer : Container
+    {
+        public override void _Notification(int what)
+        {
+            if (what == NotificationSortChildren)
+            {
+                // Must re-sort the children
+                foreach (Control c in GetChildren())
+                {
+                    // Fit to own size
+                    FitChildInRect(c, new Rect2(new Vector2(), RectSize));
+                }
+            }
+        }
+
+        public void SetSomeSetting()
+        {
+            // Some setting changed, ask for children re-sort.
+            QueueSort();
+        }
+    }

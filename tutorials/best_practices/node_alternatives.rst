@@ -3,7 +3,6 @@
 When and how to avoid using nodes for everything
 ================================================
 
-
 Nodes are cheap to produce, but even they have their limits. A project may
 have tens of thousands of nodes all doing things. The more complex their
 behavior though, the larger the strain each one adds to a project's
@@ -28,17 +27,19 @@ your project's features.
      entire Node library, one creates an abbreviated set of Objects from which
      a node can generate and manage the appropriate sub-nodes.
 
-   .. note:: One should be careful when handling them. One can store an Object
-     into a variable, but these references can become invalid without warning.
-     For example, if the object's creator decides to delete it out of nowhere,
-     this would trigger an error state when one next accesses it.
+   .. note::
+
+       One should be careful when handling them. One can store an Object
+       into a variable, but these references can become invalid without warning.
+       For example, if the object's creator decides to delete it out of nowhere,
+       this would trigger an error state when one next accesses it.
 
 2. :ref:`RefCounted <class_RefCounted>`: Only a little more complex than Object.
    They track references to themselves, only deleting loaded memory when no
    further references to themselves exist. These are useful in the majority of
    cases where one needs data in a custom class.
 
-   - **Example:** See the :ref:`File <class_File>` object. It functions
+   - **Example:** See the :ref:`FileAccess <class_FileAccess>` object. It functions
      just like a regular Object except that one need not delete it themselves.
 
    - **Advantages:** same as the Object.
@@ -49,7 +50,7 @@ your project's features.
 
    - **Example:** Scripts, PackedScene (for scene files), and other types like
      each of the :ref:`AudioEffect <class_AudioEffect>` classes. Each of these
-     can be save and loaded, therefore they extend from Resource.
+     can be saved and loaded, therefore they extend from Resource.
 
    - **Advantages:** Much has
      :ref:`already been said <doc_resources>`

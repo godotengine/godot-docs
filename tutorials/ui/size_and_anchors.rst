@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_size_and_anchors:
 
 Size and anchors
@@ -63,7 +65,8 @@ To center a control in its parent, set its anchors to 0.5 and each margin
 to half of its relevant dimension. For example, the code below shows how
 a TextureRect can be centered in its parent:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var rect = TextureRect.new()
     rect.texture = load("res://icon.png")
@@ -72,11 +75,29 @@ a TextureRect can be centered in its parent:
     rect.anchor_top = 0.5
     rect.anchor_bottom = 0.5
     var texture_size = rect.texture.get_size()
-    rect.margin_left = -texture_size.x / 2
-    rect.margin_right = -texture_size.x / 2
-    rect.margin_top = -texture_size.y / 2
-    rect.margin_bottom = -texture_size.y / 2
+    rect.offset_left = -texture_size.x / 2
+    rect.offset_right = texture_size.x / 2
+    rect.offset_top = -texture_size.y / 2
+    rect.offset_bottom = texture_size.y / 2
     add_child(rect)
+
+ .. code-tab:: csharp
+
+    var rect = new TextureRect();
+
+    rect.Texture = ResourceLoader.Load<Texture>("res://icon.png");
+    rect.AnchorLeft = 0.5f;
+    rect.AnchorRight = 0.5f;
+    rect.AnchorTop = 0.5f;
+    rect.AnchorBottom = 0.5f;
+
+    var textureSize = rect.Texture.GetSize();
+
+    rect.OffsetLeft = -textureSize.X / 2;
+    rect.OffsetRight = textureSize.X / 2;
+    rect.OffsetTop = -textureSize.Y / 2;
+    rect.OffsetBottom = textureSize.Y / 2;
+    AddChild(rect);
 
 Setting each anchor to 0.5 moves the reference point for the margins to
 the center of its parent. From there, we set negative margins so that

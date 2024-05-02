@@ -1,0 +1,46 @@
+GD0101: The exported member is static
+=====================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0101
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Breaking - If the ``static`` keyword is removed
+
+                                      Non-breaking - If the ``[Export]`` attribute is removed
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A static member is annotated with the ``[Export]`` attribute. Static members
+can't be exported.
+
+Rule description
+----------------
+
+Godot doesn't allow exporting static members.
+
+.. code-block:: csharp
+
+    // Static members can't be exported.
+    [Export]
+    public static int InvalidProperty { get; set; }
+
+    // Instance members can be exported.
+    [Export]
+    public int ValidProperty { get; set; }
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, remove the ``[Export]`` attribute or remove the
+``static`` keyword.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Static members can't be exported so
+they will be ignored by Godot, resulting in runtime errors.

@@ -8,15 +8,17 @@ you will have monsters roaming the game board.
 
 |image0|
 
-Double-click on ``Main.tscn`` in the *FileSystem* dock to open the *Main* scene.
+Double-click on ``main.tscn`` in the *FileSystem* dock to open the ``Main`` scene.
 
 Before drawing the path, we're going to change the game resolution. Our game has
-a default window size of ``1024x600``. We're going to set it to ``720x540``, a
+a default window size of ``1152x648``. We're going to set it to ``720x540``, a
 nice little box.
 
 Go to *Project -> Project Settings*.
 
 |image1|
+
+If you still have *Input Map* open, switch to the *General* tab.
 
 In the left menu, navigate down to *Display -> Window*. On the right, set the
 *Width* to ``720`` and the *Height* to ``540``.
@@ -27,7 +29,7 @@ Creating the spawn path
 -----------------------
 
 Like you did in the 2D game tutorial, you're going to design a path and use a
-*PathFollow* node to sample random locations on it.
+:ref:`PathFollow3D <class_PathFollow3D>` node to sample random locations on it.
 
 In 3D though, it's a bit more complicated to draw the path. We want it to be
 around the game view so monsters appear right outside the screen. But if we draw
@@ -36,7 +38,7 @@ a path, we won't see it from the camera preview.
 To find the view's limits, we can use some placeholder meshes. Your viewport
 should still be split into two parts, with the camera preview at the bottom. If
 that isn't the case, press :kbd:`Ctrl + 2` (:kbd:`Cmd + 2` on macOS) to split the view into two.
-Select the *Camera* node and click the *Preview* checkbox in the bottom
+Select the :ref:`Camera3D <class_Camera3D>` node and click the *Preview* checkbox in the bottom
 viewport.
 
 |image3|
@@ -44,9 +46,8 @@ viewport.
 Adding placeholder cylinders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Let's add the placeholder meshes. Add a new *Spatial* node as a child of the
-*Main* node and name it *Cylinders*. We'll use it to group the cylinders. As a
-child of it, add a *MeshInstance* node.
+Let's add the placeholder meshes. Add a new :ref:`Node3D <class_Node3D>` as a child of the
+``Main`` node and name it ``Cylinders``. We'll use it to group the cylinders. Select ``Cylinders`` and add a child node :ref:`MeshInstance3D <class_MeshInstance3D>`
 
 |image4|
 
@@ -59,7 +60,7 @@ top-left corner. Alternatively, you can press the keypad's 7 key.
 
 |image6|
 
-The grid is a bit distracting for me. You can toggle it by going to the *View*
+The grid may be distracting. You can toggle it by going to the *View*
 menu in the toolbar and clicking *View Grid*.
 
 |image7|
@@ -70,7 +71,7 @@ toggle it by clicking the magnet icon in the toolbar or pressing Y.
 
 |image8|
 
-Place the cylinder so it's right outside the camera's view in the top-left
+Move the cylinder so it's right outside the camera's view in the top-left
 corner.
 
 |image9|
@@ -101,16 +102,21 @@ last one.
 
 |image12|
 
-In the *Inspector*, expand the *Material* section and assign a *SpatialMaterial*
-to slot *0*.
+In the *Inspector*, expand the *Material* section and assign a :ref:`StandardMaterial3D <class_StandardMaterial3D>` to slot *0*.
 
 |image13|
+
+.. image:: img/05.spawning_mobs/standard_material.webp
 
 Click the sphere icon to open the material resource. You get a preview of the
 material and a long list of sections filled with properties. You can use these
 to create all sorts of surfaces, from metal to rock or water.
 
-Expand the *Albedo* section and set the color to something that contrasts with
+Expand the *Albedo* section.
+
+.. image:: img/05.spawning_mobs/albedo_section.webp
+
+Set the color to something that contrasts with
 the background, like a bright orange.
 
 |image14|
@@ -121,7 +127,7 @@ visibility by clicking the eye icon next to *Cylinders*.
 
 |image15|
 
-Add a *Path* node as a child of *Main*. In the toolbar, four icons appear. Click
+Add a child node :ref:`Path3D <class_Path3D>` to ``Main`` node. In the toolbar, four icons appear. Click
 the *Add Point* tool, the icon with the green "+" sign.
 
 |image16|
@@ -138,9 +144,9 @@ Your path should look like this.
 
 |image18|
 
-To sample random positions on it, we need a *PathFollow* node. Add a
-*PathFollow* as a child of the *Path*. Rename the two nodes to *SpawnPath* and
-*SpawnLocation*, respectively. It's more descriptive of what we'll use them for.
+To sample random positions on it, we need a :ref:`PathFollow3D <class_PathFollow3D>` node. Add a
+:ref:`PathFollow3D <class_PathFollow3D>` as a child of the ``Path3D``. Rename the two nodes to ``SpawnLocation`` and
+``SpawnPath``, respectively. It's more descriptive of what we'll use them for.
 
 |image19|
 
@@ -149,54 +155,40 @@ With that, we're ready to code the spawn mechanism.
 Spawning monsters randomly
 --------------------------
 
-Right-click on the *Main* node and attach a new script to it.
+Right-click on the ``Main`` node and attach a new script to it.
 
-We first export a variable to the *Inspector* so that we can assign ``Mob.tscn``
+We first export a variable to the *Inspector* so that we can assign ``mob.tscn``
 or any other monster to it.
-
-Then, as we're going to spawn the monsters procedurally, we want to randomize
-numbers every time we play the game. If we don't do that, the monsters will
-always spawn following the same sequence.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
    extends Node
 
-   export (PackedScene) var mob_scene
-
-
-   func _ready():
-       randomize()
+   @export var mob_scene: PackedScene
 
  .. code-tab:: csharp
 
-    public class Main : Node
+    using Godot;
+
+    public partial class Main : Node
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
-    #pragma warning disable 649
-        // We assign this in the editor, so we don't need the warning about not being assigned.
         [Export]
-        public PackedScene MobScene;
-    #pragma warning restore 649
-
-        public override void _Ready()
-        {
-            GD.Randomize();
-        }
+        public PackedScene MobScene { get; set; }
     }
 
 We want to spawn mobs at regular time intervals. To do this, we need to go back
 to the scene and add a timer. Before that, though, we need to assign the
-``Mob.tscn`` file to the ``mob_scene`` property.
+``mob.tscn`` file to the ``mob_scene`` property above (otherwise it's null!)
 
-Head back to the 3D screen and select the *Main* node. Drag ``Mob.tscn`` from
+Head back to the 3D screen and select the ``Main`` node. Drag ``mob.tscn`` from
 the *FileSystem* dock to the *Mob Scene* slot in the *Inspector*.
 
 |image20|
 
-Add a new *Timer* node as a child of *Main*. Name it *MobTimer*.
+Add a new :ref:`Timer <class_Timer>` node as a child of ``Main``. Name it ``MobTimer``.
 
 |image21|
 
@@ -210,7 +202,7 @@ Time*. By default, they restart automatically, emitting the signal in a cycle.
 We can connect to this signal from the *Main* node to spawn monsters every
 ``0.5`` seconds.
 
-With the *MobTimer* still selected, head to the *Node* dock on the right and
+With the *MobTimer* still selected, head to the *Node* dock on the right, and
 double-click the ``timeout`` signal.
 
 |image23|
@@ -220,107 +212,128 @@ Connect it to the *Main* node.
 |image24|
 
 This will take you back to the script, with a new empty
-``_on_MobTimer_timeout()`` function.
+``_on_mob_timer_timeout()`` function.
 
 Let's code the mob spawning logic. We're going to:
 
 1. Instantiate the mob scene.
 2. Sample a random position on the spawn path.
 3. Get the player's position.
-4. Add the mob as a child of the *Main* node.
-5. Call the mob's ``initialize()`` method, passing it the random position and
+4. Call the mob's ``initialize()`` method, passing it the random position and
    the player's position.
+5. Add the mob as a child of the *Main* node.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   func _on_MobTimer_timeout():
-       # Create a Mob instance and add it to the scene.
-       var mob = mob_scene.instance()
+    func _on_mob_timer_timeout():
+        # Create a new instance of the Mob scene.
+        var mob = mob_scene.instantiate()
 
-       # Choose a random location on Path2D.
-       # We store the reference to the SpawnLocation node.
-       var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
-       # And give it a random offset.
-       mob_spawn_location.unit_offset = randf()
+        # Choose a random location on the SpawnPath.
+        # We store the reference to the SpawnLocation node.
+        var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
+        # And give it a random offset.
+        mob_spawn_location.progress_ratio = randf()
 
-       var player_position = $Player.transform.origin
+        var player_position = $Player.position
+        mob.initialize(mob_spawn_location.position, player_position)
 
-       add_child(mob)
-       mob.initialize(mob_spawn_location.translation, player_position)
+        # Spawn the mob by adding it to the Main scene.
+        add_child(mob)
 
  .. code-tab:: csharp
 
-    // We also specified this function name in PascalCase in the editor's connection window
-    public void OnMobTimerTimeout()
+    // We also specified this function name in PascalCase in the editor's connection window.
+    private void OnMobTimerTimeout()
     {
-        // Create a mob instance and add it to the scene.
-        Mob mob = (Mob)MobScene.Instance();
+        // Create a new instance of the Mob scene.
+        Mob mob = MobScene.Instantiate<Mob>();
 
-        // Choose a random location on Path2D.
-        // We stire the reference to the SpawnLocation node.
-        var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
+        // Choose a random location on the SpawnPath.
+        // We store the reference to the SpawnLocation node.
+        var mobSpawnLocation = GetNode<PathFollow3D>("SpawnPath/SpawnLocation");
         // And give it a random offset.
-        mobSpawnLocation.UnitOffset = GD.Randf();
+        mobSpawnLocation.ProgressRatio = GD.Randf();
 
-        Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
+        Vector3 playerPosition = GetNode<Player>("Player").Position;
+        mob.Initialize(mobSpawnLocation.Position, playerPosition);
 
+        // Spawn the mob by adding it to the Main scene.
         AddChild(mob);
-        mob.Initialize(mobSpawnLocation.Translation, playerPosition);
     }
 
 Above, ``randf()`` produces a random value between ``0`` and ``1``, which is
-what the *PathFollow* node's ``unit_offset`` expects.
+what the *PathFollow* node's ``progress_ratio`` expects:
+0 is the start of the path, 1 is the end of the path.
+The path we have set is around the camera's viewport, so any random value between 0 and 1
+is a random position alongside the edges of the viewport!
 
-Here is the complete ``Main.gd`` script so far, for reference.
+Note that if you remove the ``Player`` from the main scene, the following line
+
+.. tabs::
+   .. code-tab:: gdscript GDScript
+
+    var player_position = $Player.position
+
+   .. code-tab:: csharp
+
+    Vector3 playerPosition = GetNode<Player>("Player").Position;
+
+
+gives an error because there is no $Player!
+
+Here is the complete ``main.gd`` script so far, for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends Node
+    extends Node
 
-   export (PackedScene) var mob_scene
-
-
-   func _ready():
-       randomize()
+    @export var mob_scene: PackedScene
 
 
-   func _on_MobTimer_timeout():
-       var mob = mob_scene.instance()
+    func _on_mob_timer_timeout():
+        # Create a new instance of the Mob scene.
+        var mob = mob_scene.instantiate()
 
-       var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
-       mob_spawn_location.unit_offset = randf()
-       var player_position = $Player.transform.origin
+        # Choose a random location on the SpawnPath.
+        # We store the reference to the SpawnLocation node.
+        var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
+        # And give it a random offset.
+        mob_spawn_location.progress_ratio = randf()
 
-       add_child(mob)
-       mob.initialize(mob_spawn_location.translation, player_position)
+        var player_position = $Player.position
+        mob.initialize(mob_spawn_location.position, player_position)
+
+        # Spawn the mob by adding it to the Main scene.
+        add_child(mob)
 
  .. code-tab:: csharp
 
-    public class Main : Node
+    using Godot;
+
+    public partial class Main : Node
     {
-    #pragma warning disable 649
         [Export]
-        public PackedScene MobScene;
-    #pragma warning restore 649
+        public PackedScene MobScene { get; set; }
 
-        public override void _Ready()
+        private void OnMobTimerTimeout()
         {
-            GD.Randomize();
-        }
+            // Create a new instance of the Mob scene.
+            Mob mob = MobScene.Instantiate<Mob>();
 
-        public void OnMobTimerTimeout()
-        {
-            Mob mob = (Mob)MobScene.Instance();
+            // Choose a random location on the SpawnPath.
+            // We store the reference to the SpawnLocation node.
+            var mobSpawnLocation = GetNode<PathFollow3D>("SpawnPath/SpawnLocation");
+            // And give it a random offset.
+            mobSpawnLocation.ProgressRatio = GD.Randf();
 
-            var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
-            mobSpawnLocation.UnitOffset = GD.Randf();
+            Vector3 playerPosition = GetNode<Player>("Player").Position;
+            mob.Initialize(mobSpawnLocation.Position, playerPosition);
 
-            Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
-
+            // Spawn the mob by adding it to the Main scene.
             AddChild(mob);
-            mob.Initialize(mobSpawnLocation.Translation, playerPosition);
         }
     }
 
@@ -334,7 +347,7 @@ address this in the next part.
 
 .. |image0| image:: img/05.spawning_mobs/01.monsters_path_preview.png
 .. |image1| image:: img/05.spawning_mobs/02.project_settings.png
-.. |image2| image:: img/05.spawning_mobs/03.window_settings.png
+.. |image2| image:: img/05.spawning_mobs/03.window_settings.webp
 .. |image3| image:: img/05.spawning_mobs/04.camera_preview.png
 .. |image4| image:: img/05.spawning_mobs/05.cylinders_node.png
 .. |image5| image:: img/05.spawning_mobs/06.cylinder_mesh.png
@@ -345,7 +358,7 @@ address this in the next part.
 .. |image10| image:: img/05.spawning_mobs/11.both_cylinders_selected.png
 .. |image11| image:: img/05.spawning_mobs/12.four_cylinders.png
 .. |image12| image:: img/05.spawning_mobs/13.selecting_all_cylinders.png
-.. |image13| image:: img/05.spawning_mobs/14.spatial_material.png
+.. |image13| image:: img/05.spawning_mobs/14.multi_material_selection.webp
 .. |image14| image:: img/05.spawning_mobs/15.bright-cylinders.png
 .. |image15| image:: img/05.spawning_mobs/16.cylinders_fold.png
 .. |image16| image:: img/05.spawning_mobs/17.points_options.png
@@ -356,5 +369,5 @@ address this in the next part.
 .. |image21| image:: img/05.spawning_mobs/21.mob_timer.png
 .. |image22| image:: img/05.spawning_mobs/22.mob_timer_properties.png
 .. |image23| image:: img/05.spawning_mobs/23.timeout_signal.png
-.. |image24| image:: img/05.spawning_mobs/24.connect_timer_to_main.png
+.. |image24| image:: img/05.spawning_mobs/24.connect_timer_to_main.webp
 .. |image25| image:: img/05.spawning_mobs/25.spawn_result.png

@@ -34,7 +34,7 @@ Or it can be done stashing the action in ``Dope Sheet``
 
 An NLA track can be ``mute`` or ``unmute``, the exporter will export all
 the ``mute`` NLA track as a separate action, while blends all the ``unmute``
-NLA tracks into every action (including the action action) being exported.
+NLA tracks into every action (including the action) being exported.
 
 .. image:: img/nla_strip.jpg
 
@@ -62,7 +62,7 @@ Animation Mode
 ---------------------------
 Godot and Blender have different structure to store animation data.
 In Godot animation data is stored in an AnimationPlayer node, instead
-of in each animated node. In order to fix this inconsistence and still
+of in each animated node. In order to fix this inconsistency and still
 make the animation play versatile, this add-on has three animation exporting
 modes.
 

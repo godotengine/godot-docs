@@ -50,10 +50,10 @@ You should not worry about manipulating rows directly, as we usually
 work with columns. However, you can think of the rows of the matrix
 as showing which vectors contribute to moving in a given direction.
 
-When we refer to a value such as `t.x.y`, that's the Y component of
+When we refer to a value such as ``t.x.y``, that's the Y component of
 the X column vector. In other words, the bottom-left of the matrix.
-Similarly, `t.x.x` is top-left, `t.y.x` is top-right, and `t.y.y`
-is bottom-right, where `t` is the Transform2D.
+Similarly, ``t.x.x`` is top-left, ``t.y.x`` is top-right, and ``t.y.y``
+is bottom-right, where ``t`` is the Transform2D.
 
 Scaling the transformation matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +70,7 @@ becomes 2, and 0 times 2 becomes 0, so we end up with this:
 
 .. image:: img/matrices_and_transforms/scale.png
 
-To do this in code, we can simply multiply each of the vectors:
+To do this in code, we multiply each of the vectors:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -79,24 +79,24 @@ To do this in code, we can simply multiply each of the vectors:
     # Scale
     t.x *= 2
     t.y *= 2
-    transform = t # Change the node's transform to what we just calculated.
+    transform = t # Change the node's transform to what we calculated.
 
  .. code-tab:: csharp
 
     Transform2D t = Transform2D.Identity;
     // Scale
-    t.x *= 2;
-    t.y *= 2;
-    Transform = t; // Change the node's transform to what we just calculated.
+    t.X *= 2;
+    t.Y *= 2;
+    Transform = t; // Change the node's transform to what we calculated.
 
 If we wanted to return it to its original scale, we can multiply
 each component by 0.5. That's pretty much all there is to scaling
 a transformation matrix.
 
 To calculate the object's scale from an existing transformation
-matrix, you can use `length()` on each of the column vectors.
+matrix, you can use ``length()`` on each of the column vectors.
 
-.. note:: In actual projects, you can use the `scaled()`
+.. note:: In actual projects, you can use the ``scaled()``
           method to perform scaling.
 
 Rotating the transformation matrix
@@ -119,7 +119,7 @@ the orientation of the vectors determines what the matrix is.
 
 We need to represent "down" and "left" in normal coordinates,
 so means we'll set X to (0, 1) and Y to (-1, 0). These are
-also the values of `Vector2.DOWN` and `Vector2.LEFT`.
+also the values of ``Vector2.DOWN`` and ``Vector2.LEFT``.
 When we do this, we get the desired result of rotating the object:
 
 .. image:: img/matrices_and_transforms/rotate1.png
@@ -148,7 +148,7 @@ hardest thing you need to know.
           rotations in both systems being "from X to Y".
 
 In order to perform a rotation of 0.5 radians (about 28.65 degrees),
-we simply plug in a value of 0.5 to the formula above and evaluate
+we plug in a value of 0.5 to the formula above and evaluate
 to find what the actual values should be:
 
 .. image:: img/matrices_and_transforms/rotate3.png
@@ -164,35 +164,35 @@ Here's how that would be done in code (place the script on a Node2D):
     t.y.y = cos(rot)
     t.x.y = sin(rot)
     t.y.x = -sin(rot)
-    transform = t # Change the node's transform to what we just calculated.
+    transform = t # Change the node's transform to what we calculated.
 
  .. code-tab:: csharp
 
     float rot = 0.5f; // The rotation to apply.
     Transform2D t = Transform2D.Identity;
-    t.x.x = t.y.y = Mathf.Cos(rot);
-    t.x.y = t.y.x = Mathf.Sin(rot);
-    t.y.x *= -1;
-    Transform = t; // Change the node's transform to what we just calculated.
+    t.X.X = t.Y.Y = Mathf.Cos(rot);
+    t.X.Y = t.Y.X = Mathf.Sin(rot);
+    t.Y.X *= -1;
+    Transform = t; // Change the node's transform to what we calculated.
 
 To calculate the object's rotation from an existing transformation
-matrix, you can use `atan2(t.x.y, t.x.x)`, where t is the Transform2D.
+matrix, you can use ``atan2(t.x.y, t.x.x)``, where t is the Transform2D.
 
-.. note:: In actual projects, you can use the `rotated()`
+.. note:: In actual projects, you can use the ``rotated()``
           method to perform rotations.
 
 Basis of the transformation matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-So far we have only been working with the `x` and `y`, vectors, which
+So far we have only been working with the ``x`` and ``y``, vectors, which
 are in charge of representing rotation, scale, and/or shearing
 (advanced, covered at the end). The X and Y vectors are together
 called the *basis* of the transformation matrix. The terms "basis"
 and "basis vectors" are important to know.
 
 You might have noticed that :ref:`class_Transform2D` actually
-has three :ref:`class_Vector2` values: `x`, `y`, and `origin`.
-The `origin` value is not part of the basis, but it is part of the
+has three :ref:`class_Vector2` values: ``x``, ``y``, and ``origin``.
+The ``origin`` value is not part of the basis, but it is part of the
 transform, and we need it to represent position. From now on we'll
 keep track of the origin vector in all examples. You can think of
 origin as another column, but it's often better to think of it as
@@ -201,13 +201,13 @@ completely separate.
 Note that in 3D, Godot has a separate :ref:`class_Basis` structure
 for holding the three :ref:`class_Vector3` values of the basis,
 since the code can get complex and it makes sense to separate
-it from :ref:`class_Transform` (which is composed of one
+it from :ref:`class_Transform3D` (which is composed of one
 :ref:`class_Basis` and one extra :ref:`class_Vector3` for the origin).
 
 Translating the transformation matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Changing the `origin` vector is called a *translating* the transformation
+Changing the ``origin`` vector is called *translating* the transformation
 matrix. Translating is basically a technical term for "moving" the
 object, but it explicitly does not involve any rotation.
 
@@ -217,16 +217,16 @@ of the origin vector this time.
 
 .. image:: img/matrices_and_transforms/identity-origin.png
 
-If we want the object to move to a position of (1, 2), we simply need
-to set its `origin` vector to (1, 2):
+If we want to move the object to a position of (1, 2), we need
+to set its ``origin`` vector to (1, 2):
 
 .. image:: img/matrices_and_transforms/translate.png
 
-There is also a `translated()` method, which performs a different
-operation to adding or changing `origin` directly. The `translated()`
+There is also a ``translated()`` method, which performs a different
+operation to adding or changing ``origin`` directly. The ``translated()``
 method will translate the object *relative to its own rotation*.
 For example, an object rotated 90 degrees clockwise will move to
-the right when `translated()` with `Vector2.UP`.
+the right when ``translated()`` with ``Vector2.UP``.
 
 .. note:: Godot's 2D uses coordinates based on pixels, so in actual
           projects you will want to translate by hundreds of units.
@@ -259,22 +259,22 @@ you to try and reproduce the screenshot without looking at the code!
     # Scale
     t.x *= 3
     t.y *= 3
-    transform = t # Change the node's transform to what we just calculated.
+    transform = t # Change the node's transform to what we calculated.
 
  .. code-tab:: csharp
 
     Transform2D t = Transform2D.Identity;
     // Translation
-    t.origin = new Vector2(350, 150);
+    t.Origin = new Vector2(350, 150);
     // Rotation
     float rot = -0.5f; // The rotation to apply.
-    t.x.x = t.y.y = Mathf.Cos(rot);
-    t.x.y = t.y.x = Mathf.Sin(rot);
-    t.y.x *= -1;
+    t.X.X = t.Y.Y = Mathf.Cos(rot);
+    t.X.Y = t.Y.X = Mathf.Sin(rot);
+    t.Y.X *= -1;
     // Scale
-    t.x *= 3;
-    t.y *= 3;
-    Transform = t; // Change the node's transform to what we just calculated.
+    t.X *= 3;
+    t.Y *= 3;
+    Transform = t; // Change the node's transform to what we calculated.
 
 Shearing the transformation matrix (advanced)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -318,14 +318,14 @@ As an example, let's set Y to (1, 1):
     var t = Transform2D()
     # Shear by setting Y to (1, 1)
     t.y = Vector2.ONE
-    transform = t # Change the node's transform to what we just calculated.
+    transform = t # Change the node's transform to what we calculated.
 
  .. code-tab:: csharp
 
     Transform2D t = Transform2D.Identity;
     // Shear by setting Y to (1, 1)
-    t.y = Vector2.One;
-    Transform = t; // Change the node's transform to what we just calculated.
+    t.Y = Vector2.One;
+    Transform = t; // Change the node's transform to what we calculated.
 
 .. note:: You can't set the raw values of a Transform2D in the editor,
           so you *must* use code if you want to shear the object.
@@ -367,12 +367,12 @@ Practical applications of transforms
 ------------------------------------
 
 In actual projects, you will usually be working with transforms inside
-transforms by having multiple :ref:`class_Node2D` or :ref:`class_Spatial`
+transforms by having multiple :ref:`class_Node2D` or :ref:`class_Node3D`
 nodes parented to each other.
 
-However, sometimes it's very useful to manually calculate the values we
+However, it's useful to understand how to manually calculate the values we
 need. We will go over how you could use :ref:`class_Transform2D` or
-:ref:`class_Transform` to manually calculate transforms of nodes.
+:ref:`class_Transform3D` to manually calculate transforms of nodes.
 
 Converting positions between transforms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -383,32 +383,32 @@ and would like to find the world (parent-relative) position, or if you
 have a world position and want to know where it is relative to the player.
 
 We can find what a vector relative to the player would be defined in
-world space as using the "xform" method:
+world space as using the ``*`` operator:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     # World space vector 100 units below the player.
-    print(transform.xform(Vector2(0, 100)))
+    print(transform * Vector2(0, 100))
 
  .. code-tab:: csharp
 
     // World space vector 100 units below the player.
-    GD.Print(Transform.Xform(new Vector2(0, 100)));
+    GD.Print(Transform * new Vector2(0, 100));
 
-And we can use the "xform_inv" method to find a what world space position
-would be if it was instead defined relative to the player:
+And we can use the ``*`` operator in the opposite order to find a what world
+space position would be if it was defined relative to the player:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     # Where is (0, 100) relative to the player?
-    print(transform.xform_inv(Vector2(0, 100)))
+    print(Vector2(0, 100) * transform)
 
  .. code-tab:: csharp
 
     // Where is (0, 100) relative to the player?
-    GD.Print(Transform.XformInv(new Vector2(0, 100)));
+    GD.Print(new Vector2(0, 100) * Transform);
 
 .. note:: If you know in advance that the transform is positioned at
           (0, 0), you can use the "basis_xform" or "basis_xform_inv"
@@ -422,7 +422,7 @@ to itself. For example, in first-person shooter games, you would want the
 character to move forward (-Z axis) when you press :kbd:`W`.
 
 Since the basis vectors are the orientation relative to the parent,
-and the origin vector is the position relative to the parent, we can simply
+and the origin vector is the position relative to the parent, we can
 add multiples of the basis vectors to move an object relative to itself.
 
 This code moves an object 100 units to its own right:
@@ -435,13 +435,13 @@ This code moves an object 100 units to its own right:
  .. code-tab:: csharp
 
     Transform2D t = Transform;
-    t.origin += t.x * 100;
+    t.Origin += t.X * 100;
     Transform = t;
 
 For moving in 3D, you would need to replace "x" with "basis.x".
 
-.. note:: In actual projects, you can use `translate_object_local` in 3D
-          or `move_local_x` and `move_local_y` in 2D to do this.
+.. note:: In actual projects, you can use ``translate_object_local`` in 3D
+          or ``move_local_x`` and ``move_local_y`` in 2D to do this.
 
 Applying transforms onto transforms
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -467,7 +467,7 @@ The child has a scale of (0.5, 0.5), so you would expect it to be
 a 1:1 ratio square, and it is, but only relative to the parent.
 The child's X vector ends up being (1, 0) in world space, because
 it is scaled by the parent's basis vectors.
-Similarly, the child node's `origin` vector is set to (1, 1), but this
+Similarly, the child node's ``origin`` vector is set to (1, 1), but this
 actually moves it (2, 1) in world space, due to the parent node's
 basis vectors.
 
@@ -477,7 +477,7 @@ the code we would use:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Set up transforms just like in the image, except make positions be 100 times bigger.
+    # Set up transforms like in the image, except make positions be 100 times bigger.
     var parent = Transform2D(Vector2(2, 0), Vector2(0, 1), Vector2(100, 200))
     var child = Transform2D(Vector2(0.5, 0), Vector2(0, 0.5), Vector2(100, 100))
 
@@ -489,33 +489,33 @@ the code we would use:
     # basis_y = (2, 0) * 0 + (0, 1) * 0.5
     var basis_y = parent.x * child.y.x + parent.y * child.y.y
 
-    # Change the node's transform to what we just calculated.
+    # Change the node's transform to what we calculated.
     transform = Transform2D(basis_x, basis_y, origin)
 
  .. code-tab:: csharp
 
-    // Set up transforms just like in the image, except make positions be 100 times bigger.
+    // Set up transforms like in the image, except make positions be 100 times bigger.
     Transform2D parent = new Transform2D(2, 0, 0, 1, 100, 200);
     Transform2D child = new Transform2D(0.5f, 0, 0, 0.5f, 100, 100);
 
     // Calculate the child's world space transform
     // origin = (2, 0) * 100 + (0, 1) * 100 + (100, 200)
-    Vector2 origin = parent.x * child.origin.x + parent.y * child.origin.y + parent.origin;
+    Vector2 origin = parent.X * child.Origin.X + parent.Y * child.Origin.Y + parent.Origin;
     // basisX = (2, 0) * 0.5 + (0, 1) * 0 = (0.5, 0)
-    Vector2 basisX = parent.x * child.x.x + parent.y * child.x.y;
+    Vector2 basisX = parent.X * child.X.X + parent.Y * child.X.Y;
     // basisY = (2, 0) * 0 + (0, 1) * 0.5 = (0.5, 0)
-    Vector2 basisY = parent.x * child.y.x + parent.y * child.y.y;
+    Vector2 basisY = parent.X * child.Y.X + parent.Y * child.Y.Y;
 
-    // Change the node's transform to what we just calculated.
+    // Change the node's transform to what we calculated.
     Transform = new Transform2D(basisX, basisY, origin);
 
 In actual projects, we can find the world transform of the child by
-applying one transform onto another using the `*` operator:
+applying one transform onto another using the ``*`` operator:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Set up transforms just like in the image, except make positions be 100 times bigger.
+    # Set up transforms like in the image, except make positions be 100 times bigger.
     var parent = Transform2D(Vector2(2, 0), Vector2(0, 1), Vector2(100, 200))
     var child = Transform2D(Vector2(0.5, 0), Vector2(0, 0.5), Vector2(100, 100))
 
@@ -524,7 +524,7 @@ applying one transform onto another using the `*` operator:
 
  .. code-tab:: csharp
 
-    // Set up transforms just like in the image, except make positions be 100 times bigger.
+    // Set up transforms like in the image, except make positions be 100 times bigger.
     Transform2D parent = new Transform2D(2, 0, 0, 1, 100, 200);
     Transform2D child = new Transform2D(0.5f, 0, 0, 0.5f, 100, 100);
 
@@ -543,8 +543,8 @@ Inverting a transformation matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The "affine_inverse" function returns a transform that "undoes" the
-previous transform. This can be useful in some situations, but it's
-easier to just provide a few examples.
+previous transform. This can be useful in some situations.
+Let's take a look at a few examples.
 
 Multiplying an inverse transform by the normal transform undoes all
 transformations:
@@ -563,21 +563,21 @@ transformations:
     // The transform is the identity transform.
 
 Transforming a position by a transform and its inverse results in the
-same position (same for "xform_inv"):
+same position:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     var ti = transform.affine_inverse()
-    position = transform.xform(position)
-    position = ti.xform(position)
+    position = transform * position
+    position = ti * position
     # The position is the same as before.
 
  .. code-tab:: csharp
 
     Transform2D ti = Transform.AffineInverse();
-    Position = Transform.Xform(Position);
-    Position = ti.Xform(Position);
+    Position = Transform * Position;
+    Position = ti * Position;
     // The position is the same as before.
 
 How does it all work in 3D?
@@ -588,7 +588,7 @@ work very similarly between 2D and 3D transformations.
 All the code and formulas used above for 2D work the same in 3D,
 with 3 exceptions: the addition of a third axis, that each
 axis is of type :ref:`class_Vector3`, and also that Godot stores
-the :ref:`class_Basis` separately from the :ref:`class_Transform`,
+the :ref:`class_Basis` separately from the :ref:`class_Transform3D`,
 since the math can get complex and it makes sense to separate it.
 
 All of the concepts for how translation, rotation, scale, and shearing
@@ -606,12 +606,7 @@ this project which has colored lines and cubes to help visualize the
 :ref:`class_Basis` vectors and the origin in both 2D and 3D:
 https://github.com/godotengine/godot-demo-projects/tree/master/misc/matrix_transform
 
-.. note:: Spatial's "Matrix" section in Godot 3.2's inspector
-          displays the matrix as transposed, with the columns
-          horizontal and the rows vertical. This may be changed
-          to be less confusing in a future release of Godot.
-
-.. note:: You cannot edit Node2D's transform matrix directly in Godot 3.2's
+.. note:: You cannot edit Node2D's transform matrix directly in Godot 4.0's
           inspector. This may be changed in a future release of Godot.
 
 If you would like additional explanation, you should check out
@@ -625,14 +620,14 @@ The biggest difference between 2D and 3D transformation matrices is
 how you represent rotation by itself without the basis vectors.
 
 With 2D, we have an easy way (atan2) to switch between a transformation
-matrix and an angle. In 3D, we can't simply represent rotation as one
+matrix and an angle. In 3D, rotation is too complex to represent as one
 number. There is something called Euler angles, which can represent
 rotations as a set of 3 numbers, however, they are limited and not very
 useful, except for trivial cases.
 
 In 3D we do not typically use angles, we either use a transformation basis
 (used pretty much everywhere in Godot), or we use quaternions. Godot can
-represent quaternions using the :ref:`class_Quat` struct. My suggestion
+represent quaternions using the :ref:`class_Quaternion` struct. My suggestion
 to you is to completely ignore how they work under-the-hood, because
 they are very complicated and unintuitive.
 

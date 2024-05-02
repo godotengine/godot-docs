@@ -76,27 +76,20 @@ the ability to hot-reload locally and on remote devices, etc.
 
 The goal is to offer a full package to create games and a continuous
 user experience. You can still work with external programs as long as
-there is an import plugin for it. Or you can create one, like the `Tiled
+there is an import plugin available in Godot for it. Or you can create one, like the `Tiled
 Map Importer <https://github.com/vnen/godot-tiled-importer>`__.
 
-That is also partly why Godot offers its own programming languages
-GDScript and VisualScript, along with C#. They're designed for the needs
-of game developers and game designers, and they're tightly integrated in
+That is also partly why Godot offers its own programming language
+GDScript along with C#. GDScript is designed for the needs
+of game developers and game designers, and is tightly integrated in
 the engine and the editor.
 
 GDScript lets you write code using an indentation-based syntax,
 yet it detects types and offers a static language's quality of auto-completion.
 It is also optimized for gameplay code with built-in types like Vectors and Colors.
 
-Note that with GDNative, you can write high-performance code using compiled
-languages like C, C++, Rust, or Python (using the Cython compiler)
-without recompiling the engine.
-
-|image3|
-
-*VisualScript is a node-based programming language that integrates well
-in the editor. You can drag and drop nodes or resources into the graph
-to create new code blocks.*
+Note that with GDExtension, you can write high-performance code using compiled
+languages like C, C++, Rust, D, Haxe, or Swift without recompiling the engine.
 
 Note that the 3D workspace doesn't feature as many tools as the 2D workspace.
 You'll need external programs or add-ons to edit terrains, animate complex characters, and so on.
@@ -139,7 +132,7 @@ that drive the core updates. New features from the core developers often
 focus on what will benefit the most users first.
 
 That said, although a handful of core developers work on it full-time,
-the project has over 600 contributors at the time of writing. Benevolent
+the project has thousands of contributors at the time of writing. Benevolent
 programmers work on features they may need themselves, so you'll see
 improvements in all corners of the engine at the same time in every
 major release.
@@ -153,7 +146,7 @@ or run game code in the editor. This means you can **use the same code**
 and scenes for your games, or **build plugins and extend the editor.**
 
 This leads to a reliable and flexible UI system, as it powers the editor
-itself. With the ``tool`` keyword, you can run any game code in the editor.
+itself. With the ``@tool`` annotation, you can run any game code in the editor.
 
 |image5|
 
@@ -161,7 +154,7 @@ itself. With the ``tool`` keyword, you can run any game code in the editor.
 UI tools for its node-based programming system and for the rest of the
 interface.*
 
-Put the ``tool`` keyword at the top of any GDScript file and it will run
+Put the ``@tool`` annotation at the top of any GDScript file and it will run
 in the editor. This lets you import and export plugins, create plugins
 like custom level editors, or create scripts with the same nodes and API
 you use in your projects.
@@ -183,6 +176,5 @@ interfaces over your 3D world.
 .. |image0| image:: img/engine_design_01.png
 .. |image1| image:: img/engine_design_02.png
 .. |image2| image:: img/engine_design_03.png
-.. |image3| image:: img/engine_design_visual_script.png
 .. |image4| image:: img/engine_design_fsm_plugin.png
 .. |image5| image:: img/engine_design_rpg_in_a_box.png

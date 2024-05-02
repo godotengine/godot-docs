@@ -40,8 +40,9 @@ point:
 
 This is a **vector**. A vector represents a lot of useful information. As well
 as telling us that the point is at ``(4, 3)``, we can also think of it as an
-angle ``θ`` and a length (or magnitude) ``m``. In this case, the arrow is a
-**position vector** - it denotes a position in space, relative to the origin.
+angle ``θ`` (theta) and a length (or magnitude) ``m``. In this case, the arrow
+is a **position vector** - it denotes a position in space, relative to the
+origin.
 
 A very important point to consider about vectors is that they only represent
 **relative** direction and magnitude. There is no concept of a vector's
@@ -74,7 +75,9 @@ pixels down, use the following code:
 
 Godot supports both :ref:`Vector2 <class_Vector2>` and :ref:`Vector3
 <class_Vector3>` for 2D and 3D usage, respectively. The same mathematical rules
-discussed in this article apply to both types.
+discussed in this article apply to both types, and wherever we link to
+``Vector2`` methods in the class reference, you can also check out their
+``Vector3`` counterparts.
 
 Member access
 -------------
@@ -84,21 +87,21 @@ The individual components of the vector can be accessed directly by name.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # create a vector with coordinates (2, 5)
+    # Create a vector with coordinates (2, 5).
     var a = Vector2(2, 5)
-    # create a vector and assign x and y manually
+    # Create a vector and assign x and y manually.
     var b = Vector2()
     b.x = 3
     b.y = 1
 
  .. code-tab:: csharp
 
-    // create a vector with coordinates (2, 5)
+    // Create a vector with coordinates (2, 5).
     var a = new Vector2(2, 5);
-    // create a vector and assign x and y manually
+    // Create a vector and assign x and y manually.
     var b = new Vector2();
-    b.x = 3;
-    b.y = 1;
+    b.X = 3;
+    b.Y = 1;
 
 Adding vectors
 --------------
@@ -125,7 +128,8 @@ Scalar multiplication
 ---------------------
 
 .. note:: Vectors represent both direction and magnitude. A value representing
-          only magnitude is called a **scalar**.
+          only magnitude is called a **scalar**. Scalars use the
+          :ref:`class_float` type in Godot.
 
 A vector can be multiplied by a **scalar**:
 
@@ -134,16 +138,19 @@ A vector can be multiplied by a **scalar**:
 
     var c = a * 2  # (2, 5) * 2 = (4, 10)
     var d = b / 3  # (3, 6) / 3 = (1, 2)
+    var e = d * -2 # (1, 2) * -2 = (-2, -4)
 
  .. code-tab:: csharp
 
     var c = a * 2;  // (2, 5) * 2 = (4, 10)
     var d = b / 3;  // (3, 6) / 3 = (1, 2)
+    var e = d * -2; // (1, 2) * -2 = (-2, -4)
 
 .. image:: img/vector_mult1.png
 
-.. note:: Multiplying a vector by a scalar does not change its direction, only
-          its magnitude. This is how you **scale** a vector.
+.. note:: Multiplying a vector by a positive scalar does not change its direction, only
+          its magnitude. Multiplying with a negative scalar results in a vector in the
+          opposite direction. This is how you **scale** a vector.
 
 Practical applications
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -155,14 +162,21 @@ Movement
 
 A vector can represent **any** quantity with a magnitude and direction. Typical
 examples are: position, velocity, acceleration, and force. In this image, the
-spaceship at step 1 has a position vector of ``(1,3)`` and a velocity vector of
-``(2,1)``. The velocity vector represents how far the ship moves each step. We
+spaceship at step 1 has a position vector of ``(1, 3)`` and a velocity vector of
+``(2, 1)``. The velocity vector represents how far the ship moves each step. We
 can find the position for step 2 by adding the velocity to the current position.
 
 .. image:: img/vector_movement1.png
 
 .. tip:: Velocity measures the **change** in position per unit of time. The new
-         position is found by adding velocity to the previous position.
+         position is found by adding the velocity multiplied by the elapsed time
+         (here assumed to be one unit, e.g. 1 s) to the previous position.
+
+         In a typical 2D game scenario, you would have a velocity in pixels per
+         second, and multiply it by the ``delta`` parameter (time elapsed since
+         the previous frame) from the :ref:`_process() <class_Node_private_method__process>`
+         or :ref:`_physics_process() <class_Node_private_method__physics_process>`
+         callbacks.
 
 Pointing toward a target
 ------------------------
@@ -171,9 +185,9 @@ In this scenario, you have a tank that wishes to point its turret at a robot.
 Subtracting the tank's position from the robot's position gives the vector
 pointing from the tank to the robot.
 
-.. image:: img/vector_subtract2.png
+.. image:: img/vector_subtract2.webp
 
-.. tip:: To find a vector pointing from ``A`` to ``B`` use ``B - A``.
+.. tip:: To find a vector pointing from ``A`` to ``B``, use ``B - A``.
 
 Unit vectors
 ~~~~~~~~~~~~
@@ -187,8 +201,8 @@ Normalization
 
 **Normalizing** a vector means reducing its length to ``1`` while preserving its
 direction. This is done by dividing each of its components by its magnitude.
-Because this is such a common operation, ``Vector2`` and ``Vector3`` provide a
-method for normalizing:
+Because this is such a common operation, Godot provides a dedicated
+:ref:`normalized() <class_Vector2_method_normalized>` method for this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -199,12 +213,11 @@ method for normalizing:
 
     a = a.Normalized();
 
-
 .. warning:: Because normalization involves dividing by the vector's length, you
              cannot normalize a vector of length ``0``. Attempting to do so
              would normally result in an error. In GDScript though, trying to
-             call the ``normalized()`` method on a ``Vector2`` or ``Vector3`` of
-             length 0 leaves the value untouched and avoids the error for you.
+             call the ``normalized()`` method on a vector of length 0 leaves the
+             value untouched and avoids the error for you.
 
 Reflection
 ----------
@@ -220,30 +233,27 @@ other object:
 
 The surface normal has a value of ``(0, -1)`` because this is a horizontal
 surface. When the ball collides, we take its remaining motion (the amount left
-over when it hits the surface) and reflect it using the normal. In Godot, the
-:ref:`Vector2 <class_Vector2>` class has a ``bounce()`` method to handle this.
-Here is a GDScript example of the diagram above using a :ref:`KinematicBody2D
-<class_KinematicBody2D>`:
-
+over when it hits the surface) and reflect it using the normal. In Godot, there
+is a :ref:`bounce() <class_Vector2_method_bounce>` method to handle this.
+Here is a code example of the above diagram using a :ref:`CharacterBody2D
+<class_CharacterBody2D>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # object "collision" contains information about the collision
-    var collision = move_and_collide(velocity * delta)
+    var collision: KinematicCollision2D = move_and_collide(velocity * delta)
     if collision:
-        var reflect = collision.remainder.bounce(collision.normal)
-        velocity = velocity.bounce(collision.normal)
+        var reflect = collision.get_remainder().bounce(collision.get_normal())
+        velocity = velocity.bounce(collision.get_normal())
         move_and_collide(reflect)
 
  .. code-tab:: csharp
 
-    // KinematicCollision2D contains information about the collision
-    KinematicCollision2D collision = MoveAndCollide(_velocity * delta);
+    KinematicCollision2D collision = MoveAndCollide(_velocity * (float)delta);
     if (collision != null)
     {
-        var reflect = collision.Remainder.Bounce(collision.Normal);
-        _velocity = _velocity.Bounce(collision.Normal);
+        var reflect = collision.GetRemainder().Bounce(collision.GetNormal());
+        _velocity = _velocity.Bounce(collision.GetNormal());
         MoveAndCollide(reflect);
     }
 
@@ -263,22 +273,25 @@ and
 
 .. image:: img/vector_dot2.png
 
-However, in most cases it is easiest to use the built-in method. Note that the
-order of the two vectors does not matter:
+The mathematical notation *||A||* represents the magnitude of vector ``A``, and
+*A*\ :sub:`x` means the ``x`` component of vector ``A``.
+
+However, in most cases it is easiest to use the built-in :ref:`dot()
+<class_Vector2_method_dot>` method. Note that the order of the two vectors does not matter:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     var c = a.dot(b)
-    var d = b.dot(a) # These are equivalent.
+    var d = b.dot(a)  # These are equivalent.
 
  .. code-tab:: csharp
 
     float c = a.Dot(b);
-    float d = b.Dot(a); // These are equivalent.
+    float d = b.Dot(a);  // These are equivalent.
 
 The dot product is most useful when used with unit vectors, making the first
-formula reduce to just ``cosθ``. This means we can use the dot product to tell
+formula reduce to just ``cos(θ)``. This means we can use the dot product to tell
 us something about the angle between two vectors:
 
 .. image:: img/vector_dot3.png
@@ -297,11 +310,12 @@ player?
 .. image:: img/vector_facing2.png
 
 The green arrows ``fA`` and ``fB`` are **unit vectors** representing the
-zombies' facing directions and the blue semicircle represents its field of view.
+zombie's facing direction and the blue semicircle represents its field of view.
 For zombie ``A``, we find the direction vector ``AP`` pointing to the player
 using ``P - A`` and normalize it, however, Godot has a helper method to do this
-called ``direction_to``. If the angle between this vector and the facing vector
-is less than 90°, then the zombie can see the player.
+called :ref:`direction_to() <class_Vector2_method_direction_to>`. If the angle
+between this vector and the facing vector is less than 90°, then the zombie can
+see the player.
 
 In code it would look like this:
 
@@ -345,13 +359,12 @@ The cross product is calculated like this:
  .. code-tab:: csharp
 
     var c = new Vector3();
-    c.x = (a.y * b.z) - (a.z * b.y);
-    c.y = (a.z * b.x) - (a.x * b.z);
-    c.z = (a.x * b.y) - (a.y * b.x);
+    c.X = (a.Y * b.Z) - (a.Z * b.Y);
+    c.Y = (a.Z * b.X) - (a.X * b.Z);
+    c.Z = (a.X * b.Y) - (a.Y * b.X);
 
-
-
-With Godot, you can use the built-in method:
+With Godot, you can use the built-in :ref:`Vector3.cross() <class_Vector3_method_cross>`
+method:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -362,6 +375,10 @@ With Godot, you can use the built-in method:
 
     var c = a.Cross(b);
 
+The cross product is not mathematically defined in 2D. The :ref:`Vector2.cross()
+<class_Vector2_method_cross>` method is a commonly used analog of the 3D cross
+product for 2D vectors.
+
 .. note:: In the cross product, order matters. ``a.cross(b)`` does not give the
           same result as ``b.cross(a)``. The resulting vectors point in
           **opposite** directions.
@@ -371,8 +388,8 @@ Calculating normals
 
 One common use of cross products is to find the surface normal of a plane or
 surface in 3D space. If we have the triangle ``ABC`` we can use vector
-subtraction to find two edges ``AB`` and ``AC``. Using the cross product, ``AB x
-AC`` produces a vector perpendicular to both: the surface normal.
+subtraction to find two edges ``AB`` and ``AC``. Using the cross product,
+``AB × AC`` produces a vector perpendicular to both: the surface normal.
 
 Here is a function to calculate a triangle's normal:
 
@@ -380,7 +397,7 @@ Here is a function to calculate a triangle's normal:
  .. code-tab:: gdscript GDScript
 
     func get_triangle_normal(a, b, c):
-        # find the surface normal given 3 vertices
+        # Find the surface normal given 3 vertices.
         var side1 = b - a
         var side2 = c - a
         var normal = side1.cross(side2)
@@ -390,7 +407,7 @@ Here is a function to calculate a triangle's normal:
 
     Vector3 GetTriangleNormal(Vector3 a, Vector3 b, Vector3 c)
     {
-        // find the surface normal given 3 vertices
+        // Find the surface normal given 3 vertices.
         var side1 = b - a;
         var side2 = c - a;
         var normal = side1.Cross(side2);

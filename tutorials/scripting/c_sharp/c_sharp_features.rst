@@ -1,7 +1,7 @@
 .. _doc_c_sharp_features:
 
-C# features
-===========
+C# language features
+====================
 
 This page provides an overview of the commonly used features of both C# and Godot
 and how they are used together.
@@ -67,7 +67,8 @@ Generic methods are also provided to make this type conversion transparent.
 
 To check if the node can be cast to Sprite2D, you can use the ``is`` operator.
 The ``is`` operator returns false if the node cannot be cast to Sprite2D,
-otherwise it returns true.
+otherwise it returns true. Note that when the ``is`` operator is used against ``null``
+the result is always going to be ``false``.
 
 .. code-block:: csharp
 
@@ -76,99 +77,24 @@ otherwise it returns true.
         // Yup, it's a Sprite2D!
     }
 
+    if (null is Sprite2D)
+    {
+        // This block can never happen.
+    }
+
+You can also declare a new variable to conditionally store the result of the cast
+if the ``is`` operator returns ``true``.
+
+.. code-block:: csharp
+
+    if (GetNode("MySprite") is Sprite2D mySprite)
+    {
+        // The mySprite variable only exists inside this block, and it's never null.
+        mySprite.SetFrame(0);
+    }
+
 For more advanced type checking, you can look into `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_.
 
-.. _doc_c_sharp_signals:
-
-C# signals
-----------
-
-For a complete C# example, see the **Handling a signal** section in the step by step :ref:`doc_scripting` tutorial.
-
-Declaring a signal in C# is done with the ``[Signal]`` attribute on a delegate.
-
-.. code-block:: csharp
-
-    [Signal]
-    delegate void MySignal();
-
-    [Signal]
-    delegate void MySignalWithArguments(string foo, int bar);
-
-These signals can then be connected either in the editor or from code with ``Connect``.
-If you want to connect a signal in the editor, you need to (re)build the project assemblies to see the new signal. This build can be manually triggered by clicking the "Build" button at the top right corner of the editor window.
-
-.. code-block:: csharp
-
-    public void MyCallback()
-    {
-        GD.Print("My callback!");
-    }
-
-    public void MyCallbackWithArguments(string foo, int bar)
-    {
-        GD.Print("My callback with: ", foo, " and ", bar, "!");
-    }
-
-    public void SomeFunction()
-    {
-        instance.Connect("MySignal", this, "MyCallback");
-        instance.Connect(nameof(MySignalWithArguments), this, "MyCallbackWithArguments");
-    }
-
-Emitting signals is done with the ``EmitSignal`` method.
-
-.. code-block:: csharp
-
-    public void SomeFunction()
-    {
-        EmitSignal(nameof(MySignal));
-        EmitSignal("MySignalWithArguments", "hello there", 28);
-    }
-
-Notice that you can always reference a signal name with the ``nameof`` keyword (applied on the delegate itself).
-
-It is possible to bind values when establishing a connection by passing a Godot array.
-
-.. code-block:: csharp
-
-    public int Value { get; private set; } = 0;
-
-    private void ModifyValue(int modifier)
-    {
-        Value += modifier;
-    }
-
-    public void SomeFunction()
-    {
-        var plusButton = (Button)GetNode("PlusButton");
-        var minusButton = (Button)GetNode("MinusButton");
-
-        plusButton.Connect("pressed", this, "ModifyValue", new Godot.Collections.Array { 1 });
-        minusButton.Connect("pressed", this, "ModifyValue", new Godot.Collections.Array { -1 });
-    }
-
-Signals support parameters and bound values of all the `built-in types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_ and Classes derived from :ref:`Godot.Object <class_Object>`.
-Consequently, any ``Node`` or ``Reference`` will be compatible automatically, but custom data objects will need to extend from `Godot.Object` or one of its subclasses.
-
-.. code-block:: csharp
-
-    public class DataObject : Godot.Object
-    {
-        public string Field1 { get; set; }
-        public string Field2 { get; set; }
-    }
-
-
-Finally, signals can be created by calling ``AddUserSignal``, but be aware that it should be executed before any use of said signals (with ``Connect`` or ``EmitSignal``).
-
-.. code-block:: csharp
-
-    public void SomeFunction()
-    {
-        AddUserSignal("MyOtherSignal");
-        EmitSignal("MyOtherSignal");
-    }
 
 Preprocessor defines
 --------------------
@@ -211,7 +137,21 @@ Or you can detect which engine your code is in, useful for making cross-engine l
     #elif UNITY_5_3_OR_NEWER
             print("This is Unity.");
     #else
-            throw new InvalidWorkflowException("Only Godot and Unity are supported.");
+            throw new NotSupportedException("Only Godot and Unity are supported.");
+    #endif
+        }
+
+Or you can write scripts that target multiple Godot versions and take
+advantage of features that are only available on some of those versions:
+
+.. code-block:: csharp
+
+        public void UseCoolFeature()
+        {
+    #if GODOT4_3_OR_GREATER || GODOT4_2_2_OR_GREATER
+            // Use CoolFeature, that was added to Godot in 4.3 and cherry-picked into 4.2.2, here.
+    #else
+            // Use a workaround for the absence of CoolFeature here.
     #endif
         }
 
@@ -220,6 +160,10 @@ Full list of defines
 
 * ``GODOT`` is always defined for Godot projects.
 
+* ``TOOLS`` is defined when building with the Debug configuration (editor and editor player).
+
+* ``GODOT_REAL_T_IS_DOUBLE`` is defined when the ``GodotFloat64`` property is set to ``true``.
+
 * One of ``GODOT_64`` or ``GODOT_32`` is defined depending on if the architecture is 64-bit or 32-bit.
 
 * One of ``GODOT_LINUXBSD``, ``GODOT_WINDOWS``, ``GODOT_OSX``,
@@ -227,19 +171,32 @@ Full list of defines
   depending on the OS. These names may change in the future.
   These are created from the ``get_name()`` method of the
   :ref:`OS <class_OS>` singleton, but not every possible OS
-  the method returns is an OS that Godot with Mono runs on.
+  the method returns is an OS that Godot with .NET runs on.
+
+* ``GODOTX``, ``GODOTX_Y``, ``GODOTX_Y_Z``, ``GODOTx_OR_GREATER``,
+  ``GODOTX_y_OR_GREATER``, and ``GODOTX_Y_z_OR_GREATER``, where ``X``, ``Y``,
+  and ``Z`` are replaced by the current major, minor and patch version of Godot.
+  ``x``, ``y``, and ``z`` are replaced by all values from 0 to the current version number for that
+  component.
+
+  .. note::
+
+    These defines were first added in Godot 4.0.4 and 4.1. Version defines for
+    prior versions do not exist, regardless of the current Godot version.
+
+  For example: Godot 4.0.5 defines ``GODOT4``, ``GODOT4_OR_GREATER``,
+  ``GODOT4_0``, ``GODOT4_0_OR_GREATER``, ``GODOT4_0_5``,
+  ``GODOT4_0_4_OR_GREATER``, and ``GODOT4_0_5_OR_GREATER``. Godot 4.3.2 defines
+  ``GODOT4``, ``GODOT4_OR_GREATER``, ``GODOT4_3``, ``GODOT4_0_OR_GREATER``,
+  ``GODOT4_1_OR_GREATER``, ``GODOT4_2_OR_GREATER``, ``GODOT4_3_OR_GREATER``,
+  ``GODOT4_3_2``, ``GODOT4_3_0_OR_GREATER``, ``GODOT4_3_1_OR_GREATER``, and
+  ``GODOT4_3_2_OR_GREATER``.
 
 When **exporting**, the following may also be defined depending on the export features:
 
 * One of ``GODOT_PC``, ``GODOT_MOBILE``, or ``GODOT_WEB`` depending on the platform type.
 
-* One of ``GODOT_ARM64_V8A`` or ``GODOT_ARMEABI_V7A`` on Android only depending on the architecture.
-
-* One of ``GODOT_ARM64`` or ``GODOT_ARMV7`` on iOS only depending on the architecture.
-
-* Any of ``GODOT_S3TC``, ``GODOT_ETC``, and ``GODOT_ETC2`` depending on the texture compression type.
-
-* Any custom features added in the export menu will be capitalized and prefixed: ``foo`` -> ``GODOT_FOO``.
+* One of ``GODOT_WINDOWS``, ``GODOT_LINUXBSD``, ``GODOT_MACOS``, ``GODOT_ANDROID``, ``GODOT_IOS``, or ``GODOT_WEB`` depending on the platform.
 
 To see an example project, see the OS testing demo:
 https://github.com/godotengine/godot-demo-projects/tree/master/misc/os_test

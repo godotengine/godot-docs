@@ -1,6 +1,9 @@
+extends Node
+
 var thread
 var mutex
-var sem
+var semaphore
+var exit_thread = false
 
 var time_max = 100 # Milliseconds.
 
@@ -16,11 +19,11 @@ func _unlock(_caller):
 
 
 func _post(_caller):
-	sem.post()
+	semaphore.post()
 
 
 func _wait(_caller):
-	sem.wait()
+	semaphore.wait()
 
 
 func queue_resource(path, p_in_front = false):
@@ -135,11 +138,29 @@ func thread_process():
 
 func thread_func(_u):
 	while true:
+		mutex.lock()
+		var should_exit = exit_thread # Protect with Mutex.
+		mutex.unlock()
+
+		if should_exit:
+			break
 		thread_process()
 
 
 func start():
 	mutex = Mutex.new()
-	sem = Semaphore.new()
+	semaphore = Semaphore.new()
 	thread = Thread.new()
 	thread.start(self, "thread_func", 0)
+
+# Triggered by calling "get_tree().quit()".
+func _exit_tree():
+	mutex.lock()
+	exit_thread = true # Protect with Mutex.
+	mutex.unlock()
+
+	# Unblock by posting.
+	semaphore.post()
+
+	# Wait until it exits.
+	thread.wait_to_finish()

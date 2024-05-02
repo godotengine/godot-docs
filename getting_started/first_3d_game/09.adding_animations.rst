@@ -17,7 +17,7 @@ Using the animation editor
 The engine comes with tools to author animations in the editor. You can then use
 the code to play and control them at runtime.
 
-Open the player scene, select the player node, and add an animation player node.
+Open the player scene, select the ``Player`` node, and add an :ref:`AnimationPlayer <class_AnimationPlayer>` node.
 
 The *Animation* dock appears in the bottom panel.
 
@@ -35,7 +35,7 @@ Name the animation "float".
 
 |image3|
 
-Once you created the animation, the timeline appears with numbers representing
+Once you've created the animation, the timeline appears with numbers representing
 time in seconds.
 
 |image4|
@@ -43,7 +43,7 @@ time in seconds.
 We want the animation to start playback automatically at the start of the game.
 Also, it should loop.
 
-To do so, you can click the button with an "A+" icon in the animation toolbar
+To do so, you can click the autoplay button (|Autoplay|) in the animation toolbar
 and the looping arrows, respectively.
 
 |image5|
@@ -77,30 +77,44 @@ click any of them to create a keyframe, a time and value pair for the
 corresponding property. The keyframe gets inserted where your time cursor is in
 the timeline.
 
-Let's insert our first keys. Here, we will animate both the translation and the
-rotation of the *Character* node.
+Let's insert our first keys. Here, we will animate both the position and the
+rotation of the ``Character`` node.
 
-Select the *Character* and click the key icon next to *Translation* in the
-*Inspector*. Do the same for *Rotation Degrees*.
+Select the ``Character`` and in the *Inspector* expand the *Transform* section. Click the key icon next to *Position*, and *Rotation*.
 
 |image10|
+
+.. image:: img/09.adding_animations/curves.webp
+
+For this tutorial, just create RESET Track(s) which is the default choice
 
 Two tracks appear in the editor with a diamond icon representing each keyframe.
 
 |image11|
 
 You can click and drag on the diamonds to move them in time. Move the
-translation key to ``0.2`` seconds and the rotation key to ``0.1`` seconds.
+position key to ``0.3`` seconds and the rotation key to ``0.1`` seconds.
 
 |image12|
 
 Move the time cursor to ``0.5`` seconds by clicking and dragging on the gray
-timeline. In the *Inspector*, set the *Translation*'s *Y* axis to about
-``0.65`` meters and the *Rotation Degrees*' *X* axis to ``8``.
+timeline.
+
+|timeline_05_click|
+
+In the *Inspector*, set the *Position*'s *Y* axis to ``0.65`` meters and the
+*Rotation*' *X* axis to ``8``.
+
+If you don't see the properties in the *Inspector* panel, first click on the
+``Character`` node again in the *Scene* dock.
 
 |image13|
 
-Create a keyframe for both properties and shift the translation key to ``0.7``
+Create a keyframe for both properties
+
+|second_keys_both|
+
+Now, move the position keyframe to ``0.7``
 seconds by dragging it on the timeline.
 
 |image14|
@@ -114,8 +128,10 @@ seconds by dragging it on the timeline.
     make them feel alive.
 
 Move the time cursor to the end of the animation, at ``1.2`` seconds. Set the Y
-translation to about ``0.35`` and the X rotation to ``-9`` degrees. Once again,
+position to about ``0.35`` and the X rotation to ``-9`` degrees. Once again,
 create a key for both properties.
+
+|animation_final_keyframes|
 
 You can preview the result by clicking the play button or pressing :kbd:`Shift + D`.
 Click the stop button or press :kbd:`S` to stop playback.
@@ -151,7 +167,7 @@ Apply an ease-out to the second keyframe in the rotation track.
 
 |image19|
 
-Do the opposite for the second translation keyframe, dragging it to the right.
+Do the opposite for the second position keyframe, dragging it to the right.
 
 |image20|
 
@@ -170,7 +186,7 @@ Your animation should look something like this.
 
 If you play the game, the player's creature will now float!
 
-If the creature is a little too close to the floor, you can move the *Pivot* up
+If the creature is a little too close to the floor, you can move the ``Pivot`` up
 to offset it.
 
 Controlling the animation in code
@@ -179,7 +195,7 @@ Controlling the animation in code
 We can use code to control the animation playback based on the player's input.
 Let's change the animation speed when the character is moving.
 
-Open the *Player*'s script by clicking the script icon next to it.
+Open the ``Player``'s script by clicking the script icon next to it.
 
 |image22|
 
@@ -191,32 +207,32 @@ vector, add the following code.
 
    func _physics_process(delta):
        #...
-       #if direction != Vector3.ZERO:
+       if direction != Vector3.ZERO:
            #...
-           $AnimationPlayer.playback_speed = 4
+           $AnimationPlayer.speed_scale = 4
        else:
-           $AnimationPlayer.playback_speed = 1
+           $AnimationPlayer.speed_scale = 1
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         // ...
         if (direction != Vector3.Zero)
         {
             // ...
-            GetNode<AnimationPlayer>("AnimationPlayer").PlaybackSpeed = 4;
+            GetNode<AnimationPlayer>("AnimationPlayer").SpeedScale = 4;
         }
         else
         {
-            GetNode<AnimationPlayer>("AnimationPlayer").PlaybackSpeed = 1;
+            GetNode<AnimationPlayer>("AnimationPlayer").SpeedScale = 1;
         }
     }
 
 This code makes it so when the player moves, we multiply the playback speed by
 ``4``. When they stop, we reset it to normal.
 
-We mentioned that the pivot could layer transforms on top of the animation. We
+We mentioned that the ``Pivot`` could layer transforms on top of the animation. We
 can make the character arc when jumping using the following line of code. Add it
 at the end of ``_physics_process()``.
 
@@ -229,11 +245,11 @@ at the end of ``_physics_process()``.
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         // ...
-        var pivot = GetNode<Spatial>("Pivot");
-        pivot.Rotation = new Vector3(Mathf.Pi / 6f * _velocity.y / JumpImpulse, pivot.Rotation.y, pivot.Rotation.z);
+        var pivot = GetNode<Node3D>("Pivot");
+        pivot.Rotation = new Vector3(Mathf.Pi / 6.0f * Velocity.Y / JumpImpulse, pivot.Rotation.Y, pivot.Rotation.Z);
     }
 
 Animating the mobs
@@ -242,31 +258,39 @@ Animating the mobs
 Here's another nice trick with animations in Godot: as long as you use a similar
 node structure, you can copy them to different scenes.
 
-For example, both the *Mob* and the *Player* scenes have a *Pivot* and a
-*Character* node, so we can reuse animations between them.
+For example, both the ``Mob`` and the ``Player`` scenes have a ``Pivot`` and a
+``Character`` node, so we can reuse animations between them.
 
-Open the *Player* scene, select the animation player node and open the "float" animation.
-Next, click on **Animation > Copy**. Then open ``Mob.tscn`` and open its animation
-player (add an AnimationPlayer child node to Mob it not already done).
-Click **Animation > Paste**. That's it; all monsters will now play the float animation.
+Open the *Player* scene, select the AnimationPlayer node and then click on
+**Animation > Manage Animations...**. Click the *Copy animation to clipboard* button
+(two small squares) alongside the *float* animation. Click OK to close the window.
+
+Then open ``mob.tscn``, create an :ref:`AnimationPlayer <class_AnimationPlayer>` child
+node and select it. Click **Animation > Manage Animations**, then **Add Library**. You
+should see the message "Global library will be created." Leave the text field blank and
+click OK. Click the *Paste* icon (clipboard) and it should appear in the window. Click OK
+to close the window.
+
+Next, make sure that the autoplay button (|Autoplay|) and the looping
+arrows (Animation looping) are also turned on in the animation editor in the bottom panel.
+That's it; all monsters will now play the float animation.
 
 We can change the playback speed based on the creature's ``random_speed``. Open
-the *Mob*'s script and at the end of the ``initialize()`` function, add the
-following line.
+the *Mob*'s script and at the end of the ``initialize()`` function, add the following line.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
    func initialize(start_position, player_position):
        #...
-       $AnimationPlayer.playback_speed = random_speed / min_speed
+       $AnimationPlayer.speed_scale = random_speed / min_speed
 
  .. code-tab:: csharp
 
     public void Initialize(Vector3 startPosition, Vector3 playerPosition)
     {
         // ...
-        GetNode<AnimationPlayer>("AnimationPlayer").PlaybackSpeed = randomSpeed / MinSpeed;
+        GetNode<AnimationPlayer>("AnimationPlayer").SpeedScale = randomSpeed / MinSpeed;
     }
 
 And with that, you finished coding your first complete 3D game.
@@ -282,119 +306,149 @@ Here's the *Player* script.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+    extends CharacterBody3D
 
-   # Emitted when the player was hit by a mob.
-   signal hit
+    signal hit
 
-   # How fast the player moves in meters per second.
-   export var speed = 14
-   # The downward acceleration when in the air, in meters per second per second.
-   export var fall_acceleration = 75
-   # Vertical impulse applied to the character upon jumping in meters per second.
-   export var jump_impulse = 20
-   # Vertical impulse applied to the character upon bouncing over a mob in meters per second.
-   export var bounce_impulse = 16
+    # How fast the player moves in meters per second.
+    @export var speed = 14
+    # The downward acceleration while in the air, in meters per second squared.
+    @export var fall_acceleration = 75
+    # Vertical impulse applied to the character upon jumping in meters per second.
+    @export var jump_impulse = 20
+    # Vertical impulse applied to the character upon bouncing over a mob
+    # in meters per second.
+    @export var bounce_impulse = 16
 
-   var velocity = Vector3.ZERO
-
-
-   func _physics_process(delta):
-       var direction = Vector3.ZERO
-
-       if Input.is_action_pressed("move_right"):
-           direction.x += 1
-       if Input.is_action_pressed("move_left"):
-           direction.x -= 1
-       if Input.is_action_pressed("move_back"):
-           direction.z += 1
-       if Input.is_action_pressed("move_forward"):
-           direction.z -= 1
-
-       if direction != Vector3.ZERO:
-           direction = direction.normalized()
-           $Pivot.look_at(translation + direction, Vector3.UP)
-           $AnimationPlayer.playback_speed = 4
-       else:
-           $AnimationPlayer.playback_speed = 1
-
-       velocity.x = direction.x * speed
-       velocity.z = direction.z * speed
-
-       # Jumping
-       if is_on_floor() and Input.is_action_just_pressed("jump"):
-           velocity.y += jump_impulse
-
-       velocity.y -= fall_acceleration * delta
-       velocity = move_and_slide(velocity, Vector3.UP)
-
-       for index in range(get_slide_count()):
-           var collision = get_slide_collision(index)
-           if collision.collider.is_in_group("mob"):
-               var mob = collision.collider
-               if Vector3.UP.dot(collision.normal) > 0.1:
-                   mob.squash()
-                   velocity.y = bounce_impulse
-
-       $Pivot.rotation.x = PI / 6 * velocity.y / jump_impulse
+    var target_velocity = Vector3.ZERO
 
 
-   func die():
-       emit_signal("hit")
-       queue_free()
+    func _physics_process(delta):
+        # We create a local variable to store the input direction
+        var direction = Vector3.ZERO
 
+        # We check for each move input and update the direction accordingly
+        if Input.is_action_pressed("move_right"):
+            direction.x = direction.x + 1
+        if Input.is_action_pressed("move_left"):
+            direction.x = direction.x - 1
+        if Input.is_action_pressed("move_back"):
+            # Notice how we are working with the vector's x and z axes.
+            # In 3D, the XZ plane is the ground plane.
+            direction.z = direction.z + 1
+        if Input.is_action_pressed("move_forward"):
+            direction.z = direction.z - 1
 
-   func _on_MobDetector_body_entered(_body):
-       die()
+        # Prevent diagonal movement being very fast
+        if direction != Vector3.ZERO:
+            direction = direction.normalized()
+            $Pivot.look_at(position + direction,Vector3.UP)
+            $AnimationPlayer.speed_scale = 4
+        else:
+            $AnimationPlayer.speed_scale = 1
+
+        # Ground Velocity
+        target_velocity.x = direction.x * speed
+        target_velocity.z = direction.z * speed
+
+        # Vertical Velocity
+        if not is_on_floor(): # If in the air, fall towards the floor
+            target_velocity.y = target_velocity.y - (fall_acceleration * delta)
+
+        # Jumping.
+        if is_on_floor() and Input.is_action_just_pressed("jump"):
+            target_velocity.y = jump_impulse
+
+        # Iterate through all collisions that occurred this frame
+        # in C this would be for(int i = 0; i < collisions.Count; i++)
+        for index in range(get_slide_collision_count()):
+            # We get one of the collisions with the player
+            var collision = get_slide_collision(index)
+
+            # If the collision is with ground
+            if collision.get_collider() == null:
+                continue
+
+            # If the collider is with a mob
+            if collision.get_collider().is_in_group("mob"):
+                var mob = collision.get_collider()
+                # we check that we are hitting it from above.
+                if Vector3.UP.dot(collision.get_normal()) > 0.1:
+                    # If so, we squash it and bounce.
+                    mob.squash()
+                    target_velocity.y = bounce_impulse
+                    # Prevent further duplicate calls.
+                    break
+
+        # Moving the Character
+        velocity = target_velocity
+        move_and_slide()
+
+        $Pivot.rotation.x = PI / 6 * velocity.y / jump_impulse
+
+    # And this function at the bottom.
+    func die():
+        hit.emit()
+        queue_free()
+
+    func _on_mob_detector_body_entered(body):
+        die()
 
  .. code-tab:: csharp
 
-    public class Player : KinematicBody
+    using Godot;
+
+    public partial class Player : CharacterBody3D
     {
         // Emitted when the player was hit by a mob.
         [Signal]
-        public delegate void Hit();
+        public delegate void HitEventHandler();
 
         // How fast the player moves in meters per second.
         [Export]
-        public int Speed = 14;
+        public int Speed { get; set; } = 14;
         // The downward acceleration when in the air, in meters per second squared.
         [Export]
-        public int FallAcceleration = 75;
+        public int FallAcceleration { get; set; } = 75;
         // Vertical impulse applied to the character upon jumping in meters per second.
         [Export]
-        public int JumpImpulse = 20;
+        public int JumpImpulse { get; set; } = 20;
         // Vertical impulse applied to the character upon bouncing over a mob in meters per second.
         [Export]
-        public int BounceImpulse = 16;
+        public int BounceImpulse { get; set; } = 16;
 
-        private Vector3 _velocity = Vector3.Zero;
+        private Vector3 _targetVelocity = Vector3.Zero;
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
+            // We create a local variable to store the input direction.
             var direction = Vector3.Zero;
 
+            // We check for each move input and update the direction accordingly.
             if (Input.IsActionPressed("move_right"))
             {
-                direction.x += 1f;
+                direction.X += 1.0f;
             }
             if (Input.IsActionPressed("move_left"))
             {
-                direction.x -= 1f;
+                direction.X -= 1.0f;
             }
             if (Input.IsActionPressed("move_back"))
             {
-                direction.z += 1f;
+                // Notice how we are working with the vector's X and Z axes.
+                // In 3D, the XZ plane is the ground plane.
+                direction.Z += 1.0f;
             }
             if (Input.IsActionPressed("move_forward"))
             {
-                direction.z -= 1f;
+                direction.Z -= 1.0f;
             }
 
+            // Prevent diagonal movement being very fast.
             if (direction != Vector3.Zero)
             {
                 direction = direction.Normalized();
-                GetNode<Spatial>("Pivot").LookAt(Translation + direction, Vector3.Up);
+                GetNode<Node3D>("Pivot").LookAt(Position + direction, Vector3.Up);
                 GetNode<AnimationPlayer>("AnimationPlayer").PlaybackSpeed = 4;
             }
             else
@@ -402,42 +456,58 @@ Here's the *Player* script.
                 GetNode<AnimationPlayer>("AnimationPlayer").PlaybackSpeed = 1;
             }
 
-            _velocity.x = direction.x * Speed;
-            _velocity.z = direction.z * Speed;
+            // Ground velocity
+            _targetVelocity.X = direction.X * Speed;
+            _targetVelocity.Z = direction.Z * Speed;
+
+            // Vertical velocity
+            if (!IsOnFloor())
+            {
+                _targetVelocity.Y -= FallAcceleration * (float)delta;
+            }
 
             // Jumping.
             if (IsOnFloor() && Input.IsActionJustPressed("jump"))
             {
-                _velocity.y += JumpImpulse;
+                _targetVelocity.Y += JumpImpulse;
             }
 
-            _velocity.y -= FallAcceleration * delta;
-            _velocity = MoveAndSlide(_velocity, Vector3.Up);
-
-            for (int index = 0; index < GetSlideCount(); index++)
+            // Iterate through all collisions that occurred this frame.
+            for (int index = 0; index < GetSlideCollisionCount(); index++)
             {
-                KinematicCollision collision = GetSlideCollision(index);
-                if (collision.Collider is Mob mob && mob.IsInGroup("mob"))
+                // We get one of the collisions with the player.
+                KinematicCollision3D collision = GetSlideCollision(index);
+
+                // If the collision is with a mob.
+                if (collision.GetCollider() is Mob mob)
                 {
-                    if (Vector3.Up.Dot(collision.Normal) > 0.1f)
+                    // We check that we are hitting it from above.
+                    if (Vector3.Up.Dot(collision.GetNormal()) > 0.1f)
                     {
+                        // If so, we squash it and bounce.
                         mob.Squash();
-                        _velocity.y = BounceImpulse;
+                        _targetVelocity.Y = BounceImpulse;
+                        // Prevent further duplicate calls.
+                        break;
                     }
                 }
             }
 
-            var pivot = GetNode<Spatial>("Pivot");
-            pivot.Rotation = new Vector3(Mathf.Pi / 6f * _velocity.y / JumpImpulse, pivot.Rotation.y, pivot.Rotation.z);
+            // Moving the character
+            Velocity = _targetVelocity;
+            MoveAndSlide();
+
+            var pivot = GetNode<Node3D>("Pivot");
+            pivot.Rotation = new Vector3(Mathf.Pi / 6.0f * Velocity.Y / JumpImpulse, pivot.Rotation.Y, pivot.Rotation.Z);
         }
 
         private void Die()
         {
-            EmitSignal(nameof(Hit));
+            EmitSignal(SignalName.Hit);
             QueueFree();
         }
 
-        public void OnMobDetectorBodyEntered(Node body)
+        private void OnMobDetectorBodyEntered(Node body)
         {
             Die();
         }
@@ -449,110 +519,124 @@ And the *Mob*'s script.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+    extends CharacterBody3D
 
-   # Emitted when the player jumped on the mob.
-   signal squashed
+    # Minimum speed of the mob in meters per second.
+    @export var min_speed = 10
+    # Maximum speed of the mob in meters per second.
+    @export var max_speed = 18
 
-   # Minimum speed of the mob in meters per second.
-   export var min_speed = 10
-   # Maximum speed of the mob in meters per second.
-   export var max_speed = 18
+    # Emitted when the player jumped on the mob
+    signal squashed
 
-   var velocity = Vector3.ZERO
+    func _physics_process(_delta):
+        move_and_slide()
 
+    # This function will be called from the Main scene.
+    func initialize(start_position, player_position):
+        # We position the mob by placing it at start_position
+        # and rotate it towards player_position, so it looks at the player.
+        look_at_from_position(start_position, player_position, Vector3.UP)
+        # Rotate this mob randomly within range of -90 and +90 degrees,
+        # so that it doesn't move directly towards the player.
+        rotate_y(randf_range(-PI / 4, PI / 4))
 
-   func _physics_process(_delta):
-       move_and_slide(velocity)
+        # We calculate a random speed (integer)
+        var random_speed = randi_range(min_speed, max_speed)
+        # We calculate a forward velocity that represents the speed.
+        velocity = Vector3.FORWARD * random_speed
+        # We then rotate the velocity vector based on the mob's Y rotation
+        # in order to move in the direction the mob is looking.
+        velocity = velocity.rotated(Vector3.UP, rotation.y)
 
+        $AnimationPlayer.speed_scale = random_speed / min_speed
 
-   func initialize(start_position, player_position):
-       translation = start_position
-       look_at(player_position, Vector3.UP)
-       rotate_y(rand_range(-PI / 4, PI / 4))
-
-       var random_speed = rand_range(min_speed, max_speed)
-       velocity = Vector3.FORWARD * random_speed
-       velocity = velocity.rotated(Vector3.UP, rotation.y)
-
-       $AnimationPlayer.playback_speed = random_speed / min_speed
-
+    func _on_visible_on_screen_notifier_3d_screen_exited():
+        queue_free()
 
     func squash():
-       emit_signal("squashed")
-       queue_free()
-
-
-   func _on_VisibilityNotifier_screen_exited():
-       queue_free()
+        squashed.emit()
+        queue_free() # Destroy this node
 
  .. code-tab:: csharp
 
-    public class Mob : KinematicBody
+    using Godot;
+
+    public partial class Mob : CharacterBody3D
     {
         // Emitted when the played jumped on the mob.
         [Signal]
-        public delegate void Squashed();
+        public delegate void SquashedEventHandler();
 
         // Minimum speed of the mob in meters per second
         [Export]
-        public int MinSpeed = 10;
+        public int MinSpeed { get; set; } = 10;
         // Maximum speed of the mob in meters per second
         [Export]
-        public int MaxSpeed = 18;
+        public int MaxSpeed { get; set; } = 18;
 
-        private Vector3 _velocity = Vector3.Zero;
-
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            MoveAndSlide(_velocity);
+            MoveAndSlide();
         }
 
+        // This function will be called from the Main scene.
         public void Initialize(Vector3 startPosition, Vector3 playerPosition)
         {
-            Translation = startPosition;
-            LookAt(playerPosition, Vector3.Up);
+            // We position the mob by placing it at startPosition
+            // and rotate it towards playerPosition, so it looks at the player.
+            LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
+            // Rotate this mob randomly within range of -90 and +90 degrees,
+            // so that it doesn't move directly towards the player.
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
-            float randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
-            _velocity = Vector3.Forward * randomSpeed;
-            _velocity = _velocity.Rotated(Vector3.Up, Rotation.y);
+            // We calculate a random speed (integer).
+            int randomSpeed = GD.RandRange(MinSpeed, MaxSpeed);
+            // We calculate a forward velocity that represents the speed.
+            Velocity = Vector3.Forward * randomSpeed;
+            // We then rotate the velocity vector based on the mob's Y rotation
+            // in order to move in the direction the mob is looking.
+            Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
 
-            GetNode<AnimationPlayer>("AnimationPlayer").PlaybackSpeed = randomSpeed / MinSpeed;
+            GetNode<AnimationPlayer>("AnimationPlayer").SpeedScale = randomSpeed / MinSpeed;
         }
 
         public void Squash()
         {
-            EmitSignal(nameof(Squashed));
-            QueueFree();
+            EmitSignal(SignalName.Squashed);
+            QueueFree(); // Destroy this node
         }
 
-        public void OnVisibilityNotifierScreenExited()
+        private void OnVisibilityNotifierScreenExited()
         {
             QueueFree();
         }
     }
 
 .. |image0| image:: img/squash-the-creeps-final.gif
-.. |image1| image:: img/09.adding_animations/01.animation_player_dock.png
-.. |image2| image:: img/09.adding_animations/02.new_animation.png
+.. |image1| image:: img/09.adding_animations/animation_player_dock.webp
+.. |image2| image:: img/09.adding_animations/02.new_animation.webp
 .. |image3| image:: img/09.adding_animations/03.float_name.png
 .. |image4| image:: img/09.adding_animations/03.timeline.png
 .. |image5| image:: img/09.adding_animations/04.autoplay_and_loop.png
 .. |image6| image:: img/09.adding_animations/05.pin_icon.png
-.. |image7| image:: img/09.adding_animations/06.animation_duration.png
-.. |image8| image:: img/09.adding_animations/07.editable_timeline.png
-.. |image9| image:: img/09.adding_animations/08.zoom_slider.png
-.. |image10| image:: img/09.adding_animations/09.creating_first_keyframe.png
-.. |image11| image:: img/09.adding_animations/10.initial_keys.png
-.. |image12| image:: img/09.adding_animations/11.moving_keys.png
-.. |image13| image:: img/09.adding_animations/12.second_keys_values.png
-.. |image14| image:: img/09.adding_animations/13.second_keys.png
+.. |image7| image:: img/09.adding_animations/06.animation_duration.webp
+.. |image8| image:: img/09.adding_animations/07.editable_timeline.webp
+.. |image9| image:: img/09.adding_animations/08.zoom_slider.webp
+.. |image10| image:: img/09.adding_animations/09.creating_first_keyframe.webp
+.. |image11| image:: img/09.adding_animations/10.initial_keys.webp
+.. |image12| image:: img/09.adding_animations/11.moving_keys.webp
+.. |image13| image:: img/09.adding_animations/12.second_keys_values.webp
+.. |image14| image:: img/09.adding_animations/13.second_keys.webp
 .. |image15| image:: img/09.adding_animations/14.play_button.png
-.. |image16| image:: img/09.adding_animations/15.box_select.png
+.. |image16| image:: img/09.adding_animations/15.box_select.webp
 .. |image17| image:: img/09.adding_animations/16.easing_property.png
 .. |image18| image:: img/09.adding_animations/17.ease_out.png
 .. |image19| image:: img/09.adding_animations/18.ease_out_second_rotation_key.png
 .. |image20| image:: img/09.adding_animations/19.ease_in_second_translation_key.png
 .. |image21| image:: img/09.adding_animations/20.float_animation.gif
 .. |image22| image:: img/09.adding_animations/21.script_icon.png
+.. |animation_final_keyframes| image:: img/09.adding_animations/animation_final_keyframes.webp
+.. |second_keys_both| image:: img/09.adding_animations/second_keys_both.webp
+.. |timeline_05_click| image:: img/09.adding_animations/timeline_05_click.webp
+.. |Autoplay| image:: img/09.adding_animations/autoplay_button.webp

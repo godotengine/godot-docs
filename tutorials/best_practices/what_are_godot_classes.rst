@@ -41,8 +41,8 @@ available from the ``ClassDB``.
 .. note::
 
     Even scripts that don't use the ``extends`` keyword implicitly inherit from the engine's base
-    :ref:`Reference <class_Reference>` class. As a result, you can instantiate scripts without the
-    ``extends`` keyword from code. Since they extend ``Reference`` though, you cannot attach them to
+    :ref:`RefCounted <class_RefCounted>` class. As a result, you can instantiate scripts without the
+    ``extends`` keyword from code. Since they extend ``RefCounted`` though, you cannot attach them to
     a :ref:`Node <class_Node>`.
 
 Scenes
@@ -52,15 +52,15 @@ The behavior of scenes has many similarities to classes, so it can make sense to
 a class. Scenes are reusable, instantiable, and inheritable groups of nodes. Creating a scene is
 similar to having a script that creates nodes and adds them as children using ``add_child()``.
 
-We often pair a scene with a scripted root node that makes use of the scene's nodes. As such, the
-scene is often an extension of the script's declarative code.
+We often pair a scene with a scripted root node that makes use of the scene's nodes. As such,
+the script extends the scene by adding behavior through imperative code.
 
 The content of a scene helps to define:
 
-- What nodes are available to the script
-- How they are organized
-- How they are initialized
-- What signal connections they have with each other
+- What nodes are available to the script.
+- How they are organized.
+- How they are initialized.
+- What signal connections they have with each other.
 
 Why is any of this important to scene organization? Because instances of scenes *are* objects. As a
 result, many object-oriented principles that apply to written code also apply to scenes: single

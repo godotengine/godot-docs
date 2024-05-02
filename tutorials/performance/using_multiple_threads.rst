@@ -27,22 +27,21 @@ To create a thread, use the following code:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var thread
+    var thread: Thread
 
     # The thread will start here.
     func _ready():
         thread = Thread.new()
-        # Third argument is optional userdata, it can be any variable.
-        thread.start(self, "_thread_function", "Wafflecopter")
+        # You can bind multiple arguments to a function Callable.
+        thread.start(_thread_function.bind("Wafflecopter"))
 
 
     # Run here and exit.
-    # The argument is the userdata passed from start().
-    # If no argument was passed, this one still needs to
-    # be here and it will be null.
+    # The argument is the bound data passed from start().
     func _thread_function(userdata):
         # Print the userdata ("Wafflecopter")
         print("I'm a thread! Userdata is: ", userdata)
+
 
     # Thread must be disposed (or "joined"), for portability.
     func _exit_tree():
@@ -84,16 +83,16 @@ Here is an example of using a Mutex:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var counter = 0
-    var mutex
-    var thread
+    var counter := 0
+    var mutex: Mutex
+    var thread: Thread
 
 
     # The thread will start here.
     func _ready():
         mutex = Mutex.new()
         thread = Thread.new()
-        thread.start(self, "_thread_function")
+        thread.start(_thread_function)
 
         # Increase value, protect it with Mutex.
         mutex.lock()
@@ -102,7 +101,7 @@ Here is an example of using a Mutex:
 
 
     # Increment the value from the thread, too.
-    func _thread_function(userdata):
+    func _thread_function():
         mutex.lock()
         counter += 1
         mutex.unlock()
@@ -129,11 +128,11 @@ ready to be processed:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var counter = 0
-    var mutex
-    var semaphore
-    var thread
-    var exit_thread = false
+    var counter := 0
+    var mutex: Mutex
+    var semaphore: Semaphore
+    var thread: Thread
+    var exit_thread := false
 
 
     # The thread will start here.
@@ -143,10 +142,10 @@ ready to be processed:
         exit_thread = false
 
         thread = Thread.new()
-        thread.start(self, "_thread_function")
+        thread.start(_thread_function)
 
 
-    func _thread_function(userdata):
+    func _thread_function():
         while true:
             semaphore.wait() # Wait until posted.
 

@@ -13,11 +13,13 @@ How to use:
 - Run this script
 
 Example:
-  python convert_git_renames_to_csv.py stable 3.4 >> redirects.csv
+  python convert_git_renames_to_csv.py stable latest >> redirects.csv
   python create_redirects.py
 
-This would add all files that were renamed in 3.4 from stable to redirects.csv,
+This would add all files that were renamed in latest from stable to redirects.csv,
 and then create the redirects on RTD accordingly.
+Make sure to use the old branch first, then the more recent branch (i.e., stable > master).
+You need to have both branches or revisions available and up to date locally.
 Care is taken to not add redirects that already exist on RTD.
 """
 
@@ -38,6 +40,7 @@ USER_AGENT = "Godot RTD Redirects on Mozilla/5.0 (Windows NT 10.0; Win64; x64) A
 DEFAULT_PAGINATED_SIZE = 1024
 API_SLEEP_TIME = 0.2 # Seconds.
 REDIRECT_SUFFIXES = [".html", "/"]
+BUILD_PATH = "../../_build/html"
 TIMEOUT_SECONDS = 5
 HTTP = None
 
@@ -72,18 +75,34 @@ def parse_command_line_args():
         action="store_true",
         help="Enables verbose output.",
     )
+    parser.add_argument(
+        "--validate",
+        action="store_true",
+        help="Validates each redirect by checking the target page exists. Implies --dry-run.",
+    )
     return parser.parse_args()
 
+def is_dry_run(args):
+    return args.dry_run or args.validate
+
+def validate(destination):
+    p = BUILD_PATH + destination
+    if not os.path.exists(p):
+        print("Invalid destination: " + destination + " (" + p + ")")
 
 def make_redirect(source, destination, args, retry=0):
+    if args.validate:
+        validate(destination)
+
     json_data = {"from_url": source, "to_url": destination, "type": "page"}
     headers = REQUEST_HEADERS
 
     if args.verbose:
         print("POST " + REDIRECT_URL, headers, json_data)
 
-    if args.dry_run:
-        print(f"Created redirect {source} -> {destination} (DRY RUN)")
+    if is_dry_run(args):
+        if not args.validate:
+            print(f"Created redirect {source} -> {destination} (DRY RUN)")
         return
 
     response = HTTP.post(
@@ -222,7 +241,7 @@ def redirect_to_str(item):
 def main():
     args = parse_command_line_args()
 
-    if not args.dry_run:
+    if not is_dry_run(args):
         load_auth()
 
         retry_strategy = Retry(
@@ -252,12 +271,12 @@ def main():
     print("Loaded", len(redirects_file), "redirects from", args.file + ".")
 
     existing = []
-    if not args.dry_run:
+    if not is_dry_run(args):
         existing = get_existing_redirects(args.delete)
     print("Loaded", len(existing), "existing redirects from RTD.")
 
     print("Total redirects:", str(len(to_add)) +
-          " (+" + str(len(existing)), "existing.)")
+          " new + " + str(len(existing)), "existing =", to_add+existing, "total")
 
     redirects = []
     added = {}
@@ -312,12 +331,12 @@ def main():
             if not id(redirect[0], redirect[1]) in existing_ids:
                 make_redirect(redirect[0], redirect[1], args)
 
-            if not args.dry_run:
+            if not is_dry_run(args):
                 sleep()
 
     print("Finished creating", len(redirects), "redirects.")
 
-    if args.dry_run:
+    if is_dry_run(args):
         print("THIS WAS A DRY RUN, NOTHING WAS SUBMITTED TO READTHEDOCS!")
 
 

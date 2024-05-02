@@ -1,0 +1,44 @@
+GD0001: Missing partial modifier on declaration of type that derives from GodotObject
+=====================================================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0001
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Non-breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A type that derives from ``GodotObject`` is not declared partial.
+
+Rule description
+----------------
+
+Godot source generators add generated code to user-defined types to implement
+the integration with the engine. Source generators can't add generated code to
+types that aren't declared partial.
+
+.. code-block:: csharp
+
+    // The source generators can't enhance this type to work with Godot.
+    public class InvalidNode : Node { }
+
+    // The source generators can enhance this type to work with Godot.
+    public partial class ValidNode { }
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, add the ``partial`` keyword to the type
+declaration.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Types that derive from ``GodotObject``
+but aren't partial can't be enhanced by the source generators, resulting in
+unexpected runtime errors.

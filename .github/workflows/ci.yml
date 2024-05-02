@@ -1,14 +1,19 @@
 name: Continuous integration
+
 on:
   push:
   pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         run: |
@@ -21,9 +26,8 @@ jobs:
       - name: Linter checks
         run: |
           bash _tools/format.sh
-          codespell -I _tools/codespell-ignore.txt -x _tools/codespell-ignore-lines.txt {about,community,development,getting_started,tutorials}/**/*.rst
+          codespell -I _tools/codespell-ignore.txt -x _tools/codespell-ignore-lines.txt -S tutorials/i18n/locales.rst {about,community,development,getting_started,tutorials}/**/*.rst
 
       # Use dummy builder to improve performance as we don't need the generated HTML in this workflow.
       - name: Sphinx build
-        run: |
-          sphinx-build --color -b dummy -d _build/doctrees . _build/html
+        run: make SPHINXOPTS='--color -W' dummy

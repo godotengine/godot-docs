@@ -30,6 +30,11 @@ To begin profiling, click on the **Start** button in the top-left. Run your game
 and data will start appearing. You can also start profiling at any time before
 or during gameplay, depending on if you want.
 
+.. note::
+
+    The profiler does not currently support C# scripts. C# scripts can be profiled
+    using JetBrains Rider and JetBrains dotTrace with the Godot support plugin.
+
 You can clear the data by clicking the **Clear** button anytime. Use the
 **Measure** drop-down menu to change the type of data you measure. The
 measurements panel and the graph will update accordingly.
@@ -54,8 +59,8 @@ The main measurements are frame time, physics frame, idle time, and physics time
 - **Physics time** is the time Godot took to update physics tasks, like
   `_physics_process` and built-in nodes set to **Physics** update.
 
-.. note:: In Godot 3, **Frame Time** includes rendering time. Say you find a
-          mysterious spike of lag in your game, but your physics and scripts are
+.. note:: **Frame Time** includes rendering time. Say you find a mysterious
+          spike of lag in your game, but your physics and scripts are
           all running fast. The delay could be due to the appearance of
           particles or visual effects!
 
@@ -122,13 +127,13 @@ needs optimization. Is it your math or the way you access other pieces of data
 to do the math with? Is it the `for` loop? The `if` statements?
 
 You can narrow down the measurement by manually counting ticks as the code runs
-with some temporary functions. The two functions are part of the `OS` class
+with some temporary functions. The two functions are part of the `Time` class
 object. They are `get_ticks_msec` and `get_ticks_usec`. The first measures in
 milliseconds (1,000 per second), and the second measures in microseconds
 (1,000,000 per second).
 
-Either one returns the amount of time since the game started in their respective
-time frame. This comes directly from the operating system rather than Godot.
+Either one returns the amount of time since the game engine started in their respective
+time frame.
 
 If you wrap a piece of code with a start and end count of microseconds, the
 difference between the two is the amount of time it took to run that piece of
@@ -138,16 +143,16 @@ code.
  .. code-tab:: gdscript GDScript
 
     # Measuring the time it takes for worker_function() to run
-    var start = OS.get_ticks_usec()
+    var start = Time.get_ticks_usec()
     worker_function()
-    var end = OS.get_ticks_usec()
+    var end = Time.get_ticks_usec()
     var worker_time = (end-start)/1000000.0
 
     # Measuring the time spent running a calculation over each element of an array
-    start = OS.get_ticks_usec()
+    start = Time.get_ticks_usec()
     for calc in calculations:
         result = pow(2, calc.power) * calc.product
-    end = OS.get_ticks_usec()
+    end = Time.get_ticks_usec()
     var loop_time = (end-start)/1000000.0
 
     print("Worker time: %s\nLoop time: %s" % [worker_time, loop_time])

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_sync_with_audio:
 
 Sync the gameplay with audio and music
@@ -41,15 +43,15 @@ Add these two and it's possible to guess almost exactly when sound or music will
     var time_delay
 
 
-    func _ready()
-        time_begin = OS.get_ticks_usec()
+    func _ready():
+        time_begin = Time.get_ticks_usec()
         time_delay = AudioServer.get_time_to_next_mix() + AudioServer.get_output_latency()
         $Player.play()
 
 
     func _process(delta):
         # Obtain from ticks.
-        var time = (OS.get_ticks_usec() - time_begin) / 1000000.0
+        var time = (Time.get_ticks_usec() - time_begin) / 1000000.0
         # Compensate for latency.
         time -= time_delay
         # May be below 0 (did not begin yet).
@@ -63,14 +65,14 @@ Add these two and it's possible to guess almost exactly when sound or music will
 
     public override void _Ready()
     {
-        _timeBegin = OS.GetTicksUsec();
+        _timeBegin = Time.GetTicksUsec();
         _timeDelay = AudioServer.GetTimeToNextMix() + AudioServer.GetOutputLatency();
         GetNode<AudioStreamPlayer>("Player").Play();
     }
 
     public override void _Process(float _delta)
     {
-        double time = (OS.GetTicksUsec() - _timeBegin) / 1000000.0d;
+        double time = (Time.GetTicksUsec() - _timeBegin) / 1000000.0d;
         time = Math.Max(0.0d, time - _timeDelay);
         GD.Print(string.Format("Time is: {0}", time));
     }
@@ -119,7 +121,7 @@ Here is the same code as before using this approach:
  .. code-tab:: gdscript GDScript
 
 
-    func _ready()
+    func _ready():
         $Player.play()
 
 

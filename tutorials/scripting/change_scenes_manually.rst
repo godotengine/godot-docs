@@ -4,20 +4,20 @@ Change scenes manually
 ======================
 
 Sometimes it helps to have more control over how one swaps scenes around.
-As mentioned above, a :ref:`Viewport <class_Viewport>`'s child nodes
-will render to the image it generates. This holds true even for nodes outside
+A :ref:`Viewport <class_Viewport>`'s child nodes will render to the image
+it generates, this holds true even for nodes outside
 of the "current" scene. Autoloads fall into this category, but so do
 scenes which one instances and adds to the tree at runtime:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var simultaneous_scene = preload("res://levels/level2.tscn").instance()
+    var simultaneous_scene = preload("res://levels/level2.tscn").instantiate()
 
     func _add_a_scene_manually():
         # This is like autoloading the scene, only
         # it happens after already loading the main scene.
-        get_tree().get_root().add_child(simultaneous_scene)
+        get_tree().root.add_child(simultaneous_scene)
 
  .. code-tab:: csharp
 
@@ -25,14 +25,14 @@ scenes which one instances and adds to the tree at runtime:
 
     public MyClass()
     {
-        simultaneousScene = ResourceLoader.Load<PackedScene>("res://levels/level2.tscn").Instance();
+        simultaneousScene = ResourceLoader.Load<PackedScene>("res://levels/level2.tscn").Instantiate();
     }
 
     public void _AddASceneManually()
     {
         // This is like autoloading the scene, only
         // it happens after already loading the main scene.
-        GetTree().GetRoot().AddChild(simultaneousScene);
+        GetTree().Root.AddChild(simultaneousScene);
     }
 
 To complete the cycle and swap out the new scene with the old one,
@@ -42,8 +42,8 @@ balancing operation speed and memory consumption as well as balancing data
 access and integrity.
 
 1. **We can delete the existing scene.**
-   :ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>` and
-   :ref:`SceneTree.change_scene_to() <class_SceneTree_method_change_scene_to>`
+   :ref:`SceneTree.change_scene_to_file() <class_SceneTree_method_change_scene_to_file>` and
+   :ref:`SceneTree.change_scene_to_packed() <class_SceneTree_method_change_scene_to_packed>`
    will delete the current scene immediately. Developers can also delete the
    main scene though. Assuming the root node's name is "Main", one could do
    ``get_node("/root/Main").free()`` to delete the whole scene.
@@ -81,7 +81,7 @@ access and integrity.
 
         - Pro: There's no need to move any more nodes around to save data.
 
-        - Con: More data is being kept in memory which will be become a problem
+        - Con: More data is being kept in memory which will become a problem
           on memory-sensitive platforms like web or mobile.
 
     - Processing continues.
@@ -118,20 +118,20 @@ access and integrity.
       access.
 
 There are also cases where one may wish to have many scenes present at the same
-time. Perhaps one is adding their own singleton at runtime, or preserving a
+time. Perhaps one is adding their own singleton at runtime, or preserving
 a scene's data between scene changes (adding the scene to the root node).
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        get_tree().get_root().add_child(scene)
+        get_tree().root.add_child(scene)
 
  .. code-tab:: csharp
 
-        GetTree().GetRoot().AddChild(scene);
+        GetTree().Root.AddChild(scene);
 
 Perhaps instead they wish to display multiple scenes at the same time using
-:ref:`ViewportContainers <class_ViewportContainer>`. This is optimal in
+:ref:`SubViewportContainers <class_SubViewportContainer>`. This is optimal in
 cases where the intent is to render different content in different parts of the
 screen. Minimaps and split-screen multiplayer are good examples.
 

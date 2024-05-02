@@ -5,7 +5,7 @@ Making trees
 
 This is a short tutorial on how to make trees and other types of vegetation from scratch.
 
-The aim is to not focus on the modelling techniques (there are plenty of tutorials about that), but how to make them look good in Godot.
+The aim is to not focus on the modeling techniques (there are plenty of tutorials about that), but how to make them look good in Godot.
 
 .. image:: img/tree_sway.gif
 
@@ -23,7 +23,7 @@ and opened it in Blender.
 Paint with vertex colors
 ------------------------
 
-The first thing you may want to do is to use the vertex colors to paint how much the tree will sway when there is wind. Just use the vertex color painting tool of your favorite 3D modelling program and paint something like this:
+The first thing you may want to do is to use the vertex colors to paint how much the tree will sway when there is wind. Just use the vertex color painting tool of your favorite 3D modeling program and paint something like this:
 
 .. image:: img/tree_vertex_paint.png
 
@@ -45,8 +45,8 @@ This is a spatial shader. There is no front/back culling (so leaves can be seen 
 
 .. code-block:: glsl
 
-    uniform sampler2D texture_albedo : hint_albedo;
-    uniform vec4 transmission : hint_color;
+    uniform sampler2D texture_albedo : source_color;
+    uniform vec4 transmission : source_color;
 
 Here, the texture is read, as well as a transmission color, which is used to add some back-lighting to the leaves, simulating subsurface scattering.
 

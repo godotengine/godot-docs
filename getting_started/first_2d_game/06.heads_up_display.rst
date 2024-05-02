@@ -6,7 +6,7 @@ Heads up display
 The final piece our game needs is a User Interface (UI) to display things like
 score, a "game over" message, and a restart button.
 
-Create a new scene, and add a :ref:`CanvasLayer <class_CanvasLayer>` node named
+Create a new scene, click the "Other Node" button and add a :ref:`CanvasLayer <class_CanvasLayer>` node named
 ``HUD``. "HUD" stands for "heads-up display", an informational display that
 appears as an overlay on top of the game view.
 
@@ -36,61 +36,49 @@ Inspector. The default font for ``Control`` nodes is small and doesn't scale
 well. There is a font file included in the game assets called
 "Xolonium-Regular.ttf". To use this font, do the following:
 
-1. Under "Theme Overrides > Fonts", choose "New Font".
+Under "Theme Overrides > Fonts", choose "Load" and select the "Xolonium-Regular.ttf" file.
 
-.. image:: img/custom_font1.png
+.. image:: img/custom_font_load_font.webp
 
-2. Click on the "Font" you added, and under "Font/Data/0",
-   choose "Load" and select the "Xolonium-Regular.ttf" file.
+The font size is still too small, increase it to ``64`` under "Theme Overrides > Font Sizes". 
+Once you've done this with the ``ScoreLabel``, repeat the changes for the ``Message`` and ``StartButton`` nodes.
 
-.. image:: img/custom_font2.png
+.. image:: img/custom_font_size.webp
 
-Once you've done this on the ``ScoreLabel``, you can click the down arrow next
-to the Font property and choose "Copy", then "Paste" it in the same place
-on the other two Control nodes.
-Set the "Font Size" property of the ``ScoreLabel`` under "Theme Overrides > Font Sizes".
-A setting of ``64`` works well.
+.. note:: **Anchors:** ``Control`` nodes have a position and size,
+          but they also have anchors. Anchors define the origin -
+          the reference point for the edges of the node.
 
-.. image:: img/custom_font3.png
-
-.. note:: **Anchors and Margins:** ``Control`` nodes have a position and size,
-          but they also have anchors and margins. Anchors define the origin -
-          the reference point for the edges of the node. Margins update
-          automatically when you move or resize a control node. They represent
-          the distance from the control node's edges to its anchor.
-
-Arrange the nodes as shown below. Click the "Layout" button to set a Control
-node's layout:
-
-.. image:: img/ui_anchor.png
-
+Arrange the nodes as shown below.
 You can drag the nodes to place them manually, or for more precise placement,
-use the following settings:
+use "Anchor Presets".
+
+.. image:: img/ui_anchor.webp
 
 ScoreLabel
 ~~~~~~~~~~
 
--  *Layout* : "Top Wide"
--  *Text* : ``0``
--  *Align* : "Center"
+1. Add the text ``0``.
+2. Set the "Horizontal Alignment" and "Vertical Alignment" to ``Center``.
+3. Choose the "Anchor Preset" ``Center Top``.
 
 Message
 ~~~~~~~~~~~~
 
--  *Layout* : "HCenter Wide"
--  *Text* : ``Dodge the Creeps!``
--  *Align* : "Center"
--  *Autowrap* : "On"
+1. Add the text ``Dodge the Creeps!``.
+2. Set the "Horizontal Alignment" and "Vertical Alignment" to ``Center``.
+3. Set the "Autowrap Mode" to ``Word``, otherwise the label will stay on one line.
+4. Under "Control - Layout/Transform" set "Size X"  to ``480`` to use the entire width of the screen.
+5. Choose the "Anchor Preset" ``Center``.
 
 StartButton
 ~~~~~~~~~~~
 
--  *Text* : ``Start``
--  *Layout* : "Center Bottom"
--  *Margin* :
-
-   -  Top: ``-200``
-   -  Bottom: ``-100``
+1. Add the text ``Start``.
+2. Under "Control - Layout/Transform", set "Size X" to ``200`` and "Size Y" to ``100``
+   to add a little bit more padding between the border and text.
+3. Choose the "Anchor Preset" ``Center Bottom``.
+4. Under "Control - Layout/Transform", set "Position Y" to ``580``.
 
 On the ``MessageTimer``, set the ``Wait Time`` to ``2`` and set the ``One Shot``
 property to "On".
@@ -102,61 +90,23 @@ Now add this script to ``HUD``:
 
     extends CanvasLayer
 
+    # Notifies `Main` node that the button has been pressed
     signal start_game
 
  .. code-tab:: csharp
 
-    public class HUD : CanvasLayer
+    using Godot;
+
+    public partial class HUD : CanvasLayer
     {
         // Don't forget to rebuild the project so the editor knows about the new signal.
 
         [Signal]
-        public delegate void StartGame();
+        public delegate void StartGameEventHandler();
     }
 
- .. code-tab:: cpp
-
-    // Copy `player.gdns` to `hud.gdns` and replace `Player` with `HUD`.
-    // Attach the `hud.gdns` file to the HUD node.
-
-    // Create two files `hud.cpp` and `hud.hpp` next to `entry.cpp` in `src`.
-    // This code goes in `hud.hpp`. We also define the methods we'll be using here.
-    #ifndef HUD_H
-    #define HUD_H
-
-    #include <Button.hpp>
-    #include <CanvasLayer.hpp>
-    #include <Godot.hpp>
-    #include <Label.hpp>
-    #include <Timer.hpp>
-
-    class HUD : public godot::CanvasLayer {
-        GODOT_CLASS(HUD, godot::CanvasLayer)
-
-        godot::Label *_score_label;
-        godot::Label *_message_label;
-        godot::Timer *_start_message_timer;
-        godot::Timer *_get_ready_message_timer;
-        godot::Button *_start_button;
-        godot::Timer *_start_button_timer;
-
-    public:
-        void _init() {}
-        void _ready();
-        void show_get_ready();
-        void show_game_over();
-        void update_score(const int score);
-        void _on_StartButton_pressed();
-        void _on_StartMessageTimer_timeout();
-        void _on_GetReadyMessageTimer_timeout();
-
-        static void _register_methods();
-    };
-
-    #endif // HUD_H
-
-The ``start_game`` signal tells the ``Main`` node that the button
-has been pressed.
+We now want to display a message temporarily,
+such as "Get Ready", so we add the following code
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -177,33 +127,7 @@ has been pressed.
         GetNode<Timer>("MessageTimer").Start();
     }
 
- .. code-tab:: cpp
-
-    // This code goes in `hud.cpp`.
-    #include "hud.hpp"
-
-    void HUD::_ready() {
-        _score_label = get_node<godot::Label>("ScoreLabel");
-        _message_label = get_node<godot::Label>("MessageLabel");
-        _start_message_timer = get_node<godot::Timer>("StartMessageTimer");
-        _get_ready_message_timer = get_node<godot::Timer>("GetReadyMessageTimer");
-        _start_button = get_node<godot::Button>("StartButton");
-        _start_button_timer = get_node<godot::Timer>("StartButtonTimer");
-    }
-
-    void HUD::_register_methods() {
-        godot::register_method("_ready", &HUD::_ready);
-        godot::register_method("show_get_ready", &HUD::show_get_ready);
-        godot::register_method("show_game_over", &HUD::show_game_over);
-        godot::register_method("update_score", &HUD::update_score);
-        godot::register_method("_on_StartButton_pressed", &HUD::_on_StartButton_pressed);
-        godot::register_method("_on_StartMessageTimer_timeout", &HUD::_on_StartMessageTimer_timeout);
-        godot::register_method("_on_GetReadyMessageTimer_timeout", &HUD::_on_GetReadyMessageTimer_timeout);
-        godot::register_signal<HUD>("start_game", godot::Dictionary());
-    }
-
-This function is called when we want to display a message
-temporarily, such as "Get Ready".
+We also need to process what happens when the player loses. The code below will show "Game Over" for 2 seconds, then return to the title screen and, after a brief pause, show the "Start" button.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -211,12 +135,12 @@ temporarily, such as "Get Ready".
     func show_game_over():
         show_message("Game Over")
         # Wait until the MessageTimer has counted down.
-        yield($MessageTimer, "timeout")
+        await $MessageTimer.timeout
 
-        $Message.text = "Dodge the\nCreeps!"
+        $Message.text = "Dodge the Creeps!"
         $Message.show()
         # Make a one-shot timer and wait for it to finish.
-        yield(get_tree().create_timer(1), "timeout")
+        await get_tree().create_timer(1.0).timeout
         $StartButton.show()
 
  .. code-tab:: csharp
@@ -226,31 +150,14 @@ temporarily, such as "Get Ready".
         ShowMessage("Game Over");
 
         var messageTimer = GetNode<Timer>("MessageTimer");
-        await ToSignal(messageTimer, "timeout");
+        await ToSignal(messageTimer, Timer.SignalName.Timeout);
 
         var message = GetNode<Label>("Message");
-        message.Text = "Dodge the\nCreeps!";
+        message.Text = "Dodge the Creeps!";
         message.Show();
 
-        await ToSignal(GetTree().CreateTimer(1), "timeout");
+        await ToSignal(GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
         GetNode<Button>("StartButton").Show();
-    }
-
- .. code-tab:: cpp
-
-    // This code goes in `hud.cpp`.
-    // There is no `yield` in GDNative, so we need to have every
-    // step be its own method that is called on timer timeout.
-    void HUD::show_get_ready() {
-        _message_label->set_text("Get Ready");
-        _message_label->show();
-        _get_ready_message_timer->start();
-    }
-
-    void HUD::show_game_over() {
-        _message_label->set_text("Game Over");
-        _message_label->show();
-        _start_message_timer->start();
     }
 
 This function is called when the player loses. It will show "Game Over" for 2
@@ -261,6 +168,8 @@ seconds, then return to the title screen and, after a brief pause, show the
           Timer node is to use the SceneTree's ``create_timer()`` function. This
           can be very useful to add delays such as in the above code, where we
           want to wait some time before showing the "Start" button.
+
+Add the code below to ``HUD`` to update the score
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -275,58 +184,32 @@ seconds, then return to the title screen and, after a brief pause, show the
         GetNode<Label>("ScoreLabel").Text = score.ToString();
     }
 
- .. code-tab:: cpp
-
-    // This code goes in `hud.cpp`.
-    void HUD::update_score(const int p_score) {
-        _score_label->set_text(godot::Variant(p_score));
-    }
-
-This function is called by ``Main`` whenever the score changes.
-
-Connect the ``timeout()`` signal of ``MessageTimer`` and the ``pressed()``
-signal of ``StartButton`` and add the following code to the new functions:
+Connect the ``pressed()`` signal of ``StartButton`` and the ``timeout()``
+signal of ``MessageTimer`` to the ``HUD`` node, and add the following code to the new functions:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_StartButton_pressed():
+    func _on_start_button_pressed():
         $StartButton.hide()
-        emit_signal("start_game")
+        start_game.emit()
 
-    func _on_MessageTimer_timeout():
+    func _on_message_timer_timeout():
         $Message.hide()
 
  .. code-tab:: csharp
 
-    public void OnStartButtonPressed()
+    // We also specified this function name in PascalCase in the editor's connection window.
+    private void OnStartButtonPressed()
     {
         GetNode<Button>("StartButton").Hide();
-        EmitSignal("StartGame");
+        EmitSignal(SignalName.StartGame);
     }
 
-    public void OnMessageTimerTimeout()
+    // We also specified this function name in PascalCase in the editor's connection window.
+    private void OnMessageTimerTimeout()
     {
         GetNode<Label>("Message").Hide();
-    }
-
- .. code-tab:: cpp
-
-    // This code goes in `hud.cpp`.
-    void HUD::_on_StartButton_pressed() {
-        _start_button_timer->stop();
-        _start_button->hide();
-        emit_signal("start_game");
-    }
-
-    void HUD::_on_StartMessageTimer_timeout() {
-        _message_label->set_text("Dodge the\nCreeps");
-        _message_label->show();
-        _start_button_timer->start();
-    }
-
-    void HUD::_on_GetReadyMessageTimer_timeout() {
-        _message_label->hide();
     }
 
 Connecting HUD to Main
@@ -336,15 +219,16 @@ Now that we're done creating the ``HUD`` scene, go back to ``Main``. Instance
 the ``HUD`` scene in ``Main`` like you did the ``Player`` scene. The scene tree
 should look like this, so make sure you didn't miss anything:
 
-.. image:: img/completed_main_scene.png
+.. image:: img/completed_main_scene.webp
 
 Now we need to connect the ``HUD`` functionality to our ``Main`` script. This
 requires a few additions to the ``Main`` scene:
 
 In the Node tab, connect the HUD's ``start_game`` signal to the ``new_game()``
-function of the Main node by typing "new_game" in the "Receiver Method" in the
-"Connect a Signal" window. Verify that the green connection icon now appears
-next to ``func new_game()`` in the script.
+function of the Main node by clicking the "Pick" button in the "Connect a Signal"
+window and selecting the ``new_game()`` method or type "new_game" below "Receiver Method"
+in the window. Verify that the green connection icon now appears next to
+``func new_game()`` in the script.
 
 In ``new_game()``, update the score display and show the "Get Ready" message:
 
@@ -357,13 +241,8 @@ In ``new_game()``, update the score display and show the "Get Ready" message:
  .. code-tab:: csharp
 
         var hud = GetNode<HUD>("HUD");
-        hud.UpdateScore(Score);
+        hud.UpdateScore(_score);
         hud.ShowMessage("Get Ready!");
-
- .. code-tab:: cpp
-
-        _hud->update_score(score);
-        _hud->show_get_ready();
 
 In ``game_over()`` we need to call the corresponding ``HUD`` function:
 
@@ -376,11 +255,7 @@ In ``game_over()`` we need to call the corresponding ``HUD`` function:
 
         GetNode<HUD>("HUD").ShowGameOver();
 
- .. code-tab:: cpp
-
-        _hud->show_game_over();
-
-Finally, add this to ``_on_ScoreTimer_timeout()`` to keep the display in sync
+Finally, add this to ``_on_score_timer_timeout()`` to keep the display in sync
 with the changing score:
 
 .. tabs::
@@ -390,14 +265,16 @@ with the changing score:
 
  .. code-tab:: csharp
 
-        GetNode<HUD>("HUD").UpdateScore(Score);
+        GetNode<HUD>("HUD").UpdateScore(_score);
 
- .. code-tab:: cpp
+.. warning::
 
-        _hud->update_score(score);
+    Remember to remove the call to ``new_game()`` from
+    ``_ready()`` if you haven't already, otherwise
+    your game will start automatically.
 
 Now you're ready to play! Click the "Play the Project" button. You will be asked
-to select a main scene, so choose ``Main.tscn``.
+to select a main scene, so choose ``main.tscn``.
 
 Removing old creeps
 ~~~~~~~~~~~~~~~~~~~
@@ -411,7 +288,7 @@ In the ``Mob`` scene, select the root node and click the "Node" tab next to the
 Inspector (the same place where you find the node's signals). Next to "Signals",
 click "Groups" and you can type a new group name and click "Add".
 
-.. image:: img/group_tab.png
+.. image:: img/group_tab.webp
 
 Now all mobs will be in the "mobs" group. We can then add the following line to
 the ``new_game()`` function in ``Main``:
@@ -425,11 +302,7 @@ the ``new_game()`` function in ``Main``:
 
         // Note that for calling Godot-provided methods with strings,
         // we have to use the original Godot snake_case name.
-        GetTree().CallGroup("mobs", "queue_free");
-
- .. code-tab:: cpp
-
-        get_tree()->call_group("mobs", "queue_free");
+        GetTree().CallGroup("mobs", Node.MethodName.QueueFree);
 
 The ``call_group()`` function calls the named function on every node in a
 group - in this case we are telling every mob to delete itself.

@@ -9,9 +9,9 @@ discussions, and tutorials. Hopefully, this will also support the development of
 auto-formatting tools.
 
 Since the Godot shader language is close to C-style languages and GLSL, this
-guide is inspired by Godot's own GLSL formatting. You can view an example of a
-GLSL file in Godot's source code
-`here <https://github.com/godotengine/godot/blob/master/drivers/gles2/shaders/copy.glsl>`__.
+guide is inspired by Godot's own GLSL formatting. You can view examples of
+GLSL files in Godot's source code
+`here <https://github.com/godotengine/godot/blob/master/drivers/gles3/shaders/>`__.
 
 Style guides aren't meant as hard rulebooks. At times, you may not be able to
 apply some of the guidelines below. When that happens, use your best judgment,
@@ -30,14 +30,15 @@ Here is a complete shader example based on these guidelines:
     shader_type canvas_item;
     // Screen-space shader to adjust a 2D scene's brightness, contrast
     // and saturation. Taken from
-    // https://github.com/godotengine/godot-demo-projects/blob/master/2d/screen_space_shaders/shaders/BCS.shader
+    // https://github.com/godotengine/godot-demo-projects/blob/master/2d/screen_space_shaders/shaders/BCS.gdshader
 
+    uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
     uniform float brightness = 0.8;
     uniform float contrast = 1.5;
     uniform float saturation = 1.8;
 
     void fragment() {
-        vec3 c = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgb;
+        vec3 c = textureLod(screen_texture, SCREEN_UV, 0.0).rgb;
 
         c.rgb = mix(vec3(0.0), c.rgb, brightness);
         c.rgb = mix(vec3(0.5), c.rgb, contrast);
@@ -217,6 +218,26 @@ Don't use multiline comment syntax if your comment can fit on a single line:
    press :kbd:`Ctrl + K`. This feature adds or removes ``//`` at the start of
    the selected lines.
 
+Documentation comments
+~~~~~~~~~~~~~~~~~~~~~~
+
+Use the following format for documentation comments above uniforms, with **two**
+leading asterisks (``/**``) and follow-up asterisks on every line:
+
+.. code-block:: glsl
+
+    /**
+     * This is a documentation comment.
+     * These lines will appear in the inspector when hovering the shader parameter
+     * named "Something".
+     * You can use [b]BBCode[/b] [i]formatting[/i] in the comment.
+     */
+    uniform int something = 1;
+
+These comments will appear when hovering a property in the inspector. If you
+don't wish the comment to be visible in the inspector, use the standard comment
+syntax instead (``// ...`` or ``/* ... */`` with only one leading asterisk).
+
 Whitespace
 ~~~~~~~~~~
 
@@ -316,6 +337,45 @@ underscore (\_) to separate words:
 .. code-block:: glsl
 
     const float GOLDEN_RATIO = 1.618;
+
+Preprocessor directives
+~~~~~~~~~~~~~~~~~~~~~~~
+
+:ref:`doc_shader_preprocessor` directives should be written in CONSTANT__CASE.
+Directives should be written without any indentation before them, even if
+nested within a function.
+
+To preserve the natural flow of indentation when shader errors are printed to
+the console, extra indentation should **not** be added within ``#if``,
+``#ifdef`` or ``#ifndef`` blocks:
+
+**Good**:
+
+.. code-block:: glsl
+
+    #define HEIGHTMAP_ENABLED
+
+    void fragment() {
+        vec2 position = vec2(1.0, 2.0);
+
+    #ifdef HEIGHTMAP_ENABLED
+        sample_heightmap(position);
+    #endif
+    }
+
+**Bad**:
+
+.. code-block:: glsl
+
+    #define heightmap_enabled
+
+    void fragment() {
+        vec2 position = vec2(1.0, 2.0);
+
+        #ifdef heightmap_enabled
+            sample_heightmap(position);
+        #endif
+    }
 
 Code order
 ----------

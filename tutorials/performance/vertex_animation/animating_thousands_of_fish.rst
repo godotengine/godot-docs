@@ -1,14 +1,16 @@
+:article_outdated: True
+
 .. _doc_animating_thousands_of_fish:
 
-Animating thousands of fish with MultiMeshInstance
-==================================================
+Animating thousands of fish with MultiMeshInstance3D
+====================================================
 
 This tutorial explores a technique used in the game `ABZU <https://www.gdcvault.com/play/1024409/Creating-the-Art-of-ABZ>`_
 for rendering and animating thousands of fish using vertex animation and
 static mesh instancing.
 
 In Godot, this can be accomplished with a custom :ref:`Shader <class_Shader>` and
-a :ref:`MultiMeshInstance <class_MultiMeshInstance>`. Using the following technique you
+a :ref:`MultiMeshInstance3D <class_MultiMeshInstance3D>`. Using the following technique you
 can render thousands of animated objects, even on low end hardware.
 
 We will start by animating one fish. Then, we will see how to extend that animation to
@@ -17,18 +19,18 @@ thousands of fish.
 Animating one Fish
 ------------------
 
-We will start with a single fish. Load your fish model into a :ref:`MeshInstance <class_MeshInstance>`
+We will start with a single fish. Load your fish model into a :ref:`MeshInstance3D <class_MeshInstance3D>`
 and add a new :ref:`ShaderMaterial <class_ShaderMaterial>`.
 
 Here is the fish we will be using for the example images, you can use any fish model you like.
 
 .. image:: img/fish.png
 
-.. note:: The fish model in this tutorial is made by `QuaterniusDev <http://quaternius.com>`_ and is
+.. note:: The fish model in this tutorial is made by `QuaterniusDev <https://quaternius.com>`_ and is
           shared with a creative commons license. CC0 1.0 Universal (CC0 1.0) Public Domain
           Dedication https://creativecommons.org/publicdomain/zero/1.0/
 
-Typically, you would use bones and a :ref:`Skeleton <class_Skeleton>` to animate objects. However,
+Typically, you would use bones and a :ref:`Skeleton3D <class_Skeleton3D>` to animate objects. However,
 bones are animated on the CPU and so you end having to calculate thousands of operations every
 frame and it becomes impossible to have thousands of objects. Using vertex animation in a vertex
 shader, you avoid using bones and can instead calculate the full animation in a few lines of code
@@ -181,13 +183,13 @@ find that you can create a wide variety of swim styles using these four motions.
 Making a school of fish
 -----------------------
 
-Godot makes it easy to render thousands of the same object using a MultiMeshInstance node.
+Godot makes it easy to render thousands of the same object using a MultiMeshInstance3D node.
 
-A MultiMeshInstance node is created and used the same way you would make a MeshInstance node.
-For this tutorial, we will name the MultiMeshInstance node ``School``, because it will contain
+A MultiMeshInstance3D node is created and used the same way you would make a MeshInstance3D node.
+For this tutorial, we will name the MultiMeshInstance3D node ``School``, because it will contain
 a school of fish.
 
-Once you have a MultiMeshInstance add a :ref:`MultiMesh <class_MultiMesh>`, and to that
+Once you have a MultiMeshInstance3D add a :ref:`MultiMesh <class_MultiMesh>`, and to that
 MultiMesh add your :ref:`Mesh <class_Mesh>` with the shader from above.
 
 MultiMeshes draw your Mesh with three additional per-instance properties: Transform (rotation,
@@ -212,7 +214,7 @@ Now, set ``instance_count`` to the number of fish you want to have.
 Next we need to set the per-instance transforms.
 
 There are two ways to set per-instance transforms for MultiMeshes. The first is entirely in editor
-and is described in the :ref:`MultiMeshInstance tutorial <doc_using_multi_mesh_instance>`.
+and is described in the :ref:`MultiMeshInstance3D tutorial <doc_using_multi_mesh_instance>`.
 
 The second is to loop over all the instances and set their transforms in code. Below, we use GDScript
 to loop over all the instances and set their transform to a random position.
@@ -225,9 +227,9 @@ to loop over all the instances and set their transform to a random position.
     $School.multimesh.set_instance_transform(i, position)
 
 Running this script will place the fish in random positions in a box around the position of the
-MultiMeshInstance.
+MultiMeshInstance3D.
 
-.. note:: If performance is an issue for you, try running the scene with GLES2 or with fewer fish.
+.. note:: If performance is an issue for you, try running the scene with fewer fish.
 
 Notice how all the fish are all in the same position in their swim cycle? It makes them look very
 robotic. The next step is to give each fish a different position in the swim cycle so the entire
@@ -268,8 +270,8 @@ custom value.
 
 One problem that you will run into at this point is that the fish are animated, but they are not
 moving. You can move them by updating the per-instance transform for each fish every frame. Although
-doing so will be faster than moving thousands of MeshInstances per frame, it'll still likely be
+doing so will be faster than moving thousands of MeshInstance3Ds per frame, it'll still likely be
 slow.
 
-In the next tutorial we will cover how to use :ref:`Particles <class_Particles>` to take advantage
+In the next tutorial we will cover how to use :ref:`GPUParticles3D <class_GPUParticles3D>` to take advantage
 of the GPU and move each fish around individually while still receiving the benefits of instancing.

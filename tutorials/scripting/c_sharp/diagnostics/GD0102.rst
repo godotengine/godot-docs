@@ -1,0 +1,51 @@
+GD0102: The type of the exported member is not supported
+========================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0102
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Breaking - If the member type is changed
+
+                                      Non-breaking - If the ``[Export]`` attribute is removed
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+An unsupported type is specified for a member annotated with the ``[Export]``
+attribute when a
+:ref:`Variant-compatible type <c_sharp_variant_compatible_types>` is expected.
+
+Rule description
+----------------
+
+Every exported member must be Variant-compatible so it can be marshalled by
+the engine.
+
+.. code-block:: csharp
+
+    class SomeType { }
+
+    // SomeType is not a valid member type because it doesn't derive from GodotObject,
+    // so it's not compatible with Variant.
+    [Export]
+    public SomeType InvalidProperty { get; set; }
+
+    // System.Int32 is a valid type because it's compatible with Variant.
+    [Export]
+    public int ValidProperty { get; set; }
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, change the member's type to be Variant-compatible
+or remove the ``[Export]`` attribute.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Members with types that can't be marshalled
+will result in runtime errors.

@@ -1,7 +1,9 @@
+:article_outdated: True
+
 .. _doc_particle_systems_2d:
 
-Particle systems (2D)
-=====================
+2D particle systems
+===================
 
 Intro
 -----
@@ -19,34 +21,38 @@ parameters and then adding randomness to them.
 Particle nodes
 ~~~~~~~~~~~~~~
 
-Godot provides two different nodes for 2D particles, :ref:`class_Particles2D` and
-:ref:`class_CPUParticles2D`.
-Particles2D is more advanced and uses the GPU to process particle effects, but that limits
-it to higher end graphics API, and in our case to the GLES3 renderer. For projects using
-the GLES2 backend, CPUParticles2D is a CPU-driven option with near feature parity with
-Particles2D, but lesser performance. While Particles2D is configured via a
-:ref:`class_ParticlesMaterial` (and optionally with a custom shader), the matching options
-are provided via node properties in CPUParticles2D (with the exception of the trail settings).
-You can convert a Particles2D node into a CPUParticles2D node by clicking on the node in the
-inspector, and selecting "Convert to CPUParticles2D" in the "Particles" menu of the toolbar.
+Godot provides two different nodes for 2D particles, :ref:`class_GPUParticles2D`
+and :ref:`class_CPUParticles2D`. GPUParticles2D is more advanced and uses the
+GPU to process particle effects. CPUParticles2D is a CPU-driven option with
+near-feature parity with GPUParticles2D, but lower performance when using large
+amounts of particles. On the other hand, CPUParticles2D may perform better on
+low-end systems or in GPU-bottlenecked situations.
 
-.. image:: img/particles_convert.png
+While GPUParticles2D is configured via a :ref:`class_ParticleProcessMaterial`
+(and optionally with a custom shader), the matching options are provided via
+node properties in CPUParticles2D (with the exception of the trail settings).
 
-The rest of this tutorial is going to use the Particles2D node. First, add a Particles2D
+You can convert a GPUParticles2D node into a CPUParticles2D node by clicking on
+the node in the inspector, selecting the 2D viewport, and selecting
+**GPUParticles2D > Convert to CPUParticles2D** in the viewport toolbar.
+
+.. image:: img/particles_convert.webp
+
+The rest of this tutorial is going to use the GPUParticles2D node. First, add a GPUParticles2D
 node to your scene. After creating that node you will notice that only a white dot was created,
-and that there is a warning icon next to your Particles2D node in the scene dock. This
-is because the node needs a ParticlesMaterial to function.
+and that there is a warning icon next to your GPUParticles2D node in the scene dock. This
+is because the node needs a ParticleProcessMaterial to function.
 
-ParticlesMaterial
-~~~~~~~~~~~~~~~~~
+ParticleProcessMaterial
+~~~~~~~~~~~~~~~~~~~~~~~
 
 To add a process material to your particles node, go to ``Process Material`` in
 your inspector panel. Click on the box next to ``Material``, and from the dropdown
-menu select ``New ParticlesMaterial``.
+menu select ``New ParticleProcessMaterial``.
 
 .. image:: img/particles_material.png
 
-Your Particles2D node should now be emitting
+Your GPUParticles2D node should now be emitting
 white points downward.
 
 .. image:: img/particles1.png
@@ -54,11 +60,73 @@ white points downward.
 Texture
 ~~~~~~~
 
-A particle system uses a single texture (in the future this might be
-extended to animated textures via spritesheet). The texture is set via
-the relevant texture property:
+A particle system can use a single texture or an animation *flipbook*. A
+flipbook is a texture that contains several frames of animation that can be
+played back, or chosen at random during emission. This is equivalent to a
+spritesheet for particles.
+
+The texture is set via the **Texture** property:
 
 .. image:: img/particles2.png
+
+.. _doc_particle_systems_2d_using_flipbook:
+
+Using an animation flipbook
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Particle flipbooks are suited to reproduce complex effects such as smoke, fire,
+explosions. They can also be used to introduce random texture variation, by
+making every particle use a different texture. You can find existing particle
+flipbook images online, or pre-render them using external tools such as `Blender
+<https://www.blender.org/>`__ or `EmberGen <https://jangafx.com/software/embergen/>`__.
+
+.. figure:: img/particles_flipbook_result.webp
+   :align: center
+   :alt: Example of a particle system that uses a flipbook texture
+
+   Example of a particle system that uses a flipbook texture
+
+Using an animation flipbook requires additional configuration compared to a
+single texture. For demonstration purposes, we'll use this texture with 5
+columns and 7 rows (right-click and choose **Save as…**):
+
+.. figure:: img/particles_flipbook_example.webp
+   :align: center
+   :width: 240
+   :alt: Particle flipbook texture example
+
+   Credit: `JoesAlotofthings <https://opengameart.org/content/alot-of-particles-indispersal-special-effect-alotofparticles30>`__
+   (CC BY 4.0)
+
+To use an animation flipbook, you must create a new CanvasItemMaterial in the
+Material section of the GPUParticles2D (or CPUParticles2D) node:
+
+.. figure:: img/particles_flipbook_create_canvasitemmaterial.webp
+   :align: center
+   :alt: Creating a CanvasItemMaterial at the bottom of the particles node inspector
+
+   Creating a CanvasItemMaterial at the bottom of the particles node inspector
+
+In this CanvasItemMaterial, enable **Particle Animation** and set **H Frames** and **V Frames**
+to the number of columns and rows present in your flipbook texture:
+
+.. figure:: img/particles_flipbook_configure_canvasitemmaterial.webp
+   :align: center
+   :alt: Configuring the CanvasItemMaterial for the example flipbook texture
+
+   Configuring the CanvasItemMaterial for the example flipbook texture
+
+Once this is done, the :ref:`Animation section <doc_particle_systems_2d_animation>`
+in ParticleProcessMaterial (for GPUParticles2D) or in the CPUParticles2D inspector
+will be effective.
+
+.. tip::
+
+    If your flipbook texture has a black background instead of a transparent
+    background, you will also need to set the blend mode to **Add** instead of
+    **Mix** for correct display. Alternatively, you can modify the texture to
+    have a transparent background in an image editor. In `GIMP <https://gimp.org>`__,
+    this can be done using the **Color > Color to Alpha** menu.
 
 Time parameters
 ---------------
@@ -80,7 +148,7 @@ Lifetime: 4.0
 One Shot
 ~~~~~~~~
 
-When enabled, a Particles2D node will emit all of its particles once
+When enabled, a GPUParticles2D node will emit all of its particles once
 and then never again.
 
 Preprocess
@@ -149,7 +217,7 @@ The rectangle's ``W`` and ``H`` properties respectively control its Width and it
 The ``X`` and ``Y`` properties control the position of the upper-left
 corner of the rectangle, relative to the particle emitter.
 
-You can have Godot generate a Visibility Rect automatically using the toolbar above the 2d view. To do so, select the Particles2D node and Click ``Particles > Generate Visibility Rect``. Godot will simulate the Particles2D node emitting particles for a few seconds and set the rectangle to fit the surface the particles take.
+You can have Godot generate a Visibility Rect automatically using the toolbar above the 2d view. To do so, select the GPUParticles2D node and Click ``Particles > Generate Visibility Rect``. Godot will simulate the Particles2D node emitting particles for a few seconds and set the rectangle to fit the surface the particles take.
 
 You can control the emit duration with the ``Generation Time (sec)`` option. The maximum value is 25 seconds. If you need more time for your particles to move around, you can temporarily change the ``preprocess`` duration on the Particles2D node.
 
@@ -174,8 +242,8 @@ This controls the order in which individual particles are drawn. ``Index``
 means particles are drawn according to their emission order (default).
 ``Lifetime`` means they are drawn in order of remaining lifetime.
 
-ParticlesMaterial settings
---------------------------
+ParticleProcessMaterial settings
+--------------------------------
 
 Direction
 ~~~~~~~~~
@@ -293,21 +361,75 @@ Color
 
 Used to change the color of the particles being emitted.
 
-Hue variation
+Hue Variation
 ~~~~~~~~~~~~~
 
 The ``Variation`` value sets the initial hue variation applied to each
 particle. The ``Variation Random`` value controls the hue variation
 randomness ratio.
 
+.. _doc_particle_systems_2d_animation:
+
+Animation
+~~~~~~~~~
+
+.. note::
+
+    Particle flipbook animation is only effective if the CanvasItemMaterial used
+    on the GPUParticles2D or CPUParticles2D node has been
+    :ref:`configured accordingly <doc_particle_systems_2d_using_flipbook>`.
+
+To set up the particle flipbook for linear playback, set the **Speed Min** and **Speed Max** values to 1:
+
+.. figure:: img/particles_flipbook_configure_animation_speed.webp
+   :align: center
+   :alt: Setting up particle animation for playback during the particle's lifetime
+
+   Setting up particle animation for playback during the particle's lifetime
+
+By default, looping is disabled. If the particle is done playing before its
+lifetime ends, the particle will keep using the flipbook's last frame (which may
+be fully transparent depending on how the flipbook texture is designed). If
+looping is enabled, the animation will loop back to the first frame and resume
+playing.
+
+Depending on how many images your sprite sheet contains and for how long your
+particle is alive, the animation might not look smooth. The relationship between
+particle lifetime, animation speed, and number of images in the sprite sheet is
+this:
+
+.. note::
+
+   At an animation speed of ``1.0``, the animation will reach the last image
+   in the sequence just as the particle's lifetime ends.
+
+   .. math::
+      Animation\ FPS = \frac{Number\ of\ images}{Lifetime}
+
+If you wish the particle flipbook to be used as a source of random particle
+textures for every particle, keep the speed values at 0 and set **Offset Max**
+to 1 instead:
+
+.. figure:: img/particles_flipbook_configure_animation_offset.webp
+   :align: center
+   :alt: Setting up particle animation for random offset on emission
+
+   Setting up particle animation for random offset on emission
+
+Note that the GPUParticles2D node's **Fixed FPS** also affects animation
+playback. For smooth animation playback, it's recommended to set it to 0 so that
+the particle is simulated on every rendered frame. If this is not an option for
+your use case, set **Fixed FPS** to be equal to the effective framerate used by
+the flipbook animation (see above for the formula).
+
 Emission Shapes
 ---------------
 
-ParticlesMaterials allow you to set an Emission Mask, which dictates
+ParticleProcessMaterials allow you to set an Emission Mask, which dictates
 the area and direction in which particles are emitted.
 These can be generated from textures in your project.
 
-Ensure that a ParticlesMaterial is set, and the Particles2D node is selected.
+Ensure that a ParticleProcessMaterial is set, and the GPUParticles2D node is selected.
 A "Particles" menu should appear in the Toolbar:
 
 .. image:: img/emission_shapes1.png
@@ -348,7 +470,7 @@ Emission Colors
 
 ``Capture from Pixel`` will cause the particles to inherit the color of the mask at their spawn points.
 
-Once you click "OK", the mask will be generated and set to the ParticlesMaterial, under the ``Emission Shape`` section:
+Once you click "OK", the mask will be generated and set to the ParticleProcessMaterial, under the ``Emission Shape`` section:
 
 .. image:: img/emission_shapes4.png
 

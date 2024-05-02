@@ -1,3 +1,5 @@
+:allow_comments: False
+
 Animation
 =========
 
@@ -13,5 +15,7 @@ and the animation editor.
    cutout_animation
    2d_skeletons
    animation_tree
+   playing_videos
+   creating_movies
 
 See :ref:`doc_importing_3d_scenes` for information on importing animations from a 3D model.

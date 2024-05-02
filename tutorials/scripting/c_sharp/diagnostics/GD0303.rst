@@ -1,0 +1,37 @@
+GD0303: The parent symbol of a type argument that must be Variant compatible was not handled
+============================================================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0303
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Not fixable
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+This is a bug in the engine and must be reported.
+
+Rule description
+----------------
+
+The ``MustBeVariantAnalyzer`` has found an unhandled case in the user source
+code. Please, open an `issue <https://github.com/godotengine/godot/issues>`_
+and attach a minimal reproduction project so it can be fixed.
+
+
+How to fix violations
+---------------------
+
+Violations of this rule can't be fixed.
+
+When to suppress warnings
+-------------------------
+
+Suppressing a warning from this rule may result in unexpected errors, since the
+case found by the analyzer may need to be handled by the user to prevent
+types that are not Variant-compatible from reaching the engine. Attempting to
+marshal incompatible types will result in runtime errors.

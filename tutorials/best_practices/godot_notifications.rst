@@ -4,7 +4,7 @@ Godot notifications
 ===================
 
 Every Object in Godot implements a
-:ref:`_notification <class_Object_method__notification>` method. Its purpose is to
+:ref:`_notification <class_Object_private_method__notification>` method. Its purpose is to
 allow the Object to respond to a variety of engine-level callbacks that may
 relate to it. For example, if the engine tells a
 :ref:`CanvasItem <class_CanvasItem>` to "draw", it will call
@@ -13,31 +13,27 @@ relate to it. For example, if the engine tells a
 Some of these notifications, like draw, are useful to override in scripts. So
 much so that Godot exposes many of them with dedicated functions:
 
-- ``_ready()`` : NOTIFICATION_READY
+- ``_ready()``: ``NOTIFICATION_READY``
 
-- ``_enter_tree()`` : NOTIFICATION_ENTER_TREE
+- ``_enter_tree()``: ``NOTIFICATION_ENTER_TREE``
 
-- ``_exit_tree()`` : NOTIFICATION_EXIT_TREE
+- ``_exit_tree()``: ``NOTIFICATION_EXIT_TREE``
 
-- ``_process(delta)`` : NOTIFICATION_PROCESS
+- ``_process(delta)``: ``NOTIFICATION_PROCESS``
 
-- ``_physics_process(delta)`` : NOTIFICATION_PHYSICS_PROCESS
+- ``_physics_process(delta)``: ``NOTIFICATION_PHYSICS_PROCESS``
 
-- ``_draw()`` : NOTIFICATION_DRAW
+- ``_draw()``: ``NOTIFICATION_DRAW``
 
 What users might *not* realize is that notifications exist for types other
-than Node alone:
+than Node alone, for example:
 
 - :ref:`Object::NOTIFICATION_POSTINITIALIZE <class_Object_constant_NOTIFICATION_POSTINITIALIZE>`:
   a callback that triggers during object initialization. Not accessible to scripts.
 
 - :ref:`Object::NOTIFICATION_PREDELETE <class_Object_constant_NOTIFICATION_PREDELETE>`:
   a callback that triggers before the engine deletes an Object, i.e. a
-  'destructor'.
-
-- :ref:`MainLoop::NOTIFICATION_WM_MOUSE_ENTER <class_MainLoop_constant_NOTIFICATION_WM_MOUSE_ENTER>`:
-  a callback that triggers when the mouse enters the window in the operating
-  system that displays the game content.
+  "destructor".
 
 And many of the callbacks that *do* exist in Nodes don't have any dedicated
 methods, but are still quite useful.
@@ -49,20 +45,15 @@ methods, but are still quite useful.
   a callback that triggers anytime one removes a child node from another
   node.
 
-- :ref:`Popup::NOTIFICATION_POST_POPUP <class_Popup_constant_NOTIFICATION_POST_POPUP>`:
-  a callback that triggers after a Popup node completes any ``popup*`` method.
-  Note the difference from its ``about_to_show`` signal which triggers
-  *before* its appearance.
-
 One can access all these custom notifications from the universal
-``_notification`` method.
+``_notification()`` method.
 
 .. note::
   Methods in the documentation labeled as "virtual" are also intended to be
   overridden by scripts.
 
   A classic example is the
-  :ref:`_init <class_Object_method__init>` method in Object. While it has no
+  :ref:`_init <class_Object_private_method__init>` method in Object. While it has no
   ``NOTIFICATION_*`` equivalent, the engine still calls the method. Most languages
   (except C#) rely on it as a constructor.
 
@@ -72,38 +63,59 @@ virtual functions?
 _process vs. _physics_process vs. \*_input
 ------------------------------------------
 
-Use ``_process`` when one needs a framerate-dependent deltatime between
+Use ``_process()`` when one needs a framerate-dependent delta time between
 frames. If code that updates object data needs to update as often as
 possible, this is the right place. Recurring logic checks and data caching
 often execute here, but it comes down to the frequency at which one needs
 the evaluations to update. If they don't need to execute every frame, then
-implementing a Timer-yield-timeout loop is another option.
+implementing a Timer-timeout loop is another option.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Infinitely loop, but only execute whenever the Timer fires.
     # Allows for recurring operations that don't trigger script logic
     # every frame (or even every fixed frame).
-    while true:
-        my_method()
-        $Timer.start()
-        yield($Timer, "timeout")
+    func _ready():
+        var timer = Timer.new()
+        timer.autostart = true
+        timer.wait_time = 0.5
+        add_child(timer)
+        timer.timeout.connect(func():
+            print("This block runs every 0.5 seconds")
+        )
 
-Use ``_physics_process`` when one needs a framerate-independent deltatime
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyNode : Node
+    {
+        // Allows for recurring operations that don't trigger script logic
+        // every frame (or even every fixed frame).
+        public override void _Ready()
+        {
+            var timer = new Timer();
+            timer.Autostart = true;
+            timer.WaitTime = 0.5;
+            AddChild(timer);
+            timer.Timeout += () => GD.Print("This block runs every 0.5 seconds");
+        }
+    }
+
+Use ``_physics_process()`` when one needs a framerate-independent delta time
 between frames. If code needs consistent updates over time, regardless
 of how fast or slow time advances, this is the right place.
 Recurring kinematic and object transform operations should execute here.
 
 While it is possible, to achieve the best performance, one should avoid
-making input checks during these callbacks. ``_process`` and
-``_physics_process`` will trigger at every opportunity (they do not "rest" by
-default). In contrast, ``*_input`` callbacks will trigger only on frames in
+making input checks during these callbacks. ``_process()`` and
+``_physics_process()`` will trigger at every opportunity (they do not "rest" by
+default). In contrast, ``*_input()`` callbacks will trigger only on frames in
 which the engine has actually detected the input.
 
 One can check for input actions within the input callbacks just the same.
 If one wants to use delta time, one can fetch it from the related
-deltatime methods as needed.
+delta time methods as needed.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
@@ -122,26 +134,26 @@ deltatime methods as needed.
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
 
         // Called every frame, even when the engine detects no input.
-        public void _Process(float delta)
+        public void _Process(double delta)
         {
             if (Input.IsActionJustPressed("ui_select"))
                 GD.Print(delta);
         }
 
         // Called during every input event. Equally true for _input().
-        public void _UnhandledInput(InputEvent event)
+        public void _UnhandledInput(InputEvent @event)
         {
-            switch (event)
+            switch (@event)
             {
-                case InputEventKey keyEvent:
+                case InputEventKey:
                     if (Input.IsActionJustPressed("ui_accept"))
                         GD.Print(GetProcessDeltaTime());
-                    break;
-                default:
                     break;
             }
         }
@@ -152,85 +164,82 @@ _init vs. initialization vs. export
 -----------------------------------
 
 If the script initializes its own node subtree, without a scene,
-that code should execute here. Other property or SceneTree-independent
-initializations should also run here. This triggers before ``_ready`` or
-``_enter_tree``, but after a script creates and initializes its properties.
+that code should execute in ``_init()``. Other property or SceneTree-independent
+initializations should also run here.
 
-Scripts have three types of property assignments that can occur during
-instantiation:
+.. note::
+  The C# equivalent to GDScript's ``_init()`` method is the constructor.
+
+``_init()`` triggers before ``_enter_tree()`` or ``_ready()``, but after a script
+creates and initializes its properties. When instantiating a scene, property
+values will set up according to the following sequence:
+
+1. **Initial value assignment:** the property is assigned its initialization value,
+   or its default value if one is not specified. If a setter exists, it is not used.
+
+2. **``_init()`` assignment:** the property's value is replaced by any assignments
+   made in ``_init()``, triggering the setter.
+
+3. **Exported value assignment:** an exported property's value is again replaced by
+   any value set in the Inspector, triggering the setter.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    # "one" is an "initialized value". These DO NOT trigger the setter.
-    # If someone set the value as "two" from the Inspector, this would be an
-    # "exported value". These DO trigger the setter.
-    export(String) var test = "one" setget set_test
+    # test is initialized to "one", without triggering the setter.
+    @export var test: String = "one":
+        set(value):
+            test = value + "!"
 
     func _init():
-        # "three" is an "init assignment value".
-        # These DO NOT trigger the setter, but...
-        test = "three"
-        # These DO trigger the setter. Note the `self` prefix.
-        self.test = "three"
+        # Triggers the setter, changing test's value from "one" to "two!".
+        test = "two"
 
-    func set_test(value):
-        test = value
-        print("Setting: ", test)
+    # If someone sets test to "three" from the Inspector, it would trigger
+    # the setter, changing test's value from "two!" to "three!".
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
         private string _test = "one";
 
-        // Changing the value from the inspector does trigger the setter in C#.
         [Export]
         public string Test
         {
             get { return _test; }
-            set
-            {
-                _test = value;
-                GD.Print("Setting: " + _test);
-            }
+            set { _test = $"{value}!"; }
         }
 
         public MyNode()
         {
-            // Triggers the setter as well
-            Test = "three";
+            // Triggers the setter, changing _test's value from "one" to "two!".
+            Test = "two";
         }
+
+        // If someone sets Test to "three" in the Inspector, it would trigger
+        // the setter, changing _test's value from "two!" to "three!".
     }
 
-When instantiating a scene, property values will set up according to the
-following sequence:
-
-1. **Initial value assignment:** instantiation will assign either the
-   initialization value or the init assignment value. Init assignments take
-   priority over initialization values.
-
-2. **Exported value assignment:** If instancing from a scene rather than
-   a script, Godot will assign the exported value to replace the initial
-   value defined in the script.
-
-As a result, instantiating a script versus a scene will affect both the
+As a result, instantiating a script versus a scene may affect both the
 initialization *and* the number of times the engine calls the setter.
 
 _ready vs. _enter_tree vs. NOTIFICATION_PARENTED
 ------------------------------------------------
 
 When instantiating a scene connected to the first executed scene, Godot will
-instantiate nodes down the tree (making ``_init`` calls) and build the tree
-going downwards from the root. This causes ``_enter_tree`` calls to cascade
+instantiate nodes down the tree (making ``_init()`` calls) and build the tree
+going downwards from the root. This causes ``_enter_tree()`` calls to cascade
 down the tree. Once the tree is complete, leaf nodes call ``_ready``. A node
 will call this method once all child nodes have finished calling theirs. This
 then causes a reverse cascade going up back to the tree's root.
 
 When instantiating a script or a standalone scene, nodes are not
-added to the SceneTree upon creation, so no ``_enter_tree`` callbacks
-trigger. Instead, only the ``_init`` call occurs. When the scene is added
-to the SceneTree, the ``_enter_tree`` and ``_ready`` calls occur.
+added to the SceneTree upon creation, so no ``_enter_tree()`` callbacks
+trigger. Instead, only the ``_init()`` call occurs. When the scene is added
+to the SceneTree, the ``_enter_tree()`` and ``_ready()`` calls occur.
 
 If one needs to trigger behavior that occurs as nodes parent to another,
 regardless of whether it occurs as part of the main/active scene or not, one
@@ -247,49 +256,55 @@ nodes that one might create at runtime.
     var parent_cache
 
     func connection_check():
-        return parent.has_user_signal("interacted_with")
+        return parent_cache.has_user_signal("interacted_with")
 
     func _notification(what):
         match what:
             NOTIFICATION_PARENTED:
                 parent_cache = get_parent()
                 if connection_check():
-                    parent_cache.connect("interacted_with", self, "_on_parent_interacted_with")
+                    parent_cache.interacted_with.connect(_on_parent_interacted_with)
             NOTIFICATION_UNPARENTED:
                 if connection_check():
-                    parent_cache.disconnect("interacted_with", self, "_on_parent_interacted_with")
+                    parent_cache.interacted_with.disconnect(_on_parent_interacted_with)
 
     func _on_parent_interacted_with():
         print("I'm reacting to my parent's interaction!")
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
-        public Node ParentCache = null;
+        private Node _parentCache;
 
         public void ConnectionCheck()
         {
-            return ParentCache.HasUserSignal("InteractedWith");
+            return _parentCache.HasUserSignal("InteractedWith");
         }
 
         public void _Notification(int what)
         {
             switch (what)
             {
-                case NOTIFICATION_PARENTED:
-                    ParentCache = GetParent();
+                case NotificationParented:
+                    _parentCache = GetParent();
                     if (ConnectionCheck())
-                        ParentCache.Connect("InteractedWith", this, "OnParentInteractedWith");
+                    {
+                        _parentCache.Connect("InteractedWith", Callable.From(OnParentInteractedWith));
+                    }
                     break;
-                case NOTIFICATION_UNPARENTED:
+                case NotificationUnparented:
                     if (ConnectionCheck())
-                        ParentCache.Disconnect("InteractedWith", this, "OnParentInteractedWith");
+                    {
+                        _parentCache.Disconnect("InteractedWith", Callable.From(OnParentInteractedWith));
+                    }
                     break;
             }
         }
 
-        public void OnParentInteractedWith()
+        private void OnParentInteractedWith()
         {
             GD.Print("I'm reacting to my parent's interaction!");
         }

@@ -28,21 +28,21 @@ Area properties
 
 Areas have many properties you can use to customize their behavior.
 
-.. image:: img/area2d_properties.png
+.. image:: img/area2d_properties.webp
 
-The first eight properties are used to configure the area's physics override
-behavior. We'll look at how to use those in the section below.
+The ``Gravity``, ``Linear Damp``, and ``Angular Damp`` sections
+are used to configure the area's physics override behavior.
+We'll look at how to use those in the *Area influence* section below.
 
-*Monitoring* and *Monitorable* are used to enable and disable the area.
+``Monitoring`` and ``Monitorable`` are used to enable and disable the area.
 
-The "Collision" section is where you configure the area's collision layer(s)
-and mask(s).
-
-The "Audio Bus" section allows you to override audio in the area, for example to
+The ``Audio Bus`` section allows you to override audio in the area, for example to
 apply an audio effect when the player moves through.
 
 Note that Area2D extends :ref:`CollisionObject2D <class_CollisionObject2D>`, so it
-also provides properties inherited from that class, such as ``input_pickable``.
+also provides properties inherited from that class.
+The ``Collision`` section of ``CollisionObject2D`` is where you configure the
+area's collision layer(s) and mask(s).
 
 Overlap detection
 -----------------
@@ -57,11 +57,11 @@ to disappear when the player touches it.
 
 Here's the node setup for the coin:
 
-.. image:: img/area2d_coin_nodes.png
+.. image:: img/area2d_coin_nodes.webp
 
-To detect the overlap, we'll connect the appropriate signal on the Area2d. Which
+To detect the overlap, we'll connect the appropriate signal on the Area2D. Which
 signal to use depends on the player's node type. If the player is another area,
-use ``area_entered``. However, let's assume our player is a ``KinematicBody2D``
+use ``area_entered``. However, let's assume our player is a ``CharacterBody2D``
 (and therefore a ``CollisionObject2D`` type), so we'll connect the
 ``body_entered`` signal.
 
@@ -73,15 +73,16 @@ use ``area_entered``. However, let's assume our player is a ``KinematicBody2D``
 
     extends Area2D
 
-    func _on_Coin_body_entered(body):
+    func _on_coin_body_entered(body):
         queue_free()
 
  .. code-tab:: csharp
 
-    public class Coin : Area2D
-    {
+    using Godot;
 
-        public void OnCoinBodyEntered(PhysicsBody2D body)
+    public partial class Coin : Area2D
+    {
+        private void OnCoinBodyEntered(PhysicsBody2D body)
         {
             QueueFree();
         }
@@ -101,8 +102,8 @@ Area influence
 --------------
 
 The second major use for area nodes is to alter physics. By default, the area
-won't do this, but you can enable this with the *Space Override* property. When
-areas overlap, they are processed in *Priority* order (higher priority areas are
+won't do this, but you can enable this with the ``Space Override`` property. When
+areas overlap, they are processed in ``Priority`` order (higher priority areas are
 processed first). There are four options for override:
 
 - *Combine* - The area adds its values to what has been calculated so far.
@@ -116,15 +117,15 @@ overlapping areas.
 The physics properties that can be overridden are:
 
 - *Gravity* - Gravity's strength inside the area.
-- *Gravity Vec* - Gravity's direction. This vector does not need to be normalized.
+- *Gravity Direction* - This vector does not need to be normalized.
 - *Linear Damp* - How quickly objects stop moving - linear velocity lost per second.
 - *Angular Damp* - How quickly objects stop spinning - angular velocity lost per second.
 
 Point gravity
 ~~~~~~~~~~~~~
 
-The *Gravity Point* property allows you to create an "attractor". Gravity in the
-area will be calculated towards a point, given by the *Gravity Vec* property.
+The ``Gravity Point`` property allows you to create an "attractor". Gravity in the
+area will be calculated towards a point, given by the ``Point Center`` property.
 Values are relative to the Area2D, so for example using ``(0, 0)`` will attract
 objects to the center of the area.
 
@@ -137,4 +138,4 @@ override.
 .. image:: img/area2d_override.gif
 
 You can download this project here:
-:download:`using_area_2d.zip <files/using_area_2d.zip>`
+`area_2d_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/area_2d_starter.zip>`_

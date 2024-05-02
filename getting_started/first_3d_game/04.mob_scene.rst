@@ -7,28 +7,33 @@ In this part, you're going to code the monsters, which we'll call mobs. In the
 next lesson, we'll spawn them randomly around the playable area.
 
 Let's design the monsters themselves in a new scene. The node structure is going
-to be similar to the *Player* scene.
+to be similar to the ``player.tscn`` scene.
 
-Create a scene with, once again, a *KinematicBody* node as its root. Name it
-*Mob*. Add a *Spatial* node as a child of it, name it *Pivot*. And drag and drop
-the file ``mob.glb`` from the *FileSystem* dock onto the *Pivot* to add the
-monster's 3D model to the scene. You can rename the newly created *mob* node
-into *Character*.
+Create a scene with, once again, a :ref:`CharacterBody3D <class_CharacterBody3D>` node as its root. Name it
+``Mob``. Add a child node :ref:`Node3D <class_Node3D>`, name it ``Pivot``. And drag and drop
+the file ``mob.glb`` from the *FileSystem* dock onto the ``Pivot`` to add the
+monster's 3D model to the scene.
+
+.. image:: img/04.mob_scene/drag_drop_mob.webp
+
+You can rename the newly created ``mob`` node
+into ``Character``.
 
 |image0|
 
-We need a collision shape for our body to work. Right-click on the *Mob* node,
+We need a collision shape for our body to work. Right-click on the ``Mob`` node,
 the scene's root, and click *Add Child Node*.
 
 |image1|
 
-Add a *CollisionShape*.
+Add a :ref:`CollisionShape3D <class_CollisionShape3D>`.
 
 |image2|
 
-In the *Inspector*, assign a *BoxShape* to the *Shape* property.
 
-|image3|
+In the *Inspector*, assign a *BoxShape3D* to the *Shape* property.
+
+.. image:: img/01.game_setup/08.create_box_shape3D.jpg
 
 We should change its size to fit the 3D model better. You can do so
 interactively by clicking and dragging on the orange dots.
@@ -52,15 +57,15 @@ Removing monsters off-screen
 We're going to spawn monsters at regular time intervals in the game level. If
 we're not careful, their count could increase to infinity, and we don't want
 that. Each mob instance has both a memory and a processing cost, and we don't
-want to pay for it when the mob's outside the screen.
+want to pay for it when the mob is outside the screen.
 
-Once a monster leaves the screen, we don't need it anymore, so we can delete it.
+Once a monster leaves the screen, we don't need it anymore, so we should delete it.
 Godot has a node that detects when objects leave the screen,
-*VisibilityNotifier*, and we're going to use it to destroy our mobs.
+:ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>`, and we're going to use it to destroy our mobs.
 
 .. note::
 
-    When you keep instancing an object in games, there's a technique you can
+    When you keep instancing an object, there's a technique you can
     use to avoid the cost of creating and destroying instances all the time
     called pooling. It consists of pre-creating an array of objects and reusing
     them over and over.
@@ -69,9 +74,9 @@ Godot has a node that detects when objects leave the screen,
     reason to use pools is to avoid freezes with garbage-collected languages
     like C# or Lua. GDScript uses a different technique to manage memory,
     reference counting, which doesn't have that caveat. You can learn more
-    about that here :ref:`doc_gdscript_basics_memory_management`.
+    about that here: :ref:`doc_gdscript_basics_memory_management`.
 
-Select the *Mob* node and add a *VisibilityNotifier* as a child of it. Another
+Select the ``Mob`` node and add a child node :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>`. Another
 box, pink this time, appears. When this box completely leaves the screen, the
 node will emit a signal.
 
@@ -85,101 +90,96 @@ Coding the mob's movement
 -------------------------
 
 Let's implement the monster's motion. We're going to do this in two steps.
-First, we'll write a script on the *Mob* that defines a function to initialize
-the monster. We'll then code the randomized spawn mechanism in the *Main* scene
+First, we'll write a script on the ``Mob`` that defines a function to initialize
+the monster. We'll then code the randomized spawn mechanism in the ``main.tscn`` scene
 and call the function from there.
 
-Attach a script to the *Mob*.
+Attach a script to the ``Mob``.
 
 |image7|
 
 Here's the movement code to start with. We define two properties, ``min_speed``
-and ``max_speed``, to define a random speed range. We then define and initialize
-the ``velocity``.
+and ``max_speed``, to define a random speed range, which we will later use to define ``CharacterBody3D.velocity``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+    extends CharacterBody3D
 
-   # Minimum speed of the mob in meters per second.
-   export var min_speed = 10
-   # Maximum speed of the mob in meters per second.
-   export var max_speed = 18
-
-   var velocity = Vector3.ZERO
+    # Minimum speed of the mob in meters per second.
+    @export var min_speed = 10
+    # Maximum speed of the mob in meters per second.
+    @export var max_speed = 18
 
 
-   func _physics_process(_delta):
-       move_and_slide(velocity)
+    func _physics_process(_delta):
+        move_and_slide()
 
  .. code-tab:: csharp
 
-    public class Mob : KinematicBody
+    using Godot;
+
+    public partial class Mob : CharacterBody3D
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
         // Minimum speed of the mob in meters per second
         [Export]
-        public int MinSpeed = 10;
+        public int MinSpeed { get; set; } = 10;
         // Maximum speed of the mob in meters per second
         [Export]
-        public int MaxSpeed = 18;
+        public int MaxSpeed { get; set; } = 18;
 
-        private Vector3 _velocity = Vector3.Zero;
-
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            MoveAndSlide(_velocity);
+            MoveAndSlide();
         }
     }
 
-Similarly to the player, we move the mob every frame by calling
-``KinematicBody``\ 's ``move_and_slide()`` method. This time, we don't update
-the ``velocity`` every frame: we want the monster to move at a constant speed
+Similarly to the player, we move the mob every frame by calling the function
+``CharacterBody3D.move_and_slide()``. This time, we don't update
+the ``velocity`` every frame; we want the monster to move at a constant speed
 and leave the screen, even if it were to hit an obstacle.
 
-We need to define another function to calculate the start velocity. This
+We need to define another function to calculate the ``CharacterBody3D.velocity``. This
 function will turn the monster towards the player and randomize both its angle
 of motion and its velocity.
 
-The function will take a ``start_position``, the mob's spawn position, and the
+The function will take a ``start_position``,the mob's spawn position, and the
 ``player_position`` as its arguments.
 
-We first position the mob at ``start_position``. Then, we turn it towards the
-player using the ``look_at()`` method and randomize the angle by rotating a
-random amount around the Y axis. Below, ``rand_range()`` outputs a random value
+We position the mob at ``start_position`` and turn it towards the player using
+the ``look_at_from_position()`` method, and randomize the angle by rotating a
+random amount around the Y axis. Below, ``randf_range()`` outputs a random value
 between ``-PI / 4`` radians and ``PI / 4`` radians.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   # We will call this function from the Main scene.
-   func initialize(start_position, player_position):
-       translation = start_position
-       # We turn the mob so it looks at the player.
-       look_at(player_position, Vector3.UP)
-       # And rotate it randomly so it doesn't move exactly toward the player.
-       rotate_y(rand_range(-PI / 4, PI / 4))
+    # This function will be called from the Main scene.
+    func initialize(start_position, player_position):
+        # We position the mob by placing it at start_position
+        # and rotate it towards player_position, so it looks at the player.
+        look_at_from_position(start_position, player_position, Vector3.UP)
+        # Rotate this mob randomly within range of -45 and +45 degrees,
+        # so that it doesn't move directly towards the player.
+        rotate_y(randf_range(-PI / 4, PI / 4))
 
  .. code-tab:: csharp
 
-    // We will call this function from the Main scene
+    // This function will be called from the Main scene.
     public void Initialize(Vector3 startPosition, Vector3 playerPosition)
     {
-        Translation = startPosition;
-        // We turn the mob so it looks at the player.
-        LookAt(playerPosition, Vector3.Up);
-        // And rotate it randomly so it doesn't move exactly toward the player.
+        // We position the mob by placing it at startPosition
+        // and rotate it towards playerPosition, so it looks at the player.
+        LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
+        // Rotate this mob randomly within range of -45 and +45 degrees,
+        // so that it doesn't move directly towards the player.
         RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
     }
 
-We then calculate a random speed using ``rand_range()`` once again and we use it
-to calculate the velocity.
-
-We start by creating a 3D vector pointing forward, multiply it by our
-``random_speed``, and finally rotate it using the ``Vector3`` class's
-``rotated()`` method.
+We got a random position, now we need a ``random_speed``. ``randi_range()`` will be useful as it gives random int values, and we will use ``min_speed`` and ``max_speed``.
+``random_speed`` is just an integer, and we just use it to multiply our ``CharacterBody3D.velocity``. After ``random_speed`` is applied, we rotate ``CharacterBody3D.velocity`` Vector3 towards the player.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -187,11 +187,12 @@ We start by creating a 3D vector pointing forward, multiply it by our
    func initialize(start_position, player_position):
        # ...
 
-       # We calculate a random speed.
-       var random_speed = rand_range(min_speed, max_speed)
+       # We calculate a random speed (integer)
+       var random_speed = randi_range(min_speed, max_speed)
        # We calculate a forward velocity that represents the speed.
        velocity = Vector3.FORWARD * random_speed
-       # We then rotate the vector based on the mob's Y rotation to move in the direction it's looking.
+       # We then rotate the velocity vector based on the mob's Y rotation
+       # in order to move in the direction the mob is looking.
        velocity = velocity.rotated(Vector3.UP, rotation.y)
 
  .. code-tab:: csharp
@@ -200,49 +201,49 @@ We start by creating a 3D vector pointing forward, multiply it by our
     {
         // ...
 
-        // We calculate a random speed.
-        float randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
+        // We calculate a random speed (integer).
+        int randomSpeed = GD.RandRange(MinSpeed, MaxSpeed);
         // We calculate a forward velocity that represents the speed.
-        _velocity = Vector3.Forward * randomSpeed;
-        // We then rotate the vector based on the mob's Y rotation to move in the direction it's looking
-        _velocity = _velocity.Rotated(Vector3.Up, Rotation.y);
+        Velocity = Vector3.Forward * randomSpeed;
+        // We then rotate the velocity vector based on the mob's Y rotation
+        // in order to move in the direction the mob is looking.
+        Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
     }
 
 Leaving the screen
 ------------------
 
 We still have to destroy the mobs when they leave the screen. To do so, we'll
-connect our *VisibilityNotifier* node's ``screen_exited`` signal to the *Mob*.
+connect our :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>` node's ``screen_exited`` signal to the ``Mob``.
 
 Head back to the 3D viewport by clicking on the *3D* label at the top of the
-editor. You can also press :kbd:`Ctrl + F2` (:kbd:`Alt + 2` on macOS).
+editor. You can also press :kbd:`Ctrl + F2` (:kbd:`Opt + 2` on macOS).
 
 |image8|
 
-Select the *VisibilityNotifier* node and on the right side of the interface,
-navigate to the *Node* dock. Double-click the *screen_exited()* signal.
+Select the :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>` node and on the right side of the interface,
+navigate to the *Node* dock. Double-click the ``screen_exited()`` signal.
 
 |image9|
 
-Connect the signal to the *Mob*.
+Connect the signal to the ``Mob``
 
 |image10|
 
-This will take you back to the script editor and add a new function for you,
-``_on_VisibilityNotifier_screen_exited()``. From it, call the ``queue_free()``
-method. This will destroy the mob instance when the *VisibilityNotifier* \'s box
-leaves the screen.
+This will add a new function for you in your mob script,
+``_on_visible_on_screen_notifier_3d_screen_exited()``. From it, call the ``queue_free()``
+method. This function destroys the instance it's called on.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   func _on_VisibilityNotifier_screen_exited():
+   func _on_visible_on_screen_notifier_3d_screen_exited():
        queue_free()
 
  .. code-tab:: csharp
 
-    // We also specified this function name in PascalCase in the editor's connection window
-    public void OnVisibilityNotifierScreenExited()
+    // We also specified this function name in PascalCase in the editor's connection window.
+    private void OnVisibilityNotifierScreenExited()
     {
         QueueFree();
     }
@@ -256,64 +257,75 @@ Here is the complete ``Mob.gd`` script for reference.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends KinematicBody
+    extends CharacterBody3D
 
-   # Minimum speed of the mob in meters per second.
-   export var min_speed = 10
-   # Maximum speed of the mob in meters per second.
-   export var max_speed = 18
+    # Minimum speed of the mob in meters per second.
+    @export var min_speed = 10
+    # Maximum speed of the mob in meters per second.
+    @export var max_speed = 18
 
-   var velocity = Vector3.ZERO
+    func _physics_process(_delta):
+        move_and_slide()
 
+    # This function will be called from the Main scene.
+    func initialize(start_position, player_position):
+        # We position the mob by placing it at start_position
+        # and rotate it towards player_position, so it looks at the player.
+        look_at_from_position(start_position, player_position, Vector3.UP)
+        # Rotate this mob randomly within range of -90 and +90 degrees,
+        # so that it doesn't move directly towards the player.
+        rotate_y(randf_range(-PI / 4, PI / 4))
 
-   func _physics_process(_delta):
-       move_and_slide(velocity)
+        # We calculate a random speed (integer)
+        var random_speed = randi_range(min_speed, max_speed)
+        # We calculate a forward velocity that represents the speed.
+        velocity = Vector3.FORWARD * random_speed
+        # We then rotate the velocity vector based on the mob's Y rotation
+        # in order to move in the direction the mob is looking.
+        velocity = velocity.rotated(Vector3.UP, rotation.y)
 
-   func initialize(start_position, player_position):
-       translation = start_position
-       look_at(player_position, Vector3.UP)
-       rotate_y(rand_range(-PI / 4, PI / 4))
-
-       var random_speed = rand_range(min_speed, max_speed)
-       velocity = Vector3.FORWARD * random_speed
-       velocity = velocity.rotated(Vector3.UP, rotation.y)
-
-
-   func _on_VisibilityNotifier_screen_exited():
-       queue_free()
+    func _on_visible_on_screen_notifier_3d_screen_exited():
+        queue_free()
 
  .. code-tab:: csharp
 
-    public class Mob : KinematicBody
+    using Godot;
+
+    public partial class Mob : CharacterBody3D
     {
-        // Minimum speed of the mob in meters per second
+        // Minimum speed of the mob in meters per second.
         [Export]
-        public int MinSpeed = 10;
-        // Maximum speed of the mob in meters per second
+        public int MinSpeed { get; set; } = 10;
+        // Maximum speed of the mob in meters per second.
         [Export]
-        public int MaxSpeed = 18;
+        public int MaxSpeed { get; set; } = 18;
 
-        private Vector3 _velocity = Vector3.Zero;
-
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            MoveAndSlide(_velocity);
+            MoveAndSlide();
         }
 
-        // We will call this function from the Main scene
+        // This function will be called from the Main scene.
         public void Initialize(Vector3 startPosition, Vector3 playerPosition)
         {
-            Translation = startPosition;
-            LookAt(playerPosition, Vector3.Up);
+            // We position the mob by placing it at startPosition
+            // and rotate it towards playerPosition, so it looks at the player.
+            LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
+            // Rotate this mob randomly within range of -90 and +90 degrees,
+            // so that it doesn't move directly towards the player.
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
-            var randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
-            _velocity = Vector3.Forward * randomSpeed;
-            _velocity = _velocity.Rotated(Vector3.Up, Rotation.y);
+            // We calculate a random speed (integer).
+            int randomSpeed = GD.RandRange(MinSpeed, MaxSpeed);
+            // We calculate a forward velocity that represents the speed.
+            Velocity = Vector3.Forward * randomSpeed;
+            // We then rotate the velocity vector based on the mob's Y rotation
+            // in order to move in the direction the mob is looking.
+            Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
         }
 
-        // We also specified this function name in PascalCase in the editor's connection window
-        public void OnVisibilityNotifierScreenExited()
+        // We also specified this function name in PascalCase in the editor's connection window.
+        private void OnVisibilityNotifierScreenExited()
         {
             QueueFree();
         }
@@ -322,11 +334,10 @@ Here is the complete ``Mob.gd`` script for reference.
 .. |image0| image:: img/04.mob_scene/01.initial_three_nodes.png
 .. |image1| image:: img/04.mob_scene/02.add_child_node.png
 .. |image2| image:: img/04.mob_scene/03.scene_with_collision_shape.png
-.. |image3| image:: img/04.mob_scene/04.create_box_shape.png
 .. |image4| image:: img/04.mob_scene/05.box_final_size.png
 .. |image5| image:: img/04.mob_scene/06.visibility_notifier.png
 .. |image6| image:: img/04.mob_scene/07.visibility_notifier_bbox_resized.png
 .. |image7| image:: img/04.mob_scene/08.mob_attach_script.png
 .. |image8| image:: img/04.mob_scene/09.switch_to_3d_workspace.png
-.. |image9| image:: img/04.mob_scene/10.node_dock.png
-.. |image10| image:: img/04.mob_scene/11.connect_signal.png
+.. |image9| image:: img/04.mob_scene/10.node_dock.webp
+.. |image10| image:: img/04.mob_scene/11.connect_signal.webp

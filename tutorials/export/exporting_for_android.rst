@@ -3,43 +3,57 @@
 Exporting for Android
 =====================
 
+
+.. seealso::
+
+    This page describes how to export a Godot project to Android.
+    If you're looking to compile export template binaries from source instead,
+    read :ref:`doc_compiling_for_android`.
+
 Exporting for Android has fewer requirements than compiling Godot for Android.
 The following steps detail what is needed to set up the Android SDK and the engine.
+
+.. attention::
+
+    Projects written in C# can be exported to Android as of Godot 4.2, but support
+    is experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
+
+Install OpenJDK 17
+------------------
+
+Download and install `OpenJDK 17 <https://adoptium.net/temurin/releases/?variant=openjdk17>`__.
 
 Download the Android SDK
 ------------------------
 
 Download and install the Android SDK.
 
-- You can install it using `Android Studio version 4.1 or later <https://developer.android.com/studio/>`__.
+- You can install the Android SDK using `Android Studio version 4.1 or later <https://developer.android.com/studio/>`__.
 
   - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
   - Ensure that the `required packages <https://developer.android.com/studio/intro/update#recommended>`__ are installed as well.
 
     - Android SDK Platform-Tools version 30.0.5 or later
-    - Android SDK Build-Tools version 30.0.3
-    - Android SDK Platform 29
+    - Android SDK Build-Tools version 33.0.2
+    - Android SDK Platform 33
     - Android SDK Command-line Tools (latest)
     - CMake version 3.10.2.4988404
-    - NDK version 21.4.7075529
+    - NDK version r23c (23.2.8568313)
 
-- You can install it using the `command line tools <https://developer.android.com/studio/#command-tools>`__.
+- Alternatively, you can install the Android SDK with the `sdkmanager` command line tool.
 
-  - Once the command line tools are installed, run the `sdkmanager <https://developer.android.com/studio/command-line/sdkmanager>`__ command to complete the setup process:
+  - Install the command line tools package using these `instructions <https://developer.android.com/tools/sdkmanager>`__.
+  - Once the command line tools are installed, run the following `sdkmanager` command to complete the setup process:
 
 ::
 
-    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.3" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;21.4.7075529"
+    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;33.0.2" "platforms;android-33" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"
 
 .. note::
 
     If you are using Linux,
     **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
-Install OpenJDK 11
-------------------
-
-Download and install  `OpenJDK 11 <https://adoptium.net/?variant=openjdk11>`__.
 
 Create a debug.keystore
 -----------------------
@@ -54,7 +68,13 @@ the JDK can be used for this purpose::
 
     keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
 
-This will create a ``debug.keystore`` file in your current directory. You should move it to a memorable location such as ``%USERPROFILE%\.android\``, because you will need its location in a later step. For more information on ``keytool`` usage, see `this Q&A article <https://godotengine.org/qa/21349/jdk-android-file-missing>`__.
+This will create a ``debug.keystore`` file in your current directory. You should move it to a memorable location such as ``%USERPROFILE%\.android\``, because you will need its location in a later step. For more information on ``keytool`` usage, see `this Q&A article <https://ask.godotengine.org/21349/jdk-android-file-missing>`__.
+
+.. note::
+
+   It is important that the password is the same for the keystore and the key. This is a `known Android
+   studio issue <https://developer.android.com/studio/known-issues#ki-key-keystore-warning>`__ that also
+   affects Godot projects.
 
 Setting it up in Godot
 ----------------------
@@ -124,6 +144,7 @@ keystore file; such file can be generated like this:
     keytool -v -genkey -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000
 
 This keystore and key are used to verify your developer identity, remember the password and keep it in a safe place!
+It is suggested to use only upper and lowercase letters and numbers. Special characters may cause errors.
 Use Google's Android Developer guides to learn more about `APK signing <https://developer.android.com/studio/publish/app-signing>`__.
 
 Now fill in the following forms in your Android Export Presets:
@@ -133,10 +154,6 @@ Now fill in the following forms in your Android Export Presets:
 - **Release:** Enter the path to the keystore file you just generated.
 - **Release User:** Replace with the key alias.
 - **Release Password:** Key password. Note that the keystore password and the key password currently have to be the same.
-
-**Your export_presets.cfg file now contains sensitive information.** If you use
-a version control system, you should remove it from public repositories and add
-it to your ``.gitignore`` file or equivalent.
 
 Don't forget to uncheck the **Export With Debug** checkbox while exporting.
 
@@ -162,3 +179,30 @@ and ARMv8 is usually sufficient to cover most devices in use today.
 You can optimize the size further by compiling an Android export template with
 only the features you need. See :ref:`doc_optimizing_for_size` for more
 information.
+
+Environment variables
+---------------------
+
+You can use the following environment variables to set export options outside of
+the editor. During the export process, these override the values that you set in
+the export menu.
+
+.. list-table:: Android export environment variables
+   :header-rows: 1
+
+   * - Export option
+     - Environment variable
+   * - Encryption / Encryption Key
+     - ``GODOT_SCRIPT_ENCRYPTION_KEY``
+   * - Options / Keystore / Debug
+     - ``GODOT_ANDROID_KEYSTORE_DEBUG_PATH``
+   * - Options / Keystore / Debug User
+     - ``GODOT_ANDROID_KEYSTORE_DEBUG_USER``
+   * - Options / Keystore / Debug Password
+     - ``GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD``
+   * - Options / Keystore / Release
+     - ``GODOT_ANDROID_KEYSTORE_RELEASE_PATH``
+   * - Options / Keystore / Release User
+     - ``GODOT_ANDROID_KEYSTORE_RELEASE_USER``
+   * - Options / Keystore / Release Password
+     - ``GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD``

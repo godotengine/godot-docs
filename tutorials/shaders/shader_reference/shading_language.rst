@@ -19,69 +19,108 @@ Data types
 
 Most GLSL ES 3.0 datatypes are supported:
 
-+---------------------+---------------------------------------------------------------------------------+
-| Type                | Description                                                                     |
-+=====================+=================================================================================+
-| **void**            | Void datatype, useful only for functions that return nothing.                   |
-+---------------------+---------------------------------------------------------------------------------+
-| **bool**            | Boolean datatype, can only contain ``true`` or ``false``.                       |
-+---------------------+---------------------------------------------------------------------------------+
-| **bvec2**           | Two-component vector of booleans.                                               |
-+---------------------+---------------------------------------------------------------------------------+
-| **bvec3**           | Three-component vector of booleans.                                             |
-+---------------------+---------------------------------------------------------------------------------+
-| **bvec4**           | Four-component vector of booleans.                                              |
-+---------------------+---------------------------------------------------------------------------------+
-| **int**             | Signed scalar integer.                                                          |
-+---------------------+---------------------------------------------------------------------------------+
-| **ivec2**           | Two-component vector of signed integers.                                        |
-+---------------------+---------------------------------------------------------------------------------+
-| **ivec3**           | Three-component vector of signed integers.                                      |
-+---------------------+---------------------------------------------------------------------------------+
-| **ivec4**           | Four-component vector of signed integers.                                       |
-+---------------------+---------------------------------------------------------------------------------+
-| **uint**            | Unsigned scalar integer; can't contain negative numbers.                        |
-+---------------------+---------------------------------------------------------------------------------+
-| **uvec2**           | Two-component vector of unsigned integers.                                      |
-+---------------------+---------------------------------------------------------------------------------+
-| **uvec3**           | Three-component vector of unsigned integers.                                    |
-+---------------------+---------------------------------------------------------------------------------+
-| **uvec4**           | Four-component vector of unsigned integers.                                     |
-+---------------------+---------------------------------------------------------------------------------+
-| **float**           | Floating-point scalar.                                                          |
-+---------------------+---------------------------------------------------------------------------------+
-| **vec2**            | Two-component vector of floating-point values.                                  |
-+---------------------+---------------------------------------------------------------------------------+
-| **vec3**            | Three-component vector of floating-point values.                                |
-+---------------------+---------------------------------------------------------------------------------+
-| **vec4**            | Four-component vector of floating-point values.                                 |
-+---------------------+---------------------------------------------------------------------------------+
-| **mat2**            | 2x2 matrix, in column major order.                                              |
-+---------------------+---------------------------------------------------------------------------------+
-| **mat3**            | 3x3 matrix, in column major order.                                              |
-+---------------------+---------------------------------------------------------------------------------+
-| **mat4**            | 4x4 matrix, in column major order.                                              |
-+---------------------+---------------------------------------------------------------------------------+
-| **sampler2D**       | Sampler type for binding 2D textures, which are read as float.                  |
-+---------------------+---------------------------------------------------------------------------------+
-| **isampler2D**      | Sampler type for binding 2D textures, which are read as signed integer.         |
-+---------------------+---------------------------------------------------------------------------------+
-| **usampler2D**      | Sampler type for binding 2D textures, which are read as unsigned integer.       |
-+---------------------+---------------------------------------------------------------------------------+
-| **sampler2DArray**  | Sampler type for binding 2D texture arrays, which are read as float.            |
-+---------------------+---------------------------------------------------------------------------------+
-| **isampler2DArray** | Sampler type for binding 2D texture arrays, which are read as signed integer.   |
-+---------------------+---------------------------------------------------------------------------------+
-| **usampler2DArray** | Sampler type for binding 2D texture arrays, which are read as unsigned integer. |
-+---------------------+---------------------------------------------------------------------------------+
-| **sampler3D**       | Sampler type for binding 3D textures, which are read as float.                  |
-+---------------------+---------------------------------------------------------------------------------+
-| **isampler3D**      | Sampler type for binding 3D textures, which are read as signed integer.         |
-+---------------------+---------------------------------------------------------------------------------+
-| **usampler3D**      | Sampler type for binding 3D textures, which are read as unsigned integer.       |
-+---------------------+---------------------------------------------------------------------------------+
-| **samplerCube**     | Sampler type for binding Cubemaps, which are read as floats.                    |
-+---------------------+---------------------------------------------------------------------------------+
++----------------------+---------------------------------------------------------------------------------+
+| Type                 | Description                                                                     |
++======================+=================================================================================+
+| **void**             | Void datatype, useful only for functions that return nothing.                   |
++----------------------+---------------------------------------------------------------------------------+
+| **bool**             | Boolean datatype, can only contain ``true`` or ``false``.                       |
++----------------------+---------------------------------------------------------------------------------+
+| **bvec2**            | Two-component vector of booleans.                                               |
++----------------------+---------------------------------------------------------------------------------+
+| **bvec3**            | Three-component vector of booleans.                                             |
++----------------------+---------------------------------------------------------------------------------+
+| **bvec4**            | Four-component vector of booleans.                                              |
++----------------------+---------------------------------------------------------------------------------+
+| **int**              | Signed scalar integer.                                                          |
++----------------------+---------------------------------------------------------------------------------+
+| **ivec2**            | Two-component vector of signed integers.                                        |
++----------------------+---------------------------------------------------------------------------------+
+| **ivec3**            | Three-component vector of signed integers.                                      |
++----------------------+---------------------------------------------------------------------------------+
+| **ivec4**            | Four-component vector of signed integers.                                       |
++----------------------+---------------------------------------------------------------------------------+
+| **uint**             | Unsigned scalar integer; can't contain negative numbers.                        |
++----------------------+---------------------------------------------------------------------------------+
+| **uvec2**            | Two-component vector of unsigned integers.                                      |
++----------------------+---------------------------------------------------------------------------------+
+| **uvec3**            | Three-component vector of unsigned integers.                                    |
++----------------------+---------------------------------------------------------------------------------+
+| **uvec4**            | Four-component vector of unsigned integers.                                     |
++----------------------+---------------------------------------------------------------------------------+
+| **float**            | Floating-point scalar.                                                          |
++----------------------+---------------------------------------------------------------------------------+
+| **vec2**             | Two-component vector of floating-point values.                                  |
++----------------------+---------------------------------------------------------------------------------+
+| **vec3**             | Three-component vector of floating-point values.                                |
++----------------------+---------------------------------------------------------------------------------+
+| **vec4**             | Four-component vector of floating-point values.                                 |
++----------------------+---------------------------------------------------------------------------------+
+| **mat2**             | 2x2 matrix, in column major order.                                              |
++----------------------+---------------------------------------------------------------------------------+
+| **mat3**             | 3x3 matrix, in column major order.                                              |
++----------------------+---------------------------------------------------------------------------------+
+| **mat4**             | 4x4 matrix, in column major order.                                              |
++----------------------+---------------------------------------------------------------------------------+
+| **sampler2D**        | Sampler type for binding 2D textures, which are read as float.                  |
++----------------------+---------------------------------------------------------------------------------+
+| **isampler2D**       | Sampler type for binding 2D textures, which are read as signed integer.         |
++----------------------+---------------------------------------------------------------------------------+
+| **usampler2D**       | Sampler type for binding 2D textures, which are read as unsigned integer.       |
++----------------------+---------------------------------------------------------------------------------+
+| **sampler2DArray**   | Sampler type for binding 2D texture arrays, which are read as float.            |
++----------------------+---------------------------------------------------------------------------------+
+| **isampler2DArray**  | Sampler type for binding 2D texture arrays, which are read as signed integer.   |
++----------------------+---------------------------------------------------------------------------------+
+| **usampler2DArray**  | Sampler type for binding 2D texture arrays, which are read as unsigned integer. |
++----------------------+---------------------------------------------------------------------------------+
+| **sampler3D**        | Sampler type for binding 3D textures, which are read as float.                  |
++----------------------+---------------------------------------------------------------------------------+
+| **isampler3D**       | Sampler type for binding 3D textures, which are read as signed integer.         |
++----------------------+---------------------------------------------------------------------------------+
+| **usampler3D**       | Sampler type for binding 3D textures, which are read as unsigned integer.       |
++----------------------+---------------------------------------------------------------------------------+
+| **samplerCube**      | Sampler type for binding Cubemaps, which are read as float.                     |
++----------------------+---------------------------------------------------------------------------------+
+| **samplerCubeArray** | Sampler type for binding Cubemap arrays, which are read as float.               |
++----------------------+---------------------------------------------------------------------------------+
+
+Comments
+~~~~~~~~
+
+The shading language supports the same comment syntax as used in C# and C++:
+
+.. code-block:: glsl
+
+    // Single-line comment.
+    int a = 2;  // Another single-line comment.
+
+    /*
+    Multi-line comment.
+    The comment ends when the ending delimiter is found
+    (here, it's on the line below).
+    */
+    int b = 3;
+
+Additionally, you can use documentation comments that are displayed in the
+inspector when hovering a shader parameter. Documentation comments are currently
+only supported when placed immediately above a ``uniform`` declaration. These
+documentation comments only support the **multiline** comment syntax and must use
+**two** leading asterisks (``/**``) instead of just one (``/*``):
+
+.. code-block:: glsl
+
+    /**
+     * This is a documentation comment.
+     * These lines will appear in the inspector when hovering the shader parameter
+     * named "Something".
+     * You can use [b]BBCode[/b] [i]formatting[/i] in the comment.
+     */
+    uniform int something = 1;
+
+The asterisks on the follow-up lines are not required, but are recommended as
+per the :ref:`doc_shaders_style_guide`. These asterisks are automatically
+stripped by the inspector, so they won't appear in the tooltip.
 
 Casting
 ~~~~~~~
@@ -114,7 +153,7 @@ Individual scalar members of vector types are accessed via the "x", "y", "z" and
 "w" members. Alternatively, using "r", "g", "b" and "a" also works and is
 equivalent. Use whatever fits best for your needs.
 
-For matrices, use the ``m[row][column]`` indexing syntax to access each scalar,
+For matrices, use the ``m[column][row]`` indexing syntax to access each scalar,
 or ``m[idx]`` to access a vector by row index. For example, for accessing the y
 position of an object in a mat4 you use ``m[3][1]``.
 
@@ -153,7 +192,7 @@ submatrix of the larger matrix is used.
 
 .. code-block:: glsl
 
-	mat3 basis = mat3(WORLD_MATRIX);
+	mat3 basis = mat3(MODEL_MATRIX);
 	mat4 m4 = mat4(basis);
 	mat2 m2 = mat2(m4);
 
@@ -510,7 +549,7 @@ Godot Shading language supports the most common types of flow control:
 
     } while (cond);
 
-Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze
+Keep in mind that in modern GPUs, an infinite loop can exist and can freeze
 your application (including editor). Godot can't protect you from this, so be
 careful not to make this mistake!
 
@@ -533,7 +572,7 @@ behave differently depending on the hardware.
     }
 
 Instead, always perform a range comparison with an epsilon value. The larger the
-floating-point number (and the less precise the floating-point number, the
+floating-point number (and the less precise the floating-point number), the
 larger the epsilon value should be.
 
 .. code-block:: glsl
@@ -546,16 +585,17 @@ larger the epsilon value should be.
 See `floating-point-gui.de <https://floating-point-gui.de/>`__ for more
 information.
 
-.. warning::
-
-    When exporting a GLES2 project to HTML5, WebGL 1.0 will be used. WebGL 1.0
-    doesn't support dynamic loops, so shaders using those won't work there.
-
 Discarding
 ----------
 
-Fragment and light functions can use the **discard** keyword. If used, the
+Fragment and light functions can use the ``discard`` keyword. If used, the
 fragment is discarded and nothing is written.
+
+Beware that ``discard`` has a performance cost when used, as it will prevent the
+depth prepass from being effective on any surfaces using the shader. Also, a
+discarded pixel still needs to be rendered in the vertex shader, which means a
+shader that uses ``discard`` on all of its pixels is still more expensive to
+render compared to not rendering any object in the first place.
 
 Functions
 ---------
@@ -577,7 +617,8 @@ syntax:
 
 
 You can only use functions that have been defined above (higher in the editor)
-the function from which you are calling them.
+the function from which you are calling them. Redefining a function that has
+already been defined above (or is a built-in function name) will cause an error.
 
 Function arguments can have special qualifiers:
 
@@ -595,8 +636,16 @@ Example below:
         result = a + b;
     }
 
+.. note::
+
+    Unlike GLSL, Godot's shader language does **not** support function
+    overloading. This means that a function cannot be defined several times with
+    different argument types or numbers of arguments. As a workaround, use
+    different names for functions that accept a different number of arguments or
+    arguments of different types.
+
 Varyings
-~~~~~~~~
+--------
 
 To send data from the vertex to the fragment (or light) processor function, *varyings* are
 used. They are set for every primitive vertex in the *vertex processor*, and the
@@ -676,7 +725,7 @@ Note that varying may not be assigned in custom functions or a *light processor*
 This limitation was introduced to prevent incorrect usage before initialization.
 
 Interpolation qualifiers
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Certain values are interpolated during the shading pipeline. You can modify how
 these interpolations are done by using *interpolation qualifiers*.
@@ -707,15 +756,12 @@ There are two possible interpolation qualifiers:
 
 
 Uniforms
-~~~~~~~~
+--------
 
 Passing values to shaders is possible. These are global to the whole shader and
 are called *uniforms*. When a shader is later assigned to a material, the
 uniforms will appear as editable parameters in it. Uniforms can't be written
 from within the shader.
-
-.. note::
-    Uniform arrays are not implemented yet.
 
 .. code-block:: glsl
 
@@ -723,84 +769,168 @@ from within the shader.
 
     uniform float some_value;
 
+    uniform vec3 colors[3];
+
 You can set uniforms in the editor in the material. Or you can set them through
 GDScript:
 
-::
+.. code-block:: gdscript
 
-  material.set_shader_param("some_value", some_value)
+  material.set_shader_parameter("some_value", some_value)
 
-.. note:: The first argument to ``set_shader_param`` is the name of the uniform
+  material.set_shader_parameter("colors", [Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1)])
+
+.. note:: The first argument to ``set_shader_parameter`` is the name of the uniform
           in the shader. It must match *exactly* to the name of the uniform in
           the shader or else it will not be recognized.
 
 Any GLSL type except for *void* can be a uniform. Additionally, Godot provides
 optional shader hints to make the compiler understand for what the uniform is
-used.
+used, and how the editor should allow users to modify it.
 
 .. code-block:: glsl
 
     shader_type spatial;
 
-    uniform vec4 color : hint_color;
+    uniform vec4 color : source_color;
     uniform float amount : hint_range(0, 1);
-    uniform vec4 other_color : hint_color = vec4(1.0);
+    uniform vec4 other_color : source_color = vec4(1.0); // Default values go after the hint.
+    uniform sampler2D image : source_color;
 
-It's important to understand that textures that are supplied as color require
-hints for proper sRGB->linear conversion (i.e. ``hint_albedo``), as Godot's 3D
-engine renders in linear color space.
+It's important to understand that textures *that are supplied as color* require
+hints for proper sRGB -> linear conversion (i.e. ``source_color``), as Godot's
+3D engine renders in linear color space. If this is not done, the texture will
+appear washed out.
+
+.. note::
+
+    The 2D renderer also renders in linear color space if the
+    **Rendering > Viewport > HDR 2D** project setting is enabled, so
+    ``source_color`` must also be used in ``canvas_item`` shaders. If 2D HDR is
+    disabled, ``source_color`` will keep working correctly in ``canvas_item``
+    shaders, so it's recommend to use it either way.
 
 Full list of hints below:
 
-+----------------------+------------------------------------------------+--------------------------------------+
-| Type                 | Hint                                           | Description                          |
-+======================+================================================+======================================+
-| **vec4**             | hint_color                                     | Used as color.                       |
-+----------------------+------------------------------------------------+--------------------------------------+
-| **int, float**       | hint_range(min, max[, step])                   | Used as range (with min/max/step).   |
-+----------------------+------------------------------------------------+--------------------------------------+
-| **sampler2D**        | hint_albedo                                    | Used as albedo color, default white. |
-+----------------------+------------------------------------------------+--------------------------------------+
-| **sampler2D**        | hint_black_albedo                              | Used as albedo color, default black. |
-+----------------------+------------------------------------------------+--------------------------------------+
-| **sampler2D**        | hint_normal                                    | Used as normalmap.                   |
-+----------------------+------------------------------------------------+--------------------------------------+
-| **sampler2D**        | hint_white                                     | As value, default to white.          |
-+----------------------+------------------------------------------------+--------------------------------------+
-| **sampler2D**        | hint_black                                     | As value, default to black.          |
-+----------------------+------------------------------------------------+--------------------------------------+
-| **sampler2D**        | hint_anisotropy                                | As flowmap, default to right.        |
-+----------------------+------------------------------------------------+--------------------------------------+
-| **sampler2D**        | hint_roughness[_r, _g, _b, _a, _normal, _gray] |                                      |
-+----------------------+------------------------------------------------+--------------------------------------+
-| **sampler2D**        | filter[_nearest, _linear][_mipmap][_aniso]     | Enabled specified texture filtering. |
-+----------------------+------------------------------------------------+--------------------------------------+
-| **sampler2D**        | repeat_[enable, disable]                       | Enabled texture repeating.           |
-+----------------------+------------------------------------------------+--------------------------------------+
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| Type                 | Hint                                             | Description                                                                 |
++======================+==================================================+=============================================================================+
+| **vec3, vec4**       | source_color                                     | Used as color.                                                              |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **int, float**       | hint_range(min, max[, step])                     | Restricted to values in a range (with min/max/step).                        |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | source_color                                     | Used as albedo color.                                                       |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_normal                                      | Used as normalmap.                                                          |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_default_white                               | As value or albedo color, default to opaque white.                          |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_default_black                               | As value or albedo color, default to opaque black.                          |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_default_transparent                         | As value or albedo color, default to transparent black.                     |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_anisotropy                                  | As flowmap, default to right.                                               |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_roughness[_r, _g, _b, _a, _normal, _gray]   | Used for roughness limiter on import (attempts reducing specular aliasing). |
+|                      |                                                  | ``_normal`` is a normal map that guides the roughness limiter,              |
+|                      |                                                  | with roughness increasing in areas that have high-frequency detail.         |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | filter[_nearest, _linear][_mipmap][_anisotropic] | Enabled specified texture filtering.                                        |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | repeat[_enable, _disable]                        | Enabled texture repeating.                                                  |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_screen_texture                              | Texture is the screen texture.                                              |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_depth_texture                               | Texture is the depth texture.                                               |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_normal_roughness_texture                    | Texture is the normal roughness texture (only supported in Forward+).       |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 
 GDScript uses different variable types than GLSL does, so when passing variables
 from GDScript to shaders, Godot converts the type automatically. Below is a
 table of the corresponding types:
 
-+-----------------+-----------+
-| GDScript type   | GLSL type |
-+=================+===========+
-| **bool**        | **bool**  |
-+-----------------+-----------+
-| **int**         | **int**   |
-+-----------------+-----------+
-| **float**       | **float** |
-+-----------------+-----------+
-| **Vector2**     | **vec2**  |
-+-----------------+-----------+
-| **Vector3**     | **vec3**  |
-+-----------------+-----------+
-| **Color**       | **vec4**  |
-+-----------------+-----------+
-| **Transform3D** | **mat4**  |
-+-----------------+-----------+
-| **Transform2D** | **mat4**  |
-+-----------------+-----------+
++----------------------+-------------------------+------------------------------------------------------------+
+| GLSL type            | GDScript type           | Notes                                                      |
++======================+=========================+============================================================+
+| **bool**             | **bool**                |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **bvec2**            | **int**                 | Bitwise packed int where bit 0 (LSB) corresponds to x.     |
+|                      |                         |                                                            |
+|                      |                         | For example, a bvec2 of (bx, by) could be created in       |
+|                      |                         | the following way:                                         |
+|                      |                         |                                                            |
+|                      |                         | .. code-block:: gdscript                                   |
+|                      |                         |                                                            |
+|                      |                         |   bvec2_input: int = (int(bx)) | (int(by) << 1)            |
+|                      |                         |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **bvec3**            | **int**                 | Bitwise packed int where bit 0 (LSB) corresponds to x.     |
++----------------------+-------------------------+------------------------------------------------------------+
+| **bvec4**            | **int**                 | Bitwise packed int where bit 0 (LSB) corresponds to x.     |
++----------------------+-------------------------+------------------------------------------------------------+
+| **int**              | **int**                 |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **ivec2**            | **Vector2i**            |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **ivec3**            | **Vector3i**            |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **ivec4**            | **Vector4i**            |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **uint**             | **int**                 |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **uvec2**            | **Vector2i**            |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **uvec3**            | **Vector3i**            |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **uvec4**            | **Vector4i**            |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **float**            | **float**               |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **vec2**             | **Vector2**             |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **vec3**             | **Vector3**, **Color**  | When Color is used, it will be interpreted as (r, g, b).   |
++----------------------+-------------------------+------------------------------------------------------------+
+| **vec4**             | **Vector4**, **Color**, | When Color is used, it will be interpreted as (r, g, b, a).|
+|                      | **Rect2**, **Plane**,   |                                                            |
+|                      | **Quaternion**          | When Rect2 is used, it will be interpreted as              |
+|                      |                         | (position.x, position.y, size.x, size.y).                  |
+|                      |                         |                                                            |
+|                      |                         | When Plane is used it will be interpreted as               |
+|                      |                         | (normal.x, normal.y, normal.z, d).                         |
+|                      |                         |                                                            |
+|                      |                         |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **mat2**             | **Transform2D**         |                                                            |
+|                      |                         |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **mat3**             | **Basis**               |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **mat4**             | **Projection**,         | When a Transform3D is used, the w Vector is set to the     |
+|                      | **Transform3D**         | identity.                                                  |
++----------------------+-------------------------+------------------------------------------------------------+
+| **sampler2D**        | **Texture2D**           |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **isampler2D**       | **Texture2D**           |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **usampler2D**       | **Texture2D**           |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **sampler2DArray**   | **Texture2DArray**      |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **isampler2DArray**  | **Texture2DArray**      |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **usampler2DArray**  | **Texture2DArray**      |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **sampler3D**        | **Texture3D**           |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **isampler3D**       | **Texture3D**           |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **usampler3D**       | **Texture3D**           |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **samplerCube**      | **Cubemap**             |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
+| **samplerCubeArray** | **CubemapArray**        |                                                            |
++----------------------+-------------------------+------------------------------------------------------------+
 
 .. note:: Be careful when setting shader uniforms from GDScript, no error will
           be thrown if the type does not match. Your shader will just exhibit
@@ -813,14 +943,188 @@ Uniforms can also be assigned default values:
     shader_type spatial;
 
     uniform vec4 some_vector = vec4(0.0);
-    uniform vec4 some_color : hint_color = vec4(1.0);
+    uniform vec4 some_color : source_color = vec4(1.0);
+
+Note that when adding a default value and a hint, the default value goes after the hint.
+
+If you need to make multiple uniforms to be grouped in the specific category of an inspector, you can use a `group_uniform` keyword like:
+
+.. code-block:: glsl
+
+    group_uniforms MyGroup;
+    uniform sampler2D test;
+
+You can close the group by using:
+
+.. code-block:: glsl
+
+    group_uniforms;
+
+The syntax also supports subgroups (it's not mandatory to declare the base group before this):
+
+.. code-block:: glsl
+
+    group_uniforms MyGroup.MySubgroup;
+
+Global uniforms
+~~~~~~~~~~~~~~~
+
+Sometimes, you want to modify a parameter in many different shaders at once.
+With a regular uniform, this takes a lot of work as all these shaders need to be
+tracked and the uniform needs to be set for each of them. Global uniforms allow
+you to create and update uniforms that will be available in all shaders, in
+every shader type (``canvas_item``, ``spatial``, ``particles``, ``sky`` and
+``fog``).
+
+Global uniforms are especially useful for environmental effects that affect many
+objects in a scene, like having foliage bend when the player is nearby, or having
+objects move with the wind.
+
+To create a global uniform, open the **Project Settings** then go to the
+**Shader Globals** tab. Specify a name for the uniform (case-sensitive) and a
+type, then click **Add** in the top-right corner of the dialog. You can then
+edit the value assigned to the uniform by clicking the value in the list of
+uniforms:
+
+.. figure:: img/shading_language_adding_global_uniforms.webp
+   :align: center
+   :alt: Adding a global uniform in the Shader Globals tab of the Project Settings
+
+   Adding a global uniform in the Shader Globals tab of the Project Settings
+
+After creating a global uniform, you can use it in a shader as follows:
+
+.. code-block:: glsl
+
+    shader_type canvas_item;
+
+    global uniform vec4 my_color;
+
+    void fragment() {
+        COLOR = my_color.rgb;
+    }
+
+Note that the global uniform *must* exist in the Project Settings at the time
+the shader is saved, or compilation will fail. While you can assign a default
+value using ``global uniform vec4 my_color = ...`` in the shader code, it will
+be ignored as the global uniform must always be defined in the Project Settings
+anyway.
+
+To change the value of a global uniform at run-time, use the
+:ref:`RenderingServer.global_shader_parameter_set <class_RenderingServer_method_global_shader_parameter_set>`
+method in a script:
+
+.. code-block:: gdscript
+
+    RenderingServer.global_shader_parameter_set("my_color", Color(0.3, 0.6, 1.0))
+
+Assigning global uniform values can be done as many times as desired without
+impacting performance, as setting data doesn't require synchronization between
+the CPU and GPU.
+
+You can also add or remove global uniforms at run-time:
+
+.. code-block:: gdscript
+
+    RenderingServer.global_shader_parameter_add("my_color", RenderingServer.GLOBAL_VAR_TYPE_COLOR, Color(0.3, 0.6, 1.0))
+    RenderingServer.global_shader_parameter_remove("my_color")
+
+Adding or removing global uniforms at run-time has a performance cost, although
+it's not as pronounced compared to getting global uniform values from a script
+(see the warning below).
+
+.. warning::
+
+    While you *can* query the value of a global uniform at run-time in a script
+    using ``RenderingServer.global_shader_parameter_get("uniform_name")``, this
+    has a large performance penalty as the rendering thread needs to synchronize
+    with the calling thread.
+
+    Therefore, it's not recommended to read global shader uniform values
+    continuously in a script. If you need to read values in a script after
+    setting them, consider creating an :ref:`autoload <doc_singletons_autoload>`
+    where you store the values you need to query at the same time you're setting
+    them as global uniforms.
+
+.. _doc_shading_language_per_instance_uniforms:
+
+Per-instance uniforms
+~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    Per-instance uniforms are only available in ``spatial`` (3D) shaders.
+
+.. note::
+
+    Per-instance uniforms are not supported when using the Compatibility renderer.
+
+Sometimes, you want to modify a parameter on each node using the material. As an
+example, in a forest full of trees, when you want each tree to have a slightly
+different color that is editable by hand. Without per-instance uniforms, this
+requires creating a unique material for each tree (each with a slightly
+different hue). This makes material management more complex, and also has a
+performance overhead due to the scene requiring more unique material instances.
+Vertex colors could also be used here, but they'd require creating unique copies
+of the mesh for each different color, which also has a performance overhead.
+
+Per-instance uniforms are set on each GeometryInstance3D, rather than on each
+Material instance. Take this into account when working with meshes that have
+multiple materials assigned to them, or MultiMesh setups.
+
+.. code-block:: glsl
+
+    shader_type spatial;
+
+    // Provide a hint to edit as a color. Optionally, a default value can be provided.
+    // If no default value is provided, the type's default is used (e.g. opaque black for colors).
+    instance uniform vec4 my_color : source_color = vec4(1.0, 0.5, 0.0, 1.0);
+
+    void fragment() {
+        ALBEDO = my_color.rgb;
+    }
+
+After saving the shader, you can change the per-instance uniform's value using
+the inspector:
+
+.. figure:: img/shading_language_per_instance_uniforms_inspector.webp
+   :align: center
+   :alt: Setting a per-instance uniform's value in the GeometryInstance3D section of the inspector
+
+   Setting a per-instance uniform's value in the GeometryInstance3D section of the inspector
+
+Per-instance uniform values can also be set at run-time using
+:ref:`set_instance_shader_parameter <class_GeometryInstance3D_method_set_instance_shader_parameter>`
+method on a node that inherits from :ref:`class_GeometryInstance3D`:
+
+.. code-block:: gdscript
+
+    $MeshInstance3D.set_instance_shader_parameter("my_color", Color(0.3, 0.6, 1.0))
+
+When using per-instance uniforms, there are some restrictions you should be aware of:
+
+- **Per-instance uniforms do not support textures**, only regular scalar and
+  vector types. As a workaround, you can pass a texture array as a regular
+  uniform, then pass the index of the texture to be drawn using a per-instance
+  uniform.
+- There is a practical maximum limit of 16 instance uniforms per shader.
+- If your mesh uses multiple materials, the parameters for the first mesh
+  material found will "win" over the subsequent ones, unless they have the same
+  name, index *and* type. In this case, all parameters are affected correctly.
+- If you run into the above situation, you can avoid clashes by manually
+  specifying the index (0-15) of the instance uniform by using the
+  ``instance_index`` hint:
+
+.. code-block:: glsl
+
+    instance uniform vec4 my_color : source_color, instance_index(5);
 
 Built-in variables
 ------------------
 
 A large number of built-in variables are available, like ``UV``, ``COLOR`` and
 ``VERTEX``. What variables are available depends on the type of shader
-(``spatial``, ``canvas_item``, ``particle``, ``sky``, or ``fog``) and the
+(``spatial``, ``canvas_item``, ``particle``, etc) and the
 function used (``vertex``, ``fragment``, ``light``, ``start``, ``process,
 ``sky``, or ``fog``). For a list of the built-in variables that are available,
 please see the corresponding pages:
@@ -844,283 +1148,344 @@ can be scalar or vector. For example vec_type can be float, vec2, vec3, or vec4.
           backend, please see the :ref:`Differences between GLES2 and GLES3 doc
           <doc_gles2_gles3_differences>`.
 
-+-------------+---------------------------------------------------------------------------------------------------------+
-| Return Type |                                                Function                                                 |
-+=============+=========================================================================================================+
-| vec_type    | :js:attr:`radians <radians>` (vec_type degrees)                                                         |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`degrees <degrees>` (vec_type radians)                                                         |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`sin <sin>` (vec_type x)                                                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`cos <cos>` (vec_type x)                                                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`tan <tan>` (vec_type x)                                                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`asin <asin>` (vec_type x)                                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`acos <acos>` (vec_type x)                                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`atan <atan>` (vec_type y_over_x)                                                              |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`atan <atan>` (vec_type y, vec_type x)                                                         |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`sinh <sinh>` (vec_type x)                                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`cosh <cosh>` (vec_type x)                                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`tanh <tanh>` (vec_type x)                                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`asinh <asinh>` (vec_type x)                                                                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`acosh <acosh>` (vec_type x)                                                                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`atanh <atanh>` (vec_type x)                                                                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`pow <pow>` (vec_type x, vec_type y)                                                           |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`exp <exp>` (vec_type x)                                                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`exp2 <exp2>` (vec_type x)                                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`log <log>` (vec_type x)                                                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`log2 <log2>` (vec_type x)                                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`sqrt <sqrt>` (vec_type x)                                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`inversesqrt <inversesqrt>` (vec_type x)                                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`abs <abs>` (vec_type x)                                                                       |
-|             |                                                                                                         |
-| ivec_type   | :js:attr:`abs <abs>` (ivec_type x)                                                                      |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`sign <sign>` (vec_type x)                                                                     |
-|             |                                                                                                         |
-| ivec_type   | :js:attr:`sign <sign>` (ivec_type x)                                                                    |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`floor <floor>` (vec_type x)                                                                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`round <round>` (vec_type x)                                                                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`roundEven <roundEven>` (vec_type x)                                                           |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`trunc <trunc>` (vec_type x)                                                                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`ceil <ceil>` (vec_type x)                                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`fract <fract>` (vec_type x)                                                                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`mod <mod>` (vec_type x, vec_type y)                                                           |
-|             |                                                                                                         |
-| vec_type    | :js:attr:`mod <mod>` (vec_type x, float y)                                                              |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`modf <modf>` (vec_type x, out vec_type i)                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`min <min>` (vec_type a, vec_type b)                                                           |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`max <max>` (vec_type a, vec_type b)                                                           |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`clamp <clamp>` (vec_type x, vec_type min, vec_type max)                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| float       | :js:attr:`mix <mix>` (float a, float b, float c)                                                        |
-|             |                                                                                                         |
-| vec_type    | :js:attr:`mix <mix>` (vec_type a, vec_type b, float c)                                                  |
-|             |                                                                                                         |
-| vec_type    | :js:attr:`mix <mix>` (vec_type a, vec_type b, bvec_type c)                                              |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`fma <fma>` (vec_type a, vec_type b, vec_type c)                                               |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`step <step>` (vec_type a, vec_type b)                                                         |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`step <step>` (float a, vec_type b)                                                            |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`smoothstep <smoothstep>` (vec_type a, vec_type b, vec_type c)                                 |
-|             |                                                                                                         |
-| vec_type    | :js:attr:`smoothstep <smoothstep>` (float a, float b, vec_type c)                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| bvec_type   | :js:attr:`isnan <isnan>` (vec_type x)                                                                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| bvec_type   | :js:attr:`isinf <isinf>` (vec_type x)                                                                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| ivec_type   | :js:attr:`floatBitsToInt <floatBitsToInt>` (vec_type x)                                                 |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| uvec_type   | :js:attr:`floatBitsToUint <floatBitsToUint>` (vec_type x)                                               |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`intBitsToFloat <intBitsToFloat>` (ivec_type x)                                                |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`uintBitsToFloat <uintBitsToFloat>` (uvec_type x)                                              |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| float       | :js:attr:`length <length>` (vec_type x)                                                                 |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| float       | :js:attr:`distance <distance>` (vec_type a, vec_type b)                                                 |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| float       | :js:attr:`dot <dot>` (vec_type a, vec_type b)                                                           |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec3        | :js:attr:`cross <cross>` (vec3 a, vec3 b)                                                               |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`normalize <normalize>` (vec_type x)                                                           |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec3        | :js:attr:`reflect <reflect>` (vec3 I, vec3 N)                                                           |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec3        | :js:attr:`refract <refract>` (vec3 I, vec3 N, float eta)                                                |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`faceforward <faceforward>` (vec_type N, vec_type I, vec_type Nref)                            |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| mat_type    | :js:attr:`matrixCompMult <matrixCompMult>` (mat_type x, mat_type y)                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| mat_type    | :js:attr:`outerProduct <outerProduct>` (vec_type column, vec_type row)                                  |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| mat_type    | :js:attr:`transpose <transpose>` (mat_type m)                                                           |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| float       | :js:attr:`determinant <determinant>` (mat_type m)                                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| mat_type    | :js:attr:`inverse <inverse>` (mat_type m)                                                               |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| bvec_type   | :js:attr:`lessThan <lessThan>` (vec_type x, vec_type y)                                                 |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| bvec_type   | :js:attr:`greaterThan <greaterThan>` (vec_type x, vec_type y)                                           |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| bvec_type   | :js:attr:`lessThanEqual <lessThanEqual>` (vec_type x, vec_type y)                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| bvec_type   | :js:attr:`greaterThanEqual <greaterThanEqual>` (vec_type x, vec_type y)                                 |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| bvec_type   | :js:attr:`equal <equal>` (vec_type x, vec_type y)                                                       |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| bvec_type   | :js:attr:`notEqual <notEqual>` (vec_type x, vec_type y)                                                 |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| bool        | :js:attr:`any <any>` (bvec_type x)                                                                      |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| bool        | :js:attr:`all <all>` (bvec_type x)                                                                      |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| bvec_type   | :js:attr:`not <not>` (bvec_type x)                                                                      |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| ivec2       | :js:attr:`textureSize <textureSize>` (gsampler2D s, int lod)                                            |
-|             |                                                                                                         |
-| ivec3       | :js:attr:`textureSize <textureSize>` (gsampler2DArray s, int lod)                                       |
-|             |                                                                                                         |
-| ivec3       | :js:attr:`textureSize <textureSize>` (gsampler3D s, int lod)                                            |
-|             |                                                                                                         |
-| ivec2       | :js:attr:`textureSize <textureSize>` (samplerCube s, int lod)                                           |
-|             |                                                                                                         |
-| ivec2       | :js:attr:`textureSize <textureSize>` (samplerCubeArray s, int lod)                                      |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| gvec4_type  | :js:attr:`texture <texture>` (gsampler2D s, vec2 p [, float bias])                                      |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`texture <texture>` (gsampler2DArray s, vec3 p [, float bias])                                 |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`texture <texture>` (gsampler3D s, vec3 p [, float bias])                                      |
-|             |                                                                                                         |
-| vec4        | :js:attr:`texture <texture>` (samplerCube s, vec3 p [, float bias])                                     |
-|             |                                                                                                         |
-| vec4        | :js:attr:`texture <texture>` (samplerCubeArray s, vec4 p [, float bias])                                |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| gvec4_type  | :js:attr:`textureProj <textureProj>` (gsampler2D s, vec3 p [, float bias])                              |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`textureProj <textureProj>` (gsampler2D s, vec4 p [, float bias])                              |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`textureProj <textureProj>` (gsampler3D s, vec4 p [, float bias])                              |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| gvec4_type  | :js:attr:`textureLod <textureLod>` (gsampler2D s, vec2 p, float lod)                                    |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`textureLod <textureLod>` (gsampler2DArray s, vec3 p, float lod)                               |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`textureLod <textureLod>` (gsampler3D s, vec3 p, float lod)                                    |
-|             |                                                                                                         |
-| vec4        | :js:attr:`textureLod <textureLod>` (samplerCube s, vec3 p, float lod)                                   |
-|             |                                                                                                         |
-| vec4        | :js:attr:`textureLod <textureLod>` (samplerCubeArray s, vec4 p, float lod)                              |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| gvec4_type  | :js:attr:`textureProjLod <textureProjLod>` (gsampler2D s, vec3 p, float lod)                            |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`textureProjLod <textureProjLod>` (gsampler2D s, vec4 p, float lod)                            |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`textureProjLod <textureProjLod>` (gsampler3D s, vec4 p, float lod)                            |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| gvec4_type  | :js:attr:`textureGrad <textureGrad>` (gsampler2D s, vec2 p, vec2 dPdx, vec2 dPdy)                       |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`textureGrad <textureGrad>` (gsampler2DArray s, vec3 p, vec2 dPdx, vec2 dPdy)                  |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`textureGrad <textureGrad>` (gsampler3D s, vec3 p, vec2 dPdx, vec2 dPdy)                       |
-|             |                                                                                                         |
-| vec4        | :js:attr:`textureGrad <textureGrad>` (samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy)                      |
-|             |                                                                                                         |
-| vec4        | :js:attr:`textureGrad <textureGrad>` (samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy)                 |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| gvec4_type  | :js:attr:`texelFetch <texelFetch>` (gsampler2D s, ivec2 p, int lod)                                     |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`texelFetch <texelFetch>` (gsampler2DArray s, ivec3 p, int lod)                                |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`texelFetch <texelFetch>` (gsampler3D s, ivec3 p, int lod)                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| gvec4_type  | :js:attr:`textureGather <textureGather>` (gsampler2D s, vec2 p [, int comps])                           |
-|             |                                                                                                         |
-| gvec4_type  | :js:attr:`textureGather <textureGather>` (gsampler2DArray s, vec3 p [, int comps])                      |
-|             |                                                                                                         |
-| vec4        | :js:attr:`textureGather <textureGather>` (samplerCube s, vec3 p [, int comps])                          |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`dFdx <dFdx>` (vec_type p)                                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`dFdy <dFdy>` (vec_type p)                                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`fwidth <fwidth>` (vec_type p)                                                                 |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| uint        | :js:attr:`packHalf2x16 <packHalf2x16>` (vec2 v)                                                         |
-|             |                                                                                                         |
-| vec2        | :js:attr:`unpackHalf2x16 <unpackHalf2x16>` (uint v)                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| uint        | :js:attr:`packUnorm2x16 <packUnorm2x16>` (vec2 v)                                                       |
-|             |                                                                                                         |
-| vec2        | :js:attr:`unpackUnorm2x16 <unpackUnorm2x16>` (uint v)                                                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| uint        | :js:attr:`packSnorm2x16 <packSnorm2x16>` (vec2 v)                                                       |
-|             |                                                                                                         |
-| vec2        | :js:attr:`unpackSnorm2x16 <unpackSnorm2x16>` (uint v)                                                   |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| uint        | :js:attr:`packUnorm4x8 <packUnorm4x8>` (vec4 v)                                                         |
-|             |                                                                                                         |
-| vec4        | :js:attr:`unpackUnorm4x8 <unpackUnorm4x8>` (uint v)                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| uint        | :js:attr:`packSnorm4x8 <packSnorm4x8>` (vec4 v)                                                         |
-|             |                                                                                                         |
-| vec4        | :js:attr:`unpackSnorm4x8 <unpackSnorm4x8>` (uint v)                                                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| ivec_type   | :js:attr:`bitfieldExtract <bitfieldExtract>` (ivec_type value, int offset, int bits)                    |
-|             |                                                                                                         |
-| uvec_type   | :js:attr:`bitfieldExtract <bitfieldExtract>` (uvec_type value, int offset, int bits)                    |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| ivec_type   | :js:attr:`bitfieldInsert <bitfieldInsert>` (ivec_type base, ivec_type insert, int offset, int bits)     |
-|             |                                                                                                         |
-| uvec_type   | :js:attr:`bitfieldInsert <bitfieldInsert>` (uvec_type base, uvec_type insert, int offset, int bits)     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| ivec_type   | :js:attr:`bitfieldReverse <bitfieldReverse>` (ivec_type value)                                          |
-|             |                                                                                                         |
-| uvec_type   | :js:attr:`bitfieldReverse <bitfieldReverse>` (uvec_type value)                                          |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| ivec_type   | :js:attr:`bitCount <bitCount>` (ivec_type value)                                                        |
-|             |                                                                                                         |
-| uvec_type   | :js:attr:`bitCount <bitCount>` (uvec_type value)                                                        |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| ivec_type   | :js:attr:`findLSB <findLSB>` (ivec_type value)                                                          |
-|             |                                                                                                         |
-| uvec_type   | :js:attr:`findLSB <findLSB>` (uvec_type value)                                                          |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| ivec_type   | :js:attr:`findMSB <findMSB>` (ivec_type value)                                                          |
-|             |                                                                                                         |
-| uvec_type   | :js:attr:`findMSB <findMSB>` (uvec_type value)                                                          |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| void        | :js:attr:`imulExtended <imulExtended>` (ivec_type x, ivec_type y, out ivec_type msb, out ivec_type lsb) |
-|             |                                                                                                         |
-| void        | :js:attr:`umulExtended <umulExtended>` (uvec_type x, uvec_type y, out uvec_type msb, out uvec_type lsb) |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| uvec_type   | :js:attr:`uaddCarry <uaddCarry>` (uvec_type x, uvec_type y, out uvec_type carry)                        |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| uvec_type   | :js:attr:`usubBorrow <usubBorrow>` (uvec_type x, uvec_type y, out uvec_type borrow)                     |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`ldexp <ldexp>` (vec_type x, out ivec_type exp)                                                |
-+-------------+---------------------------------------------------------------------------------------------------------+
-| vec_type    | :js:attr:`frexp <frexp>` (vec_type x, out ivec_type exp)                                                |
-+-------------+---------------------------------------------------------------------------------------------------------+
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| Return Type |                                                Function                                                 | Description / Return value                                          |
++=============+=========================================================================================================+=====================================================================+
+| vec_type    | :js:attr:`radians <radians>` (vec_type degrees)                                                         | Convert degrees to radians.                                         |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`degrees <degrees>` (vec_type radians)                                                         | Convert radians to degrees.                                         |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`sin <sin>` (vec_type x)                                                                       | Sine.                                                               |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`cos <cos>` (vec_type x)                                                                       | Cosine.                                                             |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`tan <tan>` (vec_type x)                                                                       | Tangent.                                                            |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`asin <asin>` (vec_type x)                                                                     | Arcsine.                                                            |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`acos <acos>` (vec_type x)                                                                     | Arccosine.                                                          |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`atan <atan>` (vec_type y_over_x)                                                              | Arctangent.                                                         |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`atan <atan>` (vec_type y, vec_type x)                                                         | Arctangent.                                                         |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`sinh <sinh>` (vec_type x)                                                                     | Hyperbolic sine.                                                    |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`cosh <cosh>` (vec_type x)                                                                     | Hyperbolic cosine.                                                  |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`tanh <tanh>` (vec_type x)                                                                     | Hyperbolic tangent.                                                 |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`asinh <asinh>` (vec_type x)                                                                   | Inverse hyperbolic sine.                                            |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`acosh <acosh>` (vec_type x)                                                                   | Inverse hyperbolic cosine.                                          |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`atanh <atanh>` (vec_type x)                                                                   | Inverse hyperbolic tangent.                                         |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`pow <pow>` (vec_type x, vec_type y)                                                           | Power (undefined if ``x`` < 0 or if ``x`` == 0 and ``y`` <= 0).     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`exp <exp>` (vec_type x)                                                                       | Base-e exponential.                                                 |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`exp2 <exp2>` (vec_type x)                                                                     | Base-2 exponential.                                                 |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`log <log>` (vec_type x)                                                                       | Natural logarithm.                                                  |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`log2 <log2>` (vec_type x)                                                                     | Base-2 logarithm.                                                   |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`sqrt <sqrt>` (vec_type x)                                                                     | Square root.                                                        |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`inversesqrt <inversesqrt>` (vec_type x)                                                       | Inverse square root.                                                |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`abs <abs>` (vec_type x)                                                                       | Absolute value (returns positive value if negative).                |
+|             |                                                                                                         |                                                                     |
+| ivec_type   | :js:attr:`abs <abs>` (ivec_type x)                                                                      |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`sign <sign>` (vec_type x)                                                                     | Sign (returns ``1.0`` if positive, ``-1.0`` if negative,            |
+|             |                                                                                                         | ``0.0`` if zero).                                                   |
+| ivec_type   | :js:attr:`sign <sign>` (ivec_type x)                                                                    |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`floor <floor>` (vec_type x)                                                                   | Round to the integer below.                                         |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`round <round>` (vec_type x)                                                                   | Round to the nearest integer.                                       |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`roundEven <roundEven>` (vec_type x)                                                           | Round to the nearest even integer.                                  |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`trunc <trunc>` (vec_type x)                                                                   | Truncation.                                                         |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`ceil <ceil>` (vec_type x)                                                                     | Round to the integer above.                                         |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`fract <fract>` (vec_type x)                                                                   | Fractional (returns ``x - floor(x)``).                              |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`mod <mod>` (vec_type x, vec_type y)                                                           | Modulo (division remainder).                                        |
+|             |                                                                                                         |                                                                     |
+| vec_type    | :js:attr:`mod <mod>` (vec_type x, float y)                                                              |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`modf <modf>` (vec_type x, out vec_type i)                                                     | Fractional of ``x``, with ``i`` as integer part.                    |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`min <min>` (vec_type a, vec_type b)                                                           | Lowest value between ``a`` and ``b``.                               |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`max <max>` (vec_type a, vec_type b)                                                           | Highest value between ``a`` and ``b``.                              |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`clamp <clamp>` (vec_type x, vec_type min, vec_type max)                                       | Clamp ``x`` between ``min`` and ``max`` (inclusive).                |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| float       | :js:attr:`mix <mix>` (float a, float b, float c)                                                        | Linear interpolate between ``a`` and ``b`` by ``c``.                |
+|             |                                                                                                         |                                                                     |
+| vec_type    | :js:attr:`mix <mix>` (vec_type a, vec_type b, float c)                                                  |                                                                     |
+|             |                                                                                                         |                                                                     |
+| vec_type    | :js:attr:`mix <mix>` (vec_type a, vec_type b, bvec_type c)                                              |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`fma <fma>` (vec_type a, vec_type b, vec_type c)                                               | Fused multiply-add operation: ``(a * b + c)``                       |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`step <step>` (vec_type a, vec_type b)                                                         | ``b[i] < a[i] ? 0.0 : 1.0``.                                        |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`step <step>` (float a, vec_type b)                                                            | ``b[i] < a ? 0.0 : 1.0``.                                           |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`smoothstep <smoothstep>` (vec_type a, vec_type b, vec_type c)                                 | Hermite interpolate between ``a`` and ``b`` by ``c``.               |
+|             |                                                                                                         |                                                                     |
+| vec_type    | :js:attr:`smoothstep <smoothstep>` (float a, float b, vec_type c)                                       |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| bvec_type   | :js:attr:`isnan <isnan>` (vec_type x)                                                                   | Returns ``true`` if scalar or vector component is ``NaN``.          |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| bvec_type   | :js:attr:`isinf <isinf>` (vec_type x)                                                                   | Returns ``true`` if scalar or vector component is ``INF``.          |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| ivec_type   | :js:attr:`floatBitsToInt <floatBitsToInt>` (vec_type x)                                                 | Float->Int bit copying, no conversion.                              |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| uvec_type   | :js:attr:`floatBitsToUint <floatBitsToUint>` (vec_type x)                                               | Float->UInt bit copying, no conversion.                             |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`intBitsToFloat <intBitsToFloat>` (ivec_type x)                                                | Int->Float bit copying, no conversion.                              |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`uintBitsToFloat <uintBitsToFloat>` (uvec_type x)                                              | UInt->Float bit copying, no conversion.                             |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| float       | :js:attr:`length <length>` (vec_type x)                                                                 | Vector length.                                                      |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| float       | :js:attr:`distance <distance>` (vec_type a, vec_type b)                                                 | Distance between vectors i.e ``length(a - b)``.                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| float       | :js:attr:`dot <dot>` (vec_type a, vec_type b)                                                           | Dot product.                                                        |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec3        | :js:attr:`cross <cross>` (vec3 a, vec3 b)                                                               | Cross product.                                                      |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`normalize <normalize>` (vec_type x)                                                           | Normalize to unit length.                                           |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec3        | :js:attr:`reflect <reflect>` (vec3 I, vec3 N)                                                           | Reflect.                                                            |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec3        | :js:attr:`refract <refract>` (vec3 I, vec3 N, float eta)                                                | Refract.                                                            |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`faceforward <faceforward>` (vec_type N, vec_type I, vec_type Nref)                            | If ``dot(Nref, I)`` < 0, return ``N``, otherwise ``-N``.            |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| mat_type    | :js:attr:`matrixCompMult <matrixCompMult>` (mat_type x, mat_type y)                                     | Matrix component multiplication.                                    |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| mat_type    | :js:attr:`outerProduct <outerProduct>` (vec_type column, vec_type row)                                  | Matrix outer product.                                               |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| mat_type    | :js:attr:`transpose <transpose>` (mat_type m)                                                           | Transpose matrix.                                                   |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| float       | :js:attr:`determinant <determinant>` (mat_type m)                                                       | Matrix determinant.                                                 |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| mat_type    | :js:attr:`inverse <inverse>` (mat_type m)                                                               | Inverse matrix.                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| bvec_type   | :js:attr:`lessThan <lessThan>` (vec_type x, vec_type y)                                                 | Bool vector comparison on < int/uint/float vectors.                 |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| bvec_type   | :js:attr:`greaterThan <greaterThan>` (vec_type x, vec_type y)                                           | Bool vector comparison on > int/uint/float vectors.                 |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| bvec_type   | :js:attr:`lessThanEqual <lessThanEqual>` (vec_type x, vec_type y)                                       | Bool vector comparison on <= int/uint/float vectors.                |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| bvec_type   | :js:attr:`greaterThanEqual <greaterThanEqual>` (vec_type x, vec_type y)                                 | Bool vector comparison on >= int/uint/float vectors.                |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| bvec_type   | :js:attr:`equal <equal>` (vec_type x, vec_type y)                                                       | Bool vector comparison on == int/uint/float vectors.                |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| bvec_type   | :js:attr:`notEqual <notEqual>` (vec_type x, vec_type y)                                                 | Bool vector comparison on != int/uint/float vectors.                |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| bool        | :js:attr:`any <any>` (bvec_type x)                                                                      | ``true`` if any component is ``true``, ``false`` otherwise.         |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| bool        | :js:attr:`all <all>` (bvec_type x)                                                                      | ``true`` if all components are ``true``, ``false`` otherwise.       |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| bvec_type   | :js:attr:`not <not>` (bvec_type x)                                                                      | Invert boolean vector.                                              |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| ivec2       | :js:attr:`textureSize <textureSize>` (gsampler2D s, int lod)                                            | Get the size of a texture.                                          |
+|             |                                                                                                         |                                                                     |
+| ivec3       | :js:attr:`textureSize <textureSize>` (gsampler2DArray s, int lod)                                       | The LOD defines which mipmap level is used. An LOD value of ``0``   |
+|             |                                                                                                         | will use the full resolution texture.                               |
+| ivec3       | :js:attr:`textureSize <textureSize>` (gsampler3D s, int lod)                                            |                                                                     |
+|             |                                                                                                         |                                                                     |
+| ivec2       | :js:attr:`textureSize <textureSize>` (samplerCube s, int lod)                                           |                                                                     |
+|             |                                                                                                         |                                                                     |
+| ivec2       | :js:attr:`textureSize <textureSize>` (samplerCubeArray s, int lod)                                      |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec2        | :js:attr:`textureQueryLod <textureQueryLod>` (gsampler2D s, vec2 p)                                     | Compute the level-of-detail that would be used to sample from a     |
+|             |                                                                                                         | texture. The ``x`` component of the resulted value is the mipmap    |
+| vec3        | :js:attr:`textureQueryLod <textureQueryLod>` (gsampler2DArray s, vec2 p)                                | array that would be accessed. The ``y`` component is computed       |
+|             |                                                                                                         | level-of-detail relative to the base level (regardless of the       |
+| vec2        | :js:attr:`textureQueryLod <textureQueryLod>` (gsampler3D s, vec3 p)                                     | mipmap levels of the texture).                                      |
+|             |                                                                                                         |                                                                     |
+| vec2        | :js:attr:`textureQueryLod <textureQueryLod>` (samplerCube s, vec3 p)                                    |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| int         | :js:attr:`textureQueryLevels <textureQueryLevels>` (gsampler2D s)                                       | Get the number of accessible mipmap levels of a texture.            |
+|             |                                                                                                         |                                                                     |
+| int         | :js:attr:`textureQueryLevels <textureQueryLevels>` (gsampler2DArray s)                                  | If the texture is unassigned to a sampler, ``1`` is returned (Godot |
+|             |                                                                                                         | always internally assigns a texture even to an empty sampler).      |
+| int         | :js:attr:`textureQueryLevels <textureQueryLevels>` (gsampler3D s)                                       |                                                                     |
+|             |                                                                                                         |                                                                     |
+| int         | :js:attr:`textureQueryLevels <textureQueryLevels>` (samplerCube s)                                      |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| gvec4_type  | :js:attr:`texture <texture>` (gsampler2D s, vec2 p [, float bias])                                      | Perform a texture read.                                             |
+|             |                                                                                                         |                                                                     |
+| gvec4_type  | :js:attr:`texture <texture>` (gsampler2DArray s, vec3 p [, float bias])                                 |                                                                     |
+|             |                                                                                                         |                                                                     |
+| gvec4_type  | :js:attr:`texture <texture>` (gsampler3D s, vec3 p [, float bias])                                      |                                                                     |
+|             |                                                                                                         |                                                                     |
+| vec4        | :js:attr:`texture <texture>` (samplerCube s, vec3 p [, float bias])                                     |                                                                     |
+|             |                                                                                                         |                                                                     |
+| vec4        | :js:attr:`texture <texture>` (samplerCubeArray s, vec4 p [, float bias])                                |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| gvec4_type  | :js:attr:`textureProj <textureProj>` (gsampler2D s, vec3 p [, float bias])                              | Perform a texture read with projection.                             |
+|             |                                                                                                         |                                                                     |
+| gvec4_type  | :js:attr:`textureProj <textureProj>` (gsampler2D s, vec4 p [, float bias])                              |                                                                     |
+|             |                                                                                                         |                                                                     |
+| gvec4_type  | :js:attr:`textureProj <textureProj>` (gsampler3D s, vec4 p [, float bias])                              |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| gvec4_type  | :js:attr:`textureLod <textureLod>` (gsampler2D s, vec2 p, float lod)                                    | Perform a texture read at custom mipmap.                            |
+|             |                                                                                                         |                                                                     |
+| gvec4_type  | :js:attr:`textureLod <textureLod>` (gsampler2DArray s, vec3 p, float lod)                               | The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
+|             |                                                                                                         | will use the full resolution texture. If the texture lacks mipmaps, |
+| gvec4_type  | :js:attr:`textureLod <textureLod>` (gsampler3D s, vec3 p, float lod)                                    | all LOD values will act like ``0.0``.                               |
+|             |                                                                                                         |                                                                     |
+| vec4        | :js:attr:`textureLod <textureLod>` (samplerCube s, vec3 p, float lod)                                   |                                                                     |
+|             |                                                                                                         |                                                                     |
+| vec4        | :js:attr:`textureLod <textureLod>` (samplerCubeArray s, vec4 p, float lod)                              |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| gvec4_type  | :js:attr:`textureProjLod <textureProjLod>` (gsampler2D s, vec3 p, float lod)                            | Performs a texture read with projection/LOD.                        |
+|             |                                                                                                         |                                                                     |
+| gvec4_type  | :js:attr:`textureProjLod <textureProjLod>` (gsampler2D s, vec4 p, float lod)                            | The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
+|             |                                                                                                         | will use the full resolution texture. If the texture lacks mipmaps, |
+| gvec4_type  | :js:attr:`textureProjLod <textureProjLod>` (gsampler3D s, vec4 p, float lod)                            | all LOD values will act like ``0.0``.                               |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| gvec4_type  | :js:attr:`textureGrad <textureGrad>` (gsampler2D s, vec2 p, vec2 dPdx, vec2 dPdy)                       | Performs a texture read with explicit gradients.                    |
+|             |                                                                                                         |                                                                     |
+| gvec4_type  | :js:attr:`textureGrad <textureGrad>` (gsampler2DArray s, vec3 p, vec2 dPdx, vec2 dPdy)                  |                                                                     |
+|             |                                                                                                         |                                                                     |
+| gvec4_type  | :js:attr:`textureGrad <textureGrad>` (gsampler3D s, vec3 p, vec2 dPdx, vec2 dPdy)                       |                                                                     |
+|             |                                                                                                         |                                                                     |
+| vec4        | :js:attr:`textureGrad <textureGrad>` (samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy)                      |                                                                     |
+|             |                                                                                                         |                                                                     |
+| vec4        | :js:attr:`textureGrad <textureGrad>` (samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy)                 |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+                                                                     |
+| gvec4_type  | :js:attr:`textureProjGrad <textureProjGrad>` (gsampler2D s, vec3 p, vec2 dPdx, vec2 dPdy)               | Performs a texture read with projection/LOD and with explicit       |
+|             |                                                                                                         | gradients.                                                          |
+| gvec4_type  | :js:attr:`textureProjGrad <textureProjGrad>` (gsampler2D s, vec4 p, vec2 dPdx, vec2 dPdy)               |                                                                     |
+|             |                                                                                                         |                                                                     |
+| gvec4_type  | :js:attr:`textureProjGrad <textureProjGrad>` (gsampler3D s, vec4 p, vec3 dPdx, vec3 dPdy)               |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| gvec4_type  | :js:attr:`texelFetch <texelFetch>` (gsampler2D s, ivec2 p, int lod)                                     |Fetches a single texel using integer coordinates.                    |
+|             |                                                                                                         |                                                                     |                                                                     |
+| gvec4_type  | :js:attr:`texelFetch <texelFetch>` (gsampler2DArray s, ivec3 p, int lod)                                |The LOD defines which mipmap level is used. An LOD value of ``0``    |                                                                     |
+|             |                                                                                                         |will use the full resolution texture.                                |
+| gvec4_type  | :js:attr:`texelFetch <texelFetch>` (gsampler3D s, ivec3 p, int lod)                                     |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| gvec4_type  | :js:attr:`textureGather <textureGather>` (gsampler2D s, vec2 p [, int comps])                           |Gathers four texels from a texture.                                  |
+|             |                                                                                                         |Use ``comps`` within range of 0..3 to                                |
+| gvec4_type  | :js:attr:`textureGather <textureGather>` (gsampler2DArray s, vec3 p [, int comps])                      |define which component (x, y, z, w) is returned.                     |
+|             |                                                                                                         |If ``comps`` is not provided: 0 (or x-component) is used.            |
+| vec4        | :js:attr:`textureGather <textureGather>` (samplerCube s, vec3 p [, int comps])                          |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`dFdx <dFdx>` (vec_type p)                                                                     | Derivative in ``x`` using local differencing.                       |
+|             |                                                                                                         | Internally, can use either ``dFdxCoarse`` or ``dFdxFine``, but the  |
+|             |                                                                                                         | decision for which to use is made by the GPU driver.                |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`dFdxCoarse <dFdxCoarse>` (vec_type p)                                                         | Calculates derivative with respect to ``x`` window coordinate using |
+|             |                                                                                                         | local differencing based on the value of ``p`` for the current      |
+|             |                                                                                                         | fragment neighbour(s), and will possibly, but not necessarily,      |
+|             |                                                                                                         | include the value for the current fragment.                         |
+|             |                                                                                                         | This function is not available on ``gl_compatibility`` profile.     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`dFdxFine <dFdxFine>` (vec_type p)                                                             | Calculates derivative with respect to ``x`` window coordinate using |
+|             |                                                                                                         | local differencing based on the value of ``p`` for the current      |
+|             |                                                                                                         | fragment and its immediate neighbour(s).                            |
+|             |                                                                                                         | This function is not available on ``gl_compatibility`` profile.     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`dFdy <dFdy>` (vec_type p)                                                                     | Derivative in ``y`` using local differencing.                       |
+|             |                                                                                                         | Internally, can use either ``dFdyCoarse`` or ``dFdyFine``, but the  |
+|             |                                                                                                         | decision for which to use is made by the GPU driver.                |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`dFdyCoarse <dFdyCoarse>` (vec_type p)                                                         | Calculates derivative with respect to ``y`` window coordinate using |
+|             |                                                                                                         | local differencing based on the value of ``p`` for the current      |
+|             |                                                                                                         | fragment neighbour(s), and will possibly, but not necessarily,      |
+|             |                                                                                                         | include the value for the current fragment.                         |
+|             |                                                                                                         | This function is not available on ``gl_compatibility`` profile.     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`dFdyFine <dFdyFine>` (vec_type p)                                                             | Calculates derivative with respect to ``y`` window coordinate using |
+|             |                                                                                                         | local differencing based on the value of ``p`` for the current      |
+|             |                                                                                                         | fragment and its immediate neighbour(s).                            |
+|             |                                                                                                         | This function is not available on ``gl_compatibility`` profile.     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`fwidth <fwidth>` (vec_type p)                                                                 | Sum of absolute derivative in ``x`` and ``y``.                      |
+|             |                                                                                                         | This is the equivalent of using ``abs(dFdx(p)) + abs(dFdy(p))``.    |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`fwidthCoarse <fwidthCoarse>` (vec_type p)                                                     | Sum of absolute derivative in ``x`` and ``y``.                      |
+|             |                                                                                                         | This is the equivalent of using                                     |
+|             |                                                                                                         | ``abs(dFdxCoarse(p)) + abs(dFdyCoarse(p))``.                        |
+|             |                                                                                                         | This function is not available on ``gl_compatibility`` profile.     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`fwidthFine <fwidthFine>` (vec_type p)                                                         | Sum of absolute derivative in ``x`` and ``y``.                      |
+|             |                                                                                                         | This is the equivalent of using                                     |
+|             |                                                                                                         | ``abs(dFdxFine(p)) + abs(dFdyFine(p))``.                            |
+|             |                                                                                                         | This function is not available on ``gl_compatibility`` profile.     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| uint        | :js:attr:`packHalf2x16 <packHalf2x16>` (vec2 v)                                                         | Convert two 32-bit floating-point numbers into 16-bit               |
+|             |                                                                                                         | and pack them into a 32-bit unsigned integer and vice-versa.        |
+| vec2        | :js:attr:`unpackHalf2x16 <unpackHalf2x16>` (uint v)                                                     |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| uint        | :js:attr:`packUnorm2x16 <packUnorm2x16>` (vec2 v)                                                       | Convert two 32-bit floating-point numbers (clamped                  |
+|             |                                                                                                         | within 0..1 range) into 16-bit and pack them                        |
+| vec2        | :js:attr:`unpackUnorm2x16 <unpackUnorm2x16>` (uint v)                                                   | into a 32-bit unsigned integer and vice-versa.                      |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| uint        | :js:attr:`packSnorm2x16 <packSnorm2x16>` (vec2 v)                                                       | Convert two 32-bit floating-point numbers (clamped                  |
+|             |                                                                                                         | within -1..1 range) into 16-bit and pack them                       |
+| vec2        | :js:attr:`unpackSnorm2x16 <unpackSnorm2x16>` (uint v)                                                   | into a 32-bit unsigned integer and vice-versa.                      |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| uint        | :js:attr:`packUnorm4x8 <packUnorm4x8>` (vec4 v)                                                         | Convert four 32-bit floating-point numbers (clamped                 |
+|             |                                                                                                         | within 0..1 range) into 8-bit and pack them                         |
+| vec4        | :js:attr:`unpackUnorm4x8 <unpackUnorm4x8>` (uint v)                                                     | into a 32-bit unsigned integer and vice-versa.                      |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| uint        | :js:attr:`packSnorm4x8 <packSnorm4x8>` (vec4 v)                                                         | Convert four 32-bit floating-point numbers (clamped                 |
+|             |                                                                                                         | within -1..1 range) into 8-bit and pack them                        |
+| vec4        | :js:attr:`unpackSnorm4x8 <unpackSnorm4x8>` (uint v)                                                     | into a 32-bit unsigned integer and vice-versa.                      |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| ivec_type   | :js:attr:`bitfieldExtract <bitfieldExtract>` (ivec_type value, int offset, int bits)                    | Extracts a range of bits from an integer.                           |
+|             |                                                                                                         |                                                                     |
+| uvec_type   | :js:attr:`bitfieldExtract <bitfieldExtract>` (uvec_type value, int offset, int bits)                    |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| ivec_type   | :js:attr:`bitfieldInsert <bitfieldInsert>` (ivec_type base, ivec_type insert, int offset, int bits)     | Insert a range of bits into an integer.                             |
+|             |                                                                                                         |                                                                     |
+| uvec_type   | :js:attr:`bitfieldInsert <bitfieldInsert>` (uvec_type base, uvec_type insert, int offset, int bits)     |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| ivec_type   | :js:attr:`bitfieldReverse <bitfieldReverse>` (ivec_type value)                                          | Reverse the order of bits in an integer.                            |                                       
+|             |                                                                                                         |                                                                     |
+| uvec_type   | :js:attr:`bitfieldReverse <bitfieldReverse>` (uvec_type value)                                          |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| ivec_type   | :js:attr:`bitCount <bitCount>` (ivec_type value)                                                        | Counts the number of 1 bits in an integer.                          |                                                                   
+|             |                                                                                                         |                                                                     |
+| uvec_type   | :js:attr:`bitCount <bitCount>` (uvec_type value)                                                        |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| ivec_type   | :js:attr:`findLSB <findLSB>` (ivec_type value)                                                          | Find the index of the least significant bit set to 1 in an integer. |
+|             |                                                                                                         |                                                                     |
+| uvec_type   | :js:attr:`findLSB <findLSB>` (uvec_type value)                                                          |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| ivec_type   | :js:attr:`findMSB <findMSB>` (ivec_type value)                                                          | Find the index of the most significant bit set to 1 in an integer.  |
+|             |                                                                                                         |                                                                     |
+| uvec_type   | :js:attr:`findMSB <findMSB>` (uvec_type value)                                                          |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| void        | :js:attr:`imulExtended <imulExtended>` (ivec_type x, ivec_type y, out ivec_type msb, out ivec_type lsb) |Multiplies two 32-bit numbers and produce a 64-bit result.           |
+|             |                                                                                                         |                                                                     |
+| void        | :js:attr:`umulExtended <umulExtended>` (uvec_type x, uvec_type y, out uvec_type msb, out uvec_type lsb) |                                                                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| uvec_type   | :js:attr:`uaddCarry <uaddCarry>` (uvec_type x, uvec_type y, out uvec_type carry)                        | Adds two unsigned integers and generates carry.                     |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| uvec_type   | :js:attr:`usubBorrow <usubBorrow>` (uvec_type x, uvec_type y, out uvec_type borrow)                     | Subtracts two unsigned integers and generates borrow.               |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`ldexp <ldexp>` (vec_type x, out ivec_type exp)                                                | Assemble a floating-point number from a value and exponent.         |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type    | :js:attr:`frexp <frexp>` (vec_type x, out ivec_type exp)                                                | Splits a floating-point number (``x``) into significand integral    |
+|             |                                                                                                         | components                                                          |
++-------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+
 
 .. js:function:: radians( vec_type degrees )
 
@@ -1132,7 +1497,7 @@ can be scalar or vector. For example vec_type can be float, vec2, vec3, or vec4.
         Specify the quantity, in degrees, to be converted to radians.
 
     :return:
-        The return value is ``(π * degrees) / 180``.
+        The return value is ``(Ï€ * degrees) / 180``.
 
     :rtype: vec_type
 
@@ -1146,7 +1511,7 @@ can be scalar or vector. For example vec_type can be float, vec2, vec3, or vec4.
         Specify the quantity, in radians, to be converted to degrees.
 
     :return:
-        The return value is ``(radians * 180) / π``.
+        The return value is ``(radians * 180) / Ï€``.
 
     :rtype: vec_type
 
@@ -1197,7 +1562,7 @@ can be scalar or vector. For example vec_type can be float, vec2, vec3, or vec4.
         The value whose arccosine to return.
     :return:
         The return value is the angle whose trigonometric sine is ``x`` and is 
-        in the range ``[-π/2, π/2]``.
+        in the range ``[-Ï€/2, Ï€/2]``.
 
     :rtype: vec_type
 
@@ -1213,7 +1578,7 @@ can be scalar or vector. For example vec_type can be float, vec2, vec3, or vec4.
 
     :return:
         The return value is the angle whose trigonometric cosine is ``x`` and
-        is in the range ``[0, π]``.
+        is in the range ``[0, Ï€]``.
 
     :rtype: vec_type
 
@@ -1231,7 +1596,7 @@ can be scalar or vector. For example vec_type can be float, vec2, vec3, or vec4.
 
     :return:
         The return value is the trigonometric arc-tangent of ``y_over_x`` and is
-        in the range ``[−π/2, π/2]``.
+        in the range ``[âˆ’Ï€/2, Ï€/2]``.
 
     :rtype: vec_type
 
@@ -1251,7 +1616,7 @@ can be scalar or vector. For example vec_type can be float, vec2, vec3, or vec4.
 
     :return:
         The return value is the trigonometric arc-tangent of ``y/x`` and is in
-        the range ``[−π, π]``.
+        the range ``[âˆ’Ï€, Ï€]``.
 
     :rtype: vec_type
 
@@ -1632,7 +1997,7 @@ The return value is
 Specify the quantity, in radians, to be converted to degrees.
 
       :return:
-The return value is ``(radians * 180) / π``.
+The return value is ``(radians * 180) / Ï€``.
 
       :rtype: bool
 
@@ -1652,7 +2017,7 @@ Specify the quantity, in radians, to be converted to degrees.
 Specify the quantity, in radians, to be converted to degrees.
 
       :return:
-The return value is ``(radians * 180) / π``.
+The return value is ``(radians * 180) / Ï€``.
 
       :rtype: vec_type
 

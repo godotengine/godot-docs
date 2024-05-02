@@ -1,0 +1,59 @@
+GD0106: The exported property is an explicit interface implementation
+=====================================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0106
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Non-breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+An explicit interface property implementation is annotated with the ``[Export]``
+attribute. Properties that implement an interface explicitly can't be exported.
+
+Rule description
+----------------
+
+Godot doesn't allow exporting explicit interface property implementations.
+When an interface member is implemented explicitly, the member is hidden and
+consumers can't access them unless the type is converted to the interface first.
+Explicitly implemented members can also share the same name of other members in
+the type, so it could create naming conflicts with other exported members.
+
+.. code-block:: csharp
+
+    public interface MyInterface
+    {
+        public int MyProperty { get; set; }
+    }
+
+    public class MyNode1 : Node, MyInterface
+    {
+        // The property can be exported because it implements the interface implicitly.
+        [Export]
+        public int MyProperty { get; set; }
+    }
+
+    public class MyNode2 : Node, MyInterface
+    {
+        // The property can't be exported because it implements the interface explicitly.
+        [Export]
+        int MyInterface.MyProperty { get; set; }
+    }
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, implement the interface implicitly or remove
+the ``[Export]`` attribute.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Explicit interface property implementations
+can't be exported so they will be ignored by Godot, resulting in runtime errors.

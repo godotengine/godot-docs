@@ -5,21 +5,58 @@
  * based on browser preferences.
  */
 
+@font-face {
+    font-family: "JetBrains Mono";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("fonts/JetBrainsMono-Regular.woff2");
+}
+@font-face {
+    font-family: "JetBrains Mono";
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url("fonts/JetBrainsMono-Medium.woff2");
+}
+@font-face {
+    font-family: "JetBrains Mono";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("fonts/JetBrainsMono-Bold.woff2");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("fonts/Montserrat-Bold.woff2");
+}
+
  /* Default (light) theme colors */
  :root {
+    color-scheme: light dark;
     --body-color: #404040;
     --content-wrap-background-color: #efefef;
     --content-background-color: #fcfcfc;
     --logo-opacity: 1.0;
+
     --navbar-background-color: #333f67;
     --navbar-background-color-hover: #29355c;
     --navbar-background-color-active: #212d51;
     --navbar-current-background-color: #212d51;
     --navbar-current-background-color-hover: #182343;
     --navbar-current-background-color-active: #131e3b;
+    --navbar-category-active-color: rgba(255 115 129 / 10%);
+    --navbar-current-color: #f1f9ff;
     --navbar-level-1-color: #c3e3ff;
     --navbar-level-2-color: #b8d6f0;
     --navbar-level-3-color: #a3c4e1;
+    --navbar-expand-base-color: #81a3c2;
+    --navbar-expand-hover-color: #c3e3ff;
+    --navbar-expand-active-color: #f1f9ff;
+    --navbar-dimmed-color: #a3c4e1;
     --navbar-heading-color: #ff7381;
     --navbar-scrollbar-color: #d45a66;
     --navbar-scrollbar-hover-color: #b14550;
@@ -30,16 +67,25 @@
     --link-color-hover: #3091d1;
     --link-color-active: #105078;
     --link-color-visited: #9b59b6;
+    --class-reference-icon: url("data:image/svg+xml;base64,PHN2ZyBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtNS4wMjkgMWMtLjk5OS0uMDExLTIuMDA5LjMxMi0zLjAyOSAxdjdjMi4wMTctMS4zNTMgNC4wMTctMS4zMTQgNiAwIDEuOTgzLTEuMzE0IDMuOTgzLTEuMzUzIDYgMHYtN2MtMS4wMi0uNjg4LTIuMDMtMS4wMTEtMy4wMjktMS0uNjYyLjAwNy0xLjMxOC4xNzMtMS45NzEuNDYzdjQuNTM3aC0xdi00Yy0uOTgyLS42NDUtMS45NzEtLjk4OS0yLjk3MS0xem0tNS4wMjkgOXY2aDJjMS42NDYgMCAzLTEuMzU0IDMtM3MtMS4zNTQtMy0zLTN6bTUgM2MwIDEuNjQ2IDEuMzU0IDMgMyAzczMtMS4zNTQgMy0zLTEuMzU0LTMtMy0zLTMgMS4zNTQtMyAzem02IDBjMCAxLjY0NiAxLjM1NCAzIDMgM2gxdi0yaC0xYy0uNTQ5IDAtMS0uNDUxLTEtMXMuNDUxLTEgMS0xaDF2LTJoLTFjLTEuNjQ2IDAtMyAxLjM1NC0zIDN6bS05LTFjLjU0OSAwIDEgLjQ1MSAxIDFzLS40NTEgMS0xIDF6bTYgMGMuNTQ5IDAgMSAuNDUxIDEgMXMtLjQ1MSAxLTEgMS0xLS40NTEtMS0xIC40NTEtMSAxLTF6IiBmaWxsPSIjNDE0MTQxIiBmaWxsLW9wYWNpdHk9Ii41OSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PC9zdmc+Cg==");
     --external-reference-icon: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEyIiB3aWR0aD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjk4MGI5Ij48cGF0aCBkPSJtNy41IDcuMXYzLjRoLTZ2LTZoMy40Ii8+PHBhdGggZD0ibTUuNzY1IDFoNS4yMzV2NS4zOWwtMS41NzMgMS41NDctMS4zMS0xLjMxLTIuNzI0IDIuNzIzLTIuNjktMi42ODggMi44MS0yLjgwOC0xLjMxMy0xLjMxeiIvPjwvZz48L3N2Zz4K");
-    --classref-badge-text-color: hsl(0, 0%, 45%);
 
     --hr-color: #e1e4e5;
     --table-row-odd-background-color: #f3f6f6;
-    --code-background-color: #fff;
+    --code-background-color: #e9eae5;
     --code-border-color: #e1e4e5;
-    --code-literal-color: #d04c60;
+    --code-literal-color: #c03e41;
     --input-background-color: #fcfcfc;
     --input-focus-border-color: #5f8cff;
+
+    --tabs-background-color: #e1e4e5;
+    --tabs-selected-color: #a2a9ae;
+    --code-tabs-background-color: #e3ecd1;
+    --code-tabs-selected-color: #8a9378;
+
+    --classref-primary-color: #252525;
+    --classref-secondary-color: #616770;
+    --classref-setget-color: #56585b;
 
     --search-input-background-color: #e6eef3; /* derived from --input-background-color */
     --search-match-color: #2c6b96; /* derived from --link-color */
@@ -49,12 +95,18 @@
     --search-credits-color: #b3b3b3; /* derived from --footer-color */
     --search-credits-link-color: #4392c5; /* derived from --link-color */
 
+    --search-odd-color: rgb(133 160 253 / 24%);
+    --search-even-color: rgb(202 209 239 / 30%);
+    --search-highlighted-color: rgb(255 205 0 / 25%);
+    --search-context-color: #6c6e72;
+
     --highlight-background-color: #f5ffe1;
     --highlight-background-emph-color: #dbe6c3;
     --highlight-default-color: #404040;
     --highlight-comment-color: #408090;
     --highlight-keyword-color: #007020;
     --highlight-keyword2-color: #902000;
+    --highlight-control-flow-keyword-color: #902060;
     --highlight-number-color: #208050;
     --highlight-decorator-color: #4070a0;
     --highlight-type-color: #007020;
@@ -62,6 +114,19 @@
     --highlight-function-color: #06287e;
     --highlight-operator-color: #666666;
     --highlight-string-color: #4070a0;
+
+    --copybtn-background-color: #f6f8fa;
+    --copybtn-background-color-hover: #f3f4f6;
+    --copybtn-border-color: #d5d8da;
+    --copybtn-border-color-hover: #d5d8da;
+    --copybtn-icon-color: #57606a;
+    --copybtn-icon-color-success: #1a7f37;
+    --copybtn-tooltip-background-color: #24292f;
+    --copybtn-box-shadow: 0 1px 0 rgba(27,31,36,0.04), inset 0 1px 0 rgba(255,255,255,0.25);
+    --copybtn-border-color-success: #2da44e;
+
+    --contribute-background-color: #d7dee8;
+    --contribute-text-color: #646e72;
 
     --admonition-note-background-color: #e7f2fa;
     --admonition-note-color: #404040;
@@ -91,6 +156,10 @@
     --btn-neutral-background-color: #f3f6f6;
     --btn-neutral-hover-background-color: #e5ebeb;
     --footer-color: #808080;
+
+    --system-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --header-font-family: "Montserrat", var(--system-font-family);
+    --monospace-font-family: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
 }
 
 /* Dark theme colors */
@@ -101,15 +170,22 @@
         --content-background-color: #2e3236;
         /* Decrease the logo opacity when using the dark theme to be less distracting */
         --logo-opacity: 0.85;
+
         --navbar-background-color: #25282b;
         --navbar-background-color-hover: #333639;
         --navbar-background-color-active: #111417;
         --navbar-current-background-color: #333639;
         --navbar-current-background-color-hover: #44474a;
         --navbar-current-background-color-active: #222528;
+        --navbar-category-active-color: rgba(238 115 129 / 10%);
+        --navbar-current-color: #fefefe;
         --navbar-level-1-color: #ddd;
         --navbar-level-2-color: #ccc;
         --navbar-level-3-color: #bbb;
+        --navbar-expand-base-color: #80848e;
+        --navbar-expand-hover-color: #ccc;
+        --navbar-expand-active-color: #ddd;
+        --navbar-dimmed-color: #bbb;
         --navbar-heading-color: #ee7381;
         --navbar-scrollbar-color: #be5460;
         --navbar-scrollbar-hover-color: #963e48;
@@ -120,16 +196,25 @@
         --link-color-hover: #9df;
         --link-color-active: #6ad;
         --link-color-visited: #cb99f6;
+        --class-reference-icon: url("data:image/svg+xml;base64,PHN2ZyBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLW1pdGVybGltaXQ9IjIiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtNS4wMjkgMWMtLjk5OS0uMDExLTIuMDA5LjMxMi0zLjAyOSAxdjdjMi4wMTctMS4zNTMgNC4wMTctMS4zMTQgNiAwIDEuOTgzLTEuMzE0IDMuOTgzLTEuMzUzIDYgMHYtN2MtMS4wMi0uNjg4LTIuMDMtMS4wMTEtMy4wMjktMS0uNjYyLjAwNy0xLjMxOC4xNzMtMS45NzEuNDYzdjQuNTM3aC0xdi00Yy0uOTgyLS42NDUtMS45NzEtLjk4OS0yLjk3MS0xem0tNS4wMjkgOXY2aDJjMS42NDYgMCAzLTEuMzU0IDMtM3MtMS4zNTQtMy0zLTN6bTUgM2MwIDEuNjQ2IDEuMzU0IDMgMyAzczMtMS4zNTQgMy0zLTEuMzU0LTMtMy0zLTMgMS4zNTQtMyAzem02IDBjMCAxLjY0NiAxLjM1NCAzIDMgM2gxdi0yaC0xYy0uNTQ5IDAtMS0uNDUxLTEtMXMuNDUxLTEgMS0xaDF2LTJoLTFjLTEuNjQ2IDAtMyAxLjM1NC0zIDN6bS05LTFjLjU0OSAwIDEgLjQ1MSAxIDFzLS40NTEgMS0xIDF6bTYgMGMuNTQ5IDAgMSAuNDUxIDEgMXMtLjQ1MSAxLTEgMS0xLS40NTEtMS0xIC40NTEtMSAxLTF6IiBmaWxsPSIjYmZiZmJmIiBmaWxsLW9wYWNpdHk9Ii41OSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PC9zdmc+Cg==");
         --external-reference-icon: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEyIiB3aWR0aD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGNmIj48cGF0aCBkPSJtNy41IDcuMXYzLjRoLTZ2LTZoMy40Ii8+PHBhdGggZD0ibTUuNzY1IDFoNS4yMzV2NS4zOWwtMS41NzMgMS41NDctMS4zMS0xLjMxLTIuNzI0IDIuNzIzLTIuNjktMi42ODggMi44MS0yLjgwOC0xLjMxMy0xLjMxeiIvPjwvZz48L3N2Zz4K");
-        --classref-badge-text-color: hsl(0, 0%, 70%);
 
         --hr-color: #555;
         --table-row-odd-background-color: #3b3e41;
-        --code-background-color: #434649;
+        --code-background-color: #22252d;
         --code-border-color: #505356;
-        --code-literal-color: #faa;
+        --code-literal-color: #d68f8f;
         --input-background-color: #333537;
         --input-focus-border-color: #5f8cff;
+
+        --tabs-background-color: #434649;
+        --tabs-selected-color: #a2a9ae;
+        --code-tabs-background-color: #353c4c;
+        --code-tabs-selected-color: #5a657e;
+
+        --classref-primary-color: #e8e8e8;
+        --classref-secondary-color: #929598;
+        --classref-setget-color: #9e9fa0;
 
         --search-input-background-color: #43464a; /* derived from --input-background-color */
         --search-match-color: #52b4ff; /* derived from --link-color */
@@ -139,6 +224,11 @@
         --search-credits-color: #6b6b6b; /* derived from --footer-color */
         --search-credits-link-color: #628fb1; /* derived from --link-color */
 
+        --search-odd-color: #202326;
+        --search-even-color: #25282b;
+        --search-highlighted-color: rgb(255 205 0 / 16%);
+        --search-context-color: #aaa;
+
         /* Colors taken from the Godot script editor with the Adaptive theme */
         --highlight-background-color: #202531;
         --highlight-background-emph-color: #2d3444;
@@ -146,6 +236,7 @@
         --highlight-comment-color: rgba(204, 206, 211, 0.5);
         --highlight-keyword-color: #ff7085;
         --highlight-keyword2-color: #42ffc2;
+        --highlight-control-flow-keyword-color: #ff8ccc;
         --highlight-number-color: #a1ffe0;
         --highlight-decorator-color: #ffb373;
         --highlight-type-color: #8effda;
@@ -153,6 +244,19 @@
         --highlight-function-color: #57b3ff;
         --highlight-operator-color: #abc8ff;
         --highlight-string-color: #ffeca1;
+
+        --copybtn-background-color: #2a303c;
+        --copybtn-background-color-hover: #3e4450;
+        --copybtn-border-color: #3e4450;
+        --copybtn-border-color-hover: #8b949e;
+        --copybtn-icon-color: #8b949e;
+        --copybtn-icon-color-success: #3fb950;
+        --copybtn-tooltip-background-color: #6e7681;
+        --copybtn-box-shadow: 0 0 transparent, 0 0 transparent;
+        --copybtn-border-color-success: #238636;
+
+        --contribute-background-color: #25282d;
+        --contribute-text-color: #7f939b;
 
         --admonition-note-background-color: #303d4f;
         --admonition-note-color: #bfeeff;
@@ -186,23 +290,15 @@
 }
 
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 input[type="text"],
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
 textarea,
-legend,
 .btn,
-.rst-content .toctree-wrapper p.caption,
 .rst-versions {
     /* Use a system font stack for better performance (no Web fonts required) */
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: var(--system-font-family);
 }
 
 h1,
@@ -213,8 +309,14 @@ h5,
 h6,
 legend,
 .rst-content .toctree-wrapper p.caption {
-    /* Use a lighter font for headers (Medium instead of Bold) */
-    font-weight: 500;
+    /* Use the same font as the godotengine.org website. */
+    font-family: var(--header-font-family);
+}
+
+/* See <https://github.com/godotengine/godot-docs/pull/5876> for context. */
+.rst-content .align-right,
+.rst-content .align-left {
+	clear: both;
 }
 
 .rst-content div.figure p.caption {
@@ -238,33 +340,34 @@ article ol,
 .wy-plain-list-disc,
 .wy-plain-list-decimal,
 .rst-content ol.arabic,
-.rst-content .section ul,
-.rst-content .toctree-wrapper ul,
-.rst-content .section ol {
+.rst-content .toctree-wrapper ul {
     /* Increase the line height slightly to account for the different font */
     line-height: 25px;
 }
 
+/* Depending on the environment, it can be a section tag or a div with the section class. */
+.rst-content section ul,
+.rst-content section ol,
+.rst-content .section ul,
+.rst-content .section ol {
+    /* Increase the line height slightly to account for the different font */
+    line-height: 25px;
+}
+.rst-content section ul li,
+.rst-content .section ul li {
+    /* Increase spacing between list items. */
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 body,
-.rst-content table.docutils thead {
+.rst-content table.docutils thead,
+.rst-content table.docutils caption {
     color: var(--body-color);
 }
 
 a {
     color: var(--link-color);
-}
-
-.sphinx-tabs-tab {
-    color: var(--link-color);
-}
-
-.sphinx-tabs-tab[aria-selected="true"] {
-    background-color: var(--code-background-color);
-    border-bottom: 1px solid var(--code-background-color);
-}
-
-.sphinx-tabs-panel {
-    background-color: var(--code-background-color);
 }
 
 a:hover {
@@ -293,115 +396,167 @@ a.btn:hover {
     padding-right: 13px;
 }
 
-/* Distinguish class reference page links from "user manual" page links with a "ref" badge. */
-a[href*="classes/"]::before {
-    content: "ref";
-    color: var(--classref-badge-text-color);
-    background-color: hsla(0, 0%, 50%, 0.3);
-    font-weight: 700;
-    font-size: 80%;
-    border-radius: 9999px;
+/* Distinguish class reference page links from "user manual" page links with a class reference badge. */
+
+/* Remove text wrapping so that the badge is always on the same line as the anchor's text. */
+.rst-content a[href*="classes/"] {
+    white-space: nowrap;
+}
+/* Add an icon as a badge, after the anchor's text. */
+.rst-content a[href*="classes/"]::after {
+    content: "";
+    background-image: var(--class-reference-icon);
+    display: inline-block;
+    height: 16px;
+    width: 16px;
     padding: 0.125rem 0.375rem;
-    margin-right: 0.25rem;
+    margin-left: 0.25rem;
 }
 
-/* Prevent the "ref" badge from appearing twice in the instant search results (not testable locally). */
-.wy-body-for-nav .search__result__single a[href*="classes/"]::before {
+/* Prevent the class reference badge from appearing twice in the instant search results (not testable locally). */
+.wy-body-for-nav .search__result__single a[href*="classes/"]::after {
+    display: none;
+}
+.wy-body-for-nav .search__result__single a[href*="classes/"]:first-child::after {
+    display: inline-block;
+}
+/* Prevent the class reference badge from appearing several times per item in the dedicated search results page. */
+#search-results .context a[href*="classes/"]::after {
     display: none;
 }
 
-.wy-body-for-nav .search__result__single a[href*="classes/"]:first-child::before {
-    display: inline;
-}
-
-/* Prevent the "ref" badge from appearing several times per item in the dedicated search results page. */
-#search-results .context a[href*="classes/"]::before {
-    display: none;
-}
-
-/* Prevent the "ref" badge from appearing in the sidebar. */
-.wy-menu-vertical a[href*="classes/"]::before {
-    display: none;
-}
-
+/* Stylize horizontal separator, mainly for the search results page. */
 hr,
 #search-results .search li:first-child,
 #search-results .search li {
     border-color: var(--hr-color);
 }
 
+/* Stylize the search results page. */
+#search-results .search-summary {
+    color: var(--footer-color);
+}
+
+#search-results .context {
+    color: var(--search-context-color);
+    padding-left: 14px;
+    position: relative;
+}
+
+#search-results .context:before {
+    content: "•";
+    display: block;
+    position: absolute;
+    left: 0;
+    font-size: 120%;
+}
+
+#search-results .search li {
+    background-color: var(--search-odd-color);
+    padding: 16px 14px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 18px;
+}
+
+#search-results .search li:first-child {
+    border: none;
+    padding: 16px 14px;
+    margin-top: 20px;
+}
+
+#search-results .search li:nth-child(2n) {
+    background-color: var(--search-even-color);
+}
+
+/* Add more visual separation for the title of a search result island. */
+#search-results .search li > a:first-child {
+    font-weight: 600;
+    font-size: 140%;
+}
+
 /* JavaScript documentation directives */
-.rst-content dl:not(.docutils) dt {
-    background-color: var(--admonition-note-background-color) !important;
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) dt,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) dl:not(.field-list) > dt {
+    background-color: var(--admonition-note-background-color);
     border-color: var(--admonition-note-title-background-color);
     color: var(--admonition-note-color);
 }
-.rst-content dl:not(.docutils) dl dt {
-    background-color: var(--admonition-attention-background-color);
-    border-color: var(--admonition-attention-title-background-color);
-    color: var(--admonition-attention-color) !important;
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) dl dt {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--footer-color);
 }
-.rst-content dl:not(.docutils).class dt,
-.rst-content dl:not(.docutils).function dt,
-.rst-content dl:not(.docutils).method dt,
-.rst-content dl:not(.docutils).attribute dt {
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).class dt,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).function dt,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).method dt,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).attribute dt {
+    font-weight: 600;
+    padding: 0 8px;
+    margin-bottom: 1px;
     width: 100%;
 }
-.rst-content dl:not(.docutils).class > dt,
-.rst-content dl:not(.docutils).function > dt,
-.rst-content dl:not(.docutils).method > dt,
-.rst-content dl:not(.docutils).attribute > dt {
-    font-size: 100%;
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).class > dt,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).function > dt,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).method > dt,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).attribute > dt {
+    font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
+    font-size: 90%;
     font-weight: normal;
     margin-bottom: 16px;
     padding: 6px 8px;
 }
-.rst-content dl:not(.docutils) tt.descclassname,
-.rst-content dl:not(.docutils) code.descclassname {
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .sig-prename.descclassname {
     color: var(--highlight-type2-color);
     font-weight: normal;
 }
-.rst-content dl:not(.docutils) tt.descname,
-.rst-content dl:not(.docutils) code.descname {
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .sig-name.descname {
     color: var(--highlight-function-color);
-    font-weight: normal;
+    font-weight: 700;
 }
-.rst-content dl:not(.docutils) .sig-paren,
-.rst-content dl:not(.docutils) .optional {
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .sig-paren,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .optional {
     color: var(--highlight-operator-color) !important;
     font-weight: normal;
     padding: 0 2px;
 }
-.rst-content dl:not(.docutils) .optional {
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .optional {
     font-style: italic;
 }
-.rst-content dl:not(.docutils) .sig-param,
-.rst-content dl:not(.docutils).class dt > em,
-.rst-content dl:not(.docutils).function dt > em,
-.rst-content dl:not(.docutils).method dt > em {
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .sig-param,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).class dt > em,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).function dt > em,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).method dt > em {
     color: var(--code-literal-color);
     font-style: normal;
     padding: 0 4px;
 }
-.rst-content dl:not(.docutils) .sig-param,
-.rst-content dl:not(.docutils).class dt > .optional ~ em,
-.rst-content dl:not(.docutils).function dt > .optional ~ em,
-.rst-content dl:not(.docutils).method dt > .optional ~ em {
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .k {
+    font-style: normal;
+}
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) .sig-param,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).class dt > .optional ~ em,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).function dt > .optional ~ em,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).method dt > .optional ~ em {
     color: var(--highlight-number-color);
     font-style: italic;
 }
-.rst-content dl:not(.docutils).class dt > em.property {
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).class dt > em.property {
     color: var(--highlight-keyword-color);
 }
-.rst-content dl:not(.docutils) dt a.headerlink {
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) dt a.headerlink {
     color: var(--link-color) !important;
 }
-.rst-content dl:not(.docutils) dt a.headerlink:visited {
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple) dt a.headerlink:visited {
     color: var(--link-color-visited);
 }
+html.writer-html5 .rst-content dl.field-list > dd strong {
+    font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
+}
 
-footer,
-#search-results .context {
+footer {
     color: var(--footer-color);
 }
 
@@ -512,29 +667,91 @@ footer,
 
 .wy-nav-content {
     background-color: var(--content-background-color);
+    max-width: 900px;
 }
 
 .wy-body-for-nav {
+    position: relative;
     background-color: var(--content-wrap-background-color);
 }
 
 @media only screen and (min-width: 769px) {
     .wy-body-for-nav {
         /* Center the page on wide displays for better readability */
-        max-width: 1100px;
+        max-width: 1200px;
         margin: 0 auto;
     }
+}
+
+/* Customize the look of tabbed panels, including code tabs. */
+
+.rst-content [role="tablist"] {
+    border-bottom: none;
+}
+
+.rst-content .sphinx-tabs-tab {
+    border-top: 4px solid transparent;
+    color: var(--link-color);
+    padding: 0.5rem 1.25rem;
+}
+
+.rst-content .sphinx-tabs-tab[aria-selected="true"] {
+    background-color: var(--tabs-background-color);
+    border: none;
+    border-radius: 0;
+    border-top: 4px solid var(--tabs-selected-color);
+}
+.rst-content .sphinx-tabs-tab.code-tab[aria-selected="true"] {
+    background-color: var(--code-tabs-background-color);
+    border-top: 4px solid var(--code-tabs-selected-color);
+}
+
+.rst-content .sphinx-tabs-tab:focus {
+    z-index: inherit;
+}
+
+.rst-content .sphinx-tabs-panel {
+    background-color: var(--tabs-background-color);
+    border: none;
+    border-radius: 0;
+}
+.rst-content .sphinx-tabs-panel.code-tab {
+    background-color: var(--code-tabs-background-color);
+}
+
+.rst-content .sphinx-tabs-panel div[class^="highlight"] {
+    border: none;
+    box-shadow: none;
+    margin-bottom: 2px;
+}
+
+.rst-content div[class^="highlight"] pre {
+    font-variant-ligatures: none;
+    padding: 18px 16px;
 }
 
 /* Table display tweaks */
 
 .rst-content table.docutils,
+.wy-table-bordered-all {
+    border: 4px solid var(--code-border-color);
+}
+
 .wy-table-bordered-all td,
-.rst-content table.docutils td,
 .wy-table thead th,
+.rst-content table.docutils td,
 .rst-content table.docutils thead th,
 .rst-content table.field-list thead th {
-    border-color: var(--code-border-color);
+    border-bottom: 2px solid var(--code-border-color);
+    border-left: 2px solid var(--code-border-color);
+    padding: 4px 16px;
+}
+
+html.writer-html5 .rst-content table.docutils th {
+    border-bottom: 4px solid var(--code-border-color);
+    border-left: 2px solid var(--code-border-color);
+    padding: 8px 16px;
+    vertical-align: middle;
 }
 
 .wy-table-odd td,
@@ -566,23 +783,49 @@ footer,
     white-space: nowrap;
 }
 
+/* Artificially increasing specificity to make it override theme.css. */
+html.writer-html5 .rst-content .wy-table-responsive > table td > p {
+    line-height: 1.425rem;
+}
+html.writer-html5 .rst-content .wy-table-responsive > table th > p {
+    line-height: 1.425rem;
+    font-size: .95rem;
+    font-weight: 600;
+}
+
+html.writer-html5 .rst-content .wy-table-responsive > table td > p tt.literal,
+html.writer-html5 .rst-content .wy-table-responsive > table td > p code.literal {
+    font-size: .85rem;
+    padding: 2px 5px;
+}
+
 /* Code display tweaks */
 
 code,
 .rst-content tt,
 .rst-content code {
-    font-size: 14px;
+    font-size: .875em;
+    font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
     background-color: var(--code-background-color);
-    border: 1px solid var(--code-border-color);
+    border: none;
+    border-radius: 4px;
 }
 
 .rst-content tt.literal,
 .rst-content code.literal {
     color: var(--code-literal-color);
+    font-weight: 600;
+    font-variant-ligatures: none;
+    padding: 3px 5px;
 }
 
 .rst-content div[class^="highlight"] {
-    border-color: var(--code-border-color);
+    border: 3px solid var(--code-tabs-background-color);
+}
+
+.rst-content div[class^="highlight"] div[class^="highlight"] {
+    box-shadow: none;
 }
 
 .rst-content pre.literal-block,
@@ -591,6 +834,8 @@ code,
     /* Increase the font size and line height in code blocks */
     font-size: 14px;
     line-height: 1.5;
+    font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
 }
 
 /* Code tab display tweaks */
@@ -609,6 +854,7 @@ code,
 
 .highlight {
     background-color: var(--highlight-background-color);
+    tab-size: 4;
 }
 
 /* Emphasized lines */
@@ -640,6 +886,10 @@ code,
 .highlight .kt /* Keyword.Type */,
 .highlight .ow /* Operator.Word */ {
     color: var(--highlight-keyword-color);
+}
+
+.highlight .k-ControlFlow /* Keyword.ControlFlow */ {
+    color: var(--highlight-control-flow-keyword-color);
 }
 
 .highlight .ch /* Comment.Hashbang */,
@@ -708,18 +958,59 @@ code,
     color: var(--highlight-string-color);
 }
 
-/* Admonition tweaks */
+/* Call to action for missing documentation */
+.rst-content .contribute {
+    background-color: var(--contribute-background-color);
+    color: var(--contribute-text-color);
+    padding: 12px;
+    margin-bottom: 12px;
+}
 
+.rst-content .contribute > p {
+    margin-bottom: 0;
+}
+
+/* Admonition tweaks */
+.rst-content .admonition-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.rst-content .admonition-grid-2x {
+    grid-template-columns: 4fr 5fr;
+}
+@media screen and (max-width: 1020px) {
+    .rst-content .admonition-grid {
+        gap: 12px;
+    }
+    .rst-content .admonition-grid-2x {
+        grid-template-columns: 1fr;
+    }
+}
+
+.rst-content .admonition,
 .rst-content .admonition.note,
 .rst-content .admonition.seealso {
     background-color: var(--admonition-note-background-color);
+    border-radius: 4px;
+    box-shadow: 0px 3px 9px 0px rgb(0 0 0 / 29%);
     color: var(--admonition-note-color);
 }
 
+.rst-content .admonition .admonition-title,
 .rst-content .admonition.note .admonition-title,
 .rst-content .admonition.seealso .admonition-title {
     background-color: var(--admonition-note-title-background-color);
+    border-radius: 4px 4px 0 0;
     color: var(--admonition-note-title-color);
+    font-weight: 600;
+    font-size: 105%;
+    line-height: 120%;
+    padding: 6px 16px;
+}
+
+.rst-content .admonition .admonition-title:before {
+    margin-right: 9px;
 }
 
 .rst-content .admonition.attention,
@@ -758,8 +1049,14 @@ code,
     color: var(--admonition-tip-title-color);
 }
 
+.article-status strong {
+    color: var(--body-color);
+}
+
 /* Keyboard shortcuts tweaks */
-kbd, .kbd {
+kbd, .kbd,
+.rst-content :not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > kbd,
+.rst-content :not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > .kbd {
     background-color: var(--kbd-background-color);
     border: 1px solid var(--kbd-outline-color);
     border-radius: 3px;
@@ -780,6 +1077,195 @@ kbd.compound > .kbd,
     border: none;
     box-shadow: none;
     padding: 0;
+}
+
+/* Class reference tweaks. */
+
+.classref-section-separator {
+    border-color: var(--navbar-heading-color);
+    border-top-width: 3px;
+    margin: 36px 0;
+}
+
+.classref-item-separator {
+    border-top-width: 2px;
+    margin: 26px 0;
+}
+
+.classref-descriptions-group > p.classref-property,
+.classref-descriptions-group > p.classref-signal,
+.classref-descriptions-group > p.classref-annotation,
+.classref-descriptions-group > p.classref-themeproperty,
+.classref-descriptions-group > p.classref-method,
+.classref-descriptions-group > p.classref-constructor,
+.classref-descriptions-group > p.classref-operator,
+.classref-descriptions-group > p.classref-constant,
+.classref-descriptions-group > p.classref-enumeration,
+.classref-descriptions-group > p.classref-enumeration-constant {
+    color: var(--classref-secondary-color);
+    font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
+    font-size: 110%;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.classref-property {
+    margin-bottom: 12px;
+}
+
+p + .classref-constant {
+    margin-top: 22px;
+}
+
+.classref-descriptions-group > p.classref-enumeration-constant {
+    font-size: 100%;
+    margin-top: 18px;
+    margin-bottom: 14px;
+}
+
+.classref-property > a,
+.classref-signal > a,
+.classref-annotation > a,
+.classref-themeproperty > a,
+.classref-method > a,
+.classref-constructor > a,
+.classref-operator > a,
+.classref-constant > a,
+.classref-enumeration > a {
+    opacity: 0.85;
+}
+.classref-enumeration-constant > a {
+    opacity: 0.75;
+}
+
+.classref-property > a:hover,
+.classref-signal > a:hover,
+.classref-annotation > a:hover,
+.classref-themeproperty > a:hover,
+.classref-method > a:hover,
+.classref-constructor > a:hover,
+.classref-operator > a:hover,
+.classref-constant > a:hover,
+.classref-enumeration > a:hover,
+.classref-enumeration-constant > a:hover {
+    opacity: 1;
+}
+
+.classref-property > strong,
+.classref-signal > strong,
+.classref-annotation > strong,
+.classref-themeproperty > strong,
+.classref-method > strong,
+.classref-constructor > strong,
+.classref-operator > strong,
+.classref-constant > strong,
+.classref-enumeration > strong,
+.classref-enumeration-constant > strong {
+    color: var(--classref-primary-color);
+}
+
+.classref-property > code.literal,
+.classref-signal > code.literal,
+.classref-annotation > code.literal,
+.classref-themeproperty > code.literal,
+.classref-method > code.literal,
+.classref-constructor > code.literal,
+.classref-operator > code.literal,
+.classref-constant > code.literal,
+.classref-enumeration > code.literal,
+.classref-enumeration-constant > code.literal {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-weight: 600;
+    font-size: 90%
+}
+
+.classref-constant > code.literal,
+.classref-enumeration-constant > code.literal {
+    color: var(--classref-setget-color);
+    font-weight: 400;
+}
+
+/* Artificially increasing specificity to make it override theme.css. */
+.classref-descriptions-group ul.classref-property-setget {
+    color: var(--classref-setget-color);
+    font-size: 90%;
+    margin-bottom: 22px;
+}
+
+.classref-property-setget > li {
+    line-height: 22px;
+}
+
+.classref-property-setget p {
+    font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
+    font-size: 100%;
+    line-height: 22px;
+}
+
+.classref-property-setget p > a {
+    opacity: 0.75;
+}
+.classref-property-setget p > a:hover {
+    opacity: 1;
+}
+
+.classref-property-setget p > strong {
+    color: var(--classref-setget-color);
+}
+
+.classref-property-setget p > code {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font-weight: 600;
+}
+
+.classref-descriptions-group {
+    margin-left: 24px;
+}
+#enumerations.classref-descriptions-group {
+    margin-left: 48px;
+}
+
+.classref-descriptions-group > h2,
+.classref-descriptions-group > hr {
+    margin-left: -24px;
+}
+#enumerations.classref-descriptions-group > h2,
+#enumerations.classref-descriptions-group > hr {
+    margin-left: -48px;
+}
+
+.classref-descriptions-group > p {
+    margin-bottom: 12px;
+}
+
+.classref-descriptions-group .classref-property,
+.classref-descriptions-group .classref-signal,
+.classref-descriptions-group .classref-annotation,
+.classref-descriptions-group .classref-themeproperty,
+.classref-descriptions-group .classref-method,
+.classref-descriptions-group .classref-constructor,
+.classref-descriptions-group .classref-operator,
+.classref-descriptions-group .classref-constant,
+.classref-descriptions-group .classref-enumeration-constant {
+    margin-left: -24px;
+}
+
+.classref-descriptions-group .classref-enumeration {
+    margin-left: -48px;
+}
+
+.classref-reftable-group .wy-table-responsive {
+    margin-bottom: 36px;
+}
+
+.classref-reftable-group .wy-table-responsive > table {
+    width: 100%;
 }
 
 /* Buttons */
@@ -803,15 +1289,23 @@ kbd.compound > .kbd,
     opacity: var(--logo-opacity);
 }
 
+.wy-side-nav-search > a {
+    padding: 0;
+    margin-bottom: 0.404em;
+    margin-top: 0.404em;
+}
+
 .wy-side-nav-search > a img.logo {
     /* Fixed size to prevent reflows and support hiDPI displays */
     /* A 5 pixel margin is added on each side. The logo itself displays at 200×200 at 100% scaling. */
-    width: 210px;
-    height: 210px;
+    width: 270px;
+    height: 70px;
 }
 
 .wy-side-nav-search {
     background-color: var(--navbar-background-color);
+    color: var(--navbar-level-1-color);
+    margin-right: 8px;
 }
 
 .wy-side-nav-search.fixed {
@@ -863,7 +1357,22 @@ kbd.compound > .kbd,
     opacity: 0.55;
 }
 
-/* Navigation bar */
+/* Version branch label below the logo */
+.wy-side-nav-search > div.version {
+    color: var(--navbar-dimmed-color);
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Navigational top bar (mobile only) */
+
+.wy-nav-top,
+.wy-nav-top a {
+    background-color: var(--navbar-background-color);
+    color: var(--navbar-level-1-color);
+}
+
+/* Navigational sidebar */
 
 .wy-nav-side {
     background-color: var(--navbar-background-color);
@@ -884,92 +1393,132 @@ kbd.compound > .kbd,
     letter-spacing: 0.75px;
 }
 
-/* Mobile navigation */
+/* Default styling of navigation items */
 
-.wy-nav-top,
-.wy-nav-top a {
+.wy-menu-vertical li {
     background-color: var(--navbar-background-color);
+}
+.wy-menu-vertical li.current {
+    background-color: var(--navbar-current-background-color);
+}
+
+.wy-menu-vertical li > a {
     color: var(--navbar-level-1-color);
+    font-size: 92%;
+    line-height: 20px;
+    padding: .4045em 1.618em;
 }
-
-/* Version branch label below the logo */
-.wy-side-nav-search > div.version {
-    color: var(--navbar-level-3-color);
-    opacity: 0.9;
-}
-
-/* First level of navigation items */
-
-.wy-menu-vertical a {
-    color: var(--navbar-level-1-color);
-}
-
-.wy-menu-vertical a:hover {
+.wy-menu-vertical li > a:hover {
     background-color: var(--navbar-background-color-hover);
     color: var(--navbar-level-1-color);
 }
-
-.wy-menu-vertical a:active {
+.wy-menu-vertical li > a:active {
     background-color: var(--navbar-background-color-active);
 }
 
-.wy-menu-vertical li.toctree-l1.current > a {
-    border: none;
-}
-
-.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a span.toctree-expand,
-.wy-menu-vertical li.toctree-l2 a span.toctree-expand {
-    color: var(--navbar-level-3-color);
+.wy-menu-vertical li > a button.toctree-expand {
+    color: var(--navbar-expand-base-color) !important;
     opacity: 0.9;
     margin-right: 8px;
-}
 
-.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:hover span.toctree-expand,
-.wy-menu-vertical li.toctree-l2 a:hover span.toctree-expand {
-    color: var(--navbar-level-2-color);
+    /* Make the expand icon a bit easier to hit. */
+    position: relative;
+    width: 12px;
+    min-width: 12px; /* Forces the size to stay this way in the flexbox model. */
+    height: 18px;
+}
+.wy-menu-vertical li.current > a button.toctree-expand {
+    color: var(--navbar-current-color) !important;
+}
+.wy-menu-vertical li > a:hover button.toctree-expand {
+    color: var(--navbar-expand-hover-color) !important;
+    opacity: 1;
+}
+.wy-menu-vertical li > a:active button.toctree-expand {
+    color: var(--navbar-expand-active-color) !important;
     opacity: 1;
 }
 
-.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:active span.toctree-expand,
-.wy-menu-vertical li.toctree-l2 a:active span.toctree-expand {
-    color: var(--navbar-level-1-color);
-    opacity: 1;
+/* Make the expand icon a bit easier to hit. */
+.wy-menu-vertical li > a button.toctree-expand:before {
+    position: absolute;
+    top: -2px;
+    left: -6px;
+    width: 24px;
+    height: 24px;
+    padding: 6px;
 }
 
-/* Second (and higher) levels of navigation items */
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.toctree-l2.current > a {
+    background-color: var(--navbar-current-background-color-hover);
+    border-bottom: 2px solid var(--navbar-current-background-color);
+    color: var(--navbar-current-color);
+    font-weight: 600;
 
-.wy-menu-vertical li.current a {
     /* Make long words always display on a single line, keep wrapping for multiple words */
     /* This fixes the class reference titles' display with very long class names */
     display: flex;
 }
-
-.wy-menu-vertical li.current a,
-.wy-menu-vertical li.toctree-l2.current > a,
-.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
-.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a {
-    background-color: var(--navbar-current-background-color);
-    color: var(--navbar-level-2-color);
-    border-color: var(--navbar-current-background-color);
-}
-
-.wy-menu-vertical li.current a:hover,
-.wy-menu-vertical li.toctree-l2.current > a:hover,
-.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover,
-.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:hover {
+.wy-menu-vertical li.current > a:hover,
+.wy-menu-vertical li.toctree-l2.current > a:hover {
     background-color: var(--navbar-current-background-color-hover);
 }
-
-.wy-menu-vertical li.current a:active,
-.wy-menu-vertical li.toctree-l2.current > a:active,
-.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:active,
-.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:active {
+.wy-menu-vertical li.current > a:active,
+.wy-menu-vertical li.toctree-l2.current > a:active {
     background-color: var(--navbar-current-background-color-active);
 }
 
-.wy-menu-vertical a {
-    /* This overrides 8px margin added in other multi-selector rules */
-    margin-right: 0;
+/* Slightly adjust first level items. */
+.wy-menu-vertical li.toctree-l1 > a,
+.wy-menu-vertical li.toctree-l1.current > a {
+    border: none;
+    padding: .4045em 1.918em;
+}
+.wy-menu-vertical li.toctree-l1.current > a {
+    border-bottom: 2px solid var(--navbar-current-background-color);
+}
+
+/* Override styling for children of the current item. */
+.wy-menu-vertical li.current li > a,
+.wy-menu-vertical li.toctree-l2.current li > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a {
+    background-color: var(--navbar-current-background-color);
+    border: none;
+    border-bottom: 2px solid var(--navbar-current-background-color);
+    color: var(--navbar-level-2-color);
+}
+.wy-menu-vertical li.current li > a:hover,
+.wy-menu-vertical li.toctree-l2.current li > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a:hover {
+    background-color: var(--navbar-current-background-color-hover);
+}
+.wy-menu-vertical li.current li > a:active,
+.wy-menu-vertical li.toctree-l2.current li > a:active,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:active,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a:active {
+    background-color: var(--navbar-current-background-color-active);
+}
+
+.wy-menu-vertical li.toctree-l2.current li > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a {
+    color: var(--navbar-level-3-color);
+}
+.wy-menu-vertical li.toctree-l2.current li > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a:hover {
+    color: var(--navbar-level-1-color);
+}
+
+.wy-menu-vertical li.current li.current > a,
+.wy-menu-vertical li.toctree-l2.current li.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4.current > a {
+    color: var(--navbar-current-color);
+    font-weight: 600;
 }
 
 /* Banner panel in sidebar */
@@ -977,10 +1526,25 @@ kbd.compound > .kbd,
     position: fixed;
 }
 
-/* Version selector (only visible on Read the Docs) */
+/* Read the Docs flyout panel, with language and version selectors. */
 
 .rst-versions {
     background-color: var(--navbar-current-background-color);
+}
+
+.rst-versions.shift-up {
+    overflow: visible;
+}
+
+.rst-versions.shift-up:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -8px;
+    width: 100%;
+    height: 8px;
+    pointer-events: none;
+    background: linear-gradient(transparent, hsla(0, 0%, 0%, 0.2));
 }
 
 @media only screen and (min-width: 769px) {
@@ -997,35 +1561,66 @@ kbd.compound > .kbd,
     color: var(--navbar-level-1-color);
 }
 
-.rst-versions .rst-other-versions small {
-    color: var(--navbar-level-3-color);
-}
-
-.rst-versions .rst-other-versions dd a:hover {
-    text-decoration: underline;
+.rst-versions .rst-current-version,
+.rst-versions .rst-other-versions {
+    padding: 12px 14px;
 }
 
 .rst-versions .rst-other-versions {
     color: var(--navbar-heading-color);
 }
 
-.rst-versions .rst-current-version {
-    background-color: var(--navbar-current-background-color);
+.rst-versions .rst-other-versions dl + dl {
+    margin-top: 4px;
 }
 
+.rst-versions .rst-other-versions hr {
+    border-color: var(--hr-color);
+    margin: 12px 0;
+}
+
+.rst-versions .rst-other-versions small {
+    color: var(--navbar-dimmed-color);
+}
+
+.rst-versions .rst-other-versions dd a:hover {
+    text-decoration: underline;
+}
+
+/* This will hide every segment of the panel, starting with the 4th. */
+.rst-versions .rst-other-versions .injected dl:nth-child(n+4) {
+    display: none;
+}
+
+.rst-versions .rst-current-version {
+    background-color: var(--navbar-current-background-color);
+    border-bottom: 1px solid var(--hr-color);
+}
 .rst-versions .rst-current-version:hover {
     background-color: var(--navbar-current-background-color-hover);
 }
-
 .rst-versions .rst-current-version:active {
     background-color: var(--navbar-current-background-color-active);
 }
 
-/* Hide the obnoxious automatic highlight in search results */
+.rst-versions .rst-current-version .fa {
+    line-height: 20px;
+}
+
+/* Hide the obnoxious automatic highlight from the search context. */
 .rst-content .highlighted {
     background-color: transparent;
+    box-shadow: none;
     font-weight: inherit;
     padding: 0;
+}
+/* Still slightly highlight matched parts on the dedicated search results page. */
+.rst-content #search-results .highlighted {
+    background-color: var(--search-highlighted-color);
+    border-radius: 2px;
+    color: var(--body-color);
+    font-weight: 600;
+    padding: 0 3px;
 }
 
 /* Allows the scrollbar to be shown in the sidebar */
@@ -1043,6 +1638,7 @@ kbd.compound > .kbd,
     overflow-y: auto;
     overflow-x: hidden;
     max-height: calc(100% - 348px);
+    padding-bottom: 24px;
 }
 @media screen and (max-width: 768px) {
     .wy-nav-side {
@@ -1083,4 +1679,101 @@ kbd.compound > .kbd,
 .code-example-bad div.highlight {
     border-left-color: var(--code-example-bad-color);
     border-left-width: 8px;
+}
+
+/* Togglable sidebar sections. */
+.wy-menu-vertical p.caption {
+    cursor: pointer;
+}
+.wy-menu-vertical p.caption.active {
+    background-color: var(--navbar-category-active-color);
+}
+.wy-menu-vertical p.caption:hover {
+    background-color: var(--navbar-background-color-hover);
+}
+
+.wy-menu-vertical p.caption.active .caption-text:before {
+    transform: rotate(90deg);
+}
+.wy-menu-vertical p.caption .caption-text:before {
+    content: "❯";
+    display: inline-block;
+    margin-left: -4px;
+    transition: transform 0.2s;
+    width: 16px;
+    height: 32px;
+    transform-origin: 2px 16px;
+}
+
+.wy-menu-vertical p.caption + ul {
+    display: none;
+}
+.wy-menu-vertical p.caption + ul.active {
+    display: block;
+}
+
+.highlight button.copybtn {
+    background-color: var(--copybtn-background-color);
+    border-color: var(--copybtn-border-color);
+    box-shadow: var(--copybtn-box-shadow);
+    width: 32px;
+    height: 32px;
+    right: 0;
+    top: 0;
+    margin: 12.25px;
+}
+.highlight button.copybtn:hover {
+    background-color: var(--copybtn-background-color-hover);
+    border-color: var(--copybtn-border-color-hover);
+}
+.highlight button.copybtn svg {
+    position: absolute;
+    left: 3.5px;
+    top: 3.5px;
+    color: var(--copybtn-icon-color);
+    pointer-events: none;
+}
+.highlight button.copybtn.success {
+    border-color: var(--copybtn-border-color-success);
+    box-shadow: 0 0 0 0.2em rgb(52 208 88 / 40%);
+}
+.highlight button.copybtn.success svg {
+    color: var(--copybtn-icon-color-success);
+}
+.o-tooltip--left:after {
+    background-color: var(--copybtn-tooltip-background-color);
+    color: #ffffff;
+    border-radius: 6px;
+    padding: 0.5em 0.75em;
+}
+
+/* Allow :abbr: tags' content to be displayed on mobile platforms by tapping the word */
+@media (hover: none), (hover: on-demand), (-moz-touch-enabled: 1), (pointer:coarse) {
+    /* Do not enable on desktop platforms to avoid doubling the tooltip */
+    abbr[title] {
+        position: relative;
+    }
+
+    abbr[title]:hover::after,
+    abbr[title]:focus::after {
+        content: attr(title);
+
+        position: absolute;
+        left: 0;
+        bottom: -32px;
+        width: auto;
+        white-space: nowrap;
+
+        background-color: #1e1e1e;
+        color: #fff;
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+        font-size: 14px;
+        padding: 3px 5px;
+    }
+}
+
+/* Giscus */
+#godot-giscus {
+    margin-bottom: 1em;
 }

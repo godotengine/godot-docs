@@ -1,0 +1,46 @@
+GD0402: The class must not be generic
+=====================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0402
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A generic type is annotated with the ``[GlobalClass]`` attribute.
+
+Rule description
+----------------
+
+The Godot editor assumes every :ref:`global class <doc_c_sharp_global_classes>`
+is instantiable, but generic types can't be instantiated because the type
+parameters are unbound.
+
+.. code-block:: csharp
+
+    // This type is a valid global class because it's not generic.
+    [GlobalClass]
+    class SomeType : Node { }
+
+    // This type is not a valid global class because it's generic.
+    [GlobalClass]
+    class SomeGenericType<T> { }
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, change the type to remove the generic type parameters
+or remove the ``[GlobalClass]`` attribute.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Adding the ``[GlobalClass]`` to a
+generic type is an easy mistake to make and this warning helps users realize
+that it may result in unexpected errors.

@@ -1,3 +1,5 @@
+:allow_comments: False
+
 Editor plugins
 ==============
 
@@ -9,6 +11,6 @@ Editor plugins
    making_plugins
    making_main_screen_plugins
    import_plugins
-   spatial_gizmos
+   3d_gizmos
    inspector_plugins
    visual_shader_plugins

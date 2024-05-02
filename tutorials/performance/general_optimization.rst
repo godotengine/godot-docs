@@ -4,7 +4,7 @@ General optimization tips
 =========================
 
 Introduction
-~~~~~~~~~~~~
+------------
 
 In an ideal world, computers would run at infinite speed. The only limit to
 what we could achieve would be our imagination. However, in the real world, it's
@@ -46,7 +46,7 @@ But in reality, there are several different kinds of performance problems:
 Each of these are annoying to the user, but in different ways.
 
 Measuring performance
-=====================
+---------------------
 
 Probably the most important tool for optimization is the ability to measure
 performance - to identify where bottlenecks are, and to measure the success of
@@ -55,19 +55,24 @@ our attempts to speed them up.
 There are several methods of measuring performance, including:
 
 - Putting a start/stop timer around code of interest.
-- Using the Godot profiler.
-- Using external third-party CPU profilers.
-- Using GPU profilers/debuggers such as
-  `NVIDIA Nsight Graphics <https://developer.nvidia.com/nsight-graphics>`__
-  or `apitrace <https://apitrace.github.io/>`__.
-- Checking the frame rate (with V-Sync disabled).
+- Using the :ref:`Godot profiler <doc_the_profiler>`.
+- Using :ref:`external CPU profilers <doc_using_cpp_profilers>`.
+- Using external GPU profilers/debuggers such as
+  `NVIDIA Nsight Graphics <https://developer.nvidia.com/nsight-graphics>`__,
+  `Radeon GPU Profiler <https://gpuopen.com/rgp/>`__ or
+  `Intel Graphics Performance Analyzers <https://www.intel.com/content/www/us/en/developer/tools/graphics-performance-analyzers/overview.html>`__.
+- Checking the frame rate (with V-Sync disabled). Third-party utilities such as
+  `RivaTuner Statistics Server <https://www.guru3d.com/files-details/rtss-rivatuner-statistics-server-download.html>`__
+  (Windows) or `MangoHud <https://github.com/flightlessmango/MangoHud>`__
+  (Linux) can also be useful here.
+- Using an unofficial `debug menu add-on <https://github.com/godot-extended-libraries/godot-debug-menu>`__.
 
 Be very aware that the relative performance of different areas can vary on
 different hardware. It's often a good idea to measure timings on more than one
 device. This is especially the case if you're targeting mobile devices.
 
 Limitations
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 CPU profilers are often the go-to method for measuring performance. However,
 they don't always tell the whole story.
@@ -85,7 +90,7 @@ As a result of these limitations, you often need to use detective work to find
 out where bottlenecks are.
 
 Detective work
-~~~~~~~~~~~~~~
+--------------
 
 Detective work is a crucial skill for developers (both in terms of performance,
 and also in terms of bug fixing). This can include hypothesis testing, and
@@ -117,7 +122,7 @@ Once you know which of the two halves contains the bottleneck, you can
 repeat this process until you've pinned down the problematic area.
 
 Profilers
-=========
+---------
 
 Profilers allow you to time your program while running it. Profilers then
 provide results telling you what percentage of time was spent in different
@@ -131,7 +136,7 @@ and lead to slower performance.
 For more info about using Godot's built-in profiler, see :ref:`doc_the_profiler`.
 
 Principles
-==========
+----------
 
 `Donald Knuth <https://en.wikipedia.org/wiki/Donald_Knuth>`__ said:
 
@@ -161,7 +166,7 @@ optimization is (by definition) undesirable, performant software is the result
 of performant design.
 
 Performant design
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 The danger with encouraging people to ignore optimization until necessary, is
 that it conveniently ignores that the most important time to consider
@@ -176,7 +181,7 @@ will often run many times faster than a mediocre design with low-level
 optimization.
 
 Incremental design
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 Of course, in practice, unless you have prior knowledge, you are unlikely to
 come up with the best design the first time. Instead, you'll often make a series
@@ -193,7 +198,7 @@ structures and algorithms for *cache locality* of data and linear access, rather
 than jumping around in memory.
 
 The optimization process
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Assuming we have a reasonable design, and taking our lessons from Knuth, our
 first step in optimization should be to identify the biggest bottlenecks - the
@@ -210,7 +215,7 @@ The process is thus:
 3. Return to step 1.
 
 Optimizing bottlenecks
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 Some profilers will even tell you which part of a function (which data accesses,
 calculations) are slowing things down.
@@ -235,10 +240,10 @@ positive effect will be outweighed by the negatives of more complex code, and
 you may choose to leave out that optimization.
 
 Appendix
-========
+--------
 
 Bottleneck math
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 The proverb *"a chain is only as strong as its weakest link"* applies directly to
 performance optimization. If your project is spending 90% of the time in

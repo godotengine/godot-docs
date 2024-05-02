@@ -1,0 +1,44 @@
+GD0105: The exported property is an indexer
+===========================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0105
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Non-breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+An indexer is annotated with the ``[Export]`` attribute. Indexers can't be exported.
+
+Rule description
+----------------
+
+Godot doesn't allow exporting indexer properties.
+
+.. code-block:: csharp
+
+    private int[] _backingField;
+
+    // Indexers can't be exported.
+    [Export]
+    public int this[int index]
+    {
+        get => _backingField[index];
+        set => _backingField[index] = value;
+    }
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, remove the ``[Export]`` attribute.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Indexers can't be exported so
+they will be ignored by Godot, resulting in runtime errors.

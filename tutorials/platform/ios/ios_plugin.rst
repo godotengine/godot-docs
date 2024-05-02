@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_ios_plugin:
 
 Creating iOS plugins
@@ -25,6 +27,10 @@ When a plugin is active, you can access it in your using ``Engine.get_singleton(
     if Engine.has_singleton("MyPlugin"):
         var singleton = Engine.get_singleton("MyPlugin")
         print(singleton.foo())
+
+.. note::
+
+   The plugin's files have to be in the ``res://ios/plugins/`` directory or a subdirectory, otherwise the Godot editor will not automatically detect them.
 
 Creating an iOS plugin
 ----------------------

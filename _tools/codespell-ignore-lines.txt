@@ -1,1 +1,1 @@
-| te           | Telugu                             |
+.. image:: img/expres.png

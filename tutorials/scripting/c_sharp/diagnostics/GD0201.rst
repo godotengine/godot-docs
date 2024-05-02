@@ -1,0 +1,51 @@
+GD0201: The name of the delegate must end with 'EventHandler'
+=============================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0201
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A delegate annotated with the ``[Signal]`` attribute has a name that doesn't
+end with 'EventHandler'.
+
+Rule description
+----------------
+
+Godot source generators will generate C# events using the name of the delegate
+with the 'EventHandler' suffix removed. Adding the 'EventHandler' suffix to the
+name of delegates used in events is a `.NET naming convention <https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces#names-of-common-types>`_.
+
+Using a suffix for the delegate allows the generated event to use the name without
+the suffix avoiding a naming conflict.
+
+.. code-block:: csharp
+
+    // This delegate is invalid since the name doesn't end with 'EventHandler'.
+    [Signal]
+    public void InvalidSignal();
+
+    // This delegate is valid since the name ends with 'EventHandler'.
+    [Signal]
+    public void ValidSignalEventHandler();
+
+Take a look at the :ref:`C# signals <doc_c_sharp_signals>` documentation for more
+information about how to declare and use signals.
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, add 'EventHandler' to the end of the delegate name.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Signal delegates without the suffix
+will be ignored by the source generator, so the signal won't be registered.

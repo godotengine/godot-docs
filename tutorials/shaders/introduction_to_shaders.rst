@@ -70,7 +70,7 @@ are seven different processor functions.
    :ref:`spatial shaders <doc_spatial_shader>`.
 
 4. The ``start()`` function runs for every particle in a particle system once
-   when the particle is first spawned. Used in 
+   when the particle is first spawned. Used in
    :ref:`particles shaders <doc_particle_shader>`.
 
 5. The ``process()`` function runs for every particle in a particle system for
@@ -90,6 +90,11 @@ are seven different processor functions.
     enabled, or if **Rendering > Quality > Shading > Force Vertex Shading** is
     enabled in the Project Settings. It's enabled by default on mobile
     platforms.
+
+.. note::
+
+   Godot also exposes an API for users to write totally custom GLSL shaders. For
+   more information see :ref:`doc_compute_shaders`.
 
 Shader types
 ------------
@@ -134,8 +139,7 @@ Vertex processor
 ^^^^^^^^^^^^^^^^
 
 The ``vertex()`` processing function is called once for every vertex in
-``spatial`` and ``canvas_item`` shaders. For ``particles`` shaders, it is called
-once for every particle.
+``spatial`` and ``canvas_item`` shaders.
 
 Each vertex in your world's geometry has properties like a position and color.
 The function modifies those values and passes them to the fragment function. You

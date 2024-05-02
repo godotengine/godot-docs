@@ -12,7 +12,7 @@ related to each other, what features they have, and how to use them.
 Inheritance
 -----------
 
-.. image:: img/class_api_inheritance.png
+.. image:: img/class_api_inheritance.webp
 
 At the top of each file, you will see the name of the class.
 
@@ -25,7 +25,7 @@ current class. Here ``Control`` and ``Node2D`` both inherit ``CanvasItem``.
 Brief Description
 -----------------
 
-.. image:: img/class_api_brief_description.png
+.. image:: img/class_api_brief_description.webp
 
 Next a brief description of the class. This text appears in Godot Editor
 popups for creating Nodes, Resources, and other types.
@@ -33,7 +33,7 @@ popups for creating Nodes, Resources, and other types.
 Description
 -----------
 
-.. image:: img/class_api_description.png
+.. image:: img/class_api_description.webp
 
 Next a more detailed description the class, its features, and its use case(s).
 
@@ -52,7 +52,7 @@ Things you may find here:
 Tutorials
 ---------
 
-.. image:: img/class_api_tutorials.png
+.. image:: img/class_api_tutorials.webp
 
 The page then provides links to parts of the manual which mention or make use
 of the current class.
@@ -60,7 +60,7 @@ of the current class.
 Properties
 ----------
 
-.. image:: img/class_api_properties_table.png
+.. image:: img/class_api_properties_table.webp
 
 The Properties table lists the variables which belong to each instance of the
 class, also known as the "properties."
@@ -79,7 +79,7 @@ Inspector.
 Methods
 -------
 
-.. image:: img/class_api_methods_table.png
+.. image:: img/class_api_methods_table.webp
 
 The Methods table lists the functions which belong to each instance of the
 class, also known as the "methods."
@@ -102,7 +102,7 @@ Possible qualifiers include...
 Signals
 -------
 
-.. image:: img/class_api_signals.png
+.. image:: img/class_api_signals.webp
 
 The Signals list details the names and parameters of events which "signal" a
 change in game state to other class instances.
@@ -114,7 +114,7 @@ Each signal also has a detailed explanation of when the signal is emitted.
 Enumerations
 ------------
 
-.. image:: img/class_api_enumerations.png
+.. image:: img/class_api_enumerations.webp
 
 The Enumerations list details the enumerable data types associated with the
 current class.
@@ -128,7 +128,7 @@ an explanation of its use case(s) and/or affects.
 Constants
 ---------
 
-.. image:: img/class_api_constants.png
+.. image:: img/class_api_constants.webp
 
 The Constants list details named integer constants in the current class.
 
@@ -141,7 +141,7 @@ triggers the notification.
 Property Descriptions
 ---------------------
 
-.. image:: img/class_api_property_descriptions.png
+.. image:: img/class_api_property_descriptions.webp
 
 The Property Descriptions list details everything about each property.
 
@@ -160,7 +160,7 @@ and/or links to relevant parts of the Godot API.
 Method Descriptions
 -------------------
 
-.. image:: img/class_api_method_descriptions.png
+.. image:: img/class_api_method_descriptions.webp
 
 The Method Descriptions list details everything about each method.
 

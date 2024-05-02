@@ -6,7 +6,7 @@ Your first 3D shader
 You have decided to start writing your own custom Spatial shader. Maybe you saw
 a cool trick online that was done with shaders, or you have found that the
 :ref:`StandardMaterial3D <class_StandardMaterial3D>` isn't quite meeting your
-needs. Either way, you have decided to write your own and now you need figure
+needs. Either way, you have decided to write your own and now you need to figure
 out where to start.
 
 This tutorial will explain how to write a Spatial shader and will cover more
@@ -42,26 +42,26 @@ program (e.g. Blender). But Godot also has a few :ref:`PrimitiveMeshes
 importing Meshes.
 
 There are multiple node types that you can use to draw a mesh. The main one is
-:ref:`MeshInstance <class_meshinstance>`, but you can also use :ref:`Particles
-<class_particles>`, :ref:`MultiMeshes <class_MultiMesh>` (with a
-:ref:`MultiMeshInstance <class_multimeshinstance>`), or others.
+:ref:`MeshInstance3D <class_MeshInstance3D>`, but you can also use :ref:`GPUParticles3D
+<class_GPUParticles3D>`, :ref:`MultiMeshes <class_MultiMesh>` (with a
+:ref:`MultiMeshInstance3D <class_MultiMeshInstance3D>`), or others.
 
 Typically, a material is associated with a given surface in a mesh, but some
-nodes, like MeshInstance, allow you to override the material for a specific
+nodes, like MeshInstance3D, allow you to override the material for a specific
 surface, or for all surfaces.
 
-If you set a material on the surface or mesh itself, then all MeshInstances that
+If you set a material on the surface or mesh itself, then all MeshInstance3Ds that
 share that mesh will share that material. However, if you want to reuse the same
 mesh across multiple mesh instances, but have different materials for each
-instance then you should set the material on the Meshinstance.
+instance then you should set the material on the MeshInstance3D.
 
 For this tutorial we will set our material on the mesh itself rather than taking
-advantage of the MeshInstance's ability to override materials.
+advantage of the MeshInstance3D's ability to override materials.
 
 Setting up
 ----------
 
-Add a new :ref:`MeshInstance <class_meshinstance>` node to your scene.
+Add a new :ref:`MeshInstance3D <class_MeshInstance3D>` node to your scene.
 
 In the inspector tab beside "Mesh" click "[empty]" and select "New PlaneMesh".
 Then click on the image of a plane that appears.
@@ -76,12 +76,12 @@ This will allow you to see the triangles making up the plane.
 
 .. image:: img/plane.png
 
-Now set ``Subdivide Width`` and ``Subdivide Depth`` to ``32``.
+Now set ``Subdivide Width`` and ``Subdivide Depth`` of the :ref:`PlaneMesh <class_planemesh>` to ``32``.
 
-.. image:: img/plane-sub-set.png
+.. image:: img/plane-sub-set.webp
 
 You can see that there are now many more triangles in the
-:ref:`Mesh<class_MeshInstance>`. This will give us more vertices to work with
+:ref:`MeshInstance3D<class_MeshInstance3D>`. This will give us more vertices to work with
 and thus allow us to add more detail.
 
 .. image:: img/plane-sub.png
@@ -99,19 +99,22 @@ first Spatial shader!
 Shader magic
 ------------
 
-.. image:: img/shader-error.png
+.. image:: img/shader-editor.webp
 
-Notice how there is already error? This is because the shader editor reloads
-shaders on the fly. The first thing Godot shaders need is a declaration of what
-type of shader they are. We set the variable ``shader_type`` to ``spatial``
+The new shader is already generated with a ``shader_type``
+variable and the ``fragment()`` function.
+The first thing Godot shaders need is a declaration
+of what type of shader they are.
+In this case the ``shader_type`` is set to ``spatial``
 because this is a spatial shader.
 
 .. code-block:: glsl
 
   shader_type spatial;
 
-Next we will define the ``vertex()`` function. The ``vertex()`` function
-determines where the vertices of your :ref:`Mesh<class_MeshInstance>` appear in
+For now ignore the ``fragment()`` function
+and define the ``vertex()`` function. The ``vertex()`` function
+determines where the vertices of your :ref:`MeshInstance3D<class_MeshInstance3D>` appear in
 the final scene. We will be using it to offset the height of each vertex and
 make our flat plane appear like a little terrain.
 
@@ -163,7 +166,7 @@ Noise is a very popular tool for faking the look of terrain. Think of it as
 similar to the cosine function where you have repeating hills except, with
 noise, each hill has a different height.
 
-Godot provides the :ref:`NoiseTexture <class_noisetexture>` resource for
+Godot provides the :ref:`NoiseTexture2D <class_noisetexture2D>` resource for
 generating a noise texture that can be accessed from a shader.
 
 To access a texture in a shader add the following code near the top of your
@@ -177,16 +180,16 @@ This will allow you to send a noise texture to the shader. Now look in the
 inspector under your material. You should see a section called "Shader Params".
 If you open it up, you'll see a section called "noise".
 
-Click beside it where it says "[empty]" and select "New NoiseTexture". Then in
-your NoiseTexture click beside where it says "Noise" and select "New
-OpenSimplexNoise".
+Click beside it where it says "[empty]" and select "New NoiseTexture2D". Then in
+your :ref:`NoiseTexture2D <class_noisetexture2D>` click beside where it says "Noise" and select "New
+FastNoiseLite".
 
-.. note:: :ref:`OpenSimplexNoise <class_opensimplexnoise>` is used by the NoiseTexture to
+.. note:: :ref:`FastNoiseLite <class_fastnoiselite>` is used by the NoiseTexture2D to
           generate a heightmap.
 
 Once you set it up and should look like this.
 
-.. image:: img/noise-set.png
+.. image:: img/noise-set.webp
 
 Now, access the noise texture using the ``texture()`` function. ``texture()``
 takes a texture as the first argument and a ``vec2`` for the position on the
@@ -194,15 +197,17 @@ texture as the second argument. We use the ``x`` and ``z`` channels of
 ``VERTEX`` to determine where on the texture to look up. Note that the PlaneMesh
 coordinates are within the [-1,1] range (for a size of 2), while the texture
 coordinates are within [0,1], so to normalize we divide by the size of the
-PlaneMesh 2.0 and add 0.5. ``texture()`` returns a ``vec4`` of the ``r, g, b,
+PlaneMesh by 2.0 and add 0.5. ``texture()`` returns a ``vec4`` of the ``r, g, b,
 a`` channels at the position. Since the noise texture is grayscale, all of the
 values are the same, so we can use any one of the channels as the height. In
 this case we'll use the ``r``, or ``x`` channel.
 
 .. code-block:: glsl
 
-  float height = texture(noise, VERTEX.xz / 2.0 + 0.5).x;
-  VERTEX.y += height;
+  void vertex() {
+    float height = texture(noise, VERTEX.xz / 2.0 + 0.5).x;
+    VERTEX.y += height;
+  }
 
 Note: ``xyzw`` is the same as ``rgba`` in GLSL, so instead of ``texture().x``
 above, we could use ``texture().r``. See the `OpenGL documentation
@@ -234,23 +239,23 @@ Let's make a uniform that changes the height of the terrain.
 
 Godot lets you initialize a uniform with a value; here, ``height_scale`` is set
 to ``0.5``. You can set uniforms from GDScript by calling the function
-``set_shader_param()`` on the material corresponding to the shader. The value
+``set_shader_parameter()`` on the material corresponding to the shader. The value
 passed from GDScript takes precedence over the value used to initialize it in
 the shader.
 
 ::
 
-  # called from the MeshInstance
-  mesh.material.set_shader_param("height_scale", 0.5)
+  # called from the MeshInstance3D
+  mesh.material.set_shader_parameter("height_scale", 0.5)
 
 .. note:: Changing uniforms in Spatial-based nodes is different from
           CanvasItem-based nodes. Here, we set the material inside the PlaneMesh
           resource. In other mesh resources you may need to first access the
           material by calling ``surface_get_material()``. While in the
-          MeshInstance you would access the material using
+          MeshInstance3D you would access the material using
           ``get_surface_material()`` or ``material_override``.
 
-Remember that the string passed into ``set_shader_param()`` must match the name
+Remember that the string passed into ``set_shader_parameter()`` must match the name
 of the uniform variable in the :ref:`Shader<class_Shader>`. You can use the
 uniform variable anywhere inside your :ref:`Shader<class_Shader>`. Here, we will
 use it to set the height value instead of arbitrarily multiplying by ``0.5``.
@@ -278,7 +283,7 @@ again, where it says "Perspective", and select "Display Normal".
 Note how the mesh color goes flat. This is because the lighting on it is flat.
 Let's add a light!
 
-First, we will add an :ref:`OmniLight<class_OmniLight>` to the scene.
+First, we will add an :ref:`OmniLight3D<class_OmniLight3D>` to the scene.
 
 .. image:: img/light.png
 
@@ -304,10 +309,10 @@ do that by passing in a second noise texture.
 
   uniform sampler2D normalmap;
 
-Set this second uniform texture to another NoiseTexture with another
-OpenSimplexNoise. But this time, check **As Normalmap**.
+Set this second uniform texture to another :ref:`NoiseTexture2D <class_noisetexture2D>` with another
+:ref:`FastNoiseLite <class_fastnoiselite>`. But this time, check **As Normalmap**.
 
-.. image:: img/normal-set.png
+.. image:: img/normal-set.webp
 
 Now, because this is a normalmap and not a per-vertex normal, we are going to
 assign it in the ``fragment()`` function. The ``fragment()`` function will be
@@ -320,7 +325,7 @@ explained in more detail in the next part of this tutorial.
 
 When we have normals that correspond to a specific vertex we set ``NORMAL``, but
 if you have a normalmap that comes from a texture, set the normal using
-``NORMAL_MAP``. This way Godot will handle the wrapping the texture around the
+``NORMAL_MAP``. This way Godot will handle the wrapping of texture around the
 mesh automatically.
 
 Lastly, in order to ensure that we are reading from the same places on the noise

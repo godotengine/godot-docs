@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_plugins_for_ios:
 
 Plugins for iOS
@@ -182,7 +184,7 @@ The response event will be a dictionary with the following fields:
       "invalid_ids": [ list of requested IDs that were invalid ],
       "ids": [ list of IDs that were valid ],
       "titles": [ list of valid product titles (corresponds with list of valid IDs) ],
-      "descriptions": [ list of valid product descriptions ] ,
+      "descriptions": [ list of valid product descriptions ],
       "prices": [ list of valid product prices ],
       "localized_prices": [ list of valid product localized prices ],
     }

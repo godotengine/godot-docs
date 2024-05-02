@@ -1,17 +1,13 @@
 .. _doc_pausing_games:
 
-Pausing games
-=============
+Pausing games and process mode
+==============================
 
-Pause?
-------
+Introduction
+------------
 
 In most games it is desirable to, at some point, interrupt the
 game to do something else, such as taking a break or changing options.
-However, this is not as simple as it seems. The game might be stopped,
-but it might be desirable that some menus and animations continue
-working.
-
 Implementing a fine-grained control for what can be paused (and what cannot)
 is a lot of work, so a simple framework for pausing is provided in
 Godot.
@@ -19,7 +15,7 @@ Godot.
 How pausing works
 -----------------
 
-To set pause mode, the pause state must be set. This is done by assigning
+To pause the game the pause state must be set. This is done by assigning
 ``true`` to the :ref:`SceneTree.paused <class_SceneTree_property_paused>` property:
 
 .. tabs::
@@ -31,104 +27,112 @@ To set pause mode, the pause state must be set. This is done by assigning
 
     GetTree().Paused = true;
 
-Doing so will have the following behavior:
+Doing this will cause two things. First, 2D and 3D physics will be stopped
+for all nodes. Second, the behavior of certain nodes will stop or start
+depending on their process mode.
 
--  2D and 3D physics will be stopped.
--  ``_process`` and ``_physics_process`` will not be called anymore in nodes.
--  ``_input`` and ``_input_event`` will not be called anymore either.
+.. note:: The physics servers can be made active while the game is
+          paused by using their ``set_active`` methods.
 
-This effectively stops the whole game. Calling this function from a
-script, by default, will result in an unrecoverable state (nothing will
-work anymore!).
+Process Modes
+-------------
 
-White-listing nodes
--------------------
+Each node in Godot has a "Process Mode" that defines when it processes. It can
+be found and changed under a node's :ref:`Node <class_Node>` properties in the inspector.
 
-Before enabling pause, make sure that nodes that must keep working
-during pause are white-listed. This is done by editing the "Pause Mode"
-property in a node:
+.. image:: img/pausemode.webp
 
-.. image:: img/pausemode.png
-
-You can achieve the same result in code:
-
+You can also alter the property with code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        pause_mode = Node.PAUSE_MODE_PROCESS
+        process_mode = Node.PROCESS_MODE_PAUSABLE
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
-        PauseMode = Node.PauseModeEnum.Process;
+        ProcessMode = Node.ProcessModeEnum.Pausable;
     }
 
-By default, all nodes have this property in the "Inherit" state. This
-means, that they will only process (or not) depending on what this same
-property is set on the parent node. If the parent is set to "Inherit" ,
-then the grandparent will be checked and so on. Ultimately, if a state
-can't be found in any of the grandparents, the pause state in SceneTree
-is used. This means that, by default, when the game is paused every node
-will be paused.
-
-So the three possible states for a node are:
+This is what each mode tells a node to do:  
 
 -  **Inherit**: Process depending on the state of the parent,
    grandparent, etc. The first parent that has a non-Inherit state.
--  **Stop**: Stop the node no matter what (and children in Inherit
-   mode). When paused this node will not process.
--  **Process**: Process the node no matter what (and children in Inherit
-   mode). Paused or not this node will process.
+-  **Pausable**: Process the node (and its children in Inherit
+   mode) only when the game is not paused.
+-  **WhenPaused**: Process the node (and its children in Inherit
+   mode) *only* when the game is paused.
+-  **Always**: Process the node (and its children in Inherit
+   mode) no matter what. Paused or not, this node will process.
+-  **Disabled**: The node (and its children in Inherit
+   mode) will not process at all.
 
-Example
--------
+By default, all nodes have this property in the "Inherit" state. If the
+parent is set to "Inherit", then the grandparent will be checked and so
+on. If a state can't be found in any of the grandparents, the pause state
+in SceneTree is used. This means that, by default, when the game is paused
+every node will be paused. Several things happen when a node stops processing.
 
-An example of this is creating a popup or panel with controls inside,
-and set its pause mode to "Process" then hide it:
+The ``_process``, ``_physics_process``, ``_input``, and ``_input_event`` functions
+will not be called. However signals still work and cause their connected function to
+run, even if that function's script is attached to a node that is not currently being processed.
 
-.. image:: img/pause_popup.png
+Animation nodes will pause their current animation, audio nodes
+will pause their current audio stream, and particles will pause. These resume
+automatically when the game is no longer paused.
 
-By setting the root of the pause popup to "Process", all children
-and grandchildren will inherit that state. This way, this branch of the
-scene tree will continue working when paused.
+It is important to note that even if a node is processing while the game is
+paused physics will **NOT** work for it by default. As stated earlier this is
+because the physics servers are turned off. The physics servers can be made
+active while the game is paused by using their ``set_active`` methods.
 
-Finally, make it so when a pause button is pressed (any button will do),
-enable the pause and show the pause screen.
+Pause menu example
+------------------
+
+Start by creating a button that will be used to pause the game.
+
+Create a menu containing a close button, set the **Process Mode** of the menu's root node
+to **When Paused**, then hide the menu. Since the process mode is set to **When Paused**
+on the root node, all its children and grandchildren will inherit that process mode.
+This way, all the nodes in the menu will start processing when the game is paused.
+
+Attach a script to the menu's root node, connect the pause button created earlier to a new method in
+the script, and inside that method pause the game and show the pause menu.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _on_pause_button_pressed():
         get_tree().paused = true
-        $pause_popup.show()
+        show()
 
  .. code-tab:: csharp
 
-    public void _on_pause_button_pressed()
+    private void OnPauseButtonPressed()
     {
         GetTree().Paused = true;
-        GetNode<Control>("pause_popup").Show();
+        Show();
     }
 
-To remove the pause, do the opposite when the pause screen is
-closed:
+Finally, connect the menu's close button to a new method in the script. Inside that method,
+unpause the game and hide the pause menu.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_pause_popup_close_pressed():
-        $pause_popup.hide()
+    func _on_close_button_pressed():
+        hide()
         get_tree().paused = false
 
  .. code-tab:: csharp
 
-    public void _on_pause_popup_close_pressed()
+    private void OnCloseButtonPressed()
     {
-        GetNode<Control>("pause_popup").Hide();
+        Hide();
         GetTree().Paused = false;
     }
 
-And that should be all!
+You should now have a working pause menu.

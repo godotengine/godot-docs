@@ -17,12 +17,17 @@ extensions = [
     "sphinx_tabs.tabs",
     "notfound.extension",
     "sphinxext.opengraph",
+    "sphinx_copybutton",
+    "sphinxcontrib.video",
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown
 # builders (like the dummy builder) - as it doesn't cause errors,
 # we can ignore this so we still can treat other warnings as errors.
 sphinx_tabs_nowarn = True
+
+# Disable collapsing tabs for codeblocks.
+sphinx_tabs_disable_tab_closing = True
 
 # Custom 4O4 page HTML template.
 # https://github.com/readthedocs/sphinx-notfound-page
@@ -77,7 +82,7 @@ master_doc = "index"
 # General information about the project
 project = "Godot Engine"
 copyright = (
-    "2014-2022, Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)"
+    "2014-present Juan Linietsky, Ariel Manzur and the Godot community (CC BY 3.0)"
 )
 author = "Juan Linietsky, Ariel Manzur and the Godot community"
 
@@ -97,23 +102,30 @@ if env_tags is not None:
 # Language / i18n
 
 supported_languages = {
-    "en": "Godot Engine (%s) documentation in English",
-    "de": "Godot Engine (%s) Dokumentation auf Deutsch",
-    "es": "Documentación de Godot Engine (%s) en español",
-    "fr": "Documentation de Godot Engine (%s) en français",
-    "fi": "Godot Engine (%s) dokumentaatio suomeksi",
-    "it": "Godot Engine (%s) documentazione in italiano",
-    "ja": "Godot Engine (%s)の日本語のドキュメント",
-    "ko": "Godot Engine (%s) 문서 (한국어)",
-    "pl": "Dokumentacja Godot Engine (%s) w języku polskim",
-    "pt_BR": "Documentação da Godot Engine (%s) em Português Brasileiro",
-    "ru": "Документация Godot Engine (%s) на русском языке",
-    "uk": "Документація до Godot Engine (%s) українською мовою",
-    "zh_CN": "Godot Engine (%s) 简体中文文档",
-    "zh_TW": "Godot Engine (%s) 正體中文 (台灣) 文件",
+    "en": "Godot Engine %s documentation in English",
+    "de": "Godot Engine %s Dokumentation auf Deutsch",
+    "es": "Documentación de Godot Engine %s en español",
+    "fr": "Documentation de Godot Engine %s en français",
+    "fi": "Godot Engine %s dokumentaatio suomeksi",
+    "it": "Godot Engine %s documentazione in italiano",
+    "ja": "Godot Engine %sの日本語のドキュメント",
+    "ko": "Godot Engine %s 문서 (한국어)",
+    "pl": "Dokumentacja Godot Engine %s w języku polskim",
+    "pt_BR": "Documentação da Godot Engine %s em Português Brasileiro",
+    "ru": "Документация Godot Engine %s на русском языке",
+    "uk": "Документація до Godot Engine %s українською мовою",
+    "zh_CN": "Godot Engine %s 简体中文文档",
+    "zh_TW": "Godot Engine %s 正體中文 (台灣) 文件",
 }
 
+# RTD normalized their language codes to ll-cc (e.g. zh-cn),
+# but Sphinx did not and still uses ll_CC (e.g. zh_CN).
+# `language` is the Sphinx configuration so it needs to be converted back.
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
+if "-" in language:
+    (lang_name, lang_country) = language.split("-")
+    language = lang_name + "_" + lang_country.upper()
+
 if not language in supported_languages.keys():
     print("Unknown language: " + language)
     print("Supported languages: " + ", ".join(supported_languages.keys()))
@@ -123,6 +135,7 @@ if not language in supported_languages.keys():
     language = "en"
 
 is_i18n = tags.has("i18n")  # noqa: F821
+print("Build language: {}, i18n tag: {}".format(language, is_i18n))
 
 exclude_patterns = ["_build"]
 
@@ -155,9 +168,11 @@ html_theme_options = {
     "logo_only": True,
     # Collapse navigation (False makes it tree-like)
     "collapse_navigation": False,
+    # Hide the documentation version name/number under the logo
+    "display_version": False,
 }
 
-html_title = supported_languages[language] % version
+html_title = supported_languages[language] % ( "(" + version + ")" )
 
 # VCS options: https://docs.readthedocs.io/en/latest/vcs.html#github
 html_context = {
@@ -168,6 +183,7 @@ html_context = {
     "conf_py_path": "/",  # Path in the checkout to the docs root
     "godot_inject_language_links": True,
     "godot_docs_supported_languages": list(supported_languages.keys()),
+    "godot_docs_title": supported_languages[language],
     "godot_docs_basepath": "https://docs.godotengine.org/",
     "godot_docs_suffix": ".html",
     "godot_default_lang": "en",
@@ -175,9 +191,17 @@ html_context = {
     # Distinguish local development website from production website.
     # This prevents people from looking for changes on the production website after making local changes :)
     "godot_title_prefix": "" if on_rtd else "(DEV) ",
+    # Set this to `True` when in the `latest` branch to clearly indicate to the reader
+    # that they are not reading the `stable` documentation.
+    "godot_is_latest": True,
+    "godot_version": "4.3",
+    # Enables a banner that displays the up-to-date status of each article.
+    "godot_show_article_status": True,
+    # Display user-contributed notes at the bottom of pages that don't have `:allow_comments: False` at the top.
+    "godot_show_article_comments": on_rtd and not is_i18n,
 }
 
-html_logo = "img/docs_logo.png"
+html_logo = "img/docs_logo.svg"
 
 # These folders are copied to the documentation's HTML output
 html_static_path = ["_static"]
@@ -189,16 +213,14 @@ html_extra_path = ["robots.txt"]
 html_css_files = [
     'css/algolia.css',
     'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css',
-    "css/custom.css",
+    "css/custom.css?10", # Increment the number at the end when the file changes to bust the cache.
 ]
 
 if not on_rtd:
     html_css_files.append("css/dev.css")
 
 html_js_files = [
-    "js/custom.js",
-    ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
-    ('js/algolia.js', {'defer': 'defer'})
+    "js/custom.js?7", # Increment the number at the end when the file changes to bust the cache.
 ]
 
 # Output file base name for HTML help builder
@@ -296,3 +318,6 @@ rst_epilog = """
     image_locale="-" if language == "en" else language,
     target_locale="" if language == "en" else "/" + language,
 )
+
+# Needed so the table of contents is created for EPUB
+epub_tocscope = 'includehidden'

@@ -8,7 +8,7 @@ Introduction
 
 For the most common cases, Godot provides ready to use materials for
 most types of shaders, such as :ref:`StandardMaterial3D <class_StandardMaterial3D>`,
-:ref:`CanvasItemMaterial <class_CanvasItemMaterial>` and :ref:`ParticlesMaterial <class_ParticlesMaterial>`.
+:ref:`CanvasItemMaterial <class_CanvasItemMaterial>` and :ref:`ParticleProcessMaterial <class_ParticleProcessMaterial>`.
 They are flexible implementations that cover most use cases.
 
 Shader materials allow writing a custom shader directly, for maximum flexibility.
@@ -70,7 +70,7 @@ Converting to ShaderMaterial
 ----------------------------
 
 It is possible to convert from StandardMaterial3D, CanvasItemMaterial and
-ParticlesMaterial to ShaderMaterial. To do so, go to the material properties
+ParticleProcessMaterial to ShaderMaterial. To do so, go to the material properties
 and select the convert option.
 
 .. image:: img/shader_material_convert.png

@@ -1,3 +1,4 @@
+:article_outdated: True
 
 .. _doc_editor_inspector_dock:
 

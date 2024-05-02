@@ -69,6 +69,7 @@ def main():
             [
                 "git",
                 "diff",
+                "--find-renames",
                 "--name-status",
                 "--diff-filter=R",
                 args.revision1,

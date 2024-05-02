@@ -8,8 +8,8 @@ Godot provides an :ref:`class_Expression` class you can use to evaluate expressi
 An expression can be:
 
 - A mathematical expression such as ``(2 + 4) * 16/4.0``.
-- A built-in method call like ``deg2rad(90)``.
-- A method call on an user-provided script like ``update_health()``,
+- A built-in method call like ``deg_to_rad(90)``.
+- A method call on a user-provided script like ``update_health()``,
   if ``base_instance`` is set to a value other than ``null`` when calling
   :ref:`Expression.execute() <class_Expression_method_execute>`.
 
@@ -145,8 +145,8 @@ The script below demonstrates what the Expression class is capable of::
         # Math expression with variables.
         evaluate("x + y", ["x", "y"], [60, 100])
 
-        # Call built-in method (hardcoded in the Expression class).
-        evaluate("deg2rad(90)")
+        # Call built-in method (built-in math function call).
+        evaluate("deg_to_rad(90)")
 
         # Call user method (defined in the script).
         # We can do this because the expression execution is bound to `self`
@@ -182,7 +182,7 @@ The output from the script will be::
 
     4
     160
-    1.570796
+    1.5707963267949
 
     You called 'call_me()' in the expression text.
     1365
@@ -198,7 +198,7 @@ The output from the script will be::
 Built-in functions
 ------------------
 
-Most methods available in the :ref:`class_@GDScript` scope are available in the
+All methods in the :ref:`Global Scope<class_@GlobalScope>` are available in the
 Expression class, even if no base instance is bound to the expression.
 The same parameters and return types are available.
 

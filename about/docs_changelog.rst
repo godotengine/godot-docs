@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_docs_changelog:
 
 Documentation changelog
@@ -5,11 +7,154 @@ Documentation changelog
 
 The documentation is continually being improved. New releases
 include new pages, fixes and updates to existing pages, and many updates
-to the :ref:`class reference <toc-class-ref>`. Below is a list of new pages
+to the :ref:`class reference <doc_class_reference>`. Below is a list of new pages
 added since version 3.0.
 
 .. note:: This document only contains new pages so not all changes are reflected,
           many pages have been substantially updated but are not reflected in this document.
+
+New pages since version 4.1
+---------------------------
+
+C#
+^^
+
+- :ref:`doc_c_sharp_diagnostics`
+
+Development
+^^^^^^^^^^^
+
+- :ref:`doc_2d_coordinate_systems`
+
+Migrating
+^^^^^^^^^
+
+- :ref:`doc_upgrading_to_godot_4.2`
+
+I/O
+^^^
+
+- :ref:`doc_runtime_loading_and_saving`
+
+Platform-specific
+^^^^^^^^^^^^^^^^^
+
+- :ref:`doc_android_library`
+
+New pages since version 4.0
+---------------------------
+
+Development
+^^^^^^^^^^^
+
+- :ref:`doc_internal_rendering_architecture`
+- :ref:`doc_using_sanitizers`
+
+Migrating
+^^^^^^^^^
+
+- :ref:`doc_upgrading_to_godot_4.1`
+
+Physics
+^^^^^^^
+
+- :ref:`doc_troubleshooting_physics_issues`
+
+New pages since version 3.6
+---------------------------
+
+2D
+^^
+
+- :ref:`doc_2d_antialiasing`
+
+3D
+^^
+
+- :ref:`doc_3d_antialiasing`
+- :ref:`doc_faking_global_illumination`
+- :ref:`doc_introduction_to_global_illumination`
+- :ref:`doc_mesh_lod`
+- :ref:`doc_occlusion_culling`
+- :ref:`doc_using_sdfgi`
+- :ref:`doc_using_decals`
+- :ref:`doc_visibility_ranges`
+- :ref:`doc_volumetric_fog`
+- :ref:`doc_variable_rate_shading`
+- :ref:`doc_physical_light_and_camera_units`
+
+Animation
+^^^^^^^^^
+
+- :ref:`doc_creating_movies`
+
+Assets pipeline
+^^^^^^^^^^^^^^^
+
+- :ref:`doc_retargeting_3d_skeletons`
+
+Development
+^^^^^^^^^^^
+
+- :ref:`doc_custom_platform_ports`
+
+Migrating
+^^^^^^^^^
+
+- :ref:`doc_upgrading_to_godot_4`
+
+Physics
+^^^^^^^
+
+- :ref:`doc_large_world_coordinates`
+
+Scripting
+^^^^^^^^^
+
+- :ref:`doc_custom_performance_monitors`
+- :ref:`doc_c_sharp_collections`
+- :ref:`doc_c_sharp_global_classes`
+- :ref:`doc_c_sharp_variant`
+
+Shaders
+^^^^^^^
+
+- :ref:`doc_compute_shaders`
+
+Workflow
+^^^^^^^^
+
+- :ref:`doc_pr_review_guidelines`
+
+XR
+^^
+
+- :ref:`doc_introducing_xr_tools`
+- :ref:`doc_xr_action_map`
+- :ref:`doc_deploying_to_android`
+
+New pages since version 3.5
+---------------------------
+
+None.
+
+New pages since version 3.4
+---------------------------
+
+3D
+^^
+
+- :ref:`doc_3d_text`
+
+Animation
+^^^^^^^^^
+
+- :ref:`doc_playing_videos`
+
+Editor
+^^^^^^
+
+- :ref:`doc_managing_editor_features`
 
 New pages since version 3.3
 ---------------------------
@@ -85,7 +230,6 @@ Math
 Platform-specific
 ^^^^^^^^^^^^^^^^^
 
-- :ref:`doc_android_custom_build`
 - :ref:`doc_plugins_for_ios`
 - :ref:`doc_ios_plugin`
 - :ref:`doc_html5_shell_classref`
@@ -107,14 +251,8 @@ Scripting
 - :ref:`doc_debugger_panel`
 - :ref:`doc_creating_script_templates`
 - :ref:`doc_evaluating_expressions`
-- :ref:`doc_what_is_gdnative`
+- :ref:`doc_what_is_gdextension`
 - :ref:`doc_gdscript_warning_system` (split from :ref:`doc_gdscript_static_typing`)
-- :ref:`doc_custom_visualscript_nodes`
-
-VR
-^^
-
-- :ref:`doc_developing_for_oculus_quest`
 
 User Interface (UI)
 ^^^^^^^^^^^^^^^^^^^
@@ -127,7 +265,7 @@ New pages since version 3.1
 Project workflow
 ^^^^^^^^^^^^^^^^
 
-- :ref:`doc_android_custom_build`
+- :ref:`doc_android_gradle_build`
 
 2D
 ^^
@@ -171,12 +309,6 @@ Networking
 
 - :ref:`doc_webrtc`
 
-VR
-^^
-
-- :ref:`doc_vr_starter_tutorial_part_one`
-- :ref:`doc_vr_starter_tutorial_part_two`
-
 Plugins
 ^^^^^^^
 
@@ -197,7 +329,7 @@ Procedural geometry series:
   - :ref:`doc_arraymesh`
   - :ref:`doc_surfacetool`
   - :ref:`doc_meshdatatool`
-  - :ref:`doc_immediategeometry`
+  - :ref:`doc_immediatemesh`
 
 Optimization
 ^^^^^^^^^^^^
@@ -294,7 +426,7 @@ Plugins
 ^^^^^^^
 
 - :ref:`doc_making_main_screen_plugins`
-- :ref:`doc_spatial_gizmo_plugins`
+- :ref:`doc_3d_gizmo_plugins`
 
 Platform-specific
 ^^^^^^^^^^^^^^^^^
@@ -317,7 +449,6 @@ Miscellaneous
 - :ref:`doc_jitter_stutter`
 - :ref:`doc_running_code_in_the_editor`
 - :ref:`doc_change_scenes_manually`
-- :ref:`doc_gles2_gles3_differences`
 
 Compiling
 ^^^^^^^^^

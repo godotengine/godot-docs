@@ -15,16 +15,16 @@ The default gray background is not very appealing, so let's change its color.
 One way to do this is to use a :ref:`ColorRect <class_ColorRect>` node. Make it
 the first node under ``Main`` so that it will be drawn behind the other nodes.
 ``ColorRect`` only has one property: ``Color``. Choose a color you like and
-select "Layout" -> "Full Rect" so that it covers the screen.
+select "Layout" -> "Anchors Preset" -> "Full Rect" either in the toolbar at the top of the viewport or in the inspector so that it covers the screen.
 
 You could also add a background image, if you have one, by using a
-``TextureRect`` node instead.
+:ref:`TextureRect <class_TextureRect>` node instead.
 
 Sound effects
 ~~~~~~~~~~~~~
 
 Sound and music can be the single most effective way to add appeal to the game
-experience. In your game assets folder, you have two sound files: "House In a
+experience. In your game's **art** folder, you have two sound files: "House In a
 Forest Loop.ogg" for background music, and "gameover.wav" for when the player
 loses.
 
@@ -33,10 +33,42 @@ Add two :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` nodes as children of
 click on the ``Stream`` property, select "Load", and choose the corresponding
 audio file.
 
-To play the music, add ``$Music.play()`` in the ``new_game()`` function and
-``$Music.stop()`` in the ``game_over()`` function.
+All audio is automatically imported with the ``Loop`` setting disabled.
+If you want the music to loop seamlessly, click on the Stream file arrow,
+select ``Make Unique``, then click on the Stream file and check the ``Loop`` box.
+
+To play the music, add ``$Music.play()`` in the ``new_game()``
+function and ``$Music.stop()`` in the ``game_over()`` function.
 
 Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func game_over():
+        ...
+        $Music.stop()
+        $DeathSound.play()
+
+    func new_game():
+        ...
+        $Music.play()
+
+ .. code-tab:: csharp
+
+    public void GameOver()
+    {
+        ...
+        GetNode<AudioStreamPlayer>("Music").Stop();
+        GetNode<AudioStreamPlayer>("DeathSound").Play();
+    }
+
+    public void NewGame()
+    {
+        ...
+        GetNode<AudioStreamPlayer>("Music").Play();
+    }
+
 
 Keyboard shortcut
 ~~~~~~~~~~~~~~~~~
@@ -53,13 +85,23 @@ tab. In the same way you created the movement input actions, create a new
 input action called ``start_game`` and add a key mapping for the :kbd:`Enter`
 key.
 
-In the ``HUD`` scene, select the ``StartButton`` and find its *Shortcut*
-property in the Inspector. Select "New Shortcut" and click on the "Shortcut"
-item. A second *Shortcut* property will appear. Select "New InputEventAction"
-and click the new "InputEventAction". Finally, in the *Action* property, type
-the name ``start_game``.
+.. image:: img/input-mapping-start_game.webp
 
-.. image:: img/start_button_shortcut.png
+Now would be a good time to add controller support if you have one available.
+Attach or pair your controller and then under each input action that you wish
+to add controller support for, click on the "+" button and press the corresponding
+button, d-pad, or stick direction that you want to map to the respective input action.
+
+In the ``HUD`` scene, select the ``StartButton`` and find its **Shortcut**
+property in the Inspector. Create a new :ref:`Shortcut <class_Shortcut>` resource
+by clicking within the box, open the **Events** array and add a new array element
+to it by clicking on **Array[InputEvent] (size 0)**.
+
+.. image:: img/start_button_shortcut.webp
+
+Create a new :ref:`InputEventAction <class_InputEventAction>` and name it ``start_game``.
+
+.. image:: img/start_button_shortcut2.webp
 
 Now when the start button appears, you can either click it or press :kbd:`Enter`
 to start the game.

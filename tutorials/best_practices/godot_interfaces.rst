@@ -26,10 +26,10 @@ is to get a reference to an existing object from another acquired instance.
 
   .. code-tab:: csharp
 
-    Object obj = node.Object; // Property access.
-    Object obj = node.GetObject(); // Method access.
+    GodotObject obj = node.Object; // Property access.
+    GodotObject obj = node.GetObject(); // Method access.
 
-The same principle applies for :ref:`Reference <class_Reference>` objects.
+The same principle applies for :ref:`RefCounted <class_RefCounted>` objects.
 While users often access :ref:`Node <class_Node>` and
 :ref:`Resource <class_Resource>` this way, alternative measures are available.
 
@@ -39,32 +39,36 @@ access.
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    var preres = preload(path) # Load resource during scene load
-    var res = load(path) # Load resource when program reaches statement
+    # If you need an "export const var" (which doesn't exist), use a conditional
+    # setter for a tool script that checks if it's executing in the editor.
+    # The `@tool` annotation must be placed at the top of the script.
+    @tool
+
+    # Load resource during scene load.
+    var preres = preload(path)
+    # Load resource when program reaches statement.
+    var res = load(path)
 
     # Note that users load scenes and scripts, by convention, with PascalCase
     # names (like typenames), often into constants.
-    const MyScene : = preload("my_scene.tscn") as PackedScene # Static load
-    const MyScript : = preload("my_script.gd") as Script
+    const MyScene = preload("my_scene.tscn") # Static load
+    const MyScript = preload("my_script.gd")
 
     # This type's value varies, i.e. it is a variable, so it uses snake_case.
-    export(Script) var script_type: Script
-
-    # If need an "export const var" (which doesn't exist), use a conditional
-    # setter for a tool script that checks if it's executing in the editor.
-    tool # Must place at top of file.
+    @export var script_type: Script
 
     # Must configure from the editor, defaults to null.
-    export(Script) var const_script setget set_const_script
-    func set_const_script(value):
-        if Engine.is_editor_hint():
-            const_script = value
+    @export var const_script: Script:
+        set(value):
+            if Engine.is_editor_hint():
+                const_script = value
 
     # Warn users if the value hasn't been set.
-    func _get_configuration_warning():
+    func _get_configuration_warnings():
         if not const_script:
-            return "Must initialize property 'const_script'."
-        return ""
+            return ["Must initialize property 'const_script'."]
+
+        return []
 
   .. code-tab:: csharp
 
@@ -76,14 +80,14 @@ access.
         // No "preload" loads during scene load exists in C#.
 
         // Initialize with a value. Editable at runtime.
-        public Script MyScript = GD.Load<Script>("MyScript.cs");
+        public Script MyScript = GD.Load<Script>("res://Path/To/MyScript.cs");
 
         // Initialize with same value. Value cannot be changed.
-        public readonly Script MyConstScript = GD.Load<Script>("MyScript.cs");
+        public readonly Script MyConstScript = GD.Load<Script>("res://Path/To/MyScript.cs");
 
         // Like 'readonly' due to inaccessible setter.
         // But, value can be set during constructor, i.e. MyType().
-        public Script Library { get; } = GD.Load<Script>("res://addons/plugin/library.gd");
+        public Script MyNoSetScript { get; } = GD.Load<Script>("res://Path/To/MyScript.cs");
 
         // If need a "const [Export]" (which doesn't exist), use a
         // conditional setter for a tool script that checks if it's executing
@@ -104,11 +108,13 @@ access.
         };
 
         // Warn users if the value hasn't been set.
-        public String _GetConfigurationWarning()
+        public string[] _GetConfigurationWarnings()
         {
             if (EnemyScn == null)
-                return "Must initialize property 'EnemyScn'.";
-            return "";
+            {
+                return new string[] { "Must initialize property 'EnemyScn'." };
+            }
+            return Array.Empty<string>();
         }
     }
 
@@ -140,12 +146,18 @@ Nodes likewise have an alternative access point: the SceneTree.
         print($Child)
 
     # Fastest. Doesn't break if node moves later.
-    # Note that `onready` keyword is GDScript only.
+    # Note that `@onready` annotation is GDScript-only.
     # Other languages must do...
     #     var child
     #     func _ready():
     #         child = get_node("Child")
-    onready var child = $Child
+    @onready var child = $Child
+    func lookup_and_cache_for_future_access():
+        print(child)
+
+    # Fastest. Doesn't break if node is moved in the Scene tree dock.
+    # Node must be selected in the inspector as it's an exported property.
+    @export var child: Node
     func lookup_and_cache_for_future_access():
         print(child)
 
@@ -167,8 +179,7 @@ Nodes likewise have an alternative access point: the SceneTree.
             return
 
         # Fail and terminate.
-        # Note: Scripts run from a release export template don't
-        # run `assert` statements.
+        # NOTE: Scripts run from a release export template don't run `assert`s.
         assert(prop, "'prop' wasn't initialized")
 
     # Use an autoload.
@@ -181,31 +192,35 @@ Nodes likewise have an alternative access point: the SceneTree.
 
   .. code-tab:: csharp
 
-    public class MyNode
+    using Godot;
+    using System;
+    using System.Diagnostics;
+
+    public class MyNode : Node
     {
         // Slow
         public void DynamicLookupWithDynamicNodePath()
         {
-            GD.Print(GetNode(NodePath("Child")));
+            GD.Print(GetNode("Child"));
         }
 
         // Fastest. Lookup node and cache for future access.
         // Doesn't break if node moves later.
-        public Node Child;
+        private Node _child;
         public void _Ready()
         {
-            Child = GetNode(NodePath("Child"));
+            _child = GetNode("Child");
         }
         public void LookupAndCacheForFutureAccess()
         {
-            GD.Print(Child);
+            GD.Print(_child);
         }
 
         // Delegate reference assignment to an external source.
         // Con: need to perform a validation check.
         // Pro: node makes no requirements of its external structure.
         //      'prop' can come from anywhere.
-        public object Prop;
+        public object Prop { get; set; }
         public void CallMeAfterPropIsInitializedByParent()
         {
             // Validate prop in one of three ways.
@@ -223,7 +238,14 @@ Nodes likewise have an alternative access point: the SceneTree.
                 return;
             }
 
+            // Fail with an exception.
+            if (prop == null)
+            {
+                throw new InvalidOperationException("'Prop' wasn't initialized.");
+            }
+
             // Fail and terminate.
+            // Note: Scripts run from a release export template don't run `Debug.Assert`s.
             Debug.Assert(Prop, "'Prop' wasn't initialized");
         }
 
@@ -232,10 +254,10 @@ Nodes likewise have an alternative access point: the SceneTree.
         // that manage their own data and don't interfere with other objects.
         public void ReferenceAGlobalAutoloadedVariable()
         {
-            Node globals = GetNode(NodePath("/root/Globals"));
+            MyNode globals = GetNode<MyNode>("/root/Globals");
             GD.Print(globals);
-            GD.Print(globals.prop);
-            GD.Print(globals.my_getter());
+            GD.Print(globals.Prop);
+            GD.Print(globals.MyGetter());
         }
     };
 
@@ -273,10 +295,8 @@ following checks, in order:
   execute logic that gives the impression that the Object has a property. This
   is also the case with the ``_get_property_list`` method.
 
-  - Note that this happens even for non-legal symbol names such as in the
-    case of :ref:`TileSet <class_TileSet>`'s "1/tile_name" property. This
-    refers to the name of the tile with ID 1, i.e.
-    :ref:`TileSet.tile_get_name(1) <class_TileSet_method_tile_get_name>`.
+  - Note that this happens even for non-legal symbol names, such as names
+    starting with a digit or containing a slash.
 
 As a result, this duck-typed system can locate a property either in the script,
 the object's class, or any class that object inherits, but only for things
@@ -285,7 +305,7 @@ which extend Object.
 Godot provides a variety of options for performing runtime checks on these
 accesses:
 
-- A duck-typed property access. These will property check (as described above).
+- A duck-typed property access. These will be property checks (as described above).
   If the operation isn't supported by the object, execution will halt.
 
   .. tabs::
@@ -451,7 +471,7 @@ accesses:
       // name or group can fill in for it. Also note that in C#, these methods
       // will be slower than static accesses with traditional interfaces.
 
-- Outsource the access to a :ref:`FuncRef <class_FuncRef>`. These may be useful
+- Outsource the access to a :ref:`Callable <class_Callable>`. These may be useful
   in cases where one needs the max level of freedom from dependencies. In
   this case, one relies on an external context to setup the method.
 
@@ -464,15 +484,15 @@ accesses:
 
     func my_method():
         if fn:
-            fn.call_func()
+            fn.call()
 
     # parent.gd
     extends Node
 
-    onready var child = $Child
+    @onready var child = $Child
 
     func _ready():
-        child.fn = funcref(self, "print_me")
+        child.fn = print_me
         child.my_method()
 
     func print_me():
@@ -481,32 +501,35 @@ accesses:
   .. code-tab:: csharp
 
     // Child.cs
-    public class Child : Node
+    using Godot;
+
+    public partial class Child : Node
     {
-        public FuncRef FN = null;
+        public Callable? Callable { get; set; }
 
         public void MyMethod()
         {
-            Debug.Assert(FN != null);
-            FN.CallFunc();
+            Callable?.Call();
         }
     }
 
     // Parent.cs
-    public class Parent : Node
+    using Godot;
+
+    public partial class Parent : Node
     {
-        public Node Child;
+        private Child _child;
 
         public void _Ready()
         {
-            Child = GetNode("Child");
-            Child.Set("FN", GD.FuncRef(this, "PrintMe"));
-            Child.MyMethod();
+            _child = GetNode<Child>("Child");
+            _child.Callable = Callable.From(PrintMe);
+            _child.MyMethod();
         }
 
-        public void PrintMe() {
+        public void PrintMe()
         {
-            GD.Print(GetClass());
+            GD.Print(Name);
         }
     }
 

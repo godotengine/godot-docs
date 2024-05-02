@@ -1,11 +1,18 @@
 {% extends "!layout.html" -%}
+{# Refer to https://github.com/readthedocs/sphinx_rtd_theme/blob/master/sphinx_rtd_theme/layout.html #}
+
+{% block htmltitle -%}
+<title>{{ godot_title_prefix }}{{ title|striptags|e }}{{ titlesuffix }}</title>
+{% endblock -%}
 
 {% block extrahead -%}
-<meta name="doc_version" content="{{ version }}">
+<meta name="doc_version" content="{{ version }}" />
+<meta name="doc_is_latest" content="{{ godot_is_latest }}" />
+<meta name="doc_pagename" content="{{ pagename }}" />
 {% endblock -%}
 
 {% block linktags -%}
-  <meta name="theme-color" content="#3d8fcc">
+  <meta name="theme-color" content="#3d8fcc" />
   {% if godot_inject_language_links -%}
   {% for alternate_lang in godot_docs_supported_languages -%}
   {# Convert to ISO 639-1 format, e.g. zh_CN -> zh-cn -#}
@@ -19,6 +26,62 @@
   {{ super() }}
 {% endblock -%}
 
-{% block htmltitle -%}
-<title>{{ godot_title_prefix }}{{ title|striptags|e }}{{ titlesuffix }}</title>
-{% endblock -%}
+{%- block document %}
+<div itemprop="articleBody">
+  {% if godot_is_latest or godot_show_article_status %}
+  <div class="admonition-grid">
+    {% if godot_is_latest %}
+    <div class="admonition attention latest-notice">
+      <p class="first admonition-title">Attention: Here be dragons</p>
+      <p>
+        This is the <code class="docutils literal notranslate"><span class="pre">latest</span></code>
+        (unstable) version of this documentation, which may document features
+        not available in or compatible with released stable versions of Godot.
+      </p>
+      <p class="last latest-notice-link">
+        Checking the stable version of the documentation...
+      </p>
+    </div>
+    {% endif %}
+
+    {% if godot_show_article_status and not godot_is_latest %}
+    <div class="admonition tip article-status">
+      {% if meta and meta.get('article_outdated') == 'True' %}
+      <p class="first admonition-title">Work in progress</p>
+      <p>
+        The content of this page was not yet updated for Godot
+        <code class="docutils literal notranslate">{{ godot_version }}</code>
+        and may be <strong>outdated</strong>. If you know how to improve this page or you can confirm
+        that it's up to date, feel free to <a href="https://github.com/godotengine/godot-docs">open a pull request</a>.
+      </p>
+      {% else %}
+      <p class="first admonition-title">Up to date</p>
+      <p>
+        This page is <strong>up to date</strong> for Godot <code class="docutils literal notranslate">{{ godot_version }}</code>.
+        If you still find outdated information, please <a href="https://github.com/godotengine/godot-docs">open an issue</a>.
+      </p>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% block body %}{% endblock %}
+
+{% if (not meta or meta.get('allow_comments') != 'False') and godot_show_article_comments %}
+<div id="godot-giscus">
+    <hr>
+        <h2>User-contributed notes</h2>
+    <p>
+        <em>Please read the <a href="https://github.com/godotengine/godot-docs-user-notes/discussions/1">User-contributed notes policy</a> before submitting a comment.</em>
+    </p>
+</div>
+{% endif %}
+
+{%- if self.comments()|trim %}
+  <div class="articleComments">
+    {%- block comments %}{% endblock %}
+  </div>
+{%- endif%}
+</div>
+{%- endblock %}

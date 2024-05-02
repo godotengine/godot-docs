@@ -74,13 +74,12 @@ rename ``main`` to ``fragment``.
 Macros
 ^^^^^^
 
-In keeping with its similarity to C, GLSL lets you use macros. Commonly
-``#define`` is used to define constants or small functions. There is no
-straightforward way to translate defines to Godot's shading language. If it is a
-function that is defined, then replace with a function, and if it is a constant,
-then replace with a uniform. For other macros (``#if``, ``#ifdef``, etc.), there
-is no equivalent because they run during the pre-processing stage of
-compilation.
+The :ref:`Godot shader preprocessor<doc_shader_preprocessor>` supports the following macros:
+
+* ``#define`` / ``#undef``
+* ``#if``, ``#elif``, ``#else``, ``#endif``, ``defined()``, ``#ifdef``, ``#ifndef``
+* ``#include`` (only ``.gdshaderinc`` files and with a maximum depth of 25)
+* ``#pragma disable_preprocessor``, which disables preprocessing for the rest of the file
 
 Variables
 ^^^^^^^^^

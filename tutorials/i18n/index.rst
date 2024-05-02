@@ -1,3 +1,5 @@
+:allow_comments: False
+
 Internationalization
 ====================
 
@@ -8,3 +10,4 @@ Internationalization
    internationalizing_games
    localization_using_gettext
    locales
+   pseudolocalization

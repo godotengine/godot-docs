@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_your_first_3d_game:
 
 Your first 3D game
@@ -31,7 +33,7 @@ This tutorial is for beginners who followed the complete getting started series.
 We'll start slow with detailed instructions and shorten them as we do similar
 steps. If you're an experienced programmer, you can browse the complete demo's
 source code here: `Squash the Creep source code
-<https://github.com/GDQuest/godot-3d-dodge-the-creeps/>`__.
+<https://github.com/godotengine/godot-3d-dodge-the-creeps>`__.
 
 .. note::
 
@@ -42,7 +44,7 @@ source code here: `Squash the Creep source code
 
 We prepared some game assets so we can jump straight to the code. You can
 download them here: `Squash the Creeps assets
-<https://github.com/GDQuest/godot-3d-dodge-the-creeps/releases/tag/1.1.0>`__.
+<https://github.com/godotengine/godot-3d-dodge-the-creeps/releases/tag/1.1.0>`__.
 
 We will first work on a basic prototype for the player's movement. We will then
 add the monsters that we'll spawn randomly around the screen. After that, we'll
@@ -54,7 +56,7 @@ Contents
 
 .. toctree::
    :maxdepth: 1
-   :name: toc-learn-introduction
+   :name: toc-learn-first_3d_game
 
    01.game_setup
    02.player_input

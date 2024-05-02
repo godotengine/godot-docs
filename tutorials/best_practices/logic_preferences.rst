@@ -6,6 +6,22 @@ Logic preferences
 Ever wondered whether one should approach problem X with strategy Y or Z?
 This article covers a variety of topics related to these dilemmas.
 
+Adding nodes and changing properties: which first?
+--------------------------------------------------
+
+When initializing nodes from a script at runtime, you may need to change
+properties such as the node's name or position. A common dilemma is, when
+should you change those values?
+
+It is the best practice to change values on a node before adding it to the
+scene tree. Some property's setters have code to update other
+corresponding values, and that code can be slow! For most cases, this code
+has no impact on your game's performance, but in heavy use cases such as
+procedural generation, it can bring your game to a crawl.
+
+For these reasons, it is always a best practice to set the initial values
+of a node before adding it to the scene tree.
+
 Loading vs. preloading
 ----------------------
 
@@ -17,7 +33,7 @@ resources while in the middle of performance-sensitive code.
 Its counterpart, the :ref:`load <class_@GDScript_method_load>` method, loads a
 resource only when it reaches the load statement. That is, it will load a
 resource in-place which can cause slowdowns when it occurs in the middle of
-sensitive processes. The ``load`` function is also an alias for
+sensitive processes. The ``load()`` function is also an alias for
 :ref:`ResourceLoader.load(path) <class_ResourceLoader_method_load>` which is
 accessible to *all* scripting languages.
 
@@ -54,7 +70,7 @@ either? Let's see an example:
     #
     # 4. It is when one instantiates this script on its own with .new() that
     #    one will load "office.tscn" rather than the exported value.
-    export(PackedScene) var a_building = preload("office.tscn")
+    @export var a_building : PackedScene = preload("office.tscn")
 
     # Uh oh! This results in an error!
     # One must assign constant values to constants. Because `load` performs a
@@ -67,11 +83,10 @@ either? Let's see an example:
 
   .. code-tab:: csharp
 
-    using System;
     using Godot;
 
     // C# and other languages have no concept of "preloading".
-    public class MyBuildings : Node
+    public partial class MyBuildings : Node
     {
         //This is a read-only field, it can only be assigned when it's declared or during a constructor.
         public readonly PackedScene Building = ResourceLoader.Load<PackedScene>("res://building.tscn");
@@ -81,7 +96,7 @@ either? Let's see an example:
         public override void _Ready()
         {
             // Can assign the value during initialization.
-            ABuilding = GD.Load<PackedScene>("res://office.tscn");
+            ABuilding = GD.Load<PackedScene>("res://Office.tscn");
         }
     }
 
@@ -104,7 +119,7 @@ consider:
    in exceptional cases, one may wish not to do this:
 
    1. If the 'imported' class is liable to change, then it should be a property
-      instead, initialized either using an ``export`` or a ``load`` (and
+      instead, initialized either using an ``export`` or a ``load()`` (and
       perhaps not even initialized until later).
 
    2. If the script requires a great many dependencies, and one does not wish
@@ -114,7 +129,7 @@ consider:
       would be to unload the entire script. If they are instead loaded
       properties, then one can set them to ``null`` and remove all references
       to the resource entirely (which, as a
-      :ref:`Reference <class_Reference>`-extending type, will cause the
+      :ref:`RefCounted <class_RefCounted>`-extending type, will cause the
       resources to delete themselves from memory).
 
 Large levels: static vs. dynamic
@@ -124,7 +139,7 @@ If one is creating a large level, which circumstances are most appropriate?
 Should they create the level as one static space? Or should they load the
 level in pieces and shift the world's content as needed?
 
-Well, the simple answer is , "when the performance requires it." The
+Well, the simple answer is, "when the performance requires it." The
 dilemma associated with the two options is one of the age-old programming
 choices: does one optimize memory over speed, or vice versa?
 

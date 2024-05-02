@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_project_settings:
 
 Project Settings
@@ -9,6 +11,6 @@ Godot stores the project settings in a project.godot file, a plain text file in 
 
 To access that dialog, select Project -> Project Settings.
 
-Once the window opens, let's select a main scene. Locate the `Application/Run/Main Scene` property and click on it to select 'Hello.tscn'.
+Once the window opens, let's select a main scene. Locate the `Application/Run/Main Scene` property and click on it to select 'hello.tscn'.
 
 The project settings dialog provides a lot of options that can be saved to a project.godot file and shows their default values. If you change a value, a tick appears to the left of its name. This means that the property will be saved in the project.godot file and remembered.

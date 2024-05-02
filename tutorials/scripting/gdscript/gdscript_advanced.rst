@@ -166,7 +166,7 @@ too. Some Examples:
 In GDScript, only base types (int, float, string and the vector types)
 are passed by value to functions (value is copied). Everything else
 (instances, arrays, dictionaries, etc) is passed as reference. Classes
-that inherit :ref:`class_Reference` (the default if nothing is specified)
+that inherit :ref:`class_RefCounted` (the default if nothing is specified)
 will be freed when not used, but manual memory management is allowed too
 if inheriting manually from :ref:`class_Object`.
 
@@ -322,23 +322,24 @@ Iterating using the C-style for loop in C-derived languages can be quite complex
 
 .. code-block:: cpp
 
-    const char* strings = new const char*[50];
+    const char** strings = new const char*[50];
 
     [..]
 
     for (int i = 0; i < 50; i++) {
-
-        printf("Value: %s\n", i, strings[i]);
-    }
+		printf("Value: %c Index: %d\n", strings[i], i);
+	}
 
     // Even in STL:
+    std::list<std::string> strings;
+    
+    [..]
 
-    for (std::list<std::string>::const_iterator it = strings.begin(); it != strings.end(); it++) {
+	for (std::string::const_iterator it = strings.begin(); it != strings.end(); it++) {
+		std::cout << *it << std::endl;
+	}
 
-        std::cout << *it << std::endl;
-    }
-
-Because of this, GDScript makes the opinonated decision to have a for-in loop over iterables instead:
+Because of this, GDScript makes the opinionated decision to have a for-in loop over iterables instead:
 
 ::
 
@@ -364,9 +365,9 @@ The range() function can take 3 arguments:
 
 ::
 
-    range(n) # Will go from 0 to n-1.
-    range(b, n) # Will go from b to n-1.
-    range(b, n, s) # Will go from b to n-1, in steps of s.
+    range(n) # Will count from 0 to n in steps of 1. The parameter n is exclusive.
+    range(b, n) # Will count from b to n in steps of 1. The parameters b is inclusive. The parameter n is exclusive.
+    range(b, n, s) # Will count from b to n, in steps of s. The parameters b is inclusive. The parameter n is exclusive.
 
 Some examples involving C-style for loops:
 

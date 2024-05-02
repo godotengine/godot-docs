@@ -1,0 +1,55 @@
+GD0401: The class must derive from Godot.GodotObject or a derived class
+=======================================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0401
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Breaking - If changing the inheritance chain
+
+                                      Non-breaking - If removing the ``[GlobalClass]`` attribute
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A type annotated with the ``[GlobalClass]`` attribute does not derive from
+``GodotObject``.
+
+Rule description
+----------------
+
+The ``[GlobalClass]`` has no effect for types that don't derive from ``GodotObject``.
+Every :ref:`global class <doc_c_sharp_global_classes>` must ultimately derive from
+``GodotObject`` so it can be marshalled.
+
+.. code-block:: csharp
+
+    // This type is not registered as a global class because it doesn't derive from GodotObject.
+    [GlobalClass]
+    class SomeType { }
+
+    // This type is a global class because it derives from Godot.Node
+    // which ultimately derives from GodotObject.
+    [GlobalClass]
+    class MyNode : Node { }
+
+    // This type is a global class because it derives from Godot.Resource
+    // which ultimately derives from GodotObject.
+    [GlobalClass]
+    class MyResource : Resource { }
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, change the type to derive from ``GodotObject``
+or remove the ``[GlobalClass]`` attribute.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Adding the ``[GlobalClass]`` to a type
+that doesn't derive from ``GodotObject`` is an easy mistake to make and this
+warning helps users realize that it may result in unexpected errors.

@@ -1,3 +1,6 @@
+:allow_comments: False
+:article_outdated: True
+
 Platform-specific
 =================
 
@@ -7,5 +10,5 @@ Platform-specific
 
    android/index
    ios/index
-   platform_html5
+   web/index
    consoles

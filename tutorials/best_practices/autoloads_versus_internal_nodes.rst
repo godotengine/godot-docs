@@ -5,8 +5,8 @@ Autoloads versus regular nodes
 
 Godot offers a feature to automatically load nodes at the root of your project,
 allowing you to access them globally, that can fulfill the role of a Singleton:
-:ref:`doc_singletons_autoload`. These auto-loaded nodes are not freed when you
-change the scene from code with :ref:`SceneTree.change_scene <class_SceneTree_method_change_scene>`.
+:ref:`doc_singletons_autoload`. These autoloaded nodes are not freed when you
+change the scene from code with :ref:`SceneTree.change_scene_to_file <class_SceneTree_method_change_scene_to_file>`.
 
 In this guide, you will learn when to use the Autoload feature, and techniques
 you can use to avoid it.
@@ -23,7 +23,7 @@ that play a sound effect. There's a node for that: the :ref:`AudioStreamPlayer
 <class_AudioStreamPlayer>`. But if we call the ``AudioStreamPlayer`` while it is
 already playing a sound, the new sound interrupts the first.
 
-A solution is to code a global, auto-loaded sound manager class. It generates a
+A solution is to code a global, autoloaded sound manager class. It generates a
 pool of ``AudioStreamPlayer`` nodes that cycle through as each new request for
 sound effects comes in. Say we call that class ``Sound``, you can use it from
 anywhere in your project by calling ``Sound.play("coin_pickup.ogg")``. This
@@ -42,7 +42,7 @@ solves the problem in the short term but causes more problems:
 
 .. note::
 
-   About global access, the problem is that Any code anywhere could pass wrong
+   About global access, the problem is that any code anywhere could pass wrong
    data to the ``Sound`` autoload in our example. As a result, the domain to
    explore to fix the bug spans the entire project.
 
@@ -80,30 +80,28 @@ When it comes to data, you can either:
 When you should use an Autoload
 -------------------------------
 
-Auto-loaded nodes can simplify your code in some cases:
+GDScript supports the creation of ``static`` functions using ``static func``.
+When combined with ``class_name``, this makes it possible to create libraries of
+helper functions without having to create an instance to call them. The
+limitation of static functions is that they can't reference member variables,
+non-static functions or ``self``.
 
-- **Static Data**: if you need data that is exclusive to one class, like a
-  database, then an autoload can be a good tool. There is no scripting API in
-  Godot to create and manage static data otherwise.
+Since Godot 4.1, GDScript also supports ``static`` variables using ``static var``.
+This means you can now share a variables across instances of a class without
+having to create a separate autoload.
 
-- **Static functions**: creating a library of functions that only return values.
-
-- **Systems with a wide scope**: If the singleton is managing its own
-  information and not invading the data of other objects, then it's a great way to
-  create systems that handle broad-scoped tasks. For example, a quest or a
-  dialogue system.
-
-Until Godot 3.1, another use was just for convenience: autoloads have a global
-variable for their name generated in GDScript, allowing you to call them from
-any script file in your project. But now, you can use the ``class_name`` keyword
-instead to get auto-completion for a type in your entire project.
+Still, autoloaded nodes can simplify your code for systems with a wide scope. If
+the autoload is managing its own information and not invading the data of other
+objects, then it's a great way to create systems that handle broad-scoped tasks.
+For example, a quest or a dialogue system.
 
 .. note::
 
-   Autoload is not exactly a Singleton. Nothing prevents you from instantiating
-   copies of an auto-loaded node. It is only a tool that makes a node load
-   automatically as a child of the root of your scene tree, regardless of your
-   game's node structure or which scene you run, e.g. by pressing :kbd:`F6` key.
+   An autoload is *not* necessarily a singleton. Nothing prevents you from
+   instantiating copies of an autoloaded node. An autoload is only a tool that
+   makes a node load automatically as a child of the root of your scene tree,
+   regardless of your game's node structure or which scene you run, e.g. by
+   pressing the :kbd:`F6` key.
 
-   As a result, you can get the auto-loaded node, for example an autoload called
+   As a result, you can get the autoloaded node, for example an autoload called
    ``Sound``, by calling ``get_node("/root/Sound")``.

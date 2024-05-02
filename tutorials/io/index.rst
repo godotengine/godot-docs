@@ -1,5 +1,7 @@
-Input and Output (I/O)
-======================
+:allow_comments: False
+
+File and data I/O
+=================
 
 .. toctree::
     :maxdepth: 1
@@ -8,4 +10,5 @@ Input and Output (I/O)
     background_loading
     data_paths
     saving_games
+    runtime_file_loading_and_saving
     binary_serialization_api

@@ -3,9 +3,7 @@
 Using VisualShaders
 ===================
 
-Just as VisualScript is an alternative for users that prefer a graphical
-approach to coding, VisualShaders are the visual alternative for creating
-shaders.
+VisualShaders are the visual alternative for creating shaders.
 
 As shaders are inherently linked to visuals, the graph-based approach with
 previews of textures, materials, etc. offers a lot of additional convenience
@@ -28,10 +26,14 @@ VisualShaders, create a new ``ShaderMaterial`` in an object of your choice.
 
 Then assign a :ref:`class_VisualShader` resource to the ``Shader`` property.
 
-.. image:: img/visual_shader_create.png
+.. image:: img/visual_shader_create.webp
 
-Click on the new ``VisualShader`` resource and the Visual Shader Editor will
-open automatically. The layout of the Visual Shader Editor comprises two parts:
+Click on the new ``Shader`` resource and the Create Shader dialog will
+open automatically. Change the Type option to VisualShader in the dropdown.
+
+.. image:: img/visual_shader_create2.webp
+
+The layout of the Visual Shader Editor comprises two parts:
 the upper toolbar and the graph itself.
 
 .. image:: img/visual_shader_editor2.png
@@ -89,6 +91,56 @@ the vector will take the value of the scalar.
 
 When connecting any ``vector`` output to a ``scalar`` input, the value of the
 scalar will be the average of the vector's components.
+
+Visual Shader node interface
+------------------------------
+
+Visual shader nodes have input and output ports. The input ports are located on the left side of the node, and output ports are located on the right side of the node.
+
+.. figure:: img/vs_node.webp
+
+These ports are colored to differentiate type of port:
+
+.. |scalar| image:: img/vs_scalar.webp
+.. |vector| image:: img/vs_vector.webp
+.. |boolean| image:: img/vs_boolean.webp
+.. |transform| image:: img/vs_transform.webp
+.. |sampler| image:: img/vs_sampler.webp
+
+
+.. list-table:: Port types
+   :widths: auto
+   :header-rows: 1
+
+   * - Type
+     - Color
+     - Description
+     - Example
+   * - Scalar
+     - Cyan
+     - Scalar is a single value.
+     - |scalar|
+   * - Vector
+     - Purple
+     - Vector is a set of values.
+     - |vector|
+   * - Boolean
+     - Blue
+     - On or off, true or false.
+     - |boolean|
+   * - Transform
+     - Orange
+     - A matrix, usually used to transform vertices.
+     - |transform|
+   * - Sampler
+     - Yellow
+     - A texture sampler. It can be used to sample textures.
+     - |sampler|
+
+All of the types are used in the calculations of vertices, fragments, and lights in the shader. For example: matrix multiplication, 
+vector addition, or scalar division.
+
+There are other types but these are the main ones.
 
 Visual Shader nodes
 -------------------
@@ -154,8 +206,3 @@ The ``Switch`` node returns a vector if the boolean condition is ``true`` or
 boolean, all components of the vector should be above zero.
 
 .. image:: img/vs_switch.png
-
-.. note::
-
-    The ``Switch`` node is only available on the GLES3 backed. If you are
-    targeting GLES2 devices, you cannot use ``switch`` statements.

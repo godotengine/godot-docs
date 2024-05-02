@@ -16,47 +16,47 @@ In 3D, math is a little more complex than in 2D, so also checking the
 developers, not mathematicians or engineers) will help pave the way for you
 to develop 3D games efficiently.
 
-Spatial node
-~~~~~~~~~~~~
+Node3D node
+~~~~~~~~~~~
 
 :ref:`Node2D <class_Node2D>` is the base node for 2D.
 :ref:`Control <class_Control>` is the base node for everything GUI.
-Following this reasoning, the 3D engine uses the :ref:`Spatial <class_Spatial>`
+Following this reasoning, the 3D engine uses the :ref:`Node3D <class_Node3D>`
 node for everything 3D.
 
-.. image:: img/tuto_3d1.png
+.. image:: img/tuto_3d1.webp
 
-Spatial nodes have a local transform, which is relative to the parent
+Node3Ds have a local transform, which is relative to the parent
 node (as long as the parent node is also of **or inherits from** the type
-Spatial). This transform can be accessed as a 4×3
+Node3D). This transform can be accessed as a 3×4
 :ref:`Transform3D <class_Transform3D>`, or as 3 :ref:`Vector3 <class_Vector3>`
 members representing location, Euler rotation (X, Y and Z angles) and
 scale.
 
-.. image:: img/tuto_3d2.png
+.. image:: img/tuto_3d2.webp
 
 3D content
 ~~~~~~~~~~
 
-Unlike 2D, where loading image content and drawing is straightforward,
-3D is a little more difficult. The content needs to be created with
-special 3D tools (usually referred to as DCCs) and exported to an
-exchange file format in order to be imported in Godot (3D formats are
-not as standardized as images).
+Unlike 2D, where loading image content and drawing is straightforward, 3D is a
+little more difficult. The content needs to be created with special 3D tools
+(also called Digital Content Creation tools, or DCCs) and exported to an
+exchange file format to be imported in Godot. This is required since 3D formats
+are not as standardized as images.
 
-DCC-created models
-------------------
+Manually authored models (using 3D modeling software)
+-----------------------------------------------------
 
 .. FIXME: Needs update to properly description Godot 3.x workflow
    (used to reference a non existing doc_importing_3d_meshes importer).
 
-There are two pipelines to import 3D models in Godot. The first and most
-common one is by :ref:`doc_importing_3d_scenes`, which allows you to import
-entire scenes (exactly as they look in the DCC), including animation,
+There are two pipelines to import 3D models in Godot. The first and most common
+one is by :ref:`doc_importing_3d_scenes`, which allows you to import entire
+scenes (exactly as they look in the 3D modeling software), including animation,
 skeletal rigs, blend shapes, etc.
 
 The second pipeline is by importing simple .OBJ files as mesh resources,
-which can be then put inside a :ref:`MeshInstance <class_MeshInstance>`
+which can be then put inside a :ref:`MeshInstance3D <class_MeshInstance3D>`
 node for display.
 
 Generated geometry
@@ -76,11 +76,11 @@ submitting them to the 3D API has a significant performance cost.
 Immediate geometry
 ------------------
 
-If, instead, you need to generate simple geometry that
-will be updated often, Godot provides a special node,
-:ref:`ImmediateGeometry <class_ImmediateGeometry>`,
-which provides an OpenGL 1.x style immediate-mode API to create points,
-lines, triangles, etc.
+If, instead, you need to generate simple geometry that will be updated often,
+Godot provides a special :ref:`ImmediateMesh <class_ImmediateMesh>` resource
+that can be used in a :ref:`MeshInstance3D <class_MeshInstance3D>` node.
+This provides an OpenGL 1.x-style immediate-mode API to create points, lines,
+triangles, etc.
 
 2D in 3D
 --------
@@ -110,17 +110,17 @@ Environments can also be overridden in the Camera.
 ~~~~~~~~~~~
 
 Editing 3D scenes is done in the 3D tab. This tab can be selected
-manually, but it will be automatically enabled when a Spatial node is
+manually, but it will be automatically enabled when a Node3D node is
 selected.
 
-.. image:: img/tuto_3d3.png
+.. image:: img/tuto_3d3.webp
 
 Default 3D scene navigation controls are similar to Blender (aiming to
 have some sort of consistency in the free software pipeline..), but
 options are included to customize mouse buttons and behavior to be
 similar to other tools in the Editor Settings:
 
-.. image:: img/tuto_3d4.png
+.. image:: img/tuto_3d4.webp
 
 Coordinate system
 -----------------
@@ -130,21 +130,29 @@ system for everything in 3D, with 1 unit being equal to 1 meter.
 Physics and other areas are tuned for this scale. Therefore, attempting to use a
 different scale is usually a bad idea (unless you know what you are doing).
 
-When working with 3D assets, it's always best to work in the correct
-scale (set your DCC to metric). Godot allows scaling post-import and,
-while this works in most cases, in rare situations it may introduce
-floating-point precision issues (and thus, glitches or artifacts) in
-delicate areas such as rendering or physics. Make sure your artists
-always work in the right scale!
+When working with 3D assets, it's always best to work in the correct scale (set
+the unit to metric in your 3D modeling software). Godot allows scaling
+post-import and, while this works in most cases, in rare situations it may
+introduce floating-point precision issues (and thus, glitches or artifacts) in
+delicate areas such as rendering or physics. Make sure your artists always work
+in the right scale!
 
-The Y coordinate is used for "up", though for most objects that need
-alignment (like lights, cameras, capsule collider, vehicle, etc.), the Z
-axis is used as a "pointing towards" direction. This convention roughly
-means that:
+The Y coordinate is used for "up". As for the horizontal X/Z axes, Godot uses a
+**right-handed** coordinate system. This means that for most objects that need
+alignment (such as lights or cameras), the Z axis is used as a "pointing
+towards" direction. This convention roughly means that:
 
 -  **X** is sides
 -  **Y** is up/down
 -  **Z** is front/back
+
+See this chart for comparison with other 3D software:
+
+.. figure:: img/introduction_to_3d_coordinate_systems.webp
+   :align: center
+   :alt: 3D coordinate systems comparison chart
+
+   Image by `Freya Holmér <https://twitter.com/FreyaHolmer>`__
 
 Space and manipulation gizmos
 -----------------------------
@@ -155,7 +163,7 @@ respectively. This convention applies to the grid and other gizmos too
 (and also to the shader language, ordering of components for
 Vector3, Color, etc.).
 
-.. image:: img/tuto_3d5.png
+.. image:: img/tuto_3d5.webp
 
 Some useful keybindings:
 
@@ -163,41 +171,82 @@ Some useful keybindings:
    or rotating.
 -  To center the view on the selected object, press :kbd:`F`.
 
+Using Blender-style transform shortcuts
+---------------------------------------
+
+Since Godot 4.2, you can enable Blender-style shortcuts for translating,
+rotating and scaling nodes. In Blender, these shortcuts are:
+
+- :kbd:`G` for translating
+- :kbd:`R` for rotating
+- :kbd:`S` for scaling
+
+After pressing a shortcut key while focusing on the 3D editor viewport,
+move the mouse or enter a number to move the selected node(s) by the
+specified amount in 3D units. You can constrain movement to a specific
+axis by specifying the axis as a letter, then the distance (if entering a
+value with the keyboard).
+
+For instance, to move the selection upwards by 2.5 units, enter the
+following sequence in order (Y+ is upwards in Godot):
+
+:kbd:`G`-:kbd:`Y`-:kbd:`2`-:kbd:`.`-:kbd:`5`-:kbd:`Enter`
+
+To use Blender-style transform shortcuts in Godot, go to the Editor Settings'
+**Shortcuts** tab, then in the Spatial Editor section:
+
+- Bind **Begin Translate Transformation** to :kbd:`G`.
+- Bind **Begin Rotate Transformation** to :kbd:`R`.
+- Bind **Begin Scale Transformation** to :kbd:`S`.
+- Finally, unbind **Scale Mode** so that its shortcut won't conflict with
+  **Begin Rotate Transformation**.
+
 View menu
 ---------
 
 The view options are controlled by the "View" menu in the viewport's toolbar.
 
-.. image:: img/tuto_3d6.png
+.. image:: img/tuto_3d6.webp
 
 You can hide the gizmos in the 3D view of the editor through this menu:
 
-.. image:: img/tuto_3d6_1.png
+.. image:: img/tuto_3d6_1.webp
 
 To hide a specific type of gizmos, you can toggle them off in the "View" menu.
 
-.. image:: img/tuto_3d6_2.png
+.. image:: img/tuto_3d6_2.webp
 
-Default environment
--------------------
+preview environment and light
+-----------------------------
 
-When created from the Project Manager, the 3D environment has a default sky.
+By default, any 3D scene that doesn't have a :ref:`WorldEnvironment <class_WorldEnvironment>`
+node, or a :ref:`DirectionalLight3D <class_DirectionalLight3D>`, will have
+a preview turned on for what it's missing to light the scene.
 
-.. image:: img/tuto_3d8.png
+The preview light and environment will only be visible in the scene while
+in the editor. If you run the scene or export the project they will not
+affect the scene.
 
-Given how physically based rendering works, it is advised to always try to
-work with a default environment in order to provide indirect and reflected
-light to your objects.
+The preview light and environment can be turned on or off from the top menu
+by clicking on their respective icon, and the 3 dots dropdown menu next to
+those icons can be used to adjust the properties of the preview environment
+and light.
+
+.. image:: img/tuto_3d8.webp
+
+The same preview sun and environment is used for every scene in the same project,
+So only make adjustments that would apply to all of the scenes you will need a preview
+light and environment for.
 
 Cameras
 -------
 
 No matter how many objects are placed in the 3D space, nothing will be
-displayed unless a :ref:`Camera <class_Camera>` is
+displayed unless a :ref:`Camera3D <class_Camera3D>` is
 also added to the scene. Cameras can work in either orthogonal or
 perspective projections:
 
-.. image:: img/tuto_3d10.png
+.. image:: img/tuto_3d10.webp
 
 Cameras are associated with (and only display to) a parent or grandparent
 viewport. Since the root of the scene tree is a viewport, cameras will
@@ -222,5 +271,10 @@ each viewport:
 Lights
 ------
 
-There is no limitation on the number of lights, nor of types of lights, in
-Godot. As many as desired can be added (as long as performance allows).
+The background environment emits some ambient light which appears on surfaces.
+Still, without any light sources placed in the scene, the scene will appear
+quite dark unless the background environment is very bright.
+
+Most outdoor scenes have a directional light (the sun or moon), while indoor
+scenes typically have several positional lights (lamps, torches, …).
+See :ref:`doc_lights_and_shadows` for more information on setting up lights in Godot.

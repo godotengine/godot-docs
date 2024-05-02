@@ -19,7 +19,7 @@ Example project
 ---------------
 
 To learn how GridMaps work, start by downloading the sample project:
-:download:`gridmap_demo.zip <files/gridmap_demo.zip>`.
+`gridmap_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/gridmap_starter.zip>`_.
 
 Unzip this project and add it to the Project Manager using the "Import"
 button.
@@ -28,13 +28,13 @@ Creating a MeshLibrary
 ----------------------
 
 To begin, you need a :ref:`class_MeshLibrary`, which is a collection
-of individual meshes that can be used in the gridmap. Open the "MeshLibrary_Source.tscn"
+of individual meshes that can be used in the gridmap. Open the "mesh_library_source.tscn"
 scene to see an example of how to set up the mesh library.
 
 .. image:: img/gridmap_meshlibrary1.png
 
-As you can see, this scene has a :ref:`class_Spatial` node as its root, and
-a number of :ref:`class_MeshInstance` node children.
+As you can see, this scene has a :ref:`class_Node3D` node as its root, and
+a number of :ref:`class_MeshInstance3D` node children.
 
 If you don't need any physics in your scene, then you're done. However, in most
 cases you'll want to assign collision bodies to the meshes.
@@ -42,8 +42,8 @@ cases you'll want to assign collision bodies to the meshes.
 Collisions
 ----------
 
-You can manually assign a :ref:`class_StaticBody` and
-:ref:`class_CollisionShape` to each mesh. Alternatively, you can use the "Mesh" menu
+You can manually assign a :ref:`class_StaticBody3D` and
+:ref:`class_CollisionShape3D` to each mesh. Alternatively, you can use the "Mesh" menu
 to automatically create the collision body based on the mesh data.
 
 .. image:: img/gridmap_create_body.png
@@ -62,10 +62,36 @@ Materials
 Only the materials from within the meshes are used when generating the mesh
 library. Materials set on the node will be ignored.
 
+NavigationMeshes
+----------------
+
+Like all mesh instances, MeshLibrary items can be assigned a :ref:`class_NavigationMesh`
+resource, which can be created manually, or baked as described below.
+
+To create the NavigationMesh from a MeshLibrary scene export, place a
+:ref:`class_NavigationRegion3D` child node below the main MeshInstance3D for the GridMap
+item. Add a valid NavigationMesh resource to the NavigationRegion3D and some source
+geometry nodes below and bake the NavigationMesh.
+
+.. note::
+
+    With small grid cells it is often necessary to reduce the NavigationMesh properties
+    for agent radius and region minimum size.
+
+.. image:: img/meshlibrary_scene.png
+
+Nodes below the NavigationRegion3D are ignored for the MeshLibrary scene export, so
+additional nodes can be added as source geometry just for baking the navmesh.
+
+.. warning::
+
+    The baked cell size of the NavigationMesh must match the NavigationServer map cell
+    size to properly merge the navigation meshes of different grid cells.
+
 Exporting the MeshLibrary
 -------------------------
 
-To export the library, click on Scene -> Convert To.. -> MeshLibrary.., and save it
+To export the library, click on **Scene > Export As... > MeshLibrary...**, and save it
 as a resource.
 
 .. image:: img/gridmap_export.png

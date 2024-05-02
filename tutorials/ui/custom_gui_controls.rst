@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_custom_gui_controls:
 
 Custom GUI controls
@@ -25,7 +27,7 @@ Checking control size
 
 Unlike 2D nodes, "size" is important with controls, as it helps to
 organize them in proper layouts. For this, the
-:ref:`Control.rect_size <class_Control_property_rect_size>`
+:ref:`Control.size <class_Control_property_size>`
 property is provided. Checking it during ``_draw()`` is vital to ensure
 everything is kept in-bounds.
 
@@ -77,13 +79,13 @@ the minimum size will make sure your custom control is not squished by
 the other controls in the container.
 
 To provide this callback, just override
-:ref:`Control.get_minimum_size() <class_Control_method_get_minimum_size>`,
+:ref:`Control._get_minimum_size() <class_Control_private_method__get_minimum_size>`,
 for example:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func get_minimum_size():
+    func _get_minimum_size():
         return Vector2(30, 30)
 
  .. code-tab:: csharp
@@ -105,7 +107,7 @@ Alternatively, set it using a function:
 
     public override void _Ready()
     {
-        SetCustomMinimumSize(new Vector2(20, 20));
+        CustomMinimumSize = new Vector2(20, 20);
     }
 
 Input
@@ -128,7 +130,7 @@ when:
    :ref:`Control.focus_mode <class_Control_property_focus_mode>`.
 
 This function is
-:ref:`Control._gui_input() <class_Control_method__gui_input>`.
+:ref:`Control._gui_input() <class_Control_private_method__gui_input>`.
 Simply override it in your control. No processing needs to be set.
 
 .. tabs::
@@ -137,14 +139,14 @@ Simply override it in your control. No processing needs to be set.
     extends Control
 
     func _gui_input(event):
-       if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+       if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
            print("Left mouse button was pressed!")
 
  .. code-tab:: csharp
 
     public override void _GuiInput(InputEvent @event)
     {
-        if (@event is InputEventMouseButton mbe && mbe.ButtonIndex == (int)ButtonList.Left && mbe.Pressed)
+        if (@event is InputEventMouseButton mbe && mbe.ButtonIndex == MouseButton.Left && mbe.Pressed)
         {
             GD.Print("Left mouse button was pressed!");
         }

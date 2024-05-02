@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_soft_body:
 
 Using SoftBody
@@ -9,11 +11,11 @@ This can for example be used to simulate cloth or to create more realistic chara
 Basic set-up
 ~~~~~~~~~~~~
 
-A :ref:`SoftBody <class_SoftBody>` node is used for soft body simulations.
+A :ref:`SoftBody3D <class_SoftBody3D>` node is used for soft body simulations.
 
 We will create a bouncy cube to demonstrate the setup of a soft body.
 
-Create a new scene with a ``Spatial`` node as root. Then, create a ``Softbody`` node. Add a ``CubeMesh`` in the ``mesh`` property of the node in the inspector and increase the subdivision of the mesh for simulation.
+Create a new scene with a ``Node3D`` node as root. Then, create a ``Softbody`` node. Add a ``CubeMesh`` in the ``mesh`` property of the node in the inspector and increase the subdivision of the mesh for simulation.
 
 .. image:: img/softbody_cube.png
 
@@ -32,7 +34,7 @@ Cloak simulation
 
 Let's make a cloak in the Platformer3D demo.
 
-.. note:: You can download the Platformer3D demo on `GitHub <https://github.com/godotengine/godot-demo-projects/tree/master/3d/platformer>`_ or `the Asset Library <https://godotengine.org/asset-library/asset/125>`_.
+.. note:: You can download the Platformer3D demo on `GitHub <https://github.com/godotengine/godot-demo-projects/tree/master/3d/platformer>`_ or `the Asset Library <https://godotengine.org/asset-library/asset/2748>`_.
 
 Open the ``Player`` scene, add a ``SoftBody`` node and assign a ``PlaneMesh`` to it.
 
@@ -42,9 +44,9 @@ Open the ``PlaneMesh`` properties and set the size(x: 0.5 y: 1) then set ``Subdi
 
 .. tip:: Subdivision generates a more tessellated mesh for better simulations.
 
-Add a :ref:`BoneAttachment <class_BoneAttachment>` node under the skeleton node and select the Neck bone to attach the cloak to the character skeleton.
+Add a :ref:`BoneAttachment3D <class_BoneAttachment3D>` node under the skeleton node and select the Neck bone to attach the cloak to the character skeleton.
 
-.. note:: ``BoneAttachment`` node is to attach objects to a bone of a armature. The attached object will follow the bone's movement, weapon of a character can be attached this way.
+.. note:: ``BoneAttachment3D`` node is to attach objects to a bone of an armature. The attached object will follow the bone's movement, weapon of a character can be attached this way.
 
 .. image:: img/softbody_cloak_bone_attach.png
 

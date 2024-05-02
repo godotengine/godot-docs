@@ -56,7 +56,7 @@ or lose precision if the frame rate is too high or too low.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     func _physics_process(delta):
         pass
@@ -64,11 +64,10 @@ or lose precision if the frame rate is too high or too low.
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : KinematicBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
         }
     }
@@ -78,17 +77,18 @@ Scene setup
 ~~~~~~~~~~~
 
 To have something to test, here's the scene (from the tilemap tutorial):
-:download:`kbscene.zip <files/kbscene.zip>`. We'll be creating a new scene
-for the character. Use the robot sprite and create a scene like this:
+`kinematic_character_2d_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/kinematic_character_2d_starter.zip>`_.
+We'll be creating a new scene for the character. Use the robot sprite and
+create a scene like this:
 
-.. image:: img/kbscene.png
+.. image:: img/kbscene.webp
 
 You'll notice that there's a warning icon next to our CollisionShape2D node;
 that's because we haven't defined a shape for it. Create a new CircleShape2D
 in the shape property of CollisionShape2D. Click on <CircleShape2D> to go to the
 options for it, and set the radius to 30:
 
-.. image:: img/kbradius.png
+.. image:: img/kbradius.webp
 
 **Note: As mentioned before in the physics tutorial, the physics engine
 can't handle scale on most types of shapes (only collision polygons,
@@ -103,15 +103,14 @@ above should work as a base.
 Finally, instance that character scene in the tilemap, and make the
 map scene the main one, so it runs when pressing play.
 
-.. image:: img/kbinstance.png
+.. image:: img/kbinstance.webp
 
 Moving the kinematic character
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go back to the character scene, and open the script, the magic begins
 now! Kinematic body will do nothing by default, but it has a
-useful function called
-:ref:`KinematicBody2D.move_and_collide() <class_KinematicBody2D_method_move_and_collide>`.
+useful function called ``CharacterBody2D.move_and_collide()``.
 This function takes a :ref:`Vector2 <class_Vector2>` as
 an argument, and tries to apply that motion to the kinematic body. If a
 collision happens, it stops right at the moment of the collision.
@@ -121,7 +120,7 @@ So, let's move our sprite downwards until it hits the floor:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     func _physics_process(delta):
         move_and_collide(Vector2(0, 1)) # Move down 1 pixel per physics frame
@@ -129,11 +128,10 @@ So, let's move our sprite downwards until it hits the floor:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : KinematicBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
             // Move down 1 pixel per physics frame
             MoveAndCollide(new Vector2(0, 1));
@@ -149,10 +147,9 @@ little more like a regular game character:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     const GRAVITY = 200.0
-    var velocity = Vector2()
 
     func _physics_process(delta):
         velocity.y += delta * GRAVITY
@@ -163,18 +160,18 @@ little more like a regular game character:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : KinematicBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        const float gravity = 200.0f;
-        Vector2 velocity;
+        private const float Gravity = 200.0f;
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            velocity.y += delta * gravity;
+            var velocity = Velocity;
+            velocity.Y += (float)delta * Gravity;
+            Velocity = velocity;
 
-            var motion = velocity * delta;
+            var motion = velocity * (float)delta;
             MoveAndCollide(motion);
         }
     }
@@ -188,12 +185,10 @@ This adds basic support for walking when pressing left and right:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     const GRAVITY = 200.0
     const WALK_SPEED = 200
-
-    var velocity = Vector2()
 
     func _physics_process(delta):
         velocity.y += delta * GRAVITY
@@ -205,46 +200,41 @@ This adds basic support for walking when pressing left and right:
         else:
             velocity.x = 0
 
-        # We don't need to multiply velocity by delta because "move_and_slide" already takes delta time into account.
-
-        # The second parameter of "move_and_slide" is the normal pointing up.
-        # In the case of a 2D platformer, in Godot, upward is negative y, which translates to -1 as a normal.
-        move_and_slide(velocity, Vector2(0, -1))
+        # "move_and_slide" already takes delta time into account.
+        move_and_slide()
 
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : KinematicBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        const float gravity = 200.0f;
-        const int walkSpeed = 200;
+        private const float Gravity = 200.0f;
+        private const int WalkSpeed = 200;
 
-        Vector2 velocity;
-
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            velocity.y += delta * gravity;
+            var velocity = Velocity;
+
+            velocity.Y += (float)delta * Gravity;
 
             if (Input.IsActionPressed("ui_left"))
             {
-                velocity.x = -walkSpeed;
+                velocity.X = -WalkSpeed;
             }
             else if (Input.IsActionPressed("ui_right"))
             {
-                velocity.x = walkSpeed;
+                velocity.X = WalkSpeed;
             }
             else
             {
-                velocity.x = 0;
+                velocity.X = 0;
             }
 
-            // We don't need to multiply velocity by delta because "MoveAndSlide" already takes delta time into account.
+            Velocity = velocity;
 
-            // The second parameter of "MoveAndSlide" is the normal pointing up.
-            // In the case of a 2D platformer, in Godot, upward is negative y, which translates to -1 as a normal.
-            MoveAndSlide(velocity, new Vector2(0, -1));
+            // "MoveAndSlide" already takes delta time into account.
+            MoveAndSlide();
         }
     }
 

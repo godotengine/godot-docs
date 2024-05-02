@@ -36,7 +36,7 @@ for example:
            print("Mouse Motion at: ", event.position)
 
        # Print the size of the viewport.
-       print("Viewport Resolution is: ", get_viewport_rect().size)
+       print("Viewport Resolution is: ", get_viewport().get_visible_rect().size)
 
  .. code-tab:: csharp
 
@@ -49,7 +49,7 @@ for example:
             GD.Print("Mouse Motion at: ", eventMouseMotion.Position);
 
         // Print the size of the viewport.
-        GD.Print("Viewport Resolution is: ", GetViewportRect().Size);
+        GD.Print("Viewport Resolution is: ", GetViewport().GetVisibleRect().Size);
     }
 
 Alternatively, it's possible to ask the viewport for the mouse position:
@@ -63,4 +63,4 @@ Alternatively, it's possible to ask the viewport for the mouse position:
 
     GetViewport().GetMousePosition();
 
-.. note:: When the mouse mode is set to ``Input.MOUSE_MODE_CAPTURED``, the ``event.position`` value from ``InputEventMouseMotion`` is the center of the screen. Use ``event.relative`` instead of ``event.position`` and ``event.speed`` to process mouse movement and position changes.
+.. note:: When the mouse mode is set to ``Input.MOUSE_MODE_CAPTURED``, the ``event.position`` value from ``InputEventMouseMotion`` is the center of the screen. Use ``event.relative`` instead of ``event.position`` and ``event.velocity`` to process mouse movement and position changes.

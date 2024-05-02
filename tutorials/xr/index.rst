@@ -1,8 +1,33 @@
+:allow_comments: False
+
 XR
 ==
 
-Work in progress...
--------------------
+This section of the manual covers everything related to XR (
+Virtual Reality and Augmented Reality).
 
-Documentation for XR in Godot 4.0 XR hasn't been written yet.
-Please check back in the future.
+Basic Tutorial
+--------------
+
+.. toctree::
+   :maxdepth: 1
+   :name: xr-basic-tutorial
+
+   setting_up_xr
+   deploying_to_android
+   a_better_xr_start_script
+   introducing_xr_tools
+   basic_xr_locomotion
+
+Advanced topics
+---------------
+
+.. toctree::
+   :maxdepth: 1
+   :name: openxr-advanced-topics
+
+   openxr_settings
+   xr_action_map
+   xr_room_scale
+   openxr_hand_tracking
+   openxr_passthrough

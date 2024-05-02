@@ -69,12 +69,12 @@ two different ways:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        get_tree().get_root() # Access via scene main loop.
+        get_tree().root # Access via scene main loop.
         get_node("/root") # Access via absolute path.
 
  .. code-tab:: csharp
 
-        GetTree().GetRoot(); // Access via scene main loop.
+        GetTree().Root // Access via scene main loop.
         GetNode("/root"); // Access via absolute path.
 
 This node contains the main viewport. Anything that is a child of a
@@ -95,7 +95,7 @@ viewport, it becomes part of the *scene tree*.
 This means that as explained in previous tutorials, it will get the
 ``_enter_tree()`` and ``_ready()`` callbacks (as well as ``_exit_tree()``).
 
-.. image:: img/activescene.png
+.. image:: img/activescene.webp
 
 When nodes enter the *Scene Tree*, they become active. They get access
 to everything they need to process, get input, display 2D and 3D visuals,
@@ -106,18 +106,26 @@ Tree order
 ----------
 
 Most node operations in Godot, such as drawing 2D, processing, or getting
-notifications are done in tree order, or top to bottom. For example, the
-top node in a scene has its ``_ready()`` function called first, then the
-node below it has its function called, then the node below that and so
-on. However, children of a node will get called before their parent, also
-in top to bottom order. So the top child node of the top node will get its
-``_ready()`` function called first.
+notifications are done in *tree order*, or top to bottom as seen in the 
+editor (also known as pre-order traversal):
 
-.. image:: img/toptobottom.png
+.. image:: img/toptobottom.webp
 
-This can also be overridden using the ``process_priority`` node property.
-Nodes with a lower number are called first. For example, nodes with the
-priorities "0, 1, 2, 3" would be called in that order (from left to right).
+For example, the top node in a scene has its ``_process()`` function 
+called first, then the node below it has its ``_process()`` function called, 
+then the node below that and so on.
+
+An important exception is the ``_ready()`` function: each parent node has its
+``_ready()`` function called only after all its child nodes have their 
+``_ready()`` functions called, so that the parent knows its children are 
+completely ready to be accessed. This is also known as post-order traversal.
+In the above image, ``NameLabel`` would be notified first (but only after its
+children, if it had any!), followed by ``Name``, etc., and ``Panel`` would be
+notified last.
+
+The order of operations can also be overridden using the ``process_priority``
+node property. Nodes with a lower number are called first. For example, nodes
+with the priorities "0, 1, 2, 3" would be called in that order from left to right.
 
 "Becoming active" by entering the *Scene Tree*
 ----------------------------------------------
@@ -126,41 +134,41 @@ priorities "0, 1, 2, 3" would be called in that order (from left to right).
 #. The root node of that scene (only one root, remember?) is added as
    either a child of the "root" Viewport (from SceneTree), or to any
    of its descendants.
-#. Every node of the newly added scene, will receive the "enter_tree"
+#. Every node of the newly added scene will receive the "enter_tree"
    notification ( ``_enter_tree()`` callback in GDScript) in
-   top-to-bottom order.
-#. An extra notification, "ready" ( ``_ready()`` callback in GDScript)
-   is provided for convenience, when a node and all its children are
-   inside the active scene.
+   top-to-bottom order (pre-order traversal).
+#. Every node will receive the "ready" notification ( ``_ready()`` 
+   callback in GDScript) for convenience, once all its children have
+   received the "ready" notification (post-order traversal).
 #. When a scene (or part of it) is removed, they receive the "exit
    scene" notification ( ``_exit_tree()`` callback in GDScript) in
-   bottom-to-top order
+   bottom-to-top order (the exact reverse of top-to-bottom order).
 
 Changing current scene
 ----------------------
 
 After a scene is loaded, you may want to change this scene for
 another one. One way to do this is to use the
-:ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>`
+:ref:`SceneTree.change_scene_to_file() <class_SceneTree_method_change_scene_to_file>`
 function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _my_level_was_completed():
-        get_tree().change_scene("res://levels/level2.tscn")
+        get_tree().change_scene_to_file("res://levels/level2.tscn")
 
  .. code-tab:: csharp
 
     public void _MyLevelWasCompleted()
     {
-        GetTree().ChangeScene("res://levels/level2.tscn");
+        GetTree().ChangeSceneToFile("res://levels/level2.tscn");
     }
 
 Rather than using file paths, one can also use ready-made
 :ref:`PackedScene <class_PackedScene>` resources using the equivalent
 function
-:ref:`SceneTree.change_scene_to(PackedScene scene) <class_SceneTree_method_change_scene_to>`:
+:ref:`SceneTree.change_scene_to_packed(PackedScene scene) <class_SceneTree_method_change_scene_to_packed>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -168,19 +176,19 @@ function
     var next_scene = preload("res://levels/level2.tscn")
 
     func _my_level_was_completed():
-    	get_tree().change_scene_to(next_scene)
+    	get_tree().change_scene_to_packed(next_scene)
 
  .. code-tab:: csharp
 
     public void _MyLevelWasCompleted()
     {
         var nextScene = (PackedScene)ResourceLoader.Load("res://levels/level2.tscn");
-        GetTree().ChangeSceneTo(nextScene);
+        GetTree().ChangeSceneToPacked(nextScene);
     }
 
 These are quick and useful ways to switch scenes but have the drawback
 that the game will stall until the new scene is loaded and running. At
 some point in the development of your game, it may be preferable to create proper loading
-screens with progress bar, animated indicators or thread (background)
-loading. This must be done manually using autoloads (see next chapter)
+screens with progress bar, animated indicators or threaded (background)
+loading. This must be done manually using :ref:`doc_singletons_autoload`
 and :ref:`doc_background_loading`.

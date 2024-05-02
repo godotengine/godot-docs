@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. Intention: only introduce what a script does in general and options for
    scripting languages.
 
@@ -14,23 +16,21 @@ will write your first script using GDScript.
 inherit all functions and properties of the node they attach to.
 
 For example, take a game where a Camera2D node follows a ship. The Camera2D node
-follows its parent by default. Imagine you want it to shake when the player
-takes damage. As this feature is not built-into Godot, you would attach a script
-to it and code the camera shake.
+follows its parent by default. Imagine you want the camera to shake when the player
+takes damage. As this feature is not built into Godot, you would attach a script
+to the Camera2D node and code the shake.
 
 .. image:: img/scripting_camera_shake.gif
 
 Available scripting languages
 -----------------------------
 
-Godot offers **five gameplay programming languages**: GDScript, C#,
-VisualScript, and C++ and C via its GDNative technology. There are more
-:ref:`community-supported languages <doc_what_is_gdnative_third_party_bindings>`,
-but these are the official ones.
+Godot offers **four gameplay programming languages**: GDScript, C#,
+and, via its GDExtension technology, C and C++. There are more
+community-supported languages, but these are the official ones.
 
 You can use multiple languages in a single project. For instance, in a team, you
-could code gameplay logic in GDScript as it's fast to write, let level designers
-script quests in the graphical language VisualScript, and use C# or C++ to
+could code gameplay logic in GDScript as it's fast to write, and use C# or C++ to
 implement complex algorithms and maximize their performance. Or you can write
 everything in GDScript or C#. It's your call.
 
@@ -49,7 +49,7 @@ with Godot.
 
 For C#, you will need an external code editor like
 `VSCode <https://code.visualstudio.com/>`_ or Visual Studio. While C# support is
-now mature, you will also find fewer learning resources for it compared to
+now mature, you will find fewer learning resources for it compared to
 GDScript. That's why we recommend C# mainly to users who already have experience
 with the language.
 
@@ -70,9 +70,7 @@ to save you time coding games. Its features include:
   information from the scene it's attached to.
 - Built-in vector and transform types, making it efficient for heavy use of
   linear algebra, a must for games.
-- Supports multiple threads as efficiently as statically typed languages. This
-  is one of the features we couldn't provide easily with a third-party language
-  like Lua or Python.
+- Supports multiple threads as efficiently as statically typed languages.
 - No `garbage collection
   <https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>`_, as
   this feature eventually gets in the way when creating games. The engine counts
@@ -105,7 +103,7 @@ languages, including Squirrel, Lua, and Python.
 As Microsoft's `C#
 <https://en.wikipedia.org/wiki/C_Sharp_(programming_language)>`_ is a favorite
 amongst game developers, we officially support it. C# is a mature and flexible
-language with tons of libraries written for it. We could add support for it
+language with tons of libraries written for it. We were able to add support for it
 thanks to a generous donation from Microsoft.
 
 .. image:: img/scripting_csharp.png
@@ -113,14 +111,14 @@ thanks to a generous donation from Microsoft.
 C# offers a good tradeoff between performance and ease of use, although you
 should be aware of its garbage collector.
 
-.. note:: You must use the Mono edition of the Godot editor to script in C#. You
+.. note:: You must use the .NET edition of the Godot editor to script in C#. You
           can download it on the Godot website's `download
           <https://godotengine.org/download/>`_ page.
 
-Since Godot uses the `Mono <https://mono-project.com>`_ .NET runtime, in theory,
-you can use any third-party .NET library or framework in Godot, as well as any
-Common Language Infrastructure-compliant programming language, such as F#, Boo,
-or ClojureCLR. However, C# is the only officially supported .NET option.
+Since Godot uses .NET 6, in theory, you can use any third-party .NET library or
+framework in Godot, as well as any Common Language Infrastructure-compliant
+programming language, such as F#, Boo, or ClojureCLR. However, C# is the only
+officially supported .NET option.
 
 .. note:: GDScript code itself doesn't execute as fast as compiled C# or C++.
           However, most script code calls functions written with fast algorithms
@@ -128,44 +126,30 @@ or ClojureCLR. However, C# is the only officially supported .NET option.
           in GDScript, C#, or C++ won't have a significant impact on
           performance.
 
-VisualScript
-~~~~~~~~~~~~
+.. attention::
 
-:ref:`Visual Scripting<doc_what_is_visual_script>` is a graph-based visual
-programming language where you connect blocks. It can be a great tool for
-non-programmers like game designers and artists.
+    Projects written in C# using Godot 4 currently cannot be exported to the web
+    platform. To use C# on that platform, consider Godot 3 instead.
+    Android and iOS platform support is available as of Godot 4.2, but is
+    experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
-.. image:: img/scripting_visualscript.png
+.. seealso:: To learn more about C#, head to the :ref:`C# basics <doc_c_sharp>` page.
 
-You can use other languages to create custom blocks that are specific to your
-game. For example, to script AIs, quests, or dialogues. That's where the
-strength of VisualScript lies.
+C++ via GDExtension
+~~~~~~~~~~~~~~~~~~~
 
-While it provides all the basic building blocks you need to code complete games,
-we do not recommend to use VisualScript this way. Programming everything with it
-is slow compared to using other programming languages.
-
-.. seealso::
-
-    For more information, see
-    :ref:`Getting started with VisualScript <doc_getting_started_visual_script>`.
-
-C and C++ via GDNative
-~~~~~~~~~~~~~~~~~~~~~~
-
-GDNative allows you to write game code in C or C++ without needing to recompile
-or even restart Godot.
+GDExtension allows you to write game code in C++ without needing to recompile
+Godot.
 
 .. image:: img/scripting_cpp.png
 
 You can use any version of the language or mix compiler brands and versions for
 the generated shared libraries, thanks to our use of an internal C API Bridge.
 
-This language is the best choice for performance. You don't need to use it
-throughout an entire game, as you can write other parts in GDScript, C#, or
-VisualScript.
+GDExtension is the best choice for performance. You don't need to use it
+throughout an entire game, as you can write other parts in GDScript or C#.
 
-When working with GDNative, the available types, functions, and properties
+When working with GDExtension, the available types, functions, and properties
 closely resemble Godot's actual C++ API.
 
 Summary
@@ -174,7 +158,7 @@ Summary
 Scripts are files containing code that you attach to a node to extend its
 functionality.
 
-Godot supports five official scripting languages, offering you flexibility
+Godot supports four official scripting languages, offering you flexibility
 between performance and ease of use.
 
 You can mix languages, for instance, to implement demanding algorithms with C or

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_high_dynamic_range:
 
 High dynamic range lighting
@@ -6,10 +8,10 @@ High dynamic range lighting
 Introduction
 ------------
 
-Normally, an artist does all the 3D modelling, then all the texturing,
-looks at their awesome looking model in the 3D DCC and says "looks
-fantastic, ready for integration!" then goes into the game, lighting is
-setup and the game runs.
+Normally, an artist does all the 3D modeling, then all the texturing, looks at
+their awesome looking model in the 3D modeling software and says "looks
+fantastic, ready for integration!" then goes into the game, lighting is setup
+and the game runs.
 
 So at what point does all this "HDR" business come into play? To understand
 the answer, we need to look at how displays behave.

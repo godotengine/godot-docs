@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_websocket:
 
 WebSocket
@@ -18,7 +20,7 @@ Godot supports WebSocket in both native and HTML5 exports.
 Using WebSocket in Godot
 ------------------------
 
-WebSocket is implemented in Godot via three main classes :ref:`WebSocketClient <class_WebSocketClient>`, :ref:`WebSocketServer <class_WebSocketServer>`, and :ref:`WebSocketPeer <class_WebSocketPeer>`. The WebSocket implementation is compatible with the High Level Multiplayer. See section on :ref:`high-level multiplayer <doc_high_level_multiplayer>` for more details.
+WebSocket is implemented in Godot via :ref:`WebSocketPeer <class_WebSocketPeer>`. The WebSocket implementation is compatible with the High Level Multiplayer. See section on :ref:`high-level multiplayer <doc_high_level_multiplayer>` for more details.
 
 .. warning::
 
@@ -37,23 +39,23 @@ This example will show you how to create a WebSocket connection to a remote serv
     extends Node
 
     # The URL we will connect to
-    export var websocket_url = "ws://echo.websocket.org"
+    export var websocket_url = "wss://libwebsockets.org"
 
     # Our WebSocketClient instance
     var _client = WebSocketClient.new()
 
     func _ready():
         # Connect base signals to get notified of connection open, close, and errors.
-        _client.connect("connection_closed", self, "_closed")
-        _client.connect("connection_error", self, "_closed")
-        _client.connect("connection_established", self, "_connected")
+        _client.connection_closed.connect(_closed)
+        _client.connection_error.connect(_closed)
+        _client.connection_established.connect(_connected)
         # This signal is emitted when not using the Multiplayer API every time
         # a full packet is received.
         # Alternatively, you could check get_peer(1).get_available_packets() in a loop.
-        _client.connect("data_received", self, "_on_data")
+        _client.data_received.connect(_on_data)
 
         # Initiate connection to the given URL.
-        var err = _client.connect_to_url(websocket_url)
+        var err = _client.connect_to_url(websocket_url, ["lws-mirror-protocol"])
         if err != OK:
             print("Unable to connect")
             set_process(false)
@@ -107,14 +109,14 @@ This example will show you how to create a WebSocket server that listens for rem
     func _ready():
         # Connect base signals to get notified of new client connections,
         # disconnections, and disconnect requests.
-        _server.connect("client_connected", self, "_connected")
-        _server.connect("client_disconnected", self, "_disconnected")
-        _server.connect("client_close_request", self, "_close_request")
+        _server.client_connected.connect(_connected)
+        _server.client_disconnected.connect(_disconnected)
+        _server.client_close_request.connect(_close_request)
         # This signal is emitted when not using the Multiplayer API every time a
         # full packet is received.
         # Alternatively, you could check get_peer(PEER_ID).get_available_packets()
         # in a loop for each connected peer.
-        _server.connect("data_received", self, "_on_data")
+        _server.data_received.connect(_on_data)
         # Start listening on the given port.
         var err = _server.listen(PORT)
         if err != OK:
