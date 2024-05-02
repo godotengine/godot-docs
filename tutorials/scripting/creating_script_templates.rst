@@ -63,7 +63,9 @@ where:
 
 * ``template_path`` is one of the 2 locations discussed in the previous two sections
 
-* ``node_type`` is the node it will apply to (for example, :ref:`Node <class_Node>`, or :ref:`CharacterBody3D <class_CharacterBody3D>`)
+* ``node_type`` is the node it will apply to (for example, :ref:`Node <class_Node>`, or :ref:`CharacterBody3D <class_CharacterBody3D>`),
+  casing doesn't matter for the folder name, however adding a ``_`` to a name will not work, for example ``Mesh_Instance3D`` does not work.
+  if a script isn't in the proper ``node_type`` folder it will not be detected.
 
 * ``file`` is the custom name you can chose for the template (for example: ``platformer_movement`` or ``smooth_camera``)
 
