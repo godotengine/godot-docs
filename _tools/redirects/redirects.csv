@@ -422,3 +422,4 @@ source,destination
 /tutorials/viewports/viewports.html,/tutorials/rendering/viewports.html
 /contributing/development/compiling/compiling_for_uwp.html,/about/faq.html#which-platforms-are-supported-by-godot
 /tutorials/export/exporting_for_uwp.html,/about/faq.html#which-platforms-are-supported-by-godot
+/tutorials/xr/openxr_passthrough.html,/tutorials/xr/ar_passthrough.html

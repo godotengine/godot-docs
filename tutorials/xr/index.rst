@@ -18,6 +18,7 @@ Basic Tutorial
    a_better_xr_start_script
    introducing_xr_tools
    basic_xr_locomotion
+   ar_passthrough
 
 Advanced topics
 ---------------
@@ -30,4 +31,3 @@ Advanced topics
    xr_action_map
    xr_room_scale
    openxr_hand_tracking
-   openxr_passthrough
