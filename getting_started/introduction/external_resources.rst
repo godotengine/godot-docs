@@ -31,8 +31,8 @@ gamedev.tv_ is on sale. The coupon for gamedev.tv_ came from its HumbleBundle_ s
 
 
 
-.. _GDQuest https://www.gdquest.com/
-.. _gamedev.tv https://www.gamedev.tv/p/complete-godot-bundle1/?coupon_code=SPRINGQUEST
-.. _MartinDonald https://www.youtube.com/@MartinDonald
-.. _HumbleBundle https://www.humblebundle.com/software/learn-to-make-games-in-godot-4-gamedevtv-software
+.. _GDQuest: https://www.gdquest.com/
+.. _gamedev.tv: https://www.gamedev.tv/p/complete-godot-bundle1/?coupon_code=SPRINGQUEST
+.. _MartinDonald: https://www.youtube.com/@MartinDonald
+.. _HumbleBundle: https://www.humblebundle.com/software/learn-to-make-games-in-godot-4-gamedevtv-software
 
