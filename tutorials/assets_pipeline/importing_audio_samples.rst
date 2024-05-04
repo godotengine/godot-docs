@@ -10,14 +10,14 @@ Godot provides 3 options to import your audio data: WAV, Ogg Vorbis and MP3.
 
 Each format has different advantages:
 
-- WAV files use raw data or light compression (IMA-ADPCM). They are lightweight
-  on the CPU to play back (hundreds of simultaneous voices in this format are
-  fine). The downside is that they take up a lot of disk space.
+- WAV files use raw data or light compression (IMA-ADPCM or QOA). They are 
+  lightweight to play back on the CPU (hundreds of simultaneous voices in this
+  format are fine). The downside is that they take up a lot of disk space.
 - Ogg Vorbis files use a stronger compression that results in much
   smaller file size, but require significantly more processing power to
   play back.
-- MP3 files use better compression than WAV with IMA-ADPCM, but worse than
-  Ogg Vorbis. This means that an MP3 file with roughly equal quality to
+- MP3 files use better compression than WAV with IMA-ADPCM or QOA, but worse 
+  than Ogg Vorbis. This means that an MP3 file with roughly equal quality to
   Ogg Vorbis will be significantly larger. On the bright side, MP3 requires
   less CPU usage to play back compared to Ogg Vorbis.
 
@@ -36,7 +36,9 @@ each format:
 +-----------------------------+-------------------+
 | WAV 16-bit, 44 kHz, mono    | 88 KB             |
 +-----------------------------+-------------------+
-| WAV 16-bit, IMA-ADPCM, mono | 22 KB             |
+| WAV IMA-ADPCM, 44 kHz, mono | 22 KB             |
++-----------------------------+-------------------+
+| WAV QOA, 44 kHz, mono       | 17 KB             |
 +-----------------------------+-------------------+
 | MP3 192 Kb/s, stereo        | 24 KB             |
 +-----------------------------+-------------------+
@@ -163,9 +165,12 @@ the end of the audio file if set to ``-1``.
 Compress > Mode
 ---------------
 
-Two compression modes can be chosen for WAV files: **Disabled** (default) or
-**RAM (Ima-ADPCM)**. **RAM (Ima-ADPCM)** reduces file size and memory usage a
-little, at the cost of decreasing quality in an audible manner.
+Three compression modes can be chosen from for WAV files: **Disabled** (default),
+**RAM (Ima-ADPCM)**, or **QOA (Quite OK Audio)**. **RAM (Ima-ADPCM)** reduces
+file size and memory usage a little, at the cost of decreasing quality in an
+audible manner. **QOA (Quite OK Audio)** reduces file size a bit more than
+**RAM (Ima-ADPCM)** and the quality decrease is much less noticeable, at the
+cost of higher CPU usage (still much lower than MP3).
 
 Ogg Vorbis and MP3 don't decrease quality as much and can provide greater file
 size reductions, at the cost of higher CPU usage during playback. This higher
