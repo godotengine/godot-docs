@@ -99,13 +99,13 @@ annotation.
 Strings as paths
 ----------------
 
-String as a path to a file.
+String as a path to a file. See :ref:`@export_file <class_@GDScript_annotation_@export_file>`.
 
 ::
 
     @export_file var f
 
-String as a path to a directory.
+String as a path to a directory. See :ref:`@export_dir <class_@GDScript_annotation_@export_dir>`.
 
 ::
 
