@@ -52,6 +52,8 @@ Properties
    +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                          | :ref:`k2<class_MobileVRInterface_property_k2>`                           | ``0.215``                                                                          |
    +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`                          | :ref:`offset_rect<class_MobileVRInterface_property_offset_rect>`         | ``Rect2(0, 0, 1, 1)``                                                              |
+   +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                          | :ref:`oversample<class_MobileVRInterface_property_oversample>`           | ``1.5``                                                                            |
    +----------------------------------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------+
    | :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` | xr_play_area_mode                                                        | ``1`` (overrides :ref:`XRInterface<class_XRInterface_property_xr_play_area_mode>`) |
@@ -163,6 +165,23 @@ The k1 lens factor is one of the two constants that define the strength of the l
 - :ref:`float<class_float>` **get_k2**\ (\ )
 
 The k2 lens factor, see k1.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MobileVRInterface_property_offset_rect:
+
+.. rst-class:: classref-property
+
+:ref:`Rect2<class_Rect2>` **offset_rect** = ``Rect2(0, 0, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_offset_rect**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
+- :ref:`Rect2<class_Rect2>` **get_offset_rect**\ (\ )
+
+Set the offset rect relative to the area being rendered. A length of 1 represents the whole rendering area on that axis.
 
 .. rst-class:: classref-item-separator
 

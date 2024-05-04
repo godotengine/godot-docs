@@ -68,8 +68,8 @@ The global :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>` function
             # Note that Objects are their own special category.
             # To get the name of the underlying Object type, you need the `get_class()` method.
             print("foo is a(n) %s" % foo.get_class()) # inject the class name into a formatted string.
-            # Note also that there is not yet any way to get a script's `class_name` string easily.
-            # To fetch that value, you can use ProjectSettings.get_global_class_list().
+            # Note that this does not get the script's `class_name` global identifier.
+            # If the `class_name` is needed, use `foo.get_script().get_global_name()` instead.
 
  .. code-tab:: csharp
 

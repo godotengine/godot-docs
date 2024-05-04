@@ -125,6 +125,8 @@ Methods
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`copy_absolute<class_DirAccess_method_copy_absolute>`\ (\ from\: :ref:`String<class_String>`, to\: :ref:`String<class_String>`, chmod_flags\: :ref:`int<class_int>` = -1\ ) |static| |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`create_link<class_DirAccess_method_create_link>`\ (\ source\: :ref:`String<class_String>`, target\: :ref:`String<class_String>`\ )                                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`current_is_dir<class_DirAccess_method_current_is_dir>`\ (\ ) |const|                                                                                                                |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`dir_exists<class_DirAccess_method_dir_exists>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                            |
@@ -157,6 +159,8 @@ Methods
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`is_case_sensitive<class_DirAccess_method_is_case_sensitive>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                                                                      |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_link<class_DirAccess_method_is_link>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`list_dir_begin<class_DirAccess_method_list_dir_begin>`\ (\ )                                                                                                                        |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`list_dir_end<class_DirAccess_method_list_dir_end>`\ (\ )                                                                                                                            |
@@ -170,6 +174,8 @@ Methods
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`make_dir_recursive_absolute<class_DirAccess_method_make_dir_recursive_absolute>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`DirAccess<class_DirAccess>`                 | :ref:`open<class_DirAccess_method_open>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`read_link<class_DirAccess_method_read_link>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                              |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`remove<class_DirAccess_method_remove>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                    |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -271,6 +277,22 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 :ref:`Error<enum_@GlobalScope_Error>` **copy_absolute**\ (\ from\: :ref:`String<class_String>`, to\: :ref:`String<class_String>`, chmod_flags\: :ref:`int<class_int>` = -1\ ) |static|
 
 Static version of :ref:`copy<class_DirAccess_method_copy>`. Supports only absolute paths.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DirAccess_method_create_link:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **create_link**\ (\ source\: :ref:`String<class_String>`, target\: :ref:`String<class_String>`\ )
+
+Creates symbolic link between files or folders.
+
+\ **Note:** On Windows, this method works only if the application is running with elevated privileges or Developer Mode is enabled.
+
+\ **Note:** This method is implemented on macOS, Linux, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -496,6 +518,20 @@ Returns ``true`` if the file system or directory use case sensitive file names.
 
 ----
 
+.. _class_DirAccess_method_is_link:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_link**\ (\ path\: :ref:`String<class_String>`\ )
+
+Returns ``true`` if the file or directory is a symbolic link, directory junction, or other reparse point.
+
+\ **Note:** This method is implemented on macOS, Linux, and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DirAccess_method_list_dir_begin:
 
 .. rst-class:: classref-method
@@ -585,6 +621,20 @@ Static version of :ref:`make_dir_recursive<class_DirAccess_method_make_dir_recur
 Creates a new **DirAccess** object and opens an existing directory of the filesystem. The ``path`` argument can be within the project tree (``res://folder``), the user directory (``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
 
 Returns ``null`` if opening the directory failed. You can use :ref:`get_open_error<class_DirAccess_method_get_open_error>` to check the error that occurred.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DirAccess_method_read_link:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **read_link**\ (\ path\: :ref:`String<class_String>`\ )
+
+Returns target of the symbolic link.
+
+\ **Note:** This method is implemented on macOS, Linux, and Windows.
 
 .. rst-class:: classref-item-separator
 

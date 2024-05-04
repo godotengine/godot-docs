@@ -30,8 +30,6 @@ Tutorials
 
 - `Audio Spectrum Visualizer Demo <https://godotengine.org/asset-library/asset/2762>`__
 
-- `Godot 3.2 will get new audio features <https://godotengine.org/article/godot-32-will-get-new-audio-features>`__
-
 .. rst-class:: classref-reftable-group
 
 Properties

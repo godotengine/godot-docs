@@ -1347,7 +1347,7 @@ Replaces all **case-insensitive** occurrences of ``what`` inside the string with
 
 :ref:`String<class_String>` **reverse**\ (\ ) |const|
 
-Returns the copy of this string in reverse order.
+Returns the copy of this string in reverse order. This operation works on unicode codepoints, rather than sequences of codepoints, and may break things like compound letters or emojis.
 
 .. rst-class:: classref-item-separator
 

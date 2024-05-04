@@ -149,7 +149,7 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`stop_joy_vibration<class_Input_method_stop_joy_vibration>`\ (\ device\: :ref:`int<class_int>`\ )                                                                                                                                                                                                              |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                  | :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>`\ (\ duration_ms\: :ref:`int<class_int>` = 500\ )                                                                                                                                                                                                       |
+   | |void|                                                                  | :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>`\ (\ duration_ms\: :ref:`int<class_int>` = 500, amplitude\: :ref:`float<class_float>` = -1.0\ )                                                                                                                                                         |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`warp_mouse<class_Input_method_warp_mouse>`\ (\ position\: :ref:`Vector2<class_Vector2>`\ )                                                                                                                                                                                                                    |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1113,7 +1113,9 @@ Stops the vibration of the joypad started with :ref:`start_joy_vibration<class_I
 
 .. rst-class:: classref-method
 
-|void| **vibrate_handheld**\ (\ duration_ms\: :ref:`int<class_int>` = 500\ )
+|void| **vibrate_handheld**\ (\ duration_ms\: :ref:`int<class_int>` = 500, amplitude\: :ref:`float<class_float>` = -1.0\ )
+
+**Note:** While ``amplitude`` expects a value between 0 and 1, -1 does the default amplitude for the device.
 
 Vibrate the handheld device for the specified duration in milliseconds.
 
@@ -1122,6 +1124,8 @@ Vibrate the handheld device for the specified duration in milliseconds.
 \ **Note:** For Android, :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` requires enabling the ``VIBRATE`` permission in the export preset. Otherwise, :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` will have no effect.
 
 \ **Note:** For iOS, specifying the duration is only supported in iOS 13 and later.
+
+\ **Note:** For Web, the amplitude cannot be changed.
 
 \ **Note:** Some web browsers such as Safari and Firefox for Android do not support :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>`.
 

@@ -31,103 +31,399 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`application/additional_plist_content<class_EditorExportPlatformIOS_property_application/additional_plist_content>`                         |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`application/app_store_team_id<class_EditorExportPlatformIOS_property_application/app_store_team_id>`                                       |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`application/bundle_identifier<class_EditorExportPlatformIOS_property_application/bundle_identifier>`                                       |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`application/code_sign_identity_debug<class_EditorExportPlatformIOS_property_application/code_sign_identity_debug>`                         |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`application/code_sign_identity_release<class_EditorExportPlatformIOS_property_application/code_sign_identity_release>`                     |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`application/export_method_debug<class_EditorExportPlatformIOS_property_application/export_method_debug>`                                   |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`application/export_method_release<class_EditorExportPlatformIOS_property_application/export_method_release>`                               |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`application/export_project_only<class_EditorExportPlatformIOS_property_application/export_project_only>`                                   |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`application/icon_interpolation<class_EditorExportPlatformIOS_property_application/icon_interpolation>`                                     |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`application/min_ios_version<class_EditorExportPlatformIOS_property_application/min_ios_version>`                                           |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`application/provisioning_profile_uuid_debug<class_EditorExportPlatformIOS_property_application/provisioning_profile_uuid_debug>`           |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`application/provisioning_profile_uuid_release<class_EditorExportPlatformIOS_property_application/provisioning_profile_uuid_release>`       |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`application/short_version<class_EditorExportPlatformIOS_property_application/short_version>`                                               |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`application/signature<class_EditorExportPlatformIOS_property_application/signature>`                                                       |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`application/targeted_device_family<class_EditorExportPlatformIOS_property_application/targeted_device_family>`                             |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`application/version<class_EditorExportPlatformIOS_property_application/version>`                                                           |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`architectures/arm64<class_EditorExportPlatformIOS_property_architectures/arm64>`                                                           |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`capabilities/access_wifi<class_EditorExportPlatformIOS_property_capabilities/access_wifi>`                                                 |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`capabilities/performance_a12<class_EditorExportPlatformIOS_property_capabilities/performance_a12>`                                         |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`capabilities/performance_gaming_tier<class_EditorExportPlatformIOS_property_capabilities/performance_gaming_tier>`                         |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`capabilities/push_notifications<class_EditorExportPlatformIOS_property_capabilities/push_notifications>`                                   |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`custom_template/debug<class_EditorExportPlatformIOS_property_custom_template/debug>`                                                       |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`custom_template/release<class_EditorExportPlatformIOS_property_custom_template/release>`                                                   |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/app_store_1024x1024<class_EditorExportPlatformIOS_property_icons/app_store_1024x1024>`                                               |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/ipad_76x76<class_EditorExportPlatformIOS_property_icons/ipad_76x76>`                                                                 |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/ipad_152x152<class_EditorExportPlatformIOS_property_icons/ipad_152x152>`                                                             |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/ipad_167x167<class_EditorExportPlatformIOS_property_icons/ipad_167x167>`                                                             |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/iphone_120x120<class_EditorExportPlatformIOS_property_icons/iphone_120x120>`                                                         |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/iphone_180x180<class_EditorExportPlatformIOS_property_icons/iphone_180x180>`                                                         |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/notification_40x40<class_EditorExportPlatformIOS_property_icons/notification_40x40>`                                                 |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/notification_60x60<class_EditorExportPlatformIOS_property_icons/notification_60x60>`                                                 |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/settings_58x58<class_EditorExportPlatformIOS_property_icons/settings_58x58>`                                                         |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/settings_87x87<class_EditorExportPlatformIOS_property_icons/settings_87x87>`                                                         |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/spotlight_40x40<class_EditorExportPlatformIOS_property_icons/spotlight_40x40>`                                                       |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`icons/spotlight_80x80<class_EditorExportPlatformIOS_property_icons/spotlight_80x80>`                                                       |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`privacy/camera_usage_description<class_EditorExportPlatformIOS_property_privacy/camera_usage_description>`                                 |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`privacy/camera_usage_description_localized<class_EditorExportPlatformIOS_property_privacy/camera_usage_description_localized>`             |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`privacy/microphone_usage_description<class_EditorExportPlatformIOS_property_privacy/microphone_usage_description>`                         |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`privacy/microphone_usage_description_localized<class_EditorExportPlatformIOS_property_privacy/microphone_usage_description_localized>`     |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`privacy/photolibrary_usage_description<class_EditorExportPlatformIOS_property_privacy/photolibrary_usage_description>`                     |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`privacy/photolibrary_usage_description_localized<class_EditorExportPlatformIOS_property_privacy/photolibrary_usage_description_localized>` |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Color<class_Color>`           | :ref:`storyboard/custom_bg_color<class_EditorExportPlatformIOS_property_storyboard/custom_bg_color>`                                             |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`storyboard/custom_image@2x<class_EditorExportPlatformIOS_property_storyboard/custom_image@2x>`                                             |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`storyboard/custom_image@3x<class_EditorExportPlatformIOS_property_storyboard/custom_image@3x>`                                             |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`storyboard/image_scale_mode<class_EditorExportPlatformIOS_property_storyboard/image_scale_mode>`                                           |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`storyboard/use_custom_bg_color<class_EditorExportPlatformIOS_property_storyboard/use_custom_bg_color>`                                     |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`user_data/accessible_from_files_app<class_EditorExportPlatformIOS_property_user_data/accessible_from_files_app>`                           |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`user_data/accessible_from_itunes_sharing<class_EditorExportPlatformIOS_property_user_data/accessible_from_itunes_sharing>`                 |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/additional_plist_content<class_EditorExportPlatformIOS_property_application/additional_plist_content>`                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/app_store_team_id<class_EditorExportPlatformIOS_property_application/app_store_team_id>`                                                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/bundle_identifier<class_EditorExportPlatformIOS_property_application/bundle_identifier>`                                                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/code_sign_identity_debug<class_EditorExportPlatformIOS_property_application/code_sign_identity_debug>`                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/code_sign_identity_release<class_EditorExportPlatformIOS_property_application/code_sign_identity_release>`                                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`application/delete_old_export_files_unconditionally<class_EditorExportPlatformIOS_property_application/delete_old_export_files_unconditionally>`                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`application/export_method_debug<class_EditorExportPlatformIOS_property_application/export_method_debug>`                                                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`application/export_method_release<class_EditorExportPlatformIOS_property_application/export_method_release>`                                                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`application/export_project_only<class_EditorExportPlatformIOS_property_application/export_project_only>`                                                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`application/icon_interpolation<class_EditorExportPlatformIOS_property_application/icon_interpolation>`                                                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/min_ios_version<class_EditorExportPlatformIOS_property_application/min_ios_version>`                                                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/provisioning_profile_uuid_debug<class_EditorExportPlatformIOS_property_application/provisioning_profile_uuid_debug>`                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/provisioning_profile_uuid_release<class_EditorExportPlatformIOS_property_application/provisioning_profile_uuid_release>`                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/short_version<class_EditorExportPlatformIOS_property_application/short_version>`                                                                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/signature<class_EditorExportPlatformIOS_property_application/signature>`                                                                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`application/targeted_device_family<class_EditorExportPlatformIOS_property_application/targeted_device_family>`                                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/version<class_EditorExportPlatformIOS_property_application/version>`                                                                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`architectures/arm64<class_EditorExportPlatformIOS_property_architectures/arm64>`                                                                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`capabilities/access_wifi<class_EditorExportPlatformIOS_property_capabilities/access_wifi>`                                                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`capabilities/performance_a12<class_EditorExportPlatformIOS_property_capabilities/performance_a12>`                                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`capabilities/performance_gaming_tier<class_EditorExportPlatformIOS_property_capabilities/performance_gaming_tier>`                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`capabilities/push_notifications<class_EditorExportPlatformIOS_property_capabilities/push_notifications>`                                                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`custom_template/debug<class_EditorExportPlatformIOS_property_custom_template/debug>`                                                                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`custom_template/release<class_EditorExportPlatformIOS_property_custom_template/release>`                                                                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/app_store_1024x1024<class_EditorExportPlatformIOS_property_icons/app_store_1024x1024>`                                                                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/ipad_76x76<class_EditorExportPlatformIOS_property_icons/ipad_76x76>`                                                                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/ipad_152x152<class_EditorExportPlatformIOS_property_icons/ipad_152x152>`                                                                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/ipad_167x167<class_EditorExportPlatformIOS_property_icons/ipad_167x167>`                                                                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/iphone_120x120<class_EditorExportPlatformIOS_property_icons/iphone_120x120>`                                                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/iphone_180x180<class_EditorExportPlatformIOS_property_icons/iphone_180x180>`                                                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/notification_40x40<class_EditorExportPlatformIOS_property_icons/notification_40x40>`                                                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/notification_60x60<class_EditorExportPlatformIOS_property_icons/notification_60x60>`                                                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/settings_58x58<class_EditorExportPlatformIOS_property_icons/settings_58x58>`                                                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/settings_87x87<class_EditorExportPlatformIOS_property_icons/settings_87x87>`                                                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/spotlight_40x40<class_EditorExportPlatformIOS_property_icons/spotlight_40x40>`                                                                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`icons/spotlight_80x80<class_EditorExportPlatformIOS_property_icons/spotlight_80x80>`                                                                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/active_keyboard_access_reasons<class_EditorExportPlatformIOS_property_privacy/active_keyboard_access_reasons>`                                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`privacy/camera_usage_description<class_EditorExportPlatformIOS_property_privacy/camera_usage_description>`                                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`privacy/camera_usage_description_localized<class_EditorExportPlatformIOS_property_privacy/camera_usage_description_localized>`                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/advertising_data/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/collected>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/advertising_data/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/collection_purposes>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/advertising_data/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/linked_to_user>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/advertising_data/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/used_for_tracking>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/audio_data/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/collected>`                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/audio_data/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/collection_purposes>`                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/audio_data/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/linked_to_user>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/audio_data/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/used_for_tracking>`                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/browsing_history/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/collected>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/browsing_history/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/collection_purposes>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/browsing_history/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/linked_to_user>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/browsing_history/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/used_for_tracking>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/coarse_location/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/collected>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/coarse_location/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/collection_purposes>`                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/coarse_location/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/linked_to_user>`                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/coarse_location/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/used_for_tracking>`                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/contacts/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/collected>`                                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/contacts/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/collection_purposes>`                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/contacts/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/linked_to_user>`                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/contacts/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/used_for_tracking>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/crash_data/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/collected>`                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/crash_data/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/collection_purposes>`                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/crash_data/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/linked_to_user>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/crash_data/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/used_for_tracking>`                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/credit_info/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/collected>`                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/credit_info/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/collection_purposes>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/credit_info/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/linked_to_user>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/credit_info/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/used_for_tracking>`                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/customer_support/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/collected>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/customer_support/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/collection_purposes>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/customer_support/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/linked_to_user>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/customer_support/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/used_for_tracking>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/device_id/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/collected>`                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/device_id/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/collection_purposes>`                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/device_id/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/linked_to_user>`                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/device_id/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/used_for_tracking>`                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/email_address/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/collected>`                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/email_address/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/collection_purposes>`                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/email_address/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/linked_to_user>`                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/email_address/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/used_for_tracking>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/emails_or_text_messages/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/collected>`                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/emails_or_text_messages/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/collection_purposes>` |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/emails_or_text_messages/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/linked_to_user>`           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/emails_or_text_messages/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/used_for_tracking>`     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/environment_scanning/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/collected>`                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/environment_scanning/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/collection_purposes>`       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/environment_scanning/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/linked_to_user>`                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/environment_scanning/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/used_for_tracking>`           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/fitness/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/collected>`                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/fitness/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/collection_purposes>`                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/fitness/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/linked_to_user>`                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/fitness/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/used_for_tracking>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/gameplay_content/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/collected>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/gameplay_content/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/collection_purposes>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/gameplay_content/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/linked_to_user>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/gameplay_content/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/used_for_tracking>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/hands/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/hands/collected>`                                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/hands/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/hands/collection_purposes>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/hands/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/hands/linked_to_user>`                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/hands/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/hands/used_for_tracking>`                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/head/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/head/collected>`                                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/head/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/head/collection_purposes>`                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/head/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/head/linked_to_user>`                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/head/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/head/used_for_tracking>`                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/health/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/health/collected>`                                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/health/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/health/collection_purposes>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/health/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/health/linked_to_user>`                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/health/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/health/used_for_tracking>`                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/name/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/name/collected>`                                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/name/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/name/collection_purposes>`                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/name/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/name/linked_to_user>`                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/name/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/name/used_for_tracking>`                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_contact_info/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/collected>`                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/other_contact_info/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/collection_purposes>`           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_contact_info/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/linked_to_user>`                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_contact_info/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/used_for_tracking>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_data_types/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/collected>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/other_data_types/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/collection_purposes>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_data_types/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/linked_to_user>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_data_types/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/used_for_tracking>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_diagnostic_data/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/collected>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/other_diagnostic_data/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/collection_purposes>`     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_diagnostic_data/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/linked_to_user>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_diagnostic_data/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/used_for_tracking>`         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_financial_info/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/collected>`                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/other_financial_info/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/collection_purposes>`       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_financial_info/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/linked_to_user>`                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_financial_info/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/used_for_tracking>`           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_usage_data/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/collected>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/other_usage_data/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/collection_purposes>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_usage_data/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/linked_to_user>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_usage_data/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/used_for_tracking>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_user_content/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/collected>`                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/other_user_content/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/collection_purposes>`           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_user_content/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/linked_to_user>`                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/other_user_content/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/used_for_tracking>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/payment_info/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/collected>`                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/payment_info/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/collection_purposes>`                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/payment_info/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/linked_to_user>`                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/payment_info/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/used_for_tracking>`                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/performance_data/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/collected>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/performance_data/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/collection_purposes>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/performance_data/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/linked_to_user>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/performance_data/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/used_for_tracking>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/phone_number/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/collected>`                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/phone_number/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/collection_purposes>`                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/phone_number/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/linked_to_user>`                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/phone_number/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/used_for_tracking>`                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/photos_or_videos/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/collected>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/photos_or_videos/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/collection_purposes>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/photos_or_videos/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/linked_to_user>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/photos_or_videos/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/used_for_tracking>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/physical_address/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/collected>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/physical_address/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/collection_purposes>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/physical_address/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/linked_to_user>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/physical_address/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/used_for_tracking>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/precise_location/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/collected>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/precise_location/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/collection_purposes>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/precise_location/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/linked_to_user>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/precise_location/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/used_for_tracking>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/product_interaction/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/collected>`                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/product_interaction/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/collection_purposes>`         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/product_interaction/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/linked_to_user>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/product_interaction/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/used_for_tracking>`             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/purchase_history/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/collected>`                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/purchase_history/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/collection_purposes>`               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/purchase_history/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/linked_to_user>`                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/purchase_history/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/used_for_tracking>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/search_hhistory/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/collected>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/search_hhistory/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/collection_purposes>`                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/search_hhistory/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/linked_to_user>`                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/search_hhistory/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/used_for_tracking>`                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/sensitive_info/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/collected>`                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/sensitive_info/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/collection_purposes>`                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/sensitive_info/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/linked_to_user>`                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/sensitive_info/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/used_for_tracking>`                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/user_id/collected<class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/collected>`                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/collected_data/user_id/collection_purposes<class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/collection_purposes>`                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/user_id/linked_to_user<class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/linked_to_user>`                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/collected_data/user_id/used_for_tracking<class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/used_for_tracking>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/disk_space_access_reasons<class_EditorExportPlatformIOS_property_privacy/disk_space_access_reasons>`                                                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/file_timestamp_access_reasons<class_EditorExportPlatformIOS_property_privacy/file_timestamp_access_reasons>`                                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`privacy/microphone_usage_description<class_EditorExportPlatformIOS_property_privacy/microphone_usage_description>`                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`privacy/microphone_usage_description_localized<class_EditorExportPlatformIOS_property_privacy/microphone_usage_description_localized>`                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`privacy/photolibrary_usage_description<class_EditorExportPlatformIOS_property_privacy/photolibrary_usage_description>`                                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`privacy/photolibrary_usage_description_localized<class_EditorExportPlatformIOS_property_privacy/photolibrary_usage_description_localized>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/system_boot_time_access_reasons<class_EditorExportPlatformIOS_property_privacy/system_boot_time_access_reasons>`                                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`privacy/tracking_domains<class_EditorExportPlatformIOS_property_privacy/tracking_domains>`                                                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`privacy/tracking_enabled<class_EditorExportPlatformIOS_property_privacy/tracking_enabled>`                                                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`privacy/user_defaults_access_reasons<class_EditorExportPlatformIOS_property_privacy/user_defaults_access_reasons>`                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`storyboard/custom_bg_color<class_EditorExportPlatformIOS_property_storyboard/custom_bg_color>`                                                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`storyboard/custom_image@2x<class_EditorExportPlatformIOS_property_storyboard/custom_image@2x>`                                                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`storyboard/custom_image@3x<class_EditorExportPlatformIOS_property_storyboard/custom_image@3x>`                                                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`storyboard/image_scale_mode<class_EditorExportPlatformIOS_property_storyboard/image_scale_mode>`                                                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`storyboard/use_custom_bg_color<class_EditorExportPlatformIOS_property_storyboard/use_custom_bg_color>`                                                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`user_data/accessible_from_files_app<class_EditorExportPlatformIOS_property_user_data/accessible_from_files_app>`                                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`user_data/accessible_from_itunes_sharing<class_EditorExportPlatformIOS_property_user_data/accessible_from_itunes_sharing>`                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -198,6 +494,18 @@ The "Full Name", "Common Name" or SHA-1 hash of the signing identity used for de
 :ref:`String<class_String>` **application/code_sign_identity_release**
 
 The "Full Name", "Common Name" or SHA-1 hash of the signing identity used for release export.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_application/delete_old_export_files_unconditionally:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **application/delete_old_export_files_unconditionally**
+
+If ``true``, existing "project name" and "project name.xcodeproj" in the export destination directory will be unconditionally deleted during export.
 
 .. rst-class:: classref-item-separator
 
@@ -571,6 +879,18 @@ Spotlight icon file on iPad and iPhone (2x DPI). If left empty, it will fallback
 
 ----
 
+.. _class_EditorExportPlatformIOS_property_privacy/active_keyboard_access_reasons:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/active_keyboard_access_reasons**
+
+The reasons your app use active keyboard API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlatformIOS_property_privacy/camera_usage_description:
 
 .. rst-class:: classref-property
@@ -590,6 +910,1710 @@ A message displayed when requesting access to the device's camera (in English).
 :ref:`Dictionary<class_Dictionary>` **privacy/camera_usage_description_localized**
 
 A message displayed when requesting access to the device's camera (localized).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/advertising_data/collected**
+
+Indicates whether your app collects advertising data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/advertising_data/collection_purposes**
+
+The reasons your app collects advertising data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/advertising_data/linked_to_user**
+
+Indicates whether your app links advertising data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/advertising_data/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/advertising_data/used_for_tracking**
+
+Indicates whether your app uses advertising data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/audio_data/collected**
+
+Indicates whether your app collects audio data data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/audio_data/collection_purposes**
+
+The reasons your app collects audio data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/audio_data/linked_to_user**
+
+Indicates whether your app links audio data data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/audio_data/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/audio_data/used_for_tracking**
+
+Indicates whether your app uses audio data data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/browsing_history/collected**
+
+Indicates whether your app collects browsing history.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/browsing_history/collection_purposes**
+
+The reasons your app collects browsing history. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/browsing_history/linked_to_user**
+
+Indicates whether your app links browsing history to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/browsing_history/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/browsing_history/used_for_tracking**
+
+Indicates whether your app uses browsing history for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/coarse_location/collected**
+
+Indicates whether your app collects coarse location data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/coarse_location/collection_purposes**
+
+The reasons your app collects coarse location data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/coarse_location/linked_to_user**
+
+Indicates whether your app links coarse location data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/coarse_location/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/coarse_location/used_for_tracking**
+
+Indicates whether your app uses coarse location data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/contacts/collected**
+
+Indicates whether your app collects contacts.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/contacts/collection_purposes**
+
+The reasons your app collects contacts. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/contacts/linked_to_user**
+
+Indicates whether your app links contacts to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/contacts/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/contacts/used_for_tracking**
+
+Indicates whether your app uses contacts for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/crash_data/collected**
+
+Indicates whether your app collects crash data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/crash_data/collection_purposes**
+
+The reasons your app collects crash data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/crash_data/linked_to_user**
+
+Indicates whether your app links crash data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/crash_data/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/crash_data/used_for_tracking**
+
+Indicates whether your app uses crash data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/credit_info/collected**
+
+Indicates whether your app collects credit information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/credit_info/collection_purposes**
+
+The reasons your app collects credit information. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/credit_info/linked_to_user**
+
+Indicates whether your app links credit information to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/credit_info/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/credit_info/used_for_tracking**
+
+Indicates whether your app uses credit information for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/customer_support/collected**
+
+Indicates whether your app collects customer support data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/customer_support/collection_purposes**
+
+The reasons your app collects customer support data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/customer_support/linked_to_user**
+
+Indicates whether your app links customer support data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/customer_support/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/customer_support/used_for_tracking**
+
+Indicates whether your app uses customer support data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/device_id/collected**
+
+Indicates whether your app collects device IDs.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/device_id/collection_purposes**
+
+The reasons your app collects device IDs. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/device_id/linked_to_user**
+
+Indicates whether your app links device IDs to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/device_id/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/device_id/used_for_tracking**
+
+Indicates whether your app uses device IDs for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/email_address/collected**
+
+Indicates whether your app collects email address.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/email_address/collection_purposes**
+
+The reasons your app collects email address. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/email_address/linked_to_user**
+
+Indicates whether your app links email address to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/email_address/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/email_address/used_for_tracking**
+
+Indicates whether your app uses email address for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/emails_or_text_messages/collected**
+
+Indicates whether your app collects emails or text messages.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/emails_or_text_messages/collection_purposes**
+
+The reasons your app collects emails or text messages. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/emails_or_text_messages/linked_to_user**
+
+Indicates whether your app links emails or text messages to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/emails_or_text_messages/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/emails_or_text_messages/used_for_tracking**
+
+Indicates whether your app uses emails or text messages for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/environment_scanning/collected**
+
+Indicates whether your app collects environment scanning data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/environment_scanning/collection_purposes**
+
+The reasons your app collects environment scanning data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/environment_scanning/linked_to_user**
+
+Indicates whether your app links environment scanning data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/environment_scanning/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/environment_scanning/used_for_tracking**
+
+Indicates whether your app uses environment scanning data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/fitness/collected**
+
+Indicates whether your app collects fitness and exercise data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/fitness/collection_purposes**
+
+The reasons your app collects fitness and exercise data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/fitness/linked_to_user**
+
+Indicates whether your app links fitness and exercise data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/fitness/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/fitness/used_for_tracking**
+
+Indicates whether your app uses fitness and exercise data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/gameplay_content/collected**
+
+Indicates whether your app collects gameplay content.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/gameplay_content/collection_purposes**
+
+The reasons your app collects gameplay content. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/gameplay_content/linked_to_user**
+
+Indicates whether your app links gameplay content to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/gameplay_content/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/gameplay_content/used_for_tracking**
+
+Indicates whether your app uses gameplay content for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/hands/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/hands/collected**
+
+Indicates whether your app collects user's hand structure and hand movements.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/hands/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/hands/collection_purposes**
+
+The reasons your app collects user's hand structure and hand movements. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/hands/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/hands/linked_to_user**
+
+Indicates whether your app links user's hand structure and hand movements to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/hands/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/hands/used_for_tracking**
+
+Indicates whether your app uses user's hand structure and hand movements for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/head/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/head/collected**
+
+Indicates whether your app collects user's head movement.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/head/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/head/collection_purposes**
+
+The reasons your app collects user's head movement. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/head/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/head/linked_to_user**
+
+Indicates whether your app links user's head movement to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/head/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/head/used_for_tracking**
+
+Indicates whether your app uses user's head movement for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/health/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/health/collected**
+
+Indicates whether your app collects health and medical data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/health/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/health/collection_purposes**
+
+The reasons your app collects health and medical data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/health/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/health/linked_to_user**
+
+Indicates whether your app links health and medical data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/health/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/health/used_for_tracking**
+
+Indicates whether your app uses health and medical data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/name/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/name/collected**
+
+Indicates whether your app collects user's name.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/name/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/name/collection_purposes**
+
+The reasons your app collects user's name. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/name/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/name/linked_to_user**
+
+Indicates whether your app links user's name to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/name/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/name/used_for_tracking**
+
+Indicates whether your app uses user's name for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_contact_info/collected**
+
+Indicates whether your app collects any other contact information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/other_contact_info/collection_purposes**
+
+The reasons your app collects any other contact information. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_contact_info/linked_to_user**
+
+Indicates whether your app links any other contact information to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_contact_info/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_contact_info/used_for_tracking**
+
+Indicates whether your app uses any other contact information for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_data_types/collected**
+
+Indicates whether your app collects any other data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/other_data_types/collection_purposes**
+
+The reasons your app collects any other data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_data_types/linked_to_user**
+
+Indicates whether your app links any other data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_data_types/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_data_types/used_for_tracking**
+
+Indicates whether your app uses any other data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_diagnostic_data/collected**
+
+Indicates whether your app collects any other diagnostic data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/other_diagnostic_data/collection_purposes**
+
+The reasons your app collects any other diagnostic data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_diagnostic_data/linked_to_user**
+
+Indicates whether your app links any other diagnostic data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_diagnostic_data/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_diagnostic_data/used_for_tracking**
+
+Indicates whether your app uses any other diagnostic data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_financial_info/collected**
+
+Indicates whether your app collects any other financial information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/other_financial_info/collection_purposes**
+
+The reasons your app collects any other financial information. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_financial_info/linked_to_user**
+
+Indicates whether your app links any other financial information to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_financial_info/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_financial_info/used_for_tracking**
+
+Indicates whether your app uses any other financial information for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_usage_data/collected**
+
+Indicates whether your app collects any other usage data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/other_usage_data/collection_purposes**
+
+The reasons your app collects any other usage data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_usage_data/linked_to_user**
+
+Indicates whether your app links any other usage data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_usage_data/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_usage_data/used_for_tracking**
+
+Indicates whether your app uses any other usage data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_user_content/collected**
+
+Indicates whether your app collects any other user generated content.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/other_user_content/collection_purposes**
+
+The reasons your app collects any other user generated content. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_user_content/linked_to_user**
+
+Indicates whether your app links any other user generated content to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/other_user_content/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/other_user_content/used_for_tracking**
+
+Indicates whether your app uses any other user generated content for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/payment_info/collected**
+
+Indicates whether your app collects payment information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/payment_info/collection_purposes**
+
+The reasons your app collects payment information. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/payment_info/linked_to_user**
+
+Indicates whether your app links payment information to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/payment_info/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/payment_info/used_for_tracking**
+
+Indicates whether your app uses payment information for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/performance_data/collected**
+
+Indicates whether your app collects performance data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/performance_data/collection_purposes**
+
+The reasons your app collects performance data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/performance_data/linked_to_user**
+
+Indicates whether your app links performance data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/performance_data/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/performance_data/used_for_tracking**
+
+Indicates whether your app uses performance data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/phone_number/collected**
+
+Indicates whether your app collects phone number.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/phone_number/collection_purposes**
+
+The reasons your app collects phone number. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/phone_number/linked_to_user**
+
+Indicates whether your app links phone number to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/phone_number/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/phone_number/used_for_tracking**
+
+Indicates whether your app uses phone number for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/photos_or_videos/collected**
+
+Indicates whether your app collects photos or videos.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/photos_or_videos/collection_purposes**
+
+The reasons your app collects photos or videos. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/photos_or_videos/linked_to_user**
+
+Indicates whether your app links photos or videos to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/photos_or_videos/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/photos_or_videos/used_for_tracking**
+
+Indicates whether your app uses photos or videos for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/physical_address/collected**
+
+Indicates whether your app collects physical address.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/physical_address/collection_purposes**
+
+The reasons your app collects physical address. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/physical_address/linked_to_user**
+
+Indicates whether your app links physical address to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/physical_address/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/physical_address/used_for_tracking**
+
+Indicates whether your app uses physical address for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/precise_location/collected**
+
+Indicates whether your app collects precise location data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/precise_location/collection_purposes**
+
+The reasons your app collects precise location data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/precise_location/linked_to_user**
+
+Indicates whether your app links precise location data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/precise_location/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/precise_location/used_for_tracking**
+
+Indicates whether your app uses precise location data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/product_interaction/collected**
+
+Indicates whether your app collects product interaction data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/product_interaction/collection_purposes**
+
+The reasons your app collects product interaction data. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/product_interaction/linked_to_user**
+
+Indicates whether your app links product interaction data to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/product_interaction/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/product_interaction/used_for_tracking**
+
+Indicates whether your app uses product interaction data for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/purchase_history/collected**
+
+Indicates whether your app collects purchase history.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/purchase_history/collection_purposes**
+
+The reasons your app collects purchase history. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/purchase_history/linked_to_user**
+
+Indicates whether your app links purchase history to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/purchase_history/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/purchase_history/used_for_tracking**
+
+Indicates whether your app uses purchase history for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/search_hhistory/collected**
+
+Indicates whether your app collects search history.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/search_hhistory/collection_purposes**
+
+The reasons your app collects search history. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/search_hhistory/linked_to_user**
+
+Indicates whether your app links search history to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/search_hhistory/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/search_hhistory/used_for_tracking**
+
+Indicates whether your app uses search history for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/sensitive_info/collected**
+
+Indicates whether your app collects sensitive user information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/sensitive_info/collection_purposes**
+
+The reasons your app collects sensitive user information. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/sensitive_info/linked_to_user**
+
+Indicates whether your app links sensitive user information to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/sensitive_info/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/sensitive_info/used_for_tracking**
+
+Indicates whether your app uses sensitive user information for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/collected:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/user_id/collected**
+
+Indicates whether your app collects user IDs.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/collection_purposes:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/collected_data/user_id/collection_purposes**
+
+The reasons your app collects user IDs. See `Describing data use in privacy manifests <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_data_use_in_privacy_manifests>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/linked_to_user:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/user_id/linked_to_user**
+
+Indicates whether your app links user IDs to the user's identity.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/collected_data/user_id/used_for_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/collected_data/user_id/used_for_tracking**
+
+Indicates whether your app uses user IDs for tracking.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/disk_space_access_reasons:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/disk_space_access_reasons**
+
+The reasons your app use free disk space API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/file_timestamp_access_reasons:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/file_timestamp_access_reasons**
+
+The reasons your app use file timestamp/metadata API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -638,6 +2662,56 @@ A message displayed when requesting access to the user's photo library (in Engli
 :ref:`Dictionary<class_Dictionary>` **privacy/photolibrary_usage_description_localized**
 
 A message displayed when requesting access to the user's photo library (localized).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/system_boot_time_access_reasons:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/system_boot_time_access_reasons**
+
+The reasons your app use system boot time / absolute time API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/tracking_domains:
+
+.. rst-class:: classref-property
+
+:ref:`PackedStringArray<class_PackedStringArray>` **privacy/tracking_domains**
+
+The list of internet domains your app connects to that engage in tracking. See `Privacy manifest files <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files>`__.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/tracking_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **privacy/tracking_enabled**
+
+Indicates whether your app uses data for tracking. See `Privacy manifest files <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_privacy/user_defaults_access_reasons:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **privacy/user_defaults_access_reasons**
+
+The reasons your app use user defaults API. See `Describing use of required reason API <https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api>`__.
 
 .. rst-class:: classref-item-separator
 

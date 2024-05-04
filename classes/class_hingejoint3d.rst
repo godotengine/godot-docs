@@ -122,9 +122,7 @@ The speed with which the rotation across the axis perpendicular to the hinge get
 
 :ref:`Param<enum_HingeJoint3D_Param>` **PARAM_LIMIT_SOFTNESS** = ``4``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+**Deprecated:** This property is never used by the engine and is kept for compatibility purpose.
 
 
 
@@ -282,9 +280,7 @@ The lower this value, the more the rotation gets slowed down.
 - |void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+**Deprecated:** This property is never set by the engine and is kept for compatibility purposes.
 
 .. rst-class:: classref-item-separator
 

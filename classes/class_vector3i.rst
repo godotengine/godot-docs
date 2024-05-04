@@ -81,6 +81,8 @@ Methods
    +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3i<class_Vector3i>` | :ref:`clamp<class_Vector3i_method_clamp>`\ (\ min\: :ref:`Vector3i<class_Vector3i>`, max\: :ref:`Vector3i<class_Vector3i>`\ ) |const| |
    +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3i<class_Vector3i>` | :ref:`clampi<class_Vector3i_method_clampi>`\ (\ min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ ) |const|                   |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`           | :ref:`distance_squared_to<class_Vector3i_method_distance_squared_to>`\ (\ to\: :ref:`Vector3i<class_Vector3i>`\ ) |const|             |
    +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`       | :ref:`distance_to<class_Vector3i_method_distance_to>`\ (\ to\: :ref:`Vector3i<class_Vector3i>`\ ) |const|                             |
@@ -89,13 +91,23 @@ Methods
    +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`           | :ref:`length_squared<class_Vector3i_method_length_squared>`\ (\ ) |const|                                                             |
    +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3i<class_Vector3i>` | :ref:`max<class_Vector3i_method_max>`\ (\ with\: :ref:`Vector3i<class_Vector3i>`\ ) |const|                                           |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`           | :ref:`max_axis_index<class_Vector3i_method_max_axis_index>`\ (\ ) |const|                                                             |
    +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3i<class_Vector3i>` | :ref:`maxi<class_Vector3i_method_maxi>`\ (\ with\: :ref:`int<class_int>`\ ) |const|                                                   |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3i<class_Vector3i>` | :ref:`min<class_Vector3i_method_min>`\ (\ with\: :ref:`Vector3i<class_Vector3i>`\ ) |const|                                           |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`           | :ref:`min_axis_index<class_Vector3i_method_min_axis_index>`\ (\ ) |const|                                                             |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3i<class_Vector3i>` | :ref:`mini<class_Vector3i_method_mini>`\ (\ with\: :ref:`int<class_int>`\ ) |const|                                                   |
    +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3i<class_Vector3i>` | :ref:`sign<class_Vector3i_method_sign>`\ (\ ) |const|                                                                                 |
    +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3i<class_Vector3i>` | :ref:`snapped<class_Vector3i_method_snapped>`\ (\ step\: :ref:`Vector3i<class_Vector3i>`\ ) |const|                                   |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3i<class_Vector3i>` | :ref:`snappedi<class_Vector3i_method_snappedi>`\ (\ step\: :ref:`int<class_int>`\ ) |const|                                           |
    +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
@@ -380,6 +392,18 @@ Returns a new vector with all components clamped between the components of ``min
 
 ----
 
+.. _class_Vector3i_method_clampi:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3i<class_Vector3i>` **clampi**\ (\ min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ ) |const|
+
+Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Vector3i_method_distance_squared_to:
 
 .. rst-class:: classref-method
@@ -432,6 +456,18 @@ This method runs faster than :ref:`length<class_Vector3i_method_length>`, so pre
 
 ----
 
+.. _class_Vector3i_method_max:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3i<class_Vector3i>` **max**\ (\ with\: :ref:`Vector3i<class_Vector3i>`\ ) |const|
+
+Returns the component-wise maximum of this and ``with``, equivalent to ``Vector3i(maxi(x, with.x), maxi(y, with.y), maxi(z, with.z))``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Vector3i_method_max_axis_index:
 
 .. rst-class:: classref-method
@@ -444,6 +480,30 @@ Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all
 
 ----
 
+.. _class_Vector3i_method_maxi:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3i<class_Vector3i>` **maxi**\ (\ with\: :ref:`int<class_int>`\ ) |const|
+
+Returns the component-wise maximum of this and ``with``, equivalent to ``Vector3i(maxi(x, with), maxi(y, with), maxi(z, with))``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector3i_method_min:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3i<class_Vector3i>` **min**\ (\ with\: :ref:`Vector3i<class_Vector3i>`\ ) |const|
+
+Returns the component-wise minimum of this and ``with``, equivalent to ``Vector3i(mini(x, with.x), mini(y, with.y), mini(z, with.z))``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Vector3i_method_min_axis_index:
 
 .. rst-class:: classref-method
@@ -451,6 +511,18 @@ Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all
 :ref:`int<class_int>` **min_axis_index**\ (\ ) |const|
 
 Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_Z<class_Vector3i_constant_AXIS_Z>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector3i_method_mini:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3i<class_Vector3i>` **mini**\ (\ with\: :ref:`int<class_int>`\ ) |const|
+
+Returns the component-wise minimum of this and ``with``, equivalent to ``Vector3i(mini(x, with), mini(y, with), mini(z, with))``.
 
 .. rst-class:: classref-item-separator
 
@@ -475,6 +547,18 @@ Returns a new vector with each component set to ``1`` if it's positive, ``-1`` i
 :ref:`Vector3i<class_Vector3i>` **snapped**\ (\ step\: :ref:`Vector3i<class_Vector3i>`\ ) |const|
 
 Returns a new vector with each component snapped to the closest multiple of the corresponding component in ``step``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector3i_method_snappedi:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3i<class_Vector3i>` **snappedi**\ (\ step\: :ref:`int<class_int>`\ ) |const|
+
+Returns a new vector with each component snapped to the closest multiple of ``step``.
 
 .. rst-class:: classref-section-separator
 
