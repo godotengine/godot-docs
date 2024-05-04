@@ -21,6 +21,8 @@ GLSL 4.00 specification.
     +-----------------+--------------------------------------------------+--------------------------+
     | mat_type        | mat2, mat3, or mat4                              | mat                      |
     +-----------------+--------------------------------------------------+--------------------------+
+    | gvec4_type      | vec4, ivec4, or uvec4                            |                          |
+    +-----------------+--------------------------------------------------+--------------------------+
     | gsampler2D      | sampler2D, isampler2D, uSampler2D                |                          |
     +-----------------+--------------------------------------------------+--------------------------+
     | gsampler2DArray | sampler2DArray, isampler2DArray, uSampler2DArray |                          |
@@ -28,14 +30,25 @@ GLSL 4.00 specification.
     | gsampler3D      | sampler3D, isampler3D, uSampler3D                |                          |
     +-----------------+--------------------------------------------------+--------------------------+
 
-
     If  any of these are specified for multiple parameters, they must all be the same type unless otherwise noted.
 
+.. note::
+    Most operations on vectors (multiplication, division, etc) are performed component-wise.
+    For example, the operation ``vec2(3,4) * vec2(10,20)`` would result in ``vec2(3 * 10, 4 * 20)``.
+    As another exmple, the operation ``min(vec2(3,4), vec2(1,8))`` would result in ``vec2(min(3,1),min(4,8))``.
+
+    The `GLSL Language Specification <http://www.opengl.org/registry/doc/GLSLangSpec.4.30.6.pdf>` says under section 5.10 Vector and Matrix Operations:
+
+        With a few exceptions, operations are component-wise. Usually, when an operator operates on a
+        vector or matrix, it is operating independently on each component of the vector or matrix,
+        in a component-wise fashion. [...] The exceptions are matrix multiplied by vector,
+        vector multiplied by matrix, and matrix multiplied by matrix. These do not operate component-wise,
+        but rather perform the correct linear algebraic multiply.
 
 .. rst-class:: classref-reftable-group
 
 Trigonometric Functions
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------+-------------------------------------------------------------+-----------------------------+
 |    Return Type  |                          Function                           | Description / Return value  |
@@ -402,8 +415,7 @@ vec_type acosh( |vec_type| x)
         The value whose arc hyperbolic cosine to return.
 
     :return:
-        The return value is the arc hyperbolic cosine of ``x`` which is the
-        inverse of cosh.
+        <return_description/>
 
     :rtype: |vec_type|
 
@@ -445,10 +457,10 @@ vec_type atanh( |vec_type| x)
 
 
 Exponential and Common Math Functions
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`pow<shader_func_pow>` ( |vec_type| x, |vec_type| y)                                   | Power (undefined if ``x`` < 0 or if ``x`` == 0 and ``y`` <= 0). |
+| |vec_type|      | :ref:`pow<shader_func_pow>` ( |vec_type| x, |vec_type| y)                                   | Power (undefined if ``x < 0`` or if ``x == 0`` and ``y <= 0``). |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | |vec_type|      | :ref:`exp<shader_func_exp>` ( |vec_type| x)                                                 | Base-e exponential.                                             |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -466,9 +478,9 @@ Exponential and Common Math Functions
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_int_type|  | :ref:`abs<shader_func_abs>` ( |vec_int_type| x)                                             |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`sign<shader_func_sign>` ( |vec_type| x)                                               | Sign (returns ``1.0`` if positive, ``-1.0`` if negative,        |
+| |vec_type|      | :ref:`sign<shader_func_sign>` ( |vec_type| x)                                               | returns ``1.0`` if positive, ``-1.0`` if negative,              |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_int_type|  | :ref:`sign<shader_func_sign>` ( |vec_int_type| x)                                           | Sign (returns ``1`` if positive, ``-1`` if negative,            |
+| |vec_int_type|  | :ref:`sign<shader_func_sign>` ( |vec_int_type| x)                                           | returns ``1`` if positive, ``-1`` if negative,                  |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | |vec_type|      | :ref:`floor<shader_func_floor>` ( |vec_type| x)                                             | Round to the integer below.                                     |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -491,46 +503,46 @@ Exponential and Common Math Functions
 | |vec_type|      | :ref:`min<shader_func_min>` ( |vec_type| a, |vec_type| b)                                   | Lowest value between ``a`` and ``b``.                           |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_type|      | :ref:`min<shader_func_min>` ( |vec_type| a, float b)                                        |                                                                 |
-+-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_int_type|  | :ref:`min<shader_func_min>` ( |vec_int_type| a, |vec_int_type| b)                           | Lowest value between ``a`` and ``b``.                           |
++-----------------+---------------------------------------------------------------------------------------------+                                                                 |
+| |vec_int_type|  | :ref:`min<shader_func_min>` ( |vec_int_type| a, |vec_int_type| b)                           |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_int_type|  | :ref:`min<shader_func_min>` ( |vec_int_type| a, int b)                                      |                                                                 |
-+-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_uint_type| | :ref:`min<shader_func_min>` ( |vec_uint_type| a, |vec_uint_type| b)                         | Lowest value between ``a`` and ``b``.                           |
++-----------------+---------------------------------------------------------------------------------------------+                                                                 |
+| |vec_uint_type| | :ref:`min<shader_func_min>` ( |vec_uint_type| a, |vec_uint_type| b)                         |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_uint_type| | :ref:`min<shader_func_min>` ( |vec_uint_type| a, uint b)                                    |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | |vec_type|      | :ref:`max<shader_func_max>` ( |vec_type| a, |vec_type| b)                                   | Highest value between ``a`` and ``b``.                          |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_type|      | :ref:`max<shader_func_max>` ( |vec_type| a, float b)                                        |                                                                 |
-+-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_uint_type| | :ref:`max<shader_func_max>` ( |vec_uint_type| a, |vec_uint_type| b)                         | Highest value between ``a`` and ``b``.                          |
++-----------------+---------------------------------------------------------------------------------------------+                                                                 |
+| |vec_uint_type| | :ref:`max<shader_func_max>` ( |vec_uint_type| a, |vec_uint_type| b)                         |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_uint_type| | :ref:`max<shader_func_max>` ( |vec_uint_type| a, uint b)                                    |                                                                 |
-+-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_int_type|  | :ref:`max<shader_func_max>` ( |vec_int_type| a, |vec_int_type| b)                           | Highest value between ``a`` and ``b``.                          |
++-----------------+---------------------------------------------------------------------------------------------+                                                                 |
+| |vec_int_type|  | :ref:`max<shader_func_max>` ( |vec_int_type| a, |vec_int_type| b)                           |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_int_type|  | :ref:`max<shader_func_max>` ( |vec_int_type| a, int b)                                      |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | |vec_type|      | :ref:`clamp<shader_func_clamp>` (vecType x, |vec_type| min, |vec_type| max)                 | Clamp ``x`` between ``min`` and ``max`` (inclusive).            |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_type|      | :ref:`clamp<shader_func_clamp>` ( |vec_type| x, float min, float max)                       |                                                                 |
-+-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_uint_type| | :ref:`clamp<shader_func_clamp>` ( |vec_int_type| x, |vec_int_type| min, |vec_int_type| max) | Clamp ``x`` between ``min`` and ``max`` (inclusive).            |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_uint_type| | ref:`clamp<shader_func_clamp>` ( |vec_int_type| x, float min, float max)                    |                                                                 |
-+-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_int_type|  | :ref:`clamp<shader_func_clamp>` (vecType x, |vec_type| min, |vec_type| max)                 | Clamp ``x`` between ``min`` and ``max`` (inclusive).            |
+| |vec_uint_type| | :ref:`clamp<shader_func_clamp>` ( |vec_int_type| x, |vec_int_type| min, |vec_int_type| max) |                                                                 |
++-----------------+---------------------------------------------------------------------------------------------+                                                                 |
+| |vec_uint_type| | :ref:`clamp<shader_func_clamp>` ( |vec_int_type| x, float min, float max)                   |                                                                 |
++-----------------+---------------------------------------------------------------------------------------------+                                                                 |
+| |vec_int_type|  | :ref:`clamp<shader_func_clamp>` (vecType x, |vec_type| min, |vec_type| max)                 |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_int_type|  | :ref:`clamp<shader_func_clamp>` ( |vec_type| x, float min, float max)                       |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | float           | :ref:`mix<shader_func_mix>` (float a, float b, float c)                                     | Linear interpolate between ``a`` and ``b`` by ``c``.            |
-+-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`mix<shader_func_mix>` (vecType a, |vec_type| b, float c)                              | Linear interpolate between ``a`` and ``b`` by ``c``.            |
++-----------------+---------------------------------------------------------------------------------------------+                                                                 |
+| |vec_type|      | :ref:`mix<shader_func_mix>` (vecType a, |vec_type| b, float c)                              |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_type|      | :ref:`mix<shader_func_mix>` (vecType a, |vec_type| b, |vec_type| c)                         |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_type|      |     :ref:`mix<shader_func_mix>` (vecType a, |vec_type| b, |vec_bool_type| c)                |                                                                 |
+| |vec_type|      | :ref:`mix<shader_func_mix>` (vecType a, |vec_type| b, |vec_bool_type| c)                    |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | |vec_type|      | :ref:`fma<shader_func_fma>` (vecType a, |vec_type| b, |vec_type| c)                         | Fused multiply-add operation: ``(a * b + c)``                   |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -560,11 +572,1471 @@ Exponential and Common Math Functions
 ----
 
 
+.. _shader_func_pow:
+
+.. rst-class:: classref-method
+
+
+vec_type pow( |vec_type| x, |vec_type| y)
+
+    Raises ``x`` to the power of ``y``.
+
+    The result is undefined if ``x < 0`` or  if ``x == 0`` and ``y <= 0``.
+
+    :param x:
+        The value to be raised to the power ``y``.
+
+    :param y:
+        The power to which ``x`` will be raised.
+
+    :return:
+        Returns the value of ``x`` raised to the ``y`` power.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/pow.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+.. _shader_func_exp:
+
+.. rst-class:: classref-method
+
+|vec_type| **exp** ( |vec_type| x )
+
+    Return the natural exponentiation of the parameter.
+
+    :param x:
+        The value to exponentiate.
+
+    :return:
+        The natural exponentiation of x. i.e., e\ :sup:`x`
+
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_exp2:
+
+.. rst-class:: classref-method
+
+|vec_type| **exp2** ( |vec_type| x )
+
+    Return 2 raised to the power of the parameter.
+
+    :param x:
+        The value of the power to which 2 will be raised.
+
+    :return:
+        2 raised to the power of x. i.e., 2\ :sup:`x`
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp2.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_log:
+
+.. rst-class:: classref-method
+
+|vec_type| **log** ( |vec_type| x )
+
+    Return the natural logarithm of the parameter, i.e. the value y which satisfies x=e\ :sup:`y`.
+    The result is undefined if x ≤ 0.
+
+    :param x:
+        The value of which to take the natural logarithm.
+
+    :return:
+        the natural logarithm of x,
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/log.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_log2:
+
+.. rst-class:: classref-method
+
+|vec_type| **log2** ( |vec_type| x )
+
+    Return the base 2 logarithm of the parameter.
+    The result is undefined if x ≤ 0.
+
+    :param x:
+        the value of which to take the base 2 logarithm.
+
+    :return:
+        the base 2 logarithm of x, i.e. the value y which satisfies x=2\ :sup:`y`
+
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/log2.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_sqrt:
+
+.. rst-class:: classref-method
+
+|vec_type| **sqrt** ( |vec_type| x )
+
+    Returns the square root of x.
+    The result is undefined if x < 0.
+
+    :param x:
+        the value of which to take the square root.
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sqrt.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_inversesqrt:
+
+.. rst-class:: classref-method
+
+|vec_type| **inversesqrt** ( |vec_type| x )
+
+    Returns the inverse of the square root of x.
+    The result is undefined if x ≤ 0.
+
+
+    :param x:
+        The value of which to take the inverse of the square root.
+
+    :return:
+        The inverse of the square root of the parameter.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/inversesqrt.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_abs:
+
+.. rst-class:: classref-method
+
+|vec_type| **abs** ( |vec_type| x )
+
+    Returns the absolute value of x. Returns X if X is positive or X * -1 if X is negative.
+
+    :param x:
+        the value of which to return the absolute.
+
+    :return:
+        the absolute value of x
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/abs.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_int_type| **abs** ( |vec_int_type| x )
+
+    Returns the absolute value of x. Returns X if X is positive or X * -1 if X is negative.
+
+    :param x:
+        the value of which to return the absolute.
+
+    :return:
+        the absolute value of x
+
+    :rtype: |vec_int_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/abs.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_sign:
+
+.. rst-class:: classref-method
+
+|vec_type| **sign** ( |vec_type| x )
+
+    Returns -1.0 if x is less than 0.0, 0.0 if x is equal to 0.0, and +1.0 if x is greater than 0.0.
+
+    :param x:
+        the value from which to extract the sign.
+
+    :return:
+        1, -1 or 0.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sign.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+.. rst-class:: classref-method
+
+|vec_int_type| **sign** ( |vec_int_type| x )
+
+    Returns -1.0 if x is less than 0.0, 0.0 if x is equal to 0.0, and +1.0 if x is greater than 0.0.
+
+    :param x:
+        the value from which to extract the sign.
+
+    :return:
+        1, -1 or 0.
+
+    :rtype: |vec_int_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sign.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_floor:
+
+.. rst-class:: classref-method
+
+|vec_type| **floor** ( |vec_type| x )
+
+    Returns a value equal to the nearest integer that is less than or equal to x.
+
+    :param x:
+        the value to evaluate.
+
+    :return:
+        the nearest integer that is less than or equal to x.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floor.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_round:
+
+.. rst-class:: classref-method
+
+|vec_type| **round** ( |vec_type| x )
+
+    Returns a value equal to the nearest integer to x.
+
+    The fraction 0.5 will round in a direction chosen by the implementation, presumably the direction
+    that is fastest. This includes the possibility that round(x) returns the same value as roundEven(x)
+    for all values of x.
+
+    :param x:
+        the value to evaluate.
+
+    :return:
+        the rounded value.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/round.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_roundEven:
+
+.. rst-class:: classref-method
+
+|vec_type| **roundEven** ( |vec_type| x )
+
+    returns a value equal to the nearest integer to x.
+
+    The fractional part of 0.5 will round toward the nearest even integer.
+    For example, both 3.5 and 4.5 will round to 4.0.
+
+    :param x:
+        the value to evaluate.
+
+    :return:
+        the rounded value.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/roundEven.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_trunc:
+
+.. rst-class:: classref-method
+
+|vec_type| **trunc** ( |vec_type| x )
+
+    Returns a value equal to the nearest integer to x whose absolute value is not larger than the absolute value of x.
+
+    :param x:
+        the value to evaluate.
+
+    :return:
+        the truncated value.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/trunc.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_ceil:
+
+.. rst-class:: classref-method
+
+|vec_type| **ceil** ( |vec_type| x )
+
+    Returns a value equal to the nearest integer that is greater than or equal to x.
+
+    :param x:
+        the value to evaluate.
+
+    :return:
+        the ceiling-ed value.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/ceil.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_fract:
+
+.. rst-class:: classref-method
+
+|vec_type| **fract** ( |vec_type| x )
+
+    Returns the fractional part of x.
+
+    This is calculated as x - floor(x).
+
+    :param x:
+        the value to evaluate.
+
+    :return:
+        the fraction part of x.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fract.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_mod:
+
+.. rst-class:: classref-method
+
+|vec_type| **mod** ( |vec_type| x, |vec_type| y )
+
+    Returns the value of ``x modulo y``.
+    This is also sometimes called the remainder.
+
+    This is computed as ``x - y * floor(x/y)``.
+
+    :param x:
+        the value to evaluate.
+
+    :return:
+        the value of ``x modulo y``.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_type| **mod** ( |vec_type| x, float y )
+
+    Returns the value of ``x modulo y``.
+    This is also sometimes called the remainder.
+
+    This is computed as ``x - y * floor(x/y)``.
+
+    :param x:
+        the value to evaluate.
+
+    :return:
+        the value of ``x modulo y``.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_modf:
+
+.. rst-class:: classref-method
+
+|vec_type| **modf** ( vecType x, out |vec_type| i )
+
+    Separates a floating point value x into its integer and fractional parts.
+
+    The fractional part of the number is returned from the function.
+    The integer part (as a floating point quantity) is returned in the output parameter i.
+
+    :param x:
+        the value to separate.
+
+    :param out i:
+        a variable that receives the integer part of the argument.
+
+    :return:
+        the fractional part of the number.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/modf.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_min:
+
+.. rst-class:: classref-method
+
+|vec_type| **min** ( |vec_type| a, |vec_type| b )
+
+    Returns the minimum of the two parameters.
+
+    It returns y if y is less than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the minimum of the two parameters.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_type| **min** ( |vec_type| a, float b )
+
+    Returns the minimum of the two parameters.
+
+    It returns y if y is less than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the minimum of the two parameters.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+.. rst-class:: classref-method
+
+|vec_int_type| **min** ( |vec_int_type| a, |vec_int_type| b )
+
+    Returns the minimum of the two parameters.
+
+    It returns y if y is less than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the minimum of the two parameters.
+
+    :rtype: |vec_int_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+.. rst-class:: classref-method
+
+|vec_int_type| **min** ( |vec_int_type| a, int b )
+
+    Returns the minimum of the two parameters.
+
+    It returns y if y is less than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the minimum of the two parameters.
+
+    :rtype: |vec_int_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **min** ( |vec_uint_type| a, |vec_uint_type| b )
+
+    Returns the minimum of the two parameters.
+
+    It returns y if y is less than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the minimum of the two parameters.
+
+    :rtype: |vec_uint_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **min** ( |vec_uint_type| a, uint b )
+
+    Returns the minimum of the two parameters.
+
+    It returns y if y is less than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the minimum of the two parameters.
+
+    :rtype: |vec_uint_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_max:
+
+.. rst-class:: classref-method
+
+|vec_type| **max** ( |vec_type| a, |vec_type| b )
+
+    Returns the maximum of the two parameters.
+
+    It returns y if y is greater than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the maximum value.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+.. rst-class:: classref-method
+
+|vec_type| **max** ( |vec_type| a, float b )
+
+    Returns the maximum of the two parameters.
+
+    It returns y if y is greater than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the maximum value.
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **max** ( |vec_uint_type| a, |vec_uint_type| b )
+
+    Returns the maximum of the two parameters.
+
+    It returns y if y is greater than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the maximum value.
+
+    :rtype: |vec_uint_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **max** ( |vec_uint_type| a, uint b )
+
+    Returns the maximum of the two parameters.
+
+    It returns y if y is greater than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the maximum value.
+
+    :rtype: |vec_uint_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+.. rst-class:: classref-method
+
+|vec_int_type| **max** ( |vec_int_type| a, |vec_int_type| b )
+
+    Returns the maximum of the two parameters.
+
+    It returns y if y is greater than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the maximum value.
+
+    :rtype: |vec_int_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_int_type| **max** ( |vec_int_type| a, int b )
+
+    Returns the maximum of the two parameters.
+
+    It returns y if y is greater than x, otherwise it returns x.
+
+    :param a:
+        the first value to compare.
+
+    :param b:
+        the second value to compare.
+
+    :return:
+        the maximum value.
+
+    :rtype: |vec_int_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_clamp:
+
+.. rst-class:: classref-method
+
+|vec_type| **clamp** ( vecType x, |vec_type| min, |vec_type| max )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param min:
+        <param_description/>
+
+    :param max:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_type| **clamp** ( |vec_type| x, float min, float max )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param min:
+        <param_description/>
+
+    :param max:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **clamp** ( |vec_int_type| x, |vec_int_type| min, |vec_int_type| max )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param min:
+        <param_description/>
+
+    :param max:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_uint_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **clamp** ( |vec_int_type| x, float min, float max )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param min:
+        <param_description/>
+
+    :param max:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_uint_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_int_type| **clamp** ( vecType x, |vec_type| min, |vec_type| max )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param min:
+        <param_description/>
+
+    :param max:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_int_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_int_type| **clamp** ( |vec_type| x, float min, float max )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param min:
+        <param_description/>
+
+    :param max:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_int_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_mix:
+
+.. rst-class:: classref-method
+
+float **mix** ( float a, float b, float c )
+
+    <description/>
+
+    :param a:
+        <param_description/>
+
+    :param b:
+        <param_description/>
+
+    :param c:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: float
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_type| **mix** ( vecType a, |vec_type| b, float c )
+
+    <description/>
+
+    :param a:
+        <param_description/>
+
+    :param b:
+        <param_description/>
+
+    :param c:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_type| **mix** ( vecType a, |vec_type| b, |vec_type| c )
+
+    <description/>
+
+    :param a:
+        <param_description/>
+
+    :param b:
+        <param_description/>
+
+    :param c:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_type| **mix** ( vecType a, |vec_type| b, |vec_bool_type| c )
+
+    <description/>
+
+    :param a:
+        <param_description/>
+
+    :param b:
+        <param_description/>
+
+    :param c:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_fma:
+
+.. rst-class:: classref-method
+
+|vec_type| **fma** ( vecType a, |vec_type| b, |vec_type| c )
+
+    <description/>
+
+    :param a:
+        <param_description/>
+
+    :param b:
+        <param_description/>
+
+    :param c:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fma.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_step:
+
+.. rst-class:: classref-method
+
+|vec_type| **step** ( |vec_type| a, |vec_type| b )
+
+    <description/>
+
+    :param a:
+        <param_description/>
+
+    :param b:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/step.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_type| **step** ( float a, |vec_type| b )
+
+    <description/>
+
+    :param a:
+        <param_description/>
+
+    :param b:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/step.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_smoothstep:
+
+.. rst-class:: classref-method
+
+|vec_type| **smoothstep** ( vecType a, |vec_type| b, |vec_type| c )
+
+    <description/>
+
+    :param a:
+        <param_description/>
+
+    :param b:
+        <param_description/>
+
+    :param c:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/smoothstep.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_type| **smoothstep** ( float a, float b, |vec_type| c )
+
+    <description/>
+
+    :param a:
+        <param_description/>
+
+    :param b:
+        <param_description/>
+
+    :param c:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/smoothstep.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_isnan:
+
+.. rst-class:: classref-method
+
+|vec_bool_type| **isnan** ( |vec_type| x )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_bool_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/isnan.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_isinf:
+
+.. rst-class:: classref-method
+
+|vec_bool_type| **isinf** ( |vec_type| x )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_bool_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/isinf.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_floatBitsToInt:
+
+.. rst-class:: classref-method
+
+|vec_int_type| **floatBitsToInt** ( |vec_type| x )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_int_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToInt.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_floatBitsToUint:
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **floatBitsToUint** ( |vec_type| x )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_uint_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToUint.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_intBitsToFloat:
+
+.. rst-class:: classref-method
+
+|vec_type| **intBitsToFloat** ( |vec_int_type| x )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/intBitsToFloat.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_uintBitsToFloat:
+
+.. rst-class:: classref-method
+
+|vec_type| **uintBitsToFloat** ( |vec_uint_type| x )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    :rtype: |vec_type|
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/uintBitsToFloat.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
 
 
 
 Geometric Functions
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^
 
 +------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
 | float      | :ref:`length<shader_func_length>` ( |vec_type| x)                                      | Vector length.                                           |
@@ -600,7 +2072,7 @@ Geometric Functions
 
 
 Comparison Functions
--------------------------
+^^^^^^^^^^^^^^^^^^^^
 
 +-----------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | |vec_bool_type| | :ref:`lessThan<shader_func_lessThan>` ( |vec_type| x, |vec_type| y)                 | Bool vector comparison on < int/uint/float vectors.           |
@@ -629,7 +2101,7 @@ Comparison Functions
 
 
 Texture Functions
-------------------------------------------
+^^^^^^^^^^^^^^^^^
 
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec2        | :ref:`textureSize<shader_func_textureSize>` ( |gsampler2D| s, int lod)                              | Get the size of a texture.                                          |
@@ -772,27 +2244,32 @@ Texture Functions
 
 
 Packing/Unpacking Functions
-------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
 | uint | :ref:`packHalf2x16<shader_func_packHalf2x16>` (vec2 v)       | Convert two 32-bit floating-point numbers into 16-bit        |
 |      |                                                              | and pack them into a 32-bit unsigned integer and vice-versa. |
++------+--------------------------------------------------------------+                                                              +
 | vec2 | :ref:`unpackHalf2x16<shader_func_unpackHalf2x16>` (uint v)   |                                                              |
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
 | uint | :ref:`packUnorm2x16<shader_func_packUnorm2x16>` (vec2 v)     | Convert two 32-bit floating-point numbers (clamped           |
 |      |                                                              | within 0..1 range) into 16-bit and pack them                 |
++------+--------------------------------------------------------------+                                                              +
 | vec2 | :ref:`unpackUnorm2x16<shader_func_unpackUnorm2x16>` (uint v) | into a 32-bit unsigned integer and vice-versa.               |
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
 | uint | :ref:`packSnorm2x16<shader_func_packSnorm2x16>` (vec2 v)     | Convert two 32-bit floating-point numbers (clamped           |
 |      |                                                              | within -1..1 range) into 16-bit and pack them                |
++------+--------------------------------------------------------------+                                                              +
 | vec2 | :ref:`unpackSnorm2x16<shader_func_unpackSnorm2x16>` (uint v) | into a 32-bit unsigned integer and vice-versa.               |
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
 | uint | :ref:`packUnorm4x8<shader_func_packUnorm4x8>` (vec4 v)       | Convert four 32-bit floating-point numbers (clamped          |
 |      |                                                              | within 0..1 range) into 8-bit and pack them                  |
++------+--------------------------------------------------------------+                                                              +
 | vec4 | :ref:`unpackUnorm4x8<shader_func_unpackUnorm4x8>` (uint v)   | into a 32-bit unsigned integer and vice-versa.               |
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
 | uint | :ref:`packSnorm4x8<shader_func_packSnorm4x8>` (vec4 v)       | Convert four 32-bit floating-point numbers (clamped          |
 |      |                                                              | within -1..1 range) into 8-bit and pack them                 |
++------+--------------------------------------------------------------+                                                              +
 | vec4 | :ref:`unpackSnorm4x8<shader_func_unpackSnorm4x8>` (uint v)   | into a 32-bit unsigned integer and vice-versa.               |
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
 
@@ -804,48 +2281,48 @@ Packing/Unpacking Functions
 
 
 Bitwise operations
-------------------------------------------
+^^^^^^^^^^^^^^^^^^
 
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`bitfieldExtract<shader_func_bitfieldExtract>` ( |vec_int_type| value, int offset, int bits)                                                    | Extracts a range of bits from an integer.                           |
-|                 |                                                                                                                                                      |                                                                     |
-| |vec_uint_type| | :ref:`bitfieldExtract<shader_func_bitfieldExtract>` ( |vec_uint_type| value, int offset, int bits)                                                   |                                                                     |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` ( |vec_int_type| base, |vec_int_type| insert,                                                      | Insert a range of bits into an integer.                             |
-|                 | int offset, int bits)                                                                                                                                |                                                                     |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
-| |vec_uint_type| | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` (|vec_uint_type| base, |vec_uint_type| insert, int offset,                                         |                                                                     |
-|                 | int bits)                                                                                                                                            |                                                                     |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`bitfieldReverse<shader_func_bitfieldReverse>` ( |vec_int_type| value)                                                                          | Reverse the order of bits in an integer.                            |
-|                 |                                                                                                                                                      |                                                                     |
-| |vec_uint_type| | :ref:`bitfieldReverse<shader_func_bitfieldReverse>` ( |vec_uint_type| value)                                                                         |                                                                     |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`bitCount<shader_func_bitCount>` ( |vec_int_type| value)                                                                                        | Counts the number of 1 bits in an integer.                          |
-|                 |                                                                                                                                                      |                                                                     |
-| |vec_uint_type| | :ref:`bitCount<shader_func_bitCount>` ( |vec_uint_type| value)                                                                                       |                                                                     |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`findLSB<shader_func_findLSB>` ( |vec_int_type| value)                                                                                          | Find the index of the least significant bit set to 1 in an integer. |
-|                 |                                                                                                                                                      |                                                                     |
-| |vec_uint_type| | :ref:`findLSB<shader_func_findLSB>` ( |vec_uint_type| value)                                                                                         |                                                                     |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`findMSB<shader_func_findMSB>` ( |vec_int_type| value)                                                                                          | Find the index of the most significant bit set to 1 in an integer.  |
-|                 |                                                                                                                                                      |                                                                     |
-| |vec_uint_type| | :ref:`findMSB<shader_func_findMSB>` ( |vec_uint_type| value)                                                                                         |                                                                     |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |void|          | :ref:`imulExtended<shader_func_imulExtended>` ( |vec_int_type| x, |vec_int_type| y,out |vec_int_type| msb, out |vec_int_type| lsb)                   | Multiplies two 32-bit numbers and produce a 64-bit result.          |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
-| |void|          | :ref:`umulExtended<shader_func_umulExtended>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| msb, out |vec_uint_type| lsb)               |                                                                     |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_uint_type| | :ref:`uaddCarry<shader_func_uaddCarry>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| carry)                                            | Adds two unsigned integers and generates carry.                     |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_uint_type| | :ref:`usubBorrow<shader_func_usubBorrow>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| borrow)                                         | Subtracts two unsigned integers and generates borrow.               |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|      | :ref:`ldexp<shader_func_ldexp>` (vecType x, out |vec_int_type| exp)                                                                                  | Assemble a floating-point number from a value and exponent.         |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|      | :ref:`frexp<shader_func_frexp>` (vecType x, out |vec_int_type| exp)                                                                                  | Splits a floating-point number (``x``) into significand integral    |
-|                 |                                                                                                                                                      | components                                                          |
-+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| |vec_int_type|  | :ref:`bitfieldExtract<shader_func_bitfieldExtract>` ( |vec_int_type| value, int offset, int bits)                                      | Extracts a range of bits from an integer.                           |
+|                 |                                                                                                                                        |                                                                     |
+| |vec_uint_type| | :ref:`bitfieldExtract<shader_func_bitfieldExtract>` ( |vec_uint_type| value, int offset, int bits)                                     |                                                                     |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| |vec_int_type|  | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` ( |vec_int_type| base, |vec_int_type| insert,                                        | Insert a range of bits into an integer.                             |
+|                 | int offset, int bits)                                                                                                                  |                                                                     |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
+| |vec_uint_type| | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` (|vec_uint_type| base, |vec_uint_type| insert, int offset,                           |                                                                     |
+|                 | int bits)                                                                                                                              |                                                                     |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| |vec_int_type|  | :ref:`bitfieldReverse<shader_func_bitfieldReverse>` ( |vec_int_type| value)                                                            | Reverse the order of bits in an integer.                            |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
+| |vec_uint_type| | :ref:`bitfieldReverse<shader_func_bitfieldReverse>` ( |vec_uint_type| value)                                                           |                                                                     |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| |vec_int_type|  | :ref:`bitCount<shader_func_bitCount>` ( |vec_int_type| value)                                                                          | Counts the number of 1 bits in an integer.                          |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
+| |vec_uint_type| | :ref:`bitCount<shader_func_bitCount>` ( |vec_uint_type| value)                                                                         |                                                                     |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| |vec_int_type|  | :ref:`findLSB<shader_func_findLSB>` ( |vec_int_type| value)                                                                            | Find the index of the least significant bit set to 1 in an integer. |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
+| |vec_uint_type| | :ref:`findLSB<shader_func_findLSB>` ( |vec_uint_type| value)                                                                           |                                                                     |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| |vec_int_type|  | :ref:`findMSB<shader_func_findMSB>` ( |vec_int_type| value)                                                                            | Find the index of the most significant bit set to 1 in an integer.  |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
+| |vec_uint_type| | :ref:`findMSB<shader_func_findMSB>` ( |vec_uint_type| value)                                                                           |                                                                     |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| |void|          | :ref:`imulExtended<shader_func_imulExtended>` ( |vec_int_type| x, |vec_int_type| y,out |vec_int_type| msb, out |vec_int_type| lsb)     | Multiplies two 32-bit numbers and produce a 64-bit result.          |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
+| |void|          | :ref:`umulExtended<shader_func_umulExtended>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| msb, out |vec_uint_type| lsb) |                                                                     |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| |vec_uint_type| | :ref:`uaddCarry<shader_func_uaddCarry>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| carry)                              | Adds two unsigned integers and generates carry.                     |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| |vec_uint_type| | :ref:`usubBorrow<shader_func_usubBorrow>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| borrow)                           | Subtracts two unsigned integers and generates borrow.               |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| |vec_type|      | :ref:`ldexp<shader_func_ldexp>` (vecType x, out |vec_int_type| exp)                                                                    | Assemble a floating-point number from a value and exponent.         |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+| |vec_type|      | :ref:`frexp<shader_func_frexp>` (vecType x, out |vec_int_type| exp)                                                                    | Splits a floating-point number (``x``) into significand integral    |
+|                 |                                                                                                                                        | components                                                          |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 
 .. rst-class:: classref-section-separator
@@ -853,24 +2330,6 @@ Bitwise operations
 ----
 
 
-vec_type pow( |vec_type| x, |vec_type| y)
-
-    Raises ``x`` to the power of ``y``.
-
-    The result is undefined if ``x < 0`` or  if ``x == 0`` and ``y <= 0``.
-
-    :param x:
-        The value to be raised to the power ``y``.
-
-    :param y:
-        The power to which ``x`` will be raised.
-
-    :return:
-        Returns the value of ``x`` raised to the ``y`` power.
-
-    :rtype: |vec_type|
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/pow.xhtml
 
 .. |void| replace:: :abbr:`void (No return value.)`
 .. |vec_type| replace:: :abbr:`vec_type (Any of: float, vec2, vec3, vec4)`
@@ -881,3 +2340,4 @@ vec_type pow( |vec_type| x, |vec_type| y)
 .. |gsampler2DArray| replace:: :abbr:`gsampler2DArray (Any of: sampler2DArray, isampler2DArray, uSampler2DArray)`
 .. |gsampler3D| replace:: :abbr:`gsampler3D (Any of: sampler3D, isampler3D, uSampler3D)`
 .. |mat_type| replace:: :abbr:`mat_type (Any of: mat2, mat3, mat4)`
+.. |gvec4_type| replace:: :abbr:`gvec4_type (Any of: vec4, ivec4, uvec4)`
