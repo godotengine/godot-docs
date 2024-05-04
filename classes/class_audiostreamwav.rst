@@ -105,6 +105,14 @@ enum **Format**:
 
 Audio is compressed using IMA ADPCM.
 
+.. _class_AudioStreamWAV_constant_FORMAT_QOA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_AudioStreamWAV_Format>` **FORMAT_QOA** = ``3``
+
+Audio is compressed as QOA (`Quite OK Audio <https://qoaformat.org/>`__).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -294,7 +302,7 @@ Method Descriptions
 
 :ref:`Error<enum_@GlobalScope_Error>` **save_to_wav**\ (\ path\: :ref:`String<class_String>`\ )
 
-Saves the AudioStreamWAV as a WAV file to ``path``. Samples with IMA ADPCM format can't be saved.
+Saves the AudioStreamWAV as a WAV file to ``path``. Samples with IMA ADPCM or QOA formats can't be saved.
 
 \ **Note:** A ``.wav`` extension is automatically appended to ``path`` if it is missing.
 

@@ -1599,6 +1599,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/eye_gaze_interaction<class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction>`                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_interaction_profile<class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile>`                                                                         | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                         | ``"0"``                                                                                          |
@@ -2074,7 +2076,7 @@ This setting can be overridden using the ``--frame-delay <ms;>`` command line ar
 
 :ref:`bool<class_bool>` **application/run/low_processor_mode** = ``false``
 
-If ``true``, enables low-processor usage mode. This setting only works on desktop platforms. The screen is not redrawn if nothing changes visually. This is meant for writing applications and editors, but is pretty useless (and can hurt performance) in most games.
+If ``true``, enables low-processor usage mode. The screen is not redrawn if nothing changes visually. This is meant for writing applications and editors, but is pretty useless (and can hurt performance) in most games.
 
 .. rst-class:: classref-item-separator
 
@@ -11706,6 +11708,18 @@ Specify how OpenXR should blend in the environment. This is specific to certain 
 :ref:`bool<class_bool>` **xr/openxr/extensions/eye_gaze_interaction** = ``false``
 
 Specify whether to enable eye tracking for this project. Depending on the platform, additional export configuration may be needed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_interaction_profile** = ``false``
+
+If true the hand interaction profile extension will be activated if supported by the platform.
 
 .. rst-class:: classref-item-separator
 

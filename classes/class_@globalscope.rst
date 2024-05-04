@@ -4514,11 +4514,19 @@ Variable is of type :ref:`PackedVector3Array<class_PackedVector3Array>`.
 
 Variable is of type :ref:`PackedColorArray<class_PackedColorArray>`.
 
+.. _class_@GlobalScope_constant_TYPE_PACKED_VECTOR4_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_PACKED_VECTOR4_ARRAY** = ``38``
+
+Variable is of type :ref:`PackedVector4Array<class_PackedVector4Array>`.
+
 .. _class_@GlobalScope_constant_TYPE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_MAX** = ``38``
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_MAX** = ``39``
 
 Represents the size of the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` enum.
 
@@ -6064,7 +6072,7 @@ Returns ``true``, for value types, if ``a`` and ``b`` share the same value. Retu
 
 These are :ref:`Variant<class_Variant>` value types: ``null``, :ref:`bool<class_bool>`, :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`String<class_String>`, :ref:`StringName<class_StringName>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`, :ref:`Rect2<class_Rect2>`, :ref:`Rect2i<class_Rect2i>`, :ref:`Transform2D<class_Transform2D>`, :ref:`Transform3D<class_Transform3D>`, :ref:`Plane<class_Plane>`, :ref:`Quaternion<class_Quaternion>`, :ref:`AABB<class_AABB>`, :ref:`Basis<class_Basis>`, :ref:`Projection<class_Projection>`, :ref:`Color<class_Color>`, :ref:`NodePath<class_NodePath>`, :ref:`RID<class_RID>`, :ref:`Callable<class_Callable>` and :ref:`Signal<class_Signal>`.
 
-These are :ref:`Variant<class_Variant>` reference types: :ref:`Object<class_Object>`, :ref:`Dictionary<class_Dictionary>`, :ref:`Array<class_Array>`, :ref:`PackedByteArray<class_PackedByteArray>`, :ref:`PackedInt32Array<class_PackedInt32Array>`, :ref:`PackedInt64Array<class_PackedInt64Array>`, :ref:`PackedFloat32Array<class_PackedFloat32Array>`, :ref:`PackedFloat64Array<class_PackedFloat64Array>`, :ref:`PackedStringArray<class_PackedStringArray>`, :ref:`PackedVector2Array<class_PackedVector2Array>`, :ref:`PackedVector3Array<class_PackedVector3Array>` and :ref:`PackedColorArray<class_PackedColorArray>`.
+These are :ref:`Variant<class_Variant>` reference types: :ref:`Object<class_Object>`, :ref:`Dictionary<class_Dictionary>`, :ref:`Array<class_Array>`, :ref:`PackedByteArray<class_PackedByteArray>`, :ref:`PackedInt32Array<class_PackedInt32Array>`, :ref:`PackedInt64Array<class_PackedInt64Array>`, :ref:`PackedFloat32Array<class_PackedFloat32Array>`, :ref:`PackedFloat64Array<class_PackedFloat64Array>`, :ref:`PackedStringArray<class_PackedStringArray>`, :ref:`PackedVector2Array<class_PackedVector2Array>`, :ref:`PackedVector3Array<class_PackedVector3Array>`, :ref:`PackedVector4Array<class_PackedVector4Array>`, and :ref:`PackedColorArray<class_PackedColorArray>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6203,6 +6211,8 @@ Returns the maximum of the given numeric values. This function can take any numb
 
     max(1, 7, 3, -6, 5) # Returns 7
 
+\ **Note:** When using this on vectors it will *not* perform component-wise maximum, and will pick the largest value when compared using ``x < y``. To perform component-wise maximum, use :ref:`Vector2.max<class_Vector2_method_max>`, :ref:`Vector2i.max<class_Vector2i_method_max>`, :ref:`Vector3.max<class_Vector3_method_max>`, :ref:`Vector3i.max<class_Vector3i_method_max>`, :ref:`Vector4.max<class_Vector4_method_max>`, and :ref:`Vector4i.max<class_Vector4i_method_max>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -6252,6 +6262,8 @@ Returns the minimum of the given numeric values. This function can take any numb
 ::
 
     min(1, 7, 3, -6, 5) # Returns -6
+
+\ **Note:** When using this on vectors it will *not* perform component-wise minimum, and will pick the smallest value when compared using ``x < y``. To perform component-wise minimum, use :ref:`Vector2.min<class_Vector2_method_min>`, :ref:`Vector2i.min<class_Vector2i_method_min>`, :ref:`Vector3.min<class_Vector3_method_min>`, :ref:`Vector3i.min<class_Vector3i_method_min>`, :ref:`Vector4.min<class_Vector4_method_min>`, and :ref:`Vector4i.min<class_Vector4i_method_min>`.
 
 .. rst-class:: classref-item-separator
 

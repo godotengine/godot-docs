@@ -208,7 +208,7 @@ Property Descriptions
 
 A dictionary representation of the scene contents.
 
-Available keys include "rnames" and "variants" for resources, "node_count", "nodes", "node_paths" for nodes, "editable_instances" for paths to overridden nodes, "conn_count" and "conns" for signal connections, and "version" for the format style of the PackedScene.
+Available keys include "names" and "variants" for resources, "node_count", "nodes", "node_paths" for nodes, "editable_instances" for paths to overridden nodes, "conn_count" and "conns" for signal connections, and "version" for the format style of the PackedScene.
 
 .. rst-class:: classref-section-separator
 
@@ -261,7 +261,7 @@ Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). 
 
 :ref:`Error<enum_@GlobalScope_Error>` **pack**\ (\ path\: :ref:`Node<class_Node>`\ )
 
-Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.owner<class_Node_property_owner>`.
+Packs the ``path`` node, and all owned sub-nodes, into this **PackedScene**. Any existing data will be cleared. See :ref:`Node.owner<class_Node_property_owner>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

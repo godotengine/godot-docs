@@ -83,6 +83,8 @@ Methods
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                  | :ref:`is_foveation_supported<class_OpenXRInterface_method_is_foveation_supported>`\ (\ ) |const|                                                                                                                              |
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                  | :ref:`is_hand_interaction_supported<class_OpenXRInterface_method_is_hand_interaction_supported>`\ (\ ) |const|                                                                                                                |
+   +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                  | :ref:`is_hand_tracking_supported<class_OpenXRInterface_method_is_hand_tracking_supported>`\ (\ )                                                                                                                              |
    +--------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                   | :ref:`set_action_set_active<class_OpenXRInterface_method_set_action_set_active>`\ (\ name\: :ref:`String<class_String>`, active\: :ref:`bool<class_bool>`\ )                                                                  |
@@ -98,6 +100,18 @@ Methods
 
 Signals
 -------
+
+.. _class_OpenXRInterface_signal_instance_exiting:
+
+.. rst-class:: classref-signal
+
+**instance_exiting**\ (\ )
+
+Informs our OpenXR instance is exiting.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_OpenXRInterface_signal_pose_recentered:
 
@@ -144,6 +158,18 @@ Informs our OpenXR session has been started.
 **session_focussed**\ (\ )
 
 Informs our OpenXR session now has focus.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_signal_session_loss_pending:
+
+.. rst-class:: classref-signal
+
+**session_loss_pending**\ (\ )
+
+Informs our OpenXR session is in the process of being lost.
 
 .. rst-class:: classref-item-separator
 
@@ -831,6 +857,20 @@ Returns the capabilities of the eye gaze interaction extension.
 Returns ``true`` if OpenXR's foveation extension is supported, the interface must be initialized before this returns a valid value.
 
 \ **Note:** This feature is only available on the compatibility renderer and currently only available on some stand alone headsets. For Vulkan set :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to ``VRS_XR`` on desktop.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_method_is_hand_interaction_supported:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_hand_interaction_supported**\ (\ ) |const|
+
+Returns ``true`` if OpenXR's hand interaction profile is supported and enabled.
+
+\ **Note:** This only returns a valid value after OpenXR has been initialized.
 
 .. rst-class:: classref-item-separator
 

@@ -811,6 +811,14 @@ The color of the object is subtracted from the background.
 
 The color of the object is multiplied by the background.
 
+.. _class_BaseMaterial3D_constant_BLEND_MODE_PREMULT_ALPHA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **BLEND_MODE_PREMULT_ALPHA** = ``4``
+
+The color of the object is added to the background and the alpha channel is used to mask out the background. This is effectively a hybrid of the blend mix and add modes, useful for effects like fire where you want the flame to add but the smoke to mix. By default, this works with unshaded materials using premultiplied textures. For shaded materials, use the ``PREMUL_ALPHA_FACTOR`` built-in so that lighting can be modulated as well.
+
 .. rst-class:: classref-item-separator
 
 ----

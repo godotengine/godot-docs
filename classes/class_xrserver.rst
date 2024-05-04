@@ -59,7 +59,7 @@ Methods
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`center_on_hmd<class_XRServer_method_center_on_hmd>`\ (\ rotation_mode\: :ref:`RotationMode<enum_XRServer_RotationMode>`, keep_height\: :ref:`bool<class_bool>`\ ) |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>`                            | :ref:`clear_reference_frame<class_XRServer_method_clear_reference_frame>`\ (\ ) |const|                                                                                 |
+   | |void|                                                           | :ref:`clear_reference_frame<class_XRServer_method_clear_reference_frame>`\ (\ )                                                                                         |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`XRInterface<class_XRInterface>`                            | :ref:`find_interface<class_XRServer_method_find_interface>`\ (\ name\: :ref:`String<class_String>`\ ) |const|                                                           |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -393,7 +393,7 @@ You should call this method after a few seconds have passed. For example, when t
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **clear_reference_frame**\ (\ ) |const|
+|void| **clear_reference_frame**\ (\ )
 
 Clears the reference frame that was set by previous calls to :ref:`center_on_hmd<class_XRServer_method_center_on_hmd>`.
 

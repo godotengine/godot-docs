@@ -46,7 +46,7 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`clipboard_set_primary<class_DisplayServer_method_clipboard_set_primary>`\ (\ clipboard_primary\: :ref:`String<class_String>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                                   | :ref:`create_status_indicator<class_DisplayServer_method_create_status_indicator>`\ (\ icon\: :ref:`Image<class_Image>`, tooltip\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                                                                                                                                                                                       |
+   | :ref:`int<class_int>`                                                   | :ref:`create_status_indicator<class_DisplayServer_method_create_status_indicator>`\ (\ icon\: :ref:`Texture2D<class_Texture2D>`, tooltip\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                                                                                                                                                                               |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`CursorShape<enum_DisplayServer_CursorShape>`                      | :ref:`cursor_get_shape<class_DisplayServer_method_cursor_get_shape>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -260,9 +260,13 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`set_system_theme_change_callback<class_DisplayServer_method_set_system_theme_change_callback>`\ (\ callable\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                                                                                                                                                                                                                                              |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`                                               | :ref:`status_indicator_get_rect<class_DisplayServer_method_status_indicator_get_rect>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`status_indicator_set_callback<class_DisplayServer_method_status_indicator_set_callback>`\ (\ id\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                  | :ref:`status_indicator_set_icon<class_DisplayServer_method_status_indicator_set_icon>`\ (\ id\: :ref:`int<class_int>`, icon\: :ref:`Image<class_Image>`\ )                                                                                                                                                                                                                                                                                                                                                                                                          |
+   | |void|                                                                  | :ref:`status_indicator_set_icon<class_DisplayServer_method_status_indicator_set_icon>`\ (\ id\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ )                                                                                                                                                                                                                                                                                                                                                                                                  |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`status_indicator_set_menu<class_DisplayServer_method_status_indicator_set_menu>`\ (\ id\: :ref:`int<class_int>`, menu_rid\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                          |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`status_indicator_set_tooltip<class_DisplayServer_method_status_indicator_set_tooltip>`\ (\ id\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ )                                                                                                                                                                                                                                                                                                                                                                                               |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1574,7 +1578,7 @@ Sets the user's `primary <https://unix.stackexchange.com/questions/139191/whats-
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **create_status_indicator**\ (\ icon\: :ref:`Image<class_Image>`, tooltip\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ )
+:ref:`int<class_int>` **create_status_indicator**\ (\ icon\: :ref:`Texture2D<class_Texture2D>`, tooltip\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ )
 
 Creates a new application status indicator with the specified icon, tooltip, and activation callback.
 
@@ -3379,6 +3383,20 @@ Sets the ``callable`` that should be called when system theme settings are chang
 
 ----
 
+.. _class_DisplayServer_method_status_indicator_get_rect:
+
+.. rst-class:: classref-method
+
+:ref:`Rect2<class_Rect2>` **status_indicator_get_rect**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+
+Returns the rectangle for the given status indicator ``id`` in screen coordinates. If the status indicator is not visible, returns an empty :ref:`Rect2<class_Rect2>`.
+
+\ **Note:** This method is implemented on macOS and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DisplayServer_method_status_indicator_set_callback:
 
 .. rst-class:: classref-method
@@ -3386,6 +3404,8 @@ Sets the ``callable`` that should be called when system theme settings are chang
 |void| **status_indicator_set_callback**\ (\ id\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ )
 
 Sets the application status indicator activation callback.
+
+\ **Note:** This method is implemented on macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -3395,9 +3415,29 @@ Sets the application status indicator activation callback.
 
 .. rst-class:: classref-method
 
-|void| **status_indicator_set_icon**\ (\ id\: :ref:`int<class_int>`, icon\: :ref:`Image<class_Image>`\ )
+|void| **status_indicator_set_icon**\ (\ id\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ )
 
 Sets the application status indicator icon.
+
+\ **Note:** This method is implemented on macOS and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_status_indicator_set_menu:
+
+.. rst-class:: classref-method
+
+|void| **status_indicator_set_menu**\ (\ id\: :ref:`int<class_int>`, menu_rid\: :ref:`RID<class_RID>`\ )
+
+Sets the application status indicator native popup menu.
+
+\ **Note:** On macOS, the menu is activated by any mouse button. Its activation callback is *not* triggered.
+
+\ **Note:** On Windows, the menu is activated by the right mouse button, selecting the status icon and pressing :kbd:`Shift + F10`, or the applications key. The menu's activation callback for the other mouse buttons is still triggered.
+
+\ **Note:** Native popup is only supported if :ref:`NativeMenu<class_NativeMenu>` supports the :ref:`NativeMenu.FEATURE_POPUP_MENU<class_NativeMenu_constant_FEATURE_POPUP_MENU>` feature.
 
 .. rst-class:: classref-item-separator
 
@@ -3410,6 +3450,8 @@ Sets the application status indicator icon.
 |void| **status_indicator_set_tooltip**\ (\ id\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ )
 
 Sets the application status indicator tooltip.
+
+\ **Note:** This method is implemented on macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -4115,7 +4157,7 @@ Sets the ``callback`` that should be called when text is entered using the virtu
 
 |void| **window_set_max_size**\ (\ max_size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )
 
-Sets the maximum size of the window specified by ``window_id`` in pixels. Normally, the user will not be able to drag the window to make it smaller than the specified size. See also :ref:`window_get_max_size<class_DisplayServer_method_window_get_max_size>`.
+Sets the maximum size of the window specified by ``window_id`` in pixels. Normally, the user will not be able to drag the window to make it larger than the specified size. See also :ref:`window_get_max_size<class_DisplayServer_method_window_get_max_size>`.
 
 \ **Note:** It's recommended to change this value using :ref:`Window.max_size<class_Window_property_max_size>` instead.
 
@@ -4131,7 +4173,7 @@ Sets the maximum size of the window specified by ``window_id`` in pixels. Normal
 
 |void| **window_set_min_size**\ (\ min_size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )
 
-Sets the minimum size for the given window to ``min_size`` (in pixels). Normally, the user will not be able to drag the window to make it larger than the specified size. See also :ref:`window_get_min_size<class_DisplayServer_method_window_get_min_size>`.
+Sets the minimum size for the given window to ``min_size`` in pixels. Normally, the user will not be able to drag the window to make it smaller than the specified size. See also :ref:`window_get_min_size<class_DisplayServer_method_window_get_min_size>`.
 
 \ **Note:** It's recommended to change this value using :ref:`Window.min_size<class_Window_property_min_size>` instead.
 

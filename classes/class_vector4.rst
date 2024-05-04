@@ -76,6 +76,8 @@ Methods
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector4<class_Vector4>` | :ref:`clamp<class_Vector4_method_clamp>`\ (\ min\: :ref:`Vector4<class_Vector4>`, max\: :ref:`Vector4<class_Vector4>`\ ) |const|                                                                                                                                                                                                                                 |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4<class_Vector4>` | :ref:`clampf<class_Vector4_method_clampf>`\ (\ min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ ) |const|                                                                                                                                                                                                                                       |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector4<class_Vector4>` | :ref:`cubic_interpolate<class_Vector4_method_cubic_interpolate>`\ (\ b\: :ref:`Vector4<class_Vector4>`, pre_a\: :ref:`Vector4<class_Vector4>`, post_b\: :ref:`Vector4<class_Vector4>`, weight\: :ref:`float<class_float>`\ ) |const|                                                                                                                             |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector4<class_Vector4>` | :ref:`cubic_interpolate_in_time<class_Vector4_method_cubic_interpolate_in_time>`\ (\ b\: :ref:`Vector4<class_Vector4>`, pre_a\: :ref:`Vector4<class_Vector4>`, post_b\: :ref:`Vector4<class_Vector4>`, weight\: :ref:`float<class_float>`, b_t\: :ref:`float<class_float>`, pre_a_t\: :ref:`float<class_float>`, post_b_t\: :ref:`float<class_float>`\ ) |const| |
@@ -106,9 +108,17 @@ Methods
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector4<class_Vector4>` | :ref:`lerp<class_Vector4_method_lerp>`\ (\ to\: :ref:`Vector4<class_Vector4>`, weight\: :ref:`float<class_float>`\ ) |const|                                                                                                                                                                                                                                     |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4<class_Vector4>` | :ref:`max<class_Vector4_method_max>`\ (\ with\: :ref:`Vector4<class_Vector4>`\ ) |const|                                                                                                                                                                                                                                                                         |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`max_axis_index<class_Vector4_method_max_axis_index>`\ (\ ) |const|                                                                                                                                                                                                                                                                                         |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4<class_Vector4>` | :ref:`maxf<class_Vector4_method_maxf>`\ (\ with\: :ref:`float<class_float>`\ ) |const|                                                                                                                                                                                                                                                                           |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4<class_Vector4>` | :ref:`min<class_Vector4_method_min>`\ (\ with\: :ref:`Vector4<class_Vector4>`\ ) |const|                                                                                                                                                                                                                                                                         |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`min_axis_index<class_Vector4_method_min_axis_index>`\ (\ ) |const|                                                                                                                                                                                                                                                                                         |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4<class_Vector4>` | :ref:`minf<class_Vector4_method_minf>`\ (\ with\: :ref:`float<class_float>`\ ) |const|                                                                                                                                                                                                                                                                           |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector4<class_Vector4>` | :ref:`normalized<class_Vector4_method_normalized>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                 |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -121,6 +131,8 @@ Methods
    | :ref:`Vector4<class_Vector4>` | :ref:`sign<class_Vector4_method_sign>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                             |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector4<class_Vector4>` | :ref:`snapped<class_Vector4_method_snapped>`\ (\ step\: :ref:`Vector4<class_Vector4>`\ ) |const|                                                                                                                                                                                                                                                                 |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4<class_Vector4>` | :ref:`snappedf<class_Vector4_method_snappedf>`\ (\ step\: :ref:`float<class_float>`\ ) |const|                                                                                                                                                                                                                                                                   |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
@@ -379,6 +391,18 @@ Returns a new vector with all components clamped between the components of ``min
 
 ----
 
+.. _class_Vector4_method_clampf:
+
+.. rst-class:: classref-method
+
+:ref:`Vector4<class_Vector4>` **clampf**\ (\ min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ ) |const|
+
+Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Vector4_method_cubic_interpolate:
 
 .. rst-class:: classref-method
@@ -567,6 +591,18 @@ Returns the result of the linear interpolation between this vector and ``to`` by
 
 ----
 
+.. _class_Vector4_method_max:
+
+.. rst-class:: classref-method
+
+:ref:`Vector4<class_Vector4>` **max**\ (\ with\: :ref:`Vector4<class_Vector4>`\ ) |const|
+
+Returns the component-wise maximum of this and ``with``, equivalent to ``Vector4(maxf(x, with.x), maxf(y, with.y), maxf(z, with.z), maxf(w, with.w))``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Vector4_method_max_axis_index:
 
 .. rst-class:: classref-method
@@ -579,6 +615,30 @@ Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all
 
 ----
 
+.. _class_Vector4_method_maxf:
+
+.. rst-class:: classref-method
+
+:ref:`Vector4<class_Vector4>` **maxf**\ (\ with\: :ref:`float<class_float>`\ ) |const|
+
+Returns the component-wise maximum of this and ``with``, equivalent to ``Vector4(maxf(x, with), maxf(y, with), maxf(z, with), maxf(w, with))``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector4_method_min:
+
+.. rst-class:: classref-method
+
+:ref:`Vector4<class_Vector4>` **min**\ (\ with\: :ref:`Vector4<class_Vector4>`\ ) |const|
+
+Returns the component-wise minimum of this and ``with``, equivalent to ``Vector4(minf(x, with.x), minf(y, with.y), minf(z, with.z), minf(w, with.w))``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Vector4_method_min_axis_index:
 
 .. rst-class:: classref-method
@@ -586,6 +646,18 @@ Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all
 :ref:`int<class_int>` **min_axis_index**\ (\ ) |const|
 
 Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_W<class_Vector4_constant_AXIS_W>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector4_method_minf:
+
+.. rst-class:: classref-method
+
+:ref:`Vector4<class_Vector4>` **minf**\ (\ with\: :ref:`float<class_float>`\ ) |const|
+
+Returns the component-wise minimum of this and ``with``, equivalent to ``Vector4(minf(x, with), minf(y, with), minf(z, with), minf(w, with))``.
 
 .. rst-class:: classref-item-separator
 
@@ -660,6 +732,18 @@ Returns a new vector with each component set to ``1.0`` if it's positive, ``-1.0
 :ref:`Vector4<class_Vector4>` **snapped**\ (\ step\: :ref:`Vector4<class_Vector4>`\ ) |const|
 
 Returns a new vector with each component snapped to the nearest multiple of the corresponding component in ``step``. This can also be used to round the components to an arbitrary number of decimals.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector4_method_snappedf:
+
+.. rst-class:: classref-method
+
+:ref:`Vector4<class_Vector4>` **snappedf**\ (\ step\: :ref:`float<class_float>`\ ) |const|
+
+Returns a new vector with each component snapped to the nearest multiple of ``step``. This can also be used to round the components to an arbitrary number of decimals.
 
 .. rst-class:: classref-section-separator
 

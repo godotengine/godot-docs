@@ -79,6 +79,8 @@ The compression mode to use on import.
 
 \ **RAM (Ima-ADPCM):** Performs fast lossy compression on import. Low CPU cost, but quality is noticeably decreased compared to Ogg Vorbis or even MP3.
 
+\ **QOA (`Quite OK Audio <https://qoaformat.org/>`__):** Performs lossy compression on import. CPU cost is slightly higher than IMA-ADPCM, but quality is much higher.
+
 .. rst-class:: classref-item-separator
 
 ----

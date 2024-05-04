@@ -67,13 +67,15 @@ Properties
 .. table::
    :widths: auto
 
-   +------------------------------------------+------------------------------------------------------+---------------+
-   | :ref:`float<class_float>`                | :ref:`length<class_Animation_property_length>`       | ``1.0``       |
-   +------------------------------------------+------------------------------------------------------+---------------+
-   | :ref:`LoopMode<enum_Animation_LoopMode>` | :ref:`loop_mode<class_Animation_property_loop_mode>` | ``0``         |
-   +------------------------------------------+------------------------------------------------------+---------------+
-   | :ref:`float<class_float>`                | :ref:`step<class_Animation_property_step>`           | ``0.0333333`` |
-   +------------------------------------------+------------------------------------------------------+---------------+
+   +------------------------------------------+--------------------------------------------------------------------+---------------+
+   | :ref:`bool<class_bool>`                  | :ref:`capture_included<class_Animation_property_capture_included>` | ``false``     |
+   +------------------------------------------+--------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                | :ref:`length<class_Animation_property_length>`                     | ``1.0``       |
+   +------------------------------------------+--------------------------------------------------------------------+---------------+
+   | :ref:`LoopMode<enum_Animation_LoopMode>` | :ref:`loop_mode<class_Animation_property_loop_mode>`               | ``0``         |
+   +------------------------------------------+--------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                | :ref:`step<class_Animation_property_step>`                         | ``0.0333333`` |
+   +------------------------------------------+--------------------------------------------------------------------+---------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -392,7 +394,7 @@ Update at the keyframes.
 
 :ref:`UpdateMode<enum_Animation_UpdateMode>` **UPDATE_CAPTURE** = ``2``
 
-Same as :ref:`UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` but works as a flag to capture the value of the current object and perform interpolation in some methods. See also :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>` and :ref:`AnimationPlayer.play_with_capture<class_AnimationPlayer_method_play_with_capture>`.
+Same as :ref:`UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` but works as a flag to capture the value of the current object and perform interpolation in some methods. See also :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>`, :ref:`AnimationPlayer.playback_auto_capture<class_AnimationPlayer_property_playback_auto_capture>`, and :ref:`AnimationPlayer.play_with_capture<class_AnimationPlayer_method_play_with_capture>`.
 
 .. rst-class:: classref-item-separator
 
@@ -504,6 +506,22 @@ Finds only the key with matching the time.
 
 Property Descriptions
 ---------------------
+
+.. _class_Animation_property_capture_included:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **capture_included** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`bool<class_bool>` **is_capture_included**\ (\ )
+
+Returns ``true`` if the capture track is included. This is a cached readonly value for performance.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_Animation_property_length:
 

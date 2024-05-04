@@ -389,6 +389,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/inspector/default_property_name_style<class_EditorSettings_property_interface/inspector/default_property_name_style>`                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/inspector/delimitate_all_container_and_resources<class_EditorSettings_property_interface/inspector/delimitate_all_container_and_resources>`                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/inspector/disable_folding<class_EditorSettings_property_interface/inspector/disable_folding>`                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/inspector/float_drag_speed<class_EditorSettings_property_interface/inspector/float_drag_speed>`                                                                                                   |
@@ -398,6 +400,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`interface/inspector/horizontal_vector_types_editing<class_EditorSettings_property_interface/inspector/horizontal_vector_types_editing>`                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/inspector/max_array_dictionary_items_per_page<class_EditorSettings_property_interface/inspector/max_array_dictionary_items_per_page>`                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`interface/inspector/nested_color_mode<class_EditorSettings_property_interface/inspector/nested_color_mode>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/inspector/open_resources_in_current_inspector<class_EditorSettings_property_interface/inspector/open_resources_in_current_inspector>`                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -490,6 +494,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`run/output/always_open_output_on_play<class_EditorSettings_property_run/output/always_open_output_on_play>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`run/output/font_size<class_EditorSettings_property_run/output/font_size>`                                                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`run/output/max_lines<class_EditorSettings_property_run/output/max_lines>`                                                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`run/platforms/linuxbsd/prefer_wayland<class_EditorSettings_property_run/platforms/linuxbsd/prefer_wayland>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2899,6 +2905,20 @@ The default property name style to display in the Inspector dock. This style can
 
 ----
 
+.. _class_EditorSettings_property_interface/inspector/delimitate_all_container_and_resources:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/inspector/delimitate_all_container_and_resources**
+
+If ``true``, add a margin around Array, Dictionary, and Resource Editors that are not already colored.
+
+\ **Note:** If :ref:`interface/inspector/nested_color_mode<class_EditorSettings_property_interface/inspector/nested_color_mode>` is set to **Containers & Resources** this parameter will have no effect since those editors will already be colored
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/inspector/disable_folding:
 
 .. rst-class:: classref-property
@@ -2954,6 +2974,24 @@ If ``true``, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :re
 :ref:`int<class_int>` **interface/inspector/max_array_dictionary_items_per_page**
 
 The number of :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>` items to display on each "page" in the inspector. Higher values allow viewing more values per page, but take more time to load. This increased load time is noticeable when selecting nodes that have array or dictionary properties in the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/inspector/nested_color_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/inspector/nested_color_mode**
+
+Control which property editors are colored when they are opened.
+
+- **Containers & Resources:** Color all Array, Dictionary, and Resource Editors.
+
+- **Resources:** Color all Resource Editors.
+
+- **External Resources:** Color Resource Editors that edits an external resource.
 
 .. rst-class:: classref-item-separator
 
@@ -3389,7 +3427,7 @@ All update modes will ignore builds with different major versions (e.g. Godot 4 
 
 :ref:`int<class_int>` **network/connection/network_mode**
 
-Determines whether online features are enabled in the editor, such as the Asset Library or update checks. Disabling these online features helps alleviate privacy concerns by preventing the editor from making HTTP requests to the Godot website, GitHub, or third-party platforms hosting assets from the Asset Library.
+Determines whether online features are enabled in the editor, such as the Asset Library or update checks. Disabling these online features helps alleviate privacy concerns by preventing the editor from making HTTP requests to the Godot website or third-party platforms hosting assets from the Asset Library.
 
 .. rst-class:: classref-item-separator
 
@@ -3550,6 +3588,18 @@ If ``true``, the editor will expand the Output panel when running the project.
 :ref:`int<class_int>` **run/output/font_size**
 
 The size of the font in the **Output** panel at the bottom of the editor. This setting does not impact the font size of the script editor (see :ref:`interface/editor/code_font_size<class_EditorSettings_property_interface/editor/code_font_size>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_run/output/max_lines:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **run/output/max_lines**
+
+Maximum number of lines to show at any one time in the Output panel.
 
 .. rst-class:: classref-item-separator
 

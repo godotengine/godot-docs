@@ -65,6 +65,8 @@ Methods
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                                   | :ref:`get_play_space<class_OpenXRAPIExtension_method_get_play_space>`\ (\ )                                                                                                                                          |
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                                   | :ref:`get_predicted_display_time<class_OpenXRAPIExtension_method_get_predicted_display_time>`\ (\ )                                                                                                                  |
+   +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                                   | :ref:`get_session<class_OpenXRAPIExtension_method_get_session>`\ (\ )                                                                                                                                                |
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                             | :ref:`get_swapchain_format_name<class_OpenXRAPIExtension_method_get_swapchain_format_name>`\ (\ swapchain_format\: :ref:`int<class_int>`\ )                                                                          |
@@ -206,7 +208,7 @@ Returns the function pointer of the OpenXR function with the specified name, cas
 
 :ref:`int<class_int>` **get_next_frame_time**\ (\ )
 
-Returns the timing for the next frame.
+Returns the predicted display timing for the next frame.
 
 .. rst-class:: classref-item-separator
 
@@ -219,6 +221,18 @@ Returns the timing for the next frame.
 :ref:`int<class_int>` **get_play_space**\ (\ )
 
 Returns the play space, which is an `XrSpace <https://registry.khronos.org/OpenXR/specs/1.0/man/html/XrSpace.html>`__ cast to an integer.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRAPIExtension_method_get_predicted_display_time:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_predicted_display_time**\ (\ )
+
+Returns the predicted display timing for the current frame.
 
 .. rst-class:: classref-item-separator
 

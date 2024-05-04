@@ -290,14 +290,14 @@ Returns a copy of this rectangle expanded to align the edges with the given ``to
     var rect = Rect2i(0, 0, 5, 2)
     
     rect = rect.expand(Vector2i(10, 0)) # rect is Rect2i(0, 0, 10, 2)
-    rect = rect.expand(Vector2i(-5, 5)) # rect is Rect2i(-5, 0, 10, 5)
+    rect = rect.expand(Vector2i(-5, 5)) # rect is Rect2i(-5, 0, 15, 5)
 
  .. code-tab:: csharp
 
     var rect = new Rect2I(0, 0, 5, 2);
     
     rect = rect.Expand(new Vector2I(10, 0)); // rect is Rect2I(0, 0, 10, 2)
-    rect = rect.Expand(new Vector2I(-5, 5)); // rect is Rect2I(-5, 0, 10, 5)
+    rect = rect.Expand(new Vector2I(-5, 5)); // rect is Rect2I(-5, 0, 15, 5)
 
 
 
