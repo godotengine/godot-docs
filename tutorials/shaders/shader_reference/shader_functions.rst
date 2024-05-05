@@ -19,6 +19,8 @@ GLSL 4.00 specification.
     +-----------------+--------------------------------------------------+--------------------------+
     | vec_uint_type   | uint, uvec2, uvec3, or uvec4                     | genUType                 |
     +-----------------+--------------------------------------------------+--------------------------+
+    | vec_bool_type   | bool, bvec2, bvec3, or bvec4                     | genUType                 |
+    +-----------------+--------------------------------------------------+--------------------------+
     | mat_type        | mat2, mat3, or mat4                              | mat                      |
     +-----------------+--------------------------------------------------+--------------------------+
     | gvec4_type      | vec4, ivec4, or uvec4                            |                          |
@@ -35,7 +37,7 @@ GLSL 4.00 specification.
 .. note::
     Most operations on vectors (multiplication, division, etc) are performed component-wise.
     For example, the operation ``vec2(3,4) * vec2(10,20)`` would result in ``vec2(3 * 10, 4 * 20)``.
-    As another exmple, the operation ``min(vec2(3,4), vec2(1,8))`` would result in ``vec2(min(3,1),min(4,8))``.
+    or the operation ``min(vec2(3,4), vec2(1,8))`` would result in ``vec2(min(3,1),min(4,8))``.
 
     The `GLSL Language Specification <http://www.opengl.org/registry/doc/GLSLangSpec.4.30.6.pdf>` says under section 5.10 Vector and Matrix Operations:
 
@@ -102,9 +104,7 @@ Trigonometric Functions
         Specify the quantity, in degrees, to be converted to radians.
 
     :return:
-        The return value is ``(π * degrees) / 180``.
-
-    :rtype: |vec_type|
+        ``(π * degrees) / 180``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/radians.xhtml
 
@@ -125,9 +125,7 @@ Trigonometric Functions
         Specify the quantity, in radians, to be converted to degrees.
 
     :return:
-        The return value is ``(radians * 180) / π``.
-
-    :rtype: |vec_type|
+        ``(radians * 180) / π``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/degrees.xhtml
 
@@ -145,12 +143,10 @@ vec_type sin( |vec_type| angle)
     Return the sine of the parameter.
 
     :param angle:
-        The quantity, in radians, of which to return the sine
+        takehe quantity, in radians, of which to return the sine
 
     :return:
-        The return value is the trigonometric sine of ``angle``.
-
-    :rtype: |vec_type|
+        the trigonometric sine of ``angle``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sin.xhtml
 
@@ -168,12 +164,10 @@ vec_type cos( |vec_type| angle)
     Return the cosine of the parameter.
 
     :param angle:
-        The quantity, in radians, of which to return the cosine.
+        the quantity, in radians, of which to return the cosine.
 
     :return:
-        The return value is the trigonometric cosine of ``angle``.
-
-    :rtype: |vec_type|
+        the trigonometric cosine of ``angle``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cos.xhtml
 
@@ -194,9 +188,7 @@ vec_type tan( |vec_type| angle)
         The quantity, in radians, of which to return the tangent.
 
     :return:
-        The return value is the trigonometric tangent of ``angle``.
-
-    :rtype: |vec_type|
+        the trigonometric tangent of ``angle``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/tan.xhtml
 
@@ -217,10 +209,8 @@ vec_type asin( |vec_type| x)
     :param x:
         The value whose arccosine to return.
     :return:
-        The return value is the angle whose trigonometric sine is ``x`` and is
+        the angle whose trigonometric sine is ``x`` and is
         in the range ``[-π/2, π/2]``.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/asin.xhtml
 
@@ -242,10 +232,8 @@ vec_type acos( |vec_type| x)
         The value whose arccosine to return.
 
     :return:
-        The return value is the angle whose trigonometric cosine is ``x`` and
+        the angle whose trigonometric cosine is ``x`` and
         is in the range ``[0, π]``.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/acos.xhtml
 
@@ -269,10 +257,8 @@ vec_type atan( |vec_type| y_over_x)
         The fraction whose arctangent to return.
 
     :return:
-        The return value is the trigonometric arc-tangent of ``y_over_x`` and is
+        the trigonometric arc-tangent of ``y_over_x`` and is
         in the range ``[-π/2, π/2]``.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/atan.xhtml
 
@@ -297,10 +283,8 @@ vec_type atan( |vec_type| y, |vec_type| x)
         The denominator of the fraction whose arctangent to return.
 
     :return:
-        The return value is the trigonometric arc-tangent of ``y/x`` and is in
+        the trigonometric arc-tangent of ``y/x`` and is in
         the range ``[-π, π]``.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/atan.xhtml
 
@@ -321,9 +305,7 @@ vec_type sinh( |vec_type| x)
         The value whose hyperbolic sine to return.
 
     :return:
-        The return value is the hyperbolic sine of ``x``.
-
-    :rtype: |vec_type|
+        the hyperbolic sine of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sinh.xhtml
 
@@ -344,9 +326,7 @@ vec_type cosh( |vec_type| x)
         The value whose hyperbolic cosine to return.
 
     :return:
-        The return value is the hyperbolic cosine of ``x``.
-
-    :rtype: |vec_type|
+        the hyperbolic cosine of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cosh.xhtml
 
@@ -367,9 +347,7 @@ vec_type tanh( |vec_type| x)
         The value whose hyperbolic tangent to return.
 
     :return:
-        The return value is the hyperbolic tangent of ``x``.
-
-    :rtype: |vec_type|
+        the hyperbolic tangent of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/tanh.xhtml
 
@@ -390,10 +368,8 @@ vec_type asinh( |vec_type| x)
         The value whose arc hyperbolic sine to return.
 
     :return:
-        The return value is the arc hyperbolic sine of ``x`` which is the
+        the arc hyperbolic sine of ``x`` which is the
         inverse of sinh.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/asinh.xhtml
 
@@ -416,8 +392,6 @@ vec_type acosh( |vec_type| x)
 
     :return:
         <return_description/>
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/acos.xhtml
 
@@ -443,10 +417,8 @@ vec_type atanh( |vec_type| x)
         The fraction whose arc hyperbolic tangent to return.
 
     :return:
-        The return value is the arc hyperbolic tangent of ``x`` which is the
+        the arc hyperbolic tangent of ``x`` which is the
         inverse of tanh.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/atan.xhtml
 
@@ -498,7 +470,7 @@ Exponential and Common Math Functions
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_type|      | :ref:`mod<shader_func_mod>` ( |vec_type| x, float y)                                        |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`modf<shader_func_modf>` (vecType x, out |vec_type| i)                                 | Fractional of ``x``, with ``i`` as integer part.                |
+| |vec_type|      | :ref:`modf<shader_func_modf>` (|vec_type| x, out |vec_type| i)                              | Fractional of ``x``, with ``i`` as integer part.                |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | |vec_type|      | :ref:`min<shader_func_min>` ( |vec_type| a, |vec_type| b)                                   | Lowest value between ``a`` and ``b``.                           |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
@@ -524,7 +496,7 @@ Exponential and Common Math Functions
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_int_type|  | :ref:`max<shader_func_max>` ( |vec_int_type| a, int b)                                      |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`clamp<shader_func_clamp>` (vecType x, |vec_type| min, |vec_type| max)                 | Clamp ``x`` between ``min`` and ``max`` (inclusive).            |
+| |vec_type|      | :ref:`clamp<shader_func_clamp>` (|vec_type| x, |vec_type| min, |vec_type| max)              | Clamp ``x`` between ``min`` and ``max`` (inclusive).            |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_type|      | :ref:`clamp<shader_func_clamp>` ( |vec_type| x, float min, float max)                       |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
@@ -532,25 +504,23 @@ Exponential and Common Math Functions
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_uint_type| | :ref:`clamp<shader_func_clamp>` ( |vec_int_type| x, float min, float max)                   |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_int_type|  | :ref:`clamp<shader_func_clamp>` (vecType x, |vec_type| min, |vec_type| max)                 |                                                                 |
+| |vec_int_type|  | :ref:`clamp<shader_func_clamp>` (|vec_type| x, |vec_type| min, |vec_type| max)              |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_int_type|  | :ref:`clamp<shader_func_clamp>` ( |vec_type| x, float min, float max)                       |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| float           | :ref:`mix<shader_func_mix>` (float a, float b, float c)                                     | Linear interpolate between ``a`` and ``b`` by ``c``.            |
+| |vec_type|      | :ref:`mix<shader_func_mix>` (|vec_type| a, |vec_type| b, |vec_type| c)                      | Linear interpolate between ``a`` and ``b`` by ``c``.            |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_type|      | :ref:`mix<shader_func_mix>` (vecType a, |vec_type| b, float c)                              |                                                                 |
+| |vec_type|      | :ref:`mix<shader_func_mix>` (|vec_type| a, |vec_type| b, float c)                           |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_type|      | :ref:`mix<shader_func_mix>` (vecType a, |vec_type| b, |vec_type| c)                         |                                                                 |
-+-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_type|      | :ref:`mix<shader_func_mix>` (vecType a, |vec_type| b, |vec_bool_type| c)                    |                                                                 |
+| |vec_type|      | :ref:`mix<shader_func_mix>` (|vec_type| a, |vec_type| b, |vec_bool_type| c)                 |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`fma<shader_func_fma>` (vecType a, |vec_type| b, |vec_type| c)                         | Fused multiply-add operation: ``(a * b + c)``                   |
+| |vec_type|      | :ref:`fma<shader_func_fma>` (|vec_type| a, |vec_type| b, |vec_type| c)                      | Fused multiply-add operation: ``(a * b + c)``                   |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | |vec_type|      | :ref:`step<shader_func_step>` ( |vec_type| a, |vec_type| b)                                 | ``b[i] < a[i] ? 0.0 : 1.0``.                                    |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | |vec_type|      | :ref:`step<shader_func_step>` (float a, |vec_type| b)                                       | ``b[i] < a ? 0.0 : 1.0``.                                       |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`smoothstep<shader_func_smoothstep>` (vecType a, |vec_type| b, |vec_type| c)           | Hermite interpolate between ``a`` and ``b`` by ``c``.           |
+| |vec_type|      | :ref:`smoothstep<shader_func_smoothstep>` (|vec_type| a, |vec_type| b, |vec_type| c)        | Hermite interpolate between ``a`` and ``b`` by ``c``.           |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
 | |vec_type|      | :ref:`smoothstep<shader_func_smoothstep>` (float a, float b, |vec_type| c)                  |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -592,8 +562,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         Returns the value of ``x`` raised to the ``y`` power.
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/pow.xhtml
 
 .. rst-class:: classref-item-separator
@@ -615,9 +583,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         The natural exponentiation of x. i.e., e\ :sup:`x`
-
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp.xhtml
 
@@ -641,8 +606,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         2 raised to the power of x. i.e., 2\ :sup:`x`
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp2.xhtml
 
@@ -668,8 +631,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the natural logarithm of x,
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/log.xhtml
 
 .. rst-class:: classref-item-separator
@@ -694,9 +655,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the base 2 logarithm of x, i.e. the value y which satisfies x=2\ :sup:`y`
 
-
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/log2.xhtml
 
 .. rst-class:: classref-item-separator
@@ -720,8 +678,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         <return_description/>
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sqrt.xhtml
 
@@ -748,8 +704,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         The inverse of the square root of the parameter.
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/inversesqrt.xhtml
 
 .. rst-class:: classref-item-separator
@@ -773,8 +727,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the absolute value of x
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/abs.xhtml
 
 .. rst-class:: classref-item-separator
@@ -793,8 +745,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         the absolute value of x
-
-    :rtype: |vec_int_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/abs.xhtml
 
@@ -819,8 +769,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         1, -1 or 0.
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sign.xhtml
 
 .. rst-class:: classref-item-separator
@@ -840,8 +788,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         1, -1 or 0.
-
-    :rtype: |vec_int_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sign.xhtml
 
@@ -865,8 +811,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         the nearest integer that is less than or equal to x.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floor.xhtml
 
@@ -895,8 +839,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the rounded value.
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/round.xhtml
 
 .. rst-class:: classref-item-separator
@@ -923,8 +865,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the rounded value.
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/roundEven.xhtml
 
 .. rst-class:: classref-item-separator
@@ -948,8 +888,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the truncated value.
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/trunc.xhtml
 
 .. rst-class:: classref-item-separator
@@ -972,8 +910,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         the ceiling-ed value.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/ceil.xhtml
 
@@ -999,8 +935,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         the fraction part of x.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fract.xhtml
 
@@ -1028,8 +962,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the value of ``x modulo y``.
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mod.xhtml
 
 .. rst-class:: classref-item-separator
@@ -1052,8 +984,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the value of ``x modulo y``.
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mod.xhtml
 
 .. rst-class:: classref-item-separator
@@ -1067,7 +997,7 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-|vec_type| **modf** ( vecType x, out |vec_type| i )
+|vec_type| **modf** ( |vec_type| x, out |vec_type| i )
 
     Separates a floating point value x into its integer and fractional parts.
 
@@ -1082,8 +1012,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         the fractional part of the number.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/modf.xhtml
 
@@ -1113,8 +1041,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the minimum of the two parameters.
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
 
 .. rst-class:: classref-item-separator
@@ -1138,8 +1064,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         the minimum of the two parameters.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
 
@@ -1166,8 +1090,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the minimum of the two parameters.
 
-    :rtype: |vec_int_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
 
 .. rst-class:: classref-item-separator
@@ -1193,8 +1115,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the minimum of the two parameters.
 
-    :rtype: |vec_int_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
 
 .. rst-class:: classref-item-separator
@@ -1218,8 +1138,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         the minimum of the two parameters.
-
-    :rtype: |vec_uint_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
 
@@ -1245,8 +1163,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         the minimum of the two parameters.
-
-    :rtype: |vec_uint_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
 
@@ -1276,8 +1192,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the maximum value.
 
-    :rtype: |vec_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
 
 .. rst-class:: classref-item-separator
@@ -1302,8 +1216,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         the maximum value.
-
-    :rtype: |vec_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
 
@@ -1330,8 +1242,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the maximum value.
 
-    :rtype: |vec_uint_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
 
 .. rst-class:: classref-item-separator
@@ -1356,8 +1266,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
     :return:
         the maximum value.
-
-    :rtype: |vec_uint_type|
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
 
@@ -1384,8 +1292,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the maximum value.
 
-    :rtype: |vec_int_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
 
 .. rst-class:: classref-item-separator
@@ -1410,8 +1316,6 @@ vec_type pow( |vec_type| x, |vec_type| y)
     :return:
         the maximum value.
 
-    :rtype: |vec_int_type|
-
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
 
 .. rst-class:: classref-item-separator
@@ -1425,23 +1329,23 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-|vec_type| **clamp** ( vecType x, |vec_type| min, |vec_type| max )
+|vec_type| **clamp** ( |vec_type| x, |vec_type| min, |vec_type| max )
 
-    <description/>
+    Returns the value of x constrained to the range minVal to maxVal.
+
+    The returned value is computed as min(max(x, minVal), maxVal).
 
     :param x:
-        <param_description/>
+        the value to constrain.
 
     :param min:
-        <param_description/>
+        the lower end of the range into which to constrain x.
 
     :param max:
-        <param_description/>
+        the upper end of the range into which to constrain x.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_type|
+        the constrained value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
 
@@ -1454,21 +1358,21 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 |vec_type| **clamp** ( |vec_type| x, float min, float max )
 
-    <description/>
+    Returns the value of x constrained to the range minVal to maxVal.
+
+    The returned value is computed as min(max(x, minVal), maxVal).
 
     :param x:
-        <param_description/>
+        the value to constrain.
 
     :param min:
-        <param_description/>
+        the lower end of the range into which to constrain x.
 
     :param max:
-        <param_description/>
+        the upper end of the range into which to constrain x.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_type|
+        the constrained value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
 
@@ -1481,21 +1385,21 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 |vec_uint_type| **clamp** ( |vec_int_type| x, |vec_int_type| min, |vec_int_type| max )
 
-    <description/>
+    Returns the value of x constrained to the range minVal to maxVal.
+
+    The returned value is computed as min(max(x, minVal), maxVal).
 
     :param x:
-        <param_description/>
+        the value to constrain.
 
     :param min:
-        <param_description/>
+        the lower end of the range into which to constrain x.
 
     :param max:
-        <param_description/>
+        the upper end of the range into which to constrain x.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_uint_type|
+        the constrained value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
 
@@ -1508,21 +1412,21 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 |vec_uint_type| **clamp** ( |vec_int_type| x, float min, float max )
 
-    <description/>
+    Returns the value of x constrained to the range minVal to maxVal.
+
+    The returned value is computed as min(max(x, minVal), maxVal).
 
     :param x:
-        <param_description/>
+        the value to constrain.
 
     :param min:
-        <param_description/>
+        the lower end of the range into which to constrain x.
 
     :param max:
-        <param_description/>
+        the upper end of the range into which to constrain x.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_uint_type|
+        the constrained value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
 
@@ -1533,23 +1437,23 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-|vec_int_type| **clamp** ( vecType x, |vec_type| min, |vec_type| max )
+|vec_int_type| **clamp** ( |vec_type| x, |vec_type| min, |vec_type| max )
 
-    <description/>
+    Returns the value of x constrained to the range minVal to maxVal.
+
+    The returned value is computed as min(max(x, minVal), maxVal).
 
     :param x:
-        <param_description/>
+        the value to constrain.
 
     :param min:
-        <param_description/>
+        the lower end of the range into which to constrain x.
 
     :param max:
-        <param_description/>
+        the upper end of the range into which to constrain x.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_int_type|
+        the constrained value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
 
@@ -1562,21 +1466,21 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 |vec_int_type| **clamp** ( |vec_type| x, float min, float max )
 
-    <description/>
+    Returns the value of x constrained to the range minVal to maxVal.
+
+    The returned value is computed as min(max(x, minVal), maxVal).
 
     :param x:
-        <param_description/>
+        the value to constrain.
 
     :param min:
-        <param_description/>
+        the lower end of the range into which to constrain x.
 
     :param max:
-        <param_description/>
+        the upper end of the range into which to constrain x.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_int_type|
+        the constrained value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
 
@@ -1591,23 +1495,23 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-float **mix** ( float a, float b, float c )
+|vec_type| **mix** ( |vec_type| a, |vec_type| b, |vec_type| c )
 
-    <description/>
+    Performs a linear interpolation between a and b using c to weight between them.
+
+    computed as ``a × (1 − c) + b × c``.
 
     :param a:
-        <param_description/>
+        the start of the range in which to interpolate.
 
     :param b:
-        <param_description/>
+        the end of the range in which to interpolate.
 
     :param c:
-        <param_description/>
+        the value to use to interpolate between x and y.
 
     :return:
-        <return_description/>
-
-    :rtype: float
+        The interpolated value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
 
@@ -1618,23 +1522,23 @@ float **mix** ( float a, float b, float c )
 
 .. rst-class:: classref-method
 
-|vec_type| **mix** ( vecType a, |vec_type| b, float c )
+|vec_type| **mix** ( |vec_type| a, |vec_type| b, float c )
 
-    <description/>
+    Performs a linear interpolation between a and b using c to weight between them.
+
+    computed as ``a × (1 − c) + b × c``.
 
     :param a:
-        <param_description/>
+        the start of the range in which to interpolate.
 
     :param b:
-        <param_description/>
+        the end of the range in which to interpolate.
 
     :param c:
-        <param_description/>
+        the value to use to interpolate between x and y.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_type|
+        The interpolated value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
 
@@ -1645,50 +1549,27 @@ float **mix** ( float a, float b, float c )
 
 .. rst-class:: classref-method
 
-|vec_type| **mix** ( vecType a, |vec_type| b, |vec_type| c )
+|vec_type| **mix** ( |vec_type| a, |vec_type| b, |vec_bool_type| c )
 
-    <description/>
+    Selects either value a or value b based on the value of c.
+    For a component of c that is false, the corresponding component of a is returned.
+    For a component of c that is true, the corresponding component of b is returned.
+    Components of a and b that are not selected are allowed to be invalid floating-point values and will have no effect on the results.
 
-    :param a:
-        <param_description/>
-
-    :param b:
-        <param_description/>
-
-    :param c:
-        <param_description/>
-
-    :return:
-        <return_description/>
-
-    :rtype: |vec_type|
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_type| **mix** ( vecType a, |vec_type| b, |vec_bool_type| c )
-
-    <description/>
+    If a, b, and c are vector types the operation is performed component-wise.
+    ie. ``mix(vec2(42, 314), vec2(9.8, 6e23), vec_bool_type(true, false)))`` will return ``vec2(9.8, 314)``.
 
     :param a:
-        <param_description/>
+        value returned when a is false.
 
     :param b:
-        <param_description/>
+        value returned when a is true.
 
     :param c:
-        <param_description/>
+        the value to use to interpolate between x and y.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_type|
+        The interpolated value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
 
@@ -1703,23 +1584,32 @@ float **mix** ( float a, float b, float c )
 
 .. rst-class:: classref-method
 
-|vec_type| **fma** ( vecType a, |vec_type| b, |vec_type| c )
+|vec_type| **fma** ( |vec_type| a, |vec_type| b, |vec_type| c )
 
-    <description/>
+    Performs, where possible, a fused multiply-add operation, returning a * b + c. In use cases where the
+    return value is eventually consumed by a variable declared as precise:
+
+     - fma() is considered a single operation, whereas the expression a * b + c consumed by a variable declared as precise is considered two operations.
+
+     - The precision of fma() can differ from the precision of the expression a * b + c.
+
+     - fma() will be computed with the same precision as any other fma() consumed by a precise variable,
+       giving invariant results for the same input values of a, b and c.
+
+    Otherwise, in the absence of precise consumption, there are no special constraints on the number of operations
+    or difference in precision between fma() and the expression a * b + c.
 
     :param a:
-        <param_description/>
+        the first multiplicand.
 
     :param b:
-        <param_description/>
+        the second multiplicand.
 
     :param c:
-        <param_description/>
+        the value to be added to the result.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_type|
+        value of ``a * b + c``
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fma.xhtml
 
@@ -1736,21 +1626,22 @@ float **mix** ( float a, float b, float c )
 
 |vec_type| **step** ( |vec_type| a, |vec_type| b )
 
-    <description/>
+    Generates a step function by comparing b to a.
+
+    Equivalent to ``if (b < a) { return 0.0; } else { return 1.0; }``.
+    Or if vec_type is a vector, a vector where the above operation has been performed on each component of the input vectors.
+    ie. ``step(vec2(4.2, 314), vec2(2.4, 980))`` would return ``vec2(step(a[0], b[0]), step(a[1], b[1]))``.
+
+    For element i of the return value, 0.0 is returned if b[i] < a[i], and 1.0 is returned otherwise.
 
     :param a:
-        <param_description/>
+        the location of the edge of the step function.
 
     :param b:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value to be used to generate the step function.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_type|
+        0.0 or 1.0
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/step.xhtml
 
@@ -1763,21 +1654,22 @@ float **mix** ( float a, float b, float c )
 
 |vec_type| **step** ( float a, |vec_type| b )
 
-    <description/>
+    Generates a step function by comparing b to a.
+
+    Equivalent to ``if (b < a) { return 0.0; } else { return 1.0; }``.
+    Or rather, the above operation will be performed on each component of the input vector.
+    ie. ``step(4.2, vec2(2.4, 980))`` would return the equivalent of ``vec2(step(42, b[0]), step(42, b[1]))``.
+
+    For element i of the return value, 0.0 is returned if b[i] < a[i], and 1.0 is returned otherwise.
 
     :param a:
-        <param_description/>
+        the location of the edge of the step function.
 
     :param b:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value to be used to generate the step function.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_type|
+        0.0 or 1.0
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/step.xhtml
 
@@ -1792,23 +1684,30 @@ float **mix** ( float a, float b, float c )
 
 .. rst-class:: classref-method
 
-|vec_type| **smoothstep** ( vecType a, |vec_type| b, |vec_type| c )
+|vec_type| **smoothstep** ( |vec_type| a, |vec_type| b, |vec_type| c )
 
-    <description/>
+    Performs smooth Hermite interpolation between 0 and 1 when a < c < b.
+    This is useful in cases where a threshold function with a smooth transition is desired.
+
+    Smoothstep is equivalent to::
+
+        vec_type t;
+        t = clamp((c - a) / (b - a), 0.0, 1.0);
+        return t * t * (3.0 - 2.0 * t);
+
+    Results are undefined if a ≥ b.
 
     :param a:
-        <param_description/>
+        the value of the lower edge of the Hermite function.
 
     :param b:
-        <param_description/>
+        the value of the upper edge of the Hermite function.
 
     :param c:
-        <param_description/>
+        the source value for interpolation.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_type|
+        the interpolated value
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/smoothstep.xhtml
 
@@ -1821,21 +1720,28 @@ float **mix** ( float a, float b, float c )
 
 |vec_type| **smoothstep** ( float a, float b, |vec_type| c )
 
-    <description/>
+    Performs smooth Hermite interpolation between 0 and 1 when a < c < b.
+    This is useful in cases where a threshold function with a smooth transition is desired.
+
+    Smoothstep is equivalent to::
+
+        vec_type t;
+        t = clamp((c - a) / (b - a), 0.0, 1.0);
+        return t * t * (3.0 - 2.0 * t);
+
+    Results are undefined if a ≥ b.
 
     :param a:
-        <param_description/>
+        the value of the lower edge of the Hermite function.
 
     :param b:
-        <param_description/>
+        the value of the upper edge of the Hermite function.
 
     :param c:
-        <param_description/>
+        the source value for interpolation.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_type|
+        the interpolated value
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/smoothstep.xhtml
 
@@ -1852,21 +1758,14 @@ float **mix** ( float a, float b, float c )
 
 |vec_bool_type| **isnan** ( |vec_type| x )
 
-    <description/>
+    For each element i of the result, returns true if x[i] is positive
+    or negative floating point NaN (Not a Number) and false otherwise.
 
     :param x:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value to test for NaN.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_bool_type|
+        true or false
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/isnan.xhtml
 
@@ -1883,21 +1782,14 @@ float **mix** ( float a, float b, float c )
 
 |vec_bool_type| **isinf** ( |vec_type| x )
 
-    <description/>
+    For each element i of the result, returns true if x[i] is positive or negative
+    floating point infinity and false otherwise.
 
     :param x:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value to test for infinity.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_bool_type|
+        true or false
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/isinf.xhtml
 
@@ -1914,21 +1806,15 @@ float **mix** ( float a, float b, float c )
 
 |vec_int_type| **floatBitsToInt** ( |vec_type| x )
 
-    <description/>
+    Returns the encoding of the floating-point parameters as int.
+
+    The floating-point bit-level representation is preserved.
 
     :param x:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value whose floating point encoding to return.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_int_type|
+        the floating-point encoding of x.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToInt.xhtml
 
@@ -1945,21 +1831,15 @@ float **mix** ( float a, float b, float c )
 
 |vec_uint_type| **floatBitsToUint** ( |vec_type| x )
 
-    <description/>
+    Returns the encoding of the floating-point parameters as uint.
+
+    The floating-point bit-level representation is preserved.
 
     :param x:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value whose floating point encoding to return.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_uint_type|
+        the floating-point encoding of x.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToUint.xhtml
 
@@ -1976,21 +1856,18 @@ float **mix** ( float a, float b, float c )
 
 |vec_type| **intBitsToFloat** ( |vec_int_type| x )
 
-    <description/>
+    Converts a bit encoding to a floating-point value. Opposite of `floatBitsToInt<_shader_func_floatBitsToInt>`
+
+    If the encoding of a NaN is passed in x, it will not signal and the resulting value will be undefined.
+
+    If the encoding of a floating point infinity is passed in parameter x, the resulting floating-point value is
+    the corresponding (positive or negative) floating point infinity.
 
     :param x:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the bit encoding to return as a floating point value.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_type|
+        a floating point value
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/intBitsToFloat.xhtml
 
@@ -2007,21 +1884,18 @@ float **mix** ( float a, float b, float c )
 
 |vec_type| **uintBitsToFloat** ( |vec_uint_type| x )
 
-    <description/>
+    Converts a bit encoding to a floating-point value. Opposite of `floatBitsToUint<_shader_func_floatBitsToUint>`
+
+    If the encoding of a NaN is passed in x, it will not signal and the resulting value will be undefined.
+
+    If the encoding of a floating point infinity is passed in parameter x, the resulting floating-point value is
+    the corresponding (positive or negative) floating point infinity.
 
     :param x:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the bit encoding to return as a floating point value.
 
     :return:
-        <return_description/>
-
-    :rtype: |vec_type|
+        a floating point value
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/uintBitsToFloat.xhtml
 
@@ -2038,33 +1912,33 @@ float **mix** ( float a, float b, float c )
 Geometric Functions
 ^^^^^^^^^^^^^^^^^^^
 
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| float      | :ref:`length<shader_func_length>` ( |vec_type| x)                                      | Vector length.                                           |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| float      | :ref:`distance<shader_func_distance>` ( |vec_type| a, |vec_type| b)                    | Distance between vectors i.e ``length(a - b)``.          |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| float      | :ref:`dot<shader_func_dot>` ( |vec_type| a, |vec_type| b)                              | Dot product.                                             |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| vec3       | :ref:`cross<shader_func_cross>` (vec3 a, vec3 b)                                       | Cross product.                                           |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |vec_type| | :ref:`normalize<shader_func_normalize>` ( |vec_type| x)                                | Normalize to unit length.                                |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| vec3       | :ref:`reflect<shader_func_reflect>` (vec3 I, vec3 N)                                   | Reflect.                                                 |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| vec3       | :ref:`refract<shader_func_refract>` (vec3 I, vec3 N, float eta)                        | Refract.                                                 |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |vec_type| | :ref:`faceforward<shader_func_faceforward>` (vecType N, |vec_type| I, |vec_type| Nref) | If ``dot(Nref, I)`` < 0, return ``N``, otherwise ``-N``. |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |mat_type| | :ref:`matrixCompMult<shader_func_matrixCompMult>` (|mat_type| x, |mat_type| y)         | Matrix component multiplication.                         |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |mat_type| | :ref:`outerProduct<shader_func_outerProduct>` ( |vec_type| column, |vec_type| row)     | Matrix outer product.                                    |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |mat_type| | :ref:`transpose<shader_func_transpose>` (|mat_type| m)                                 | Transpose matrix.                                        |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| float      | :ref:`determinant<shader_func_determinant>` (|mat_type| m)                             | Matrix determinant.                                      |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |mat_type| | :ref:`inverse<shader_func_inverse>` (|mat_type| m)                                     | Inverse matrix.                                          |
-+------------+----------------------------------------------------------------------------------------+----------------------------------------------------------+
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| float      | :ref:`length<shader_func_length>` ( |vec_type| x)                                         | Vector length.                                           |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| float      | :ref:`distance<shader_func_distance>` ( |vec_type| a, |vec_type| b)                       | Distance between vectors i.e ``length(a - b)``.          |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| float      | :ref:`dot<shader_func_dot>` ( |vec_type| a, |vec_type| b)                                 | Dot product.                                             |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| vec3       | :ref:`cross<shader_func_cross>` (vec3 a, vec3 b)                                          | Cross product.                                           |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| |vec_type| | :ref:`normalize<shader_func_normalize>` ( |vec_type| x)                                   | Normalize to unit length.                                |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| vec3       | :ref:`reflect<shader_func_reflect>` (vec3 I, vec3 N)                                      | Reflect.                                                 |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| vec3       | :ref:`refract<shader_func_refract>` (vec3 I, vec3 N, float eta)                           | Refract.                                                 |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| |vec_type| | :ref:`faceforward<shader_func_faceforward>` (|vec_type| N, |vec_type| I, |vec_type| Nref) | If ``dot(Nref, I)`` < 0, return ``N``, otherwise ``-N``. |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| |mat_type| | :ref:`matrixCompMult<shader_func_matrixCompMult>` (|mat_type| x, |mat_type| y)            | Matrix component multiplication.                         |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| |mat_type| | :ref:`outerProduct<shader_func_outerProduct>` ( |vec_type| column, |vec_type| row)        | Matrix outer product.                                    |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| |mat_type| | :ref:`transpose<shader_func_transpose>` (|mat_type| m)                                    | Transpose matrix.                                        |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| float      | :ref:`determinant<shader_func_determinant>` (|mat_type| m)                                | Matrix determinant.                                      |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
+| |mat_type| | :ref:`inverse<shader_func_inverse>` (|mat_type| m)                                        | Inverse matrix.                                          |
++------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -2318,9 +2192,9 @@ Bitwise operations
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | |vec_uint_type| | :ref:`usubBorrow<shader_func_usubBorrow>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| borrow)                           | Subtracts two unsigned integers and generates borrow.               |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|      | :ref:`ldexp<shader_func_ldexp>` (vecType x, out |vec_int_type| exp)                                                                    | Assemble a floating-point number from a value and exponent.         |
+| |vec_type|      | :ref:`ldexp<shader_func_ldexp>` (|vec_type| x, out |vec_int_type| exp)                                                                 | Assemble a floating-point number from a value and exponent.         |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|      | :ref:`frexp<shader_func_frexp>` (vecType x, out |vec_int_type| exp)                                                                    | Splits a floating-point number (``x``) into significand integral    |
+| |vec_type|      | :ref:`frexp<shader_func_frexp>` (|vec_type| x, out |vec_int_type| exp)                                                                 | Splits a floating-point number (``x``) into significand integral    |
 |                 |                                                                                                                                        | components                                                          |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
