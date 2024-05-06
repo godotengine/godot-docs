@@ -3,7 +3,7 @@
 # https://github.com/readthedocs/readthedocs.org/blob/master/requirements/docs.txt
 
 # Base dependencies
-pygments==2.15.1
+pygments==2.18.0
 
 # Sphinx base and RTD theme.
 sphinx==4.4.0
