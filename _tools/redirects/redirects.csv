@@ -377,6 +377,8 @@ source,destination
 /tutorials/misc/pausing_games.html,/tutorials/scripting/pausing_games.html
 /tutorials/misc/running_code_in_the_editor.html,/tutorials/plugins/running_code_in_the_editor.html
 /tutorials/misc/saving_games.html,/tutorials/io/saving_games.html
+/tutorials/navigation/navigation_using_navigationobstacles.html#static-obstacles,/tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles
+/tutorials/navigation/navigation_using_navigationobstacles.html#static-obstacles,/tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles
 /tutorials/optimization/batching.html,/tutorials/performance/batching.html
 /tutorials/optimization/cpu_optimization.html,/tutorials/performance/cpu_optimization.html
 /tutorials/optimization/general_optimization.html,/tutorials/performance/general_optimization.html
