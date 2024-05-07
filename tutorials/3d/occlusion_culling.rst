@@ -85,7 +85,7 @@ In Godot, occlusion culling works by rasterizing the scene's occluder geometry
 to a low-resolution buffer on the CPU. This is done using
 the software raytracing library `Embree <https://github.com/embree/embree>`__.
 
-The engine then uses this low-resolution buffer to test occludees'
+The engine then uses this low-resolution buffer to test the occludee's
 :abbr:`AABB (Axis-Aligned Bounding Box)` against the occluder shapes.
 The occludee's :abbr:`AABB (Axis-Aligned Bounding Box)` must be *fully occluded*
 by the occluder shape to be culled.

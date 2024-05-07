@@ -201,7 +201,7 @@ OpenXR defines a number of bindable input poses that are commonly available for 
 There are no rules for which poses are supported for different controllers.
 The poses OpenXR currently defines are:
 
-  * The aim pose on most controllers is positioned slightly infront of the controller and aims forward.
+  * The aim pose on most controllers is positioned slightly in front of the controller and aims forward.
     This is a great pose to use for laser pointers or to align the muzzle of a weapon with.
   * The grip pose on most controllers is positioned where the grip button is placed on the controller.
     The orientation of this pose differs between controllers and can differ for the same controller on different XR runtimes.

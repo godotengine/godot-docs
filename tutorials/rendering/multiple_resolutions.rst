@@ -72,6 +72,14 @@ that are different from this base size. Godot offers many ways to
 control how the viewport will be resized and stretched to different
 screen sizes.
 
+.. note::
+
+   On this page, *window* refers to the screen area allotted to your game
+   by the system, while *viewport* refers to the root object (accessible
+   from ``get_tree().root``) which the game controls to fill this screen area.
+   This viewport is a :ref:`Window <class_Window>` instance. Recall from the
+   :ref:`introduction <doc_viewports>` that *all* Window objects are viewports.
+
 To configure the stretch base size at runtime from a script, use the
 ``get_tree().root.content_scale_size`` property (see
 :ref:`Window.content_scale_size <class_Window_property_content_scale_size>`).
@@ -469,18 +477,34 @@ Non-game application
 hiDPI support
 -------------
 
-By default, Godot projects aren't considered DPI-aware by the operating system.
-This is done to improve performance on low-end systems, since the operating
-system's DPI fallback scaling will be faster than letting the application scale
-itself (even when using the ``viewport`` stretch mode).
+By default, Godot projects are considered DPI-aware by the operating system.
+This is controlled by the **Display > Window > Dpi > Allow Hidpi** project setting,
+which should be left enabled whenever possible. Disabling DPI awareness can break
+fullscreen behavior on Windows.
 
-However, the OS-provided DPI fallback scaling doesn't play well with fullscreen
-mode. If you want crisp visuals on hiDPI displays or if project uses fullscreen,
-it's recommended to enable **Display > Window > Dpi > Allow Hidpi** in the
-Project Settings.
+Since Godot projects are DPI-aware, they may appear at a very small window size
+when launching on an hiDPI display (proportionally to the screen resolution).
+For a game, the most common way to work around this issue is to make them
+fullscreen by default. Alternatively, you could set the window size in an
+:ref:`autoload <doc_singletons_autoload>`'s ``_ready()`` function according to
+the screen size.
 
-**Allow Hidpi** is only effective on Windows and macOS. It's ignored on all
-other platforms.
+To ensure 2D elements don't appear too small on hiDPI displays:
+
+- For games, use the ``canvas_items`` or ``viewport`` stretch modes so that 2D
+  elements are automatically resized according to the current window size.
+- For non-game applications, use the ``disabled`` stretch mode and set the
+  stretch scale to a value corresponding to the display scale factor in an
+  :ref:`autoload <doc_singletons_autoload>`'s ``_ready()`` function.
+  The display scale factor is set in the operating system's settings and can be queried
+  using :ref:`screen_get_scale<class_DisplayServer_method_screen_get_scale>`. This
+  method is currently only implemented on macOS. On other operating systems, you
+  will need to implement a method to guess the display scale factor based on the
+  screen resolution (with a setting to let the user override this if needed). This
+  is the approach currently used by the Godot editor.
+
+The **Allow Hidpi** setting is only effective on Windows and macOS. It's ignored
+on all other platforms.
 
 .. note::
 

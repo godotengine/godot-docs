@@ -43,7 +43,7 @@ editing, such as precise cropping or adding outlines, Squoosh can be used.
 `Squoosh <https://squoosh.app/>`_ is a converter developed by Google, is open
 source, and doesn't give Google any image rights by using it. When choosing
 compression if you can get an image that's under 300KB in size use lossless
-compression. If it's over 300KB use just enough lossy compression to get it
+compression. If it's over 300KB, use just enough lossy compression to get it
 under that size. If this results in noticable compression artifacts using less
 compression is fine, even if the file size is bigger.
 
@@ -107,7 +107,7 @@ means the image will not lose detail and will be as small as possible.
 
 If the image is over 300KB in size try compressing it losslessly using `Squoosh <https://squoosh.app/>`_.
 If it's still over 300KB change to lossy compression and slowly increase the compression until it's under
-300KB. If this results in noticable compression artifacts using less compression is fine, even if the file
+300KB. If this results in noticeable compression artifacts using less compression is fine, even if the file
 size is bigger.
 
 Outlines arrows and text

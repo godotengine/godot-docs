@@ -231,7 +231,7 @@ in another context without any extra changes to its API.
   satisfied? Other programmers, and especially designers and writers, will need
   clear instructions in the messages telling them what to do to configure it.
 
-So, why does all this complex switcharoo work? Well, because scenes operate
+So, why does all this complex switcheroo work? Well, because scenes operate
 best when they operate alone. If unable to work alone, then working with
 others anonymously (with minimal hard dependencies, i.e. loose coupling)
 is the next best thing. Inevitably, changes may need to be made to a class and

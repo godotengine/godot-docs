@@ -141,5 +141,5 @@ effects of each of them.
 - **SubViewportContainer shrink transform**
     :ref:`stretch <class_SubViewportContainer_property_stretch>` together with
     :ref:`stretch_shrink <class_SubViewportContainer_property_stretch_shrink>` declare for a
-    *SubViewportContaner* if and by what integer factor the contained *SubViewport* should be
+    *SubViewportContainer* if and by what integer factor the contained *SubViewport* should be
     scaled in comparison to the container's size.
