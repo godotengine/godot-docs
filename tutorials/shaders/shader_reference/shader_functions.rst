@@ -2034,7 +2034,8 @@ float **dot** ( |vec_type| a, |vec_type| b )
 vec3 **cross** ( vec3 a, vec3 b )
 
     Returns the cross product of two vectors.
-    ie::
+    i.e.::
+
         vec2( a.y * b.z - b.y * a.z,
               a.z * b.x - b.z * a.x,
               a.x * b.z - b.x * a.y )
@@ -2359,19 +2360,16 @@ Comparison Functions
 
 |vec_bool_type| **lessThan** ( |vec_type| x, |vec_type| y )
 
-    <description/>
+    Perform a component-wise less-than comparison of two vectors.
 
     :param x:
-        <param_description/>
+        the first vector for comparison.
 
     :param y:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the first vector for comparison.
 
     :return:
-        <return_description/>
+        a boolean vector in which each element i is computed as ``x[i] < y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThan.xhtml
 
@@ -2388,19 +2386,16 @@ Comparison Functions
 
 |vec_bool_type| **greaterThan** ( |vec_type| x, |vec_type| y )
 
-    <description/>
+    Perform a component-wise greater-than comparison of two vectors.
 
     :param x:
-        <param_description/>
+        the first vector for comparison.
 
     :param y:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the first vector for comparison.
 
     :return:
-        <return_description/>
+        a boolean vector in which each element i is computed as ``x[i] > y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThan.xhtml
 
@@ -2417,19 +2412,16 @@ Comparison Functions
 
 |vec_bool_type| **lessThanEqual** ( |vec_type| x, |vec_type| y )
 
-    <description/>
+    Perform a component-wise less-than-or-equal comparison of two vectors.
 
     :param x:
-        <param_description/>
+        the first vector for comparison.
 
     :param y:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the first vector for comparison.
 
     :return:
-        <return_description/>
+        a boolean vector in which each element i is computed as ``x[i] ≤ y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThanEqual.xhtml
 
@@ -2446,19 +2438,16 @@ Comparison Functions
 
 |vec_bool_type| **greaterThanEqual** ( |vec_type| x, |vec_type| y )
 
-    <description/>
+    Perform a component-wise greater-than-or-equal comparison of two vectors.
 
     :param x:
-        <param_description/>
+        the first vector for comparison.
 
     :param y:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the first vector for comparison.
 
     :return:
-        <return_description/>
+        a boolean vector in which each element i is computed as ``x[i] ≥ y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThanEqual.xhtml
 
@@ -2475,19 +2464,16 @@ Comparison Functions
 
 |vec_bool_type| **equal** ( |vec_type| x, |vec_type| y )
 
-    <description/>
+    Perform a component-wise equal-to comparison of two vectors.
 
     :param x:
-        <param_description/>
+        the first vector for comparison.
 
     :param y:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the first vector for comparison.
 
     :return:
-        <return_description/>
+        a boolean vector in which each element i is computed as ``x[i] == y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/equal.xhtml
 
@@ -2504,19 +2490,16 @@ Comparison Functions
 
 |vec_bool_type| **notEqual** ( |vec_type| x, |vec_type| y )
 
-    <description/>
+    Perform a component-wise not-equal-to comparison of two vectors.
 
     :param x:
-        <param_description/>
+        the first vector for comparison.
 
     :param y:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the first vector for comparison.
 
     :return:
-        <return_description/>
+        a boolean vector in which each element i is computed as ``x[i] != y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/notEqual.xhtml
 
@@ -2533,19 +2516,24 @@ Comparison Functions
 
 bool **any** ( |vec_bool_type| x )
 
-    <description/>
+    Check whether any element of a boolean vector is true.
+
+    Functionally equivalent to::
+
+        bool any(bvec x) {     // bvec can be bvec2, bvec3 or bvec4
+            bool result = false;
+            int i;
+            for (i = 0; i < x.length(); ++i) {
+                result |= x[i];
+            }
+            return result;
+        }
 
     :param x:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the vector to be tested for truth.
 
     :return:
-        <return_description/>
+        true if any element of x is true and false otherwise.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/any.xhtml
 
@@ -2562,19 +2550,26 @@ bool **any** ( |vec_bool_type| x )
 
 bool **all** ( |vec_bool_type| x )
 
-    <description/>
+    Check whether all elements of a boolean vector are true.
+
+    Functionally equivalent to::
+
+        bool all(bvec x)       // bvec can be bvec2, bvec3 or bvec4
+        {
+            bool result = true;
+            int i;
+            for (i = 0; i < x.length(); ++i)
+            {
+                result &= x[i];
+            }
+            return result;
+        }
 
     :param x:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the vector to be tested for truth.
 
     :return:
-        <return_description/>
+        true if all elements of x are true and false otherwise.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/all.xhtml
 
@@ -2591,19 +2586,13 @@ bool **all** ( |vec_bool_type| x )
 
 |vec_bool_type| **not** ( |vec_bool_type| x )
 
-    <description/>
+    Logically invert a boolean vector.
 
     :param x:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the vector to be inverted.
 
     :return:
-        <return_description/>
+        a new boolean vector for which each element i is computed as !x[i].
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/not.xhtml
 
