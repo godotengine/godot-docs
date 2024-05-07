@@ -1945,6 +1945,386 @@ Geometric Functions
 ----------
 
 
+.. _shader_func_length:
+
+.. rst-class:: classref-method
+
+float **length** ( |vec_type| x )
+
+    Returns the length of the vector.
+    ie. ``sqrt(x[0] * x[0] + x[1] * x[1] + ... + x[n] * x[n])``
+
+    :param x:
+        the vector
+
+    :return:
+        the length of the vector.
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/length.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_distance:
+
+.. rst-class:: classref-method
+
+float **distance** ( |vec_type| a, |vec_type| b )
+
+    Returns the distance between the two points a and b.
+
+    i.e., ``length(b - a);``
+
+    :param a:
+        the first point
+
+    :param b:
+        the second point
+
+    :return:
+        the scalar distance between the points
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/distance.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_dot:
+
+.. rst-class:: classref-method
+
+float **dot** ( |vec_type| a, |vec_type| b )
+
+    Returns the dot product of two vectors, a and b.
+    i.e., ``a.x * b.x + a.y * b.y + ...``
+
+    :param a:
+        the first vector
+
+    :param b:
+        the second vector
+
+    :return:
+        the dot product
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dot.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_cross:
+
+.. rst-class:: classref-method
+
+vec3 **cross** ( vec3 a, vec3 b )
+
+    Returns the cross product of two vectors.
+    ie::
+        vec2( a.y * b.z - b.y * a.z,
+              a.z * b.x - b.z * a.x,
+              a.x * b.z - b.x * a.y )
+
+    :param a:
+        the first vector
+
+    :param b:
+        the second vector
+
+    :return:
+        the cross product
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cross.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_normalize:
+
+.. rst-class:: classref-method
+
+|vec_type| **normalize** ( |vec_type| x )
+
+    Returns a vector with the same direction as x but with length 1.
+
+    :param x:
+        the vector to normalize.
+
+    :return:
+        the normalized vector.
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/normalize.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_reflect:
+
+.. rst-class:: classref-method
+
+vec3 **reflect** ( vec3 I, vec3 N )
+
+    Calculate the reflection direction for an incident vector.
+
+    For a given incident vector I and surface normal N reflect returns the reflection direction calculated as ``I - 2.0 * dot(N, I) * N``.
+
+    .. Note::
+        N should be normalized in order to achieve the desired result.
+
+    :param I:
+        the incident vector
+
+    :param N:
+        the normal vector
+
+    :return:
+        the reflection vector
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/reflect.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_refract:
+
+.. rst-class:: classref-method
+
+vec3 **refract** ( vec3 I, vec3 N, float eta )
+
+    Calculate the refraction direction for an incident vector.
+
+    For a given incident vector I, surface normal N and ratio of indices of refraction, eta, refract returns the refraction vector, R.
+
+    R is calculated as::
+
+        k = 1.0 - eta * eta * (1.0 - dot(N, I) * dot(N, I));
+        if (k < 0.0)
+            R = genType(0.0);       // or genDType(0.0)
+        else
+            R = eta * I - (eta * dot(N, I) + sqrt(k)) * N;
+
+    .. Note::
+        The input parameters I and N should be normalized in order to achieve the desired result.
+
+    :param I:
+        the incident vector.
+
+    :param N:
+        the normal vector.
+
+    :param eta:
+        the ratio of indices of refraction.
+
+    :return:
+        the refraction vector.
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/refract.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_faceforward:
+
+.. rst-class:: classref-method
+
+|vec_type| **faceforward** ( |vec_type| N, |vec_type| I, |vec_type| Nref )
+
+    Return a vector pointing in the same direction as another.
+
+    Orients a vector to point away from a surface as defined by its normal.
+    If ``dot(Nref, I) < 0`` faceforward returns ``N``, otherwise it returns ``-N``.
+
+    :param N:
+        the vector to orient.
+
+    :param I:
+        the incident vector.
+
+    :param Nref:
+        the reference vector.
+
+    :return:
+        the oriented vector.
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/faceforward.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_matrixCompMult:
+
+.. rst-class:: classref-method
+
+|mat_type| **matrixCompMult** ( |mat_type| x, |mat_type| y )
+
+    Perform a component-wise multiplication of two matrices.
+
+    Performs a component-wise multiplication of two matrices, yielding a result
+    matrix where each component, ``result[i][j]`` is computed as the scalar
+    product of ``x[i][j]`` and ``y[i][j]``.
+
+    :param x:
+        the first matrix multiplicand.
+
+    :param y:
+        the second matrix multiplicand.
+
+    :return:
+        the resultant matrix.
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/matrixCompMult.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_outerProduct:
+
+.. rst-class:: classref-method
+
+|mat_type| **outerProduct** ( |vec_type| column, |vec_type| row )
+
+    Calculate the outer product of a pair of vectors.
+
+    Does a linear algebraic matrix multiply ``column * row``, yielding a matrix whose number of
+    rows is the number of components in ``column`` and whose number of columns is the number of
+    components in ``row``.
+
+    :param column:
+        the column vector for multiplication.
+
+    :param row:
+        the row vector for multiplication.
+
+    :return:
+        the outer product matrix.
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/outerProduct.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_transpose:
+
+.. rst-class:: classref-method
+
+|mat_type| **transpose** ( |mat_type| m )
+
+    Calculate the transpose of a matrix.
+
+    :param m:
+        the matrix to transpose.
+
+    :return:
+        a new matrix that is the transpose of the input matrix.
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/transpose.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_determinant:
+
+.. rst-class:: classref-method
+
+float **determinant** ( |mat_type| m )
+
+    Calculate the determinant of a matrix.
+
+    :param m:
+        the matrix.
+
+    :return:
+        the determinant of the input matrix.
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/determinant.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+
+.. _shader_func_inverse:
+
+.. rst-class:: classref-method
+
+|mat_type| **inverse** ( |mat_type| m )
+
+    Calculate the inverse of a matrix.
+
+    The values in the returned matrix are undefined if m is singular or poorly-conditioned (nearly singular).
+
+    :param m:
+        the matrix of which to take the inverse.
+
+    :return:
+        a new matrix which is the inverse of the input matrix.
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/inverse.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
 Comparison Functions
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -1971,6 +2351,266 @@ Comparison Functions
 .. rst-class:: classref-section-separator
 
 ----
+
+
+.. _shader_func_lessThan:
+
+.. rst-class:: classref-method
+
+|vec_bool_type| **lessThan** ( |vec_type| x, |vec_type| y )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param y:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThan.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_greaterThan:
+
+.. rst-class:: classref-method
+
+|vec_bool_type| **greaterThan** ( |vec_type| x, |vec_type| y )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param y:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThan.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_lessThanEqual:
+
+.. rst-class:: classref-method
+
+|vec_bool_type| **lessThanEqual** ( |vec_type| x, |vec_type| y )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param y:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThanEqual.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_greaterThanEqual:
+
+.. rst-class:: classref-method
+
+|vec_bool_type| **greaterThanEqual** ( |vec_type| x, |vec_type| y )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param y:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThanEqual.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_equal:
+
+.. rst-class:: classref-method
+
+|vec_bool_type| **equal** ( |vec_type| x, |vec_type| y )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param y:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/equal.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_notEqual:
+
+.. rst-class:: classref-method
+
+|vec_bool_type| **notEqual** ( |vec_type| x, |vec_type| y )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param y:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/notEqual.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_any:
+
+.. rst-class:: classref-method
+
+bool **any** ( |vec_bool_type| x )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/any.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_all:
+
+.. rst-class:: classref-method
+
+bool **all** ( |vec_bool_type| x )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/all.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_not:
+
+.. rst-class:: classref-method
+
+|vec_bool_type| **not** ( |vec_bool_type| x )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/not.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
 
 
 
@@ -2117,6 +2757,1386 @@ Texture Functions
 
 
 
+.. _shader_func_textureSize:
+
+.. rst-class:: classref-method
+
+ivec2 **textureSize** ( |gsampler2D| s, int lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+ivec2 **textureSize** ( samplerCube s, int lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+ivec2 **textureSize** ( samplerCubeArray s, int lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+ivec3 **textureSize** ( |gsampler2DArray| s, int lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+ivec3 **textureSize** ( |gsampler3D| s, int lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_textureQueryLod:
+
+.. rst-class:: classref-method
+
+vec2 **textureQueryLod** ( |gsampler2D| s, vec2 p )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+vec3 **textureQueryLod** ( |gsampler2DArray| s, vec2 p )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+vec2 **textureQueryLod** ( |gsampler3D| s, vec3 p )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+vec2 **textureQueryLod** ( samplerCube s, vec3 p )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_textureQueryLevels:
+
+.. rst-class:: classref-method
+
+int **textureQueryLevels** ( |gsampler2D| s )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+int **textureQueryLevels** ( |gsampler2DArray| s )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+int **textureQueryLevels** ( |gsampler3D| s )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+int **textureQueryLevels** ( samplerCube s )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_texture:
+
+.. rst-class:: classref-method
+
+|gvec4_type| **texture** ( |gsampler2D| s, vec2 p [, float bias] )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param bias]:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **texture** ( |gsampler2DArray| s, vec3 p [, float bias] )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param bias]:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **texture** ( |gsampler3D| s, vec3 p [, float bias] )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param bias]:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+vec4 **texture** ( samplerCube s, vec3 p [, float bias] )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param bias]:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param bias]:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_textureProj:
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProj** ( |gsampler2D| s, vec3 p [, float bias] )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param bias]:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProj.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProj** ( |gsampler2D| s, vec4 p [, float bias] )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param bias]:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProj.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProj** ( |gsampler3D| s, vec4 p [, float bias] )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param bias]:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProj.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_textureLod:
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureLod** ( |gsampler2D| s, vec2 p, float lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureLod** ( |gsampler2DArray| s, vec3 p, float lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureLod** ( |gsampler3D| s, vec3 p, float lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+vec4 **textureLod** ( samplerCube s, vec3 p, float lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_textureProjLod:
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProjLod** ( |gsampler2D| s, vec3 p, float lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProjLod** ( |gsampler2D| s, vec4 p, float lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProjLod** ( |gsampler3D| s, vec4 p, float lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjLod.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_textureGrad:
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureGrad** ( |gsampler2D| s, vec2 p, vec2 dPdx, vec2 dPdy )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param dPdx:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureGrad** ( |gsampler2DArray| s, vec3 p, vec2 dPdx, vec2 dPdy )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param dPdx:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureGrad** ( |gsampler3D| s, vec3 p, vec2 dPdx, vec2 dPdy )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param dPdx:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+vec4 **textureGrad** ( samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param dPdx:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param dPdx:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_textureProjGrad:
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProjGrad** ( |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param dPdx:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjGrad.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProjGrad** ( |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param dPdx:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjGrad.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProjGrad** ( |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param dPdx:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjGrad.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_texelFetch:
+
+.. rst-class:: classref-method
+
+|gvec4_type| **texelFetch** ( |gsampler2D| s, ivec2 p, int lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **texelFetch** ( |gsampler2DArray| s, ivec3 p, int lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **texelFetch** ( |gsampler3D| s, ivec3 p, int lod )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param lod:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_textureGather:
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureGather** ( |gsampler2D| s, vec2 p [, int comps] )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param comps]:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGather.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureGather** ( |gsampler2DArray| s, vec3 p [, int comps] )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param comps]:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGather.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
+
+    <description/>
+
+    :param s:
+        <param_description/>
+
+    :param p:
+        <param_description/>
+
+    :param comps]:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGather.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_dFdx:
+
+.. rst-class:: classref-method
+
+|vec_type| **dFdx** ( |vec_type| p )
+
+    <description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdx.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_dFdxCoarse:
+
+.. rst-class:: classref-method
+
+|vec_type| **dFdxCoarse** ( |vec_type| p )
+
+    <description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdxCoarse.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_dFdxFine:
+
+.. rst-class:: classref-method
+
+|vec_type| **dFdxFine** ( |vec_type| p )
+
+    <description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdxFine.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_dFdy:
+
+.. rst-class:: classref-method
+
+|vec_type| **dFdy** ( |vec_type| p )
+
+    <description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdy.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_dFdyCoarse:
+
+.. rst-class:: classref-method
+
+|vec_type| **dFdyCoarse** ( |vec_type| p )
+
+    <description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdyCoarse.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_dFdyFine:
+
+.. rst-class:: classref-method
+
+|vec_type| **dFdyFine** ( |vec_type| p )
+
+    <description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdyFine.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_fwidth:
+
+.. rst-class:: classref-method
+
+|vec_type| **fwidth** ( |vec_type| p )
+
+    <description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidth.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_fwidthCoarse:
+
+.. rst-class:: classref-method
+
+|vec_type| **fwidthCoarse** ( |vec_type| p )
+
+    <description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidthCoarse.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_fwidthFine:
+
+.. rst-class:: classref-method
+
+|vec_type| **fwidthFine** ( |vec_type| p )
+
+    <description/>
+
+    :param p:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidthFine.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
 Packing/Unpacking Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2153,6 +4173,295 @@ Packing/Unpacking Functions
 
 
 
+.. _shader_func_packHalf2x16:
+
+.. rst-class:: classref-method
+
+uint **packHalf2x16** ( vec2 v )
+
+    <description/>
+
+    :param v:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packHalf2x16.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_unpackHalf2x16:
+
+.. rst-class:: classref-method
+
+vec2 **unpackHalf2x16** ( uint v )
+
+    <description/>
+
+    :param v:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackHalf2x16.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_packUnorm2x16:
+
+.. rst-class:: classref-method
+
+uint **packUnorm2x16** ( vec2 v )
+
+    <description/>
+
+    :param v:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm2x16.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_unpackUnorm2x16:
+
+.. rst-class:: classref-method
+
+vec2 **unpackUnorm2x16** ( uint v )
+
+    <description/>
+
+    :param v:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm2x16.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_packSnorm2x16:
+
+.. rst-class:: classref-method
+
+uint **packSnorm2x16** ( vec2 v )
+
+    <description/>
+
+    :param v:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packSnorm2x16.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_unpackSnorm2x16:
+
+.. rst-class:: classref-method
+
+vec2 **unpackSnorm2x16** ( uint v )
+
+    <description/>
+
+    :param v:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackSnorm2x16.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_packUnorm4x8:
+
+.. rst-class:: classref-method
+
+uint **packUnorm4x8** ( vec4 v )
+
+    <description/>
+
+    :param v:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm4x8.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_unpackUnorm4x8:
+
+.. rst-class:: classref-method
+
+vec4 **unpackUnorm4x8** ( uint v )
+
+    <description/>
+
+    :param v:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm4x8.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_packSnorm4x8:
+
+.. rst-class:: classref-method
+
+uint **packSnorm4x8** ( vec4 v )
+
+    <description/>
+
+    :param v:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packSnorm4x8.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_unpackSnorm4x8:
+
+.. rst-class:: classref-method
+
+vec4 **unpackSnorm4x8** ( uint v )
+
+    <description/>
+
+    :param v:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackSnorm4x8.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
 
 Bitwise operations
 ^^^^^^^^^^^^^^^^^^
@@ -2162,11 +4471,9 @@ Bitwise operations
 |                 |                                                                                                                                        |                                                                     |
 | |vec_uint_type| | :ref:`bitfieldExtract<shader_func_bitfieldExtract>` ( |vec_uint_type| value, int offset, int bits)                                     |                                                                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` ( |vec_int_type| base, |vec_int_type| insert,                                        | Insert a range of bits into an integer.                             |
-|                 | int offset, int bits)                                                                                                                  |                                                                     |
+| |vec_int_type|  | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` ( |vec_int_type| base, |vec_int_type| insert,int offset, int bits)                   | Insert a range of bits into an integer.                             |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
-| |vec_uint_type| | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` (|vec_uint_type| base, |vec_uint_type| insert, int offset,                           |                                                                     |
-|                 | int bits)                                                                                                                              |                                                                     |
+| |vec_uint_type| | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` (|vec_uint_type| base, |vec_uint_type| insert, int offset, int bits)                 |                                                                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | |vec_int_type|  | :ref:`bitfieldReverse<shader_func_bitfieldReverse>` ( |vec_int_type| value)                                                            | Reverse the order of bits in an integer.                            |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
@@ -2184,7 +4491,7 @@ Bitwise operations
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
 | |vec_uint_type| | :ref:`findMSB<shader_func_findMSB>` ( |vec_uint_type| value)                                                                           |                                                                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |void|          | :ref:`imulExtended<shader_func_imulExtended>` ( |vec_int_type| x, |vec_int_type| y,out |vec_int_type| msb, out |vec_int_type| lsb)     | Multiplies two 32-bit numbers and produce a 64-bit result.          |
+| |void|          | :ref:`imulExtended<shader_func_imulExtended>` ( |vec_int_type| x, |vec_int_type| y, out |vec_int_type| msb, out |vec_int_type| lsb)    | Multiplies two 32-bit numbers and produce a 64-bit result.          |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
 | |void|          | :ref:`umulExtended<shader_func_umulExtended>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| msb, out |vec_uint_type| lsb) |                                                                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
@@ -2202,6 +4509,505 @@ Bitwise operations
 .. rst-class:: classref-section-separator
 
 ----
+
+
+
+.. _shader_func_bitfieldExtract:
+
+.. rst-class:: classref-method
+
+|vec_int_type| **bitfieldExtract** ( |vec_int_type| value, int offset, int bits )
+
+    <description/>
+
+    :param value:
+        <param_description/>
+
+    :param offset:
+        <param_description/>
+
+    :param bits:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldExtract.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **bitfieldExtract** ( |vec_uint_type| value, int offset, int bits )
+
+    <description/>
+
+    :param value:
+        <param_description/>
+
+    :param offset:
+        <param_description/>
+
+    :param bits:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldExtract.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_bitfieldInsert:
+
+.. rst-class:: classref-method
+
+|vec_int_type| **bitfieldInsert** ( |vec_int_type| base, |vec_int_type| insert, int offset, int bits )
+
+    <description/>
+
+    :param base:
+        <param_description/>
+
+    :param insert:
+        <param_description/>
+
+    :param offset:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldInsert.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **bitfieldInsert** ( |vec_uint_type| base, |vec_uint_type| insert, int offset, int bits )
+
+    <description/>
+
+    :param base:
+        <param_description/>
+
+    :param insert:
+        <param_description/>
+
+    :param offset:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldInsert.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_bitfieldReverse:
+
+.. rst-class:: classref-method
+
+|vec_int_type| **bitfieldReverse** ( |vec_int_type| value )
+
+    <description/>
+
+    :param value:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldReverse.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **bitfieldReverse** ( |vec_uint_type| value )
+
+    <description/>
+
+    :param value:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldReverse.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_bitCount:
+
+.. rst-class:: classref-method
+
+|vec_int_type| **bitCount** ( |vec_int_type| value )
+
+    <description/>
+
+    :param value:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitCount.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **bitCount** ( |vec_uint_type| value )
+
+    <description/>
+
+    :param value:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitCount.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_findLSB:
+
+.. rst-class:: classref-method
+
+|vec_int_type| **findLSB** ( |vec_int_type| value )
+
+    <description/>
+
+    :param value:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findLSB.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **findLSB** ( |vec_uint_type| value )
+
+    <description/>
+
+    :param value:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findLSB.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_findMSB:
+
+.. rst-class:: classref-method
+
+|vec_int_type| **findMSB** ( |vec_int_type| value )
+
+    <description/>
+
+    :param value:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findMSB.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **findMSB** ( |vec_uint_type| value )
+
+    <description/>
+
+    :param value:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findMSB.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_imulExtended:
+
+.. rst-class:: classref-method
+
+|void| **imulExtended** ( |vec_int_type| x, |vec_int_type| y, out |vec_int_type| msb, out |vec_int_type| lsb )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param y:
+        <param_description/>
+
+    :param msb:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/imulExtended.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_umulExtended:
+
+.. rst-class:: classref-method
+
+|void| **umulExtended** ( |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| msb, out |vec_uint_type| lsb )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param y:
+        <param_description/>
+
+    :param msb:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/umulExtended.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_uaddCarry:
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **uaddCarry** ( |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| carry )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param y:
+        <param_description/>
+
+    :param carry:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/uaddCarry.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_usubBorrow:
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **usubBorrow** ( |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| borrow )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param y:
+        <param_description/>
+
+    :param borrow:
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/usubBorrow.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_ldexp:
+
+.. rst-class:: classref-method
+
+|vec_type| **ldexp** ( |vec_type| x, out |vec_int_type| exp )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param exp:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/ldexp.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
+
+
+.. _shader_func_frexp:
+
+.. rst-class:: classref-method
+
+|vec_type| **frexp** ( |vec_type| x, out |vec_int_type| exp )
+
+    <description/>
+
+    :param x:
+        <param_description/>
+
+    :param exp:
+        <param_description/>
+
+    :param :
+        <param_description/>
+
+    :return:
+        <return_description/>
+
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/frexp.xhtml
+
+.. rst-class:: classref-item-separator
+
+----
+
+
 
 
 
