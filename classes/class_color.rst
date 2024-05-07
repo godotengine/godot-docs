@@ -23,7 +23,7 @@ Colors can be created in various ways: By the various **Color** constructors, by
 
 \ **Note:** In a boolean context, a Color will evaluate to ``false`` if it is equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
 
-\ `Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__
+\ `Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/4.0/img/color_constants.png>`__
 
 .. rst-class:: classref-introduction-group
 

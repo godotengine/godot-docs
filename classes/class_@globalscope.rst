@@ -5487,7 +5487,7 @@ Returns an "eased" value of ``x`` based on an easing function defined with ``cur
     - 1.0: Linear
     - Greater than 1.0 (exclusive): Ease in
 
-\ `ease() curve values cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/ease_cheatsheet.png>`__\ 
+\ `ease() curve values cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/4.0/img/ease_cheatsheet.png>`__\ 
 
 See also :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`. If you need to perform more advanced transitions, use :ref:`Tween.interpolate_value<class_Tween_method_interpolate_value>`.
 
@@ -6824,7 +6824,7 @@ This S-shaped curve is the cubic Hermite interpolator, given by ``f(y) = 3*y^2 -
 
 Compared to :ref:`ease<class_@GlobalScope_method_ease>` with a curve value of ``-1.6521``, :ref:`smoothstep<class_@GlobalScope_method_smoothstep>` returns the smoothest possible curve with no sudden changes in the derivative. If you need to perform more advanced transitions, use :ref:`Tween<class_Tween>` or :ref:`AnimationPlayer<class_AnimationPlayer>`.
 
-\ `Comparison between smoothstep() and ease(x, -1.6521) return values <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/smoothstep_ease_comparison.png>`__
+\ `Comparison between smoothstep() and ease(x, -1.6521) return values <https://raw.githubusercontent.com/godotengine/godot-docs/4.0/img/smoothstep_ease_comparison.png>`__
 
 .. rst-class:: classref-item-separator
 
