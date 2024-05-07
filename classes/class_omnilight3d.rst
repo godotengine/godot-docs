@@ -32,6 +32,8 @@ Tutorials
 
 - :doc:`3D lights and shadows <../tutorials/3d/lights_and_shadows>`
 
+- :doc:`Faking global illumination <../tutorials/3d/global_illumination/faking_global_illumination>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

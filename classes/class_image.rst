@@ -265,7 +265,7 @@ OpenGL texture format ``RGBA`` with four components, each with a bitdepth of 4.
 
 :ref:`Format<enum_Image_Format>` **FORMAT_RGB565** = ``7``
 
-
+OpenGL texture format ``RGB`` with three components. Red and blue have a bitdepth of 5, and green has a bitdepth of 6.
 
 .. _class_Image_constant_FORMAT_RF:
 
@@ -305,7 +305,7 @@ OpenGL texture format ``GL_RGBA32F`` where there are four components, each a 32-
 
 :ref:`Format<enum_Image_Format>` **FORMAT_RH** = ``12``
 
-OpenGL texture format ``GL_R32F`` where there's one component, a 16-bit "half-precision" floating-point value.
+OpenGL texture format ``GL_R16F`` where there's one component, a 16-bit "half-precision" floating-point value.
 
 .. _class_Image_constant_FORMAT_RGH:
 
@@ -313,7 +313,7 @@ OpenGL texture format ``GL_R32F`` where there's one component, a 16-bit "half-pr
 
 :ref:`Format<enum_Image_Format>` **FORMAT_RGH** = ``13``
 
-OpenGL texture format ``GL_RG32F`` where there are two components, each a 16-bit "half-precision" floating-point value.
+OpenGL texture format ``GL_RG16F`` where there are two components, each a 16-bit "half-precision" floating-point value.
 
 .. _class_Image_constant_FORMAT_RGBH:
 
@@ -321,7 +321,7 @@ OpenGL texture format ``GL_RG32F`` where there are two components, each a 16-bit
 
 :ref:`Format<enum_Image_Format>` **FORMAT_RGBH** = ``14``
 
-OpenGL texture format ``GL_RGB32F`` where there are three components, each a 16-bit "half-precision" floating-point value.
+OpenGL texture format ``GL_RGB16F`` where there are three components, each a 16-bit "half-precision" floating-point value.
 
 .. _class_Image_constant_FORMAT_RGBAH:
 
@@ -329,7 +329,7 @@ OpenGL texture format ``GL_RGB32F`` where there are three components, each a 16-
 
 :ref:`Format<enum_Image_Format>` **FORMAT_RGBAH** = ``15``
 
-OpenGL texture format ``GL_RGBA32F`` where there are four components, each a 16-bit "half-precision" floating-point value.
+OpenGL texture format ``GL_RGBA16F`` where there are four components, each a 16-bit "half-precision" floating-point value.
 
 .. _class_Image_constant_FORMAT_RGBE9995:
 
@@ -487,7 +487,7 @@ Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture
 
 :ref:`Format<enum_Image_Format>` **FORMAT_ETC2_RA_AS_RG** = ``33``
 
-
+`Ericsson Texture Compression format 2 <https://en.wikipedia.org/wiki/Ericsson_Texture_Compression#ETC2_and_EAC>`__ (``RGBA8`` variant), which compresses RA data and interprets it as two channels (red and green). See also :ref:`FORMAT_ETC2_RGBA8<class_Image_constant_FORMAT_ETC2_RGBA8>`.
 
 .. _class_Image_constant_FORMAT_DXT5_RA_AS_RG:
 
@@ -495,7 +495,7 @@ Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture
 
 :ref:`Format<enum_Image_Format>` **FORMAT_DXT5_RA_AS_RG** = ``34``
 
-
+The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture format also known as Block Compression 3 or BC3, which compresses RA data and interprets it as two channels (red and green). See also :ref:`FORMAT_DXT5<class_Image_constant_FORMAT_DXT5>`.
 
 .. _class_Image_constant_FORMAT_ASTC_4x4:
 
@@ -703,7 +703,7 @@ enum **UsedChannels**:
 
 :ref:`UsedChannels<enum_Image_UsedChannels>` **USED_CHANNELS_L** = ``0``
 
-
+The image only uses one channel for luminance (grayscale).
 
 .. _class_Image_constant_USED_CHANNELS_LA:
 
@@ -711,7 +711,7 @@ enum **UsedChannels**:
 
 :ref:`UsedChannels<enum_Image_UsedChannels>` **USED_CHANNELS_LA** = ``1``
 
-
+The image uses two channels for luminance and alpha, respectively.
 
 .. _class_Image_constant_USED_CHANNELS_R:
 
@@ -719,7 +719,7 @@ enum **UsedChannels**:
 
 :ref:`UsedChannels<enum_Image_UsedChannels>` **USED_CHANNELS_R** = ``2``
 
-
+The image only uses the red channel.
 
 .. _class_Image_constant_USED_CHANNELS_RG:
 
@@ -727,7 +727,7 @@ enum **UsedChannels**:
 
 :ref:`UsedChannels<enum_Image_UsedChannels>` **USED_CHANNELS_RG** = ``3``
 
-
+The image uses two channels for red and green.
 
 .. _class_Image_constant_USED_CHANNELS_RGB:
 
@@ -735,7 +735,7 @@ enum **UsedChannels**:
 
 :ref:`UsedChannels<enum_Image_UsedChannels>` **USED_CHANNELS_RGB** = ``4``
 
-
+The image uses three channels for red, green, and blue.
 
 .. _class_Image_constant_USED_CHANNELS_RGBA:
 
@@ -743,7 +743,7 @@ enum **UsedChannels**:
 
 :ref:`UsedChannels<enum_Image_UsedChannels>` **USED_CHANNELS_RGBA** = ``5``
 
-
+The image uses four channels for red, green, blue, and alpha.
 
 .. rst-class:: classref-item-separator
 
@@ -862,9 +862,7 @@ Method Descriptions
 
 void **adjust_bcs** **(** :ref:`float<class_float>` brightness, :ref:`float<class_float>` contrast, :ref:`float<class_float>` saturation **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Adjusts this image's ``brightness``, ``contrast``, and ``saturation`` by the given values. Does not work if the image is compressed (see :ref:`is_compressed<class_Image_method_is_compressed>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1080,9 +1078,7 @@ Returns :ref:`ALPHA_BLEND<class_Image_constant_ALPHA_BLEND>` if the image has da
 
 :ref:`UsedChannels<enum_Image_UsedChannels>` **detect_used_channels** **(** :ref:`CompressSource<enum_Image_CompressSource>` source=0 **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the color channels used by this image, as one of the :ref:`UsedChannels<enum_Image_UsedChannels>` constants. If the image is compressed, the original ``source`` must be specified.
 
 .. rst-class:: classref-item-separator
 

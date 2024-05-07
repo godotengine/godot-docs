@@ -28,7 +28,7 @@ In computer programming, a Variant class is a class that is designed to store a 
     foo = "Now foo is a string!"
     foo = RefCounted.new() # foo is an Object
     var bar: int = 2 # bar is a statically typed integer.
-    # bar = "Uh oh! I can't make static variables become a different type!"
+    # bar = "Uh oh! I can't make statically typed variables become a different type!"
 
  .. code-tab:: csharp
 
@@ -62,7 +62,7 @@ The global :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>` function
     match typeof(foo):
         TYPE_NIL:
             print("foo is null")
-        TYPE_INTEGER:
+        TYPE_INT:
             print("foo is an integer")
         TYPE_OBJECT:
             # Note that Objects are their own special category.

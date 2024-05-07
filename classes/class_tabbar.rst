@@ -1174,6 +1174,8 @@ The style of disabled tabs.
 
 The style of the currently hovered tab. Does not apply to the selected tab.
 
+\ **Note:** This style will be drawn with the same width as :ref:`tab_unselected<class_TabBar_theme_style_tab_unselected>` at minimum.
+
 .. rst-class:: classref-item-separator
 
 ----

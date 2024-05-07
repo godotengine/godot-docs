@@ -19,11 +19,11 @@ A 3D cylinder shape used for physics collision.
 Description
 -----------
 
-A 2D capsule shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape3D<class_CollisionShape3D>`.
+A 3D cylinder shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape3D<class_CollisionShape3D>`.
 
 \ **Note:** There are several known bugs with cylinder collision shapes. Using :ref:`CapsuleShape3D<class_CapsuleShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>` instead is recommended.
 
-\ **Performance:** **CylinderShape3D** is fast to check collisions against, but it is slower than :ref:`CapsuleShape3D<class_CapsuleShape3D>`, :ref:`BoxShape3D<class_BoxShape3D>`, and **CylinderShape3D**.
+\ **Performance:** **CylinderShape3D** is fast to check collisions against, but it is slower than :ref:`CapsuleShape3D<class_CapsuleShape3D>`, :ref:`BoxShape3D<class_BoxShape3D>`, and :ref:`SphereShape3D<class_SphereShape3D>`.
 
 .. rst-class:: classref-introduction-group
 

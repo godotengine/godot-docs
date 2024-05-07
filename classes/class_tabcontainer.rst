@@ -396,7 +396,7 @@ If ``true``, tabs are visible. If ``false``, tabs' content and titles are hidden
 - void **set_use_hidden_tabs_for_min_size** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_use_hidden_tabs_for_min_size** **(** **)**
 
-If ``true``, children :ref:`Control<class_Control>` nodes that are hidden have their minimum size take into account in the total, instead of only the currently visible one.
+If ``true``, child :ref:`Control<class_Control>` nodes that are hidden have their minimum size take into account in the total, instead of only the currently visible one.
 
 .. rst-class:: classref-section-separator
 
@@ -917,6 +917,8 @@ The style of disabled tabs.
 :ref:`StyleBox<class_StyleBox>` **tab_hovered**
 
 The style of the currently hovered tab.
+
+\ **Note:** This style will be drawn with the same width as :ref:`tab_unselected<class_TabContainer_theme_style_tab_unselected>` at minimum.
 
 .. rst-class:: classref-item-separator
 

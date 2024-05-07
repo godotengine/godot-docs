@@ -111,7 +111,7 @@ Returns ``true`` if the increment was successful, ``false`` otherwise.
 
 Decrements the internal reference counter. Use this only if you really know what you are doing.
 
-Returns ``true`` if the decrement was successful, ``false`` otherwise.
+Returns ``true`` if the object should be freed after the decrement, ``false`` otherwise.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

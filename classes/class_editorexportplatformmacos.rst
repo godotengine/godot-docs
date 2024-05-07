@@ -424,7 +424,7 @@ Array of the additional command line arguments passed to the code signing tool.
 
 :ref:`bool<class_bool>` **codesign/entitlements/address_book**
 
-Enable to allow access to contacts in the user's address book, if it's enabled you should also provide usage message in the ``privacy/address_book_usage_description`` option.	See `com.apple.security.personal-information.addressbook <https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_personal-information_addressbook>`__.
+Enable to allow access to contacts in the user's address book, if it's enabled you should also provide usage message in the ``privacy/address_book_usage_description`` option. See `com.apple.security.personal-information.addressbook <https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_personal-information_addressbook>`__.
 
 .. rst-class:: classref-item-separator
 

@@ -633,7 +633,9 @@ Returns all the gizmos attached to this ``Node3D``.
 
 :ref:`Node3D<class_Node3D>` **get_parent_node_3d** **(** **)** |const|
 
-Returns the parent **Node3D**, or an empty :ref:`Object<class_Object>` if no parent exists or parent is not of type **Node3D**.
+Returns the parent **Node3D**, or ``null`` if no parent exists, the parent is not of type **Node3D**, or :ref:`top_level<class_Node3D_property_top_level>` is ``true``.
+
+\ **Note:** Calling this method is not equivalent to ``get_parent() as Node3D``, which does not take :ref:`top_level<class_Node3D_property_top_level>` into account.
 
 .. rst-class:: classref-item-separator
 

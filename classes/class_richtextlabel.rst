@@ -925,7 +925,7 @@ Clears the current selection.
 
 :ref:`int<class_int>` **get_character_line** **(** :ref:`int<class_int>` character **)**
 
-Returns the line number of the character position provided.
+Returns the line number of the character position provided. Line and character numbers are both zero-indexed.
 
 \ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_ready<class_RichTextLabel_method_is_ready>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
 
@@ -939,7 +939,7 @@ Returns the line number of the character position provided.
 
 :ref:`int<class_int>` **get_character_paragraph** **(** :ref:`int<class_int>` character **)**
 
-Returns the paragraph number of the character position provided.
+Returns the paragraph number of the character position provided. Paragraph and character numbers are both zero-indexed.
 
 \ **Note:** If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, this method returns a value for the loaded part of the document. Use :ref:`is_ready<class_RichTextLabel_method_is_ready>` or :ref:`finished<class_RichTextLabel_signal_finished>` to determine whether document is fully loaded.
 
@@ -1196,7 +1196,32 @@ Returns the number of visible paragraphs. A paragraph is considered visible if a
 
 void **install_effect** **(** :ref:`Variant<class_Variant>` effect **)**
 
-Installs a custom effect. ``effect`` should be a valid :ref:`RichTextEffect<class_RichTextEffect>`.
+Installs a custom effect. This can also be done in the RichTextLabel inspector using the :ref:`custom_effects<class_RichTextLabel_property_custom_effects>` property. ``effect`` should be a valid :ref:`RichTextEffect<class_RichTextEffect>`.
+
+Example RichTextEffect:
+
+::
+
+    # effect.gd
+    class_name MyCustomEffect
+    extends RichTextEffect
+    
+    var bbcode = "my_custom_effect"
+    
+    # ...
+
+Registering the above effect in RichTextLabel from script:
+
+::
+
+    # rich_text_label.gd
+    extends RichTextLabel
+    
+    func _ready():
+        install_effect(MyCustomEffect.new())
+    
+        # Alternatively, if not using `class_name` in the script that extends RichTextEffect:
+        install_effect(preload("res://effect.gd").new())
 
 .. rst-class:: classref-item-separator
 

@@ -402,7 +402,7 @@ Returns this vector's angle with respect to the positive X axis, or ``(1, 0)`` v
 
 For example, ``Vector2.RIGHT.angle()`` will return zero, ``Vector2.DOWN.angle()`` will return ``PI / 2`` (a quarter turn, or 90 degrees), and ``Vector2(1, -1).angle()`` will return ``-PI / 4`` (a negative eighth turn, or -45 degrees).
 
-\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle.png>`__\ 
+\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/4.1/img/vector2_angle.png>`__\ 
 
 Equivalent to the result of :ref:`@GlobalScope.atan2<class_@GlobalScope_method_atan2>` when called with the vector's :ref:`y<class_Vector2_property_y>` and :ref:`x<class_Vector2_property_x>` as parameters: ``atan2(y, x)``.
 
@@ -418,7 +418,7 @@ Equivalent to the result of :ref:`@GlobalScope.atan2<class_@GlobalScope_method_a
 
 Returns the angle to the given vector, in radians.
 
-\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to.png>`__
+\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/4.1/img/vector2_angle_to.png>`__
 
 .. rst-class:: classref-item-separator
 
@@ -434,7 +434,7 @@ Returns the angle between the line connecting the two points and the X axis, in 
 
 \ ``a.angle_to_point(b)`` is equivalent of doing ``(b - a).angle()``.
 
-\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/vector2_angle_to_point.png>`__
+\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/4.1/img/vector2_angle_to_point.png>`__
 
 .. rst-class:: classref-item-separator
 
@@ -520,7 +520,7 @@ Returns a new vector with all components clamped between the components of ``min
 
 Returns the 2D analog of the cross product for this vector and ``with``.
 
-This is the signed area of the parallelogram formed by the two vectors. If the second vector is clockwise from the first vector, then the cross product is the positive area. If counter-clockwise, the cross product is the negative area.
+This is the signed area of the parallelogram formed by the two vectors. If the second vector is clockwise from the first vector, then the cross product is the positive area. If counter-clockwise, the cross product is the negative area. If the two vectors are parallel this returns zero, making it useful for testing if two vectors are parallel.
 
 \ **Note:** Cross product is not defined in 2D mathematically. This method embeds the 2D vectors in the XY plane of 3D space and uses their cross product's Z component as the analog.
 

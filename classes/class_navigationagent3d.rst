@@ -169,9 +169,9 @@ The details dictionary may contain the following keys depending on the value of 
 
 - ``owner``: The object which manages the link (usually :ref:`NavigationLink3D<class_NavigationLink3D>`).
 
-- ``link_entry_position``: If ``owner`` is available and the owner is a :ref:`NavigationLink2D<class_NavigationLink2D>`, it will contain the global position of the link's point the agent is entering.
+- ``link_entry_position``: If ``owner`` is available and the owner is a :ref:`NavigationLink3D<class_NavigationLink3D>`, it will contain the global position of the link's point the agent is entering.
 
-- ``link_exit_position``: If ``owner`` is available and the owner is a :ref:`NavigationLink2D<class_NavigationLink2D>`, it will contain the global position of the link's point which the agent is exiting.
+- ``link_exit_position``: If ``owner`` is available and the owner is a :ref:`NavigationLink3D<class_NavigationLink3D>`, it will contain the global position of the link's point which the agent is exiting.
 
 .. rst-class:: classref-item-separator
 
@@ -183,7 +183,7 @@ The details dictionary may contain the following keys depending on the value of 
 
 **navigation_finished** **(** **)**
 
-Notifies when the final position is reached.
+Emitted once per loaded path when the agent internal navigation path index reaches the last index of the loaded path array. The agent internal navigation path index can be received with :ref:`get_current_navigation_path_index<class_NavigationAgent3D_method_get_current_navigation_path_index>`.
 
 .. rst-class:: classref-item-separator
 
@@ -195,7 +195,13 @@ Notifies when the final position is reached.
 
 **path_changed** **(** **)**
 
-Notifies when the navigation path changes.
+Emitted when the agent had to update the loaded path:
+
+- because path was previously empty.
+
+- because navigation map has changed.
+
+- because agent pushed further away from the current path segment than the :ref:`path_max_distance<class_NavigationAgent3D_property_path_max_distance>`.
 
 .. rst-class:: classref-item-separator
 
@@ -207,7 +213,7 @@ Notifies when the navigation path changes.
 
 **target_reached** **(** **)**
 
-Notifies when the player-defined :ref:`target_position<class_NavigationAgent3D_property_target_position>` is reached.
+Emitted once per loaded path when the agent's global position is the first time within :ref:`target_desired_distance<class_NavigationAgent3D_property_target_desired_distance>` to the :ref:`target_position<class_NavigationAgent3D_property_target_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -781,7 +787,7 @@ Returns the path query result for the path the agent is currently following.
 
 :ref:`Vector3<class_Vector3>` **get_final_position** **(** **)**
 
-Returns the reachable final position of the current navigation path in global coordinates. This position can change if the navigation path is altered in any way. Because of this, it would be best to check this each frame.
+Returns the reachable final position of the current navigation path in global coordinates. This position can change if the agent needs to update the navigation path which makes the agent emit the :ref:`path_changed<class_NavigationAgent3D_signal_path_changed>` signal.
 
 .. rst-class:: classref-item-separator
 
@@ -841,7 +847,9 @@ Returns the :ref:`RID<class_RID>` of this agent on the :ref:`NavigationServer3D<
 
 :ref:`bool<class_bool>` **is_navigation_finished** **(** **)**
 
-Returns true if the navigation path's final position has been reached.
+Returns ``true`` if the end of the currently loaded navigation path has been reached.
+
+\ **Note:** While true prefer to stop calling update functions like :ref:`get_next_path_position<class_NavigationAgent3D_method_get_next_path_position>`. This avoids jittering the standing agent due to calling repeated path updates.
 
 .. rst-class:: classref-item-separator
 
@@ -853,7 +861,7 @@ Returns true if the navigation path's final position has been reached.
 
 :ref:`bool<class_bool>` **is_target_reachable** **(** **)**
 
-Returns true if :ref:`target_position<class_NavigationAgent3D_property_target_position>` is reachable. The target position is set using :ref:`target_position<class_NavigationAgent3D_property_target_position>`.
+Returns ``true`` if :ref:`get_final_position<class_NavigationAgent3D_method_get_final_position>` is within :ref:`target_desired_distance<class_NavigationAgent3D_property_target_desired_distance>` of the :ref:`target_position<class_NavigationAgent3D_property_target_position>`.
 
 .. rst-class:: classref-item-separator
 

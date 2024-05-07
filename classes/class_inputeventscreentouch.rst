@@ -119,7 +119,7 @@ The touch index in the case of a multi-touch event. One index = one finger.
 - void **set_position** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_position** **(** **)**
 
-The touch position, in screen (global) coordinates.
+The touch position in the viewport the node is in, using the coordinate system of this viewport.
 
 .. rst-class:: classref-item-separator
 

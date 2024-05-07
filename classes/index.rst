@@ -769,6 +769,7 @@ Other objects
     class_node3dgizmo
     class_offlinemultiplayerpeer
     class_oggpacketsequenceplayback
+    class_openxrinteractionprofilemetadata
     class_openxrinterface
     class_os
     class_packeddatacontainerref

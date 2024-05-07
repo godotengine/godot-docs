@@ -245,7 +245,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 :ref:`Dictionary<class_Dictionary>` **_get_child_nodes** **(** **)** |virtual| |const|
 
-When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return all children animation nodes in order as a ``name: node`` dictionary.
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return all child animation nodes in order as a ``name: node`` dictionary.
 
 .. rst-class:: classref-item-separator
 
@@ -359,7 +359,7 @@ Blend an input. This is only useful for animation nodes created for an :ref:`Ani
 
 :ref:`float<class_float>` **blend_node** **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` is_external_seeking, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` sync=true, :ref:`bool<class_bool>` test_only=false **)**
 
-Blend another animation node (in case this animation node contains children animation nodes). This function is only useful if you inherit from :ref:`AnimationRootNode<class_AnimationRootNode>` instead, else editors will not display your animation node for addition.
+Blend another animation node (in case this animation node contains child animation nodes). This function is only useful if you inherit from :ref:`AnimationRootNode<class_AnimationRootNode>` instead, otherwise editors will not display your animation node for addition.
 
 .. rst-class:: classref-item-separator
 

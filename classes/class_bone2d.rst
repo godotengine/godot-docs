@@ -104,7 +104,7 @@ Method Descriptions
 
 void **apply_rest** **(** **)**
 
-Stores the node's current transforms in :ref:`rest<class_Bone2D_property_rest>`.
+Resets the bone to the rest pose. This is equivalent to setting :ref:`Node2D.transform<class_Node2D_property_transform>` to :ref:`rest<class_Bone2D_property_rest>`.
 
 .. rst-class:: classref-item-separator
 

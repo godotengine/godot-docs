@@ -144,7 +144,7 @@ Implementing this method is required if :ref:`_begin_customize_resources<class_E
 
 Customize a scene. If changes are made to it, return the same or a new scene. Otherwise, return ``null``. If a new scene is returned, it is up to you to dispose of the old one.
 
-Implementing this method is required if :ref:`_begin_customize_resources<class_EditorExportPlugin_method__begin_customize_resources>` returns ``true``.
+Implementing this method is required if :ref:`_begin_customize_scenes<class_EditorExportPlugin_method__begin_customize_scenes>` returns ``true``.
 
 .. rst-class:: classref-item-separator
 

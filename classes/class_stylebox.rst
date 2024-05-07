@@ -122,7 +122,7 @@ It is up to the code using this style box to decide what these contents are: for
 - void **set_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
 - :ref:`float<class_float>` **get_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
-The left margin for the contents of this style box.	Increasing this value reduces the space available to the contents from the left.
+The left margin for the contents of this style box. Increasing this value reduces the space available to the contents from the left.
 
 Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bottom>` for extra considerations.
 

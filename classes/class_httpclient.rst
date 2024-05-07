@@ -890,6 +890,8 @@ Returns the response's body length.
 
 \ **Note:** Some Web servers may not send a body length. In this case, the value returned will be ``-1``. If using chunked transfer encoding, the body length will also be ``-1``.
 
+\ **Note:** This function always returns ``-1`` on the Web platform due to browsers limitations.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1079,9 +1081,9 @@ To create a POST request with query strings to push to the server, do:
  .. code-tab:: csharp
 
     var fields = new Godot.Collections.Dictionary { { "username", "user" }, { "password", "pass" } };
-    string queryString = new HTTPClient().QueryStringFromDict(fields);
+    string queryString = new HttpClient().QueryStringFromDict(fields);
     string[] headers = { "Content-Type: application/x-www-form-urlencoded", $"Content-Length: {queryString.Length}" };
-    var result = new HTTPClient().Request(HTTPClient.Method.Post, "index.php", headers, queryString);
+    var result = new HttpClient().Request(HttpClient.Method.Post, "index.php", headers, queryString);
 
 
 

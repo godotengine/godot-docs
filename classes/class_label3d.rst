@@ -21,6 +21,13 @@ Description
 
 A node for displaying plain text in 3D space. By adjusting various properties of this node, you can configure things such as the text's appearance and whether it always faces the camera.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`3D text <../tutorials/3d/3d_text>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

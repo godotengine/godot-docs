@@ -78,6 +78,8 @@ If ``true``, subtracts the bounciness from the colliding object's bounciness ins
 
 The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
 
+\ **Note:** Even with :ref:`bounce<class_PhysicsMaterial_property_bounce>` set to ``1.0``, some energy will be lost over time due to linear and angular damping. To have a :ref:`PhysicsBody3D<class_PhysicsBody3D>` that preserves all its energy over time, set :ref:`bounce<class_PhysicsMaterial_property_bounce>` to ``1.0``, the body's linear damp mode to **Replace** (if applicable), its linear damp to ``0.0``, its angular damp mode to **Replace** (if applicable), and its angular damp to ``0.0``.
+
 .. rst-class:: classref-item-separator
 
 ----

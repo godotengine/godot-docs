@@ -342,7 +342,7 @@ Multiplies the current scale by the ``ratio`` vector.
 
 Returns the angle between the node and the ``point`` in radians.
 
-\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/node2d_get_angle_to.png>`__
+\ `Illustration of the returned angle. <https://raw.githubusercontent.com/godotengine/godot-docs/4.1/img/node2d_get_angle_to.png>`__
 
 .. rst-class:: classref-item-separator
 
