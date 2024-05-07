@@ -112,6 +112,10 @@ To run and debug the project you need to create a new configuration in the ``lau
           "description": "Enable pretty-printing for gdb",
           "text": "-enable-pretty-printing",
           "ignoreFailures": true
+        },
+        {
+            "description": "Load custom pretty-printers for Godot types.",
+            "text": "source ${workspaceRoot}/misc/scripts/godot_gdb_pretty_print.py"
         }
       ],
       "preLaunchTask": "build"
