@@ -18,13 +18,13 @@ Here's an example of a ball. It's composed of a :ref:`RigidBody2D
 and bounce on walls, a :ref:`Sprite2D <class_Sprite2D>` node, and a
 :ref:`CollisionShape2D <class_CollisionShape2D>`.
 
-.. image:: img/instancing_ball_scene.png
+.. image:: img/instancing_ball_scene.webp
 
-Once you saved a scene, it works as a blueprint: you can reproduce it in other
+Once you have saved a scene, it works as a blueprint: you can reproduce it in other
 scenes as many times as you'd like. Replicating an object from a template like
 this is called **instancing**.
 
-.. image:: img/instancing_ball_instances_example.png
+.. image:: img/instancing_ball_instances_example.webp
 
 As we mentioned in the previous part, instanced scenes behave like a node: the
 editor hides their content by default. When you instance the Ball, you only see
@@ -47,20 +47,16 @@ The Project Manager is accessed by opening Godot, or if you already have Godot o
 
 In the Project Manager, click the *Import* button to import the project.
 
-.. image:: img/instancing_import_button.png
+.. image:: img/instancing_import_button.webp
 
-In the pop-up that appears, click the browse button and navigate to the folder
-you extracted.
-
-.. image:: img/instancing_import_browse.png
-
+In the pop-up that appears navigate to the folder you extracted.
 Double-click the ``project.godot`` file to open it.
 
-.. image:: img/instancing_import_project_file.png
+.. image:: img/instancing_import_project_file.webp
 
 Finally, click the Import & Edit button.
 
-.. image:: img/instancing_import_and_edit_button.png
+.. image:: img/instancing_import_and_edit_button.webp
 
 The project contains two packed scenes: ``main.tscn``, containing walls against
 which the ball collides, and ``ball.tscn``. The Main scene should open
@@ -68,25 +64,25 @@ automatically. If you're seeing an empty 3D scene instead of the main scene, cli
 
 .. image:: img/instancing_2d_scene_select.webp
 
-.. image:: img/instancing_main_scene.png
+.. image:: img/instancing_main_scene.webp
 
 Let's add a ball as a child of the Main node. In the Scene dock, select the Main
 node. Then, click the link icon at the top of the scene dock. This button allows
 you to add an instance of a scene as a child of the currently selected node.
 
-.. image:: img/instancing_scene_link_button.png
+.. image:: img/instancing_scene_link_button.webp
 
 Double-click the ball scene to instance it.
 
-.. image:: img/instancing_instance_child_window.png
+.. image:: img/instancing_instance_child_window.webp
 
 The ball appears in the top-left corner of the viewport.
 
-.. image:: img/instancing_ball_instanced.png
+.. image:: img/instancing_ball_instanced.webp
 
 Click on it and drag it towards the center of the view.
 
-.. image:: img/instancing_ball_moved.png
+.. image:: img/instancing_ball_moved.webp
 
 Play the game by pressing :kbd:`F5` (:kbd:`Cmd + B` on macOS). You should see it fall.
 
@@ -94,11 +90,11 @@ Now, we want to create more instances of the Ball node. With the ball still
 selected, press :kbd:`Ctrl + D` (:kbd:`Cmd + D` on macOS) to call the duplicate
 command. Click and drag to move the new ball to a different location.
 
-.. image:: img/instancing_ball_duplicated.png
+.. image:: img/instancing_ball_duplicated.webp
 
 You can repeat this process until you have several in the scene.
 
-.. image:: img/instancing_main_scene_with_balls.png
+.. image:: img/instancing_main_scene_with_balls.webp
 
 Play the game again. You should now see every ball fall independently from one
 another. This is what instances do. Each is an independent reproduction of a
@@ -135,7 +131,7 @@ causes all instances to update accordingly.
 Let's now adjust an individual instance. Head back to the Main scene by clicking
 on the corresponding tab above the viewport.
 
-.. image:: img/instancing_scene_tabs.png
+.. image:: img/instancing_scene_tabs.webp
 
 Select one of the instanced Ball nodes and, in the Inspector, set its Gravity
 Scale value to ``10``.

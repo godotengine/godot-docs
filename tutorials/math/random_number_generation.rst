@@ -422,7 +422,7 @@ ends up empty. When that happens, you reinitialize it to its default value::
 
 
     func get_fruit():
-        if _fruits.empty():
+        if _fruits.is_empty():
             # Fill the fruits array again and shuffle it.
             _fruits = _fruits_full.duplicate()
             _fruits.shuffle()

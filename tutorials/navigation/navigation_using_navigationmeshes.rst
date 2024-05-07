@@ -378,7 +378,7 @@ The following script uses the NavigationServer to update a navigation region wit
             PackedInt32Array([0, 1, 2, 3])
         )
 
-        NavigationServer2D.region_set_navigation_polygon(new_2d_region_rid, new_navigation_mesh)
+        NavigationServer2D.region_set_navigation_polygon(region_rid, navigation_mesh)
 
  .. code-tab:: gdscript 3D GDScript
 
@@ -408,4 +408,4 @@ The following script uses the NavigationServer to update a navigation region wit
             PackedInt32Array([0, 1, 2, 3])
         )
 
-        NavigationServer3D.region_set_navigation_mesh(new_3d_region_rid, navigation_mesh)
+        NavigationServer3D.region_set_navigation_mesh(region_rid, navigation_mesh)

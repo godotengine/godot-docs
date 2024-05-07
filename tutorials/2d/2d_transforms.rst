@@ -98,7 +98,7 @@ the following order:
 
  .. code-tab:: csharp
 
-    var screenCord = GetViewport().GetScreenTransform() * GetGlobalTransformWithCanvas() * localPos;
+    var screenCoord = GetViewport().GetScreenTransform() * GetGlobalTransformWithCanvas() * localPos;
 
 Keep in mind, however, that it is generally not desired to work with screen coordinates. The
 recommended approach is to simply work in Canvas coordinates

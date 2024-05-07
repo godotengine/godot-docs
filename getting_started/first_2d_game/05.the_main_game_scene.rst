@@ -100,7 +100,7 @@ to instance.
     }
 
 Click the ``Main`` node and you will see the ``Mob Scene`` property in the Inspector
-under "Script Variables".
+under "Main.gd".
 
 You can assign this property's value in two ways:
 

@@ -234,7 +234,7 @@ Connect the signal to the ``Mob``
 
 This will take you back to the script editor and add a new function for you,
 ``_on_visible_on_screen_notifier_3d_screen_exited()``. From it, call the ``queue_free()``
-method. This function destroy the instance it's called on.
+method. This function destroys the instance it's called on.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
