@@ -452,15 +452,15 @@ Changes the appearance of the string: replaces underscores (``_``) with spaces, 
 
     "move_local_x".capitalize()   # Returns "Move Local X"
     "sceneFile_path".capitalize() # Returns "Scene File Path"
+    "2D, FPS, PNG".capitalize()   # Returns "2d, Fps, Png"
 
  .. code-tab:: csharp
 
     "move_local_x".Capitalize();   // Returns "Move Local X"
     "sceneFile_path".Capitalize(); // Returns "Scene File Path"
+    "2D, FPS, PNG".Capitalize();   // Returns "2d, Fps, Png"
 
 
-
-\ **Note:** This method not the same as the default appearance of properties in the Inspector dock, as it does not capitalize acronyms (``"2D"``, ``"FPS"``, ``"PNG"``, etc.) as you may expect.
 
 .. rst-class:: classref-item-separator
 
@@ -664,6 +664,15 @@ Some additional handling is performed when ``values`` is an :ref:`Array<class_Ar
     print("User {id} is {name}.".format([["id", 42], ["name", "Godot"]]))
 
 See also the :doc:`GDScript format string <../tutorials/scripting/gdscript/gdscript_format_string>` tutorial.
+
+\ **Note:** The replacement of placeholders is not done all at once, instead each placeholder is replaced in the order they are passed, this means that if one of the replacement strings contains a key it will also be replaced. This can be very powerful, but can also cause unexpected results if you are not careful. If you do not need to perform replacement in the replacement strings, make sure your replacements do not contain placeholders to ensure reliable results.
+
+::
+
+    print("{0} {1}".format(["{1}", "x"]))                       # Prints "x x".
+    print("{0} {1}".format(["x", "{0}"]))                       # Prints "x {0}".
+    print("{foo} {bar}".format({"foo": "{bar}", "bar": "baz"})) # Prints "baz baz".
+    print("{foo} {bar}".format({"bar": "baz", "foo": "{bar}"})) # Prints "{bar} baz".
 
 \ **Note:** In C#, it's recommended to `interpolate strings with "$" <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated>`__, instead.
 
@@ -1349,8 +1358,8 @@ Converts the given ``number`` to a string representation, in scientific notation
  .. code-tab:: gdscript
 
     var n = -5.2e8
-    print(n)                       # Prints -520000000
-    print(String.NumScientific(n)) # Prints -5.2e+08
+    print(n)                        # Prints -520000000
+    print(String.num_scientific(n)) # Prints -5.2e+08
 
  .. code-tab:: csharp
 
@@ -1815,7 +1824,7 @@ Converts the string representing an integer number into an :ref:`int<class_int>`
 
 :ref:`String<class_String>` **to_lower** **(** **)** |const|
 
-Returns the string converted to lowercase.
+Returns the string converted to ``lowercase``.
 
 .. rst-class:: classref-item-separator
 
@@ -1841,6 +1850,25 @@ Returns the string converted to ``PascalCase``.
 
 Returns the string converted to ``snake_case``.
 
+\ **Note:** Numbers followed by a *single* letter are not separated in the conversion to keep some words (such as "2D") together.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    "Node2D".to_snake_case()               # Returns "node_2d"
+    "2nd place".to_snake_case()            # Returns "2_nd_place"
+    "Texture3DAssetFolder".to_snake_case() # Returns "texture_3d_asset_folder"
+
+ .. code-tab:: csharp
+
+    "Node2D".ToSnakeCase();               // Returns "node_2d"
+    "2nd place".ToSnakeCase();            // Returns "2_nd_place"
+    "Texture3DAssetFolder".ToSnakeCase(); // Returns "texture_3d_asset_folder"
+
+
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1851,7 +1879,7 @@ Returns the string converted to ``snake_case``.
 
 :ref:`String<class_String>` **to_upper** **(** **)** |const|
 
-Returns the string converted to uppercase.
+Returns the string converted to ``UPPERCASE``.
 
 .. rst-class:: classref-item-separator
 

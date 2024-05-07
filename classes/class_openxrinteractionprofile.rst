@@ -19,7 +19,7 @@ Suggested bindings object for OpenXR.
 Description
 -----------
 
-This object stores suggested bindings for an interaction profile. Interaction profiles define the meta data for a tracked XR device such as an XR controller.
+This object stores suggested bindings for an interaction profile. Interaction profiles define the metadata for a tracked XR device such as an XR controller.
 
 For more information see the `interaction profiles info in the OpenXR specification <https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#semantic-path-interaction-profiles>`__.
 

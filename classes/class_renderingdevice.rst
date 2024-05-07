@@ -34,7 +34,7 @@ On startup, Godot creates a global **RenderingDevice** which can be retrieved us
 Tutorials
 ---------
 
-- `Using compute shaders <https://docs.godotengine.org/en/latest/tutorials/shaders/compute_shaders.html>`__
+- :doc:`Using compute shaders <../tutorials/shaders/compute_shaders>`
 
 .. rst-class:: classref-reftable-group
 
@@ -4325,9 +4325,17 @@ Puts a memory barrier in place. This is used for synchronization to avoid data r
 
 :ref:`Error<enum_@GlobalScope_Error>` **buffer_clear** **(** :ref:`RID<class_RID>` buffer, :ref:`int<class_int>` offset, :ref:`int<class_int>` size_bytes, |bitfield|\<:ref:`BarrierMask<enum_RenderingDevice_BarrierMask>`\> post_barrier=7 **)**
 
-.. container:: contribute
+Clears the contents of the ``buffer``, clearing ``size_bytes`` bytes, starting at ``offset``. Always raises a memory barrier.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Prints an error if:
+
+- the size isn't a multiple of four
+
+- the region specified by ``offset`` + ``size_bytes`` exceeds the buffer
+
+- a draw list is currently active (created by :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>`)
+
+- a compute list is currently active (created by :ref:`compute_list_begin<class_RenderingDevice_method_compute_list_begin>`)
 
 .. rst-class:: classref-item-separator
 
@@ -4351,9 +4359,15 @@ Returns a copy of the data of the specified ``buffer``, optionally ``offset_byte
 
 :ref:`Error<enum_@GlobalScope_Error>` **buffer_update** **(** :ref:`RID<class_RID>` buffer, :ref:`int<class_int>` offset, :ref:`int<class_int>` size_bytes, :ref:`PackedByteArray<class_PackedByteArray>` data, |bitfield|\<:ref:`BarrierMask<enum_RenderingDevice_BarrierMask>`\> post_barrier=7 **)**
 
-.. container:: contribute
+Updates a region of ``size_bytes`` bytes, starting at ``offset``, in the buffer, with the specified ``data``. Raises a memory barrier except when ``post_barrier`` is set to :ref:`BARRIER_MASK_NO_BARRIER<class_RenderingDevice_constant_BARRIER_MASK_NO_BARRIER>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Prints an error if:
+
+- the region specified by ``offset`` + ``size_bytes`` exceeds the buffer
+
+- a draw list is currently active (created by :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>`)
+
+- a compute list is currently active (created by :ref:`compute_list_begin<class_RenderingDevice_method_compute_list_begin>`)
 
 .. rst-class:: classref-item-separator
 
@@ -4377,9 +4391,7 @@ Creates a timestamp marker with the specified ``name``. This is used for perform
 
 void **compute_list_add_barrier** **(** :ref:`int<class_int>` compute_list **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Raises a Vulkan compute barrier in the specified ``compute_list``.
 
 .. rst-class:: classref-item-separator
 
@@ -4423,9 +4435,7 @@ A simple compute operation might look like this (code is not a complete example)
 
 void **compute_list_bind_compute_pipeline** **(** :ref:`int<class_int>` compute_list, :ref:`RID<class_RID>` compute_pipeline **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Tells the GPU what compute pipeline to use when processing the compute list. If the shader has changed since the last time this function was called, Godot will unbind all descriptor sets and will re-bind them inside :ref:`compute_list_dispatch<class_RenderingDevice_method_compute_list_dispatch>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4437,9 +4447,7 @@ void **compute_list_bind_compute_pipeline** **(** :ref:`int<class_int>` compute_
 
 void **compute_list_bind_uniform_set** **(** :ref:`int<class_int>` compute_list, :ref:`RID<class_RID>` uniform_set, :ref:`int<class_int>` set_index **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Binds the ``uniform_set`` to this ``compute_list``. Godot ensures that all textures in the uniform set have the correct Vulkan access masks. If Godot had to change access masks of textures, it will raise a Vulkan image memory barrier.
 
 .. rst-class:: classref-item-separator
 
@@ -5250,9 +5258,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 :ref:`int<class_int>` **shader_get_vertex_input_attribute_mask** **(** :ref:`RID<class_RID>` shader **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the internal vertex input mask. Internally, the vertex input mask is an unsigned integer consisting of the locations (specified in GLSL via. ``layout(location = ...)``) of the input variables (specified in GLSL by the ``in`` keyword).
 
 .. rst-class:: classref-item-separator
 
@@ -5512,7 +5518,7 @@ Updates texture data with new data, replacing the previous data in place. The up
 
 :ref:`RID<class_RID>` **uniform_buffer_create** **(** :ref:`int<class_int>` size_bytes, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray() **)**
 
-It can be accessed with the RID that is returned.
+Creates a new uniform buffer. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
@@ -5526,7 +5532,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 :ref:`RID<class_RID>` **uniform_set_create** **(** :ref:`RDUniform[]<class_RDUniform>` uniforms, :ref:`RID<class_RID>` shader, :ref:`int<class_int>` shader_set **)**
 
-It can be accessed with the RID that is returned.
+Creates a new uniform set. It can be accessed with the RID that is returned.
 
 Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
@@ -5540,9 +5546,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 :ref:`bool<class_bool>` **uniform_set_is_valid** **(** :ref:`RID<class_RID>` uniform_set **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Checks if the ``uniform_set`` is valid, i.e. is owned.
 
 .. rst-class:: classref-item-separator
 

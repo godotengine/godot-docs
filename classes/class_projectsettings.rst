@@ -1879,7 +1879,9 @@ Changes to this setting will only be applied upon restarting the application.
 
 :ref:`int<class_int>` **application/run/frame_delay_msec** = ``0``
 
-Forces a delay between frames in the main loop (in milliseconds). This may be useful if you plan to disable vertical synchronization.
+Forces a *constant* delay between frames in the main loop (in milliseconds). In most situations, :ref:`application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>` should be preferred as an FPS limiter as it's more precise.
+
+This setting can be overridden using the ``--frame-delay <ms;>`` command line argument.
 
 .. rst-class:: classref-item-separator
 
@@ -3565,6 +3567,8 @@ Main window content is expanded to the full size of the window. Unlike a borderl
 
 Main window initial position (in virtual desktop coordinates), this setting is used only if :ref:`display/window/size/initial_position_type<class_ProjectSettings_property_display/window/size/initial_position_type>` is set to "Absolute" (``0``).
 
+\ **Note:** This setting only affects the exported project, or when the project is run from the command line. In the editor, the value of :ref:`EditorSettings.run/window_placement/rect_custom_position<class_EditorSettings_property_run/window_placement/rect_custom_position>` is used instead.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3583,6 +3587,8 @@ Main window initial position.
 
 \ ``2`` - "Other Screen Center", :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>` is used to set the screen.
 
+\ **Note:** This setting only affects the exported project, or when the project is run from the command line. In the editor, the value of :ref:`EditorSettings.run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>` is used instead.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3594,6 +3600,8 @@ Main window initial position.
 :ref:`int<class_int>` **display/window/size/initial_screen** = ``0``
 
 Main window initial screen, this setting is used only if :ref:`display/window/size/initial_position_type<class_ProjectSettings_property_display/window/size/initial_position_type>` is set to "Other Screen Center" (``2``).
+
+\ **Note:** This setting only affects the exported project, or when the project is run from the command line. In the editor, the value of :ref:`EditorSettings.run/window_placement/screen<class_EditorSettings_property_run/window_placement/screen>` is used instead.
 
 .. rst-class:: classref-item-separator
 
@@ -3629,7 +3637,11 @@ Main window can't be focused. No-focus window will ignore all input, except mous
 
 :ref:`bool<class_bool>` **display/window/size/resizable** = ``true``
 
-Allows the window to be resizable by default.
+If ``true``, allows the window to be resizable by default.
+
+\ **Note:** This property is only read when the project starts. To change whether the window is resizable at runtime, set :ref:`Window.unresizable<class_Window_property_unresizable>` instead on the root Window, which can be retrieved using ``get_viewport().get_window()``. :ref:`Window.unresizable<class_Window_property_unresizable>` takes the opposite value of this setting.
+
+\ **Note:** Certain window managers can be configured to ignore the non-resizable status of a window. Do not rely on this setting as a guarantee that the window will *never* be resizable.
 
 \ **Note:** This setting is ignored on iOS.
 
@@ -3729,9 +3741,9 @@ Defines how the base size is stretched to fit the resolution of the window or sc
 
 \ **"disabled"**: No stretching happens. One unit in the scene corresponds to one pixel on the screen. In this mode, :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` has no effect. Recommended for non-game applications.
 
-\ **"canvas_items"**: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art aesthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
+\ **"canvas_items"**: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art esthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
 
-\ **"viewport"**: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art aesthetic.
+\ **"viewport"**: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art esthetic.
 
 .. rst-class:: classref-item-separator
 
@@ -10013,9 +10025,7 @@ Max number of positional lights renderable in a frame. If more lights than this 
 
 :ref:`int<class_int>` **rendering/limits/spatial_indexer/threaded_cull_minimum_instances** = ``1000``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The minimum number of instances that must be present in a scene to enable culling computations on multiple threads. If a scene has fewer instances than this number, culling is done on a single thread.
 
 .. rst-class:: classref-item-separator
 
@@ -10102,6 +10112,8 @@ The number of occlusion rays traced per CPU thread. Higher values will result in
 If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be usable for occlusion culling in 3D in the root viewport. In custom viewports, :ref:`Viewport.use_occlusion_culling<class_Viewport_property_use_occlusion_culling>` must be set to ``true`` instead.
 
 \ **Note:** Enabling occlusion culling has a cost on the CPU. Only enable occlusion culling if you actually plan to use it. Large open scenes with few or no objects blocking the view will generally not benefit much from occlusion culling. Large open scenes generally benefit more from mesh LOD and visibility ranges (:ref:`GeometryInstance3D.visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`GeometryInstance3D.visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>`) compared to occlusion culling.
+
+\ **Note:** Due to memory constraints, occlusion culling is not supported by default in Web export templates. It can be enabled by compiling custom Web export templates with ``module_raycast_enabled=yes``.
 
 .. rst-class:: classref-item-separator
 
@@ -10617,7 +10629,7 @@ The anisotropic filtering level also affects decals and light projectors if they
 
 Affects the final texture sharpness by reading from a lower or higher mipmap (also called "texture LOD bias"). Negative values make mipmapped textures sharper but grainier when viewed at a distance, while positive values make mipmapped textures blurrier (even when up close).
 
-Enabling temporal antialiasing (:ref:`rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`) will automatically apply a ``-0.5`` offset to this value, while enabling FXAA (:ref:`rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>`) will automatically apply a ``-0.25`` offset to this value. If both TAA and FXAA are enbled at the same time, an offset of ``-0.75`` is applied to this value.
+Enabling temporal antialiasing (:ref:`rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`) will automatically apply a ``-0.5`` offset to this value, while enabling FXAA (:ref:`rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>`) will automatically apply a ``-0.25`` offset to this value. If both TAA and FXAA are enabled at the same time, an offset of ``-0.75`` is applied to this value.
 
 \ **Note:** If :ref:`rendering/scaling_3d/scale<class_ProjectSettings_property_rendering/scaling_3d/scale>` is lower than ``1.0`` (exclusive), :ref:`rendering/textures/default_filters/texture_mipmap_bias<class_ProjectSettings_property_rendering/textures/default_filters/texture_mipmap_bias>` is used to adjust the automatic mipmap bias which is calculated internally based on the scale factor. The formula for this is ``log2(scaling_3d_scale) + mipmap_bias``.
 
@@ -10952,8 +10964,8 @@ Adds a custom property info to a property. The dictionary must contain:
     var propertyInfo = new Godot.Collections.Dictionary
     {
         {"name", "category/propertyName"},
-        {"type", Variant.Type.Int},
-        {"hint", PropertyHint.Enum},
+        {"type", (int)Variant.Type.Int},
+        {"hint", (int)PropertyHint.Enum},
         {"hint_string", "one,two,three"},
     };
     

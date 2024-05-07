@@ -27,6 +27,13 @@ The default settings are intended for use in an outdoor environment, tips for se
 
 \ **Note:** Depth of field blur is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Physical light and camera units <../tutorials/3d/physical_light_and_camera_units>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -138,7 +145,7 @@ Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physi
 - void **set_shutter_speed** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_shutter_speed** **(** **)**
 
-Time for shutter to open and close, measured in seconds. A higher value will let in more light leading to a brighter image, while a lower amount will let in less light leading to a darker image.
+Time for shutter to open and close, evaluated as ``1 / shutter_speed`` seconds. A higher value will allow less light (leading to a darker image), while a lower value will allow more light (leading to a brighter image).
 
 Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is enabled.
 

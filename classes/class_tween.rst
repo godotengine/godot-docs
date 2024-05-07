@@ -139,7 +139,7 @@ You should avoid using more than one **Tween** per object's property. If two or 
 
 Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accepts a :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see `easings.net <https://easings.net/>`__ for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls where the ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`, and use the one that looks best.
 
-\ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.webp>`__\ 
+\ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/4.1/img/tween_cheatsheet.webp>`__\ 
 
 \ **Note:** Tweens are not designed to be re-used and trying to do so results in an undefined behavior. Create a new Tween for each animation and every time you replay an animation from start. Keep in mind that Tweens start immediately, so only create a Tween when you want to start animating.
 
@@ -654,6 +654,8 @@ void **pause** **(** **)**
 
 Pauses the tweening. The animation can be resumed by using :ref:`play<class_Tween_method_play>`.
 
+\ **Note:** If a Tween is paused and not bound to any node, it will exist indefinitely until manually started or invalidated. If you lose a reference to such Tween, you can retrieve it using :ref:`SceneTree.get_processed_tweens<class_SceneTree_method_get_processed_tweens>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -707,6 +709,14 @@ Calling this method without arguments will make the **Tween** run infinitely, un
 :ref:`Tween<class_Tween>` **set_parallel** **(** :ref:`bool<class_bool>` parallel=true **)**
 
 If ``parallel`` is ``true``, the :ref:`Tweener<class_Tweener>`\ s appended after this method will by default run simultaneously, as opposed to sequentially.
+
+\ **Note:** Just like with :ref:`parallel<class_Tween_method_parallel>`, the tweener added right before this method will also be part of the parallel step.
+
+::
+
+    tween.tween_property(self, "position", Vector2(300, 0), 0.5)
+    tween.set_parallel()
+    tween.tween_property(self, "modulate", Color.GREEN, 0.5) # Runs together with the position tweener.
 
 .. rst-class:: classref-item-separator
 
@@ -773,6 +783,8 @@ If not specified, the default value is :ref:`TRANS_LINEAR<class_Tween_constant_T
 void **stop** **(** **)**
 
 Stops the tweening and resets the **Tween** to its initial state. This will not remove any appended :ref:`Tweener<class_Tweener>`\ s.
+
+\ **Note:** If a Tween is stopped and not bound to any node, it will exist indefinitely until manually started or invalidated. If you lose a reference to such Tween, you can retrieve it using :ref:`SceneTree.get_processed_tweens<class_SceneTree_method_get_processed_tweens>`.
 
 .. rst-class:: classref-item-separator
 

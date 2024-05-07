@@ -57,6 +57,8 @@ See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateMesh<class_ImmediateM
 Tutorials
 ---------
 
+- :doc:`Using the SurfaceTool <../tutorials/3d/procedural_geometry/surfacetool>`
+
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
 .. rst-class:: classref-reftable-group

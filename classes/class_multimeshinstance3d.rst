@@ -28,11 +28,11 @@ This is useful to optimize the rendering of a high number of instances of a give
 Tutorials
 ---------
 
-- :doc:`Animating thousands of fish with MultiMeshInstance <../tutorials/performance/vertex_animation/animating_thousands_of_fish>`
-
 - :doc:`Using MultiMeshInstance <../tutorials/3d/using_multi_mesh_instance>`
 
 - :doc:`Optimization using MultiMeshes <../tutorials/performance/using_multimesh>`
+
+- :doc:`Animating thousands of fish with MultiMeshInstance <../tutorials/performance/vertex_animation/animating_thousands_of_fish>`
 
 .. rst-class:: classref-reftable-group
 

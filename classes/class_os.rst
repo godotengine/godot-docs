@@ -531,6 +531,8 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 
 \ **Note:** On macOS, sandboxed applications are limited to run only embedded helper executables, specified during export.
 
+\ **Note:** On Android, system commands such as ``dumpsys`` can only be run on a rooted device.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -630,9 +632,11 @@ For example, in the command line below, ``--fullscreen`` will not be returned in
 
 ::
 
-    godot --fullscreen -- --level 1
-    # Or:
-    godot --fullscreen ++ --level 1
+    # Godot has been executed with the following command:
+    # godot --fullscreen -- --level=2 --hardcore
+    
+    OS.get_cmdline_args()      # Returns ["--fullscreen", "--level=2", "--hardcore"]
+    OS.get_cmdline_user_args() # Returns ["--level=2", "--hardcore"]
 
 .. rst-class:: classref-item-separator
 

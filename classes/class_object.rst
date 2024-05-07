@@ -10,7 +10,7 @@
 Object
 ======
 
-**Inherited By:** :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`DisplayServer<class_DisplayServer>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorInterface<class_EditorInterface>`, :ref:`EditorPaths<class_EditorPaths>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>`, :ref:`EditorVCSInterface<class_EditorVCSInterface>`, :ref:`Engine<class_Engine>`, :ref:`EngineDebugger<class_EngineDebugger>`, :ref:`GDExtensionManager<class_GDExtensionManager>`, :ref:`Geometry2D<class_Geometry2D>`, :ref:`Geometry3D<class_Geometry3D>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`IP<class_IP>`, :ref:`JavaClassWrapper<class_JavaClassWrapper>`, :ref:`JavaScriptBridge<class_JavaScriptBridge>`, :ref:`JNISingleton<class_JNISingleton>`, :ref:`JSONRPC<class_JSONRPC>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Marshalls<class_Marshalls>`, :ref:`MovieWriter<class_MovieWriter>`, :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>`, :ref:`NavigationServer2D<class_NavigationServer2D>`, :ref:`NavigationServer3D<class_NavigationServer3D>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`, :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`, :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>`, :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>`, :ref:`PhysicsServer2D<class_PhysicsServer2D>`, :ref:`PhysicsServer2DManager<class_PhysicsServer2DManager>`, :ref:`PhysicsServer3D<class_PhysicsServer3D>`, :ref:`PhysicsServer3DManager<class_PhysicsServer3DManager>`, :ref:`PhysicsServer3DRenderingServerHandler<class_PhysicsServer3DRenderingServerHandler>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`RefCounted<class_RefCounted>`, :ref:`RenderingDevice<class_RenderingDevice>`, :ref:`RenderingServer<class_RenderingServer>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`ResourceUID<class_ResourceUID>`, :ref:`ScriptLanguage<class_ScriptLanguage>`, :ref:`TextServerManager<class_TextServerManager>`, :ref:`ThemeDB<class_ThemeDB>`, :ref:`TileData<class_TileData>`, :ref:`Time<class_Time>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`WorkerThreadPool<class_WorkerThreadPool>`, :ref:`XRServer<class_XRServer>`
+**Inherited By:** :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`DisplayServer<class_DisplayServer>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorInterface<class_EditorInterface>`, :ref:`EditorPaths<class_EditorPaths>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>`, :ref:`EditorVCSInterface<class_EditorVCSInterface>`, :ref:`Engine<class_Engine>`, :ref:`EngineDebugger<class_EngineDebugger>`, :ref:`GDExtensionManager<class_GDExtensionManager>`, :ref:`Geometry2D<class_Geometry2D>`, :ref:`Geometry3D<class_Geometry3D>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`IP<class_IP>`, :ref:`JavaClassWrapper<class_JavaClassWrapper>`, :ref:`JavaScriptBridge<class_JavaScriptBridge>`, :ref:`JNISingleton<class_JNISingleton>`, :ref:`JSONRPC<class_JSONRPC>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Marshalls<class_Marshalls>`, :ref:`MovieWriter<class_MovieWriter>`, :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>`, :ref:`NavigationServer2D<class_NavigationServer2D>`, :ref:`NavigationServer3D<class_NavigationServer3D>`, :ref:`Node<class_Node>`, :ref:`OpenXRInteractionProfileMetadata<class_OpenXRInteractionProfileMetadata>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`, :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`, :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>`, :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>`, :ref:`PhysicsServer2D<class_PhysicsServer2D>`, :ref:`PhysicsServer2DManager<class_PhysicsServer2DManager>`, :ref:`PhysicsServer3D<class_PhysicsServer3D>`, :ref:`PhysicsServer3DManager<class_PhysicsServer3DManager>`, :ref:`PhysicsServer3DRenderingServerHandler<class_PhysicsServer3DRenderingServerHandler>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`RefCounted<class_RefCounted>`, :ref:`RenderingDevice<class_RenderingDevice>`, :ref:`RenderingServer<class_RenderingServer>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`ResourceUID<class_ResourceUID>`, :ref:`ScriptLanguage<class_ScriptLanguage>`, :ref:`TextServerManager<class_TextServerManager>`, :ref:`ThemeDB<class_ThemeDB>`, :ref:`TileData<class_TileData>`, :ref:`Time<class_Time>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`WorkerThreadPool<class_WorkerThreadPool>`, :ref:`XRServer<class_XRServer>`
 
 Base class for all other classes in the engine.
 
@@ -21,7 +21,7 @@ Description
 
 An advanced :ref:`Variant<class_Variant>` type. All classes in the engine inherit from Object. Each class may define new properties, methods or signals, which are available to all inheriting classes. For example, a :ref:`Sprite2D<class_Sprite2D>` instance is able to call :ref:`Node.add_child<class_Node_method_add_child>` because it inherits from :ref:`Node<class_Node>`.
 
-You can create new instances, using ``Object.new()`` in GDScript, or ``new Object`` in C#.
+You can create new instances, using ``Object.new()`` in GDScript, or ``new GodotObject`` in C#.
 
 To delete an Object instance, call :ref:`free<class_Object_method_free>`. This is necessary for most classes inheriting Object, because they do not manage memory on their own, and will otherwise cause memory leaks when no longer in use. There are a few classes that perform memory management. For example, :ref:`RefCounted<class_RefCounted>` (and by extension :ref:`Resource<class_Resource>`) deletes itself when no longer referenced, and :ref:`Node<class_Node>` deletes its children when freed.
 
@@ -304,7 +304,7 @@ Combined with :ref:`_set<class_Object_method__set>` and :ref:`_get_property_list
  .. code-tab:: gdscript
 
     func _get(property):
-        if (property == "fake_property"):
+        if property == "fake_property":
             print("Getting my property!")
             return 4
     
@@ -447,7 +447,7 @@ The example below displays ``hammer_type`` in the Inspector dock, only if ``hold
 
 void **_init** **(** **)** |virtual|
 
-Called when the object's script is instantiated, oftentimes after the object is initialized in memory (through ``Object.new()`` in GDScript, or ``new Object`` in C#). It can be also defined to take in parameters. This method is similar to a constructor in most programming languages.
+Called when the object's script is instantiated, oftentimes after the object is initialized in memory (through ``Object.new()`` in GDScript, or ``new GodotObject`` in C#). It can be also defined to take in parameters. This method is similar to a constructor in most programming languages.
 
 \ **Note:** If :ref:`_init<class_Object_method__init>` is defined with *required* parameters, the Object with script may only be created directly. If any other means (such as :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` or :ref:`Node.duplicate<class_Node_method_duplicate>`) are used, the script's initialization will fail.
 
@@ -533,9 +533,14 @@ Combined with :ref:`_get<class_Object_method__get>` and :ref:`_get_property_list
 
  .. code-tab:: gdscript
 
+    var internal_data = {}
+    
     func _set(property, value):
-        if (property == "fake_property"):
-            print("Setting my property to ", value)
+        if property == "fake_property":
+            # Storing the value in the fake property.
+            internal_data["fake_property"] = value
+            return true
+        return false
     
     func _get_property_list():
         return [
@@ -544,11 +549,14 @@ Combined with :ref:`_get<class_Object_method__get>` and :ref:`_get_property_list
 
  .. code-tab:: csharp
 
-    public override void _Set(StringName property, Variant value)
+    private Godot.Collections.Dictionary _internalData = new Godot.Collections.Dictionary();
+    
+    public override bool _Set(StringName property, Variant value)
     {
         if (property == "FakeProperty")
         {
-            GD.Print($"Setting my property to {value}");
+            // Storing the value in the fake property.
+            _internalData["FakeProperty"] = value;
             return true;
         }
     
@@ -671,7 +679,7 @@ Calls the ``method`` on the object and returns the result. This method supports 
 
 Calls the ``method`` on the object during idle time. Always returns null, **not** the method's result.
 
-Idle time happens mainly at the end of process and physics frames. In it, deferred calls will be run until there are none left, which means you can defer calls from other deferred calls and they'll still be run in the current idle time cycle. If not done carefully, this can result in infinite recursion without causing a stack overflow, which will hang the game similarly to an infinite loop.
+Idle time happens mainly at the end of process and physics frames. In it, deferred calls will be run until there are none left, which means you can defer calls from other deferred calls and they'll still be run in the current idle time cycle. This means you should not call a method deferred from itself (or from a method called by it), as this causes infinite recursion the same way as if you had called the method directly.
 
 This method supports a variable number of arguments, so parameters can be passed as a comma separated list.
 
@@ -1000,7 +1008,7 @@ Returns the :ref:`Variant<class_Variant>` value of the given ``property``. If th
 
     var node = new Node2D();
     node.Rotation = 1.5f;
-    var a = node.Get("rotation"); // a is 1.5
+    var a = node.Get(Node2D.PropertyName.Rotation); // a is 1.5
 
 
 
@@ -1457,7 +1465,7 @@ Assigns ``value`` to the given ``property``. If the property does not exist or t
  .. code-tab:: csharp
 
     var node = new Node2D();
-    node.Set("global_scale", new Vector2(8, 2.5));
+    node.Set(Node2D.PropertyName.GlobalScale, new Vector2(8, 2.5));
     GD.Print(node.GlobalScale); // Prints Vector2(8, 2.5)
 
 
@@ -1496,22 +1504,22 @@ Assigns ``value`` to the given ``property``, at the end of the current frame. Th
     var node = Node2D.new()
     add_child(node)
     
-    node.rotation = 45.0
-    node.set_deferred("rotation", 90.0)
-    print(node.rotation) # Prints 45.0
+    node.rotation = 1.5
+    node.set_deferred("rotation", 3.0)
+    print(node.rotation) # Prints 1.5
     
     await get_tree().process_frame
-    print(node.rotation) # Prints 90.0
+    print(node.rotation) # Prints 3.0
 
  .. code-tab:: csharp
 
     var node = new Node2D();
-    node.Rotation = 45f;
-    node.SetDeferred("rotation", 90f);
-    GD.Print(node.Rotation); // Prints 45.0
+    node.Rotation = 1.5f;
+    node.SetDeferred(Node2D.PropertyName.Rotation, 3f);
+    GD.Print(node.Rotation); // Prints 1.5
     
     await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
-    GD.Print(node.Rotation); // Prints 90.0
+    GD.Print(node.Rotation); // Prints 3.0
 
 
 

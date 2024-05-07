@@ -166,9 +166,7 @@ Method Descriptions
 
 :ref:`Array<class_Array>` **_create_mesh_array** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Override this method to customize how this primitive mesh should be generated. Should return an :ref:`Array<class_Array>` where each element is another Array of values required for the mesh (see the :ref:`ArrayType<enum_Mesh_ArrayType>` constants).
 
 .. rst-class:: classref-item-separator
 

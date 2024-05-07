@@ -66,7 +66,7 @@ Below a small example of how to use it:
     {
         private DtlsServer _dtls = new DtlsServer();
         private UdpServer _server = new UdpServer();
-        private Godot.Collections.Array<PacketPeerDTLS> _peers = new Godot.Collections.Array<PacketPeerDTLS>();
+        private Godot.Collections.Array<PacketPeerDtls> _peers = new Godot.Collections.Array<PacketPeerDtls>();
     
         public override void _Ready()
         {
@@ -80,8 +80,8 @@ Below a small example of how to use it:
         {
             while (Server.IsConnectionAvailable())
             {
-                PacketPeerUDP peer = _server.TakeConnection();
-                PacketPeerDTLS dtlsPeer = _dtls.TakeConnection(peer);
+                PacketPeerUdp peer = _server.TakeConnection();
+                PacketPeerDtls dtlsPeer = _dtls.TakeConnection(peer);
                 if (dtlsPeer.GetStatus() != PacketPeerDtls.Status.Handshaking)
                 {
                     continue; // It is normal that 50% of the connections fails due to cookie exchange.

@@ -19,7 +19,7 @@ A physics joint that attaches two 3D physics bodies at a single point, allowing 
 Description
 -----------
 
-A physics joint that attaches two 2D physics bodies at a single point, allowing them to freely rotate. For example, a :ref:`RigidBody3D<class_RigidBody3D>` can be attached to a :ref:`StaticBody3D<class_StaticBody3D>` to create a pendulum or a seesaw.
+A physics joint that attaches two 3D physics bodies at a single point, allowing them to freely rotate. For example, a :ref:`RigidBody3D<class_RigidBody3D>` can be attached to a :ref:`StaticBody3D<class_StaticBody3D>` to create a pendulum or a seesaw.
 
 .. rst-class:: classref-reftable-group
 

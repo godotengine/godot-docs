@@ -25,6 +25,8 @@ See also :ref:`NodePath<class_NodePath>`, which is a similar concept specificall
 
 All of :ref:`String<class_String>`'s methods are available in this class too. They convert the **StringName** into a string, and they also return a string. This is highly inefficient and should only be used if the string is desired.
 
+\ **Note:** In C#, an explicit conversion to ``System.String`` is required to use the methods listed on this page. Use the ``ToString()`` method to cast a **StringName** to a string, and then use the equivalent methods in ``System.String`` or ``StringExtensions``.
+
 \ **Note:** In a boolean context, a **StringName** will evaluate to ``false`` if it is empty (``StringName("")``). Otherwise, a **StringName** will always evaluate to ``true``. The ``not`` operator cannot be used. Instead, :ref:`is_empty<class_StringName_method_is_empty>` should be used to check for empty **StringName**\ s.
 
 .. rst-class:: classref-reftable-group
@@ -423,15 +425,15 @@ Changes the appearance of the string: replaces underscores (``_``) with spaces, 
 
     "move_local_x".capitalize()   # Returns "Move Local X"
     "sceneFile_path".capitalize() # Returns "Scene File Path"
+    "2D, FPS, PNG".capitalize()   # Returns "2d, Fps, Png"
 
  .. code-tab:: csharp
 
     "move_local_x".Capitalize();   // Returns "Move Local X"
     "sceneFile_path".Capitalize(); // Returns "Scene File Path"
+    "2D, FPS, PNG".Capitalize();   // Returns "2d, Fps, Png"
 
 
-
-\ **Note:** This method not the same as the default appearance of properties in the Inspector dock, as it does not capitalize acronyms (``"2D"``, ``"FPS"``, ``"PNG"``, etc.) as you may expect.
 
 .. rst-class:: classref-item-separator
 
@@ -1658,7 +1660,7 @@ Converts the string representing an integer number into an :ref:`int<class_int>`
 
 :ref:`String<class_String>` **to_lower** **(** **)** |const|
 
-Returns the string converted to lowercase.
+Returns the string converted to ``lowercase``.
 
 .. rst-class:: classref-item-separator
 
@@ -1684,6 +1686,25 @@ Returns the string converted to ``PascalCase``.
 
 Returns the string converted to ``snake_case``.
 
+\ **Note:** Numbers followed by a *single* letter are not separated in the conversion to keep some words (such as "2D") together.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    "Node2D".to_snake_case()               # Returns "node_2d"
+    "2nd place".to_snake_case()            # Returns "2_nd_place"
+    "Texture3DAssetFolder".to_snake_case() # Returns "texture_3d_asset_folder"
+
+ .. code-tab:: csharp
+
+    "Node2D".ToSnakeCase();               // Returns "node_2d"
+    "2nd place".ToSnakeCase();            // Returns "2_nd_place"
+    "Texture3DAssetFolder".ToSnakeCase(); // Returns "texture_3d_asset_folder"
+
+
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1694,7 +1715,7 @@ Returns the string converted to ``snake_case``.
 
 :ref:`String<class_String>` **to_upper** **(** **)** |const|
 
-Returns the string converted to uppercase.
+Returns the string converted to ``UPPERCASE``.
 
 .. rst-class:: classref-item-separator
 

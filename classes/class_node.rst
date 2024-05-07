@@ -472,7 +472,7 @@ enum **ProcessThreadGroup**:
 
 :ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>` **PROCESS_THREAD_GROUP_INHERIT** = ``0``
 
-If the :ref:`process_thread_group<class_Node_property_process_thread_group>` property is sent to this, the node will belong to any parent (or grandparent) node that has a thread group mode that is not inherit. See :ref:`process_thread_group<class_Node_property_process_thread_group>` for more information.
+Process this node based on the thread group mode of the first parent (or grandparent) node that has a thread group mode that is not inherit. See :ref:`process_thread_group<class_Node_property_process_thread_group>` for more information.
 
 .. _class_Node_constant_PROCESS_THREAD_GROUP_MAIN_THREAD:
 
@@ -480,7 +480,7 @@ If the :ref:`process_thread_group<class_Node_property_process_thread_group>` pro
 
 :ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>` **PROCESS_THREAD_GROUP_MAIN_THREAD** = ``1``
 
-Process this node (and children nodes set to inherit) on the main thread. See :ref:`process_thread_group<class_Node_property_process_thread_group>` for more information.
+Process this node (and child nodes set to inherit) on the main thread. See :ref:`process_thread_group<class_Node_property_process_thread_group>` for more information.
 
 .. _class_Node_constant_PROCESS_THREAD_GROUP_SUB_THREAD:
 
@@ -488,7 +488,7 @@ Process this node (and children nodes set to inherit) on the main thread. See :r
 
 :ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>` **PROCESS_THREAD_GROUP_SUB_THREAD** = ``2``
 
-Process this node (and children nodes set to inherit) on a sub-thread. See :ref:`process_thread_group<class_Node_property_process_thread_group>` for more information.
+Process this node (and child nodes set to inherit) on a sub-thread. See :ref:`process_thread_group<class_Node_property_process_thread_group>` for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -592,7 +592,7 @@ Node will not be internal.
 
 :ref:`InternalMode<enum_Node_InternalMode>` **INTERNAL_MODE_FRONT** = ``1``
 
-Node will be placed at the front of parent's node list, before any non-internal sibling.
+The node will be placed at the beginning of the parent's children, before any non-internal sibling.
 
 .. _class_Node_constant_INTERNAL_MODE_BACK:
 
@@ -600,7 +600,7 @@ Node will be placed at the front of parent's node list, before any non-internal 
 
 :ref:`InternalMode<enum_Node_InternalMode>` **INTERNAL_MODE_BACK** = ``2``
 
-Node will be placed at the back of parent's node list, after any non-internal sibling.
+The node will be placed at the end of the parent's children, after any non-internal sibling.
 
 .. rst-class:: classref-section-separator
 
@@ -1143,7 +1143,7 @@ By default, the thread group is :ref:`PROCESS_THREAD_GROUP_INHERIT<class_Node_co
 
 During processing in a sub-thread, accessing most functions in nodes outside the thread group is forbidden (and it will result in an error in debug mode). Use :ref:`Object.call_deferred<class_Object_method_call_deferred>`, :ref:`call_thread_safe<class_Node_method_call_thread_safe>`, :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>` and the likes in order to communicate from the thread groups to the main thread (or to other thread groups).
 
-To better understand process thread groups, the idea is that any node set to any other value than :ref:`PROCESS_THREAD_GROUP_INHERIT<class_Node_constant_PROCESS_THREAD_GROUP_INHERIT>` will include any children (and grandchildren) nodes set to inherit into its process thread group. this means that the processing of all the nodes in the group will happen together, at the same time as the node including them.
+To better understand process thread groups, the idea is that any node set to any other value than :ref:`PROCESS_THREAD_GROUP_INHERIT<class_Node_constant_PROCESS_THREAD_GROUP_INHERIT>` will include any child (and grandchild) nodes set to inherit into its process thread group. This means that the processing of all the nodes in the group will happen together, at the same time as the node including them.
 
 .. rst-class:: classref-item-separator
 
@@ -1361,7 +1361,7 @@ Usually used for initialization. For even earlier initialization, :ref:`Object._
 
 void **_shortcut_input** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
 
-Called when an :ref:`InputEventKey<class_InputEventKey>` or :ref:`InputEventShortcut<class_InputEventShortcut>` hasn't been consumed by :ref:`_input<class_Node_method__input>` or any GUI :ref:`Control<class_Control>` item. The input event propagates up through the node tree until a node consumes it.
+Called when an :ref:`InputEventKey<class_InputEventKey>`\ ¸ :ref:`InputEventShortcut<class_InputEventShortcut>`, or :ref:`InputEventJoypadButton<class_InputEventJoypadButton>` hasn't been consumed by :ref:`_input<class_Node_method__input>` or any GUI :ref:`Control<class_Control>` item. The input event propagates up through the node tree until a node consumes it.
 
 It is only called if shortcut processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process_shortcut_input<class_Node_method_set_process_shortcut_input>`.
 
@@ -1939,7 +1939,7 @@ Returns ``true`` if this is an instance load placeholder. See :ref:`InstancePlac
 
 :ref:`SceneTree<class_SceneTree>` **get_tree** **(** **)** |const|
 
-Returns the :ref:`SceneTree<class_SceneTree>` that contains this node.
+Returns the :ref:`SceneTree<class_SceneTree>` that contains this node. Returns ``null`` and prints an error if this node is not inside the scene tree. See also :ref:`is_inside_tree<class_Node_method_is_inside_tree>`.
 
 .. rst-class:: classref-item-separator
 

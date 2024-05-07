@@ -562,6 +562,8 @@ Returns a new vector with all components clamped between the components of ``min
 
 Returns the cross product of this vector and ``with``.
 
+This returns a vector perpendicular to both this and ``with``, which would be the normal vector of the plane defined by the two vectors. As there are two such vectors, in opposite directions, this method returns the vector defined by a right-handed coordinate system. If the two vectors are parallel this returns an empty vector, making it useful for testing if two vectors are parallel.
+
 .. rst-class:: classref-item-separator
 
 ----

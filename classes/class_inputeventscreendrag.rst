@@ -106,7 +106,7 @@ Returns ``true`` when using the eraser end of a stylus pen.
 - void **set_position** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_position** **(** **)**
 
-The drag position.
+The drag position in the viewport the node is in, using the coordinate system of this viewport.
 
 .. rst-class:: classref-item-separator
 

@@ -1164,7 +1164,7 @@ Returns if there is a source-level proxy for the given source ID.
 
 :ref:`Array<class_Array>` **map_tile_proxy** **(** :ref:`int<class_int>` source_from, :ref:`Vector2i<class_Vector2i>` coords_from, :ref:`int<class_int>` alternative_from **)** |const|
 
-According to the configured proxies, maps the provided indentifiers to a new set of identifiers. The source ID, atlas coordinates ID and alternative tile ID are returned as a 3 elements Array.
+According to the configured proxies, maps the provided identifiers to a new set of identifiers. The source ID, atlas coordinates ID and alternative tile ID are returned as a 3 elements Array.
 
 This function first look for matching alternative-level proxies, then coordinates-level proxies, then source-level proxies.
 

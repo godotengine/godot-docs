@@ -25,6 +25,13 @@ Base resource that provides the functionality of exporting a release build of a 
 
 Used in scripting by :ref:`EditorExportPlugin<class_EditorExportPlugin>` to configure platform-specific customization of scenes and resources. See :ref:`EditorExportPlugin._begin_customize_scenes<class_EditorExportPlugin_method__begin_customize_scenes>` and :ref:`EditorExportPlugin._begin_customize_resources<class_EditorExportPlugin_method__begin_customize_resources>` for more details.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Console support in Godot <../tutorials/platform/consoles>`
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

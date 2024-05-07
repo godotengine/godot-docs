@@ -144,6 +144,8 @@ Methods
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`get_text_direction<class_TreeItem_method_get_text_direction>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                                                     |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`get_text_overrun_behavior<class_TreeItem_method_get_text_overrun_behavior>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                                       |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                       | :ref:`get_tooltip_text<class_TreeItem_method_get_tooltip_text>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                                                         |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Tree<class_Tree>`                                           | :ref:`get_tree<class_TreeItem_method_get_tree>` **(** **)** |const|                                                                                                                                                                                      |
@@ -239,6 +241,8 @@ Methods
    | void                                                              | :ref:`set_text_alignment<class_TreeItem_method_set_text_alignment>` **(** :ref:`int<class_int>` column, :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` text_alignment **)**                                                           |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`set_text_direction<class_TreeItem_method_set_text_direction>` **(** :ref:`int<class_int>` column, :ref:`TextDirection<enum_Control_TextDirection>` direction **)**                                                                                 |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                              | :ref:`set_text_overrun_behavior<class_TreeItem_method_set_text_overrun_behavior>` **(** :ref:`int<class_int>` column, :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` overrun_behavior **)**                                                     |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`set_tooltip_text<class_TreeItem_method_set_tooltip_text>` **(** :ref:`int<class_int>` column, :ref:`String<class_String>` tooltip **)**                                                                                                            |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -952,6 +956,18 @@ Returns item's text base writing direction.
 
 ----
 
+.. _class_TreeItem_method_get_text_overrun_behavior:
+
+.. rst-class:: classref-method
+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior** **(** :ref:`int<class_int>` column **)** |const|
+
+Returns the clipping behavior when the text exceeds the item's bounding rectangle in the given ``column``. By default it is :ref:`TextServer.OVERRUN_TRIM_ELLIPSIS<class_TextServer_constant_OVERRUN_TRIM_ELLIPSIS>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TreeItem_method_get_tooltip_text:
 
 .. rst-class:: classref-method
@@ -1547,6 +1563,18 @@ Sets the given column's text alignment. See :ref:`HorizontalAlignment<enum_@Glob
 void **set_text_direction** **(** :ref:`int<class_int>` column, :ref:`TextDirection<enum_Control_TextDirection>` direction **)**
 
 Sets item's text base writing direction.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TreeItem_method_set_text_overrun_behavior:
+
+.. rst-class:: classref-method
+
+void **set_text_overrun_behavior** **(** :ref:`int<class_int>` column, :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` overrun_behavior **)**
+
+Sets the clipping behavior when the text exceeds the item's bounding rectangle in the given ``column``.
 
 .. rst-class:: classref-item-separator
 

@@ -19,7 +19,7 @@ A server interface for low-level 3D navigation access.
 Description
 -----------
 
-NavigationServer2D is the server that handles navigation maps, regions and agents. It does not handle A\* navigation from :ref:`AStar3D<class_AStar3D>`.
+NavigationServer3D is the server that handles navigation maps, regions and agents. It does not handle A\* navigation from :ref:`AStar3D<class_AStar3D>`.
 
 Maps are made up of regions, which are made of navigation meshes. Together, they define the navigable areas in the 3D world.
 

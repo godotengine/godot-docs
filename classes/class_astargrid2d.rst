@@ -38,7 +38,7 @@ To use **AStarGrid2D**, you only need to set the :ref:`region<class_AStarGrid2D_
  .. code-tab:: csharp
 
     AStarGrid2D astarGrid = new AStarGrid2D();
-    astarGrid.Size = new Vector2I(32, 32);
+    astarGrid.Region = new Rect2I(0, 0, 32, 32);
     astarGrid.CellSize = new Vector2I(16, 16);
     astarGrid.Update();
     GD.Print(astarGrid.GetIdPath(Vector2I.Zero, new Vector2I(3, 4))); // prints (0, 0), (1, 1), (2, 2), (3, 3), (3, 4)
@@ -460,7 +460,7 @@ Returns an array with the IDs of the points that form the path found by AStar2D 
 
 Returns an array with the points that are in the path found by AStarGrid2D between the given points. The array is ordered from the starting point to the ending point of the path.
 
-\ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PackedVector3Array<class_PackedVector3Array>` and will print an error message.
+\ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PackedVector2Array<class_PackedVector2Array>` and will print an error message.
 
 .. rst-class:: classref-item-separator
 

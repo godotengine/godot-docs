@@ -23,6 +23,13 @@ Description
 
 Base resource type for all video streams. Classes that derive from **VideoStream** can all be used as resource types to play back videos in :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Playing videos <../tutorials/animation/playing_videos>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

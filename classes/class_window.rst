@@ -1519,7 +1519,7 @@ Ends a bulk theme override update. See :ref:`begin_bulk_theme_override<class_Win
 
 :ref:`Vector2<class_Vector2>` **get_contents_minimum_size** **(** **)** |const|
 
-Returns the combined minimum size from the child :ref:`Control<class_Control>` nodes of the window. Use :ref:`child_controls_changed<class_Window_method_child_controls_changed>` to update it when children nodes have changed.
+Returns the combined minimum size from the child :ref:`Control<class_Control>` nodes of the window. Use :ref:`child_controls_changed<class_Window_method_child_controls_changed>` to update it when child nodes have changed.
 
 .. rst-class:: classref-item-separator
 

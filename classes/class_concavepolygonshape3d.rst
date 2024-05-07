@@ -21,7 +21,7 @@ Description
 
 A 3D trimesh shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape3D<class_CollisionShape3D>`.
 
-Being just a collection of interconnected triangles, **ConcavePolygonShape3D** is the most freely configurable single 3D shape. It can be used to form polyhedra of any nature, or even shapes that don't enclose a volume. However, :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` is *hollow* even if the interconnected triangles do enclose a volume, which often makes it unsuitable for physics or detection.
+Being just a collection of interconnected triangles, **ConcavePolygonShape3D** is the most freely configurable single 3D shape. It can be used to form polyhedra of any nature, or even shapes that don't enclose a volume. However, **ConcavePolygonShape3D** is *hollow* even if the interconnected triangles do enclose a volume, which often makes it unsuitable for physics or detection.
 
 \ **Note:** When used for collision, **ConcavePolygonShape3D** is intended to work with static :ref:`CollisionShape3D<class_CollisionShape3D>` nodes like :ref:`StaticBody3D<class_StaticBody3D>` and will likely not behave well for :ref:`CharacterBody3D<class_CharacterBody3D>`\ s or :ref:`RigidBody3D<class_RigidBody3D>`\ s in a mode other than Static.
 

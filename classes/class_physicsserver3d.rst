@@ -21,7 +21,7 @@ A server interface for low-level 3D physics access.
 Description
 -----------
 
-PhysicsServer2D is the server responsible for all 2D physics. It can directly create and manipulate all physics objects:
+PhysicsServer3D is the server responsible for all 3D physics. It can directly create and manipulate all physics objects:
 
 - A *space* is a self-contained world for a physics simulation. It contains bodies, areas, and joints. Its state can be queried for collision and intersection information, and several parameters of the simulation can be modified.
 
@@ -556,7 +556,7 @@ A factor applied to the movement across the slider axis once the limits get surp
 
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_LINEAR_LIMIT_RESTITUTION** = ``3``
 
-The amount of restitution once the limits are surpassed. The lower, the more velocityenergy gets lost.
+The amount of restitution once the limits are surpassed. The lower, the more velocity-energy gets lost.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_LINEAR_LIMIT_DAMPING:
 

@@ -641,7 +641,7 @@ Returns a :ref:`Vector2i<class_Vector2i>` array with the positions of all cells 
 
 Returns a :ref:`Vector2i<class_Vector2i>` array with the positions of all cells containing a tile in the given layer. Tiles may be filtered according to their source (``source_id``), their atlas coordinates (``atlas_coords``) or alternative id (``alternative_tile``).
 
-If a parameter has it's value set to the default one, this parameter is not used to filter a cell. Thus, if all parameters have their respective default value, this method returns the same result as :ref:`get_used_cells<class_TileMap_method_get_used_cells>`.
+If a parameter has its value set to the default one, this parameter is not used to filter a cell. Thus, if all parameters have their respective default value, this method returns the same result as :ref:`get_used_cells<class_TileMap_method_get_used_cells>`.
 
 A cell is considered empty if its source identifier equals -1, its atlas coordinates identifiers is ``Vector2(-1, -1)`` and its alternative identifier is -1.
 
@@ -753,7 +753,7 @@ Removes the layer at index ``layer``.
 
 void **set_cell** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=0 **)**
 
-Sets the tile indentifiers for the cell on layer ``layer`` at coordinates ``coords``. Each tile of the :ref:`TileSet<class_TileSet>` is identified using three parts:
+Sets the tile identifiers for the cell on layer ``layer`` at coordinates ``coords``. Each tile of the :ref:`TileSet<class_TileSet>` is identified using three parts:
 
 - The source identifier ``source_id`` identifies a :ref:`TileSetSource<class_TileSetSource>` identifier. See :ref:`TileSet.set_source_id<class_TileSet_method_set_source_id>`,
 

@@ -182,7 +182,7 @@ Theme Property Descriptions
 
 :ref:`int<class_int>` **h_separation** = ``4``
 
-The horizontal separation of children nodes.
+The horizontal separation of child nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -194,7 +194,7 @@ The horizontal separation of children nodes.
 
 :ref:`int<class_int>` **v_separation** = ``4``
 
-The vertical separation of children nodes.
+The vertical separation of child nodes.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

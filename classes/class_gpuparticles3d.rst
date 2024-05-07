@@ -28,6 +28,8 @@ Use the ``process_material`` property to add a :ref:`ParticleProcessMaterial<cla
 Tutorials
 ---------
 
+- :doc:`Particle systems (3D) <../tutorials/3d/particles/index>`
+
 - :doc:`Controlling thousands of fish with Particles <../tutorials/performance/vertex_animation/controlling_thousands_of_fish>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
@@ -143,7 +145,7 @@ Particles are drawn in the order emitted.
 
 :ref:`DrawOrder<enum_GPUParticles3D_DrawOrder>` **DRAW_ORDER_LIFETIME** = ``1``
 
-Particles are drawn in order of remaining lifetime.
+Particles are drawn in order of remaining lifetime. In other words, the particle with the highest lifetime is drawn at the front.
 
 .. _class_GPUParticles3D_constant_DRAW_ORDER_REVERSE_LIFETIME:
 
@@ -151,7 +153,7 @@ Particles are drawn in order of remaining lifetime.
 
 :ref:`DrawOrder<enum_GPUParticles3D_DrawOrder>` **DRAW_ORDER_REVERSE_LIFETIME** = ``2``
 
-
+Particles are drawn in reverse order of remaining lifetime. In other words, the particle with the lowest lifetime is drawn at the front.
 
 .. _class_GPUParticles3D_constant_DRAW_ORDER_VIEW_DEPTH:
 
@@ -327,6 +329,8 @@ Number of particles to emit.
 - :ref:`DrawOrder<enum_GPUParticles3D_DrawOrder>` **get_draw_order** **(** **)**
 
 Particle draw order. Uses :ref:`DrawOrder<enum_GPUParticles3D_DrawOrder>` values.
+
+\ **Note:** :ref:`DRAW_ORDER_INDEX<class_GPUParticles3D_constant_DRAW_ORDER_INDEX>` is the only option that supports motion vectors for effects like TAA. It is suggested to use this draw order if the particles are opaque to fix ghosting artifacts.
 
 .. rst-class:: classref-item-separator
 

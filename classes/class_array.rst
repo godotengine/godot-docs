@@ -497,6 +497,12 @@ Returns the last element of the array. Prints an error and returns ``null`` if t
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
+::
+
+    var array = ["a", "b", "c", "c", "d", "e"]
+    print(array.bsearch("c", true))  # Prints 2, at the first matching element.
+    print(array.bsearch("c", false)) # Prints 4, after the last matching element, pointing to "d".
+
 \ **Note:** Calling :ref:`bsearch<class_Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
 .. rst-class:: classref-item-separator
@@ -510,6 +516,8 @@ Finds the index of an existing value (or the insertion index that maintains sort
 :ref:`int<class_int>` **bsearch_custom** **(** :ref:`Variant<class_Variant>` value, :ref:`Callable<class_Callable>` func, :ref:`bool<class_bool>` before=true **)** |const|
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise.
+
+\ **Note:** The custom method must accept the two arguments in any order, you cannot rely on that the first argument will always be from the array.
 
 \ **Note:** Calling :ref:`bsearch_custom<class_Array_method_bsearch_custom>` on an unsorted array results in unexpected behavior.
 
@@ -1110,6 +1118,8 @@ If either ``begin`` or ``end`` are negative, they will be relative to the end of
 If specified, ``step`` is the relative index between source elements. It can be negative, then ``begin`` must be higher than ``end``. For example, ``[0, 1, 2, 3, 4, 5].slice(5, 1, -2)`` returns ``[5, 3]``.
 
 If ``deep`` is true, each element will be copied by value rather than by reference.
+
+\ **Note:** To include the first element when ``step`` is negative, use ``arr.slice(begin, -arr.size() - 1, step)`` (i.e. ``[0, 1, 2].slice(1, -4, -1)`` returns ``[1, 0]``).
 
 .. rst-class:: classref-item-separator
 

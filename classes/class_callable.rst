@@ -256,6 +256,8 @@ Calls the method represented by this **Callable** in deferred mode, i.e. at the 
     func _ready():
         grab_focus.call_deferred()
 
+\ **Note:** Deferred calls are processed at idle time. Idle time happens mainly at the end of process and physics frames. In it, deferred calls will be run until there are none left, which means you can defer calls from other deferred calls and they'll still be run in the current idle time cycle. This means you should not call a method deferred from itself (or from a method called by it), as this causes infinite recursion the same way as if you had called the method directly.
+
 See also :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
 
 .. rst-class:: classref-item-separator
@@ -304,7 +306,7 @@ Returns the total amount of arguments bound (or unbound) via successive :ref:`bi
 
 :ref:`StringName<class_StringName>` **get_method** **(** **)** |const|
 
-Returns the name of the method represented by this **Callable**. If the callable is a lambda function, returns the function's name.
+Returns the name of the method represented by this **Callable**. If the callable is a GDScript lambda function, returns the function's name or ``"<anonymous lambda>"``.
 
 .. rst-class:: classref-item-separator
 
