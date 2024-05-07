@@ -563,7 +563,7 @@ Returns the RID of a pyramid shape encompassing the camera's view frustum, ignor
 
 :ref:`bool<class_bool>` **is_position_behind** **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|
 
-Returns ``true`` if the given position is behind the camera (the blue part of the linked diagram). `See this diagram <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/camera3d_position_frustum.png>`__ for an overview of position query methods.
+Returns ``true`` if the given position is behind the camera (the blue part of the linked diagram). `See this diagram <https://raw.githubusercontent.com/godotengine/godot-docs/4.0/img/camera3d_position_frustum.png>`__ for an overview of position query methods.
 
 \ **Note:** A position which returns ``false`` may still be outside the camera's field of view.
 
@@ -577,7 +577,7 @@ Returns ``true`` if the given position is behind the camera (the blue part of th
 
 :ref:`bool<class_bool>` **is_position_in_frustum** **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|
 
-Returns ``true`` if the given position is inside the camera's frustum (the green part of the linked diagram). `See this diagram <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/camera3d_position_frustum.png>`__ for an overview of position query methods.
+Returns ``true`` if the given position is inside the camera's frustum (the green part of the linked diagram). `See this diagram <https://raw.githubusercontent.com/godotengine/godot-docs/4.0/img/camera3d_position_frustum.png>`__ for an overview of position query methods.
 
 .. rst-class:: classref-item-separator
 
