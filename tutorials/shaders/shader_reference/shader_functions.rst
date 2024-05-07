@@ -2608,10 +2608,10 @@ Texture Functions
 
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec2        | :ref:`textureSize<shader_func_textureSize>` ( |gsampler2D| s, int lod)                              | Get the size of a texture.                                          |
++--------------+-----------------------------------------------------------------------------------------------------+ The LOD defines which mipmap level is used. An LOD value of ``0``   |
+| ivec2        | :ref:`textureSize<shader_func_textureSize>` (samplerCube s, int lod)                                | will use the full resolution texture.                               |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| ivec2        | :ref:`textureSize<shader_func_textureSize>` (samplerCube s, int lod)                                | The LOD defines which mipmap level is used. An LOD value of ``0``   |
-+--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| ivec2        | :ref:`textureSize<shader_func_textureSize>` (samplerCubeArray s, int lod)                           | will use the full resolution texture.                               |
+| ivec2        | :ref:`textureSize<shader_func_textureSize>` (samplerCubeArray s, int lod)                           |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
 | ivec3        | :ref:`textureSize<shader_func_textureSize>` ( |gsampler2DArray| s, int lod)                         |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
@@ -2626,9 +2626,9 @@ Texture Functions
 | vec2         | :ref:`textureQueryLod<shader_func_textureQueryLod>` (samplerCube s, vec3 p)                         |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` ( |gsampler2D| s)                         | Get the number of accessible mipmap levels of a texture.            |
++--------------+-----------------------------------------------------------------------------------------------------+ If the texture is unassigned to a sampler, ``1`` is returned (Godot |
+| int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` ( |gsampler2DArray| s)                    | always internally assigns a texture even to an empty sampler).      |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` ( |gsampler2DArray| s)                    | If the texture is unassigned to a sampler, ``1`` is returned (Godot |
-+--------------+-----------------------------------------------------------------------------------------------------+ always internally assigns a texture even to an empty sampler).      |
 | int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` ( |gsampler3D| s)                         |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
 | int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` (samplerCube s)                           |                                                                     |
@@ -2650,22 +2650,20 @@ Texture Functions
 | |gvec4_type| | :ref:`textureProj<shader_func_textureProj>` ( |gsampler3D| s, vec4 p [, float bias])                |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | |gvec4_type| | :ref:`textureLod<shader_func_textureLod>` ( |gsampler2D| s, vec2 p, float lod)                      | Perform a texture read at custom mipmap.                            |
-+--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`textureLod<shader_func_textureLod>` ( |gsampler2DArray| s, vec3 p, float lod)                 | The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
-+--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-|              |                                                                                                     | will use the full resolution texture. If the texture lacks mipmaps, |
-| |gvec4_type| | :ref:`textureLod<shader_func_textureLod>` ( |gsampler3D| s, vec3 p, float lod)                      | all LOD values will act like ``0.0``.                               |
++--------------+-----------------------------------------------------------------------------------------------------+ The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
+| |gvec4_type| | :ref:`textureLod<shader_func_textureLod>` ( |gsampler2DArray| s, vec3 p, float lod)                 | will use the full resolution texture. If the texture lacks mipmaps, |
++--------------+-----------------------------------------------------------------------------------------------------+ all LOD values will act like ``0.0``.                               |
+| |gvec4_type| | :ref:`textureLod<shader_func_textureLod>` ( |gsampler3D| s, vec3 p, float lod)                      |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
 | vec4         | :ref:`textureLod<shader_func_textureLod>` (samplerCube s, vec3 p, float lod)                        |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
 | vec4         | :ref:`textureLod<shader_func_textureLod>` (samplerCubeArray s, vec4 p, float lod)                   |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | |gvec4_type| | :ref:`textureProjLod<shader_func_textureProjLod>` ( |gsampler2D| s, vec3 p, float lod)              | Performs a texture read with projection/LOD.                        |
-+--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`textureProjLod<shader_func_textureProjLod>` ( |gsampler2D| s, vec4 p, float lod)              | The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
-|              |                                                                                                     | will use the full resolution texture. If the texture lacks mipmaps, |
-+--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`textureProjLod<shader_func_textureProjLod>` ( |gsampler3D| s, vec4 p, float lod)              | all LOD values will act like ``0.0``.                               |
++--------------+-----------------------------------------------------------------------------------------------------+ The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
+| |gvec4_type| | :ref:`textureProjLod<shader_func_textureProjLod>` ( |gsampler2D| s, vec4 p, float lod)              | will use the full resolution texture. If the texture lacks mipmaps, |
++--------------+-----------------------------------------------------------------------------------------------------+ all LOD values will act like ``0.0``.                               |
+| |gvec4_type| | :ref:`textureProjLod<shader_func_textureProjLod>` ( |gsampler3D| s, vec4 p, float lod)              |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | |gvec4_type| | :ref:`textureGrad<shader_func_textureGrad>` ( |gsampler2D| s, vec2 p, vec2 dPdx, vec2 dPdy)         | Performs a texture read with explicit gradients.                    |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
@@ -2678,25 +2676,21 @@ Texture Functions
 | vec4         | :ref:`textureGrad<shader_func_textureGrad>` (samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy)      |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | |gvec4_type| | :ref:`textureProjGrad<shader_func_textureProjGrad>` ( |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy) | Performs a texture read with projection/LOD and with explicit       |
-|              |                                                                                                     | gradients.                                                          |
-+--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
++--------------+-----------------------------------------------------------------------------------------------------+ gradients.                                                          |
 | |gvec4_type| | :ref:`textureProjGrad<shader_func_textureProjGrad>` ( |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy) |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
 | |gvec4_type| | :ref:`textureProjGrad<shader_func_textureProjGrad>` ( |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy) |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | |gvec4_type| | :ref:`texelFetch<shader_func_texelFetch>` ( |gsampler2D| s, ivec2 p, int lod)                       | Fetches a single texel using integer coordinates.                   |
-+--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`texelFetch<shader_func_texelFetch>` ( |gsampler2DArray| s, ivec3 p, int lod)                  | The LOD defines which mipmap level is used. An LOD value of ``0``   |
-|              |                                                                                                     | will use the full resolution texture.                               |
++--------------+-----------------------------------------------------------------------------------------------------+ The LOD defines which mipmap level is used. An LOD value of ``0``   |
+| |gvec4_type| | :ref:`texelFetch<shader_func_texelFetch>` ( |gsampler2DArray| s, ivec3 p, int lod)                  | will use the full resolution texture.                               |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
 | |gvec4_type| | :ref:`texelFetch<shader_func_texelFetch>` ( |gsampler3D| s, ivec3 p, int lod)                       |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | |gvec4_type| | :ref:`textureGather<shader_func_textureGather>` ( |gsampler2D| s, vec2 p [, int comps])             | Gathers four texels from a texture.                                 |
-|              |                                                                                                     | Use ``comps`` within range of 0..3 to                               |
-+--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
++--------------+-----------------------------------------------------------------------------------------------------+ Use ``comps`` within range of 0..3 to                               |
 | |gvec4_type| | :ref:`textureGather<shader_func_textureGather>` ( |gsampler2DArray| s, vec3 p [, int comps])        | define which component (x, y, z, w) is returned.                    |
-|              |                                                                                                     | If ``comps`` is not provided: 0 (or x-component) is used.           |
-+--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
++--------------+-----------------------------------------------------------------------------------------------------+ If ``comps`` is not provided: 0 (or x-component) is used.           |
 | vec4         | :ref:`textureGather<shader_func_textureGather>` (samplerCube s, vec3 p [, int comps])               |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | |vec_type|   | :ref:`dFdx<shader_func_dFdx>` ( |vec_type| p)                                                       | Derivative in ``x`` using local differencing.                       |
@@ -2752,19 +2746,22 @@ Texture Functions
 
 ivec2 **textureSize** ( |gsampler2D| s, int lod )
 
-    <description/>
+    Retrieve the dimensions of a level of a texture.
+
+    Returns the dimensions of level lod (if present) of the texture bound to sampler.
+
+    The components in the return value are filled in, in order, with the width, height and depth
+    of the texture. For the array forms, the last component of the return value is
+    the number of layers in the texture array.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture whose dimensions to retrieve is bound.
 
     :param lod:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the level of the texture for which to retrieve the dimensions.
 
     :return:
-        <return_description/>
+        the dimensions of level lod (if present) of the texture bound to sampler.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
 
@@ -2777,19 +2774,22 @@ ivec2 **textureSize** ( |gsampler2D| s, int lod )
 
 ivec2 **textureSize** ( samplerCube s, int lod )
 
-    <description/>
+    Retrieve the dimensions of a level of a texture.
+
+    Returns the dimensions of level lod (if present) of the texture bound to sampler.
+
+    The components in the return value are filled in, in order, with the width, height and depth
+    of the texture. For the array forms, the last component of the return value is
+    the number of layers in the texture array.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture whose dimensions to retrieve is bound.
 
     :param lod:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the level of the texture for which to retrieve the dimensions.
 
     :return:
-        <return_description/>
+        the dimensions of level lod (if present) of the texture bound to sampler.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
 
@@ -2802,19 +2802,22 @@ ivec2 **textureSize** ( samplerCube s, int lod )
 
 ivec2 **textureSize** ( samplerCubeArray s, int lod )
 
-    <description/>
+    Retrieve the dimensions of a level of a texture.
+
+    Returns the dimensions of level lod (if present) of the texture bound to sampler.
+
+    The components in the return value are filled in, in order, with the width, height and depth
+    of the texture. For the array forms, the last component of the return value is
+    the number of layers in the texture array.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture whose dimensions to retrieve is bound.
 
     :param lod:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the level of the texture for which to retrieve the dimensions.
 
     :return:
-        <return_description/>
+        the dimensions of level lod (if present) of the texture bound to sampler.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
 
@@ -2827,19 +2830,22 @@ ivec2 **textureSize** ( samplerCubeArray s, int lod )
 
 ivec3 **textureSize** ( |gsampler2DArray| s, int lod )
 
-    <description/>
+    Retrieve the dimensions of a level of a texture.
+
+    Returns the dimensions of level lod (if present) of the texture bound to sampler.
+
+    The components in the return value are filled in, in order, with the width, height and depth
+    of the texture. For the array forms, the last component of the return value is
+    the number of layers in the texture array.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture whose dimensions to retrieve is bound.
 
     :param lod:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the level of the texture for which to retrieve the dimensions.
 
     :return:
-        <return_description/>
+        the dimensions of level lod (if present) of the texture bound to sampler.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
 
@@ -2852,19 +2858,22 @@ ivec3 **textureSize** ( |gsampler2DArray| s, int lod )
 
 ivec3 **textureSize** ( |gsampler3D| s, int lod )
 
-    <description/>
+    Retrieve the dimensions of a level of a texture.
+
+    Returns the dimensions of level lod (if present) of the texture bound to sampler.
+
+    The components in the return value are filled in, in order, with the width, height and depth
+    of the texture. For the array forms, the last component of the return value is
+    the number of layers in the texture array.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture whose dimensions to retrieve is bound.
 
     :param lod:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the level of the texture for which to retrieve the dimensions.
 
     :return:
-        <return_description/>
+        the dimensions of level lod (if present) of the texture bound to sampler.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
 
@@ -2881,19 +2890,23 @@ ivec3 **textureSize** ( |gsampler3D| s, int lod )
 
 vec2 **textureQueryLod** ( |gsampler2D| s, vec2 p )
 
-    <description/>
+    Compute the level-of-detail that would be used to sample from a texture.
+
+    Available only in the fragment shader, textureQueryLod computes the level-of-detail
+    that would be used to sample from a texture. The mipmap array(s) that would be
+    accessed is returned in the x component of the return value. The computed level-of-detail
+    relative to the base level is returned in the y component of the return value.
+
+    If called on an incomplete texture, the result of the operation is undefined.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture whose level-of-detail will be queried is bound.
 
     :param p:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the texture coordinates at which the level-of-detail will be queried.
 
     :return:
-        <return_description/>
+        see description.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
 
@@ -2906,19 +2919,23 @@ vec2 **textureQueryLod** ( |gsampler2D| s, vec2 p )
 
 vec3 **textureQueryLod** ( |gsampler2DArray| s, vec2 p )
 
-    <description/>
+    Compute the level-of-detail that would be used to sample from a texture.
+
+    Available only in the fragment shader, textureQueryLod computes the level-of-detail
+    that would be used to sample from a texture. The mipmap array(s) that would be
+    accessed is returned in the x component of the return value. The computed level-of-detail
+    relative to the base level is returned in the y component of the return value.
+
+    If called on an incomplete texture, the result of the operation is undefined.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture whose level-of-detail will be queried is bound.
 
     :param p:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the texture coordinates at which the level-of-detail will be queried.
 
     :return:
-        <return_description/>
+        see description.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
 
@@ -2931,19 +2948,23 @@ vec3 **textureQueryLod** ( |gsampler2DArray| s, vec2 p )
 
 vec2 **textureQueryLod** ( |gsampler3D| s, vec3 p )
 
-    <description/>
+    Compute the level-of-detail that would be used to sample from a texture.
+
+    Available only in the fragment shader, textureQueryLod computes the level-of-detail
+    that would be used to sample from a texture. The mipmap array(s) that would be
+    accessed is returned in the x component of the return value. The computed level-of-detail
+    relative to the base level is returned in the y component of the return value.
+
+    If called on an incomplete texture, the result of the operation is undefined.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture whose level-of-detail will be queried is bound.
 
     :param p:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the texture coordinates at which the level-of-detail will be queried.
 
     :return:
-        <return_description/>
+        see description.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
 
@@ -2956,19 +2977,23 @@ vec2 **textureQueryLod** ( |gsampler3D| s, vec3 p )
 
 vec2 **textureQueryLod** ( samplerCube s, vec3 p )
 
-    <description/>
+    Compute the level-of-detail that would be used to sample from a texture.
+
+    Available only in the fragment shader, textureQueryLod computes the level-of-detail
+    that would be used to sample from a texture. The mipmap array(s) that would be
+    accessed is returned in the x component of the return value. The computed level-of-detail
+    relative to the base level is returned in the y component of the return value.
+
+    If called on an incomplete texture, the result of the operation is undefined.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture whose level-of-detail will be queried is bound.
 
     :param p:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the texture coordinates at which the level-of-detail will be queried.
 
     :return:
-        <return_description/>
+        see description.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
 
@@ -2985,19 +3010,15 @@ vec2 **textureQueryLod** ( samplerCube s, vec3 p )
 
 int **textureQueryLevels** ( |gsampler2D| s )
 
-    <description/>
+    Compute the number of accessible mipmap levels of a texture.
+
+    If called on an incomplete texture, or if no texture is associated with sampler, zero is returned.
 
     :param s:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the sampler to which the texture whose mipmap level count will be queried is bound.
 
     :return:
-        <return_description/>
+        the number of accessible mipmap levels in the texture, or zero.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
 
@@ -3010,19 +3031,15 @@ int **textureQueryLevels** ( |gsampler2D| s )
 
 int **textureQueryLevels** ( |gsampler2DArray| s )
 
-    <description/>
+    Compute the number of accessible mipmap levels of a texture.
+
+    If called on an incomplete texture, or if no texture is associated with sampler, zero is returned.
 
     :param s:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the sampler to which the texture whose mipmap level count will be queried is bound.
 
     :return:
-        <return_description/>
+        the number of accessible mipmap levels in the texture, or zero.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
 
@@ -3035,19 +3052,15 @@ int **textureQueryLevels** ( |gsampler2DArray| s )
 
 int **textureQueryLevels** ( |gsampler3D| s )
 
-    <description/>
+    Compute the number of accessible mipmap levels of a texture.
+
+    If called on an incomplete texture, or if no texture is associated with sampler, zero is returned.
 
     :param s:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the sampler to which the texture whose mipmap level count will be queried is bound.
 
     :return:
-        <return_description/>
+        the number of accessible mipmap levels in the texture, or zero.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
 
@@ -3060,19 +3073,15 @@ int **textureQueryLevels** ( |gsampler3D| s )
 
 int **textureQueryLevels** ( samplerCube s )
 
-    <description/>
+    Compute the number of accessible mipmap levels of a texture.
+
+    If called on an incomplete texture, or if no texture is associated with sampler, zero is returned.
 
     :param s:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the sampler to which the texture whose mipmap level count will be queried is bound.
 
     :return:
-        <return_description/>
+        the number of accessible mipmap levels in the texture, or zero.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
 
@@ -3089,19 +3098,27 @@ int **textureQueryLevels** ( samplerCube s )
 
 |gvec4_type| **texture** ( |gsampler2D| s, vec2 p [, float bias] )
 
-    <description/>
+    Retrieves texels from a texture.
+
+    Samples texels from the texture bound to ``s`` at texture coordinate ``p``. An optional bias, specified in ``bias`` is
+    included in the level-of-detail computation that is used to choose mipmap(s) from which to sample.
+
+    For shadow forms, the last component of ``p`` is used as Dsub and the array layer is specified in the second to last
+    component of ``p``. (The second component of ``p`` is unused for 1D shadow lookups.)
+
+    For non-shadow variants, the array layer comes from the last component of P.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
-    :param bias]:
-        <param_description/>
+    :param bias:
+        an optional bias to be applied during level-of-detail computation.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
 
@@ -3114,19 +3131,27 @@ int **textureQueryLevels** ( samplerCube s )
 
 |gvec4_type| **texture** ( |gsampler2DArray| s, vec3 p [, float bias] )
 
-    <description/>
+    Retrieves texels from a texture.
+
+    Samples texels from the texture bound to ``s`` at texture coordinate ``p``. An optional bias, specified in ``bias`` is
+    included in the level-of-detail computation that is used to choose mipmap(s) from which to sample.
+
+    For shadow forms, the last component of ``p`` is used as Dsub and the array layer is specified in the second to last
+    component of ``p``. (The second component of ``p`` is unused for 1D shadow lookups.)
+
+    For non-shadow variants, the array layer comes from the last component of P.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
-    :param bias]:
-        <param_description/>
+    :param bias:
+        an optional bias to be applied during level-of-detail computation.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
 
@@ -3139,19 +3164,27 @@ int **textureQueryLevels** ( samplerCube s )
 
 |gvec4_type| **texture** ( |gsampler3D| s, vec3 p [, float bias] )
 
-    <description/>
+    Retrieves texels from a texture.
+
+    Samples texels from the texture bound to ``s`` at texture coordinate ``p``. An optional bias, specified in ``bias`` is
+    included in the level-of-detail computation that is used to choose mipmap(s) from which to sample.
+
+    For shadow forms, the last component of ``p`` is used as Dsub and the array layer is specified in the second to last
+    component of ``p``. (The second component of ``p`` is unused for 1D shadow lookups.)
+
+    For non-shadow variants, the array layer comes from the last component of P.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
-    :param bias]:
-        <param_description/>
+    :param bias:
+        an optional bias to be applied during level-of-detail computation.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
 
@@ -3164,19 +3197,27 @@ int **textureQueryLevels** ( samplerCube s )
 
 vec4 **texture** ( samplerCube s, vec3 p [, float bias] )
 
-    <description/>
+    Retrieves texels from a texture.
+
+    Samples texels from the texture bound to ``s`` at texture coordinate ``p``. An optional bias, specified in ``bias`` is
+    included in the level-of-detail computation that is used to choose mipmap(s) from which to sample.
+
+    For shadow forms, the last component of ``p`` is used as Dsub and the array layer is specified in the second to last
+    component of ``p``. (The second component of ``p`` is unused for 1D shadow lookups.)
+
+    For non-shadow variants, the array layer comes from the last component of P.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
-    :param bias]:
-        <param_description/>
+    :param bias:
+        an optional bias to be applied during level-of-detail computation.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
 
@@ -3189,19 +3230,27 @@ vec4 **texture** ( samplerCube s, vec3 p [, float bias] )
 
 vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
 
-    <description/>
+    Retrieves texels from a texture.
+
+    Samples texels from the texture bound to ``s`` at texture coordinate ``p``. An optional bias, specified in ``bias`` is
+    included in the level-of-detail computation that is used to choose mipmap(s) from which to sample.
+
+    For shadow forms, the last component of ``p`` is used as Dsub and the array layer is specified in the second to last
+    component of ``p``. (The second component of ``p`` is unused for 1D shadow lookups.)
+
+    For non-shadow variants, the array layer comes from the last component of P.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
-    :param bias]:
-        <param_description/>
+    :param bias:
+        an optional bias to be applied during level-of-detail computation.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
 
@@ -3218,19 +3267,23 @@ vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
 
 |gvec4_type| **textureProj** ( |gsampler2D| s, vec3 p [, float bias] )
 
-    <description/>
+    Perform a texture lookup with projection.
+
+    The texture coordinates consumed from ``p``, not including the last component of ``p``, are
+    divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
+    forms is used as Dref. After these values are computed, the texture lookup proceeds as in texture.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
-    :param bias]:
-        <param_description/>
+    :param bias:
+        optional bias to be applied during level-of-detail computation.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProj.xhtml
 
@@ -3243,19 +3296,23 @@ vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
 
 |gvec4_type| **textureProj** ( |gsampler2D| s, vec4 p [, float bias] )
 
-    <description/>
+    Perform a texture lookup with projection.
+
+    The texture coordinates consumed from ``p``, not including the last component of ``p``, are
+    divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
+    forms is used as Dref. After these values are computed, the texture lookup proceeds as in texture.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
-    :param bias]:
-        <param_description/>
+    :param bias:
+        optional bias to be applied during level-of-detail computation.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProj.xhtml
 
@@ -3268,19 +3325,23 @@ vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
 
 |gvec4_type| **textureProj** ( |gsampler3D| s, vec4 p [, float bias] )
 
-    <description/>
+    Perform a texture lookup with projection.
+
+    The texture coordinates consumed from ``p``, not including the last component of ``p``, are
+    divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
+    forms is used as Dref. After these values are computed, the texture lookup proceeds as in texture.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
-    :param bias]:
-        <param_description/>
+    :param bias:
+        optional bias to be applied during level-of-detail computation.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProj.xhtml
 
@@ -3297,19 +3358,24 @@ vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
 
 |gvec4_type| **textureLod** ( |gsampler2D| s, vec2 p, float lod )
 
-    <description/>
+    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
+    an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
+    partial derivatives as follows::
+
+        δu/δx=0, δv/δx=0, δw/δx=0
+        δu/δy=0, δv/δy=0, δw/δy=0
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param lod:
-        <param_description/>
+        the explicit level-of-detail
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
 
@@ -3322,19 +3388,24 @@ vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
 
 |gvec4_type| **textureLod** ( |gsampler2DArray| s, vec3 p, float lod )
 
-    <description/>
+    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
+    an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
+    partial derivatives as follows::
+
+        δu/δx=0, δv/δx=0, δw/δx=0
+        δu/δy=0, δv/δy=0, δw/δy=0
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param lod:
-        <param_description/>
+        the explicit level-of-detail
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
 
@@ -3347,19 +3418,24 @@ vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
 
 |gvec4_type| **textureLod** ( |gsampler3D| s, vec3 p, float lod )
 
-    <description/>
+    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
+    an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
+    partial derivatives as follows::
+
+        δu/δx=0, δv/δx=0, δw/δx=0
+        δu/δy=0, δv/δy=0, δw/δy=0
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param lod:
-        <param_description/>
+        the explicit level-of-detail
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
 
@@ -3372,19 +3448,24 @@ vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
 
 vec4 **textureLod** ( samplerCube s, vec3 p, float lod )
 
-    <description/>
+    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
+    an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
+    partial derivatives as follows::
+
+        δu/δx=0, δv/δx=0, δw/δx=0
+        δu/δy=0, δv/δy=0, δw/δy=0
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param lod:
-        <param_description/>
+        the explicit level-of-detail
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
 
@@ -3397,19 +3478,24 @@ vec4 **textureLod** ( samplerCube s, vec3 p, float lod )
 
 vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
 
-    <description/>
+    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
+    an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
+    partial derivatives as follows::
+
+        δu/δx=0, δv/δx=0, δw/δx=0
+        δu/δy=0, δv/δy=0, δw/δy=0
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param lod:
-        <param_description/>
+        the explicit level-of-detail
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
 
@@ -3426,19 +3512,25 @@ vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
 
 |gvec4_type| **textureProjLod** ( |gsampler2D| s, vec3 p, float lod )
 
-    <description/>
+    Performs a texture lookup with projection from an explicitly specified level-of-detail.
+
+    The texture coordinates consumed from P, not including the last component of ``p``, are
+    divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
+    forms is used as Dref. After these values are computed, the texture lookup proceeds as in
+    `textureLod<shader_func_textureLod>`, with ``lod`` used to specify the level-of-detail from
+    which the texture will be sampled.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param lod:
-        <param_description/>
+        the explicit level-of-detail from which to fetch texels.
 
     :return:
-        <return_description/>
+       a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjLod.xhtml
 
@@ -3451,19 +3543,25 @@ vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
 
 |gvec4_type| **textureProjLod** ( |gsampler2D| s, vec4 p, float lod )
 
-    <description/>
+    Performs a texture lookup with projection from an explicitly specified level-of-detail.
+
+    The texture coordinates consumed from P, not including the last component of ``p``, are
+    divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
+    forms is used as Dref. After these values are computed, the texture lookup proceeds as in
+    `textureLod<shader_func_textureLod>`, with ``lod`` used to specify the level-of-detail from
+    which the texture will be sampled.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param lod:
-        <param_description/>
+        the explicit level-of-detail from which to fetch texels.
 
     :return:
-        <return_description/>
+       a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjLod.xhtml
 
@@ -3476,19 +3574,25 @@ vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
 
 |gvec4_type| **textureProjLod** ( |gsampler3D| s, vec4 p, float lod )
 
-    <description/>
+    Performs a texture lookup with projection from an explicitly specified level-of-detail.
+
+    The texture coordinates consumed from P, not including the last component of ``p``, are
+    divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
+    forms is used as Dref. After these values are computed, the texture lookup proceeds as in
+    `textureLod<shader_func_textureLod>`, with ``lod`` used to specify the level-of-detail from
+    which the texture will be sampled.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param lod:
-        <param_description/>
+        the explicit level-of-detail from which to fetch texels.
 
     :return:
-        <return_description/>
+       a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjLod.xhtml
 
@@ -3505,19 +3609,30 @@ vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
 
 |gvec4_type| **textureGrad** ( |gsampler2D| s, vec2 p, vec2 dPdx, vec2 dPdy )
 
-    <description/>
+    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
+     - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
+     - ``δs/δy=δp/δy`` for a 1D texture, ``δp.s/δy`` otherwise
+     - ``δt/δx=0.0`` for a 1D texture, ``δp.t/δx`` otherwise
+     - ``δt/δy=0.0`` for a 1D texture, ``δp.t/δy`` otherwise
+     - ``δr/δx=0.0`` for a 1D or 2D texture, ``δp.p/δx`` otherwise
+     - ``δr/δy=0.0``  for a 1D or 2D texture, ``δp.p/δy`` otherwise
+
+    For the cube version, the partial derivatives of ``p`` are assumed to be in the coordinate system used before texture coordinates are projected onto the appropriate cube face.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param dPdx:
-        <param_description/>
+        the partial derivative of P with respect to window x.
+
+    :param dPdy:
+        the partial derivative of P with respect to window y.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
 
@@ -3530,19 +3645,30 @@ vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
 
 |gvec4_type| **textureGrad** ( |gsampler2DArray| s, vec3 p, vec2 dPdx, vec2 dPdy )
 
-    <description/>
+    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
+     - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
+     - ``δs/δy=δp/δy`` for a 1D texture, ``δp.s/δy`` otherwise
+     - ``δt/δx=0.0`` for a 1D texture, ``δp.t/δx`` otherwise
+     - ``δt/δy=0.0`` for a 1D texture, ``δp.t/δy`` otherwise
+     - ``δr/δx=0.0`` for a 1D or 2D texture, ``δp.p/δx`` otherwise
+     - ``δr/δy=0.0``  for a 1D or 2D texture, ``δp.p/δy`` otherwise
+
+    For the cube version, the partial derivatives of ``p`` are assumed to be in the coordinate system used before texture coordinates are projected onto the appropriate cube face.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param dPdx:
-        <param_description/>
+        the partial derivative of P with respect to window x.
+
+    :param dPdy:
+        the partial derivative of P with respect to window y.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
 
@@ -3555,19 +3681,30 @@ vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
 
 |gvec4_type| **textureGrad** ( |gsampler3D| s, vec3 p, vec2 dPdx, vec2 dPdy )
 
-    <description/>
+    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
+     - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
+     - ``δs/δy=δp/δy`` for a 1D texture, ``δp.s/δy`` otherwise
+     - ``δt/δx=0.0`` for a 1D texture, ``δp.t/δx`` otherwise
+     - ``δt/δy=0.0`` for a 1D texture, ``δp.t/δy`` otherwise
+     - ``δr/δx=0.0`` for a 1D or 2D texture, ``δp.p/δx`` otherwise
+     - ``δr/δy=0.0``  for a 1D or 2D texture, ``δp.p/δy`` otherwise
+
+    For the cube version, the partial derivatives of ``p`` are assumed to be in the coordinate system used before texture coordinates are projected onto the appropriate cube face.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param dPdx:
-        <param_description/>
+        the partial derivative of P with respect to window x.
+
+    :param dPdy:
+        the partial derivative of P with respect to window y.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
 
@@ -3580,19 +3717,30 @@ vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
 
 vec4 **textureGrad** ( samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy )
 
-    <description/>
+    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
+     - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
+     - ``δs/δy=δp/δy`` for a 1D texture, ``δp.s/δy`` otherwise
+     - ``δt/δx=0.0`` for a 1D texture, ``δp.t/δx`` otherwise
+     - ``δt/δy=0.0`` for a 1D texture, ``δp.t/δy`` otherwise
+     - ``δr/δx=0.0`` for a 1D or 2D texture, ``δp.p/δx`` otherwise
+     - ``δr/δy=0.0``  for a 1D or 2D texture, ``δp.p/δy`` otherwise
+
+    For the cube version, the partial derivatives of ``p`` are assumed to be in the coordinate system used before texture coordinates are projected onto the appropriate cube face.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param dPdx:
-        <param_description/>
+        the partial derivative of P with respect to window x.
+
+    :param dPdy:
+        the partial derivative of P with respect to window y.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
 
@@ -3605,19 +3753,30 @@ vec4 **textureGrad** ( samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
-    <description/>
+    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
+     - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
+     - ``δs/δy=δp/δy`` for a 1D texture, ``δp.s/δy`` otherwise
+     - ``δt/δx=0.0`` for a 1D texture, ``δp.t/δx`` otherwise
+     - ``δt/δy=0.0`` for a 1D texture, ``δp.t/δy`` otherwise
+     - ``δr/δx=0.0`` for a 1D or 2D texture, ``δp.p/δx`` otherwise
+     - ``δr/δy=0.0``  for a 1D or 2D texture, ``δp.p/δy`` otherwise
+
+    For the cube version, the partial derivatives of ``p`` are assumed to be in the coordinate system used before texture coordinates are projected onto the appropriate cube face.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param dPdx:
-        <param_description/>
+        the partial derivative of P with respect to window x.
+
+    :param dPdy:
+        the partial derivative of P with respect to window y.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
 
