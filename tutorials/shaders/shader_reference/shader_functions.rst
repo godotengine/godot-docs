@@ -4743,19 +4743,30 @@ Bitwise operations
 
 |vec_int_type| **bitfieldExtract** ( |vec_int_type| value, int offset, int bits )
 
-    <description/>
+    Eextracts a subset of the bits of value and returns it in the least significant bits of the result.
+    The range of bits extracted is ``[offset, offset + bits - 1]``.
+
+    The most significant bits of the result will be set to zero.
+
+    .. note::
+        If bits is zero, the result will be zero.
+
+    .. warning::
+        The result will be undefined if:
+         - offset or bits is negative
+         - if the sum of offset and bits is greater than the number of bits used to store the operand.
 
     :param value:
-        <param_description/>
+        the integer from which to extract bits.
 
     :param offset:
-        <param_description/>
+        the index of the first bit to extract.
 
     :param bits:
-        <param_description/>
+        the number of bits to extract.
 
     :return:
-        <return_description/>
+        integer with the requested bits
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldExtract.xhtml
 
@@ -4768,19 +4779,30 @@ Bitwise operations
 
 |vec_uint_type| **bitfieldExtract** ( |vec_uint_type| value, int offset, int bits )
 
-    <description/>
+    Eextracts a subset of the bits of value and returns it in the least significant bits of the result.
+    The range of bits extracted is ``[offset, offset + bits - 1]``.
+
+    The most significant bits will be set to the value of ``offset + base - 1`` (i.e., it is sign extended to the width of the return type).
+
+    .. note::
+        If bits is zero, the result will be zero.
+
+    .. warning::
+        The result will be undefined if:
+         - offset or bits is negative
+         - if the sum of offset and bits is greater than the number of bits used to store the operand.
 
     :param value:
-        <param_description/>
+        the integer from which to extract bits.
 
     :param offset:
-        <param_description/>
+        the index of the first bit to extract.
 
     :param bits:
-        <param_description/>
+        the number of bits to extract.
 
     :return:
-        <return_description/>
+        integer with the requested bits
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldExtract.xhtml
 
@@ -4797,19 +4819,32 @@ Bitwise operations
 
 |vec_int_type| **bitfieldInsert** ( |vec_int_type| base, |vec_int_type| insert, int offset, int bits )
 
-    <description/>
+    Inserts the ``bits`` least significant bits of ``insert`` into ``base`` at offset ``offset``.
+
+    The returned value will have bits [offset, offset + bits + 1] taken from [0, bits - 1] of ``insert`` and
+    all other bits taken directly from the corresponding bits of base.
+
+    .. note:: If bits is zero, the result will simply be the original value of base.
+
+    .. warning::
+        The result will be undefined if:
+         - offset or bits is negative
+         - if the sum of offset and bits is greater than the number of bits used to store the operand.
 
     :param base:
-        <param_description/>
+        the integer into which to insert ``insert``.
 
     :param insert:
-        <param_description/>
+        the value of the bits to insert.
 
     :param offset:
-        <param_description/>
+        the index of the first bit to insert.
+
+    :param bits:
+        the number of bits to insert.
 
     :return:
-        <return_description/>
+        ``base`` with inserted bits.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldInsert.xhtml
 
@@ -4822,19 +4857,32 @@ Bitwise operations
 
 |vec_uint_type| **bitfieldInsert** ( |vec_uint_type| base, |vec_uint_type| insert, int offset, int bits )
 
-    <description/>
+    Inserts the ``bits`` least significant bits of ``insert`` into ``base`` at offset ``offset``.
+
+    The returned value will have bits [offset, offset + bits + 1] taken from [0, bits - 1] of ``insert`` and
+    all other bits taken directly from the corresponding bits of base.
+
+    .. note:: If bits is zero, the result will simply be the original value of base.
+
+    .. warning::
+        The result will be undefined if:
+         - offset or bits is negative
+         - if the sum of offset and bits is greater than the number of bits used to store the operand.
 
     :param base:
-        <param_description/>
+        the integer into which to insert ``insert``.
 
     :param insert:
-        <param_description/>
+        the value of the bits to insert.
 
     :param offset:
-        <param_description/>
+        the index of the first bit to insert.
+
+    :param bits:
+        the number of bits to insert.
 
     :return:
-        <return_description/>
+        ``base`` with inserted bits.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldInsert.xhtml
 
@@ -4851,19 +4899,15 @@ Bitwise operations
 
 |vec_int_type| **bitfieldReverse** ( |vec_int_type| value )
 
-    <description/>
+    Reverse the order of bits in an integer.
+
+    The bit numbered n will be taken from bit (bits - 1) - n of ``value``, where bits is the total number of bits used to represent ``value``.
 
     :param value:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value whose bits to reverse.
 
     :return:
-        <return_description/>
+        ``value`` but with its bits reversed.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldReverse.xhtml
 
@@ -4876,19 +4920,15 @@ Bitwise operations
 
 |vec_uint_type| **bitfieldReverse** ( |vec_uint_type| value )
 
-    <description/>
+    Reverse the order of bits in an integer.
+
+    The bit numbered n will be taken from bit (bits - 1) - n of ``value``, where bits is the total number of bits used to represent ``value``.
 
     :param value:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value whose bits to reverse.
 
     :return:
-        <return_description/>
+        ``value`` but with its bits reversed.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldReverse.xhtml
 
@@ -4905,19 +4945,13 @@ Bitwise operations
 
 |vec_int_type| **bitCount** ( |vec_int_type| value )
 
-    <description/>
+    Counts the number of 1 bits in an integer.
 
     :param value:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value whose bits to count.
 
     :return:
-        <return_description/>
+        the number of bits that are set to 1 in the binary representation of ``value``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitCount.xhtml
 
@@ -4930,19 +4964,13 @@ Bitwise operations
 
 |vec_uint_type| **bitCount** ( |vec_uint_type| value )
 
-    <description/>
+    Counts the number of 1 bits in an integer.
 
     :param value:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value whose bits to count.
 
     :return:
-        <return_description/>
+        the number of bits that are set to 1 in the binary representation of ``value``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitCount.xhtml
 
@@ -4959,19 +4987,15 @@ Bitwise operations
 
 |vec_int_type| **findLSB** ( |vec_int_type| value )
 
-    <description/>
+    Find the index of the least significant bit set to 1.
+
+    .. note:: If ``value`` is zero, -1 will be returned.
 
     :param value:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value whose bits to scan.
 
     :return:
-        <return_description/>
+        the bit number of the least significant bit that is set to 1 in the binary representation of value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findLSB.xhtml
 
@@ -4984,19 +5008,15 @@ Bitwise operations
 
 |vec_uint_type| **findLSB** ( |vec_uint_type| value )
 
-    <description/>
+    Find the index of the least significant bit set to 1.
+
+    .. note:: If ``value`` is zero, -1 will be returned.
 
     :param value:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value whose bits to scan.
 
     :return:
-        <return_description/>
+        the bit number of the least significant bit that is set to 1 in the binary representation of value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findLSB.xhtml
 
@@ -5013,19 +5033,19 @@ Bitwise operations
 
 |vec_int_type| **findMSB** ( |vec_int_type| value )
 
-    <description/>
+    Find the index of the most significant bit set to 1.
+
+    For positive integers, the result will be the bit number of the most significant bit that is set to 1.
+
+    For negative integers, the result will be the bit number of the most significant bit set to 0.
+
+    .. note:: For a value of zero or negative 1, -1 will be returned.
 
     :param value:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value whose bits to scan.
 
     :return:
-        <return_description/>
+        the bit number of the most significant bit that is set to 1 in the binary representation of value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findMSB.xhtml
 
@@ -5038,19 +5058,15 @@ Bitwise operations
 
 |vec_uint_type| **findMSB** ( |vec_uint_type| value )
 
-    <description/>
+    Find the index of the most significant bit set to 1.
+
+    .. note:: For a value of zero or negative 1, -1 will be returned.
 
     :param value:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value whose bits to scan.
 
     :return:
-        <return_description/>
+        the bit number of the most significant bit that is set to 1 in the binary representation of value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findMSB.xhtml
 
@@ -5067,21 +5083,23 @@ Bitwise operations
 
 |void| **imulExtended** ( |vec_int_type| x, |vec_int_type| y, out |vec_int_type| msb, out |vec_int_type| lsb )
 
-    <description/>
+    Perform 32-bit by 32-bit signed multiplication to produce a 64-bit result.
+
+    The 32 least significant bits of this product are returned in ``lsb`` and the 32 most significant bits are returned in ``msb``.
 
     :param x:
-        <param_description/>
+        the first multiplicand.
 
     :param y:
-        <param_description/>
+        the second multiplicand.
 
     :param msb:
-        <param_description/>
+        the variable to receive the most significant word of the product.
 
-    :return:
-        <return_description/>
+    :param lsb:
+        the variable to receive the least significant word of the product.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/imulExtended.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/umulExtended.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -5096,19 +5114,21 @@ Bitwise operations
 
 |void| **umulExtended** ( |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| msb, out |vec_uint_type| lsb )
 
-    <description/>
+    Perform 32-bit by 32-bit unsigned multiplication to produce a 64-bit result.
+
+    The 32 least significant bits of this product are returned in ``lsb`` and the 32 most significant bits are returned in ``msb``.
 
     :param x:
-        <param_description/>
+        the first multiplicand.
 
     :param y:
-        <param_description/>
+        the second multiplicand.
 
     :param msb:
-        <param_description/>
+        the variable to receive the most significant word of the product.
 
-    :return:
-        <return_description/>
+    :param lsb:
+        the variable to receive the least significant word of the product.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/umulExtended.xhtml
 
@@ -5125,19 +5145,22 @@ Bitwise operations
 
 |vec_uint_type| **uaddCarry** ( |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| carry )
 
-    <description/>
+    Add unsigned integers and generate carry.
+
+    adds two 32-bit unsigned integer variables (scalars or vectors) and generates a 32-bit unsigned integer result, along with a carry output.
+    The value carry is .
 
     :param x:
-        <param_description/>
+        the first operand
 
     :param y:
-        <param_description/>
+        the second operand
 
     :param carry:
-        <param_description/>
+        0 if the sum is less than 2\ :sup:`32` otherwise 1
 
     :return:
-        <return_description/>
+        ``(x + y) % 2^32``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/uaddCarry.xhtml
 
@@ -5154,19 +5177,19 @@ Bitwise operations
 
 |vec_uint_type| **usubBorrow** ( |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| borrow )
 
-    <description/>
+    Subtract unsigned integers and generate borrow.
 
     :param x:
-        <param_description/>
+        the first operand
 
     :param y:
-        <param_description/>
+        the second operand
 
     :param borrow:
-        <param_description/>
+        0 if ``x`` ≥ ``y`` and 1 otherwise.
 
     :return:
-        <return_description/>
+        the difference of ``x`` and ``y`` if non-negative, or 2\ :sup:`32` plus that difference otherwise.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/usubBorrow.xhtml
 
@@ -5183,19 +5206,19 @@ Bitwise operations
 
 |vec_type| **ldexp** ( |vec_type| x, out |vec_int_type| exp )
 
-    <description/>
+    Assemble a floating point number from a value and exponent.
+
+    .. warning::
+        If this product is too large to be represented in the floating point type, the result is undefined.
 
     :param x:
-        <param_description/>
+        the value to be used as a source of significand.
 
     :param exp:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the value to be used as a source of exponent.
 
     :return:
-        <return_description/>
+        ``x * 2^exp``
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/ldexp.xhtml
 
@@ -5212,19 +5235,22 @@ Bitwise operations
 
 |vec_type| **frexp** ( |vec_type| x, out |vec_int_type| exp )
 
-    <description/>
+    Extracts ``x`` into a floating-point significand in the range [0.5, 1.0) and in integral exponent of two, such that::
+
+        x = significand * 2 ^ exponent
+
+    For a floating-point value of zero, the significand and exponent are both zero.
+
+    .. warning:: For a floating-point value that is an infinity or a floating-point NaN, the results are undefined.
 
     :param x:
-        <param_description/>
+        the value from which significand and exponent are to be extracted.
 
     :param exp:
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the variable into which to place the exponent of ``x``
 
     :return:
-        <return_description/>
+        the significand of ``x``
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/frexp.xhtml
 
