@@ -3793,19 +3793,25 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 |gvec4_type| **textureProjGrad** ( |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy )
 
-    <description/>
+    Perform a texture lookup with projection and explicit gradients.
+
+    The texture coordinates consumed from ``p``, not including the last component of ``p``, are divided by the last component of ``p``.
+    After these values are computed, the texture lookup proceeds as in `textureGrad<shader_func_textureGrad>`, passing ``dPdx`` and ``dPdy`` as gradients.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param dPdx:
-        <param_description/>
+        the partial derivative of ``p`` with respect to window x.
+
+    :param dPdy:
+        the partial derivative of ``p`` with respect to window y.
 
     :return:
-        <return_description/>
+        a texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjGrad.xhtml
 
@@ -3818,19 +3824,25 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 |gvec4_type| **textureProjGrad** ( |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy )
 
-    <description/>
+    Perform a texture lookup with projection and explicit gradients.
+
+    The texture coordinates consumed from ``p``, not including the last component of ``p``, are divided by the last component of ``p``.
+    After these values are computed, the texture lookup proceeds as in `textureGrad<shader_func_textureGrad>`, passing ``dPdx`` and ``dPdy`` as gradients.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param dPdx:
-        <param_description/>
+        the partial derivative of ``p`` with respect to window x.
+
+    :param dPdy:
+        the partial derivative of ``p`` with respect to window y.
 
     :return:
-        <return_description/>
+        a texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjGrad.xhtml
 
@@ -3843,19 +3855,25 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 |gvec4_type| **textureProjGrad** ( |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy )
 
-    <description/>
+    Perform a texture lookup with projection and explicit gradients.
+
+    The texture coordinates consumed from ``p``, not including the last component of ``p``, are divided by the last component of ``p``.
+    After these values are computed, the texture lookup proceeds as in `textureGrad<shader_func_textureGrad>`, passing ``dPdx`` and ``dPdy`` as gradients.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param dPdx:
-        <param_description/>
+        the partial derivative of ``p`` with respect to window x.
+
+    :param dPdy:
+        the partial derivative of ``p`` with respect to window y.
 
     :return:
-        <return_description/>
+        a texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjGrad.xhtml
 
@@ -3872,19 +3890,19 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 |gvec4_type| **texelFetch** ( |gsampler2D| s, ivec2 p, int lod )
 
-    <description/>
+    Performs a lookup of a single texel from texture coordinate ``p`` in the texture bound to sampler.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param lod:
-        <param_description/>
+        specifies the level-of-detail within the texture from which the texel will be fetched.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
 
@@ -3897,19 +3915,21 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 |gvec4_type| **texelFetch** ( |gsampler2DArray| s, ivec3 p, int lod )
 
-    <description/>
+    Performs a lookup of a single texel from texture coordinate ``p`` in the texture bound to sampler.
+
+    The array layer is specified in the last component of P for array forms.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled. ``p.z`` specifies which layer of ``s`` is fetched.
 
     :param lod:
-        <param_description/>
+        specifies the level-of-detail within the texture from which the texel will be fetched.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
 
@@ -3922,19 +3942,19 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 |gvec4_type| **texelFetch** ( |gsampler3D| s, ivec3 p, int lod )
 
-    <description/>
+    Performs a lookup of a single texel from texture coordinate ``p`` in the texture bound to sampler.
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
     :param lod:
-        <param_description/>
+        specifies the level-of-detail within the texture from which the texel will be fetched.
 
     :return:
-        <return_description/>
+        a texel
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
 
@@ -3951,19 +3971,26 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 |gvec4_type| **textureGather** ( |gsampler2D| s, vec2 p [, int comps] )
 
-    <description/>
+    Gathers four texels from a texture.
+
+    Returns the value::
+
+        vec4(Sample_i0_j1(p, base).comps,
+             Sample_i1_j1(p, base).comps,
+             Sample_i1_j0(p, base).comps,
+             Sample_i0_j0(p, base).comps);
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
-    :param comps]:
-        <param_description/>
+    :param comps:
+        *optional* the component of the source texture (0 -> x, 1 -> y, 2 -> z, 3 -> w) that will be used to generate the resulting vector. Zero if not specified.
 
     :return:
-        <return_description/>
+        the gathered texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGather.xhtml
 
@@ -3976,19 +4003,26 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 |gvec4_type| **textureGather** ( |gsampler2DArray| s, vec3 p [, int comps] )
 
-    <description/>
+    Gathers four texels from a texture.
+
+    Returns the value::
+
+        vec4(Sample_i0_j1(p, base).comps,
+             Sample_i1_j1(p, base).comps,
+             Sample_i1_j0(p, base).comps,
+             Sample_i0_j0(p, base).comps);
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
-    :param comps]:
-        <param_description/>
+    :param comps:
+        *optional* the component of the source texture (0 -> x, 1 -> y, 2 -> z, 3 -> w) that will be used to generate the resulting vector. Zero if not specified.
 
     :return:
-        <return_description/>
+        the gathered texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGather.xhtml
 
@@ -4001,19 +4035,26 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
-    <description/>
+    Gathers four texels from a texture.
+
+    Returns the value::
+
+        vec4(Sample_i0_j1(p, base).comps,
+             Sample_i1_j1(p, base).comps,
+             Sample_i1_j0(p, base).comps,
+             Sample_i0_j0(p, base).comps);
 
     :param s:
-        <param_description/>
+        the sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        <param_description/>
+        the texture coordinates at which texture will be sampled.
 
-    :param comps]:
-        <param_description/>
+    :param comps:
+        *optional* the component of the source texture (0 -> x, 1 -> y, 2 -> z, 3 -> w) that will be used to generate the resulting vector. Zero if not specified.
 
     :return:
-        <return_description/>
+        the gathered texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGather.xhtml
 
@@ -4030,19 +4071,27 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdx** ( |vec_type| p )
 
-    <description/>
+    Return the partial derivative of ``p`` with respect to the window x coordinate.
+
+    .. note::
+
+        Available only in the fragment shader
+
+    Returns either `dFdxCoarse<shader_func_dFdxCoarse>` or `dFdxFine<shader_func_dfdxFine>`. The implementation may choose which calculation to perform based upon factors
+    such as performance or the value of the API GL_FRAGMENT_SHADER_DERIVATIVE_HINT hint.
+
+    .. warning::
+        Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        <param_description/>
+        the expression of which to take the partial derivative.
 
-    :param :
-        <param_description/>
+        .. note::
 
-    :param :
-        <param_description/>
+            It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        <return_description/>
+        the partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
@@ -4059,19 +4108,29 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdxCoarse** ( |vec_type| p )
 
-    <description/>
+    Return the partial derivative of ``p`` with respect to the window x coordinate.
+
+    .. note::
+
+        Available only in the fragment shader
+
+    Calculates derivatives using local differencing based on the value of ``p`` for the current fragment's neighbors, and will possibly,
+    but not necessarily, include the value for the current fragment. That is, over a given area, the implementation can compute derivatives in fewer unique locations than
+    would be allowed for the corresponding `dFdxFine<shader_func_dfdxFine>`` function.
+
+
+    .. warning::
+        Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        <param_description/>
+        the expression of which to take the partial derivative.
 
-    :param :
-        <param_description/>
+        .. note::
 
-    :param :
-        <param_description/>
+            It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        <return_description/>
+        the partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdxCoarse.xhtml
 
@@ -4088,19 +4147,21 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdxFine** ( |vec_type| p )
 
-    <description/>
+    Return the partial derivative of ``p`` with respect to the window x coordinate.
+
+    .. note:: Available only in the fragment shader
+
+    Calculates derivatives using local differencing based on the value of ``p`` for the current fragment and its immediate neighbor(s).
+
+    .. warning:: Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        <param_description/>
+        the expression of which to take the partial derivative.
 
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        <return_description/>
+        the partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdxFine.xhtml
 
@@ -4117,19 +4178,22 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdy** ( |vec_type| p )
 
-    <description/>
+    Return the partial derivative of ``p`` with respect to the window y coordinate.
+
+    .. note:: Available only in the fragment shader
+
+    Returns either `dFdyCoarse<shader_func_dFdyCoarse>` or `dFdyFine<shader_func_dfdyFine>`. The implementation may choose which calculation to perform based upon factors
+    such as performance or the value of the API GL_FRAGMENT_SHADER_DERIVATIVE_HINT hint.
+
+    .. warning:: Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        <param_description/>
+        the expression of which to take the partial derivative.
 
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        <return_description/>
+        the partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdy.xhtml
 
@@ -4146,19 +4210,23 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdyCoarse** ( |vec_type| p )
 
-    <description/>
+    Return the partial derivative of ``p`` with respect to the window y coordinate.
+
+    .. note:: Available only in the fragment shader
+
+    Calculates derivatives using local differencing based on the value of ``p`` for the current fragment's neighbors, and will possibly,
+    but not necessarily, include the value for the current fragment. That is, over a given area, the implementation can compute derivatives in fewer unique locations than
+    would be allowed for the corresponding dFdyFine and dFdyFine functions.
+
+    .. warning:: Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        <param_description/>
+        the expression of which to take the partial derivative.
 
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        <return_description/>
+        the partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdyCoarse.xhtml
 
@@ -4175,19 +4243,21 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdyFine** ( |vec_type| p )
 
-    <description/>
+    Return the partial derivative of ``p`` with respect to the window y coordinate.
+
+    .. note:: Available only in the fragment shader
+
+    Calculates derivatives using local differencing based on the value of ``p`` for the current fragment and its immediate neighbor(s).
+
+    .. warning:: Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        <param_description/>
+        the expression of which to take the partial derivative.
 
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        <return_description/>
+        the partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdyFine.xhtml
 
@@ -4204,19 +4274,20 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **fwidth** ( |vec_type| p )
 
-    <description/>
+    Return the sum of the absolute value of derivatives in x and y.
+
+    Uses local differencing for the input argument p.
+
+    Equivalent to ``abs(dFdx(p)) + abs(dFdy(p))``.
+
+    fwidthCoarse is equivalent to ``abs(dFdxCoarse(p)) + abs(dFdyCoarse(p))``.
+    fwidthFine is equivalent to ``abs(dFdxFine(p)) + abs(dFdyFine(p))``.
 
     :param p:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the expression of which to take the partial derivative.
 
     :return:
-        <return_description/>
+        the partial derivative.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidth.xhtml
 
@@ -4233,19 +4304,17 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **fwidthCoarse** ( |vec_type| p )
 
-    <description/>
+    Return the sum of the absolute value of derivatives in x and y.
+
+    Uses local differencing for the input argument p.
+
+    Equivalent  to ``abs(dFdxCoarse(p)) + abs(dFdyCoarse(p))``.
 
     :param p:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the expression of which to take the partial derivative.
 
     :return:
-        <return_description/>
+        the partial derivative.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidthCoarse.xhtml
 
@@ -4262,19 +4331,17 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **fwidthFine** ( |vec_type| p )
 
-    <description/>
+    Return the sum of the absolute value of derivatives in x and y.
+
+    Uses local differencing for the input argument p.
+
+    Equivalent to ``abs(dFdxFine(p)) + abs(dFdyFine(p))``.
 
     :param p:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        the expression of which to take the partial derivative.
 
     :return:
-        <return_description/>
+        the partial derivative.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidthFine.xhtml
 
@@ -4327,19 +4394,18 @@ Packing/Unpacking Functions
 
 uint **packHalf2x16** ( vec2 v )
 
-    <description/>
+    Convert two 32-bit floating-point quantities to 16-bit quantities and pack them into a single 32-bit integer.
+
+    Returns an unsigned integer obtained by converting the components of a two-component floating-point vector to
+    the 16-bit floating-point representation found in the OpenGL Specification, and then packing these two
+    16-bit integers into a 32-bit unsigned integer. The first vector component specifies the 16 least-significant
+    bits of the result; the second component specifies the 16 most-significant bits.
 
     :param v:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        a vector of two 32-bit floating point values that are to be converted to 16-bit representation and packed into the result.
 
     :return:
-        <return_description/>
+        the packed value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packHalf2x16.xhtml
 
@@ -4356,19 +4422,18 @@ uint **packHalf2x16** ( vec2 v )
 
 vec2 **unpackHalf2x16** ( uint v )
 
-    <description/>
+    Convert two 16-bit floating-point values packed into a single 32-bit integer into a vector of two 32-bit floating-point quantities.
+
+    Returns a two-component floating-point vector with components obtained by unpacking a 32-bit unsigned integer into a pair of 16-bit
+    values, interpreting those values as 16-bit floating-point numbers according to the OpenGL Specification, and converting them to
+    32-bit floating-point values. The first component of the vector is obtained from the 16 least-significant bits of v; the second
+    component is obtained from the 16 most-significant bits of v.
 
     :param v:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        a single 32-bit unsigned integer containing 2 packed 16-bit floating point values.
 
     :return:
-        <return_description/>
+        two unpacked floating point values.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackHalf2x16.xhtml
 
@@ -4385,21 +4450,24 @@ vec2 **unpackHalf2x16** ( uint v )
 
 uint **packUnorm2x16** ( vec2 v )
 
-    <description/>
+    Pack floating-point values into an unsigned integer.
+
+    Convert each component of the normalized floating-point value v into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
+
+    The conversion for component c of v to fixed-point is performed as follows::
+
+        round(clamp(c, 0.0, 1.0) * 65535.0)
+
+    The first component of the vector will be written to the least significant bits of the output; the last component will be written to the most significant bits.
+
 
     :param v:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        a vector of values to be packed into an unsigned integer.
 
     :return:
-        <return_description/>
+        unsigned 32 bit integer containing the packed encoding of the vector.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm2x16.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -4414,21 +4482,21 @@ uint **packUnorm2x16** ( vec2 v )
 
 vec2 **unpackUnorm2x16** ( uint v )
 
-    <description/>
+    Unpack floating-point values from an unsigned integer.
+
+    Unpack single 32-bit unsigned integers into a pair of 16-bit unsigned integers.
+    Then, each component is converted to a normalized floating-point value to generate the returned two-component vector.
+
+    The conversion for unpacked fixed point value f to floating-point is performed as follows:
+
+        f / 65535.0
+
+    The first component of the returned vector will be extracted from the least significant bits of the input; the last component will be extracted from the most significant bits.
 
     :param v:
-        <param_description/>
+        an unsigned integer containing packed floating-point values.
 
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :return:
-        <return_description/>
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm2x16.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -4443,21 +4511,23 @@ vec2 **unpackUnorm2x16** ( uint v )
 
 uint **packSnorm2x16** ( vec2 v )
 
-    <description/>
+    Pack floating-point values into an unsigned integer.
+
+    Convert each component of the normalized floating-point value v into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
+
+    The conversion for component c of v to fixed-point is performed as follows::
+
+        round(clamp(c, -1.0, 1.0) * 32767.0)
+
+    The first component of the vector will be written to the least significant bits of the output; the last component will be written to the most significant bits.
 
     :param v:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        a vector of values to be packed into an unsigned integer.
 
     :return:
-        <return_description/>
+        unsigned 32 bit integer containing the packed encoding of the vector.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packSnorm2x16.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -4472,21 +4542,22 @@ uint **packSnorm2x16** ( vec2 v )
 
 vec2 **unpackSnorm2x16** ( uint v )
 
-    <description/>
+    Unpack floating-point values from an unsigned integer.
+
+    Unpack single 32-bit unsigned integers into a pair of 16-bit signed integers.
+    Then, each component is converted to a normalized floating-point value to generate the returned two-
+                                                                                                    four-component vector.
+
+    The conversion for unpacked fixed point value f to floating-point is performed as follows:
+
+        clamp(f / 32727.0, -1.0, 1.0)
+
+    The first component of the returned vector will be extracted from the least significant bits of the input; the last component will be extracted from the most significant bits.
 
     :param v:
-        <param_description/>
+        an unsigned integer containing packed floating-point values.
 
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :return:
-        <return_description/>
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackSnorm2x16.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -4501,21 +4572,24 @@ vec2 **unpackSnorm2x16** ( uint v )
 
 uint **packUnorm4x8** ( vec4 v )
 
-    <description/>
+    Pack floating-point values into an unsigned integer.
+
+    Convert each component of the normalized floating-point value v into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
+
+    The conversion for component c of v to fixed-point is performed as follows::
+
+        round(clamp(c, 0.0, 1.0) * 255.0)
+
+    The first component of the vector will be written to the least significant bits of the output; the last component will be written to the most significant bits.
+
 
     :param v:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        a vector of values to be packed into an unsigned integer.
 
     :return:
-        <return_description/>
+        unsigned 32 bit integer containing the packed encoding of the vector.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm4x8.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -4530,21 +4604,21 @@ uint **packUnorm4x8** ( vec4 v )
 
 vec4 **unpackUnorm4x8** ( uint v )
 
-    <description/>
+    Unpack floating-point values from an unsigned integer.
+
+    Unpack single 32-bit unsigned integers into four 8-bit unsigned integers.
+    Then, each component is converted to a normalized floating-point value to generate the returned four-component vector.
+
+    The conversion for unpacked fixed point value f to floating-point is performed as follows:
+
+        f / 255.0
+
+    The first component of the returned vector will be extracted from the least significant bits of the input; the last component will be extracted from the most significant bits.
 
     :param v:
-        <param_description/>
+        an unsigned integer containing packed floating-point values.
 
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :return:
-        <return_description/>
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm4x8.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -4559,21 +4633,24 @@ vec4 **unpackUnorm4x8** ( uint v )
 
 uint **packSnorm4x8** ( vec4 v )
 
-    <description/>
+    Pack floating-point values into an unsigned integer.
+
+    Convert each component of the normalized floating-point value v into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
+
+    The conversion for component c of v to fixed-point is performed as follows::
+
+        round(clamp(c, -1.0, 1.0) * 127.0)
+
+    The first component of the vector will be written to the least significant bits of the output; the last component will be written to the most significant bits.
+
 
     :param v:
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
+        a vector of values to be packed into an unsigned integer.
 
     :return:
-        <return_description/>
+        unsigned 32 bit integer containing the packed encoding of the vector.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packSnorm4x8.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -4588,21 +4665,21 @@ uint **packSnorm4x8** ( vec4 v )
 
 vec4 **unpackSnorm4x8** ( uint v )
 
-    <description/>
+    Unpack floating-point values from an unsigned integer.
+
+    Unpack single 32-bit unsigned integers into four 8-bit signed integers.
+    Then, each component is converted to a normalized floating-point value to generate the returned four-component vector.
+
+    The conversion for unpacked fixed point value f to floating-point is performed as follows:
+
+        clamp(f / 127.0, -1.0, 1.0)
+
+    The first component of the returned vector will be extracted from the least significant bits of the input; the last component will be extracted from the most significant bits.
 
     :param v:
-        <param_description/>
+        an unsigned integer containing packed floating-point values.
 
-    :param :
-        <param_description/>
-
-    :param :
-        <param_description/>
-
-    :return:
-        <return_description/>
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackSnorm4x8.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
 .. rst-class:: classref-item-separator
 
