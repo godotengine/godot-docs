@@ -4545,8 +4545,7 @@ vec2 **unpackSnorm2x16** ( uint v )
     Unpack floating-point values from an unsigned integer.
 
     Unpack single 32-bit unsigned integers into a pair of 16-bit signed integers.
-    Then, each component is converted to a normalized floating-point value to generate the returned two-
-                                                                                                    four-component vector.
+    Then, each component is converted to a normalized floating-point value to generate the returned two-component vector.
 
     The conversion for unpacked fixed point value f to floating-point is performed as follows:
 
