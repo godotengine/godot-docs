@@ -148,7 +148,7 @@ initialize it:
        GetNode(TargetPath); // Use parent-defined NodePath.
 
 These options hide the points of access from the child node. This in turn
-keeps the child **loosely coupled** to its environment. One can re-use it
+keeps the child **loosely coupled** to its environment. One can reuse it
 in another context without any extra changes to its API.
 
 .. note::

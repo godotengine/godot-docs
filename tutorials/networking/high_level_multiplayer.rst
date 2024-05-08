@@ -249,7 +249,7 @@ Channels are also useful when used with the unreliable ordered transfer mode. Se
 cause packet loss, since packets which are slower to arrive are ignored. Separating them into multiple streams of homogeneous packets
 by using channels allows ordered transfer with little packet loss, and without the latency penalty caused by reliable mode.
 
-The default channel with index 0 is actually three different channels - one for each tansfer mode.
+The default channel with index 0 is actually three different channels - one for each transfer mode.
 
 Example lobby implementation
 ----------------------------
