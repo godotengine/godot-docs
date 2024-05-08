@@ -69,6 +69,8 @@ VisualInstances you want to be merged so that they are parented by the
 run the scene, the engine will automatically merge suitable meshes as the
 ``MergeGroup`` enters the ``SceneTree``.
 
+.. image:: img/merge_group_house.webp
+
 You can change the transform of the ``MergeGroup`` at runtime, and the whole
 group will move as a unit (``MergeGroup`` is derived from
 :ref:`Spatial <class_Spatial>`, so can be manipulated in all the regular ways,
