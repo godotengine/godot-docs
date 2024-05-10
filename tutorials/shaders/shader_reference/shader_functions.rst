@@ -19,7 +19,7 @@ GLSL 4.00 specification.
     +-----------------+--------------------------------------------------+--------------------------+
     | vec_uint_type   | uint, uvec2, uvec3, or uvec4                     | genUType                 |
     +-----------------+--------------------------------------------------+--------------------------+
-    | vec_bool_type   | bool, bvec2, bvec3, or bvec4                     | genUType                 |
+    | vec_bool_type   | bool, bvec2, bvec3, or bvec4                     | genBType                 |
     +-----------------+--------------------------------------------------+--------------------------+
     | mat_type        | mat2, mat3, or mat4                              | mat                      |
     +-----------------+--------------------------------------------------+--------------------------+
@@ -36,8 +36,8 @@ GLSL 4.00 specification.
 
 .. note::
     Most operations on vectors (multiplication, division, etc) are performed component-wise.
-    For example, the operation ``vec2(3,4) * vec2(10,20)`` would result in ``vec2(3 * 10, 4 * 20)``.
-    or the operation ``min(vec2(3,4), vec2(1,8))`` would result in ``vec2(min(3,1),min(4,8))``.
+    For example, the operation ``vec2(3, 4) * vec2(10, 20)`` would result in ``vec2(3 * 10, 4 * 20)``.
+    or the operation ``min(vec2(3, 4), vec2(1, 8))`` would result in ``vec2(min(3, 1), min(4, 8))``.
 
     The `GLSL Language Specification <http://www.opengl.org/registry/doc/GLSLangSpec.4.30.6.pdf>` says under section 5.10 Vector and Matrix Operations:
 
