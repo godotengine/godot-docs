@@ -45,6 +45,7 @@ The following operators are available:
 |                        | If at least one of them is a floating-point number, returns a floating-point value. |
 +------------------------+-------------------------------------------------------------------------------------+
 | Modulo (``%``)         | Returns the remainder of an integer division.                                       |
+|                        | The result will always have the sign of the dividend.                               |
 +------------------------+-------------------------------------------------------------------------------------+
 
 Spaces around operators are optional. Also, keep in mind the usual
