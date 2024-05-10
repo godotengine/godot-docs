@@ -136,9 +136,10 @@ it manually with the following code:
 
 Other built-ins, such as UV, UV2 and COLOR, are also passed through to the fragment function if not modified.
 
-Users can override the modelview and projection transforms using the ``POSITION`` built-in. When ``POSITION`` is used,
-the value from ``VERTEX`` is ignored and projection does not happen. However, the value passed to the fragment shader
-still comes from ``VERTEX``.
+Users can override the modelview and projection transforms using the ``POSITION`` built-in. If ``POSITION`` is written
+to anywhere in the shader, it will always be used, so the user becomes responsible for ensuring that it always has
+an acceptable value. When ``POSITION`` is used, the value from ``VERTEX`` is ignored and projection does not happen.
+However, the value passed to the fragment shader still comes from ``VERTEX``.
 
 For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
 is usually:
