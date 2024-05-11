@@ -147,6 +147,8 @@ Properties
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`Texture2D<class_Texture2D>`                                                             | :ref:`vrs_texture<class_Viewport_property_vrs_texture>`                                               |                |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
+   | :ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>`                                             | :ref:`vrs_update_mode<class_Viewport_property_vrs_update_mode>`                                       | ``1``          |
+   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`World2D<class_World2D>`                                                                 | :ref:`world_2d<class_Viewport_property_world_2d>`                                                     |                |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`World3D<class_World3D>`                                                                 | :ref:`world_3d<class_Viewport_property_world_3d>`                                                     |                |
@@ -1000,6 +1002,48 @@ Variable Rate Shading's texture is supplied by the primary :ref:`XRInterface<cla
 
 Represents the size of the :ref:`VRSMode<enum_Viewport_VRSMode>` enum.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_Viewport_VRSUpdateMode:
+
+.. rst-class:: classref-enumeration
+
+enum **VRSUpdateMode**:
+
+.. _class_Viewport_constant_VRS_UPDATE_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` **VRS_UPDATE_DISABLED** = ``0``
+
+The input texture for variable rate shading will not be processed.
+
+.. _class_Viewport_constant_VRS_UPDATE_ONCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` **VRS_UPDATE_ONCE** = ``1``
+
+The input texture for variable rate shading will be processed once.
+
+.. _class_Viewport_constant_VRS_UPDATE_ALWAYS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` **VRS_UPDATE_ALWAYS** = ``2``
+
+The input texture for variable rate shading will be processed each frame.
+
+.. _class_Viewport_constant_VRS_UPDATE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` **VRS_UPDATE_MAX** = ``3``
+
+Represents the size of the :ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` enum.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -1796,6 +1840,23 @@ The texture *must* use a lossless compression format so that colors can be match
     - 4×8 = rgb(170, 255, 0) - #aaff00 - Not supported on most hardware
     - 8×4 = rgb(255, 170, 0) - #ffaa00 - Not supported on most hardware
     - 8×8 = rgb(255, 255, 0) - #ffff00 - Not supported on most hardware
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_property_vrs_update_mode:
+
+.. rst-class:: classref-property
+
+:ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` **vrs_update_mode** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_vrs_update_mode**\ (\ value\: :ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>`\ )
+- :ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` **get_vrs_update_mode**\ (\ )
+
+Sets the update mode for Variable Rate Shading (VRS) for the viewport. VRS requires the input texture to be converted to the format usable by the VRS method supported by the hardware. The update mode defines how often this happens. If the GPU does not support VRS, or VRS is not enabled, this property is ignored.
 
 .. rst-class:: classref-item-separator
 

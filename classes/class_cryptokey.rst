@@ -12,7 +12,7 @@ CryptoKey
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A cryptographic key (RSA).
+A cryptographic key (RSA or elliptic-curve).
 
 .. rst-class:: classref-introduction-group
 

@@ -452,7 +452,7 @@ Call this function regularly to handle connections, disconnections, and to recei
 
 |void| **socket_send**\ (\ destination_address\: :ref:`String<class_String>`, destination_port\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
 
-Sends a ``packet`` toward a destination from the address and port currently bound by this ENetConnection instance. 
+Sends a ``packet`` toward a destination from the address and port currently bound by this ENetConnection instance.
 
 This is useful as it serves to establish entries in NAT routing tables on all devices between this bound instance and the public facing internet, allowing a prospective client's connection packets to be routed backward through the NAT device(s) between the public internet and this host.
 

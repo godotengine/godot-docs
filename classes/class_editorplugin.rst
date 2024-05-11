@@ -169,6 +169,8 @@ Methods
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`remove_undo_redo_inspector_hook_callback<class_EditorPlugin_method_remove_undo_redo_inspector_hook_callback>`\ (\ callable\: :ref:`Callable<class_Callable>`\ )                                                                                  |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`set_dock_tab_icon<class_EditorPlugin_method_set_dock_tab_icon>`\ (\ control\: :ref:`Control<class_Control>`, icon\: :ref:`Texture2D<class_Texture2D>`\ )                                                                                         |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`set_force_draw_over_forwarding_enabled<class_EditorPlugin_method_set_force_draw_over_forwarding_enabled>`\ (\ )                                                                                                                                  |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`set_input_event_forwarding_always_enabled<class_EditorPlugin_method_set_input_event_forwarding_always_enabled>`\ (\ )                                                                                                                            |
@@ -1626,6 +1628,18 @@ Removes a custom translation parser plugin registered by :ref:`add_translation_p
 |void| **remove_undo_redo_inspector_hook_callback**\ (\ callable\: :ref:`Callable<class_Callable>`\ )
 
 Removes a callback previously added by :ref:`add_undo_redo_inspector_hook_callback<class_EditorPlugin_method_add_undo_redo_inspector_hook_callback>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorPlugin_method_set_dock_tab_icon:
+
+.. rst-class:: classref-method
+
+|void| **set_dock_tab_icon**\ (\ control\: :ref:`Control<class_Control>`, icon\: :ref:`Texture2D<class_Texture2D>`\ )
+
+Sets the tab icon for the given control in a dock slot. Setting to ``null`` removes the icon.
 
 .. rst-class:: classref-item-separator
 

@@ -6853,6 +6853,8 @@ Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``. See also
 
 For complex use cases where multiple ranges are needed, consider using :ref:`Curve<class_Curve>` or :ref:`Gradient<class_Gradient>` instead.
 
+\ **Note:** If ``istart == istop``, the return value is undefined (most likely NaN, INF, or -INF).
+
 .. rst-class:: classref-item-separator
 
 ----

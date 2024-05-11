@@ -392,7 +392,7 @@ Removes the global pose override on all bones in the skeleton.
 
 :ref:`int<class_int>` **find_bone**\ (\ name\: :ref:`String<class_String>`\ ) |const|
 
-Returns the bone index that matches ``name`` as its name.
+Returns the bone index that matches ``name`` as its name. Returns ``-1`` if no bone with this name exists.
 
 .. rst-class:: classref-item-separator
 

@@ -3677,7 +3677,7 @@ Sets the selection origin column to the ``column`` for the given ``caret_index``
 
 |void| **set_selection_origin_line**\ (\ line\: :ref:`int<class_int>`, can_be_hidden\: :ref:`bool<class_bool>` = true, wrap_index\: :ref:`int<class_int>` = -1, caret_index\: :ref:`int<class_int>` = 0\ )
 
-Sets the selection origin line to the ``line`` for the given ``caret_index``. If the selection origin is moved to the caret position, the selection will deselect. 
+Sets the selection origin line to the ``line`` for the given ``caret_index``. If the selection origin is moved to the caret position, the selection will deselect.
 
 If ``can_be_hidden`` is ``false``, The line will be set to the nearest unhidden line below or above.
 

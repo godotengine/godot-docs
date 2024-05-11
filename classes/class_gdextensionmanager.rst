@@ -189,7 +189,7 @@ Loads an extension by absolute file path. The ``path`` needs to point to a valid
 
 :ref:`LoadStatus<enum_GDExtensionManager_LoadStatus>` **reload_extension**\ (\ path\: :ref:`String<class_String>`\ )
 
-Reloads the extension at the given file path. The ``path`` needs to point to a valid :ref:`GDExtension<class_GDExtension>`, otherwise this method may return either :ref:`LOAD_STATUS_NOT_LOADED<class_GDExtensionManager_constant_LOAD_STATUS_NOT_LOADED>` or :ref:`LOAD_STATUS_FAILED<class_GDExtensionManager_constant_LOAD_STATUS_FAILED>`. 
+Reloads the extension at the given file path. The ``path`` needs to point to a valid :ref:`GDExtension<class_GDExtension>`, otherwise this method may return either :ref:`LOAD_STATUS_NOT_LOADED<class_GDExtensionManager_constant_LOAD_STATUS_NOT_LOADED>` or :ref:`LOAD_STATUS_FAILED<class_GDExtensionManager_constant_LOAD_STATUS_FAILED>`.
 
 \ **Note:** You can only reload extensions in the editor. In release builds, this method always fails and returns :ref:`LOAD_STATUS_FAILED<class_GDExtensionManager_constant_LOAD_STATUS_FAILED>`.
 

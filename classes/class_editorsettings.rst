@@ -185,8 +185,6 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/3d_gizmos/gizmo_colors/joint<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/joint>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Color<class_Color>`                         | :ref:`editors/3d_gizmos/gizmo_colors/shape<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/shape>`                                                                                                   |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/autorename_animation_tracks<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/default_create_bezier_tracks<class_EditorSettings_property_editors/animation/default_create_bezier_tracks>`                                                                               |
@@ -326,6 +324,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/debug/enable_pseudolocalization<class_EditorSettings_property_interface/editor/debug/enable_pseudolocalization>`                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/display_scale<class_EditorSettings_property_interface/editor/display_scale>`                                                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`interface/editor/dock_tab_style<class_EditorSettings_property_interface/editor/dock_tab_style>`                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`interface/editor/editor_language<class_EditorSettings_property_interface/editor/editor_language>`                                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1579,18 +1579,6 @@ The 3D editor gizmo color for :ref:`Joint3D<class_Joint3D>`\ s and :ref:`Physica
 
 ----
 
-.. _class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/shape:
-
-.. rst-class:: classref-property
-
-:ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/shape**
-
-The 3D editor gizmo color for :ref:`CollisionShape3D<class_CollisionShape3D>`\ s, :ref:`VehicleWheel3D<class_VehicleWheel3D>`\ s, :ref:`RayCast3D<class_RayCast3D>`\ s and :ref:`SpringArm3D<class_SpringArm3D>`\ s.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_EditorSettings_property_editors/animation/autorename_animation_tracks:
 
 .. rst-class:: classref-property
@@ -2484,6 +2472,18 @@ The display scale factor to use for the editor interface. Higher values are more
 If set to **Auto**, the editor scale is automatically determined based on the screen resolution and reported display DPI. This heuristic is not always ideal, which means you can get better results by setting the editor scale manually.
 
 If set to **Custom**, the scaling value in :ref:`interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>` will be used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/dock_tab_style:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/dock_tab_style**
+
+Tab style of editor docks.
 
 .. rst-class:: classref-item-separator
 

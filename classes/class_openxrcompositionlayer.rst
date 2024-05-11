@@ -35,13 +35,15 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`               | :ref:`alpha_blend<class_OpenXRCompositionLayer_property_alpha_blend>`       | ``false`` |
-   +---------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`SubViewport<class_SubViewport>` | :ref:`layer_viewport<class_OpenXRCompositionLayer_property_layer_viewport>` |           |
-   +---------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                 | :ref:`sort_order<class_OpenXRCompositionLayer_property_sort_order>`         | ``1``     |
-   +---------------------------------------+-----------------------------------------------------------------------------+-----------+
+   +---------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`               | :ref:`alpha_blend<class_OpenXRCompositionLayer_property_alpha_blend>`             | ``false`` |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`               | :ref:`enable_hole_punch<class_OpenXRCompositionLayer_property_enable_hole_punch>` | ``false`` |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`SubViewport<class_SubViewport>` | :ref:`layer_viewport<class_OpenXRCompositionLayer_property_layer_viewport>`       |           |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                 | :ref:`sort_order<class_OpenXRCompositionLayer_property_sort_order>`               | ``1``     |
+   +---------------------------------------+-----------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -80,6 +82,25 @@ Property Descriptions
 Enables the blending the layer using its alpha channel.
 
 Can be combined with :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` to give the layer a transparent background.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRCompositionLayer_property_enable_hole_punch:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **enable_hole_punch** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_enable_hole_punch**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_hole_punch**\ (\ )
+
+Enables a technique called "hole punching", which allows putting the composition layer behind the main projection layer (i.e. setting :ref:`sort_order<class_OpenXRCompositionLayer_property_sort_order>` to a negative value) while "punching a hole" through everything rendered by Godot so that the layer is still visible.
+
+This can be used to create the illusion that the composition layer exists in the same 3D space as everything rendered by Godot, allowing objects to appear to pass both behind or in front of the composition layer.
 
 .. rst-class:: classref-item-separator
 
