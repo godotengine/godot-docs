@@ -33,7 +33,8 @@ required:
 - Development libraries:
 
   - X11, Xcursor, Xinerama, Xi and XRandR.
-  - MesaGL.
+  - Wayland and wayland-scanner.
+  - Mesa.
   - ALSA.
   - PulseAudio.
 
@@ -67,7 +68,6 @@ Distro-specific one-liners
               libxi-dev \
               libxrandr-dev \
               mesa-dev \
-              libexecinfo-dev \
               eudev-dev \
               alsa-lib-dev \
               pulseaudio-dev
@@ -76,7 +76,7 @@ Distro-specific one-liners
 
         ::
 
-            pacman -S --needed \
+            pacman -Sy --noconfirm --needed \
               scons \
               pkgconf \
               gcc \
@@ -84,6 +84,7 @@ Distro-specific one-liners
               libxinerama \
               libxi \
               libxrandr \
+              wayland-utils \
               mesa \
               glu \
               libglvnd \
@@ -94,7 +95,8 @@ Distro-specific one-liners
 
         ::
 
-            apt-get install \
+            sudo apt-get update
+            sudo apt-get install -y \
               build-essential \
               scons \
               pkg-config \
@@ -102,18 +104,19 @@ Distro-specific one-liners
               libxcursor-dev \
               libxinerama-dev \
               libgl1-mesa-dev \
-              libglu-dev \
+              libglu1-mesa-dev \
               libasound2-dev \
               libpulse-dev \
               libudev-dev \
               libxi-dev \
-              libxrandr-dev
+              libxrandr-dev \
+              libwayland-dev
 
     .. tab:: Fedora
 
         ::
 
-            dnf install \
+            sudo dnf install -y \
               scons \
               pkgconfig \
               libX11-devel \
@@ -121,6 +124,7 @@ Distro-specific one-liners
               libXrandr-devel \
               libXinerama-devel \
               libXi-devel \
+              wayland-devel \
               mesa-libGL-devel \
               mesa-libGLU-devel \
               alsa-lib-devel \
@@ -141,7 +145,8 @@ Distro-specific one-liners
               libXcursor \
               libXrandr \
               libXi \
-              xorgproto libGLU \
+              xorgproto \
+              libGLU \
               alsa-lib \
               pulseaudio
 
@@ -149,12 +154,14 @@ Distro-specific one-liners
 
         ::
 
+            emerge --sync
             emerge -an \
-              dev-util/scons \
+              dev-build/scons \
               x11-libs/libX11 \
               x11-libs/libXcursor \
               x11-libs/libXinerama \
               x11-libs/libXi \
+              dev-util/wayland-scanner \
               media-libs/mesa \
               media-libs/glu \
               media-libs/alsa-lib \
@@ -164,10 +171,10 @@ Distro-specific one-liners
 
         ::
 
-            urpmi \
+            sudo urpmi --auto \
               scons \
               task-c++-devel \
-              pkgconfig \
+              wayland-devel \
               "pkgconfig(alsa)" \
               "pkgconfig(glu)" \
               "pkgconfig(libpulse)" \
@@ -176,7 +183,19 @@ Distro-specific one-liners
               "pkgconfig(xcursor)" \
               "pkgconfig(xinerama)" \
               "pkgconfig(xi)" \
-              "pkgconfig(xrandr)"
+		      "pkgconfig(xrandr)"
+
+    .. tab:: NetBSD
+
+        ::
+
+            pkg_add \
+              pkg-config \
+              py37-scons
+
+        .. hint::
+
+            For audio support, you can optionally install ``pulseaudio``.
 
     .. tab:: OpenBSD
 
@@ -191,7 +210,7 @@ Distro-specific one-liners
 
         ::
 
-            zypper install \
+            sudo zypper install -y \
               scons \
               pkgconfig \
               libX11-devel \
@@ -199,6 +218,7 @@ Distro-specific one-liners
               libXrandr-devel \
               libXinerama-devel \
               libXi-devel \
+              wayland-devel \
               Mesa-libGL-devel \
               alsa-devel \
               libpulse-devel \
@@ -206,29 +226,18 @@ Distro-specific one-liners
               gcc-c++ \
               libGLU1
 
-    .. tab:: NetBSD
-
-        ::
-
-            pkg_add \
-              pkg-config \
-              py37-scons
-
-        .. hint::
-
-            For audio support, you can optionally install ``pulseaudio``.
-
     .. tab:: Solus
 
         ::
 
-            eopkg install -c \
-              system.devel \
+            eopkg install -y \
+              -c system.devel \
               scons \
               libxcursor-devel \
               libxinerama-devel \
               libxi-devel \
               libxrandr-devel \
+              wayland-devel \
               mesalib-devel \
               libglu \
               alsa-lib-devel \
