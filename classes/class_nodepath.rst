@@ -53,7 +53,7 @@ Node paths cannot check whether they are valid and may point to nodes or propert
 
 You usually do not have to worry about the **NodePath** type, as strings are automatically converted to the type when necessary. There are still times when defining node paths is useful. For example, exported **NodePath** properties allow you to easily select any node within the currently edited scene. They are also automatically updated when moving, renaming or deleting nodes in the scene tree editor. See also :ref:`@GDScript.@export_node_path<class_@GDScript_annotation_@export_node_path>`.
 
-See also :ref:`StringName<class_StringName>`, which is a similar type designed for optimised strings.
+See also :ref:`StringName<class_StringName>`, which is a similar type designed for optimized strings.
 
 \ **Note:** In a boolean context, a **NodePath** will evaluate to ``false`` if it is empty (``NodePath("")``). Otherwise, a **NodePath** will always evaluate to ``true``.
 

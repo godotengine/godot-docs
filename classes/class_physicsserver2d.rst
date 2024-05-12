@@ -1155,7 +1155,9 @@ Removes all shapes from the area. This does not delete the shapes themselves, so
 
 :ref:`RID<class_RID>` **area_create**\ (\ )
 
-Creates a 2D area object in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`area_add_shape<class_PhysicsServer2D_method_area_add_shape>` to add shapes to it, use :ref:`area_set_transform<class_PhysicsServer2D_method_area_set_transform>` to set its transform, and use :ref:`area_set_space<class_PhysicsServer2D_method_area_set_space>` to add the area to a space.
+Creates a 2D area object in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. The default settings for the created area include a collision layer and mask set to ``1``, and ``monitorable`` set to ``false``.
+
+Use :ref:`area_add_shape<class_PhysicsServer2D_method_area_add_shape>` to add shapes to it, use :ref:`area_set_transform<class_PhysicsServer2D_method_area_set_transform>` to set its transform, and use :ref:`area_set_space<class_PhysicsServer2D_method_area_set_space>` to add the area to a space. If you want the area to be detectable use :ref:`area_set_monitorable<class_PhysicsServer2D_method_area_set_monitorable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1643,7 +1645,9 @@ Removes all shapes from the body. This does not delete the shapes themselves, so
 
 :ref:`RID<class_RID>` **body_create**\ (\ )
 
-Creates a 2D body object in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`body_add_shape<class_PhysicsServer2D_method_body_add_shape>` to add shapes to it, use :ref:`body_set_state<class_PhysicsServer2D_method_body_set_state>` to set its transform, and use :ref:`body_set_space<class_PhysicsServer2D_method_body_set_space>` to add the body to a space.
+Creates a 2D body object in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. The default settings for the created area include a collision layer and mask set to ``1``, and body mode set to :ref:`BODY_MODE_RIGID<class_PhysicsServer2D_constant_BODY_MODE_RIGID>`.
+
+Use :ref:`body_add_shape<class_PhysicsServer2D_method_body_add_shape>` to add shapes to it, use :ref:`body_set_state<class_PhysicsServer2D_method_body_set_state>` to set its transform, and use :ref:`body_set_space<class_PhysicsServer2D_method_body_set_space>` to add the body to a space.
 
 .. rst-class:: classref-item-separator
 

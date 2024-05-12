@@ -515,7 +515,7 @@ Returns the coordinates of the tile for given physics body :ref:`RID<class_RID>`
 
 :ref:`RID<class_RID>` **get_navigation_map**\ (\ ) |const|
 
-Returns the :ref:`RID<class_RID>` of the :ref:`NavigationServer2D<class_NavigationServer2D>` navigation used by this **TileMapLayer**. 
+Returns the :ref:`RID<class_RID>` of the :ref:`NavigationServer2D<class_NavigationServer2D>` navigation used by this **TileMapLayer**.
 
 By default this returns the default :ref:`World2D<class_World2D>` navigation map, unless a custom map was provided using :ref:`set_navigation_map<class_TileMapLayer_method_set_navigation_map>`.
 

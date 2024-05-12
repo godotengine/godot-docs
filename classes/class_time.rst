@@ -507,7 +507,7 @@ Converts the given Unix timestamp to an ISO 8601 time string (HH:MM:SS).
 
 :ref:`Dictionary<class_Dictionary>` **get_time_zone_from_system**\ (\ ) |const|
 
-Returns the current time zone as a dictionary of keys: ``bias`` and ``name``. 
+Returns the current time zone as a dictionary of keys: ``bias`` and ``name``.
 
 - ``bias`` is the offset from UTC in minutes, since not all time zones are multiples of an hour from UTC.
 

@@ -38,13 +38,15 @@ Properties
 .. table::
    :widths: auto
 
-   +--------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>` | :ref:`alignment<class_FlowContainer_property_alignment>`       | ``0``     |
-   +--------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                | :ref:`reverse_fill<class_FlowContainer_property_reverse_fill>` | ``false`` |
-   +--------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                | :ref:`vertical<class_FlowContainer_property_vertical>`         | ``false`` |
-   +--------------------------------------------------------+----------------------------------------------------------------+-----------+
+   +------------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>`                 | :ref:`alignment<class_FlowContainer_property_alignment>`                     | ``0``     |
+   +------------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`LastWrapAlignmentMode<enum_FlowContainer_LastWrapAlignmentMode>` | :ref:`last_wrap_alignment<class_FlowContainer_property_last_wrap_alignment>` | ``0``     |
+   +------------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                | :ref:`reverse_fill<class_FlowContainer_property_reverse_fill>`               | ``false`` |
+   +------------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                | :ref:`vertical<class_FlowContainer_property_vertical>`                       | ``false`` |
+   +------------------------------------------------------------------------+------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -111,6 +113,48 @@ The child controls will be centered in the container.
 
 The child controls will be arranged at the end of the container, i.e. bottom if orientation is vertical, right if orientation is horizontal (left for RTL layout).
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_FlowContainer_LastWrapAlignmentMode:
+
+.. rst-class:: classref-enumeration
+
+enum **LastWrapAlignmentMode**:
+
+.. _class_FlowContainer_constant_LAST_WRAP_ALIGNMENT_INHERIT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LastWrapAlignmentMode<enum_FlowContainer_LastWrapAlignmentMode>` **LAST_WRAP_ALIGNMENT_INHERIT** = ``0``
+
+The last partially filled row or column will wrap aligned to the previous row or column in accordance with :ref:`alignment<class_FlowContainer_property_alignment>`.
+
+.. _class_FlowContainer_constant_LAST_WRAP_ALIGNMENT_BEGIN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LastWrapAlignmentMode<enum_FlowContainer_LastWrapAlignmentMode>` **LAST_WRAP_ALIGNMENT_BEGIN** = ``1``
+
+The last partially filled row or column will wrap aligned to the beginning of the previous row or column.
+
+.. _class_FlowContainer_constant_LAST_WRAP_ALIGNMENT_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LastWrapAlignmentMode<enum_FlowContainer_LastWrapAlignmentMode>` **LAST_WRAP_ALIGNMENT_CENTER** = ``2``
+
+The last partially filled row or column will wrap aligned to the center of the previous row or column.
+
+.. _class_FlowContainer_constant_LAST_WRAP_ALIGNMENT_END:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LastWrapAlignmentMode<enum_FlowContainer_LastWrapAlignmentMode>` **LAST_WRAP_ALIGNMENT_END** = ``3``
+
+The last partially filled row or column will wrap aligned to the end of the previous row or column.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -132,6 +176,23 @@ Property Descriptions
 - :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>` **get_alignment**\ (\ )
 
 The alignment of the container's children (must be one of :ref:`ALIGNMENT_BEGIN<class_FlowContainer_constant_ALIGNMENT_BEGIN>`, :ref:`ALIGNMENT_CENTER<class_FlowContainer_constant_ALIGNMENT_CENTER>`, or :ref:`ALIGNMENT_END<class_FlowContainer_constant_ALIGNMENT_END>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FlowContainer_property_last_wrap_alignment:
+
+.. rst-class:: classref-property
+
+:ref:`LastWrapAlignmentMode<enum_FlowContainer_LastWrapAlignmentMode>` **last_wrap_alignment** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_last_wrap_alignment**\ (\ value\: :ref:`LastWrapAlignmentMode<enum_FlowContainer_LastWrapAlignmentMode>`\ )
+- :ref:`LastWrapAlignmentMode<enum_FlowContainer_LastWrapAlignmentMode>` **get_last_wrap_alignment**\ (\ )
+
+The wrap behavior of the last, partially filled row or column (must be one of :ref:`LAST_WRAP_ALIGNMENT_INHERIT<class_FlowContainer_constant_LAST_WRAP_ALIGNMENT_INHERIT>`, :ref:`LAST_WRAP_ALIGNMENT_BEGIN<class_FlowContainer_constant_LAST_WRAP_ALIGNMENT_BEGIN>`, :ref:`LAST_WRAP_ALIGNMENT_CENTER<class_FlowContainer_constant_LAST_WRAP_ALIGNMENT_CENTER>`, or :ref:`LAST_WRAP_ALIGNMENT_END<class_FlowContainer_constant_LAST_WRAP_ALIGNMENT_END>`).
 
 .. rst-class:: classref-item-separator
 

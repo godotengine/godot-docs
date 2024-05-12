@@ -962,6 +962,7 @@ Other objects
     class_xrpositionaltracker
     class_xrserver
     class_xrtracker
+    class_xrvrs
     class_zippacker
     class_zipreader
 

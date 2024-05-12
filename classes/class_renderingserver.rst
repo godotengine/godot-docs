@@ -1007,6 +1007,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`viewport_set_vrs_texture<class_RenderingServer_method_viewport_set_vrs_texture>`\ (\ viewport\: :ref:`RID<class_RID>`, texture\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`viewport_set_vrs_update_mode<class_RenderingServer_method_viewport_set_vrs_update_mode>`\ (\ viewport\: :ref:`RID<class_RID>`, mode\: :ref:`ViewportVRSUpdateMode<enum_RenderingServer_ViewportVRSUpdateMode>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`visibility_notifier_create<class_RenderingServer_method_visibility_notifier_create>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`visibility_notifier_set_aabb<class_RenderingServer_method_visibility_notifier_set_aabb>`\ (\ notifier\: :ref:`RID<class_RID>`, aabb\: :ref:`AABB<class_AABB>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -3626,7 +3628,7 @@ Variable rate shading uses a texture. Note, for stereoscopic use a texture atlas
 
 :ref:`ViewportVRSMode<enum_RenderingServer_ViewportVRSMode>` **VIEWPORT_VRS_XR** = ``2``
 
-Variable rate shading texture is supplied by the primary :ref:`XRInterface<class_XRInterface>`.
+Variable rate shading texture is supplied by the primary :ref:`XRInterface<class_XRInterface>`. Note that this may override the update mode.
 
 .. _class_RenderingServer_constant_VIEWPORT_VRS_MAX:
 
@@ -3635,6 +3637,48 @@ Variable rate shading texture is supplied by the primary :ref:`XRInterface<class
 :ref:`ViewportVRSMode<enum_RenderingServer_ViewportVRSMode>` **VIEWPORT_VRS_MAX** = ``3``
 
 Represents the size of the :ref:`ViewportVRSMode<enum_RenderingServer_ViewportVRSMode>` enum.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_RenderingServer_ViewportVRSUpdateMode:
+
+.. rst-class:: classref-enumeration
+
+enum **ViewportVRSUpdateMode**:
+
+.. _class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportVRSUpdateMode<enum_RenderingServer_ViewportVRSUpdateMode>` **VIEWPORT_VRS_UPDATE_DISABLED** = ``0``
+
+The input texture for variable rate shading will not be processed.
+
+.. _class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_ONCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportVRSUpdateMode<enum_RenderingServer_ViewportVRSUpdateMode>` **VIEWPORT_VRS_UPDATE_ONCE** = ``1``
+
+The input texture for variable rate shading will be processed once.
+
+.. _class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_ALWAYS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportVRSUpdateMode<enum_RenderingServer_ViewportVRSUpdateMode>` **VIEWPORT_VRS_UPDATE_ALWAYS** = ``2``
+
+The input texture for variable rate shading will be processed each frame.
+
+.. _class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportVRSUpdateMode<enum_RenderingServer_ViewportVRSUpdateMode>` **VIEWPORT_VRS_UPDATE_MAX** = ``3``
+
+Represents the size of the :ref:`ViewportVRSUpdateMode<enum_RenderingServer_ViewportVRSUpdateMode>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -6554,7 +6598,7 @@ Sets the :ref:`CanvasItem<class_CanvasItem>`'s Z index, i.e. its draw order (low
 
 Transforms both the current and previous stored transform for a canvas item.
 
-This allows transforming a canvas item without creating a "glitch" in the interpolation, which is particularly useful for large worlds utilising a shifting origin.
+This allows transforming a canvas item without creating a "glitch" in the interpolation, which is particularly useful for large worlds utilizing a shifting origin.
 
 .. rst-class:: classref-item-separator
 
@@ -6712,7 +6756,7 @@ Sets a light occluder's :ref:`Transform2D<class_Transform2D>`.
 
 Transforms both the current and previous stored transform for a light occluder.
 
-This allows transforming an occluder without creating a "glitch" in the interpolation, which is particularly useful for large worlds utilising a shifting origin.
+This allows transforming an occluder without creating a "glitch" in the interpolation, which is particularly useful for large worlds utilizing a shifting origin.
 
 .. rst-class:: classref-item-separator
 
@@ -6968,7 +7012,7 @@ Sets the Z range of objects that will be affected by this light. Equivalent to :
 
 Transforms both the current and previous stored transform for a canvas light.
 
-This allows transforming a light without creating a "glitch" in the interpolation, which is is particularly useful for large worlds utilising a shifting origin.
+This allows transforming a light without creating a "glitch" in the interpolation, which is is particularly useful for large worlds utilizing a shifting origin.
 
 .. rst-class:: classref-item-separator
 
@@ -11799,6 +11843,20 @@ Sets the Variable Rate Shading (VRS) mode for the viewport. If the GPU does not 
 |void| **viewport_set_vrs_texture**\ (\ viewport\: :ref:`RID<class_RID>`, texture\: :ref:`RID<class_RID>`\ )
 
 The texture to use when the VRS mode is set to :ref:`VIEWPORT_VRS_TEXTURE<class_RenderingServer_constant_VIEWPORT_VRS_TEXTURE>`. Equivalent to :ref:`ProjectSettings.rendering/vrs/texture<class_ProjectSettings_property_rendering/vrs/texture>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_viewport_set_vrs_update_mode:
+
+.. rst-class:: classref-method
+
+|void| **viewport_set_vrs_update_mode**\ (\ viewport\: :ref:`RID<class_RID>`, mode\: :ref:`ViewportVRSUpdateMode<enum_RenderingServer_ViewportVRSUpdateMode>`\ )
+
+Sets the update mode for Variable Rate Shading (VRS) for the viewport. VRS requires the input texture to be converted to the format usable by the VRS method supported by the hardware. The update mode defines how often this happens. If the GPU does not support VRS, or VRS is not enabled, this property is ignored.
+
+If set to :ref:`VIEWPORT_VRS_UPDATE_ONCE<class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_ONCE>`, the input texture is copied once and the mode is changed to :ref:`VIEWPORT_VRS_UPDATE_DISABLED<class_RenderingServer_constant_VIEWPORT_VRS_UPDATE_DISABLED>`.
 
 .. rst-class:: classref-item-separator
 
