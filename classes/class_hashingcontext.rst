@@ -42,6 +42,8 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         # Update the context after reading each chunk.
         while not file.get_position() < file.get_len():
             var remaining = file.get_len() - file.get_position()
+            if remaining > CHUNK_SIZE:
+                remaining = CHUNK_SIZE
             ctx.update(file.get_buffer(min(remaining, CHUNK_SIZE)))
         # Get the computed hash.
         var res = ctx.finish()
@@ -65,8 +67,12 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         // Open the file to hash.
         using var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
         // Update the context after reading each chunk.
-        while (!file.EofReached())
+        while (file.GetPosition() < file.GetLength())
         {
+            int remaining = file.GetLen() - file.GetPosition();
+            if (remaining > ChunkSize) {
+                remaining = ChunkSize;
+            }
             ctx.Update(file.GetBuffer(ChunkSize));
         }
         // Get the computed hash.
