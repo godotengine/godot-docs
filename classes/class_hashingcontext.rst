@@ -40,8 +40,9 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         # Open the file to hash.
         var file = FileAccess.open(path, FileAccess.READ)
         # Update the context after reading each chunk.
-        while not file.eof_reached():
-            ctx.update(file.get_buffer(CHUNK_SIZE))
+        while not file.get_position() < file.get_len():
+            var remaining = file.get_len() - file.get_position()
+            ctx.update(file.get_buffer(min(remaining, CHUNK_SIZE)))
         # Get the computed hash.
         var res = ctx.finish()
         # Print the result as hex string and array.
