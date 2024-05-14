@@ -101,7 +101,7 @@ released.
 
         public override void _Ready()
         {
-            _animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+            _animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         }
 
         public override _Process(float _delta)
