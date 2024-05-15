@@ -52,7 +52,7 @@ Step by step
    that way you can minimize the risk of exposing the key.
 
 2. Set this key as environment variable in the console that you will use to
-   compile Godot, like this:
+   compile Godot (in Windows you may have to run terminal or Powershell as admin), like this:
 
    .. tabs::
     .. code-tab:: bash Linux/macOS
