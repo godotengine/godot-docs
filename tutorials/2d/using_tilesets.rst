@@ -73,27 +73,8 @@ set the tile size **before** creating the *atlas*. The atlas will
 determine which tiles from the tilesheet can be added to a TileMap node
 (as not every part of the image may be a valid tile).
 
-Open the **TileSet** panel at the bottom of the editor, then click the "+" icon
-in the bottom-left corner to add a new atlas:
-
-.. figure:: img/using_tilesets_create_new_atlas.webp
-   :align: center
-   :alt: Creating a new atlas in a TileSet resource using the bottom panel
-
-   Creating a new atlas in a TileSet resource using the bottom panel
-
-After creating an atlas, you must assign a tilesheet texture to it.
-This can be done by choosing it on the left column of the bottom panel, then
-clicking the value of the **Texture** property and choosing **Quick Load** (or **Load**).
-Specify the path to the image file using the file dialog that appears.
-
-.. figure:: img/using_tilesets_load_tilesheet.webp
-   :align: center
-   :alt: Loading a tilesheet image in the newly created TileSet atlas
-
-   Loading a tilesheet image in the newly created TileSet atlas
-
-After specifying a valid image, you will be asked whether to create tiles
+Open the **TileSet** panel at the bottom of the editor, then click and drag the
+tilesheet image onto the panel. You will be asked whether to create tiles
 automatically. Answer **Yes**:
 
 .. figure:: img/using_tilesets_create_tiles_automatically.webp
