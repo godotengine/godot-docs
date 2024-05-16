@@ -95,14 +95,14 @@ Editor
 Rendering
 ---------
 
-3 rendering *methods* (running over 2 rendering *drivers*) are available:
+3 rendering *methods* (running over 4 rendering *drivers*) are available:
 
-- **Forward+**, running over Vulkan 1.0 (with optional Vulkan 1.1 and 1.2
-  features). The most advanced graphics backend, suited for desktop platforms
-  only. Used by default on desktop platforms.
-- **Forward Mobile**, running over Vulkan 1.0 (with optional Vulkan 1.1 and 1.2
-  features). Less features, but renders simple scenes faster. Suited for mobile
-  and desktop platforms. Used by default on mobile platforms.
+- **Forward+**, running over Vulkan / Direct3D 12 / Metal. The most advanced
+  graphics backend, suited for desktop platforms only. Used by default on
+  desktop platforms.
+- **Forward Mobile**, running over Vulkan / Direct3D 12 / Metal. Less features,
+  but renders simple scenes faster. Suited for mobile and desktop platforms.
+  Used by default on mobile platforms.
 - **Compatibility**, running over OpenGL 3.3 / OpenGL ES 3.0 / WebGL 2.0. The least
   advanced graphics backend, suited for low-end desktop and mobile platforms.
   Used by default on the web platform.
