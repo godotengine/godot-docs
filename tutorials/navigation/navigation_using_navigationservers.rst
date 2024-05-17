@@ -108,7 +108,7 @@ Afterwards the function waits for the next physics frame before continuing with 
 
         # create a new navigation region and add it to the map
         var region: RID = NavigationServer3D.region_create()
-        NavigationServer3D.region_set_transform(region, Transform())
+        NavigationServer3D.region_set_transform(region, Transform3D())
         NavigationServer3D.region_set_map(region, map)
 
         # create a procedural navigation mesh for the region
