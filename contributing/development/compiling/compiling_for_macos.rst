@@ -16,7 +16,7 @@ Requirements
 For compiling under macOS, the following is required:
 
 - `Python 3.6+ <https://www.python.org/downloads/macos/>`_.
-- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
+- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_
   (or the more lightweight Command Line Tools for Xcode).
 - `Vulkan SDK <https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.dmg>`_

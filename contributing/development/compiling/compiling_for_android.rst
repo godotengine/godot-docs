@@ -27,7 +27,7 @@ Requirements
 For compiling under Windows, Linux or macOS, the following is required:
 
 - `Python 3.6+ <https://www.python.org/downloads/>`_.
-- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
+- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system.
 - `Android SDK <https://developer.android.com/studio/#command-tools>`_
   (command-line tools are sufficient).
 
