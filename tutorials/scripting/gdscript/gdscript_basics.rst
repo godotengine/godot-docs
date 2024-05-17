@@ -1548,6 +1548,10 @@ in the loop variable.
     for x in [5, 7, 11]:
         statement # Loop iterates 3 times with 'x' as 5, then 7 and finally 11.
 
+    var names = ["John", "Marta", "Samantha", "Jimmy"]
+    for name: String in names: # Typed loop variable.
+        print(name) # Prints name's content.
+
     var dict = {"a": 0, "b": 1, "c": 2}
     for i in dict:
         print(dict[i]) # Prints 0, then 1, then 2.
