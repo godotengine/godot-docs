@@ -14,7 +14,7 @@ Requirements
 ------------
 
 - `Python 3.6+ <https://www.python.org/downloads/macos/>`_.
-- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
+- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_.
 
 If you are building the ``master`` branch:

@@ -16,19 +16,9 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
-- GCC 7+ or Clang 6+.
-
+- GCC 9+ or Clang 6+.
 - `Python 3.6+ <https://www.python.org/downloads/>`_.
-
-- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
-
-  .. note::
-
-      If your distribution uses Python 2 by default, or you are using a version of SCons prior to 3.1.2,
-      you will need to change the version of Python that SCons uses by changing the shebang
-      (the first line) of the SCons script file to ``#! /usr/bin/python3``.
-      Use the command ``which scons`` to find the location of the SCons script file.
-
+- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system.
 - pkg-config (used to detect the development libraries listed below).
 - Development libraries:
 
