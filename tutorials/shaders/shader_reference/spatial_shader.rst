@@ -331,7 +331,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **ALBEDO**                    | Albedo (default white).                                                                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **ALPHA**                    | Alpha (0..1); if written to, the material will go to the transparent pipeline.                   |
+| out float **ALPHA**                    | Alpha (0..1); if read from or written to, the material will go to the transparent pipeline.      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ALPHA_SCISSOR_THRESHOLD**  | If written to, values below a certain amount of alpha are discarded.                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
