@@ -55,6 +55,8 @@ Properties
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`CameraAttributes<class_CameraAttributes>`         | :ref:`camera_attributes<class_LightmapGI_property_camera_attributes>`                 |            |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`int<class_int>`                                   | :ref:`denoiser_range<class_LightmapGI_property_denoiser_range>`                       | ``10``     |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`float<class_float>`                               | :ref:`denoiser_strength<class_LightmapGI_property_denoiser_strength>`                 | ``0.1``    |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`bool<class_bool>`                                 | :ref:`directional<class_LightmapGI_property_directional>`                             | ``false``  |
@@ -389,6 +391,23 @@ Number of light bounces that are taken into account during baking. Higher values
 - :ref:`CameraAttributes<class_CameraAttributes>` **get_camera_attributes**\ (\ )
 
 The :ref:`CameraAttributes<class_CameraAttributes>` resource that specifies exposure levels to bake at. Auto-exposure and non exposure properties will be ignored. Exposure settings should be used to reduce the dynamic range present when baking. If exposure is too high, the **LightmapGI** will have banding artifacts or may have over-exposure artifacts.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LightmapGI_property_denoiser_range:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **denoiser_range** = ``10``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_denoiser_range**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_denoiser_range**\ (\ )
+
+The distance in pixels from which the denoiser samples. Lower values preserve more details, but may give blotchy results if the lightmap quality is not high enough. Only effective if :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>` is ``true`` and :ref:`ProjectSettings.rendering/lightmapping/denoising/denoiser<class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser>` is set to JNLM.
 
 .. rst-class:: classref-item-separator
 

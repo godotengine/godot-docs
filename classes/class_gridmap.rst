@@ -615,7 +615,7 @@ Bakes lightmap data for all meshes in the assigned :ref:`MeshLibrary<class_MeshL
 
 :ref:`Vector3<class_Vector3>` **map_to_local**\ (\ map_position\: :ref:`Vector3i<class_Vector3i>`\ ) |const|
 
-Returns the position of a grid cell in the GridMap's local coordinate space. To convert the returned value into global coordinates, use :ref:`Node3D.to_global<class_Node3D_method_to_global>`. See also :ref:`map_to_local<class_GridMap_method_map_to_local>`.
+Returns the position of a grid cell in the GridMap's local coordinate space. To convert the returned value into global coordinates, use :ref:`Node3D.to_global<class_Node3D_method_to_global>`. See also :ref:`local_to_map<class_GridMap_method_local_to_map>`.
 
 .. rst-class:: classref-item-separator
 

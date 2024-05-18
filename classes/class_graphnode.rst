@@ -37,11 +37,13 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------+----------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                 | ``0`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
-   +----------------------------------------------+----------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`String<class_String>`                  | :ref:`title<class_GraphNode_property_title>` | ``""``                                                                |
-   +----------------------------------------------+----------------------------------------------+-----------------------------------------------------------------------+
+   +----------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                      | :ref:`ignore_invalid_connection_type<class_GraphNode_property_ignore_invalid_connection_type>` | ``false``                                                             |
+   +----------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                                                   | ``0`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
+   +----------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`String<class_String>`                  | :ref:`title<class_GraphNode_property_title>`                                                   | ``""``                                                                |
+   +----------------------------------------------+------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -172,6 +174,23 @@ Emitted when any GraphNode's slot is updated.
 
 Property Descriptions
 ---------------------
+
+.. _class_GraphNode_property_ignore_invalid_connection_type:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **ignore_invalid_connection_type** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_ignore_invalid_connection_type**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_ignoring_valid_connection_type**\ (\ )
+
+If ``true``, you can connect ports with different types, even if the connection was not explicitly allowed in the parent :ref:`GraphEdit<class_GraphEdit>`.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_GraphNode_property_title:
 

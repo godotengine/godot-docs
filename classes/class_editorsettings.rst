@@ -335,6 +335,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/font_antialiasing<class_EditorSettings_property_interface/editor/font_antialiasing>`                                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/font_disable_embedded_bitmaps<class_EditorSettings_property_interface/editor/font_disable_embedded_bitmaps>`                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/font_hinting<class_EditorSettings_property_interface/editor/font_hinting>`                                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/font_subpixel_positioning<class_EditorSettings_property_interface/editor/font_subpixel_positioning>`                                                                                       |
@@ -2536,6 +2538,18 @@ Specific to the macOS platform.
 :ref:`int<class_int>` **interface/editor/font_antialiasing**
 
 FreeType's font anti-aliasing mode used to render the editor fonts. Most fonts are not designed to look good with anti-aliasing disabled, so it's recommended to leave this enabled unless you're using a pixel art font.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/font_disable_embedded_bitmaps:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/font_disable_embedded_bitmaps**
+
+If set to ``true``, embedded font bitmap loading is disabled (bitmap-only and color fonts ignore this property).
 
 .. rst-class:: classref-item-separator
 

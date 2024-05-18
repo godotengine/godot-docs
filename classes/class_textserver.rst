@@ -23,6 +23,23 @@ Description
 
 **TextServer** is the API backend for managing fonts and rendering text.
 
+\ **Note:** This is a low-level API, consider using :ref:`TextLine<class_TextLine>`, :ref:`TextParagraph<class_TextParagraph>`, and :ref:`Font<class_Font>` classes instead.
+
+This is an abstract class, so to get the currently active **TextServer** instance, use the following code:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var ts = TextServerManager.get_primary_interface()
+
+ .. code-tab:: csharp
+
+    var ts = TextServerManager.GetPrimaryInterface();
+
+
+
 .. rst-class:: classref-reftable-group
 
 Methods

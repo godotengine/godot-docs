@@ -1495,7 +1495,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/renderer/rendering_method.web<class_ProjectSettings_property_rendering/renderer/rendering_method.web>`                                                                                     | ``"gl_compatibility"``                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/agility_sdk_version<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`                                                           | ``610``                                                                                          |
+   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/agility_sdk_version<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`                                                           | ``613``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/max_misc_descriptors_per_frame<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_misc_descriptors_per_frame>`                                     | ``512``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2880,7 +2880,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/standalone_expression** = ``1``
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling an expression that has no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when calling an expression that may have no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
 
 .. rst-class:: classref-item-separator
 
@@ -2892,7 +2892,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/standalone_ternary** = ``1``
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a ternary expression that has no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a ternary expression that may have no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
 
 .. rst-class:: classref-item-separator
 
@@ -11010,9 +11010,9 @@ Override for :ref:`rendering/renderer/rendering_method<class_ProjectSettings_pro
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/d3d12/agility_sdk_version** = ``610``
+:ref:`int<class_int>` **rendering/rendering_device/d3d12/agility_sdk_version** = ``613``
 
-Version code of the Direct3D 12 Agility SDK to use (``D3D12SDKVersion``).
+Version code of the `Direct3D 12 Agility SDK <https://devblogs.microsoft.com/directx/directx12agility/>`__ to use (``D3D12SDKVersion``). This must match the *minor* version that is installed next to the editor binary and in the export templates directory for the current editor version. For example, if you have ``1.613.3`` installed, you need to input ``613`` here.
 
 .. rst-class:: classref-item-separator
 
