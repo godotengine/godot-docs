@@ -628,6 +628,7 @@ Resources
     class_visualshadernodeproximityfade
     class_visualshadernoderandomrange
     class_visualshadernoderemap
+    class_visualshadernodereroute
     class_visualshadernoderesizablebase
     class_visualshadernoderotationbyaxis
     class_visualshadernodesample3d

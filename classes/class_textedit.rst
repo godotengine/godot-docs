@@ -1434,7 +1434,7 @@ If ``false``, using middle mouse button to paste clipboard will be disabled.
 - |void| **set_draw_minimap**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_drawing_minimap**\ (\ )
 
-If ``true``, a minimap is shown, providing an outline of your source code.
+If ``true``, a minimap is shown, providing an outline of your source code. The minimap uses a fixed-width text size.
 
 .. rst-class:: classref-item-separator
 
