@@ -123,11 +123,11 @@ information:
    should have a built-in tool to take screenshots with the :kbd:`PrtSc` (Print
    Screen) key.
 
-   Alternatively, you can use a program like `ShareX <https://getsharex.com/>`_
+   Alternatively, you can use a program like `Snipping Tool <https://support.microsoft.com/en-us/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b>`_
    on Windows or `FlameShot <https://flameshot.org/>`_ on Linux.
 
 5. Sharing a video of your running game can also be really **useful to
-   troubleshoot your game**. You can use programs like `OBS Studio
+   troubleshoot your game**. On Windows, you can use the built-in `Snipping Tool <https://www.microsoft.com/en-us/windows/learning-center/how-to-record-screen-windows-11>`_. For Windows, OSX, and Linux, you can use programs like `OBS Studio
    <https://obsproject.com/>`_ and `Screen to GIF
    <https://www.screentogif.com/>`_ to capture your screen.
 
