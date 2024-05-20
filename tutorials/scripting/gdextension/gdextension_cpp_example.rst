@@ -698,3 +698,7 @@ Next steps
 We hope the above example showed you the basics. You can
 build upon this example to create full-fledged scripts to control nodes in Godot
 using C++.
+
+To learn more about the types and objects you can use, see the following:
+- :ref:`doc_core_types`
+- :ref:`doc_object_class`
