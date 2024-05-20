@@ -455,7 +455,7 @@ Returns a copy of the string with escaped characters replaced by their meanings.
 
 :ref:`String<class_String>` **capitalize**\ (\ ) |const|
 
-Changes the appearance of the string: replaces underscores (``_``) with spaces, adds spaces before uppercase letters in the middle of a word, converts all letters to lowercase, then converts the first one and each one following a space to uppercase.
+Changes the appearance of the string: replaces underscores (``_``) with spaces, adds spaces before uppercase letters in the middle of a word, converts all letters to lowercase, then converts the first letter and each letter following a space to uppercase.
 
 
 .. tabs::
