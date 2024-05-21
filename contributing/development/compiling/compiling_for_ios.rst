@@ -16,6 +16,8 @@ Requirements
 - `Python 3.6+ <https://www.python.org/downloads/macos/>`_.
 - `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_.
+- `Vulkan SDK <https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.dmg>`_
+  for MoltenVK (macOS doesn't support Vulkan out of the box).
 
 If you are building the ``master`` branch:
 
@@ -85,6 +87,13 @@ should be placed in ``libgodot.ios.debug.xcframework`` and ``libgodot.ios.releas
 
 The MoltenVK static ``.xcframework`` folder must also be placed in the ``ios_xcode``
 folder once it has been created.
+
+You can then zip the contents of the ``ios_xcode`` folder to reproduce the ``ios.zip``
+template from the official Godot distribution::
+
+::
+
+    $ (cd ios_xcode && zip -q -9 -r ios.zip ./* && cd .. && cp -r ios_xcode/ios.zip .)
 
 Run
 ---
