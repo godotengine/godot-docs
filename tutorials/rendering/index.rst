@@ -10,3 +10,4 @@ Rendering
    viewports
    multiple_resolutions
    jitter_stutter
+   compositor
