@@ -155,6 +155,14 @@ this module:
 
     # SCsub
 
+    from typing import TYPE_CHECKING
+
+    from SCons.Script.SConscript import SConsEnvironment
+
+    if TYPE_CHECKING:
+        env = SConsEnvironment()
+        Import = SConsEnvironment.Import
+
     Import('env')
 
     env.add_source_files(env.modules_sources, "*.cpp") # Add all cpp files to the build
@@ -186,6 +194,14 @@ Example ``SCsub`` with custom flags:
 .. code-block:: python
 
     # SCsub
+
+    from typing import TYPE_CHECKING
+
+    from SCons.Script.SConscript import SConsEnvironment
+
+    if TYPE_CHECKING:
+        env = SConsEnvironment()
+        Import = SConsEnvironment.Import
 
     Import('env')
 
@@ -416,6 +432,14 @@ library that will be dynamically loaded when starting our game's binary.
 
     # SCsub
 
+    from typing import TYPE_CHECKING
+
+    from SCons.Script.SConscript import SConsEnvironment
+
+    if TYPE_CHECKING:
+        env = SConsEnvironment()
+        Import = SConsEnvironment.Import
+
     Import('env')
 
     sources = [
@@ -467,11 +491,20 @@ during runtime with the ``LD_LIBRARY_PATH`` environment variable:
 On top of that, it would be nice to be able to select whether to compile our
 module as shared library (for development) or as a part of the Godot binary
 (for release). To do that we can define a custom flag to be passed to SCons
-using the ``ARGUMENT`` command:
+using the ``ARGUMENTS`` command:
 
 .. code-block:: python
 
     # SCsub
+
+    from typing import TYPE_CHECKING
+
+    from SCons.Script import ARGUMENTS
+    from SCons.Script.SConscript import SConsEnvironment
+
+    if TYPE_CHECKING:
+        env = SConsEnvironment()
+        Import = SConsEnvironment.Import
 
     Import('env')
 

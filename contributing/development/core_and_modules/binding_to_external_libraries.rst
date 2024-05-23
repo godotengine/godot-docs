@@ -116,6 +116,14 @@ this module:
 
     # SCsub
 
+    from typing import TYPE_CHECKING
+
+    from SCons.Script.SConscript import SConsEnvironment
+
+    if TYPE_CHECKING:
+        env = SConsEnvironment()
+        Import = SConsEnvironment.Import
+
     Import('env')
 
     env_tts = env.Clone()
@@ -188,6 +196,14 @@ Example `SCsub` with custom flags:
 .. code-block:: python
 
     # SCsub
+
+    from typing import TYPE_CHECKING
+
+    from SCons.Script.SConscript import SConsEnvironment
+
+    if TYPE_CHECKING:
+        env = SConsEnvironment()
+        Import = SConsEnvironment.Import
 
     Import('env')
 
