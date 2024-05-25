@@ -1948,7 +1948,7 @@ The updown arrow icon to display for the :ref:`TreeItem.CELL_MODE_RANGE<class_Tr
 
 :ref:`StyleBox<class_StyleBox>` **custom_button**
 
-Default :ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell.
+Default :ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell when button is enabled with :ref:`TreeItem.set_custom_as_button<class_TreeItem_method_set_custom_as_button>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1960,7 +1960,7 @@ Default :ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<cl
 
 :ref:`StyleBox<class_StyleBox>` **custom_button_hover**
 
-:ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell when it's hovered.
+:ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode button cell when it's hovered.
 
 .. rst-class:: classref-item-separator
 
@@ -1972,7 +1972,7 @@ Default :ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<cl
 
 :ref:`StyleBox<class_StyleBox>` **custom_button_pressed**
 
-:ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell when it's pressed.
+:ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode button cell when it's pressed.
 
 .. rst-class:: classref-item-separator
 

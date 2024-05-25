@@ -43,6 +43,8 @@ Properties
    :widths: auto
 
    +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`float<class_float>`                                                  | :ref:`bake_fps<class_GLTFState_property_bake_fps>`                                 | ``30.0``               |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
    | :ref:`String<class_String>`                                                | :ref:`base_path<class_GLTFState_property_base_path>`                               | ``""``                 |
    +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
    | :ref:`Array<class_Array>`\[:ref:`PackedByteArray<class_PackedByteArray>`\] | :ref:`buffers<class_GLTFState_property_buffers>`                                   | ``[]``                 |
@@ -209,6 +211,23 @@ Embeds textures compressed losslessly into the generated scene, matching old beh
 
 Property Descriptions
 ---------------------
+
+.. _class_GLTFState_property_bake_fps:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **bake_fps** = ``30.0``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_bake_fps**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bake_fps**\ (\ )
+
+The baking fps of the animation for either import or export.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_GLTFState_property_base_path:
 

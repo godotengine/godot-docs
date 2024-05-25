@@ -375,6 +375,8 @@ Returns ``true`` if ``point`` is inside ``polygon`` or if it's located exactly *
 
 Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, otherwise returns ``false``.
 
+\ **Note:** Assumes a Cartesian coordinate system where ``+x`` is right and ``+y`` is up. If using screen coordinates (``+y`` is down), the result will need to be flipped (i.e. a ``true`` result will indicate counter-clockwise).
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -567,7 +567,7 @@ The horizontal space between **Button**'s icon and text. Negative values will be
 
 :ref:`int<class_int>` **icon_max_width** = ``0``
 
-The maximum allowed width of the **Button**'s icon. This limit is applied on top of the default size of the icon, or its expanded size if :ref:`expand_icon<class_Button_property_expand_icon>` is ``true``. The height is adjusted according to the icon's ratio.
+The maximum allowed width of the **Button**'s icon. This limit is applied on top of the default size of the icon, or its expanded size if :ref:`expand_icon<class_Button_property_expand_icon>` is ``true``. The height is adjusted according to the icon's ratio. If the button has additional icons (e.g. :ref:`CheckBox<class_CheckBox>`), they will also be limited.
 
 .. rst-class:: classref-item-separator
 

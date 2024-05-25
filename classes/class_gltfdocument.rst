@@ -248,6 +248,8 @@ Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter
 
 Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and returns a Godot Engine scene node.
 
+The ``bake_fps`` parameter overrides the bake_fps in ``state``.
+
 .. rst-class:: classref-item-separator
 
 ----

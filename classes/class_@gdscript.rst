@@ -213,11 +213,13 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_COLOR_NO_ALPHA<class_@GlobalScope_cons
 
 **@export_custom**\ (\ hint\: :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`, hint_string\: :ref:`String<class_String>`, usage\: |bitfield|\[:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>`\] = 6\ )
 
-Allows you to set a custom hint, hint string, and usage flags for the exported property. Note that there's no validation done in GDScript, it will just pass the hint along to the editor.
+Allows you to set a custom hint, hint string, and usage flags for the exported property. Note that there's no validation done in GDScript, it will just pass the parameters to the editor.
 
 ::
 
     @export_custom(PROPERTY_HINT_NONE, "suffix:m") var suffix: Vector3
+
+\ **Note:** Regardless of the ``usage`` value, the :ref:`@GlobalScope.PROPERTY_USAGE_SCRIPT_VARIABLE<class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE>` flag is always added, as with any explicitly declared script variable.
 
 .. rst-class:: classref-item-separator
 

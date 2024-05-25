@@ -204,6 +204,8 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`is_touchscreen_available<class_DisplayServer_method_is_touchscreen_available>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`is_window_transparency_available<class_DisplayServer_method_is_window_transparency_available>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                   | :ref:`keyboard_get_current_layout<class_DisplayServer_method_keyboard_get_current_layout>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Key<enum_@GlobalScope_Key>`                                       | :ref:`keyboard_get_keycode_from_physical<class_DisplayServer_method_keyboard_get_keycode_from_physical>`\ (\ keycode\: :ref:`Key<enum_@GlobalScope_Key>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -1118,7 +1120,7 @@ The window is floating on top of all other windows. This flag is ignored for ful
 
 The window background can be transparent.
 
-\ **Note:** This flag has no effect if :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``.
+\ **Note:** This flag has no effect if :ref:`is_window_transparency_available<class_DisplayServer_method_is_window_transparency_available>` returns ``false``.
 
 \ **Note:** Transparency support is implemented on Linux (X11/Wayland), macOS, and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
 
@@ -2964,6 +2966,18 @@ Returns ``true`` if OS supports dark mode.
 :ref:`bool<class_bool>` **is_touchscreen_available**\ (\ ) |const|
 
 Returns ``true`` if touch events are available (Android or iOS), the capability is detected on the Web platform or if :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_is_window_transparency_available:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_window_transparency_available**\ (\ ) |const|
+
+Returns ``true`` if the window background can be made transparent. This method returns ``false`` if :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``, or if transparency is not supported by the renderer or OS compositor.
 
 .. rst-class:: classref-item-separator
 
