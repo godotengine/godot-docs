@@ -767,7 +767,6 @@ Other objects
     class_gdextensionmanager
     class_geometry2d
     class_geometry3d
-    class_godotsharp
     class_hashingcontext
     class_hmaccontext
     class_httpclient

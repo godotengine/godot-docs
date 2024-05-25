@@ -63,8 +63,6 @@ Properties
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`Geometry3D<class_Geometry3D>`                           | :ref:`Geometry3D<class_@GlobalScope_property_Geometry3D>`                           |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`GodotSharp<class_GodotSharp>`                           | :ref:`GodotSharp<class_@GlobalScope_property_GodotSharp>`                           |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`IP<class_IP>`                                           | :ref:`IP<class_@GlobalScope_property_IP>`                                           |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`Input<class_Input>`                                     | :ref:`Input<class_@GlobalScope_property_Input>`                                     |
@@ -4874,18 +4872,6 @@ The :ref:`Geometry2D<class_Geometry2D>` singleton.
 :ref:`Geometry3D<class_Geometry3D>` **Geometry3D**
 
 The :ref:`Geometry3D<class_Geometry3D>` singleton.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_@GlobalScope_property_GodotSharp:
-
-.. rst-class:: classref-property
-
-:ref:`GodotSharp<class_GodotSharp>` **GodotSharp**
-
-The :ref:`GodotSharp<class_GodotSharp>` singleton.
 
 .. rst-class:: classref-item-separator
 

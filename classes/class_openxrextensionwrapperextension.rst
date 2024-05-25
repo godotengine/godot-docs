@@ -52,6 +52,8 @@ Methods
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_on_instance_destroyed<class_OpenXRExtensionWrapperExtension_private_method__on_instance_destroyed>`\ (\ ) |virtual|                                                                                                                                                                       |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`_on_main_swapchains_created<class_OpenXRExtensionWrapperExtension_private_method__on_main_swapchains_created>`\ (\ ) |virtual|                                                                                                                                                             |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_on_pre_render<class_OpenXRExtensionWrapperExtension_private_method__on_pre_render>`\ (\ ) |virtual|                                                                                                                                                                                       |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_on_process<class_OpenXRExtensionWrapperExtension_private_method__on_process>`\ (\ ) |virtual|                                                                                                                                                                                             |
@@ -243,6 +245,18 @@ Called right after the OpenXR instance is created.
 |void| **_on_instance_destroyed**\ (\ ) |virtual|
 
 Called right before the OpenXR instance is destroyed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRExtensionWrapperExtension_private_method__on_main_swapchains_created:
+
+.. rst-class:: classref-method
+
+|void| **_on_main_swapchains_created**\ (\ ) |virtual|
+
+Called right after the main swapchains are (re)created.
 
 .. rst-class:: classref-item-separator
 

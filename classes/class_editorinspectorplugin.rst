@@ -169,6 +169,8 @@ Adds a custom control, which is not necessarily a property editor.
 
 Adds a property editor for an individual property. The ``editor`` control must extend :ref:`EditorProperty<class_EditorProperty>`.
 
+There can be multiple property editors for a property. If ``add_to_end`` is ``true``, this newly added editor will be displayed after all the other editors of the property whose ``add_to_end`` is ``false``. For example, the editor uses this parameter to add an "Edit Region" button for :ref:`Sprite2D.region_rect<class_Sprite2D_property_region_rect>` below the regular :ref:`Rect2<class_Rect2>` editor.
+
 .. rst-class:: classref-item-separator
 
 ----

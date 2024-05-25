@@ -30,11 +30,11 @@ To get cancel action, you can use:
 
  .. code-tab:: gdscript
 
-    get_cancel_button().pressed.connect(self.canceled)
+    get_cancel_button().pressed.connect(_on_canceled)
 
  .. code-tab:: csharp
 
-    GetCancelButton().Pressed += Canceled;
+    GetCancelButton().Pressed += OnCanceled;
 
 
 
