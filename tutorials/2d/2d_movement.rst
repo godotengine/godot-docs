@@ -231,8 +231,9 @@ on the screen will cause the player to move to the target location.
     var target = position
 
     func _input(event):
-        if event.is_action_pressed("click"):
-            target = get_global_mouse_position()
+        if event is InputEventMouseButton:
+            if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+                target = get_global_mouse_position()
 
     func _physics_process(delta):
         velocity = position.direction_to(target) * speed
@@ -253,9 +254,12 @@ on the screen will cause the player to move to the target location.
 
         public override void _Input(InputEvent @event)
         {
-            if (@event.IsActionPressed("click"))
+            if (@event is InputEventMouseButton eventMouseButton)
             {
-                _target = GetGlobalMousePosition();
+                if (eventMouseButton.ButtonIndex == MouseButton.Left && eventMouseButton.Pressed)
+                {
+                    _target = GetGlobalMousePosition();
+                }
             }
         }
 
