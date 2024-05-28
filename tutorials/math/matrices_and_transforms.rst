@@ -222,11 +222,12 @@ to set its ``origin`` vector to (1, 2):
 
 .. image:: img/matrices_and_transforms/translate.png
 
-There is also a ``translated()`` method, which performs a different
-operation to adding or changing ``origin`` directly. The ``translated()``
+There is also a ``translated_local()`` method, which performs a different
+operation to adding or changing ``origin`` directly. The ``translated_local()``
 method will translate the object *relative to its own rotation*.
 For example, an object rotated 90 degrees clockwise will move to
-the right when ``translated()`` with ``Vector2.UP``.
+the right when ``translated_local()`` with ``Vector2.UP``. To translate
+*relative to the global/parent frame* use ``translated()`` instead.
 
 .. note:: Godot's 2D uses coordinates based on pixels, so in actual
           projects you will want to translate by hundreds of units.
