@@ -911,8 +911,9 @@ Here are some examples of custom effects:
 Ghost
 ~~~~~
 
-::
-
+.. tabs::
+ .. code-tab:: gdscript GDScript
+ 
     @tool
     extends RichTextEffect
     class_name RichTextGhost
@@ -931,10 +932,35 @@ Ghost
         char_fx.color.a = alpha
         return true
 
+ .. code-tab:: csharp
+ 
+    using Godot;
+
+    [Tool]
+    public class RichTextGhost : RichTextEffect
+    {
+        // Syntax: [ghost freq=5.0 span=10.0][/ghost]
+
+        // Define the tag name.
+        private string bbcode = "ghost";
+
+        public override bool _ProcessCustomFX(CharFXTransform charFX)
+        {
+            // Get parameters, or use the provided default value if missing.
+            var speed = (float)charFx.Env.GetValueOrDefault("freq", 5.0f);
+            var span = (float)charFx.Env.GetValueOrDefault("span", 10.0f);
+
+            var alpha = Mathf.Sin(charFX.ElapsedTime * speed + (charFX.Range.X / span)) * 0.5f + 0.5f;
+            charFX.Color.A = alpha;
+            return true;
+        }
+    }
+
 Matrix
 ~~~~~~
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     @tool
     extends RichTextEffect
@@ -969,6 +995,48 @@ Matrix
             value += 65
         char_fx.glyph_index = get_text_server().font_get_glyph_index(char_fx.font, 1, value, 0)
         return true
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    [Tool]
+    public class RichTextMatrix : RichTextEffect
+    {
+        // Syntax: [matrix clean=2.0 dirty=1.0 span=50][/matrix]
+
+        // Define the tag name.
+        private string bbcode = "matrix";
+
+        // Gets TextServer for retrieving font information.
+        private TextServer GetTextServer()
+        {
+            return TextServerManager.GetPrimaryInterface();
+        }
+
+        public override bool _ProcessCustomFX(CharFXTransform charFX)
+        {
+            // Get parameters, or use the provided default value if missing.
+            var clearTime = (float)charFx.Env.GetValueOrDefault("clean", 2.0f);
+            var dirtyTime = (float)charFx.Env.GetValueOrDefault("dirty", 1.0f);
+            var textSpan = (float)charFx.Env.GetValueOrDefault("span", 50);
+
+            var value = charFX.GlyphIndex;
+
+            var matrixTime = (charFX.ElapsedTime + (charFx.Range.X / textSpan)) % (clearTime + dirtyTime);
+
+            matrixTime = matrixTime < clearTime ? 0.0f : (matrixTime - clearTime) / dirtyTime;
+
+            if (matrixTime > 0.0f)
+            {
+                value = (int)(1 * matrixTime * (126 - 65));
+                value %= (126 - 65);
+                value += 65;
+            }
+            charFX.GlyphIndex = GetTextServer().FontGetGlyphIndex(charFX.Font, 1, value, 0);
+            return true;
+        }
+    }
 
 This will add a few new BBCode commands, which can be used like so:
 
