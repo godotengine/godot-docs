@@ -105,7 +105,7 @@ Saving as WebP in Krita
 
 To save an image as webp if it isn't already one, Go to **File > Save As**. Select **webp** from the
 **Save as type:** dropdown, then choose wherever you want to save it. After clicking **Save** a menu
-will popup with webp options. Make sure **Losses** is checked and **Quality** is set to 100%. This
+will popup with webp options. Make sure **Lossless** is checked and **Quality** is set to 100%. This
 means the image will not lose detail and will be as small as possible.
 
 If the image is over 300KB in size try compressing it losslessly using `Squoosh <https://squoosh.app/>`_.
