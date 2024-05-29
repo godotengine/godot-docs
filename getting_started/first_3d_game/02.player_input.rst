@@ -171,7 +171,7 @@ In the next part, we'll code and test the player's movement.
 .. |image5| image:: img/02.player_input/06.toggling_visibility.webp
 .. |image6| image:: img/02.player_input/07.project_settings.png
 .. |image7| image:: img/02.player_input/07.input_map_tab.png
-.. |image8| image:: img/02.player_input/07.adding_action.png
+.. |image8| image:: img/02.player_input/07.adding_action.webp
 .. |image9| image:: img/02.player_input/08.actions_list_empty.png
 .. |image11| image:: img/02.player_input/09.keyboard_key_popup.png
 .. |image12| image:: img/02.player_input/09.keyboard_keys.png
