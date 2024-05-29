@@ -28,8 +28,7 @@ Here is a complete class example based on these guidelines:
 
 ::
 
-    class_name StateMachine
-    extends Node
+    class_name StateMachine extends Node
     ## Hierarchical State machine for the player.
     ##
     ## Initializes states and delegates engine callbacks ([method Node._physics_process],
@@ -626,14 +625,12 @@ Use snake_case for file names. For named classes, convert the PascalCase class
 name to snake_case::
 
     # This file should be saved as `weapon.gd`.
-    class_name Weapon
-    extends Node
+    class_name Weapon extends Node
 
 ::
 
     # This file should be saved as `yaml_parser.gd`.
-    class_name YAMLParser
-    extends Object
+    class_name YAMLParser extends Object
 
 This is consistent with how C++ files are named in Godot's source code. This
 also avoids case sensitivity issues that can crop up when exporting a project
@@ -716,25 +713,24 @@ We suggest to organize GDScript code this way:
 ::
 
     01. @tool
-    02. class_name
-    03. extends
-    04. # docstring
+    02. class_name extends (or just extends)
+    03. ## class documentation comment
 
-    05. signals
-    06. enums
-    07. constants
-    08. @export variables
-    09. public variables
-    10. private variables
-    11. @onready variables
+    04. signals
+    05. enums
+    06. constants
+    07. @export variables
+    08. public variables
+    09. private variables
+    10. @onready variables
 
-    12. optional built-in virtual _init method
-    13. optional built-in virtual _enter_tree() method
-    14. built-in virtual _ready method
-    15. remaining built-in virtual methods
-    16. public methods
-    17. private methods
-    18. subclasses
+    11. optional built-in virtual _init method
+    12. optional built-in virtual _enter_tree() method
+    13. built-in virtual _ready method
+    14. remaining built-in virtual methods
+    15. public methods
+    16. private methods
+    17. subclasses
 
 We optimized the order to make it easy to read the code from top to bottom, to
 help developers reading the code for the first time understand how it works, and
@@ -779,7 +775,7 @@ Signals and properties
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Write signal declarations, followed by properties, that is to say, member
-variables, after the docstring.
+variables, after the class documentation comment.
 
 Enums should come after signals, as you can use them as export hints for other
 properties.
