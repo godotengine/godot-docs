@@ -23,7 +23,6 @@ jobs:
       - name: Install dependencies
         run: |
           sudo pip3 install -r requirements.txt
-          sudo pip3 install codespell
           sudo apt update
           sudo apt install parallel libwebp7
 

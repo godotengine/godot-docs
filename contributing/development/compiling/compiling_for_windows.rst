@@ -93,7 +93,7 @@ The tutorial will assume from now on that you placed the source code in
 
     For Windows Defender, hit the :kbd:`Windows` key, type "Windows Security"
     then hit :kbd:`Enter`. Click on **Virus & threat protection** on the left
-    panel. Under **Virus & threat protection settings** click on **Mange Settings**
+    panel. Under **Virus & threat protection settings** click on **Manage Settings**
     and scroll down to **Exclusions**. Click **Add or remove exclusions** then
     add the Godot source folder.
 

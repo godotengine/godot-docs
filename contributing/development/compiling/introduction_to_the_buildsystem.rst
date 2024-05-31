@@ -397,7 +397,7 @@ For the folders accelerated by this option, multiple ``.cpp`` files are
 compiled in each translation unit, so headers can be shared between multiple
 files, which can dramatically decrease build times.
 
-To peform an SCU build, use the ``scu_build=yes`` SCons option.
+To perform an SCU build, use the ``scu_build=yes`` SCons option.
 
 .. note:: When developing a Pull Request using SCU builds, be sure to make a
           regular build prior to submitting the PR. This is because SCU builds

@@ -394,7 +394,7 @@ There are two solutions:
 - Follow `these instructions <https://github.com/ivmai/libatomic_ops#installation-and-usage>`__ to configure, build, and
   install ``libatomic_ops``. Then, copy ``/usr/lib/libatomic_ops.a`` to ``/usr/lib/libatomic.a``, or create a soft link
   to ``libatomic_ops`` by command ``ln -s /usr/lib/libatomic_ops.a /usr/lib/libatomic.a``. The soft link can ensure the
-  latest ``libatomic_ops`` will be used without the need to copy it everytime when it is updated.
+  latest ``libatomic_ops`` will be used without the need to copy it every time when it is updated.
 
 Using mold for faster development
 ---------------------------------
@@ -406,7 +406,7 @@ As of January 2023, mold is not readily available in Linux distribution
 repositories, so you will have to install its binaries manually.
 
 - Download mold binaries from its `releases page <https://github.com/rui314/mold/releases/latest>`__.
-- Extract the ``.tar.gz`` file, then move the extraced folder to a location such as ``.local/share/mold``.
+- Extract the ``.tar.gz`` file, then move the extracted folder to a location such as ``.local/share/mold``.
 - Add ``$HOME/.local/share/mold/bin`` to your user's ``PATH`` environment variable.
   For example, you can add the following line at the end of your ``$HOME/.bash_profile`` file:
 
