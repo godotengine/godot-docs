@@ -69,7 +69,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_reference_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_reference_count**\ (\ ) |const| :ref:`🔗<class_RefCounted_method_get_reference_count>`
 
 Returns the current reference count.
 
@@ -81,7 +81,7 @@ Returns the current reference count.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **init_ref**\ (\ )
+:ref:`bool<class_bool>` **init_ref**\ (\ ) :ref:`🔗<class_RefCounted_method_init_ref>`
 
 Initializes the internal reference counter. Use this only if you really know what you are doing.
 
@@ -95,7 +95,7 @@ Returns whether the initialization was successful.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **reference**\ (\ )
+:ref:`bool<class_bool>` **reference**\ (\ ) :ref:`🔗<class_RefCounted_method_reference>`
 
 Increments the internal reference counter. Use this only if you really know what you are doing.
 
@@ -109,7 +109,7 @@ Returns ``true`` if the increment was successful, ``false`` otherwise.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **unreference**\ (\ )
+:ref:`bool<class_bool>` **unreference**\ (\ ) :ref:`🔗<class_RefCounted_method_unreference>`
 
 Decrements the internal reference counter. Use this only if you really know what you are doing.
 

@@ -60,7 +60,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`JoyButton<enum_@GlobalScope_JoyButton>` **button_index** = ``0``
+:ref:`JoyButton<enum_@GlobalScope_JoyButton>` **button_index** = ``0`` :ref:`🔗<class_InputEventJoypadButton_property_button_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -77,7 +77,7 @@ Button identifier. One of the :ref:`JoyButton<enum_@GlobalScope_JoyButton>` butt
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **pressed** = ``false``
+:ref:`bool<class_bool>` **pressed** = ``false`` :ref:`🔗<class_InputEventJoypadButton_property_pressed>`
 
 .. rst-class:: classref-property-setget
 
@@ -94,7 +94,7 @@ If ``true``, the button's state is pressed. If ``false``, the button's state is 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pressure** = ``0.0``
+:ref:`float<class_float>` **pressure** = ``0.0`` :ref:`🔗<class_InputEventJoypadButton_property_pressure>`
 
 .. rst-class:: classref-property-setget
 

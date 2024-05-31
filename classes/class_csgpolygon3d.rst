@@ -85,7 +85,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Mode**:
+enum **Mode**: :ref:`🔗<enum_CSGPolygon3D_Mode>`
 
 .. _class_CSGPolygon3D_constant_MODE_DEPTH:
 
@@ -119,7 +119,7 @@ The :ref:`polygon<class_CSGPolygon3D_property_polygon>` shape is extruded along 
 
 .. rst-class:: classref-enumeration
 
-enum **PathRotation**:
+enum **PathRotation**: :ref:`🔗<enum_CSGPolygon3D_PathRotation>`
 
 .. _class_CSGPolygon3D_constant_PATH_ROTATION_POLYGON:
 
@@ -157,7 +157,7 @@ The :ref:`polygon<class_CSGPolygon3D_property_polygon>` shape follows the path a
 
 .. rst-class:: classref-enumeration
 
-enum **PathIntervalType**:
+enum **PathIntervalType**: :ref:`🔗<enum_CSGPolygon3D_PathIntervalType>`
 
 .. _class_CSGPolygon3D_constant_PATH_INTERVAL_DISTANCE:
 
@@ -188,7 +188,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **depth** = ``1.0``
+:ref:`float<class_float>` **depth** = ``1.0`` :ref:`🔗<class_CSGPolygon3D_property_depth>`
 
 .. rst-class:: classref-property-setget
 
@@ -205,7 +205,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_DEPTH<class_CSG
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_CSGPolygon3D_property_material>`
 
 .. rst-class:: classref-property-setget
 
@@ -222,7 +222,7 @@ Material to use for the resulting mesh. The UV maps the top half of the material
 
 .. rst-class:: classref-property
 
-:ref:`Mode<enum_CSGPolygon3D_Mode>` **mode** = ``0``
+:ref:`Mode<enum_CSGPolygon3D_Mode>` **mode** = ``0`` :ref:`🔗<class_CSGPolygon3D_property_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -239,7 +239,7 @@ The :ref:`mode<class_CSGPolygon3D_property_mode>` used to extrude the :ref:`poly
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **path_continuous_u**
+:ref:`bool<class_bool>` **path_continuous_u** :ref:`🔗<class_CSGPolygon3D_property_path_continuous_u>`
 
 .. rst-class:: classref-property-setget
 
@@ -256,7 +256,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **path_interval**
+:ref:`float<class_float>` **path_interval** :ref:`🔗<class_CSGPolygon3D_property_path_interval>`
 
 .. rst-class:: classref-property-setget
 
@@ -273,7 +273,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`PathIntervalType<enum_CSGPolygon3D_PathIntervalType>` **path_interval_type**
+:ref:`PathIntervalType<enum_CSGPolygon3D_PathIntervalType>` **path_interval_type** :ref:`🔗<class_CSGPolygon3D_property_path_interval_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -290,7 +290,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **path_joined**
+:ref:`bool<class_bool>` **path_joined** :ref:`🔗<class_CSGPolygon3D_property_path_joined>`
 
 .. rst-class:: classref-property-setget
 
@@ -307,7 +307,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **path_local**
+:ref:`bool<class_bool>` **path_local** :ref:`🔗<class_CSGPolygon3D_property_path_local>`
 
 .. rst-class:: classref-property-setget
 
@@ -324,7 +324,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **path_node**
+:ref:`NodePath<class_NodePath>` **path_node** :ref:`🔗<class_CSGPolygon3D_property_path_node>`
 
 .. rst-class:: classref-property-setget
 
@@ -341,7 +341,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`PathRotation<enum_CSGPolygon3D_PathRotation>` **path_rotation**
+:ref:`PathRotation<enum_CSGPolygon3D_PathRotation>` **path_rotation** :ref:`🔗<class_CSGPolygon3D_property_path_rotation>`
 
 .. rst-class:: classref-property-setget
 
@@ -358,7 +358,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **path_simplify_angle**
+:ref:`float<class_float>` **path_simplify_angle** :ref:`🔗<class_CSGPolygon3D_property_path_simplify_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -375,7 +375,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **path_u_distance**
+:ref:`float<class_float>` **path_u_distance** :ref:`🔗<class_CSGPolygon3D_property_path_u_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -392,7 +392,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array(0, 0, 0, 1, 1, 1, 1, 0)``
+:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array(0, 0, 0, 1, 1, 1, 1, 0)`` :ref:`🔗<class_CSGPolygon3D_property_polygon>`
 
 .. rst-class:: classref-property-setget
 
@@ -413,7 +413,7 @@ The point array that defines the 2D polygon that is extruded. This can be a conv
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **smooth_faces** = ``false``
+:ref:`bool<class_bool>` **smooth_faces** = ``false`` :ref:`🔗<class_CSGPolygon3D_property_smooth_faces>`
 
 .. rst-class:: classref-property-setget
 
@@ -430,7 +430,7 @@ If ``true``, applies smooth shading to the extrusions.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spin_degrees**
+:ref:`float<class_float>` **spin_degrees** :ref:`🔗<class_CSGPolygon3D_property_spin_degrees>`
 
 .. rst-class:: classref-property-setget
 
@@ -447,7 +447,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_SPIN<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **spin_sides**
+:ref:`int<class_int>` **spin_sides** :ref:`🔗<class_CSGPolygon3D_property_spin_sides>`
 
 .. rst-class:: classref-property-setget
 

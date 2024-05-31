@@ -99,7 +99,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**scroll_ended**\ (\ )
+**scroll_ended**\ (\ ) :ref:`🔗<class_ScrollContainer_signal_scroll_ended>`
 
 Emitted when scrolling stops when dragging the scrollable area *with a touch event*. This signal is *not* emitted when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
 
@@ -113,7 +113,7 @@ Emitted when scrolling stops when dragging the scrollable area *with a touch eve
 
 .. rst-class:: classref-signal
 
-**scroll_started**\ (\ )
+**scroll_started**\ (\ ) :ref:`🔗<class_ScrollContainer_signal_scroll_started>`
 
 Emitted when scrolling starts when dragging the scrollable area w\ *ith a touch event*. This signal is *not* emitted when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
 
@@ -132,7 +132,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ScrollMode**:
+enum **ScrollMode**: :ref:`🔗<enum_ScrollContainer_ScrollMode>`
 
 .. _class_ScrollContainer_constant_SCROLL_MODE_DISABLED:
 
@@ -179,7 +179,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **follow_focus** = ``false``
+:ref:`bool<class_bool>` **follow_focus** = ``false`` :ref:`🔗<class_ScrollContainer_property_follow_focus>`
 
 .. rst-class:: classref-property-setget
 
@@ -196,7 +196,7 @@ If ``true``, the ScrollContainer will automatically scroll to focused children (
 
 .. rst-class:: classref-property
 
-:ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` **horizontal_scroll_mode** = ``1``
+:ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` **horizontal_scroll_mode** = ``1`` :ref:`🔗<class_ScrollContainer_property_horizontal_scroll_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -213,7 +213,7 @@ Controls whether horizontal scrollbar can be used and when it should be visible.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **scroll_deadzone** = ``0``
+:ref:`int<class_int>` **scroll_deadzone** = ``0`` :ref:`🔗<class_ScrollContainer_property_scroll_deadzone>`
 
 .. rst-class:: classref-property-setget
 
@@ -230,7 +230,7 @@ Deadzone for touch scrolling. Lower deadzone makes the scrolling more sensitive.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **scroll_horizontal** = ``0``
+:ref:`int<class_int>` **scroll_horizontal** = ``0`` :ref:`🔗<class_ScrollContainer_property_scroll_horizontal>`
 
 .. rst-class:: classref-property-setget
 
@@ -254,7 +254,7 @@ The current horizontal scroll value.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **scroll_horizontal_custom_step** = ``-1.0``
+:ref:`float<class_float>` **scroll_horizontal_custom_step** = ``-1.0`` :ref:`🔗<class_ScrollContainer_property_scroll_horizontal_custom_step>`
 
 .. rst-class:: classref-property-setget
 
@@ -271,7 +271,7 @@ Overrides the :ref:`ScrollBar.custom_step<class_ScrollBar_property_custom_step>`
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **scroll_vertical** = ``0``
+:ref:`int<class_int>` **scroll_vertical** = ``0`` :ref:`🔗<class_ScrollContainer_property_scroll_vertical>`
 
 .. rst-class:: classref-property-setget
 
@@ -295,7 +295,7 @@ The current vertical scroll value.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **scroll_vertical_custom_step** = ``-1.0``
+:ref:`float<class_float>` **scroll_vertical_custom_step** = ``-1.0`` :ref:`🔗<class_ScrollContainer_property_scroll_vertical_custom_step>`
 
 .. rst-class:: classref-property-setget
 
@@ -312,7 +312,7 @@ Overrides the :ref:`ScrollBar.custom_step<class_ScrollBar_property_custom_step>`
 
 .. rst-class:: classref-property
 
-:ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` **vertical_scroll_mode** = ``1``
+:ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` **vertical_scroll_mode** = ``1`` :ref:`🔗<class_ScrollContainer_property_vertical_scroll_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -334,7 +334,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **ensure_control_visible**\ (\ control\: :ref:`Control<class_Control>`\ )
+|void| **ensure_control_visible**\ (\ control\: :ref:`Control<class_Control>`\ ) :ref:`🔗<class_ScrollContainer_method_ensure_control_visible>`
 
 Ensures the given ``control`` is visible (must be a direct or indirect child of the ScrollContainer). Used by :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`.
 
@@ -354,7 +354,7 @@ Ensures the given ``control`` is visible (must be a direct or indirect child of 
 
 .. rst-class:: classref-method
 
-:ref:`HScrollBar<class_HScrollBar>` **get_h_scroll_bar**\ (\ )
+:ref:`HScrollBar<class_HScrollBar>` **get_h_scroll_bar**\ (\ ) :ref:`🔗<class_ScrollContainer_method_get_h_scroll_bar>`
 
 Returns the horizontal scrollbar :ref:`HScrollBar<class_HScrollBar>` of this **ScrollContainer**.
 
@@ -368,7 +368,7 @@ Returns the horizontal scrollbar :ref:`HScrollBar<class_HScrollBar>` of this **S
 
 .. rst-class:: classref-method
 
-:ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar**\ (\ )
+:ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar**\ (\ ) :ref:`🔗<class_ScrollContainer_method_get_v_scroll_bar>`
 
 Returns the vertical scrollbar :ref:`VScrollBar<class_VScrollBar>` of this **ScrollContainer**.
 
@@ -387,7 +387,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **panel**
+:ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_ScrollContainer_theme_style_panel>`
 
 The background :ref:`StyleBox<class_StyleBox>` of the **ScrollContainer**.
 

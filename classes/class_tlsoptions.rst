@@ -68,7 +68,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`TLSOptions<class_TLSOptions>` **client**\ (\ trusted_chain\: :ref:`X509Certificate<class_X509Certificate>` = null, common_name_override\: :ref:`String<class_String>` = ""\ ) |static|
+:ref:`TLSOptions<class_TLSOptions>` **client**\ (\ trusted_chain\: :ref:`X509Certificate<class_X509Certificate>` = null, common_name_override\: :ref:`String<class_String>` = ""\ ) |static| :ref:`🔗<class_TLSOptions_method_client>`
 
 Creates a TLS client configuration which validates certificates and their common names (fully qualified domain names).
 
@@ -84,7 +84,7 @@ You can specify a custom ``trusted_chain`` of certification authorities (the def
 
 .. rst-class:: classref-method
 
-:ref:`TLSOptions<class_TLSOptions>` **client_unsafe**\ (\ trusted_chain\: :ref:`X509Certificate<class_X509Certificate>` = null\ ) |static|
+:ref:`TLSOptions<class_TLSOptions>` **client_unsafe**\ (\ trusted_chain\: :ref:`X509Certificate<class_X509Certificate>` = null\ ) |static| :ref:`🔗<class_TLSOptions_method_client_unsafe>`
 
 Creates an **unsafe** TLS client configuration where certificate validation is optional. You can optionally provide a valid ``trusted_chain``, but the common name of the certificates will never be checked. Using this configuration for purposes other than testing **is not recommended**.
 
@@ -98,7 +98,7 @@ Creates an **unsafe** TLS client configuration where certificate validation is o
 
 .. rst-class:: classref-method
 
-:ref:`TLSOptions<class_TLSOptions>` **server**\ (\ key\: :ref:`CryptoKey<class_CryptoKey>`, certificate\: :ref:`X509Certificate<class_X509Certificate>`\ ) |static|
+:ref:`TLSOptions<class_TLSOptions>` **server**\ (\ key\: :ref:`CryptoKey<class_CryptoKey>`, certificate\: :ref:`X509Certificate<class_X509Certificate>`\ ) |static| :ref:`🔗<class_TLSOptions_method_server>`
 
 Creates a TLS server configuration using the provided ``key`` and ``certificate``.
 

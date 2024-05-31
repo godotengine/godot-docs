@@ -341,7 +341,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**focus_entered**\ (\ )
+**focus_entered**\ (\ ) :ref:`🔗<class_Control_signal_focus_entered>`
 
 Emitted when the node gains focus.
 
@@ -353,7 +353,7 @@ Emitted when the node gains focus.
 
 .. rst-class:: classref-signal
 
-**focus_exited**\ (\ )
+**focus_exited**\ (\ ) :ref:`🔗<class_Control_signal_focus_exited>`
 
 Emitted when the node loses focus.
 
@@ -365,7 +365,7 @@ Emitted when the node loses focus.
 
 .. rst-class:: classref-signal
 
-**gui_input**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ )
+**gui_input**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) :ref:`🔗<class_Control_signal_gui_input>`
 
 Emitted when the node receives an :ref:`InputEvent<class_InputEvent>`.
 
@@ -377,7 +377,7 @@ Emitted when the node receives an :ref:`InputEvent<class_InputEvent>`.
 
 .. rst-class:: classref-signal
 
-**minimum_size_changed**\ (\ )
+**minimum_size_changed**\ (\ ) :ref:`🔗<class_Control_signal_minimum_size_changed>`
 
 Emitted when the node's minimum size changes.
 
@@ -389,7 +389,7 @@ Emitted when the node's minimum size changes.
 
 .. rst-class:: classref-signal
 
-**mouse_entered**\ (\ )
+**mouse_entered**\ (\ ) :ref:`🔗<class_Control_signal_mouse_entered>`
 
 Emitted when the mouse cursor enters the control's (or any child control's) visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
 
@@ -403,7 +403,7 @@ Emitted when the mouse cursor enters the control's (or any child control's) visi
 
 .. rst-class:: classref-signal
 
-**mouse_exited**\ (\ )
+**mouse_exited**\ (\ ) :ref:`🔗<class_Control_signal_mouse_exited>`
 
 Emitted when the mouse cursor leaves the control's (and all child control's) visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
 
@@ -425,7 +425,7 @@ Emitted when the mouse cursor leaves the control's (and all child control's) vis
 
 .. rst-class:: classref-signal
 
-**resized**\ (\ )
+**resized**\ (\ ) :ref:`🔗<class_Control_signal_resized>`
 
 Emitted when the control changes size.
 
@@ -437,7 +437,7 @@ Emitted when the control changes size.
 
 .. rst-class:: classref-signal
 
-**size_flags_changed**\ (\ )
+**size_flags_changed**\ (\ ) :ref:`🔗<class_Control_signal_size_flags_changed>`
 
 Emitted when one of the size flags changes. See :ref:`size_flags_horizontal<class_Control_property_size_flags_horizontal>` and :ref:`size_flags_vertical<class_Control_property_size_flags_vertical>`.
 
@@ -449,7 +449,7 @@ Emitted when one of the size flags changes. See :ref:`size_flags_horizontal<clas
 
 .. rst-class:: classref-signal
 
-**theme_changed**\ (\ )
+**theme_changed**\ (\ ) :ref:`🔗<class_Control_signal_theme_changed>`
 
 Emitted when the :ref:`NOTIFICATION_THEME_CHANGED<class_Control_constant_NOTIFICATION_THEME_CHANGED>` notification is sent.
 
@@ -466,7 +466,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FocusMode**:
+enum **FocusMode**: :ref:`🔗<enum_Control_FocusMode>`
 
 .. _class_Control_constant_FOCUS_NONE:
 
@@ -500,7 +500,7 @@ The node can grab focus on mouse click, using the arrows and the Tab keys on the
 
 .. rst-class:: classref-enumeration
 
-enum **CursorShape**:
+enum **CursorShape**: :ref:`🔗<enum_Control_CursorShape>`
 
 .. _class_Control_constant_CURSOR_ARROW:
 
@@ -646,7 +646,7 @@ Show the system's help mouse cursor when the user hovers the node, a question ma
 
 .. rst-class:: classref-enumeration
 
-enum **LayoutPreset**:
+enum **LayoutPreset**: :ref:`🔗<enum_Control_LayoutPreset>`
 
 .. _class_Control_constant_PRESET_TOP_LEFT:
 
@@ -784,7 +784,7 @@ Snap all 4 anchors to the respective corners of the parent control. Set all 4 of
 
 .. rst-class:: classref-enumeration
 
-enum **LayoutPresetMode**:
+enum **LayoutPresetMode**: :ref:`🔗<enum_Control_LayoutPresetMode>`
 
 .. _class_Control_constant_PRESET_MODE_MINSIZE:
 
@@ -826,7 +826,7 @@ The control's size will not change.
 
 .. rst-class:: classref-enumeration
 
-flags **SizeFlags**:
+flags **SizeFlags**: :ref:`🔗<enum_Control_SizeFlags>`
 
 .. _class_Control_constant_SIZE_SHRINK_BEGIN:
 
@@ -886,7 +886,7 @@ Tells the parent :ref:`Container<class_Container>` to align the node with its en
 
 .. rst-class:: classref-enumeration
 
-enum **MouseFilter**:
+enum **MouseFilter**: :ref:`🔗<enum_Control_MouseFilter>`
 
 .. _class_Control_constant_MOUSE_FILTER_STOP:
 
@@ -922,7 +922,7 @@ The control will not receive mouse movement input events and mouse button input 
 
 .. rst-class:: classref-enumeration
 
-enum **GrowDirection**:
+enum **GrowDirection**: :ref:`🔗<enum_Control_GrowDirection>`
 
 .. _class_Control_constant_GROW_DIRECTION_BEGIN:
 
@@ -956,7 +956,7 @@ The control will grow in both directions equally to make up if its minimum size 
 
 .. rst-class:: classref-enumeration
 
-enum **Anchor**:
+enum **Anchor**: :ref:`🔗<enum_Control_Anchor>`
 
 .. _class_Control_constant_ANCHOR_BEGIN:
 
@@ -982,7 +982,7 @@ Snaps one of the 4 anchor's sides to the end of the node's ``Rect``, in the bott
 
 .. rst-class:: classref-enumeration
 
-enum **LayoutDirection**:
+enum **LayoutDirection**: :ref:`🔗<enum_Control_LayoutDirection>`
 
 .. _class_Control_constant_LAYOUT_DIRECTION_INHERITED:
 
@@ -1024,7 +1024,7 @@ Right-to-left layout direction.
 
 .. rst-class:: classref-enumeration
 
-enum **TextDirection**:
+enum **TextDirection**: :ref:`🔗<enum_Control_TextDirection>`
 
 .. _class_Control_constant_TEXT_DIRECTION_INHERITED:
 
@@ -1071,7 +1071,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_RESIZED** = ``40``
+**NOTIFICATION_RESIZED** = ``40`` :ref:`🔗<class_Control_constant_NOTIFICATION_RESIZED>`
 
 Sent when the node changes size. Use :ref:`size<class_Control_property_size>` to get the new size.
 
@@ -1079,7 +1079,7 @@ Sent when the node changes size. Use :ref:`size<class_Control_property_size>` to
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_MOUSE_ENTER** = ``41``
+**NOTIFICATION_MOUSE_ENTER** = ``41`` :ref:`🔗<class_Control_constant_NOTIFICATION_MOUSE_ENTER>`
 
 Sent when the mouse cursor enters the control's (or any child control's) visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
 
@@ -1091,7 +1091,7 @@ See also :ref:`NOTIFICATION_MOUSE_ENTER_SELF<class_Control_constant_NOTIFICATION
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_MOUSE_EXIT** = ``42``
+**NOTIFICATION_MOUSE_EXIT** = ``42`` :ref:`🔗<class_Control_constant_NOTIFICATION_MOUSE_EXIT>`
 
 Sent when the mouse cursor leaves the control's (and all child control's) visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
 
@@ -1103,7 +1103,7 @@ See also :ref:`NOTIFICATION_MOUSE_EXIT_SELF<class_Control_constant_NOTIFICATION_
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_MOUSE_ENTER_SELF** = ``60``
+**NOTIFICATION_MOUSE_ENTER_SELF** = ``60`` :ref:`🔗<class_Control_constant_NOTIFICATION_MOUSE_ENTER_SELF>`
 
 **Experimental:** The reason this notification is sent may change in the future.
 
@@ -1117,7 +1117,7 @@ See also :ref:`NOTIFICATION_MOUSE_ENTER<class_Control_constant_NOTIFICATION_MOUS
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_MOUSE_EXIT_SELF** = ``61``
+**NOTIFICATION_MOUSE_EXIT_SELF** = ``61`` :ref:`🔗<class_Control_constant_NOTIFICATION_MOUSE_EXIT_SELF>`
 
 **Experimental:** The reason this notification is sent may change in the future.
 
@@ -1131,7 +1131,7 @@ See also :ref:`NOTIFICATION_MOUSE_EXIT<class_Control_constant_NOTIFICATION_MOUSE
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_FOCUS_ENTER** = ``43``
+**NOTIFICATION_FOCUS_ENTER** = ``43`` :ref:`🔗<class_Control_constant_NOTIFICATION_FOCUS_ENTER>`
 
 Sent when the node grabs focus.
 
@@ -1139,7 +1139,7 @@ Sent when the node grabs focus.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_FOCUS_EXIT** = ``44``
+**NOTIFICATION_FOCUS_EXIT** = ``44`` :ref:`🔗<class_Control_constant_NOTIFICATION_FOCUS_EXIT>`
 
 Sent when the node loses focus.
 
@@ -1147,7 +1147,7 @@ Sent when the node loses focus.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_THEME_CHANGED** = ``45``
+**NOTIFICATION_THEME_CHANGED** = ``45`` :ref:`🔗<class_Control_constant_NOTIFICATION_THEME_CHANGED>`
 
 Sent when the node needs to refresh its theme items. This happens in one of the following cases:
 
@@ -1175,7 +1175,7 @@ Sent when the node needs to refresh its theme items. This happens in one of the 
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_SCROLL_BEGIN** = ``47``
+**NOTIFICATION_SCROLL_BEGIN** = ``47`` :ref:`🔗<class_Control_constant_NOTIFICATION_SCROLL_BEGIN>`
 
 Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has begun being scrolled when dragging the scrollable area *with a touch event*. This notification is *not* sent when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
 
@@ -1185,7 +1185,7 @@ Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` wh
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_SCROLL_END** = ``48``
+**NOTIFICATION_SCROLL_END** = ``48`` :ref:`🔗<class_Control_constant_NOTIFICATION_SCROLL_END>`
 
 Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has stopped being scrolled when dragging the scrollable area *with a touch event*. This notification is *not* sent when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
 
@@ -1195,7 +1195,7 @@ Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` wh
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_LAYOUT_DIRECTION_CHANGED** = ``49``
+**NOTIFICATION_LAYOUT_DIRECTION_CHANGED** = ``49`` :ref:`🔗<class_Control_constant_NOTIFICATION_LAYOUT_DIRECTION_CHANGED>`
 
 Sent when control layout direction is changed.
 
@@ -1212,7 +1212,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **anchor_bottom** = ``0.0``
+:ref:`float<class_float>` **anchor_bottom** = ``0.0`` :ref:`🔗<class_Control_property_anchor_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -1228,7 +1228,7 @@ Anchors the bottom edge of the node to the origin, the center, or the end of its
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **anchor_left** = ``0.0``
+:ref:`float<class_float>` **anchor_left** = ``0.0`` :ref:`🔗<class_Control_property_anchor_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -1244,7 +1244,7 @@ Anchors the left edge of the node to the origin, the center or the end of its pa
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **anchor_right** = ``0.0``
+:ref:`float<class_float>` **anchor_right** = ``0.0`` :ref:`🔗<class_Control_property_anchor_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -1260,7 +1260,7 @@ Anchors the right edge of the node to the origin, the center or the end of its p
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **anchor_top** = ``0.0``
+:ref:`float<class_float>` **anchor_top** = ``0.0`` :ref:`🔗<class_Control_property_anchor_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -1276,7 +1276,7 @@ Anchors the top edge of the node to the origin, the center or the end of its par
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **auto_translate**
+:ref:`bool<class_bool>` **auto_translate** :ref:`🔗<class_Control_property_auto_translate>`
 
 .. rst-class:: classref-property-setget
 
@@ -1295,7 +1295,7 @@ Toggles if any text should automatically change to its translated version depend
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **clip_contents** = ``false``
+:ref:`bool<class_bool>` **clip_contents** = ``false`` :ref:`🔗<class_Control_property_clip_contents>`
 
 .. rst-class:: classref-property-setget
 
@@ -1312,7 +1312,7 @@ Enables whether rendering of :ref:`CanvasItem<class_CanvasItem>` based children 
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **custom_minimum_size** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **custom_minimum_size** = ``Vector2(0, 0)`` :ref:`🔗<class_Control_property_custom_minimum_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -1329,7 +1329,7 @@ The minimum size of the node's bounding rectangle. If you set it to a value grea
 
 .. rst-class:: classref-property
 
-:ref:`FocusMode<enum_Control_FocusMode>` **focus_mode** = ``0``
+:ref:`FocusMode<enum_Control_FocusMode>` **focus_mode** = ``0`` :ref:`🔗<class_Control_property_focus_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -1346,7 +1346,7 @@ The focus access mode for the control (None, Click or All). Only one Control can
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **focus_neighbor_bottom** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **focus_neighbor_bottom** = ``NodePath("")`` :ref:`🔗<class_Control_property_focus_neighbor_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -1363,7 +1363,7 @@ Tells Godot which node it should give focus to if the user presses the down arro
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **focus_neighbor_left** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **focus_neighbor_left** = ``NodePath("")`` :ref:`🔗<class_Control_property_focus_neighbor_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -1380,7 +1380,7 @@ Tells Godot which node it should give focus to if the user presses the left arro
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **focus_neighbor_right** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **focus_neighbor_right** = ``NodePath("")`` :ref:`🔗<class_Control_property_focus_neighbor_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -1397,7 +1397,7 @@ Tells Godot which node it should give focus to if the user presses the right arr
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **focus_neighbor_top** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **focus_neighbor_top** = ``NodePath("")`` :ref:`🔗<class_Control_property_focus_neighbor_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -1414,7 +1414,7 @@ Tells Godot which node it should give focus to if the user presses the top arrow
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **focus_next** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **focus_next** = ``NodePath("")`` :ref:`🔗<class_Control_property_focus_next>`
 
 .. rst-class:: classref-property-setget
 
@@ -1433,7 +1433,7 @@ If this property is not set, Godot will select a "best guess" based on surroundi
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **focus_previous** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **focus_previous** = ``NodePath("")`` :ref:`🔗<class_Control_property_focus_previous>`
 
 .. rst-class:: classref-property-setget
 
@@ -1452,7 +1452,7 @@ If this property is not set, Godot will select a "best guess" based on surroundi
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **global_position**
+:ref:`Vector2<class_Vector2>` **global_position** :ref:`🔗<class_Control_property_global_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -1468,7 +1468,7 @@ The node's global position, relative to the world (usually to the :ref:`CanvasLa
 
 .. rst-class:: classref-property
 
-:ref:`GrowDirection<enum_Control_GrowDirection>` **grow_horizontal** = ``1``
+:ref:`GrowDirection<enum_Control_GrowDirection>` **grow_horizontal** = ``1`` :ref:`🔗<class_Control_property_grow_horizontal>`
 
 .. rst-class:: classref-property-setget
 
@@ -1485,7 +1485,7 @@ Controls the direction on the horizontal axis in which the control should grow i
 
 .. rst-class:: classref-property
 
-:ref:`GrowDirection<enum_Control_GrowDirection>` **grow_vertical** = ``1``
+:ref:`GrowDirection<enum_Control_GrowDirection>` **grow_vertical** = ``1`` :ref:`🔗<class_Control_property_grow_vertical>`
 
 .. rst-class:: classref-property-setget
 
@@ -1502,7 +1502,7 @@ Controls the direction on the vertical axis in which the control should grow if 
 
 .. rst-class:: classref-property
 
-:ref:`LayoutDirection<enum_Control_LayoutDirection>` **layout_direction** = ``0``
+:ref:`LayoutDirection<enum_Control_LayoutDirection>` **layout_direction** = ``0`` :ref:`🔗<class_Control_property_layout_direction>`
 
 .. rst-class:: classref-property-setget
 
@@ -1519,7 +1519,7 @@ Controls layout direction and text writing direction. Right-to-left layouts are 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **localize_numeral_system** = ``true``
+:ref:`bool<class_bool>` **localize_numeral_system** = ``true`` :ref:`🔗<class_Control_property_localize_numeral_system>`
 
 .. rst-class:: classref-property-setget
 
@@ -1538,7 +1538,7 @@ If ``true``, automatically converts code line numbers, list indices, :ref:`SpinB
 
 .. rst-class:: classref-property
 
-:ref:`CursorShape<enum_Control_CursorShape>` **mouse_default_cursor_shape** = ``0``
+:ref:`CursorShape<enum_Control_CursorShape>` **mouse_default_cursor_shape** = ``0`` :ref:`🔗<class_Control_property_mouse_default_cursor_shape>`
 
 .. rst-class:: classref-property-setget
 
@@ -1557,7 +1557,7 @@ The default cursor shape for this control. Useful for Godot plugins and applicat
 
 .. rst-class:: classref-property
 
-:ref:`MouseFilter<enum_Control_MouseFilter>` **mouse_filter** = ``0``
+:ref:`MouseFilter<enum_Control_MouseFilter>` **mouse_filter** = ``0`` :ref:`🔗<class_Control_property_mouse_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -1574,7 +1574,7 @@ Controls whether the control will be able to receive mouse button input events t
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **mouse_force_pass_scroll_events** = ``true``
+:ref:`bool<class_bool>` **mouse_force_pass_scroll_events** = ``true`` :ref:`🔗<class_Control_property_mouse_force_pass_scroll_events>`
 
 .. rst-class:: classref-property-setget
 
@@ -1593,7 +1593,7 @@ You should disable it on the root of your UI if you do not want scroll events to
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **offset_bottom** = ``0.0``
+:ref:`float<class_float>` **offset_bottom** = ``0.0`` :ref:`🔗<class_Control_property_offset_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -1612,7 +1612,7 @@ Offsets are often controlled by one or multiple parent :ref:`Container<class_Con
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **offset_left** = ``0.0``
+:ref:`float<class_float>` **offset_left** = ``0.0`` :ref:`🔗<class_Control_property_offset_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -1631,7 +1631,7 @@ Offsets are often controlled by one or multiple parent :ref:`Container<class_Con
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **offset_right** = ``0.0``
+:ref:`float<class_float>` **offset_right** = ``0.0`` :ref:`🔗<class_Control_property_offset_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -1650,7 +1650,7 @@ Offsets are often controlled by one or multiple parent :ref:`Container<class_Con
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **offset_top** = ``0.0``
+:ref:`float<class_float>` **offset_top** = ``0.0`` :ref:`🔗<class_Control_property_offset_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -1669,7 +1669,7 @@ Offsets are often controlled by one or multiple parent :ref:`Container<class_Con
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **pivot_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **pivot_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_Control_property_pivot_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -1686,7 +1686,7 @@ By default, the node's pivot is its top-left corner. When you change its :ref:`r
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)`` :ref:`🔗<class_Control_property_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -1702,7 +1702,7 @@ The node's position, relative to its containing node. It corresponds to the rect
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rotation** = ``0.0``
+:ref:`float<class_float>` **rotation** = ``0.0`` :ref:`🔗<class_Control_property_rotation>`
 
 .. rst-class:: classref-property-setget
 
@@ -1721,7 +1721,7 @@ The node's rotation around its pivot, in radians. See :ref:`pivot_offset<class_C
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rotation_degrees**
+:ref:`float<class_float>` **rotation_degrees** :ref:`🔗<class_Control_property_rotation_degrees>`
 
 .. rst-class:: classref-property-setget
 
@@ -1738,7 +1738,7 @@ Helper property to access :ref:`rotation<class_Control_property_rotation>` in de
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **scale** = ``Vector2(1, 1)``
+:ref:`Vector2<class_Vector2>` **scale** = ``Vector2(1, 1)`` :ref:`🔗<class_Control_property_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -1761,7 +1761,7 @@ The node's scale, relative to its :ref:`size<class_Control_property_size>`. Chan
 
 .. rst-class:: classref-property
 
-:ref:`Node<class_Node>` **shortcut_context**
+:ref:`Node<class_Node>` **shortcut_context** :ref:`🔗<class_Control_property_shortcut_context>`
 
 .. rst-class:: classref-property-setget
 
@@ -1778,7 +1778,7 @@ The :ref:`Node<class_Node>` which must be a parent of the focused **Control** fo
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **size** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2(0, 0)`` :ref:`🔗<class_Control_property_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -1794,7 +1794,7 @@ The size of the node's bounding rectangle, in the node's coordinate system. :ref
 
 .. rst-class:: classref-property
 
-|bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\] **size_flags_horizontal** = ``1``
+|bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\] **size_flags_horizontal** = ``1`` :ref:`🔗<class_Control_property_size_flags_horizontal>`
 
 .. rst-class:: classref-property-setget
 
@@ -1811,7 +1811,7 @@ Tells the parent :ref:`Container<class_Container>` nodes how they should resize 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **size_flags_stretch_ratio** = ``1.0``
+:ref:`float<class_float>` **size_flags_stretch_ratio** = ``1.0`` :ref:`🔗<class_Control_property_size_flags_stretch_ratio>`
 
 .. rst-class:: classref-property-setget
 
@@ -1828,7 +1828,7 @@ If the node and at least one of its neighbors uses the :ref:`SIZE_EXPAND<class_C
 
 .. rst-class:: classref-property
 
-|bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\] **size_flags_vertical** = ``1``
+|bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\] **size_flags_vertical** = ``1`` :ref:`🔗<class_Control_property_size_flags_vertical>`
 
 .. rst-class:: classref-property-setget
 
@@ -1845,7 +1845,7 @@ Tells the parent :ref:`Container<class_Container>` nodes how they should resize 
 
 .. rst-class:: classref-property
 
-:ref:`Theme<class_Theme>` **theme**
+:ref:`Theme<class_Theme>` **theme** :ref:`🔗<class_Control_property_theme>`
 
 .. rst-class:: classref-property-setget
 
@@ -1864,7 +1864,7 @@ The :ref:`Theme<class_Theme>` resource this node and all its **Control** and :re
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **theme_type_variation** = ``&""``
+:ref:`StringName<class_StringName>` **theme_type_variation** = ``&""`` :ref:`🔗<class_Control_property_theme_type_variation>`
 
 .. rst-class:: classref-property-setget
 
@@ -1887,7 +1887,7 @@ When set, this property gives the highest priority to the type of the specified 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **tooltip_text** = ``""``
+:ref:`String<class_String>` **tooltip_text** = ``""`` :ref:`🔗<class_Control_property_tooltip_text>`
 
 .. rst-class:: classref-property-setget
 
@@ -1934,7 +1934,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_can_drop_data**\ (\ at_position\: :ref:`Vector2<class_Vector2>`, data\: :ref:`Variant<class_Variant>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_can_drop_data**\ (\ at_position\: :ref:`Vector2<class_Vector2>`, data\: :ref:`Variant<class_Variant>`\ ) |virtual| |const| :ref:`🔗<class_Control_private_method__can_drop_data>`
 
 Godot calls this method to test if ``data`` from a control's :ref:`_get_drag_data<class_Control_private_method__get_drag_data>` can be dropped at ``at_position``. ``at_position`` is local to this control.
 
@@ -1969,7 +1969,7 @@ This method should only be used to test the data. Process the data in :ref:`_dro
 
 .. rst-class:: classref-method
 
-|void| **_drop_data**\ (\ at_position\: :ref:`Vector2<class_Vector2>`, data\: :ref:`Variant<class_Variant>`\ ) |virtual|
+|void| **_drop_data**\ (\ at_position\: :ref:`Vector2<class_Vector2>`, data\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_Control_private_method__drop_data>`
 
 Godot calls this method to pass you the ``data`` from a control's :ref:`_get_drag_data<class_Control_private_method__get_drag_data>` result. Godot first calls :ref:`_can_drop_data<class_Control_private_method__can_drop_data>` to test if ``data`` is allowed to drop at ``at_position`` where ``at_position`` is local to this control.
 
@@ -2006,7 +2006,7 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`_get_dra
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_get_drag_data**\ (\ at_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+:ref:`Variant<class_Variant>` **_get_drag_data**\ (\ at_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_Control_private_method__get_drag_data>`
 
 Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns ``null`` if there is no data to drag. Controls that want to receive drop data should implement :ref:`_can_drop_data<class_Control_private_method__can_drop_data>` and :ref:`_drop_data<class_Control_private_method__drop_data>`. ``at_position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
 
@@ -2041,7 +2041,7 @@ A preview that will follow the mouse that should represent the data can be set w
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_minimum_size**\ (\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_minimum_size**\ (\ ) |virtual| |const| :ref:`🔗<class_Control_private_method__get_minimum_size>`
 
 Virtual method to be implemented by the user. Returns the minimum size for this control. Alternative to :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>` for controlling minimum size via code. The actual minimum size will be the max value of these two (in each axis separately).
 
@@ -2057,7 +2057,7 @@ If not overridden, defaults to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_tooltip**\ (\ at_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_tooltip**\ (\ at_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const| :ref:`🔗<class_Control_private_method__get_tooltip>`
 
 Virtual method to be implemented by the user. Returns the tooltip text for the position ``at_position`` in control's local coordinates, which will typically appear when the cursor is resting over this control. See :ref:`get_tooltip<class_Control_method_get_tooltip>`.
 
@@ -2071,7 +2071,7 @@ Virtual method to be implemented by the user. Returns the tooltip text for the p
 
 .. rst-class:: classref-method
 
-|void| **_gui_input**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |virtual|
+|void| **_gui_input**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |virtual| :ref:`🔗<class_Control_private_method__gui_input>`
 
 Virtual method to be implemented by the user. Use this method to process and accept inputs on UI elements. See :ref:`accept_event<class_Control_method_accept_event>`.
 
@@ -2124,7 +2124,7 @@ The event won't trigger if:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_point**\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_has_point**\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const| :ref:`🔗<class_Control_private_method__has_point>`
 
 Virtual method to be implemented by the user. Returns whether the given ``point`` is inside this control.
 
@@ -2140,7 +2140,7 @@ If not overridden, default behavior is checking if the point is within control's
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **_make_custom_tooltip**\ (\ for_text\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`Object<class_Object>` **_make_custom_tooltip**\ (\ for_text\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_Control_private_method__make_custom_tooltip>`
 
 Virtual method to be implemented by the user. Returns a **Control** node that should be used as a tooltip instead of the default one. The ``for_text`` includes the contents of the :ref:`tooltip_text<class_Control_property_tooltip_text>` property.
 
@@ -2206,7 +2206,7 @@ The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Vector3i<class_Vector3i>`\] **_structured_text_parser**\ (\ args\: :ref:`Array<class_Array>`, text\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Vector3i<class_Vector3i>`\] **_structured_text_parser**\ (\ args\: :ref:`Array<class_Array>`, text\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_Control_private_method__structured_text_parser>`
 
 User defined BiDi algorithm override function.
 
@@ -2220,7 +2220,7 @@ Returns an :ref:`Array<class_Array>` of :ref:`Vector3i<class_Vector3i>` text ran
 
 .. rst-class:: classref-method
 
-|void| **accept_event**\ (\ )
+|void| **accept_event**\ (\ ) :ref:`🔗<class_Control_method_accept_event>`
 
 Marks an input event as handled. Once you accept an input event, it stops propagating, even to nodes listening to :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>` or :ref:`Node._unhandled_key_input<class_Node_private_method__unhandled_key_input>`.
 
@@ -2234,7 +2234,7 @@ Marks an input event as handled. Once you accept an input event, it stops propag
 
 .. rst-class:: classref-method
 
-|void| **add_theme_color_override**\ (\ name\: :ref:`StringName<class_StringName>`, color\: :ref:`Color<class_Color>`\ )
+|void| **add_theme_color_override**\ (\ name\: :ref:`StringName<class_StringName>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Control_method_add_theme_color_override>`
 
 Creates a local override for a theme :ref:`Color<class_Color>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_color_override<class_Control_method_remove_theme_color_override>`.
 
@@ -2273,7 +2273,7 @@ See also :ref:`get_theme_color<class_Control_method_get_theme_color>`.
 
 .. rst-class:: classref-method
 
-|void| **add_theme_constant_override**\ (\ name\: :ref:`StringName<class_StringName>`, constant\: :ref:`int<class_int>`\ )
+|void| **add_theme_constant_override**\ (\ name\: :ref:`StringName<class_StringName>`, constant\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Control_method_add_theme_constant_override>`
 
 Creates a local override for a theme constant with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_constant_override<class_Control_method_remove_theme_constant_override>`.
 
@@ -2287,7 +2287,7 @@ See also :ref:`get_theme_constant<class_Control_method_get_theme_constant>`.
 
 .. rst-class:: classref-method
 
-|void| **add_theme_font_override**\ (\ name\: :ref:`StringName<class_StringName>`, font\: :ref:`Font<class_Font>`\ )
+|void| **add_theme_font_override**\ (\ name\: :ref:`StringName<class_StringName>`, font\: :ref:`Font<class_Font>`\ ) :ref:`🔗<class_Control_method_add_theme_font_override>`
 
 Creates a local override for a theme :ref:`Font<class_Font>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_font_override<class_Control_method_remove_theme_font_override>`.
 
@@ -2301,7 +2301,7 @@ See also :ref:`get_theme_font<class_Control_method_get_theme_font>`.
 
 .. rst-class:: classref-method
 
-|void| **add_theme_font_size_override**\ (\ name\: :ref:`StringName<class_StringName>`, font_size\: :ref:`int<class_int>`\ )
+|void| **add_theme_font_size_override**\ (\ name\: :ref:`StringName<class_StringName>`, font_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Control_method_add_theme_font_size_override>`
 
 Creates a local override for a theme font size with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_font_size_override<class_Control_method_remove_theme_font_size_override>`.
 
@@ -2315,7 +2315,7 @@ See also :ref:`get_theme_font_size<class_Control_method_get_theme_font_size>`.
 
 .. rst-class:: classref-method
 
-|void| **add_theme_icon_override**\ (\ name\: :ref:`StringName<class_StringName>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **add_theme_icon_override**\ (\ name\: :ref:`StringName<class_StringName>`, texture\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_Control_method_add_theme_icon_override>`
 
 Creates a local override for a theme icon with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_icon_override<class_Control_method_remove_theme_icon_override>`.
 
@@ -2329,7 +2329,7 @@ See also :ref:`get_theme_icon<class_Control_method_get_theme_icon>`.
 
 .. rst-class:: classref-method
 
-|void| **add_theme_stylebox_override**\ (\ name\: :ref:`StringName<class_StringName>`, stylebox\: :ref:`StyleBox<class_StyleBox>`\ )
+|void| **add_theme_stylebox_override**\ (\ name\: :ref:`StringName<class_StringName>`, stylebox\: :ref:`StyleBox<class_StyleBox>`\ ) :ref:`🔗<class_Control_method_add_theme_stylebox_override>`
 
 Creates a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_stylebox_override<class_Control_method_remove_theme_stylebox_override>`.
 
@@ -2374,7 +2374,7 @@ See also :ref:`get_theme_stylebox<class_Control_method_get_theme_stylebox>`.
 
 .. rst-class:: classref-method
 
-|void| **begin_bulk_theme_override**\ (\ )
+|void| **begin_bulk_theme_override**\ (\ ) :ref:`🔗<class_Control_method_begin_bulk_theme_override>`
 
 Prevents ``*_theme_*_override`` methods from emitting :ref:`NOTIFICATION_THEME_CHANGED<class_Control_constant_NOTIFICATION_THEME_CHANGED>` until :ref:`end_bulk_theme_override<class_Control_method_end_bulk_theme_override>` is called.
 
@@ -2386,7 +2386,7 @@ Prevents ``*_theme_*_override`` methods from emitting :ref:`NOTIFICATION_THEME_C
 
 .. rst-class:: classref-method
 
-|void| **end_bulk_theme_override**\ (\ )
+|void| **end_bulk_theme_override**\ (\ ) :ref:`🔗<class_Control_method_end_bulk_theme_override>`
 
 Ends a bulk theme override update. See :ref:`begin_bulk_theme_override<class_Control_method_begin_bulk_theme_override>`.
 
@@ -2398,7 +2398,7 @@ Ends a bulk theme override update. See :ref:`begin_bulk_theme_override<class_Con
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **find_next_valid_focus**\ (\ ) |const|
+:ref:`Control<class_Control>` **find_next_valid_focus**\ (\ ) |const| :ref:`🔗<class_Control_method_find_next_valid_focus>`
 
 Finds the next (below in the tree) **Control** that can receive the focus.
 
@@ -2410,7 +2410,7 @@ Finds the next (below in the tree) **Control** that can receive the focus.
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **find_prev_valid_focus**\ (\ ) |const|
+:ref:`Control<class_Control>` **find_prev_valid_focus**\ (\ ) |const| :ref:`🔗<class_Control_method_find_prev_valid_focus>`
 
 Finds the previous (above in the tree) **Control** that can receive the focus.
 
@@ -2422,7 +2422,7 @@ Finds the previous (above in the tree) **Control** that can receive the focus.
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **find_valid_focus_neighbor**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
+:ref:`Control<class_Control>` **find_valid_focus_neighbor**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const| :ref:`🔗<class_Control_method_find_valid_focus_neighbor>`
 
 Finds the next **Control** that can receive the focus on the specified :ref:`Side<enum_@GlobalScope_Side>`.
 
@@ -2436,7 +2436,7 @@ Finds the next **Control** that can receive the focus on the specified :ref:`Sid
 
 .. rst-class:: classref-method
 
-|void| **force_drag**\ (\ data\: :ref:`Variant<class_Variant>`, preview\: :ref:`Control<class_Control>`\ )
+|void| **force_drag**\ (\ data\: :ref:`Variant<class_Variant>`, preview\: :ref:`Control<class_Control>`\ ) :ref:`🔗<class_Control_method_force_drag>`
 
 Forces drag and bypasses :ref:`_get_drag_data<class_Control_private_method__get_drag_data>` and :ref:`set_drag_preview<class_Control_method_set_drag_preview>` by passing ``data`` and ``preview``. Drag will start even if the mouse is neither over nor pressed on this control.
 
@@ -2450,7 +2450,7 @@ The methods :ref:`_can_drop_data<class_Control_private_method__can_drop_data>` a
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_anchor**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
+:ref:`float<class_float>` **get_anchor**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const| :ref:`🔗<class_Control_method_get_anchor>`
 
 Returns the anchor for the specified :ref:`Side<enum_@GlobalScope_Side>`. A getter method for :ref:`anchor_bottom<class_Control_property_anchor_bottom>`, :ref:`anchor_left<class_Control_property_anchor_left>`, :ref:`anchor_right<class_Control_property_anchor_right>` and :ref:`anchor_top<class_Control_property_anchor_top>`.
 
@@ -2462,7 +2462,7 @@ Returns the anchor for the specified :ref:`Side<enum_@GlobalScope_Side>`. A gett
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_begin**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_begin**\ (\ ) |const| :ref:`🔗<class_Control_method_get_begin>`
 
 Returns :ref:`offset_left<class_Control_property_offset_left>` and :ref:`offset_top<class_Control_property_offset_top>`. See also :ref:`position<class_Control_property_position>`.
 
@@ -2474,7 +2474,7 @@ Returns :ref:`offset_left<class_Control_property_offset_left>` and :ref:`offset_
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_combined_minimum_size**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_combined_minimum_size**\ (\ ) |const| :ref:`🔗<class_Control_method_get_combined_minimum_size>`
 
 Returns combined minimum size from :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>` and :ref:`get_minimum_size<class_Control_method_get_minimum_size>`.
 
@@ -2486,7 +2486,7 @@ Returns combined minimum size from :ref:`custom_minimum_size<class_Control_prope
 
 .. rst-class:: classref-method
 
-:ref:`CursorShape<enum_Control_CursorShape>` **get_cursor_shape**\ (\ position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const|
+:ref:`CursorShape<enum_Control_CursorShape>` **get_cursor_shape**\ (\ position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const| :ref:`🔗<class_Control_method_get_cursor_shape>`
 
 Returns the mouse cursor shape the control displays on mouse hover. See :ref:`CursorShape<enum_Control_CursorShape>`.
 
@@ -2498,7 +2498,7 @@ Returns the mouse cursor shape the control displays on mouse hover. See :ref:`Cu
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_end**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_end**\ (\ ) |const| :ref:`🔗<class_Control_method_get_end>`
 
 Returns :ref:`offset_right<class_Control_property_offset_right>` and :ref:`offset_bottom<class_Control_property_offset_bottom>`.
 
@@ -2510,7 +2510,7 @@ Returns :ref:`offset_right<class_Control_property_offset_right>` and :ref:`offse
 
 .. rst-class:: classref-method
 
-:ref:`NodePath<class_NodePath>` **get_focus_neighbor**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
+:ref:`NodePath<class_NodePath>` **get_focus_neighbor**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const| :ref:`🔗<class_Control_method_get_focus_neighbor>`
 
 Returns the focus neighbor for the specified :ref:`Side<enum_@GlobalScope_Side>`. A getter method for :ref:`focus_neighbor_bottom<class_Control_property_focus_neighbor_bottom>`, :ref:`focus_neighbor_left<class_Control_property_focus_neighbor_left>`, :ref:`focus_neighbor_right<class_Control_property_focus_neighbor_right>` and :ref:`focus_neighbor_top<class_Control_property_focus_neighbor_top>`.
 
@@ -2524,7 +2524,7 @@ Returns the focus neighbor for the specified :ref:`Side<enum_@GlobalScope_Side>`
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_global_rect**\ (\ ) |const|
+:ref:`Rect2<class_Rect2>` **get_global_rect**\ (\ ) |const| :ref:`🔗<class_Control_method_get_global_rect>`
 
 Returns the position and size of the control relative to the containing canvas. See :ref:`global_position<class_Control_property_global_position>` and :ref:`size<class_Control_property_size>`.
 
@@ -2540,7 +2540,7 @@ Returns the position and size of the control relative to the containing canvas. 
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_minimum_size**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_minimum_size**\ (\ ) |const| :ref:`🔗<class_Control_method_get_minimum_size>`
 
 Returns the minimum size for this control. See :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>`.
 
@@ -2552,7 +2552,7 @@ Returns the minimum size for this control. See :ref:`custom_minimum_size<class_C
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_offset**\ (\ offset\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
+:ref:`float<class_float>` **get_offset**\ (\ offset\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const| :ref:`🔗<class_Control_method_get_offset>`
 
 Returns the offset for the specified :ref:`Side<enum_@GlobalScope_Side>`. A getter method for :ref:`offset_bottom<class_Control_property_offset_bottom>`, :ref:`offset_left<class_Control_property_offset_left>`, :ref:`offset_right<class_Control_property_offset_right>` and :ref:`offset_top<class_Control_property_offset_top>`.
 
@@ -2564,7 +2564,7 @@ Returns the offset for the specified :ref:`Side<enum_@GlobalScope_Side>`. A gett
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_parent_area_size**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_parent_area_size**\ (\ ) |const| :ref:`🔗<class_Control_method_get_parent_area_size>`
 
 Returns the width/height occupied in the parent control.
 
@@ -2576,7 +2576,7 @@ Returns the width/height occupied in the parent control.
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **get_parent_control**\ (\ ) |const|
+:ref:`Control<class_Control>` **get_parent_control**\ (\ ) |const| :ref:`🔗<class_Control_method_get_parent_control>`
 
 Returns the parent control node.
 
@@ -2588,7 +2588,7 @@ Returns the parent control node.
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_rect**\ (\ ) |const|
+:ref:`Rect2<class_Rect2>` **get_rect**\ (\ ) |const| :ref:`🔗<class_Control_method_get_rect>`
 
 Returns the position and size of the control in the coordinate system of the containing node. See :ref:`position<class_Control_property_position>`, :ref:`scale<class_Control_property_scale>` and :ref:`size<class_Control_property_size>`.
 
@@ -2604,7 +2604,7 @@ Returns the position and size of the control in the coordinate system of the con
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_screen_position**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_screen_position**\ (\ ) |const| :ref:`🔗<class_Control_method_get_screen_position>`
 
 Returns the position of this **Control** in global screen coordinates (i.e. taking window position into account). Mostly useful for editor plugins.
 
@@ -2626,7 +2626,7 @@ Equals to :ref:`global_position<class_Control_property_global_position>` if the 
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_theme_color**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`Color<class_Color>` **get_theme_color**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_get_theme_color>`
 
 Returns a :ref:`Color<class_Color>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a color item with the specified ``name`` and ``theme_type``. If ``theme_type`` is omitted the class name of the current control is used as the type, or :ref:`theme_type_variation<class_Control_property_theme_type_variation>` if it is defined. If the type is a class name its parent classes are also checked, in order of inheritance. If the type is a variation its base types are checked, in order of dependency, then the control's class name and its parent classes are checked.
 
@@ -2663,7 +2663,7 @@ For the current control its local overrides are considered first (see :ref:`add_
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_theme_constant**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`int<class_int>` **get_theme_constant**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_get_theme_constant>`
 
 Returns a constant from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a constant item with the specified ``name`` and ``theme_type``.
 
@@ -2677,7 +2677,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_theme_default_base_scale**\ (\ ) |const|
+:ref:`float<class_float>` **get_theme_default_base_scale**\ (\ ) |const| :ref:`🔗<class_Control_method_get_theme_default_base_scale>`
 
 Returns the default base scale value from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a valid :ref:`Theme.default_base_scale<class_Theme_property_default_base_scale>` value.
 
@@ -2691,7 +2691,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`Font<class_Font>` **get_theme_default_font**\ (\ ) |const|
+:ref:`Font<class_Font>` **get_theme_default_font**\ (\ ) |const| :ref:`🔗<class_Control_method_get_theme_default_font>`
 
 Returns the default font from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a valid :ref:`Theme.default_font<class_Theme_property_default_font>` value.
 
@@ -2705,7 +2705,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_theme_default_font_size**\ (\ ) |const|
+:ref:`int<class_int>` **get_theme_default_font_size**\ (\ ) |const| :ref:`🔗<class_Control_method_get_theme_default_font_size>`
 
 Returns the default font size value from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a valid :ref:`Theme.default_font_size<class_Theme_property_default_font_size>` value.
 
@@ -2719,7 +2719,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`Font<class_Font>` **get_theme_font**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`Font<class_Font>` **get_theme_font**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_get_theme_font>`
 
 Returns a :ref:`Font<class_Font>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a font item with the specified ``name`` and ``theme_type``.
 
@@ -2733,7 +2733,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_theme_font_size**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`int<class_int>` **get_theme_font_size**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_get_theme_font_size>`
 
 Returns a font size from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a font size item with the specified ``name`` and ``theme_type``.
 
@@ -2747,7 +2747,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_theme_icon**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`Texture2D<class_Texture2D>` **get_theme_icon**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_get_theme_icon>`
 
 Returns an icon from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has an icon item with the specified ``name`` and ``theme_type``.
 
@@ -2761,7 +2761,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`StyleBox<class_StyleBox>` **get_theme_stylebox**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`StyleBox<class_StyleBox>` **get_theme_stylebox**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_get_theme_stylebox>`
 
 Returns a :ref:`StyleBox<class_StyleBox>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a stylebox item with the specified ``name`` and ``theme_type``.
 
@@ -2775,7 +2775,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_tooltip**\ (\ at_position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const|
+:ref:`String<class_String>` **get_tooltip**\ (\ at_position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |const| :ref:`🔗<class_Control_method_get_tooltip>`
 
 Returns the tooltip text for the position ``at_position`` in control's local coordinates, which will typically appear when the cursor is resting over this control. By default, it returns :ref:`tooltip_text<class_Control_property_tooltip_text>`.
 
@@ -2791,7 +2791,7 @@ This method can be overridden to customize its behavior. See :ref:`_get_tooltip<
 
 .. rst-class:: classref-method
 
-|void| **grab_click_focus**\ (\ )
+|void| **grab_click_focus**\ (\ ) :ref:`🔗<class_Control_method_grab_click_focus>`
 
 Creates an :ref:`InputEventMouseButton<class_InputEventMouseButton>` that attempts to click the control. If the event is received, the control acquires focus.
 
@@ -2820,7 +2820,7 @@ Creates an :ref:`InputEventMouseButton<class_InputEventMouseButton>` that attemp
 
 .. rst-class:: classref-method
 
-|void| **grab_focus**\ (\ )
+|void| **grab_focus**\ (\ ) :ref:`🔗<class_Control_method_grab_focus>`
 
 Steal the focus from another control and become the focused control (see :ref:`focus_mode<class_Control_property_focus_mode>`).
 
@@ -2834,7 +2834,7 @@ Steal the focus from another control and become the focused control (see :ref:`f
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_focus**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_focus**\ (\ ) |const| :ref:`🔗<class_Control_method_has_focus>`
 
 Returns ``true`` if this is the current focused control. See :ref:`focus_mode<class_Control_property_focus_mode>`.
 
@@ -2846,7 +2846,7 @@ Returns ``true`` if this is the current focused control. See :ref:`focus_mode<cl
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_color**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`bool<class_bool>` **has_theme_color**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_has_theme_color>`
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a color item with the specified ``name`` and ``theme_type``.
 
@@ -2860,7 +2860,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_color_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_theme_color_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Control_method_has_theme_color_override>`
 
 Returns ``true`` if there is a local override for a theme :ref:`Color<class_Color>` with the specified ``name`` in this **Control** node.
 
@@ -2874,7 +2874,7 @@ See :ref:`add_theme_color_override<class_Control_method_add_theme_color_override
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_constant**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`bool<class_bool>` **has_theme_constant**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_has_theme_constant>`
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a constant item with the specified ``name`` and ``theme_type``.
 
@@ -2888,7 +2888,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_constant_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_theme_constant_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Control_method_has_theme_constant_override>`
 
 Returns ``true`` if there is a local override for a theme constant with the specified ``name`` in this **Control** node.
 
@@ -2902,7 +2902,7 @@ See :ref:`add_theme_constant_override<class_Control_method_add_theme_constant_ov
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_font**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`bool<class_bool>` **has_theme_font**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_has_theme_font>`
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a font item with the specified ``name`` and ``theme_type``.
 
@@ -2916,7 +2916,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_font_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_theme_font_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Control_method_has_theme_font_override>`
 
 Returns ``true`` if there is a local override for a theme :ref:`Font<class_Font>` with the specified ``name`` in this **Control** node.
 
@@ -2930,7 +2930,7 @@ See :ref:`add_theme_font_override<class_Control_method_add_theme_font_override>`
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_font_size**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`bool<class_bool>` **has_theme_font_size**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_has_theme_font_size>`
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a font size item with the specified ``name`` and ``theme_type``.
 
@@ -2944,7 +2944,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_font_size_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_theme_font_size_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Control_method_has_theme_font_size_override>`
 
 Returns ``true`` if there is a local override for a theme font size with the specified ``name`` in this **Control** node.
 
@@ -2958,7 +2958,7 @@ See :ref:`add_theme_font_size_override<class_Control_method_add_theme_font_size_
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_icon**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`bool<class_bool>` **has_theme_icon**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_has_theme_icon>`
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has an icon item with the specified ``name`` and ``theme_type``.
 
@@ -2972,7 +2972,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_icon_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_theme_icon_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Control_method_has_theme_icon_override>`
 
 Returns ``true`` if there is a local override for a theme icon with the specified ``name`` in this **Control** node.
 
@@ -2986,7 +2986,7 @@ See :ref:`add_theme_icon_override<class_Control_method_add_theme_icon_override>`
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_stylebox**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`bool<class_bool>` **has_theme_stylebox**\ (\ name\: :ref:`StringName<class_StringName>`, theme_type\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_Control_method_has_theme_stylebox>`
 
 Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a stylebox item with the specified ``name`` and ``theme_type``.
 
@@ -3000,7 +3000,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_theme_stylebox_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_theme_stylebox_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Control_method_has_theme_stylebox_override>`
 
 Returns ``true`` if there is a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name`` in this **Control** node.
 
@@ -3014,7 +3014,7 @@ See :ref:`add_theme_stylebox_override<class_Control_method_add_theme_stylebox_ov
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_drag_successful**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_drag_successful**\ (\ ) |const| :ref:`🔗<class_Control_method_is_drag_successful>`
 
 Returns ``true`` if a drag operation is successful. Alternative to :ref:`Viewport.gui_is_drag_successful<class_Viewport_method_gui_is_drag_successful>`.
 
@@ -3028,7 +3028,7 @@ Best used with :ref:`Node.NOTIFICATION_DRAG_END<class_Node_constant_NOTIFICATION
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_layout_rtl**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_layout_rtl**\ (\ ) |const| :ref:`🔗<class_Control_method_is_layout_rtl>`
 
 Returns ``true`` if layout is right-to-left.
 
@@ -3040,7 +3040,7 @@ Returns ``true`` if layout is right-to-left.
 
 .. rst-class:: classref-method
 
-|void| **release_focus**\ (\ )
+|void| **release_focus**\ (\ ) :ref:`🔗<class_Control_method_release_focus>`
 
 Give up the focus. No other control will be able to receive input.
 
@@ -3052,7 +3052,7 @@ Give up the focus. No other control will be able to receive input.
 
 .. rst-class:: classref-method
 
-|void| **remove_theme_color_override**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **remove_theme_color_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Control_method_remove_theme_color_override>`
 
 Removes a local override for a theme :ref:`Color<class_Color>` with the specified ``name`` previously added by :ref:`add_theme_color_override<class_Control_method_add_theme_color_override>` or via the Inspector dock.
 
@@ -3064,7 +3064,7 @@ Removes a local override for a theme :ref:`Color<class_Color>` with the specifie
 
 .. rst-class:: classref-method
 
-|void| **remove_theme_constant_override**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **remove_theme_constant_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Control_method_remove_theme_constant_override>`
 
 Removes a local override for a theme constant with the specified ``name`` previously added by :ref:`add_theme_constant_override<class_Control_method_add_theme_constant_override>` or via the Inspector dock.
 
@@ -3076,7 +3076,7 @@ Removes a local override for a theme constant with the specified ``name`` previo
 
 .. rst-class:: classref-method
 
-|void| **remove_theme_font_override**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **remove_theme_font_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Control_method_remove_theme_font_override>`
 
 Removes a local override for a theme :ref:`Font<class_Font>` with the specified ``name`` previously added by :ref:`add_theme_font_override<class_Control_method_add_theme_font_override>` or via the Inspector dock.
 
@@ -3088,7 +3088,7 @@ Removes a local override for a theme :ref:`Font<class_Font>` with the specified 
 
 .. rst-class:: classref-method
 
-|void| **remove_theme_font_size_override**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **remove_theme_font_size_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Control_method_remove_theme_font_size_override>`
 
 Removes a local override for a theme font size with the specified ``name`` previously added by :ref:`add_theme_font_size_override<class_Control_method_add_theme_font_size_override>` or via the Inspector dock.
 
@@ -3100,7 +3100,7 @@ Removes a local override for a theme font size with the specified ``name`` previ
 
 .. rst-class:: classref-method
 
-|void| **remove_theme_icon_override**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **remove_theme_icon_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Control_method_remove_theme_icon_override>`
 
 Removes a local override for a theme icon with the specified ``name`` previously added by :ref:`add_theme_icon_override<class_Control_method_add_theme_icon_override>` or via the Inspector dock.
 
@@ -3112,7 +3112,7 @@ Removes a local override for a theme icon with the specified ``name`` previously
 
 .. rst-class:: classref-method
 
-|void| **remove_theme_stylebox_override**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **remove_theme_stylebox_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Control_method_remove_theme_stylebox_override>`
 
 Removes a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name`` previously added by :ref:`add_theme_stylebox_override<class_Control_method_add_theme_stylebox_override>` or via the Inspector dock.
 
@@ -3124,7 +3124,7 @@ Removes a local override for a theme :ref:`StyleBox<class_StyleBox>` with the sp
 
 .. rst-class:: classref-method
 
-|void| **reset_size**\ (\ )
+|void| **reset_size**\ (\ ) :ref:`🔗<class_Control_method_reset_size>`
 
 Resets the size to :ref:`get_combined_minimum_size<class_Control_method_get_combined_minimum_size>`. This is equivalent to calling ``set_size(Vector2())`` (or any size below the minimum).
 
@@ -3136,7 +3136,7 @@ Resets the size to :ref:`get_combined_minimum_size<class_Control_method_get_comb
 
 .. rst-class:: classref-method
 
-|void| **set_anchor**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`, anchor\: :ref:`float<class_float>`, keep_offset\: :ref:`bool<class_bool>` = false, push_opposite_anchor\: :ref:`bool<class_bool>` = true\ )
+|void| **set_anchor**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`, anchor\: :ref:`float<class_float>`, keep_offset\: :ref:`bool<class_bool>` = false, push_opposite_anchor\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_Control_method_set_anchor>`
 
 Sets the anchor for the specified :ref:`Side<enum_@GlobalScope_Side>` to ``anchor``. A setter method for :ref:`anchor_bottom<class_Control_property_anchor_bottom>`, :ref:`anchor_left<class_Control_property_anchor_left>`, :ref:`anchor_right<class_Control_property_anchor_right>` and :ref:`anchor_top<class_Control_property_anchor_top>`.
 
@@ -3152,7 +3152,7 @@ If ``push_opposite_anchor`` is ``true`` and the opposite anchor overlaps this an
 
 .. rst-class:: classref-method
 
-|void| **set_anchor_and_offset**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`, anchor\: :ref:`float<class_float>`, offset\: :ref:`float<class_float>`, push_opposite_anchor\: :ref:`bool<class_bool>` = false\ )
+|void| **set_anchor_and_offset**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`, anchor\: :ref:`float<class_float>`, offset\: :ref:`float<class_float>`, push_opposite_anchor\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Control_method_set_anchor_and_offset>`
 
 Works the same as :ref:`set_anchor<class_Control_method_set_anchor>`, but instead of ``keep_offset`` argument and automatic update of offset, it allows to set the offset yourself (see :ref:`set_offset<class_Control_method_set_offset>`).
 
@@ -3164,7 +3164,7 @@ Works the same as :ref:`set_anchor<class_Control_method_set_anchor>`, but instea
 
 .. rst-class:: classref-method
 
-|void| **set_anchors_and_offsets_preset**\ (\ preset\: :ref:`LayoutPreset<enum_Control_LayoutPreset>`, resize_mode\: :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` = 0, margin\: :ref:`int<class_int>` = 0\ )
+|void| **set_anchors_and_offsets_preset**\ (\ preset\: :ref:`LayoutPreset<enum_Control_LayoutPreset>`, resize_mode\: :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` = 0, margin\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_Control_method_set_anchors_and_offsets_preset>`
 
 Sets both anchor preset and offset preset. See :ref:`set_anchors_preset<class_Control_method_set_anchors_preset>` and :ref:`set_offsets_preset<class_Control_method_set_offsets_preset>`.
 
@@ -3176,7 +3176,7 @@ Sets both anchor preset and offset preset. See :ref:`set_anchors_preset<class_Co
 
 .. rst-class:: classref-method
 
-|void| **set_anchors_preset**\ (\ preset\: :ref:`LayoutPreset<enum_Control_LayoutPreset>`, keep_offsets\: :ref:`bool<class_bool>` = false\ )
+|void| **set_anchors_preset**\ (\ preset\: :ref:`LayoutPreset<enum_Control_LayoutPreset>`, keep_offsets\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Control_method_set_anchors_preset>`
 
 Sets the anchors to a ``preset`` from :ref:`LayoutPreset<enum_Control_LayoutPreset>` enum. This is the code equivalent to using the Layout menu in the 2D editor.
 
@@ -3190,7 +3190,7 @@ If ``keep_offsets`` is ``true``, control's position will also be updated.
 
 .. rst-class:: classref-method
 
-|void| **set_begin**\ (\ position\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_begin**\ (\ position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_Control_method_set_begin>`
 
 Sets :ref:`offset_left<class_Control_property_offset_left>` and :ref:`offset_top<class_Control_property_offset_top>` at the same time. Equivalent of changing :ref:`position<class_Control_property_position>`.
 
@@ -3202,7 +3202,7 @@ Sets :ref:`offset_left<class_Control_property_offset_left>` and :ref:`offset_top
 
 .. rst-class:: classref-method
 
-|void| **set_drag_forwarding**\ (\ drag_func\: :ref:`Callable<class_Callable>`, can_drop_func\: :ref:`Callable<class_Callable>`, drop_func\: :ref:`Callable<class_Callable>`\ )
+|void| **set_drag_forwarding**\ (\ drag_func\: :ref:`Callable<class_Callable>`, can_drop_func\: :ref:`Callable<class_Callable>`, drop_func\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_Control_method_set_drag_forwarding>`
 
 Forwards the handling of this control's :ref:`_get_drag_data<class_Control_private_method__get_drag_data>`,  :ref:`_can_drop_data<class_Control_private_method__can_drop_data>` and :ref:`_drop_data<class_Control_private_method__drop_data>` virtual functions to delegate callables.
 
@@ -3218,7 +3218,7 @@ The function format for each callable should be exactly the same as the virtual 
 
 .. rst-class:: classref-method
 
-|void| **set_drag_preview**\ (\ control\: :ref:`Control<class_Control>`\ )
+|void| **set_drag_preview**\ (\ control\: :ref:`Control<class_Control>`\ ) :ref:`🔗<class_Control_method_set_drag_preview>`
 
 Shows the given control at the mouse pointer. A good time to call this method is in :ref:`_get_drag_data<class_Control_private_method__get_drag_data>`. The control must not be in the scene tree. You should not free the control, and you should not keep a reference to the control beyond the duration of the drag. It will be deleted automatically after the drag has ended.
 
@@ -3262,7 +3262,7 @@ Shows the given control at the mouse pointer. A good time to call this method is
 
 .. rst-class:: classref-method
 
-|void| **set_end**\ (\ position\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_end**\ (\ position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_Control_method_set_end>`
 
 Sets :ref:`offset_right<class_Control_property_offset_right>` and :ref:`offset_bottom<class_Control_property_offset_bottom>` at the same time.
 
@@ -3274,7 +3274,7 @@ Sets :ref:`offset_right<class_Control_property_offset_right>` and :ref:`offset_b
 
 .. rst-class:: classref-method
 
-|void| **set_focus_neighbor**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`, neighbor\: :ref:`NodePath<class_NodePath>`\ )
+|void| **set_focus_neighbor**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`, neighbor\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_Control_method_set_focus_neighbor>`
 
 Sets the focus neighbor for the specified :ref:`Side<enum_@GlobalScope_Side>` to the **Control** at ``neighbor`` node path. A setter method for :ref:`focus_neighbor_bottom<class_Control_property_focus_neighbor_bottom>`, :ref:`focus_neighbor_left<class_Control_property_focus_neighbor_left>`, :ref:`focus_neighbor_right<class_Control_property_focus_neighbor_right>` and :ref:`focus_neighbor_top<class_Control_property_focus_neighbor_top>`.
 
@@ -3286,7 +3286,7 @@ Sets the focus neighbor for the specified :ref:`Side<enum_@GlobalScope_Side>` to
 
 .. rst-class:: classref-method
 
-|void| **set_global_position**\ (\ position\: :ref:`Vector2<class_Vector2>`, keep_offsets\: :ref:`bool<class_bool>` = false\ )
+|void| **set_global_position**\ (\ position\: :ref:`Vector2<class_Vector2>`, keep_offsets\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Control_method_set_global_position>`
 
 Sets the :ref:`global_position<class_Control_property_global_position>` to given ``position``.
 
@@ -3300,7 +3300,7 @@ If ``keep_offsets`` is ``true``, control's anchors will be updated instead of of
 
 .. rst-class:: classref-method
 
-|void| **set_offset**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`, offset\: :ref:`float<class_float>`\ )
+|void| **set_offset**\ (\ side\: :ref:`Side<enum_@GlobalScope_Side>`, offset\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Control_method_set_offset>`
 
 Sets the offset for the specified :ref:`Side<enum_@GlobalScope_Side>` to ``offset``. A setter method for :ref:`offset_bottom<class_Control_property_offset_bottom>`, :ref:`offset_left<class_Control_property_offset_left>`, :ref:`offset_right<class_Control_property_offset_right>` and :ref:`offset_top<class_Control_property_offset_top>`.
 
@@ -3312,7 +3312,7 @@ Sets the offset for the specified :ref:`Side<enum_@GlobalScope_Side>` to ``offse
 
 .. rst-class:: classref-method
 
-|void| **set_offsets_preset**\ (\ preset\: :ref:`LayoutPreset<enum_Control_LayoutPreset>`, resize_mode\: :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` = 0, margin\: :ref:`int<class_int>` = 0\ )
+|void| **set_offsets_preset**\ (\ preset\: :ref:`LayoutPreset<enum_Control_LayoutPreset>`, resize_mode\: :ref:`LayoutPresetMode<enum_Control_LayoutPresetMode>` = 0, margin\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_Control_method_set_offsets_preset>`
 
 Sets the offsets to a ``preset`` from :ref:`LayoutPreset<enum_Control_LayoutPreset>` enum. This is the code equivalent to using the Layout menu in the 2D editor.
 
@@ -3328,7 +3328,7 @@ Use parameter ``margin`` to determine the gap between the **Control** and the ed
 
 .. rst-class:: classref-method
 
-|void| **set_position**\ (\ position\: :ref:`Vector2<class_Vector2>`, keep_offsets\: :ref:`bool<class_bool>` = false\ )
+|void| **set_position**\ (\ position\: :ref:`Vector2<class_Vector2>`, keep_offsets\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Control_method_set_position>`
 
 Sets the :ref:`position<class_Control_property_position>` to given ``position``.
 
@@ -3342,7 +3342,7 @@ If ``keep_offsets`` is ``true``, control's anchors will be updated instead of of
 
 .. rst-class:: classref-method
 
-|void| **set_size**\ (\ size\: :ref:`Vector2<class_Vector2>`, keep_offsets\: :ref:`bool<class_bool>` = false\ )
+|void| **set_size**\ (\ size\: :ref:`Vector2<class_Vector2>`, keep_offsets\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Control_method_set_size>`
 
 Sets the size (see :ref:`size<class_Control_property_size>`).
 
@@ -3356,7 +3356,7 @@ If ``keep_offsets`` is ``true``, control's anchors will be updated instead of of
 
 .. rst-class:: classref-method
 
-|void| **update_minimum_size**\ (\ )
+|void| **update_minimum_size**\ (\ ) :ref:`🔗<class_Control_method_update_minimum_size>`
 
 Invalidates the size cache in this node and in parent nodes up to top level. Intended to be used with :ref:`get_minimum_size<class_Control_method_get_minimum_size>` when the return value is changed. Setting :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>` directly calls this method automatically.
 
@@ -3368,7 +3368,7 @@ Invalidates the size cache in this node and in parent nodes up to top level. Int
 
 .. rst-class:: classref-method
 
-|void| **warp_mouse**\ (\ position\: :ref:`Vector2<class_Vector2>`\ )
+|void| **warp_mouse**\ (\ position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_Control_method_warp_mouse>`
 
 Moves the mouse cursor to ``position``, relative to :ref:`position<class_Control_property_position>` of this **Control**.
 

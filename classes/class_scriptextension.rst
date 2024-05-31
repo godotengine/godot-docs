@@ -111,7 +111,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_can_instantiate**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_can_instantiate**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__can_instantiate>`
 
 .. container:: contribute
 
@@ -125,7 +125,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_editor_can_reload_from_file**\ (\ ) |virtual|
+:ref:`bool<class_bool>` **_editor_can_reload_from_file**\ (\ ) |virtual| :ref:`🔗<class_ScriptExtension_private_method__editor_can_reload_from_file>`
 
 .. container:: contribute
 
@@ -139,7 +139,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Script<class_Script>` **_get_base_script**\ (\ ) |virtual| |const|
+:ref:`Script<class_Script>` **_get_base_script**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_base_script>`
 
 .. container:: contribute
 
@@ -153,7 +153,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_class_icon_path**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_class_icon_path**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_class_icon_path>`
 
 .. container:: contribute
 
@@ -167,7 +167,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_get_constants**\ (\ ) |virtual| |const|
+:ref:`Dictionary<class_Dictionary>` **_get_constants**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_constants>`
 
 .. container:: contribute
 
@@ -181,7 +181,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_documentation**\ (\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_documentation**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_documentation>`
 
 .. container:: contribute
 
@@ -195,7 +195,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **_get_global_name**\ (\ ) |virtual| |const|
+:ref:`StringName<class_StringName>` **_get_global_name**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_global_name>`
 
 .. container:: contribute
 
@@ -209,7 +209,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **_get_instance_base_type**\ (\ ) |virtual| |const|
+:ref:`StringName<class_StringName>` **_get_instance_base_type**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_instance_base_type>`
 
 .. container:: contribute
 
@@ -223,7 +223,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`ScriptLanguage<class_ScriptLanguage>` **_get_language**\ (\ ) |virtual| |const|
+:ref:`ScriptLanguage<class_ScriptLanguage>` **_get_language**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_language>`
 
 .. container:: contribute
 
@@ -237,7 +237,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_member_line**\ (\ member\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_member_line**\ (\ member\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_member_line>`
 
 .. container:: contribute
 
@@ -251,7 +251,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **_get_members**\ (\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **_get_members**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_members>`
 
 .. container:: contribute
 
@@ -265,7 +265,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_get_method_info**\ (\ method\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`Dictionary<class_Dictionary>` **_get_method_info**\ (\ method\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_method_info>`
 
 .. container:: contribute
 
@@ -279,7 +279,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_get_property_default_value**\ (\ property\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_get_property_default_value**\ (\ property\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_property_default_value>`
 
 .. container:: contribute
 
@@ -293,7 +293,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_get_rpc_config**\ (\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_get_rpc_config**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_rpc_config>`
 
 .. container:: contribute
 
@@ -307,7 +307,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_get_script_method_argument_count**\ (\ method\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_get_script_method_argument_count**\ (\ method\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_script_method_argument_count>`
 
 Return the expected argument count for the given ``method``, or ``null`` if it can't be determined (which will then fall back to the default behavior).
 
@@ -319,7 +319,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_script_method_list**\ (\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_script_method_list**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_script_method_list>`
 
 .. container:: contribute
 
@@ -333,7 +333,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_script_property_list**\ (\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_script_property_list**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_script_property_list>`
 
 .. container:: contribute
 
@@ -347,7 +347,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_script_signal_list**\ (\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_script_signal_list**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_script_signal_list>`
 
 .. container:: contribute
 
@@ -361,7 +361,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_source_code**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_source_code**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_source_code>`
 
 .. container:: contribute
 
@@ -375,7 +375,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_method**\ (\ method\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_has_method**\ (\ method\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__has_method>`
 
 .. container:: contribute
 
@@ -389,7 +389,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_property_default_value**\ (\ property\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_has_property_default_value**\ (\ property\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__has_property_default_value>`
 
 .. container:: contribute
 
@@ -403,7 +403,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_script_signal**\ (\ signal\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_has_script_signal**\ (\ signal\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__has_script_signal>`
 
 .. container:: contribute
 
@@ -417,7 +417,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_source_code**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_has_source_code**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__has_source_code>`
 
 .. container:: contribute
 
@@ -431,7 +431,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_static_method**\ (\ method\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_has_static_method**\ (\ method\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__has_static_method>`
 
 .. container:: contribute
 
@@ -445,7 +445,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_inherits_script**\ (\ script\: :ref:`Script<class_Script>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_inherits_script**\ (\ script\: :ref:`Script<class_Script>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__inherits_script>`
 
 .. container:: contribute
 
@@ -459,7 +459,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-``void*`` **_instance_create**\ (\ for_object\: :ref:`Object<class_Object>`\ ) |virtual| |const|
+``void*`` **_instance_create**\ (\ for_object\: :ref:`Object<class_Object>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__instance_create>`
 
 .. container:: contribute
 
@@ -473,7 +473,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_instance_has**\ (\ object\: :ref:`Object<class_Object>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_instance_has**\ (\ object\: :ref:`Object<class_Object>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__instance_has>`
 
 .. container:: contribute
 
@@ -487,7 +487,7 @@ Return the expected argument count for the given ``method``, or ``null`` if it c
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_abstract**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_abstract**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__is_abstract>`
 
 Returns ``true`` if the script is an abstract script. An abstract script does not have a constructor and cannot be instantiated.
 
@@ -499,7 +499,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_placeholder_fallback_enabled**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_placeholder_fallback_enabled**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__is_placeholder_fallback_enabled>`
 
 .. container:: contribute
 
@@ -513,7 +513,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_tool**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_tool**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__is_tool>`
 
 .. container:: contribute
 
@@ -527,7 +527,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_valid**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_valid**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__is_valid>`
 
 .. container:: contribute
 
@@ -541,7 +541,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 .. rst-class:: classref-method
 
-|void| **_placeholder_erased**\ (\ placeholder\: ``void*``\ ) |virtual|
+|void| **_placeholder_erased**\ (\ placeholder\: ``void*``\ ) |virtual| :ref:`🔗<class_ScriptExtension_private_method__placeholder_erased>`
 
 .. container:: contribute
 
@@ -555,7 +555,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 .. rst-class:: classref-method
 
-``void*`` **_placeholder_instance_create**\ (\ for_object\: :ref:`Object<class_Object>`\ ) |virtual| |const|
+``void*`` **_placeholder_instance_create**\ (\ for_object\: :ref:`Object<class_Object>`\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__placeholder_instance_create>`
 
 .. container:: contribute
 
@@ -569,7 +569,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_reload**\ (\ keep_state\: :ref:`bool<class_bool>`\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_reload**\ (\ keep_state\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_ScriptExtension_private_method__reload>`
 
 .. container:: contribute
 
@@ -583,7 +583,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 .. rst-class:: classref-method
 
-|void| **_set_source_code**\ (\ code\: :ref:`String<class_String>`\ ) |virtual|
+|void| **_set_source_code**\ (\ code\: :ref:`String<class_String>`\ ) |virtual| :ref:`🔗<class_ScriptExtension_private_method__set_source_code>`
 
 .. container:: contribute
 
@@ -597,7 +597,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 .. rst-class:: classref-method
 
-|void| **_update_exports**\ (\ ) |virtual|
+|void| **_update_exports**\ (\ ) |virtual| :ref:`🔗<class_ScriptExtension_private_method__update_exports>`
 
 .. container:: contribute
 

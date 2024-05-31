@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Operator**:
+enum **Operator**: :ref:`🔗<enum_VisualShaderNodeVectorOp_Operator>`
 
 .. _class_VisualShaderNodeVectorOp_constant_OP_ADD:
 
@@ -165,7 +165,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Operator<enum_VisualShaderNodeVectorOp_Operator>` **operator** = ``0``
+:ref:`Operator<enum_VisualShaderNodeVectorOp_Operator>` **operator** = ``0`` :ref:`🔗<class_VisualShaderNodeVectorOp_property_operator>`
 
 .. rst-class:: classref-property-setget
 

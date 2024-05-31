@@ -62,7 +62,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **auto_exposure_enabled** = ``false``
+:ref:`bool<class_bool>` **auto_exposure_enabled** = ``false`` :ref:`🔗<class_CameraAttributes_property_auto_exposure_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -79,7 +79,7 @@ If ``true``, enables the tonemapping auto exposure mode of the scene renderer. I
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **auto_exposure_scale** = ``0.4``
+:ref:`float<class_float>` **auto_exposure_scale** = ``0.4`` :ref:`🔗<class_CameraAttributes_property_auto_exposure_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -96,7 +96,7 @@ The scale of the auto exposure effect. Affects the intensity of auto exposure.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **auto_exposure_speed** = ``0.5``
+:ref:`float<class_float>` **auto_exposure_speed** = ``0.5`` :ref:`🔗<class_CameraAttributes_property_auto_exposure_speed>`
 
 .. rst-class:: classref-property-setget
 
@@ -113,7 +113,7 @@ The speed of the auto exposure effect. Affects the time needed for the camera to
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **exposure_multiplier** = ``1.0``
+:ref:`float<class_float>` **exposure_multiplier** = ``1.0`` :ref:`🔗<class_CameraAttributes_property_exposure_multiplier>`
 
 .. rst-class:: classref-property-setget
 
@@ -130,7 +130,7 @@ Multiplier for the exposure amount. A higher value results in a brighter image.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **exposure_sensitivity** = ``100.0``
+:ref:`float<class_float>` **exposure_sensitivity** = ``100.0`` :ref:`🔗<class_CameraAttributes_property_exposure_sensitivity>`
 
 .. rst-class:: classref-property-setget
 

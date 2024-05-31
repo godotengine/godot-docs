@@ -135,7 +135,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**node_added**\ (\ node\: :ref:`Node<class_Node>`\ )
+**node_added**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_SceneTree_signal_node_added>`
 
 Emitted when the ``node`` enters this tree.
 
@@ -147,7 +147,7 @@ Emitted when the ``node`` enters this tree.
 
 .. rst-class:: classref-signal
 
-**node_configuration_warning_changed**\ (\ node\: :ref:`Node<class_Node>`\ )
+**node_configuration_warning_changed**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_SceneTree_signal_node_configuration_warning_changed>`
 
 Emitted when the ``node``'s :ref:`Node.update_configuration_warnings<class_Node_method_update_configuration_warnings>` is called. Only emitted in the editor.
 
@@ -159,7 +159,7 @@ Emitted when the ``node``'s :ref:`Node.update_configuration_warnings<class_Node_
 
 .. rst-class:: classref-signal
 
-**node_removed**\ (\ node\: :ref:`Node<class_Node>`\ )
+**node_removed**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_SceneTree_signal_node_removed>`
 
 Emitted when the ``node`` exits this tree.
 
@@ -171,7 +171,7 @@ Emitted when the ``node`` exits this tree.
 
 .. rst-class:: classref-signal
 
-**node_renamed**\ (\ node\: :ref:`Node<class_Node>`\ )
+**node_renamed**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_SceneTree_signal_node_renamed>`
 
 Emitted when the ``node``'s :ref:`Node.name<class_Node_property_name>` is changed.
 
@@ -183,7 +183,7 @@ Emitted when the ``node``'s :ref:`Node.name<class_Node_property_name>` is change
 
 .. rst-class:: classref-signal
 
-**physics_frame**\ (\ )
+**physics_frame**\ (\ ) :ref:`🔗<class_SceneTree_signal_physics_frame>`
 
 Emitted immediately before :ref:`Node._physics_process<class_Node_private_method__physics_process>` is called on every node in this tree.
 
@@ -195,7 +195,7 @@ Emitted immediately before :ref:`Node._physics_process<class_Node_private_method
 
 .. rst-class:: classref-signal
 
-**process_frame**\ (\ )
+**process_frame**\ (\ ) :ref:`🔗<class_SceneTree_signal_process_frame>`
 
 Emitted immediately before :ref:`Node._process<class_Node_private_method__process>` is called on every node in this tree.
 
@@ -207,7 +207,7 @@ Emitted immediately before :ref:`Node._process<class_Node_private_method__proces
 
 .. rst-class:: classref-signal
 
-**tree_changed**\ (\ )
+**tree_changed**\ (\ ) :ref:`🔗<class_SceneTree_signal_tree_changed>`
 
 Emitted any time the tree's hierarchy changes (nodes being moved, renamed, etc.).
 
@@ -219,7 +219,7 @@ Emitted any time the tree's hierarchy changes (nodes being moved, renamed, etc.)
 
 .. rst-class:: classref-signal
 
-**tree_process_mode_changed**\ (\ )
+**tree_process_mode_changed**\ (\ ) :ref:`🔗<class_SceneTree_signal_tree_process_mode_changed>`
 
 Emitted when the :ref:`Node.process_mode<class_Node_property_process_mode>` of any node inside the tree is changed. Only emitted in the editor, to update the visibility of disabled nodes.
 
@@ -236,7 +236,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **GroupCallFlags**:
+enum **GroupCallFlags**: :ref:`🔗<enum_SceneTree_GroupCallFlags>`
 
 .. _class_SceneTree_constant_GROUP_CALL_DEFAULT:
 
@@ -285,7 +285,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **auto_accept_quit** = ``true``
+:ref:`bool<class_bool>` **auto_accept_quit** = ``true`` :ref:`🔗<class_SceneTree_property_auto_accept_quit>`
 
 .. rst-class:: classref-property-setget
 
@@ -304,7 +304,7 @@ For mobile platforms, see :ref:`quit_on_go_back<class_SceneTree_property_quit_on
 
 .. rst-class:: classref-property
 
-:ref:`Node<class_Node>` **current_scene**
+:ref:`Node<class_Node>` **current_scene** :ref:`🔗<class_SceneTree_property_current_scene>`
 
 .. rst-class:: classref-property-setget
 
@@ -323,7 +323,7 @@ The root node of the currently loaded main scene, usually as a direct child of :
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug_collisions_hint** = ``false``
+:ref:`bool<class_bool>` **debug_collisions_hint** = ``false`` :ref:`🔗<class_SceneTree_property_debug_collisions_hint>`
 
 .. rst-class:: classref-property-setget
 
@@ -342,7 +342,7 @@ If ``true``, collision shapes will be visible when running the game from the edi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug_navigation_hint** = ``false``
+:ref:`bool<class_bool>` **debug_navigation_hint** = ``false`` :ref:`🔗<class_SceneTree_property_debug_navigation_hint>`
 
 .. rst-class:: classref-property-setget
 
@@ -361,7 +361,7 @@ If ``true``, navigation polygons will be visible when running the game from the 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug_paths_hint** = ``false``
+:ref:`bool<class_bool>` **debug_paths_hint** = ``false`` :ref:`🔗<class_SceneTree_property_debug_paths_hint>`
 
 .. rst-class:: classref-property-setget
 
@@ -380,7 +380,7 @@ If ``true``, curves from :ref:`Path2D<class_Path2D>` and :ref:`Path3D<class_Path
 
 .. rst-class:: classref-property
 
-:ref:`Node<class_Node>` **edited_scene_root**
+:ref:`Node<class_Node>` **edited_scene_root** :ref:`🔗<class_SceneTree_property_edited_scene_root>`
 
 .. rst-class:: classref-property-setget
 
@@ -399,7 +399,7 @@ The root of the scene currently being edited in the editor. This is usually a di
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **multiplayer_poll** = ``true``
+:ref:`bool<class_bool>` **multiplayer_poll** = ``true`` :ref:`🔗<class_SceneTree_property_multiplayer_poll>`
 
 .. rst-class:: classref-property-setget
 
@@ -418,7 +418,7 @@ If ``false``, you need to manually call :ref:`MultiplayerAPI.poll<class_Multipla
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **paused** = ``false``
+:ref:`bool<class_bool>` **paused** = ``false`` :ref:`🔗<class_SceneTree_property_paused>`
 
 .. rst-class:: classref-property-setget
 
@@ -439,7 +439,7 @@ If ``true``, the scene tree is considered paused. This causes the following beha
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **physics_interpolation** = ``false``
+:ref:`bool<class_bool>` **physics_interpolation** = ``false`` :ref:`🔗<class_SceneTree_property_physics_interpolation>`
 
 .. rst-class:: classref-property-setget
 
@@ -458,7 +458,7 @@ The default value of this property is controlled by :ref:`ProjectSettings.physic
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **quit_on_go_back** = ``true``
+:ref:`bool<class_bool>` **quit_on_go_back** = ``true`` :ref:`🔗<class_SceneTree_property_quit_on_go_back>`
 
 .. rst-class:: classref-property-setget
 
@@ -477,7 +477,7 @@ To handle 'Go Back' button when this option is disabled, use :ref:`DisplayServer
 
 .. rst-class:: classref-property
 
-:ref:`Window<class_Window>` **root**
+:ref:`Window<class_Window>` **root** :ref:`🔗<class_SceneTree_property_root>`
 
 .. rst-class:: classref-property-setget
 
@@ -500,7 +500,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **call_group**\ (\ group\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg|
+|void| **call_group**\ (\ group\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg| :ref:`🔗<class_SceneTree_method_call_group>`
 
 Calls ``method`` on each node inside this tree added to the given ``group``. You can pass arguments to ``method`` by specifying them at the end of this method call. Nodes that cannot call ``method`` (either because the method doesn't exist or the arguments do not match) are ignored. See also :ref:`set_group<class_SceneTree_method_set_group>` and :ref:`notify_group<class_SceneTree_method_notify_group>`.
 
@@ -516,7 +516,7 @@ Calls ``method`` on each node inside this tree added to the given ``group``. You
 
 .. rst-class:: classref-method
 
-|void| **call_group_flags**\ (\ flags\: :ref:`int<class_int>`, group\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg|
+|void| **call_group_flags**\ (\ flags\: :ref:`int<class_int>`, group\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg| :ref:`🔗<class_SceneTree_method_call_group_flags>`
 
 Calls the given ``method`` on each node inside this tree added to the given ``group``. Use ``flags`` to customize this method's behavior (see :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`). Additional arguments for ``method`` can be passed at the end of this method. Nodes that cannot call ``method`` (either because the method doesn't exist or the arguments do not match) are ignored.
 
@@ -537,7 +537,7 @@ Calls the given ``method`` on each node inside this tree added to the given ``gr
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **change_scene_to_file**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **change_scene_to_file**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_SceneTree_method_change_scene_to_file>`
 
 Changes the running scene to the one at the given ``path``, after loading it into a :ref:`PackedScene<class_PackedScene>` and creating a new instance.
 
@@ -553,7 +553,7 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **change_scene_to_packed**\ (\ packed_scene\: :ref:`PackedScene<class_PackedScene>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **change_scene_to_packed**\ (\ packed_scene\: :ref:`PackedScene<class_PackedScene>`\ ) :ref:`🔗<class_SceneTree_method_change_scene_to_packed>`
 
 Changes the running scene to a new instance of the given :ref:`PackedScene<class_PackedScene>` (which must be valid).
 
@@ -575,7 +575,7 @@ This ensures that both scenes aren't running at the same time, while still freei
 
 .. rst-class:: classref-method
 
-:ref:`SceneTreeTimer<class_SceneTreeTimer>` **create_timer**\ (\ time_sec\: :ref:`float<class_float>`, process_always\: :ref:`bool<class_bool>` = true, process_in_physics\: :ref:`bool<class_bool>` = false, ignore_time_scale\: :ref:`bool<class_bool>` = false\ )
+:ref:`SceneTreeTimer<class_SceneTreeTimer>` **create_timer**\ (\ time_sec\: :ref:`float<class_float>`, process_always\: :ref:`bool<class_bool>` = true, process_in_physics\: :ref:`bool<class_bool>` = false, ignore_time_scale\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_SceneTree_method_create_timer>`
 
 Returns a new :ref:`SceneTreeTimer<class_SceneTreeTimer>`. After ``time_sec`` in seconds have passed, the timer will emit :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_signal_timeout>` and will be automatically freed.
 
@@ -618,7 +618,7 @@ This method is commonly used to create a one-shot delay timer, as in the followi
 
 .. rst-class:: classref-method
 
-:ref:`Tween<class_Tween>` **create_tween**\ (\ )
+:ref:`Tween<class_Tween>` **create_tween**\ (\ ) :ref:`🔗<class_SceneTree_method_create_tween>`
 
 Creates and returns a new :ref:`Tween<class_Tween>` processed in this tree. The Tween will start automatically on the next process frame or physics frame (depending on its :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
 
@@ -632,7 +632,7 @@ Creates and returns a new :ref:`Tween<class_Tween>` processed in this tree. The 
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **get_first_node_in_group**\ (\ group\: :ref:`StringName<class_StringName>`\ )
+:ref:`Node<class_Node>` **get_first_node_in_group**\ (\ group\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_SceneTree_method_get_first_node_in_group>`
 
 Returns the first :ref:`Node<class_Node>` found inside the tree, that has been added to the given ``group``, in scene hierarchy order. Returns ``null`` if no match is found. See also :ref:`get_nodes_in_group<class_SceneTree_method_get_nodes_in_group>`.
 
@@ -644,7 +644,7 @@ Returns the first :ref:`Node<class_Node>` found inside the tree, that has been a
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_frame**\ (\ ) |const|
+:ref:`int<class_int>` **get_frame**\ (\ ) |const| :ref:`🔗<class_SceneTree_method_get_frame>`
 
 Returns how many frames have been processed, since the application started. This is *not* a measurement of elapsed time.
 
@@ -656,7 +656,7 @@ Returns how many frames have been processed, since the application started. This
 
 .. rst-class:: classref-method
 
-:ref:`MultiplayerAPI<class_MultiplayerAPI>` **get_multiplayer**\ (\ for_path\: :ref:`NodePath<class_NodePath>` = NodePath("")\ ) |const|
+:ref:`MultiplayerAPI<class_MultiplayerAPI>` **get_multiplayer**\ (\ for_path\: :ref:`NodePath<class_NodePath>` = NodePath("")\ ) |const| :ref:`🔗<class_SceneTree_method_get_multiplayer>`
 
 Searches for the :ref:`MultiplayerAPI<class_MultiplayerAPI>` configured for the given path, if one does not exist it searches the parent paths until one is found. If the path is empty, or none is found, the default one is returned. See :ref:`set_multiplayer<class_SceneTree_method_set_multiplayer>`.
 
@@ -668,7 +668,7 @@ Searches for the :ref:`MultiplayerAPI<class_MultiplayerAPI>` configured for the 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_node_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_node_count**\ (\ ) |const| :ref:`🔗<class_SceneTree_method_get_node_count>`
 
 Returns the number of nodes inside this tree.
 
@@ -680,7 +680,7 @@ Returns the number of nodes inside this tree.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_node_count_in_group**\ (\ group\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`int<class_int>` **get_node_count_in_group**\ (\ group\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_SceneTree_method_get_node_count_in_group>`
 
 Returns the number of nodes assigned to the given group.
 
@@ -692,7 +692,7 @@ Returns the number of nodes assigned to the given group.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_nodes_in_group**\ (\ group\: :ref:`StringName<class_StringName>`\ )
+:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_nodes_in_group**\ (\ group\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_SceneTree_method_get_nodes_in_group>`
 
 Returns an :ref:`Array<class_Array>` containing all nodes inside this tree, that have been added to the given ``group``, in scene hierarchy order.
 
@@ -704,7 +704,7 @@ Returns an :ref:`Array<class_Array>` containing all nodes inside this tree, that
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Tween<class_Tween>`\] **get_processed_tweens**\ (\ )
+:ref:`Array<class_Array>`\[:ref:`Tween<class_Tween>`\] **get_processed_tweens**\ (\ ) :ref:`🔗<class_SceneTree_method_get_processed_tweens>`
 
 Returns an :ref:`Array<class_Array>` of currently existing :ref:`Tween<class_Tween>`\ s in the tree, including paused tweens.
 
@@ -716,7 +716,7 @@ Returns an :ref:`Array<class_Array>` of currently existing :ref:`Tween<class_Twe
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_group**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_group**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_SceneTree_method_has_group>`
 
 Returns ``true`` if a node added to the given group ``name`` exists in the tree.
 
@@ -728,7 +728,7 @@ Returns ``true`` if a node added to the given group ``name`` exists in the tree.
 
 .. rst-class:: classref-method
 
-|void| **notify_group**\ (\ group\: :ref:`StringName<class_StringName>`, notification\: :ref:`int<class_int>`\ )
+|void| **notify_group**\ (\ group\: :ref:`StringName<class_StringName>`, notification\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SceneTree_method_notify_group>`
 
 Calls :ref:`Object.notification<class_Object_method_notification>` with the given ``notification`` to all nodes inside this tree added to the ``group``. See also :ref:`call_group<class_SceneTree_method_call_group>` and :ref:`set_group<class_SceneTree_method_set_group>`.
 
@@ -742,7 +742,7 @@ Calls :ref:`Object.notification<class_Object_method_notification>` with the give
 
 .. rst-class:: classref-method
 
-|void| **notify_group_flags**\ (\ call_flags\: :ref:`int<class_int>`, group\: :ref:`StringName<class_StringName>`, notification\: :ref:`int<class_int>`\ )
+|void| **notify_group_flags**\ (\ call_flags\: :ref:`int<class_int>`, group\: :ref:`StringName<class_StringName>`, notification\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SceneTree_method_notify_group_flags>`
 
 Calls :ref:`Object.notification<class_Object_method_notification>` with the given ``notification`` to all nodes inside this tree added to the ``group``. Use ``call_flags`` to customize this method's behavior (see :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`).
 
@@ -754,7 +754,7 @@ Calls :ref:`Object.notification<class_Object_method_notification>` with the give
 
 .. rst-class:: classref-method
 
-|void| **queue_delete**\ (\ obj\: :ref:`Object<class_Object>`\ )
+|void| **queue_delete**\ (\ obj\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_SceneTree_method_queue_delete>`
 
 Queues the given ``obj`` to be deleted, calling its :ref:`Object.free<class_Object_method_free>` at the end of the current frame. This method is similar to :ref:`Node.queue_free<class_Node_method_queue_free>`.
 
@@ -766,7 +766,7 @@ Queues the given ``obj`` to be deleted, calling its :ref:`Object.free<class_Obje
 
 .. rst-class:: classref-method
 
-|void| **quit**\ (\ exit_code\: :ref:`int<class_int>` = 0\ )
+|void| **quit**\ (\ exit_code\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_SceneTree_method_quit>`
 
 Quits the application at the end of the current iteration, with the given ``exit_code``.
 
@@ -782,7 +782,7 @@ By convention, an exit code of ``0`` indicates success, whereas any other exit c
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **reload_current_scene**\ (\ )
+:ref:`Error<enum_@GlobalScope_Error>` **reload_current_scene**\ (\ ) :ref:`🔗<class_SceneTree_method_reload_current_scene>`
 
 Reloads the currently active scene, replacing :ref:`current_scene<class_SceneTree_property_current_scene>` with a new instance of its original :ref:`PackedScene<class_PackedScene>`.
 
@@ -796,7 +796,7 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:
 
 .. rst-class:: classref-method
 
-|void| **set_group**\ (\ group\: :ref:`StringName<class_StringName>`, property\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **set_group**\ (\ group\: :ref:`StringName<class_StringName>`, property\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_SceneTree_method_set_group>`
 
 Sets the given ``property`` to ``value`` on all nodes inside this tree added to the given ``group``. Nodes that do not have the ``property`` are ignored. See also :ref:`call_group<class_SceneTree_method_call_group>` and :ref:`notify_group<class_SceneTree_method_notify_group>`.
 
@@ -812,7 +812,7 @@ Sets the given ``property`` to ``value`` on all nodes inside this tree added to 
 
 .. rst-class:: classref-method
 
-|void| **set_group_flags**\ (\ call_flags\: :ref:`int<class_int>`, group\: :ref:`StringName<class_StringName>`, property\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **set_group_flags**\ (\ call_flags\: :ref:`int<class_int>`, group\: :ref:`StringName<class_StringName>`, property\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_SceneTree_method_set_group_flags>`
 
 Sets the given ``property`` to ``value`` on all nodes inside this tree added to the given ``group``. Nodes that do not have the ``property`` are ignored. Use ``call_flags`` to customize this method's behavior (see :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`).
 
@@ -826,7 +826,7 @@ Sets the given ``property`` to ``value`` on all nodes inside this tree added to 
 
 .. rst-class:: classref-method
 
-|void| **set_multiplayer**\ (\ multiplayer\: :ref:`MultiplayerAPI<class_MultiplayerAPI>`, root_path\: :ref:`NodePath<class_NodePath>` = NodePath("")\ )
+|void| **set_multiplayer**\ (\ multiplayer\: :ref:`MultiplayerAPI<class_MultiplayerAPI>`, root_path\: :ref:`NodePath<class_NodePath>` = NodePath("")\ ) :ref:`🔗<class_SceneTree_method_set_multiplayer>`
 
 Sets a custom :ref:`MultiplayerAPI<class_MultiplayerAPI>` with the given ``root_path`` (controlling also the relative subpaths), or override the default one if ``root_path`` is empty.
 
@@ -840,7 +840,7 @@ Sets a custom :ref:`MultiplayerAPI<class_MultiplayerAPI>` with the given ``root_
 
 .. rst-class:: classref-method
 
-|void| **unload_current_scene**\ (\ )
+|void| **unload_current_scene**\ (\ ) :ref:`🔗<class_SceneTree_method_unload_current_scene>`
 
 If a current scene is loaded, calling this method will unload it.
 

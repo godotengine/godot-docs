@@ -41,6 +41,8 @@ Properties
    :widths: auto
 
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                               | :ref:`accessor_type<class_GLTFAccessor_property_accessor_type>`                                 | ``0``                    |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
    | :ref:`int<class_int>`                               | :ref:`buffer_view<class_GLTFAccessor_property_buffer_view>`                                     | ``-1``                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
    | :ref:`int<class_int>`                               | :ref:`byte_offset<class_GLTFAccessor_property_byte_offset>`                                     | ``0``                    |
@@ -79,11 +81,28 @@ Properties
 Property Descriptions
 ---------------------
 
+.. _class_GLTFAccessor_property_accessor_type:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **accessor_type** = ``0`` :ref:`🔗<class_GLTFAccessor_property_accessor_type>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_accessor_type**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_accessor_type**\ (\ )
+
+The GLTF accessor type as an enum. Possible values are 0 for "SCALAR", 1 for "VEC2", 2 for "VEC3", 3 for "VEC4", 4 for "MAT2", 5 for "MAT3", and 6 for "MAT4".
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GLTFAccessor_property_buffer_view:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **buffer_view** = ``-1``
+:ref:`int<class_int>` **buffer_view** = ``-1`` :ref:`🔗<class_GLTFAccessor_property_buffer_view>`
 
 .. rst-class:: classref-property-setget
 
@@ -100,16 +119,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **byte_offset** = ``0``
+:ref:`int<class_int>` **byte_offset** = ``0`` :ref:`🔗<class_GLTFAccessor_property_byte_offset>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_byte_offset**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_byte_offset**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The offset relative to the start of the buffer view in bytes.
 
 .. rst-class:: classref-item-separator
 
@@ -119,16 +136,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **component_type** = ``0``
+:ref:`int<class_int>` **component_type** = ``0`` :ref:`🔗<class_GLTFAccessor_property_component_type>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_component_type**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_component_type**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The GLTF component type as an enum. Possible values are 5120 for "BYTE", 5121 for "UNSIGNED_BYTE", 5122 for "SHORT", 5123 for "UNSIGNED_SHORT", 5125 for "UNSIGNED_INT", and 5126 for "FLOAT". A value of 5125 or "UNSIGNED_INT" must not be used for any accessor that is not referenced by mesh.primitive.indices.
 
 .. rst-class:: classref-item-separator
 
@@ -138,16 +153,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **count** = ``0``
+:ref:`int<class_int>` **count** = ``0`` :ref:`🔗<class_GLTFAccessor_property_count>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_count**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_count**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The number of elements referenced by this accessor.
 
 .. rst-class:: classref-item-separator
 
@@ -157,16 +170,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`PackedFloat64Array<class_PackedFloat64Array>` **max** = ``PackedFloat64Array()``
+:ref:`PackedFloat64Array<class_PackedFloat64Array>` **max** = ``PackedFloat64Array()`` :ref:`🔗<class_GLTFAccessor_property_max>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_max**\ (\ value\: :ref:`PackedFloat64Array<class_PackedFloat64Array>`\ )
 - :ref:`PackedFloat64Array<class_PackedFloat64Array>` **get_max**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Maximum value of each component in this accessor.
 
 .. rst-class:: classref-item-separator
 
@@ -176,16 +187,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`PackedFloat64Array<class_PackedFloat64Array>` **min** = ``PackedFloat64Array()``
+:ref:`PackedFloat64Array<class_PackedFloat64Array>` **min** = ``PackedFloat64Array()`` :ref:`🔗<class_GLTFAccessor_property_min>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_min**\ (\ value\: :ref:`PackedFloat64Array<class_PackedFloat64Array>`\ )
 - :ref:`PackedFloat64Array<class_PackedFloat64Array>` **get_min**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Minimum value of each component in this accessor.
 
 .. rst-class:: classref-item-separator
 
@@ -195,16 +204,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **normalized** = ``false``
+:ref:`bool<class_bool>` **normalized** = ``false`` :ref:`🔗<class_GLTFAccessor_property_normalized>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_normalized**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_normalized**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Specifies whether integer data values are normalized before usage.
 
 .. rst-class:: classref-item-separator
 
@@ -214,16 +221,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sparse_count** = ``0``
+:ref:`int<class_int>` **sparse_count** = ``0`` :ref:`🔗<class_GLTFAccessor_property_sparse_count>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_sparse_count**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_sparse_count**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Number of deviating accessor values stored in the sparse array.
 
 .. rst-class:: classref-item-separator
 
@@ -233,16 +238,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sparse_indices_buffer_view** = ``0``
+:ref:`int<class_int>` **sparse_indices_buffer_view** = ``0`` :ref:`🔗<class_GLTFAccessor_property_sparse_indices_buffer_view>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_sparse_indices_buffer_view**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_sparse_indices_buffer_view**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The index of the buffer view with sparse indices. The referenced buffer view MUST NOT have its target or byteStride properties defined. The buffer view and the optional byteOffset MUST be aligned to the componentType byte length.
 
 .. rst-class:: classref-item-separator
 
@@ -252,16 +255,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sparse_indices_byte_offset** = ``0``
+:ref:`int<class_int>` **sparse_indices_byte_offset** = ``0`` :ref:`🔗<class_GLTFAccessor_property_sparse_indices_byte_offset>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_sparse_indices_byte_offset**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_sparse_indices_byte_offset**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The offset relative to the start of the buffer view in bytes.
 
 .. rst-class:: classref-item-separator
 
@@ -271,16 +272,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sparse_indices_component_type** = ``0``
+:ref:`int<class_int>` **sparse_indices_component_type** = ``0`` :ref:`🔗<class_GLTFAccessor_property_sparse_indices_component_type>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_sparse_indices_component_type**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_sparse_indices_component_type**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The indices component data type as an enum. Possible values are 5121 for "UNSIGNED_BYTE", 5123 for "UNSIGNED_SHORT", and 5125 for "UNSIGNED_INT".
 
 .. rst-class:: classref-item-separator
 
@@ -290,16 +289,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sparse_values_buffer_view** = ``0``
+:ref:`int<class_int>` **sparse_values_buffer_view** = ``0`` :ref:`🔗<class_GLTFAccessor_property_sparse_values_buffer_view>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_sparse_values_buffer_view**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_sparse_values_buffer_view**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The index of the bufferView with sparse values. The referenced buffer view MUST NOT have its target or byteStride properties defined.
 
 .. rst-class:: classref-item-separator
 
@@ -309,16 +306,14 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sparse_values_byte_offset** = ``0``
+:ref:`int<class_int>` **sparse_values_byte_offset** = ``0`` :ref:`🔗<class_GLTFAccessor_property_sparse_values_byte_offset>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_sparse_values_byte_offset**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_sparse_values_byte_offset**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The offset relative to the start of the bufferView in bytes.
 
 .. rst-class:: classref-item-separator
 
@@ -328,16 +323,16 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **type** = ``0``
+:ref:`int<class_int>` **type** = ``0`` :ref:`🔗<class_GLTFAccessor_property_type>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_type**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_type**\ (\ )
 
-.. container:: contribute
+**Deprecated:** Use :ref:`accessor_type<class_GLTFAccessor_property_accessor_type>` instead.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The GLTF accessor type as an enum. Use :ref:`accessor_type<class_GLTFAccessor_property_accessor_type>` instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -66,7 +66,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`OpenXRAction<class_OpenXRAction>` **action**
+:ref:`OpenXRAction<class_OpenXRAction>` **action** :ref:`🔗<class_OpenXRIPBinding_property_action>`
 
 .. rst-class:: classref-property-setget
 
@@ -83,7 +83,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **paths** = ``PackedStringArray()``
+:ref:`PackedStringArray<class_PackedStringArray>` **paths** = ``PackedStringArray()`` :ref:`🔗<class_OpenXRIPBinding_property_paths>`
 
 .. rst-class:: classref-property-setget
 
@@ -107,7 +107,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_path**\ (\ path\: :ref:`String<class_String>`\ )
+|void| **add_path**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OpenXRIPBinding_method_add_path>`
 
 Add an input/output path to this binding.
 
@@ -119,7 +119,7 @@ Add an input/output path to this binding.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_path_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_path_count**\ (\ ) |const| :ref:`🔗<class_OpenXRIPBinding_method_get_path_count>`
 
 Get the number of input/output paths in this binding.
 
@@ -131,7 +131,7 @@ Get the number of input/output paths in this binding.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_path**\ (\ path\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_path**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OpenXRIPBinding_method_has_path>`
 
 Returns ``true`` if this input/output path is part of this binding.
 
@@ -143,7 +143,7 @@ Returns ``true`` if this input/output path is part of this binding.
 
 .. rst-class:: classref-method
 
-|void| **remove_path**\ (\ path\: :ref:`String<class_String>`\ )
+|void| **remove_path**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OpenXRIPBinding_method_remove_path>`
 
 Removes this input/output path from this binding.
 

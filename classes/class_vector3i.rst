@@ -171,7 +171,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**AXIS_X** = ``0``
+**AXIS_X** = ``0`` :ref:`🔗<class_Vector3i_constant_AXIS_X>`
 
 Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector3i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector3i_method_min_axis_index>`.
 
@@ -179,7 +179,7 @@ Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector3i
 
 .. rst-class:: classref-constant
 
-**AXIS_Y** = ``1``
+**AXIS_Y** = ``1`` :ref:`🔗<class_Vector3i_constant_AXIS_Y>`
 
 Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector3i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector3i_method_min_axis_index>`.
 
@@ -187,7 +187,7 @@ Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector3i
 
 .. rst-class:: classref-constant
 
-**AXIS_Z** = ``2``
+**AXIS_Z** = ``2`` :ref:`🔗<class_Vector3i_constant_AXIS_Z>`
 
 Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector3i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector3i_method_min_axis_index>`.
 
@@ -195,7 +195,7 @@ Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector3i
 
 .. rst-class:: classref-constant
 
-**ZERO** = ``Vector3i(0, 0, 0)``
+**ZERO** = ``Vector3i(0, 0, 0)`` :ref:`🔗<class_Vector3i_constant_ZERO>`
 
 Zero vector, a vector with all components set to ``0``.
 
@@ -203,7 +203,7 @@ Zero vector, a vector with all components set to ``0``.
 
 .. rst-class:: classref-constant
 
-**ONE** = ``Vector3i(1, 1, 1)``
+**ONE** = ``Vector3i(1, 1, 1)`` :ref:`🔗<class_Vector3i_constant_ONE>`
 
 One vector, a vector with all components set to ``1``.
 
@@ -211,7 +211,7 @@ One vector, a vector with all components set to ``1``.
 
 .. rst-class:: classref-constant
 
-**MIN** = ``Vector3i(-2147483648, -2147483648, -2147483648)``
+**MIN** = ``Vector3i(-2147483648, -2147483648, -2147483648)`` :ref:`🔗<class_Vector3i_constant_MIN>`
 
 Min vector, a vector with all components equal to ``INT32_MIN``. Can be used as a negative integer equivalent of :ref:`Vector3.INF<class_Vector3_constant_INF>`.
 
@@ -219,7 +219,7 @@ Min vector, a vector with all components equal to ``INT32_MIN``. Can be used as 
 
 .. rst-class:: classref-constant
 
-**MAX** = ``Vector3i(2147483647, 2147483647, 2147483647)``
+**MAX** = ``Vector3i(2147483647, 2147483647, 2147483647)`` :ref:`🔗<class_Vector3i_constant_MAX>`
 
 Max vector, a vector with all components equal to ``INT32_MAX``. Can be used as an integer equivalent of :ref:`Vector3.INF<class_Vector3_constant_INF>`.
 
@@ -227,7 +227,7 @@ Max vector, a vector with all components equal to ``INT32_MAX``. Can be used as 
 
 .. rst-class:: classref-constant
 
-**LEFT** = ``Vector3i(-1, 0, 0)``
+**LEFT** = ``Vector3i(-1, 0, 0)`` :ref:`🔗<class_Vector3i_constant_LEFT>`
 
 Left unit vector. Represents the local direction of left, and the global direction of west.
 
@@ -235,7 +235,7 @@ Left unit vector. Represents the local direction of left, and the global directi
 
 .. rst-class:: classref-constant
 
-**RIGHT** = ``Vector3i(1, 0, 0)``
+**RIGHT** = ``Vector3i(1, 0, 0)`` :ref:`🔗<class_Vector3i_constant_RIGHT>`
 
 Right unit vector. Represents the local direction of right, and the global direction of east.
 
@@ -243,7 +243,7 @@ Right unit vector. Represents the local direction of right, and the global direc
 
 .. rst-class:: classref-constant
 
-**UP** = ``Vector3i(0, 1, 0)``
+**UP** = ``Vector3i(0, 1, 0)`` :ref:`🔗<class_Vector3i_constant_UP>`
 
 Up unit vector.
 
@@ -251,7 +251,7 @@ Up unit vector.
 
 .. rst-class:: classref-constant
 
-**DOWN** = ``Vector3i(0, -1, 0)``
+**DOWN** = ``Vector3i(0, -1, 0)`` :ref:`🔗<class_Vector3i_constant_DOWN>`
 
 Down unit vector.
 
@@ -259,7 +259,7 @@ Down unit vector.
 
 .. rst-class:: classref-constant
 
-**FORWARD** = ``Vector3i(0, 0, -1)``
+**FORWARD** = ``Vector3i(0, 0, -1)`` :ref:`🔗<class_Vector3i_constant_FORWARD>`
 
 Forward unit vector. Represents the local direction of forward, and the global direction of north.
 
@@ -267,7 +267,7 @@ Forward unit vector. Represents the local direction of forward, and the global d
 
 .. rst-class:: classref-constant
 
-**BACK** = ``Vector3i(0, 0, 1)``
+**BACK** = ``Vector3i(0, 0, 1)`` :ref:`🔗<class_Vector3i_constant_BACK>`
 
 Back unit vector. Represents the local direction of back, and the global direction of south.
 
@@ -284,7 +284,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **x** = ``0``
+:ref:`int<class_int>` **x** = ``0`` :ref:`🔗<class_Vector3i_property_x>`
 
 The vector's X component. Also accessible by using the index position ``[0]``.
 
@@ -296,7 +296,7 @@ The vector's X component. Also accessible by using the index position ``[0]``.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **y** = ``0``
+:ref:`int<class_int>` **y** = ``0`` :ref:`🔗<class_Vector3i_property_y>`
 
 The vector's Y component. Also accessible by using the index position ``[1]``.
 
@@ -308,7 +308,7 @@ The vector's Y component. Also accessible by using the index position ``[1]``.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **z** = ``0``
+:ref:`int<class_int>` **z** = ``0`` :ref:`🔗<class_Vector3i_property_z>`
 
 The vector's Z component. Also accessible by using the index position ``[2]``.
 
@@ -325,7 +325,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`Vector3i<class_Vector3i>` **Vector3i**\ (\ )
+:ref:`Vector3i<class_Vector3i>` **Vector3i**\ (\ ) :ref:`🔗<class_Vector3i_constructor_Vector3i>`
 
 Constructs a default-initialized **Vector3i** with all components set to ``0``.
 
@@ -372,7 +372,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3i<class_Vector3i>` **abs**\ (\ ) |const|
+:ref:`Vector3i<class_Vector3i>` **abs**\ (\ ) |const| :ref:`🔗<class_Vector3i_method_abs>`
 
 Returns a new vector with all components in absolute values (i.e. positive).
 
@@ -384,7 +384,7 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 .. rst-class:: classref-method
 
-:ref:`Vector3i<class_Vector3i>` **clamp**\ (\ min\: :ref:`Vector3i<class_Vector3i>`, max\: :ref:`Vector3i<class_Vector3i>`\ ) |const|
+:ref:`Vector3i<class_Vector3i>` **clamp**\ (\ min\: :ref:`Vector3i<class_Vector3i>`, max\: :ref:`Vector3i<class_Vector3i>`\ ) |const| :ref:`🔗<class_Vector3i_method_clamp>`
 
 Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
 
@@ -396,7 +396,7 @@ Returns a new vector with all components clamped between the components of ``min
 
 .. rst-class:: classref-method
 
-:ref:`Vector3i<class_Vector3i>` **clampi**\ (\ min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector3i<class_Vector3i>` **clampi**\ (\ min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector3i_method_clampi>`
 
 Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
 
@@ -408,7 +408,7 @@ Returns a new vector with all components clamped between ``min`` and ``max``, by
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **distance_squared_to**\ (\ to\: :ref:`Vector3i<class_Vector3i>`\ ) |const|
+:ref:`int<class_int>` **distance_squared_to**\ (\ to\: :ref:`Vector3i<class_Vector3i>`\ ) |const| :ref:`🔗<class_Vector3i_method_distance_squared_to>`
 
 Returns the squared distance between this vector and ``to``.
 
@@ -422,7 +422,7 @@ This method runs faster than :ref:`distance_to<class_Vector3i_method_distance_to
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **distance_to**\ (\ to\: :ref:`Vector3i<class_Vector3i>`\ ) |const|
+:ref:`float<class_float>` **distance_to**\ (\ to\: :ref:`Vector3i<class_Vector3i>`\ ) |const| :ref:`🔗<class_Vector3i_method_distance_to>`
 
 Returns the distance between this vector and ``to``.
 
@@ -434,7 +434,7 @@ Returns the distance between this vector and ``to``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **length**\ (\ ) |const|
+:ref:`float<class_float>` **length**\ (\ ) |const| :ref:`🔗<class_Vector3i_method_length>`
 
 Returns the length (magnitude) of this vector.
 
@@ -446,7 +446,7 @@ Returns the length (magnitude) of this vector.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **length_squared**\ (\ ) |const|
+:ref:`int<class_int>` **length_squared**\ (\ ) |const| :ref:`🔗<class_Vector3i_method_length_squared>`
 
 Returns the squared length (squared magnitude) of this vector.
 
@@ -460,7 +460,7 @@ This method runs faster than :ref:`length<class_Vector3i_method_length>`, so pre
 
 .. rst-class:: classref-method
 
-:ref:`Vector3i<class_Vector3i>` **max**\ (\ with\: :ref:`Vector3i<class_Vector3i>`\ ) |const|
+:ref:`Vector3i<class_Vector3i>` **max**\ (\ with\: :ref:`Vector3i<class_Vector3i>`\ ) |const| :ref:`🔗<class_Vector3i_method_max>`
 
 Returns the component-wise maximum of this and ``with``, equivalent to ``Vector3i(maxi(x, with.x), maxi(y, with.y), maxi(z, with.z))``.
 
@@ -472,7 +472,7 @@ Returns the component-wise maximum of this and ``with``, equivalent to ``Vector3
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **max_axis_index**\ (\ ) |const|
+:ref:`int<class_int>` **max_axis_index**\ (\ ) |const| :ref:`🔗<class_Vector3i_method_max_axis_index>`
 
 Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_X<class_Vector3i_constant_AXIS_X>`.
 
@@ -484,7 +484,7 @@ Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all
 
 .. rst-class:: classref-method
 
-:ref:`Vector3i<class_Vector3i>` **maxi**\ (\ with\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector3i<class_Vector3i>` **maxi**\ (\ with\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector3i_method_maxi>`
 
 Returns the component-wise maximum of this and ``with``, equivalent to ``Vector3i(maxi(x, with), maxi(y, with), maxi(z, with))``.
 
@@ -496,7 +496,7 @@ Returns the component-wise maximum of this and ``with``, equivalent to ``Vector3
 
 .. rst-class:: classref-method
 
-:ref:`Vector3i<class_Vector3i>` **min**\ (\ with\: :ref:`Vector3i<class_Vector3i>`\ ) |const|
+:ref:`Vector3i<class_Vector3i>` **min**\ (\ with\: :ref:`Vector3i<class_Vector3i>`\ ) |const| :ref:`🔗<class_Vector3i_method_min>`
 
 Returns the component-wise minimum of this and ``with``, equivalent to ``Vector3i(mini(x, with.x), mini(y, with.y), mini(z, with.z))``.
 
@@ -508,7 +508,7 @@ Returns the component-wise minimum of this and ``with``, equivalent to ``Vector3
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **min_axis_index**\ (\ ) |const|
+:ref:`int<class_int>` **min_axis_index**\ (\ ) |const| :ref:`🔗<class_Vector3i_method_min_axis_index>`
 
 Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_Z<class_Vector3i_constant_AXIS_Z>`.
 
@@ -520,7 +520,7 @@ Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all 
 
 .. rst-class:: classref-method
 
-:ref:`Vector3i<class_Vector3i>` **mini**\ (\ with\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector3i<class_Vector3i>` **mini**\ (\ with\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector3i_method_mini>`
 
 Returns the component-wise minimum of this and ``with``, equivalent to ``Vector3i(mini(x, with), mini(y, with), mini(z, with))``.
 
@@ -532,7 +532,7 @@ Returns the component-wise minimum of this and ``with``, equivalent to ``Vector3
 
 .. rst-class:: classref-method
 
-:ref:`Vector3i<class_Vector3i>` **sign**\ (\ ) |const|
+:ref:`Vector3i<class_Vector3i>` **sign**\ (\ ) |const| :ref:`🔗<class_Vector3i_method_sign>`
 
 Returns a new vector with each component set to ``1`` if it's positive, ``-1`` if it's negative, and ``0`` if it's zero. The result is identical to calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
 
@@ -544,7 +544,7 @@ Returns a new vector with each component set to ``1`` if it's positive, ``-1`` i
 
 .. rst-class:: classref-method
 
-:ref:`Vector3i<class_Vector3i>` **snapped**\ (\ step\: :ref:`Vector3i<class_Vector3i>`\ ) |const|
+:ref:`Vector3i<class_Vector3i>` **snapped**\ (\ step\: :ref:`Vector3i<class_Vector3i>`\ ) |const| :ref:`🔗<class_Vector3i_method_snapped>`
 
 Returns a new vector with each component snapped to the closest multiple of the corresponding component in ``step``.
 
@@ -556,7 +556,7 @@ Returns a new vector with each component snapped to the closest multiple of the 
 
 .. rst-class:: classref-method
 
-:ref:`Vector3i<class_Vector3i>` **snappedi**\ (\ step\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector3i<class_Vector3i>` **snappedi**\ (\ step\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector3i_method_snappedi>`
 
 Returns a new vector with each component snapped to the closest multiple of ``step``.
 
@@ -573,7 +573,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_neq_Vector3i>`
 
 Returns ``true`` if the vectors are not equal.
 
@@ -585,7 +585,7 @@ Returns ``true`` if the vectors are not equal.
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3i<class_Vector3i>` **operator %**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`Vector3i<class_Vector3i>` **operator %**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_mod_Vector3i>`
 
 Gets the remainder of each component of the **Vector3i** with the components of the given **Vector3i**. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
@@ -601,7 +601,7 @@ Gets the remainder of each component of the **Vector3i** with the components of 
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3i<class_Vector3i>` **operator %**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`Vector3i<class_Vector3i>` **operator %**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Vector3i_operator_mod_int>`
 
 Gets the remainder of each component of the **Vector3i** with the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
@@ -617,7 +617,7 @@ Gets the remainder of each component of the **Vector3i** with the given :ref:`in
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3i<class_Vector3i>` **operator ***\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`Vector3i<class_Vector3i>` **operator ***\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_mul_Vector3i>`
 
 Multiplies each component of the **Vector3i** by the components of the given **Vector3i**.
 
@@ -633,7 +633,7 @@ Multiplies each component of the **Vector3i** by the components of the given **V
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3<class_Vector3>` **operator ***\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`Vector3<class_Vector3>` **operator ***\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Vector3i_operator_mul_float>`
 
 Multiplies each component of the **Vector3i** by the given :ref:`float<class_float>`. Returns a :ref:`Vector3<class_Vector3>`.
 
@@ -649,7 +649,7 @@ Multiplies each component of the **Vector3i** by the given :ref:`float<class_flo
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3i<class_Vector3i>` **operator ***\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`Vector3i<class_Vector3i>` **operator ***\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Vector3i_operator_mul_int>`
 
 Multiplies each component of the **Vector3i** by the given :ref:`int<class_int>`.
 
@@ -661,7 +661,7 @@ Multiplies each component of the **Vector3i** by the given :ref:`int<class_int>`
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3i<class_Vector3i>` **operator +**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`Vector3i<class_Vector3i>` **operator +**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_sum_Vector3i>`
 
 Adds each component of the **Vector3i** by the components of the given **Vector3i**.
 
@@ -677,7 +677,7 @@ Adds each component of the **Vector3i** by the components of the given **Vector3
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3i<class_Vector3i>` **operator -**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`Vector3i<class_Vector3i>` **operator -**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_dif_Vector3i>`
 
 Subtracts each component of the **Vector3i** by the components of the given **Vector3i**.
 
@@ -693,7 +693,7 @@ Subtracts each component of the **Vector3i** by the components of the given **Ve
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3i<class_Vector3i>` **operator /**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`Vector3i<class_Vector3i>` **operator /**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_div_Vector3i>`
 
 Divides each component of the **Vector3i** by the components of the given **Vector3i**.
 
@@ -709,7 +709,7 @@ Divides each component of the **Vector3i** by the components of the given **Vect
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3<class_Vector3>` **operator /**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`Vector3<class_Vector3>` **operator /**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Vector3i_operator_div_float>`
 
 Divides each component of the **Vector3i** by the given :ref:`float<class_float>`. Returns a :ref:`Vector3<class_Vector3>`.
 
@@ -725,7 +725,7 @@ Divides each component of the **Vector3i** by the given :ref:`float<class_float>
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3i<class_Vector3i>` **operator /**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`Vector3i<class_Vector3i>` **operator /**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Vector3i_operator_div_int>`
 
 Divides each component of the **Vector3i** by the given :ref:`int<class_int>`.
 
@@ -737,7 +737,7 @@ Divides each component of the **Vector3i** by the given :ref:`int<class_int>`.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_lt_Vector3i>`
 
 Compares two **Vector3i** vectors by first checking if the X value of the left vector is less than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
@@ -749,7 +749,7 @@ Compares two **Vector3i** vectors by first checking if the X value of the left v
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_lte_Vector3i>`
 
 Compares two **Vector3i** vectors by first checking if the X value of the left vector is less than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
@@ -761,7 +761,7 @@ Compares two **Vector3i** vectors by first checking if the X value of the left v
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_eq_Vector3i>`
 
 Returns ``true`` if the vectors are equal.
 
@@ -773,7 +773,7 @@ Returns ``true`` if the vectors are equal.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_gt_Vector3i>`
 
 Compares two **Vector3i** vectors by first checking if the X value of the left vector is greater than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
@@ -785,7 +785,7 @@ Compares two **Vector3i** vectors by first checking if the X value of the left v
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ )
+:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`Vector3i<class_Vector3i>`\ ) :ref:`🔗<class_Vector3i_operator_gte_Vector3i>`
 
 Compares two **Vector3i** vectors by first checking if the X value of the left vector is greater than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, and then with the Z values. This operator is useful for sorting vectors.
 
@@ -797,7 +797,7 @@ Compares two **Vector3i** vectors by first checking if the X value of the left v
 
 .. rst-class:: classref-operator
 
-:ref:`int<class_int>` **operator []**\ (\ index\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **operator []**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Vector3i_operator_idx_int>`
 
 Access vector components using their ``index``. ``v[0]`` is equivalent to ``v.x``, ``v[1]`` is equivalent to ``v.y``, and ``v[2]`` is equivalent to ``v.z``.
 
@@ -809,7 +809,7 @@ Access vector components using their ``index``. ``v[0]`` is equivalent to ``v.x`
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3i<class_Vector3i>` **operator unary+**\ (\ )
+:ref:`Vector3i<class_Vector3i>` **operator unary+**\ (\ ) :ref:`🔗<class_Vector3i_operator_unplus>`
 
 Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
 
@@ -821,7 +821,7 @@ Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, 
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3i<class_Vector3i>` **operator unary-**\ (\ )
+:ref:`Vector3i<class_Vector3i>` **operator unary-**\ (\ ) :ref:`🔗<class_Vector3i_operator_unminus>`
 
 Returns the negative value of the **Vector3i**. This is the same as writing ``Vector3i(-v.x, -v.y, -v.z)``. This operation flips the direction of the vector while keeping the same magnitude.
 

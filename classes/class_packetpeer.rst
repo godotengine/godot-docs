@@ -72,7 +72,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **encode_buffer_max_size** = ``8388608``
+:ref:`int<class_int>` **encode_buffer_max_size** = ``8388608`` :ref:`🔗<class_PacketPeer_property_encode_buffer_max_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -96,7 +96,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_available_packet_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_available_packet_count**\ (\ ) |const| :ref:`🔗<class_PacketPeer_method_get_available_packet_count>`
 
 Returns the number of packets currently available in the ring-buffer.
 
@@ -108,7 +108,7 @@ Returns the number of packets currently available in the ring-buffer.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_packet**\ (\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **get_packet**\ (\ ) :ref:`🔗<class_PacketPeer_method_get_packet>`
 
 Gets a raw packet.
 
@@ -120,7 +120,7 @@ Gets a raw packet.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **get_packet_error**\ (\ ) |const|
+:ref:`Error<enum_@GlobalScope_Error>` **get_packet_error**\ (\ ) |const| :ref:`🔗<class_PacketPeer_method_get_packet_error>`
 
 Returns the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_method_get_packet>` and :ref:`get_var<class_PacketPeer_method_get_var>`).
 
@@ -132,7 +132,7 @@ Returns the error state of the last packet received (via :ref:`get_packet<class_
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_var**\ (\ allow_objects\: :ref:`bool<class_bool>` = false\ )
+:ref:`Variant<class_Variant>` **get_var**\ (\ allow_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PacketPeer_method_get_var>`
 
 Gets a Variant. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
@@ -148,7 +148,7 @@ Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.byte
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **put_packet**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **put_packet**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_PacketPeer_method_put_packet>`
 
 Sends a raw packet.
 
@@ -160,7 +160,7 @@ Sends a raw packet.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **put_var**\ (\ var\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ )
+:ref:`Error<enum_@GlobalScope_Error>` **put_var**\ (\ var\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PacketPeer_method_put_var>`
 
 Sends a :ref:`Variant<class_Variant>` as a packet. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
 

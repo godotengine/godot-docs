@@ -69,7 +69,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **PlayMode**:
+enum **PlayMode**: :ref:`🔗<enum_AnimationNodeAnimation_PlayMode>`
 
 .. _class_AnimationNodeAnimation_constant_PLAY_MODE_FORWARD:
 
@@ -100,7 +100,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **animation** = ``&""``
+:ref:`StringName<class_StringName>` **animation** = ``&""`` :ref:`🔗<class_AnimationNodeAnimation_property_animation>`
 
 .. rst-class:: classref-property-setget
 
@@ -117,7 +117,7 @@ Animation to use as an output. It is one of the animations provided by :ref:`Ani
 
 .. rst-class:: classref-property
 
-:ref:`LoopMode<enum_Animation_LoopMode>` **loop_mode**
+:ref:`LoopMode<enum_Animation_LoopMode>` **loop_mode** :ref:`🔗<class_AnimationNodeAnimation_property_loop_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -134,7 +134,7 @@ If :ref:`use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_ti
 
 .. rst-class:: classref-property
 
-:ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **play_mode** = ``0``
+:ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **play_mode** = ``0`` :ref:`🔗<class_AnimationNodeAnimation_property_play_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -151,7 +151,7 @@ Determines the playback direction of the animation.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **start_offset**
+:ref:`float<class_float>` **start_offset** :ref:`🔗<class_AnimationNodeAnimation_property_start_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -170,7 +170,7 @@ This is useful for adjusting which foot steps first in 3D walking animations.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **stretch_time_scale**
+:ref:`bool<class_bool>` **stretch_time_scale** :ref:`🔗<class_AnimationNodeAnimation_property_stretch_time_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -191,7 +191,7 @@ If ``false``, the original animation length is respected. If you set the loop to
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **timeline_length**
+:ref:`float<class_float>` **timeline_length** :ref:`🔗<class_AnimationNodeAnimation_property_timeline_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -208,7 +208,7 @@ If :ref:`use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_ti
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_custom_timeline** = ``false``
+:ref:`bool<class_bool>` **use_custom_timeline** = ``false`` :ref:`🔗<class_AnimationNodeAnimation_property_use_custom_timeline>`
 
 .. rst-class:: classref-property-setget
 

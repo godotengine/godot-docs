@@ -83,7 +83,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**button_pressed**\ (\ name\: :ref:`String<class_String>`\ )
+**button_pressed**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_XRPositionalTracker_signal_button_pressed>`
 
 Emitted when a button on this tracker is pressed. Note that many XR runtimes allow other inputs to be mapped to buttons.
 
@@ -95,7 +95,7 @@ Emitted when a button on this tracker is pressed. Note that many XR runtimes all
 
 .. rst-class:: classref-signal
 
-**button_released**\ (\ name\: :ref:`String<class_String>`\ )
+**button_released**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_XRPositionalTracker_signal_button_released>`
 
 Emitted when a button on this tracker is released.
 
@@ -107,7 +107,7 @@ Emitted when a button on this tracker is released.
 
 .. rst-class:: classref-signal
 
-**input_float_changed**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`float<class_float>`\ )
+**input_float_changed**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_XRPositionalTracker_signal_input_float_changed>`
 
 Emitted when a trigger or similar input on this tracker changes value.
 
@@ -119,7 +119,7 @@ Emitted when a trigger or similar input on this tracker changes value.
 
 .. rst-class:: classref-signal
 
-**input_vector2_changed**\ (\ name\: :ref:`String<class_String>`, vector\: :ref:`Vector2<class_Vector2>`\ )
+**input_vector2_changed**\ (\ name\: :ref:`String<class_String>`, vector\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_XRPositionalTracker_signal_input_vector2_changed>`
 
 Emitted when a thumbstick or thumbpad on this tracker moves.
 
@@ -131,7 +131,7 @@ Emitted when a thumbstick or thumbpad on this tracker moves.
 
 .. rst-class:: classref-signal
 
-**pose_changed**\ (\ pose\: :ref:`XRPose<class_XRPose>`\ )
+**pose_changed**\ (\ pose\: :ref:`XRPose<class_XRPose>`\ ) :ref:`🔗<class_XRPositionalTracker_signal_pose_changed>`
 
 Emitted when the state of a pose tracked by this tracker changes.
 
@@ -143,7 +143,7 @@ Emitted when the state of a pose tracked by this tracker changes.
 
 .. rst-class:: classref-signal
 
-**pose_lost_tracking**\ (\ pose\: :ref:`XRPose<class_XRPose>`\ )
+**pose_lost_tracking**\ (\ pose\: :ref:`XRPose<class_XRPose>`\ ) :ref:`🔗<class_XRPositionalTracker_signal_pose_lost_tracking>`
 
 Emitted when a pose tracked by this tracker stops getting updated tracking data.
 
@@ -155,7 +155,7 @@ Emitted when a pose tracked by this tracker stops getting updated tracking data.
 
 .. rst-class:: classref-signal
 
-**profile_changed**\ (\ role\: :ref:`String<class_String>`\ )
+**profile_changed**\ (\ role\: :ref:`String<class_String>`\ ) :ref:`🔗<class_XRPositionalTracker_signal_profile_changed>`
 
 Emitted when the profile of our tracker changes.
 
@@ -172,7 +172,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TrackerHand**:
+enum **TrackerHand**: :ref:`🔗<enum_XRPositionalTracker_TrackerHand>`
 
 .. _class_XRPositionalTracker_constant_TRACKER_HAND_UNKNOWN:
 
@@ -219,7 +219,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` **hand** = ``0``
+:ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` **hand** = ``0`` :ref:`🔗<class_XRPositionalTracker_property_hand>`
 
 .. rst-class:: classref-property-setget
 
@@ -236,7 +236,7 @@ Defines which hand this tracker relates to.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **profile** = ``""``
+:ref:`String<class_String>` **profile** = ``""`` :ref:`🔗<class_XRPositionalTracker_property_profile>`
 
 .. rst-class:: classref-property-setget
 
@@ -258,7 +258,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_input**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_input**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_XRPositionalTracker_method_get_input>`
 
 **Deprecated:** Use through :ref:`XRControllerTracker<class_XRControllerTracker>`.
 
@@ -272,7 +272,7 @@ Returns an input for this tracker. It can return a boolean, float or :ref:`Vecto
 
 .. rst-class:: classref-method
 
-:ref:`XRPose<class_XRPose>` **get_pose**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`XRPose<class_XRPose>` **get_pose**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_XRPositionalTracker_method_get_pose>`
 
 Returns the current :ref:`XRPose<class_XRPose>` state object for the bound ``name`` pose.
 
@@ -284,7 +284,7 @@ Returns the current :ref:`XRPose<class_XRPose>` state object for the bound ``nam
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_pose**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_pose**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_XRPositionalTracker_method_has_pose>`
 
 Returns ``true`` if the tracker is available and is currently tracking the bound ``name`` pose.
 
@@ -296,7 +296,7 @@ Returns ``true`` if the tracker is available and is currently tracking the bound
 
 .. rst-class:: classref-method
 
-|void| **invalidate_pose**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **invalidate_pose**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_XRPositionalTracker_method_invalidate_pose>`
 
 Marks this pose as invalid, we don't clear the last reported state but it allows users to decide if trackers need to be hidden if we lose tracking or just remain at their last known position.
 
@@ -308,7 +308,7 @@ Marks this pose as invalid, we don't clear the last reported state but it allows
 
 .. rst-class:: classref-method
 
-|void| **set_input**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **set_input**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_XRPositionalTracker_method_set_input>`
 
 **Deprecated:** Use through :ref:`XRControllerTracker<class_XRControllerTracker>`.
 
@@ -322,7 +322,7 @@ Changes the value for the given input. This method is called by a :ref:`XRInterf
 
 .. rst-class:: classref-method
 
-|void| **set_pose**\ (\ name\: :ref:`StringName<class_StringName>`, transform\: :ref:`Transform3D<class_Transform3D>`, linear_velocity\: :ref:`Vector3<class_Vector3>`, angular_velocity\: :ref:`Vector3<class_Vector3>`, tracking_confidence\: :ref:`TrackingConfidence<enum_XRPose_TrackingConfidence>`\ )
+|void| **set_pose**\ (\ name\: :ref:`StringName<class_StringName>`, transform\: :ref:`Transform3D<class_Transform3D>`, linear_velocity\: :ref:`Vector3<class_Vector3>`, angular_velocity\: :ref:`Vector3<class_Vector3>`, tracking_confidence\: :ref:`TrackingConfidence<enum_XRPose_TrackingConfidence>`\ ) :ref:`🔗<class_XRPositionalTracker_method_set_pose>`
 
 Sets the transform, linear velocity, angular velocity and tracking confidence for the given pose. This method is called by a :ref:`XRInterface<class_XRInterface>` implementation and should not be used directly.
 

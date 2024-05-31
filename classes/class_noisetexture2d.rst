@@ -80,7 +80,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **as_normal_map** = ``false``
+:ref:`bool<class_bool>` **as_normal_map** = ``false`` :ref:`🔗<class_NoiseTexture2D_property_as_normal_map>`
 
 .. rst-class:: classref-property-setget
 
@@ -97,7 +97,7 @@ If ``true``, the resulting texture contains a normal map created from the origin
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bump_strength** = ``8.0``
+:ref:`float<class_float>` **bump_strength** = ``8.0`` :ref:`🔗<class_NoiseTexture2D_property_bump_strength>`
 
 .. rst-class:: classref-property-setget
 
@@ -114,7 +114,7 @@ Strength of the bump maps used in this texture. A higher value will make the bum
 
 .. rst-class:: classref-property
 
-:ref:`Gradient<class_Gradient>` **color_ramp**
+:ref:`Gradient<class_Gradient>` **color_ramp** :ref:`🔗<class_NoiseTexture2D_property_color_ramp>`
 
 .. rst-class:: classref-property-setget
 
@@ -131,7 +131,7 @@ A :ref:`Gradient<class_Gradient>` which is used to map the luminance of each pix
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **generate_mipmaps** = ``true``
+:ref:`bool<class_bool>` **generate_mipmaps** = ``true`` :ref:`🔗<class_NoiseTexture2D_property_generate_mipmaps>`
 
 .. rst-class:: classref-property-setget
 
@@ -150,7 +150,7 @@ Determines whether mipmaps are generated for this texture. Enabling this results
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **height** = ``512``
+:ref:`int<class_int>` **height** = ``512`` :ref:`🔗<class_NoiseTexture2D_property_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -167,7 +167,7 @@ Height of the generated texture (in pixels).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **in_3d_space** = ``false``
+:ref:`bool<class_bool>` **in_3d_space** = ``false`` :ref:`🔗<class_NoiseTexture2D_property_in_3d_space>`
 
 .. rst-class:: classref-property-setget
 
@@ -184,7 +184,7 @@ Determines whether the noise image is calculated in 3D space. May result in redu
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **invert** = ``false``
+:ref:`bool<class_bool>` **invert** = ``false`` :ref:`🔗<class_NoiseTexture2D_property_invert>`
 
 .. rst-class:: classref-property-setget
 
@@ -201,7 +201,7 @@ If ``true``, inverts the noise texture. White becomes black, black becomes white
 
 .. rst-class:: classref-property
 
-:ref:`Noise<class_Noise>` **noise**
+:ref:`Noise<class_Noise>` **noise** :ref:`🔗<class_NoiseTexture2D_property_noise>`
 
 .. rst-class:: classref-property-setget
 
@@ -218,7 +218,7 @@ The instance of the :ref:`Noise<class_Noise>` object.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **normalize** = ``true``
+:ref:`bool<class_bool>` **normalize** = ``true`` :ref:`🔗<class_NoiseTexture2D_property_normalize>`
 
 .. rst-class:: classref-property-setget
 
@@ -237,7 +237,7 @@ Turning normalization off can affect the contrast and allows you to generate non
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **seamless** = ``false``
+:ref:`bool<class_bool>` **seamless** = ``false`` :ref:`🔗<class_NoiseTexture2D_property_seamless>`
 
 .. rst-class:: classref-property-setget
 
@@ -258,7 +258,7 @@ If ``true``, a seamless texture is requested from the :ref:`Noise<class_Noise>` 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **seamless_blend_skirt** = ``0.1``
+:ref:`float<class_float>` **seamless_blend_skirt** = ``0.1`` :ref:`🔗<class_NoiseTexture2D_property_seamless_blend_skirt>`
 
 .. rst-class:: classref-property-setget
 
@@ -277,7 +277,7 @@ Used for the default/fallback implementation of the seamless texture generation.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **width** = ``512``
+:ref:`int<class_int>` **width** = ``512`` :ref:`🔗<class_NoiseTexture2D_property_width>`
 
 .. rst-class:: classref-property-setget
 

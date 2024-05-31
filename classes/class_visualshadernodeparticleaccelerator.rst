@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Mode**:
+enum **Mode**: :ref:`🔗<enum_VisualShaderNodeParticleAccelerator_Mode>`
 
 .. _class_VisualShaderNodeParticleAccelerator_constant_MODE_LINEAR:
 
@@ -93,7 +93,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **mode** = ``0``
+:ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **mode** = ``0`` :ref:`🔗<class_VisualShaderNodeParticleAccelerator_property_mode>`
 
 .. rst-class:: classref-property-setget
 

@@ -54,7 +54,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format_override** = ``218``
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format_override** = ``218`` :ref:`🔗<class_RDTextureView_property_format_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -71,7 +71,7 @@ Optional override for the data format to return sampled values in. The default v
 
 .. rst-class:: classref-property
 
-:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_a** = ``6``
+:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_a** = ``6`` :ref:`🔗<class_RDTextureView_property_swizzle_a>`
 
 .. rst-class:: classref-property-setget
 
@@ -88,7 +88,7 @@ The channel to sample when sampling the alpha channel.
 
 .. rst-class:: classref-property
 
-:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_b** = ``5``
+:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_b** = ``5`` :ref:`🔗<class_RDTextureView_property_swizzle_b>`
 
 .. rst-class:: classref-property-setget
 
@@ -105,7 +105,7 @@ The channel to sample when sampling the blue color channel.
 
 .. rst-class:: classref-property
 
-:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_g** = ``4``
+:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_g** = ``4`` :ref:`🔗<class_RDTextureView_property_swizzle_g>`
 
 .. rst-class:: classref-property-setget
 
@@ -122,7 +122,7 @@ The channel to sample when sampling the green color channel.
 
 .. rst-class:: classref-property
 
-:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_r** = ``3``
+:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_r** = ``3`` :ref:`🔗<class_RDTextureView_property_swizzle_r>`
 
 .. rst-class:: classref-property-setget
 

@@ -71,7 +71,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spot_angle** = ``45.0``
+:ref:`float<class_float>` **spot_angle** = ``45.0`` :ref:`🔗<class_SpotLight3D_property_spot_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +90,7 @@ The spotlight's angle in degrees.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spot_angle_attenuation** = ``1.0``
+:ref:`float<class_float>` **spot_angle_attenuation** = ``1.0`` :ref:`🔗<class_SpotLight3D_property_spot_angle_attenuation>`
 
 .. rst-class:: classref-property-setget
 
@@ -107,7 +107,7 @@ The spotlight's *angular* attenuation curve. See also :ref:`spot_attenuation<cla
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spot_attenuation** = ``1.0``
+:ref:`float<class_float>` **spot_attenuation** = ``1.0`` :ref:`🔗<class_SpotLight3D_property_spot_attenuation>`
 
 .. rst-class:: classref-property-setget
 
@@ -130,7 +130,7 @@ A value of ``0.0`` smoothly attenuates light at the edge of the range. A value o
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spot_range** = ``5.0``
+:ref:`float<class_float>` **spot_range** = ``5.0`` :ref:`🔗<class_SpotLight3D_property_spot_range>`
 
 .. rst-class:: classref-property-setget
 

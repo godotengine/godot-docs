@@ -52,7 +52,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **input_buffer_max_size** = ``65532``
+:ref:`int<class_int>` **input_buffer_max_size** = ``65532`` :ref:`🔗<class_PacketPeerStream_property_input_buffer_max_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -71,7 +71,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **output_buffer_max_size** = ``65532``
+:ref:`int<class_int>` **output_buffer_max_size** = ``65532`` :ref:`🔗<class_PacketPeerStream_property_output_buffer_max_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +90,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`StreamPeer<class_StreamPeer>` **stream_peer**
+:ref:`StreamPeer<class_StreamPeer>` **stream_peer** :ref:`🔗<class_PacketPeerStream_property_stream_peer>`
 
 .. rst-class:: classref-property-setget
 

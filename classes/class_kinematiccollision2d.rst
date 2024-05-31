@@ -72,7 +72,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_angle**\ (\ up_direction\: :ref:`Vector2<class_Vector2>` = Vector2(0, -1)\ ) |const|
+:ref:`float<class_float>` **get_angle**\ (\ up_direction\: :ref:`Vector2<class_Vector2>` = Vector2(0, -1)\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_angle>`
 
 Returns the collision angle according to ``up_direction``, which is :ref:`Vector2.UP<class_Vector2_constant_UP>` by default. This value is always positive.
 
@@ -84,7 +84,7 @@ Returns the collision angle according to ``up_direction``, which is :ref:`Vector
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_collider**\ (\ ) |const|
+:ref:`Object<class_Object>` **get_collider**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_collider>`
 
 Returns the colliding body's attached :ref:`Object<class_Object>`.
 
@@ -96,7 +96,7 @@ Returns the colliding body's attached :ref:`Object<class_Object>`.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collider_id**\ (\ ) |const|
+:ref:`int<class_int>` **get_collider_id**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_collider_id>`
 
 Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>`. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
 
@@ -108,7 +108,7 @@ Returns the unique instance ID of the colliding body's attached :ref:`Object<cla
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_collider_rid**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_collider_rid**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_collider_rid>`
 
 Returns the colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
@@ -120,7 +120,7 @@ Returns the colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServ
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_collider_shape**\ (\ ) |const|
+:ref:`Object<class_Object>` **get_collider_shape**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_collider_shape>`
 
 Returns the colliding body's shape.
 
@@ -132,7 +132,7 @@ Returns the colliding body's shape.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collider_shape_index**\ (\ ) |const|
+:ref:`int<class_int>` **get_collider_shape_index**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_collider_shape_index>`
 
 Returns the colliding body's shape index. See :ref:`CollisionObject2D<class_CollisionObject2D>`.
 
@@ -144,7 +144,7 @@ Returns the colliding body's shape index. See :ref:`CollisionObject2D<class_Coll
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_collider_velocity**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_collider_velocity**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_collider_velocity>`
 
 Returns the colliding body's velocity.
 
@@ -156,7 +156,7 @@ Returns the colliding body's velocity.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_depth**\ (\ ) |const|
+:ref:`float<class_float>` **get_depth**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_depth>`
 
 Returns the colliding body's length of overlap along the collision normal.
 
@@ -168,7 +168,7 @@ Returns the colliding body's length of overlap along the collision normal.
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_local_shape**\ (\ ) |const|
+:ref:`Object<class_Object>` **get_local_shape**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_local_shape>`
 
 Returns the moving object's colliding shape.
 
@@ -180,7 +180,7 @@ Returns the moving object's colliding shape.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_normal**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_normal**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_normal>`
 
 Returns the colliding body's shape's normal at the point of collision.
 
@@ -192,7 +192,7 @@ Returns the colliding body's shape's normal at the point of collision.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_position**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_position**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_position>`
 
 Returns the point of collision in global coordinates.
 
@@ -204,7 +204,7 @@ Returns the point of collision in global coordinates.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_remainder**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_remainder**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_remainder>`
 
 Returns the moving object's remaining movement vector.
 
@@ -216,7 +216,7 @@ Returns the moving object's remaining movement vector.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_travel**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_travel**\ (\ ) |const| :ref:`🔗<class_KinematicCollision2D_method_get_travel>`
 
 Returns the moving object's travel before collision.
 

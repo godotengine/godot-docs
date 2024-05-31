@@ -86,7 +86,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_run**\ (\ ) |virtual|
+|void| **_run**\ (\ ) |virtual| :ref:`🔗<class_EditorScript_private_method__run>`
 
 This method is executed by the Editor when **File > Run** is used.
 
@@ -98,7 +98,7 @@ This method is executed by the Editor when **File > Run** is used.
 
 .. rst-class:: classref-method
 
-|void| **add_root_node**\ (\ node\: :ref:`Node<class_Node>`\ )
+|void| **add_root_node**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_EditorScript_method_add_root_node>`
 
 Adds ``node`` as a child of the root node in the editor context.
 
@@ -112,7 +112,7 @@ Adds ``node`` as a child of the root node in the editor context.
 
 .. rst-class:: classref-method
 
-:ref:`EditorInterface<class_EditorInterface>` **get_editor_interface**\ (\ ) |const|
+:ref:`EditorInterface<class_EditorInterface>` **get_editor_interface**\ (\ ) |const| :ref:`🔗<class_EditorScript_method_get_editor_interface>`
 
 **Deprecated:** :ref:`EditorInterface<class_EditorInterface>` is a global singleton and can be accessed directly by its name.
 
@@ -126,7 +126,7 @@ Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **get_scene**\ (\ ) |const|
+:ref:`Node<class_Node>` **get_scene**\ (\ ) |const| :ref:`🔗<class_EditorScript_method_get_scene>`
 
 Returns the Editor's currently active scene.
 

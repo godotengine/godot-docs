@@ -52,7 +52,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_handles**\ (\ type\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_handles**\ (\ type\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_EditorResourceTooltipPlugin_private_method__handles>`
 
 Return ``true`` if the plugin is going to handle the given :ref:`Resource<class_Resource>` ``type``.
 
@@ -64,7 +64,7 @@ Return ``true`` if the plugin is going to handle the given :ref:`Resource<class_
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **_make_tooltip_for_path**\ (\ path\: :ref:`String<class_String>`, metadata\: :ref:`Dictionary<class_Dictionary>`, base\: :ref:`Control<class_Control>`\ ) |virtual| |const|
+:ref:`Control<class_Control>` **_make_tooltip_for_path**\ (\ path\: :ref:`String<class_String>`, metadata\: :ref:`Dictionary<class_Dictionary>`, base\: :ref:`Control<class_Control>`\ ) |virtual| |const| :ref:`🔗<class_EditorResourceTooltipPlugin_private_method__make_tooltip_for_path>`
 
 Create and return a tooltip that will be displayed when the user hovers a resource under the given ``path`` in filesystem dock.
 
@@ -92,7 +92,7 @@ The ``metadata`` dictionary is provided by preview generator (see :ref:`EditorRe
 
 .. rst-class:: classref-method
 
-|void| **request_thumbnail**\ (\ path\: :ref:`String<class_String>`, control\: :ref:`TextureRect<class_TextureRect>`\ ) |const|
+|void| **request_thumbnail**\ (\ path\: :ref:`String<class_String>`, control\: :ref:`TextureRect<class_TextureRect>`\ ) |const| :ref:`🔗<class_EditorResourceTooltipPlugin_method_request_thumbnail>`
 
 Requests a thumbnail for the given :ref:`TextureRect<class_TextureRect>`. The thumbnail is created asynchronously by :ref:`EditorResourcePreview<class_EditorResourcePreview>` and automatically set when available.
 

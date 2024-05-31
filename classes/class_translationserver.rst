@@ -107,7 +107,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **pseudolocalization_enabled** = ``false``
+:ref:`bool<class_bool>` **pseudolocalization_enabled** = ``false`` :ref:`🔗<class_TranslationServer_property_pseudolocalization_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -129,7 +129,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_translation**\ (\ translation\: :ref:`Translation<class_Translation>`\ )
+|void| **add_translation**\ (\ translation\: :ref:`Translation<class_Translation>`\ ) :ref:`🔗<class_TranslationServer_method_add_translation>`
 
 Adds a :ref:`Translation<class_Translation>` resource.
 
@@ -141,7 +141,7 @@ Adds a :ref:`Translation<class_Translation>` resource.
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_TranslationServer_method_clear>`
 
 Clears the server from all translations.
 
@@ -153,7 +153,7 @@ Clears the server from all translations.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **compare_locales**\ (\ locale_a\: :ref:`String<class_String>`, locale_b\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **compare_locales**\ (\ locale_a\: :ref:`String<class_String>`, locale_b\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TranslationServer_method_compare_locales>`
 
 Compares two locales and returns a similarity score between ``0`` (no match) and ``10`` (full match).
 
@@ -165,7 +165,7 @@ Compares two locales and returns a similarity score between ``0`` (no match) and
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_all_countries**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_all_countries**\ (\ ) |const| :ref:`🔗<class_TranslationServer_method_get_all_countries>`
 
 Returns an array of known country codes.
 
@@ -177,7 +177,7 @@ Returns an array of known country codes.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_all_languages**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_all_languages**\ (\ ) |const| :ref:`🔗<class_TranslationServer_method_get_all_languages>`
 
 Returns array of known language codes.
 
@@ -189,7 +189,7 @@ Returns array of known language codes.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_all_scripts**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_all_scripts**\ (\ ) |const| :ref:`🔗<class_TranslationServer_method_get_all_scripts>`
 
 Returns an array of known script codes.
 
@@ -201,7 +201,7 @@ Returns an array of known script codes.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_country_name**\ (\ country\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **get_country_name**\ (\ country\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TranslationServer_method_get_country_name>`
 
 Returns a readable country name for the ``country`` code.
 
@@ -213,7 +213,7 @@ Returns a readable country name for the ``country`` code.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_language_name**\ (\ language\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **get_language_name**\ (\ language\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TranslationServer_method_get_language_name>`
 
 Returns a readable language name for the ``language`` code.
 
@@ -225,7 +225,7 @@ Returns a readable language name for the ``language`` code.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_loaded_locales**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_loaded_locales**\ (\ ) |const| :ref:`🔗<class_TranslationServer_method_get_loaded_locales>`
 
 Returns an array of all loaded locales of the project.
 
@@ -237,7 +237,7 @@ Returns an array of all loaded locales of the project.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_locale**\ (\ ) |const|
+:ref:`String<class_String>` **get_locale**\ (\ ) |const| :ref:`🔗<class_TranslationServer_method_get_locale>`
 
 Returns the current locale of the project.
 
@@ -251,7 +251,7 @@ See also :ref:`OS.get_locale<class_OS_method_get_locale>` and :ref:`OS.get_local
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_locale_name**\ (\ locale\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **get_locale_name**\ (\ locale\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TranslationServer_method_get_locale_name>`
 
 Returns a locale's language and its variant (e.g. ``"en_US"`` would return ``"English (United States)"``).
 
@@ -263,7 +263,7 @@ Returns a locale's language and its variant (e.g. ``"en_US"`` would return ``"En
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_script_name**\ (\ script\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **get_script_name**\ (\ script\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TranslationServer_method_get_script_name>`
 
 Returns a readable script name for the ``script`` code.
 
@@ -275,7 +275,7 @@ Returns a readable script name for the ``script`` code.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_tool_locale**\ (\ )
+:ref:`String<class_String>` **get_tool_locale**\ (\ ) :ref:`🔗<class_TranslationServer_method_get_tool_locale>`
 
 Returns the current locale of the editor.
 
@@ -289,7 +289,7 @@ Returns the current locale of the editor.
 
 .. rst-class:: classref-method
 
-:ref:`Translation<class_Translation>` **get_translation_object**\ (\ locale\: :ref:`String<class_String>`\ )
+:ref:`Translation<class_Translation>` **get_translation_object**\ (\ locale\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TranslationServer_method_get_translation_object>`
 
 Returns the :ref:`Translation<class_Translation>` instance based on the ``locale`` passed in.
 
@@ -303,7 +303,7 @@ It will return ``null`` if there is no :ref:`Translation<class_Translation>` ins
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **pseudolocalize**\ (\ message\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`StringName<class_StringName>` **pseudolocalize**\ (\ message\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_TranslationServer_method_pseudolocalize>`
 
 Returns the pseudolocalized string based on the ``message`` passed in.
 
@@ -315,7 +315,7 @@ Returns the pseudolocalized string based on the ``message`` passed in.
 
 .. rst-class:: classref-method
 
-|void| **reload_pseudolocalization**\ (\ )
+|void| **reload_pseudolocalization**\ (\ ) :ref:`🔗<class_TranslationServer_method_reload_pseudolocalization>`
 
 Reparses the pseudolocalization options and reloads the translation.
 
@@ -327,7 +327,7 @@ Reparses the pseudolocalization options and reloads the translation.
 
 .. rst-class:: classref-method
 
-|void| **remove_translation**\ (\ translation\: :ref:`Translation<class_Translation>`\ )
+|void| **remove_translation**\ (\ translation\: :ref:`Translation<class_Translation>`\ ) :ref:`🔗<class_TranslationServer_method_remove_translation>`
 
 Removes the given translation from the server.
 
@@ -339,7 +339,7 @@ Removes the given translation from the server.
 
 .. rst-class:: classref-method
 
-|void| **set_locale**\ (\ locale\: :ref:`String<class_String>`\ )
+|void| **set_locale**\ (\ locale\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TranslationServer_method_set_locale>`
 
 Sets the locale of the project. The ``locale`` string will be standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
 
@@ -353,7 +353,7 @@ If translations have been loaded beforehand for the new locale, they will be app
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **standardize_locale**\ (\ locale\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **standardize_locale**\ (\ locale\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TranslationServer_method_standardize_locale>`
 
 Returns a ``locale`` string standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
 
@@ -365,7 +365,7 @@ Returns a ``locale`` string standardized to match known locales (e.g. ``en-US`` 
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **translate**\ (\ message\: :ref:`StringName<class_StringName>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`StringName<class_StringName>` **translate**\ (\ message\: :ref:`StringName<class_StringName>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_TranslationServer_method_translate>`
 
 Returns the current locale's translation for the given message (key) and context.
 
@@ -377,7 +377,7 @@ Returns the current locale's translation for the given message (key) and context
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **translate_plural**\ (\ message\: :ref:`StringName<class_StringName>`, plural_message\: :ref:`StringName<class_StringName>`, n\: :ref:`int<class_int>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`StringName<class_StringName>` **translate_plural**\ (\ message\: :ref:`StringName<class_StringName>`, plural_message\: :ref:`StringName<class_StringName>`, n\: :ref:`int<class_int>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_TranslationServer_method_translate_plural>`
 
 Returns the current locale's translation for the given message (key), plural message and context.
 

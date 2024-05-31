@@ -60,7 +60,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collide_separation_ray** = ``false``
+:ref:`bool<class_bool>` **collide_separation_ray** = ``false`` :ref:`🔗<class_PhysicsTestMotionParameters3D_property_collide_separation_ray>`
 
 .. rst-class:: classref-property-setget
 
@@ -79,7 +79,7 @@ If set to ``false``, shapes of type :ref:`PhysicsServer3D.SHAPE_SEPARATION_RAY<c
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude_bodies** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude_bodies** = ``[]`` :ref:`🔗<class_PhysicsTestMotionParameters3D_property_exclude_bodies>`
 
 .. rst-class:: classref-property-setget
 
@@ -96,7 +96,7 @@ Optional array of body :ref:`RID<class_RID>` to exclude from collision. Use :ref
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`int<class_int>`\] **exclude_objects** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`int<class_int>`\] **exclude_objects** = ``[]`` :ref:`🔗<class_PhysicsTestMotionParameters3D_property_exclude_objects>`
 
 .. rst-class:: classref-property-setget
 
@@ -113,7 +113,7 @@ Optional array of object unique instance ID to exclude from collision. See :ref:
 
 .. rst-class:: classref-property
 
-:ref:`Transform3D<class_Transform3D>` **from** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)``
+:ref:`Transform3D<class_Transform3D>` **from** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` :ref:`🔗<class_PhysicsTestMotionParameters3D_property_from>`
 
 .. rst-class:: classref-property-setget
 
@@ -130,7 +130,7 @@ Transform in global space where the motion should start. Usually set to :ref:`No
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **margin** = ``0.001``
+:ref:`float<class_float>` **margin** = ``0.001`` :ref:`🔗<class_PhysicsTestMotionParameters3D_property_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -147,7 +147,7 @@ Increases the size of the shapes involved in the collision detection.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_collisions** = ``1``
+:ref:`int<class_int>` **max_collisions** = ``1`` :ref:`🔗<class_PhysicsTestMotionParameters3D_property_max_collisions>`
 
 .. rst-class:: classref-property-setget
 
@@ -164,7 +164,7 @@ Maximum number of returned collisions, between ``1`` and ``32``. Always returns 
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **motion** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **motion** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_PhysicsTestMotionParameters3D_property_motion>`
 
 .. rst-class:: classref-property-setget
 
@@ -181,7 +181,7 @@ Motion vector to define the length and direction of the motion to test.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **recovery_as_collision** = ``false``
+:ref:`bool<class_bool>` **recovery_as_collision** = ``false`` :ref:`🔗<class_PhysicsTestMotionParameters3D_property_recovery_as_collision>`
 
 .. rst-class:: classref-property-setget
 

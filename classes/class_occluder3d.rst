@@ -59,7 +59,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_indices**\ (\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_indices**\ (\ ) |const| :ref:`🔗<class_Occluder3D_method_get_indices>`
 
 Returns the occluder shape's vertex indices.
 
@@ -71,7 +71,7 @@ Returns the occluder shape's vertex indices.
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices**\ (\ ) |const|
+:ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices**\ (\ ) |const| :ref:`🔗<class_Occluder3D_method_get_vertices>`
 
 Returns the occluder shape's vertex positions.
 

@@ -72,7 +72,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **alpha_blend** = ``false``
+:ref:`bool<class_bool>` **alpha_blend** = ``false`` :ref:`🔗<class_OpenXRCompositionLayer_property_alpha_blend>`
 
 .. rst-class:: classref-property-setget
 
@@ -91,7 +91,7 @@ Can be combined with :ref:`Viewport.transparent_bg<class_Viewport_property_trans
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enable_hole_punch** = ``false``
+:ref:`bool<class_bool>` **enable_hole_punch** = ``false`` :ref:`🔗<class_OpenXRCompositionLayer_property_enable_hole_punch>`
 
 .. rst-class:: classref-property-setget
 
@@ -110,7 +110,7 @@ This can be used to create the illusion that the composition layer exists in the
 
 .. rst-class:: classref-property
 
-:ref:`SubViewport<class_SubViewport>` **layer_viewport**
+:ref:`SubViewport<class_SubViewport>` **layer_viewport** :ref:`🔗<class_OpenXRCompositionLayer_property_layer_viewport>`
 
 .. rst-class:: classref-property-setget
 
@@ -127,7 +127,7 @@ The :ref:`SubViewport<class_SubViewport>` to render on the composition layer.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sort_order** = ``1``
+:ref:`int<class_int>` **sort_order** = ``1`` :ref:`🔗<class_OpenXRCompositionLayer_property_sort_order>`
 
 .. rst-class:: classref-property-setget
 
@@ -151,7 +151,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **intersects_ray**\ (\ origin\: :ref:`Vector3<class_Vector3>`, direction\: :ref:`Vector3<class_Vector3>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **intersects_ray**\ (\ origin\: :ref:`Vector3<class_Vector3>`, direction\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_OpenXRCompositionLayer_method_intersects_ray>`
 
 Returns UV coordinates where the given ray intersects with the composition layer. ``origin`` and ``direction`` must be in global space.
 
@@ -165,7 +165,7 @@ Returns ``Vector2(-1.0, -1.0)`` if the ray doesn't intersect.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_natively_supported**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_natively_supported**\ (\ ) |const| :ref:`🔗<class_OpenXRCompositionLayer_method_is_natively_supported>`
 
 Returns true if the OpenXR runtime natively supports this composition layer type.
 

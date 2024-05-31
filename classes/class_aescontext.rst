@@ -127,7 +127,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Mode**:
+enum **Mode**: :ref:`🔗<enum_AESContext_Mode>`
 
 .. _class_AESContext_constant_MODE_ECB_ENCRYPT:
 
@@ -182,7 +182,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **finish**\ (\ )
+|void| **finish**\ (\ ) :ref:`🔗<class_AESContext_method_finish>`
 
 Close this AES context so it can be started again. See :ref:`start<class_AESContext_method_start>`.
 
@@ -194,7 +194,7 @@ Close this AES context so it can be started again. See :ref:`start<class_AESCont
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_iv_state**\ (\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **get_iv_state**\ (\ ) :ref:`🔗<class_AESContext_method_get_iv_state>`
 
 Get the current IV state for this context (IV gets updated when calling :ref:`update<class_AESContext_method_update>`). You normally don't need this function.
 
@@ -208,7 +208,7 @@ Get the current IV state for this context (IV gets updated when calling :ref:`up
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ mode\: :ref:`Mode<enum_AESContext_Mode>`, key\: :ref:`PackedByteArray<class_PackedByteArray>`, iv\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray()\ )
+:ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ mode\: :ref:`Mode<enum_AESContext_Mode>`, key\: :ref:`PackedByteArray<class_PackedByteArray>`, iv\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray()\ ) :ref:`🔗<class_AESContext_method_start>`
 
 Start the AES context in the given ``mode``. A ``key`` of either 16 or 32 bytes must always be provided, while an ``iv`` (initialization vector) of exactly 16 bytes, is only needed when ``mode`` is either :ref:`MODE_CBC_ENCRYPT<class_AESContext_constant_MODE_CBC_ENCRYPT>` or :ref:`MODE_CBC_DECRYPT<class_AESContext_constant_MODE_CBC_DECRYPT>`.
 
@@ -220,7 +220,7 @@ Start the AES context in the given ``mode``. A ``key`` of either 16 or 32 bytes 
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **update**\ (\ src\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **update**\ (\ src\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_AESContext_method_update>`
 
 Run the desired operation for this AES context. Will return a :ref:`PackedByteArray<class_PackedByteArray>` containing the result of encrypting (or decrypting) the given ``src``. See :ref:`start<class_AESContext_method_start>` for mode of operation.
 

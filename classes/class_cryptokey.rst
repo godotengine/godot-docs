@@ -63,7 +63,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_public_only**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_public_only**\ (\ ) |const| :ref:`🔗<class_CryptoKey_method_is_public_only>`
 
 Returns ``true`` if this CryptoKey only has the public part, and not the private one.
 
@@ -75,7 +75,7 @@ Returns ``true`` if this CryptoKey only has the public part, and not the private
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load**\ (\ path\: :ref:`String<class_String>`, public_only\: :ref:`bool<class_bool>` = false\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load**\ (\ path\: :ref:`String<class_String>`, public_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CryptoKey_method_load>`
 
 Loads a key from ``path``. If ``public_only`` is ``true``, only the public key will be loaded.
 
@@ -89,7 +89,7 @@ Loads a key from ``path``. If ``public_only`` is ``true``, only the public key w
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_from_string**\ (\ string_key\: :ref:`String<class_String>`, public_only\: :ref:`bool<class_bool>` = false\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_from_string**\ (\ string_key\: :ref:`String<class_String>`, public_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CryptoKey_method_load_from_string>`
 
 Loads a key from the given ``string_key``. If ``public_only`` is ``true``, only the public key will be loaded.
 
@@ -101,7 +101,7 @@ Loads a key from the given ``string_key``. If ``public_only`` is ``true``, only 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save**\ (\ path\: :ref:`String<class_String>`, public_only\: :ref:`bool<class_bool>` = false\ )
+:ref:`Error<enum_@GlobalScope_Error>` **save**\ (\ path\: :ref:`String<class_String>`, public_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CryptoKey_method_save>`
 
 Saves a key to the given ``path``. If ``public_only`` is ``true``, only the public key will be saved.
 
@@ -115,7 +115,7 @@ Saves a key to the given ``path``. If ``public_only`` is ``true``, only the publ
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **save_to_string**\ (\ public_only\: :ref:`bool<class_bool>` = false\ )
+:ref:`String<class_String>` **save_to_string**\ (\ public_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CryptoKey_method_save_to_string>`
 
 Returns a string containing the key in PEM format. If ``public_only`` is ``true``, only the public key will be included.
 

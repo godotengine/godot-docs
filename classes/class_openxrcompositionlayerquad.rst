@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **quad_size** = ``Vector2(1, 1)``
+:ref:`Vector2<class_Vector2>` **quad_size** = ``Vector2(1, 1)`` :ref:`🔗<class_OpenXRCompositionLayerQuad_property_quad_size>`
 
 .. rst-class:: classref-property-setget
 

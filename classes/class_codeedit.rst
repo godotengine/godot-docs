@@ -304,7 +304,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**breakpoint_toggled**\ (\ line\: :ref:`int<class_int>`\ )
+**breakpoint_toggled**\ (\ line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CodeEdit_signal_breakpoint_toggled>`
 
 Emitted when a breakpoint is added or removed from a line. If the line is moved via backspace a removed is emitted at the old line.
 
@@ -316,7 +316,7 @@ Emitted when a breakpoint is added or removed from a line. If the line is moved 
 
 .. rst-class:: classref-signal
 
-**code_completion_requested**\ (\ )
+**code_completion_requested**\ (\ ) :ref:`🔗<class_CodeEdit_signal_code_completion_requested>`
 
 Emitted when the user requests code completion.
 
@@ -328,7 +328,7 @@ Emitted when the user requests code completion.
 
 .. rst-class:: classref-signal
 
-**symbol_lookup**\ (\ symbol\: :ref:`String<class_String>`, line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ )
+**symbol_lookup**\ (\ symbol\: :ref:`String<class_String>`, line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CodeEdit_signal_symbol_lookup>`
 
 Emitted when the user has clicked on a valid symbol.
 
@@ -340,7 +340,7 @@ Emitted when the user has clicked on a valid symbol.
 
 .. rst-class:: classref-signal
 
-**symbol_validate**\ (\ symbol\: :ref:`String<class_String>`\ )
+**symbol_validate**\ (\ symbol\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CodeEdit_signal_symbol_validate>`
 
 Emitted when the user hovers over a symbol. The symbol should be validated and responded to, by calling :ref:`set_symbol_lookup_word_as_valid<class_CodeEdit_method_set_symbol_lookup_word_as_valid>`.
 
@@ -357,7 +357,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **CodeCompletionKind**:
+enum **CodeCompletionKind**: :ref:`🔗<enum_CodeEdit_CodeCompletionKind>`
 
 .. _class_CodeEdit_constant_KIND_CLASS:
 
@@ -447,7 +447,7 @@ Marks the option as unclassified or plain text.
 
 .. rst-class:: classref-enumeration
 
-enum **CodeCompletionLocation**:
+enum **CodeCompletionLocation**: :ref:`🔗<enum_CodeEdit_CodeCompletionLocation>`
 
 .. _class_CodeEdit_constant_LOCATION_LOCAL:
 
@@ -494,7 +494,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **auto_brace_completion_enabled** = ``false``
+:ref:`bool<class_bool>` **auto_brace_completion_enabled** = ``false`` :ref:`🔗<class_CodeEdit_property_auto_brace_completion_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -511,7 +511,7 @@ Sets whether brace pairs should be autocompleted.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **auto_brace_completion_highlight_matching** = ``false``
+:ref:`bool<class_bool>` **auto_brace_completion_highlight_matching** = ``false`` :ref:`🔗<class_CodeEdit_property_auto_brace_completion_highlight_matching>`
 
 .. rst-class:: classref-property-setget
 
@@ -528,7 +528,7 @@ Highlight mismatching brace pairs.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **auto_brace_completion_pairs** = ``{ "\"": "\"", "'": "'", "(": ")", "[": "]", "{": "}" }``
+:ref:`Dictionary<class_Dictionary>` **auto_brace_completion_pairs** = ``{ "\"": "\"", "'": "'", "(": ")", "[": "]", "{": "}" }`` :ref:`🔗<class_CodeEdit_property_auto_brace_completion_pairs>`
 
 .. rst-class:: classref-property-setget
 
@@ -545,7 +545,7 @@ Sets the brace pairs to be autocompleted.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **code_completion_enabled** = ``false``
+:ref:`bool<class_bool>` **code_completion_enabled** = ``false`` :ref:`🔗<class_CodeEdit_property_code_completion_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -562,7 +562,7 @@ Sets whether code completion is allowed.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`String<class_String>`\] **code_completion_prefixes** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`String<class_String>`\] **code_completion_prefixes** = ``[]`` :ref:`🔗<class_CodeEdit_property_code_completion_prefixes>`
 
 .. rst-class:: classref-property-setget
 
@@ -579,7 +579,7 @@ Sets prefixes that will trigger code completion.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`String<class_String>`\] **delimiter_comments** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`String<class_String>`\] **delimiter_comments** = ``[]`` :ref:`🔗<class_CodeEdit_property_delimiter_comments>`
 
 .. rst-class:: classref-property-setget
 
@@ -596,7 +596,7 @@ Sets the comment delimiters. All existing comment delimiters will be removed.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`String<class_String>`\] **delimiter_strings** = ``["' '", "\" \""]``
+:ref:`Array<class_Array>`\[:ref:`String<class_String>`\] **delimiter_strings** = ``["' '", "\" \""]`` :ref:`🔗<class_CodeEdit_property_delimiter_strings>`
 
 .. rst-class:: classref-property-setget
 
@@ -613,7 +613,7 @@ Sets the string delimiters. All existing string delimiters will be removed.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gutters_draw_bookmarks** = ``false``
+:ref:`bool<class_bool>` **gutters_draw_bookmarks** = ``false`` :ref:`🔗<class_CodeEdit_property_gutters_draw_bookmarks>`
 
 .. rst-class:: classref-property-setget
 
@@ -630,7 +630,7 @@ Sets if bookmarked should be drawn in the gutter. This gutter is shared with bre
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gutters_draw_breakpoints_gutter** = ``false``
+:ref:`bool<class_bool>` **gutters_draw_breakpoints_gutter** = ``false`` :ref:`🔗<class_CodeEdit_property_gutters_draw_breakpoints_gutter>`
 
 .. rst-class:: classref-property-setget
 
@@ -647,7 +647,7 @@ Sets if breakpoints should be drawn in the gutter. This gutter is shared with bo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gutters_draw_executing_lines** = ``false``
+:ref:`bool<class_bool>` **gutters_draw_executing_lines** = ``false`` :ref:`🔗<class_CodeEdit_property_gutters_draw_executing_lines>`
 
 .. rst-class:: classref-property-setget
 
@@ -664,7 +664,7 @@ Sets if executing lines should be marked in the gutter. This gutter is shared wi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gutters_draw_fold_gutter** = ``false``
+:ref:`bool<class_bool>` **gutters_draw_fold_gutter** = ``false`` :ref:`🔗<class_CodeEdit_property_gutters_draw_fold_gutter>`
 
 .. rst-class:: classref-property-setget
 
@@ -681,7 +681,7 @@ Sets if foldable lines icons should be drawn in the gutter.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gutters_draw_line_numbers** = ``false``
+:ref:`bool<class_bool>` **gutters_draw_line_numbers** = ``false`` :ref:`🔗<class_CodeEdit_property_gutters_draw_line_numbers>`
 
 .. rst-class:: classref-property-setget
 
@@ -698,7 +698,7 @@ Sets if line numbers should be drawn in the gutter.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gutters_zero_pad_line_numbers** = ``false``
+:ref:`bool<class_bool>` **gutters_zero_pad_line_numbers** = ``false`` :ref:`🔗<class_CodeEdit_property_gutters_zero_pad_line_numbers>`
 
 .. rst-class:: classref-property-setget
 
@@ -715,7 +715,7 @@ Sets if line numbers drawn in the gutter are zero padded.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **indent_automatic** = ``false``
+:ref:`bool<class_bool>` **indent_automatic** = ``false`` :ref:`🔗<class_CodeEdit_property_indent_automatic>`
 
 .. rst-class:: classref-property-setget
 
@@ -732,7 +732,7 @@ Sets whether automatic indent are enabled, this will add an extra indent if a pr
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`String<class_String>`\] **indent_automatic_prefixes** = ``[":", "{", "[", "("]``
+:ref:`Array<class_Array>`\[:ref:`String<class_String>`\] **indent_automatic_prefixes** = ``[":", "{", "[", "("]`` :ref:`🔗<class_CodeEdit_property_indent_automatic_prefixes>`
 
 .. rst-class:: classref-property-setget
 
@@ -749,7 +749,7 @@ Prefixes to trigger an automatic indent.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **indent_size** = ``4``
+:ref:`int<class_int>` **indent_size** = ``4`` :ref:`🔗<class_CodeEdit_property_indent_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -766,7 +766,7 @@ Size of the tabulation indent (one :kbd:`Tab` press) in characters. If :ref:`ind
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **indent_use_spaces** = ``false``
+:ref:`bool<class_bool>` **indent_use_spaces** = ``false`` :ref:`🔗<class_CodeEdit_property_indent_use_spaces>`
 
 .. rst-class:: classref-property-setget
 
@@ -783,7 +783,7 @@ Use spaces instead of tabs for indentation.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **line_folding** = ``false``
+:ref:`bool<class_bool>` **line_folding** = ``false`` :ref:`🔗<class_CodeEdit_property_line_folding>`
 
 .. rst-class:: classref-property-setget
 
@@ -800,7 +800,7 @@ Sets whether line folding is allowed.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`int<class_int>`\] **line_length_guidelines** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`int<class_int>`\] **line_length_guidelines** = ``[]`` :ref:`🔗<class_CodeEdit_property_line_length_guidelines>`
 
 .. rst-class:: classref-property-setget
 
@@ -817,7 +817,7 @@ Draws vertical lines at the provided columns. The first entry is considered a ma
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **symbol_lookup_on_click** = ``false``
+:ref:`bool<class_bool>` **symbol_lookup_on_click** = ``false`` :ref:`🔗<class_CodeEdit_property_symbol_lookup_on_click>`
 
 .. rst-class:: classref-property-setget
 
@@ -839,7 +839,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_confirm_code_completion**\ (\ replace\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_confirm_code_completion**\ (\ replace\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_CodeEdit_private_method__confirm_code_completion>`
 
 Override this method to define how the selected entry should be inserted. If ``replace`` is ``true``, any existing text should be replaced.
 
@@ -851,7 +851,7 @@ Override this method to define how the selected entry should be inserted. If ``r
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_filter_code_completion_candidates**\ (\ candidates\: :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\]\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_filter_code_completion_candidates**\ (\ candidates\: :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\]\ ) |virtual| |const| :ref:`🔗<class_CodeEdit_private_method__filter_code_completion_candidates>`
 
 Override this method to define what items in ``candidates`` should be displayed.
 
@@ -865,7 +865,7 @@ Both ``candidates`` and the return is a :ref:`Array<class_Array>` of :ref:`Dicti
 
 .. rst-class:: classref-method
 
-|void| **_request_code_completion**\ (\ force\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_request_code_completion**\ (\ force\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_CodeEdit_private_method__request_code_completion>`
 
 Override this method to define what happens when the user requests code completion. If ``force`` is ``true``, any checks should be bypassed.
 
@@ -877,7 +877,7 @@ Override this method to define what happens when the user requests code completi
 
 .. rst-class:: classref-method
 
-|void| **add_auto_brace_completion_pair**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`\ )
+|void| **add_auto_brace_completion_pair**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CodeEdit_method_add_auto_brace_completion_pair>`
 
 Adds a brace pair.
 
@@ -891,7 +891,7 @@ Both the start and end keys must be symbols. Only the start key has to be unique
 
 .. rst-class:: classref-method
 
-|void| **add_code_completion_option**\ (\ type\: :ref:`CodeCompletionKind<enum_CodeEdit_CodeCompletionKind>`, display_text\: :ref:`String<class_String>`, insert_text\: :ref:`String<class_String>`, text_color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), icon\: :ref:`Resource<class_Resource>` = null, value\: :ref:`Variant<class_Variant>` = null, location\: :ref:`int<class_int>` = 1024\ )
+|void| **add_code_completion_option**\ (\ type\: :ref:`CodeCompletionKind<enum_CodeEdit_CodeCompletionKind>`, display_text\: :ref:`String<class_String>`, insert_text\: :ref:`String<class_String>`, text_color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), icon\: :ref:`Resource<class_Resource>` = null, value\: :ref:`Variant<class_Variant>` = null, location\: :ref:`int<class_int>` = 1024\ ) :ref:`🔗<class_CodeEdit_method_add_code_completion_option>`
 
 Submits an item to the queue of potential candidates for the autocomplete menu. Call :ref:`update_code_completion_options<class_CodeEdit_method_update_code_completion_options>` to update the list.
 
@@ -907,7 +907,7 @@ Submits an item to the queue of potential candidates for the autocomplete menu. 
 
 .. rst-class:: classref-method
 
-|void| **add_comment_delimiter**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`, line_only\: :ref:`bool<class_bool>` = false\ )
+|void| **add_comment_delimiter**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`, line_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CodeEdit_method_add_comment_delimiter>`
 
 Adds a comment delimiter from ``start_key`` to ``end_key``. Both keys should be symbols, and ``start_key`` must not be shared with other delimiters.
 
@@ -921,7 +921,7 @@ If ``line_only`` is ``true`` or ``end_key`` is an empty :ref:`String<class_Strin
 
 .. rst-class:: classref-method
 
-|void| **add_string_delimiter**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`, line_only\: :ref:`bool<class_bool>` = false\ )
+|void| **add_string_delimiter**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`, line_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CodeEdit_method_add_string_delimiter>`
 
 Defines a string delimiter from ``start_key`` to ``end_key``. Both keys should be symbols, and ``start_key`` must not be shared with other delimiters.
 
@@ -935,7 +935,7 @@ If ``line_only`` is ``true`` or ``end_key`` is an empty :ref:`String<class_Strin
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **can_fold_line**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **can_fold_line**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_can_fold_line>`
 
 Returns if the given line is foldable, that is, it has indented lines right below it or a comment / string block.
 
@@ -947,7 +947,7 @@ Returns if the given line is foldable, that is, it has indented lines right belo
 
 .. rst-class:: classref-method
 
-|void| **cancel_code_completion**\ (\ )
+|void| **cancel_code_completion**\ (\ ) :ref:`🔗<class_CodeEdit_method_cancel_code_completion>`
 
 Cancels the autocomplete menu.
 
@@ -959,7 +959,7 @@ Cancels the autocomplete menu.
 
 .. rst-class:: classref-method
 
-|void| **clear_bookmarked_lines**\ (\ )
+|void| **clear_bookmarked_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_clear_bookmarked_lines>`
 
 Clears all bookmarked lines.
 
@@ -971,7 +971,7 @@ Clears all bookmarked lines.
 
 .. rst-class:: classref-method
 
-|void| **clear_breakpointed_lines**\ (\ )
+|void| **clear_breakpointed_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_clear_breakpointed_lines>`
 
 Clears all breakpointed lines.
 
@@ -983,7 +983,7 @@ Clears all breakpointed lines.
 
 .. rst-class:: classref-method
 
-|void| **clear_comment_delimiters**\ (\ )
+|void| **clear_comment_delimiters**\ (\ ) :ref:`🔗<class_CodeEdit_method_clear_comment_delimiters>`
 
 Removes all comment delimiters.
 
@@ -995,7 +995,7 @@ Removes all comment delimiters.
 
 .. rst-class:: classref-method
 
-|void| **clear_executing_lines**\ (\ )
+|void| **clear_executing_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_clear_executing_lines>`
 
 Clears all executed lines.
 
@@ -1007,7 +1007,7 @@ Clears all executed lines.
 
 .. rst-class:: classref-method
 
-|void| **clear_string_delimiters**\ (\ )
+|void| **clear_string_delimiters**\ (\ ) :ref:`🔗<class_CodeEdit_method_clear_string_delimiters>`
 
 Removes all string delimiters.
 
@@ -1019,7 +1019,7 @@ Removes all string delimiters.
 
 .. rst-class:: classref-method
 
-|void| **confirm_code_completion**\ (\ replace\: :ref:`bool<class_bool>` = false\ )
+|void| **confirm_code_completion**\ (\ replace\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CodeEdit_method_confirm_code_completion>`
 
 Inserts the selected entry into the text. If ``replace`` is ``true``, any existing text is replaced rather than merged.
 
@@ -1031,7 +1031,7 @@ Inserts the selected entry into the text. If ``replace`` is ``true``, any existi
 
 .. rst-class:: classref-method
 
-|void| **convert_indent**\ (\ from_line\: :ref:`int<class_int>` = -1, to_line\: :ref:`int<class_int>` = -1\ )
+|void| **convert_indent**\ (\ from_line\: :ref:`int<class_int>` = -1, to_line\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_CodeEdit_method_convert_indent>`
 
 Converts the indents of lines between ``from_line`` and ``to_line`` to tabs or spaces as set by :ref:`indent_use_spaces<class_CodeEdit_property_indent_use_spaces>`.
 
@@ -1045,7 +1045,7 @@ Values of ``-1`` convert the entire text.
 
 .. rst-class:: classref-method
 
-|void| **create_code_region**\ (\ )
+|void| **create_code_region**\ (\ ) :ref:`🔗<class_CodeEdit_method_create_code_region>`
 
 Creates a new code region with the selection. At least one single line comment delimiter have to be defined (see :ref:`add_comment_delimiter<class_CodeEdit_method_add_comment_delimiter>`).
 
@@ -1063,7 +1063,7 @@ Code regions are delimited using start and end tags (respectively ``region`` and
 
 .. rst-class:: classref-method
 
-|void| **delete_lines**\ (\ )
+|void| **delete_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_delete_lines>`
 
 Deletes all lines that are selected or have a caret on them.
 
@@ -1075,7 +1075,7 @@ Deletes all lines that are selected or have a caret on them.
 
 .. rst-class:: classref-method
 
-|void| **do_indent**\ (\ )
+|void| **do_indent**\ (\ ) :ref:`🔗<class_CodeEdit_method_do_indent>`
 
 Perform an indent as if the user activated the "ui_text_indent" action.
 
@@ -1087,7 +1087,7 @@ Perform an indent as if the user activated the "ui_text_indent" action.
 
 .. rst-class:: classref-method
 
-|void| **duplicate_lines**\ (\ )
+|void| **duplicate_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_duplicate_lines>`
 
 Duplicates all lines currently selected with any caret. Duplicates the entire line beneath the current one no matter where the caret is within the line.
 
@@ -1099,7 +1099,7 @@ Duplicates all lines currently selected with any caret. Duplicates the entire li
 
 .. rst-class:: classref-method
 
-|void| **duplicate_selection**\ (\ )
+|void| **duplicate_selection**\ (\ ) :ref:`🔗<class_CodeEdit_method_duplicate_selection>`
 
 Duplicates all selected text and duplicates all lines with a caret on them.
 
@@ -1111,7 +1111,7 @@ Duplicates all selected text and duplicates all lines with a caret on them.
 
 .. rst-class:: classref-method
 
-|void| **fold_all_lines**\ (\ )
+|void| **fold_all_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_fold_all_lines>`
 
 Folds all lines that are possible to be folded (see :ref:`can_fold_line<class_CodeEdit_method_can_fold_line>`).
 
@@ -1123,7 +1123,7 @@ Folds all lines that are possible to be folded (see :ref:`can_fold_line<class_Co
 
 .. rst-class:: classref-method
 
-|void| **fold_line**\ (\ line\: :ref:`int<class_int>`\ )
+|void| **fold_line**\ (\ line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CodeEdit_method_fold_line>`
 
 Folds the given line, if possible (see :ref:`can_fold_line<class_CodeEdit_method_can_fold_line>`).
 
@@ -1135,7 +1135,7 @@ Folds the given line, if possible (see :ref:`can_fold_line<class_CodeEdit_method
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_auto_brace_completion_close_key**\ (\ open_key\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **get_auto_brace_completion_close_key**\ (\ open_key\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_CodeEdit_method_get_auto_brace_completion_close_key>`
 
 Gets the matching auto brace close key for ``open_key``.
 
@@ -1147,7 +1147,7 @@ Gets the matching auto brace close key for ``open_key``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_bookmarked_lines**\ (\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_bookmarked_lines**\ (\ ) |const| :ref:`🔗<class_CodeEdit_method_get_bookmarked_lines>`
 
 Gets all bookmarked lines.
 
@@ -1159,7 +1159,7 @@ Gets all bookmarked lines.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_breakpointed_lines**\ (\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_breakpointed_lines**\ (\ ) |const| :ref:`🔗<class_CodeEdit_method_get_breakpointed_lines>`
 
 Gets all breakpointed lines.
 
@@ -1171,7 +1171,7 @@ Gets all breakpointed lines.
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **get_code_completion_option**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **get_code_completion_option**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_get_code_completion_option>`
 
 Gets the completion option at ``index``. The return :ref:`Dictionary<class_Dictionary>` has the following key-values:
 
@@ -1195,7 +1195,7 @@ Gets the completion option at ``index``. The return :ref:`Dictionary<class_Dicti
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_code_completion_options**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_code_completion_options**\ (\ ) |const| :ref:`🔗<class_CodeEdit_method_get_code_completion_options>`
 
 Gets all completion options, see :ref:`get_code_completion_option<class_CodeEdit_method_get_code_completion_option>` for return content.
 
@@ -1207,7 +1207,7 @@ Gets all completion options, see :ref:`get_code_completion_option<class_CodeEdit
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_code_completion_selected_index**\ (\ ) |const|
+:ref:`int<class_int>` **get_code_completion_selected_index**\ (\ ) |const| :ref:`🔗<class_CodeEdit_method_get_code_completion_selected_index>`
 
 Gets the index of the current selected completion option.
 
@@ -1219,7 +1219,7 @@ Gets the index of the current selected completion option.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_code_region_end_tag**\ (\ ) |const|
+:ref:`String<class_String>` **get_code_region_end_tag**\ (\ ) |const| :ref:`🔗<class_CodeEdit_method_get_code_region_end_tag>`
 
 Returns the code region end tag (without comment delimiter).
 
@@ -1231,7 +1231,7 @@ Returns the code region end tag (without comment delimiter).
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_code_region_start_tag**\ (\ ) |const|
+:ref:`String<class_String>` **get_code_region_start_tag**\ (\ ) |const| :ref:`🔗<class_CodeEdit_method_get_code_region_start_tag>`
 
 Returns the code region start tag (without comment delimiter).
 
@@ -1243,7 +1243,7 @@ Returns the code region start tag (without comment delimiter).
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_delimiter_end_key**\ (\ delimiter_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_delimiter_end_key**\ (\ delimiter_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_get_delimiter_end_key>`
 
 Gets the end key for a string or comment region index.
 
@@ -1255,7 +1255,7 @@ Gets the end key for a string or comment region index.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_delimiter_end_position**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_delimiter_end_position**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_get_delimiter_end_position>`
 
 If ``line`` ``column`` is in a string or comment, returns the end position of the region. If not or no end could be found, both :ref:`Vector2<class_Vector2>` values will be ``-1``.
 
@@ -1267,7 +1267,7 @@ If ``line`` ``column`` is in a string or comment, returns the end position of th
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_delimiter_start_key**\ (\ delimiter_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_delimiter_start_key**\ (\ delimiter_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_get_delimiter_start_key>`
 
 Gets the start key for a string or comment region index.
 
@@ -1279,7 +1279,7 @@ Gets the start key for a string or comment region index.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_delimiter_start_position**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_delimiter_start_position**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_get_delimiter_start_position>`
 
 If ``line`` ``column`` is in a string or comment, returns the start position of the region. If not or no start could be found, both :ref:`Vector2<class_Vector2>` values will be ``-1``.
 
@@ -1291,7 +1291,7 @@ If ``line`` ``column`` is in a string or comment, returns the start position of 
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_executing_lines**\ (\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_executing_lines**\ (\ ) |const| :ref:`🔗<class_CodeEdit_method_get_executing_lines>`
 
 Gets all executing lines.
 
@@ -1303,7 +1303,7 @@ Gets all executing lines.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`int<class_int>`\] **get_folded_lines**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`int<class_int>`\] **get_folded_lines**\ (\ ) |const| :ref:`🔗<class_CodeEdit_method_get_folded_lines>`
 
 Returns all lines that are current folded.
 
@@ -1315,7 +1315,7 @@ Returns all lines that are current folded.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_text_for_code_completion**\ (\ ) |const|
+:ref:`String<class_String>` **get_text_for_code_completion**\ (\ ) |const| :ref:`🔗<class_CodeEdit_method_get_text_for_code_completion>`
 
 Returns the full text with char ``0xFFFF`` at the caret location.
 
@@ -1327,7 +1327,7 @@ Returns the full text with char ``0xFFFF`` at the caret location.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_text_for_symbol_lookup**\ (\ ) |const|
+:ref:`String<class_String>` **get_text_for_symbol_lookup**\ (\ ) |const| :ref:`🔗<class_CodeEdit_method_get_text_for_symbol_lookup>`
 
 Returns the full text with char ``0xFFFF`` at the cursor location.
 
@@ -1339,7 +1339,7 @@ Returns the full text with char ``0xFFFF`` at the cursor location.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_text_with_cursor_char**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_text_with_cursor_char**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_get_text_with_cursor_char>`
 
 Returns the full text with char ``0xFFFF`` at the specified location.
 
@@ -1351,7 +1351,7 @@ Returns the full text with char ``0xFFFF`` at the specified location.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_auto_brace_completion_close_key**\ (\ close_key\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_auto_brace_completion_close_key**\ (\ close_key\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_CodeEdit_method_has_auto_brace_completion_close_key>`
 
 Returns ``true`` if close key ``close_key`` exists.
 
@@ -1363,7 +1363,7 @@ Returns ``true`` if close key ``close_key`` exists.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_auto_brace_completion_open_key**\ (\ open_key\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_auto_brace_completion_open_key**\ (\ open_key\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_CodeEdit_method_has_auto_brace_completion_open_key>`
 
 Returns ``true`` if open key ``open_key`` exists.
 
@@ -1375,7 +1375,7 @@ Returns ``true`` if open key ``open_key`` exists.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_comment_delimiter**\ (\ start_key\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_comment_delimiter**\ (\ start_key\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_CodeEdit_method_has_comment_delimiter>`
 
 Returns ``true`` if comment ``start_key`` exists.
 
@@ -1387,7 +1387,7 @@ Returns ``true`` if comment ``start_key`` exists.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_string_delimiter**\ (\ start_key\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_string_delimiter**\ (\ start_key\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_CodeEdit_method_has_string_delimiter>`
 
 Returns ``true`` if string ``start_key`` exists.
 
@@ -1399,7 +1399,7 @@ Returns ``true`` if string ``start_key`` exists.
 
 .. rst-class:: classref-method
 
-|void| **indent_lines**\ (\ )
+|void| **indent_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_indent_lines>`
 
 Indents selected lines, or in the case of no selection the caret line by one.
 
@@ -1411,7 +1411,7 @@ Indents selected lines, or in the case of no selection the caret line by one.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **is_in_comment**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`int<class_int>` **is_in_comment**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_CodeEdit_method_is_in_comment>`
 
 Returns delimiter index if ``line`` ``column`` is in a comment. If ``column`` is not provided, will return delimiter index if the entire ``line`` is a comment. Otherwise ``-1``.
 
@@ -1423,7 +1423,7 @@ Returns delimiter index if ``line`` ``column`` is in a comment. If ``column`` is
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **is_in_string**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`int<class_int>` **is_in_string**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_CodeEdit_method_is_in_string>`
 
 Returns the delimiter index if ``line`` ``column`` is in a string. If ``column`` is not provided, will return the delimiter index if the entire ``line`` is a string. Otherwise ``-1``.
 
@@ -1435,7 +1435,7 @@ Returns the delimiter index if ``line`` ``column`` is in a string. If ``column``
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_line_bookmarked**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_line_bookmarked**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_bookmarked>`
 
 Returns whether the line at the specified index is bookmarked or not.
 
@@ -1447,7 +1447,7 @@ Returns whether the line at the specified index is bookmarked or not.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_line_breakpointed**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_line_breakpointed**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_breakpointed>`
 
 Returns whether the line at the specified index is breakpointed or not.
 
@@ -1459,7 +1459,7 @@ Returns whether the line at the specified index is breakpointed or not.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_line_code_region_end**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_line_code_region_end**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_code_region_end>`
 
 Returns whether the line at the specified index is a code region end.
 
@@ -1471,7 +1471,7 @@ Returns whether the line at the specified index is a code region end.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_line_code_region_start**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_line_code_region_start**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_code_region_start>`
 
 Returns whether the line at the specified index is a code region start.
 
@@ -1483,7 +1483,7 @@ Returns whether the line at the specified index is a code region start.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_line_executing**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_line_executing**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_executing>`
 
 Returns whether the line at the specified index is marked as executing or not.
 
@@ -1495,7 +1495,7 @@ Returns whether the line at the specified index is marked as executing or not.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_line_folded**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_line_folded**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CodeEdit_method_is_line_folded>`
 
 Returns whether the line at the specified index is folded or not.
 
@@ -1507,7 +1507,7 @@ Returns whether the line at the specified index is folded or not.
 
 .. rst-class:: classref-method
 
-|void| **move_lines_down**\ (\ )
+|void| **move_lines_down**\ (\ ) :ref:`🔗<class_CodeEdit_method_move_lines_down>`
 
 Moves all lines down that are selected or have a caret on them.
 
@@ -1519,7 +1519,7 @@ Moves all lines down that are selected or have a caret on them.
 
 .. rst-class:: classref-method
 
-|void| **move_lines_up**\ (\ )
+|void| **move_lines_up**\ (\ ) :ref:`🔗<class_CodeEdit_method_move_lines_up>`
 
 Moves all lines up that are selected or have a caret on them.
 
@@ -1531,7 +1531,7 @@ Moves all lines up that are selected or have a caret on them.
 
 .. rst-class:: classref-method
 
-|void| **remove_comment_delimiter**\ (\ start_key\: :ref:`String<class_String>`\ )
+|void| **remove_comment_delimiter**\ (\ start_key\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CodeEdit_method_remove_comment_delimiter>`
 
 Removes the comment delimiter with ``start_key``.
 
@@ -1543,7 +1543,7 @@ Removes the comment delimiter with ``start_key``.
 
 .. rst-class:: classref-method
 
-|void| **remove_string_delimiter**\ (\ start_key\: :ref:`String<class_String>`\ )
+|void| **remove_string_delimiter**\ (\ start_key\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CodeEdit_method_remove_string_delimiter>`
 
 Removes the string delimiter with ``start_key``.
 
@@ -1555,7 +1555,7 @@ Removes the string delimiter with ``start_key``.
 
 .. rst-class:: classref-method
 
-|void| **request_code_completion**\ (\ force\: :ref:`bool<class_bool>` = false\ )
+|void| **request_code_completion**\ (\ force\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CodeEdit_method_request_code_completion>`
 
 Emits :ref:`code_completion_requested<class_CodeEdit_signal_code_completion_requested>`, if ``force`` is ``true`` will bypass all checks. Otherwise will check that the caret is in a word or in front of a prefix. Will ignore the request if all current options are of type file path, node path, or signal.
 
@@ -1567,7 +1567,7 @@ Emits :ref:`code_completion_requested<class_CodeEdit_signal_code_completion_requ
 
 .. rst-class:: classref-method
 
-|void| **set_code_completion_selected_index**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **set_code_completion_selected_index**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CodeEdit_method_set_code_completion_selected_index>`
 
 Sets the current selected completion option.
 
@@ -1579,7 +1579,7 @@ Sets the current selected completion option.
 
 .. rst-class:: classref-method
 
-|void| **set_code_hint**\ (\ code_hint\: :ref:`String<class_String>`\ )
+|void| **set_code_hint**\ (\ code_hint\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CodeEdit_method_set_code_hint>`
 
 Sets the code hint text. Pass an empty string to clear.
 
@@ -1591,7 +1591,7 @@ Sets the code hint text. Pass an empty string to clear.
 
 .. rst-class:: classref-method
 
-|void| **set_code_hint_draw_below**\ (\ draw_below\: :ref:`bool<class_bool>`\ )
+|void| **set_code_hint_draw_below**\ (\ draw_below\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CodeEdit_method_set_code_hint_draw_below>`
 
 Sets if the code hint should draw below the text.
 
@@ -1603,7 +1603,7 @@ Sets if the code hint should draw below the text.
 
 .. rst-class:: classref-method
 
-|void| **set_code_region_tags**\ (\ start\: :ref:`String<class_String>` = "region", end\: :ref:`String<class_String>` = "endregion"\ )
+|void| **set_code_region_tags**\ (\ start\: :ref:`String<class_String>` = "region", end\: :ref:`String<class_String>` = "endregion"\ ) :ref:`🔗<class_CodeEdit_method_set_code_region_tags>`
 
 Sets the code region start and end tags (without comment delimiter).
 
@@ -1615,7 +1615,7 @@ Sets the code region start and end tags (without comment delimiter).
 
 .. rst-class:: classref-method
 
-|void| **set_line_as_bookmarked**\ (\ line\: :ref:`int<class_int>`, bookmarked\: :ref:`bool<class_bool>`\ )
+|void| **set_line_as_bookmarked**\ (\ line\: :ref:`int<class_int>`, bookmarked\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CodeEdit_method_set_line_as_bookmarked>`
 
 Sets the line as bookmarked.
 
@@ -1627,7 +1627,7 @@ Sets the line as bookmarked.
 
 .. rst-class:: classref-method
 
-|void| **set_line_as_breakpoint**\ (\ line\: :ref:`int<class_int>`, breakpointed\: :ref:`bool<class_bool>`\ )
+|void| **set_line_as_breakpoint**\ (\ line\: :ref:`int<class_int>`, breakpointed\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CodeEdit_method_set_line_as_breakpoint>`
 
 Sets the line as breakpointed.
 
@@ -1639,7 +1639,7 @@ Sets the line as breakpointed.
 
 .. rst-class:: classref-method
 
-|void| **set_line_as_executing**\ (\ line\: :ref:`int<class_int>`, executing\: :ref:`bool<class_bool>`\ )
+|void| **set_line_as_executing**\ (\ line\: :ref:`int<class_int>`, executing\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CodeEdit_method_set_line_as_executing>`
 
 Sets the line as executing.
 
@@ -1651,7 +1651,7 @@ Sets the line as executing.
 
 .. rst-class:: classref-method
 
-|void| **set_symbol_lookup_word_as_valid**\ (\ valid\: :ref:`bool<class_bool>`\ )
+|void| **set_symbol_lookup_word_as_valid**\ (\ valid\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CodeEdit_method_set_symbol_lookup_word_as_valid>`
 
 Sets the symbol emitted by :ref:`symbol_validate<class_CodeEdit_signal_symbol_validate>` as a valid lookup.
 
@@ -1663,7 +1663,7 @@ Sets the symbol emitted by :ref:`symbol_validate<class_CodeEdit_signal_symbol_va
 
 .. rst-class:: classref-method
 
-|void| **toggle_foldable_line**\ (\ line\: :ref:`int<class_int>`\ )
+|void| **toggle_foldable_line**\ (\ line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CodeEdit_method_toggle_foldable_line>`
 
 Toggle the folding of the code block at the given line.
 
@@ -1675,7 +1675,7 @@ Toggle the folding of the code block at the given line.
 
 .. rst-class:: classref-method
 
-|void| **toggle_foldable_lines_at_carets**\ (\ )
+|void| **toggle_foldable_lines_at_carets**\ (\ ) :ref:`🔗<class_CodeEdit_method_toggle_foldable_lines_at_carets>`
 
 Toggle the folding of the code block on all lines with a caret on them.
 
@@ -1687,7 +1687,7 @@ Toggle the folding of the code block on all lines with a caret on them.
 
 .. rst-class:: classref-method
 
-|void| **unfold_all_lines**\ (\ )
+|void| **unfold_all_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_unfold_all_lines>`
 
 Unfolds all lines, folded or not.
 
@@ -1699,7 +1699,7 @@ Unfolds all lines, folded or not.
 
 .. rst-class:: classref-method
 
-|void| **unfold_line**\ (\ line\: :ref:`int<class_int>`\ )
+|void| **unfold_line**\ (\ line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CodeEdit_method_unfold_line>`
 
 Unfolds all lines that were previously folded.
 
@@ -1711,7 +1711,7 @@ Unfolds all lines that were previously folded.
 
 .. rst-class:: classref-method
 
-|void| **unindent_lines**\ (\ )
+|void| **unindent_lines**\ (\ ) :ref:`🔗<class_CodeEdit_method_unindent_lines>`
 
 Unindents selected lines, or in the case of no selection the caret line by one. Same as performing "ui_text_unindent" action.
 
@@ -1723,7 +1723,7 @@ Unindents selected lines, or in the case of no selection the caret line by one. 
 
 .. rst-class:: classref-method
 
-|void| **update_code_completion_options**\ (\ force\: :ref:`bool<class_bool>`\ )
+|void| **update_code_completion_options**\ (\ force\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CodeEdit_method_update_code_completion_options>`
 
 Submits all completion options added with :ref:`add_code_completion_option<class_CodeEdit_method_add_code_completion_option>`. Will try to force the autocomplete menu to popup, if ``force`` is ``true``.
 
@@ -1742,7 +1742,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **bookmark_color** = ``Color(0.5, 0.64, 1, 0.8)``
+:ref:`Color<class_Color>` **bookmark_color** = ``Color(0.5, 0.64, 1, 0.8)`` :ref:`🔗<class_CodeEdit_theme_color_bookmark_color>`
 
 :ref:`Color<class_Color>` of the bookmark icon for bookmarked lines.
 
@@ -1754,7 +1754,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **brace_mismatch_color** = ``Color(1, 0.2, 0.2, 1)``
+:ref:`Color<class_Color>` **brace_mismatch_color** = ``Color(1, 0.2, 0.2, 1)`` :ref:`🔗<class_CodeEdit_theme_color_brace_mismatch_color>`
 
 :ref:`Color<class_Color>` of the text to highlight mismatched braces.
 
@@ -1766,7 +1766,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **breakpoint_color** = ``Color(0.9, 0.29, 0.3, 1)``
+:ref:`Color<class_Color>` **breakpoint_color** = ``Color(0.9, 0.29, 0.3, 1)`` :ref:`🔗<class_CodeEdit_theme_color_breakpoint_color>`
 
 :ref:`Color<class_Color>` of the breakpoint icon for bookmarked lines.
 
@@ -1778,7 +1778,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **code_folding_color** = ``Color(0.8, 0.8, 0.8, 0.8)``
+:ref:`Color<class_Color>` **code_folding_color** = ``Color(0.8, 0.8, 0.8, 0.8)`` :ref:`🔗<class_CodeEdit_theme_color_code_folding_color>`
 
 :ref:`Color<class_Color>` for all icons related to line folding.
 
@@ -1790,7 +1790,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **completion_background_color** = ``Color(0.17, 0.16, 0.2, 1)``
+:ref:`Color<class_Color>` **completion_background_color** = ``Color(0.17, 0.16, 0.2, 1)`` :ref:`🔗<class_CodeEdit_theme_color_completion_background_color>`
 
 Sets the background :ref:`Color<class_Color>` for the code completion popup.
 
@@ -1802,7 +1802,7 @@ Sets the background :ref:`Color<class_Color>` for the code completion popup.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **completion_existing_color** = ``Color(0.87, 0.87, 0.87, 0.13)``
+:ref:`Color<class_Color>` **completion_existing_color** = ``Color(0.87, 0.87, 0.87, 0.13)`` :ref:`🔗<class_CodeEdit_theme_color_completion_existing_color>`
 
 Background highlight :ref:`Color<class_Color>` for matching text in code completion options.
 
@@ -1814,7 +1814,7 @@ Background highlight :ref:`Color<class_Color>` for matching text in code complet
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **completion_scroll_color** = ``Color(1, 1, 1, 0.29)``
+:ref:`Color<class_Color>` **completion_scroll_color** = ``Color(1, 1, 1, 0.29)`` :ref:`🔗<class_CodeEdit_theme_color_completion_scroll_color>`
 
 :ref:`Color<class_Color>` of the scrollbar in the code completion popup.
 
@@ -1826,7 +1826,7 @@ Background highlight :ref:`Color<class_Color>` for matching text in code complet
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **completion_scroll_hovered_color** = ``Color(1, 1, 1, 0.4)``
+:ref:`Color<class_Color>` **completion_scroll_hovered_color** = ``Color(1, 1, 1, 0.4)`` :ref:`🔗<class_CodeEdit_theme_color_completion_scroll_hovered_color>`
 
 :ref:`Color<class_Color>` of the scrollbar in the code completion popup when hovered.
 
@@ -1838,7 +1838,7 @@ Background highlight :ref:`Color<class_Color>` for matching text in code complet
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **completion_selected_color** = ``Color(0.26, 0.26, 0.27, 1)``
+:ref:`Color<class_Color>` **completion_selected_color** = ``Color(0.26, 0.26, 0.27, 1)`` :ref:`🔗<class_CodeEdit_theme_color_completion_selected_color>`
 
 Background highlight :ref:`Color<class_Color>` for the current selected option item in the code completion popup.
 
@@ -1850,7 +1850,7 @@ Background highlight :ref:`Color<class_Color>` for the current selected option i
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **executing_line_color** = ``Color(0.98, 0.89, 0.27, 1)``
+:ref:`Color<class_Color>` **executing_line_color** = ``Color(0.98, 0.89, 0.27, 1)`` :ref:`🔗<class_CodeEdit_theme_color_executing_line_color>`
 
 :ref:`Color<class_Color>` of the executing icon for executing lines.
 
@@ -1862,7 +1862,7 @@ Background highlight :ref:`Color<class_Color>` for the current selected option i
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **folded_code_region_color** = ``Color(0.68, 0.46, 0.77, 0.2)``
+:ref:`Color<class_Color>` **folded_code_region_color** = ``Color(0.68, 0.46, 0.77, 0.2)`` :ref:`🔗<class_CodeEdit_theme_color_folded_code_region_color>`
 
 :ref:`Color<class_Color>` of background line highlight for folded code region.
 
@@ -1874,7 +1874,7 @@ Background highlight :ref:`Color<class_Color>` for the current selected option i
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **line_length_guideline_color** = ``Color(0.3, 0.5, 0.8, 0.1)``
+:ref:`Color<class_Color>` **line_length_guideline_color** = ``Color(0.3, 0.5, 0.8, 0.1)`` :ref:`🔗<class_CodeEdit_theme_color_line_length_guideline_color>`
 
 :ref:`Color<class_Color>` of the main line length guideline, secondary guidelines will have 50% alpha applied.
 
@@ -1886,7 +1886,7 @@ Background highlight :ref:`Color<class_Color>` for the current selected option i
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **line_number_color** = ``Color(0.67, 0.67, 0.67, 0.4)``
+:ref:`Color<class_Color>` **line_number_color** = ``Color(0.67, 0.67, 0.67, 0.4)`` :ref:`🔗<class_CodeEdit_theme_color_line_number_color>`
 
 Sets the :ref:`Color<class_Color>` of line numbers.
 
@@ -1898,7 +1898,7 @@ Sets the :ref:`Color<class_Color>` of line numbers.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **completion_lines** = ``7``
+:ref:`int<class_int>` **completion_lines** = ``7`` :ref:`🔗<class_CodeEdit_theme_constant_completion_lines>`
 
 Max number of options to display in the code completion popup at any one time.
 
@@ -1910,7 +1910,7 @@ Max number of options to display in the code completion popup at any one time.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **completion_max_width** = ``50``
+:ref:`int<class_int>` **completion_max_width** = ``50`` :ref:`🔗<class_CodeEdit_theme_constant_completion_max_width>`
 
 Max width of options in the code completion popup. Options longer than this will be cut off.
 
@@ -1922,7 +1922,7 @@ Max width of options in the code completion popup. Options longer than this will
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **completion_scroll_width** = ``6``
+:ref:`int<class_int>` **completion_scroll_width** = ``6`` :ref:`🔗<class_CodeEdit_theme_constant_completion_scroll_width>`
 
 Width of the scrollbar in the code completion popup.
 
@@ -1934,7 +1934,7 @@ Width of the scrollbar in the code completion popup.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **bookmark**
+:ref:`Texture2D<class_Texture2D>` **bookmark** :ref:`🔗<class_CodeEdit_theme_icon_bookmark>`
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the bookmark gutter for bookmarked lines.
 
@@ -1946,7 +1946,7 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the bookmark gutter f
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **breakpoint**
+:ref:`Texture2D<class_Texture2D>` **breakpoint** :ref:`🔗<class_CodeEdit_theme_icon_breakpoint>`
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the breakpoint gutter for breakpointed lines.
 
@@ -1958,7 +1958,7 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the breakpoint gutter
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **can_fold**
+:ref:`Texture2D<class_Texture2D>` **can_fold** :ref:`🔗<class_CodeEdit_theme_icon_can_fold>`
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutter when a line can be folded.
 
@@ -1970,7 +1970,7 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutt
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **can_fold_code_region**
+:ref:`Texture2D<class_Texture2D>` **can_fold_code_region** :ref:`🔗<class_CodeEdit_theme_icon_can_fold_code_region>`
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutter when a code region can be folded.
 
@@ -1982,7 +1982,7 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutt
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **executing_line**
+:ref:`Texture2D<class_Texture2D>` **executing_line** :ref:`🔗<class_CodeEdit_theme_icon_executing_line>`
 
 Icon to draw in the executing gutter for executing lines.
 
@@ -1994,7 +1994,7 @@ Icon to draw in the executing gutter for executing lines.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **folded**
+:ref:`Texture2D<class_Texture2D>` **folded** :ref:`🔗<class_CodeEdit_theme_icon_folded>`
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutter when a line is folded and can be unfolded.
 
@@ -2006,7 +2006,7 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutt
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **folded_code_region**
+:ref:`Texture2D<class_Texture2D>` **folded_code_region** :ref:`🔗<class_CodeEdit_theme_icon_folded_code_region>`
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutter when a code region is folded and can be unfolded.
 
@@ -2018,7 +2018,7 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutt
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **folded_eol_icon**
+:ref:`Texture2D<class_Texture2D>` **folded_eol_icon** :ref:`🔗<class_CodeEdit_theme_icon_folded_eol_icon>`
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` to draw at the end of a folded line.
 
@@ -2030,7 +2030,7 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` to draw at the end of a folded l
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **completion**
+:ref:`StyleBox<class_StyleBox>` **completion** :ref:`🔗<class_CodeEdit_theme_style_completion>`
 
 :ref:`StyleBox<class_StyleBox>` for the code completion popup.
 

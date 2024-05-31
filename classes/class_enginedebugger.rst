@@ -66,7 +66,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_capture**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+:ref:`bool<class_bool>` **has_capture**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EngineDebugger_method_has_capture>`
 
 Returns ``true`` if a capture with the given name is present otherwise ``false``.
 
@@ -78,7 +78,7 @@ Returns ``true`` if a capture with the given name is present otherwise ``false``
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_profiler**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+:ref:`bool<class_bool>` **has_profiler**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EngineDebugger_method_has_profiler>`
 
 Returns ``true`` if a profiler with the given name is present otherwise ``false``.
 
@@ -90,7 +90,7 @@ Returns ``true`` if a profiler with the given name is present otherwise ``false`
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_active**\ (\ )
+:ref:`bool<class_bool>` **is_active**\ (\ ) :ref:`🔗<class_EngineDebugger_method_is_active>`
 
 Returns ``true`` if the debugger is active otherwise ``false``.
 
@@ -102,7 +102,7 @@ Returns ``true`` if the debugger is active otherwise ``false``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_profiling**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+:ref:`bool<class_bool>` **is_profiling**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EngineDebugger_method_is_profiling>`
 
 Returns ``true`` if a profiler with the given name is present and active otherwise ``false``.
 
@@ -114,7 +114,7 @@ Returns ``true`` if a profiler with the given name is present and active otherwi
 
 .. rst-class:: classref-method
 
-|void| **profiler_add_frame_data**\ (\ name\: :ref:`StringName<class_StringName>`, data\: :ref:`Array<class_Array>`\ )
+|void| **profiler_add_frame_data**\ (\ name\: :ref:`StringName<class_StringName>`, data\: :ref:`Array<class_Array>`\ ) :ref:`🔗<class_EngineDebugger_method_profiler_add_frame_data>`
 
 Calls the ``add`` callable of the profiler with given ``name`` and ``data``.
 
@@ -126,7 +126,7 @@ Calls the ``add`` callable of the profiler with given ``name`` and ``data``.
 
 .. rst-class:: classref-method
 
-|void| **profiler_enable**\ (\ name\: :ref:`StringName<class_StringName>`, enable\: :ref:`bool<class_bool>`, arguments\: :ref:`Array<class_Array>` = []\ )
+|void| **profiler_enable**\ (\ name\: :ref:`StringName<class_StringName>`, enable\: :ref:`bool<class_bool>`, arguments\: :ref:`Array<class_Array>` = []\ ) :ref:`🔗<class_EngineDebugger_method_profiler_enable>`
 
 Calls the ``toggle`` callable of the profiler with given ``name`` and ``arguments``. Enables/Disables the same profiler depending on ``enable`` argument.
 
@@ -138,7 +138,7 @@ Calls the ``toggle`` callable of the profiler with given ``name`` and ``argument
 
 .. rst-class:: classref-method
 
-|void| **register_message_capture**\ (\ name\: :ref:`StringName<class_StringName>`, callable\: :ref:`Callable<class_Callable>`\ )
+|void| **register_message_capture**\ (\ name\: :ref:`StringName<class_StringName>`, callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_EngineDebugger_method_register_message_capture>`
 
 Registers a message capture with given ``name``. If ``name`` is "my_message" then messages starting with "my_message:" will be called with the given callable.
 
@@ -152,7 +152,7 @@ Callable must accept a message string and a data array as argument. If the messa
 
 .. rst-class:: classref-method
 
-|void| **register_profiler**\ (\ name\: :ref:`StringName<class_StringName>`, profiler\: :ref:`EngineProfiler<class_EngineProfiler>`\ )
+|void| **register_profiler**\ (\ name\: :ref:`StringName<class_StringName>`, profiler\: :ref:`EngineProfiler<class_EngineProfiler>`\ ) :ref:`🔗<class_EngineDebugger_method_register_profiler>`
 
 Registers a profiler with the given ``name``. See :ref:`EngineProfiler<class_EngineProfiler>` for more information.
 
@@ -164,7 +164,7 @@ Registers a profiler with the given ``name``. See :ref:`EngineProfiler<class_Eng
 
 .. rst-class:: classref-method
 
-|void| **send_message**\ (\ message\: :ref:`String<class_String>`, data\: :ref:`Array<class_Array>`\ )
+|void| **send_message**\ (\ message\: :ref:`String<class_String>`, data\: :ref:`Array<class_Array>`\ ) :ref:`🔗<class_EngineDebugger_method_send_message>`
 
 Sends a message with given ``message`` and ``data`` array.
 
@@ -176,7 +176,7 @@ Sends a message with given ``message`` and ``data`` array.
 
 .. rst-class:: classref-method
 
-|void| **unregister_message_capture**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **unregister_message_capture**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EngineDebugger_method_unregister_message_capture>`
 
 Unregisters the message capture with given ``name``.
 
@@ -188,7 +188,7 @@ Unregisters the message capture with given ``name``.
 
 .. rst-class:: classref-method
 
-|void| **unregister_profiler**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **unregister_profiler**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EngineDebugger_method_unregister_profiler>`
 
 Unregisters a profiler with given ``name``.
 

@@ -50,7 +50,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **CopyMode**:
+enum **CopyMode**: :ref:`🔗<enum_BackBufferCopy_CopyMode>`
 
 .. _class_BackBufferCopy_constant_COPY_MODE_DISABLED:
 
@@ -89,7 +89,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **copy_mode** = ``1``
+:ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **copy_mode** = ``1`` :ref:`🔗<class_BackBufferCopy_property_copy_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -106,7 +106,7 @@ Buffer mode. See :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` constants.
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **rect** = ``Rect2(-100, -100, 200, 200)``
+:ref:`Rect2<class_Rect2>` **rect** = ``Rect2(-100, -100, 200, 200)`` :ref:`🔗<class_BackBufferCopy_property_rect>`
 
 .. rst-class:: classref-property-setget
 

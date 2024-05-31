@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **initial_offset** = ``25.0``
+:ref:`float<class_float>` **initial_offset** = ``25.0`` :ref:`🔗<class_GrooveJoint2D_property_initial_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -65,7 +65,7 @@ The body B's initial anchor position defined by the joint's origin and a local o
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **length** = ``50.0``
+:ref:`float<class_float>` **length** = ``50.0`` :ref:`🔗<class_GrooveJoint2D_property_length>`
 
 .. rst-class:: classref-property-setget
 

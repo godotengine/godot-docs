@@ -56,7 +56,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**selection_changed**\ (\ )
+**selection_changed**\ (\ ) :ref:`🔗<class_EditorSelection_signal_selection_changed>`
 
 Emitted when the selection changes.
 
@@ -73,7 +73,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_node**\ (\ node\: :ref:`Node<class_Node>`\ )
+|void| **add_node**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_EditorSelection_method_add_node>`
 
 Adds a node to the selection.
 
@@ -87,7 +87,7 @@ Adds a node to the selection.
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_EditorSelection_method_clear>`
 
 Clear the selection.
 
@@ -99,7 +99,7 @@ Clear the selection.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_selected_nodes**\ (\ )
+:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_selected_nodes**\ (\ ) :ref:`🔗<class_EditorSelection_method_get_selected_nodes>`
 
 Returns the list of selected nodes.
 
@@ -111,7 +111,7 @@ Returns the list of selected nodes.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_transformable_selected_nodes**\ (\ )
+:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_transformable_selected_nodes**\ (\ ) :ref:`🔗<class_EditorSelection_method_get_transformable_selected_nodes>`
 
 Returns the list of selected nodes, optimized for transform operations (i.e. moving them, rotating, etc.). This list can be used to avoid situations where a node is selected and is also a child/grandchild.
 
@@ -123,7 +123,7 @@ Returns the list of selected nodes, optimized for transform operations (i.e. mov
 
 .. rst-class:: classref-method
 
-|void| **remove_node**\ (\ node\: :ref:`Node<class_Node>`\ )
+|void| **remove_node**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_EditorSelection_method_remove_node>`
 
 Removes a node from the selection.
 

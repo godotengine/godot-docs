@@ -112,7 +112,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_composition_layer**\ (\ index\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`int<class_int>` **_get_composition_layer**\ (\ index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`
 
 Returns a pointer to an ``XrCompositionLayerBaseHeader`` struct to provide the given composition layer.
 
@@ -126,7 +126,7 @@ This will only be called if the extension previously registered itself with :ref
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_composition_layer_count**\ (\ ) |virtual|
+:ref:`int<class_int>` **_get_composition_layer_count**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer_count>`
 
 Returns the number of composition layers this extension wrapper provides via :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`.
 
@@ -140,7 +140,7 @@ This will only be called if the extension previously registered itself with :ref
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_composition_layer_order**\ (\ index\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`int<class_int>` **_get_composition_layer_order**\ (\ index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer_order>`
 
 Returns an integer that will be used to sort the given composition layer provided via :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`. Lower numbers will move the layer to the front of the list, and higher numbers to the end. The default projection layer has an order of ``0``, so layers provided by this method should probably be above or below (but not exactly) ``0``.
 
@@ -154,7 +154,7 @@ This will only be called if the extension previously registered itself with :ref
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_get_requested_extensions**\ (\ ) |virtual|
+:ref:`Dictionary<class_Dictionary>` **_get_requested_extensions**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_requested_extensions>`
 
 Returns a :ref:`Dictionary<class_Dictionary>` of OpenXR extensions related to this extension. The :ref:`Dictionary<class_Dictionary>` should contain the name of the extension, mapped to a ``bool *`` cast to an integer:
 
@@ -170,7 +170,7 @@ Returns a :ref:`Dictionary<class_Dictionary>` of OpenXR extensions related to th
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_suggested_tracker_names**\ (\ ) |virtual|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_suggested_tracker_names**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_suggested_tracker_names>`
 
 Returns a :ref:`PackedStringArray<class_PackedStringArray>` of positional tracker names that are used within the extension wrapper.
 
@@ -182,7 +182,7 @@ Returns a :ref:`PackedStringArray<class_PackedStringArray>` of positional tracke
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_viewport_composition_layer_extension_properties**\ (\ ) |virtual|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_viewport_composition_layer_extension_properties**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`
 
 Gets an array of :ref:`Dictionary<class_Dictionary>`\ s that represent properties, just like :ref:`Object._get_property_list<class_Object_private_method__get_property_list>`, that will be added to :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` nodes.
 
@@ -194,7 +194,7 @@ Gets an array of :ref:`Dictionary<class_Dictionary>`\ s that represent propertie
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_get_viewport_composition_layer_extension_property_defaults**\ (\ ) |virtual|
+:ref:`Dictionary<class_Dictionary>` **_get_viewport_composition_layer_extension_property_defaults**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_property_defaults>`
 
 Gets a :ref:`Dictionary<class_Dictionary>` containing the default values for the properties returned by :ref:`_get_viewport_composition_layer_extension_properties<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`.
 
@@ -206,7 +206,7 @@ Gets a :ref:`Dictionary<class_Dictionary>` containing the default values for the
 
 .. rst-class:: classref-method
 
-|void| **_on_before_instance_created**\ (\ ) |virtual|
+|void| **_on_before_instance_created**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_before_instance_created>`
 
 Called before the OpenXR instance is created.
 
@@ -218,7 +218,7 @@ Called before the OpenXR instance is created.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_on_event_polled**\ (\ event\: ``const void*``\ ) |virtual|
+:ref:`bool<class_bool>` **_on_event_polled**\ (\ event\: ``const void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_event_polled>`
 
 Called when there is an OpenXR event to process. When implementing, return ``true`` if the event was handled, return ``false`` otherwise.
 
@@ -230,7 +230,7 @@ Called when there is an OpenXR event to process. When implementing, return ``tru
 
 .. rst-class:: classref-method
 
-|void| **_on_instance_created**\ (\ instance\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_on_instance_created**\ (\ instance\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_instance_created>`
 
 Called right after the OpenXR instance is created.
 
@@ -242,7 +242,7 @@ Called right after the OpenXR instance is created.
 
 .. rst-class:: classref-method
 
-|void| **_on_instance_destroyed**\ (\ ) |virtual|
+|void| **_on_instance_destroyed**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_instance_destroyed>`
 
 Called right before the OpenXR instance is destroyed.
 
@@ -254,7 +254,7 @@ Called right before the OpenXR instance is destroyed.
 
 .. rst-class:: classref-method
 
-|void| **_on_main_swapchains_created**\ (\ ) |virtual|
+|void| **_on_main_swapchains_created**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_main_swapchains_created>`
 
 Called right after the main swapchains are (re)created.
 
@@ -266,7 +266,7 @@ Called right after the main swapchains are (re)created.
 
 .. rst-class:: classref-method
 
-|void| **_on_pre_render**\ (\ ) |virtual|
+|void| **_on_pre_render**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_pre_render>`
 
 Called right before the XR viewports begin their rendering step.
 
@@ -278,7 +278,7 @@ Called right before the XR viewports begin their rendering step.
 
 .. rst-class:: classref-method
 
-|void| **_on_process**\ (\ ) |virtual|
+|void| **_on_process**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_process>`
 
 Called as part of the OpenXR process handling. This happens right before general and physics processing steps of the main loop. During this step controller data is queried and made available to game logic.
 
@@ -290,7 +290,7 @@ Called as part of the OpenXR process handling. This happens right before general
 
 .. rst-class:: classref-method
 
-|void| **_on_register_metadata**\ (\ ) |virtual|
+|void| **_on_register_metadata**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_register_metadata>`
 
 Allows extensions to register additional controller metadata. This function is called even when the OpenXR API is not constructed as the metadata needs to be available to the editor.
 
@@ -304,7 +304,7 @@ Extensions should also provide metadata regardless of whether they are supported
 
 .. rst-class:: classref-method
 
-|void| **_on_session_created**\ (\ session\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_on_session_created**\ (\ session\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_session_created>`
 
 Called right after the OpenXR session is created.
 
@@ -316,7 +316,7 @@ Called right after the OpenXR session is created.
 
 .. rst-class:: classref-method
 
-|void| **_on_session_destroyed**\ (\ ) |virtual|
+|void| **_on_session_destroyed**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_session_destroyed>`
 
 Called right before the OpenXR session is destroyed.
 
@@ -328,7 +328,7 @@ Called right before the OpenXR session is destroyed.
 
 .. rst-class:: classref-method
 
-|void| **_on_state_exiting**\ (\ ) |virtual|
+|void| **_on_state_exiting**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_state_exiting>`
 
 Called when the OpenXR session state is changed to exiting.
 
@@ -340,7 +340,7 @@ Called when the OpenXR session state is changed to exiting.
 
 .. rst-class:: classref-method
 
-|void| **_on_state_focused**\ (\ ) |virtual|
+|void| **_on_state_focused**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_state_focused>`
 
 Called when the OpenXR session state is changed to focused. This state is the active state when the game runs.
 
@@ -352,7 +352,7 @@ Called when the OpenXR session state is changed to focused. This state is the ac
 
 .. rst-class:: classref-method
 
-|void| **_on_state_idle**\ (\ ) |virtual|
+|void| **_on_state_idle**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_state_idle>`
 
 Called when the OpenXR session state is changed to idle.
 
@@ -364,7 +364,7 @@ Called when the OpenXR session state is changed to idle.
 
 .. rst-class:: classref-method
 
-|void| **_on_state_loss_pending**\ (\ ) |virtual|
+|void| **_on_state_loss_pending**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_state_loss_pending>`
 
 Called when the OpenXR session state is changed to loss pending.
 
@@ -376,7 +376,7 @@ Called when the OpenXR session state is changed to loss pending.
 
 .. rst-class:: classref-method
 
-|void| **_on_state_ready**\ (\ ) |virtual|
+|void| **_on_state_ready**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_state_ready>`
 
 Called when the OpenXR session state is changed to ready. This means OpenXR is ready to set up the session.
 
@@ -388,7 +388,7 @@ Called when the OpenXR session state is changed to ready. This means OpenXR is r
 
 .. rst-class:: classref-method
 
-|void| **_on_state_stopping**\ (\ ) |virtual|
+|void| **_on_state_stopping**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_state_stopping>`
 
 Called when the OpenXR session state is changed to stopping.
 
@@ -400,7 +400,7 @@ Called when the OpenXR session state is changed to stopping.
 
 .. rst-class:: classref-method
 
-|void| **_on_state_synchronized**\ (\ ) |virtual|
+|void| **_on_state_synchronized**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_state_synchronized>`
 
 Called when the OpenXR session state is changed to synchronized. OpenXR also returns to this state when the application loses focus.
 
@@ -412,7 +412,7 @@ Called when the OpenXR session state is changed to synchronized. OpenXR also ret
 
 .. rst-class:: classref-method
 
-|void| **_on_state_visible**\ (\ ) |virtual|
+|void| **_on_state_visible**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_state_visible>`
 
 Called when the OpenXR session state is changed to visible. This means OpenXR is now ready to receive frames.
 
@@ -424,7 +424,7 @@ Called when the OpenXR session state is changed to visible. This means OpenXR is
 
 .. rst-class:: classref-method
 
-|void| **_on_viewport_composition_layer_destroyed**\ (\ layer\: ``const void*``\ ) |virtual|
+|void| **_on_viewport_composition_layer_destroyed**\ (\ layer\: ``const void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_viewport_composition_layer_destroyed>`
 
 Called when a composition layer created via :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` is destroyed.
 
@@ -438,7 +438,7 @@ Called when a composition layer created via :ref:`OpenXRCompositionLayer<class_O
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_set_hand_joint_locations_and_get_next_pointer**\ (\ hand_index\: :ref:`int<class_int>`, next_pointer\: ``void*``\ ) |virtual|
+:ref:`int<class_int>` **_set_hand_joint_locations_and_get_next_pointer**\ (\ hand_index\: :ref:`int<class_int>`, next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__set_hand_joint_locations_and_get_next_pointer>`
 
 Adds additional data structures when each hand tracker is created.
 
@@ -450,7 +450,7 @@ Adds additional data structures when each hand tracker is created.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_set_instance_create_info_and_get_next_pointer**\ (\ next_pointer\: ``void*``\ ) |virtual|
+:ref:`int<class_int>` **_set_instance_create_info_and_get_next_pointer**\ (\ next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__set_instance_create_info_and_get_next_pointer>`
 
 Adds additional data structures when the OpenXR instance is created.
 
@@ -462,7 +462,7 @@ Adds additional data structures when the OpenXR instance is created.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_set_session_create_and_get_next_pointer**\ (\ next_pointer\: ``void*``\ ) |virtual|
+:ref:`int<class_int>` **_set_session_create_and_get_next_pointer**\ (\ next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__set_session_create_and_get_next_pointer>`
 
 Adds additional data structures when the OpenXR session is created.
 
@@ -474,7 +474,7 @@ Adds additional data structures when the OpenXR session is created.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_set_swapchain_create_info_and_get_next_pointer**\ (\ next_pointer\: ``void*``\ ) |virtual|
+:ref:`int<class_int>` **_set_swapchain_create_info_and_get_next_pointer**\ (\ next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__set_swapchain_create_info_and_get_next_pointer>`
 
 Adds additional data structures when creating OpenXR swapchains.
 
@@ -486,7 +486,7 @@ Adds additional data structures when creating OpenXR swapchains.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_set_system_properties_and_get_next_pointer**\ (\ next_pointer\: ``void*``\ ) |virtual|
+:ref:`int<class_int>` **_set_system_properties_and_get_next_pointer**\ (\ next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__set_system_properties_and_get_next_pointer>`
 
 Adds additional data structures when interogating OpenXR system abilities.
 
@@ -498,7 +498,7 @@ Adds additional data structures when interogating OpenXR system abilities.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_set_viewport_composition_layer_and_get_next_pointer**\ (\ layer\: ``const void*``, property_values\: :ref:`Dictionary<class_Dictionary>`, next_pointer\: ``void*``\ ) |virtual|
+:ref:`int<class_int>` **_set_viewport_composition_layer_and_get_next_pointer**\ (\ layer\: ``const void*``, property_values\: :ref:`Dictionary<class_Dictionary>`, next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__set_viewport_composition_layer_and_get_next_pointer>`
 
 Adds additional data structures to composition layers created by :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>`.
 
@@ -514,7 +514,7 @@ Adds additional data structures to composition layers created by :ref:`OpenXRCom
 
 .. rst-class:: classref-method
 
-:ref:`OpenXRAPIExtension<class_OpenXRAPIExtension>` **get_openxr_api**\ (\ )
+:ref:`OpenXRAPIExtension<class_OpenXRAPIExtension>` **get_openxr_api**\ (\ ) :ref:`🔗<class_OpenXRExtensionWrapperExtension_method_get_openxr_api>`
 
 Returns the created :ref:`OpenXRAPIExtension<class_OpenXRAPIExtension>`, which can be used to access the OpenXR API.
 
@@ -526,7 +526,7 @@ Returns the created :ref:`OpenXRAPIExtension<class_OpenXRAPIExtension>`, which c
 
 .. rst-class:: classref-method
 
-|void| **register_extension_wrapper**\ (\ )
+|void| **register_extension_wrapper**\ (\ ) :ref:`🔗<class_OpenXRExtensionWrapperExtension_method_register_extension_wrapper>`
 
 Registers the extension. This should happen at core module initialization level.
 

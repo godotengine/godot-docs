@@ -70,7 +70,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**fallback_changed**\ (\ )
+**fallback_changed**\ (\ ) :ref:`🔗<class_ThemeDB_signal_fallback_changed>`
 
 Emitted when one of the fallback values had been changed. Use it to refresh the look of controls that may rely on the fallback theme items.
 
@@ -87,7 +87,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fallback_base_scale** = ``1.0``
+:ref:`float<class_float>` **fallback_base_scale** = ``1.0`` :ref:`🔗<class_ThemeDB_property_fallback_base_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -106,7 +106,7 @@ See also :ref:`Theme.default_base_scale<class_Theme_property_default_base_scale>
 
 .. rst-class:: classref-property
 
-:ref:`Font<class_Font>` **fallback_font**
+:ref:`Font<class_Font>` **fallback_font** :ref:`🔗<class_ThemeDB_property_fallback_font>`
 
 .. rst-class:: classref-property-setget
 
@@ -125,7 +125,7 @@ See also :ref:`Theme.default_font<class_Theme_property_default_font>`.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **fallback_font_size** = ``16``
+:ref:`int<class_int>` **fallback_font_size** = ``16`` :ref:`🔗<class_ThemeDB_property_fallback_font_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -144,7 +144,7 @@ See also :ref:`Theme.default_font_size<class_Theme_property_default_font_size>`.
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **fallback_icon**
+:ref:`Texture2D<class_Texture2D>` **fallback_icon** :ref:`🔗<class_ThemeDB_property_fallback_icon>`
 
 .. rst-class:: classref-property-setget
 
@@ -161,7 +161,7 @@ The fallback icon of every :ref:`Control<class_Control>` node and :ref:`Theme<cl
 
 .. rst-class:: classref-property
 
-:ref:`StyleBox<class_StyleBox>` **fallback_stylebox**
+:ref:`StyleBox<class_StyleBox>` **fallback_stylebox** :ref:`🔗<class_ThemeDB_property_fallback_stylebox>`
 
 .. rst-class:: classref-property-setget
 
@@ -183,7 +183,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Theme<class_Theme>` **get_default_theme**\ (\ )
+:ref:`Theme<class_Theme>` **get_default_theme**\ (\ ) :ref:`🔗<class_ThemeDB_method_get_default_theme>`
 
 Returns a reference to the default engine :ref:`Theme<class_Theme>`. This theme resource is responsible for the out-of-the-box look of :ref:`Control<class_Control>` nodes and cannot be overridden.
 
@@ -195,7 +195,7 @@ Returns a reference to the default engine :ref:`Theme<class_Theme>`. This theme 
 
 .. rst-class:: classref-method
 
-:ref:`Theme<class_Theme>` **get_project_theme**\ (\ )
+:ref:`Theme<class_Theme>` **get_project_theme**\ (\ ) :ref:`🔗<class_ThemeDB_method_get_project_theme>`
 
 Returns a reference to the custom project :ref:`Theme<class_Theme>`. This theme resources allows to override the default engine theme for every control node in the project.
 

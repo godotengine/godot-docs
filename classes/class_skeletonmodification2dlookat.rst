@@ -82,7 +82,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **bone2d_node** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **bone2d_node** = ``NodePath("")`` :ref:`🔗<class_SkeletonModification2DLookAt_property_bone2d_node>`
 
 .. rst-class:: classref-property-setget
 
@@ -99,7 +99,7 @@ The :ref:`Bone2D<class_Bone2D>` node that the modification will operate on.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bone_index** = ``-1``
+:ref:`int<class_int>` **bone_index** = ``-1`` :ref:`🔗<class_SkeletonModification2DLookAt_property_bone_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -116,7 +116,7 @@ The index of the :ref:`Bone2D<class_Bone2D>` node that the modification will ope
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **target_nodepath** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **target_nodepath** = ``NodePath("")`` :ref:`🔗<class_SkeletonModification2DLookAt_property_target_nodepath>`
 
 .. rst-class:: classref-property-setget
 
@@ -138,7 +138,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_additional_rotation**\ (\ ) |const|
+:ref:`float<class_float>` **get_additional_rotation**\ (\ ) |const| :ref:`🔗<class_SkeletonModification2DLookAt_method_get_additional_rotation>`
 
 Returns the amount of additional rotation that is applied after the LookAt modification executes.
 
@@ -150,7 +150,7 @@ Returns the amount of additional rotation that is applied after the LookAt modif
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_constraint_angle_invert**\ (\ ) |const|
+:ref:`bool<class_bool>` **get_constraint_angle_invert**\ (\ ) |const| :ref:`🔗<class_SkeletonModification2DLookAt_method_get_constraint_angle_invert>`
 
 Returns whether the constraints to this modification are inverted or not.
 
@@ -162,7 +162,7 @@ Returns whether the constraints to this modification are inverted or not.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_constraint_angle_max**\ (\ ) |const|
+:ref:`float<class_float>` **get_constraint_angle_max**\ (\ ) |const| :ref:`🔗<class_SkeletonModification2DLookAt_method_get_constraint_angle_max>`
 
 Returns the constraint's maximum allowed angle.
 
@@ -174,7 +174,7 @@ Returns the constraint's maximum allowed angle.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_constraint_angle_min**\ (\ ) |const|
+:ref:`float<class_float>` **get_constraint_angle_min**\ (\ ) |const| :ref:`🔗<class_SkeletonModification2DLookAt_method_get_constraint_angle_min>`
 
 Returns the constraint's minimum allowed angle.
 
@@ -186,7 +186,7 @@ Returns the constraint's minimum allowed angle.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_enable_constraint**\ (\ ) |const|
+:ref:`bool<class_bool>` **get_enable_constraint**\ (\ ) |const| :ref:`🔗<class_SkeletonModification2DLookAt_method_get_enable_constraint>`
 
 Returns ``true`` if the LookAt modification is using constraints.
 
@@ -198,7 +198,7 @@ Returns ``true`` if the LookAt modification is using constraints.
 
 .. rst-class:: classref-method
 
-|void| **set_additional_rotation**\ (\ rotation\: :ref:`float<class_float>`\ )
+|void| **set_additional_rotation**\ (\ rotation\: :ref:`float<class_float>`\ ) :ref:`🔗<class_SkeletonModification2DLookAt_method_set_additional_rotation>`
 
 Sets the amount of additional rotation that is to be applied after executing the modification. This allows for offsetting the results by the inputted rotation amount.
 
@@ -210,7 +210,7 @@ Sets the amount of additional rotation that is to be applied after executing the
 
 .. rst-class:: classref-method
 
-|void| **set_constraint_angle_invert**\ (\ invert\: :ref:`bool<class_bool>`\ )
+|void| **set_constraint_angle_invert**\ (\ invert\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SkeletonModification2DLookAt_method_set_constraint_angle_invert>`
 
 When ``true``, the modification will use an inverted joint constraint.
 
@@ -224,7 +224,7 @@ An inverted joint constraint only constraints the :ref:`Bone2D<class_Bone2D>` to
 
 .. rst-class:: classref-method
 
-|void| **set_constraint_angle_max**\ (\ angle_max\: :ref:`float<class_float>`\ )
+|void| **set_constraint_angle_max**\ (\ angle_max\: :ref:`float<class_float>`\ ) :ref:`🔗<class_SkeletonModification2DLookAt_method_set_constraint_angle_max>`
 
 Sets the constraint's maximum allowed angle.
 
@@ -236,7 +236,7 @@ Sets the constraint's maximum allowed angle.
 
 .. rst-class:: classref-method
 
-|void| **set_constraint_angle_min**\ (\ angle_min\: :ref:`float<class_float>`\ )
+|void| **set_constraint_angle_min**\ (\ angle_min\: :ref:`float<class_float>`\ ) :ref:`🔗<class_SkeletonModification2DLookAt_method_set_constraint_angle_min>`
 
 Sets the constraint's minimum allowed angle.
 
@@ -248,7 +248,7 @@ Sets the constraint's minimum allowed angle.
 
 .. rst-class:: classref-method
 
-|void| **set_enable_constraint**\ (\ enable_constraint\: :ref:`bool<class_bool>`\ )
+|void| **set_enable_constraint**\ (\ enable_constraint\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SkeletonModification2DLookAt_method_set_enable_constraint>`
 
 Sets whether this modification will use constraints or not. When ``true``, constraints will be applied when solving the LookAt modification.
 

@@ -52,7 +52,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Gradient<class_Gradient>` **gradient**
+:ref:`Gradient<class_Gradient>` **gradient** :ref:`🔗<class_GradientTexture1D_property_gradient>`
 
 .. rst-class:: classref-property-setget
 
@@ -69,7 +69,7 @@ The :ref:`Gradient<class_Gradient>` used to fill the texture.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_hdr** = ``false``
+:ref:`bool<class_bool>` **use_hdr** = ``false`` :ref:`🔗<class_GradientTexture1D_property_use_hdr>`
 
 .. rst-class:: classref-property-setget
 
@@ -86,7 +86,7 @@ If ``true``, the generated texture will support high dynamic range (:ref:`Image.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **width** = ``256``
+:ref:`int<class_int>` **width** = ``256`` :ref:`🔗<class_GradientTexture1D_property_width>`
 
 .. rst-class:: classref-property-setget
 

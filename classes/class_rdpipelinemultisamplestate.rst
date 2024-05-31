@@ -56,7 +56,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enable_alpha_to_coverage** = ``false``
+:ref:`bool<class_bool>` **enable_alpha_to_coverage** = ``false`` :ref:`🔗<class_RDPipelineMultisampleState_property_enable_alpha_to_coverage>`
 
 .. rst-class:: classref-property-setget
 
@@ -73,7 +73,7 @@ If ``true``, alpha to coverage is enabled. This generates a temporary coverage v
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enable_alpha_to_one** = ``false``
+:ref:`bool<class_bool>` **enable_alpha_to_one** = ``false`` :ref:`🔗<class_RDPipelineMultisampleState_property_enable_alpha_to_one>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +90,7 @@ If ``true``, alpha is forced to either ``0.0`` or ``1.0``. This allows hardening
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enable_sample_shading** = ``false``
+:ref:`bool<class_bool>` **enable_sample_shading** = ``false`` :ref:`🔗<class_RDPipelineMultisampleState_property_enable_sample_shading>`
 
 .. rst-class:: classref-property-setget
 
@@ -107,7 +107,7 @@ If ``true``, enables per-sample shading which replaces MSAA by SSAA. This provid
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **min_sample_shading** = ``0.0``
+:ref:`float<class_float>` **min_sample_shading** = ``0.0`` :ref:`🔗<class_RDPipelineMultisampleState_property_min_sample_shading>`
 
 .. rst-class:: classref-property-setget
 
@@ -124,7 +124,7 @@ The multiplier of :ref:`sample_count<class_RDPipelineMultisampleState_property_s
 
 .. rst-class:: classref-property
 
-:ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **sample_count** = ``0``
+:ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **sample_count** = ``0`` :ref:`🔗<class_RDPipelineMultisampleState_property_sample_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -141,7 +141,7 @@ The number of MSAA samples (or SSAA samples if :ref:`enable_sample_shading<class
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`int<class_int>`\] **sample_masks** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`int<class_int>`\] **sample_masks** = ``[]`` :ref:`🔗<class_RDPipelineMultisampleState_property_sample_masks>`
 
 .. rst-class:: classref-property-setget
 

@@ -162,7 +162,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**slot_updated**\ (\ slot_index\: :ref:`int<class_int>`\ )
+**slot_updated**\ (\ slot_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_signal_slot_updated>`
 
 Emitted when any GraphNode's slot is updated.
 
@@ -179,7 +179,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **ignore_invalid_connection_type** = ``false``
+:ref:`bool<class_bool>` **ignore_invalid_connection_type** = ``false`` :ref:`🔗<class_GraphNode_property_ignore_invalid_connection_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -196,7 +196,7 @@ If ``true``, you can connect ports with different types, even if the connection 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **title** = ``""``
+:ref:`String<class_String>` **title** = ``""`` :ref:`🔗<class_GraphNode_property_title>`
 
 .. rst-class:: classref-property-setget
 
@@ -218,7 +218,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_draw_port**\ (\ slot_index\: :ref:`int<class_int>`, position\: :ref:`Vector2i<class_Vector2i>`, left\: :ref:`bool<class_bool>`, color\: :ref:`Color<class_Color>`\ ) |virtual|
+|void| **_draw_port**\ (\ slot_index\: :ref:`int<class_int>`, position\: :ref:`Vector2i<class_Vector2i>`, left\: :ref:`bool<class_bool>`, color\: :ref:`Color<class_Color>`\ ) |virtual| :ref:`🔗<class_GraphNode_private_method__draw_port>`
 
 .. container:: contribute
 
@@ -232,7 +232,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear_all_slots**\ (\ )
+|void| **clear_all_slots**\ (\ ) :ref:`🔗<class_GraphNode_method_clear_all_slots>`
 
 Disables all slots of the GraphNode. This will remove all input/output ports from the GraphNode.
 
@@ -244,7 +244,7 @@ Disables all slots of the GraphNode. This will remove all input/output ports fro
 
 .. rst-class:: classref-method
 
-|void| **clear_slot**\ (\ slot_index\: :ref:`int<class_int>`\ )
+|void| **clear_slot**\ (\ slot_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_method_clear_slot>`
 
 Disables the slot with the given ``slot_index``. This will remove the corresponding input and output port from the GraphNode.
 
@@ -256,7 +256,7 @@ Disables the slot with the given ``slot_index``. This will remove the correspond
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_input_port_color**\ (\ port_idx\: :ref:`int<class_int>`\ )
+:ref:`Color<class_Color>` **get_input_port_color**\ (\ port_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_method_get_input_port_color>`
 
 Returns the :ref:`Color<class_Color>` of the input port with the given ``port_idx``.
 
@@ -268,7 +268,7 @@ Returns the :ref:`Color<class_Color>` of the input port with the given ``port_id
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_input_port_count**\ (\ )
+:ref:`int<class_int>` **get_input_port_count**\ (\ ) :ref:`🔗<class_GraphNode_method_get_input_port_count>`
 
 Returns the number of slots with an enabled input port.
 
@@ -280,7 +280,7 @@ Returns the number of slots with an enabled input port.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_input_port_position**\ (\ port_idx\: :ref:`int<class_int>`\ )
+:ref:`Vector2<class_Vector2>` **get_input_port_position**\ (\ port_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_method_get_input_port_position>`
 
 Returns the position of the input port with the given ``port_idx``.
 
@@ -292,7 +292,7 @@ Returns the position of the input port with the given ``port_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_input_port_slot**\ (\ port_idx\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **get_input_port_slot**\ (\ port_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_method_get_input_port_slot>`
 
 Returns the corresponding slot index of the input port with the given ``port_idx``.
 
@@ -304,7 +304,7 @@ Returns the corresponding slot index of the input port with the given ``port_idx
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_input_port_type**\ (\ port_idx\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **get_input_port_type**\ (\ port_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_method_get_input_port_type>`
 
 Returns the type of the input port with the given ``port_idx``.
 
@@ -316,7 +316,7 @@ Returns the type of the input port with the given ``port_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_output_port_color**\ (\ port_idx\: :ref:`int<class_int>`\ )
+:ref:`Color<class_Color>` **get_output_port_color**\ (\ port_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_method_get_output_port_color>`
 
 Returns the :ref:`Color<class_Color>` of the output port with the given ``port_idx``.
 
@@ -328,7 +328,7 @@ Returns the :ref:`Color<class_Color>` of the output port with the given ``port_i
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_output_port_count**\ (\ )
+:ref:`int<class_int>` **get_output_port_count**\ (\ ) :ref:`🔗<class_GraphNode_method_get_output_port_count>`
 
 Returns the number of slots with an enabled output port.
 
@@ -340,7 +340,7 @@ Returns the number of slots with an enabled output port.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_output_port_position**\ (\ port_idx\: :ref:`int<class_int>`\ )
+:ref:`Vector2<class_Vector2>` **get_output_port_position**\ (\ port_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_method_get_output_port_position>`
 
 Returns the position of the output port with the given ``port_idx``.
 
@@ -352,7 +352,7 @@ Returns the position of the output port with the given ``port_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_output_port_slot**\ (\ port_idx\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **get_output_port_slot**\ (\ port_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_method_get_output_port_slot>`
 
 Returns the corresponding slot index of the output port with the given ``port_idx``.
 
@@ -364,7 +364,7 @@ Returns the corresponding slot index of the output port with the given ``port_id
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_output_port_type**\ (\ port_idx\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **get_output_port_type**\ (\ port_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_method_get_output_port_type>`
 
 Returns the type of the output port with the given ``port_idx``.
 
@@ -376,7 +376,7 @@ Returns the type of the output port with the given ``port_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_slot_color_left**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_slot_color_left**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GraphNode_method_get_slot_color_left>`
 
 Returns the left (input) :ref:`Color<class_Color>` of the slot with the given ``slot_index``.
 
@@ -388,7 +388,7 @@ Returns the left (input) :ref:`Color<class_Color>` of the slot with the given ``
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_slot_color_right**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_slot_color_right**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GraphNode_method_get_slot_color_right>`
 
 Returns the right (output) :ref:`Color<class_Color>` of the slot with the given ``slot_index``.
 
@@ -400,7 +400,7 @@ Returns the right (output) :ref:`Color<class_Color>` of the slot with the given 
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_slot_custom_icon_left**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Texture2D<class_Texture2D>` **get_slot_custom_icon_left**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GraphNode_method_get_slot_custom_icon_left>`
 
 Returns the left (input) custom :ref:`Texture2D<class_Texture2D>` of the slot with the given ``slot_index``.
 
@@ -412,7 +412,7 @@ Returns the left (input) custom :ref:`Texture2D<class_Texture2D>` of the slot wi
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_slot_custom_icon_right**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Texture2D<class_Texture2D>` **get_slot_custom_icon_right**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GraphNode_method_get_slot_custom_icon_right>`
 
 Returns the right (output) custom :ref:`Texture2D<class_Texture2D>` of the slot with the given ``slot_index``.
 
@@ -424,7 +424,7 @@ Returns the right (output) custom :ref:`Texture2D<class_Texture2D>` of the slot 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_slot_type_left**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_slot_type_left**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GraphNode_method_get_slot_type_left>`
 
 Returns the left (input) type of the slot with the given ``slot_index``.
 
@@ -436,7 +436,7 @@ Returns the left (input) type of the slot with the given ``slot_index``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_slot_type_right**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_slot_type_right**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GraphNode_method_get_slot_type_right>`
 
 Returns the right (output) type of the slot with the given ``slot_index``.
 
@@ -448,7 +448,7 @@ Returns the right (output) type of the slot with the given ``slot_index``.
 
 .. rst-class:: classref-method
 
-:ref:`HBoxContainer<class_HBoxContainer>` **get_titlebar_hbox**\ (\ )
+:ref:`HBoxContainer<class_HBoxContainer>` **get_titlebar_hbox**\ (\ ) :ref:`🔗<class_GraphNode_method_get_titlebar_hbox>`
 
 Returns the :ref:`HBoxContainer<class_HBoxContainer>` used for the title bar, only containing a :ref:`Label<class_Label>` for displaying the title by default. This can be used to add custom controls to the title bar such as option or close buttons.
 
@@ -460,7 +460,7 @@ Returns the :ref:`HBoxContainer<class_HBoxContainer>` used for the title bar, on
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_slot_draw_stylebox**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_slot_draw_stylebox**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GraphNode_method_is_slot_draw_stylebox>`
 
 Returns true if the background :ref:`StyleBox<class_StyleBox>` of the slot with the given ``slot_index`` is drawn.
 
@@ -472,7 +472,7 @@ Returns true if the background :ref:`StyleBox<class_StyleBox>` of the slot with 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_slot_enabled_left**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_slot_enabled_left**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GraphNode_method_is_slot_enabled_left>`
 
 Returns ``true`` if left (input) side of the slot with the given ``slot_index`` is enabled.
 
@@ -484,7 +484,7 @@ Returns ``true`` if left (input) side of the slot with the given ``slot_index`` 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_slot_enabled_right**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_slot_enabled_right**\ (\ slot_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_GraphNode_method_is_slot_enabled_right>`
 
 Returns ``true`` if right (output) side of the slot with the given ``slot_index`` is enabled.
 
@@ -496,7 +496,7 @@ Returns ``true`` if right (output) side of the slot with the given ``slot_index`
 
 .. rst-class:: classref-method
 
-|void| **set_slot**\ (\ slot_index\: :ref:`int<class_int>`, enable_left_port\: :ref:`bool<class_bool>`, type_left\: :ref:`int<class_int>`, color_left\: :ref:`Color<class_Color>`, enable_right_port\: :ref:`bool<class_bool>`, type_right\: :ref:`int<class_int>`, color_right\: :ref:`Color<class_Color>`, custom_icon_left\: :ref:`Texture2D<class_Texture2D>` = null, custom_icon_right\: :ref:`Texture2D<class_Texture2D>` = null, draw_stylebox\: :ref:`bool<class_bool>` = true\ )
+|void| **set_slot**\ (\ slot_index\: :ref:`int<class_int>`, enable_left_port\: :ref:`bool<class_bool>`, type_left\: :ref:`int<class_int>`, color_left\: :ref:`Color<class_Color>`, enable_right_port\: :ref:`bool<class_bool>`, type_right\: :ref:`int<class_int>`, color_right\: :ref:`Color<class_Color>`, custom_icon_left\: :ref:`Texture2D<class_Texture2D>` = null, custom_icon_right\: :ref:`Texture2D<class_Texture2D>` = null, draw_stylebox\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_GraphNode_method_set_slot>`
 
 Sets properties of the slot with the given ``slot_index``.
 
@@ -520,7 +520,7 @@ Individual properties can also be set using one of the ``set_slot_*`` methods.
 
 .. rst-class:: classref-method
 
-|void| **set_slot_color_left**\ (\ slot_index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )
+|void| **set_slot_color_left**\ (\ slot_index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_GraphNode_method_set_slot_color_left>`
 
 Sets the :ref:`Color<class_Color>` of the left (input) side of the slot with the given ``slot_index`` to ``color``.
 
@@ -532,7 +532,7 @@ Sets the :ref:`Color<class_Color>` of the left (input) side of the slot with the
 
 .. rst-class:: classref-method
 
-|void| **set_slot_color_right**\ (\ slot_index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )
+|void| **set_slot_color_right**\ (\ slot_index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_GraphNode_method_set_slot_color_right>`
 
 Sets the :ref:`Color<class_Color>` of the right (output) side of the slot with the given ``slot_index`` to ``color``.
 
@@ -544,7 +544,7 @@ Sets the :ref:`Color<class_Color>` of the right (output) side of the slot with t
 
 .. rst-class:: classref-method
 
-|void| **set_slot_custom_icon_left**\ (\ slot_index\: :ref:`int<class_int>`, custom_icon\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **set_slot_custom_icon_left**\ (\ slot_index\: :ref:`int<class_int>`, custom_icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_GraphNode_method_set_slot_custom_icon_left>`
 
 Sets the custom :ref:`Texture2D<class_Texture2D>` of the left (input) side of the slot with the given ``slot_index`` to ``custom_icon``.
 
@@ -556,7 +556,7 @@ Sets the custom :ref:`Texture2D<class_Texture2D>` of the left (input) side of th
 
 .. rst-class:: classref-method
 
-|void| **set_slot_custom_icon_right**\ (\ slot_index\: :ref:`int<class_int>`, custom_icon\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **set_slot_custom_icon_right**\ (\ slot_index\: :ref:`int<class_int>`, custom_icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_GraphNode_method_set_slot_custom_icon_right>`
 
 Sets the custom :ref:`Texture2D<class_Texture2D>` of the right (output) side of the slot with the given ``slot_index`` to ``custom_icon``.
 
@@ -568,7 +568,7 @@ Sets the custom :ref:`Texture2D<class_Texture2D>` of the right (output) side of 
 
 .. rst-class:: classref-method
 
-|void| **set_slot_draw_stylebox**\ (\ slot_index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_slot_draw_stylebox**\ (\ slot_index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_GraphNode_method_set_slot_draw_stylebox>`
 
 Toggles the background :ref:`StyleBox<class_StyleBox>` of the slot with the given ``slot_index``.
 
@@ -580,7 +580,7 @@ Toggles the background :ref:`StyleBox<class_StyleBox>` of the slot with the give
 
 .. rst-class:: classref-method
 
-|void| **set_slot_enabled_left**\ (\ slot_index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_slot_enabled_left**\ (\ slot_index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_GraphNode_method_set_slot_enabled_left>`
 
 Toggles the left (input) side of the slot with the given ``slot_index``. If ``enable`` is ``true``, a port will appear on the left side and the slot will be able to be connected from this side.
 
@@ -592,7 +592,7 @@ Toggles the left (input) side of the slot with the given ``slot_index``. If ``en
 
 .. rst-class:: classref-method
 
-|void| **set_slot_enabled_right**\ (\ slot_index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_slot_enabled_right**\ (\ slot_index\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_GraphNode_method_set_slot_enabled_right>`
 
 Toggles the right (output) side of the slot with the given ``slot_index``. If ``enable`` is ``true``, a port will appear on the right side and the slot will be able to be connected from this side.
 
@@ -604,7 +604,7 @@ Toggles the right (output) side of the slot with the given ``slot_index``. If ``
 
 .. rst-class:: classref-method
 
-|void| **set_slot_type_left**\ (\ slot_index\: :ref:`int<class_int>`, type\: :ref:`int<class_int>`\ )
+|void| **set_slot_type_left**\ (\ slot_index\: :ref:`int<class_int>`, type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_method_set_slot_type_left>`
 
 Sets the left (input) type of the slot with the given ``slot_index`` to ``type``. If the value is negative, all connections will be disallowed to be created via user inputs.
 
@@ -616,7 +616,7 @@ Sets the left (input) type of the slot with the given ``slot_index`` to ``type``
 
 .. rst-class:: classref-method
 
-|void| **set_slot_type_right**\ (\ slot_index\: :ref:`int<class_int>`, type\: :ref:`int<class_int>`\ )
+|void| **set_slot_type_right**\ (\ slot_index\: :ref:`int<class_int>`, type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphNode_method_set_slot_type_right>`
 
 Sets the right (output) type of the slot with the given ``slot_index`` to ``type``. If the value is negative, all connections will be disallowed to be created via user inputs.
 
@@ -633,7 +633,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **resizer_color** = ``Color(0.875, 0.875, 0.875, 1)``
+:ref:`Color<class_Color>` **resizer_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_GraphNode_theme_color_resizer_color>`
 
 The color modulation applied to the resizer icon.
 
@@ -645,7 +645,7 @@ The color modulation applied to the resizer icon.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **port_h_offset** = ``0``
+:ref:`int<class_int>` **port_h_offset** = ``0`` :ref:`🔗<class_GraphNode_theme_constant_port_h_offset>`
 
 Horizontal offset for the ports.
 
@@ -657,7 +657,7 @@ Horizontal offset for the ports.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **separation** = ``2``
+:ref:`int<class_int>` **separation** = ``2`` :ref:`🔗<class_GraphNode_theme_constant_separation>`
 
 The vertical distance between ports.
 
@@ -669,7 +669,7 @@ The vertical distance between ports.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **port**
+:ref:`Texture2D<class_Texture2D>` **port** :ref:`🔗<class_GraphNode_theme_icon_port>`
 
 The icon used for representing ports.
 
@@ -681,7 +681,7 @@ The icon used for representing ports.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **panel**
+:ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_GraphNode_theme_style_panel>`
 
 The default background for the slot area of the **GraphNode**.
 
@@ -693,7 +693,7 @@ The default background for the slot area of the **GraphNode**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **panel_selected**
+:ref:`StyleBox<class_StyleBox>` **panel_selected** :ref:`🔗<class_GraphNode_theme_style_panel_selected>`
 
 The :ref:`StyleBox<class_StyleBox>` used for the slot area when selected.
 
@@ -705,7 +705,7 @@ The :ref:`StyleBox<class_StyleBox>` used for the slot area when selected.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **slot**
+:ref:`StyleBox<class_StyleBox>` **slot** :ref:`🔗<class_GraphNode_theme_style_slot>`
 
 The :ref:`StyleBox<class_StyleBox>` used for each slot of the **GraphNode**.
 
@@ -717,7 +717,7 @@ The :ref:`StyleBox<class_StyleBox>` used for each slot of the **GraphNode**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **titlebar**
+:ref:`StyleBox<class_StyleBox>` **titlebar** :ref:`🔗<class_GraphNode_theme_style_titlebar>`
 
 The :ref:`StyleBox<class_StyleBox>` used for the title bar of the **GraphNode**.
 
@@ -729,7 +729,7 @@ The :ref:`StyleBox<class_StyleBox>` used for the title bar of the **GraphNode**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **titlebar_selected**
+:ref:`StyleBox<class_StyleBox>` **titlebar_selected** :ref:`🔗<class_GraphNode_theme_style_titlebar_selected>`
 
 The :ref:`StyleBox<class_StyleBox>` used for the title bar of the **GraphNode** when it is selected.
 

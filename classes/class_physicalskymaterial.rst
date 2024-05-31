@@ -70,7 +70,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **energy_multiplier** = ``1.0``
+:ref:`float<class_float>` **energy_multiplier** = ``1.0`` :ref:`🔗<class_PhysicalSkyMaterial_property_energy_multiplier>`
 
 .. rst-class:: classref-property-setget
 
@@ -87,7 +87,7 @@ The sky's overall brightness multiplier. Higher values result in a brighter sky.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **ground_color** = ``Color(0.1, 0.07, 0.034, 1)``
+:ref:`Color<class_Color>` **ground_color** = ``Color(0.1, 0.07, 0.034, 1)`` :ref:`🔗<class_PhysicalSkyMaterial_property_ground_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -104,7 +104,7 @@ Modulates the :ref:`Color<class_Color>` on the bottom half of the sky to represe
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **mie_coefficient** = ``0.005``
+:ref:`float<class_float>` **mie_coefficient** = ``0.005`` :ref:`🔗<class_PhysicalSkyMaterial_property_mie_coefficient>`
 
 .. rst-class:: classref-property-setget
 
@@ -121,7 +121,7 @@ Controls the strength of `Mie scattering <https://en.wikipedia.org/wiki/Mie_scat
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **mie_color** = ``Color(0.69, 0.729, 0.812, 1)``
+:ref:`Color<class_Color>` **mie_color** = ``Color(0.69, 0.729, 0.812, 1)`` :ref:`🔗<class_PhysicalSkyMaterial_property_mie_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -138,7 +138,7 @@ Controls the :ref:`Color<class_Color>` of the `Mie scattering <https://en.wikipe
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **mie_eccentricity** = ``0.8``
+:ref:`float<class_float>` **mie_eccentricity** = ``0.8`` :ref:`🔗<class_PhysicalSkyMaterial_property_mie_eccentricity>`
 
 .. rst-class:: classref-property-setget
 
@@ -155,7 +155,7 @@ Controls the direction of the `Mie scattering <https://en.wikipedia.org/wiki/Mie
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **night_sky**
+:ref:`Texture2D<class_Texture2D>` **night_sky** :ref:`🔗<class_PhysicalSkyMaterial_property_night_sky>`
 
 .. rst-class:: classref-property-setget
 
@@ -172,7 +172,7 @@ Controls the direction of the `Mie scattering <https://en.wikipedia.org/wiki/Mie
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rayleigh_coefficient** = ``2.0``
+:ref:`float<class_float>` **rayleigh_coefficient** = ``2.0`` :ref:`🔗<class_PhysicalSkyMaterial_property_rayleigh_coefficient>`
 
 .. rst-class:: classref-property-setget
 
@@ -189,7 +189,7 @@ Controls the strength of the `Rayleigh scattering <https://en.wikipedia.org/wiki
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **rayleigh_color** = ``Color(0.3, 0.405, 0.6, 1)``
+:ref:`Color<class_Color>` **rayleigh_color** = ``Color(0.3, 0.405, 0.6, 1)`` :ref:`🔗<class_PhysicalSkyMaterial_property_rayleigh_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -206,7 +206,7 @@ Controls the :ref:`Color<class_Color>` of the `Rayleigh scattering <https://en.w
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sun_disk_scale** = ``1.0``
+:ref:`float<class_float>` **sun_disk_scale** = ``1.0`` :ref:`🔗<class_PhysicalSkyMaterial_property_sun_disk_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -223,7 +223,7 @@ Sets the size of the sun disk. Default value is based on Sol's perceived size fr
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **turbidity** = ``10.0``
+:ref:`float<class_float>` **turbidity** = ``10.0`` :ref:`🔗<class_PhysicalSkyMaterial_property_turbidity>`
 
 .. rst-class:: classref-property-setget
 
@@ -240,7 +240,7 @@ Sets the thickness of the atmosphere. High turbidity creates a foggy-looking atm
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_debanding** = ``true``
+:ref:`bool<class_bool>` **use_debanding** = ``true`` :ref:`🔗<class_PhysicalSkyMaterial_property_use_debanding>`
 
 .. rst-class:: classref-property-setget
 

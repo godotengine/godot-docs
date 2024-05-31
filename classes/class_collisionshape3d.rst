@@ -77,7 +77,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disabled** = ``false``
+:ref:`bool<class_bool>` **disabled** = ``false`` :ref:`🔗<class_CollisionShape3D_property_disabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -94,7 +94,7 @@ A disabled collision shape has no effect in the world.
 
 .. rst-class:: classref-property
 
-:ref:`Shape3D<class_Shape3D>` **shape**
+:ref:`Shape3D<class_Shape3D>` **shape** :ref:`🔗<class_CollisionShape3D_property_shape>`
 
 .. rst-class:: classref-property-setget
 
@@ -116,7 +116,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **make_convex_from_siblings**\ (\ )
+|void| **make_convex_from_siblings**\ (\ ) :ref:`🔗<class_CollisionShape3D_method_make_convex_from_siblings>`
 
 Sets the collision shape's shape to the addition of all its convexed :ref:`MeshInstance3D<class_MeshInstance3D>` siblings geometry.
 
@@ -128,7 +128,7 @@ Sets the collision shape's shape to the addition of all its convexed :ref:`MeshI
 
 .. rst-class:: classref-method
 
-|void| **resource_changed**\ (\ resource\: :ref:`Resource<class_Resource>`\ )
+|void| **resource_changed**\ (\ resource\: :ref:`Resource<class_Resource>`\ ) :ref:`🔗<class_CollisionShape3D_method_resource_changed>`
 
 **Deprecated:** Use :ref:`Resource.changed<class_Resource_signal_changed>` instead.
 

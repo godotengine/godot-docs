@@ -59,7 +59,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-|bitfield|\[:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>`\] **button_mask** = ``0``
+|bitfield|\[:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>`\] **button_mask** = ``0`` :ref:`🔗<class_InputEventMouse_property_button_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -76,7 +76,7 @@ The mouse button mask identifier, one of or a bitwise combination of the :ref:`M
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **global_position** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **global_position** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventMouse_property_global_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -95,7 +95,7 @@ When received in :ref:`Control._gui_input<class_Control_private_method__gui_inpu
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventMouse_property_position>`
 
 .. rst-class:: classref-property-setget
 

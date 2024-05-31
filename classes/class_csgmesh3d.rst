@@ -57,7 +57,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_CSGMesh3D_property_material>`
 
 .. rst-class:: classref-property-setget
 
@@ -74,7 +74,7 @@ The :ref:`Material<class_Material>` used in drawing the CSG shape.
 
 .. rst-class:: classref-property
 
-:ref:`Mesh<class_Mesh>` **mesh**
+:ref:`Mesh<class_Mesh>` **mesh** :ref:`🔗<class_CSGMesh3D_property_mesh>`
 
 .. rst-class:: classref-property-setget
 

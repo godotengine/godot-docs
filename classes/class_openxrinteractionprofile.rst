@@ -64,7 +64,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **bindings** = ``[]``
+:ref:`Array<class_Array>` **bindings** = ``[]`` :ref:`🔗<class_OpenXRInteractionProfile_property_bindings>`
 
 .. rst-class:: classref-property-setget
 
@@ -81,7 +81,7 @@ Action bindings for this interaction profile.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **interaction_profile_path** = ``""``
+:ref:`String<class_String>` **interaction_profile_path** = ``""`` :ref:`🔗<class_OpenXRInteractionProfile_property_interaction_profile_path>`
 
 .. rst-class:: classref-property-setget
 
@@ -103,7 +103,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`OpenXRIPBinding<class_OpenXRIPBinding>` **get_binding**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`OpenXRIPBinding<class_OpenXRIPBinding>` **get_binding**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OpenXRInteractionProfile_method_get_binding>`
 
 Retrieve the binding at this index.
 
@@ -115,7 +115,7 @@ Retrieve the binding at this index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_binding_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_binding_count**\ (\ ) |const| :ref:`🔗<class_OpenXRInteractionProfile_method_get_binding_count>`
 
 Get the number of bindings in this interaction profile.
 

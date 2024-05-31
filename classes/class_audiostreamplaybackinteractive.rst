@@ -48,7 +48,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **switch_to_clip**\ (\ clip_index\: :ref:`int<class_int>`\ )
+|void| **switch_to_clip**\ (\ clip_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioStreamPlaybackInteractive_method_switch_to_clip>`
 
 Switch to a clip (by index).
 
@@ -60,7 +60,7 @@ Switch to a clip (by index).
 
 .. rst-class:: classref-method
 
-|void| **switch_to_clip_by_name**\ (\ clip_name\: :ref:`StringName<class_StringName>`\ )
+|void| **switch_to_clip_by_name**\ (\ clip_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AudioStreamPlaybackInteractive_method_switch_to_clip_by_name>`
 
 Switch to a clip (by name).
 

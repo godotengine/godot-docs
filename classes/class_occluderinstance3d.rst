@@ -81,7 +81,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bake_mask** = ``4294967295``
+:ref:`int<class_int>` **bake_mask** = ``4294967295`` :ref:`🔗<class_OccluderInstance3D_property_bake_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -100,7 +100,7 @@ To improve performance and avoid artifacts, it is recommended to exclude dynamic
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bake_simplification_distance** = ``0.1``
+:ref:`float<class_float>` **bake_simplification_distance** = ``0.1`` :ref:`🔗<class_OccluderInstance3D_property_bake_simplification_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -123,7 +123,7 @@ Setting this to ``0.0`` disables simplification entirely, but vertices in the ex
 
 .. rst-class:: classref-property
 
-:ref:`Occluder3D<class_Occluder3D>` **occluder**
+:ref:`Occluder3D<class_Occluder3D>` **occluder** :ref:`🔗<class_OccluderInstance3D_property_occluder>`
 
 .. rst-class:: classref-property-setget
 
@@ -149,7 +149,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OccluderInstance3D_method_get_bake_mask_value>`
 
 Returns whether or not the specified layer of the :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>` is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -161,7 +161,7 @@ Returns whether or not the specified layer of the :ref:`bake_mask<class_Occluder
 
 .. rst-class:: classref-method
 
-|void| **set_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
+|void| **set_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_OccluderInstance3D_method_set_bake_mask_value>`
 
 Based on ``value``, enables or disables the specified layer in the :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>`, given a ``layer_number`` between 1 and 32.
 

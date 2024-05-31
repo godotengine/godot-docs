@@ -90,7 +90,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **UpdateMode**:
+enum **UpdateMode**: :ref:`🔗<enum_ReflectionProbe_UpdateMode>`
 
 .. _class_ReflectionProbe_constant_UPDATE_ONCE:
 
@@ -116,7 +116,7 @@ Update the probe every frame. This provides better results for fast-moving dynam
 
 .. rst-class:: classref-enumeration
 
-enum **AmbientMode**:
+enum **AmbientMode**: :ref:`🔗<enum_ReflectionProbe_AmbientMode>`
 
 .. _class_ReflectionProbe_constant_AMBIENT_DISABLED:
 
@@ -155,7 +155,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **ambient_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **ambient_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_ReflectionProbe_property_ambient_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -172,7 +172,7 @@ The custom ambient color to use within the **ReflectionProbe**'s box defined by 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ambient_color_energy** = ``1.0``
+:ref:`float<class_float>` **ambient_color_energy** = ``1.0`` :ref:`🔗<class_ReflectionProbe_property_ambient_color_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -189,7 +189,7 @@ The custom ambient color energy to use within the **ReflectionProbe**'s box defi
 
 .. rst-class:: classref-property
 
-:ref:`AmbientMode<enum_ReflectionProbe_AmbientMode>` **ambient_mode** = ``1``
+:ref:`AmbientMode<enum_ReflectionProbe_AmbientMode>` **ambient_mode** = ``1`` :ref:`🔗<class_ReflectionProbe_property_ambient_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -206,7 +206,7 @@ The ambient color to use within the **ReflectionProbe**'s box defined by its :re
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **box_projection** = ``false``
+:ref:`bool<class_bool>` **box_projection** = ``false`` :ref:`🔗<class_ReflectionProbe_property_box_projection>`
 
 .. rst-class:: classref-property-setget
 
@@ -225,7 +225,7 @@ If ``true``, enables box projection. This makes reflections look more correct in
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **cull_mask** = ``1048575``
+:ref:`int<class_int>` **cull_mask** = ``1048575`` :ref:`🔗<class_ReflectionProbe_property_cull_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -244,7 +244,7 @@ This can also be used to prevent an object from reflecting upon itself (for inst
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enable_shadows** = ``false``
+:ref:`bool<class_bool>` **enable_shadows** = ``false`` :ref:`🔗<class_ReflectionProbe_property_enable_shadows>`
 
 .. rst-class:: classref-property-setget
 
@@ -261,7 +261,7 @@ If ``true``, computes shadows in the reflection probe. This makes the reflection
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **intensity** = ``1.0``
+:ref:`float<class_float>` **intensity** = ``1.0`` :ref:`🔗<class_ReflectionProbe_property_intensity>`
 
 .. rst-class:: classref-property-setget
 
@@ -278,7 +278,7 @@ Defines the reflection intensity. Intensity modulates the strength of the reflec
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interior** = ``false``
+:ref:`bool<class_bool>` **interior** = ``false`` :ref:`🔗<class_ReflectionProbe_property_interior>`
 
 .. rst-class:: classref-property-setget
 
@@ -295,7 +295,7 @@ If ``true``, reflections will ignore sky contribution.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **max_distance** = ``0.0``
+:ref:`float<class_float>` **max_distance** = ``0.0`` :ref:`🔗<class_ReflectionProbe_property_max_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -314,7 +314,7 @@ The maximum distance away from the **ReflectionProbe** an object can be before i
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **mesh_lod_threshold** = ``1.0``
+:ref:`float<class_float>` **mesh_lod_threshold** = ``1.0`` :ref:`🔗<class_ReflectionProbe_property_mesh_lod_threshold>`
 
 .. rst-class:: classref-property-setget
 
@@ -333,7 +333,7 @@ The automatic LOD bias to use for meshes rendered within the **ReflectionProbe**
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **origin_offset** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **origin_offset** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_ReflectionProbe_property_origin_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -350,7 +350,7 @@ Sets the origin offset to be used when this **ReflectionProbe** is in :ref:`box_
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **reflection_mask** = ``1048575``
+:ref:`int<class_int>` **reflection_mask** = ``1048575`` :ref:`🔗<class_ReflectionProbe_property_reflection_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -367,7 +367,7 @@ Sets the reflection mask which determines what objects have reflections applied 
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(20, 20, 20)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(20, 20, 20)`` :ref:`🔗<class_ReflectionProbe_property_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -386,7 +386,7 @@ The size of the reflection probe. The larger the size, the more space covered by
 
 .. rst-class:: classref-property
 
-:ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>` **update_mode** = ``0``
+:ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>` **update_mode** = ``0`` :ref:`🔗<class_ReflectionProbe_property_update_mode>`
 
 .. rst-class:: classref-property-setget
 

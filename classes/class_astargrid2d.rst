@@ -131,7 +131,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Heuristic**:
+enum **Heuristic**: :ref:`🔗<enum_AStarGrid2D_Heuristic>`
 
 .. _class_AStarGrid2D_constant_HEURISTIC_EUCLIDEAN:
 
@@ -210,7 +210,7 @@ Represents the size of the :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **DiagonalMode**:
+enum **DiagonalMode**: :ref:`🔗<enum_AStarGrid2D_DiagonalMode>`
 
 .. _class_AStarGrid2D_constant_DIAGONAL_MODE_ALWAYS:
 
@@ -260,7 +260,7 @@ Represents the size of the :ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` en
 
 .. rst-class:: classref-enumeration
 
-enum **CellShape**:
+enum **CellShape**: :ref:`🔗<enum_AStarGrid2D_CellShape>`
 
 .. _class_AStarGrid2D_constant_CELL_SHAPE_SQUARE:
 
@@ -307,7 +307,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`CellShape<enum_AStarGrid2D_CellShape>` **cell_shape** = ``0``
+:ref:`CellShape<enum_AStarGrid2D_CellShape>` **cell_shape** = ``0`` :ref:`🔗<class_AStarGrid2D_property_cell_shape>`
 
 .. rst-class:: classref-property-setget
 
@@ -324,7 +324,7 @@ The cell shape. Affects how the positions are placed in the grid. If changed, :r
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **cell_size** = ``Vector2(1, 1)``
+:ref:`Vector2<class_Vector2>` **cell_size** = ``Vector2(1, 1)`` :ref:`🔗<class_AStarGrid2D_property_cell_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -341,7 +341,7 @@ The size of the point cell which will be applied to calculate the resulting poin
 
 .. rst-class:: classref-property
 
-:ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **default_compute_heuristic** = ``0``
+:ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **default_compute_heuristic** = ``0`` :ref:`🔗<class_AStarGrid2D_property_default_compute_heuristic>`
 
 .. rst-class:: classref-property-setget
 
@@ -358,7 +358,7 @@ The default :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` which will be used to c
 
 .. rst-class:: classref-property
 
-:ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **default_estimate_heuristic** = ``0``
+:ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **default_estimate_heuristic** = ``0`` :ref:`🔗<class_AStarGrid2D_property_default_estimate_heuristic>`
 
 .. rst-class:: classref-property-setget
 
@@ -375,7 +375,7 @@ The default :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` which will be used to c
 
 .. rst-class:: classref-property
 
-:ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` **diagonal_mode** = ``0``
+:ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` **diagonal_mode** = ``0`` :ref:`🔗<class_AStarGrid2D_property_diagonal_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -392,7 +392,7 @@ A specific :ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` mode which will fo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **jumping_enabled** = ``false``
+:ref:`bool<class_bool>` **jumping_enabled** = ``false`` :ref:`🔗<class_AStarGrid2D_property_jumping_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -411,7 +411,7 @@ Enables or disables jumping to skip up the intermediate points and speeds up the
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)`` :ref:`🔗<class_AStarGrid2D_property_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -428,7 +428,7 @@ The offset of the grid which will be applied to calculate the resulting point po
 
 .. rst-class:: classref-property
 
-:ref:`Rect2i<class_Rect2i>` **region** = ``Rect2i(0, 0, 0, 0)``
+:ref:`Rect2i<class_Rect2i>` **region** = ``Rect2i(0, 0, 0, 0)`` :ref:`🔗<class_AStarGrid2D_property_region>`
 
 .. rst-class:: classref-property-setget
 
@@ -445,7 +445,7 @@ The region of grid cells available for pathfinding. If changed, :ref:`update<cla
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **size** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **size** = ``Vector2i(0, 0)`` :ref:`🔗<class_AStarGrid2D_property_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -469,7 +469,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_compute_cost**\ (\ from_id\: :ref:`Vector2i<class_Vector2i>`, to_id\: :ref:`Vector2i<class_Vector2i>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_compute_cost**\ (\ from_id\: :ref:`Vector2i<class_Vector2i>`, to_id\: :ref:`Vector2i<class_Vector2i>`\ ) |virtual| |const| :ref:`🔗<class_AStarGrid2D_private_method__compute_cost>`
 
 Called when computing the cost between two connected points.
 
@@ -483,7 +483,7 @@ Note that this function is hidden in the default **AStarGrid2D** class.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_estimate_cost**\ (\ from_id\: :ref:`Vector2i<class_Vector2i>`, to_id\: :ref:`Vector2i<class_Vector2i>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_estimate_cost**\ (\ from_id\: :ref:`Vector2i<class_Vector2i>`, to_id\: :ref:`Vector2i<class_Vector2i>`\ ) |virtual| |const| :ref:`🔗<class_AStarGrid2D_private_method__estimate_cost>`
 
 Called when estimating the cost between a point and the path's ending point.
 
@@ -497,7 +497,7 @@ Note that this function is hidden in the default **AStarGrid2D** class.
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_AStarGrid2D_method_clear>`
 
 Clears the grid and sets the :ref:`region<class_AStarGrid2D_property_region>` to ``Rect2i(0, 0, 0, 0)``.
 
@@ -509,7 +509,7 @@ Clears the grid and sets the :ref:`region<class_AStarGrid2D_property_region>` to
 
 .. rst-class:: classref-method
 
-|void| **fill_solid_region**\ (\ region\: :ref:`Rect2i<class_Rect2i>`, solid\: :ref:`bool<class_bool>` = true\ )
+|void| **fill_solid_region**\ (\ region\: :ref:`Rect2i<class_Rect2i>`, solid\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_AStarGrid2D_method_fill_solid_region>`
 
 Fills the given ``region`` on the grid with the specified value for the solid flag.
 
@@ -523,7 +523,7 @@ Fills the given ``region`` on the grid with the specified value for the solid fl
 
 .. rst-class:: classref-method
 
-|void| **fill_weight_scale_region**\ (\ region\: :ref:`Rect2i<class_Rect2i>`, weight_scale\: :ref:`float<class_float>`\ )
+|void| **fill_weight_scale_region**\ (\ region\: :ref:`Rect2i<class_Rect2i>`, weight_scale\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AStarGrid2D_method_fill_weight_scale_region>`
 
 Fills the given ``region`` on the grid with the specified value for the weight scale.
 
@@ -537,7 +537,7 @@ Fills the given ``region`` on the grid with the specified value for the weight s
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_id_path**\ (\ from_id\: :ref:`Vector2i<class_Vector2i>`, to_id\: :ref:`Vector2i<class_Vector2i>`, allow_partial_path\: :ref:`bool<class_bool>` = false\ )
+:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_id_path**\ (\ from_id\: :ref:`Vector2i<class_Vector2i>`, to_id\: :ref:`Vector2i<class_Vector2i>`, allow_partial_path\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_AStarGrid2D_method_get_id_path>`
 
 Returns an array with the IDs of the points that form the path found by AStar2D between the given points. The array is ordered from the starting point to the ending point of the path.
 
@@ -551,7 +551,7 @@ If there is no valid path to the target, and ``allow_partial_path`` is ``true``,
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **get_point_path**\ (\ from_id\: :ref:`Vector2i<class_Vector2i>`, to_id\: :ref:`Vector2i<class_Vector2i>`, allow_partial_path\: :ref:`bool<class_bool>` = false\ )
+:ref:`PackedVector2Array<class_PackedVector2Array>` **get_point_path**\ (\ from_id\: :ref:`Vector2i<class_Vector2i>`, to_id\: :ref:`Vector2i<class_Vector2i>`, allow_partial_path\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_AStarGrid2D_method_get_point_path>`
 
 Returns an array with the points that are in the path found by **AStarGrid2D** between the given points. The array is ordered from the starting point to the ending point of the path.
 
@@ -567,7 +567,7 @@ If there is no valid path to the target, and ``allow_partial_path`` is ``true``,
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_point_position**\ (\ id\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_point_position**\ (\ id\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_AStarGrid2D_method_get_point_position>`
 
 Returns the position of the point associated with the given ``id``.
 
@@ -579,7 +579,7 @@ Returns the position of the point associated with the given ``id``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_point_weight_scale**\ (\ id\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`float<class_float>` **get_point_weight_scale**\ (\ id\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_AStarGrid2D_method_get_point_weight_scale>`
 
 Returns the weight scale of the point associated with the given ``id``.
 
@@ -591,7 +591,7 @@ Returns the weight scale of the point associated with the given ``id``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_dirty**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_dirty**\ (\ ) |const| :ref:`🔗<class_AStarGrid2D_method_is_dirty>`
 
 Indicates that the grid parameters were changed and :ref:`update<class_AStarGrid2D_method_update>` needs to be called.
 
@@ -603,7 +603,7 @@ Indicates that the grid parameters were changed and :ref:`update<class_AStarGrid
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_in_bounds**\ (\ x\: :ref:`int<class_int>`, y\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_in_bounds**\ (\ x\: :ref:`int<class_int>`, y\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AStarGrid2D_method_is_in_bounds>`
 
 Returns ``true`` if the ``x`` and ``y`` is a valid grid coordinate (id), i.e. if it is inside :ref:`region<class_AStarGrid2D_property_region>`. Equivalent to ``region.has_point(Vector2i(x, y))``.
 
@@ -615,7 +615,7 @@ Returns ``true`` if the ``x`` and ``y`` is a valid grid coordinate (id), i.e. if
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_in_boundsv**\ (\ id\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`bool<class_bool>` **is_in_boundsv**\ (\ id\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_AStarGrid2D_method_is_in_boundsv>`
 
 Returns ``true`` if the ``id`` vector is a valid grid coordinate, i.e. if it is inside :ref:`region<class_AStarGrid2D_property_region>`. Equivalent to ``region.has_point(id)``.
 
@@ -627,7 +627,7 @@ Returns ``true`` if the ``id`` vector is a valid grid coordinate, i.e. if it is 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_point_solid**\ (\ id\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`bool<class_bool>` **is_point_solid**\ (\ id\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_AStarGrid2D_method_is_point_solid>`
 
 Returns ``true`` if a point is disabled for pathfinding. By default, all points are enabled.
 
@@ -639,7 +639,7 @@ Returns ``true`` if a point is disabled for pathfinding. By default, all points 
 
 .. rst-class:: classref-method
 
-|void| **set_point_solid**\ (\ id\: :ref:`Vector2i<class_Vector2i>`, solid\: :ref:`bool<class_bool>` = true\ )
+|void| **set_point_solid**\ (\ id\: :ref:`Vector2i<class_Vector2i>`, solid\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_AStarGrid2D_method_set_point_solid>`
 
 Disables or enables the specified point for pathfinding. Useful for making an obstacle. By default, all points are enabled.
 
@@ -653,7 +653,7 @@ Disables or enables the specified point for pathfinding. Useful for making an ob
 
 .. rst-class:: classref-method
 
-|void| **set_point_weight_scale**\ (\ id\: :ref:`Vector2i<class_Vector2i>`, weight_scale\: :ref:`float<class_float>`\ )
+|void| **set_point_weight_scale**\ (\ id\: :ref:`Vector2i<class_Vector2i>`, weight_scale\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AStarGrid2D_method_set_point_weight_scale>`
 
 Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStarGrid2D_private_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
 
@@ -667,7 +667,7 @@ Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scal
 
 .. rst-class:: classref-method
 
-|void| **update**\ (\ )
+|void| **update**\ (\ ) :ref:`🔗<class_AStarGrid2D_method_update>`
 
 Updates the internal state of the grid according to the parameters to prepare it to search the path. Needs to be called if parameters like :ref:`region<class_AStarGrid2D_property_region>`, :ref:`cell_size<class_AStarGrid2D_property_cell_size>` or :ref:`offset<class_AStarGrid2D_property_offset>` are changed. :ref:`is_dirty<class_AStarGrid2D_method_is_dirty>` will return ``true`` if this is the case and this needs to be called.
 

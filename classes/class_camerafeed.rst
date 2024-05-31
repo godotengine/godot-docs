@@ -68,7 +68,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FeedDataType**:
+enum **FeedDataType**: :ref:`🔗<enum_CameraFeed_FeedDataType>`
 
 .. _class_CameraFeed_constant_FEED_NOIMAGE:
 
@@ -110,7 +110,7 @@ Feed supplies separate Y and CbCr images that need to be combined and converted 
 
 .. rst-class:: classref-enumeration
 
-enum **FeedPosition**:
+enum **FeedPosition**: :ref:`🔗<enum_CameraFeed_FeedPosition>`
 
 .. _class_CameraFeed_constant_FEED_UNSPECIFIED:
 
@@ -149,7 +149,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **feed_is_active** = ``false``
+:ref:`bool<class_bool>` **feed_is_active** = ``false`` :ref:`🔗<class_CameraFeed_property_feed_is_active>`
 
 .. rst-class:: classref-property-setget
 
@@ -166,7 +166,7 @@ If ``true``, the feed is active.
 
 .. rst-class:: classref-property
 
-:ref:`Transform2D<class_Transform2D>` **feed_transform** = ``Transform2D(1, 0, 0, -1, 0, 1)``
+:ref:`Transform2D<class_Transform2D>` **feed_transform** = ``Transform2D(1, 0, 0, -1, 0, 1)`` :ref:`🔗<class_CameraFeed_property_feed_transform>`
 
 .. rst-class:: classref-property-setget
 
@@ -188,7 +188,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`FeedDataType<enum_CameraFeed_FeedDataType>` **get_datatype**\ (\ ) |const|
+:ref:`FeedDataType<enum_CameraFeed_FeedDataType>` **get_datatype**\ (\ ) |const| :ref:`🔗<class_CameraFeed_method_get_datatype>`
 
 Returns feed image data type.
 
@@ -200,7 +200,7 @@ Returns feed image data type.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_id**\ (\ ) |const|
+:ref:`int<class_int>` **get_id**\ (\ ) |const| :ref:`🔗<class_CameraFeed_method_get_id>`
 
 Returns the unique ID for this feed.
 
@@ -212,7 +212,7 @@ Returns the unique ID for this feed.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_name**\ (\ ) |const|
+:ref:`String<class_String>` **get_name**\ (\ ) |const| :ref:`🔗<class_CameraFeed_method_get_name>`
 
 Returns the camera's name.
 
@@ -224,7 +224,7 @@ Returns the camera's name.
 
 .. rst-class:: classref-method
 
-:ref:`FeedPosition<enum_CameraFeed_FeedPosition>` **get_position**\ (\ ) |const|
+:ref:`FeedPosition<enum_CameraFeed_FeedPosition>` **get_position**\ (\ ) |const| :ref:`🔗<class_CameraFeed_method_get_position>`
 
 Returns the position of camera on the device.
 

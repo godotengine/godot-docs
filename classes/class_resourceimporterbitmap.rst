@@ -55,7 +55,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **create_from** = ``0``
+:ref:`int<class_int>` **create_from** = ``0`` :ref:`🔗<class_ResourceImporterBitMap_property_create_from>`
 
 The data source to use for generating the bitmap.
 
@@ -71,7 +71,7 @@ The data source to use for generating the bitmap.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **threshold** = ``0.5``
+:ref:`float<class_float>` **threshold** = ``0.5`` :ref:`🔗<class_ResourceImporterBitMap_property_threshold>`
 
 The threshold to use to determine which bits should be considered enabled or disabled. See also :ref:`create_from<class_ResourceImporterBitMap_property_create_from>`.
 

@@ -197,7 +197,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_can_import_threaded**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_can_import_threaded**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__can_import_threaded>`
 
 Tells whether this importer can be run in parallel on threads, or, on the contrary, it's only safe for the editor to call it from the main thread, for one file at a time.
 
@@ -211,7 +211,7 @@ If this method is not overridden, it will return ``true`` by default (i.e., safe
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_import_options**\ (\ path\: :ref:`String<class_String>`, preset_index\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_import_options**\ (\ path\: :ref:`String<class_String>`, preset_index\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_import_options>`
 
 Gets the options and default values for the preset at this index. Returns an Array of Dictionaries with the following keys: ``name``, ``default_value``, ``property_hint`` (optional), ``hint_string`` (optional), ``usage`` (optional).
 
@@ -223,7 +223,7 @@ Gets the options and default values for the preset at this index. Returns an Arr
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_import_order**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_import_order**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_import_order>`
 
 Gets the order of this importer to be run when importing resources. Importers with *lower* import orders will be called first, and higher values will be called later. Use this to ensure the importer runs after the dependencies are already imported. The default import order is ``0`` unless overridden by a specific importer. See :ref:`ImportOrder<enum_ResourceImporter_ImportOrder>` for some predefined values.
 
@@ -235,7 +235,7 @@ Gets the order of this importer to be run when importing resources. Importers wi
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_importer_name**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_importer_name**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_importer_name>`
 
 Gets the unique name of the importer.
 
@@ -247,7 +247,7 @@ Gets the unique name of the importer.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_get_option_visibility**\ (\ path\: :ref:`String<class_String>`, option_name\: :ref:`StringName<class_StringName>`, options\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_get_option_visibility**\ (\ path\: :ref:`String<class_String>`, option_name\: :ref:`StringName<class_StringName>`, options\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_option_visibility>`
 
 This method can be overridden to hide specific import options if conditions are met. This is mainly useful for hiding options that depend on others if one of them is disabled. For example:
 
@@ -288,7 +288,7 @@ Returns ``true`` to make all options always visible.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_preset_count**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_preset_count**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_preset_count>`
 
 Gets the number of initial presets defined by the plugin. Use :ref:`_get_import_options<class_EditorImportPlugin_private_method__get_import_options>` to get the default options for the preset and :ref:`_get_preset_name<class_EditorImportPlugin_private_method__get_preset_name>` to get the name of the preset.
 
@@ -300,7 +300,7 @@ Gets the number of initial presets defined by the plugin. Use :ref:`_get_import_
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_preset_name**\ (\ preset_index\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_preset_name**\ (\ preset_index\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_preset_name>`
 
 Gets the name of the options preset at this index.
 
@@ -312,7 +312,7 @@ Gets the name of the options preset at this index.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_priority**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_priority**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_priority>`
 
 Gets the priority of this plugin for the recognized extension. Higher priority plugins will be preferred. The default priority is ``1.0``.
 
@@ -324,7 +324,7 @@ Gets the priority of this plugin for the recognized extension. Higher priority p
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_recognized_extensions>`
 
 Gets the list of file extensions to associate with this loader (case-insensitive). e.g. ``["obj"]``.
 
@@ -336,7 +336,7 @@ Gets the list of file extensions to associate with this loader (case-insensitive
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_resource_type**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_resource_type**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_resource_type>`
 
 Gets the Godot resource type associated with this loader. e.g. ``"Mesh"`` or ``"Animation"``.
 
@@ -348,7 +348,7 @@ Gets the Godot resource type associated with this loader. e.g. ``"Mesh"`` or ``"
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_save_extension**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_save_extension**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_save_extension>`
 
 Gets the extension used to save this resource in the ``.godot/imported`` directory (see :ref:`ProjectSettings.application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
 
@@ -360,7 +360,7 @@ Gets the extension used to save this resource in the ``.godot/imported`` directo
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_visible_name**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_visible_name**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_visible_name>`
 
 Gets the name to display in the import window. You should choose this name as a continuation to "Import as", e.g. "Import as Special Mesh".
 
@@ -372,7 +372,7 @@ Gets the name to display in the import window. You should choose this name as a 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_import**\ (\ source_file\: :ref:`String<class_String>`, save_path\: :ref:`String<class_String>`, options\: :ref:`Dictionary<class_Dictionary>`, platform_variants\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], gen_files\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\]\ ) |virtual| |const|
+:ref:`Error<enum_@GlobalScope_Error>` **_import**\ (\ source_file\: :ref:`String<class_String>`, save_path\: :ref:`String<class_String>`, options\: :ref:`Dictionary<class_Dictionary>`, platform_variants\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], gen_files\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\]\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__import>`
 
 Imports ``source_file`` into ``save_path`` with the import ``options`` specified. The ``platform_variants`` and ``gen_files`` arrays will be modified by this function.
 
@@ -386,7 +386,7 @@ This method must be overridden to do the actual importing work. See this class' 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **append_import_external_resource**\ (\ path\: :ref:`String<class_String>`, custom_options\: :ref:`Dictionary<class_Dictionary>` = {}, custom_importer\: :ref:`String<class_String>` = "", generator_parameters\: :ref:`Variant<class_Variant>` = null\ )
+:ref:`Error<enum_@GlobalScope_Error>` **append_import_external_resource**\ (\ path\: :ref:`String<class_String>`, custom_options\: :ref:`Dictionary<class_Dictionary>` = {}, custom_importer\: :ref:`String<class_String>` = "", generator_parameters\: :ref:`Variant<class_Variant>` = null\ ) :ref:`🔗<class_EditorImportPlugin_method_append_import_external_resource>`
 
 This function can only be called during the :ref:`_import<class_EditorImportPlugin_private_method__import>` callback and it allows manually importing resources from it. This is useful when the imported file generates external resources that require importing (as example, images). Custom parameters for the ".import" file can be passed via the ``custom_options``. Additionally, in cases where multiple importers can handle a file, the ``custom_importer`` ca be specified to force a specific one. This function performs a resource import and returns immediately with a success or error code. ``generator_parameters`` defines optional extra metadata which will be stored as ``generator_parameters`` in the ``remap`` section of the ``.import`` file, for example to store a md5 hash of the source data.
 

@@ -71,7 +71,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**screen_entered**\ (\ )
+**screen_entered**\ (\ ) :ref:`🔗<class_VisibleOnScreenNotifier2D_signal_screen_entered>`
 
 Emitted when the VisibleOnScreenNotifier2D enters the screen.
 
@@ -83,7 +83,7 @@ Emitted when the VisibleOnScreenNotifier2D enters the screen.
 
 .. rst-class:: classref-signal
 
-**screen_exited**\ (\ )
+**screen_exited**\ (\ ) :ref:`🔗<class_VisibleOnScreenNotifier2D_signal_screen_exited>`
 
 Emitted when the VisibleOnScreenNotifier2D exits the screen.
 
@@ -100,7 +100,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **rect** = ``Rect2(-10, -10, 20, 20)``
+:ref:`Rect2<class_Rect2>` **rect** = ``Rect2(-10, -10, 20, 20)`` :ref:`🔗<class_VisibleOnScreenNotifier2D_property_rect>`
 
 .. rst-class:: classref-property-setget
 
@@ -122,7 +122,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_on_screen**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_on_screen**\ (\ ) |const| :ref:`🔗<class_VisibleOnScreenNotifier2D_method_is_on_screen>`
 
 If ``true``, the bounding rectangle is on the screen.
 

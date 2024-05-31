@@ -109,7 +109,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**instance_exiting**\ (\ )
+**instance_exiting**\ (\ ) :ref:`🔗<class_OpenXRInterface_signal_instance_exiting>`
 
 Informs our OpenXR instance is exiting.
 
@@ -121,7 +121,7 @@ Informs our OpenXR instance is exiting.
 
 .. rst-class:: classref-signal
 
-**pose_recentered**\ (\ )
+**pose_recentered**\ (\ ) :ref:`🔗<class_OpenXRInterface_signal_pose_recentered>`
 
 Informs the user queued a recenter of the player position.
 
@@ -133,7 +133,7 @@ Informs the user queued a recenter of the player position.
 
 .. rst-class:: classref-signal
 
-**refresh_rate_changed**\ (\ refresh_rate\: :ref:`float<class_float>`\ )
+**refresh_rate_changed**\ (\ refresh_rate\: :ref:`float<class_float>`\ ) :ref:`🔗<class_OpenXRInterface_signal_refresh_rate_changed>`
 
 Informs the user the HMD refresh rate has changed.
 
@@ -147,7 +147,7 @@ Informs the user the HMD refresh rate has changed.
 
 .. rst-class:: classref-signal
 
-**session_begun**\ (\ )
+**session_begun**\ (\ ) :ref:`🔗<class_OpenXRInterface_signal_session_begun>`
 
 Informs our OpenXR session has been started.
 
@@ -159,7 +159,7 @@ Informs our OpenXR session has been started.
 
 .. rst-class:: classref-signal
 
-**session_focussed**\ (\ )
+**session_focussed**\ (\ ) :ref:`🔗<class_OpenXRInterface_signal_session_focussed>`
 
 Informs our OpenXR session now has focus.
 
@@ -171,7 +171,7 @@ Informs our OpenXR session now has focus.
 
 .. rst-class:: classref-signal
 
-**session_loss_pending**\ (\ )
+**session_loss_pending**\ (\ ) :ref:`🔗<class_OpenXRInterface_signal_session_loss_pending>`
 
 Informs our OpenXR session is in the process of being lost.
 
@@ -183,7 +183,7 @@ Informs our OpenXR session is in the process of being lost.
 
 .. rst-class:: classref-signal
 
-**session_stopping**\ (\ )
+**session_stopping**\ (\ ) :ref:`🔗<class_OpenXRInterface_signal_session_stopping>`
 
 Informs our OpenXR session is stopping.
 
@@ -195,7 +195,7 @@ Informs our OpenXR session is stopping.
 
 .. rst-class:: classref-signal
 
-**session_visible**\ (\ )
+**session_visible**\ (\ ) :ref:`🔗<class_OpenXRInterface_signal_session_visible>`
 
 Informs our OpenXR session is now visible (output is being sent to the HMD).
 
@@ -212,7 +212,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Hand**:
+enum **Hand**: :ref:`🔗<enum_OpenXRInterface_Hand>`
 
 .. _class_OpenXRInterface_constant_HAND_LEFT:
 
@@ -246,7 +246,7 @@ Maximum value for the hand enum.
 
 .. rst-class:: classref-enumeration
 
-enum **HandMotionRange**:
+enum **HandMotionRange**: :ref:`🔗<enum_OpenXRInterface_HandMotionRange>`
 
 .. _class_OpenXRInterface_constant_HAND_MOTION_RANGE_UNOBSTRUCTED:
 
@@ -280,7 +280,7 @@ Maximum value for the motion range enum.
 
 .. rst-class:: classref-enumeration
 
-enum **HandTrackedSource**:
+enum **HandTrackedSource**: :ref:`🔗<enum_OpenXRInterface_HandTrackedSource>`
 
 .. _class_OpenXRInterface_constant_HAND_TRACKED_SOURCE_UNKNOWN:
 
@@ -322,7 +322,7 @@ Maximum value for the hand tracked source enum.
 
 .. rst-class:: classref-enumeration
 
-enum **HandJoints**:
+enum **HandJoints**: :ref:`🔗<enum_OpenXRInterface_HandJoints>`
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_PALM:
 
@@ -548,7 +548,7 @@ Maximum value for the hand joint enum.
 
 .. rst-class:: classref-enumeration
 
-flags **HandJointFlags**:
+flags **HandJointFlags**: :ref:`🔗<enum_OpenXRInterface_HandJointFlags>`
 
 .. _class_OpenXRInterface_constant_HAND_JOINT_NONE:
 
@@ -619,7 +619,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **display_refresh_rate** = ``0.0``
+:ref:`float<class_float>` **display_refresh_rate** = ``0.0`` :ref:`🔗<class_OpenXRInterface_property_display_refresh_rate>`
 
 .. rst-class:: classref-property-setget
 
@@ -636,7 +636,7 @@ The display refresh rate for the current HMD. Only functional if this feature is
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **foveation_dynamic** = ``false``
+:ref:`bool<class_bool>` **foveation_dynamic** = ``false`` :ref:`🔗<class_OpenXRInterface_property_foveation_dynamic>`
 
 .. rst-class:: classref-property-setget
 
@@ -655,7 +655,7 @@ Enable dynamic foveation adjustment, the interface must be initialized before th
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **foveation_level** = ``0``
+:ref:`int<class_int>` **foveation_level** = ``0`` :ref:`🔗<class_OpenXRInterface_property_foveation_level>`
 
 .. rst-class:: classref-property-setget
 
@@ -674,7 +674,7 @@ Set foveation level from 0 (off) to 3 (high), the interface must be initialized 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **render_target_size_multiplier** = ``1.0``
+:ref:`float<class_float>` **render_target_size_multiplier** = ``1.0`` :ref:`🔗<class_OpenXRInterface_property_render_target_size_multiplier>`
 
 .. rst-class:: classref-property-setget
 
@@ -691,7 +691,7 @@ The render size multiplier for the current HMD. Must be set before the interface
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **vrs_min_radius** = ``20.0``
+:ref:`float<class_float>` **vrs_min_radius** = ``20.0`` :ref:`🔗<class_OpenXRInterface_property_vrs_min_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -710,7 +710,7 @@ The minimum radius around the focal point where full quality is guaranteed if VR
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **vrs_strength** = ``1.0``
+:ref:`float<class_float>` **vrs_strength** = ``1.0`` :ref:`🔗<class_OpenXRInterface_property_vrs_strength>`
 
 .. rst-class:: classref-property-setget
 
@@ -734,7 +734,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_action_sets**\ (\ ) |const|
+:ref:`Array<class_Array>` **get_action_sets**\ (\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_action_sets>`
 
 Returns a list of action sets registered with Godot (loaded from the action map at runtime).
 
@@ -746,7 +746,7 @@ Returns a list of action sets registered with Godot (loaded from the action map 
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_available_display_refresh_rates**\ (\ ) |const|
+:ref:`Array<class_Array>` **get_available_display_refresh_rates**\ (\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_available_display_refresh_rates>`
 
 Returns display refresh rates supported by the current HMD. Only returned if this feature is supported by the OpenXR runtime and after the interface has been initialized.
 
@@ -758,7 +758,7 @@ Returns display refresh rates supported by the current HMD. Only returned if thi
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_hand_joint_angular_velocity**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_hand_joint_angular_velocity**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_angular_velocity>`
 
 **Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_angular_velocity<class_XRHandTracker_method_get_hand_joint_angular_velocity>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
 
@@ -772,7 +772,7 @@ If handtracking is enabled, returns the angular velocity of a joint (``joint``) 
 
 .. rst-class:: classref-method
 
-|bitfield|\[:ref:`HandJointFlags<enum_OpenXRInterface_HandJointFlags>`\] **get_hand_joint_flags**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const|
+|bitfield|\[:ref:`HandJointFlags<enum_OpenXRInterface_HandJointFlags>`\] **get_hand_joint_flags**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_flags>`
 
 **Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_flags<class_XRHandTracker_method_get_hand_joint_flags>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
 
@@ -786,7 +786,7 @@ If handtracking is enabled, returns flags that inform us of the validity of the 
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_hand_joint_linear_velocity**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_hand_joint_linear_velocity**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_linear_velocity>`
 
 **Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_linear_velocity<class_XRHandTracker_method_get_hand_joint_linear_velocity>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
 
@@ -800,7 +800,7 @@ If handtracking is enabled, returns the linear velocity of a joint (``joint``) o
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_hand_joint_position**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_hand_joint_position**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_position>`
 
 **Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_transform<class_XRHandTracker_method_get_hand_joint_transform>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
 
@@ -814,7 +814,7 @@ If handtracking is enabled, returns the position of a joint (``joint``) of a han
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_hand_joint_radius**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const|
+:ref:`float<class_float>` **get_hand_joint_radius**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_radius>`
 
 **Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_radius<class_XRHandTracker_method_get_hand_joint_radius>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
 
@@ -828,7 +828,7 @@ If handtracking is enabled, returns the radius of a joint (``joint``) of a hand 
 
 .. rst-class:: classref-method
 
-:ref:`Quaternion<class_Quaternion>` **get_hand_joint_rotation**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const|
+:ref:`Quaternion<class_Quaternion>` **get_hand_joint_rotation**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, joint\: :ref:`HandJoints<enum_OpenXRInterface_HandJoints>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_joint_rotation>`
 
 **Deprecated:** Use :ref:`XRHandTracker.get_hand_joint_transform<class_XRHandTracker_method_get_hand_joint_transform>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
 
@@ -842,7 +842,7 @@ If handtracking is enabled, returns the rotation of a joint (``joint``) of a han
 
 .. rst-class:: classref-method
 
-:ref:`HandTrackedSource<enum_OpenXRInterface_HandTrackedSource>` **get_hand_tracking_source**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`\ ) |const|
+:ref:`HandTrackedSource<enum_OpenXRInterface_HandTrackedSource>` **get_hand_tracking_source**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_hand_tracking_source>`
 
 **Deprecated:** Use :ref:`XRHandTracker.hand_tracking_source<class_XRHandTracker_property_hand_tracking_source>` obtained from :ref:`XRServer.get_tracker<class_XRServer_method_get_tracker>` instead.
 
@@ -856,7 +856,7 @@ If handtracking is enabled and hand tracking source is supported, gets the sourc
 
 .. rst-class:: classref-method
 
-:ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>` **get_motion_range**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`\ ) |const|
+:ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>` **get_motion_range**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_motion_range>`
 
 If handtracking is enabled and motion range is supported, gets the currently configured motion range for ``hand``.
 
@@ -868,7 +868,7 @@ If handtracking is enabled and motion range is supported, gets the currently con
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_action_set_active**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **is_action_set_active**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OpenXRInterface_method_is_action_set_active>`
 
 Returns ``true`` if the given action set is active.
 
@@ -880,7 +880,7 @@ Returns ``true`` if the given action set is active.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_eye_gaze_interaction_supported**\ (\ )
+:ref:`bool<class_bool>` **is_eye_gaze_interaction_supported**\ (\ ) :ref:`🔗<class_OpenXRInterface_method_is_eye_gaze_interaction_supported>`
 
 Returns the capabilities of the eye gaze interaction extension.
 
@@ -894,7 +894,7 @@ Returns the capabilities of the eye gaze interaction extension.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_foveation_supported**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_foveation_supported**\ (\ ) |const| :ref:`🔗<class_OpenXRInterface_method_is_foveation_supported>`
 
 Returns ``true`` if OpenXR's foveation extension is supported, the interface must be initialized before this returns a valid value.
 
@@ -908,7 +908,7 @@ Returns ``true`` if OpenXR's foveation extension is supported, the interface mus
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_hand_interaction_supported**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_hand_interaction_supported**\ (\ ) |const| :ref:`🔗<class_OpenXRInterface_method_is_hand_interaction_supported>`
 
 Returns ``true`` if OpenXR's hand interaction profile is supported and enabled.
 
@@ -922,7 +922,7 @@ Returns ``true`` if OpenXR's hand interaction profile is supported and enabled.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_hand_tracking_supported**\ (\ )
+:ref:`bool<class_bool>` **is_hand_tracking_supported**\ (\ ) :ref:`🔗<class_OpenXRInterface_method_is_hand_tracking_supported>`
 
 Returns ``true`` if OpenXR's hand tracking is supported and enabled.
 
@@ -936,7 +936,7 @@ Returns ``true`` if OpenXR's hand tracking is supported and enabled.
 
 .. rst-class:: classref-method
 
-|void| **set_action_set_active**\ (\ name\: :ref:`String<class_String>`, active\: :ref:`bool<class_bool>`\ )
+|void| **set_action_set_active**\ (\ name\: :ref:`String<class_String>`, active\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_OpenXRInterface_method_set_action_set_active>`
 
 Sets the given action set as active or inactive.
 
@@ -948,7 +948,7 @@ Sets the given action set as active or inactive.
 
 .. rst-class:: classref-method
 
-|void| **set_motion_range**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, motion_range\: :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>`\ )
+|void| **set_motion_range**\ (\ hand\: :ref:`Hand<enum_OpenXRInterface_Hand>`, motion_range\: :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>`\ ) :ref:`🔗<class_OpenXRInterface_method_set_motion_range>`
 
 If handtracking is enabled and motion range is supported, sets the currently configured motion range for ``hand`` to ``motion_range``.
 

@@ -55,7 +55,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**texture_changed**\ (\ )
+**texture_changed**\ (\ ) :ref:`🔗<class_MeshInstance2D_signal_texture_changed>`
 
 Emitted when the :ref:`texture<class_MeshInstance2D_property_texture>` is changed.
 
@@ -72,7 +72,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Mesh<class_Mesh>` **mesh**
+:ref:`Mesh<class_Mesh>` **mesh** :ref:`🔗<class_MeshInstance2D_property_mesh>`
 
 .. rst-class:: classref-property-setget
 
@@ -89,7 +89,7 @@ The :ref:`Mesh<class_Mesh>` that will be drawn by the **MeshInstance2D**.
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture**
+:ref:`Texture2D<class_Texture2D>` **texture** :ref:`🔗<class_MeshInstance2D_property_texture>`
 
 .. rst-class:: classref-property-setget
 

@@ -117,7 +117,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **NodeType**:
+enum **NodeType**: :ref:`🔗<enum_XMLParser_NodeType>`
 
 .. _class_XMLParser_constant_NODE_NONE:
 
@@ -188,7 +188,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_attribute_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_attribute_count**\ (\ ) |const| :ref:`🔗<class_XMLParser_method_get_attribute_count>`
 
 Returns the number of attributes in the currently parsed element.
 
@@ -202,7 +202,7 @@ Returns the number of attributes in the currently parsed element.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_attribute_name**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_attribute_name**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_XMLParser_method_get_attribute_name>`
 
 Returns the name of an attribute of the currently parsed element, specified by the ``idx`` index.
 
@@ -214,7 +214,7 @@ Returns the name of an attribute of the currently parsed element, specified by t
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_attribute_value**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_attribute_value**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_XMLParser_method_get_attribute_value>`
 
 Returns the value of an attribute of the currently parsed element, specified by the ``idx`` index.
 
@@ -226,7 +226,7 @@ Returns the value of an attribute of the currently parsed element, specified by 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_current_line**\ (\ ) |const|
+:ref:`int<class_int>` **get_current_line**\ (\ ) |const| :ref:`🔗<class_XMLParser_method_get_current_line>`
 
 Returns the current line in the parsed file, counting from 0.
 
@@ -238,7 +238,7 @@ Returns the current line in the parsed file, counting from 0.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_named_attribute_value**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **get_named_attribute_value**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_XMLParser_method_get_named_attribute_value>`
 
 Returns the value of an attribute of the currently parsed element, specified by its ``name``. This method will raise an error if the element has no such attribute.
 
@@ -250,7 +250,7 @@ Returns the value of an attribute of the currently parsed element, specified by 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_named_attribute_value_safe**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **get_named_attribute_value_safe**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_XMLParser_method_get_named_attribute_value_safe>`
 
 Returns the value of an attribute of the currently parsed element, specified by its ``name``. This method will return an empty string if the element has no such attribute.
 
@@ -262,7 +262,7 @@ Returns the value of an attribute of the currently parsed element, specified by 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_node_data**\ (\ ) |const|
+:ref:`String<class_String>` **get_node_data**\ (\ ) |const| :ref:`🔗<class_XMLParser_method_get_node_data>`
 
 Returns the contents of a text node. This method will raise an error if the current parsed node is of any other type.
 
@@ -274,7 +274,7 @@ Returns the contents of a text node. This method will raise an error if the curr
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_node_name**\ (\ ) |const|
+:ref:`String<class_String>` **get_node_name**\ (\ ) |const| :ref:`🔗<class_XMLParser_method_get_node_name>`
 
 Returns the name of a node. This method will raise an error if the currently parsed node is a text node.
 
@@ -288,7 +288,7 @@ Returns the name of a node. This method will raise an error if the currently par
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_node_offset**\ (\ ) |const|
+:ref:`int<class_int>` **get_node_offset**\ (\ ) |const| :ref:`🔗<class_XMLParser_method_get_node_offset>`
 
 Returns the byte offset of the currently parsed node since the beginning of the file or buffer. This is usually equivalent to the number of characters before the read position.
 
@@ -300,7 +300,7 @@ Returns the byte offset of the currently parsed node since the beginning of the 
 
 .. rst-class:: classref-method
 
-:ref:`NodeType<enum_XMLParser_NodeType>` **get_node_type**\ (\ )
+:ref:`NodeType<enum_XMLParser_NodeType>` **get_node_type**\ (\ ) :ref:`🔗<class_XMLParser_method_get_node_type>`
 
 Returns the type of the current node. Compare with :ref:`NodeType<enum_XMLParser_NodeType>` constants.
 
@@ -312,7 +312,7 @@ Returns the type of the current node. Compare with :ref:`NodeType<enum_XMLParser
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_attribute**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_attribute**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_XMLParser_method_has_attribute>`
 
 Returns ``true`` if the currently parsed element has an attribute with the ``name``.
 
@@ -324,7 +324,7 @@ Returns ``true`` if the currently parsed element has an attribute with the ``nam
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_XMLParser_method_is_empty>`
 
 Returns ``true`` if the currently parsed element is empty, e.g. ``<element />``.
 
@@ -336,7 +336,7 @@ Returns ``true`` if the currently parsed element is empty, e.g. ``<element />``.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **open**\ (\ file\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **open**\ (\ file\: :ref:`String<class_String>`\ ) :ref:`🔗<class_XMLParser_method_open>`
 
 Opens an XML ``file`` for parsing. This method returns an error code.
 
@@ -348,7 +348,7 @@ Opens an XML ``file`` for parsing. This method returns an error code.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **open_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **open_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_XMLParser_method_open_buffer>`
 
 Opens an XML raw ``buffer`` for parsing. This method returns an error code.
 
@@ -360,7 +360,7 @@ Opens an XML raw ``buffer`` for parsing. This method returns an error code.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **read**\ (\ )
+:ref:`Error<enum_@GlobalScope_Error>` **read**\ (\ ) :ref:`🔗<class_XMLParser_method_read>`
 
 Parses the next node in the file. This method returns an error code.
 
@@ -372,7 +372,7 @@ Parses the next node in the file. This method returns an error code.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **seek**\ (\ position\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **seek**\ (\ position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_XMLParser_method_seek>`
 
 Moves the buffer cursor to a certain offset (since the beginning) and reads the next node there. This method returns an error code.
 
@@ -384,7 +384,7 @@ Moves the buffer cursor to a certain offset (since the beginning) and reads the 
 
 .. rst-class:: classref-method
 
-|void| **skip_section**\ (\ )
+|void| **skip_section**\ (\ ) :ref:`🔗<class_XMLParser_method_skip_section>`
 
 Skips the current section. If the currently parsed node contains more inner nodes, they will be ignored and the cursor will go to the closing of the current element.
 

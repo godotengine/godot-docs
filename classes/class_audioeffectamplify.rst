@@ -53,7 +53,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volume_db** = ``0.0``
+:ref:`float<class_float>` **volume_db** = ``0.0`` :ref:`🔗<class_AudioEffectAmplify_property_volume_db>`
 
 .. rst-class:: classref-property-setget
 

@@ -71,7 +71,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **pen_inverted** = ``false``
+:ref:`bool<class_bool>` **pen_inverted** = ``false`` :ref:`🔗<class_InputEventMouseMotion_property_pen_inverted>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +90,7 @@ Returns ``true`` when using the eraser end of a stylus pen.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pressure** = ``0.0``
+:ref:`float<class_float>` **pressure** = ``0.0`` :ref:`🔗<class_InputEventMouseMotion_property_pressure>`
 
 .. rst-class:: classref-property-setget
 
@@ -107,7 +107,7 @@ Represents the pressure the user puts on the pen. Ranges from ``0.0`` to ``1.0``
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **relative** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **relative** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventMouseMotion_property_relative>`
 
 .. rst-class:: classref-property-setget
 
@@ -128,7 +128,7 @@ The mouse position relative to the previous position (position at the last frame
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **screen_relative** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **screen_relative** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventMouseMotion_property_screen_relative>`
 
 .. rst-class:: classref-property-setget
 
@@ -147,7 +147,7 @@ The unscaled mouse position relative to the previous position in the coordinate 
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **screen_velocity** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **screen_velocity** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventMouseMotion_property_screen_velocity>`
 
 .. rst-class:: classref-property-setget
 
@@ -164,7 +164,7 @@ The unscaled mouse velocity in pixels per second in screen coordinates. This vel
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **tilt** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **tilt** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventMouseMotion_property_tilt>`
 
 .. rst-class:: classref-property-setget
 
@@ -181,7 +181,7 @@ Represents the angles of tilt of the pen. Positive X-coordinate value indicates 
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **velocity** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **velocity** = ``Vector2(0, 0)`` :ref:`🔗<class_InputEventMouseMotion_property_velocity>`
 
 .. rst-class:: classref-property-setget
 

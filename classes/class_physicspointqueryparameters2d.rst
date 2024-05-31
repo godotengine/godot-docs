@@ -56,7 +56,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **canvas_instance_id** = ``0``
+:ref:`int<class_int>` **canvas_instance_id** = ``0`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_canvas_instance_id>`
 
 .. rst-class:: classref-property-setget
 
@@ -75,7 +75,7 @@ If ``0``, restricts the query to the Viewport's default canvas layer.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collide_with_areas** = ``false``
+:ref:`bool<class_bool>` **collide_with_areas** = ``false`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_collide_with_areas>`
 
 .. rst-class:: classref-property-setget
 
@@ -92,7 +92,7 @@ If ``true``, the query will take :ref:`Area2D<class_Area2D>`\ s into account.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collide_with_bodies** = ``true``
+:ref:`bool<class_bool>` **collide_with_bodies** = ``true`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_collide_with_bodies>`
 
 .. rst-class:: classref-property-setget
 
@@ -109,7 +109,7 @@ If ``true``, the query will take :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s in
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **collision_mask** = ``4294967295``
+:ref:`int<class_int>` **collision_mask** = ``4294967295`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_collision_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -126,7 +126,7 @@ The physics layers the query will detect (as a bitmask). By default, all collisi
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude** = ``[]`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_exclude>`
 
 .. rst-class:: classref-property-setget
 
@@ -143,7 +143,7 @@ The list of object :ref:`RID<class_RID>`\ s that will be excluded from collision
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)`` :ref:`🔗<class_PhysicsPointQueryParameters2D_property_position>`
 
 .. rst-class:: classref-property-setget
 

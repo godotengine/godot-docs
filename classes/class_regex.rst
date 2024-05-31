@@ -118,7 +118,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_RegEx_method_clear>`
 
 This method resets the state of the object, as if it was freshly created. Namely, it unassigns the regular expression of this object.
 
@@ -130,7 +130,7 @@ This method resets the state of the object, as if it was freshly created. Namely
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **compile**\ (\ pattern\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **compile**\ (\ pattern\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RegEx_method_compile>`
 
 Compiles and assign the search pattern to use. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the compilation is successful. If an error is encountered, details are printed to standard output and an error is returned.
 
@@ -142,7 +142,7 @@ Compiles and assign the search pattern to use. Returns :ref:`@GlobalScope.OK<cla
 
 .. rst-class:: classref-method
 
-:ref:`RegEx<class_RegEx>` **create_from_string**\ (\ pattern\: :ref:`String<class_String>`\ ) |static|
+:ref:`RegEx<class_RegEx>` **create_from_string**\ (\ pattern\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_RegEx_method_create_from_string>`
 
 Creates and compiles a new **RegEx** object.
 
@@ -154,7 +154,7 @@ Creates and compiles a new **RegEx** object.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_group_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_group_count**\ (\ ) |const| :ref:`🔗<class_RegEx_method_get_group_count>`
 
 Returns the number of capturing groups in compiled pattern.
 
@@ -166,7 +166,7 @@ Returns the number of capturing groups in compiled pattern.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_names**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_names**\ (\ ) |const| :ref:`🔗<class_RegEx_method_get_names>`
 
 Returns an array of names of named capturing groups in the compiled pattern. They are ordered by appearance.
 
@@ -178,7 +178,7 @@ Returns an array of names of named capturing groups in the compiled pattern. The
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_pattern**\ (\ ) |const|
+:ref:`String<class_String>` **get_pattern**\ (\ ) |const| :ref:`🔗<class_RegEx_method_get_pattern>`
 
 Returns the original search pattern that was compiled.
 
@@ -190,7 +190,7 @@ Returns the original search pattern that was compiled.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_valid**\ (\ ) |const| :ref:`🔗<class_RegEx_method_is_valid>`
 
 Returns whether this object has a valid search pattern assigned.
 
@@ -202,7 +202,7 @@ Returns whether this object has a valid search pattern assigned.
 
 .. rst-class:: classref-method
 
-:ref:`RegExMatch<class_RegExMatch>` **search**\ (\ subject\: :ref:`String<class_String>`, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`RegExMatch<class_RegExMatch>` **search**\ (\ subject\: :ref:`String<class_String>`, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_RegEx_method_search>`
 
 Searches the text for the compiled pattern. Returns a :ref:`RegExMatch<class_RegExMatch>` container of the first matching result if found, otherwise ``null``.
 
@@ -216,7 +216,7 @@ The region to search within can be specified with ``offset`` and ``end``. This i
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`RegExMatch<class_RegExMatch>`\] **search_all**\ (\ subject\: :ref:`String<class_String>`, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`RegExMatch<class_RegExMatch>`\] **search_all**\ (\ subject\: :ref:`String<class_String>`, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_RegEx_method_search_all>`
 
 Searches the text for the compiled pattern. Returns an array of :ref:`RegExMatch<class_RegExMatch>` containers for each non-overlapping result. If no results were found, an empty array is returned instead.
 
@@ -230,7 +230,7 @@ The region to search within can be specified with ``offset`` and ``end``. This i
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **sub**\ (\ subject\: :ref:`String<class_String>`, replacement\: :ref:`String<class_String>`, all\: :ref:`bool<class_bool>` = false, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`String<class_String>` **sub**\ (\ subject\: :ref:`String<class_String>`, replacement\: :ref:`String<class_String>`, all\: :ref:`bool<class_bool>` = false, offset\: :ref:`int<class_int>` = 0, end\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_RegEx_method_sub>`
 
 Searches the text for the compiled pattern and replaces it with the specified string. Escapes and backreferences such as ``$1`` and ``$name`` are expanded and resolved. By default, only the first instance is replaced, but it can be changed for all instances (global replacement).
 

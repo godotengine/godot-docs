@@ -126,7 +126,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**changed**\ (\ )
+**changed**\ (\ ) :ref:`🔗<class_TileData_signal_changed>`
 
 Emitted when any of the properties are changed.
 
@@ -143,7 +143,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_h** = ``false``
+:ref:`bool<class_bool>` **flip_h** = ``false`` :ref:`🔗<class_TileData_property_flip_h>`
 
 .. rst-class:: classref-property-setget
 
@@ -160,7 +160,7 @@ If ``true``, the tile will have its texture flipped horizontally.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_v** = ``false``
+:ref:`bool<class_bool>` **flip_v** = ``false`` :ref:`🔗<class_TileData_property_flip_v>`
 
 .. rst-class:: classref-property-setget
 
@@ -177,7 +177,7 @@ If ``true``, the tile will have its texture flipped vertically.
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_TileData_property_material>`
 
 .. rst-class:: classref-property-setget
 
@@ -194,7 +194,7 @@ The :ref:`Material<class_Material>` to use for this **TileData**. This can be a 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_TileData_property_modulate>`
 
 .. rst-class:: classref-property-setget
 
@@ -211,7 +211,7 @@ Color modulation of the tile.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **probability** = ``1.0``
+:ref:`float<class_float>` **probability** = ``1.0`` :ref:`🔗<class_TileData_property_probability>`
 
 .. rst-class:: classref-property-setget
 
@@ -228,7 +228,7 @@ Relative probability of this tile being selected when drawing a pattern of rando
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **terrain** = ``-1``
+:ref:`int<class_int>` **terrain** = ``-1`` :ref:`🔗<class_TileData_property_terrain>`
 
 .. rst-class:: classref-property-setget
 
@@ -245,7 +245,7 @@ ID of the terrain from the terrain set that the tile uses.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **terrain_set** = ``-1``
+:ref:`int<class_int>` **terrain_set** = ``-1`` :ref:`🔗<class_TileData_property_terrain_set>`
 
 .. rst-class:: classref-property-setget
 
@@ -262,7 +262,7 @@ ID of the terrain set that the tile uses.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **texture_origin** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **texture_origin** = ``Vector2i(0, 0)`` :ref:`🔗<class_TileData_property_texture_origin>`
 
 .. rst-class:: classref-property-setget
 
@@ -279,7 +279,7 @@ Offsets the position of where the tile is drawn.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **transpose** = ``false``
+:ref:`bool<class_bool>` **transpose** = ``false`` :ref:`🔗<class_TileData_property_transpose>`
 
 .. rst-class:: classref-property-setget
 
@@ -296,7 +296,7 @@ If ``true``, the tile will display transposed, i.e. with horizontal and vertical
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **y_sort_origin** = ``0``
+:ref:`int<class_int>` **y_sort_origin** = ``0`` :ref:`🔗<class_TileData_property_y_sort_origin>`
 
 .. rst-class:: classref-property-setget
 
@@ -313,7 +313,7 @@ Vertical point of the tile used for determining y-sorted order.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **z_index** = ``0``
+:ref:`int<class_int>` **z_index** = ``0`` :ref:`🔗<class_TileData_property_z_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -335,7 +335,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_collision_polygon**\ (\ layer_id\: :ref:`int<class_int>`\ )
+|void| **add_collision_polygon**\ (\ layer_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileData_method_add_collision_polygon>`
 
 Adds a collision polygon to the tile on the given TileSet physics layer.
 
@@ -347,7 +347,7 @@ Adds a collision polygon to the tile on the given TileSet physics layer.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_collision_polygon_one_way_margin**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_collision_polygon_one_way_margin**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileData_method_get_collision_polygon_one_way_margin>`
 
 Returns the one-way margin (for one-way platforms) of the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
 
@@ -359,7 +359,7 @@ Returns the one-way margin (for one-way platforms) of the polygon at index ``pol
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **get_collision_polygon_points**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedVector2Array<class_PackedVector2Array>` **get_collision_polygon_points**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileData_method_get_collision_polygon_points>`
 
 Returns the points of the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
 
@@ -371,7 +371,7 @@ Returns the points of the polygon at index ``polygon_index`` for TileSet physics
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collision_polygons_count**\ (\ layer_id\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_collision_polygons_count**\ (\ layer_id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileData_method_get_collision_polygons_count>`
 
 Returns how many polygons the tile has for TileSet physics layer with index ``layer_id``.
 
@@ -383,7 +383,7 @@ Returns how many polygons the tile has for TileSet physics layer with index ``la
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_constant_angular_velocity**\ (\ layer_id\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_constant_angular_velocity**\ (\ layer_id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileData_method_get_constant_angular_velocity>`
 
 Returns the constant angular velocity applied to objects colliding with this tile.
 
@@ -395,7 +395,7 @@ Returns the constant angular velocity applied to objects colliding with this til
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_constant_linear_velocity**\ (\ layer_id\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_constant_linear_velocity**\ (\ layer_id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileData_method_get_constant_linear_velocity>`
 
 Returns the constant linear velocity applied to objects colliding with this tile.
 
@@ -407,7 +407,7 @@ Returns the constant linear velocity applied to objects colliding with this tile
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_custom_data**\ (\ layer_name\: :ref:`String<class_String>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_custom_data**\ (\ layer_name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TileData_method_get_custom_data>`
 
 Returns the custom data value for custom data layer named ``layer_name``.
 
@@ -419,7 +419,7 @@ Returns the custom data value for custom data layer named ``layer_name``.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_custom_data_by_layer_id**\ (\ layer_id\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_custom_data_by_layer_id**\ (\ layer_id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileData_method_get_custom_data_by_layer_id>`
 
 Returns the custom data value for custom data layer with index ``layer_id``.
 
@@ -431,7 +431,7 @@ Returns the custom data value for custom data layer with index ``layer_id``.
 
 .. rst-class:: classref-method
 
-:ref:`NavigationPolygon<class_NavigationPolygon>` **get_navigation_polygon**\ (\ layer_id\: :ref:`int<class_int>`, flip_h\: :ref:`bool<class_bool>` = false, flip_v\: :ref:`bool<class_bool>` = false, transpose\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`NavigationPolygon<class_NavigationPolygon>` **get_navigation_polygon**\ (\ layer_id\: :ref:`int<class_int>`, flip_h\: :ref:`bool<class_bool>` = false, flip_v\: :ref:`bool<class_bool>` = false, transpose\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileData_method_get_navigation_polygon>`
 
 Returns the navigation polygon of the tile for the TileSet navigation layer with index ``layer_id``.
 
@@ -445,7 +445,7 @@ Returns the navigation polygon of the tile for the TileSet navigation layer with
 
 .. rst-class:: classref-method
 
-:ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **get_occluder**\ (\ layer_id\: :ref:`int<class_int>`, flip_h\: :ref:`bool<class_bool>` = false, flip_v\: :ref:`bool<class_bool>` = false, transpose\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **get_occluder**\ (\ layer_id\: :ref:`int<class_int>`, flip_h\: :ref:`bool<class_bool>` = false, flip_v\: :ref:`bool<class_bool>` = false, transpose\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileData_method_get_occluder>`
 
 Returns the occluder polygon of the tile for the TileSet occlusion layer with index ``layer_id``.
 
@@ -459,7 +459,7 @@ Returns the occluder polygon of the tile for the TileSet occlusion layer with in
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_terrain_peering_bit**\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const|
+:ref:`int<class_int>` **get_terrain_peering_bit**\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const| :ref:`🔗<class_TileData_method_get_terrain_peering_bit>`
 
 Returns the tile's terrain bit for the given ``peering_bit`` direction. To check that a direction is valid, use :ref:`is_valid_terrain_peering_bit<class_TileData_method_is_valid_terrain_peering_bit>`.
 
@@ -471,7 +471,7 @@ Returns the tile's terrain bit for the given ``peering_bit`` direction. To check
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_collision_polygon_one_way**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_collision_polygon_one_way**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileData_method_is_collision_polygon_one_way>`
 
 Returns whether one-way collisions are enabled for the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
 
@@ -483,7 +483,7 @@ Returns whether one-way collisions are enabled for the polygon at index ``polygo
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid_terrain_peering_bit**\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const|
+:ref:`bool<class_bool>` **is_valid_terrain_peering_bit**\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const| :ref:`🔗<class_TileData_method_is_valid_terrain_peering_bit>`
 
 Returns whether the given ``peering_bit`` direction is valid for this tile.
 
@@ -495,7 +495,7 @@ Returns whether the given ``peering_bit`` direction is valid for this tile.
 
 .. rst-class:: classref-method
 
-|void| **remove_collision_polygon**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ )
+|void| **remove_collision_polygon**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileData_method_remove_collision_polygon>`
 
 Removes the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
 
@@ -507,7 +507,7 @@ Removes the polygon at index ``polygon_index`` for TileSet physics layer with in
 
 .. rst-class:: classref-method
 
-|void| **set_collision_polygon_one_way**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`, one_way\: :ref:`bool<class_bool>`\ )
+|void| **set_collision_polygon_one_way**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`, one_way\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TileData_method_set_collision_polygon_one_way>`
 
 Enables/disables one-way collisions on the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
 
@@ -519,7 +519,7 @@ Enables/disables one-way collisions on the polygon at index ``polygon_index`` fo
 
 .. rst-class:: classref-method
 
-|void| **set_collision_polygon_one_way_margin**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`, one_way_margin\: :ref:`float<class_float>`\ )
+|void| **set_collision_polygon_one_way_margin**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`, one_way_margin\: :ref:`float<class_float>`\ ) :ref:`🔗<class_TileData_method_set_collision_polygon_one_way_margin>`
 
 Enables/disables one-way collisions on the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
 
@@ -531,7 +531,7 @@ Enables/disables one-way collisions on the polygon at index ``polygon_index`` fo
 
 .. rst-class:: classref-method
 
-|void| **set_collision_polygon_points**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`, polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
+|void| **set_collision_polygon_points**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`, polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ ) :ref:`🔗<class_TileData_method_set_collision_polygon_points>`
 
 Sets the points of the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
 
@@ -543,7 +543,7 @@ Sets the points of the polygon at index ``polygon_index`` for TileSet physics la
 
 .. rst-class:: classref-method
 
-|void| **set_collision_polygons_count**\ (\ layer_id\: :ref:`int<class_int>`, polygons_count\: :ref:`int<class_int>`\ )
+|void| **set_collision_polygons_count**\ (\ layer_id\: :ref:`int<class_int>`, polygons_count\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileData_method_set_collision_polygons_count>`
 
 Sets the polygons count for TileSet physics layer with index ``layer_id``.
 
@@ -555,7 +555,7 @@ Sets the polygons count for TileSet physics layer with index ``layer_id``.
 
 .. rst-class:: classref-method
 
-|void| **set_constant_angular_velocity**\ (\ layer_id\: :ref:`int<class_int>`, velocity\: :ref:`float<class_float>`\ )
+|void| **set_constant_angular_velocity**\ (\ layer_id\: :ref:`int<class_int>`, velocity\: :ref:`float<class_float>`\ ) :ref:`🔗<class_TileData_method_set_constant_angular_velocity>`
 
 Sets the constant angular velocity. This does not rotate the tile. This angular velocity is applied to objects colliding with this tile.
 
@@ -567,7 +567,7 @@ Sets the constant angular velocity. This does not rotate the tile. This angular 
 
 .. rst-class:: classref-method
 
-|void| **set_constant_linear_velocity**\ (\ layer_id\: :ref:`int<class_int>`, velocity\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_constant_linear_velocity**\ (\ layer_id\: :ref:`int<class_int>`, velocity\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_TileData_method_set_constant_linear_velocity>`
 
 Sets the constant linear velocity. This does not move the tile. This linear velocity is applied to objects colliding with this tile. This is useful to create conveyor belts.
 
@@ -579,7 +579,7 @@ Sets the constant linear velocity. This does not move the tile. This linear velo
 
 .. rst-class:: classref-method
 
-|void| **set_custom_data**\ (\ layer_name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **set_custom_data**\ (\ layer_name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_TileData_method_set_custom_data>`
 
 Sets the tile's custom data value for the TileSet custom data layer with name ``layer_name``.
 
@@ -591,7 +591,7 @@ Sets the tile's custom data value for the TileSet custom data layer with name ``
 
 .. rst-class:: classref-method
 
-|void| **set_custom_data_by_layer_id**\ (\ layer_id\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **set_custom_data_by_layer_id**\ (\ layer_id\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_TileData_method_set_custom_data_by_layer_id>`
 
 Sets the tile's custom data value for the TileSet custom data layer with index ``layer_id``.
 
@@ -603,7 +603,7 @@ Sets the tile's custom data value for the TileSet custom data layer with index `
 
 .. rst-class:: classref-method
 
-|void| **set_navigation_polygon**\ (\ layer_id\: :ref:`int<class_int>`, navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`\ )
+|void| **set_navigation_polygon**\ (\ layer_id\: :ref:`int<class_int>`, navigation_polygon\: :ref:`NavigationPolygon<class_NavigationPolygon>`\ ) :ref:`🔗<class_TileData_method_set_navigation_polygon>`
 
 Sets the navigation polygon for the TileSet navigation layer with index ``layer_id``.
 
@@ -615,7 +615,7 @@ Sets the navigation polygon for the TileSet navigation layer with index ``layer_
 
 .. rst-class:: classref-method
 
-|void| **set_occluder**\ (\ layer_id\: :ref:`int<class_int>`, occluder_polygon\: :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`\ )
+|void| **set_occluder**\ (\ layer_id\: :ref:`int<class_int>`, occluder_polygon\: :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`\ ) :ref:`🔗<class_TileData_method_set_occluder>`
 
 Sets the occluder for the TileSet occlusion layer with index ``layer_id``.
 
@@ -627,7 +627,7 @@ Sets the occluder for the TileSet occlusion layer with index ``layer_id``.
 
 .. rst-class:: classref-method
 
-|void| **set_terrain_peering_bit**\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`, terrain\: :ref:`int<class_int>`\ )
+|void| **set_terrain_peering_bit**\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`, terrain\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileData_method_set_terrain_peering_bit>`
 
 Sets the tile's terrain bit for the given ``peering_bit`` direction. To check that a direction is valid, use :ref:`is_valid_terrain_peering_bit<class_TileData_method_is_valid_terrain_peering_bit>`.
 

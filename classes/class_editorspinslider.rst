@@ -62,7 +62,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**grabbed**\ (\ )
+**grabbed**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_grabbed>`
 
 Emitted when the spinner/slider is grabbed.
 
@@ -74,7 +74,7 @@ Emitted when the spinner/slider is grabbed.
 
 .. rst-class:: classref-signal
 
-**ungrabbed**\ (\ )
+**ungrabbed**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_ungrabbed>`
 
 Emitted when the spinner/slider is ungrabbed.
 
@@ -86,7 +86,7 @@ Emitted when the spinner/slider is ungrabbed.
 
 .. rst-class:: classref-signal
 
-**value_focus_entered**\ (\ )
+**value_focus_entered**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_value_focus_entered>`
 
 Emitted when the value form gains focus.
 
@@ -98,7 +98,7 @@ Emitted when the value form gains focus.
 
 .. rst-class:: classref-signal
 
-**value_focus_exited**\ (\ )
+**value_focus_exited**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_value_focus_exited>`
 
 Emitted when the value form loses focus.
 
@@ -115,7 +115,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flat** = ``false``
+:ref:`bool<class_bool>` **flat** = ``false`` :ref:`🔗<class_EditorSpinSlider_property_flat>`
 
 .. rst-class:: classref-property-setget
 
@@ -132,7 +132,7 @@ If ``true``, the slider will not draw background.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hide_slider** = ``false``
+:ref:`bool<class_bool>` **hide_slider** = ``false`` :ref:`🔗<class_EditorSpinSlider_property_hide_slider>`
 
 .. rst-class:: classref-property-setget
 
@@ -149,7 +149,7 @@ If ``true``, the slider and up/down arrows are hidden.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **label** = ``""``
+:ref:`String<class_String>` **label** = ``""`` :ref:`🔗<class_EditorSpinSlider_property_label>`
 
 .. rst-class:: classref-property-setget
 
@@ -166,7 +166,7 @@ The text that displays to the left of the value.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **read_only** = ``false``
+:ref:`bool<class_bool>` **read_only** = ``false`` :ref:`🔗<class_EditorSpinSlider_property_read_only>`
 
 .. rst-class:: classref-property-setget
 
@@ -183,7 +183,7 @@ If ``true``, the slider can't be interacted with.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **suffix** = ``""``
+:ref:`String<class_String>` **suffix** = ``""`` :ref:`🔗<class_EditorSpinSlider_property_suffix>`
 
 .. rst-class:: classref-property-setget
 

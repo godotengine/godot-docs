@@ -76,7 +76,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **energy_multiplier** = ``1.0``
+:ref:`float<class_float>` **energy_multiplier** = ``1.0`` :ref:`🔗<class_ProceduralSkyMaterial_property_energy_multiplier>`
 
 .. rst-class:: classref-property-setget
 
@@ -93,7 +93,7 @@ The sky's overall brightness multiplier. Higher values result in a brighter sky.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **ground_bottom_color** = ``Color(0.2, 0.169, 0.133, 1)``
+:ref:`Color<class_Color>` **ground_bottom_color** = ``Color(0.2, 0.169, 0.133, 1)`` :ref:`🔗<class_ProceduralSkyMaterial_property_ground_bottom_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -110,7 +110,7 @@ Color of the ground at the bottom. Blends with :ref:`ground_horizon_color<class_
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ground_curve** = ``0.02``
+:ref:`float<class_float>` **ground_curve** = ``0.02`` :ref:`🔗<class_ProceduralSkyMaterial_property_ground_curve>`
 
 .. rst-class:: classref-property-setget
 
@@ -127,7 +127,7 @@ How quickly the :ref:`ground_horizon_color<class_ProceduralSkyMaterial_property_
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ground_energy_multiplier** = ``1.0``
+:ref:`float<class_float>` **ground_energy_multiplier** = ``1.0`` :ref:`🔗<class_ProceduralSkyMaterial_property_ground_energy_multiplier>`
 
 .. rst-class:: classref-property-setget
 
@@ -144,7 +144,7 @@ Multiplier for ground color. A higher value will make the ground brighter.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **ground_horizon_color** = ``Color(0.6463, 0.6558, 0.6708, 1)``
+:ref:`Color<class_Color>` **ground_horizon_color** = ``Color(0.6463, 0.6558, 0.6708, 1)`` :ref:`🔗<class_ProceduralSkyMaterial_property_ground_horizon_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -161,7 +161,7 @@ Color of the ground at the horizon. Blends with :ref:`ground_bottom_color<class_
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **sky_cover**
+:ref:`Texture2D<class_Texture2D>` **sky_cover** :ref:`🔗<class_ProceduralSkyMaterial_property_sky_cover>`
 
 .. rst-class:: classref-property-setget
 
@@ -178,7 +178,7 @@ The sky cover texture to use. This texture must use an equirectangular projectio
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **sky_cover_modulate** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **sky_cover_modulate** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_ProceduralSkyMaterial_property_sky_cover_modulate>`
 
 .. rst-class:: classref-property-setget
 
@@ -195,7 +195,7 @@ The tint to apply to the :ref:`sky_cover<class_ProceduralSkyMaterial_property_sk
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sky_curve** = ``0.15``
+:ref:`float<class_float>` **sky_curve** = ``0.15`` :ref:`🔗<class_ProceduralSkyMaterial_property_sky_curve>`
 
 .. rst-class:: classref-property-setget
 
@@ -212,7 +212,7 @@ How quickly the :ref:`sky_horizon_color<class_ProceduralSkyMaterial_property_sky
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sky_energy_multiplier** = ``1.0``
+:ref:`float<class_float>` **sky_energy_multiplier** = ``1.0`` :ref:`🔗<class_ProceduralSkyMaterial_property_sky_energy_multiplier>`
 
 .. rst-class:: classref-property-setget
 
@@ -229,7 +229,7 @@ Multiplier for sky color. A higher value will make the sky brighter.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **sky_horizon_color** = ``Color(0.6463, 0.6558, 0.6708, 1)``
+:ref:`Color<class_Color>` **sky_horizon_color** = ``Color(0.6463, 0.6558, 0.6708, 1)`` :ref:`🔗<class_ProceduralSkyMaterial_property_sky_horizon_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -246,7 +246,7 @@ Color of the sky at the horizon. Blends with :ref:`sky_top_color<class_Procedura
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **sky_top_color** = ``Color(0.385, 0.454, 0.55, 1)``
+:ref:`Color<class_Color>` **sky_top_color** = ``Color(0.385, 0.454, 0.55, 1)`` :ref:`🔗<class_ProceduralSkyMaterial_property_sky_top_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -263,7 +263,7 @@ Color of the sky at the top. Blends with :ref:`sky_horizon_color<class_Procedura
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sun_angle_max** = ``30.0``
+:ref:`float<class_float>` **sun_angle_max** = ``30.0`` :ref:`🔗<class_ProceduralSkyMaterial_property_sun_angle_max>`
 
 .. rst-class:: classref-property-setget
 
@@ -280,7 +280,7 @@ Distance from center of sun where it fades out completely.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **sun_curve** = ``0.15``
+:ref:`float<class_float>` **sun_curve** = ``0.15`` :ref:`🔗<class_ProceduralSkyMaterial_property_sun_curve>`
 
 .. rst-class:: classref-property-setget
 
@@ -297,7 +297,7 @@ How quickly the sun fades away between the edge of the sun disk and :ref:`sun_an
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_debanding** = ``true``
+:ref:`bool<class_bool>` **use_debanding** = ``true`` :ref:`🔗<class_ProceduralSkyMaterial_property_use_debanding>`
 
 .. rst-class:: classref-property-setget
 

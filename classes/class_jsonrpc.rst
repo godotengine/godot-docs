@@ -58,7 +58,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ErrorCode**:
+enum **ErrorCode**: :ref:`🔗<enum_JSONRPC_ErrorCode>`
 
 .. _class_JSONRPC_constant_PARSE_ERROR:
 
@@ -113,7 +113,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **make_notification**\ (\ method\: :ref:`String<class_String>`, params\: :ref:`Variant<class_Variant>`\ )
+:ref:`Dictionary<class_Dictionary>` **make_notification**\ (\ method\: :ref:`String<class_String>`, params\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_JSONRPC_method_make_notification>`
 
 Returns a dictionary in the form of a JSON-RPC notification. Notifications are one-shot messages which do not expect a response.
 
@@ -129,7 +129,7 @@ Returns a dictionary in the form of a JSON-RPC notification. Notifications are o
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **make_request**\ (\ method\: :ref:`String<class_String>`, params\: :ref:`Variant<class_Variant>`, id\: :ref:`Variant<class_Variant>`\ )
+:ref:`Dictionary<class_Dictionary>` **make_request**\ (\ method\: :ref:`String<class_String>`, params\: :ref:`Variant<class_Variant>`, id\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_JSONRPC_method_make_request>`
 
 Returns a dictionary in the form of a JSON-RPC request. Requests are sent to a server with the expectation of a response. The ID field is used for the server to specify which exact request it is responding to.
 
@@ -147,7 +147,7 @@ Returns a dictionary in the form of a JSON-RPC request. Requests are sent to a s
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **make_response**\ (\ result\: :ref:`Variant<class_Variant>`, id\: :ref:`Variant<class_Variant>`\ )
+:ref:`Dictionary<class_Dictionary>` **make_response**\ (\ result\: :ref:`Variant<class_Variant>`, id\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_JSONRPC_method_make_response>`
 
 When a server has received and processed a request, it is expected to send a response. If you did not want a response then you need to have sent a Notification instead.
 
@@ -163,7 +163,7 @@ When a server has received and processed a request, it is expected to send a res
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **make_response_error**\ (\ code\: :ref:`int<class_int>`, message\: :ref:`String<class_String>`, id\: :ref:`Variant<class_Variant>` = null\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **make_response_error**\ (\ code\: :ref:`int<class_int>`, message\: :ref:`String<class_String>`, id\: :ref:`Variant<class_Variant>` = null\ ) |const| :ref:`🔗<class_JSONRPC_method_make_response_error>`
 
 Creates a response which indicates a previous reply has failed in some way.
 
@@ -181,7 +181,7 @@ Creates a response which indicates a previous reply has failed in some way.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **process_action**\ (\ action\: :ref:`Variant<class_Variant>`, recurse\: :ref:`bool<class_bool>` = false\ )
+:ref:`Variant<class_Variant>` **process_action**\ (\ action\: :ref:`Variant<class_Variant>`, recurse\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_JSONRPC_method_process_action>`
 
 Given a Dictionary which takes the form of a JSON-RPC request: unpack the request and run it. Methods are resolved by looking at the field called "method" and looking for an equivalently named function in the JSONRPC object. If one is found that method is called.
 
@@ -197,7 +197,7 @@ To add new supported methods extend the JSONRPC class and call :ref:`process_act
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **process_string**\ (\ action\: :ref:`String<class_String>`\ )
+:ref:`String<class_String>` **process_string**\ (\ action\: :ref:`String<class_String>`\ ) :ref:`🔗<class_JSONRPC_method_process_string>`
 
 .. container:: contribute
 
@@ -211,7 +211,7 @@ To add new supported methods extend the JSONRPC class and call :ref:`process_act
 
 .. rst-class:: classref-method
 
-|void| **set_scope**\ (\ scope\: :ref:`String<class_String>`, target\: :ref:`Object<class_Object>`\ )
+|void| **set_scope**\ (\ scope\: :ref:`String<class_String>`, target\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_JSONRPC_method_set_scope>`
 
 .. container:: contribute
 

@@ -56,7 +56,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **BuildMode**:
+enum **BuildMode**: :ref:`🔗<enum_CollisionPolygon2D_BuildMode>`
 
 .. _class_CollisionPolygon2D_constant_BUILD_SOLIDS:
 
@@ -87,7 +87,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **build_mode** = ``0``
+:ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **build_mode** = ``0`` :ref:`🔗<class_CollisionPolygon2D_property_build_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -104,7 +104,7 @@ Collision build mode. Use one of the :ref:`BuildMode<enum_CollisionPolygon2D_Bui
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disabled** = ``false``
+:ref:`bool<class_bool>` **disabled** = ``false`` :ref:`🔗<class_CollisionPolygon2D_property_disabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -121,7 +121,7 @@ If ``true``, no collisions will be detected.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **one_way_collision** = ``false``
+:ref:`bool<class_bool>` **one_way_collision** = ``false`` :ref:`🔗<class_CollisionPolygon2D_property_one_way_collision>`
 
 .. rst-class:: classref-property-setget
 
@@ -140,7 +140,7 @@ If ``true``, only edges that face up, relative to **CollisionPolygon2D**'s rotat
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **one_way_collision_margin** = ``1.0``
+:ref:`float<class_float>` **one_way_collision_margin** = ``1.0`` :ref:`🔗<class_CollisionPolygon2D_property_one_way_collision_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +157,7 @@ The margin used for one-way collision (in pixels). Higher values will make the s
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array()``
+:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array()`` :ref:`🔗<class_CollisionPolygon2D_property_polygon>`
 
 .. rst-class:: classref-property-setget
 

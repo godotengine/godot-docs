@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **constant** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **constant** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_VisualShaderNodeColorConstant_property_constant>`
 
 .. rst-class:: classref-property-setget
 

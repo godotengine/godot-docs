@@ -46,7 +46,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Plane<class_Plane>` **plane** = ``Plane(0, 1, 0, 0)``
+:ref:`Plane<class_Plane>` **plane** = ``Plane(0, 1, 0, 0)`` :ref:`🔗<class_WorldBoundaryShape3D_property_plane>`
 
 .. rst-class:: classref-property-setget
 

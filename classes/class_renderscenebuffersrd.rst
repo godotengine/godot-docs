@@ -92,7 +92,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear_context**\ (\ context\: :ref:`StringName<class_StringName>`\ )
+|void| **clear_context**\ (\ context\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_clear_context>`
 
 Frees all buffers related to this context.
 
@@ -104,7 +104,7 @@ Frees all buffers related to this context.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **create_texture**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, data_format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, usage_bits\: :ref:`int<class_int>`, texture_samples\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`, size\: :ref:`Vector2i<class_Vector2i>`, layers\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>`, unique\: :ref:`bool<class_bool>`\ )
+:ref:`RID<class_RID>` **create_texture**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, data_format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, usage_bits\: :ref:`int<class_int>`, texture_samples\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`, size\: :ref:`Vector2i<class_Vector2i>`, layers\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>`, unique\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_create_texture>`
 
 Create a new texture with the given definition and cache this under the given name. Will return the existing texture if it already exists.
 
@@ -116,7 +116,7 @@ Create a new texture with the given definition and cache this under the given na
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **create_texture_from_format**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, format\: :ref:`RDTextureFormat<class_RDTextureFormat>`, view\: :ref:`RDTextureView<class_RDTextureView>`, unique\: :ref:`bool<class_bool>`\ )
+:ref:`RID<class_RID>` **create_texture_from_format**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, format\: :ref:`RDTextureFormat<class_RDTextureFormat>`, view\: :ref:`RDTextureView<class_RDTextureView>`, unique\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_create_texture_from_format>`
 
 Create a new texture using the given format and view and cache this under the given name. Will return the existing texture if it already exists.
 
@@ -128,7 +128,7 @@ Create a new texture using the given format and view and cache this under the gi
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **create_texture_view**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, view_name\: :ref:`StringName<class_StringName>`, view\: :ref:`RDTextureView<class_RDTextureView>`\ )
+:ref:`RID<class_RID>` **create_texture_view**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, view_name\: :ref:`StringName<class_StringName>`, view\: :ref:`RDTextureView<class_RDTextureView>`\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_create_texture_view>`
 
 Create a new texture view for an existing texture and cache this under the given view_name. Will return the existing teture view if it already exists. Will error if the source texture doesn't exist.
 
@@ -140,7 +140,7 @@ Create a new texture view for an existing texture and cache this under the given
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_color_layer**\ (\ layer\: :ref:`int<class_int>`, msaa\: :ref:`bool<class_bool>` = false\ )
+:ref:`RID<class_RID>` **get_color_layer**\ (\ layer\: :ref:`int<class_int>`, msaa\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_get_color_layer>`
 
 Returns the specified layer from the color texture we are rendering 3D content to.
 
@@ -154,7 +154,7 @@ If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of th
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_color_texture**\ (\ msaa\: :ref:`bool<class_bool>` = false\ )
+:ref:`RID<class_RID>` **get_color_texture**\ (\ msaa\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_get_color_texture>`
 
 Returns the color texture we are rendering 3D content to. If multiview is used this will be a texture array with all views.
 
@@ -168,7 +168,7 @@ If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of th
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_depth_layer**\ (\ layer\: :ref:`int<class_int>`, msaa\: :ref:`bool<class_bool>` = false\ )
+:ref:`RID<class_RID>` **get_depth_layer**\ (\ layer\: :ref:`int<class_int>`, msaa\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_get_depth_layer>`
 
 Returns the specified layer from the depth texture we are rendering 3D content to.
 
@@ -182,7 +182,7 @@ If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of th
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_depth_texture**\ (\ msaa\: :ref:`bool<class_bool>` = false\ )
+:ref:`RID<class_RID>` **get_depth_texture**\ (\ msaa\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_get_depth_texture>`
 
 Returns the depth texture we are rendering 3D content to. If multiview is used this will be a texture array with all views.
 
@@ -196,7 +196,7 @@ If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of th
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_internal_size**\ (\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **get_internal_size**\ (\ ) |const| :ref:`🔗<class_RenderSceneBuffersRD_method_get_internal_size>`
 
 Returns the internal size of the render buffer (size before upscaling) with which textures are created by default.
 
@@ -208,7 +208,7 @@ Returns the internal size of the render buffer (size before upscaling) with whic
 
 .. rst-class:: classref-method
 
-:ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` **get_msaa_3d**\ (\ ) |const|
+:ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` **get_msaa_3d**\ (\ ) |const| :ref:`🔗<class_RenderSceneBuffersRD_method_get_msaa_3d>`
 
 Returns the applied 3D MSAA mode for this viewport.
 
@@ -220,7 +220,7 @@ Returns the applied 3D MSAA mode for this viewport.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_render_target**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_render_target**\ (\ ) |const| :ref:`🔗<class_RenderSceneBuffersRD_method_get_render_target>`
 
 Returns the render target associated with this buffers object.
 
@@ -232,7 +232,7 @@ Returns the render target associated with this buffers object.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_texture**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`RID<class_RID>` **get_texture**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_RenderSceneBuffersRD_method_get_texture>`
 
 Returns a cached texture with this name.
 
@@ -244,7 +244,7 @@ Returns a cached texture with this name.
 
 .. rst-class:: classref-method
 
-:ref:`RDTextureFormat<class_RDTextureFormat>` **get_texture_format**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`RDTextureFormat<class_RDTextureFormat>` **get_texture_format**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_RenderSceneBuffersRD_method_get_texture_format>`
 
 Returns the texture format information with which a cached texture was created.
 
@@ -256,7 +256,7 @@ Returns the texture format information with which a cached texture was created.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_texture_slice**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, layer\: :ref:`int<class_int>`, mipmap\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>`\ )
+:ref:`RID<class_RID>` **get_texture_slice**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, layer\: :ref:`int<class_int>`, mipmap\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_get_texture_slice>`
 
 Returns a specific slice (layer or mipmap) for a cached texture.
 
@@ -268,7 +268,7 @@ Returns a specific slice (layer or mipmap) for a cached texture.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_texture_slice_size**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, mipmap\: :ref:`int<class_int>`\ )
+:ref:`Vector2i<class_Vector2i>` **get_texture_slice_size**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, mipmap\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_get_texture_slice_size>`
 
 Returns the texture size of a given slice of a cached texture.
 
@@ -280,7 +280,7 @@ Returns the texture size of a given slice of a cached texture.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_texture_slice_view**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, layer\: :ref:`int<class_int>`, mipmap\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>`, view\: :ref:`RDTextureView<class_RDTextureView>`\ )
+:ref:`RID<class_RID>` **get_texture_slice_view**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, layer\: :ref:`int<class_int>`, mipmap\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>`, view\: :ref:`RDTextureView<class_RDTextureView>`\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_get_texture_slice_view>`
 
 Returns a specific view of a slice (layer or mipmap) for a cached texture.
 
@@ -292,7 +292,7 @@ Returns a specific view of a slice (layer or mipmap) for a cached texture.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_use_taa**\ (\ ) |const|
+:ref:`bool<class_bool>` **get_use_taa**\ (\ ) |const| :ref:`🔗<class_RenderSceneBuffersRD_method_get_use_taa>`
 
 Returns ``true`` if TAA is enabled.
 
@@ -304,7 +304,7 @@ Returns ``true`` if TAA is enabled.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_velocity_layer**\ (\ layer\: :ref:`int<class_int>`, msaa\: :ref:`bool<class_bool>` = false\ )
+:ref:`RID<class_RID>` **get_velocity_layer**\ (\ layer\: :ref:`int<class_int>`, msaa\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_get_velocity_layer>`
 
 Returns the specified layer from the velocity texture we are rendering 3D content to.
 
@@ -316,7 +316,7 @@ Returns the specified layer from the velocity texture we are rendering 3D conten
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_velocity_texture**\ (\ msaa\: :ref:`bool<class_bool>` = false\ )
+:ref:`RID<class_RID>` **get_velocity_texture**\ (\ msaa\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_get_velocity_texture>`
 
 Returns the velocity texture we are rendering 3D content to. If multiview is used this will be a texture array with all views.
 
@@ -330,7 +330,7 @@ If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of th
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_view_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_view_count**\ (\ ) |const| :ref:`🔗<class_RenderSceneBuffersRD_method_get_view_count>`
 
 Returns the view count for the associated viewport.
 
@@ -342,7 +342,7 @@ Returns the view count for the associated viewport.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_texture**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_texture**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_RenderSceneBuffersRD_method_has_texture>`
 
 Returns ``true`` if a cached texture exists for this name.
 

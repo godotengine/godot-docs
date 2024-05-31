@@ -108,7 +108,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Variant<class_Variant>` **data** = ``null``
+:ref:`Variant<class_Variant>` **data** = ``null`` :ref:`🔗<class_JSON_property_data>`
 
 .. rst-class:: classref-property-setget
 
@@ -130,7 +130,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_error_line**\ (\ ) |const|
+:ref:`int<class_int>` **get_error_line**\ (\ ) |const| :ref:`🔗<class_JSON_method_get_error_line>`
 
 Returns ``0`` if the last call to :ref:`parse<class_JSON_method_parse>` was successful, or the line number where the parse failed.
 
@@ -142,7 +142,7 @@ Returns ``0`` if the last call to :ref:`parse<class_JSON_method_parse>` was succ
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_error_message**\ (\ ) |const|
+:ref:`String<class_String>` **get_error_message**\ (\ ) |const| :ref:`🔗<class_JSON_method_get_error_message>`
 
 Returns an empty string if the last call to :ref:`parse<class_JSON_method_parse>` was successful, or the error message if it failed.
 
@@ -154,7 +154,7 @@ Returns an empty string if the last call to :ref:`parse<class_JSON_method_parse>
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_parsed_text**\ (\ ) |const|
+:ref:`String<class_String>` **get_parsed_text**\ (\ ) |const| :ref:`🔗<class_JSON_method_get_parsed_text>`
 
 Return the text parsed by :ref:`parse<class_JSON_method_parse>` as long as the function is instructed to keep it.
 
@@ -166,7 +166,7 @@ Return the text parsed by :ref:`parse<class_JSON_method_parse>` as long as the f
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **parse**\ (\ json_text\: :ref:`String<class_String>`, keep_text\: :ref:`bool<class_bool>` = false\ )
+:ref:`Error<enum_@GlobalScope_Error>` **parse**\ (\ json_text\: :ref:`String<class_String>`, keep_text\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_JSON_method_parse>`
 
 Attempts to parse the ``json_text`` provided.
 
@@ -184,7 +184,7 @@ The optional ``keep_text`` argument instructs the parser to keep a copy of the o
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **parse_string**\ (\ json_string\: :ref:`String<class_String>`\ ) |static|
+:ref:`Variant<class_Variant>` **parse_string**\ (\ json_string\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_JSON_method_parse_string>`
 
 Attempts to parse the ``json_string`` provided and returns the parsed data. Returns ``null`` if parse failed.
 
@@ -196,7 +196,7 @@ Attempts to parse the ``json_string`` provided and returns the parsed data. Retu
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **stringify**\ (\ data\: :ref:`Variant<class_Variant>`, indent\: :ref:`String<class_String>` = "", sort_keys\: :ref:`bool<class_bool>` = true, full_precision\: :ref:`bool<class_bool>` = false\ ) |static|
+:ref:`String<class_String>` **stringify**\ (\ data\: :ref:`Variant<class_Variant>`, indent\: :ref:`String<class_String>` = "", sort_keys\: :ref:`bool<class_bool>` = true, full_precision\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_JSON_method_stringify>`
 
 Converts a :ref:`Variant<class_Variant>` var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 

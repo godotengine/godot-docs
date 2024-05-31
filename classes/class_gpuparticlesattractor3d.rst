@@ -60,7 +60,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **attenuation** = ``1.0``
+:ref:`float<class_float>` **attenuation** = ``1.0`` :ref:`🔗<class_GPUParticlesAttractor3D_property_attenuation>`
 
 .. rst-class:: classref-property-setget
 
@@ -77,7 +77,7 @@ The particle attractor's attenuation. Higher values result in more gradual pushi
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **cull_mask** = ``4294967295``
+:ref:`int<class_int>` **cull_mask** = ``4294967295`` :ref:`🔗<class_GPUParticlesAttractor3D_property_cull_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -98,7 +98,7 @@ Particle attraction can also be disabled on a per-process material basis by sett
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **directionality** = ``0.0``
+:ref:`float<class_float>` **directionality** = ``0.0`` :ref:`🔗<class_GPUParticlesAttractor3D_property_directionality>`
 
 .. rst-class:: classref-property-setget
 
@@ -117,7 +117,7 @@ Adjusts how directional the attractor is. At ``0.0``, the attractor is not direc
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **strength** = ``1.0``
+:ref:`float<class_float>` **strength** = ``1.0`` :ref:`🔗<class_GPUParticlesAttractor3D_property_strength>`
 
 .. rst-class:: classref-property-setget
 

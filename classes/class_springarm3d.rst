@@ -70,7 +70,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **collision_mask** = ``1``
+:ref:`int<class_int>` **collision_mask** = ``1`` :ref:`🔗<class_SpringArm3D_property_collision_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -87,7 +87,7 @@ The layers against which the collision check shall be done. See `Collision layer
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **margin** = ``0.01``
+:ref:`float<class_float>` **margin** = ``0.01`` :ref:`🔗<class_SpringArm3D_property_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -108,7 +108,7 @@ This margin is useful for when the SpringArm3D has a :ref:`Camera3D<class_Camera
 
 .. rst-class:: classref-property
 
-:ref:`Shape3D<class_Shape3D>` **shape**
+:ref:`Shape3D<class_Shape3D>` **shape** :ref:`🔗<class_SpringArm3D_property_shape>`
 
 .. rst-class:: classref-property-setget
 
@@ -127,7 +127,7 @@ When the shape is set, the SpringArm3D will cast the :ref:`Shape3D<class_Shape3D
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spring_length** = ``1.0``
+:ref:`float<class_float>` **spring_length** = ``1.0`` :ref:`🔗<class_SpringArm3D_property_spring_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -151,7 +151,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_excluded_object**\ (\ RID\: :ref:`RID<class_RID>`\ )
+|void| **add_excluded_object**\ (\ RID\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_SpringArm3D_method_add_excluded_object>`
 
 Adds the :ref:`PhysicsBody3D<class_PhysicsBody3D>` object with the given :ref:`RID<class_RID>` to the list of :ref:`PhysicsBody3D<class_PhysicsBody3D>` objects excluded from the collision check.
 
@@ -163,7 +163,7 @@ Adds the :ref:`PhysicsBody3D<class_PhysicsBody3D>` object with the given :ref:`R
 
 .. rst-class:: classref-method
 
-|void| **clear_excluded_objects**\ (\ )
+|void| **clear_excluded_objects**\ (\ ) :ref:`🔗<class_SpringArm3D_method_clear_excluded_objects>`
 
 Clears the list of :ref:`PhysicsBody3D<class_PhysicsBody3D>` objects excluded from the collision check.
 
@@ -175,7 +175,7 @@ Clears the list of :ref:`PhysicsBody3D<class_PhysicsBody3D>` objects excluded fr
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_hit_length**\ (\ )
+:ref:`float<class_float>` **get_hit_length**\ (\ ) :ref:`🔗<class_SpringArm3D_method_get_hit_length>`
 
 Returns the spring arm's current length.
 
@@ -187,7 +187,7 @@ Returns the spring arm's current length.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **remove_excluded_object**\ (\ RID\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **remove_excluded_object**\ (\ RID\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_SpringArm3D_method_remove_excluded_object>`
 
 Removes the given :ref:`RID<class_RID>` from the list of :ref:`PhysicsBody3D<class_PhysicsBody3D>` objects excluded from the collision check.
 

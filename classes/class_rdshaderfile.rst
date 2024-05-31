@@ -64,7 +64,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **base_error** = ``""``
+:ref:`String<class_String>` **base_error** = ``""`` :ref:`🔗<class_RDShaderFile_property_base_error>`
 
 .. rst-class:: classref-property-setget
 
@@ -86,7 +86,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **get_spirv**\ (\ version\: :ref:`StringName<class_StringName>` = &""\ ) |const|
+:ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **get_spirv**\ (\ version\: :ref:`StringName<class_StringName>` = &""\ ) |const| :ref:`🔗<class_RDShaderFile_method_get_spirv>`
 
 Returns the SPIR-V intermediate representation for the specified shader ``version``.
 
@@ -98,7 +98,7 @@ Returns the SPIR-V intermediate representation for the specified shader ``versio
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_version_list**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_version_list**\ (\ ) |const| :ref:`🔗<class_RDShaderFile_method_get_version_list>`
 
 Returns the list of compiled versions for this shader.
 
@@ -110,7 +110,7 @@ Returns the list of compiled versions for this shader.
 
 .. rst-class:: classref-method
 
-|void| **set_bytecode**\ (\ bytecode\: :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`, version\: :ref:`StringName<class_StringName>` = &""\ )
+|void| **set_bytecode**\ (\ bytecode\: :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`, version\: :ref:`StringName<class_StringName>` = &""\ ) :ref:`🔗<class_RDShaderFile_method_set_bytecode>`
 
 Sets the SPIR-V ``bytecode`` that will be compiled for the specified ``version``.
 

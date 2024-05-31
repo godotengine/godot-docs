@@ -78,7 +78,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **handshake_headers** = ``PackedStringArray()``
+:ref:`PackedStringArray<class_PackedStringArray>` **handshake_headers** = ``PackedStringArray()`` :ref:`🔗<class_WebSocketMultiplayerPeer_property_handshake_headers>`
 
 .. rst-class:: classref-property-setget
 
@@ -97,7 +97,7 @@ The extra headers to use during handshake. See :ref:`WebSocketPeer.handshake_hea
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **handshake_timeout** = ``3.0``
+:ref:`float<class_float>` **handshake_timeout** = ``3.0`` :ref:`🔗<class_WebSocketMultiplayerPeer_property_handshake_timeout>`
 
 .. rst-class:: classref-property-setget
 
@@ -114,7 +114,7 @@ The maximum time each peer can stay in a connecting state before being dropped.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **inbound_buffer_size** = ``65535``
+:ref:`int<class_int>` **inbound_buffer_size** = ``65535`` :ref:`🔗<class_WebSocketMultiplayerPeer_property_inbound_buffer_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -131,7 +131,7 @@ The inbound buffer size for connected peers. See :ref:`WebSocketPeer.inbound_buf
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_queued_packets** = ``2048``
+:ref:`int<class_int>` **max_queued_packets** = ``2048`` :ref:`🔗<class_WebSocketMultiplayerPeer_property_max_queued_packets>`
 
 .. rst-class:: classref-property-setget
 
@@ -148,7 +148,7 @@ The maximum number of queued packets for connected peers. See :ref:`WebSocketPee
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **outbound_buffer_size** = ``65535``
+:ref:`int<class_int>` **outbound_buffer_size** = ``65535`` :ref:`🔗<class_WebSocketMultiplayerPeer_property_outbound_buffer_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -165,7 +165,7 @@ The outbound buffer size for connected peers. See :ref:`WebSocketPeer.outbound_b
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **supported_protocols** = ``PackedStringArray()``
+:ref:`PackedStringArray<class_PackedStringArray>` **supported_protocols** = ``PackedStringArray()`` :ref:`🔗<class_WebSocketMultiplayerPeer_property_supported_protocols>`
 
 .. rst-class:: classref-property-setget
 
@@ -189,7 +189,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_client**\ (\ url\: :ref:`String<class_String>`, tls_client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ )
+:ref:`Error<enum_@GlobalScope_Error>` **create_client**\ (\ url\: :ref:`String<class_String>`, tls_client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ ) :ref:`🔗<class_WebSocketMultiplayerPeer_method_create_client>`
 
 Starts a new multiplayer client connecting to the given ``url``. TLS certificates will be verified against the hostname when connecting using the ``wss://`` protocol. You can pass the optional ``tls_client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
 
@@ -203,7 +203,7 @@ Starts a new multiplayer client connecting to the given ``url``. TLS certificate
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_server**\ (\ port\: :ref:`int<class_int>`, bind_address\: :ref:`String<class_String>` = "*", tls_server_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ )
+:ref:`Error<enum_@GlobalScope_Error>` **create_server**\ (\ port\: :ref:`int<class_int>`, bind_address\: :ref:`String<class_String>` = "*", tls_server_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ ) :ref:`🔗<class_WebSocketMultiplayerPeer_method_create_server>`
 
 Starts a new multiplayer server listening on the given ``port``. You can optionally specify a ``bind_address``, and provide valid ``tls_server_options`` to use TLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
 
@@ -215,7 +215,7 @@ Starts a new multiplayer server listening on the given ``port``. You can optiona
 
 .. rst-class:: classref-method
 
-:ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer**\ (\ peer_id\: :ref:`int<class_int>`\ ) |const|
+:ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer**\ (\ peer_id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_WebSocketMultiplayerPeer_method_get_peer>`
 
 Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``peer_id``.
 
@@ -227,7 +227,7 @@ Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_peer_address**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_peer_address**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_WebSocketMultiplayerPeer_method_get_peer_address>`
 
 Returns the IP address of the given peer.
 
@@ -239,7 +239,7 @@ Returns the IP address of the given peer.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_peer_port**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_peer_port**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_WebSocketMultiplayerPeer_method_get_peer_port>`
 
 Returns the remote port of the given peer.
 

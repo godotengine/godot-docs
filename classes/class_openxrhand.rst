@@ -62,7 +62,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Hands**:
+enum **Hands**: :ref:`🔗<enum_OpenXRHand_Hands>`
 
 .. _class_OpenXRHand_constant_HAND_LEFT:
 
@@ -96,7 +96,7 @@ Maximum supported hands.
 
 .. rst-class:: classref-enumeration
 
-enum **MotionRange**:
+enum **MotionRange**: :ref:`🔗<enum_OpenXRHand_MotionRange>`
 
 .. _class_OpenXRHand_constant_MOTION_RANGE_UNOBSTRUCTED:
 
@@ -130,7 +130,7 @@ Maximum supported motion ranges.
 
 .. rst-class:: classref-enumeration
 
-enum **SkeletonRig**:
+enum **SkeletonRig**: :ref:`🔗<enum_OpenXRHand_SkeletonRig>`
 
 .. _class_OpenXRHand_constant_SKELETON_RIG_OPENXR:
 
@@ -164,7 +164,7 @@ Maximum supported hands.
 
 .. rst-class:: classref-enumeration
 
-enum **BoneUpdate**:
+enum **BoneUpdate**: :ref:`🔗<enum_OpenXRHand_BoneUpdate>`
 
 .. _class_OpenXRHand_constant_BONE_UPDATE_FULL:
 
@@ -203,7 +203,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>` **bone_update** = ``0``
+:ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>` **bone_update** = ``0`` :ref:`🔗<class_OpenXRHand_property_bone_update>`
 
 .. rst-class:: classref-property-setget
 
@@ -220,7 +220,7 @@ Specify the type of updates to perform on the bone.
 
 .. rst-class:: classref-property
 
-:ref:`Hands<enum_OpenXRHand_Hands>` **hand** = ``0``
+:ref:`Hands<enum_OpenXRHand_Hands>` **hand** = ``0`` :ref:`🔗<class_OpenXRHand_property_hand>`
 
 .. rst-class:: classref-property-setget
 
@@ -237,7 +237,7 @@ Specifies whether this node tracks the left or right hand of the player.
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **hand_skeleton** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **hand_skeleton** = ``NodePath("")`` :ref:`🔗<class_OpenXRHand_property_hand_skeleton>`
 
 .. rst-class:: classref-property-setget
 
@@ -254,7 +254,7 @@ Set a :ref:`Skeleton3D<class_Skeleton3D>` node for which the pose positions will
 
 .. rst-class:: classref-property
 
-:ref:`MotionRange<enum_OpenXRHand_MotionRange>` **motion_range** = ``0``
+:ref:`MotionRange<enum_OpenXRHand_MotionRange>` **motion_range** = ``0`` :ref:`🔗<class_OpenXRHand_property_motion_range>`
 
 .. rst-class:: classref-property-setget
 
@@ -271,7 +271,7 @@ Set the motion range (if supported) limiting the hand motion.
 
 .. rst-class:: classref-property
 
-:ref:`SkeletonRig<enum_OpenXRHand_SkeletonRig>` **skeleton_rig** = ``0``
+:ref:`SkeletonRig<enum_OpenXRHand_SkeletonRig>` **skeleton_rig** = ``0`` :ref:`🔗<class_OpenXRHand_property_skeleton_rig>`
 
 .. rst-class:: classref-property-setget
 

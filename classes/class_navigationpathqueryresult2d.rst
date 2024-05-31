@@ -73,7 +73,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **PathSegmentType**:
+enum **PathSegmentType**: :ref:`🔗<enum_NavigationPathQueryResult2D_PathSegmentType>`
 
 .. _class_NavigationPathQueryResult2D_constant_PATH_SEGMENT_TYPE_REGION:
 
@@ -104,7 +104,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **path** = ``PackedVector2Array()``
+:ref:`PackedVector2Array<class_PackedVector2Array>` **path** = ``PackedVector2Array()`` :ref:`🔗<class_NavigationPathQueryResult2D_property_path>`
 
 .. rst-class:: classref-property-setget
 
@@ -123,7 +123,7 @@ The resulting path array from the navigation query. All path array positions are
 
 .. rst-class:: classref-property
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **path_owner_ids** = ``PackedInt64Array()``
+:ref:`PackedInt64Array<class_PackedInt64Array>` **path_owner_ids** = ``PackedInt64Array()`` :ref:`🔗<class_NavigationPathQueryResult2D_property_path_owner_ids>`
 
 .. rst-class:: classref-property-setget
 
@@ -142,7 +142,7 @@ The ``ObjectID``\ s of the :ref:`Object<class_Object>`\ s which manage the regio
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **path_rids** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **path_rids** = ``[]`` :ref:`🔗<class_NavigationPathQueryResult2D_property_path_rids>`
 
 .. rst-class:: classref-property-setget
 
@@ -159,7 +159,7 @@ The :ref:`RID<class_RID>`\ s of the regions and links that each point of the pat
 
 .. rst-class:: classref-property
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **path_types** = ``PackedInt32Array()``
+:ref:`PackedInt32Array<class_PackedInt32Array>` **path_types** = ``PackedInt32Array()`` :ref:`🔗<class_NavigationPathQueryResult2D_property_path_types>`
 
 .. rst-class:: classref-property-setget
 
@@ -183,7 +183,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **reset**\ (\ )
+|void| **reset**\ (\ ) :ref:`🔗<class_NavigationPathQueryResult2D_method_reset>`
 
 Reset the result object to its initial state. This is useful to reuse the object across multiple queries.
 

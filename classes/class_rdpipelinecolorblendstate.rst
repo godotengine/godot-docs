@@ -52,7 +52,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`RDPipelineColorBlendStateAttachment<class_RDPipelineColorBlendStateAttachment>`\] **attachments** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RDPipelineColorBlendStateAttachment<class_RDPipelineColorBlendStateAttachment>`\] **attachments** = ``[]`` :ref:`🔗<class_RDPipelineColorBlendState_property_attachments>`
 
 .. rst-class:: classref-property-setget
 
@@ -69,7 +69,7 @@ The attachments that are blended together.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **blend_constant** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **blend_constant** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_RDPipelineColorBlendState_property_blend_constant>`
 
 .. rst-class:: classref-property-setget
 
@@ -86,7 +86,7 @@ The constant color to blend with. See also :ref:`RenderingDevice.draw_list_set_b
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enable_logic_op** = ``false``
+:ref:`bool<class_bool>` **enable_logic_op** = ``false`` :ref:`🔗<class_RDPipelineColorBlendState_property_enable_logic_op>`
 
 .. rst-class:: classref-property-setget
 
@@ -103,7 +103,7 @@ If ``true``, performs the logic operation defined in :ref:`logic_op<class_RDPipe
 
 .. rst-class:: classref-property
 
-:ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **logic_op** = ``0``
+:ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **logic_op** = ``0`` :ref:`🔗<class_RDPipelineColorBlendState_property_logic_op>`
 
 .. rst-class:: classref-property-setget
 

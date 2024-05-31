@@ -144,7 +144,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`MultiplayerPeer<class_MultiplayerPeer>` **_get_multiplayer_peer**\ (\ ) |virtual|
+:ref:`MultiplayerPeer<class_MultiplayerPeer>` **_get_multiplayer_peer**\ (\ ) |virtual| :ref:`🔗<class_MultiplayerAPIExtension_private_method__get_multiplayer_peer>`
 
 Called when the :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` is retrieved.
 
@@ -156,7 +156,7 @@ Called when the :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_prope
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **_get_peer_ids**\ (\ ) |virtual| |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **_get_peer_ids**\ (\ ) |virtual| |const| :ref:`🔗<class_MultiplayerAPIExtension_private_method__get_peer_ids>`
 
 Callback for :ref:`MultiplayerAPI.get_peers<class_MultiplayerAPI_method_get_peers>`.
 
@@ -168,7 +168,7 @@ Callback for :ref:`MultiplayerAPI.get_peers<class_MultiplayerAPI_method_get_peer
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_remote_sender_id**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_remote_sender_id**\ (\ ) |virtual| |const| :ref:`🔗<class_MultiplayerAPIExtension_private_method__get_remote_sender_id>`
 
 Callback for :ref:`MultiplayerAPI.get_remote_sender_id<class_MultiplayerAPI_method_get_remote_sender_id>`.
 
@@ -180,7 +180,7 @@ Callback for :ref:`MultiplayerAPI.get_remote_sender_id<class_MultiplayerAPI_meth
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_unique_id**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_unique_id**\ (\ ) |virtual| |const| :ref:`🔗<class_MultiplayerAPIExtension_private_method__get_unique_id>`
 
 Callback for :ref:`MultiplayerAPI.get_unique_id<class_MultiplayerAPI_method_get_unique_id>`.
 
@@ -192,7 +192,7 @@ Callback for :ref:`MultiplayerAPI.get_unique_id<class_MultiplayerAPI_method_get_
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_object_configuration_add**\ (\ object\: :ref:`Object<class_Object>`, configuration\: :ref:`Variant<class_Variant>`\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_object_configuration_add**\ (\ object\: :ref:`Object<class_Object>`, configuration\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_MultiplayerAPIExtension_private_method__object_configuration_add>`
 
 Callback for :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_method_object_configuration_add>`.
 
@@ -204,7 +204,7 @@ Callback for :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_object_configuration_remove**\ (\ object\: :ref:`Object<class_Object>`, configuration\: :ref:`Variant<class_Variant>`\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_object_configuration_remove**\ (\ object\: :ref:`Object<class_Object>`, configuration\: :ref:`Variant<class_Variant>`\ ) |virtual| :ref:`🔗<class_MultiplayerAPIExtension_private_method__object_configuration_remove>`
 
 Callback for :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerAPI_method_object_configuration_remove>`.
 
@@ -216,7 +216,7 @@ Callback for :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerA
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_poll**\ (\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_poll**\ (\ ) |virtual| :ref:`🔗<class_MultiplayerAPIExtension_private_method__poll>`
 
 Callback for :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_method_poll>`.
 
@@ -228,7 +228,7 @@ Callback for :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_method_poll>`.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_rpc**\ (\ peer\: :ref:`int<class_int>`, object\: :ref:`Object<class_Object>`, method\: :ref:`StringName<class_StringName>`, args\: :ref:`Array<class_Array>`\ ) |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_rpc**\ (\ peer\: :ref:`int<class_int>`, object\: :ref:`Object<class_Object>`, method\: :ref:`StringName<class_StringName>`, args\: :ref:`Array<class_Array>`\ ) |virtual| :ref:`🔗<class_MultiplayerAPIExtension_private_method__rpc>`
 
 Callback for :ref:`MultiplayerAPI.rpc<class_MultiplayerAPI_method_rpc>`.
 
@@ -240,7 +240,7 @@ Callback for :ref:`MultiplayerAPI.rpc<class_MultiplayerAPI_method_rpc>`.
 
 .. rst-class:: classref-method
 
-|void| **_set_multiplayer_peer**\ (\ multiplayer_peer\: :ref:`MultiplayerPeer<class_MultiplayerPeer>`\ ) |virtual|
+|void| **_set_multiplayer_peer**\ (\ multiplayer_peer\: :ref:`MultiplayerPeer<class_MultiplayerPeer>`\ ) |virtual| :ref:`🔗<class_MultiplayerAPIExtension_private_method__set_multiplayer_peer>`
 
 Called when the :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>` is set.
 

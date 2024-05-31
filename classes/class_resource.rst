@@ -97,7 +97,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**changed**\ (\ )
+**changed**\ (\ ) :ref:`🔗<class_Resource_signal_changed>`
 
 Emitted when the resource changes, usually when one of its properties is modified. See also :ref:`emit_changed<class_Resource_method_emit_changed>`.
 
@@ -111,7 +111,7 @@ Emitted when the resource changes, usually when one of its properties is modifie
 
 .. rst-class:: classref-signal
 
-**setup_local_to_scene_requested**\ (\ )
+**setup_local_to_scene_requested**\ (\ ) :ref:`🔗<class_Resource_signal_setup_local_to_scene_requested>`
 
 **Deprecated:** This signal is only emitted when the resource is created. Override :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>` instead.
 
@@ -130,7 +130,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **resource_local_to_scene** = ``false``
+:ref:`bool<class_bool>` **resource_local_to_scene** = ``false`` :ref:`🔗<class_Resource_property_resource_local_to_scene>`
 
 .. rst-class:: classref-property-setget
 
@@ -149,7 +149,7 @@ If ``true``, the resource is duplicated for each instance of all scenes using it
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **resource_name** = ``""``
+:ref:`String<class_String>` **resource_name** = ``""`` :ref:`🔗<class_Resource_property_resource_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -168,7 +168,7 @@ An optional name for this resource. When defined, its value is displayed to repr
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **resource_path** = ``""``
+:ref:`String<class_String>` **resource_path** = ``""`` :ref:`🔗<class_Resource_property_resource_path>`
 
 .. rst-class:: classref-property-setget
 
@@ -187,7 +187,7 @@ The unique path to this resource. If it has been saved to disk, the value will b
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **resource_scene_unique_id**
+:ref:`String<class_String>` **resource_scene_unique_id** :ref:`🔗<class_Resource_property_resource_scene_unique_id>`
 
 .. rst-class:: classref-property-setget
 
@@ -215,7 +215,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_get_rid**\ (\ ) |virtual|
+:ref:`RID<class_RID>` **_get_rid**\ (\ ) |virtual| :ref:`🔗<class_Resource_private_method__get_rid>`
 
 Override this method to return a custom :ref:`RID<class_RID>` when :ref:`get_rid<class_Resource_method_get_rid>` is called.
 
@@ -227,7 +227,7 @@ Override this method to return a custom :ref:`RID<class_RID>` when :ref:`get_rid
 
 .. rst-class:: classref-method
 
-|void| **_setup_local_to_scene**\ (\ ) |virtual|
+|void| **_setup_local_to_scene**\ (\ ) |virtual| :ref:`🔗<class_Resource_private_method__setup_local_to_scene>`
 
 Override this method to customize the newly duplicated resource created from :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`, if the original's :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is set to ``true``.
 
@@ -250,7 +250,7 @@ Override this method to customize the newly duplicated resource created from :re
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **duplicate**\ (\ subresources\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Resource<class_Resource>` **duplicate**\ (\ subresources\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Resource_method_duplicate>`
 
 Duplicates this resource, returning a new resource with its ``export``\ ed or :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` properties copied from the original.
 
@@ -268,7 +268,7 @@ Subresource properties with the :ref:`@GlobalScope.PROPERTY_USAGE_ALWAYS_DUPLICA
 
 .. rst-class:: classref-method
 
-|void| **emit_changed**\ (\ )
+|void| **emit_changed**\ (\ ) :ref:`🔗<class_Resource_method_emit_changed>`
 
 Emits the :ref:`changed<class_Resource_signal_changed>` signal. This method is called automatically for some built-in resources.
 
@@ -290,7 +290,7 @@ Emits the :ref:`changed<class_Resource_signal_changed>` signal. This method is c
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **generate_scene_unique_id**\ (\ ) |static|
+:ref:`String<class_String>` **generate_scene_unique_id**\ (\ ) |static| :ref:`🔗<class_Resource_method_generate_scene_unique_id>`
 
 Generates a unique identifier for a resource to be contained inside a :ref:`PackedScene<class_PackedScene>`, based on the current date, time, and a random value. The returned string is only composed of letters (``a`` to ``y``) and numbers (``0`` to ``8``). See also :ref:`resource_scene_unique_id<class_Resource_property_resource_scene_unique_id>`.
 
@@ -302,7 +302,7 @@ Generates a unique identifier for a resource to be contained inside a :ref:`Pack
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **get_local_scene**\ (\ ) |const|
+:ref:`Node<class_Node>` **get_local_scene**\ (\ ) |const| :ref:`🔗<class_Resource_method_get_local_scene>`
 
 If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is set to ``true`` and the resource has been loaded from a :ref:`PackedScene<class_PackedScene>` instantiation, returns the root :ref:`Node<class_Node>` of the scene where this resource is used. Otherwise, returns ``null``.
 
@@ -314,7 +314,7 @@ If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_rid**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_rid**\ (\ ) |const| :ref:`🔗<class_Resource_method_get_rid>`
 
 Returns the :ref:`RID<class_RID>` of this resource (or an empty RID). Many resources (such as :ref:`Texture2D<class_Texture2D>`, :ref:`Mesh<class_Mesh>`, and so on) are high-level abstractions of resources stored in a specialized server (:ref:`DisplayServer<class_DisplayServer>`, :ref:`RenderingServer<class_RenderingServer>`, etc.), so this function will return the original :ref:`RID<class_RID>`.
 
@@ -326,7 +326,7 @@ Returns the :ref:`RID<class_RID>` of this resource (or an empty RID). Many resou
 
 .. rst-class:: classref-method
 
-|void| **setup_local_to_scene**\ (\ )
+|void| **setup_local_to_scene**\ (\ ) :ref:`🔗<class_Resource_method_setup_local_to_scene>`
 
 **Deprecated:** This method should only be called internally.
 
@@ -340,7 +340,7 @@ Calls :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_
 
 .. rst-class:: classref-method
 
-|void| **take_over_path**\ (\ path\: :ref:`String<class_String>`\ )
+|void| **take_over_path**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Resource_method_take_over_path>`
 
 Sets the :ref:`resource_path<class_Resource_property_resource_path>` to ``path``, potentially overriding an existing cache entry for this path. Further attempts to load an overridden resource by path will instead return this resource.
 

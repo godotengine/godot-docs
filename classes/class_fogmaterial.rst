@@ -58,7 +58,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **albedo** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **albedo** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_FogMaterial_property_albedo>`
 
 .. rst-class:: classref-property-setget
 
@@ -75,7 +75,7 @@ The single-scattering :ref:`Color<class_Color>` of the :ref:`FogVolume<class_Fog
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **density** = ``1.0``
+:ref:`float<class_float>` **density** = ``1.0`` :ref:`🔗<class_FogMaterial_property_density>`
 
 .. rst-class:: classref-property-setget
 
@@ -94,7 +94,7 @@ The density of the :ref:`FogVolume<class_FogVolume>`. Denser objects are more op
 
 .. rst-class:: classref-property
 
-:ref:`Texture3D<class_Texture3D>` **density_texture**
+:ref:`Texture3D<class_Texture3D>` **density_texture** :ref:`🔗<class_FogMaterial_property_density_texture>`
 
 .. rst-class:: classref-property-setget
 
@@ -111,7 +111,7 @@ The 3D texture that is used to scale the :ref:`density<class_FogMaterial_propert
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **edge_fade** = ``0.1``
+:ref:`float<class_float>` **edge_fade** = ``0.1`` :ref:`🔗<class_FogMaterial_property_edge_fade>`
 
 .. rst-class:: classref-property-setget
 
@@ -128,7 +128,7 @@ The hardness of the edges of the :ref:`FogVolume<class_FogVolume>`. A higher val
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **emission** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **emission** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_FogMaterial_property_emission>`
 
 .. rst-class:: classref-property-setget
 
@@ -145,7 +145,7 @@ The :ref:`Color<class_Color>` of the light emitted by the :ref:`FogVolume<class_
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **height_falloff** = ``0.0``
+:ref:`float<class_float>` **height_falloff** = ``0.0`` :ref:`🔗<class_FogMaterial_property_height_falloff>`
 
 .. rst-class:: classref-property-setget
 

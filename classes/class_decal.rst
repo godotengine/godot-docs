@@ -101,7 +101,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **DecalTexture**:
+enum **DecalTexture**: :ref:`🔗<enum_Decal_DecalTexture>`
 
 .. _class_Decal_constant_TEXTURE_ALBEDO:
 
@@ -156,7 +156,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **albedo_mix** = ``1.0``
+:ref:`float<class_float>` **albedo_mix** = ``1.0`` :ref:`🔗<class_Decal_property_albedo_mix>`
 
 .. rst-class:: classref-property-setget
 
@@ -173,7 +173,7 @@ Blends the albedo :ref:`Color<class_Color>` of the decal with albedo :ref:`Color
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **cull_mask** = ``1048575``
+:ref:`int<class_int>` **cull_mask** = ``1048575`` :ref:`🔗<class_Decal_property_cull_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -190,7 +190,7 @@ Specifies which :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_la
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **distance_fade_begin** = ``40.0``
+:ref:`float<class_float>` **distance_fade_begin** = ``40.0`` :ref:`🔗<class_Decal_property_distance_fade_begin>`
 
 .. rst-class:: classref-property-setget
 
@@ -207,7 +207,7 @@ The distance from the camera at which the Decal begins to fade away (in 3D units
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **distance_fade_enabled** = ``false``
+:ref:`bool<class_bool>` **distance_fade_enabled** = ``false`` :ref:`🔗<class_Decal_property_distance_fade_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -224,7 +224,7 @@ If ``true``, decals will smoothly fade away when far from the active :ref:`Camer
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **distance_fade_length** = ``10.0``
+:ref:`float<class_float>` **distance_fade_length** = ``10.0`` :ref:`🔗<class_Decal_property_distance_fade_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -241,7 +241,7 @@ The distance over which the Decal fades (in 3D units). The Decal becomes slowly 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **emission_energy** = ``1.0``
+:ref:`float<class_float>` **emission_energy** = ``1.0`` :ref:`🔗<class_Decal_property_emission_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -258,7 +258,7 @@ Energy multiplier for the emission texture. This will make the decal emit light 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **lower_fade** = ``0.3``
+:ref:`float<class_float>` **lower_fade** = ``0.3`` :ref:`🔗<class_Decal_property_lower_fade>`
 
 .. rst-class:: classref-property-setget
 
@@ -275,7 +275,7 @@ Sets the curve over which the decal will fade as the surface gets further from t
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_Decal_property_modulate>`
 
 .. rst-class:: classref-property-setget
 
@@ -292,7 +292,7 @@ Changes the :ref:`Color<class_Color>` of the Decal by multiplying the albedo and
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **normal_fade** = ``0.0``
+:ref:`float<class_float>` **normal_fade** = ``0.0`` :ref:`🔗<class_Decal_property_normal_fade>`
 
 .. rst-class:: classref-property-setget
 
@@ -311,7 +311,7 @@ Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)`` :ref:`🔗<class_Decal_property_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -330,7 +330,7 @@ Sets the size of the :ref:`AABB<class_AABB>` used by the decal. All dimensions m
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_albedo**
+:ref:`Texture2D<class_Texture2D>` **texture_albedo** :ref:`🔗<class_Decal_property_texture_albedo>`
 
 .. rst-class:: classref-property-setget
 
@@ -349,7 +349,7 @@ Sets the size of the :ref:`AABB<class_AABB>` used by the decal. All dimensions m
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_emission**
+:ref:`Texture2D<class_Texture2D>` **texture_emission** :ref:`🔗<class_Decal_property_texture_emission>`
 
 .. rst-class:: classref-property-setget
 
@@ -368,7 +368,7 @@ Sets the size of the :ref:`AABB<class_AABB>` used by the decal. All dimensions m
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_normal**
+:ref:`Texture2D<class_Texture2D>` **texture_normal** :ref:`🔗<class_Decal_property_texture_normal>`
 
 .. rst-class:: classref-property-setget
 
@@ -389,7 +389,7 @@ Sets the size of the :ref:`AABB<class_AABB>` used by the decal. All dimensions m
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_orm**
+:ref:`Texture2D<class_Texture2D>` **texture_orm** :ref:`🔗<class_Decal_property_texture_orm>`
 
 .. rst-class:: classref-property-setget
 
@@ -410,7 +410,7 @@ Sets the size of the :ref:`AABB<class_AABB>` used by the decal. All dimensions m
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **upper_fade** = ``0.3``
+:ref:`float<class_float>` **upper_fade** = ``0.3`` :ref:`🔗<class_Decal_property_upper_fade>`
 
 .. rst-class:: classref-property-setget
 
@@ -432,7 +432,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ type\: :ref:`DecalTexture<enum_Decal_DecalTexture>`\ ) |const|
+:ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ type\: :ref:`DecalTexture<enum_Decal_DecalTexture>`\ ) |const| :ref:`🔗<class_Decal_method_get_texture>`
 
 Returns the :ref:`Texture2D<class_Texture2D>` associated with the specified :ref:`DecalTexture<enum_Decal_DecalTexture>`. This is a convenience method, in most cases you should access the texture directly.
 
@@ -465,7 +465,7 @@ One case where this is better than accessing the texture directly is when you wa
 
 .. rst-class:: classref-method
 
-|void| **set_texture**\ (\ type\: :ref:`DecalTexture<enum_Decal_DecalTexture>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **set_texture**\ (\ type\: :ref:`DecalTexture<enum_Decal_DecalTexture>`, texture\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_Decal_method_set_texture>`
 
 Sets the :ref:`Texture2D<class_Texture2D>` associated with the specified :ref:`DecalTexture<enum_Decal_DecalTexture>`. This is a convenience method, in most cases you should access the texture directly.
 

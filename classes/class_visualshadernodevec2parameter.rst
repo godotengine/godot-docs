@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **default_value** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **default_value** = ``Vector2(0, 0)`` :ref:`🔗<class_VisualShaderNodeVec2Parameter_property_default_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -65,7 +65,7 @@ A default value to be assigned within the shader.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **default_value_enabled** = ``false``
+:ref:`bool<class_bool>` **default_value_enabled** = ``false`` :ref:`🔗<class_VisualShaderNodeVec2Parameter_property_default_value_enabled>`
 
 .. rst-class:: classref-property-setget
 

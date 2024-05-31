@@ -122,7 +122,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`bool<class_bool>` **bool**\ (\ )
+:ref:`bool<class_bool>` **bool**\ (\ ) :ref:`🔗<class_bool_constructor_bool>`
 
 Constructs a **bool** set to ``false``.
 
@@ -169,7 +169,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`bool<class_bool>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_neq_bool>`
 
 Returns ``true`` if the two booleans are not equal. That is, one is ``true`` and the other is ``false``. This operation can be seen as a logical XOR.
 
@@ -181,7 +181,7 @@ Returns ``true`` if the two booleans are not equal. That is, one is ``true`` and
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`bool<class_bool>`\ )
+:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_lt_bool>`
 
 Returns ``true`` if the left operand is ``false`` and the right operand is ``true``.
 
@@ -193,7 +193,7 @@ Returns ``true`` if the left operand is ``false`` and the right operand is ``tru
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`bool<class_bool>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_eq_bool>`
 
 Returns ``true`` if the two booleans are equal. That is, both are ``true`` or both are ``false``. This operation can be seen as a logical EQ or XNOR.
 
@@ -205,7 +205,7 @@ Returns ``true`` if the two booleans are equal. That is, both are ``true`` or bo
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`bool<class_bool>`\ )
+:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_bool_operator_gt_bool>`
 
 Returns ``true`` if the left operand is ``true`` and the right operand is ``false``.
 

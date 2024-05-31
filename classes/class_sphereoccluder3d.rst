@@ -55,7 +55,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``1.0``
+:ref:`float<class_float>` **radius** = ``1.0`` :ref:`🔗<class_SphereOccluder3D_property_radius>`
 
 .. rst-class:: classref-property-setget
 
