@@ -400,7 +400,7 @@ but doing so will increase bake times significantly.
 
 To combat noise without increasing bake times too much, a denoiser can be used.
 A denoiser is an algorithm that runs on the final baked lightmap, detects patterns of
-noise and softens them while attempting to best preseve detail.
+noise and softens them while attempting to best preserve detail.
 Godot offers two denoising algorithms:
 
 JNLM (Non-Local Means with Joint Filtering)

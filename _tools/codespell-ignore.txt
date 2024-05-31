@@ -6,3 +6,5 @@ raison
 uint
 implementors
 thirdparty
+inout
+findn
