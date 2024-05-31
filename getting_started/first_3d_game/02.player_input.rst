@@ -67,7 +67,7 @@ The sphere's wireframe appears below the character.
 |image3|
 
 It will be the shape the physics engine uses to collide with the environment, so
-we want it to better fit the 3D model. Shrink it a bit by dragging the orange
+we want it to better fit the 3D model. Make it a bit larger by dragging the orange
 dot in the viewport. My sphere has a radius of about ``0.8`` meters.
 
 Then, move the collision shape up so its bottom roughly aligns with the grid's plane.
