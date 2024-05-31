@@ -42,13 +42,15 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------+-----------------------------------------------------------+-----------+
-   | :ref:`StringName<class_StringName>` | :ref:`action<class_InputEventAction_property_action>`     | ``&""``   |
-   +-------------------------------------+-----------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`             | :ref:`pressed<class_InputEventAction_property_pressed>`   | ``false`` |
-   +-------------------------------------+-----------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`           | :ref:`strength<class_InputEventAction_property_strength>` | ``1.0``   |
-   +-------------------------------------+-----------------------------------------------------------+-----------+
+   +-------------------------------------+-----------------------------------------------------------------+-----------+
+   | :ref:`StringName<class_StringName>` | :ref:`action<class_InputEventAction_property_action>`           | ``&""``   |
+   +-------------------------------------+-----------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`               | :ref:`event_index<class_InputEventAction_property_event_index>` | ``-1``    |
+   +-------------------------------------+-----------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`pressed<class_InputEventAction_property_pressed>`         | ``false`` |
+   +-------------------------------------+-----------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`           | :ref:`strength<class_InputEventAction_property_strength>`       | ``1.0``   |
+   +-------------------------------------+-----------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-section-separator
 
@@ -63,7 +65,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **action** = ``&""``
+:ref:`StringName<class_StringName>` **action** = ``&""`` :ref:`🔗<class_InputEventAction_property_action>`
 
 .. rst-class:: classref-property-setget
 
@@ -76,11 +78,28 @@ The action's name. Actions are accessed via this :ref:`String<class_String>`.
 
 ----
 
+.. _class_InputEventAction_property_event_index:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **event_index** = ``-1`` :ref:`🔗<class_InputEventAction_property_event_index>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_event_index**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_event_index**\ (\ )
+
+The real event index in action this event corresponds to (from events defined for this action in the :ref:`InputMap<class_InputMap>`). If ``-1``, a unique ID will be used and actions pressed with this ID will need to be released with another **InputEventAction**.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_InputEventAction_property_pressed:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **pressed** = ``false``
+:ref:`bool<class_bool>` **pressed** = ``false`` :ref:`🔗<class_InputEventAction_property_pressed>`
 
 .. rst-class:: classref-property-setget
 
@@ -97,7 +116,7 @@ If ``true``, the action's state is pressed. If ``false``, the action's state is 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **strength** = ``1.0``
+:ref:`float<class_float>` **strength** = ``1.0`` :ref:`🔗<class_InputEventAction_property_strength>`
 
 .. rst-class:: classref-property-setget
 

@@ -111,7 +111,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **global_position**
+:ref:`Vector2<class_Vector2>` **global_position** :ref:`🔗<class_Node2D_property_global_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -128,7 +128,7 @@ Global position.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **global_rotation**
+:ref:`float<class_float>` **global_rotation** :ref:`🔗<class_Node2D_property_global_rotation>`
 
 .. rst-class:: classref-property-setget
 
@@ -145,7 +145,7 @@ Global rotation in radians.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **global_rotation_degrees**
+:ref:`float<class_float>` **global_rotation_degrees** :ref:`🔗<class_Node2D_property_global_rotation_degrees>`
 
 .. rst-class:: classref-property-setget
 
@@ -162,7 +162,7 @@ Helper property to access :ref:`global_rotation<class_Node2D_property_global_rot
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **global_scale**
+:ref:`Vector2<class_Vector2>` **global_scale** :ref:`🔗<class_Node2D_property_global_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -179,7 +179,7 @@ Global scale.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **global_skew**
+:ref:`float<class_float>` **global_skew** :ref:`🔗<class_Node2D_property_global_skew>`
 
 .. rst-class:: classref-property-setget
 
@@ -196,7 +196,7 @@ Global skew in radians.
 
 .. rst-class:: classref-property
 
-:ref:`Transform2D<class_Transform2D>` **global_transform**
+:ref:`Transform2D<class_Transform2D>` **global_transform** :ref:`🔗<class_Node2D_property_global_transform>`
 
 .. rst-class:: classref-property-setget
 
@@ -213,7 +213,7 @@ Global :ref:`Transform2D<class_Transform2D>`.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)`` :ref:`🔗<class_Node2D_property_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -230,7 +230,7 @@ Position, relative to the node's parent.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rotation** = ``0.0``
+:ref:`float<class_float>` **rotation** = ``0.0`` :ref:`🔗<class_Node2D_property_rotation>`
 
 .. rst-class:: classref-property-setget
 
@@ -249,7 +249,7 @@ Rotation in radians, relative to the node's parent.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rotation_degrees**
+:ref:`float<class_float>` **rotation_degrees** :ref:`🔗<class_Node2D_property_rotation_degrees>`
 
 .. rst-class:: classref-property-setget
 
@@ -266,7 +266,7 @@ Helper property to access :ref:`rotation<class_Node2D_property_rotation>` in deg
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **scale** = ``Vector2(1, 1)``
+:ref:`Vector2<class_Vector2>` **scale** = ``Vector2(1, 1)`` :ref:`🔗<class_Node2D_property_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -285,7 +285,7 @@ The node's scale. Unscaled value: ``(1, 1)``.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **skew** = ``0.0``
+:ref:`float<class_float>` **skew** = ``0.0`` :ref:`🔗<class_Node2D_property_skew>`
 
 .. rst-class:: classref-property-setget
 
@@ -304,7 +304,7 @@ Slants the node.
 
 .. rst-class:: classref-property
 
-:ref:`Transform2D<class_Transform2D>` **transform**
+:ref:`Transform2D<class_Transform2D>` **transform** :ref:`🔗<class_Node2D_property_transform>`
 
 .. rst-class:: classref-property-setget
 
@@ -326,7 +326,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **apply_scale**\ (\ ratio\: :ref:`Vector2<class_Vector2>`\ )
+|void| **apply_scale**\ (\ ratio\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_Node2D_method_apply_scale>`
 
 Multiplies the current scale by the ``ratio`` vector.
 
@@ -338,7 +338,7 @@ Multiplies the current scale by the ``ratio`` vector.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_angle_to**\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`float<class_float>` **get_angle_to**\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Node2D_method_get_angle_to>`
 
 Returns the angle between the node and the ``point`` in radians.
 
@@ -352,7 +352,7 @@ Returns the angle between the node and the ``point`` in radians.
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_relative_transform_to_parent**\ (\ parent\: :ref:`Node<class_Node>`\ ) |const|
+:ref:`Transform2D<class_Transform2D>` **get_relative_transform_to_parent**\ (\ parent\: :ref:`Node<class_Node>`\ ) |const| :ref:`🔗<class_Node2D_method_get_relative_transform_to_parent>`
 
 Returns the :ref:`Transform2D<class_Transform2D>` relative to this node's parent.
 
@@ -364,7 +364,7 @@ Returns the :ref:`Transform2D<class_Transform2D>` relative to this node's parent
 
 .. rst-class:: classref-method
 
-|void| **global_translate**\ (\ offset\: :ref:`Vector2<class_Vector2>`\ )
+|void| **global_translate**\ (\ offset\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_Node2D_method_global_translate>`
 
 Adds the ``offset`` vector to the node's global position.
 
@@ -376,7 +376,7 @@ Adds the ``offset`` vector to the node's global position.
 
 .. rst-class:: classref-method
 
-|void| **look_at**\ (\ point\: :ref:`Vector2<class_Vector2>`\ )
+|void| **look_at**\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_Node2D_method_look_at>`
 
 Rotates the node so that its local +X axis points towards the ``point``, which is expected to use global coordinates.
 
@@ -390,7 +390,7 @@ Rotates the node so that its local +X axis points towards the ``point``, which i
 
 .. rst-class:: classref-method
 
-|void| **move_local_x**\ (\ delta\: :ref:`float<class_float>`, scaled\: :ref:`bool<class_bool>` = false\ )
+|void| **move_local_x**\ (\ delta\: :ref:`float<class_float>`, scaled\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Node2D_method_move_local_x>`
 
 Applies a local translation on the node's X axis based on the :ref:`Node._process<class_Node_private_method__process>`'s ``delta``. If ``scaled`` is ``false``, normalizes the movement.
 
@@ -402,7 +402,7 @@ Applies a local translation on the node's X axis based on the :ref:`Node._proces
 
 .. rst-class:: classref-method
 
-|void| **move_local_y**\ (\ delta\: :ref:`float<class_float>`, scaled\: :ref:`bool<class_bool>` = false\ )
+|void| **move_local_y**\ (\ delta\: :ref:`float<class_float>`, scaled\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Node2D_method_move_local_y>`
 
 Applies a local translation on the node's Y axis based on the :ref:`Node._process<class_Node_private_method__process>`'s ``delta``. If ``scaled`` is ``false``, normalizes the movement.
 
@@ -414,7 +414,7 @@ Applies a local translation on the node's Y axis based on the :ref:`Node._proces
 
 .. rst-class:: classref-method
 
-|void| **rotate**\ (\ radians\: :ref:`float<class_float>`\ )
+|void| **rotate**\ (\ radians\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Node2D_method_rotate>`
 
 Applies a rotation to the node, in radians, starting from its current rotation.
 
@@ -426,7 +426,7 @@ Applies a rotation to the node, in radians, starting from its current rotation.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **to_global**\ (\ local_point\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **to_global**\ (\ local_point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Node2D_method_to_global>`
 
 Transforms the provided local position into a position in global coordinate space. The input is expected to be local relative to the **Node2D** it is called on. e.g. Applying this method to the positions of child nodes will correctly transform their positions into the global coordinate space, but applying it to a node's own position will give an incorrect result, as it will incorporate the node's own transformation into its global position.
 
@@ -438,7 +438,7 @@ Transforms the provided local position into a position in global coordinate spac
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **to_local**\ (\ global_point\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **to_local**\ (\ global_point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Node2D_method_to_local>`
 
 Transforms the provided global position into a position in local coordinate space. The output will be local relative to the **Node2D** it is called on. e.g. It is appropriate for determining the positions of child nodes, but it is not appropriate for determining its own position relative to its parent.
 
@@ -450,7 +450,7 @@ Transforms the provided global position into a position in local coordinate spac
 
 .. rst-class:: classref-method
 
-|void| **translate**\ (\ offset\: :ref:`Vector2<class_Vector2>`\ )
+|void| **translate**\ (\ offset\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_Node2D_method_translate>`
 
 Translates the node by the given ``offset`` in local coordinates.
 

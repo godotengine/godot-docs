@@ -99,7 +99,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_capture**\ (\ message\: :ref:`String<class_String>`, data\: :ref:`Array<class_Array>`, session_id\: :ref:`int<class_int>`\ ) |virtual|
+:ref:`bool<class_bool>` **_capture**\ (\ message\: :ref:`String<class_String>`, data\: :ref:`Array<class_Array>`, session_id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorDebuggerPlugin_private_method__capture>`
 
 Override this method to process incoming messages. The ``session_id`` is the ID of the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` that received the message (which you can retrieve via :ref:`get_session<class_EditorDebuggerPlugin_method_get_session>`).
 
@@ -111,7 +111,7 @@ Override this method to process incoming messages. The ``session_id`` is the ID 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_capture**\ (\ capture\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_has_capture**\ (\ capture\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_EditorDebuggerPlugin_private_method__has_capture>`
 
 Override this method to enable receiving messages from the debugger. If ``capture`` is "my_message" then messages starting with "my_message:" will be passes to the :ref:`_capture<class_EditorDebuggerPlugin_private_method__capture>` method.
 
@@ -123,7 +123,7 @@ Override this method to enable receiving messages from the debugger. If ``captur
 
 .. rst-class:: classref-method
 
-|void| **_setup_session**\ (\ session_id\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_setup_session**\ (\ session_id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorDebuggerPlugin_private_method__setup_session>`
 
 Override this method to be notified whenever a new :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` is created (the session may be inactive during this stage).
 
@@ -135,7 +135,7 @@ Override this method to be notified whenever a new :ref:`EditorDebuggerSession<c
 
 .. rst-class:: classref-method
 
-:ref:`EditorDebuggerSession<class_EditorDebuggerSession>` **get_session**\ (\ id\: :ref:`int<class_int>`\ )
+:ref:`EditorDebuggerSession<class_EditorDebuggerSession>` **get_session**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EditorDebuggerPlugin_method_get_session>`
 
 Returns the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` with the given ``id``.
 
@@ -147,7 +147,7 @@ Returns the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` with the g
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_sessions**\ (\ )
+:ref:`Array<class_Array>` **get_sessions**\ (\ ) :ref:`🔗<class_EditorDebuggerPlugin_method_get_sessions>`
 
 Returns an array of :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` currently available to this debugger plugin.
 

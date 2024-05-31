@@ -99,7 +99,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **finish**\ (\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **finish**\ (\ ) :ref:`🔗<class_HMACContext_method_finish>`
 
 Returns the resulting HMAC. If the HMAC failed, an empty :ref:`PackedByteArray<class_PackedByteArray>` is returned.
 
@@ -111,7 +111,7 @@ Returns the resulting HMAC. If the HMAC failed, an empty :ref:`PackedByteArray<c
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ hash_type\: :ref:`HashType<enum_HashingContext_HashType>`, key\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ hash_type\: :ref:`HashType<enum_HashingContext_HashType>`, key\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_HMACContext_method_start>`
 
 Initializes the HMACContext. This method cannot be called again on the same HMACContext until :ref:`finish<class_HMACContext_method_finish>` has been called.
 
@@ -123,7 +123,7 @@ Initializes the HMACContext. This method cannot be called again on the same HMAC
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **update**\ (\ data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **update**\ (\ data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_HMACContext_method_update>`
 
 Updates the message to be HMACed. This can be called multiple times before :ref:`finish<class_HMACContext_method_finish>` is called to append ``data`` to the message, but cannot be called until :ref:`start<class_HMACContext_method_start>` has been called.
 

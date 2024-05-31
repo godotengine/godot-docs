@@ -68,7 +68,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **create_scene_tile**\ (\ packed_scene\: :ref:`PackedScene<class_PackedScene>`, id_override\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **create_scene_tile**\ (\ packed_scene\: :ref:`PackedScene<class_PackedScene>`, id_override\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileSetScenesCollectionSource_method_create_scene_tile>`
 
 Creates a scene-based tile out of the given scene.
 
@@ -82,7 +82,7 @@ Returns a newly generated unique ID.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_next_scene_tile_id**\ (\ ) |const|
+:ref:`int<class_int>` **get_next_scene_tile_id**\ (\ ) |const| :ref:`🔗<class_TileSetScenesCollectionSource_method_get_next_scene_tile_id>`
 
 Returns the scene ID a following call to :ref:`create_scene_tile<class_TileSetScenesCollectionSource_method_create_scene_tile>` would return.
 
@@ -94,7 +94,7 @@ Returns the scene ID a following call to :ref:`create_scene_tile<class_TileSetSc
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_scene_tile_display_placeholder**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_scene_tile_display_placeholder**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSetScenesCollectionSource_method_get_scene_tile_display_placeholder>`
 
 Returns whether the scene tile with ``id`` displays a placeholder in the editor.
 
@@ -106,7 +106,7 @@ Returns whether the scene tile with ``id`` displays a placeholder in the editor.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_scene_tile_id**\ (\ index\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **get_scene_tile_id**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSetScenesCollectionSource_method_get_scene_tile_id>`
 
 Returns the scene tile ID of the scene tile at ``index``.
 
@@ -118,7 +118,7 @@ Returns the scene tile ID of the scene tile at ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedScene<class_PackedScene>` **get_scene_tile_scene**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedScene<class_PackedScene>` **get_scene_tile_scene**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSetScenesCollectionSource_method_get_scene_tile_scene>`
 
 Returns the :ref:`PackedScene<class_PackedScene>` resource of scene tile with ``id``.
 
@@ -130,7 +130,7 @@ Returns the :ref:`PackedScene<class_PackedScene>` resource of scene tile with ``
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_scene_tiles_count**\ (\ )
+:ref:`int<class_int>` **get_scene_tiles_count**\ (\ ) :ref:`🔗<class_TileSetScenesCollectionSource_method_get_scene_tiles_count>`
 
 Returns the number or scene tiles this TileSet source has.
 
@@ -142,7 +142,7 @@ Returns the number or scene tiles this TileSet source has.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_scene_tile_id**\ (\ id\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **has_scene_tile_id**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSetScenesCollectionSource_method_has_scene_tile_id>`
 
 Returns whether this TileSet source has a scene tile with ``id``.
 
@@ -154,7 +154,7 @@ Returns whether this TileSet source has a scene tile with ``id``.
 
 .. rst-class:: classref-method
 
-|void| **remove_scene_tile**\ (\ id\: :ref:`int<class_int>`\ )
+|void| **remove_scene_tile**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSetScenesCollectionSource_method_remove_scene_tile>`
 
 Remove the scene tile with ``id``.
 
@@ -166,7 +166,7 @@ Remove the scene tile with ``id``.
 
 .. rst-class:: classref-method
 
-|void| **set_scene_tile_display_placeholder**\ (\ id\: :ref:`int<class_int>`, display_placeholder\: :ref:`bool<class_bool>`\ )
+|void| **set_scene_tile_display_placeholder**\ (\ id\: :ref:`int<class_int>`, display_placeholder\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TileSetScenesCollectionSource_method_set_scene_tile_display_placeholder>`
 
 Sets whether or not the scene tile with ``id`` should display a placeholder in the editor. This might be useful for scenes that are not visible.
 
@@ -178,7 +178,7 @@ Sets whether or not the scene tile with ``id`` should display a placeholder in t
 
 .. rst-class:: classref-method
 
-|void| **set_scene_tile_id**\ (\ id\: :ref:`int<class_int>`, new_id\: :ref:`int<class_int>`\ )
+|void| **set_scene_tile_id**\ (\ id\: :ref:`int<class_int>`, new_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSetScenesCollectionSource_method_set_scene_tile_id>`
 
 Changes a scene tile's ID from ``id`` to ``new_id``. This will fail if there is already a tile with an ID equal to ``new_id``.
 
@@ -190,7 +190,7 @@ Changes a scene tile's ID from ``id`` to ``new_id``. This will fail if there is 
 
 .. rst-class:: classref-method
 
-|void| **set_scene_tile_scene**\ (\ id\: :ref:`int<class_int>`, packed_scene\: :ref:`PackedScene<class_PackedScene>`\ )
+|void| **set_scene_tile_scene**\ (\ id\: :ref:`int<class_int>`, packed_scene\: :ref:`PackedScene<class_PackedScene>`\ ) :ref:`🔗<class_TileSetScenesCollectionSource_method_set_scene_tile_scene>`
 
 Assigns a :ref:`PackedScene<class_PackedScene>` resource to the scene tile with ``id``. This will fail if the scene does not extend CanvasItem, as positioning properties are needed to place the scene on the TileMap.
 

@@ -95,7 +95,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **affect_navigation_mesh** = ``false``
+:ref:`bool<class_bool>` **affect_navigation_mesh** = ``false`` :ref:`🔗<class_NavigationObstacle3D_property_affect_navigation_mesh>`
 
 .. rst-class:: classref-property-setget
 
@@ -112,7 +112,7 @@ If enabled and parsed in a navigation mesh baking process the obstacle will disc
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **avoidance_enabled** = ``true``
+:ref:`bool<class_bool>` **avoidance_enabled** = ``true`` :ref:`🔗<class_NavigationObstacle3D_property_avoidance_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -129,7 +129,7 @@ If ``true`` the obstacle affects avoidance using agents.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **avoidance_layers** = ``1``
+:ref:`int<class_int>` **avoidance_layers** = ``1`` :ref:`🔗<class_NavigationObstacle3D_property_avoidance_layers>`
 
 .. rst-class:: classref-property-setget
 
@@ -146,7 +146,7 @@ A bitfield determining the avoidance layers for this obstacle. Agents with a mat
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **carve_navigation_mesh** = ``false``
+:ref:`bool<class_bool>` **carve_navigation_mesh** = ``false`` :ref:`🔗<class_NavigationObstacle3D_property_carve_navigation_mesh>`
 
 .. rst-class:: classref-property-setget
 
@@ -167,7 +167,7 @@ Requires :ref:`affect_navigation_mesh<class_NavigationObstacle3D_property_affect
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **height** = ``1.0``
+:ref:`float<class_float>` **height** = ``1.0`` :ref:`🔗<class_NavigationObstacle3D_property_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -184,7 +184,7 @@ Sets the obstacle height used in 2D avoidance. 2D avoidance using agent's ignore
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``0.0``
+:ref:`float<class_float>` **radius** = ``0.0`` :ref:`🔗<class_NavigationObstacle3D_property_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -201,7 +201,7 @@ Sets the avoidance radius for the obstacle.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_3d_avoidance** = ``false``
+:ref:`bool<class_bool>` **use_3d_avoidance** = ``false`` :ref:`🔗<class_NavigationObstacle3D_property_use_3d_avoidance>`
 
 .. rst-class:: classref-property-setget
 
@@ -220,7 +220,7 @@ If ``false`` the obstacle affects 2D avoidance using agent's with both obstacle 
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **velocity** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **velocity** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_NavigationObstacle3D_property_velocity>`
 
 .. rst-class:: classref-property-setget
 
@@ -237,7 +237,7 @@ Sets the wanted velocity for the obstacle so other agent's can better predict th
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **vertices** = ``PackedVector3Array()``
+:ref:`PackedVector3Array<class_PackedVector3Array>` **vertices** = ``PackedVector3Array()`` :ref:`🔗<class_NavigationObstacle3D_property_vertices>`
 
 .. rst-class:: classref-property-setget
 
@@ -261,7 +261,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NavigationObstacle3D_method_get_avoidance_layer_value>`
 
 Returns whether or not the specified layer of the :ref:`avoidance_layers<class_NavigationObstacle3D_property_avoidance_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -273,7 +273,7 @@ Returns whether or not the specified layer of the :ref:`avoidance_layers<class_N
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_navigation_map**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_navigation_map**\ (\ ) |const| :ref:`🔗<class_NavigationObstacle3D_method_get_navigation_map>`
 
 Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationObstacle node. This function returns always the map set on the NavigationObstacle node and not the map of the abstract obstacle on the NavigationServer. If the obstacle map is changed directly with the NavigationServer API the NavigationObstacle node will not be aware of the map change. Use :ref:`set_navigation_map<class_NavigationObstacle3D_method_set_navigation_map>` to change the navigation map for the NavigationObstacle and also update the obstacle on the NavigationServer.
 
@@ -285,7 +285,7 @@ Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationObsta
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_rid**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_rid**\ (\ ) |const| :ref:`🔗<class_NavigationObstacle3D_method_get_rid>`
 
 Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
@@ -297,7 +297,7 @@ Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer
 
 .. rst-class:: classref-method
 
-|void| **set_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
+|void| **set_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationObstacle3D_method_set_avoidance_layer_value>`
 
 Based on ``value``, enables or disables the specified layer in the :ref:`avoidance_layers<class_NavigationObstacle3D_property_avoidance_layers>` bitmask, given a ``layer_number`` between 1 and 32.
 
@@ -309,7 +309,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`avoidan
 
 .. rst-class:: classref-method
 
-|void| **set_navigation_map**\ (\ navigation_map\: :ref:`RID<class_RID>`\ )
+|void| **set_navigation_map**\ (\ navigation_map\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_NavigationObstacle3D_method_set_navigation_map>`
 
 Sets the :ref:`RID<class_RID>` of the navigation map this NavigationObstacle node should use and also updates the ``obstacle`` on the NavigationServer.
 

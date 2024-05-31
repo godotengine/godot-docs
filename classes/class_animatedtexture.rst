@@ -84,7 +84,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**MAX_FRAMES** = ``256``
+**MAX_FRAMES** = ``256`` :ref:`🔗<class_AnimatedTexture_constant_MAX_FRAMES>`
 
 The maximum number of frames supported by **AnimatedTexture**. If you need more frames in your animation, use :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`.
 
@@ -101,7 +101,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **current_frame**
+:ref:`int<class_int>` **current_frame** :ref:`🔗<class_AnimatedTexture_property_current_frame>`
 
 .. rst-class:: classref-property-setget
 
@@ -118,7 +118,7 @@ Sets the currently visible frame of the texture. Setting this frame while playin
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **frames** = ``1``
+:ref:`int<class_int>` **frames** = ``1`` :ref:`🔗<class_AnimatedTexture_property_frames>`
 
 .. rst-class:: classref-property-setget
 
@@ -135,7 +135,7 @@ Number of frames to use in the animation. While you can create the frames indepe
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **one_shot** = ``false``
+:ref:`bool<class_bool>` **one_shot** = ``false`` :ref:`🔗<class_AnimatedTexture_property_one_shot>`
 
 .. rst-class:: classref-property-setget
 
@@ -152,7 +152,7 @@ If ``true``, the animation will only play once and will not loop back to the fir
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **pause** = ``false``
+:ref:`bool<class_bool>` **pause** = ``false`` :ref:`🔗<class_AnimatedTexture_property_pause>`
 
 .. rst-class:: classref-property-setget
 
@@ -169,7 +169,7 @@ If ``true``, the animation will pause where it currently is (i.e. at :ref:`curre
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **speed_scale** = ``1.0``
+:ref:`float<class_float>` **speed_scale** = ``1.0`` :ref:`🔗<class_AnimatedTexture_property_speed_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -191,7 +191,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_frame_duration**\ (\ frame\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_frame_duration**\ (\ frame\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AnimatedTexture_method_get_frame_duration>`
 
 Returns the given ``frame``'s duration, in seconds.
 
@@ -203,7 +203,7 @@ Returns the given ``frame``'s duration, in seconds.
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_frame_texture**\ (\ frame\: :ref:`int<class_int>`\ ) |const|
+:ref:`Texture2D<class_Texture2D>` **get_frame_texture**\ (\ frame\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AnimatedTexture_method_get_frame_texture>`
 
 Returns the given frame's :ref:`Texture2D<class_Texture2D>`.
 
@@ -215,7 +215,7 @@ Returns the given frame's :ref:`Texture2D<class_Texture2D>`.
 
 .. rst-class:: classref-method
 
-|void| **set_frame_duration**\ (\ frame\: :ref:`int<class_int>`, duration\: :ref:`float<class_float>`\ )
+|void| **set_frame_duration**\ (\ frame\: :ref:`int<class_int>`, duration\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AnimatedTexture_method_set_frame_duration>`
 
 Sets the duration of any given ``frame``. The final duration is affected by the :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>`. If set to ``0``, the frame is skipped during playback.
 
@@ -227,7 +227,7 @@ Sets the duration of any given ``frame``. The final duration is affected by the 
 
 .. rst-class:: classref-method
 
-|void| **set_frame_texture**\ (\ frame\: :ref:`int<class_int>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **set_frame_texture**\ (\ frame\: :ref:`int<class_int>`, texture\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_AnimatedTexture_method_set_frame_texture>`
 
 Assigns a :ref:`Texture2D<class_Texture2D>` to the given frame. Frame IDs start at 0, so the first frame has ID 0, and the last frame of the animation has ID :ref:`frames<class_AnimatedTexture_property_frames>` - 1.
 

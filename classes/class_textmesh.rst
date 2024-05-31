@@ -91,7 +91,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode** = ``0``
+:ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode** = ``0`` :ref:`🔗<class_TextMesh_property_autowrap_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -108,7 +108,7 @@ If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_co
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **curve_step** = ``0.5``
+:ref:`float<class_float>` **curve_step** = ``0.5`` :ref:`🔗<class_TextMesh_property_curve_step>`
 
 .. rst-class:: classref-property-setget
 
@@ -125,7 +125,7 @@ Step (in pixels) used to approximate Bézier curves.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **depth** = ``0.05``
+:ref:`float<class_float>` **depth** = ``0.05`` :ref:`🔗<class_TextMesh_property_depth>`
 
 .. rst-class:: classref-property-setget
 
@@ -142,7 +142,7 @@ Depths of the mesh, if set to ``0.0`` only front surface, is generated, and UV l
 
 .. rst-class:: classref-property
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_TextMesh_property_font>`
 
 .. rst-class:: classref-property-setget
 
@@ -159,7 +159,7 @@ Font configuration used to display text.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **font_size** = ``16``
+:ref:`int<class_int>` **font_size** = ``16`` :ref:`🔗<class_TextMesh_property_font_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -176,7 +176,7 @@ Font size of the **TextMesh**'s text.
 
 .. rst-class:: classref-property
 
-:ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **horizontal_alignment** = ``1``
+:ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **horizontal_alignment** = ``1`` :ref:`🔗<class_TextMesh_property_horizontal_alignment>`
 
 .. rst-class:: classref-property-setget
 
@@ -193,7 +193,7 @@ Controls the text's horizontal alignment. Supports left, center, right, and fill
 
 .. rst-class:: classref-property
 
-|bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **justification_flags** = ``163``
+|bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **justification_flags** = ``163`` :ref:`🔗<class_TextMesh_property_justification_flags>`
 
 .. rst-class:: classref-property-setget
 
@@ -210,7 +210,7 @@ Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextSe
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **language** = ``""``
+:ref:`String<class_String>` **language** = ``""`` :ref:`🔗<class_TextMesh_property_language>`
 
 .. rst-class:: classref-property-setget
 
@@ -227,7 +227,7 @@ Language code used for text shaping algorithms, if left empty current locale is 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **line_spacing** = ``0.0``
+:ref:`float<class_float>` **line_spacing** = ``0.0`` :ref:`🔗<class_TextMesh_property_line_spacing>`
 
 .. rst-class:: classref-property-setget
 
@@ -244,7 +244,7 @@ Vertical space between lines in multiline **TextMesh**.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)`` :ref:`🔗<class_TextMesh_property_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -261,7 +261,7 @@ The text drawing offset (in pixels).
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pixel_size** = ``0.01``
+:ref:`float<class_float>` **pixel_size** = ``0.01`` :ref:`🔗<class_TextMesh_property_pixel_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -278,7 +278,7 @@ The size of one pixel's width on the text to scale it in 3D.
 
 .. rst-class:: classref-property
 
-:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0``
+:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0`` :ref:`🔗<class_TextMesh_property_structured_text_bidi_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -295,7 +295,7 @@ Set BiDi algorithm override for the structured text.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]``
+:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]`` :ref:`🔗<class_TextMesh_property_structured_text_bidi_override_options>`
 
 .. rst-class:: classref-property-setget
 
@@ -312,7 +312,7 @@ Set additional options for BiDi override.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **text** = ``""``
+:ref:`String<class_String>` **text** = ``""`` :ref:`🔗<class_TextMesh_property_text>`
 
 .. rst-class:: classref-property-setget
 
@@ -331,7 +331,7 @@ The text to generate mesh from.
 
 .. rst-class:: classref-property
 
-:ref:`Direction<enum_TextServer_Direction>` **text_direction** = ``0``
+:ref:`Direction<enum_TextServer_Direction>` **text_direction** = ``0`` :ref:`🔗<class_TextMesh_property_text_direction>`
 
 .. rst-class:: classref-property-setget
 
@@ -348,7 +348,7 @@ Base text writing direction.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **uppercase** = ``false``
+:ref:`bool<class_bool>` **uppercase** = ``false`` :ref:`🔗<class_TextMesh_property_uppercase>`
 
 .. rst-class:: classref-property-setget
 
@@ -365,7 +365,7 @@ If ``true``, all the text displays as UPPERCASE.
 
 .. rst-class:: classref-property
 
-:ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **vertical_alignment** = ``1``
+:ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **vertical_alignment** = ``1`` :ref:`🔗<class_TextMesh_property_vertical_alignment>`
 
 .. rst-class:: classref-property-setget
 
@@ -382,7 +382,7 @@ Controls the text's vertical alignment. Supports top, center, bottom. Set it to 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **width** = ``500.0``
+:ref:`float<class_float>` **width** = ``500.0`` :ref:`🔗<class_TextMesh_property_width>`
 
 .. rst-class:: classref-property-setget
 

@@ -52,7 +52,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **create_placeholder**\ (\ ) |const|
+:ref:`Resource<class_Resource>` **create_placeholder**\ (\ ) |const| :ref:`🔗<class_Cubemap_method_create_placeholder>`
 
 Creates a placeholder version of this resource (:ref:`PlaceholderCubemap<class_PlaceholderCubemap>`).
 

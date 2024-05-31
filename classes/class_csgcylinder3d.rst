@@ -65,7 +65,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **cone** = ``false``
+:ref:`bool<class_bool>` **cone** = ``false`` :ref:`🔗<class_CSGCylinder3D_property_cone>`
 
 .. rst-class:: classref-property-setget
 
@@ -82,7 +82,7 @@ If ``true`` a cone is created, the :ref:`radius<class_CSGCylinder3D_property_rad
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **height** = ``2.0``
+:ref:`float<class_float>` **height** = ``2.0`` :ref:`🔗<class_CSGCylinder3D_property_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -99,7 +99,7 @@ The height of the cylinder.
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_CSGCylinder3D_property_material>`
 
 .. rst-class:: classref-property-setget
 
@@ -116,7 +116,7 @@ The material used to render the cylinder.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``0.5``
+:ref:`float<class_float>` **radius** = ``0.5`` :ref:`🔗<class_CSGCylinder3D_property_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -133,7 +133,7 @@ The radius of the cylinder.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sides** = ``8``
+:ref:`int<class_int>` **sides** = ``8`` :ref:`🔗<class_CSGCylinder3D_property_sides>`
 
 .. rst-class:: classref-property-setget
 
@@ -150,7 +150,7 @@ The number of sides of the cylinder, the higher this number the more detail ther
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **smooth_faces** = ``true``
+:ref:`bool<class_bool>` **smooth_faces** = ``true`` :ref:`🔗<class_CSGCylinder3D_property_smooth_faces>`
 
 .. rst-class:: classref-property-setget
 

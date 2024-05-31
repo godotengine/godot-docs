@@ -69,7 +69,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **lock**\ (\ )
+|void| **lock**\ (\ ) :ref:`🔗<class_Mutex_method_lock>`
 
 Locks this **Mutex**, blocks until it is unlocked by the current owner.
 
@@ -83,7 +83,7 @@ Locks this **Mutex**, blocks until it is unlocked by the current owner.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **try_lock**\ (\ )
+:ref:`bool<class_bool>` **try_lock**\ (\ ) :ref:`🔗<class_Mutex_method_try_lock>`
 
 Tries locking this **Mutex**, but does not block. Returns ``true`` on success, ``false`` otherwise.
 
@@ -97,7 +97,7 @@ Tries locking this **Mutex**, but does not block. Returns ``true`` on success, `
 
 .. rst-class:: classref-method
 
-|void| **unlock**\ (\ )
+|void| **unlock**\ (\ ) :ref:`🔗<class_Mutex_method_unlock>`
 
 Unlocks this **Mutex**, leaving it to other threads.
 

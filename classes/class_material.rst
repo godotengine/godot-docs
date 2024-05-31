@@ -83,7 +83,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**RENDER_PRIORITY_MAX** = ``127``
+**RENDER_PRIORITY_MAX** = ``127`` :ref:`🔗<class_Material_constant_RENDER_PRIORITY_MAX>`
 
 Maximum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
 
@@ -91,7 +91,7 @@ Maximum value for the :ref:`render_priority<class_Material_property_render_prior
 
 .. rst-class:: classref-constant
 
-**RENDER_PRIORITY_MIN** = ``-128``
+**RENDER_PRIORITY_MIN** = ``-128`` :ref:`🔗<class_Material_constant_RENDER_PRIORITY_MIN>`
 
 Minimum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
 
@@ -108,7 +108,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **next_pass**
+:ref:`Material<class_Material>` **next_pass** :ref:`🔗<class_Material_property_next_pass>`
 
 .. rst-class:: classref-property-setget
 
@@ -129,14 +129,14 @@ Sets the **Material** to be used for the next pass. This renders the object agai
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **render_priority**
+:ref:`int<class_int>` **render_priority** :ref:`🔗<class_Material_property_render_priority>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_render_priority**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_render_priority**\ (\ )
 
-Sets the render priority for objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects. In other words, all objects with :ref:`render_priority<class_Material_property_render_priority>` ``1`` will render before all objects with :ref:`render_priority<class_Material_property_render_priority>` ``0``).
+Sets the render priority for objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects. In other words, all objects with :ref:`render_priority<class_Material_property_render_priority>` ``1`` will render before all objects with :ref:`render_priority<class_Material_property_render_priority>` ``0``.
 
 \ **Note:** This only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
 
@@ -155,7 +155,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_can_do_next_pass**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_can_do_next_pass**\ (\ ) |virtual| |const| :ref:`🔗<class_Material_private_method__can_do_next_pass>`
 
 Only exposed for the purpose of overriding. You cannot call this function directly. Used internally to determine if :ref:`next_pass<class_Material_property_next_pass>` should be shown in the editor or not.
 
@@ -167,7 +167,7 @@ Only exposed for the purpose of overriding. You cannot call this function direct
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_can_use_render_priority**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_can_use_render_priority**\ (\ ) |virtual| |const| :ref:`🔗<class_Material_private_method__can_use_render_priority>`
 
 Only exposed for the purpose of overriding. You cannot call this function directly. Used internally to determine if :ref:`render_priority<class_Material_property_render_priority>` should be shown in the editor or not.
 
@@ -179,7 +179,7 @@ Only exposed for the purpose of overriding. You cannot call this function direct
 
 .. rst-class:: classref-method
 
-:ref:`Mode<enum_Shader_Mode>` **_get_shader_mode**\ (\ ) |virtual| |const|
+:ref:`Mode<enum_Shader_Mode>` **_get_shader_mode**\ (\ ) |virtual| |const| :ref:`🔗<class_Material_private_method__get_shader_mode>`
 
 Only exposed for the purpose of overriding. You cannot call this function directly. Used internally by various editor tools.
 
@@ -191,7 +191,7 @@ Only exposed for the purpose of overriding. You cannot call this function direct
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_get_shader_rid**\ (\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_get_shader_rid**\ (\ ) |virtual| |const| :ref:`🔗<class_Material_private_method__get_shader_rid>`
 
 Only exposed for the purpose of overriding. You cannot call this function directly. Used internally by various editor tools. Used to access the RID of the **Material**'s :ref:`Shader<class_Shader>`.
 
@@ -203,7 +203,7 @@ Only exposed for the purpose of overriding. You cannot call this function direct
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **create_placeholder**\ (\ ) |const|
+:ref:`Resource<class_Resource>` **create_placeholder**\ (\ ) |const| :ref:`🔗<class_Material_method_create_placeholder>`
 
 Creates a placeholder version of this resource (:ref:`PlaceholderMaterial<class_PlaceholderMaterial>`).
 
@@ -215,7 +215,7 @@ Creates a placeholder version of this resource (:ref:`PlaceholderMaterial<class_
 
 .. rst-class:: classref-method
 
-|void| **inspect_native_shader_code**\ (\ )
+|void| **inspect_native_shader_code**\ (\ ) :ref:`🔗<class_Material_method_inspect_native_shader_code>`
 
 Only available when running in the editor. Opens a popup that visualizes the generated shader code, including all variants and internal shader code.
 

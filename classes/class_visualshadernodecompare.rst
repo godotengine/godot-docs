@@ -50,7 +50,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ComparisonType**:
+enum **ComparisonType**: :ref:`🔗<enum_VisualShaderNodeCompare_ComparisonType>`
 
 .. _class_VisualShaderNodeCompare_constant_CTYPE_SCALAR:
 
@@ -132,7 +132,7 @@ Represents the size of the :ref:`ComparisonType<enum_VisualShaderNodeCompare_Com
 
 .. rst-class:: classref-enumeration
 
-enum **Function**:
+enum **Function**: :ref:`🔗<enum_VisualShaderNodeCompare_Function>`
 
 .. _class_VisualShaderNodeCompare_constant_FUNC_EQUAL:
 
@@ -198,7 +198,7 @@ Represents the size of the :ref:`Function<enum_VisualShaderNodeCompare_Function>
 
 .. rst-class:: classref-enumeration
 
-enum **Condition**:
+enum **Condition**: :ref:`🔗<enum_VisualShaderNodeCompare_Condition>`
 
 .. _class_VisualShaderNodeCompare_constant_COND_ALL:
 
@@ -237,7 +237,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **condition** = ``0``
+:ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **condition** = ``0`` :ref:`🔗<class_VisualShaderNodeCompare_property_condition>`
 
 .. rst-class:: classref-property-setget
 
@@ -254,7 +254,7 @@ Extra condition which is applied if :ref:`type<class_VisualShaderNodeCompare_pro
 
 .. rst-class:: classref-property
 
-:ref:`Function<enum_VisualShaderNodeCompare_Function>` **function** = ``0``
+:ref:`Function<enum_VisualShaderNodeCompare_Function>` **function** = ``0`` :ref:`🔗<class_VisualShaderNodeCompare_property_function>`
 
 .. rst-class:: classref-property-setget
 
@@ -271,7 +271,7 @@ A comparison function. See :ref:`Function<enum_VisualShaderNodeCompare_Function>
 
 .. rst-class:: classref-property
 
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **type** = ``0``
+:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **type** = ``0`` :ref:`🔗<class_VisualShaderNodeCompare_property_type>`
 
 .. rst-class:: classref-property-setget
 

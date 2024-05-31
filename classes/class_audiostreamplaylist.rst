@@ -61,7 +61,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**MAX_STREAMS** = ``64``
+**MAX_STREAMS** = ``64`` :ref:`🔗<class_AudioStreamPlaylist_constant_MAX_STREAMS>`
 
 Maximum amount of streams supported in the playlist.
 
@@ -78,7 +78,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fade_time** = ``0.3``
+:ref:`float<class_float>` **fade_time** = ``0.3`` :ref:`🔗<class_AudioStreamPlaylist_property_fade_time>`
 
 .. rst-class:: classref-property-setget
 
@@ -95,7 +95,7 @@ Fade time used when a stream ends, when going to the next one. Streams are expec
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **loop** = ``true``
+:ref:`bool<class_bool>` **loop** = ``true`` :ref:`🔗<class_AudioStreamPlaylist_property_loop>`
 
 .. rst-class:: classref-property-setget
 
@@ -112,7 +112,7 @@ If true, the playlist will loop, otherwise the playlist when end when the last s
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shuffle** = ``false``
+:ref:`bool<class_bool>` **shuffle** = ``false`` :ref:`🔗<class_AudioStreamPlaylist_property_shuffle>`
 
 .. rst-class:: classref-property-setget
 
@@ -129,7 +129,7 @@ Shuffle the playlist. Streams are played in random order.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stream_count** = ``0``
+:ref:`int<class_int>` **stream_count** = ``0`` :ref:`🔗<class_AudioStreamPlaylist_property_stream_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -151,7 +151,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_bpm**\ (\ ) |const|
+:ref:`float<class_float>` **get_bpm**\ (\ ) |const| :ref:`🔗<class_AudioStreamPlaylist_method_get_bpm>`
 
 Return the bpm of the playlist, which can vary depending on the clip being played.
 
@@ -163,7 +163,7 @@ Return the bpm of the playlist, which can vary depending on the clip being playe
 
 .. rst-class:: classref-method
 
-:ref:`AudioStream<class_AudioStream>` **get_list_stream**\ (\ stream_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`AudioStream<class_AudioStream>` **get_list_stream**\ (\ stream_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamPlaylist_method_get_list_stream>`
 
 Get the stream at playback position index.
 
@@ -175,7 +175,7 @@ Get the stream at playback position index.
 
 .. rst-class:: classref-method
 
-|void| **set_list_stream**\ (\ stream_index\: :ref:`int<class_int>`, audio_stream\: :ref:`AudioStream<class_AudioStream>`\ )
+|void| **set_list_stream**\ (\ stream_index\: :ref:`int<class_int>`, audio_stream\: :ref:`AudioStream<class_AudioStream>`\ ) :ref:`🔗<class_AudioStreamPlaylist_method_set_list_stream>`
 
 Set the stream at playback position index.
 

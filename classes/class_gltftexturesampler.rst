@@ -59,7 +59,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **mag_filter** = ``9729``
+:ref:`int<class_int>` **mag_filter** = ``9729`` :ref:`🔗<class_GLTFTextureSampler_property_mag_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -76,7 +76,7 @@ Texture's magnification filter, used when texture appears larger on screen than 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **min_filter** = ``9987``
+:ref:`int<class_int>` **min_filter** = ``9987`` :ref:`🔗<class_GLTFTextureSampler_property_min_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -93,7 +93,7 @@ Texture's minification filter, used when the texture appears smaller on screen t
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **wrap_s** = ``10497``
+:ref:`int<class_int>` **wrap_s** = ``10497`` :ref:`🔗<class_GLTFTextureSampler_property_wrap_s>`
 
 .. rst-class:: classref-property-setget
 
@@ -110,7 +110,7 @@ Wrapping mode to use for S-axis (horizontal) texture coordinates.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **wrap_t** = ``10497``
+:ref:`int<class_int>` **wrap_t** = ``10497`` :ref:`🔗<class_GLTFTextureSampler_property_wrap_t>`
 
 .. rst-class:: classref-property-setget
 

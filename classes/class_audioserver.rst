@@ -153,7 +153,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**bus_layout_changed**\ (\ )
+**bus_layout_changed**\ (\ ) :ref:`🔗<class_AudioServer_signal_bus_layout_changed>`
 
 Emitted when an audio bus is added, deleted, or moved.
 
@@ -165,7 +165,7 @@ Emitted when an audio bus is added, deleted, or moved.
 
 .. rst-class:: classref-signal
 
-**bus_renamed**\ (\ bus_index\: :ref:`int<class_int>`, old_name\: :ref:`StringName<class_StringName>`, new_name\: :ref:`StringName<class_StringName>`\ )
+**bus_renamed**\ (\ bus_index\: :ref:`int<class_int>`, old_name\: :ref:`StringName<class_StringName>`, new_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AudioServer_signal_bus_renamed>`
 
 Emitted when the audio bus at ``bus_index`` is renamed from ``old_name`` to ``new_name``.
 
@@ -182,7 +182,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **SpeakerMode**:
+enum **SpeakerMode**: :ref:`🔗<enum_AudioServer_SpeakerMode>`
 
 .. _class_AudioServer_constant_SPEAKER_MODE_STEREO:
 
@@ -229,7 +229,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bus_count** = ``1``
+:ref:`int<class_int>` **bus_count** = ``1`` :ref:`🔗<class_AudioServer_property_bus_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -246,7 +246,7 @@ Number of available audio buses.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **input_device** = ``"Default"``
+:ref:`String<class_String>` **input_device** = ``"Default"`` :ref:`🔗<class_AudioServer_property_input_device>`
 
 .. rst-class:: classref-property-setget
 
@@ -265,7 +265,7 @@ Name of the current device for audio input (see :ref:`get_input_device_list<clas
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **output_device** = ``"Default"``
+:ref:`String<class_String>` **output_device** = ``"Default"`` :ref:`🔗<class_AudioServer_property_output_device>`
 
 .. rst-class:: classref-property-setget
 
@@ -282,7 +282,7 @@ Name of the current device for audio output (see :ref:`get_output_device_list<cl
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **playback_speed_scale** = ``1.0``
+:ref:`float<class_float>` **playback_speed_scale** = ``1.0`` :ref:`🔗<class_AudioServer_property_playback_speed_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -304,7 +304,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_bus**\ (\ at_position\: :ref:`int<class_int>` = -1\ )
+|void| **add_bus**\ (\ at_position\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_AudioServer_method_add_bus>`
 
 Adds a bus at ``at_position``.
 
@@ -316,7 +316,7 @@ Adds a bus at ``at_position``.
 
 .. rst-class:: classref-method
 
-|void| **add_bus_effect**\ (\ bus_idx\: :ref:`int<class_int>`, effect\: :ref:`AudioEffect<class_AudioEffect>`, at_position\: :ref:`int<class_int>` = -1\ )
+|void| **add_bus_effect**\ (\ bus_idx\: :ref:`int<class_int>`, effect\: :ref:`AudioEffect<class_AudioEffect>`, at_position\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_AudioServer_method_add_bus_effect>`
 
 Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at ``at_position``.
 
@@ -328,7 +328,7 @@ Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at `
 
 .. rst-class:: classref-method
 
-:ref:`AudioBusLayout<class_AudioBusLayout>` **generate_bus_layout**\ (\ ) |const|
+:ref:`AudioBusLayout<class_AudioBusLayout>` **generate_bus_layout**\ (\ ) |const| :ref:`🔗<class_AudioServer_method_generate_bus_layout>`
 
 Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available buses and effects.
 
@@ -340,7 +340,7 @@ Generates an :ref:`AudioBusLayout<class_AudioBusLayout>` using the available bus
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_bus_channels**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_bus_channels**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioServer_method_get_bus_channels>`
 
 Returns the number of channels of the bus at index ``bus_idx``.
 
@@ -352,7 +352,7 @@ Returns the number of channels of the bus at index ``bus_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`AudioEffect<class_AudioEffect>` **get_bus_effect**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`\ )
+:ref:`AudioEffect<class_AudioEffect>` **get_bus_effect**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioServer_method_get_bus_effect>`
 
 Returns the :ref:`AudioEffect<class_AudioEffect>` at position ``effect_idx`` in bus ``bus_idx``.
 
@@ -364,7 +364,7 @@ Returns the :ref:`AudioEffect<class_AudioEffect>` at position ``effect_idx`` in 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_bus_effect_count**\ (\ bus_idx\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **get_bus_effect_count**\ (\ bus_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioServer_method_get_bus_effect_count>`
 
 Returns the number of effects on the bus at ``bus_idx``.
 
@@ -376,7 +376,7 @@ Returns the number of effects on the bus at ``bus_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`AudioEffectInstance<class_AudioEffectInstance>` **get_bus_effect_instance**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`, channel\: :ref:`int<class_int>` = 0\ )
+:ref:`AudioEffectInstance<class_AudioEffectInstance>` **get_bus_effect_instance**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`, channel\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_AudioServer_method_get_bus_effect_instance>`
 
 Returns the :ref:`AudioEffectInstance<class_AudioEffectInstance>` assigned to the given bus and effect indices (and optionally channel).
 
@@ -388,7 +388,7 @@ Returns the :ref:`AudioEffectInstance<class_AudioEffectInstance>` assigned to th
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_bus_index**\ (\ bus_name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`int<class_int>` **get_bus_index**\ (\ bus_name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_AudioServer_method_get_bus_index>`
 
 Returns the index of the bus with the name ``bus_name``. Returns ``-1`` if no bus with the specified name exist.
 
@@ -400,7 +400,7 @@ Returns the index of the bus with the name ``bus_name``. Returns ``-1`` if no bu
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_bus_name**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_bus_name**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioServer_method_get_bus_name>`
 
 Returns the name of the bus with the index ``bus_idx``.
 
@@ -412,7 +412,7 @@ Returns the name of the bus with the index ``bus_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_bus_peak_volume_left_db**\ (\ bus_idx\: :ref:`int<class_int>`, channel\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_bus_peak_volume_left_db**\ (\ bus_idx\: :ref:`int<class_int>`, channel\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioServer_method_get_bus_peak_volume_left_db>`
 
 Returns the peak volume of the left speaker at bus index ``bus_idx`` and channel index ``channel``.
 
@@ -424,7 +424,7 @@ Returns the peak volume of the left speaker at bus index ``bus_idx`` and channel
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_bus_peak_volume_right_db**\ (\ bus_idx\: :ref:`int<class_int>`, channel\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_bus_peak_volume_right_db**\ (\ bus_idx\: :ref:`int<class_int>`, channel\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioServer_method_get_bus_peak_volume_right_db>`
 
 Returns the peak volume of the right speaker at bus index ``bus_idx`` and channel index ``channel``.
 
@@ -436,7 +436,7 @@ Returns the peak volume of the right speaker at bus index ``bus_idx`` and channe
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_bus_send**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`StringName<class_StringName>` **get_bus_send**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioServer_method_get_bus_send>`
 
 Returns the name of the bus that the bus at index ``bus_idx`` sends to.
 
@@ -448,7 +448,7 @@ Returns the name of the bus that the bus at index ``bus_idx`` sends to.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_bus_volume_db**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **get_bus_volume_db**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioServer_method_get_bus_volume_db>`
 
 Returns the volume of the bus at index ``bus_idx`` in dB.
 
@@ -460,7 +460,7 @@ Returns the volume of the bus at index ``bus_idx`` in dB.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_input_device_list**\ (\ )
+:ref:`PackedStringArray<class_PackedStringArray>` **get_input_device_list**\ (\ ) :ref:`🔗<class_AudioServer_method_get_input_device_list>`
 
 Returns the names of all audio input devices detected on the system.
 
@@ -474,7 +474,7 @@ Returns the names of all audio input devices detected on the system.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_mix_rate**\ (\ ) |const|
+:ref:`float<class_float>` **get_mix_rate**\ (\ ) |const| :ref:`🔗<class_AudioServer_method_get_mix_rate>`
 
 Returns the sample rate at the output of the **AudioServer**.
 
@@ -486,7 +486,7 @@ Returns the sample rate at the output of the **AudioServer**.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_output_device_list**\ (\ )
+:ref:`PackedStringArray<class_PackedStringArray>` **get_output_device_list**\ (\ ) :ref:`🔗<class_AudioServer_method_get_output_device_list>`
 
 Returns the names of all audio output devices detected on the system.
 
@@ -498,7 +498,7 @@ Returns the names of all audio output devices detected on the system.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_output_latency**\ (\ ) |const|
+:ref:`float<class_float>` **get_output_latency**\ (\ ) |const| :ref:`🔗<class_AudioServer_method_get_output_latency>`
 
 Returns the audio driver's effective output latency. This is based on :ref:`ProjectSettings.audio/driver/output_latency<class_ProjectSettings_property_audio/driver/output_latency>`, but the exact returned value will differ depending on the operating system and audio driver.
 
@@ -512,7 +512,7 @@ Returns the audio driver's effective output latency. This is based on :ref:`Proj
 
 .. rst-class:: classref-method
 
-:ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **get_speaker_mode**\ (\ ) |const|
+:ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **get_speaker_mode**\ (\ ) |const| :ref:`🔗<class_AudioServer_method_get_speaker_mode>`
 
 Returns the speaker configuration.
 
@@ -524,7 +524,7 @@ Returns the speaker configuration.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_time_since_last_mix**\ (\ ) |const|
+:ref:`float<class_float>` **get_time_since_last_mix**\ (\ ) |const| :ref:`🔗<class_AudioServer_method_get_time_since_last_mix>`
 
 Returns the relative time since the last mix occurred.
 
@@ -536,7 +536,7 @@ Returns the relative time since the last mix occurred.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_time_to_next_mix**\ (\ ) |const|
+:ref:`float<class_float>` **get_time_to_next_mix**\ (\ ) |const| :ref:`🔗<class_AudioServer_method_get_time_to_next_mix>`
 
 Returns the relative time until the next mix occurs.
 
@@ -548,7 +548,7 @@ Returns the relative time until the next mix occurs.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_bus_bypassing_effects**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_bus_bypassing_effects**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioServer_method_is_bus_bypassing_effects>`
 
 If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
@@ -560,7 +560,7 @@ If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_bus_effect_enabled**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_bus_effect_enabled**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioServer_method_is_bus_effect_enabled>`
 
 If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` is enabled.
 
@@ -572,7 +572,7 @@ If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_bus_mute**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_bus_mute**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioServer_method_is_bus_mute>`
 
 If ``true``, the bus at index ``bus_idx`` is muted.
 
@@ -584,7 +584,7 @@ If ``true``, the bus at index ``bus_idx`` is muted.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_bus_solo**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_bus_solo**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioServer_method_is_bus_solo>`
 
 If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
@@ -596,7 +596,7 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 .. rst-class:: classref-method
 
-|void| **lock**\ (\ )
+|void| **lock**\ (\ ) :ref:`🔗<class_AudioServer_method_lock>`
 
 Locks the audio driver's main loop.
 
@@ -610,7 +610,7 @@ Locks the audio driver's main loop.
 
 .. rst-class:: classref-method
 
-|void| **move_bus**\ (\ index\: :ref:`int<class_int>`, to_index\: :ref:`int<class_int>`\ )
+|void| **move_bus**\ (\ index\: :ref:`int<class_int>`, to_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioServer_method_move_bus>`
 
 Moves the bus from index ``index`` to index ``to_index``.
 
@@ -622,7 +622,7 @@ Moves the bus from index ``index`` to index ``to_index``.
 
 .. rst-class:: classref-method
 
-|void| **remove_bus**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **remove_bus**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioServer_method_remove_bus>`
 
 Removes the bus at index ``index``.
 
@@ -634,7 +634,7 @@ Removes the bus at index ``index``.
 
 .. rst-class:: classref-method
 
-|void| **remove_bus_effect**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`\ )
+|void| **remove_bus_effect**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioServer_method_remove_bus_effect>`
 
 Removes the effect at index ``effect_idx`` from the bus at index ``bus_idx``.
 
@@ -646,7 +646,7 @@ Removes the effect at index ``effect_idx`` from the bus at index ``bus_idx``.
 
 .. rst-class:: classref-method
 
-|void| **set_bus_bypass_effects**\ (\ bus_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_bus_bypass_effects**\ (\ bus_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_AudioServer_method_set_bus_bypass_effects>`
 
 If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
@@ -658,7 +658,7 @@ If ``true``, the bus at index ``bus_idx`` is bypassing effects.
 
 .. rst-class:: classref-method
 
-|void| **set_bus_effect_enabled**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_bus_effect_enabled**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_AudioServer_method_set_bus_effect_enabled>`
 
 If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` is enabled.
 
@@ -670,7 +670,7 @@ If ``true``, the effect at index ``effect_idx`` on the bus at index ``bus_idx`` 
 
 .. rst-class:: classref-method
 
-|void| **set_bus_layout**\ (\ bus_layout\: :ref:`AudioBusLayout<class_AudioBusLayout>`\ )
+|void| **set_bus_layout**\ (\ bus_layout\: :ref:`AudioBusLayout<class_AudioBusLayout>`\ ) :ref:`🔗<class_AudioServer_method_set_bus_layout>`
 
 Overwrites the currently used :ref:`AudioBusLayout<class_AudioBusLayout>`.
 
@@ -682,7 +682,7 @@ Overwrites the currently used :ref:`AudioBusLayout<class_AudioBusLayout>`.
 
 .. rst-class:: classref-method
 
-|void| **set_bus_mute**\ (\ bus_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_bus_mute**\ (\ bus_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_AudioServer_method_set_bus_mute>`
 
 If ``true``, the bus at index ``bus_idx`` is muted.
 
@@ -694,7 +694,7 @@ If ``true``, the bus at index ``bus_idx`` is muted.
 
 .. rst-class:: classref-method
 
-|void| **set_bus_name**\ (\ bus_idx\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )
+|void| **set_bus_name**\ (\ bus_idx\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AudioServer_method_set_bus_name>`
 
 Sets the name of the bus at index ``bus_idx`` to ``name``.
 
@@ -706,7 +706,7 @@ Sets the name of the bus at index ``bus_idx`` to ``name``.
 
 .. rst-class:: classref-method
 
-|void| **set_bus_send**\ (\ bus_idx\: :ref:`int<class_int>`, send\: :ref:`StringName<class_StringName>`\ )
+|void| **set_bus_send**\ (\ bus_idx\: :ref:`int<class_int>`, send\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AudioServer_method_set_bus_send>`
 
 Connects the output of the bus at ``bus_idx`` to the bus named ``send``.
 
@@ -718,7 +718,7 @@ Connects the output of the bus at ``bus_idx`` to the bus named ``send``.
 
 .. rst-class:: classref-method
 
-|void| **set_bus_solo**\ (\ bus_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_bus_solo**\ (\ bus_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_AudioServer_method_set_bus_solo>`
 
 If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
@@ -730,7 +730,7 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 .. rst-class:: classref-method
 
-|void| **set_bus_volume_db**\ (\ bus_idx\: :ref:`int<class_int>`, volume_db\: :ref:`float<class_float>`\ )
+|void| **set_bus_volume_db**\ (\ bus_idx\: :ref:`int<class_int>`, volume_db\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioServer_method_set_bus_volume_db>`
 
 Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
 
@@ -742,7 +742,7 @@ Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
 
 .. rst-class:: classref-method
 
-|void| **set_enable_tagging_used_audio_streams**\ (\ enable\: :ref:`bool<class_bool>`\ )
+|void| **set_enable_tagging_used_audio_streams**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_AudioServer_method_set_enable_tagging_used_audio_streams>`
 
 If set to ``true``, all instances of :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` will call :ref:`AudioStreamPlayback._tag_used_streams<class_AudioStreamPlayback_private_method__tag_used_streams>` every mix step.
 
@@ -756,7 +756,7 @@ If set to ``true``, all instances of :ref:`AudioStreamPlayback<class_AudioStream
 
 .. rst-class:: classref-method
 
-|void| **swap_bus_effects**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`, by_effect_idx\: :ref:`int<class_int>`\ )
+|void| **swap_bus_effects**\ (\ bus_idx\: :ref:`int<class_int>`, effect_idx\: :ref:`int<class_int>`, by_effect_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioServer_method_swap_bus_effects>`
 
 Swaps the position of two effects in bus ``bus_idx``.
 
@@ -768,7 +768,7 @@ Swaps the position of two effects in bus ``bus_idx``.
 
 .. rst-class:: classref-method
 
-|void| **unlock**\ (\ )
+|void| **unlock**\ (\ ) :ref:`🔗<class_AudioServer_method_unlock>`
 
 Unlocks the audio driver's main loop. (After locking it, you should always unlock it.)
 

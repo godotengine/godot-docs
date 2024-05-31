@@ -108,7 +108,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **execute**\ (\ inputs\: :ref:`Array<class_Array>` = [], base_instance\: :ref:`Object<class_Object>` = null, show_error\: :ref:`bool<class_bool>` = true, const_calls_only\: :ref:`bool<class_bool>` = false\ )
+:ref:`Variant<class_Variant>` **execute**\ (\ inputs\: :ref:`Array<class_Array>` = [], base_instance\: :ref:`Object<class_Object>` = null, show_error\: :ref:`bool<class_bool>` = true, const_calls_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Expression_method_execute>`
 
 Executes the expression that was previously parsed by :ref:`parse<class_Expression_method_parse>` and returns the result. Before you use the returned object, you should check if the method failed by calling :ref:`has_execute_failed<class_Expression_method_has_execute_failed>`.
 
@@ -122,7 +122,7 @@ If you defined input variables in :ref:`parse<class_Expression_method_parse>`, y
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_error_text**\ (\ ) |const|
+:ref:`String<class_String>` **get_error_text**\ (\ ) |const| :ref:`🔗<class_Expression_method_get_error_text>`
 
 Returns the error text if :ref:`parse<class_Expression_method_parse>` or :ref:`execute<class_Expression_method_execute>` has failed.
 
@@ -134,7 +134,7 @@ Returns the error text if :ref:`parse<class_Expression_method_parse>` or :ref:`e
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_execute_failed**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_execute_failed**\ (\ ) |const| :ref:`🔗<class_Expression_method_has_execute_failed>`
 
 Returns ``true`` if :ref:`execute<class_Expression_method_execute>` has failed.
 
@@ -146,7 +146,7 @@ Returns ``true`` if :ref:`execute<class_Expression_method_execute>` has failed.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **parse**\ (\ expression\: :ref:`String<class_String>`, input_names\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray()\ )
+:ref:`Error<enum_@GlobalScope_Error>` **parse**\ (\ expression\: :ref:`String<class_String>`, input_names\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray()\ ) :ref:`🔗<class_Expression_method_parse>`
 
 Parses the expression and returns an :ref:`Error<enum_@GlobalScope_Error>` code.
 

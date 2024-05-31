@@ -55,7 +55,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **panel**
+:ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_Panel_theme_style_panel>`
 
 The :ref:`StyleBox<class_StyleBox>` of this control.
 

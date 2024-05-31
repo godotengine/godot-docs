@@ -76,7 +76,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FillMode**:
+enum **FillMode**: :ref:`🔗<enum_ProgressBar_FillMode>`
 
 .. _class_ProgressBar_constant_FILL_BEGIN_TO_END:
 
@@ -123,7 +123,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor_preview_indeterminate**
+:ref:`bool<class_bool>` **editor_preview_indeterminate** :ref:`🔗<class_ProgressBar_property_editor_preview_indeterminate>`
 
 .. rst-class:: classref-property-setget
 
@@ -140,7 +140,7 @@ If ``false``, the :ref:`indeterminate<class_ProgressBar_property_indeterminate>`
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **fill_mode** = ``0``
+:ref:`int<class_int>` **fill_mode** = ``0`` :ref:`🔗<class_ProgressBar_property_fill_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +157,7 @@ The fill direction. See :ref:`FillMode<enum_ProgressBar_FillMode>` for possible 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **indeterminate** = ``false``
+:ref:`bool<class_bool>` **indeterminate** = ``false`` :ref:`🔗<class_ProgressBar_property_indeterminate>`
 
 .. rst-class:: classref-property-setget
 
@@ -174,7 +174,7 @@ When set to ``true``, the progress bar indicates that something is happening wit
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **show_percentage** = ``true``
+:ref:`bool<class_bool>` **show_percentage** = ``true`` :ref:`🔗<class_ProgressBar_property_show_percentage>`
 
 .. rst-class:: classref-property-setget
 
@@ -196,7 +196,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_color** = ``Color(0.95, 0.95, 0.95, 1)``
+:ref:`Color<class_Color>` **font_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_ProgressBar_theme_color_font_color>`
 
 The color of the text.
 
@@ -208,7 +208,7 @@ The color of the text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_ProgressBar_theme_color_font_outline_color>`
 
 The tint of text outline of the **ProgressBar**.
 
@@ -220,7 +220,7 @@ The tint of text outline of the **ProgressBar**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **outline_size** = ``0``
+:ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_ProgressBar_theme_constant_outline_size>`
 
 The size of the text outline.
 
@@ -234,7 +234,7 @@ The size of the text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_ProgressBar_theme_font_font>`
 
 Font used to draw the fill percentage if :ref:`show_percentage<class_ProgressBar_property_show_percentage>` is ``true``.
 
@@ -246,7 +246,7 @@ Font used to draw the fill percentage if :ref:`show_percentage<class_ProgressBar
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **font_size**
+:ref:`int<class_int>` **font_size** :ref:`🔗<class_ProgressBar_theme_font_size_font_size>`
 
 Font size used to draw the fill percentage if :ref:`show_percentage<class_ProgressBar_property_show_percentage>` is ``true``.
 
@@ -258,7 +258,7 @@ Font size used to draw the fill percentage if :ref:`show_percentage<class_Progre
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **background**
+:ref:`StyleBox<class_StyleBox>` **background** :ref:`🔗<class_ProgressBar_theme_style_background>`
 
 The style of the background.
 
@@ -270,7 +270,7 @@ The style of the background.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **fill**
+:ref:`StyleBox<class_StyleBox>` **fill** :ref:`🔗<class_ProgressBar_theme_style_fill>`
 
 The style of the progress (i.e. the part that fills the bar).
 

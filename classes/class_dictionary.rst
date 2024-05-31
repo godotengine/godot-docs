@@ -291,7 +291,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`Dictionary<class_Dictionary>` **Dictionary**\ (\ )
+:ref:`Dictionary<class_Dictionary>` **Dictionary**\ (\ ) :ref:`🔗<class_Dictionary_constructor_Dictionary>`
 
 Constructs an empty **Dictionary**.
 
@@ -318,7 +318,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_Dictionary_method_clear>`
 
 Clears the dictionary, removing all entries from it.
 
@@ -330,7 +330,7 @@ Clears the dictionary, removing all entries from it.
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **duplicate**\ (\ deep\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **duplicate**\ (\ deep\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Dictionary_method_duplicate>`
 
 Creates and returns a new copy of the dictionary. If ``deep`` is ``true``, inner **Dictionary** and :ref:`Array<class_Array>` keys and values are also copied, recursively.
 
@@ -342,7 +342,7 @@ Creates and returns a new copy of the dictionary. If ``deep`` is ``true``, inner
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **erase**\ (\ key\: :ref:`Variant<class_Variant>`\ )
+:ref:`bool<class_bool>` **erase**\ (\ key\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Dictionary_method_erase>`
 
 Removes the dictionary entry by key, if it exists. Returns ``true`` if the given ``key`` existed in the dictionary, otherwise ``false``.
 
@@ -356,7 +356,7 @@ Removes the dictionary entry by key, if it exists. Returns ``true`` if the given
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **find_key**\ (\ value\: :ref:`Variant<class_Variant>`\ ) |const|
+:ref:`Variant<class_Variant>` **find_key**\ (\ value\: :ref:`Variant<class_Variant>`\ ) |const| :ref:`🔗<class_Dictionary_method_find_key>`
 
 Finds and returns the first key whose associated value is equal to ``value``, or ``null`` if it is not found.
 
@@ -370,7 +370,7 @@ Finds and returns the first key whose associated value is equal to ``value``, or
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get**\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ ) |const|
+:ref:`Variant<class_Variant>` **get**\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ ) |const| :ref:`🔗<class_Dictionary_method_get>`
 
 Returns the corresponding value for the given ``key`` in the dictionary. If the ``key`` does not exist, returns ``default``, or ``null`` if the parameter is omitted.
 
@@ -382,7 +382,7 @@ Returns the corresponding value for the given ``key`` in the dictionary. If the 
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_or_add**\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ )
+:ref:`Variant<class_Variant>` **get_or_add**\ (\ key\: :ref:`Variant<class_Variant>`, default\: :ref:`Variant<class_Variant>` = null\ ) :ref:`🔗<class_Dictionary_method_get_or_add>`
 
 Gets a value and ensures the key is set. If the ``key`` exists in the dictionary, this behaves like :ref:`get<class_Dictionary_method_get>`. Otherwise, the ``default`` value is inserted into the dictionary and returned.
 
@@ -394,7 +394,7 @@ Gets a value and ensures the key is set. If the ``key`` exists in the dictionary
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has**\ (\ key\: :ref:`Variant<class_Variant>`\ ) |const|
+:ref:`bool<class_bool>` **has**\ (\ key\: :ref:`Variant<class_Variant>`\ ) |const| :ref:`🔗<class_Dictionary_method_has>`
 
 Returns ``true`` if the dictionary contains an entry with the given ``key``.
 
@@ -443,7 +443,7 @@ In GDScript, this is equivalent to the ``in`` operator:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_all**\ (\ keys\: :ref:`Array<class_Array>`\ ) |const|
+:ref:`bool<class_bool>` **has_all**\ (\ keys\: :ref:`Array<class_Array>`\ ) |const| :ref:`🔗<class_Dictionary_method_has_all>`
 
 Returns ``true`` if the dictionary contains all keys in the given ``keys`` array.
 
@@ -460,7 +460,7 @@ Returns ``true`` if the dictionary contains all keys in the given ``keys`` array
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **hash**\ (\ ) |const|
+:ref:`int<class_int>` **hash**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_hash>`
 
 Returns a hashed 32-bit integer value representing the dictionary contents.
 
@@ -496,7 +496,7 @@ Returns a hashed 32-bit integer value representing the dictionary contents.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_is_empty>`
 
 Returns ``true`` if the dictionary is empty (its size is ``0``). See also :ref:`size<class_Dictionary_method_size>`.
 
@@ -508,7 +508,7 @@ Returns ``true`` if the dictionary is empty (its size is ``0``). See also :ref:`
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_read_only**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_read_only**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_is_read_only>`
 
 Returns ``true`` if the dictionary is read-only. See :ref:`make_read_only<class_Dictionary_method_make_read_only>`. Dictionaries are automatically read-only if declared with ``const`` keyword.
 
@@ -520,7 +520,7 @@ Returns ``true`` if the dictionary is read-only. See :ref:`make_read_only<class_
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **keys**\ (\ ) |const|
+:ref:`Array<class_Array>` **keys**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_keys>`
 
 Returns the list of keys in the dictionary.
 
@@ -532,7 +532,7 @@ Returns the list of keys in the dictionary.
 
 .. rst-class:: classref-method
 
-|void| **make_read_only**\ (\ )
+|void| **make_read_only**\ (\ ) :ref:`🔗<class_Dictionary_method_make_read_only>`
 
 Makes the dictionary read-only, i.e. disables modification of the dictionary's contents. Does not apply to nested content, e.g. content of nested dictionaries.
 
@@ -544,7 +544,7 @@ Makes the dictionary read-only, i.e. disables modification of the dictionary's c
 
 .. rst-class:: classref-method
 
-|void| **merge**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ )
+|void| **merge**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Dictionary_method_merge>`
 
 Adds entries from ``dictionary`` to this dictionary. By default, duplicate keys are not copied over, unless ``overwrite`` is ``true``.
 
@@ -598,7 +598,7 @@ Adds entries from ``dictionary`` to this dictionary. By default, duplicate keys 
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **merged**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **merged**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`, overwrite\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Dictionary_method_merged>`
 
 Returns a copy of this dictionary merged with the other ``dictionary``. By default, duplicate keys are not copied over, unless ``overwrite`` is ``true``. See also :ref:`merge<class_Dictionary_method_merge>`.
 
@@ -623,7 +623,7 @@ See also :ref:`merge<class_Dictionary_method_merge>`.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **size**\ (\ ) |const|
+:ref:`int<class_int>` **size**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_size>`
 
 Returns the number of entries in the dictionary. Empty dictionaries (``{ }``) always return ``0``. See also :ref:`is_empty<class_Dictionary_method_is_empty>`.
 
@@ -635,7 +635,7 @@ Returns the number of entries in the dictionary. Empty dictionaries (``{ }``) al
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **values**\ (\ ) |const|
+:ref:`Array<class_Array>` **values**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_values>`
 
 Returns the list of values in this dictionary.
 
@@ -652,7 +652,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Dictionary<class_Dictionary>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_Dictionary_operator_neq_Dictionary>`
 
 Returns ``true`` if the two dictionaries do not contain the same keys and values.
 
@@ -664,7 +664,7 @@ Returns ``true`` if the two dictionaries do not contain the same keys and values
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Dictionary<class_Dictionary>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_Dictionary_operator_eq_Dictionary>`
 
 Returns ``true`` if the two dictionaries contain the same keys and values. The order of the entries does not matter.
 
@@ -678,7 +678,7 @@ Returns ``true`` if the two dictionaries contain the same keys and values. The o
 
 .. rst-class:: classref-operator
 
-:ref:`Variant<class_Variant>` **operator []**\ (\ key\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **operator []**\ (\ key\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Dictionary_operator_idx_Variant>`
 
 Returns the corresponding value for the given ``key`` in the dictionary. If the entry does not exist, fails and returns ``null``. For safe access, use :ref:`get<class_Dictionary_method_get>` or :ref:`has<class_Dictionary_method_has>`.
 

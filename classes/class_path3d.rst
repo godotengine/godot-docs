@@ -48,7 +48,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**curve_changed**\ (\ )
+**curve_changed**\ (\ ) :ref:`🔗<class_Path3D_signal_curve_changed>`
 
 Emitted when the :ref:`curve<class_Path3D_property_curve>` changes.
 
@@ -65,7 +65,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Curve3D<class_Curve3D>` **curve**
+:ref:`Curve3D<class_Curve3D>` **curve** :ref:`🔗<class_Path3D_property_curve>`
 
 .. rst-class:: classref-property-setget
 

@@ -76,7 +76,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **RotationMode**:
+enum **RotationMode**: :ref:`🔗<enum_PathFollow3D_RotationMode>`
 
 .. _class_PathFollow3D_constant_ROTATION_NONE:
 
@@ -131,7 +131,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **cubic_interp** = ``true``
+:ref:`bool<class_bool>` **cubic_interp** = ``true`` :ref:`🔗<class_PathFollow3D_property_cubic_interp>`
 
 .. rst-class:: classref-property-setget
 
@@ -152,7 +152,7 @@ There are two answers to this problem: either increase the number of cached poin
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **h_offset** = ``0.0``
+:ref:`float<class_float>` **h_offset** = ``0.0`` :ref:`🔗<class_PathFollow3D_property_h_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -169,7 +169,7 @@ The node's offset along the curve.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **loop** = ``true``
+:ref:`bool<class_bool>` **loop** = ``true`` :ref:`🔗<class_PathFollow3D_property_loop>`
 
 .. rst-class:: classref-property-setget
 
@@ -186,7 +186,7 @@ If ``true``, any offset outside the path's length will wrap around, instead of s
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **progress** = ``0.0``
+:ref:`float<class_float>` **progress** = ``0.0`` :ref:`🔗<class_PathFollow3D_property_progress>`
 
 .. rst-class:: classref-property-setget
 
@@ -203,7 +203,7 @@ The distance from the first vertex, measured in 3D units along the path. Changin
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **progress_ratio** = ``0.0``
+:ref:`float<class_float>` **progress_ratio** = ``0.0`` :ref:`🔗<class_PathFollow3D_property_progress_ratio>`
 
 .. rst-class:: classref-property-setget
 
@@ -220,7 +220,7 @@ The distance from the first vertex, considering 0.0 as the first vertex and 1.0 
 
 .. rst-class:: classref-property
 
-:ref:`RotationMode<enum_PathFollow3D_RotationMode>` **rotation_mode** = ``3``
+:ref:`RotationMode<enum_PathFollow3D_RotationMode>` **rotation_mode** = ``3`` :ref:`🔗<class_PathFollow3D_property_rotation_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -237,7 +237,7 @@ Allows or forbids rotation on one or more axes, depending on the :ref:`RotationM
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **tilt_enabled** = ``true``
+:ref:`bool<class_bool>` **tilt_enabled** = ``true`` :ref:`🔗<class_PathFollow3D_property_tilt_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -254,7 +254,7 @@ If ``true``, the tilt property of :ref:`Curve3D<class_Curve3D>` takes effect.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_model_front** = ``false``
+:ref:`bool<class_bool>` **use_model_front** = ``false`` :ref:`🔗<class_PathFollow3D_property_use_model_front>`
 
 .. rst-class:: classref-property-setget
 
@@ -271,7 +271,7 @@ If ``true``, the node moves on the travel path with orienting the +Z axis as for
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **v_offset** = ``0.0``
+:ref:`float<class_float>` **v_offset** = ``0.0`` :ref:`🔗<class_PathFollow3D_property_v_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -293,7 +293,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **correct_posture**\ (\ transform\: :ref:`Transform3D<class_Transform3D>`, rotation_mode\: :ref:`RotationMode<enum_PathFollow3D_RotationMode>`\ ) |static|
+:ref:`Transform3D<class_Transform3D>` **correct_posture**\ (\ transform\: :ref:`Transform3D<class_Transform3D>`, rotation_mode\: :ref:`RotationMode<enum_PathFollow3D_RotationMode>`\ ) |static| :ref:`🔗<class_PathFollow3D_method_correct_posture>`
 
 Correct the ``transform``. ``rotation_mode`` implicitly specifies how posture (forward, up and sideway direction) is calculated.
 

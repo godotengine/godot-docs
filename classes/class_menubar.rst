@@ -142,7 +142,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flat** = ``false``
+:ref:`bool<class_bool>` **flat** = ``false`` :ref:`🔗<class_MenuBar_property_flat>`
 
 .. rst-class:: classref-property-setget
 
@@ -159,7 +159,7 @@ Flat **MenuBar** don't display item decoration.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **language** = ``""``
+:ref:`String<class_String>` **language** = ``""`` :ref:`🔗<class_MenuBar_property_language>`
 
 .. rst-class:: classref-property-setget
 
@@ -176,7 +176,7 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **prefer_global_menu** = ``true``
+:ref:`bool<class_bool>` **prefer_global_menu** = ``true`` :ref:`🔗<class_MenuBar_property_prefer_global_menu>`
 
 .. rst-class:: classref-property-setget
 
@@ -193,7 +193,7 @@ If ``true``, **MenuBar** will use system global menu when supported.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **start_index** = ``-1``
+:ref:`int<class_int>` **start_index** = ``-1`` :ref:`🔗<class_MenuBar_property_start_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -210,7 +210,7 @@ Position in the global menu to insert first **MenuBar** item at.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **switch_on_hover** = ``true``
+:ref:`bool<class_bool>` **switch_on_hover** = ``true`` :ref:`🔗<class_MenuBar_property_switch_on_hover>`
 
 .. rst-class:: classref-property-setget
 
@@ -227,7 +227,7 @@ If ``true``, when the cursor hovers above menu item, it will close the current :
 
 .. rst-class:: classref-property
 
-:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0``
+:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0`` :ref:`🔗<class_MenuBar_property_text_direction>`
 
 .. rst-class:: classref-property-setget
 
@@ -249,7 +249,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_menu_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_menu_count**\ (\ ) |const| :ref:`🔗<class_MenuBar_method_get_menu_count>`
 
 Returns number of menu items.
 
@@ -261,7 +261,7 @@ Returns number of menu items.
 
 .. rst-class:: classref-method
 
-:ref:`PopupMenu<class_PopupMenu>` **get_menu_popup**\ (\ menu\: :ref:`int<class_int>`\ ) |const|
+:ref:`PopupMenu<class_PopupMenu>` **get_menu_popup**\ (\ menu\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MenuBar_method_get_menu_popup>`
 
 Returns :ref:`PopupMenu<class_PopupMenu>` associated with menu item.
 
@@ -273,7 +273,7 @@ Returns :ref:`PopupMenu<class_PopupMenu>` associated with menu item.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_menu_title**\ (\ menu\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_menu_title**\ (\ menu\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MenuBar_method_get_menu_title>`
 
 Returns menu item title.
 
@@ -285,7 +285,7 @@ Returns menu item title.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_menu_tooltip**\ (\ menu\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_menu_tooltip**\ (\ menu\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MenuBar_method_get_menu_tooltip>`
 
 Returns menu item tooltip.
 
@@ -297,7 +297,7 @@ Returns menu item tooltip.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_menu_disabled**\ (\ menu\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_menu_disabled**\ (\ menu\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MenuBar_method_is_menu_disabled>`
 
 Returns ``true``, if menu item is disabled.
 
@@ -309,7 +309,7 @@ Returns ``true``, if menu item is disabled.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_menu_hidden**\ (\ menu\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_menu_hidden**\ (\ menu\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MenuBar_method_is_menu_hidden>`
 
 Returns ``true``, if menu item is hidden.
 
@@ -321,7 +321,7 @@ Returns ``true``, if menu item is hidden.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_native_menu**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_native_menu**\ (\ ) |const| :ref:`🔗<class_MenuBar_method_is_native_menu>`
 
 Returns ``true``, if system global menu is supported and used by this **MenuBar**.
 
@@ -333,7 +333,7 @@ Returns ``true``, if system global menu is supported and used by this **MenuBar*
 
 .. rst-class:: classref-method
 
-|void| **set_disable_shortcuts**\ (\ disabled\: :ref:`bool<class_bool>`\ )
+|void| **set_disable_shortcuts**\ (\ disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_MenuBar_method_set_disable_shortcuts>`
 
 If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
@@ -345,7 +345,7 @@ If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
 .. rst-class:: classref-method
 
-|void| **set_menu_disabled**\ (\ menu\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ )
+|void| **set_menu_disabled**\ (\ menu\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_MenuBar_method_set_menu_disabled>`
 
 If ``true``, menu item is disabled.
 
@@ -357,7 +357,7 @@ If ``true``, menu item is disabled.
 
 .. rst-class:: classref-method
 
-|void| **set_menu_hidden**\ (\ menu\: :ref:`int<class_int>`, hidden\: :ref:`bool<class_bool>`\ )
+|void| **set_menu_hidden**\ (\ menu\: :ref:`int<class_int>`, hidden\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_MenuBar_method_set_menu_hidden>`
 
 If ``true``, menu item is hidden.
 
@@ -369,7 +369,7 @@ If ``true``, menu item is hidden.
 
 .. rst-class:: classref-method
 
-|void| **set_menu_title**\ (\ menu\: :ref:`int<class_int>`, title\: :ref:`String<class_String>`\ )
+|void| **set_menu_title**\ (\ menu\: :ref:`int<class_int>`, title\: :ref:`String<class_String>`\ ) :ref:`🔗<class_MenuBar_method_set_menu_title>`
 
 Sets menu item title.
 
@@ -381,7 +381,7 @@ Sets menu item title.
 
 .. rst-class:: classref-method
 
-|void| **set_menu_tooltip**\ (\ menu\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ )
+|void| **set_menu_tooltip**\ (\ menu\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ ) :ref:`🔗<class_MenuBar_method_set_menu_tooltip>`
 
 Sets menu item tooltip.
 
@@ -398,7 +398,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)``
+:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_color>`
 
 Default text :ref:`Color<class_Color>` of the menu item.
 
@@ -410,7 +410,7 @@ Default text :ref:`Color<class_Color>` of the menu item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_disabled_color** = ``Color(0.875, 0.875, 0.875, 0.5)``
+:ref:`Color<class_Color>` **font_disabled_color** = ``Color(0.875, 0.875, 0.875, 0.5)`` :ref:`🔗<class_MenuBar_theme_color_font_disabled_color>`
 
 Text :ref:`Color<class_Color>` used when the menu item is disabled.
 
@@ -422,7 +422,7 @@ Text :ref:`Color<class_Color>` used when the menu item is disabled.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_focus_color** = ``Color(0.95, 0.95, 0.95, 1)``
+:ref:`Color<class_Color>` **font_focus_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_focus_color>`
 
 Text :ref:`Color<class_Color>` used when the menu item is focused. Only replaces the normal text color of the menu item. Disabled, hovered, and pressed states take precedence over this color.
 
@@ -434,7 +434,7 @@ Text :ref:`Color<class_Color>` used when the menu item is focused. Only replaces
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_hover_color** = ``Color(0.95, 0.95, 0.95, 1)``
+:ref:`Color<class_Color>` **font_hover_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_hover_color>`
 
 Text :ref:`Color<class_Color>` used when the menu item is being hovered.
 
@@ -446,7 +446,7 @@ Text :ref:`Color<class_Color>` used when the menu item is being hovered.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_hover_pressed_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_hover_pressed_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_hover_pressed_color>`
 
 Text :ref:`Color<class_Color>` used when the menu item is being hovered and pressed.
 
@@ -458,7 +458,7 @@ Text :ref:`Color<class_Color>` used when the menu item is being hovered and pres
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_outline_color>`
 
 The tint of text outline of the menu item.
 
@@ -470,7 +470,7 @@ The tint of text outline of the menu item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_pressed_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_pressed_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_MenuBar_theme_color_font_pressed_color>`
 
 Text :ref:`Color<class_Color>` used when the menu item is being pressed.
 
@@ -482,7 +482,7 @@ Text :ref:`Color<class_Color>` used when the menu item is being pressed.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **h_separation** = ``4``
+:ref:`int<class_int>` **h_separation** = ``4`` :ref:`🔗<class_MenuBar_theme_constant_h_separation>`
 
 The horizontal space between menu items.
 
@@ -494,7 +494,7 @@ The horizontal space between menu items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **outline_size** = ``0``
+:ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_MenuBar_theme_constant_outline_size>`
 
 The size of the text outline.
 
@@ -508,7 +508,7 @@ The size of the text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_MenuBar_theme_font_font>`
 
 :ref:`Font<class_Font>` of the menu item's text.
 
@@ -520,7 +520,7 @@ The size of the text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **font_size**
+:ref:`int<class_int>` **font_size** :ref:`🔗<class_MenuBar_theme_font_size_font_size>`
 
 Font size of the menu item's text.
 
@@ -532,7 +532,7 @@ Font size of the menu item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **disabled**
+:ref:`StyleBox<class_StyleBox>` **disabled** :ref:`🔗<class_MenuBar_theme_style_disabled>`
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is disabled.
 
@@ -544,7 +544,7 @@ Font size of the menu item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **disabled_mirrored**
+:ref:`StyleBox<class_StyleBox>` **disabled_mirrored** :ref:`🔗<class_MenuBar_theme_style_disabled_mirrored>`
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is disabled (for right-to-left layouts).
 
@@ -556,7 +556,7 @@ Font size of the menu item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **hover**
+:ref:`StyleBox<class_StyleBox>` **hover** :ref:`🔗<class_MenuBar_theme_style_hover>`
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is being hovered.
 
@@ -568,7 +568,7 @@ Font size of the menu item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **hover_mirrored**
+:ref:`StyleBox<class_StyleBox>` **hover_mirrored** :ref:`🔗<class_MenuBar_theme_style_hover_mirrored>`
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is being hovered (for right-to-left layouts).
 
@@ -580,7 +580,7 @@ Font size of the menu item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **hover_pressed**
+:ref:`StyleBox<class_StyleBox>` **hover_pressed** :ref:`🔗<class_MenuBar_theme_style_hover_pressed>`
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed and hovered at the same time.
 
@@ -592,7 +592,7 @@ Font size of the menu item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **hover_pressed_mirrored**
+:ref:`StyleBox<class_StyleBox>` **hover_pressed_mirrored** :ref:`🔗<class_MenuBar_theme_style_hover_pressed_mirrored>`
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed and hovered at the same time (for right-to-left layouts).
 
@@ -604,7 +604,7 @@ Font size of the menu item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **normal**
+:ref:`StyleBox<class_StyleBox>` **normal** :ref:`🔗<class_MenuBar_theme_style_normal>`
 
 Default :ref:`StyleBox<class_StyleBox>` for the menu item.
 
@@ -616,7 +616,7 @@ Default :ref:`StyleBox<class_StyleBox>` for the menu item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **normal_mirrored**
+:ref:`StyleBox<class_StyleBox>` **normal_mirrored** :ref:`🔗<class_MenuBar_theme_style_normal_mirrored>`
 
 Default :ref:`StyleBox<class_StyleBox>` for the menu item (for right-to-left layouts).
 
@@ -628,7 +628,7 @@ Default :ref:`StyleBox<class_StyleBox>` for the menu item (for right-to-left lay
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **pressed**
+:ref:`StyleBox<class_StyleBox>` **pressed** :ref:`🔗<class_MenuBar_theme_style_pressed>`
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed.
 
@@ -640,7 +640,7 @@ Default :ref:`StyleBox<class_StyleBox>` for the menu item (for right-to-left lay
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **pressed_mirrored**
+:ref:`StyleBox<class_StyleBox>` **pressed_mirrored** :ref:`🔗<class_MenuBar_theme_style_pressed_mirrored>`
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed (for right-to-left layouts).
 

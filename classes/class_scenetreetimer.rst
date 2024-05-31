@@ -73,7 +73,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**timeout**\ (\ )
+**timeout**\ (\ ) :ref:`🔗<class_SceneTreeTimer_signal_timeout>`
 
 Emitted when the timer reaches 0.
 
@@ -90,7 +90,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **time_left**
+:ref:`float<class_float>` **time_left** :ref:`🔗<class_SceneTreeTimer_property_time_left>`
 
 .. rst-class:: classref-property-setget
 

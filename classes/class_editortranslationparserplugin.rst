@@ -162,7 +162,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorTranslationParserPlugin_private_method__get_recognized_extensions>`
 
 Gets the list of file extensions to associate with this parser, e.g. ``["csv"]``.
 
@@ -174,7 +174,7 @@ Gets the list of file extensions to associate with this parser, e.g. ``["csv"]``
 
 .. rst-class:: classref-method
 
-|void| **_parse_file**\ (\ path\: :ref:`String<class_String>`, msgids\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural\: :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\]\ ) |virtual|
+|void| **_parse_file**\ (\ path\: :ref:`String<class_String>`, msgids\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural\: :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\]\ ) |virtual| :ref:`🔗<class_EditorTranslationParserPlugin_private_method__parse_file>`
 
 Override this method to define a custom parsing logic to extract the translatable strings.
 

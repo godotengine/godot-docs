@@ -138,7 +138,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **DrawFlags**:
+enum **DrawFlags**: :ref:`🔗<enum_Label3D_DrawFlags>`
 
 .. _class_Label3D_constant_FLAG_SHADED:
 
@@ -188,7 +188,7 @@ Represents the size of the :ref:`DrawFlags<enum_Label3D_DrawFlags>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **AlphaCutMode**:
+enum **AlphaCutMode**: :ref:`🔗<enum_Label3D_AlphaCutMode>`
 
 .. _class_Label3D_constant_ALPHA_CUT_DISABLED:
 
@@ -241,7 +241,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **alpha_antialiasing_edge** = ``0.0``
+:ref:`float<class_float>` **alpha_antialiasing_edge** = ``0.0`` :ref:`🔗<class_Label3D_property_alpha_antialiasing_edge>`
 
 .. rst-class:: classref-property-setget
 
@@ -258,7 +258,7 @@ Threshold at which antialiasing will be applied on the alpha channel.
 
 .. rst-class:: classref-property
 
-:ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **alpha_antialiasing_mode** = ``0``
+:ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **alpha_antialiasing_mode** = ``0`` :ref:`🔗<class_Label3D_property_alpha_antialiasing_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -275,7 +275,7 @@ The type of alpha antialiasing to apply. See :ref:`AlphaAntiAliasing<enum_BaseMa
 
 .. rst-class:: classref-property
 
-:ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` **alpha_cut** = ``0``
+:ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` **alpha_cut** = ``0`` :ref:`🔗<class_Label3D_property_alpha_cut>`
 
 .. rst-class:: classref-property-setget
 
@@ -292,7 +292,7 @@ The alpha cutting mode to use for the sprite. See :ref:`AlphaCutMode<enum_Label3
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **alpha_hash_scale** = ``1.0``
+:ref:`float<class_float>` **alpha_hash_scale** = ``1.0`` :ref:`🔗<class_Label3D_property_alpha_hash_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -309,7 +309,7 @@ The hashing scale for Alpha Hash. Recommended values between ``0`` and ``2``.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **alpha_scissor_threshold** = ``0.5``
+:ref:`float<class_float>` **alpha_scissor_threshold** = ``0.5`` :ref:`🔗<class_Label3D_property_alpha_scissor_threshold>`
 
 .. rst-class:: classref-property-setget
 
@@ -326,7 +326,7 @@ Threshold at which the alpha scissor will discard values.
 
 .. rst-class:: classref-property
 
-:ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode** = ``0``
+:ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode** = ``0`` :ref:`🔗<class_Label3D_property_autowrap_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -343,7 +343,7 @@ If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_co
 
 .. rst-class:: classref-property
 
-:ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **billboard** = ``0``
+:ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **billboard** = ``0`` :ref:`🔗<class_Label3D_property_billboard>`
 
 .. rst-class:: classref-property-setget
 
@@ -360,7 +360,7 @@ The billboard mode to use for the label. See :ref:`BillboardMode<enum_BaseMateri
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **double_sided** = ``true``
+:ref:`bool<class_bool>` **double_sided** = ``true`` :ref:`🔗<class_Label3D_property_double_sided>`
 
 .. rst-class:: classref-property-setget
 
@@ -377,7 +377,7 @@ If ``true``, text can be seen from the back as well, if ``false``, it is invisib
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **fixed_size** = ``false``
+:ref:`bool<class_bool>` **fixed_size** = ``false`` :ref:`🔗<class_Label3D_property_fixed_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -394,7 +394,7 @@ If ``true``, the label is rendered at the same size regardless of distance.
 
 .. rst-class:: classref-property
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_Label3D_property_font>`
 
 .. rst-class:: classref-property-setget
 
@@ -411,7 +411,7 @@ Font configuration used to display text.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **font_size** = ``32``
+:ref:`int<class_int>` **font_size** = ``32`` :ref:`🔗<class_Label3D_property_font_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -430,7 +430,7 @@ Higher font sizes require more time to render new characters, which can cause st
 
 .. rst-class:: classref-property
 
-:ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **horizontal_alignment** = ``1``
+:ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **horizontal_alignment** = ``1`` :ref:`🔗<class_Label3D_property_horizontal_alignment>`
 
 .. rst-class:: classref-property-setget
 
@@ -447,7 +447,7 @@ Controls the text's horizontal alignment. Supports left, center, right, and fill
 
 .. rst-class:: classref-property
 
-|bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **justification_flags** = ``163``
+|bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **justification_flags** = ``163`` :ref:`🔗<class_Label3D_property_justification_flags>`
 
 .. rst-class:: classref-property-setget
 
@@ -464,7 +464,7 @@ Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextSe
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **language** = ``""``
+:ref:`String<class_String>` **language** = ``""`` :ref:`🔗<class_Label3D_property_language>`
 
 .. rst-class:: classref-property-setget
 
@@ -481,7 +481,7 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **line_spacing** = ``0.0``
+:ref:`float<class_float>` **line_spacing** = ``0.0`` :ref:`🔗<class_Label3D_property_line_spacing>`
 
 .. rst-class:: classref-property-setget
 
@@ -498,7 +498,7 @@ Vertical space between lines in multiline **Label3D**.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_Label3D_property_modulate>`
 
 .. rst-class:: classref-property-setget
 
@@ -515,7 +515,7 @@ Text :ref:`Color<class_Color>` of the **Label3D**.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **no_depth_test** = ``false``
+:ref:`bool<class_bool>` **no_depth_test** = ``false`` :ref:`🔗<class_Label3D_property_no_depth_test>`
 
 .. rst-class:: classref-property-setget
 
@@ -532,7 +532,7 @@ If ``true``, depth testing is disabled and the object will be drawn in render or
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)`` :ref:`🔗<class_Label3D_property_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -549,7 +549,7 @@ The text drawing offset (in pixels).
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **outline_modulate** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **outline_modulate** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_Label3D_property_outline_modulate>`
 
 .. rst-class:: classref-property-setget
 
@@ -566,7 +566,7 @@ The tint of text outline.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **outline_render_priority** = ``-1``
+:ref:`int<class_int>` **outline_render_priority** = ``-1`` :ref:`🔗<class_Label3D_property_outline_render_priority>`
 
 .. rst-class:: classref-property-setget
 
@@ -587,7 +587,7 @@ Sets the render priority for the text outline. Higher priority objects will be s
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **outline_size** = ``12``
+:ref:`int<class_int>` **outline_size** = ``12`` :ref:`🔗<class_Label3D_property_outline_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -604,7 +604,7 @@ Text outline size.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pixel_size** = ``0.005``
+:ref:`float<class_float>` **pixel_size** = ``0.005`` :ref:`🔗<class_Label3D_property_pixel_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -621,7 +621,7 @@ The size of one pixel's width on the label to scale it in 3D. To make the font l
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **render_priority** = ``0``
+:ref:`int<class_int>` **render_priority** = ``0`` :ref:`🔗<class_Label3D_property_render_priority>`
 
 .. rst-class:: classref-property-setget
 
@@ -642,7 +642,7 @@ Sets the render priority for the text. Higher priority objects will be sorted in
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shaded** = ``false``
+:ref:`bool<class_bool>` **shaded** = ``false`` :ref:`🔗<class_Label3D_property_shaded>`
 
 .. rst-class:: classref-property-setget
 
@@ -659,7 +659,7 @@ If ``true``, the :ref:`Light3D<class_Light3D>` in the :ref:`Environment<class_En
 
 .. rst-class:: classref-property
 
-:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0``
+:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0`` :ref:`🔗<class_Label3D_property_structured_text_bidi_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -676,7 +676,7 @@ Set BiDi algorithm override for the structured text.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]``
+:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]`` :ref:`🔗<class_Label3D_property_structured_text_bidi_override_options>`
 
 .. rst-class:: classref-property-setget
 
@@ -693,7 +693,7 @@ Set additional options for BiDi override.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **text** = ``""``
+:ref:`String<class_String>` **text** = ``""`` :ref:`🔗<class_Label3D_property_text>`
 
 .. rst-class:: classref-property-setget
 
@@ -710,7 +710,7 @@ The text to display on screen.
 
 .. rst-class:: classref-property
 
-:ref:`Direction<enum_TextServer_Direction>` **text_direction** = ``0``
+:ref:`Direction<enum_TextServer_Direction>` **text_direction** = ``0`` :ref:`🔗<class_Label3D_property_text_direction>`
 
 .. rst-class:: classref-property-setget
 
@@ -727,7 +727,7 @@ Base text writing direction.
 
 .. rst-class:: classref-property
 
-:ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **texture_filter** = ``3``
+:ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **texture_filter** = ``3`` :ref:`🔗<class_Label3D_property_texture_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -744,7 +744,7 @@ Filter flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_Textur
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **uppercase** = ``false``
+:ref:`bool<class_bool>` **uppercase** = ``false`` :ref:`🔗<class_Label3D_property_uppercase>`
 
 .. rst-class:: classref-property-setget
 
@@ -761,7 +761,7 @@ If ``true``, all the text displays as UPPERCASE.
 
 .. rst-class:: classref-property
 
-:ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **vertical_alignment** = ``1``
+:ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **vertical_alignment** = ``1`` :ref:`🔗<class_Label3D_property_vertical_alignment>`
 
 .. rst-class:: classref-property-setget
 
@@ -778,7 +778,7 @@ Controls the text's vertical alignment. Supports top, center, bottom. Set it to 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **width** = ``500.0``
+:ref:`float<class_float>` **width** = ``500.0`` :ref:`🔗<class_Label3D_property_width>`
 
 .. rst-class:: classref-property-setget
 
@@ -800,7 +800,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh**\ (\ ) |const|
+:ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh**\ (\ ) |const| :ref:`🔗<class_Label3D_method_generate_triangle_mesh>`
 
 Returns a :ref:`TriangleMesh<class_TriangleMesh>` with the label's vertices following its current configuration (such as its :ref:`pixel_size<class_Label3D_property_pixel_size>`).
 
@@ -812,7 +812,7 @@ Returns a :ref:`TriangleMesh<class_TriangleMesh>` with the label's vertices foll
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_Label3D_DrawFlags>`\ ) |const|
+:ref:`bool<class_bool>` **get_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_Label3D_DrawFlags>`\ ) |const| :ref:`🔗<class_Label3D_method_get_draw_flag>`
 
 Returns the value of the specified flag.
 
@@ -824,7 +824,7 @@ Returns the value of the specified flag.
 
 .. rst-class:: classref-method
 
-|void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_Label3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_Label3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Label3D_method_set_draw_flag>`
 
 If ``true``, the specified flag will be enabled. See :ref:`DrawFlags<enum_Label3D_DrawFlags>` for a list of flags.
 

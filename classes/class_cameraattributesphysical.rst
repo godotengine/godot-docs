@@ -85,7 +85,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **auto_exposure_max_exposure_value** = ``10.0``
+:ref:`float<class_float>` **auto_exposure_max_exposure_value** = ``10.0`` :ref:`🔗<class_CameraAttributesPhysical_property_auto_exposure_max_exposure_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -102,7 +102,7 @@ The maximum luminance (in EV100) used when calculating auto exposure. When calcu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **auto_exposure_min_exposure_value** = ``-8.0``
+:ref:`float<class_float>` **auto_exposure_min_exposure_value** = ``-8.0`` :ref:`🔗<class_CameraAttributesPhysical_property_auto_exposure_min_exposure_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -119,7 +119,7 @@ The minimum luminance luminance (in EV100) used when calculating auto exposure. 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **exposure_aperture** = ``16.0``
+:ref:`float<class_float>` **exposure_aperture** = ``16.0`` :ref:`🔗<class_CameraAttributesPhysical_property_exposure_aperture>`
 
 .. rst-class:: classref-property-setget
 
@@ -138,7 +138,7 @@ Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **exposure_shutter_speed** = ``100.0``
+:ref:`float<class_float>` **exposure_shutter_speed** = ``100.0`` :ref:`🔗<class_CameraAttributesPhysical_property_exposure_shutter_speed>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +157,7 @@ Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **frustum_far** = ``4000.0``
+:ref:`float<class_float>` **frustum_far** = ``4000.0`` :ref:`🔗<class_CameraAttributesPhysical_property_frustum_far>`
 
 .. rst-class:: classref-property-setget
 
@@ -174,7 +174,7 @@ Override value for :ref:`Camera3D.far<class_Camera3D_property_far>`. Used intern
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **frustum_focal_length** = ``35.0``
+:ref:`float<class_float>` **frustum_focal_length** = ``35.0`` :ref:`🔗<class_CameraAttributesPhysical_property_frustum_focal_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -191,7 +191,7 @@ Distance between camera lens and camera aperture, measured in millimeters. Contr
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **frustum_focus_distance** = ``10.0``
+:ref:`float<class_float>` **frustum_focus_distance** = ``10.0`` :ref:`🔗<class_CameraAttributesPhysical_property_frustum_focus_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -208,7 +208,7 @@ Distance from camera of object that will be in focus, measured in meters. Intern
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **frustum_near** = ``0.05``
+:ref:`float<class_float>` **frustum_near** = ``0.05`` :ref:`🔗<class_CameraAttributesPhysical_property_frustum_near>`
 
 .. rst-class:: classref-property-setget
 
@@ -230,7 +230,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_fov**\ (\ ) |const|
+:ref:`float<class_float>` **get_fov**\ (\ ) |const| :ref:`🔗<class_CameraAttributesPhysical_method_get_fov>`
 
 Returns the vertical field of view that corresponds to the :ref:`frustum_focal_length<class_CameraAttributesPhysical_property_frustum_focal_length>`. This value is calculated internally whenever :ref:`frustum_focal_length<class_CameraAttributesPhysical_property_frustum_focal_length>` is changed.
 

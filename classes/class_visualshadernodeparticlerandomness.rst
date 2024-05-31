@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **OpType**:
+enum **OpType**: :ref:`🔗<enum_VisualShaderNodeParticleRandomness_OpType>`
 
 .. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_SCALAR:
 
@@ -101,7 +101,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **op_type** = ``0``
+:ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **op_type** = ``0`` :ref:`🔗<class_VisualShaderNodeParticleRandomness_property_op_type>`
 
 .. rst-class:: classref-property-setget
 

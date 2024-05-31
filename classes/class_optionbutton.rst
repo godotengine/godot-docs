@@ -147,7 +147,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**item_focused**\ (\ index\: :ref:`int<class_int>`\ )
+**item_focused**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OptionButton_signal_item_focused>`
 
 Emitted when the user navigates to an item using the :ref:`ProjectSettings.input/ui_up<class_ProjectSettings_property_input/ui_up>` or :ref:`ProjectSettings.input/ui_down<class_ProjectSettings_property_input/ui_down>` input actions. The index of the item selected is passed as argument.
 
@@ -159,7 +159,7 @@ Emitted when the user navigates to an item using the :ref:`ProjectSettings.input
 
 .. rst-class:: classref-signal
 
-**item_selected**\ (\ index\: :ref:`int<class_int>`\ )
+**item_selected**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OptionButton_signal_item_selected>`
 
 Emitted when the current item has been changed by the user. The index of the item selected is passed as argument.
 
@@ -178,7 +178,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_reselect** = ``false``
+:ref:`bool<class_bool>` **allow_reselect** = ``false`` :ref:`🔗<class_OptionButton_property_allow_reselect>`
 
 .. rst-class:: classref-property-setget
 
@@ -195,7 +195,7 @@ If ``true``, the currently selected item can be selected again.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **fit_to_longest_item** = ``true``
+:ref:`bool<class_bool>` **fit_to_longest_item** = ``true`` :ref:`🔗<class_OptionButton_property_fit_to_longest_item>`
 
 .. rst-class:: classref-property-setget
 
@@ -214,7 +214,7 @@ If ``true``, minimum size will be determined by the longest item's text, instead
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **item_count** = ``0``
+:ref:`int<class_int>` **item_count** = ``0`` :ref:`🔗<class_OptionButton_property_item_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -231,7 +231,7 @@ The number of items to select from.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **selected** = ``-1``
+:ref:`int<class_int>` **selected** = ``-1`` :ref:`🔗<class_OptionButton_property_selected>`
 
 .. rst-class:: classref-property-setget
 
@@ -252,7 +252,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_icon_item**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1\ )
+|void| **add_icon_item**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_OptionButton_method_add_icon_item>`
 
 Adds an item, with a ``texture`` icon, text ``label`` and (optionally) ``id``. If no ``id`` is passed, the item index will be used as the item's ID. New items are appended at the end.
 
@@ -264,7 +264,7 @@ Adds an item, with a ``texture`` icon, text ``label`` and (optionally) ``id``. I
 
 .. rst-class:: classref-method
 
-|void| **add_item**\ (\ label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1\ )
+|void| **add_item**\ (\ label\: :ref:`String<class_String>`, id\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_OptionButton_method_add_item>`
 
 Adds an item, with text ``label`` and (optionally) ``id``. If no ``id`` is passed, the item index will be used as the item's ID. New items are appended at the end.
 
@@ -276,7 +276,7 @@ Adds an item, with text ``label`` and (optionally) ``id``. If no ``id`` is passe
 
 .. rst-class:: classref-method
 
-|void| **add_separator**\ (\ text\: :ref:`String<class_String>` = ""\ )
+|void| **add_separator**\ (\ text\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_OptionButton_method_add_separator>`
 
 Adds a separator to the list of items. Separators help to group items, and can optionally be given a ``text`` header. A separator also gets an index assigned, and is appended at the end of the item list.
 
@@ -288,7 +288,7 @@ Adds a separator to the list of items. Separators help to group items, and can o
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_OptionButton_method_clear>`
 
 Clears all the items in the **OptionButton**.
 
@@ -300,7 +300,7 @@ Clears all the items in the **OptionButton**.
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_item_icon**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Texture2D<class_Texture2D>` **get_item_icon**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OptionButton_method_get_item_icon>`
 
 Returns the icon of the item at index ``idx``.
 
@@ -312,7 +312,7 @@ Returns the icon of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_item_id**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_item_id**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OptionButton_method_get_item_id>`
 
 Returns the ID of the item at index ``idx``.
 
@@ -324,7 +324,7 @@ Returns the ID of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_item_index**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_item_index**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OptionButton_method_get_item_index>`
 
 Returns the index of the item with the given ``id``.
 
@@ -336,7 +336,7 @@ Returns the index of the item with the given ``id``.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_item_metadata**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_item_metadata**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OptionButton_method_get_item_metadata>`
 
 Retrieves the metadata of an item. Metadata may be any type and can be used to store extra information about an item, such as an external string ID.
 
@@ -348,7 +348,7 @@ Retrieves the metadata of an item. Metadata may be any type and can be used to s
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_item_text**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_item_text**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OptionButton_method_get_item_text>`
 
 Returns the text of the item at index ``idx``.
 
@@ -360,7 +360,7 @@ Returns the text of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_item_tooltip**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_item_tooltip**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OptionButton_method_get_item_tooltip>`
 
 Returns the tooltip of the item at index ``idx``.
 
@@ -372,7 +372,7 @@ Returns the tooltip of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-:ref:`PopupMenu<class_PopupMenu>` **get_popup**\ (\ ) |const|
+:ref:`PopupMenu<class_PopupMenu>` **get_popup**\ (\ ) |const| :ref:`🔗<class_OptionButton_method_get_popup>`
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
@@ -386,7 +386,7 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selectable_item**\ (\ from_last\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`int<class_int>` **get_selectable_item**\ (\ from_last\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_OptionButton_method_get_selectable_item>`
 
 Returns the index of the first item which is not disabled, or marked as a separator. If ``from_last`` is ``true``, the items will be searched in reverse order.
 
@@ -400,7 +400,7 @@ Returns ``-1`` if no item is found.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selected_id**\ (\ ) |const|
+:ref:`int<class_int>` **get_selected_id**\ (\ ) |const| :ref:`🔗<class_OptionButton_method_get_selected_id>`
 
 Returns the ID of the selected item, or ``-1`` if no item is selected.
 
@@ -412,7 +412,7 @@ Returns the ID of the selected item, or ``-1`` if no item is selected.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_selected_metadata**\ (\ ) |const|
+:ref:`Variant<class_Variant>` **get_selected_metadata**\ (\ ) |const| :ref:`🔗<class_OptionButton_method_get_selected_metadata>`
 
 Gets the metadata of the selected item. Metadata for items can be set using :ref:`set_item_metadata<class_OptionButton_method_set_item_metadata>`.
 
@@ -424,7 +424,7 @@ Gets the metadata of the selected item. Metadata for items can be set using :ref
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_selectable_items**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_selectable_items**\ (\ ) |const| :ref:`🔗<class_OptionButton_method_has_selectable_items>`
 
 Returns ``true`` if this button contains at least one item which is not disabled, or marked as a separator.
 
@@ -436,7 +436,7 @@ Returns ``true`` if this button contains at least one item which is not disabled
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_disabled**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_disabled**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OptionButton_method_is_item_disabled>`
 
 Returns ``true`` if the item at index ``idx`` is disabled.
 
@@ -448,7 +448,7 @@ Returns ``true`` if the item at index ``idx`` is disabled.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_separator**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_separator**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OptionButton_method_is_item_separator>`
 
 Returns ``true`` if the item at index ``idx`` is marked as a separator.
 
@@ -460,7 +460,7 @@ Returns ``true`` if the item at index ``idx`` is marked as a separator.
 
 .. rst-class:: classref-method
 
-|void| **remove_item**\ (\ idx\: :ref:`int<class_int>`\ )
+|void| **remove_item**\ (\ idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OptionButton_method_remove_item>`
 
 Removes the item at index ``idx``.
 
@@ -472,7 +472,7 @@ Removes the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-|void| **select**\ (\ idx\: :ref:`int<class_int>`\ )
+|void| **select**\ (\ idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OptionButton_method_select>`
 
 Selects an item by index and makes it the current item. This will work even if the item is disabled.
 
@@ -486,7 +486,7 @@ Passing ``-1`` as the index deselects any currently selected item.
 
 .. rst-class:: classref-method
 
-|void| **set_disable_shortcuts**\ (\ disabled\: :ref:`bool<class_bool>`\ )
+|void| **set_disable_shortcuts**\ (\ disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_OptionButton_method_set_disable_shortcuts>`
 
 If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
@@ -498,7 +498,7 @@ If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
 .. rst-class:: classref-method
 
-|void| **set_item_disabled**\ (\ idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ )
+|void| **set_item_disabled**\ (\ idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_OptionButton_method_set_item_disabled>`
 
 Sets whether the item at index ``idx`` is disabled.
 
@@ -512,7 +512,7 @@ Disabled items are drawn differently in the dropdown and are not selectable by t
 
 .. rst-class:: classref-method
 
-|void| **set_item_icon**\ (\ idx\: :ref:`int<class_int>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **set_item_icon**\ (\ idx\: :ref:`int<class_int>`, texture\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_OptionButton_method_set_item_icon>`
 
 Sets the icon of the item at index ``idx``.
 
@@ -524,7 +524,7 @@ Sets the icon of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-|void| **set_item_id**\ (\ idx\: :ref:`int<class_int>`, id\: :ref:`int<class_int>`\ )
+|void| **set_item_id**\ (\ idx\: :ref:`int<class_int>`, id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OptionButton_method_set_item_id>`
 
 Sets the ID of the item at index ``idx``.
 
@@ -536,7 +536,7 @@ Sets the ID of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-|void| **set_item_metadata**\ (\ idx\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ )
+|void| **set_item_metadata**\ (\ idx\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_OptionButton_method_set_item_metadata>`
 
 Sets the metadata of an item. Metadata may be of any type and can be used to store extra information about an item, such as an external string ID.
 
@@ -548,7 +548,7 @@ Sets the metadata of an item. Metadata may be of any type and can be used to sto
 
 .. rst-class:: classref-method
 
-|void| **set_item_text**\ (\ idx\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ )
+|void| **set_item_text**\ (\ idx\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OptionButton_method_set_item_text>`
 
 Sets the text of the item at index ``idx``.
 
@@ -560,7 +560,7 @@ Sets the text of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-|void| **set_item_tooltip**\ (\ idx\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ )
+|void| **set_item_tooltip**\ (\ idx\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OptionButton_method_set_item_tooltip>`
 
 Sets the tooltip of the item at index ``idx``.
 
@@ -572,7 +572,7 @@ Sets the tooltip of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-|void| **show_popup**\ (\ )
+|void| **show_popup**\ (\ ) :ref:`🔗<class_OptionButton_method_show_popup>`
 
 Adjusts popup position and sizing for the **OptionButton**, then shows the :ref:`PopupMenu<class_PopupMenu>`. Prefer this over using ``get_popup().popup()``.
 
@@ -589,7 +589,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **arrow_margin** = ``4``
+:ref:`int<class_int>` **arrow_margin** = ``4`` :ref:`🔗<class_OptionButton_theme_constant_arrow_margin>`
 
 The horizontal space between the arrow icon and the right edge of the button.
 
@@ -601,7 +601,7 @@ The horizontal space between the arrow icon and the right edge of the button.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **modulate_arrow** = ``0``
+:ref:`int<class_int>` **modulate_arrow** = ``0`` :ref:`🔗<class_OptionButton_theme_constant_modulate_arrow>`
 
 If different than ``0``, the arrow icon will be modulated to the font color.
 
@@ -613,7 +613,7 @@ If different than ``0``, the arrow icon will be modulated to the font color.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **arrow**
+:ref:`Texture2D<class_Texture2D>` **arrow** :ref:`🔗<class_OptionButton_theme_icon_arrow>`
 
 The arrow icon to be drawn on the right end of the button.
 

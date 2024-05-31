@@ -66,7 +66,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**modification_processed**\ (\ )
+**modification_processed**\ (\ ) :ref:`🔗<class_SkeletonModifier3D_signal_modification_processed>`
 
 Notifies when the modification have been finished.
 
@@ -85,7 +85,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **active** = ``true``
+:ref:`bool<class_bool>` **active** = ``true`` :ref:`🔗<class_SkeletonModifier3D_property_active>`
 
 .. rst-class:: classref-property-setget
 
@@ -102,7 +102,7 @@ If ``true``, the **SkeletonModifier3D** will be processing.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **influence** = ``1.0``
+:ref:`float<class_float>` **influence** = ``1.0`` :ref:`🔗<class_SkeletonModifier3D_property_influence>`
 
 .. rst-class:: classref-property-setget
 
@@ -126,7 +126,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_process_modification**\ (\ ) |virtual|
+|void| **_process_modification**\ (\ ) |virtual| :ref:`🔗<class_SkeletonModifier3D_private_method__process_modification>`
 
 Override this virtual method to implement a custom skeleton modifier. You should do things like get the :ref:`Skeleton3D<class_Skeleton3D>`'s current pose and apply the pose here.
 

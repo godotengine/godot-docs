@@ -74,7 +74,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**about_to_popup**\ (\ )
+**about_to_popup**\ (\ ) :ref:`🔗<class_MenuButton_signal_about_to_popup>`
 
 Emitted when the :ref:`PopupMenu<class_PopupMenu>` of this MenuButton is about to show.
 
@@ -91,7 +91,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **item_count** = ``0``
+:ref:`int<class_int>` **item_count** = ``0`` :ref:`🔗<class_MenuButton_property_item_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -108,7 +108,7 @@ The number of items currently in the list.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **switch_on_hover** = ``false``
+:ref:`bool<class_bool>` **switch_on_hover** = ``false`` :ref:`🔗<class_MenuButton_property_switch_on_hover>`
 
 .. rst-class:: classref-property-setget
 
@@ -130,7 +130,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PopupMenu<class_PopupMenu>` **get_popup**\ (\ ) |const|
+:ref:`PopupMenu<class_PopupMenu>` **get_popup**\ (\ ) |const| :ref:`🔗<class_MenuButton_method_get_popup>`
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
@@ -144,7 +144,7 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 .. rst-class:: classref-method
 
-|void| **set_disable_shortcuts**\ (\ disabled\: :ref:`bool<class_bool>`\ )
+|void| **set_disable_shortcuts**\ (\ disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_MenuButton_method_set_disable_shortcuts>`
 
 If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
@@ -156,7 +156,7 @@ If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
 .. rst-class:: classref-method
 
-|void| **show_popup**\ (\ )
+|void| **show_popup**\ (\ ) :ref:`🔗<class_MenuButton_method_show_popup>`
 
 Adjusts popup position and sizing for the **MenuButton**, then shows the :ref:`PopupMenu<class_PopupMenu>`. Prefer this over using ``get_popup().popup()``.
 

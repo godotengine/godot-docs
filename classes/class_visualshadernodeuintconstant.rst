@@ -46,7 +46,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **constant** = ``0``
+:ref:`int<class_int>` **constant** = ``0`` :ref:`🔗<class_VisualShaderNodeUIntConstant_property_constant>`
 
 .. rst-class:: classref-property-setget
 

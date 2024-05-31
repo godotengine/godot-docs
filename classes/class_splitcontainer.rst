@@ -95,7 +95,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**dragged**\ (\ offset\: :ref:`int<class_int>`\ )
+**dragged**\ (\ offset\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SplitContainer_signal_dragged>`
 
 Emitted when the dragger is dragged by user.
 
@@ -112,7 +112,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **DraggerVisibility**:
+enum **DraggerVisibility**: :ref:`🔗<enum_SplitContainer_DraggerVisibility>`
 
 .. _class_SplitContainer_constant_DRAGGER_VISIBLE:
 
@@ -151,7 +151,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collapsed** = ``false``
+:ref:`bool<class_bool>` **collapsed** = ``false`` :ref:`🔗<class_SplitContainer_property_collapsed>`
 
 .. rst-class:: classref-property-setget
 
@@ -168,7 +168,7 @@ If ``true``, the area of the first :ref:`Control<class_Control>` will be collaps
 
 .. rst-class:: classref-property
 
-:ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility** = ``0``
+:ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility** = ``0`` :ref:`🔗<class_SplitContainer_property_dragger_visibility>`
 
 .. rst-class:: classref-property-setget
 
@@ -185,7 +185,7 @@ Determines the dragger's visibility. See :ref:`DraggerVisibility<enum_SplitConta
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **split_offset** = ``0``
+:ref:`int<class_int>` **split_offset** = ``0`` :ref:`🔗<class_SplitContainer_property_split_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -202,7 +202,7 @@ The initial offset of the splitting between the two :ref:`Control<class_Control>
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **vertical** = ``false``
+:ref:`bool<class_bool>` **vertical** = ``false`` :ref:`🔗<class_SplitContainer_property_vertical>`
 
 .. rst-class:: classref-property-setget
 
@@ -226,7 +226,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clamp_split_offset**\ (\ )
+|void| **clamp_split_offset**\ (\ ) :ref:`🔗<class_SplitContainer_method_clamp_split_offset>`
 
 Clamps the :ref:`split_offset<class_SplitContainer_property_split_offset>` value to not go outside the currently possible minimal and maximum values.
 
@@ -243,7 +243,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **autohide** = ``1``
+:ref:`int<class_int>` **autohide** = ``1`` :ref:`🔗<class_SplitContainer_theme_constant_autohide>`
 
 Boolean value. If 1 (``true``), the grabber will hide automatically when it isn't under the cursor. If 0 (``false``), it's always visible.
 
@@ -255,7 +255,7 @@ Boolean value. If 1 (``true``), the grabber will hide automatically when it isn'
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **minimum_grab_thickness** = ``6``
+:ref:`int<class_int>` **minimum_grab_thickness** = ``6`` :ref:`🔗<class_SplitContainer_theme_constant_minimum_grab_thickness>`
 
 The minimum thickness of the area users can click on to grab the splitting line. If :ref:`separation<class_SplitContainer_theme_constant_separation>` or :ref:`h_grabber<class_SplitContainer_theme_icon_h_grabber>` / :ref:`v_grabber<class_SplitContainer_theme_icon_v_grabber>`'s thickness are too small, this ensure that the splitting line can still be dragged.
 
@@ -267,7 +267,7 @@ The minimum thickness of the area users can click on to grab the splitting line.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **separation** = ``12``
+:ref:`int<class_int>` **separation** = ``12`` :ref:`🔗<class_SplitContainer_theme_constant_separation>`
 
 The space between sides of the container.
 
@@ -279,7 +279,7 @@ The space between sides of the container.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **grabber**
+:ref:`Texture2D<class_Texture2D>` **grabber** :ref:`🔗<class_SplitContainer_theme_icon_grabber>`
 
 The icon used for the grabber drawn in the middle area.
 
@@ -291,7 +291,7 @@ The icon used for the grabber drawn in the middle area.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **h_grabber**
+:ref:`Texture2D<class_Texture2D>` **h_grabber** :ref:`🔗<class_SplitContainer_theme_icon_h_grabber>`
 
 The icon used for the grabber drawn in the middle area when :ref:`vertical<class_SplitContainer_property_vertical>` is ``false``.
 
@@ -303,7 +303,7 @@ The icon used for the grabber drawn in the middle area when :ref:`vertical<class
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **v_grabber**
+:ref:`Texture2D<class_Texture2D>` **v_grabber** :ref:`🔗<class_SplitContainer_theme_icon_v_grabber>`
 
 The icon used for the grabber drawn in the middle area when :ref:`vertical<class_SplitContainer_property_vertical>` is ``true``.
 

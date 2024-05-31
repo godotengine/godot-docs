@@ -60,7 +60,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **vrs_min_radius** = ``20.0``
+:ref:`float<class_float>` **vrs_min_radius** = ``20.0`` :ref:`🔗<class_XRVRS_property_vrs_min_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -77,7 +77,7 @@ The minimum radius around the focal point where full quality is guaranteed if VR
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **vrs_strength** = ``1.0``
+:ref:`float<class_float>` **vrs_strength** = ``1.0`` :ref:`🔗<class_XRVRS_property_vrs_strength>`
 
 .. rst-class:: classref-property-setget
 
@@ -99,7 +99,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **make_vrs_texture**\ (\ target_size\: :ref:`Vector2<class_Vector2>`, eye_foci\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
+:ref:`RID<class_RID>` **make_vrs_texture**\ (\ target_size\: :ref:`Vector2<class_Vector2>`, eye_foci\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ ) :ref:`🔗<class_XRVRS_method_make_vrs_texture>`
 
 Generates the VRS texture based on a render ``target_size`` adjusted by our VRS tile size. For each eyes focal point passed in ``eye_foci`` a layer is created. Focal point should be in NDC.
 

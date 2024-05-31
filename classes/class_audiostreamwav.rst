@@ -79,7 +79,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Format**:
+enum **Format**: :ref:`🔗<enum_AudioStreamWAV_Format>`
 
 .. _class_AudioStreamWAV_constant_FORMAT_8_BITS:
 
@@ -121,7 +121,7 @@ Audio is compressed as QOA (`Quite OK Audio <https://qoaformat.org/>`__).
 
 .. rst-class:: classref-enumeration
 
-enum **LoopMode**:
+enum **LoopMode**: :ref:`🔗<enum_AudioStreamWAV_LoopMode>`
 
 .. _class_AudioStreamWAV_constant_LOOP_DISABLED:
 
@@ -168,7 +168,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()`` :ref:`🔗<class_AudioStreamWAV_property_data>`
 
 .. rst-class:: classref-property-setget
 
@@ -189,7 +189,7 @@ Contains the audio data in bytes.
 
 .. rst-class:: classref-property
 
-:ref:`Format<enum_AudioStreamWAV_Format>` **format** = ``0``
+:ref:`Format<enum_AudioStreamWAV_Format>` **format** = ``0`` :ref:`🔗<class_AudioStreamWAV_property_format>`
 
 .. rst-class:: classref-property-setget
 
@@ -206,7 +206,7 @@ Audio format. See :ref:`Format<enum_AudioStreamWAV_Format>` constants for values
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **loop_begin** = ``0``
+:ref:`int<class_int>` **loop_begin** = ``0`` :ref:`🔗<class_AudioStreamWAV_property_loop_begin>`
 
 .. rst-class:: classref-property-setget
 
@@ -223,7 +223,7 @@ The loop start point (in number of samples, relative to the beginning of the sam
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **loop_end** = ``0``
+:ref:`int<class_int>` **loop_end** = ``0`` :ref:`🔗<class_AudioStreamWAV_property_loop_end>`
 
 .. rst-class:: classref-property-setget
 
@@ -240,7 +240,7 @@ The loop end point (in number of samples, relative to the beginning of the sampl
 
 .. rst-class:: classref-property
 
-:ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` **loop_mode** = ``0``
+:ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` **loop_mode** = ``0`` :ref:`🔗<class_AudioStreamWAV_property_loop_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -257,7 +257,7 @@ The loop mode. This information will be imported automatically from the WAV file
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **mix_rate** = ``44100``
+:ref:`int<class_int>` **mix_rate** = ``44100`` :ref:`🔗<class_AudioStreamWAV_property_mix_rate>`
 
 .. rst-class:: classref-property-setget
 
@@ -278,7 +278,7 @@ According to the `Nyquist-Shannon sampling theorem <https://en.wikipedia.org/wik
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **stereo** = ``false``
+:ref:`bool<class_bool>` **stereo** = ``false`` :ref:`🔗<class_AudioStreamWAV_property_stereo>`
 
 .. rst-class:: classref-property-setget
 
@@ -300,7 +300,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save_to_wav**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **save_to_wav**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AudioStreamWAV_method_save_to_wav>`
 
 Saves the AudioStreamWAV as a WAV file to ``path``. Samples with IMA ADPCM or QOA formats can't be saved.
 

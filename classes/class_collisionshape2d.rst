@@ -67,7 +67,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **debug_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_CollisionShape2D_property_debug_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -86,7 +86,7 @@ The collision shape debug color.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disabled** = ``false``
+:ref:`bool<class_bool>` **disabled** = ``false`` :ref:`🔗<class_CollisionShape2D_property_disabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -103,7 +103,7 @@ A disabled collision shape has no effect in the world. This property should be c
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **one_way_collision** = ``false``
+:ref:`bool<class_bool>` **one_way_collision** = ``false`` :ref:`🔗<class_CollisionShape2D_property_one_way_collision>`
 
 .. rst-class:: classref-property-setget
 
@@ -122,7 +122,7 @@ Sets whether this collision shape should only detect collision on one side (top 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **one_way_collision_margin** = ``1.0``
+:ref:`float<class_float>` **one_way_collision_margin** = ``1.0`` :ref:`🔗<class_CollisionShape2D_property_one_way_collision_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -139,7 +139,7 @@ The margin used for one-way collision (in pixels). Higher values will make the s
 
 .. rst-class:: classref-property
 
-:ref:`Shape2D<class_Shape2D>` **shape**
+:ref:`Shape2D<class_Shape2D>` **shape** :ref:`🔗<class_CollisionShape2D_property_shape>`
 
 .. rst-class:: classref-property-setget
 

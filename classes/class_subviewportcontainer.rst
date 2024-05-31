@@ -66,7 +66,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **stretch** = ``false``
+:ref:`bool<class_bool>` **stretch** = ``false`` :ref:`🔗<class_SubViewportContainer_property_stretch>`
 
 .. rst-class:: classref-property-setget
 
@@ -85,7 +85,7 @@ If ``true``, the sub-viewport will be automatically resized to the control's siz
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stretch_shrink** = ``1``
+:ref:`int<class_int>` **stretch_shrink** = ``1`` :ref:`🔗<class_SubViewportContainer_property_stretch_shrink>`
 
 .. rst-class:: classref-property-setget
 
@@ -111,7 +111,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_propagate_input_event**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_propagate_input_event**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |virtual| |const| :ref:`🔗<class_SubViewportContainer_private_method__propagate_input_event>`
 
 **Experimental:** This method may be changed or removed in future versions.
 

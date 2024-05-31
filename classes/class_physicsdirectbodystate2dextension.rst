@@ -134,7 +134,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_add_constant_central_force**\ (\ force\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_add_constant_central_force**\ (\ force\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__add_constant_central_force>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.add_constant_central_force<class_PhysicsDirectBodyState2D_method_add_constant_central_force>`.
 
@@ -146,7 +146,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.add_constant_central_force
 
 .. rst-class:: classref-method
 
-|void| **_add_constant_force**\ (\ force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_add_constant_force**\ (\ force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__add_constant_force>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.add_constant_force<class_PhysicsDirectBodyState2D_method_add_constant_force>`.
 
@@ -158,7 +158,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.add_constant_force<class_P
 
 .. rst-class:: classref-method
 
-|void| **_add_constant_torque**\ (\ torque\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_add_constant_torque**\ (\ torque\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__add_constant_torque>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.add_constant_torque<class_PhysicsDirectBodyState2D_method_add_constant_torque>`.
 
@@ -170,7 +170,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.add_constant_torque<class_
 
 .. rst-class:: classref-method
 
-|void| **_apply_central_force**\ (\ force\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_apply_central_force**\ (\ force\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__apply_central_force>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.apply_central_force<class_PhysicsDirectBodyState2D_method_apply_central_force>`.
 
@@ -182,7 +182,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.apply_central_force<class_
 
 .. rst-class:: classref-method
 
-|void| **_apply_central_impulse**\ (\ impulse\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_apply_central_impulse**\ (\ impulse\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__apply_central_impulse>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.apply_central_impulse<class_PhysicsDirectBodyState2D_method_apply_central_impulse>`.
 
@@ -194,7 +194,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.apply_central_impulse<clas
 
 .. rst-class:: classref-method
 
-|void| **_apply_force**\ (\ force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_apply_force**\ (\ force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__apply_force>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.apply_force<class_PhysicsDirectBodyState2D_method_apply_force>`.
 
@@ -206,7 +206,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.apply_force<class_PhysicsD
 
 .. rst-class:: classref-method
 
-|void| **_apply_impulse**\ (\ impulse\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_apply_impulse**\ (\ impulse\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__apply_impulse>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.apply_impulse<class_PhysicsDirectBodyState2D_method_apply_impulse>`.
 
@@ -218,7 +218,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.apply_impulse<class_Physic
 
 .. rst-class:: classref-method
 
-|void| **_apply_torque**\ (\ torque\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_apply_torque**\ (\ torque\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__apply_torque>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.apply_torque<class_PhysicsDirectBodyState2D_method_apply_torque>`.
 
@@ -230,7 +230,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.apply_torque<class_Physics
 
 .. rst-class:: classref-method
 
-|void| **_apply_torque_impulse**\ (\ impulse\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_apply_torque_impulse**\ (\ impulse\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__apply_torque_impulse>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.apply_torque_impulse<class_PhysicsDirectBodyState2D_method_apply_torque_impulse>`.
 
@@ -242,7 +242,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.apply_torque_impulse<class
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_angular_velocity**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_angular_velocity**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_angular_velocity>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.angular_velocity<class_PhysicsDirectBodyState2D_property_angular_velocity>` and its respective getter.
 
@@ -254,7 +254,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.angular_vel
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_center_of_mass**\ (\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_center_of_mass**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_center_of_mass>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.center_of_mass<class_PhysicsDirectBodyState2D_property_center_of_mass>` and its respective getter.
 
@@ -266,7 +266,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.center_of_m
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_center_of_mass_local**\ (\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_center_of_mass_local**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_center_of_mass_local>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.center_of_mass_local<class_PhysicsDirectBodyState2D_property_center_of_mass_local>` and its respective getter.
 
@@ -278,7 +278,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.center_of_m
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_constant_force**\ (\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_constant_force**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_constant_force>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_constant_force<class_PhysicsDirectBodyState2D_method_get_constant_force>`.
 
@@ -290,7 +290,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_constant_force<class_P
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_constant_torque**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_constant_torque**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_constant_torque>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_constant_torque<class_PhysicsDirectBodyState2D_method_get_constant_torque>`.
 
@@ -302,7 +302,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_constant_torque<class_
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_get_contact_collider**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_get_contact_collider**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_collider>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider<class_PhysicsDirectBodyState2D_method_get_contact_collider>`.
 
@@ -314,7 +314,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider<class
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_contact_collider_id**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_contact_collider_id**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_collider_id>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_id<class_PhysicsDirectBodyState2D_method_get_contact_collider_id>`.
 
@@ -326,7 +326,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_id<cl
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **_get_contact_collider_object**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Object<class_Object>` **_get_contact_collider_object**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_collider_object>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_object<class_PhysicsDirectBodyState2D_method_get_contact_collider_object>`.
 
@@ -338,7 +338,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_objec
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_contact_collider_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_contact_collider_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_collider_position>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_position<class_PhysicsDirectBodyState2D_method_get_contact_collider_position>`.
 
@@ -350,7 +350,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_posit
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_contact_collider_shape**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_contact_collider_shape**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_collider_shape>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_shape<class_PhysicsDirectBodyState2D_method_get_contact_collider_shape>`.
 
@@ -362,7 +362,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_shape
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_contact_collider_velocity_at_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_contact_collider_velocity_at_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_collider_velocity_at_position>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_velocity_at_position<class_PhysicsDirectBodyState2D_method_get_contact_collider_velocity_at_position>`.
 
@@ -374,7 +374,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_veloc
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_contact_count**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_contact_count**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_count>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_count<class_PhysicsDirectBodyState2D_method_get_contact_count>`.
 
@@ -386,7 +386,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_count<class_Ph
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_contact_impulse**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_contact_impulse**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_impulse>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_impulse<class_PhysicsDirectBodyState2D_method_get_contact_impulse>`.
 
@@ -398,7 +398,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_impulse<class_
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_contact_local_normal**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_contact_local_normal**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_local_normal>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_normal<class_PhysicsDirectBodyState2D_method_get_contact_local_normal>`.
 
@@ -410,7 +410,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_normal<c
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_contact_local_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_contact_local_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_local_position>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_position<class_PhysicsDirectBodyState2D_method_get_contact_local_position>`.
 
@@ -422,7 +422,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_position
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_contact_local_shape**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_contact_local_shape**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_local_shape>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_shape<class_PhysicsDirectBodyState2D_method_get_contact_local_shape>`.
 
@@ -434,7 +434,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_shape<cl
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_contact_local_velocity_at_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_contact_local_velocity_at_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_contact_local_velocity_at_position>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_velocity_at_position<class_PhysicsDirectBodyState2D_method_get_contact_local_velocity_at_position>`.
 
@@ -446,7 +446,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_velocity
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_inverse_inertia**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_inverse_inertia**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_inverse_inertia>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>` and its respective getter.
 
@@ -458,7 +458,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.inverse_ine
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_inverse_mass**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_inverse_mass**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_inverse_mass>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.inverse_mass<class_PhysicsDirectBodyState2D_property_inverse_mass>` and its respective getter.
 
@@ -470,7 +470,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.inverse_mas
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_linear_velocity**\ (\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_linear_velocity**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_linear_velocity>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.linear_velocity<class_PhysicsDirectBodyState2D_property_linear_velocity>` and its respective getter.
 
@@ -482,7 +482,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.linear_velo
 
 .. rst-class:: classref-method
 
-:ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **_get_space_state**\ (\ ) |virtual|
+:ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **_get_space_state**\ (\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_space_state>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_space_state<class_PhysicsDirectBodyState2D_method_get_space_state>`.
 
@@ -494,7 +494,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_space_state<class_Phys
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_step**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_step**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_step>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.step<class_PhysicsDirectBodyState2D_property_step>` and its respective getter.
 
@@ -506,7 +506,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.step<class_
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_total_angular_damp**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_total_angular_damp**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_total_angular_damp>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_angular_damp<class_PhysicsDirectBodyState2D_property_total_angular_damp>` and its respective getter.
 
@@ -518,7 +518,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_angul
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_total_gravity**\ (\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_total_gravity**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_total_gravity>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_gravity<class_PhysicsDirectBodyState2D_property_total_gravity>` and its respective getter.
 
@@ -530,7 +530,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_gravi
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_total_linear_damp**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_total_linear_damp**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_total_linear_damp>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_linear_damp<class_PhysicsDirectBodyState2D_property_total_linear_damp>` and its respective getter.
 
@@ -542,7 +542,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_linea
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **_get_transform**\ (\ ) |virtual| |const|
+:ref:`Transform2D<class_Transform2D>` **_get_transform**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_transform>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.transform<class_PhysicsDirectBodyState2D_property_transform>` and its respective getter.
 
@@ -554,7 +554,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.transform<c
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **_get_velocity_at_local_position**\ (\ local_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_velocity_at_local_position**\ (\ local_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__get_velocity_at_local_position>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.get_velocity_at_local_position<class_PhysicsDirectBodyState2D_method_get_velocity_at_local_position>`.
 
@@ -566,7 +566,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.get_velocity_at_local_posi
 
 .. rst-class:: classref-method
 
-|void| **_integrate_forces**\ (\ ) |virtual|
+|void| **_integrate_forces**\ (\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__integrate_forces>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.integrate_forces<class_PhysicsDirectBodyState2D_method_integrate_forces>`.
 
@@ -578,7 +578,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.integrate_forces<class_Phy
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_sleeping**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_sleeping**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__is_sleeping>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.sleeping<class_PhysicsDirectBodyState2D_property_sleeping>` and its respective getter.
 
@@ -590,7 +590,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.sleeping<cl
 
 .. rst-class:: classref-method
 
-|void| **_set_angular_velocity**\ (\ velocity\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_set_angular_velocity**\ (\ velocity\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__set_angular_velocity>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.angular_velocity<class_PhysicsDirectBodyState2D_property_angular_velocity>` and its respective setter.
 
@@ -602,7 +602,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.angular_vel
 
 .. rst-class:: classref-method
 
-|void| **_set_constant_force**\ (\ force\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_set_constant_force**\ (\ force\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__set_constant_force>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.set_constant_force<class_PhysicsDirectBodyState2D_method_set_constant_force>`.
 
@@ -614,7 +614,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.set_constant_force<class_P
 
 .. rst-class:: classref-method
 
-|void| **_set_constant_torque**\ (\ torque\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_set_constant_torque**\ (\ torque\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__set_constant_torque>`
 
 Overridable version of :ref:`PhysicsDirectBodyState2D.set_constant_torque<class_PhysicsDirectBodyState2D_method_set_constant_torque>`.
 
@@ -626,7 +626,7 @@ Overridable version of :ref:`PhysicsDirectBodyState2D.set_constant_torque<class_
 
 .. rst-class:: classref-method
 
-|void| **_set_linear_velocity**\ (\ velocity\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
+|void| **_set_linear_velocity**\ (\ velocity\: :ref:`Vector2<class_Vector2>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__set_linear_velocity>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.linear_velocity<class_PhysicsDirectBodyState2D_property_linear_velocity>` and its respective setter.
 
@@ -638,7 +638,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.linear_velo
 
 .. rst-class:: classref-method
 
-|void| **_set_sleep_state**\ (\ enabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_set_sleep_state**\ (\ enabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__set_sleep_state>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.sleeping<class_PhysicsDirectBodyState2D_property_sleeping>` and its respective setter.
 
@@ -650,7 +650,7 @@ Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.sleeping<cl
 
 .. rst-class:: classref-method
 
-|void| **_set_transform**\ (\ transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual|
+|void| **_set_transform**\ (\ transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState2DExtension_private_method__set_transform>`
 
 Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.transform<class_PhysicsDirectBodyState2D_property_transform>` and its respective setter.
 

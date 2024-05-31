@@ -245,7 +245,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TileShape**:
+enum **TileShape**: :ref:`🔗<enum_TileSet_TileShape>`
 
 .. _class_TileSet_constant_TILE_SHAPE_SQUARE:
 
@@ -289,7 +289,7 @@ Hexagonal tile shape.
 
 .. rst-class:: classref-enumeration
 
-enum **TileLayout**:
+enum **TileLayout**: :ref:`🔗<enum_TileSet_TileLayout>`
 
 .. _class_TileSet_constant_TILE_LAYOUT_STACKED:
 
@@ -347,7 +347,7 @@ Tile coordinates layout where the horizontal axis goes down-right, and the verti
 
 .. rst-class:: classref-enumeration
 
-enum **TileOffsetAxis**:
+enum **TileOffsetAxis**: :ref:`🔗<enum_TileSet_TileOffsetAxis>`
 
 .. _class_TileSet_constant_TILE_OFFSET_AXIS_HORIZONTAL:
 
@@ -373,7 +373,7 @@ Vertical half-offset.
 
 .. rst-class:: classref-enumeration
 
-enum **CellNeighbor**:
+enum **CellNeighbor**: :ref:`🔗<enum_TileSet_CellNeighbor>`
 
 .. _class_TileSet_constant_CELL_NEIGHBOR_RIGHT_SIDE:
 
@@ -511,7 +511,7 @@ Neighbor in the top right corner.
 
 .. rst-class:: classref-enumeration
 
-enum **TerrainMode**:
+enum **TerrainMode**: :ref:`🔗<enum_TileSet_TerrainMode>`
 
 .. _class_TileSet_constant_TERRAIN_MODE_MATCH_CORNERS_AND_SIDES:
 
@@ -550,7 +550,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`TileLayout<enum_TileSet_TileLayout>` **tile_layout** = ``0``
+:ref:`TileLayout<enum_TileSet_TileLayout>` **tile_layout** = ``0`` :ref:`🔗<class_TileSet_property_tile_layout>`
 
 .. rst-class:: classref-property-setget
 
@@ -567,7 +567,7 @@ For all half-offset shapes (Isometric, Hexagonal and Half-Offset square), change
 
 .. rst-class:: classref-property
 
-:ref:`TileOffsetAxis<enum_TileSet_TileOffsetAxis>` **tile_offset_axis** = ``0``
+:ref:`TileOffsetAxis<enum_TileSet_TileOffsetAxis>` **tile_offset_axis** = ``0`` :ref:`🔗<class_TileSet_property_tile_offset_axis>`
 
 .. rst-class:: classref-property-setget
 
@@ -584,7 +584,7 @@ For all half-offset shapes (Isometric, Hexagonal and Half-Offset square), determ
 
 .. rst-class:: classref-property
 
-:ref:`TileShape<enum_TileSet_TileShape>` **tile_shape** = ``0``
+:ref:`TileShape<enum_TileSet_TileShape>` **tile_shape** = ``0`` :ref:`🔗<class_TileSet_property_tile_shape>`
 
 .. rst-class:: classref-property-setget
 
@@ -601,7 +601,7 @@ The tile shape.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **tile_size** = ``Vector2i(16, 16)``
+:ref:`Vector2i<class_Vector2i>` **tile_size** = ``Vector2i(16, 16)`` :ref:`🔗<class_TileSet_property_tile_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -618,7 +618,7 @@ The tile size, in pixels. For all tile shapes, this size corresponds to the enco
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **uv_clipping** = ``false``
+:ref:`bool<class_bool>` **uv_clipping** = ``false`` :ref:`🔗<class_TileSet_property_uv_clipping>`
 
 .. rst-class:: classref-property-setget
 
@@ -640,7 +640,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_custom_data_layer**\ (\ to_position\: :ref:`int<class_int>` = -1\ )
+|void| **add_custom_data_layer**\ (\ to_position\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileSet_method_add_custom_data_layer>`
 
 Adds a custom data layer to the TileSet at the given position ``to_position`` in the array. If ``to_position`` is -1, adds it at the end of the array.
 
@@ -654,7 +654,7 @@ Custom data layers allow assigning custom properties to atlas tiles.
 
 .. rst-class:: classref-method
 
-|void| **add_navigation_layer**\ (\ to_position\: :ref:`int<class_int>` = -1\ )
+|void| **add_navigation_layer**\ (\ to_position\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileSet_method_add_navigation_layer>`
 
 Adds a navigation layer to the TileSet at the given position ``to_position`` in the array. If ``to_position`` is -1, adds it at the end of the array.
 
@@ -668,7 +668,7 @@ Navigation layers allow assigning a navigable area to atlas tiles.
 
 .. rst-class:: classref-method
 
-|void| **add_occlusion_layer**\ (\ to_position\: :ref:`int<class_int>` = -1\ )
+|void| **add_occlusion_layer**\ (\ to_position\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileSet_method_add_occlusion_layer>`
 
 Adds an occlusion layer to the TileSet at the given position ``to_position`` in the array. If ``to_position`` is -1, adds it at the end of the array.
 
@@ -682,7 +682,7 @@ Occlusion layers allow assigning occlusion polygons to atlas tiles.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **add_pattern**\ (\ pattern\: :ref:`TileMapPattern<class_TileMapPattern>`, index\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **add_pattern**\ (\ pattern\: :ref:`TileMapPattern<class_TileMapPattern>`, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileSet_method_add_pattern>`
 
 Adds a :ref:`TileMapPattern<class_TileMapPattern>` to be stored in the TileSet resource. If provided, insert it at the given ``index``.
 
@@ -694,7 +694,7 @@ Adds a :ref:`TileMapPattern<class_TileMapPattern>` to be stored in the TileSet r
 
 .. rst-class:: classref-method
 
-|void| **add_physics_layer**\ (\ to_position\: :ref:`int<class_int>` = -1\ )
+|void| **add_physics_layer**\ (\ to_position\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileSet_method_add_physics_layer>`
 
 Adds a physics layer to the TileSet at the given position ``to_position`` in the array. If ``to_position`` is -1, adds it at the end of the array.
 
@@ -708,7 +708,7 @@ Physics layers allow assigning collision polygons to atlas tiles.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **add_source**\ (\ source\: :ref:`TileSetSource<class_TileSetSource>`, atlas_source_id_override\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **add_source**\ (\ source\: :ref:`TileSetSource<class_TileSetSource>`, atlas_source_id_override\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileSet_method_add_source>`
 
 Adds a :ref:`TileSetSource<class_TileSetSource>` to the TileSet. If ``atlas_source_id_override`` is not -1, also set its source ID. Otherwise, a unique identifier is automatically generated.
 
@@ -724,7 +724,7 @@ The function returns the added source ID or -1 if the source could not be added.
 
 .. rst-class:: classref-method
 
-|void| **add_terrain**\ (\ terrain_set\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>` = -1\ )
+|void| **add_terrain**\ (\ terrain_set\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileSet_method_add_terrain>`
 
 Adds a new terrain to the given terrain set ``terrain_set`` at the given position ``to_position`` in the array. If ``to_position`` is -1, adds it at the end of the array.
 
@@ -736,7 +736,7 @@ Adds a new terrain to the given terrain set ``terrain_set`` at the given positio
 
 .. rst-class:: classref-method
 
-|void| **add_terrain_set**\ (\ to_position\: :ref:`int<class_int>` = -1\ )
+|void| **add_terrain_set**\ (\ to_position\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileSet_method_add_terrain_set>`
 
 Adds a new terrain set at the given position ``to_position`` in the array. If ``to_position`` is -1, adds it at the end of the array.
 
@@ -748,7 +748,7 @@ Adds a new terrain set at the given position ``to_position`` in the array. If ``
 
 .. rst-class:: classref-method
 
-|void| **cleanup_invalid_tile_proxies**\ (\ )
+|void| **cleanup_invalid_tile_proxies**\ (\ ) :ref:`🔗<class_TileSet_method_cleanup_invalid_tile_proxies>`
 
 Clears tile proxies pointing to invalid tiles.
 
@@ -760,7 +760,7 @@ Clears tile proxies pointing to invalid tiles.
 
 .. rst-class:: classref-method
 
-|void| **clear_tile_proxies**\ (\ )
+|void| **clear_tile_proxies**\ (\ ) :ref:`🔗<class_TileSet_method_clear_tile_proxies>`
 
 Clears all tile proxies.
 
@@ -772,7 +772,7 @@ Clears all tile proxies.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_alternative_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, alternative_from\: :ref:`int<class_int>`\ )
+:ref:`Array<class_Array>` **get_alternative_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, alternative_from\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_get_alternative_level_tile_proxy>`
 
 Returns the alternative-level proxy for the given identifiers. The returned array contains the three proxie's target identifiers (source ID, atlas coords ID and alternative tile ID).
 
@@ -786,7 +786,7 @@ If the TileSet has no proxy for the given identifiers, returns an empty Array.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_coords_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`\ )
+:ref:`Array<class_Array>` **get_coords_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_TileSet_method_get_coords_level_tile_proxy>`
 
 Returns the coordinate-level proxy for the given identifiers. The returned array contains the two target identifiers of the proxy (source ID and atlas coordinates ID).
 
@@ -800,7 +800,7 @@ If the TileSet has no proxy for the given identifiers, returns an empty Array.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_custom_data_layer_by_name**\ (\ layer_name\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **get_custom_data_layer_by_name**\ (\ layer_name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TileSet_method_get_custom_data_layer_by_name>`
 
 Returns the index of the custom data layer identified by the given name.
 
@@ -812,7 +812,7 @@ Returns the index of the custom data layer identified by the given name.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_custom_data_layer_name**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_custom_data_layer_name**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_custom_data_layer_name>`
 
 Returns the name of the custom data layer identified by the given index.
 
@@ -824,7 +824,7 @@ Returns the name of the custom data layer identified by the given index.
 
 .. rst-class:: classref-method
 
-:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_custom_data_layer_type**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_custom_data_layer_type**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_custom_data_layer_type>`
 
 Returns the type of the custom data layer identified by the given index.
 
@@ -836,7 +836,7 @@ Returns the type of the custom data layer identified by the given index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_custom_data_layers_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_custom_data_layers_count**\ (\ ) |const| :ref:`🔗<class_TileSet_method_get_custom_data_layers_count>`
 
 Returns the custom data layers count.
 
@@ -848,7 +848,7 @@ Returns the custom data layers count.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_navigation_layer_layer_value**\ (\ layer_index\: :ref:`int<class_int>`, layer_number\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_navigation_layer_layer_value**\ (\ layer_index\: :ref:`int<class_int>`, layer_number\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_navigation_layer_layer_value>`
 
 Returns whether or not the specified navigation layer of the TileSet navigation data layer identified by the given ``layer_index`` is enabled, given a navigation_layers ``layer_number`` between 1 and 32.
 
@@ -860,7 +860,7 @@ Returns whether or not the specified navigation layer of the TileSet navigation 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_navigation_layer_layers**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_navigation_layer_layers**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_navigation_layer_layers>`
 
 Returns the navigation layers (as in the Navigation server) of the given TileSet navigation layer.
 
@@ -872,7 +872,7 @@ Returns the navigation layers (as in the Navigation server) of the given TileSet
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_navigation_layers_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_navigation_layers_count**\ (\ ) |const| :ref:`🔗<class_TileSet_method_get_navigation_layers_count>`
 
 Returns the navigation layers count.
 
@@ -884,7 +884,7 @@ Returns the navigation layers count.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_next_source_id**\ (\ ) |const|
+:ref:`int<class_int>` **get_next_source_id**\ (\ ) |const| :ref:`🔗<class_TileSet_method_get_next_source_id>`
 
 Returns a new unused source ID. This generated ID is the same that a call to :ref:`add_source<class_TileSet_method_add_source>` would return.
 
@@ -896,7 +896,7 @@ Returns a new unused source ID. This generated ID is the same that a call to :re
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_occlusion_layer_light_mask**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_occlusion_layer_light_mask**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_occlusion_layer_light_mask>`
 
 Returns the light mask of the occlusion layer.
 
@@ -908,7 +908,7 @@ Returns the light mask of the occlusion layer.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_occlusion_layer_sdf_collision**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_occlusion_layer_sdf_collision**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_occlusion_layer_sdf_collision>`
 
 Returns if the occluders from this layer use ``sdf_collision``.
 
@@ -920,7 +920,7 @@ Returns if the occluders from this layer use ``sdf_collision``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_occlusion_layers_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_occlusion_layers_count**\ (\ ) |const| :ref:`🔗<class_TileSet_method_get_occlusion_layers_count>`
 
 Returns the occlusion layers count.
 
@@ -932,7 +932,7 @@ Returns the occlusion layers count.
 
 .. rst-class:: classref-method
 
-:ref:`TileMapPattern<class_TileMapPattern>` **get_pattern**\ (\ index\: :ref:`int<class_int>` = -1\ )
+:ref:`TileMapPattern<class_TileMapPattern>` **get_pattern**\ (\ index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TileSet_method_get_pattern>`
 
 Returns the :ref:`TileMapPattern<class_TileMapPattern>` at the given ``index``.
 
@@ -944,7 +944,7 @@ Returns the :ref:`TileMapPattern<class_TileMapPattern>` at the given ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_patterns_count**\ (\ )
+:ref:`int<class_int>` **get_patterns_count**\ (\ ) :ref:`🔗<class_TileSet_method_get_patterns_count>`
 
 Returns the number of :ref:`TileMapPattern<class_TileMapPattern>` this tile set handles.
 
@@ -956,7 +956,7 @@ Returns the number of :ref:`TileMapPattern<class_TileMapPattern>` this tile set 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_physics_layer_collision_layer**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_physics_layer_collision_layer**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_physics_layer_collision_layer>`
 
 Returns the collision layer (as in the physics server) bodies on the given TileSet's physics layer are in.
 
@@ -968,7 +968,7 @@ Returns the collision layer (as in the physics server) bodies on the given TileS
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_physics_layer_collision_mask**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_physics_layer_collision_mask**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_physics_layer_collision_mask>`
 
 Returns the collision mask of bodies on the given TileSet's physics layer.
 
@@ -980,7 +980,7 @@ Returns the collision mask of bodies on the given TileSet's physics layer.
 
 .. rst-class:: classref-method
 
-:ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_layer_physics_material**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_layer_physics_material**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_physics_layer_physics_material>`
 
 Returns the physics material of bodies on the given TileSet's physics layer.
 
@@ -992,7 +992,7 @@ Returns the physics material of bodies on the given TileSet's physics layer.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_physics_layers_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_physics_layers_count**\ (\ ) |const| :ref:`🔗<class_TileSet_method_get_physics_layers_count>`
 
 Returns the physics layers count.
 
@@ -1004,7 +1004,7 @@ Returns the physics layers count.
 
 .. rst-class:: classref-method
 
-:ref:`TileSetSource<class_TileSetSource>` **get_source**\ (\ source_id\: :ref:`int<class_int>`\ ) |const|
+:ref:`TileSetSource<class_TileSetSource>` **get_source**\ (\ source_id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_source>`
 
 Returns the :ref:`TileSetSource<class_TileSetSource>` with ID ``source_id``.
 
@@ -1016,7 +1016,7 @@ Returns the :ref:`TileSetSource<class_TileSetSource>` with ID ``source_id``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_source_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_source_count**\ (\ ) |const| :ref:`🔗<class_TileSet_method_get_source_count>`
 
 Returns the number of :ref:`TileSetSource<class_TileSetSource>` in this TileSet.
 
@@ -1028,7 +1028,7 @@ Returns the number of :ref:`TileSetSource<class_TileSetSource>` in this TileSet.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_source_id**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_source_id**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_source_id>`
 
 Returns the source ID for source with index ``index``.
 
@@ -1040,7 +1040,7 @@ Returns the source ID for source with index ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_source_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **get_source_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_get_source_level_tile_proxy>`
 
 Returns the source-level proxy for the given source identifier.
 
@@ -1054,7 +1054,7 @@ If the TileSet has no proxy for the given identifier, returns -1.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_terrain_color**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_terrain_color**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_terrain_color>`
 
 Returns a terrain's color.
 
@@ -1066,7 +1066,7 @@ Returns a terrain's color.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_terrain_name**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_terrain_name**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_terrain_name>`
 
 Returns a terrain's name.
 
@@ -1078,7 +1078,7 @@ Returns a terrain's name.
 
 .. rst-class:: classref-method
 
-:ref:`TerrainMode<enum_TileSet_TerrainMode>` **get_terrain_set_mode**\ (\ terrain_set\: :ref:`int<class_int>`\ ) |const|
+:ref:`TerrainMode<enum_TileSet_TerrainMode>` **get_terrain_set_mode**\ (\ terrain_set\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_terrain_set_mode>`
 
 Returns a terrain set mode.
 
@@ -1090,7 +1090,7 @@ Returns a terrain set mode.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_terrain_sets_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_terrain_sets_count**\ (\ ) |const| :ref:`🔗<class_TileSet_method_get_terrain_sets_count>`
 
 Returns the terrain sets count.
 
@@ -1102,7 +1102,7 @@ Returns the terrain sets count.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_terrains_count**\ (\ terrain_set\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_terrains_count**\ (\ terrain_set\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_terrains_count>`
 
 Returns the number of terrains in the given terrain set.
 
@@ -1114,7 +1114,7 @@ Returns the number of terrains in the given terrain set.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_alternative_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, alternative_from\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **has_alternative_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, alternative_from\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_has_alternative_level_tile_proxy>`
 
 Returns if there is an alternative-level proxy for the given identifiers.
 
@@ -1126,7 +1126,7 @@ Returns if there is an alternative-level proxy for the given identifiers.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_coords_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`\ )
+:ref:`bool<class_bool>` **has_coords_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_TileSet_method_has_coords_level_tile_proxy>`
 
 Returns if there is a coodinates-level proxy for the given identifiers.
 
@@ -1138,7 +1138,7 @@ Returns if there is a coodinates-level proxy for the given identifiers.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_source**\ (\ source_id\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **has_source**\ (\ source_id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_has_source>`
 
 Returns if this TileSet has a source for the given source ID.
 
@@ -1150,7 +1150,7 @@ Returns if this TileSet has a source for the given source ID.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_source_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **has_source_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_has_source_level_tile_proxy>`
 
 Returns if there is a source-level proxy for the given source ID.
 
@@ -1162,7 +1162,7 @@ Returns if there is a source-level proxy for the given source ID.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **map_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, alternative_from\: :ref:`int<class_int>`\ ) |const|
+:ref:`Array<class_Array>` **map_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, alternative_from\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_map_tile_proxy>`
 
 According to the configured proxies, maps the provided identifiers to a new set of identifiers. The source ID, atlas coordinates ID and alternative tile ID are returned as a 3 elements Array.
 
@@ -1178,7 +1178,7 @@ If no proxy corresponding to provided identifiers are found, returns the same va
 
 .. rst-class:: classref-method
 
-|void| **move_custom_data_layer**\ (\ layer_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ )
+|void| **move_custom_data_layer**\ (\ layer_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_move_custom_data_layer>`
 
 Moves the custom data layer at index ``layer_index`` to the given position ``to_position`` in the array. Also updates the atlas tiles accordingly.
 
@@ -1190,7 +1190,7 @@ Moves the custom data layer at index ``layer_index`` to the given position ``to_
 
 .. rst-class:: classref-method
 
-|void| **move_navigation_layer**\ (\ layer_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ )
+|void| **move_navigation_layer**\ (\ layer_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_move_navigation_layer>`
 
 Moves the navigation layer at index ``layer_index`` to the given position ``to_position`` in the array. Also updates the atlas tiles accordingly.
 
@@ -1202,7 +1202,7 @@ Moves the navigation layer at index ``layer_index`` to the given position ``to_p
 
 .. rst-class:: classref-method
 
-|void| **move_occlusion_layer**\ (\ layer_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ )
+|void| **move_occlusion_layer**\ (\ layer_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_move_occlusion_layer>`
 
 Moves the occlusion layer at index ``layer_index`` to the given position ``to_position`` in the array. Also updates the atlas tiles accordingly.
 
@@ -1214,7 +1214,7 @@ Moves the occlusion layer at index ``layer_index`` to the given position ``to_po
 
 .. rst-class:: classref-method
 
-|void| **move_physics_layer**\ (\ layer_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ )
+|void| **move_physics_layer**\ (\ layer_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_move_physics_layer>`
 
 Moves the physics layer at index ``layer_index`` to the given position ``to_position`` in the array. Also updates the atlas tiles accordingly.
 
@@ -1226,7 +1226,7 @@ Moves the physics layer at index ``layer_index`` to the given position ``to_posi
 
 .. rst-class:: classref-method
 
-|void| **move_terrain**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ )
+|void| **move_terrain**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_move_terrain>`
 
 Moves the terrain at index ``terrain_index`` for terrain set ``terrain_set`` to the given position ``to_position`` in the array. Also updates the atlas tiles accordingly.
 
@@ -1238,7 +1238,7 @@ Moves the terrain at index ``terrain_index`` for terrain set ``terrain_set`` to 
 
 .. rst-class:: classref-method
 
-|void| **move_terrain_set**\ (\ terrain_set\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ )
+|void| **move_terrain_set**\ (\ terrain_set\: :ref:`int<class_int>`, to_position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_move_terrain_set>`
 
 Moves the terrain set at index ``terrain_set`` to the given position ``to_position`` in the array. Also updates the atlas tiles accordingly.
 
@@ -1250,7 +1250,7 @@ Moves the terrain set at index ``terrain_set`` to the given position ``to_positi
 
 .. rst-class:: classref-method
 
-|void| **remove_alternative_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, alternative_from\: :ref:`int<class_int>`\ )
+|void| **remove_alternative_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, alternative_from\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_remove_alternative_level_tile_proxy>`
 
 Removes an alternative-level proxy for the given identifiers.
 
@@ -1262,7 +1262,7 @@ Removes an alternative-level proxy for the given identifiers.
 
 .. rst-class:: classref-method
 
-|void| **remove_coords_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **remove_coords_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_TileSet_method_remove_coords_level_tile_proxy>`
 
 Removes a coordinates-level proxy for the given identifiers.
 
@@ -1274,7 +1274,7 @@ Removes a coordinates-level proxy for the given identifiers.
 
 .. rst-class:: classref-method
 
-|void| **remove_custom_data_layer**\ (\ layer_index\: :ref:`int<class_int>`\ )
+|void| **remove_custom_data_layer**\ (\ layer_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_remove_custom_data_layer>`
 
 Removes the custom data layer at index ``layer_index``. Also updates the atlas tiles accordingly.
 
@@ -1286,7 +1286,7 @@ Removes the custom data layer at index ``layer_index``. Also updates the atlas t
 
 .. rst-class:: classref-method
 
-|void| **remove_navigation_layer**\ (\ layer_index\: :ref:`int<class_int>`\ )
+|void| **remove_navigation_layer**\ (\ layer_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_remove_navigation_layer>`
 
 Removes the navigation layer at index ``layer_index``. Also updates the atlas tiles accordingly.
 
@@ -1298,7 +1298,7 @@ Removes the navigation layer at index ``layer_index``. Also updates the atlas ti
 
 .. rst-class:: classref-method
 
-|void| **remove_occlusion_layer**\ (\ layer_index\: :ref:`int<class_int>`\ )
+|void| **remove_occlusion_layer**\ (\ layer_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_remove_occlusion_layer>`
 
 Removes the occlusion layer at index ``layer_index``. Also updates the atlas tiles accordingly.
 
@@ -1310,7 +1310,7 @@ Removes the occlusion layer at index ``layer_index``. Also updates the atlas til
 
 .. rst-class:: classref-method
 
-|void| **remove_pattern**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **remove_pattern**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_remove_pattern>`
 
 Remove the :ref:`TileMapPattern<class_TileMapPattern>` at the given index.
 
@@ -1322,7 +1322,7 @@ Remove the :ref:`TileMapPattern<class_TileMapPattern>` at the given index.
 
 .. rst-class:: classref-method
 
-|void| **remove_physics_layer**\ (\ layer_index\: :ref:`int<class_int>`\ )
+|void| **remove_physics_layer**\ (\ layer_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_remove_physics_layer>`
 
 Removes the physics layer at index ``layer_index``. Also updates the atlas tiles accordingly.
 
@@ -1334,7 +1334,7 @@ Removes the physics layer at index ``layer_index``. Also updates the atlas tiles
 
 .. rst-class:: classref-method
 
-|void| **remove_source**\ (\ source_id\: :ref:`int<class_int>`\ )
+|void| **remove_source**\ (\ source_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_remove_source>`
 
 Removes the source with the given source ID.
 
@@ -1346,7 +1346,7 @@ Removes the source with the given source ID.
 
 .. rst-class:: classref-method
 
-|void| **remove_source_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`\ )
+|void| **remove_source_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_remove_source_level_tile_proxy>`
 
 Removes a source-level tile proxy.
 
@@ -1358,7 +1358,7 @@ Removes a source-level tile proxy.
 
 .. rst-class:: classref-method
 
-|void| **remove_terrain**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`\ )
+|void| **remove_terrain**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_remove_terrain>`
 
 Removes the terrain at index ``terrain_index`` in the given terrain set ``terrain_set``. Also updates the atlas tiles accordingly.
 
@@ -1370,7 +1370,7 @@ Removes the terrain at index ``terrain_index`` in the given terrain set ``terrai
 
 .. rst-class:: classref-method
 
-|void| **remove_terrain_set**\ (\ terrain_set\: :ref:`int<class_int>`\ )
+|void| **remove_terrain_set**\ (\ terrain_set\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_remove_terrain_set>`
 
 Removes the terrain set at index ``terrain_set``. Also updates the atlas tiles accordingly.
 
@@ -1382,7 +1382,7 @@ Removes the terrain set at index ``terrain_set``. Also updates the atlas tiles a
 
 .. rst-class:: classref-method
 
-|void| **set_alternative_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, alternative_from\: :ref:`int<class_int>`, source_to\: :ref:`int<class_int>`, coords_to\: :ref:`Vector2i<class_Vector2i>`, alternative_to\: :ref:`int<class_int>`\ )
+|void| **set_alternative_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, alternative_from\: :ref:`int<class_int>`, source_to\: :ref:`int<class_int>`, coords_to\: :ref:`Vector2i<class_Vector2i>`, alternative_to\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_set_alternative_level_tile_proxy>`
 
 Create an alternative-level proxy for the given identifiers. A proxy will map set of tile identifiers to another set of identifiers.
 
@@ -1398,7 +1398,7 @@ Proxied tiles can be automatically replaced in TileMap nodes using the editor.
 
 .. rst-class:: classref-method
 
-|void| **set_coords_level_tile_proxy**\ (\ p_source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, source_to\: :ref:`int<class_int>`, coords_to\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **set_coords_level_tile_proxy**\ (\ p_source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`, source_to\: :ref:`int<class_int>`, coords_to\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_TileSet_method_set_coords_level_tile_proxy>`
 
 Creates a coordinates-level proxy for the given identifiers. A proxy will map set of tile identifiers to another set of identifiers. The alternative tile ID is kept the same when using coordinates-level proxies.
 
@@ -1414,7 +1414,7 @@ Proxied tiles can be automatically replaced in TileMap nodes using the editor.
 
 .. rst-class:: classref-method
 
-|void| **set_custom_data_layer_name**\ (\ layer_index\: :ref:`int<class_int>`, layer_name\: :ref:`String<class_String>`\ )
+|void| **set_custom_data_layer_name**\ (\ layer_index\: :ref:`int<class_int>`, layer_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TileSet_method_set_custom_data_layer_name>`
 
 Sets the name of the custom data layer identified by the given index. Names are identifiers of the layer therefore if the name is already taken it will fail and raise an error.
 
@@ -1426,7 +1426,7 @@ Sets the name of the custom data layer identified by the given index. Names are 
 
 .. rst-class:: classref-method
 
-|void| **set_custom_data_layer_type**\ (\ layer_index\: :ref:`int<class_int>`, layer_type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ )
+|void| **set_custom_data_layer_type**\ (\ layer_index\: :ref:`int<class_int>`, layer_type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ ) :ref:`🔗<class_TileSet_method_set_custom_data_layer_type>`
 
 Sets the type of the custom data layer identified by the given index.
 
@@ -1438,7 +1438,7 @@ Sets the type of the custom data layer identified by the given index.
 
 .. rst-class:: classref-method
 
-|void| **set_navigation_layer_layer_value**\ (\ layer_index\: :ref:`int<class_int>`, layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
+|void| **set_navigation_layer_layer_value**\ (\ layer_index\: :ref:`int<class_int>`, layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TileSet_method_set_navigation_layer_layer_value>`
 
 Based on ``value``, enables or disables the specified navigation layer of the TileSet navigation data layer identified by the given ``layer_index``, given a navigation_layers ``layer_number`` between 1 and 32.
 
@@ -1450,7 +1450,7 @@ Based on ``value``, enables or disables the specified navigation layer of the Ti
 
 .. rst-class:: classref-method
 
-|void| **set_navigation_layer_layers**\ (\ layer_index\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>`\ )
+|void| **set_navigation_layer_layers**\ (\ layer_index\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_set_navigation_layer_layers>`
 
 Sets the navigation layers (as in the navigation server) for navigation regions in the given TileSet navigation layer.
 
@@ -1462,7 +1462,7 @@ Sets the navigation layers (as in the navigation server) for navigation regions 
 
 .. rst-class:: classref-method
 
-|void| **set_occlusion_layer_light_mask**\ (\ layer_index\: :ref:`int<class_int>`, light_mask\: :ref:`int<class_int>`\ )
+|void| **set_occlusion_layer_light_mask**\ (\ layer_index\: :ref:`int<class_int>`, light_mask\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_set_occlusion_layer_light_mask>`
 
 Sets the occlusion layer (as in the rendering server) for occluders in the given TileSet occlusion layer.
 
@@ -1474,7 +1474,7 @@ Sets the occlusion layer (as in the rendering server) for occluders in the given
 
 .. rst-class:: classref-method
 
-|void| **set_occlusion_layer_sdf_collision**\ (\ layer_index\: :ref:`int<class_int>`, sdf_collision\: :ref:`bool<class_bool>`\ )
+|void| **set_occlusion_layer_sdf_collision**\ (\ layer_index\: :ref:`int<class_int>`, sdf_collision\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TileSet_method_set_occlusion_layer_sdf_collision>`
 
 Enables or disables SDF collision for occluders in the given TileSet occlusion layer.
 
@@ -1486,7 +1486,7 @@ Enables or disables SDF collision for occluders in the given TileSet occlusion l
 
 .. rst-class:: classref-method
 
-|void| **set_physics_layer_collision_layer**\ (\ layer_index\: :ref:`int<class_int>`, layer\: :ref:`int<class_int>`\ )
+|void| **set_physics_layer_collision_layer**\ (\ layer_index\: :ref:`int<class_int>`, layer\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_set_physics_layer_collision_layer>`
 
 Sets the physics layer (as in the physics server) for bodies in the given TileSet physics layer.
 
@@ -1498,7 +1498,7 @@ Sets the physics layer (as in the physics server) for bodies in the given TileSe
 
 .. rst-class:: classref-method
 
-|void| **set_physics_layer_collision_mask**\ (\ layer_index\: :ref:`int<class_int>`, mask\: :ref:`int<class_int>`\ )
+|void| **set_physics_layer_collision_mask**\ (\ layer_index\: :ref:`int<class_int>`, mask\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_set_physics_layer_collision_mask>`
 
 Sets the physics layer (as in the physics server) for bodies in the given TileSet physics layer.
 
@@ -1510,7 +1510,7 @@ Sets the physics layer (as in the physics server) for bodies in the given TileSe
 
 .. rst-class:: classref-method
 
-|void| **set_physics_layer_physics_material**\ (\ layer_index\: :ref:`int<class_int>`, physics_material\: :ref:`PhysicsMaterial<class_PhysicsMaterial>`\ )
+|void| **set_physics_layer_physics_material**\ (\ layer_index\: :ref:`int<class_int>`, physics_material\: :ref:`PhysicsMaterial<class_PhysicsMaterial>`\ ) :ref:`🔗<class_TileSet_method_set_physics_layer_physics_material>`
 
 Sets the physics material for bodies in the given TileSet physics layer.
 
@@ -1522,7 +1522,7 @@ Sets the physics material for bodies in the given TileSet physics layer.
 
 .. rst-class:: classref-method
 
-|void| **set_source_id**\ (\ source_id\: :ref:`int<class_int>`, new_source_id\: :ref:`int<class_int>`\ )
+|void| **set_source_id**\ (\ source_id\: :ref:`int<class_int>`, new_source_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_set_source_id>`
 
 Changes a source's ID.
 
@@ -1534,7 +1534,7 @@ Changes a source's ID.
 
 .. rst-class:: classref-method
 
-|void| **set_source_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, source_to\: :ref:`int<class_int>`\ )
+|void| **set_source_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, source_to\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_set_source_level_tile_proxy>`
 
 Creates a source-level proxy for the given source ID. A proxy will map set of tile identifiers to another set of identifiers. Both the atlas coordinates ID and the alternative tile ID are kept the same when using source-level proxies.
 
@@ -1550,7 +1550,7 @@ Proxied tiles can be automatically replaced in TileMap nodes using the editor.
 
 .. rst-class:: classref-method
 
-|void| **set_terrain_color**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )
+|void| **set_terrain_color**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_TileSet_method_set_terrain_color>`
 
 Sets a terrain's color. This color is used for identifying the different terrains in the TileSet editor.
 
@@ -1562,7 +1562,7 @@ Sets a terrain's color. This color is used for identifying the different terrain
 
 .. rst-class:: classref-method
 
-|void| **set_terrain_name**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )
+|void| **set_terrain_name**\ (\ terrain_set\: :ref:`int<class_int>`, terrain_index\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TileSet_method_set_terrain_name>`
 
 Sets a terrain's name.
 
@@ -1574,7 +1574,7 @@ Sets a terrain's name.
 
 .. rst-class:: classref-method
 
-|void| **set_terrain_set_mode**\ (\ terrain_set\: :ref:`int<class_int>`, mode\: :ref:`TerrainMode<enum_TileSet_TerrainMode>`\ )
+|void| **set_terrain_set_mode**\ (\ terrain_set\: :ref:`int<class_int>`, mode\: :ref:`TerrainMode<enum_TileSet_TerrainMode>`\ ) :ref:`🔗<class_TileSet_method_set_terrain_set_mode>`
 
 Sets a terrain mode. Each mode determines which bits of a tile shape is used to match the neighboring tiles' terrains.
 

@@ -255,7 +255,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **DeviceType**:
+enum **DeviceType**: :ref:`🔗<enum_RenderingDevice_DeviceType>`
 
 .. _class_RenderingDevice_constant_DEVICE_TYPE_OTHER:
 
@@ -313,7 +313,7 @@ Represents the size of the :ref:`DeviceType<enum_RenderingDevice_DeviceType>` en
 
 .. rst-class:: classref-enumeration
 
-enum **DriverResource**:
+enum **DriverResource**: :ref:`🔗<enum_RenderingDevice_DriverResource>`
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_LOGICAL_DEVICE:
 
@@ -573,7 +573,7 @@ Buffer of any kind of (storage, vertex, etc.).
 
 .. rst-class:: classref-enumeration
 
-enum **DataFormat**:
+enum **DataFormat**: :ref:`🔗<enum_RenderingDevice_DataFormat>`
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R4G4_UNORM_PACK8:
 
@@ -2337,7 +2337,7 @@ Represents the size of the :ref:`DataFormat<enum_RenderingDevice_DataFormat>` en
 
 .. rst-class:: classref-enumeration
 
-flags **BarrierMask**:
+flags **BarrierMask**: :ref:`🔗<enum_RenderingDevice_BarrierMask>`
 
 .. _class_RenderingDevice_constant_BARRIER_MASK_VERTEX:
 
@@ -2403,7 +2403,7 @@ No barrier for any type.
 
 .. rst-class:: classref-enumeration
 
-enum **TextureType**:
+enum **TextureType**: :ref:`🔗<enum_RenderingDevice_TextureType>`
 
 .. _class_RenderingDevice_constant_TEXTURE_TYPE_1D:
 
@@ -2477,7 +2477,7 @@ Represents the size of the :ref:`TextureType<enum_RenderingDevice_TextureType>` 
 
 .. rst-class:: classref-enumeration
 
-enum **TextureSamples**:
+enum **TextureSamples**: :ref:`🔗<enum_RenderingDevice_TextureSamples>`
 
 .. _class_RenderingDevice_constant_TEXTURE_SAMPLES_1:
 
@@ -2551,7 +2551,7 @@ Represents the size of the :ref:`TextureSamples<enum_RenderingDevice_TextureSamp
 
 .. rst-class:: classref-enumeration
 
-flags **TextureUsageBits**:
+flags **TextureUsageBits**: :ref:`🔗<enum_RenderingDevice_TextureUsageBits>`
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_SAMPLING_BIT:
 
@@ -2641,7 +2641,7 @@ Texture can be used as a `input attachment <https://registry.khronos.org/vulkan/
 
 .. rst-class:: classref-enumeration
 
-enum **TextureSwizzle**:
+enum **TextureSwizzle**: :ref:`🔗<enum_RenderingDevice_TextureSwizzle>`
 
 .. _class_RenderingDevice_constant_TEXTURE_SWIZZLE_IDENTITY:
 
@@ -2715,7 +2715,7 @@ Represents the size of the :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwiz
 
 .. rst-class:: classref-enumeration
 
-enum **TextureSliceType**:
+enum **TextureSliceType**: :ref:`🔗<enum_RenderingDevice_TextureSliceType>`
 
 .. _class_RenderingDevice_constant_TEXTURE_SLICE_2D:
 
@@ -2749,7 +2749,7 @@ Cubemap texture slice.
 
 .. rst-class:: classref-enumeration
 
-enum **SamplerFilter**:
+enum **SamplerFilter**: :ref:`🔗<enum_RenderingDevice_SamplerFilter>`
 
 .. _class_RenderingDevice_constant_SAMPLER_FILTER_NEAREST:
 
@@ -2775,7 +2775,7 @@ Bilinear sampler filtering. Sampling at higher resolutions than the source will 
 
 .. rst-class:: classref-enumeration
 
-enum **SamplerRepeatMode**:
+enum **SamplerRepeatMode**: :ref:`🔗<enum_RenderingDevice_SamplerRepeatMode>`
 
 .. _class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_REPEAT:
 
@@ -2833,7 +2833,7 @@ Represents the size of the :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerR
 
 .. rst-class:: classref-enumeration
 
-enum **SamplerBorderColor**:
+enum **SamplerBorderColor**: :ref:`🔗<enum_RenderingDevice_SamplerBorderColor>`
 
 .. _class_RenderingDevice_constant_SAMPLER_BORDER_COLOR_FLOAT_TRANSPARENT_BLACK:
 
@@ -2899,7 +2899,7 @@ Represents the size of the :ref:`SamplerBorderColor<enum_RenderingDevice_Sampler
 
 .. rst-class:: classref-enumeration
 
-enum **VertexFrequency**:
+enum **VertexFrequency**: :ref:`🔗<enum_RenderingDevice_VertexFrequency>`
 
 .. _class_RenderingDevice_constant_VERTEX_FREQUENCY_VERTEX:
 
@@ -2925,7 +2925,7 @@ Vertex attribute addressing is a function of the instance index. This is used to
 
 .. rst-class:: classref-enumeration
 
-enum **IndexBufferFormat**:
+enum **IndexBufferFormat**: :ref:`🔗<enum_RenderingDevice_IndexBufferFormat>`
 
 .. _class_RenderingDevice_constant_INDEX_BUFFER_FORMAT_UINT16:
 
@@ -2951,7 +2951,7 @@ Index buffer in 32-bit unsigned integer format. This limits the maximum index th
 
 .. rst-class:: classref-enumeration
 
-flags **StorageBufferUsage**:
+flags **StorageBufferUsage**: :ref:`🔗<enum_RenderingDevice_StorageBufferUsage>`
 
 .. _class_RenderingDevice_constant_STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT:
 
@@ -2973,7 +2973,7 @@ flags **StorageBufferUsage**:
 
 .. rst-class:: classref-enumeration
 
-enum **UniformType**:
+enum **UniformType**: :ref:`🔗<enum_RenderingDevice_UniformType>`
 
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_SAMPLER:
 
@@ -3071,7 +3071,7 @@ Represents the size of the :ref:`UniformType<enum_RenderingDevice_UniformType>` 
 
 .. rst-class:: classref-enumeration
 
-enum **RenderPrimitive**:
+enum **RenderPrimitive**: :ref:`🔗<enum_RenderingDevice_RenderPrimitive>`
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_POINTS:
 
@@ -3187,7 +3187,7 @@ Represents the size of the :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrim
 
 .. rst-class:: classref-enumeration
 
-enum **PolygonCullMode**:
+enum **PolygonCullMode**: :ref:`🔗<enum_RenderingDevice_PolygonCullMode>`
 
 .. _class_RenderingDevice_constant_POLYGON_CULL_DISABLED:
 
@@ -3221,7 +3221,7 @@ Use polygon backface culling (faces pointing away from the camera are hidden).
 
 .. rst-class:: classref-enumeration
 
-enum **PolygonFrontFace**:
+enum **PolygonFrontFace**: :ref:`🔗<enum_RenderingDevice_PolygonFrontFace>`
 
 .. _class_RenderingDevice_constant_POLYGON_FRONT_FACE_CLOCKWISE:
 
@@ -3247,7 +3247,7 @@ Counter-clockwise winding order to determine which face of a polygon is its fron
 
 .. rst-class:: classref-enumeration
 
-enum **StencilOperation**:
+enum **StencilOperation**: :ref:`🔗<enum_RenderingDevice_StencilOperation>`
 
 .. _class_RenderingDevice_constant_STENCIL_OP_KEEP:
 
@@ -3329,7 +3329,7 @@ Represents the size of the :ref:`StencilOperation<enum_RenderingDevice_StencilOp
 
 .. rst-class:: classref-enumeration
 
-enum **CompareOperator**:
+enum **CompareOperator**: :ref:`🔗<enum_RenderingDevice_CompareOperator>`
 
 .. _class_RenderingDevice_constant_COMPARE_OP_NEVER:
 
@@ -3411,7 +3411,7 @@ Represents the size of the :ref:`CompareOperator<enum_RenderingDevice_CompareOpe
 
 .. rst-class:: classref-enumeration
 
-enum **LogicOperation**:
+enum **LogicOperation**: :ref:`🔗<enum_RenderingDevice_LogicOperation>`
 
 .. _class_RenderingDevice_constant_LOGIC_OP_CLEAR:
 
@@ -3557,7 +3557,7 @@ Represents the size of the :ref:`LogicOperation<enum_RenderingDevice_LogicOperat
 
 .. rst-class:: classref-enumeration
 
-enum **BlendFactor**:
+enum **BlendFactor**: :ref:`🔗<enum_RenderingDevice_BlendFactor>`
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ZERO:
 
@@ -3727,7 +3727,7 @@ Represents the size of the :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` 
 
 .. rst-class:: classref-enumeration
 
-enum **BlendOperation**:
+enum **BlendOperation**: :ref:`🔗<enum_RenderingDevice_BlendOperation>`
 
 .. _class_RenderingDevice_constant_BLEND_OP_ADD:
 
@@ -3785,7 +3785,7 @@ Represents the size of the :ref:`BlendOperation<enum_RenderingDevice_BlendOperat
 
 .. rst-class:: classref-enumeration
 
-flags **PipelineDynamicStateFlags**:
+flags **PipelineDynamicStateFlags**: :ref:`🔗<enum_RenderingDevice_PipelineDynamicStateFlags>`
 
 .. _class_RenderingDevice_constant_DYNAMIC_STATE_LINE_WIDTH:
 
@@ -3871,7 +3871,7 @@ Allows dynamically changing the depth bias.
 
 .. rst-class:: classref-enumeration
 
-enum **InitialAction**:
+enum **InitialAction**: :ref:`🔗<enum_RenderingDevice_InitialAction>`
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_LOAD:
 
@@ -3963,7 +3963,7 @@ Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialActio
 
 .. rst-class:: classref-enumeration
 
-enum **FinalAction**:
+enum **FinalAction**: :ref:`🔗<enum_RenderingDevice_FinalAction>`
 
 .. _class_RenderingDevice_constant_FINAL_ACTION_STORE:
 
@@ -4017,7 +4017,7 @@ Represents the size of the :ref:`FinalAction<enum_RenderingDevice_FinalAction>` 
 
 .. rst-class:: classref-enumeration
 
-enum **ShaderStage**:
+enum **ShaderStage**: :ref:`🔗<enum_RenderingDevice_ShaderStage>`
 
 .. _class_RenderingDevice_constant_SHADER_STAGE_VERTEX:
 
@@ -4115,7 +4115,7 @@ Compute shader stage bit (see also :ref:`SHADER_STAGE_COMPUTE<class_RenderingDev
 
 .. rst-class:: classref-enumeration
 
-enum **ShaderLanguage**:
+enum **ShaderLanguage**: :ref:`🔗<enum_RenderingDevice_ShaderLanguage>`
 
 .. _class_RenderingDevice_constant_SHADER_LANGUAGE_GLSL:
 
@@ -4141,7 +4141,7 @@ Microsoft's High-Level Shading Language (used natively by Direct3D, but can also
 
 .. rst-class:: classref-enumeration
 
-enum **PipelineSpecializationConstantType**:
+enum **PipelineSpecializationConstantType**: :ref:`🔗<enum_RenderingDevice_PipelineSpecializationConstantType>`
 
 .. _class_RenderingDevice_constant_PIPELINE_SPECIALIZATION_CONSTANT_TYPE_BOOL:
 
@@ -4175,7 +4175,7 @@ Floating-point specialization constant.
 
 .. rst-class:: classref-enumeration
 
-enum **Limit**:
+enum **Limit**: :ref:`🔗<enum_RenderingDevice_Limit>`
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_BOUND_UNIFORM_SETS:
 
@@ -4481,7 +4481,7 @@ Maximum viewport height (in pixels).
 
 .. rst-class:: classref-enumeration
 
-enum **MemoryType**:
+enum **MemoryType**: :ref:`🔗<enum_RenderingDevice_MemoryType>`
 
 .. _class_RenderingDevice_constant_MEMORY_TEXTURES:
 
@@ -4520,7 +4520,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**INVALID_ID** = ``-1``
+**INVALID_ID** = ``-1`` :ref:`🔗<class_RenderingDevice_constant_INVALID_ID>`
 
 Returned by functions that return an ID if a value is invalid.
 
@@ -4528,7 +4528,7 @@ Returned by functions that return an ID if a value is invalid.
 
 .. rst-class:: classref-constant
 
-**INVALID_FORMAT_ID** = ``-1``
+**INVALID_FORMAT_ID** = ``-1`` :ref:`🔗<class_RenderingDevice_constant_INVALID_FORMAT_ID>`
 
 Returned by functions that return a format ID if a value is invalid.
 
@@ -4545,7 +4545,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **barrier**\ (\ from\: |bitfield|\[:ref:`BarrierMask<enum_RenderingDevice_BarrierMask>`\] = 32767, to\: |bitfield|\[:ref:`BarrierMask<enum_RenderingDevice_BarrierMask>`\] = 32767\ )
+|void| **barrier**\ (\ from\: |bitfield|\[:ref:`BarrierMask<enum_RenderingDevice_BarrierMask>`\] = 32767, to\: |bitfield|\[:ref:`BarrierMask<enum_RenderingDevice_BarrierMask>`\] = 32767\ ) :ref:`🔗<class_RenderingDevice_method_barrier>`
 
 **Deprecated:** Barriers are automatically inserted by RenderingDevice.
 
@@ -4559,7 +4559,7 @@ This method does nothing.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **buffer_clear**\ (\ buffer\: :ref:`RID<class_RID>`, offset\: :ref:`int<class_int>`, size_bytes\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **buffer_clear**\ (\ buffer\: :ref:`RID<class_RID>`, offset\: :ref:`int<class_int>`, size_bytes\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_buffer_clear>`
 
 Clears the contents of the ``buffer``, clearing ``size_bytes`` bytes, starting at ``offset``.
 
@@ -4581,7 +4581,7 @@ Prints an error if:
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **buffer_copy**\ (\ src_buffer\: :ref:`RID<class_RID>`, dst_buffer\: :ref:`RID<class_RID>`, src_offset\: :ref:`int<class_int>`, dst_offset\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **buffer_copy**\ (\ src_buffer\: :ref:`RID<class_RID>`, dst_buffer\: :ref:`RID<class_RID>`, src_offset\: :ref:`int<class_int>`, dst_offset\: :ref:`int<class_int>`, size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_buffer_copy>`
 
 Copies ``size`` bytes from the ``src_buffer`` at ``src_offset`` into ``dst_buffer`` at ``dst_offset``.
 
@@ -4601,7 +4601,7 @@ Prints an error if:
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **buffer_get_data**\ (\ buffer\: :ref:`RID<class_RID>`, offset_bytes\: :ref:`int<class_int>` = 0, size_bytes\: :ref:`int<class_int>` = 0\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **buffer_get_data**\ (\ buffer\: :ref:`RID<class_RID>`, offset_bytes\: :ref:`int<class_int>` = 0, size_bytes\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_buffer_get_data>`
 
 Returns a copy of the data of the specified ``buffer``, optionally ``offset_bytes`` and ``size_bytes`` can be set to copy only a portion of the buffer.
 
@@ -4613,7 +4613,7 @@ Returns a copy of the data of the specified ``buffer``, optionally ``offset_byte
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **buffer_update**\ (\ buffer\: :ref:`RID<class_RID>`, offset\: :ref:`int<class_int>`, size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **buffer_update**\ (\ buffer\: :ref:`RID<class_RID>`, offset\: :ref:`int<class_int>`, size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_RenderingDevice_method_buffer_update>`
 
 Updates a region of ``size_bytes`` bytes, starting at ``offset``, in the buffer, with the specified ``data``.
 
@@ -4633,7 +4633,7 @@ Prints an error if:
 
 .. rst-class:: classref-method
 
-|void| **capture_timestamp**\ (\ name\: :ref:`String<class_String>`\ )
+|void| **capture_timestamp**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RenderingDevice_method_capture_timestamp>`
 
 Creates a timestamp marker with the specified ``name``. This is used for performance reporting with the :ref:`get_captured_timestamp_cpu_time<class_RenderingDevice_method_get_captured_timestamp_cpu_time>`, :ref:`get_captured_timestamp_gpu_time<class_RenderingDevice_method_get_captured_timestamp_gpu_time>` and :ref:`get_captured_timestamp_name<class_RenderingDevice_method_get_captured_timestamp_name>` methods.
 
@@ -4645,7 +4645,7 @@ Creates a timestamp marker with the specified ``name``. This is used for perform
 
 .. rst-class:: classref-method
 
-|void| **compute_list_add_barrier**\ (\ compute_list\: :ref:`int<class_int>`\ )
+|void| **compute_list_add_barrier**\ (\ compute_list\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_add_barrier>`
 
 Raises a Vulkan compute barrier in the specified ``compute_list``.
 
@@ -4657,7 +4657,7 @@ Raises a Vulkan compute barrier in the specified ``compute_list``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **compute_list_begin**\ (\ )
+:ref:`int<class_int>` **compute_list_begin**\ (\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_begin>`
 
 Starts a list of compute commands created with the ``compute_*`` methods. The returned value should be passed to other ``compute_list_*`` functions.
 
@@ -4689,7 +4689,7 @@ A simple compute operation might look like this (code is not a complete example)
 
 .. rst-class:: classref-method
 
-|void| **compute_list_bind_compute_pipeline**\ (\ compute_list\: :ref:`int<class_int>`, compute_pipeline\: :ref:`RID<class_RID>`\ )
+|void| **compute_list_bind_compute_pipeline**\ (\ compute_list\: :ref:`int<class_int>`, compute_pipeline\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_bind_compute_pipeline>`
 
 Tells the GPU what compute pipeline to use when processing the compute list. If the shader has changed since the last time this function was called, Godot will unbind all descriptor sets and will re-bind them inside :ref:`compute_list_dispatch<class_RenderingDevice_method_compute_list_dispatch>`.
 
@@ -4701,7 +4701,7 @@ Tells the GPU what compute pipeline to use when processing the compute list. If 
 
 .. rst-class:: classref-method
 
-|void| **compute_list_bind_uniform_set**\ (\ compute_list\: :ref:`int<class_int>`, uniform_set\: :ref:`RID<class_RID>`, set_index\: :ref:`int<class_int>`\ )
+|void| **compute_list_bind_uniform_set**\ (\ compute_list\: :ref:`int<class_int>`, uniform_set\: :ref:`RID<class_RID>`, set_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_bind_uniform_set>`
 
 Binds the ``uniform_set`` to this ``compute_list``. Godot ensures that all textures in the uniform set have the correct Vulkan access masks. If Godot had to change access masks of textures, it will raise a Vulkan image memory barrier.
 
@@ -4713,7 +4713,7 @@ Binds the ``uniform_set`` to this ``compute_list``. Godot ensures that all textu
 
 .. rst-class:: classref-method
 
-|void| **compute_list_dispatch**\ (\ compute_list\: :ref:`int<class_int>`, x_groups\: :ref:`int<class_int>`, y_groups\: :ref:`int<class_int>`, z_groups\: :ref:`int<class_int>`\ )
+|void| **compute_list_dispatch**\ (\ compute_list\: :ref:`int<class_int>`, x_groups\: :ref:`int<class_int>`, y_groups\: :ref:`int<class_int>`, z_groups\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_dispatch>`
 
 Submits the compute list for processing on the GPU. This is the compute equivalent to :ref:`draw_list_draw<class_RenderingDevice_method_draw_list_draw>`.
 
@@ -4725,7 +4725,7 @@ Submits the compute list for processing on the GPU. This is the compute equivale
 
 .. rst-class:: classref-method
 
-|void| **compute_list_dispatch_indirect**\ (\ compute_list\: :ref:`int<class_int>`, buffer\: :ref:`RID<class_RID>`, offset\: :ref:`int<class_int>`\ )
+|void| **compute_list_dispatch_indirect**\ (\ compute_list\: :ref:`int<class_int>`, buffer\: :ref:`RID<class_RID>`, offset\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_dispatch_indirect>`
 
 Submits the compute list for processing on the GPU with the given group counts stored in the ``buffer`` at ``offset``. Buffer must have been created with :ref:`STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT<class_RenderingDevice_constant_STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT>` flag.
 
@@ -4737,7 +4737,7 @@ Submits the compute list for processing on the GPU with the given group counts s
 
 .. rst-class:: classref-method
 
-|void| **compute_list_end**\ (\ )
+|void| **compute_list_end**\ (\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_end>`
 
 Finishes a list of compute commands created with the ``compute_*`` methods.
 
@@ -4749,7 +4749,7 @@ Finishes a list of compute commands created with the ``compute_*`` methods.
 
 .. rst-class:: classref-method
 
-|void| **compute_list_set_push_constant**\ (\ compute_list\: :ref:`int<class_int>`, buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, size_bytes\: :ref:`int<class_int>`\ )
+|void| **compute_list_set_push_constant**\ (\ compute_list\: :ref:`int<class_int>`, buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, size_bytes\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_compute_list_set_push_constant>`
 
 Sets the push constant data to ``buffer`` for the specified ``compute_list``. The shader determines how this binary data is used. The buffer's size in bytes must also be specified in ``size_bytes`` (this can be obtained by calling the :ref:`PackedByteArray.size<class_PackedByteArray_method_size>` method on the passed ``buffer``).
 
@@ -4761,7 +4761,7 @@ Sets the push constant data to ``buffer`` for the specified ``compute_list``. Th
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **compute_pipeline_create**\ (\ shader\: :ref:`RID<class_RID>`, specialization_constants\: :ref:`Array<class_Array>`\[:ref:`RDPipelineSpecializationConstant<class_RDPipelineSpecializationConstant>`\] = []\ )
+:ref:`RID<class_RID>` **compute_pipeline_create**\ (\ shader\: :ref:`RID<class_RID>`, specialization_constants\: :ref:`Array<class_Array>`\[:ref:`RDPipelineSpecializationConstant<class_RDPipelineSpecializationConstant>`\] = []\ ) :ref:`🔗<class_RenderingDevice_method_compute_pipeline_create>`
 
 Creates a new compute pipeline. It can be accessed with the RID that is returned.
 
@@ -4775,7 +4775,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **compute_pipeline_is_valid**\ (\ compute_pipeline\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **compute_pipeline_is_valid**\ (\ compute_pipeline\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_compute_pipeline_is_valid>`
 
 Returns ``true`` if the compute pipeline specified by the ``compute_pipeline`` RID is valid, ``false`` otherwise.
 
@@ -4787,7 +4787,7 @@ Returns ``true`` if the compute pipeline specified by the ``compute_pipeline`` R
 
 .. rst-class:: classref-method
 
-:ref:`RenderingDevice<class_RenderingDevice>` **create_local_device**\ (\ )
+:ref:`RenderingDevice<class_RenderingDevice>` **create_local_device**\ (\ ) :ref:`🔗<class_RenderingDevice_method_create_local_device>`
 
 Create a new local **RenderingDevice**. This is most useful for performing compute operations on the GPU independently from the rest of the engine.
 
@@ -4799,7 +4799,7 @@ Create a new local **RenderingDevice**. This is most useful for performing compu
 
 .. rst-class:: classref-method
 
-|void| **draw_command_begin_label**\ (\ name\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ )
+|void| **draw_command_begin_label**\ (\ name\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_command_begin_label>`
 
 Create a command buffer debug label region that can be displayed in third-party tools such as `RenderDoc <https://renderdoc.org/>`__. All regions must be ended with a :ref:`draw_command_end_label<class_RenderingDevice_method_draw_command_end_label>` call. When viewed from the linear series of submissions to a single queue, calls to :ref:`draw_command_begin_label<class_RenderingDevice_method_draw_command_begin_label>` and :ref:`draw_command_end_label<class_RenderingDevice_method_draw_command_end_label>` must be matched and balanced.
 
@@ -4813,7 +4813,7 @@ The ``VK_EXT_DEBUG_UTILS_EXTENSION_NAME`` Vulkan extension must be available and
 
 .. rst-class:: classref-method
 
-|void| **draw_command_end_label**\ (\ )
+|void| **draw_command_end_label**\ (\ ) :ref:`🔗<class_RenderingDevice_method_draw_command_end_label>`
 
 Ends the command buffer debug label region started by a :ref:`draw_command_begin_label<class_RenderingDevice_method_draw_command_begin_label>` call.
 
@@ -4825,7 +4825,7 @@ Ends the command buffer debug label region started by a :ref:`draw_command_begin
 
 .. rst-class:: classref-method
 
-|void| **draw_command_insert_label**\ (\ name\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ )
+|void| **draw_command_insert_label**\ (\ name\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_command_insert_label>`
 
 **Deprecated:** Inserting labels no longer applies due to command reordering.
 
@@ -4839,7 +4839,7 @@ This method does nothing.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **draw_list_begin**\ (\ framebuffer\: :ref:`RID<class_RID>`, initial_color_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_color_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, initial_depth_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_depth_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, clear_color_values\: :ref:`PackedColorArray<class_PackedColorArray>` = PackedColorArray(), clear_depth\: :ref:`float<class_float>` = 1.0, clear_stencil\: :ref:`int<class_int>` = 0, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0)\ )
+:ref:`int<class_int>` **draw_list_begin**\ (\ framebuffer\: :ref:`RID<class_RID>`, initial_color_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_color_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, initial_depth_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_depth_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, clear_color_values\: :ref:`PackedColorArray<class_PackedColorArray>` = PackedColorArray(), clear_depth\: :ref:`float<class_float>` = 1.0, clear_stencil\: :ref:`int<class_int>` = 0, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0)\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_begin>`
 
 Starts a list of raster drawing commands created with the ``draw_*`` methods. The returned value should be passed to other ``draw_list_*`` functions.
 
@@ -4874,7 +4874,7 @@ A simple drawing operation might look like this (code is not a complete example)
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **draw_list_begin_for_screen**\ (\ screen\: :ref:`int<class_int>` = 0, clear_color\: :ref:`Color<class_Color>` = Color(0, 0, 0, 1)\ )
+:ref:`int<class_int>` **draw_list_begin_for_screen**\ (\ screen\: :ref:`int<class_int>` = 0, clear_color\: :ref:`Color<class_Color>` = Color(0, 0, 0, 1)\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_begin_for_screen>`
 
 High-level variant of :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>`, with the parameters automatically being adjusted for drawing onto the window specified by the ``screen`` ID.
 
@@ -4888,7 +4888,7 @@ High-level variant of :ref:`draw_list_begin<class_RenderingDevice_method_draw_li
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **draw_list_begin_split**\ (\ framebuffer\: :ref:`RID<class_RID>`, splits\: :ref:`int<class_int>`, initial_color_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_color_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, initial_depth_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_depth_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, clear_color_values\: :ref:`PackedColorArray<class_PackedColorArray>` = PackedColorArray(), clear_depth\: :ref:`float<class_float>` = 1.0, clear_stencil\: :ref:`int<class_int>` = 0, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), storage_textures\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] = []\ )
+:ref:`PackedInt64Array<class_PackedInt64Array>` **draw_list_begin_split**\ (\ framebuffer\: :ref:`RID<class_RID>`, splits\: :ref:`int<class_int>`, initial_color_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_color_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, initial_depth_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_depth_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, clear_color_values\: :ref:`PackedColorArray<class_PackedColorArray>` = PackedColorArray(), clear_depth\: :ref:`float<class_float>` = 1.0, clear_stencil\: :ref:`int<class_int>` = 0, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), storage_textures\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] = []\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_begin_split>`
 
 **Deprecated:** Split draw lists are used automatically by RenderingDevice.
 
@@ -4902,7 +4902,7 @@ This method does nothing and always returns an empty :ref:`PackedInt64Array<clas
 
 .. rst-class:: classref-method
 
-|void| **draw_list_bind_index_array**\ (\ draw_list\: :ref:`int<class_int>`, index_array\: :ref:`RID<class_RID>`\ )
+|void| **draw_list_bind_index_array**\ (\ draw_list\: :ref:`int<class_int>`, index_array\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_bind_index_array>`
 
 Binds ``index_array`` to the specified ``draw_list``.
 
@@ -4914,7 +4914,7 @@ Binds ``index_array`` to the specified ``draw_list``.
 
 .. rst-class:: classref-method
 
-|void| **draw_list_bind_render_pipeline**\ (\ draw_list\: :ref:`int<class_int>`, render_pipeline\: :ref:`RID<class_RID>`\ )
+|void| **draw_list_bind_render_pipeline**\ (\ draw_list\: :ref:`int<class_int>`, render_pipeline\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_bind_render_pipeline>`
 
 Binds ``render_pipeline`` to the specified ``draw_list``.
 
@@ -4926,7 +4926,7 @@ Binds ``render_pipeline`` to the specified ``draw_list``.
 
 .. rst-class:: classref-method
 
-|void| **draw_list_bind_uniform_set**\ (\ draw_list\: :ref:`int<class_int>`, uniform_set\: :ref:`RID<class_RID>`, set_index\: :ref:`int<class_int>`\ )
+|void| **draw_list_bind_uniform_set**\ (\ draw_list\: :ref:`int<class_int>`, uniform_set\: :ref:`RID<class_RID>`, set_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_bind_uniform_set>`
 
 Binds ``uniform_set`` to the specified ``draw_list``. A ``set_index`` must also be specified, which is an identifier starting from ``0`` that must match the one expected by the draw list.
 
@@ -4938,7 +4938,7 @@ Binds ``uniform_set`` to the specified ``draw_list``. A ``set_index`` must also 
 
 .. rst-class:: classref-method
 
-|void| **draw_list_bind_vertex_array**\ (\ draw_list\: :ref:`int<class_int>`, vertex_array\: :ref:`RID<class_RID>`\ )
+|void| **draw_list_bind_vertex_array**\ (\ draw_list\: :ref:`int<class_int>`, vertex_array\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_bind_vertex_array>`
 
 Binds ``vertex_array`` to the specified ``draw_list``.
 
@@ -4950,7 +4950,7 @@ Binds ``vertex_array`` to the specified ``draw_list``.
 
 .. rst-class:: classref-method
 
-|void| **draw_list_disable_scissor**\ (\ draw_list\: :ref:`int<class_int>`\ )
+|void| **draw_list_disable_scissor**\ (\ draw_list\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_disable_scissor>`
 
 Removes and disables the scissor rectangle for the specified ``draw_list``. See also :ref:`draw_list_enable_scissor<class_RenderingDevice_method_draw_list_enable_scissor>`.
 
@@ -4962,7 +4962,7 @@ Removes and disables the scissor rectangle for the specified ``draw_list``. See 
 
 .. rst-class:: classref-method
 
-|void| **draw_list_draw**\ (\ draw_list\: :ref:`int<class_int>`, use_indices\: :ref:`bool<class_bool>`, instances\: :ref:`int<class_int>`, procedural_vertex_count\: :ref:`int<class_int>` = 0\ )
+|void| **draw_list_draw**\ (\ draw_list\: :ref:`int<class_int>`, use_indices\: :ref:`bool<class_bool>`, instances\: :ref:`int<class_int>`, procedural_vertex_count\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_draw>`
 
 Submits ``draw_list`` for rendering on the GPU. This is the raster equivalent to :ref:`compute_list_dispatch<class_RenderingDevice_method_compute_list_dispatch>`.
 
@@ -4974,7 +4974,7 @@ Submits ``draw_list`` for rendering on the GPU. This is the raster equivalent to
 
 .. rst-class:: classref-method
 
-|void| **draw_list_enable_scissor**\ (\ draw_list\: :ref:`int<class_int>`, rect\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0)\ )
+|void| **draw_list_enable_scissor**\ (\ draw_list\: :ref:`int<class_int>`, rect\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0)\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_enable_scissor>`
 
 Creates a scissor rectangle and enables it for the specified ``draw_list``. Scissor rectangles are used for clipping by discarding fragments that fall outside a specified rectangular portion of the screen. See also :ref:`draw_list_disable_scissor<class_RenderingDevice_method_draw_list_disable_scissor>`.
 
@@ -4988,7 +4988,7 @@ Creates a scissor rectangle and enables it for the specified ``draw_list``. Scis
 
 .. rst-class:: classref-method
 
-|void| **draw_list_end**\ (\ )
+|void| **draw_list_end**\ (\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_end>`
 
 Finishes a list of raster drawing commands created with the ``draw_*`` methods.
 
@@ -5000,7 +5000,7 @@ Finishes a list of raster drawing commands created with the ``draw_*`` methods.
 
 .. rst-class:: classref-method
 
-|void| **draw_list_set_blend_constants**\ (\ draw_list\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )
+|void| **draw_list_set_blend_constants**\ (\ draw_list\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_set_blend_constants>`
 
 Sets blend constants for the specified ``draw_list`` to ``color``. Blend constants are used only if the graphics pipeline is created with :ref:`DYNAMIC_STATE_BLEND_CONSTANTS<class_RenderingDevice_constant_DYNAMIC_STATE_BLEND_CONSTANTS>` flag set.
 
@@ -5012,7 +5012,7 @@ Sets blend constants for the specified ``draw_list`` to ``color``. Blend constan
 
 .. rst-class:: classref-method
 
-|void| **draw_list_set_push_constant**\ (\ draw_list\: :ref:`int<class_int>`, buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, size_bytes\: :ref:`int<class_int>`\ )
+|void| **draw_list_set_push_constant**\ (\ draw_list\: :ref:`int<class_int>`, buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, size_bytes\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_set_push_constant>`
 
 Sets the push constant data to ``buffer`` for the specified ``draw_list``. The shader determines how this binary data is used. The buffer's size in bytes must also be specified in ``size_bytes`` (this can be obtained by calling the :ref:`PackedByteArray.size<class_PackedByteArray_method_size>` method on the passed ``buffer``).
 
@@ -5024,7 +5024,7 @@ Sets the push constant data to ``buffer`` for the specified ``draw_list``. The s
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **draw_list_switch_to_next_pass**\ (\ )
+:ref:`int<class_int>` **draw_list_switch_to_next_pass**\ (\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_switch_to_next_pass>`
 
 Switches to the next draw pass.
 
@@ -5036,7 +5036,7 @@ Switches to the next draw pass.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **draw_list_switch_to_next_pass_split**\ (\ splits\: :ref:`int<class_int>`\ )
+:ref:`PackedInt64Array<class_PackedInt64Array>` **draw_list_switch_to_next_pass_split**\ (\ splits\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_switch_to_next_pass_split>`
 
 **Deprecated:** Split draw lists are used automatically by RenderingDevice.
 
@@ -5050,7 +5050,7 @@ This method does nothing and always returns an empty :ref:`PackedInt64Array<clas
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **framebuffer_create**\ (\ textures\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], validate_with_format\: :ref:`int<class_int>` = -1, view_count\: :ref:`int<class_int>` = 1\ )
+:ref:`RID<class_RID>` **framebuffer_create**\ (\ textures\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], validate_with_format\: :ref:`int<class_int>` = -1, view_count\: :ref:`int<class_int>` = 1\ ) :ref:`🔗<class_RenderingDevice_method_framebuffer_create>`
 
 Creates a new framebuffer. It can be accessed with the RID that is returned.
 
@@ -5064,7 +5064,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **framebuffer_create_empty**\ (\ size\: :ref:`Vector2i<class_Vector2i>`, samples\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` = 0, validate_with_format\: :ref:`int<class_int>` = -1\ )
+:ref:`RID<class_RID>` **framebuffer_create_empty**\ (\ size\: :ref:`Vector2i<class_Vector2i>`, samples\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` = 0, validate_with_format\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_RenderingDevice_method_framebuffer_create_empty>`
 
 Creates a new empty framebuffer. It can be accessed with the RID that is returned.
 
@@ -5078,7 +5078,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **framebuffer_create_multipass**\ (\ textures\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], passes\: :ref:`Array<class_Array>`\[:ref:`RDFramebufferPass<class_RDFramebufferPass>`\], validate_with_format\: :ref:`int<class_int>` = -1, view_count\: :ref:`int<class_int>` = 1\ )
+:ref:`RID<class_RID>` **framebuffer_create_multipass**\ (\ textures\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], passes\: :ref:`Array<class_Array>`\[:ref:`RDFramebufferPass<class_RDFramebufferPass>`\], validate_with_format\: :ref:`int<class_int>` = -1, view_count\: :ref:`int<class_int>` = 1\ ) :ref:`🔗<class_RenderingDevice_method_framebuffer_create_multipass>`
 
 Creates a new multipass framebuffer. It can be accessed with the RID that is returned.
 
@@ -5092,7 +5092,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **framebuffer_format_create**\ (\ attachments\: :ref:`Array<class_Array>`\[:ref:`RDAttachmentFormat<class_RDAttachmentFormat>`\], view_count\: :ref:`int<class_int>` = 1\ )
+:ref:`int<class_int>` **framebuffer_format_create**\ (\ attachments\: :ref:`Array<class_Array>`\[:ref:`RDAttachmentFormat<class_RDAttachmentFormat>`\], view_count\: :ref:`int<class_int>` = 1\ ) :ref:`🔗<class_RenderingDevice_method_framebuffer_format_create>`
 
 Creates a new framebuffer format with the specified ``attachments`` and ``view_count``. Returns the new framebuffer's unique framebuffer format ID.
 
@@ -5106,7 +5106,7 @@ If ``view_count`` is greater than or equal to ``2``, enables multiview which is 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **framebuffer_format_create_empty**\ (\ samples\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` = 0\ )
+:ref:`int<class_int>` **framebuffer_format_create_empty**\ (\ samples\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_framebuffer_format_create_empty>`
 
 Creates a new empty framebuffer format with the specified number of ``samples`` and returns its ID.
 
@@ -5118,7 +5118,7 @@ Creates a new empty framebuffer format with the specified number of ``samples`` 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **framebuffer_format_create_multipass**\ (\ attachments\: :ref:`Array<class_Array>`\[:ref:`RDAttachmentFormat<class_RDAttachmentFormat>`\], passes\: :ref:`Array<class_Array>`\[:ref:`RDFramebufferPass<class_RDFramebufferPass>`\], view_count\: :ref:`int<class_int>` = 1\ )
+:ref:`int<class_int>` **framebuffer_format_create_multipass**\ (\ attachments\: :ref:`Array<class_Array>`\[:ref:`RDAttachmentFormat<class_RDAttachmentFormat>`\], passes\: :ref:`Array<class_Array>`\[:ref:`RDFramebufferPass<class_RDFramebufferPass>`\], view_count\: :ref:`int<class_int>` = 1\ ) :ref:`🔗<class_RenderingDevice_method_framebuffer_format_create_multipass>`
 
 Creates a multipass framebuffer format with the specified ``attachments``, ``passes`` and ``view_count`` and returns its ID. If ``view_count`` is greater than or equal to ``2``, enables multiview which is used for VR rendering. This requires support for the Vulkan multiview extension.
 
@@ -5130,7 +5130,7 @@ Creates a multipass framebuffer format with the specified ``attachments``, ``pas
 
 .. rst-class:: classref-method
 
-:ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **framebuffer_format_get_texture_samples**\ (\ format\: :ref:`int<class_int>`, render_pass\: :ref:`int<class_int>` = 0\ )
+:ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **framebuffer_format_get_texture_samples**\ (\ format\: :ref:`int<class_int>`, render_pass\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_framebuffer_format_get_texture_samples>`
 
 Returns the number of texture samples used for the given framebuffer ``format`` ID (returned by :ref:`framebuffer_get_format<class_RenderingDevice_method_framebuffer_get_format>`).
 
@@ -5142,7 +5142,7 @@ Returns the number of texture samples used for the given framebuffer ``format`` 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **framebuffer_get_format**\ (\ framebuffer\: :ref:`RID<class_RID>`\ )
+:ref:`int<class_int>` **framebuffer_get_format**\ (\ framebuffer\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_framebuffer_get_format>`
 
 Returns the format ID of the framebuffer specified by the ``framebuffer`` RID. This ID is guaranteed to be unique for the same formats and does not need to be freed.
 
@@ -5154,7 +5154,7 @@ Returns the format ID of the framebuffer specified by the ``framebuffer`` RID. T
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **framebuffer_is_valid**\ (\ framebuffer\: :ref:`RID<class_RID>`\ ) |const|
+:ref:`bool<class_bool>` **framebuffer_is_valid**\ (\ framebuffer\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_framebuffer_is_valid>`
 
 Returns ``true`` if the framebuffer specified by the ``framebuffer`` RID is valid, ``false`` otherwise.
 
@@ -5166,7 +5166,7 @@ Returns ``true`` if the framebuffer specified by the ``framebuffer`` RID is vali
 
 .. rst-class:: classref-method
 
-|void| **free_rid**\ (\ rid\: :ref:`RID<class_RID>`\ )
+|void| **free_rid**\ (\ rid\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_free_rid>`
 
 Tries to free an object in the RenderingDevice. To avoid memory leaks, this should be called after using an object as memory management does not occur automatically when using RenderingDevice directly.
 
@@ -5178,7 +5178,7 @@ Tries to free an object in the RenderingDevice. To avoid memory leaks, this shou
 
 .. rst-class:: classref-method
 
-|void| **full_barrier**\ (\ )
+|void| **full_barrier**\ (\ ) :ref:`🔗<class_RenderingDevice_method_full_barrier>`
 
 **Deprecated:** Barriers are automatically inserted by RenderingDevice.
 
@@ -5192,7 +5192,7 @@ This method does nothing.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_captured_timestamp_cpu_time**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_captured_timestamp_cpu_time**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_captured_timestamp_cpu_time>`
 
 Returns the timestamp in CPU time for the rendering step specified by ``index`` (in microseconds since the engine started). See also :ref:`get_captured_timestamp_gpu_time<class_RenderingDevice_method_get_captured_timestamp_gpu_time>` and :ref:`capture_timestamp<class_RenderingDevice_method_capture_timestamp>`.
 
@@ -5204,7 +5204,7 @@ Returns the timestamp in CPU time for the rendering step specified by ``index`` 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_captured_timestamp_gpu_time**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_captured_timestamp_gpu_time**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_captured_timestamp_gpu_time>`
 
 Returns the timestamp in GPU time for the rendering step specified by ``index`` (in microseconds since the engine started). See also :ref:`get_captured_timestamp_cpu_time<class_RenderingDevice_method_get_captured_timestamp_cpu_time>` and :ref:`capture_timestamp<class_RenderingDevice_method_capture_timestamp>`.
 
@@ -5216,7 +5216,7 @@ Returns the timestamp in GPU time for the rendering step specified by ``index`` 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_captured_timestamp_name**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_captured_timestamp_name**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_captured_timestamp_name>`
 
 Returns the timestamp's name for the rendering step specified by ``index``. See also :ref:`capture_timestamp<class_RenderingDevice_method_capture_timestamp>`.
 
@@ -5228,7 +5228,7 @@ Returns the timestamp's name for the rendering step specified by ``index``. See 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_captured_timestamps_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_captured_timestamps_count**\ (\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_captured_timestamps_count>`
 
 Returns the total number of timestamps (rendering steps) available for profiling.
 
@@ -5240,7 +5240,7 @@ Returns the total number of timestamps (rendering steps) available for profiling
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_captured_timestamps_frame**\ (\ ) |const|
+:ref:`int<class_int>` **get_captured_timestamps_frame**\ (\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_captured_timestamps_frame>`
 
 Returns the index of the last frame rendered that has rendering timestamps available for querying.
 
@@ -5252,7 +5252,7 @@ Returns the index of the last frame rendered that has rendering timestamps avail
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_device_name**\ (\ ) |const|
+:ref:`String<class_String>` **get_device_name**\ (\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_device_name>`
 
 Returns the name of the video adapter (e.g. "GeForce GTX 1080/PCIe/SSE2"). Equivalent to :ref:`RenderingServer.get_video_adapter_name<class_RenderingServer_method_get_video_adapter_name>`. See also :ref:`get_device_vendor_name<class_RenderingDevice_method_get_device_vendor_name>`.
 
@@ -5264,7 +5264,7 @@ Returns the name of the video adapter (e.g. "GeForce GTX 1080/PCIe/SSE2"). Equiv
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_device_pipeline_cache_uuid**\ (\ ) |const|
+:ref:`String<class_String>` **get_device_pipeline_cache_uuid**\ (\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_device_pipeline_cache_uuid>`
 
 Returns the universally unique identifier for the pipeline cache. This is used to cache shader files on disk, which avoids shader recompilations on subsequent engine runs. This UUID varies depending on the graphics card model, but also the driver version. Therefore, updating graphics drivers will invalidate the shader cache.
 
@@ -5276,7 +5276,7 @@ Returns the universally unique identifier for the pipeline cache. This is used t
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_device_vendor_name**\ (\ ) |const|
+:ref:`String<class_String>` **get_device_vendor_name**\ (\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_device_vendor_name>`
 
 Returns the vendor of the video adapter (e.g. "NVIDIA Corporation"). Equivalent to :ref:`RenderingServer.get_video_adapter_vendor<class_RenderingServer_method_get_video_adapter_vendor>`. See also :ref:`get_device_name<class_RenderingDevice_method_get_device_name>`.
 
@@ -5288,7 +5288,7 @@ Returns the vendor of the video adapter (e.g. "NVIDIA Corporation"). Equivalent 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_driver_resource**\ (\ resource\: :ref:`DriverResource<enum_RenderingDevice_DriverResource>`, rid\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **get_driver_resource**\ (\ resource\: :ref:`DriverResource<enum_RenderingDevice_DriverResource>`, rid\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_get_driver_resource>`
 
 Returns the unique identifier of the driver ``resource`` for the specified ``rid``. Some driver resource types ignore the specified ``rid`` (see :ref:`DriverResource<enum_RenderingDevice_DriverResource>` descriptions). ``index`` is always ignored but must be specified anyway.
 
@@ -5300,7 +5300,7 @@ Returns the unique identifier of the driver ``resource`` for the specified ``rid
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_frame_delay**\ (\ ) |const|
+:ref:`int<class_int>` **get_frame_delay**\ (\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_frame_delay>`
 
 Returns the frame count kept by the graphics API. Higher values result in higher input lag, but with more consistent throughput. For the main **RenderingDevice**, frames are cycled (usually 3 with triple-buffered V-Sync enabled). However, local **RenderingDevice**\ s only have 1 frame.
 
@@ -5312,7 +5312,7 @@ Returns the frame count kept by the graphics API. Higher values result in higher
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_memory_usage**\ (\ type\: :ref:`MemoryType<enum_RenderingDevice_MemoryType>`\ ) |const|
+:ref:`int<class_int>` **get_memory_usage**\ (\ type\: :ref:`MemoryType<enum_RenderingDevice_MemoryType>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_memory_usage>`
 
 Returns the memory usage in bytes corresponding to the given ``type``. When using Vulkan, these statistics are calculated by `Vulkan Memory Allocator <https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator>`__.
 
@@ -5324,7 +5324,7 @@ Returns the memory usage in bytes corresponding to the given ``type``. When usin
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **index_array_create**\ (\ index_buffer\: :ref:`RID<class_RID>`, index_offset\: :ref:`int<class_int>`, index_count\: :ref:`int<class_int>`\ )
+:ref:`RID<class_RID>` **index_array_create**\ (\ index_buffer\: :ref:`RID<class_RID>`, index_offset\: :ref:`int<class_int>`, index_count\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_index_array_create>`
 
 Creates a new index array. It can be accessed with the RID that is returned.
 
@@ -5338,7 +5338,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **index_buffer_create**\ (\ size_indices\: :ref:`int<class_int>`, format\: :ref:`IndexBufferFormat<enum_RenderingDevice_IndexBufferFormat>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), use_restart_indices\: :ref:`bool<class_bool>` = false\ )
+:ref:`RID<class_RID>` **index_buffer_create**\ (\ size_indices\: :ref:`int<class_int>`, format\: :ref:`IndexBufferFormat<enum_RenderingDevice_IndexBufferFormat>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), use_restart_indices\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingDevice_method_index_buffer_create>`
 
 Creates a new index buffer. It can be accessed with the RID that is returned.
 
@@ -5352,7 +5352,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **limit_get**\ (\ limit\: :ref:`Limit<enum_RenderingDevice_Limit>`\ ) |const|
+:ref:`int<class_int>` **limit_get**\ (\ limit\: :ref:`Limit<enum_RenderingDevice_Limit>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_limit_get>`
 
 Returns the value of the specified ``limit``. This limit varies depending on the current graphics hardware (and sometimes the driver version). If the given limit is exceeded, rendering errors will occur.
 
@@ -5366,7 +5366,7 @@ Limits for various graphics hardware can be found in the `Vulkan Hardware Databa
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **render_pipeline_create**\ (\ shader\: :ref:`RID<class_RID>`, framebuffer_format\: :ref:`int<class_int>`, vertex_format\: :ref:`int<class_int>`, primitive\: :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>`, rasterization_state\: :ref:`RDPipelineRasterizationState<class_RDPipelineRasterizationState>`, multisample_state\: :ref:`RDPipelineMultisampleState<class_RDPipelineMultisampleState>`, stencil_state\: :ref:`RDPipelineDepthStencilState<class_RDPipelineDepthStencilState>`, color_blend_state\: :ref:`RDPipelineColorBlendState<class_RDPipelineColorBlendState>`, dynamic_state_flags\: |bitfield|\[:ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>`\] = 0, for_render_pass\: :ref:`int<class_int>` = 0, specialization_constants\: :ref:`Array<class_Array>`\[:ref:`RDPipelineSpecializationConstant<class_RDPipelineSpecializationConstant>`\] = []\ )
+:ref:`RID<class_RID>` **render_pipeline_create**\ (\ shader\: :ref:`RID<class_RID>`, framebuffer_format\: :ref:`int<class_int>`, vertex_format\: :ref:`int<class_int>`, primitive\: :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>`, rasterization_state\: :ref:`RDPipelineRasterizationState<class_RDPipelineRasterizationState>`, multisample_state\: :ref:`RDPipelineMultisampleState<class_RDPipelineMultisampleState>`, stencil_state\: :ref:`RDPipelineDepthStencilState<class_RDPipelineDepthStencilState>`, color_blend_state\: :ref:`RDPipelineColorBlendState<class_RDPipelineColorBlendState>`, dynamic_state_flags\: |bitfield|\[:ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>`\] = 0, for_render_pass\: :ref:`int<class_int>` = 0, specialization_constants\: :ref:`Array<class_Array>`\[:ref:`RDPipelineSpecializationConstant<class_RDPipelineSpecializationConstant>`\] = []\ ) :ref:`🔗<class_RenderingDevice_method_render_pipeline_create>`
 
 Creates a new render pipeline. It can be accessed with the RID that is returned.
 
@@ -5380,7 +5380,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **render_pipeline_is_valid**\ (\ render_pipeline\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **render_pipeline_is_valid**\ (\ render_pipeline\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_render_pipeline_is_valid>`
 
 Returns ``true`` if the render pipeline specified by the ``render_pipeline`` RID is valid, ``false`` otherwise.
 
@@ -5392,7 +5392,7 @@ Returns ``true`` if the render pipeline specified by the ``render_pipeline`` RID
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **sampler_create**\ (\ state\: :ref:`RDSamplerState<class_RDSamplerState>`\ )
+:ref:`RID<class_RID>` **sampler_create**\ (\ state\: :ref:`RDSamplerState<class_RDSamplerState>`\ ) :ref:`🔗<class_RenderingDevice_method_sampler_create>`
 
 Creates a new sampler. It can be accessed with the RID that is returned.
 
@@ -5406,7 +5406,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **sampler_is_format_supported_for_filter**\ (\ format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, sampler_filter\: :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>`\ ) |const|
+:ref:`bool<class_bool>` **sampler_is_format_supported_for_filter**\ (\ format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, sampler_filter\: :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>`\ ) |const| :ref:`🔗<class_RenderingDevice_method_sampler_is_format_supported_for_filter>`
 
 Returns ``true`` if implementation supports using a texture of ``format`` with the given ``sampler_filter``.
 
@@ -5418,7 +5418,7 @@ Returns ``true`` if implementation supports using a texture of ``format`` with t
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **screen_get_framebuffer_format**\ (\ screen\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **screen_get_framebuffer_format**\ (\ screen\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_RenderingDevice_method_screen_get_framebuffer_format>`
 
 Returns the framebuffer format of the given screen.
 
@@ -5432,7 +5432,7 @@ Returns the framebuffer format of the given screen.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **screen_get_height**\ (\ screen\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **screen_get_height**\ (\ screen\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_RenderingDevice_method_screen_get_height>`
 
 Returns the window height matching the graphics API context for the given window ID (in pixels). Despite the parameter being named ``screen``, this returns the *window* size. See also :ref:`screen_get_width<class_RenderingDevice_method_screen_get_width>`.
 
@@ -5446,7 +5446,7 @@ Returns the window height matching the graphics API context for the given window
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **screen_get_width**\ (\ screen\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **screen_get_width**\ (\ screen\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_RenderingDevice_method_screen_get_width>`
 
 Returns the window width matching the graphics API context for the given window ID (in pixels). Despite the parameter being named ``screen``, this returns the *window* size. See also :ref:`screen_get_height<class_RenderingDevice_method_screen_get_height>`.
 
@@ -5460,7 +5460,7 @@ Returns the window width matching the graphics API context for the given window 
 
 .. rst-class:: classref-method
 
-|void| **set_resource_name**\ (\ id\: :ref:`RID<class_RID>`, name\: :ref:`String<class_String>`\ )
+|void| **set_resource_name**\ (\ id\: :ref:`RID<class_RID>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RenderingDevice_method_set_resource_name>`
 
 Sets the resource name for ``id`` to ``name``. This is used for debugging with third-party tools such as `RenderDoc <https://renderdoc.org/>`__.
 
@@ -5476,7 +5476,7 @@ The following types of resources can be named: texture, sampler, vertex buffer, 
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **shader_compile_binary_from_spirv**\ (\ spirv_data\: :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`, name\: :ref:`String<class_String>` = ""\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **shader_compile_binary_from_spirv**\ (\ spirv_data\: :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`, name\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_RenderingDevice_method_shader_compile_binary_from_spirv>`
 
 Compiles a binary shader from ``spirv_data`` and returns the compiled binary data as a :ref:`PackedByteArray<class_PackedByteArray>`. This compiled shader is specific to the GPU model and driver version used; it will not work on different GPU models or even different driver versions. See also :ref:`shader_compile_spirv_from_source<class_RenderingDevice_method_shader_compile_spirv_from_source>`.
 
@@ -5490,7 +5490,7 @@ Compiles a binary shader from ``spirv_data`` and returns the compiled binary dat
 
 .. rst-class:: classref-method
 
-:ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **shader_compile_spirv_from_source**\ (\ shader_source\: :ref:`RDShaderSource<class_RDShaderSource>`, allow_cache\: :ref:`bool<class_bool>` = true\ )
+:ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **shader_compile_spirv_from_source**\ (\ shader_source\: :ref:`RDShaderSource<class_RDShaderSource>`, allow_cache\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_RenderingDevice_method_shader_compile_spirv_from_source>`
 
 Compiles a SPIR-V from the shader source code in ``shader_source`` and returns the SPIR-V as a :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`. This intermediate language shader is portable across different GPU models and driver versions, but cannot be run directly by GPUs until compiled into a binary shader using :ref:`shader_compile_binary_from_spirv<class_RenderingDevice_method_shader_compile_binary_from_spirv>`.
 
@@ -5504,7 +5504,7 @@ If ``allow_cache`` is ``true``, make use of the shader cache generated by Godot.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **shader_create_from_bytecode**\ (\ binary_data\: :ref:`PackedByteArray<class_PackedByteArray>`, placeholder_rid\: :ref:`RID<class_RID>` = RID()\ )
+:ref:`RID<class_RID>` **shader_create_from_bytecode**\ (\ binary_data\: :ref:`PackedByteArray<class_PackedByteArray>`, placeholder_rid\: :ref:`RID<class_RID>` = RID()\ ) :ref:`🔗<class_RenderingDevice_method_shader_create_from_bytecode>`
 
 Creates a new shader instance from a binary compiled shader. It can be accessed with the RID that is returned.
 
@@ -5518,7 +5518,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **shader_create_from_spirv**\ (\ spirv_data\: :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`, name\: :ref:`String<class_String>` = ""\ )
+:ref:`RID<class_RID>` **shader_create_from_spirv**\ (\ spirv_data\: :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`, name\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_RenderingDevice_method_shader_create_from_spirv>`
 
 Creates a new shader instance from SPIR-V intermediate code. It can be accessed with the RID that is returned.
 
@@ -5532,7 +5532,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **shader_create_placeholder**\ (\ )
+:ref:`RID<class_RID>` **shader_create_placeholder**\ (\ ) :ref:`🔗<class_RenderingDevice_method_shader_create_placeholder>`
 
 Create a placeholder RID by allocating an RID without initializing it for use in :ref:`shader_create_from_bytecode<class_RenderingDevice_method_shader_create_from_bytecode>`. This allows you to create an RID for a shader and pass it around, but defer compiling the shader to a later time.
 
@@ -5544,7 +5544,7 @@ Create a placeholder RID by allocating an RID without initializing it for use in
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **shader_get_vertex_input_attribute_mask**\ (\ shader\: :ref:`RID<class_RID>`\ )
+:ref:`int<class_int>` **shader_get_vertex_input_attribute_mask**\ (\ shader\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_shader_get_vertex_input_attribute_mask>`
 
 Returns the internal vertex input mask. Internally, the vertex input mask is an unsigned integer consisting of the locations (specified in GLSL via. ``layout(location = ...)``) of the input variables (specified in GLSL by the ``in`` keyword).
 
@@ -5556,7 +5556,7 @@ Returns the internal vertex input mask. Internally, the vertex input mask is an 
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **storage_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), usage\: |bitfield|\[:ref:`StorageBufferUsage<enum_RenderingDevice_StorageBufferUsage>`\] = 0\ )
+:ref:`RID<class_RID>` **storage_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), usage\: |bitfield|\[:ref:`StorageBufferUsage<enum_RenderingDevice_StorageBufferUsage>`\] = 0\ ) :ref:`🔗<class_RenderingDevice_method_storage_buffer_create>`
 
 Creates a `storage buffer <https://vkguide.dev/docs/chapter-4/storage_buffers/>`__ with the specified ``data`` and ``usage``. It can be accessed with the RID that is returned.
 
@@ -5570,7 +5570,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-|void| **submit**\ (\ )
+|void| **submit**\ (\ ) :ref:`🔗<class_RenderingDevice_method_submit>`
 
 Pushes the frame setup and draw command buffers then marks the local device as currently processing (which allows calling :ref:`sync<class_RenderingDevice_method_sync>`).
 
@@ -5584,7 +5584,7 @@ Pushes the frame setup and draw command buffers then marks the local device as c
 
 .. rst-class:: classref-method
 
-|void| **sync**\ (\ )
+|void| **sync**\ (\ ) :ref:`🔗<class_RenderingDevice_method_sync>`
 
 Forces a synchronization between the CPU and GPU, which may be required in certain cases. Only call this when needed, as CPU-GPU synchronization has a performance cost.
 
@@ -5600,7 +5600,7 @@ Forces a synchronization between the CPU and GPU, which may be required in certa
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **texture_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray()\ )
+:ref:`RID<class_RID>` **texture_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray()\ ) :ref:`🔗<class_RenderingDevice_method_texture_buffer_create>`
 
 Creates a new texture buffer. It can be accessed with the RID that is returned.
 
@@ -5614,7 +5614,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **texture_clear**\ (\ texture\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`, base_mipmap\: :ref:`int<class_int>`, mipmap_count\: :ref:`int<class_int>`, base_layer\: :ref:`int<class_int>`, layer_count\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **texture_clear**\ (\ texture\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`, base_mipmap\: :ref:`int<class_int>`, mipmap_count\: :ref:`int<class_int>`, base_layer\: :ref:`int<class_int>`, layer_count\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_clear>`
 
 Clears the specified ``texture`` by replacing all of its pixels with the specified ``color``. ``base_mipmap`` and ``mipmap_count`` determine which mipmaps of the texture are affected by this clear operation, while ``base_layer`` and ``layer_count`` determine which layers of a 3D texture (or texture array) are affected by this clear operation. For 2D textures (which only have one layer by design), ``base_layer`` must be ``0`` and ``layer_count`` must be ``1``.
 
@@ -5628,7 +5628,7 @@ Clears the specified ``texture`` by replacing all of its pixels with the specifi
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **texture_copy**\ (\ from_texture\: :ref:`RID<class_RID>`, to_texture\: :ref:`RID<class_RID>`, from_pos\: :ref:`Vector3<class_Vector3>`, to_pos\: :ref:`Vector3<class_Vector3>`, size\: :ref:`Vector3<class_Vector3>`, src_mipmap\: :ref:`int<class_int>`, dst_mipmap\: :ref:`int<class_int>`, src_layer\: :ref:`int<class_int>`, dst_layer\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **texture_copy**\ (\ from_texture\: :ref:`RID<class_RID>`, to_texture\: :ref:`RID<class_RID>`, from_pos\: :ref:`Vector3<class_Vector3>`, to_pos\: :ref:`Vector3<class_Vector3>`, size\: :ref:`Vector3<class_Vector3>`, src_mipmap\: :ref:`int<class_int>`, dst_mipmap\: :ref:`int<class_int>`, src_layer\: :ref:`int<class_int>`, dst_layer\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_copy>`
 
 Copies the ``from_texture`` to ``to_texture`` with the specified ``from_pos``, ``to_pos`` and ``size`` coordinates. The Z axis of the ``from_pos``, ``to_pos`` and ``size`` must be ``0`` for 2-dimensional textures. Source and destination mipmaps/layers must also be specified, with these parameters being ``0`` for textures without mipmaps or single-layer textures. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the texture copy was successful or :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` otherwise.
 
@@ -5650,7 +5650,7 @@ Copies the ``from_texture`` to ``to_texture`` with the specified ``from_pos``, `
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **texture_create**\ (\ format\: :ref:`RDTextureFormat<class_RDTextureFormat>`, view\: :ref:`RDTextureView<class_RDTextureView>`, data\: :ref:`Array<class_Array>`\[:ref:`PackedByteArray<class_PackedByteArray>`\] = []\ )
+:ref:`RID<class_RID>` **texture_create**\ (\ format\: :ref:`RDTextureFormat<class_RDTextureFormat>`, view\: :ref:`RDTextureView<class_RDTextureView>`, data\: :ref:`Array<class_Array>`\[:ref:`PackedByteArray<class_PackedByteArray>`\] = []\ ) :ref:`🔗<class_RenderingDevice_method_texture_create>`
 
 Creates a new texture. It can be accessed with the RID that is returned.
 
@@ -5666,7 +5666,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **texture_create_from_extension**\ (\ type\: :ref:`TextureType<enum_RenderingDevice_TextureType>`, format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, samples\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`, usage_flags\: |bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\], image\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>`\ )
+:ref:`RID<class_RID>` **texture_create_from_extension**\ (\ type\: :ref:`TextureType<enum_RenderingDevice_TextureType>`, format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, samples\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`, usage_flags\: |bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\], image\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_create_from_extension>`
 
 Returns an RID for an existing ``image`` (``VkImage``) with the given ``type``, ``format``, ``samples``, ``usage_flags``, ``width``, ``height``, ``depth``, and ``layers``. This can be used to allow Godot to render onto foreign images.
 
@@ -5678,7 +5678,7 @@ Returns an RID for an existing ``image`` (``VkImage``) with the given ``type``, 
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **texture_create_shared**\ (\ view\: :ref:`RDTextureView<class_RDTextureView>`, with_texture\: :ref:`RID<class_RID>`\ )
+:ref:`RID<class_RID>` **texture_create_shared**\ (\ view\: :ref:`RDTextureView<class_RDTextureView>`, with_texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_create_shared>`
 
 Creates a shared texture using the specified ``view`` and the texture information from ``with_texture``.
 
@@ -5690,7 +5690,7 @@ Creates a shared texture using the specified ``view`` and the texture informatio
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **texture_create_shared_from_slice**\ (\ view\: :ref:`RDTextureView<class_RDTextureView>`, with_texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, mipmap\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>` = 1, slice_type\: :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` = 0\ )
+:ref:`RID<class_RID>` **texture_create_shared_from_slice**\ (\ view\: :ref:`RDTextureView<class_RDTextureView>`, with_texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, mipmap\: :ref:`int<class_int>`, mipmaps\: :ref:`int<class_int>` = 1, slice_type\: :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_texture_create_shared_from_slice>`
 
 Creates a shared texture using the specified ``view`` and the texture information from ``with_texture``'s ``layer`` and ``mipmap``. The number of included mipmaps from the original texture can be controlled using the ``mipmaps`` parameter. Only relevant for textures with multiple layers, such as 3D textures, texture arrays and cubemaps. For single-layer textures, use :ref:`texture_create_shared<class_RenderingDevice_method_texture_create_shared>`\ 
 
@@ -5706,7 +5706,7 @@ For 2D textures (which only have one layer), ``layer`` must be ``0``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **texture_get_data**\ (\ texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **texture_get_data**\ (\ texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_get_data>`
 
 Returns the ``texture`` data for the specified ``layer`` as raw binary data. For 2D textures (which only have one layer), ``layer`` must be ``0``.
 
@@ -5722,7 +5722,7 @@ Returns the ``texture`` data for the specified ``layer`` as raw binary data. For
 
 .. rst-class:: classref-method
 
-:ref:`RDTextureFormat<class_RDTextureFormat>` **texture_get_format**\ (\ texture\: :ref:`RID<class_RID>`\ )
+:ref:`RDTextureFormat<class_RDTextureFormat>` **texture_get_format**\ (\ texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_get_format>`
 
 Returns the data format used to create this texture.
 
@@ -5734,7 +5734,7 @@ Returns the data format used to create this texture.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **texture_get_native_handle**\ (\ texture\: :ref:`RID<class_RID>`\ )
+:ref:`int<class_int>` **texture_get_native_handle**\ (\ texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_get_native_handle>`
 
 **Deprecated:** Use :ref:`get_driver_resource<class_RenderingDevice_method_get_driver_resource>` with :ref:`DRIVER_RESOURCE_TEXTURE<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE>` instead.
 
@@ -5750,7 +5750,7 @@ Returns the internal graphics handle for this texture object. For use when commu
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **texture_is_format_supported_for_usage**\ (\ format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, usage_flags\: |bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\]\ ) |const|
+:ref:`bool<class_bool>` **texture_is_format_supported_for_usage**\ (\ format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, usage_flags\: |bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\]\ ) |const| :ref:`🔗<class_RenderingDevice_method_texture_is_format_supported_for_usage>`
 
 Returns ``true`` if the specified ``format`` is supported for the given ``usage_flags``, ``false`` otherwise.
 
@@ -5762,7 +5762,7 @@ Returns ``true`` if the specified ``format`` is supported for the given ``usage_
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **texture_is_shared**\ (\ texture\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **texture_is_shared**\ (\ texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_is_shared>`
 
 Returns ``true`` if the ``texture`` is shared, ``false`` otherwise. See :ref:`RDTextureView<class_RDTextureView>`.
 
@@ -5774,7 +5774,7 @@ Returns ``true`` if the ``texture`` is shared, ``false`` otherwise. See :ref:`RD
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **texture_is_valid**\ (\ texture\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **texture_is_valid**\ (\ texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_is_valid>`
 
 Returns ``true`` if the ``texture`` is valid, ``false`` otherwise.
 
@@ -5786,7 +5786,7 @@ Returns ``true`` if the ``texture`` is valid, ``false`` otherwise.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **texture_resolve_multisample**\ (\ from_texture\: :ref:`RID<class_RID>`, to_texture\: :ref:`RID<class_RID>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **texture_resolve_multisample**\ (\ from_texture\: :ref:`RID<class_RID>`, to_texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_resolve_multisample>`
 
 Resolves the ``from_texture`` texture onto ``to_texture`` with multisample antialiasing enabled. This must be used when rendering a framebuffer for MSAA to work. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if successful, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` otherwise.
 
@@ -5812,7 +5812,7 @@ Resolves the ``from_texture`` texture onto ``to_texture`` with multisample antia
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **texture_update**\ (\ texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **texture_update**\ (\ texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_update>`
 
 Updates texture data with new data, replacing the previous data in place. The updated texture data must have the same dimensions and format. For 2D textures (which only have one layer), ``layer`` must be ``0``. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the update was successful, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` otherwise.
 
@@ -5830,7 +5830,7 @@ Updates texture data with new data, replacing the previous data in place. The up
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **uniform_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray()\ )
+:ref:`RID<class_RID>` **uniform_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray()\ ) :ref:`🔗<class_RenderingDevice_method_uniform_buffer_create>`
 
 Creates a new uniform buffer. It can be accessed with the RID that is returned.
 
@@ -5844,7 +5844,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **uniform_set_create**\ (\ uniforms\: :ref:`Array<class_Array>`\[:ref:`RDUniform<class_RDUniform>`\], shader\: :ref:`RID<class_RID>`, shader_set\: :ref:`int<class_int>`\ )
+:ref:`RID<class_RID>` **uniform_set_create**\ (\ uniforms\: :ref:`Array<class_Array>`\[:ref:`RDUniform<class_RDUniform>`\], shader\: :ref:`RID<class_RID>`, shader_set\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingDevice_method_uniform_set_create>`
 
 Creates a new uniform set. It can be accessed with the RID that is returned.
 
@@ -5858,7 +5858,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **uniform_set_is_valid**\ (\ uniform_set\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **uniform_set_is_valid**\ (\ uniform_set\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_uniform_set_is_valid>`
 
 Checks if the ``uniform_set`` is valid, i.e. is owned.
 
@@ -5870,7 +5870,7 @@ Checks if the ``uniform_set`` is valid, i.e. is owned.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **vertex_array_create**\ (\ vertex_count\: :ref:`int<class_int>`, vertex_format\: :ref:`int<class_int>`, src_buffers\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], offsets\: :ref:`PackedInt64Array<class_PackedInt64Array>` = PackedInt64Array()\ )
+:ref:`RID<class_RID>` **vertex_array_create**\ (\ vertex_count\: :ref:`int<class_int>`, vertex_format\: :ref:`int<class_int>`, src_buffers\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], offsets\: :ref:`PackedInt64Array<class_PackedInt64Array>` = PackedInt64Array()\ ) :ref:`🔗<class_RenderingDevice_method_vertex_array_create>`
 
 Creates a vertex array based on the specified buffers. Optionally, ``offsets`` (in bytes) may be defined for each buffer.
 
@@ -5882,7 +5882,7 @@ Creates a vertex array based on the specified buffers. Optionally, ``offsets`` (
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **vertex_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), use_as_storage\: :ref:`bool<class_bool>` = false\ )
+:ref:`RID<class_RID>` **vertex_buffer_create**\ (\ size_bytes\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray(), use_as_storage\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RenderingDevice_method_vertex_buffer_create>`
 
 It can be accessed with the RID that is returned.
 
@@ -5896,7 +5896,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **vertex_format_create**\ (\ vertex_descriptions\: :ref:`Array<class_Array>`\[:ref:`RDVertexAttribute<class_RDVertexAttribute>`\]\ )
+:ref:`int<class_int>` **vertex_format_create**\ (\ vertex_descriptions\: :ref:`Array<class_Array>`\[:ref:`RDVertexAttribute<class_RDVertexAttribute>`\]\ ) :ref:`🔗<class_RenderingDevice_method_vertex_format_create>`
 
 Creates a new vertex format with the specified ``vertex_descriptions``. Returns a unique vertex format ID corresponding to the newly created vertex format.
 

@@ -50,7 +50,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **original_class**
+:ref:`String<class_String>` **original_class** :ref:`🔗<class_MissingResource_property_original_class>`
 
 .. rst-class:: classref-property-setget
 
@@ -67,7 +67,7 @@ The name of the class this resource was supposed to be (see :ref:`Object.get_cla
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **recording_properties**
+:ref:`bool<class_bool>` **recording_properties** :ref:`🔗<class_MissingResource_property_recording_properties>`
 
 .. rst-class:: classref-property-setget
 

@@ -52,7 +52,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_configure**\ (\ config\: :ref:`RenderSceneBuffersConfiguration<class_RenderSceneBuffersConfiguration>`\ ) |virtual|
+|void| **_configure**\ (\ config\: :ref:`RenderSceneBuffersConfiguration<class_RenderSceneBuffersConfiguration>`\ ) |virtual| :ref:`🔗<class_RenderSceneBuffersExtension_private_method__configure>`
 
 Implement this in GDExtension to handle the (re)sizing of a viewport.
 
@@ -64,7 +64,7 @@ Implement this in GDExtension to handle the (re)sizing of a viewport.
 
 .. rst-class:: classref-method
 
-|void| **_set_fsr_sharpness**\ (\ fsr_sharpness\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_set_fsr_sharpness**\ (\ fsr_sharpness\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_RenderSceneBuffersExtension_private_method__set_fsr_sharpness>`
 
 Implement this in GDExtension to record a new FSR sharpness value.
 
@@ -76,7 +76,7 @@ Implement this in GDExtension to record a new FSR sharpness value.
 
 .. rst-class:: classref-method
 
-|void| **_set_texture_mipmap_bias**\ (\ texture_mipmap_bias\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_set_texture_mipmap_bias**\ (\ texture_mipmap_bias\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_RenderSceneBuffersExtension_private_method__set_texture_mipmap_bias>`
 
 Implement this in GDExtension to change the texture mipmap bias.
 
@@ -88,7 +88,7 @@ Implement this in GDExtension to change the texture mipmap bias.
 
 .. rst-class:: classref-method
 
-|void| **_set_use_debanding**\ (\ use_debanding\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_set_use_debanding**\ (\ use_debanding\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_RenderSceneBuffersExtension_private_method__set_use_debanding>`
 
 Implement this in GDExtension to react to the debanding flag changing.
 

@@ -162,7 +162,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**AXIS_X** = ``0``
+**AXIS_X** = ``0`` :ref:`🔗<class_Vector4i_constant_AXIS_X>`
 
 Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
 
@@ -170,7 +170,7 @@ Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector4i
 
 .. rst-class:: classref-constant
 
-**AXIS_Y** = ``1``
+**AXIS_Y** = ``1`` :ref:`🔗<class_Vector4i_constant_AXIS_Y>`
 
 Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
 
@@ -178,7 +178,7 @@ Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector4i
 
 .. rst-class:: classref-constant
 
-**AXIS_Z** = ``2``
+**AXIS_Z** = ``2`` :ref:`🔗<class_Vector4i_constant_AXIS_Z>`
 
 Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
 
@@ -186,7 +186,7 @@ Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector4i
 
 .. rst-class:: classref-constant
 
-**AXIS_W** = ``3``
+**AXIS_W** = ``3`` :ref:`🔗<class_Vector4i_constant_AXIS_W>`
 
 Enumerated value for the W axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
 
@@ -194,7 +194,7 @@ Enumerated value for the W axis. Returned by :ref:`max_axis_index<class_Vector4i
 
 .. rst-class:: classref-constant
 
-**ZERO** = ``Vector4i(0, 0, 0, 0)``
+**ZERO** = ``Vector4i(0, 0, 0, 0)`` :ref:`🔗<class_Vector4i_constant_ZERO>`
 
 Zero vector, a vector with all components set to ``0``.
 
@@ -202,7 +202,7 @@ Zero vector, a vector with all components set to ``0``.
 
 .. rst-class:: classref-constant
 
-**ONE** = ``Vector4i(1, 1, 1, 1)``
+**ONE** = ``Vector4i(1, 1, 1, 1)`` :ref:`🔗<class_Vector4i_constant_ONE>`
 
 One vector, a vector with all components set to ``1``.
 
@@ -210,7 +210,7 @@ One vector, a vector with all components set to ``1``.
 
 .. rst-class:: classref-constant
 
-**MIN** = ``Vector4i(-2147483648, -2147483648, -2147483648, -2147483648)``
+**MIN** = ``Vector4i(-2147483648, -2147483648, -2147483648, -2147483648)`` :ref:`🔗<class_Vector4i_constant_MIN>`
 
 Min vector, a vector with all components equal to ``INT32_MIN``. Can be used as a negative integer equivalent of :ref:`Vector4.INF<class_Vector4_constant_INF>`.
 
@@ -218,7 +218,7 @@ Min vector, a vector with all components equal to ``INT32_MIN``. Can be used as 
 
 .. rst-class:: classref-constant
 
-**MAX** = ``Vector4i(2147483647, 2147483647, 2147483647, 2147483647)``
+**MAX** = ``Vector4i(2147483647, 2147483647, 2147483647, 2147483647)`` :ref:`🔗<class_Vector4i_constant_MAX>`
 
 Max vector, a vector with all components equal to ``INT32_MAX``. Can be used as an integer equivalent of :ref:`Vector4.INF<class_Vector4_constant_INF>`.
 
@@ -235,7 +235,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **w** = ``0``
+:ref:`int<class_int>` **w** = ``0`` :ref:`🔗<class_Vector4i_property_w>`
 
 The vector's W component. Also accessible by using the index position ``[3]``.
 
@@ -247,7 +247,7 @@ The vector's W component. Also accessible by using the index position ``[3]``.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **x** = ``0``
+:ref:`int<class_int>` **x** = ``0`` :ref:`🔗<class_Vector4i_property_x>`
 
 The vector's X component. Also accessible by using the index position ``[0]``.
 
@@ -259,7 +259,7 @@ The vector's X component. Also accessible by using the index position ``[0]``.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **y** = ``0``
+:ref:`int<class_int>` **y** = ``0`` :ref:`🔗<class_Vector4i_property_y>`
 
 The vector's Y component. Also accessible by using the index position ``[1]``.
 
@@ -271,7 +271,7 @@ The vector's Y component. Also accessible by using the index position ``[1]``.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **z** = ``0``
+:ref:`int<class_int>` **z** = ``0`` :ref:`🔗<class_Vector4i_property_z>`
 
 The vector's Z component. Also accessible by using the index position ``[2]``.
 
@@ -288,7 +288,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`Vector4i<class_Vector4i>` **Vector4i**\ (\ )
+:ref:`Vector4i<class_Vector4i>` **Vector4i**\ (\ ) :ref:`🔗<class_Vector4i_constructor_Vector4i>`
 
 Constructs a default-initialized **Vector4i** with all components set to ``0``.
 
@@ -335,7 +335,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector4i<class_Vector4i>` **abs**\ (\ ) |const|
+:ref:`Vector4i<class_Vector4i>` **abs**\ (\ ) |const| :ref:`🔗<class_Vector4i_method_abs>`
 
 Returns a new vector with all components in absolute values (i.e. positive).
 
@@ -347,7 +347,7 @@ Returns a new vector with all components in absolute values (i.e. positive).
 
 .. rst-class:: classref-method
 
-:ref:`Vector4i<class_Vector4i>` **clamp**\ (\ min\: :ref:`Vector4i<class_Vector4i>`, max\: :ref:`Vector4i<class_Vector4i>`\ ) |const|
+:ref:`Vector4i<class_Vector4i>` **clamp**\ (\ min\: :ref:`Vector4i<class_Vector4i>`, max\: :ref:`Vector4i<class_Vector4i>`\ ) |const| :ref:`🔗<class_Vector4i_method_clamp>`
 
 Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
 
@@ -359,7 +359,7 @@ Returns a new vector with all components clamped between the components of ``min
 
 .. rst-class:: classref-method
 
-:ref:`Vector4i<class_Vector4i>` **clampi**\ (\ min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector4i<class_Vector4i>` **clampi**\ (\ min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector4i_method_clampi>`
 
 Returns a new vector with all components clamped between ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
 
@@ -371,7 +371,7 @@ Returns a new vector with all components clamped between ``min`` and ``max``, by
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **distance_squared_to**\ (\ to\: :ref:`Vector4i<class_Vector4i>`\ ) |const|
+:ref:`int<class_int>` **distance_squared_to**\ (\ to\: :ref:`Vector4i<class_Vector4i>`\ ) |const| :ref:`🔗<class_Vector4i_method_distance_squared_to>`
 
 Returns the squared distance between this vector and ``to``.
 
@@ -385,7 +385,7 @@ This method runs faster than :ref:`distance_to<class_Vector4i_method_distance_to
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **distance_to**\ (\ to\: :ref:`Vector4i<class_Vector4i>`\ ) |const|
+:ref:`float<class_float>` **distance_to**\ (\ to\: :ref:`Vector4i<class_Vector4i>`\ ) |const| :ref:`🔗<class_Vector4i_method_distance_to>`
 
 Returns the distance between this vector and ``to``.
 
@@ -397,7 +397,7 @@ Returns the distance between this vector and ``to``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **length**\ (\ ) |const|
+:ref:`float<class_float>` **length**\ (\ ) |const| :ref:`🔗<class_Vector4i_method_length>`
 
 Returns the length (magnitude) of this vector.
 
@@ -409,7 +409,7 @@ Returns the length (magnitude) of this vector.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **length_squared**\ (\ ) |const|
+:ref:`int<class_int>` **length_squared**\ (\ ) |const| :ref:`🔗<class_Vector4i_method_length_squared>`
 
 Returns the squared length (squared magnitude) of this vector.
 
@@ -423,7 +423,7 @@ This method runs faster than :ref:`length<class_Vector4i_method_length>`, so pre
 
 .. rst-class:: classref-method
 
-:ref:`Vector4i<class_Vector4i>` **max**\ (\ with\: :ref:`Vector4i<class_Vector4i>`\ ) |const|
+:ref:`Vector4i<class_Vector4i>` **max**\ (\ with\: :ref:`Vector4i<class_Vector4i>`\ ) |const| :ref:`🔗<class_Vector4i_method_max>`
 
 Returns the component-wise maximum of this and ``with``, equivalent to ``Vector4i(maxi(x, with.x), maxi(y, with.y), maxi(z, with.z), maxi(w, with.w))``.
 
@@ -435,7 +435,7 @@ Returns the component-wise maximum of this and ``with``, equivalent to ``Vector4
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **max_axis_index**\ (\ ) |const|
+:ref:`int<class_int>` **max_axis_index**\ (\ ) |const| :ref:`🔗<class_Vector4i_method_max_axis_index>`
 
 Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_X<class_Vector4i_constant_AXIS_X>`.
 
@@ -447,7 +447,7 @@ Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all
 
 .. rst-class:: classref-method
 
-:ref:`Vector4i<class_Vector4i>` **maxi**\ (\ with\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector4i<class_Vector4i>` **maxi**\ (\ with\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector4i_method_maxi>`
 
 Returns the component-wise maximum of this and ``with``, equivalent to ``Vector4i(maxi(x, with), maxi(y, with), maxi(z, with), maxi(w, with))``.
 
@@ -459,7 +459,7 @@ Returns the component-wise maximum of this and ``with``, equivalent to ``Vector4
 
 .. rst-class:: classref-method
 
-:ref:`Vector4i<class_Vector4i>` **min**\ (\ with\: :ref:`Vector4i<class_Vector4i>`\ ) |const|
+:ref:`Vector4i<class_Vector4i>` **min**\ (\ with\: :ref:`Vector4i<class_Vector4i>`\ ) |const| :ref:`🔗<class_Vector4i_method_min>`
 
 Returns the component-wise minimum of this and ``with``, equivalent to ``Vector4i(mini(x, with.x), mini(y, with.y), mini(z, with.z), mini(w, with.w))``.
 
@@ -471,7 +471,7 @@ Returns the component-wise minimum of this and ``with``, equivalent to ``Vector4
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **min_axis_index**\ (\ ) |const|
+:ref:`int<class_int>` **min_axis_index**\ (\ ) |const| :ref:`🔗<class_Vector4i_method_min_axis_index>`
 
 Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_W<class_Vector4i_constant_AXIS_W>`.
 
@@ -483,7 +483,7 @@ Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all 
 
 .. rst-class:: classref-method
 
-:ref:`Vector4i<class_Vector4i>` **mini**\ (\ with\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector4i<class_Vector4i>` **mini**\ (\ with\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector4i_method_mini>`
 
 Returns the component-wise minimum of this and ``with``, equivalent to ``Vector4i(mini(x, with), mini(y, with), mini(z, with), mini(w, with))``.
 
@@ -495,7 +495,7 @@ Returns the component-wise minimum of this and ``with``, equivalent to ``Vector4
 
 .. rst-class:: classref-method
 
-:ref:`Vector4i<class_Vector4i>` **sign**\ (\ ) |const|
+:ref:`Vector4i<class_Vector4i>` **sign**\ (\ ) |const| :ref:`🔗<class_Vector4i_method_sign>`
 
 Returns a new vector with each component set to ``1`` if it's positive, ``-1`` if it's negative, and ``0`` if it's zero. The result is identical to calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
 
@@ -507,7 +507,7 @@ Returns a new vector with each component set to ``1`` if it's positive, ``-1`` i
 
 .. rst-class:: classref-method
 
-:ref:`Vector4i<class_Vector4i>` **snapped**\ (\ step\: :ref:`Vector4i<class_Vector4i>`\ ) |const|
+:ref:`Vector4i<class_Vector4i>` **snapped**\ (\ step\: :ref:`Vector4i<class_Vector4i>`\ ) |const| :ref:`🔗<class_Vector4i_method_snapped>`
 
 Returns a new vector with each component snapped to the closest multiple of the corresponding component in ``step``.
 
@@ -519,7 +519,7 @@ Returns a new vector with each component snapped to the closest multiple of the 
 
 .. rst-class:: classref-method
 
-:ref:`Vector4i<class_Vector4i>` **snappedi**\ (\ step\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector4i<class_Vector4i>` **snappedi**\ (\ step\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Vector4i_method_snappedi>`
 
 Returns a new vector with each component snapped to the closest multiple of ``step``.
 
@@ -536,7 +536,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_neq_Vector4i>`
 
 Returns ``true`` if the vectors are not equal.
 
@@ -548,7 +548,7 @@ Returns ``true`` if the vectors are not equal.
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4i<class_Vector4i>` **operator %**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`Vector4i<class_Vector4i>` **operator %**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_mod_Vector4i>`
 
 Gets the remainder of each component of the **Vector4i** with the components of the given **Vector4i**. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
@@ -564,7 +564,7 @@ Gets the remainder of each component of the **Vector4i** with the components of 
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4i<class_Vector4i>` **operator %**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`Vector4i<class_Vector4i>` **operator %**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Vector4i_operator_mod_int>`
 
 Gets the remainder of each component of the **Vector4i** with the the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
@@ -580,7 +580,7 @@ Gets the remainder of each component of the **Vector4i** with the the given :ref
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4i<class_Vector4i>` **operator ***\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`Vector4i<class_Vector4i>` **operator ***\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_mul_Vector4i>`
 
 Multiplies each component of the **Vector4i** by the components of the given **Vector4i**.
 
@@ -596,7 +596,7 @@ Multiplies each component of the **Vector4i** by the components of the given **V
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4<class_Vector4>` **operator ***\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`Vector4<class_Vector4>` **operator ***\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Vector4i_operator_mul_float>`
 
 Multiplies each component of the **Vector4i** by the given :ref:`float<class_float>`.
 
@@ -614,7 +614,7 @@ Returns a Vector4 value due to floating-point operations.
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4i<class_Vector4i>` **operator ***\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`Vector4i<class_Vector4i>` **operator ***\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Vector4i_operator_mul_int>`
 
 Multiplies each component of the **Vector4i** by the given :ref:`int<class_int>`.
 
@@ -626,7 +626,7 @@ Multiplies each component of the **Vector4i** by the given :ref:`int<class_int>`
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4i<class_Vector4i>` **operator +**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`Vector4i<class_Vector4i>` **operator +**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_sum_Vector4i>`
 
 Adds each component of the **Vector4i** by the components of the given **Vector4i**.
 
@@ -642,7 +642,7 @@ Adds each component of the **Vector4i** by the components of the given **Vector4
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4i<class_Vector4i>` **operator -**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`Vector4i<class_Vector4i>` **operator -**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_dif_Vector4i>`
 
 Subtracts each component of the **Vector4i** by the components of the given **Vector4i**.
 
@@ -658,7 +658,7 @@ Subtracts each component of the **Vector4i** by the components of the given **Ve
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4i<class_Vector4i>` **operator /**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`Vector4i<class_Vector4i>` **operator /**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_div_Vector4i>`
 
 Divides each component of the **Vector4i** by the components of the given **Vector4i**.
 
@@ -674,7 +674,7 @@ Divides each component of the **Vector4i** by the components of the given **Vect
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4<class_Vector4>` **operator /**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`Vector4<class_Vector4>` **operator /**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Vector4i_operator_div_float>`
 
 Divides each component of the **Vector4i** by the given :ref:`float<class_float>`.
 
@@ -692,7 +692,7 @@ Returns a Vector4 value due to floating-point operations.
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4i<class_Vector4i>` **operator /**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`Vector4i<class_Vector4i>` **operator /**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Vector4i_operator_div_int>`
 
 Divides each component of the **Vector4i** by the given :ref:`int<class_int>`.
 
@@ -704,7 +704,7 @@ Divides each component of the **Vector4i** by the given :ref:`int<class_int>`.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_lt_Vector4i>`
 
 Compares two **Vector4i** vectors by first checking if the X value of the left vector is less than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
@@ -716,7 +716,7 @@ Compares two **Vector4i** vectors by first checking if the X value of the left v
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_lte_Vector4i>`
 
 Compares two **Vector4i** vectors by first checking if the X value of the left vector is less than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
@@ -728,7 +728,7 @@ Compares two **Vector4i** vectors by first checking if the X value of the left v
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_eq_Vector4i>`
 
 Returns ``true`` if the vectors are exactly equal.
 
@@ -740,7 +740,7 @@ Returns ``true`` if the vectors are exactly equal.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_gt_Vector4i>`
 
 Compares two **Vector4i** vectors by first checking if the X value of the left vector is greater than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
@@ -752,7 +752,7 @@ Compares two **Vector4i** vectors by first checking if the X value of the left v
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ )
+:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`Vector4i<class_Vector4i>`\ ) :ref:`🔗<class_Vector4i_operator_gte_Vector4i>`
 
 Compares two **Vector4i** vectors by first checking if the X value of the left vector is greater than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
 
@@ -764,7 +764,7 @@ Compares two **Vector4i** vectors by first checking if the X value of the left v
 
 .. rst-class:: classref-operator
 
-:ref:`int<class_int>` **operator []**\ (\ index\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **operator []**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Vector4i_operator_idx_int>`
 
 Access vector components using their ``index``. ``v[0]`` is equivalent to ``v.x``, ``v[1]`` is equivalent to ``v.y``, ``v[2]`` is equivalent to ``v.z``, and ``v[3]`` is equivalent to ``v.w``.
 
@@ -776,7 +776,7 @@ Access vector components using their ``index``. ``v[0]`` is equivalent to ``v.x`
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4i<class_Vector4i>` **operator unary+**\ (\ )
+:ref:`Vector4i<class_Vector4i>` **operator unary+**\ (\ ) :ref:`🔗<class_Vector4i_operator_unplus>`
 
 Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
 
@@ -788,7 +788,7 @@ Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, 
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4i<class_Vector4i>` **operator unary-**\ (\ )
+:ref:`Vector4i<class_Vector4i>` **operator unary-**\ (\ ) :ref:`🔗<class_Vector4i_operator_unminus>`
 
 Returns the negative value of the **Vector4i**. This is the same as writing ``Vector4i(-v.x, -v.y, -v.z, -v.w)``. This operation flips the direction of the vector while keeping the same magnitude.
 

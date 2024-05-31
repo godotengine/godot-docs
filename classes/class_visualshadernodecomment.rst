@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **description** = ``""``
+:ref:`String<class_String>` **description** = ``""`` :ref:`🔗<class_VisualShaderNodeComment_property_description>`
 
 .. rst-class:: classref-property-setget
 

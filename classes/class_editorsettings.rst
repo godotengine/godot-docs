@@ -297,7 +297,7 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`filesystem/import/blender/rpc_server_uptime<class_EditorSettings_property_filesystem/import/blender/rpc_server_uptime>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`filesystem/import/fbx2gltf/fbx2gltf_path<class_EditorSettings_property_filesystem/import/fbx2gltf/fbx2gltf_path>`                                                                                           |
+   | :ref:`String<class_String>`                       | :ref:`filesystem/import/fbx/fbx2gltf_path<class_EditorSettings_property_filesystem/import/fbx/fbx2gltf_path>`                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`filesystem/on_save/compress_binary_resources<class_EditorSettings_property_filesystem/on_save/compress_binary_resources>`                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -489,11 +489,11 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`run/auto_save/save_before_running<class_EditorSettings_property_run/auto_save/save_before_running>`                                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`run/bottom_panel/action_on_play<class_EditorSettings_property_run/bottom_panel/action_on_play>`                                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`run/bottom_panel/action_on_stop<class_EditorSettings_property_run/bottom_panel/action_on_stop>`                                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`run/output/always_clear_output_on_play<class_EditorSettings_property_run/output/always_clear_output_on_play>`                                                                                               |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`run/output/always_close_output_on_stop<class_EditorSettings_property_run/output/always_close_output_on_stop>`                                                                                               |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`run/output/always_open_output_on_play<class_EditorSettings_property_run/output/always_open_output_on_play>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`run/output/font_size<class_EditorSettings_property_run/output/font_size>`                                                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -556,6 +556,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/files/convert_indent_on_save<class_EditorSettings_property_text_editor/behavior/files/convert_indent_on_save>`                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/files/restore_scripts_on_load<class_EditorSettings_property_text_editor/behavior/files/restore_scripts_on_load>`                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/files/trim_final_newlines_on_save<class_EditorSettings_property_text_editor/behavior/files/trim_final_newlines_on_save>`                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/files/trim_trailing_whitespace_on_save<class_EditorSettings_property_text_editor/behavior/files/trim_trailing_whitespace_on_save>`                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -751,7 +753,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**settings_changed**\ (\ )
+**settings_changed**\ (\ ) :ref:`🔗<class_EditorSettings_signal_settings_changed>`
 
 Emitted after any editor setting has changed.
 
@@ -768,7 +770,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_EDITOR_SETTINGS_CHANGED** = ``10000``
+**NOTIFICATION_EDITOR_SETTINGS_CHANGED** = ``10000`` :ref:`🔗<class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED>`
 
 Emitted after any editor setting has changed. It's used by various editor plugins to update their visuals on theme changes or logic on configuration changes.
 
@@ -785,7 +787,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debugger/auto_switch_to_remote_scene_tree**
+:ref:`bool<class_bool>` **debugger/auto_switch_to_remote_scene_tree** :ref:`🔗<class_EditorSettings_property_debugger/auto_switch_to_remote_scene_tree>`
 
 If ``true``, automatically switches to the **Remote** scene tree when running the project from the editor. If ``false``, stays on the **Local** scene tree when running the project from the editor.
 
@@ -797,7 +799,7 @@ If ``true``, automatically switches to the **Remote** scene tree when running th
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debugger/profile_native_calls**
+:ref:`bool<class_bool>` **debugger/profile_native_calls** :ref:`🔗<class_EditorSettings_property_debugger/profile_native_calls>`
 
 If ``true``, enables collection of profiling data from non-GDScript Godot functions, such as engine class methods. Enabling this slows execution while profiling further.
 
@@ -809,7 +811,7 @@ If ``true``, enables collection of profiling data from non-GDScript Godot functi
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debugger/profiler_frame_history_size**
+:ref:`int<class_int>` **debugger/profiler_frame_history_size** :ref:`🔗<class_EditorSettings_property_debugger/profiler_frame_history_size>`
 
 The size of the profiler's frame history. The default value (3600) allows seeing up to 60 seconds of profiling if the project renders at a constant 60 FPS. Higher values allow viewing longer periods of profiling in the graphs, especially when the project is running at high framerates.
 
@@ -821,7 +823,7 @@ The size of the profiler's frame history. The default value (3600) allows seeing
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debugger/profiler_frame_max_functions**
+:ref:`int<class_int>` **debugger/profiler_frame_max_functions** :ref:`🔗<class_EditorSettings_property_debugger/profiler_frame_max_functions>`
 
 The maximum number of script functions that can be displayed per frame in the profiler. If there are more script functions called in a given profiler frame, these functions will be discarded from the profiling results entirely.
 
@@ -835,7 +837,7 @@ The maximum number of script functions that can be displayed per frame in the pr
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **debugger/remote_inspect_refresh_interval**
+:ref:`float<class_float>` **debugger/remote_inspect_refresh_interval** :ref:`🔗<class_EditorSettings_property_debugger/remote_inspect_refresh_interval>`
 
 The refresh interval for the remote inspector's properties (in seconds). Lower values are more reactive, but may cause stuttering while the project is running from the editor and the **Remote** scene tree is selected in the Scene tree dock.
 
@@ -847,7 +849,7 @@ The refresh interval for the remote inspector's properties (in seconds). Lower v
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **debugger/remote_scene_tree_refresh_interval**
+:ref:`float<class_float>` **debugger/remote_scene_tree_refresh_interval** :ref:`🔗<class_EditorSettings_property_debugger/remote_scene_tree_refresh_interval>`
 
 The refresh interval for the remote scene tree (in seconds). Lower values are more reactive, but may cause stuttering while the project is running from the editor and the **Remote** scene tree is selected in the Scene tree dock.
 
@@ -859,7 +861,7 @@ The refresh interval for the remote scene tree (in seconds). Lower values are mo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **docks/filesystem/always_show_folders**
+:ref:`bool<class_bool>` **docks/filesystem/always_show_folders** :ref:`🔗<class_EditorSettings_property_docks/filesystem/always_show_folders>`
 
 If ``true``, displays folders in the FileSystem dock's bottom pane when split mode is enabled. If ``false``, only files will be displayed in the bottom pane. Split mode can be toggled by pressing the icon next to the ``res://`` folder path.
 
@@ -873,7 +875,7 @@ If ``true``, displays folders in the FileSystem dock's bottom pane when split mo
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **docks/filesystem/textfile_extensions**
+:ref:`String<class_String>` **docks/filesystem/textfile_extensions** :ref:`🔗<class_EditorSettings_property_docks/filesystem/textfile_extensions>`
 
 List of file extensions to consider as editable text files in the FileSystem dock (by double-clicking on the files).
 
@@ -885,7 +887,7 @@ List of file extensions to consider as editable text files in the FileSystem doc
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **docks/filesystem/thumbnail_size**
+:ref:`int<class_int>` **docks/filesystem/thumbnail_size** :ref:`🔗<class_EditorSettings_property_docks/filesystem/thumbnail_size>`
 
 The thumbnail size to use in the FileSystem dock (in pixels). See also :ref:`filesystem/file_dialog/thumbnail_size<class_EditorSettings_property_filesystem/file_dialog/thumbnail_size>`.
 
@@ -897,7 +899,7 @@ The thumbnail size to use in the FileSystem dock (in pixels). See also :ref:`fil
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **docks/property_editor/auto_refresh_interval**
+:ref:`float<class_float>` **docks/property_editor/auto_refresh_interval** :ref:`🔗<class_EditorSettings_property_docks/property_editor/auto_refresh_interval>`
 
 The refresh interval to use for the Inspector dock's properties. The effect of this setting is mainly noticeable when adjusting gizmos in the 2D/3D editor and looking at the inspector at the same time. Lower values make the inspector refresh more often, but take up more CPU time.
 
@@ -909,7 +911,7 @@ The refresh interval to use for the Inspector dock's properties. The effect of t
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **docks/property_editor/subresource_hue_tint**
+:ref:`float<class_float>` **docks/property_editor/subresource_hue_tint** :ref:`🔗<class_EditorSettings_property_docks/property_editor/subresource_hue_tint>`
 
 The tint intensity to use for the subresources background in the Inspector dock. The tint is used to distinguish between different subresources in the inspector. Higher values result in a more noticeable background color difference.
 
@@ -921,7 +923,7 @@ The tint intensity to use for the subresources background in the Inspector dock.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **docks/scene_tree/auto_expand_to_selected**
+:ref:`bool<class_bool>` **docks/scene_tree/auto_expand_to_selected** :ref:`🔗<class_EditorSettings_property_docks/scene_tree/auto_expand_to_selected>`
 
 If ``true``, the scene tree dock will automatically unfold nodes when a node that has folded parents is selected.
 
@@ -933,7 +935,7 @@ If ``true``, the scene tree dock will automatically unfold nodes when a node tha
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **docks/scene_tree/center_node_on_reparent**
+:ref:`bool<class_bool>` **docks/scene_tree/center_node_on_reparent** :ref:`🔗<class_EditorSettings_property_docks/scene_tree/center_node_on_reparent>`
 
 If ``true``, new node created when reparenting node(s) will be positioned at the average position of the selected node(s).
 
@@ -945,7 +947,7 @@ If ``true``, new node created when reparenting node(s) will be positioned at the
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **docks/scene_tree/start_create_dialog_fully_expanded**
+:ref:`bool<class_bool>` **docks/scene_tree/start_create_dialog_fully_expanded** :ref:`🔗<class_EditorSettings_property_docks/scene_tree/start_create_dialog_fully_expanded>`
 
 If ``true``, the Create dialog (Create New Node/Create New Resource) will start with all its sections expanded. Otherwise, sections will be collapsed until the user starts searching (which will automatically expand sections as needed).
 
@@ -957,7 +959,7 @@ If ``true``, the Create dialog (Create New Node/Create New Resource) will start 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/2d/bone_color1**
+:ref:`Color<class_Color>` **editors/2d/bone_color1** :ref:`🔗<class_EditorSettings_property_editors/2d/bone_color1>`
 
 The "start" stop of the color gradient to use for bones in the 2D skeleton editor.
 
@@ -969,7 +971,7 @@ The "start" stop of the color gradient to use for bones in the 2D skeleton edito
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/2d/bone_color2**
+:ref:`Color<class_Color>` **editors/2d/bone_color2** :ref:`🔗<class_EditorSettings_property_editors/2d/bone_color2>`
 
 The "end" stop of the color gradient to use for bones in the 2D skeleton editor.
 
@@ -981,7 +983,7 @@ The "end" stop of the color gradient to use for bones in the 2D skeleton editor.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/2d/bone_ik_color**
+:ref:`Color<class_Color>` **editors/2d/bone_ik_color** :ref:`🔗<class_EditorSettings_property_editors/2d/bone_ik_color>`
 
 The color to use for inverse kinematics-enabled bones in the 2D skeleton editor.
 
@@ -993,7 +995,7 @@ The color to use for inverse kinematics-enabled bones in the 2D skeleton editor.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/2d/bone_outline_color**
+:ref:`Color<class_Color>` **editors/2d/bone_outline_color** :ref:`🔗<class_EditorSettings_property_editors/2d/bone_outline_color>`
 
 The outline color to use for non-selected bones in the 2D skeleton editor. See also :ref:`editors/2d/bone_selected_color<class_EditorSettings_property_editors/2d/bone_selected_color>`.
 
@@ -1005,7 +1007,7 @@ The outline color to use for non-selected bones in the 2D skeleton editor. See a
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/2d/bone_outline_size**
+:ref:`float<class_float>` **editors/2d/bone_outline_size** :ref:`🔗<class_EditorSettings_property_editors/2d/bone_outline_size>`
 
 The outline size in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`.
 
@@ -1019,7 +1021,7 @@ The outline size in the 2D skeleton editor (in pixels). See also :ref:`editors/2
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/2d/bone_selected_color**
+:ref:`Color<class_Color>` **editors/2d/bone_selected_color** :ref:`🔗<class_EditorSettings_property_editors/2d/bone_selected_color>`
 
 The color to use for selected bones in the 2D skeleton editor. See also :ref:`editors/2d/bone_outline_color<class_EditorSettings_property_editors/2d/bone_outline_color>`.
 
@@ -1031,7 +1033,7 @@ The color to use for selected bones in the 2D skeleton editor. See also :ref:`ed
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/2d/bone_width**
+:ref:`float<class_float>` **editors/2d/bone_width** :ref:`🔗<class_EditorSettings_property_editors/2d/bone_width>`
 
 The bone width in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`.
 
@@ -1045,7 +1047,7 @@ The bone width in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/2d/grid_color**
+:ref:`Color<class_Color>` **editors/2d/grid_color** :ref:`🔗<class_EditorSettings_property_editors/2d/grid_color>`
 
 The grid color to use in the 2D editor.
 
@@ -1057,7 +1059,7 @@ The grid color to use in the 2D editor.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/2d/guides_color**
+:ref:`Color<class_Color>` **editors/2d/guides_color** :ref:`🔗<class_EditorSettings_property_editors/2d/guides_color>`
 
 The guides color to use in the 2D editor. Guides can be created by dragging the mouse cursor from the rulers.
 
@@ -1069,7 +1071,7 @@ The guides color to use in the 2D editor. Guides can be created by dragging the 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/2d/smart_snapping_line_color**
+:ref:`Color<class_Color>` **editors/2d/smart_snapping_line_color** :ref:`🔗<class_EditorSettings_property_editors/2d/smart_snapping_line_color>`
 
 The color to use when drawing smart snapping lines in the 2D editor. The smart snapping lines will automatically display when moving 2D nodes if smart snapping is enabled in the Snapping Options menu at the top of the 2D editor viewport.
 
@@ -1081,7 +1083,7 @@ The color to use when drawing smart snapping lines in the 2D editor. The smart s
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/2d/use_integer_zoom_by_default**
+:ref:`bool<class_bool>` **editors/2d/use_integer_zoom_by_default** :ref:`🔗<class_EditorSettings_property_editors/2d/use_integer_zoom_by_default>`
 
 If ``true``, the 2D editor will snap to integer zoom values while not holding the :kbd:`Alt` key and powers of two while holding it. If ``false``, this behavior is swapped.
 
@@ -1093,7 +1095,7 @@ If ``true``, the 2D editor will snap to integer zoom values while not holding th
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/2d/viewport_border_color**
+:ref:`Color<class_Color>` **editors/2d/viewport_border_color** :ref:`🔗<class_EditorSettings_property_editors/2d/viewport_border_color>`
 
 The color of the viewport border in the 2D editor. This border represents the viewport's size at the base resolution defined in the Project Settings. Objects placed outside this border will not be visible unless a :ref:`Camera2D<class_Camera2D>` node is used, or unless the window is resized and the stretch mode is set to ``disabled``.
 
@@ -1105,7 +1107,7 @@ The color of the viewport border in the 2D editor. This border represents the vi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/3d/default_fov**
+:ref:`float<class_float>` **editors/3d/default_fov** :ref:`🔗<class_EditorSettings_property_editors/3d/default_fov>`
 
 The default camera vertical field of view to use in the 3D editor (in degrees). The camera field of view can be adjusted on a per-scene basis using the **View** menu at the top of the 3D editor. If a scene had its camera field of view adjusted using the **View** menu, this setting is ignored in the scene in question. This setting is also ignored while a :ref:`Camera3D<class_Camera3D>` node is being previewed in the editor.
 
@@ -1119,7 +1121,7 @@ The default camera vertical field of view to use in the 3D editor (in degrees). 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/3d/default_z_far**
+:ref:`float<class_float>` **editors/3d/default_z_far** :ref:`🔗<class_EditorSettings_property_editors/3d/default_z_far>`
 
 The default camera far clip distance to use in the 3D editor (in degrees). Higher values make it possible to view objects placed further away from the camera, at the cost of lower precision in the depth buffer (which can result in visible Z-fighting in the distance). The camera far clip distance can be adjusted on a per-scene basis using the **View** menu at the top of the 3D editor. If a scene had its camera far clip distance adjusted using the **View** menu, this setting is ignored in the scene in question. This setting is also ignored while a :ref:`Camera3D<class_Camera3D>` node is being previewed in the editor.
 
@@ -1131,7 +1133,7 @@ The default camera far clip distance to use in the 3D editor (in degrees). Highe
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/3d/default_z_near**
+:ref:`float<class_float>` **editors/3d/default_z_near** :ref:`🔗<class_EditorSettings_property_editors/3d/default_z_near>`
 
 The default camera near clip distance to use in the 3D editor (in degrees). Lower values make it possible to view objects placed closer to the camera, at the cost of lower precision in the depth buffer (which can result in visible Z-fighting in the distance). The camera near clip distance can be adjusted on a per-scene basis using the **View** menu at the top of the 3D editor. If a scene had its camera near clip distance adjusted using the **View** menu, this setting is ignored in the scene in question. This setting is also ignored while a :ref:`Camera3D<class_Camera3D>` node is being previewed in the editor.
 
@@ -1143,7 +1145,7 @@ The default camera near clip distance to use in the 3D editor (in degrees). Lowe
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/freelook/freelook_activation_modifier**
+:ref:`int<class_int>` **editors/3d/freelook/freelook_activation_modifier** :ref:`🔗<class_EditorSettings_property_editors/3d/freelook/freelook_activation_modifier>`
 
 The modifier key to use to enable freelook in the 3D editor (on top of pressing the right mouse button).
 
@@ -1159,7 +1161,7 @@ The modifier key to use to enable freelook in the 3D editor (on top of pressing 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/3d/freelook/freelook_base_speed**
+:ref:`float<class_float>` **editors/3d/freelook/freelook_base_speed** :ref:`🔗<class_EditorSettings_property_editors/3d/freelook/freelook_base_speed>`
 
 The base 3D freelook speed in units per second. This can be adjusted by using the mouse wheel while in freelook mode, or by holding down the "fast" or "slow" modifier keys (:kbd:`Shift` and :kbd:`Alt` by default, respectively).
 
@@ -1171,7 +1173,7 @@ The base 3D freelook speed in units per second. This can be adjusted by using th
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/3d/freelook/freelook_inertia**
+:ref:`float<class_float>` **editors/3d/freelook/freelook_inertia** :ref:`🔗<class_EditorSettings_property_editors/3d/freelook/freelook_inertia>`
 
 The inertia of the 3D freelook camera. Higher values make the camera start and stop slower, which looks smoother but adds latency.
 
@@ -1183,7 +1185,7 @@ The inertia of the 3D freelook camera. Higher values make the camera start and s
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/freelook/freelook_navigation_scheme**
+:ref:`int<class_int>` **editors/3d/freelook/freelook_navigation_scheme** :ref:`🔗<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`
 
 The navigation scheme to use when freelook is enabled in the 3D editor. Some of the navigation schemes below may be more convenient when designing specific levels in the 3D editor.
 
@@ -1203,7 +1205,7 @@ See also :ref:`editors/3d/navigation/navigation_scheme<class_EditorSettings_prop
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/3d/freelook/freelook_sensitivity**
+:ref:`float<class_float>` **editors/3d/freelook/freelook_sensitivity** :ref:`🔗<class_EditorSettings_property_editors/3d/freelook/freelook_sensitivity>`
 
 The mouse sensitivity to use while freelook mode is active in the 3D editor. See also :ref:`editors/3d/navigation_feel/orbit_sensitivity<class_EditorSettings_property_editors/3d/navigation_feel/orbit_sensitivity>`.
 
@@ -1215,7 +1217,7 @@ The mouse sensitivity to use while freelook mode is active in the 3D editor. See
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/3d/freelook/freelook_speed_zoom_link**
+:ref:`bool<class_bool>` **editors/3d/freelook/freelook_speed_zoom_link** :ref:`🔗<class_EditorSettings_property_editors/3d/freelook/freelook_speed_zoom_link>`
 
 If ``true``, freelook speed is linked to the zoom value used in the camera orbit mode in the 3D editor.
 
@@ -1227,7 +1229,7 @@ If ``true``, freelook speed is linked to the zoom value used in the camera orbit
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/3d/grid_division_level_bias**
+:ref:`float<class_float>` **editors/3d/grid_division_level_bias** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_division_level_bias>`
 
 The grid division bias to use in the 3D editor. Negative values will cause small grid divisions to appear earlier, whereas positive values will cause small grid divisions to appear later.
 
@@ -1239,7 +1241,7 @@ The grid division bias to use in the 3D editor. Negative values will cause small
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/grid_division_level_max**
+:ref:`int<class_int>` **editors/3d/grid_division_level_max** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_division_level_max>`
 
 The largest grid division to use in the 3D editor. Together with :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`, this determines how large the grid divisions can be. The grid divisions will not be able to get larger than ``primary_grid_steps ^ grid_division_level_max`` units. By default, when :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>` is ``8``, this means grid divisions cannot get larger than ``64`` units each (so primary grid lines are ``512`` units apart), no matter how far away the camera is from the grid.
 
@@ -1251,7 +1253,7 @@ The largest grid division to use in the 3D editor. Together with :ref:`editors/3
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/grid_division_level_min**
+:ref:`int<class_int>` **editors/3d/grid_division_level_min** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_division_level_min>`
 
 The smallest grid division to use in the 3D editor. Together with :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`, this determines how small the grid divisions can be. The grid divisions will not be able to get smaller than ``primary_grid_steps ^ grid_division_level_min`` units. By default, this means grid divisions cannot get smaller than 1 unit each, no matter how close the camera is from the grid.
 
@@ -1263,7 +1265,7 @@ The smallest grid division to use in the 3D editor. Together with :ref:`editors/
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/grid_size**
+:ref:`int<class_int>` **editors/3d/grid_size** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_size>`
 
 The grid size in units. Higher values prevent the grid from appearing "cut off" at certain angles, but make the grid more demanding to render. Depending on the camera's position, the grid may not be fully visible since a shader is used to fade it progressively.
 
@@ -1275,7 +1277,7 @@ The grid size in units. Higher values prevent the grid from appearing "cut off" 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/3d/grid_xy_plane**
+:ref:`bool<class_bool>` **editors/3d/grid_xy_plane** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_xy_plane>`
 
 If ``true``, render the grid on an XY plane. This can be useful for 3D side-scrolling games.
 
@@ -1287,7 +1289,7 @@ If ``true``, render the grid on an XY plane. This can be useful for 3D side-scro
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/3d/grid_xz_plane**
+:ref:`bool<class_bool>` **editors/3d/grid_xz_plane** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_xz_plane>`
 
 If ``true``, render the grid on an XZ plane.
 
@@ -1299,7 +1301,7 @@ If ``true``, render the grid on an XZ plane.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/3d/grid_yz_plane**
+:ref:`bool<class_bool>` **editors/3d/grid_yz_plane** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_yz_plane>`
 
 If ``true``, render the grid on a YZ plane. This can be useful for 3D side-scrolling games.
 
@@ -1311,7 +1313,7 @@ If ``true``, render the grid on a YZ plane. This can be useful for 3D side-scrol
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/3d/navigation/emulate_3_button_mouse**
+:ref:`bool<class_bool>` **editors/3d/navigation/emulate_3_button_mouse** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/emulate_3_button_mouse>`
 
 If ``true``, enables 3-button mouse emulation mode. This is useful on laptops when using a trackpad.
 
@@ -1327,7 +1329,7 @@ When 3-button mouse emulation mode is enabled, the pan, zoom and orbit modifiers
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/3d/navigation/emulate_numpad**
+:ref:`bool<class_bool>` **editors/3d/navigation/emulate_numpad** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/emulate_numpad>`
 
 If ``true``, allows using the top row :kbd:`0`-:kbd:`9` keys to function as their equivalent numpad keys for 3D editor navigation. This should be enabled on keyboards that have no numeric keypad available.
 
@@ -1339,7 +1341,7 @@ If ``true``, allows using the top row :kbd:`0`-:kbd:`9` keys to function as thei
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/3d/navigation/invert_x_axis**
+:ref:`bool<class_bool>` **editors/3d/navigation/invert_x_axis** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/invert_x_axis>`
 
 If ``true``, invert the horizontal mouse axis when panning or orbiting in the 3D editor. This setting does *not* apply to freelook mode.
 
@@ -1351,7 +1353,7 @@ If ``true``, invert the horizontal mouse axis when panning or orbiting in the 3D
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/3d/navigation/invert_y_axis**
+:ref:`bool<class_bool>` **editors/3d/navigation/invert_y_axis** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/invert_y_axis>`
 
 If ``true``, invert the vertical mouse axis when panning, orbiting, or using freelook mode in the 3D editor.
 
@@ -1363,7 +1365,7 @@ If ``true``, invert the vertical mouse axis when panning, orbiting, or using fre
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/navigation/navigation_scheme**
+:ref:`int<class_int>` **editors/3d/navigation/navigation_scheme** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/navigation_scheme>`
 
 The navigation scheme to use in the 3D editor. Changing this setting will affect the mouse buttons that must be held down to perform certain operations in the 3D editor viewport.
 
@@ -1385,7 +1387,7 @@ See also :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettin
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/navigation/orbit_modifier**
+:ref:`int<class_int>` **editors/3d/navigation/orbit_modifier** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/orbit_modifier>`
 
 The modifier key that must be held to orbit in the 3D editor.
 
@@ -1401,7 +1403,7 @@ The modifier key that must be held to orbit in the 3D editor.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/navigation/pan_modifier**
+:ref:`int<class_int>` **editors/3d/navigation/pan_modifier** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/pan_modifier>`
 
 The modifier key that must be held to pan in the 3D editor.
 
@@ -1415,7 +1417,7 @@ The modifier key that must be held to pan in the 3D editor.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/3d/navigation/warped_mouse_panning**
+:ref:`bool<class_bool>` **editors/3d/navigation/warped_mouse_panning** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/warped_mouse_panning>`
 
 If ``true``, warps the mouse around the 3D viewport while panning in the 3D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
 
@@ -1427,7 +1429,7 @@ If ``true``, warps the mouse around the 3D viewport while panning in the 3D edit
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/navigation/zoom_modifier**
+:ref:`int<class_int>` **editors/3d/navigation/zoom_modifier** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/zoom_modifier>`
 
 The modifier key that must be held to zoom in the 3D editor.
 
@@ -1441,7 +1443,7 @@ The modifier key that must be held to zoom in the 3D editor.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/navigation/zoom_style**
+:ref:`int<class_int>` **editors/3d/navigation/zoom_style** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/zoom_style>`
 
 The mouse cursor movement direction to use when zooming by moving the mouse. This does not affect zooming with the mouse wheel.
 
@@ -1453,7 +1455,7 @@ The mouse cursor movement direction to use when zooming by moving the mouse. Thi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/3d/navigation_feel/orbit_inertia**
+:ref:`float<class_float>` **editors/3d/navigation_feel/orbit_inertia** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation_feel/orbit_inertia>`
 
 The inertia to use when orbiting in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
 
@@ -1465,7 +1467,7 @@ The inertia to use when orbiting in the 3D editor. Higher values make the camera
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/3d/navigation_feel/orbit_sensitivity**
+:ref:`float<class_float>` **editors/3d/navigation_feel/orbit_sensitivity** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation_feel/orbit_sensitivity>`
 
 The mouse sensitivity to use when orbiting in the 3D editor. See also :ref:`editors/3d/freelook/freelook_sensitivity<class_EditorSettings_property_editors/3d/freelook/freelook_sensitivity>`.
 
@@ -1477,7 +1479,7 @@ The mouse sensitivity to use when orbiting in the 3D editor. See also :ref:`edit
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/3d/navigation_feel/translation_inertia**
+:ref:`float<class_float>` **editors/3d/navigation_feel/translation_inertia** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation_feel/translation_inertia>`
 
 The inertia to use when panning in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
 
@@ -1489,7 +1491,7 @@ The inertia to use when panning in the 3D editor. Higher values make the camera 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/3d/navigation_feel/zoom_inertia**
+:ref:`float<class_float>` **editors/3d/navigation_feel/zoom_inertia** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation_feel/zoom_inertia>`
 
 The inertia to use when zooming in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
 
@@ -1501,7 +1503,7 @@ The inertia to use when zooming in the 3D editor. Higher values make the camera 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/3d/primary_grid_color**
+:ref:`Color<class_Color>` **editors/3d/primary_grid_color** :ref:`🔗<class_EditorSettings_property_editors/3d/primary_grid_color>`
 
 The color to use for the primary 3D grid. The color's alpha channel affects the grid's opacity.
 
@@ -1513,7 +1515,7 @@ The color to use for the primary 3D grid. The color's alpha channel affects the 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/primary_grid_steps**
+:ref:`int<class_int>` **editors/3d/primary_grid_steps** :ref:`🔗<class_EditorSettings_property_editors/3d/primary_grid_steps>`
 
 If set above 0, where a primary grid line should be drawn. By default, primary lines are configured to be more visible than secondary lines. This helps with measurements in the 3D editor. See also :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>` and :ref:`editors/3d/secondary_grid_color<class_EditorSettings_property_editors/3d/secondary_grid_color>`.
 
@@ -1525,7 +1527,7 @@ If set above 0, where a primary grid line should be drawn. By default, primary l
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/3d/secondary_grid_color**
+:ref:`Color<class_Color>` **editors/3d/secondary_grid_color** :ref:`🔗<class_EditorSettings_property_editors/3d/secondary_grid_color>`
 
 The color to use for the secondary 3D grid. This is generally a less visible color than :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>`. The color's alpha channel affects the grid's opacity.
 
@@ -1537,7 +1539,7 @@ The color to use for the secondary 3D grid. This is generally a less visible col
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/3d/selection_box_color**
+:ref:`Color<class_Color>` **editors/3d/selection_box_color** :ref:`🔗<class_EditorSettings_property_editors/3d/selection_box_color>`
 
 The color to use for the selection box that surrounds selected nodes in the 3D editor viewport. The color's alpha channel influences the selection box's opacity.
 
@@ -1549,7 +1551,7 @@ The color to use for the selection box that surrounds selected nodes in the 3D e
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/aabb**
+:ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/aabb** :ref:`🔗<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/aabb>`
 
 The color to use for the AABB gizmo that displays the :ref:`GeometryInstance3D<class_GeometryInstance3D>`'s custom :ref:`AABB<class_AABB>`.
 
@@ -1561,7 +1563,7 @@ The color to use for the AABB gizmo that displays the :ref:`GeometryInstance3D<c
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/instantiated**
+:ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/instantiated** :ref:`🔗<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/instantiated>`
 
 The color override to use for 3D editor gizmos if the :ref:`Node3D<class_Node3D>` in question is part of an instantiated scene file (from the perspective of the current scene).
 
@@ -1573,7 +1575,7 @@ The color override to use for 3D editor gizmos if the :ref:`Node3D<class_Node3D>
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/joint**
+:ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/joint** :ref:`🔗<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/joint>`
 
 The 3D editor gizmo color for :ref:`Joint3D<class_Joint3D>`\ s and :ref:`PhysicalBone3D<class_PhysicalBone3D>`\ s.
 
@@ -1585,7 +1587,7 @@ The 3D editor gizmo color for :ref:`Joint3D<class_Joint3D>`\ s and :ref:`Physica
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/animation/autorename_animation_tracks**
+:ref:`bool<class_bool>` **editors/animation/autorename_animation_tracks** :ref:`🔗<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`
 
 If ``true``, automatically updates animation tracks' target paths when renaming or reparenting nodes in the Scene tree dock.
 
@@ -1597,7 +1599,7 @@ If ``true``, automatically updates animation tracks' target paths when renaming 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/animation/default_create_bezier_tracks**
+:ref:`bool<class_bool>` **editors/animation/default_create_bezier_tracks** :ref:`🔗<class_EditorSettings_property_editors/animation/default_create_bezier_tracks>`
 
 If ``true``, create a Bezier track instead of a standard track when pressing the "key" icon next to a property. Bezier tracks provide more control over animation curves, but are more difficult to adjust quickly.
 
@@ -1609,7 +1611,7 @@ If ``true``, create a Bezier track instead of a standard track when pressing the
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/animation/default_create_reset_tracks**
+:ref:`bool<class_bool>` **editors/animation/default_create_reset_tracks** :ref:`🔗<class_EditorSettings_property_editors/animation/default_create_reset_tracks>`
 
 If ``true``, create a ``RESET`` track when creating a new animation track. This track can be used to restore the animation to a "default" state.
 
@@ -1621,7 +1623,7 @@ If ``true``, create a ``RESET`` track when creating a new animation track. This 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/animation/onion_layers_future_color**
+:ref:`Color<class_Color>` **editors/animation/onion_layers_future_color** :ref:`🔗<class_EditorSettings_property_editors/animation/onion_layers_future_color>`
 
 The modulate color to use for "future" frames displayed in the animation editor's onion skinning feature.
 
@@ -1633,7 +1635,7 @@ The modulate color to use for "future" frames displayed in the animation editor'
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/animation/onion_layers_past_color**
+:ref:`Color<class_Color>` **editors/animation/onion_layers_past_color** :ref:`🔗<class_EditorSettings_property_editors/animation/onion_layers_past_color>`
 
 The modulate color to use for "past" frames displayed in the animation editor's onion skinning feature.
 
@@ -1645,7 +1647,7 @@ The modulate color to use for "past" frames displayed in the animation editor's 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/grid_map/pick_distance**
+:ref:`float<class_float>` **editors/grid_map/pick_distance** :ref:`🔗<class_EditorSettings_property_editors/grid_map/pick_distance>`
 
 The maximum distance at which tiles can be placed on a GridMap, relative to the camera position (in 3D units).
 
@@ -1657,7 +1659,7 @@ The maximum distance at which tiles can be placed on a GridMap, relative to the 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/panning/2d_editor_pan_speed**
+:ref:`int<class_int>` **editors/panning/2d_editor_pan_speed** :ref:`🔗<class_EditorSettings_property_editors/panning/2d_editor_pan_speed>`
 
 The panning speed when using the mouse wheel or touchscreen events in the 2D editor. This setting does not apply to panning by holding down the middle or right mouse buttons.
 
@@ -1669,7 +1671,7 @@ The panning speed when using the mouse wheel or touchscreen events in the 2D edi
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/panning/2d_editor_panning_scheme**
+:ref:`int<class_int>` **editors/panning/2d_editor_panning_scheme** :ref:`🔗<class_EditorSettings_property_editors/panning/2d_editor_panning_scheme>`
 
 Controls whether the mouse wheel scroll zooms or pans in the 2D editor. See also :ref:`editors/panning/sub_editors_panning_scheme<class_EditorSettings_property_editors/panning/sub_editors_panning_scheme>` and :ref:`editors/panning/animation_editors_panning_scheme<class_EditorSettings_property_editors/panning/animation_editors_panning_scheme>`.
 
@@ -1681,7 +1683,7 @@ Controls whether the mouse wheel scroll zooms or pans in the 2D editor. See also
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/panning/animation_editors_panning_scheme**
+:ref:`int<class_int>` **editors/panning/animation_editors_panning_scheme** :ref:`🔗<class_EditorSettings_property_editors/panning/animation_editors_panning_scheme>`
 
 Controls whether the mouse wheel scroll zooms or pans in the animation track and Bezier editors. See also :ref:`editors/panning/2d_editor_panning_scheme<class_EditorSettings_property_editors/panning/2d_editor_panning_scheme>` and :ref:`editors/panning/sub_editors_panning_scheme<class_EditorSettings_property_editors/panning/sub_editors_panning_scheme>` (which controls the animation blend tree editor's pan behavior).
 
@@ -1693,7 +1695,7 @@ Controls whether the mouse wheel scroll zooms or pans in the animation track and
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/panning/simple_panning**
+:ref:`bool<class_bool>` **editors/panning/simple_panning** :ref:`🔗<class_EditorSettings_property_editors/panning/simple_panning>`
 
 If ``true``, allows panning by holding down :kbd:`Space` in the 2D editor viewport (in addition to panning with the middle or right mouse buttons). If ``false``, the left mouse button must be held down while holding down :kbd:`Space` to pan in the 2D editor viewport.
 
@@ -1705,7 +1707,7 @@ If ``true``, allows panning by holding down :kbd:`Space` in the 2D editor viewpo
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/panning/sub_editors_panning_scheme**
+:ref:`int<class_int>` **editors/panning/sub_editors_panning_scheme** :ref:`🔗<class_EditorSettings_property_editors/panning/sub_editors_panning_scheme>`
 
 Controls whether the mouse wheel scroll zooms or pans in subeditors. The list of affected subeditors is: animation blend tree editor, :ref:`Polygon2D<class_Polygon2D>` editor, tileset editor, texture region editor and visual shader editor. See also :ref:`editors/panning/2d_editor_panning_scheme<class_EditorSettings_property_editors/panning/2d_editor_panning_scheme>` and :ref:`editors/panning/animation_editors_panning_scheme<class_EditorSettings_property_editors/panning/animation_editors_panning_scheme>`.
 
@@ -1717,7 +1719,7 @@ Controls whether the mouse wheel scroll zooms or pans in subeditors. The list of
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/panning/warped_mouse_panning**
+:ref:`bool<class_bool>` **editors/panning/warped_mouse_panning** :ref:`🔗<class_EditorSettings_property_editors/panning/warped_mouse_panning>`
 
 If ``true``, warps the mouse around the 2D viewport while panning in the 2D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
 
@@ -1729,7 +1731,7 @@ If ``true``, warps the mouse around the 2D viewport while panning in the 2D edit
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/polygon_editor/auto_bake_delay**
+:ref:`float<class_float>` **editors/polygon_editor/auto_bake_delay** :ref:`🔗<class_EditorSettings_property_editors/polygon_editor/auto_bake_delay>`
 
 The delay in seconds until more complex and performance costly polygon editors commit their outlines, e.g. the 2D navigation polygon editor rebakes the navigation mesh polygons. A negative value stops the auto bake.
 
@@ -1741,7 +1743,7 @@ The delay in seconds until more complex and performance costly polygon editors c
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/polygon_editor/point_grab_radius**
+:ref:`int<class_int>` **editors/polygon_editor/point_grab_radius** :ref:`🔗<class_EditorSettings_property_editors/polygon_editor/point_grab_radius>`
 
 The radius in which points can be selected in the :ref:`Polygon2D<class_Polygon2D>` and :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` editors (in pixels). Higher values make it easier to select points quickly, but can make it more difficult to select the expected point when several points are located close to each other.
 
@@ -1753,7 +1755,7 @@ The radius in which points can be selected in the :ref:`Polygon2D<class_Polygon2
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/polygon_editor/show_previous_outline**
+:ref:`bool<class_bool>` **editors/polygon_editor/show_previous_outline** :ref:`🔗<class_EditorSettings_property_editors/polygon_editor/show_previous_outline>`
 
 If ``true``, displays the polygon's previous shape in the 2D polygon editors with an opaque gray outline. This outline is displayed while dragging a point until the left mouse button is released.
 
@@ -1765,7 +1767,7 @@ If ``true``, displays the polygon's previous shape in the 2D polygon editors wit
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/shader_editor/behavior/files/restore_shaders_on_load**
+:ref:`bool<class_bool>` **editors/shader_editor/behavior/files/restore_shaders_on_load** :ref:`🔗<class_EditorSettings_property_editors/shader_editor/behavior/files/restore_shaders_on_load>`
 
 If ``true``, reopens shader files that were open in the shader editor when the project was last closed.
 
@@ -1777,7 +1779,7 @@ If ``true``, reopens shader files that were open in the shader editor when the p
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/tiles_editor/display_grid**
+:ref:`bool<class_bool>` **editors/tiles_editor/display_grid** :ref:`🔗<class_EditorSettings_property_editors/tiles_editor/display_grid>`
 
 If ``true``, displays a grid while the TileMap editor is active. See also :ref:`editors/tiles_editor/grid_color<class_EditorSettings_property_editors/tiles_editor/grid_color>`.
 
@@ -1789,7 +1791,7 @@ If ``true``, displays a grid while the TileMap editor is active. See also :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/tiles_editor/grid_color**
+:ref:`Color<class_Color>` **editors/tiles_editor/grid_color** :ref:`🔗<class_EditorSettings_property_editors/tiles_editor/grid_color>`
 
 The color to use for the TileMap editor's grid.
 
@@ -1803,7 +1805,7 @@ The color to use for the TileMap editor's grid.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editors/tiles_editor/highlight_selected_layer**
+:ref:`bool<class_bool>` **editors/tiles_editor/highlight_selected_layer** :ref:`🔗<class_EditorSettings_property_editors/tiles_editor/highlight_selected_layer>`
 
 Highlight the currently selected TileMapLayer by dimming the other ones in the scene.
 
@@ -1815,7 +1817,7 @@ Highlight the currently selected TileMapLayer by dimming the other ones in the s
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/category_colors/color_color**
+:ref:`Color<class_Color>` **editors/visual_editors/category_colors/color_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/category_colors/color_color>`
 
 The color of a graph node's header when it belongs to the "Color" category.
 
@@ -1827,7 +1829,7 @@ The color of a graph node's header when it belongs to the "Color" category.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/category_colors/conditional_color**
+:ref:`Color<class_Color>` **editors/visual_editors/category_colors/conditional_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/category_colors/conditional_color>`
 
 The color of a graph node's header when it belongs to the "Conditional" category.
 
@@ -1839,7 +1841,7 @@ The color of a graph node's header when it belongs to the "Conditional" category
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/category_colors/input_color**
+:ref:`Color<class_Color>` **editors/visual_editors/category_colors/input_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/category_colors/input_color>`
 
 The color of a graph node's header when it belongs to the "Input" category.
 
@@ -1851,7 +1853,7 @@ The color of a graph node's header when it belongs to the "Input" category.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/category_colors/output_color**
+:ref:`Color<class_Color>` **editors/visual_editors/category_colors/output_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/category_colors/output_color>`
 
 The color of a graph node's header when it belongs to the "Output" category.
 
@@ -1863,7 +1865,7 @@ The color of a graph node's header when it belongs to the "Output" category.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/category_colors/particle_color**
+:ref:`Color<class_Color>` **editors/visual_editors/category_colors/particle_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/category_colors/particle_color>`
 
 The color of a graph node's header when it belongs to the "Particle" category.
 
@@ -1875,7 +1877,7 @@ The color of a graph node's header when it belongs to the "Particle" category.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/category_colors/scalar_color**
+:ref:`Color<class_Color>` **editors/visual_editors/category_colors/scalar_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/category_colors/scalar_color>`
 
 The color of a graph node's header when it belongs to the "Scalar" category.
 
@@ -1887,7 +1889,7 @@ The color of a graph node's header when it belongs to the "Scalar" category.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/category_colors/special_color**
+:ref:`Color<class_Color>` **editors/visual_editors/category_colors/special_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/category_colors/special_color>`
 
 The color of a graph node's header when it belongs to the "Special" category.
 
@@ -1899,7 +1901,7 @@ The color of a graph node's header when it belongs to the "Special" category.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/category_colors/textures_color**
+:ref:`Color<class_Color>` **editors/visual_editors/category_colors/textures_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/category_colors/textures_color>`
 
 The color of a graph node's header when it belongs to the "Textures" category.
 
@@ -1911,7 +1913,7 @@ The color of a graph node's header when it belongs to the "Textures" category.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/category_colors/transform_color**
+:ref:`Color<class_Color>` **editors/visual_editors/category_colors/transform_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/category_colors/transform_color>`
 
 The color of a graph node's header when it belongs to the "Transform" category.
 
@@ -1923,7 +1925,7 @@ The color of a graph node's header when it belongs to the "Transform" category.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/category_colors/utility_color**
+:ref:`Color<class_Color>` **editors/visual_editors/category_colors/utility_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/category_colors/utility_color>`
 
 The color of a graph node's header when it belongs to the "Utility" category.
 
@@ -1935,7 +1937,7 @@ The color of a graph node's header when it belongs to the "Utility" category.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/category_colors/vector_color**
+:ref:`Color<class_Color>` **editors/visual_editors/category_colors/vector_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/category_colors/vector_color>`
 
 The color of a graph node's header when it belongs to the "Vector" category.
 
@@ -1947,7 +1949,7 @@ The color of a graph node's header when it belongs to the "Vector" category.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **editors/visual_editors/color_theme**
+:ref:`String<class_String>` **editors/visual_editors/color_theme** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/color_theme>`
 
 The color theme to use in the visual shader editor.
 
@@ -1959,7 +1961,7 @@ The color theme to use in the visual shader editor.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/boolean_color**
+:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/boolean_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/connection_colors/boolean_color>`
 
 The color of a port/connection of boolean type.
 
@@ -1971,7 +1973,7 @@ The color of a port/connection of boolean type.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/sampler_color**
+:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/sampler_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/connection_colors/sampler_color>`
 
 The color of a port/connection of sampler type.
 
@@ -1983,7 +1985,7 @@ The color of a port/connection of sampler type.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/scalar_color**
+:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/scalar_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/connection_colors/scalar_color>`
 
 The color of a port/connection of scalar type (float, int, unsigned int).
 
@@ -1995,7 +1997,7 @@ The color of a port/connection of scalar type (float, int, unsigned int).
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/transform_color**
+:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/transform_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/connection_colors/transform_color>`
 
 The color of a port/connection of transform type.
 
@@ -2007,7 +2009,7 @@ The color of a port/connection of transform type.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/vector2_color**
+:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/vector2_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/connection_colors/vector2_color>`
 
 The color of a port/connection of Vector2 type.
 
@@ -2019,7 +2021,7 @@ The color of a port/connection of Vector2 type.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/vector3_color**
+:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/vector3_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/connection_colors/vector3_color>`
 
 The color of a port/connection of Vector3 type.
 
@@ -2031,7 +2033,7 @@ The color of a port/connection of Vector3 type.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/vector4_color**
+:ref:`Color<class_Color>` **editors/visual_editors/connection_colors/vector4_color** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/connection_colors/vector4_color>`
 
 The color of a port/connection of Vector4 type.
 
@@ -2043,7 +2045,7 @@ The color of a port/connection of Vector4 type.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/visual_editors/grid_pattern**
+:ref:`int<class_int>` **editors/visual_editors/grid_pattern** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/grid_pattern>`
 
 The pattern used for the background grid.
 
@@ -2055,7 +2057,7 @@ The pattern used for the background grid.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/visual_editors/lines_curvature**
+:ref:`float<class_float>` **editors/visual_editors/lines_curvature** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/lines_curvature>`
 
 The curvature to use for connection lines in the visual shader editor. Higher values will make connection lines appear more curved, with values above ``0.5`` resulting in more "angular" turns in the middle of connection lines.
 
@@ -2067,7 +2069,7 @@ The curvature to use for connection lines in the visual shader editor. Higher va
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editors/visual_editors/minimap_opacity**
+:ref:`float<class_float>` **editors/visual_editors/minimap_opacity** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/minimap_opacity>`
 
 The opacity of the minimap displayed in the bottom-right corner of the visual shader editor.
 
@@ -2079,7 +2081,7 @@ The opacity of the minimap displayed in the bottom-right corner of the visual sh
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/visual_editors/visual_shader/port_preview_size**
+:ref:`int<class_int>` **editors/visual_editors/visual_shader/port_preview_size** :ref:`🔗<class_EditorSettings_property_editors/visual_editors/visual_shader/port_preview_size>`
 
 The size to use for port previews in the visual shader uniforms (toggled by clicking the "eye" icon next to an output). The value is defined in pixels at 100% zoom, and will scale with zoom automatically.
 
@@ -2091,7 +2093,7 @@ The size to use for port previews in the visual shader uniforms (toggled by clic
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **filesystem/directories/autoscan_project_path**
+:ref:`String<class_String>` **filesystem/directories/autoscan_project_path** :ref:`🔗<class_EditorSettings_property_filesystem/directories/autoscan_project_path>`
 
 The folder where projects should be scanned for (recursively), in a way similar to the project manager's **Scan** button. This can be set to the same value as :ref:`filesystem/directories/default_project_path<class_EditorSettings_property_filesystem/directories/default_project_path>` for convenience.
 
@@ -2105,7 +2107,7 @@ The folder where projects should be scanned for (recursively), in a way similar 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **filesystem/directories/default_project_path**
+:ref:`String<class_String>` **filesystem/directories/default_project_path** :ref:`🔗<class_EditorSettings_property_filesystem/directories/default_project_path>`
 
 The folder where new projects should be created by default when clicking the project manager's **New Project** button. This can be set to the same value as :ref:`filesystem/directories/autoscan_project_path<class_EditorSettings_property_filesystem/directories/autoscan_project_path>` for convenience.
 
@@ -2117,7 +2119,7 @@ The folder where new projects should be created by default when clicking the pro
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **filesystem/external_programs/3d_model_editor**
+:ref:`String<class_String>` **filesystem/external_programs/3d_model_editor** :ref:`🔗<class_EditorSettings_property_filesystem/external_programs/3d_model_editor>`
 
 The program that opens 3D model scene files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
 
@@ -2129,7 +2131,7 @@ The program that opens 3D model scene files when clicking "Open in External Prog
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **filesystem/external_programs/audio_editor**
+:ref:`String<class_String>` **filesystem/external_programs/audio_editor** :ref:`🔗<class_EditorSettings_property_filesystem/external_programs/audio_editor>`
 
 The program that opens audio files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
 
@@ -2141,7 +2143,7 @@ The program that opens audio files when clicking "Open in External Program" opti
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **filesystem/external_programs/raster_image_editor**
+:ref:`String<class_String>` **filesystem/external_programs/raster_image_editor** :ref:`🔗<class_EditorSettings_property_filesystem/external_programs/raster_image_editor>`
 
 The program that opens raster image files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
 
@@ -2153,7 +2155,7 @@ The program that opens raster image files when clicking "Open in External Progra
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **filesystem/external_programs/terminal_emulator**
+:ref:`String<class_String>` **filesystem/external_programs/terminal_emulator** :ref:`🔗<class_EditorSettings_property_filesystem/external_programs/terminal_emulator>`
 
 The terminal emulator program to use when using **Open in Terminal** context menu action in the FileSystem dock. You can enter an absolute path to a program binary, or a path to a program that is present in the ``PATH`` environment variable.
 
@@ -2179,7 +2181,7 @@ If specifying a custom terminal emulator, you may need to override :ref:`filesys
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **filesystem/external_programs/terminal_emulator_flags**
+:ref:`String<class_String>` **filesystem/external_programs/terminal_emulator_flags** :ref:`🔗<class_EditorSettings_property_filesystem/external_programs/terminal_emulator_flags>`
 
 The command-line arguments to pass to the terminal emulator that is run when using **Open in Terminal** context menu action in the FileSystem dock. See also :ref:`filesystem/external_programs/terminal_emulator<class_EditorSettings_property_filesystem/external_programs/terminal_emulator>`.
 
@@ -2195,7 +2197,7 @@ If left empty, the default flags are ``{directory}``, which is replaced by the a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **filesystem/external_programs/vector_image_editor**
+:ref:`String<class_String>` **filesystem/external_programs/vector_image_editor** :ref:`🔗<class_EditorSettings_property_filesystem/external_programs/vector_image_editor>`
 
 The program that opens vector image files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
 
@@ -2207,7 +2209,7 @@ The program that opens vector image files when clicking "Open in External Progra
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **filesystem/file_dialog/display_mode**
+:ref:`int<class_int>` **filesystem/file_dialog/display_mode** :ref:`🔗<class_EditorSettings_property_filesystem/file_dialog/display_mode>`
 
 The display mode to use in the editor's file dialogs.
 
@@ -2223,7 +2225,7 @@ The display mode to use in the editor's file dialogs.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filesystem/file_dialog/show_hidden_files**
+:ref:`bool<class_bool>` **filesystem/file_dialog/show_hidden_files** :ref:`🔗<class_EditorSettings_property_filesystem/file_dialog/show_hidden_files>`
 
 If ``true``, display hidden files in the editor's file dialogs. Files that have names starting with ``.`` are considered hidden (e.g. ``.hidden_file``).
 
@@ -2235,7 +2237,7 @@ If ``true``, display hidden files in the editor's file dialogs. Files that have 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **filesystem/file_dialog/thumbnail_size**
+:ref:`int<class_int>` **filesystem/file_dialog/thumbnail_size** :ref:`🔗<class_EditorSettings_property_filesystem/file_dialog/thumbnail_size>`
 
 The thumbnail size to use in the editor's file dialogs (in pixels). See also :ref:`docks/filesystem/thumbnail_size<class_EditorSettings_property_docks/filesystem/thumbnail_size>`.
 
@@ -2247,7 +2249,7 @@ The thumbnail size to use in the editor's file dialogs (in pixels). See also :re
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **filesystem/import/blender/blender_path**
+:ref:`String<class_String>` **filesystem/import/blender/blender_path** :ref:`🔗<class_EditorSettings_property_filesystem/import/blender/blender_path>`
 
 The path to the directory containing the Blender executable used for converting the Blender 3D scene files ``.blend`` to glTF 2.0 format during import. Blender 3.0 or later is required.
 
@@ -2261,7 +2263,7 @@ To enable this feature for your specific project, use :ref:`ProjectSettings.file
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **filesystem/import/blender/rpc_port**
+:ref:`int<class_int>` **filesystem/import/blender/rpc_port** :ref:`🔗<class_EditorSettings_property_filesystem/import/blender/rpc_port>`
 
 The port number used for Remote Procedure Call (RPC) communication with Godot's created process of the blender executable.
 
@@ -2275,7 +2277,7 @@ Setting this to 0 effectively disables communication with Godot and the blender 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **filesystem/import/blender/rpc_server_uptime**
+:ref:`float<class_float>` **filesystem/import/blender/rpc_server_uptime** :ref:`🔗<class_EditorSettings_property_filesystem/import/blender/rpc_server_uptime>`
 
 The maximum idle uptime (in seconds) of the Blender process.
 
@@ -2285,11 +2287,11 @@ This prevents Godot from having to create a new process for each import within t
 
 ----
 
-.. _class_EditorSettings_property_filesystem/import/fbx2gltf/fbx2gltf_path:
+.. _class_EditorSettings_property_filesystem/import/fbx/fbx2gltf_path:
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **filesystem/import/fbx2gltf/fbx2gltf_path**
+:ref:`String<class_String>` **filesystem/import/fbx/fbx2gltf_path** :ref:`🔗<class_EditorSettings_property_filesystem/import/fbx/fbx2gltf_path>`
 
 The path to the FBX2glTF executable used for converting Autodesk FBX 3D scene files ``.fbx`` to glTF 2.0 format during import.
 
@@ -2303,7 +2305,7 @@ To enable this feature for your specific project, use :ref:`ProjectSettings.file
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filesystem/on_save/compress_binary_resources**
+:ref:`bool<class_bool>` **filesystem/on_save/compress_binary_resources** :ref:`🔗<class_EditorSettings_property_filesystem/on_save/compress_binary_resources>`
 
 If ``true``, uses lossless compression for binary resources.
 
@@ -2315,7 +2317,7 @@ If ``true``, uses lossless compression for binary resources.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filesystem/on_save/safe_save_on_backup_then_rename**
+:ref:`bool<class_bool>` **filesystem/on_save/safe_save_on_backup_then_rename** :ref:`🔗<class_EditorSettings_property_filesystem/on_save/safe_save_on_backup_then_rename>`
 
 If ``true``, when saving a file, the editor will rename the old file to a different name, save a new file, then only remove the old file once the new file has been saved. This makes loss of data less likely to happen if the editor or operating system exits unexpectedly while saving (e.g. due to a crash or power outage).
 
@@ -2329,7 +2331,7 @@ If ``true``, when saving a file, the editor will rename the old file to a differ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **filesystem/tools/oidn/oidn_denoise_path**
+:ref:`String<class_String>` **filesystem/tools/oidn/oidn_denoise_path** :ref:`🔗<class_EditorSettings_property_filesystem/tools/oidn/oidn_denoise_path>`
 
 The path to the directory containing the Open Image Denoise (OIDN) executable, used optionally for denoising lightmaps. It can be downloaded from `openimagedenoise.org <https://www.openimagedenoise.org/downloads.html>`__.
 
@@ -2343,7 +2345,7 @@ To enable this feature for your specific project, use :ref:`ProjectSettings.rend
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/accept_dialog_cancel_ok_buttons**
+:ref:`int<class_int>` **interface/editor/accept_dialog_cancel_ok_buttons** :ref:`🔗<class_EditorSettings_property_interface/editor/accept_dialog_cancel_ok_buttons>`
 
 How to position the Cancel and OK buttons in the editor's :ref:`AcceptDialog<class_AcceptDialog>`\ s. Different platforms have different standard behaviors for this, which can be overridden using this setting. This is useful if you use Godot both on Windows and macOS/Linux and your Godot muscle memory is stronger than your OS specific one.
 
@@ -2361,7 +2363,7 @@ How to position the Cancel and OK buttons in the editor's :ref:`AcceptDialog<cla
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/automatically_open_screenshots**
+:ref:`bool<class_bool>` **interface/editor/automatically_open_screenshots** :ref:`🔗<class_EditorSettings_property_interface/editor/automatically_open_screenshots>`
 
 If ``true``, automatically opens screenshots with the default program associated to ``.png`` files after a screenshot is taken using the **Editor > Take Screenshot** action.
 
@@ -2373,7 +2375,7 @@ If ``true``, automatically opens screenshots with the default program associated
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **interface/editor/code_font**
+:ref:`String<class_String>` **interface/editor/code_font** :ref:`🔗<class_EditorSettings_property_interface/editor/code_font>`
 
 The font to use for the script editor. Must be a resource of a :ref:`Font<class_Font>` type such as a ``.ttf`` or ``.otf`` font file.
 
@@ -2385,7 +2387,7 @@ The font to use for the script editor. Must be a resource of a :ref:`Font<class_
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/code_font_contextual_ligatures**
+:ref:`int<class_int>` **interface/editor/code_font_contextual_ligatures** :ref:`🔗<class_EditorSettings_property_interface/editor/code_font_contextual_ligatures>`
 
 The font ligatures to enable for the currently configured code font. Not all fonts include support for ligatures.
 
@@ -2399,7 +2401,7 @@ The font ligatures to enable for the currently configured code font. Not all fon
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **interface/editor/code_font_custom_opentype_features**
+:ref:`String<class_String>` **interface/editor/code_font_custom_opentype_features** :ref:`🔗<class_EditorSettings_property_interface/editor/code_font_custom_opentype_features>`
 
 List of custom OpenType features to use, if supported by the currently configured code font. Not all fonts include support for custom OpenType features. The string should follow the OpenType specification.
 
@@ -2413,7 +2415,7 @@ List of custom OpenType features to use, if supported by the currently configure
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **interface/editor/code_font_custom_variations**
+:ref:`String<class_String>` **interface/editor/code_font_custom_variations** :ref:`🔗<class_EditorSettings_property_interface/editor/code_font_custom_variations>`
 
 List of alternative characters to use, if supported by the currently configured code font. Not all fonts include support for custom variations. The string should follow the OpenType specification.
 
@@ -2427,7 +2429,7 @@ List of alternative characters to use, if supported by the currently configured 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/code_font_size**
+:ref:`int<class_int>` **interface/editor/code_font_size** :ref:`🔗<class_EditorSettings_property_interface/editor/code_font_size>`
 
 The size of the font in the script editor. This setting does not impact the font size of the Output panel (see :ref:`run/output/font_size<class_EditorSettings_property_run/output/font_size>`).
 
@@ -2439,7 +2441,7 @@ The size of the font in the script editor. This setting does not impact the font
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **interface/editor/custom_display_scale**
+:ref:`float<class_float>` **interface/editor/custom_display_scale** :ref:`🔗<class_EditorSettings_property_interface/editor/custom_display_scale>`
 
 The custom editor scale factor to use. This can be used for displays with very high DPI where a scale factor of 200% is not sufficient.
 
@@ -2453,7 +2455,7 @@ The custom editor scale factor to use. This can be used for displays with very h
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/debug/enable_pseudolocalization**
+:ref:`bool<class_bool>` **interface/editor/debug/enable_pseudolocalization** :ref:`🔗<class_EditorSettings_property_interface/editor/debug/enable_pseudolocalization>`
 
 If ``true``, lengthens the editor's localizable strings and replaces their characters with accented variants. This allows spotting non-localizable strings easily, while also ensuring the UI layout doesn't break when strings are made longer (as many languages require strings to be longer).
 
@@ -2467,7 +2469,7 @@ This is a debugging feature and should only be enabled when working on the edito
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/display_scale**
+:ref:`int<class_int>` **interface/editor/display_scale** :ref:`🔗<class_EditorSettings_property_interface/editor/display_scale>`
 
 The display scale factor to use for the editor interface. Higher values are more suited to hiDPI/Retina displays.
 
@@ -2483,7 +2485,7 @@ If set to **Custom**, the scaling value in :ref:`interface/editor/custom_display
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/dock_tab_style**
+:ref:`int<class_int>` **interface/editor/dock_tab_style** :ref:`🔗<class_EditorSettings_property_interface/editor/dock_tab_style>`
 
 Tab style of editor docks.
 
@@ -2495,7 +2497,7 @@ Tab style of editor docks.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **interface/editor/editor_language**
+:ref:`String<class_String>` **interface/editor/editor_language** :ref:`🔗<class_EditorSettings_property_interface/editor/editor_language>`
 
 The language to use for the editor interface.
 
@@ -2509,7 +2511,7 @@ Translations are provided by the community. If you spot a mistake, :doc:`contrib
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/editor_screen**
+:ref:`int<class_int>` **interface/editor/editor_screen** :ref:`🔗<class_EditorSettings_property_interface/editor/editor_screen>`
 
 The preferred monitor to display the editor.
 
@@ -2521,7 +2523,7 @@ The preferred monitor to display the editor.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/expand_to_title**
+:ref:`bool<class_bool>` **interface/editor/expand_to_title** :ref:`🔗<class_EditorSettings_property_interface/editor/expand_to_title>`
 
 Expanding main editor window content to the title, if supported by :ref:`DisplayServer<class_DisplayServer>`. See :ref:`DisplayServer.WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>`.
 
@@ -2535,7 +2537,7 @@ Specific to the macOS platform.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/font_antialiasing**
+:ref:`int<class_int>` **interface/editor/font_antialiasing** :ref:`🔗<class_EditorSettings_property_interface/editor/font_antialiasing>`
 
 FreeType's font anti-aliasing mode used to render the editor fonts. Most fonts are not designed to look good with anti-aliasing disabled, so it's recommended to leave this enabled unless you're using a pixel art font.
 
@@ -2547,7 +2549,7 @@ FreeType's font anti-aliasing mode used to render the editor fonts. Most fonts a
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/font_disable_embedded_bitmaps**
+:ref:`bool<class_bool>` **interface/editor/font_disable_embedded_bitmaps** :ref:`🔗<class_EditorSettings_property_interface/editor/font_disable_embedded_bitmaps>`
 
 If set to ``true``, embedded font bitmap loading is disabled (bitmap-only and color fonts ignore this property).
 
@@ -2559,7 +2561,7 @@ If set to ``true``, embedded font bitmap loading is disabled (bitmap-only and co
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/font_hinting**
+:ref:`int<class_int>` **interface/editor/font_hinting** :ref:`🔗<class_EditorSettings_property_interface/editor/font_hinting>`
 
 The font hinting mode to use for the editor fonts. FreeType supports the following font hinting modes:
 
@@ -2579,7 +2581,7 @@ If set to **Auto**, the font hinting mode will be set to match the current opera
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/font_subpixel_positioning**
+:ref:`int<class_int>` **interface/editor/font_subpixel_positioning** :ref:`🔗<class_EditorSettings_property_interface/editor/font_subpixel_positioning>`
 
 The subpixel positioning mode to use when rendering editor font glyphs. This affects both the main and code fonts. **Disabled** is the fastest to render and uses the least memory. **Auto** only uses subpixel positioning for small font sizes (where the benefit is the most noticeable). **One Half of a Pixel** and **One Quarter of a Pixel** force the same subpixel positioning mode for all editor fonts, regardless of their size (with **One Quarter of a Pixel** being the highest-quality option).
 
@@ -2591,7 +2593,7 @@ The subpixel positioning mode to use when rendering editor font glyphs. This aff
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/import_resources_when_unfocused**
+:ref:`bool<class_bool>` **interface/editor/import_resources_when_unfocused** :ref:`🔗<class_EditorSettings_property_interface/editor/import_resources_when_unfocused>`
 
 If ``true``, (re)imports resources even if the editor window is unfocused or minimized. If ``false``, resources are only (re)imported when the editor window is focused. This can be set to ``true`` to speed up iteration by starting the import process earlier when saving files in the project folder. This also allows getting visual feedback on changes without having to click the editor window, which is useful with multi-monitor setups. The downside of setting this to ``true`` is that it increases idle CPU usage and may steal CPU time from other applications when importing resources.
 
@@ -2603,7 +2605,7 @@ If ``true``, (re)imports resources even if the editor window is unfocused or min
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/localize_settings**
+:ref:`bool<class_bool>` **interface/editor/localize_settings** :ref:`🔗<class_EditorSettings_property_interface/editor/localize_settings>`
 
 If ``true``, setting names in the editor are localized when possible.
 
@@ -2617,7 +2619,7 @@ If ``true``, setting names in the editor are localized when possible.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/low_processor_mode_sleep_usec**
+:ref:`int<class_int>` **interface/editor/low_processor_mode_sleep_usec** :ref:`🔗<class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec>`
 
 The amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops. However, higher values will result in a less responsive editor. The default value is set to allow for maximum smoothness on monitors up to 144 Hz. See also :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`.
 
@@ -2631,7 +2633,7 @@ The amount of sleeping between frames when the low-processor usage mode is enabl
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **interface/editor/main_font**
+:ref:`String<class_String>` **interface/editor/main_font** :ref:`🔗<class_EditorSettings_property_interface/editor/main_font>`
 
 The font to use for the editor interface. Must be a resource of a :ref:`Font<class_Font>` type such as a ``.ttf`` or ``.otf`` font file.
 
@@ -2643,7 +2645,7 @@ The font to use for the editor interface. Must be a resource of a :ref:`Font<cla
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **interface/editor/main_font_bold**
+:ref:`String<class_String>` **interface/editor/main_font_bold** :ref:`🔗<class_EditorSettings_property_interface/editor/main_font_bold>`
 
 The font to use for bold text in the editor interface. Must be a resource of a :ref:`Font<class_Font>` type such as a ``.ttf`` or ``.otf`` font file.
 
@@ -2655,7 +2657,7 @@ The font to use for bold text in the editor interface. Must be a resource of a :
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/main_font_size**
+:ref:`int<class_int>` **interface/editor/main_font_size** :ref:`🔗<class_EditorSettings_property_interface/editor/main_font_size>`
 
 The size of the font in the editor interface.
 
@@ -2667,7 +2669,7 @@ The size of the font in the editor interface.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/mouse_extra_buttons_navigate_history**
+:ref:`bool<class_bool>` **interface/editor/mouse_extra_buttons_navigate_history** :ref:`🔗<class_EditorSettings_property_interface/editor/mouse_extra_buttons_navigate_history>`
 
 If ``true``, the mouse's additional side buttons will be usable to navigate in the script editor's file history. Set this to ``false`` if you're using the side buttons for other purposes (such as a push-to-talk button in a VoIP program).
 
@@ -2679,7 +2681,7 @@ If ``true``, the mouse's additional side buttons will be usable to navigate in t
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/project_manager_screen**
+:ref:`int<class_int>` **interface/editor/project_manager_screen** :ref:`🔗<class_EditorSettings_property_interface/editor/project_manager_screen>`
 
 The preferred monitor to display the project manager.
 
@@ -2691,7 +2693,7 @@ The preferred monitor to display the project manager.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/save_each_scene_on_quit**
+:ref:`bool<class_bool>` **interface/editor/save_each_scene_on_quit** :ref:`🔗<class_EditorSettings_property_interface/editor/save_each_scene_on_quit>`
 
 If ``false``, the editor will save all scenes when confirming the **Save** action when quitting the editor or quitting to the project list. If ``true``, the editor will ask to save each scene individually.
 
@@ -2703,7 +2705,7 @@ If ``false``, the editor will save all scenes when confirming the **Save** actio
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/save_on_focus_loss**
+:ref:`bool<class_bool>` **interface/editor/save_on_focus_loss** :ref:`🔗<class_EditorSettings_property_interface/editor/save_on_focus_loss>`
 
 If ``true``, scenes and scripts are saved when the editor loses focus. Depending on the work flow, this behavior can be less intrusive than :ref:`text_editor/behavior/files/autosave_interval_secs<class_EditorSettings_property_text_editor/behavior/files/autosave_interval_secs>` or remembering to save manually.
 
@@ -2715,7 +2717,7 @@ If ``true``, scenes and scripts are saved when the editor loses focus. Depending
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/separate_distraction_mode**
+:ref:`bool<class_bool>` **interface/editor/separate_distraction_mode** :ref:`🔗<class_EditorSettings_property_interface/editor/separate_distraction_mode>`
 
 If ``true``, the editor's Script tab will have a separate distraction mode setting from the 2D/3D/AssetLib tabs. If ``false``, the distraction-free mode toggle is shared between all tabs.
 
@@ -2727,7 +2729,7 @@ If ``true``, the editor's Script tab will have a separate distraction mode setti
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/show_internal_errors_in_toast_notifications**
+:ref:`int<class_int>` **interface/editor/show_internal_errors_in_toast_notifications** :ref:`🔗<class_EditorSettings_property_interface/editor/show_internal_errors_in_toast_notifications>`
 
 If enabled, displays internal engine errors in toast notifications (toggleable by clicking the "bell" icon at the bottom of the editor). No matter the value of this setting, non-internal engine errors will always be visible in toast notifications.
 
@@ -2741,7 +2743,7 @@ The default **Auto** value will only enable this if the editor was compiled with
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/show_update_spinner**
+:ref:`int<class_int>` **interface/editor/show_update_spinner** :ref:`🔗<class_EditorSettings_property_interface/editor/show_update_spinner>`
 
 If enabled, displays an icon in the top-right corner of the editor that spins when the editor redraws a frame. This can be used to diagnose situations where the engine is constantly redrawing, which should be avoided as this increases CPU and GPU utilization for no good reason. To further troubleshoot these situations, start the editor with the ``--debug-canvas-item-redraw`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
@@ -2759,7 +2761,7 @@ The default **Auto** value will only enable this if the editor was compiled with
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/single_window_mode**
+:ref:`bool<class_bool>` **interface/editor/single_window_mode** :ref:`🔗<class_EditorSettings_property_interface/editor/single_window_mode>`
 
 If ``true``, embed modal windows such as docks inside the main editor window. When single-window mode is enabled, tooltips will also be embedded inside the main editor window, which means they can't be displayed outside of the editor window.
 
@@ -2773,7 +2775,7 @@ If ``true``, embed modal windows such as docks inside the main editor window. Wh
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/ui_layout_direction**
+:ref:`int<class_int>` **interface/editor/ui_layout_direction** :ref:`🔗<class_EditorSettings_property_interface/editor/ui_layout_direction>`
 
 Editor UI default layout direction.
 
@@ -2785,7 +2787,7 @@ Editor UI default layout direction.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/unfocused_low_processor_mode_sleep_usec**
+:ref:`int<class_int>` **interface/editor/unfocused_low_processor_mode_sleep_usec** :ref:`🔗<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`
 
 When the editor window is unfocused, the amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops (in addition to improving the running project's performance if the editor has to redraw continuously). However, higher values will result in a less responsive editor. The default value is set to limit the editor to 20 FPS when the editor window is unfocused. See also :ref:`interface/editor/low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec>`.
 
@@ -2799,7 +2801,7 @@ When the editor window is unfocused, the amount of sleeping between frames when 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/update_continuously**
+:ref:`bool<class_bool>` **interface/editor/update_continuously** :ref:`🔗<class_EditorSettings_property_interface/editor/update_continuously>`
 
 If ``true``, redraws the editor every frame even if nothing has changed on screen. When this setting is enabled, the update spinner displays in red (see :ref:`interface/editor/show_update_spinner<class_EditorSettings_property_interface/editor/show_update_spinner>`).
 
@@ -2813,7 +2815,7 @@ If ``true``, redraws the editor every frame even if nothing has changed on scree
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/use_embedded_menu**
+:ref:`bool<class_bool>` **interface/editor/use_embedded_menu** :ref:`🔗<class_EditorSettings_property_interface/editor/use_embedded_menu>`
 
 If ``true``, editor main menu is using embedded :ref:`MenuBar<class_MenuBar>` instead of system global menu.
 
@@ -2827,7 +2829,7 @@ Specific to the macOS platform.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/editor/use_native_file_dialogs**
+:ref:`bool<class_bool>` **interface/editor/use_native_file_dialogs** :ref:`🔗<class_EditorSettings_property_interface/editor/use_native_file_dialogs>`
 
 If ``true``, editor UI uses OS native file/directory selection dialogs.
 
@@ -2839,7 +2841,7 @@ If ``true``, editor UI uses OS native file/directory selection dialogs.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/editor/vsync_mode**
+:ref:`int<class_int>` **interface/editor/vsync_mode** :ref:`🔗<class_EditorSettings_property_interface/editor/vsync_mode>`
 
 Sets the V-Sync mode for the editor. Does not affect the project when run from the editor (this is controlled by :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>`).
 
@@ -2855,7 +2857,7 @@ Depending on the platform and used renderer, the engine will fall back to **Enab
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/inspector/auto_unfold_foreign_scenes**
+:ref:`bool<class_bool>` **interface/inspector/auto_unfold_foreign_scenes** :ref:`🔗<class_EditorSettings_property_interface/inspector/auto_unfold_foreign_scenes>`
 
 If ``true``, automatically expands property groups in the Inspector dock when opening a scene that hasn't been opened previously. If ``false``, all groups remain collapsed by default.
 
@@ -2867,7 +2869,7 @@ If ``true``, automatically expands property groups in the Inspector dock when op
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/inspector/default_color_picker_mode**
+:ref:`int<class_int>` **interface/inspector/default_color_picker_mode** :ref:`🔗<class_EditorSettings_property_interface/inspector/default_color_picker_mode>`
 
 The default color picker mode to use when opening :ref:`ColorPicker<class_ColorPicker>`\ s in the editor. This mode can be temporarily adjusted on the color picker itself.
 
@@ -2879,7 +2881,7 @@ The default color picker mode to use when opening :ref:`ColorPicker<class_ColorP
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/inspector/default_color_picker_shape**
+:ref:`int<class_int>` **interface/inspector/default_color_picker_shape** :ref:`🔗<class_EditorSettings_property_interface/inspector/default_color_picker_shape>`
 
 The default color picker shape to use when opening :ref:`ColorPicker<class_ColorPicker>`\ s in the editor. This shape can be temporarily adjusted on the color picker itself.
 
@@ -2891,7 +2893,7 @@ The default color picker shape to use when opening :ref:`ColorPicker<class_Color
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **interface/inspector/default_float_step**
+:ref:`float<class_float>` **interface/inspector/default_float_step** :ref:`🔗<class_EditorSettings_property_interface/inspector/default_float_step>`
 
 The floating-point precision to use for properties that don't define an explicit precision step. Lower values allow entering more precise values.
 
@@ -2903,7 +2905,7 @@ The floating-point precision to use for properties that don't define an explicit
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/inspector/default_property_name_style**
+:ref:`int<class_int>` **interface/inspector/default_property_name_style** :ref:`🔗<class_EditorSettings_property_interface/inspector/default_property_name_style>`
 
 The default property name style to display in the Inspector dock. This style can be temporarily adjusted in the Inspector dock's menu.
 
@@ -2923,7 +2925,7 @@ The default property name style to display in the Inspector dock. This style can
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/inspector/delimitate_all_container_and_resources**
+:ref:`bool<class_bool>` **interface/inspector/delimitate_all_container_and_resources** :ref:`🔗<class_EditorSettings_property_interface/inspector/delimitate_all_container_and_resources>`
 
 If ``true``, add a margin around Array, Dictionary, and Resource Editors that are not already colored.
 
@@ -2937,7 +2939,7 @@ If ``true``, add a margin around Array, Dictionary, and Resource Editors that ar
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/inspector/disable_folding**
+:ref:`bool<class_bool>` **interface/inspector/disable_folding** :ref:`🔗<class_EditorSettings_property_interface/inspector/disable_folding>`
 
 If ``true``, forces all property groups to be expanded in the Inspector dock and prevents collapsing them.
 
@@ -2949,7 +2951,7 @@ If ``true``, forces all property groups to be expanded in the Inspector dock and
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **interface/inspector/float_drag_speed**
+:ref:`float<class_float>` **interface/inspector/float_drag_speed** :ref:`🔗<class_EditorSettings_property_interface/inspector/float_drag_speed>`
 
 Base speed for increasing/decreasing float values by dragging them in the inspector.
 
@@ -2961,7 +2963,7 @@ Base speed for increasing/decreasing float values by dragging them in the inspec
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/inspector/horizontal_vector2_editing**
+:ref:`bool<class_bool>` **interface/inspector/horizontal_vector2_editing** :ref:`🔗<class_EditorSettings_property_interface/inspector/horizontal_vector2_editing>`
 
 If ``true``, :ref:`Vector2<class_Vector2>` and :ref:`Vector2i<class_Vector2i>` properties are shown on a single line in the inspector instead of two lines. This is overall more compact, but it can be harder to view and edit large values without expanding the inspector horizontally.
 
@@ -2973,7 +2975,7 @@ If ``true``, :ref:`Vector2<class_Vector2>` and :ref:`Vector2i<class_Vector2i>` p
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/inspector/horizontal_vector_types_editing**
+:ref:`bool<class_bool>` **interface/inspector/horizontal_vector_types_editing** :ref:`🔗<class_EditorSettings_property_interface/inspector/horizontal_vector_types_editing>`
 
 If ``true``, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`, :ref:`Rect2<class_Rect2>`, :ref:`Rect2i<class_Rect2i>`, :ref:`Plane<class_Plane>`, and :ref:`Quaternion<class_Quaternion>` properties are shown on a single line in the inspector instead of multiple lines. This is overall more compact, but it can be harder to view and edit large values without expanding the inspector horizontally.
 
@@ -2985,7 +2987,7 @@ If ``true``, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :re
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/inspector/max_array_dictionary_items_per_page**
+:ref:`int<class_int>` **interface/inspector/max_array_dictionary_items_per_page** :ref:`🔗<class_EditorSettings_property_interface/inspector/max_array_dictionary_items_per_page>`
 
 The number of :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>` items to display on each "page" in the inspector. Higher values allow viewing more values per page, but take more time to load. This increased load time is noticeable when selecting nodes that have array or dictionary properties in the editor.
 
@@ -2997,7 +2999,7 @@ The number of :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>` i
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/inspector/nested_color_mode**
+:ref:`int<class_int>` **interface/inspector/nested_color_mode** :ref:`🔗<class_EditorSettings_property_interface/inspector/nested_color_mode>`
 
 Control which property editors are colored when they are opened.
 
@@ -3015,7 +3017,7 @@ Control which property editors are colored when they are opened.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/inspector/open_resources_in_current_inspector**
+:ref:`bool<class_bool>` **interface/inspector/open_resources_in_current_inspector** :ref:`🔗<class_EditorSettings_property_interface/inspector/open_resources_in_current_inspector>`
 
 If ``true``, subresources can be edited in the current inspector view. If the resource type is defined in :ref:`interface/inspector/resources_to_open_in_new_inspector<class_EditorSettings_property_interface/inspector/resources_to_open_in_new_inspector>` or if this setting is ``false``, attempting to edit a subresource always opens a new inspector view.
 
@@ -3027,7 +3029,7 @@ If ``true``, subresources can be edited in the current inspector view. If the re
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **interface/inspector/resources_to_open_in_new_inspector**
+:ref:`PackedStringArray<class_PackedStringArray>` **interface/inspector/resources_to_open_in_new_inspector** :ref:`🔗<class_EditorSettings_property_interface/inspector/resources_to_open_in_new_inspector>`
 
 List of resources that should always be opened in a new inspector view, even if :ref:`interface/inspector/open_resources_in_current_inspector<class_EditorSettings_property_interface/inspector/open_resources_in_current_inspector>` is ``true``.
 
@@ -3041,7 +3043,7 @@ List of resources that should always be opened in a new inspector view, even if 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/inspector/show_low_level_opentype_features**
+:ref:`bool<class_bool>` **interface/inspector/show_low_level_opentype_features** :ref:`🔗<class_EditorSettings_property_interface/inspector/show_low_level_opentype_features>`
 
 If ``true``, display OpenType features marked as ``hidden`` by the font file in the :ref:`Font<class_Font>` editor.
 
@@ -3053,7 +3055,7 @@ If ``true``, display OpenType features marked as ``hidden`` by the font file in 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/multi_window/enable**
+:ref:`bool<class_bool>` **interface/multi_window/enable** :ref:`🔗<class_EditorSettings_property_interface/multi_window/enable>`
 
 If ``true``, multiple window support in editor is enabled. The following panels can become dedicated windows (i.e. made floating): Docks, Script editor, and Shader editor.
 
@@ -3069,7 +3071,7 @@ If ``true``, multiple window support in editor is enabled. The following panels 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/multi_window/maximize_window**
+:ref:`bool<class_bool>` **interface/multi_window/maximize_window** :ref:`🔗<class_EditorSettings_property_interface/multi_window/maximize_window>`
 
 If ``true``, when panels are made floating they will be maximized.
 
@@ -3083,7 +3085,7 @@ If ``false``, when panels are made floating their position and size will match t
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/multi_window/restore_windows_on_load**
+:ref:`bool<class_bool>` **interface/multi_window/restore_windows_on_load** :ref:`🔗<class_EditorSettings_property_interface/multi_window/restore_windows_on_load>`
 
 If ``true``, the floating panel position, size, and screen will be saved on editor exit. On next launch the panels that were floating will be made floating in the saved positions, sizes and screens, if possible.
 
@@ -3095,7 +3097,7 @@ If ``true``, the floating panel position, size, and screen will be saved on edit
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/scene_tabs/display_close_button**
+:ref:`int<class_int>` **interface/scene_tabs/display_close_button** :ref:`🔗<class_EditorSettings_property_interface/scene_tabs/display_close_button>`
 
 Controls when the Close (X) button is displayed on scene tabs at the top of the editor.
 
@@ -3107,7 +3109,7 @@ Controls when the Close (X) button is displayed on scene tabs at the top of the 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/scene_tabs/maximum_width**
+:ref:`int<class_int>` **interface/scene_tabs/maximum_width** :ref:`🔗<class_EditorSettings_property_interface/scene_tabs/maximum_width>`
 
 The maximum width of each scene tab at the top editor (in pixels).
 
@@ -3119,7 +3121,7 @@ The maximum width of each scene tab at the top editor (in pixels).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/scene_tabs/restore_scenes_on_load**
+:ref:`bool<class_bool>` **interface/scene_tabs/restore_scenes_on_load** :ref:`🔗<class_EditorSettings_property_interface/scene_tabs/restore_scenes_on_load>`
 
 If ``true``, when a project is loaded, restores scenes that were opened on the last editor session.
 
@@ -3133,7 +3135,7 @@ If ``true``, when a project is loaded, restores scenes that were opened on the l
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/scene_tabs/show_script_button**
+:ref:`bool<class_bool>` **interface/scene_tabs/show_script_button** :ref:`🔗<class_EditorSettings_property_interface/scene_tabs/show_script_button>`
 
 If ``true``, show a button next to each scene tab that opens the scene's "dominant" script when clicked. The "dominant" script is the one that is at the highest level in the scene's hierarchy.
 
@@ -3145,7 +3147,7 @@ If ``true``, show a button next to each scene tab that opens the scene's "domina
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/scene_tabs/show_thumbnail_on_hover**
+:ref:`bool<class_bool>` **interface/scene_tabs/show_thumbnail_on_hover** :ref:`🔗<class_EditorSettings_property_interface/scene_tabs/show_thumbnail_on_hover>`
 
 If ``true``, display an automatically-generated thumbnail when hovering scene tabs with the mouse. Scene thumbnails are generated when saving the scene.
 
@@ -3157,7 +3159,7 @@ If ``true``, display an automatically-generated thumbnail when hovering scene ta
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **interface/theme/accent_color**
+:ref:`Color<class_Color>` **interface/theme/accent_color** :ref:`🔗<class_EditorSettings_property_interface/theme/accent_color>`
 
 The color to use for "highlighted" user interface elements in the editor (pressed and hovered items).
 
@@ -3169,7 +3171,7 @@ The color to use for "highlighted" user interface elements in the editor (presse
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/theme/additional_spacing**
+:ref:`int<class_int>` **interface/theme/additional_spacing** :ref:`🔗<class_EditorSettings_property_interface/theme/additional_spacing>`
 
 The extra spacing to add to various GUI elements in the editor (in pixels). Increasing this value is useful to improve usability on touch screens, at the cost of reducing the amount of usable screen real estate.
 
@@ -3183,7 +3185,7 @@ See also :ref:`interface/theme/spacing_preset<class_EditorSettings_property_inte
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **interface/theme/base_color**
+:ref:`Color<class_Color>` **interface/theme/base_color** :ref:`🔗<class_EditorSettings_property_interface/theme/base_color>`
 
 The base color to use for user interface elements in the editor. Secondary colors (such as darker/lighter variants) are derived from this color.
 
@@ -3195,7 +3197,7 @@ The base color to use for user interface elements in the editor. Secondary color
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/theme/base_spacing**
+:ref:`int<class_int>` **interface/theme/base_spacing** :ref:`🔗<class_EditorSettings_property_interface/theme/base_spacing>`
 
 The base spacing used by various GUI elements in the editor (in pixels). See also :ref:`interface/theme/spacing_preset<class_EditorSettings_property_interface/theme/spacing_preset>`.
 
@@ -3207,7 +3209,7 @@ The base spacing used by various GUI elements in the editor (in pixels). See als
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/theme/border_size**
+:ref:`int<class_int>` **interface/theme/border_size** :ref:`🔗<class_EditorSettings_property_interface/theme/border_size>`
 
 The border size to use for interface elements (in pixels).
 
@@ -3219,7 +3221,7 @@ The border size to use for interface elements (in pixels).
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **interface/theme/contrast**
+:ref:`float<class_float>` **interface/theme/contrast** :ref:`🔗<class_EditorSettings_property_interface/theme/contrast>`
 
 The contrast factor to use when deriving the editor theme's base color (see :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`). When using a positive values, the derived colors will be *darker* than the base color. This contrast factor can be set to a negative value, which will make the derived colors *brighter* than the base color. Negative contrast rates often look better for light themes.
 
@@ -3231,7 +3233,7 @@ The contrast factor to use when deriving the editor theme's base color (see :ref
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/theme/corner_radius**
+:ref:`int<class_int>` **interface/theme/corner_radius** :ref:`🔗<class_EditorSettings_property_interface/theme/corner_radius>`
 
 The corner radius to use for interface elements (in pixels). ``0`` is square.
 
@@ -3243,7 +3245,7 @@ The corner radius to use for interface elements (in pixels). ``0`` is square.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **interface/theme/custom_theme**
+:ref:`String<class_String>` **interface/theme/custom_theme** :ref:`🔗<class_EditorSettings_property_interface/theme/custom_theme>`
 
 The custom theme resource to use for the editor. Must be a Godot theme resource in ``.tres`` or ``.res`` format.
 
@@ -3255,7 +3257,7 @@ The custom theme resource to use for the editor. Must be a Godot theme resource 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/theme/draw_extra_borders**
+:ref:`bool<class_bool>` **interface/theme/draw_extra_borders** :ref:`🔗<class_EditorSettings_property_interface/theme/draw_extra_borders>`
 
 If ``true``, draws additional borders around interactive UI elements in the editor. This is automatically enabled when using the **Black (OLED)** theme preset, as this theme preset uses a fully black background.
 
@@ -3267,7 +3269,7 @@ If ``true``, draws additional borders around interactive UI elements in the edit
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/theme/follow_system_theme**
+:ref:`bool<class_bool>` **interface/theme/follow_system_theme** :ref:`🔗<class_EditorSettings_property_interface/theme/follow_system_theme>`
 
 If ``true``, the editor theme preset will attempt to automatically match the system theme.
 
@@ -3279,7 +3281,7 @@ If ``true``, the editor theme preset will attempt to automatically match the sys
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **interface/theme/icon_and_font_color**
+:ref:`int<class_int>` **interface/theme/icon_and_font_color** :ref:`🔗<class_EditorSettings_property_interface/theme/icon_and_font_color>`
 
 The icon and font color scheme to use in the editor.
 
@@ -3297,7 +3299,7 @@ The icon and font color scheme to use in the editor.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **interface/theme/icon_saturation**
+:ref:`float<class_float>` **interface/theme/icon_saturation** :ref:`🔗<class_EditorSettings_property_interface/theme/icon_saturation>`
 
 The saturation to use for editor icons. Higher values result in more vibrant colors.
 
@@ -3311,7 +3313,7 @@ The saturation to use for editor icons. Higher values result in more vibrant col
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **interface/theme/preset**
+:ref:`String<class_String>` **interface/theme/preset** :ref:`🔗<class_EditorSettings_property_interface/theme/preset>`
 
 The editor theme preset to use.
 
@@ -3323,7 +3325,7 @@ The editor theme preset to use.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **interface/theme/relationship_line_opacity**
+:ref:`float<class_float>` **interface/theme/relationship_line_opacity** :ref:`🔗<class_EditorSettings_property_interface/theme/relationship_line_opacity>`
 
 The opacity to use when drawing relationship lines in the editor's :ref:`Tree<class_Tree>`-based GUIs (such as the Scene tree dock).
 
@@ -3335,7 +3337,7 @@ The opacity to use when drawing relationship lines in the editor's :ref:`Tree<cl
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **interface/theme/spacing_preset**
+:ref:`String<class_String>` **interface/theme/spacing_preset** :ref:`🔗<class_EditorSettings_property_interface/theme/spacing_preset>`
 
 The editor theme spacing preset to use. See also :ref:`interface/theme/base_spacing<class_EditorSettings_property_interface/theme/base_spacing>` and :ref:`interface/theme/additional_spacing<class_EditorSettings_property_interface/theme/additional_spacing>`.
 
@@ -3347,7 +3349,7 @@ The editor theme spacing preset to use. See also :ref:`interface/theme/base_spac
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/theme/use_system_accent_color**
+:ref:`bool<class_bool>` **interface/theme/use_system_accent_color** :ref:`🔗<class_EditorSettings_property_interface/theme/use_system_accent_color>`
 
 If ``true``, set accent color based on system settings.
 
@@ -3361,7 +3363,7 @@ If ``true``, set accent color based on system settings.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/touchscreen/enable_long_press_as_right_click**
+:ref:`bool<class_bool>` **interface/touchscreen/enable_long_press_as_right_click** :ref:`🔗<class_EditorSettings_property_interface/touchscreen/enable_long_press_as_right_click>`
 
 If ``true``, long press on touchscreen is treated as right click.
 
@@ -3375,7 +3377,7 @@ If ``true``, long press on touchscreen is treated as right click.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/touchscreen/enable_pan_and_scale_gestures**
+:ref:`bool<class_bool>` **interface/touchscreen/enable_pan_and_scale_gestures** :ref:`🔗<class_EditorSettings_property_interface/touchscreen/enable_pan_and_scale_gestures>`
 
 If ``true``, enable two finger pan and scale gestures on touchscreen devices.
 
@@ -3389,7 +3391,7 @@ If ``true``, enable two finger pan and scale gestures on touchscreen devices.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interface/touchscreen/increase_scrollbar_touch_area**
+:ref:`bool<class_bool>` **interface/touchscreen/increase_scrollbar_touch_area** :ref:`🔗<class_EditorSettings_property_interface/touchscreen/increase_scrollbar_touch_area>`
 
 If ``true``, increases the scrollbar touch area to improve usability on touchscreen devices.
 
@@ -3403,7 +3405,7 @@ If ``true``, increases the scrollbar touch area to improve usability on touchscr
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **interface/touchscreen/scale_gizmo_handles**
+:ref:`float<class_float>` **interface/touchscreen/scale_gizmo_handles** :ref:`🔗<class_EditorSettings_property_interface/touchscreen/scale_gizmo_handles>`
 
 Specify the multiplier to apply to the scale for the editor gizmo handles to improve usability on touchscreen devices.
 
@@ -3417,7 +3419,7 @@ Specify the multiplier to apply to the scale for the editor gizmo handles to imp
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/connection/engine_version_update_mode**
+:ref:`int<class_int>` **network/connection/engine_version_update_mode** :ref:`🔗<class_EditorSettings_property_network/connection/engine_version_update_mode>`
 
 Specifies how the engine should check for updates.
 
@@ -3439,7 +3441,7 @@ All update modes will ignore builds with different major versions (e.g. Godot 4 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/connection/network_mode**
+:ref:`int<class_int>` **network/connection/network_mode** :ref:`🔗<class_EditorSettings_property_network/connection/network_mode>`
 
 Determines whether online features are enabled in the editor, such as the Asset Library or update checks. Disabling these online features helps alleviate privacy concerns by preventing the editor from making HTTP requests to the Godot website or third-party platforms hosting assets from the Asset Library.
 
@@ -3451,7 +3453,7 @@ Determines whether online features are enabled in the editor, such as the Asset 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **network/debug/remote_host**
+:ref:`String<class_String>` **network/debug/remote_host** :ref:`🔗<class_EditorSettings_property_network/debug/remote_host>`
 
 The address to listen to when starting the remote debugger. This can be set to ``0.0.0.0`` to allow external clients to connect to the remote debugger (instead of restricting the remote debugger to connections from ``localhost``).
 
@@ -3463,7 +3465,7 @@ The address to listen to when starting the remote debugger. This can be set to `
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/debug/remote_port**
+:ref:`int<class_int>` **network/debug/remote_port** :ref:`🔗<class_EditorSettings_property_network/debug/remote_port>`
 
 The port to listen to when starting the remote debugger. Godot will try to use port numbers above the configured number if the configured number is already taken by another application.
 
@@ -3475,7 +3477,7 @@ The port to listen to when starting the remote debugger. Godot will try to use p
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **network/http_proxy/host**
+:ref:`String<class_String>` **network/http_proxy/host** :ref:`🔗<class_EditorSettings_property_network/http_proxy/host>`
 
 The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`.
 
@@ -3489,7 +3491,7 @@ The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/http_proxy/port**
+:ref:`int<class_int>` **network/http_proxy/port** :ref:`🔗<class_EditorSettings_property_network/http_proxy/port>`
 
 The port number to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also :ref:`network/http_proxy/host<class_EditorSettings_property_network/http_proxy/host>`.
 
@@ -3503,7 +3505,7 @@ The port number to use to contact the HTTP and HTTPS proxy in the editor (for th
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **network/tls/editor_tls_certificates**
+:ref:`String<class_String>` **network/tls/editor_tls_certificates** :ref:`🔗<class_EditorSettings_property_network/tls/editor_tls_certificates>`
 
 The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__ will be used.
 
@@ -3515,7 +3517,7 @@ The TLS certificate bundle to use for HTTP requests made within the editor (e.g.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **project_manager/default_renderer**
+:ref:`String<class_String>` **project_manager/default_renderer** :ref:`🔗<class_EditorSettings_property_project_manager/default_renderer>`
 
 The renderer type that will be checked off by default when creating a new project. Accepted strings are "forward_plus", "mobile" or "gl_compatibility".
 
@@ -3527,7 +3529,7 @@ The renderer type that will be checked off by default when creating a new projec
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **project_manager/directory_naming_convention**
+:ref:`int<class_int>` **project_manager/directory_naming_convention** :ref:`🔗<class_EditorSettings_property_project_manager/directory_naming_convention>`
 
 Directory naming convention for the project manager. Options are "No convention" (project name is directory name), "kebab-case" (default), "snake_case", "camelCase", "PascalCase", or "Title Case".
 
@@ -3539,7 +3541,7 @@ Directory naming convention for the project manager. Options are "No convention"
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **project_manager/sorting_order**
+:ref:`int<class_int>` **project_manager/sorting_order** :ref:`🔗<class_EditorSettings_property_project_manager/sorting_order>`
 
 The sorting order to use in the project manager. When changing the sorting order in the project manager, this setting is set permanently in the editor settings.
 
@@ -3551,9 +3553,33 @@ The sorting order to use in the project manager. When changing the sorting order
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **run/auto_save/save_before_running**
+:ref:`bool<class_bool>` **run/auto_save/save_before_running** :ref:`🔗<class_EditorSettings_property_run/auto_save/save_before_running>`
 
 If ``true``, saves all scenes and scripts automatically before running the project. Setting this to ``false`` prevents the editor from saving if there are no changes which can speed up the project startup slightly, but it makes it possible to run a project that has unsaved changes. (Unsaved changes will not be visible in the running project.)
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_run/bottom_panel/action_on_play:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **run/bottom_panel/action_on_play** :ref:`🔗<class_EditorSettings_property_run/bottom_panel/action_on_play>`
+
+The action to execute on the bottom panel when running the project.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_run/bottom_panel/action_on_stop:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **run/bottom_panel/action_on_stop** :ref:`🔗<class_EditorSettings_property_run/bottom_panel/action_on_stop>`
+
+The action to execute on the bottom panel when stopping the project.
 
 .. rst-class:: classref-item-separator
 
@@ -3563,33 +3589,9 @@ If ``true``, saves all scenes and scripts automatically before running the proje
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **run/output/always_clear_output_on_play**
+:ref:`bool<class_bool>` **run/output/always_clear_output_on_play** :ref:`🔗<class_EditorSettings_property_run/output/always_clear_output_on_play>`
 
 If ``true``, the editor will clear the Output panel when running the project.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorSettings_property_run/output/always_close_output_on_stop:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **run/output/always_close_output_on_stop**
-
-If ``true``, the editor will collapse the Output panel when stopping the project.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorSettings_property_run/output/always_open_output_on_play:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **run/output/always_open_output_on_play**
-
-If ``true``, the editor will expand the Output panel when running the project.
 
 .. rst-class:: classref-item-separator
 
@@ -3599,7 +3601,7 @@ If ``true``, the editor will expand the Output panel when running the project.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **run/output/font_size**
+:ref:`int<class_int>` **run/output/font_size** :ref:`🔗<class_EditorSettings_property_run/output/font_size>`
 
 The size of the font in the **Output** panel at the bottom of the editor. This setting does not impact the font size of the script editor (see :ref:`interface/editor/code_font_size<class_EditorSettings_property_interface/editor/code_font_size>`).
 
@@ -3611,7 +3613,7 @@ The size of the font in the **Output** panel at the bottom of the editor. This s
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **run/output/max_lines**
+:ref:`int<class_int>` **run/output/max_lines** :ref:`🔗<class_EditorSettings_property_run/output/max_lines>`
 
 Maximum number of lines to show at any one time in the Output panel.
 
@@ -3623,7 +3625,7 @@ Maximum number of lines to show at any one time in the Output panel.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **run/platforms/linuxbsd/prefer_wayland**
+:ref:`bool<class_bool>` **run/platforms/linuxbsd/prefer_wayland** :ref:`🔗<class_EditorSettings_property_run/platforms/linuxbsd/prefer_wayland>`
 
 If ``true``, on Linux/BSD, the editor will check for Wayland first instead of X11 (if available).
 
@@ -3635,7 +3637,7 @@ If ``true``, on Linux/BSD, the editor will check for Wayland first instead of X1
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **run/window_placement/android_window**
+:ref:`int<class_int>` **run/window_placement/android_window** :ref:`🔗<class_EditorSettings_property_run/window_placement/android_window>`
 
 The Android window to display the project on when starting the project from the editor.
 
@@ -3649,7 +3651,7 @@ The Android window to display the project on when starting the project from the 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **run/window_placement/rect**
+:ref:`int<class_int>` **run/window_placement/rect** :ref:`🔗<class_EditorSettings_property_run/window_placement/rect>`
 
 The window mode to use to display the project when starting the project from the editor.
 
@@ -3661,7 +3663,7 @@ The window mode to use to display the project when starting the project from the
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **run/window_placement/rect_custom_position**
+:ref:`Vector2<class_Vector2>` **run/window_placement/rect_custom_position** :ref:`🔗<class_EditorSettings_property_run/window_placement/rect_custom_position>`
 
 The custom position to use when starting the project from the editor (in pixels from the top-left corner). Only effective if :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>` is set to **Custom Position**.
 
@@ -3673,7 +3675,7 @@ The custom position to use when starting the project from the editor (in pixels 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **run/window_placement/screen**
+:ref:`int<class_int>` **run/window_placement/screen** :ref:`🔗<class_EditorSettings_property_run/window_placement/screen>`
 
 The monitor to display the project on when starting the project from the editor.
 
@@ -3685,7 +3687,7 @@ The monitor to display the project on when starting the project from the editor.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/caret/caret_blink**
+:ref:`bool<class_bool>` **text_editor/appearance/caret/caret_blink** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/caret/caret_blink>`
 
 If ``true``, makes the caret blink according to :ref:`text_editor/appearance/caret/caret_blink_interval<class_EditorSettings_property_text_editor/appearance/caret/caret_blink_interval>`. Disabling this setting can improve battery life on laptops if you spend long amounts of time in the script editor, since it will reduce the frequency at which the editor needs to be redrawn.
 
@@ -3697,7 +3699,7 @@ If ``true``, makes the caret blink according to :ref:`text_editor/appearance/car
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **text_editor/appearance/caret/caret_blink_interval**
+:ref:`float<class_float>` **text_editor/appearance/caret/caret_blink_interval** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/caret/caret_blink_interval>`
 
 The interval at which the caret will blink (in seconds). See also :ref:`text_editor/appearance/caret/caret_blink<class_EditorSettings_property_text_editor/appearance/caret/caret_blink>`.
 
@@ -3709,7 +3711,7 @@ The interval at which the caret will blink (in seconds). See also :ref:`text_edi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/caret/highlight_all_occurrences**
+:ref:`bool<class_bool>` **text_editor/appearance/caret/highlight_all_occurrences** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/caret/highlight_all_occurrences>`
 
 If ``true``, highlights all occurrences of the currently selected text in the script editor. See also :ref:`text_editor/theme/highlighting/word_highlighted_color<class_EditorSettings_property_text_editor/theme/highlighting/word_highlighted_color>`.
 
@@ -3721,7 +3723,7 @@ If ``true``, highlights all occurrences of the currently selected text in the sc
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/caret/highlight_current_line**
+:ref:`bool<class_bool>` **text_editor/appearance/caret/highlight_current_line** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/caret/highlight_current_line>`
 
 If ``true``, colors the background of the line the caret is currently on with :ref:`text_editor/theme/highlighting/current_line_color<class_EditorSettings_property_text_editor/theme/highlighting/current_line_color>`.
 
@@ -3733,7 +3735,7 @@ If ``true``, colors the background of the line the caret is currently on with :r
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/appearance/caret/type**
+:ref:`int<class_int>` **text_editor/appearance/caret/type** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/caret/type>`
 
 The shape of the caret to use in the script editor. **Line** displays a vertical line to the left of the current character, whereas **Block** displays an outline over the current character.
 
@@ -3745,7 +3747,7 @@ The shape of the caret to use in the script editor. **Line** displays a vertical
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/appearance/guidelines/line_length_guideline_hard_column**
+:ref:`int<class_int>` **text_editor/appearance/guidelines/line_length_guideline_hard_column** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_hard_column>`
 
 The column at which to display a subtle line as a line length guideline for scripts. This should generally be greater than :ref:`text_editor/appearance/guidelines/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_soft_column>`.
 
@@ -3757,7 +3759,7 @@ The column at which to display a subtle line as a line length guideline for scri
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/appearance/guidelines/line_length_guideline_soft_column**
+:ref:`int<class_int>` **text_editor/appearance/guidelines/line_length_guideline_soft_column** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_soft_column>`
 
 The column at which to display a *very* subtle line as a line length guideline for scripts. This should generally be lower than :ref:`text_editor/appearance/guidelines/line_length_guideline_hard_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_hard_column>`.
 
@@ -3769,7 +3771,7 @@ The column at which to display a *very* subtle line as a line length guideline f
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/guidelines/show_line_length_guidelines**
+:ref:`bool<class_bool>` **text_editor/appearance/guidelines/show_line_length_guidelines** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/guidelines/show_line_length_guidelines>`
 
 If ``true``, displays line length guidelines to help you keep line lengths in check. See also :ref:`text_editor/appearance/guidelines/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_soft_column>` and :ref:`text_editor/appearance/guidelines/line_length_guideline_hard_column<class_EditorSettings_property_text_editor/appearance/guidelines/line_length_guideline_hard_column>`.
 
@@ -3781,7 +3783,7 @@ If ``true``, displays line length guidelines to help you keep line lengths in ch
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/gutters/highlight_type_safe_lines**
+:ref:`bool<class_bool>` **text_editor/appearance/gutters/highlight_type_safe_lines** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/gutters/highlight_type_safe_lines>`
 
 If ``true``, highlights type-safe lines by displaying their line number color with :ref:`text_editor/theme/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/safe_line_number_color>` instead of :ref:`text_editor/theme/highlighting/line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/line_number_color>`. Type-safe lines are lines of code where the type of all variables is known at compile-time. These type-safe lines may run faster thanks to typed instructions.
 
@@ -3793,7 +3795,7 @@ If ``true``, highlights type-safe lines by displaying their line number color wi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/gutters/line_numbers_zero_padded**
+:ref:`bool<class_bool>` **text_editor/appearance/gutters/line_numbers_zero_padded** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/gutters/line_numbers_zero_padded>`
 
 If ``true``, displays line numbers with zero padding (e.g. ``007`` instead of ``7``).
 
@@ -3805,7 +3807,7 @@ If ``true``, displays line numbers with zero padding (e.g. ``007`` instead of ``
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/gutters/show_info_gutter**
+:ref:`bool<class_bool>` **text_editor/appearance/gutters/show_info_gutter** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/gutters/show_info_gutter>`
 
 If ``true``, displays a gutter at the left containing icons for methods with signal connections and for overridden methods.
 
@@ -3817,7 +3819,7 @@ If ``true``, displays a gutter at the left containing icons for methods with sig
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/gutters/show_line_numbers**
+:ref:`bool<class_bool>` **text_editor/appearance/gutters/show_line_numbers** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/gutters/show_line_numbers>`
 
 If ``true``, displays line numbers in a gutter at the left.
 
@@ -3829,7 +3831,7 @@ If ``true``, displays line numbers in a gutter at the left.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/appearance/lines/autowrap_mode**
+:ref:`int<class_int>` **text_editor/appearance/lines/autowrap_mode** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/lines/autowrap_mode>`
 
 If :ref:`text_editor/appearance/lines/word_wrap<class_EditorSettings_property_text_editor/appearance/lines/word_wrap>` is set to ``1``, sets text wrapping mode. To see how each mode behaves, see :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`.
 
@@ -3841,7 +3843,7 @@ If :ref:`text_editor/appearance/lines/word_wrap<class_EditorSettings_property_te
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/lines/code_folding**
+:ref:`bool<class_bool>` **text_editor/appearance/lines/code_folding** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/lines/code_folding>`
 
 If ``true``, displays the folding arrows next to indented code sections and allows code folding. If ``false``, hides the folding arrows next to indented code sections and disallows code folding.
 
@@ -3853,7 +3855,7 @@ If ``true``, displays the folding arrows next to indented code sections and allo
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/appearance/lines/word_wrap**
+:ref:`int<class_int>` **text_editor/appearance/lines/word_wrap** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/lines/word_wrap>`
 
 If ``true``, wraps long lines over multiple lines to avoid horizontal scrolling. This is a display-only feature; it does not actually insert line breaks in your scripts.
 
@@ -3865,7 +3867,7 @@ If ``true``, wraps long lines over multiple lines to avoid horizontal scrolling.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/appearance/minimap/minimap_width**
+:ref:`int<class_int>` **text_editor/appearance/minimap/minimap_width** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/minimap/minimap_width>`
 
 The width of the minimap in the script editor (in pixels).
 
@@ -3877,7 +3879,7 @@ The width of the minimap in the script editor (in pixels).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/minimap/show_minimap**
+:ref:`bool<class_bool>` **text_editor/appearance/minimap/show_minimap** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/minimap/show_minimap>`
 
 If ``true``, draws an overview of the script near the scroll bar. The minimap can be left-clicked to scroll directly to a location in an "absolute" manner.
 
@@ -3889,7 +3891,7 @@ If ``true``, draws an overview of the script near the scroll bar. The minimap ca
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/whitespace/draw_spaces**
+:ref:`bool<class_bool>` **text_editor/appearance/whitespace/draw_spaces** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/whitespace/draw_spaces>`
 
 If ``true``, draws space characters as centered points.
 
@@ -3901,7 +3903,7 @@ If ``true``, draws space characters as centered points.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/appearance/whitespace/draw_tabs**
+:ref:`bool<class_bool>` **text_editor/appearance/whitespace/draw_tabs** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/whitespace/draw_tabs>`
 
 If ``true``, draws tab characters as chevrons.
 
@@ -3913,7 +3915,7 @@ If ``true``, draws tab characters as chevrons.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/appearance/whitespace/line_spacing**
+:ref:`int<class_int>` **text_editor/appearance/whitespace/line_spacing** :ref:`🔗<class_EditorSettings_property_text_editor/appearance/whitespace/line_spacing>`
 
 The space to add between lines (in pixels). Greater line spacing can help improve readability at the cost of displaying fewer lines on screen.
 
@@ -3925,7 +3927,7 @@ The space to add between lines (in pixels). Greater line spacing can help improv
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/files/auto_reload_scripts_on_external_change**
+:ref:`bool<class_bool>` **text_editor/behavior/files/auto_reload_scripts_on_external_change** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/files/auto_reload_scripts_on_external_change>`
 
 If ``true``, automatically reloads scripts in the editor when they have been modified and saved by external editors.
 
@@ -3937,7 +3939,7 @@ If ``true``, automatically reloads scripts in the editor when they have been mod
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/behavior/files/autosave_interval_secs**
+:ref:`int<class_int>` **text_editor/behavior/files/autosave_interval_secs** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/files/autosave_interval_secs>`
 
 If set to a value greater than ``0``, automatically saves the current script following the specified interval (in seconds). This can be used to prevent data loss if the editor crashes.
 
@@ -3949,7 +3951,7 @@ If set to a value greater than ``0``, automatically saves the current script fol
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/files/convert_indent_on_save**
+:ref:`bool<class_bool>` **text_editor/behavior/files/convert_indent_on_save** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/files/convert_indent_on_save>`
 
 If ``true``, converts indentation to match the script editor's indentation settings when saving a script. See also :ref:`text_editor/behavior/indent/type<class_EditorSettings_property_text_editor/behavior/indent/type>`.
 
@@ -3961,9 +3963,21 @@ If ``true``, converts indentation to match the script editor's indentation setti
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/files/restore_scripts_on_load**
+:ref:`bool<class_bool>` **text_editor/behavior/files/restore_scripts_on_load** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/files/restore_scripts_on_load>`
 
 If ``true``, reopens scripts that were opened in the last session when the editor is reopened on a given project.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/behavior/files/trim_final_newlines_on_save:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/behavior/files/trim_final_newlines_on_save** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/files/trim_final_newlines_on_save>`
+
+If ``true``, trims all empty newlines after the final newline when saving a script. Final newlines refer to the empty newlines found at the end of files. Since these serve no practical purpose, they can and should be removed to make version control diffs less noisy.
 
 .. rst-class:: classref-item-separator
 
@@ -3973,7 +3987,7 @@ If ``true``, reopens scripts that were opened in the last session when the edito
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/files/trim_trailing_whitespace_on_save**
+:ref:`bool<class_bool>` **text_editor/behavior/files/trim_trailing_whitespace_on_save** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/files/trim_trailing_whitespace_on_save>`
 
 If ``true``, trims trailing whitespace when saving a script. Trailing whitespace refers to tab and space characters placed at the end of lines. Since these serve no practical purpose, they can and should be removed to make version control diffs less noisy.
 
@@ -3985,7 +3999,7 @@ If ``true``, trims trailing whitespace when saving a script. Trailing whitespace
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/indent/auto_indent**
+:ref:`bool<class_bool>` **text_editor/behavior/indent/auto_indent** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/indent/auto_indent>`
 
 If ``true``, automatically indents code when pressing the :kbd:`Enter` key based on blocks above the new line.
 
@@ -3997,7 +4011,7 @@ If ``true``, automatically indents code when pressing the :kbd:`Enter` key based
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/indent/indent_wrapped_lines**
+:ref:`bool<class_bool>` **text_editor/behavior/indent/indent_wrapped_lines** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/indent/indent_wrapped_lines>`
 
 If ``true``, all wrapped lines are indented to the same amount as the unwrapped line.
 
@@ -4009,7 +4023,7 @@ If ``true``, all wrapped lines are indented to the same amount as the unwrapped 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/behavior/indent/size**
+:ref:`int<class_int>` **text_editor/behavior/indent/size** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/indent/size>`
 
 When using tab indentation, determines the length of each tab. When using space indentation, determines how many spaces are inserted when pressing :kbd:`Tab` and when automatic indentation is performed.
 
@@ -4021,7 +4035,7 @@ When using tab indentation, determines the length of each tab. When using space 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/behavior/indent/type**
+:ref:`int<class_int>` **text_editor/behavior/indent/type** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/indent/type>`
 
 The indentation style to use (tabs or spaces).
 
@@ -4035,7 +4049,7 @@ The indentation style to use (tabs or spaces).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/navigation/drag_and_drop_selection**
+:ref:`bool<class_bool>` **text_editor/behavior/navigation/drag_and_drop_selection** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/drag_and_drop_selection>`
 
 If ``true``, allows drag-and-dropping text in the script editor to move text. Disable this if you find yourself accidentally drag-and-dropping text in the script editor.
 
@@ -4047,7 +4061,7 @@ If ``true``, allows drag-and-dropping text in the script editor to move text. Di
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/navigation/move_caret_on_right_click**
+:ref:`bool<class_bool>` **text_editor/behavior/navigation/move_caret_on_right_click** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/move_caret_on_right_click>`
 
 If ``true``, the caret will be moved when right-clicking somewhere in the script editor (like when left-clicking or middle-clicking). If ``false``, the caret will only be moved when left-clicking or middle-clicking somewhere.
 
@@ -4059,7 +4073,7 @@ If ``true``, the caret will be moved when right-clicking somewhere in the script
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/navigation/open_script_when_connecting_signal_to_existing_method**
+:ref:`bool<class_bool>` **text_editor/behavior/navigation/open_script_when_connecting_signal_to_existing_method** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/open_script_when_connecting_signal_to_existing_method>`
 
 If ``true``, opens the script editor when connecting a signal to an existing script method from the Node dock.
 
@@ -4071,7 +4085,7 @@ If ``true``, opens the script editor when connecting a signal to an existing scr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/navigation/scroll_past_end_of_file**
+:ref:`bool<class_bool>` **text_editor/behavior/navigation/scroll_past_end_of_file** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/scroll_past_end_of_file>`
 
 If ``true``, allows scrolling past the end of the file.
 
@@ -4083,7 +4097,7 @@ If ``true``, allows scrolling past the end of the file.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/navigation/smooth_scrolling**
+:ref:`bool<class_bool>` **text_editor/behavior/navigation/smooth_scrolling** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/smooth_scrolling>`
 
 If ``true``, allows scrolling in sub-line intervals and enables a smooth scrolling animation when using the mouse wheel to scroll.
 
@@ -4097,7 +4111,7 @@ If ``true``, allows scrolling in sub-line intervals and enables a smooth scrolli
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/behavior/navigation/stay_in_script_editor_on_node_selected**
+:ref:`bool<class_bool>` **text_editor/behavior/navigation/stay_in_script_editor_on_node_selected** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/stay_in_script_editor_on_node_selected>`
 
 If ``true``, prevents automatically switching between the Script and 2D/3D screens when selecting a node in the Scene tree dock.
 
@@ -4109,7 +4123,7 @@ If ``true``, prevents automatically switching between the Script and 2D/3D scree
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/behavior/navigation/v_scroll_speed**
+:ref:`int<class_int>` **text_editor/behavior/navigation/v_scroll_speed** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/v_scroll_speed>`
 
 The number of pixels to scroll with every mouse wheel increment. Higher values make the script scroll by faster when using the mouse wheel.
 
@@ -4123,7 +4137,7 @@ The number of pixels to scroll with every mouse wheel increment. Higher values m
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/completion/add_node_path_literals**
+:ref:`bool<class_bool>` **text_editor/completion/add_node_path_literals** :ref:`🔗<class_EditorSettings_property_text_editor/completion/add_node_path_literals>`
 
 If ``true``, uses :ref:`NodePath<class_NodePath>` instead of :ref:`String<class_String>` when appropriate for code autocompletion or for drag and dropping object properties into the script editor.
 
@@ -4135,7 +4149,7 @@ If ``true``, uses :ref:`NodePath<class_NodePath>` instead of :ref:`String<class_
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/completion/add_string_name_literals**
+:ref:`bool<class_bool>` **text_editor/completion/add_string_name_literals** :ref:`🔗<class_EditorSettings_property_text_editor/completion/add_string_name_literals>`
 
 If ``true``, uses :ref:`StringName<class_StringName>` instead of :ref:`String<class_String>` when appropriate for code autocompletion.
 
@@ -4147,7 +4161,7 @@ If ``true``, uses :ref:`StringName<class_StringName>` instead of :ref:`String<cl
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/completion/add_type_hints**
+:ref:`bool<class_bool>` **text_editor/completion/add_type_hints** :ref:`🔗<class_EditorSettings_property_text_editor/completion/add_type_hints>`
 
 If ``true``, adds :doc:`GDScript static typing <../tutorials/scripting/gdscript/static_typing>` hints such as ``-> void`` and ``: int`` when using code autocompletion or when creating onready variables by drag and dropping nodes into the script editor while pressing the :kbd:`Ctrl` key. If ``true``, newly created scripts will also automatically have type hints added to their method parameters and return types.
 
@@ -4159,7 +4173,7 @@ If ``true``, adds :doc:`GDScript static typing <../tutorials/scripting/gdscript/
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/completion/auto_brace_complete**
+:ref:`bool<class_bool>` **text_editor/completion/auto_brace_complete** :ref:`🔗<class_EditorSettings_property_text_editor/completion/auto_brace_complete>`
 
 If ``true``, automatically completes braces when making use of code completion.
 
@@ -4171,7 +4185,7 @@ If ``true``, automatically completes braces when making use of code completion.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **text_editor/completion/code_complete_delay**
+:ref:`float<class_float>` **text_editor/completion/code_complete_delay** :ref:`🔗<class_EditorSettings_property_text_editor/completion/code_complete_delay>`
 
 The delay in seconds after which autocompletion suggestions should be displayed when the user stops typing.
 
@@ -4183,7 +4197,7 @@ The delay in seconds after which autocompletion suggestions should be displayed 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/completion/code_complete_enabled**
+:ref:`bool<class_bool>` **text_editor/completion/code_complete_enabled** :ref:`🔗<class_EditorSettings_property_text_editor/completion/code_complete_enabled>`
 
 If ``true``, code completion will be triggered automatically after :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`. If ``false``, you can still trigger completion manually by pressing :kbd:`Ctrl + Space` (:kbd:`Cmd + Space` on macOS).
 
@@ -4195,7 +4209,7 @@ If ``true``, code completion will be triggered automatically after :ref:`text_ed
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/completion/colorize_suggestions**
+:ref:`bool<class_bool>` **text_editor/completion/colorize_suggestions** :ref:`🔗<class_EditorSettings_property_text_editor/completion/colorize_suggestions>`
 
 If ``true`` enables the coloring for some items in the autocompletion suggestions, like vector components.
 
@@ -4207,7 +4221,7 @@ If ``true`` enables the coloring for some items in the autocompletion suggestion
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/completion/complete_file_paths**
+:ref:`bool<class_bool>` **text_editor/completion/complete_file_paths** :ref:`🔗<class_EditorSettings_property_text_editor/completion/complete_file_paths>`
 
 If ``true``, provides autocompletion suggestions for file paths in methods such as ``load()`` and ``preload()``.
 
@@ -4219,7 +4233,7 @@ If ``true``, provides autocompletion suggestions for file paths in methods such 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **text_editor/completion/idle_parse_delay**
+:ref:`float<class_float>` **text_editor/completion/idle_parse_delay** :ref:`🔗<class_EditorSettings_property_text_editor/completion/idle_parse_delay>`
 
 The delay in seconds after which the script editor should check for errors when the user stops typing.
 
@@ -4231,7 +4245,7 @@ The delay in seconds after which the script editor should check for errors when 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/completion/put_callhint_tooltip_below_current_line**
+:ref:`bool<class_bool>` **text_editor/completion/put_callhint_tooltip_below_current_line** :ref:`🔗<class_EditorSettings_property_text_editor/completion/put_callhint_tooltip_below_current_line>`
 
 If ``true``, the code completion tooltip will appear below the current line unless there is no space on screen below the current line. If ``false``, the code completion tooltip will appear above the current line.
 
@@ -4243,7 +4257,7 @@ If ``true``, the code completion tooltip will appear below the current line unle
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/completion/use_single_quotes**
+:ref:`bool<class_bool>` **text_editor/completion/use_single_quotes** :ref:`🔗<class_EditorSettings_property_text_editor/completion/use_single_quotes>`
 
 If ``true``, performs string autocompletion with single quotes. If ``false``, performs string autocompletion with double quotes (which matches the :doc:`GDScript style guide <../tutorials/scripting/gdscript/gdscript_styleguide>`).
 
@@ -4255,7 +4269,7 @@ If ``true``, performs string autocompletion with single quotes. If ``false``, pe
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/help/class_reference_examples**
+:ref:`int<class_int>` **text_editor/help/class_reference_examples** :ref:`🔗<class_EditorSettings_property_text_editor/help/class_reference_examples>`
 
 Controls which multi-line code blocks should be displayed in the editor help. This setting does not affect single-line code literals in the editor help.
 
@@ -4267,7 +4281,7 @@ Controls which multi-line code blocks should be displayed in the editor help. Th
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/help/help_font_size**
+:ref:`int<class_int>` **text_editor/help/help_font_size** :ref:`🔗<class_EditorSettings_property_text_editor/help/help_font_size>`
 
 The font size to use for the editor help (built-in class reference).
 
@@ -4279,7 +4293,7 @@ The font size to use for the editor help (built-in class reference).
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/help/help_source_font_size**
+:ref:`int<class_int>` **text_editor/help/help_source_font_size** :ref:`🔗<class_EditorSettings_property_text_editor/help/help_source_font_size>`
 
 The font size to use for code samples in the editor help (built-in class reference).
 
@@ -4291,7 +4305,7 @@ The font size to use for code samples in the editor help (built-in class referen
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **text_editor/help/help_title_font_size**
+:ref:`int<class_int>` **text_editor/help/help_title_font_size** :ref:`🔗<class_EditorSettings_property_text_editor/help/help_title_font_size>`
 
 The font size to use for headings in the editor help (built-in class reference).
 
@@ -4303,7 +4317,7 @@ The font size to use for headings in the editor help (built-in class reference).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/help/show_help_index**
+:ref:`bool<class_bool>` **text_editor/help/show_help_index** :ref:`🔗<class_EditorSettings_property_text_editor/help/show_help_index>`
 
 If ``true``, displays a table of contents at the left of the editor help (at the location where the members overview would appear when editing a script).
 
@@ -4315,7 +4329,7 @@ If ``true``, displays a table of contents at the left of the editor help (at the
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/script_list/show_members_overview**
+:ref:`bool<class_bool>` **text_editor/script_list/show_members_overview** :ref:`🔗<class_EditorSettings_property_text_editor/script_list/show_members_overview>`
 
 If ``true``, displays an overview of the current script's member variables and functions at the left of the script editor. See also :ref:`text_editor/script_list/sort_members_outline_alphabetically<class_EditorSettings_property_text_editor/script_list/sort_members_outline_alphabetically>`.
 
@@ -4327,7 +4341,7 @@ If ``true``, displays an overview of the current script's member variables and f
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **text_editor/script_list/sort_members_outline_alphabetically**
+:ref:`bool<class_bool>` **text_editor/script_list/sort_members_outline_alphabetically** :ref:`🔗<class_EditorSettings_property_text_editor/script_list/sort_members_outline_alphabetically>`
 
 If ``true``, sorts the members outline (located at the left of the script editor) using alphabetical order. If ``false``, sorts the members outline depending on the order in which members are found in the script.
 
@@ -4341,7 +4355,7 @@ If ``true``, sorts the members outline (located at the left of the script editor
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **text_editor/theme/color_theme**
+:ref:`String<class_String>` **text_editor/theme/color_theme** :ref:`🔗<class_EditorSettings_property_text_editor/theme/color_theme>`
 
 The syntax theme to use in the script editor.
 
@@ -4357,7 +4371,7 @@ You can find additional syntax themes to install in the `godot-syntax-themes <ht
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/background_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/background_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/background_color>`
 
 The script editor's background color. If set to a translucent color, the editor theme's base color will be visible behind.
 
@@ -4369,7 +4383,7 @@ The script editor's background color. If set to a translucent color, the editor 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/base_type_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/base_type_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/base_type_color>`
 
 The script editor's base type color (used for types like :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Color<class_Color>`, ...).
 
@@ -4381,7 +4395,7 @@ The script editor's base type color (used for types like :ref:`Vector2<class_Vec
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/bookmark_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/bookmark_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/bookmark_color>`
 
 The script editor's bookmark icon color (displayed in the gutter).
 
@@ -4393,7 +4407,7 @@ The script editor's bookmark icon color (displayed in the gutter).
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/brace_mismatch_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/brace_mismatch_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/brace_mismatch_color>`
 
 The script editor's brace mismatch color. Used when the caret is currently on a mismatched brace, parenthesis or bracket character.
 
@@ -4405,7 +4419,7 @@ The script editor's brace mismatch color. Used when the caret is currently on a 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/breakpoint_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/breakpoint_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/breakpoint_color>`
 
 The script editor's breakpoint icon color (displayed in the gutter).
 
@@ -4417,7 +4431,7 @@ The script editor's breakpoint icon color (displayed in the gutter).
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/caret_background_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/caret_background_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/caret_background_color>`
 
 The script editor's caret background color.
 
@@ -4431,7 +4445,7 @@ The script editor's caret background color.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/caret_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/caret_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/caret_color>`
 
 The script editor's caret color.
 
@@ -4443,7 +4457,7 @@ The script editor's caret color.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/code_folding_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/code_folding_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/code_folding_color>`
 
 The script editor's color for the code folding icon (displayed in the gutter).
 
@@ -4455,7 +4469,7 @@ The script editor's color for the code folding icon (displayed in the gutter).
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/comment_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/comment_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/comment_color>`
 
 The script editor's comment color.
 
@@ -4469,7 +4483,7 @@ The script editor's comment color.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_background_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_background_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/completion_background_color>`
 
 The script editor's autocompletion box background color.
 
@@ -4481,7 +4495,7 @@ The script editor's autocompletion box background color.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_existing_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_existing_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/completion_existing_color>`
 
 The script editor's autocompletion box background color to highlight existing characters in the completion results. This should be a translucent color so that :ref:`text_editor/theme/highlighting/completion_selected_color<class_EditorSettings_property_text_editor/theme/highlighting/completion_selected_color>` can be seen behind.
 
@@ -4493,7 +4507,7 @@ The script editor's autocompletion box background color to highlight existing ch
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_font_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_font_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/completion_font_color>`
 
 The script editor's autocompletion box text color.
 
@@ -4505,7 +4519,7 @@ The script editor's autocompletion box text color.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_scroll_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_scroll_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/completion_scroll_color>`
 
 The script editor's autocompletion box scroll bar color.
 
@@ -4517,7 +4531,7 @@ The script editor's autocompletion box scroll bar color.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_scroll_hovered_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_scroll_hovered_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/completion_scroll_hovered_color>`
 
 The script editor's autocompletion box scroll bar color when hovered or pressed with the mouse.
 
@@ -4529,7 +4543,7 @@ The script editor's autocompletion box scroll bar color when hovered or pressed 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_selected_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/completion_selected_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/completion_selected_color>`
 
 The script editor's autocompletion box background color for the currently selected line.
 
@@ -4541,7 +4555,7 @@ The script editor's autocompletion box background color for the currently select
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/control_flow_keyword_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/control_flow_keyword_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/control_flow_keyword_color>`
 
 The script editor's control flow keyword color (used for keywords like ``if``, ``for``, ``return``, ...).
 
@@ -4553,7 +4567,7 @@ The script editor's control flow keyword color (used for keywords like ``if``, `
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/current_line_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/current_line_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/current_line_color>`
 
 The script editor's background color for the line the caret is currently on. This should be set to a translucent color so that it can display on top of other line color modifiers such as :ref:`text_editor/theme/highlighting/mark_color<class_EditorSettings_property_text_editor/theme/highlighting/mark_color>`.
 
@@ -4565,7 +4579,7 @@ The script editor's background color for the line the caret is currently on. Thi
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/doc_comment_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/doc_comment_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/doc_comment_color>`
 
 The script editor's documentation comment color. In GDScript, this is used for comments starting with ``##``. In C#, this is used for comments starting with ``///`` or ``/**``.
 
@@ -4577,7 +4591,7 @@ The script editor's documentation comment color. In GDScript, this is used for c
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/engine_type_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/engine_type_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/engine_type_color>`
 
 The script editor's engine type color (:ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Color<class_Color>`, ...).
 
@@ -4589,7 +4603,7 @@ The script editor's engine type color (:ref:`Vector2<class_Vector2>`, :ref:`Vect
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/executing_line_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/executing_line_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/executing_line_color>`
 
 The script editor's color for the debugger's executing line icon (displayed in the gutter).
 
@@ -4601,7 +4615,7 @@ The script editor's color for the debugger's executing line icon (displayed in t
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/folded_code_region_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/folded_code_region_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/folded_code_region_color>`
 
 The script editor's background line highlighting color for folded code region.
 
@@ -4613,7 +4627,7 @@ The script editor's background line highlighting color for folded code region.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/function_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/function_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/function_color>`
 
 The script editor's function call color.
 
@@ -4627,7 +4641,7 @@ The script editor's function call color.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/keyword_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/keyword_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/keyword_color>`
 
 The script editor's non-control flow keyword color (used for keywords like ``var``, ``func``, ``extends``, ...).
 
@@ -4639,7 +4653,7 @@ The script editor's non-control flow keyword color (used for keywords like ``var
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/line_length_guideline_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/line_length_guideline_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/line_length_guideline_color>`
 
 The script editor's color for the line length guideline. The "hard" line length guideline will be drawn with this color, whereas the "soft" line length guideline will be drawn with half of its opacity.
 
@@ -4651,7 +4665,7 @@ The script editor's color for the line length guideline. The "hard" line length 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/line_number_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/line_number_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/line_number_color>`
 
 The script editor's color for line numbers. See also :ref:`text_editor/theme/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/safe_line_number_color>`.
 
@@ -4663,7 +4677,7 @@ The script editor's color for line numbers. See also :ref:`text_editor/theme/hig
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/mark_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/mark_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/mark_color>`
 
 The script editor's background color for lines with errors. This should be set to a translucent color so that it can display on top of other line color modifiers such as :ref:`text_editor/theme/highlighting/current_line_color<class_EditorSettings_property_text_editor/theme/highlighting/current_line_color>`.
 
@@ -4675,7 +4689,7 @@ The script editor's background color for lines with errors. This should be set t
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/member_variable_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/member_variable_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/member_variable_color>`
 
 The script editor's color for member variables on objects (e.g. ``self.some_property``).
 
@@ -4689,7 +4703,7 @@ The script editor's color for member variables on objects (e.g. ``self.some_prop
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/number_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/number_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/number_color>`
 
 The script editor's color for numbers (integer and floating-point).
 
@@ -4701,7 +4715,7 @@ The script editor's color for numbers (integer and floating-point).
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/safe_line_number_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/safe_line_number_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/safe_line_number_color>`
 
 The script editor's color for type-safe line numbers. See also :ref:`text_editor/theme/highlighting/line_number_color<class_EditorSettings_property_text_editor/theme/highlighting/line_number_color>`.
 
@@ -4715,7 +4729,7 @@ The script editor's color for type-safe line numbers. See also :ref:`text_editor
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/search_result_border_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/search_result_border_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/search_result_border_color>`
 
 The script editor's color for the border of search results. This border helps bring further attention to the search result. Set this color's opacity to 0 to disable the border.
 
@@ -4727,7 +4741,7 @@ The script editor's color for the border of search results. This border helps br
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/search_result_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/search_result_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/search_result_color>`
 
 The script editor's background color for search results.
 
@@ -4739,7 +4753,7 @@ The script editor's background color for search results.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/selection_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/selection_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/selection_color>`
 
 The script editor's background color for the currently selected text.
 
@@ -4751,7 +4765,7 @@ The script editor's background color for the currently selected text.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/string_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/string_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/string_color>`
 
 The script editor's color for strings (single-line and multi-line).
 
@@ -4763,7 +4777,7 @@ The script editor's color for strings (single-line and multi-line).
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/symbol_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/symbol_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/symbol_color>`
 
 The script editor's color for operators (``( ) [ ] { } + - * /``, ...).
 
@@ -4775,7 +4789,7 @@ The script editor's color for operators (``( ) [ ] { } + - * /``, ...).
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/text_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/text_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/text_color>`
 
 The script editor's color for text not highlighted by any syntax highlighting rule.
 
@@ -4787,7 +4801,7 @@ The script editor's color for text not highlighted by any syntax highlighting ru
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/text_selected_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/text_selected_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/text_selected_color>`
 
 The script editor's background color for text. This should be set to a translucent color so that it can display on top of other line color modifiers such as :ref:`text_editor/theme/highlighting/current_line_color<class_EditorSettings_property_text_editor/theme/highlighting/current_line_color>`.
 
@@ -4799,7 +4813,7 @@ The script editor's background color for text. This should be set to a transluce
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/user_type_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/user_type_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/user_type_color>`
 
 The script editor's color for user-defined types (using ``class_name``).
 
@@ -4811,7 +4825,7 @@ The script editor's color for user-defined types (using ``class_name``).
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **text_editor/theme/highlighting/word_highlighted_color**
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/word_highlighted_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/word_highlighted_color>`
 
 The script editor's color for words highlighted by selecting them. Only visible if :ref:`text_editor/appearance/caret/highlight_all_occurrences<class_EditorSettings_property_text_editor/appearance/caret/highlight_all_occurrences>` is ``true``.
 
@@ -4828,7 +4842,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_property_info**\ (\ info\: :ref:`Dictionary<class_Dictionary>`\ )
+|void| **add_property_info**\ (\ info\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_EditorSettings_method_add_property_info>`
 
 Adds a custom property info to a property. The dictionary must contain:
 
@@ -4882,7 +4896,7 @@ Adds a custom property info to a property. The dictionary must contain:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **check_changed_settings_in_group**\ (\ setting_prefix\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **check_changed_settings_in_group**\ (\ setting_prefix\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_EditorSettings_method_check_changed_settings_in_group>`
 
 Checks if any settings with the prefix ``setting_prefix`` exist in the set of changed settings. See also :ref:`get_changed_settings<class_EditorSettings_method_get_changed_settings>`.
 
@@ -4894,7 +4908,7 @@ Checks if any settings with the prefix ``setting_prefix`` exist in the set of ch
 
 .. rst-class:: classref-method
 
-|void| **erase**\ (\ property\: :ref:`String<class_String>`\ )
+|void| **erase**\ (\ property\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorSettings_method_erase>`
 
 Erases the setting whose name is specified by ``property``.
 
@@ -4906,7 +4920,7 @@ Erases the setting whose name is specified by ``property``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_changed_settings**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_changed_settings**\ (\ ) |const| :ref:`🔗<class_EditorSettings_method_get_changed_settings>`
 
 Gets an array of the settings which have been changed since the last save. Note that internally ``changed_settings`` is cleared after a successful save, so generally the most appropriate place to use this method is when processing :ref:`NOTIFICATION_EDITOR_SETTINGS_CHANGED<class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED>`.
 
@@ -4918,7 +4932,7 @@ Gets an array of the settings which have been changed since the last save. Note 
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_favorites**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_favorites**\ (\ ) |const| :ref:`🔗<class_EditorSettings_method_get_favorites>`
 
 Returns the list of favorite files and directories for this project.
 
@@ -4930,7 +4944,7 @@ Returns the list of favorite files and directories for this project.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_project_metadata**\ (\ section\: :ref:`String<class_String>`, key\: :ref:`String<class_String>`, default\: :ref:`Variant<class_Variant>` = null\ ) |const|
+:ref:`Variant<class_Variant>` **get_project_metadata**\ (\ section\: :ref:`String<class_String>`, key\: :ref:`String<class_String>`, default\: :ref:`Variant<class_Variant>` = null\ ) |const| :ref:`🔗<class_EditorSettings_method_get_project_metadata>`
 
 Returns project-specific metadata for the ``section`` and ``key`` specified. If the metadata doesn't exist, ``default`` will be returned instead. See also :ref:`set_project_metadata<class_EditorSettings_method_set_project_metadata>`.
 
@@ -4942,7 +4956,7 @@ Returns project-specific metadata for the ``section`` and ``key`` specified. If 
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_recent_dirs**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_recent_dirs**\ (\ ) |const| :ref:`🔗<class_EditorSettings_method_get_recent_dirs>`
 
 Returns the list of recently visited folders in the file dialog for this project.
 
@@ -4954,7 +4968,7 @@ Returns the list of recently visited folders in the file dialog for this project
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_setting**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_setting**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_EditorSettings_method_get_setting>`
 
 Returns the value of the setting specified by ``name``. This is equivalent to using :ref:`Object.get<class_Object_method_get>` on the EditorSettings instance.
 
@@ -4966,7 +4980,7 @@ Returns the value of the setting specified by ``name``. This is equivalent to us
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_setting**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_setting**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_EditorSettings_method_has_setting>`
 
 Returns ``true`` if the setting specified by ``name`` exists, ``false`` otherwise.
 
@@ -4978,7 +4992,7 @@ Returns ``true`` if the setting specified by ``name`` exists, ``false`` otherwis
 
 .. rst-class:: classref-method
 
-|void| **mark_setting_changed**\ (\ setting\: :ref:`String<class_String>`\ )
+|void| **mark_setting_changed**\ (\ setting\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorSettings_method_mark_setting_changed>`
 
 Marks the passed editor setting as being changed, see :ref:`get_changed_settings<class_EditorSettings_method_get_changed_settings>`. Only settings which exist (see :ref:`has_setting<class_EditorSettings_method_has_setting>`) will be accepted.
 
@@ -4990,7 +5004,7 @@ Marks the passed editor setting as being changed, see :ref:`get_changed_settings
 
 .. rst-class:: classref-method
 
-|void| **set_builtin_action_override**\ (\ name\: :ref:`String<class_String>`, actions_list\: :ref:`Array<class_Array>`\[:ref:`InputEvent<class_InputEvent>`\]\ )
+|void| **set_builtin_action_override**\ (\ name\: :ref:`String<class_String>`, actions_list\: :ref:`Array<class_Array>`\[:ref:`InputEvent<class_InputEvent>`\]\ ) :ref:`🔗<class_EditorSettings_method_set_builtin_action_override>`
 
 Overrides the built-in editor action ``name`` with the input actions defined in ``actions_list``.
 
@@ -5002,7 +5016,7 @@ Overrides the built-in editor action ``name`` with the input actions defined in 
 
 .. rst-class:: classref-method
 
-|void| **set_favorites**\ (\ dirs\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+|void| **set_favorites**\ (\ dirs\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_EditorSettings_method_set_favorites>`
 
 Sets the list of favorite files and directories for this project.
 
@@ -5014,7 +5028,7 @@ Sets the list of favorite files and directories for this project.
 
 .. rst-class:: classref-method
 
-|void| **set_initial_value**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`, update_current\: :ref:`bool<class_bool>`\ )
+|void| **set_initial_value**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`, update_current\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorSettings_method_set_initial_value>`
 
 Sets the initial value of the setting specified by ``name`` to ``value``. This is used to provide a value for the Revert button in the Editor Settings. If ``update_current`` is true, the current value of the setting will be set to ``value`` as well.
 
@@ -5026,7 +5040,7 @@ Sets the initial value of the setting specified by ``name`` to ``value``. This i
 
 .. rst-class:: classref-method
 
-|void| **set_project_metadata**\ (\ section\: :ref:`String<class_String>`, key\: :ref:`String<class_String>`, data\: :ref:`Variant<class_Variant>`\ )
+|void| **set_project_metadata**\ (\ section\: :ref:`String<class_String>`, key\: :ref:`String<class_String>`, data\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_EditorSettings_method_set_project_metadata>`
 
 Sets project-specific metadata with the ``section``, ``key`` and ``data`` specified. This metadata is stored outside the project folder and therefore won't be checked into version control. See also :ref:`get_project_metadata<class_EditorSettings_method_get_project_metadata>`.
 
@@ -5038,7 +5052,7 @@ Sets project-specific metadata with the ``section``, ``key`` and ``data`` specif
 
 .. rst-class:: classref-method
 
-|void| **set_recent_dirs**\ (\ dirs\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+|void| **set_recent_dirs**\ (\ dirs\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_EditorSettings_method_set_recent_dirs>`
 
 Sets the list of recently visited folders in the file dialog for this project.
 
@@ -5050,7 +5064,7 @@ Sets the list of recently visited folders in the file dialog for this project.
 
 .. rst-class:: classref-method
 
-|void| **set_setting**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **set_setting**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_EditorSettings_method_set_setting>`
 
 Sets the ``value`` of the setting specified by ``name``. This is equivalent to using :ref:`Object.set<class_Object_method_set>` on the EditorSettings instance.
 

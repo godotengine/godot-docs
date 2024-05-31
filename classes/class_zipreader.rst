@@ -65,7 +65,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **close**\ (\ )
+:ref:`Error<enum_@GlobalScope_Error>` **close**\ (\ ) :ref:`🔗<class_ZIPReader_method_close>`
 
 Closes the underlying resources used by this instance.
 
@@ -77,7 +77,7 @@ Closes the underlying resources used by this instance.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **file_exists**\ (\ path\: :ref:`String<class_String>`, case_sensitive\: :ref:`bool<class_bool>` = true\ )
+:ref:`bool<class_bool>` **file_exists**\ (\ path\: :ref:`String<class_String>`, case_sensitive\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_ZIPReader_method_file_exists>`
 
 Returns ``true`` if the file exists in the loaded zip archive.
 
@@ -91,7 +91,7 @@ Must be called after :ref:`open<class_ZIPReader_method_open>`.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_files**\ (\ )
+:ref:`PackedStringArray<class_PackedStringArray>` **get_files**\ (\ ) :ref:`🔗<class_ZIPReader_method_get_files>`
 
 Returns the list of names of all files in the loaded archive.
 
@@ -105,7 +105,7 @@ Must be called after :ref:`open<class_ZIPReader_method_open>`.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **open**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **open**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ZIPReader_method_open>`
 
 Opens the zip archive at the given ``path`` and reads its file index.
 
@@ -117,7 +117,7 @@ Opens the zip archive at the given ``path`` and reads its file index.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **read_file**\ (\ path\: :ref:`String<class_String>`, case_sensitive\: :ref:`bool<class_bool>` = true\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **read_file**\ (\ path\: :ref:`String<class_String>`, case_sensitive\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_ZIPReader_method_read_file>`
 
 Loads the whole content of a file in the loaded zip archive into memory and returns it.
 

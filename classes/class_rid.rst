@@ -88,7 +88,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`RID<class_RID>` **RID**\ (\ )
+:ref:`RID<class_RID>` **RID**\ (\ ) :ref:`🔗<class_RID_constructor_RID>`
 
 Constructs an empty **RID** with the invalid ID ``0``.
 
@@ -115,7 +115,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_id**\ (\ ) |const|
+:ref:`int<class_int>` **get_id**\ (\ ) |const| :ref:`🔗<class_RID_method_get_id>`
 
 Returns the ID of the referenced low-level resource.
 
@@ -127,7 +127,7 @@ Returns the ID of the referenced low-level resource.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_valid**\ (\ ) |const| :ref:`🔗<class_RID_method_is_valid>`
 
 Returns ``true`` if the **RID** is not ``0``.
 
@@ -144,7 +144,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_neq_RID>`
 
 Returns ``true`` if the **RID**\ s are not equal.
 
@@ -156,7 +156,7 @@ Returns ``true`` if the **RID**\ s are not equal.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_lt_RID>`
 
 Returns ``true`` if the **RID**'s ID is less than ``right``'s ID.
 
@@ -168,7 +168,7 @@ Returns ``true`` if the **RID**'s ID is less than ``right``'s ID.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **operator <=**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_lte_RID>`
 
 Returns ``true`` if the **RID**'s ID is less than or equal to ``right``'s ID.
 
@@ -180,7 +180,7 @@ Returns ``true`` if the **RID**'s ID is less than or equal to ``right``'s ID.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_eq_RID>`
 
 Returns ``true`` if both **RID**\ s are equal, which means they both refer to the same low-level resource.
 
@@ -192,7 +192,7 @@ Returns ``true`` if both **RID**\ s are equal, which means they both refer to th
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_gt_RID>`
 
 Returns ``true`` if the **RID**'s ID is greater than ``right``'s ID.
 
@@ -204,7 +204,7 @@ Returns ``true`` if the **RID**'s ID is greater than ``right``'s ID.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`RID<class_RID>`\ )
+:ref:`bool<class_bool>` **operator >=**\ (\ right\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RID_operator_gte_RID>`
 
 Returns ``true`` if the **RID**'s ID is greater than or equal to ``right``'s ID.
 

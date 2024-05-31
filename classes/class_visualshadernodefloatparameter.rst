@@ -56,7 +56,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Hint**:
+enum **Hint**: :ref:`🔗<enum_VisualShaderNodeFloatParameter_Hint>`
 
 .. _class_VisualShaderNodeFloatParameter_constant_HINT_NONE:
 
@@ -103,7 +103,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **default_value** = ``0.0``
+:ref:`float<class_float>` **default_value** = ``0.0`` :ref:`🔗<class_VisualShaderNodeFloatParameter_property_default_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -120,7 +120,7 @@ A default value to be assigned within the shader.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **default_value_enabled** = ``false``
+:ref:`bool<class_bool>` **default_value_enabled** = ``false`` :ref:`🔗<class_VisualShaderNodeFloatParameter_property_default_value_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -137,7 +137,7 @@ Enables usage of the :ref:`default_value<class_VisualShaderNodeFloatParameter_pr
 
 .. rst-class:: classref-property
 
-:ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` **hint** = ``0``
+:ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` **hint** = ``0`` :ref:`🔗<class_VisualShaderNodeFloatParameter_property_hint>`
 
 .. rst-class:: classref-property-setget
 
@@ -154,7 +154,7 @@ A hint applied to the uniform, which controls the values it can take when set th
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **max** = ``1.0``
+:ref:`float<class_float>` **max** = ``1.0`` :ref:`🔗<class_VisualShaderNodeFloatParameter_property_max>`
 
 .. rst-class:: classref-property-setget
 
@@ -171,7 +171,7 @@ Minimum value for range hints. Used if :ref:`hint<class_VisualShaderNodeFloatPar
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **min** = ``0.0``
+:ref:`float<class_float>` **min** = ``0.0`` :ref:`🔗<class_VisualShaderNodeFloatParameter_property_min>`
 
 .. rst-class:: classref-property-setget
 
@@ -188,7 +188,7 @@ Maximum value for range hints. Used if :ref:`hint<class_VisualShaderNodeFloatPar
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **step** = ``0.1``
+:ref:`float<class_float>` **step** = ``0.1`` :ref:`🔗<class_VisualShaderNodeFloatParameter_property_step>`
 
 .. rst-class:: classref-property-setget
 

@@ -218,7 +218,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ModeFlags**:
+enum **ModeFlags**: :ref:`🔗<enum_FileAccess_ModeFlags>`
 
 .. _class_FileAccess_constant_READ:
 
@@ -236,7 +236,7 @@ Opens the file for read operations. The cursor is positioned at the beginning of
 
 Opens the file for write operations. The file is created if it does not exist, and truncated if it does.
 
-\ **Note:** When creating a file it must be in an already existing directory. To recursively create directories for a file path, see :ref:`DirAccess.make_dir_recursive<class_DirAccess_method_make_dir_recursive>`).
+\ **Note:** When creating a file it must be in an already existing directory. To recursively create directories for a file path, see :ref:`DirAccess.make_dir_recursive<class_DirAccess_method_make_dir_recursive>`.
 
 .. _class_FileAccess_constant_READ_WRITE:
 
@@ -254,7 +254,7 @@ Opens the file for read and write operations. Does not truncate the file. The cu
 
 Opens the file for read and write operations. The file is created if it does not exist, and truncated if it does. The cursor is positioned at the beginning of the file.
 
-\ **Note:** When creating a file it must be in an already existing directory. To recursively create directories for a file path, see :ref:`DirAccess.make_dir_recursive<class_DirAccess_method_make_dir_recursive>`).
+\ **Note:** When creating a file it must be in an already existing directory. To recursively create directories for a file path, see :ref:`DirAccess.make_dir_recursive<class_DirAccess_method_make_dir_recursive>`.
 
 .. rst-class:: classref-item-separator
 
@@ -264,7 +264,7 @@ Opens the file for read and write operations. The file is created if it does not
 
 .. rst-class:: classref-enumeration
 
-enum **CompressionMode**:
+enum **CompressionMode**: :ref:`🔗<enum_FileAccess_CompressionMode>`
 
 .. _class_FileAccess_constant_COMPRESSION_FASTLZ:
 
@@ -314,7 +314,7 @@ Uses the `brotli <https://github.com/google/brotli>`__ compression method (only 
 
 .. rst-class:: classref-enumeration
 
-flags **UnixPermissionFlags**:
+flags **UnixPermissionFlags**: :ref:`🔗<enum_FileAccess_UnixPermissionFlags>`
 
 .. _class_FileAccess_constant_UNIX_READ_OWNER:
 
@@ -425,7 +425,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **big_endian**
+:ref:`bool<class_bool>` **big_endian** :ref:`🔗<class_FileAccess_property_big_endian>`
 
 .. rst-class:: classref-property-setget
 
@@ -451,7 +451,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **close**\ (\ )
+|void| **close**\ (\ ) :ref:`🔗<class_FileAccess_method_close>`
 
 Closes the currently opened file and prevents subsequent read/write operations. Use :ref:`flush<class_FileAccess_method_flush>` to persist the data to disk without closing the file.
 
@@ -465,7 +465,7 @@ Closes the currently opened file and prevents subsequent read/write operations. 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **eof_reached**\ (\ ) |const|
+:ref:`bool<class_bool>` **eof_reached**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_eof_reached>`
 
 Returns ``true`` if the file cursor has already read past the end of the file.
 
@@ -496,7 +496,7 @@ Returns ``true`` if the file cursor has already read past the end of the file.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **file_exists**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`bool<class_bool>` **file_exists**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_file_exists>`
 
 Returns ``true`` if the file exists in the given path.
 
@@ -512,7 +512,7 @@ For a non-static, relative equivalent, use :ref:`DirAccess.file_exists<class_Dir
 
 .. rst-class:: classref-method
 
-|void| **flush**\ (\ )
+|void| **flush**\ (\ ) :ref:`🔗<class_FileAccess_method_flush>`
 
 Writes the file's buffer to disk. Flushing is automatically performed when the file is closed. This means you don't need to call :ref:`flush<class_FileAccess_method_flush>` manually before closing a file. Still, calling :ref:`flush<class_FileAccess_method_flush>` can be used to ensure the data is safe even if the project crashes instead of being closed gracefully.
 
@@ -526,7 +526,7 @@ Writes the file's buffer to disk. Flushing is automatically performed when the f
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_8**\ (\ ) |const|
+:ref:`int<class_int>` **get_8**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_8>`
 
 Returns the next 8 bits from the file as an integer. See :ref:`store_8<class_FileAccess_method_store_8>` for details on what values can be stored and retrieved this way.
 
@@ -538,7 +538,7 @@ Returns the next 8 bits from the file as an integer. See :ref:`store_8<class_Fil
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_16**\ (\ ) |const|
+:ref:`int<class_int>` **get_16**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_16>`
 
 Returns the next 16 bits from the file as an integer. See :ref:`store_16<class_FileAccess_method_store_16>` for details on what values can be stored and retrieved this way.
 
@@ -550,7 +550,7 @@ Returns the next 16 bits from the file as an integer. See :ref:`store_16<class_F
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_32**\ (\ ) |const|
+:ref:`int<class_int>` **get_32**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_32>`
 
 Returns the next 32 bits from the file as an integer. See :ref:`store_32<class_FileAccess_method_store_32>` for details on what values can be stored and retrieved this way.
 
@@ -562,7 +562,7 @@ Returns the next 32 bits from the file as an integer. See :ref:`store_32<class_F
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_64**\ (\ ) |const|
+:ref:`int<class_int>` **get_64**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_64>`
 
 Returns the next 64 bits from the file as an integer. See :ref:`store_64<class_FileAccess_method_store_64>` for details on what values can be stored and retrieved this way.
 
@@ -574,7 +574,7 @@ Returns the next 64 bits from the file as an integer. See :ref:`store_64<class_F
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_as_text**\ (\ skip_cr\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`String<class_String>` **get_as_text**\ (\ skip_cr\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_FileAccess_method_get_as_text>`
 
 Returns the whole file as a :ref:`String<class_String>`. Text is interpreted as being UTF-8 encoded.
 
@@ -588,7 +588,7 @@ If ``skip_cr`` is ``true``, carriage return characters (``\r``, CR) will be igno
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_buffer**\ (\ length\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **get_buffer**\ (\ length\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_FileAccess_method_get_buffer>`
 
 Returns next ``length`` bytes of the file as a :ref:`PackedByteArray<class_PackedByteArray>`.
 
@@ -600,7 +600,7 @@ Returns next ``length`` bytes of the file as a :ref:`PackedByteArray<class_Packe
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_csv_line**\ (\ delim\: :ref:`String<class_String>` = ","\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_csv_line**\ (\ delim\: :ref:`String<class_String>` = ","\ ) |const| :ref:`🔗<class_FileAccess_method_get_csv_line>`
 
 Returns the next value of the file in CSV (Comma-Separated Values) format. You can pass a different delimiter ``delim`` to use other than the default ``","`` (comma). This delimiter must be one-character long, and cannot be a double quotation mark.
 
@@ -624,7 +624,7 @@ Note how the second line can omit the enclosing quotes as it does not include th
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_double**\ (\ ) |const|
+:ref:`float<class_float>` **get_double**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_double>`
 
 Returns the next 64 bits from the file as a floating-point number.
 
@@ -636,7 +636,7 @@ Returns the next 64 bits from the file as a floating-point number.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **get_error**\ (\ ) |const|
+:ref:`Error<enum_@GlobalScope_Error>` **get_error**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_error>`
 
 Returns the last error that happened when trying to perform operations. Compare with the ``ERR_FILE_*`` constants from :ref:`Error<enum_@GlobalScope_Error>`.
 
@@ -648,7 +648,7 @@ Returns the last error that happened when trying to perform operations. Compare 
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_file_as_bytes**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`PackedByteArray<class_PackedByteArray>` **get_file_as_bytes**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_file_as_bytes>`
 
 Returns the whole ``path`` file contents as a :ref:`PackedByteArray<class_PackedByteArray>` without any decoding.
 
@@ -662,7 +662,7 @@ Returns an empty :ref:`PackedByteArray<class_PackedByteArray>` if an error occur
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_file_as_string**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`String<class_String>` **get_file_as_string**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_file_as_string>`
 
 Returns the whole ``path`` file contents as a :ref:`String<class_String>`. Text is interpreted as being UTF-8 encoded.
 
@@ -676,7 +676,7 @@ Returns an empty :ref:`String<class_String>` if an error occurred while opening 
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_float**\ (\ ) |const|
+:ref:`float<class_float>` **get_float**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_float>`
 
 Returns the next 32 bits from the file as a floating-point number.
 
@@ -688,7 +688,7 @@ Returns the next 32 bits from the file as a floating-point number.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_hidden_attribute**\ (\ file\: :ref:`String<class_String>`\ ) |static|
+:ref:`bool<class_bool>` **get_hidden_attribute**\ (\ file\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_hidden_attribute>`
 
 Returns ``true``, if file ``hidden`` attribute is set.
 
@@ -702,7 +702,7 @@ Returns ``true``, if file ``hidden`` attribute is set.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_length**\ (\ ) |const|
+:ref:`int<class_int>` **get_length**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_length>`
 
 Returns the size of the file in bytes.
 
@@ -714,7 +714,7 @@ Returns the size of the file in bytes.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_line**\ (\ ) |const|
+:ref:`String<class_String>` **get_line**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_line>`
 
 Returns the next line of the file as a :ref:`String<class_String>`. The returned string doesn't include newline (``\n``) or carriage return (``\r``) characters, but does include any other leading or trailing whitespace.
 
@@ -728,7 +728,7 @@ Text is interpreted as being UTF-8 encoded.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_md5**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`String<class_String>` **get_md5**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_md5>`
 
 Returns an MD5 String representing the file at the given path or an empty :ref:`String<class_String>` on failure.
 
@@ -740,7 +740,7 @@ Returns an MD5 String representing the file at the given path or an empty :ref:`
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_modified_time**\ (\ file\: :ref:`String<class_String>`\ ) |static|
+:ref:`int<class_int>` **get_modified_time**\ (\ file\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_modified_time>`
 
 Returns the last time the ``file`` was modified in Unix timestamp format, or ``0`` on error. This Unix timestamp can be converted to another format using the :ref:`Time<class_Time>` singleton.
 
@@ -752,7 +752,7 @@ Returns the last time the ``file`` was modified in Unix timestamp format, or ``0
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **get_open_error**\ (\ ) |static|
+:ref:`Error<enum_@GlobalScope_Error>` **get_open_error**\ (\ ) |static| :ref:`🔗<class_FileAccess_method_get_open_error>`
 
 Returns the result of the last :ref:`open<class_FileAccess_method_open>` call in the current thread.
 
@@ -764,7 +764,7 @@ Returns the result of the last :ref:`open<class_FileAccess_method_open>` call in
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_pascal_string**\ (\ )
+:ref:`String<class_String>` **get_pascal_string**\ (\ ) :ref:`🔗<class_FileAccess_method_get_pascal_string>`
 
 Returns a :ref:`String<class_String>` saved in Pascal format from the file.
 
@@ -778,7 +778,7 @@ Text is interpreted as being UTF-8 encoded.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_path**\ (\ ) |const|
+:ref:`String<class_String>` **get_path**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_path>`
 
 Returns the path as a :ref:`String<class_String>` for the current open file.
 
@@ -790,7 +790,7 @@ Returns the path as a :ref:`String<class_String>` for the current open file.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_path_absolute**\ (\ ) |const|
+:ref:`String<class_String>` **get_path_absolute**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_path_absolute>`
 
 Returns the absolute path as a :ref:`String<class_String>` for the current open file.
 
@@ -802,7 +802,7 @@ Returns the absolute path as a :ref:`String<class_String>` for the current open 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_position**\ (\ ) |const|
+:ref:`int<class_int>` **get_position**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_position>`
 
 Returns the file cursor's position.
 
@@ -814,7 +814,7 @@ Returns the file cursor's position.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_read_only_attribute**\ (\ file\: :ref:`String<class_String>`\ ) |static|
+:ref:`bool<class_bool>` **get_read_only_attribute**\ (\ file\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_read_only_attribute>`
 
 Returns ``true``, if file ``read only`` attribute is set.
 
@@ -828,7 +828,7 @@ Returns ``true``, if file ``read only`` attribute is set.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_real**\ (\ ) |const|
+:ref:`float<class_float>` **get_real**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_real>`
 
 Returns the next bits from the file as a floating-point number.
 
@@ -840,7 +840,7 @@ Returns the next bits from the file as a floating-point number.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_sha256**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`String<class_String>` **get_sha256**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_sha256>`
 
 Returns an SHA-256 :ref:`String<class_String>` representing the file at the given path or an empty :ref:`String<class_String>` on failure.
 
@@ -852,7 +852,7 @@ Returns an SHA-256 :ref:`String<class_String>` representing the file at the give
 
 .. rst-class:: classref-method
 
-|bitfield|\[:ref:`UnixPermissionFlags<enum_FileAccess_UnixPermissionFlags>`\] **get_unix_permissions**\ (\ file\: :ref:`String<class_String>`\ ) |static|
+|bitfield|\[:ref:`UnixPermissionFlags<enum_FileAccess_UnixPermissionFlags>`\] **get_unix_permissions**\ (\ file\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_get_unix_permissions>`
 
 Returns file UNIX permissions.
 
@@ -866,7 +866,7 @@ Returns file UNIX permissions.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_var**\ (\ allow_objects\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Variant<class_Variant>` **get_var**\ (\ allow_objects\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_FileAccess_method_get_var>`
 
 Returns the next :ref:`Variant<class_Variant>` value from the file. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
@@ -882,7 +882,7 @@ Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.byte
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_open**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_open**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_is_open>`
 
 Returns ``true`` if the file is currently opened.
 
@@ -894,7 +894,7 @@ Returns ``true`` if the file is currently opened.
 
 .. rst-class:: classref-method
 
-:ref:`FileAccess<class_FileAccess>` **open**\ (\ path\: :ref:`String<class_String>`, flags\: :ref:`ModeFlags<enum_FileAccess_ModeFlags>`\ ) |static|
+:ref:`FileAccess<class_FileAccess>` **open**\ (\ path\: :ref:`String<class_String>`, flags\: :ref:`ModeFlags<enum_FileAccess_ModeFlags>`\ ) |static| :ref:`🔗<class_FileAccess_method_open>`
 
 Creates a new **FileAccess** object and opens the file for writing or reading, depending on the flags.
 
@@ -908,7 +908,7 @@ Returns ``null`` if opening the file failed. You can use :ref:`get_open_error<cl
 
 .. rst-class:: classref-method
 
-:ref:`FileAccess<class_FileAccess>` **open_compressed**\ (\ path\: :ref:`String<class_String>`, mode_flags\: :ref:`ModeFlags<enum_FileAccess_ModeFlags>`, compression_mode\: :ref:`CompressionMode<enum_FileAccess_CompressionMode>` = 0\ ) |static|
+:ref:`FileAccess<class_FileAccess>` **open_compressed**\ (\ path\: :ref:`String<class_String>`, mode_flags\: :ref:`ModeFlags<enum_FileAccess_ModeFlags>`, compression_mode\: :ref:`CompressionMode<enum_FileAccess_CompressionMode>` = 0\ ) |static| :ref:`🔗<class_FileAccess_method_open_compressed>`
 
 Creates a new **FileAccess** object and opens a compressed file for reading or writing.
 
@@ -924,7 +924,7 @@ Returns ``null`` if opening the file failed. You can use :ref:`get_open_error<cl
 
 .. rst-class:: classref-method
 
-:ref:`FileAccess<class_FileAccess>` **open_encrypted**\ (\ path\: :ref:`String<class_String>`, mode_flags\: :ref:`ModeFlags<enum_FileAccess_ModeFlags>`, key\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static|
+:ref:`FileAccess<class_FileAccess>` **open_encrypted**\ (\ path\: :ref:`String<class_String>`, mode_flags\: :ref:`ModeFlags<enum_FileAccess_ModeFlags>`, key\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| :ref:`🔗<class_FileAccess_method_open_encrypted>`
 
 Creates a new **FileAccess** object and opens an encrypted file in write or read mode. You need to pass a binary key to encrypt/decrypt it.
 
@@ -940,7 +940,7 @@ Returns ``null`` if opening the file failed. You can use :ref:`get_open_error<cl
 
 .. rst-class:: classref-method
 
-:ref:`FileAccess<class_FileAccess>` **open_encrypted_with_pass**\ (\ path\: :ref:`String<class_String>`, mode_flags\: :ref:`ModeFlags<enum_FileAccess_ModeFlags>`, pass\: :ref:`String<class_String>`\ ) |static|
+:ref:`FileAccess<class_FileAccess>` **open_encrypted_with_pass**\ (\ path\: :ref:`String<class_String>`, mode_flags\: :ref:`ModeFlags<enum_FileAccess_ModeFlags>`, pass\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_FileAccess_method_open_encrypted_with_pass>`
 
 Creates a new **FileAccess** object and opens an encrypted file in write or read mode. You need to pass a password to encrypt/decrypt it.
 
@@ -954,7 +954,7 @@ Returns ``null`` if opening the file failed. You can use :ref:`get_open_error<cl
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **resize**\ (\ length\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **resize**\ (\ length\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_resize>`
 
 Resizes the file to a specified length. The file must be open in a mode that permits writing. If the file is extended, NUL characters are appended. If the file is truncated, all data from the end file to the original length of the file is lost.
 
@@ -966,7 +966,7 @@ Resizes the file to a specified length. The file must be open in a mode that per
 
 .. rst-class:: classref-method
 
-|void| **seek**\ (\ position\: :ref:`int<class_int>`\ )
+|void| **seek**\ (\ position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_seek>`
 
 Changes the file reading/writing cursor to the specified position (in bytes from the beginning of the file).
 
@@ -978,7 +978,7 @@ Changes the file reading/writing cursor to the specified position (in bytes from
 
 .. rst-class:: classref-method
 
-|void| **seek_end**\ (\ position\: :ref:`int<class_int>` = 0\ )
+|void| **seek_end**\ (\ position\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_FileAccess_method_seek_end>`
 
 Changes the file reading/writing cursor to the specified position (in bytes from the end of the file).
 
@@ -992,7 +992,7 @@ Changes the file reading/writing cursor to the specified position (in bytes from
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **set_hidden_attribute**\ (\ file\: :ref:`String<class_String>`, hidden\: :ref:`bool<class_bool>`\ ) |static|
+:ref:`Error<enum_@GlobalScope_Error>` **set_hidden_attribute**\ (\ file\: :ref:`String<class_String>`, hidden\: :ref:`bool<class_bool>`\ ) |static| :ref:`🔗<class_FileAccess_method_set_hidden_attribute>`
 
 Sets file **hidden** attribute.
 
@@ -1006,7 +1006,7 @@ Sets file **hidden** attribute.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **set_read_only_attribute**\ (\ file\: :ref:`String<class_String>`, ro\: :ref:`bool<class_bool>`\ ) |static|
+:ref:`Error<enum_@GlobalScope_Error>` **set_read_only_attribute**\ (\ file\: :ref:`String<class_String>`, ro\: :ref:`bool<class_bool>`\ ) |static| :ref:`🔗<class_FileAccess_method_set_read_only_attribute>`
 
 Sets file **read only** attribute.
 
@@ -1020,7 +1020,7 @@ Sets file **read only** attribute.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **set_unix_permissions**\ (\ file\: :ref:`String<class_String>`, permissions\: |bitfield|\[:ref:`UnixPermissionFlags<enum_FileAccess_UnixPermissionFlags>`\]\ ) |static|
+:ref:`Error<enum_@GlobalScope_Error>` **set_unix_permissions**\ (\ file\: :ref:`String<class_String>`, permissions\: |bitfield|\[:ref:`UnixPermissionFlags<enum_FileAccess_UnixPermissionFlags>`\]\ ) |static| :ref:`🔗<class_FileAccess_method_set_unix_permissions>`
 
 Sets file UNIX permissions.
 
@@ -1034,7 +1034,7 @@ Sets file UNIX permissions.
 
 .. rst-class:: classref-method
 
-|void| **store_8**\ (\ value\: :ref:`int<class_int>`\ )
+|void| **store_8**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_8>`
 
 Stores an integer as 8 bits in the file.
 
@@ -1050,7 +1050,7 @@ To store a signed integer, use :ref:`store_64<class_FileAccess_method_store_64>`
 
 .. rst-class:: classref-method
 
-|void| **store_16**\ (\ value\: :ref:`int<class_int>`\ )
+|void| **store_16**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_16>`
 
 Stores an integer as 16 bits in the file.
 
@@ -1103,7 +1103,7 @@ To store a signed integer, use :ref:`store_64<class_FileAccess_method_store_64>`
 
 .. rst-class:: classref-method
 
-|void| **store_32**\ (\ value\: :ref:`int<class_int>`\ )
+|void| **store_32**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_32>`
 
 Stores an integer as 32 bits in the file.
 
@@ -1119,7 +1119,7 @@ To store a signed integer, use :ref:`store_64<class_FileAccess_method_store_64>`
 
 .. rst-class:: classref-method
 
-|void| **store_64**\ (\ value\: :ref:`int<class_int>`\ )
+|void| **store_64**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_64>`
 
 Stores an integer as 64 bits in the file.
 
@@ -1133,7 +1133,7 @@ Stores an integer as 64 bits in the file.
 
 .. rst-class:: classref-method
 
-|void| **store_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+|void| **store_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_FileAccess_method_store_buffer>`
 
 Stores the given array of bytes in the file.
 
@@ -1145,7 +1145,7 @@ Stores the given array of bytes in the file.
 
 .. rst-class:: classref-method
 
-|void| **store_csv_line**\ (\ values\: :ref:`PackedStringArray<class_PackedStringArray>`, delim\: :ref:`String<class_String>` = ","\ )
+|void| **store_csv_line**\ (\ values\: :ref:`PackedStringArray<class_PackedStringArray>`, delim\: :ref:`String<class_String>` = ","\ ) :ref:`🔗<class_FileAccess_method_store_csv_line>`
 
 Store the given :ref:`PackedStringArray<class_PackedStringArray>` in the file as a line formatted in the CSV (Comma-Separated Values) format. You can pass a different delimiter ``delim`` to use other than the default ``","`` (comma). This delimiter must be one-character long.
 
@@ -1159,7 +1159,7 @@ Text will be encoded as UTF-8.
 
 .. rst-class:: classref-method
 
-|void| **store_double**\ (\ value\: :ref:`float<class_float>`\ )
+|void| **store_double**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_double>`
 
 Stores a floating-point number as 64 bits in the file.
 
@@ -1171,7 +1171,7 @@ Stores a floating-point number as 64 bits in the file.
 
 .. rst-class:: classref-method
 
-|void| **store_float**\ (\ value\: :ref:`float<class_float>`\ )
+|void| **store_float**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_float>`
 
 Stores a floating-point number as 32 bits in the file.
 
@@ -1183,7 +1183,7 @@ Stores a floating-point number as 32 bits in the file.
 
 .. rst-class:: classref-method
 
-|void| **store_line**\ (\ line\: :ref:`String<class_String>`\ )
+|void| **store_line**\ (\ line\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_line>`
 
 Appends ``line`` to the file followed by a line return character (``\n``), encoding the text as UTF-8.
 
@@ -1195,7 +1195,7 @@ Appends ``line`` to the file followed by a line return character (``\n``), encod
 
 .. rst-class:: classref-method
 
-|void| **store_pascal_string**\ (\ string\: :ref:`String<class_String>`\ )
+|void| **store_pascal_string**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_pascal_string>`
 
 Stores the given :ref:`String<class_String>` as a line in the file in Pascal format (i.e. also store the length of the string).
 
@@ -1209,7 +1209,7 @@ Text will be encoded as UTF-8.
 
 .. rst-class:: classref-method
 
-|void| **store_real**\ (\ value\: :ref:`float<class_float>`\ )
+|void| **store_real**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_real>`
 
 Stores a floating-point number in the file.
 
@@ -1221,7 +1221,7 @@ Stores a floating-point number in the file.
 
 .. rst-class:: classref-method
 
-|void| **store_string**\ (\ string\: :ref:`String<class_String>`\ )
+|void| **store_string**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_string>`
 
 Appends ``string`` to the file without a line return, encoding the text as UTF-8.
 
@@ -1235,7 +1235,7 @@ Appends ``string`` to the file without a line return, encoding the text as UTF-8
 
 .. rst-class:: classref-method
 
-|void| **store_var**\ (\ value\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ )
+|void| **store_var**\ (\ value\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_FileAccess_method_store_var>`
 
 Stores any Variant value in the file. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
 

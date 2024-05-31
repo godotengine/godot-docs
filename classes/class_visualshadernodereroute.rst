@@ -46,7 +46,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PortType<enum_VisualShaderNode_PortType>` **get_port_type**\ (\ ) |const|
+:ref:`PortType<enum_VisualShaderNode_PortType>` **get_port_type**\ (\ ) |const| :ref:`🔗<class_VisualShaderNodeReroute_method_get_port_type>`
 
 Returns the port type of the reroute node.
 

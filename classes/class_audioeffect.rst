@@ -59,7 +59,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`AudioEffectInstance<class_AudioEffectInstance>` **_instantiate**\ (\ ) |virtual|
+:ref:`AudioEffectInstance<class_AudioEffectInstance>` **_instantiate**\ (\ ) |virtual| :ref:`🔗<class_AudioEffect_private_method__instantiate>`
 
 Override this method to customize the :ref:`AudioEffectInstance<class_AudioEffectInstance>` created when this effect is applied on a bus in the editor's Audio panel, or through :ref:`AudioServer.add_bus_effect<class_AudioServer_method_add_bus_effect>`.
 

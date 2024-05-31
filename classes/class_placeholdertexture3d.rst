@@ -52,7 +52,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector3i<class_Vector3i>` **size** = ``Vector3i(1, 1, 1)``
+:ref:`Vector3i<class_Vector3i>` **size** = ``Vector3i(1, 1, 1)`` :ref:`🔗<class_PlaceholderTexture3D_property_size>`
 
 .. rst-class:: classref-property-setget
 

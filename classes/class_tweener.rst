@@ -36,7 +36,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**finished**\ (\ )
+**finished**\ (\ ) :ref:`🔗<class_Tweener_signal_finished>`
 
 Emitted when the **Tweener** has just finished its job.
 

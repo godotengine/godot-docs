@@ -99,7 +99,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **BakeQuality**:
+enum **BakeQuality**: :ref:`🔗<enum_LightmapGI_BakeQuality>`
 
 .. _class_LightmapGI_constant_BAKE_QUALITY_LOW:
 
@@ -141,7 +141,7 @@ Highest bake quality (slowest bake times). The quality of this preset can be adj
 
 .. rst-class:: classref-enumeration
 
-enum **GenerateProbes**:
+enum **GenerateProbes**: :ref:`🔗<enum_LightmapGI_GenerateProbes>`
 
 .. _class_LightmapGI_constant_GENERATE_PROBES_DISABLED:
 
@@ -191,7 +191,7 @@ Highest level of subdivision (slowest bake times, largest file sizes).
 
 .. rst-class:: classref-enumeration
 
-enum **BakeError**:
+enum **BakeError**: :ref:`🔗<enum_LightmapGI_BakeError>`
 
 .. _class_LightmapGI_constant_BAKE_ERROR_OK:
 
@@ -281,7 +281,7 @@ Lightmap baking failed as the maximum texture size is too small to fit some of t
 
 .. rst-class:: classref-enumeration
 
-enum **EnvironmentMode**:
+enum **EnvironmentMode**: :ref:`🔗<enum_LightmapGI_EnvironmentMode>`
 
 .. _class_LightmapGI_constant_ENVIRONMENT_MODE_DISABLED:
 
@@ -330,7 +330,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bias** = ``0.0005``
+:ref:`float<class_float>` **bias** = ``0.0005`` :ref:`🔗<class_LightmapGI_property_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -347,7 +347,7 @@ The bias to use when computing shadows. Increasing :ref:`bias<class_LightmapGI_p
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bounce_indirect_energy** = ``1.0``
+:ref:`float<class_float>` **bounce_indirect_energy** = ``1.0`` :ref:`🔗<class_LightmapGI_property_bounce_indirect_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -366,7 +366,7 @@ The energy multiplier for each bounce. Higher values will make indirect lighting
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bounces** = ``3``
+:ref:`int<class_int>` **bounces** = ``3`` :ref:`🔗<class_LightmapGI_property_bounces>`
 
 .. rst-class:: classref-property-setget
 
@@ -383,7 +383,7 @@ Number of light bounces that are taken into account during baking. Higher values
 
 .. rst-class:: classref-property
 
-:ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes**
+:ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes** :ref:`🔗<class_LightmapGI_property_camera_attributes>`
 
 .. rst-class:: classref-property-setget
 
@@ -400,7 +400,7 @@ The :ref:`CameraAttributes<class_CameraAttributes>` resource that specifies expo
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **denoiser_range** = ``10``
+:ref:`int<class_int>` **denoiser_range** = ``10`` :ref:`🔗<class_LightmapGI_property_denoiser_range>`
 
 .. rst-class:: classref-property-setget
 
@@ -417,7 +417,7 @@ The distance in pixels from which the denoiser samples. Lower values preserve mo
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **denoiser_strength** = ``0.1``
+:ref:`float<class_float>` **denoiser_strength** = ``0.1`` :ref:`🔗<class_LightmapGI_property_denoiser_strength>`
 
 .. rst-class:: classref-property-setget
 
@@ -434,7 +434,7 @@ The strength of denoising step applied to the generated lightmaps. Only effectiv
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **directional** = ``false``
+:ref:`bool<class_bool>` **directional** = ``false`` :ref:`🔗<class_LightmapGI_property_directional>`
 
 .. rst-class:: classref-property-setget
 
@@ -453,7 +453,7 @@ If ``true``, bakes lightmaps to contain directional information as spherical har
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **environment_custom_color**
+:ref:`Color<class_Color>` **environment_custom_color** :ref:`🔗<class_LightmapGI_property_environment_custom_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -470,7 +470,7 @@ The color to use for environment lighting. Only effective if :ref:`environment_m
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **environment_custom_energy**
+:ref:`float<class_float>` **environment_custom_energy** :ref:`🔗<class_LightmapGI_property_environment_custom_energy>`
 
 .. rst-class:: classref-property-setget
 
@@ -487,7 +487,7 @@ The color multiplier to use for environment lighting. Only effective if :ref:`en
 
 .. rst-class:: classref-property
 
-:ref:`Sky<class_Sky>` **environment_custom_sky**
+:ref:`Sky<class_Sky>` **environment_custom_sky** :ref:`🔗<class_LightmapGI_property_environment_custom_sky>`
 
 .. rst-class:: classref-property-setget
 
@@ -504,7 +504,7 @@ The sky to use as a source of environment lighting. Only effective if :ref:`envi
 
 .. rst-class:: classref-property
 
-:ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>` **environment_mode** = ``1``
+:ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>` **environment_mode** = ``1`` :ref:`🔗<class_LightmapGI_property_environment_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -521,7 +521,7 @@ The environment mode to use when baking lightmaps.
 
 .. rst-class:: classref-property
 
-:ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>` **generate_probes_subdiv** = ``2``
+:ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>` **generate_probes_subdiv** = ``2`` :ref:`🔗<class_LightmapGI_property_generate_probes_subdiv>`
 
 .. rst-class:: classref-property-setget
 
@@ -542,7 +542,7 @@ The level of subdivision to use when automatically generating :ref:`LightmapProb
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interior** = ``false``
+:ref:`bool<class_bool>` **interior** = ``false`` :ref:`🔗<class_LightmapGI_property_interior>`
 
 .. rst-class:: classref-property-setget
 
@@ -559,7 +559,7 @@ If ``true``, ignore environment lighting when baking lightmaps.
 
 .. rst-class:: classref-property
 
-:ref:`LightmapGIData<class_LightmapGIData>` **light_data**
+:ref:`LightmapGIData<class_LightmapGIData>` **light_data** :ref:`🔗<class_LightmapGI_property_light_data>`
 
 .. rst-class:: classref-property-setget
 
@@ -576,7 +576,7 @@ The :ref:`LightmapGIData<class_LightmapGIData>` associated to this **LightmapGI*
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_texture_size** = ``16384``
+:ref:`int<class_int>` **max_texture_size** = ``16384`` :ref:`🔗<class_LightmapGI_property_max_texture_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -593,7 +593,7 @@ The maximum texture size for the generated texture atlas. Higher values will res
 
 .. rst-class:: classref-property
 
-:ref:`BakeQuality<enum_LightmapGI_BakeQuality>` **quality** = ``1``
+:ref:`BakeQuality<enum_LightmapGI_BakeQuality>` **quality** = ``1`` :ref:`🔗<class_LightmapGI_property_quality>`
 
 .. rst-class:: classref-property-setget
 
@@ -612,7 +612,7 @@ To further speed up bake times, decrease :ref:`bounces<class_LightmapGI_property
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **texel_scale** = ``1.0``
+:ref:`float<class_float>` **texel_scale** = ``1.0`` :ref:`🔗<class_LightmapGI_property_texel_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -629,7 +629,7 @@ Scales the lightmap texel density of all meshes for the current bake. This is a 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_denoiser** = ``true``
+:ref:`bool<class_bool>` **use_denoiser** = ``true`` :ref:`🔗<class_LightmapGI_property_use_denoiser>`
 
 .. rst-class:: classref-property-setget
 
@@ -646,7 +646,7 @@ If ``true``, uses a GPU-based denoising algorithm on the generated lightmap. Thi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_texture_for_bounces** = ``true``
+:ref:`bool<class_bool>` **use_texture_for_bounces** = ``true`` :ref:`🔗<class_LightmapGI_property_use_texture_for_bounces>`
 
 .. rst-class:: classref-property-setget
 

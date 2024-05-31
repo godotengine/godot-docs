@@ -76,7 +76,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **display_to_lens** = ``4.0``
+:ref:`float<class_float>` **display_to_lens** = ``4.0`` :ref:`🔗<class_MobileVRInterface_property_display_to_lens>`
 
 .. rst-class:: classref-property-setget
 
@@ -93,7 +93,7 @@ The distance between the display and the lenses inside of the device in centimet
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **display_width** = ``14.5``
+:ref:`float<class_float>` **display_width** = ``14.5`` :ref:`🔗<class_MobileVRInterface_property_display_width>`
 
 .. rst-class:: classref-property-setget
 
@@ -110,7 +110,7 @@ The width of the display in centimeters.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **eye_height** = ``1.85``
+:ref:`float<class_float>` **eye_height** = ``1.85`` :ref:`🔗<class_MobileVRInterface_property_eye_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -127,7 +127,7 @@ The height at which the camera is placed in relation to the ground (i.e. :ref:`X
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **iod** = ``6.0``
+:ref:`float<class_float>` **iod** = ``6.0`` :ref:`🔗<class_MobileVRInterface_property_iod>`
 
 .. rst-class:: classref-property-setget
 
@@ -144,7 +144,7 @@ The interocular distance, also known as the interpupillary distance. The distanc
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **k1** = ``0.215``
+:ref:`float<class_float>` **k1** = ``0.215`` :ref:`🔗<class_MobileVRInterface_property_k1>`
 
 .. rst-class:: classref-property-setget
 
@@ -161,7 +161,7 @@ The k1 lens factor is one of the two constants that define the strength of the l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **k2** = ``0.215``
+:ref:`float<class_float>` **k2** = ``0.215`` :ref:`🔗<class_MobileVRInterface_property_k2>`
 
 .. rst-class:: classref-property-setget
 
@@ -178,7 +178,7 @@ The k2 lens factor, see k1.
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **offset_rect** = ``Rect2(0, 0, 1, 1)``
+:ref:`Rect2<class_Rect2>` **offset_rect** = ``Rect2(0, 0, 1, 1)`` :ref:`🔗<class_MobileVRInterface_property_offset_rect>`
 
 .. rst-class:: classref-property-setget
 
@@ -195,7 +195,7 @@ Set the offset rect relative to the area being rendered. A length of 1 represent
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **oversample** = ``1.5``
+:ref:`float<class_float>` **oversample** = ``1.5`` :ref:`🔗<class_MobileVRInterface_property_oversample>`
 
 .. rst-class:: classref-property-setget
 
@@ -212,7 +212,7 @@ The oversample setting. Because of the lens distortion we have to render our buf
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **vrs_min_radius** = ``20.0``
+:ref:`float<class_float>` **vrs_min_radius** = ``20.0`` :ref:`🔗<class_MobileVRInterface_property_vrs_min_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -231,7 +231,7 @@ The minimum radius around the focal point where full quality is guaranteed if VR
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **vrs_strength** = ``1.0``
+:ref:`float<class_float>` **vrs_strength** = ``1.0`` :ref:`🔗<class_MobileVRInterface_property_vrs_strength>`
 
 .. rst-class:: classref-property-setget
 

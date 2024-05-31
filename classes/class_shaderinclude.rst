@@ -53,7 +53,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **code** = ``""``
+:ref:`String<class_String>` **code** = ``""`` :ref:`🔗<class_ShaderInclude_property_code>`
 
 .. rst-class:: classref-property-setget
 

@@ -122,7 +122,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_transition_to_self** = ``false``
+:ref:`bool<class_bool>` **allow_transition_to_self** = ``false`` :ref:`🔗<class_AnimationNodeTransition_property_allow_transition_to_self>`
 
 .. rst-class:: classref-property-setget
 
@@ -139,7 +139,7 @@ If ``true``, allows transition to the self state. When the reset option is enabl
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **input_count** = ``0``
+:ref:`int<class_int>` **input_count** = ``0`` :ref:`🔗<class_AnimationNodeTransition_property_input_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -156,7 +156,7 @@ The number of enabled input ports for this animation node.
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **xfade_curve**
+:ref:`Curve<class_Curve>` **xfade_curve** :ref:`🔗<class_AnimationNodeTransition_property_xfade_curve>`
 
 .. rst-class:: classref-property-setget
 
@@ -173,7 +173,7 @@ Determines how cross-fading between animations is eased. If empty, the transitio
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **xfade_time** = ``0.0``
+:ref:`float<class_float>` **xfade_time** = ``0.0`` :ref:`🔗<class_AnimationNodeTransition_property_xfade_time>`
 
 .. rst-class:: classref-property-setget
 
@@ -197,7 +197,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_input_loop_broken_at_end**\ (\ input\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_input_loop_broken_at_end**\ (\ input\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AnimationNodeTransition_method_is_input_loop_broken_at_end>`
 
 Returns whether the animation breaks the loop at the end of the loop cycle for transition.
 
@@ -209,7 +209,7 @@ Returns whether the animation breaks the loop at the end of the loop cycle for t
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_input_reset**\ (\ input\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_input_reset**\ (\ input\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AnimationNodeTransition_method_is_input_reset>`
 
 Returns whether the animation restarts when the animation transitions from the other animation.
 
@@ -221,7 +221,7 @@ Returns whether the animation restarts when the animation transitions from the o
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_input_set_as_auto_advance**\ (\ input\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_input_set_as_auto_advance**\ (\ input\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AnimationNodeTransition_method_is_input_set_as_auto_advance>`
 
 Returns ``true`` if auto-advance is enabled for the given ``input`` index.
 
@@ -233,7 +233,7 @@ Returns ``true`` if auto-advance is enabled for the given ``input`` index.
 
 .. rst-class:: classref-method
 
-|void| **set_input_as_auto_advance**\ (\ input\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_input_as_auto_advance**\ (\ input\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_AnimationNodeTransition_method_set_input_as_auto_advance>`
 
 Enables or disables auto-advance for the given ``input`` index. If enabled, state changes to the next input after playing the animation once. If enabled for the last input state, it loops to the first.
 
@@ -245,7 +245,7 @@ Enables or disables auto-advance for the given ``input`` index. If enabled, stat
 
 .. rst-class:: classref-method
 
-|void| **set_input_break_loop_at_end**\ (\ input\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_input_break_loop_at_end**\ (\ input\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_AnimationNodeTransition_method_set_input_break_loop_at_end>`
 
 If ``true``, breaks the loop at the end of the loop cycle for transition, even if the animation is looping.
 
@@ -257,7 +257,7 @@ If ``true``, breaks the loop at the end of the loop cycle for transition, even i
 
 .. rst-class:: classref-method
 
-|void| **set_input_reset**\ (\ input\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_input_reset**\ (\ input\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_AnimationNodeTransition_method_set_input_reset>`
 
 If ``true``, the destination animation is restarted when the animation transitions.
 

@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **a** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **a** = ``Vector2(0, 0)`` :ref:`🔗<class_SegmentShape2D_property_a>`
 
 .. rst-class:: classref-property-setget
 
@@ -65,7 +65,7 @@ The segment's first point position.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **b** = ``Vector2(0, 10)``
+:ref:`Vector2<class_Vector2>` **b** = ``Vector2(0, 10)`` :ref:`🔗<class_SegmentShape2D_property_b>`
 
 .. rst-class:: classref-property-setget
 

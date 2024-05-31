@@ -50,7 +50,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **varying_name** = ``"[None]"``
+:ref:`String<class_String>` **varying_name** = ``"[None]"`` :ref:`🔗<class_VisualShaderNodeVarying_property_varying_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -67,7 +67,7 @@ Name of the variable. Must be unique.
 
 .. rst-class:: classref-property
 
-:ref:`VaryingType<enum_VisualShader_VaryingType>` **varying_type** = ``0``
+:ref:`VaryingType<enum_VisualShader_VaryingType>` **varying_type** = ``0`` :ref:`🔗<class_VisualShaderNodeVarying_property_varying_type>`
 
 .. rst-class:: classref-property-setget
 

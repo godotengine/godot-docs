@@ -112,7 +112,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**on_request_permissions_result**\ (\ permission\: :ref:`String<class_String>`, granted\: :ref:`bool<class_bool>`\ )
+**on_request_permissions_result**\ (\ permission\: :ref:`String<class_String>`, granted\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_MainLoop_signal_on_request_permissions_result>`
 
 Emitted when a user responds to a permission request.
 
@@ -129,7 +129,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_OS_MEMORY_WARNING** = ``2009``
+**NOTIFICATION_OS_MEMORY_WARNING** = ``2009`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_OS_MEMORY_WARNING>`
 
 Notification received from the OS when the application is exceeding its allocated memory.
 
@@ -139,7 +139,7 @@ Specific to the iOS platform.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_TRANSLATION_CHANGED** = ``2010``
+**NOTIFICATION_TRANSLATION_CHANGED** = ``2010`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_TRANSLATION_CHANGED>`
 
 Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like :ref:`Object.tr<class_Object_method_tr>`.
 
@@ -147,7 +147,7 @@ Notification received when translations may have changed. Can be triggered by th
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_WM_ABOUT** = ``2011``
+**NOTIFICATION_WM_ABOUT** = ``2011`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_WM_ABOUT>`
 
 Notification received from the OS when a request for "About" information is sent.
 
@@ -157,7 +157,7 @@ Specific to the macOS platform.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_CRASH** = ``2012``
+**NOTIFICATION_CRASH** = ``2012`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_CRASH>`
 
 Notification received from Godot's crash handler when the engine is about to crash.
 
@@ -167,7 +167,7 @@ Implemented on desktop platforms if the crash handler is enabled.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_OS_IME_UPDATE** = ``2013``
+**NOTIFICATION_OS_IME_UPDATE** = ``2013`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE>`
 
 Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).
 
@@ -177,7 +177,7 @@ Specific to the macOS platform.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_APPLICATION_RESUMED** = ``2014``
+**NOTIFICATION_APPLICATION_RESUMED** = ``2014`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_APPLICATION_RESUMED>`
 
 Notification received from the OS when the application is resumed.
 
@@ -187,7 +187,7 @@ Specific to the Android and iOS platforms.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_APPLICATION_PAUSED** = ``2015``
+**NOTIFICATION_APPLICATION_PAUSED** = ``2015`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_APPLICATION_PAUSED>`
 
 Notification received from the OS when the application is paused.
 
@@ -199,7 +199,7 @@ Specific to the Android and iOS platforms.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_APPLICATION_FOCUS_IN** = ``2016``
+**NOTIFICATION_APPLICATION_FOCUS_IN** = ``2016`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_APPLICATION_FOCUS_IN>`
 
 Notification received from the OS when the application is focused, i.e. when changing the focus from the OS desktop or a thirdparty application to any open window of the Godot instance.
 
@@ -209,7 +209,7 @@ Implemented on desktop and mobile platforms.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_APPLICATION_FOCUS_OUT** = ``2017``
+**NOTIFICATION_APPLICATION_FOCUS_OUT** = ``2017`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_APPLICATION_FOCUS_OUT>`
 
 Notification received from the OS when the application is defocused, i.e. when changing the focus from any open window of the Godot instance to the OS desktop or a thirdparty application.
 
@@ -219,7 +219,7 @@ Implemented on desktop and mobile platforms.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_TEXT_SERVER_CHANGED** = ``2018``
+**NOTIFICATION_TEXT_SERVER_CHANGED** = ``2018`` :ref:`🔗<class_MainLoop_constant_NOTIFICATION_TEXT_SERVER_CHANGED>`
 
 Notification received when text server is changed.
 
@@ -236,7 +236,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_finalize**\ (\ ) |virtual|
+|void| **_finalize**\ (\ ) |virtual| :ref:`🔗<class_MainLoop_private_method__finalize>`
 
 Called before the program exits.
 
@@ -248,7 +248,7 @@ Called before the program exits.
 
 .. rst-class:: classref-method
 
-|void| **_initialize**\ (\ ) |virtual|
+|void| **_initialize**\ (\ ) |virtual| :ref:`🔗<class_MainLoop_private_method__initialize>`
 
 Called once during initialization.
 
@@ -260,7 +260,7 @@ Called once during initialization.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_physics_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual|
+:ref:`bool<class_bool>` **_physics_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_MainLoop_private_method__physics_process>`
 
 Called each physics frame with the time since the last physics frame as argument (``delta``, in seconds). Equivalent to :ref:`Node._physics_process<class_Node_private_method__physics_process>`.
 
@@ -274,7 +274,7 @@ If implemented, the method must return a boolean value. ``true`` ends the main l
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual|
+:ref:`bool<class_bool>` **_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_MainLoop_private_method__process>`
 
 Called each process (idle) frame with the time since the last process frame as argument (in seconds). Equivalent to :ref:`Node._process<class_Node_private_method__process>`.
 

@@ -128,7 +128,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`Signal<class_Signal>` **Signal**\ (\ )
+:ref:`Signal<class_Signal>` **Signal**\ (\ ) :ref:`🔗<class_Signal_constructor_Signal>`
 
 Constructs an empty **Signal** with no object nor signal name bound.
 
@@ -165,7 +165,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **connect**\ (\ callable\: :ref:`Callable<class_Callable>`, flags\: :ref:`int<class_int>` = 0\ )
+:ref:`int<class_int>` **connect**\ (\ callable\: :ref:`Callable<class_Callable>`, flags\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_Signal_method_connect>`
 
 Connects this signal to the specified ``callable``. Optional ``flags`` can be also added to configure the connection's behavior (see :ref:`ConnectFlags<enum_Object_ConnectFlags>` constants). You can provide additional arguments to the connected ``callable`` by using :ref:`Callable.bind<class_Callable_method_bind>`.
 
@@ -187,7 +187,7 @@ A signal can only be connected once to the same :ref:`Callable<class_Callable>`.
 
 .. rst-class:: classref-method
 
-|void| **disconnect**\ (\ callable\: :ref:`Callable<class_Callable>`\ )
+|void| **disconnect**\ (\ callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_Signal_method_disconnect>`
 
 Disconnects this signal from the specified :ref:`Callable<class_Callable>`. If the connection does not exist, generates an error. Use :ref:`is_connected<class_Signal_method_is_connected>` to make sure that the connection exists.
 
@@ -199,7 +199,7 @@ Disconnects this signal from the specified :ref:`Callable<class_Callable>`. If t
 
 .. rst-class:: classref-method
 
-|void| **emit**\ (\ ...\ ) |vararg| |const|
+|void| **emit**\ (\ ...\ ) |vararg| |const| :ref:`🔗<class_Signal_method_emit>`
 
 Emits this signal. All :ref:`Callable<class_Callable>`\ s connected to this signal will be triggered. This method supports a variable number of arguments, so parameters can be passed as a comma separated list.
 
@@ -211,7 +211,7 @@ Emits this signal. All :ref:`Callable<class_Callable>`\ s connected to this sign
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_connections**\ (\ ) |const|
+:ref:`Array<class_Array>` **get_connections**\ (\ ) |const| :ref:`🔗<class_Signal_method_get_connections>`
 
 Returns an :ref:`Array<class_Array>` of connections for this signal. Each connection is represented as a :ref:`Dictionary<class_Dictionary>` that contains three entries:
 
@@ -229,7 +229,7 @@ Returns an :ref:`Array<class_Array>` of connections for this signal. Each connec
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_name**\ (\ ) |const|
+:ref:`StringName<class_StringName>` **get_name**\ (\ ) |const| :ref:`🔗<class_Signal_method_get_name>`
 
 Returns the name of this signal.
 
@@ -241,7 +241,7 @@ Returns the name of this signal.
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_object**\ (\ ) |const|
+:ref:`Object<class_Object>` **get_object**\ (\ ) |const| :ref:`🔗<class_Signal_method_get_object>`
 
 Returns the object emitting this signal.
 
@@ -253,7 +253,7 @@ Returns the object emitting this signal.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_object_id**\ (\ ) |const|
+:ref:`int<class_int>` **get_object_id**\ (\ ) |const| :ref:`🔗<class_Signal_method_get_object_id>`
 
 Returns the ID of the object emitting this signal (see :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`).
 
@@ -265,7 +265,7 @@ Returns the ID of the object emitting this signal (see :ref:`Object.get_instance
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_connected**\ (\ callable\: :ref:`Callable<class_Callable>`\ ) |const|
+:ref:`bool<class_bool>` **is_connected**\ (\ callable\: :ref:`Callable<class_Callable>`\ ) |const| :ref:`🔗<class_Signal_method_is_connected>`
 
 Returns ``true`` if the specified :ref:`Callable<class_Callable>` is connected to this signal.
 
@@ -277,7 +277,7 @@ Returns ``true`` if the specified :ref:`Callable<class_Callable>` is connected t
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_null**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_null**\ (\ ) |const| :ref:`🔗<class_Signal_method_is_null>`
 
 Returns ``true`` if the signal's name does not exist in its object, or the object is not valid.
 
@@ -294,7 +294,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Signal<class_Signal>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Signal<class_Signal>`\ ) :ref:`🔗<class_Signal_operator_neq_Signal>`
 
 Returns ``true`` if the signals do not share the same object and name.
 
@@ -306,7 +306,7 @@ Returns ``true`` if the signals do not share the same object and name.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Signal<class_Signal>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Signal<class_Signal>`\ ) :ref:`🔗<class_Signal_operator_eq_Signal>`
 
 Returns ``true`` if both signals share the same object and name.
 

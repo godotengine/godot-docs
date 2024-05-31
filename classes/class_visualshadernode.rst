@@ -81,7 +81,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **PortType**:
+enum **PortType**: :ref:`🔗<enum_VisualShaderNode_PortType>`
 
 .. _class_VisualShaderNode_constant_PORT_TYPE_SCALAR:
 
@@ -176,7 +176,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **linked_parent_graph_frame** = ``-1``
+:ref:`int<class_int>` **linked_parent_graph_frame** = ``-1`` :ref:`🔗<class_VisualShaderNode_property_linked_parent_graph_frame>`
 
 .. rst-class:: classref-property-setget
 
@@ -193,7 +193,7 @@ Represents the index of the frame this node is linked to. If set to ``-1`` the n
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **output_port_for_preview** = ``-1``
+:ref:`int<class_int>` **output_port_for_preview** = ``-1`` :ref:`🔗<class_VisualShaderNode_property_output_port_for_preview>`
 
 .. rst-class:: classref-property-setget
 
@@ -215,7 +215,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear_default_input_values**\ (\ )
+|void| **clear_default_input_values**\ (\ ) :ref:`🔗<class_VisualShaderNode_method_clear_default_input_values>`
 
 Clears the default input ports value.
 
@@ -227,7 +227,7 @@ Clears the default input ports value.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_default_input_port**\ (\ type\: :ref:`PortType<enum_VisualShaderNode_PortType>`\ ) |const|
+:ref:`int<class_int>` **get_default_input_port**\ (\ type\: :ref:`PortType<enum_VisualShaderNode_PortType>`\ ) |const| :ref:`🔗<class_VisualShaderNode_method_get_default_input_port>`
 
 Returns the input port which should be connected by default when this node is created as a result of dragging a connection from an existing node to the empty space on the graph.
 
@@ -239,7 +239,7 @@ Returns the input port which should be connected by default when this node is cr
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_default_input_values**\ (\ ) |const|
+:ref:`Array<class_Array>` **get_default_input_values**\ (\ ) |const| :ref:`🔗<class_VisualShaderNode_method_get_default_input_values>`
 
 Returns an :ref:`Array<class_Array>` containing default values for all of the input ports of the node in the form ``[index0, value0, index1, value1, ...]``.
 
@@ -251,7 +251,7 @@ Returns an :ref:`Array<class_Array>` containing default values for all of the in
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_input_port_default_value**\ (\ port\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_input_port_default_value**\ (\ port\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_VisualShaderNode_method_get_input_port_default_value>`
 
 Returns the default value of the input ``port``.
 
@@ -263,7 +263,7 @@ Returns the default value of the input ``port``.
 
 .. rst-class:: classref-method
 
-|void| **remove_input_port_default_value**\ (\ port\: :ref:`int<class_int>`\ )
+|void| **remove_input_port_default_value**\ (\ port\: :ref:`int<class_int>`\ ) :ref:`🔗<class_VisualShaderNode_method_remove_input_port_default_value>`
 
 Removes the default value of the input ``port``.
 
@@ -275,7 +275,7 @@ Removes the default value of the input ``port``.
 
 .. rst-class:: classref-method
 
-|void| **set_default_input_values**\ (\ values\: :ref:`Array<class_Array>`\ )
+|void| **set_default_input_values**\ (\ values\: :ref:`Array<class_Array>`\ ) :ref:`🔗<class_VisualShaderNode_method_set_default_input_values>`
 
 Sets the default input ports values using an :ref:`Array<class_Array>` of the form ``[index0, value0, index1, value1, ...]``. For example: ``[0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0)]``.
 
@@ -287,7 +287,7 @@ Sets the default input ports values using an :ref:`Array<class_Array>` of the fo
 
 .. rst-class:: classref-method
 
-|void| **set_input_port_default_value**\ (\ port\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`, prev_value\: :ref:`Variant<class_Variant>` = null\ )
+|void| **set_input_port_default_value**\ (\ port\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`, prev_value\: :ref:`Variant<class_Variant>` = null\ ) :ref:`🔗<class_VisualShaderNode_method_set_input_port_default_value>`
 
 Sets the default ``value`` for the selected input ``port``.
 

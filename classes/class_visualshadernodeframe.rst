@@ -74,7 +74,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **attached_nodes** = ``PackedInt32Array()``
+:ref:`PackedInt32Array<class_PackedInt32Array>` **attached_nodes** = ``PackedInt32Array()`` :ref:`🔗<class_VisualShaderNodeFrame_property_attached_nodes>`
 
 .. rst-class:: classref-property-setget
 
@@ -93,7 +93,7 @@ The list of nodes attached to the frame.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **autoshrink** = ``true``
+:ref:`bool<class_bool>` **autoshrink** = ``true`` :ref:`🔗<class_VisualShaderNodeFrame_property_autoshrink>`
 
 .. rst-class:: classref-property-setget
 
@@ -110,7 +110,7 @@ If ``true``, the frame will automatically resize to enclose all attached nodes.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **tint_color** = ``Color(0.3, 0.3, 0.3, 0.75)``
+:ref:`Color<class_Color>` **tint_color** = ``Color(0.3, 0.3, 0.3, 0.75)`` :ref:`🔗<class_VisualShaderNodeFrame_property_tint_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -127,7 +127,7 @@ The color of the frame when :ref:`tint_color_enabled<class_VisualShaderNodeFrame
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **tint_color_enabled** = ``false``
+:ref:`bool<class_bool>` **tint_color_enabled** = ``false`` :ref:`🔗<class_VisualShaderNodeFrame_property_tint_color_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -144,7 +144,7 @@ If ``true``, the frame will be tinted with the color specified in :ref:`tint_col
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **title** = ``"Title"``
+:ref:`String<class_String>` **title** = ``"Title"`` :ref:`🔗<class_VisualShaderNodeFrame_property_title>`
 
 .. rst-class:: classref-property-setget
 
@@ -166,7 +166,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_attached_node**\ (\ node\: :ref:`int<class_int>`\ )
+|void| **add_attached_node**\ (\ node\: :ref:`int<class_int>`\ ) :ref:`🔗<class_VisualShaderNodeFrame_method_add_attached_node>`
 
 Adds a node to the list of nodes attached to the frame. Should not be called directly, use the :ref:`VisualShader.attach_node_to_frame<class_VisualShader_method_attach_node_to_frame>` method instead.
 
@@ -178,7 +178,7 @@ Adds a node to the list of nodes attached to the frame. Should not be called dir
 
 .. rst-class:: classref-method
 
-|void| **remove_attached_node**\ (\ node\: :ref:`int<class_int>`\ )
+|void| **remove_attached_node**\ (\ node\: :ref:`int<class_int>`\ ) :ref:`🔗<class_VisualShaderNodeFrame_method_remove_attached_node>`
 
 Removes a node from the list of nodes attached to the frame. Should not be called directly, use the :ref:`VisualShader.detach_node_from_frame<class_VisualShader_method_detach_node_from_frame>` method instead.
 

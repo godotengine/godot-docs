@@ -124,7 +124,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **alignment** = ``0``
+:ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **alignment** = ``0`` :ref:`🔗<class_SpinBox_property_alignment>`
 
 .. rst-class:: classref-property-setget
 
@@ -141,7 +141,7 @@ Changes the alignment of the underlying :ref:`LineEdit<class_LineEdit>`.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **custom_arrow_step** = ``0.0``
+:ref:`float<class_float>` **custom_arrow_step** = ``0.0`` :ref:`🔗<class_SpinBox_property_custom_arrow_step>`
 
 .. rst-class:: classref-property-setget
 
@@ -158,7 +158,7 @@ If not ``0``, :ref:`Range.value<class_Range_property_value>` will always be roun
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editable** = ``true``
+:ref:`bool<class_bool>` **editable** = ``true`` :ref:`🔗<class_SpinBox_property_editable>`
 
 .. rst-class:: classref-property-setget
 
@@ -175,7 +175,7 @@ If ``true``, the **SpinBox** will be editable. Otherwise, it will be read only.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **prefix** = ``""``
+:ref:`String<class_String>` **prefix** = ``""`` :ref:`🔗<class_SpinBox_property_prefix>`
 
 .. rst-class:: classref-property-setget
 
@@ -192,7 +192,7 @@ Adds the specified prefix string before the numerical value of the **SpinBox**.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **select_all_on_focus** = ``false``
+:ref:`bool<class_bool>` **select_all_on_focus** = ``false`` :ref:`🔗<class_SpinBox_property_select_all_on_focus>`
 
 .. rst-class:: classref-property-setget
 
@@ -209,7 +209,7 @@ If ``true``, the **SpinBox** will select the whole text when the :ref:`LineEdit<
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **suffix** = ``""``
+:ref:`String<class_String>` **suffix** = ``""`` :ref:`🔗<class_SpinBox_property_suffix>`
 
 .. rst-class:: classref-property-setget
 
@@ -226,7 +226,7 @@ Adds the specified suffix string after the numerical value of the **SpinBox**.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **update_on_text_changed** = ``false``
+:ref:`bool<class_bool>` **update_on_text_changed** = ``false`` :ref:`🔗<class_SpinBox_property_update_on_text_changed>`
 
 .. rst-class:: classref-property-setget
 
@@ -248,7 +248,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **apply**\ (\ )
+|void| **apply**\ (\ ) :ref:`🔗<class_SpinBox_method_apply>`
 
 Applies the current value of this **SpinBox**.
 
@@ -260,7 +260,7 @@ Applies the current value of this **SpinBox**.
 
 .. rst-class:: classref-method
 
-:ref:`LineEdit<class_LineEdit>` **get_line_edit**\ (\ )
+:ref:`LineEdit<class_LineEdit>` **get_line_edit**\ (\ ) :ref:`🔗<class_SpinBox_method_get_line_edit>`
 
 Returns the :ref:`LineEdit<class_LineEdit>` instance from this **SpinBox**. You can use it to access properties and methods of :ref:`LineEdit<class_LineEdit>`.
 
@@ -279,7 +279,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **updown**
+:ref:`Texture2D<class_Texture2D>` **updown** :ref:`🔗<class_SpinBox_theme_icon_updown>`
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` for up and down arrows of the **SpinBox**.
 

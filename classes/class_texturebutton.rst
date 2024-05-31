@@ -75,7 +75,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **StretchMode**:
+enum **StretchMode**: :ref:`🔗<enum_TextureButton_StretchMode>`
 
 .. _class_TextureButton_constant_STRETCH_SCALE:
 
@@ -146,7 +146,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_h** = ``false``
+:ref:`bool<class_bool>` **flip_h** = ``false`` :ref:`🔗<class_TextureButton_property_flip_h>`
 
 .. rst-class:: classref-property-setget
 
@@ -163,7 +163,7 @@ If ``true``, texture is flipped horizontally.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_v** = ``false``
+:ref:`bool<class_bool>` **flip_v** = ``false`` :ref:`🔗<class_TextureButton_property_flip_v>`
 
 .. rst-class:: classref-property-setget
 
@@ -180,7 +180,7 @@ If ``true``, texture is flipped vertically.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **ignore_texture_size** = ``false``
+:ref:`bool<class_bool>` **ignore_texture_size** = ``false`` :ref:`🔗<class_TextureButton_property_ignore_texture_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -197,7 +197,7 @@ If ``true``, the size of the texture won't be considered for minimum size calcul
 
 .. rst-class:: classref-property
 
-:ref:`StretchMode<enum_TextureButton_StretchMode>` **stretch_mode** = ``2``
+:ref:`StretchMode<enum_TextureButton_StretchMode>` **stretch_mode** = ``2`` :ref:`🔗<class_TextureButton_property_stretch_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -214,7 +214,7 @@ Controls the texture's behavior when you resize the node's bounding rectangle. S
 
 .. rst-class:: classref-property
 
-:ref:`BitMap<class_BitMap>` **texture_click_mask**
+:ref:`BitMap<class_BitMap>` **texture_click_mask** :ref:`🔗<class_TextureButton_property_texture_click_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -231,7 +231,7 @@ Pure black and white :ref:`BitMap<class_BitMap>` image to use for click detectio
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_disabled**
+:ref:`Texture2D<class_Texture2D>` **texture_disabled** :ref:`🔗<class_TextureButton_property_texture_disabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -248,7 +248,7 @@ Texture to display when the node is disabled. See :ref:`BaseButton.disabled<clas
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_focused**
+:ref:`Texture2D<class_Texture2D>` **texture_focused** :ref:`🔗<class_TextureButton_property_texture_focused>`
 
 .. rst-class:: classref-property-setget
 
@@ -265,7 +265,7 @@ Texture to display when the node has mouse or keyboard focus. :ref:`texture_focu
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_hover**
+:ref:`Texture2D<class_Texture2D>` **texture_hover** :ref:`🔗<class_TextureButton_property_texture_hover>`
 
 .. rst-class:: classref-property-setget
 
@@ -282,7 +282,7 @@ Texture to display when the mouse hovers the node.
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_normal**
+:ref:`Texture2D<class_Texture2D>` **texture_normal** :ref:`🔗<class_TextureButton_property_texture_normal>`
 
 .. rst-class:: classref-property-setget
 
@@ -299,7 +299,7 @@ Texture to display by default, when the node is **not** in the disabled, hover o
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_pressed**
+:ref:`Texture2D<class_Texture2D>` **texture_pressed** :ref:`🔗<class_TextureButton_property_texture_pressed>`
 
 .. rst-class:: classref-property-setget
 

@@ -221,7 +221,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**draw**\ (\ )
+**draw**\ (\ ) :ref:`🔗<class_CanvasItem_signal_draw>`
 
 Emitted when the **CanvasItem** must redraw, *after* the related :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification, and *before* :ref:`_draw<class_CanvasItem_private_method__draw>` is called.
 
@@ -235,7 +235,7 @@ Emitted when the **CanvasItem** must redraw, *after* the related :ref:`NOTIFICAT
 
 .. rst-class:: classref-signal
 
-**hidden**\ (\ )
+**hidden**\ (\ ) :ref:`🔗<class_CanvasItem_signal_hidden>`
 
 Emitted when becoming hidden.
 
@@ -247,7 +247,7 @@ Emitted when becoming hidden.
 
 .. rst-class:: classref-signal
 
-**item_rect_changed**\ (\ )
+**item_rect_changed**\ (\ ) :ref:`🔗<class_CanvasItem_signal_item_rect_changed>`
 
 Emitted when the item's :ref:`Rect2<class_Rect2>` boundaries (position or size) have changed, or when an action is taking place that may have impacted these boundaries (e.g. changing :ref:`Sprite2D.texture<class_Sprite2D_property_texture>`).
 
@@ -259,7 +259,7 @@ Emitted when the item's :ref:`Rect2<class_Rect2>` boundaries (position or size) 
 
 .. rst-class:: classref-signal
 
-**visibility_changed**\ (\ )
+**visibility_changed**\ (\ ) :ref:`🔗<class_CanvasItem_signal_visibility_changed>`
 
 Emitted when the visibility (hidden/visible) changes.
 
@@ -276,7 +276,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TextureFilter**:
+enum **TextureFilter**: :ref:`🔗<enum_CanvasItem_TextureFilter>`
 
 .. _class_CanvasItem_constant_TEXTURE_FILTER_PARENT_NODE:
 
@@ -358,7 +358,7 @@ Represents the size of the :ref:`TextureFilter<enum_CanvasItem_TextureFilter>` e
 
 .. rst-class:: classref-enumeration
 
-enum **TextureRepeat**:
+enum **TextureRepeat**: :ref:`🔗<enum_CanvasItem_TextureRepeat>`
 
 .. _class_CanvasItem_constant_TEXTURE_REPEAT_PARENT_NODE:
 
@@ -408,7 +408,7 @@ Represents the size of the :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` e
 
 .. rst-class:: classref-enumeration
 
-enum **ClipChildrenMode**:
+enum **ClipChildrenMode**: :ref:`🔗<enum_CanvasItem_ClipChildrenMode>`
 
 .. _class_CanvasItem_constant_CLIP_CHILDREN_DISABLED:
 
@@ -455,7 +455,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_TRANSFORM_CHANGED** = ``2000``
+**NOTIFICATION_TRANSFORM_CHANGED** = ``2000`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED>`
 
 The **CanvasItem**'s global transform has changed. This notification is only received if enabled by :ref:`set_notify_transform<class_CanvasItem_method_set_notify_transform>`.
 
@@ -463,7 +463,7 @@ The **CanvasItem**'s global transform has changed. This notification is only rec
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = ``35``
+**NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = ``35`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>`
 
 The **CanvasItem**'s local transform has changed. This notification is only received if enabled by :ref:`set_notify_local_transform<class_CanvasItem_method_set_notify_local_transform>`.
 
@@ -471,7 +471,7 @@ The **CanvasItem**'s local transform has changed. This notification is only rece
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_DRAW** = ``30``
+**NOTIFICATION_DRAW** = ``30`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_DRAW>`
 
 The **CanvasItem** is requested to draw (see :ref:`_draw<class_CanvasItem_private_method__draw>`).
 
@@ -479,7 +479,7 @@ The **CanvasItem** is requested to draw (see :ref:`_draw<class_CanvasItem_privat
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_VISIBILITY_CHANGED** = ``31``
+**NOTIFICATION_VISIBILITY_CHANGED** = ``31`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_VISIBILITY_CHANGED>`
 
 The **CanvasItem**'s visibility has changed.
 
@@ -487,7 +487,7 @@ The **CanvasItem**'s visibility has changed.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_ENTER_CANVAS** = ``32``
+**NOTIFICATION_ENTER_CANVAS** = ``32`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_ENTER_CANVAS>`
 
 The **CanvasItem** has entered the canvas.
 
@@ -495,7 +495,7 @@ The **CanvasItem** has entered the canvas.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_EXIT_CANVAS** = ``33``
+**NOTIFICATION_EXIT_CANVAS** = ``33`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_EXIT_CANVAS>`
 
 The **CanvasItem** has exited the canvas.
 
@@ -503,7 +503,7 @@ The **CanvasItem** has exited the canvas.
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_WORLD_2D_CHANGED** = ``36``
+**NOTIFICATION_WORLD_2D_CHANGED** = ``36`` :ref:`🔗<class_CanvasItem_constant_NOTIFICATION_WORLD_2D_CHANGED>`
 
 The **CanvasItem**'s active :ref:`World2D<class_World2D>` changed.
 
@@ -520,7 +520,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>` **clip_children** = ``0``
+:ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>` **clip_children** = ``0`` :ref:`🔗<class_CanvasItem_property_clip_children>`
 
 .. rst-class:: classref-property-setget
 
@@ -537,7 +537,7 @@ Allows the current node to clip child nodes, essentially acting as a mask.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **light_mask** = ``1``
+:ref:`int<class_int>` **light_mask** = ``1`` :ref:`🔗<class_CanvasItem_property_light_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -554,7 +554,7 @@ The rendering layers in which this **CanvasItem** responds to :ref:`Light2D<clas
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_CanvasItem_property_material>`
 
 .. rst-class:: classref-property-setget
 
@@ -571,7 +571,7 @@ The material applied to this **CanvasItem**.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_CanvasItem_property_modulate>`
 
 .. rst-class:: classref-property-setget
 
@@ -588,7 +588,7 @@ The color applied to this **CanvasItem**. This property does affect child **Canv
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **self_modulate** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **self_modulate** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_CanvasItem_property_self_modulate>`
 
 .. rst-class:: classref-property-setget
 
@@ -607,7 +607,7 @@ The color applied to this **CanvasItem**. This property does **not** affect chil
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **show_behind_parent** = ``false``
+:ref:`bool<class_bool>` **show_behind_parent** = ``false`` :ref:`🔗<class_CanvasItem_property_show_behind_parent>`
 
 .. rst-class:: classref-property-setget
 
@@ -624,7 +624,7 @@ If ``true``, the object draws behind its parent.
 
 .. rst-class:: classref-property
 
-:ref:`TextureFilter<enum_CanvasItem_TextureFilter>` **texture_filter** = ``0``
+:ref:`TextureFilter<enum_CanvasItem_TextureFilter>` **texture_filter** = ``0`` :ref:`🔗<class_CanvasItem_property_texture_filter>`
 
 .. rst-class:: classref-property-setget
 
@@ -641,7 +641,7 @@ The texture filtering mode to use on this **CanvasItem**.
 
 .. rst-class:: classref-property
 
-:ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **texture_repeat** = ``0``
+:ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **texture_repeat** = ``0`` :ref:`🔗<class_CanvasItem_property_texture_repeat>`
 
 .. rst-class:: classref-property-setget
 
@@ -658,7 +658,7 @@ The texture repeating mode to use on this **CanvasItem**.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **top_level** = ``false``
+:ref:`bool<class_bool>` **top_level** = ``false`` :ref:`🔗<class_CanvasItem_property_top_level>`
 
 .. rst-class:: classref-property-setget
 
@@ -675,7 +675,7 @@ If ``true``, this **CanvasItem** will *not* inherit its transform from parent **
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_parent_material** = ``false``
+:ref:`bool<class_bool>` **use_parent_material** = ``false`` :ref:`🔗<class_CanvasItem_property_use_parent_material>`
 
 .. rst-class:: classref-property-setget
 
@@ -692,7 +692,7 @@ If ``true``, the parent **CanvasItem**'s :ref:`material<class_CanvasItem_propert
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **visibility_layer** = ``1``
+:ref:`int<class_int>` **visibility_layer** = ``1`` :ref:`🔗<class_CanvasItem_property_visibility_layer>`
 
 .. rst-class:: classref-property-setget
 
@@ -709,7 +709,7 @@ The rendering layer in which this **CanvasItem** is rendered by :ref:`Viewport<c
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **visible** = ``true``
+:ref:`bool<class_bool>` **visible** = ``true`` :ref:`🔗<class_CanvasItem_property_visible>`
 
 .. rst-class:: classref-property-setget
 
@@ -728,7 +728,7 @@ If ``true``, this **CanvasItem** is drawn. The node is only visible if all of it
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **y_sort_enabled** = ``false``
+:ref:`bool<class_bool>` **y_sort_enabled** = ``false`` :ref:`🔗<class_CanvasItem_property_y_sort_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -749,7 +749,7 @@ Nodes sort relative to each other only if they are on the same :ref:`z_index<cla
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **z_as_relative** = ``true``
+:ref:`bool<class_bool>` **z_as_relative** = ``true`` :ref:`🔗<class_CanvasItem_property_z_as_relative>`
 
 .. rst-class:: classref-property-setget
 
@@ -766,7 +766,7 @@ If ``true``, the node's Z index is relative to its parent's Z index. If this nod
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **z_index** = ``0``
+:ref:`int<class_int>` **z_index** = ``0`` :ref:`🔗<class_CanvasItem_property_z_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -790,7 +790,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_draw**\ (\ ) |virtual|
+|void| **_draw**\ (\ ) |virtual| :ref:`🔗<class_CanvasItem_private_method__draw>`
 
 Called when **CanvasItem** has been requested to redraw (after :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` is called, either manually or by the engine).
 
@@ -804,7 +804,7 @@ Corresponds to the :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATIO
 
 .. rst-class:: classref-method
 
-|void| **draw_animation_slice**\ (\ animation_length\: :ref:`float<class_float>`, slice_begin\: :ref:`float<class_float>`, slice_end\: :ref:`float<class_float>`, offset\: :ref:`float<class_float>` = 0.0\ )
+|void| **draw_animation_slice**\ (\ animation_length\: :ref:`float<class_float>`, slice_begin\: :ref:`float<class_float>`, slice_end\: :ref:`float<class_float>`, offset\: :ref:`float<class_float>` = 0.0\ ) :ref:`🔗<class_CanvasItem_method_draw_animation_slice>`
 
 Subsequent drawing commands will be ignored unless they fall within the specified animation slice. This is a faster way to implement animations that loop on background rather than redrawing constantly.
 
@@ -816,7 +816,7 @@ Subsequent drawing commands will be ignored unless they fall within the specifie
 
 .. rst-class:: classref-method
 
-|void| **draw_arc**\ (\ center\: :ref:`Vector2<class_Vector2>`, radius\: :ref:`float<class_float>`, start_angle\: :ref:`float<class_float>`, end_angle\: :ref:`float<class_float>`, point_count\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ )
+|void| **draw_arc**\ (\ center\: :ref:`Vector2<class_Vector2>`, radius\: :ref:`float<class_float>`, start_angle\: :ref:`float<class_float>`, end_angle\: :ref:`float<class_float>`, point_count\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_arc>`
 
 Draws an unfilled arc between the given angles with a uniform ``color`` and ``width`` and optional antialiasing (supported only for positive ``width``). The larger the value of ``point_count``, the smoother the curve. See also :ref:`draw_circle<class_CanvasItem_method_draw_circle>`.
 
@@ -832,7 +832,7 @@ The arc is drawn from ``start_angle`` towards the value of ``end_angle`` so in c
 
 .. rst-class:: classref-method
 
-|void| **draw_char**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, char\: :ref:`String<class_String>`, font_size\: :ref:`int<class_int>` = 16, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|
+|void| **draw_char**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, char\: :ref:`String<class_String>`, font_size\: :ref:`int<class_int>` = 16, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const| :ref:`🔗<class_CanvasItem_method_draw_char>`
 
 Draws a string first character using a custom font.
 
@@ -844,7 +844,7 @@ Draws a string first character using a custom font.
 
 .. rst-class:: classref-method
 
-|void| **draw_char_outline**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, char\: :ref:`String<class_String>`, font_size\: :ref:`int<class_int>` = 16, size\: :ref:`int<class_int>` = -1, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|
+|void| **draw_char_outline**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, char\: :ref:`String<class_String>`, font_size\: :ref:`int<class_int>` = 16, size\: :ref:`int<class_int>` = -1, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const| :ref:`🔗<class_CanvasItem_method_draw_char_outline>`
 
 Draws a string first character outline using a custom font.
 
@@ -856,7 +856,7 @@ Draws a string first character outline using a custom font.
 
 .. rst-class:: classref-method
 
-|void| **draw_circle**\ (\ position\: :ref:`Vector2<class_Vector2>`, radius\: :ref:`float<class_float>`, color\: :ref:`Color<class_Color>`, filled\: :ref:`bool<class_bool>` = true, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ )
+|void| **draw_circle**\ (\ position\: :ref:`Vector2<class_Vector2>`, radius\: :ref:`float<class_float>`, color\: :ref:`Color<class_Color>`, filled\: :ref:`bool<class_bool>` = true, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_circle>`
 
 Draws a circle. See also :ref:`draw_arc<class_CanvasItem_method_draw_arc>`, :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`, and :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
@@ -876,7 +876,7 @@ If ``antialiased`` is ``true``, half transparent "feathers" will be attached to 
 
 .. rst-class:: classref-method
 
-|void| **draw_colored_polygon**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, color\: :ref:`Color<class_Color>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), texture\: :ref:`Texture2D<class_Texture2D>` = null\ )
+|void| **draw_colored_polygon**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, color\: :ref:`Color<class_Color>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), texture\: :ref:`Texture2D<class_Texture2D>` = null\ ) :ref:`🔗<class_CanvasItem_method_draw_colored_polygon>`
 
 Draws a colored polygon of any number of points, convex or concave. Unlike :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`, a single color must be specified for the whole polygon.
 
@@ -888,7 +888,7 @@ Draws a colored polygon of any number of points, convex or concave. Unlike :ref:
 
 .. rst-class:: classref-method
 
-|void| **draw_dashed_line**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, dash\: :ref:`float<class_float>` = 2.0, aligned\: :ref:`bool<class_bool>` = true, antialiased\: :ref:`bool<class_bool>` = false\ )
+|void| **draw_dashed_line**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, dash\: :ref:`float<class_float>` = 2.0, aligned\: :ref:`bool<class_bool>` = true, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_dashed_line>`
 
 Draws a dashed line from a 2D point to another, with a given color and width. See also :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`.
 
@@ -906,7 +906,7 @@ If ``antialiased`` is ``true``, half transparent "feathers" will be attached to 
 
 .. rst-class:: classref-method
 
-|void| **draw_end_animation**\ (\ )
+|void| **draw_end_animation**\ (\ ) :ref:`🔗<class_CanvasItem_method_draw_end_animation>`
 
 After submitting all animations slices via :ref:`draw_animation_slice<class_CanvasItem_method_draw_animation_slice>`, this function can be used to revert drawing to its default state (all subsequent drawing commands will be visible). If you don't care about this particular use case, usage of this function after submitting the slices is not required.
 
@@ -918,7 +918,7 @@ After submitting all animations slices via :ref:`draw_animation_slice<class_Canv
 
 .. rst-class:: classref-method
 
-|void| **draw_lcd_texture_rect_region**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, rect\: :ref:`Rect2<class_Rect2>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ )
+|void| **draw_lcd_texture_rect_region**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, rect\: :ref:`Rect2<class_Rect2>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) :ref:`🔗<class_CanvasItem_method_draw_lcd_texture_rect_region>`
 
 Draws a textured rectangle region of the font texture with LCD subpixel anti-aliasing at a given position, optionally modulated by a color.
 
@@ -939,7 +939,7 @@ Texture is drawn using the following blend operation, blend mode of the :ref:`Ca
 
 .. rst-class:: classref-method
 
-|void| **draw_line**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ )
+|void| **draw_line**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_line>`
 
 Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased. See also :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`.
 
@@ -953,7 +953,7 @@ If ``width`` is negative, then a two-point primitive will be drawn instead of a 
 
 .. rst-class:: classref-method
 
-|void| **draw_mesh**\ (\ mesh\: :ref:`Mesh<class_Mesh>`, texture\: :ref:`Texture2D<class_Texture2D>`, transform\: :ref:`Transform2D<class_Transform2D>` = Transform2D(1, 0, 0, 1, 0, 0), modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ )
+|void| **draw_mesh**\ (\ mesh\: :ref:`Mesh<class_Mesh>`, texture\: :ref:`Texture2D<class_Texture2D>`, transform\: :ref:`Transform2D<class_Transform2D>` = Transform2D(1, 0, 0, 1, 0, 0), modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) :ref:`🔗<class_CanvasItem_method_draw_mesh>`
 
 Draws a :ref:`Mesh<class_Mesh>` in 2D, using the provided texture. See :ref:`MeshInstance2D<class_MeshInstance2D>` for related documentation.
 
@@ -965,7 +965,7 @@ Draws a :ref:`Mesh<class_Mesh>` in 2D, using the provided texture. See :ref:`Mes
 
 .. rst-class:: classref-method
 
-|void| **draw_msdf_texture_rect_region**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, rect\: :ref:`Rect2<class_Rect2>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), outline\: :ref:`float<class_float>` = 0.0, pixel_range\: :ref:`float<class_float>` = 4.0, scale\: :ref:`float<class_float>` = 1.0\ )
+|void| **draw_msdf_texture_rect_region**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, rect\: :ref:`Rect2<class_Rect2>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), outline\: :ref:`float<class_float>` = 0.0, pixel_range\: :ref:`float<class_float>` = 4.0, scale\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_CanvasItem_method_draw_msdf_texture_rect_region>`
 
 Draws a textured rectangle region of the multi-channel signed distance field texture at a given position, optionally modulated by a color. See :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` for more information and caveats about MSDF font rendering.
 
@@ -981,7 +981,7 @@ Value of the ``pixel_range`` should the same that was used during distance field
 
 .. rst-class:: classref-method
 
-|void| **draw_multiline**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ )
+|void| **draw_multiline**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_multiline>`
 
 Draws multiple disconnected lines with a uniform ``width`` and ``color``. Each line is defined by two consecutive points from ``points`` array, i.e. i-th segment consists of ``points[2 * i]``, ``points[2 * i + 1]`` endpoints. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` instead.
 
@@ -997,7 +997,7 @@ If ``width`` is negative, then two-point primitives will be drawn instead of a f
 
 .. rst-class:: classref-method
 
-|void| **draw_multiline_colors**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ )
+|void| **draw_multiline_colors**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_multiline_colors>`
 
 Draws multiple disconnected lines with a uniform ``width`` and segment-by-segment coloring. Each segment is defined by two consecutive points from ``points`` array and a corresponding color from ``colors`` array, i.e. i-th segment consists of ``points[2 * i]``, ``points[2 * i + 1]`` endpoints and has ``colors[i]`` color. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw interconnected lines, use :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>` instead.
 
@@ -1013,7 +1013,7 @@ If ``width`` is negative, then two-point primitives will be drawn instead of a f
 
 .. rst-class:: classref-method
 
-|void| **draw_multiline_string**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, text\: :ref:`String<class_String>`, alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` = 0, width\: :ref:`float<class_float>` = -1, font_size\: :ref:`int<class_int>` = 16, max_lines\: :ref:`int<class_int>` = -1, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), brk_flags\: |bitfield|\[:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\] = 3, justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 3, direction\: :ref:`Direction<enum_TextServer_Direction>` = 0, orientation\: :ref:`Orientation<enum_TextServer_Orientation>` = 0\ ) |const|
+|void| **draw_multiline_string**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, text\: :ref:`String<class_String>`, alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` = 0, width\: :ref:`float<class_float>` = -1, font_size\: :ref:`int<class_int>` = 16, max_lines\: :ref:`int<class_int>` = -1, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), brk_flags\: |bitfield|\[:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\] = 3, justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 3, direction\: :ref:`Direction<enum_TextServer_Direction>` = 0, orientation\: :ref:`Orientation<enum_TextServer_Orientation>` = 0\ ) |const| :ref:`🔗<class_CanvasItem_method_draw_multiline_string>`
 
 Breaks ``text`` into lines and draws it using the specified ``font`` at the ``pos`` (top-left corner). The text will have its color multiplied by ``modulate``. If ``width`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
@@ -1025,7 +1025,7 @@ Breaks ``text`` into lines and draws it using the specified ``font`` at the ``po
 
 .. rst-class:: classref-method
 
-|void| **draw_multiline_string_outline**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, text\: :ref:`String<class_String>`, alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` = 0, width\: :ref:`float<class_float>` = -1, font_size\: :ref:`int<class_int>` = 16, max_lines\: :ref:`int<class_int>` = -1, size\: :ref:`int<class_int>` = 1, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), brk_flags\: |bitfield|\[:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\] = 3, justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 3, direction\: :ref:`Direction<enum_TextServer_Direction>` = 0, orientation\: :ref:`Orientation<enum_TextServer_Orientation>` = 0\ ) |const|
+|void| **draw_multiline_string_outline**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, text\: :ref:`String<class_String>`, alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` = 0, width\: :ref:`float<class_float>` = -1, font_size\: :ref:`int<class_int>` = 16, max_lines\: :ref:`int<class_int>` = -1, size\: :ref:`int<class_int>` = 1, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), brk_flags\: |bitfield|\[:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\] = 3, justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 3, direction\: :ref:`Direction<enum_TextServer_Direction>` = 0, orientation\: :ref:`Orientation<enum_TextServer_Orientation>` = 0\ ) |const| :ref:`🔗<class_CanvasItem_method_draw_multiline_string_outline>`
 
 Breaks ``text`` to the lines and draws text outline using the specified ``font`` at the ``pos`` (top-left corner). The text will have its color multiplied by ``modulate``. If ``width`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
@@ -1037,7 +1037,7 @@ Breaks ``text`` to the lines and draws text outline using the specified ``font``
 
 .. rst-class:: classref-method
 
-|void| **draw_multimesh**\ (\ multimesh\: :ref:`MultiMesh<class_MultiMesh>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **draw_multimesh**\ (\ multimesh\: :ref:`MultiMesh<class_MultiMesh>`, texture\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_CanvasItem_method_draw_multimesh>`
 
 Draws a :ref:`MultiMesh<class_MultiMesh>` in 2D with the provided texture. See :ref:`MultiMeshInstance2D<class_MultiMeshInstance2D>` for related documentation.
 
@@ -1049,7 +1049,7 @@ Draws a :ref:`MultiMesh<class_MultiMesh>` in 2D with the provided texture. See :
 
 .. rst-class:: classref-method
 
-|void| **draw_polygon**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), texture\: :ref:`Texture2D<class_Texture2D>` = null\ )
+|void| **draw_polygon**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), texture\: :ref:`Texture2D<class_Texture2D>` = null\ ) :ref:`🔗<class_CanvasItem_method_draw_polygon>`
 
 Draws a solid polygon of any number of points, convex or concave. Unlike :ref:`draw_colored_polygon<class_CanvasItem_method_draw_colored_polygon>`, each point's color can be changed individually. See also :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`. If you need more flexibility (such as being able to use bones), use :ref:`RenderingServer.canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>` instead.
 
@@ -1061,7 +1061,7 @@ Draws a solid polygon of any number of points, convex or concave. Unlike :ref:`d
 
 .. rst-class:: classref-method
 
-|void| **draw_polyline**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ )
+|void| **draw_polyline**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, color\: :ref:`Color<class_Color>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_polyline>`
 
 Draws interconnected line segments with a uniform ``color`` and ``width`` and optional antialiasing (supported only for positive ``width``). When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
@@ -1075,7 +1075,7 @@ If ``width`` is negative, it will be ignored and the polyline will be drawn usin
 
 .. rst-class:: classref-method
 
-|void| **draw_polyline_colors**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ )
+|void| **draw_polyline_colors**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_polyline_colors>`
 
 Draws interconnected line segments with a uniform ``width``, point-by-point coloring, and optional antialiasing (supported only for positive ``width``). Colors assigned to line points match by index between ``points`` and ``colors``, i.e. each line segment is filled with a gradient between the colors of the endpoints. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline_colors<class_CanvasItem_method_draw_multiline_colors>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
@@ -1089,7 +1089,7 @@ If ``width`` is negative, it will be ignored and the polyline will be drawn usin
 
 .. rst-class:: classref-method
 
-|void| **draw_primitive**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>`, texture\: :ref:`Texture2D<class_Texture2D>` = null\ )
+|void| **draw_primitive**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, colors\: :ref:`PackedColorArray<class_PackedColorArray>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>`, texture\: :ref:`Texture2D<class_Texture2D>` = null\ ) :ref:`🔗<class_CanvasItem_method_draw_primitive>`
 
 Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for a triangle, and 4 points for a quad. If 0 points or more than 4 points are specified, nothing will be drawn and an error message will be printed. See also :ref:`draw_line<class_CanvasItem_method_draw_line>`, :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>`, :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`, and :ref:`draw_rect<class_CanvasItem_method_draw_rect>`.
 
@@ -1101,7 +1101,7 @@ Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for
 
 .. rst-class:: classref-method
 
-|void| **draw_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`, color\: :ref:`Color<class_Color>`, filled\: :ref:`bool<class_bool>` = true, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ )
+|void| **draw_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`, color\: :ref:`Color<class_Color>`, filled\: :ref:`bool<class_bool>` = true, width\: :ref:`float<class_float>` = -1.0, antialiased\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_rect>`
 
 Draws a rectangle. If ``filled`` is ``true``, the rectangle will be filled with the ``color`` specified. If ``filled`` is ``false``, the rectangle will be drawn as a stroke with the ``color`` and ``width`` specified. See also :ref:`draw_texture_rect<class_CanvasItem_method_draw_texture_rect>`.
 
@@ -1121,7 +1121,7 @@ If ``antialiased`` is ``true``, half transparent "feathers" will be attached to 
 
 .. rst-class:: classref-method
 
-|void| **draw_set_transform**\ (\ position\: :ref:`Vector2<class_Vector2>`, rotation\: :ref:`float<class_float>` = 0.0, scale\: :ref:`Vector2<class_Vector2>` = Vector2(1, 1)\ )
+|void| **draw_set_transform**\ (\ position\: :ref:`Vector2<class_Vector2>`, rotation\: :ref:`float<class_float>` = 0.0, scale\: :ref:`Vector2<class_Vector2>` = Vector2(1, 1)\ ) :ref:`🔗<class_CanvasItem_method_draw_set_transform>`
 
 Sets a custom transform for drawing via components. Anything drawn afterwards will be transformed by this.
 
@@ -1135,7 +1135,7 @@ Sets a custom transform for drawing via components. Anything drawn afterwards wi
 
 .. rst-class:: classref-method
 
-|void| **draw_set_transform_matrix**\ (\ xform\: :ref:`Transform2D<class_Transform2D>`\ )
+|void| **draw_set_transform_matrix**\ (\ xform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_CanvasItem_method_draw_set_transform_matrix>`
 
 Sets a custom transform for drawing via matrix. Anything drawn afterwards will be transformed by this.
 
@@ -1147,7 +1147,7 @@ Sets a custom transform for drawing via matrix. Anything drawn afterwards will b
 
 .. rst-class:: classref-method
 
-|void| **draw_string**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, text\: :ref:`String<class_String>`, alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` = 0, width\: :ref:`float<class_float>` = -1, font_size\: :ref:`int<class_int>` = 16, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 3, direction\: :ref:`Direction<enum_TextServer_Direction>` = 0, orientation\: :ref:`Orientation<enum_TextServer_Orientation>` = 0\ ) |const|
+|void| **draw_string**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, text\: :ref:`String<class_String>`, alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` = 0, width\: :ref:`float<class_float>` = -1, font_size\: :ref:`int<class_int>` = 16, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 3, direction\: :ref:`Direction<enum_TextServer_Direction>` = 0, orientation\: :ref:`Orientation<enum_TextServer_Orientation>` = 0\ ) |const| :ref:`🔗<class_CanvasItem_method_draw_string>`
 
 Draws ``text`` using the specified ``font`` at the ``pos`` (bottom-left corner using the baseline of the font). The text will have its color multiplied by ``modulate``. If ``width`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
@@ -1186,7 +1186,7 @@ See also :ref:`Font.draw_string<class_Font_method_draw_string>`.
 
 .. rst-class:: classref-method
 
-|void| **draw_string_outline**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, text\: :ref:`String<class_String>`, alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` = 0, width\: :ref:`float<class_float>` = -1, font_size\: :ref:`int<class_int>` = 16, size\: :ref:`int<class_int>` = 1, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 3, direction\: :ref:`Direction<enum_TextServer_Direction>` = 0, orientation\: :ref:`Orientation<enum_TextServer_Orientation>` = 0\ ) |const|
+|void| **draw_string_outline**\ (\ font\: :ref:`Font<class_Font>`, pos\: :ref:`Vector2<class_Vector2>`, text\: :ref:`String<class_String>`, alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` = 0, width\: :ref:`float<class_float>` = -1, font_size\: :ref:`int<class_int>` = 16, size\: :ref:`int<class_int>` = 1, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 3, direction\: :ref:`Direction<enum_TextServer_Direction>` = 0, orientation\: :ref:`Orientation<enum_TextServer_Orientation>` = 0\ ) |const| :ref:`🔗<class_CanvasItem_method_draw_string_outline>`
 
 Draws ``text`` outline using the specified ``font`` at the ``pos`` (bottom-left corner using the baseline of the font). The text will have its color multiplied by ``modulate``. If ``width`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
@@ -1198,7 +1198,7 @@ Draws ``text`` outline using the specified ``font`` at the ``pos`` (bottom-left 
 
 .. rst-class:: classref-method
 
-|void| **draw_style_box**\ (\ style_box\: :ref:`StyleBox<class_StyleBox>`, rect\: :ref:`Rect2<class_Rect2>`\ )
+|void| **draw_style_box**\ (\ style_box\: :ref:`StyleBox<class_StyleBox>`, rect\: :ref:`Rect2<class_Rect2>`\ ) :ref:`🔗<class_CanvasItem_method_draw_style_box>`
 
 Draws a styled rectangle.
 
@@ -1210,7 +1210,7 @@ Draws a styled rectangle.
 
 .. rst-class:: classref-method
 
-|void| **draw_texture**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, position\: :ref:`Vector2<class_Vector2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ )
+|void| **draw_texture**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, position\: :ref:`Vector2<class_Vector2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) :ref:`🔗<class_CanvasItem_method_draw_texture>`
 
 Draws a texture at a given position.
 
@@ -1222,7 +1222,7 @@ Draws a texture at a given position.
 
 .. rst-class:: classref-method
 
-|void| **draw_texture_rect**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, rect\: :ref:`Rect2<class_Rect2>`, tile\: :ref:`bool<class_bool>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), transpose\: :ref:`bool<class_bool>` = false\ )
+|void| **draw_texture_rect**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, rect\: :ref:`Rect2<class_Rect2>`, tile\: :ref:`bool<class_bool>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), transpose\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CanvasItem_method_draw_texture_rect>`
 
 Draws a textured rectangle at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped. See also :ref:`draw_rect<class_CanvasItem_method_draw_rect>` and :ref:`draw_texture_rect_region<class_CanvasItem_method_draw_texture_rect_region>`.
 
@@ -1234,7 +1234,7 @@ Draws a textured rectangle at a given position, optionally modulated by a color.
 
 .. rst-class:: classref-method
 
-|void| **draw_texture_rect_region**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, rect\: :ref:`Rect2<class_Rect2>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), transpose\: :ref:`bool<class_bool>` = false, clip_uv\: :ref:`bool<class_bool>` = true\ )
+|void| **draw_texture_rect_region**\ (\ texture\: :ref:`Texture2D<class_Texture2D>`, rect\: :ref:`Rect2<class_Rect2>`, src_rect\: :ref:`Rect2<class_Rect2>`, modulate\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), transpose\: :ref:`bool<class_bool>` = false, clip_uv\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_CanvasItem_method_draw_texture_rect_region>`
 
 Draws a textured rectangle from a texture's region (specified by ``src_rect``) at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped. See also :ref:`draw_texture_rect<class_CanvasItem_method_draw_texture_rect>`.
 
@@ -1246,7 +1246,7 @@ Draws a textured rectangle from a texture's region (specified by ``src_rect``) a
 
 .. rst-class:: classref-method
 
-|void| **force_update_transform**\ (\ )
+|void| **force_update_transform**\ (\ ) :ref:`🔗<class_CanvasItem_method_force_update_transform>`
 
 Forces the transform to update. Transform changes in physics are not instant for performance reasons. Transforms are accumulated and then set. Use this if you need an up-to-date transform when doing physics operations.
 
@@ -1258,7 +1258,7 @@ Forces the transform to update. Transform changes in physics are not instant for
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_canvas**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_canvas**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_canvas>`
 
 Returns the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas where this item is in.
 
@@ -1270,7 +1270,7 @@ Returns the :ref:`RID<class_RID>` of the :ref:`World2D<class_World2D>` canvas wh
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_canvas_item**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_canvas_item**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_canvas_item>`
 
 Returns the canvas item RID used by :ref:`RenderingServer<class_RenderingServer>` for this item.
 
@@ -1282,7 +1282,7 @@ Returns the canvas item RID used by :ref:`RenderingServer<class_RenderingServer>
 
 .. rst-class:: classref-method
 
-:ref:`CanvasLayer<class_CanvasLayer>` **get_canvas_layer_node**\ (\ ) |const|
+:ref:`CanvasLayer<class_CanvasLayer>` **get_canvas_layer_node**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_canvas_layer_node>`
 
 Returns the :ref:`CanvasLayer<class_CanvasLayer>` that contains this node, or ``null`` if the node is not in any :ref:`CanvasLayer<class_CanvasLayer>`.
 
@@ -1294,7 +1294,7 @@ Returns the :ref:`CanvasLayer<class_CanvasLayer>` that contains this node, or ``
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_canvas_transform**\ (\ ) |const|
+:ref:`Transform2D<class_Transform2D>` **get_canvas_transform**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_canvas_transform>`
 
 Returns the transform from the coordinate system of the canvas, this item is in, to the :ref:`Viewport<class_Viewport>`\ s coordinate system.
 
@@ -1306,7 +1306,7 @@ Returns the transform from the coordinate system of the canvas, this item is in,
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_global_mouse_position**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_global_mouse_position**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_global_mouse_position>`
 
 Returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that this **CanvasItem** is in using the coordinate system of the :ref:`CanvasLayer<class_CanvasLayer>`.
 
@@ -1320,7 +1320,7 @@ Returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that t
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_global_transform**\ (\ ) |const|
+:ref:`Transform2D<class_Transform2D>` **get_global_transform**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_global_transform>`
 
 Returns the global transform matrix of this item, i.e. the combined transform up to the topmost **CanvasItem** node. The topmost item is a **CanvasItem** that either has no parent, has non-**CanvasItem** parent or it has :ref:`top_level<class_CanvasItem_property_top_level>` enabled.
 
@@ -1332,7 +1332,7 @@ Returns the global transform matrix of this item, i.e. the combined transform up
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas**\ (\ ) |const|
+:ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_global_transform_with_canvas>`
 
 Returns the transform from the local coordinate system of this **CanvasItem** to the :ref:`Viewport<class_Viewport>`\ s coordinate system.
 
@@ -1344,7 +1344,7 @@ Returns the transform from the local coordinate system of this **CanvasItem** to
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_local_mouse_position**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_local_mouse_position**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_local_mouse_position>`
 
 Returns the mouse's position in this **CanvasItem** using the local coordinate system of this **CanvasItem**.
 
@@ -1356,7 +1356,7 @@ Returns the mouse's position in this **CanvasItem** using the local coordinate s
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_screen_transform**\ (\ ) |const|
+:ref:`Transform2D<class_Transform2D>` **get_screen_transform**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_screen_transform>`
 
 Returns the transform of this **CanvasItem** in global screen coordinates (i.e. taking window position into account). Mostly useful for editor plugins.
 
@@ -1370,7 +1370,7 @@ Equals to :ref:`get_global_transform<class_CanvasItem_method_get_global_transfor
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_transform**\ (\ ) |const|
+:ref:`Transform2D<class_Transform2D>` **get_transform**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_transform>`
 
 Returns the transform matrix of this item.
 
@@ -1382,7 +1382,7 @@ Returns the transform matrix of this item.
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_viewport_rect**\ (\ ) |const|
+:ref:`Rect2<class_Rect2>` **get_viewport_rect**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_viewport_rect>`
 
 Returns the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
@@ -1394,7 +1394,7 @@ Returns the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_viewport_transform**\ (\ ) |const|
+:ref:`Transform2D<class_Transform2D>` **get_viewport_transform**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_viewport_transform>`
 
 Returns the transform from the coordinate system of the canvas, this item is in, to the :ref:`Viewport<class_Viewport>`\ s embedders coordinate system.
 
@@ -1406,7 +1406,7 @@ Returns the transform from the coordinate system of the canvas, this item is in,
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_visibility_layer_bit**\ (\ layer\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **get_visibility_layer_bit**\ (\ layer\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_CanvasItem_method_get_visibility_layer_bit>`
 
 Returns an individual bit on the rendering visibility layer.
 
@@ -1418,7 +1418,7 @@ Returns an individual bit on the rendering visibility layer.
 
 .. rst-class:: classref-method
 
-:ref:`World2D<class_World2D>` **get_world_2d**\ (\ ) |const|
+:ref:`World2D<class_World2D>` **get_world_2d**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_get_world_2d>`
 
 Returns the :ref:`World2D<class_World2D>` where this item is in.
 
@@ -1430,7 +1430,7 @@ Returns the :ref:`World2D<class_World2D>` where this item is in.
 
 .. rst-class:: classref-method
 
-|void| **hide**\ (\ )
+|void| **hide**\ (\ ) :ref:`🔗<class_CanvasItem_method_hide>`
 
 Hide the **CanvasItem** if it's currently visible. This is equivalent to setting :ref:`visible<class_CanvasItem_property_visible>` to ``false``.
 
@@ -1442,7 +1442,7 @@ Hide the **CanvasItem** if it's currently visible. This is equivalent to setting
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_local_transform_notification_enabled**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_local_transform_notification_enabled**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_is_local_transform_notification_enabled>`
 
 Returns ``true`` if local transform notifications are communicated to children.
 
@@ -1454,7 +1454,7 @@ Returns ``true`` if local transform notifications are communicated to children.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_transform_notification_enabled**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_transform_notification_enabled**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_is_transform_notification_enabled>`
 
 Returns ``true`` if global transform notifications are communicated to children.
 
@@ -1466,7 +1466,7 @@ Returns ``true`` if global transform notifications are communicated to children.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_visible_in_tree**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_visible_in_tree**\ (\ ) |const| :ref:`🔗<class_CanvasItem_method_is_visible_in_tree>`
 
 Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree, and is therefore not drawn (see :ref:`_draw<class_CanvasItem_private_method__draw>`).
 
@@ -1478,7 +1478,7 @@ Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **make_canvas_position_local**\ (\ screen_point\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **make_canvas_position_local**\ (\ screen_point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_CanvasItem_method_make_canvas_position_local>`
 
 Assigns ``screen_point`` as this node's new local transform.
 
@@ -1490,7 +1490,7 @@ Assigns ``screen_point`` as this node's new local transform.
 
 .. rst-class:: classref-method
 
-:ref:`InputEvent<class_InputEvent>` **make_input_local**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |const|
+:ref:`InputEvent<class_InputEvent>` **make_input_local**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |const| :ref:`🔗<class_CanvasItem_method_make_input_local>`
 
 Transformations issued by ``event``'s inputs are applied in local space instead of global space.
 
@@ -1502,7 +1502,7 @@ Transformations issued by ``event``'s inputs are applied in local space instead 
 
 .. rst-class:: classref-method
 
-|void| **move_to_front**\ (\ )
+|void| **move_to_front**\ (\ ) :ref:`🔗<class_CanvasItem_method_move_to_front>`
 
 Moves this node to display on top of its siblings.
 
@@ -1516,7 +1516,7 @@ Internally, the node is moved to the bottom of parent's child list. The method h
 
 .. rst-class:: classref-method
 
-|void| **queue_redraw**\ (\ )
+|void| **queue_redraw**\ (\ ) :ref:`🔗<class_CanvasItem_method_queue_redraw>`
 
 Queues the **CanvasItem** to redraw. During idle time, if **CanvasItem** is visible, :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` is sent and :ref:`_draw<class_CanvasItem_private_method__draw>` is called. This only occurs **once** per frame, even if this method has been called multiple times.
 
@@ -1528,7 +1528,7 @@ Queues the **CanvasItem** to redraw. During idle time, if **CanvasItem** is visi
 
 .. rst-class:: classref-method
 
-|void| **set_notify_local_transform**\ (\ enable\: :ref:`bool<class_bool>`\ )
+|void| **set_notify_local_transform**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CanvasItem_method_set_notify_local_transform>`
 
 If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` when its local transform changes.
 
@@ -1540,7 +1540,7 @@ If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_LOCAL_TRANS
 
 .. rst-class:: classref-method
 
-|void| **set_notify_transform**\ (\ enable\: :ref:`bool<class_bool>`\ )
+|void| **set_notify_transform**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CanvasItem_method_set_notify_transform>`
 
 If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_CanvasItem_constant_NOTIFICATION_TRANSFORM_CHANGED>` when its global transform changes.
 
@@ -1552,7 +1552,7 @@ If ``enable`` is ``true``, this node will receive :ref:`NOTIFICATION_TRANSFORM_C
 
 .. rst-class:: classref-method
 
-|void| **set_visibility_layer_bit**\ (\ layer\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_visibility_layer_bit**\ (\ layer\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_CanvasItem_method_set_visibility_layer_bit>`
 
 Set/clear individual bits on the rendering visibility layer. This simplifies editing this **CanvasItem**'s visibility layer.
 
@@ -1564,7 +1564,7 @@ Set/clear individual bits on the rendering visibility layer. This simplifies edi
 
 .. rst-class:: classref-method
 
-|void| **show**\ (\ )
+|void| **show**\ (\ ) :ref:`🔗<class_CanvasItem_method_show>`
 
 Show the **CanvasItem** if it's currently hidden. This is equivalent to setting :ref:`visible<class_CanvasItem_property_visible>` to ``true``. For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 

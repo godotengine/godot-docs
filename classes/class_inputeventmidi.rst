@@ -132,7 +132,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **channel** = ``0``
+:ref:`int<class_int>` **channel** = ``0`` :ref:`🔗<class_InputEventMIDI_property_channel>`
 
 .. rst-class:: classref-property-setget
 
@@ -149,7 +149,7 @@ The MIDI channel of this message, ranging from ``0`` to ``15``. MIDI channel ``9
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **controller_number** = ``0``
+:ref:`int<class_int>` **controller_number** = ``0`` :ref:`🔗<class_InputEventMIDI_property_controller_number>`
 
 .. rst-class:: classref-property-setget
 
@@ -166,7 +166,7 @@ The unique number of the controller, if :ref:`message<class_InputEventMIDI_prope
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **controller_value** = ``0``
+:ref:`int<class_int>` **controller_value** = ``0`` :ref:`🔗<class_InputEventMIDI_property_controller_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -183,7 +183,7 @@ The value applied to the controller. If :ref:`message<class_InputEventMIDI_prope
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **instrument** = ``0``
+:ref:`int<class_int>` **instrument** = ``0`` :ref:`🔗<class_InputEventMIDI_property_instrument>`
 
 .. rst-class:: classref-property-setget
 
@@ -202,7 +202,7 @@ To see what each value means, refer to the `General MIDI's instrument list <http
 
 .. rst-class:: classref-property
 
-:ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **message** = ``0``
+:ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **message** = ``0`` :ref:`🔗<class_InputEventMIDI_property_message>`
 
 .. rst-class:: classref-property-setget
 
@@ -221,7 +221,7 @@ For more information, see the `MIDI message status byte list chart <https://www.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **pitch** = ``0``
+:ref:`int<class_int>` **pitch** = ``0`` :ref:`🔗<class_InputEventMIDI_property_pitch>`
 
 .. rst-class:: classref-property-setget
 
@@ -240,7 +240,7 @@ On a piano, the **middle C** is ``60``, followed by a **C-sharp** (``61``), then
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **pressure** = ``0``
+:ref:`int<class_int>` **pressure** = ``0`` :ref:`🔗<class_InputEventMIDI_property_pressure>`
 
 .. rst-class:: classref-property-setget
 
@@ -259,7 +259,7 @@ The strength of the key being pressed. This value ranges from ``0`` to ``127``.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **velocity** = ``0``
+:ref:`int<class_int>` **velocity** = ``0`` :ref:`🔗<class_InputEventMIDI_property_velocity>`
 
 .. rst-class:: classref-property-setget
 

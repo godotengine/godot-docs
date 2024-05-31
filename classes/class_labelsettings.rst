@@ -62,7 +62,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_LabelSettings_property_font>`
 
 .. rst-class:: classref-property-setget
 
@@ -79,7 +79,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **font_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_LabelSettings_property_font_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -96,7 +96,7 @@ Color of the text.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **font_size** = ``16``
+:ref:`int<class_int>` **font_size** = ``16`` :ref:`🔗<class_LabelSettings_property_font_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -113,7 +113,7 @@ Size of the text.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **line_spacing** = ``3.0``
+:ref:`float<class_float>` **line_spacing** = ``3.0`` :ref:`🔗<class_LabelSettings_property_line_spacing>`
 
 .. rst-class:: classref-property-setget
 
@@ -130,7 +130,7 @@ Vertical space between lines when the text is multiline.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **outline_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **outline_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_LabelSettings_property_outline_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -147,7 +147,7 @@ The color of the outline.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **outline_size** = ``0``
+:ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_LabelSettings_property_outline_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -164,7 +164,7 @@ Text outline size.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0)``
+:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_LabelSettings_property_shadow_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -181,7 +181,7 @@ Color of the shadow effect. If alpha is ``0``, no shadow will be drawn.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **shadow_offset** = ``Vector2(1, 1)``
+:ref:`Vector2<class_Vector2>` **shadow_offset** = ``Vector2(1, 1)`` :ref:`🔗<class_LabelSettings_property_shadow_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -198,7 +198,7 @@ Offset of the shadow effect, in pixels.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **shadow_size** = ``1``
+:ref:`int<class_int>` **shadow_size** = ``1`` :ref:`🔗<class_LabelSettings_property_shadow_size>`
 
 .. rst-class:: classref-property-setget
 

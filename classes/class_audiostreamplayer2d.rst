@@ -106,7 +106,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**finished**\ (\ )
+**finished**\ (\ ) :ref:`🔗<class_AudioStreamPlayer2D_signal_finished>`
 
 Emitted when the audio stops playing.
 
@@ -123,7 +123,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **area_mask** = ``1``
+:ref:`int<class_int>` **area_mask** = ``1`` :ref:`🔗<class_AudioStreamPlayer2D_property_area_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -140,7 +140,7 @@ Determines which :ref:`Area2D<class_Area2D>` layers affect the sound for reverb 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **attenuation** = ``1.0``
+:ref:`float<class_float>` **attenuation** = ``1.0`` :ref:`🔗<class_AudioStreamPlayer2D_property_attenuation>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +157,7 @@ The volume is attenuated over distance with this as an exponent.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **autoplay** = ``false``
+:ref:`bool<class_bool>` **autoplay** = ``false`` :ref:`🔗<class_AudioStreamPlayer2D_property_autoplay>`
 
 .. rst-class:: classref-property-setget
 
@@ -174,7 +174,7 @@ If ``true``, audio plays when added to scene tree.
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **bus** = ``&"Master"``
+:ref:`StringName<class_StringName>` **bus** = ``&"Master"`` :ref:`🔗<class_AudioStreamPlayer2D_property_bus>`
 
 .. rst-class:: classref-property-setget
 
@@ -193,7 +193,7 @@ Bus on which this audio is playing.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **max_distance** = ``2000.0``
+:ref:`float<class_float>` **max_distance** = ``2000.0`` :ref:`🔗<class_AudioStreamPlayer2D_property_max_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -210,7 +210,7 @@ Maximum distance from which audio is still hearable.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_polyphony** = ``1``
+:ref:`int<class_int>` **max_polyphony** = ``1`` :ref:`🔗<class_AudioStreamPlayer2D_property_max_polyphony>`
 
 .. rst-class:: classref-property-setget
 
@@ -227,7 +227,7 @@ The maximum number of sounds this node can play at the same time. Playing additi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **panning_strength** = ``1.0``
+:ref:`float<class_float>` **panning_strength** = ``1.0`` :ref:`🔗<class_AudioStreamPlayer2D_property_panning_strength>`
 
 .. rst-class:: classref-property-setget
 
@@ -244,7 +244,7 @@ Scales the panning strength for this node by multiplying the base :ref:`ProjectS
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pitch_scale** = ``1.0``
+:ref:`float<class_float>` **pitch_scale** = ``1.0`` :ref:`🔗<class_AudioStreamPlayer2D_property_pitch_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -261,7 +261,7 @@ The pitch and the tempo of the audio, as a multiplier of the audio sample's samp
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **playing** = ``false``
+:ref:`bool<class_bool>` **playing** = ``false`` :ref:`🔗<class_AudioStreamPlayer2D_property_playing>`
 
 .. rst-class:: classref-property-setget
 
@@ -277,7 +277,7 @@ If ``true``, audio is playing or is queued to be played (see :ref:`play<class_Au
 
 .. rst-class:: classref-property
 
-:ref:`AudioStream<class_AudioStream>` **stream**
+:ref:`AudioStream<class_AudioStream>` **stream** :ref:`🔗<class_AudioStreamPlayer2D_property_stream>`
 
 .. rst-class:: classref-property-setget
 
@@ -294,7 +294,7 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **stream_paused** = ``false``
+:ref:`bool<class_bool>` **stream_paused** = ``false`` :ref:`🔗<class_AudioStreamPlayer2D_property_stream_paused>`
 
 .. rst-class:: classref-property-setget
 
@@ -311,7 +311,7 @@ If ``true``, the playback is paused. You can resume it by setting :ref:`stream_p
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **volume_db** = ``0.0``
+:ref:`float<class_float>` **volume_db** = ``0.0`` :ref:`🔗<class_AudioStreamPlayer2D_property_volume_db>`
 
 .. rst-class:: classref-property-setget
 
@@ -333,7 +333,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_playback_position**\ (\ )
+:ref:`float<class_float>` **get_playback_position**\ (\ ) :ref:`🔗<class_AudioStreamPlayer2D_method_get_playback_position>`
 
 Returns the position in the :ref:`AudioStream<class_AudioStream>`.
 
@@ -345,7 +345,7 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>`.
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback**\ (\ )
+:ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback**\ (\ ) :ref:`🔗<class_AudioStreamPlayer2D_method_get_stream_playback>`
 
 Returns the :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` object associated with this **AudioStreamPlayer2D**.
 
@@ -357,7 +357,7 @@ Returns the :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` object associa
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_stream_playback**\ (\ )
+:ref:`bool<class_bool>` **has_stream_playback**\ (\ ) :ref:`🔗<class_AudioStreamPlayer2D_method_has_stream_playback>`
 
 Returns whether the :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` can return the :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` object or not.
 
@@ -369,7 +369,7 @@ Returns whether the :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` can return
 
 .. rst-class:: classref-method
 
-|void| **play**\ (\ from_position\: :ref:`float<class_float>` = 0.0\ )
+|void| **play**\ (\ from_position\: :ref:`float<class_float>` = 0.0\ ) :ref:`🔗<class_AudioStreamPlayer2D_method_play>`
 
 Queues the audio to play on the next physics frame, from the given position ``from_position``, in seconds.
 
@@ -381,7 +381,7 @@ Queues the audio to play on the next physics frame, from the given position ``fr
 
 .. rst-class:: classref-method
 
-|void| **seek**\ (\ to_position\: :ref:`float<class_float>`\ )
+|void| **seek**\ (\ to_position\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioStreamPlayer2D_method_seek>`
 
 Sets the position from which audio will be played, in seconds.
 
@@ -393,7 +393,7 @@ Sets the position from which audio will be played, in seconds.
 
 .. rst-class:: classref-method
 
-|void| **stop**\ (\ )
+|void| **stop**\ (\ ) :ref:`🔗<class_AudioStreamPlayer2D_method_stop>`
 
 Stops the audio.
 

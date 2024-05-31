@@ -67,7 +67,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**button_pressed**\ (\ name\: :ref:`String<class_String>`\ )
+**button_pressed**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_XRController3D_signal_button_pressed>`
 
 Emitted when a button on this controller is pressed.
 
@@ -79,7 +79,7 @@ Emitted when a button on this controller is pressed.
 
 .. rst-class:: classref-signal
 
-**button_released**\ (\ name\: :ref:`String<class_String>`\ )
+**button_released**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_XRController3D_signal_button_released>`
 
 Emitted when a button on this controller is released.
 
@@ -91,7 +91,7 @@ Emitted when a button on this controller is released.
 
 .. rst-class:: classref-signal
 
-**input_float_changed**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`float<class_float>`\ )
+**input_float_changed**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_XRController3D_signal_input_float_changed>`
 
 Emitted when a trigger or similar input on this controller changes value.
 
@@ -103,7 +103,7 @@ Emitted when a trigger or similar input on this controller changes value.
 
 .. rst-class:: classref-signal
 
-**input_vector2_changed**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Vector2<class_Vector2>`\ )
+**input_vector2_changed**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_XRController3D_signal_input_vector2_changed>`
 
 Emitted when a thumbstick or thumbpad on this controller is moved.
 
@@ -115,7 +115,7 @@ Emitted when a thumbstick or thumbpad on this controller is moved.
 
 .. rst-class:: classref-signal
 
-**profile_changed**\ (\ role\: :ref:`String<class_String>`\ )
+**profile_changed**\ (\ role\: :ref:`String<class_String>`\ ) :ref:`🔗<class_XRController3D_signal_profile_changed>`
 
 Emitted when the interaction profile on this controller is changed.
 
@@ -132,7 +132,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_float**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`float<class_float>` **get_float**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_XRController3D_method_get_float>`
 
 Returns a numeric value for the input with the given ``name``. This is used for triggers and grip sensors.
 
@@ -144,7 +144,7 @@ Returns a numeric value for the input with the given ``name``. This is used for 
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_input**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_input**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_XRController3D_method_get_input>`
 
 Returns a :ref:`Variant<class_Variant>` for the input with the given ``name``. This works for any input type, the variant will be typed according to the actions configuration.
 
@@ -156,7 +156,7 @@ Returns a :ref:`Variant<class_Variant>` for the input with the given ``name``. T
 
 .. rst-class:: classref-method
 
-:ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` **get_tracker_hand**\ (\ ) |const|
+:ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` **get_tracker_hand**\ (\ ) |const| :ref:`🔗<class_XRController3D_method_get_tracker_hand>`
 
 Returns the hand holding this controller, if known. See :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>`.
 
@@ -168,7 +168,7 @@ Returns the hand holding this controller, if known. See :ref:`TrackerHand<enum_X
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_vector2**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_vector2**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_XRController3D_method_get_vector2>`
 
 Returns a :ref:`Vector2<class_Vector2>` for the input with the given ``name``. This is used for thumbsticks and thumbpads found on many controllers.
 
@@ -180,7 +180,7 @@ Returns a :ref:`Vector2<class_Vector2>` for the input with the given ``name``. T
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_button_pressed**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **is_button_pressed**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_XRController3D_method_is_button_pressed>`
 
 Returns ``true`` if the button with the given ``name`` is pressed.
 

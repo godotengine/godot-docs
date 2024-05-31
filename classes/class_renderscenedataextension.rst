@@ -56,7 +56,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **_get_cam_projection**\ (\ ) |virtual| |const|
+:ref:`Projection<class_Projection>` **_get_cam_projection**\ (\ ) |virtual| |const| :ref:`🔗<class_RenderSceneDataExtension_private_method__get_cam_projection>`
 
 Implement this in GDExtension to return the camera :ref:`Projection<class_Projection>`.
 
@@ -68,7 +68,7 @@ Implement this in GDExtension to return the camera :ref:`Projection<class_Projec
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **_get_cam_transform**\ (\ ) |virtual| |const|
+:ref:`Transform3D<class_Transform3D>` **_get_cam_transform**\ (\ ) |virtual| |const| :ref:`🔗<class_RenderSceneDataExtension_private_method__get_cam_transform>`
 
 Implement this in GDExtension to return the camera :ref:`Transform3D<class_Transform3D>`.
 
@@ -80,7 +80,7 @@ Implement this in GDExtension to return the camera :ref:`Transform3D<class_Trans
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_get_uniform_buffer**\ (\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_get_uniform_buffer**\ (\ ) |virtual| |const| :ref:`🔗<class_RenderSceneDataExtension_private_method__get_uniform_buffer>`
 
 Implement this in GDExtension to return the :ref:`RID<class_RID>` of the uniform buffer containing the scene data as a UBO.
 
@@ -92,7 +92,7 @@ Implement this in GDExtension to return the :ref:`RID<class_RID>` of the uniform
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_view_count**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_view_count**\ (\ ) |virtual| |const| :ref:`🔗<class_RenderSceneDataExtension_private_method__get_view_count>`
 
 Implement this in GDExtension to return the view count.
 
@@ -104,7 +104,7 @@ Implement this in GDExtension to return the view count.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_view_eye_offset**\ (\ view\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_view_eye_offset**\ (\ view\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_RenderSceneDataExtension_private_method__get_view_eye_offset>`
 
 Implement this in GDExtension to return the eye offset for the given ``view``.
 
@@ -116,7 +116,7 @@ Implement this in GDExtension to return the eye offset for the given ``view``.
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **_get_view_projection**\ (\ view\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Projection<class_Projection>` **_get_view_projection**\ (\ view\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_RenderSceneDataExtension_private_method__get_view_projection>`
 
 Implement this in GDExtension to return the view :ref:`Projection<class_Projection>` for the given ``view``.
 

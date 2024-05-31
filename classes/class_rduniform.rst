@@ -64,7 +64,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **binding** = ``0``
+:ref:`int<class_int>` **binding** = ``0`` :ref:`🔗<class_RDUniform_property_binding>`
 
 .. rst-class:: classref-property-setget
 
@@ -81,7 +81,7 @@ The uniform's binding.
 
 .. rst-class:: classref-property
 
-:ref:`UniformType<enum_RenderingDevice_UniformType>` **uniform_type** = ``3``
+:ref:`UniformType<enum_RenderingDevice_UniformType>` **uniform_type** = ``3`` :ref:`🔗<class_RDUniform_property_uniform_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -103,7 +103,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_id**\ (\ id\: :ref:`RID<class_RID>`\ )
+|void| **add_id**\ (\ id\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RDUniform_method_add_id>`
 
 Binds the given id to the uniform. The data associated with the id is then used when the uniform is passed to a shader.
 
@@ -115,7 +115,7 @@ Binds the given id to the uniform. The data associated with the id is then used 
 
 .. rst-class:: classref-method
 
-|void| **clear_ids**\ (\ )
+|void| **clear_ids**\ (\ ) :ref:`🔗<class_RDUniform_method_clear_ids>`
 
 Unbinds all ids currently bound to the uniform.
 
@@ -127,7 +127,7 @@ Unbinds all ids currently bound to the uniform.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **get_ids**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **get_ids**\ (\ ) |const| :ref:`🔗<class_RDUniform_method_get_ids>`
 
 Returns an array of all ids currently bound to the uniform.
 

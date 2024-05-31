@@ -96,7 +96,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FillMode**:
+enum **FillMode**: :ref:`🔗<enum_TextureProgressBar_FillMode>`
 
 .. _class_TextureProgressBar_constant_FILL_LEFT_TO_RIGHT:
 
@@ -183,7 +183,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **fill_mode** = ``0``
+:ref:`int<class_int>` **fill_mode** = ``0`` :ref:`🔗<class_TextureProgressBar_property_fill_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -200,7 +200,7 @@ The fill direction. See :ref:`FillMode<enum_TextureProgressBar_FillMode>` for po
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **nine_patch_stretch** = ``false``
+:ref:`bool<class_bool>` **nine_patch_stretch** = ``false`` :ref:`🔗<class_TextureProgressBar_property_nine_patch_stretch>`
 
 .. rst-class:: classref-property-setget
 
@@ -217,7 +217,7 @@ If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_N
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **radial_center_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **radial_center_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_TextureProgressBar_property_radial_center_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -234,7 +234,7 @@ Offsets :ref:`texture_progress<class_TextureProgressBar_property_texture_progres
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radial_fill_degrees** = ``360.0``
+:ref:`float<class_float>` **radial_fill_degrees** = ``360.0`` :ref:`🔗<class_TextureProgressBar_property_radial_fill_degrees>`
 
 .. rst-class:: classref-property-setget
 
@@ -253,7 +253,7 @@ See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.max_value<class_
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radial_initial_angle** = ``0.0``
+:ref:`float<class_float>` **radial_initial_angle** = ``0.0`` :ref:`🔗<class_TextureProgressBar_property_radial_initial_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -270,7 +270,7 @@ Starting angle for the fill of :ref:`texture_progress<class_TextureProgressBar_p
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stretch_margin_bottom** = ``0``
+:ref:`int<class_int>` **stretch_margin_bottom** = ``0`` :ref:`🔗<class_TextureProgressBar_property_stretch_margin_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -287,7 +287,7 @@ The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's botto
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stretch_margin_left** = ``0``
+:ref:`int<class_int>` **stretch_margin_left** = ``0`` :ref:`🔗<class_TextureProgressBar_property_stretch_margin_left>`
 
 .. rst-class:: classref-property-setget
 
@@ -304,7 +304,7 @@ The width of the 9-patch's left column. Only effective if :ref:`nine_patch_stret
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stretch_margin_right** = ``0``
+:ref:`int<class_int>` **stretch_margin_right** = ``0`` :ref:`🔗<class_TextureProgressBar_property_stretch_margin_right>`
 
 .. rst-class:: classref-property-setget
 
@@ -321,7 +321,7 @@ The width of the 9-patch's right column. Only effective if :ref:`nine_patch_stre
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stretch_margin_top** = ``0``
+:ref:`int<class_int>` **stretch_margin_top** = ``0`` :ref:`🔗<class_TextureProgressBar_property_stretch_margin_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -338,7 +338,7 @@ The height of the 9-patch's top row. Only effective if :ref:`nine_patch_stretch<
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_over**
+:ref:`Texture2D<class_Texture2D>` **texture_over** :ref:`🔗<class_TextureProgressBar_property_texture_over>`
 
 .. rst-class:: classref-property-setget
 
@@ -355,7 +355,7 @@ The height of the 9-patch's top row. Only effective if :ref:`nine_patch_stretch<
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_progress**
+:ref:`Texture2D<class_Texture2D>` **texture_progress** :ref:`🔗<class_TextureProgressBar_property_texture_progress>`
 
 .. rst-class:: classref-property-setget
 
@@ -374,7 +374,7 @@ The ``value`` property comes from :ref:`Range<class_Range>`. See :ref:`Range.val
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **texture_progress_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **texture_progress_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_TextureProgressBar_property_texture_progress_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -391,7 +391,7 @@ The offset of :ref:`texture_progress<class_TextureProgressBar_property_texture_p
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture_under**
+:ref:`Texture2D<class_Texture2D>` **texture_under** :ref:`🔗<class_TextureProgressBar_property_texture_under>`
 
 .. rst-class:: classref-property-setget
 
@@ -408,7 +408,7 @@ The offset of :ref:`texture_progress<class_TextureProgressBar_property_texture_p
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **tint_over** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **tint_over** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_TextureProgressBar_property_tint_over>`
 
 .. rst-class:: classref-property-setget
 
@@ -425,7 +425,7 @@ Multiplies the color of the bar's :ref:`texture_over<class_TextureProgressBar_pr
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **tint_progress** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **tint_progress** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_TextureProgressBar_property_tint_progress>`
 
 .. rst-class:: classref-property-setget
 
@@ -442,7 +442,7 @@ Multiplies the color of the bar's :ref:`texture_progress<class_TextureProgressBa
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **tint_under** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **tint_under** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_TextureProgressBar_property_tint_under>`
 
 .. rst-class:: classref-property-setget
 
@@ -464,7 +464,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_stretch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
+:ref:`int<class_int>` **get_stretch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const| :ref:`🔗<class_TextureProgressBar_method_get_stretch_margin>`
 
 Returns the stretch margin with the specified index. See :ref:`stretch_margin_bottom<class_TextureProgressBar_property_stretch_margin_bottom>` and related properties.
 
@@ -476,7 +476,7 @@ Returns the stretch margin with the specified index. See :ref:`stretch_margin_bo
 
 .. rst-class:: classref-method
 
-|void| **set_stretch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, value\: :ref:`int<class_int>`\ )
+|void| **set_stretch_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextureProgressBar_method_set_stretch_margin>`
 
 Sets the stretch margin with the specified index. See :ref:`stretch_margin_bottom<class_TextureProgressBar_property_stretch_margin_bottom>` and related properties.
 

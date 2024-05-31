@@ -62,7 +62,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fsr_sharpness** = ``0.0``
+:ref:`float<class_float>` **fsr_sharpness** = ``0.0`` :ref:`🔗<class_RenderSceneBuffersConfiguration_property_fsr_sharpness>`
 
 .. rst-class:: classref-property-setget
 
@@ -79,7 +79,7 @@ FSR Sharpness applicable if FSR upscaling is used.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **internal_size** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **internal_size** = ``Vector2i(0, 0)`` :ref:`🔗<class_RenderSceneBuffersConfiguration_property_internal_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -96,7 +96,7 @@ The size of the 3D render buffer used for rendering.
 
 .. rst-class:: classref-property
 
-:ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` **msaa_3d** = ``0``
+:ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` **msaa_3d** = ``0`` :ref:`🔗<class_RenderSceneBuffersConfiguration_property_msaa_3d>`
 
 .. rst-class:: classref-property-setget
 
@@ -113,7 +113,7 @@ The MSAA mode we're using for 3D rendering.
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **render_target** = ``RID()``
+:ref:`RID<class_RID>` **render_target** = ``RID()`` :ref:`🔗<class_RenderSceneBuffersConfiguration_property_render_target>`
 
 .. rst-class:: classref-property-setget
 
@@ -130,7 +130,7 @@ The render target associated with these buffer.
 
 .. rst-class:: classref-property
 
-:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **scaling_3d_mode** = ``255``
+:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **scaling_3d_mode** = ``255`` :ref:`🔗<class_RenderSceneBuffersConfiguration_property_scaling_3d_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -147,7 +147,7 @@ The requested scaling mode with which we upscale/downscale if :ref:`internal_siz
 
 .. rst-class:: classref-property
 
-:ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` **screen_space_aa** = ``0``
+:ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` **screen_space_aa** = ``0`` :ref:`🔗<class_RenderSceneBuffersConfiguration_property_screen_space_aa>`
 
 .. rst-class:: classref-property-setget
 
@@ -164,7 +164,7 @@ The requested screen space AA applied in post processing.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **target_size** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **target_size** = ``Vector2i(0, 0)`` :ref:`🔗<class_RenderSceneBuffersConfiguration_property_target_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -181,7 +181,7 @@ The target (upscale) size if scaling is used.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **texture_mipmap_bias** = ``0.0``
+:ref:`float<class_float>` **texture_mipmap_bias** = ``0.0`` :ref:`🔗<class_RenderSceneBuffersConfiguration_property_texture_mipmap_bias>`
 
 .. rst-class:: classref-property-setget
 
@@ -198,7 +198,7 @@ Bias applied to mipmaps.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **view_count** = ``1``
+:ref:`int<class_int>` **view_count** = ``1`` :ref:`🔗<class_RenderSceneBuffersConfiguration_property_view_count>`
 
 .. rst-class:: classref-property-setget
 

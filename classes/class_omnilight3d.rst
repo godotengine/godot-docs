@@ -68,7 +68,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ShadowMode**:
+enum **ShadowMode**: :ref:`🔗<enum_OmniLight3D_ShadowMode>`
 
 .. _class_OmniLight3D_constant_SHADOW_DUAL_PARABOLOID:
 
@@ -99,7 +99,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **omni_attenuation** = ``1.0``
+:ref:`float<class_float>` **omni_attenuation** = ``1.0`` :ref:`🔗<class_OmniLight3D_property_omni_attenuation>`
 
 .. rst-class:: classref-property-setget
 
@@ -122,7 +122,7 @@ A value of ``0.0`` smoothly attenuates light at the edge of the range. A value o
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **omni_range** = ``5.0``
+:ref:`float<class_float>` **omni_range** = ``5.0`` :ref:`🔗<class_OmniLight3D_property_omni_range>`
 
 .. rst-class:: classref-property-setget
 
@@ -141,7 +141,7 @@ The light's radius. Note that the effectively lit area may appear to be smaller 
 
 .. rst-class:: classref-property
 
-:ref:`ShadowMode<enum_OmniLight3D_ShadowMode>` **omni_shadow_mode** = ``1``
+:ref:`ShadowMode<enum_OmniLight3D_ShadowMode>` **omni_shadow_mode** = ``1`` :ref:`🔗<class_OmniLight3D_property_omni_shadow_mode>`
 
 .. rst-class:: classref-property-setget
 

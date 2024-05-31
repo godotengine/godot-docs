@@ -62,7 +62,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collide_with_areas** = ``false``
+:ref:`bool<class_bool>` **collide_with_areas** = ``false`` :ref:`🔗<class_PhysicsShapeQueryParameters3D_property_collide_with_areas>`
 
 .. rst-class:: classref-property-setget
 
@@ -79,7 +79,7 @@ If ``true``, the query will take :ref:`Area3D<class_Area3D>`\ s into account.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collide_with_bodies** = ``true``
+:ref:`bool<class_bool>` **collide_with_bodies** = ``true`` :ref:`🔗<class_PhysicsShapeQueryParameters3D_property_collide_with_bodies>`
 
 .. rst-class:: classref-property-setget
 
@@ -96,7 +96,7 @@ If ``true``, the query will take :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s in
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **collision_mask** = ``4294967295``
+:ref:`int<class_int>` **collision_mask** = ``4294967295`` :ref:`🔗<class_PhysicsShapeQueryParameters3D_property_collision_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -113,7 +113,7 @@ The physics layers the query will detect (as a bitmask). By default, all collisi
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude** = ``[]`` :ref:`🔗<class_PhysicsShapeQueryParameters3D_property_exclude>`
 
 .. rst-class:: classref-property-setget
 
@@ -130,7 +130,7 @@ The list of object :ref:`RID<class_RID>`\ s that will be excluded from collision
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **margin** = ``0.0``
+:ref:`float<class_float>` **margin** = ``0.0`` :ref:`🔗<class_PhysicsShapeQueryParameters3D_property_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -147,7 +147,7 @@ The collision margin for the shape.
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **motion** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **motion** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_PhysicsShapeQueryParameters3D_property_motion>`
 
 .. rst-class:: classref-property-setget
 
@@ -164,7 +164,7 @@ The motion of the shape being queried for.
 
 .. rst-class:: classref-property
 
-:ref:`Resource<class_Resource>` **shape**
+:ref:`Resource<class_Resource>` **shape** :ref:`🔗<class_PhysicsShapeQueryParameters3D_property_shape>`
 
 .. rst-class:: classref-property-setget
 
@@ -181,7 +181,7 @@ The :ref:`Shape3D<class_Shape3D>` that will be used for collision/intersection q
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **shape_rid** = ``RID()``
+:ref:`RID<class_RID>` **shape_rid** = ``RID()`` :ref:`🔗<class_PhysicsShapeQueryParameters3D_property_shape_rid>`
 
 .. rst-class:: classref-property-setget
 
@@ -231,7 +231,7 @@ The queried shape's :ref:`RID<class_RID>` that will be used for collision/inters
 
 .. rst-class:: classref-property
 
-:ref:`Transform3D<class_Transform3D>` **transform** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)``
+:ref:`Transform3D<class_Transform3D>` **transform** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` :ref:`🔗<class_PhysicsShapeQueryParameters3D_property_transform>`
 
 .. rst-class:: classref-property-setget
 

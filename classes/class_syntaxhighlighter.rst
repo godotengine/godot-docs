@@ -62,7 +62,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_clear_highlighting_cache**\ (\ ) |virtual|
+|void| **_clear_highlighting_cache**\ (\ ) |virtual| :ref:`🔗<class_SyntaxHighlighter_private_method__clear_highlighting_cache>`
 
 Virtual method which can be overridden to clear any local caches.
 
@@ -74,7 +74,7 @@ Virtual method which can be overridden to clear any local caches.
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_get_line_syntax_highlighting**\ (\ line\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Dictionary<class_Dictionary>` **_get_line_syntax_highlighting**\ (\ line\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_SyntaxHighlighter_private_method__get_line_syntax_highlighting>`
 
 Virtual method which can be overridden to return syntax highlighting data.
 
@@ -88,7 +88,7 @@ See :ref:`get_line_syntax_highlighting<class_SyntaxHighlighter_method_get_line_s
 
 .. rst-class:: classref-method
 
-|void| **_update_cache**\ (\ ) |virtual|
+|void| **_update_cache**\ (\ ) |virtual| :ref:`🔗<class_SyntaxHighlighter_private_method__update_cache>`
 
 Virtual method which can be overridden to update any local caches.
 
@@ -100,7 +100,7 @@ Virtual method which can be overridden to update any local caches.
 
 .. rst-class:: classref-method
 
-|void| **clear_highlighting_cache**\ (\ )
+|void| **clear_highlighting_cache**\ (\ ) :ref:`🔗<class_SyntaxHighlighter_method_clear_highlighting_cache>`
 
 Clears all cached syntax highlighting data.
 
@@ -114,7 +114,7 @@ Then calls overridable method :ref:`_clear_highlighting_cache<class_SyntaxHighli
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **get_line_syntax_highlighting**\ (\ line\: :ref:`int<class_int>`\ )
+:ref:`Dictionary<class_Dictionary>` **get_line_syntax_highlighting**\ (\ line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SyntaxHighlighter_method_get_line_syntax_highlighting>`
 
 Returns syntax highlighting data for a single line. If the line is not cached, calls :ref:`_get_line_syntax_highlighting<class_SyntaxHighlighter_private_method__get_line_syntax_highlighting>` to calculate the data.
 
@@ -143,7 +143,7 @@ This will color columns 0-4 red, and columns 5-eol in green.
 
 .. rst-class:: classref-method
 
-:ref:`TextEdit<class_TextEdit>` **get_text_edit**\ (\ ) |const|
+:ref:`TextEdit<class_TextEdit>` **get_text_edit**\ (\ ) |const| :ref:`🔗<class_SyntaxHighlighter_method_get_text_edit>`
 
 Returns the associated :ref:`TextEdit<class_TextEdit>` node.
 
@@ -155,7 +155,7 @@ Returns the associated :ref:`TextEdit<class_TextEdit>` node.
 
 .. rst-class:: classref-method
 
-|void| **update_cache**\ (\ )
+|void| **update_cache**\ (\ ) :ref:`🔗<class_SyntaxHighlighter_method_update_cache>`
 
 Clears then updates the **SyntaxHighlighter** caches. Override :ref:`_update_cache<class_SyntaxHighlighter_private_method__update_cache>` for a callback.
 

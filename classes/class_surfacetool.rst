@@ -150,7 +150,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **CustomFormat**:
+enum **CustomFormat**: :ref:`🔗<enum_SurfaceTool_CustomFormat>`
 
 .. _class_SurfaceTool_constant_CUSTOM_RGBA8_UNORM:
 
@@ -232,7 +232,7 @@ Used to indicate a disabled custom channel.
 
 .. rst-class:: classref-enumeration
 
-enum **SkinWeightCount**:
+enum **SkinWeightCount**: :ref:`🔗<enum_SurfaceTool_SkinWeightCount>`
 
 .. _class_SurfaceTool_constant_SKIN_4_WEIGHTS:
 
@@ -263,7 +263,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_index**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **add_index**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SurfaceTool_method_add_index>`
 
 Adds a vertex to index array if you are using indexed vertices. Does not need to be called before adding vertices.
 
@@ -275,7 +275,7 @@ Adds a vertex to index array if you are using indexed vertices. Does not need to
 
 .. rst-class:: classref-method
 
-|void| **add_triangle_fan**\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), colors\: :ref:`PackedColorArray<class_PackedColorArray>` = PackedColorArray(), uv2s\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), normals\: :ref:`PackedVector3Array<class_PackedVector3Array>` = PackedVector3Array(), tangents\: :ref:`Array<class_Array>`\[:ref:`Plane<class_Plane>`\] = []\ )
+|void| **add_triangle_fan**\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), colors\: :ref:`PackedColorArray<class_PackedColorArray>` = PackedColorArray(), uv2s\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), normals\: :ref:`PackedVector3Array<class_PackedVector3Array>` = PackedVector3Array(), tangents\: :ref:`Array<class_Array>`\[:ref:`Plane<class_Plane>`\] = []\ ) :ref:`🔗<class_SurfaceTool_method_add_triangle_fan>`
 
 Inserts a triangle fan made of array data into :ref:`Mesh<class_Mesh>` being constructed.
 
@@ -289,7 +289,7 @@ Requires the primitive type be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_
 
 .. rst-class:: classref-method
 
-|void| **add_vertex**\ (\ vertex\: :ref:`Vector3<class_Vector3>`\ )
+|void| **add_vertex**\ (\ vertex\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_SurfaceTool_method_add_vertex>`
 
 Specifies the position of current vertex. Should be called after specifying other vertex properties (e.g. Color, UV).
 
@@ -301,7 +301,7 @@ Specifies the position of current vertex. Should be called after specifying othe
 
 .. rst-class:: classref-method
 
-|void| **append_from**\ (\ existing\: :ref:`Mesh<class_Mesh>`, surface\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ )
+|void| **append_from**\ (\ existing\: :ref:`Mesh<class_Mesh>`, surface\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_SurfaceTool_method_append_from>`
 
 Append vertices from a given :ref:`Mesh<class_Mesh>` surface onto the current vertex array with specified :ref:`Transform3D<class_Transform3D>`.
 
@@ -313,7 +313,7 @@ Append vertices from a given :ref:`Mesh<class_Mesh>` surface onto the current ve
 
 .. rst-class:: classref-method
 
-|void| **begin**\ (\ primitive\: :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`\ )
+|void| **begin**\ (\ primitive\: :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`\ ) :ref:`🔗<class_SurfaceTool_method_begin>`
 
 Called before adding any vertices. Takes the primitive type as an argument (e.g. :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`).
 
@@ -325,7 +325,7 @@ Called before adding any vertices. Takes the primitive type as an argument (e.g.
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_SurfaceTool_method_clear>`
 
 Clear all information passed into the surface tool so far.
 
@@ -337,7 +337,7 @@ Clear all information passed into the surface tool so far.
 
 .. rst-class:: classref-method
 
-:ref:`ArrayMesh<class_ArrayMesh>` **commit**\ (\ existing\: :ref:`ArrayMesh<class_ArrayMesh>` = null, flags\: :ref:`int<class_int>` = 0\ )
+:ref:`ArrayMesh<class_ArrayMesh>` **commit**\ (\ existing\: :ref:`ArrayMesh<class_ArrayMesh>` = null, flags\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_SurfaceTool_method_commit>`
 
 Returns a constructed :ref:`ArrayMesh<class_ArrayMesh>` from current information passed in. If an existing :ref:`ArrayMesh<class_ArrayMesh>` is passed in as an argument, will add an extra surface to the existing :ref:`ArrayMesh<class_ArrayMesh>`.
 
@@ -351,7 +351,7 @@ Returns a constructed :ref:`ArrayMesh<class_ArrayMesh>` from current information
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **commit_to_arrays**\ (\ )
+:ref:`Array<class_Array>` **commit_to_arrays**\ (\ ) :ref:`🔗<class_SurfaceTool_method_commit_to_arrays>`
 
 Commits the data to the same format used by :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`, :ref:`ImporterMesh.add_surface<class_ImporterMesh_method_add_surface>`, and :ref:`create_from_arrays<class_SurfaceTool_method_create_from_arrays>`. This way you can further process the mesh data using the :ref:`ArrayMesh<class_ArrayMesh>` or :ref:`ImporterMesh<class_ImporterMesh>` APIs.
 
@@ -363,7 +363,7 @@ Commits the data to the same format used by :ref:`ArrayMesh.add_surface_from_arr
 
 .. rst-class:: classref-method
 
-|void| **create_from**\ (\ existing\: :ref:`Mesh<class_Mesh>`, surface\: :ref:`int<class_int>`\ )
+|void| **create_from**\ (\ existing\: :ref:`Mesh<class_Mesh>`, surface\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SurfaceTool_method_create_from>`
 
 Creates a vertex array from an existing :ref:`Mesh<class_Mesh>`.
 
@@ -375,7 +375,7 @@ Creates a vertex array from an existing :ref:`Mesh<class_Mesh>`.
 
 .. rst-class:: classref-method
 
-|void| **create_from_arrays**\ (\ arrays\: :ref:`Array<class_Array>`, primitive_type\: :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` = 3\ )
+|void| **create_from_arrays**\ (\ arrays\: :ref:`Array<class_Array>`, primitive_type\: :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` = 3\ ) :ref:`🔗<class_SurfaceTool_method_create_from_arrays>`
 
 Creates this SurfaceTool from existing vertex arrays such as returned by :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`, :ref:`Mesh.surface_get_arrays<class_Mesh_method_surface_get_arrays>`, :ref:`Mesh.surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>`, :ref:`ImporterMesh.get_surface_arrays<class_ImporterMesh_method_get_surface_arrays>`, and :ref:`ImporterMesh.get_surface_blend_shape_arrays<class_ImporterMesh_method_get_surface_blend_shape_arrays>`. ``primitive_type`` controls the type of mesh data, defaulting to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
@@ -387,7 +387,7 @@ Creates this SurfaceTool from existing vertex arrays such as returned by :ref:`c
 
 .. rst-class:: classref-method
 
-|void| **create_from_blend_shape**\ (\ existing\: :ref:`Mesh<class_Mesh>`, surface\: :ref:`int<class_int>`, blend_shape\: :ref:`String<class_String>`\ )
+|void| **create_from_blend_shape**\ (\ existing\: :ref:`Mesh<class_Mesh>`, surface\: :ref:`int<class_int>`, blend_shape\: :ref:`String<class_String>`\ ) :ref:`🔗<class_SurfaceTool_method_create_from_blend_shape>`
 
 Creates a vertex array from the specified blend shape of an existing :ref:`Mesh<class_Mesh>`. This can be used to extract a specific pose from a blend shape.
 
@@ -399,7 +399,7 @@ Creates a vertex array from the specified blend shape of an existing :ref:`Mesh<
 
 .. rst-class:: classref-method
 
-|void| **deindex**\ (\ )
+|void| **deindex**\ (\ ) :ref:`🔗<class_SurfaceTool_method_deindex>`
 
 Removes the index array by expanding the vertex array.
 
@@ -411,7 +411,7 @@ Removes the index array by expanding the vertex array.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **generate_lod**\ (\ nd_threshold\: :ref:`float<class_float>`, target_index_count\: :ref:`int<class_int>` = 3\ )
+:ref:`PackedInt32Array<class_PackedInt32Array>` **generate_lod**\ (\ nd_threshold\: :ref:`float<class_float>`, target_index_count\: :ref:`int<class_int>` = 3\ ) :ref:`🔗<class_SurfaceTool_method_generate_lod>`
 
 **Deprecated:** This method is unused internally, as it does not preserve normals or UVs. Consider using :ref:`ImporterMesh.generate_lods<class_ImporterMesh_method_generate_lods>` instead.
 
@@ -425,7 +425,7 @@ Generates an LOD for a given ``nd_threshold`` in linear units (square root of qu
 
 .. rst-class:: classref-method
 
-|void| **generate_normals**\ (\ flip\: :ref:`bool<class_bool>` = false\ )
+|void| **generate_normals**\ (\ flip\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_SurfaceTool_method_generate_normals>`
 
 Generates normals from vertices so you do not have to do it manually. If ``flip`` is ``true``, the resulting normals will be inverted. :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` should be called *after* generating geometry and *before* committing the mesh using :ref:`commit<class_SurfaceTool_method_commit>` or :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`. For correct display of normal-mapped surfaces, you will also have to generate tangents using :ref:`generate_tangents<class_SurfaceTool_method_generate_tangents>`.
 
@@ -441,7 +441,7 @@ Generates normals from vertices so you do not have to do it manually. If ``flip`
 
 .. rst-class:: classref-method
 
-|void| **generate_tangents**\ (\ )
+|void| **generate_tangents**\ (\ ) :ref:`🔗<class_SurfaceTool_method_generate_tangents>`
 
 Generates a tangent vector for each vertex. Requires that each vertex have UVs and normals set already (see :ref:`generate_normals<class_SurfaceTool_method_generate_normals>`).
 
@@ -453,7 +453,7 @@ Generates a tangent vector for each vertex. Requires that each vertex have UVs a
 
 .. rst-class:: classref-method
 
-:ref:`AABB<class_AABB>` **get_aabb**\ (\ ) |const|
+:ref:`AABB<class_AABB>` **get_aabb**\ (\ ) |const| :ref:`🔗<class_SurfaceTool_method_get_aabb>`
 
 Returns the axis-aligned bounding box of the vertex positions.
 
@@ -465,7 +465,7 @@ Returns the axis-aligned bounding box of the vertex positions.
 
 .. rst-class:: classref-method
 
-:ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **get_custom_format**\ (\ channel_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`CustomFormat<enum_SurfaceTool_CustomFormat>` **get_custom_format**\ (\ channel_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_SurfaceTool_method_get_custom_format>`
 
 Returns the format for custom ``channel_index`` (currently up to 4). Returns :ref:`CUSTOM_MAX<class_SurfaceTool_constant_CUSTOM_MAX>` if this custom channel is unused.
 
@@ -477,7 +477,7 @@ Returns the format for custom ``channel_index`` (currently up to 4). Returns :re
 
 .. rst-class:: classref-method
 
-:ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **get_primitive_type**\ (\ ) |const|
+:ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **get_primitive_type**\ (\ ) |const| :ref:`🔗<class_SurfaceTool_method_get_primitive_type>`
 
 Returns the type of mesh geometry, such as :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
@@ -489,7 +489,7 @@ Returns the type of mesh geometry, such as :ref:`Mesh.PRIMITIVE_TRIANGLES<class_
 
 .. rst-class:: classref-method
 
-:ref:`SkinWeightCount<enum_SurfaceTool_SkinWeightCount>` **get_skin_weight_count**\ (\ ) |const|
+:ref:`SkinWeightCount<enum_SurfaceTool_SkinWeightCount>` **get_skin_weight_count**\ (\ ) |const| :ref:`🔗<class_SurfaceTool_method_get_skin_weight_count>`
 
 By default, returns :ref:`SKIN_4_WEIGHTS<class_SurfaceTool_constant_SKIN_4_WEIGHTS>` to indicate only 4 bone influences per vertex are used.
 
@@ -505,7 +505,7 @@ Returns :ref:`SKIN_8_WEIGHTS<class_SurfaceTool_constant_SKIN_8_WEIGHTS>` if up t
 
 .. rst-class:: classref-method
 
-|void| **index**\ (\ )
+|void| **index**\ (\ ) :ref:`🔗<class_SurfaceTool_method_index>`
 
 Shrinks the vertex array by creating an index array. This can improve performance by avoiding vertex reuse.
 
@@ -517,7 +517,7 @@ Shrinks the vertex array by creating an index array. This can improve performanc
 
 .. rst-class:: classref-method
 
-|void| **optimize_indices_for_cache**\ (\ )
+|void| **optimize_indices_for_cache**\ (\ ) :ref:`🔗<class_SurfaceTool_method_optimize_indices_for_cache>`
 
 Optimizes triangle sorting for performance. Requires that :ref:`get_primitive_type<class_SurfaceTool_method_get_primitive_type>` is :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
@@ -529,7 +529,7 @@ Optimizes triangle sorting for performance. Requires that :ref:`get_primitive_ty
 
 .. rst-class:: classref-method
 
-|void| **set_bones**\ (\ bones\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+|void| **set_bones**\ (\ bones\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_SurfaceTool_method_set_bones>`
 
 Specifies an array of bones to use for the *next* vertex. ``bones`` must contain 4 integers.
 
@@ -541,7 +541,7 @@ Specifies an array of bones to use for the *next* vertex. ``bones`` must contain
 
 .. rst-class:: classref-method
 
-|void| **set_color**\ (\ color\: :ref:`Color<class_Color>`\ )
+|void| **set_color**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_SurfaceTool_method_set_color>`
 
 Specifies a :ref:`Color<class_Color>` to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
@@ -555,7 +555,7 @@ Specifies a :ref:`Color<class_Color>` to use for the *next* vertex. If every ver
 
 .. rst-class:: classref-method
 
-|void| **set_custom**\ (\ channel_index\: :ref:`int<class_int>`, custom_color\: :ref:`Color<class_Color>`\ )
+|void| **set_custom**\ (\ channel_index\: :ref:`int<class_int>`, custom_color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_SurfaceTool_method_set_custom>`
 
 Sets the custom value on this vertex for ``channel_index``.
 
@@ -569,7 +569,7 @@ Sets the custom value on this vertex for ``channel_index``.
 
 .. rst-class:: classref-method
 
-|void| **set_custom_format**\ (\ channel_index\: :ref:`int<class_int>`, format\: :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>`\ )
+|void| **set_custom_format**\ (\ channel_index\: :ref:`int<class_int>`, format\: :ref:`CustomFormat<enum_SurfaceTool_CustomFormat>`\ ) :ref:`🔗<class_SurfaceTool_method_set_custom_format>`
 
 Sets the color format for this custom ``channel_index``. Use :ref:`CUSTOM_MAX<class_SurfaceTool_constant_CUSTOM_MAX>` to disable.
 
@@ -583,7 +583,7 @@ Must be invoked after :ref:`begin<class_SurfaceTool_method_begin>` and should be
 
 .. rst-class:: classref-method
 
-|void| **set_material**\ (\ material\: :ref:`Material<class_Material>`\ )
+|void| **set_material**\ (\ material\: :ref:`Material<class_Material>`\ ) :ref:`🔗<class_SurfaceTool_method_set_material>`
 
 Sets :ref:`Material<class_Material>` to be used by the :ref:`Mesh<class_Mesh>` you are constructing.
 
@@ -595,7 +595,7 @@ Sets :ref:`Material<class_Material>` to be used by the :ref:`Mesh<class_Mesh>` y
 
 .. rst-class:: classref-method
 
-|void| **set_normal**\ (\ normal\: :ref:`Vector3<class_Vector3>`\ )
+|void| **set_normal**\ (\ normal\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_SurfaceTool_method_set_normal>`
 
 Specifies a normal to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
@@ -607,7 +607,7 @@ Specifies a normal to use for the *next* vertex. If every vertex needs to have t
 
 .. rst-class:: classref-method
 
-|void| **set_skin_weight_count**\ (\ count\: :ref:`SkinWeightCount<enum_SurfaceTool_SkinWeightCount>`\ )
+|void| **set_skin_weight_count**\ (\ count\: :ref:`SkinWeightCount<enum_SurfaceTool_SkinWeightCount>`\ ) :ref:`🔗<class_SurfaceTool_method_set_skin_weight_count>`
 
 Set to :ref:`SKIN_8_WEIGHTS<class_SurfaceTool_constant_SKIN_8_WEIGHTS>` to indicate that up to 8 bone influences per vertex may be used.
 
@@ -623,7 +623,7 @@ By default, only 4 bone influences are used (:ref:`SKIN_4_WEIGHTS<class_SurfaceT
 
 .. rst-class:: classref-method
 
-|void| **set_smooth_group**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **set_smooth_group**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SurfaceTool_method_set_smooth_group>`
 
 Specifies the smooth group to use for the *next* vertex. If this is never called, all vertices will have the default smooth group of ``0`` and will be smoothed with adjacent vertices of the same group. To produce a mesh with flat normals, set the smooth group to ``-1``.
 
@@ -637,7 +637,7 @@ Specifies the smooth group to use for the *next* vertex. If this is never called
 
 .. rst-class:: classref-method
 
-|void| **set_tangent**\ (\ tangent\: :ref:`Plane<class_Plane>`\ )
+|void| **set_tangent**\ (\ tangent\: :ref:`Plane<class_Plane>`\ ) :ref:`🔗<class_SurfaceTool_method_set_tangent>`
 
 Specifies a tangent to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
@@ -649,7 +649,7 @@ Specifies a tangent to use for the *next* vertex. If every vertex needs to have 
 
 .. rst-class:: classref-method
 
-|void| **set_uv**\ (\ uv\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_uv**\ (\ uv\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_SurfaceTool_method_set_uv>`
 
 Specifies a set of UV coordinates to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
@@ -661,7 +661,7 @@ Specifies a set of UV coordinates to use for the *next* vertex. If every vertex 
 
 .. rst-class:: classref-method
 
-|void| **set_uv2**\ (\ uv2\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_uv2**\ (\ uv2\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_SurfaceTool_method_set_uv2>`
 
 Specifies an optional second set of UV coordinates to use for the *next* vertex. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 
@@ -673,7 +673,7 @@ Specifies an optional second set of UV coordinates to use for the *next* vertex.
 
 .. rst-class:: classref-method
 
-|void| **set_weights**\ (\ weights\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )
+|void| **set_weights**\ (\ weights\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_SurfaceTool_method_set_weights>`
 
 Specifies weight values to use for the *next* vertex. ``weights`` must contain 4 values. If every vertex needs to have this information set and you fail to submit it for the first vertex, this information may not be used at all.
 

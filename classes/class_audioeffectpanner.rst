@@ -53,7 +53,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pan** = ``0.0``
+:ref:`float<class_float>` **pan** = ``0.0`` :ref:`🔗<class_AudioEffectPanner_property_pan>`
 
 .. rst-class:: classref-property-setget
 

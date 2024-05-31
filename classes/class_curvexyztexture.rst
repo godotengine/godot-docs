@@ -56,7 +56,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **curve_x**
+:ref:`Curve<class_Curve>` **curve_x** :ref:`🔗<class_CurveXYZTexture_property_curve_x>`
 
 .. rst-class:: classref-property-setget
 
@@ -73,7 +73,7 @@ The :ref:`Curve<class_Curve>` that is rendered onto the texture's red channel.
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **curve_y**
+:ref:`Curve<class_Curve>` **curve_y** :ref:`🔗<class_CurveXYZTexture_property_curve_y>`
 
 .. rst-class:: classref-property-setget
 
@@ -90,7 +90,7 @@ The :ref:`Curve<class_Curve>` that is rendered onto the texture's green channel.
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **curve_z**
+:ref:`Curve<class_Curve>` **curve_z** :ref:`🔗<class_CurveXYZTexture_property_curve_z>`
 
 .. rst-class:: classref-property-setget
 
@@ -107,7 +107,7 @@ The :ref:`Curve<class_Curve>` that is rendered onto the texture's blue channel.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **width** = ``256``
+:ref:`int<class_int>` **width** = ``256`` :ref:`🔗<class_CurveXYZTexture_property_width>`
 
 .. rst-class:: classref-property-setget
 

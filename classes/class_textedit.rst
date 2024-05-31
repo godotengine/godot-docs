@@ -515,7 +515,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**caret_changed**\ (\ )
+**caret_changed**\ (\ ) :ref:`🔗<class_TextEdit_signal_caret_changed>`
 
 Emitted when any caret changes position.
 
@@ -527,7 +527,7 @@ Emitted when any caret changes position.
 
 .. rst-class:: classref-signal
 
-**gutter_added**\ (\ )
+**gutter_added**\ (\ ) :ref:`🔗<class_TextEdit_signal_gutter_added>`
 
 Emitted when a gutter is added.
 
@@ -539,7 +539,7 @@ Emitted when a gutter is added.
 
 .. rst-class:: classref-signal
 
-**gutter_clicked**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ )
+**gutter_clicked**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_signal_gutter_clicked>`
 
 Emitted when a gutter is clicked.
 
@@ -551,7 +551,7 @@ Emitted when a gutter is clicked.
 
 .. rst-class:: classref-signal
 
-**gutter_removed**\ (\ )
+**gutter_removed**\ (\ ) :ref:`🔗<class_TextEdit_signal_gutter_removed>`
 
 Emitted when a gutter is removed.
 
@@ -563,7 +563,7 @@ Emitted when a gutter is removed.
 
 .. rst-class:: classref-signal
 
-**lines_edited_from**\ (\ from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ )
+**lines_edited_from**\ (\ from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_signal_lines_edited_from>`
 
 Emitted immediately when the text changes.
 
@@ -577,7 +577,7 @@ When text is added ``from_line`` will be less than ``to_line``. On a remove ``to
 
 .. rst-class:: classref-signal
 
-**text_changed**\ (\ )
+**text_changed**\ (\ ) :ref:`🔗<class_TextEdit_signal_text_changed>`
 
 Emitted when the text changes.
 
@@ -589,7 +589,7 @@ Emitted when the text changes.
 
 .. rst-class:: classref-signal
 
-**text_set**\ (\ )
+**text_set**\ (\ ) :ref:`🔗<class_TextEdit_signal_text_set>`
 
 Emitted when :ref:`clear<class_TextEdit_method_clear>` is called or :ref:`text<class_TextEdit_property_text>` is set.
 
@@ -606,7 +606,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **MenuItems**:
+enum **MenuItems**: :ref:`🔗<enum_TextEdit_MenuItems>`
 
 .. _class_TextEdit_constant_MENU_CUT:
 
@@ -864,7 +864,7 @@ Represents the size of the :ref:`MenuItems<enum_TextEdit_MenuItems>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **EditAction**:
+enum **EditAction**: :ref:`🔗<enum_TextEdit_EditAction>`
 
 .. _class_TextEdit_constant_ACTION_NONE:
 
@@ -906,7 +906,7 @@ A forward delete action.
 
 .. rst-class:: classref-enumeration
 
-enum **SearchFlags**:
+enum **SearchFlags**: :ref:`🔗<enum_TextEdit_SearchFlags>`
 
 .. _class_TextEdit_constant_SEARCH_MATCH_CASE:
 
@@ -940,7 +940,7 @@ Search from end to beginning.
 
 .. rst-class:: classref-enumeration
 
-enum **CaretType**:
+enum **CaretType**: :ref:`🔗<enum_TextEdit_CaretType>`
 
 .. _class_TextEdit_constant_CARET_TYPE_LINE:
 
@@ -966,7 +966,7 @@ Block caret.
 
 .. rst-class:: classref-enumeration
 
-enum **SelectionMode**:
+enum **SelectionMode**: :ref:`🔗<enum_TextEdit_SelectionMode>`
 
 .. _class_TextEdit_constant_SELECTION_MODE_NONE:
 
@@ -1016,7 +1016,7 @@ Select whole lines as if the user triple clicked.
 
 .. rst-class:: classref-enumeration
 
-enum **LineWrappingMode**:
+enum **LineWrappingMode**: :ref:`🔗<enum_TextEdit_LineWrappingMode>`
 
 .. _class_TextEdit_constant_LINE_WRAPPING_NONE:
 
@@ -1042,7 +1042,7 @@ Line wrapping occurs at the control boundary, beyond what would normally be visi
 
 .. rst-class:: classref-enumeration
 
-enum **GutterType**:
+enum **GutterType**: :ref:`🔗<enum_TextEdit_GutterType>`
 
 .. _class_TextEdit_constant_GUTTER_TYPE_STRING:
 
@@ -1081,7 +1081,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode** = ``3``
+:ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode** = ``3`` :ref:`🔗<class_TextEdit_property_autowrap_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -1098,7 +1098,7 @@ If :ref:`wrap_mode<class_TextEdit_property_wrap_mode>` is set to :ref:`LINE_WRAP
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **caret_blink** = ``false``
+:ref:`bool<class_bool>` **caret_blink** = ``false`` :ref:`🔗<class_TextEdit_property_caret_blink>`
 
 .. rst-class:: classref-property-setget
 
@@ -1115,7 +1115,7 @@ If ``true``, makes the caret blink.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **caret_blink_interval** = ``0.65``
+:ref:`float<class_float>` **caret_blink_interval** = ``0.65`` :ref:`🔗<class_TextEdit_property_caret_blink_interval>`
 
 .. rst-class:: classref-property-setget
 
@@ -1132,7 +1132,7 @@ The interval at which the caret blinks (in seconds).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **caret_draw_when_editable_disabled** = ``false``
+:ref:`bool<class_bool>` **caret_draw_when_editable_disabled** = ``false`` :ref:`🔗<class_TextEdit_property_caret_draw_when_editable_disabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1149,7 +1149,7 @@ If ``true``, caret will be visible when :ref:`editable<class_TextEdit_property_e
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **caret_mid_grapheme** = ``false``
+:ref:`bool<class_bool>` **caret_mid_grapheme** = ``false`` :ref:`🔗<class_TextEdit_property_caret_mid_grapheme>`
 
 .. rst-class:: classref-property-setget
 
@@ -1168,7 +1168,7 @@ Allow moving caret, selecting and removing the individual composite character co
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **caret_move_on_right_click** = ``true``
+:ref:`bool<class_bool>` **caret_move_on_right_click** = ``true`` :ref:`🔗<class_TextEdit_property_caret_move_on_right_click>`
 
 .. rst-class:: classref-property-setget
 
@@ -1187,7 +1187,7 @@ If ``false``, the context menu ignores mouse location.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **caret_multiple** = ``true``
+:ref:`bool<class_bool>` **caret_multiple** = ``true`` :ref:`🔗<class_TextEdit_property_caret_multiple>`
 
 .. rst-class:: classref-property-setget
 
@@ -1204,7 +1204,7 @@ Sets if multiple carets are allowed.
 
 .. rst-class:: classref-property
 
-:ref:`CaretType<enum_TextEdit_CaretType>` **caret_type** = ``0``
+:ref:`CaretType<enum_TextEdit_CaretType>` **caret_type** = ``0`` :ref:`🔗<class_TextEdit_property_caret_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -1221,7 +1221,7 @@ Set the type of caret to draw.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **context_menu_enabled** = ``true``
+:ref:`bool<class_bool>` **context_menu_enabled** = ``true`` :ref:`🔗<class_TextEdit_property_context_menu_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1238,7 +1238,7 @@ If ``true``, a right-click displays the context menu.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **deselect_on_focus_loss_enabled** = ``true``
+:ref:`bool<class_bool>` **deselect_on_focus_loss_enabled** = ``true`` :ref:`🔗<class_TextEdit_property_deselect_on_focus_loss_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1255,7 +1255,7 @@ If ``true``, the selected text will be deselected when focus is lost.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **drag_and_drop_selection_enabled** = ``true``
+:ref:`bool<class_bool>` **drag_and_drop_selection_enabled** = ``true`` :ref:`🔗<class_TextEdit_property_drag_and_drop_selection_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1272,7 +1272,7 @@ If ``true``, allow drag and drop of selected text. Text can still be dropped fro
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **draw_control_chars** = ``false``
+:ref:`bool<class_bool>` **draw_control_chars** = ``false`` :ref:`🔗<class_TextEdit_property_draw_control_chars>`
 
 .. rst-class:: classref-property-setget
 
@@ -1289,7 +1289,7 @@ If ``true``, control characters are displayed.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **draw_spaces** = ``false``
+:ref:`bool<class_bool>` **draw_spaces** = ``false`` :ref:`🔗<class_TextEdit_property_draw_spaces>`
 
 .. rst-class:: classref-property-setget
 
@@ -1306,7 +1306,7 @@ If ``true``, the "space" character will have a visible representation.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **draw_tabs** = ``false``
+:ref:`bool<class_bool>` **draw_tabs** = ``false`` :ref:`🔗<class_TextEdit_property_draw_tabs>`
 
 .. rst-class:: classref-property-setget
 
@@ -1323,7 +1323,7 @@ If ``true``, the "tab" character will have a visible representation.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editable** = ``true``
+:ref:`bool<class_bool>` **editable** = ``true`` :ref:`🔗<class_TextEdit_property_editable>`
 
 .. rst-class:: classref-property-setget
 
@@ -1340,7 +1340,7 @@ If ``false``, existing text cannot be modified and new text cannot be added.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **highlight_all_occurrences** = ``false``
+:ref:`bool<class_bool>` **highlight_all_occurrences** = ``false`` :ref:`🔗<class_TextEdit_property_highlight_all_occurrences>`
 
 .. rst-class:: classref-property-setget
 
@@ -1357,7 +1357,7 @@ If ``true``, all occurrences of the selected text will be highlighted.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **highlight_current_line** = ``false``
+:ref:`bool<class_bool>` **highlight_current_line** = ``false`` :ref:`🔗<class_TextEdit_property_highlight_current_line>`
 
 .. rst-class:: classref-property-setget
 
@@ -1374,7 +1374,7 @@ If ``true``, the line containing the cursor is highlighted.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **indent_wrapped_lines** = ``false``
+:ref:`bool<class_bool>` **indent_wrapped_lines** = ``false`` :ref:`🔗<class_TextEdit_property_indent_wrapped_lines>`
 
 .. rst-class:: classref-property-setget
 
@@ -1391,7 +1391,7 @@ If ``true``, all wrapped lines are indented to the same amount as the unwrapped 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **language** = ``""``
+:ref:`String<class_String>` **language** = ``""`` :ref:`🔗<class_TextEdit_property_language>`
 
 .. rst-class:: classref-property-setget
 
@@ -1408,7 +1408,7 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **middle_mouse_paste_enabled** = ``true``
+:ref:`bool<class_bool>` **middle_mouse_paste_enabled** = ``true`` :ref:`🔗<class_TextEdit_property_middle_mouse_paste_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1427,7 +1427,7 @@ If ``false``, using middle mouse button to paste clipboard will be disabled.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **minimap_draw** = ``false``
+:ref:`bool<class_bool>` **minimap_draw** = ``false`` :ref:`🔗<class_TextEdit_property_minimap_draw>`
 
 .. rst-class:: classref-property-setget
 
@@ -1444,7 +1444,7 @@ If ``true``, a minimap is shown, providing an outline of your source code. The m
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **minimap_width** = ``80``
+:ref:`int<class_int>` **minimap_width** = ``80`` :ref:`🔗<class_TextEdit_property_minimap_width>`
 
 .. rst-class:: classref-property-setget
 
@@ -1461,7 +1461,7 @@ The width, in pixels, of the minimap.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **placeholder_text** = ``""``
+:ref:`String<class_String>` **placeholder_text** = ``""`` :ref:`🔗<class_TextEdit_property_placeholder_text>`
 
 .. rst-class:: classref-property-setget
 
@@ -1478,7 +1478,7 @@ Text shown when the **TextEdit** is empty. It is **not** the **TextEdit**'s defa
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **scroll_fit_content_height** = ``false``
+:ref:`bool<class_bool>` **scroll_fit_content_height** = ``false`` :ref:`🔗<class_TextEdit_property_scroll_fit_content_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -1495,7 +1495,7 @@ If ``true``, **TextEdit** will disable vertical scroll and fit minimum height to
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **scroll_horizontal** = ``0``
+:ref:`int<class_int>` **scroll_horizontal** = ``0`` :ref:`🔗<class_TextEdit_property_scroll_horizontal>`
 
 .. rst-class:: classref-property-setget
 
@@ -1512,7 +1512,7 @@ If there is a horizontal scrollbar, this determines the current horizontal scrol
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **scroll_past_end_of_file** = ``false``
+:ref:`bool<class_bool>` **scroll_past_end_of_file** = ``false`` :ref:`🔗<class_TextEdit_property_scroll_past_end_of_file>`
 
 .. rst-class:: classref-property-setget
 
@@ -1529,7 +1529,7 @@ Allow scrolling past the last line into "virtual" space.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **scroll_smooth** = ``false``
+:ref:`bool<class_bool>` **scroll_smooth** = ``false`` :ref:`🔗<class_TextEdit_property_scroll_smooth>`
 
 .. rst-class:: classref-property-setget
 
@@ -1546,7 +1546,7 @@ Scroll smoothly over the text rather than jumping to the next location.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **scroll_v_scroll_speed** = ``80.0``
+:ref:`float<class_float>` **scroll_v_scroll_speed** = ``80.0`` :ref:`🔗<class_TextEdit_property_scroll_v_scroll_speed>`
 
 .. rst-class:: classref-property-setget
 
@@ -1563,7 +1563,7 @@ Sets the scroll speed with the minimap or when :ref:`scroll_smooth<class_TextEdi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **scroll_vertical** = ``0.0``
+:ref:`float<class_float>` **scroll_vertical** = ``0.0`` :ref:`🔗<class_TextEdit_property_scroll_vertical>`
 
 .. rst-class:: classref-property-setget
 
@@ -1580,7 +1580,7 @@ If there is a vertical scrollbar, this determines the current vertical scroll va
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **selecting_enabled** = ``true``
+:ref:`bool<class_bool>` **selecting_enabled** = ``true`` :ref:`🔗<class_TextEdit_property_selecting_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1599,7 +1599,7 @@ If ``false``, text can not be selected by the user or by the :ref:`select<class_
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shortcut_keys_enabled** = ``true``
+:ref:`bool<class_bool>` **shortcut_keys_enabled** = ``true`` :ref:`🔗<class_TextEdit_property_shortcut_keys_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1616,7 +1616,7 @@ If ``true``, shortcut keys for context menu items are enabled, even if the conte
 
 .. rst-class:: classref-property
 
-:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0``
+:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0`` :ref:`🔗<class_TextEdit_property_structured_text_bidi_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -1633,7 +1633,7 @@ Set BiDi algorithm override for the structured text.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]``
+:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]`` :ref:`🔗<class_TextEdit_property_structured_text_bidi_override_options>`
 
 .. rst-class:: classref-property-setget
 
@@ -1650,7 +1650,7 @@ Set additional options for BiDi override.
 
 .. rst-class:: classref-property
 
-:ref:`SyntaxHighlighter<class_SyntaxHighlighter>` **syntax_highlighter**
+:ref:`SyntaxHighlighter<class_SyntaxHighlighter>` **syntax_highlighter** :ref:`🔗<class_TextEdit_property_syntax_highlighter>`
 
 .. rst-class:: classref-property-setget
 
@@ -1667,7 +1667,7 @@ Sets the :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` to use.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **text** = ``""``
+:ref:`String<class_String>` **text** = ``""`` :ref:`🔗<class_TextEdit_property_text>`
 
 .. rst-class:: classref-property-setget
 
@@ -1684,7 +1684,7 @@ String value of the **TextEdit**.
 
 .. rst-class:: classref-property
 
-:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0``
+:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0`` :ref:`🔗<class_TextEdit_property_text_direction>`
 
 .. rst-class:: classref-property-setget
 
@@ -1701,7 +1701,7 @@ Base text writing direction.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **virtual_keyboard_enabled** = ``true``
+:ref:`bool<class_bool>` **virtual_keyboard_enabled** = ``true`` :ref:`🔗<class_TextEdit_property_virtual_keyboard_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -1718,7 +1718,7 @@ If ``true``, the native virtual keyboard is shown when focused on platforms that
 
 .. rst-class:: classref-property
 
-:ref:`LineWrappingMode<enum_TextEdit_LineWrappingMode>` **wrap_mode** = ``0``
+:ref:`LineWrappingMode<enum_TextEdit_LineWrappingMode>` **wrap_mode** = ``0`` :ref:`🔗<class_TextEdit_property_wrap_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -1740,7 +1740,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_backspace**\ (\ caret_index\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_backspace**\ (\ caret_index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_TextEdit_private_method__backspace>`
 
 Override this method to define what happens when the user presses the backspace key.
 
@@ -1752,7 +1752,7 @@ Override this method to define what happens when the user presses the backspace 
 
 .. rst-class:: classref-method
 
-|void| **_copy**\ (\ caret_index\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_copy**\ (\ caret_index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_TextEdit_private_method__copy>`
 
 Override this method to define what happens when the user performs a copy operation.
 
@@ -1764,7 +1764,7 @@ Override this method to define what happens when the user performs a copy operat
 
 .. rst-class:: classref-method
 
-|void| **_cut**\ (\ caret_index\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_cut**\ (\ caret_index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_TextEdit_private_method__cut>`
 
 Override this method to define what happens when the user performs a cut operation.
 
@@ -1776,7 +1776,7 @@ Override this method to define what happens when the user performs a cut operati
 
 .. rst-class:: classref-method
 
-|void| **_handle_unicode_input**\ (\ unicode_char\: :ref:`int<class_int>`, caret_index\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_handle_unicode_input**\ (\ unicode_char\: :ref:`int<class_int>`, caret_index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_TextEdit_private_method__handle_unicode_input>`
 
 Override this method to define what happens when the user types in the provided key ``unicode_char``.
 
@@ -1788,7 +1788,7 @@ Override this method to define what happens when the user types in the provided 
 
 .. rst-class:: classref-method
 
-|void| **_paste**\ (\ caret_index\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_paste**\ (\ caret_index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_TextEdit_private_method__paste>`
 
 Override this method to define what happens when the user performs a paste operation.
 
@@ -1800,7 +1800,7 @@ Override this method to define what happens when the user performs a paste opera
 
 .. rst-class:: classref-method
 
-|void| **_paste_primary_clipboard**\ (\ caret_index\: :ref:`int<class_int>`\ ) |virtual|
+|void| **_paste_primary_clipboard**\ (\ caret_index\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_TextEdit_private_method__paste_primary_clipboard>`
 
 Override this method to define what happens when the user performs a paste operation with middle mouse button.
 
@@ -1814,7 +1814,7 @@ Override this method to define what happens when the user performs a paste opera
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **add_caret**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **add_caret**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_add_caret>`
 
 Adds a new caret at the given location. Returns the index of the new caret, or ``-1`` if the location is invalid.
 
@@ -1826,7 +1826,7 @@ Adds a new caret at the given location. Returns the index of the new caret, or `
 
 .. rst-class:: classref-method
 
-|void| **add_caret_at_carets**\ (\ below\: :ref:`bool<class_bool>`\ )
+|void| **add_caret_at_carets**\ (\ below\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextEdit_method_add_caret_at_carets>`
 
 Adds an additional caret above or below every caret. If ``below`` is ``true`` the new caret will be added below and above otherwise.
 
@@ -1838,7 +1838,7 @@ Adds an additional caret above or below every caret. If ``below`` is ``true`` th
 
 .. rst-class:: classref-method
 
-|void| **add_gutter**\ (\ at\: :ref:`int<class_int>` = -1\ )
+|void| **add_gutter**\ (\ at\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_add_gutter>`
 
 Register a new gutter to this **TextEdit**. Use ``at`` to have a specific gutter order. A value of ``-1`` appends the gutter to the right.
 
@@ -1850,7 +1850,7 @@ Register a new gutter to this **TextEdit**. Use ``at`` to have a specific gutter
 
 .. rst-class:: classref-method
 
-|void| **add_selection_for_next_occurrence**\ (\ )
+|void| **add_selection_for_next_occurrence**\ (\ ) :ref:`🔗<class_TextEdit_method_add_selection_for_next_occurrence>`
 
 Adds a selection and a caret for the next occurrence of the current selection. If there is no active selection, selects word under caret.
 
@@ -1862,7 +1862,7 @@ Adds a selection and a caret for the next occurrence of the current selection. I
 
 .. rst-class:: classref-method
 
-|void| **adjust_carets_after_edit**\ (\ caret\: :ref:`int<class_int>`, from_line\: :ref:`int<class_int>`, from_col\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`, to_col\: :ref:`int<class_int>`\ )
+|void| **adjust_carets_after_edit**\ (\ caret\: :ref:`int<class_int>`, from_line\: :ref:`int<class_int>`, from_col\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`, to_col\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_adjust_carets_after_edit>`
 
 **Deprecated:** No longer necessary since methods now adjust carets themselves.
 
@@ -1876,7 +1876,7 @@ This method does nothing.
 
 .. rst-class:: classref-method
 
-|void| **adjust_viewport_to_caret**\ (\ caret_index\: :ref:`int<class_int>` = 0\ )
+|void| **adjust_viewport_to_caret**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TextEdit_method_adjust_viewport_to_caret>`
 
 Adjust the viewport so the caret is visible.
 
@@ -1888,7 +1888,7 @@ Adjust the viewport so the caret is visible.
 
 .. rst-class:: classref-method
 
-|void| **apply_ime**\ (\ )
+|void| **apply_ime**\ (\ ) :ref:`🔗<class_TextEdit_method_apply_ime>`
 
 Applies text from the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME) to each caret and closes the IME if it is open.
 
@@ -1900,7 +1900,7 @@ Applies text from the `Input Method Editor <https://en.wikipedia.org/wiki/Input_
 
 .. rst-class:: classref-method
 
-|void| **backspace**\ (\ caret_index\: :ref:`int<class_int>` = -1\ )
+|void| **backspace**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_backspace>`
 
 Called when the user presses the backspace key. Can be overridden with :ref:`_backspace<class_TextEdit_private_method__backspace>`.
 
@@ -1912,7 +1912,7 @@ Called when the user presses the backspace key. Can be overridden with :ref:`_ba
 
 .. rst-class:: classref-method
 
-|void| **begin_complex_operation**\ (\ )
+|void| **begin_complex_operation**\ (\ ) :ref:`🔗<class_TextEdit_method_begin_complex_operation>`
 
 Starts a multipart edit. All edits will be treated as one action until :ref:`end_complex_operation<class_TextEdit_method_end_complex_operation>` is called.
 
@@ -1924,7 +1924,7 @@ Starts a multipart edit. All edits will be treated as one action until :ref:`end
 
 .. rst-class:: classref-method
 
-|void| **begin_multicaret_edit**\ (\ )
+|void| **begin_multicaret_edit**\ (\ ) :ref:`🔗<class_TextEdit_method_begin_multicaret_edit>`
 
 Starts an edit for multiple carets. The edit must be ended with :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>`. Multicaret edits can be used to edit text at multiple carets and delay merging the carets until the end, so the caret indexes aren't affected immediately. :ref:`begin_multicaret_edit<class_TextEdit_method_begin_multicaret_edit>` and :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>` can be nested, and the merge will happen at the last :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>`.
 
@@ -1949,7 +1949,7 @@ Example usage:
 
 .. rst-class:: classref-method
 
-|void| **cancel_ime**\ (\ )
+|void| **cancel_ime**\ (\ ) :ref:`🔗<class_TextEdit_method_cancel_ime>`
 
 Closes the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME) if it is open. Any text in the IME will be lost.
 
@@ -1961,7 +1961,7 @@ Closes the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ 
 
 .. rst-class:: classref-method
 
-|void| **center_viewport_to_caret**\ (\ caret_index\: :ref:`int<class_int>` = 0\ )
+|void| **center_viewport_to_caret**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TextEdit_method_center_viewport_to_caret>`
 
 Centers the viewport on the line the editing caret is at. This also resets the :ref:`scroll_horizontal<class_TextEdit_property_scroll_horizontal>` value to ``0``.
 
@@ -1973,7 +1973,7 @@ Centers the viewport on the line the editing caret is at. This also resets the :
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_TextEdit_method_clear>`
 
 Performs a full reset of **TextEdit**, including undo history.
 
@@ -1985,7 +1985,7 @@ Performs a full reset of **TextEdit**, including undo history.
 
 .. rst-class:: classref-method
 
-|void| **clear_undo_history**\ (\ )
+|void| **clear_undo_history**\ (\ ) :ref:`🔗<class_TextEdit_method_clear_undo_history>`
 
 Clears the undo history.
 
@@ -1997,7 +1997,7 @@ Clears the undo history.
 
 .. rst-class:: classref-method
 
-|void| **collapse_carets**\ (\ from_line\: :ref:`int<class_int>`, from_column\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`, to_column\: :ref:`int<class_int>`, inclusive\: :ref:`bool<class_bool>` = false\ )
+|void| **collapse_carets**\ (\ from_line\: :ref:`int<class_int>`, from_column\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`, to_column\: :ref:`int<class_int>`, inclusive\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_TextEdit_method_collapse_carets>`
 
 Collapse all carets in the given range to the ``from_line`` and ``from_column`` position.
 
@@ -2015,7 +2015,7 @@ If :ref:`is_in_mulitcaret_edit<class_TextEdit_method_is_in_mulitcaret_edit>` is 
 
 .. rst-class:: classref-method
 
-|void| **copy**\ (\ caret_index\: :ref:`int<class_int>` = -1\ )
+|void| **copy**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_copy>`
 
 Copies the current text selection. Can be overridden with :ref:`_copy<class_TextEdit_private_method__copy>`.
 
@@ -2027,7 +2027,7 @@ Copies the current text selection. Can be overridden with :ref:`_copy<class_Text
 
 .. rst-class:: classref-method
 
-|void| **cut**\ (\ caret_index\: :ref:`int<class_int>` = -1\ )
+|void| **cut**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_cut>`
 
 Cut's the current selection. Can be overridden with :ref:`_cut<class_TextEdit_private_method__cut>`.
 
@@ -2039,7 +2039,7 @@ Cut's the current selection. Can be overridden with :ref:`_cut<class_TextEdit_pr
 
 .. rst-class:: classref-method
 
-|void| **delete_selection**\ (\ caret_index\: :ref:`int<class_int>` = -1\ )
+|void| **delete_selection**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_delete_selection>`
 
 Deletes the selected text.
 
@@ -2051,7 +2051,7 @@ Deletes the selected text.
 
 .. rst-class:: classref-method
 
-|void| **deselect**\ (\ caret_index\: :ref:`int<class_int>` = -1\ )
+|void| **deselect**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_deselect>`
 
 Deselects the current selection.
 
@@ -2063,7 +2063,7 @@ Deselects the current selection.
 
 .. rst-class:: classref-method
 
-|void| **end_action**\ (\ )
+|void| **end_action**\ (\ ) :ref:`🔗<class_TextEdit_method_end_action>`
 
 Marks the end of steps in the current action started with :ref:`start_action<class_TextEdit_method_start_action>`.
 
@@ -2075,7 +2075,7 @@ Marks the end of steps in the current action started with :ref:`start_action<cla
 
 .. rst-class:: classref-method
 
-|void| **end_complex_operation**\ (\ )
+|void| **end_complex_operation**\ (\ ) :ref:`🔗<class_TextEdit_method_end_complex_operation>`
 
 Ends a multipart edit, started with :ref:`begin_complex_operation<class_TextEdit_method_begin_complex_operation>`. If called outside a complex operation, the current operation is pushed onto the undo/redo stack.
 
@@ -2087,7 +2087,7 @@ Ends a multipart edit, started with :ref:`begin_complex_operation<class_TextEdit
 
 .. rst-class:: classref-method
 
-|void| **end_multicaret_edit**\ (\ )
+|void| **end_multicaret_edit**\ (\ ) :ref:`🔗<class_TextEdit_method_end_multicaret_edit>`
 
 Ends an edit for multiple carets, that was started with :ref:`begin_multicaret_edit<class_TextEdit_method_begin_multicaret_edit>`. If this was the last :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>` and :ref:`merge_overlapping_carets<class_TextEdit_method_merge_overlapping_carets>` was called, carets will be merged.
 
@@ -2099,7 +2099,7 @@ Ends an edit for multiple carets, that was started with :ref:`begin_multicaret_e
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_caret_column**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_caret_column**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_caret_column>`
 
 Returns the column the editing caret is at.
 
@@ -2111,7 +2111,7 @@ Returns the column the editing caret is at.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_caret_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_caret_count**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_caret_count>`
 
 Returns the number of carets in this **TextEdit**.
 
@@ -2123,7 +2123,7 @@ Returns the number of carets in this **TextEdit**.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_caret_draw_pos**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_caret_draw_pos**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_caret_draw_pos>`
 
 Returns the caret pixel draw position.
 
@@ -2135,7 +2135,7 @@ Returns the caret pixel draw position.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_caret_index_edit_order**\ (\ )
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_caret_index_edit_order**\ (\ ) :ref:`🔗<class_TextEdit_method_get_caret_index_edit_order>`
 
 **Deprecated:** Carets no longer need to be edited in any specific order. If the carets need to be sorted, use :ref:`get_sorted_carets<class_TextEdit_method_get_sorted_carets>` instead.
 
@@ -2149,7 +2149,7 @@ Returns a list of caret indexes in their edit order, this done from bottom to to
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_caret_line**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_caret_line**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_caret_line>`
 
 Returns the line the editing caret is on.
 
@@ -2161,7 +2161,7 @@ Returns the line the editing caret is on.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_caret_wrap_index**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_caret_wrap_index**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_caret_wrap_index>`
 
 Returns the wrap index the editing caret is on.
 
@@ -2173,7 +2173,7 @@ Returns the wrap index the editing caret is on.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_first_non_whitespace_column**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_first_non_whitespace_column**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_first_non_whitespace_column>`
 
 Returns the first column containing a non-whitespace character.
 
@@ -2185,7 +2185,7 @@ Returns the first column containing a non-whitespace character.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_first_visible_line**\ (\ ) |const|
+:ref:`int<class_int>` **get_first_visible_line**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_first_visible_line>`
 
 Returns the first visible line.
 
@@ -2197,7 +2197,7 @@ Returns the first visible line.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_gutter_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_gutter_count**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_gutter_count>`
 
 Returns the number of gutters registered.
 
@@ -2209,7 +2209,7 @@ Returns the number of gutters registered.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_gutter_name**\ (\ gutter\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_gutter_name**\ (\ gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_gutter_name>`
 
 Returns the name of the gutter at the given index.
 
@@ -2221,7 +2221,7 @@ Returns the name of the gutter at the given index.
 
 .. rst-class:: classref-method
 
-:ref:`GutterType<enum_TextEdit_GutterType>` **get_gutter_type**\ (\ gutter\: :ref:`int<class_int>`\ ) |const|
+:ref:`GutterType<enum_TextEdit_GutterType>` **get_gutter_type**\ (\ gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_gutter_type>`
 
 Returns the type of the gutter at the given index. Gutters can contain icons, text, or custom visuals. See :ref:`GutterType<enum_TextEdit_GutterType>` for options.
 
@@ -2233,7 +2233,7 @@ Returns the type of the gutter at the given index. Gutters can contain icons, te
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_gutter_width**\ (\ gutter\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_gutter_width**\ (\ gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_gutter_width>`
 
 Returns the width of the gutter at the given index.
 
@@ -2245,7 +2245,7 @@ Returns the width of the gutter at the given index.
 
 .. rst-class:: classref-method
 
-:ref:`HScrollBar<class_HScrollBar>` **get_h_scroll_bar**\ (\ ) |const|
+:ref:`HScrollBar<class_HScrollBar>` **get_h_scroll_bar**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_h_scroll_bar>`
 
 Returns the :ref:`HScrollBar<class_HScrollBar>` used by **TextEdit**.
 
@@ -2257,7 +2257,7 @@ Returns the :ref:`HScrollBar<class_HScrollBar>` used by **TextEdit**.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_indent_level**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_indent_level**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_indent_level>`
 
 Returns the number of spaces and ``tab * tab_size`` before the first char.
 
@@ -2269,7 +2269,7 @@ Returns the number of spaces and ``tab * tab_size`` before the first char.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_last_full_visible_line**\ (\ ) |const|
+:ref:`int<class_int>` **get_last_full_visible_line**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_last_full_visible_line>`
 
 Returns the last visible line. Use :ref:`get_last_full_visible_line_wrap_index<class_TextEdit_method_get_last_full_visible_line_wrap_index>` for the wrap index.
 
@@ -2281,7 +2281,7 @@ Returns the last visible line. Use :ref:`get_last_full_visible_line_wrap_index<c
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_last_full_visible_line_wrap_index**\ (\ ) |const|
+:ref:`int<class_int>` **get_last_full_visible_line_wrap_index**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_last_full_visible_line_wrap_index>`
 
 Returns the last visible wrap index of the last visible line.
 
@@ -2293,7 +2293,7 @@ Returns the last visible wrap index of the last visible line.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_last_unhidden_line**\ (\ ) |const|
+:ref:`int<class_int>` **get_last_unhidden_line**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_last_unhidden_line>`
 
 Returns the last unhidden line in the entire **TextEdit**.
 
@@ -2305,7 +2305,7 @@ Returns the last unhidden line in the entire **TextEdit**.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_line**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_line**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line>`
 
 Returns the text of a specific line.
 
@@ -2317,7 +2317,7 @@ Returns the text of a specific line.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_line_background_color**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_line_background_color**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_background_color>`
 
 Returns the current background color of the line. ``Color(0, 0, 0, 0)`` is returned if no color is set.
 
@@ -2329,7 +2329,7 @@ Returns the current background color of the line. ``Color(0, 0, 0, 0)`` is retur
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_line_column_at_pos**\ (\ position\: :ref:`Vector2i<class_Vector2i>`, allow_out_of_bounds\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **get_line_column_at_pos**\ (\ position\: :ref:`Vector2i<class_Vector2i>`, allow_out_of_bounds\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_column_at_pos>`
 
 Returns the line and column at the given position. In the returned vector, ``x`` is the column, ``y`` is the line. If ``allow_out_of_bounds`` is ``false`` and the position is not over the text, both vector values will be set to ``-1``.
 
@@ -2341,7 +2341,7 @@ Returns the line and column at the given position. In the returned vector, ``x``
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_line_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_line_count**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_count>`
 
 Returns the number of lines in the text.
 
@@ -2353,7 +2353,7 @@ Returns the number of lines in the text.
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_line_gutter_icon**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const|
+:ref:`Texture2D<class_Texture2D>` **get_line_gutter_icon**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_gutter_icon>`
 
 Returns the icon currently in ``gutter`` at ``line``. This only works when the gutter type is :ref:`GUTTER_TYPE_ICON<class_TextEdit_constant_GUTTER_TYPE_ICON>` (see :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`).
 
@@ -2365,7 +2365,7 @@ Returns the icon currently in ``gutter`` at ``line``. This only works when the g
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_line_gutter_item_color**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_line_gutter_item_color**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_gutter_item_color>`
 
 Returns the color currently in ``gutter`` at ``line``.
 
@@ -2377,7 +2377,7 @@ Returns the color currently in ``gutter`` at ``line``.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_line_gutter_metadata**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_line_gutter_metadata**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_gutter_metadata>`
 
 Returns the metadata currently in ``gutter`` at ``line``.
 
@@ -2389,7 +2389,7 @@ Returns the metadata currently in ``gutter`` at ``line``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_line_gutter_text**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_line_gutter_text**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_gutter_text>`
 
 Returns the text currently in ``gutter`` at ``line``. This only works when the gutter type is :ref:`GUTTER_TYPE_STRING<class_TextEdit_constant_GUTTER_TYPE_STRING>` (see :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`).
 
@@ -2401,7 +2401,7 @@ Returns the text currently in ``gutter`` at ``line``. This only works when the g
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_line_height**\ (\ ) |const|
+:ref:`int<class_int>` **get_line_height**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_height>`
 
 Returns the maximum value of the line height among all lines.
 
@@ -2415,7 +2415,7 @@ Returns the maximum value of the line height among all lines.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_line_ranges_from_carets**\ (\ only_selections\: :ref:`bool<class_bool>` = false, merge_adjacent\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_line_ranges_from_carets**\ (\ only_selections\: :ref:`bool<class_bool>` = false, merge_adjacent\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_ranges_from_carets>`
 
 Returns an :ref:`Array<class_Array>` of line ranges where ``x`` is the first line and ``y`` is the last line. All lines within these ranges will have a caret on them or be part of a selection. Each line will only be part of one line range, even if it has multiple carets on it.
 
@@ -2429,7 +2429,7 @@ If a selection's end column (:ref:`get_selection_to_column<class_TextEdit_method
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_line_width**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`int<class_int>` **get_line_width**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_width>`
 
 Returns the width in pixels of the ``wrap_index`` on ``line``.
 
@@ -2441,7 +2441,7 @@ Returns the width in pixels of the ``wrap_index`` on ``line``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_line_wrap_count**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_line_wrap_count**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_wrap_count>`
 
 Returns the number of times the given line is wrapped.
 
@@ -2453,7 +2453,7 @@ Returns the number of times the given line is wrapped.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_line_wrap_index_at_column**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_line_wrap_index_at_column**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_wrap_index_at_column>`
 
 Returns the wrap index of the given line column.
 
@@ -2465,7 +2465,7 @@ Returns the wrap index of the given line column.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_line_wrapped_text**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_line_wrapped_text**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_line_wrapped_text>`
 
 Returns an array of :ref:`String<class_String>`\ s representing each wrapped index.
 
@@ -2477,7 +2477,7 @@ Returns an array of :ref:`String<class_String>`\ s representing each wrapped ind
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_local_mouse_pos**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_local_mouse_pos**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_local_mouse_pos>`
 
 Returns the local mouse position adjusted for the text direction.
 
@@ -2489,7 +2489,7 @@ Returns the local mouse position adjusted for the text direction.
 
 .. rst-class:: classref-method
 
-:ref:`PopupMenu<class_PopupMenu>` **get_menu**\ (\ ) |const|
+:ref:`PopupMenu<class_PopupMenu>` **get_menu**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_menu>`
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` of this **TextEdit**. By default, this menu is displayed when right-clicking on the **TextEdit**.
 
@@ -2548,7 +2548,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_minimap_line_at_pos**\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`int<class_int>` **get_minimap_line_at_pos**\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_minimap_line_at_pos>`
 
 Returns the equivalent minimap line at ``position``.
 
@@ -2560,7 +2560,7 @@ Returns the equivalent minimap line at ``position``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_minimap_visible_lines**\ (\ ) |const|
+:ref:`int<class_int>` **get_minimap_visible_lines**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_minimap_visible_lines>`
 
 Returns the number of lines that may be drawn on the minimap.
 
@@ -2572,7 +2572,7 @@ Returns the number of lines that may be drawn on the minimap.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_next_visible_line_index_offset_from**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>`, visible_amount\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **get_next_visible_line_index_offset_from**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>`, visible_amount\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_next_visible_line_index_offset_from>`
 
 Similar to :ref:`get_next_visible_line_offset_from<class_TextEdit_method_get_next_visible_line_offset_from>`, but takes into account the line wrap indexes. In the returned vector, ``x`` is the line, ``y`` is the wrap index.
 
@@ -2584,7 +2584,7 @@ Similar to :ref:`get_next_visible_line_offset_from<class_TextEdit_method_get_nex
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_next_visible_line_offset_from**\ (\ line\: :ref:`int<class_int>`, visible_amount\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_next_visible_line_offset_from**\ (\ line\: :ref:`int<class_int>`, visible_amount\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_next_visible_line_offset_from>`
 
 Returns the count to the next visible line from ``line`` to ``line + visible_amount``. Can also count backwards. For example if a **TextEdit** has 5 lines with lines 2 and 3 hidden, calling this with ``line = 1, visible_amount = 1`` would return 3.
 
@@ -2596,7 +2596,7 @@ Returns the count to the next visible line from ``line`` to ``line + visible_amo
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_pos_at_line_column**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **get_pos_at_line_column**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_pos_at_line_column>`
 
 Returns the local position for the given ``line`` and ``column``. If ``x`` or ``y`` of the returned vector equal ``-1``, the position is outside of the viewable area of the control.
 
@@ -2610,7 +2610,7 @@ Returns the local position for the given ``line`` and ``column``. If ``x`` or ``
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **get_rect_at_line_column**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **get_rect_at_line_column**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_rect_at_line_column>`
 
 Returns the local position and size for the grapheme at the given ``line`` and ``column``. If ``x`` or ``y`` position of the returned rect equal ``-1``, the position is outside of the viewable area of the control.
 
@@ -2624,7 +2624,7 @@ Returns the local position and size for the grapheme at the given ``line`` and `
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_saved_version**\ (\ ) |const|
+:ref:`int<class_int>` **get_saved_version**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_saved_version>`
 
 Returns the last tagged saved version from :ref:`tag_saved_version<class_TextEdit_method_tag_saved_version>`.
 
@@ -2636,7 +2636,7 @@ Returns the last tagged saved version from :ref:`tag_saved_version<class_TextEdi
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_scroll_pos_for_line**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`float<class_float>` **get_scroll_pos_for_line**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_scroll_pos_for_line>`
 
 Returns the scroll position for ``wrap_index`` of ``line``.
 
@@ -2648,7 +2648,7 @@ Returns the scroll position for ``wrap_index`` of ``line``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_selected_text**\ (\ caret_index\: :ref:`int<class_int>` = -1\ )
+:ref:`String<class_String>` **get_selected_text**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_get_selected_text>`
 
 Returns the text inside the selection of a caret, or all the carets if ``caret_index`` is its default value ``-1``.
 
@@ -2660,7 +2660,7 @@ Returns the text inside the selection of a caret, or all the carets if ``caret_i
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_at_line_column**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`, include_edges\: :ref:`bool<class_bool>` = true, only_selections\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`int<class_int>` **get_selection_at_line_column**\ (\ line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`, include_edges\: :ref:`bool<class_bool>` = true, only_selections\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_at_line_column>`
 
 Returns the caret index of the selection at the given ``line`` and ``column``, or ``-1`` if there is none.
 
@@ -2674,7 +2674,7 @@ If ``include_edges`` is ``false``, the position must be inside the selection and
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_column**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_selection_column**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_column>`
 
 **Deprecated:** Use :ref:`get_selection_origin_column<class_TextEdit_method_get_selection_origin_column>` instead.
 
@@ -2688,7 +2688,7 @@ Returns the original start column of the selection.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_from_column**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_selection_from_column**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_from_column>`
 
 Returns the selection begin column. Returns the caret column if there is no selection.
 
@@ -2700,7 +2700,7 @@ Returns the selection begin column. Returns the caret column if there is no sele
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_from_line**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_selection_from_line**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_from_line>`
 
 Returns the selection begin line. Returns the caret line if there is no selection.
 
@@ -2712,7 +2712,7 @@ Returns the selection begin line. Returns the caret line if there is no selectio
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_line**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_selection_line**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_line>`
 
 **Deprecated:** Use :ref:`get_selection_origin_line<class_TextEdit_method_get_selection_origin_line>` instead.
 
@@ -2726,7 +2726,7 @@ Returns the original start line of the selection.
 
 .. rst-class:: classref-method
 
-:ref:`SelectionMode<enum_TextEdit_SelectionMode>` **get_selection_mode**\ (\ ) |const|
+:ref:`SelectionMode<enum_TextEdit_SelectionMode>` **get_selection_mode**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_mode>`
 
 Returns the current selection mode.
 
@@ -2738,7 +2738,7 @@ Returns the current selection mode.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_origin_column**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_selection_origin_column**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_origin_column>`
 
 Returns the origin column of the selection. This is the opposite end from the caret.
 
@@ -2750,7 +2750,7 @@ Returns the origin column of the selection. This is the opposite end from the ca
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_origin_line**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_selection_origin_line**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_origin_line>`
 
 Returns the origin line of the selection. This is the opposite end from the caret.
 
@@ -2762,7 +2762,7 @@ Returns the origin line of the selection. This is the opposite end from the care
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_to_column**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_selection_to_column**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_to_column>`
 
 Returns the selection end column. Returns the caret column if there is no selection.
 
@@ -2774,7 +2774,7 @@ Returns the selection end column. Returns the caret column if there is no select
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_to_line**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **get_selection_to_line**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_get_selection_to_line>`
 
 Returns the selection end line. Returns the caret line if there is no selection.
 
@@ -2786,7 +2786,7 @@ Returns the selection end line. Returns the caret line if there is no selection.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_sorted_carets**\ (\ include_ignored_carets\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_sorted_carets**\ (\ include_ignored_carets\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TextEdit_method_get_sorted_carets>`
 
 Returns the carets sorted by selection beginning from lowest line and column to highest (from top to bottom of text).
 
@@ -2800,7 +2800,7 @@ If ``include_ignored_carets`` is ``false``, carets from :ref:`multicaret_edit_ig
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_tab_size**\ (\ ) |const|
+:ref:`int<class_int>` **get_tab_size**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_tab_size>`
 
 Returns the **TextEdit**'s' tab size.
 
@@ -2812,7 +2812,7 @@ Returns the **TextEdit**'s' tab size.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_total_gutter_width**\ (\ ) |const|
+:ref:`int<class_int>` **get_total_gutter_width**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_total_gutter_width>`
 
 Returns the total width of all gutters and internal padding.
 
@@ -2824,7 +2824,7 @@ Returns the total width of all gutters and internal padding.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_total_visible_line_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_total_visible_line_count**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_total_visible_line_count>`
 
 Returns the number of lines that may be drawn.
 
@@ -2836,7 +2836,7 @@ Returns the number of lines that may be drawn.
 
 .. rst-class:: classref-method
 
-:ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar**\ (\ ) |const|
+:ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_v_scroll_bar>`
 
 Returns the :ref:`VScrollBar<class_VScrollBar>` of the **TextEdit**.
 
@@ -2848,7 +2848,7 @@ Returns the :ref:`VScrollBar<class_VScrollBar>` of the **TextEdit**.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_version**\ (\ ) |const|
+:ref:`int<class_int>` **get_version**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_version>`
 
 Returns the current version of the **TextEdit**. The version is a count of recorded operations by the undo/redo history.
 
@@ -2860,7 +2860,7 @@ Returns the current version of the **TextEdit**. The version is a count of recor
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_visible_line_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_visible_line_count**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_get_visible_line_count>`
 
 Returns the number of visible lines, including wrapped text.
 
@@ -2872,7 +2872,7 @@ Returns the number of visible lines, including wrapped text.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_visible_line_count_in_range**\ (\ from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_visible_line_count_in_range**\ (\ from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_visible_line_count_in_range>`
 
 Returns the total number of visible + wrapped lines between the two lines.
 
@@ -2884,7 +2884,7 @@ Returns the total number of visible + wrapped lines between the two lines.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_word_at_pos**\ (\ position\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`String<class_String>` **get_word_at_pos**\ (\ position\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_TextEdit_method_get_word_at_pos>`
 
 Returns the word at ``position``.
 
@@ -2896,7 +2896,7 @@ Returns the word at ``position``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_word_under_caret**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`String<class_String>` **get_word_under_caret**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_TextEdit_method_get_word_under_caret>`
 
 Returns a :ref:`String<class_String>` text with the word under the caret's location.
 
@@ -2908,7 +2908,7 @@ Returns a :ref:`String<class_String>` text with the word under the caret's locat
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_ime_text**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_ime_text**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_has_ime_text>`
 
 Returns ``true`` if the user has text in the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME).
 
@@ -2920,7 +2920,7 @@ Returns ``true`` if the user has text in the `Input Method Editor <https://en.wi
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_redo**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_redo**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_has_redo>`
 
 Returns ``true`` if a "redo" action is available.
 
@@ -2932,7 +2932,7 @@ Returns ``true`` if a "redo" action is available.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_selection**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`bool<class_bool>` **has_selection**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_TextEdit_method_has_selection>`
 
 Returns ``true`` if the user has selected text.
 
@@ -2944,7 +2944,7 @@ Returns ``true`` if the user has selected text.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_undo**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_undo**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_has_undo>`
 
 Returns ``true`` if an "undo" action is available.
 
@@ -2956,7 +2956,7 @@ Returns ``true`` if an "undo" action is available.
 
 .. rst-class:: classref-method
 
-|void| **insert_line_at**\ (\ line\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ )
+|void| **insert_line_at**\ (\ line\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TextEdit_method_insert_line_at>`
 
 Inserts a new line with ``text`` at ``line``.
 
@@ -2968,7 +2968,7 @@ Inserts a new line with ``text`` at ``line``.
 
 .. rst-class:: classref-method
 
-|void| **insert_text**\ (\ text\: :ref:`String<class_String>`, line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`, before_selection_begin\: :ref:`bool<class_bool>` = true, before_selection_end\: :ref:`bool<class_bool>` = false\ )
+|void| **insert_text**\ (\ text\: :ref:`String<class_String>`, line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`, before_selection_begin\: :ref:`bool<class_bool>` = true, before_selection_end\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_TextEdit_method_insert_text>`
 
 Inserts the ``text`` at ``line`` and ``column``.
 
@@ -2984,7 +2984,7 @@ If ``before_selection_end`` is ``true``, selections that end at ``line`` and ``c
 
 .. rst-class:: classref-method
 
-|void| **insert_text_at_caret**\ (\ text\: :ref:`String<class_String>`, caret_index\: :ref:`int<class_int>` = -1\ )
+|void| **insert_text_at_caret**\ (\ text\: :ref:`String<class_String>`, caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_insert_text_at_caret>`
 
 Insert the specified text at the caret position.
 
@@ -2996,7 +2996,7 @@ Insert the specified text at the caret position.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_caret_after_selection_origin**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`bool<class_bool>` **is_caret_after_selection_origin**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_is_caret_after_selection_origin>`
 
 Returns ``true`` if the caret of the selection is after the selection origin. This can be used to determine the direction of the selection.
 
@@ -3008,7 +3008,7 @@ Returns ``true`` if the caret of the selection is after the selection origin. Th
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_caret_visible**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`bool<class_bool>` **is_caret_visible**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_is_caret_visible>`
 
 Returns ``true`` if the caret is visible on the screen.
 
@@ -3020,7 +3020,7 @@ Returns ``true`` if the caret is visible on the screen.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_dragging_cursor**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_dragging_cursor**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_is_dragging_cursor>`
 
 Returns ``true`` if the user is dragging their mouse for scrolling, selecting, or text dragging.
 
@@ -3032,7 +3032,7 @@ Returns ``true`` if the user is dragging their mouse for scrolling, selecting, o
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_gutter_clickable**\ (\ gutter\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_gutter_clickable**\ (\ gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_is_gutter_clickable>`
 
 Returns whether the gutter is clickable.
 
@@ -3044,7 +3044,7 @@ Returns whether the gutter is clickable.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_gutter_drawn**\ (\ gutter\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_gutter_drawn**\ (\ gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_is_gutter_drawn>`
 
 Returns whether the gutter is currently drawn.
 
@@ -3056,7 +3056,7 @@ Returns whether the gutter is currently drawn.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_gutter_overwritable**\ (\ gutter\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_gutter_overwritable**\ (\ gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_is_gutter_overwritable>`
 
 Returns whether the gutter is overwritable.
 
@@ -3068,7 +3068,7 @@ Returns whether the gutter is overwritable.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_in_mulitcaret_edit**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_in_mulitcaret_edit**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_is_in_mulitcaret_edit>`
 
 Returns ``true`` if a :ref:`begin_multicaret_edit<class_TextEdit_method_begin_multicaret_edit>` has been called and :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>` has not yet been called.
 
@@ -3080,7 +3080,7 @@ Returns ``true`` if a :ref:`begin_multicaret_edit<class_TextEdit_method_begin_mu
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_line_gutter_clickable**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_line_gutter_clickable**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_is_line_gutter_clickable>`
 
 Returns whether the gutter on the given line is clickable.
 
@@ -3092,7 +3092,7 @@ Returns whether the gutter on the given line is clickable.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_line_wrapped**\ (\ line\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_line_wrapped**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_is_line_wrapped>`
 
 Returns if the given line is wrapped.
 
@@ -3104,7 +3104,7 @@ Returns if the given line is wrapped.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_menu_visible**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_menu_visible**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_is_menu_visible>`
 
 Returns whether the menu is visible. Use this instead of ``get_menu().visible`` to improve performance (so the creation of the menu is avoided).
 
@@ -3116,7 +3116,7 @@ Returns whether the menu is visible. Use this instead of ``get_menu().visible`` 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_mouse_over_selection**\ (\ edges\: :ref:`bool<class_bool>`, caret_index\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`bool<class_bool>` **is_mouse_over_selection**\ (\ edges\: :ref:`bool<class_bool>`, caret_index\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_TextEdit_method_is_mouse_over_selection>`
 
 Returns whether the mouse is over selection. If ``edges`` is ``true``, the edges are considered part of the selection.
 
@@ -3128,7 +3128,7 @@ Returns whether the mouse is over selection. If ``edges`` is ``true``, the edges
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_overtype_mode_enabled**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_overtype_mode_enabled**\ (\ ) |const| :ref:`🔗<class_TextEdit_method_is_overtype_mode_enabled>`
 
 Returns whether the user is in overtype mode.
 
@@ -3140,7 +3140,7 @@ Returns whether the user is in overtype mode.
 
 .. rst-class:: classref-method
 
-|void| **menu_option**\ (\ option\: :ref:`int<class_int>`\ )
+|void| **menu_option**\ (\ option\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_menu_option>`
 
 Executes a given action as defined in the :ref:`MenuItems<enum_TextEdit_MenuItems>` enum.
 
@@ -3152,7 +3152,7 @@ Executes a given action as defined in the :ref:`MenuItems<enum_TextEdit_MenuItem
 
 .. rst-class:: classref-method
 
-|void| **merge_gutters**\ (\ from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ )
+|void| **merge_gutters**\ (\ from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_merge_gutters>`
 
 Merge the gutters from ``from_line`` into ``to_line``. Only overwritable gutters will be copied.
 
@@ -3164,7 +3164,7 @@ Merge the gutters from ``from_line`` into ``to_line``. Only overwritable gutters
 
 .. rst-class:: classref-method
 
-|void| **merge_overlapping_carets**\ (\ )
+|void| **merge_overlapping_carets**\ (\ ) :ref:`🔗<class_TextEdit_method_merge_overlapping_carets>`
 
 Merges any overlapping carets. Will favor the newest caret, or the caret with a selection.
 
@@ -3180,7 +3180,7 @@ If :ref:`is_in_mulitcaret_edit<class_TextEdit_method_is_in_mulitcaret_edit>` is 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **multicaret_edit_ignore_caret**\ (\ caret_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **multicaret_edit_ignore_caret**\ (\ caret_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_multicaret_edit_ignore_caret>`
 
 Returns ``true`` if the given ``caret_index`` should be ignored as part of a multicaret edit. See :ref:`begin_multicaret_edit<class_TextEdit_method_begin_multicaret_edit>` and :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>`. Carets that should be ignored are ones that were part of removed text and will likely be merged at the end of the edit, or carets that were added during the edit.
 
@@ -3194,7 +3194,7 @@ It is recommended to ``continue`` within a loop iterating on multiple carets if 
 
 .. rst-class:: classref-method
 
-|void| **paste**\ (\ caret_index\: :ref:`int<class_int>` = -1\ )
+|void| **paste**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_paste>`
 
 Paste at the current location. Can be overridden with :ref:`_paste<class_TextEdit_private_method__paste>`.
 
@@ -3206,7 +3206,7 @@ Paste at the current location. Can be overridden with :ref:`_paste<class_TextEdi
 
 .. rst-class:: classref-method
 
-|void| **paste_primary_clipboard**\ (\ caret_index\: :ref:`int<class_int>` = -1\ )
+|void| **paste_primary_clipboard**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_paste_primary_clipboard>`
 
 Pastes the primary clipboard.
 
@@ -3218,7 +3218,7 @@ Pastes the primary clipboard.
 
 .. rst-class:: classref-method
 
-|void| **redo**\ (\ )
+|void| **redo**\ (\ ) :ref:`🔗<class_TextEdit_method_redo>`
 
 Perform redo operation.
 
@@ -3230,7 +3230,7 @@ Perform redo operation.
 
 .. rst-class:: classref-method
 
-|void| **remove_caret**\ (\ caret\: :ref:`int<class_int>`\ )
+|void| **remove_caret**\ (\ caret\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_remove_caret>`
 
 Removes the given caret index.
 
@@ -3244,7 +3244,7 @@ Removes the given caret index.
 
 .. rst-class:: classref-method
 
-|void| **remove_gutter**\ (\ gutter\: :ref:`int<class_int>`\ )
+|void| **remove_gutter**\ (\ gutter\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_remove_gutter>`
 
 Removes the gutter from this **TextEdit**.
 
@@ -3256,7 +3256,7 @@ Removes the gutter from this **TextEdit**.
 
 .. rst-class:: classref-method
 
-|void| **remove_line_at**\ (\ line\: :ref:`int<class_int>`, move_carets_down\: :ref:`bool<class_bool>` = true\ )
+|void| **remove_line_at**\ (\ line\: :ref:`int<class_int>`, move_carets_down\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_TextEdit_method_remove_line_at>`
 
 Removes the line of text at ``line``. Carets on this line will attempt to match their previous visual x position.
 
@@ -3270,7 +3270,7 @@ If ``move_carets_down`` is ``true`` carets will move to the next line down, othe
 
 .. rst-class:: classref-method
 
-|void| **remove_secondary_carets**\ (\ )
+|void| **remove_secondary_carets**\ (\ ) :ref:`🔗<class_TextEdit_method_remove_secondary_carets>`
 
 Removes all additional carets.
 
@@ -3282,7 +3282,7 @@ Removes all additional carets.
 
 .. rst-class:: classref-method
 
-|void| **remove_text**\ (\ from_line\: :ref:`int<class_int>`, from_column\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`, to_column\: :ref:`int<class_int>`\ )
+|void| **remove_text**\ (\ from_line\: :ref:`int<class_int>`, from_column\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`, to_column\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_remove_text>`
 
 Removes text between the given positions.
 
@@ -3294,7 +3294,7 @@ Removes text between the given positions.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **search**\ (\ text\: :ref:`String<class_String>`, flags\: :ref:`int<class_int>`, from_line\: :ref:`int<class_int>`, from_column\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **search**\ (\ text\: :ref:`String<class_String>`, flags\: :ref:`int<class_int>`, from_line\: :ref:`int<class_int>`, from_column\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextEdit_method_search>`
 
 Perform a search inside the text. Search flags can be specified in the :ref:`SearchFlags<enum_TextEdit_SearchFlags>` enum.
 
@@ -3331,7 +3331,7 @@ In the returned vector, ``x`` is the column, ``y`` is the line. If no results ar
 
 .. rst-class:: classref-method
 
-|void| **select**\ (\ origin_line\: :ref:`int<class_int>`, origin_column\: :ref:`int<class_int>`, caret_line\: :ref:`int<class_int>`, caret_column\: :ref:`int<class_int>`, caret_index\: :ref:`int<class_int>` = 0\ )
+|void| **select**\ (\ origin_line\: :ref:`int<class_int>`, origin_column\: :ref:`int<class_int>`, caret_line\: :ref:`int<class_int>`, caret_column\: :ref:`int<class_int>`, caret_index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TextEdit_method_select>`
 
 Selects text from ``origin_line`` and ``origin_column`` to ``caret_line`` and ``caret_column`` for the given ``caret_index``. This moves the selection origin and the caret. If the positions are the same, the selection will be deselected.
 
@@ -3347,7 +3347,7 @@ If :ref:`selecting_enabled<class_TextEdit_property_selecting_enabled>` is ``fals
 
 .. rst-class:: classref-method
 
-|void| **select_all**\ (\ )
+|void| **select_all**\ (\ ) :ref:`🔗<class_TextEdit_method_select_all>`
 
 Select all the text.
 
@@ -3361,7 +3361,7 @@ If :ref:`selecting_enabled<class_TextEdit_property_selecting_enabled>` is ``fals
 
 .. rst-class:: classref-method
 
-|void| **select_word_under_caret**\ (\ caret_index\: :ref:`int<class_int>` = -1\ )
+|void| **select_word_under_caret**\ (\ caret_index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_TextEdit_method_select_word_under_caret>`
 
 Selects the word under the caret.
 
@@ -3373,7 +3373,7 @@ Selects the word under the caret.
 
 .. rst-class:: classref-method
 
-|void| **set_caret_column**\ (\ column\: :ref:`int<class_int>`, adjust_viewport\: :ref:`bool<class_bool>` = true, caret_index\: :ref:`int<class_int>` = 0\ )
+|void| **set_caret_column**\ (\ column\: :ref:`int<class_int>`, adjust_viewport\: :ref:`bool<class_bool>` = true, caret_index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TextEdit_method_set_caret_column>`
 
 Moves the caret to the specified ``column`` index.
 
@@ -3389,7 +3389,7 @@ If ``adjust_viewport`` is ``true``, the viewport will center at the caret positi
 
 .. rst-class:: classref-method
 
-|void| **set_caret_line**\ (\ line\: :ref:`int<class_int>`, adjust_viewport\: :ref:`bool<class_bool>` = true, can_be_hidden\: :ref:`bool<class_bool>` = true, wrap_index\: :ref:`int<class_int>` = 0, caret_index\: :ref:`int<class_int>` = 0\ )
+|void| **set_caret_line**\ (\ line\: :ref:`int<class_int>`, adjust_viewport\: :ref:`bool<class_bool>` = true, can_be_hidden\: :ref:`bool<class_bool>` = true, wrap_index\: :ref:`int<class_int>` = 0, caret_index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TextEdit_method_set_caret_line>`
 
 Moves the caret to the specified ``line`` index. The caret column will be moved to the same visual position it was at the last time :ref:`set_caret_column<class_TextEdit_method_set_caret_column>` was called, or clamped to the end of the line.
 
@@ -3409,7 +3409,7 @@ If ``wrap_index`` is ``-1``, the caret column will be clamped to the ``line``'s 
 
 .. rst-class:: classref-method
 
-|void| **set_gutter_clickable**\ (\ gutter\: :ref:`int<class_int>`, clickable\: :ref:`bool<class_bool>`\ )
+|void| **set_gutter_clickable**\ (\ gutter\: :ref:`int<class_int>`, clickable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_clickable>`
 
 Sets the gutter as clickable. This will change the mouse cursor to a pointing hand when hovering over the gutter.
 
@@ -3421,7 +3421,7 @@ Sets the gutter as clickable. This will change the mouse cursor to a pointing ha
 
 .. rst-class:: classref-method
 
-|void| **set_gutter_custom_draw**\ (\ column\: :ref:`int<class_int>`, draw_callback\: :ref:`Callable<class_Callable>`\ )
+|void| **set_gutter_custom_draw**\ (\ column\: :ref:`int<class_int>`, draw_callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_custom_draw>`
 
 Set a custom draw method for the gutter. The callback method must take the following args: ``line: int, gutter: int, Area: Rect2``. This only works when the gutter type is :ref:`GUTTER_TYPE_CUSTOM<class_TextEdit_constant_GUTTER_TYPE_CUSTOM>` (see :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`).
 
@@ -3433,7 +3433,7 @@ Set a custom draw method for the gutter. The callback method must take the follo
 
 .. rst-class:: classref-method
 
-|void| **set_gutter_draw**\ (\ gutter\: :ref:`int<class_int>`, draw\: :ref:`bool<class_bool>`\ )
+|void| **set_gutter_draw**\ (\ gutter\: :ref:`int<class_int>`, draw\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_draw>`
 
 Sets whether the gutter should be drawn.
 
@@ -3445,7 +3445,7 @@ Sets whether the gutter should be drawn.
 
 .. rst-class:: classref-method
 
-|void| **set_gutter_name**\ (\ gutter\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )
+|void| **set_gutter_name**\ (\ gutter\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_name>`
 
 Sets the name of the gutter.
 
@@ -3457,7 +3457,7 @@ Sets the name of the gutter.
 
 .. rst-class:: classref-method
 
-|void| **set_gutter_overwritable**\ (\ gutter\: :ref:`int<class_int>`, overwritable\: :ref:`bool<class_bool>`\ )
+|void| **set_gutter_overwritable**\ (\ gutter\: :ref:`int<class_int>`, overwritable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_overwritable>`
 
 Sets the gutter to overwritable. See :ref:`merge_gutters<class_TextEdit_method_merge_gutters>`.
 
@@ -3469,7 +3469,7 @@ Sets the gutter to overwritable. See :ref:`merge_gutters<class_TextEdit_method_m
 
 .. rst-class:: classref-method
 
-|void| **set_gutter_type**\ (\ gutter\: :ref:`int<class_int>`, type\: :ref:`GutterType<enum_TextEdit_GutterType>`\ )
+|void| **set_gutter_type**\ (\ gutter\: :ref:`int<class_int>`, type\: :ref:`GutterType<enum_TextEdit_GutterType>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_type>`
 
 Sets the type of gutter. Gutters can contain icons, text, or custom visuals. See :ref:`GutterType<enum_TextEdit_GutterType>` for options.
 
@@ -3481,7 +3481,7 @@ Sets the type of gutter. Gutters can contain icons, text, or custom visuals. See
 
 .. rst-class:: classref-method
 
-|void| **set_gutter_width**\ (\ gutter\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`\ )
+|void| **set_gutter_width**\ (\ gutter\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_set_gutter_width>`
 
 Set the width of the gutter.
 
@@ -3493,7 +3493,7 @@ Set the width of the gutter.
 
 .. rst-class:: classref-method
 
-|void| **set_line**\ (\ line\: :ref:`int<class_int>`, new_text\: :ref:`String<class_String>`\ )
+|void| **set_line**\ (\ line\: :ref:`int<class_int>`, new_text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TextEdit_method_set_line>`
 
 Sets the text for a specific ``line``.
 
@@ -3507,7 +3507,7 @@ Carets on the line will attempt to keep their visual x position.
 
 .. rst-class:: classref-method
 
-|void| **set_line_as_center_visible**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>` = 0\ )
+|void| **set_line_as_center_visible**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TextEdit_method_set_line_as_center_visible>`
 
 Positions the ``wrap_index`` of ``line`` at the center of the viewport.
 
@@ -3519,7 +3519,7 @@ Positions the ``wrap_index`` of ``line`` at the center of the viewport.
 
 .. rst-class:: classref-method
 
-|void| **set_line_as_first_visible**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>` = 0\ )
+|void| **set_line_as_first_visible**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TextEdit_method_set_line_as_first_visible>`
 
 Positions the ``wrap_index`` of ``line`` at the top of the viewport.
 
@@ -3531,7 +3531,7 @@ Positions the ``wrap_index`` of ``line`` at the top of the viewport.
 
 .. rst-class:: classref-method
 
-|void| **set_line_as_last_visible**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>` = 0\ )
+|void| **set_line_as_last_visible**\ (\ line\: :ref:`int<class_int>`, wrap_index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TextEdit_method_set_line_as_last_visible>`
 
 Positions the ``wrap_index`` of ``line`` at the bottom of the viewport.
 
@@ -3543,7 +3543,7 @@ Positions the ``wrap_index`` of ``line`` at the bottom of the viewport.
 
 .. rst-class:: classref-method
 
-|void| **set_line_background_color**\ (\ line\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )
+|void| **set_line_background_color**\ (\ line\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_TextEdit_method_set_line_background_color>`
 
 Sets the current background color of the line. Set to ``Color(0, 0, 0, 0)`` for no color.
 
@@ -3555,7 +3555,7 @@ Sets the current background color of the line. Set to ``Color(0, 0, 0, 0)`` for 
 
 .. rst-class:: classref-method
 
-|void| **set_line_gutter_clickable**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, clickable\: :ref:`bool<class_bool>`\ )
+|void| **set_line_gutter_clickable**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, clickable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextEdit_method_set_line_gutter_clickable>`
 
 If ``clickable`` is ``true``, makes the ``gutter`` on ``line`` clickable. See :ref:`gutter_clicked<class_TextEdit_signal_gutter_clicked>`.
 
@@ -3567,7 +3567,7 @@ If ``clickable`` is ``true``, makes the ``gutter`` on ``line`` clickable. See :r
 
 .. rst-class:: classref-method
 
-|void| **set_line_gutter_icon**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **set_line_gutter_icon**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_TextEdit_method_set_line_gutter_icon>`
 
 Sets the icon for ``gutter`` on ``line`` to ``icon``. This only works when the gutter type is :ref:`GUTTER_TYPE_ICON<class_TextEdit_constant_GUTTER_TYPE_ICON>` (see :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`).
 
@@ -3579,7 +3579,7 @@ Sets the icon for ``gutter`` on ``line`` to ``icon``. This only works when the g
 
 .. rst-class:: classref-method
 
-|void| **set_line_gutter_item_color**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )
+|void| **set_line_gutter_item_color**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_TextEdit_method_set_line_gutter_item_color>`
 
 Sets the color for ``gutter`` on ``line`` to ``color``.
 
@@ -3591,7 +3591,7 @@ Sets the color for ``gutter`` on ``line`` to ``color``.
 
 .. rst-class:: classref-method
 
-|void| **set_line_gutter_metadata**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ )
+|void| **set_line_gutter_metadata**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_TextEdit_method_set_line_gutter_metadata>`
 
 Sets the metadata for ``gutter`` on ``line`` to ``metadata``.
 
@@ -3603,7 +3603,7 @@ Sets the metadata for ``gutter`` on ``line`` to ``metadata``.
 
 .. rst-class:: classref-method
 
-|void| **set_line_gutter_text**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ )
+|void| **set_line_gutter_text**\ (\ line\: :ref:`int<class_int>`, gutter\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TextEdit_method_set_line_gutter_text>`
 
 Sets the text for ``gutter`` on ``line`` to ``text``. This only works when the gutter type is :ref:`GUTTER_TYPE_STRING<class_TextEdit_constant_GUTTER_TYPE_STRING>` (see :ref:`set_gutter_type<class_TextEdit_method_set_gutter_type>`).
 
@@ -3615,7 +3615,7 @@ Sets the text for ``gutter`` on ``line`` to ``text``. This only works when the g
 
 .. rst-class:: classref-method
 
-|void| **set_overtype_mode_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_overtype_mode_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_TextEdit_method_set_overtype_mode_enabled>`
 
 If ``true``, sets the user into overtype mode. When the user types in this mode, it will override existing text.
 
@@ -3627,7 +3627,7 @@ If ``true``, sets the user into overtype mode. When the user types in this mode,
 
 .. rst-class:: classref-method
 
-|void| **set_search_flags**\ (\ flags\: :ref:`int<class_int>`\ )
+|void| **set_search_flags**\ (\ flags\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_set_search_flags>`
 
 Sets the search ``flags``. This is used with :ref:`set_search_text<class_TextEdit_method_set_search_text>` to highlight occurrences of the searched text. Search flags can be specified from the :ref:`SearchFlags<enum_TextEdit_SearchFlags>` enum.
 
@@ -3639,7 +3639,7 @@ Sets the search ``flags``. This is used with :ref:`set_search_text<class_TextEdi
 
 .. rst-class:: classref-method
 
-|void| **set_search_text**\ (\ search_text\: :ref:`String<class_String>`\ )
+|void| **set_search_text**\ (\ search_text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_TextEdit_method_set_search_text>`
 
 Sets the search text. See :ref:`set_search_flags<class_TextEdit_method_set_search_flags>`.
 
@@ -3651,7 +3651,7 @@ Sets the search text. See :ref:`set_search_flags<class_TextEdit_method_set_searc
 
 .. rst-class:: classref-method
 
-|void| **set_selection_mode**\ (\ mode\: :ref:`SelectionMode<enum_TextEdit_SelectionMode>`\ )
+|void| **set_selection_mode**\ (\ mode\: :ref:`SelectionMode<enum_TextEdit_SelectionMode>`\ ) :ref:`🔗<class_TextEdit_method_set_selection_mode>`
 
 Sets the current selection mode.
 
@@ -3663,7 +3663,7 @@ Sets the current selection mode.
 
 .. rst-class:: classref-method
 
-|void| **set_selection_origin_column**\ (\ column\: :ref:`int<class_int>`, caret_index\: :ref:`int<class_int>` = 0\ )
+|void| **set_selection_origin_column**\ (\ column\: :ref:`int<class_int>`, caret_index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TextEdit_method_set_selection_origin_column>`
 
 Sets the selection origin column to the ``column`` for the given ``caret_index``. If the selection origin is moved to the caret position, the selection will deselect.
 
@@ -3675,7 +3675,7 @@ Sets the selection origin column to the ``column`` for the given ``caret_index``
 
 .. rst-class:: classref-method
 
-|void| **set_selection_origin_line**\ (\ line\: :ref:`int<class_int>`, can_be_hidden\: :ref:`bool<class_bool>` = true, wrap_index\: :ref:`int<class_int>` = -1, caret_index\: :ref:`int<class_int>` = 0\ )
+|void| **set_selection_origin_line**\ (\ line\: :ref:`int<class_int>`, can_be_hidden\: :ref:`bool<class_bool>` = true, wrap_index\: :ref:`int<class_int>` = -1, caret_index\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_TextEdit_method_set_selection_origin_line>`
 
 Sets the selection origin line to the ``line`` for the given ``caret_index``. If the selection origin is moved to the caret position, the selection will deselect.
 
@@ -3691,7 +3691,7 @@ If ``wrap_index`` is ``-1``, the selection origin column will be clamped to the 
 
 .. rst-class:: classref-method
 
-|void| **set_tab_size**\ (\ size\: :ref:`int<class_int>`\ )
+|void| **set_tab_size**\ (\ size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_set_tab_size>`
 
 Sets the tab size for the **TextEdit** to use.
 
@@ -3703,7 +3703,7 @@ Sets the tab size for the **TextEdit** to use.
 
 .. rst-class:: classref-method
 
-|void| **set_tooltip_request_func**\ (\ callback\: :ref:`Callable<class_Callable>`\ )
+|void| **set_tooltip_request_func**\ (\ callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_TextEdit_method_set_tooltip_request_func>`
 
 Provide custom tooltip text. The callback method must take the following args: ``hovered_word: String``.
 
@@ -3715,7 +3715,7 @@ Provide custom tooltip text. The callback method must take the following args: `
 
 .. rst-class:: classref-method
 
-|void| **skip_selection_for_next_occurrence**\ (\ )
+|void| **skip_selection_for_next_occurrence**\ (\ ) :ref:`🔗<class_TextEdit_method_skip_selection_for_next_occurrence>`
 
 Moves a selection and a caret for the next occurrence of the current selection. If there is no active selection, moves to the next occurrence of the word under caret.
 
@@ -3727,7 +3727,7 @@ Moves a selection and a caret for the next occurrence of the current selection. 
 
 .. rst-class:: classref-method
 
-|void| **start_action**\ (\ action\: :ref:`EditAction<enum_TextEdit_EditAction>`\ )
+|void| **start_action**\ (\ action\: :ref:`EditAction<enum_TextEdit_EditAction>`\ ) :ref:`🔗<class_TextEdit_method_start_action>`
 
 Starts an action, will end the current action if ``action`` is different.
 
@@ -3741,7 +3741,7 @@ An action will also end after a call to :ref:`end_action<class_TextEdit_method_e
 
 .. rst-class:: classref-method
 
-|void| **swap_lines**\ (\ from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ )
+|void| **swap_lines**\ (\ from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TextEdit_method_swap_lines>`
 
 Swaps the two lines. Carets will be swapped with the lines.
 
@@ -3753,7 +3753,7 @@ Swaps the two lines. Carets will be swapped with the lines.
 
 .. rst-class:: classref-method
 
-|void| **tag_saved_version**\ (\ )
+|void| **tag_saved_version**\ (\ ) :ref:`🔗<class_TextEdit_method_tag_saved_version>`
 
 Tag the current version as saved.
 
@@ -3765,7 +3765,7 @@ Tag the current version as saved.
 
 .. rst-class:: classref-method
 
-|void| **undo**\ (\ )
+|void| **undo**\ (\ ) :ref:`🔗<class_TextEdit_method_undo>`
 
 Perform undo operation.
 
@@ -3782,7 +3782,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **background_color** = ``Color(0, 0, 0, 0)``
+:ref:`Color<class_Color>` **background_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_TextEdit_theme_color_background_color>`
 
 Sets the background :ref:`Color<class_Color>` of this **TextEdit**.
 
@@ -3794,7 +3794,7 @@ Sets the background :ref:`Color<class_Color>` of this **TextEdit**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **caret_background_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **caret_background_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_TextEdit_theme_color_caret_background_color>`
 
 :ref:`Color<class_Color>` of the text behind the caret when using a block caret.
 
@@ -3806,7 +3806,7 @@ Sets the background :ref:`Color<class_Color>` of this **TextEdit**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **caret_color** = ``Color(0.875, 0.875, 0.875, 1)``
+:ref:`Color<class_Color>` **caret_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_TextEdit_theme_color_caret_color>`
 
 :ref:`Color<class_Color>` of the caret. This can be set to a fully transparent color to hide the caret entirely.
 
@@ -3818,7 +3818,7 @@ Sets the background :ref:`Color<class_Color>` of this **TextEdit**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **current_line_color** = ``Color(0.25, 0.25, 0.26, 0.8)``
+:ref:`Color<class_Color>` **current_line_color** = ``Color(0.25, 0.25, 0.26, 0.8)`` :ref:`🔗<class_TextEdit_theme_color_current_line_color>`
 
 Background :ref:`Color<class_Color>` of the line containing the caret.
 
@@ -3830,7 +3830,7 @@ Background :ref:`Color<class_Color>` of the line containing the caret.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)``
+:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_TextEdit_theme_color_font_color>`
 
 Sets the font :ref:`Color<class_Color>`.
 
@@ -3842,7 +3842,7 @@ Sets the font :ref:`Color<class_Color>`.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_TextEdit_theme_color_font_outline_color>`
 
 The tint of text outline of the **TextEdit**.
 
@@ -3854,7 +3854,7 @@ The tint of text outline of the **TextEdit**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_placeholder_color** = ``Color(0.875, 0.875, 0.875, 0.6)``
+:ref:`Color<class_Color>` **font_placeholder_color** = ``Color(0.875, 0.875, 0.875, 0.6)`` :ref:`🔗<class_TextEdit_theme_color_font_placeholder_color>`
 
 Font color for :ref:`placeholder_text<class_TextEdit_property_placeholder_text>`.
 
@@ -3866,7 +3866,7 @@ Font color for :ref:`placeholder_text<class_TextEdit_property_placeholder_text>`
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_readonly_color** = ``Color(0.875, 0.875, 0.875, 0.5)``
+:ref:`Color<class_Color>` **font_readonly_color** = ``Color(0.875, 0.875, 0.875, 0.5)`` :ref:`🔗<class_TextEdit_theme_color_font_readonly_color>`
 
 Sets the font :ref:`Color<class_Color>` when :ref:`editable<class_TextEdit_property_editable>` is disabled.
 
@@ -3878,7 +3878,7 @@ Sets the font :ref:`Color<class_Color>` when :ref:`editable<class_TextEdit_prope
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_selected_color** = ``Color(0, 0, 0, 0)``
+:ref:`Color<class_Color>` **font_selected_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_TextEdit_theme_color_font_selected_color>`
 
 Sets the :ref:`Color<class_Color>` of the selected text. If equal to ``Color(0, 0, 0, 0)``, it will be ignored.
 
@@ -3890,7 +3890,7 @@ Sets the :ref:`Color<class_Color>` of the selected text. If equal to ``Color(0, 
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **search_result_border_color** = ``Color(0.3, 0.3, 0.3, 0.4)``
+:ref:`Color<class_Color>` **search_result_border_color** = ``Color(0.3, 0.3, 0.3, 0.4)`` :ref:`🔗<class_TextEdit_theme_color_search_result_border_color>`
 
 :ref:`Color<class_Color>` of the border around text that matches the search query.
 
@@ -3902,7 +3902,7 @@ Sets the :ref:`Color<class_Color>` of the selected text. If equal to ``Color(0, 
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **search_result_color** = ``Color(0.3, 0.3, 0.3, 1)``
+:ref:`Color<class_Color>` **search_result_color** = ``Color(0.3, 0.3, 0.3, 1)`` :ref:`🔗<class_TextEdit_theme_color_search_result_color>`
 
 :ref:`Color<class_Color>` behind the text that matches the search query.
 
@@ -3914,7 +3914,7 @@ Sets the :ref:`Color<class_Color>` of the selected text. If equal to ``Color(0, 
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **selection_color** = ``Color(0.5, 0.5, 0.5, 1)``
+:ref:`Color<class_Color>` **selection_color** = ``Color(0.5, 0.5, 0.5, 1)`` :ref:`🔗<class_TextEdit_theme_color_selection_color>`
 
 Sets the highlight :ref:`Color<class_Color>` of text selections.
 
@@ -3926,7 +3926,7 @@ Sets the highlight :ref:`Color<class_Color>` of text selections.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **word_highlighted_color** = ``Color(0.5, 0.5, 0.5, 0.25)``
+:ref:`Color<class_Color>` **word_highlighted_color** = ``Color(0.5, 0.5, 0.5, 0.25)`` :ref:`🔗<class_TextEdit_theme_color_word_highlighted_color>`
 
 Sets the highlight :ref:`Color<class_Color>` of multiple occurrences. :ref:`highlight_all_occurrences<class_TextEdit_property_highlight_all_occurrences>` has to be enabled.
 
@@ -3938,7 +3938,7 @@ Sets the highlight :ref:`Color<class_Color>` of multiple occurrences. :ref:`high
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **caret_width** = ``1``
+:ref:`int<class_int>` **caret_width** = ``1`` :ref:`🔗<class_TextEdit_theme_constant_caret_width>`
 
 The caret's width in pixels. Greater values can be used to improve accessibility by ensuring the caret is easily visible, or to ensure consistency with a large font size. If set to ``0`` or lower, the caret width is automatically set to 1 pixel and multiplied by the display scaling factor.
 
@@ -3950,7 +3950,7 @@ The caret's width in pixels. Greater values can be used to improve accessibility
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **line_spacing** = ``4``
+:ref:`int<class_int>` **line_spacing** = ``4`` :ref:`🔗<class_TextEdit_theme_constant_line_spacing>`
 
 Sets the spacing between the lines.
 
@@ -3962,7 +3962,7 @@ Sets the spacing between the lines.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **outline_size** = ``0``
+:ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_TextEdit_theme_constant_outline_size>`
 
 The size of the text outline.
 
@@ -3976,7 +3976,7 @@ The size of the text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_TextEdit_theme_font_font>`
 
 Sets the default :ref:`Font<class_Font>`.
 
@@ -3988,7 +3988,7 @@ Sets the default :ref:`Font<class_Font>`.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **font_size**
+:ref:`int<class_int>` **font_size** :ref:`🔗<class_TextEdit_theme_font_size_font_size>`
 
 Sets default font size.
 
@@ -4000,7 +4000,7 @@ Sets default font size.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **space**
+:ref:`Texture2D<class_Texture2D>` **space** :ref:`🔗<class_TextEdit_theme_icon_space>`
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` for space text characters.
 
@@ -4012,7 +4012,7 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` for space text characters.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **tab**
+:ref:`Texture2D<class_Texture2D>` **tab** :ref:`🔗<class_TextEdit_theme_icon_tab>`
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` for tab text characters.
 
@@ -4024,7 +4024,7 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` for tab text characters.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **focus**
+:ref:`StyleBox<class_StyleBox>` **focus** :ref:`🔗<class_TextEdit_theme_style_focus>`
 
 Sets the :ref:`StyleBox<class_StyleBox>` when in focus. The :ref:`focus<class_TextEdit_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
@@ -4036,7 +4036,7 @@ Sets the :ref:`StyleBox<class_StyleBox>` when in focus. The :ref:`focus<class_Te
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **normal**
+:ref:`StyleBox<class_StyleBox>` **normal** :ref:`🔗<class_TextEdit_theme_style_normal>`
 
 Sets the :ref:`StyleBox<class_StyleBox>` of this **TextEdit**.
 
@@ -4048,7 +4048,7 @@ Sets the :ref:`StyleBox<class_StyleBox>` of this **TextEdit**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **read_only**
+:ref:`StyleBox<class_StyleBox>` **read_only** :ref:`🔗<class_TextEdit_theme_style_read_only>`
 
 Sets the :ref:`StyleBox<class_StyleBox>` of this **TextEdit** when :ref:`editable<class_TextEdit_property_editable>` is disabled.
 

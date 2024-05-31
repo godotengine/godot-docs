@@ -408,7 +408,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Feature**:
+enum **Feature**: :ref:`🔗<enum_DisplayServer_Feature>`
 
 .. _class_DisplayServer_constant_FEATURE_GLOBAL_MENU:
 
@@ -620,7 +620,7 @@ Display server supports spawning dialogs for selecting files or directories usin
 
 .. rst-class:: classref-enumeration
 
-enum **MouseMode**:
+enum **MouseMode**: :ref:`🔗<enum_DisplayServer_MouseMode>`
 
 .. _class_DisplayServer_constant_MOUSE_MODE_VISIBLE:
 
@@ -672,7 +672,7 @@ Confines the mouse cursor to the game window, and make it hidden.
 
 .. rst-class:: classref-enumeration
 
-enum **ScreenOrientation**:
+enum **ScreenOrientation**: :ref:`🔗<enum_DisplayServer_ScreenOrientation>`
 
 .. _class_DisplayServer_constant_SCREEN_LANDSCAPE:
 
@@ -738,7 +738,7 @@ Automatic landscape or portrait orientation (default or reverse depending on sen
 
 .. rst-class:: classref-enumeration
 
-enum **VirtualKeyboardType**:
+enum **VirtualKeyboardType**: :ref:`🔗<enum_DisplayServer_VirtualKeyboardType>`
 
 .. _class_DisplayServer_constant_KEYBOARD_TYPE_DEFAULT:
 
@@ -814,7 +814,7 @@ Virtual keyboard with additional keys to assist with typing URLs.
 
 .. rst-class:: classref-enumeration
 
-enum **CursorShape**:
+enum **CursorShape**: :ref:`🔗<enum_DisplayServer_CursorShape>`
 
 .. _class_DisplayServer_constant_CURSOR_ARROW:
 
@@ -968,7 +968,7 @@ Represents the size of the :ref:`CursorShape<enum_DisplayServer_CursorShape>` en
 
 .. rst-class:: classref-enumeration
 
-enum **FileDialogMode**:
+enum **FileDialogMode**: :ref:`🔗<enum_DisplayServer_FileDialogMode>`
 
 .. _class_DisplayServer_constant_FILE_DIALOG_MODE_OPEN_FILE:
 
@@ -1018,7 +1018,7 @@ The native file dialog will warn when a file exists.
 
 .. rst-class:: classref-enumeration
 
-enum **WindowMode**:
+enum **WindowMode**: :ref:`🔗<enum_DisplayServer_WindowMode>`
 
 .. _class_DisplayServer_constant_WINDOW_MODE_WINDOWED:
 
@@ -1086,7 +1086,7 @@ Full screen window covers the entire display area of a screen and has no border 
 
 .. rst-class:: classref-enumeration
 
-enum **WindowFlags**:
+enum **WindowFlags**: :ref:`🔗<enum_DisplayServer_WindowFlags>`
 
 .. _class_DisplayServer_constant_WINDOW_FLAG_RESIZE_DISABLED:
 
@@ -1178,7 +1178,7 @@ Max value of the :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`.
 
 .. rst-class:: classref-enumeration
 
-enum **WindowEvent**:
+enum **WindowEvent**: :ref:`🔗<enum_DisplayServer_WindowEvent>`
 
 .. _class_DisplayServer_constant_WINDOW_EVENT_MOUSE_ENTER:
 
@@ -1258,7 +1258,7 @@ Sent when the window title bar decoration is changed (e.g. :ref:`WINDOW_FLAG_EXT
 
 .. rst-class:: classref-enumeration
 
-enum **VSyncMode**:
+enum **VSyncMode**: :ref:`🔗<enum_DisplayServer_VSyncMode>`
 
 .. _class_DisplayServer_constant_VSYNC_DISABLED:
 
@@ -1302,7 +1302,7 @@ Although not guaranteed, the images can be rendered as fast as possible, which m
 
 .. rst-class:: classref-enumeration
 
-enum **HandleType**:
+enum **HandleType**: :ref:`🔗<enum_DisplayServer_HandleType>`
 
 .. _class_DisplayServer_constant_DISPLAY_HANDLE:
 
@@ -1372,7 +1372,7 @@ OpenGL context (only with the GL Compatibility renderer):
 
 .. rst-class:: classref-enumeration
 
-enum **TTSUtteranceEvent**:
+enum **TTSUtteranceEvent**: :ref:`🔗<enum_DisplayServer_TTSUtteranceEvent>`
 
 .. _class_DisplayServer_constant_TTS_UTTERANCE_STARTED:
 
@@ -1419,7 +1419,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**SCREEN_WITH_MOUSE_FOCUS** = ``-4``
+**SCREEN_WITH_MOUSE_FOCUS** = ``-4`` :ref:`🔗<class_DisplayServer_constant_SCREEN_WITH_MOUSE_FOCUS>`
 
 Represents the screen containing the mouse pointer.
 
@@ -1429,7 +1429,7 @@ Represents the screen containing the mouse pointer.
 
 .. rst-class:: classref-constant
 
-**SCREEN_WITH_KEYBOARD_FOCUS** = ``-3``
+**SCREEN_WITH_KEYBOARD_FOCUS** = ``-3`` :ref:`🔗<class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS>`
 
 Represents the screen containing the window with the keyboard focus.
 
@@ -1439,7 +1439,7 @@ Represents the screen containing the window with the keyboard focus.
 
 .. rst-class:: classref-constant
 
-**SCREEN_PRIMARY** = ``-2``
+**SCREEN_PRIMARY** = ``-2`` :ref:`🔗<class_DisplayServer_constant_SCREEN_PRIMARY>`
 
 Represents the primary screen.
 
@@ -1449,7 +1449,7 @@ Represents the primary screen.
 
 .. rst-class:: classref-constant
 
-**SCREEN_OF_MAIN_WINDOW** = ``-1``
+**SCREEN_OF_MAIN_WINDOW** = ``-1`` :ref:`🔗<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`
 
 Represents the screen where the main window is located. This is usually the default value in functions that allow specifying one of several screens.
 
@@ -1459,7 +1459,7 @@ Represents the screen where the main window is located. This is usually the defa
 
 .. rst-class:: classref-constant
 
-**MAIN_WINDOW_ID** = ``0``
+**MAIN_WINDOW_ID** = ``0`` :ref:`🔗<class_DisplayServer_constant_MAIN_WINDOW_ID>`
 
 The ID of the main window spawned by the engine, which can be passed to methods expecting a ``window_id``.
 
@@ -1467,7 +1467,7 @@ The ID of the main window spawned by the engine, which can be passed to methods 
 
 .. rst-class:: classref-constant
 
-**INVALID_WINDOW_ID** = ``-1``
+**INVALID_WINDOW_ID** = ``-1`` :ref:`🔗<class_DisplayServer_constant_INVALID_WINDOW_ID>`
 
 The ID that refers to a nonexistent window. This is returned by some **DisplayServer** methods if no window matches the requested result.
 
@@ -1475,7 +1475,7 @@ The ID that refers to a nonexistent window. This is returned by some **DisplaySe
 
 .. rst-class:: classref-constant
 
-**INVALID_INDICATOR_ID** = ``-1``
+**INVALID_INDICATOR_ID** = ``-1`` :ref:`🔗<class_DisplayServer_constant_INVALID_INDICATOR_ID>`
 
 The ID that refers to a nonexistent application status indicator.
 
@@ -1492,7 +1492,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **clipboard_get**\ (\ ) |const|
+:ref:`String<class_String>` **clipboard_get**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_clipboard_get>`
 
 Returns the user's clipboard as a string if possible.
 
@@ -1504,7 +1504,7 @@ Returns the user's clipboard as a string if possible.
 
 .. rst-class:: classref-method
 
-:ref:`Image<class_Image>` **clipboard_get_image**\ (\ ) |const|
+:ref:`Image<class_Image>` **clipboard_get_image**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_clipboard_get_image>`
 
 Returns the user's clipboard as an image if possible.
 
@@ -1516,7 +1516,7 @@ Returns the user's clipboard as an image if possible.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **clipboard_get_primary**\ (\ ) |const|
+:ref:`String<class_String>` **clipboard_get_primary**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_clipboard_get_primary>`
 
 Returns the user's `primary <https://unix.stackexchange.com/questions/139191/whats-the-difference-between-primary-selection-and-clipboard-buffer>`__ clipboard as a string if possible. This is the clipboard that is set when the user selects text in any application, rather than when pressing :kbd:`Ctrl + C`. The clipboard data can then be pasted by clicking the middle mouse button in any application that supports the primary clipboard mechanism.
 
@@ -1530,7 +1530,7 @@ Returns the user's `primary <https://unix.stackexchange.com/questions/139191/wha
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **clipboard_has**\ (\ ) |const|
+:ref:`bool<class_bool>` **clipboard_has**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_clipboard_has>`
 
 Returns ``true`` if there is a text content on the user's clipboard.
 
@@ -1542,7 +1542,7 @@ Returns ``true`` if there is a text content on the user's clipboard.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **clipboard_has_image**\ (\ ) |const|
+:ref:`bool<class_bool>` **clipboard_has_image**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_clipboard_has_image>`
 
 Returns ``true`` if there is an image content on the user's clipboard.
 
@@ -1554,7 +1554,7 @@ Returns ``true`` if there is an image content on the user's clipboard.
 
 .. rst-class:: classref-method
 
-|void| **clipboard_set**\ (\ clipboard\: :ref:`String<class_String>`\ )
+|void| **clipboard_set**\ (\ clipboard\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_clipboard_set>`
 
 Sets the user's clipboard content to the given string.
 
@@ -1566,7 +1566,7 @@ Sets the user's clipboard content to the given string.
 
 .. rst-class:: classref-method
 
-|void| **clipboard_set_primary**\ (\ clipboard_primary\: :ref:`String<class_String>`\ )
+|void| **clipboard_set_primary**\ (\ clipboard_primary\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_clipboard_set_primary>`
 
 Sets the user's `primary <https://unix.stackexchange.com/questions/139191/whats-the-difference-between-primary-selection-and-clipboard-buffer>`__ clipboard content to the given string. This is the clipboard that is set when the user selects text in any application, rather than when pressing :kbd:`Ctrl + C`. The clipboard data can then be pasted by clicking the middle mouse button in any application that supports the primary clipboard mechanism.
 
@@ -1580,9 +1580,11 @@ Sets the user's `primary <https://unix.stackexchange.com/questions/139191/whats-
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **create_status_indicator**\ (\ icon\: :ref:`Texture2D<class_Texture2D>`, tooltip\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ )
+:ref:`int<class_int>` **create_status_indicator**\ (\ icon\: :ref:`Texture2D<class_Texture2D>`, tooltip\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_create_status_indicator>`
 
 Creates a new application status indicator with the specified icon, tooltip, and activation callback.
+
+\ ``callback`` should take two arguments: the pressed mouse button (one of the :ref:`MouseButton<enum_@GlobalScope_MouseButton>` constants) and the click position in screen coordinates (a :ref:`Vector2i<class_Vector2i>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1592,7 +1594,7 @@ Creates a new application status indicator with the specified icon, tooltip, and
 
 .. rst-class:: classref-method
 
-:ref:`CursorShape<enum_DisplayServer_CursorShape>` **cursor_get_shape**\ (\ ) |const|
+:ref:`CursorShape<enum_DisplayServer_CursorShape>` **cursor_get_shape**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_cursor_get_shape>`
 
 Returns the default mouse cursor shape set by :ref:`cursor_set_shape<class_DisplayServer_method_cursor_set_shape>`.
 
@@ -1604,7 +1606,7 @@ Returns the default mouse cursor shape set by :ref:`cursor_set_shape<class_Displ
 
 .. rst-class:: classref-method
 
-|void| **cursor_set_custom_image**\ (\ cursor\: :ref:`Resource<class_Resource>`, shape\: :ref:`CursorShape<enum_DisplayServer_CursorShape>` = 0, hotspot\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ )
+|void| **cursor_set_custom_image**\ (\ cursor\: :ref:`Resource<class_Resource>`, shape\: :ref:`CursorShape<enum_DisplayServer_CursorShape>` = 0, hotspot\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) :ref:`🔗<class_DisplayServer_method_cursor_set_custom_image>`
 
 Sets a custom mouse cursor image for the given ``shape``. This means the user's operating system and mouse cursor theme will no longer influence the mouse cursor's appearance.
 
@@ -1618,7 +1620,7 @@ Sets a custom mouse cursor image for the given ``shape``. This means the user's 
 
 .. rst-class:: classref-method
 
-|void| **cursor_set_shape**\ (\ shape\: :ref:`CursorShape<enum_DisplayServer_CursorShape>`\ )
+|void| **cursor_set_shape**\ (\ shape\: :ref:`CursorShape<enum_DisplayServer_CursorShape>`\ ) :ref:`🔗<class_DisplayServer_method_cursor_set_shape>`
 
 Sets the default mouse cursor shape. The cursor's appearance will vary depending on the user's operating system and mouse cursor theme. See also :ref:`cursor_get_shape<class_DisplayServer_method_cursor_get_shape>` and :ref:`cursor_set_custom_image<class_DisplayServer_method_cursor_set_custom_image>`.
 
@@ -1630,7 +1632,7 @@ Sets the default mouse cursor shape. The cursor's appearance will vary depending
 
 .. rst-class:: classref-method
 
-|void| **delete_status_indicator**\ (\ id\: :ref:`int<class_int>`\ )
+|void| **delete_status_indicator**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_delete_status_indicator>`
 
 Removes the application status indicator.
 
@@ -1642,7 +1644,7 @@ Removes the application status indicator.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **dialog_input_text**\ (\ title\: :ref:`String<class_String>`, description\: :ref:`String<class_String>`, existing_text\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **dialog_input_text**\ (\ title\: :ref:`String<class_String>`, description\: :ref:`String<class_String>`, existing_text\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_dialog_input_text>`
 
 Shows a text input dialog which uses the operating system's native look-and-feel. ``callback`` should accept a single :ref:`String<class_String>` parameter which contains the text field's contents.
 
@@ -1656,7 +1658,7 @@ Shows a text input dialog which uses the operating system's native look-and-feel
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **dialog_show**\ (\ title\: :ref:`String<class_String>`, description\: :ref:`String<class_String>`, buttons\: :ref:`PackedStringArray<class_PackedStringArray>`, callback\: :ref:`Callable<class_Callable>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **dialog_show**\ (\ title\: :ref:`String<class_String>`, description\: :ref:`String<class_String>`, buttons\: :ref:`PackedStringArray<class_PackedStringArray>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_dialog_show>`
 
 Shows a text dialog which uses the operating system's native look-and-feel. ``callback`` should accept a single :ref:`int<class_int>` parameter which corresponds to the index of the pressed button.
 
@@ -1670,7 +1672,7 @@ Shows a text dialog which uses the operating system's native look-and-feel. ``ca
 
 .. rst-class:: classref-method
 
-|void| **enable_for_stealing_focus**\ (\ process_id\: :ref:`int<class_int>`\ )
+|void| **enable_for_stealing_focus**\ (\ process_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_enable_for_stealing_focus>`
 
 Allows the ``process_id`` PID to steal focus from this window. In other words, this disables the operating system's focus stealing protection for the specified PID.
 
@@ -1684,7 +1686,7 @@ Allows the ``process_id`` PID to steal focus from this window. In other words, t
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **file_dialog_show**\ (\ title\: :ref:`String<class_String>`, current_directory\: :ref:`String<class_String>`, filename\: :ref:`String<class_String>`, show_hidden\: :ref:`bool<class_bool>`, mode\: :ref:`FileDialogMode<enum_DisplayServer_FileDialogMode>`, filters\: :ref:`PackedStringArray<class_PackedStringArray>`, callback\: :ref:`Callable<class_Callable>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **file_dialog_show**\ (\ title\: :ref:`String<class_String>`, current_directory\: :ref:`String<class_String>`, filename\: :ref:`String<class_String>`, show_hidden\: :ref:`bool<class_bool>`, mode\: :ref:`FileDialogMode<enum_DisplayServer_FileDialogMode>`, filters\: :ref:`PackedStringArray<class_PackedStringArray>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_file_dialog_show>`
 
 Displays OS native dialog for selecting files or directories in the file system.
 
@@ -1710,7 +1712,7 @@ Callbacks have the following arguments: ``status: bool, selected_paths: PackedSt
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **file_dialog_with_options_show**\ (\ title\: :ref:`String<class_String>`, current_directory\: :ref:`String<class_String>`, root\: :ref:`String<class_String>`, filename\: :ref:`String<class_String>`, show_hidden\: :ref:`bool<class_bool>`, mode\: :ref:`FileDialogMode<enum_DisplayServer_FileDialogMode>`, filters\: :ref:`PackedStringArray<class_PackedStringArray>`, options\: :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\], callback\: :ref:`Callable<class_Callable>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **file_dialog_with_options_show**\ (\ title\: :ref:`String<class_String>`, current_directory\: :ref:`String<class_String>`, root\: :ref:`String<class_String>`, filename\: :ref:`String<class_String>`, show_hidden\: :ref:`bool<class_bool>`, mode\: :ref:`FileDialogMode<enum_DisplayServer_FileDialogMode>`, filters\: :ref:`PackedStringArray<class_PackedStringArray>`, options\: :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\], callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_file_dialog_with_options_show>`
 
 Displays OS native dialog for selecting files or directories in the file system with additional user selectable options.
 
@@ -1744,7 +1746,7 @@ Callbacks have the following arguments: ``status: bool, selected_paths: PackedSt
 
 .. rst-class:: classref-method
 
-|void| **force_process_and_drop_events**\ (\ )
+|void| **force_process_and_drop_events**\ (\ ) :ref:`🔗<class_DisplayServer_method_force_process_and_drop_events>`
 
 Forces window manager processing while ignoring all :ref:`InputEvent<class_InputEvent>`\ s. See also :ref:`process_events<class_DisplayServer_method_process_events>`.
 
@@ -1758,7 +1760,7 @@ Forces window manager processing while ignoring all :ref:`InputEvent<class_Input
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_accent_color**\ (\ ) |const|
+:ref:`Color<class_Color>` **get_accent_color**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_accent_color>`
 
 Returns OS theme accent color. Returns ``Color(0, 0, 0, 0)``, if accent color is unknown.
 
@@ -1772,7 +1774,7 @@ Returns OS theme accent color. Returns ``Color(0, 0, 0, 0)``, if accent color is
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_base_color**\ (\ ) |const|
+:ref:`Color<class_Color>` **get_base_color**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_base_color>`
 
 Returns the OS theme base color (default control background). Returns ``Color(0, 0, 0, 0)`` if the base color is unknown.
 
@@ -1786,7 +1788,7 @@ Returns the OS theme base color (default control background). Returns ``Color(0,
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Rect2<class_Rect2>`\] **get_display_cutouts**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Rect2<class_Rect2>`\] **get_display_cutouts**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_display_cutouts>`
 
 Returns an :ref:`Array<class_Array>` of :ref:`Rect2<class_Rect2>`, each of which is the bounding rectangle for a display cutout or notch. These are non-functional areas on edge-to-edge screens used by cameras and sensors. Returns an empty array if the device does not have cutouts. See also :ref:`get_display_safe_area<class_DisplayServer_method_get_display_safe_area>`.
 
@@ -1800,7 +1802,7 @@ Returns an :ref:`Array<class_Array>` of :ref:`Rect2<class_Rect2>`, each of which
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **get_display_safe_area**\ (\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **get_display_safe_area**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_display_safe_area>`
 
 Returns the unobscured area of the display where interactive controls should be rendered. See also :ref:`get_display_cutouts<class_DisplayServer_method_get_display_cutouts>`.
 
@@ -1812,7 +1814,7 @@ Returns the unobscured area of the display where interactive controls should be 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_keyboard_focus_screen**\ (\ ) |const|
+:ref:`int<class_int>` **get_keyboard_focus_screen**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_keyboard_focus_screen>`
 
 Returns the index of the screen containing the window with the keyboard focus, or the primary screen if there's no focused window.
 
@@ -1824,7 +1826,7 @@ Returns the index of the screen containing the window with the keyboard focus, o
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_name**\ (\ ) |const|
+:ref:`String<class_String>` **get_name**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_name>`
 
 Returns the name of the **DisplayServer** currently in use. Most operating systems only have a single **DisplayServer**, but Linux has access to more than one **DisplayServer** (currently X11 and Wayland).
 
@@ -1838,7 +1840,7 @@ The names of built-in display servers are ``Windows``, ``macOS``, ``X11`` (Linux
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_primary_screen**\ (\ ) |const|
+:ref:`int<class_int>` **get_primary_screen**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_primary_screen>`
 
 Returns index of the primary screen.
 
@@ -1850,7 +1852,7 @@ Returns index of the primary screen.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_screen_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_screen_count**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_screen_count>`
 
 Returns the number of displays available.
 
@@ -1862,7 +1864,7 @@ Returns the number of displays available.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_screen_from_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |const|
+:ref:`int<class_int>` **get_screen_from_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |const| :ref:`🔗<class_DisplayServer_method_get_screen_from_rect>`
 
 Returns index of the screen which contains specified rectangle.
 
@@ -1874,7 +1876,7 @@ Returns index of the screen which contains specified rectangle.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_swap_cancel_ok**\ (\ )
+:ref:`bool<class_bool>` **get_swap_cancel_ok**\ (\ ) :ref:`🔗<class_DisplayServer_method_get_swap_cancel_ok>`
 
 Returns ``true`` if positions of **OK** and **Cancel** buttons are swapped in dialogs. This is enabled by default on Windows to follow interface conventions, and be toggled by changing :ref:`ProjectSettings.gui/common/swap_cancel_ok<class_ProjectSettings_property_gui/common/swap_cancel_ok>`.
 
@@ -1888,7 +1890,7 @@ Returns ``true`` if positions of **OK** and **Cancel** buttons are swapped in di
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_window_at_screen_position**\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`int<class_int>` **get_window_at_screen_position**\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_DisplayServer_method_get_window_at_screen_position>`
 
 Returns the ID of the window at the specified screen ``position`` (in pixels). On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
 
@@ -1909,7 +1911,7 @@ Returns the ID of the window at the specified screen ``position`` (in pixels). O
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_window_list**\ (\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_window_list**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_window_list>`
 
 Returns the list of Godot window IDs belonging to this process.
 
@@ -1923,7 +1925,7 @@ Returns the list of Godot window IDs belonging to this process.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_add_check_item**\ (\ menu_root\: :ref:`String<class_String>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **global_menu_add_check_item**\ (\ menu_root\: :ref:`String<class_String>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_global_menu_add_check_item>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -1955,7 +1957,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_add_icon_check_item**\ (\ menu_root\: :ref:`String<class_String>`, icon\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **global_menu_add_icon_check_item**\ (\ menu_root\: :ref:`String<class_String>`, icon\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_global_menu_add_icon_check_item>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -1987,7 +1989,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_add_icon_item**\ (\ menu_root\: :ref:`String<class_String>`, icon\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **global_menu_add_icon_item**\ (\ menu_root\: :ref:`String<class_String>`, icon\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_global_menu_add_icon_item>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2019,7 +2021,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_add_icon_radio_check_item**\ (\ menu_root\: :ref:`String<class_String>`, icon\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **global_menu_add_icon_radio_check_item**\ (\ menu_root\: :ref:`String<class_String>`, icon\: :ref:`Texture2D<class_Texture2D>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_global_menu_add_icon_radio_check_item>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2053,7 +2055,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_add_item**\ (\ menu_root\: :ref:`String<class_String>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **global_menu_add_item**\ (\ menu_root\: :ref:`String<class_String>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_global_menu_add_item>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2085,7 +2087,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_add_multistate_item**\ (\ menu_root\: :ref:`String<class_String>`, label\: :ref:`String<class_String>`, max_states\: :ref:`int<class_int>`, default_state\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **global_menu_add_multistate_item**\ (\ menu_root\: :ref:`String<class_String>`, label\: :ref:`String<class_String>`, max_states\: :ref:`int<class_int>`, default_state\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_global_menu_add_multistate_item>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2121,7 +2123,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_add_radio_check_item**\ (\ menu_root\: :ref:`String<class_String>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **global_menu_add_radio_check_item**\ (\ menu_root\: :ref:`String<class_String>`, label\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>` = Callable(), key_callback\: :ref:`Callable<class_Callable>` = Callable(), tag\: :ref:`Variant<class_Variant>` = null, accelerator\: :ref:`Key<enum_@GlobalScope_Key>` = 0, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_global_menu_add_radio_check_item>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2155,7 +2157,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_add_separator**\ (\ menu_root\: :ref:`String<class_String>`, index\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **global_menu_add_separator**\ (\ menu_root\: :ref:`String<class_String>`, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_global_menu_add_separator>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2183,7 +2185,7 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_add_submenu_item**\ (\ menu_root\: :ref:`String<class_String>`, label\: :ref:`String<class_String>`, submenu\: :ref:`String<class_String>`, index\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **global_menu_add_submenu_item**\ (\ menu_root\: :ref:`String<class_String>`, label\: :ref:`String<class_String>`, submenu\: :ref:`String<class_String>`, index\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_global_menu_add_submenu_item>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2211,7 +2213,7 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 
 .. rst-class:: classref-method
 
-|void| **global_menu_clear**\ (\ menu_root\: :ref:`String<class_String>`\ )
+|void| **global_menu_clear**\ (\ menu_root\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_clear>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2237,7 +2239,7 @@ Removes all items from the global menu with ID ``menu_root``.
 
 .. rst-class:: classref-method
 
-:ref:`Key<enum_@GlobalScope_Key>` **global_menu_get_item_accelerator**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Key<enum_@GlobalScope_Key>` **global_menu_get_item_accelerator**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_accelerator>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2253,7 +2255,7 @@ Returns the accelerator of the item at index ``idx``. Accelerators are special c
 
 .. rst-class:: classref-method
 
-:ref:`Callable<class_Callable>` **global_menu_get_item_callback**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Callable<class_Callable>` **global_menu_get_item_callback**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_callback>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2269,7 +2271,7 @@ Returns the callback of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_get_item_count**\ (\ menu_root\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **global_menu_get_item_count**\ (\ menu_root\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_count>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2285,7 +2287,7 @@ Returns number of items in the global menu with ID ``menu_root``.
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **global_menu_get_item_icon**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Texture2D<class_Texture2D>` **global_menu_get_item_icon**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_icon>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2301,7 +2303,7 @@ Returns the icon of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_get_item_indentation_level**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **global_menu_get_item_indentation_level**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_indentation_level>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2317,7 +2319,7 @@ Returns the horizontal offset of the item at the given ``idx``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_get_item_index_from_tag**\ (\ menu_root\: :ref:`String<class_String>`, tag\: :ref:`Variant<class_Variant>`\ ) |const|
+:ref:`int<class_int>` **global_menu_get_item_index_from_tag**\ (\ menu_root\: :ref:`String<class_String>`, tag\: :ref:`Variant<class_Variant>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_index_from_tag>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2333,7 +2335,7 @@ Returns the index of the item with the specified ``tag``. Indices are automatica
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_get_item_index_from_text**\ (\ menu_root\: :ref:`String<class_String>`, text\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **global_menu_get_item_index_from_text**\ (\ menu_root\: :ref:`String<class_String>`, text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_index_from_text>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2349,7 +2351,7 @@ Returns the index of the item with the specified ``text``. Indices are automatic
 
 .. rst-class:: classref-method
 
-:ref:`Callable<class_Callable>` **global_menu_get_item_key_callback**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Callable<class_Callable>` **global_menu_get_item_key_callback**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_key_callback>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2365,7 +2367,7 @@ Returns the callback of the item accelerator at index ``idx``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_get_item_max_states**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **global_menu_get_item_max_states**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_max_states>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2381,7 +2383,7 @@ Returns number of states of a multistate item. See :ref:`global_menu_add_multist
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **global_menu_get_item_state**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **global_menu_get_item_state**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_state>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2397,7 +2399,7 @@ Returns the state of a multistate item. See :ref:`global_menu_add_multistate_ite
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **global_menu_get_item_submenu**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **global_menu_get_item_submenu**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_submenu>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2413,7 +2415,7 @@ Returns the submenu ID of the item at index ``idx``. See :ref:`global_menu_add_s
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **global_menu_get_item_tag**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant<class_Variant>` **global_menu_get_item_tag**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_tag>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2429,7 +2431,7 @@ Returns the metadata of the specified item, which might be of any type. You can 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **global_menu_get_item_text**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **global_menu_get_item_text**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_text>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2445,7 +2447,7 @@ Returns the text of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **global_menu_get_item_tooltip**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **global_menu_get_item_tooltip**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_item_tooltip>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2461,7 +2463,7 @@ Returns the tooltip associated with the specified index ``idx``.
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **global_menu_get_system_menu_roots**\ (\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **global_menu_get_system_menu_roots**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_get_system_menu_roots>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2477,7 +2479,7 @@ Returns Dictionary of supported system menu IDs and names.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **global_menu_is_item_checkable**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **global_menu_is_item_checkable**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_is_item_checkable>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2493,7 +2495,7 @@ Returns ``true`` if the item at index ``idx`` is checkable in some way, i.e. if 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **global_menu_is_item_checked**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **global_menu_is_item_checked**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_is_item_checked>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2509,7 +2511,7 @@ Returns ``true`` if the item at index ``idx`` is checked.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **global_menu_is_item_disabled**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **global_menu_is_item_disabled**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_is_item_disabled>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2527,7 +2529,7 @@ See :ref:`global_menu_set_item_disabled<class_DisplayServer_method_global_menu_s
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **global_menu_is_item_hidden**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **global_menu_is_item_hidden**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_is_item_hidden>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2545,7 +2547,7 @@ See :ref:`global_menu_set_item_hidden<class_DisplayServer_method_global_menu_set
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **global_menu_is_item_radio_checkable**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **global_menu_is_item_radio_checkable**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_global_menu_is_item_radio_checkable>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2563,7 +2565,7 @@ Returns ``true`` if the item at index ``idx`` has radio button-style checkabilit
 
 .. rst-class:: classref-method
 
-|void| **global_menu_remove_item**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ )
+|void| **global_menu_remove_item**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_remove_item>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2581,7 +2583,7 @@ Removes the item at index ``idx`` from the global menu ``menu_root``.
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_accelerator**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, keycode\: :ref:`Key<enum_@GlobalScope_Key>`\ )
+|void| **global_menu_set_item_accelerator**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, keycode\: :ref:`Key<enum_@GlobalScope_Key>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_accelerator>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2597,7 +2599,7 @@ Sets the accelerator of the item at index ``idx``. ``keycode`` can be a single :
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_callback**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ )
+|void| **global_menu_set_item_callback**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_callback>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2615,7 +2617,7 @@ Sets the callback of the item at index ``idx``. Callback is emitted when an item
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_checkable**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, checkable\: :ref:`bool<class_bool>`\ )
+|void| **global_menu_set_item_checkable**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, checkable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_checkable>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2631,7 +2633,7 @@ Sets whether the item at index ``idx`` has a checkbox. If ``false``, sets the ty
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_checked**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, checked\: :ref:`bool<class_bool>`\ )
+|void| **global_menu_set_item_checked**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, checked\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_checked>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2647,7 +2649,7 @@ Sets the checkstate status of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_disabled**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ )
+|void| **global_menu_set_item_disabled**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_disabled>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2663,7 +2665,7 @@ Enables/disables the item at index ``idx``. When it is disabled, it can't be sel
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_hidden**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, hidden\: :ref:`bool<class_bool>`\ )
+|void| **global_menu_set_item_hidden**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, hidden\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_hidden>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2679,7 +2681,7 @@ Hides/shows the item at index ``idx``. When it is hidden, an item does not appea
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_hover_callbacks**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ )
+|void| **global_menu_set_item_hover_callbacks**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_hover_callbacks>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2697,7 +2699,7 @@ Sets the callback of the item at index ``idx``. The callback is emitted when an 
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_icon**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **global_menu_set_item_icon**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_icon>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2715,7 +2717,7 @@ Replaces the :ref:`Texture2D<class_Texture2D>` icon of the specified ``idx``.
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_indentation_level**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, level\: :ref:`int<class_int>`\ )
+|void| **global_menu_set_item_indentation_level**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, level\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_indentation_level>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2731,7 +2733,7 @@ Sets the horizontal offset of the item at the given ``idx``.
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_key_callback**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, key_callback\: :ref:`Callable<class_Callable>`\ )
+|void| **global_menu_set_item_key_callback**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, key_callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_key_callback>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2749,7 +2751,7 @@ Sets the callback of the item at index ``idx``. Callback is emitted when its acc
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_max_states**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, max_states\: :ref:`int<class_int>`\ )
+|void| **global_menu_set_item_max_states**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, max_states\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_max_states>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2765,7 +2767,7 @@ Sets number of state of a multistate item. See :ref:`global_menu_add_multistate_
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_radio_checkable**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, checkable\: :ref:`bool<class_bool>`\ )
+|void| **global_menu_set_item_radio_checkable**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, checkable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_radio_checkable>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2783,7 +2785,7 @@ Sets the type of the item at the specified index ``idx`` to radio button. If ``f
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_state**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, state\: :ref:`int<class_int>`\ )
+|void| **global_menu_set_item_state**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, state\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_state>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2799,7 +2801,7 @@ Sets the state of a multistate item. See :ref:`global_menu_add_multistate_item<c
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_submenu**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, submenu\: :ref:`String<class_String>`\ )
+|void| **global_menu_set_item_submenu**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, submenu\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_submenu>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2815,7 +2817,7 @@ Sets the submenu of the item at index ``idx``. The submenu is the ID of a global
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_tag**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, tag\: :ref:`Variant<class_Variant>`\ )
+|void| **global_menu_set_item_tag**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, tag\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_tag>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2831,7 +2833,7 @@ Sets the metadata of an item, which may be of any type. You can later get it wit
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_text**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ )
+|void| **global_menu_set_item_text**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_text>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2847,7 +2849,7 @@ Sets the text of the item at index ``idx``.
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_item_tooltip**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ )
+|void| **global_menu_set_item_tooltip**\ (\ menu_root\: :ref:`String<class_String>`, idx\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_item_tooltip>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
@@ -2863,11 +2865,11 @@ Sets the :ref:`String<class_String>` tooltip of the item at the specified index 
 
 .. rst-class:: classref-method
 
-|void| **global_menu_set_popup_callbacks**\ (\ menu_root\: :ref:`String<class_String>`, open_callback\: :ref:`Callable<class_Callable>`, close_callback\: :ref:`Callable<class_Callable>`\ )
+|void| **global_menu_set_popup_callbacks**\ (\ menu_root\: :ref:`String<class_String>`, open_callback\: :ref:`Callable<class_Callable>`, close_callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_global_menu_set_popup_callbacks>`
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Registers callables to emit when the menu is respectively about to show or closed.
+Registers callables to emit when the menu is respectively about to show or closed. Callback methods should have zero arguments.
 
 .. rst-class:: classref-item-separator
 
@@ -2877,7 +2879,7 @@ Registers callables to emit when the menu is respectively about to show or close
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_feature**\ (\ feature\: :ref:`Feature<enum_DisplayServer_Feature>`\ ) |const|
+:ref:`bool<class_bool>` **has_feature**\ (\ feature\: :ref:`Feature<enum_DisplayServer_Feature>`\ ) |const| :ref:`🔗<class_DisplayServer_method_has_feature>`
 
 Returns ``true`` if the specified ``feature`` is supported by the current **DisplayServer**, ``false`` otherwise.
 
@@ -2889,7 +2891,7 @@ Returns ``true`` if the specified ``feature`` is supported by the current **Disp
 
 .. rst-class:: classref-method
 
-|void| **help_set_search_callbacks**\ (\ search_callback\: :ref:`Callable<class_Callable>`, action_callback\: :ref:`Callable<class_Callable>`\ )
+|void| **help_set_search_callbacks**\ (\ search_callback\: :ref:`Callable<class_Callable>`, action_callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_help_set_search_callbacks>`
 
 Sets native help system search callbacks.
 
@@ -2907,7 +2909,7 @@ Sets native help system search callbacks.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **ime_get_selection**\ (\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **ime_get_selection**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_ime_get_selection>`
 
 Returns the text selection in the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ composition string, with the :ref:`Vector2i<class_Vector2i>`'s ``x`` component being the caret position and ``y`` being the length of the selection.
 
@@ -2921,7 +2923,7 @@ Returns the text selection in the `Input Method Editor <https://en.wikipedia.org
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **ime_get_text**\ (\ ) |const|
+:ref:`String<class_String>` **ime_get_text**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_ime_get_text>`
 
 Returns the composition string contained within the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ window.
 
@@ -2935,7 +2937,7 @@ Returns the composition string contained within the `Input Method Editor <https:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_dark_mode**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_dark_mode**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_is_dark_mode>`
 
 Returns ``true`` if OS is using dark mode.
 
@@ -2949,7 +2951,7 @@ Returns ``true`` if OS is using dark mode.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_dark_mode_supported**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_dark_mode_supported**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_is_dark_mode_supported>`
 
 Returns ``true`` if OS supports dark mode.
 
@@ -2963,7 +2965,7 @@ Returns ``true`` if OS supports dark mode.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_touchscreen_available**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_touchscreen_available**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_is_touchscreen_available>`
 
 Returns ``true`` if touch events are available (Android or iOS), the capability is detected on the Web platform or if :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is ``true``.
 
@@ -2975,7 +2977,7 @@ Returns ``true`` if touch events are available (Android or iOS), the capability 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_window_transparency_available**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_window_transparency_available**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_is_window_transparency_available>`
 
 Returns ``true`` if the window background can be made transparent. This method returns ``false`` if :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``, or if transparency is not supported by the renderer or OS compositor.
 
@@ -2987,7 +2989,7 @@ Returns ``true`` if the window background can be made transparent. This method r
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **keyboard_get_current_layout**\ (\ ) |const|
+:ref:`int<class_int>` **keyboard_get_current_layout**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_keyboard_get_current_layout>`
 
 Returns active keyboard layout index.
 
@@ -3001,7 +3003,7 @@ Returns active keyboard layout index.
 
 .. rst-class:: classref-method
 
-:ref:`Key<enum_@GlobalScope_Key>` **keyboard_get_keycode_from_physical**\ (\ keycode\: :ref:`Key<enum_@GlobalScope_Key>`\ ) |const|
+:ref:`Key<enum_@GlobalScope_Key>` **keyboard_get_keycode_from_physical**\ (\ keycode\: :ref:`Key<enum_@GlobalScope_Key>`\ ) |const| :ref:`🔗<class_DisplayServer_method_keyboard_get_keycode_from_physical>`
 
 Converts a physical (US QWERTY) ``keycode`` to one in the active keyboard layout.
 
@@ -3015,7 +3017,7 @@ Converts a physical (US QWERTY) ``keycode`` to one in the active keyboard layout
 
 .. rst-class:: classref-method
 
-:ref:`Key<enum_@GlobalScope_Key>` **keyboard_get_label_from_physical**\ (\ keycode\: :ref:`Key<enum_@GlobalScope_Key>`\ ) |const|
+:ref:`Key<enum_@GlobalScope_Key>` **keyboard_get_label_from_physical**\ (\ keycode\: :ref:`Key<enum_@GlobalScope_Key>`\ ) |const| :ref:`🔗<class_DisplayServer_method_keyboard_get_label_from_physical>`
 
 Converts a physical (US QWERTY) ``keycode`` to localized label printed on the key in the active keyboard layout.
 
@@ -3029,7 +3031,7 @@ Converts a physical (US QWERTY) ``keycode`` to localized label printed on the ke
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **keyboard_get_layout_count**\ (\ ) |const|
+:ref:`int<class_int>` **keyboard_get_layout_count**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_keyboard_get_layout_count>`
 
 Returns the number of keyboard layouts.
 
@@ -3043,7 +3045,7 @@ Returns the number of keyboard layouts.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **keyboard_get_layout_language**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **keyboard_get_layout_language**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_keyboard_get_layout_language>`
 
 Returns the ISO-639/BCP-47 language code of the keyboard layout at position ``index``.
 
@@ -3057,7 +3059,7 @@ Returns the ISO-639/BCP-47 language code of the keyboard layout at position ``in
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **keyboard_get_layout_name**\ (\ index\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **keyboard_get_layout_name**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_keyboard_get_layout_name>`
 
 Returns the localized name of the keyboard layout at position ``index``.
 
@@ -3071,7 +3073,7 @@ Returns the localized name of the keyboard layout at position ``index``.
 
 .. rst-class:: classref-method
 
-|void| **keyboard_set_current_layout**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **keyboard_set_current_layout**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_keyboard_set_current_layout>`
 
 Sets the active keyboard layout.
 
@@ -3085,7 +3087,7 @@ Sets the active keyboard layout.
 
 .. rst-class:: classref-method
 
-|bitfield|\[:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>`\] **mouse_get_button_state**\ (\ ) |const|
+|bitfield|\[:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>`\] **mouse_get_button_state**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_mouse_get_button_state>`
 
 Returns the current state of mouse buttons (whether each button is pressed) as a bitmask. If multiple mouse buttons are pressed at the same time, the bits are added together. Equivalent to :ref:`Input.get_mouse_button_mask<class_Input_method_get_mouse_button_mask>`.
 
@@ -3097,7 +3099,7 @@ Returns the current state of mouse buttons (whether each button is pressed) as a
 
 .. rst-class:: classref-method
 
-:ref:`MouseMode<enum_DisplayServer_MouseMode>` **mouse_get_mode**\ (\ ) |const|
+:ref:`MouseMode<enum_DisplayServer_MouseMode>` **mouse_get_mode**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_mouse_get_mode>`
 
 Returns the current mouse mode. See also :ref:`mouse_set_mode<class_DisplayServer_method_mouse_set_mode>`.
 
@@ -3109,7 +3111,7 @@ Returns the current mouse mode. See also :ref:`mouse_set_mode<class_DisplayServe
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **mouse_get_position**\ (\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **mouse_get_position**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_mouse_get_position>`
 
 Returns the mouse cursor's current position in screen coordinates.
 
@@ -3121,7 +3123,7 @@ Returns the mouse cursor's current position in screen coordinates.
 
 .. rst-class:: classref-method
 
-|void| **mouse_set_mode**\ (\ mouse_mode\: :ref:`MouseMode<enum_DisplayServer_MouseMode>`\ )
+|void| **mouse_set_mode**\ (\ mouse_mode\: :ref:`MouseMode<enum_DisplayServer_MouseMode>`\ ) :ref:`🔗<class_DisplayServer_method_mouse_set_mode>`
 
 Sets the current mouse mode. See also :ref:`mouse_get_mode<class_DisplayServer_method_mouse_get_mode>`.
 
@@ -3133,7 +3135,7 @@ Sets the current mouse mode. See also :ref:`mouse_get_mode<class_DisplayServer_m
 
 .. rst-class:: classref-method
 
-|void| **process_events**\ (\ )
+|void| **process_events**\ (\ ) :ref:`🔗<class_DisplayServer_method_process_events>`
 
 Perform window manager processing, including input flushing. See also :ref:`force_process_and_drop_events<class_DisplayServer_method_force_process_and_drop_events>`, :ref:`Input.flush_buffered_events<class_Input_method_flush_buffered_events>` and :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>`.
 
@@ -3145,7 +3147,7 @@ Perform window manager processing, including input flushing. See also :ref:`forc
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **screen_get_dpi**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`int<class_int>` **screen_get_dpi**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_dpi>`
 
 Returns the dots per inch density of the specified screen. If ``screen`` is :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>` (the default value), a screen with the main window will be used.
 
@@ -3172,7 +3174,7 @@ Returns the dots per inch density of the specified screen. If ``screen`` is :ref
 
 .. rst-class:: classref-method
 
-:ref:`Image<class_Image>` **screen_get_image**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`Image<class_Image>` **screen_get_image**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_image>`
 
 Returns screenshot of the ``screen``.
 
@@ -3188,7 +3190,7 @@ Returns screenshot of the ``screen``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **screen_get_max_scale**\ (\ ) |const|
+:ref:`float<class_float>` **screen_get_max_scale**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_max_scale>`
 
 Returns the greatest scale factor of all screens.
 
@@ -3204,7 +3206,7 @@ Returns the greatest scale factor of all screens.
 
 .. rst-class:: classref-method
 
-:ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>` **screen_get_orientation**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>` **screen_get_orientation**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_orientation>`
 
 Returns the ``screen``'s current orientation. See also :ref:`screen_set_orientation<class_DisplayServer_method_screen_set_orientation>`.
 
@@ -3218,7 +3220,7 @@ Returns the ``screen``'s current orientation. See also :ref:`screen_set_orientat
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **screen_get_pixel**\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`Color<class_Color>` **screen_get_pixel**\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_pixel>`
 
 Returns color of the display pixel at the ``position``.
 
@@ -3234,7 +3236,7 @@ Returns color of the display pixel at the ``position``.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **screen_get_position**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **screen_get_position**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_position>`
 
 Returns the screen's top-left corner position in pixels. On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
 
@@ -3259,7 +3261,7 @@ See also :ref:`screen_get_size<class_DisplayServer_method_screen_get_size>`.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **screen_get_refresh_rate**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`float<class_float>` **screen_get_refresh_rate**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_refresh_rate>`
 
 Returns the current refresh rate of the specified screen. If ``screen`` is :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>` (the default value), a screen with the main window will be used.
 
@@ -3281,7 +3283,7 @@ To fallback to a default refresh rate if the method fails, try:
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **screen_get_scale**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`float<class_float>` **screen_get_scale**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_scale>`
 
 Returns the scale factor of the specified screen by index.
 
@@ -3299,7 +3301,7 @@ Returns the scale factor of the specified screen by index.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **screen_get_size**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **screen_get_size**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_size>`
 
 Returns the screen's size in pixels. See also :ref:`screen_get_position<class_DisplayServer_method_screen_get_position>` and :ref:`screen_get_usable_rect<class_DisplayServer_method_screen_get_usable_rect>`.
 
@@ -3311,7 +3313,7 @@ Returns the screen's size in pixels. See also :ref:`screen_get_position<class_Di
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **screen_get_usable_rect**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **screen_get_usable_rect**\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_usable_rect>`
 
 Returns the portion of the screen that is not obstructed by a status bar in pixels. See also :ref:`screen_get_size<class_DisplayServer_method_screen_get_size>`.
 
@@ -3323,7 +3325,7 @@ Returns the portion of the screen that is not obstructed by a status bar in pixe
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **screen_is_kept_on**\ (\ ) |const|
+:ref:`bool<class_bool>` **screen_is_kept_on**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_is_kept_on>`
 
 Returns ``true`` if the screen should never be turned off by the operating system's power-saving measures. See also :ref:`screen_set_keep_on<class_DisplayServer_method_screen_set_keep_on>`.
 
@@ -3335,7 +3337,7 @@ Returns ``true`` if the screen should never be turned off by the operating syste
 
 .. rst-class:: classref-method
 
-|void| **screen_set_keep_on**\ (\ enable\: :ref:`bool<class_bool>`\ )
+|void| **screen_set_keep_on**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_screen_set_keep_on>`
 
 Sets whether the screen should never be turned off by the operating system's power-saving measures. See also :ref:`screen_is_kept_on<class_DisplayServer_method_screen_is_kept_on>`.
 
@@ -3347,7 +3349,7 @@ Sets whether the screen should never be turned off by the operating system's pow
 
 .. rst-class:: classref-method
 
-|void| **screen_set_orientation**\ (\ orientation\: :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>`, screen\: :ref:`int<class_int>` = -1\ )
+|void| **screen_set_orientation**\ (\ orientation\: :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>`, screen\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_screen_set_orientation>`
 
 Sets the ``screen``'s ``orientation``. See also :ref:`screen_get_orientation<class_DisplayServer_method_screen_get_orientation>`.
 
@@ -3361,7 +3363,7 @@ Sets the ``screen``'s ``orientation``. See also :ref:`screen_get_orientation<cla
 
 .. rst-class:: classref-method
 
-|void| **set_icon**\ (\ image\: :ref:`Image<class_Image>`\ )
+|void| **set_icon**\ (\ image\: :ref:`Image<class_Image>`\ ) :ref:`🔗<class_DisplayServer_method_set_icon>`
 
 Sets the window icon (usually displayed in the top-left corner) with an :ref:`Image<class_Image>`. To use icons in the operating system's native format, use :ref:`set_native_icon<class_DisplayServer_method_set_native_icon>` instead.
 
@@ -3375,7 +3377,7 @@ Sets the window icon (usually displayed in the top-left corner) with an :ref:`Im
 
 .. rst-class:: classref-method
 
-|void| **set_native_icon**\ (\ filename\: :ref:`String<class_String>`\ )
+|void| **set_native_icon**\ (\ filename\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_set_native_icon>`
 
 Sets the window icon (usually displayed in the top-left corner) in the operating system's *native* format. The file at ``filename`` must be in ``.ico`` format on Windows or ``.icns`` on macOS. By using specially crafted ``.ico`` or ``.icns`` icons, :ref:`set_native_icon<class_DisplayServer_method_set_native_icon>` allows specifying different icons depending on the size the icon is displayed at. This size is determined by the operating system and user preferences (including the display scale factor). To use icons in other formats, use :ref:`set_icon<class_DisplayServer_method_set_icon>` instead.
 
@@ -3389,7 +3391,7 @@ Sets the window icon (usually displayed in the top-left corner) in the operating
 
 .. rst-class:: classref-method
 
-|void| **set_system_theme_change_callback**\ (\ callable\: :ref:`Callable<class_Callable>`\ )
+|void| **set_system_theme_change_callback**\ (\ callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_set_system_theme_change_callback>`
 
 Sets the ``callable`` that should be called when system theme settings are changed. Callback method should have zero arguments.
 
@@ -3403,7 +3405,7 @@ Sets the ``callable`` that should be called when system theme settings are chang
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **status_indicator_get_rect**\ (\ id\: :ref:`int<class_int>`\ ) |const|
+:ref:`Rect2<class_Rect2>` **status_indicator_get_rect**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_status_indicator_get_rect>`
 
 Returns the rectangle for the given status indicator ``id`` in screen coordinates. If the status indicator is not visible, returns an empty :ref:`Rect2<class_Rect2>`.
 
@@ -3417,9 +3419,9 @@ Returns the rectangle for the given status indicator ``id`` in screen coordinate
 
 .. rst-class:: classref-method
 
-|void| **status_indicator_set_callback**\ (\ id\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ )
+|void| **status_indicator_set_callback**\ (\ id\: :ref:`int<class_int>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_status_indicator_set_callback>`
 
-Sets the application status indicator activation callback.
+Sets the application status indicator activation callback. ``callback`` should take two arguments: :ref:`int<class_int>` mouse button index (one of :ref:`MouseButton<enum_@GlobalScope_MouseButton>` values) and :ref:`Vector2i<class_Vector2i>` click position in screen coordinates.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
@@ -3431,7 +3433,7 @@ Sets the application status indicator activation callback.
 
 .. rst-class:: classref-method
 
-|void| **status_indicator_set_icon**\ (\ id\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **status_indicator_set_icon**\ (\ id\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_DisplayServer_method_status_indicator_set_icon>`
 
 Sets the application status indicator icon.
 
@@ -3445,7 +3447,7 @@ Sets the application status indicator icon.
 
 .. rst-class:: classref-method
 
-|void| **status_indicator_set_menu**\ (\ id\: :ref:`int<class_int>`, menu_rid\: :ref:`RID<class_RID>`\ )
+|void| **status_indicator_set_menu**\ (\ id\: :ref:`int<class_int>`, menu_rid\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_DisplayServer_method_status_indicator_set_menu>`
 
 Sets the application status indicator native popup menu.
 
@@ -3463,7 +3465,7 @@ Sets the application status indicator native popup menu.
 
 .. rst-class:: classref-method
 
-|void| **status_indicator_set_tooltip**\ (\ id\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ )
+|void| **status_indicator_set_tooltip**\ (\ id\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_status_indicator_set_tooltip>`
 
 Sets the application status indicator tooltip.
 
@@ -3477,7 +3479,7 @@ Sets the application status indicator tooltip.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **tablet_get_current_driver**\ (\ ) |const|
+:ref:`String<class_String>` **tablet_get_current_driver**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_tablet_get_current_driver>`
 
 Returns current active tablet driver name.
 
@@ -3491,7 +3493,7 @@ Returns current active tablet driver name.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **tablet_get_driver_count**\ (\ ) |const|
+:ref:`int<class_int>` **tablet_get_driver_count**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_tablet_get_driver_count>`
 
 Returns the total number of available tablet drivers.
 
@@ -3505,7 +3507,7 @@ Returns the total number of available tablet drivers.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **tablet_get_driver_name**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **tablet_get_driver_name**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_tablet_get_driver_name>`
 
 Returns the tablet driver name for the given index.
 
@@ -3519,7 +3521,7 @@ Returns the tablet driver name for the given index.
 
 .. rst-class:: classref-method
 
-|void| **tablet_set_current_driver**\ (\ name\: :ref:`String<class_String>`\ )
+|void| **tablet_set_current_driver**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DisplayServer_method_tablet_set_current_driver>`
 
 Set active tablet driver name.
 
@@ -3541,7 +3543,7 @@ Supported drivers:
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **tts_get_voices**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **tts_get_voices**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_tts_get_voices>`
 
 Returns an :ref:`Array<class_Array>` of voice information dictionaries.
 
@@ -3567,7 +3569,7 @@ Note that Godot depends on system libraries for text-to-speech functionality. Th
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **tts_get_voices_for_language**\ (\ language\: :ref:`String<class_String>`\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **tts_get_voices_for_language**\ (\ language\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_DisplayServer_method_tts_get_voices_for_language>`
 
 Returns an :ref:`PackedStringArray<class_PackedStringArray>` of voice identifiers for the ``language``.
 
@@ -3583,7 +3585,7 @@ Returns an :ref:`PackedStringArray<class_PackedStringArray>` of voice identifier
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **tts_is_paused**\ (\ ) |const|
+:ref:`bool<class_bool>` **tts_is_paused**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_tts_is_paused>`
 
 Returns ``true`` if the synthesizer is in a paused state.
 
@@ -3599,7 +3601,7 @@ Returns ``true`` if the synthesizer is in a paused state.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **tts_is_speaking**\ (\ ) |const|
+:ref:`bool<class_bool>` **tts_is_speaking**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_tts_is_speaking>`
 
 Returns ``true`` if the synthesizer is generating speech, or have utterance waiting in the queue.
 
@@ -3615,7 +3617,7 @@ Returns ``true`` if the synthesizer is generating speech, or have utterance wait
 
 .. rst-class:: classref-method
 
-|void| **tts_pause**\ (\ )
+|void| **tts_pause**\ (\ ) :ref:`🔗<class_DisplayServer_method_tts_pause>`
 
 Puts the synthesizer into a paused state.
 
@@ -3631,7 +3633,7 @@ Puts the synthesizer into a paused state.
 
 .. rst-class:: classref-method
 
-|void| **tts_resume**\ (\ )
+|void| **tts_resume**\ (\ ) :ref:`🔗<class_DisplayServer_method_tts_resume>`
 
 Resumes the synthesizer if it was paused.
 
@@ -3647,7 +3649,7 @@ Resumes the synthesizer if it was paused.
 
 .. rst-class:: classref-method
 
-|void| **tts_set_utterance_callback**\ (\ event\: :ref:`TTSUtteranceEvent<enum_DisplayServer_TTSUtteranceEvent>`, callable\: :ref:`Callable<class_Callable>`\ )
+|void| **tts_set_utterance_callback**\ (\ event\: :ref:`TTSUtteranceEvent<enum_DisplayServer_TTSUtteranceEvent>`, callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_DisplayServer_method_tts_set_utterance_callback>`
 
 Adds a callback, which is called when the utterance has started, finished, canceled or reached a text boundary.
 
@@ -3669,7 +3671,7 @@ Adds a callback, which is called when the utterance has started, finished, cance
 
 .. rst-class:: classref-method
 
-|void| **tts_speak**\ (\ text\: :ref:`String<class_String>`, voice\: :ref:`String<class_String>`, volume\: :ref:`int<class_int>` = 50, pitch\: :ref:`float<class_float>` = 1.0, rate\: :ref:`float<class_float>` = 1.0, utterance_id\: :ref:`int<class_int>` = 0, interrupt\: :ref:`bool<class_bool>` = false\ )
+|void| **tts_speak**\ (\ text\: :ref:`String<class_String>`, voice\: :ref:`String<class_String>`, volume\: :ref:`int<class_int>` = 50, pitch\: :ref:`float<class_float>` = 1.0, rate\: :ref:`float<class_float>` = 1.0, utterance_id\: :ref:`int<class_int>` = 0, interrupt\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_DisplayServer_method_tts_speak>`
 
 Adds an utterance to the queue. If ``interrupt`` is ``true``, the queue is cleared first.
 
@@ -3699,7 +3701,7 @@ Adds an utterance to the queue. If ``interrupt`` is ``true``, the queue is clear
 
 .. rst-class:: classref-method
 
-|void| **tts_stop**\ (\ )
+|void| **tts_stop**\ (\ ) :ref:`🔗<class_DisplayServer_method_tts_stop>`
 
 Stops synthesis in progress and removes all utterances from the queue.
 
@@ -3715,7 +3717,7 @@ Stops synthesis in progress and removes all utterances from the queue.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **virtual_keyboard_get_height**\ (\ ) |const|
+:ref:`int<class_int>` **virtual_keyboard_get_height**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_virtual_keyboard_get_height>`
 
 Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyboard or if it is currently hidden.
 
@@ -3727,7 +3729,7 @@ Returns the on-screen keyboard's height in pixels. Returns 0 if there is no keyb
 
 .. rst-class:: classref-method
 
-|void| **virtual_keyboard_hide**\ (\ )
+|void| **virtual_keyboard_hide**\ (\ ) :ref:`🔗<class_DisplayServer_method_virtual_keyboard_hide>`
 
 Hides the virtual keyboard if it is shown, does nothing otherwise.
 
@@ -3739,7 +3741,7 @@ Hides the virtual keyboard if it is shown, does nothing otherwise.
 
 .. rst-class:: classref-method
 
-|void| **virtual_keyboard_show**\ (\ existing_text\: :ref:`String<class_String>`, position\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), type\: :ref:`VirtualKeyboardType<enum_DisplayServer_VirtualKeyboardType>` = 0, max_length\: :ref:`int<class_int>` = -1, cursor_start\: :ref:`int<class_int>` = -1, cursor_end\: :ref:`int<class_int>` = -1\ )
+|void| **virtual_keyboard_show**\ (\ existing_text\: :ref:`String<class_String>`, position\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), type\: :ref:`VirtualKeyboardType<enum_DisplayServer_VirtualKeyboardType>` = 0, max_length\: :ref:`int<class_int>` = -1, cursor_start\: :ref:`int<class_int>` = -1, cursor_end\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DisplayServer_method_virtual_keyboard_show>`
 
 Shows the virtual keyboard if the platform has one.
 
@@ -3765,7 +3767,7 @@ Shows the virtual keyboard if the platform has one.
 
 .. rst-class:: classref-method
 
-|void| **warp_mouse**\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **warp_mouse**\ (\ position\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_DisplayServer_method_warp_mouse>`
 
 Sets the mouse cursor position to the given ``position`` relative to an origin at the upper left corner of the currently focused game Window Manager window.
 
@@ -3779,7 +3781,7 @@ Sets the mouse cursor position to the given ``position`` relative to an origin a
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **window_can_draw**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`bool<class_bool>` **window_can_draw**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_can_draw>`
 
 Returns ``true`` if anything can be drawn in the window specified by ``window_id``, ``false`` otherwise. Using the ``--disable-render-loop`` command line argument or a headless build will return ``false``.
 
@@ -3791,7 +3793,7 @@ Returns ``true`` if anything can be drawn in the window specified by ``window_id
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **window_get_active_popup**\ (\ ) |const|
+:ref:`int<class_int>` **window_get_active_popup**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_active_popup>`
 
 Returns ID of the active popup window, or :ref:`INVALID_WINDOW_ID<class_DisplayServer_constant_INVALID_WINDOW_ID>` if there is none.
 
@@ -3803,7 +3805,7 @@ Returns ID of the active popup window, or :ref:`INVALID_WINDOW_ID<class_DisplayS
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **window_get_attached_instance_id**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **window_get_attached_instance_id**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_attached_instance_id>`
 
 Returns the :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` of the :ref:`Window<class_Window>` the ``window_id`` is attached to.
 
@@ -3815,7 +3817,7 @@ Returns the :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` o
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **window_get_current_screen**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **window_get_current_screen**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_current_screen>`
 
 Returns the screen the window specified by ``window_id`` is currently positioned on. If the screen overlaps multiple displays, the screen where the window's center is located is returned. See also :ref:`window_set_current_screen<class_DisplayServer_method_window_set_current_screen>`.
 
@@ -3827,7 +3829,7 @@ Returns the screen the window specified by ``window_id`` is currently positioned
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **window_get_flag**\ (\ flag\: :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`, window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`bool<class_bool>` **window_get_flag**\ (\ flag\: :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`, window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_flag>`
 
 Returns the current value of the given window's ``flag``.
 
@@ -3839,7 +3841,7 @@ Returns the current value of the given window's ``flag``.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **window_get_max_size**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **window_get_max_size**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_max_size>`
 
 Returns the window's maximum size (in pixels). See also :ref:`window_set_max_size<class_DisplayServer_method_window_set_max_size>`.
 
@@ -3851,7 +3853,7 @@ Returns the window's maximum size (in pixels). See also :ref:`window_set_max_siz
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **window_get_min_size**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **window_get_min_size**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_min_size>`
 
 Returns the window's minimum size (in pixels). See also :ref:`window_set_min_size<class_DisplayServer_method_window_set_min_size>`.
 
@@ -3863,7 +3865,7 @@ Returns the window's minimum size (in pixels). See also :ref:`window_set_min_siz
 
 .. rst-class:: classref-method
 
-:ref:`WindowMode<enum_DisplayServer_WindowMode>` **window_get_mode**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`WindowMode<enum_DisplayServer_WindowMode>` **window_get_mode**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_mode>`
 
 Returns the mode of the given window.
 
@@ -3875,7 +3877,7 @@ Returns the mode of the given window.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **window_get_native_handle**\ (\ handle_type\: :ref:`HandleType<enum_DisplayServer_HandleType>`, window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`int<class_int>` **window_get_native_handle**\ (\ handle_type\: :ref:`HandleType<enum_DisplayServer_HandleType>`, window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_native_handle>`
 
 Returns internal structure pointers for use in plugins.
 
@@ -3889,7 +3891,7 @@ Returns internal structure pointers for use in plugins.
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **window_get_popup_safe_rect**\ (\ window\: :ref:`int<class_int>`\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **window_get_popup_safe_rect**\ (\ window\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_popup_safe_rect>`
 
 Returns the bounding box of control, or menu item that was used to open the popup window, in the screen coordinate system.
 
@@ -3901,7 +3903,7 @@ Returns the bounding box of control, or menu item that was used to open the popu
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **window_get_position**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **window_get_position**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_position>`
 
 Returns the position of the client area of the given window on the screen.
 
@@ -3913,7 +3915,7 @@ Returns the position of the client area of the given window on the screen.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **window_get_position_with_decorations**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **window_get_position_with_decorations**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_position_with_decorations>`
 
 Returns the position of the given window on the screen including the borders drawn by the operating system. See also :ref:`window_get_position<class_DisplayServer_method_window_get_position>`.
 
@@ -3925,7 +3927,7 @@ Returns the position of the given window on the screen including the borders dra
 
 .. rst-class:: classref-method
 
-:ref:`Vector3i<class_Vector3i>` **window_get_safe_title_margins**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector3i<class_Vector3i>` **window_get_safe_title_margins**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_safe_title_margins>`
 
 Returns left margins (``x``), right margins (``y``) and height (``z``) of the title that are safe to use (contains no buttons or other elements) when :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>` flag is set.
 
@@ -3937,7 +3939,7 @@ Returns left margins (``x``), right margins (``y``) and height (``z``) of the ti
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **window_get_size**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **window_get_size**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_size>`
 
 Returns the size of the window specified by ``window_id`` (in pixels), excluding the borders drawn by the operating system. This is also called the "client area". See also :ref:`window_get_size_with_decorations<class_DisplayServer_method_window_get_size_with_decorations>`, :ref:`window_set_size<class_DisplayServer_method_window_set_size>` and :ref:`window_get_position<class_DisplayServer_method_window_get_position>`.
 
@@ -3949,7 +3951,7 @@ Returns the size of the window specified by ``window_id`` (in pixels), excluding
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **window_get_size_with_decorations**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **window_get_size_with_decorations**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_size_with_decorations>`
 
 Returns the size of the window specified by ``window_id`` (in pixels), including the borders drawn by the operating system. See also :ref:`window_get_size<class_DisplayServer_method_window_get_size>`.
 
@@ -3961,7 +3963,7 @@ Returns the size of the window specified by ``window_id`` (in pixels), including
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **window_get_title_size**\ (\ title\: :ref:`String<class_String>`, window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **window_get_title_size**\ (\ title\: :ref:`String<class_String>`, window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_title_size>`
 
 Returns the estimated window title bar size (including text and window buttons) for the window specified by ``window_id`` (in pixels). This method does not change the window title.
 
@@ -3975,7 +3977,7 @@ Returns the estimated window title bar size (including text and window buttons) 
 
 .. rst-class:: classref-method
 
-:ref:`VSyncMode<enum_DisplayServer_VSyncMode>` **window_get_vsync_mode**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`VSyncMode<enum_DisplayServer_VSyncMode>` **window_get_vsync_mode**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_get_vsync_mode>`
 
 Returns the V-Sync mode of the given window.
 
@@ -3987,7 +3989,7 @@ Returns the V-Sync mode of the given window.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **window_is_focused**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`bool<class_bool>` **window_is_focused**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_is_focused>`
 
 Returns ``true`` if the window specified by ``window_id`` is focused.
 
@@ -3999,7 +4001,7 @@ Returns ``true`` if the window specified by ``window_id`` is focused.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **window_is_maximize_allowed**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`bool<class_bool>` **window_is_maximize_allowed**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_DisplayServer_method_window_is_maximize_allowed>`
 
 Returns ``true`` if the given window can be maximized (the maximize button is enabled).
 
@@ -4011,7 +4013,7 @@ Returns ``true`` if the given window can be maximized (the maximize button is en
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **window_maximize_on_title_dbl_click**\ (\ ) |const|
+:ref:`bool<class_bool>` **window_maximize_on_title_dbl_click**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_window_maximize_on_title_dbl_click>`
 
 Returns ``true``, if double-click on a window title should maximize it.
 
@@ -4025,7 +4027,7 @@ Returns ``true``, if double-click on a window title should maximize it.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **window_minimize_on_title_dbl_click**\ (\ ) |const|
+:ref:`bool<class_bool>` **window_minimize_on_title_dbl_click**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_window_minimize_on_title_dbl_click>`
 
 Returns ``true``, if double-click on a window title should minimize it.
 
@@ -4039,7 +4041,7 @@ Returns ``true``, if double-click on a window title should minimize it.
 
 .. rst-class:: classref-method
 
-|void| **window_move_to_foreground**\ (\ window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_move_to_foreground**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_move_to_foreground>`
 
 Moves the window specified by ``window_id`` to the foreground, so that it is visible over other windows.
 
@@ -4051,7 +4053,7 @@ Moves the window specified by ``window_id`` to the foreground, so that it is vis
 
 .. rst-class:: classref-method
 
-|void| **window_request_attention**\ (\ window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_request_attention**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_request_attention>`
 
 Makes the window specified by ``window_id`` request attention, which is materialized by the window title and taskbar entry blinking until the window is focused. This usually has no visible effect if the window is currently focused. The exact behavior varies depending on the operating system.
 
@@ -4063,7 +4065,7 @@ Makes the window specified by ``window_id`` request attention, which is material
 
 .. rst-class:: classref-method
 
-|void| **window_set_current_screen**\ (\ screen\: :ref:`int<class_int>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_current_screen**\ (\ screen\: :ref:`int<class_int>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_current_screen>`
 
 Moves the window specified by ``window_id`` to the specified ``screen``. See also :ref:`window_get_current_screen<class_DisplayServer_method_window_get_current_screen>`.
 
@@ -4075,9 +4077,9 @@ Moves the window specified by ``window_id`` to the specified ``screen``. See als
 
 .. rst-class:: classref-method
 
-|void| **window_set_drop_files_callback**\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_drop_files_callback**\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_drop_files_callback>`
 
-Sets the ``callback`` that should be called when files are dropped from the operating system's file manager to the window specified by ``window_id``.
+Sets the ``callback`` that should be called when files are dropped from the operating system's file manager to the window specified by ``window_id``. ``callback`` should take one :ref:`PackedStringArray<class_PackedStringArray>` argument, which is the list of dropped files.
 
 \ **Warning:** Advanced users only! Adding such a callback to a :ref:`Window<class_Window>` node will override its default implementation, which can introduce bugs.
 
@@ -4091,7 +4093,7 @@ Sets the ``callback`` that should be called when files are dropped from the oper
 
 .. rst-class:: classref-method
 
-|void| **window_set_exclusive**\ (\ window_id\: :ref:`int<class_int>`, exclusive\: :ref:`bool<class_bool>`\ )
+|void| **window_set_exclusive**\ (\ window_id\: :ref:`int<class_int>`, exclusive\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_DisplayServer_method_window_set_exclusive>`
 
 If set to ``true``, this window will always stay on top of its parent window, parent window will ignore input while this window is opened.
 
@@ -4107,7 +4109,7 @@ If set to ``true``, this window will always stay on top of its parent window, pa
 
 .. rst-class:: classref-method
 
-|void| **window_set_flag**\ (\ flag\: :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`, enabled\: :ref:`bool<class_bool>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_flag**\ (\ flag\: :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`, enabled\: :ref:`bool<class_bool>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_flag>`
 
 Enables or disables the given window's given ``flag``. See :ref:`WindowFlags<enum_DisplayServer_WindowFlags>` for possible values and their behavior.
 
@@ -4119,7 +4121,7 @@ Enables or disables the given window's given ``flag``. See :ref:`WindowFlags<enu
 
 .. rst-class:: classref-method
 
-|void| **window_set_ime_active**\ (\ active\: :ref:`bool<class_bool>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_ime_active**\ (\ active\: :ref:`bool<class_bool>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_ime_active>`
 
 Sets whether `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ should be enabled for the window specified by ``window_id``. See also :ref:`window_set_ime_position<class_DisplayServer_method_window_set_ime_position>`.
 
@@ -4131,7 +4133,7 @@ Sets whether `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`_
 
 .. rst-class:: classref-method
 
-|void| **window_set_ime_position**\ (\ position\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_ime_position**\ (\ position\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_ime_position>`
 
 Sets the position of the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ popup for the specified ``window_id``. Only effective if :ref:`window_set_ime_active<class_DisplayServer_method_window_set_ime_active>` was set to ``true`` for the specified ``window_id``.
 
@@ -4143,7 +4145,7 @@ Sets the position of the `Input Method Editor <https://en.wikipedia.org/wiki/Inp
 
 .. rst-class:: classref-method
 
-|void| **window_set_input_event_callback**\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_input_event_callback**\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_input_event_callback>`
 
 Sets the ``callback`` that should be called when any :ref:`InputEvent<class_InputEvent>` is sent to the window specified by ``window_id``.
 
@@ -4157,7 +4159,7 @@ Sets the ``callback`` that should be called when any :ref:`InputEvent<class_Inpu
 
 .. rst-class:: classref-method
 
-|void| **window_set_input_text_callback**\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_input_text_callback**\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_input_text_callback>`
 
 Sets the ``callback`` that should be called when text is entered using the virtual keyboard to the window specified by ``window_id``.
 
@@ -4171,7 +4173,7 @@ Sets the ``callback`` that should be called when text is entered using the virtu
 
 .. rst-class:: classref-method
 
-|void| **window_set_max_size**\ (\ max_size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_max_size**\ (\ max_size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_max_size>`
 
 Sets the maximum size of the window specified by ``window_id`` in pixels. Normally, the user will not be able to drag the window to make it larger than the specified size. See also :ref:`window_get_max_size<class_DisplayServer_method_window_get_max_size>`.
 
@@ -4187,7 +4189,7 @@ Sets the maximum size of the window specified by ``window_id`` in pixels. Normal
 
 .. rst-class:: classref-method
 
-|void| **window_set_min_size**\ (\ min_size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_min_size**\ (\ min_size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_min_size>`
 
 Sets the minimum size for the given window to ``min_size`` in pixels. Normally, the user will not be able to drag the window to make it smaller than the specified size. See also :ref:`window_get_min_size<class_DisplayServer_method_window_get_min_size>`.
 
@@ -4205,7 +4207,7 @@ Sets the minimum size for the given window to ``min_size`` in pixels. Normally, 
 
 .. rst-class:: classref-method
 
-|void| **window_set_mode**\ (\ mode\: :ref:`WindowMode<enum_DisplayServer_WindowMode>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_mode**\ (\ mode\: :ref:`WindowMode<enum_DisplayServer_WindowMode>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_mode>`
 
 Sets window mode for the given window to ``mode``. See :ref:`WindowMode<enum_DisplayServer_WindowMode>` for possible values and how each mode behaves.
 
@@ -4219,7 +4221,7 @@ Sets window mode for the given window to ``mode``. See :ref:`WindowMode<enum_Dis
 
 .. rst-class:: classref-method
 
-|void| **window_set_mouse_passthrough**\ (\ region\: :ref:`PackedVector2Array<class_PackedVector2Array>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_mouse_passthrough**\ (\ region\: :ref:`PackedVector2Array<class_PackedVector2Array>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_mouse_passthrough>`
 
 Sets a polygonal region of the window which accepts mouse events. Mouse events outside the region will be passed through.
 
@@ -4264,7 +4266,7 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
 .. rst-class:: classref-method
 
-|void| **window_set_popup_safe_rect**\ (\ window\: :ref:`int<class_int>`, rect\: :ref:`Rect2i<class_Rect2i>`\ )
+|void| **window_set_popup_safe_rect**\ (\ window\: :ref:`int<class_int>`, rect\: :ref:`Rect2i<class_Rect2i>`\ ) :ref:`🔗<class_DisplayServer_method_window_set_popup_safe_rect>`
 
 Sets the bounding box of control, or menu item that was used to open the popup window, in the screen coordinate system. Clicking this area will not auto-close this popup.
 
@@ -4276,7 +4278,7 @@ Sets the bounding box of control, or menu item that was used to open the popup w
 
 .. rst-class:: classref-method
 
-|void| **window_set_position**\ (\ position\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_position**\ (\ position\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_position>`
 
 Sets the position of the given window to ``position``. On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
 
@@ -4303,7 +4305,7 @@ See also :ref:`window_get_position<class_DisplayServer_method_window_get_positio
 
 .. rst-class:: classref-method
 
-|void| **window_set_rect_changed_callback**\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_rect_changed_callback**\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_rect_changed_callback>`
 
 Sets the ``callback`` that will be called when the window specified by ``window_id`` is moved or resized.
 
@@ -4317,7 +4319,7 @@ Sets the ``callback`` that will be called when the window specified by ``window_
 
 .. rst-class:: classref-method
 
-|void| **window_set_size**\ (\ size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_size**\ (\ size\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_size>`
 
 Sets the size of the given window to ``size`` (in pixels). See also :ref:`window_get_size<class_DisplayServer_method_window_get_size>` and :ref:`window_get_position<class_DisplayServer_method_window_get_position>`.
 
@@ -4331,7 +4333,7 @@ Sets the size of the given window to ``size`` (in pixels). See also :ref:`window
 
 .. rst-class:: classref-method
 
-|void| **window_set_title**\ (\ title\: :ref:`String<class_String>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_title**\ (\ title\: :ref:`String<class_String>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_title>`
 
 Sets the title of the given window to ``title``.
 
@@ -4347,7 +4349,7 @@ Sets the title of the given window to ``title``.
 
 .. rst-class:: classref-method
 
-|void| **window_set_transient**\ (\ window_id\: :ref:`int<class_int>`, parent_window_id\: :ref:`int<class_int>`\ )
+|void| **window_set_transient**\ (\ window_id\: :ref:`int<class_int>`, parent_window_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_window_set_transient>`
 
 Sets window transient parent. Transient window is will be destroyed with its transient parent and will return focus to their parent when closed. The transient window is displayed on top of a non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
 
@@ -4363,7 +4365,7 @@ Sets window transient parent. Transient window is will be destroyed with its tra
 
 .. rst-class:: classref-method
 
-|void| **window_set_vsync_mode**\ (\ vsync_mode\: :ref:`VSyncMode<enum_DisplayServer_VSyncMode>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_vsync_mode**\ (\ vsync_mode\: :ref:`VSyncMode<enum_DisplayServer_VSyncMode>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_vsync_mode>`
 
 Sets the V-Sync mode of the given window. See also :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>`.
 
@@ -4381,7 +4383,7 @@ Depending on the platform and used renderer, the engine will fall back to :ref:`
 
 .. rst-class:: classref-method
 
-|void| **window_set_window_buttons_offset**\ (\ offset\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_window_buttons_offset**\ (\ offset\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_window_buttons_offset>`
 
 When :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>` flag is set, set offset to the center of the first titlebar button.
 
@@ -4395,7 +4397,7 @@ When :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_
 
 .. rst-class:: classref-method
 
-|void| **window_set_window_event_callback**\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ )
+|void| **window_set_window_event_callback**\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_window_event_callback>`
 
 Sets the ``callback`` that will be called when an event occurs in the window specified by ``window_id``.
 

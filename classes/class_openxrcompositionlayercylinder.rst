@@ -54,7 +54,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **aspect_ratio** = ``1.0``
+:ref:`float<class_float>` **aspect_ratio** = ``1.0`` :ref:`🔗<class_OpenXRCompositionLayerCylinder_property_aspect_ratio>`
 
 .. rst-class:: classref-property-setget
 
@@ -71,7 +71,7 @@ The aspect ratio of the slice. Used to set the height relative to the width.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **central_angle** = ``1.5708``
+:ref:`float<class_float>` **central_angle** = ``1.5708`` :ref:`🔗<class_OpenXRCompositionLayerCylinder_property_central_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -88,7 +88,7 @@ The central angle of the cylinder. Used to set the width.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **fallback_segments** = ``10``
+:ref:`int<class_int>` **fallback_segments** = ``10`` :ref:`🔗<class_OpenXRCompositionLayerCylinder_property_fallback_segments>`
 
 .. rst-class:: classref-property-setget
 
@@ -105,7 +105,7 @@ The number of segments to use in the fallback mesh.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``1.0``
+:ref:`float<class_float>` **radius** = ``1.0`` :ref:`🔗<class_OpenXRCompositionLayerCylinder_property_radius>`
 
 .. rst-class:: classref-property-setget
 

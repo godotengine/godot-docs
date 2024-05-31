@@ -65,7 +65,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **compress** = ``true``
+:ref:`bool<class_bool>` **compress** = ``true`` :ref:`🔗<class_ResourceImporterCSVTranslation_property_compress>`
 
 If ``true``, creates an :ref:`OptimizedTranslation<class_OptimizedTranslation>` instead of a :ref:`Translation<class_Translation>`. This makes the resulting file smaller at the cost of a small CPU overhead.
 
@@ -77,7 +77,7 @@ If ``true``, creates an :ref:`OptimizedTranslation<class_OptimizedTranslation>` 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **delimiter** = ``0``
+:ref:`int<class_int>` **delimiter** = ``0`` :ref:`🔗<class_ResourceImporterCSVTranslation_property_delimiter>`
 
 The delimiter to use in the CSV file. The default value matches the common CSV convention. Tab-separated values are sometimes called TSV files.
 

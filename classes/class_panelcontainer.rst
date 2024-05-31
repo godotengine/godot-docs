@@ -69,7 +69,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **panel**
+:ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_PanelContainer_theme_style_panel>`
 
 The style of **PanelContainer**'s background.
 

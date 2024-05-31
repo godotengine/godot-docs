@@ -119,7 +119,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**animation_node_removed**\ (\ object_id\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )
+**animation_node_removed**\ (\ object_id\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AnimationNode_signal_animation_node_removed>`
 
 Emitted by nodes that inherit from this class and that have an internal tree when one of their animation nodes removes. The animation nodes that emit this signal are :ref:`AnimationNodeBlendSpace1D<class_AnimationNodeBlendSpace1D>`, :ref:`AnimationNodeBlendSpace2D<class_AnimationNodeBlendSpace2D>`, :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`, and :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
@@ -131,7 +131,7 @@ Emitted by nodes that inherit from this class and that have an internal tree whe
 
 .. rst-class:: classref-signal
 
-**animation_node_renamed**\ (\ object_id\: :ref:`int<class_int>`, old_name\: :ref:`String<class_String>`, new_name\: :ref:`String<class_String>`\ )
+**animation_node_renamed**\ (\ object_id\: :ref:`int<class_int>`, old_name\: :ref:`String<class_String>`, new_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AnimationNode_signal_animation_node_renamed>`
 
 Emitted by nodes that inherit from this class and that have an internal tree when one of their animation node names changes. The animation nodes that emit this signal are :ref:`AnimationNodeBlendSpace1D<class_AnimationNodeBlendSpace1D>`, :ref:`AnimationNodeBlendSpace2D<class_AnimationNodeBlendSpace2D>`, :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`, and :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
@@ -143,7 +143,7 @@ Emitted by nodes that inherit from this class and that have an internal tree whe
 
 .. rst-class:: classref-signal
 
-**tree_changed**\ (\ )
+**tree_changed**\ (\ ) :ref:`🔗<class_AnimationNode_signal_tree_changed>`
 
 Emitted by nodes that inherit from this class and that have an internal tree when one of their animation nodes changes. The animation nodes that emit this signal are :ref:`AnimationNodeBlendSpace1D<class_AnimationNodeBlendSpace1D>`, :ref:`AnimationNodeBlendSpace2D<class_AnimationNodeBlendSpace2D>`, :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`, :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>` and :ref:`AnimationNodeTransition<class_AnimationNodeTransition>`.
 
@@ -160,7 +160,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FilterAction**:
+enum **FilterAction**: :ref:`🔗<enum_AnimationNode_FilterAction>`
 
 .. _class_AnimationNode_constant_FILTER_IGNORE:
 
@@ -207,7 +207,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filter_enabled**
+:ref:`bool<class_bool>` **filter_enabled** :ref:`🔗<class_AnimationNode_property_filter_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -229,7 +229,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_caption**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_get_caption**\ (\ ) |virtual| |const| :ref:`🔗<class_AnimationNode_private_method__get_caption>`
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to override the text caption for this animation node.
 
@@ -241,7 +241,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 .. rst-class:: classref-method
 
-:ref:`AnimationNode<class_AnimationNode>` **_get_child_by_name**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`AnimationNode<class_AnimationNode>` **_get_child_by_name**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_AnimationNode_private_method__get_child_by_name>`
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return a child animation node by its ``name``.
 
@@ -253,7 +253,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **_get_child_nodes**\ (\ ) |virtual| |const|
+:ref:`Dictionary<class_Dictionary>` **_get_child_nodes**\ (\ ) |virtual| |const| :ref:`🔗<class_AnimationNode_private_method__get_child_nodes>`
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return all child animation nodes in order as a ``name: node`` dictionary.
 
@@ -265,7 +265,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_get_parameter_default_value**\ (\ parameter\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_get_parameter_default_value**\ (\ parameter\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_AnimationNode_private_method__get_parameter_default_value>`
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return the default value of a ``parameter``. Parameters are custom local memory used for your animation nodes, given a resource can be reused in multiple trees.
 
@@ -277,7 +277,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **_get_parameter_list**\ (\ ) |virtual| |const|
+:ref:`Array<class_Array>` **_get_parameter_list**\ (\ ) |virtual| |const| :ref:`🔗<class_AnimationNode_private_method__get_parameter_list>`
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return a list of the properties on this animation node. Parameters are custom local memory used for your animation nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
 
@@ -289,7 +289,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_filter**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_has_filter**\ (\ ) |virtual| |const| :ref:`🔗<class_AnimationNode_private_method__has_filter>`
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return whether the blend tree editor should display filter editing on this animation node.
 
@@ -301,7 +301,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_parameter_read_only**\ (\ parameter\: :ref:`StringName<class_StringName>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_parameter_read_only**\ (\ parameter\: :ref:`StringName<class_StringName>`\ ) |virtual| |const| :ref:`🔗<class_AnimationNode_private_method__is_parameter_read_only>`
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return whether the ``parameter`` is read-only. Parameters are custom local memory used for your animation nodes, given a resource can be reused in multiple trees.
 
@@ -313,7 +313,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_process**\ (\ time\: :ref:`float<class_float>`, seek\: :ref:`bool<class_bool>`, is_external_seeking\: :ref:`bool<class_bool>`, test_only\: :ref:`bool<class_bool>`\ ) |virtual| |const|
+:ref:`float<class_float>` **_process**\ (\ time\: :ref:`float<class_float>`, seek\: :ref:`bool<class_bool>`, is_external_seeking\: :ref:`bool<class_bool>`, test_only\: :ref:`bool<class_bool>`\ ) |virtual| |const| :ref:`🔗<class_AnimationNode_private_method__process>`
 
 **Deprecated:** Currently this is mostly useless as there is a lack of many APIs to extend AnimationNode by GDScript. It is planned that a more flexible API using structures will be provided in the future.
 
@@ -331,7 +331,7 @@ This function should return the delta.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **add_input**\ (\ name\: :ref:`String<class_String>`\ )
+:ref:`bool<class_bool>` **add_input**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AnimationNode_method_add_input>`
 
 Adds an input to the animation node. This is only useful for animation nodes created for use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. If the addition fails, returns ``false``.
 
@@ -343,7 +343,7 @@ Adds an input to the animation node. This is only useful for animation nodes cre
 
 .. rst-class:: classref-method
 
-|void| **blend_animation**\ (\ animation\: :ref:`StringName<class_StringName>`, time\: :ref:`float<class_float>`, delta\: :ref:`float<class_float>`, seeked\: :ref:`bool<class_bool>`, is_external_seeking\: :ref:`bool<class_bool>`, blend\: :ref:`float<class_float>`, looped_flag\: :ref:`LoopedFlag<enum_Animation_LoopedFlag>` = 0\ )
+|void| **blend_animation**\ (\ animation\: :ref:`StringName<class_StringName>`, time\: :ref:`float<class_float>`, delta\: :ref:`float<class_float>`, seeked\: :ref:`bool<class_bool>`, is_external_seeking\: :ref:`bool<class_bool>`, blend\: :ref:`float<class_float>`, looped_flag\: :ref:`LoopedFlag<enum_Animation_LoopedFlag>` = 0\ ) :ref:`🔗<class_AnimationNode_method_blend_animation>`
 
 Blend an animation by ``blend`` amount (name must be valid in the linked :ref:`AnimationPlayer<class_AnimationPlayer>`). A ``time`` and ``delta`` may be passed, as well as whether ``seeked`` happened.
 
@@ -357,7 +357,7 @@ A ``looped_flag`` is used by internal processing immediately after the loop. See
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **blend_input**\ (\ input_index\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, seek\: :ref:`bool<class_bool>`, is_external_seeking\: :ref:`bool<class_bool>`, blend\: :ref:`float<class_float>`, filter\: :ref:`FilterAction<enum_AnimationNode_FilterAction>` = 0, sync\: :ref:`bool<class_bool>` = true, test_only\: :ref:`bool<class_bool>` = false\ )
+:ref:`float<class_float>` **blend_input**\ (\ input_index\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, seek\: :ref:`bool<class_bool>`, is_external_seeking\: :ref:`bool<class_bool>`, blend\: :ref:`float<class_float>`, filter\: :ref:`FilterAction<enum_AnimationNode_FilterAction>` = 0, sync\: :ref:`bool<class_bool>` = true, test_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_AnimationNode_method_blend_input>`
 
 Blend an input. This is only useful for animation nodes created for an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. The ``time`` parameter is a relative delta, unless ``seek`` is ``true``, in which case it is absolute. A filter mode may be optionally passed (see :ref:`FilterAction<enum_AnimationNode_FilterAction>` for options).
 
@@ -369,7 +369,7 @@ Blend an input. This is only useful for animation nodes created for an :ref:`Ani
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **blend_node**\ (\ name\: :ref:`StringName<class_StringName>`, node\: :ref:`AnimationNode<class_AnimationNode>`, time\: :ref:`float<class_float>`, seek\: :ref:`bool<class_bool>`, is_external_seeking\: :ref:`bool<class_bool>`, blend\: :ref:`float<class_float>`, filter\: :ref:`FilterAction<enum_AnimationNode_FilterAction>` = 0, sync\: :ref:`bool<class_bool>` = true, test_only\: :ref:`bool<class_bool>` = false\ )
+:ref:`float<class_float>` **blend_node**\ (\ name\: :ref:`StringName<class_StringName>`, node\: :ref:`AnimationNode<class_AnimationNode>`, time\: :ref:`float<class_float>`, seek\: :ref:`bool<class_bool>`, is_external_seeking\: :ref:`bool<class_bool>`, blend\: :ref:`float<class_float>`, filter\: :ref:`FilterAction<enum_AnimationNode_FilterAction>` = 0, sync\: :ref:`bool<class_bool>` = true, test_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_AnimationNode_method_blend_node>`
 
 Blend another animation node (in case this animation node contains child animation nodes). This function is only useful if you inherit from :ref:`AnimationRootNode<class_AnimationRootNode>` instead, otherwise editors will not display your animation node for addition.
 
@@ -381,7 +381,7 @@ Blend another animation node (in case this animation node contains child animati
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **find_input**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **find_input**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_AnimationNode_method_find_input>`
 
 Returns the input index which corresponds to ``name``. If not found, returns ``-1``.
 
@@ -393,7 +393,7 @@ Returns the input index which corresponds to ``name``. If not found, returns ``-
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_input_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_input_count**\ (\ ) |const| :ref:`🔗<class_AnimationNode_method_get_input_count>`
 
 Amount of inputs in this animation node, only useful for animation nodes that go into :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
@@ -405,7 +405,7 @@ Amount of inputs in this animation node, only useful for animation nodes that go
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_input_name**\ (\ input\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_input_name**\ (\ input\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AnimationNode_method_get_input_name>`
 
 Gets the name of an input by index.
 
@@ -417,7 +417,7 @@ Gets the name of an input by index.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_parameter**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_parameter**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_AnimationNode_method_get_parameter>`
 
 Gets the value of a parameter. Parameters are custom local memory used for your animation nodes, given a resource can be reused in multiple trees.
 
@@ -429,7 +429,7 @@ Gets the value of a parameter. Parameters are custom local memory used for your 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_path_filtered**\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) |const|
+:ref:`bool<class_bool>` **is_path_filtered**\ (\ path\: :ref:`NodePath<class_NodePath>`\ ) |const| :ref:`🔗<class_AnimationNode_method_is_path_filtered>`
 
 Returns whether the given path is filtered.
 
@@ -441,7 +441,7 @@ Returns whether the given path is filtered.
 
 .. rst-class:: classref-method
 
-|void| **remove_input**\ (\ index\: :ref:`int<class_int>`\ )
+|void| **remove_input**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AnimationNode_method_remove_input>`
 
 Removes an input, call this only when inactive.
 
@@ -453,7 +453,7 @@ Removes an input, call this only when inactive.
 
 .. rst-class:: classref-method
 
-|void| **set_filter_path**\ (\ path\: :ref:`NodePath<class_NodePath>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_filter_path**\ (\ path\: :ref:`NodePath<class_NodePath>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_AnimationNode_method_set_filter_path>`
 
 Adds or removes a path for the filter.
 
@@ -465,7 +465,7 @@ Adds or removes a path for the filter.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **set_input_name**\ (\ input\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )
+:ref:`bool<class_bool>` **set_input_name**\ (\ input\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AnimationNode_method_set_input_name>`
 
 Sets the name of the input at the given ``input`` index. If the setting fails, returns ``false``.
 
@@ -477,7 +477,7 @@ Sets the name of the input at the given ``input`` index. If the setting fails, r
 
 .. rst-class:: classref-method
 
-|void| **set_parameter**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **set_parameter**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_AnimationNode_method_set_parameter>`
 
 Sets a custom parameter. These are used as local memory, because resources can be reused across the tree or scenes.
 

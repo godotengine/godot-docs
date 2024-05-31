@@ -54,7 +54,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TextureMode**:
+enum **TextureMode**: :ref:`🔗<enum_CurveTexture_TextureMode>`
 
 .. _class_CurveTexture_constant_TEXTURE_MODE_RGB:
 
@@ -85,7 +85,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **curve**
+:ref:`Curve<class_Curve>` **curve** :ref:`🔗<class_CurveTexture_property_curve>`
 
 .. rst-class:: classref-property-setget
 
@@ -102,7 +102,7 @@ The :ref:`Curve<class_Curve>` that is rendered onto the texture.
 
 .. rst-class:: classref-property
 
-:ref:`TextureMode<enum_CurveTexture_TextureMode>` **texture_mode** = ``0``
+:ref:`TextureMode<enum_CurveTexture_TextureMode>` **texture_mode** = ``0`` :ref:`🔗<class_CurveTexture_property_texture_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -119,7 +119,7 @@ The format the texture should be generated with. When passing a CurveTexture as 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **width** = ``256``
+:ref:`int<class_int>` **width** = ``256`` :ref:`🔗<class_CurveTexture_property_width>`
 
 .. rst-class:: classref-property-setget
 

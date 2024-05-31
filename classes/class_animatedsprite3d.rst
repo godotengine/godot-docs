@@ -87,7 +87,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**animation_changed**\ (\ )
+**animation_changed**\ (\ ) :ref:`🔗<class_AnimatedSprite3D_signal_animation_changed>`
 
 Emitted when :ref:`animation<class_AnimatedSprite3D_property_animation>` changes.
 
@@ -99,7 +99,7 @@ Emitted when :ref:`animation<class_AnimatedSprite3D_property_animation>` changes
 
 .. rst-class:: classref-signal
 
-**animation_finished**\ (\ )
+**animation_finished**\ (\ ) :ref:`🔗<class_AnimatedSprite3D_signal_animation_finished>`
 
 Emitted when the animation reaches the end, or the start if it is played in reverse. When the animation finishes, it pauses the playback.
 
@@ -113,7 +113,7 @@ Emitted when the animation reaches the end, or the start if it is played in reve
 
 .. rst-class:: classref-signal
 
-**animation_looped**\ (\ )
+**animation_looped**\ (\ ) :ref:`🔗<class_AnimatedSprite3D_signal_animation_looped>`
 
 Emitted when the animation loops.
 
@@ -125,7 +125,7 @@ Emitted when the animation loops.
 
 .. rst-class:: classref-signal
 
-**frame_changed**\ (\ )
+**frame_changed**\ (\ ) :ref:`🔗<class_AnimatedSprite3D_signal_frame_changed>`
 
 Emitted when :ref:`frame<class_AnimatedSprite3D_property_frame>` changes.
 
@@ -137,7 +137,7 @@ Emitted when :ref:`frame<class_AnimatedSprite3D_property_frame>` changes.
 
 .. rst-class:: classref-signal
 
-**sprite_frames_changed**\ (\ )
+**sprite_frames_changed**\ (\ ) :ref:`🔗<class_AnimatedSprite3D_signal_sprite_frames_changed>`
 
 Emitted when :ref:`sprite_frames<class_AnimatedSprite3D_property_sprite_frames>` changes.
 
@@ -154,7 +154,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **animation** = ``&"default"``
+:ref:`StringName<class_StringName>` **animation** = ``&"default"`` :ref:`🔗<class_AnimatedSprite3D_property_animation>`
 
 .. rst-class:: classref-property-setget
 
@@ -171,7 +171,7 @@ The current animation from the :ref:`sprite_frames<class_AnimatedSprite3D_proper
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **autoplay** = ``""``
+:ref:`String<class_String>` **autoplay** = ``""`` :ref:`🔗<class_AnimatedSprite3D_property_autoplay>`
 
 .. rst-class:: classref-property-setget
 
@@ -188,7 +188,7 @@ The key of the animation to play when the scene loads.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **frame** = ``0``
+:ref:`int<class_int>` **frame** = ``0`` :ref:`🔗<class_AnimatedSprite3D_property_frame>`
 
 .. rst-class:: classref-property-setget
 
@@ -205,7 +205,7 @@ The displayed animation frame's index. Setting this property also resets :ref:`f
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **frame_progress** = ``0.0``
+:ref:`float<class_float>` **frame_progress** = ``0.0`` :ref:`🔗<class_AnimatedSprite3D_property_frame_progress>`
 
 .. rst-class:: classref-property-setget
 
@@ -222,7 +222,7 @@ The progress value between ``0.0`` and ``1.0`` until the current frame transitio
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **speed_scale** = ``1.0``
+:ref:`float<class_float>` **speed_scale** = ``1.0`` :ref:`🔗<class_AnimatedSprite3D_property_speed_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -241,7 +241,7 @@ If set to a negative value, the animation is played in reverse. If set to ``0``,
 
 .. rst-class:: classref-property
 
-:ref:`SpriteFrames<class_SpriteFrames>` **sprite_frames**
+:ref:`SpriteFrames<class_SpriteFrames>` **sprite_frames** :ref:`🔗<class_AnimatedSprite3D_property_sprite_frames>`
 
 .. rst-class:: classref-property-setget
 
@@ -263,7 +263,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_playing_speed**\ (\ ) |const|
+:ref:`float<class_float>` **get_playing_speed**\ (\ ) |const| :ref:`🔗<class_AnimatedSprite3D_method_get_playing_speed>`
 
 Returns the actual playing speed of current animation or ``0`` if not playing. This speed is the :ref:`speed_scale<class_AnimatedSprite3D_property_speed_scale>` property multiplied by ``custom_speed`` argument specified when calling the :ref:`play<class_AnimatedSprite3D_method_play>` method.
 
@@ -277,7 +277,7 @@ Returns a negative value if the current animation is playing backwards.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_playing**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_playing**\ (\ ) |const| :ref:`🔗<class_AnimatedSprite3D_method_is_playing>`
 
 Returns ``true`` if an animation is currently playing (even if :ref:`speed_scale<class_AnimatedSprite3D_property_speed_scale>` and/or ``custom_speed`` are ``0``).
 
@@ -289,7 +289,7 @@ Returns ``true`` if an animation is currently playing (even if :ref:`speed_scale
 
 .. rst-class:: classref-method
 
-|void| **pause**\ (\ )
+|void| **pause**\ (\ ) :ref:`🔗<class_AnimatedSprite3D_method_pause>`
 
 Pauses the currently playing animation. The :ref:`frame<class_AnimatedSprite3D_property_frame>` and :ref:`frame_progress<class_AnimatedSprite3D_property_frame_progress>` will be kept and calling :ref:`play<class_AnimatedSprite3D_method_play>` or :ref:`play_backwards<class_AnimatedSprite3D_method_play_backwards>` without arguments will resume the animation from the current playback position.
 
@@ -303,7 +303,7 @@ See also :ref:`stop<class_AnimatedSprite3D_method_stop>`.
 
 .. rst-class:: classref-method
 
-|void| **play**\ (\ name\: :ref:`StringName<class_StringName>` = &"", custom_speed\: :ref:`float<class_float>` = 1.0, from_end\: :ref:`bool<class_bool>` = false\ )
+|void| **play**\ (\ name\: :ref:`StringName<class_StringName>` = &"", custom_speed\: :ref:`float<class_float>` = 1.0, from_end\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_AnimatedSprite3D_method_play>`
 
 Plays the animation with key ``name``. If ``custom_speed`` is negative and ``from_end`` is ``true``, the animation will play backwards (which is equivalent to calling :ref:`play_backwards<class_AnimatedSprite3D_method_play_backwards>`).
 
@@ -317,7 +317,7 @@ If this method is called with that same animation ``name``, or with no ``name`` 
 
 .. rst-class:: classref-method
 
-|void| **play_backwards**\ (\ name\: :ref:`StringName<class_StringName>` = &""\ )
+|void| **play_backwards**\ (\ name\: :ref:`StringName<class_StringName>` = &""\ ) :ref:`🔗<class_AnimatedSprite3D_method_play_backwards>`
 
 Plays the animation with key ``name`` in reverse.
 
@@ -331,7 +331,7 @@ This method is a shorthand for :ref:`play<class_AnimatedSprite3D_method_play>` w
 
 .. rst-class:: classref-method
 
-|void| **set_frame_and_progress**\ (\ frame\: :ref:`int<class_int>`, progress\: :ref:`float<class_float>`\ )
+|void| **set_frame_and_progress**\ (\ frame\: :ref:`int<class_int>`, progress\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AnimatedSprite3D_method_set_frame_and_progress>`
 
 The setter of :ref:`frame<class_AnimatedSprite3D_property_frame>` resets the :ref:`frame_progress<class_AnimatedSprite3D_property_frame_progress>` to ``0.0`` implicitly, but this method avoids that.
 
@@ -360,7 +360,7 @@ This is useful when you want to carry over the current :ref:`frame_progress<clas
 
 .. rst-class:: classref-method
 
-|void| **stop**\ (\ )
+|void| **stop**\ (\ ) :ref:`🔗<class_AnimatedSprite3D_method_stop>`
 
 Stops the currently playing animation. The animation position is reset to ``0`` and the ``custom_speed`` is reset to ``1.0``. See also :ref:`pause<class_AnimatedSprite3D_method_pause>`.
 
