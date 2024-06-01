@@ -35,6 +35,7 @@ Video tutorials
 - `Pigdev <https://www.youtube.com/@pigdev>`_ (2D, GDScript)
 - `Queble <https://www.youtube.com/@queblegamedevelopment4143>`_ (2D, GDScript)
 - `Quiver <https://quiver.dev/>`_ (2D, GDScript)
+- `Arkade Games <https://www.youtube.com/@arkadegamesllc>`_ (C#)
 
 Text tutorials
 --------------
