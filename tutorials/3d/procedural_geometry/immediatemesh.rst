@@ -78,7 +78,7 @@ The example code below draws a single triangle in the ``_ready()`` function.
 The ImmediateMesh can also be used across frames. Each time you call
 ``surface_begin()`` and ``surface_end()``, you are adding a new surface to the
 ImmediateMesh. If you want to recreate the mesh from scratch each frame, call
-``surface_clear()`` before calling ``surface_begin()``.
+``clear_surfaces()`` before calling ``surface_begin()``.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
