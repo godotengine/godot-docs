@@ -1,12 +1,12 @@
 .. _doc_viewport_as_texture:
 
-Using a Viewport as a texture
-=============================
+Using a SubViewport as a texture
+================================
 
 Introduction
 ------------
 
-This tutorial will introduce you to using the :ref:`Viewport <class_Viewport>` as a
+This tutorial will introduce you to using the :ref:`SubViewport <class_SubViewport>` as a
 texture that can be applied to 3D objects. In order to do so, it will walk you through the process
 of making a procedural planet like the one below:
 
@@ -18,44 +18,50 @@ This tutorial assumes you are familiar with how to set up a basic scene includin
 a :ref:`Camera3D <class_Camera3D>`, a :ref:`light source <class_OmniLight3D>`, a
 :ref:`MeshInstance3D <class_MeshInstance3D>` with a :ref:`Primitive Mesh <class_PrimitiveMesh>`,
 and applying a :ref:`StandardMaterial3D <class_StandardMaterial3D>` to the mesh. The focus will be on using
-the :ref:`Viewport <class_Viewport>` to dynamically create textures that can be applied to the mesh.
+the :ref:`SubViewport <class_SubViewport>` to dynamically create textures that can be applied to the mesh.
 
 In this tutorial, we'll cover the following topics:
 
-- How to use a :ref:`Viewport <class_Viewport>` as a render texture
+- How to use a :ref:`SubViewport <class_SubViewport>` as a render texture
 - Mapping a texture to a sphere with equirectangular mapping
 - Fragment shader techniques for procedural planets
 - Setting a Roughness map from a :ref:`Viewport Texture <class_ViewportTexture>`
 
-Setting up the Viewport
------------------------
+Setting up the scene
+--------------------
 
-First, add a :ref:`Viewport <class_Viewport>` to the scene.
+Create a new scene and add the following nodes exactly as shown below.
 
-Next, set the size of the :ref:`Viewport <class_Viewport>` to ``(1024, 512)``. The
-:ref:`Viewport <class_Viewport>` can actually be any size so long as the width is double the height.
-The width needs to be double the height so that the image will accurately map onto the
+.. image:: img/viewport_texture_node_tree.webp
+
+Go into the the MeshInstance3D and make the mesh a SphereMesh
+
+Setting up the SubViewport
+--------------------------
+
+Click on the :ref:`SubViewport <class_SubViewport>` node and set its size to ``(1024, 512)``. The
+:ref:`SubViewport <class_SubViewport>` can actually be any size so long as the width is double the
+height. The width needs to be double the height so that the image will accurately map onto the
 sphere, as we will be using equirectangular projection, but more on that later.
 
-.. image:: img/planet_new_viewport.png
+Next disable 3D. We will be using a :ref:`ColorRect <class_ColorRect>` to render the surface, so
+we don't need 3D either.
 
-Next, disable HDR and disable 3D. We don't need HDR because our planet's surface will not be especially
-bright, so values between ``0`` and ``1`` will be fine. And we will be using a :ref:`ColorRect <class_ColorRect>`
-to render the surface, so we don't need 3D either.
+.. image:: img/planet_new_viewport.webp
 
-Select the Viewport and add a :ref:`ColorRect <class_ColorRect>` as a child.
+Select the :ref:`ColorRect <class_ColorRect>` and in the inspector set the anchors preset to ``Full Rect``.
+This will ensure that the :ref:`ColorRect <class_ColorRect>` takes up the entire :ref:`SubViewport <class_SubViewport>`.
 
-Set the anchors "Right" and "Bottom" to ``1``, then make sure all the margins are set to ``0``. This
-will ensure that the :ref:`ColorRect <class_ColorRect>` takes up the entire :ref:`Viewport <class_Viewport>`.
-
-.. image:: img/planet_new_colorrect.png
+.. image:: img/planet_new_colorrect.webp
 
 Next, we add a :ref:`Shader Material <class_ShaderMaterial>` to the :ref:`ColorRect <class_ColorRect>` (ColorRect > CanvasItem > Material > Material > ``New ShaderMaterial``).
 
 .. note:: Basic familiarity with shading is recommended for this tutorial. However, even if you are new
           to shaders, all the code will be provided, so you should have no problem following along.
 
-ColorRect > CanvasItem > Material > Material > click / Edit > ShaderMaterial > Shader > ``New Shader`` > click / Edit:
+Click the dropdown menu button for the shader material and click / Edit. From here go to Shader > ``New Shader``.
+give it a name and click "Create". click the shader in the inspector to open the shader editor. Delete the default code
+and add the following:
 
 .. code-block:: glsl
 
@@ -65,37 +71,38 @@ ColorRect > CanvasItem > Material > Material > click / Edit > ShaderMaterial > S
         COLOR = vec4(UV.x, UV.y, 0.5, 1.0);
     }
 
-The above code renders a gradient like the one below.
+save the shader code, you'll see in the inspector that the above code renders a gradient like the one below.
 
 .. image:: img/planet_gradient.png
 
-Now we have the basics of a :ref:`Viewport <class_Viewport>` that we render to and we have a unique image that we can
+Now we have the basics of a :ref:`SubViewport <class_SubViewport>` that we render to and we have a unique image that we can
 apply to the sphere.
 
 Applying the texture
 --------------------
 
-MeshInstance3D > GeometryInstance > Geometry > Material Override > ``New StandardMaterial3D``:
-
-Now we go into the :ref:`MeshInstance3D <class_MeshInstance3D>` and add a :ref:`StandardMaterial3D <class_StandardMaterial3D>`
+Now go into the :ref:`MeshInstance3D <class_MeshInstance3D>` and add a :ref:`StandardMaterial3D <class_StandardMaterial3D>`
 to it. No need for a special :ref:`Shader Material <class_ShaderMaterial>` (although that would be a good idea
 for more advanced effects, like the atmosphere in the example above).
 
-MeshInstance3D > GeometryInstance > Geometry > Material Override > ``click`` / ``Edit``:
+MeshInstance3D > GeometryInstance > Geometry > Material Override > ``New StandardMaterial3D``
 
-Open the newly created :ref:`StandardMaterial3D <class_StandardMaterial3D>` and scroll down to the "Albedo" section
+Then click the dropdown for the StandardMaterial3D and click "Edit"
+
+Go to the "Resource" section and check the ``Local to scene`` box. Then, go to the "Albedo" section
 and click beside the "Texture" property to add an Albedo Texture. Here we will apply the texture we made.
 Choose "New ViewportTexture"
 
-.. image:: img/planet_new_viewport_texture.png
+.. image:: img/planet_new_viewport_texture.webp
 
+Click on the ViewportTexture you just created in the inspector, then click "Assign".
 Then, from the menu that pops up, select the Viewport that we rendered to earlier.
 
-.. image:: img/planet_pick_viewport_texture.png
+.. image:: img/planet_pick_viewport_texture.webp
 
 Your sphere should now be colored in with the colors we rendered to the Viewport.
 
-.. image:: img/planet_seam.png
+.. image:: img/planet_seam.webp
 
 Notice the ugly seam that forms where the texture wraps around? This is because we are picking
 a color based on UV coordinates and UV coordinates do not wrap around the texture. This is a classic
@@ -106,16 +113,17 @@ problem that we will illustrate in the next section.
 Making the planet texture
 -------------------------
 
-So now, when we render to our :ref:`Viewport <class_Viewport>`, it appears magically on the sphere. But there is an ugly
+So now, when we render to our :ref:`SubViewport <class_SubViewport>`, it appears magically on the sphere. But there is an ugly
 seam created by our texture coordinates. So how do we get a range of coordinates that wrap around
 the sphere in a nice way? One solution is to use a function that repeats on the domain of our texture.
-``sin`` and ``cos`` are two such functions. Let's apply them to the texture and see what happens.
+``sin`` and ``cos`` are two such functions. Let's apply them to the texture and see what happens. Replace the
+existing color code in the shader with the following:
 
 .. code-block:: glsl
 
     COLOR.xyz = vec3(sin(UV.x * 3.14159 * 4.0) * cos(UV.y * 3.14159 * 4.0) * 0.5 + 0.5);
 
-.. image:: img/planet_sincos.png
+.. image:: img/planet_sincos.webp
 
 Not too bad. If you look around, you can see that the seam has now disappeared, but in its place, we
 have pinching at the poles. This pinching is due to the way Godot maps textures to spheres in its
@@ -148,7 +156,7 @@ coordinates.
 
 And if we use ``unit`` as an output ``COLOR`` value, we get:
 
-.. image:: img/planet_normals.png
+.. image:: img/planet_normals.webp
 
 Now that we can calculate the 3D position of the surface of the sphere, we can use 3D noise
 to make the planet. We will be using this noise function directly from a `Shadertoy <https://www.shadertoy.com/view/Xsl3Dl>`_:
@@ -187,7 +195,7 @@ Now to use ``noise``, add the following to the    ``fragment`` function:
     float n = noise(unit * 5.0);
     COLOR.xyz = vec3(n * 0.5 + 0.5);
 
-.. image:: img/planet_noise.png
+.. image:: img/planet_noise.webp
 
 .. note:: In order to highlight the texture, we set the material to unshaded.
 
@@ -215,7 +223,7 @@ all alien planets need red terrain). And finally, they are mixed together by ``n
 ``n`` smoothly varies between ``-1`` and ``1``. So we map it into the ``0-1`` range that ``mix`` expects.
 Now you can see that the colors change between blue and red.
 
-.. image:: img/planet_noise_color.png
+.. image:: img/planet_noise_color.webp
 
 That is a little more blurry than we want. Planets typically have a relatively clear separation between
 land and sea. In order to do that, we will change the last term to ``smoothstep(-0.1, 0.0, n)``.
@@ -230,7 +238,7 @@ third argument is larger than the second and smoothly blends between ``0`` and `
 is between the first and the second. So in this line, ``smoothstep`` returns ``0`` whenever ``n`` is less than ``-0.1``
 and it returns ``1`` whenever ``n`` is above ``0``.
 
-.. image:: img/planet_noise_smooth.png
+.. image:: img/planet_noise_smooth.webp
 
 One more thing to make this a little more planet-y. The land shouldn't be so blobby; let's make the edges
 a little rougher. A trick that is often used in shaders to make rough looking terrain with noise is
@@ -248,11 +256,7 @@ instead of just one. ``n`` becomes:
 
 And now the planet looks like:
 
-.. image:: img/planet_noise_fbm.png
-
-And with shading turned back on, it looks like:
-
-.. image:: img/planet_noise_fbm_shaded.png
+.. image:: img/planet_noise_fbm.webp
 
 Making an ocean
 ---------------
@@ -272,20 +276,20 @@ And then, in the material, under the "Metallic" section, make sure ``Metallic`` 
 ``Specular`` is set to ``1``. The reason for this is the water reflects light really well, but
 isn't metallic. These values are not physically accurate, but they are good enough for this demo.
 
-Next, under the "Roughness" section, set ``Roughness`` to ``1`` and set the roughness texture to a
-:ref:`Viewport Texture <class_ViewportTexture>` pointing to our planet texture :ref:`Viewport <class_Viewport>`.
+Next, under the "Roughness" section set the roughness texture to a
+:ref:`Viewport Texture <class_ViewportTexture>` pointing to our planet texture :ref:`SubViewport <class_SubViewport>`.
 Finally, set the ``Texture Channel`` to ``Alpha``. This instructs the renderer to use the ``alpha``
 channel of our output ``COLOR`` as the ``Roughness`` value.
 
-.. image:: img/planet_ocean.png
+.. image:: img/planet_ocean.webp
 
 You'll notice that very little changes except that the planet is no longer reflecting the sky.
 This is happening because, by default, when something is rendered with an
 alpha value, it gets drawn as a transparent object over the background. And since the default background
-of the :ref:`Viewport <class_Viewport>` is opaque, the ``alpha`` channel of the
+of the :ref:`SubViewport <class_SubViewport>` is opaque, the ``alpha`` channel of the
 :ref:`Viewport Texture <class_ViewportTexture>` is ``1``, resulting in the planet texture being
 drawn with slightly fainter colors and a ``Roughness`` value of ``1`` everywhere. To correct this, we
-go into the :ref:`Viewport <class_Viewport>` and enable the "Transparent Bg" property. Since we are now
+go into the :ref:`SubViewport <class_SubViewport>` and enable the "Transparent Bg" property. Since we are now
 rendering one transparent object on top of another, we want to enable ``blend_premul_alpha``:
 
 .. code-block:: glsl
@@ -296,10 +300,9 @@ This pre-multiplies the colors by the ``alpha`` value and then blends them corre
 when blending one transparent color on top of another, even if the background has an ``alpha`` of ``0`` (as it
 does in this case), you end up with weird color bleed issues. Setting ``blend_premul_alpha`` fixes that.
 
-Now the planet should look like it is reflecting light on the ocean but not the land. If you haven't done
-so already, add an :ref:`OmniLight3D <class_OmniLight3D>` to the scene so you can move it around and see the
-effect of the reflections on the ocean.
+Now the planet should look like it is reflecting light on the ocean but not the land. move around the :ref:`OmniLight3D <class_OmniLight3D>`
+in the scene so you can see the effect of the reflections on the ocean.
 
-.. image:: img/planet_ocean_reflect.png
+.. image:: img/planet_ocean_reflect.webp
 
-And there you have it. A procedural planet generated using a :ref:`Viewport <class_Viewport>`.
+And there you have it. A procedural planet generated using a :ref:`SubViewport <class_SubViewport>`.
