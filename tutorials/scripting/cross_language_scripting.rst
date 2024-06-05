@@ -80,6 +80,7 @@ Getting C# nodes in scene tree from GDScript
 Getting nodes - using C# code - from GDScript is pretty straightforward
 
 .. code-block:: gdscript
+
     var MyCSharpNode = get_node("PathTo/MyCSharpNode")
 
 Getting GDScript nodes in scene tree from C#
@@ -88,7 +89,8 @@ Getting GDScript nodes in scene tree from C#
 As C# is statically typed, accessing GDScript Nodes requires just an extra step and use
 the :ref:`GodotObject <class_Object>` type
 
-.. code-bloc:: csharp
+.. code-block:: csharp
+
     GodotObject myGDScriptNode = GetNode<GodotObject>("PathTo/MyGDScriptNode");
 
 Instantiating nodes
