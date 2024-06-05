@@ -72,7 +72,7 @@ The following two scripts will be used as references throughout this page.
     }
 
 Getting nodes from the scene tree by path
------------------------------------
+-----------------------------------------
 
 Getting C# nodes in scene tree from GDScript
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
