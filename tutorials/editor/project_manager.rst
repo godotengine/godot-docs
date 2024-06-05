@@ -8,10 +8,14 @@ you create, remove, import, or play game projects.
 
 .. image:: img/editor_ui_intro_project_manager_01.webp
 
-In the window's top-right corner, a drop-down menu allows you to change the
-editor's language.
+To change the editors language click on the "Settings" Button in the top right
+corner. 
 
 .. image:: img/editor_ui_intro_project_manager_02.webp
+
+Then on the settings page seelct the language you want from the dropdown menu.
+
+.. image:: img/editor_ui_intro_project_manager_10.webp
 
 .. _doc_creating_and_importing_projects:
 
@@ -64,7 +68,14 @@ From the **Asset Library Projects** tab you can download open source project
 templates and demos from the :ref:`Asset Library <doc_what_is_assetlib>` to help
 you get started faster.
 
-To download a demo or template:
+The first time you open this tab you'll notice that it's asking you to go online.
+For privacy reasons the project manager, and Godot editor, can't access the internet
+by default. To enable accessing the internet click the "Go Online" button. This will
+also allow project manager to notify you about updates. If you wish to turn this off
+in the future go into project manager settings and change "Network Mode" to "Offline"
+
+Now that Godot is connected to the internet you can download a demo or template, to
+do this:
 
 1. Click on its title.
 2. On the page that opens, click the download button.
@@ -72,3 +83,25 @@ To download a demo or template:
    the project.
 
 .. image:: img/editor_ui_intro_project_manager_03.webp
+
+Managing projects with tags
+---------------------------
+
+For users with a lot of projects on one PC it can be a lot to keep track of. To aid
+in this Godot allows you to create project tags. To add a tag to a project click on the
+project in the project manager, then click on the "Manage Tags" button
+
+.. image:: img/editor_ui_intro_project_manager_11.webp
+
+This will open up the manage project tags window. To add a tag click the plus button.
+
+.. image:: img/editor_ui_intro_project_manager_12.webp
+
+type out the tag name, and click "ok". Your project will now have a tag added to it.
+These tags can be used for any other project in your project manager. In addition tags
+will stay with projects. So if you tag your project, send it to another machine and
+import it into the project manager you will see the tags you created.
+
+To remove a tag from your project manager it must be removed from all the projects it's
+used by. Once that's done close the project manager, open it up again, and the tag should
+be gone.
