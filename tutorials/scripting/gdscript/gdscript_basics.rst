@@ -1243,12 +1243,6 @@ Assigning a value of an incompatible type will raise an error.
 You can also create constants inside a function, which is useful to name local
 magic values.
 
-.. note::
-
-    Since objects, arrays and dictionaries are passed by reference, constants are "flat".
-    This means that if you declare a constant array or dictionary, it can still
-    be modified afterwards. They can't be reassigned with another value though.
-
 Enums
 ^^^^^
 
