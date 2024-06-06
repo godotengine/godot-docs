@@ -12,7 +12,7 @@ AudioStreamPlaylist
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`AudioStream<class_AudioStream>` that includes sub-streams and plays them back like a playslit.
+:ref:`AudioStream<class_AudioStream>` that includes sub-streams and plays them back like a playlist.
 
 .. rst-class:: classref-reftable-group
 
