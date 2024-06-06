@@ -27,7 +27,7 @@ Obstacles and navigation mesh
 
 For navigation mesh baking obstacles can be used to discard parts of all other source geometry inside the obstacle shape.
 
-This can be used to stop navigation meshes being baked in unwanted places, 
+This can be used to stop navigation meshes being baked in unwanted places,
 e.g. inside "solid" geometry like thick walls or on top of other geometry that should not be included for gameplay like roofs.
 
 .. figure:: img/nav_mesh_obstacles_discard.webp
@@ -47,7 +47,7 @@ For more details on the navigation mesh baking see :ref:`doc_navigation_using_na
 The property ``affect_navigation_mesh`` makes the obstacle contribute to the navigation mesh baking.
 It will be parsed or unparsed like all other node objects in a navigation mesh baking process.
 
-The ``carve_navigation_mesh`` property makes the shape unaffected by offsets of the baking, 
+The ``carve_navigation_mesh`` property makes the shape unaffected by offsets of the baking,
 e.g. the offset added by the navigation mesh ``agent_radius``.
 It will basically act as a stencil and cut into the already offset navigation mesh surface.
 It will still be affected by further postprocessing of the baking process like edge simplification.
@@ -61,45 +61,45 @@ Obstacles are not involved in the source geometry parsing so adding them just be
 .. tabs::
  .. code-tab:: gdscript 2D GDScript
 
-	var obstacle_outline = PackedVector2Array([
-		Vector2(-50, -50),
-		Vector2(50, -50),
-		Vector2(50, 50),
-		Vector2(-50, 50)
-	])
+    var obstacle_outline = PackedVector2Array([
+        Vector2(-50, -50),
+        Vector2(50, -50),
+        Vector2(50, 50),
+        Vector2(-50, 50)
+    ])
 
-	var navigation_mesh = NavigationPolygon.new()
-	var source_geometry = NavigationMeshSourceGeometryData2D.new()
+    var navigation_mesh = NavigationPolygon.new()
+    var source_geometry = NavigationMeshSourceGeometryData2D.new()
 
-	NavigationServer2D.parse_source_geometry_data(navigation_mesh, source_geometry, $MyTestRootNode)
+    NavigationServer2D.parse_source_geometry_data(navigation_mesh, source_geometry, $MyTestRootNode)
 
-	var obstacle_carve: bool = true
+    var obstacle_carve: bool = true
 
-	source_geometry.add_projected_obstruction(obstacle_outline, obstacle_carve)
+    source_geometry.add_projected_obstruction(obstacle_outline, obstacle_carve)
 
-	NavigationServer2D.bake_from_source_geometry_data(navigation_mesh, source_geometry)
+    NavigationServer2D.bake_from_source_geometry_data(navigation_mesh, source_geometry)
 
  .. code-tab:: gdscript 3D GDScript
 
-	var obstacle_outline = PackedVector3Array([
-		Vector3(-5, 0, -5),
-		Vector3(5, 0, -5),
-		Vector3(5, 0, 5),
-		Vector3(-5, 0, 5)
-	])
+    var obstacle_outline = PackedVector3Array([
+        Vector3(-5, 0, -5),
+        Vector3(5, 0, -5),
+        Vector3(5, 0, 5),
+        Vector3(-5, 0, 5)
+    ])
 
-	var navigation_mesh = NavigationMesh.new()
-	var source_geometry = NavigationMeshSourceGeometryData3D.new()
+    var navigation_mesh = NavigationMesh.new()
+    var source_geometry = NavigationMeshSourceGeometryData3D.new()
 
-	NavigationServer3D.parse_source_geometry_data(navigation_mesh, source_geometry, $MyTestRootNode)
+    NavigationServer3D.parse_source_geometry_data(navigation_mesh, source_geometry, $MyTestRootNode)
 
-	var obstacle_elevation: float = $MyTestObstacleNode.global_position.y
-	var obstacle_height: float = 50.0
-	var obstacle_carve: bool = true
+    var obstacle_elevation: float = $MyTestObstacleNode.global_position.y
+    var obstacle_height: float = 50.0
+    var obstacle_carve: bool = true
 
-	source_geometry.add_projected_obstruction(obstacle_outline, obstacle_elevation, obstacle_height, obstacle_carve)
+    source_geometry.add_projected_obstruction(obstacle_outline, obstacle_elevation, obstacle_height, obstacle_carve)
 
-	NavigationServer3D.bake_from_source_geometry_data(navigation_mesh, source_geometry)
+    NavigationServer3D.bake_from_source_geometry_data(navigation_mesh, source_geometry)
 
 Obstacles and agent avoidance
 -----------------------------

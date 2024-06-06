@@ -208,7 +208,7 @@ angle add a setter ``set(new_speed)`` which is executed with the input from the 
 
 
     func _process(delta):
-    	rotation += PI * delta * speed
+        rotation += PI * delta * speed
 
  .. code-tab:: csharp
 
@@ -263,7 +263,7 @@ not be called.
         set(new_resource):
             resource = new_resource
             _on_resource_set()
-    
+
     # This will only be called when you create, delete, or paste a resource.
     # You will not get an update when tweaking properties of it.
     func _on_resource_set():

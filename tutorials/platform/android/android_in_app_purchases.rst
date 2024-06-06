@@ -362,7 +362,7 @@ Example use of ``updateSubscription``:
 ::
 
     payment.updateSubscription(_active_subscription_purchase.purchase_token, \
-						"new_sub_sku", SubscriptionProrationMode.IMMEDIATE_WITH_TIME_PRORATION)
+                        "new_sub_sku", SubscriptionProrationMode.IMMEDIATE_WITH_TIME_PRORATION)
 
 
 The ``confirmPriceChange()`` function can be used to launch price change confirmation flow
