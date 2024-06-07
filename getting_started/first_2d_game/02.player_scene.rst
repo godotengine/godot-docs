@@ -31,7 +31,7 @@ functionality.
 Before we add any children to the ``Player`` node, we want to make sure we don't
 accidentally move or resize them by clicking on them. Select the node and click
 the icon to the right of the lock. Its tooltip says "Groups the selected node 
-with its children. This causes the parent to be to be selected when any child
+with its children. This causes the parent to be selected when any child
 node is clicked in 2D and 3D view."
 
 .. image:: img/lock_children.webp

@@ -29,7 +29,7 @@ The rules used by clang-format are outlined in the
 `.clang-format <https://github.com/godotengine/godot/blob/master/.clang-format>`__
 file of the Godot repository.
 
-As long as you ensure that your style matches the surrounding code and that you
+As long as you ensure that your style matches the surrounding code and that you're
 not introducing trailing whitespace or space-based indentation, you should be
 fine. If you plan to contribute regularly, however, we strongly advise that you
 set up clang-format locally to check and automatically fix all your commits.
