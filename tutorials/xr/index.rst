@@ -30,4 +30,5 @@ Advanced topics
    openxr_settings
    xr_action_map
    xr_room_scale
+   openxr_composition_layers
    openxr_hand_tracking
