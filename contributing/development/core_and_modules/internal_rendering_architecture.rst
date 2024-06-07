@@ -193,10 +193,10 @@ Both the Forward+ and Mobile :ref:`doc_internal_rendering_architecture_methods` 
 used with Direct3D 12.
 
 :ref:`doc_internal_rendering_architecture_core_shaders` are shared with the
-Vulkan renderer. Shaders are transpiled from GLSL to HLSL using
+Vulkan renderer. Shaders are transpiled from
+:abbr:`SPIR-V (Standard Portable Intermediate Representation)` to
+:abbr:`DXIL (DirectX Intermediate Language)` using
 Mesa NIR (`more information <https://godotengine.org/article/d3d12-adventures-in-shaderland/>`__).
-This means you don't need to know HLSL to work on the Direct3D 12 renderer,
-although knowing the language's basics is recommended to ease debugging.
 
 **This driver is still experimental and only available in Godot 4.3 and later.**
 While Direct3D 12 allows supporting Direct3D-exclusive features on Windows 11 such
@@ -228,14 +228,19 @@ support Vulkan. OpenGL 3.3 Core Profile is used on desktop platforms to run this
 driver, as most graphics drivers on desktop don't support OpenGL ES.
 WebGL 2.0 is used for web exports.
 
+It is possible to use the use of OpenGL ES 3.0 directly on desktop platforms
+using the ``--rendering-driver opengl3_es`` command line argument, although this
+will only work on graphics drivers that feature native OpenGL ES support (such
+as Mesa).
+
 Only the :ref:`doc_internal_rendering_architecture_compatibility` rendering
 method can be used with the OpenGL driver.
 
 :ref:`doc_internal_rendering_architecture_core_shaders` are entirely different
 from the Vulkan renderer.
 
-**As of May 2023, this driver is still in development.** Many features
-are still not implemented, especially in 3D.
+Many advanced features are not supported with this driver, as it targets low-end
+devices first and foremost.
 
 Summary of rendering drivers/methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -272,7 +277,7 @@ RenderingDevice presents a similar level of abstraction as Metal or WebGPU.
 
 **Vulkan RenderingDevice implementation:**
 
-- `drivers/vulkan/rendering_device_vulkan.cpp <https://github.com/godotengine/godot/blob/4.2/drivers/vulkan/rendering_device_vulkan.cpp>`__
+- `drivers/vulkan/rendering_device_driver_vulkan.cpp <https://github.com/godotengine/godot/blob/master/drivers/vulkan/rendering_device_driver_vulkan.cpp>`__
 
 **Direct3D 12 RenderingDevice implementation:**
 
@@ -731,8 +736,7 @@ Occlusion culling
 ^^^^^^^^^^^^^^^^^
 
 While modern GPUs can handle drawing a lot of triangles, the number of draw
-calls in complex scenes can still be a bottleneck (even with Vulkan and Direct3D
-12).
+calls in complex scenes can still be a bottleneck (even with Vulkan and Direct3D 12).
 
 Godot 4 supports occlusion culling to reduce overdraw (when the depth prepass
 is disabled) and reduce vertex throughput.
