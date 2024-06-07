@@ -35,7 +35,7 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
 .. note::
     To use `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__
     you need to use the godot-cpp branch that matches the version of Godot that you are
-    targeting. For example, if you're targeting Godot 4.1, use the ``4.1`` branch,
+    targeting. For example, if you're targeting Godot 4.2, use the ``4.2`` branch,
     which is what is shown through out this tutorial.
 
     The ``master`` branch is the development branch which is updated regularly
@@ -59,7 +59,7 @@ a Git submodule:
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
     git init
-    git submodule add -b 4.1 https://github.com/godotengine/godot-cpp
+    git submodule add -b 4.2 https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
@@ -69,7 +69,7 @@ Alternatively, you can also clone it to the project folder:
 
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
-    git clone -b 4.1 https://github.com/godotengine/godot-cpp
+    git clone -b 4.2 https://github.com/godotengine/godot-cpp
 
 .. note::
 
@@ -332,7 +332,7 @@ build files in a subsequent tutorial.
 
     This ``SConstruct`` file was written to be used with the latest ``godot-cpp``
     master, you may need to make small changes using it with older versions or
-    refer to the ``SConstruct`` file in the Godot 4.0 documentation.
+    refer to the ``SConstruct`` file in the Godot 4.2 documentation.
 
 Once you've downloaded the ``SConstruct`` file, place it in your GDExtension folder
 structure alongside ``godot-cpp``, ``src`` and ``demo``, then run:
@@ -363,7 +363,7 @@ loaded for each platform and the entry function for the module. It is called ``g
     [configuration]
 
     entry_symbol = "example_library_init"
-    compatibility_minimum = "4.1"
+    compatibility_minimum = "4.2"
 
     [libraries]
 
