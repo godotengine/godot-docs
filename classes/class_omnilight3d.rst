@@ -108,9 +108,9 @@ Property Descriptions
 
 Controls the distance attenuation function for omnilights.
 
-A value of ``0.0`` smoothly attenuates light at the edge of the range. A value of ``1.0`` approaches a physical lighting model. A value of ``0.5`` approximates linear attenuation.
+A value of ``0.0`` will maintain a constant brightness through most of the range, but smoothly attenuate the light at the edge of the range. Use a value of ``2.0`` for physically accurate lights as it results in the proper inverse square attenutation.
 
-\ **Note:** Setting it to ``1.0`` may result in distant objects receiving minimal light, even within range. For example, with a range of ``4096``, an object at ``100`` units receives less than ``0.1`` energy.
+\ **Note:** Setting attenuation to ``2.0`` or higher may result in distant objects receiving minimal light, even within range. For example, with a range of ``4096``, an object at ``100`` units is attenuated by a factor of ``0.0001``. With a default brightness of ``1``, the light would not be visible at that distance.
 
 \ **Note:** Using negative or values higher than ``10.0`` may lead to unexpected results.
 

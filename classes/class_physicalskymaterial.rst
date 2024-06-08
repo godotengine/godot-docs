@@ -23,8 +23,6 @@ The **PhysicalSkyMaterial** uses the Preetham analytic daylight model to draw a 
 
 The **PhysicalSkyMaterial** only supports one sun. The color, energy, and direction of the sun are taken from the first :ref:`DirectionalLight3D<class_DirectionalLight3D>` in the scene tree.
 
-As it is based on a daylight model, the sky fades to black as the sunset ends. If you want a full day/night cycle, you will have to add a night sky by converting this to a :ref:`ShaderMaterial<class_ShaderMaterial>` and adding a night sky directly into the resulting shader.
-
 .. rst-class:: classref-reftable-group
 
 Properties

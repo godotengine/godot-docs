@@ -144,6 +144,8 @@ Methods
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`is_item_radio_checkable<class_NativeMenu_method_is_item_radio_checkable>`\ (\ rid\: :ref:`RID<class_RID>`, idx\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                               |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`is_opened<class_NativeMenu_method_is_opened>`\ (\ rid\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                        |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`is_system_menu<class_NativeMenu_method_is_system_menu>`\ (\ rid\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                              |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`popup<class_NativeMenu_method_popup>`\ (\ rid\: :ref:`RID<class_RID>`, position\: :ref:`Vector2i<class_Vector2i>`\ )                                                                                                                                                                                                                                                                                                                                                            |
@@ -963,6 +965,20 @@ Returns ``true`` if the item at index ``idx`` has radio button-style checkabilit
 
 ----
 
+.. _class_NativeMenu_method_is_opened:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_opened**\ (\ rid\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NativeMenu_method_is_opened>`
+
+Returns ``true`` if the menu is currently opened.
+
+\ **Note:** This method is implemented only on macOS.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NativeMenu_method_is_system_menu:
 
 .. rst-class:: classref-method
@@ -1291,6 +1307,8 @@ Sets the minimum width of the global menu.
 
 Registers callable to emit when the menu is about to show.
 
+\ **Note:** The OS can simulate menu opening to track menu item changes and global shortcuts, in which case the corresponding close callback is not triggered. Use :ref:`is_opened<class_NativeMenu_method_is_opened>` to check if the menu is currently opened.
+
 \ **Note:** This method is implemented only on macOS.
 
 .. rst-class:: classref-item-separator
@@ -1303,7 +1321,7 @@ Registers callable to emit when the menu is about to show.
 
 |void| **set_popup_open_callback**\ (\ rid\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_NativeMenu_method_set_popup_open_callback>`
 
-Registers callable to emit when the menu is about to closed.
+Registers callable to emit after the menu is closed.
 
 \ **Note:** This method is implemented only on macOS.
 
