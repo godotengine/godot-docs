@@ -12,7 +12,7 @@ AudioStreamPlaylist
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`AudioStream<class_AudioStream>` that includes sub-streams and plays them back like a playslit.
+:ref:`AudioStream<class_AudioStream>` that includes sub-streams and plays them back like a playlist.
 
 .. rst-class:: classref-reftable-group
 
@@ -102,7 +102,7 @@ Fade time used when a stream ends, when going to the next one. Streams are expec
 - |void| **set_loop**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **has_loop**\ (\ )
 
-If true, the playlist will loop, otherwise the playlist when end when the last stream is played.
+If ``true``, the playlist will loop, otherwise the playlist will end when the last stream is finished.
 
 .. rst-class:: classref-item-separator
 
@@ -119,7 +119,7 @@ If true, the playlist will loop, otherwise the playlist when end when the last s
 - |void| **set_shuffle**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_shuffle**\ (\ )
 
-Shuffle the playlist. Streams are played in random order.
+If ``true``, the playlist will shuffle each time playback starts and each time it loops.
 
 .. rst-class:: classref-item-separator
 
@@ -153,7 +153,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **get_bpm**\ (\ ) |const| :ref:`🔗<class_AudioStreamPlaylist_method_get_bpm>`
 
-Return the bpm of the playlist, which can vary depending on the clip being played.
+Returns the BPM of the playlist, which can vary depending on the clip being played.
 
 .. rst-class:: classref-item-separator
 
@@ -165,7 +165,7 @@ Return the bpm of the playlist, which can vary depending on the clip being playe
 
 :ref:`AudioStream<class_AudioStream>` **get_list_stream**\ (\ stream_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamPlaylist_method_get_list_stream>`
 
-Get the stream at playback position index.
+Returns the stream at playback position index.
 
 .. rst-class:: classref-item-separator
 
@@ -177,7 +177,7 @@ Get the stream at playback position index.
 
 |void| **set_list_stream**\ (\ stream_index\: :ref:`int<class_int>`, audio_stream\: :ref:`AudioStream<class_AudioStream>`\ ) :ref:`🔗<class_AudioStreamPlaylist_method_set_list_stream>`
 
-Set the stream at playback position index.
+Sets the stream at playback position index.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
