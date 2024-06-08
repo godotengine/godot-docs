@@ -173,7 +173,7 @@ Distro-specific one-liners
               "pkgconfig(xcursor)" \
               "pkgconfig(xinerama)" \
               "pkgconfig(xi)" \
-		      "pkgconfig(xrandr)"
+              "pkgconfig(xrandr)"
 
     .. tab:: NetBSD
 

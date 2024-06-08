@@ -106,18 +106,18 @@ Tree order
 ----------
 
 Most node operations in Godot, such as drawing 2D, processing, or getting
-notifications are done in *tree order*, or top to bottom as seen in the 
+notifications are done in *tree order*, or top to bottom as seen in the
 editor (also known as pre-order traversal):
 
 .. image:: img/toptobottom.webp
 
-For example, the top node in a scene has its ``_process()`` function 
-called first, then the node below it has its ``_process()`` function called, 
+For example, the top node in a scene has its ``_process()`` function
+called first, then the node below it has its ``_process()`` function called,
 then the node below that and so on.
 
 An important exception is the ``_ready()`` function: each parent node has its
-``_ready()`` function called only after all its child nodes have their 
-``_ready()`` functions called, so that the parent knows its children are 
+``_ready()`` function called only after all its child nodes have their
+``_ready()`` functions called, so that the parent knows its children are
 completely ready to be accessed. This is also known as post-order traversal.
 In the above image, ``NameLabel`` would be notified first (but only after its
 children, if it had any!), followed by ``Name``, etc., and ``Panel`` would be
@@ -137,7 +137,7 @@ with the priorities "0, 1, 2, 3" would be called in that order from left to righ
 #. Every node of the newly added scene will receive the "enter_tree"
    notification ( ``_enter_tree()`` callback in GDScript) in
    top-to-bottom order (pre-order traversal).
-#. Every node will receive the "ready" notification ( ``_ready()`` 
+#. Every node will receive the "ready" notification ( ``_ready()``
    callback in GDScript) for convenience, once all its children have
    received the "ready" notification (post-order traversal).
 #. When a scene (or part of it) is removed, they receive the "exit
@@ -176,7 +176,7 @@ function
     var next_scene = preload("res://levels/level2.tscn")
 
     func _my_level_was_completed():
-    	get_tree().change_scene_to_packed(next_scene)
+        get_tree().change_scene_to_packed(next_scene)
 
  .. code-tab:: csharp
 

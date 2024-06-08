@@ -151,40 +151,40 @@ use these as the base for creating other templates:
 
  .. code-tab:: gdscript GDScript
 
-   # meta-description: Base template for Node with default Godot cycle methods
+    # meta-description: Base template for Node with default Godot cycle methods
 
-   extends _BASE_
-
-
-   # Called when the node enters the scene tree for the first time.
-   func _ready() -> void:
-   	pass # Replace with function body.
+    extends _BASE_
 
 
-   # Called every frame. 'delta' is the elapsed time since the previous frame.
-   func _process(delta: float) -> void:
-   	pass
+    # Called when the node enters the scene tree for the first time.
+    func _ready() -> void:
+        pass # Replace with function body.
+
+
+    # Called every frame. 'delta' is the elapsed time since the previous frame.
+    func _process(delta: float) -> void:
+        pass
 
 
  .. code-tab:: csharp
 
-   // meta-description: Base template for Node with default Godot cycle methods
+    // meta-description: Base template for Node with default Godot cycle methods
 
-   using _BINDINGS_NAMESPACE_;
-   using System;
+    using _BINDINGS_NAMESPACE_;
+    using System;
 
-   public partial class _CLASS_ : _BASE_
-   {
-       // Called when the node enters the scene tree for the first time.
-       public override void _Ready()
-       {
-       }
+    public partial class _CLASS_ : _BASE_
+    {
+        // Called when the node enters the scene tree for the first time.
+        public override void _Ready()
+        {
+        }
 
-       // Called every frame. 'delta' is the elapsed time since the previous frame.
-       public override void _Process(double delta)
-       {
-       }
-   }
+        // Called every frame. 'delta' is the elapsed time since the previous frame.
+        public override void _Process(double delta)
+        {
+        }
+    }
 
 The Godot editor provides a set of useful built-in node-specific templates, such as
 ``basic_movement`` for both :ref:`CharacterBody2D <class_CharacterBody2D>` and

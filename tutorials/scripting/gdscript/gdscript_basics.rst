@@ -1573,7 +1573,7 @@ is best to use ``for i in array.size()``.
 ::
 
     for i in array.size():
-	    array[i] = "Hello World"
+        array[i] = "Hello World"
 
 
 The loop variable is local to the for-loop and assigning to it will not change

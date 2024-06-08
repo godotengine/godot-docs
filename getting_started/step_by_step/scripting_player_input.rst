@@ -86,7 +86,7 @@ Comment out the lines ``var velocity = Vector2.UP.rotated(rotation) * speed`` an
  .. code-tab:: gdscript GDScript
 
     #var velocity = Vector2.UP.rotated(rotation) * speed
-	
+
     #position += velocity * delta
 
  .. code-tab:: csharp C#
