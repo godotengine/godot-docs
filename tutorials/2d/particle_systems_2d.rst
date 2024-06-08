@@ -224,7 +224,7 @@ You can control the emit duration with the ``Generation Time (sec)`` option. The
 Local Coords
 ~~~~~~~~~~~~
 
-By default this option is on, and it means that the space that particles
+If this option is enabled, then the space that particles
 are emitted to is relative to the node. If the node is moved, all
 particles are moved with it:
 
