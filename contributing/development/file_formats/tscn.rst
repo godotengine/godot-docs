@@ -127,8 +127,8 @@ the path should be ``"."``. Here is an example scene tree
 
 .. tip::
 
-    To make the file structure easier to grasp, you can saving a file with any
-    given node or resource then inspect it yourself in an external editor. You
+    To make the file structure easier to grasp, you can save a file with any
+    given node or resource and then inspect it yourself in an external editor. You
     can also make incremental changes in the Godot editor, and keep an external
     text editor open on the ``.tscn`` or ``.tres`` file with auto-reload enabled
     to see what changes.
