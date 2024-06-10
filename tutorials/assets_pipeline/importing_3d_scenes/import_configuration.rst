@@ -41,7 +41,7 @@ This import process is customizable using 3 separate interfaces, depending on yo
 - The **Advanced Import Settings** dialog, which can be accessed by double-clicking
   the 3D scene in the FileSystem dock or by clicking the **Advanced…** button in
   the Import dock. This allows you to customize per-object options in Godot.
-- :ref:`Import hints <doc_importing_3d_scenes_import_hints>`, which are special
+- :ref:`Import hints <doc_importing_3d_scenes_node_type_customization>`, which are special
   suffixes added to object names in the 3D modeling software. This allows you to
   customize per-object options in the 3D modeling software.
 
@@ -524,5 +524,3 @@ In inherited scenes, the only limitations for modification are:
   described above.
 
 Other than that, everything is allowed.
-
-.. _doc_importing_3d_scenes_import_hints:
