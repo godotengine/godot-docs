@@ -4,3 +4,7 @@ contact_links:
   - name: Godot community channels
     url: https://godotengine.org/community
     about: Please ask for technical support on one of the other community channels, not here.
+
+  - name: Main Godot repository
+    url: https://github.com/godotengine/godot
+    about: Report engine bugs on the main Godot repository
