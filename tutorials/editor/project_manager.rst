@@ -61,6 +61,8 @@ When the folder path is correct, you'll see a green checkmark.
 
 .. image:: img/editor_ui_intro_project_manager_09.webp
 
+.. _doc_project_manager_downloading_demos:
+
 Downloading demos and templates
 -------------------------------
 
