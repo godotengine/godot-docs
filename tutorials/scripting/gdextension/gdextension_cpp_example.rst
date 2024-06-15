@@ -36,7 +36,7 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
     To use `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__
     you need to use the godot-cpp branch that matches the version of Godot that you are
     targeting. For example, if you're targeting Godot 4.1, use the ``4.1`` branch. Throughout
-    this tutorial we use ``4.x`,` which will need to be replaced with the version of Godot you
+    this tutorial we use ``4.x``, which will need to be replaced with the version of Godot you
     are targeting.
 
     The ``master`` branch is the development branch which is updated regularly
