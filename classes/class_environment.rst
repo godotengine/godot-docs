@@ -636,8 +636,6 @@ The global contrast value of the rendered scene (default value is 1). Effective 
 
 If ``true``, enables the ``adjustment_*`` properties provided by this resource. If ``false``, modifications to the ``adjustment_*`` properties will have no effect on the rendered scene.
 
-\ **Note:** Adjustments are only supported in the Forward+ and Mobile rendering methods, not Compatibility.
-
 .. rst-class:: classref-item-separator
 
 ----
