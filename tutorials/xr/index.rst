@@ -16,9 +16,8 @@ Basic Tutorial
    setting_up_xr
    deploying_to_android
    a_better_xr_start_script
-   introducing_xr_tools
-   basic_xr_locomotion
    ar_passthrough
+   xr_next_steps
 
 Advanced topics
 ---------------
@@ -32,3 +31,13 @@ Advanced topics
    xr_room_scale
    openxr_composition_layers
    openxr_hand_tracking
+
+Godot XR Tools
+--------------
+
+.. toctree::
+   :maxdepth: 1
+   :name: godot-xr-tools
+
+   introducing_xr_tools
+   basic_xr_locomotion
