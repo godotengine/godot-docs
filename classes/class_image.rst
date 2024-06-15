@@ -81,6 +81,8 @@ Methods
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Image<class_Image>`                     | :ref:`create<class_Image_method_create>`\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static|                                                                           |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>`                     | :ref:`create_empty<class_Image_method_create_empty>`\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static|                                                               |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Image<class_Image>`                     | :ref:`create_from_data<class_Image_method_create_from_data>`\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                        | :ref:`crop<class_Image_method_crop>`\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`\ )                                                                                                                                                                          |
@@ -104,6 +106,8 @@ Methods
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`\ (\ renormalize\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                  |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_data<class_Image_method_get_data>`\ (\ ) |const|                                                                                                                                                                                                                         |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`get_data_size<class_Image_method_get_data_size>`\ (\ ) |const|                                                                                                                                                                                                               |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Format<enum_Image_Format>`              | :ref:`get_format<class_Image_method_get_format>`\ (\ ) |const|                                                                                                                                                                                                                     |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1026,6 +1030,20 @@ Copies ``src`` image to this image.
 
 :ref:`Image<class_Image>` **create**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static| :ref:`🔗<class_Image_method_create>`
 
+**Deprecated:** Use :ref:`create_empty<class_Image_method_create_empty>`.
+
+Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true``, then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Image_method_create_empty:
+
+.. rst-class:: classref-method
+
+:ref:`Image<class_Image>` **create_empty**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static| :ref:`🔗<class_Image_method_create_empty>`
+
 Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true``, then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
 
 .. rst-class:: classref-item-separator
@@ -1175,6 +1193,18 @@ It is possible to check if the image has mipmaps by calling :ref:`has_mipmaps<cl
 :ref:`PackedByteArray<class_PackedByteArray>` **get_data**\ (\ ) |const| :ref:`🔗<class_Image_method_get_data>`
 
 Returns a copy of the image's raw data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Image_method_get_data_size:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_data_size**\ (\ ) |const| :ref:`🔗<class_Image_method_get_data_size>`
+
+Returns size (in bytes) of the image's raw data.
 
 .. rst-class:: classref-item-separator
 

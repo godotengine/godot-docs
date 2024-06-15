@@ -57,6 +57,8 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                              | :ref:`_debug_get_stack_level_members<class_ScriptLanguageExtension_private_method__debug_get_stack_level_members>`\ (\ level\: :ref:`int<class_int>`, max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual|                                                                                                                      |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`_debug_get_stack_level_source<class_ScriptLanguageExtension_private_method__debug_get_stack_level_source>`\ (\ level\: :ref:`int<class_int>`\ ) |virtual| |const|                                                                                                                                                                                         |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                      | :ref:`_debug_parse_stack_level_expression<class_ScriptLanguageExtension_private_method__debug_parse_stack_level_expression>`\ (\ level\: :ref:`int<class_int>`, expression\: :ref:`String<class_String>`, max_subitems\: :ref:`int<class_int>`, max_depth\: :ref:`int<class_int>`\ ) |virtual|                                                                  |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`_find_function<class_ScriptLanguageExtension_private_method__find_function>`\ (\ function\: :ref:`String<class_String>`, code\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                          |
@@ -689,6 +691,18 @@ Method Descriptions
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptLanguageExtension_private_method__debug_get_stack_level_source:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_debug_get_stack_level_source**\ (\ level\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_ScriptLanguageExtension_private_method__debug_get_stack_level_source>`
+
+Returns the source associated with a given debug stack position.
 
 .. rst-class:: classref-item-separator
 

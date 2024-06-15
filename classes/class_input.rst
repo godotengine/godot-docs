@@ -1115,9 +1115,9 @@ Stops the vibration of the joypad started with :ref:`start_joy_vibration<class_I
 
 |void| **vibrate_handheld**\ (\ duration_ms\: :ref:`int<class_int>` = 500, amplitude\: :ref:`float<class_float>` = -1.0\ ) :ref:`🔗<class_Input_method_vibrate_handheld>`
 
-**Note:** While ``amplitude`` expects a value between 0 and 1, -1 does the default amplitude for the device.
-
 Vibrate the handheld device for the specified duration in milliseconds.
+
+\ ``amplitude`` is the strength of the vibration, as a value between ``0.0`` and ``1.0``. If set to ``-1.0``, the default vibration strength of the device is used.
 
 \ **Note:** This method is implemented on Android, iOS, and Web. It has no effect on other platforms.
 

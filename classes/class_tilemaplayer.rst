@@ -52,6 +52,8 @@ Properties
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`use_kinematic_bodies<class_TileMapLayer_property_use_kinematic_bodies>`             | ``false``             |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`x_draw_order_reversed<class_TileMapLayer_property_x_draw_order_reversed>`           | ``false``             |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`                                             | :ref:`y_sort_origin<class_TileMapLayer_property_y_sort_origin>`                           | ``0``                 |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
 
@@ -284,9 +286,9 @@ Show or hide the **TileMapLayer**'s navigation meshes. If set to :ref:`DEBUG_VIS
 - |void| **set_rendering_quadrant_size**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_rendering_quadrant_size**\ (\ )
 
-The **TileMapLayer**'s quadrant size. A quadrant is a group of tiles to be drawn together on a single canvas item, for optimization purposes. :ref:`rendering_quadrant_size<class_TileMapLayer_property_rendering_quadrant_size>` defines the length of a square's side, in the map's coordinate system, that forms the quadrant. Thus, the default quandrant size groups together ``16 * 16 = 256`` tiles.
+The **TileMapLayer**'s quadrant size. A quadrant is a group of tiles to be drawn together on a single canvas item, for optimization purposes. :ref:`rendering_quadrant_size<class_TileMapLayer_property_rendering_quadrant_size>` defines the length of a square's side, in the map's coordinate system, that forms the quadrant. Thus, the default quadrant size groups together ``16 * 16 = 256`` tiles.
 
-The quadrant size does not apply on a Y-sorted **TileMapLayer**, as tiles are be grouped by Y position instead in that case.
+The quadrant size does not apply on a Y-sorted **TileMapLayer**, as tiles are grouped by Y position instead in that case.
 
 \ **Note:** As quadrants are created according to the map's coordinate system, the quadrant's "square shape" might not look like square in the **TileMapLayer**'s local coordinate system.
 
@@ -342,6 +344,23 @@ The :ref:`TileSet<class_TileSet>` used by this layer. The textures, collisions, 
 - :ref:`bool<class_bool>` **is_using_kinematic_bodies**\ (\ )
 
 If ``true``, this **TileMapLayer** collision shapes will be instantiated as kinematic bodies. This can be needed for moving **TileMapLayer** nodes (i.e. moving platforms).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMapLayer_property_x_draw_order_reversed:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **x_draw_order_reversed** = ``false`` :ref:`🔗<class_TileMapLayer_property_x_draw_order_reversed>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_x_draw_order_reversed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_x_draw_order_reversed**\ (\ )
+
+If :ref:`CanvasItem.y_sort_enabled<class_CanvasItem_property_y_sort_enabled>` is enabled, setting this to ``true`` will reverse the order the tiles are drawn on the X-axis.
 
 .. rst-class:: classref-item-separator
 

@@ -864,13 +864,15 @@ Transforms (multiplies) the ``right`` vector by this basis, returning a :ref:`Ve
 
  .. code-tab:: gdscript
 
-    var my_basis = Basis(Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0, 2, 5))
-    print(my_basis * Vector3(1, 2, 3)) # Prints (7, 3, 16)
+    # Basis that swaps the X/Z axes and doubles the scale.
+    var my_basis = Basis(Vector3(0, 2, 0), Vector3(2, 0, 0), Vector3(0, 0, 2))
+    print(my_basis * Vector3(1, 2, 3)) # Prints (4, 2, 6)
 
  .. code-tab:: csharp
 
-    var myBasis = new Basis(new Vector3(1, 1, 1), new Vector3(1, 1, 1), new Vector3(0, 2, 5));
-    GD.Print(my_basis * new Vector3(1, 2, 3)); // Prints (7, 3, 16)
+    // Basis that swaps the X/Z axes and doubles the scale.
+    var myBasis = new Basis(new Vector3(0, 2, 0), new Vector3(2, 0, 0), new Vector3(0, 0, 2));
+    GD.Print(myBasis * new Vector3(1, 2, 3)); // Prints (4, 2, 6)
 
 
 
