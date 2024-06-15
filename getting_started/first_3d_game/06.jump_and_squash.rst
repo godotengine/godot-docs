@@ -288,7 +288,7 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
         }
     }
 
- That's a lot of new functions. Here's some more information about them.
+That's a lot of new functions. Here's some more information about them.
 
 The functions ``get_slide_collision_count()`` and ``get_slide_collision()`` both come from
 the :ref:`CharacterBody3D <class_CharacterBody3D>` class and are related to
