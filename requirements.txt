@@ -16,7 +16,7 @@ sphinx-tabs==3.4.0
 # Adds a 'copy' button to the right of codeblocks.
 sphinx-copybutton==0.5.1
 # Custom 404 error page (more useful than the default).
-sphinx-notfound-page==0.8.3
+sphinx-notfound-page==1.0.2
 # Adds Open Graph tags in the HTML `<head>` tag.
 sphinxext-opengraph==0.7.5
 
