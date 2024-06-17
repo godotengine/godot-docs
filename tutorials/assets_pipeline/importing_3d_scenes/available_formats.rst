@@ -18,9 +18,11 @@ Godot supports the following 3D *scene file formats*:
 - OBJ (Wavefront) format + their MTL material files. This is also
   supported, but pretty limited given the format's limitations (no support for
   pivots, skeletons, animations, UV2, PBR materials, ...).
-- FBX, supported via `FBX2glTF <https://github.com/godotengine/FBX2glTF>`__ integration.
-  This requires installing an external program that links against the proprietary FBX SDK,
-  so we recommend using other formats listed above (if suitable for your workflow).
+- FBX, supported via the `ufbx <https://github.com/ufbx/ufbx>`__ library. The
+  previous import workflow used `FBX2glTF <https://github.com/godotengine/FBX2glTF>`__
+  integration. This requires installing an external program that links against the
+  proprietary FBX SDK, so we recommend using the default ubfx method or other formats
+  listed above (if suitable for your workflow).
 
 Copy the scene file together with the textures and mesh data (if separate) to
 the project repository, then Godot will do a full import when focusing the
@@ -185,24 +187,30 @@ There are 2 ways to use OBJ meshes in Godot:
 Importing FBX files in Godot
 ----------------------------
 
-When opening a project containing FBX scenes, you will see a dialog asking you
-to configure FBX import. Click the link in the dialog to download an FBX2glTF
-binary, then extract the ZIP archive, place the binary anywhere you wish, then
-specify its path in the dialog.
+By default any FBX file added to a Godot project in Godot 4.3 or later will
+use the ufbx import method. Any file that was was added to a project in a
+previous version, such as 4.2, will continue to be imported via the FBX2glTF
+method unless you go into that files import settings, and change the importer
+to  ``ufbx``.
 
 If you keep ``.fbx`` files within your project folder but don't want them to
 be imported by Godot, disable **Filesystem > Import > FBX > Enabled** in the
 advanced Project Settings.
 
-The FBX import process converts to glTF first, so it still uses
+If you want to setup the FBX2glTF workflow, which is generally not recommend
+unless you have a specific reason to use it, you need to download the `FBX2glTF <https://github.com/godotengine/FBX2glTF>`__
+executable, then specify the path to that executable in the editor settings under
+**Filesystem > Import > FBX > FBX2glTFPath**
+
+The FBX2glTF import process converts to glTF first, so it still uses
 Godot's glTF import code. Therefore, the FBX import process is the same
 as the glTF import process, but with an extra step at the beginning.
 
 .. figure:: img/importing_3d_scenes_available_formats_fbx.webp
    :align: center
-   :alt: Diagram explaining the import process for FBX files in Godot
+   :alt: Diagram explaining the import process for FBX files in Godot vis FBX2glTF
 
 .. seealso::
 
-    The full installation process for using FBX in Godot is described on the
+    The full installation process for using FBX2glTF in Godot is described on the
     `FBX import page of the Godot website <https://godotengine.org/fbx-import>`__.
