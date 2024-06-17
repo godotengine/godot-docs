@@ -35,16 +35,17 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
 .. note::
     To use `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__
     you need to use the godot-cpp branch that matches the version of Godot that you are
-    targeting. For example, if you're targeting Godot 4.1, use the ``4.1`` branch,
-    which is what is shown through out this tutorial.
+    targeting. For example, if you're targeting Godot 4.1, use the ``4.1`` branch. Throughout
+    this tutorial we use ``4.x``, which will need to be replaced with the version of Godot you
+    are targeting.
 
     The ``master`` branch is the development branch which is updated regularly
     to work with Godot's ``master`` branch.
 
 .. warning::
     Our long-term goal is that GDExtensions targeting an earlier version of Godot will work
-    in later minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.2
-    should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.
+    in later minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.1
+    should work just fine in Godot 4.2, but one targeting Godot 4.2 won't work in Godot 4.1.
 
     However, GDExtension is currently *experimental*, which means that we may break compatibility
     in order to fix major bugs or include critical features. For example, GDExtensions created
@@ -59,7 +60,7 @@ a Git submodule:
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
     git init
-    git submodule add -b 4.1 https://github.com/godotengine/godot-cpp
+    git submodule add -b 4.x https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
@@ -69,7 +70,7 @@ Alternatively, you can also clone it to the project folder:
 
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
-    git clone -b 4.1 https://github.com/godotengine/godot-cpp
+    git clone -b 4.x https://github.com/godotengine/godot-cpp
 
 .. note::
 
@@ -332,7 +333,7 @@ build files in a subsequent tutorial.
 
     This ``SConstruct`` file was written to be used with the latest ``godot-cpp``
     master, you may need to make small changes using it with older versions or
-    refer to the ``SConstruct`` file in the Godot 4.0 documentation.
+    refer to the ``SConstruct`` file in the Godot 4.x documentation.
 
 Once you've downloaded the ``SConstruct`` file, place it in your GDExtension folder
 structure alongside ``godot-cpp``, ``src`` and ``demo``, then run:
