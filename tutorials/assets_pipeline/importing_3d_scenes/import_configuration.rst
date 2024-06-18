@@ -157,6 +157,21 @@ exported from other tools such as Maya.
   Universal** and **Embed as Uncompressed** keeps the textures embedded in the
   imported scene, with and without VRAM compression respectively.
 
+**FBX**
+
+- **Importer** Which import method is used. ubfx handles fbx files as fbx files.
+  FBX2glTF converts FBX files to glTF on import and requires additonal setup.
+  FBX2glTF is not recommended unless you have a specific rason to use it over
+  ufbx or working with a different file format.
+- **Allow Geometry Helper Nodes** enables or disables geometry helper nodes
+- **Embedded Texture Handling:** Controls how textures embedded within fbx
+  scenes should be handled. **Discard All Textures** will not import any
+  textures, which is useful if you wish to manually set up materials in Godot
+  instead. **Extract Textures** extracts textures to external images, resulting
+  in smaller file sizes and more control over import options. **Embed as Basis
+  Universal** and **Embed as Uncompressed** keeps the textures embedded in the
+  imported scene, with and without VRAM compression respectively.
+
 Using the Advanced Import Settings dialog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
