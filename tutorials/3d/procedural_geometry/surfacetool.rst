@@ -167,6 +167,6 @@ normals set already.
     st.GenerateTangents();
 
 By default, when generating normals, they will be calculated on a per-face basis. If you want
-smooth vertex normals, when adding vertices, call ``add_smooth_group()``. ``add_smooth_group()``
+smooth vertex normals, when adding vertices, call ``set_smooth_group()``. ``set_smooth_group()``
 needs to be called while building the geometry, e.g. before the call to ``add_vertex()``
 (if non-indexed) or ``add_index()`` (if indexed).
