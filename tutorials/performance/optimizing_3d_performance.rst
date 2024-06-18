@@ -163,7 +163,7 @@ also limit the processing needed to the local area.
 
 There may also be rendering and physics glitches due to floating point error in
 large worlds. This can be resolved using :ref:`doc_large_world_coordinates`.
-If using large world coordinates is an option, you may be able to use techniques
+If using large world coordinates is not an option, you may be able to use techniques
 such as orienting the world around the player (rather than the other way
 around), or shifting the origin periodically to keep things centred around
 ``Vector3(0, 0, 0)``.
