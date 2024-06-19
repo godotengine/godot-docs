@@ -447,6 +447,12 @@ listed in the :ref:`doc_compiling_for_linuxbsd_oneliners`:
 |                  |         libsquish-devel libtheora-devel libvorbis-devel libwebp-devel libzstd-devel mbedtls-devel \       |
 |                  |         miniupnpc-devel                                                                                   |
 +------------------+-----------------------------------------------------------------------------------------------------------+
+| **Ubuntu**       | ::                                                                                                        |
+|                  |                                                                                                           |
+|                  |     sudo apt install libembree-dev libenet-dev libfreetype-dev libpng-dev zlib1g-dev libgraphite2-dev \   |
+|                  |         libharfbuzz-dev libogg-dev libtheora-dev libvorbis-dev libwebp-dev libmbedtls-dev \               |
+|                  |         libminiupnpc-dev libpcre2-dev libzstd-dev libsquish-dev libicu-dev                                |
++------------------+-----------------------------------------------------------------------------------------------------------+
 
 After installing all required packages, use the following command to build Godot:
 
