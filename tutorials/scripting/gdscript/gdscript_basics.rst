@@ -1920,7 +1920,7 @@ Class constructor
 
 The class constructor, called on class instantiation, is named ``_init``. If you
 want to call the base class constructor, you can also use the ``super`` syntax.
-Note that every class has an implicit constructor that it's always called
+Note that every class has an implicit constructor that is always called
 (defining the default values of class variables). ``super`` is used to call the
 explicit constructor::
 
