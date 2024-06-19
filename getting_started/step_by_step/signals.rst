@@ -62,9 +62,9 @@ a :ref:`Node2D <class_Node2D>` as our root.
 .. image:: img/signals_02_2d_scene.webp
 
 In the FileSystem dock, click and drag the ``sprite_2d.tscn`` file you saved
-previously onto the Node2D to instantiate it.
+previously under the Node2D to instantiate it.
 
-.. image:: img/signals_03_dragging_scene.png
+.. image:: img/signals_03_dragging_scene.jpeg
 
 We want to add another node as a sibling of the Sprite2D. To do so, right-click
 on Node2D and select Add Child Node.
