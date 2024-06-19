@@ -173,7 +173,7 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in vec3 **CAMERA_DIRECTION_WORLD**     | Camera world space direction.                          |
 +----------------------------------------+--------------------------------------------------------+
-| in int **CAMERA_VISIBLE_LAYERS**       | Cull layers of the camera rendering the current pass.  |
+| in uint **CAMERA_VISIBLE_LAYERS**      | Cull layers of the camera rendering the current pass.  |
 +----------------------------------------+--------------------------------------------------------+
 | in bool **OUTPUT_IS_SRGB**             | ``true`` when output is in sRGB color space            |
 |                                        | (this is ``true`` in the Compatibility renderer,       |
@@ -294,7 +294,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **CAMERA_DIRECTION_WORLD**     | Camera direction, in world space.                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in int **CAMERA_VISIBLE_LAYERS**       | Cull layers of the camera rendering the current pass.                                            |
+| in uint **CAMERA_VISIBLE_LAYERS**      | Cull layers of the camera rendering the current pass.                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **VERTEX**                     | Vertex that comes from vertex function (default, in view space).                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
