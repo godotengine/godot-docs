@@ -19,6 +19,7 @@
    using_multi_mesh_instance
    csg_tools
    procedural_geometry/index
+   level_of_detail
    occluders
    portals/index
    merge_groups

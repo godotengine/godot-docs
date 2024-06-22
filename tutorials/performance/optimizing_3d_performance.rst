@@ -44,12 +44,20 @@ It is a very powerful technique for speeding up rendering. You can also use it t
 restrict physics or AI to the local area, and speed these up as well as
 rendering.
 
+However, there are easier ways to take advantage of occlusion. Godot includes two
+built-in systems to automate occlusion culling:
+
+Occluders
+~~~~~~~~~
+
+Occluder nodes can manually be placed in a scene. These will automatically hide
+objects that are behind the occluder. See :ref:`Occluder Nodes <doc_occluders>`.
+
 Portal Rendering
 ~~~~~~~~~~~~~~~~
 
-However, there is a much easier way to take advantage of occlusion. Godot features
-an advanced portal rendering system, which can perform occlusion culling from cameras and
-lights. See :ref:`doc_rooms_and_portals`.
+Godot features an advanced portal rendering system, which can perform occlusion
+culling from cameras and lights. See :ref:`doc_rooms_and_portals`.
 
 This is not a fully automatic system and it requires some manual setup. However, it potentially
 offers significant performance increases.
@@ -91,6 +99,10 @@ not be able to see much difference. Consider looking at a large number of trees
 in the far distance. There are several strategies for replacing models at
 varying distance. You could use lower poly models, or use transparency to
 simulate more complex geometry.
+
+You can either implement LOD manually, or make use of the ``LOD`` node, which
+automates much of the process. See the :ref:`Level of Detail <doc_level_of_detail>`
+documentation.
 
 Billboards and imposters
 ~~~~~~~~~~~~~~~~~~~~~~~~
