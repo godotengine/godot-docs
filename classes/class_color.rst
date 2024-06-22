@@ -1795,7 +1795,7 @@ Returns the light intensity of the color, as a value between 0.0 and 1.0 (inclus
 
 :ref:`Color<class_Color>` **hex**\ (\ hex\: :ref:`int<class_int>`\ ) |static| :ref:`🔗<class_Color_method_hex>`
 
-Returns the **Color** associated with the provided ``hex`` integer in 32-bit RGBA format (8 bits per channel).
+Returns the **Color** associated with the provided ``hex`` integer in 32-bit RGBA format (8 bits per channel). This method is the inverse of :ref:`to_rgba32<class_Color_method_to_rgba32>`.
 
 In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix, making it ``"0xRRGGBBAA"``).
 
@@ -1826,7 +1826,7 @@ In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecima
 
 :ref:`Color<class_Color>` **hex64**\ (\ hex\: :ref:`int<class_int>`\ ) |static| :ref:`🔗<class_Color_method_hex64>`
 
-Returns the **Color** associated with the provided ``hex`` integer in 64-bit RGBA format (16 bits per channel).
+Returns the **Color** associated with the provided ``hex`` integer in 64-bit RGBA format (16 bits per channel). This method is the inverse of :ref:`to_rgba64<class_Color_method_to_rgba64>`.
 
 In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix, making it ``"0xRRRRGGGGBBBBAAAA"``).
 
@@ -2174,7 +2174,7 @@ Setting ``with_alpha`` to ``false``, excludes alpha from the hexadecimal string,
 
 :ref:`int<class_int>` **to_rgba32**\ (\ ) |const| :ref:`🔗<class_Color_method_to_rgba32>`
 
-Returns the color converted to a 32-bit integer in RGBA format (each component is 8 bits). RGBA is Godot's default format.
+Returns the color converted to a 32-bit integer in RGBA format (each component is 8 bits). RGBA is Godot's default format. This method is the inverse of :ref:`hex<class_Color_method_hex>`.
 
 
 .. tabs::
@@ -2201,7 +2201,7 @@ Returns the color converted to a 32-bit integer in RGBA format (each component i
 
 :ref:`int<class_int>` **to_rgba64**\ (\ ) |const| :ref:`🔗<class_Color_method_to_rgba64>`
 
-Returns the color converted to a 64-bit integer in RGBA format (each component is 16 bits). RGBA is Godot's default format.
+Returns the color converted to a 64-bit integer in RGBA format (each component is 16 bits). RGBA is Godot's default format. This method is the inverse of :ref:`hex64<class_Color_method_hex64>`.
 
 
 .. tabs::

@@ -226,7 +226,7 @@ The operation that is performed on this shape. This is ignored for the first CSG
 - |void| **set_snap**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_snap**\ (\ )
 
-Snap makes the mesh vertices snap to a given distance so that the faces of two meshes can be perfectly aligned. A lower value results in greater precision but may be harder to adjust.
+Snap makes the mesh vertices snap to a given distance so that the faces of two meshes can be perfectly aligned. A lower value results in greater precision but may be harder to adjust. The top-level CSG shape's snap value is used for the entire CSG tree.
 
 .. rst-class:: classref-item-separator
 

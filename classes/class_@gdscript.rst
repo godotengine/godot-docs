@@ -158,7 +158,7 @@ Mark the following property as exported (editable in the Inspector dock and save
     @export var image_array: Array[Image]
     @export var node_array: Array[Node]
 
-\ **Note:** Custom resources and nodes must be registered as global classes using ``class_name``.
+\ **Note:** Custom resources and nodes should be registered as global classes using ``class_name``, since the Inspector currently only supports global classes. Otherwise, a less specific type will be exported instead.
 
 \ **Note:** Node export is only supported in :ref:`Node<class_Node>`-derived classes and has a number of other limitations.
 
