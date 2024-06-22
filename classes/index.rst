@@ -701,6 +701,8 @@ Other objects
     class_astargrid2d
     class_audioeffectinstance
     class_audioeffectspectrumanalyzerinstance
+    class_audiosample
+    class_audiosampleplayback
     class_audioserver
     class_audiostreamgeneratorplayback
     class_audiostreamplayback

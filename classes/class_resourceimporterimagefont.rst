@@ -12,14 +12,14 @@ ResourceImporterImageFont
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Imports a fixed-width bitmap font where all glyphs have the same width and height.
+Imports a bitmap font where all glyphs have the same width and height.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This image-based workflow can be easier to use than :ref:`ResourceImporterBMFont<class_ResourceImporterBMFont>`, but it requires all glyphs to have the same width and height. This makes **ResourceImporterImageFont** most suited to fixed-width fonts.
+This image-based workflow can be easier to use than :ref:`ResourceImporterBMFont<class_ResourceImporterBMFont>`, but it requires all glyphs to have the same width and height, glyph advances and drawing offsets can be customized. This makes **ResourceImporterImageFont** most suited to fixed-width fonts.
 
 See also :ref:`ResourceImporterDynamicFont<class_ResourceImporterDynamicFont>`.
 

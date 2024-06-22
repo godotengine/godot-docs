@@ -45,31 +45,33 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`int<class_int>`                 | :ref:`area_mask<class_AudioStreamPlayer2D_property_area_mask>`               | ``1``         |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`float<class_float>`             | :ref:`attenuation<class_AudioStreamPlayer2D_property_attenuation>`           | ``1.0``       |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`bool<class_bool>`               | :ref:`autoplay<class_AudioStreamPlayer2D_property_autoplay>`                 | ``false``     |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`StringName<class_StringName>`   | :ref:`bus<class_AudioStreamPlayer2D_property_bus>`                           | ``&"Master"`` |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`float<class_float>`             | :ref:`max_distance<class_AudioStreamPlayer2D_property_max_distance>`         | ``2000.0``    |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`int<class_int>`                 | :ref:`max_polyphony<class_AudioStreamPlayer2D_property_max_polyphony>`       | ``1``         |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`float<class_float>`             | :ref:`panning_strength<class_AudioStreamPlayer2D_property_panning_strength>` | ``1.0``       |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`float<class_float>`             | :ref:`pitch_scale<class_AudioStreamPlayer2D_property_pitch_scale>`           | ``1.0``       |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`bool<class_bool>`               | :ref:`playing<class_AudioStreamPlayer2D_property_playing>`                   | ``false``     |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`AudioStream<class_AudioStream>` | :ref:`stream<class_AudioStreamPlayer2D_property_stream>`                     |               |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`bool<class_bool>`               | :ref:`stream_paused<class_AudioStreamPlayer2D_property_stream_paused>`       | ``false``     |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`float<class_float>`             | :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>`               | ``0.0``       |
-   +---------------------------------------+------------------------------------------------------------------------------+---------------+
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`int<class_int>`                              | :ref:`area_mask<class_AudioStreamPlayer2D_property_area_mask>`               | ``1``         |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                          | :ref:`attenuation<class_AudioStreamPlayer2D_property_attenuation>`           | ``1.0``       |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`bool<class_bool>`                            | :ref:`autoplay<class_AudioStreamPlayer2D_property_autoplay>`                 | ``false``     |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`StringName<class_StringName>`                | :ref:`bus<class_AudioStreamPlayer2D_property_bus>`                           | ``&"Master"`` |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                          | :ref:`max_distance<class_AudioStreamPlayer2D_property_max_distance>`         | ``2000.0``    |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`int<class_int>`                              | :ref:`max_polyphony<class_AudioStreamPlayer2D_property_max_polyphony>`       | ``1``         |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                          | :ref:`panning_strength<class_AudioStreamPlayer2D_property_panning_strength>` | ``1.0``       |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                          | :ref:`pitch_scale<class_AudioStreamPlayer2D_property_pitch_scale>`           | ``1.0``       |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`PlaybackType<enum_AudioServer_PlaybackType>` | :ref:`playback_type<class_AudioStreamPlayer2D_property_playback_type>`       | ``0``         |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`bool<class_bool>`                            | :ref:`playing<class_AudioStreamPlayer2D_property_playing>`                   | ``false``     |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`AudioStream<class_AudioStream>`              | :ref:`stream<class_AudioStreamPlayer2D_property_stream>`                     |               |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`bool<class_bool>`                            | :ref:`stream_paused<class_AudioStreamPlayer2D_property_stream_paused>`       | ``false``     |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                          | :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>`               | ``0.0``       |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -252,6 +254,25 @@ Scales the panning strength for this node by multiplying the base :ref:`ProjectS
 - :ref:`float<class_float>` **get_pitch_scale**\ (\ )
 
 The pitch and the tempo of the audio, as a multiplier of the audio sample's sample rate.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioStreamPlayer2D_property_playback_type:
+
+.. rst-class:: classref-property
+
+:ref:`PlaybackType<enum_AudioServer_PlaybackType>` **playback_type** = ``0`` :ref:`🔗<class_AudioStreamPlayer2D_property_playback_type>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_playback_type**\ (\ value\: :ref:`PlaybackType<enum_AudioServer_PlaybackType>`\ )
+- :ref:`PlaybackType<enum_AudioServer_PlaybackType>` **get_playback_type**\ (\ )
+
+**Experimental:** This property may be changed or removed in future versions.
+
+The playback type of the stream player. If set other than to the default value, it will force that playback type.
 
 .. rst-class:: classref-item-separator
 

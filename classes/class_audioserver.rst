@@ -109,9 +109,13 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`is_bus_solo<class_AudioServer_method_is_bus_solo>`\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const|                                                                                          |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                               | :ref:`is_stream_registered_as_sample<class_AudioServer_method_is_stream_registered_as_sample>`\ (\ stream\: :ref:`AudioStream<class_AudioStream>`\ )                                             |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`lock<class_AudioServer_method_lock>`\ (\ )                                                                                                                                                 |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`move_bus<class_AudioServer_method_move_bus>`\ (\ index\: :ref:`int<class_int>`, to_index\: :ref:`int<class_int>`\ )                                                                        |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                | :ref:`register_stream_as_sample<class_AudioServer_method_register_stream_as_sample>`\ (\ stream\: :ref:`AudioStream<class_AudioStream>`\ )                                                       |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`remove_bus<class_AudioServer_method_remove_bus>`\ (\ index\: :ref:`int<class_int>`\ )                                                                                                      |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -215,6 +219,60 @@ A 5.1 channel surround setup was detected.
 :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **SPEAKER_SURROUND_71** = ``3``
 
 A 7.1 channel surround setup was detected.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_AudioServer_PlaybackType:
+
+.. rst-class:: classref-enumeration
+
+enum **PlaybackType**: :ref:`🔗<enum_AudioServer_PlaybackType>`
+
+.. _class_AudioServer_constant_PLAYBACK_TYPE_DEFAULT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PlaybackType<enum_AudioServer_PlaybackType>` **PLAYBACK_TYPE_DEFAULT** = ``0``
+
+**Experimental:** This constant may be changed or removed in future versions.
+
+The playback will be considered of the type declared at :ref:`ProjectSettings.audio/general/default_playback_type<class_ProjectSettings_property_audio/general/default_playback_type>`.
+
+.. _class_AudioServer_constant_PLAYBACK_TYPE_STREAM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PlaybackType<enum_AudioServer_PlaybackType>` **PLAYBACK_TYPE_STREAM** = ``1``
+
+**Experimental:** This constant may be changed or removed in future versions.
+
+Force the playback to be considered as a stream.
+
+.. _class_AudioServer_constant_PLAYBACK_TYPE_SAMPLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PlaybackType<enum_AudioServer_PlaybackType>` **PLAYBACK_TYPE_SAMPLE** = ``2``
+
+**Experimental:** This constant may be changed or removed in future versions.
+
+Force the playback to be considered as a sample. This can provide lower latency and more stable playback (with less risk of audio crackling), at the cost of having less flexibility.
+
+\ **Note:** Only currently supported on the web platform.
+
+\ **Note:** :ref:`AudioEffect<class_AudioEffect>`\ s are not supported when playback is considered as a sample.
+
+.. _class_AudioServer_constant_PLAYBACK_TYPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PlaybackType<enum_AudioServer_PlaybackType>` **PLAYBACK_TYPE_MAX** = ``3``
+
+**Experimental:** This constant may be changed or removed in future versions.
+
+Represents the size of the :ref:`PlaybackType<enum_AudioServer_PlaybackType>` enum.
 
 .. rst-class:: classref-section-separator
 
@@ -592,6 +650,22 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 ----
 
+.. _class_AudioServer_method_is_stream_registered_as_sample:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_stream_registered_as_sample**\ (\ stream\: :ref:`AudioStream<class_AudioStream>`\ ) :ref:`🔗<class_AudioServer_method_is_stream_registered_as_sample>`
+
+**Experimental:** This method may be changed or removed in future versions.
+
+If ``true``, the stream is registered as a sample. The engine will not have to register it before playing the sample.
+
+If ``false``, the stream will have to be registered before playing it. To prevent lag spikes, register the stream as sample with :ref:`register_stream_as_sample<class_AudioServer_method_register_stream_as_sample>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AudioServer_method_lock:
 
 .. rst-class:: classref-method
@@ -613,6 +687,22 @@ Locks the audio driver's main loop.
 |void| **move_bus**\ (\ index\: :ref:`int<class_int>`, to_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AudioServer_method_move_bus>`
 
 Moves the bus from index ``index`` to index ``to_index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioServer_method_register_stream_as_sample:
+
+.. rst-class:: classref-method
+
+|void| **register_stream_as_sample**\ (\ stream\: :ref:`AudioStream<class_AudioStream>`\ ) :ref:`🔗<class_AudioServer_method_register_stream_as_sample>`
+
+**Experimental:** This method may be changed or removed in future versions.
+
+Forces the registration of a stream as a sample.
+
+\ **Note:** Lag spikes may occur when calling this method, especially on single-threaded builds. It is suggested to call this method while loading assets, where the lag spike could be masked, instead of registering the sample right before it needs to be played.
 
 .. rst-class:: classref-item-separator
 

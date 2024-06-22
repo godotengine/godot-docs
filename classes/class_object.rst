@@ -1202,6 +1202,8 @@ Gets the object's property indexed by the given ``property_path``. The path shou
 
 Returns the object's unique instance ID. This ID can be saved in :ref:`EncodedObjectAsID<class_EncodedObjectAsID>`, and can be used to retrieve this object instance with :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>`.
 
+\ **Note:** This ID is only useful during the current session. It won't correspond to a similar object if the ID is sent over a network, or loaded from a file at a later time.
+
 .. rst-class:: classref-item-separator
 
 ----
