@@ -53,12 +53,6 @@ the physics step while another is processed in the idle step). Godot 3.1 does
 some improvements to this, from allowing kinematic bodies to be animated in the
 regular ``_process()`` loop, to further fixes in the frame timer.
 
-.. note::
-
-    You can use physics interpolation to mitigate physics-related jittering.
-    See `lawnjelly's smoothing-addon <https://github.com/lawnjelly/smoothing-addon>`__
-    for an add-on that can be dropped into any project to enable physics interpolation.
-
 Stutter
 -------
 
