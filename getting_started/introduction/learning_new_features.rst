@@ -121,10 +121,12 @@ information:
    Also, please don't take a picture with your phone, the low quality and screen
    reflections can make it hard to understand the image. Your operating system
    should have a built-in tool to take screenshots with the :kbd:`PrtSc` (Print
-   Screen) key.
+   Screen) key (macOS: use :kbd:`⌘ Command + ⇧ Shift + 3` for a full screen shot).
 
    Alternatively, you can use a program like `ShareX <https://getsharex.com/>`_
-   on Windows or `FlameShot <https://flameshot.org/>`_ on Linux.
+   on Windows, `FlameShot <https://flameshot.org/>`_ on Linux
+   or `Screenshot <https://support.apple.com/guide/mac-help/take-a-screenshot-mh26782/mac>`_
+   on macOS.
 
 5. Sharing a video of your running game can also be really **useful to
    troubleshoot your game**. You can use programs like `OBS Studio
