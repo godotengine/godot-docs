@@ -9,3 +9,4 @@ GDExtension
 
    what_is_gdextension
    gdextension_cpp_example
+   gdextension_file
