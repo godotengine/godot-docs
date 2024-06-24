@@ -1565,7 +1565,7 @@ in the loop variable.
         statement # Similar to range(3).
 
     for i in 2.2:
-        statement # Similar to range(ceil(2.2)).
+        statement # Similar to range(round(2.2)).
 
 If you want to assign values on an array as it is being iterated through, it
 is best to use ``for i in array.size()``.
