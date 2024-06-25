@@ -81,7 +81,7 @@ Following is the list of providers:
   Switch porting and publishing of Godot games.
 - `Seaven Studio <https://www.seaven-studio.com/>`_ offers
   Switch, Xbox One, Xbox Series, PlayStation 4 & PlayStation 5 porting of Godot games.
-
+- `Sickhead Games <https://www.sickhead.com>`_ offers console porting to Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S for Godot games.
 
 If your company offers porting, or porting *and* publishing services for Godot games,
 feel free to
