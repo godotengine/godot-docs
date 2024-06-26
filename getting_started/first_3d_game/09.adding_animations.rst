@@ -283,14 +283,14 @@ the *Mob*'s script and at the end of the ``initialize()`` function, add the foll
 
    func initialize(start_position, player_position):
        #...
-       $AnimationPlayer.speed_scale = random_speed / min_speed
+       $AnimationPlayer.speed_scale = float(random_speed) / min_speed
 
  .. code-tab:: csharp
 
     public void Initialize(Vector3 startPosition, Vector3 playerPosition)
     {
         // ...
-        GetNode<AnimationPlayer>("AnimationPlayer").SpeedScale = randomSpeed / MinSpeed;
+        GetNode<AnimationPlayer>("AnimationPlayer").SpeedScale = (float) randomSpeed / MinSpeed;
     }
 
 And with that, you finished coding your first complete 3D game.
@@ -549,7 +549,7 @@ And the *Mob*'s script.
         # in order to move in the direction the mob is looking.
         velocity = velocity.rotated(Vector3.UP, rotation.y)
 
-        $AnimationPlayer.speed_scale = random_speed / min_speed
+        $AnimationPlayer.speed_scale = float(random_speed) / min_speed
 
     func _on_visible_on_screen_notifier_3d_screen_exited():
         queue_free()
@@ -598,7 +598,7 @@ And the *Mob*'s script.
             // in order to move in the direction the mob is looking.
             Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
 
-            GetNode<AnimationPlayer>("AnimationPlayer").SpeedScale = randomSpeed / MinSpeed;
+            GetNode<AnimationPlayer>("AnimationPlayer").SpeedScale = (float) randomSpeed / MinSpeed;
         }
 
         public void Squash()
