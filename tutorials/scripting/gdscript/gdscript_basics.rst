@@ -1838,6 +1838,14 @@ If you want to use ``extends`` too, you can keep both on the same line::
     and this includes arrays and dictionaries. This is in the spirit of thread safety,
     since scripts can be initialized in separate threads without the user knowing.
 
+.. warning::
+
+    The Godot editor will hide these custom classes with names that beging with the prefix
+    "Editor" in the 'Create New Node' or 'Create New Scene' dialog windows. The classes 
+    are available for instantiation at runtime via their class names, but are 
+    automatically hidden by the editor windows along with the built-in editor nodes used 
+    by the Godot editor.
+
 Inheritance
 ^^^^^^^^^^^
 
