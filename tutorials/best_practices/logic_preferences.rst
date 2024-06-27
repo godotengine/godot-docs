@@ -119,7 +119,7 @@ consider:
    in exceptional cases, one may wish not to do this:
 
    1. If the 'imported' class is liable to change, then it should be a property
-      instead, initialized either using an ``export`` or a ``load()`` (and
+      instead, initialized either using an ``@export`` or a ``load()`` (and
       perhaps not even initialized until later).
 
    2. If the script requires a great many dependencies, and one does not wish

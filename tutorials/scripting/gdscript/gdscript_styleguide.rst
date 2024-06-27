@@ -843,7 +843,7 @@ variables, in that order.
 
 .. note::
 
-    The GDScript compiler evaluates onready variables right before the ``_ready``
+    GDScript evaluates ``@onready`` variables right before the ``_ready``
     callback. You can use that to cache node dependencies, that is to say, to get
     child nodes in the scene that your class relies on. This is what the example
     above shows.
