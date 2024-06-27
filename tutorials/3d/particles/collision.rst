@@ -11,10 +11,6 @@ world. If you need particles to collide with the environment, you have to set up
 There are four of them: :ref:`class_GPUParticlesCollisionBox3D`, :ref:`class_GPUParticlesCollisionSphere3D`,
 :ref:`class_GPUParticlesCollisionSDF3D`, and :ref:`class_GPUParticlesCollisionHeightField3D`.
 
-.. note::
-
-   GPU Particle collision is not yet implemented for 2D particle systems.
-
 Common properties
 ~~~~~~~~~~~~~~~~~
 
@@ -175,3 +171,22 @@ level geometry and instead shoot right through it, try setting this property to 
 
 The ``Bake Mask`` property controls which meshes will be considered when the SDF is baked. Only meshes that
 render on the active layers in the bake mask contribute to particle collision.
+
+Troubleshooting
+~~~~~~~~~~~~~~~
+
+For particle collision to work, the particle's :ref:`visibility AABB <doc_3d_particles_properties_draw>`
+must overlap with the collider's AABB. If collisions appear to be not working
+despite colliders being set up, generate an updated visibility AABB by selecting
+the GPUParticles3D node and choosing **GPUParticles3D > Generate Visibility AABB…**
+at the top of the 3D editor viewport.
+
+If the particles move fast and colliders are thin. There are two solutions for this:
+
+- Make the colliders thicker. For instance, if particles cannot get below a
+  solid floor, you could make the collider representing the floor thicker than
+  its actual visual representation. The heightfield collider automatically
+  handles this by design, as heightfields cannot represent "room over room"
+  collision.
+- Increased ``Fixed FPS`` in the GPUParticles3D node, which will perform collision
+  checks more often. This comes at a performance cost, so avoid setting this too high.
