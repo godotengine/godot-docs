@@ -133,8 +133,13 @@ on the corresponding tab above the viewport.
 
 .. image:: img/instancing_scene_tabs.webp
 
-Select one of the instanced Ball nodes and, in the Inspector, set its Gravity
-Scale value to ``10``.
+Select one of the instanced Ball nodes. In the Inspector, click the arrow next
+to the  **Physics Material** property then choose **Make Unique**
+to allow physics properties to be modified separately for this instance.
+
+.. image:: img/instancing_make_unique.png
+
+Set its **Gravity Scale** value to ``10``.
 
 .. image:: img/instancing_property_gravity_scale.png
 
