@@ -193,7 +193,7 @@ it is nicer to exit on failure than to hang the system.
 
 
 _on_openxr_session_begun
-----------------
+------------------------
 
 This signal is emitted by OpenXR when our session is setup.
 This means the headset has run through setting everything up and is ready to begin receiving content from us.
@@ -295,7 +295,7 @@ Not matching the physics update rate will cause stuttering as frames are rendere
     ...
 
 _on_openxr_visible_state
-----------------
+------------------------
 
 This signal is emitted by OpenXR when our game becomes visible but is not focussed.
 This is a bit of a weird description in OpenXR but it basically means that our game has just started
@@ -364,7 +364,7 @@ If you haven't, you can connect a method to the signal that performs additional 
     ...
 
 _on_openxr_focused_state
------------------
+------------------------
 
 This signal is emitted by OpenXR when our game gets focus.
 This is done at the completion of our startup,
@@ -422,7 +422,7 @@ While handling our signal we will update the focusses state, unpause our node an
     ...
 
 _on_openxr_stopping
------------------
+-------------------
 
 This signal is emitted by OpenXR when we enter our stop state.
 There are some differences between platforms when this happens.
@@ -460,7 +460,7 @@ For now this method is only a place holder.
 
 
 _on_openxr_pose_recentered
-------------------
+--------------------------
 
 This signal is emitted by OpenXR when the user requests their view to be recentered.
 Basically this communicates to your game that the user is now facing forward
