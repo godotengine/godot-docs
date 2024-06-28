@@ -21,6 +21,7 @@ Video tutorials
 
 - `Bastiaan Olij <https://www.youtube.com/BastiaanOlij>`_ (3D, AR and VR, GDScript)
 - `BornCG <https://www.youtube.com/playlist?list=PLda3VoSoc_TTp8Ng3C57spnNkOw3Hm_35>`_ (2D and 3D, GDScript)
+- `Brackeys <https://youtu.be/LOhfqjmasi0?si=dksdugZQdHhI9C0O>`_ (2D, GDScript)
 - `Clear Code <https://www.youtube.com/watch?v=nAh_Kx5Zh5Q>`_ (2D, GDScript, Programming Basics)
 - `FencerDevLog <https://www.youtube.com/@FencerDevLog>`_ (2D, 3D, GDScript, Shaders)
 - `FinePointCGI <https://www.youtube.com/channel/UCSojAWUnEUTUcdA9iJ6bryQ>`_ (2D, 3D, GDScript and C#)
