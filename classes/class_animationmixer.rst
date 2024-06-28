@@ -381,7 +381,7 @@ This makes it more convenient to preview and edit animations in the editor, as c
 - void **set_root_motion_track** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_root_motion_track** **(** **)**
 
-The path to the Animation track used for root motion. Paths must be valid scene-tree paths to a node, and must be specified starting from the parent node of the node that will reproduce the animation. To specify a track that controls properties or bones, append its name after the path, separated by ``":"``. For example, ``"character/skeleton:ankle"`` or ``"character/mesh:transform/local"``.
+The path to the Animation track used for root motion. Paths must be valid scene-tree paths to a node, and must be specified starting from the parent node of the node that will reproduce the animation; for example, the root_node assigned in the AnimationPlayer or AnimationTree. To specify a track that controls properties or bones, append its name after the path, separated by ``":"``. For example, ``"character/skeleton:ankle"`` or ``"character/mesh:transform/local"``.
 
 If the track has type :ref:`Animation.TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`, :ref:`Animation.TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>` or :ref:`Animation.TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>` the transformation will be canceled visually, and the animation will appear to stay in place. See also :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>`, :ref:`get_root_motion_rotation<class_AnimationMixer_method_get_root_motion_rotation>`, :ref:`get_root_motion_scale<class_AnimationMixer_method_get_root_motion_scale>` and :ref:`RootMotionView<class_RootMotionView>`.
 
