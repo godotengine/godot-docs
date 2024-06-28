@@ -6,9 +6,7 @@ Internationalizing games
 Introduction
 ------------
 
-Sería excelente que el mundo hablara solo un idioma (It would be great if the
-world spoke only one language). Unfortunately for
-us developers, that is not the case. While indie or niche games usually
+While indie or niche games usually
 do not need localization, games targeting a more massive market
 often require localization. Godot offers many tools to make this process
 more straightforward, so this tutorial is more like a collection of
