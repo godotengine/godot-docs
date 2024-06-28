@@ -16,6 +16,8 @@ These are the four concepts you will learn here. We're going to look at them
 briefly to give you a sense of how the engine works. In the getting started
 series, you will get to use them in practice.
 
+.. _doc_key_concepts_overview_scenes:
+
 Scenes
 ------
 
