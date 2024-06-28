@@ -192,7 +192,7 @@ it is nicer to exit on failure than to hang the system.
     ...
 
 
-On session begun
+_on_openxr_session_begun
 ----------------
 
 This signal is emitted by OpenXR when our session is setup.
@@ -294,7 +294,7 @@ Not matching the physics update rate will cause stuttering as frames are rendere
 
     ...
 
-On visible state
+_on_openxr_visible_state
 ----------------
 
 This signal is emitted by OpenXR when our game becomes visible but is not focussed.
@@ -363,7 +363,7 @@ If you haven't, you can connect a method to the signal that performs additional 
 
     ...
 
-On focussed state
+_on_openxr_focused_state
 -----------------
 
 This signal is emitted by OpenXR when our game gets focus.
@@ -421,7 +421,7 @@ While handling our signal we will update the focusses state, unpause our node an
 
     ...
 
-On stopping state
+_on_openxr_stopping
 -----------------
 
 This signal is emitted by OpenXR when we enter our stop state.
@@ -459,7 +459,7 @@ For now this method is only a place holder.
     ...
 
 
-On pose recentered
+_on_openxr_pose_recentered
 ------------------
 
 This signal is emitted by OpenXR when the user requests their view to be recentered.
