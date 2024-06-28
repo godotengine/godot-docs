@@ -31,10 +31,10 @@ Types of assets
 Be aware that there are, broadly, two different types of assets you can post.
 
 * Assets labeled as "Templates", "Projects", or "Demos" appear under
-  the "Asset Library Projects" tab in the Godot Project Manager. These assets are
+  the "Asset Library" tab in the Godot Project Manager. These assets are
   standalone Godot projects that can run by themselves.
 
-* Other assets show up inside of the Godot editor under the "AssetLib"
+* Other assets show up inside of the Godot editor under the "Asset Library"
   main screen tab, next to "2D", "3D", and "Script". These assets are
   meant to be downloaded and placed into an existing Godot project.
 
