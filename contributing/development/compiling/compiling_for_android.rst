@@ -38,7 +38,7 @@ For compiling under Windows, Linux or macOS, the following is required:
 - Gradle (will be downloaded and installed automatically if missing).
 - JDK 17 (either OpenJDK or Oracle JDK).
 
-   - You can download a build from `ojdkbuild <https://adoptium.net/temurin/releases/?variant=openjdk17>`_.
+   - You can download a build from `Adoptium <https://adoptium.net/temurin/releases/?variant=openjdk17>`_.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.
