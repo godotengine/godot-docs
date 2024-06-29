@@ -321,8 +321,6 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/debug/enable_pseudolocalization<class_EditorSettings_property_interface/editor/debug/enable_pseudolocalization>`                                                                           |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/display_scale<class_EditorSettings_property_interface/editor/display_scale>`                                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/dock_tab_style<class_EditorSettings_property_interface/editor/dock_tab_style>`                                                                                                             |
@@ -569,6 +567,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/behavior/indent/type<class_EditorSettings_property_text_editor/behavior/indent/type>`                                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`text_editor/behavior/navigation/custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/custom_word_separators>`                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/drag_and_drop_selection<class_EditorSettings_property_text_editor/behavior/navigation/drag_and_drop_selection>`                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/move_caret_on_right_click<class_EditorSettings_property_text_editor/behavior/navigation/move_caret_on_right_click>`                                                         |
@@ -580,6 +580,10 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/smooth_scrolling<class_EditorSettings_property_text_editor/behavior/navigation/smooth_scrolling>`                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/stay_in_script_editor_on_node_selected<class_EditorSettings_property_text_editor/behavior/navigation/stay_in_script_editor_on_node_selected>`                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/use_custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators>`                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/navigation/use_default_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators>`                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/behavior/navigation/v_scroll_speed<class_EditorSettings_property_text_editor/behavior/navigation/v_scroll_speed>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2451,20 +2455,6 @@ The custom editor scale factor to use. This can be used for displays with very h
 
 ----
 
-.. _class_EditorSettings_property_interface/editor/debug/enable_pseudolocalization:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **interface/editor/debug/enable_pseudolocalization** :ref:`🔗<class_EditorSettings_property_interface/editor/debug/enable_pseudolocalization>`
-
-If ``true``, lengthens the editor's localizable strings and replaces their characters with accented variants. This allows spotting non-localizable strings easily, while also ensuring the UI layout doesn't break when strings are made longer (as many languages require strings to be longer).
-
-This is a debugging feature and should only be enabled when working on the editor itself.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_EditorSettings_property_interface/editor/display_scale:
 
 .. rst-class:: classref-property
@@ -4045,6 +4035,18 @@ The indentation style to use (tabs or spaces).
 
 ----
 
+.. _class_EditorSettings_property_text_editor/behavior/navigation/custom_word_separators:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **text_editor/behavior/navigation/custom_word_separators** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/custom_word_separators>`
+
+The characters to consider as word delimiters if :ref:`text_editor/behavior/navigation/use_custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators>` is ``true``. The characters should be defined without separation, for example ``#_!``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_text_editor/behavior/navigation/drag_and_drop_selection:
 
 .. rst-class:: classref-property
@@ -4114,6 +4116,30 @@ If ``true``, allows scrolling in sub-line intervals and enables a smooth scrolli
 :ref:`bool<class_bool>` **text_editor/behavior/navigation/stay_in_script_editor_on_node_selected** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/stay_in_script_editor_on_node_selected>`
 
 If ``true``, prevents automatically switching between the Script and 2D/3D screens when selecting a node in the Scene tree dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/behavior/navigation/use_custom_word_separators** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators>`
+
+If ``false``, using :kbd:`Ctrl + Left` or :kbd:`Ctrl + Right` (:kbd:`Cmd + Left` or :kbd:`Cmd + Right` on macOS) bindings will use the behavior of :ref:`text_editor/behavior/navigation/use_default_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators>`. If ``true``, it will also stop the caret if a character within :ref:`text_editor/behavior/navigation/custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/custom_word_separators>` is detected. Useful for subword moving. This behavior also will be applied to the behavior of text selection.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/behavior/navigation/use_default_word_separators** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators>`
+
+If ``false``, using :kbd:`Ctrl + Left` or :kbd:`Ctrl + Right` (:kbd:`Cmd + Left` or :kbd:`Cmd + Right` on macOS) bindings will stop moving caret only if a space or punctuation is detected. If ``true``, it will also stop the caret if a character is part of ```!"#$%&'()*+,-./:;<=>?@[\]^`{|}~``, the Unicode General Punctuation table, or the Unicode CJK Punctuation table. Useful for subword moving. This behavior also will be applied to the behavior of text selection.
 
 .. rst-class:: classref-item-separator
 

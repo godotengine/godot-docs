@@ -776,6 +776,10 @@ Sets all bone poses to rests.
 
 **Deprecated:** This method may be changed or removed in future versions.
 
+This method exists for compatibility with old structures in which the **Skeleton3D** does not have a :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>` as a child, but directly has :ref:`PhysicalBone3D<class_PhysicalBone3D>`\ s as children.
+
+In case you need to raycast to it without running :ref:`physical_bones_start_simulation<class_Skeleton3D_method_physical_bones_start_simulation>`, call this method with ``enabled == true``.
+
 .. rst-class:: classref-item-separator
 
 ----

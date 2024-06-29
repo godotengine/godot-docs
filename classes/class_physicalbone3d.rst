@@ -24,6 +24,8 @@ Description
 
 The **PhysicalBone3D** node is a physics body that can be used to make bones in a :ref:`Skeleton3D<class_Skeleton3D>` react to physics.
 
+\ **Note:** In order to detect physical bones with raycasts, the :ref:`SkeletonModifier3D.active<class_SkeletonModifier3D_property_active>` property of the parent :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>` must be ``true`` and the :ref:`Skeleton3D<class_Skeleton3D>`'s bone must be assigned to **PhysicalBone3D** correctly; it means that :ref:`get_bone_id<class_PhysicalBone3D_method_get_bone_id>` should return a valid id (``>= 0``).
+
 .. rst-class:: classref-reftable-group
 
 Properties
