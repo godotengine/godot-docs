@@ -59,6 +59,8 @@ Properties
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`context_menu_enabled<class_TextEdit_property_context_menu_enabled>`                                   | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`custom_word_separators<class_TextEdit_property_custom_word_separators>`                               | ``""``                                                                              |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`deselect_on_focus_loss_enabled<class_TextEdit_property_deselect_on_focus_loss_enabled>`               | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`drag_and_drop_selection_enabled<class_TextEdit_property_drag_and_drop_selection_enabled>`             | ``true``                                                                            |
@@ -116,6 +118,10 @@ Properties
    | :ref:`String<class_String>`                                       | :ref:`text<class_TextEdit_property_text>`                                                                   | ``""``                                                                              |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`text_direction<class_TextEdit_property_text_direction>`                                               | ``0``                                                                               |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`use_custom_word_separators<class_TextEdit_property_use_custom_word_separators>`                       | ``false``                                                                           |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`use_default_word_separators<class_TextEdit_property_use_default_word_separators>`                     | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`virtual_keyboard_enabled<class_TextEdit_property_virtual_keyboard_enabled>`                           | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -1234,6 +1240,23 @@ If ``true``, a right-click displays the context menu.
 
 ----
 
+.. _class_TextEdit_property_custom_word_separators:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **custom_word_separators** = ``""`` :ref:`🔗<class_TextEdit_property_custom_word_separators>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_custom_word_separators**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_custom_word_separators**\ (\ )
+
+The characters to consider as word delimiters if :ref:`use_custom_word_separators<class_TextEdit_property_use_custom_word_separators>` is ``true``. The characters should be defined without separation, for example ``#_!``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextEdit_property_deselect_on_focus_loss_enabled:
 
 .. rst-class:: classref-property
@@ -1692,6 +1715,40 @@ String value of the **TextEdit**.
 - :ref:`TextDirection<enum_Control_TextDirection>` **get_text_direction**\ (\ )
 
 Base text writing direction.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextEdit_property_use_custom_word_separators:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_custom_word_separators** = ``false`` :ref:`🔗<class_TextEdit_property_use_custom_word_separators>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_custom_word_separators**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_custom_word_separators_enabled**\ (\ )
+
+If ``false``, using :kbd:`Ctrl + Left` or :kbd:`Ctrl + Right` (:kbd:`Cmd + Left` or :kbd:`Cmd + Right` on macOS) bindings will use the behavior of :ref:`use_default_word_separators<class_TextEdit_property_use_default_word_separators>`. If ``true``, it will also stop the caret if a character within :ref:`custom_word_separators<class_TextEdit_property_custom_word_separators>` is detected. Useful for subword moving. This behavior also will be applied to the behavior of text selection.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextEdit_property_use_default_word_separators:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_default_word_separators** = ``true`` :ref:`🔗<class_TextEdit_property_use_default_word_separators>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_default_word_separators**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_default_word_separators_enabled**\ (\ )
+
+If ``false``, using :kbd:`Ctrl + Left` or :kbd:`Ctrl + Right` (:kbd:`Cmd + Left` or :kbd:`Cmd + Right` on macOS) bindings will stop moving caret only if a space or punctuation is detected. If ``true``, it will also stop the caret if a character is part of ``!"#$%&'()*+,-./:;<=>?@[\]^`{|}~``, the Unicode General Punctuation table, or the Unicode CJK Punctuation table. Useful for subword moving. This behavior also will be applied to the behavior of text selection.
 
 .. rst-class:: classref-item-separator
 
