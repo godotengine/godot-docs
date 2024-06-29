@@ -91,7 +91,7 @@ The compression mode to use on import.
 
 :ref:`int<class_int>` **edit/loop_begin** = ``0`` :ref:`🔗<class_ResourceImporterWAV_property_edit/loop_begin>`
 
-The begin loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong** or **Backward**. This is set in seconds after the beginning of the audio file.
+The begin loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong**, or **Backward**. This is set in samples after the beginning of the audio file.
 
 .. rst-class:: classref-item-separator
 
@@ -103,7 +103,7 @@ The begin loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_
 
 :ref:`int<class_int>` **edit/loop_end** = ``-1`` :ref:`🔗<class_ResourceImporterWAV_property_edit/loop_end>`
 
-The end loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong** or **Backward**. This is set in seconds after the beginning of the audio file. A value of ``-1`` uses the end of the audio file as the end loop point.
+The end loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong**, or **Backward**. This is set in samples after the beginning of the audio file. A value of ``-1`` uses the end of the audio file as the end loop point.
 
 .. rst-class:: classref-item-separator
 

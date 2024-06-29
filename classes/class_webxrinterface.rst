@@ -75,9 +75,10 @@ Here's the minimum code required to start an immersive VR session:
         # supported.
         webxr_interface.requested_reference_space_types = 'bounded-floor, local-floor, local'
         # In order to use 'local-floor' or 'bounded-floor' we must also
-        # mark the features as required or optional.
+        # mark the features as required or optional. By including 'hand-tracking'
+        # as an optional feature, it will be enabled if supported.
         webxr_interface.required_features = 'local-floor'
-        webxr_interface.optional_features = 'bounded-floor'
+        webxr_interface.optional_features = 'bounded-floor, hand-tracking'
     
         # This will return false if we're unable to even request the session,
         # however, it can still fail asynchronously later in the process, so we
@@ -94,7 +95,10 @@ Here's the minimum code required to start an immersive VR session:
         # This will be the reference space type you ultimately got, out of the
         # types that you requested above. This is useful if you want the game to
         # work a little differently in 'bounded-floor' versus 'local-floor'.
-        print ("Reference space type: " + webxr_interface.reference_space_type)
+        print("Reference space type: ", webxr_interface.reference_space_type)
+        # This will be the list of features that were successfully enabled
+        # (except on browsers that don't support this property).
+        print("Enabled features: ", webxr_interface.enabled_features)
     
     func _webxr_session_ended():
         $Button.visible = true
@@ -419,7 +423,9 @@ Property Descriptions
 
 A comma-separated list of features that were successfully enabled by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
 
-This may include features requested by setting :ref:`required_features<class_WebXRInterface_property_required_features>` and :ref:`optional_features<class_WebXRInterface_property_optional_features>`.
+This may include features requested by setting :ref:`required_features<class_WebXRInterface_property_required_features>` and :ref:`optional_features<class_WebXRInterface_property_optional_features>`, and will only be available after :ref:`session_started<class_WebXRInterface_signal_session_started>` has been emitted.
+
+\ **Note:** This may not be support by all web browsers, in which case it will be an empty string.
 
 .. rst-class:: classref-item-separator
 
@@ -442,7 +448,7 @@ If a user's browser or device doesn't support one of the given features, initial
 
 This doesn't have any effect on the interface when already initialized.
 
-Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__. If you want to use a particular reference space type, it must be listed in either :ref:`required_features<class_WebXRInterface_property_required_features>` or :ref:`optional_features<class_WebXRInterface_property_optional_features>`.
+Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__, or include other features like ``"hand-tracking"`` to enable hand tracking.
 
 .. rst-class:: classref-item-separator
 
@@ -506,7 +512,7 @@ If a user's browser or device doesn't support one of the given features, initial
 
 This doesn't have any effect on the interface when already initialized.
 
-Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__. If you want to use a particular reference space type, it must be listed in either :ref:`required_features<class_WebXRInterface_property_required_features>` or :ref:`optional_features<class_WebXRInterface_property_optional_features>`.
+Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__, or include other features like ``"hand-tracking"`` to enable hand tracking.
 
 .. rst-class:: classref-item-separator
 

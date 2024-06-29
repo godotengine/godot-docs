@@ -213,7 +213,7 @@ Audio format. See :ref:`Format<enum_AudioStreamWAV_Format>` constants for values
 - |void| **set_loop_begin**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_loop_begin**\ (\ )
 
-The loop start point (in number of samples, relative to the beginning of the sample). This information will be imported automatically from the WAV file if present.
+The loop start point (in number of samples, relative to the beginning of the stream). This information will be imported automatically from the WAV file if present.
 
 .. rst-class:: classref-item-separator
 
@@ -230,7 +230,7 @@ The loop start point (in number of samples, relative to the beginning of the sam
 - |void| **set_loop_end**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_loop_end**\ (\ )
 
-The loop end point (in number of samples, relative to the beginning of the sample). This information will be imported automatically from the WAV file if present.
+The loop end point (in number of samples, relative to the beginning of the stream). This information will be imported automatically from the WAV file if present.
 
 .. rst-class:: classref-item-separator
 
