@@ -63,7 +63,7 @@ override the value written in the script.
 
 .. image:: img/export_variable.webp
 
-Your ``player.gd`` script should already contain
+Your ``Player.gd`` script should already contain
 a ``_ready()`` and a ``_process()`` function.
 If you didn't select the default template shown above,
 create these functions while following the lesson.

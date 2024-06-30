@@ -72,7 +72,7 @@ see a list of named checkboxes.
 
 |image4|
 
-Next up are the ``Player`` and the ``Mob``. Open ``player.tscn`` by double-clicking
+Next up are the ``Player`` and the ``Mob``. Open ``Player.tscn`` by double-clicking
 the file in the *FileSystem* dock.
 
 Select the *Player* node and set its *Collision -> Mask* to both "enemies" and

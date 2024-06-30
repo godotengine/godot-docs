@@ -7,7 +7,7 @@ In this part, you're going to code the monsters, which we'll call mobs. In the
 next lesson, we'll spawn them randomly around the playable area.
 
 Let's design the monsters themselves in a new scene. The node structure is going
-to be similar to the ``player.tscn`` scene.
+to be similar to the ``Player.tscn`` scene.
 
 Create a scene with, once again, a :ref:`CharacterBody3D <class_CharacterBody3D>` node as its root. Name it
 ``Mob``. Add a child node :ref:`Node3D <class_Node3D>`, name it ``Pivot``. And drag and drop

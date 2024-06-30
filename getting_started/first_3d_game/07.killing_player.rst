@@ -15,7 +15,7 @@ works well for hitboxes.
 Hitbox with the Area node
 -------------------------
 
-Head back to the ``player.tscn`` scene and add a new child node :ref:`Area3D <class_Area3D>`. Name it
+Head back to the ``Player.tscn`` scene and add a new child node :ref:`Area3D <class_Area3D>`. Name it
 ``MobDetector``
 Add a :ref:`CollisionShape3D <class_CollisionShape3D>` node as a child of it.
 
