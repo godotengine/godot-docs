@@ -7,7 +7,7 @@ In this part, you're going to code the monsters, which we'll call mobs. In the
 next lesson, we'll spawn them randomly around the playable area.
 
 Let's design the monsters themselves in a new scene. The node structure is going
-to be similar to the ``Player.tscn`` scene.
+to be similar to the ``player.tscn`` scene.
 
 Create a scene with, once again, a :ref:`CharacterBody3D <class_CharacterBody3D>` node as its root. Name it
 ``Mob``. Add a child node :ref:`Node3D <class_Node3D>`, name it ``Pivot``. And drag and drop
@@ -252,7 +252,7 @@ method. This function destroys the instance it's called on.
 Our monster is ready to enter the game! In the next part, you will spawn
 monsters in the game level.
 
-Here is the complete ``Mob.gd`` script for reference.
+Here is the complete ``mob.gd`` script for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

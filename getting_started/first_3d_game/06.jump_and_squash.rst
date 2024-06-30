@@ -72,7 +72,7 @@ see a list of named checkboxes.
 
 |image4|
 
-Next up are the ``Player`` and the ``Mob``. Open ``Player.tscn`` by double-clicking
+Next up are the ``Player`` and the ``Mob``. Open ``player.tscn`` by double-clicking
 the file in the *FileSystem* dock.
 
 Select the *Player* node and set its *Collision -> Mask* to both "enemies" and
@@ -318,7 +318,7 @@ such as counting the score multiple times for one kill.
 We are calling one undefined function, ``mob.squash()``, so we have to add it to
 the Mob class.
 
-Open the script ``Mob.gd`` by double-clicking on it in the *FileSystem* dock. At
+Open the script ``mob.gd`` by double-clicking on it in the *FileSystem* dock. At
 the top of the script, we want to define a new signal named ``squashed``. And at
 the bottom, you can add the squash function, where we emit the signal and
 destroy the mob.
