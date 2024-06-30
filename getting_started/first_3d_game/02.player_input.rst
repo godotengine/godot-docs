@@ -79,7 +79,7 @@ the eye icon next to the ``Character`` or the ``Pivot`` nodes.
 
 |image5|
 
-Save the scene as ``player.tscn``
+Save the scene as ``Player.tscn``
 
 With the nodes ready, we can almost get coding. But first, we need to define
 some input actions.
