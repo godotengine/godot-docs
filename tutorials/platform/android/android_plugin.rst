@@ -363,7 +363,7 @@ developers / users intend to run the Godot Editor. Not doing so may prevent deve
 users from writing code that accesses the plugin from within the Godot Editor.
 
 This may involve creating dummy plugins for the host OS just so the API is published to the
-editor. You can use the [godot-cpp-template](https://github.com/godotengine/godot-cpp-template)
+editor. You can use the `godot-cpp-template <https://github.com/godotengine/godot-cpp-template>`__
 github template for reference on how to do so.
 
 Godot crashes upon load
