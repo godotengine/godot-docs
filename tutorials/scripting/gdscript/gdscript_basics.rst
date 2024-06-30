@@ -1034,11 +1034,14 @@ Member variables are initialized in the following order:
    (``0`` for ``int``, ``false`` for ``bool``, etc.).
 2. The specified values are assigned in the order of the variables in the script,
    from top to bottom.
-   - *(Only for ``Node``-derived classes)* If the ``@onready`` annotation is applied to a variable, its initialization is deferred to step 5.
+
+   - (Only for ``Node``-derived classes) If the ``@onready`` annotation is applied to a variable,
+     its initialization is deferred to step 5.
+
 3. If defined, the ``_init()`` method is called.
 4. When instantiating scenes and resources, the exported values are assigned.
-5. *(Only for ``Node``-derived classes)* ``@onready`` variables are initialized.
-6. *(Only for ``Node``-derived classes)* If defined, the ``_ready()`` method is called.
+5. (Only for ``Node``-derived classes) ``@onready`` variables are initialized.
+6. (Only for ``Node``-derived classes) If defined, the ``_ready()`` method is called.
 
 .. warning::
 
@@ -1350,8 +1353,8 @@ return early with the ``return`` keyword, but they can't return any value.
 Referencing functions
 ^^^^^^^^^^^^^^^^^^^^^
 
-Functions are first-class items in terms of the :ref:`Callable <class_Callable>` object. Referencing a
-function by name without calling it will automatically generate the proper
+Functions are first-class values in terms of the :ref:`Callable <class_Callable>` object.
+Referencing a function by name without calling it will automatically generate the proper
 callable. This can be used to pass functions as arguments.
 
 ::
@@ -1368,43 +1371,86 @@ callable. This can be used to pass functions as arguments.
     func _ready() -> void:
         var my_array = [1, 2, 3]
         var plus_one = map(my_array, add1)
-        print(plus_one) # Prints [2, 3, 4].
+        print(plus_one) # Prints `[2, 3, 4]`.
 
-.. note:: Callables **must** be called with the ``call`` method. You cannot use
-          the ``()`` operator directly. This behavior is implemented to avoid
-          performance issues on direct function calls.
+.. note::
+
+    Callables **must** be called with the :ref:`call() <class_Callable_method_call>` method.
+    You cannot use the ``()`` operator directly. This behavior is implemented to avoid
+    performance issues on direct function calls.
 
 Lambda functions
 ^^^^^^^^^^^^^^^^
 
-Lambda functions allow you to declare functions that do not belong to a class. Instead a :ref:`Callable <class_Callable>` object is created and assigned to a variable directly.
-This can be useful to create Callables to pass around without polluting the class scope.
+Lambda functions allow you to declare functions that do not belong to a class. Instead, a
+:ref:`Callable <class_Callable>` object is created and assigned to a variable directly.
+This can be useful to create callables to pass around without polluting the class scope.
 
 ::
 
-    var lambda = func(x): print(x)
-    lambda.call(42) # Prints "42"
+    var lambda = func (x):
+        print(x)
 
-Lambda functions can be named for debugging purposes::
+To call the created lambda you can use the :ref:`call() <class_Callable_method_call>` method::
+
+    lambda.call(42) # Prints `42`.
+
+Lambda functions can be named for debugging purposes (the name is displayed in the Debugger)::
 
     var lambda = func my_lambda(x):
         print(x)
 
-Note that if you want to return a value from a lambda, an explicit ``return``
+You can specify type hints for lambda functions in the same way as for regular ones::
+
+    var lambda := func (x: int) -> void:
+        print(x)
+
+Note that if you want to return a value from a lambda function, an explicit ``return``
 is required (you can't omit ``return``)::
 
-    var lambda = func(x): return x ** 2
+    var lambda = func (x): return x ** 2
     print(lambda.call(2)) # Prints `4`.
 
-Lambda functions capture the local environment. Local variables are passed by value, so they won't be updated in the lambda if changed in the local function::
+Lambda functions capture the local environment::
 
     var x = 42
-    var my_lambda = func(): print(x)
-    my_lambda.call() # Prints "42"
-    x = "Hello"
-    my_lambda.call() # Prints "42"
+    var lambda = func ():
+        print(x) # Prints `42`.
+    lambda.call()
 
-.. note:: The values of the outer scope behave like constants. Therefore, if you declare an array or dictionary, it can still be modified afterwards.
+.. warning::
+
+    Local variables are captured by value once, when the lambda is created.
+    So they won't be updated in the lambda if reassigned in the outer function::
+
+        var x = 42
+        var lambda = func (): print(x)
+        lambda.call() # Prints `42`.
+        x = "Hello"
+        lambda.call() # Prints `42`.
+
+    Also, a lambda cannot reassign an outer local variable. After exiting the lambda,
+    the variable will be unchanged, because the lambda capture implicitly shadows it::
+
+        var x = 42
+        var lambda = func ():
+            print(x) # Prints `42`.
+            x = "Hello" # Produces the `CONFUSABLE_CAPTURE_REASSIGNMENT` warning.
+            print(x) # Prints `Hello`.
+        lambda.call()
+        print(x) # Prints `42`.
+
+    However, if you use pass-by-reference data types (arrays, dictionaries, and objects),
+    then the content changes are shared until you reassign the variable::
+
+        var a = []
+        var lambda = func ():
+            a.append(1)
+            print(a) # Prints `[1]`.
+            a = [2] # Produces the `CONFUSABLE_CAPTURE_REASSIGNMENT` warning.
+            print(a) # Prints `[2]`.
+        lambda.call()
+        print(a) # Prints `[1]`.
 
 Static functions
 ^^^^^^^^^^^^^^^^
@@ -1415,7 +1461,7 @@ A static function has access to static variables. Also static functions are usef
     static func sum2(a, b):
         return a + b
 
-Lambdas cannot be declared static.
+Lambda functions cannot be declared static.
 
 See also `Static variables`_ and `Static constructor`_.
 

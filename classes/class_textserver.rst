@@ -4164,8 +4164,9 @@ When ``chars_per_line`` is greater than zero, line break boundaries are returned
 ::
 
     var ts = TextServerManager.get_primary_interface()
-    print(ts.string_get_word_breaks("Godot Engine")) # Prints [0, 5, 6, 12]
-    print(ts.string_get_word_breaks("Godot Engine", "en", 5)) # Prints [0, 5, 6, 11, 11, 12]
+    print(ts.string_get_word_breaks("The Godot Engine, 4")) # Prints [0, 3, 4, 9, 10, 16, 18, 19], which corresponds to the following substrings: "The", "Godot", "Engine", "4"
+    print(ts.string_get_word_breaks("The Godot Engine, 4", "en", 5)) # Prints [0, 3, 4, 9, 10, 15, 15, 19], which corresponds to the following substrings: "The", "Godot", "Engin", "e, 4"
+    print(ts.string_get_word_breaks("The Godot Engine, 4", "en", 10)) # Prints [0, 9, 10, 19], which corresponds to the following substrings: "The Godot", "Engine, 4"
 
 .. rst-class:: classref-item-separator
 
