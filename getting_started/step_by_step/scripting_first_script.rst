@@ -101,6 +101,7 @@ the following line of code:
  .. code-tab:: csharp C#
 
     using Godot;
+    using System;
 
     public partial class MySprite2D : Sprite2D
     {
