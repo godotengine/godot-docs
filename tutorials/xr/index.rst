@@ -31,6 +31,7 @@ Advanced topics
    xr_room_scale
    openxr_composition_layers
    openxr_hand_tracking
+   openxr_body_tracking
 
 Godot XR Tools
 --------------
