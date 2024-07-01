@@ -13,7 +13,7 @@ corner.
 
 .. image:: img/editor_ui_intro_project_manager_02.webp
 
-Then on the settings page seelct the language you want from the dropdown menu.
+Then on the settings page select the language you want from the dropdown menu.
 
 .. image:: img/editor_ui_intro_project_manager_10.webp
 
@@ -97,7 +97,7 @@ This will open up the manage project tags window. To add a tag click the plus bu
 
 .. image:: img/editor_ui_intro_project_manager_12.webp
 
-type out the tag name, and click "ok". Your project will now have a tag added to it.
+Type out the tag name, and click "ok". Your project will now have a tag added to it.
 These tags can be used for any other project in your project manager. In addition tags
 will stay with projects. So if you tag your project, send it to another machine and
 import it into the project manager you will see the tags you created.
