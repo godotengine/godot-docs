@@ -152,8 +152,8 @@ everything up for a new game:
         GetNode<Timer>("StartTimer").Start();
     }
 
-Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
-``ScoreTimer``, and ``MobTimer``) to the main script. ``StartTimer`` will start
+Copy the code below and paste it into the Main script at the bottom.  Then, connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
+``ScoreTimer``, and ``MobTimer``) to the main script. You can do this in the Node tab (next to the Inspector tab).   Find the timeout signal for each timer and double click on it.   When the dialog box pops up, click Connect.  After doing this, you should see a green arrow graphic on the left of the function definition for each timer.  ``StartTimer`` will start
 the other two timers. ``ScoreTimer`` will increment the score by 1.
 
 .. tabs::
