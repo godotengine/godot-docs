@@ -62,4 +62,3 @@ Resources
 - `awesome-godot: A curated list of free/libre plugins, scripts and add-ons <https://github.com/godotengine/awesome-godot>`_
 - `Godot Asset Library <https://godotengine.org/asset-library/asset>`_
 - `Godot Shaders: A community-driven shader library <https://godotshaders.com/>`_
-- `Zeef Godot Engine: A curated directory of resources by Andre Schmitz <https://godot-engine.zeef.com/andre.antonio.schmitz>`_

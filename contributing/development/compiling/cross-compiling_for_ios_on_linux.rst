@@ -24,8 +24,9 @@ described here and cross-compiling the binary.
 Requirements
 ------------
 
-- `XCode with the iOS SDK <https://developer.apple.com/xcode/download>`__
-  (a dmg image, for newer versions a **xip** file is going to be downloaded.)
+- `XCode with the iOS SDK <https://developer.apple.com/download/all/?q=Xcode>`__
+  (a dmg image, for newer versions a **xip** file is going to be downloaded.
+  You must be logged into an Apple ID to download Xcode.)
 - `Clang >= 3.5 <https://clang.llvm.org>`__ for your development
   machine installed and in the ``PATH``. It has to be version >= 3.5
   to target ``arm64`` architecture.
