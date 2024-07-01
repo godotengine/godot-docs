@@ -129,7 +129,7 @@ Icons section
 -------------
 
 By default, Godot uses the Node icon in the scene dock for GDExtension nodes. A custom icon can be
-set set by reference to its name and resource path of an SVG file.
+set by reference to its name and resource path of an SVG file.
 
 For example:
 
@@ -141,3 +141,41 @@ For example:
 
 The path should point to a 16 by 16 pixel SVG image. Read the guide for :ref:`creating icons <doc_editor_icons>`
 for more information.
+
+Dependencies section
+--------------------
+
+In this section you set the paths of the GDExtension dependencies. This is used internally to export the dependencies
+when exporting your game executable. You are able to set which dependency is loaded depending on the feature flags
+of the exported executable. In addition, you are able to set an optional subdirectory to move your dependencies into.
+In the following example the libraries are moved into a subdirectory called ``libraries``.
+
+.. code-block:: none
+
+    [dependencies]
+
+    macos.debug = {
+        "res://bin/libdependency.macos.template_debug.framework" : "libraries"
+    }
+    macos.release = {
+        "res://bin/libdependency.macos.template_release.framework" : "libraries"
+    }
+    windows.debug = {
+        "res://bin/libdependency.windows.template_debug.x86_64.dll" : "libraries",
+        "res://bin/libdependency.windows.template_debug.x86_32.dll" : "libraries"
+    }
+    windows.release = {
+        "res://bin/libdependency.windows.template_release.x86_64.dll" : "libraries",
+        "res://bin/libdependency.windows.template_release.x86_32.dll" : "libraries"
+    }
+    linux.debug = {
+        "res://bin/libdependency.linux.template_debug.x86_64.so" : "libraries",
+        "res://bin/libdependency.linux.template_debug.arm64.so" : "libraries",
+        "res://bin/libdependency.linux.template_debug.rv64.so" : "libraries"
+    }
+    linux.release = {
+        "res://bin/libdependency.linux.template_release.x86_64.so" : "libraries",
+        "res://bin/libdependency.linux.template_release.arm64.so" : "libraries",
+        "res://bin/libdependency.linux.template_release.rv64.so" : "libraries"
+    }
+
