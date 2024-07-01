@@ -7,6 +7,8 @@ Godot's interface lives in a single window by default. Since Godot 4.0, you can
 split several elements to separate windows to better make use of multi-monitor
 setups.
 
+.. _doc_customizing_editor_moving_docks:
+
 Moving and resizing docks
 -------------------------
 
