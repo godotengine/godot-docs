@@ -130,6 +130,12 @@ seen on Windows, as Linux does not have support for ShadowPlay.
 To disable this overlay, press :kbd:`Alt + Z` (default shortcut for the NVIDIA overlay)
 and disable **Settings > HUD Layout > Status Indicator** in the NVIDIA overlay.
 
+Alternatively, you can install the `new NVIDIA app
+<https://www.nvidia.com/en-us/software/nvidia-app/>` which replaces GeForce
+Experience and does not suffer from this issue. Unlike GeForce Experience, the
+NVIDIA app draws the replay indicator in the corner of the screen as opposed to
+the corner of each window.
+
 The editor or project appears overly sharp or blurry
 ----------------------------------------------------
 
