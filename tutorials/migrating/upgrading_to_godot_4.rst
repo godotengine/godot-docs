@@ -437,6 +437,7 @@ table to find its new name.
 - Shortcut's ``is_valid()`` is now ``has_valid_event()``.
 - TileMap's ``world_to_map()`` is now ``local_to_map()``.
 - TileMap's ``map_to_world()`` is now ``map_to_local()``.
+- Transform2D's ``xform()`` is ``mat * vec`` and ``xform_inv()`` is ``vec * mat``.
 
 **Properties**
 
