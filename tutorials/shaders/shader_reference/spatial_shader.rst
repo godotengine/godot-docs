@@ -243,6 +243,10 @@ shader, this value can be used as desired.
 
     ``MODELVIEW_MATRIX`` combines both the ``MODEL_MATRIX`` and ``VIEW_MATRIX`` and is better suited when floating point issues may arise. For example, if the object is very far away from the world origin, you may run into floating point issues when using the separated ``MODEL_MATRIX`` and ``VIEW_MATRIX``.
 
+.. note::
+
+    ``INV_VIEW_MATRIX`` is the matrix used for rendering the object in that pass, not like ``MAIN_CAM_INV_VIEW_MATRIX``, which is the matrix of the camera in the scene. In the shadow pass, ``INV_VIEW_MATRIX``'s view is based on the camera that is located at the position of the light.
+
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
 
