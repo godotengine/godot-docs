@@ -148,34 +148,38 @@ Dependencies section
 In this section you set the paths of the GDExtension dependencies. This is used internally to export the dependencies
 when exporting your game executable. You are able to set which dependency is loaded depending on the feature flags
 of the exported executable. In addition, you are able to set an optional subdirectory to move your dependencies into.
-In the following example the libraries are moved into a subdirectory called ``libraries``.
+If no path is supplied Godot will move the libraries into the same directory as your game executable.
+
+.. warning::
+    In MacOS it is necessary to have shared libraries inside a folder called ``Frameworks`` with a directory structure
+    like this: ``Game.app/Contents/Frameworks``.
 
 .. code-block:: none
 
     [dependencies]
 
     macos.debug = {
-        "res://bin/libdependency.macos.template_debug.framework" : "libraries"
+        "res://bin/libdependency.macos.template_debug.framework" : "Contents/Frameworks"
     }
     macos.release = {
-        "res://bin/libdependency.macos.template_release.framework" : "libraries"
+        "res://bin/libdependency.macos.template_release.framework" : "Contents/Frameworks"
     }
     windows.debug = {
-        "res://bin/libdependency.windows.template_debug.x86_64.dll" : "libraries",
-        "res://bin/libdependency.windows.template_debug.x86_32.dll" : "libraries"
+        "res://bin/libdependency.windows.template_debug.x86_64.dll" : "",
+        "res://bin/libdependency.windows.template_debug.x86_32.dll" : ""
     }
     windows.release = {
-        "res://bin/libdependency.windows.template_release.x86_64.dll" : "libraries",
-        "res://bin/libdependency.windows.template_release.x86_32.dll" : "libraries"
+        "res://bin/libdependency.windows.template_release.x86_64.dll" : "",
+        "res://bin/libdependency.windows.template_release.x86_32.dll" : ""
     }
     linux.debug = {
-        "res://bin/libdependency.linux.template_debug.x86_64.so" : "libraries",
-        "res://bin/libdependency.linux.template_debug.arm64.so" : "libraries",
-        "res://bin/libdependency.linux.template_debug.rv64.so" : "libraries"
+        "res://bin/libdependency.linux.template_debug.x86_64.so" : "",
+        "res://bin/libdependency.linux.template_debug.arm64.so" : "",
+        "res://bin/libdependency.linux.template_debug.rv64.so" : ""
     }
     linux.release = {
-        "res://bin/libdependency.linux.template_release.x86_64.so" : "libraries",
-        "res://bin/libdependency.linux.template_release.arm64.so" : "libraries",
-        "res://bin/libdependency.linux.template_release.rv64.so" : "libraries"
+        "res://bin/libdependency.linux.template_release.x86_64.so" : "",
+        "res://bin/libdependency.linux.template_release.arm64.so" : "",
+        "res://bin/libdependency.linux.template_release.rv64.so" : ""
     }
 
