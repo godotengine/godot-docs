@@ -298,8 +298,8 @@ And with that, you finished coding your first complete 3D game.
 **Congratulations**!
 
 In the next part, we'll quickly recap what you learned and give you some links
-to keep learning more. But for now, here are the complete ``Player.gd`` and
-``Mob.gd`` so you can check your code against them.
+to keep learning more. But for now, here are the complete ``player.gd`` and
+``mob.gd`` so you can check your code against them.
 
 Here's the *Player* script.
 

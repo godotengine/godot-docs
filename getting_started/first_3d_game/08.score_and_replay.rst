@@ -131,7 +131,7 @@ line:
 This line means that when the mob emits the ``squashed`` signal, the
 ``ScoreLabel`` node will receive it and call the function ``_on_mob_squashed()``.
 
-Head back to the ``ScoreLabel.gd`` script to define the ``_on_mob_squashed()``
+Head back to the ``score_label.gd`` script to define the ``_on_mob_squashed()``
 callback function.
 
 There, we increment the score and update the displayed text.
@@ -321,18 +321,18 @@ game.
 
 |image17|
 
-Save the scene as ``MusicPlayer.tscn``.
+Save the scene as ``music_player.tscn``.
 
 We have to register it as an autoload. Head to the *Project -> Project
 Settings…* menu and click on the *Autoload* tab.
 
 In the *Path* field, you want to enter the path to your scene. Click the folder
-icon to open the file browser and double-click on ``MusicPlayer.tscn``. Then,
+icon to open the file browser and double-click on ``music_player.tscn``. Then,
 click the *Add* button on the right to register the node.
 
 |image18|
 
-``MusicPlayer.tscn`` now loads into any scene you open or play.
+``music_player.tscn`` now loads into any scene you open or play.
 So if you run the game now, the music will play automatically in any scene.
 
 Before we wrap up this lesson, here's a quick look at how it works under the

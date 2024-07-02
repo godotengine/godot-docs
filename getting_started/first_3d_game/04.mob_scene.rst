@@ -252,7 +252,7 @@ method. This function destroys the instance it's called on.
 Our monster is ready to enter the game! In the next part, you will spawn
 monsters in the game level.
 
-Here is the complete ``Mob.gd`` script for reference.
+Here is the complete ``mob.gd`` script for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
