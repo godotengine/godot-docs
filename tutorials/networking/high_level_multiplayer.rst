@@ -203,8 +203,9 @@ must have the same name. When using ``add_child()`` for nodes which are expected
     The signature of the RPC includes the ``@rpc()`` declaration, the function, return type,
     AND the nodepath. If an RPC resides in a script attached to ``/root/Main/Node1``, then it
     must reside in precisely the same path and node on both the client script and the server
-    script. Function arguments (example: ``func sendstuff():`` and ``func sendstuff(arg1, arg2):``
-    **will pass** signature matching).
+    script. Function arguments are not checked for matching between the server and client code
+    (example: ``func sendstuff():`` and ``func sendstuff(arg1, arg2):`` **will pass** signature 
+    matching).
 
     If these conditions are not met (if all RPCs do not pass signature matching), the script may print an
     error or cause unwanted behavior. The error message may be unrelated to the RPC function you are
