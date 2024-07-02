@@ -51,6 +51,12 @@ enabled. Since ``eval()`` calls can be a security concern, the
     scons platform=web target=template_release javascript_eval=no
     scons platform=web target=template_debug javascript_eval=no
 
+By default, WebWorker threads support is enabled.  To disable it and only use a single thread,
+the ``threads`` option can be used to build the web template without threads support::
+
+    scons platform=web target=template_release threads=no
+    scons platform=web target=template_debug threads=no
+
 The engine will now be compiled to WebAssembly by Emscripten. Once finished,
 the resulting file will be placed in the ``bin`` subdirectory. Its name is
 ``godot.web.template_release.wasm32.zip`` for release or ``godot.web.template_debug.wasm32.zip``
