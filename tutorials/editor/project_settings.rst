@@ -5,6 +5,8 @@
 Project Settings
 ================
 
+.. warning:: This page is a work-in-progress.
+
 This page explains how to use the Project Settings window. If you would like to access and modify 
 project settings via code, see :ref:`ProjectSettings <class_ProjectSettings>`.
 

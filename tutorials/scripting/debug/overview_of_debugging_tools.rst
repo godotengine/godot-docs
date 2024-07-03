@@ -271,6 +271,8 @@ Shapes
 Shapes are where you can adjust the color of shapes that only appear for
 debugging purposes, such as collision and navigation shapes.
 
+.. _doc_overview_of_debugging_tools_remote:
+
 Remote in scene dock
 --------------------
 

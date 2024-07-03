@@ -32,7 +32,7 @@ From left to right:
   - `Make Resource Built-In` to work in a built-in resource, not the one from the disk.
   
 - The "<" and ">" arrows let you navigate through your edited object history.
-- The button next to them opens this list for a quicker navigation. If you created multiple 
+- The button next to them opens the history list for a quicker navigation. If you created multiple 
   resources in the memory, you will also see them here.
 
 Below, you can find the selected node's icon, its name, and the quick button to open 
@@ -43,7 +43,7 @@ Then comes the search bar. Type anything in it to filter displayed properties.
 Delete the text to clear the search.
 This search is case insensitive and also searches letter by letter as you type.
 For instance, if you type ``vsb``, one of the results you see will be
-**V** isi **b** i **l** ity property.
+Visibility property as this property contains all of these letters.
 
 Before discussing the tool button next to the filter bar, it is worth mentioning 
 what you actually see below it and how it is structured.
@@ -61,10 +61,11 @@ Similarly, you can right click on a property and copy or paste its value,
 copy the property path, or open its documentation page.
 
 If you hover your mouse over a property, you will see the description of what 
-it does from the documentation, as well as how it can be called inside the script.
+it does as well as how it can be called inside the script.
 
 You can directly change the values by clicking, typing, or selecting from the menu.
-If it is a number or a slider, you can keep your left mouse button pressed and drag.
+If the property is a number or a slider, you can keep your left mouse button 
+pressed and drag to change the values.
 
 .. |undo| image:: img/inspector_dock_revert.webp
 
@@ -85,9 +86,9 @@ various view and edit options.
   than the current value (the properties with |undo| icon).
 - **Property Name Style**: This section determines how the properties' text is displayed in 
   the inspector. `Raw` uses the property's own naming, `Capitalized` uses title 
-  case by changing the initial letters of each word to uppercase, `Localized` 
-  displays the translation of the properties if you are using the Editor in a language 
-  other than English.
+  case by changing the initial letters of each word to uppercase and removing underscores, 
+  `Localized` displays the translation of the properties if you are using the Editor 
+  in a language other than English.
 - **Copy Properties**: Copies all properties of the current node with their current values.
 - **Paste Properties**: Pastes the copied properties from the clipboard. Useful to apply 
   the common properties of one node to another.
@@ -97,8 +98,9 @@ various view and edit options.
   Clicking this option makes each sub-resource used in this node unique, separated from 
   other nodes.
 
-.. note:: If a node has exported variables in its attached script, you will also see these 
-  in the inspector. See :ref:`doc_gdscript_exports` for more on this topic.
+.. tip:: If a node has exported variables in its attached script, you will also see these 
+  in the inspector. The first image in this section has one for the Player node:
+  `Action Suffix`. See :ref:`doc_gdscript_exports` for more on this topic.
 
 .. seealso:: Refer to :ref:`doc_customizing_editor` for dock customization options.
 

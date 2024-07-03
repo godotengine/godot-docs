@@ -33,7 +33,7 @@ Some of the interesting options are the following:
 
 Note that, not all items will be visible for a single type of file.
 
-- **Edit Dependencies...**: Shows a window with files that this file is dependend to. If you have
+- **Edit Dependencies...**: Shows a window with files that this file depends on. If you have
   missing dependencies, you can also pick replacements to fix them.
 - **View Owners...**: Opens a window which shows the owners of a file. You can click on a result to 
   open it.
@@ -43,7 +43,7 @@ Note that, not all items will be visible for a single type of file.
 - **Copy UID**: Copies the unique identifier of a resource if it has one. The path will start with ``uid://``.
   The UID will not change when the item is renamed or moved. See :ref:`ResourceUID <class_ResourceUID>` for more.
 - **Add to Favorites**: Adds the selected file or folder to the favorites which will can easily be seen
-  unter `Favorites` section in the resource list.
+  under `Favorites` section in the resource list.
 - **Reimport**: If this file is a non-native resource, you can reimport them 
   
 If you right click on a folder, you will have options to expand a folder or the hierarchy, or collapse it.

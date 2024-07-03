@@ -82,8 +82,8 @@ Below is the 3D one:
 
 .. seealso:: To learn more on the 3D viewport and 3D in general, read :ref:`doc_introduction_to_3d`.
 
-On either side of the viewport sit the **docks**. And at the bottom of the
-window lies the **bottom panel**.
+On either side of the viewport sit the :ref:`doc_docks`. And at the bottom of the
+window lies the :ref:`doc_bottom_panel`.
 
 Let's look at the docks. The **FileSystem** dock lists your project files, including
 scripts, images, audio samples, and more:
@@ -100,7 +100,7 @@ The **Inspector** allows you to edit the properties of a selected node:
 
 .. seealso:: To read more on inspector, see :ref:`doc_editor_inspector_dock`.
 
-.. seealso:: Docks can be customized. Read more on :ref:`doc_customizing_editor_moving_docks`.
+.. seealso:: Docks can be customized. Read more on :ref:`doc_customizing_editor_moving_resizing_docks`.
 
 The **bottom panel**, situated below the viewport, is the host for the debug
 console, the animation editor, the audio mixer, and more. They can take precious

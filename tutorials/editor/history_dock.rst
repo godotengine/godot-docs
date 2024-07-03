@@ -13,7 +13,7 @@ the project.
 If you click on an item, the project will be reverted to that state. If you do not 
 make any changes, you can change the state back and forth without losing anything.
 
-You can choose whether to display the `Scene` related actions and include `Global` 
+You can choose whether to display the `Scene` related actions and also include `Global` 
 changes, such as changing an editor setting in Godot's Editor. Global changes will be 
 displayed in blue text.
 

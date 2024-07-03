@@ -45,7 +45,8 @@ To create a new project:
 
 .. note:: You can optionally choose a version control system. Currently, only 
 	`git <https://git-scm.com>`__ is supported and it needs the Godot Git Plugin to be installed, 
-	either manually or using the :ref:`Asset Library <doc_using_assetlib>`. To learn more about the Godot Git Plugin, see its `wiki <https://github.com/godotengine/godot-git-plugin/wiki>`__.
+	either manually or using the :ref:`Asset Library <doc_using_assetlib>`. To learn more about the 
+	Godot Git Plugin, see its `wiki <https://github.com/godotengine/godot-git-plugin/wiki>`__.
 
 Using the file browser
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -78,6 +79,9 @@ The next time you open the Project Manager, you'll see your new project in the
 list. Double click on it to open it in the editor.
 
 .. image:: img/editor_ui_intro_project_manager_06.webp
+
+You can use the star icon located on the left of a project to favorite/unfavorite it. Favorited
+projects will be listed and exempted from the sorting.
 
 You can similarly import existing projects using the **Import** button. Locate the
 folder that contains the project or the **project.godot** file to import and
@@ -142,5 +146,5 @@ another machine, and import it into the project manager you will see the tags
 you created.
 
 To remove a tag from your project manager it must be removed from all the projects it's
-used by. Once that's done close the project manager, open it up again, and the tag should
+used by. Once that's done close the project manager, open it up again, and the tag will
 be gone.

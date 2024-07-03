@@ -95,6 +95,6 @@ Groups
 
 The `Groups` tab lists the groups which the node is a part of.
 Groups are basically tags which you can call methods on multiple objects
-which belog to a group.
+which belong to a group.
 
 Groups' behaviour is explained in :ref:`doc_groups`.
