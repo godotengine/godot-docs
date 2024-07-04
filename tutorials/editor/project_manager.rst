@@ -1,7 +1,7 @@
 .. _doc_project_manager:
 
-Using the Project Manager
-=========================
+Project Manager
+===============
 
 When you launch Godot, the first window you see is the Project Manager. It lets
 you create, remove, import, or play game projects:
