@@ -1,10 +1,8 @@
 :allow_comments: False
 :article_outdated: True
 
-.. _doc_editor_introduction:
-
-Editor introduction
-===================
+Editor
+======
 
 In this section, we cover the Godot editor in general, from its interface to
 using it with the command line.
@@ -22,10 +20,31 @@ in other sections where appropriate. For example, the :ref:`animation editor
    :name: toc-editor-interface
 
    project_manager
-   inspector_dock
+   editor_interface
+   
+The following pages cover the editor's interface elements:
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-editor-interface-elements
+
+   main_menus
+   workspace_selector
+   playtest_buttons_and_renderer
+   scene_switcher
+   bottom_panel
+   docks
+
+Finally, the pages below cover customization options provided by Godot's editor:
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-editor-customization
+
    project_settings
    default_key_mapping
    customizing_editor
+   class_EditorSettings
 
 XR editor
 ---------

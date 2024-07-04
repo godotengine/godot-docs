@@ -13,7 +13,7 @@ This page will give you a brief overview of Godot's interface. We're going to
 look at the different main screens and docks to help you situate yourself.
 
 .. seealso:: For a comprehensive breakdown of the editor's interface and how to
-             use it, see the :ref:`Editor manual <doc_editor_introduction>`.
+             use it, see the :ref:`Editor manual <toc-editor-interface>`.
 
 The Project Manager
 -------------------
