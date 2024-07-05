@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_game_area:
 
 Setting up the game area
@@ -23,16 +21,16 @@ In the import popup, enter the full path to the freshly created directory
 open a file browser and navigate to the ``project.godot`` file the folder
 contains.
 
-.. image:: img/01.game_setup/02.browse_to_project_folder.png
+.. image:: img/01.game_setup/02.browse_to_project_folder.webp
 
 Click *Import & Edit* to open the project in the editor.
 
-.. image:: img/01.game_setup/03.import_and_edit.png
+.. image:: img/01.game_setup/03.import_and_edit.webp
 
 The start project contains an icon and two folders: ``art/`` and ``fonts/``.
 There, you will find the art assets and music we'll use in the game.
 
-.. image:: img/01.game_setup/04.start_assets.png
+.. image:: img/01.game_setup/04.start_assets.webp
 
 There are two 3D models, ``player.glb`` and ``mob.glb``, some materials that
 belong to these models, and a music track.
@@ -45,7 +43,7 @@ We're going to create our main scene with a plain :ref:`Node <class_Node>` as it
 top-left and double-click on *Node*. Name the node ``Main``. An alternate method to rename the node is to right-click on *Node* and choose *Rename* (or :kbd:`F2`). Alternatively, to add
 a node to the scene, you can press :kbd:`Ctrl + A` (:kbd:`⌘ Cmd + A` on macOS).
 
-.. image:: img/01.game_setup/05.main_node.png
+.. image:: img/01.game_setup/05.main_node.webp
 
 Save the scene as ``main.tscn`` by pressing :kbd:`Ctrl + S` (:kbd:`⌘ Cmd + S` on macOS).
 
@@ -58,17 +56,17 @@ node, then a :ref:`CollisionShape3D <class_CollisionShape3D>`. Rename the :ref:`
 
 Your scene tree should look like this
 
-.. image:: img/01.game_setup/06.staticbody_node.png
+.. image:: img/01.game_setup/06.staticbody_node.webp
 
 A warning sign next to the :ref:`CollisionShape3D <class_CollisionShape3D>` appears because we haven't defined
 its shape. If you click the icon, a popup appears to give you more information.
 
-.. image:: img/01.game_setup/07.collision_shape_warning.png
+.. image:: img/01.game_setup/07.collision_shape_warning.webp
 
 To create a shape, select the :ref:`CollisionShape3D <class_CollisionShape3D>` node, head to the *Inspector*
 and click the *<empty>* field next to the *Shape* property. Create a new *BoxShape3D*.
 
-.. image:: img/01.game_setup/08.create_box_shape3D.jpg
+.. image:: img/01.game_setup/08.create_box_shape3D.webp
 
 The box shape is perfect for flat ground and walls. Its thickness makes it
 reliable to block even fast-moving objects.
@@ -85,7 +83,7 @@ the Z-axis.
 Collision shapes are invisible. We need to add a visual floor that goes along
 with it. Select the ``Ground`` node and add a :ref:`MeshInstance3D <class_MeshInstance3D>` as its child.
 
-.. image:: img/01.game_setup/10.mesh_instance3d.png
+.. image:: img/01.game_setup/10.mesh_instance3d.webp
 
 In the *Inspector*, click on the field next to *Mesh* and create a :ref:`BoxMesh <class_BoxMesh>`
 resource to create a visible box.
@@ -95,7 +93,7 @@ resource to create a visible box.
 Once again, it's too small by default. Click the box icon to expand the
 resource and set its *Size* to ``60``, ``2``, and ``60``.
 
-.. image:: img/01.game_setup/12.cube_resized.png
+.. image:: img/01.game_setup/12.cube_resized.webp
 
 You should see a wide grey slab that covers the grid and blue and red axes in
 the viewport.
@@ -104,7 +102,7 @@ We're going to move the ground down so we can see the floor grid. Select the
 ``Ground`` node, click on the *Use Snap* button (or press the :kbd:`Y` key) to turn on grid snapping,
 and click and drag down on the Y-axis. It's the green arrow in the move gizmo.
 
-.. image:: img/01.game_setup/use_snap.png
+.. image:: img/01.game_setup/use_snap.webp
 
 .. image:: img/01.game_setup/move_gizmo_y_axis.webp
 
@@ -113,12 +111,12 @@ and click and drag down on the Y-axis. It's the green arrow in the move gizmo.
     If you can't see the 3D object manipulator like on the image above, ensure
     the *Select Mode* is active in the toolbar above the view.
 
-.. image:: img/01.game_setup/14.select_mode_icon.png
+.. image:: img/01.game_setup/14.select_mode_icon.webp
 
 Move the ground down ``1`` meter, in order to have a visible editor grid. A label in the bottom-left corner of the
 viewport tells you how much you're translating the node.
 
-.. image:: img/01.game_setup/15.translation_amount.png
+.. image:: img/01.game_setup/15.translation_amount.webp
 
 .. note::
 
