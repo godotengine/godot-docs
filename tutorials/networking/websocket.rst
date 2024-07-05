@@ -38,58 +38,58 @@ This example will show you how to create a WebSocket connection to a remote serv
 
     extends Node
 
-    # The URL we will connect to
-    export var websocket_url = "wss://libwebsockets.org"
+    # The URL we will connect to.
+    @export var websocket_url = "wss://echo.websocket.org"
 
-    # Our WebSocketClient instance
-    var _client = WebSocketClient.new()
+    # Our WebSocketClient instance.
+    var socket = WebSocketPeer.new()
 
     func _ready():
-        # Connect base signals to get notified of connection open, close, and errors.
-        _client.connection_closed.connect(_closed)
-        _client.connection_error.connect(_closed)
-        _client.connection_established.connect(_connected)
-        # This signal is emitted when not using the Multiplayer API every time
-        # a full packet is received.
-        # Alternatively, you could check get_peer(1).get_available_packets() in a loop.
-        _client.data_received.connect(_on_data)
-
         # Initiate connection to the given URL.
-        var err = _client.connect_to_url(websocket_url, ["lws-mirror-protocol"])
+        var err = socket.connect_to_url(websocket_url)
         if err != OK:
             print("Unable to connect")
             set_process(false)
+        else:
+            # Wait for the socket to connect.
+            await get_tree().create_timer(2).timeout
+            
+            # Send data.
+            socket.send_text("Test packet")
 
-    func _closed(was_clean = false):
-        # was_clean will tell you if the disconnection was correctly notified
-        # by the remote peer before closing the socket.
-        print("Closed, clean: ", was_clean)
-        set_process(false)
+    func _process(_delta):
+        # Call this in _process or _physics_process. Data transfer and state updates
+        # will only happen when calling this function.
+        socket.poll()
+        
+        # get_ready_state() tells you what state the socket is in.
+        var state = socket.get_ready_state()
+        
+        # WebSocketPeer.STATE_OPEN means the socket is connected and ready
+        # to send and receive data.
+        if state == WebSocketPeer.STATE_OPEN:
+            while socket.get_available_packet_count():
+                print("Got data from server: ", socket.get_packet().get_string_from_utf8())
+        
+        # WebSocketPeer.STATE_CLOSING means the socket is closing.
+        # It is important to keep polling for a clean close.
+        elif state == WebSocketPeer.STATE_CLOSING:
+            pass
+        
+        # WebSocketPeer.STATE_CLOSED means the connection has fully closed.
+        # It is now safe to stop polling.
+        elif state == WebSocketPeer.STATE_CLOSED:
+            # The code will be -1 if the disconnection was not properly notified by the remote peer.
+            var code = socket.get_close_code()
+            print("WebSocket closed with code: %d. Clean: %s" % [code, code != -1])
+            set_process(false) # Stop processing.
 
-    func _connected(proto = ""):
-        # This is called on connection, "proto" will be the selected WebSocket
-        # sub-protocol (which is optional)
-        print("Connected with protocol: ", proto)
-        # You MUST always use get_peer(1).put_packet to send data to server,
-        # and not put_packet directly when not using the MultiplayerAPI.
-        _client.get_peer(1).put_packet("Test packet".to_utf8())
 
-    func _on_data():
-        # Print the received packet, you MUST always use get_peer(1).get_packet
-        # to receive data from server, and not get_packet directly when not
-        # using the MultiplayerAPI.
-        print("Got data from server: ", _client.get_peer(1).get_packet().get_string_from_utf8())
-
-    func _process(delta):
-        # Call this in _process or _physics_process. Data transfer, and signals
-        # emission will only happen when calling this function.
-        _client.poll()
-
-This will print:
+This will print something similar to:
 
 ::
 
-    Connected with protocol:
+    Got data from server: Request served by 7811941c69e658
     Got data from server: Test packet
 
 Minimal server example

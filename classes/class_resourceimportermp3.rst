@@ -65,7 +65,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bar_beats** = ``4``
+:ref:`int<class_int>` **bar_beats** = ``4`` :ref:`🔗<class_ResourceImporterMP3_property_bar_beats>`
 
 The number of bars within a single beat in the audio track. This is only relevant for music that wishes to make use of interactive music functionality (not implemented yet), not sound effects.
 
@@ -79,7 +79,7 @@ A more convenient editor for :ref:`bar_beats<class_ResourceImporterMP3_property_
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **beat_count** = ``0``
+:ref:`int<class_int>` **beat_count** = ``0`` :ref:`🔗<class_ResourceImporterMP3_property_beat_count>`
 
 The beat count of the audio track. This is only relevant for music that wishes to make use of interactive music functionality (not implemented yet), not sound effects.
 
@@ -93,7 +93,7 @@ A more convenient editor for :ref:`beat_count<class_ResourceImporterMP3_property
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bpm** = ``0``
+:ref:`float<class_float>` **bpm** = ``0`` :ref:`🔗<class_ResourceImporterMP3_property_bpm>`
 
 The Beats Per Minute of the audio track. This should match the BPM measure that was used to compose the track. This is only relevant for music that wishes to make use of interactive music functionality (not implemented yet), not sound effects.
 
@@ -107,7 +107,7 @@ A more convenient editor for :ref:`bpm<class_ResourceImporterMP3_property_bpm>` 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **loop** = ``false``
+:ref:`bool<class_bool>` **loop** = ``false`` :ref:`🔗<class_ResourceImporterMP3_property_loop>`
 
 If enabled, the audio will begin playing at the beginning after playback ends by reaching the end of the audio.
 
@@ -121,7 +121,7 @@ If enabled, the audio will begin playing at the beginning after playback ends by
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **loop_offset** = ``0``
+:ref:`float<class_float>` **loop_offset** = ``0`` :ref:`🔗<class_ResourceImporterMP3_property_loop_offset>`
 
 Determines where audio will start to loop after playback reaches the end of the audio. This can be used to only loop a part of the audio file, which is useful for some ambient sounds or music. The value is determined in seconds relative to the beginning of the audio. A value of ``0.0`` will loop the entire audio file.
 

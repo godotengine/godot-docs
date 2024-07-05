@@ -72,7 +72,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **bind**\ (\ port\: :ref:`int<class_int>`, bind_address\: :ref:`String<class_String>` = "*", recv_buf_size\: :ref:`int<class_int>` = 65536\ )
+:ref:`Error<enum_@GlobalScope_Error>` **bind**\ (\ port\: :ref:`int<class_int>`, bind_address\: :ref:`String<class_String>` = "*", recv_buf_size\: :ref:`int<class_int>` = 65536\ ) :ref:`🔗<class_PacketPeerUDP_method_bind>`
 
 Binds this **PacketPeerUDP** to the specified ``port`` and ``bind_address`` with a buffer size ``recv_buf_size``, allowing it to receive incoming packets.
 
@@ -90,7 +90,7 @@ If ``bind_address`` is set to any valid address (e.g. ``"192.168.1.101"``, ``"::
 
 .. rst-class:: classref-method
 
-|void| **close**\ (\ )
+|void| **close**\ (\ ) :ref:`🔗<class_PacketPeerUDP_method_close>`
 
 Closes the **PacketPeerUDP**'s underlying UDP socket.
 
@@ -102,7 +102,7 @@ Closes the **PacketPeerUDP**'s underlying UDP socket.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **connect_to_host**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **connect_to_host**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PacketPeerUDP_method_connect_to_host>`
 
 Calling this method connects this UDP peer to the given ``host``/``port`` pair. UDP is in reality connectionless, so this option only means that incoming packets from different addresses are automatically discarded, and that outgoing packets are always sent to the connected address (future calls to :ref:`set_dest_address<class_PacketPeerUDP_method_set_dest_address>` are not allowed). This method does not send any data to the remote peer, to do that, use :ref:`PacketPeer.put_var<class_PacketPeer_method_put_var>` or :ref:`PacketPeer.put_packet<class_PacketPeer_method_put_packet>` as usual. See also :ref:`UDPServer<class_UDPServer>`.
 
@@ -116,7 +116,7 @@ Calling this method connects this UDP peer to the given ``host``/``port`` pair. 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_local_port**\ (\ ) |const|
+:ref:`int<class_int>` **get_local_port**\ (\ ) |const| :ref:`🔗<class_PacketPeerUDP_method_get_local_port>`
 
 Returns the local port to which this peer is bound.
 
@@ -128,7 +128,7 @@ Returns the local port to which this peer is bound.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_packet_ip**\ (\ ) |const|
+:ref:`String<class_String>` **get_packet_ip**\ (\ ) |const| :ref:`🔗<class_PacketPeerUDP_method_get_packet_ip>`
 
 Returns the IP of the remote peer that sent the last packet(that was received with :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>` or :ref:`PacketPeer.get_var<class_PacketPeer_method_get_var>`).
 
@@ -140,7 +140,7 @@ Returns the IP of the remote peer that sent the last packet(that was received wi
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_packet_port**\ (\ ) |const|
+:ref:`int<class_int>` **get_packet_port**\ (\ ) |const| :ref:`🔗<class_PacketPeerUDP_method_get_packet_port>`
 
 Returns the port of the remote peer that sent the last packet(that was received with :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>` or :ref:`PacketPeer.get_var<class_PacketPeer_method_get_var>`).
 
@@ -152,7 +152,7 @@ Returns the port of the remote peer that sent the last packet(that was received 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_bound**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_bound**\ (\ ) |const| :ref:`🔗<class_PacketPeerUDP_method_is_bound>`
 
 Returns whether this **PacketPeerUDP** is bound to an address and can receive packets.
 
@@ -164,7 +164,7 @@ Returns whether this **PacketPeerUDP** is bound to an address and can receive pa
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_socket_connected**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_socket_connected**\ (\ ) |const| :ref:`🔗<class_PacketPeerUDP_method_is_socket_connected>`
 
 Returns ``true`` if the UDP socket is open and has been connected to a remote address. See :ref:`connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
 
@@ -176,7 +176,7 @@ Returns ``true`` if the UDP socket is open and has been connected to a remote ad
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **join_multicast_group**\ (\ multicast_address\: :ref:`String<class_String>`, interface_name\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **join_multicast_group**\ (\ multicast_address\: :ref:`String<class_String>`, interface_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_PacketPeerUDP_method_join_multicast_group>`
 
 Joins the multicast group specified by ``multicast_address`` using the interface identified by ``interface_name``.
 
@@ -192,7 +192,7 @@ You can join the same multicast group with multiple interfaces. Use :ref:`IP.get
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **leave_multicast_group**\ (\ multicast_address\: :ref:`String<class_String>`, interface_name\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **leave_multicast_group**\ (\ multicast_address\: :ref:`String<class_String>`, interface_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_PacketPeerUDP_method_leave_multicast_group>`
 
 Removes the interface identified by ``interface_name`` from the multicast group specified by ``multicast_address``.
 
@@ -204,7 +204,7 @@ Removes the interface identified by ``interface_name`` from the multicast group 
 
 .. rst-class:: classref-method
 
-|void| **set_broadcast_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_broadcast_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_PacketPeerUDP_method_set_broadcast_enabled>`
 
 Enable or disable sending of broadcast packets (e.g. ``set_dest_address("255.255.255.255", 4343)``. This option is disabled by default.
 
@@ -218,7 +218,7 @@ Enable or disable sending of broadcast packets (e.g. ``set_dest_address("255.255
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **set_dest_address**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **set_dest_address**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ ) :ref:`🔗<class_PacketPeerUDP_method_set_dest_address>`
 
 Sets the destination address and port for sending packets and variables. A hostname will be resolved using DNS if needed.
 
@@ -232,7 +232,7 @@ Sets the destination address and port for sending packets and variables. A hostn
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **wait**\ (\ )
+:ref:`Error<enum_@GlobalScope_Error>` **wait**\ (\ ) :ref:`🔗<class_PacketPeerUDP_method_wait>`
 
 Waits for a packet to arrive on the bound address. See :ref:`bind<class_PacketPeerUDP_method_bind>`.
 

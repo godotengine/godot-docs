@@ -79,7 +79,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_CharFXTransform_property_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -96,7 +96,7 @@ The color the character will be drawn with.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **elapsed_time** = ``0.0``
+:ref:`float<class_float>` **elapsed_time** = ``0.0`` :ref:`🔗<class_CharFXTransform_property_elapsed_time>`
 
 .. rst-class:: classref-property-setget
 
@@ -115,7 +115,7 @@ The time elapsed since the :ref:`RichTextLabel<class_RichTextLabel>` was added t
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **env** = ``{}``
+:ref:`Dictionary<class_Dictionary>` **env** = ``{}`` :ref:`🔗<class_CharFXTransform_property_env>`
 
 .. rst-class:: classref-property-setget
 
@@ -138,7 +138,7 @@ For example, the opening BBCode tag ``[example foo=hello bar=true baz=42 color=#
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **font** = ``RID()``
+:ref:`RID<class_RID>` **font** = ``RID()`` :ref:`🔗<class_CharFXTransform_property_font>`
 
 .. rst-class:: classref-property-setget
 
@@ -155,7 +155,7 @@ Font resource used to render glyph.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **glyph_count** = ``0``
+:ref:`int<class_int>` **glyph_count** = ``0`` :ref:`🔗<class_CharFXTransform_property_glyph_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -172,7 +172,7 @@ Number of glyphs in the grapheme cluster. This value is set in the first glyph o
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **glyph_flags** = ``0``
+:ref:`int<class_int>` **glyph_flags** = ``0`` :ref:`🔗<class_CharFXTransform_property_glyph_flags>`
 
 .. rst-class:: classref-property-setget
 
@@ -189,7 +189,7 @@ Glyph flags. See :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>` for more info
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **glyph_index** = ``0``
+:ref:`int<class_int>` **glyph_index** = ``0`` :ref:`🔗<class_CharFXTransform_property_glyph_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -206,7 +206,7 @@ Font specific glyph index.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)`` :ref:`🔗<class_CharFXTransform_property_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -223,7 +223,7 @@ The position offset the character will be drawn with (in pixels).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **outline** = ``false``
+:ref:`bool<class_bool>` **outline** = ``false`` :ref:`🔗<class_CharFXTransform_property_outline>`
 
 .. rst-class:: classref-property-setget
 
@@ -240,7 +240,7 @@ If ``true``, FX transform is called for outline drawing. Setting this property w
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **range** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **range** = ``Vector2i(0, 0)`` :ref:`🔗<class_CharFXTransform_property_range>`
 
 .. rst-class:: classref-property-setget
 
@@ -257,7 +257,7 @@ Absolute character range in the string, corresponding to the glyph. Setting this
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **relative_index** = ``0``
+:ref:`int<class_int>` **relative_index** = ``0`` :ref:`🔗<class_CharFXTransform_property_relative_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -274,7 +274,7 @@ The character offset of the glyph, relative to the current :ref:`RichTextEffect<
 
 .. rst-class:: classref-property
 
-:ref:`Transform2D<class_Transform2D>` **transform** = ``Transform2D(1, 0, 0, 1, 0, 0)``
+:ref:`Transform2D<class_Transform2D>` **transform** = ``Transform2D(1, 0, 0, 1, 0, 0)`` :ref:`🔗<class_CharFXTransform_property_transform>`
 
 .. rst-class:: classref-property-setget
 
@@ -291,7 +291,7 @@ The current transform of the current glyph. It can be overridden (for example, b
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **visible** = ``true``
+:ref:`bool<class_bool>` **visible** = ``true`` :ref:`🔗<class_CharFXTransform_property_visible>`
 
 .. rst-class:: classref-property-setget
 

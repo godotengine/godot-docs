@@ -60,7 +60,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **get_cam_projection**\ (\ ) |const|
+:ref:`Projection<class_Projection>` **get_cam_projection**\ (\ ) |const| :ref:`🔗<class_RenderSceneData_method_get_cam_projection>`
 
 Returns the camera projection used to render this frame.
 
@@ -74,7 +74,7 @@ Returns the camera projection used to render this frame.
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_cam_transform**\ (\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_cam_transform**\ (\ ) |const| :ref:`🔗<class_RenderSceneData_method_get_cam_transform>`
 
 Returns the camera transform used to render this frame.
 
@@ -88,7 +88,7 @@ Returns the camera transform used to render this frame.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_uniform_buffer**\ (\ ) |const|
+:ref:`RID<class_RID>` **get_uniform_buffer**\ (\ ) |const| :ref:`🔗<class_RenderSceneData_method_get_uniform_buffer>`
 
 Return the :ref:`RID<class_RID>` of the uniform buffer containing the scene data as a UBO.
 
@@ -100,7 +100,7 @@ Return the :ref:`RID<class_RID>` of the uniform buffer containing the scene data
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_view_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_view_count**\ (\ ) |const| :ref:`🔗<class_RenderSceneData_method_get_view_count>`
 
 Returns the number of views being rendered.
 
@@ -112,7 +112,7 @@ Returns the number of views being rendered.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_view_eye_offset**\ (\ view\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_view_eye_offset**\ (\ view\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderSceneData_method_get_view_eye_offset>`
 
 Returns the eye offset per view used to render this frame. This is the offset between our camera transform and the eye transform.
 
@@ -124,7 +124,7 @@ Returns the eye offset per view used to render this frame. This is the offset be
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **get_view_projection**\ (\ view\: :ref:`int<class_int>`\ ) |const|
+:ref:`Projection<class_Projection>` **get_view_projection**\ (\ view\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_RenderSceneData_method_get_view_projection>`
 
 Returns the view projection per view used to render this frame.
 

@@ -98,7 +98,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **clear_surfaces**\ (\ )
+|void| **clear_surfaces**\ (\ ) :ref:`🔗<class_ImmediateMesh_method_clear_surfaces>`
 
 Clear all surfaces.
 
@@ -110,7 +110,7 @@ Clear all surfaces.
 
 .. rst-class:: classref-method
 
-|void| **surface_add_vertex**\ (\ vertex\: :ref:`Vector3<class_Vector3>`\ )
+|void| **surface_add_vertex**\ (\ vertex\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_ImmediateMesh_method_surface_add_vertex>`
 
 Add a 3D vertex using the current attributes previously set.
 
@@ -122,7 +122,7 @@ Add a 3D vertex using the current attributes previously set.
 
 .. rst-class:: classref-method
 
-|void| **surface_add_vertex_2d**\ (\ vertex\: :ref:`Vector2<class_Vector2>`\ )
+|void| **surface_add_vertex_2d**\ (\ vertex\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_ImmediateMesh_method_surface_add_vertex_2d>`
 
 Add a 2D vertex using the current attributes previously set.
 
@@ -134,7 +134,7 @@ Add a 2D vertex using the current attributes previously set.
 
 .. rst-class:: classref-method
 
-|void| **surface_begin**\ (\ primitive\: :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`, material\: :ref:`Material<class_Material>` = null\ )
+|void| **surface_begin**\ (\ primitive\: :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`, material\: :ref:`Material<class_Material>` = null\ ) :ref:`🔗<class_ImmediateMesh_method_surface_begin>`
 
 Begin a new surface.
 
@@ -146,7 +146,7 @@ Begin a new surface.
 
 .. rst-class:: classref-method
 
-|void| **surface_end**\ (\ )
+|void| **surface_end**\ (\ ) :ref:`🔗<class_ImmediateMesh_method_surface_end>`
 
 End and commit current surface. Note that surface being created will not be visible until this function is called.
 
@@ -158,7 +158,7 @@ End and commit current surface. Note that surface being created will not be visi
 
 .. rst-class:: classref-method
 
-|void| **surface_set_color**\ (\ color\: :ref:`Color<class_Color>`\ )
+|void| **surface_set_color**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_ImmediateMesh_method_surface_set_color>`
 
 Set the color attribute that will be pushed with the next vertex.
 
@@ -170,7 +170,7 @@ Set the color attribute that will be pushed with the next vertex.
 
 .. rst-class:: classref-method
 
-|void| **surface_set_normal**\ (\ normal\: :ref:`Vector3<class_Vector3>`\ )
+|void| **surface_set_normal**\ (\ normal\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_ImmediateMesh_method_surface_set_normal>`
 
 Set the normal attribute that will be pushed with the next vertex.
 
@@ -182,7 +182,7 @@ Set the normal attribute that will be pushed with the next vertex.
 
 .. rst-class:: classref-method
 
-|void| **surface_set_tangent**\ (\ tangent\: :ref:`Plane<class_Plane>`\ )
+|void| **surface_set_tangent**\ (\ tangent\: :ref:`Plane<class_Plane>`\ ) :ref:`🔗<class_ImmediateMesh_method_surface_set_tangent>`
 
 Set the tangent attribute that will be pushed with the next vertex.
 
@@ -194,7 +194,7 @@ Set the tangent attribute that will be pushed with the next vertex.
 
 .. rst-class:: classref-method
 
-|void| **surface_set_uv**\ (\ uv\: :ref:`Vector2<class_Vector2>`\ )
+|void| **surface_set_uv**\ (\ uv\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_ImmediateMesh_method_surface_set_uv>`
 
 Set the UV attribute that will be pushed with the next vertex.
 
@@ -206,7 +206,7 @@ Set the UV attribute that will be pushed with the next vertex.
 
 .. rst-class:: classref-method
 
-|void| **surface_set_uv2**\ (\ uv2\: :ref:`Vector2<class_Vector2>`\ )
+|void| **surface_set_uv2**\ (\ uv2\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_ImmediateMesh_method_surface_set_uv2>`
 
 Set the UV2 attribute that will be pushed with the next vertex.
 

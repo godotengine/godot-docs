@@ -56,7 +56,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Hint**:
+enum **Hint**: :ref:`🔗<enum_VisualShaderNodeIntParameter_Hint>`
 
 .. _class_VisualShaderNodeIntParameter_constant_HINT_NONE:
 
@@ -103,7 +103,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **default_value** = ``0``
+:ref:`int<class_int>` **default_value** = ``0`` :ref:`🔗<class_VisualShaderNodeIntParameter_property_default_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -120,7 +120,7 @@ Default value of this parameter, which will be used if not set externally. :ref:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **default_value_enabled** = ``false``
+:ref:`bool<class_bool>` **default_value_enabled** = ``false`` :ref:`🔗<class_VisualShaderNodeIntParameter_property_default_value_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -137,7 +137,7 @@ If ``true``, the node will have a custom default value.
 
 .. rst-class:: classref-property
 
-:ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **hint** = ``0``
+:ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **hint** = ``0`` :ref:`🔗<class_VisualShaderNodeIntParameter_property_hint>`
 
 .. rst-class:: classref-property-setget
 
@@ -154,7 +154,7 @@ Range hint of this node. Use it to customize valid parameter range.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max** = ``100``
+:ref:`int<class_int>` **max** = ``100`` :ref:`🔗<class_VisualShaderNodeIntParameter_property_max>`
 
 .. rst-class:: classref-property-setget
 
@@ -171,7 +171,7 @@ The maximum value this parameter can take. :ref:`hint<class_VisualShaderNodeIntP
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **min** = ``0``
+:ref:`int<class_int>` **min** = ``0`` :ref:`🔗<class_VisualShaderNodeIntParameter_property_min>`
 
 .. rst-class:: classref-property-setget
 
@@ -188,7 +188,7 @@ The minimum value this parameter can take. :ref:`hint<class_VisualShaderNodeIntP
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **step** = ``1``
+:ref:`int<class_int>` **step** = ``1`` :ref:`🔗<class_VisualShaderNodeIntParameter_property_step>`
 
 .. rst-class:: classref-property-setget
 

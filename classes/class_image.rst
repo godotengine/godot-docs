@@ -81,6 +81,8 @@ Methods
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Image<class_Image>`                     | :ref:`create<class_Image_method_create>`\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static|                                                                           |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>`                     | :ref:`create_empty<class_Image_method_create_empty>`\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static|                                                               |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Image<class_Image>`                     | :ref:`create_from_data<class_Image_method_create_from_data>`\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                        | :ref:`crop<class_Image_method_crop>`\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`\ )                                                                                                                                                                          |
@@ -104,6 +106,8 @@ Methods
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`\ (\ renormalize\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                  |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_data<class_Image_method_get_data>`\ (\ ) |const|                                                                                                                                                                                                                         |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`get_data_size<class_Image_method_get_data_size>`\ (\ ) |const|                                                                                                                                                                                                               |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Format<enum_Image_Format>`              | :ref:`get_format<class_Image_method_get_format>`\ (\ ) |const|                                                                                                                                                                                                                     |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -207,7 +211,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Format**:
+enum **Format**: :ref:`🔗<enum_Image_Format>`
 
 .. _class_Image_constant_FORMAT_L8:
 
@@ -555,7 +559,7 @@ Represents the size of the :ref:`Format<enum_Image_Format>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **Interpolation**:
+enum **Interpolation**: :ref:`🔗<enum_Image_Interpolation>`
 
 .. _class_Image_constant_INTERPOLATE_NEAREST:
 
@@ -613,7 +617,7 @@ Performs Lanczos interpolation. This is the slowest image resizing mode, but it 
 
 .. rst-class:: classref-enumeration
 
-enum **AlphaMode**:
+enum **AlphaMode**: :ref:`🔗<enum_Image_AlphaMode>`
 
 .. _class_Image_constant_ALPHA_NONE:
 
@@ -647,7 +651,7 @@ Image uses alpha.
 
 .. rst-class:: classref-enumeration
 
-enum **CompressMode**:
+enum **CompressMode**: :ref:`🔗<enum_Image_CompressMode>`
 
 .. _class_Image_constant_COMPRESS_S3TC:
 
@@ -705,7 +709,7 @@ Represents the size of the :ref:`CompressMode<enum_Image_CompressMode>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **UsedChannels**:
+enum **UsedChannels**: :ref:`🔗<enum_Image_UsedChannels>`
 
 .. _class_Image_constant_USED_CHANNELS_L:
 
@@ -763,7 +767,7 @@ The image uses four channels for red, green, blue, and alpha.
 
 .. rst-class:: classref-enumeration
 
-enum **CompressSource**:
+enum **CompressSource**: :ref:`🔗<enum_Image_CompressSource>`
 
 .. _class_Image_constant_COMPRESS_SOURCE_GENERIC:
 
@@ -797,7 +801,7 @@ Source texture (before compression) is a normal texture (e.g. it can be compress
 
 .. rst-class:: classref-enumeration
 
-enum **ASTCFormat**:
+enum **ASTCFormat**: :ref:`🔗<enum_Image_ASTCFormat>`
 
 .. _class_Image_constant_ASTC_FORMAT_4x4:
 
@@ -828,7 +832,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**MAX_WIDTH** = ``16777216``
+**MAX_WIDTH** = ``16777216`` :ref:`🔗<class_Image_constant_MAX_WIDTH>`
 
 The maximal width allowed for **Image** resources.
 
@@ -836,7 +840,7 @@ The maximal width allowed for **Image** resources.
 
 .. rst-class:: classref-constant
 
-**MAX_HEIGHT** = ``16777216``
+**MAX_HEIGHT** = ``16777216`` :ref:`🔗<class_Image_constant_MAX_HEIGHT>`
 
 The maximal height allowed for **Image** resources.
 
@@ -853,7 +857,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **data** = ``{ "data": PackedByteArray(), "format": "Lum8", "height": 0, "mipmaps": false, "width": 0 }``
+:ref:`Dictionary<class_Dictionary>` **data** = ``{ "data": PackedByteArray(), "format": "Lum8", "height": 0, "mipmaps": false, "width": 0 }`` :ref:`🔗<class_Image_property_data>`
 
 Holds all the image's color data in a given format. See :ref:`Format<enum_Image_Format>` constants.
 
@@ -870,7 +874,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **adjust_bcs**\ (\ brightness\: :ref:`float<class_float>`, contrast\: :ref:`float<class_float>`, saturation\: :ref:`float<class_float>`\ )
+|void| **adjust_bcs**\ (\ brightness\: :ref:`float<class_float>`, contrast\: :ref:`float<class_float>`, saturation\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Image_method_adjust_bcs>`
 
 Adjusts this image's ``brightness``, ``contrast``, and ``saturation`` by the given values. Does not work if the image is compressed (see :ref:`is_compressed<class_Image_method_is_compressed>`).
 
@@ -882,7 +886,7 @@ Adjusts this image's ``brightness``, ``contrast``, and ``saturation`` by the giv
 
 .. rst-class:: classref-method
 
-|void| **blend_rect**\ (\ src\: :ref:`Image<class_Image>`, src_rect\: :ref:`Rect2i<class_Rect2i>`, dst\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **blend_rect**\ (\ src\: :ref:`Image<class_Image>`, src_rect\: :ref:`Rect2i<class_Rect2i>`, dst\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_Image_method_blend_rect>`
 
 Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dst``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with non-positive size is treated as empty.
 
@@ -894,7 +898,7 @@ Alpha-blends ``src_rect`` from ``src`` image to this image at coordinates ``dst`
 
 .. rst-class:: classref-method
 
-|void| **blend_rect_mask**\ (\ src\: :ref:`Image<class_Image>`, mask\: :ref:`Image<class_Image>`, src_rect\: :ref:`Rect2i<class_Rect2i>`, dst\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **blend_rect_mask**\ (\ src\: :ref:`Image<class_Image>`, mask\: :ref:`Image<class_Image>`, src_rect\: :ref:`Rect2i<class_Rect2i>`, dst\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_Image_method_blend_rect_mask>`
 
 Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image at coordinates ``dst``, clipped accordingly to both image bounds. Alpha channels are required for both ``src`` and ``mask``. ``dst`` pixels and ``src`` pixels will blend if the corresponding mask pixel's alpha value is not 0. This image and ``src`` image **must** have the same format. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats. ``src_rect`` with non-positive size is treated as empty.
 
@@ -906,7 +910,7 @@ Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image 
 
 .. rst-class:: classref-method
 
-|void| **blit_rect**\ (\ src\: :ref:`Image<class_Image>`, src_rect\: :ref:`Rect2i<class_Rect2i>`, dst\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **blit_rect**\ (\ src\: :ref:`Image<class_Image>`, src_rect\: :ref:`Rect2i<class_Rect2i>`, dst\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_Image_method_blit_rect>`
 
 Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with non-positive size is treated as empty.
 
@@ -918,7 +922,7 @@ Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``, cli
 
 .. rst-class:: classref-method
 
-|void| **blit_rect_mask**\ (\ src\: :ref:`Image<class_Image>`, mask\: :ref:`Image<class_Image>`, src_rect\: :ref:`Rect2i<class_Rect2i>`, dst\: :ref:`Vector2i<class_Vector2i>`\ )
+|void| **blit_rect_mask**\ (\ src\: :ref:`Image<class_Image>`, mask\: :ref:`Image<class_Image>`, src_rect\: :ref:`Rect2i<class_Rect2i>`, dst\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_Image_method_blit_rect_mask>`
 
 Blits ``src_rect`` area from ``src`` image to this image at the coordinates given by ``dst``, clipped accordingly to both image bounds. ``src`` pixel is copied onto ``dst`` if the corresponding ``mask`` pixel's alpha value is not 0. This image and ``src`` image **must** have the same format. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats. ``src_rect`` with non-positive size is treated as empty.
 
@@ -930,7 +934,7 @@ Blits ``src_rect`` area from ``src`` image to this image at the coordinates give
 
 .. rst-class:: classref-method
 
-|void| **bump_map_to_normal_map**\ (\ bump_scale\: :ref:`float<class_float>` = 1.0\ )
+|void| **bump_map_to_normal_map**\ (\ bump_scale\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_Image_method_bump_map_to_normal_map>`
 
 Converts a bump map to a normal map. A bump map provides a height offset per-pixel, while a normal map provides a normal direction per pixel.
 
@@ -942,7 +946,7 @@ Converts a bump map to a normal map. A bump map provides a height offset per-pix
 
 .. rst-class:: classref-method
 
-|void| **clear_mipmaps**\ (\ )
+|void| **clear_mipmaps**\ (\ ) :ref:`🔗<class_Image_method_clear_mipmaps>`
 
 Removes the image's mipmaps.
 
@@ -954,7 +958,7 @@ Removes the image's mipmaps.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **compress**\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, source\: :ref:`CompressSource<enum_Image_CompressSource>` = 0, astc_format\: :ref:`ASTCFormat<enum_Image_ASTCFormat>` = 0\ )
+:ref:`Error<enum_@GlobalScope_Error>` **compress**\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, source\: :ref:`CompressSource<enum_Image_CompressSource>` = 0, astc_format\: :ref:`ASTCFormat<enum_Image_ASTCFormat>` = 0\ ) :ref:`🔗<class_Image_method_compress>`
 
 Compresses the image to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available.
 
@@ -970,7 +974,7 @@ For ASTC compression, the ``astc_format`` parameter must be supplied.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **compress_from_channels**\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, channels\: :ref:`UsedChannels<enum_Image_UsedChannels>`, astc_format\: :ref:`ASTCFormat<enum_Image_ASTCFormat>` = 0\ )
+:ref:`Error<enum_@GlobalScope_Error>` **compress_from_channels**\ (\ mode\: :ref:`CompressMode<enum_Image_CompressMode>`, channels\: :ref:`UsedChannels<enum_Image_UsedChannels>`, astc_format\: :ref:`ASTCFormat<enum_Image_ASTCFormat>` = 0\ ) :ref:`🔗<class_Image_method_compress_from_channels>`
 
 Compresses the image to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available.
 
@@ -986,7 +990,7 @@ For ASTC compression, the ``astc_format`` parameter must be supplied.
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **compute_image_metrics**\ (\ compared_image\: :ref:`Image<class_Image>`, use_luma\: :ref:`bool<class_bool>`\ )
+:ref:`Dictionary<class_Dictionary>` **compute_image_metrics**\ (\ compared_image\: :ref:`Image<class_Image>`, use_luma\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Image_method_compute_image_metrics>`
 
 Compute image metrics on the current image and the compared image.
 
@@ -1000,7 +1004,7 @@ The dictionary contains ``max``, ``mean``, ``mean_squared``, ``root_mean_squared
 
 .. rst-class:: classref-method
 
-|void| **convert**\ (\ format\: :ref:`Format<enum_Image_Format>`\ )
+|void| **convert**\ (\ format\: :ref:`Format<enum_Image_Format>`\ ) :ref:`🔗<class_Image_method_convert>`
 
 Converts the image's format. See :ref:`Format<enum_Image_Format>` constants.
 
@@ -1012,7 +1016,7 @@ Converts the image's format. See :ref:`Format<enum_Image_Format>` constants.
 
 .. rst-class:: classref-method
 
-|void| **copy_from**\ (\ src\: :ref:`Image<class_Image>`\ )
+|void| **copy_from**\ (\ src\: :ref:`Image<class_Image>`\ ) :ref:`🔗<class_Image_method_copy_from>`
 
 Copies ``src`` image to this image.
 
@@ -1024,7 +1028,21 @@ Copies ``src`` image to this image.
 
 .. rst-class:: classref-method
 
-:ref:`Image<class_Image>` **create**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static|
+:ref:`Image<class_Image>` **create**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static| :ref:`🔗<class_Image_method_create>`
+
+**Deprecated:** Use :ref:`create_empty<class_Image_method_create_empty>`.
+
+Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true``, then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Image_method_create_empty:
+
+.. rst-class:: classref-method
+
+:ref:`Image<class_Image>` **create_empty**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`\ ) |static| :ref:`🔗<class_Image_method_create_empty>`
 
 Creates an empty image of given size and format. See :ref:`Format<enum_Image_Format>` constants. If ``use_mipmaps`` is ``true``, then generate mipmaps for this image. See the :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
 
@@ -1036,7 +1054,7 @@ Creates an empty image of given size and format. See :ref:`Format<enum_Image_For
 
 .. rst-class:: classref-method
 
-:ref:`Image<class_Image>` **create_from_data**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static|
+:ref:`Image<class_Image>` **create_from_data**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| :ref:`🔗<class_Image_method_create_from_data>`
 
 Creates a new image of given size and format. See :ref:`Format<enum_Image_Format>` constants. Fills the image with the given raw data. If ``use_mipmaps`` is ``true`` then loads mipmaps for this image from ``data``. See :ref:`generate_mipmaps<class_Image_method_generate_mipmaps>`.
 
@@ -1048,7 +1066,7 @@ Creates a new image of given size and format. See :ref:`Format<enum_Image_Format
 
 .. rst-class:: classref-method
 
-|void| **crop**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`\ )
+|void| **crop**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Image_method_crop>`
 
 Crops the image to the given ``width`` and ``height``. If the specified size is larger than the current size, the extra area is filled with black pixels.
 
@@ -1060,7 +1078,7 @@ Crops the image to the given ``width`` and ``height``. If the specified size is 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **decompress**\ (\ )
+:ref:`Error<enum_@GlobalScope_Error>` **decompress**\ (\ ) :ref:`🔗<class_Image_method_decompress>`
 
 Decompresses the image if it is VRAM compressed in a supported format. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the format is supported, otherwise :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>`.
 
@@ -1074,7 +1092,7 @@ Decompresses the image if it is VRAM compressed in a supported format. Returns :
 
 .. rst-class:: classref-method
 
-:ref:`AlphaMode<enum_Image_AlphaMode>` **detect_alpha**\ (\ ) |const|
+:ref:`AlphaMode<enum_Image_AlphaMode>` **detect_alpha**\ (\ ) |const| :ref:`🔗<class_Image_method_detect_alpha>`
 
 Returns :ref:`ALPHA_BLEND<class_Image_constant_ALPHA_BLEND>` if the image has data for alpha values. Returns :ref:`ALPHA_BIT<class_Image_constant_ALPHA_BIT>` if all the alpha values are stored in a single bit. Returns :ref:`ALPHA_NONE<class_Image_constant_ALPHA_NONE>` if no data for alpha values is found.
 
@@ -1086,7 +1104,7 @@ Returns :ref:`ALPHA_BLEND<class_Image_constant_ALPHA_BLEND>` if the image has da
 
 .. rst-class:: classref-method
 
-:ref:`UsedChannels<enum_Image_UsedChannels>` **detect_used_channels**\ (\ source\: :ref:`CompressSource<enum_Image_CompressSource>` = 0\ ) |const|
+:ref:`UsedChannels<enum_Image_UsedChannels>` **detect_used_channels**\ (\ source\: :ref:`CompressSource<enum_Image_CompressSource>` = 0\ ) |const| :ref:`🔗<class_Image_method_detect_used_channels>`
 
 Returns the color channels used by this image, as one of the :ref:`UsedChannels<enum_Image_UsedChannels>` constants. If the image is compressed, the original ``source`` must be specified.
 
@@ -1098,7 +1116,7 @@ Returns the color channels used by this image, as one of the :ref:`UsedChannels<
 
 .. rst-class:: classref-method
 
-|void| **fill**\ (\ color\: :ref:`Color<class_Color>`\ )
+|void| **fill**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Image_method_fill>`
 
 Fills the image with ``color``.
 
@@ -1110,7 +1128,7 @@ Fills the image with ``color``.
 
 .. rst-class:: classref-method
 
-|void| **fill_rect**\ (\ rect\: :ref:`Rect2i<class_Rect2i>`, color\: :ref:`Color<class_Color>`\ )
+|void| **fill_rect**\ (\ rect\: :ref:`Rect2i<class_Rect2i>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Image_method_fill_rect>`
 
 Fills ``rect`` with ``color``.
 
@@ -1122,7 +1140,7 @@ Fills ``rect`` with ``color``.
 
 .. rst-class:: classref-method
 
-|void| **fix_alpha_edges**\ (\ )
+|void| **fix_alpha_edges**\ (\ ) :ref:`🔗<class_Image_method_fix_alpha_edges>`
 
 Blends low-alpha pixels with nearby pixels.
 
@@ -1134,7 +1152,7 @@ Blends low-alpha pixels with nearby pixels.
 
 .. rst-class:: classref-method
 
-|void| **flip_x**\ (\ )
+|void| **flip_x**\ (\ ) :ref:`🔗<class_Image_method_flip_x>`
 
 Flips the image horizontally.
 
@@ -1146,7 +1164,7 @@ Flips the image horizontally.
 
 .. rst-class:: classref-method
 
-|void| **flip_y**\ (\ )
+|void| **flip_y**\ (\ ) :ref:`🔗<class_Image_method_flip_y>`
 
 Flips the image vertically.
 
@@ -1158,7 +1176,7 @@ Flips the image vertically.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **generate_mipmaps**\ (\ renormalize\: :ref:`bool<class_bool>` = false\ )
+:ref:`Error<enum_@GlobalScope_Error>` **generate_mipmaps**\ (\ renormalize\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Image_method_generate_mipmaps>`
 
 Generates mipmaps for the image. Mipmaps are precalculated lower-resolution copies of the image that are automatically used if the image needs to be scaled down when rendered. They help improve image quality and performance when rendering. This method returns an error if the image is compressed, in a custom format, or if the image's width/height is ``0``. Enabling ``renormalize`` when generating mipmaps for normal map textures will make sure all resulting vector values are normalized.
 
@@ -1172,9 +1190,21 @@ It is possible to check if the image has mipmaps by calling :ref:`has_mipmaps<cl
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_data**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **get_data**\ (\ ) |const| :ref:`🔗<class_Image_method_get_data>`
 
 Returns a copy of the image's raw data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Image_method_get_data_size:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_data_size**\ (\ ) |const| :ref:`🔗<class_Image_method_get_data_size>`
+
+Returns size (in bytes) of the image's raw data.
 
 .. rst-class:: classref-item-separator
 
@@ -1184,7 +1214,7 @@ Returns a copy of the image's raw data.
 
 .. rst-class:: classref-method
 
-:ref:`Format<enum_Image_Format>` **get_format**\ (\ ) |const|
+:ref:`Format<enum_Image_Format>` **get_format**\ (\ ) |const| :ref:`🔗<class_Image_method_get_format>`
 
 Returns the image's format. See :ref:`Format<enum_Image_Format>` constants.
 
@@ -1196,7 +1226,7 @@ Returns the image's format. See :ref:`Format<enum_Image_Format>` constants.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_height**\ (\ ) |const|
+:ref:`int<class_int>` **get_height**\ (\ ) |const| :ref:`🔗<class_Image_method_get_height>`
 
 Returns the image's height.
 
@@ -1208,7 +1238,7 @@ Returns the image's height.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_mipmap_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_mipmap_count**\ (\ ) |const| :ref:`🔗<class_Image_method_get_mipmap_count>`
 
 Returns the number of mipmap levels or 0 if the image has no mipmaps. The largest main level image is not counted as a mipmap level by this method, so if you want to include it you can add 1 to this count.
 
@@ -1220,7 +1250,7 @@ Returns the number of mipmap levels or 0 if the image has no mipmaps. The larges
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_mipmap_offset**\ (\ mipmap\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_mipmap_offset**\ (\ mipmap\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Image_method_get_mipmap_offset>`
 
 Returns the offset where the image's mipmap with index ``mipmap`` is stored in the :ref:`data<class_Image_property_data>` dictionary.
 
@@ -1232,7 +1262,7 @@ Returns the offset where the image's mipmap with index ``mipmap`` is stored in t
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_pixel**\ (\ x\: :ref:`int<class_int>`, y\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_pixel**\ (\ x\: :ref:`int<class_int>`, y\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Image_method_get_pixel>`
 
 Returns the color of the pixel at ``(x, y)``.
 
@@ -1246,7 +1276,7 @@ This is the same as :ref:`get_pixelv<class_Image_method_get_pixelv>`, but with t
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_pixelv**\ (\ point\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`Color<class_Color>` **get_pixelv**\ (\ point\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_Image_method_get_pixelv>`
 
 Returns the color of the pixel at ``point``.
 
@@ -1260,7 +1290,7 @@ This is the same as :ref:`get_pixel<class_Image_method_get_pixel>`, but with a :
 
 .. rst-class:: classref-method
 
-:ref:`Image<class_Image>` **get_region**\ (\ region\: :ref:`Rect2i<class_Rect2i>`\ ) |const|
+:ref:`Image<class_Image>` **get_region**\ (\ region\: :ref:`Rect2i<class_Rect2i>`\ ) |const| :ref:`🔗<class_Image_method_get_region>`
 
 Returns a new **Image** that is a copy of this **Image**'s area specified with ``region``.
 
@@ -1272,7 +1302,7 @@ Returns a new **Image** that is a copy of this **Image**'s area specified with `
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_size**\ (\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **get_size**\ (\ ) |const| :ref:`🔗<class_Image_method_get_size>`
 
 Returns the image's size (width and height).
 
@@ -1284,7 +1314,7 @@ Returns the image's size (width and height).
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **get_used_rect**\ (\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **get_used_rect**\ (\ ) |const| :ref:`🔗<class_Image_method_get_used_rect>`
 
 Returns a :ref:`Rect2i<class_Rect2i>` enclosing the visible portion of the image, considering each pixel with a non-zero alpha channel as visible.
 
@@ -1296,7 +1326,7 @@ Returns a :ref:`Rect2i<class_Rect2i>` enclosing the visible portion of the image
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_width**\ (\ ) |const|
+:ref:`int<class_int>` **get_width**\ (\ ) |const| :ref:`🔗<class_Image_method_get_width>`
 
 Returns the image's width.
 
@@ -1308,7 +1338,7 @@ Returns the image's width.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_mipmaps**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_mipmaps**\ (\ ) |const| :ref:`🔗<class_Image_method_has_mipmaps>`
 
 Returns ``true`` if the image has generated mipmaps.
 
@@ -1320,7 +1350,7 @@ Returns ``true`` if the image has generated mipmaps.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_compressed**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_compressed**\ (\ ) |const| :ref:`🔗<class_Image_method_is_compressed>`
 
 Returns ``true`` if the image is compressed.
 
@@ -1332,7 +1362,7 @@ Returns ``true`` if the image is compressed.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_Image_method_is_empty>`
 
 Returns ``true`` if the image has no data.
 
@@ -1344,7 +1374,7 @@ Returns ``true`` if the image has no data.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_invisible**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_invisible**\ (\ ) |const| :ref:`🔗<class_Image_method_is_invisible>`
 
 Returns ``true`` if all the image's pixels have an alpha value of 0. Returns ``false`` if any pixel has an alpha value higher than 0.
 
@@ -1356,7 +1386,7 @@ Returns ``true`` if all the image's pixels have an alpha value of 0. Returns ``f
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Image_method_load>`
 
 Loads an image from file ``path``. See `Supported image formats <../tutorials/assets_pipeline/importing_images.html#supported-image-formats>`__ for a list of supported image formats and limitations.
 
@@ -1372,7 +1402,7 @@ See also :ref:`ImageTexture<class_ImageTexture>` description for usage examples.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_bmp_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_bmp_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Image_method_load_bmp_from_buffer>`
 
 Loads an image from the binary contents of a BMP file.
 
@@ -1388,7 +1418,7 @@ Loads an image from the binary contents of a BMP file.
 
 .. rst-class:: classref-method
 
-:ref:`Image<class_Image>` **load_from_file**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`Image<class_Image>` **load_from_file**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_Image_method_load_from_file>`
 
 Creates a new **Image** and loads data from the specified file.
 
@@ -1400,7 +1430,7 @@ Creates a new **Image** and loads data from the specified file.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_jpg_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_jpg_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Image_method_load_jpg_from_buffer>`
 
 Loads an image from the binary contents of a JPEG file.
 
@@ -1412,7 +1442,7 @@ Loads an image from the binary contents of a JPEG file.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_ktx_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_ktx_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Image_method_load_ktx_from_buffer>`
 
 Loads an image from the binary contents of a `KTX <https://github.com/KhronosGroup/KTX-Software>`__ file. Unlike most image formats, KTX can store VRAM-compressed data and embed mipmaps.
 
@@ -1428,7 +1458,7 @@ Loads an image from the binary contents of a `KTX <https://github.com/KhronosGro
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_png_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_png_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Image_method_load_png_from_buffer>`
 
 Loads an image from the binary contents of a PNG file.
 
@@ -1440,7 +1470,7 @@ Loads an image from the binary contents of a PNG file.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_svg_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, scale\: :ref:`float<class_float>` = 1.0\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_svg_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, scale\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_Image_method_load_svg_from_buffer>`
 
 Loads an image from the UTF-8 binary contents of an **uncompressed** SVG file (**.svg**).
 
@@ -1456,7 +1486,7 @@ Loads an image from the UTF-8 binary contents of an **uncompressed** SVG file (*
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_svg_from_string**\ (\ svg_str\: :ref:`String<class_String>`, scale\: :ref:`float<class_float>` = 1.0\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_svg_from_string**\ (\ svg_str\: :ref:`String<class_String>`, scale\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_Image_method_load_svg_from_string>`
 
 Loads an image from the string contents of an SVG file (**.svg**).
 
@@ -1470,7 +1500,7 @@ Loads an image from the string contents of an SVG file (**.svg**).
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_tga_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_tga_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Image_method_load_tga_from_buffer>`
 
 Loads an image from the binary contents of a TGA file.
 
@@ -1484,7 +1514,7 @@ Loads an image from the binary contents of a TGA file.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_webp_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_webp_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Image_method_load_webp_from_buffer>`
 
 Loads an image from the binary contents of a WebP file.
 
@@ -1496,7 +1526,7 @@ Loads an image from the binary contents of a WebP file.
 
 .. rst-class:: classref-method
 
-|void| **normal_map_to_xy**\ (\ )
+|void| **normal_map_to_xy**\ (\ ) :ref:`🔗<class_Image_method_normal_map_to_xy>`
 
 Converts the image's data to represent coordinates on a 3D plane. This is used when the image represents a normal map. A normal map can add lots of detail to a 3D surface without increasing the polygon count.
 
@@ -1508,7 +1538,7 @@ Converts the image's data to represent coordinates on a 3D plane. This is used w
 
 .. rst-class:: classref-method
 
-|void| **premultiply_alpha**\ (\ )
+|void| **premultiply_alpha**\ (\ ) :ref:`🔗<class_Image_method_premultiply_alpha>`
 
 Multiplies color values with alpha values. Resulting color values for a pixel are ``(color * alpha)/256``. See also :ref:`CanvasItemMaterial.blend_mode<class_CanvasItemMaterial_property_blend_mode>`.
 
@@ -1520,7 +1550,7 @@ Multiplies color values with alpha values. Resulting color values for a pixel ar
 
 .. rst-class:: classref-method
 
-|void| **resize**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, interpolation\: :ref:`Interpolation<enum_Image_Interpolation>` = 1\ )
+|void| **resize**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, interpolation\: :ref:`Interpolation<enum_Image_Interpolation>` = 1\ ) :ref:`🔗<class_Image_method_resize>`
 
 Resizes the image to the given ``width`` and ``height``. New pixels are calculated using the ``interpolation`` mode defined via :ref:`Interpolation<enum_Image_Interpolation>` constants.
 
@@ -1532,7 +1562,7 @@ Resizes the image to the given ``width`` and ``height``. New pixels are calculat
 
 .. rst-class:: classref-method
 
-|void| **resize_to_po2**\ (\ square\: :ref:`bool<class_bool>` = false, interpolation\: :ref:`Interpolation<enum_Image_Interpolation>` = 1\ )
+|void| **resize_to_po2**\ (\ square\: :ref:`bool<class_bool>` = false, interpolation\: :ref:`Interpolation<enum_Image_Interpolation>` = 1\ ) :ref:`🔗<class_Image_method_resize_to_po2>`
 
 Resizes the image to the nearest power of 2 for the width and height. If ``square`` is ``true`` then set width and height to be the same. New pixels are calculated using the ``interpolation`` mode defined via :ref:`Interpolation<enum_Image_Interpolation>` constants.
 
@@ -1544,7 +1574,7 @@ Resizes the image to the nearest power of 2 for the width and height. If ``squar
 
 .. rst-class:: classref-method
 
-:ref:`Image<class_Image>` **rgbe_to_srgb**\ (\ )
+:ref:`Image<class_Image>` **rgbe_to_srgb**\ (\ ) :ref:`🔗<class_Image_method_rgbe_to_srgb>`
 
 Converts a standard RGBE (Red Green Blue Exponent) image to an sRGB image.
 
@@ -1556,7 +1586,7 @@ Converts a standard RGBE (Red Green Blue Exponent) image to an sRGB image.
 
 .. rst-class:: classref-method
 
-|void| **rotate_90**\ (\ direction\: :ref:`ClockDirection<enum_@GlobalScope_ClockDirection>`\ )
+|void| **rotate_90**\ (\ direction\: :ref:`ClockDirection<enum_@GlobalScope_ClockDirection>`\ ) :ref:`🔗<class_Image_method_rotate_90>`
 
 Rotates the image in the specified ``direction`` by ``90`` degrees. The width and height of the image must be greater than ``1``. If the width and height are not equal, the image will be resized.
 
@@ -1568,7 +1598,7 @@ Rotates the image in the specified ``direction`` by ``90`` degrees. The width an
 
 .. rst-class:: classref-method
 
-|void| **rotate_180**\ (\ )
+|void| **rotate_180**\ (\ ) :ref:`🔗<class_Image_method_rotate_180>`
 
 Rotates the image by ``180`` degrees. The width and height of the image must be greater than ``1``.
 
@@ -1580,7 +1610,7 @@ Rotates the image by ``180`` degrees. The width and height of the image must be 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save_exr**\ (\ path\: :ref:`String<class_String>`, grayscale\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Error<enum_@GlobalScope_Error>` **save_exr**\ (\ path\: :ref:`String<class_String>`, grayscale\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Image_method_save_exr>`
 
 Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if Godot was compiled without the TinyEXR module.
 
@@ -1594,7 +1624,7 @@ Saves the image as an EXR file to ``path``. If ``grayscale`` is ``true`` and the
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **save_exr_to_buffer**\ (\ grayscale\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **save_exr_to_buffer**\ (\ grayscale\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Image_method_save_exr_to_buffer>`
 
 Saves the image as an EXR file to a byte array. If ``grayscale`` is ``true`` and the image has only one channel, it will be saved explicitly as monochrome rather than one red channel. This function will return an empty byte array if Godot was compiled without the TinyEXR module.
 
@@ -1608,7 +1638,7 @@ Saves the image as an EXR file to a byte array. If ``grayscale`` is ``true`` and
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save_jpg**\ (\ path\: :ref:`String<class_String>`, quality\: :ref:`float<class_float>` = 0.75\ ) |const|
+:ref:`Error<enum_@GlobalScope_Error>` **save_jpg**\ (\ path\: :ref:`String<class_String>`, quality\: :ref:`float<class_float>` = 0.75\ ) |const| :ref:`🔗<class_Image_method_save_jpg>`
 
 Saves the image as a JPEG file to ``path`` with the specified ``quality`` between ``0.01`` and ``1.0`` (inclusive). Higher ``quality`` values result in better-looking output at the cost of larger file sizes. Recommended ``quality`` values are between ``0.75`` and ``0.90``. Even at quality ``1.00``, JPEG compression remains lossy.
 
@@ -1622,7 +1652,7 @@ Saves the image as a JPEG file to ``path`` with the specified ``quality`` betwee
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **save_jpg_to_buffer**\ (\ quality\: :ref:`float<class_float>` = 0.75\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **save_jpg_to_buffer**\ (\ quality\: :ref:`float<class_float>` = 0.75\ ) |const| :ref:`🔗<class_Image_method_save_jpg_to_buffer>`
 
 Saves the image as a JPEG file to a byte array with the specified ``quality`` between ``0.01`` and ``1.0`` (inclusive). Higher ``quality`` values result in better-looking output at the cost of larger byte array sizes (and therefore memory usage). Recommended ``quality`` values are between ``0.75`` and ``0.90``. Even at quality ``1.00``, JPEG compression remains lossy.
 
@@ -1636,7 +1666,7 @@ Saves the image as a JPEG file to a byte array with the specified ``quality`` be
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save_png**\ (\ path\: :ref:`String<class_String>`\ ) |const|
+:ref:`Error<enum_@GlobalScope_Error>` **save_png**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_Image_method_save_png>`
 
 Saves the image as a PNG file to the file at ``path``.
 
@@ -1648,7 +1678,7 @@ Saves the image as a PNG file to the file at ``path``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **save_png_to_buffer**\ (\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **save_png_to_buffer**\ (\ ) |const| :ref:`🔗<class_Image_method_save_png_to_buffer>`
 
 Saves the image as a PNG file to a byte array.
 
@@ -1660,7 +1690,7 @@ Saves the image as a PNG file to a byte array.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save_webp**\ (\ path\: :ref:`String<class_String>`, lossy\: :ref:`bool<class_bool>` = false, quality\: :ref:`float<class_float>` = 0.75\ ) |const|
+:ref:`Error<enum_@GlobalScope_Error>` **save_webp**\ (\ path\: :ref:`String<class_String>`, lossy\: :ref:`bool<class_bool>` = false, quality\: :ref:`float<class_float>` = 0.75\ ) |const| :ref:`🔗<class_Image_method_save_webp>`
 
 Saves the image as a WebP (Web Picture) file to the file at ``path``. By default it will save lossless. If ``lossy`` is true, the image will be saved lossy, using the ``quality`` setting between 0.0 and 1.0 (inclusive). Lossless WebP offers more efficient compression than PNG.
 
@@ -1674,7 +1704,7 @@ Saves the image as a WebP (Web Picture) file to the file at ``path``. By default
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **save_webp_to_buffer**\ (\ lossy\: :ref:`bool<class_bool>` = false, quality\: :ref:`float<class_float>` = 0.75\ ) |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **save_webp_to_buffer**\ (\ lossy\: :ref:`bool<class_bool>` = false, quality\: :ref:`float<class_float>` = 0.75\ ) |const| :ref:`🔗<class_Image_method_save_webp_to_buffer>`
 
 Saves the image as a WebP (Web Picture) file to a byte array. By default it will save lossless. If ``lossy`` is true, the image will be saved lossy, using the ``quality`` setting between 0.0 and 1.0 (inclusive). Lossless WebP offers more efficient compression than PNG.
 
@@ -1688,7 +1718,7 @@ Saves the image as a WebP (Web Picture) file to a byte array. By default it will
 
 .. rst-class:: classref-method
 
-|void| **set_data**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+|void| **set_data**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, format\: :ref:`Format<enum_Image_Format>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_Image_method_set_data>`
 
 Overwrites data of an existing **Image**. Non-static equivalent of :ref:`create_from_data<class_Image_method_create_from_data>`.
 
@@ -1700,7 +1730,7 @@ Overwrites data of an existing **Image**. Non-static equivalent of :ref:`create_
 
 .. rst-class:: classref-method
 
-|void| **set_pixel**\ (\ x\: :ref:`int<class_int>`, y\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )
+|void| **set_pixel**\ (\ x\: :ref:`int<class_int>`, y\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Image_method_set_pixel>`
 
 Sets the :ref:`Color<class_Color>` of the pixel at ``(x, y)`` to ``color``.
 
@@ -1737,7 +1767,7 @@ This is the same as :ref:`set_pixelv<class_Image_method_set_pixelv>`, but with a
 
 .. rst-class:: classref-method
 
-|void| **set_pixelv**\ (\ point\: :ref:`Vector2i<class_Vector2i>`, color\: :ref:`Color<class_Color>`\ )
+|void| **set_pixelv**\ (\ point\: :ref:`Vector2i<class_Vector2i>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Image_method_set_pixelv>`
 
 Sets the :ref:`Color<class_Color>` of the pixel at ``point`` to ``color``.
 
@@ -1774,7 +1804,7 @@ This is the same as :ref:`set_pixel<class_Image_method_set_pixel>`, but with a :
 
 .. rst-class:: classref-method
 
-|void| **shrink_x2**\ (\ )
+|void| **shrink_x2**\ (\ ) :ref:`🔗<class_Image_method_shrink_x2>`
 
 Shrinks the image by a factor of 2 on each axis (this divides the pixel count by 4).
 
@@ -1786,7 +1816,7 @@ Shrinks the image by a factor of 2 on each axis (this divides the pixel count by
 
 .. rst-class:: classref-method
 
-|void| **srgb_to_linear**\ (\ )
+|void| **srgb_to_linear**\ (\ ) :ref:`🔗<class_Image_method_srgb_to_linear>`
 
 Converts the raw data from the sRGB colorspace to a linear scale.
 

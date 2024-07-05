@@ -40,8 +40,6 @@ Properties
    :widths: auto
 
    +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                            | follow_focus           | ``true`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_follow_focus>`)        |
-   +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
    | :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` | horizontal_scroll_mode | ``0`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_horizontal_scroll_mode>`) |
    +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
 
@@ -72,7 +70,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**edited_object_changed**\ (\ )
+**edited_object_changed**\ (\ ) :ref:`🔗<class_EditorInspector_signal_edited_object_changed>`
 
 Emitted when the object being edited by the inspector has changed.
 
@@ -84,7 +82,7 @@ Emitted when the object being edited by the inspector has changed.
 
 .. rst-class:: classref-signal
 
-**object_id_selected**\ (\ id\: :ref:`int<class_int>`\ )
+**object_id_selected**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EditorInspector_signal_object_id_selected>`
 
 Emitted when the Edit button of an :ref:`Object<class_Object>` has been pressed in the inspector. This is mainly used in the remote scene tree Inspector.
 
@@ -96,7 +94,7 @@ Emitted when the Edit button of an :ref:`Object<class_Object>` has been pressed 
 
 .. rst-class:: classref-signal
 
-**property_deleted**\ (\ property\: :ref:`String<class_String>`\ )
+**property_deleted**\ (\ property\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInspector_signal_property_deleted>`
 
 Emitted when a property is removed from the inspector.
 
@@ -108,7 +106,7 @@ Emitted when a property is removed from the inspector.
 
 .. rst-class:: classref-signal
 
-**property_edited**\ (\ property\: :ref:`String<class_String>`\ )
+**property_edited**\ (\ property\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInspector_signal_property_edited>`
 
 Emitted when a property is edited in the inspector.
 
@@ -120,7 +118,7 @@ Emitted when a property is edited in the inspector.
 
 .. rst-class:: classref-signal
 
-**property_keyed**\ (\ property\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`, advance\: :ref:`bool<class_bool>`\ )
+**property_keyed**\ (\ property\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`, advance\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorInspector_signal_property_keyed>`
 
 Emitted when a property is keyed in the inspector. Properties can be keyed by clicking the "key" icon next to a property when the Animation panel is toggled.
 
@@ -132,7 +130,7 @@ Emitted when a property is keyed in the inspector. Properties can be keyed by cl
 
 .. rst-class:: classref-signal
 
-**property_selected**\ (\ property\: :ref:`String<class_String>`\ )
+**property_selected**\ (\ property\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInspector_signal_property_selected>`
 
 Emitted when a property is selected in the inspector.
 
@@ -144,7 +142,7 @@ Emitted when a property is selected in the inspector.
 
 .. rst-class:: classref-signal
 
-**property_toggled**\ (\ property\: :ref:`String<class_String>`, checked\: :ref:`bool<class_bool>`\ )
+**property_toggled**\ (\ property\: :ref:`String<class_String>`, checked\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorInspector_signal_property_toggled>`
 
 Emitted when a boolean property is toggled in the inspector.
 
@@ -158,7 +156,7 @@ Emitted when a boolean property is toggled in the inspector.
 
 .. rst-class:: classref-signal
 
-**resource_selected**\ (\ resource\: :ref:`Resource<class_Resource>`, path\: :ref:`String<class_String>`\ )
+**resource_selected**\ (\ resource\: :ref:`Resource<class_Resource>`, path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInspector_signal_resource_selected>`
 
 Emitted when a resource is selected in the inspector.
 
@@ -170,7 +168,7 @@ Emitted when a resource is selected in the inspector.
 
 .. rst-class:: classref-signal
 
-**restart_requested**\ (\ )
+**restart_requested**\ (\ ) :ref:`🔗<class_EditorInspector_signal_restart_requested>`
 
 Emitted when a property that requires a restart to be applied is edited in the inspector. This is only used in the Project Settings and Editor Settings.
 
@@ -187,7 +185,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_edited_object**\ (\ )
+:ref:`Object<class_Object>` **get_edited_object**\ (\ ) :ref:`🔗<class_EditorInspector_method_get_edited_object>`
 
 Returns the object currently selected in this inspector.
 
@@ -199,7 +197,7 @@ Returns the object currently selected in this inspector.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_selected_path**\ (\ ) |const|
+:ref:`String<class_String>` **get_selected_path**\ (\ ) |const| :ref:`🔗<class_EditorInspector_method_get_selected_path>`
 
 Gets the path of the currently selected property.
 

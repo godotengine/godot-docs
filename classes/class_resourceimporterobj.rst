@@ -63,7 +63,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **force_disable_mesh_compression** = ``false``
+:ref:`bool<class_bool>` **force_disable_mesh_compression** = ``false`` :ref:`🔗<class_ResourceImporterOBJ_property_force_disable_mesh_compression>`
 
 If ``true``, mesh compression will not be used. Consider enabling if you notice blocky artifacts in your mesh normals or UVs, or if you have meshes that are larger than a few thousand meters in each direction.
 
@@ -75,7 +75,7 @@ If ``true``, mesh compression will not be used. Consider enabling if you notice 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **generate_tangents** = ``true``
+:ref:`bool<class_bool>` **generate_tangents** = ``true`` :ref:`🔗<class_ResourceImporterOBJ_property_generate_tangents>`
 
 If ``true``, generate vertex tangents using `Mikktspace <http://www.mikktspace.com/>`__ if the source mesh doesn't have tangent data. When possible, it's recommended to let the 3D modeling software generate tangents on export instead on relying on this option. Tangents are required for correct display of normal and height maps, along with any material/shader features that require tangents.
 
@@ -89,7 +89,7 @@ If you don't need material features that require tangents, disabling this can re
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **offset_mesh** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **offset_mesh** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_ResourceImporterOBJ_property_offset_mesh>`
 
 Offsets the mesh's data by the specified value. This can be used to work around misaligned meshes without having to modify the source file.
 
@@ -101,7 +101,7 @@ Offsets the mesh's data by the specified value. This can be used to work around 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **optimize_mesh** = ``true``
+:ref:`bool<class_bool>` **optimize_mesh** = ``true`` :ref:`🔗<class_ResourceImporterOBJ_property_optimize_mesh>`
 
 Unused parameter. This currently has no effect.
 
@@ -113,7 +113,7 @@ Unused parameter. This currently has no effect.
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **scale_mesh** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **scale_mesh** = ``Vector3(1, 1, 1)`` :ref:`🔗<class_ResourceImporterOBJ_property_scale_mesh>`
 
 Scales the mesh's data by the specified value. This can be used to work around misscaled meshes without having to modify the source file.
 

@@ -54,7 +54,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format** = ``218``
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format** = ``218`` :ref:`🔗<class_RDVertexAttribute_property_format>`
 
 .. rst-class:: classref-property-setget
 
@@ -73,7 +73,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`VertexFrequency<enum_RenderingDevice_VertexFrequency>` **frequency** = ``0``
+:ref:`VertexFrequency<enum_RenderingDevice_VertexFrequency>` **frequency** = ``0`` :ref:`🔗<class_RDVertexAttribute_property_frequency>`
 
 .. rst-class:: classref-property-setget
 
@@ -92,7 +92,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **location** = ``0``
+:ref:`int<class_int>` **location** = ``0`` :ref:`🔗<class_RDVertexAttribute_property_location>`
 
 .. rst-class:: classref-property-setget
 
@@ -111,7 +111,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **offset** = ``0``
+:ref:`int<class_int>` **offset** = ``0`` :ref:`🔗<class_RDVertexAttribute_property_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -130,7 +130,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stride** = ``0``
+:ref:`int<class_int>` **stride** = ``0`` :ref:`🔗<class_RDVertexAttribute_property_stride>`
 
 .. rst-class:: classref-property-setget
 

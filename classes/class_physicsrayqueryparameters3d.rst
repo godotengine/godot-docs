@@ -72,7 +72,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collide_with_areas** = ``false``
+:ref:`bool<class_bool>` **collide_with_areas** = ``false`` :ref:`🔗<class_PhysicsRayQueryParameters3D_property_collide_with_areas>`
 
 .. rst-class:: classref-property-setget
 
@@ -89,7 +89,7 @@ If ``true``, the query will take :ref:`Area3D<class_Area3D>`\ s into account.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collide_with_bodies** = ``true``
+:ref:`bool<class_bool>` **collide_with_bodies** = ``true`` :ref:`🔗<class_PhysicsRayQueryParameters3D_property_collide_with_bodies>`
 
 .. rst-class:: classref-property-setget
 
@@ -106,7 +106,7 @@ If ``true``, the query will take :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s in
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **collision_mask** = ``4294967295``
+:ref:`int<class_int>` **collision_mask** = ``4294967295`` :ref:`🔗<class_PhysicsRayQueryParameters3D_property_collision_mask>`
 
 .. rst-class:: classref-property-setget
 
@@ -123,7 +123,7 @@ The physics layers the query will detect (as a bitmask). By default, all collisi
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude** = ``[]`` :ref:`🔗<class_PhysicsRayQueryParameters3D_property_exclude>`
 
 .. rst-class:: classref-property-setget
 
@@ -140,7 +140,7 @@ The list of object :ref:`RID<class_RID>`\ s that will be excluded from collision
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **from** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **from** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_PhysicsRayQueryParameters3D_property_from>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +157,7 @@ The starting point of the ray being queried for, in global coordinates.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hit_back_faces** = ``true``
+:ref:`bool<class_bool>` **hit_back_faces** = ``true`` :ref:`🔗<class_PhysicsRayQueryParameters3D_property_hit_back_faces>`
 
 .. rst-class:: classref-property-setget
 
@@ -174,7 +174,7 @@ If ``true``, the query will hit back faces with concave polygon shapes with back
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hit_from_inside** = ``false``
+:ref:`bool<class_bool>` **hit_from_inside** = ``false`` :ref:`🔗<class_PhysicsRayQueryParameters3D_property_hit_from_inside>`
 
 .. rst-class:: classref-property-setget
 
@@ -191,7 +191,7 @@ If ``true``, the query will detect a hit when starting inside shapes. In this ca
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **to** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **to** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_PhysicsRayQueryParameters3D_property_to>`
 
 .. rst-class:: classref-property-setget
 
@@ -213,7 +213,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PhysicsRayQueryParameters3D<class_PhysicsRayQueryParameters3D>` **create**\ (\ from\: :ref:`Vector3<class_Vector3>`, to\: :ref:`Vector3<class_Vector3>`, collision_mask\: :ref:`int<class_int>` = 4294967295, exclude\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] = []\ ) |static|
+:ref:`PhysicsRayQueryParameters3D<class_PhysicsRayQueryParameters3D>` **create**\ (\ from\: :ref:`Vector3<class_Vector3>`, to\: :ref:`Vector3<class_Vector3>`, collision_mask\: :ref:`int<class_int>` = 4294967295, exclude\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] = []\ ) |static| :ref:`🔗<class_PhysicsRayQueryParameters3D_method_create>`
 
 Returns a new, pre-configured **PhysicsRayQueryParameters3D** object. Use it to quickly create query parameters using the most common options.
 

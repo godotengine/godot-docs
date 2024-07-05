@@ -86,7 +86,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**changed**\ (\ )
+**changed**\ (\ ) :ref:`🔗<class_Range_signal_changed>`
 
 Emitted when :ref:`min_value<class_Range_property_min_value>`, :ref:`max_value<class_Range_property_max_value>`, :ref:`page<class_Range_property_page>`, or :ref:`step<class_Range_property_step>` change.
 
@@ -98,7 +98,7 @@ Emitted when :ref:`min_value<class_Range_property_min_value>`, :ref:`max_value<c
 
 .. rst-class:: classref-signal
 
-**value_changed**\ (\ value\: :ref:`float<class_float>`\ )
+**value_changed**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Range_signal_value_changed>`
 
 Emitted when :ref:`value<class_Range_property_value>` changes. When used on a :ref:`Slider<class_Slider>`, this is called continuously while dragging (potentially every frame). If you are performing an expensive operation in a function connected to :ref:`value_changed<class_Range_signal_value_changed>`, consider using a *debouncing* :ref:`Timer<class_Timer>` to call the function less often.
 
@@ -117,7 +117,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_greater** = ``false``
+:ref:`bool<class_bool>` **allow_greater** = ``false`` :ref:`🔗<class_Range_property_allow_greater>`
 
 .. rst-class:: classref-property-setget
 
@@ -134,7 +134,7 @@ If ``true``, :ref:`value<class_Range_property_value>` may be greater than :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_lesser** = ``false``
+:ref:`bool<class_bool>` **allow_lesser** = ``false`` :ref:`🔗<class_Range_property_allow_lesser>`
 
 .. rst-class:: classref-property-setget
 
@@ -151,7 +151,7 @@ If ``true``, :ref:`value<class_Range_property_value>` may be less than :ref:`min
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **exp_edit** = ``false``
+:ref:`bool<class_bool>` **exp_edit** = ``false`` :ref:`🔗<class_Range_property_exp_edit>`
 
 .. rst-class:: classref-property-setget
 
@@ -168,7 +168,7 @@ If ``true``, and :ref:`min_value<class_Range_property_min_value>` is greater tha
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **max_value** = ``100.0``
+:ref:`float<class_float>` **max_value** = ``100.0`` :ref:`🔗<class_Range_property_max_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -185,7 +185,7 @@ Maximum value. Range is clamped if :ref:`value<class_Range_property_value>` is g
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **min_value** = ``0.0``
+:ref:`float<class_float>` **min_value** = ``0.0`` :ref:`🔗<class_Range_property_min_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -202,7 +202,7 @@ Minimum value. Range is clamped if :ref:`value<class_Range_property_value>` is l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **page** = ``0.0``
+:ref:`float<class_float>` **page** = ``0.0`` :ref:`🔗<class_Range_property_page>`
 
 .. rst-class:: classref-property-setget
 
@@ -219,7 +219,7 @@ Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ratio**
+:ref:`float<class_float>` **ratio** :ref:`🔗<class_Range_property_ratio>`
 
 .. rst-class:: classref-property-setget
 
@@ -236,7 +236,7 @@ The value mapped between 0 and 1.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rounded** = ``false``
+:ref:`bool<class_bool>` **rounded** = ``false`` :ref:`🔗<class_Range_property_rounded>`
 
 .. rst-class:: classref-property-setget
 
@@ -253,7 +253,7 @@ If ``true``, :ref:`value<class_Range_property_value>` will always be rounded to 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **step** = ``0.01``
+:ref:`float<class_float>` **step** = ``0.01`` :ref:`🔗<class_Range_property_step>`
 
 .. rst-class:: classref-property-setget
 
@@ -270,7 +270,7 @@ If greater than 0, :ref:`value<class_Range_property_value>` will always be round
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **value** = ``0.0``
+:ref:`float<class_float>` **value** = ``0.0`` :ref:`🔗<class_Range_property_value>`
 
 .. rst-class:: classref-property-setget
 
@@ -292,7 +292,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_value_changed**\ (\ new_value\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_value_changed**\ (\ new_value\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_Range_private_method__value_changed>`
 
 Called when the **Range**'s value is changed (following the same conditions as :ref:`value_changed<class_Range_signal_value_changed>`).
 
@@ -304,7 +304,7 @@ Called when the **Range**'s value is changed (following the same conditions as :
 
 .. rst-class:: classref-method
 
-|void| **set_value_no_signal**\ (\ value\: :ref:`float<class_float>`\ )
+|void| **set_value_no_signal**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Range_method_set_value_no_signal>`
 
 Sets the **Range**'s current value to the specified ``value``, without emitting the :ref:`value_changed<class_Range_signal_value_changed>` signal.
 
@@ -316,7 +316,7 @@ Sets the **Range**'s current value to the specified ``value``, without emitting 
 
 .. rst-class:: classref-method
 
-|void| **share**\ (\ with\: :ref:`Node<class_Node>`\ )
+|void| **share**\ (\ with\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_Range_method_share>`
 
 Binds two **Range**\ s together along with any ranges previously grouped with either of them. When any of range's member variables change, it will share the new value with all other ranges in its group.
 
@@ -328,7 +328,7 @@ Binds two **Range**\ s together along with any ranges previously grouped with ei
 
 .. rst-class:: classref-method
 
-|void| **unshare**\ (\ )
+|void| **unshare**\ (\ ) :ref:`🔗<class_Range_method_unshare>`
 
 Stops the **Range** from sharing its member variables with any other.
 

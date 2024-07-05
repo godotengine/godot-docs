@@ -120,7 +120,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **buffer_length** = ``0.5``
+:ref:`float<class_float>` **buffer_length** = ``0.5`` :ref:`🔗<class_AudioStreamGenerator_property_buffer_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -137,7 +137,7 @@ The length of the buffer to generate (in seconds). Lower values result in less l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **mix_rate** = ``44100.0``
+:ref:`float<class_float>` **mix_rate** = ``44100.0`` :ref:`🔗<class_AudioStreamGenerator_property_mix_rate>`
 
 .. rst-class:: classref-property-setget
 

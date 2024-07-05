@@ -95,7 +95,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **camera** = ``-1``
+:ref:`int<class_int>` **camera** = ``-1`` :ref:`🔗<class_GLTFNode_property_camera>`
 
 .. rst-class:: classref-property-setget
 
@@ -112,7 +112,7 @@ If this GLTF node is a camera, the index of the :ref:`GLTFCamera<class_GLTFCamer
 
 .. rst-class:: classref-property
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **children** = ``PackedInt32Array()``
+:ref:`PackedInt32Array<class_PackedInt32Array>` **children** = ``PackedInt32Array()`` :ref:`🔗<class_GLTFNode_property_children>`
 
 .. rst-class:: classref-property-setget
 
@@ -131,7 +131,7 @@ The indices of the child nodes in the :ref:`GLTFState<class_GLTFState>`. If this
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **height** = ``-1``
+:ref:`int<class_int>` **height** = ``-1`` :ref:`🔗<class_GLTFNode_property_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -148,7 +148,7 @@ How deep into the node hierarchy this node is. A root node will have a height of
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **light** = ``-1``
+:ref:`int<class_int>` **light** = ``-1`` :ref:`🔗<class_GLTFNode_property_light>`
 
 .. rst-class:: classref-property-setget
 
@@ -165,7 +165,7 @@ If this GLTF node is a light, the index of the :ref:`GLTFLight<class_GLTFLight>`
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **mesh** = ``-1``
+:ref:`int<class_int>` **mesh** = ``-1`` :ref:`🔗<class_GLTFNode_property_mesh>`
 
 .. rst-class:: classref-property-setget
 
@@ -182,7 +182,7 @@ If this GLTF node is a mesh, the index of the :ref:`GLTFMesh<class_GLTFMesh>` in
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **original_name** = ``""``
+:ref:`String<class_String>` **original_name** = ``""`` :ref:`🔗<class_GLTFNode_property_original_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -199,7 +199,7 @@ The original name of the node.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **parent** = ``-1``
+:ref:`int<class_int>` **parent** = ``-1`` :ref:`🔗<class_GLTFNode_property_parent>`
 
 .. rst-class:: classref-property-setget
 
@@ -216,7 +216,7 @@ The index of the parent node in the :ref:`GLTFState<class_GLTFState>`. If -1, th
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **position** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **position** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_GLTFNode_property_position>`
 
 .. rst-class:: classref-property-setget
 
@@ -233,7 +233,7 @@ The position of the GLTF node relative to its parent.
 
 .. rst-class:: classref-property
 
-:ref:`Quaternion<class_Quaternion>` **rotation** = ``Quaternion(0, 0, 0, 1)``
+:ref:`Quaternion<class_Quaternion>` **rotation** = ``Quaternion(0, 0, 0, 1)`` :ref:`🔗<class_GLTFNode_property_rotation>`
 
 .. rst-class:: classref-property-setget
 
@@ -250,7 +250,7 @@ The rotation of the GLTF node relative to its parent.
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **scale** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **scale** = ``Vector3(1, 1, 1)`` :ref:`🔗<class_GLTFNode_property_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -267,7 +267,7 @@ The scale of the GLTF node relative to its parent.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **skeleton** = ``-1``
+:ref:`int<class_int>` **skeleton** = ``-1`` :ref:`🔗<class_GLTFNode_property_skeleton>`
 
 .. rst-class:: classref-property-setget
 
@@ -284,7 +284,7 @@ If this GLTF node has a skeleton, the index of the :ref:`GLTFSkeleton<class_GLTF
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **skin** = ``-1``
+:ref:`int<class_int>` **skin** = ``-1`` :ref:`🔗<class_GLTFNode_property_skin>`
 
 .. rst-class:: classref-property-setget
 
@@ -301,7 +301,7 @@ If this GLTF node has a skin, the index of the :ref:`GLTFSkin<class_GLTFSkin>` i
 
 .. rst-class:: classref-property
 
-:ref:`Transform3D<class_Transform3D>` **xform** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)``
+:ref:`Transform3D<class_Transform3D>` **xform** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` :ref:`🔗<class_GLTFNode_property_xform>`
 
 .. rst-class:: classref-property-setget
 
@@ -323,7 +323,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`\ )
+:ref:`Variant<class_Variant>` **get_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_GLTFNode_method_get_additional_data>`
 
 Gets additional arbitrary data in this **GLTFNode** instance. This can be used to keep per-node state data in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes, which is important because they are stateless.
 
@@ -337,7 +337,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 .. rst-class:: classref-method
 
-|void| **set_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ )
+|void| **set_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_GLTFNode_method_set_additional_data>`
 
 Sets additional arbitrary data in this **GLTFNode** instance. This can be used to keep per-node state data in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes, which is important because they are stateless.
 

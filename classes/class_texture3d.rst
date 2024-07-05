@@ -76,7 +76,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\] **_get_data**\ (\ ) |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\] **_get_data**\ (\ ) |virtual| |const| :ref:`🔗<class_Texture3D_private_method__get_data>`
 
 Called when the **Texture3D**'s data is queried.
 
@@ -88,7 +88,7 @@ Called when the **Texture3D**'s data is queried.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_depth**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_depth**\ (\ ) |virtual| |const| :ref:`🔗<class_Texture3D_private_method__get_depth>`
 
 Called when the **Texture3D**'s depth is queried.
 
@@ -100,7 +100,7 @@ Called when the **Texture3D**'s depth is queried.
 
 .. rst-class:: classref-method
 
-:ref:`Format<enum_Image_Format>` **_get_format**\ (\ ) |virtual| |const|
+:ref:`Format<enum_Image_Format>` **_get_format**\ (\ ) |virtual| |const| :ref:`🔗<class_Texture3D_private_method__get_format>`
 
 Called when the **Texture3D**'s format is queried.
 
@@ -112,7 +112,7 @@ Called when the **Texture3D**'s format is queried.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_height**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_height**\ (\ ) |virtual| |const| :ref:`🔗<class_Texture3D_private_method__get_height>`
 
 Called when the **Texture3D**'s height is queried.
 
@@ -124,7 +124,7 @@ Called when the **Texture3D**'s height is queried.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_width**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_width**\ (\ ) |virtual| |const| :ref:`🔗<class_Texture3D_private_method__get_width>`
 
 Called when the **Texture3D**'s width is queried.
 
@@ -136,7 +136,7 @@ Called when the **Texture3D**'s width is queried.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_mipmaps**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_has_mipmaps**\ (\ ) |virtual| |const| :ref:`🔗<class_Texture3D_private_method__has_mipmaps>`
 
 Called when the presence of mipmaps in the **Texture3D** is queried.
 
@@ -148,7 +148,7 @@ Called when the presence of mipmaps in the **Texture3D** is queried.
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **create_placeholder**\ (\ ) |const|
+:ref:`Resource<class_Resource>` **create_placeholder**\ (\ ) |const| :ref:`🔗<class_Texture3D_method_create_placeholder>`
 
 Creates a placeholder version of this resource (:ref:`PlaceholderTexture3D<class_PlaceholderTexture3D>`).
 
@@ -160,7 +160,7 @@ Creates a placeholder version of this resource (:ref:`PlaceholderTexture3D<class
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\] **get_data**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\] **get_data**\ (\ ) |const| :ref:`🔗<class_Texture3D_method_get_data>`
 
 Returns the **Texture3D**'s data as an array of :ref:`Image<class_Image>`\ s. Each :ref:`Image<class_Image>` represents a *slice* of the **Texture3D**, with different slices mapping to different depth (Z axis) levels.
 
@@ -172,7 +172,7 @@ Returns the **Texture3D**'s data as an array of :ref:`Image<class_Image>`\ s. Ea
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_depth**\ (\ ) |const|
+:ref:`int<class_int>` **get_depth**\ (\ ) |const| :ref:`🔗<class_Texture3D_method_get_depth>`
 
 Returns the **Texture3D**'s depth in pixels. Depth is typically represented by the Z axis (a dimension not present in :ref:`Texture2D<class_Texture2D>`).
 
@@ -184,7 +184,7 @@ Returns the **Texture3D**'s depth in pixels. Depth is typically represented by t
 
 .. rst-class:: classref-method
 
-:ref:`Format<enum_Image_Format>` **get_format**\ (\ ) |const|
+:ref:`Format<enum_Image_Format>` **get_format**\ (\ ) |const| :ref:`🔗<class_Texture3D_method_get_format>`
 
 Returns the current format being used by this texture. See :ref:`Format<enum_Image_Format>` for details.
 
@@ -196,7 +196,7 @@ Returns the current format being used by this texture. See :ref:`Format<enum_Ima
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_height**\ (\ ) |const|
+:ref:`int<class_int>` **get_height**\ (\ ) |const| :ref:`🔗<class_Texture3D_method_get_height>`
 
 Returns the **Texture3D**'s height in pixels. Width is typically represented by the Y axis.
 
@@ -208,7 +208,7 @@ Returns the **Texture3D**'s height in pixels. Width is typically represented by 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_width**\ (\ ) |const|
+:ref:`int<class_int>` **get_width**\ (\ ) |const| :ref:`🔗<class_Texture3D_method_get_width>`
 
 Returns the **Texture3D**'s width in pixels. Width is typically represented by the X axis.
 
@@ -220,7 +220,7 @@ Returns the **Texture3D**'s width in pixels. Width is typically represented by t
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_mipmaps**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_mipmaps**\ (\ ) |const| :ref:`🔗<class_Texture3D_method_has_mipmaps>`
 
 Returns ``true`` if the **Texture3D** has generated mipmaps.
 

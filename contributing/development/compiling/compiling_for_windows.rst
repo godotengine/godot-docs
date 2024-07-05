@@ -25,7 +25,7 @@ For compiling under Windows, the following is required:
   **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later.
 - `Python 3.6+ <https://www.python.org/downloads/windows/>`_.
   **Make sure to enable the option to add Python to the ``PATH`` in the installer.**
-- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system. Using the
+- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system. Using the
   latest release is recommended, especially for proper support of recent Visual
   Studio releases.
 
@@ -93,7 +93,7 @@ The tutorial will assume from now on that you placed the source code in
 
     For Windows Defender, hit the :kbd:`Windows` key, type "Windows Security"
     then hit :kbd:`Enter`. Click on **Virus & threat protection** on the left
-    panel. Under **Virus & threat protection settings** click on **Mange Settings**
+    panel. Under **Virus & threat protection settings** click on **Manage Settings**
     and scroll down to **Exclusions**. Click **Add or remove exclusions** then
     add the Godot source folder.
 
@@ -317,7 +317,7 @@ Cross-compiling for Windows from other operating systems
 --------------------------------------------------------
 
 If you are a Linux or macOS user, you need to install
-`MinGW-w64 <https://mingw-w64.org/doku.php>`__, which typically comes in 32-bit
+`MinGW-w64 <https://www.mingw-w64.org/>`__, which typically comes in 32-bit
 and 64-bit variants. The package names may differ based on your distribution,
 here are some known ones:
 

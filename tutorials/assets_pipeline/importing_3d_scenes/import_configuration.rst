@@ -41,7 +41,7 @@ This import process is customizable using 3 separate interfaces, depending on yo
 - The **Advanced Import Settings** dialog, which can be accessed by double-clicking
   the 3D scene in the FileSystem dock or by clicking the **Advanced…** button in
   the Import dock. This allows you to customize per-object options in Godot.
-- :ref:`Import hints <doc_importing_3d_scenes_import_hints>`, which are special
+- :ref:`Import hints <doc_importing_3d_scenes_node_type_customization>`, which are special
   suffixes added to object names in the 3D modeling software. This allows you to
   customize per-object options in the 3D modeling software.
 
@@ -150,6 +150,21 @@ exported from other tools such as Maya.
 **glTF**
 
 - **Embedded Texture Handling:** Controls how textures embedded within glTF
+  scenes should be handled. **Discard All Textures** will not import any
+  textures, which is useful if you wish to manually set up materials in Godot
+  instead. **Extract Textures** extracts textures to external images, resulting
+  in smaller file sizes and more control over import options. **Embed as Basis
+  Universal** and **Embed as Uncompressed** keeps the textures embedded in the
+  imported scene, with and without VRAM compression respectively.
+
+**FBX**
+
+- **Importer** Which import method is used. ubfx handles fbx files as fbx files.
+  FBX2glTF converts FBX files to glTF on import and requires additonal setup.
+  FBX2glTF is not recommended unless you have a specific rason to use it over
+  ufbx or working with a different file format.
+- **Allow Geometry Helper Nodes** enables or disables geometry helper nodes
+- **Embedded Texture Handling:** Controls how textures embedded within fbx
   scenes should be handled. **Discard All Textures** will not import any
   textures, which is useful if you wish to manually set up materials in Godot
   instead. **Extract Textures** extracts textures to external images, resulting
@@ -395,6 +410,8 @@ The ``_post_import(scene: Node)`` function takes the imported scene as argument
 (the parameter is actually the root node of the scene). The scene that will
 finally be used **must** be returned (even if the scene can be entirely different).
 
+To use your script, locate the script in the import tab's "Path" option under the "Import Script" category.
+
 Using animation libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -522,5 +539,3 @@ In inherited scenes, the only limitations for modification are:
   described above.
 
 Other than that, everything is allowed.
-
-.. _doc_importing_3d_scenes_import_hints:

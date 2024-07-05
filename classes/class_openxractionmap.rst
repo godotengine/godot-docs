@@ -84,7 +84,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **action_sets** = ``[]``
+:ref:`Array<class_Array>` **action_sets** = ``[]`` :ref:`🔗<class_OpenXRActionMap_property_action_sets>`
 
 .. rst-class:: classref-property-setget
 
@@ -101,7 +101,7 @@ Collection of :ref:`OpenXRActionSet<class_OpenXRActionSet>`\ s that are part of 
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **interaction_profiles** = ``[]``
+:ref:`Array<class_Array>` **interaction_profiles** = ``[]`` :ref:`🔗<class_OpenXRActionMap_property_interaction_profiles>`
 
 .. rst-class:: classref-property-setget
 
@@ -123,7 +123,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_action_set**\ (\ action_set\: :ref:`OpenXRActionSet<class_OpenXRActionSet>`\ )
+|void| **add_action_set**\ (\ action_set\: :ref:`OpenXRActionSet<class_OpenXRActionSet>`\ ) :ref:`🔗<class_OpenXRActionMap_method_add_action_set>`
 
 Add an action set.
 
@@ -135,7 +135,7 @@ Add an action set.
 
 .. rst-class:: classref-method
 
-|void| **add_interaction_profile**\ (\ interaction_profile\: :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>`\ )
+|void| **add_interaction_profile**\ (\ interaction_profile\: :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>`\ ) :ref:`🔗<class_OpenXRActionMap_method_add_interaction_profile>`
 
 Add an interaction profile.
 
@@ -147,7 +147,7 @@ Add an interaction profile.
 
 .. rst-class:: classref-method
 
-|void| **create_default_action_sets**\ (\ )
+|void| **create_default_action_sets**\ (\ ) :ref:`🔗<class_OpenXRActionMap_method_create_default_action_sets>`
 
 Setup this action set with our default actions.
 
@@ -159,7 +159,7 @@ Setup this action set with our default actions.
 
 .. rst-class:: classref-method
 
-:ref:`OpenXRActionSet<class_OpenXRActionSet>` **find_action_set**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`OpenXRActionSet<class_OpenXRActionSet>` **find_action_set**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OpenXRActionMap_method_find_action_set>`
 
 Retrieve an action set by name.
 
@@ -171,7 +171,7 @@ Retrieve an action set by name.
 
 .. rst-class:: classref-method
 
-:ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` **find_interaction_profile**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` **find_interaction_profile**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_OpenXRActionMap_method_find_interaction_profile>`
 
 Find an interaction profile by its name (path).
 
@@ -183,7 +183,7 @@ Find an interaction profile by its name (path).
 
 .. rst-class:: classref-method
 
-:ref:`OpenXRActionSet<class_OpenXRActionSet>` **get_action_set**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`OpenXRActionSet<class_OpenXRActionSet>` **get_action_set**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OpenXRActionMap_method_get_action_set>`
 
 Retrieve the action set at this index.
 
@@ -195,7 +195,7 @@ Retrieve the action set at this index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_action_set_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_action_set_count**\ (\ ) |const| :ref:`🔗<class_OpenXRActionMap_method_get_action_set_count>`
 
 Retrieve the number of actions sets in our action map.
 
@@ -207,7 +207,7 @@ Retrieve the number of actions sets in our action map.
 
 .. rst-class:: classref-method
 
-:ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` **get_interaction_profile**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` **get_interaction_profile**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OpenXRActionMap_method_get_interaction_profile>`
 
 Get the interaction profile at this index.
 
@@ -219,7 +219,7 @@ Get the interaction profile at this index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_interaction_profile_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_interaction_profile_count**\ (\ ) |const| :ref:`🔗<class_OpenXRActionMap_method_get_interaction_profile_count>`
 
 Retrieve the number of interaction profiles in our action map.
 
@@ -231,7 +231,7 @@ Retrieve the number of interaction profiles in our action map.
 
 .. rst-class:: classref-method
 
-|void| **remove_action_set**\ (\ action_set\: :ref:`OpenXRActionSet<class_OpenXRActionSet>`\ )
+|void| **remove_action_set**\ (\ action_set\: :ref:`OpenXRActionSet<class_OpenXRActionSet>`\ ) :ref:`🔗<class_OpenXRActionMap_method_remove_action_set>`
 
 Remove an action set.
 
@@ -243,7 +243,7 @@ Remove an action set.
 
 .. rst-class:: classref-method
 
-|void| **remove_interaction_profile**\ (\ interaction_profile\: :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>`\ )
+|void| **remove_interaction_profile**\ (\ interaction_profile\: :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>`\ ) :ref:`🔗<class_OpenXRActionMap_method_remove_interaction_profile>`
 
 Remove an interaction profile.
 

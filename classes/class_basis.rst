@@ -177,7 +177,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**IDENTITY** = ``Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)``
+**IDENTITY** = ``Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)`` :ref:`🔗<class_Basis_constant_IDENTITY>`
 
 The identity basis. This is a basis with no rotation, no shear, and its scale being ``1``. This means that:
 
@@ -206,7 +206,7 @@ This is identical to creating :ref:`Basis<class_Basis_constructor_Basis>` withou
 
 .. rst-class:: classref-constant
 
-**FLIP_X** = ``Basis(-1, 0, 0, 0, 1, 0, 0, 0, 1)``
+**FLIP_X** = ``Basis(-1, 0, 0, 0, 1, 0, 0, 0, 1)`` :ref:`🔗<class_Basis_constant_FLIP_X>`
 
 When any basis is multiplied by :ref:`FLIP_X<class_Basis_constant_FLIP_X>`, it negates all components of the :ref:`x<class_Basis_property_x>` axis (the X column).
 
@@ -216,7 +216,7 @@ When :ref:`FLIP_X<class_Basis_constant_FLIP_X>` is multiplied by any basis, it n
 
 .. rst-class:: classref-constant
 
-**FLIP_Y** = ``Basis(1, 0, 0, 0, -1, 0, 0, 0, 1)``
+**FLIP_Y** = ``Basis(1, 0, 0, 0, -1, 0, 0, 0, 1)`` :ref:`🔗<class_Basis_constant_FLIP_Y>`
 
 When any basis is multiplied by :ref:`FLIP_Y<class_Basis_constant_FLIP_Y>`, it negates all components of the :ref:`y<class_Basis_property_y>` axis (the Y column).
 
@@ -226,7 +226,7 @@ When :ref:`FLIP_Y<class_Basis_constant_FLIP_Y>` is multiplied by any basis, it n
 
 .. rst-class:: classref-constant
 
-**FLIP_Z** = ``Basis(1, 0, 0, 0, 1, 0, 0, 0, -1)``
+**FLIP_Z** = ``Basis(1, 0, 0, 0, 1, 0, 0, 0, -1)`` :ref:`🔗<class_Basis_constant_FLIP_Z>`
 
 When any basis is multiplied by :ref:`FLIP_Z<class_Basis_constant_FLIP_Z>`, it negates all components of the :ref:`z<class_Basis_property_z>` axis (the Z column).
 
@@ -245,7 +245,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **x** = ``Vector3(1, 0, 0)``
+:ref:`Vector3<class_Vector3>` **x** = ``Vector3(1, 0, 0)`` :ref:`🔗<class_Basis_property_x>`
 
 The basis's X axis, and the column ``0`` of the matrix.
 
@@ -259,7 +259,7 @@ On the identity basis, this vector points right (:ref:`Vector3.RIGHT<class_Vecto
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **y** = ``Vector3(0, 1, 0)``
+:ref:`Vector3<class_Vector3>` **y** = ``Vector3(0, 1, 0)`` :ref:`🔗<class_Basis_property_y>`
 
 The basis's Y axis, and the column ``1`` of the matrix.
 
@@ -273,7 +273,7 @@ On the identity basis, this vector points up (:ref:`Vector3.UP<class_Vector3_con
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **z** = ``Vector3(0, 0, 1)``
+:ref:`Vector3<class_Vector3>` **z** = ``Vector3(0, 0, 1)`` :ref:`🔗<class_Basis_property_z>`
 
 The basis's Z axis, and the column ``2`` of the matrix.
 
@@ -292,7 +292,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`Basis<class_Basis>` **Basis**\ (\ )
+:ref:`Basis<class_Basis>` **Basis**\ (\ ) :ref:`🔗<class_Basis_constructor_Basis>`
 
 Constructs a **Basis** identical to the :ref:`IDENTITY<class_Basis_constant_IDENTITY>`.
 
@@ -353,7 +353,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **determinant**\ (\ ) |const|
+:ref:`float<class_float>` **determinant**\ (\ ) |const| :ref:`🔗<class_Basis_method_determinant>`
 
 Returns the `determinant <https://en.wikipedia.org/wiki/Determinant>`__ of this basis's matrix. For advanced math, this number can be used to determine a few attributes:
 
@@ -371,7 +371,7 @@ Returns the `determinant <https://en.wikipedia.org/wiki/Determinant>`__ of this 
 
 .. rst-class:: classref-method
 
-:ref:`Basis<class_Basis>` **from_euler**\ (\ euler\: :ref:`Vector3<class_Vector3>`, order\: :ref:`int<class_int>` = 2\ ) |static|
+:ref:`Basis<class_Basis>` **from_euler**\ (\ euler\: :ref:`Vector3<class_Vector3>`, order\: :ref:`int<class_int>` = 2\ ) |static| :ref:`🔗<class_Basis_method_from_euler>`
 
 Constructs a new **Basis** that only represents rotation from the given :ref:`Vector3<class_Vector3>` of `Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`__, in radians.
 
@@ -410,7 +410,7 @@ The order of each consecutive rotation can be changed with ``order`` (see :ref:`
 
 .. rst-class:: classref-method
 
-:ref:`Basis<class_Basis>` **from_scale**\ (\ scale\: :ref:`Vector3<class_Vector3>`\ ) |static|
+:ref:`Basis<class_Basis>` **from_scale**\ (\ scale\: :ref:`Vector3<class_Vector3>`\ ) |static| :ref:`🔗<class_Basis_method_from_scale>`
 
 Constructs a new **Basis** that only represents scale, with no rotation or shear, from the given ``scale`` vector.
 
@@ -445,7 +445,7 @@ Constructs a new **Basis** that only represents scale, with no rotation or shear
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_euler**\ (\ order\: :ref:`int<class_int>` = 2\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_euler**\ (\ order\: :ref:`int<class_int>` = 2\ ) |const| :ref:`🔗<class_Basis_method_get_euler>`
 
 Returns this basis's rotation as a :ref:`Vector3<class_Vector3>` of `Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`__, in radians.
 
@@ -469,7 +469,7 @@ The order of each consecutive rotation can be changed with ``order`` (see :ref:`
 
 .. rst-class:: classref-method
 
-:ref:`Quaternion<class_Quaternion>` **get_rotation_quaternion**\ (\ ) |const|
+:ref:`Quaternion<class_Quaternion>` **get_rotation_quaternion**\ (\ ) |const| :ref:`🔗<class_Basis_method_get_rotation_quaternion>`
 
 Returns this basis's rotation as a :ref:`Quaternion<class_Quaternion>`.
 
@@ -483,7 +483,7 @@ Returns this basis's rotation as a :ref:`Quaternion<class_Quaternion>`.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_scale**\ (\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_scale**\ (\ ) |const| :ref:`🔗<class_Basis_method_get_scale>`
 
 Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>`. If the basis is not sheared, this is the scaling factor. It is not affected by rotation.
 
@@ -528,7 +528,7 @@ Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>
 
 .. rst-class:: classref-method
 
-:ref:`Basis<class_Basis>` **inverse**\ (\ ) |const|
+:ref:`Basis<class_Basis>` **inverse**\ (\ ) |const| :ref:`🔗<class_Basis_method_inverse>`
 
 Returns the `inverse of this basis's matrix <https://en.wikipedia.org/wiki/Invertible_matrix>`__.
 
@@ -540,7 +540,7 @@ Returns the `inverse of this basis's matrix <https://en.wikipedia.org/wiki/Inver
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_conformal**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_conformal**\ (\ ) |const| :ref:`🔗<class_Basis_method_is_conformal>`
 
 Returns ``true`` if this basis is conformal. A conformal basis is both *orthogonal* (the axes are perpendicular to each other) and *uniform* (the axes share the same length). This method can be especially useful during physics calculations.
 
@@ -552,7 +552,7 @@ Returns ``true`` if this basis is conformal. A conformal basis is both *orthogon
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_equal_approx**\ (\ b\: :ref:`Basis<class_Basis>`\ ) |const|
+:ref:`bool<class_bool>` **is_equal_approx**\ (\ b\: :ref:`Basis<class_Basis>`\ ) |const| :ref:`🔗<class_Basis_method_is_equal_approx>`
 
 Returns ``true`` if this basis and ``b`` are approximately equal, by calling :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on all vector components.
 
@@ -564,7 +564,7 @@ Returns ``true`` if this basis and ``b`` are approximately equal, by calling :re
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_finite**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_finite**\ (\ ) |const| :ref:`🔗<class_Basis_method_is_finite>`
 
 Returns ``true`` if this basis is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on all vector components.
 
@@ -576,7 +576,7 @@ Returns ``true`` if this basis is finite, by calling :ref:`@GlobalScope.is_finit
 
 .. rst-class:: classref-method
 
-:ref:`Basis<class_Basis>` **looking_at**\ (\ target\: :ref:`Vector3<class_Vector3>`, up\: :ref:`Vector3<class_Vector3>` = Vector3(0, 1, 0), use_model_front\: :ref:`bool<class_bool>` = false\ ) |static|
+:ref:`Basis<class_Basis>` **looking_at**\ (\ target\: :ref:`Vector3<class_Vector3>`, up\: :ref:`Vector3<class_Vector3>` = Vector3(0, 1, 0), use_model_front\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_Basis_method_looking_at>`
 
 Creates a new **Basis** with a rotation such that the forward axis (-Z) points towards the ``target`` position.
 
@@ -592,7 +592,7 @@ The up axis (+Y) points as close to the ``up`` vector as possible while staying 
 
 .. rst-class:: classref-method
 
-:ref:`Basis<class_Basis>` **orthonormalized**\ (\ ) |const|
+:ref:`Basis<class_Basis>` **orthonormalized**\ (\ ) |const| :ref:`🔗<class_Basis_method_orthonormalized>`
 
 Returns the orthonormalized version of this basis. An orthonormal basis is both *orthogonal* (the axes are perpendicular to each other) and *normalized* (the axes have a length of ``1``), which also means it can only represent rotation.
 
@@ -630,7 +630,7 @@ It is often useful to call this method to avoid rounding errors on a rotating ba
 
 .. rst-class:: classref-method
 
-:ref:`Basis<class_Basis>` **rotated**\ (\ axis\: :ref:`Vector3<class_Vector3>`, angle\: :ref:`float<class_float>`\ ) |const|
+:ref:`Basis<class_Basis>` **rotated**\ (\ axis\: :ref:`Vector3<class_Vector3>`, angle\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Basis_method_rotated>`
 
 Returns this basis rotated around the given ``axis`` by ``angle`` (in radians). The ``axis`` must be a normalized vector (see :ref:`Vector3.normalized<class_Vector3_method_normalized>`).
 
@@ -667,7 +667,7 @@ Positive values rotate this basis clockwise around the axis, while negative valu
 
 .. rst-class:: classref-method
 
-:ref:`Basis<class_Basis>` **scaled**\ (\ scale\: :ref:`Vector3<class_Vector3>`\ ) |const|
+:ref:`Basis<class_Basis>` **scaled**\ (\ scale\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Basis_method_scaled>`
 
 Returns this basis with each axis's components scaled by the given ``scale``'s components.
 
@@ -712,7 +712,7 @@ The basis matrix's rows are multiplied by ``scale``'s components. This operation
 
 .. rst-class:: classref-method
 
-:ref:`Basis<class_Basis>` **slerp**\ (\ to\: :ref:`Basis<class_Basis>`, weight\: :ref:`float<class_float>`\ ) |const|
+:ref:`Basis<class_Basis>` **slerp**\ (\ to\: :ref:`Basis<class_Basis>`, weight\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Basis_method_slerp>`
 
 Performs a spherical-linear interpolation with the ``to`` basis, given a ``weight``. Both this basis and ``to`` should represent a rotation.
 
@@ -737,7 +737,7 @@ Performs a spherical-linear interpolation with the ``to`` basis, given a ``weigh
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **tdotx**\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const|
+:ref:`float<class_float>` **tdotx**\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Basis_method_tdotx>`
 
 Returns the transposed dot product between ``with`` and the :ref:`x<class_Basis_property_x>` axis (see :ref:`transposed<class_Basis_method_transposed>`).
 
@@ -751,7 +751,7 @@ This is equivalent to ``basis.x.dot(vector)``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **tdoty**\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const|
+:ref:`float<class_float>` **tdoty**\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Basis_method_tdoty>`
 
 Returns the transposed dot product between ``with`` and the :ref:`y<class_Basis_property_y>` axis (see :ref:`transposed<class_Basis_method_transposed>`).
 
@@ -765,7 +765,7 @@ This is equivalent to ``basis.y.dot(vector)``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **tdotz**\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const|
+:ref:`float<class_float>` **tdotz**\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_Basis_method_tdotz>`
 
 Returns the transposed dot product between ``with`` and the :ref:`z<class_Basis_property_z>` axis (see :ref:`transposed<class_Basis_method_transposed>`).
 
@@ -779,7 +779,7 @@ This is equivalent to ``basis.z.dot(vector)``.
 
 .. rst-class:: classref-method
 
-:ref:`Basis<class_Basis>` **transposed**\ (\ ) |const|
+:ref:`Basis<class_Basis>` **transposed**\ (\ ) |const| :ref:`🔗<class_Basis_method_transposed>`
 
 Returns the transposed version of this basis. This turns the basis matrix's columns into rows, and its rows into columns.
 
@@ -827,7 +827,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Basis<class_Basis>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Basis<class_Basis>`\ ) :ref:`🔗<class_Basis_operator_neq_Basis>`
 
 Returns ``true`` if the components of both **Basis** matrices are not equal.
 
@@ -841,7 +841,7 @@ Returns ``true`` if the components of both **Basis** matrices are not equal.
 
 .. rst-class:: classref-operator
 
-:ref:`Basis<class_Basis>` **operator ***\ (\ right\: :ref:`Basis<class_Basis>`\ )
+:ref:`Basis<class_Basis>` **operator ***\ (\ right\: :ref:`Basis<class_Basis>`\ ) :ref:`🔗<class_Basis_operator_mul_Basis>`
 
 Transforms (multiplies) the ``right`` basis by this basis.
 
@@ -855,7 +855,7 @@ This is the operation performed between parent and child :ref:`Node3D<class_Node
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3<class_Vector3>` **operator ***\ (\ right\: :ref:`Vector3<class_Vector3>`\ )
+:ref:`Vector3<class_Vector3>` **operator ***\ (\ right\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_Basis_operator_mul_Vector3>`
 
 Transforms (multiplies) the ``right`` vector by this basis, returning a :ref:`Vector3<class_Vector3>`.
 
@@ -864,13 +864,15 @@ Transforms (multiplies) the ``right`` vector by this basis, returning a :ref:`Ve
 
  .. code-tab:: gdscript
 
-    var my_basis = Basis(Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0, 2, 5))
-    print(my_basis * Vector3(1, 2, 3)) # Prints (7, 3, 16)
+    # Basis that swaps the X/Z axes and doubles the scale.
+    var my_basis = Basis(Vector3(0, 2, 0), Vector3(2, 0, 0), Vector3(0, 0, 2))
+    print(my_basis * Vector3(1, 2, 3)) # Prints (4, 2, 6)
 
  .. code-tab:: csharp
 
-    var myBasis = new Basis(new Vector3(1, 1, 1), new Vector3(1, 1, 1), new Vector3(0, 2, 5));
-    GD.Print(my_basis * new Vector3(1, 2, 3)); // Prints (7, 3, 16)
+    // Basis that swaps the X/Z axes and doubles the scale.
+    var myBasis = new Basis(new Vector3(0, 2, 0), new Vector3(2, 0, 0), new Vector3(0, 0, 2));
+    GD.Print(myBasis * new Vector3(1, 2, 3)); // Prints (4, 2, 6)
 
 
 
@@ -882,7 +884,7 @@ Transforms (multiplies) the ``right`` vector by this basis, returning a :ref:`Ve
 
 .. rst-class:: classref-operator
 
-:ref:`Basis<class_Basis>` **operator ***\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`Basis<class_Basis>` **operator ***\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Basis_operator_mul_float>`
 
 Multiplies all components of the **Basis** by the given :ref:`float<class_float>`. This affects the basis's scale uniformly, resizing all 3 axes by the ``right`` value.
 
@@ -894,7 +896,7 @@ Multiplies all components of the **Basis** by the given :ref:`float<class_float>
 
 .. rst-class:: classref-operator
 
-:ref:`Basis<class_Basis>` **operator ***\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`Basis<class_Basis>` **operator ***\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Basis_operator_mul_int>`
 
 Multiplies all components of the **Basis** by the given :ref:`int<class_int>`. This affects the basis's scale uniformly, resizing all 3 axes by the ``right`` value.
 
@@ -906,7 +908,7 @@ Multiplies all components of the **Basis** by the given :ref:`int<class_int>`. T
 
 .. rst-class:: classref-operator
 
-:ref:`Basis<class_Basis>` **operator /**\ (\ right\: :ref:`float<class_float>`\ )
+:ref:`Basis<class_Basis>` **operator /**\ (\ right\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Basis_operator_div_float>`
 
 Divides all components of the **Basis** by the given :ref:`float<class_float>`. This affects the basis's scale uniformly, resizing all 3 axes by the ``right`` value.
 
@@ -918,7 +920,7 @@ Divides all components of the **Basis** by the given :ref:`float<class_float>`. 
 
 .. rst-class:: classref-operator
 
-:ref:`Basis<class_Basis>` **operator /**\ (\ right\: :ref:`int<class_int>`\ )
+:ref:`Basis<class_Basis>` **operator /**\ (\ right\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Basis_operator_div_int>`
 
 Divides all components of the **Basis** by the given :ref:`int<class_int>`. This affects the basis's scale uniformly, resizing all 3 axes by the ``right`` value.
 
@@ -930,7 +932,7 @@ Divides all components of the **Basis** by the given :ref:`int<class_int>`. This
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Basis<class_Basis>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Basis<class_Basis>`\ ) :ref:`🔗<class_Basis_operator_eq_Basis>`
 
 Returns ``true`` if the components of both **Basis** matrices are exactly equal.
 
@@ -944,7 +946,7 @@ Returns ``true`` if the components of both **Basis** matrices are exactly equal.
 
 .. rst-class:: classref-operator
 
-:ref:`Vector3<class_Vector3>` **operator []**\ (\ index\: :ref:`int<class_int>`\ )
+:ref:`Vector3<class_Vector3>` **operator []**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Basis_operator_idx_int>`
 
 Accesses each axis (column) of this basis by their index. Index ``0`` is the same as :ref:`x<class_Basis_property_x>`, index ``1`` is the same as :ref:`y<class_Basis_property_y>`, and index ``2`` is the same as :ref:`z<class_Basis_property_z>`.
 

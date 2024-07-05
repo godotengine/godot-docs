@@ -71,7 +71,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**bone_map_updated**\ (\ )
+**bone_map_updated**\ (\ ) :ref:`🔗<class_BoneMap_signal_bone_map_updated>`
 
 This signal is emitted when change the key value in the **BoneMap**. This is used to validate mapping and to update **BoneMap** editor.
 
@@ -83,7 +83,7 @@ This signal is emitted when change the key value in the **BoneMap**. This is use
 
 .. rst-class:: classref-signal
 
-**profile_updated**\ (\ )
+**profile_updated**\ (\ ) :ref:`🔗<class_BoneMap_signal_profile_updated>`
 
 This signal is emitted when change the value in profile or change the reference of profile. This is used to update key names in the **BoneMap** and to redraw the **BoneMap** editor.
 
@@ -100,7 +100,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`SkeletonProfile<class_SkeletonProfile>` **profile**
+:ref:`SkeletonProfile<class_SkeletonProfile>` **profile** :ref:`🔗<class_BoneMap_property_profile>`
 
 .. rst-class:: classref-property-setget
 
@@ -122,7 +122,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **find_profile_bone_name**\ (\ skeleton_bone_name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`StringName<class_StringName>` **find_profile_bone_name**\ (\ skeleton_bone_name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_BoneMap_method_find_profile_bone_name>`
 
 Returns a profile bone name having ``skeleton_bone_name``. If not found, an empty :ref:`StringName<class_StringName>` will be returned.
 
@@ -136,7 +136,7 @@ In the retargeting process, the returned bone name is the bone name of the targe
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_skeleton_bone_name**\ (\ profile_bone_name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`StringName<class_StringName>` **get_skeleton_bone_name**\ (\ profile_bone_name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_BoneMap_method_get_skeleton_bone_name>`
 
 Returns a skeleton bone name is mapped to ``profile_bone_name``.
 
@@ -150,7 +150,7 @@ In the retargeting process, the returned bone name is the bone name of the sourc
 
 .. rst-class:: classref-method
 
-|void| **set_skeleton_bone_name**\ (\ profile_bone_name\: :ref:`StringName<class_StringName>`, skeleton_bone_name\: :ref:`StringName<class_StringName>`\ )
+|void| **set_skeleton_bone_name**\ (\ profile_bone_name\: :ref:`StringName<class_StringName>`, skeleton_bone_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_BoneMap_method_set_skeleton_bone_name>`
 
 Maps a skeleton bone name to ``profile_bone_name``.
 

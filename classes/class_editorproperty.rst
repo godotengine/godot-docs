@@ -84,7 +84,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**multiple_properties_changed**\ (\ properties\: :ref:`PackedStringArray<class_PackedStringArray>`, value\: :ref:`Array<class_Array>`\ )
+**multiple_properties_changed**\ (\ properties\: :ref:`PackedStringArray<class_PackedStringArray>`, value\: :ref:`Array<class_Array>`\ ) :ref:`🔗<class_EditorProperty_signal_multiple_properties_changed>`
 
 Emit it if you want multiple properties modified at the same time. Do not use if added via :ref:`EditorInspectorPlugin._parse_property<class_EditorInspectorPlugin_private_method__parse_property>`.
 
@@ -96,7 +96,7 @@ Emit it if you want multiple properties modified at the same time. Do not use if
 
 .. rst-class:: classref-signal
 
-**object_id_selected**\ (\ property\: :ref:`StringName<class_StringName>`, id\: :ref:`int<class_int>`\ )
+**object_id_selected**\ (\ property\: :ref:`StringName<class_StringName>`, id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EditorProperty_signal_object_id_selected>`
 
 Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
@@ -108,7 +108,7 @@ Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
 .. rst-class:: classref-signal
 
-**property_can_revert_changed**\ (\ property\: :ref:`StringName<class_StringName>`, can_revert\: :ref:`bool<class_bool>`\ )
+**property_can_revert_changed**\ (\ property\: :ref:`StringName<class_StringName>`, can_revert\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorProperty_signal_property_can_revert_changed>`
 
 Emitted when the revertability (i.e., whether it has a non-default value and thus is displayed with a revert icon) of a property has changed.
 
@@ -120,7 +120,7 @@ Emitted when the revertability (i.e., whether it has a non-default value and thu
 
 .. rst-class:: classref-signal
 
-**property_changed**\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`, field\: :ref:`StringName<class_StringName>`, changing\: :ref:`bool<class_bool>`\ )
+**property_changed**\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`, field\: :ref:`StringName<class_StringName>`, changing\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorProperty_signal_property_changed>`
 
 Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_method_emit_changed>` method instead.
 
@@ -132,7 +132,7 @@ Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_metho
 
 .. rst-class:: classref-signal
 
-**property_checked**\ (\ property\: :ref:`StringName<class_StringName>`, checked\: :ref:`bool<class_bool>`\ )
+**property_checked**\ (\ property\: :ref:`StringName<class_StringName>`, checked\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorProperty_signal_property_checked>`
 
 Emitted when a property was checked. Used internally.
 
@@ -144,7 +144,7 @@ Emitted when a property was checked. Used internally.
 
 .. rst-class:: classref-signal
 
-**property_deleted**\ (\ property\: :ref:`StringName<class_StringName>`\ )
+**property_deleted**\ (\ property\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EditorProperty_signal_property_deleted>`
 
 Emitted when a property was deleted. Used internally.
 
@@ -156,7 +156,7 @@ Emitted when a property was deleted. Used internally.
 
 .. rst-class:: classref-signal
 
-**property_keyed**\ (\ property\: :ref:`StringName<class_StringName>`\ )
+**property_keyed**\ (\ property\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EditorProperty_signal_property_keyed>`
 
 Emit it if you want to add this value as an animation key (check for keying being enabled first).
 
@@ -168,7 +168,7 @@ Emit it if you want to add this value as an animation key (check for keying bein
 
 .. rst-class:: classref-signal
 
-**property_keyed_with_value**\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ )
+**property_keyed_with_value**\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_EditorProperty_signal_property_keyed_with_value>`
 
 Emit it if you want to key a property with a single value.
 
@@ -180,7 +180,7 @@ Emit it if you want to key a property with a single value.
 
 .. rst-class:: classref-signal
 
-**property_pinned**\ (\ property\: :ref:`StringName<class_StringName>`, pinned\: :ref:`bool<class_bool>`\ )
+**property_pinned**\ (\ property\: :ref:`StringName<class_StringName>`, pinned\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorProperty_signal_property_pinned>`
 
 Emit it if you want to mark (or unmark) the value of a property for being saved regardless of being equal to the default value.
 
@@ -194,7 +194,7 @@ The default value is the one the property will get when the node is just instant
 
 .. rst-class:: classref-signal
 
-**resource_selected**\ (\ path\: :ref:`String<class_String>`, resource\: :ref:`Resource<class_Resource>`\ )
+**resource_selected**\ (\ path\: :ref:`String<class_String>`, resource\: :ref:`Resource<class_Resource>`\ ) :ref:`🔗<class_EditorProperty_signal_resource_selected>`
 
 If you want a sub-resource to be edited, emit this signal with the resource.
 
@@ -206,7 +206,7 @@ If you want a sub-resource to be edited, emit this signal with the resource.
 
 .. rst-class:: classref-signal
 
-**selected**\ (\ path\: :ref:`String<class_String>`, focusable_idx\: :ref:`int<class_int>`\ )
+**selected**\ (\ path\: :ref:`String<class_String>`, focusable_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EditorProperty_signal_selected>`
 
 Emitted when selected. Used internally.
 
@@ -223,7 +223,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **checkable** = ``false``
+:ref:`bool<class_bool>` **checkable** = ``false`` :ref:`🔗<class_EditorProperty_property_checkable>`
 
 .. rst-class:: classref-property-setget
 
@@ -240,7 +240,7 @@ Used by the inspector, set to ``true`` when the property is checkable.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **checked** = ``false``
+:ref:`bool<class_bool>` **checked** = ``false`` :ref:`🔗<class_EditorProperty_property_checked>`
 
 .. rst-class:: classref-property-setget
 
@@ -257,7 +257,7 @@ Used by the inspector, set to ``true`` when the property is checked.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **deletable** = ``false``
+:ref:`bool<class_bool>` **deletable** = ``false`` :ref:`🔗<class_EditorProperty_property_deletable>`
 
 .. rst-class:: classref-property-setget
 
@@ -274,7 +274,7 @@ Used by the inspector, set to ``true`` when the property can be deleted by the u
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **draw_warning** = ``false``
+:ref:`bool<class_bool>` **draw_warning** = ``false`` :ref:`🔗<class_EditorProperty_property_draw_warning>`
 
 .. rst-class:: classref-property-setget
 
@@ -291,7 +291,7 @@ Used by the inspector, set to ``true`` when the property is drawn with the edito
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **keying** = ``false``
+:ref:`bool<class_bool>` **keying** = ``false`` :ref:`🔗<class_EditorProperty_property_keying>`
 
 .. rst-class:: classref-property-setget
 
@@ -308,7 +308,7 @@ Used by the inspector, set to ``true`` when the property can add keys for animat
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **label** = ``""``
+:ref:`String<class_String>` **label** = ``""`` :ref:`🔗<class_EditorProperty_property_label>`
 
 .. rst-class:: classref-property-setget
 
@@ -325,7 +325,7 @@ Set this property to change the label (if you want to show one).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **read_only** = ``false``
+:ref:`bool<class_bool>` **read_only** = ``false`` :ref:`🔗<class_EditorProperty_property_read_only>`
 
 .. rst-class:: classref-property-setget
 
@@ -347,7 +347,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_set_read_only**\ (\ read_only\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_set_read_only**\ (\ read_only\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_EditorProperty_private_method__set_read_only>`
 
 Called when the read-only status of the property is changed. It may be used to change custom controls into a read-only or modifiable state.
 
@@ -359,7 +359,7 @@ Called when the read-only status of the property is changed. It may be used to c
 
 .. rst-class:: classref-method
 
-|void| **_update_property**\ (\ ) |virtual|
+|void| **_update_property**\ (\ ) |virtual| :ref:`🔗<class_EditorProperty_private_method__update_property>`
 
 When this virtual function is called, you must update your editor.
 
@@ -371,7 +371,7 @@ When this virtual function is called, you must update your editor.
 
 .. rst-class:: classref-method
 
-|void| **add_focusable**\ (\ control\: :ref:`Control<class_Control>`\ )
+|void| **add_focusable**\ (\ control\: :ref:`Control<class_Control>`\ ) :ref:`🔗<class_EditorProperty_method_add_focusable>`
 
 If any of the controls added can gain keyboard focus, add it here. This ensures that focus will be restored if the inspector is refreshed.
 
@@ -383,7 +383,7 @@ If any of the controls added can gain keyboard focus, add it here. This ensures 
 
 .. rst-class:: classref-method
 
-|void| **emit_changed**\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`, field\: :ref:`StringName<class_StringName>` = &"", changing\: :ref:`bool<class_bool>` = false\ )
+|void| **emit_changed**\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`, field\: :ref:`StringName<class_StringName>` = &"", changing\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_EditorProperty_method_emit_changed>`
 
 If one or several properties have changed, this must be called. ``field`` is used in case your editor can modify fields separately (as an example, Vector3.x). The ``changing`` argument avoids the editor requesting this property to be refreshed (leave as ``false`` if unsure).
 
@@ -395,7 +395,7 @@ If one or several properties have changed, this must be called. ``field`` is use
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_edited_object**\ (\ )
+:ref:`Object<class_Object>` **get_edited_object**\ (\ ) :ref:`🔗<class_EditorProperty_method_get_edited_object>`
 
 Gets the edited object.
 
@@ -407,7 +407,7 @@ Gets the edited object.
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_edited_property**\ (\ ) |const|
+:ref:`StringName<class_StringName>` **get_edited_property**\ (\ ) |const| :ref:`🔗<class_EditorProperty_method_get_edited_property>`
 
 Gets the edited property. If your editor is for a single property (added via :ref:`EditorInspectorPlugin._parse_property<class_EditorInspectorPlugin_private_method__parse_property>`), then this will return the property.
 
@@ -419,7 +419,7 @@ Gets the edited property. If your editor is for a single property (added via :re
 
 .. rst-class:: classref-method
 
-|void| **set_bottom_editor**\ (\ editor\: :ref:`Control<class_Control>`\ )
+|void| **set_bottom_editor**\ (\ editor\: :ref:`Control<class_Control>`\ ) :ref:`🔗<class_EditorProperty_method_set_bottom_editor>`
 
 Puts the ``editor`` control below the property label. The control must be previously added using :ref:`Node.add_child<class_Node_method_add_child>`.
 
@@ -431,7 +431,7 @@ Puts the ``editor`` control below the property label. The control must be previo
 
 .. rst-class:: classref-method
 
-|void| **update_property**\ (\ )
+|void| **update_property**\ (\ ) :ref:`🔗<class_EditorProperty_method_update_property>`
 
 Forces refresh of the property display.
 

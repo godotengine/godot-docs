@@ -79,7 +79,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **dry** = ``1.0``
+:ref:`float<class_float>` **dry** = ``1.0`` :ref:`🔗<class_AudioEffectDelay_property_dry>`
 
 .. rst-class:: classref-property-setget
 
@@ -96,7 +96,7 @@ Output percent of original sound. At 0, only delayed sounds are output. Value ca
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **feedback_active** = ``false``
+:ref:`bool<class_bool>` **feedback_active** = ``false`` :ref:`🔗<class_AudioEffectDelay_property_feedback_active>`
 
 .. rst-class:: classref-property-setget
 
@@ -113,7 +113,7 @@ If ``true``, feedback is enabled.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **feedback_delay_ms** = ``340.0``
+:ref:`float<class_float>` **feedback_delay_ms** = ``340.0`` :ref:`🔗<class_AudioEffectDelay_property_feedback_delay_ms>`
 
 .. rst-class:: classref-property-setget
 
@@ -130,7 +130,7 @@ Feedback delay time in milliseconds.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **feedback_level_db** = ``-6.0``
+:ref:`float<class_float>` **feedback_level_db** = ``-6.0`` :ref:`🔗<class_AudioEffectDelay_property_feedback_level_db>`
 
 .. rst-class:: classref-property-setget
 
@@ -147,7 +147,7 @@ Sound level for feedback.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **feedback_lowpass** = ``16000.0``
+:ref:`float<class_float>` **feedback_lowpass** = ``16000.0`` :ref:`🔗<class_AudioEffectDelay_property_feedback_lowpass>`
 
 .. rst-class:: classref-property-setget
 
@@ -164,7 +164,7 @@ Low-pass filter for feedback, in Hz. Frequencies below this value are filtered o
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **tap1_active** = ``true``
+:ref:`bool<class_bool>` **tap1_active** = ``true`` :ref:`🔗<class_AudioEffectDelay_property_tap1_active>`
 
 .. rst-class:: classref-property-setget
 
@@ -181,7 +181,7 @@ If ``true``, the first tap will be enabled.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **tap1_delay_ms** = ``250.0``
+:ref:`float<class_float>` **tap1_delay_ms** = ``250.0`` :ref:`🔗<class_AudioEffectDelay_property_tap1_delay_ms>`
 
 .. rst-class:: classref-property-setget
 
@@ -198,7 +198,7 @@ First tap delay time in milliseconds.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **tap1_level_db** = ``-6.0``
+:ref:`float<class_float>` **tap1_level_db** = ``-6.0`` :ref:`🔗<class_AudioEffectDelay_property_tap1_level_db>`
 
 .. rst-class:: classref-property-setget
 
@@ -215,7 +215,7 @@ Sound level for the first tap.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **tap1_pan** = ``0.2``
+:ref:`float<class_float>` **tap1_pan** = ``0.2`` :ref:`🔗<class_AudioEffectDelay_property_tap1_pan>`
 
 .. rst-class:: classref-property-setget
 
@@ -232,7 +232,7 @@ Pan position for the first tap. Value can range from -1 (fully left) to 1 (fully
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **tap2_active** = ``true``
+:ref:`bool<class_bool>` **tap2_active** = ``true`` :ref:`🔗<class_AudioEffectDelay_property_tap2_active>`
 
 .. rst-class:: classref-property-setget
 
@@ -249,7 +249,7 @@ If ``true``, the second tap will be enabled.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **tap2_delay_ms** = ``500.0``
+:ref:`float<class_float>` **tap2_delay_ms** = ``500.0`` :ref:`🔗<class_AudioEffectDelay_property_tap2_delay_ms>`
 
 .. rst-class:: classref-property-setget
 
@@ -266,7 +266,7 @@ Second tap delay time in milliseconds.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **tap2_level_db** = ``-12.0``
+:ref:`float<class_float>` **tap2_level_db** = ``-12.0`` :ref:`🔗<class_AudioEffectDelay_property_tap2_level_db>`
 
 .. rst-class:: classref-property-setget
 
@@ -283,7 +283,7 @@ Sound level for the second tap.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **tap2_pan** = ``-0.4``
+:ref:`float<class_float>` **tap2_pan** = ``-0.4`` :ref:`🔗<class_AudioEffectDelay_property_tap2_pan>`
 
 .. rst-class:: classref-property-setget
 

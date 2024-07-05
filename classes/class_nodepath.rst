@@ -53,7 +53,7 @@ Node paths cannot check whether they are valid and may point to nodes or propert
 
 You usually do not have to worry about the **NodePath** type, as strings are automatically converted to the type when necessary. There are still times when defining node paths is useful. For example, exported **NodePath** properties allow you to easily select any node within the currently edited scene. They are also automatically updated when moving, renaming or deleting nodes in the scene tree editor. See also :ref:`@GDScript.@export_node_path<class_@GDScript_annotation_@export_node_path>`.
 
-See also :ref:`StringName<class_StringName>`, which is a similar type designed for optimised strings.
+See also :ref:`StringName<class_StringName>`, which is a similar type designed for optimized strings.
 
 \ **Note:** In a boolean context, a **NodePath** will evaluate to ``false`` if it is empty (``NodePath("")``). Otherwise, a **NodePath** will always evaluate to ``true``.
 
@@ -143,7 +143,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`NodePath<class_NodePath>` **NodePath**\ (\ )
+:ref:`NodePath<class_NodePath>` **NodePath**\ (\ ) :ref:`🔗<class_NodePath_constructor_NodePath>`
 
 Constructs an empty **NodePath**.
 
@@ -205,7 +205,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`NodePath<class_NodePath>` **get_as_property_path**\ (\ ) |const|
+:ref:`NodePath<class_NodePath>` **get_as_property_path**\ (\ ) |const| :ref:`🔗<class_NodePath_method_get_as_property_path>`
 
 Returns a copy of this node path with a colon character (``:``) prefixed, transforming it to a pure property path with no node names (relative to the current node).
 
@@ -240,7 +240,7 @@ Returns a copy of this node path with a colon character (``:``) prefixed, transf
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_concatenated_names**\ (\ ) |const|
+:ref:`StringName<class_StringName>` **get_concatenated_names**\ (\ ) |const| :ref:`🔗<class_NodePath_method_get_concatenated_names>`
 
 Returns all node names concatenated with a slash character (``/``) as a single :ref:`StringName<class_StringName>`.
 
@@ -252,7 +252,7 @@ Returns all node names concatenated with a slash character (``/``) as a single :
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_concatenated_subnames**\ (\ ) |const|
+:ref:`StringName<class_StringName>` **get_concatenated_subnames**\ (\ ) |const| :ref:`🔗<class_NodePath_method_get_concatenated_subnames>`
 
 Returns all property subnames concatenated with a colon character (``:``) as a single :ref:`StringName<class_StringName>`.
 
@@ -279,7 +279,7 @@ Returns all property subnames concatenated with a colon character (``:``) as a s
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_name**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`StringName<class_StringName>` **get_name**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NodePath_method_get_name>`
 
 Returns the node name indicated by ``idx``, starting from 0. If ``idx`` is out of bounds, an error is generated. See also :ref:`get_subname_count<class_NodePath_method_get_subname_count>` and :ref:`get_name_count<class_NodePath_method_get_name_count>`.
 
@@ -310,7 +310,7 @@ Returns the node name indicated by ``idx``, starting from 0. If ``idx`` is out o
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_name_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_name_count**\ (\ ) |const| :ref:`🔗<class_NodePath_method_get_name_count>`
 
 Returns the number of node names in the path. Property subnames are not included.
 
@@ -324,7 +324,7 @@ For example, ``"../RigidBody2D/Sprite2D:texture"`` contains 3 node names.
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_subname**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`StringName<class_StringName>` **get_subname**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_NodePath_method_get_subname>`
 
 Returns the property name indicated by ``idx``, starting from 0. If ``idx`` is out of bounds, an error is generated. See also :ref:`get_subname_count<class_NodePath_method_get_subname_count>`.
 
@@ -353,7 +353,7 @@ Returns the property name indicated by ``idx``, starting from 0. If ``idx`` is o
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_subname_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_subname_count**\ (\ ) |const| :ref:`🔗<class_NodePath_method_get_subname_count>`
 
 Returns the number of property names ("subnames") in the path. Each subname in the node path is listed after a colon character (``:``).
 
@@ -367,7 +367,7 @@ For example, ``"Level/RigidBody2D/Sprite2D:texture:resource_name"`` contains 2 s
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **hash**\ (\ ) |const|
+:ref:`int<class_int>` **hash**\ (\ ) |const| :ref:`🔗<class_NodePath_method_hash>`
 
 Returns the 32-bit hash value representing the node path's contents.
 
@@ -381,7 +381,7 @@ Returns the 32-bit hash value representing the node path's contents.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_absolute**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_absolute**\ (\ ) |const| :ref:`🔗<class_NodePath_method_is_absolute>`
 
 Returns ``true`` if the node path is absolute. Unlike a relative path, an absolute path is represented by a leading slash character (``/``) and always begins from the :ref:`SceneTree<class_SceneTree>`. It can be used to reliably access nodes from the root node (e.g. ``"/root/Global"`` if an autoload named "Global" exists).
 
@@ -393,7 +393,7 @@ Returns ``true`` if the node path is absolute. Unlike a relative path, an absolu
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const| :ref:`🔗<class_NodePath_method_is_empty>`
 
 Returns ``true`` if the node path has been constructed from an empty :ref:`String<class_String>` (``""``).
 
@@ -405,7 +405,7 @@ Returns ``true`` if the node path has been constructed from an empty :ref:`Strin
 
 .. rst-class:: classref-method
 
-:ref:`NodePath<class_NodePath>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const|
+:ref:`NodePath<class_NodePath>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const| :ref:`🔗<class_NodePath_method_slice>`
 
 Returns the slice of the **NodePath**, from ``begin`` (inclusive) to ``end`` (exclusive), as a new **NodePath**.
 
@@ -426,7 +426,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`NodePath<class_NodePath>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_NodePath_operator_neq_NodePath>`
 
 Returns ``true`` if two node paths are not equal.
 
@@ -438,7 +438,7 @@ Returns ``true`` if two node paths are not equal.
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`NodePath<class_NodePath>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_NodePath_operator_eq_NodePath>`
 
 Returns ``true`` if two node paths are equal, that is, they are composed of the same node names and subnames in the same order.
 

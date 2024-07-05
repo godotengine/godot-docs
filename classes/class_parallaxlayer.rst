@@ -56,7 +56,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **motion_mirroring** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **motion_mirroring** = ``Vector2(0, 0)`` :ref:`🔗<class_ParallaxLayer_property_motion_mirroring>`
 
 .. rst-class:: classref-property-setget
 
@@ -79,7 +79,7 @@ The interval, in pixels, at which the **ParallaxLayer** is drawn repeatedly. Use
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **motion_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **motion_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_ParallaxLayer_property_motion_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -96,7 +96,7 @@ The ParallaxLayer's offset relative to the parent ParallaxBackground's :ref:`Par
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **motion_scale** = ``Vector2(1, 1)``
+:ref:`Vector2<class_Vector2>` **motion_scale** = ``Vector2(1, 1)`` :ref:`🔗<class_ParallaxLayer_property_motion_scale>`
 
 .. rst-class:: classref-property-setget
 

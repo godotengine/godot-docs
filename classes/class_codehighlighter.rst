@@ -96,7 +96,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **color_regions** = ``{}``
+:ref:`Dictionary<class_Dictionary>` **color_regions** = ``{}`` :ref:`🔗<class_CodeHighlighter_property_color_regions>`
 
 .. rst-class:: classref-property-setget
 
@@ -113,7 +113,7 @@ Sets the color regions. All existing regions will be removed. The :ref:`Dictiona
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **function_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **function_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_CodeHighlighter_property_function_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -130,7 +130,7 @@ Sets color for functions. A function is a non-keyword string followed by a '('.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **keyword_colors** = ``{}``
+:ref:`Dictionary<class_Dictionary>` **keyword_colors** = ``{}`` :ref:`🔗<class_CodeHighlighter_property_keyword_colors>`
 
 .. rst-class:: classref-property-setget
 
@@ -147,7 +147,7 @@ Sets the keyword colors. All existing keywords will be removed. The :ref:`Dictio
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **member_keyword_colors** = ``{}``
+:ref:`Dictionary<class_Dictionary>` **member_keyword_colors** = ``{}`` :ref:`🔗<class_CodeHighlighter_property_member_keyword_colors>`
 
 .. rst-class:: classref-property-setget
 
@@ -164,7 +164,7 @@ Sets the member keyword colors. All existing member keyword will be removed. The
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **member_variable_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **member_variable_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_CodeHighlighter_property_member_variable_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -181,7 +181,7 @@ Sets color for member variables. A member variable is non-keyword, non-function 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **number_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **number_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_CodeHighlighter_property_number_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -198,7 +198,7 @@ Sets the color for numbers.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **symbol_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **symbol_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_CodeHighlighter_property_symbol_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -220,7 +220,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_color_region**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`, line_only\: :ref:`bool<class_bool>` = false\ )
+|void| **add_color_region**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`, line_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CodeHighlighter_method_add_color_region>`
 
 Adds a color region (such as for comments or strings) from ``start_key`` to ``end_key``. Both keys should be symbols, and ``start_key`` must not be shared with other delimiters.
 
@@ -234,7 +234,7 @@ If ``line_only`` is ``true`` or ``end_key`` is an empty :ref:`String<class_Strin
 
 .. rst-class:: classref-method
 
-|void| **add_keyword_color**\ (\ keyword\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ )
+|void| **add_keyword_color**\ (\ keyword\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_CodeHighlighter_method_add_keyword_color>`
 
 Sets the color for a keyword.
 
@@ -248,7 +248,7 @@ The keyword cannot contain any symbols except '\_'.
 
 .. rst-class:: classref-method
 
-|void| **add_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ )
+|void| **add_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_CodeHighlighter_method_add_member_keyword_color>`
 
 Sets the color for a member keyword.
 
@@ -264,7 +264,7 @@ It will not be highlighted if preceded by a '.'.
 
 .. rst-class:: classref-method
 
-|void| **clear_color_regions**\ (\ )
+|void| **clear_color_regions**\ (\ ) :ref:`🔗<class_CodeHighlighter_method_clear_color_regions>`
 
 Removes all color regions.
 
@@ -276,7 +276,7 @@ Removes all color regions.
 
 .. rst-class:: classref-method
 
-|void| **clear_keyword_colors**\ (\ )
+|void| **clear_keyword_colors**\ (\ ) :ref:`🔗<class_CodeHighlighter_method_clear_keyword_colors>`
 
 Removes all keywords.
 
@@ -288,7 +288,7 @@ Removes all keywords.
 
 .. rst-class:: classref-method
 
-|void| **clear_member_keyword_colors**\ (\ )
+|void| **clear_member_keyword_colors**\ (\ ) :ref:`🔗<class_CodeHighlighter_method_clear_member_keyword_colors>`
 
 Removes all member keywords.
 
@@ -300,7 +300,7 @@ Removes all member keywords.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_keyword_color**\ (\ keyword\: :ref:`String<class_String>`\ ) |const|
+:ref:`Color<class_Color>` **get_keyword_color**\ (\ keyword\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_CodeHighlighter_method_get_keyword_color>`
 
 Returns the color for a keyword.
 
@@ -312,7 +312,7 @@ Returns the color for a keyword.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`\ ) |const|
+:ref:`Color<class_Color>` **get_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_CodeHighlighter_method_get_member_keyword_color>`
 
 Returns the color for a member keyword.
 
@@ -324,7 +324,7 @@ Returns the color for a member keyword.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_color_region**\ (\ start_key\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_color_region**\ (\ start_key\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_CodeHighlighter_method_has_color_region>`
 
 Returns ``true`` if the start key exists, else ``false``.
 
@@ -336,7 +336,7 @@ Returns ``true`` if the start key exists, else ``false``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_keyword_color**\ (\ keyword\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_keyword_color**\ (\ keyword\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_CodeHighlighter_method_has_keyword_color>`
 
 Returns ``true`` if the keyword exists, else ``false``.
 
@@ -348,7 +348,7 @@ Returns ``true`` if the keyword exists, else ``false``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_CodeHighlighter_method_has_member_keyword_color>`
 
 Returns ``true`` if the member keyword exists, else ``false``.
 
@@ -360,7 +360,7 @@ Returns ``true`` if the member keyword exists, else ``false``.
 
 .. rst-class:: classref-method
 
-|void| **remove_color_region**\ (\ start_key\: :ref:`String<class_String>`\ )
+|void| **remove_color_region**\ (\ start_key\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CodeHighlighter_method_remove_color_region>`
 
 Removes the color region that uses that start key.
 
@@ -372,7 +372,7 @@ Removes the color region that uses that start key.
 
 .. rst-class:: classref-method
 
-|void| **remove_keyword_color**\ (\ keyword\: :ref:`String<class_String>`\ )
+|void| **remove_keyword_color**\ (\ keyword\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CodeHighlighter_method_remove_keyword_color>`
 
 Removes the keyword.
 
@@ -384,7 +384,7 @@ Removes the keyword.
 
 .. rst-class:: classref-method
 
-|void| **remove_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`\ )
+|void| **remove_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CodeHighlighter_method_remove_member_keyword_color>`
 
 Removes the member keyword.
 

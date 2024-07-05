@@ -62,7 +62,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`MultiMesh<class_MultiMesh>` **multimesh**
+:ref:`MultiMesh<class_MultiMesh>` **multimesh** :ref:`🔗<class_MultiMeshInstance3D_property_multimesh>`
 
 .. rst-class:: classref-property-setget
 

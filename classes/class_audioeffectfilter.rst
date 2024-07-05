@@ -61,7 +61,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FilterDB**:
+enum **FilterDB**: :ref:`🔗<enum_AudioEffectFilter_FilterDB>`
 
 .. _class_AudioEffectFilter_constant_FILTER_6DB:
 
@@ -124,7 +124,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **cutoff_hz** = ``2000.0``
+:ref:`float<class_float>` **cutoff_hz** = ``2000.0`` :ref:`🔗<class_AudioEffectFilter_property_cutoff_hz>`
 
 .. rst-class:: classref-property-setget
 
@@ -141,7 +141,7 @@ Threshold frequency for the filter, in Hz.
 
 .. rst-class:: classref-property
 
-:ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db** = ``0``
+:ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db** = ``0`` :ref:`🔗<class_AudioEffectFilter_property_db>`
 
 .. rst-class:: classref-property-setget
 
@@ -160,7 +160,7 @@ Threshold frequency for the filter, in Hz.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gain** = ``1.0``
+:ref:`float<class_float>` **gain** = ``1.0`` :ref:`🔗<class_AudioEffectFilter_property_gain>`
 
 .. rst-class:: classref-property-setget
 
@@ -177,7 +177,7 @@ Gain amount of the frequencies after the filter.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **resonance** = ``0.5``
+:ref:`float<class_float>` **resonance** = ``0.5`` :ref:`🔗<class_AudioEffectFilter_property_resonance>`
 
 .. rst-class:: classref-property-setget
 

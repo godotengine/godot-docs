@@ -46,7 +46,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **generate**\ (\ from\: :ref:`Translation<class_Translation>`\ )
+|void| **generate**\ (\ from\: :ref:`Translation<class_Translation>`\ ) :ref:`🔗<class_OptimizedTranslation_method_generate>`
 
 Generates and sets an optimized translation from the given :ref:`Translation<class_Translation>` resource.
 

@@ -13,7 +13,7 @@ setup compiling the engine for your current platform should be as easy as runnin
 
 But you will probably need to use at least some of the available options to configure
 the build to match your specific needs, be it a custom engine fork, a lightweight build
-stripped of extra modules, or an executable targetting engine development.
+stripped of extra modules, or an executable targeting engine development.
 
 The articles below should help you navigate configuration options available, as well as
 prerequisites required to compile Godot exactly the way you need.

@@ -46,7 +46,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **parameter_name** = ``"[None]"``
+:ref:`String<class_String>` **parameter_name** = ``"[None]"`` :ref:`🔗<class_VisualShaderNodeParameterRef_property_parameter_name>`
 
 .. rst-class:: classref-property-setget
 

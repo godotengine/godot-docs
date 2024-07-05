@@ -85,7 +85,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **PeerState**:
+enum **PeerState**: :ref:`🔗<enum_ENetPacketPeer_PeerState>`
 
 .. _class_ENetPacketPeer_constant_STATE_DISCONNECTED:
 
@@ -175,7 +175,7 @@ The peer has lost connection, but is not considered truly disconnected (as the p
 
 .. rst-class:: classref-enumeration
 
-enum **PeerStatistic**:
+enum **PeerStatistic**: :ref:`🔗<enum_ENetPacketPeer_PeerStatistic>`
 
 .. _class_ENetPacketPeer_constant_PEER_PACKET_LOSS:
 
@@ -302,7 +302,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**PACKET_LOSS_SCALE** = ``65536``
+**PACKET_LOSS_SCALE** = ``65536`` :ref:`🔗<class_ENetPacketPeer_constant_PACKET_LOSS_SCALE>`
 
 The reference scale for packet loss. See :ref:`get_statistic<class_ENetPacketPeer_method_get_statistic>` and :ref:`PEER_PACKET_LOSS<class_ENetPacketPeer_constant_PEER_PACKET_LOSS>`.
 
@@ -310,7 +310,7 @@ The reference scale for packet loss. See :ref:`get_statistic<class_ENetPacketPee
 
 .. rst-class:: classref-constant
 
-**PACKET_THROTTLE_SCALE** = ``32``
+**PACKET_THROTTLE_SCALE** = ``32`` :ref:`🔗<class_ENetPacketPeer_constant_PACKET_THROTTLE_SCALE>`
 
 The reference value for throttle configuration. The default value is ``32``. See :ref:`throttle_configure<class_ENetPacketPeer_method_throttle_configure>`.
 
@@ -318,7 +318,7 @@ The reference value for throttle configuration. The default value is ``32``. See
 
 .. rst-class:: classref-constant
 
-**FLAG_RELIABLE** = ``1``
+**FLAG_RELIABLE** = ``1`` :ref:`🔗<class_ENetPacketPeer_constant_FLAG_RELIABLE>`
 
 Mark the packet to be sent as reliable.
 
@@ -326,7 +326,7 @@ Mark the packet to be sent as reliable.
 
 .. rst-class:: classref-constant
 
-**FLAG_UNSEQUENCED** = ``2``
+**FLAG_UNSEQUENCED** = ``2`` :ref:`🔗<class_ENetPacketPeer_constant_FLAG_UNSEQUENCED>`
 
 Mark the packet to be sent unsequenced (unreliable).
 
@@ -334,7 +334,7 @@ Mark the packet to be sent unsequenced (unreliable).
 
 .. rst-class:: classref-constant
 
-**FLAG_UNRELIABLE_FRAGMENT** = ``8``
+**FLAG_UNRELIABLE_FRAGMENT** = ``8`` :ref:`🔗<class_ENetPacketPeer_constant_FLAG_UNRELIABLE_FRAGMENT>`
 
 Mark the packet to be sent unreliable even if the packet is too big and needs fragmentation (increasing the chance of it being dropped).
 
@@ -351,7 +351,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_channels**\ (\ ) |const|
+:ref:`int<class_int>` **get_channels**\ (\ ) |const| :ref:`🔗<class_ENetPacketPeer_method_get_channels>`
 
 Returns the number of channels allocated for communication with peer.
 
@@ -363,7 +363,7 @@ Returns the number of channels allocated for communication with peer.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_remote_address**\ (\ ) |const|
+:ref:`String<class_String>` **get_remote_address**\ (\ ) |const| :ref:`🔗<class_ENetPacketPeer_method_get_remote_address>`
 
 Returns the IP address of this peer.
 
@@ -375,7 +375,7 @@ Returns the IP address of this peer.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_remote_port**\ (\ ) |const|
+:ref:`int<class_int>` **get_remote_port**\ (\ ) |const| :ref:`🔗<class_ENetPacketPeer_method_get_remote_port>`
 
 Returns the remote port of this peer.
 
@@ -387,7 +387,7 @@ Returns the remote port of this peer.
 
 .. rst-class:: classref-method
 
-:ref:`PeerState<enum_ENetPacketPeer_PeerState>` **get_state**\ (\ ) |const|
+:ref:`PeerState<enum_ENetPacketPeer_PeerState>` **get_state**\ (\ ) |const| :ref:`🔗<class_ENetPacketPeer_method_get_state>`
 
 Returns the current peer state. See :ref:`PeerState<enum_ENetPacketPeer_PeerState>`.
 
@@ -399,7 +399,7 @@ Returns the current peer state. See :ref:`PeerState<enum_ENetPacketPeer_PeerStat
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_statistic**\ (\ statistic\: :ref:`PeerStatistic<enum_ENetPacketPeer_PeerStatistic>`\ )
+:ref:`float<class_float>` **get_statistic**\ (\ statistic\: :ref:`PeerStatistic<enum_ENetPacketPeer_PeerStatistic>`\ ) :ref:`🔗<class_ENetPacketPeer_method_get_statistic>`
 
 Returns the requested ``statistic`` for this peer. See :ref:`PeerStatistic<enum_ENetPacketPeer_PeerStatistic>`.
 
@@ -411,7 +411,7 @@ Returns the requested ``statistic`` for this peer. See :ref:`PeerStatistic<enum_
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_active**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_active**\ (\ ) |const| :ref:`🔗<class_ENetPacketPeer_method_is_active>`
 
 Returns ``true`` if the peer is currently active (i.e. the associated :ref:`ENetConnection<class_ENetConnection>` is still valid).
 
@@ -423,7 +423,7 @@ Returns ``true`` if the peer is currently active (i.e. the associated :ref:`ENet
 
 .. rst-class:: classref-method
 
-|void| **peer_disconnect**\ (\ data\: :ref:`int<class_int>` = 0\ )
+|void| **peer_disconnect**\ (\ data\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetPacketPeer_method_peer_disconnect>`
 
 Request a disconnection from a peer. An :ref:`ENetConnection.EVENT_DISCONNECT<class_ENetConnection_constant_EVENT_DISCONNECT>` will be generated during :ref:`ENetConnection.service<class_ENetConnection_method_service>` once the disconnection is complete.
 
@@ -435,7 +435,7 @@ Request a disconnection from a peer. An :ref:`ENetConnection.EVENT_DISCONNECT<cl
 
 .. rst-class:: classref-method
 
-|void| **peer_disconnect_later**\ (\ data\: :ref:`int<class_int>` = 0\ )
+|void| **peer_disconnect_later**\ (\ data\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetPacketPeer_method_peer_disconnect_later>`
 
 Request a disconnection from a peer, but only after all queued outgoing packets are sent. An :ref:`ENetConnection.EVENT_DISCONNECT<class_ENetConnection_constant_EVENT_DISCONNECT>` will be generated during :ref:`ENetConnection.service<class_ENetConnection_method_service>` once the disconnection is complete.
 
@@ -447,7 +447,7 @@ Request a disconnection from a peer, but only after all queued outgoing packets 
 
 .. rst-class:: classref-method
 
-|void| **peer_disconnect_now**\ (\ data\: :ref:`int<class_int>` = 0\ )
+|void| **peer_disconnect_now**\ (\ data\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetPacketPeer_method_peer_disconnect_now>`
 
 Force an immediate disconnection from a peer. No :ref:`ENetConnection.EVENT_DISCONNECT<class_ENetConnection_constant_EVENT_DISCONNECT>` will be generated. The foreign peer is not guaranteed to receive the disconnect notification, and is reset immediately upon return from this function.
 
@@ -459,7 +459,7 @@ Force an immediate disconnection from a peer. No :ref:`ENetConnection.EVENT_DISC
 
 .. rst-class:: classref-method
 
-|void| **ping**\ (\ )
+|void| **ping**\ (\ ) :ref:`🔗<class_ENetPacketPeer_method_ping>`
 
 Sends a ping request to a peer. ENet automatically pings all connected peers at regular intervals, however, this function may be called to ensure more frequent ping requests.
 
@@ -471,7 +471,7 @@ Sends a ping request to a peer. ENet automatically pings all connected peers at 
 
 .. rst-class:: classref-method
 
-|void| **ping_interval**\ (\ ping_interval\: :ref:`int<class_int>`\ )
+|void| **ping_interval**\ (\ ping_interval\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ENetPacketPeer_method_ping_interval>`
 
 Sets the ``ping_interval`` in milliseconds at which pings will be sent to a peer. Pings are used both to monitor the liveness of the connection and also to dynamically adjust the throttle during periods of low traffic so that the throttle has reasonable responsiveness during traffic spikes. The default ping interval is ``500`` milliseconds.
 
@@ -483,7 +483,7 @@ Sets the ``ping_interval`` in milliseconds at which pings will be sent to a peer
 
 .. rst-class:: classref-method
 
-|void| **reset**\ (\ )
+|void| **reset**\ (\ ) :ref:`🔗<class_ENetPacketPeer_method_reset>`
 
 Forcefully disconnects a peer. The foreign host represented by the peer is not notified of the disconnection and will timeout on its connection to the local host.
 
@@ -495,7 +495,7 @@ Forcefully disconnects a peer. The foreign host represented by the peer is not n
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **send**\ (\ channel\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`, flags\: :ref:`int<class_int>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **send**\ (\ channel\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`, flags\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ENetPacketPeer_method_send>`
 
 Queues a ``packet`` to be sent over the specified ``channel``. See ``FLAG_*`` constants for available packet flags.
 
@@ -507,7 +507,7 @@ Queues a ``packet`` to be sent over the specified ``channel``. See ``FLAG_*`` co
 
 .. rst-class:: classref-method
 
-|void| **set_timeout**\ (\ timeout\: :ref:`int<class_int>`, timeout_min\: :ref:`int<class_int>`, timeout_max\: :ref:`int<class_int>`\ )
+|void| **set_timeout**\ (\ timeout\: :ref:`int<class_int>`, timeout_min\: :ref:`int<class_int>`, timeout_max\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ENetPacketPeer_method_set_timeout>`
 
 Sets the timeout parameters for a peer. The timeout parameters control how and when a peer will timeout from a failure to acknowledge reliable traffic. Timeout values are expressed in milliseconds.
 
@@ -521,7 +521,7 @@ The ``timeout`` is a factor that, multiplied by a value based on the average rou
 
 .. rst-class:: classref-method
 
-|void| **throttle_configure**\ (\ interval\: :ref:`int<class_int>`, acceleration\: :ref:`int<class_int>`, deceleration\: :ref:`int<class_int>`\ )
+|void| **throttle_configure**\ (\ interval\: :ref:`int<class_int>`, acceleration\: :ref:`int<class_int>`, deceleration\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ENetPacketPeer_method_throttle_configure>`
 
 Configures throttle parameter for a peer.
 

@@ -54,7 +54,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **depth** = ``1.0``
+:ref:`float<class_float>` **depth** = ``1.0`` :ref:`🔗<class_CollisionPolygon3D_property_depth>`
 
 .. rst-class:: classref-property-setget
 
@@ -71,7 +71,7 @@ Length that the resulting collision extends in either direction perpendicular to
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disabled** = ``false``
+:ref:`bool<class_bool>` **disabled** = ``false`` :ref:`🔗<class_CollisionPolygon3D_property_disabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -88,7 +88,7 @@ If ``true``, no collision will be produced.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **margin** = ``0.04``
+:ref:`float<class_float>` **margin** = ``0.04`` :ref:`🔗<class_CollisionPolygon3D_property_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -105,7 +105,7 @@ The collision margin for the generated :ref:`Shape3D<class_Shape3D>`. See :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array()``
+:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array()`` :ref:`🔗<class_CollisionPolygon3D_property_polygon>`
 
 .. rst-class:: classref-property-setget
 

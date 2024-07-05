@@ -58,7 +58,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**popup_hide**\ (\ )
+**popup_hide**\ (\ ) :ref:`🔗<class_Popup_signal_popup_hide>`
 
 Emitted when the popup is hidden.
 

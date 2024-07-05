@@ -256,6 +256,11 @@ Reference
 
     - ``[code]{text}[/code]``
 
+  * - | **char**
+      | Adds Unicode character with hexadecimal UTF-32 ``{codepoint}``.
+
+    - ``[char={codepoint}]``
+
   * - | **p**
       | Adds new paragraph with ``{text}``. Supports configuration options,
         see :ref:`doc_bbcode_in_richtextlabel_paragraph_options`.
@@ -312,8 +317,9 @@ Reference
         the aspect ratio.
       | If both ``{width}`` and ``{height}`` are provided, the image will be scaled
         to that size.
+      | Add ``%`` to the end of ``{width}`` or ``{height}`` value to specify it as percentages of the control width instead of pixels.
       | If ``{valign}`` configuration is provided, the image will try to align to the
-        surrounding text, see :ref:`doc_bbcode_in_richtextlabel_image_alignment`.
+        surrounding text, see :ref:`doc_bbcode_in_richtextlabel_image_and_table_alignment`.
       | Supports configuration options, see :ref:`doc_bbcode_in_richtextlabel_image_options`.
 
     - | ``[img]{path}[/img]``
@@ -343,7 +349,7 @@ Reference
         Negative top and bottom margins are particularly useful to allow the rest of
         the paragraph to display below the dropcap.
 
-    - ``[dropcap font_size={size} color={color} margins={left},{top},{right},{bottom}]{text}[/dropcap]``
+    - ``[dropcap font={font} font_size={size} color={color} outline_size={size} outline_color={color} margins={left},{top},{right},{bottom}]{text}[/dropcap]``
 
   * - | **opentype_features**
       | Enables custom OpenType font features for ``{text}``. Features must be provided as
@@ -398,8 +404,13 @@ Reference
   * - | **table**
       | Creates a table with the ``{number}`` of columns. Use the ``cell`` tag to define
         table cells.
+      | If ``{valign}`` configuration is provided, the table will try to align to the
+        surrounding text, see :ref:`doc_bbcode_in_richtextlabel_image_and_table_alignment`.
+      | If baseline alignment is used, the table is aligned to the baseline of the row with index ``{alignment_row}`` (zero-based).
 
-    - ``[table={number}]{cells}[/table]``
+    - | ``[table={number}]{cells}[/table]``
+      | ``[table={number},{valign}]{cells}[/table]``
+      | ``[table={number},{valign},{alignment_row}]{cells}[/table]``
 
   * - | **cell**
       | Adds a cell with ``{text}`` to the table.
@@ -466,31 +477,44 @@ Paragraph options
 
 - **align**
 
-  +-----------+--------------------------------------------+
-  | `Values`  | ``left``, ``center``, ``right``, ``fill``  |
-  +-----------+--------------------------------------------+
-  | `Default` | ``left``                                   |
-  +-----------+--------------------------------------------+
+  +-----------+----------------------------------------------------------------------------------------+
+  | `Values`  | ``left`` (or ``l``), ``center`` (or ``c``), ``right`` (or ``r``), ``fill`` (or ``f``)  |
+  +-----------+----------------------------------------------------------------------------------------+
+  | `Default` | ``left``                                                                               |
+  +-----------+----------------------------------------------------------------------------------------+
 
   Text horizontal alignment.
 
 - **bidi_override**, **st**
 
-  +-----------+---------------------------------------------------------------------------+
-  | `Values`  | ``default``, ``uri``, ``file``, ``email``, ``list``, ``none``, ``custom`` |
-  +-----------+---------------------------------------------------------------------------+
-  | `Default` | ``default``                                                               |
-  +-----------+---------------------------------------------------------------------------+
+  +-----------+--------------------------------------------------------------------------------------------------------------+
+  | `Values`  | ``default`` (of ``d``), ``uri`` (or ``u``), ``file`` (or ``f``), ``email`` (or ``e``), ``list`` (or ``l``),  |
+  |           | ``none`` (or ``n``), ``custom`` (or ``c``)                                                                   |
+  +-----------+--------------------------------------------------------------------------------------------------------------+
+  | `Default` | ``default``                                                                                                  |
+  +-----------+--------------------------------------------------------------------------------------------------------------+
 
   Structured text override.
 
+- **justification_flags**, **jst**
+
+  +-----------+--------------------------------------------------------------------------------------------------------+
+  | `Values`  | Comma-separated list of the following values:                                                          |
+  |           | ``kashida`` (or ``k``), ``word`` (or ``w``), ``trim`` (or ``tr``), ``after_last_tab`` (or ``lt``),     |
+  |           | ``skip_last`` (or ``sl``), ``skip_last_with_chars`` (or ``sv``),  ``do_not_skip_single`` (or ``ns``).  |
+  +-----------+--------------------------------------------------------------------------------------------------------+
+  | `Default` | ``word,kashida,skip_last,do_not_skip_single``                                                          |
+  +-----------+--------------------------------------------------------------------------------------------------------+
+
+  Justification (fill alignment) option. See :ref:`class_TextServer` for more details.
+
 - **direction**, **dir**
 
-  +-----------+--------------------------------------------+
-  | `Values`  | ``ltr``, ``rtl``, ``auto``                 |
-  +-----------+--------------------------------------------+
-  | `Default` | Inherit                                    |
-  +-----------+--------------------------------------------+
+  +-----------+-----------------------------------------------------------------+
+  | `Values`  | ``ltr`` (or ``l``), ``rtl`` (or ``r``), ``auto`` (or ``a``)     |
+  +-----------+-----------------------------------------------------------------+
+  | `Default` | Inherit                                                         |
+  +-----------+-----------------------------------------------------------------+
 
   Base BiDi direction.
 
@@ -566,22 +590,22 @@ Image options
 - **height**
 
   +-----------+--------------------------------------------+
-  | `Values`  | Number in pixels                           |
+  | `Values`  | Integer number                             |
   +-----------+--------------------------------------------+
   | `Default` | Inherit                                    |
   +-----------+--------------------------------------------+
 
-  Target height of the image.
+  Target height of the image in pixels, add ``%`` to the end of value to specify it as percentages of the control width instead of pixels.
 
 - **width**
 
   +-----------+--------------------------------------------+
-  | `Values`  | Number in pixels                           |
+  | `Values`  | Integer number                             |
   +-----------+--------------------------------------------+
   | `Default` | Inherit                                    |
   +-----------+--------------------------------------------+
 
-  Target width of the image.
+  Target width of the image, add ``%`` to the end of value to specify it as percentages of the control width instead of pixels.
 
 - **region**
 
@@ -593,24 +617,54 @@ Image options
 
   Region rect of the image. This can be used to display a single image from a spritesheet.
 
-.. _doc_bbcode_in_richtextlabel_image_alignment:
+- **pad**
 
-Image vertical alignment
-~~~~~~~~~~~~~~~~~~~~~~~~
+  +-----------+--------------------------------------------+
+  | `Values`  | ``false``, ``true``                        |
+  +-----------+--------------------------------------------+
+  | `Default` | ``false``                                  |
+  +-----------+--------------------------------------------+
 
-When a vertical alignment value is provided with the ``[img]`` tag the image
-will try to align itself against the surrounding text. Alignment is performed
-using a vertical point of the image and a vertical point of the text. There are
-3 possible points on the image (``top``, ``center``, and ``bottom``) and 4
-possible points on the text (``top``, ``center``, ``baseline``, and ``bottom``),
+  If set to ``true``, and the image is smaller than the size specified by ``width`` and ``height``, the image padding is added to match the size instead of upscaling.
+
+- **tootip**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | String                                     |
+  +-----------+--------------------------------------------+
+  | `Default` |                                            |
+  +-----------+--------------------------------------------+
+
+  Image tooltip.
+
+.. _doc_bbcode_in_richtextlabel_image_and_table_alignment:
+
+Image and table vertical alignment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When a vertical alignment value is provided with the ``[img]`` or ``[table]``` tag
+the image/table will try to align itself against the surrounding text. Alignment is
+performed using a vertical point of the image and a vertical point of the text.
+There are 3 possible points on the image (``top``, ``center``, and ``bottom``) and 4
+possible points on the text and table (``top``, ``center``, ``baseline``, and ``bottom``),
 which can be used in any combination.
 
-To specify both points, use their full or short names as a value of the image tag:
+To specify both points, use their full or short names as a value of the image/table tag:
 
 .. code-block:: none
 
-    [img=top,bottom]
-    [img=center,center]
+    text [img=top,bottom]...[/img] text
+    text [img=center,center]...[/img] text
+
+.. image:: img/bbcode_in_richtextlabel_image_align.webp
+
+.. code-block:: none
+
+    text [table=3,center]...[/table] text  # Center to center.
+    text [table=3,top,bottom]...[/table] text # Top of the table to the bottom of text.
+    text [table=3,baseline,baseline,1]...[/table] text # Baseline of the second row (rows use zero-based indexing) to the baseline of text.
+
+.. image:: img/bbcode_in_richtextlabel_table_align.webp
 
 You can also specify just one value (``top``, ``center``, or ``bottom``) to make
 use of a corresponding preset (``top-top``, ``center-center``, and ``bottom-bottom``
@@ -645,6 +699,107 @@ Font options
 
   Custom font size.
 
+- **glyph_spacing**, **gl**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Number in pixels.                          |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Extra spacing for each glyph.
+
+- **glyph_spacing**, **sp**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Number in pixels.                          |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Extra spacing for the space character.
+
+- **top_spacing**, **top**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Number in pixels.                          |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Extra spacing at the top of the line.
+
+- **bottom_spacing**, **bt**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Number in pixels.                          |
+  +-----------+--------------------------------------------+
+  | `Default` | Inherit                                    |
+  +-----------+--------------------------------------------+
+
+  Extra spacing at the bottom of the line.
+
+- **embolden**, **emb**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Floating-point number.                     |
+  +-----------+--------------------------------------------+
+  | `Default` | ``0.0``                                    |
+  +-----------+--------------------------------------------+
+
+  Font embolden strength, if it is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.
+
+- **face_index**, **fi**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Integer number.                            |
+  +-----------+--------------------------------------------+
+  | `Default` | ``0``                                      |
+  +-----------+--------------------------------------------+
+
+  An active face index in the TrueType / OpenType collection.
+
+- **slant**, **sln**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | Floating-point number.                     |
+  +-----------+--------------------------------------------+
+  | `Default` | ``0.0``                                    |
+  +-----------+--------------------------------------------+
+
+  Font slant strength, positive values slant glyphs to the right. Negative values to the left.
+
+- **opentype_variation**, **otv**
+
+  +-----------+------------------------------------------------------+
+  | `Values`  | Comma-separated list of the OpenType variation tags. |
+  +-----------+------------------------------------------------------+
+  | `Default` |                                                      |
+  +-----------+------------------------------------------------------+
+
+  Font OpenType variation coordinates. See `OpenType variation tags <https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg>`__.
+
+  Note: The value should be enclosed in ``"`` to allow using ``=`` inside it:
+
+.. code-block:: none
+
+    [font otv="wght=200,wdth=400"] # Sets variable font weight and width.
+
+- **opentype_features**, **otf**
+
+  +-----------+----------------------------------------------------+
+  | `Values`  | Comma-separated list of the OpenType feature tags. |
+  +-----------+----------------------------------------------------+
+  | `Default` |                                                    |
+  +-----------+----------------------------------------------------+
+
+  Font OpenType features. See `OpenType features tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
+
+  Note: The value should be enclosed in ``"`` to allow using ``=`` inside it:
+
+.. code-block:: none
+
+    [font otf="calt=0,zero=1"] # Disable contextual alternates, enable slashed zero.
 
 .. _doc_bbcode_in_richtextlabel_named_colors:
 
@@ -706,6 +861,16 @@ Cell options
 
   Cell background color. For alternating odd/even row backgrounds,
   you can use ``bg=odd_color,even_color``.
+
+- **padding**
+
+  +-----------+--------------------------------------------+
+  | `Values`  | 4 comma-separated floating-point numbers   |
+  +-----------+--------------------------------------------+
+  | `Default` | 0, 0, 0, 0                                 |
+  +-----------+--------------------------------------------+
+
+  Left, top, right, and bottom cell padding.
 
 .. _doc_bbcode_in_richtextlabel_unordered_list_bullet:
 

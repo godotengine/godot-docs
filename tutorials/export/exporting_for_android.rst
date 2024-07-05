@@ -28,14 +28,14 @@ Download the Android SDK
 
 Download and install the Android SDK.
 
-- You can install the Android SDK using `Android Studio version 4.1 or later <https://developer.android.com/studio/>`__.
+- You can install the Android SDK using `Android Studio Hedgehog (version 2023.1.1) or later <https://developer.android.com/studio/>`__.
 
   - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
   - Ensure that the `required packages <https://developer.android.com/studio/intro/update#recommended>`__ are installed as well.
 
-    - Android SDK Platform-Tools version 30.0.5 or later
-    - Android SDK Build-Tools version 33.0.2
-    - Android SDK Platform 33
+    - Android SDK Platform-Tools version 34.0.0 or later
+    - Android SDK Build-Tools version 34.0.0
+    - Android SDK Platform 34
     - Android SDK Command-line Tools (latest)
     - CMake version 3.10.2.4988404
     - NDK version r23c (23.2.8568313)
@@ -47,34 +47,13 @@ Download and install the Android SDK.
 
 ::
 
-    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;33.0.2" "platforms;android-33" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"
+    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"
 
 .. note::
 
     If you are using Linux,
     **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
-
-Create a debug.keystore
------------------------
-
-Android needs a debug keystore file to install to devices and distribute
-non-release APKs. If you have used the SDK before and have built
-projects, ant or eclipse probably generated one for you (in the ``~/.android`` directory on Linux and
-macOS, in the ``C:\Users\<user>\.android\`` directory on Windows).
-
-If you can't find it or need to generate one, the keytool command from
-the JDK can be used for this purpose::
-
-    keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
-
-This will create a ``debug.keystore`` file in your current directory. You should move it to a memorable location such as ``%USERPROFILE%\.android\``, because you will need its location in a later step. For more information on ``keytool`` usage, see `this Q&A article <https://ask.godotengine.org/21349/jdk-android-file-missing>`__.
-
-.. note::
-
-   It is important that the password is the same for the keystore and the key. This is a `known Android
-   studio issue <https://developer.android.com/studio/known-issues#ki-key-keystore-warning>`__ that also
-   affects Godot projects.
 
 Setting it up in Godot
 ----------------------
@@ -87,15 +66,14 @@ project).
 
 Scroll down to the section where the Android settings are located:
 
-.. image:: img/androidsdk.png
+.. image:: img/android_editor_settings.webp
 
 In that screen, 2 paths need to be set:
 
-- The ``Android Sdk Path`` should be the location where the Android SDK was installed.
-  - For example ``%LOCALAPPDATA%\Android\Sdk\`` on Windows or ``/Users/$USER/Library/Android/sdk/`` on macOS.
+- ``Java SDK Path`` should be the location where OpenJDK 17 was installed.
 
-- The debug ``.keystore`` file
-  - It can be found in the folder where you put the ``debug.keystore`` file you created above.
+- ``Android Sdk Path`` should be the location where the Android SDK was installed.
+  - For example ``%LOCALAPPDATA%\Android\Sdk\`` on Windows or ``/Users/$USER/Library/Android/sdk/`` on macOS.
 
 Once that is configured, everything is ready to export to Android!
 

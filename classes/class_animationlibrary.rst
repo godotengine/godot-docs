@@ -63,7 +63,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**animation_added**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+**animation_added**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationLibrary_signal_animation_added>`
 
 Emitted when an :ref:`Animation<class_Animation>` is added, under the key ``name``.
 
@@ -75,7 +75,7 @@ Emitted when an :ref:`Animation<class_Animation>` is added, under the key ``name
 
 .. rst-class:: classref-signal
 
-**animation_changed**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+**animation_changed**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationLibrary_signal_animation_changed>`
 
 Emitted when there's a change in one of the animations, e.g. tracks are added, moved or have changed paths. ``name`` is the key of the animation that was changed.
 
@@ -89,7 +89,7 @@ See also :ref:`Resource.changed<class_Resource_signal_changed>`, which this acts
 
 .. rst-class:: classref-signal
 
-**animation_removed**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+**animation_removed**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationLibrary_signal_animation_removed>`
 
 Emitted when an :ref:`Animation<class_Animation>` stored with the key ``name`` is removed.
 
@@ -101,7 +101,7 @@ Emitted when an :ref:`Animation<class_Animation>` stored with the key ``name`` i
 
 .. rst-class:: classref-signal
 
-**animation_renamed**\ (\ name\: :ref:`StringName<class_StringName>`, to_name\: :ref:`StringName<class_StringName>`\ )
+**animation_renamed**\ (\ name\: :ref:`StringName<class_StringName>`, to_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationLibrary_signal_animation_renamed>`
 
 Emitted when the key for an :ref:`Animation<class_Animation>` is changed, from ``name`` to ``to_name``.
 
@@ -118,7 +118,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **add_animation**\ (\ name\: :ref:`StringName<class_StringName>`, animation\: :ref:`Animation<class_Animation>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **add_animation**\ (\ name\: :ref:`StringName<class_StringName>`, animation\: :ref:`Animation<class_Animation>`\ ) :ref:`🔗<class_AnimationLibrary_method_add_animation>`
 
 Adds the ``animation`` to the library, accessible by the key ``name``.
 
@@ -130,7 +130,7 @@ Adds the ``animation`` to the library, accessible by the key ``name``.
 
 .. rst-class:: classref-method
 
-:ref:`Animation<class_Animation>` **get_animation**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Animation<class_Animation>` **get_animation**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_AnimationLibrary_method_get_animation>`
 
 Returns the :ref:`Animation<class_Animation>` with the key ``name``. If the animation does not exist, ``null`` is returned and an error is logged.
 
@@ -142,7 +142,7 @@ Returns the :ref:`Animation<class_Animation>` with the key ``name``. If the anim
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_animation_list**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_animation_list**\ (\ ) |const| :ref:`🔗<class_AnimationLibrary_method_get_animation_list>`
 
 Returns the keys for the :ref:`Animation<class_Animation>`\ s stored in the library.
 
@@ -154,7 +154,7 @@ Returns the keys for the :ref:`Animation<class_Animation>`\ s stored in the libr
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_animation**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`bool<class_bool>` **has_animation**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_AnimationLibrary_method_has_animation>`
 
 Returns ``true`` if the library stores an :ref:`Animation<class_Animation>` with ``name`` as the key.
 
@@ -166,7 +166,7 @@ Returns ``true`` if the library stores an :ref:`Animation<class_Animation>` with
 
 .. rst-class:: classref-method
 
-|void| **remove_animation**\ (\ name\: :ref:`StringName<class_StringName>`\ )
+|void| **remove_animation**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationLibrary_method_remove_animation>`
 
 Removes the :ref:`Animation<class_Animation>` with the key ``name``.
 
@@ -178,7 +178,7 @@ Removes the :ref:`Animation<class_Animation>` with the key ``name``.
 
 .. rst-class:: classref-method
 
-|void| **rename_animation**\ (\ name\: :ref:`StringName<class_StringName>`, newname\: :ref:`StringName<class_StringName>`\ )
+|void| **rename_animation**\ (\ name\: :ref:`StringName<class_StringName>`, newname\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationLibrary_method_rename_animation>`
 
 Changes the key of the :ref:`Animation<class_Animation>` associated with the key ``name`` to ``newname``.
 

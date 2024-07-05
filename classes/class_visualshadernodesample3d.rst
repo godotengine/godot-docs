@@ -48,7 +48,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Source**:
+enum **Source**: :ref:`🔗<enum_VisualShaderNodeSample3D_Source>`
 
 .. _class_VisualShaderNodeSample3D_constant_SOURCE_TEXTURE:
 
@@ -87,7 +87,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Source<enum_VisualShaderNodeSample3D_Source>` **source** = ``0``
+:ref:`Source<enum_VisualShaderNodeSample3D_Source>` **source** = ``0`` :ref:`🔗<class_VisualShaderNodeSample3D_property_source>`
 
 .. rst-class:: classref-property-setget
 

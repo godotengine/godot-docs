@@ -136,9 +136,10 @@ it manually with the following code:
 
 Other built-ins, such as UV, UV2 and COLOR, are also passed through to the fragment function if not modified.
 
-Users can override the modelview and projection transforms using the ``POSITION`` built-in. When ``POSITION`` is used,
-the value from ``VERTEX`` is ignored and projection does not happen. However, the value passed to the fragment shader
-still comes from ``VERTEX``.
+Users can override the modelview and projection transforms using the ``POSITION`` built-in. If ``POSITION`` is written
+to anywhere in the shader, it will always be used, so the user becomes responsible for ensuring that it always has
+an acceptable value. When ``POSITION`` is used, the value from ``VERTEX`` is ignored and projection does not happen.
+However, the value passed to the fragment shader still comes from ``VERTEX``.
 
 For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
 is usually:
@@ -172,7 +173,7 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in vec3 **CAMERA_DIRECTION_WORLD**     | Camera world space direction.                          |
 +----------------------------------------+--------------------------------------------------------+
-| in int **CAMERA_VISIBLE_LAYERS**       | Cull layers of the camera rendering the current pass.  |
+| in uint **CAMERA_VISIBLE_LAYERS**      | Cull layers of the camera rendering the current pass.  |
 +----------------------------------------+--------------------------------------------------------+
 | in bool **OUTPUT_IS_SRGB**             | ``true`` when output is in sRGB color space            |
 |                                        | (this is ``true`` in the Compatibility renderer,       |
@@ -219,15 +220,15 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | inout mat3 **MODELVIEW_NORMAL_MATRIX** |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| inout mat4 **MODEL_MATRIX**            | Model space to world space transform.                  |
+| in mat4 **MODEL_MATRIX**               | Model space to world space transform.                  |
 +----------------------------------------+--------------------------------------------------------+
-| inout mat3 **MODEL_NORMAL_MATRIX**     |                                                        |
+| in mat3 **MODEL_NORMAL_MATRIX**        |                                                        |
 +----------------------------------------+--------------------------------------------------------+
 | inout mat4 **PROJECTION_MATRIX**       | View space to clip space transform.                    |
 +----------------------------------------+--------------------------------------------------------+
-| inout uvec4 **BONE_INDICES**           |                                                        |
+| in uvec4 **BONE_INDICES**              |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec4 **BONE_WEIGHTS**            |                                                        |
+| in vec4 **BONE_WEIGHTS**               |                                                        |
 +----------------------------------------+--------------------------------------------------------+
 | in vec4 **CUSTOM0**                    |                                                        |
 +----------------------------------------+--------------------------------------------------------+
@@ -293,6 +294,8 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **CAMERA_DIRECTION_WORLD**     | Camera direction, in world space.                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
+| in uint **CAMERA_VISIBLE_LAYERS**      | Cull layers of the camera rendering the current pass.                                            |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **VERTEX**                     | Vertex that comes from vertex function (default, in view space).                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | inout vec3 **LIGHT_VERTEX**            | A writable version of ``VERTEX`` that can be used to alter light and shadows. Writing to this    |
@@ -330,7 +333,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **ALBEDO**                    | Albedo (default white).                                                                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **ALPHA**                    | Alpha (0..1); if written to, the material will go to the transparent pipeline.                   |
+| out float **ALPHA**                    | Alpha (0..1); if read from or written to, the material will go to the transparent pipeline.      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ALPHA_SCISSOR_THRESHOLD**  | If written to, values below a certain amount of alpha are discarded.                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+

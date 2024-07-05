@@ -83,7 +83,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **depth_far** = ``4000.0``
+:ref:`float<class_float>` **depth_far** = ``4000.0`` :ref:`🔗<class_GLTFCamera_property_depth_far>`
 
 .. rst-class:: classref-property-setget
 
@@ -100,7 +100,7 @@ The distance to the far culling boundary for this camera relative to its local Z
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **depth_near** = ``0.05``
+:ref:`float<class_float>` **depth_near** = ``0.05`` :ref:`🔗<class_GLTFCamera_property_depth_near>`
 
 .. rst-class:: classref-property-setget
 
@@ -117,7 +117,7 @@ The distance to the near culling boundary for this camera relative to its local 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fov** = ``1.309``
+:ref:`float<class_float>` **fov** = ``1.309`` :ref:`🔗<class_GLTFCamera_property_fov>`
 
 .. rst-class:: classref-property-setget
 
@@ -134,7 +134,7 @@ The FOV of the camera. This class and GLTF define the camera FOV in radians, whi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **perspective** = ``true``
+:ref:`bool<class_bool>` **perspective** = ``true`` :ref:`🔗<class_GLTFCamera_property_perspective>`
 
 .. rst-class:: classref-property-setget
 
@@ -151,7 +151,7 @@ Whether or not the camera is in perspective mode. If false, the camera is in ort
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **size_mag** = ``0.5``
+:ref:`float<class_float>` **size_mag** = ``0.5`` :ref:`🔗<class_GLTFCamera_property_size_mag>`
 
 .. rst-class:: classref-property-setget
 
@@ -173,7 +173,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`GLTFCamera<class_GLTFCamera>` **from_dictionary**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static|
+:ref:`GLTFCamera<class_GLTFCamera>` **from_dictionary**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static| :ref:`🔗<class_GLTFCamera_method_from_dictionary>`
 
 Creates a new GLTFCamera instance by parsing the given :ref:`Dictionary<class_Dictionary>`.
 
@@ -185,7 +185,7 @@ Creates a new GLTFCamera instance by parsing the given :ref:`Dictionary<class_Di
 
 .. rst-class:: classref-method
 
-:ref:`GLTFCamera<class_GLTFCamera>` **from_node**\ (\ camera_node\: :ref:`Camera3D<class_Camera3D>`\ ) |static|
+:ref:`GLTFCamera<class_GLTFCamera>` **from_node**\ (\ camera_node\: :ref:`Camera3D<class_Camera3D>`\ ) |static| :ref:`🔗<class_GLTFCamera_method_from_node>`
 
 Create a new GLTFCamera instance from the given Godot :ref:`Camera3D<class_Camera3D>` node.
 
@@ -197,7 +197,7 @@ Create a new GLTFCamera instance from the given Godot :ref:`Camera3D<class_Camer
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **to_dictionary**\ (\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **to_dictionary**\ (\ ) |const| :ref:`🔗<class_GLTFCamera_method_to_dictionary>`
 
 Serializes this GLTFCamera instance into a :ref:`Dictionary<class_Dictionary>`.
 
@@ -209,7 +209,7 @@ Serializes this GLTFCamera instance into a :ref:`Dictionary<class_Dictionary>`.
 
 .. rst-class:: classref-method
 
-:ref:`Camera3D<class_Camera3D>` **to_node**\ (\ ) |const|
+:ref:`Camera3D<class_Camera3D>` **to_node**\ (\ ) |const| :ref:`🔗<class_GLTFCamera_method_to_node>`
 
 Converts this GLTFCamera instance into a Godot :ref:`Camera3D<class_Camera3D>` node.
 

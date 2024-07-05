@@ -67,7 +67,7 @@ The sphere's wireframe appears below the character.
 |image3|
 
 It will be the shape the physics engine uses to collide with the environment, so
-we want it to better fit the 3D model. Shrink it a bit by dragging the orange
+we want it to better fit the 3D model. Make it a bit larger by dragging the orange
 dot in the viewport. My sphere has a radius of about ``0.8`` meters.
 
 Then, move the collision shape up so its bottom roughly aligns with the grid's plane.
@@ -171,7 +171,7 @@ In the next part, we'll code and test the player's movement.
 .. |image5| image:: img/02.player_input/06.toggling_visibility.webp
 .. |image6| image:: img/02.player_input/07.project_settings.png
 .. |image7| image:: img/02.player_input/07.input_map_tab.png
-.. |image8| image:: img/02.player_input/07.adding_action.png
+.. |image8| image:: img/02.player_input/07.adding_action.webp
 .. |image9| image:: img/02.player_input/08.actions_list_empty.png
 .. |image11| image:: img/02.player_input/09.keyboard_key_popup.png
 .. |image12| image:: img/02.player_input/09.keyboard_keys.png

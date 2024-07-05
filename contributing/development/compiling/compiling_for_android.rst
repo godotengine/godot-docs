@@ -27,18 +27,18 @@ Requirements
 For compiling under Windows, Linux or macOS, the following is required:
 
 - `Python 3.6+ <https://www.python.org/downloads/>`_.
-- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
+- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system.
 - `Android SDK <https://developer.android.com/studio/#command-tools>`_
   (command-line tools are sufficient).
 
    - Required SDK components will be automatically installed.
-   - On Linux,
-      **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
+   - On Linux, **do not use an Android SDK provided by your distribution's repositories** as it will often be outdated.
+   - On macOS, **do not use an Android SDK provided by Homebrew** as it will not be installed in a unified location.
 
 - Gradle (will be downloaded and installed automatically if missing).
 - JDK 17 (either OpenJDK or Oracle JDK).
 
-   - You can download a build from `ojdkbuild <https://adoptium.net/temurin/releases/?variant=openjdk17>`_.
+   - You can download a build from `Adoptium <https://adoptium.net/temurin/releases/?variant=openjdk17>`_.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.
@@ -55,6 +55,14 @@ Setting up the buildsystem
    SDK. If you downloaded the Android command-line tools, this would be
    the folder where you extracted the contents of the ZIP archive.
 
+    -  Windows: Press :kbd:`Windows + R`, type "control system",
+       then click on **Advanced system settings** in the left pane,
+       then click on **Environment variables** on the window that appears.
+
+    -  Linux or macOS: Add the text ``export ANDROID_HOME="/path/to/android-sdk"``
+       to your ``.bashrc`` or ``.zshrc`` where ``/path/to/android-sdk`` points to
+       the root of the SDK directories.
+
 -  Install the necessary SDK components in this folder:
 
     -  Accept the SDK component licenses by running the following command
@@ -68,15 +76,16 @@ Setting up the buildsystem
 
     ::
 
-        cmdline-tools/latest/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.3" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404"
+        cmdline-tools/latest/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"
 
-.. seealso::   To set the environment variable on Windows, press :kbd:`Windows + R`, type
-            "control system", then click on **Advanced system settings** in the left
-            pane, then click on **Environment variables** on the window that appears.
+-  After setting up the SDK and environment variables, be sure to
+   **restart your terminal** to apply the changes. If you are using
+   an IDE with an integrated terminal, you need to restart the IDE.
 
-.. seealso::   To set the environment variable on Linux or macOS, use
-            ``export ANDROID_HOME=/path/to/android-sdk`` where ``/path/to/android-sdk`` points to
-            the root of the SDK directories.
+-  Run ``scons platform=android``. If this fails, go back and check the steps.
+   If you completed the setup correctly, the NDK will begin downloading.
+   If you are trying to compile GDExtension, you need to first compile
+   the engine to download the NDK, then you can compile GDExtension.
 
 Building the export templates
 -----------------------------

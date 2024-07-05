@@ -91,7 +91,7 @@ Adding effects
 Audio buses can contain all sorts of effects. These effects modify the sound in
 one way or another and are applied in order.
 
-.. image:: img/audio_buses4.png
+.. image:: img/audio_buses4.webp
 
 For information on what each effect does, see :ref:`doc_audio_effects`.
 

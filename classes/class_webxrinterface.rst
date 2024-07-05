@@ -75,9 +75,10 @@ Here's the minimum code required to start an immersive VR session:
         # supported.
         webxr_interface.requested_reference_space_types = 'bounded-floor, local-floor, local'
         # In order to use 'local-floor' or 'bounded-floor' we must also
-        # mark the features as required or optional.
+        # mark the features as required or optional. By including 'hand-tracking'
+        # as an optional feature, it will be enabled if supported.
         webxr_interface.required_features = 'local-floor'
-        webxr_interface.optional_features = 'bounded-floor'
+        webxr_interface.optional_features = 'bounded-floor, hand-tracking'
     
         # This will return false if we're unable to even request the session,
         # however, it can still fail asynchronously later in the process, so we
@@ -94,7 +95,10 @@ Here's the minimum code required to start an immersive VR session:
         # This will be the reference space type you ultimately got, out of the
         # types that you requested above. This is useful if you want the game to
         # work a little differently in 'bounded-floor' versus 'local-floor'.
-        print ("Reference space type: " + webxr_interface.reference_space_type)
+        print("Reference space type: ", webxr_interface.reference_space_type)
+        # This will be the list of features that were successfully enabled
+        # (except on browsers that don't support this property).
+        print("Enabled features: ", webxr_interface.enabled_features)
     
     func _webxr_session_ended():
         $Button.visible = true
@@ -181,7 +185,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**display_refresh_rate_changed**\ (\ )
+**display_refresh_rate_changed**\ (\ ) :ref:`🔗<class_WebXRInterface_signal_display_refresh_rate_changed>`
 
 Emitted after the display's refresh rate has changed.
 
@@ -193,7 +197,7 @@ Emitted after the display's refresh rate has changed.
 
 .. rst-class:: classref-signal
 
-**reference_space_reset**\ (\ )
+**reference_space_reset**\ (\ ) :ref:`🔗<class_WebXRInterface_signal_reference_space_reset>`
 
 Emitted to indicate that the reference space has been reset or reconfigured.
 
@@ -209,7 +213,7 @@ See `WebXR's XRReferenceSpace reset event <https://developer.mozilla.org/en-US/d
 
 .. rst-class:: classref-signal
 
-**select**\ (\ input_source_id\: :ref:`int<class_int>`\ )
+**select**\ (\ input_source_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_WebXRInterface_signal_select>`
 
 Emitted after one of the input sources has finished its "primary action".
 
@@ -223,7 +227,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**selectend**\ (\ input_source_id\: :ref:`int<class_int>`\ )
+**selectend**\ (\ input_source_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_WebXRInterface_signal_selectend>`
 
 Emitted when one of the input sources has finished its "primary action".
 
@@ -237,7 +241,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**selectstart**\ (\ input_source_id\: :ref:`int<class_int>`\ )
+**selectstart**\ (\ input_source_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_WebXRInterface_signal_selectstart>`
 
 Emitted when one of the input source has started its "primary action".
 
@@ -251,7 +255,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**session_ended**\ (\ )
+**session_ended**\ (\ ) :ref:`🔗<class_WebXRInterface_signal_session_ended>`
 
 Emitted when the user ends the WebXR session (which can be done using UI from the browser or device).
 
@@ -265,7 +269,7 @@ At this point, you should do ``get_viewport().use_xr = false`` to instruct Godot
 
 .. rst-class:: classref-signal
 
-**session_failed**\ (\ message\: :ref:`String<class_String>`\ )
+**session_failed**\ (\ message\: :ref:`String<class_String>`\ ) :ref:`🔗<class_WebXRInterface_signal_session_failed>`
 
 Emitted by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` if the session fails to start.
 
@@ -279,7 +283,7 @@ Emitted by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` if
 
 .. rst-class:: classref-signal
 
-**session_started**\ (\ )
+**session_started**\ (\ ) :ref:`🔗<class_WebXRInterface_signal_session_started>`
 
 Emitted by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` if the session is successfully started.
 
@@ -293,7 +297,7 @@ At this point, it's safe to do ``get_viewport().use_xr = true`` to instruct Godo
 
 .. rst-class:: classref-signal
 
-**session_supported**\ (\ session_mode\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ )
+**session_supported**\ (\ session_mode\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_WebXRInterface_signal_session_supported>`
 
 Emitted by :ref:`is_session_supported<class_WebXRInterface_method_is_session_supported>` to indicate if the given ``session_mode`` is supported or not.
 
@@ -305,7 +309,7 @@ Emitted by :ref:`is_session_supported<class_WebXRInterface_method_is_session_sup
 
 .. rst-class:: classref-signal
 
-**squeeze**\ (\ input_source_id\: :ref:`int<class_int>`\ )
+**squeeze**\ (\ input_source_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_WebXRInterface_signal_squeeze>`
 
 Emitted after one of the input sources has finished its "primary squeeze action".
 
@@ -319,7 +323,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**squeezeend**\ (\ input_source_id\: :ref:`int<class_int>`\ )
+**squeezeend**\ (\ input_source_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_WebXRInterface_signal_squeezeend>`
 
 Emitted when one of the input sources has finished its "primary squeeze action".
 
@@ -333,7 +337,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**squeezestart**\ (\ input_source_id\: :ref:`int<class_int>`\ )
+**squeezestart**\ (\ input_source_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_WebXRInterface_signal_squeezestart>`
 
 Emitted when one of the input sources has started its "primary squeeze action".
 
@@ -347,7 +351,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**visibility_state_changed**\ (\ )
+**visibility_state_changed**\ (\ ) :ref:`🔗<class_WebXRInterface_signal_visibility_state_changed>`
 
 Emitted when :ref:`visibility_state<class_WebXRInterface_property_visibility_state>` has changed.
 
@@ -364,7 +368,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TargetRayMode**:
+enum **TargetRayMode**: :ref:`🔗<enum_WebXRInterface_TargetRayMode>`
 
 .. _class_WebXRInterface_constant_TARGET_RAY_MODE_UNKNOWN:
 
@@ -411,7 +415,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **enabled_features**
+:ref:`String<class_String>` **enabled_features** :ref:`🔗<class_WebXRInterface_property_enabled_features>`
 
 .. rst-class:: classref-property-setget
 
@@ -419,7 +423,9 @@ Property Descriptions
 
 A comma-separated list of features that were successfully enabled by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
 
-This may include features requested by setting :ref:`required_features<class_WebXRInterface_property_required_features>` and :ref:`optional_features<class_WebXRInterface_property_optional_features>`.
+This may include features requested by setting :ref:`required_features<class_WebXRInterface_property_required_features>` and :ref:`optional_features<class_WebXRInterface_property_optional_features>`, and will only be available after :ref:`session_started<class_WebXRInterface_signal_session_started>` has been emitted.
+
+\ **Note:** This may not be support by all web browsers, in which case it will be an empty string.
 
 .. rst-class:: classref-item-separator
 
@@ -429,7 +435,7 @@ This may include features requested by setting :ref:`required_features<class_Web
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **optional_features**
+:ref:`String<class_String>` **optional_features** :ref:`🔗<class_WebXRInterface_property_optional_features>`
 
 .. rst-class:: classref-property-setget
 
@@ -442,7 +448,7 @@ If a user's browser or device doesn't support one of the given features, initial
 
 This doesn't have any effect on the interface when already initialized.
 
-Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__. If you want to use a particular reference space type, it must be listed in either :ref:`required_features<class_WebXRInterface_property_required_features>` or :ref:`optional_features<class_WebXRInterface_property_optional_features>`.
+Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__, or include other features like ``"hand-tracking"`` to enable hand tracking.
 
 .. rst-class:: classref-item-separator
 
@@ -452,7 +458,7 @@ Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **reference_space_type**
+:ref:`String<class_String>` **reference_space_type** :ref:`🔗<class_WebXRInterface_property_reference_space_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -470,7 +476,7 @@ Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **requested_reference_space_types**
+:ref:`String<class_String>` **requested_reference_space_types** :ref:`🔗<class_WebXRInterface_property_requested_reference_space_types>`
 
 .. rst-class:: classref-property-setget
 
@@ -493,7 +499,7 @@ Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **required_features**
+:ref:`String<class_String>` **required_features** :ref:`🔗<class_WebXRInterface_property_required_features>`
 
 .. rst-class:: classref-property-setget
 
@@ -506,7 +512,7 @@ If a user's browser or device doesn't support one of the given features, initial
 
 This doesn't have any effect on the interface when already initialized.
 
-Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__. If you want to use a particular reference space type, it must be listed in either :ref:`required_features<class_WebXRInterface_property_required_features>` or :ref:`optional_features<class_WebXRInterface_property_optional_features>`.
+Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__, or include other features like ``"hand-tracking"`` to enable hand tracking.
 
 .. rst-class:: classref-item-separator
 
@@ -516,7 +522,7 @@ Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **session_mode**
+:ref:`String<class_String>` **session_mode** :ref:`🔗<class_WebXRInterface_property_session_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -537,7 +543,7 @@ Possible values come from `WebXR's XRSessionMode <https://developer.mozilla.org/
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **visibility_state**
+:ref:`String<class_String>` **visibility_state** :ref:`🔗<class_WebXRInterface_property_visibility_state>`
 
 .. rst-class:: classref-property-setget
 
@@ -560,7 +566,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_available_display_refresh_rates**\ (\ ) |const|
+:ref:`Array<class_Array>` **get_available_display_refresh_rates**\ (\ ) |const| :ref:`🔗<class_WebXRInterface_method_get_available_display_refresh_rates>`
 
 Returns display refresh rates supported by the current HMD. Only returned if this feature is supported by the web browser and after the interface has been initialized.
 
@@ -572,7 +578,7 @@ Returns display refresh rates supported by the current HMD. Only returned if thi
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_display_refresh_rate**\ (\ ) |const|
+:ref:`float<class_float>` **get_display_refresh_rate**\ (\ ) |const| :ref:`🔗<class_WebXRInterface_method_get_display_refresh_rate>`
 
 Returns the display refresh rate for the current HMD. Not supported on all HMDs and browsers. It may not report an accurate value until after using :ref:`set_display_refresh_rate<class_WebXRInterface_method_set_display_refresh_rate>`.
 
@@ -584,7 +590,7 @@ Returns the display refresh rate for the current HMD. Not supported on all HMDs 
 
 .. rst-class:: classref-method
 
-:ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **get_input_source_target_ray_mode**\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|
+:ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **get_input_source_target_ray_mode**\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_WebXRInterface_method_get_input_source_target_ray_mode>`
 
 Returns the target ray mode for the given ``input_source_id``.
 
@@ -598,7 +604,7 @@ This can help interpret the input coming from that input source. See `XRInputSou
 
 .. rst-class:: classref-method
 
-:ref:`XRControllerTracker<class_XRControllerTracker>` **get_input_source_tracker**\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|
+:ref:`XRControllerTracker<class_XRControllerTracker>` **get_input_source_tracker**\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_WebXRInterface_method_get_input_source_tracker>`
 
 Gets an :ref:`XRControllerTracker<class_XRControllerTracker>` for the given ``input_source_id``.
 
@@ -626,7 +632,7 @@ Use this method to get information about the input source that triggered one of 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_input_source_active**\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_input_source_active**\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_WebXRInterface_method_is_input_source_active>`
 
 Returns ``true`` if there is an active input source with the given ``input_source_id``.
 
@@ -638,7 +644,7 @@ Returns ``true`` if there is an active input source with the given ``input_sourc
 
 .. rst-class:: classref-method
 
-|void| **is_session_supported**\ (\ session_mode\: :ref:`String<class_String>`\ )
+|void| **is_session_supported**\ (\ session_mode\: :ref:`String<class_String>`\ ) :ref:`🔗<class_WebXRInterface_method_is_session_supported>`
 
 Checks if the given ``session_mode`` is supported by the user's browser.
 
@@ -654,7 +660,7 @@ This method returns nothing, instead it emits the :ref:`session_supported<class_
 
 .. rst-class:: classref-method
 
-|void| **set_display_refresh_rate**\ (\ refresh_rate\: :ref:`float<class_float>`\ )
+|void| **set_display_refresh_rate**\ (\ refresh_rate\: :ref:`float<class_float>`\ ) :ref:`🔗<class_WebXRInterface_method_set_display_refresh_rate>`
 
 Sets the display refresh rate for the current HMD. Not supported on all HMDs and browsers. It won't take effect right away until after :ref:`display_refresh_rate_changed<class_WebXRInterface_signal_display_refresh_rate_changed>` is emitted.
 

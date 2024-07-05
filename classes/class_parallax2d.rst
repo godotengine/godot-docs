@@ -70,7 +70,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **autoscroll** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **autoscroll** = ``Vector2(0, 0)`` :ref:`🔗<class_Parallax2D_property_autoscroll>`
 
 .. rst-class:: classref-property-setget
 
@@ -87,7 +87,7 @@ Velocity at which the offset scrolls automatically, in pixels per second.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **follow_viewport** = ``true``
+:ref:`bool<class_bool>` **follow_viewport** = ``true`` :ref:`🔗<class_Parallax2D_property_follow_viewport>`
 
 .. rst-class:: classref-property-setget
 
@@ -104,7 +104,7 @@ If ``true``, this **Parallax2D** is offset by the current camera's position. If 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **ignore_camera_scroll** = ``false``
+:ref:`bool<class_bool>` **ignore_camera_scroll** = ``false`` :ref:`🔗<class_Parallax2D_property_ignore_camera_scroll>`
 
 .. rst-class:: classref-property-setget
 
@@ -121,7 +121,7 @@ If ``true``, **Parallax2D**'s position is not affected by the position of the ca
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **limit_begin** = ``Vector2(-1e+07, -1e+07)``
+:ref:`Vector2<class_Vector2>` **limit_begin** = ``Vector2(-1e+07, -1e+07)`` :ref:`🔗<class_Parallax2D_property_limit_begin>`
 
 .. rst-class:: classref-property-setget
 
@@ -138,7 +138,7 @@ Top-left limits for scrolling to begin. If the camera is outside of this limit, 
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **limit_end** = ``Vector2(1e+07, 1e+07)``
+:ref:`Vector2<class_Vector2>` **limit_end** = ``Vector2(1e+07, 1e+07)`` :ref:`🔗<class_Parallax2D_property_limit_end>`
 
 .. rst-class:: classref-property-setget
 
@@ -155,7 +155,7 @@ Bottom-right limits for scrolling to end. If the camera is outside of this limit
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **repeat_size** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **repeat_size** = ``Vector2(0, 0)`` :ref:`🔗<class_Parallax2D_property_repeat_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -172,7 +172,7 @@ Repeats the :ref:`Texture2D<class_Texture2D>` of each of this node's children an
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **repeat_times** = ``1``
+:ref:`int<class_int>` **repeat_times** = ``1`` :ref:`🔗<class_Parallax2D_property_repeat_times>`
 
 .. rst-class:: classref-property-setget
 
@@ -189,7 +189,7 @@ Overrides the amount of times the texture repeats. Each texture copy spreads eve
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **screen_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **screen_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_Parallax2D_property_screen_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -206,7 +206,7 @@ Offset used to scroll this **Parallax2D**. This value is updated automatically u
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **scroll_offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **scroll_offset** = ``Vector2(0, 0)`` :ref:`🔗<class_Parallax2D_property_scroll_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -225,7 +225,7 @@ The **Parallax2D**'s offset. Similar to :ref:`screen_offset<class_Parallax2D_pro
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **scroll_scale** = ``Vector2(1, 1)``
+:ref:`Vector2<class_Vector2>` **scroll_scale** = ``Vector2(1, 1)`` :ref:`🔗<class_Parallax2D_property_scroll_scale>`
 
 .. rst-class:: classref-property-setget
 

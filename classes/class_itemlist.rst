@@ -232,7 +232,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**empty_clicked**\ (\ at_position\: :ref:`Vector2<class_Vector2>`, mouse_button_index\: :ref:`int<class_int>`\ )
+**empty_clicked**\ (\ at_position\: :ref:`Vector2<class_Vector2>`, mouse_button_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ItemList_signal_empty_clicked>`
 
 Triggered when any mouse click is issued within the rect of the list but on empty space.
 
@@ -244,7 +244,7 @@ Triggered when any mouse click is issued within the rect of the list but on empt
 
 .. rst-class:: classref-signal
 
-**item_activated**\ (\ index\: :ref:`int<class_int>`\ )
+**item_activated**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ItemList_signal_item_activated>`
 
 Triggered when specified list item is activated via double-clicking or by pressing :kbd:`Enter`.
 
@@ -256,7 +256,7 @@ Triggered when specified list item is activated via double-clicking or by pressi
 
 .. rst-class:: classref-signal
 
-**item_clicked**\ (\ index\: :ref:`int<class_int>`, at_position\: :ref:`Vector2<class_Vector2>`, mouse_button_index\: :ref:`int<class_int>`\ )
+**item_clicked**\ (\ index\: :ref:`int<class_int>`, at_position\: :ref:`Vector2<class_Vector2>`, mouse_button_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ItemList_signal_item_clicked>`
 
 Triggered when specified list item has been clicked with any mouse button.
 
@@ -270,7 +270,7 @@ The click position is also provided to allow appropriate popup of context menus 
 
 .. rst-class:: classref-signal
 
-**item_selected**\ (\ index\: :ref:`int<class_int>`\ )
+**item_selected**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ItemList_signal_item_selected>`
 
 Triggered when specified item has been selected.
 
@@ -284,7 +284,7 @@ Triggered when specified item has been selected.
 
 .. rst-class:: classref-signal
 
-**multi_selected**\ (\ index\: :ref:`int<class_int>`, selected\: :ref:`bool<class_bool>`\ )
+**multi_selected**\ (\ index\: :ref:`int<class_int>`, selected\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ItemList_signal_multi_selected>`
 
 Triggered when a multiple selection is altered on a list allowing multiple selection.
 
@@ -301,7 +301,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **IconMode**:
+enum **IconMode**: :ref:`🔗<enum_ItemList_IconMode>`
 
 .. _class_ItemList_constant_ICON_MODE_TOP:
 
@@ -327,7 +327,7 @@ Icon is drawn to the left of the text.
 
 .. rst-class:: classref-enumeration
 
-enum **SelectMode**:
+enum **SelectMode**: :ref:`🔗<enum_ItemList_SelectMode>`
 
 .. _class_ItemList_constant_SELECT_SINGLE:
 
@@ -358,7 +358,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_reselect** = ``false``
+:ref:`bool<class_bool>` **allow_reselect** = ``false`` :ref:`🔗<class_ItemList_property_allow_reselect>`
 
 .. rst-class:: classref-property-setget
 
@@ -375,7 +375,7 @@ If ``true``, the currently selected item can be selected again.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_rmb_select** = ``false``
+:ref:`bool<class_bool>` **allow_rmb_select** = ``false`` :ref:`🔗<class_ItemList_property_allow_rmb_select>`
 
 .. rst-class:: classref-property-setget
 
@@ -392,7 +392,7 @@ If ``true``, right mouse button click can select items.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_search** = ``true``
+:ref:`bool<class_bool>` **allow_search** = ``true`` :ref:`🔗<class_ItemList_property_allow_search>`
 
 .. rst-class:: classref-property-setget
 
@@ -409,7 +409,7 @@ If ``true``, allows navigating the **ItemList** with letter keys through increme
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **auto_height** = ``false``
+:ref:`bool<class_bool>` **auto_height** = ``false`` :ref:`🔗<class_ItemList_property_auto_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -426,7 +426,7 @@ If ``true``, the control will automatically resize the height to fit its content
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **fixed_column_width** = ``0``
+:ref:`int<class_int>` **fixed_column_width** = ``0`` :ref:`🔗<class_ItemList_property_fixed_column_width>`
 
 .. rst-class:: classref-property-setget
 
@@ -445,7 +445,7 @@ A value of zero disables the adjustment, each item will have a width equal to th
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **fixed_icon_size** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **fixed_icon_size** = ``Vector2i(0, 0)`` :ref:`🔗<class_ItemList_property_fixed_icon_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -464,7 +464,7 @@ If either X or Y component is not greater than zero, icon size won't be affected
 
 .. rst-class:: classref-property
 
-:ref:`IconMode<enum_ItemList_IconMode>` **icon_mode** = ``1``
+:ref:`IconMode<enum_ItemList_IconMode>` **icon_mode** = ``1`` :ref:`🔗<class_ItemList_property_icon_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -481,7 +481,7 @@ The icon position, whether above or to the left of the text. See the :ref:`IconM
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **icon_scale** = ``1.0``
+:ref:`float<class_float>` **icon_scale** = ``1.0`` :ref:`🔗<class_ItemList_property_icon_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -498,7 +498,7 @@ The scale of icon applied after :ref:`fixed_icon_size<class_ItemList_property_fi
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **item_count** = ``0``
+:ref:`int<class_int>` **item_count** = ``0`` :ref:`🔗<class_ItemList_property_item_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -515,7 +515,7 @@ The number of items currently in the list.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_columns** = ``1``
+:ref:`int<class_int>` **max_columns** = ``1`` :ref:`🔗<class_ItemList_property_max_columns>`
 
 .. rst-class:: classref-property-setget
 
@@ -536,7 +536,7 @@ A value of zero means unlimited columns, i.e. all items will be put in the same 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_text_lines** = ``1``
+:ref:`int<class_int>` **max_text_lines** = ``1`` :ref:`🔗<class_ItemList_property_max_text_lines>`
 
 .. rst-class:: classref-property-setget
 
@@ -555,7 +555,7 @@ Maximum lines of text allowed in each item. Space will be reserved even when the
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **same_column_width** = ``false``
+:ref:`bool<class_bool>` **same_column_width** = ``false`` :ref:`🔗<class_ItemList_property_same_column_width>`
 
 .. rst-class:: classref-property-setget
 
@@ -574,7 +574,7 @@ If ``true``, the width is equal to the largest column width of all columns.
 
 .. rst-class:: classref-property
 
-:ref:`SelectMode<enum_ItemList_SelectMode>` **select_mode** = ``0``
+:ref:`SelectMode<enum_ItemList_SelectMode>` **select_mode** = ``0`` :ref:`🔗<class_ItemList_property_select_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -591,7 +591,7 @@ Allows single or multiple item selection. See the :ref:`SelectMode<enum_ItemList
 
 .. rst-class:: classref-property
 
-:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **text_overrun_behavior** = ``3``
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **text_overrun_behavior** = ``3`` :ref:`🔗<class_ItemList_property_text_overrun_behavior>`
 
 .. rst-class:: classref-property-setget
 
@@ -613,7 +613,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **add_icon_item**\ (\ icon\: :ref:`Texture2D<class_Texture2D>`, selectable\: :ref:`bool<class_bool>` = true\ )
+:ref:`int<class_int>` **add_icon_item**\ (\ icon\: :ref:`Texture2D<class_Texture2D>`, selectable\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_ItemList_method_add_icon_item>`
 
 Adds an item to the item list with no text, only an icon. Returns the index of an added item.
 
@@ -625,7 +625,7 @@ Adds an item to the item list with no text, only an icon. Returns the index of a
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **add_item**\ (\ text\: :ref:`String<class_String>`, icon\: :ref:`Texture2D<class_Texture2D>` = null, selectable\: :ref:`bool<class_bool>` = true\ )
+:ref:`int<class_int>` **add_item**\ (\ text\: :ref:`String<class_String>`, icon\: :ref:`Texture2D<class_Texture2D>` = null, selectable\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_ItemList_method_add_item>`
 
 Adds an item to the item list with specified text. Returns the index of an added item.
 
@@ -641,7 +641,7 @@ If selectable is ``true``, the list item will be selectable.
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_ItemList_method_clear>`
 
 Removes all items from the list.
 
@@ -653,7 +653,7 @@ Removes all items from the list.
 
 .. rst-class:: classref-method
 
-|void| **deselect**\ (\ idx\: :ref:`int<class_int>`\ )
+|void| **deselect**\ (\ idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ItemList_method_deselect>`
 
 Ensures the item associated with the specified index is not selected.
 
@@ -665,7 +665,7 @@ Ensures the item associated with the specified index is not selected.
 
 .. rst-class:: classref-method
 
-|void| **deselect_all**\ (\ )
+|void| **deselect_all**\ (\ ) :ref:`🔗<class_ItemList_method_deselect_all>`
 
 Ensures there are no items selected.
 
@@ -677,7 +677,7 @@ Ensures there are no items selected.
 
 .. rst-class:: classref-method
 
-|void| **ensure_current_is_visible**\ (\ )
+|void| **ensure_current_is_visible**\ (\ ) :ref:`🔗<class_ItemList_method_ensure_current_is_visible>`
 
 Ensure current selection is visible, adjusting the scroll position as necessary.
 
@@ -689,7 +689,7 @@ Ensure current selection is visible, adjusting the scroll position as necessary.
 
 .. rst-class:: classref-method
 
-|void| **force_update_list_size**\ (\ )
+|void| **force_update_list_size**\ (\ ) :ref:`🔗<class_ItemList_method_force_update_list_size>`
 
 Forces an update to the list size based on its items. This happens automatically whenever size of the items, or other relevant settings like :ref:`auto_height<class_ItemList_property_auto_height>`, change. The method can be used to trigger the update ahead of next drawing pass.
 
@@ -701,7 +701,7 @@ Forces an update to the list size based on its items. This happens automatically
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_item_at_position**\ (\ position\: :ref:`Vector2<class_Vector2>`, exact\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`int<class_int>` **get_item_at_position**\ (\ position\: :ref:`Vector2<class_Vector2>`, exact\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_ItemList_method_get_item_at_position>`
 
 Returns the item index at the given ``position``.
 
@@ -717,7 +717,7 @@ When there is no item at that point, -1 will be returned if ``exact`` is ``true`
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_item_custom_bg_color**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_item_custom_bg_color**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_get_item_custom_bg_color>`
 
 Returns the custom background color of the item specified by ``idx`` index.
 
@@ -729,7 +729,7 @@ Returns the custom background color of the item specified by ``idx`` index.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_item_custom_fg_color**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_item_custom_fg_color**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_get_item_custom_fg_color>`
 
 Returns the custom foreground color of the item specified by ``idx`` index.
 
@@ -741,7 +741,7 @@ Returns the custom foreground color of the item specified by ``idx`` index.
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_item_icon**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Texture2D<class_Texture2D>` **get_item_icon**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_get_item_icon>`
 
 Returns the icon associated with the specified index.
 
@@ -753,7 +753,7 @@ Returns the icon associated with the specified index.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_item_icon_modulate**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_item_icon_modulate**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_get_item_icon_modulate>`
 
 Returns a :ref:`Color<class_Color>` modulating item's icon at the specified index.
 
@@ -765,7 +765,7 @@ Returns a :ref:`Color<class_Color>` modulating item's icon at the specified inde
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_item_icon_region**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Rect2<class_Rect2>` **get_item_icon_region**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_get_item_icon_region>`
 
 Returns the region of item's icon used. The whole icon will be used if the region has no area.
 
@@ -777,7 +777,7 @@ Returns the region of item's icon used. The whole icon will be used if the regio
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_item_language**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_item_language**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_get_item_language>`
 
 Returns item's text language code.
 
@@ -789,7 +789,7 @@ Returns item's text language code.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_item_metadata**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_item_metadata**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_get_item_metadata>`
 
 Returns the metadata value of the specified index.
 
@@ -801,7 +801,7 @@ Returns the metadata value of the specified index.
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_item_rect**\ (\ idx\: :ref:`int<class_int>`, expand\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`Rect2<class_Rect2>` **get_item_rect**\ (\ idx\: :ref:`int<class_int>`, expand\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_ItemList_method_get_item_rect>`
 
 Returns the position and size of the item with the specified index, in the coordinate system of the **ItemList** node. If ``expand`` is ``true`` the last column expands to fill the rest of the row.
 
@@ -815,7 +815,7 @@ Returns the position and size of the item with the specified index, in the coord
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_item_text**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_item_text**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_get_item_text>`
 
 Returns the text associated with the specified index.
 
@@ -827,7 +827,7 @@ Returns the text associated with the specified index.
 
 .. rst-class:: classref-method
 
-:ref:`TextDirection<enum_Control_TextDirection>` **get_item_text_direction**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`TextDirection<enum_Control_TextDirection>` **get_item_text_direction**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_get_item_text_direction>`
 
 Returns item's text base writing direction.
 
@@ -839,7 +839,7 @@ Returns item's text base writing direction.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_item_tooltip**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_item_tooltip**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_get_item_tooltip>`
 
 Returns the tooltip hint associated with the specified index.
 
@@ -851,7 +851,7 @@ Returns the tooltip hint associated with the specified index.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_selected_items**\ (\ )
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_selected_items**\ (\ ) :ref:`🔗<class_ItemList_method_get_selected_items>`
 
 Returns an array with the indexes of the selected items.
 
@@ -863,7 +863,7 @@ Returns an array with the indexes of the selected items.
 
 .. rst-class:: classref-method
 
-:ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar**\ (\ )
+:ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar**\ (\ ) :ref:`🔗<class_ItemList_method_get_v_scroll_bar>`
 
 Returns the vertical scrollbar.
 
@@ -877,7 +877,7 @@ Returns the vertical scrollbar.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_anything_selected**\ (\ )
+:ref:`bool<class_bool>` **is_anything_selected**\ (\ ) :ref:`🔗<class_ItemList_method_is_anything_selected>`
 
 Returns ``true`` if one or more items are selected.
 
@@ -889,7 +889,7 @@ Returns ``true`` if one or more items are selected.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_disabled**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_disabled**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_is_item_disabled>`
 
 Returns ``true`` if the item at the specified index is disabled.
 
@@ -901,7 +901,7 @@ Returns ``true`` if the item at the specified index is disabled.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_icon_transposed**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_icon_transposed**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_is_item_icon_transposed>`
 
 Returns ``true`` if the item icon will be drawn transposed, i.e. the X and Y axes are swapped.
 
@@ -913,7 +913,7 @@ Returns ``true`` if the item icon will be drawn transposed, i.e. the X and Y axe
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_selectable**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_selectable**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_is_item_selectable>`
 
 Returns ``true`` if the item at the specified index is selectable.
 
@@ -925,7 +925,7 @@ Returns ``true`` if the item at the specified index is selectable.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_item_tooltip_enabled**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_item_tooltip_enabled**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_is_item_tooltip_enabled>`
 
 Returns ``true`` if the tooltip is enabled for specified item index.
 
@@ -937,7 +937,7 @@ Returns ``true`` if the tooltip is enabled for specified item index.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_selected**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_selected**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_ItemList_method_is_selected>`
 
 Returns ``true`` if the item at the specified index is currently selected.
 
@@ -949,7 +949,7 @@ Returns ``true`` if the item at the specified index is currently selected.
 
 .. rst-class:: classref-method
 
-|void| **move_item**\ (\ from_idx\: :ref:`int<class_int>`, to_idx\: :ref:`int<class_int>`\ )
+|void| **move_item**\ (\ from_idx\: :ref:`int<class_int>`, to_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ItemList_method_move_item>`
 
 Moves item from index ``from_idx`` to ``to_idx``.
 
@@ -961,7 +961,7 @@ Moves item from index ``from_idx`` to ``to_idx``.
 
 .. rst-class:: classref-method
 
-|void| **remove_item**\ (\ idx\: :ref:`int<class_int>`\ )
+|void| **remove_item**\ (\ idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ItemList_method_remove_item>`
 
 Removes the item specified by ``idx`` index from the list.
 
@@ -973,7 +973,7 @@ Removes the item specified by ``idx`` index from the list.
 
 .. rst-class:: classref-method
 
-|void| **select**\ (\ idx\: :ref:`int<class_int>`, single\: :ref:`bool<class_bool>` = true\ )
+|void| **select**\ (\ idx\: :ref:`int<class_int>`, single\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_ItemList_method_select>`
 
 Select the item at the specified index.
 
@@ -987,7 +987,7 @@ Select the item at the specified index.
 
 .. rst-class:: classref-method
 
-|void| **set_item_custom_bg_color**\ (\ idx\: :ref:`int<class_int>`, custom_bg_color\: :ref:`Color<class_Color>`\ )
+|void| **set_item_custom_bg_color**\ (\ idx\: :ref:`int<class_int>`, custom_bg_color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_ItemList_method_set_item_custom_bg_color>`
 
 Sets the background color of the item specified by ``idx`` index to the specified :ref:`Color<class_Color>`.
 
@@ -999,7 +999,7 @@ Sets the background color of the item specified by ``idx`` index to the specifie
 
 .. rst-class:: classref-method
 
-|void| **set_item_custom_fg_color**\ (\ idx\: :ref:`int<class_int>`, custom_fg_color\: :ref:`Color<class_Color>`\ )
+|void| **set_item_custom_fg_color**\ (\ idx\: :ref:`int<class_int>`, custom_fg_color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_ItemList_method_set_item_custom_fg_color>`
 
 Sets the foreground color of the item specified by ``idx`` index to the specified :ref:`Color<class_Color>`.
 
@@ -1011,7 +1011,7 @@ Sets the foreground color of the item specified by ``idx`` index to the specifie
 
 .. rst-class:: classref-method
 
-|void| **set_item_disabled**\ (\ idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ )
+|void| **set_item_disabled**\ (\ idx\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ItemList_method_set_item_disabled>`
 
 Disables (or enables) the item at the specified index.
 
@@ -1025,7 +1025,7 @@ Disabled items cannot be selected and do not trigger activation signals (when do
 
 .. rst-class:: classref-method
 
-|void| **set_item_icon**\ (\ idx\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ )
+|void| **set_item_icon**\ (\ idx\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_ItemList_method_set_item_icon>`
 
 Sets (or replaces) the icon's :ref:`Texture2D<class_Texture2D>` associated with the specified index.
 
@@ -1037,7 +1037,7 @@ Sets (or replaces) the icon's :ref:`Texture2D<class_Texture2D>` associated with 
 
 .. rst-class:: classref-method
 
-|void| **set_item_icon_modulate**\ (\ idx\: :ref:`int<class_int>`, modulate\: :ref:`Color<class_Color>`\ )
+|void| **set_item_icon_modulate**\ (\ idx\: :ref:`int<class_int>`, modulate\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_ItemList_method_set_item_icon_modulate>`
 
 Sets a modulating :ref:`Color<class_Color>` of the item associated with the specified index.
 
@@ -1049,7 +1049,7 @@ Sets a modulating :ref:`Color<class_Color>` of the item associated with the spec
 
 .. rst-class:: classref-method
 
-|void| **set_item_icon_region**\ (\ idx\: :ref:`int<class_int>`, rect\: :ref:`Rect2<class_Rect2>`\ )
+|void| **set_item_icon_region**\ (\ idx\: :ref:`int<class_int>`, rect\: :ref:`Rect2<class_Rect2>`\ ) :ref:`🔗<class_ItemList_method_set_item_icon_region>`
 
 Sets the region of item's icon used. The whole icon will be used if the region has no area.
 
@@ -1061,7 +1061,7 @@ Sets the region of item's icon used. The whole icon will be used if the region h
 
 .. rst-class:: classref-method
 
-|void| **set_item_icon_transposed**\ (\ idx\: :ref:`int<class_int>`, transposed\: :ref:`bool<class_bool>`\ )
+|void| **set_item_icon_transposed**\ (\ idx\: :ref:`int<class_int>`, transposed\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ItemList_method_set_item_icon_transposed>`
 
 Sets whether the item icon will be drawn transposed.
 
@@ -1073,7 +1073,7 @@ Sets whether the item icon will be drawn transposed.
 
 .. rst-class:: classref-method
 
-|void| **set_item_language**\ (\ idx\: :ref:`int<class_int>`, language\: :ref:`String<class_String>`\ )
+|void| **set_item_language**\ (\ idx\: :ref:`int<class_int>`, language\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ItemList_method_set_item_language>`
 
 Sets language code of item's text used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
@@ -1085,7 +1085,7 @@ Sets language code of item's text used for line-breaking and text shaping algori
 
 .. rst-class:: classref-method
 
-|void| **set_item_metadata**\ (\ idx\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ )
+|void| **set_item_metadata**\ (\ idx\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_ItemList_method_set_item_metadata>`
 
 Sets a value (of any type) to be stored with the item associated with the specified index.
 
@@ -1097,7 +1097,7 @@ Sets a value (of any type) to be stored with the item associated with the specif
 
 .. rst-class:: classref-method
 
-|void| **set_item_selectable**\ (\ idx\: :ref:`int<class_int>`, selectable\: :ref:`bool<class_bool>`\ )
+|void| **set_item_selectable**\ (\ idx\: :ref:`int<class_int>`, selectable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ItemList_method_set_item_selectable>`
 
 Allows or disallows selection of the item associated with the specified index.
 
@@ -1109,7 +1109,7 @@ Allows or disallows selection of the item associated with the specified index.
 
 .. rst-class:: classref-method
 
-|void| **set_item_text**\ (\ idx\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ )
+|void| **set_item_text**\ (\ idx\: :ref:`int<class_int>`, text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ItemList_method_set_item_text>`
 
 Sets text of the item associated with the specified index.
 
@@ -1121,7 +1121,7 @@ Sets text of the item associated with the specified index.
 
 .. rst-class:: classref-method
 
-|void| **set_item_text_direction**\ (\ idx\: :ref:`int<class_int>`, direction\: :ref:`TextDirection<enum_Control_TextDirection>`\ )
+|void| **set_item_text_direction**\ (\ idx\: :ref:`int<class_int>`, direction\: :ref:`TextDirection<enum_Control_TextDirection>`\ ) :ref:`🔗<class_ItemList_method_set_item_text_direction>`
 
 Sets item's text base writing direction.
 
@@ -1133,7 +1133,7 @@ Sets item's text base writing direction.
 
 .. rst-class:: classref-method
 
-|void| **set_item_tooltip**\ (\ idx\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ )
+|void| **set_item_tooltip**\ (\ idx\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ItemList_method_set_item_tooltip>`
 
 Sets the tooltip hint for the item associated with the specified index.
 
@@ -1145,7 +1145,7 @@ Sets the tooltip hint for the item associated with the specified index.
 
 .. rst-class:: classref-method
 
-|void| **set_item_tooltip_enabled**\ (\ idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **set_item_tooltip_enabled**\ (\ idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ItemList_method_set_item_tooltip_enabled>`
 
 Sets whether the tooltip hint is enabled for specified item index.
 
@@ -1157,7 +1157,7 @@ Sets whether the tooltip hint is enabled for specified item index.
 
 .. rst-class:: classref-method
 
-|void| **sort_items_by_text**\ (\ )
+|void| **sort_items_by_text**\ (\ ) :ref:`🔗<class_ItemList_method_sort_items_by_text>`
 
 Sorts items in the list by their text.
 
@@ -1174,7 +1174,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_color** = ``Color(0.65, 0.65, 0.65, 1)``
+:ref:`Color<class_Color>` **font_color** = ``Color(0.65, 0.65, 0.65, 1)`` :ref:`🔗<class_ItemList_theme_color_font_color>`
 
 Default text :ref:`Color<class_Color>` of the item.
 
@@ -1186,7 +1186,7 @@ Default text :ref:`Color<class_Color>` of the item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_hovered_color** = ``Color(0.95, 0.95, 0.95, 1)``
+:ref:`Color<class_Color>` **font_hovered_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_ItemList_theme_color_font_hovered_color>`
 
 Text :ref:`Color<class_Color>` used when the item is hovered and not selected yet.
 
@@ -1198,7 +1198,7 @@ Text :ref:`Color<class_Color>` used when the item is hovered and not selected ye
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_ItemList_theme_color_font_outline_color>`
 
 The tint of text outline of the item.
 
@@ -1210,7 +1210,7 @@ The tint of text outline of the item.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_selected_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_selected_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_ItemList_theme_color_font_selected_color>`
 
 Text :ref:`Color<class_Color>` used when the item is selected.
 
@@ -1222,7 +1222,7 @@ Text :ref:`Color<class_Color>` used when the item is selected.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **guide_color** = ``Color(0.7, 0.7, 0.7, 0.25)``
+:ref:`Color<class_Color>` **guide_color** = ``Color(0.7, 0.7, 0.7, 0.25)`` :ref:`🔗<class_ItemList_theme_color_guide_color>`
 
 :ref:`Color<class_Color>` of the guideline. The guideline is a line drawn between each row of items.
 
@@ -1234,7 +1234,7 @@ Text :ref:`Color<class_Color>` used when the item is selected.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **h_separation** = ``4``
+:ref:`int<class_int>` **h_separation** = ``4`` :ref:`🔗<class_ItemList_theme_constant_h_separation>`
 
 The horizontal spacing between items.
 
@@ -1246,7 +1246,7 @@ The horizontal spacing between items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **icon_margin** = ``4``
+:ref:`int<class_int>` **icon_margin** = ``4`` :ref:`🔗<class_ItemList_theme_constant_icon_margin>`
 
 The spacing between item's icon and text.
 
@@ -1258,7 +1258,7 @@ The spacing between item's icon and text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **line_separation** = ``2``
+:ref:`int<class_int>` **line_separation** = ``2`` :ref:`🔗<class_ItemList_theme_constant_line_separation>`
 
 The vertical spacing between each line of text.
 
@@ -1270,7 +1270,7 @@ The vertical spacing between each line of text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **outline_size** = ``0``
+:ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_ItemList_theme_constant_outline_size>`
 
 The size of the item text outline.
 
@@ -1284,7 +1284,7 @@ The size of the item text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **v_separation** = ``4``
+:ref:`int<class_int>` **v_separation** = ``4`` :ref:`🔗<class_ItemList_theme_constant_v_separation>`
 
 The vertical spacing between items.
 
@@ -1296,7 +1296,7 @@ The vertical spacing between items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **font**
+:ref:`Font<class_Font>` **font** :ref:`🔗<class_ItemList_theme_font_font>`
 
 :ref:`Font<class_Font>` of the item's text.
 
@@ -1308,7 +1308,7 @@ The vertical spacing between items.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **font_size**
+:ref:`int<class_int>` **font_size** :ref:`🔗<class_ItemList_theme_font_size_font_size>`
 
 Font size of the item's text.
 
@@ -1320,7 +1320,7 @@ Font size of the item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **cursor**
+:ref:`StyleBox<class_StyleBox>` **cursor** :ref:`🔗<class_ItemList_theme_style_cursor>`
 
 :ref:`StyleBox<class_StyleBox>` used for the cursor, when the **ItemList** is being focused.
 
@@ -1332,7 +1332,7 @@ Font size of the item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **cursor_unfocused**
+:ref:`StyleBox<class_StyleBox>` **cursor_unfocused** :ref:`🔗<class_ItemList_theme_style_cursor_unfocused>`
 
 :ref:`StyleBox<class_StyleBox>` used for the cursor, when the **ItemList** is not being focused.
 
@@ -1344,7 +1344,7 @@ Font size of the item's text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **focus**
+:ref:`StyleBox<class_StyleBox>` **focus** :ref:`🔗<class_ItemList_theme_style_focus>`
 
 The focused style for the **ItemList**, drawn on top of the background, but below everything else.
 
@@ -1356,7 +1356,7 @@ The focused style for the **ItemList**, drawn on top of the background, but belo
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **hovered**
+:ref:`StyleBox<class_StyleBox>` **hovered** :ref:`🔗<class_ItemList_theme_style_hovered>`
 
 :ref:`StyleBox<class_StyleBox>` for the hovered, but not selected items.
 
@@ -1368,7 +1368,7 @@ The focused style for the **ItemList**, drawn on top of the background, but belo
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **panel**
+:ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_ItemList_theme_style_panel>`
 
 The background style for the **ItemList**.
 
@@ -1380,7 +1380,7 @@ The background style for the **ItemList**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **selected**
+:ref:`StyleBox<class_StyleBox>` **selected** :ref:`🔗<class_ItemList_theme_style_selected>`
 
 :ref:`StyleBox<class_StyleBox>` for the selected items, used when the **ItemList** is not being focused.
 
@@ -1392,7 +1392,7 @@ The background style for the **ItemList**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **selected_focus**
+:ref:`StyleBox<class_StyleBox>` **selected_focus** :ref:`🔗<class_ItemList_theme_style_selected_focus>`
 
 :ref:`StyleBox<class_StyleBox>` for the selected items, used when the **ItemList** is being focused.
 

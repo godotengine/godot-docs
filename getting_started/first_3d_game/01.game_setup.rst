@@ -21,11 +21,11 @@ In the import popup, enter the full path to the freshly created directory
 open a file browser and navigate to the ``project.godot`` file the folder
 contains.
 
-.. image:: img/01.game_setup/02.browse_to_project_folder.png
+.. image:: img/01.game_setup/02.browse_to_project_folder.webp
 
 Click *Import & Edit* to open the project in the editor.
 
-.. image:: img/01.game_setup/03.import_and_edit.png
+.. image:: img/01.game_setup/03.import_and_edit.webp
 
 The start project contains an icon and two folders: ``art/`` and ``fonts/``.
 There, you will find the art assets and music we'll use in the game.

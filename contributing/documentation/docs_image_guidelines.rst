@@ -67,7 +67,7 @@ have cropping built in it's not always easy to get something precise. And while
 Krita is designed as a painting program the cropping tool gives you pixel precision
 by default. Of course, feel free to use a different program you are familiar with.
 
-If you've never used Krita before download it from the `official Krita website <https://krita.org/en/download/krita-desktop/>`_,
+If you've never used Krita before download it from the `official Krita website <https://krita.org/en/download/>`_,
 on Linux you may also be able to download it from your distributions repository,
 flathub is also an option. Once it's installed on your computer open Krita then
 open the image you want to crop. This button on the left panel is the crop tool.
@@ -105,7 +105,7 @@ Saving as WebP in Krita
 
 To save an image as webp if it isn't already one, Go to **File > Save As**. Select **webp** from the
 **Save as type:** dropdown, then choose wherever you want to save it. After clicking **Save** a menu
-will popup with webp options. Make sure **Losses** is checked and **Quality** is set to 100%. This
+will popup with webp options. Make sure **Lossless** is checked and **Quality** is set to 100%. This
 means the image will not lose detail and will be as small as possible.
 
 If the image is over 300KB in size try compressing it losslessly using `Squoosh <https://squoosh.app/>`_.

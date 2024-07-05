@@ -64,7 +64,7 @@ Navigation regions and avoidance agents can only be part of a single navigation 
 
     func _ready() -> void:
         var new_navigation_map: RID = NavigationServer2D.map_create()
-        NavigationServer2D.map_set_active(true)
+        NavigationServer2D.map_set_active(new_navigation_map, true)
 
  .. code-tab:: gdscript 3D GDScript
 
@@ -72,7 +72,7 @@ Navigation regions and avoidance agents can only be part of a single navigation 
 
     func _ready() -> void:
         var new_navigation_map: RID = NavigationServer3D.map_create()
-        NavigationServer3D.map_set_active(true)
+        NavigationServer3D.map_set_active(new_navigation_map, true)
 
 .. note::
 

@@ -63,8 +63,6 @@ Properties
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`Geometry3D<class_Geometry3D>`                           | :ref:`Geometry3D<class_@GlobalScope_property_Geometry3D>`                           |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`GodotSharp<class_GodotSharp>`                           | :ref:`GodotSharp<class_@GlobalScope_property_GodotSharp>`                           |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`IP<class_IP>`                                           | :ref:`IP<class_@GlobalScope_property_IP>`                                           |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`Input<class_Input>`                                     | :ref:`Input<class_@GlobalScope_property_Input>`                                     |
@@ -371,7 +369,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Side**:
+enum **Side**: :ref:`🔗<enum_@GlobalScope_Side>`
 
 .. _class_@GlobalScope_constant_SIDE_LEFT:
 
@@ -413,7 +411,7 @@ Bottom side, usually used for :ref:`Control<class_Control>` or :ref:`StyleBox<cl
 
 .. rst-class:: classref-enumeration
 
-enum **Corner**:
+enum **Corner**: :ref:`🔗<enum_@GlobalScope_Corner>`
 
 .. _class_@GlobalScope_constant_CORNER_TOP_LEFT:
 
@@ -455,7 +453,7 @@ Bottom-left corner.
 
 .. rst-class:: classref-enumeration
 
-enum **Orientation**:
+enum **Orientation**: :ref:`🔗<enum_@GlobalScope_Orientation>`
 
 .. _class_@GlobalScope_constant_VERTICAL:
 
@@ -481,7 +479,7 @@ General horizontal alignment, usually used for :ref:`Separator<class_Separator>`
 
 .. rst-class:: classref-enumeration
 
-enum **ClockDirection**:
+enum **ClockDirection**: :ref:`🔗<enum_@GlobalScope_ClockDirection>`
 
 .. _class_@GlobalScope_constant_CLOCKWISE:
 
@@ -507,7 +505,7 @@ Counter-clockwise rotation. Used by some methods (e.g. :ref:`Image.rotate_90<cla
 
 .. rst-class:: classref-enumeration
 
-enum **HorizontalAlignment**:
+enum **HorizontalAlignment**: :ref:`🔗<enum_@GlobalScope_HorizontalAlignment>`
 
 .. _class_@GlobalScope_constant_HORIZONTAL_ALIGNMENT_LEFT:
 
@@ -549,7 +547,7 @@ Expand row to fit width, usually for text-derived classes.
 
 .. rst-class:: classref-enumeration
 
-enum **VerticalAlignment**:
+enum **VerticalAlignment**: :ref:`🔗<enum_@GlobalScope_VerticalAlignment>`
 
 .. _class_@GlobalScope_constant_VERTICAL_ALIGNMENT_TOP:
 
@@ -591,7 +589,7 @@ Expand rows to fit height, usually for text-derived classes.
 
 .. rst-class:: classref-enumeration
 
-enum **InlineAlignment**:
+enum **InlineAlignment**: :ref:`🔗<enum_@GlobalScope_InlineAlignment>`
 
 .. _class_@GlobalScope_constant_INLINE_ALIGNMENT_TOP_TO:
 
@@ -705,7 +703,7 @@ A bit mask for ``INLINE_ALIGNMENT_TO_*`` alignment constants.
 
 .. rst-class:: classref-enumeration
 
-enum **EulerOrder**:
+enum **EulerOrder**: :ref:`🔗<enum_@GlobalScope_EulerOrder>`
 
 .. _class_@GlobalScope_constant_EULER_ORDER_XYZ:
 
@@ -763,7 +761,7 @@ Specifies that Euler angles should be in ZYX order. When composing, the order is
 
 .. rst-class:: classref-enumeration
 
-enum **Key**:
+enum **Key**: :ref:`🔗<enum_@GlobalScope_Key>`
 
 .. _class_@GlobalScope_constant_KEY_NONE:
 
@@ -2317,7 +2315,7 @@ Z key.
 
 .. rst-class:: classref-enumeration
 
-flags **KeyModifierMask**:
+flags **KeyModifierMask**: :ref:`🔗<enum_@GlobalScope_KeyModifierMask>`
 
 .. _class_@GlobalScope_constant_KEY_CODE_MASK:
 
@@ -2399,7 +2397,7 @@ Group Switch key mask.
 
 .. rst-class:: classref-enumeration
 
-enum **KeyLocation**:
+enum **KeyLocation**: :ref:`🔗<enum_@GlobalScope_KeyLocation>`
 
 .. _class_@GlobalScope_constant_KEY_LOCATION_UNSPECIFIED:
 
@@ -2435,7 +2433,7 @@ A key which is to the right of its twin.
 
 .. rst-class:: classref-enumeration
 
-enum **MouseButton**:
+enum **MouseButton**: :ref:`🔗<enum_@GlobalScope_MouseButton>`
 
 .. _class_@GlobalScope_constant_MOUSE_BUTTON_NONE:
 
@@ -2525,7 +2523,7 @@ Extra mouse button 2. This is sometimes present, usually to the sides of the mou
 
 .. rst-class:: classref-enumeration
 
-flags **MouseButtonMask**:
+flags **MouseButtonMask**: :ref:`🔗<enum_@GlobalScope_MouseButtonMask>`
 
 .. _class_@GlobalScope_constant_MOUSE_BUTTON_MASK_LEFT:
 
@@ -2575,7 +2573,7 @@ Extra mouse button 2 mask.
 
 .. rst-class:: classref-enumeration
 
-enum **JoyButton**:
+enum **JoyButton**: :ref:`🔗<enum_@GlobalScope_JoyButton>`
 
 .. _class_@GlobalScope_constant_JOY_BUTTON_INVALID:
 
@@ -2783,7 +2781,7 @@ The maximum number of game controller buttons supported by the engine. The actua
 
 .. rst-class:: classref-enumeration
 
-enum **JoyAxis**:
+enum **JoyAxis**: :ref:`🔗<enum_@GlobalScope_JoyAxis>`
 
 .. _class_@GlobalScope_constant_JOY_AXIS_INVALID:
 
@@ -2865,7 +2863,7 @@ The maximum number of game controller axes: OpenVR supports up to 5 Joysticks ma
 
 .. rst-class:: classref-enumeration
 
-enum **MIDIMessage**:
+enum **MIDIMessage**: :ref:`🔗<enum_@GlobalScope_MIDIMessage>`
 
 .. _class_@GlobalScope_constant_MIDI_MESSAGE_NONE:
 
@@ -3037,7 +3035,7 @@ MIDI message sent to reset a MIDI device to its default state, as if it was just
 
 .. rst-class:: classref-enumeration
 
-enum **Error**:
+enum **Error**: :ref:`🔗<enum_@GlobalScope_Error>`
 
 .. _class_@GlobalScope_constant_OK:
 
@@ -3457,7 +3455,7 @@ Printer on fire error (This is an easter egg, no built-in methods return this er
 
 .. rst-class:: classref-enumeration
 
-enum **PropertyHint**:
+enum **PropertyHint**: :ref:`🔗<enum_@GlobalScope_PropertyHint>`
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_NONE:
 
@@ -3864,7 +3862,7 @@ Represents the size of the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` e
 
 .. rst-class:: classref-enumeration
 
-flags **PropertyUsageFlags**:
+flags **PropertyUsageFlags**: :ref:`🔗<enum_@GlobalScope_PropertyUsageFlags>`
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_NONE:
 
@@ -4134,7 +4132,7 @@ Default usage but without showing the property in the editor (storage).
 
 .. rst-class:: classref-enumeration
 
-flags **MethodFlags**:
+flags **MethodFlags**: :ref:`🔗<enum_@GlobalScope_MethodFlags>`
 
 .. _class_@GlobalScope_constant_METHOD_FLAG_NORMAL:
 
@@ -4208,7 +4206,7 @@ Default method flags (normal).
 
 .. rst-class:: classref-enumeration
 
-enum **Variant.Type**:
+enum **Variant.Type**: :ref:`🔗<enum_@GlobalScope_Variant.Type>`
 
 .. _class_@GlobalScope_constant_TYPE_NIL:
 
@@ -4514,11 +4512,19 @@ Variable is of type :ref:`PackedVector3Array<class_PackedVector3Array>`.
 
 Variable is of type :ref:`PackedColorArray<class_PackedColorArray>`.
 
+.. _class_@GlobalScope_constant_TYPE_PACKED_VECTOR4_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_PACKED_VECTOR4_ARRAY** = ``38``
+
+Variable is of type :ref:`PackedVector4Array<class_PackedVector4Array>`.
+
 .. _class_@GlobalScope_constant_TYPE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_MAX** = ``38``
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_MAX** = ``39``
 
 Represents the size of the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` enum.
 
@@ -4530,7 +4536,7 @@ Represents the size of the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` e
 
 .. rst-class:: classref-enumeration
 
-enum **Variant.Operator**:
+enum **Variant.Operator**: :ref:`🔗<enum_@GlobalScope_Variant.Operator>`
 
 .. _class_@GlobalScope_constant_OP_EQUAL:
 
@@ -4753,7 +4759,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`AudioServer<class_AudioServer>` **AudioServer**
+:ref:`AudioServer<class_AudioServer>` **AudioServer** :ref:`🔗<class_@GlobalScope_property_AudioServer>`
 
 The :ref:`AudioServer<class_AudioServer>` singleton.
 
@@ -4765,7 +4771,7 @@ The :ref:`AudioServer<class_AudioServer>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`CameraServer<class_CameraServer>` **CameraServer**
+:ref:`CameraServer<class_CameraServer>` **CameraServer** :ref:`🔗<class_@GlobalScope_property_CameraServer>`
 
 The :ref:`CameraServer<class_CameraServer>` singleton.
 
@@ -4777,7 +4783,7 @@ The :ref:`CameraServer<class_CameraServer>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`ClassDB<class_ClassDB>` **ClassDB**
+:ref:`ClassDB<class_ClassDB>` **ClassDB** :ref:`🔗<class_@GlobalScope_property_ClassDB>`
 
 The :ref:`ClassDB<class_ClassDB>` singleton.
 
@@ -4789,7 +4795,7 @@ The :ref:`ClassDB<class_ClassDB>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`DisplayServer<class_DisplayServer>` **DisplayServer**
+:ref:`DisplayServer<class_DisplayServer>` **DisplayServer** :ref:`🔗<class_@GlobalScope_property_DisplayServer>`
 
 The :ref:`DisplayServer<class_DisplayServer>` singleton.
 
@@ -4801,7 +4807,7 @@ The :ref:`DisplayServer<class_DisplayServer>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`EditorInterface<class_EditorInterface>` **EditorInterface**
+:ref:`EditorInterface<class_EditorInterface>` **EditorInterface** :ref:`🔗<class_@GlobalScope_property_EditorInterface>`
 
 The :ref:`EditorInterface<class_EditorInterface>` singleton.
 
@@ -4815,7 +4821,7 @@ The :ref:`EditorInterface<class_EditorInterface>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`Engine<class_Engine>` **Engine**
+:ref:`Engine<class_Engine>` **Engine** :ref:`🔗<class_@GlobalScope_property_Engine>`
 
 The :ref:`Engine<class_Engine>` singleton.
 
@@ -4827,7 +4833,7 @@ The :ref:`Engine<class_Engine>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`EngineDebugger<class_EngineDebugger>` **EngineDebugger**
+:ref:`EngineDebugger<class_EngineDebugger>` **EngineDebugger** :ref:`🔗<class_@GlobalScope_property_EngineDebugger>`
 
 The :ref:`EngineDebugger<class_EngineDebugger>` singleton.
 
@@ -4839,7 +4845,7 @@ The :ref:`EngineDebugger<class_EngineDebugger>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`GDExtensionManager<class_GDExtensionManager>` **GDExtensionManager**
+:ref:`GDExtensionManager<class_GDExtensionManager>` **GDExtensionManager** :ref:`🔗<class_@GlobalScope_property_GDExtensionManager>`
 
 The :ref:`GDExtensionManager<class_GDExtensionManager>` singleton.
 
@@ -4851,7 +4857,7 @@ The :ref:`GDExtensionManager<class_GDExtensionManager>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`Geometry2D<class_Geometry2D>` **Geometry2D**
+:ref:`Geometry2D<class_Geometry2D>` **Geometry2D** :ref:`🔗<class_@GlobalScope_property_Geometry2D>`
 
 The :ref:`Geometry2D<class_Geometry2D>` singleton.
 
@@ -4863,21 +4869,9 @@ The :ref:`Geometry2D<class_Geometry2D>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`Geometry3D<class_Geometry3D>` **Geometry3D**
+:ref:`Geometry3D<class_Geometry3D>` **Geometry3D** :ref:`🔗<class_@GlobalScope_property_Geometry3D>`
 
 The :ref:`Geometry3D<class_Geometry3D>` singleton.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_@GlobalScope_property_GodotSharp:
-
-.. rst-class:: classref-property
-
-:ref:`GodotSharp<class_GodotSharp>` **GodotSharp**
-
-The :ref:`GodotSharp<class_GodotSharp>` singleton.
 
 .. rst-class:: classref-item-separator
 
@@ -4887,7 +4881,7 @@ The :ref:`GodotSharp<class_GodotSharp>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`IP<class_IP>` **IP**
+:ref:`IP<class_IP>` **IP** :ref:`🔗<class_@GlobalScope_property_IP>`
 
 The :ref:`IP<class_IP>` singleton.
 
@@ -4899,7 +4893,7 @@ The :ref:`IP<class_IP>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`Input<class_Input>` **Input**
+:ref:`Input<class_Input>` **Input** :ref:`🔗<class_@GlobalScope_property_Input>`
 
 The :ref:`Input<class_Input>` singleton.
 
@@ -4911,7 +4905,7 @@ The :ref:`Input<class_Input>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`InputMap<class_InputMap>` **InputMap**
+:ref:`InputMap<class_InputMap>` **InputMap** :ref:`🔗<class_@GlobalScope_property_InputMap>`
 
 The :ref:`InputMap<class_InputMap>` singleton.
 
@@ -4923,7 +4917,7 @@ The :ref:`InputMap<class_InputMap>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`JavaClassWrapper<class_JavaClassWrapper>` **JavaClassWrapper**
+:ref:`JavaClassWrapper<class_JavaClassWrapper>` **JavaClassWrapper** :ref:`🔗<class_@GlobalScope_property_JavaClassWrapper>`
 
 The :ref:`JavaClassWrapper<class_JavaClassWrapper>` singleton.
 
@@ -4937,7 +4931,7 @@ The :ref:`JavaClassWrapper<class_JavaClassWrapper>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`JavaScriptBridge<class_JavaScriptBridge>` **JavaScriptBridge**
+:ref:`JavaScriptBridge<class_JavaScriptBridge>` **JavaScriptBridge** :ref:`🔗<class_@GlobalScope_property_JavaScriptBridge>`
 
 The :ref:`JavaScriptBridge<class_JavaScriptBridge>` singleton.
 
@@ -4951,7 +4945,7 @@ The :ref:`JavaScriptBridge<class_JavaScriptBridge>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`Marshalls<class_Marshalls>` **Marshalls**
+:ref:`Marshalls<class_Marshalls>` **Marshalls** :ref:`🔗<class_@GlobalScope_property_Marshalls>`
 
 The :ref:`Marshalls<class_Marshalls>` singleton.
 
@@ -4963,7 +4957,7 @@ The :ref:`Marshalls<class_Marshalls>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`NativeMenu<class_NativeMenu>` **NativeMenu**
+:ref:`NativeMenu<class_NativeMenu>` **NativeMenu** :ref:`🔗<class_@GlobalScope_property_NativeMenu>`
 
 The :ref:`NativeMenu<class_NativeMenu>` singleton.
 
@@ -4977,7 +4971,7 @@ The :ref:`NativeMenu<class_NativeMenu>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` **NavigationMeshGenerator**
+:ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` **NavigationMeshGenerator** :ref:`🔗<class_@GlobalScope_property_NavigationMeshGenerator>`
 
 The :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` singleton.
 
@@ -4989,7 +4983,7 @@ The :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`NavigationServer2D<class_NavigationServer2D>` **NavigationServer2D**
+:ref:`NavigationServer2D<class_NavigationServer2D>` **NavigationServer2D** :ref:`🔗<class_@GlobalScope_property_NavigationServer2D>`
 
 The :ref:`NavigationServer2D<class_NavigationServer2D>` singleton.
 
@@ -5001,7 +4995,7 @@ The :ref:`NavigationServer2D<class_NavigationServer2D>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`NavigationServer3D<class_NavigationServer3D>` **NavigationServer3D**
+:ref:`NavigationServer3D<class_NavigationServer3D>` **NavigationServer3D** :ref:`🔗<class_@GlobalScope_property_NavigationServer3D>`
 
 The :ref:`NavigationServer3D<class_NavigationServer3D>` singleton.
 
@@ -5013,7 +5007,7 @@ The :ref:`NavigationServer3D<class_NavigationServer3D>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`OS<class_OS>` **OS**
+:ref:`OS<class_OS>` **OS** :ref:`🔗<class_@GlobalScope_property_OS>`
 
 The :ref:`OS<class_OS>` singleton.
 
@@ -5025,7 +5019,7 @@ The :ref:`OS<class_OS>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`Performance<class_Performance>` **Performance**
+:ref:`Performance<class_Performance>` **Performance** :ref:`🔗<class_@GlobalScope_property_Performance>`
 
 The :ref:`Performance<class_Performance>` singleton.
 
@@ -5037,7 +5031,7 @@ The :ref:`Performance<class_Performance>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`PhysicsServer2D<class_PhysicsServer2D>` **PhysicsServer2D**
+:ref:`PhysicsServer2D<class_PhysicsServer2D>` **PhysicsServer2D** :ref:`🔗<class_@GlobalScope_property_PhysicsServer2D>`
 
 The :ref:`PhysicsServer2D<class_PhysicsServer2D>` singleton.
 
@@ -5049,7 +5043,7 @@ The :ref:`PhysicsServer2D<class_PhysicsServer2D>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`PhysicsServer2DManager<class_PhysicsServer2DManager>` **PhysicsServer2DManager**
+:ref:`PhysicsServer2DManager<class_PhysicsServer2DManager>` **PhysicsServer2DManager** :ref:`🔗<class_@GlobalScope_property_PhysicsServer2DManager>`
 
 The :ref:`PhysicsServer2DManager<class_PhysicsServer2DManager>` singleton.
 
@@ -5061,7 +5055,7 @@ The :ref:`PhysicsServer2DManager<class_PhysicsServer2DManager>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`PhysicsServer3D<class_PhysicsServer3D>` **PhysicsServer3D**
+:ref:`PhysicsServer3D<class_PhysicsServer3D>` **PhysicsServer3D** :ref:`🔗<class_@GlobalScope_property_PhysicsServer3D>`
 
 The :ref:`PhysicsServer3D<class_PhysicsServer3D>` singleton.
 
@@ -5073,7 +5067,7 @@ The :ref:`PhysicsServer3D<class_PhysicsServer3D>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`PhysicsServer3DManager<class_PhysicsServer3DManager>` **PhysicsServer3DManager**
+:ref:`PhysicsServer3DManager<class_PhysicsServer3DManager>` **PhysicsServer3DManager** :ref:`🔗<class_@GlobalScope_property_PhysicsServer3DManager>`
 
 The :ref:`PhysicsServer3DManager<class_PhysicsServer3DManager>` singleton.
 
@@ -5085,7 +5079,7 @@ The :ref:`PhysicsServer3DManager<class_PhysicsServer3DManager>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`ProjectSettings<class_ProjectSettings>` **ProjectSettings**
+:ref:`ProjectSettings<class_ProjectSettings>` **ProjectSettings** :ref:`🔗<class_@GlobalScope_property_ProjectSettings>`
 
 The :ref:`ProjectSettings<class_ProjectSettings>` singleton.
 
@@ -5097,7 +5091,7 @@ The :ref:`ProjectSettings<class_ProjectSettings>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`RenderingServer<class_RenderingServer>` **RenderingServer**
+:ref:`RenderingServer<class_RenderingServer>` **RenderingServer** :ref:`🔗<class_@GlobalScope_property_RenderingServer>`
 
 The :ref:`RenderingServer<class_RenderingServer>` singleton.
 
@@ -5109,7 +5103,7 @@ The :ref:`RenderingServer<class_RenderingServer>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`ResourceLoader<class_ResourceLoader>` **ResourceLoader**
+:ref:`ResourceLoader<class_ResourceLoader>` **ResourceLoader** :ref:`🔗<class_@GlobalScope_property_ResourceLoader>`
 
 The :ref:`ResourceLoader<class_ResourceLoader>` singleton.
 
@@ -5121,7 +5115,7 @@ The :ref:`ResourceLoader<class_ResourceLoader>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`ResourceSaver<class_ResourceSaver>` **ResourceSaver**
+:ref:`ResourceSaver<class_ResourceSaver>` **ResourceSaver** :ref:`🔗<class_@GlobalScope_property_ResourceSaver>`
 
 The :ref:`ResourceSaver<class_ResourceSaver>` singleton.
 
@@ -5133,7 +5127,7 @@ The :ref:`ResourceSaver<class_ResourceSaver>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`ResourceUID<class_ResourceUID>` **ResourceUID**
+:ref:`ResourceUID<class_ResourceUID>` **ResourceUID** :ref:`🔗<class_@GlobalScope_property_ResourceUID>`
 
 The :ref:`ResourceUID<class_ResourceUID>` singleton.
 
@@ -5145,7 +5139,7 @@ The :ref:`ResourceUID<class_ResourceUID>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`TextServerManager<class_TextServerManager>` **TextServerManager**
+:ref:`TextServerManager<class_TextServerManager>` **TextServerManager** :ref:`🔗<class_@GlobalScope_property_TextServerManager>`
 
 The :ref:`TextServerManager<class_TextServerManager>` singleton.
 
@@ -5157,7 +5151,7 @@ The :ref:`TextServerManager<class_TextServerManager>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`ThemeDB<class_ThemeDB>` **ThemeDB**
+:ref:`ThemeDB<class_ThemeDB>` **ThemeDB** :ref:`🔗<class_@GlobalScope_property_ThemeDB>`
 
 The :ref:`ThemeDB<class_ThemeDB>` singleton.
 
@@ -5169,7 +5163,7 @@ The :ref:`ThemeDB<class_ThemeDB>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`Time<class_Time>` **Time**
+:ref:`Time<class_Time>` **Time** :ref:`🔗<class_@GlobalScope_property_Time>`
 
 The :ref:`Time<class_Time>` singleton.
 
@@ -5181,7 +5175,7 @@ The :ref:`Time<class_Time>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`TranslationServer<class_TranslationServer>` **TranslationServer**
+:ref:`TranslationServer<class_TranslationServer>` **TranslationServer** :ref:`🔗<class_@GlobalScope_property_TranslationServer>`
 
 The :ref:`TranslationServer<class_TranslationServer>` singleton.
 
@@ -5193,7 +5187,7 @@ The :ref:`TranslationServer<class_TranslationServer>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`WorkerThreadPool<class_WorkerThreadPool>` **WorkerThreadPool**
+:ref:`WorkerThreadPool<class_WorkerThreadPool>` **WorkerThreadPool** :ref:`🔗<class_@GlobalScope_property_WorkerThreadPool>`
 
 The :ref:`WorkerThreadPool<class_WorkerThreadPool>` singleton.
 
@@ -5205,7 +5199,7 @@ The :ref:`WorkerThreadPool<class_WorkerThreadPool>` singleton.
 
 .. rst-class:: classref-property
 
-:ref:`XRServer<class_XRServer>` **XRServer**
+:ref:`XRServer<class_XRServer>` **XRServer** :ref:`🔗<class_@GlobalScope_property_XRServer>`
 
 The :ref:`XRServer<class_XRServer>` singleton.
 
@@ -5222,7 +5216,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **abs**\ (\ x\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **abs**\ (\ x\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_abs>`
 
 Returns the absolute value of a :ref:`Variant<class_Variant>` parameter ``x`` (i.e. non-negative value). Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
 
@@ -5256,7 +5250,7 @@ Returns the absolute value of a :ref:`Variant<class_Variant>` parameter ``x`` (i
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **absf**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **absf**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_absf>`
 
 Returns the absolute value of float parameter ``x`` (i.e. positive value).
 
@@ -5273,7 +5267,7 @@ Returns the absolute value of float parameter ``x`` (i.e. positive value).
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **absi**\ (\ x\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **absi**\ (\ x\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_absi>`
 
 Returns the absolute value of int parameter ``x`` (i.e. positive value).
 
@@ -5290,7 +5284,7 @@ Returns the absolute value of int parameter ``x`` (i.e. positive value).
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **acos**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **acos**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_acos>`
 
 Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``. ``x`` will be clamped between ``-1.0`` and ``1.0`` (inclusive), in order to prevent :ref:`acos<class_@GlobalScope_method_acos>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
@@ -5307,7 +5301,7 @@ Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **acosh**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **acosh**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_acosh>`
 
 Returns the hyperbolic arc (also called inverse) cosine of ``x``, returning a value in radians. Use it to get the angle from an angle's cosine in hyperbolic space if ``x`` is larger or equal to 1. For values of ``x`` lower than 1, it will return 0, in order to prevent :ref:`acosh<class_@GlobalScope_method_acosh>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
@@ -5326,7 +5320,7 @@ Returns the hyperbolic arc (also called inverse) cosine of ``x``, returning a va
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **angle_difference**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **angle_difference**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_angle_difference>`
 
 Returns the difference between the two angles, in the range of ``[-PI, +PI]``. When ``from`` and ``to`` are opposite, returns ``-PI`` if ``from`` is smaller than ``to``, or ``PI`` otherwise.
 
@@ -5338,7 +5332,7 @@ Returns the difference between the two angles, in the range of ``[-PI, +PI]``. W
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **asin**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **asin**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_asin>`
 
 Returns the arc sine of ``x`` in radians. Use to get the angle of sine ``x``. ``x`` will be clamped between ``-1.0`` and ``1.0`` (inclusive), in order to prevent :ref:`asin<class_@GlobalScope_method_asin>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
@@ -5355,7 +5349,7 @@ Returns the arc sine of ``x`` in radians. Use to get the angle of sine ``x``. ``
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **asinh**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **asinh**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_asinh>`
 
 Returns the hyperbolic arc (also called inverse) sine of ``x``, returning a value in radians. Use it to get the angle from an angle's sine in hyperbolic space.
 
@@ -5372,7 +5366,7 @@ Returns the hyperbolic arc (also called inverse) sine of ``x``, returning a valu
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **atan**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **atan**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_atan>`
 
 Returns the arc tangent of ``x`` in radians. Use it to get the angle from an angle's tangent in trigonometry.
 
@@ -5392,7 +5386,7 @@ If ``x`` is between ``-PI / 2`` and ``PI / 2`` (inclusive), ``atan(tan(x))`` is 
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **atan2**\ (\ y\: :ref:`float<class_float>`, x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **atan2**\ (\ y\: :ref:`float<class_float>`, x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_atan2>`
 
 Returns the arc tangent of ``y/x`` in radians. Use to get the angle of tangent ``y/x``. To compute the value, the method takes into account the sign of both arguments in order to determine the quadrant.
 
@@ -5410,7 +5404,7 @@ Important note: The Y coordinate comes first, by convention.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **atanh**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **atanh**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_atanh>`
 
 Returns the hyperbolic arc (also called inverse) tangent of ``x``, returning a value in radians. Use it to get the angle from an angle's tangent in hyperbolic space if ``x`` is between -1 and 1 (non-inclusive).
 
@@ -5432,7 +5426,7 @@ In mathematics, the inverse hyperbolic tangent is only defined for -1 < ``x`` < 
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **bezier_derivative**\ (\ start\: :ref:`float<class_float>`, control_1\: :ref:`float<class_float>`, control_2\: :ref:`float<class_float>`, end\: :ref:`float<class_float>`, t\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **bezier_derivative**\ (\ start\: :ref:`float<class_float>`, control_1\: :ref:`float<class_float>`, control_2\: :ref:`float<class_float>`, end\: :ref:`float<class_float>`, t\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_bezier_derivative>`
 
 Returns the derivative at the given ``t`` on a one-dimensional `Bézier curve <https://en.wikipedia.org/wiki/B%C3%A9zier_curve>`__ defined by the given ``control_1``, ``control_2``, and ``end`` points.
 
@@ -5444,7 +5438,7 @@ Returns the derivative at the given ``t`` on a one-dimensional `Bézier curve <h
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **bezier_interpolate**\ (\ start\: :ref:`float<class_float>`, control_1\: :ref:`float<class_float>`, control_2\: :ref:`float<class_float>`, end\: :ref:`float<class_float>`, t\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **bezier_interpolate**\ (\ start\: :ref:`float<class_float>`, control_1\: :ref:`float<class_float>`, control_2\: :ref:`float<class_float>`, end\: :ref:`float<class_float>`, t\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_bezier_interpolate>`
 
 Returns the point at the given ``t`` on a one-dimensional `Bézier curve <https://en.wikipedia.org/wiki/B%C3%A9zier_curve>`__ defined by the given ``control_1``, ``control_2``, and ``end`` points.
 
@@ -5456,7 +5450,7 @@ Returns the point at the given ``t`` on a one-dimensional `Bézier curve <https:
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **bytes_to_var**\ (\ bytes\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Variant<class_Variant>` **bytes_to_var**\ (\ bytes\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_@GlobalScope_method_bytes_to_var>`
 
 Decodes a byte array back to a :ref:`Variant<class_Variant>` value, without decoding objects.
 
@@ -5470,7 +5464,7 @@ Decodes a byte array back to a :ref:`Variant<class_Variant>` value, without deco
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **bytes_to_var_with_objects**\ (\ bytes\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+:ref:`Variant<class_Variant>` **bytes_to_var_with_objects**\ (\ bytes\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_@GlobalScope_method_bytes_to_var_with_objects>`
 
 Decodes a byte array back to a :ref:`Variant<class_Variant>` value. Decoding objects is allowed.
 
@@ -5484,7 +5478,7 @@ Decodes a byte array back to a :ref:`Variant<class_Variant>` value. Decoding obj
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **ceil**\ (\ x\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **ceil**\ (\ x\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_ceil>`
 
 Rounds ``x`` upward (towards positive infinity), returning the smallest whole number that is not less than ``x``. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
 
@@ -5505,7 +5499,7 @@ See also :ref:`floor<class_@GlobalScope_method_floor>`, :ref:`round<class_@Globa
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **ceilf**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **ceilf**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_ceilf>`
 
 Rounds ``x`` upward (towards positive infinity), returning the smallest whole number that is not less than ``x``.
 
@@ -5519,7 +5513,7 @@ A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>`, returning a 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **ceili**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`int<class_int>` **ceili**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_ceili>`
 
 Rounds ``x`` upward (towards positive infinity), returning the smallest whole number that is not less than ``x``.
 
@@ -5533,7 +5527,7 @@ A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>`, returning an
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **clamp**\ (\ value\: :ref:`Variant<class_Variant>`, min\: :ref:`Variant<class_Variant>`, max\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **clamp**\ (\ value\: :ref:`Variant<class_Variant>`, min\: :ref:`Variant<class_Variant>`, max\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_clamp>`
 
 Clamps the ``value``, returning a :ref:`Variant<class_Variant>` not less than ``min`` and not more than ``max``. Any values that can be compared with the less than and greater than operators will work.
 
@@ -5557,7 +5551,7 @@ Clamps the ``value``, returning a :ref:`Variant<class_Variant>` not less than ``
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **clampf**\ (\ value\: :ref:`float<class_float>`, min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **clampf**\ (\ value\: :ref:`float<class_float>`, min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_clampf>`
 
 Clamps the ``value``, returning a :ref:`float<class_float>` not less than ``min`` and not more than ``max``.
 
@@ -5577,7 +5571,7 @@ Clamps the ``value``, returning a :ref:`float<class_float>` not less than ``min`
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **clampi**\ (\ value\: :ref:`int<class_int>`, min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **clampi**\ (\ value\: :ref:`int<class_int>`, min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_clampi>`
 
 Clamps the ``value``, returning an :ref:`int<class_int>` not less than ``min`` and not more than ``max``.
 
@@ -5597,7 +5591,7 @@ Clamps the ``value``, returning an :ref:`int<class_int>` not less than ``min`` a
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **cos**\ (\ angle_rad\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **cos**\ (\ angle_rad\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_cos>`
 
 Returns the cosine of angle ``angle_rad`` in radians.
 
@@ -5615,7 +5609,7 @@ Returns the cosine of angle ``angle_rad`` in radians.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **cosh**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **cosh**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_cosh>`
 
 Returns the hyperbolic cosine of ``x`` in radians.
 
@@ -5631,7 +5625,7 @@ Returns the hyperbolic cosine of ``x`` in radians.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **cubic_interpolate**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, pre\: :ref:`float<class_float>`, post\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **cubic_interpolate**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, pre\: :ref:`float<class_float>`, post\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_cubic_interpolate>`
 
 Cubic interpolates between two values by the factor defined in ``weight`` with ``pre`` and ``post`` values.
 
@@ -5643,7 +5637,7 @@ Cubic interpolates between two values by the factor defined in ``weight`` with `
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **cubic_interpolate_angle**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, pre\: :ref:`float<class_float>`, post\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **cubic_interpolate_angle**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, pre\: :ref:`float<class_float>`, post\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_cubic_interpolate_angle>`
 
 Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with ``pre`` and ``post`` values. See also :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`.
 
@@ -5655,7 +5649,7 @@ Cubic interpolates between two rotation values with shortest path by the factor 
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **cubic_interpolate_angle_in_time**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, pre\: :ref:`float<class_float>`, post\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`, to_t\: :ref:`float<class_float>`, pre_t\: :ref:`float<class_float>`, post_t\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **cubic_interpolate_angle_in_time**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, pre\: :ref:`float<class_float>`, post\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`, to_t\: :ref:`float<class_float>`, pre_t\: :ref:`float<class_float>`, post_t\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_cubic_interpolate_angle_in_time>`
 
 Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with ``pre`` and ``post`` values. See also :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`.
 
@@ -5669,7 +5663,7 @@ It can perform smoother interpolation than :ref:`cubic_interpolate<class_@Global
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **cubic_interpolate_in_time**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, pre\: :ref:`float<class_float>`, post\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`, to_t\: :ref:`float<class_float>`, pre_t\: :ref:`float<class_float>`, post_t\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **cubic_interpolate_in_time**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, pre\: :ref:`float<class_float>`, post\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`, to_t\: :ref:`float<class_float>`, pre_t\: :ref:`float<class_float>`, post_t\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_cubic_interpolate_in_time>`
 
 Cubic interpolates between two values by the factor defined in ``weight`` with ``pre`` and ``post`` values.
 
@@ -5683,7 +5677,7 @@ It can perform smoother interpolation than :ref:`cubic_interpolate<class_@Global
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **db_to_linear**\ (\ db\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **db_to_linear**\ (\ db\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_db_to_linear>`
 
 Converts from decibels to linear energy (audio).
 
@@ -5695,7 +5689,7 @@ Converts from decibels to linear energy (audio).
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **deg_to_rad**\ (\ deg\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **deg_to_rad**\ (\ deg\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_deg_to_rad>`
 
 Converts an angle expressed in degrees to radians.
 
@@ -5711,7 +5705,7 @@ Converts an angle expressed in degrees to radians.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **ease**\ (\ x\: :ref:`float<class_float>`, curve\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **ease**\ (\ x\: :ref:`float<class_float>`, curve\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_ease>`
 
 Returns an "eased" value of ``x`` based on an easing function defined with ``curve``. This easing function is based on an exponent. The ``curve`` can be any floating-point number, with specific values leading to the following behaviors:
 
@@ -5737,7 +5731,7 @@ See also :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`. If you need to
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **error_string**\ (\ error\: :ref:`int<class_int>`\ )
+:ref:`String<class_String>` **error_string**\ (\ error\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_error_string>`
 
 Returns a human-readable name for the given :ref:`Error<enum_@GlobalScope_Error>` code.
 
@@ -5756,7 +5750,7 @@ Returns a human-readable name for the given :ref:`Error<enum_@GlobalScope_Error>
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **exp**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **exp**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_exp>`
 
 The natural exponential function. It raises the mathematical constant *e* to the power of ``x`` and returns it.
 
@@ -5776,7 +5770,7 @@ For exponents to other bases use the method :ref:`pow<class_@GlobalScope_method_
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **floor**\ (\ x\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **floor**\ (\ x\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_floor>`
 
 Rounds ``x`` downward (towards negative infinity), returning the largest whole number that is not more than ``x``. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
 
@@ -5797,7 +5791,7 @@ See also :ref:`ceil<class_@GlobalScope_method_ceil>`, :ref:`round<class_@GlobalS
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **floorf**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **floorf**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_floorf>`
 
 Rounds ``x`` downward (towards negative infinity), returning the largest whole number that is not more than ``x``.
 
@@ -5811,7 +5805,7 @@ A type-safe version of :ref:`floor<class_@GlobalScope_method_floor>`, returning 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **floori**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`int<class_int>` **floori**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_floori>`
 
 Rounds ``x`` downward (towards negative infinity), returning the largest whole number that is not more than ``x``.
 
@@ -5827,7 +5821,7 @@ A type-safe version of :ref:`floor<class_@GlobalScope_method_floor>`, returning 
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **fmod**\ (\ x\: :ref:`float<class_float>`, y\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **fmod**\ (\ x\: :ref:`float<class_float>`, y\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_fmod>`
 
 Returns the floating-point remainder of ``x`` divided by ``y``, keeping the sign of ``x``.
 
@@ -5845,7 +5839,7 @@ For the integer remainder operation, use the ``%`` operator.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **fposmod**\ (\ x\: :ref:`float<class_float>`, y\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **fposmod**\ (\ x\: :ref:`float<class_float>`, y\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_fposmod>`
 
 Returns the floating-point modulus of ``x`` divided by ``y``, wrapping equally in positive and negative.
 
@@ -5877,7 +5871,7 @@ Prints:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **hash**\ (\ variable\: :ref:`Variant<class_Variant>`\ )
+:ref:`int<class_int>` **hash**\ (\ variable\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_hash>`
 
 Returns the integer hash of the passed ``variable``.
 
@@ -5902,7 +5896,7 @@ Returns the integer hash of the passed ``variable``.
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **instance_from_id**\ (\ instance_id\: :ref:`int<class_int>`\ )
+:ref:`Object<class_Object>` **instance_from_id**\ (\ instance_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_instance_from_id>`
 
 Returns the :ref:`Object<class_Object>` that corresponds to ``instance_id``. All Objects have a unique instance ID. See also :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
 
@@ -5942,7 +5936,7 @@ Returns the :ref:`Object<class_Object>` that corresponds to ``instance_id``. All
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **inverse_lerp**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **inverse_lerp**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_inverse_lerp>`
 
 Returns an interpolation or extrapolation factor considering the range specified in ``from`` and ``to``, and the interpolated value specified in ``weight``. The returned value will be between ``0.0`` and ``1.0`` if ``weight`` is between ``from`` and ``to`` (inclusive). If ``weight`` is located outside this range, then an extrapolation factor will be returned (return value lower than ``0.0`` or greater than ``1.0``). Use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` if this is not desired.
 
@@ -5966,7 +5960,7 @@ See also :ref:`lerp<class_@GlobalScope_method_lerp>`, which performs the reverse
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_equal_approx**\ (\ a\: :ref:`float<class_float>`, b\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **is_equal_approx**\ (\ a\: :ref:`float<class_float>`, b\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_is_equal_approx>`
 
 Returns ``true`` if ``a`` and ``b`` are approximately equal to each other.
 
@@ -5982,7 +5976,7 @@ Infinity values of the same sign are considered equal.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_finite**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **is_finite**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_is_finite>`
 
 Returns whether ``x`` is a finite value, i.e. it is not :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`, positive infinity, or negative infinity.
 
@@ -5994,7 +5988,7 @@ Returns whether ``x`` is a finite value, i.e. it is not :ref:`@GDScript.NAN<clas
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_inf**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **is_inf**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_is_inf>`
 
 Returns ``true`` if ``x`` is either positive infinity or negative infinity.
 
@@ -6006,7 +6000,7 @@ Returns ``true`` if ``x`` is either positive infinity or negative infinity.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_instance_id_valid**\ (\ id\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **is_instance_id_valid**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_is_instance_id_valid>`
 
 Returns ``true`` if the Object that corresponds to ``id`` is a valid object (e.g. has not been deleted from memory). All Objects have a unique instance ID.
 
@@ -6018,7 +6012,7 @@ Returns ``true`` if the Object that corresponds to ``id`` is a valid object (e.g
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_instance_valid**\ (\ instance\: :ref:`Variant<class_Variant>`\ )
+:ref:`bool<class_bool>` **is_instance_valid**\ (\ instance\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_is_instance_valid>`
 
 Returns ``true`` if ``instance`` is a valid Object (e.g. has not been deleted from memory).
 
@@ -6030,7 +6024,7 @@ Returns ``true`` if ``instance`` is a valid Object (e.g. has not been deleted fr
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_nan**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **is_nan**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_is_nan>`
 
 Returns ``true`` if ``x`` is a NaN ("Not a Number" or invalid) value.
 
@@ -6042,7 +6036,7 @@ Returns ``true`` if ``x`` is a NaN ("Not a Number" or invalid) value.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_same**\ (\ a\: :ref:`Variant<class_Variant>`, b\: :ref:`Variant<class_Variant>`\ )
+:ref:`bool<class_bool>` **is_same**\ (\ a\: :ref:`Variant<class_Variant>`, b\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_is_same>`
 
 Returns ``true``, for value types, if ``a`` and ``b`` share the same value. Returns ``true``, for reference types, if the references of ``a`` and ``b`` are the same.
 
@@ -6064,7 +6058,7 @@ Returns ``true``, for value types, if ``a`` and ``b`` share the same value. Retu
 
 These are :ref:`Variant<class_Variant>` value types: ``null``, :ref:`bool<class_bool>`, :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`String<class_String>`, :ref:`StringName<class_StringName>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`, :ref:`Rect2<class_Rect2>`, :ref:`Rect2i<class_Rect2i>`, :ref:`Transform2D<class_Transform2D>`, :ref:`Transform3D<class_Transform3D>`, :ref:`Plane<class_Plane>`, :ref:`Quaternion<class_Quaternion>`, :ref:`AABB<class_AABB>`, :ref:`Basis<class_Basis>`, :ref:`Projection<class_Projection>`, :ref:`Color<class_Color>`, :ref:`NodePath<class_NodePath>`, :ref:`RID<class_RID>`, :ref:`Callable<class_Callable>` and :ref:`Signal<class_Signal>`.
 
-These are :ref:`Variant<class_Variant>` reference types: :ref:`Object<class_Object>`, :ref:`Dictionary<class_Dictionary>`, :ref:`Array<class_Array>`, :ref:`PackedByteArray<class_PackedByteArray>`, :ref:`PackedInt32Array<class_PackedInt32Array>`, :ref:`PackedInt64Array<class_PackedInt64Array>`, :ref:`PackedFloat32Array<class_PackedFloat32Array>`, :ref:`PackedFloat64Array<class_PackedFloat64Array>`, :ref:`PackedStringArray<class_PackedStringArray>`, :ref:`PackedVector2Array<class_PackedVector2Array>`, :ref:`PackedVector3Array<class_PackedVector3Array>` and :ref:`PackedColorArray<class_PackedColorArray>`.
+These are :ref:`Variant<class_Variant>` reference types: :ref:`Object<class_Object>`, :ref:`Dictionary<class_Dictionary>`, :ref:`Array<class_Array>`, :ref:`PackedByteArray<class_PackedByteArray>`, :ref:`PackedInt32Array<class_PackedInt32Array>`, :ref:`PackedInt64Array<class_PackedInt64Array>`, :ref:`PackedFloat32Array<class_PackedFloat32Array>`, :ref:`PackedFloat64Array<class_PackedFloat64Array>`, :ref:`PackedStringArray<class_PackedStringArray>`, :ref:`PackedVector2Array<class_PackedVector2Array>`, :ref:`PackedVector3Array<class_PackedVector3Array>`, :ref:`PackedVector4Array<class_PackedVector4Array>`, and :ref:`PackedColorArray<class_PackedColorArray>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6074,7 +6068,7 @@ These are :ref:`Variant<class_Variant>` reference types: :ref:`Object<class_Obje
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_zero_approx**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`bool<class_bool>` **is_zero_approx**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_is_zero_approx>`
 
 Returns ``true`` if ``x`` is zero or almost zero. The comparison is done using a tolerance calculation with a small internal epsilon.
 
@@ -6088,7 +6082,7 @@ This function is faster than using :ref:`is_equal_approx<class_@GlobalScope_meth
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **lerp**\ (\ from\: :ref:`Variant<class_Variant>`, to\: :ref:`Variant<class_Variant>`, weight\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **lerp**\ (\ from\: :ref:`Variant<class_Variant>`, to\: :ref:`Variant<class_Variant>`, weight\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_lerp>`
 
 Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*. If this is not desired, use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of this function.
 
@@ -6110,7 +6104,7 @@ See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which perfo
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **lerp_angle**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **lerp_angle**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_lerp_angle>`
 
 Linearly interpolates between two angles (in radians) by a ``weight`` value between 0.0 and 1.0.
 
@@ -6136,7 +6130,7 @@ Similar to :ref:`lerp<class_@GlobalScope_method_lerp>`, but interpolates correct
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **lerpf**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **lerpf**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, weight\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_lerpf>`
 
 Linearly interpolates between two values by the factor defined in ``weight``. To perform interpolation, ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). However, values outside this range are allowed and can be used to perform *extrapolation*. If this is not desired, use :ref:`clampf<class_@GlobalScope_method_clampf>` on the result of this function.
 
@@ -6154,7 +6148,7 @@ See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which perfo
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **linear_to_db**\ (\ lin\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **linear_to_db**\ (\ lin\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_linear_to_db>`
 
 Converts from linear energy to decibels (audio). This can be used to implement volume sliders that behave as expected (since volume isn't linear).
 
@@ -6175,7 +6169,7 @@ Converts from linear energy to decibels (audio). This can be used to implement v
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **log**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **log**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_log>`
 
 Returns the `natural logarithm <https://en.wikipedia.org/wiki/Natural_logarithm>`__ of ``x`` (base `[i]e[/i] <https://en.wikipedia.org/wiki/E_(mathematical_constant)>`__, with *e* being approximately 2.71828). This is the amount of time needed to reach a certain level of continuous growth.
 
@@ -6195,13 +6189,15 @@ Returns the `natural logarithm <https://en.wikipedia.org/wiki/Natural_logarithm>
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **max**\ (\ ...\ ) |vararg|
+:ref:`Variant<class_Variant>` **max**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_max>`
 
 Returns the maximum of the given numeric values. This function can take any number of arguments.
 
 ::
 
     max(1, 7, 3, -6, 5) # Returns 7
+
+\ **Note:** When using this on vectors it will *not* perform component-wise maximum, and will pick the largest value when compared using ``x < y``. To perform component-wise maximum, use :ref:`Vector2.max<class_Vector2_method_max>`, :ref:`Vector2i.max<class_Vector2i_method_max>`, :ref:`Vector3.max<class_Vector3_method_max>`, :ref:`Vector3i.max<class_Vector3i_method_max>`, :ref:`Vector4.max<class_Vector4_method_max>`, and :ref:`Vector4i.max<class_Vector4i_method_max>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6211,7 +6207,7 @@ Returns the maximum of the given numeric values. This function can take any numb
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **maxf**\ (\ a\: :ref:`float<class_float>`, b\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **maxf**\ (\ a\: :ref:`float<class_float>`, b\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_maxf>`
 
 Returns the maximum of two :ref:`float<class_float>` values.
 
@@ -6228,7 +6224,7 @@ Returns the maximum of two :ref:`float<class_float>` values.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **maxi**\ (\ a\: :ref:`int<class_int>`, b\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **maxi**\ (\ a\: :ref:`int<class_int>`, b\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_maxi>`
 
 Returns the maximum of two :ref:`int<class_int>` values.
 
@@ -6245,13 +6241,15 @@ Returns the maximum of two :ref:`int<class_int>` values.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **min**\ (\ ...\ ) |vararg|
+:ref:`Variant<class_Variant>` **min**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_min>`
 
 Returns the minimum of the given numeric values. This function can take any number of arguments.
 
 ::
 
     min(1, 7, 3, -6, 5) # Returns -6
+
+\ **Note:** When using this on vectors it will *not* perform component-wise minimum, and will pick the smallest value when compared using ``x < y``. To perform component-wise minimum, use :ref:`Vector2.min<class_Vector2_method_min>`, :ref:`Vector2i.min<class_Vector2i_method_min>`, :ref:`Vector3.min<class_Vector3_method_min>`, :ref:`Vector3i.min<class_Vector3i_method_min>`, :ref:`Vector4.min<class_Vector4_method_min>`, and :ref:`Vector4i.min<class_Vector4i_method_min>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6261,7 +6259,7 @@ Returns the minimum of the given numeric values. This function can take any numb
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **minf**\ (\ a\: :ref:`float<class_float>`, b\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **minf**\ (\ a\: :ref:`float<class_float>`, b\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_minf>`
 
 Returns the minimum of two :ref:`float<class_float>` values.
 
@@ -6278,7 +6276,7 @@ Returns the minimum of two :ref:`float<class_float>` values.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **mini**\ (\ a\: :ref:`int<class_int>`, b\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **mini**\ (\ a\: :ref:`int<class_int>`, b\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_mini>`
 
 Returns the minimum of two :ref:`int<class_int>` values.
 
@@ -6295,7 +6293,7 @@ Returns the minimum of two :ref:`int<class_int>` values.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **move_toward**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, delta\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **move_toward**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, delta\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_move_toward>`
 
 Moves ``from`` toward ``to`` by the ``delta`` amount. Will not go past ``to``.
 
@@ -6316,7 +6314,7 @@ Use a negative ``delta`` value to move away.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **nearest_po2**\ (\ value\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **nearest_po2**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_nearest_po2>`
 
 Returns the smallest integer power of 2 that is greater than or equal to ``value``.
 
@@ -6339,7 +6337,7 @@ Returns the smallest integer power of 2 that is greater than or equal to ``value
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **pingpong**\ (\ value\: :ref:`float<class_float>`, length\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **pingpong**\ (\ value\: :ref:`float<class_float>`, length\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_pingpong>`
 
 Wraps ``value`` between ``0`` and the ``length``. If the limit is reached, the next value the function returns is decreased to the ``0`` side or increased to the ``length`` side (like a triangle wave). If ``length`` is less than zero, it becomes positive.
 
@@ -6364,7 +6362,7 @@ Wraps ``value`` between ``0`` and the ``length``. If the limit is reached, the n
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **posmod**\ (\ x\: :ref:`int<class_int>`, y\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **posmod**\ (\ x\: :ref:`int<class_int>`, y\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_posmod>`
 
 Returns the integer modulus of ``x`` divided by ``y`` that wraps equally in positive and negative.
 
@@ -6395,7 +6393,7 @@ Prints:
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **pow**\ (\ base\: :ref:`float<class_float>`, exp\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **pow**\ (\ base\: :ref:`float<class_float>`, exp\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_pow>`
 
 Returns the result of ``base`` raised to the power of ``exp``.
 
@@ -6414,7 +6412,7 @@ In GDScript, this is the equivalent of the ``**`` operator.
 
 .. rst-class:: classref-method
 
-|void| **print**\ (\ ...\ ) |vararg|
+|void| **print**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_print>`
 
 Converts one or more arguments of any type to string in the best way possible and prints them to the console.
 
@@ -6443,7 +6441,7 @@ Converts one or more arguments of any type to string in the best way possible an
 
 .. rst-class:: classref-method
 
-|void| **print_rich**\ (\ ...\ ) |vararg|
+|void| **print_rich**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_print_rich>`
 
 Converts one or more arguments of any type to string in the best way possible and prints them to the console.
 
@@ -6482,7 +6480,7 @@ When printing to standard output, the supported subset of BBCode is converted to
 
 .. rst-class:: classref-method
 
-|void| **print_verbose**\ (\ ...\ ) |vararg|
+|void| **print_verbose**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_print_verbose>`
 
 If verbose mode is enabled (:ref:`OS.is_stdout_verbose<class_OS_method_is_stdout_verbose>` returning ``true``), converts one or more arguments of any type to string in the best way possible and prints them to the console.
 
@@ -6494,7 +6492,7 @@ If verbose mode is enabled (:ref:`OS.is_stdout_verbose<class_OS_method_is_stdout
 
 .. rst-class:: classref-method
 
-|void| **printerr**\ (\ ...\ ) |vararg|
+|void| **printerr**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_printerr>`
 
 Prints one or more arguments to strings in the best way possible to standard error line.
 
@@ -6519,7 +6517,7 @@ Prints one or more arguments to strings in the best way possible to standard err
 
 .. rst-class:: classref-method
 
-|void| **printraw**\ (\ ...\ ) |vararg|
+|void| **printraw**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_printraw>`
 
 Prints one or more arguments to strings in the best way possible to the OS terminal. Unlike :ref:`print<class_@GlobalScope_method_print>`, no newline is automatically added at the end.
 
@@ -6552,7 +6550,7 @@ Prints one or more arguments to strings in the best way possible to the OS termi
 
 .. rst-class:: classref-method
 
-|void| **prints**\ (\ ...\ ) |vararg|
+|void| **prints**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_prints>`
 
 Prints one or more arguments to the console with a space between each argument.
 
@@ -6577,7 +6575,7 @@ Prints one or more arguments to the console with a space between each argument.
 
 .. rst-class:: classref-method
 
-|void| **printt**\ (\ ...\ ) |vararg|
+|void| **printt**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_printt>`
 
 Prints one or more arguments to the console with a tab between each argument.
 
@@ -6602,7 +6600,7 @@ Prints one or more arguments to the console with a tab between each argument.
 
 .. rst-class:: classref-method
 
-|void| **push_error**\ (\ ...\ ) |vararg|
+|void| **push_error**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_push_error>`
 
 Pushes an error message to Godot's built-in debugger and to the OS terminal.
 
@@ -6629,7 +6627,7 @@ Pushes an error message to Godot's built-in debugger and to the OS terminal.
 
 .. rst-class:: classref-method
 
-|void| **push_warning**\ (\ ...\ ) |vararg|
+|void| **push_warning**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_push_warning>`
 
 Pushes a warning message to Godot's built-in debugger and to the OS terminal.
 
@@ -6654,7 +6652,7 @@ Pushes a warning message to Godot's built-in debugger and to the OS terminal.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **rad_to_deg**\ (\ rad\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **rad_to_deg**\ (\ rad\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_rad_to_deg>`
 
 Converts an angle expressed in radians to degrees.
 
@@ -6672,7 +6670,7 @@ Converts an angle expressed in radians to degrees.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **rand_from_seed**\ (\ seed\: :ref:`int<class_int>`\ )
+:ref:`PackedInt64Array<class_PackedInt64Array>` **rand_from_seed**\ (\ seed\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_rand_from_seed>`
 
 Given a ``seed``, returns a :ref:`PackedInt64Array<class_PackedInt64Array>` of size ``2``, where its first element is the randomized :ref:`int<class_int>` value, and the second element is the same as ``seed``. Passing the same ``seed`` consistently returns the same array.
 
@@ -6693,7 +6691,7 @@ Given a ``seed``, returns a :ref:`PackedInt64Array<class_PackedInt64Array>` of s
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **randf**\ (\ )
+:ref:`float<class_float>` **randf**\ (\ ) :ref:`🔗<class_@GlobalScope_method_randf>`
 
 Returns a random floating-point value between ``0.0`` and ``1.0`` (inclusive).
 
@@ -6718,7 +6716,7 @@ Returns a random floating-point value between ``0.0`` and ``1.0`` (inclusive).
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **randf_range**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **randf_range**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_randf_range>`
 
 Returns a random floating-point value between ``from`` and ``to`` (inclusive).
 
@@ -6745,7 +6743,7 @@ Returns a random floating-point value between ``from`` and ``to`` (inclusive).
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **randfn**\ (\ mean\: :ref:`float<class_float>`, deviation\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **randfn**\ (\ mean\: :ref:`float<class_float>`, deviation\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_randfn>`
 
 Returns a `normally-distributed <https://en.wikipedia.org/wiki/Normal_distribution>`__, pseudo-random floating-point value from the specified ``mean`` and a standard ``deviation``. This is also known as a Gaussian distribution.
 
@@ -6759,7 +6757,7 @@ Returns a `normally-distributed <https://en.wikipedia.org/wiki/Normal_distributi
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **randi**\ (\ )
+:ref:`int<class_int>` **randi**\ (\ ) :ref:`🔗<class_@GlobalScope_method_randi>`
 
 Returns a random unsigned 32-bit integer. Use remainder to obtain a random value in the interval ``[0, N - 1]`` (where N is smaller than 2^32).
 
@@ -6790,7 +6788,7 @@ Returns a random unsigned 32-bit integer. Use remainder to obtain a random value
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **randi_range**\ (\ from\: :ref:`int<class_int>`, to\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **randi_range**\ (\ from\: :ref:`int<class_int>`, to\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_randi_range>`
 
 Returns a random signed 32-bit integer between ``from`` and ``to`` (inclusive). If ``to`` is lesser than ``from``, they are swapped.
 
@@ -6817,7 +6815,7 @@ Returns a random signed 32-bit integer between ``from`` and ``to`` (inclusive). 
 
 .. rst-class:: classref-method
 
-|void| **randomize**\ (\ )
+|void| **randomize**\ (\ ) :ref:`🔗<class_@GlobalScope_method_randomize>`
 
 Randomizes the seed (or the internal state) of the random number generator. The current implementation uses a number based on the device's time.
 
@@ -6831,7 +6829,7 @@ Randomizes the seed (or the internal state) of the random number generator. The 
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **remap**\ (\ value\: :ref:`float<class_float>`, istart\: :ref:`float<class_float>`, istop\: :ref:`float<class_float>`, ostart\: :ref:`float<class_float>`, ostop\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **remap**\ (\ value\: :ref:`float<class_float>`, istart\: :ref:`float<class_float>`, istop\: :ref:`float<class_float>`, ostart\: :ref:`float<class_float>`, ostop\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_remap>`
 
 Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``. See also :ref:`lerp<class_@GlobalScope_method_lerp>` and :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>`. If ``value`` is outside ``[istart, istop]``, then the resulting value will also be outside ``[ostart, ostop]``. If this is not desired, use :ref:`clamp<class_@GlobalScope_method_clamp>` on the result of this function.
 
@@ -6841,6 +6839,8 @@ Maps a ``value`` from range ``[istart, istop]`` to ``[ostart, ostop]``. See also
 
 For complex use cases where multiple ranges are needed, consider using :ref:`Curve<class_Curve>` or :ref:`Gradient<class_Gradient>` instead.
 
+\ **Note:** If ``istart == istop``, the return value is undefined (most likely NaN, INF, or -INF).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -6849,7 +6849,7 @@ For complex use cases where multiple ranges are needed, consider using :ref:`Cur
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **rid_allocate_id**\ (\ )
+:ref:`int<class_int>` **rid_allocate_id**\ (\ ) :ref:`🔗<class_@GlobalScope_method_rid_allocate_id>`
 
 Allocates a unique ID which can be used by the implementation to construct an RID. This is used mainly from native extensions to implement servers.
 
@@ -6861,7 +6861,7 @@ Allocates a unique ID which can be used by the implementation to construct an RI
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **rid_from_int64**\ (\ base\: :ref:`int<class_int>`\ )
+:ref:`RID<class_RID>` **rid_from_int64**\ (\ base\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_rid_from_int64>`
 
 Creates an RID from a ``base``. This is used mainly from native extensions to build servers.
 
@@ -6873,7 +6873,7 @@ Creates an RID from a ``base``. This is used mainly from native extensions to bu
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **rotate_toward**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, delta\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **rotate_toward**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, delta\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_rotate_toward>`
 
 Rotates ``from`` toward ``to`` by the ``delta`` amount. Will not go past ``to``.
 
@@ -6889,7 +6889,7 @@ If ``delta`` is negative, this function will rotate away from ``to``, toward the
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **round**\ (\ x\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **round**\ (\ x\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_round>`
 
 Rounds ``x`` to the nearest whole number, with halfway cases rounded away from 0. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
 
@@ -6911,7 +6911,7 @@ See also :ref:`floor<class_@GlobalScope_method_floor>`, :ref:`ceil<class_@Global
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **roundf**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **roundf**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_roundf>`
 
 Rounds ``x`` to the nearest whole number, with halfway cases rounded away from 0.
 
@@ -6925,7 +6925,7 @@ A type-safe version of :ref:`round<class_@GlobalScope_method_round>`, returning 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **roundi**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`int<class_int>` **roundi**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_roundi>`
 
 Rounds ``x`` to the nearest whole number, with halfway cases rounded away from 0.
 
@@ -6939,7 +6939,7 @@ A type-safe version of :ref:`round<class_@GlobalScope_method_round>`, returning 
 
 .. rst-class:: classref-method
 
-|void| **seed**\ (\ base\: :ref:`int<class_int>`\ )
+|void| **seed**\ (\ base\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_seed>`
 
 Sets the seed for the random number generator to ``base``. Setting the seed manually can ensure consistent, repeatable results for most random functions.
 
@@ -6974,7 +6974,7 @@ Sets the seed for the random number generator to ``base``. Setting the seed manu
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **sign**\ (\ x\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **sign**\ (\ x\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_sign>`
 
 Returns the same type of :ref:`Variant<class_Variant>` as ``x``, with ``-1`` for negative values, ``1`` for positive values, and ``0`` for zeros. For ``nan`` values it returns 0.
 
@@ -6999,7 +6999,7 @@ Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **signf**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **signf**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_signf>`
 
 Returns ``-1.0`` if ``x`` is negative, ``1.0`` if ``x`` is positive, and ``0.0`` if ``x`` is zero. For ``nan`` values of ``x`` it returns 0.0.
 
@@ -7018,7 +7018,7 @@ Returns ``-1.0`` if ``x`` is negative, ``1.0`` if ``x`` is positive, and ``0.0``
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **signi**\ (\ x\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **signi**\ (\ x\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_signi>`
 
 Returns ``-1`` if ``x`` is negative, ``1`` if ``x`` is positive, and ``0`` if if ``x`` is zero.
 
@@ -7036,7 +7036,7 @@ Returns ``-1`` if ``x`` is negative, ``1`` if ``x`` is positive, and ``0`` if if
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **sin**\ (\ angle_rad\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **sin**\ (\ angle_rad\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_sin>`
 
 Returns the sine of angle ``angle_rad`` in radians.
 
@@ -7053,7 +7053,7 @@ Returns the sine of angle ``angle_rad`` in radians.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **sinh**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **sinh**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_sinh>`
 
 Returns the hyperbolic sine of ``x``.
 
@@ -7070,7 +7070,7 @@ Returns the hyperbolic sine of ``x``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **smoothstep**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **smoothstep**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_smoothstep>`
 
 Returns the result of smoothly interpolating the value of ``x`` between ``0`` and ``1``, based on the where ``x`` lies with respect to the edges ``from`` and ``to``.
 
@@ -7097,7 +7097,7 @@ Compared to :ref:`ease<class_@GlobalScope_method_ease>` with a curve value of ``
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **snapped**\ (\ x\: :ref:`Variant<class_Variant>`, step\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **snapped**\ (\ x\: :ref:`Variant<class_Variant>`, step\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_snapped>`
 
 Returns the multiple of ``step`` that is the closest to ``x``. This can also be used to round a floating-point number to an arbitrary number of decimals.
 
@@ -7122,7 +7122,7 @@ See also :ref:`ceil<class_@GlobalScope_method_ceil>`, :ref:`floor<class_@GlobalS
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **snappedf**\ (\ x\: :ref:`float<class_float>`, step\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **snappedf**\ (\ x\: :ref:`float<class_float>`, step\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_snappedf>`
 
 Returns the multiple of ``step`` that is the closest to ``x``. This can also be used to round a floating-point number to an arbitrary number of decimals.
 
@@ -7141,7 +7141,7 @@ A type-safe version of :ref:`snapped<class_@GlobalScope_method_snapped>`, return
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **snappedi**\ (\ x\: :ref:`float<class_float>`, step\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **snappedi**\ (\ x\: :ref:`float<class_float>`, step\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_snappedi>`
 
 Returns the multiple of ``step`` that is the closest to ``x``.
 
@@ -7160,7 +7160,7 @@ A type-safe version of :ref:`snapped<class_@GlobalScope_method_snapped>`, return
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **sqrt**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **sqrt**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_sqrt>`
 
 Returns the square root of ``x``, where ``x`` is a non-negative number.
 
@@ -7180,7 +7180,7 @@ Returns the square root of ``x``, where ``x`` is a non-negative number.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **step_decimals**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`int<class_int>` **step_decimals**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_step_decimals>`
 
 Returns the position of the first non-zero digit, after the decimal point. Note that the maximum return value is 10, which is a design decision in the implementation.
 
@@ -7198,7 +7198,7 @@ Returns the position of the first non-zero digit, after the decimal point. Note 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **str**\ (\ ...\ ) |vararg|
+:ref:`String<class_String>` **str**\ (\ ...\ ) |vararg| :ref:`🔗<class_@GlobalScope_method_str>`
 
 Converts one or more arguments of any :ref:`Variant<class_Variant>` type to a :ref:`String<class_String>` in the best way possible.
 
@@ -7217,7 +7217,7 @@ Converts one or more arguments of any :ref:`Variant<class_Variant>` type to a :r
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **str_to_var**\ (\ string\: :ref:`String<class_String>`\ )
+:ref:`Variant<class_Variant>` **str_to_var**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_@GlobalScope_method_str_to_var>`
 
 Converts a formatted ``string`` that was returned by :ref:`var_to_str<class_@GlobalScope_method_var_to_str>` to the original :ref:`Variant<class_Variant>`.
 
@@ -7246,7 +7246,7 @@ Converts a formatted ``string`` that was returned by :ref:`var_to_str<class_@Glo
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **tan**\ (\ angle_rad\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **tan**\ (\ angle_rad\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_tan>`
 
 Returns the tangent of angle ``angle_rad`` in radians.
 
@@ -7262,7 +7262,7 @@ Returns the tangent of angle ``angle_rad`` in radians.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **tanh**\ (\ x\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **tanh**\ (\ x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_tanh>`
 
 Returns the hyperbolic tangent of ``x``.
 
@@ -7279,7 +7279,7 @@ Returns the hyperbolic tangent of ``x``.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **type_convert**\ (\ variant\: :ref:`Variant<class_Variant>`, type\: :ref:`int<class_int>`\ )
+:ref:`Variant<class_Variant>` **type_convert**\ (\ variant\: :ref:`Variant<class_Variant>`, type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_type_convert>`
 
 Converts the given ``variant`` to the given ``type``, using the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values. This method is generous with how it handles types, it can automatically convert between array types, convert numeric :ref:`String<class_String>`\ s to :ref:`int<class_int>`, and converting most things to :ref:`String<class_String>`.
 
@@ -7303,7 +7303,7 @@ The returned value is a :ref:`Variant<class_Variant>`, but the data inside and i
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **type_string**\ (\ type\: :ref:`int<class_int>`\ )
+:ref:`String<class_String>` **type_string**\ (\ type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_type_string>`
 
 Returns a human-readable name of the given ``type``, using the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
@@ -7323,7 +7323,7 @@ See also :ref:`typeof<class_@GlobalScope_method_typeof>`.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **typeof**\ (\ variable\: :ref:`Variant<class_Variant>`\ )
+:ref:`int<class_int>` **typeof**\ (\ variable\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_typeof>`
 
 Returns the internal type of the given ``variable``, using the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
@@ -7347,7 +7347,7 @@ See also :ref:`type_string<class_@GlobalScope_method_type_string>`.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **var_to_bytes**\ (\ variable\: :ref:`Variant<class_Variant>`\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **var_to_bytes**\ (\ variable\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_var_to_bytes>`
 
 Encodes a :ref:`Variant<class_Variant>` value to a byte array, without encoding objects. Deserialization can be done with :ref:`bytes_to_var<class_@GlobalScope_method_bytes_to_var>`.
 
@@ -7363,7 +7363,7 @@ Encodes a :ref:`Variant<class_Variant>` value to a byte array, without encoding 
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **var_to_bytes_with_objects**\ (\ variable\: :ref:`Variant<class_Variant>`\ )
+:ref:`PackedByteArray<class_PackedByteArray>` **var_to_bytes_with_objects**\ (\ variable\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_var_to_bytes_with_objects>`
 
 Encodes a :ref:`Variant<class_Variant>` value to a byte array. Encoding objects is allowed (and can potentially include executable code). Deserialization can be done with :ref:`bytes_to_var_with_objects<class_@GlobalScope_method_bytes_to_var_with_objects>`.
 
@@ -7377,7 +7377,7 @@ Encodes a :ref:`Variant<class_Variant>` value to a byte array. Encoding objects 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **var_to_str**\ (\ variable\: :ref:`Variant<class_Variant>`\ )
+:ref:`String<class_String>` **var_to_str**\ (\ variable\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_var_to_str>`
 
 Converts a :ref:`Variant<class_Variant>` ``variable`` to a formatted :ref:`String<class_String>` that can then be parsed using :ref:`str_to_var<class_@GlobalScope_method_str_to_var>`.
 
@@ -7415,7 +7415,7 @@ Prints:
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **weakref**\ (\ obj\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **weakref**\ (\ obj\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_weakref>`
 
 Returns a :ref:`WeakRef<class_WeakRef>` instance holding a weak reference to ``obj``. Returns an empty :ref:`WeakRef<class_WeakRef>` instance if ``obj`` is ``null``. Prints an error and returns ``null`` if ``obj`` is neither :ref:`Object<class_Object>`-derived nor ``null``.
 
@@ -7429,7 +7429,7 @@ A weak reference to an object is not enough to keep the object alive: when the o
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **wrap**\ (\ value\: :ref:`Variant<class_Variant>`, min\: :ref:`Variant<class_Variant>`, max\: :ref:`Variant<class_Variant>`\ )
+:ref:`Variant<class_Variant>` **wrap**\ (\ value\: :ref:`Variant<class_Variant>`, min\: :ref:`Variant<class_Variant>`, max\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_@GlobalScope_method_wrap>`
 
 Wraps the :ref:`Variant<class_Variant>` ``value`` between ``min`` and ``max``. Can be used for creating loop-alike behavior or infinite surfaces.
 
@@ -7454,7 +7454,7 @@ Variant types :ref:`int<class_int>` and :ref:`float<class_float>` are supported.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **wrapf**\ (\ value\: :ref:`float<class_float>`, min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ )
+:ref:`float<class_float>` **wrapf**\ (\ value\: :ref:`float<class_float>`, min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_wrapf>`
 
 Wraps the float ``value`` between ``min`` and ``max``. Can be used for creating loop-alike behavior or infinite surfaces.
 
@@ -7485,7 +7485,7 @@ Wraps the float ``value`` between ``min`` and ``max``. Can be used for creating 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **wrapi**\ (\ value\: :ref:`int<class_int>`, min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **wrapi**\ (\ value\: :ref:`int<class_int>`, min\: :ref:`int<class_int>`, max\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GlobalScope_method_wrapi>`
 
 Wraps the integer ``value`` between ``min`` and ``max``. Can be used for creating loop-alike behavior or infinite surfaces.
 

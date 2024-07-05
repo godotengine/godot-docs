@@ -110,7 +110,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Font<class_Font>` **base_font**
+:ref:`Font<class_Font>` **base_font** :ref:`🔗<class_FontVariation_property_base_font>`
 
 .. rst-class:: classref-property-setget
 
@@ -127,7 +127,7 @@ Base font used to create a variation. If not set, default :ref:`Theme<class_Them
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **baseline_offset** = ``0.0``
+:ref:`float<class_float>` **baseline_offset** = ``0.0`` :ref:`🔗<class_FontVariation_property_baseline_offset>`
 
 .. rst-class:: classref-property-setget
 
@@ -144,7 +144,7 @@ Extra baseline offset (as a fraction of font height).
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **opentype_features** = ``{}``
+:ref:`Dictionary<class_Dictionary>` **opentype_features** = ``{}`` :ref:`🔗<class_FontVariation_property_opentype_features>`
 
 .. rst-class:: classref-property-setget
 
@@ -161,7 +161,7 @@ A set of OpenType feature tags. More info: `OpenType feature tags <https://docs.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **spacing_bottom** = ``0``
+:ref:`int<class_int>` **spacing_bottom** = ``0`` :ref:`🔗<class_FontVariation_property_spacing_bottom>`
 
 .. rst-class:: classref-property-setget
 
@@ -178,7 +178,7 @@ Extra spacing at the bottom of the line in pixels.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **spacing_glyph** = ``0``
+:ref:`int<class_int>` **spacing_glyph** = ``0`` :ref:`🔗<class_FontVariation_property_spacing_glyph>`
 
 .. rst-class:: classref-property-setget
 
@@ -195,7 +195,7 @@ Extra spacing between graphical glyphs.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **spacing_space** = ``0``
+:ref:`int<class_int>` **spacing_space** = ``0`` :ref:`🔗<class_FontVariation_property_spacing_space>`
 
 .. rst-class:: classref-property-setget
 
@@ -212,7 +212,7 @@ Extra width of the space glyphs.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **spacing_top** = ``0``
+:ref:`int<class_int>` **spacing_top** = ``0`` :ref:`🔗<class_FontVariation_property_spacing_top>`
 
 .. rst-class:: classref-property-setget
 
@@ -229,7 +229,7 @@ Extra spacing at the top of the line in pixels.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **variation_embolden** = ``0.0``
+:ref:`float<class_float>` **variation_embolden** = ``0.0`` :ref:`🔗<class_FontVariation_property_variation_embolden>`
 
 .. rst-class:: classref-property-setget
 
@@ -248,7 +248,7 @@ If is not equal to zero, emboldens the font outlines. Negative values reduce the
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **variation_face_index** = ``0``
+:ref:`int<class_int>` **variation_face_index** = ``0`` :ref:`🔗<class_FontVariation_property_variation_face_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -265,7 +265,7 @@ Active face index in the TrueType / OpenType collection file.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **variation_opentype** = ``{}``
+:ref:`Dictionary<class_Dictionary>` **variation_opentype** = ``{}`` :ref:`🔗<class_FontVariation_property_variation_opentype>`
 
 .. rst-class:: classref-property-setget
 
@@ -286,7 +286,7 @@ Font OpenType variation coordinates. More info: `OpenType variation tags <https:
 
 .. rst-class:: classref-property
 
-:ref:`Transform2D<class_Transform2D>` **variation_transform** = ``Transform2D(1, 0, 0, 1, 0, 0)``
+:ref:`Transform2D<class_Transform2D>` **variation_transform** = ``Transform2D(1, 0, 0, 1, 0, 0)`` :ref:`🔗<class_FontVariation_property_variation_transform>`
 
 .. rst-class:: classref-property-setget
 
@@ -310,7 +310,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **set_spacing**\ (\ spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`, value\: :ref:`int<class_int>`\ )
+|void| **set_spacing**\ (\ spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`, value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontVariation_method_set_spacing>`
 
 Sets the spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`) to ``value`` in pixels (not relative to the font size).
 

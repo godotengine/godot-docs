@@ -61,7 +61,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_FogVolume_property_material>`
 
 .. rst-class:: classref-property-setget
 
@@ -78,7 +78,7 @@ The :ref:`Material<class_Material>` used by the **FogVolume**. Can be either a b
 
 .. rst-class:: classref-property
 
-:ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` **shape** = ``3``
+:ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` **shape** = ``3`` :ref:`🔗<class_FogVolume_property_shape>`
 
 .. rst-class:: classref-property-setget
 
@@ -95,7 +95,7 @@ The shape of the **FogVolume**. This can be set to either :ref:`RenderingServer.
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)`` :ref:`🔗<class_FogVolume_property_size>`
 
 .. rst-class:: classref-property-setget
 

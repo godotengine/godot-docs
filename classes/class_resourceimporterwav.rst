@@ -71,13 +71,15 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compress/mode** = ``0``
+:ref:`int<class_int>` **compress/mode** = ``0`` :ref:`🔗<class_ResourceImporterWAV_property_compress/mode>`
 
 The compression mode to use on import.
 
 \ **Disabled:** Imports audio data without any compression. This results in the highest possible quality.
 
 \ **RAM (Ima-ADPCM):** Performs fast lossy compression on import. Low CPU cost, but quality is noticeably decreased compared to Ogg Vorbis or even MP3.
+
+\ **QOA (`Quite OK Audio <https://qoaformat.org/>`__):** Performs lossy compression on import. CPU cost is slightly higher than IMA-ADPCM, but quality is much higher.
 
 .. rst-class:: classref-item-separator
 
@@ -87,9 +89,9 @@ The compression mode to use on import.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **edit/loop_begin** = ``0``
+:ref:`int<class_int>` **edit/loop_begin** = ``0`` :ref:`🔗<class_ResourceImporterWAV_property_edit/loop_begin>`
 
-The begin loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong** or **Backward**. This is set in seconds after the beginning of the audio file.
+The begin loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong**, or **Backward**. This is set in samples after the beginning of the audio file.
 
 .. rst-class:: classref-item-separator
 
@@ -99,9 +101,9 @@ The begin loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **edit/loop_end** = ``-1``
+:ref:`int<class_int>` **edit/loop_end** = ``-1`` :ref:`🔗<class_ResourceImporterWAV_property_edit/loop_end>`
 
-The end loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong** or **Backward**. This is set in seconds after the beginning of the audio file. A value of ``-1`` uses the end of the audio file as the end loop point.
+The end loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong**, or **Backward**. This is set in samples after the beginning of the audio file. A value of ``-1`` uses the end of the audio file as the end loop point.
 
 .. rst-class:: classref-item-separator
 
@@ -111,7 +113,7 @@ The end loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_pr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **edit/loop_mode** = ``0``
+:ref:`int<class_int>` **edit/loop_mode** = ``0`` :ref:`🔗<class_ResourceImporterWAV_property_edit/loop_mode>`
 
 Controls how audio should loop. This is automatically read from the WAV metadata on import.
 
@@ -133,7 +135,7 @@ Controls how audio should loop. This is automatically read from the WAV metadata
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **edit/normalize** = ``false``
+:ref:`bool<class_bool>` **edit/normalize** = ``false`` :ref:`🔗<class_ResourceImporterWAV_property_edit/normalize>`
 
 If ``true``, normalize the audio volume so that its peak volume is equal to 0 dB. When enabled, normalization will make audio sound louder depending on its original peak volume.
 
@@ -145,7 +147,7 @@ If ``true``, normalize the audio volume so that its peak volume is equal to 0 dB
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **edit/trim** = ``false``
+:ref:`bool<class_bool>` **edit/trim** = ``false`` :ref:`🔗<class_ResourceImporterWAV_property_edit/trim>`
 
 If ``true``, automatically trim the beginning and end of the audio if it's lower than -50 dB after normalization (see :ref:`edit/normalize<class_ResourceImporterWAV_property_edit/normalize>`). This prevents having files with silence at the beginning or end, which increases their size unnecessarily and adds latency to the moment they are played back. A fade-in/fade-out period of 500 samples is also used during trimming to avoid audible pops.
 
@@ -157,7 +159,7 @@ If ``true``, automatically trim the beginning and end of the audio if it's lower
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **force/8_bit** = ``false``
+:ref:`bool<class_bool>` **force/8_bit** = ``false`` :ref:`🔗<class_ResourceImporterWAV_property_force/8_bit>`
 
 If ``true``, forces the imported audio to use 8-bit quantization if the source file is 16-bit or higher.
 
@@ -171,7 +173,7 @@ Enabling this is generally not recommended, as 8-bit quantization decreases audi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **force/max_rate** = ``false``
+:ref:`bool<class_bool>` **force/max_rate** = ``false`` :ref:`🔗<class_ResourceImporterWAV_property_force/max_rate>`
 
 If set to a value greater than ``0``, forces the audio's sample rate to be reduced to a value lower than or equal to the value specified in :ref:`force/max_rate_hz<class_ResourceImporterWAV_property_force/max_rate_hz>`.
 
@@ -185,7 +187,7 @@ This can decrease file size noticeably on certain sounds, without impacting qual
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **force/max_rate_hz** = ``44100``
+:ref:`float<class_float>` **force/max_rate_hz** = ``44100`` :ref:`🔗<class_ResourceImporterWAV_property_force/max_rate_hz>`
 
 The frequency to limit the imported audio sample to (in Hz). Only effective if :ref:`force/max_rate<class_ResourceImporterWAV_property_force/max_rate>` is ``true``.
 
@@ -197,7 +199,7 @@ The frequency to limit the imported audio sample to (in Hz). Only effective if :
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **force/mono** = ``false``
+:ref:`bool<class_bool>` **force/mono** = ``false`` :ref:`🔗<class_ResourceImporterWAV_property_force/mono>`
 
 If ``true``, forces the imported audio to be mono if the source file is stereo. This decreases the file size by 50% by merging the two channels into one.
 

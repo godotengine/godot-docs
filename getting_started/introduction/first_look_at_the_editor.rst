@@ -24,17 +24,25 @@ ones, and more.
 
 .. image:: img/editor_intro_project_manager.webp
 
-At the top of the window, there is another tab named "Asset Library Projects". You can search
-for demo projects in the open source asset library, which includes many projects
-developed by the community.
+At the top of the window, there is another tab named "Asset Library Projects". The first
+time you go to this tab you'll see a "Go Online" button. For privacy reasons the Godot
+project manager does not access the internet by default. To change this click
+the "Go Online button", if you want to change your network mode back to "offline" you
+can do so from the project manager settings.
+
+Once your network mode is set to "online" you can search for demo projects in the open
+source asset library, which includes many projects developed by the community.
 
 .. seealso:: To learn the Project Manager's ins and outs, read
              :ref:`doc_project_manager`.
 
 .. image:: img/editor_intro_project_templates.webp
 
-You can also change the editor's language using the drop-down menu to the right
-of the engine's version in the window's top-right corner. By default, it is in
+You can also change the editor's language by going into the settings menu.
+
+.. image:: img/editor_intro_settings.webp
+
+From here use the language drop down menu to select your language. By default, it is in
 English (EN).
 
 .. image:: img/editor_intro_language.webp

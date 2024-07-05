@@ -19,6 +19,7 @@ Some tutorials mentioned below provide more advanced tutorials, e.g. on 3D or sh
 Video tutorials
 ---------------
 
+- `Bastiaan Olij <https://www.youtube.com/BastiaanOlij>`_ (3D, AR and VR, GDScript)
 - `BornCG <https://www.youtube.com/playlist?list=PLda3VoSoc_TTp8Ng3C57spnNkOw3Hm_35>`_ (2D and 3D, GDScript)
 - `Clear Code <https://www.youtube.com/watch?v=nAh_Kx5Zh5Q>`_ (2D, GDScript, Programming Basics)
 - `FencerDevLog <https://www.youtube.com/@FencerDevLog>`_ (2D, 3D, GDScript, Shaders)
@@ -30,11 +31,14 @@ Video tutorials
 - `Gwizz <https://www.youtube.com/@Gwizz1027>`_ (2D, GDScript)
 - `Godotneers <https://www.youtube.com/@godotneers>`_ (2D, Shaders, GDScript)
 - `HeartBeast <https://www.youtube.com/@uheartbeast>`_ (2D, GDScript)
+- `Malcolm Nixon <https://youtube.com/@MalcolmAnixon>`_ (AR and VR, GDScript)
+- `Muddy Wolf <https://www.youtube.com/@MuddyWolf>`_ (2D, 3D and VR, GDSCript)
 - `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`__ (2D and 3D, GDScript)
 - `Maker Tech <https://www.youtube.com/@MakerTech/>`_ (2D, GDScript)
 - `Pigdev <https://www.youtube.com/@pigdev>`_ (2D, GDScript)
 - `Queble <https://www.youtube.com/@queblegamedevelopment4143>`_ (2D, GDScript)
 - `Quiver <https://quiver.dev/>`_ (2D, GDScript)
+- `Snopek Games <https://www.youtube.com/@SnopekGames>`_ (3D, networked multiplayer, AR and VR, GDScript)
 
 Text tutorials
 --------------
@@ -49,7 +53,6 @@ Text tutorials
 Devlogs
 -------
 
-- `Bastiaan Olij (AR & VR) <https://www.youtube.com/channel/UCrbLJYzJjDf2p-vJC011lYw/videos>`_
 - `bitbrain <https://www.youtube.com/@bitbraindev>`_
 - `DevDuck (2D) <https://www.youtube.com/@devduck/videos>`_
 
@@ -59,4 +62,3 @@ Resources
 - `awesome-godot: A curated list of free/libre plugins, scripts and add-ons <https://github.com/godotengine/awesome-godot>`_
 - `Godot Asset Library <https://godotengine.org/asset-library/asset>`_
 - `Godot Shaders: A community-driven shader library <https://godotshaders.com/>`_
-- `Zeef Godot Engine: A curated directory of resources by Andre Schmitz <https://godot-engine.zeef.com/andre.antonio.schmitz>`_

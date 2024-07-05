@@ -67,13 +67,15 @@ Properties
 .. table::
    :widths: auto
 
-   +------------------------------------------+------------------------------------------------------+---------------+
-   | :ref:`float<class_float>`                | :ref:`length<class_Animation_property_length>`       | ``1.0``       |
-   +------------------------------------------+------------------------------------------------------+---------------+
-   | :ref:`LoopMode<enum_Animation_LoopMode>` | :ref:`loop_mode<class_Animation_property_loop_mode>` | ``0``         |
-   +------------------------------------------+------------------------------------------------------+---------------+
-   | :ref:`float<class_float>`                | :ref:`step<class_Animation_property_step>`           | ``0.0333333`` |
-   +------------------------------------------+------------------------------------------------------+---------------+
+   +------------------------------------------+--------------------------------------------------------------------+---------------+
+   | :ref:`bool<class_bool>`                  | :ref:`capture_included<class_Animation_property_capture_included>` | ``false``     |
+   +------------------------------------------+--------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                | :ref:`length<class_Animation_property_length>`                     | ``1.0``       |
+   +------------------------------------------+--------------------------------------------------------------------+---------------+
+   | :ref:`LoopMode<enum_Animation_LoopMode>` | :ref:`loop_mode<class_Animation_property_loop_mode>`               | ``0``         |
+   +------------------------------------------+--------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                | :ref:`step<class_Animation_property_step>`                         | ``0.0333333`` |
+   +------------------------------------------+--------------------------------------------------------------------+---------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -158,7 +160,7 @@ Methods
    +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                              | :ref:`scale_track_interpolate<class_Animation_method_scale_track_interpolate>`\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                   |
    +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                      | :ref:`track_find_key<class_Animation_method_track_find_key>`\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, find_mode\: :ref:`FindMode<enum_Animation_FindMode>` = 0, limit\: :ref:`bool<class_bool>` = false\ ) |const|                                                                  |
+   | :ref:`int<class_int>`                                      | :ref:`track_find_key<class_Animation_method_track_find_key>`\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, find_mode\: :ref:`FindMode<enum_Animation_FindMode>` = 0, limit\: :ref:`bool<class_bool>` = false, backward\: :ref:`bool<class_bool>` = false\ ) |const|                      |
    +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                    | :ref:`track_get_interpolation_loop_wrap<class_Animation_method_track_get_interpolation_loop_wrap>`\ (\ track_idx\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                 |
    +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -232,7 +234,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TrackType**:
+enum **TrackType**: :ref:`🔗<enum_Animation_TrackType>`
 
 .. _class_Animation_constant_TYPE_VALUE:
 
@@ -314,7 +316,7 @@ Animation tracks play animations in other :ref:`AnimationPlayer<class_AnimationP
 
 .. rst-class:: classref-enumeration
 
-enum **InterpolationType**:
+enum **InterpolationType**: :ref:`🔗<enum_Animation_InterpolationType>`
 
 .. _class_Animation_constant_INTERPOLATION_NEAREST:
 
@@ -368,7 +370,7 @@ Cubic interpolation with shortest path rotation.
 
 .. rst-class:: classref-enumeration
 
-enum **UpdateMode**:
+enum **UpdateMode**: :ref:`🔗<enum_Animation_UpdateMode>`
 
 .. _class_Animation_constant_UPDATE_CONTINUOUS:
 
@@ -392,7 +394,7 @@ Update at the keyframes.
 
 :ref:`UpdateMode<enum_Animation_UpdateMode>` **UPDATE_CAPTURE** = ``2``
 
-Same as :ref:`UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` but works as a flag to capture the value of the current object and perform interpolation in some methods. See also :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>` and :ref:`AnimationPlayer.play_with_capture<class_AnimationPlayer_method_play_with_capture>`.
+Same as :ref:`UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` but works as a flag to capture the value of the current object and perform interpolation in some methods. See also :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>`, :ref:`AnimationPlayer.playback_auto_capture<class_AnimationPlayer_property_playback_auto_capture>`, and :ref:`AnimationPlayer.play_with_capture<class_AnimationPlayer_method_play_with_capture>`.
 
 .. rst-class:: classref-item-separator
 
@@ -402,7 +404,7 @@ Same as :ref:`UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` but
 
 .. rst-class:: classref-enumeration
 
-enum **LoopMode**:
+enum **LoopMode**: :ref:`🔗<enum_Animation_LoopMode>`
 
 .. _class_Animation_constant_LOOP_NONE:
 
@@ -436,7 +438,7 @@ Repeats playback and reverse playback at both ends of the animation.
 
 .. rst-class:: classref-enumeration
 
-enum **LoopedFlag**:
+enum **LoopedFlag**: :ref:`🔗<enum_Animation_LoopedFlag>`
 
 .. _class_Animation_constant_LOOPED_FLAG_NONE:
 
@@ -470,7 +472,7 @@ This flag indicates that the animation has reached the start of the animation an
 
 .. rst-class:: classref-enumeration
 
-enum **FindMode**:
+enum **FindMode**: :ref:`🔗<enum_Animation_FindMode>`
 
 .. _class_Animation_constant_FIND_MODE_NEAREST:
 
@@ -505,11 +507,27 @@ Finds only the key with matching the time.
 Property Descriptions
 ---------------------
 
+.. _class_Animation_property_capture_included:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **capture_included** = ``false`` :ref:`🔗<class_Animation_property_capture_included>`
+
+.. rst-class:: classref-property-setget
+
+- :ref:`bool<class_bool>` **is_capture_included**\ (\ )
+
+Returns ``true`` if the capture track is included. This is a cached readonly value for performance.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Animation_property_length:
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **length** = ``1.0``
+:ref:`float<class_float>` **length** = ``1.0`` :ref:`🔗<class_Animation_property_length>`
 
 .. rst-class:: classref-property-setget
 
@@ -528,7 +546,7 @@ The total length of the animation (in seconds).
 
 .. rst-class:: classref-property
 
-:ref:`LoopMode<enum_Animation_LoopMode>` **loop_mode** = ``0``
+:ref:`LoopMode<enum_Animation_LoopMode>` **loop_mode** = ``0`` :ref:`🔗<class_Animation_property_loop_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -545,7 +563,7 @@ Determines the behavior of both ends of the animation timeline during animation 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **step** = ``0.0333333``
+:ref:`float<class_float>` **step** = ``0.0333333`` :ref:`🔗<class_Animation_property_step>`
 
 .. rst-class:: classref-property-setget
 
@@ -567,7 +585,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **add_track**\ (\ type\: :ref:`TrackType<enum_Animation_TrackType>`, at_position\: :ref:`int<class_int>` = -1\ )
+:ref:`int<class_int>` **add_track**\ (\ type\: :ref:`TrackType<enum_Animation_TrackType>`, at_position\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_Animation_method_add_track>`
 
 Adds a track to the Animation.
 
@@ -579,7 +597,7 @@ Adds a track to the Animation.
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **animation_track_get_key_animation**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`StringName<class_StringName>` **animation_track_get_key_animation**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_animation_track_get_key_animation>`
 
 Returns the animation name at the key identified by ``key_idx``. The ``track_idx`` must be the index of an Animation Track.
 
@@ -591,7 +609,7 @@ Returns the animation name at the key identified by ``key_idx``. The ``track_idx
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **animation_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, animation\: :ref:`StringName<class_StringName>`\ )
+:ref:`int<class_int>` **animation_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, animation\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Animation_method_animation_track_insert_key>`
 
 Inserts a key with value ``animation`` at the given ``time`` (in seconds). The ``track_idx`` must be the index of an Animation Track.
 
@@ -603,7 +621,7 @@ Inserts a key with value ``animation`` at the given ``time`` (in seconds). The `
 
 .. rst-class:: classref-method
 
-|void| **animation_track_set_key_animation**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, animation\: :ref:`StringName<class_StringName>`\ )
+|void| **animation_track_set_key_animation**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, animation\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Animation_method_animation_track_set_key_animation>`
 
 Sets the key identified by ``key_idx`` to value ``animation``. The ``track_idx`` must be the index of an Animation Track.
 
@@ -615,7 +633,7 @@ Sets the key identified by ``key_idx`` to value ``animation``. The ``track_idx``
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **audio_track_get_key_end_offset**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **audio_track_get_key_end_offset**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_audio_track_get_key_end_offset>`
 
 Returns the end offset of the key identified by ``key_idx``. The ``track_idx`` must be the index of an Audio Track.
 
@@ -629,7 +647,7 @@ End offset is the number of seconds cut off at the ending of the audio stream.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **audio_track_get_key_start_offset**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **audio_track_get_key_start_offset**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_audio_track_get_key_start_offset>`
 
 Returns the start offset of the key identified by ``key_idx``. The ``track_idx`` must be the index of an Audio Track.
 
@@ -643,7 +661,7 @@ Start offset is the number of seconds cut off at the beginning of the audio stre
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **audio_track_get_key_stream**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Resource<class_Resource>` **audio_track_get_key_stream**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_audio_track_get_key_stream>`
 
 Returns the audio stream of the key identified by ``key_idx``. The ``track_idx`` must be the index of an Audio Track.
 
@@ -655,7 +673,7 @@ Returns the audio stream of the key identified by ``key_idx``. The ``track_idx``
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **audio_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, stream\: :ref:`Resource<class_Resource>`, start_offset\: :ref:`float<class_float>` = 0, end_offset\: :ref:`float<class_float>` = 0\ )
+:ref:`int<class_int>` **audio_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, stream\: :ref:`Resource<class_Resource>`, start_offset\: :ref:`float<class_float>` = 0, end_offset\: :ref:`float<class_float>` = 0\ ) :ref:`🔗<class_Animation_method_audio_track_insert_key>`
 
 Inserts an Audio Track key at the given ``time`` in seconds. The ``track_idx`` must be the index of an Audio Track.
 
@@ -669,7 +687,7 @@ Inserts an Audio Track key at the given ``time`` in seconds. The ``track_idx`` m
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **audio_track_is_use_blend**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **audio_track_is_use_blend**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_audio_track_is_use_blend>`
 
 Returns ``true`` if the track at ``track_idx`` will be blended with other animations.
 
@@ -681,7 +699,7 @@ Returns ``true`` if the track at ``track_idx`` will be blended with other animat
 
 .. rst-class:: classref-method
 
-|void| **audio_track_set_key_end_offset**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, offset\: :ref:`float<class_float>`\ )
+|void| **audio_track_set_key_end_offset**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, offset\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Animation_method_audio_track_set_key_end_offset>`
 
 Sets the end offset of the key identified by ``key_idx`` to value ``offset``. The ``track_idx`` must be the index of an Audio Track.
 
@@ -693,7 +711,7 @@ Sets the end offset of the key identified by ``key_idx`` to value ``offset``. Th
 
 .. rst-class:: classref-method
 
-|void| **audio_track_set_key_start_offset**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, offset\: :ref:`float<class_float>`\ )
+|void| **audio_track_set_key_start_offset**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, offset\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Animation_method_audio_track_set_key_start_offset>`
 
 Sets the start offset of the key identified by ``key_idx`` to value ``offset``. The ``track_idx`` must be the index of an Audio Track.
 
@@ -705,7 +723,7 @@ Sets the start offset of the key identified by ``key_idx`` to value ``offset``. 
 
 .. rst-class:: classref-method
 
-|void| **audio_track_set_key_stream**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, stream\: :ref:`Resource<class_Resource>`\ )
+|void| **audio_track_set_key_stream**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, stream\: :ref:`Resource<class_Resource>`\ ) :ref:`🔗<class_Animation_method_audio_track_set_key_stream>`
 
 Sets the stream of the key identified by ``key_idx`` to value ``stream``. The ``track_idx`` must be the index of an Audio Track.
 
@@ -717,7 +735,7 @@ Sets the stream of the key identified by ``key_idx`` to value ``stream``. The ``
 
 .. rst-class:: classref-method
 
-|void| **audio_track_set_use_blend**\ (\ track_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
+|void| **audio_track_set_use_blend**\ (\ track_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Animation_method_audio_track_set_use_blend>`
 
 Sets whether the track will be blended with other animations. If ``true``, the audio playback volume changes depending on the blend value.
 
@@ -729,7 +747,7 @@ Sets whether the track will be blended with other animations. If ``true``, the a
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **bezier_track_get_key_in_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **bezier_track_get_key_in_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_bezier_track_get_key_in_handle>`
 
 Returns the in handle of the key identified by ``key_idx``. The ``track_idx`` must be the index of a Bezier Track.
 
@@ -741,7 +759,7 @@ Returns the in handle of the key identified by ``key_idx``. The ``track_idx`` mu
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **bezier_track_get_key_out_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **bezier_track_get_key_out_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_bezier_track_get_key_out_handle>`
 
 Returns the out handle of the key identified by ``key_idx``. The ``track_idx`` must be the index of a Bezier Track.
 
@@ -753,7 +771,7 @@ Returns the out handle of the key identified by ``key_idx``. The ``track_idx`` m
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **bezier_track_get_key_value**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **bezier_track_get_key_value**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_bezier_track_get_key_value>`
 
 Returns the value of the key identified by ``key_idx``. The ``track_idx`` must be the index of a Bezier Track.
 
@@ -765,7 +783,7 @@ Returns the value of the key identified by ``key_idx``. The ``track_idx`` must b
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **bezier_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, value\: :ref:`float<class_float>`, in_handle\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0), out_handle\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ )
+:ref:`int<class_int>` **bezier_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, value\: :ref:`float<class_float>`, in_handle\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0), out_handle\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) :ref:`🔗<class_Animation_method_bezier_track_insert_key>`
 
 Inserts a Bezier Track key at the given ``time`` in seconds. The ``track_idx`` must be the index of a Bezier Track.
 
@@ -779,7 +797,7 @@ Inserts a Bezier Track key at the given ``time`` in seconds. The ``track_idx`` m
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **bezier_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`\ ) |const|
+:ref:`float<class_float>` **bezier_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Animation_method_bezier_track_interpolate>`
 
 Returns the interpolated value at the given ``time`` (in seconds). The ``track_idx`` must be the index of a Bezier Track.
 
@@ -791,7 +809,7 @@ Returns the interpolated value at the given ``time`` (in seconds). The ``track_i
 
 .. rst-class:: classref-method
 
-|void| **bezier_track_set_key_in_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, in_handle\: :ref:`Vector2<class_Vector2>`, balanced_value_time_ratio\: :ref:`float<class_float>` = 1.0\ )
+|void| **bezier_track_set_key_in_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, in_handle\: :ref:`Vector2<class_Vector2>`, balanced_value_time_ratio\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_Animation_method_bezier_track_set_key_in_handle>`
 
 Sets the in handle of the key identified by ``key_idx`` to value ``in_handle``. The ``track_idx`` must be the index of a Bezier Track.
 
@@ -803,7 +821,7 @@ Sets the in handle of the key identified by ``key_idx`` to value ``in_handle``. 
 
 .. rst-class:: classref-method
 
-|void| **bezier_track_set_key_out_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, out_handle\: :ref:`Vector2<class_Vector2>`, balanced_value_time_ratio\: :ref:`float<class_float>` = 1.0\ )
+|void| **bezier_track_set_key_out_handle**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, out_handle\: :ref:`Vector2<class_Vector2>`, balanced_value_time_ratio\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_Animation_method_bezier_track_set_key_out_handle>`
 
 Sets the out handle of the key identified by ``key_idx`` to value ``out_handle``. The ``track_idx`` must be the index of a Bezier Track.
 
@@ -815,7 +833,7 @@ Sets the out handle of the key identified by ``key_idx`` to value ``out_handle``
 
 .. rst-class:: classref-method
 
-|void| **bezier_track_set_key_value**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ )
+|void| **bezier_track_set_key_value**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Animation_method_bezier_track_set_key_value>`
 
 Sets the value of the key identified by ``key_idx`` to the given value. The ``track_idx`` must be the index of a Bezier Track.
 
@@ -827,7 +845,7 @@ Sets the value of the key identified by ``key_idx`` to the given value. The ``tr
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **blend_shape_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, amount\: :ref:`float<class_float>`\ )
+:ref:`int<class_int>` **blend_shape_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, amount\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Animation_method_blend_shape_track_insert_key>`
 
 Inserts a key in a given blend shape track. Returns the key index.
 
@@ -839,7 +857,7 @@ Inserts a key in a given blend shape track. Returns the key index.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **blend_shape_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`float<class_float>` **blend_shape_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Animation_method_blend_shape_track_interpolate>`
 
 Returns the interpolated blend shape value at the given time (in seconds). The ``track_idx`` must be the index of a blend shape track.
 
@@ -851,7 +869,7 @@ Returns the interpolated blend shape value at the given time (in seconds). The `
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_Animation_method_clear>`
 
 Clear the animation (clear all tracks and reset all).
 
@@ -863,7 +881,7 @@ Clear the animation (clear all tracks and reset all).
 
 .. rst-class:: classref-method
 
-|void| **compress**\ (\ page_size\: :ref:`int<class_int>` = 8192, fps\: :ref:`int<class_int>` = 120, split_tolerance\: :ref:`float<class_float>` = 4.0\ )
+|void| **compress**\ (\ page_size\: :ref:`int<class_int>` = 8192, fps\: :ref:`int<class_int>` = 120, split_tolerance\: :ref:`float<class_float>` = 4.0\ ) :ref:`🔗<class_Animation_method_compress>`
 
 Compress the animation and all its tracks in-place. This will make :ref:`track_is_compressed<class_Animation_method_track_is_compressed>` return ``true`` once called on this **Animation**. Compressed tracks require less memory to be played, and are designed to be used for complex 3D animations (such as cutscenes) imported from external 3D software. Compression is lossy, but the difference is usually not noticeable in real world conditions.
 
@@ -877,7 +895,7 @@ Compress the animation and all its tracks in-place. This will make :ref:`track_i
 
 .. rst-class:: classref-method
 
-|void| **copy_track**\ (\ track_idx\: :ref:`int<class_int>`, to_animation\: :ref:`Animation<class_Animation>`\ )
+|void| **copy_track**\ (\ track_idx\: :ref:`int<class_int>`, to_animation\: :ref:`Animation<class_Animation>`\ ) :ref:`🔗<class_Animation_method_copy_track>`
 
 Adds a new track to ``to_animation`` that is a copy of the given track from this animation.
 
@@ -889,7 +907,7 @@ Adds a new track to ``to_animation`` that is a copy of the given track from this
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **find_track**\ (\ path\: :ref:`NodePath<class_NodePath>`, type\: :ref:`TrackType<enum_Animation_TrackType>`\ ) |const|
+:ref:`int<class_int>` **find_track**\ (\ path\: :ref:`NodePath<class_NodePath>`, type\: :ref:`TrackType<enum_Animation_TrackType>`\ ) |const| :ref:`🔗<class_Animation_method_find_track>`
 
 Returns the index of the specified track. If the track is not found, return -1.
 
@@ -901,7 +919,7 @@ Returns the index of the specified track. If the track is not found, return -1.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_track_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_track_count**\ (\ ) |const| :ref:`🔗<class_Animation_method_get_track_count>`
 
 Returns the amount of tracks in the animation.
 
@@ -913,7 +931,7 @@ Returns the amount of tracks in the animation.
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **method_track_get_name**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`StringName<class_StringName>` **method_track_get_name**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_method_track_get_name>`
 
 Returns the method name of a method track.
 
@@ -925,7 +943,7 @@ Returns the method name of a method track.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **method_track_get_params**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Array<class_Array>` **method_track_get_params**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_method_track_get_params>`
 
 Returns the arguments values to be called on a method track for a given key in a given track.
 
@@ -937,7 +955,7 @@ Returns the arguments values to be called on a method track for a given key in a
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **position_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, position\: :ref:`Vector3<class_Vector3>`\ )
+:ref:`int<class_int>` **position_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, position\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_Animation_method_position_track_insert_key>`
 
 Inserts a key in a given 3D position track. Returns the key index.
 
@@ -949,7 +967,7 @@ Inserts a key in a given 3D position track. Returns the key index.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **position_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Vector3<class_Vector3>` **position_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Animation_method_position_track_interpolate>`
 
 Returns the interpolated position value at the given time (in seconds). The ``track_idx`` must be the index of a 3D position track.
 
@@ -961,7 +979,7 @@ Returns the interpolated position value at the given time (in seconds). The ``tr
 
 .. rst-class:: classref-method
 
-|void| **remove_track**\ (\ track_idx\: :ref:`int<class_int>`\ )
+|void| **remove_track**\ (\ track_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Animation_method_remove_track>`
 
 Removes a track by specifying the track index.
 
@@ -973,7 +991,7 @@ Removes a track by specifying the track index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **rotation_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, rotation\: :ref:`Quaternion<class_Quaternion>`\ )
+:ref:`int<class_int>` **rotation_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, rotation\: :ref:`Quaternion<class_Quaternion>`\ ) :ref:`🔗<class_Animation_method_rotation_track_insert_key>`
 
 Inserts a key in a given 3D rotation track. Returns the key index.
 
@@ -985,7 +1003,7 @@ Inserts a key in a given 3D rotation track. Returns the key index.
 
 .. rst-class:: classref-method
 
-:ref:`Quaternion<class_Quaternion>` **rotation_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Quaternion<class_Quaternion>` **rotation_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Animation_method_rotation_track_interpolate>`
 
 Returns the interpolated rotation value at the given time (in seconds). The ``track_idx`` must be the index of a 3D rotation track.
 
@@ -997,7 +1015,7 @@ Returns the interpolated rotation value at the given time (in seconds). The ``tr
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **scale_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, scale\: :ref:`Vector3<class_Vector3>`\ )
+:ref:`int<class_int>` **scale_track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, scale\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_Animation_method_scale_track_insert_key>`
 
 Inserts a key in a given 3D scale track. Returns the key index.
 
@@ -1009,7 +1027,7 @@ Inserts a key in a given 3D scale track. Returns the key index.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **scale_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Vector3<class_Vector3>` **scale_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Animation_method_scale_track_interpolate>`
 
 Returns the interpolated scale value at the given time (in seconds). The ``track_idx`` must be the index of a 3D scale track.
 
@@ -1021,11 +1039,15 @@ Returns the interpolated scale value at the given time (in seconds). The ``track
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **track_find_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, find_mode\: :ref:`FindMode<enum_Animation_FindMode>` = 0, limit\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`int<class_int>` **track_find_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, find_mode\: :ref:`FindMode<enum_Animation_FindMode>` = 0, limit\: :ref:`bool<class_bool>` = false, backward\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Animation_method_track_find_key>`
 
 Finds the key index by time in a given track. Optionally, only find it if the approx/exact time is given.
 
 If ``limit`` is ``true``, it does not return keys outside the animation range.
+
+If ``backward`` is ``true``, the direction is reversed in methods that rely on one directional processing.
+
+For example, in case ``find_mode`` is :ref:`FIND_MODE_NEAREST<class_Animation_constant_FIND_MODE_NEAREST>`, if there is no key in the current position just after seeked, the first key found is retrieved by searching before the position, but if ``backward`` is ``true``, the first key found is retrieved after the position.
 
 .. rst-class:: classref-item-separator
 
@@ -1035,7 +1057,7 @@ If ``limit`` is ``true``, it does not return keys outside the animation range.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **track_get_interpolation_loop_wrap**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **track_get_interpolation_loop_wrap**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_track_get_interpolation_loop_wrap>`
 
 Returns ``true`` if the track at ``track_idx`` wraps the interpolation loop. New tracks wrap the interpolation loop by default.
 
@@ -1047,7 +1069,7 @@ Returns ``true`` if the track at ``track_idx`` wraps the interpolation loop. New
 
 .. rst-class:: classref-method
 
-:ref:`InterpolationType<enum_Animation_InterpolationType>` **track_get_interpolation_type**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`InterpolationType<enum_Animation_InterpolationType>` **track_get_interpolation_type**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_track_get_interpolation_type>`
 
 Returns the interpolation type of a given track.
 
@@ -1059,7 +1081,7 @@ Returns the interpolation type of a given track.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **track_get_key_count**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **track_get_key_count**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_track_get_key_count>`
 
 Returns the number of keys in a given track.
 
@@ -1071,7 +1093,7 @@ Returns the number of keys in a given track.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **track_get_key_time**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **track_get_key_time**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_track_get_key_time>`
 
 Returns the time at which the key is located.
 
@@ -1083,7 +1105,7 @@ Returns the time at which the key is located.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **track_get_key_transition**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`float<class_float>` **track_get_key_transition**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_track_get_key_transition>`
 
 Returns the transition curve (easing) for a specific key (see the built-in math function :ref:`@GlobalScope.ease<class_@GlobalScope_method_ease>`).
 
@@ -1095,7 +1117,7 @@ Returns the transition curve (easing) for a specific key (see the built-in math 
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **track_get_key_value**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Variant<class_Variant>` **track_get_key_value**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_track_get_key_value>`
 
 Returns the value of a given key in a given track.
 
@@ -1107,7 +1129,7 @@ Returns the value of a given key in a given track.
 
 .. rst-class:: classref-method
 
-:ref:`NodePath<class_NodePath>` **track_get_path**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`NodePath<class_NodePath>` **track_get_path**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_track_get_path>`
 
 Gets the path of a track. For more information on the path format, see :ref:`track_set_path<class_Animation_method_track_set_path>`.
 
@@ -1119,7 +1141,7 @@ Gets the path of a track. For more information on the path format, see :ref:`tra
 
 .. rst-class:: classref-method
 
-:ref:`TrackType<enum_Animation_TrackType>` **track_get_type**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`TrackType<enum_Animation_TrackType>` **track_get_type**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_track_get_type>`
 
 Gets the type of a track.
 
@@ -1131,7 +1153,7 @@ Gets the type of a track.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, key\: :ref:`Variant<class_Variant>`, transition\: :ref:`float<class_float>` = 1\ )
+:ref:`int<class_int>` **track_insert_key**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, key\: :ref:`Variant<class_Variant>`, transition\: :ref:`float<class_float>` = 1\ ) :ref:`🔗<class_Animation_method_track_insert_key>`
 
 Inserts a generic key in a given track. Returns the key index.
 
@@ -1143,7 +1165,7 @@ Inserts a generic key in a given track. Returns the key index.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **track_is_compressed**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **track_is_compressed**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_track_is_compressed>`
 
 Returns ``true`` if the track is compressed, ``false`` otherwise. See also :ref:`compress<class_Animation_method_compress>`.
 
@@ -1155,7 +1177,7 @@ Returns ``true`` if the track is compressed, ``false`` otherwise. See also :ref:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **track_is_enabled**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **track_is_enabled**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_track_is_enabled>`
 
 Returns ``true`` if the track at index ``track_idx`` is enabled.
 
@@ -1167,7 +1189,7 @@ Returns ``true`` if the track at index ``track_idx`` is enabled.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **track_is_imported**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **track_is_imported**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_track_is_imported>`
 
 Returns ``true`` if the given track is imported. Else, return ``false``.
 
@@ -1179,7 +1201,7 @@ Returns ``true`` if the given track is imported. Else, return ``false``.
 
 .. rst-class:: classref-method
 
-|void| **track_move_down**\ (\ track_idx\: :ref:`int<class_int>`\ )
+|void| **track_move_down**\ (\ track_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Animation_method_track_move_down>`
 
 Moves a track down.
 
@@ -1191,7 +1213,7 @@ Moves a track down.
 
 .. rst-class:: classref-method
 
-|void| **track_move_to**\ (\ track_idx\: :ref:`int<class_int>`, to_idx\: :ref:`int<class_int>`\ )
+|void| **track_move_to**\ (\ track_idx\: :ref:`int<class_int>`, to_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Animation_method_track_move_to>`
 
 Changes the index position of track ``track_idx`` to the one defined in ``to_idx``.
 
@@ -1203,7 +1225,7 @@ Changes the index position of track ``track_idx`` to the one defined in ``to_idx
 
 .. rst-class:: classref-method
 
-|void| **track_move_up**\ (\ track_idx\: :ref:`int<class_int>`\ )
+|void| **track_move_up**\ (\ track_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Animation_method_track_move_up>`
 
 Moves a track up.
 
@@ -1215,7 +1237,7 @@ Moves a track up.
 
 .. rst-class:: classref-method
 
-|void| **track_remove_key**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ )
+|void| **track_remove_key**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Animation_method_track_remove_key>`
 
 Removes a key by index in a given track.
 
@@ -1227,7 +1249,7 @@ Removes a key by index in a given track.
 
 .. rst-class:: classref-method
 
-|void| **track_remove_key_at_time**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`\ )
+|void| **track_remove_key_at_time**\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Animation_method_track_remove_key_at_time>`
 
 Removes a key at ``time`` in a given track.
 
@@ -1239,7 +1261,7 @@ Removes a key at ``time`` in a given track.
 
 .. rst-class:: classref-method
 
-|void| **track_set_enabled**\ (\ track_idx\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **track_set_enabled**\ (\ track_idx\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Animation_method_track_set_enabled>`
 
 Enables/disables the given track. Tracks are enabled by default.
 
@@ -1251,7 +1273,7 @@ Enables/disables the given track. Tracks are enabled by default.
 
 .. rst-class:: classref-method
 
-|void| **track_set_imported**\ (\ track_idx\: :ref:`int<class_int>`, imported\: :ref:`bool<class_bool>`\ )
+|void| **track_set_imported**\ (\ track_idx\: :ref:`int<class_int>`, imported\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Animation_method_track_set_imported>`
 
 Sets the given track as imported or not.
 
@@ -1263,7 +1285,7 @@ Sets the given track as imported or not.
 
 .. rst-class:: classref-method
 
-|void| **track_set_interpolation_loop_wrap**\ (\ track_idx\: :ref:`int<class_int>`, interpolation\: :ref:`bool<class_bool>`\ )
+|void| **track_set_interpolation_loop_wrap**\ (\ track_idx\: :ref:`int<class_int>`, interpolation\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Animation_method_track_set_interpolation_loop_wrap>`
 
 If ``true``, the track at ``track_idx`` wraps the interpolation loop.
 
@@ -1275,7 +1297,7 @@ If ``true``, the track at ``track_idx`` wraps the interpolation loop.
 
 .. rst-class:: classref-method
 
-|void| **track_set_interpolation_type**\ (\ track_idx\: :ref:`int<class_int>`, interpolation\: :ref:`InterpolationType<enum_Animation_InterpolationType>`\ )
+|void| **track_set_interpolation_type**\ (\ track_idx\: :ref:`int<class_int>`, interpolation\: :ref:`InterpolationType<enum_Animation_InterpolationType>`\ ) :ref:`🔗<class_Animation_method_track_set_interpolation_type>`
 
 Sets the interpolation type of a given track.
 
@@ -1287,7 +1309,7 @@ Sets the interpolation type of a given track.
 
 .. rst-class:: classref-method
 
-|void| **track_set_key_time**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`\ )
+|void| **track_set_key_time**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Animation_method_track_set_key_time>`
 
 Sets the time of an existing key.
 
@@ -1299,7 +1321,7 @@ Sets the time of an existing key.
 
 .. rst-class:: classref-method
 
-|void| **track_set_key_transition**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, transition\: :ref:`float<class_float>`\ )
+|void| **track_set_key_transition**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`, transition\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Animation_method_track_set_key_transition>`
 
 Sets the transition curve (easing) for a specific key (see the built-in math function :ref:`@GlobalScope.ease<class_@GlobalScope_method_ease>`).
 
@@ -1311,7 +1333,7 @@ Sets the transition curve (easing) for a specific key (see the built-in math fun
 
 .. rst-class:: classref-method
 
-|void| **track_set_key_value**\ (\ track_idx\: :ref:`int<class_int>`, key\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **track_set_key_value**\ (\ track_idx\: :ref:`int<class_int>`, key\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Animation_method_track_set_key_value>`
 
 Sets the value of an existing key.
 
@@ -1323,7 +1345,7 @@ Sets the value of an existing key.
 
 .. rst-class:: classref-method
 
-|void| **track_set_path**\ (\ track_idx\: :ref:`int<class_int>`, path\: :ref:`NodePath<class_NodePath>`\ )
+|void| **track_set_path**\ (\ track_idx\: :ref:`int<class_int>`, path\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_Animation_method_track_set_path>`
 
 Sets the path of a track. Paths must be valid scene-tree paths to a node and must be specified starting from the parent node of the node that will reproduce the animation. Tracks that control properties or bones must append their name after the path, separated by ``":"``.
 
@@ -1337,7 +1359,7 @@ For example, ``"character/skeleton:ankle"`` or ``"character/mesh:transform/local
 
 .. rst-class:: classref-method
 
-|void| **track_swap**\ (\ track_idx\: :ref:`int<class_int>`, with_idx\: :ref:`int<class_int>`\ )
+|void| **track_swap**\ (\ track_idx\: :ref:`int<class_int>`, with_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Animation_method_track_swap>`
 
 Swaps the track ``track_idx``'s index position with the track ``with_idx``.
 
@@ -1349,7 +1371,7 @@ Swaps the track ``track_idx``'s index position with the track ``with_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`UpdateMode<enum_Animation_UpdateMode>` **value_track_get_update_mode**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`UpdateMode<enum_Animation_UpdateMode>` **value_track_get_update_mode**\ (\ track_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_value_track_get_update_mode>`
 
 Returns the update mode of a value track.
 
@@ -1361,9 +1383,11 @@ Returns the update mode of a value track.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **value_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const|
+:ref:`Variant<class_Variant>` **value_track_interpolate**\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_Animation_method_value_track_interpolate>`
 
 Returns the interpolated value at the given time (in seconds). The ``track_idx`` must be the index of a value track.
+
+A ``backward`` mainly affects the direction of key retrieval of the track with :ref:`UPDATE_DISCRETE<class_Animation_constant_UPDATE_DISCRETE>` converted by :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_DISCRETE_FORCE_CONTINUOUS>` to match the result with :ref:`track_find_key<class_Animation_method_track_find_key>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1373,7 +1397,7 @@ Returns the interpolated value at the given time (in seconds). The ``track_idx``
 
 .. rst-class:: classref-method
 
-|void| **value_track_set_update_mode**\ (\ track_idx\: :ref:`int<class_int>`, mode\: :ref:`UpdateMode<enum_Animation_UpdateMode>`\ )
+|void| **value_track_set_update_mode**\ (\ track_idx\: :ref:`int<class_int>`, mode\: :ref:`UpdateMode<enum_Animation_UpdateMode>`\ ) :ref:`🔗<class_Animation_method_value_track_set_update_mode>`
 
 Sets the update mode (see :ref:`UpdateMode<enum_Animation_UpdateMode>`) of a value track.
 

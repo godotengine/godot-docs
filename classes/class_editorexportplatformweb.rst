@@ -97,7 +97,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **custom_template/debug**
+:ref:`String<class_String>` **custom_template/debug** :ref:`🔗<class_EditorExportPlatformWeb_property_custom_template/debug>`
 
 File path to the custom export template used for debug builds. If left empty, the default template is used.
 
@@ -109,7 +109,7 @@ File path to the custom export template used for debug builds. If left empty, th
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **custom_template/release**
+:ref:`String<class_String>` **custom_template/release** :ref:`🔗<class_EditorExportPlatformWeb_property_custom_template/release>`
 
 File path to the custom export template used for release builds. If left empty, the default template is used.
 
@@ -121,7 +121,7 @@ File path to the custom export template used for release builds. If left empty, 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **html/canvas_resize_policy**
+:ref:`int<class_int>` **html/canvas_resize_policy** :ref:`🔗<class_EditorExportPlatformWeb_property_html/canvas_resize_policy>`
 
 Determines how the canvas should be resized by Godot.
 
@@ -139,7 +139,7 @@ Determines how the canvas should be resized by Godot.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **html/custom_html_shell**
+:ref:`String<class_String>` **html/custom_html_shell** :ref:`🔗<class_EditorExportPlatformWeb_property_html/custom_html_shell>`
 
 The custom HTML page that wraps the exported web build. If left empty, the default HTML shell is used.
 
@@ -153,7 +153,7 @@ For more information, see the :doc:`Customizing HTML5 Shell <../tutorials/platfo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **html/experimental_virtual_keyboard**
+:ref:`bool<class_bool>` **html/experimental_virtual_keyboard** :ref:`🔗<class_EditorExportPlatformWeb_property_html/experimental_virtual_keyboard>`
 
 **Experimental:** This property may be changed or removed in future versions.
 
@@ -167,7 +167,7 @@ If ``true``, embeds support for a virtual keyboard into the web page, which is s
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **html/export_icon**
+:ref:`bool<class_bool>` **html/export_icon** :ref:`🔗<class_EditorExportPlatformWeb_property_html/export_icon>`
 
 If ``true``, the project icon will be used as the favicon for this application's web page.
 
@@ -179,7 +179,7 @@ If ``true``, the project icon will be used as the favicon for this application's
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **html/focus_canvas_on_start**
+:ref:`bool<class_bool>` **html/focus_canvas_on_start** :ref:`🔗<class_EditorExportPlatformWeb_property_html/focus_canvas_on_start>`
 
 If ``true``, the canvas will be focused as soon as the application is loaded, if the browser window is already in focus.
 
@@ -191,7 +191,7 @@ If ``true``, the canvas will be focused as soon as the application is loaded, if
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **html/head_include**
+:ref:`String<class_String>` **html/head_include** :ref:`🔗<class_EditorExportPlatformWeb_property_html/head_include>`
 
 Additional HTML tags to include inside the ``<head>``, such as ``<meta>`` tags.
 
@@ -205,7 +205,7 @@ Additional HTML tags to include inside the ``<head>``, such as ``<meta>`` tags.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **progressive_web_app/background_color**
+:ref:`Color<class_Color>` **progressive_web_app/background_color** :ref:`🔗<class_EditorExportPlatformWeb_property_progressive_web_app/background_color>`
 
 The background color used behind the web application.
 
@@ -217,7 +217,7 @@ The background color used behind the web application.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **progressive_web_app/display**
+:ref:`int<class_int>` **progressive_web_app/display** :ref:`🔗<class_EditorExportPlatformWeb_property_progressive_web_app/display>`
 
 The `display mode <https://developer.mozilla.org/en-US/docs/Web/Manifest/display/>`__ to use for this progressive web application. Different browsers and platforms may not behave the same.
 
@@ -237,7 +237,7 @@ The `display mode <https://developer.mozilla.org/en-US/docs/Web/Manifest/display
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **progressive_web_app/enabled**
+:ref:`bool<class_bool>` **progressive_web_app/enabled** :ref:`🔗<class_EditorExportPlatformWeb_property_progressive_web_app/enabled>`
 
 If ``true``, turns this web build into a `progressive web application <https://en.wikipedia.org/wiki/Progressive_web_app>`__ (PWA).
 
@@ -249,7 +249,7 @@ If ``true``, turns this web build into a `progressive web application <https://e
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **progressive_web_app/ensure_cross_origin_isolation_headers**
+:ref:`bool<class_bool>` **progressive_web_app/ensure_cross_origin_isolation_headers** :ref:`🔗<class_EditorExportPlatformWeb_property_progressive_web_app/ensure_cross_origin_isolation_headers>`
 
 When enabled, the progressive web app will make sure that each request has cross-origin isolation headers (COEP/COOP).
 
@@ -263,7 +263,7 @@ This can simplify the setup to serve the exported game.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **progressive_web_app/icon_144x144**
+:ref:`String<class_String>` **progressive_web_app/icon_144x144** :ref:`🔗<class_EditorExportPlatformWeb_property_progressive_web_app/icon_144x144>`
 
 File path to the smallest icon for this web application. If not defined, defaults to the project icon.
 
@@ -277,7 +277,7 @@ File path to the smallest icon for this web application. If not defined, default
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **progressive_web_app/icon_180x180**
+:ref:`String<class_String>` **progressive_web_app/icon_180x180** :ref:`🔗<class_EditorExportPlatformWeb_property_progressive_web_app/icon_180x180>`
 
 File path to the small icon for this web application. If not defined, defaults to the project icon.
 
@@ -291,7 +291,7 @@ File path to the small icon for this web application. If not defined, defaults t
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **progressive_web_app/icon_512x512**
+:ref:`String<class_String>` **progressive_web_app/icon_512x512** :ref:`🔗<class_EditorExportPlatformWeb_property_progressive_web_app/icon_512x512>`
 
 File path to the smallest icon for this web application. If not defined, defaults to the project icon.
 
@@ -305,7 +305,7 @@ File path to the smallest icon for this web application. If not defined, default
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **progressive_web_app/offline_page**
+:ref:`String<class_String>` **progressive_web_app/offline_page** :ref:`🔗<class_EditorExportPlatformWeb_property_progressive_web_app/offline_page>`
 
 The page to display, should the server hosting the page not be available. This page is saved in the client's machine.
 
@@ -317,7 +317,7 @@ The page to display, should the server hosting the page not be available. This p
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **progressive_web_app/orientation**
+:ref:`int<class_int>` **progressive_web_app/orientation** :ref:`🔗<class_EditorExportPlatformWeb_property_progressive_web_app/orientation>`
 
 The orientation to use when the web application is run through a mobile device.
 
@@ -335,7 +335,7 @@ The orientation to use when the web application is run through a mobile device.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **variant/extensions_support**
+:ref:`bool<class_bool>` **variant/extensions_support** :ref:`🔗<class_EditorExportPlatformWeb_property_variant/extensions_support>`
 
 If ``true`` enables :ref:`GDExtension<class_GDExtension>` support for this web build.
 
@@ -347,7 +347,7 @@ If ``true`` enables :ref:`GDExtension<class_GDExtension>` support for this web b
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **variant/thread_support**
+:ref:`bool<class_bool>` **variant/thread_support** :ref:`🔗<class_EditorExportPlatformWeb_property_variant/thread_support>`
 
 If ``true``, the exported game will support threads. It requires `a "cross-origin isolated" website <https://web.dev/articles/coop-coep>`__, which may be difficult to set up and is limited for security reasons (such as not being able to communicate with third-party websites).
 
@@ -361,7 +361,7 @@ If ``false``, the exported game will not support threads. As a result, it is mor
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **vram_texture_compression/for_desktop**
+:ref:`bool<class_bool>` **vram_texture_compression/for_desktop** :ref:`🔗<class_EditorExportPlatformWeb_property_vram_texture_compression/for_desktop>`
 
 If ``true``, allows textures to be optimized for desktop through the S3TC algorithm.
 
@@ -373,7 +373,7 @@ If ``true``, allows textures to be optimized for desktop through the S3TC algori
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **vram_texture_compression/for_mobile**
+:ref:`bool<class_bool>` **vram_texture_compression/for_mobile** :ref:`🔗<class_EditorExportPlatformWeb_property_vram_texture_compression/for_mobile>`
 
 If ``true`` allows textures to be optimized for mobile through the ETC2 algorithm.
 

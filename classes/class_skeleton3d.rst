@@ -99,6 +99,8 @@ Methods
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform3D<class_Transform3D>`           | :ref:`get_bone_rest<class_Skeleton3D_method_get_bone_rest>`\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                         |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`             | :ref:`get_concatenated_bone_names<class_Skeleton3D_method_get_concatenated_bone_names>`\ (\ ) |const|                                                                                                                                                               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`get_parentless_bones<class_Skeleton3D_method_get_parentless_bones>`\ (\ ) |const|                                                                                                                                                                             |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`get_version<class_Skeleton3D_method_get_version>`\ (\ ) |const|                                                                                                                                                                                               |
@@ -159,7 +161,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**bone_enabled_changed**\ (\ bone_idx\: :ref:`int<class_int>`\ )
+**bone_enabled_changed**\ (\ bone_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Skeleton3D_signal_bone_enabled_changed>`
 
 Emitted when the bone at ``bone_idx`` is toggled with :ref:`set_bone_enabled<class_Skeleton3D_method_set_bone_enabled>`. Use :ref:`is_bone_enabled<class_Skeleton3D_method_is_bone_enabled>` to check the new value.
 
@@ -171,7 +173,7 @@ Emitted when the bone at ``bone_idx`` is toggled with :ref:`set_bone_enabled<cla
 
 .. rst-class:: classref-signal
 
-**bone_list_changed**\ (\ )
+**bone_list_changed**\ (\ ) :ref:`🔗<class_Skeleton3D_signal_bone_list_changed>`
 
 .. container:: contribute
 
@@ -185,7 +187,7 @@ Emitted when the bone at ``bone_idx`` is toggled with :ref:`set_bone_enabled<cla
 
 .. rst-class:: classref-signal
 
-**pose_updated**\ (\ )
+**pose_updated**\ (\ ) :ref:`🔗<class_Skeleton3D_signal_pose_updated>`
 
 Emitted when the pose is updated.
 
@@ -199,7 +201,7 @@ Emitted when the pose is updated.
 
 .. rst-class:: classref-signal
 
-**show_rest_only_changed**\ (\ )
+**show_rest_only_changed**\ (\ ) :ref:`🔗<class_Skeleton3D_signal_show_rest_only_changed>`
 
 Emitted when the value of :ref:`show_rest_only<class_Skeleton3D_property_show_rest_only>` changes.
 
@@ -211,7 +213,7 @@ Emitted when the value of :ref:`show_rest_only<class_Skeleton3D_property_show_re
 
 .. rst-class:: classref-signal
 
-**skeleton_updated**\ (\ )
+**skeleton_updated**\ (\ ) :ref:`🔗<class_Skeleton3D_signal_skeleton_updated>`
 
 Emitted when the final pose has been calculated will be applied to the skin in the update process.
 
@@ -230,7 +232,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ModifierCallbackModeProcess**:
+enum **ModifierCallbackModeProcess**: :ref:`🔗<enum_Skeleton3D_ModifierCallbackModeProcess>`
 
 .. _class_Skeleton3D_constant_MODIFIER_CALLBACK_MODE_PROCESS_PHYSICS:
 
@@ -261,7 +263,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**NOTIFICATION_UPDATE_SKELETON** = ``50``
+**NOTIFICATION_UPDATE_SKELETON** = ``50`` :ref:`🔗<class_Skeleton3D_constant_NOTIFICATION_UPDATE_SKELETON>`
 
 Notification received when this skeleton's pose needs to be updated. In that case, this is called only once per frame in a deferred process.
 
@@ -278,7 +280,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ModifierCallbackModeProcess<enum_Skeleton3D_ModifierCallbackModeProcess>` **modifier_callback_mode_process** = ``1``
+:ref:`ModifierCallbackModeProcess<enum_Skeleton3D_ModifierCallbackModeProcess>` **modifier_callback_mode_process** = ``1`` :ref:`🔗<class_Skeleton3D_property_modifier_callback_mode_process>`
 
 .. rst-class:: classref-property-setget
 
@@ -295,7 +297,7 @@ Sets the processing timing for the Modifier.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **motion_scale** = ``1.0``
+:ref:`float<class_float>` **motion_scale** = ``1.0`` :ref:`🔗<class_Skeleton3D_property_motion_scale>`
 
 .. rst-class:: classref-property-setget
 
@@ -314,7 +316,7 @@ Multiplies the 3D position track animation.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **show_rest_only** = ``false``
+:ref:`bool<class_bool>` **show_rest_only** = ``false`` :ref:`🔗<class_Skeleton3D_property_show_rest_only>`
 
 .. rst-class:: classref-property-setget
 
@@ -336,7 +338,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **add_bone**\ (\ name\: :ref:`String<class_String>`\ )
+:ref:`int<class_int>` **add_bone**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Skeleton3D_method_add_bone>`
 
 Adds a new bone with the given name. Returns the new bone's index, or ``-1`` if this method fails.
 
@@ -350,7 +352,7 @@ Adds a new bone with the given name. Returns the new bone's index, or ``-1`` if 
 
 .. rst-class:: classref-method
 
-|void| **clear_bones**\ (\ )
+|void| **clear_bones**\ (\ ) :ref:`🔗<class_Skeleton3D_method_clear_bones>`
 
 Clear all the bones in this skeleton.
 
@@ -362,7 +364,7 @@ Clear all the bones in this skeleton.
 
 .. rst-class:: classref-method
 
-|void| **clear_bones_global_pose_override**\ (\ )
+|void| **clear_bones_global_pose_override**\ (\ ) :ref:`🔗<class_Skeleton3D_method_clear_bones_global_pose_override>`
 
 **Deprecated:** This method may be changed or removed in future versions.
 
@@ -376,7 +378,7 @@ Removes the global pose override on all bones in the skeleton.
 
 .. rst-class:: classref-method
 
-:ref:`Skin<class_Skin>` **create_skin_from_rest_transforms**\ (\ )
+:ref:`Skin<class_Skin>` **create_skin_from_rest_transforms**\ (\ ) :ref:`🔗<class_Skeleton3D_method_create_skin_from_rest_transforms>`
 
 .. container:: contribute
 
@@ -390,9 +392,9 @@ Removes the global pose override on all bones in the skeleton.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **find_bone**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **find_bone**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_find_bone>`
 
-Returns the bone index that matches ``name`` as its name.
+Returns the bone index that matches ``name`` as its name. Returns ``-1`` if no bone with this name exists.
 
 .. rst-class:: classref-item-separator
 
@@ -402,7 +404,7 @@ Returns the bone index that matches ``name`` as its name.
 
 .. rst-class:: classref-method
 
-|void| **force_update_all_bone_transforms**\ (\ )
+|void| **force_update_all_bone_transforms**\ (\ ) :ref:`🔗<class_Skeleton3D_method_force_update_all_bone_transforms>`
 
 **Deprecated:** This method should only be called internally.
 
@@ -416,7 +418,7 @@ Force updates the bone transforms/poses for all bones in the skeleton.
 
 .. rst-class:: classref-method
 
-|void| **force_update_bone_child_transform**\ (\ bone_idx\: :ref:`int<class_int>`\ )
+|void| **force_update_bone_child_transform**\ (\ bone_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Skeleton3D_method_force_update_bone_child_transform>`
 
 Force updates the bone transform for the bone at ``bone_idx`` and all of its children.
 
@@ -428,7 +430,7 @@ Force updates the bone transform for the bone at ``bone_idx`` and all of its chi
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_animate_physical_bones**\ (\ ) |const|
+:ref:`bool<class_bool>` **get_animate_physical_bones**\ (\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_animate_physical_bones>`
 
 **Deprecated:** This method may be changed or removed in future versions.
 
@@ -440,7 +442,7 @@ Force updates the bone transform for the bone at ``bone_idx`` and all of its chi
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_bone_children**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_bone_children**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_children>`
 
 Returns an array containing the bone indexes of all the child node of the passed in bone, ``bone_idx``.
 
@@ -452,7 +454,7 @@ Returns an array containing the bone indexes of all the child node of the passed
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_bone_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_bone_count**\ (\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_count>`
 
 Returns the number of bones in the skeleton.
 
@@ -464,7 +466,7 @@ Returns the number of bones in the skeleton.
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_bone_global_pose**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_bone_global_pose**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_global_pose>`
 
 Returns the overall transform of the specified bone, with respect to the skeleton. Being relative to the skeleton frame, this is not the actual "global" transform of the bone.
 
@@ -478,7 +480,7 @@ Returns the overall transform of the specified bone, with respect to the skeleto
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_bone_global_pose_no_override**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_bone_global_pose_no_override**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_global_pose_no_override>`
 
 **Deprecated:** This method may be changed or removed in future versions.
 
@@ -492,7 +494,7 @@ Returns the overall transform of the specified bone, with respect to the skeleto
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_bone_global_pose_override**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_bone_global_pose_override**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_global_pose_override>`
 
 **Deprecated:** This method may be changed or removed in future versions.
 
@@ -506,7 +508,7 @@ Returns the global pose override transform for ``bone_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_bone_global_rest**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_bone_global_rest**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_global_rest>`
 
 Returns the global rest transform for ``bone_idx``.
 
@@ -518,7 +520,7 @@ Returns the global rest transform for ``bone_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_bone_name**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_bone_name**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_name>`
 
 Returns the name of the bone at index ``bone_idx``.
 
@@ -530,7 +532,7 @@ Returns the name of the bone at index ``bone_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_bone_parent**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_bone_parent**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_parent>`
 
 Returns the bone index which is the parent of the bone at ``bone_idx``. If -1, then bone has no parent.
 
@@ -544,7 +546,7 @@ Returns the bone index which is the parent of the bone at ``bone_idx``. If -1, t
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_bone_pose**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_bone_pose**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_pose>`
 
 Returns the pose transform of the specified bone.
 
@@ -558,7 +560,7 @@ Returns the pose transform of the specified bone.
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_bone_pose_position**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_bone_pose_position**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_pose_position>`
 
 Returns the pose position of the bone at ``bone_idx``. The returned :ref:`Vector3<class_Vector3>` is in the local coordinate space of the **Skeleton3D** node.
 
@@ -570,7 +572,7 @@ Returns the pose position of the bone at ``bone_idx``. The returned :ref:`Vector
 
 .. rst-class:: classref-method
 
-:ref:`Quaternion<class_Quaternion>` **get_bone_pose_rotation**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Quaternion<class_Quaternion>` **get_bone_pose_rotation**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_pose_rotation>`
 
 Returns the pose rotation of the bone at ``bone_idx``. The returned :ref:`Quaternion<class_Quaternion>` is local to the bone with respect to the rotation of any parent bones.
 
@@ -582,7 +584,7 @@ Returns the pose rotation of the bone at ``bone_idx``. The returned :ref:`Quater
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_bone_pose_scale**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **get_bone_pose_scale**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_pose_scale>`
 
 Returns the pose scale of the bone at ``bone_idx``.
 
@@ -594,9 +596,23 @@ Returns the pose scale of the bone at ``bone_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_bone_rest**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_bone_rest**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_bone_rest>`
 
 Returns the rest transform for a bone ``bone_idx``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Skeleton3D_method_get_concatenated_bone_names:
+
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **get_concatenated_bone_names**\ (\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_concatenated_bone_names>`
+
+Returns all bone names concatenated with commas (``,``) as a single :ref:`StringName<class_StringName>`.
+
+It is useful to set it as a hint for the enum property.
 
 .. rst-class:: classref-item-separator
 
@@ -606,7 +622,7 @@ Returns the rest transform for a bone ``bone_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_parentless_bones**\ (\ ) |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_parentless_bones**\ (\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_parentless_bones>`
 
 Returns an array with all of the bones that are parentless. Another way to look at this is that it returns the indexes of all the bones that are not dependent or modified by other bones in the Skeleton.
 
@@ -618,7 +634,7 @@ Returns an array with all of the bones that are parentless. Another way to look 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_version**\ (\ ) |const|
+:ref:`int<class_int>` **get_version**\ (\ ) |const| :ref:`🔗<class_Skeleton3D_method_get_version>`
 
 Returns the number of times the bone hierarchy has changed within this skeleton, including renames.
 
@@ -634,7 +650,7 @@ Use for invalidating caches in IK solvers and other nodes which process bones.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_bone_enabled**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const|
+:ref:`bool<class_bool>` **is_bone_enabled**\ (\ bone_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Skeleton3D_method_is_bone_enabled>`
 
 Returns whether the bone pose for the bone at ``bone_idx`` is enabled.
 
@@ -646,7 +662,7 @@ Returns whether the bone pose for the bone at ``bone_idx`` is enabled.
 
 .. rst-class:: classref-method
 
-|void| **localize_rests**\ (\ )
+|void| **localize_rests**\ (\ ) :ref:`🔗<class_Skeleton3D_method_localize_rests>`
 
 Returns all bones in the skeleton to their rest poses.
 
@@ -658,7 +674,7 @@ Returns all bones in the skeleton to their rest poses.
 
 .. rst-class:: classref-method
 
-|void| **physical_bones_add_collision_exception**\ (\ exception\: :ref:`RID<class_RID>`\ )
+|void| **physical_bones_add_collision_exception**\ (\ exception\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_Skeleton3D_method_physical_bones_add_collision_exception>`
 
 **Deprecated:** This method may be changed or removed in future versions.
 
@@ -674,7 +690,7 @@ Works just like the :ref:`RigidBody3D<class_RigidBody3D>` node.
 
 .. rst-class:: classref-method
 
-|void| **physical_bones_remove_collision_exception**\ (\ exception\: :ref:`RID<class_RID>`\ )
+|void| **physical_bones_remove_collision_exception**\ (\ exception\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_Skeleton3D_method_physical_bones_remove_collision_exception>`
 
 **Deprecated:** This method may be changed or removed in future versions.
 
@@ -690,7 +706,7 @@ Works just like the :ref:`RigidBody3D<class_RigidBody3D>` node.
 
 .. rst-class:: classref-method
 
-|void| **physical_bones_start_simulation**\ (\ bones\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = []\ )
+|void| **physical_bones_start_simulation**\ (\ bones\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = []\ ) :ref:`🔗<class_Skeleton3D_method_physical_bones_start_simulation>`
 
 **Deprecated:** This method may be changed or removed in future versions.
 
@@ -706,7 +722,7 @@ Optionally, a list of bone names can be passed-in, allowing only the passed-in b
 
 .. rst-class:: classref-method
 
-|void| **physical_bones_stop_simulation**\ (\ )
+|void| **physical_bones_stop_simulation**\ (\ ) :ref:`🔗<class_Skeleton3D_method_physical_bones_stop_simulation>`
 
 **Deprecated:** This method may be changed or removed in future versions.
 
@@ -720,7 +736,7 @@ Tells the :ref:`PhysicalBone3D<class_PhysicalBone3D>` nodes in the Skeleton to s
 
 .. rst-class:: classref-method
 
-:ref:`SkinReference<class_SkinReference>` **register_skin**\ (\ skin\: :ref:`Skin<class_Skin>`\ )
+:ref:`SkinReference<class_SkinReference>` **register_skin**\ (\ skin\: :ref:`Skin<class_Skin>`\ ) :ref:`🔗<class_Skeleton3D_method_register_skin>`
 
 Binds the given Skin to the Skeleton.
 
@@ -732,7 +748,7 @@ Binds the given Skin to the Skeleton.
 
 .. rst-class:: classref-method
 
-|void| **reset_bone_pose**\ (\ bone_idx\: :ref:`int<class_int>`\ )
+|void| **reset_bone_pose**\ (\ bone_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Skeleton3D_method_reset_bone_pose>`
 
 Sets the bone pose to rest for ``bone_idx``.
 
@@ -744,7 +760,7 @@ Sets the bone pose to rest for ``bone_idx``.
 
 .. rst-class:: classref-method
 
-|void| **reset_bone_poses**\ (\ )
+|void| **reset_bone_poses**\ (\ ) :ref:`🔗<class_Skeleton3D_method_reset_bone_poses>`
 
 Sets all bone poses to rests.
 
@@ -756,9 +772,13 @@ Sets all bone poses to rests.
 
 .. rst-class:: classref-method
 
-|void| **set_animate_physical_bones**\ (\ enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_animate_physical_bones**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Skeleton3D_method_set_animate_physical_bones>`
 
 **Deprecated:** This method may be changed or removed in future versions.
+
+This method exists for compatibility with old structures in which the **Skeleton3D** does not have a :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>` as a child, but directly has :ref:`PhysicalBone3D<class_PhysicalBone3D>`\ s as children.
+
+In case you need to raycast to it without running :ref:`physical_bones_start_simulation<class_Skeleton3D_method_physical_bones_start_simulation>`, call this method with ``enabled == true``.
 
 .. rst-class:: classref-item-separator
 
@@ -768,7 +788,7 @@ Sets all bone poses to rests.
 
 .. rst-class:: classref-method
 
-|void| **set_bone_enabled**\ (\ bone_idx\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>` = true\ )
+|void| **set_bone_enabled**\ (\ bone_idx\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_enabled>`
 
 Disables the pose for the bone at ``bone_idx`` if ``false``, enables the bone pose if ``true``.
 
@@ -780,7 +800,7 @@ Disables the pose for the bone at ``bone_idx`` if ``false``, enables the bone po
 
 .. rst-class:: classref-method
 
-|void| **set_bone_global_pose**\ (\ bone_idx\: :ref:`int<class_int>`, pose\: :ref:`Transform3D<class_Transform3D>`\ )
+|void| **set_bone_global_pose**\ (\ bone_idx\: :ref:`int<class_int>`, pose\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_global_pose>`
 
 Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
@@ -794,7 +814,7 @@ Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
 .. rst-class:: classref-method
 
-|void| **set_bone_global_pose_override**\ (\ bone_idx\: :ref:`int<class_int>`, pose\: :ref:`Transform3D<class_Transform3D>`, amount\: :ref:`float<class_float>`, persistent\: :ref:`bool<class_bool>` = false\ )
+|void| **set_bone_global_pose_override**\ (\ bone_idx\: :ref:`int<class_int>`, pose\: :ref:`Transform3D<class_Transform3D>`, amount\: :ref:`float<class_float>`, persistent\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_global_pose_override>`
 
 **Deprecated:** This method may be changed or removed in future versions.
 
@@ -812,7 +832,7 @@ Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
 .. rst-class:: classref-method
 
-|void| **set_bone_name**\ (\ bone_idx\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )
+|void| **set_bone_name**\ (\ bone_idx\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_name>`
 
 Sets the bone name, ``name``, for the bone at ``bone_idx``.
 
@@ -824,7 +844,7 @@ Sets the bone name, ``name``, for the bone at ``bone_idx``.
 
 .. rst-class:: classref-method
 
-|void| **set_bone_parent**\ (\ bone_idx\: :ref:`int<class_int>`, parent_idx\: :ref:`int<class_int>`\ )
+|void| **set_bone_parent**\ (\ bone_idx\: :ref:`int<class_int>`, parent_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_parent>`
 
 Sets the bone index ``parent_idx`` as the parent of the bone at ``bone_idx``. If -1, then bone has no parent.
 
@@ -838,7 +858,7 @@ Sets the bone index ``parent_idx`` as the parent of the bone at ``bone_idx``. If
 
 .. rst-class:: classref-method
 
-|void| **set_bone_pose**\ (\ bone_idx\: :ref:`int<class_int>`, pose\: :ref:`Transform3D<class_Transform3D>`\ )
+|void| **set_bone_pose**\ (\ bone_idx\: :ref:`int<class_int>`, pose\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_pose>`
 
 Sets the pose transform, ``pose``, for the bone at ``bone_idx``.
 
@@ -850,7 +870,7 @@ Sets the pose transform, ``pose``, for the bone at ``bone_idx``.
 
 .. rst-class:: classref-method
 
-|void| **set_bone_pose_position**\ (\ bone_idx\: :ref:`int<class_int>`, position\: :ref:`Vector3<class_Vector3>`\ )
+|void| **set_bone_pose_position**\ (\ bone_idx\: :ref:`int<class_int>`, position\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_pose_position>`
 
 Sets the pose position of the bone at ``bone_idx`` to ``position``. ``position`` is a :ref:`Vector3<class_Vector3>` describing a position local to the **Skeleton3D** node.
 
@@ -862,7 +882,7 @@ Sets the pose position of the bone at ``bone_idx`` to ``position``. ``position``
 
 .. rst-class:: classref-method
 
-|void| **set_bone_pose_rotation**\ (\ bone_idx\: :ref:`int<class_int>`, rotation\: :ref:`Quaternion<class_Quaternion>`\ )
+|void| **set_bone_pose_rotation**\ (\ bone_idx\: :ref:`int<class_int>`, rotation\: :ref:`Quaternion<class_Quaternion>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_pose_rotation>`
 
 Sets the pose rotation of the bone at ``bone_idx`` to ``rotation``. ``rotation`` is a :ref:`Quaternion<class_Quaternion>` describing a rotation in the bone's local coordinate space with respect to the rotation of any parent bones.
 
@@ -874,7 +894,7 @@ Sets the pose rotation of the bone at ``bone_idx`` to ``rotation``. ``rotation``
 
 .. rst-class:: classref-method
 
-|void| **set_bone_pose_scale**\ (\ bone_idx\: :ref:`int<class_int>`, scale\: :ref:`Vector3<class_Vector3>`\ )
+|void| **set_bone_pose_scale**\ (\ bone_idx\: :ref:`int<class_int>`, scale\: :ref:`Vector3<class_Vector3>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_pose_scale>`
 
 Sets the pose scale of the bone at ``bone_idx`` to ``scale``.
 
@@ -886,7 +906,7 @@ Sets the pose scale of the bone at ``bone_idx`` to ``scale``.
 
 .. rst-class:: classref-method
 
-|void| **set_bone_rest**\ (\ bone_idx\: :ref:`int<class_int>`, rest\: :ref:`Transform3D<class_Transform3D>`\ )
+|void| **set_bone_rest**\ (\ bone_idx\: :ref:`int<class_int>`, rest\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_Skeleton3D_method_set_bone_rest>`
 
 Sets the rest transform for bone ``bone_idx``.
 
@@ -898,7 +918,7 @@ Sets the rest transform for bone ``bone_idx``.
 
 .. rst-class:: classref-method
 
-|void| **unparent_bone_and_rest**\ (\ bone_idx\: :ref:`int<class_int>`\ )
+|void| **unparent_bone_and_rest**\ (\ bone_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Skeleton3D_method_unparent_bone_and_rest>`
 
 Unparents the bone at ``bone_idx`` and sets its rest position to that of its parent prior to being reset.
 

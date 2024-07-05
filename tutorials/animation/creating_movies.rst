@@ -121,7 +121,7 @@ Movie Maker can also be enabled from the :ref:`command line <doc_command_line_tu
 If the output path is relative, then it is **relative to the project folder**,
 not the current working directory. In the above example, the file will be
 written to ``/path/to/your_project/output.avi``. This behavior is similar to the
-``--export`` command line argument.
+``--export-release`` command line argument.
 
 Since Movie Maker's output resolution is set by the viewport size, you can
 adjust the window size on startup to override it if the project uses the

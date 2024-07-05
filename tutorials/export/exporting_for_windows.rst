@@ -44,13 +44,13 @@ Settings need to be changed in two places. First, in the editor settings, under
 you're using Windows navigate to and select ``SignTool.exe``, if you're on a different
 OS select ``osslsigncode``.
 
-.. image:: img/windows_editor_settings.png
+.. image:: img/windows_editor_settings.webp
 
 The second location is the Windows export preset, which can be found in
 **Project > Export...**. Add a windows desktop preset if you haven't already.
 Under options there is a code signing category.
 
-.. image:: img/windows_export_codesign.png
+.. image:: img/windows_export_codesign.webp
 
 ``Enabled`` must be set to true, and ``Identity`` must be set to the signing
 certificate. The other settings can be adjusted as needed. Once this is Done

@@ -137,6 +137,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`audio/general/3d_panning_strength<class_ProjectSettings_property_audio/general/3d_panning_strength>`                                                                                                 | ``0.5``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`audio/general/default_playback_type<class_ProjectSettings_property_audio/general/default_playback_type>`                                                                                             | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`audio/general/default_playback_type.web<class_ProjectSettings_property_audio/general/default_playback_type.web>`                                                                                     | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`audio/general/ios/mix_with_others<class_ProjectSettings_property_audio/general/ios/mix_with_others>`                                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`audio/general/ios/session_category<class_ProjectSettings_property_audio/general/ios/session_category>`                                                                                               | ``0``                                                                                            |
@@ -172,6 +176,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/assert_always_false<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_false>`                                                                             | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/assert_always_true<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_true>`                                                                               | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_capture_reassignment<class_ProjectSettings_property_debug/gdscript/warnings/confusable_capture_reassignment>`                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_identifier<class_ProjectSettings_property_debug/gdscript/warnings/confusable_identifier>`                                                                         | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1495,7 +1501,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/renderer/rendering_method.web<class_ProjectSettings_property_rendering/renderer/rendering_method.web>`                                                                                     | ``"gl_compatibility"``                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/agility_sdk_version<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`                                                           | ``610``                                                                                          |
+   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/agility_sdk_version<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`                                                           | ``613``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/max_misc_descriptors_per_frame<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_misc_descriptors_per_frame>`                                     | ``512``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1599,6 +1605,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/eye_gaze_interaction<class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction>`                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_interaction_profile<class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile>`                                                                         | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                         | ``"0"``                                                                                          |
@@ -1677,7 +1685,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**settings_changed**\ (\ )
+**settings_changed**\ (\ ) :ref:`🔗<class_ProjectSettings_signal_settings_changed>`
 
 Emitted when any setting is changed, up to once per process frame.
 
@@ -1694,7 +1702,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **animation/warnings/check_angle_interpolation_type_conflicting** = ``true``
+:ref:`bool<class_bool>` **animation/warnings/check_angle_interpolation_type_conflicting** = ``true`` :ref:`🔗<class_ProjectSettings_property_animation/warnings/check_angle_interpolation_type_conflicting>`
 
 If ``true``, :ref:`AnimationMixer<class_AnimationMixer>` prints the warning of interpolation being forced to choose the shortest rotation path due to multiple angle interpolation types being mixed in the :ref:`AnimationMixer<class_AnimationMixer>` cache.
 
@@ -1706,7 +1714,7 @@ If ``true``, :ref:`AnimationMixer<class_AnimationMixer>` prints the warning of i
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **animation/warnings/check_invalid_track_paths** = ``true``
+:ref:`bool<class_bool>` **animation/warnings/check_invalid_track_paths** = ``true`` :ref:`🔗<class_ProjectSettings_property_animation/warnings/check_invalid_track_paths>`
 
 If ``true``, :ref:`AnimationMixer<class_AnimationMixer>` prints the warning of no matching object of the track path in the scene.
 
@@ -1718,7 +1726,7 @@ If ``true``, :ref:`AnimationMixer<class_AnimationMixer>` prints the warning of n
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **application/boot_splash/bg_color** = ``Color(0.14, 0.14, 0.14, 1)``
+:ref:`Color<class_Color>` **application/boot_splash/bg_color** = ``Color(0.14, 0.14, 0.14, 1)`` :ref:`🔗<class_ProjectSettings_property_application/boot_splash/bg_color>`
 
 Background color for the boot splash.
 
@@ -1730,7 +1738,7 @@ Background color for the boot splash.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/boot_splash/fullsize** = ``true``
+:ref:`bool<class_bool>` **application/boot_splash/fullsize** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/boot_splash/fullsize>`
 
 If ``true``, scale the boot splash image to the full window size (preserving the aspect ratio) when the engine starts. If ``false``, the engine will leave it at the default pixel size.
 
@@ -1742,7 +1750,7 @@ If ``true``, scale the boot splash image to the full window size (preserving the
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **application/boot_splash/image** = ``""``
+:ref:`String<class_String>` **application/boot_splash/image** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/boot_splash/image>`
 
 Path to an image used as the boot splash. If left empty, the default Godot Engine splash will be displayed instead.
 
@@ -1760,7 +1768,7 @@ Path to an image used as the boot splash. If left empty, the default Godot Engin
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **application/boot_splash/minimum_display_time** = ``0``
+:ref:`int<class_int>` **application/boot_splash/minimum_display_time** = ``0`` :ref:`🔗<class_ProjectSettings_property_application/boot_splash/minimum_display_time>`
 
 Minimum boot splash display time (in milliseconds). It is not recommended to set too high values for this setting.
 
@@ -1772,7 +1780,7 @@ Minimum boot splash display time (in milliseconds). It is not recommended to set
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/boot_splash/show_image** = ``true``
+:ref:`bool<class_bool>` **application/boot_splash/show_image** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/boot_splash/show_image>`
 
 If ``true``, displays the image specified in :ref:`application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>` when the engine starts. If ``false``, only displays the plain color specified in :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>`.
 
@@ -1784,7 +1792,7 @@ If ``true``, displays the image specified in :ref:`application/boot_splash/image
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/boot_splash/use_filter** = ``true``
+:ref:`bool<class_bool>` **application/boot_splash/use_filter** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/boot_splash/use_filter>`
 
 If ``true``, applies linear filtering when scaling the image (recommended for high-resolution artwork). If ``false``, uses nearest-neighbor interpolation (recommended for pixel art).
 
@@ -1796,7 +1804,7 @@ If ``true``, applies linear filtering when scaling the image (recommended for hi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/config/auto_accept_quit** = ``true``
+:ref:`bool<class_bool>` **application/config/auto_accept_quit** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/config/auto_accept_quit>`
 
 If ``true``, the application automatically accepts quitting requests.
 
@@ -1808,11 +1816,13 @@ If ``true``, the application automatically accepts quitting requests.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **application/config/custom_user_dir_name** = ``""``
+:ref:`String<class_String>` **application/config/custom_user_dir_name** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/config/custom_user_dir_name>`
 
 This user directory is used for storing persistent data (``user://`` filesystem). If a custom directory name is defined, this name will be appended to the system-specific user data directory (same parent folder as the Godot configuration folder documented in :ref:`OS.get_user_data_dir<class_OS_method_get_user_data_dir>`).
 
 The :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>` setting must be enabled for this to take effect.
+
+\ **Note:** If :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>` contains trailing periods, they will be stripped as folder names ending with a period are not allowed on Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -1822,7 +1832,7 @@ The :ref:`application/config/use_custom_user_dir<class_ProjectSettings_property_
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **application/config/description** = ``""``
+:ref:`String<class_String>` **application/config/description** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/config/description>`
 
 The project's description, displayed as a tooltip in the Project Manager when hovering the project.
 
@@ -1834,7 +1844,7 @@ The project's description, displayed as a tooltip in the Project Manager when ho
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **application/config/icon** = ``""``
+:ref:`String<class_String>` **application/config/icon** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/config/icon>`
 
 Icon used for the project, set when project loads. Exporters will also use this icon as a fallback if necessary.
 
@@ -1846,7 +1856,7 @@ Icon used for the project, set when project loads. Exporters will also use this 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **application/config/macos_native_icon** = ``""``
+:ref:`String<class_String>` **application/config/macos_native_icon** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/config/macos_native_icon>`
 
 Icon set in ``.icns`` format used on macOS to set the game's icon. This is done automatically on start by calling :ref:`DisplayServer.set_native_icon<class_DisplayServer_method_set_native_icon>`.
 
@@ -1858,7 +1868,7 @@ Icon set in ``.icns`` format used on macOS to set the game's icon. This is done 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **application/config/name** = ``""``
+:ref:`String<class_String>` **application/config/name** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/config/name>`
 
 The project's name. It is used both by the Project Manager and by exporters. The project name can be translated by translating its value in localization files. The window title will be set to match the project name automatically on startup.
 
@@ -1872,7 +1882,7 @@ The project's name. It is used both by the Project Manager and by exporters. The
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **application/config/name_localized** = ``{}``
+:ref:`Dictionary<class_Dictionary>` **application/config/name_localized** = ``{}`` :ref:`🔗<class_ProjectSettings_property_application/config/name_localized>`
 
 Translations of the project's name. This setting is used by OS tools to translate application name on Android, iOS and macOS.
 
@@ -1884,7 +1894,7 @@ Translations of the project's name. This setting is used by OS tools to translat
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **application/config/project_settings_override** = ``""``
+:ref:`String<class_String>` **application/config/project_settings_override** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/config/project_settings_override>`
 
 Specifies a file to override project settings. For example: ``user://custom_settings.cfg``. See "Overriding" in the **ProjectSettings** class description at the top for more information.
 
@@ -1898,7 +1908,7 @@ Specifies a file to override project settings. For example: ``user://custom_sett
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/config/quit_on_go_back** = ``true``
+:ref:`bool<class_bool>` **application/config/quit_on_go_back** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/config/quit_on_go_back>`
 
 If ``true``, the application quits automatically when navigating back (e.g. using the system "Back" button on Android).
 
@@ -1910,7 +1920,7 @@ If ``true``, the application quits automatically when navigating back (e.g. usin
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/config/use_custom_user_dir** = ``false``
+:ref:`bool<class_bool>` **application/config/use_custom_user_dir** = ``false`` :ref:`🔗<class_ProjectSettings_property_application/config/use_custom_user_dir>`
 
 If ``true``, the project will save user data to its own user directory. If :ref:`application/config/custom_user_dir_name<class_ProjectSettings_property_application/config/custom_user_dir_name>` is empty, ``<OS user data directory>/<project name>`` directory will be used. If ``false``, the project will save user data to ``<OS user data directory>/Godot/app_userdata/<project name>``.
 
@@ -1924,7 +1934,7 @@ See also `File paths in Godot projects <../tutorials/io/data_paths.html#accessin
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/config/use_hidden_project_data_directory** = ``true``
+:ref:`bool<class_bool>` **application/config/use_hidden_project_data_directory** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`
 
 If ``true``, the project will use a hidden directory (``.godot``) for storing project-specific data (metadata, shader cache, etc.).
 
@@ -1942,7 +1952,7 @@ If ``false``, a non-hidden directory (``godot``) will be used instead.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **application/config/version** = ``""``
+:ref:`String<class_String>` **application/config/version** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/config/version>`
 
 The project's human-readable version identifier. This is used by exporters if the version identifier isn't overridden there. If :ref:`application/config/version<class_ProjectSettings_property_application/config/version>` is an empty string and the version identifier isn't overridden in an exporter, the exporter will use ``1.0.0`` as a version identifier.
 
@@ -1954,7 +1964,7 @@ The project's human-readable version identifier. This is used by exporters if th
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **application/config/windows_native_icon** = ``""``
+:ref:`String<class_String>` **application/config/windows_native_icon** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/config/windows_native_icon>`
 
 Icon set in ``.ico`` format used on Windows to set the game's icon. This is done automatically on start by calling :ref:`DisplayServer.set_native_icon<class_DisplayServer_method_set_native_icon>`.
 
@@ -1966,7 +1976,7 @@ Icon set in ``.ico`` format used on Windows to set the game's icon. This is done
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/run/delta_smoothing** = ``true``
+:ref:`bool<class_bool>` **application/run/delta_smoothing** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/run/delta_smoothing>`
 
 Time samples for frame deltas are subject to random variation introduced by the platform, even when frames are displayed at regular intervals thanks to V-Sync. This can lead to jitter. Delta smoothing can often give a better result by filtering the input deltas to correct for minor fluctuations from the refresh rate.
 
@@ -1982,7 +1992,7 @@ It may take several seconds at a stable frame rate before the smoothing is initi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/run/disable_stderr** = ``false``
+:ref:`bool<class_bool>` **application/run/disable_stderr** = ``false`` :ref:`🔗<class_ProjectSettings_property_application/run/disable_stderr>`
 
 If ``true``, disables printing to standard error. If ``true``, this also hides error and warning messages printed by :ref:`@GlobalScope.push_error<class_@GlobalScope_method_push_error>` and :ref:`@GlobalScope.push_warning<class_@GlobalScope_method_push_warning>`. See also :ref:`application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>`.
 
@@ -1996,7 +2006,7 @@ Changes to this setting will only be applied upon restarting the application.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/run/disable_stdout** = ``false``
+:ref:`bool<class_bool>` **application/run/disable_stdout** = ``false`` :ref:`🔗<class_ProjectSettings_property_application/run/disable_stdout>`
 
 If ``true``, disables printing to standard output. This is equivalent to starting the editor or project with the ``--quiet`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`. See also :ref:`application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>`.
 
@@ -2010,7 +2020,7 @@ Changes to this setting will only be applied upon restarting the application.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/run/enable_alt_space_menu** = ``false``
+:ref:`bool<class_bool>` **application/run/enable_alt_space_menu** = ``false`` :ref:`🔗<class_ProjectSettings_property_application/run/enable_alt_space_menu>`
 
 If ``true``, allows the :kbd:`Alt + Space` keys to display the window menu. This menu allows the user to perform various window management operations such as moving, resizing, or minimizing the window.
 
@@ -2026,7 +2036,7 @@ If ``true``, allows the :kbd:`Alt + Space` keys to display the window menu. This
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/run/flush_stdout_on_print** = ``false``
+:ref:`bool<class_bool>` **application/run/flush_stdout_on_print** = ``false`` :ref:`🔗<class_ProjectSettings_property_application/run/flush_stdout_on_print>`
 
 If ``true``, flushes the standard output stream every time a line is printed. This affects both terminal logging and file logging.
 
@@ -2044,7 +2054,7 @@ Changes to this setting will only be applied upon restarting the application.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/run/flush_stdout_on_print.debug** = ``true``
+:ref:`bool<class_bool>` **application/run/flush_stdout_on_print.debug** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/run/flush_stdout_on_print.debug>`
 
 Debug build override for :ref:`application/run/flush_stdout_on_print<class_ProjectSettings_property_application/run/flush_stdout_on_print>`, as performance is less important during debugging.
 
@@ -2058,7 +2068,7 @@ Changes to this setting will only be applied upon restarting the application.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **application/run/frame_delay_msec** = ``0``
+:ref:`int<class_int>` **application/run/frame_delay_msec** = ``0`` :ref:`🔗<class_ProjectSettings_property_application/run/frame_delay_msec>`
 
 Forces a *constant* delay between frames in the main loop (in milliseconds). In most situations, :ref:`application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>` should be preferred as an FPS limiter as it's more precise.
 
@@ -2072,9 +2082,9 @@ This setting can be overridden using the ``--frame-delay <ms;>`` command line ar
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/run/low_processor_mode** = ``false``
+:ref:`bool<class_bool>` **application/run/low_processor_mode** = ``false`` :ref:`🔗<class_ProjectSettings_property_application/run/low_processor_mode>`
 
-If ``true``, enables low-processor usage mode. This setting only works on desktop platforms. The screen is not redrawn if nothing changes visually. This is meant for writing applications and editors, but is pretty useless (and can hurt performance) in most games.
+If ``true``, enables low-processor usage mode. When enabled, the engine takes longer to redraw, but only redraws the screen if necessary. This may lower power consumption, and is intended for editors or mobile applications. For most games, because the screen needs to be redrawn every frame, it is recommended to keep this setting disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -2084,7 +2094,7 @@ If ``true``, enables low-processor usage mode. This setting only works on deskto
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **application/run/low_processor_mode_sleep_usec** = ``6900``
+:ref:`int<class_int>` **application/run/low_processor_mode_sleep_usec** = ``6900`` :ref:`🔗<class_ProjectSettings_property_application/run/low_processor_mode_sleep_usec>`
 
 Amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU usage.
 
@@ -2096,7 +2106,7 @@ Amount of sleeping between frames when the low-processor usage mode is enabled (
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **application/run/main_loop_type** = ``"SceneTree"``
+:ref:`String<class_String>` **application/run/main_loop_type** = ``"SceneTree"`` :ref:`🔗<class_ProjectSettings_property_application/run/main_loop_type>`
 
 The name of the type implementing the engine's main loop.
 
@@ -2108,7 +2118,7 @@ The name of the type implementing the engine's main loop.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **application/run/main_scene** = ``""``
+:ref:`String<class_String>` **application/run/main_scene** = ``""`` :ref:`🔗<class_ProjectSettings_property_application/run/main_scene>`
 
 Path to the main scene file that will be loaded when the project runs.
 
@@ -2120,7 +2130,7 @@ Path to the main scene file that will be loaded when the project runs.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **application/run/max_fps** = ``0``
+:ref:`int<class_int>` **application/run/max_fps** = ``0`` :ref:`🔗<class_ProjectSettings_property_application/run/max_fps>`
 
 Maximum number of frames per second allowed. A value of ``0`` means "no limit". The actual number of frames per second may still be below this value if the CPU or GPU cannot keep up with the project logic and rendering.
 
@@ -2146,7 +2156,7 @@ This setting can be overridden using the ``--max-fps <fps>`` command line argume
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **application/run/print_header** = ``true``
+:ref:`bool<class_bool>` **application/run/print_header** = ``true`` :ref:`🔗<class_ProjectSettings_property_application/run/print_header>`
 
 If ``true``, the engine header is printed in the console on startup. This header describes the current version of the engine, as well as the renderer being used. This behavior can also be disabled on the command line with the ``--no-header`` option.
 
@@ -2158,7 +2168,7 @@ If ``true``, the engine header is printed in the console on startup. This header
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **audio/buses/channel_disable_threshold_db** = ``-60.0``
+:ref:`float<class_float>` **audio/buses/channel_disable_threshold_db** = ``-60.0`` :ref:`🔗<class_ProjectSettings_property_audio/buses/channel_disable_threshold_db>`
 
 Audio buses will disable automatically when sound goes below a given dB threshold for a given time. This saves CPU as effects assigned to that bus will no longer do any processing.
 
@@ -2170,7 +2180,7 @@ Audio buses will disable automatically when sound goes below a given dB threshol
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **audio/buses/channel_disable_time** = ``2.0``
+:ref:`float<class_float>` **audio/buses/channel_disable_time** = ``2.0`` :ref:`🔗<class_ProjectSettings_property_audio/buses/channel_disable_time>`
 
 Audio buses will disable automatically when sound goes below a given dB threshold for a given time. This saves CPU as effects assigned to that bus will no longer do any processing.
 
@@ -2182,7 +2192,7 @@ Audio buses will disable automatically when sound goes below a given dB threshol
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **audio/buses/default_bus_layout** = ``"res://default_bus_layout.tres"``
+:ref:`String<class_String>` **audio/buses/default_bus_layout** = ``"res://default_bus_layout.tres"`` :ref:`🔗<class_ProjectSettings_property_audio/buses/default_bus_layout>`
 
 Default :ref:`AudioBusLayout<class_AudioBusLayout>` resource file to use in the project, unless overridden by the scene.
 
@@ -2194,7 +2204,7 @@ Default :ref:`AudioBusLayout<class_AudioBusLayout>` resource file to use in the 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **audio/driver/driver**
+:ref:`String<class_String>` **audio/driver/driver** :ref:`🔗<class_ProjectSettings_property_audio/driver/driver>`
 
 Specifies the audio driver to use. This setting is platform-dependent as each platform supports different audio drivers. If left empty, the default audio driver will be used.
 
@@ -2210,7 +2220,7 @@ The ``Dummy`` audio driver disables all audio playback and recording, which is u
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **audio/driver/enable_input** = ``false``
+:ref:`bool<class_bool>` **audio/driver/enable_input** = ``false`` :ref:`🔗<class_ProjectSettings_property_audio/driver/enable_input>`
 
 If ``true``, microphone input will be allowed. This requires appropriate permissions to be set when exporting to Android or iOS.
 
@@ -2224,7 +2234,7 @@ If ``true``, microphone input will be allowed. This requires appropriate permiss
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **audio/driver/mix_rate** = ``44100``
+:ref:`int<class_int>` **audio/driver/mix_rate** = ``44100`` :ref:`🔗<class_ProjectSettings_property_audio/driver/mix_rate>`
 
 The mixing rate used for audio (in Hz). In general, it's better to not touch this and leave it to the host operating system.
 
@@ -2236,7 +2246,7 @@ The mixing rate used for audio (in Hz). In general, it's better to not touch thi
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **audio/driver/mix_rate.web** = ``0``
+:ref:`int<class_int>` **audio/driver/mix_rate.web** = ``0`` :ref:`🔗<class_ProjectSettings_property_audio/driver/mix_rate.web>`
 
 Safer override for :ref:`audio/driver/mix_rate<class_ProjectSettings_property_audio/driver/mix_rate>` in the Web platform. Here ``0`` means "let the browser choose" (since some browsers do not like forcing the mix rate).
 
@@ -2248,9 +2258,9 @@ Safer override for :ref:`audio/driver/mix_rate<class_ProjectSettings_property_au
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **audio/driver/output_latency** = ``15``
+:ref:`int<class_int>` **audio/driver/output_latency** = ``15`` :ref:`🔗<class_ProjectSettings_property_audio/driver/output_latency>`
 
-Specifies the preferred output latency in milliseconds for audio. Lower values will result in lower audio latency at the cost of increased CPU usage. Low values may result in audible cracking on slower hardware.
+Specifies the preferred output latency in milliseconds for audio. Lower values will result in lower audio latency at the cost of increased CPU usage. Low values may result in audible crackling on slower hardware.
 
 Audio output latency may be constrained by the host operating system and audio hardware drivers. If the host can not provide the specified audio output latency then Godot will attempt to use the nearest latency allowed by the host. As such you should always use :ref:`AudioServer.get_output_latency<class_AudioServer_method_get_output_latency>` to determine the actual audio output latency.
 
@@ -2266,7 +2276,7 @@ Audio output latency can be overridden using the ``--audio-output-latency <ms>``
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **audio/driver/output_latency.web** = ``50``
+:ref:`int<class_int>` **audio/driver/output_latency.web** = ``50`` :ref:`🔗<class_ProjectSettings_property_audio/driver/output_latency.web>`
 
 Safer override for :ref:`audio/driver/output_latency<class_ProjectSettings_property_audio/driver/output_latency>` in the Web platform, to avoid audio issues especially on mobile devices.
 
@@ -2278,7 +2288,7 @@ Safer override for :ref:`audio/driver/output_latency<class_ProjectSettings_prope
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **audio/general/2d_panning_strength** = ``0.5``
+:ref:`float<class_float>` **audio/general/2d_panning_strength** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_audio/general/2d_panning_strength>`
 
 The base strength of the panning effect for all :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>` nodes. The panning strength can be further scaled on each Node using :ref:`AudioStreamPlayer2D.panning_strength<class_AudioStreamPlayer2D_property_panning_strength>`. A value of ``0.0`` disables stereo panning entirely, leaving only volume attenuation in place. A value of ``1.0`` completely mutes one of the channels if the sound is located exactly to the left (or right) of the listener.
 
@@ -2292,7 +2302,7 @@ The default value of ``0.5`` is tuned for headphones. When using speakers, you m
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **audio/general/3d_panning_strength** = ``0.5``
+:ref:`float<class_float>` **audio/general/3d_panning_strength** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_audio/general/3d_panning_strength>`
 
 The base strength of the panning effect for all :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` nodes. The panning strength can be further scaled on each Node using :ref:`AudioStreamPlayer3D.panning_strength<class_AudioStreamPlayer3D_property_panning_strength>`. A value of ``0.0`` disables stereo panning entirely, leaving only volume attenuation in place. A value of ``1.0`` completely mutes one of the channels if the sound is located exactly to the left (or right) of the listener.
 
@@ -2302,11 +2312,45 @@ The default value of ``0.5`` is tuned for headphones. When using speakers, you m
 
 ----
 
+.. _class_ProjectSettings_property_audio/general/default_playback_type:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **audio/general/default_playback_type** = ``0`` :ref:`🔗<class_ProjectSettings_property_audio/general/default_playback_type>`
+
+**Experimental:** This property may be changed or removed in future versions.
+
+Specifies the default playback type of the platform.
+
+The default value is set to **Stream**, as most platforms have no issues mixing streams.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_audio/general/default_playback_type.web:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **audio/general/default_playback_type.web** = ``1`` :ref:`🔗<class_ProjectSettings_property_audio/general/default_playback_type.web>`
+
+**Experimental:** This property may be changed or removed in future versions.
+
+Specifies the default playback type of the Web platform.
+
+The default value is set to **Sample** as the Web platform is not suited to mix audio streams outside of the Web Audio API, especially when exporting a single-threaded game. **Sample** allows for lower latency on the web platform at the cost of flexibility (:ref:`AudioEffect<class_AudioEffect>`\ s are not supported).
+
+\ **Warning:** Forcing **Stream** on the Web platform may cause high audio latency and crackling, especially when exporting a multi-threaded game.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_audio/general/ios/mix_with_others:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **audio/general/ios/mix_with_others** = ``false``
+:ref:`bool<class_bool>` **audio/general/ios/mix_with_others** = ``false`` :ref:`🔗<class_ProjectSettings_property_audio/general/ios/mix_with_others>`
 
 Sets the `mixWithOthers <https://developer.apple.com/documentation/avfaudio/avaudiosession/categoryoptions/1616611-mixwithothers>`__ option for the AVAudioSession on iOS. This will override the mix behavior, if the category is set to ``Play and Record``, ``Playback``, or ``Multi Route``.
 
@@ -2320,7 +2364,7 @@ Sets the `mixWithOthers <https://developer.apple.com/documentation/avfaudio/avau
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **audio/general/ios/session_category** = ``0``
+:ref:`int<class_int>` **audio/general/ios/session_category** = ``0`` :ref:`🔗<class_ProjectSettings_property_audio/general/ios/session_category>`
 
 Sets the `AVAudioSessionCategory <https://developer.apple.com/documentation/avfaudio/avaudiosessioncategory>`__ on iOS. Use the ``Playback`` category to get sound output, even if the phone is in silent mode.
 
@@ -2332,7 +2376,7 @@ Sets the `AVAudioSessionCategory <https://developer.apple.com/documentation/avfa
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **audio/general/text_to_speech** = ``false``
+:ref:`bool<class_bool>` **audio/general/text_to_speech** = ``false`` :ref:`🔗<class_ProjectSettings_property_audio/general/text_to_speech>`
 
 If ``true``, text-to-speech support is enabled, see :ref:`DisplayServer.tts_get_voices<class_DisplayServer_method_tts_get_voices>` and :ref:`DisplayServer.tts_speak<class_DisplayServer_method_tts_speak>`.
 
@@ -2346,7 +2390,7 @@ If ``true``, text-to-speech support is enabled, see :ref:`DisplayServer.tts_get_
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **audio/video/video_delay_compensation_ms** = ``0``
+:ref:`int<class_int>` **audio/video/video_delay_compensation_ms** = ``0`` :ref:`🔗<class_ProjectSettings_property_audio/video/video_delay_compensation_ms>`
 
 Setting to hardcode audio delay when playing video. Best to leave this unchanged unless you know what you are doing.
 
@@ -2358,7 +2402,7 @@ Setting to hardcode audio delay when playing video. Best to leave this unchanged
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **collada/use_ambient** = ``false``
+:ref:`bool<class_bool>` **collada/use_ambient** = ``false`` :ref:`🔗<class_ProjectSettings_property_collada/use_ambient>`
 
 If ``true``, ambient lights will be imported from COLLADA models as :ref:`DirectionalLight3D<class_DirectionalLight3D>`. If ``false``, ambient lights will be ignored.
 
@@ -2370,7 +2414,7 @@ If ``true``, ambient lights will be imported from COLLADA models as :ref:`Direct
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compression/formats/gzip/compression_level** = ``-1``
+:ref:`int<class_int>` **compression/formats/gzip/compression_level** = ``-1`` :ref:`🔗<class_ProjectSettings_property_compression/formats/gzip/compression_level>`
 
 The default compression level for gzip. Affects compressed scenes and resources. Higher levels result in smaller files at the cost of compression speed. Decompression speed is mostly unaffected by the compression level. ``-1`` uses the default gzip compression level, which is identical to ``6`` but could change in the future due to underlying zlib updates.
 
@@ -2382,7 +2426,7 @@ The default compression level for gzip. Affects compressed scenes and resources.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compression/formats/zlib/compression_level** = ``-1``
+:ref:`int<class_int>` **compression/formats/zlib/compression_level** = ``-1`` :ref:`🔗<class_ProjectSettings_property_compression/formats/zlib/compression_level>`
 
 The default compression level for Zlib. Affects compressed scenes and resources. Higher levels result in smaller files at the cost of compression speed. Decompression speed is mostly unaffected by the compression level. ``-1`` uses the default gzip compression level, which is identical to ``6`` but could change in the future due to underlying zlib updates.
 
@@ -2394,7 +2438,7 @@ The default compression level for Zlib. Affects compressed scenes and resources.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compression/formats/zstd/compression_level** = ``3``
+:ref:`int<class_int>` **compression/formats/zstd/compression_level** = ``3`` :ref:`🔗<class_ProjectSettings_property_compression/formats/zstd/compression_level>`
 
 The default compression level for Zstandard. Affects compressed scenes and resources. Higher levels result in smaller files at the cost of compression speed. Decompression speed is mostly unaffected by the compression level.
 
@@ -2406,7 +2450,7 @@ The default compression level for Zstandard. Affects compressed scenes and resou
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **compression/formats/zstd/long_distance_matching** = ``false``
+:ref:`bool<class_bool>` **compression/formats/zstd/long_distance_matching** = ``false`` :ref:`🔗<class_ProjectSettings_property_compression/formats/zstd/long_distance_matching>`
 
 Enables `long-distance matching <https://github.com/facebook/zstd/releases/tag/v1.3.2>`__ in Zstandard.
 
@@ -2418,7 +2462,7 @@ Enables `long-distance matching <https://github.com/facebook/zstd/releases/tag/v
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compression/formats/zstd/window_log_size** = ``27``
+:ref:`int<class_int>` **compression/formats/zstd/window_log_size** = ``27`` :ref:`🔗<class_ProjectSettings_property_compression/formats/zstd/window_log_size>`
 
 Largest size limit (in power of 2) allowed when compressing using long-distance matching with Zstandard. Higher values can result in better compression, but will require more memory when compressing and decompressing.
 
@@ -2430,7 +2474,7 @@ Largest size limit (in power of 2) allowed when compressing using long-distance 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/canvas_items/debug_redraw_color** = ``Color(1, 0.2, 0.2, 0.5)``
+:ref:`Color<class_Color>` **debug/canvas_items/debug_redraw_color** = ``Color(1, 0.2, 0.2, 0.5)`` :ref:`🔗<class_ProjectSettings_property_debug/canvas_items/debug_redraw_color>`
 
 If canvas item redraw debugging is active, this color will be flashed on canvas items when they redraw.
 
@@ -2442,7 +2486,7 @@ If canvas item redraw debugging is active, this color will be flashed on canvas 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **debug/canvas_items/debug_redraw_time** = ``1.0``
+:ref:`float<class_float>` **debug/canvas_items/debug_redraw_time** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_debug/canvas_items/debug_redraw_time>`
 
 If canvas item redraw debugging is active, this will be the time the flash will last each time they redraw.
 
@@ -2454,7 +2498,7 @@ If canvas item redraw debugging is active, this will be the time the flash will 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/file_logging/enable_file_logging** = ``false``
+:ref:`bool<class_bool>` **debug/file_logging/enable_file_logging** = ``false`` :ref:`🔗<class_ProjectSettings_property_debug/file_logging/enable_file_logging>`
 
 If ``true``, logs all output and error messages to files. See also :ref:`debug/file_logging/log_path<class_ProjectSettings_property_debug/file_logging/log_path>`, :ref:`debug/file_logging/max_log_files<class_ProjectSettings_property_debug/file_logging/max_log_files>`, and :ref:`application/run/flush_stdout_on_print<class_ProjectSettings_property_application/run/flush_stdout_on_print>`.
 
@@ -2466,7 +2510,7 @@ If ``true``, logs all output and error messages to files. See also :ref:`debug/f
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/file_logging/enable_file_logging.pc** = ``true``
+:ref:`bool<class_bool>` **debug/file_logging/enable_file_logging.pc** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/file_logging/enable_file_logging.pc>`
 
 Desktop override for :ref:`debug/file_logging/enable_file_logging<class_ProjectSettings_property_debug/file_logging/enable_file_logging>`, as log files are not readily accessible on mobile/Web platforms.
 
@@ -2478,7 +2522,7 @@ Desktop override for :ref:`debug/file_logging/enable_file_logging<class_ProjectS
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **debug/file_logging/log_path** = ``"user://logs/godot.log"``
+:ref:`String<class_String>` **debug/file_logging/log_path** = ``"user://logs/godot.log"`` :ref:`🔗<class_ProjectSettings_property_debug/file_logging/log_path>`
 
 Path at which to store log files for the project. Using a path under ``user://`` is recommended.
 
@@ -2492,7 +2536,7 @@ This can be specified manually on the command line using the ``--log-file <file>
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/file_logging/max_log_files** = ``5``
+:ref:`int<class_int>` **debug/file_logging/max_log_files** = ``5`` :ref:`🔗<class_ProjectSettings_property_debug/file_logging/max_log_files>`
 
 Specifies the maximum number of log files allowed (used for rotation). Set to ``1`` to disable log file rotation.
 
@@ -2506,7 +2550,7 @@ If the ``--log-file <file>`` :doc:`command line argument <../tutorials/editor/co
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/assert_always_false** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/assert_always_false** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_false>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when an ``assert`` call always evaluates to false.
 
@@ -2518,9 +2562,21 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/assert_always_true** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/assert_always_true** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_true>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when an ``assert`` call always evaluates to true.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/confusable_capture_reassignment:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/confusable_capture_reassignment** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_capture_reassignment>`
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a local variable captured by a lambda is reassigned, since this does not modify the outer local variable.
 
 .. rst-class:: classref-item-separator
 
@@ -2530,7 +2586,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/confusable_identifier** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/confusable_identifier** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_identifier>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when an identifier contains characters that can be confused with something else, like when mixing different alphabets.
 
@@ -2542,7 +2598,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/confusable_local_declaration** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/confusable_local_declaration** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_declaration>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when an identifier declared in the nested block has the same name as an identifier declared below in the parent block.
 
@@ -2554,7 +2610,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/confusable_local_usage** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/confusable_local_usage** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/confusable_local_usage>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when an identifier that will be shadowed below in the block is used.
 
@@ -2566,7 +2622,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/constant_used_as_function** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/constant_used_as_function** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function>`
 
 **Deprecated:** This warning is never produced. Instead, an error is generated if the expression type is known at compile time.
 
@@ -2580,7 +2636,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/deprecated_keyword** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/deprecated_keyword** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when deprecated keywords are used.
 
@@ -2594,7 +2650,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/empty_file** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/empty_file** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/empty_file>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when an empty file is parsed.
 
@@ -2606,7 +2662,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/gdscript/warnings/enable** = ``true``
+:ref:`bool<class_bool>` **debug/gdscript/warnings/enable** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/enable>`
 
 If ``true``, enables specific GDScript warnings (see ``debug/gdscript/warnings/*`` settings). If ``false``, disables all GDScript warnings.
 
@@ -2618,7 +2674,7 @@ If ``true``, enables specific GDScript warnings (see ``debug/gdscript/warnings/*
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/enum_variable_without_default** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/enum_variable_without_default** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/enum_variable_without_default>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable has an enum type but no explicit default value, but only if the enum does not contain ``0`` as a valid value.
 
@@ -2630,7 +2686,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/gdscript/warnings/exclude_addons** = ``true``
+:ref:`bool<class_bool>` **debug/gdscript/warnings/exclude_addons** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/exclude_addons>`
 
 If ``true``, scripts in the ``res://addons`` folder will not generate warnings.
 
@@ -2642,7 +2698,7 @@ If ``true``, scripts in the ``res://addons`` folder will not generate warnings.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/function_used_as_property** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/function_used_as_property** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/function_used_as_property>`
 
 **Deprecated:** This warning is never produced. When a function is used as a property, a :ref:`Callable<class_Callable>` is returned.
 
@@ -2656,7 +2712,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/get_node_default_without_onready** = ``2``
+:ref:`int<class_int>` **debug/gdscript/warnings/get_node_default_without_onready** = ``2`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/get_node_default_without_onready>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when :ref:`Node.get_node<class_Node_method_get_node>` (or the shorthand ``$``) is used as default value of a class variable without the ``@onready`` annotation.
 
@@ -2668,7 +2724,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/incompatible_ternary** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/incompatible_ternary** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a ternary operator may emit values with incompatible types.
 
@@ -2680,7 +2736,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/inference_on_variant** = ``2``
+:ref:`int<class_int>` **debug/gdscript/warnings/inference_on_variant** = ``2`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/inference_on_variant>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a static inferred type uses a :ref:`Variant<class_Variant>` as initial value, which makes the static type to also be Variant.
 
@@ -2692,7 +2748,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/inferred_declaration** = ``0``
+:ref:`int<class_int>` **debug/gdscript/warnings/inferred_declaration** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/inferred_declaration>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable, constant, or parameter has an implicitly inferred static type.
 
@@ -2706,7 +2762,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/int_as_enum_without_cast** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/int_as_enum_without_cast** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_cast>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when trying to use an integer as an enum without an explicit cast.
 
@@ -2718,7 +2774,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/int_as_enum_without_match** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/int_as_enum_without_match** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_match>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when trying to use an integer as an enum when there is no matching enum member for that numeric value.
 
@@ -2730,7 +2786,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/integer_division** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/integer_division** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when dividing an integer by another integer (the decimal part will be discarded).
 
@@ -2742,7 +2798,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/narrowing_conversion** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/narrowing_conversion** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when passing a floating-point value to a function that expects an integer (it will be converted and lose precision).
 
@@ -2754,7 +2810,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/native_method_override** = ``2``
+:ref:`int<class_int>` **debug/gdscript/warnings/native_method_override** = ``2`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/native_method_override>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a method in the script overrides a native method, because it may not behave as expected.
 
@@ -2766,7 +2822,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/onready_with_export** = ``2``
+:ref:`int<class_int>` **debug/gdscript/warnings/onready_with_export** = ``2`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/onready_with_export>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when the ``@onready`` annotation is used together with the ``@export`` annotation, since it may not behave as expected.
 
@@ -2778,7 +2834,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/property_used_as_function** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/property_used_as_function** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function>`
 
 **Deprecated:** This warning is never produced. Instead, an error is generated if the expression type is known at compile time.
 
@@ -2792,7 +2848,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/redundant_await** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/redundant_await** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/redundant_await>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a function that is not a coroutine is called with await.
 
@@ -2804,7 +2860,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/redundant_static_unload** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/redundant_static_unload** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/redundant_static_unload>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when the ``@static_unload`` annotation is used in a script without any static variables.
 
@@ -2816,7 +2872,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/gdscript/warnings/renamed_in_godot_4_hint** = ``1``
+:ref:`bool<class_bool>` **debug/gdscript/warnings/renamed_in_godot_4_hint** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/renamed_in_godot_4_hint>`
 
 When enabled, using a property, enum, or function that was renamed since Godot 3 will produce a hint if an error occurs.
 
@@ -2828,7 +2884,7 @@ When enabled, using a property, enum, or function that was renamed since Godot 3
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/return_value_discarded** = ``0``
+:ref:`int<class_int>` **debug/gdscript/warnings/return_value_discarded** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/return_value_discarded>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a function without using its return value (by assigning it to a variable or using it as a function argument). These return values are sometimes used to indicate possible errors using the :ref:`Error<enum_@GlobalScope_Error>` enum.
 
@@ -2840,7 +2896,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/shadowed_global_identifier** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/shadowed_global_identifier** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_global_identifier>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when defining a local or member variable, signal, or enum that would have the same name as a built-in function or global class name, thus shadowing it.
 
@@ -2852,7 +2908,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when defining a local or member variable that would shadow a member variable that the class defines.
 
@@ -2864,7 +2920,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable_base_class** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable_base_class** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable_base_class>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when defining a local or subclass member variable that would shadow a variable that is inherited from a parent class.
 
@@ -2876,9 +2932,9 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/standalone_expression** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/standalone_expression** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/standalone_expression>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling an expression that has no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when calling an expression that may have no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
 
 .. rst-class:: classref-item-separator
 
@@ -2888,9 +2944,9 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/standalone_ternary** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/standalone_ternary** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/standalone_ternary>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a ternary expression that has no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a ternary expression that may have no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
 
 .. rst-class:: classref-item-separator
 
@@ -2900,7 +2956,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/static_called_on_instance** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/static_called_on_instance** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/static_called_on_instance>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a static method from an instance of a class instead of from the class directly.
 
@@ -2912,7 +2968,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unassigned_variable** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/unassigned_variable** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when using a variable that wasn't previously assigned.
 
@@ -2924,7 +2980,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unassigned_variable_op_assign** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/unassigned_variable_op_assign** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable_op_assign>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when assigning a variable using an assignment operator like ``+=`` if the variable wasn't previously assigned.
 
@@ -2936,7 +2992,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unreachable_code** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/unreachable_code** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_code>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when unreachable code is detected (such as after a ``return`` statement that will always be executed).
 
@@ -2948,7 +3004,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unreachable_pattern** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/unreachable_pattern** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unreachable_pattern>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when an unreachable ``match`` pattern is detected.
 
@@ -2960,7 +3016,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unsafe_call_argument** = ``0``
+:ref:`int<class_int>` **debug/gdscript/warnings/unsafe_call_argument** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_call_argument>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when using an expression whose type may not be compatible with the function parameter expected.
 
@@ -2972,7 +3028,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unsafe_cast** = ``0``
+:ref:`int<class_int>` **debug/gdscript/warnings/unsafe_cast** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_cast>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a :ref:`Variant<class_Variant>` value is cast to a non-Variant.
 
@@ -2984,7 +3040,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unsafe_method_access** = ``0``
+:ref:`int<class_int>` **debug/gdscript/warnings/unsafe_method_access** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_method_access>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a method whose presence is not guaranteed at compile-time in the class.
 
@@ -2996,7 +3052,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unsafe_property_access** = ``0``
+:ref:`int<class_int>` **debug/gdscript/warnings/unsafe_property_access** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_property_access>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when accessing a property whose presence is not guaranteed at compile-time in the class.
 
@@ -3008,7 +3064,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unsafe_void_return** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/unsafe_void_return** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_void_return>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when returning a call from a ``void`` function when such call cannot be guaranteed to be also ``void``.
 
@@ -3020,7 +3076,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/untyped_declaration** = ``0``
+:ref:`int<class_int>` **debug/gdscript/warnings/untyped_declaration** = ``0`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable or parameter has no static type, or if a function has no static return type.
 
@@ -3034,7 +3090,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unused_local_constant** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/unused_local_constant** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unused_local_constant>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a local constant is never used.
 
@@ -3046,7 +3102,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unused_parameter** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/unused_parameter** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unused_parameter>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a function parameter is never used.
 
@@ -3058,7 +3114,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unused_private_class_variable** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/unused_private_class_variable** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unused_private_class_variable>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a private member variable is never used.
 
@@ -3070,7 +3126,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unused_signal** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/unused_signal** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unused_signal>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a signal is declared but never explicitly used in the class.
 
@@ -3082,7 +3138,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/unused_variable** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/unused_variable** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/unused_variable>`
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a local variable is unused.
 
@@ -3094,7 +3150,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **debug/settings/crash_handler/message** = ``"Please include this when reporting the bug to the project developer."``
+:ref:`String<class_String>` **debug/settings/crash_handler/message** = ``"Please include this when reporting the bug to the project developer."`` :ref:`🔗<class_ProjectSettings_property_debug/settings/crash_handler/message>`
 
 Message to be displayed before the backtrace when the engine crashes. By default, this message is only used in exported projects due to the editor-only override applied to this setting.
 
@@ -3106,7 +3162,7 @@ Message to be displayed before the backtrace when the engine crashes. By default
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **debug/settings/crash_handler/message.editor** = ``"Please include this when reporting the bug on: https://github.com/godotengine/godot/issues"``
+:ref:`String<class_String>` **debug/settings/crash_handler/message.editor** = ``"Please include this when reporting the bug on: https://github.com/godotengine/godot/issues"`` :ref:`🔗<class_ProjectSettings_property_debug/settings/crash_handler/message.editor>`
 
 Editor-only override for :ref:`debug/settings/crash_handler/message<class_ProjectSettings_property_debug/settings/crash_handler/message>`. Does not affect exported projects in debug or release mode.
 
@@ -3118,7 +3174,7 @@ Editor-only override for :ref:`debug/settings/crash_handler/message<class_Projec
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/settings/gdscript/max_call_stack** = ``1024``
+:ref:`int<class_int>` **debug/settings/gdscript/max_call_stack** = ``1024`` :ref:`🔗<class_ProjectSettings_property_debug/settings/gdscript/max_call_stack>`
 
 Maximum call stack allowed for debugging GDScript.
 
@@ -3130,7 +3186,7 @@ Maximum call stack allowed for debugging GDScript.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/settings/profiler/max_functions** = ``16384``
+:ref:`int<class_int>` **debug/settings/profiler/max_functions** = ``16384`` :ref:`🔗<class_ProjectSettings_property_debug/settings/profiler/max_functions>`
 
 Maximum number of functions per frame allowed when profiling.
 
@@ -3142,7 +3198,7 @@ Maximum number of functions per frame allowed when profiling.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/settings/stdout/print_fps** = ``false``
+:ref:`bool<class_bool>` **debug/settings/stdout/print_fps** = ``false`` :ref:`🔗<class_ProjectSettings_property_debug/settings/stdout/print_fps>`
 
 Print frames per second to standard output every second.
 
@@ -3154,7 +3210,7 @@ Print frames per second to standard output every second.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/settings/stdout/print_gpu_profile** = ``false``
+:ref:`bool<class_bool>` **debug/settings/stdout/print_gpu_profile** = ``false`` :ref:`🔗<class_ProjectSettings_property_debug/settings/stdout/print_gpu_profile>`
 
 Print GPU profile information to standard output every second. This includes how long each frame takes the GPU to render on average, broken down into different steps of the render pipeline, such as CanvasItems, shadows, glow, etc.
 
@@ -3166,7 +3222,7 @@ Print GPU profile information to standard output every second. This includes how
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/settings/stdout/verbose_stdout** = ``false``
+:ref:`bool<class_bool>` **debug/settings/stdout/verbose_stdout** = ``false`` :ref:`🔗<class_ProjectSettings_property_debug/settings/stdout/verbose_stdout>`
 
 Print more information to standard output when running. It displays information such as memory leaks, which scenes and resources are being loaded, etc. This can also be enabled using the ``--verbose`` or ``-v`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`, even on an exported project. See also :ref:`OS.is_stdout_verbose<class_OS_method_is_stdout_verbose>` and :ref:`@GlobalScope.print_verbose<class_@GlobalScope_method_print_verbose>`.
 
@@ -3178,7 +3234,7 @@ Print more information to standard output when running. It displays information 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/device_limit_exceeded** = ``true``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/device_limit_exceeded** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/device_limit_exceeded>`
 
 When set to ``true``, produces a warning when the shader exceeds certain device limits. Currently, the only device limit checked is the limit on uniform buffer size. More device limits will be added in the future.
 
@@ -3190,7 +3246,7 @@ When set to ``true``, produces a warning when the shader exceeds certain device 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/enable** = ``true``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/enable** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/enable>`
 
 If ``true``, enables specific shader warnings (see ``debug/shader_language/warnings/*`` settings). If ``false``, disables all shader warnings.
 
@@ -3202,7 +3258,7 @@ If ``true``, enables specific shader warnings (see ``debug/shader_language/warni
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/float_comparison** = ``true``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/float_comparison** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/float_comparison>`
 
 When set to ``true``, produces a warning when two floating-point numbers are compared directly with the ``==`` operator or the ``!=`` operator.
 
@@ -3214,7 +3270,7 @@ When set to ``true``, produces a warning when two floating-point numbers are com
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/formatting_error** = ``true``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/formatting_error** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/formatting_error>`
 
 When set to ``true``, produces a warning upon encountering certain formatting errors. Currently this only checks for empty statements. More formatting errors may be added over time.
 
@@ -3226,7 +3282,7 @@ When set to ``true``, produces a warning upon encountering certain formatting er
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/magic_position_write** = ``true``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/magic_position_write** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/magic_position_write>`
 
 When set to ``true``, produces a warning when the shader contains ``POSITION = vec4(vertex,`` as this was very common code written in Godot 4.2 and earlier that was paired with a QuadMesh to produce a full screen post processes pass. With the switch to reversed z in 4.3, this trick no longer works, as it implicitly relied on the ``VERTEX.z`` being 0.
 
@@ -3238,7 +3294,7 @@ When set to ``true``, produces a warning when the shader contains ``POSITION = v
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/treat_warnings_as_errors** = ``false``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/treat_warnings_as_errors** = ``false`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/treat_warnings_as_errors>`
 
 When set to ``true``, warnings are treated as errors.
 
@@ -3250,7 +3306,7 @@ When set to ``true``, warnings are treated as errors.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_constant** = ``true``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_constant** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/unused_constant>`
 
 When set to ``true``, produces a warning when a constant is never used.
 
@@ -3262,7 +3318,7 @@ When set to ``true``, produces a warning when a constant is never used.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_function** = ``true``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_function** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/unused_function>`
 
 When set to ``true``, produces a warning when a function is never used.
 
@@ -3274,7 +3330,7 @@ When set to ``true``, produces a warning when a function is never used.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_local_variable** = ``true``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_local_variable** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/unused_local_variable>`
 
 When set to ``true``, produces a warning when a local variable is never used.
 
@@ -3286,7 +3342,7 @@ When set to ``true``, produces a warning when a local variable is never used.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_struct** = ``true``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_struct** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/unused_struct>`
 
 When set to ``true``, produces a warning when a struct is never used.
 
@@ -3298,7 +3354,7 @@ When set to ``true``, produces a warning when a struct is never used.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_uniform** = ``true``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_uniform** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/unused_uniform>`
 
 When set to ``true``, produces a warning when a uniform is never used.
 
@@ -3310,7 +3366,7 @@ When set to ``true``, produces a warning when a uniform is never used.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_varying** = ``true``
+:ref:`bool<class_bool>` **debug/shader_language/warnings/unused_varying** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shader_language/warnings/unused_varying>`
 
 When set to ``true``, produces a warning when a varying is never used.
 
@@ -3322,7 +3378,7 @@ When set to ``true``, produces a warning when a varying is never used.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/avoidance/agents_radius_color** = ``Color(1, 1, 0, 0.25)``
+:ref:`Color<class_Color>` **debug/shapes/avoidance/agents_radius_color** = ``Color(1, 1, 0, 0.25)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/agents_radius_color>`
 
 Color of the avoidance agents radius, visible when "Visible Avoidance" is enabled in the Debug menu.
 
@@ -3334,7 +3390,7 @@ Color of the avoidance agents radius, visible when "Visible Avoidance" is enable
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/avoidance/enable_agents_radius** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/avoidance/enable_agents_radius** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/enable_agents_radius>`
 
 If enabled, displays avoidance agents radius when "Visible Avoidance" is enabled in the Debug menu.
 
@@ -3346,7 +3402,7 @@ If enabled, displays avoidance agents radius when "Visible Avoidance" is enabled
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/avoidance/enable_obstacles_radius** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/avoidance/enable_obstacles_radius** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/enable_obstacles_radius>`
 
 If enabled, displays avoidance obstacles radius when "Visible Avoidance" is enabled in the Debug menu.
 
@@ -3358,7 +3414,7 @@ If enabled, displays avoidance obstacles radius when "Visible Avoidance" is enab
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/avoidance/enable_obstacles_static** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/avoidance/enable_obstacles_static** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/enable_obstacles_static>`
 
 If enabled, displays static avoidance obstacles when "Visible Avoidance" is enabled in the Debug menu.
 
@@ -3370,7 +3426,7 @@ If enabled, displays static avoidance obstacles when "Visible Avoidance" is enab
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/avoidance/obstacles_radius_color** = ``Color(1, 0.5, 0, 0.25)``
+:ref:`Color<class_Color>` **debug/shapes/avoidance/obstacles_radius_color** = ``Color(1, 0.5, 0, 0.25)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/obstacles_radius_color>`
 
 Color of the avoidance obstacles radius, visible when "Visible Avoidance" is enabled in the Debug menu.
 
@@ -3382,7 +3438,7 @@ Color of the avoidance obstacles radius, visible when "Visible Avoidance" is ena
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/avoidance/obstacles_static_edge_pushin_color** = ``Color(1, 0, 0, 1)``
+:ref:`Color<class_Color>` **debug/shapes/avoidance/obstacles_static_edge_pushin_color** = ``Color(1, 0, 0, 1)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/obstacles_static_edge_pushin_color>`
 
 Color of the static avoidance obstacles edges when their vertices are winded in order to push agents in, visible when "Visible Avoidance" is enabled in the Debug menu.
 
@@ -3394,7 +3450,7 @@ Color of the static avoidance obstacles edges when their vertices are winded in 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/avoidance/obstacles_static_edge_pushout_color** = ``Color(1, 1, 0, 1)``
+:ref:`Color<class_Color>` **debug/shapes/avoidance/obstacles_static_edge_pushout_color** = ``Color(1, 1, 0, 1)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/obstacles_static_edge_pushout_color>`
 
 Color of the static avoidance obstacles edges when their vertices are winded in order to push agents out, visible when "Visible Avoidance" is enabled in the Debug menu.
 
@@ -3406,7 +3462,7 @@ Color of the static avoidance obstacles edges when their vertices are winded in 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/avoidance/obstacles_static_face_pushin_color** = ``Color(1, 0, 0, 0)``
+:ref:`Color<class_Color>` **debug/shapes/avoidance/obstacles_static_face_pushin_color** = ``Color(1, 0, 0, 0)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/obstacles_static_face_pushin_color>`
 
 Color of the static avoidance obstacles faces when their vertices are winded in order to push agents in, visible when "Visible Avoidance" is enabled in the Debug menu.
 
@@ -3418,7 +3474,7 @@ Color of the static avoidance obstacles faces when their vertices are winded in 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/avoidance/obstacles_static_face_pushout_color** = ``Color(1, 1, 0, 0.5)``
+:ref:`Color<class_Color>` **debug/shapes/avoidance/obstacles_static_face_pushout_color** = ``Color(1, 1, 0, 0.5)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/avoidance/obstacles_static_face_pushout_color>`
 
 Color of the static avoidance obstacles faces when their vertices are winded in order to push agents out, visible when "Visible Avoidance" is enabled in the Debug menu.
 
@@ -3430,7 +3486,7 @@ Color of the static avoidance obstacles faces when their vertices are winded in 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/collision/contact_color** = ``Color(1, 0.2, 0.1, 0.8)``
+:ref:`Color<class_Color>` **debug/shapes/collision/contact_color** = ``Color(1, 0.2, 0.1, 0.8)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/collision/contact_color>`
 
 Color of the contact points between collision shapes, visible when "Visible Collision Shapes" is enabled in the Debug menu.
 
@@ -3442,7 +3498,7 @@ Color of the contact points between collision shapes, visible when "Visible Coll
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/collision/draw_2d_outlines** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/collision/draw_2d_outlines** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/collision/draw_2d_outlines>`
 
 Sets whether 2D physics will display collision outlines in game when "Visible Collision Shapes" is enabled in the Debug menu.
 
@@ -3454,7 +3510,7 @@ Sets whether 2D physics will display collision outlines in game when "Visible Co
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/shapes/collision/max_contacts_displayed** = ``10000``
+:ref:`int<class_int>` **debug/shapes/collision/max_contacts_displayed** = ``10000`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/collision/max_contacts_displayed>`
 
 Maximum number of contact points between collision shapes to display when "Visible Collision Shapes" is enabled in the Debug menu.
 
@@ -3466,7 +3522,7 @@ Maximum number of contact points between collision shapes to display when "Visib
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/collision/shape_color** = ``Color(0, 0.6, 0.7, 0.42)``
+:ref:`Color<class_Color>` **debug/shapes/collision/shape_color** = ``Color(0, 0.6, 0.7, 0.42)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/collision/shape_color>`
 
 Color of the collision shapes, visible when "Visible Collision Shapes" is enabled in the Debug menu.
 
@@ -3478,7 +3534,7 @@ Color of the collision shapes, visible when "Visible Collision Shapes" is enable
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/navigation/agent_path_color** = ``Color(1, 0, 0, 1)``
+:ref:`Color<class_Color>` **debug/shapes/navigation/agent_path_color** = ``Color(1, 0, 0, 1)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/agent_path_color>`
 
 Color to display enabled navigation agent paths when an agent has debug enabled.
 
@@ -3490,7 +3546,7 @@ Color to display enabled navigation agent paths when an agent has debug enabled.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **debug/shapes/navigation/agent_path_point_size** = ``4.0``
+:ref:`float<class_float>` **debug/shapes/navigation/agent_path_point_size** = ``4.0`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/agent_path_point_size>`
 
 Rasterized size (pixel) used to render navigation agent path points when an agent has debug enabled.
 
@@ -3502,7 +3558,7 @@ Rasterized size (pixel) used to render navigation agent path points when an agen
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/navigation/edge_connection_color** = ``Color(1, 0, 1, 1)``
+:ref:`Color<class_Color>` **debug/shapes/navigation/edge_connection_color** = ``Color(1, 0, 1, 1)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/edge_connection_color>`
 
 Color to display edge connections between navigation regions, visible when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3514,7 +3570,7 @@ Color to display edge connections between navigation regions, visible when "Visi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/navigation/enable_agent_paths** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/navigation/enable_agent_paths** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/enable_agent_paths>`
 
 If enabled, displays navigation agent paths when an agent has debug enabled.
 
@@ -3526,7 +3582,7 @@ If enabled, displays navigation agent paths when an agent has debug enabled.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/navigation/enable_agent_paths_xray** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/navigation/enable_agent_paths_xray** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/enable_agent_paths_xray>`
 
 If enabled, displays navigation agent paths through geometry when an agent has debug enabled.
 
@@ -3538,7 +3594,7 @@ If enabled, displays navigation agent paths through geometry when an agent has d
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/navigation/enable_edge_connections** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/navigation/enable_edge_connections** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/enable_edge_connections>`
 
 If enabled, displays edge connections between navigation regions when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3550,7 +3606,7 @@ If enabled, displays edge connections between navigation regions when "Visible N
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/navigation/enable_edge_connections_xray** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/navigation/enable_edge_connections_xray** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/enable_edge_connections_xray>`
 
 If enabled, displays edge connections between navigation regions through geometry when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3562,7 +3618,7 @@ If enabled, displays edge connections between navigation regions through geometr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/navigation/enable_edge_lines** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/navigation/enable_edge_lines** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/enable_edge_lines>`
 
 If enabled, displays navigation mesh polygon edges when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3574,7 +3630,7 @@ If enabled, displays navigation mesh polygon edges when "Visible Navigation" is 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/navigation/enable_edge_lines_xray** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/navigation/enable_edge_lines_xray** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/enable_edge_lines_xray>`
 
 If enabled, displays navigation mesh polygon edges through geometry when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3586,7 +3642,7 @@ If enabled, displays navigation mesh polygon edges through geometry when "Visibl
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/navigation/enable_geometry_face_random_color** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/navigation/enable_geometry_face_random_color** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/enable_geometry_face_random_color>`
 
 If enabled, colorizes each navigation mesh polygon face with a random color when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3598,7 +3654,7 @@ If enabled, colorizes each navigation mesh polygon face with a random color when
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/navigation/enable_link_connections** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/navigation/enable_link_connections** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/enable_link_connections>`
 
 If enabled, displays navigation link connections when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3610,7 +3666,7 @@ If enabled, displays navigation link connections when "Visible Navigation" is en
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **debug/shapes/navigation/enable_link_connections_xray** = ``true``
+:ref:`bool<class_bool>` **debug/shapes/navigation/enable_link_connections_xray** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/enable_link_connections_xray>`
 
 If enabled, displays navigation link connections through geometry when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3622,7 +3678,7 @@ If enabled, displays navigation link connections through geometry when "Visible 
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/navigation/geometry_edge_color** = ``Color(0.5, 1, 1, 1)``
+:ref:`Color<class_Color>` **debug/shapes/navigation/geometry_edge_color** = ``Color(0.5, 1, 1, 1)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/geometry_edge_color>`
 
 Color to display enabled navigation mesh polygon edges, visible when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3634,7 +3690,7 @@ Color to display enabled navigation mesh polygon edges, visible when "Visible Na
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/navigation/geometry_edge_disabled_color** = ``Color(0.5, 0.5, 0.5, 1)``
+:ref:`Color<class_Color>` **debug/shapes/navigation/geometry_edge_disabled_color** = ``Color(0.5, 0.5, 0.5, 1)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/geometry_edge_disabled_color>`
 
 Color to display disabled navigation mesh polygon edges, visible when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3646,7 +3702,7 @@ Color to display disabled navigation mesh polygon edges, visible when "Visible N
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/navigation/geometry_face_color** = ``Color(0.5, 1, 1, 0.4)``
+:ref:`Color<class_Color>` **debug/shapes/navigation/geometry_face_color** = ``Color(0.5, 1, 1, 0.4)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/geometry_face_color>`
 
 Color to display enabled navigation mesh polygon faces, visible when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3658,7 +3714,7 @@ Color to display enabled navigation mesh polygon faces, visible when "Visible Na
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/navigation/geometry_face_disabled_color** = ``Color(0.5, 0.5, 0.5, 0.4)``
+:ref:`Color<class_Color>` **debug/shapes/navigation/geometry_face_disabled_color** = ``Color(0.5, 0.5, 0.5, 0.4)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/geometry_face_disabled_color>`
 
 Color to display disabled navigation mesh polygon faces, visible when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3670,7 +3726,7 @@ Color to display disabled navigation mesh polygon faces, visible when "Visible N
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/navigation/link_connection_color** = ``Color(1, 0.5, 1, 1)``
+:ref:`Color<class_Color>` **debug/shapes/navigation/link_connection_color** = ``Color(1, 0.5, 1, 1)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/link_connection_color>`
 
 Color to use to display navigation link connections, visible when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3682,7 +3738,7 @@ Color to use to display navigation link connections, visible when "Visible Navig
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/navigation/link_connection_disabled_color** = ``Color(0.5, 0.5, 0.5, 1)``
+:ref:`Color<class_Color>` **debug/shapes/navigation/link_connection_disabled_color** = ``Color(0.5, 0.5, 0.5, 1)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/navigation/link_connection_disabled_color>`
 
 Color to use to display disabled navigation link connections, visible when "Visible Navigation" is enabled in the Debug menu.
 
@@ -3694,7 +3750,7 @@ Color to use to display disabled navigation link connections, visible when "Visi
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug/shapes/paths/geometry_color** = ``Color(0.1, 1, 0.7, 0.4)``
+:ref:`Color<class_Color>` **debug/shapes/paths/geometry_color** = ``Color(0.1, 1, 0.7, 0.4)`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/paths/geometry_color>`
 
 Color of the curve path geometry, visible when "Visible Paths" is enabled in the Debug menu.
 
@@ -3706,7 +3762,7 @@ Color of the curve path geometry, visible when "Visible Paths" is enabled in the
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **debug/shapes/paths/geometry_width** = ``2.0``
+:ref:`float<class_float>` **debug/shapes/paths/geometry_width** = ``2.0`` :ref:`🔗<class_ProjectSettings_property_debug/shapes/paths/geometry_width>`
 
 Line width of the curve path geometry, visible when "Visible Paths" is enabled in the Debug menu.
 
@@ -3718,7 +3774,7 @@ Line width of the curve path geometry, visible when "Visible Paths" is enabled i
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **display/display_server/driver**
+:ref:`String<class_String>` **display/display_server/driver** :ref:`🔗<class_ProjectSettings_property_display/display_server/driver>`
 
 Sets the driver to be used by the display server. This property can not be edited directly, instead, set the driver using the platform-specific overrides.
 
@@ -3730,7 +3786,7 @@ Sets the driver to be used by the display server. This property can not be edite
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **display/display_server/driver.android**
+:ref:`String<class_String>` **display/display_server/driver.android** :ref:`🔗<class_ProjectSettings_property_display/display_server/driver.android>`
 
 Android override for :ref:`display/display_server/driver<class_ProjectSettings_property_display/display_server/driver>`.
 
@@ -3742,7 +3798,7 @@ Android override for :ref:`display/display_server/driver<class_ProjectSettings_p
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **display/display_server/driver.ios**
+:ref:`String<class_String>` **display/display_server/driver.ios** :ref:`🔗<class_ProjectSettings_property_display/display_server/driver.ios>`
 
 iOS override for :ref:`display/display_server/driver<class_ProjectSettings_property_display/display_server/driver>`.
 
@@ -3754,7 +3810,7 @@ iOS override for :ref:`display/display_server/driver<class_ProjectSettings_prope
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **display/display_server/driver.linuxbsd**
+:ref:`String<class_String>` **display/display_server/driver.linuxbsd** :ref:`🔗<class_ProjectSettings_property_display/display_server/driver.linuxbsd>`
 
 LinuxBSD override for :ref:`display/display_server/driver<class_ProjectSettings_property_display/display_server/driver>`.
 
@@ -3766,7 +3822,7 @@ LinuxBSD override for :ref:`display/display_server/driver<class_ProjectSettings_
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **display/display_server/driver.macos**
+:ref:`String<class_String>` **display/display_server/driver.macos** :ref:`🔗<class_ProjectSettings_property_display/display_server/driver.macos>`
 
 MacOS override for :ref:`display/display_server/driver<class_ProjectSettings_property_display/display_server/driver>`.
 
@@ -3778,7 +3834,7 @@ MacOS override for :ref:`display/display_server/driver<class_ProjectSettings_pro
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **display/display_server/driver.windows**
+:ref:`String<class_String>` **display/display_server/driver.windows** :ref:`🔗<class_ProjectSettings_property_display/display_server/driver.windows>`
 
 Windows override for :ref:`display/display_server/driver<class_ProjectSettings_property_display/display_server/driver>`.
 
@@ -3790,7 +3846,7 @@ Windows override for :ref:`display/display_server/driver<class_ProjectSettings_p
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **display/mouse_cursor/custom_image** = ``""``
+:ref:`String<class_String>` **display/mouse_cursor/custom_image** = ``""`` :ref:`🔗<class_ProjectSettings_property_display/mouse_cursor/custom_image>`
 
 Custom image for the mouse cursor (limited to 256×256).
 
@@ -3802,7 +3858,7 @@ Custom image for the mouse cursor (limited to 256×256).
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **display/mouse_cursor/custom_image_hotspot** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **display/mouse_cursor/custom_image_hotspot** = ``Vector2(0, 0)`` :ref:`🔗<class_ProjectSettings_property_display/mouse_cursor/custom_image_hotspot>`
 
 Hotspot for the custom mouse cursor image.
 
@@ -3814,7 +3870,7 @@ Hotspot for the custom mouse cursor image.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **display/mouse_cursor/tooltip_position_offset** = ``Vector2(10, 10)``
+:ref:`Vector2<class_Vector2>` **display/mouse_cursor/tooltip_position_offset** = ``Vector2(10, 10)`` :ref:`🔗<class_ProjectSettings_property_display/mouse_cursor/tooltip_position_offset>`
 
 Position offset for tooltips, relative to the mouse cursor's hotspot.
 
@@ -3826,7 +3882,7 @@ Position offset for tooltips, relative to the mouse cursor's hotspot.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/dpi/allow_hidpi** = ``true``
+:ref:`bool<class_bool>` **display/window/dpi/allow_hidpi** = ``true`` :ref:`🔗<class_ProjectSettings_property_display/window/dpi/allow_hidpi>`
 
 If ``true``, allows HiDPI display on Windows, macOS, Android, iOS and Web. If ``false``, the platform's low-DPI fallback will be used on HiDPI displays, which causes the window to be displayed in a blurry or pixelated manner (and can cause various window management bugs). Therefore, it is recommended to make your project scale to :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` instead of disabling this setting.
 
@@ -3840,7 +3896,7 @@ If ``true``, allows HiDPI display on Windows, macOS, Android, iOS and Web. If ``
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/energy_saving/keep_screen_on** = ``true``
+:ref:`bool<class_bool>` **display/window/energy_saving/keep_screen_on** = ``true`` :ref:`🔗<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`
 
 If ``true``, keeps the screen on (even in case of inactivity), so the screensaver does not take over. Works on desktop and mobile platforms.
 
@@ -3852,7 +3908,7 @@ If ``true``, keeps the screen on (even in case of inactivity), so the screensave
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/energy_saving/keep_screen_on.editor_hint** = ``false``
+:ref:`bool<class_bool>` **display/window/energy_saving/keep_screen_on.editor_hint** = ``false`` :ref:`🔗<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor_hint>`
 
 Editor-only override for :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`. Does not affect running project.
 
@@ -3864,7 +3920,7 @@ Editor-only override for :ref:`display/window/energy_saving/keep_screen_on<class
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **display/window/handheld/orientation** = ``0``
+:ref:`int<class_int>` **display/window/handheld/orientation** = ``0`` :ref:`🔗<class_ProjectSettings_property_display/window/handheld/orientation>`
 
 The default screen orientation to use on mobile devices. See :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>` for possible values.
 
@@ -3878,7 +3934,7 @@ The default screen orientation to use on mobile devices. See :ref:`ScreenOrienta
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/ios/allow_high_refresh_rate** = ``true``
+:ref:`bool<class_bool>` **display/window/ios/allow_high_refresh_rate** = ``true`` :ref:`🔗<class_ProjectSettings_property_display/window/ios/allow_high_refresh_rate>`
 
 If ``true``, iOS devices that support high refresh rate/"ProMotion" will be allowed to render at up to 120 frames per second.
 
@@ -3890,7 +3946,7 @@ If ``true``, iOS devices that support high refresh rate/"ProMotion" will be allo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/ios/hide_home_indicator** = ``true``
+:ref:`bool<class_bool>` **display/window/ios/hide_home_indicator** = ``true`` :ref:`🔗<class_ProjectSettings_property_display/window/ios/hide_home_indicator>`
 
 If ``true``, the home indicator is hidden automatically. This only affects iOS devices without a physical home button.
 
@@ -3902,7 +3958,7 @@ If ``true``, the home indicator is hidden automatically. This only affects iOS d
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/ios/hide_status_bar** = ``true``
+:ref:`bool<class_bool>` **display/window/ios/hide_status_bar** = ``true`` :ref:`🔗<class_ProjectSettings_property_display/window/ios/hide_status_bar>`
 
 If ``true``, the status bar is hidden while the app is running.
 
@@ -3914,7 +3970,7 @@ If ``true``, the status bar is hidden while the app is running.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/ios/suppress_ui_gesture** = ``true``
+:ref:`bool<class_bool>` **display/window/ios/suppress_ui_gesture** = ``true`` :ref:`🔗<class_ProjectSettings_property_display/window/ios/suppress_ui_gesture>`
 
 If ``true``, it will require two swipes to access iOS UI that uses gestures.
 
@@ -3928,7 +3984,7 @@ If ``true``, it will require two swipes to access iOS UI that uses gestures.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/per_pixel_transparency/allowed** = ``false``
+:ref:`bool<class_bool>` **display/window/per_pixel_transparency/allowed** = ``false`` :ref:`🔗<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`
 
 If ``true``, allows per-pixel transparency for the window background. This affects performance, so leave it on ``false`` unless you need it. See also :ref:`display/window/size/transparent<class_ProjectSettings_property_display/window/size/transparent>` and :ref:`rendering/viewport/transparent_background<class_ProjectSettings_property_rendering/viewport/transparent_background>`.
 
@@ -3940,7 +3996,7 @@ If ``true``, allows per-pixel transparency for the window background. This affec
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/size/always_on_top** = ``false``
+:ref:`bool<class_bool>` **display/window/size/always_on_top** = ``false`` :ref:`🔗<class_ProjectSettings_property_display/window/size/always_on_top>`
 
 Forces the main window to be always on top.
 
@@ -3954,7 +4010,7 @@ Forces the main window to be always on top.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/size/borderless** = ``false``
+:ref:`bool<class_bool>` **display/window/size/borderless** = ``false`` :ref:`🔗<class_ProjectSettings_property_display/window/size/borderless>`
 
 Forces the main window to be borderless.
 
@@ -3968,7 +4024,7 @@ Forces the main window to be borderless.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/size/extend_to_title** = ``false``
+:ref:`bool<class_bool>` **display/window/size/extend_to_title** = ``false`` :ref:`🔗<class_ProjectSettings_property_display/window/size/extend_to_title>`
 
 Main window content is expanded to the full size of the window. Unlike a borderless window, the frame is left intact and can be used to resize the window, and the title bar is transparent, but has minimize/maximize/close buttons.
 
@@ -3982,7 +4038,7 @@ Main window content is expanded to the full size of the window. Unlike a borderl
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **display/window/size/initial_position** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **display/window/size/initial_position** = ``Vector2i(0, 0)`` :ref:`🔗<class_ProjectSettings_property_display/window/size/initial_position>`
 
 Main window initial position (in virtual desktop coordinates), this setting is used only if :ref:`display/window/size/initial_position_type<class_ProjectSettings_property_display/window/size/initial_position_type>` is set to "Absolute" (``0``).
 
@@ -3996,7 +4052,7 @@ Main window initial position (in virtual desktop coordinates), this setting is u
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **display/window/size/initial_position_type** = ``1``
+:ref:`int<class_int>` **display/window/size/initial_position_type** = ``1`` :ref:`🔗<class_ProjectSettings_property_display/window/size/initial_position_type>`
 
 Main window initial position.
 
@@ -4016,7 +4072,7 @@ Main window initial position.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **display/window/size/initial_screen** = ``0``
+:ref:`int<class_int>` **display/window/size/initial_screen** = ``0`` :ref:`🔗<class_ProjectSettings_property_display/window/size/initial_screen>`
 
 Main window initial screen, this setting is used only if :ref:`display/window/size/initial_position_type<class_ProjectSettings_property_display/window/size/initial_position_type>` is set to "Other Screen Center" (``2``).
 
@@ -4030,7 +4086,7 @@ Main window initial screen, this setting is used only if :ref:`display/window/si
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **display/window/size/mode** = ``0``
+:ref:`int<class_int>` **display/window/size/mode** = ``0`` :ref:`🔗<class_ProjectSettings_property_display/window/size/mode>`
 
 Main window mode. See :ref:`WindowMode<enum_DisplayServer_WindowMode>` for possible values and how each mode behaves.
 
@@ -4042,7 +4098,7 @@ Main window mode. See :ref:`WindowMode<enum_DisplayServer_WindowMode>` for possi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/size/no_focus** = ``false``
+:ref:`bool<class_bool>` **display/window/size/no_focus** = ``false`` :ref:`🔗<class_ProjectSettings_property_display/window/size/no_focus>`
 
 Main window can't be focused. No-focus window will ignore all input, except mouse clicks.
 
@@ -4054,7 +4110,7 @@ Main window can't be focused. No-focus window will ignore all input, except mous
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/size/resizable** = ``true``
+:ref:`bool<class_bool>` **display/window/size/resizable** = ``true`` :ref:`🔗<class_ProjectSettings_property_display/window/size/resizable>`
 
 If ``true``, allows the window to be resizable by default.
 
@@ -4072,7 +4128,7 @@ If ``true``, allows the window to be resizable by default.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/size/transparent** = ``false``
+:ref:`bool<class_bool>` **display/window/size/transparent** = ``false`` :ref:`🔗<class_ProjectSettings_property_display/window/size/transparent>`
 
 If ``true``, enables a window manager hint that the main window background *can* be transparent. This does not make the background actually transparent. For the background to be transparent, the root viewport must also be made transparent by enabling :ref:`rendering/viewport/transparent_background<class_ProjectSettings_property_rendering/viewport/transparent_background>`.
 
@@ -4088,7 +4144,7 @@ If ``true``, enables a window manager hint that the main window background *can*
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **display/window/size/viewport_height** = ``648``
+:ref:`int<class_int>` **display/window/size/viewport_height** = ``648`` :ref:`🔗<class_ProjectSettings_property_display/window/size/viewport_height>`
 
 Sets the game's main viewport height. On desktop platforms, this is also the initial window height, represented by an indigo-colored rectangle in the 2D editor. Stretch mode settings also use this as a reference when using the ``canvas_items`` or ``viewport`` stretch modes. See also :ref:`display/window/size/viewport_width<class_ProjectSettings_property_display/window/size/viewport_width>`, :ref:`display/window/size/window_width_override<class_ProjectSettings_property_display/window/size/window_width_override>` and :ref:`display/window/size/window_height_override<class_ProjectSettings_property_display/window/size/window_height_override>`.
 
@@ -4100,7 +4156,7 @@ Sets the game's main viewport height. On desktop platforms, this is also the ini
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **display/window/size/viewport_width** = ``1152``
+:ref:`int<class_int>` **display/window/size/viewport_width** = ``1152`` :ref:`🔗<class_ProjectSettings_property_display/window/size/viewport_width>`
 
 Sets the game's main viewport width. On desktop platforms, this is also the initial window width, represented by an indigo-colored rectangle in the 2D editor. Stretch mode settings also use this as a reference when using the ``canvas_items`` or ``viewport`` stretch modes. See also :ref:`display/window/size/viewport_height<class_ProjectSettings_property_display/window/size/viewport_height>`, :ref:`display/window/size/window_width_override<class_ProjectSettings_property_display/window/size/window_width_override>` and :ref:`display/window/size/window_height_override<class_ProjectSettings_property_display/window/size/window_height_override>`.
 
@@ -4112,7 +4168,7 @@ Sets the game's main viewport width. On desktop platforms, this is also the init
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **display/window/size/window_height_override** = ``0``
+:ref:`int<class_int>` **display/window/size/window_height_override** = ``0`` :ref:`🔗<class_ProjectSettings_property_display/window/size/window_height_override>`
 
 On desktop platforms, overrides the game's initial window height. See also :ref:`display/window/size/window_width_override<class_ProjectSettings_property_display/window/size/window_width_override>`, :ref:`display/window/size/viewport_width<class_ProjectSettings_property_display/window/size/viewport_width>` and :ref:`display/window/size/viewport_height<class_ProjectSettings_property_display/window/size/viewport_height>`.
 
@@ -4126,7 +4182,7 @@ On desktop platforms, overrides the game's initial window height. See also :ref:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **display/window/size/window_width_override** = ``0``
+:ref:`int<class_int>` **display/window/size/window_width_override** = ``0`` :ref:`🔗<class_ProjectSettings_property_display/window/size/window_width_override>`
 
 On desktop platforms, overrides the game's initial window width. See also :ref:`display/window/size/window_height_override<class_ProjectSettings_property_display/window/size/window_height_override>`, :ref:`display/window/size/viewport_width<class_ProjectSettings_property_display/window/size/viewport_width>` and :ref:`display/window/size/viewport_height<class_ProjectSettings_property_display/window/size/viewport_height>`.
 
@@ -4140,7 +4196,7 @@ On desktop platforms, overrides the game's initial window width. See also :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **display/window/stretch/aspect** = ``"keep"``
+:ref:`String<class_String>` **display/window/stretch/aspect** = ``"keep"`` :ref:`🔗<class_ProjectSettings_property_display/window/stretch/aspect>`
 
 .. container:: contribute
 
@@ -4154,7 +4210,7 @@ On desktop platforms, overrides the game's initial window width. See also :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **display/window/stretch/mode** = ``"disabled"``
+:ref:`String<class_String>` **display/window/stretch/mode** = ``"disabled"`` :ref:`🔗<class_ProjectSettings_property_display/window/stretch/mode>`
 
 Defines how the base size is stretched to fit the resolution of the window or screen.
 
@@ -4172,7 +4228,7 @@ Defines how the base size is stretched to fit the resolution of the window or sc
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **display/window/stretch/scale** = ``1.0``
+:ref:`float<class_float>` **display/window/stretch/scale** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_display/window/stretch/scale>`
 
 The scale factor multiplier to use for 2D elements. This multiplies the final scale factor determined by :ref:`display/window/stretch/mode<class_ProjectSettings_property_display/window/stretch/mode>`. If using the **Disabled** stretch mode, this scale factor is applied as-is. This can be adjusted to make the UI easier to read on certain displays.
 
@@ -4184,7 +4240,7 @@ The scale factor multiplier to use for 2D elements. This multiplies the final sc
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **display/window/stretch/scale_mode** = ``"fractional"``
+:ref:`String<class_String>` **display/window/stretch/scale_mode** = ``"fractional"`` :ref:`🔗<class_ProjectSettings_property_display/window/stretch/scale_mode>`
 
 The policy to use to determine the final scale factor for 2D elements. This affects how :ref:`display/window/stretch/scale<class_ProjectSettings_property_display/window/stretch/scale>` is applied, in addition to the automatic scale factor determined by :ref:`display/window/stretch/mode<class_ProjectSettings_property_display/window/stretch/mode>`.
 
@@ -4202,7 +4258,7 @@ The policy to use to determine the final scale factor for 2D elements. This affe
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/subwindows/embed_subwindows** = ``true``
+:ref:`bool<class_bool>` **display/window/subwindows/embed_subwindows** = ``true`` :ref:`🔗<class_ProjectSettings_property_display/window/subwindows/embed_subwindows>`
 
 If ``true`` subwindows are embedded in the main window.
 
@@ -4214,15 +4270,17 @@ If ``true`` subwindows are embedded in the main window.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **display/window/vsync/vsync_mode** = ``1``
+:ref:`int<class_int>` **display/window/vsync/vsync_mode** = ``1`` :ref:`🔗<class_ProjectSettings_property_display/window/vsync/vsync_mode>`
 
 Sets the V-Sync mode for the main game window. The editor's own V-Sync mode can be set using :ref:`EditorSettings.interface/editor/vsync_mode<class_EditorSettings_property_interface/editor/vsync_mode>`.
 
 See :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` for possible values and how they affect the behavior of your application.
 
-Depending on the platform and used renderer, the engine will fall back to **Enabled** if the desired mode is not supported.
+Depending on the platform and rendering method, the engine will fall back to **Enabled** if the desired mode is not supported.
 
-\ **Note:** V-Sync modes other than **Enabled** are only supported in the Forward+ and Mobile rendering methods, not Compatibility.
+V-Sync can be disabled on the command line using the ``--disable-vsync`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
+
+\ **Note:** The **Adaptive** and **Mailbox** V-Sync modes are only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
 \ **Note:** This property is only read when the project starts. To change the V-Sync mode at runtime, call :ref:`DisplayServer.window_set_vsync_mode<class_DisplayServer_method_window_set_vsync_mode>` instead.
 
@@ -4234,7 +4292,7 @@ Depending on the platform and used renderer, the engine will fall back to **Enab
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **dotnet/project/assembly_name** = ``""``
+:ref:`String<class_String>` **dotnet/project/assembly_name** = ``""`` :ref:`🔗<class_ProjectSettings_property_dotnet/project/assembly_name>`
 
 Name of the .NET assembly. This name is used as the name of the ``.csproj`` and ``.sln`` files. By default, it's set to the name of the project (:ref:`application/config/name<class_ProjectSettings_property_application/config/name>`) allowing to change it in the future without affecting the .NET assembly.
 
@@ -4246,7 +4304,7 @@ Name of the .NET assembly. This name is used as the name of the ``.csproj`` and 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **dotnet/project/assembly_reload_attempts** = ``3``
+:ref:`int<class_int>` **dotnet/project/assembly_reload_attempts** = ``3`` :ref:`🔗<class_ProjectSettings_property_dotnet/project/assembly_reload_attempts>`
 
 Number of times to attempt assembly reloading after rebuilding .NET assemblies. Effectively also the timeout in seconds to wait for unloading of script assemblies to finish.
 
@@ -4258,7 +4316,7 @@ Number of times to attempt assembly reloading after rebuilding .NET assemblies. 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **dotnet/project/solution_directory** = ``""``
+:ref:`String<class_String>` **dotnet/project/solution_directory** = ``""`` :ref:`🔗<class_ProjectSettings_property_dotnet/project/solution_directory>`
 
 Directory that contains the ``.sln`` file. By default, the ``.sln`` files is in the root of the project directory, next to the ``project.godot`` and ``.csproj`` files.
 
@@ -4272,7 +4330,7 @@ Changing this value allows setting up a multi-project scenario where there are m
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor/export/convert_text_resources_to_binary** = ``true``
+:ref:`bool<class_bool>` **editor/export/convert_text_resources_to_binary** = ``true`` :ref:`🔗<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>`
 
 If ``true``, text resources are converted to a binary format on export. This decreases file sizes and speeds up loading slightly.
 
@@ -4286,7 +4344,7 @@ If ``true``, text resources are converted to a binary format on export. This dec
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editor/import/atlas_max_width** = ``2048``
+:ref:`int<class_int>` **editor/import/atlas_max_width** = ``2048`` :ref:`🔗<class_ProjectSettings_property_editor/import/atlas_max_width>`
 
 The maximum width to use when importing textures as an atlas. The value will be rounded to the nearest power of two when used. Use this to prevent imported textures from growing too large in the other direction.
 
@@ -4298,7 +4356,7 @@ The maximum width to use when importing textures as an atlas. The value will be 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor/import/reimport_missing_imported_files** = ``true``
+:ref:`bool<class_bool>` **editor/import/reimport_missing_imported_files** = ``true`` :ref:`🔗<class_ProjectSettings_property_editor/import/reimport_missing_imported_files>`
 
 .. container:: contribute
 
@@ -4312,7 +4370,7 @@ The maximum width to use when importing textures as an atlas. The value will be 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor/import/use_multiple_threads** = ``true``
+:ref:`bool<class_bool>` **editor/import/use_multiple_threads** = ``true`` :ref:`🔗<class_ProjectSettings_property_editor/import/use_multiple_threads>`
 
 If ``true`` importing of resources is run on multiple threads.
 
@@ -4324,7 +4382,7 @@ If ``true`` importing of resources is run on multiple threads.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor/movie_writer/disable_vsync** = ``false``
+:ref:`bool<class_bool>` **editor/movie_writer/disable_vsync** = ``false`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/disable_vsync>`
 
 If ``true``, requests V-Sync to be disabled when writing a movie (similar to setting :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` to **Disabled**). This can speed up video writing if the hardware is fast enough to render, encode and save the video at a framerate higher than the monitor's refresh rate.
 
@@ -4338,7 +4396,7 @@ If ``true``, requests V-Sync to be disabled when writing a movie (similar to set
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editor/movie_writer/fps** = ``60``
+:ref:`int<class_int>` **editor/movie_writer/fps** = ``60`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/fps>`
 
 The number of frames per second to record in the video when writing a movie. Simulation speed will adjust to always match the specified framerate, which means the engine will appear to run slower at higher :ref:`editor/movie_writer/fps<class_ProjectSettings_property_editor/movie_writer/fps>` values. Certain FPS values will require you to adjust :ref:`editor/movie_writer/mix_rate<class_ProjectSettings_property_editor/movie_writer/mix_rate>` to prevent audio from desynchronizing over time.
 
@@ -4352,7 +4410,7 @@ This can be specified manually on the command line using the ``--fixed-fps <fps>
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editor/movie_writer/mix_rate** = ``48000``
+:ref:`int<class_int>` **editor/movie_writer/mix_rate** = ``48000`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/mix_rate>`
 
 The audio mix rate to use in the recorded audio when writing a movie (in Hz). This can be different from :ref:`audio/driver/mix_rate<class_ProjectSettings_property_audio/driver/mix_rate>`, but this value must be divisible by :ref:`editor/movie_writer/fps<class_ProjectSettings_property_editor/movie_writer/fps>` to prevent audio from desynchronizing over time.
 
@@ -4364,7 +4422,7 @@ The audio mix rate to use in the recorded audio when writing a movie (in Hz). Th
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **editor/movie_writer/mjpeg_quality** = ``0.75``
+:ref:`float<class_float>` **editor/movie_writer/mjpeg_quality** = ``0.75`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/mjpeg_quality>`
 
 The JPEG quality to use when writing a video to an AVI file, between ``0.01`` and ``1.0`` (inclusive). Higher ``quality`` values result in better-looking output at the cost of larger file sizes. Recommended ``quality`` values are between ``0.75`` and ``0.9``. Even at quality ``1.0``, JPEG compression remains lossy.
 
@@ -4378,7 +4436,7 @@ The JPEG quality to use when writing a video to an AVI file, between ``0.01`` an
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **editor/movie_writer/movie_file** = ``""``
+:ref:`String<class_String>` **editor/movie_writer/movie_file** = ``""`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/movie_file>`
 
 The output path for the movie. The file extension determines the :ref:`MovieWriter<class_MovieWriter>` that will be used.
 
@@ -4400,7 +4458,7 @@ When using PNG output, the frame number will be appended at the end of the file 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editor/movie_writer/speaker_mode** = ``0``
+:ref:`int<class_int>` **editor/movie_writer/speaker_mode** = ``0`` :ref:`🔗<class_ProjectSettings_property_editor/movie_writer/speaker_mode>`
 
 The speaker mode to use in the recorded audio when writing a movie. See :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` for possible values.
 
@@ -4412,7 +4470,7 @@ The speaker mode to use in the recorded audio when writing a movie. See :ref:`Sp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **editor/naming/default_signal_callback_name** = ``"_on_{node_name}_{signal_name}"``
+:ref:`String<class_String>` **editor/naming/default_signal_callback_name** = ``"_on_{node_name}_{signal_name}"`` :ref:`🔗<class_ProjectSettings_property_editor/naming/default_signal_callback_name>`
 
 The format of the default signal callback name (in the Signal Connection Dialog). The following substitutions are available: ``{NodeName}``, ``{nodeName}``, ``{node_name}``, ``{SignalName}``, ``{signalName}``, and ``{signal_name}``.
 
@@ -4424,7 +4482,7 @@ The format of the default signal callback name (in the Signal Connection Dialog)
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **editor/naming/default_signal_callback_to_self_name** = ``"_on_{signal_name}"``
+:ref:`String<class_String>` **editor/naming/default_signal_callback_to_self_name** = ``"_on_{signal_name}"`` :ref:`🔗<class_ProjectSettings_property_editor/naming/default_signal_callback_to_self_name>`
 
 The format of the default signal callback name when a signal connects to the same node that emits it (in the Signal Connection Dialog). The following substitutions are available: ``{NodeName}``, ``{nodeName}``, ``{node_name}``, ``{SignalName}``, ``{signalName}``, and ``{signal_name}``.
 
@@ -4436,7 +4494,7 @@ The format of the default signal callback name when a signal connects to the sam
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editor/naming/node_name_casing** = ``0``
+:ref:`int<class_int>` **editor/naming/node_name_casing** = ``0`` :ref:`🔗<class_ProjectSettings_property_editor/naming/node_name_casing>`
 
 When creating node names automatically, set the type of casing to use in this project. This is mostly an editor setting.
 
@@ -4448,7 +4506,7 @@ When creating node names automatically, set the type of casing to use in this pr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editor/naming/node_name_num_separator** = ``0``
+:ref:`int<class_int>` **editor/naming/node_name_num_separator** = ``0`` :ref:`🔗<class_ProjectSettings_property_editor/naming/node_name_num_separator>`
 
 What to use to separate node name from number. This is mostly an editor setting.
 
@@ -4460,7 +4518,7 @@ What to use to separate node name from number. This is mostly an editor setting.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editor/naming/scene_name_casing** = ``2``
+:ref:`int<class_int>` **editor/naming/scene_name_casing** = ``2`` :ref:`🔗<class_ProjectSettings_property_editor/naming/scene_name_casing>`
 
 When generating scene file names from scene root node, set the type of casing to use in this project. This is mostly an editor setting.
 
@@ -4472,7 +4530,7 @@ When generating scene file names from scene root node, set the type of casing to
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editor/naming/script_name_casing** = ``0``
+:ref:`int<class_int>` **editor/naming/script_name_casing** = ``0`` :ref:`🔗<class_ProjectSettings_property_editor/naming/script_name_casing>`
 
 When generating script file names from the selected node, set the type of casing to use in this project. This is mostly an editor setting.
 
@@ -4484,7 +4542,7 @@ When generating script file names from the selected node, set the type of casing
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **editor/run/main_run_args** = ``""``
+:ref:`String<class_String>` **editor/run/main_run_args** = ``""`` :ref:`🔗<class_ProjectSettings_property_editor/run/main_run_args>`
 
 The command-line arguments to append to Godot's own command line when running the project. This doesn't affect the editor itself.
 
@@ -4504,7 +4562,7 @@ For example, this can be used to force the project to run on the dedicated GPU i
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **editor/script/search_in_file_extensions** = ``PackedStringArray("gd", "gdshader")``
+:ref:`PackedStringArray<class_PackedStringArray>` **editor/script/search_in_file_extensions** = ``PackedStringArray("gd", "gdshader")`` :ref:`🔗<class_ProjectSettings_property_editor/script/search_in_file_extensions>`
 
 Text-based file extensions to include in the script editor's "Find in Files" feature. You can add e.g. ``tscn`` if you wish to also parse your scene files, especially if you use built-in scripts which are serialized in the scene files.
 
@@ -4518,7 +4576,7 @@ Text-based file extensions to include in the script editor's "Find in Files" fea
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **editor/script/templates_search_path** = ``"res://script_templates"``
+:ref:`String<class_String>` **editor/script/templates_search_path** = ``"res://script_templates"`` :ref:`🔗<class_ProjectSettings_property_editor/script/templates_search_path>`
 
 Search path for project-specific script templates. Godot will search for script templates both in the editor-specific path and in this project-specific path.
 
@@ -4530,7 +4588,7 @@ Search path for project-specific script templates. Godot will search for script 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor/version_control/autoload_on_startup** = ``false``
+:ref:`bool<class_bool>` **editor/version_control/autoload_on_startup** = ``false`` :ref:`🔗<class_ProjectSettings_property_editor/version_control/autoload_on_startup>`
 
 .. container:: contribute
 
@@ -4544,7 +4602,7 @@ Search path for project-specific script templates. Godot will search for script 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **editor/version_control/plugin_name** = ``""``
+:ref:`String<class_String>` **editor/version_control/plugin_name** = ``""`` :ref:`🔗<class_ProjectSettings_property_editor/version_control/plugin_name>`
 
 .. container:: contribute
 
@@ -4558,7 +4616,7 @@ Search path for project-specific script templates. Godot will search for script 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filesystem/import/blender/enabled** = ``true``
+:ref:`bool<class_bool>` **filesystem/import/blender/enabled** = ``true`` :ref:`🔗<class_ProjectSettings_property_filesystem/import/blender/enabled>`
 
 If ``true``, Blender 3D scene files with the ``.blend`` extension will be imported by converting them to glTF 2.0.
 
@@ -4572,7 +4630,7 @@ This requires configuring a path to a Blender executable in the editor settings 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filesystem/import/blender/enabled.android** = ``false``
+:ref:`bool<class_bool>` **filesystem/import/blender/enabled.android** = ``false`` :ref:`🔗<class_ProjectSettings_property_filesystem/import/blender/enabled.android>`
 
 Override for :ref:`filesystem/import/blender/enabled<class_ProjectSettings_property_filesystem/import/blender/enabled>` on Android where Blender can't easily be accessed from Godot.
 
@@ -4584,7 +4642,7 @@ Override for :ref:`filesystem/import/blender/enabled<class_ProjectSettings_prope
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filesystem/import/blender/enabled.web** = ``false``
+:ref:`bool<class_bool>` **filesystem/import/blender/enabled.web** = ``false`` :ref:`🔗<class_ProjectSettings_property_filesystem/import/blender/enabled.web>`
 
 Override for :ref:`filesystem/import/blender/enabled<class_ProjectSettings_property_filesystem/import/blender/enabled>` on the Web where Blender can't easily be accessed from Godot.
 
@@ -4596,11 +4654,11 @@ Override for :ref:`filesystem/import/blender/enabled<class_ProjectSettings_prope
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filesystem/import/fbx2gltf/enabled** = ``true``
+:ref:`bool<class_bool>` **filesystem/import/fbx2gltf/enabled** = ``true`` :ref:`🔗<class_ProjectSettings_property_filesystem/import/fbx2gltf/enabled>`
 
 If ``true``, Autodesk FBX 3D scene files with the ``.fbx`` extension will be imported by converting them to glTF 2.0.
 
-This requires configuring a path to an FBX2glTF executable in the editor settings at :ref:`EditorSettings.filesystem/import/fbx2gltf/fbx2gltf_path<class_EditorSettings_property_filesystem/import/fbx2gltf/fbx2gltf_path>`.
+This requires configuring a path to an FBX2glTF executable in the editor settings at :ref:`EditorSettings.filesystem/import/fbx/fbx2gltf_path<class_EditorSettings_property_filesystem/import/fbx/fbx2gltf_path>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4610,7 +4668,7 @@ This requires configuring a path to an FBX2glTF executable in the editor setting
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filesystem/import/fbx2gltf/enabled.android** = ``false``
+:ref:`bool<class_bool>` **filesystem/import/fbx2gltf/enabled.android** = ``false`` :ref:`🔗<class_ProjectSettings_property_filesystem/import/fbx2gltf/enabled.android>`
 
 Override for :ref:`filesystem/import/fbx2gltf/enabled<class_ProjectSettings_property_filesystem/import/fbx2gltf/enabled>` on Android where FBX2glTF can't easily be accessed from Godot.
 
@@ -4622,7 +4680,7 @@ Override for :ref:`filesystem/import/fbx2gltf/enabled<class_ProjectSettings_prop
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filesystem/import/fbx2gltf/enabled.web** = ``false``
+:ref:`bool<class_bool>` **filesystem/import/fbx2gltf/enabled.web** = ``false`` :ref:`🔗<class_ProjectSettings_property_filesystem/import/fbx2gltf/enabled.web>`
 
 Override for :ref:`filesystem/import/fbx2gltf/enabled<class_ProjectSettings_property_filesystem/import/fbx2gltf/enabled>` on the Web where FBX2glTF can't easily be accessed from Godot.
 
@@ -4634,7 +4692,7 @@ Override for :ref:`filesystem/import/fbx2gltf/enabled<class_ProjectSettings_prop
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **gui/common/default_scroll_deadzone** = ``0``
+:ref:`int<class_int>` **gui/common/default_scroll_deadzone** = ``0`` :ref:`🔗<class_ProjectSettings_property_gui/common/default_scroll_deadzone>`
 
 Default value for :ref:`ScrollContainer.scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`, which will be used for all :ref:`ScrollContainer<class_ScrollContainer>`\ s unless overridden.
 
@@ -4646,7 +4704,7 @@ Default value for :ref:`ScrollContainer.scroll_deadzone<class_ScrollContainer_pr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gui/common/snap_controls_to_pixels** = ``true``
+:ref:`bool<class_bool>` **gui/common/snap_controls_to_pixels** = ``true`` :ref:`🔗<class_ProjectSettings_property_gui/common/snap_controls_to_pixels>`
 
 If ``true``, snaps :ref:`Control<class_Control>` node vertices to the nearest pixel to ensure they remain crisp even when the camera moves or zooms.
 
@@ -4658,7 +4716,7 @@ If ``true``, snaps :ref:`Control<class_Control>` node vertices to the nearest pi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gui/common/swap_cancel_ok**
+:ref:`bool<class_bool>` **gui/common/swap_cancel_ok** :ref:`🔗<class_ProjectSettings_property_gui/common/swap_cancel_ok>`
 
 If ``true``, swaps **Cancel** and **OK** buttons in dialogs on Windows to follow interface conventions. :ref:`DisplayServer.get_swap_cancel_ok<class_DisplayServer_method_get_swap_cancel_ok>` can be used to query whether buttons are swapped at run-time.
 
@@ -4672,7 +4730,7 @@ If ``true``, swaps **Cancel** and **OK** buttons in dialogs on Windows to follow
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **gui/common/text_edit_undo_stack_max_size** = ``1024``
+:ref:`int<class_int>` **gui/common/text_edit_undo_stack_max_size** = ``1024`` :ref:`🔗<class_ProjectSettings_property_gui/common/text_edit_undo_stack_max_size>`
 
 Maximum undo/redo history size for :ref:`TextEdit<class_TextEdit>` fields.
 
@@ -4684,7 +4742,7 @@ Maximum undo/redo history size for :ref:`TextEdit<class_TextEdit>` fields.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gui/fonts/dynamic_fonts/use_oversampling** = ``true``
+:ref:`bool<class_bool>` **gui/fonts/dynamic_fonts/use_oversampling** = ``true`` :ref:`🔗<class_ProjectSettings_property_gui/fonts/dynamic_fonts/use_oversampling>`
 
 .. container:: contribute
 
@@ -4698,7 +4756,7 @@ Maximum undo/redo history size for :ref:`TextEdit<class_TextEdit>` fields.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **gui/theme/custom** = ``""``
+:ref:`String<class_String>` **gui/theme/custom** = ``""`` :ref:`🔗<class_ProjectSettings_property_gui/theme/custom>`
 
 Path to a custom :ref:`Theme<class_Theme>` resource file to use for the project (``.theme`` or generic ``.tres``/``.res`` extension).
 
@@ -4710,7 +4768,7 @@ Path to a custom :ref:`Theme<class_Theme>` resource file to use for the project 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **gui/theme/custom_font** = ``""``
+:ref:`String<class_String>` **gui/theme/custom_font** = ``""`` :ref:`🔗<class_ProjectSettings_property_gui/theme/custom_font>`
 
 Path to a custom :ref:`Font<class_Font>` resource to use as default for all GUI elements of the project.
 
@@ -4722,7 +4780,7 @@ Path to a custom :ref:`Font<class_Font>` resource to use as default for all GUI 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **gui/theme/default_font_antialiasing** = ``1``
+:ref:`int<class_int>` **gui/theme/default_font_antialiasing** = ``1`` :ref:`🔗<class_ProjectSettings_property_gui/theme/default_font_antialiasing>`
 
 Font anti-aliasing mode for the default project font. See :ref:`FontFile.antialiasing<class_FontFile_property_antialiasing>`.
 
@@ -4736,7 +4794,7 @@ Font anti-aliasing mode for the default project font. See :ref:`FontFile.antiali
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gui/theme/default_font_generate_mipmaps** = ``false``
+:ref:`bool<class_bool>` **gui/theme/default_font_generate_mipmaps** = ``false`` :ref:`🔗<class_ProjectSettings_property_gui/theme/default_font_generate_mipmaps>`
 
 If set to ``true``, the default font will have mipmaps generated. This prevents text from looking grainy when a :ref:`Control<class_Control>` is scaled down, or when a :ref:`Label3D<class_Label3D>` is viewed from a long distance (if :ref:`Label3D.texture_filter<class_Label3D_property_texture_filter>` is set to a mode that displays mipmaps).
 
@@ -4752,7 +4810,7 @@ Enabling :ref:`gui/theme/default_font_generate_mipmaps<class_ProjectSettings_pro
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **gui/theme/default_font_hinting** = ``1``
+:ref:`int<class_int>` **gui/theme/default_font_hinting** = ``1`` :ref:`🔗<class_ProjectSettings_property_gui/theme/default_font_hinting>`
 
 Font hinting mode for the default project font. See :ref:`FontFile.hinting<class_FontFile_property_hinting>`.
 
@@ -4766,7 +4824,7 @@ Font hinting mode for the default project font. See :ref:`FontFile.hinting<class
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gui/theme/default_font_multichannel_signed_distance_field** = ``false``
+:ref:`bool<class_bool>` **gui/theme/default_font_multichannel_signed_distance_field** = ``false`` :ref:`🔗<class_ProjectSettings_property_gui/theme/default_font_multichannel_signed_distance_field>`
 
 If set to ``true``, the default font will use multichannel signed distance field (MSDF) for crisp rendering at any size. Since this approach does not rely on rasterizing the font every time its size changes, this allows for resizing the font in real-time without any performance penalty. Text will also not look grainy for :ref:`Control<class_Control>`\ s that are scaled down (or for :ref:`Label3D<class_Label3D>`\ s viewed from a long distance).
 
@@ -4782,7 +4840,7 @@ MSDF font rendering can be combined with :ref:`gui/theme/default_font_generate_m
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **gui/theme/default_font_subpixel_positioning** = ``1``
+:ref:`int<class_int>` **gui/theme/default_font_subpixel_positioning** = ``1`` :ref:`🔗<class_ProjectSettings_property_gui/theme/default_font_subpixel_positioning>`
 
 Font glyph subpixel positioning mode for the default project font. See :ref:`FontFile.subpixel_positioning<class_FontFile_property_subpixel_positioning>`.
 
@@ -4796,7 +4854,7 @@ Font glyph subpixel positioning mode for the default project font. See :ref:`Fon
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gui/theme/default_theme_scale** = ``1.0``
+:ref:`float<class_float>` **gui/theme/default_theme_scale** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_gui/theme/default_theme_scale>`
 
 The default scale factor for :ref:`Control<class_Control>`\ s, when not overridden by a :ref:`Theme<class_Theme>`.
 
@@ -4810,7 +4868,7 @@ The default scale factor for :ref:`Control<class_Control>`\ s, when not overridd
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **gui/theme/lcd_subpixel_layout** = ``1``
+:ref:`int<class_int>` **gui/theme/lcd_subpixel_layout** = ``1`` :ref:`🔗<class_ProjectSettings_property_gui/theme/lcd_subpixel_layout>`
 
 LCD subpixel layout used for font anti-aliasing. See :ref:`FontLCDSubpixelLayout<enum_TextServer_FontLCDSubpixelLayout>`.
 
@@ -4822,7 +4880,7 @@ LCD subpixel layout used for font anti-aliasing. See :ref:`FontLCDSubpixelLayout
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gui/timers/button_shortcut_feedback_highlight_time** = ``0.2``
+:ref:`float<class_float>` **gui/timers/button_shortcut_feedback_highlight_time** = ``0.2`` :ref:`🔗<class_ProjectSettings_property_gui/timers/button_shortcut_feedback_highlight_time>`
 
 When :ref:`BaseButton.shortcut_feedback<class_BaseButton_property_shortcut_feedback>` is enabled, this is the time the :ref:`BaseButton<class_BaseButton>` will remain highlighted after a shortcut.
 
@@ -4834,7 +4892,7 @@ When :ref:`BaseButton.shortcut_feedback<class_BaseButton_property_shortcut_feedb
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **gui/timers/incremental_search_max_interval_msec** = ``2000``
+:ref:`int<class_int>` **gui/timers/incremental_search_max_interval_msec** = ``2000`` :ref:`🔗<class_ProjectSettings_property_gui/timers/incremental_search_max_interval_msec>`
 
 Timer setting for incremental search in :ref:`Tree<class_Tree>`, :ref:`ItemList<class_ItemList>`, etc. controls (in milliseconds).
 
@@ -4846,7 +4904,7 @@ Timer setting for incremental search in :ref:`Tree<class_Tree>`, :ref:`ItemList<
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gui/timers/text_edit_idle_detect_sec** = ``3``
+:ref:`float<class_float>` **gui/timers/text_edit_idle_detect_sec** = ``3`` :ref:`🔗<class_ProjectSettings_property_gui/timers/text_edit_idle_detect_sec>`
 
 Timer for detecting idle in :ref:`TextEdit<class_TextEdit>` (in seconds).
 
@@ -4858,7 +4916,7 @@ Timer for detecting idle in :ref:`TextEdit<class_TextEdit>` (in seconds).
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gui/timers/tooltip_delay_sec** = ``0.5``
+:ref:`float<class_float>` **gui/timers/tooltip_delay_sec** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_gui/timers/tooltip_delay_sec>`
 
 Default delay for tooltips (in seconds).
 
@@ -4870,7 +4928,7 @@ Default delay for tooltips (in seconds).
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gui/timers/tooltip_delay_sec.editor_hint** = ``0.5``
+:ref:`float<class_float>` **gui/timers/tooltip_delay_sec.editor_hint** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_gui/timers/tooltip_delay_sec.editor_hint>`
 
 Delay for tooltips in the editor.
 
@@ -4882,7 +4940,7 @@ Delay for tooltips in the editor.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_accept**
+:ref:`Dictionary<class_Dictionary>` **input/ui_accept** :ref:`🔗<class_ProjectSettings_property_input/ui_accept>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to confirm a focused button, menu or list item, or validate input.
 
@@ -4896,7 +4954,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to confirm a focused but
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_cancel**
+:ref:`Dictionary<class_Dictionary>` **input/ui_cancel** :ref:`🔗<class_ProjectSettings_property_input/ui_cancel>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to discard a modal or pending input.
 
@@ -4910,7 +4968,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to discard a modal or pe
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_copy**
+:ref:`Dictionary<class_Dictionary>` **input/ui_copy** :ref:`🔗<class_ProjectSettings_property_input/ui_copy>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to copy a selection to the clipboard.
 
@@ -4924,7 +4982,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to copy a selection to t
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_cut**
+:ref:`Dictionary<class_Dictionary>` **input/ui_cut** :ref:`🔗<class_ProjectSettings_property_input/ui_cut>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to cut a selection to the clipboard.
 
@@ -4938,7 +4996,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to cut a selection to th
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_down**
+:ref:`Dictionary<class_Dictionary>` **input/ui_down** :ref:`🔗<class_ProjectSettings_property_input/ui_down>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move down in the UI.
 
@@ -4952,7 +5010,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move down in the UI.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_end**
+:ref:`Dictionary<class_Dictionary>` **input/ui_end** :ref:`🔗<class_ProjectSettings_property_input/ui_end>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to go to the end position of a :ref:`Control<class_Control>` (e.g. last item in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_END<class_@GlobalScope_constant_KEY_END>` on typical desktop UI systems.
 
@@ -4966,7 +5024,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to go to the end positio
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_filedialog_refresh**
+:ref:`Dictionary<class_Dictionary>` **input/ui_filedialog_refresh** :ref:`🔗<class_ProjectSettings_property_input/ui_filedialog_refresh>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to refresh the contents of the current directory of a :ref:`FileDialog<class_FileDialog>`.
 
@@ -4980,7 +5038,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to refresh the contents 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_filedialog_show_hidden**
+:ref:`Dictionary<class_Dictionary>` **input/ui_filedialog_show_hidden** :ref:`🔗<class_ProjectSettings_property_input/ui_filedialog_show_hidden>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to toggle showing hidden files and directories in a :ref:`FileDialog<class_FileDialog>`.
 
@@ -4994,7 +5052,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to toggle showing hidden
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_filedialog_up_one_level**
+:ref:`Dictionary<class_Dictionary>` **input/ui_filedialog_up_one_level** :ref:`🔗<class_ProjectSettings_property_input/ui_filedialog_up_one_level>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to go up one directory in a :ref:`FileDialog<class_FileDialog>`.
 
@@ -5008,7 +5066,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to go up one directory i
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_focus_next**
+:ref:`Dictionary<class_Dictionary>` **input/ui_focus_next** :ref:`🔗<class_ProjectSettings_property_input/ui_focus_next>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to focus the next :ref:`Control<class_Control>` in the scene. The focus behavior can be configured via :ref:`Control.focus_next<class_Control_property_focus_next>`.
 
@@ -5022,7 +5080,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to focus the next :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_focus_prev**
+:ref:`Dictionary<class_Dictionary>` **input/ui_focus_prev** :ref:`🔗<class_ProjectSettings_property_input/ui_focus_prev>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to focus the previous :ref:`Control<class_Control>` in the scene. The focus behavior can be configured via :ref:`Control.focus_previous<class_Control_property_focus_previous>`.
 
@@ -5036,7 +5094,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to focus the previous :r
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_graph_delete**
+:ref:`Dictionary<class_Dictionary>` **input/ui_graph_delete** :ref:`🔗<class_ProjectSettings_property_input/ui_graph_delete>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to delete a :ref:`GraphNode<class_GraphNode>` in a :ref:`GraphEdit<class_GraphEdit>`.
 
@@ -5050,7 +5108,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to delete a :ref:`GraphN
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_graph_duplicate**
+:ref:`Dictionary<class_Dictionary>` **input/ui_graph_duplicate** :ref:`🔗<class_ProjectSettings_property_input/ui_graph_duplicate>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to duplicate a :ref:`GraphNode<class_GraphNode>` in a :ref:`GraphEdit<class_GraphEdit>`.
 
@@ -5064,7 +5122,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to duplicate a :ref:`Gra
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_home**
+:ref:`Dictionary<class_Dictionary>` **input/ui_home** :ref:`🔗<class_ProjectSettings_property_input/ui_home>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to go to the start position of a :ref:`Control<class_Control>` (e.g. first item in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_HOME<class_@GlobalScope_constant_KEY_HOME>` on typical desktop UI systems.
 
@@ -5078,7 +5136,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to go to the start posit
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_left**
+:ref:`Dictionary<class_Dictionary>` **input/ui_left** :ref:`🔗<class_ProjectSettings_property_input/ui_left>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move left in the UI.
 
@@ -5092,7 +5150,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move left in the UI.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_menu**
+:ref:`Dictionary<class_Dictionary>` **input/ui_menu** :ref:`🔗<class_ProjectSettings_property_input/ui_menu>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to open a context menu in a text field.
 
@@ -5106,7 +5164,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to open a context menu i
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_page_down**
+:ref:`Dictionary<class_Dictionary>` **input/ui_page_down** :ref:`🔗<class_ProjectSettings_property_input/ui_page_down>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to go down a page in a :ref:`Control<class_Control>` (e.g. in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_PAGEDOWN<class_@GlobalScope_constant_KEY_PAGEDOWN>` on typical desktop UI systems.
 
@@ -5120,7 +5178,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to go down a page in a :
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_page_up**
+:ref:`Dictionary<class_Dictionary>` **input/ui_page_up** :ref:`🔗<class_ProjectSettings_property_input/ui_page_up>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to go up a page in a :ref:`Control<class_Control>` (e.g. in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`), matching the behavior of :ref:`@GlobalScope.KEY_PAGEUP<class_@GlobalScope_constant_KEY_PAGEUP>` on typical desktop UI systems.
 
@@ -5134,7 +5192,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to go up a page in a :re
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_paste**
+:ref:`Dictionary<class_Dictionary>` **input/ui_paste** :ref:`🔗<class_ProjectSettings_property_input/ui_paste>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to paste from the clipboard.
 
@@ -5148,7 +5206,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to paste from the clipbo
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_redo**
+:ref:`Dictionary<class_Dictionary>` **input/ui_redo** :ref:`🔗<class_ProjectSettings_property_input/ui_redo>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to redo an undone action.
 
@@ -5162,7 +5220,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to redo an undone action
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_right**
+:ref:`Dictionary<class_Dictionary>` **input/ui_right** :ref:`🔗<class_ProjectSettings_property_input/ui_right>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move right in the UI.
 
@@ -5176,7 +5234,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move right in the UI.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_select**
+:ref:`Dictionary<class_Dictionary>` **input/ui_select** :ref:`🔗<class_ProjectSettings_property_input/ui_select>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to select an item in a :ref:`Control<class_Control>` (e.g. in an :ref:`ItemList<class_ItemList>` or a :ref:`Tree<class_Tree>`).
 
@@ -5190,7 +5248,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to select an item in a :
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_swap_input_direction**
+:ref:`Dictionary<class_Dictionary>` **input/ui_swap_input_direction** :ref:`🔗<class_ProjectSettings_property_input/ui_swap_input_direction>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to swap input direction, i.e. change between left-to-right to right-to-left modes. Affects text-editing controls (:ref:`LineEdit<class_LineEdit>`, :ref:`TextEdit<class_TextEdit>`).
 
@@ -5202,7 +5260,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to swap input direction,
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_add_selection_for_next_occurrence**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_add_selection_for_next_occurrence** :ref:`🔗<class_ProjectSettings_property_input/ui_text_add_selection_for_next_occurrence>`
 
 If a selection is currently active with the last caret in text fields, searches for the next occurrence of the selection, adds a caret and selects the next occurrence.
 
@@ -5222,7 +5280,7 @@ The viewport is adjusted to the latest newly added caret.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace** :ref:`🔗<class_ProjectSettings_property_input/ui_text_backspace>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to delete the character before the text cursor.
 
@@ -5236,7 +5294,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to delete the character 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace_all_to_left**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace_all_to_left** :ref:`🔗<class_ProjectSettings_property_input/ui_text_backspace_all_to_left>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to delete **all** text before the text cursor.
 
@@ -5250,7 +5308,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to delete **all** text b
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace_all_to_left.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace_all_to_left.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_backspace_all_to_left.macos>`
 
 macOS specific override for the shortcut to delete all text before the text cursor.
 
@@ -5262,7 +5320,7 @@ macOS specific override for the shortcut to delete all text before the text curs
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace_word**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace_word** :ref:`🔗<class_ProjectSettings_property_input/ui_text_backspace_word>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to delete all characters before the cursor up until a whitespace or punctuation character.
 
@@ -5276,7 +5334,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to delete all characters
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace_word.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_backspace_word.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_backspace_word.macos>`
 
 macOS specific override for the shortcut to delete a word.
 
@@ -5288,7 +5346,7 @@ macOS specific override for the shortcut to delete a word.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_above**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_above** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_add_above>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to add an additional caret above every caret of a text.
 
@@ -5300,7 +5358,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to add an additional car
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_above.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_above.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_add_above.macos>`
 
 macOS specific override for the shortcut to add a caret above every caret.
 
@@ -5312,7 +5370,7 @@ macOS specific override for the shortcut to add a caret above every caret.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_below**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_below** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_add_below>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to add an additional caret below every caret of a text.
 
@@ -5324,7 +5382,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to add an additional car
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_below.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_below.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_add_below.macos>`
 
 macOS specific override for the shortcut to add a caret below every caret.
 
@@ -5336,7 +5394,7 @@ macOS specific override for the shortcut to add a caret below every caret.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_document_end**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_document_end** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_document_end>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor to the end of the text.
 
@@ -5350,7 +5408,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_document_end.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_document_end.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_document_end.macos>`
 
 macOS specific override for the shortcut to move the text cursor to the end of the text.
 
@@ -5362,7 +5420,7 @@ macOS specific override for the shortcut to move the text cursor to the end of t
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_document_start**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_document_start** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_document_start>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor to the start of the text.
 
@@ -5376,7 +5434,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_document_start.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_document_start.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_document_start.macos>`
 
 macOS specific override for the shortcut to move the text cursor to the start of the text.
 
@@ -5388,7 +5446,7 @@ macOS specific override for the shortcut to move the text cursor to the start of
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_down**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_down** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_down>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor down.
 
@@ -5402,7 +5460,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_left**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_left** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_left>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor left.
 
@@ -5416,7 +5474,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_line_end**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_line_end** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_line_end>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor to the end of the line.
 
@@ -5430,7 +5488,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_line_end.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_line_end.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_line_end.macos>`
 
 macOS specific override for the shortcut to move the text cursor to the end of the line.
 
@@ -5442,7 +5500,7 @@ macOS specific override for the shortcut to move the text cursor to the end of t
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_line_start**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_line_start** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_line_start>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor to the start of the line.
 
@@ -5456,7 +5514,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_line_start.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_line_start.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_line_start.macos>`
 
 macOS specific override for the shortcut to move the text cursor to the start of the line.
 
@@ -5468,7 +5526,7 @@ macOS specific override for the shortcut to move the text cursor to the start of
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_page_down**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_page_down** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_page_down>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor down one page.
 
@@ -5482,7 +5540,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_page_up**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_page_up** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_page_up>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor up one page.
 
@@ -5496,7 +5554,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_right**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_right** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_right>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor right.
 
@@ -5510,7 +5568,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_up**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_up** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_up>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor up.
 
@@ -5524,7 +5582,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_word_left**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_word_left** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_word_left>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor left to the next whitespace or punctuation.
 
@@ -5538,7 +5596,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_word_left.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_word_left.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_word_left.macos>`
 
 macOS specific override for the shortcut to move the text cursor back one word.
 
@@ -5550,7 +5608,7 @@ macOS specific override for the shortcut to move the text cursor back one word.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_word_right**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_word_right** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_word_right>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor right to the next whitespace or punctuation.
 
@@ -5564,7 +5622,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move the text cursor 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_word_right.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_word_right.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_caret_word_right.macos>`
 
 macOS specific override for the shortcut to move the text cursor forward one word.
 
@@ -5576,7 +5634,7 @@ macOS specific override for the shortcut to move the text cursor forward one wor
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_clear_carets_and_selection**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_clear_carets_and_selection** :ref:`🔗<class_ProjectSettings_property_input/ui_text_clear_carets_and_selection>`
 
 If there's only one caret active and with a selection, clears the selection.
 
@@ -5592,7 +5650,7 @@ In case there's more than one caret active, removes the secondary carets and cle
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_completion_accept**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_completion_accept** :ref:`🔗<class_ProjectSettings_property_input/ui_text_completion_accept>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to accept an autocompletion hint.
 
@@ -5606,7 +5664,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to accept an autocomplet
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_completion_query**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_completion_query** :ref:`🔗<class_ProjectSettings_property_input/ui_text_completion_query>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to request autocompletion.
 
@@ -5620,7 +5678,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to request autocompletio
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_completion_replace**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_completion_replace** :ref:`🔗<class_ProjectSettings_property_input/ui_text_completion_replace>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to accept an autocompletion hint, replacing existing text.
 
@@ -5634,7 +5692,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to accept an autocomplet
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_dedent**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_dedent** :ref:`🔗<class_ProjectSettings_property_input/ui_text_dedent>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to unindent text.
 
@@ -5648,7 +5706,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to unindent text.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_delete**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_delete** :ref:`🔗<class_ProjectSettings_property_input/ui_text_delete>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to delete the character after the text cursor.
 
@@ -5662,7 +5720,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to delete the character 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_delete_all_to_right**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_delete_all_to_right** :ref:`🔗<class_ProjectSettings_property_input/ui_text_delete_all_to_right>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to delete **all** text after the text cursor.
 
@@ -5676,7 +5734,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to delete **all** text a
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_delete_all_to_right.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_delete_all_to_right.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_delete_all_to_right.macos>`
 
 macOS specific override for the shortcut to delete all text after the text cursor.
 
@@ -5688,7 +5746,7 @@ macOS specific override for the shortcut to delete all text after the text curso
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_delete_word**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_delete_word** :ref:`🔗<class_ProjectSettings_property_input/ui_text_delete_word>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to delete all characters after the cursor up until a whitespace or punctuation character.
 
@@ -5702,7 +5760,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to delete all characters
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_delete_word.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_delete_word.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_delete_word.macos>`
 
 macOS specific override for the shortcut to delete a word after the text cursor.
 
@@ -5714,7 +5772,7 @@ macOS specific override for the shortcut to delete a word after the text cursor.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_indent**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_indent** :ref:`🔗<class_ProjectSettings_property_input/ui_text_indent>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to indent the current line.
 
@@ -5728,7 +5786,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to indent the current li
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_newline**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_newline** :ref:`🔗<class_ProjectSettings_property_input/ui_text_newline>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to insert a new line at the position of the text cursor.
 
@@ -5742,7 +5800,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to insert a new line at 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_newline_above**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_newline_above** :ref:`🔗<class_ProjectSettings_property_input/ui_text_newline_above>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to insert a new line before the current one.
 
@@ -5756,7 +5814,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to insert a new line bef
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_newline_blank**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_newline_blank** :ref:`🔗<class_ProjectSettings_property_input/ui_text_newline_blank>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to insert a new line after the current one.
 
@@ -5770,7 +5828,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to insert a new line aft
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_scroll_down**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_scroll_down** :ref:`🔗<class_ProjectSettings_property_input/ui_text_scroll_down>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to scroll down one line of text.
 
@@ -5784,7 +5842,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to scroll down one line 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_scroll_down.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_scroll_down.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_scroll_down.macos>`
 
 macOS specific override for the shortcut to scroll down one line.
 
@@ -5796,7 +5854,7 @@ macOS specific override for the shortcut to scroll down one line.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_scroll_up**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_scroll_up** :ref:`🔗<class_ProjectSettings_property_input/ui_text_scroll_up>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to scroll up one line of text.
 
@@ -5810,7 +5868,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to scroll up one line of
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_scroll_up.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_scroll_up.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_scroll_up.macos>`
 
 macOS specific override for the shortcut to scroll up one line.
 
@@ -5822,7 +5880,7 @@ macOS specific override for the shortcut to scroll up one line.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_select_all**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_select_all** :ref:`🔗<class_ProjectSettings_property_input/ui_text_select_all>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to select all text.
 
@@ -5836,7 +5894,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to select all text.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_select_word_under_caret**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_select_word_under_caret** :ref:`🔗<class_ProjectSettings_property_input/ui_text_select_word_under_caret>`
 
 If no selection is currently active, selects the word currently under the caret in text fields. If a selection is currently active, deselects the current selection.
 
@@ -5850,7 +5908,7 @@ If no selection is currently active, selects the word currently under the caret 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_select_word_under_caret.macos**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_select_word_under_caret.macos** :ref:`🔗<class_ProjectSettings_property_input/ui_text_select_word_under_caret.macos>`
 
 macOS specific override for the shortcut to select the word currently under the caret.
 
@@ -5862,7 +5920,7 @@ macOS specific override for the shortcut to select the word currently under the 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_skip_selection_for_next_occurrence**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_skip_selection_for_next_occurrence** :ref:`🔗<class_ProjectSettings_property_input/ui_text_skip_selection_for_next_occurrence>`
 
 If no selection is currently active with the last caret in text fields, searches for the next occurrence of the the word currently under the caret and moves the caret to the next occurrence. The action can be performed sequentially for other occurrences of the word under the last caret.
 
@@ -5880,7 +5938,7 @@ The viewport is adjusted to the latest newly added caret.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_submit**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_submit** :ref:`🔗<class_ProjectSettings_property_input/ui_text_submit>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to submit a text field.
 
@@ -5894,7 +5952,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to submit a text field.
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_text_toggle_insert_mode**
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_toggle_insert_mode** :ref:`🔗<class_ProjectSettings_property_input/ui_text_toggle_insert_mode>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to toggle *insert mode* in a text field. While in insert mode, inserting new text overrides the character after the cursor, unless the next character is a new line.
 
@@ -5908,7 +5966,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to toggle *insert mode* 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_undo**
+:ref:`Dictionary<class_Dictionary>` **input/ui_undo** :ref:`🔗<class_ProjectSettings_property_input/ui_undo>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to undo the most recent action.
 
@@ -5922,7 +5980,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to undo the most recent 
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **input/ui_up**
+:ref:`Dictionary<class_Dictionary>` **input/ui_up** :ref:`🔗<class_ProjectSettings_property_input/ui_up>`
 
 Default :ref:`InputEventAction<class_InputEventAction>` to move up in the UI.
 
@@ -5936,7 +5994,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to move up in the UI.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **input_devices/buffering/agile_event_flushing** = ``false``
+:ref:`bool<class_bool>` **input_devices/buffering/agile_event_flushing** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/buffering/agile_event_flushing>`
 
 If ``true``, key/touch/joystick events will be flushed just before every idle and physics frame.
 
@@ -5954,7 +6012,7 @@ Enabling this can greatly improve the responsiveness to input, specially in devi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **input_devices/compatibility/legacy_just_pressed_behavior** = ``false``
+:ref:`bool<class_bool>` **input_devices/compatibility/legacy_just_pressed_behavior** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/compatibility/legacy_just_pressed_behavior>`
 
 If ``true``, :ref:`Input.is_action_just_pressed<class_Input_method_is_action_just_pressed>` and :ref:`Input.is_action_just_released<class_Input_method_is_action_just_released>` will only return ``true`` if the action is still in the respective state, i.e. an action that is pressed *and* released on the same frame will be missed.
 
@@ -5970,7 +6028,7 @@ If ``false``, no input will be lost.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **input_devices/pen_tablet/driver**
+:ref:`String<class_String>` **input_devices/pen_tablet/driver** :ref:`🔗<class_ProjectSettings_property_input_devices/pen_tablet/driver>`
 
 Specifies the tablet driver to use. If left empty, the default driver will be used.
 
@@ -5984,7 +6042,7 @@ Specifies the tablet driver to use. If left empty, the default driver will be us
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **input_devices/pen_tablet/driver.windows**
+:ref:`String<class_String>` **input_devices/pen_tablet/driver.windows** :ref:`🔗<class_ProjectSettings_property_input_devices/pen_tablet/driver.windows>`
 
 Override for :ref:`input_devices/pen_tablet/driver<class_ProjectSettings_property_input_devices/pen_tablet/driver>` on Windows.
 
@@ -5996,7 +6054,7 @@ Override for :ref:`input_devices/pen_tablet/driver<class_ProjectSettings_propert
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **input_devices/pointing/android/enable_long_press_as_right_click** = ``false``
+:ref:`bool<class_bool>` **input_devices/pointing/android/enable_long_press_as_right_click** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/pointing/android/enable_long_press_as_right_click>`
 
 If ``true``, long press events on an Android touchscreen are transformed into right click events.
 
@@ -6008,7 +6066,7 @@ If ``true``, long press events on an Android touchscreen are transformed into ri
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **input_devices/pointing/android/enable_pan_and_scale_gestures** = ``false``
+:ref:`bool<class_bool>` **input_devices/pointing/android/enable_pan_and_scale_gestures** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/pointing/android/enable_pan_and_scale_gestures>`
 
 If ``true``, multi-touch pan and scale gestures are enabled on Android devices.
 
@@ -6020,7 +6078,7 @@ If ``true``, multi-touch pan and scale gestures are enabled on Android devices.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **input_devices/pointing/android/rotary_input_scroll_axis** = ``1``
+:ref:`int<class_int>` **input_devices/pointing/android/rotary_input_scroll_axis** = ``1`` :ref:`🔗<class_ProjectSettings_property_input_devices/pointing/android/rotary_input_scroll_axis>`
 
 On Wear OS devices, defines which axis of the mouse wheel rotary input is mapped to. This rotary input is usually performed by rotating the physical or virtual (touch-based) bezel on a smartwatch.
 
@@ -6032,7 +6090,7 @@ On Wear OS devices, defines which axis of the mouse wheel rotary input is mapped
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **input_devices/pointing/emulate_mouse_from_touch** = ``true``
+:ref:`bool<class_bool>` **input_devices/pointing/emulate_mouse_from_touch** = ``true`` :ref:`🔗<class_ProjectSettings_property_input_devices/pointing/emulate_mouse_from_touch>`
 
 If ``true``, sends mouse input events when tapping or swiping on the touchscreen.
 
@@ -6044,7 +6102,7 @@ If ``true``, sends mouse input events when tapping or swiping on the touchscreen
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **input_devices/pointing/emulate_touch_from_mouse** = ``false``
+:ref:`bool<class_bool>` **input_devices/pointing/emulate_touch_from_mouse** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`
 
 If ``true``, sends touch input events when clicking or dragging the mouse.
 
@@ -6056,7 +6114,7 @@ If ``true``, sends touch input events when clicking or dragging the mouse.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **internationalization/locale/fallback** = ``"en"``
+:ref:`String<class_String>` **internationalization/locale/fallback** = ``"en"`` :ref:`🔗<class_ProjectSettings_property_internationalization/locale/fallback>`
 
 The locale to fall back to if a translation isn't available in a given language. If left empty, ``en`` (English) will be used.
 
@@ -6068,7 +6126,7 @@ The locale to fall back to if a translation isn't available in a given language.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **internationalization/locale/include_text_server_data** = ``false``
+:ref:`bool<class_bool>` **internationalization/locale/include_text_server_data** = ``false`` :ref:`🔗<class_ProjectSettings_property_internationalization/locale/include_text_server_data>`
 
 If ``true``, text server break iteration rule sets, dictionaries and other optional data are included in the exported project.
 
@@ -6084,7 +6142,7 @@ If ``true``, text server break iteration rule sets, dictionaries and other optio
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **internationalization/locale/test** = ``""``
+:ref:`String<class_String>` **internationalization/locale/test** = ``""`` :ref:`🔗<class_ProjectSettings_property_internationalization/locale/test>`
 
 If non-empty, this locale will be used when running the project from the editor.
 
@@ -6096,7 +6154,7 @@ If non-empty, this locale will be used when running the project from the editor.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **internationalization/pseudolocalization/double_vowels** = ``false``
+:ref:`bool<class_bool>` **internationalization/pseudolocalization/double_vowels** = ``false`` :ref:`🔗<class_ProjectSettings_property_internationalization/pseudolocalization/double_vowels>`
 
 Double vowels in strings during pseudolocalization to simulate the lengthening of text due to localization.
 
@@ -6108,7 +6166,7 @@ Double vowels in strings during pseudolocalization to simulate the lengthening o
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **internationalization/pseudolocalization/expansion_ratio** = ``0.0``
+:ref:`float<class_float>` **internationalization/pseudolocalization/expansion_ratio** = ``0.0`` :ref:`🔗<class_ProjectSettings_property_internationalization/pseudolocalization/expansion_ratio>`
 
 The expansion ratio to use during pseudolocalization. A value of ``0.3`` is sufficient for most practical purposes, and will increase the length of each string by 30%.
 
@@ -6120,7 +6178,7 @@ The expansion ratio to use during pseudolocalization. A value of ``0.3`` is suff
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **internationalization/pseudolocalization/fake_bidi** = ``false``
+:ref:`bool<class_bool>` **internationalization/pseudolocalization/fake_bidi** = ``false`` :ref:`🔗<class_ProjectSettings_property_internationalization/pseudolocalization/fake_bidi>`
 
 If ``true``, emulate bidirectional (right-to-left) text when pseudolocalization is enabled. This can be used to spot issues with RTL layout and UI mirroring that will crop up if the project is localized to RTL languages such as Arabic or Hebrew.
 
@@ -6132,7 +6190,7 @@ If ``true``, emulate bidirectional (right-to-left) text when pseudolocalization 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **internationalization/pseudolocalization/override** = ``false``
+:ref:`bool<class_bool>` **internationalization/pseudolocalization/override** = ``false`` :ref:`🔗<class_ProjectSettings_property_internationalization/pseudolocalization/override>`
 
 Replace all characters in the string with ``*``. Useful for finding non-localizable strings.
 
@@ -6144,7 +6202,7 @@ Replace all characters in the string with ``*``. Useful for finding non-localiza
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **internationalization/pseudolocalization/prefix** = ``"["``
+:ref:`String<class_String>` **internationalization/pseudolocalization/prefix** = ``"["`` :ref:`🔗<class_ProjectSettings_property_internationalization/pseudolocalization/prefix>`
 
 Prefix that will be prepended to the pseudolocalized string.
 
@@ -6156,7 +6214,7 @@ Prefix that will be prepended to the pseudolocalized string.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **internationalization/pseudolocalization/replace_with_accents** = ``true``
+:ref:`bool<class_bool>` **internationalization/pseudolocalization/replace_with_accents** = ``true`` :ref:`🔗<class_ProjectSettings_property_internationalization/pseudolocalization/replace_with_accents>`
 
 Replace all characters with their accented variants during pseudolocalization.
 
@@ -6168,7 +6226,7 @@ Replace all characters with their accented variants during pseudolocalization.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **internationalization/pseudolocalization/skip_placeholders** = ``true``
+:ref:`bool<class_bool>` **internationalization/pseudolocalization/skip_placeholders** = ``true`` :ref:`🔗<class_ProjectSettings_property_internationalization/pseudolocalization/skip_placeholders>`
 
 Skip placeholders for string formatting like ``%s`` or ``%f`` during pseudolocalization. Useful to identify strings which need additional control characters to display correctly.
 
@@ -6180,7 +6238,7 @@ Skip placeholders for string formatting like ``%s`` or ``%f`` during pseudolocal
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **internationalization/pseudolocalization/suffix** = ``"]"``
+:ref:`String<class_String>` **internationalization/pseudolocalization/suffix** = ``"]"`` :ref:`🔗<class_ProjectSettings_property_internationalization/pseudolocalization/suffix>`
 
 Suffix that will be appended to the pseudolocalized string.
 
@@ -6192,7 +6250,7 @@ Suffix that will be appended to the pseudolocalized string.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **internationalization/pseudolocalization/use_pseudolocalization** = ``false``
+:ref:`bool<class_bool>` **internationalization/pseudolocalization/use_pseudolocalization** = ``false`` :ref:`🔗<class_ProjectSettings_property_internationalization/pseudolocalization/use_pseudolocalization>`
 
 If ``true``, enables pseudolocalization for the project. This can be used to spot untranslatable strings or layout issues that may occur once the project is localized to languages that have longer strings than the source language.
 
@@ -6206,7 +6264,7 @@ If ``true``, enables pseudolocalization for the project. This can be used to spo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **internationalization/rendering/force_right_to_left_layout_direction** = ``false``
+:ref:`bool<class_bool>` **internationalization/rendering/force_right_to_left_layout_direction** = ``false`` :ref:`🔗<class_ProjectSettings_property_internationalization/rendering/force_right_to_left_layout_direction>`
 
 Force layout direction and text writing direction to RTL for all controls.
 
@@ -6218,7 +6276,7 @@ Force layout direction and text writing direction to RTL for all controls.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **internationalization/rendering/root_node_auto_translate** = ``true``
+:ref:`bool<class_bool>` **internationalization/rendering/root_node_auto_translate** = ``true`` :ref:`🔗<class_ProjectSettings_property_internationalization/rendering/root_node_auto_translate>`
 
 If ``true``, root node will use :ref:`Node.AUTO_TRANSLATE_MODE_ALWAYS<class_Node_constant_AUTO_TRANSLATE_MODE_ALWAYS>`, otherwise :ref:`Node.AUTO_TRANSLATE_MODE_DISABLED<class_Node_constant_AUTO_TRANSLATE_MODE_DISABLED>` will be used.
 
@@ -6232,7 +6290,7 @@ If ``true``, root node will use :ref:`Node.AUTO_TRANSLATE_MODE_ALWAYS<class_Node
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **internationalization/rendering/root_node_layout_direction** = ``0``
+:ref:`int<class_int>` **internationalization/rendering/root_node_layout_direction** = ``0`` :ref:`🔗<class_ProjectSettings_property_internationalization/rendering/root_node_layout_direction>`
 
 Root node default layout direction.
 
@@ -6244,7 +6302,7 @@ Root node default layout direction.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **internationalization/rendering/text_driver** = ``""``
+:ref:`String<class_String>` **internationalization/rendering/text_driver** = ``""`` :ref:`🔗<class_ProjectSettings_property_internationalization/rendering/text_driver>`
 
 Specifies the :ref:`TextServer<class_TextServer>` to use. If left empty, the default will be used.
 
@@ -6262,7 +6320,7 @@ Specifies the :ref:`TextServer<class_TextServer>` to use. If left empty, the def
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_1** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_1** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_1>`
 
 Optional name for the 2D navigation layer 1. If left empty, the layer will display as "Layer 1".
 
@@ -6274,7 +6332,7 @@ Optional name for the 2D navigation layer 1. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_2** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_2** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_2>`
 
 Optional name for the 2D navigation layer 2. If left empty, the layer will display as "Layer 2".
 
@@ -6286,7 +6344,7 @@ Optional name for the 2D navigation layer 2. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_3** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_3** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_3>`
 
 Optional name for the 2D navigation layer 3. If left empty, the layer will display as "Layer 3".
 
@@ -6298,7 +6356,7 @@ Optional name for the 2D navigation layer 3. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_4** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_4** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_4>`
 
 Optional name for the 2D navigation layer 4. If left empty, the layer will display as "Layer 4".
 
@@ -6310,7 +6368,7 @@ Optional name for the 2D navigation layer 4. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_5** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_5** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_5>`
 
 Optional name for the 2D navigation layer 5. If left empty, the layer will display as "Layer 5".
 
@@ -6322,7 +6380,7 @@ Optional name for the 2D navigation layer 5. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_6** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_6** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_6>`
 
 Optional name for the 2D navigation layer 6. If left empty, the layer will display as "Layer 6".
 
@@ -6334,7 +6392,7 @@ Optional name for the 2D navigation layer 6. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_7** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_7** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_7>`
 
 Optional name for the 2D navigation layer 7. If left empty, the layer will display as "Layer 7".
 
@@ -6346,7 +6404,7 @@ Optional name for the 2D navigation layer 7. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_8** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_8** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_8>`
 
 Optional name for the 2D navigation layer 8. If left empty, the layer will display as "Layer 8".
 
@@ -6358,7 +6416,7 @@ Optional name for the 2D navigation layer 8. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_9** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_9** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_9>`
 
 Optional name for the 2D navigation layer 9. If left empty, the layer will display as "Layer 9".
 
@@ -6370,7 +6428,7 @@ Optional name for the 2D navigation layer 9. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_10** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_10** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_10>`
 
 Optional name for the 2D navigation layer 10. If left empty, the layer will display as "Layer 10".
 
@@ -6382,7 +6440,7 @@ Optional name for the 2D navigation layer 10. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_11** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_11** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_11>`
 
 Optional name for the 2D navigation layer 11. If left empty, the layer will display as "Layer 11".
 
@@ -6394,7 +6452,7 @@ Optional name for the 2D navigation layer 11. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_12** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_12** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_12>`
 
 Optional name for the 2D navigation layer 12. If left empty, the layer will display as "Layer 12".
 
@@ -6406,7 +6464,7 @@ Optional name for the 2D navigation layer 12. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_13** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_13** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_13>`
 
 Optional name for the 2D navigation layer 13. If left empty, the layer will display as "Layer 13".
 
@@ -6418,7 +6476,7 @@ Optional name for the 2D navigation layer 13. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_14** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_14** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_14>`
 
 Optional name for the 2D navigation layer 14. If left empty, the layer will display as "Layer 14".
 
@@ -6430,7 +6488,7 @@ Optional name for the 2D navigation layer 14. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_15** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_15** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_15>`
 
 Optional name for the 2D navigation layer 15. If left empty, the layer will display as "Layer 15".
 
@@ -6442,7 +6500,7 @@ Optional name for the 2D navigation layer 15. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_16** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_16** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_16>`
 
 Optional name for the 2D navigation layer 16. If left empty, the layer will display as "Layer 16".
 
@@ -6454,7 +6512,7 @@ Optional name for the 2D navigation layer 16. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_17** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_17** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_17>`
 
 Optional name for the 2D navigation layer 17. If left empty, the layer will display as "Layer 17".
 
@@ -6466,7 +6524,7 @@ Optional name for the 2D navigation layer 17. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_18** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_18** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_18>`
 
 Optional name for the 2D navigation layer 18. If left empty, the layer will display as "Layer 18".
 
@@ -6478,7 +6536,7 @@ Optional name for the 2D navigation layer 18. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_19** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_19** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_19>`
 
 Optional name for the 2D navigation layer 19. If left empty, the layer will display as "Layer 19".
 
@@ -6490,7 +6548,7 @@ Optional name for the 2D navigation layer 19. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_20** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_20** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_20>`
 
 Optional name for the 2D navigation layer 20. If left empty, the layer will display as "Layer 20".
 
@@ -6502,7 +6560,7 @@ Optional name for the 2D navigation layer 20. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_21** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_21** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_21>`
 
 Optional name for the 2D navigation layer 21. If left empty, the layer will display as "Layer 21".
 
@@ -6514,7 +6572,7 @@ Optional name for the 2D navigation layer 21. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_22** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_22** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_22>`
 
 Optional name for the 2D navigation layer 22. If left empty, the layer will display as "Layer 22".
 
@@ -6526,7 +6584,7 @@ Optional name for the 2D navigation layer 22. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_23** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_23** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_23>`
 
 Optional name for the 2D navigation layer 23. If left empty, the layer will display as "Layer 23".
 
@@ -6538,7 +6596,7 @@ Optional name for the 2D navigation layer 23. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_24** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_24** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_24>`
 
 Optional name for the 2D navigation layer 24. If left empty, the layer will display as "Layer 24".
 
@@ -6550,7 +6608,7 @@ Optional name for the 2D navigation layer 24. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_25** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_25** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_25>`
 
 Optional name for the 2D navigation layer 25. If left empty, the layer will display as "Layer 25".
 
@@ -6562,7 +6620,7 @@ Optional name for the 2D navigation layer 25. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_26** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_26** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_26>`
 
 Optional name for the 2D navigation layer 26. If left empty, the layer will display as "Layer 26".
 
@@ -6574,7 +6632,7 @@ Optional name for the 2D navigation layer 26. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_27** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_27** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_27>`
 
 Optional name for the 2D navigation layer 27. If left empty, the layer will display as "Layer 27".
 
@@ -6586,7 +6644,7 @@ Optional name for the 2D navigation layer 27. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_28** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_28** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_28>`
 
 Optional name for the 2D navigation layer 28. If left empty, the layer will display as "Layer 28".
 
@@ -6598,7 +6656,7 @@ Optional name for the 2D navigation layer 28. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_29** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_29** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_29>`
 
 Optional name for the 2D navigation layer 29. If left empty, the layer will display as "Layer 29".
 
@@ -6610,7 +6668,7 @@ Optional name for the 2D navigation layer 29. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_30** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_30** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_30>`
 
 Optional name for the 2D navigation layer 30. If left empty, the layer will display as "Layer 30".
 
@@ -6622,7 +6680,7 @@ Optional name for the 2D navigation layer 30. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_31** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_31** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_31>`
 
 Optional name for the 2D navigation layer 31. If left empty, the layer will display as "Layer 31".
 
@@ -6634,7 +6692,7 @@ Optional name for the 2D navigation layer 31. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_navigation/layer_32** = ``""``
+:ref:`String<class_String>` **layer_names/2d_navigation/layer_32** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_navigation/layer_32>`
 
 Optional name for the 2D navigation layer 32. If left empty, the layer will display as "Layer 32".
 
@@ -6646,7 +6704,7 @@ Optional name for the 2D navigation layer 32. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_1** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_1** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_1>`
 
 Optional name for the 2D physics layer 1. If left empty, the layer will display as "Layer 1".
 
@@ -6658,7 +6716,7 @@ Optional name for the 2D physics layer 1. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_2** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_2** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_2>`
 
 Optional name for the 2D physics layer 2. If left empty, the layer will display as "Layer 2".
 
@@ -6670,7 +6728,7 @@ Optional name for the 2D physics layer 2. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_3** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_3** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_3>`
 
 Optional name for the 2D physics layer 3. If left empty, the layer will display as "Layer 3".
 
@@ -6682,7 +6740,7 @@ Optional name for the 2D physics layer 3. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_4** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_4** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_4>`
 
 Optional name for the 2D physics layer 4. If left empty, the layer will display as "Layer 4".
 
@@ -6694,7 +6752,7 @@ Optional name for the 2D physics layer 4. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_5** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_5** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_5>`
 
 Optional name for the 2D physics layer 5. If left empty, the layer will display as "Layer 5".
 
@@ -6706,7 +6764,7 @@ Optional name for the 2D physics layer 5. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_6** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_6** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_6>`
 
 Optional name for the 2D physics layer 6. If left empty, the layer will display as "Layer 6".
 
@@ -6718,7 +6776,7 @@ Optional name for the 2D physics layer 6. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_7** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_7** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_7>`
 
 Optional name for the 2D physics layer 7. If left empty, the layer will display as "Layer 7".
 
@@ -6730,7 +6788,7 @@ Optional name for the 2D physics layer 7. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_8** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_8** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_8>`
 
 Optional name for the 2D physics layer 8. If left empty, the layer will display as "Layer 8".
 
@@ -6742,7 +6800,7 @@ Optional name for the 2D physics layer 8. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_9** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_9** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_9>`
 
 Optional name for the 2D physics layer 9. If left empty, the layer will display as "Layer 9".
 
@@ -6754,7 +6812,7 @@ Optional name for the 2D physics layer 9. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_10** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_10** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_10>`
 
 Optional name for the 2D physics layer 10. If left empty, the layer will display as "Layer 10".
 
@@ -6766,7 +6824,7 @@ Optional name for the 2D physics layer 10. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_11** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_11** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_11>`
 
 Optional name for the 2D physics layer 11. If left empty, the layer will display as "Layer 11".
 
@@ -6778,7 +6836,7 @@ Optional name for the 2D physics layer 11. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_12** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_12** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_12>`
 
 Optional name for the 2D physics layer 12. If left empty, the layer will display as "Layer 12".
 
@@ -6790,7 +6848,7 @@ Optional name for the 2D physics layer 12. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_13** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_13** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_13>`
 
 Optional name for the 2D physics layer 13. If left empty, the layer will display as "Layer 13".
 
@@ -6802,7 +6860,7 @@ Optional name for the 2D physics layer 13. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_14** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_14** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_14>`
 
 Optional name for the 2D physics layer 14. If left empty, the layer will display as "Layer 14".
 
@@ -6814,7 +6872,7 @@ Optional name for the 2D physics layer 14. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_15** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_15** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_15>`
 
 Optional name for the 2D physics layer 15. If left empty, the layer will display as "Layer 15".
 
@@ -6826,7 +6884,7 @@ Optional name for the 2D physics layer 15. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_16** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_16** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_16>`
 
 Optional name for the 2D physics layer 16. If left empty, the layer will display as "Layer 16".
 
@@ -6838,7 +6896,7 @@ Optional name for the 2D physics layer 16. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_17** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_17** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_17>`
 
 Optional name for the 2D physics layer 17. If left empty, the layer will display as "Layer 17".
 
@@ -6850,7 +6908,7 @@ Optional name for the 2D physics layer 17. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_18** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_18** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_18>`
 
 Optional name for the 2D physics layer 18. If left empty, the layer will display as "Layer 18".
 
@@ -6862,7 +6920,7 @@ Optional name for the 2D physics layer 18. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_19** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_19** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_19>`
 
 Optional name for the 2D physics layer 19. If left empty, the layer will display as "Layer 19".
 
@@ -6874,7 +6932,7 @@ Optional name for the 2D physics layer 19. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_20** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_20** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_20>`
 
 Optional name for the 2D physics layer 20. If left empty, the layer will display as "Layer 20".
 
@@ -6886,7 +6944,7 @@ Optional name for the 2D physics layer 20. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_21** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_21** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_21>`
 
 Optional name for the 2D physics layer 21. If left empty, the layer will display as "Layer 21".
 
@@ -6898,7 +6956,7 @@ Optional name for the 2D physics layer 21. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_22** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_22** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_22>`
 
 Optional name for the 2D physics layer 22. If left empty, the layer will display as "Layer 22".
 
@@ -6910,7 +6968,7 @@ Optional name for the 2D physics layer 22. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_23** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_23** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_23>`
 
 Optional name for the 2D physics layer 23. If left empty, the layer will display as "Layer 23".
 
@@ -6922,7 +6980,7 @@ Optional name for the 2D physics layer 23. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_24** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_24** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_24>`
 
 Optional name for the 2D physics layer 24. If left empty, the layer will display as "Layer 24".
 
@@ -6934,7 +6992,7 @@ Optional name for the 2D physics layer 24. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_25** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_25** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_25>`
 
 Optional name for the 2D physics layer 25. If left empty, the layer will display as "Layer 25".
 
@@ -6946,7 +7004,7 @@ Optional name for the 2D physics layer 25. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_26** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_26** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_26>`
 
 Optional name for the 2D physics layer 26. If left empty, the layer will display as "Layer 26".
 
@@ -6958,7 +7016,7 @@ Optional name for the 2D physics layer 26. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_27** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_27** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_27>`
 
 Optional name for the 2D physics layer 27. If left empty, the layer will display as "Layer 27".
 
@@ -6970,7 +7028,7 @@ Optional name for the 2D physics layer 27. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_28** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_28** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_28>`
 
 Optional name for the 2D physics layer 28. If left empty, the layer will display as "Layer 28".
 
@@ -6982,7 +7040,7 @@ Optional name for the 2D physics layer 28. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_29** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_29** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_29>`
 
 Optional name for the 2D physics layer 29. If left empty, the layer will display as "Layer 29".
 
@@ -6994,7 +7052,7 @@ Optional name for the 2D physics layer 29. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_30** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_30** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_30>`
 
 Optional name for the 2D physics layer 30. If left empty, the layer will display as "Layer 30".
 
@@ -7006,7 +7064,7 @@ Optional name for the 2D physics layer 30. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_31** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_31** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_31>`
 
 Optional name for the 2D physics layer 31. If left empty, the layer will display as "Layer 31".
 
@@ -7018,7 +7076,7 @@ Optional name for the 2D physics layer 31. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_physics/layer_32** = ``""``
+:ref:`String<class_String>` **layer_names/2d_physics/layer_32** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_physics/layer_32>`
 
 Optional name for the 2D physics layer 32. If left empty, the layer will display as "Layer 32".
 
@@ -7030,7 +7088,7 @@ Optional name for the 2D physics layer 32. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_1** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_1** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_1>`
 
 Optional name for the 2D render layer 1. If left empty, the layer will display as "Layer 1".
 
@@ -7042,7 +7100,7 @@ Optional name for the 2D render layer 1. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_2** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_2** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_2>`
 
 Optional name for the 2D render layer 2. If left empty, the layer will display as "Layer 2".
 
@@ -7054,7 +7112,7 @@ Optional name for the 2D render layer 2. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_3** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_3** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_3>`
 
 Optional name for the 2D render layer 3. If left empty, the layer will display as "Layer 3".
 
@@ -7066,7 +7124,7 @@ Optional name for the 2D render layer 3. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_4** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_4** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_4>`
 
 Optional name for the 2D render layer 4. If left empty, the layer will display as "Layer 4".
 
@@ -7078,7 +7136,7 @@ Optional name for the 2D render layer 4. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_5** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_5** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_5>`
 
 Optional name for the 2D render layer 5. If left empty, the layer will display as "Layer 5".
 
@@ -7090,7 +7148,7 @@ Optional name for the 2D render layer 5. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_6** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_6** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_6>`
 
 Optional name for the 2D render layer 6. If left empty, the layer will display as "Layer 6".
 
@@ -7102,7 +7160,7 @@ Optional name for the 2D render layer 6. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_7** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_7** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_7>`
 
 Optional name for the 2D render layer 7. If left empty, the layer will display as "Layer 7".
 
@@ -7114,7 +7172,7 @@ Optional name for the 2D render layer 7. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_8** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_8** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_8>`
 
 Optional name for the 2D render layer 8. If left empty, the layer will display as "Layer 8".
 
@@ -7126,7 +7184,7 @@ Optional name for the 2D render layer 8. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_9** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_9** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_9>`
 
 Optional name for the 2D render layer 9. If left empty, the layer will display as "Layer 9".
 
@@ -7138,7 +7196,7 @@ Optional name for the 2D render layer 9. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_10** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_10** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_10>`
 
 Optional name for the 2D render layer 10. If left empty, the layer will display as "Layer 10".
 
@@ -7150,7 +7208,7 @@ Optional name for the 2D render layer 10. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_11** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_11** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_11>`
 
 Optional name for the 2D render layer 11. If left empty, the layer will display as "Layer 11".
 
@@ -7162,7 +7220,7 @@ Optional name for the 2D render layer 11. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_12** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_12** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_12>`
 
 Optional name for the 2D render layer 12. If left empty, the layer will display as "Layer 12".
 
@@ -7174,7 +7232,7 @@ Optional name for the 2D render layer 12. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_13** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_13** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_13>`
 
 Optional name for the 2D render layer 13. If left empty, the layer will display as "Layer 13".
 
@@ -7186,7 +7244,7 @@ Optional name for the 2D render layer 13. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_14** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_14** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_14>`
 
 Optional name for the 2D render layer 14. If left empty, the layer will display as "Layer 14".
 
@@ -7198,7 +7256,7 @@ Optional name for the 2D render layer 14. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_15** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_15** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_15>`
 
 Optional name for the 2D render layer 15. If left empty, the layer will display as "Layer 15".
 
@@ -7210,7 +7268,7 @@ Optional name for the 2D render layer 15. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_16** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_16** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_16>`
 
 Optional name for the 2D render layer 16. If left empty, the layer will display as "Layer 16".
 
@@ -7222,7 +7280,7 @@ Optional name for the 2D render layer 16. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_17** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_17** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_17>`
 
 Optional name for the 2D render layer 17. If left empty, the layer will display as "Layer 17".
 
@@ -7234,7 +7292,7 @@ Optional name for the 2D render layer 17. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_18** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_18** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_18>`
 
 Optional name for the 2D render layer 18. If left empty, the layer will display as "Layer 18".
 
@@ -7246,7 +7304,7 @@ Optional name for the 2D render layer 18. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_19** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_19** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_19>`
 
 Optional name for the 2D render layer 19. If left empty, the layer will display as "Layer 19".
 
@@ -7258,7 +7316,7 @@ Optional name for the 2D render layer 19. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/2d_render/layer_20** = ``""``
+:ref:`String<class_String>` **layer_names/2d_render/layer_20** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/2d_render/layer_20>`
 
 Optional name for the 2D render layer 20. If left empty, the layer will display as "Layer 20".
 
@@ -7270,7 +7328,7 @@ Optional name for the 2D render layer 20. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_1** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_1** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_1>`
 
 Optional name for the 3D navigation layer 1. If left empty, the layer will display as "Layer 1".
 
@@ -7282,7 +7340,7 @@ Optional name for the 3D navigation layer 1. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_2** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_2** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_2>`
 
 Optional name for the 3D navigation layer 2. If left empty, the layer will display as "Layer 2".
 
@@ -7294,7 +7352,7 @@ Optional name for the 3D navigation layer 2. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_3** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_3** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_3>`
 
 Optional name for the 3D navigation layer 3. If left empty, the layer will display as "Layer 3".
 
@@ -7306,7 +7364,7 @@ Optional name for the 3D navigation layer 3. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_4** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_4** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_4>`
 
 Optional name for the 3D navigation layer 4. If left empty, the layer will display as "Layer 4".
 
@@ -7318,7 +7376,7 @@ Optional name for the 3D navigation layer 4. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_5** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_5** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_5>`
 
 Optional name for the 3D navigation layer 5. If left empty, the layer will display as "Layer 5".
 
@@ -7330,7 +7388,7 @@ Optional name for the 3D navigation layer 5. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_6** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_6** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_6>`
 
 Optional name for the 3D navigation layer 6. If left empty, the layer will display as "Layer 6".
 
@@ -7342,7 +7400,7 @@ Optional name for the 3D navigation layer 6. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_7** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_7** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_7>`
 
 Optional name for the 3D navigation layer 7. If left empty, the layer will display as "Layer 7".
 
@@ -7354,7 +7412,7 @@ Optional name for the 3D navigation layer 7. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_8** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_8** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_8>`
 
 Optional name for the 3D navigation layer 8. If left empty, the layer will display as "Layer 8".
 
@@ -7366,7 +7424,7 @@ Optional name for the 3D navigation layer 8. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_9** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_9** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_9>`
 
 Optional name for the 3D navigation layer 9. If left empty, the layer will display as "Layer 9".
 
@@ -7378,7 +7436,7 @@ Optional name for the 3D navigation layer 9. If left empty, the layer will displ
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_10** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_10** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_10>`
 
 Optional name for the 3D navigation layer 10. If left empty, the layer will display as "Layer 10".
 
@@ -7390,7 +7448,7 @@ Optional name for the 3D navigation layer 10. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_11** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_11** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_11>`
 
 Optional name for the 3D navigation layer 11. If left empty, the layer will display as "Layer 11".
 
@@ -7402,7 +7460,7 @@ Optional name for the 3D navigation layer 11. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_12** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_12** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_12>`
 
 Optional name for the 3D navigation layer 12. If left empty, the layer will display as "Layer 12".
 
@@ -7414,7 +7472,7 @@ Optional name for the 3D navigation layer 12. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_13** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_13** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_13>`
 
 Optional name for the 3D navigation layer 13. If left empty, the layer will display as "Layer 13".
 
@@ -7426,7 +7484,7 @@ Optional name for the 3D navigation layer 13. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_14** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_14** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_14>`
 
 Optional name for the 3D navigation layer 14. If left empty, the layer will display as "Layer 14".
 
@@ -7438,7 +7496,7 @@ Optional name for the 3D navigation layer 14. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_15** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_15** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_15>`
 
 Optional name for the 3D navigation layer 15. If left empty, the layer will display as "Layer 15".
 
@@ -7450,7 +7508,7 @@ Optional name for the 3D navigation layer 15. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_16** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_16** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_16>`
 
 Optional name for the 3D navigation layer 16. If left empty, the layer will display as "Layer 16".
 
@@ -7462,7 +7520,7 @@ Optional name for the 3D navigation layer 16. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_17** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_17** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_17>`
 
 Optional name for the 3D navigation layer 17. If left empty, the layer will display as "Layer 17".
 
@@ -7474,7 +7532,7 @@ Optional name for the 3D navigation layer 17. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_18** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_18** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_18>`
 
 Optional name for the 3D navigation layer 18. If left empty, the layer will display as "Layer 18".
 
@@ -7486,7 +7544,7 @@ Optional name for the 3D navigation layer 18. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_19** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_19** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_19>`
 
 Optional name for the 3D navigation layer 19. If left empty, the layer will display as "Layer 19".
 
@@ -7498,7 +7556,7 @@ Optional name for the 3D navigation layer 19. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_20** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_20** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_20>`
 
 Optional name for the 3D navigation layer 20. If left empty, the layer will display as "Layer 20".
 
@@ -7510,7 +7568,7 @@ Optional name for the 3D navigation layer 20. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_21** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_21** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_21>`
 
 Optional name for the 3D navigation layer 21. If left empty, the layer will display as "Layer 21".
 
@@ -7522,7 +7580,7 @@ Optional name for the 3D navigation layer 21. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_22** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_22** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_22>`
 
 Optional name for the 3D navigation layer 22. If left empty, the layer will display as "Layer 22".
 
@@ -7534,7 +7592,7 @@ Optional name for the 3D navigation layer 22. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_23** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_23** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_23>`
 
 Optional name for the 3D navigation layer 23. If left empty, the layer will display as "Layer 23".
 
@@ -7546,7 +7604,7 @@ Optional name for the 3D navigation layer 23. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_24** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_24** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_24>`
 
 Optional name for the 3D navigation layer 24. If left empty, the layer will display as "Layer 24".
 
@@ -7558,7 +7616,7 @@ Optional name for the 3D navigation layer 24. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_25** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_25** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_25>`
 
 Optional name for the 3D navigation layer 25. If left empty, the layer will display as "Layer 25".
 
@@ -7570,7 +7628,7 @@ Optional name for the 3D navigation layer 25. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_26** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_26** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_26>`
 
 Optional name for the 3D navigation layer 26. If left empty, the layer will display as "Layer 26".
 
@@ -7582,7 +7640,7 @@ Optional name for the 3D navigation layer 26. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_27** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_27** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_27>`
 
 Optional name for the 3D navigation layer 27. If left empty, the layer will display as "Layer 27".
 
@@ -7594,7 +7652,7 @@ Optional name for the 3D navigation layer 27. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_28** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_28** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_28>`
 
 Optional name for the 3D navigation layer 28. If left empty, the layer will display as "Layer 28".
 
@@ -7606,7 +7664,7 @@ Optional name for the 3D navigation layer 28. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_29** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_29** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_29>`
 
 Optional name for the 3D navigation layer 29. If left empty, the layer will display as "Layer 29".
 
@@ -7618,7 +7676,7 @@ Optional name for the 3D navigation layer 29. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_30** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_30** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_30>`
 
 Optional name for the 3D navigation layer 30. If left empty, the layer will display as "Layer 30".
 
@@ -7630,7 +7688,7 @@ Optional name for the 3D navigation layer 30. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_31** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_31** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_31>`
 
 Optional name for the 3D navigation layer 31. If left empty, the layer will display as "Layer 31".
 
@@ -7642,7 +7700,7 @@ Optional name for the 3D navigation layer 31. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_navigation/layer_32** = ``""``
+:ref:`String<class_String>` **layer_names/3d_navigation/layer_32** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_navigation/layer_32>`
 
 Optional name for the 3D navigation layer 32. If left empty, the layer will display as "Layer 32".
 
@@ -7654,7 +7712,7 @@ Optional name for the 3D navigation layer 32. If left empty, the layer will disp
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_1** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_1** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_1>`
 
 Optional name for the 3D physics layer 1. If left empty, the layer will display as "Layer 1".
 
@@ -7666,7 +7724,7 @@ Optional name for the 3D physics layer 1. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_2** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_2** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_2>`
 
 Optional name for the 3D physics layer 2. If left empty, the layer will display as "Layer 2".
 
@@ -7678,7 +7736,7 @@ Optional name for the 3D physics layer 2. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_3** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_3** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_3>`
 
 Optional name for the 3D physics layer 3. If left empty, the layer will display as "Layer 3".
 
@@ -7690,7 +7748,7 @@ Optional name for the 3D physics layer 3. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_4** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_4** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_4>`
 
 Optional name for the 3D physics layer 4. If left empty, the layer will display as "Layer 4".
 
@@ -7702,7 +7760,7 @@ Optional name for the 3D physics layer 4. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_5** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_5** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_5>`
 
 Optional name for the 3D physics layer 5. If left empty, the layer will display as "Layer 5".
 
@@ -7714,7 +7772,7 @@ Optional name for the 3D physics layer 5. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_6** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_6** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_6>`
 
 Optional name for the 3D physics layer 6. If left empty, the layer will display as "Layer 6".
 
@@ -7726,7 +7784,7 @@ Optional name for the 3D physics layer 6. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_7** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_7** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_7>`
 
 Optional name for the 3D physics layer 7. If left empty, the layer will display as "Layer 7".
 
@@ -7738,7 +7796,7 @@ Optional name for the 3D physics layer 7. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_8** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_8** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_8>`
 
 Optional name for the 3D physics layer 8. If left empty, the layer will display as "Layer 8".
 
@@ -7750,7 +7808,7 @@ Optional name for the 3D physics layer 8. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_9** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_9** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_9>`
 
 Optional name for the 3D physics layer 9. If left empty, the layer will display as "Layer 9".
 
@@ -7762,7 +7820,7 @@ Optional name for the 3D physics layer 9. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_10** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_10** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_10>`
 
 Optional name for the 3D physics layer 10. If left empty, the layer will display as "Layer 10".
 
@@ -7774,7 +7832,7 @@ Optional name for the 3D physics layer 10. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_11** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_11** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_11>`
 
 Optional name for the 3D physics layer 11. If left empty, the layer will display as "Layer 11".
 
@@ -7786,7 +7844,7 @@ Optional name for the 3D physics layer 11. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_12** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_12** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_12>`
 
 Optional name for the 3D physics layer 12. If left empty, the layer will display as "Layer 12".
 
@@ -7798,7 +7856,7 @@ Optional name for the 3D physics layer 12. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_13** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_13** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_13>`
 
 Optional name for the 3D physics layer 13. If left empty, the layer will display as "Layer 13".
 
@@ -7810,7 +7868,7 @@ Optional name for the 3D physics layer 13. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_14** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_14** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_14>`
 
 Optional name for the 3D physics layer 14. If left empty, the layer will display as "Layer 14".
 
@@ -7822,7 +7880,7 @@ Optional name for the 3D physics layer 14. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_15** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_15** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_15>`
 
 Optional name for the 3D physics layer 15. If left empty, the layer will display as "Layer 15".
 
@@ -7834,7 +7892,7 @@ Optional name for the 3D physics layer 15. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_16** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_16** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_16>`
 
 Optional name for the 3D physics layer 16. If left empty, the layer will display as "Layer 16".
 
@@ -7846,7 +7904,7 @@ Optional name for the 3D physics layer 16. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_17** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_17** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_17>`
 
 Optional name for the 3D physics layer 17. If left empty, the layer will display as "Layer 17".
 
@@ -7858,7 +7916,7 @@ Optional name for the 3D physics layer 17. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_18** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_18** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_18>`
 
 Optional name for the 3D physics layer 18. If left empty, the layer will display as "Layer 18".
 
@@ -7870,7 +7928,7 @@ Optional name for the 3D physics layer 18. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_19** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_19** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_19>`
 
 Optional name for the 3D physics layer 19. If left empty, the layer will display as "Layer 19".
 
@@ -7882,7 +7940,7 @@ Optional name for the 3D physics layer 19. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_20** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_20** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_20>`
 
 Optional name for the 3D physics layer 20. If left empty, the layer will display as "Layer 20".
 
@@ -7894,7 +7952,7 @@ Optional name for the 3D physics layer 20. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_21** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_21** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_21>`
 
 Optional name for the 3D physics layer 21. If left empty, the layer will display as "Layer 21".
 
@@ -7906,7 +7964,7 @@ Optional name for the 3D physics layer 21. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_22** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_22** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_22>`
 
 Optional name for the 3D physics layer 22. If left empty, the layer will display as "Layer 22".
 
@@ -7918,7 +7976,7 @@ Optional name for the 3D physics layer 22. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_23** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_23** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_23>`
 
 Optional name for the 3D physics layer 23. If left empty, the layer will display as "Layer 23".
 
@@ -7930,7 +7988,7 @@ Optional name for the 3D physics layer 23. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_24** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_24** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_24>`
 
 Optional name for the 3D physics layer 24. If left empty, the layer will display as "Layer 24".
 
@@ -7942,7 +8000,7 @@ Optional name for the 3D physics layer 24. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_25** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_25** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_25>`
 
 Optional name for the 3D physics layer 25. If left empty, the layer will display as "Layer 25".
 
@@ -7954,7 +8012,7 @@ Optional name for the 3D physics layer 25. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_26** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_26** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_26>`
 
 Optional name for the 3D physics layer 26. If left empty, the layer will display as "Layer 26".
 
@@ -7966,7 +8024,7 @@ Optional name for the 3D physics layer 26. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_27** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_27** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_27>`
 
 Optional name for the 3D physics layer 27. If left empty, the layer will display as "Layer 27".
 
@@ -7978,7 +8036,7 @@ Optional name for the 3D physics layer 27. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_28** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_28** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_28>`
 
 Optional name for the 3D physics layer 28. If left empty, the layer will display as "Layer 28".
 
@@ -7990,7 +8048,7 @@ Optional name for the 3D physics layer 28. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_29** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_29** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_29>`
 
 Optional name for the 3D physics layer 29. If left empty, the layer will display as "Layer 29".
 
@@ -8002,7 +8060,7 @@ Optional name for the 3D physics layer 29. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_30** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_30** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_30>`
 
 Optional name for the 3D physics layer 30. If left empty, the layer will display as "Layer 30".
 
@@ -8014,7 +8072,7 @@ Optional name for the 3D physics layer 30. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_31** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_31** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_31>`
 
 Optional name for the 3D physics layer 31. If left empty, the layer will display as "Layer 31".
 
@@ -8026,7 +8084,7 @@ Optional name for the 3D physics layer 31. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_physics/layer_32** = ``""``
+:ref:`String<class_String>` **layer_names/3d_physics/layer_32** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_physics/layer_32>`
 
 Optional name for the 3D physics layer 32. If left empty, the layer will display as "Layer 32".
 
@@ -8038,7 +8096,7 @@ Optional name for the 3D physics layer 32. If left empty, the layer will display
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_1** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_1** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_1>`
 
 Optional name for the 3D render layer 1. If left empty, the layer will display as "Layer 1".
 
@@ -8050,7 +8108,7 @@ Optional name for the 3D render layer 1. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_2** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_2** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_2>`
 
 Optional name for the 3D render layer 2. If left empty, the layer will display as "Layer 2".
 
@@ -8062,7 +8120,7 @@ Optional name for the 3D render layer 2. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_3** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_3** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_3>`
 
 Optional name for the 3D render layer 3. If left empty, the layer will display as "Layer 3".
 
@@ -8074,7 +8132,7 @@ Optional name for the 3D render layer 3. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_4** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_4** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_4>`
 
 Optional name for the 3D render layer 4. If left empty, the layer will display as "Layer 4".
 
@@ -8086,7 +8144,7 @@ Optional name for the 3D render layer 4. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_5** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_5** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_5>`
 
 Optional name for the 3D render layer 5. If left empty, the layer will display as "Layer 5".
 
@@ -8098,7 +8156,7 @@ Optional name for the 3D render layer 5. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_6** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_6** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_6>`
 
 Optional name for the 3D render layer 6. If left empty, the layer will display as "Layer 6".
 
@@ -8110,7 +8168,7 @@ Optional name for the 3D render layer 6. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_7** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_7** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_7>`
 
 Optional name for the 3D render layer 7. If left empty, the layer will display as "Layer 7".
 
@@ -8122,7 +8180,7 @@ Optional name for the 3D render layer 7. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_8** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_8** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_8>`
 
 Optional name for the 3D render layer 8. If left empty, the layer will display as "Layer 8".
 
@@ -8134,7 +8192,7 @@ Optional name for the 3D render layer 8. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_9** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_9** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_9>`
 
 Optional name for the 3D render layer 9. If left empty, the layer will display as "Layer 9".
 
@@ -8146,7 +8204,7 @@ Optional name for the 3D render layer 9. If left empty, the layer will display a
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_10** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_10** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_10>`
 
 Optional name for the 3D render layer 10. If left empty, the layer will display as "Layer 10".
 
@@ -8158,7 +8216,7 @@ Optional name for the 3D render layer 10. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_11** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_11** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_11>`
 
 Optional name for the 3D render layer 11. If left empty, the layer will display as "Layer 11".
 
@@ -8170,7 +8228,7 @@ Optional name for the 3D render layer 11. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_12** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_12** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_12>`
 
 Optional name for the 3D render layer 12. If left empty, the layer will display as "Layer 12".
 
@@ -8182,7 +8240,7 @@ Optional name for the 3D render layer 12. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_13** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_13** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_13>`
 
 Optional name for the 3D render layer 13. If left empty, the layer will display as "Layer 13".
 
@@ -8194,7 +8252,7 @@ Optional name for the 3D render layer 13. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_14** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_14** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_14>`
 
 Optional name for the 3D render layer 14. If left empty, the layer will display as "Layer 14".
 
@@ -8206,7 +8264,7 @@ Optional name for the 3D render layer 14. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_15** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_15** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_15>`
 
 Optional name for the 3D render layer 15. If left empty, the layer will display as "Layer 15".
 
@@ -8218,7 +8276,7 @@ Optional name for the 3D render layer 15. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_16** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_16** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_16>`
 
 Optional name for the 3D render layer 16. If left empty, the layer will display as "Layer 16".
 
@@ -8230,7 +8288,7 @@ Optional name for the 3D render layer 16. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_17** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_17** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_17>`
 
 Optional name for the 3D render layer 17. If left empty, the layer will display as "Layer 17".
 
@@ -8242,7 +8300,7 @@ Optional name for the 3D render layer 17. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_18** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_18** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_18>`
 
 Optional name for the 3D render layer 18. If left empty, the layer will display as "Layer 18".
 
@@ -8254,7 +8312,7 @@ Optional name for the 3D render layer 18. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_19** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_19** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_19>`
 
 Optional name for the 3D render layer 19. If left empty, the layer will display as "Layer 19".
 
@@ -8266,7 +8324,7 @@ Optional name for the 3D render layer 19. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/3d_render/layer_20** = ``""``
+:ref:`String<class_String>` **layer_names/3d_render/layer_20** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/3d_render/layer_20>`
 
 Optional name for the 3D render layer 20. If left empty, the layer will display as "Layer 20".
 
@@ -8278,7 +8336,7 @@ Optional name for the 3D render layer 20. If left empty, the layer will display 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_1** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_1** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_1>`
 
 Optional name for the navigation avoidance layer 1. If left empty, the layer will display as "Layer 1".
 
@@ -8290,7 +8348,7 @@ Optional name for the navigation avoidance layer 1. If left empty, the layer wil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_2** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_2** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_2>`
 
 Optional name for the navigation avoidance layer 2. If left empty, the layer will display as "Layer 2".
 
@@ -8302,7 +8360,7 @@ Optional name for the navigation avoidance layer 2. If left empty, the layer wil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_3** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_3** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_3>`
 
 Optional name for the navigation avoidance layer 3. If left empty, the layer will display as "Layer 3".
 
@@ -8314,7 +8372,7 @@ Optional name for the navigation avoidance layer 3. If left empty, the layer wil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_4** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_4** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_4>`
 
 Optional name for the navigation avoidance layer 4. If left empty, the layer will display as "Layer 4".
 
@@ -8326,7 +8384,7 @@ Optional name for the navigation avoidance layer 4. If left empty, the layer wil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_5** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_5** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_5>`
 
 Optional name for the navigation avoidance layer 5. If left empty, the layer will display as "Layer 5".
 
@@ -8338,7 +8396,7 @@ Optional name for the navigation avoidance layer 5. If left empty, the layer wil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_6** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_6** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_6>`
 
 Optional name for the navigation avoidance layer 6. If left empty, the layer will display as "Layer 6".
 
@@ -8350,7 +8408,7 @@ Optional name for the navigation avoidance layer 6. If left empty, the layer wil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_7** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_7** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_7>`
 
 Optional name for the navigation avoidance layer 7. If left empty, the layer will display as "Layer 7".
 
@@ -8362,7 +8420,7 @@ Optional name for the navigation avoidance layer 7. If left empty, the layer wil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_8** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_8** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_8>`
 
 Optional name for the navigation avoidance layer 8. If left empty, the layer will display as "Layer 8".
 
@@ -8374,7 +8432,7 @@ Optional name for the navigation avoidance layer 8. If left empty, the layer wil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_9** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_9** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_9>`
 
 Optional name for the navigation avoidance layer 9. If left empty, the layer will display as "Layer 9".
 
@@ -8386,7 +8444,7 @@ Optional name for the navigation avoidance layer 9. If left empty, the layer wil
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_10** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_10** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_10>`
 
 Optional name for the navigation avoidance layer 10. If left empty, the layer will display as "Layer 10".
 
@@ -8398,7 +8456,7 @@ Optional name for the navigation avoidance layer 10. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_11** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_11** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_11>`
 
 Optional name for the navigation avoidance layer 11. If left empty, the layer will display as "Layer 11".
 
@@ -8410,7 +8468,7 @@ Optional name for the navigation avoidance layer 11. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_12** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_12** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_12>`
 
 Optional name for the navigation avoidance layer 12. If left empty, the layer will display as "Layer 12".
 
@@ -8422,7 +8480,7 @@ Optional name for the navigation avoidance layer 12. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_13** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_13** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_13>`
 
 Optional name for the navigation avoidance layer 13. If left empty, the layer will display as "Layer 13".
 
@@ -8434,7 +8492,7 @@ Optional name for the navigation avoidance layer 13. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_14** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_14** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_14>`
 
 Optional name for the navigation avoidance layer 14. If left empty, the layer will display as "Layer 14".
 
@@ -8446,7 +8504,7 @@ Optional name for the navigation avoidance layer 14. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_15** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_15** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_15>`
 
 Optional name for the navigation avoidance layer 15. If left empty, the layer will display as "Layer 15".
 
@@ -8458,7 +8516,7 @@ Optional name for the navigation avoidance layer 15. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_16** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_16** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_16>`
 
 Optional name for the navigation avoidance layer 16. If left empty, the layer will display as "Layer 16".
 
@@ -8470,7 +8528,7 @@ Optional name for the navigation avoidance layer 16. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_17** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_17** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_17>`
 
 Optional name for the navigation avoidance layer 17. If left empty, the layer will display as "Layer 17".
 
@@ -8482,7 +8540,7 @@ Optional name for the navigation avoidance layer 17. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_18** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_18** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_18>`
 
 Optional name for the navigation avoidance layer 18. If left empty, the layer will display as "Layer 18".
 
@@ -8494,7 +8552,7 @@ Optional name for the navigation avoidance layer 18. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_19** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_19** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_19>`
 
 Optional name for the navigation avoidance layer 19. If left empty, the layer will display as "Layer 19".
 
@@ -8506,7 +8564,7 @@ Optional name for the navigation avoidance layer 19. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_20** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_20** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_20>`
 
 Optional name for the navigation avoidance layer 20. If left empty, the layer will display as "Layer 20".
 
@@ -8518,7 +8576,7 @@ Optional name for the navigation avoidance layer 20. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_21** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_21** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_21>`
 
 Optional name for the navigation avoidance layer 21. If left empty, the layer will display as "Layer 21".
 
@@ -8530,7 +8588,7 @@ Optional name for the navigation avoidance layer 21. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_22** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_22** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_22>`
 
 Optional name for the navigation avoidance layer 22. If left empty, the layer will display as "Layer 22".
 
@@ -8542,7 +8600,7 @@ Optional name for the navigation avoidance layer 22. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_23** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_23** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_23>`
 
 Optional name for the navigation avoidance layer 23. If left empty, the layer will display as "Layer 23".
 
@@ -8554,7 +8612,7 @@ Optional name for the navigation avoidance layer 23. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_24** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_24** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_24>`
 
 Optional name for the navigation avoidance layer 24. If left empty, the layer will display as "Layer 24".
 
@@ -8566,7 +8624,7 @@ Optional name for the navigation avoidance layer 24. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_25** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_25** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_25>`
 
 Optional name for the navigation avoidance layer 25. If left empty, the layer will display as "Layer 25".
 
@@ -8578,7 +8636,7 @@ Optional name for the navigation avoidance layer 25. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_26** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_26** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_26>`
 
 Optional name for the navigation avoidance layer 26. If left empty, the layer will display as "Layer 26".
 
@@ -8590,7 +8648,7 @@ Optional name for the navigation avoidance layer 26. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_27** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_27** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_27>`
 
 Optional name for the navigation avoidance layer 27. If left empty, the layer will display as "Layer 27".
 
@@ -8602,7 +8660,7 @@ Optional name for the navigation avoidance layer 27. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_28** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_28** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_28>`
 
 Optional name for the navigation avoidance layer 28. If left empty, the layer will display as "Layer 28".
 
@@ -8614,7 +8672,7 @@ Optional name for the navigation avoidance layer 28. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_29** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_29** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_29>`
 
 Optional name for the navigation avoidance layer 29. If left empty, the layer will display as "Layer 29".
 
@@ -8626,7 +8684,7 @@ Optional name for the navigation avoidance layer 29. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_30** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_30** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_30>`
 
 Optional name for the navigation avoidance layer 30. If left empty, the layer will display as "Layer 30".
 
@@ -8638,7 +8696,7 @@ Optional name for the navigation avoidance layer 30. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_31** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_31** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_31>`
 
 Optional name for the navigation avoidance layer 31. If left empty, the layer will display as "Layer 31".
 
@@ -8650,7 +8708,7 @@ Optional name for the navigation avoidance layer 31. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **layer_names/avoidance/layer_32** = ``""``
+:ref:`String<class_String>` **layer_names/avoidance/layer_32** = ``""`` :ref:`🔗<class_ProjectSettings_property_layer_names/avoidance/layer_32>`
 
 Optional name for the navigation avoidance layer 32. If left empty, the layer will display as "Layer 32".
 
@@ -8662,7 +8720,7 @@ Optional name for the navigation avoidance layer 32. If left empty, the layer wi
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **memory/limits/message_queue/max_size_mb** = ``32``
+:ref:`int<class_int>` **memory/limits/message_queue/max_size_mb** = ``32`` :ref:`🔗<class_ProjectSettings_property_memory/limits/message_queue/max_size_mb>`
 
 Godot uses a message queue to defer some function calls. If you run out of space on it (you will see an error), you can increase the size here.
 
@@ -8674,7 +8732,7 @@ Godot uses a message queue to defer some function calls. If you run out of space
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **navigation/2d/default_cell_size** = ``1.0``
+:ref:`float<class_float>` **navigation/2d/default_cell_size** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_navigation/2d/default_cell_size>`
 
 Default cell size for 2D navigation maps. See :ref:`NavigationServer2D.map_set_cell_size<class_NavigationServer2D_method_map_set_cell_size>`.
 
@@ -8686,7 +8744,7 @@ Default cell size for 2D navigation maps. See :ref:`NavigationServer2D.map_set_c
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **navigation/2d/default_edge_connection_margin** = ``1.0``
+:ref:`float<class_float>` **navigation/2d/default_edge_connection_margin** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_navigation/2d/default_edge_connection_margin>`
 
 Default edge connection margin for 2D navigation maps. See :ref:`NavigationServer2D.map_set_edge_connection_margin<class_NavigationServer2D_method_map_set_edge_connection_margin>`.
 
@@ -8698,7 +8756,7 @@ Default edge connection margin for 2D navigation maps. See :ref:`NavigationServe
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **navigation/2d/default_link_connection_radius** = ``4.0``
+:ref:`float<class_float>` **navigation/2d/default_link_connection_radius** = ``4.0`` :ref:`🔗<class_ProjectSettings_property_navigation/2d/default_link_connection_radius>`
 
 Default link connection radius for 2D navigation maps. See :ref:`NavigationServer2D.map_set_link_connection_radius<class_NavigationServer2D_method_map_set_link_connection_radius>`.
 
@@ -8710,7 +8768,7 @@ Default link connection radius for 2D navigation maps. See :ref:`NavigationServe
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **navigation/2d/use_edge_connections** = ``true``
+:ref:`bool<class_bool>` **navigation/2d/use_edge_connections** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/2d/use_edge_connections>`
 
 If enabled 2D navigation regions will use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin. This setting only affects World2D default navigation maps.
 
@@ -8722,7 +8780,7 @@ If enabled 2D navigation regions will use edge connections to connect with other
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **navigation/3d/default_cell_height** = ``0.25``
+:ref:`float<class_float>` **navigation/3d/default_cell_height** = ``0.25`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/default_cell_height>`
 
 Default cell height for 3D navigation maps. See :ref:`NavigationServer3D.map_set_cell_height<class_NavigationServer3D_method_map_set_cell_height>`.
 
@@ -8734,7 +8792,7 @@ Default cell height for 3D navigation maps. See :ref:`NavigationServer3D.map_set
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **navigation/3d/default_cell_size** = ``0.25``
+:ref:`float<class_float>` **navigation/3d/default_cell_size** = ``0.25`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/default_cell_size>`
 
 Default cell size for 3D navigation maps. See :ref:`NavigationServer3D.map_set_cell_size<class_NavigationServer3D_method_map_set_cell_size>`.
 
@@ -8746,7 +8804,7 @@ Default cell size for 3D navigation maps. See :ref:`NavigationServer3D.map_set_c
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **navigation/3d/default_edge_connection_margin** = ``0.25``
+:ref:`float<class_float>` **navigation/3d/default_edge_connection_margin** = ``0.25`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/default_edge_connection_margin>`
 
 Default edge connection margin for 3D navigation maps. See :ref:`NavigationServer3D.map_set_edge_connection_margin<class_NavigationServer3D_method_map_set_edge_connection_margin>`.
 
@@ -8758,7 +8816,7 @@ Default edge connection margin for 3D navigation maps. See :ref:`NavigationServe
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **navigation/3d/default_link_connection_radius** = ``1.0``
+:ref:`float<class_float>` **navigation/3d/default_link_connection_radius** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/default_link_connection_radius>`
 
 Default link connection radius for 3D navigation maps. See :ref:`NavigationServer3D.map_set_link_connection_radius<class_NavigationServer3D_method_map_set_link_connection_radius>`.
 
@@ -8770,7 +8828,7 @@ Default link connection radius for 3D navigation maps. See :ref:`NavigationServe
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **navigation/3d/default_up** = ``Vector3(0, 1, 0)``
+:ref:`Vector3<class_Vector3>` **navigation/3d/default_up** = ``Vector3(0, 1, 0)`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/default_up>`
 
 Default up orientation for 3D navigation maps. See :ref:`NavigationServer3D.map_set_up<class_NavigationServer3D_method_map_set_up>`.
 
@@ -8782,7 +8840,7 @@ Default up orientation for 3D navigation maps. See :ref:`NavigationServer3D.map_
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **navigation/3d/merge_rasterizer_cell_scale** = ``1.0``
+:ref:`float<class_float>` **navigation/3d/merge_rasterizer_cell_scale** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/merge_rasterizer_cell_scale>`
 
 Default merge rasterizer cell scale for 3D navigation maps. See :ref:`NavigationServer3D.map_set_merge_rasterizer_cell_scale<class_NavigationServer3D_method_map_set_merge_rasterizer_cell_scale>`.
 
@@ -8794,7 +8852,7 @@ Default merge rasterizer cell scale for 3D navigation maps. See :ref:`Navigation
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **navigation/3d/use_edge_connections** = ``true``
+:ref:`bool<class_bool>` **navigation/3d/use_edge_connections** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/3d/use_edge_connections>`
 
 If enabled 3D navigation regions will use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin. This setting only affects World3D default navigation maps.
 
@@ -8806,7 +8864,7 @@ If enabled 3D navigation regions will use edge connections to connect with other
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **navigation/avoidance/thread_model/avoidance_use_high_priority_threads** = ``true``
+:ref:`bool<class_bool>` **navigation/avoidance/thread_model/avoidance_use_high_priority_threads** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/avoidance/thread_model/avoidance_use_high_priority_threads>`
 
 If enabled and avoidance calculations use multiple threads the threads run with high priority.
 
@@ -8818,7 +8876,7 @@ If enabled and avoidance calculations use multiple threads the threads run with 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **navigation/avoidance/thread_model/avoidance_use_multiple_threads** = ``true``
+:ref:`bool<class_bool>` **navigation/avoidance/thread_model/avoidance_use_multiple_threads** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/avoidance/thread_model/avoidance_use_multiple_threads>`
 
 If enabled the avoidance calculations use multiple threads.
 
@@ -8830,7 +8888,7 @@ If enabled the avoidance calculations use multiple threads.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **navigation/baking/thread_model/baking_use_high_priority_threads** = ``true``
+:ref:`bool<class_bool>` **navigation/baking/thread_model/baking_use_high_priority_threads** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/baking/thread_model/baking_use_high_priority_threads>`
 
 If enabled and async navmesh baking uses multiple threads the threads run with high priority.
 
@@ -8842,7 +8900,7 @@ If enabled and async navmesh baking uses multiple threads the threads run with h
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **navigation/baking/thread_model/baking_use_multiple_threads** = ``true``
+:ref:`bool<class_bool>` **navigation/baking/thread_model/baking_use_multiple_threads** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/baking/thread_model/baking_use_multiple_threads>`
 
 If enabled the async navmesh baking uses multiple threads.
 
@@ -8854,7 +8912,7 @@ If enabled the async navmesh baking uses multiple threads.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **navigation/baking/use_crash_prevention_checks** = ``true``
+:ref:`bool<class_bool>` **navigation/baking/use_crash_prevention_checks** = ``true`` :ref:`🔗<class_ProjectSettings_property_navigation/baking/use_crash_prevention_checks>`
 
 If enabled, and baking would potentially lead to an engine crash, the baking will be interrupted and an error message with explanation will be raised.
 
@@ -8866,7 +8924,7 @@ If enabled, and baking would potentially lead to an engine crash, the baking wil
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/limits/debugger/max_chars_per_second** = ``32768``
+:ref:`int<class_int>` **network/limits/debugger/max_chars_per_second** = ``32768`` :ref:`🔗<class_ProjectSettings_property_network/limits/debugger/max_chars_per_second>`
 
 Maximum number of characters allowed to send as output from the debugger. Over this value, content is dropped. This helps not to stall the debugger connection.
 
@@ -8878,7 +8936,7 @@ Maximum number of characters allowed to send as output from the debugger. Over t
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/limits/debugger/max_errors_per_second** = ``400``
+:ref:`int<class_int>` **network/limits/debugger/max_errors_per_second** = ``400`` :ref:`🔗<class_ProjectSettings_property_network/limits/debugger/max_errors_per_second>`
 
 Maximum number of errors allowed to be sent from the debugger. Over this value, content is dropped. This helps not to stall the debugger connection.
 
@@ -8890,7 +8948,7 @@ Maximum number of errors allowed to be sent from the debugger. Over this value, 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/limits/debugger/max_queued_messages** = ``2048``
+:ref:`int<class_int>` **network/limits/debugger/max_queued_messages** = ``2048`` :ref:`🔗<class_ProjectSettings_property_network/limits/debugger/max_queued_messages>`
 
 Maximum number of messages in the debugger queue. Over this value, content is dropped. This helps to limit the debugger memory usage.
 
@@ -8902,7 +8960,7 @@ Maximum number of messages in the debugger queue. Over this value, content is dr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/limits/debugger/max_warnings_per_second** = ``400``
+:ref:`int<class_int>` **network/limits/debugger/max_warnings_per_second** = ``400`` :ref:`🔗<class_ProjectSettings_property_network/limits/debugger/max_warnings_per_second>`
 
 Maximum number of warnings allowed to be sent from the debugger. Over this value, content is dropped. This helps not to stall the debugger connection.
 
@@ -8914,7 +8972,7 @@ Maximum number of warnings allowed to be sent from the debugger. Over this value
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/limits/packet_peer_stream/max_buffer_po2** = ``16``
+:ref:`int<class_int>` **network/limits/packet_peer_stream/max_buffer_po2** = ``16`` :ref:`🔗<class_ProjectSettings_property_network/limits/packet_peer_stream/max_buffer_po2>`
 
 Default size of packet peer stream for deserializing Godot data (in bytes, specified as a power of two). The default value ``16`` is equal to 65,536 bytes. Over this size, data is dropped.
 
@@ -8926,7 +8984,7 @@ Default size of packet peer stream for deserializing Godot data (in bytes, speci
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/limits/tcp/connect_timeout_seconds** = ``30``
+:ref:`int<class_int>` **network/limits/tcp/connect_timeout_seconds** = ``30`` :ref:`🔗<class_ProjectSettings_property_network/limits/tcp/connect_timeout_seconds>`
 
 Timeout (in seconds) for connection attempts using TCP.
 
@@ -8938,7 +8996,7 @@ Timeout (in seconds) for connection attempts using TCP.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **network/limits/webrtc/max_channel_in_buffer_kb** = ``64``
+:ref:`int<class_int>` **network/limits/webrtc/max_channel_in_buffer_kb** = ``64`` :ref:`🔗<class_ProjectSettings_property_network/limits/webrtc/max_channel_in_buffer_kb>`
 
 Maximum size (in kiB) for the :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` input buffer.
 
@@ -8950,7 +9008,7 @@ Maximum size (in kiB) for the :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **network/tls/certificate_bundle_override** = ``""``
+:ref:`String<class_String>` **network/tls/certificate_bundle_override** = ``""`` :ref:`🔗<class_ProjectSettings_property_network/tls/certificate_bundle_override>`
 
 The CA certificates bundle to use for TLS connections. If this is set to a non-empty value, this will *override* Godot's default `Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__. If left empty, the default certificate bundle will be used.
 
@@ -8964,7 +9022,7 @@ If in doubt, leave this setting empty.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/default_angular_damp** = ``1.0``
+:ref:`float<class_float>` **physics/2d/default_angular_damp** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_physics/2d/default_angular_damp>`
 
 The default rotational motion damping in 2D. Damping is used to gradually slow down physical objects over time. RigidBodies will fall back to this value when combining their own damping values and no area damping value is present.
 
@@ -8984,7 +9042,7 @@ During each physics tick, Godot will multiply the linear velocity of RigidBodies
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/default_gravity** = ``980.0``
+:ref:`float<class_float>` **physics/2d/default_gravity** = ``980.0`` :ref:`🔗<class_ProjectSettings_property_physics/2d/default_gravity>`
 
 The default gravity strength in 2D (in pixels per second squared).
 
@@ -9013,7 +9071,7 @@ The default gravity strength in 2D (in pixels per second squared).
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **physics/2d/default_gravity_vector** = ``Vector2(0, 1)``
+:ref:`Vector2<class_Vector2>` **physics/2d/default_gravity_vector** = ``Vector2(0, 1)`` :ref:`🔗<class_ProjectSettings_property_physics/2d/default_gravity_vector>`
 
 The default gravity direction in 2D.
 
@@ -9042,7 +9100,7 @@ The default gravity direction in 2D.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/default_linear_damp** = ``0.1``
+:ref:`float<class_float>` **physics/2d/default_linear_damp** = ``0.1`` :ref:`🔗<class_ProjectSettings_property_physics/2d/default_linear_damp>`
 
 The default linear motion damping in 2D. Damping is used to gradually slow down physical objects over time. RigidBodies will fall back to this value when combining their own damping values and no area damping value is present.
 
@@ -9062,7 +9120,7 @@ During each physics tick, Godot will multiply the linear velocity of RigidBodies
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **physics/2d/physics_engine** = ``"DEFAULT"``
+:ref:`String<class_String>` **physics/2d/physics_engine** = ``"DEFAULT"`` :ref:`🔗<class_ProjectSettings_property_physics/2d/physics_engine>`
 
 Sets which physics engine to use for 2D physics.
 
@@ -9076,7 +9134,7 @@ Sets which physics engine to use for 2D physics.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **physics/2d/run_on_separate_thread** = ``false``
+:ref:`bool<class_bool>` **physics/2d/run_on_separate_thread** = ``false`` :ref:`🔗<class_ProjectSettings_property_physics/2d/run_on_separate_thread>`
 
 If ``true``, the 2D physics server runs on a separate thread, making better use of multi-core CPUs. If ``false``, the 2D physics server runs on the main thread. Running the physics server on a separate thread can increase performance, but restricts API access to only physics process.
 
@@ -9088,7 +9146,7 @@ If ``true``, the 2D physics server runs on a separate thread, making better use 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/sleep_threshold_angular** = ``0.139626``
+:ref:`float<class_float>` **physics/2d/sleep_threshold_angular** = ``0.139626`` :ref:`🔗<class_ProjectSettings_property_physics/2d/sleep_threshold_angular>`
 
 Threshold angular velocity under which a 2D physics body will be considered inactive. See :ref:`PhysicsServer2D.SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer2D_constant_SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD>`.
 
@@ -9100,7 +9158,7 @@ Threshold angular velocity under which a 2D physics body will be considered inac
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/sleep_threshold_linear** = ``2.0``
+:ref:`float<class_float>` **physics/2d/sleep_threshold_linear** = ``2.0`` :ref:`🔗<class_ProjectSettings_property_physics/2d/sleep_threshold_linear>`
 
 Threshold linear velocity under which a 2D physics body will be considered inactive. See :ref:`PhysicsServer2D.SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer2D_constant_SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD>`.
 
@@ -9112,7 +9170,7 @@ Threshold linear velocity under which a 2D physics body will be considered inact
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/solver/contact_max_allowed_penetration** = ``0.3``
+:ref:`float<class_float>` **physics/2d/solver/contact_max_allowed_penetration** = ``0.3`` :ref:`🔗<class_ProjectSettings_property_physics/2d/solver/contact_max_allowed_penetration>`
 
 Maximum distance a shape can penetrate another shape before it is considered a collision. See :ref:`PhysicsServer2D.SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION<class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION>`.
 
@@ -9124,7 +9182,7 @@ Maximum distance a shape can penetrate another shape before it is considered a c
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/solver/contact_max_separation** = ``1.5``
+:ref:`float<class_float>` **physics/2d/solver/contact_max_separation** = ``1.5`` :ref:`🔗<class_ProjectSettings_property_physics/2d/solver/contact_max_separation>`
 
 Maximum distance a shape can be from another before they are considered separated and the contact is discarded. See :ref:`PhysicsServer2D.SPACE_PARAM_CONTACT_MAX_SEPARATION<class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_MAX_SEPARATION>`.
 
@@ -9136,7 +9194,7 @@ Maximum distance a shape can be from another before they are considered separate
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/solver/contact_recycle_radius** = ``1.0``
+:ref:`float<class_float>` **physics/2d/solver/contact_recycle_radius** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_physics/2d/solver/contact_recycle_radius>`
 
 Maximum distance a pair of bodies has to move before their collision status has to be recalculated. See :ref:`PhysicsServer2D.SPACE_PARAM_CONTACT_RECYCLE_RADIUS<class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_RECYCLE_RADIUS>`.
 
@@ -9148,7 +9206,7 @@ Maximum distance a pair of bodies has to move before their collision status has 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/solver/default_constraint_bias** = ``0.2``
+:ref:`float<class_float>` **physics/2d/solver/default_constraint_bias** = ``0.2`` :ref:`🔗<class_ProjectSettings_property_physics/2d/solver/default_constraint_bias>`
 
 Default solver bias for all physics constraints. Defines how much bodies react to enforce constraints. See :ref:`PhysicsServer2D.SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS<class_PhysicsServer2D_constant_SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS>`.
 
@@ -9162,7 +9220,7 @@ Individual constraints can have a specific bias value (see :ref:`Joint2D.bias<cl
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/solver/default_contact_bias** = ``0.8``
+:ref:`float<class_float>` **physics/2d/solver/default_contact_bias** = ``0.8`` :ref:`🔗<class_ProjectSettings_property_physics/2d/solver/default_contact_bias>`
 
 Default solver bias for all physics contacts. Defines how much bodies react to enforce contact separation. See :ref:`PhysicsServer2D.SPACE_PARAM_CONTACT_DEFAULT_BIAS<class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_DEFAULT_BIAS>`.
 
@@ -9176,7 +9234,7 @@ Individual shapes can have a specific bias value (see :ref:`Shape2D.custom_solve
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **physics/2d/solver/solver_iterations** = ``16``
+:ref:`int<class_int>` **physics/2d/solver/solver_iterations** = ``16`` :ref:`🔗<class_ProjectSettings_property_physics/2d/solver/solver_iterations>`
 
 Number of solver iterations for all contacts and constraints. The greater the number of iterations, the more accurate the collisions will be. However, a greater number of iterations requires more CPU power, which can decrease performance. See :ref:`PhysicsServer2D.SPACE_PARAM_SOLVER_ITERATIONS<class_PhysicsServer2D_constant_SPACE_PARAM_SOLVER_ITERATIONS>`.
 
@@ -9188,7 +9246,7 @@ Number of solver iterations for all contacts and constraints. The greater the nu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/2d/time_before_sleep** = ``0.5``
+:ref:`float<class_float>` **physics/2d/time_before_sleep** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_physics/2d/time_before_sleep>`
 
 Time (in seconds) of inactivity before which a 2D physics body will put to sleep. See :ref:`PhysicsServer2D.SPACE_PARAM_BODY_TIME_TO_SLEEP<class_PhysicsServer2D_constant_SPACE_PARAM_BODY_TIME_TO_SLEEP>`.
 
@@ -9200,7 +9258,7 @@ Time (in seconds) of inactivity before which a 2D physics body will put to sleep
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/3d/default_angular_damp** = ``0.1``
+:ref:`float<class_float>` **physics/3d/default_angular_damp** = ``0.1`` :ref:`🔗<class_ProjectSettings_property_physics/3d/default_angular_damp>`
 
 The default rotational motion damping in 3D. Damping is used to gradually slow down physical objects over time. RigidBodies will fall back to this value when combining their own damping values and no area damping value is present.
 
@@ -9220,7 +9278,7 @@ During each physics tick, Godot will multiply the angular velocity of RigidBodie
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/3d/default_gravity** = ``9.8``
+:ref:`float<class_float>` **physics/3d/default_gravity** = ``9.8`` :ref:`🔗<class_ProjectSettings_property_physics/3d/default_gravity>`
 
 The default gravity strength in 3D (in meters per second squared).
 
@@ -9249,7 +9307,7 @@ The default gravity strength in 3D (in meters per second squared).
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **physics/3d/default_gravity_vector** = ``Vector3(0, -1, 0)``
+:ref:`Vector3<class_Vector3>` **physics/3d/default_gravity_vector** = ``Vector3(0, -1, 0)`` :ref:`🔗<class_ProjectSettings_property_physics/3d/default_gravity_vector>`
 
 The default gravity direction in 3D.
 
@@ -9278,7 +9336,7 @@ The default gravity direction in 3D.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/3d/default_linear_damp** = ``0.1``
+:ref:`float<class_float>` **physics/3d/default_linear_damp** = ``0.1`` :ref:`🔗<class_ProjectSettings_property_physics/3d/default_linear_damp>`
 
 The default linear motion damping in 3D. Damping is used to gradually slow down physical objects over time. RigidBodies will fall back to this value when combining their own damping values and no area damping value is present.
 
@@ -9298,7 +9356,7 @@ During each physics tick, Godot will multiply the linear velocity of RigidBodies
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **physics/3d/physics_engine** = ``"DEFAULT"``
+:ref:`String<class_String>` **physics/3d/physics_engine** = ``"DEFAULT"`` :ref:`🔗<class_ProjectSettings_property_physics/3d/physics_engine>`
 
 Sets which physics engine to use for 3D physics.
 
@@ -9312,7 +9370,7 @@ Sets which physics engine to use for 3D physics.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **physics/3d/run_on_separate_thread** = ``false``
+:ref:`bool<class_bool>` **physics/3d/run_on_separate_thread** = ``false`` :ref:`🔗<class_ProjectSettings_property_physics/3d/run_on_separate_thread>`
 
 If ``true``, the 3D physics server runs on a separate thread, making better use of multi-core CPUs. If ``false``, the 3D physics server runs on the main thread. Running the physics server on a separate thread can increase performance, but restricts API access to only physics process.
 
@@ -9324,7 +9382,7 @@ If ``true``, the 3D physics server runs on a separate thread, making better use 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/3d/sleep_threshold_angular** = ``0.139626``
+:ref:`float<class_float>` **physics/3d/sleep_threshold_angular** = ``0.139626`` :ref:`🔗<class_ProjectSettings_property_physics/3d/sleep_threshold_angular>`
 
 Threshold angular velocity under which a 3D physics body will be considered inactive. See :ref:`PhysicsServer3D.SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer3D_constant_SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD>`.
 
@@ -9336,7 +9394,7 @@ Threshold angular velocity under which a 3D physics body will be considered inac
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/3d/sleep_threshold_linear** = ``0.1``
+:ref:`float<class_float>` **physics/3d/sleep_threshold_linear** = ``0.1`` :ref:`🔗<class_ProjectSettings_property_physics/3d/sleep_threshold_linear>`
 
 Threshold linear velocity under which a 3D physics body will be considered inactive. See :ref:`PhysicsServer3D.SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD<class_PhysicsServer3D_constant_SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD>`.
 
@@ -9348,7 +9406,7 @@ Threshold linear velocity under which a 3D physics body will be considered inact
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/3d/solver/contact_max_allowed_penetration** = ``0.01``
+:ref:`float<class_float>` **physics/3d/solver/contact_max_allowed_penetration** = ``0.01`` :ref:`🔗<class_ProjectSettings_property_physics/3d/solver/contact_max_allowed_penetration>`
 
 Maximum distance a shape can penetrate another shape before it is considered a collision. See :ref:`PhysicsServer3D.SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION<class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION>`.
 
@@ -9360,7 +9418,7 @@ Maximum distance a shape can penetrate another shape before it is considered a c
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/3d/solver/contact_max_separation** = ``0.05``
+:ref:`float<class_float>` **physics/3d/solver/contact_max_separation** = ``0.05`` :ref:`🔗<class_ProjectSettings_property_physics/3d/solver/contact_max_separation>`
 
 Maximum distance a shape can be from another before they are considered separated and the contact is discarded. See :ref:`PhysicsServer3D.SPACE_PARAM_CONTACT_MAX_SEPARATION<class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_MAX_SEPARATION>`.
 
@@ -9372,7 +9430,7 @@ Maximum distance a shape can be from another before they are considered separate
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/3d/solver/contact_recycle_radius** = ``0.01``
+:ref:`float<class_float>` **physics/3d/solver/contact_recycle_radius** = ``0.01`` :ref:`🔗<class_ProjectSettings_property_physics/3d/solver/contact_recycle_radius>`
 
 Maximum distance a pair of bodies has to move before their collision status has to be recalculated. See :ref:`PhysicsServer3D.SPACE_PARAM_CONTACT_RECYCLE_RADIUS<class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_RECYCLE_RADIUS>`.
 
@@ -9384,7 +9442,7 @@ Maximum distance a pair of bodies has to move before their collision status has 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/3d/solver/default_contact_bias** = ``0.8``
+:ref:`float<class_float>` **physics/3d/solver/default_contact_bias** = ``0.8`` :ref:`🔗<class_ProjectSettings_property_physics/3d/solver/default_contact_bias>`
 
 Default solver bias for all physics contacts. Defines how much bodies react to enforce contact separation. See :ref:`PhysicsServer3D.SPACE_PARAM_CONTACT_DEFAULT_BIAS<class_PhysicsServer3D_constant_SPACE_PARAM_CONTACT_DEFAULT_BIAS>`.
 
@@ -9398,7 +9456,7 @@ Individual shapes can have a specific bias value (see :ref:`Shape3D.custom_solve
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **physics/3d/solver/solver_iterations** = ``16``
+:ref:`int<class_int>` **physics/3d/solver/solver_iterations** = ``16`` :ref:`🔗<class_ProjectSettings_property_physics/3d/solver/solver_iterations>`
 
 Number of solver iterations for all contacts and constraints. The greater the number of iterations, the more accurate the collisions will be. However, a greater number of iterations requires more CPU power, which can decrease performance. See :ref:`PhysicsServer3D.SPACE_PARAM_SOLVER_ITERATIONS<class_PhysicsServer3D_constant_SPACE_PARAM_SOLVER_ITERATIONS>`.
 
@@ -9410,7 +9468,7 @@ Number of solver iterations for all contacts and constraints. The greater the nu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/3d/time_before_sleep** = ``0.5``
+:ref:`float<class_float>` **physics/3d/time_before_sleep** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_physics/3d/time_before_sleep>`
 
 Time (in seconds) of inactivity before which a 3D physics body will put to sleep. See :ref:`PhysicsServer3D.SPACE_PARAM_BODY_TIME_TO_SLEEP<class_PhysicsServer3D_constant_SPACE_PARAM_BODY_TIME_TO_SLEEP>`.
 
@@ -9422,7 +9480,7 @@ Time (in seconds) of inactivity before which a 3D physics body will put to sleep
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **physics/common/enable_object_picking** = ``true``
+:ref:`bool<class_bool>` **physics/common/enable_object_picking** = ``true`` :ref:`🔗<class_ProjectSettings_property_physics/common/enable_object_picking>`
 
 Enables :ref:`Viewport.physics_object_picking<class_Viewport_property_physics_object_picking>` on the root viewport.
 
@@ -9434,7 +9492,7 @@ Enables :ref:`Viewport.physics_object_picking<class_Viewport_property_physics_ob
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **physics/common/max_physics_steps_per_frame** = ``8``
+:ref:`int<class_int>` **physics/common/max_physics_steps_per_frame** = ``8`` :ref:`🔗<class_ProjectSettings_property_physics/common/max_physics_steps_per_frame>`
 
 Controls the maximum number of physics steps that can be simulated each rendered frame. The default value is tuned to avoid "spiral of death" situations where expensive physics simulations trigger more expensive simulations indefinitely. However, the game will appear to slow down if the rendering FPS is less than ``1 / max_physics_steps_per_frame`` of :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`. This occurs even if ``delta`` is consistently used in physics calculations. To avoid this, increase :ref:`physics/common/max_physics_steps_per_frame<class_ProjectSettings_property_physics/common/max_physics_steps_per_frame>` if you have increased :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` significantly above its default value.
 
@@ -9448,7 +9506,7 @@ Controls the maximum number of physics steps that can be simulated each rendered
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **physics/common/physics_interpolation** = ``false``
+:ref:`bool<class_bool>` **physics/common/physics_interpolation** = ``false`` :ref:`🔗<class_ProjectSettings_property_physics/common/physics_interpolation>`
 
 If ``true``, the renderer will interpolate the transforms of physics objects between the last two transforms, so that smooth motion is seen even when physics ticks do not coincide with rendered frames. See also :ref:`Node.physics_interpolation_mode<class_Node_property_physics_interpolation_mode>` and :ref:`Node.reset_physics_interpolation<class_Node_method_reset_physics_interpolation>`.
 
@@ -9466,7 +9524,7 @@ If ``true``, the renderer will interpolate the transforms of physics objects bet
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **physics/common/physics_jitter_fix** = ``0.5``
+:ref:`float<class_float>` **physics/common/physics_jitter_fix** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_physics/common/physics_jitter_fix>`
 
 Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows smoothing out framerate jitters. The default value of 0.5 should be good enough for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
 
@@ -9482,7 +9540,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **physics/common/physics_ticks_per_second** = ``60``
+:ref:`int<class_int>` **physics/common/physics_ticks_per_second** = ``60`` :ref:`🔗<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
 
 The number of fixed iterations per second. This controls how often physics simulation and :ref:`Node._physics_process<class_Node_private_method__physics_process>` methods are run. See also :ref:`application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>`.
 
@@ -9498,7 +9556,7 @@ The number of fixed iterations per second. This controls how often physics simul
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/2d/sdf/oversize** = ``1``
+:ref:`int<class_int>` **rendering/2d/sdf/oversize** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/2d/sdf/oversize>`
 
 Controls how much of the original viewport size should be covered by the 2D signed distance field. This SDF can be sampled in :ref:`CanvasItem<class_CanvasItem>` shaders and is used for :ref:`GPUParticles2D<class_GPUParticles2D>` collision. Higher values allow portions of occluders located outside the viewport to still be taken into account in the generated signed distance field, at the cost of performance. If you notice particles falling through :ref:`LightOccluder2D<class_LightOccluder2D>`\ s as the occluders leave the viewport, increase this setting.
 
@@ -9514,7 +9572,7 @@ The percentage specified is added on each axis and on both sides. For example, w
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/2d/sdf/scale** = ``1``
+:ref:`int<class_int>` **rendering/2d/sdf/scale** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/2d/sdf/scale>`
 
 The resolution scale to use for the 2D signed distance field. Higher values lead to a more precise and more stable signed distance field as the camera moves, at the cost of performance. The default value (50%) renders at half the resolution of the viewport size on each axis, which means the SDF is generated with 25% of the viewport's pixel count.
 
@@ -9528,7 +9586,7 @@ The resolution scale to use for the 2D signed distance field. Higher values lead
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/2d/shadow_atlas/size** = ``2048``
+:ref:`int<class_int>` **rendering/2d/shadow_atlas/size** = ``2048`` :ref:`🔗<class_ProjectSettings_property_rendering/2d/shadow_atlas/size>`
 
 The size of the 2D shadow atlas in pixels. Higher values result in more precise :ref:`Light2D<class_Light2D>` shadows, at the cost of performance and video memory usage. The specified value is rounded up to the nearest power of 2.
 
@@ -9542,7 +9600,7 @@ The size of the 2D shadow atlas in pixels. Higher values result in more precise 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/2d/snap/snap_2d_transforms_to_pixel** = ``false``
+:ref:`bool<class_bool>` **rendering/2d/snap/snap_2d_transforms_to_pixel** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/2d/snap/snap_2d_transforms_to_pixel>`
 
 If ``true``, :ref:`CanvasItem<class_CanvasItem>` nodes will internally snap to full pixels. Useful for low-resolution pixel art games. Their position can still be sub-pixel, but the decimals will not have effect as the position is rounded. This can lead to a crisper appearance at the cost of less smooth movement, especially when :ref:`Camera2D<class_Camera2D>` smoothing is enabled.
 
@@ -9560,7 +9618,7 @@ If ``true``, :ref:`CanvasItem<class_CanvasItem>` nodes will internally snap to f
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/2d/snap/snap_2d_vertices_to_pixel** = ``false``
+:ref:`bool<class_bool>` **rendering/2d/snap/snap_2d_vertices_to_pixel** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/2d/snap/snap_2d_vertices_to_pixel>`
 
 If ``true``, vertices of :ref:`CanvasItem<class_CanvasItem>` nodes will snap to full pixels. Useful for low-resolution pixel art games. Only affects the final vertex positions, not the transforms. This can lead to a crisper appearance at the cost of less smooth movement, especially when :ref:`Camera2D<class_Camera2D>` smoothing is enabled.
 
@@ -9578,7 +9636,7 @@ If ``true``, vertices of :ref:`CanvasItem<class_CanvasItem>` nodes will snap to 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/anti_aliasing/quality/msaa_2d** = ``0``
+:ref:`int<class_int>` **rendering/anti_aliasing/quality/msaa_2d** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_2d>`
 
 Sets the number of MSAA samples to use for 2D/Canvas rendering (as a power of two). MSAA is used to reduce aliasing around the edges of polygons. A higher MSAA value results in smoother edges but can be significantly slower on some hardware, especially integrated graphics due to their limited memory bandwidth. This has no effect on shader-induced aliasing or texture aliasing.
 
@@ -9592,7 +9650,7 @@ Sets the number of MSAA samples to use for 2D/Canvas rendering (as a power of tw
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/anti_aliasing/quality/msaa_3d** = ``0``
+:ref:`int<class_int>` **rendering/anti_aliasing/quality/msaa_3d** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>`
 
 Sets the number of MSAA samples to use for 3D rendering (as a power of two). MSAA is used to reduce aliasing around the edges of polygons. A higher MSAA value results in smoother edges but can be significantly slower on some hardware, especially integrated graphics due to their limited memory bandwidth. See also :ref:`rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` for supersampling, which provides higher quality but is much more expensive. This has no effect on shader-induced aliasing or texture aliasing.
 
@@ -9606,7 +9664,7 @@ Sets the number of MSAA samples to use for 3D rendering (as a power of two). MSA
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/anti_aliasing/quality/screen_space_aa** = ``0``
+:ref:`int<class_int>` **rendering/anti_aliasing/quality/screen_space_aa** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>`
 
 Sets the screen-space antialiasing mode for the default screen :ref:`Viewport<class_Viewport>`. Screen-space antialiasing works by selectively blurring edges in a post-process shader. It differs from MSAA which takes multiple coverage samples while rendering objects. Screen-space AA methods are typically faster than MSAA and will smooth out specular aliasing, but tend to make scenes appear blurry. The blurriness is partially counteracted by automatically using a negative mipmap LOD bias (see :ref:`rendering/textures/default_filters/texture_mipmap_bias<class_ProjectSettings_property_rendering/textures/default_filters/texture_mipmap_bias>`).
 
@@ -9622,7 +9680,7 @@ Another way to combat specular aliasing is to enable :ref:`rendering/anti_aliasi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/anti_aliasing/quality/use_debanding** = ``false``
+:ref:`bool<class_bool>` **rendering/anti_aliasing/quality/use_debanding** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`
 
 If ``true``, uses a fast post-processing filter to make banding significantly less visible in 3D. 2D rendering is *not* affected by debanding unless the :ref:`Environment.background_mode<class_Environment_property_background_mode>` is :ref:`Environment.BG_CANVAS<class_Environment_constant_BG_CANVAS>`.
 
@@ -9638,7 +9696,7 @@ In some cases, debanding may introduce a slightly noticeable dithering pattern. 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/anti_aliasing/quality/use_taa** = ``false``
+:ref:`bool<class_bool>` **rendering/anti_aliasing/quality/use_taa** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`
 
 Enables Temporal Anti-Aliasing for the default screen :ref:`Viewport<class_Viewport>`. TAA works by jittering the camera and accumulating the images of the last rendered frames, motion vector rendering is used to account for camera and object motion. Enabling TAA can make the image blurrier, which is partially counteracted by automatically using a negative mipmap LOD bias (see :ref:`rendering/textures/default_filters/texture_mipmap_bias<class_ProjectSettings_property_rendering/textures/default_filters/texture_mipmap_bias>`).
 
@@ -9654,7 +9712,7 @@ Enables Temporal Anti-Aliasing for the default screen :ref:`Viewport<class_Viewp
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/anti_aliasing/screen_space_roughness_limiter/amount** = ``0.25``
+:ref:`float<class_float>` **rendering/anti_aliasing/screen_space_roughness_limiter/amount** = ``0.25`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/amount>`
 
 **Note:** This property is only read when the project starts. To control the screen-space roughness limiter at runtime, call :ref:`RenderingServer.screen_space_roughness_limiter_set_active<class_RenderingServer_method_screen_space_roughness_limiter_set_active>` instead.
 
@@ -9666,7 +9724,7 @@ Enables Temporal Anti-Aliasing for the default screen :ref:`Viewport<class_Viewp
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/anti_aliasing/screen_space_roughness_limiter/enabled** = ``true``
+:ref:`bool<class_bool>` **rendering/anti_aliasing/screen_space_roughness_limiter/enabled** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/enabled>`
 
 If ``true``, enables a spatial filter to limit roughness in areas with high-frequency detail. This can help reduce specular aliasing to an extent, though not as much as enabling :ref:`rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`. This filter has a small performance cost, so consider disabling it if it doesn't benefit your scene noticeably.
 
@@ -9682,7 +9740,7 @@ If ``true``, enables a spatial filter to limit roughness in areas with high-freq
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/anti_aliasing/screen_space_roughness_limiter/limit** = ``0.18``
+:ref:`float<class_float>` **rendering/anti_aliasing/screen_space_roughness_limiter/limit** = ``0.18`` :ref:`🔗<class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/limit>`
 
 **Note:** This property is only read when the project starts. To control the screen-space roughness limiter at runtime, call :ref:`RenderingServer.screen_space_roughness_limiter_set_active<class_RenderingServer_method_screen_space_roughness_limiter_set_active>` instead.
 
@@ -9694,7 +9752,7 @@ If ``true``, enables a spatial filter to limit roughness in areas with high-freq
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/camera/depth_of_field/depth_of_field_bokeh_quality** = ``1``
+:ref:`int<class_int>` **rendering/camera/depth_of_field/depth_of_field_bokeh_quality** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/camera/depth_of_field/depth_of_field_bokeh_quality>`
 
 Sets the quality of the depth of field effect. Higher quality takes more samples, which is slower but looks smoother.
 
@@ -9706,7 +9764,7 @@ Sets the quality of the depth of field effect. Higher quality takes more samples
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/camera/depth_of_field/depth_of_field_bokeh_shape** = ``1``
+:ref:`int<class_int>` **rendering/camera/depth_of_field/depth_of_field_bokeh_shape** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/camera/depth_of_field/depth_of_field_bokeh_shape>`
 
 Sets the depth of field shape. Can be Box, Hexagon, or Circle. Box is the fastest. Circle is the most realistic, but also the most expensive to compute.
 
@@ -9718,7 +9776,7 @@ Sets the depth of field shape. Can be Box, Hexagon, or Circle. Box is the fastes
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/camera/depth_of_field/depth_of_field_use_jitter** = ``false``
+:ref:`bool<class_bool>` **rendering/camera/depth_of_field/depth_of_field_use_jitter** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/camera/depth_of_field/depth_of_field_use_jitter>`
 
 If ``true``, jitters DOF samples to make effect slightly blurrier and hide lines created from low sample rates. This can result in a slightly grainy appearance when used with a low number of samples.
 
@@ -9730,7 +9788,7 @@ If ``true``, jitters DOF samples to make effect slightly blurrier and hide lines
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/driver/depth_prepass/disable_for_vendors** = ``"PowerVR,Mali,Adreno,Apple"``
+:ref:`String<class_String>` **rendering/driver/depth_prepass/disable_for_vendors** = ``"PowerVR,Mali,Adreno,Apple"`` :ref:`🔗<class_ProjectSettings_property_rendering/driver/depth_prepass/disable_for_vendors>`
 
 Disables :ref:`rendering/driver/depth_prepass/enable<class_ProjectSettings_property_rendering/driver/depth_prepass/enable>` conditionally for certain vendors. By default, disables the depth prepass for mobile devices as mobile devices do not benefit from the depth prepass due to their unique architecture.
 
@@ -9742,7 +9800,7 @@ Disables :ref:`rendering/driver/depth_prepass/enable<class_ProjectSettings_prope
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/driver/depth_prepass/enable** = ``true``
+:ref:`bool<class_bool>` **rendering/driver/depth_prepass/enable** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/driver/depth_prepass/enable>`
 
 If ``true``, performs a previous depth pass before rendering 3D materials. This increases performance significantly in scenes with high overdraw, when complex materials and lighting are used. However, in scenes with few occluded surfaces, the depth prepass may reduce performance. If your game is viewed from a fixed angle that makes it easy to avoid overdraw (such as top-down or side-scrolling perspective), consider disabling the depth prepass to improve performance. This setting can be changed at run-time to optimize performance depending on the scene currently being viewed.
 
@@ -9756,7 +9814,7 @@ If ``true``, performs a previous depth pass before rendering 3D materials. This 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/driver/threads/thread_model** = ``1``
+:ref:`int<class_int>` **rendering/driver/threads/thread_model** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/driver/threads/thread_model>`
 
 **Experimental:** This setting has several known bugs which can lead to crashing, especially when using particles or resizing the window. Not recommended for use in production at this stage.
 
@@ -9770,7 +9828,7 @@ The thread model to use for rendering. Rendering on a thread may improve perform
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **rendering/environment/defaults/default_clear_color** = ``Color(0.3, 0.3, 0.3, 1)``
+:ref:`Color<class_Color>` **rendering/environment/defaults/default_clear_color** = ``Color(0.3, 0.3, 0.3, 1)`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/defaults/default_clear_color>`
 
 Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` using its :ref:`Environment<class_Environment>`. See :ref:`Environment.background_mode<class_Environment_property_background_mode>` and :ref:`Environment.background_color<class_Environment_property_background_color>` in particular. To change this default color programmatically, use :ref:`RenderingServer.set_default_clear_color<class_RenderingServer_method_set_default_clear_color>`.
 
@@ -9782,7 +9840,7 @@ Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/environment/defaults/default_environment** = ``""``
+:ref:`String<class_String>` **rendering/environment/defaults/default_environment** = ``""`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/defaults/default_environment>`
 
 :ref:`Environment<class_Environment>` that will be used as a fallback environment in case a scene does not specify its own environment. The default environment is loaded in at scene load time regardless of whether you have set an environment or not. If you do not rely on the fallback environment, you do not need to set this property.
 
@@ -9794,7 +9852,7 @@ Default background clear color. Overridable per :ref:`Viewport<class_Viewport>` 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/glow/upscale_mode** = ``1``
+:ref:`int<class_int>` **rendering/environment/glow/upscale_mode** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/glow/upscale_mode>`
 
 Sets how the glow effect is upscaled before being copied onto the screen. Linear is faster, but looks blocky. Bicubic is slower but looks smooth.
 
@@ -9806,7 +9864,7 @@ Sets how the glow effect is upscaled before being copied onto the screen. Linear
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/glow/upscale_mode.mobile** = ``0``
+:ref:`int<class_int>` **rendering/environment/glow/upscale_mode.mobile** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/glow/upscale_mode.mobile>`
 
 Lower-end override for :ref:`rendering/environment/glow/upscale_mode<class_ProjectSettings_property_rendering/environment/glow/upscale_mode>` on mobile devices, due to performance concerns or driver support.
 
@@ -9818,7 +9876,7 @@ Lower-end override for :ref:`rendering/environment/glow/upscale_mode<class_Proje
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/screen_space_reflection/roughness_quality** = ``1``
+:ref:`int<class_int>` **rendering/environment/screen_space_reflection/roughness_quality** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/screen_space_reflection/roughness_quality>`
 
 Sets the quality for rough screen-space reflections. Turning off will make all screen space reflections sharp, while higher values make rough reflections look better.
 
@@ -9830,7 +9888,7 @@ Sets the quality for rough screen-space reflections. Turning off will make all s
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/environment/ssao/adaptive_target** = ``0.5``
+:ref:`float<class_float>` **rendering/environment/ssao/adaptive_target** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssao/adaptive_target>`
 
 Quality target to use when :ref:`rendering/environment/ssao/quality<class_ProjectSettings_property_rendering/environment/ssao/quality>` is set to ``Ultra``. A value of ``0.0`` provides a quality and speed similar to ``Medium`` while a value of ``1.0`` provides much higher quality than any of the other settings at the cost of performance.
 
@@ -9842,7 +9900,7 @@ Quality target to use when :ref:`rendering/environment/ssao/quality<class_Projec
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/ssao/blur_passes** = ``2``
+:ref:`int<class_int>` **rendering/environment/ssao/blur_passes** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssao/blur_passes>`
 
 Number of blur passes to use when computing screen-space ambient occlusion. A higher number will result in a smoother look, but will be slower to compute and will have less high-frequency detail.
 
@@ -9854,7 +9912,7 @@ Number of blur passes to use when computing screen-space ambient occlusion. A hi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/environment/ssao/fadeout_from** = ``50.0``
+:ref:`float<class_float>` **rendering/environment/ssao/fadeout_from** = ``50.0`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssao/fadeout_from>`
 
 Distance at which the screen-space ambient occlusion effect starts to fade out. Use this hide ambient occlusion at great distances.
 
@@ -9866,7 +9924,7 @@ Distance at which the screen-space ambient occlusion effect starts to fade out. 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/environment/ssao/fadeout_to** = ``300.0``
+:ref:`float<class_float>` **rendering/environment/ssao/fadeout_to** = ``300.0`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssao/fadeout_to>`
 
 Distance at which the screen-space ambient occlusion is fully faded out. Use this hide ambient occlusion at great distances.
 
@@ -9878,7 +9936,7 @@ Distance at which the screen-space ambient occlusion is fully faded out. Use thi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/environment/ssao/half_size** = ``true``
+:ref:`bool<class_bool>` **rendering/environment/ssao/half_size** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssao/half_size>`
 
 If ``true``, screen-space ambient occlusion will be rendered at half size and then upscaled before being added to the scene. This is significantly faster but may miss small details. If ``false``, screen-space ambient occlusion will be rendered at full size.
 
@@ -9890,7 +9948,7 @@ If ``true``, screen-space ambient occlusion will be rendered at half size and th
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/ssao/quality** = ``2``
+:ref:`int<class_int>` **rendering/environment/ssao/quality** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssao/quality>`
 
 Sets the quality of the screen-space ambient occlusion effect. Higher values take more samples and so will result in better quality, at the cost of performance. Setting to ``Ultra`` will use the :ref:`rendering/environment/ssao/adaptive_target<class_ProjectSettings_property_rendering/environment/ssao/adaptive_target>` setting.
 
@@ -9902,7 +9960,7 @@ Sets the quality of the screen-space ambient occlusion effect. Higher values tak
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/environment/ssil/adaptive_target** = ``0.5``
+:ref:`float<class_float>` **rendering/environment/ssil/adaptive_target** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssil/adaptive_target>`
 
 Quality target to use when :ref:`rendering/environment/ssil/quality<class_ProjectSettings_property_rendering/environment/ssil/quality>` is set to ``Ultra``. A value of ``0.0`` provides a quality and speed similar to ``Medium`` while a value of ``1.0`` provides much higher quality than any of the other settings at the cost of performance. When using the adaptive target, the performance cost scales with the complexity of the scene.
 
@@ -9914,7 +9972,7 @@ Quality target to use when :ref:`rendering/environment/ssil/quality<class_Projec
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/ssil/blur_passes** = ``4``
+:ref:`int<class_int>` **rendering/environment/ssil/blur_passes** = ``4`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssil/blur_passes>`
 
 Number of blur passes to use when computing screen-space indirect lighting. A higher number will result in a smoother look, but will be slower to compute and will have less high-frequency detail.
 
@@ -9926,7 +9984,7 @@ Number of blur passes to use when computing screen-space indirect lighting. A hi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/environment/ssil/fadeout_from** = ``50.0``
+:ref:`float<class_float>` **rendering/environment/ssil/fadeout_from** = ``50.0`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssil/fadeout_from>`
 
 Distance at which the screen-space indirect lighting effect starts to fade out. Use this hide screen-space indirect lighting at great distances.
 
@@ -9938,7 +9996,7 @@ Distance at which the screen-space indirect lighting effect starts to fade out. 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/environment/ssil/fadeout_to** = ``300.0``
+:ref:`float<class_float>` **rendering/environment/ssil/fadeout_to** = ``300.0`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssil/fadeout_to>`
 
 Distance at which the screen-space indirect lighting is fully faded out. Use this hide screen-space indirect lighting at great distances.
 
@@ -9950,7 +10008,7 @@ Distance at which the screen-space indirect lighting is fully faded out. Use thi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/environment/ssil/half_size** = ``true``
+:ref:`bool<class_bool>` **rendering/environment/ssil/half_size** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssil/half_size>`
 
 If ``true``, screen-space indirect lighting will be rendered at half size and then upscaled before being added to the scene. This is significantly faster but may miss small details and may result in some objects appearing to glow at their edges.
 
@@ -9962,7 +10020,7 @@ If ``true``, screen-space indirect lighting will be rendered at half size and th
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/ssil/quality** = ``2``
+:ref:`int<class_int>` **rendering/environment/ssil/quality** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssil/quality>`
 
 Sets the quality of the screen-space indirect lighting effect. Higher values take more samples and so will result in better quality, at the cost of performance. Setting to ``Ultra`` will use the :ref:`rendering/environment/ssil/adaptive_target<class_ProjectSettings_property_rendering/environment/ssil/adaptive_target>` setting.
 
@@ -9974,7 +10032,7 @@ Sets the quality of the screen-space indirect lighting effect. Higher values tak
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/environment/subsurface_scattering/subsurface_scattering_depth_scale** = ``0.01``
+:ref:`float<class_float>` **rendering/environment/subsurface_scattering/subsurface_scattering_depth_scale** = ``0.01`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_depth_scale>`
 
 Scales the depth over which the subsurface scattering effect is applied. A high value may allow light to scatter into a part of the mesh or another mesh that is close in screen space but far in depth. See also :ref:`rendering/environment/subsurface_scattering/subsurface_scattering_scale<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_scale>`.
 
@@ -9988,7 +10046,7 @@ Scales the depth over which the subsurface scattering effect is applied. A high 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/subsurface_scattering/subsurface_scattering_quality** = ``1``
+:ref:`int<class_int>` **rendering/environment/subsurface_scattering/subsurface_scattering_quality** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_quality>`
 
 Sets the quality of the subsurface scattering effect. Higher values are slower but look nicer. This affects the rendering of materials that have :ref:`BaseMaterial3D.subsurf_scatter_enabled<class_BaseMaterial3D_property_subsurf_scatter_enabled>` set to ``true``, along with :ref:`ShaderMaterial<class_ShaderMaterial>`\ s that set ``SSS_STRENGTH``.
 
@@ -10002,7 +10060,7 @@ Sets the quality of the subsurface scattering effect. Higher values are slower b
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/environment/subsurface_scattering/subsurface_scattering_scale** = ``0.05``
+:ref:`float<class_float>` **rendering/environment/subsurface_scattering/subsurface_scattering_scale** = ``0.05`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_scale>`
 
 Scales the distance over which samples are taken for subsurface scattering effect. Changing this does not impact performance, but higher values will result in significant artifacts as the samples will become obviously spread out. A lower value results in a smaller spread of scattered light. See also :ref:`rendering/environment/subsurface_scattering/subsurface_scattering_depth_scale<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_depth_scale>`.
 
@@ -10016,7 +10074,7 @@ Scales the distance over which samples are taken for subsurface scattering effec
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/volumetric_fog/use_filter** = ``1``
+:ref:`int<class_int>` **rendering/environment/volumetric_fog/use_filter** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/volumetric_fog/use_filter>`
 
 Enables filtering of the volumetric fog effect prior to integration. This substantially blurs the fog which reduces fine details but also smooths out harsh edges and aliasing artifacts. Disable when more detail is required.
 
@@ -10028,7 +10086,7 @@ Enables filtering of the volumetric fog effect prior to integration. This substa
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/volumetric_fog/volume_depth** = ``64``
+:ref:`int<class_int>` **rendering/environment/volumetric_fog/volume_depth** = ``64`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/volumetric_fog/volume_depth>`
 
 Number of slices to use along the depth of the froxel buffer for volumetric fog. A lower number will be more efficient but may result in artifacts appearing during camera movement. See also :ref:`Environment.volumetric_fog_length<class_Environment_property_volumetric_fog_length>`.
 
@@ -10040,7 +10098,7 @@ Number of slices to use along the depth of the froxel buffer for volumetric fog.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/environment/volumetric_fog/volume_size** = ``64``
+:ref:`int<class_int>` **rendering/environment/volumetric_fog/volume_size** = ``64`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/volumetric_fog/volume_size>`
 
 Base size used to determine size of froxel buffer in the camera X-axis and Y-axis. The final size is scaled by the aspect ratio of the screen, so actual values may differ from what is set. Set a larger size for more detailed fog, set a smaller size for better performance.
 
@@ -10052,7 +10110,7 @@ Base size used to determine size of froxel buffer in the camera X-axis and Y-axi
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver**
+:ref:`String<class_String>` **rendering/gl_compatibility/driver** :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver>`
 
 Sets the driver to be used by the renderer when using the Compatibility renderer. This property can not be edited directly, instead, set the driver using the platform-specific overrides.
 
@@ -10064,7 +10122,7 @@ Sets the driver to be used by the renderer when using the Compatibility renderer
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.android**
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.android** :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.android>`
 
 Android override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
@@ -10076,7 +10134,7 @@ Android override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettin
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.ios**
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.ios** :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.ios>`
 
 iOS override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
@@ -10088,7 +10146,7 @@ iOS override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_p
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.linuxbsd**
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.linuxbsd** :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.linuxbsd>`
 
 LinuxBSD override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
@@ -10100,7 +10158,7 @@ LinuxBSD override for :ref:`rendering/gl_compatibility/driver<class_ProjectSetti
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.macos**
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.macos** :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.macos>`
 
 macOS override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
@@ -10112,7 +10170,7 @@ macOS override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.web**
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.web** :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.web>`
 
 Web override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
@@ -10124,7 +10182,7 @@ Web override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_p
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/gl_compatibility/driver.windows**
+:ref:`String<class_String>` **rendering/gl_compatibility/driver.windows** :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/driver.windows>`
 
 Windows override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>`.
 
@@ -10136,7 +10194,7 @@ Windows override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettin
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_angle** = ``true``
+:ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_angle** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_angle>`
 
 If ``true``, the compatibility renderer will fall back to ANGLE if native OpenGL is not supported or the device is listed in :ref:`rendering/gl_compatibility/force_angle_on_devices<class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices>`.
 
@@ -10150,7 +10208,7 @@ If ``true``, the compatibility renderer will fall back to ANGLE if native OpenGL
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_gles** = ``true``
+:ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_gles** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_gles>`
 
 If ``true``, the compatibility renderer will fall back to OpenGLES if desktop OpenGL is not supported.
 
@@ -10164,7 +10222,7 @@ If ``true``, the compatibility renderer will fall back to OpenGLES if desktop Op
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_native** = ``true``
+:ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_native** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_native>`
 
 If ``true``, the compatibility renderer will fall back to native OpenGL if ANGLE over Metal is not supported.
 
@@ -10178,7 +10236,7 @@ If ``true``, the compatibility renderer will fall back to native OpenGL if ANGLE
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **rendering/gl_compatibility/force_angle_on_devices**
+:ref:`Array<class_Array>` **rendering/gl_compatibility/force_angle_on_devices** :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices>`
 
 An :ref:`Array<class_Array>` of devices which should always use the ANGLE renderer.
 
@@ -10194,7 +10252,7 @@ Each entry is a :ref:`Dictionary<class_Dictionary>` with the following keys: ``v
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/gl_compatibility/item_buffer_size** = ``16384``
+:ref:`int<class_int>` **rendering/gl_compatibility/item_buffer_size** = ``16384`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/item_buffer_size>`
 
 Maximum number of canvas items commands that can be drawn in a single viewport update. If more render commands are issued they will be ignored. Decreasing this limit may improve performance on bandwidth limited devices. Increase this limit if you find that not all objects are being drawn in a frame.
 
@@ -10206,7 +10264,7 @@ Maximum number of canvas items commands that can be drawn in a single viewport u
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/gl_compatibility/nvidia_disable_threaded_optimization** = ``true``
+:ref:`bool<class_bool>` **rendering/gl_compatibility/nvidia_disable_threaded_optimization** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/nvidia_disable_threaded_optimization>`
 
 If ``true``, disables the threaded optimization feature from the NVIDIA drivers, which are known to cause stuttering in most OpenGL applications.
 
@@ -10220,7 +10278,7 @@ If ``true``, disables the threaded optimization feature from the NVIDIA drivers,
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/global_illumination/gi/use_half_resolution** = ``false``
+:ref:`bool<class_bool>` **rendering/global_illumination/gi/use_half_resolution** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/global_illumination/gi/use_half_resolution>`
 
 If ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`) buffers at halved resolution (e.g. 960×540 when the viewport size is 1920×1080). This improves performance significantly when VoxelGI or SDFGI is enabled, at the cost of artifacts that may be visible on polygon edges. The loss in quality becomes less noticeable as the viewport resolution increases. :ref:`LightmapGI<class_LightmapGI>` rendering is not affected by this setting.
 
@@ -10234,7 +10292,7 @@ If ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/global_illumination/sdfgi/frames_to_converge** = ``5``
+:ref:`int<class_int>` **rendering/global_illumination/sdfgi/frames_to_converge** = ``5`` :ref:`🔗<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_converge>`
 
 The number of frames to use for converging signed distance field global illumination. Higher values lead to a less noisy result, at the cost of taking a longer time to fully converge. This means the scene's global illumination will be too dark for a longer period of time, especially when the camera moves fast. The actual convergence speed depends on rendered framerate. For example, with the default setting of 30 frames, rendering at 60 FPS will make SDFGI fully converge after 0.5 seconds. See also :ref:`rendering/global_illumination/sdfgi/frames_to_update_lights<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_update_lights>` and :ref:`rendering/global_illumination/sdfgi/probe_ray_count<class_ProjectSettings_property_rendering/global_illumination/sdfgi/probe_ray_count>`.
 
@@ -10248,7 +10306,7 @@ The number of frames to use for converging signed distance field global illumina
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/global_illumination/sdfgi/frames_to_update_lights** = ``2``
+:ref:`int<class_int>` **rendering/global_illumination/sdfgi/frames_to_update_lights** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_update_lights>`
 
 The number of frames over which dynamic lights should be updated in signed distance field global illumination. Higher values take more time to update indirect lighting coming from dynamic lights, but result in better performance when many dynamic lights are present. See also :ref:`rendering/global_illumination/sdfgi/frames_to_converge<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_converge>` and :ref:`rendering/global_illumination/sdfgi/probe_ray_count<class_ProjectSettings_property_rendering/global_illumination/sdfgi/probe_ray_count>`.
 
@@ -10264,7 +10322,7 @@ The number of frames over which dynamic lights should be updated in signed dista
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/global_illumination/sdfgi/probe_ray_count** = ``1``
+:ref:`int<class_int>` **rendering/global_illumination/sdfgi/probe_ray_count** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/global_illumination/sdfgi/probe_ray_count>`
 
 The number of rays to throw per frame when computing signed distance field global illumination. Higher values lead to a less noisy result, at the cost of performance. See also :ref:`rendering/global_illumination/sdfgi/frames_to_converge<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_converge>` and :ref:`rendering/global_illumination/sdfgi/frames_to_update_lights<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_update_lights>`.
 
@@ -10278,7 +10336,7 @@ The number of rays to throw per frame when computing signed distance field globa
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/global_illumination/voxel_gi/quality** = ``0``
+:ref:`int<class_int>` **rendering/global_illumination/voxel_gi/quality** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/global_illumination/voxel_gi/quality>`
 
 The VoxelGI quality to use. High quality leads to more precise lighting and better reflections, but is slower to render. This setting does not affect the baked data and doesn't require baking the :ref:`VoxelGI<class_VoxelGI>` again to apply.
 
@@ -10292,7 +10350,7 @@ The VoxelGI quality to use. High quality leads to more precise lighting and bett
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_performance/max_rays_per_pass** = ``32``
+:ref:`int<class_int>` **rendering/lightmapping/bake_performance/max_rays_per_pass** = ``32`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_rays_per_pass>`
 
 The maximum number of rays that can be thrown per pass when baking lightmaps with :ref:`LightmapGI<class_LightmapGI>`. Depending on the scene, adjusting this value may result in higher GPU utilization when baking lightmaps, leading to faster bake times.
 
@@ -10304,7 +10362,7 @@ The maximum number of rays that can be thrown per pass when baking lightmaps wit
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_performance/max_rays_per_probe_pass** = ``64``
+:ref:`int<class_int>` **rendering/lightmapping/bake_performance/max_rays_per_probe_pass** = ``64`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_rays_per_probe_pass>`
 
 The maximum number of rays that can be thrown per pass when baking dynamic object lighting in :ref:`LightmapProbe<class_LightmapProbe>`\ s with :ref:`LightmapGI<class_LightmapGI>`. Depending on the scene, adjusting this value may result in higher GPU utilization when baking lightmaps, leading to faster bake times.
 
@@ -10316,7 +10374,7 @@ The maximum number of rays that can be thrown per pass when baking dynamic objec
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_performance/region_size** = ``512``
+:ref:`int<class_int>` **rendering/lightmapping/bake_performance/region_size** = ``512`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_performance/region_size>`
 
 The region size to use when baking lightmaps with :ref:`LightmapGI<class_LightmapGI>`.
 
@@ -10328,7 +10386,7 @@ The region size to use when baking lightmaps with :ref:`LightmapGI<class_Lightma
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/high_quality_probe_ray_count** = ``512``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/high_quality_probe_ray_count** = ``512`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_quality/high_quality_probe_ray_count>`
 
 The number of rays to use for baking dynamic object lighting in :ref:`LightmapProbe<class_LightmapProbe>`\ s when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_HIGH<class_LightmapGI_constant_BAKE_QUALITY_HIGH>`.
 
@@ -10340,7 +10398,7 @@ The number of rays to use for baking dynamic object lighting in :ref:`LightmapPr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/high_quality_ray_count** = ``512``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/high_quality_ray_count** = ``512`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_quality/high_quality_ray_count>`
 
 The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_LightmapGI>` when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_HIGH<class_LightmapGI_constant_BAKE_QUALITY_HIGH>`.
 
@@ -10352,7 +10410,7 @@ The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_Light
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/low_quality_probe_ray_count** = ``64``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/low_quality_probe_ray_count** = ``64`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_quality/low_quality_probe_ray_count>`
 
 The number of rays to use for baking dynamic object lighting in :ref:`LightmapProbe<class_LightmapProbe>`\ s when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_LOW<class_LightmapGI_constant_BAKE_QUALITY_LOW>`.
 
@@ -10364,7 +10422,7 @@ The number of rays to use for baking dynamic object lighting in :ref:`LightmapPr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/low_quality_ray_count** = ``32``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/low_quality_ray_count** = ``32`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_quality/low_quality_ray_count>`
 
 The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_LightmapGI>` when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_LOW<class_LightmapGI_constant_BAKE_QUALITY_LOW>`.
 
@@ -10376,7 +10434,7 @@ The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_Light
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/medium_quality_probe_ray_count** = ``256``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/medium_quality_probe_ray_count** = ``256`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_quality/medium_quality_probe_ray_count>`
 
 The number of rays to use for baking dynamic object lighting in :ref:`LightmapProbe<class_LightmapProbe>`\ s when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_MEDIUM<class_LightmapGI_constant_BAKE_QUALITY_MEDIUM>`.
 
@@ -10388,7 +10446,7 @@ The number of rays to use for baking dynamic object lighting in :ref:`LightmapPr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/medium_quality_ray_count** = ``128``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/medium_quality_ray_count** = ``128`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_quality/medium_quality_ray_count>`
 
 The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_LightmapGI>` when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_MEDIUM<class_LightmapGI_constant_BAKE_QUALITY_MEDIUM>`.
 
@@ -10400,7 +10458,7 @@ The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_Light
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count** = ``2048``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count** = ``2048`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count>`
 
 The number of rays to use for baking dynamic object lighting in :ref:`LightmapProbe<class_LightmapProbe>`\ s when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_ULTRA<class_LightmapGI_constant_BAKE_QUALITY_ULTRA>`.
 
@@ -10412,7 +10470,7 @@ The number of rays to use for baking dynamic object lighting in :ref:`LightmapPr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/ultra_quality_ray_count** = ``2048``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/ultra_quality_ray_count** = ``2048`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_quality/ultra_quality_ray_count>`
 
 The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_LightmapGI>` when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_ULTRA<class_LightmapGI_constant_BAKE_QUALITY_ULTRA>`.
 
@@ -10424,7 +10482,7 @@ The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_Light
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/denoising/denoiser** = ``0``
+:ref:`int<class_int>` **rendering/lightmapping/denoising/denoiser** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser>`
 
 Denoiser tool used for denoising lightmaps.
 
@@ -10448,7 +10506,7 @@ If no GPU acceleration is configured on the system, multi-threaded CPU-based den
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/lightmapping/primitive_meshes/texel_size** = ``0.2``
+:ref:`float<class_float>` **rendering/lightmapping/primitive_meshes/texel_size** = ``0.2`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/primitive_meshes/texel_size>`
 
 The texel_size that is used to calculate the :ref:`Mesh.lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` on :ref:`PrimitiveMesh<class_PrimitiveMesh>` resources if :ref:`PrimitiveMesh.add_uv2<class_PrimitiveMesh_property_add_uv2>` is enabled.
 
@@ -10460,7 +10518,7 @@ The texel_size that is used to calculate the :ref:`Mesh.lightmap_size_hint<class
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/lightmapping/probe_capture/update_speed** = ``15``
+:ref:`float<class_float>` **rendering/lightmapping/probe_capture/update_speed** = ``15`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/probe_capture/update_speed>`
 
 The framerate-independent update speed when representing dynamic object lighting from :ref:`LightmapProbe<class_LightmapProbe>`\ s. Higher values make dynamic object lighting update faster. Higher values can prevent fast-moving objects from having "outdated" indirect lighting displayed on them, at the cost of possible flickering when an object moves from a bright area to a shaded area.
 
@@ -10472,7 +10530,7 @@ The framerate-independent update speed when representing dynamic object lighting
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/lights_and_shadows/directional_shadow/16_bits** = ``true``
+:ref:`bool<class_bool>` **rendering/lights_and_shadows/directional_shadow/16_bits** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/directional_shadow/16_bits>`
 
 Use 16 bits for the directional shadow depth map. Enabling this results in shadows having less precision and may result in shadow acne, but can lead to performance improvements on some devices.
 
@@ -10484,7 +10542,7 @@ Use 16 bits for the directional shadow depth map. Enabling this results in shado
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/directional_shadow/size** = ``4096``
+:ref:`int<class_int>` **rendering/lights_and_shadows/directional_shadow/size** = ``4096`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/directional_shadow/size>`
 
 The directional shadow's size in pixels. Higher values will result in sharper shadows, at the cost of performance. The value is rounded up to the nearest power of 2.
 
@@ -10496,7 +10554,7 @@ The directional shadow's size in pixels. Higher values will result in sharper sh
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/directional_shadow/size.mobile** = ``2048``
+:ref:`int<class_int>` **rendering/lights_and_shadows/directional_shadow/size.mobile** = ``2048`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/directional_shadow/size.mobile>`
 
 Lower-end override for :ref:`rendering/lights_and_shadows/directional_shadow/size<class_ProjectSettings_property_rendering/lights_and_shadows/directional_shadow/size>` on mobile devices, due to performance concerns or driver support.
 
@@ -10508,7 +10566,7 @@ Lower-end override for :ref:`rendering/lights_and_shadows/directional_shadow/siz
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality** = ``2``
+:ref:`int<class_int>` **rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality>`
 
 Quality setting for shadows cast by :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s. Higher quality settings use more samples when reading from shadow maps and are thus slower. Low quality settings may result in shadows looking grainy.
 
@@ -10524,7 +10582,7 @@ Quality setting for shadows cast by :ref:`DirectionalLight3D<class_DirectionalLi
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile** = ``0``
+:ref:`int<class_int>` **rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile>`
 
 Lower-end override for :ref:`rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality<class_ProjectSettings_property_rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality>` on mobile devices, due to performance concerns or driver support.
 
@@ -10536,7 +10594,7 @@ Lower-end override for :ref:`rendering/lights_and_shadows/directional_shadow/sof
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/lights_and_shadows/positional_shadow/atlas_16_bits** = ``true``
+:ref:`bool<class_bool>` **rendering/lights_and_shadows/positional_shadow/atlas_16_bits** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_16_bits>`
 
 Use 16 bits for the omni/spot shadow depth map. Enabling this results in shadows having less precision and may result in shadow acne, but can lead to performance improvements on some devices.
 
@@ -10548,7 +10606,7 @@ Use 16 bits for the omni/spot shadow depth map. Enabling this results in shadows
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv** = ``2``
+:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv>`
 
 Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
@@ -10560,7 +10618,7 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv** = ``2``
+:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv>`
 
 Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
@@ -10572,7 +10630,7 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv** = ``3``
+:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv** = ``3`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv>`
 
 Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
@@ -10584,7 +10642,7 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv** = ``4``
+:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv** = ``4`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv>`
 
 Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
@@ -10596,7 +10654,7 @@ Subdivision quadrant size for shadow mapping. See shadow mapping documentation.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_size** = ``4096``
+:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_size** = ``4096`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_size>`
 
 Size for shadow atlas (used for OmniLights and SpotLights). See documentation.
 
@@ -10608,7 +10666,7 @@ Size for shadow atlas (used for OmniLights and SpotLights). See documentation.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_size.mobile** = ``2048``
+:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/atlas_size.mobile** = ``2048`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_size.mobile>`
 
 Lower-end override for :ref:`rendering/lights_and_shadows/positional_shadow/atlas_size<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/atlas_size>` on mobile devices, due to performance concerns or driver support.
 
@@ -10620,7 +10678,7 @@ Lower-end override for :ref:`rendering/lights_and_shadows/positional_shadow/atla
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/soft_shadow_filter_quality** = ``2``
+:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/soft_shadow_filter_quality** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/soft_shadow_filter_quality>`
 
 Quality setting for shadows cast by :ref:`OmniLight3D<class_OmniLight3D>`\ s and :ref:`SpotLight3D<class_SpotLight3D>`\ s. Higher quality settings use more samples when reading from shadow maps and are thus slower. Low quality settings may result in shadows looking grainy.
 
@@ -10636,7 +10694,7 @@ Quality setting for shadows cast by :ref:`OmniLight3D<class_OmniLight3D>`\ s and
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile** = ``0``
+:ref:`int<class_int>` **rendering/lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile>`
 
 Lower-end override for :ref:`rendering/lights_and_shadows/positional_shadow/soft_shadow_filter_quality<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/soft_shadow_filter_quality>` on mobile devices, due to performance concerns or driver support.
 
@@ -10648,7 +10706,7 @@ Lower-end override for :ref:`rendering/lights_and_shadows/positional_shadow/soft
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/lights_and_shadows/tighter_shadow_caster_culling** = ``true``
+:ref:`bool<class_bool>` **rendering/lights_and_shadows/tighter_shadow_caster_culling** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/tighter_shadow_caster_culling>`
 
 If ``true``, items that cannot cast shadows into the view frustum will not be rendered into shadow maps.
 
@@ -10662,7 +10720,7 @@ This can increase performance.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/lights_and_shadows/use_physical_light_units** = ``false``
+:ref:`bool<class_bool>` **rendering/lights_and_shadows/use_physical_light_units** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>`
 
 Enables the use of physically based units for light sources. Physically based units tend to be much larger than the arbitrary units used by Godot, but they can be used to match lighting within Godot to real-world lighting. Due to the large dynamic range of lighting conditions present in nature, Godot bakes exposure into the various lighting quantities before rendering. Most light sources bake exposure automatically at run time based on the active :ref:`CameraAttributes<class_CameraAttributes>` resource, but :ref:`LightmapGI<class_LightmapGI>` and :ref:`VoxelGI<class_VoxelGI>` require a :ref:`CameraAttributes<class_CameraAttributes>` resource to be set at bake time to reduce the dynamic range. At run time, Godot will automatically reconcile the baked exposure with the active exposure to ensure lighting remains consistent.
 
@@ -10674,7 +10732,7 @@ Enables the use of physically based units for light sources. Physically based un
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/limits/cluster_builder/max_clustered_elements** = ``512``
+:ref:`float<class_float>` **rendering/limits/cluster_builder/max_clustered_elements** = ``512`` :ref:`🔗<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
 
 The maximum number of clustered elements (:ref:`OmniLight3D<class_OmniLight3D>` + :ref:`SpotLight3D<class_SpotLight3D>` + :ref:`Decal<class_Decal>` + :ref:`ReflectionProbe<class_ReflectionProbe>`) that can be rendered at once in the camera view. If there are more clustered elements present in the camera view, some of them will not be rendered (leading to pop-in during camera movement). Enabling distance fade on lights and decals (:ref:`Light3D.distance_fade_enabled<class_Light3D_property_distance_fade_enabled>`, :ref:`Decal.distance_fade_enabled<class_Decal_property_distance_fade_enabled>`) can help avoid reaching this limit.
 
@@ -10690,11 +10748,11 @@ Decreasing this value may improve GPU performance on certain setups, even if the
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/limits/global_shader_variables/buffer_size** = ``65536``
+:ref:`int<class_int>` **rendering/limits/global_shader_variables/buffer_size** = ``65536`` :ref:`🔗<class_ProjectSettings_property_rendering/limits/global_shader_variables/buffer_size>`
 
-.. container:: contribute
+The maximum number of uniforms that can be used by the global shader uniform buffer. Each item takes up one slot. In other words, a single uniform float and a uniform vec4 will take the same amount of space in the buffer.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** When using the Compatibility backend, most mobile devices (and all web exports) will be limited to a maximum size of 1024 due to hardware constraints.
 
 .. rst-class:: classref-item-separator
 
@@ -10704,7 +10762,7 @@ Decreasing this value may improve GPU performance on certain setups, even if the
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/limits/opengl/max_lights_per_object** = ``8``
+:ref:`int<class_int>` **rendering/limits/opengl/max_lights_per_object** = ``8`` :ref:`🔗<class_ProjectSettings_property_rendering/limits/opengl/max_lights_per_object>`
 
 Max number of omnilights and spotlights renderable per object. At the default value of 8, this means that each surface can be affected by up to 8 omnilights and 8 spotlights. This is further limited by hardware support and :ref:`rendering/limits/opengl/max_renderable_lights<class_ProjectSettings_property_rendering/limits/opengl/max_renderable_lights>`. Setting this low will slightly reduce memory usage, may decrease shader compile times, and may result in faster rendering on low-end, mobile, or web devices.
 
@@ -10718,7 +10776,7 @@ Max number of omnilights and spotlights renderable per object. At the default va
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/limits/opengl/max_renderable_elements** = ``65536``
+:ref:`int<class_int>` **rendering/limits/opengl/max_renderable_elements** = ``65536`` :ref:`🔗<class_ProjectSettings_property_rendering/limits/opengl/max_renderable_elements>`
 
 Max number of elements renderable in a frame. If more elements than this are visible per frame, they will not be drawn. Keep in mind elements refer to mesh surfaces and not meshes themselves. Setting this low will slightly reduce memory usage and may decrease shader compile times, particularly on web. For most uses, the default value is suitable, but consider lowering as much as possible on web export.
 
@@ -10732,7 +10790,7 @@ Max number of elements renderable in a frame. If more elements than this are vis
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/limits/opengl/max_renderable_lights** = ``32``
+:ref:`int<class_int>` **rendering/limits/opengl/max_renderable_lights** = ``32`` :ref:`🔗<class_ProjectSettings_property_rendering/limits/opengl/max_renderable_lights>`
 
 Max number of positional lights renderable in a frame. If more lights than this number are used, they will be ignored. Setting this low will slightly reduce memory usage and may decrease shader compile times, particularly on web. For most uses, the default value is suitable, but consider lowering as much as possible on web export.
 
@@ -10746,7 +10804,7 @@ Max number of positional lights renderable in a frame. If more lights than this 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/limits/spatial_indexer/threaded_cull_minimum_instances** = ``1000``
+:ref:`int<class_int>` **rendering/limits/spatial_indexer/threaded_cull_minimum_instances** = ``1000`` :ref:`🔗<class_ProjectSettings_property_rendering/limits/spatial_indexer/threaded_cull_minimum_instances>`
 
 The minimum number of instances that must be present in a scene to enable culling computations on multiple threads. If a scene has fewer instances than this number, culling is done on a single thread.
 
@@ -10758,7 +10816,7 @@ The minimum number of instances that must be present in a scene to enable cullin
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/limits/spatial_indexer/update_iterations_per_frame** = ``10``
+:ref:`int<class_int>` **rendering/limits/spatial_indexer/update_iterations_per_frame** = ``10`` :ref:`🔗<class_ProjectSettings_property_rendering/limits/spatial_indexer/update_iterations_per_frame>`
 
 .. container:: contribute
 
@@ -10772,7 +10830,7 @@ The minimum number of instances that must be present in a scene to enable cullin
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/limits/time/time_rollover_secs** = ``3600``
+:ref:`float<class_float>` **rendering/limits/time/time_rollover_secs** = ``3600`` :ref:`🔗<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`
 
 .. container:: contribute
 
@@ -10786,7 +10844,7 @@ The minimum number of instances that must be present in a scene to enable cullin
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/mesh_lod/lod_change/threshold_pixels** = ``1.0``
+:ref:`float<class_float>` **rendering/mesh_lod/lod_change/threshold_pixels** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_rendering/mesh_lod/lod_change/threshold_pixels>`
 
 The automatic LOD bias to use for meshes rendered within the :ref:`ReflectionProbe<class_ReflectionProbe>`. Higher values will use less detailed versions of meshes that have LOD variations generated. If set to ``0.0``, automatic LOD is disabled. Increase :ref:`rendering/mesh_lod/lod_change/threshold_pixels<class_ProjectSettings_property_rendering/mesh_lod/lod_change/threshold_pixels>` to improve performance at the cost of geometry detail.
 
@@ -10802,7 +10860,7 @@ The automatic LOD bias to use for meshes rendered within the :ref:`ReflectionPro
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/occlusion_culling/bvh_build_quality** = ``2``
+:ref:`int<class_int>` **rendering/occlusion_culling/bvh_build_quality** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/occlusion_culling/bvh_build_quality>`
 
 The `Bounding Volume Hierarchy <https://en.wikipedia.org/wiki/Bounding_volume_hierarchy>`__ quality to use when rendering the occlusion culling buffer. Higher values will result in more accurate occlusion culling, at the cost of higher CPU usage. See also :ref:`rendering/occlusion_culling/occlusion_rays_per_thread<class_ProjectSettings_property_rendering/occlusion_culling/occlusion_rays_per_thread>`.
 
@@ -10816,7 +10874,7 @@ The `Bounding Volume Hierarchy <https://en.wikipedia.org/wiki/Bounding_volume_hi
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/occlusion_culling/jitter_projection** = ``true``
+:ref:`bool<class_bool>` **rendering/occlusion_culling/jitter_projection** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/occlusion_culling/jitter_projection>`
 
 If ``true``, the projection used for rendering the occlusion buffer will be jittered. This can help prevent objects being incorrectly culled when visible through small gaps.
 
@@ -10828,7 +10886,7 @@ If ``true``, the projection used for rendering the occlusion buffer will be jitt
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/occlusion_culling/occlusion_rays_per_thread** = ``512``
+:ref:`int<class_int>` **rendering/occlusion_culling/occlusion_rays_per_thread** = ``512`` :ref:`🔗<class_ProjectSettings_property_rendering/occlusion_culling/occlusion_rays_per_thread>`
 
 The number of occlusion rays traced per CPU thread. Higher values will result in more accurate occlusion culling, at the cost of higher CPU usage. The occlusion culling buffer's pixel count is roughly equal to ``occlusion_rays_per_thread * number_of_logical_cpu_cores``, so it will depend on the system's CPU. Therefore, CPUs with fewer cores will use a lower resolution to attempt keeping performance costs even across devices. See also :ref:`rendering/occlusion_culling/bvh_build_quality<class_ProjectSettings_property_rendering/occlusion_culling/bvh_build_quality>`.
 
@@ -10842,7 +10900,7 @@ The number of occlusion rays traced per CPU thread. Higher values will result in
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/occlusion_culling/use_occlusion_culling** = ``false``
+:ref:`bool<class_bool>` **rendering/occlusion_culling/use_occlusion_culling** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/occlusion_culling/use_occlusion_culling>`
 
 If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be usable for occlusion culling in 3D in the root viewport. In custom viewports, :ref:`Viewport.use_occlusion_culling<class_Viewport_property_use_occlusion_culling>` must be set to ``true`` instead.
 
@@ -10858,7 +10916,7 @@ If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be u
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/reflections/reflection_atlas/reflection_count** = ``64``
+:ref:`int<class_int>` **rendering/reflections/reflection_atlas/reflection_count** = ``64`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/reflection_atlas/reflection_count>`
 
 Number of cubemaps to store in the reflection atlas. The number of :ref:`ReflectionProbe<class_ReflectionProbe>`\ s in a scene will be limited by this amount. A higher number requires more VRAM.
 
@@ -10870,7 +10928,7 @@ Number of cubemaps to store in the reflection atlas. The number of :ref:`Reflect
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/reflections/reflection_atlas/reflection_size** = ``256``
+:ref:`int<class_int>` **rendering/reflections/reflection_atlas/reflection_size** = ``256`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/reflection_atlas/reflection_size>`
 
 Size of cubemap faces for :ref:`ReflectionProbe<class_ReflectionProbe>`\ s. A higher number requires more VRAM and may make reflection probe updating slower.
 
@@ -10882,7 +10940,7 @@ Size of cubemap faces for :ref:`ReflectionProbe<class_ReflectionProbe>`\ s. A hi
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/reflections/reflection_atlas/reflection_size.mobile** = ``128``
+:ref:`int<class_int>` **rendering/reflections/reflection_atlas/reflection_size.mobile** = ``128`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/reflection_atlas/reflection_size.mobile>`
 
 Lower-end override for :ref:`rendering/reflections/reflection_atlas/reflection_size<class_ProjectSettings_property_rendering/reflections/reflection_atlas/reflection_size>` on mobile devices, due to performance concerns or driver support.
 
@@ -10894,7 +10952,7 @@ Lower-end override for :ref:`rendering/reflections/reflection_atlas/reflection_s
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/reflections/sky_reflections/fast_filter_high_quality** = ``false``
+:ref:`bool<class_bool>` **rendering/reflections/sky_reflections/fast_filter_high_quality** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/sky_reflections/fast_filter_high_quality>`
 
 Use a higher quality variant of the fast filtering algorithm. Significantly slower than using default quality, but results in smoother reflections. Should only be used when the scene is especially detailed.
 
@@ -10906,7 +10964,7 @@ Use a higher quality variant of the fast filtering algorithm. Significantly slow
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/reflections/sky_reflections/ggx_samples** = ``32``
+:ref:`int<class_int>` **rendering/reflections/sky_reflections/ggx_samples** = ``32`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples>`
 
 Sets the number of samples to take when using importance sampling for :ref:`Sky<class_Sky>`\ s and :ref:`ReflectionProbe<class_ReflectionProbe>`\ s. A higher value will result in smoother, higher quality reflections, but increases time to calculate radiance maps. In general, fewer samples are needed for simpler, low dynamic range environments while more samples are needed for HDR environments and environments with a high level of detail.
 
@@ -10918,7 +10976,7 @@ Sets the number of samples to take when using importance sampling for :ref:`Sky<
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/reflections/sky_reflections/ggx_samples.mobile** = ``16``
+:ref:`int<class_int>` **rendering/reflections/sky_reflections/ggx_samples.mobile** = ``16`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples.mobile>`
 
 Lower-end override for :ref:`rendering/reflections/sky_reflections/ggx_samples<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples>` on mobile devices, due to performance concerns or driver support.
 
@@ -10930,7 +10988,7 @@ Lower-end override for :ref:`rendering/reflections/sky_reflections/ggx_samples<c
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/reflections/sky_reflections/roughness_layers** = ``8``
+:ref:`int<class_int>` **rendering/reflections/sky_reflections/roughness_layers** = ``8`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>`
 
 Limits the number of layers to use in radiance maps when using importance sampling. A lower number will be slightly faster and take up less VRAM.
 
@@ -10942,7 +11000,7 @@ Limits the number of layers to use in radiance maps when using importance sampli
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/reflections/sky_reflections/texture_array_reflections** = ``true``
+:ref:`bool<class_bool>` **rendering/reflections/sky_reflections/texture_array_reflections** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/sky_reflections/texture_array_reflections>`
 
 If ``true``, uses texture arrays instead of mipmaps for reflection probes and panorama backgrounds (sky). This reduces jitter noise and upscaling artifacts on reflections, but is significantly slower to compute and uses :ref:`rendering/reflections/sky_reflections/roughness_layers<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>` times more memory.
 
@@ -10954,7 +11012,7 @@ If ``true``, uses texture arrays instead of mipmaps for reflection probes and pa
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/reflections/sky_reflections/texture_array_reflections.mobile** = ``false``
+:ref:`bool<class_bool>` **rendering/reflections/sky_reflections/texture_array_reflections.mobile** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/reflections/sky_reflections/texture_array_reflections.mobile>`
 
 Lower-end override for :ref:`rendering/reflections/sky_reflections/texture_array_reflections<class_ProjectSettings_property_rendering/reflections/sky_reflections/texture_array_reflections>` on mobile devices, due to performance concerns or driver support.
 
@@ -10966,7 +11024,7 @@ Lower-end override for :ref:`rendering/reflections/sky_reflections/texture_array
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/renderer/rendering_method** = ``"forward_plus"``
+:ref:`String<class_String>` **rendering/renderer/rendering_method** = ``"forward_plus"`` :ref:`🔗<class_ProjectSettings_property_rendering/renderer/rendering_method>`
 
 Sets the renderer that will be used by the project. Options are:
 
@@ -10984,7 +11042,7 @@ Sets the renderer that will be used by the project. Options are:
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/renderer/rendering_method.mobile** = ``"mobile"``
+:ref:`String<class_String>` **rendering/renderer/rendering_method.mobile** = ``"mobile"`` :ref:`🔗<class_ProjectSettings_property_rendering/renderer/rendering_method.mobile>`
 
 Override for :ref:`rendering/renderer/rendering_method<class_ProjectSettings_property_rendering/renderer/rendering_method>` on mobile devices.
 
@@ -10996,7 +11054,7 @@ Override for :ref:`rendering/renderer/rendering_method<class_ProjectSettings_pro
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/renderer/rendering_method.web** = ``"gl_compatibility"``
+:ref:`String<class_String>` **rendering/renderer/rendering_method.web** = ``"gl_compatibility"`` :ref:`🔗<class_ProjectSettings_property_rendering/renderer/rendering_method.web>`
 
 Override for :ref:`rendering/renderer/rendering_method<class_ProjectSettings_property_rendering/renderer/rendering_method>` on web.
 
@@ -11008,9 +11066,9 @@ Override for :ref:`rendering/renderer/rendering_method<class_ProjectSettings_pro
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/d3d12/agility_sdk_version** = ``610``
+:ref:`int<class_int>` **rendering/rendering_device/d3d12/agility_sdk_version** = ``613`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`
 
-Version code of the Direct3D 12 Agility SDK to use (``D3D12SDKVersion``).
+Version code of the `Direct3D 12 Agility SDK <https://devblogs.microsoft.com/directx/directx12agility/>`__ to use (``D3D12SDKVersion``). This must match the *minor* version that is installed next to the editor binary and in the export templates directory for the current editor version. For example, if you have ``1.613.3`` installed, you need to input ``613`` here.
 
 .. rst-class:: classref-item-separator
 
@@ -11020,7 +11078,7 @@ Version code of the Direct3D 12 Agility SDK to use (``D3D12SDKVersion``).
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/d3d12/max_misc_descriptors_per_frame** = ``512``
+:ref:`int<class_int>` **rendering/rendering_device/d3d12/max_misc_descriptors_per_frame** = ``512`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_misc_descriptors_per_frame>`
 
 The number of entries in the miscellaneous descriptors heap the Direct3D 12 rendering driver uses each frame, used for various operations like clearing a texture.
 
@@ -11034,7 +11092,7 @@ Depending on the complexity of scenes, this value may be lowered or may need to 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/d3d12/max_resource_descriptors_per_frame** = ``16384``
+:ref:`int<class_int>` **rendering/rendering_device/d3d12/max_resource_descriptors_per_frame** = ``16384`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_resource_descriptors_per_frame>`
 
 The number of entries in the resource descriptors heap the Direct3D 12 rendering driver uses each frame, used for most rendering operations.
 
@@ -11048,7 +11106,7 @@ Depending on the complexity of scenes, this value may be lowered or may need to 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/d3d12/max_sampler_descriptors_per_frame** = ``1024``
+:ref:`int<class_int>` **rendering/rendering_device/d3d12/max_sampler_descriptors_per_frame** = ``1024`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_sampler_descriptors_per_frame>`
 
 The number of entries in the sampler descriptors heap the Direct3D 12 rendering driver uses each frame, used for most rendering operations.
 
@@ -11062,7 +11120,7 @@ Depending on the complexity of scenes, this value may be lowered or may need to 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver**
+:ref:`String<class_String>` **rendering/rendering_device/driver** :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver>`
 
 Sets the driver to be used by the renderer when using a RenderingDevice-based renderer like the clustered renderer or the mobile renderer. This property can not be edited directly, instead, set the driver using the platform-specific overrides.
 
@@ -11074,7 +11132,7 @@ Sets the driver to be used by the renderer when using a RenderingDevice-based re
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver.android**
+:ref:`String<class_String>` **rendering/rendering_device/driver.android** :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.android>`
 
 Android override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
 
@@ -11086,7 +11144,7 @@ Android override for :ref:`rendering/rendering_device/driver<class_ProjectSettin
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver.ios**
+:ref:`String<class_String>` **rendering/rendering_device/driver.ios** :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.ios>`
 
 iOS override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
 
@@ -11098,7 +11156,7 @@ iOS override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_p
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver.linuxbsd**
+:ref:`String<class_String>` **rendering/rendering_device/driver.linuxbsd** :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.linuxbsd>`
 
 LinuxBSD override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
 
@@ -11110,7 +11168,7 @@ LinuxBSD override for :ref:`rendering/rendering_device/driver<class_ProjectSetti
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver.macos**
+:ref:`String<class_String>` **rendering/rendering_device/driver.macos** :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.macos>`
 
 macOS override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
 
@@ -11122,7 +11180,7 @@ macOS override for :ref:`rendering/rendering_device/driver<class_ProjectSettings
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/rendering_device/driver.windows**
+:ref:`String<class_String>` **rendering/rendering_device/driver.windows** :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.windows>`
 
 Windows override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
 
@@ -11134,7 +11192,7 @@ Windows override for :ref:`rendering/rendering_device/driver<class_ProjectSettin
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/rendering_device/pipeline_cache/enable** = ``true``
+:ref:`bool<class_bool>` **rendering/rendering_device/pipeline_cache/enable** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/pipeline_cache/enable>`
 
 Enable the pipeline cache that is saved to disk if the graphics API supports it.
 
@@ -11148,7 +11206,7 @@ Enable the pipeline cache that is saved to disk if the graphics API supports it.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/rendering_device/pipeline_cache/save_chunk_size_mb** = ``3.0``
+:ref:`float<class_float>` **rendering/rendering_device/pipeline_cache/save_chunk_size_mb** = ``3.0`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/pipeline_cache/save_chunk_size_mb>`
 
 Determines at which interval pipeline cache is saved to disk. The lower the value, the more often it is saved.
 
@@ -11160,7 +11218,7 @@ Determines at which interval pipeline cache is saved to disk. The lower the valu
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/staging_buffer/block_size_kb** = ``256``
+:ref:`int<class_int>` **rendering/rendering_device/staging_buffer/block_size_kb** = ``256`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/block_size_kb>`
 
 .. container:: contribute
 
@@ -11174,7 +11232,7 @@ Determines at which interval pipeline cache is saved to disk. The lower the valu
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/staging_buffer/max_size_mb** = ``128``
+:ref:`int<class_int>` **rendering/rendering_device/staging_buffer/max_size_mb** = ``128`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/max_size_mb>`
 
 .. container:: contribute
 
@@ -11188,7 +11246,7 @@ Determines at which interval pipeline cache is saved to disk. The lower the valu
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/staging_buffer/texture_upload_region_size_px** = ``64``
+:ref:`int<class_int>` **rendering/rendering_device/staging_buffer/texture_upload_region_size_px** = ``64`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/texture_upload_region_size_px>`
 
 .. container:: contribute
 
@@ -11202,7 +11260,7 @@ Determines at which interval pipeline cache is saved to disk. The lower the valu
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/vsync/frame_queue_size** = ``2``
+:ref:`int<class_int>` **rendering/rendering_device/vsync/frame_queue_size** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/vsync/frame_queue_size>`
 
 The number of frames to track on the CPU side before stalling to wait for the GPU.
 
@@ -11218,7 +11276,7 @@ Try the `V-Sync Simulator <https://darksylinc.github.io/vsync_simulator/>`__, an
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/vsync/swapchain_image_count** = ``3``
+:ref:`int<class_int>` **rendering/rendering_device/vsync/swapchain_image_count** = ``3`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/vsync/swapchain_image_count>`
 
 The number of images the swapchain will consist of (back buffers + front buffer).
 
@@ -11242,7 +11300,7 @@ Try the `V-Sync Simulator <https://darksylinc.github.io/vsync_simulator/>`__, an
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/vulkan/max_descriptors_per_pool** = ``64``
+:ref:`int<class_int>` **rendering/rendering_device/vulkan/max_descriptors_per_pool** = ``64`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/vulkan/max_descriptors_per_pool>`
 
 .. container:: contribute
 
@@ -11256,7 +11314,7 @@ Try the `V-Sync Simulator <https://darksylinc.github.io/vsync_simulator/>`__, an
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/scaling_3d/fsr_sharpness** = ``0.2``
+:ref:`float<class_float>` **rendering/scaling_3d/fsr_sharpness** = ``0.2`` :ref:`🔗<class_ProjectSettings_property_rendering/scaling_3d/fsr_sharpness>`
 
 Determines how sharp the upscaled image will be when using the FSR upscaling mode. Sharpness halves with every whole number. Values go from 0.0 (sharpest) to 2.0. Values above 2.0 won't make a visible difference.
 
@@ -11268,7 +11326,7 @@ Determines how sharp the upscaled image will be when using the FSR upscaling mod
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/scaling_3d/mode** = ``0``
+:ref:`int<class_int>` **rendering/scaling_3d/mode** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/scaling_3d/mode>`
 
 Sets the scaling 3D mode. Bilinear scaling renders at different resolution to either undersample or supersample the viewport. FidelityFX Super Resolution 1.0, abbreviated to FSR, is an upscaling technology that produces high quality images at fast framerates by using a spatially-aware upscaling algorithm. FSR is slightly more expensive than bilinear, but it produces significantly higher image quality. On particularly low-end GPUs, the added cost of FSR may not be worth it (compared to using bilinear scaling with a slightly higher resolution scale to match performance).
 
@@ -11282,7 +11340,7 @@ Sets the scaling 3D mode. Bilinear scaling renders at different resolution to ei
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/scaling_3d/scale** = ``1.0``
+:ref:`float<class_float>` **rendering/scaling_3d/scale** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_rendering/scaling_3d/scale>`
 
 Scales the 3D render buffer based on the viewport size uses an image filter specified in :ref:`rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` to scale the output image to the full viewport size. Values lower than ``1.0`` can be used to speed up 3D rendering at the cost of quality (undersampling). Values greater than ``1.0`` are only valid for bilinear mode and can be used to improve 3D rendering quality at a high performance cost (supersampling). See also :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` for multi-sample antialiasing, which is significantly cheaper but only smooths the edges of polygons.
 
@@ -11294,7 +11352,7 @@ Scales the 3D render buffer based on the viewport size uses an image filter spec
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/shader_compiler/shader_cache/compress** = ``true``
+:ref:`bool<class_bool>` **rendering/shader_compiler/shader_cache/compress** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/shader_compiler/shader_cache/compress>`
 
 .. container:: contribute
 
@@ -11308,7 +11366,7 @@ Scales the 3D render buffer based on the viewport size uses an image filter spec
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/shader_compiler/shader_cache/enabled** = ``true``
+:ref:`bool<class_bool>` **rendering/shader_compiler/shader_cache/enabled** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/shader_compiler/shader_cache/enabled>`
 
 Enable the shader cache, which stores compiled shaders to disk to prevent stuttering from shader compilation the next time the shader is needed.
 
@@ -11320,7 +11378,7 @@ Enable the shader cache, which stores compiled shaders to disk to prevent stutte
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/shader_compiler/shader_cache/strip_debug** = ``false``
+:ref:`bool<class_bool>` **rendering/shader_compiler/shader_cache/strip_debug** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/shader_compiler/shader_cache/strip_debug>`
 
 .. container:: contribute
 
@@ -11334,7 +11392,7 @@ Enable the shader cache, which stores compiled shaders to disk to prevent stutte
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/shader_compiler/shader_cache/strip_debug.release** = ``true``
+:ref:`bool<class_bool>` **rendering/shader_compiler/shader_cache/strip_debug.release** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/shader_compiler/shader_cache/strip_debug.release>`
 
 .. container:: contribute
 
@@ -11348,7 +11406,7 @@ Enable the shader cache, which stores compiled shaders to disk to prevent stutte
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/shader_compiler/shader_cache/use_zstd_compression** = ``true``
+:ref:`bool<class_bool>` **rendering/shader_compiler/shader_cache/use_zstd_compression** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/shader_compiler/shader_cache/use_zstd_compression>`
 
 .. container:: contribute
 
@@ -11362,7 +11420,7 @@ Enable the shader cache, which stores compiled shaders to disk to prevent stutte
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/shading/overrides/force_lambert_over_burley** = ``false``
+:ref:`bool<class_bool>` **rendering/shading/overrides/force_lambert_over_burley** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/shading/overrides/force_lambert_over_burley>`
 
 If ``true``, uses faster but lower-quality Lambert material lighting model instead of Burley.
 
@@ -11374,7 +11432,7 @@ If ``true``, uses faster but lower-quality Lambert material lighting model inste
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/shading/overrides/force_lambert_over_burley.mobile** = ``true``
+:ref:`bool<class_bool>` **rendering/shading/overrides/force_lambert_over_burley.mobile** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/shading/overrides/force_lambert_over_burley.mobile>`
 
 Lower-end override for :ref:`rendering/shading/overrides/force_lambert_over_burley<class_ProjectSettings_property_rendering/shading/overrides/force_lambert_over_burley>` on mobile devices, due to performance concerns or driver support.
 
@@ -11386,7 +11444,7 @@ Lower-end override for :ref:`rendering/shading/overrides/force_lambert_over_burl
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/shading/overrides/force_vertex_shading** = ``false``
+:ref:`bool<class_bool>` **rendering/shading/overrides/force_vertex_shading** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading>`
 
 If ``true``, forces vertex shading for all rendering. This can increase performance a lot, but also reduces quality immensely. Can be used to optimize performance on low-end mobile devices.
 
@@ -11400,7 +11458,7 @@ If ``true``, forces vertex shading for all rendering. This can increase performa
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/shading/overrides/force_vertex_shading.mobile** = ``true``
+:ref:`bool<class_bool>` **rendering/shading/overrides/force_vertex_shading.mobile** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading.mobile>`
 
 Lower-end override for :ref:`rendering/shading/overrides/force_vertex_shading<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading>` on mobile devices, due to performance concerns or driver support.
 
@@ -11414,7 +11472,7 @@ Lower-end override for :ref:`rendering/shading/overrides/force_vertex_shading<cl
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/textures/canvas_textures/default_texture_filter** = ``1``
+:ref:`int<class_int>` **rendering/textures/canvas_textures/default_texture_filter** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/canvas_textures/default_texture_filter>`
 
 The default texture filtering mode to use on :ref:`CanvasItem<class_CanvasItem>`\ s.
 
@@ -11428,7 +11486,7 @@ The default texture filtering mode to use on :ref:`CanvasItem<class_CanvasItem>`
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/textures/canvas_textures/default_texture_repeat** = ``0``
+:ref:`int<class_int>` **rendering/textures/canvas_textures/default_texture_repeat** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/canvas_textures/default_texture_repeat>`
 
 The default texture repeating mode to use on :ref:`CanvasItem<class_CanvasItem>`\ s.
 
@@ -11440,7 +11498,7 @@ The default texture repeating mode to use on :ref:`CanvasItem<class_CanvasItem>`
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/textures/decals/filter** = ``3``
+:ref:`int<class_int>` **rendering/textures/decals/filter** = ``3`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/decals/filter>`
 
 The filtering quality to use for :ref:`Decal<class_Decal>` nodes. When using one of the anisotropic filtering modes, the anisotropic filtering level is controlled by :ref:`rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
 
@@ -11452,7 +11510,7 @@ The filtering quality to use for :ref:`Decal<class_Decal>` nodes. When using one
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/textures/default_filters/anisotropic_filtering_level** = ``2``
+:ref:`int<class_int>` **rendering/textures/default_filters/anisotropic_filtering_level** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`
 
 Sets the maximum number of samples to take when using anisotropic filtering on textures (as a power of two). A higher sample count will result in sharper textures at oblique angles, but is more expensive to compute. A value of ``0`` forcibly disables anisotropic filtering, even on materials where it is enabled.
 
@@ -11470,7 +11528,7 @@ The anisotropic filtering level also affects decals and light projectors if they
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/textures/default_filters/texture_mipmap_bias** = ``0.0``
+:ref:`float<class_float>` **rendering/textures/default_filters/texture_mipmap_bias** = ``0.0`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/default_filters/texture_mipmap_bias>`
 
 Affects the final texture sharpness by reading from a lower or higher mipmap (also called "texture LOD bias"). Negative values make mipmapped textures sharper but grainier when viewed at a distance, while positive values make mipmapped textures blurrier (even when up close).
 
@@ -11486,7 +11544,7 @@ Enabling temporal antialiasing (:ref:`rendering/anti_aliasing/quality/use_taa<cl
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/textures/default_filters/use_nearest_mipmap_filter** = ``false``
+:ref:`bool<class_bool>` **rendering/textures/default_filters/use_nearest_mipmap_filter** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/default_filters/use_nearest_mipmap_filter>`
 
 If ``true``, uses nearest-neighbor mipmap filtering when using mipmaps (also called "bilinear filtering"), which will result in visible seams appearing between mipmap stages. This may increase performance in mobile as less memory bandwidth is used. If ``false``, linear mipmap filtering (also called "trilinear filtering") is used.
 
@@ -11500,7 +11558,7 @@ If ``true``, uses nearest-neighbor mipmap filtering when using mipmaps (also cal
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/textures/light_projectors/filter** = ``3``
+:ref:`int<class_int>` **rendering/textures/light_projectors/filter** = ``3`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/light_projectors/filter>`
 
 The filtering quality to use for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:`SpotLight3D<class_SpotLight3D>` projectors. When using one of the anisotropic filtering modes, the anisotropic filtering level is controlled by :ref:`rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
 
@@ -11512,7 +11570,7 @@ The filtering quality to use for :ref:`OmniLight3D<class_OmniLight3D>` and :ref:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/textures/lossless_compression/force_png** = ``false``
+:ref:`bool<class_bool>` **rendering/textures/lossless_compression/force_png** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/lossless_compression/force_png>`
 
 If ``true``, the texture importer will import lossless textures using the PNG format. Otherwise, it will default to using WebP.
 
@@ -11524,7 +11582,7 @@ If ``true``, the texture importer will import lossless textures using the PNG fo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_etc2_astc** = ``false``
+:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_etc2_astc** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc>`
 
 If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm for lower quality textures and normal maps and Adaptable Scalable Texture Compression algorithm for high quality textures (in 4×4 block size).
 
@@ -11540,7 +11598,7 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_s3tc_bptc** = ``false``
+:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_s3tc_bptc** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc_bptc>`
 
 If ``true``, the texture importer will import VRAM-compressed textures using the S3 Texture Compression algorithm (DXT1-5) for lower quality textures and the BPTC algorithm (BC6H and BC7) for high quality textures. This algorithm is only supported on PC desktop platforms and consoles.
 
@@ -11556,7 +11614,7 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/textures/webp_compression/compression_method** = ``2``
+:ref:`int<class_int>` **rendering/textures/webp_compression/compression_method** = ``2`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/webp_compression/compression_method>`
 
 The default compression method for WebP. Affects both lossy and lossless WebP. A higher value results in smaller files at the cost of compression speed. Decompression speed is mostly unaffected by the compression method. Supported values are 0 to 6. Note that compression methods above 4 are very slow and offer very little savings.
 
@@ -11568,7 +11626,7 @@ The default compression method for WebP. Affects both lossy and lossless WebP. A
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rendering/textures/webp_compression/lossless_compression_factor** = ``25``
+:ref:`float<class_float>` **rendering/textures/webp_compression/lossless_compression_factor** = ``25`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/webp_compression/lossless_compression_factor>`
 
 The default compression factor for lossless WebP. Decompression speed is mostly unaffected by the compression factor. Supported values are 0 to 100.
 
@@ -11580,7 +11638,7 @@ The default compression factor for lossless WebP. Decompression speed is mostly 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/viewport/hdr_2d** = ``false``
+:ref:`bool<class_bool>` **rendering/viewport/hdr_2d** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
 
 If ``true``, enables :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` on the root viewport. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow).
 
@@ -11592,7 +11650,7 @@ If ``true``, enables :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/viewport/transparent_background** = ``false``
+:ref:`bool<class_bool>` **rendering/viewport/transparent_background** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/viewport/transparent_background>`
 
 If ``true``, enables :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` on the root viewport. This allows per-pixel transparency to be effective after also enabling :ref:`display/window/size/transparent<class_ProjectSettings_property_display/window/size/transparent>` and :ref:`display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`.
 
@@ -11604,7 +11662,7 @@ If ``true``, enables :ref:`Viewport.transparent_bg<class_Viewport_property_trans
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/vrs/mode** = ``0``
+:ref:`int<class_int>` **rendering/vrs/mode** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/vrs/mode>`
 
 Set the default Variable Rate Shading (VRS) mode for the main viewport. See :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to change this at runtime, and :ref:`VRSMode<enum_Viewport_VRSMode>` for possible values.
 
@@ -11616,7 +11674,7 @@ Set the default Variable Rate Shading (VRS) mode for the main viewport. See :ref
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **rendering/vrs/texture** = ``""``
+:ref:`String<class_String>` **rendering/vrs/texture** = ``""`` :ref:`🔗<class_ProjectSettings_property_rendering/vrs/texture>`
 
 If :ref:`rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>` is set to **Texture**, this is the path to default texture loaded as the VRS image.
 
@@ -11643,7 +11701,7 @@ The texture *must* use a lossless compression format so that colors can be match
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **threading/worker_pool/low_priority_thread_ratio** = ``0.3``
+:ref:`float<class_float>` **threading/worker_pool/low_priority_thread_ratio** = ``0.3`` :ref:`🔗<class_ProjectSettings_property_threading/worker_pool/low_priority_thread_ratio>`
 
 The ratio of :ref:`WorkerThreadPool<class_WorkerThreadPool>`'s threads that will be reserved for low-priority tasks. For example, if 10 threads are available and this value is set to ``0.3``, 3 of the worker threads will be reserved for low-priority tasks. The actual value won't exceed the number of CPU cores minus one, and if possible, at least one worker thread will be dedicated to low-priority tasks.
 
@@ -11655,7 +11713,7 @@ The ratio of :ref:`WorkerThreadPool<class_WorkerThreadPool>`'s threads that will
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **threading/worker_pool/max_threads** = ``-1``
+:ref:`int<class_int>` **threading/worker_pool/max_threads** = ``-1`` :ref:`🔗<class_ProjectSettings_property_threading/worker_pool/max_threads>`
 
 Maximum number of threads to be used by :ref:`WorkerThreadPool<class_WorkerThreadPool>`. Value of ``-1`` means no limit.
 
@@ -11667,7 +11725,7 @@ Maximum number of threads to be used by :ref:`WorkerThreadPool<class_WorkerThrea
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **xr/openxr/default_action_map** = ``"res://openxr_action_map.tres"``
+:ref:`String<class_String>` **xr/openxr/default_action_map** = ``"res://openxr_action_map.tres"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/default_action_map>`
 
 Action map configuration to load by default.
 
@@ -11679,7 +11737,7 @@ Action map configuration to load by default.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **xr/openxr/enabled** = ``false``
+:ref:`bool<class_bool>` **xr/openxr/enabled** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/enabled>`
 
 If ``true``, Godot will setup and initialize OpenXR on startup.
 
@@ -11691,7 +11749,7 @@ If ``true``, Godot will setup and initialize OpenXR on startup.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **xr/openxr/environment_blend_mode** = ``"0"``
+:ref:`int<class_int>` **xr/openxr/environment_blend_mode** = ``"0"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/environment_blend_mode>`
 
 Specify how OpenXR should blend in the environment. This is specific to certain AR and passthrough devices where camera images are blended in by the XR compositor.
 
@@ -11703,9 +11761,21 @@ Specify how OpenXR should blend in the environment. This is specific to certain 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **xr/openxr/extensions/eye_gaze_interaction** = ``false``
+:ref:`bool<class_bool>` **xr/openxr/extensions/eye_gaze_interaction** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction>`
 
 Specify whether to enable eye tracking for this project. Depending on the platform, additional export configuration may be needed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_interaction_profile** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile>`
+
+If true the hand interaction profile extension will be activated if supported by the platform.
 
 .. rst-class:: classref-item-separator
 
@@ -11715,7 +11785,7 @@ Specify whether to enable eye tracking for this project. Depending on the platfo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking** = ``true``
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking** = ``true`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`
 
 If true we enable the hand tracking extension if available.
 
@@ -11727,7 +11797,7 @@ If true we enable the hand tracking extension if available.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **xr/openxr/form_factor** = ``"0"``
+:ref:`int<class_int>` **xr/openxr/form_factor** = ``"0"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/form_factor>`
 
 Specify whether OpenXR should be configured for an HMD or a hand held device.
 
@@ -11739,7 +11809,7 @@ Specify whether OpenXR should be configured for an HMD or a hand held device.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **xr/openxr/foveation_dynamic** = ``false``
+:ref:`bool<class_bool>` **xr/openxr/foveation_dynamic** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_dynamic>`
 
 If true and foveation is supported, will automatically adjust foveation level based on framerate up to the level set on :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`.
 
@@ -11753,7 +11823,7 @@ If true and foveation is supported, will automatically adjust foveation level ba
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **xr/openxr/foveation_level** = ``"0"``
+:ref:`int<class_int>` **xr/openxr/foveation_level** = ``"0"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_level>`
 
 Applied foveation level if supported: 0 = off, 1 = low, 2 = medium, 3 = high.
 
@@ -11767,7 +11837,7 @@ Applied foveation level if supported: 0 = off, 1 = low, 2 = medium, 3 = high.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **xr/openxr/reference_space** = ``"1"``
+:ref:`int<class_int>` **xr/openxr/reference_space** = ``"1"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/reference_space>`
 
 Specify the default reference space.
 
@@ -11779,7 +11849,7 @@ Specify the default reference space.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **xr/openxr/startup_alert** = ``true``
+:ref:`bool<class_bool>` **xr/openxr/startup_alert** = ``true`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/startup_alert>`
 
 If ``true``, Godot will display an alert modal when OpenXR initialization fails on startup.
 
@@ -11791,7 +11861,7 @@ If ``true``, Godot will display an alert modal when OpenXR initialization fails 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **xr/openxr/submit_depth_buffer** = ``false``
+:ref:`bool<class_bool>` **xr/openxr/submit_depth_buffer** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/submit_depth_buffer>`
 
 If ``true``, OpenXR will manage the depth buffer and use the depth buffer for advanced reprojection provided this is supported by the XR runtime. Note that some rendering features in Godot can't be used with this feature.
 
@@ -11803,7 +11873,7 @@ If ``true``, OpenXR will manage the depth buffer and use the depth buffer for ad
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **xr/openxr/view_configuration** = ``"1"``
+:ref:`int<class_int>` **xr/openxr/view_configuration** = ``"1"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/view_configuration>`
 
 Specify the view configuration with which to configure OpenXR setting up either Mono or Stereo rendering.
 
@@ -11815,7 +11885,7 @@ Specify the view configuration with which to configure OpenXR setting up either 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **xr/shaders/enabled** = ``false``
+:ref:`bool<class_bool>` **xr/shaders/enabled** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/shaders/enabled>`
 
 If ``true``, Godot will compile shaders required for XR.
 
@@ -11832,7 +11902,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_property_info**\ (\ hint\: :ref:`Dictionary<class_Dictionary>`\ )
+|void| **add_property_info**\ (\ hint\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_ProjectSettings_method_add_property_info>`
 
 Adds a custom property info to a property. The dictionary must contain:
 
@@ -11884,7 +11954,7 @@ Adds a custom property info to a property. The dictionary must contain:
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ name\: :ref:`String<class_String>`\ )
+|void| **clear**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ProjectSettings_method_clear>`
 
 Clears the whole configuration (not recommended, may break things).
 
@@ -11896,7 +11966,7 @@ Clears the whole configuration (not recommended, may break things).
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_global_class_list**\ (\ )
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_global_class_list**\ (\ ) :ref:`🔗<class_ProjectSettings_method_get_global_class_list>`
 
 Returns an :ref:`Array<class_Array>` of registered global classes. Each global class is represented as a :ref:`Dictionary<class_Dictionary>` that contains the following entries:
 
@@ -11920,7 +11990,7 @@ Returns an :ref:`Array<class_Array>` of registered global classes. Each global c
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_order**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`int<class_int>` **get_order**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_ProjectSettings_method_get_order>`
 
 Returns the order of a configuration value (influences when saved to the config file).
 
@@ -11932,7 +12002,7 @@ Returns the order of a configuration value (influences when saved to the config 
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_setting**\ (\ name\: :ref:`String<class_String>`, default_value\: :ref:`Variant<class_Variant>` = null\ ) |const|
+:ref:`Variant<class_Variant>` **get_setting**\ (\ name\: :ref:`String<class_String>`, default_value\: :ref:`Variant<class_Variant>` = null\ ) |const| :ref:`🔗<class_ProjectSettings_method_get_setting>`
 
 Returns the value of the setting identified by ``name``. If the setting doesn't exist and ``default_value`` is specified, the value of ``default_value`` is returned. Otherwise, ``null`` is returned.
 
@@ -11963,7 +12033,7 @@ Returns the value of the setting identified by ``name``. If the setting doesn't 
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_setting_with_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+:ref:`Variant<class_Variant>` **get_setting_with_override**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ProjectSettings_method_get_setting_with_override>`
 
 Similar to :ref:`get_setting<class_ProjectSettings_method_get_setting>`, but applies feature tag overrides if any exists and is valid.
 
@@ -11994,7 +12064,7 @@ Then the overridden setting will be returned instead if the project is running o
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **globalize_path**\ (\ path\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **globalize_path**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_ProjectSettings_method_globalize_path>`
 
 Returns the absolute, native OS path corresponding to the localized ``path`` (starting with ``res://`` or ``user://``). The returned path will vary depending on the operating system and user preferences. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` to see what those paths convert to. See also :ref:`localize_path<class_ProjectSettings_method_localize_path>`.
 
@@ -12022,7 +12092,7 @@ Returns the absolute, native OS path corresponding to the localized ``path`` (st
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_setting**\ (\ name\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **has_setting**\ (\ name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_ProjectSettings_method_has_setting>`
 
 Returns ``true`` if a configuration value is present.
 
@@ -12034,7 +12104,7 @@ Returns ``true`` if a configuration value is present.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **load_resource_pack**\ (\ pack\: :ref:`String<class_String>`, replace_files\: :ref:`bool<class_bool>` = true, offset\: :ref:`int<class_int>` = 0\ )
+:ref:`bool<class_bool>` **load_resource_pack**\ (\ pack\: :ref:`String<class_String>`, replace_files\: :ref:`bool<class_bool>` = true, offset\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ProjectSettings_method_load_resource_pack>`
 
 Loads the contents of the .pck or .zip file specified by ``pack`` into the resource filesystem (``res://``). Returns ``true`` on success.
 
@@ -12050,7 +12120,7 @@ Loads the contents of the .pck or .zip file specified by ``pack`` into the resou
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **localize_path**\ (\ path\: :ref:`String<class_String>`\ ) |const|
+:ref:`String<class_String>` **localize_path**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_ProjectSettings_method_localize_path>`
 
 Returns the localized path (starting with ``res://``) corresponding to the absolute, native OS ``path``. See also :ref:`globalize_path<class_ProjectSettings_method_globalize_path>`.
 
@@ -12062,7 +12132,7 @@ Returns the localized path (starting with ``res://``) corresponding to the absol
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save**\ (\ )
+:ref:`Error<enum_@GlobalScope_Error>` **save**\ (\ ) :ref:`🔗<class_ProjectSettings_method_save>`
 
 Saves the configuration to the ``project.godot`` file.
 
@@ -12076,7 +12146,7 @@ Saves the configuration to the ``project.godot`` file.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save_custom**\ (\ file\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **save_custom**\ (\ file\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ProjectSettings_method_save_custom>`
 
 Saves the configuration to a custom file. The file extension must be ``.godot`` (to save in text-based :ref:`ConfigFile<class_ConfigFile>` format) or ``.binary`` (to save in binary format). You can also save ``override.cfg`` file, which is also text, but can be used in exported projects unlike other formats.
 
@@ -12088,7 +12158,7 @@ Saves the configuration to a custom file. The file extension must be ``.godot`` 
 
 .. rst-class:: classref-method
 
-|void| **set_as_basic**\ (\ name\: :ref:`String<class_String>`, basic\: :ref:`bool<class_bool>`\ )
+|void| **set_as_basic**\ (\ name\: :ref:`String<class_String>`, basic\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ProjectSettings_method_set_as_basic>`
 
 Defines if the specified setting is considered basic or advanced. Basic settings will always be shown in the project settings. Advanced settings will only be shown if the user enables the "Advanced Settings" option.
 
@@ -12100,7 +12170,7 @@ Defines if the specified setting is considered basic or advanced. Basic settings
 
 .. rst-class:: classref-method
 
-|void| **set_as_internal**\ (\ name\: :ref:`String<class_String>`, internal\: :ref:`bool<class_bool>`\ )
+|void| **set_as_internal**\ (\ name\: :ref:`String<class_String>`, internal\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ProjectSettings_method_set_as_internal>`
 
 Defines if the specified setting is considered internal. An internal setting won't show up in the Project Settings dialog. This is mostly useful for addons that need to store their own internal settings without exposing them directly to the user.
 
@@ -12112,7 +12182,7 @@ Defines if the specified setting is considered internal. An internal setting won
 
 .. rst-class:: classref-method
 
-|void| **set_initial_value**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **set_initial_value**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_ProjectSettings_method_set_initial_value>`
 
 Sets the specified setting's initial value. This is the value the setting reverts to.
 
@@ -12124,7 +12194,7 @@ Sets the specified setting's initial value. This is the value the setting revert
 
 .. rst-class:: classref-method
 
-|void| **set_order**\ (\ name\: :ref:`String<class_String>`, position\: :ref:`int<class_int>`\ )
+|void| **set_order**\ (\ name\: :ref:`String<class_String>`, position\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ProjectSettings_method_set_order>`
 
 Sets the order of a configuration value (influences when saved to the config file).
 
@@ -12136,7 +12206,7 @@ Sets the order of a configuration value (influences when saved to the config fil
 
 .. rst-class:: classref-method
 
-|void| **set_restart_if_changed**\ (\ name\: :ref:`String<class_String>`, restart\: :ref:`bool<class_bool>`\ )
+|void| **set_restart_if_changed**\ (\ name\: :ref:`String<class_String>`, restart\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ProjectSettings_method_set_restart_if_changed>`
 
 Sets whether a setting requires restarting the editor to properly take effect.
 
@@ -12150,7 +12220,7 @@ Sets whether a setting requires restarting the editor to properly take effect.
 
 .. rst-class:: classref-method
 
-|void| **set_setting**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ )
+|void| **set_setting**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_ProjectSettings_method_set_setting>`
 
 Sets the value of a setting.
 

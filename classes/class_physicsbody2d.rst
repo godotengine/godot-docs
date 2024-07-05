@@ -77,7 +77,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_collision_exception_with**\ (\ body\: :ref:`Node<class_Node>`\ )
+|void| **add_collision_exception_with**\ (\ body\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_PhysicsBody2D_method_add_collision_exception_with>`
 
 Adds a body to the list of bodies that this body can't collide with.
 
@@ -89,7 +89,7 @@ Adds a body to the list of bodies that this body can't collide with.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`PhysicsBody2D<class_PhysicsBody2D>`\] **get_collision_exceptions**\ (\ )
+:ref:`Array<class_Array>`\[:ref:`PhysicsBody2D<class_PhysicsBody2D>`\] **get_collision_exceptions**\ (\ ) :ref:`🔗<class_PhysicsBody2D_method_get_collision_exceptions>`
 
 Returns an array of nodes that were added as collision exceptions for this body.
 
@@ -101,7 +101,7 @@ Returns an array of nodes that were added as collision exceptions for this body.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_gravity**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_gravity**\ (\ ) |const| :ref:`🔗<class_PhysicsBody2D_method_get_gravity>`
 
 Returns the gravity vector computed from all sources that can affect the body, including all gravity overrides from :ref:`Area2D<class_Area2D>` nodes and the global world gravity.
 
@@ -113,7 +113,7 @@ Returns the gravity vector computed from all sources that can affect the body, i
 
 .. rst-class:: classref-method
 
-:ref:`KinematicCollision2D<class_KinematicCollision2D>` **move_and_collide**\ (\ motion\: :ref:`Vector2<class_Vector2>`, test_only\: :ref:`bool<class_bool>` = false, safe_margin\: :ref:`float<class_float>` = 0.08, recovery_as_collision\: :ref:`bool<class_bool>` = false\ )
+:ref:`KinematicCollision2D<class_KinematicCollision2D>` **move_and_collide**\ (\ motion\: :ref:`Vector2<class_Vector2>`, test_only\: :ref:`bool<class_bool>` = false, safe_margin\: :ref:`float<class_float>` = 0.08, recovery_as_collision\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PhysicsBody2D_method_move_and_collide>`
 
 Moves the body along the vector ``motion``. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_private_method__physics_process>` or :ref:`Node._process<class_Node_private_method__process>`, ``motion`` should be computed using ``delta``.
 
@@ -133,7 +133,7 @@ If ``recovery_as_collision`` is ``true``, any depenetration from the recovery ph
 
 .. rst-class:: classref-method
 
-|void| **remove_collision_exception_with**\ (\ body\: :ref:`Node<class_Node>`\ )
+|void| **remove_collision_exception_with**\ (\ body\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_PhysicsBody2D_method_remove_collision_exception_with>`
 
 Removes a body from the list of bodies that this body can't collide with.
 
@@ -145,7 +145,7 @@ Removes a body from the list of bodies that this body can't collide with.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **test_move**\ (\ from\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, collision\: :ref:`KinematicCollision2D<class_KinematicCollision2D>` = null, safe_margin\: :ref:`float<class_float>` = 0.08, recovery_as_collision\: :ref:`bool<class_bool>` = false\ )
+:ref:`bool<class_bool>` **test_move**\ (\ from\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, collision\: :ref:`KinematicCollision2D<class_KinematicCollision2D>` = null, safe_margin\: :ref:`float<class_float>` = 0.08, recovery_as_collision\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_PhysicsBody2D_method_test_move>`
 
 Checks for collisions without moving the body. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_private_method__physics_process>` or :ref:`Node._process<class_Node_private_method__process>`, ``motion`` should be computed using ``delta``.
 

@@ -74,7 +74,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **_convert**\ (\ resource\: :ref:`Resource<class_Resource>`\ ) |virtual| |const|
+:ref:`Resource<class_Resource>` **_convert**\ (\ resource\: :ref:`Resource<class_Resource>`\ ) |virtual| |const| :ref:`🔗<class_EditorResourceConversionPlugin_private_method__convert>`
 
 Takes an input :ref:`Resource<class_Resource>` and converts it to the type given in :ref:`_converts_to<class_EditorResourceConversionPlugin_private_method__converts_to>`. The returned :ref:`Resource<class_Resource>` is the result of the conversion, and the input :ref:`Resource<class_Resource>` remains unchanged.
 
@@ -86,7 +86,7 @@ Takes an input :ref:`Resource<class_Resource>` and converts it to the type given
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_converts_to**\ (\ ) |virtual| |const|
+:ref:`String<class_String>` **_converts_to**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorResourceConversionPlugin_private_method__converts_to>`
 
 Returns the class name of the target type of :ref:`Resource<class_Resource>` that this plugin converts source resources to.
 
@@ -98,7 +98,7 @@ Returns the class name of the target type of :ref:`Resource<class_Resource>` tha
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_handles**\ (\ resource\: :ref:`Resource<class_Resource>`\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_handles**\ (\ resource\: :ref:`Resource<class_Resource>`\ ) |virtual| |const| :ref:`🔗<class_EditorResourceConversionPlugin_private_method__handles>`
 
 Called to determine whether a particular :ref:`Resource<class_Resource>` can be converted to the target resource type by this plugin.
 

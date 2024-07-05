@@ -79,7 +79,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ThreadLoadStatus**:
+enum **ThreadLoadStatus**: :ref:`🔗<enum_ResourceLoader_ThreadLoadStatus>`
 
 .. _class_ResourceLoader_constant_THREAD_LOAD_INVALID_RESOURCE:
 
@@ -121,7 +121,7 @@ The resource was loaded successfully and can be accessed via :ref:`load_threaded
 
 .. rst-class:: classref-enumeration
 
-enum **CacheMode**:
+enum **CacheMode**: :ref:`🔗<enum_ResourceLoader_CacheMode>`
 
 .. _class_ResourceLoader_constant_CACHE_MODE_IGNORE:
 
@@ -176,7 +176,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_resource_format_loader**\ (\ format_loader\: :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`, at_front\: :ref:`bool<class_bool>` = false\ )
+|void| **add_resource_format_loader**\ (\ format_loader\: :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`, at_front\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_ResourceLoader_method_add_resource_format_loader>`
 
 Registers a new :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`. The ResourceLoader will use the ResourceFormatLoader as described in :ref:`load<class_ResourceLoader_method_load>`.
 
@@ -190,7 +190,7 @@ This method is performed implicitly for ResourceFormatLoaders written in GDScrip
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **exists**\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = ""\ )
+:ref:`bool<class_bool>` **exists**\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_ResourceLoader_method_exists>`
 
 Returns whether a recognized resource exists for the given ``path``.
 
@@ -206,7 +206,7 @@ An optional ``type_hint`` can be used to further specify the :ref:`Resource<clas
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_dependencies**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`PackedStringArray<class_PackedStringArray>` **get_dependencies**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_get_dependencies>`
 
 Returns the dependencies for the resource at the given ``path``.
 
@@ -226,7 +226,7 @@ Returns the dependencies for the resource at the given ``path``.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_recognized_extensions_for_type**\ (\ type\: :ref:`String<class_String>`\ )
+:ref:`PackedStringArray<class_PackedStringArray>` **get_recognized_extensions_for_type**\ (\ type\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_get_recognized_extensions_for_type>`
 
 Returns the list of recognized extensions for a resource type.
 
@@ -238,7 +238,7 @@ Returns the list of recognized extensions for a resource type.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_resource_uid**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`int<class_int>` **get_resource_uid**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_get_resource_uid>`
 
 Returns the ID associated with a given resource path, or ``-1`` when no such ID exists.
 
@@ -250,7 +250,7 @@ Returns the ID associated with a given resource path, or ``-1`` when no such ID 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_cached**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`bool<class_bool>` **has_cached**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_has_cached>`
 
 Returns whether a cached resource is available for the given ``path``.
 
@@ -264,7 +264,7 @@ Once a resource has been loaded by the engine, it is cached in memory for faster
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **load**\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = "", cache_mode\: :ref:`CacheMode<enum_ResourceLoader_CacheMode>` = 1\ )
+:ref:`Resource<class_Resource>` **load**\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = "", cache_mode\: :ref:`CacheMode<enum_ResourceLoader_CacheMode>` = 1\ ) :ref:`🔗<class_ResourceLoader_method_load>`
 
 Loads a resource at the given ``path``, caching the result for further access.
 
@@ -274,7 +274,7 @@ An optional ``type_hint`` can be used to further specify the :ref:`Resource<clas
 
 The ``cache_mode`` property defines whether and how the cache should be used or updated when loading the resource. See :ref:`CacheMode<enum_ResourceLoader_CacheMode>` for details.
 
-Returns an empty resource if no :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` could handle the file.
+Returns an empty resource if no :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` could handle the file, and prints an error if no file is found at the specified path.
 
 GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` built-in method which can be used in most situations, leaving the use of **ResourceLoader** for more advanced scenarios.
 
@@ -290,11 +290,11 @@ GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` bui
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **load_threaded_get**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Resource<class_Resource>` **load_threaded_get**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_ResourceLoader_method_load_threaded_get>`
 
 Returns the resource loaded by :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>`.
 
-If this is called before the loading thread is done (i.e. :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` is not :ref:`THREAD_LOAD_LOADED<class_ResourceLoader_constant_THREAD_LOAD_LOADED>`), the calling thread will be blocked until the resource has finished loading.
+If this is called before the loading thread is done (i.e. :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` is not :ref:`THREAD_LOAD_LOADED<class_ResourceLoader_constant_THREAD_LOAD_LOADED>`), the calling thread will be blocked until the resource has finished loading. However, it's recommended to use :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` to known when the load has actually completed.
 
 .. rst-class:: classref-item-separator
 
@@ -304,11 +304,13 @@ If this is called before the loading thread is done (i.e. :ref:`load_threaded_ge
 
 .. rst-class:: classref-method
 
-:ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` **load_threaded_get_status**\ (\ path\: :ref:`String<class_String>`, progress\: :ref:`Array<class_Array>` = []\ )
+:ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` **load_threaded_get_status**\ (\ path\: :ref:`String<class_String>`, progress\: :ref:`Array<class_Array>` = []\ ) :ref:`🔗<class_ResourceLoader_method_load_threaded_get_status>`
 
 Returns the status of a threaded loading operation started with :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>` for the resource at ``path``. See :ref:`ThreadLoadStatus<enum_ResourceLoader_ThreadLoadStatus>` for possible return values.
 
 An array variable can optionally be passed via ``progress``, and will return a one-element array containing the percentage of completion of the threaded loading.
+
+\ **Note:** The recommended way of using this method is to call it during different frames (e.g., in :ref:`Node._process<class_Node_private_method__process>`, instead of a loop).
 
 .. rst-class:: classref-item-separator
 
@@ -318,7 +320,7 @@ An array variable can optionally be passed via ``progress``, and will return a o
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_threaded_request**\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = "", use_sub_threads\: :ref:`bool<class_bool>` = false, cache_mode\: :ref:`CacheMode<enum_ResourceLoader_CacheMode>` = 1\ )
+:ref:`Error<enum_@GlobalScope_Error>` **load_threaded_request**\ (\ path\: :ref:`String<class_String>`, type_hint\: :ref:`String<class_String>` = "", use_sub_threads\: :ref:`bool<class_bool>` = false, cache_mode\: :ref:`CacheMode<enum_ResourceLoader_CacheMode>` = 1\ ) :ref:`🔗<class_ResourceLoader_method_load_threaded_request>`
 
 Loads the resource using threads. If ``use_sub_threads`` is ``true``, multiple threads will be used to load the resource, which makes loading faster, but may affect the main thread (and thus cause game slowdowns).
 
@@ -332,7 +334,7 @@ The ``cache_mode`` property defines whether and how the cache should be used or 
 
 .. rst-class:: classref-method
 
-|void| **remove_resource_format_loader**\ (\ format_loader\: :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`\ )
+|void| **remove_resource_format_loader**\ (\ format_loader\: :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`\ ) :ref:`🔗<class_ResourceLoader_method_remove_resource_format_loader>`
 
 Unregisters the given :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
 
@@ -344,7 +346,7 @@ Unregisters the given :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`.
 
 .. rst-class:: classref-method
 
-|void| **set_abort_on_missing_resources**\ (\ abort\: :ref:`bool<class_bool>`\ )
+|void| **set_abort_on_missing_resources**\ (\ abort\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ResourceLoader_method_set_abort_on_missing_resources>`
 
 Changes the behavior on missing sub-resources. The default behavior is to abort loading.
 

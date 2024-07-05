@@ -138,7 +138,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_add_constant_central_force**\ (\ force\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_add_constant_central_force**\ (\ force\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__add_constant_central_force>`
 
 .. container:: contribute
 
@@ -152,7 +152,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_add_constant_force**\ (\ force\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_add_constant_force**\ (\ force\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__add_constant_force>`
 
 .. container:: contribute
 
@@ -166,7 +166,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_add_constant_torque**\ (\ torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_add_constant_torque**\ (\ torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__add_constant_torque>`
 
 .. container:: contribute
 
@@ -180,7 +180,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_apply_central_force**\ (\ force\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_apply_central_force**\ (\ force\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__apply_central_force>`
 
 .. container:: contribute
 
@@ -194,7 +194,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_apply_central_impulse**\ (\ impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_apply_central_impulse**\ (\ impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__apply_central_impulse>`
 
 .. container:: contribute
 
@@ -208,7 +208,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_apply_force**\ (\ force\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_apply_force**\ (\ force\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__apply_force>`
 
 .. container:: contribute
 
@@ -222,7 +222,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_apply_impulse**\ (\ impulse\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_apply_impulse**\ (\ impulse\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__apply_impulse>`
 
 .. container:: contribute
 
@@ -236,7 +236,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_apply_torque**\ (\ torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_apply_torque**\ (\ torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__apply_torque>`
 
 .. container:: contribute
 
@@ -250,7 +250,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_apply_torque_impulse**\ (\ impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_apply_torque_impulse**\ (\ impulse\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__apply_torque_impulse>`
 
 .. container:: contribute
 
@@ -264,7 +264,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_angular_velocity**\ (\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_angular_velocity**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_angular_velocity>`
 
 .. container:: contribute
 
@@ -278,7 +278,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_center_of_mass**\ (\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_center_of_mass**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_center_of_mass>`
 
 .. container:: contribute
 
@@ -292,7 +292,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_center_of_mass_local**\ (\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_center_of_mass_local**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_center_of_mass_local>`
 
 .. container:: contribute
 
@@ -306,7 +306,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_constant_force**\ (\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_constant_force**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_constant_force>`
 
 .. container:: contribute
 
@@ -320,7 +320,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_constant_torque**\ (\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_constant_torque**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_constant_torque>`
 
 .. container:: contribute
 
@@ -334,7 +334,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_get_contact_collider**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`RID<class_RID>` **_get_contact_collider**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_collider>`
 
 .. container:: contribute
 
@@ -348,7 +348,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_contact_collider_id**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_contact_collider_id**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_collider_id>`
 
 .. container:: contribute
 
@@ -362,7 +362,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **_get_contact_collider_object**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Object<class_Object>` **_get_contact_collider_object**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_collider_object>`
 
 .. container:: contribute
 
@@ -376,7 +376,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_contact_collider_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_contact_collider_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_collider_position>`
 
 .. container:: contribute
 
@@ -390,7 +390,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_contact_collider_shape**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_contact_collider_shape**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_collider_shape>`
 
 .. container:: contribute
 
@@ -404,7 +404,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_contact_collider_velocity_at_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_contact_collider_velocity_at_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_collider_velocity_at_position>`
 
 .. container:: contribute
 
@@ -418,7 +418,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_contact_count**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_contact_count**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_count>`
 
 .. container:: contribute
 
@@ -432,7 +432,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_contact_impulse**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_contact_impulse**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_impulse>`
 
 .. container:: contribute
 
@@ -446,7 +446,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_contact_local_normal**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_contact_local_normal**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_local_normal>`
 
 .. container:: contribute
 
@@ -460,7 +460,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_contact_local_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_contact_local_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_local_position>`
 
 .. container:: contribute
 
@@ -474,7 +474,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_contact_local_shape**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_contact_local_shape**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_local_shape>`
 
 .. container:: contribute
 
@@ -488,7 +488,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_contact_local_velocity_at_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_contact_local_velocity_at_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_contact_local_velocity_at_position>`
 
 .. container:: contribute
 
@@ -502,7 +502,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_inverse_inertia**\ (\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_inverse_inertia**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_inverse_inertia>`
 
 .. container:: contribute
 
@@ -516,7 +516,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Basis<class_Basis>` **_get_inverse_inertia_tensor**\ (\ ) |virtual| |const|
+:ref:`Basis<class_Basis>` **_get_inverse_inertia_tensor**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_inverse_inertia_tensor>`
 
 .. container:: contribute
 
@@ -530,7 +530,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_inverse_mass**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_inverse_mass**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_inverse_mass>`
 
 .. container:: contribute
 
@@ -544,7 +544,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_linear_velocity**\ (\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_linear_velocity**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_linear_velocity>`
 
 .. container:: contribute
 
@@ -558,7 +558,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Basis<class_Basis>` **_get_principal_inertia_axes**\ (\ ) |virtual| |const|
+:ref:`Basis<class_Basis>` **_get_principal_inertia_axes**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_principal_inertia_axes>`
 
 .. container:: contribute
 
@@ -572,7 +572,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **_get_space_state**\ (\ ) |virtual|
+:ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **_get_space_state**\ (\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_space_state>`
 
 .. container:: contribute
 
@@ -586,7 +586,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_step**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_step**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_step>`
 
 .. container:: contribute
 
@@ -600,7 +600,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_total_angular_damp**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_total_angular_damp**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_total_angular_damp>`
 
 .. container:: contribute
 
@@ -614,7 +614,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_total_gravity**\ (\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_total_gravity**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_total_gravity>`
 
 .. container:: contribute
 
@@ -628,7 +628,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_total_linear_damp**\ (\ ) |virtual| |const|
+:ref:`float<class_float>` **_get_total_linear_damp**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_total_linear_damp>`
 
 .. container:: contribute
 
@@ -642,7 +642,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **_get_transform**\ (\ ) |virtual| |const|
+:ref:`Transform3D<class_Transform3D>` **_get_transform**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_transform>`
 
 .. container:: contribute
 
@@ -656,7 +656,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **_get_velocity_at_local_position**\ (\ local_position\: :ref:`Vector3<class_Vector3>`\ ) |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_velocity_at_local_position**\ (\ local_position\: :ref:`Vector3<class_Vector3>`\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__get_velocity_at_local_position>`
 
 .. container:: contribute
 
@@ -670,7 +670,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_integrate_forces**\ (\ ) |virtual|
+|void| **_integrate_forces**\ (\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__integrate_forces>`
 
 .. container:: contribute
 
@@ -684,7 +684,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_sleeping**\ (\ ) |virtual| |const|
+:ref:`bool<class_bool>` **_is_sleeping**\ (\ ) |virtual| |const| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__is_sleeping>`
 
 .. container:: contribute
 
@@ -698,7 +698,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_set_angular_velocity**\ (\ velocity\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_set_angular_velocity**\ (\ velocity\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__set_angular_velocity>`
 
 .. container:: contribute
 
@@ -712,7 +712,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_set_constant_force**\ (\ force\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_set_constant_force**\ (\ force\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__set_constant_force>`
 
 .. container:: contribute
 
@@ -726,7 +726,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_set_constant_torque**\ (\ torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_set_constant_torque**\ (\ torque\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__set_constant_torque>`
 
 .. container:: contribute
 
@@ -740,7 +740,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_set_linear_velocity**\ (\ velocity\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
+|void| **_set_linear_velocity**\ (\ velocity\: :ref:`Vector3<class_Vector3>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__set_linear_velocity>`
 
 .. container:: contribute
 
@@ -754,7 +754,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_set_sleep_state**\ (\ enabled\: :ref:`bool<class_bool>`\ ) |virtual|
+|void| **_set_sleep_state**\ (\ enabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__set_sleep_state>`
 
 .. container:: contribute
 
@@ -768,7 +768,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_set_transform**\ (\ transform\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual|
+|void| **_set_transform**\ (\ transform\: :ref:`Transform3D<class_Transform3D>`\ ) |virtual| :ref:`🔗<class_PhysicsDirectBodyState3DExtension_private_method__set_transform>`
 
 .. container:: contribute
 

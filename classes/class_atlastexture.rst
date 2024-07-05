@@ -58,7 +58,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **atlas**
+:ref:`Texture2D<class_Texture2D>` **atlas** :ref:`🔗<class_AtlasTexture_property_atlas>`
 
 .. rst-class:: classref-property-setget
 
@@ -75,7 +75,7 @@ The texture that contains the atlas. Can be any type inheriting from :ref:`Textu
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **filter_clip** = ``false``
+:ref:`bool<class_bool>` **filter_clip** = ``false`` :ref:`🔗<class_AtlasTexture_property_filter_clip>`
 
 .. rst-class:: classref-property-setget
 
@@ -92,7 +92,7 @@ If ``true``, the area outside of the :ref:`region<class_AtlasTexture_property_re
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **margin** = ``Rect2(0, 0, 0, 0)``
+:ref:`Rect2<class_Rect2>` **margin** = ``Rect2(0, 0, 0, 0)`` :ref:`🔗<class_AtlasTexture_property_margin>`
 
 .. rst-class:: classref-property-setget
 
@@ -109,7 +109,7 @@ The margin around the :ref:`region<class_AtlasTexture_property_region>`. Useful 
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **region** = ``Rect2(0, 0, 0, 0)``
+:ref:`Rect2<class_Rect2>` **region** = ``Rect2(0, 0, 0, 0)`` :ref:`🔗<class_AtlasTexture_property_region>`
 
 .. rst-class:: classref-property-setget
 

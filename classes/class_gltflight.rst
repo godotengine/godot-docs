@@ -87,7 +87,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_GLTFLight_property_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -104,7 +104,7 @@ The :ref:`Color<class_Color>` of the light. Defaults to white. A black color cau
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **inner_cone_angle** = ``0.0``
+:ref:`float<class_float>` **inner_cone_angle** = ``0.0`` :ref:`🔗<class_GLTFLight_property_inner_cone_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -123,7 +123,7 @@ Within this angle, the light is at full brightness. Between the inner and outer 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **intensity** = ``1.0``
+:ref:`float<class_float>` **intensity** = ``1.0`` :ref:`🔗<class_GLTFLight_property_intensity>`
 
 .. rst-class:: classref-property-setget
 
@@ -140,7 +140,7 @@ The intensity of the light. This is expressed in candelas (lumens per steradian)
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **light_type** = ``""``
+:ref:`String<class_String>` **light_type** = ``""`` :ref:`🔗<class_GLTFLight_property_light_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +157,7 @@ The type of the light. The values accepted by Godot are "point", "spot", and "di
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **outer_cone_angle** = ``0.785398``
+:ref:`float<class_float>` **outer_cone_angle** = ``0.785398`` :ref:`🔗<class_GLTFLight_property_outer_cone_angle>`
 
 .. rst-class:: classref-property-setget
 
@@ -176,7 +176,7 @@ At this angle, the light drops off to zero brightness. Between the inner and out
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **range** = ``inf``
+:ref:`float<class_float>` **range** = ``inf`` :ref:`🔗<class_GLTFLight_property_range>`
 
 .. rst-class:: classref-property-setget
 
@@ -198,7 +198,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`GLTFLight<class_GLTFLight>` **from_dictionary**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static|
+:ref:`GLTFLight<class_GLTFLight>` **from_dictionary**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static| :ref:`🔗<class_GLTFLight_method_from_dictionary>`
 
 Creates a new GLTFLight instance by parsing the given :ref:`Dictionary<class_Dictionary>`.
 
@@ -210,7 +210,7 @@ Creates a new GLTFLight instance by parsing the given :ref:`Dictionary<class_Dic
 
 .. rst-class:: classref-method
 
-:ref:`GLTFLight<class_GLTFLight>` **from_node**\ (\ light_node\: :ref:`Light3D<class_Light3D>`\ ) |static|
+:ref:`GLTFLight<class_GLTFLight>` **from_node**\ (\ light_node\: :ref:`Light3D<class_Light3D>`\ ) |static| :ref:`🔗<class_GLTFLight_method_from_node>`
 
 Create a new GLTFLight instance from the given Godot :ref:`Light3D<class_Light3D>` node.
 
@@ -222,7 +222,7 @@ Create a new GLTFLight instance from the given Godot :ref:`Light3D<class_Light3D
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`\ )
+:ref:`Variant<class_Variant>` **get_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_GLTFLight_method_get_additional_data>`
 
 .. container:: contribute
 
@@ -236,7 +236,7 @@ Create a new GLTFLight instance from the given Godot :ref:`Light3D<class_Light3D
 
 .. rst-class:: classref-method
 
-|void| **set_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ )
+|void| **set_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_GLTFLight_method_set_additional_data>`
 
 .. container:: contribute
 
@@ -250,7 +250,7 @@ Create a new GLTFLight instance from the given Godot :ref:`Light3D<class_Light3D
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **to_dictionary**\ (\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **to_dictionary**\ (\ ) |const| :ref:`🔗<class_GLTFLight_method_to_dictionary>`
 
 Serializes this GLTFLight instance into a :ref:`Dictionary<class_Dictionary>`.
 
@@ -262,7 +262,7 @@ Serializes this GLTFLight instance into a :ref:`Dictionary<class_Dictionary>`.
 
 .. rst-class:: classref-method
 
-:ref:`Light3D<class_Light3D>` **to_node**\ (\ ) |const|
+:ref:`Light3D<class_Light3D>` **to_node**\ (\ ) |const| :ref:`🔗<class_GLTFLight_method_to_node>`
 
 Converts this GLTFLight instance into a Godot :ref:`Light3D<class_Light3D>` node.
 

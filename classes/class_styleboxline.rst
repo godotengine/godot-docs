@@ -54,7 +54,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_StyleBoxLine_property_color>`
 
 .. rst-class:: classref-property-setget
 
@@ -71,7 +71,7 @@ The line's color.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **grow_begin** = ``1.0``
+:ref:`float<class_float>` **grow_begin** = ``1.0`` :ref:`🔗<class_StyleBoxLine_property_grow_begin>`
 
 .. rst-class:: classref-property-setget
 
@@ -88,7 +88,7 @@ The number of pixels the line will extend before the **StyleBoxLine**'s bounds. 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **grow_end** = ``1.0``
+:ref:`float<class_float>` **grow_end** = ``1.0`` :ref:`🔗<class_StyleBoxLine_property_grow_end>`
 
 .. rst-class:: classref-property-setget
 
@@ -105,7 +105,7 @@ The number of pixels the line will extend past the **StyleBoxLine**'s bounds. If
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **thickness** = ``1``
+:ref:`int<class_int>` **thickness** = ``1`` :ref:`🔗<class_StyleBoxLine_property_thickness>`
 
 .. rst-class:: classref-property-setget
 
@@ -122,7 +122,7 @@ The line's thickness in pixels.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **vertical** = ``false``
+:ref:`bool<class_bool>` **vertical** = ``false`` :ref:`🔗<class_StyleBoxLine_property_vertical>`
 
 .. rst-class:: classref-property-setget
 

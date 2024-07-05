@@ -68,7 +68,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`MouseButton<enum_@GlobalScope_MouseButton>` **button_index** = ``0``
+:ref:`MouseButton<enum_@GlobalScope_MouseButton>` **button_index** = ``0`` :ref:`🔗<class_InputEventMouseButton_property_button_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -85,7 +85,7 @@ The mouse button identifier, one of the :ref:`MouseButton<enum_@GlobalScope_Mous
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **canceled** = ``false``
+:ref:`bool<class_bool>` **canceled** = ``false`` :ref:`🔗<class_InputEventMouseButton_property_canceled>`
 
 .. rst-class:: classref-property-setget
 
@@ -102,7 +102,7 @@ If ``true``, the mouse button event has been canceled.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **double_click** = ``false``
+:ref:`bool<class_bool>` **double_click** = ``false`` :ref:`🔗<class_InputEventMouseButton_property_double_click>`
 
 .. rst-class:: classref-property-setget
 
@@ -119,7 +119,7 @@ If ``true``, the mouse button's state is a double-click.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **factor** = ``1.0``
+:ref:`float<class_float>` **factor** = ``1.0`` :ref:`🔗<class_InputEventMouseButton_property_factor>`
 
 .. rst-class:: classref-property-setget
 
@@ -136,7 +136,7 @@ The amount (or delta) of the event. When used for high-precision scroll events, 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **pressed** = ``false``
+:ref:`bool<class_bool>` **pressed** = ``false`` :ref:`🔗<class_InputEventMouseButton_property_pressed>`
 
 .. rst-class:: classref-property-setget
 

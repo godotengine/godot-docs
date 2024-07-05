@@ -137,7 +137,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **end** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **end** = ``Vector2i(0, 0)`` :ref:`🔗<class_Rect2i_property_end>`
 
 The ending point. This is usually the bottom-right corner of the rectangle, and is equivalent to ``position + size``. Setting this point affects the :ref:`size<class_Rect2i_property_size>`.
 
@@ -149,7 +149,7 @@ The ending point. This is usually the bottom-right corner of the rectangle, and 
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **position** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **position** = ``Vector2i(0, 0)`` :ref:`🔗<class_Rect2i_property_position>`
 
 The origin point. This is usually the top-left corner of the rectangle.
 
@@ -161,7 +161,7 @@ The origin point. This is usually the top-left corner of the rectangle.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **size** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **size** = ``Vector2i(0, 0)`` :ref:`🔗<class_Rect2i_property_size>`
 
 The rectangle's width and height, starting from :ref:`position<class_Rect2i_property_position>`. Setting this value also affects the :ref:`end<class_Rect2i_property_end>` point.
 
@@ -180,7 +180,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`Rect2i<class_Rect2i>` **Rect2i**\ (\ )
+:ref:`Rect2i<class_Rect2i>` **Rect2i**\ (\ ) :ref:`🔗<class_Rect2i_constructor_Rect2i>`
 
 Constructs a **Rect2i** with its :ref:`position<class_Rect2i_property_position>` and :ref:`size<class_Rect2i_property_size>` set to :ref:`Vector2i.ZERO<class_Vector2i_constant_ZERO>`.
 
@@ -237,7 +237,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **abs**\ (\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **abs**\ (\ ) |const| :ref:`🔗<class_Rect2i_method_abs>`
 
 Returns a **Rect2i** equivalent to this rectangle, with its width and height modified to be non-negative values, and with its :ref:`position<class_Rect2i_property_position>` being the top-left corner of the rectangle.
 
@@ -266,7 +266,7 @@ Returns a **Rect2i** equivalent to this rectangle, with its width and height mod
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **encloses**\ (\ b\: :ref:`Rect2i<class_Rect2i>`\ ) |const|
+:ref:`bool<class_bool>` **encloses**\ (\ b\: :ref:`Rect2i<class_Rect2i>`\ ) |const| :ref:`🔗<class_Rect2i_method_encloses>`
 
 Returns ``true`` if this **Rect2i** completely encloses another one.
 
@@ -278,7 +278,7 @@ Returns ``true`` if this **Rect2i** completely encloses another one.
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **expand**\ (\ to\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **expand**\ (\ to\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_Rect2i_method_expand>`
 
 Returns a copy of this rectangle expanded to align the edges with the given ``to`` point, if necessary.
 
@@ -290,14 +290,14 @@ Returns a copy of this rectangle expanded to align the edges with the given ``to
     var rect = Rect2i(0, 0, 5, 2)
     
     rect = rect.expand(Vector2i(10, 0)) # rect is Rect2i(0, 0, 10, 2)
-    rect = rect.expand(Vector2i(-5, 5)) # rect is Rect2i(-5, 0, 10, 5)
+    rect = rect.expand(Vector2i(-5, 5)) # rect is Rect2i(-5, 0, 15, 5)
 
  .. code-tab:: csharp
 
     var rect = new Rect2I(0, 0, 5, 2);
     
     rect = rect.Expand(new Vector2I(10, 0)); // rect is Rect2I(0, 0, 10, 2)
-    rect = rect.Expand(new Vector2I(-5, 5)); // rect is Rect2I(-5, 0, 10, 5)
+    rect = rect.Expand(new Vector2I(-5, 5)); // rect is Rect2I(-5, 0, 15, 5)
 
 
 
@@ -309,7 +309,7 @@ Returns a copy of this rectangle expanded to align the edges with the given ``to
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_area**\ (\ ) |const|
+:ref:`int<class_int>` **get_area**\ (\ ) |const| :ref:`🔗<class_Rect2i_method_get_area>`
 
 Returns the rectangle's area. This is equivalent to ``size.x * size.y``. See also :ref:`has_area<class_Rect2i_method_has_area>`.
 
@@ -321,7 +321,7 @@ Returns the rectangle's area. This is equivalent to ``size.x * size.y``. See als
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_center**\ (\ ) |const|
+:ref:`Vector2i<class_Vector2i>` **get_center**\ (\ ) |const| :ref:`🔗<class_Rect2i_method_get_center>`
 
 Returns the center point of the rectangle. This is the same as ``position + (size / 2)``.
 
@@ -335,7 +335,7 @@ Returns the center point of the rectangle. This is the same as ``position + (siz
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **grow**\ (\ amount\: :ref:`int<class_int>`\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **grow**\ (\ amount\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Rect2i_method_grow>`
 
 Returns a copy of this rectangle extended on all sides by the given ``amount``. A negative ``amount`` shrinks the rectangle instead. See also :ref:`grow_individual<class_Rect2i_method_grow_individual>` and :ref:`grow_side<class_Rect2i_method_grow_side>`.
 
@@ -362,7 +362,7 @@ Returns a copy of this rectangle extended on all sides by the given ``amount``. 
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **grow_individual**\ (\ left\: :ref:`int<class_int>`, top\: :ref:`int<class_int>`, right\: :ref:`int<class_int>`, bottom\: :ref:`int<class_int>`\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **grow_individual**\ (\ left\: :ref:`int<class_int>`, top\: :ref:`int<class_int>`, right\: :ref:`int<class_int>`, bottom\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Rect2i_method_grow_individual>`
 
 Returns a copy of this rectangle with its ``left``, ``top``, ``right``, and ``bottom`` sides extended by the given amounts. Negative values shrink the sides, instead. See also :ref:`grow<class_Rect2i_method_grow>` and :ref:`grow_side<class_Rect2i_method_grow_side>`.
 
@@ -374,7 +374,7 @@ Returns a copy of this rectangle with its ``left``, ``top``, ``right``, and ``bo
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **grow_side**\ (\ side\: :ref:`int<class_int>`, amount\: :ref:`int<class_int>`\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **grow_side**\ (\ side\: :ref:`int<class_int>`, amount\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Rect2i_method_grow_side>`
 
 Returns a copy of this rectangle with its ``side`` extended by the given ``amount`` (see :ref:`Side<enum_@GlobalScope_Side>` constants). A negative ``amount`` shrinks the rectangle, instead. See also :ref:`grow<class_Rect2i_method_grow>` and :ref:`grow_individual<class_Rect2i_method_grow_individual>`.
 
@@ -386,7 +386,7 @@ Returns a copy of this rectangle with its ``side`` extended by the given ``amoun
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_area**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_area**\ (\ ) |const| :ref:`🔗<class_Rect2i_method_has_area>`
 
 Returns ``true`` if this rectangle has positive width and height. See also :ref:`get_area<class_Rect2i_method_get_area>`.
 
@@ -398,7 +398,7 @@ Returns ``true`` if this rectangle has positive width and height. See also :ref:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_point**\ (\ point\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
+:ref:`bool<class_bool>` **has_point**\ (\ point\: :ref:`Vector2i<class_Vector2i>`\ ) |const| :ref:`🔗<class_Rect2i_method_has_point>`
 
 Returns ``true`` if the rectangle contains the given ``point``. By convention, points on the right and bottom edges are **not** included.
 
@@ -412,7 +412,7 @@ Returns ``true`` if the rectangle contains the given ``point``. By convention, p
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **intersection**\ (\ b\: :ref:`Rect2i<class_Rect2i>`\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **intersection**\ (\ b\: :ref:`Rect2i<class_Rect2i>`\ ) |const| :ref:`🔗<class_Rect2i_method_intersection>`
 
 Returns the intersection between this rectangle and ``b``. If the rectangles do not intersect, returns an empty **Rect2i**.
 
@@ -445,7 +445,7 @@ Returns the intersection between this rectangle and ``b``. If the rectangles do 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **intersects**\ (\ b\: :ref:`Rect2i<class_Rect2i>`\ ) |const|
+:ref:`bool<class_bool>` **intersects**\ (\ b\: :ref:`Rect2i<class_Rect2i>`\ ) |const| :ref:`🔗<class_Rect2i_method_intersects>`
 
 Returns ``true`` if this rectangle overlaps with the ``b`` rectangle. The edges of both rectangles are excluded.
 
@@ -457,7 +457,7 @@ Returns ``true`` if this rectangle overlaps with the ``b`` rectangle. The edges 
 
 .. rst-class:: classref-method
 
-:ref:`Rect2i<class_Rect2i>` **merge**\ (\ b\: :ref:`Rect2i<class_Rect2i>`\ ) |const|
+:ref:`Rect2i<class_Rect2i>` **merge**\ (\ b\: :ref:`Rect2i<class_Rect2i>`\ ) |const| :ref:`🔗<class_Rect2i_method_merge>`
 
 Returns a **Rect2i** that encloses both this rectangle and ``b`` around the edges. See also :ref:`encloses<class_Rect2i_method_encloses>`.
 
@@ -474,7 +474,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Rect2i<class_Rect2i>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Rect2i<class_Rect2i>`\ ) :ref:`🔗<class_Rect2i_operator_neq_Rect2i>`
 
 Returns ``true`` if the :ref:`position<class_Rect2i_property_position>` or :ref:`size<class_Rect2i_property_size>` of both rectangles are not equal.
 
@@ -486,7 +486,7 @@ Returns ``true`` if the :ref:`position<class_Rect2i_property_position>` or :ref:
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Rect2i<class_Rect2i>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Rect2i<class_Rect2i>`\ ) :ref:`🔗<class_Rect2i_operator_eq_Rect2i>`
 
 Returns ``true`` if both :ref:`position<class_Rect2i_property_position>` and :ref:`size<class_Rect2i_property_size>` of the rectangles are equal, respectively.
 

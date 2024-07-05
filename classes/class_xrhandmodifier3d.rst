@@ -59,7 +59,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **BoneUpdate**:
+enum **BoneUpdate**: :ref:`🔗<enum_XRHandModifier3D_BoneUpdate>`
 
 .. _class_XRHandModifier3D_constant_BONE_UPDATE_FULL:
 
@@ -98,7 +98,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`BoneUpdate<enum_XRHandModifier3D_BoneUpdate>` **bone_update** = ``0``
+:ref:`BoneUpdate<enum_XRHandModifier3D_BoneUpdate>` **bone_update** = ``0`` :ref:`🔗<class_XRHandModifier3D_property_bone_update>`
 
 .. rst-class:: classref-property-setget
 
@@ -115,7 +115,7 @@ Specifies the type of updates to perform on the bones.
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **hand_tracker** = ``&"/user/hand_tracker/left"``
+:ref:`StringName<class_StringName>` **hand_tracker** = ``&"/user/hand_tracker/left"`` :ref:`🔗<class_XRHandModifier3D_property_hand_tracker>`
 
 .. rst-class:: classref-property-setget
 

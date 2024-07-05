@@ -86,6 +86,8 @@ Methods
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`invalidate<class_EditorFileDialog_method_invalidate>`\ (\ )                                                                                                                                              |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`popup_file_dialog<class_EditorFileDialog_method_popup_file_dialog>`\ (\ )                                                                                                                                |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`set_option_default<class_EditorFileDialog_method_set_option_default>`\ (\ option\: :ref:`int<class_int>`, default_value_index\: :ref:`int<class_int>`\ )                                                 |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`set_option_name<class_EditorFileDialog_method_set_option_name>`\ (\ option\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )                                                                |
@@ -106,7 +108,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**dir_selected**\ (\ dir\: :ref:`String<class_String>`\ )
+**dir_selected**\ (\ dir\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorFileDialog_signal_dir_selected>`
 
 Emitted when a directory is selected.
 
@@ -118,7 +120,7 @@ Emitted when a directory is selected.
 
 .. rst-class:: classref-signal
 
-**file_selected**\ (\ path\: :ref:`String<class_String>`\ )
+**file_selected**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorFileDialog_signal_file_selected>`
 
 Emitted when a file is selected.
 
@@ -130,7 +132,7 @@ Emitted when a file is selected.
 
 .. rst-class:: classref-signal
 
-**files_selected**\ (\ paths\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+**files_selected**\ (\ paths\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_EditorFileDialog_signal_files_selected>`
 
 Emitted when multiple files are selected.
 
@@ -147,7 +149,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FileMode**:
+enum **FileMode**: :ref:`🔗<enum_EditorFileDialog_FileMode>`
 
 .. _class_EditorFileDialog_constant_FILE_MODE_OPEN_FILE:
 
@@ -197,7 +199,7 @@ The **EditorFileDialog** can select only one file. Accepting the window will sav
 
 .. rst-class:: classref-enumeration
 
-enum **Access**:
+enum **Access**: :ref:`🔗<enum_EditorFileDialog_Access>`
 
 .. _class_EditorFileDialog_constant_ACCESS_RESOURCES:
 
@@ -231,7 +233,7 @@ The **EditorFileDialog** can view the entire local file system.
 
 .. rst-class:: classref-enumeration
 
-enum **DisplayMode**:
+enum **DisplayMode**: :ref:`🔗<enum_EditorFileDialog_DisplayMode>`
 
 .. _class_EditorFileDialog_constant_DISPLAY_THUMBNAILS:
 
@@ -262,7 +264,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Access<enum_EditorFileDialog_Access>` **access** = ``0``
+:ref:`Access<enum_EditorFileDialog_Access>` **access** = ``0`` :ref:`🔗<class_EditorFileDialog_property_access>`
 
 .. rst-class:: classref-property-setget
 
@@ -279,7 +281,7 @@ The location from which the user may select a file, including ``res://``, ``user
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **current_dir**
+:ref:`String<class_String>` **current_dir** :ref:`🔗<class_EditorFileDialog_property_current_dir>`
 
 .. rst-class:: classref-property-setget
 
@@ -296,7 +298,7 @@ The currently occupied directory.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **current_file**
+:ref:`String<class_String>` **current_file** :ref:`🔗<class_EditorFileDialog_property_current_file>`
 
 .. rst-class:: classref-property-setget
 
@@ -313,7 +315,7 @@ The currently selected file.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **current_path**
+:ref:`String<class_String>` **current_path** :ref:`🔗<class_EditorFileDialog_property_current_path>`
 
 .. rst-class:: classref-property-setget
 
@@ -330,7 +332,7 @@ The file system path in the address bar.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disable_overwrite_warning** = ``false``
+:ref:`bool<class_bool>` **disable_overwrite_warning** = ``false`` :ref:`🔗<class_EditorFileDialog_property_disable_overwrite_warning>`
 
 .. rst-class:: classref-property-setget
 
@@ -347,7 +349,7 @@ If ``true``, the **EditorFileDialog** will not warn the user before overwriting 
 
 .. rst-class:: classref-property
 
-:ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` **display_mode** = ``0``
+:ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` **display_mode** = ``0`` :ref:`🔗<class_EditorFileDialog_property_display_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -364,7 +366,7 @@ The view format in which the **EditorFileDialog** displays resources to the user
 
 .. rst-class:: classref-property
 
-:ref:`FileMode<enum_EditorFileDialog_FileMode>` **file_mode** = ``4``
+:ref:`FileMode<enum_EditorFileDialog_FileMode>` **file_mode** = ``4`` :ref:`🔗<class_EditorFileDialog_property_file_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -381,7 +383,7 @@ The dialog's open or save mode, which affects the selection behavior. See :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **filters** = ``PackedStringArray()``
+:ref:`PackedStringArray<class_PackedStringArray>` **filters** = ``PackedStringArray()`` :ref:`🔗<class_EditorFileDialog_property_filters>`
 
 .. rst-class:: classref-property-setget
 
@@ -400,7 +402,7 @@ The available file type filters. For example, this shows only ``.png`` and ``.gd
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **option_count** = ``0``
+:ref:`int<class_int>` **option_count** = ``0`` :ref:`🔗<class_EditorFileDialog_property_option_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -417,7 +419,7 @@ The number of additional :ref:`OptionButton<class_OptionButton>`\ s and :ref:`Ch
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **show_hidden_files** = ``false``
+:ref:`bool<class_bool>` **show_hidden_files** = ``false`` :ref:`🔗<class_EditorFileDialog_property_show_hidden_files>`
 
 .. rst-class:: classref-property-setget
 
@@ -439,7 +441,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_filter**\ (\ filter\: :ref:`String<class_String>`, description\: :ref:`String<class_String>` = ""\ )
+|void| **add_filter**\ (\ filter\: :ref:`String<class_String>`, description\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_EditorFileDialog_method_add_filter>`
 
 Adds a comma-delimited file name ``filter`` option to the **EditorFileDialog** with an optional ``description``, which restricts what files can be picked.
 
@@ -455,7 +457,7 @@ For example, a ``filter`` of ``"*.tscn, *.scn"`` and a ``description`` of ``"Sce
 
 .. rst-class:: classref-method
 
-|void| **add_option**\ (\ name\: :ref:`String<class_String>`, values\: :ref:`PackedStringArray<class_PackedStringArray>`, default_value_index\: :ref:`int<class_int>`\ )
+|void| **add_option**\ (\ name\: :ref:`String<class_String>`, values\: :ref:`PackedStringArray<class_PackedStringArray>`, default_value_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EditorFileDialog_method_add_option>`
 
 Adds an additional :ref:`OptionButton<class_OptionButton>` to the file dialog. If ``values`` is empty, a :ref:`CheckBox<class_CheckBox>` is added instead.
 
@@ -469,7 +471,7 @@ Adds an additional :ref:`OptionButton<class_OptionButton>` to the file dialog. I
 
 .. rst-class:: classref-method
 
-|void| **add_side_menu**\ (\ menu\: :ref:`Control<class_Control>`, title\: :ref:`String<class_String>` = ""\ )
+|void| **add_side_menu**\ (\ menu\: :ref:`Control<class_Control>`, title\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_EditorFileDialog_method_add_side_menu>`
 
 Adds the given ``menu`` to the side of the file dialog with the given ``title`` text on top. Only one side menu is allowed.
 
@@ -481,7 +483,7 @@ Adds the given ``menu`` to the side of the file dialog with the given ``title`` 
 
 .. rst-class:: classref-method
 
-|void| **clear_filters**\ (\ )
+|void| **clear_filters**\ (\ ) :ref:`🔗<class_EditorFileDialog_method_clear_filters>`
 
 Removes all filters except for "All Files (\*)".
 
@@ -493,7 +495,7 @@ Removes all filters except for "All Files (\*)".
 
 .. rst-class:: classref-method
 
-:ref:`LineEdit<class_LineEdit>` **get_line_edit**\ (\ )
+:ref:`LineEdit<class_LineEdit>` **get_line_edit**\ (\ ) :ref:`🔗<class_EditorFileDialog_method_get_line_edit>`
 
 Returns the LineEdit for the selected file.
 
@@ -507,7 +509,7 @@ Returns the LineEdit for the selected file.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_option_default**\ (\ option\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_option_default**\ (\ option\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_EditorFileDialog_method_get_option_default>`
 
 Returns the default value index of the :ref:`OptionButton<class_OptionButton>` or :ref:`CheckBox<class_CheckBox>` with index ``option``.
 
@@ -519,7 +521,7 @@ Returns the default value index of the :ref:`OptionButton<class_OptionButton>` o
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_option_name**\ (\ option\: :ref:`int<class_int>`\ ) |const|
+:ref:`String<class_String>` **get_option_name**\ (\ option\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_EditorFileDialog_method_get_option_name>`
 
 Returns the name of the :ref:`OptionButton<class_OptionButton>` or :ref:`CheckBox<class_CheckBox>` with index ``option``.
 
@@ -531,7 +533,7 @@ Returns the name of the :ref:`OptionButton<class_OptionButton>` or :ref:`CheckBo
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_option_values**\ (\ option\: :ref:`int<class_int>`\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_option_values**\ (\ option\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_EditorFileDialog_method_get_option_values>`
 
 Returns an array of values of the :ref:`OptionButton<class_OptionButton>` with index ``option``.
 
@@ -543,7 +545,7 @@ Returns an array of values of the :ref:`OptionButton<class_OptionButton>` with i
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **get_selected_options**\ (\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **get_selected_options**\ (\ ) |const| :ref:`🔗<class_EditorFileDialog_method_get_selected_options>`
 
 Returns a :ref:`Dictionary<class_Dictionary>` with the selected values of the additional :ref:`OptionButton<class_OptionButton>`\ s and/or :ref:`CheckBox<class_CheckBox>`\ es. :ref:`Dictionary<class_Dictionary>` keys are names and values are selected value indices.
 
@@ -555,7 +557,7 @@ Returns a :ref:`Dictionary<class_Dictionary>` with the selected values of the ad
 
 .. rst-class:: classref-method
 
-:ref:`VBoxContainer<class_VBoxContainer>` **get_vbox**\ (\ )
+:ref:`VBoxContainer<class_VBoxContainer>` **get_vbox**\ (\ ) :ref:`🔗<class_EditorFileDialog_method_get_vbox>`
 
 Returns the :ref:`VBoxContainer<class_VBoxContainer>` used to display the file system.
 
@@ -569,9 +571,21 @@ Returns the :ref:`VBoxContainer<class_VBoxContainer>` used to display the file s
 
 .. rst-class:: classref-method
 
-|void| **invalidate**\ (\ )
+|void| **invalidate**\ (\ ) :ref:`🔗<class_EditorFileDialog_method_invalidate>`
 
 Notify the **EditorFileDialog** that its view of the data is no longer accurate. Updates the view contents on next view update.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileDialog_method_popup_file_dialog:
+
+.. rst-class:: classref-method
+
+|void| **popup_file_dialog**\ (\ ) :ref:`🔗<class_EditorFileDialog_method_popup_file_dialog>`
+
+Shows the **EditorFileDialog** at the default size and position for file dialogs in the editor, and selects the file name if there is a current file.
 
 .. rst-class:: classref-item-separator
 
@@ -581,7 +595,7 @@ Notify the **EditorFileDialog** that its view of the data is no longer accurate.
 
 .. rst-class:: classref-method
 
-|void| **set_option_default**\ (\ option\: :ref:`int<class_int>`, default_value_index\: :ref:`int<class_int>`\ )
+|void| **set_option_default**\ (\ option\: :ref:`int<class_int>`, default_value_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EditorFileDialog_method_set_option_default>`
 
 Sets the default value index of the :ref:`OptionButton<class_OptionButton>` or :ref:`CheckBox<class_CheckBox>` with index ``option``.
 
@@ -593,7 +607,7 @@ Sets the default value index of the :ref:`OptionButton<class_OptionButton>` or :
 
 .. rst-class:: classref-method
 
-|void| **set_option_name**\ (\ option\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )
+|void| **set_option_name**\ (\ option\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorFileDialog_method_set_option_name>`
 
 Sets the name of the :ref:`OptionButton<class_OptionButton>` or :ref:`CheckBox<class_CheckBox>` with index ``option``.
 
@@ -605,7 +619,7 @@ Sets the name of the :ref:`OptionButton<class_OptionButton>` or :ref:`CheckBox<c
 
 .. rst-class:: classref-method
 
-|void| **set_option_values**\ (\ option\: :ref:`int<class_int>`, values\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+|void| **set_option_values**\ (\ option\: :ref:`int<class_int>`, values\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_EditorFileDialog_method_set_option_values>`
 
 Sets the option values of the :ref:`OptionButton<class_OptionButton>` with index ``option``.
 

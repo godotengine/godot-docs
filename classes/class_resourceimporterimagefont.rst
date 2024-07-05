@@ -12,14 +12,14 @@ ResourceImporterImageFont
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Imports a fixed-width bitmap font where all glyphs have the same width and height.
+Imports a bitmap font where all glyphs have the same width and height.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This image-based workflow can be easier to use than :ref:`ResourceImporterBMFont<class_ResourceImporterBMFont>`, but it requires all glyphs to have the same width and height. This makes **ResourceImporterImageFont** most suited to fixed-width fonts.
+This image-based workflow can be easier to use than :ref:`ResourceImporterBMFont<class_ResourceImporterBMFont>`, but it requires all glyphs to have the same width and height, glyph advances and drawing offsets can be customized. This makes **ResourceImporterImageFont** most suited to fixed-width fonts.
 
 See also :ref:`ResourceImporterDynamicFont<class_ResourceImporterDynamicFont>`.
 
@@ -75,7 +75,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **ascent** = ``0``
+:ref:`int<class_int>` **ascent** = ``0`` :ref:`🔗<class_ResourceImporterImageFont_property_ascent>`
 
 Font ascent (number of pixels above the baseline). If set to ``0``, half of the character height is used.
 
@@ -87,7 +87,7 @@ Font ascent (number of pixels above the baseline). If set to ``0``, half of the 
 
 .. rst-class:: classref-property
 
-:ref:`Rect2i<class_Rect2i>` **character_margin** = ``Rect2i(0, 0, 0, 0)``
+:ref:`Rect2i<class_Rect2i>` **character_margin** = ``Rect2i(0, 0, 0, 0)`` :ref:`🔗<class_ResourceImporterImageFont_property_character_margin>`
 
 Margin applied around every imported glyph. If your font image contains guides (in the form of lines between glyphs) or if spacing between characters appears incorrect, try adjusting :ref:`character_margin<class_ResourceImporterImageFont_property_character_margin>`.
 
@@ -99,7 +99,7 @@ Margin applied around every imported glyph. If your font image contains guides (
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **character_ranges** = ``PackedStringArray()``
+:ref:`PackedStringArray<class_PackedStringArray>` **character_ranges** = ``PackedStringArray()`` :ref:`🔗<class_ResourceImporterImageFont_property_character_ranges>`
 
 The character ranges to import from the font image. This is an array that maps each position on the image (in tile coordinates, not pixels). The font atlas is traversed from left to right and top to bottom. Characters can be specified with decimal numbers (127), hexadecimal numbers (``0x007f``, or ``U+007f``) or between single quotes (``'~'``). Ranges can be specified with a hyphen between characters.
 
@@ -119,7 +119,7 @@ Make sure :ref:`character_ranges<class_ResourceImporterImageFont_property_charac
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **columns** = ``1``
+:ref:`int<class_int>` **columns** = ``1`` :ref:`🔗<class_ResourceImporterImageFont_property_columns>`
 
 Number of columns in the font image. See also :ref:`rows<class_ResourceImporterImageFont_property_rows>`.
 
@@ -131,7 +131,7 @@ Number of columns in the font image. See also :ref:`rows<class_ResourceImporterI
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **compress** = ``true``
+:ref:`bool<class_bool>` **compress** = ``true`` :ref:`🔗<class_ResourceImporterImageFont_property_compress>`
 
 If ``true``, uses lossless compression for the resulting font.
 
@@ -143,7 +143,7 @@ If ``true``, uses lossless compression for the resulting font.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **descent** = ``0``
+:ref:`int<class_int>` **descent** = ``0`` :ref:`🔗<class_ResourceImporterImageFont_property_descent>`
 
 Font descent (number of pixels below the baseline). If set to ``0``, half of the character height is used.
 
@@ -155,7 +155,7 @@ Font descent (number of pixels below the baseline). If set to ``0``, half of the
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **fallbacks** = ``[]``
+:ref:`Array<class_Array>` **fallbacks** = ``[]`` :ref:`🔗<class_ResourceImporterImageFont_property_fallbacks>`
 
 List of font fallbacks to use if a glyph isn't found in this bitmap font. Fonts at the beginning of the array are attempted first.
 
@@ -167,7 +167,7 @@ List of font fallbacks to use if a glyph isn't found in this bitmap font. Fonts 
 
 .. rst-class:: classref-property
 
-:ref:`Rect2i<class_Rect2i>` **image_margin** = ``Rect2i(0, 0, 0, 0)``
+:ref:`Rect2i<class_Rect2i>` **image_margin** = ``Rect2i(0, 0, 0, 0)`` :ref:`🔗<class_ResourceImporterImageFont_property_image_margin>`
 
 Margin to cut on the sides of the entire image. This can be used to cut parts of the image that contain attribution information or similar.
 
@@ -179,7 +179,7 @@ Margin to cut on the sides of the entire image. This can be used to cut parts of
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **kerning_pairs** = ``PackedStringArray()``
+:ref:`PackedStringArray<class_PackedStringArray>` **kerning_pairs** = ``PackedStringArray()`` :ref:`🔗<class_ResourceImporterImageFont_property_kerning_pairs>`
 
 Kerning pairs for the font. Kerning pair adjust the spacing between two characters.
 
@@ -195,7 +195,7 @@ Each string consist of three space separated values: "from" string, "to" string 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rows** = ``1``
+:ref:`int<class_int>` **rows** = ``1`` :ref:`🔗<class_ResourceImporterImageFont_property_rows>`
 
 Number of rows in the font image. See also :ref:`columns<class_ResourceImporterImageFont_property_columns>`.
 
@@ -207,7 +207,7 @@ Number of rows in the font image. See also :ref:`columns<class_ResourceImporterI
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **scaling_mode** = ``2``
+:ref:`int<class_int>` **scaling_mode** = ``2`` :ref:`🔗<class_ResourceImporterImageFont_property_scaling_mode>`
 
 Font scaling mode.
 

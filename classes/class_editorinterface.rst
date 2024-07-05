@@ -176,7 +176,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **distraction_free_mode**
+:ref:`bool<class_bool>` **distraction_free_mode** :ref:`🔗<class_EditorInterface_property_distraction_free_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -193,7 +193,7 @@ If ``true``, enables distraction-free mode which hides side docks to increase th
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **movie_maker_enabled**
+:ref:`bool<class_bool>` **movie_maker_enabled** :ref:`🔗<class_EditorInterface_property_movie_maker_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -215,7 +215,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **edit_node**\ (\ node\: :ref:`Node<class_Node>`\ )
+|void| **edit_node**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_EditorInterface_method_edit_node>`
 
 Edits the given :ref:`Node<class_Node>`. The node will be also selected if it's inside the scene tree.
 
@@ -227,7 +227,7 @@ Edits the given :ref:`Node<class_Node>`. The node will be also selected if it's 
 
 .. rst-class:: classref-method
 
-|void| **edit_resource**\ (\ resource\: :ref:`Resource<class_Resource>`\ )
+|void| **edit_resource**\ (\ resource\: :ref:`Resource<class_Resource>`\ ) :ref:`🔗<class_EditorInterface_method_edit_resource>`
 
 Edits the given :ref:`Resource<class_Resource>`. If the resource is a :ref:`Script<class_Script>` you can also edit it with :ref:`edit_script<class_EditorInterface_method_edit_script>` to specify the line and column position.
 
@@ -239,7 +239,7 @@ Edits the given :ref:`Resource<class_Resource>`. If the resource is a :ref:`Scri
 
 .. rst-class:: classref-method
 
-|void| **edit_script**\ (\ script\: :ref:`Script<class_Script>`, line\: :ref:`int<class_int>` = -1, column\: :ref:`int<class_int>` = 0, grab_focus\: :ref:`bool<class_bool>` = true\ )
+|void| **edit_script**\ (\ script\: :ref:`Script<class_Script>`, line\: :ref:`int<class_int>` = -1, column\: :ref:`int<class_int>` = 0, grab_focus\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_EditorInterface_method_edit_script>`
 
 Edits the given :ref:`Script<class_Script>`. The line and column on which to open the script can also be specified. The script will be open with the user-configured editor for the script's language which may be an external editor.
 
@@ -251,7 +251,7 @@ Edits the given :ref:`Script<class_Script>`. The line and column on which to ope
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **get_base_control**\ (\ ) |const|
+:ref:`Control<class_Control>` **get_base_control**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_base_control>`
 
 Returns the main container of Godot editor's window. For example, you can use it to retrieve the size of the container and place your controls accordingly.
 
@@ -265,7 +265,7 @@ Returns the main container of Godot editor's window. For example, you can use it
 
 .. rst-class:: classref-method
 
-:ref:`EditorCommandPalette<class_EditorCommandPalette>` **get_command_palette**\ (\ ) |const|
+:ref:`EditorCommandPalette<class_EditorCommandPalette>` **get_command_palette**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_command_palette>`
 
 Returns the editor's :ref:`EditorCommandPalette<class_EditorCommandPalette>` instance.
 
@@ -279,7 +279,7 @@ Returns the editor's :ref:`EditorCommandPalette<class_EditorCommandPalette>` ins
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_current_directory**\ (\ ) |const|
+:ref:`String<class_String>` **get_current_directory**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_current_directory>`
 
 Returns the current directory being viewed in the :ref:`FileSystemDock<class_FileSystemDock>`. If a file is selected, its base directory will be returned using :ref:`String.get_base_dir<class_String_method_get_base_dir>` instead.
 
@@ -291,7 +291,7 @@ Returns the current directory being viewed in the :ref:`FileSystemDock<class_Fil
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_current_feature_profile**\ (\ ) |const|
+:ref:`String<class_String>` **get_current_feature_profile**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_current_feature_profile>`
 
 Returns the name of the currently activated feature profile. If the default profile is currently active, an empty string is returned instead.
 
@@ -307,7 +307,7 @@ In order to get a reference to the :ref:`EditorFeatureProfile<class_EditorFeatur
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_current_path**\ (\ ) |const|
+:ref:`String<class_String>` **get_current_path**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_current_path>`
 
 Returns the current path being viewed in the :ref:`FileSystemDock<class_FileSystemDock>`.
 
@@ -319,7 +319,7 @@ Returns the current path being viewed in the :ref:`FileSystemDock<class_FileSyst
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **get_edited_scene_root**\ (\ ) |const|
+:ref:`Node<class_Node>` **get_edited_scene_root**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_edited_scene_root>`
 
 Returns the edited (current) scene's root :ref:`Node<class_Node>`.
 
@@ -331,7 +331,7 @@ Returns the edited (current) scene's root :ref:`Node<class_Node>`.
 
 .. rst-class:: classref-method
 
-:ref:`VBoxContainer<class_VBoxContainer>` **get_editor_main_screen**\ (\ ) |const|
+:ref:`VBoxContainer<class_VBoxContainer>` **get_editor_main_screen**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_editor_main_screen>`
 
 Returns the editor control responsible for main screen plugins and tools. Use it with plugins that implement :ref:`EditorPlugin._has_main_screen<class_EditorPlugin_private_method__has_main_screen>`.
 
@@ -347,7 +347,7 @@ Returns the editor control responsible for main screen plugins and tools. Use it
 
 .. rst-class:: classref-method
 
-:ref:`EditorPaths<class_EditorPaths>` **get_editor_paths**\ (\ ) |const|
+:ref:`EditorPaths<class_EditorPaths>` **get_editor_paths**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_editor_paths>`
 
 Returns the :ref:`EditorPaths<class_EditorPaths>` singleton.
 
@@ -359,7 +359,7 @@ Returns the :ref:`EditorPaths<class_EditorPaths>` singleton.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_editor_scale**\ (\ ) |const|
+:ref:`float<class_float>` **get_editor_scale**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_editor_scale>`
 
 Returns the actual scale of the editor UI (``1.0`` being 100% scale). This can be used to adjust position and dimensions of the UI added by plugins.
 
@@ -373,7 +373,7 @@ Returns the actual scale of the editor UI (``1.0`` being 100% scale). This can b
 
 .. rst-class:: classref-method
 
-:ref:`EditorSettings<class_EditorSettings>` **get_editor_settings**\ (\ ) |const|
+:ref:`EditorSettings<class_EditorSettings>` **get_editor_settings**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_editor_settings>`
 
 Returns the editor's :ref:`EditorSettings<class_EditorSettings>` instance.
 
@@ -385,7 +385,7 @@ Returns the editor's :ref:`EditorSettings<class_EditorSettings>` instance.
 
 .. rst-class:: classref-method
 
-:ref:`Theme<class_Theme>` **get_editor_theme**\ (\ ) |const|
+:ref:`Theme<class_Theme>` **get_editor_theme**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_editor_theme>`
 
 Returns the editor's :ref:`Theme<class_Theme>`.
 
@@ -399,7 +399,7 @@ Returns the editor's :ref:`Theme<class_Theme>`.
 
 .. rst-class:: classref-method
 
-:ref:`SubViewport<class_SubViewport>` **get_editor_viewport_2d**\ (\ ) |const|
+:ref:`SubViewport<class_SubViewport>` **get_editor_viewport_2d**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_editor_viewport_2d>`
 
 Returns the 2D editor :ref:`SubViewport<class_SubViewport>`. It does not have a camera. Instead, the view transforms are done directly and can be accessed with :ref:`Viewport.global_canvas_transform<class_Viewport_property_global_canvas_transform>`.
 
@@ -411,7 +411,7 @@ Returns the 2D editor :ref:`SubViewport<class_SubViewport>`. It does not have a 
 
 .. rst-class:: classref-method
 
-:ref:`SubViewport<class_SubViewport>` **get_editor_viewport_3d**\ (\ idx\: :ref:`int<class_int>` = 0\ ) |const|
+:ref:`SubViewport<class_SubViewport>` **get_editor_viewport_3d**\ (\ idx\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_EditorInterface_method_get_editor_viewport_3d>`
 
 Returns the specified 3D editor :ref:`SubViewport<class_SubViewport>`, from ``0`` to ``3``. The viewport can be used to access the active editor cameras with :ref:`Viewport.get_camera_3d<class_Viewport_method_get_camera_3d>`.
 
@@ -423,7 +423,7 @@ Returns the specified 3D editor :ref:`SubViewport<class_SubViewport>`, from ``0`
 
 .. rst-class:: classref-method
 
-:ref:`FileSystemDock<class_FileSystemDock>` **get_file_system_dock**\ (\ ) |const|
+:ref:`FileSystemDock<class_FileSystemDock>` **get_file_system_dock**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_file_system_dock>`
 
 Returns the editor's :ref:`FileSystemDock<class_FileSystemDock>` instance.
 
@@ -437,7 +437,7 @@ Returns the editor's :ref:`FileSystemDock<class_FileSystemDock>` instance.
 
 .. rst-class:: classref-method
 
-:ref:`EditorInspector<class_EditorInspector>` **get_inspector**\ (\ ) |const|
+:ref:`EditorInspector<class_EditorInspector>` **get_inspector**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_inspector>`
 
 Returns the editor's :ref:`EditorInspector<class_EditorInspector>` instance.
 
@@ -451,7 +451,7 @@ Returns the editor's :ref:`EditorInspector<class_EditorInspector>` instance.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_open_scenes**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_open_scenes**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_open_scenes>`
 
 Returns an :ref:`Array<class_Array>` with the file paths of the currently opened scenes.
 
@@ -463,7 +463,7 @@ Returns an :ref:`Array<class_Array>` with the file paths of the currently opened
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_playing_scene**\ (\ ) |const|
+:ref:`String<class_String>` **get_playing_scene**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_playing_scene>`
 
 Returns the name of the scene that is being played. If no scene is currently being played, returns an empty string.
 
@@ -475,7 +475,7 @@ Returns the name of the scene that is being played. If no scene is currently bei
 
 .. rst-class:: classref-method
 
-:ref:`EditorFileSystem<class_EditorFileSystem>` **get_resource_filesystem**\ (\ ) |const|
+:ref:`EditorFileSystem<class_EditorFileSystem>` **get_resource_filesystem**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_resource_filesystem>`
 
 Returns the editor's :ref:`EditorFileSystem<class_EditorFileSystem>` instance.
 
@@ -487,7 +487,7 @@ Returns the editor's :ref:`EditorFileSystem<class_EditorFileSystem>` instance.
 
 .. rst-class:: classref-method
 
-:ref:`EditorResourcePreview<class_EditorResourcePreview>` **get_resource_previewer**\ (\ ) |const|
+:ref:`EditorResourcePreview<class_EditorResourcePreview>` **get_resource_previewer**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_resource_previewer>`
 
 Returns the editor's :ref:`EditorResourcePreview<class_EditorResourcePreview>` instance.
 
@@ -499,7 +499,7 @@ Returns the editor's :ref:`EditorResourcePreview<class_EditorResourcePreview>` i
 
 .. rst-class:: classref-method
 
-:ref:`ScriptEditor<class_ScriptEditor>` **get_script_editor**\ (\ ) |const|
+:ref:`ScriptEditor<class_ScriptEditor>` **get_script_editor**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_script_editor>`
 
 Returns the editor's :ref:`ScriptEditor<class_ScriptEditor>` instance.
 
@@ -513,7 +513,7 @@ Returns the editor's :ref:`ScriptEditor<class_ScriptEditor>` instance.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_selected_paths**\ (\ ) |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_selected_paths**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_selected_paths>`
 
 Returns an array containing the paths of the currently selected files (and directories) in the :ref:`FileSystemDock<class_FileSystemDock>`.
 
@@ -525,7 +525,7 @@ Returns an array containing the paths of the currently selected files (and direc
 
 .. rst-class:: classref-method
 
-:ref:`EditorSelection<class_EditorSelection>` **get_selection**\ (\ ) |const|
+:ref:`EditorSelection<class_EditorSelection>` **get_selection**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_selection>`
 
 Returns the editor's :ref:`EditorSelection<class_EditorSelection>` instance.
 
@@ -537,7 +537,7 @@ Returns the editor's :ref:`EditorSelection<class_EditorSelection>` instance.
 
 .. rst-class:: classref-method
 
-|void| **inspect_object**\ (\ object\: :ref:`Object<class_Object>`, for_property\: :ref:`String<class_String>` = "", inspector_only\: :ref:`bool<class_bool>` = false\ )
+|void| **inspect_object**\ (\ object\: :ref:`Object<class_Object>`, for_property\: :ref:`String<class_String>` = "", inspector_only\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_EditorInterface_method_inspect_object>`
 
 Shows the given property on the given ``object`` in the editor's Inspector dock. If ``inspector_only`` is ``true``, plugins will not attempt to edit ``object``.
 
@@ -549,7 +549,7 @@ Shows the given property on the given ``object`` in the editor's Inspector dock.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_multi_window_enabled**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_multi_window_enabled**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_is_multi_window_enabled>`
 
 Returns ``true`` if multiple window support is enabled in the editor. Multiple window support is enabled if *all* of these statements are true:
 
@@ -567,7 +567,7 @@ Returns ``true`` if multiple window support is enabled in the editor. Multiple w
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_playing_scene**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_playing_scene**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_is_playing_scene>`
 
 Returns ``true`` if a scene is currently being played, ``false`` otherwise. Paused scenes are considered as being played.
 
@@ -579,7 +579,7 @@ Returns ``true`` if a scene is currently being played, ``false`` otherwise. Paus
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_plugin_enabled**\ (\ plugin\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **is_plugin_enabled**\ (\ plugin\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_EditorInterface_method_is_plugin_enabled>`
 
 Returns ``true`` if the specified ``plugin`` is enabled. The plugin name is the same as its directory name.
 
@@ -591,7 +591,7 @@ Returns ``true`` if the specified ``plugin`` is enabled. The plugin name is the 
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Texture2D<class_Texture2D>`\] **make_mesh_previews**\ (\ meshes\: :ref:`Array<class_Array>`\[:ref:`Mesh<class_Mesh>`\], preview_size\: :ref:`int<class_int>`\ )
+:ref:`Array<class_Array>`\[:ref:`Texture2D<class_Texture2D>`\] **make_mesh_previews**\ (\ meshes\: :ref:`Array<class_Array>`\[:ref:`Mesh<class_Mesh>`\], preview_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EditorInterface_method_make_mesh_previews>`
 
 Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>` of :ref:`Texture2D<class_Texture2D>`\ s.
 
@@ -603,7 +603,7 @@ Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>`
 
 .. rst-class:: classref-method
 
-|void| **mark_scene_as_unsaved**\ (\ )
+|void| **mark_scene_as_unsaved**\ (\ ) :ref:`🔗<class_EditorInterface_method_mark_scene_as_unsaved>`
 
 Marks the current scene tab as unsaved.
 
@@ -615,7 +615,7 @@ Marks the current scene tab as unsaved.
 
 .. rst-class:: classref-method
 
-|void| **open_scene_from_path**\ (\ scene_filepath\: :ref:`String<class_String>`\ )
+|void| **open_scene_from_path**\ (\ scene_filepath\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInterface_method_open_scene_from_path>`
 
 Opens the scene at the given path.
 
@@ -627,7 +627,7 @@ Opens the scene at the given path.
 
 .. rst-class:: classref-method
 
-|void| **play_current_scene**\ (\ )
+|void| **play_current_scene**\ (\ ) :ref:`🔗<class_EditorInterface_method_play_current_scene>`
 
 Plays the currently active scene.
 
@@ -639,7 +639,7 @@ Plays the currently active scene.
 
 .. rst-class:: classref-method
 
-|void| **play_custom_scene**\ (\ scene_filepath\: :ref:`String<class_String>`\ )
+|void| **play_custom_scene**\ (\ scene_filepath\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInterface_method_play_custom_scene>`
 
 Plays the scene specified by its filepath.
 
@@ -651,7 +651,7 @@ Plays the scene specified by its filepath.
 
 .. rst-class:: classref-method
 
-|void| **play_main_scene**\ (\ )
+|void| **play_main_scene**\ (\ ) :ref:`🔗<class_EditorInterface_method_play_main_scene>`
 
 Plays the main scene.
 
@@ -663,7 +663,7 @@ Plays the main scene.
 
 .. rst-class:: classref-method
 
-|void| **popup_dialog**\ (\ dialog\: :ref:`Window<class_Window>`, rect\: :ref:`Rect2i<class_Rect2i>` = Rect2i(0, 0, 0, 0)\ )
+|void| **popup_dialog**\ (\ dialog\: :ref:`Window<class_Window>`, rect\: :ref:`Rect2i<class_Rect2i>` = Rect2i(0, 0, 0, 0)\ ) :ref:`🔗<class_EditorInterface_method_popup_dialog>`
 
 Pops up the ``dialog`` in the editor UI with :ref:`Window.popup_exclusive<class_Window_method_popup_exclusive>`. The dialog must have no current parent, otherwise the method fails.
 
@@ -677,7 +677,7 @@ See also :ref:`Window.set_unparent_when_invisible<class_Window_method_set_unpare
 
 .. rst-class:: classref-method
 
-|void| **popup_dialog_centered**\ (\ dialog\: :ref:`Window<class_Window>`, minsize\: :ref:`Vector2i<class_Vector2i>` = Vector2i(0, 0)\ )
+|void| **popup_dialog_centered**\ (\ dialog\: :ref:`Window<class_Window>`, minsize\: :ref:`Vector2i<class_Vector2i>` = Vector2i(0, 0)\ ) :ref:`🔗<class_EditorInterface_method_popup_dialog_centered>`
 
 Pops up the ``dialog`` in the editor UI with :ref:`Window.popup_exclusive_centered<class_Window_method_popup_exclusive_centered>`. The dialog must have no current parent, otherwise the method fails.
 
@@ -691,7 +691,7 @@ See also :ref:`Window.set_unparent_when_invisible<class_Window_method_set_unpare
 
 .. rst-class:: classref-method
 
-|void| **popup_dialog_centered_clamped**\ (\ dialog\: :ref:`Window<class_Window>`, minsize\: :ref:`Vector2i<class_Vector2i>` = Vector2i(0, 0), fallback_ratio\: :ref:`float<class_float>` = 0.75\ )
+|void| **popup_dialog_centered_clamped**\ (\ dialog\: :ref:`Window<class_Window>`, minsize\: :ref:`Vector2i<class_Vector2i>` = Vector2i(0, 0), fallback_ratio\: :ref:`float<class_float>` = 0.75\ ) :ref:`🔗<class_EditorInterface_method_popup_dialog_centered_clamped>`
 
 Pops up the ``dialog`` in the editor UI with :ref:`Window.popup_exclusive_centered_clamped<class_Window_method_popup_exclusive_centered_clamped>`. The dialog must have no current parent, otherwise the method fails.
 
@@ -705,7 +705,7 @@ See also :ref:`Window.set_unparent_when_invisible<class_Window_method_set_unpare
 
 .. rst-class:: classref-method
 
-|void| **popup_dialog_centered_ratio**\ (\ dialog\: :ref:`Window<class_Window>`, ratio\: :ref:`float<class_float>` = 0.8\ )
+|void| **popup_dialog_centered_ratio**\ (\ dialog\: :ref:`Window<class_Window>`, ratio\: :ref:`float<class_float>` = 0.8\ ) :ref:`🔗<class_EditorInterface_method_popup_dialog_centered_ratio>`
 
 Pops up the ``dialog`` in the editor UI with :ref:`Window.popup_exclusive_centered_ratio<class_Window_method_popup_exclusive_centered_ratio>`. The dialog must have no current parent, otherwise the method fails.
 
@@ -719,7 +719,7 @@ See also :ref:`Window.set_unparent_when_invisible<class_Window_method_set_unpare
 
 .. rst-class:: classref-method
 
-|void| **popup_node_selector**\ (\ callback\: :ref:`Callable<class_Callable>`, valid_types\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = []\ )
+|void| **popup_node_selector**\ (\ callback\: :ref:`Callable<class_Callable>`, valid_types\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = []\ ) :ref:`🔗<class_EditorInterface_method_popup_node_selector>`
 
 Pops up an editor dialog for selecting a :ref:`Node<class_Node>` from the edited scene. The ``callback`` must take a single argument of type :ref:`NodePath<class_NodePath>`. It is called on the selected :ref:`NodePath<class_NodePath>` or the empty path ``^""`` if the dialog is canceled. If ``valid_types`` is provided, the dialog will only show Nodes that match one of the listed Node types.
 
@@ -745,7 +745,7 @@ Pops up an editor dialog for selecting a :ref:`Node<class_Node>` from the edited
 
 .. rst-class:: classref-method
 
-|void| **popup_property_selector**\ (\ object\: :ref:`Object<class_Object>`, callback\: :ref:`Callable<class_Callable>`, type_filter\: :ref:`PackedInt32Array<class_PackedInt32Array>` = PackedInt32Array()\ )
+|void| **popup_property_selector**\ (\ object\: :ref:`Object<class_Object>`, callback\: :ref:`Callable<class_Callable>`, type_filter\: :ref:`PackedInt32Array<class_PackedInt32Array>` = PackedInt32Array()\ ) :ref:`🔗<class_EditorInterface_method_popup_property_selector>`
 
 Pops up an editor dialog for selecting properties from ``object``. The ``callback`` must take a single argument of type :ref:`NodePath<class_NodePath>`. It is called on the selected property path (see :ref:`NodePath.get_as_property_path<class_NodePath_method_get_as_property_path>`) or the empty path ``^""`` if the dialog is canceled. If ``type_filter`` is provided, the dialog will only show properties that match one of the listed :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
@@ -771,7 +771,7 @@ Pops up an editor dialog for selecting properties from ``object``. The ``callbac
 
 .. rst-class:: classref-method
 
-|void| **reload_scene_from_path**\ (\ scene_filepath\: :ref:`String<class_String>`\ )
+|void| **reload_scene_from_path**\ (\ scene_filepath\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInterface_method_reload_scene_from_path>`
 
 Reloads the scene at the given path.
 
@@ -783,7 +783,7 @@ Reloads the scene at the given path.
 
 .. rst-class:: classref-method
 
-|void| **restart_editor**\ (\ save\: :ref:`bool<class_bool>` = true\ )
+|void| **restart_editor**\ (\ save\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_EditorInterface_method_restart_editor>`
 
 Restarts the editor. This closes the editor and then opens the same project. If ``save`` is ``true``, the project will be saved before restarting.
 
@@ -795,7 +795,7 @@ Restarts the editor. This closes the editor and then opens the same project. If 
 
 .. rst-class:: classref-method
 
-|void| **save_all_scenes**\ (\ )
+|void| **save_all_scenes**\ (\ ) :ref:`🔗<class_EditorInterface_method_save_all_scenes>`
 
 Saves all opened scenes in the editor.
 
@@ -807,7 +807,7 @@ Saves all opened scenes in the editor.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save_scene**\ (\ )
+:ref:`Error<enum_@GlobalScope_Error>` **save_scene**\ (\ ) :ref:`🔗<class_EditorInterface_method_save_scene>`
 
 Saves the currently active scene. Returns either :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>`.
 
@@ -819,7 +819,7 @@ Saves the currently active scene. Returns either :ref:`@GlobalScope.OK<class_@Gl
 
 .. rst-class:: classref-method
 
-|void| **save_scene_as**\ (\ path\: :ref:`String<class_String>`, with_preview\: :ref:`bool<class_bool>` = true\ )
+|void| **save_scene_as**\ (\ path\: :ref:`String<class_String>`, with_preview\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_EditorInterface_method_save_scene_as>`
 
 Saves the currently active scene as a file at ``path``.
 
@@ -831,7 +831,7 @@ Saves the currently active scene as a file at ``path``.
 
 .. rst-class:: classref-method
 
-|void| **select_file**\ (\ file\: :ref:`String<class_String>`\ )
+|void| **select_file**\ (\ file\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInterface_method_select_file>`
 
 Selects the file, with the path provided by ``file``, in the FileSystem dock.
 
@@ -843,7 +843,7 @@ Selects the file, with the path provided by ``file``, in the FileSystem dock.
 
 .. rst-class:: classref-method
 
-|void| **set_current_feature_profile**\ (\ profile_name\: :ref:`String<class_String>`\ )
+|void| **set_current_feature_profile**\ (\ profile_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInterface_method_set_current_feature_profile>`
 
 Selects and activates the specified feature profile with the given ``profile_name``. Set ``profile_name`` to an empty string to reset to the default feature profile.
 
@@ -859,7 +859,7 @@ A feature profile can be created programmatically using the :ref:`EditorFeatureP
 
 .. rst-class:: classref-method
 
-|void| **set_main_screen_editor**\ (\ name\: :ref:`String<class_String>`\ )
+|void| **set_main_screen_editor**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorInterface_method_set_main_screen_editor>`
 
 Sets the editor's current main screen to the one specified in ``name``. ``name`` must match the title of the tab in question exactly (e.g. ``2D``, ``3D``, ``Script``, or ``AssetLib`` for default tabs).
 
@@ -871,7 +871,7 @@ Sets the editor's current main screen to the one specified in ``name``. ``name``
 
 .. rst-class:: classref-method
 
-|void| **set_plugin_enabled**\ (\ plugin\: :ref:`String<class_String>`, enabled\: :ref:`bool<class_bool>`\ )
+|void| **set_plugin_enabled**\ (\ plugin\: :ref:`String<class_String>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorInterface_method_set_plugin_enabled>`
 
 Sets the enabled status of a plugin. The plugin name is the same as its directory name.
 
@@ -883,7 +883,7 @@ Sets the enabled status of a plugin. The plugin name is the same as its director
 
 .. rst-class:: classref-method
 
-|void| **stop_playing_scene**\ (\ )
+|void| **stop_playing_scene**\ (\ ) :ref:`🔗<class_EditorInterface_method_stop_playing_scene>`
 
 Stops the scene that is currently playing.
 

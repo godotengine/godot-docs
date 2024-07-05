@@ -58,7 +58,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**camera_feed_added**\ (\ id\: :ref:`int<class_int>`\ )
+**camera_feed_added**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CameraServer_signal_camera_feed_added>`
 
 Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (e.g. a webcam is plugged in).
 
@@ -70,7 +70,7 @@ Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (e.g. a webcam is pl
 
 .. rst-class:: classref-signal
 
-**camera_feed_removed**\ (\ id\: :ref:`int<class_int>`\ )
+**camera_feed_removed**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CameraServer_signal_camera_feed_removed>`
 
 Emitted when a :ref:`CameraFeed<class_CameraFeed>` is removed (e.g. a webcam is unplugged).
 
@@ -87,7 +87,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FeedImage**:
+enum **FeedImage**: :ref:`🔗<enum_CameraServer_FeedImage>`
 
 .. _class_CameraServer_constant_FEED_RGBA_IMAGE:
 
@@ -134,7 +134,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_feed**\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ )
+|void| **add_feed**\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ ) :ref:`🔗<class_CameraServer_method_add_feed>`
 
 Adds the camera ``feed`` to the camera server.
 
@@ -146,7 +146,7 @@ Adds the camera ``feed`` to the camera server.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`CameraFeed<class_CameraFeed>`\] **feeds**\ (\ )
+:ref:`Array<class_Array>`\[:ref:`CameraFeed<class_CameraFeed>`\] **feeds**\ (\ ) :ref:`🔗<class_CameraServer_method_feeds>`
 
 Returns an array of :ref:`CameraFeed<class_CameraFeed>`\ s.
 
@@ -158,7 +158,7 @@ Returns an array of :ref:`CameraFeed<class_CameraFeed>`\ s.
 
 .. rst-class:: classref-method
 
-:ref:`CameraFeed<class_CameraFeed>` **get_feed**\ (\ index\: :ref:`int<class_int>`\ )
+:ref:`CameraFeed<class_CameraFeed>` **get_feed**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CameraServer_method_get_feed>`
 
 Returns the :ref:`CameraFeed<class_CameraFeed>` corresponding to the camera with the given ``index``.
 
@@ -170,7 +170,7 @@ Returns the :ref:`CameraFeed<class_CameraFeed>` corresponding to the camera with
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_feed_count**\ (\ )
+:ref:`int<class_int>` **get_feed_count**\ (\ ) :ref:`🔗<class_CameraServer_method_get_feed_count>`
 
 Returns the number of :ref:`CameraFeed<class_CameraFeed>`\ s registered.
 
@@ -182,7 +182,7 @@ Returns the number of :ref:`CameraFeed<class_CameraFeed>`\ s registered.
 
 .. rst-class:: classref-method
 
-|void| **remove_feed**\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ )
+|void| **remove_feed**\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ ) :ref:`🔗<class_CameraServer_method_remove_feed>`
 
 Removes the specified camera ``feed``.
 

@@ -46,7 +46,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Texture2DArray<class_Texture2DArray>` **texture_array**
+:ref:`Texture2DArray<class_Texture2DArray>` **texture_array** :ref:`🔗<class_VisualShaderNodeTexture2DArray_property_texture_array>`
 
 .. rst-class:: classref-property-setget
 

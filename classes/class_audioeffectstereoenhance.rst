@@ -57,7 +57,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pan_pullout** = ``1.0``
+:ref:`float<class_float>` **pan_pullout** = ``1.0`` :ref:`🔗<class_AudioEffectStereoEnhance_property_pan_pullout>`
 
 .. rst-class:: classref-property-setget
 
@@ -74,7 +74,7 @@ Values greater than 1.0 increase intensity of any panning on audio passing throu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **surround** = ``0.0``
+:ref:`float<class_float>` **surround** = ``0.0`` :ref:`🔗<class_AudioEffectStereoEnhance_property_surround>`
 
 .. rst-class:: classref-property-setget
 
@@ -93,7 +93,7 @@ Values greater than 1.0 increase intensity of any panning on audio passing throu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **time_pullout_ms** = ``0.0``
+:ref:`float<class_float>` **time_pullout_ms** = ``0.0`` :ref:`🔗<class_AudioEffectStereoEnhance_property_time_pullout_ms>`
 
 .. rst-class:: classref-property-setget
 

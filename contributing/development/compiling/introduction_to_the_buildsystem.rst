@@ -12,16 +12,16 @@ that compiling Godot from source can be as simple as running::
 
     scons
 
-This produces an *export template* for your current platform, operating system, and architecture.
-An export template is a build of the engine that is used for running exported projects. To build
-the *editor* instead you can run the following command::
+This produces an editor build for your current platform, operating system, and architecture.
+You can change what gets built by specifying a target, a platform, and/or an architecture.
+For example, to build an export template used for running exported games, you can run::
 
-    scons target=editor
+    scons target=template_release
 
-If you plan to debug or develop the engine, then you might want to add another option to the command::
+If you plan to debug or develop the engine, then you might want to enable the ``dev_build``
+option to enable dev-only debugging code::
 
     scons dev_build=yes
-    scons target=editor dev_build=yes
 
 Following sections in the article will explain these and other universal options in more detail. But
 before you can compile Godot, you need to install a few prerequisites. Please refer to the platform
@@ -397,7 +397,7 @@ For the folders accelerated by this option, multiple ``.cpp`` files are
 compiled in each translation unit, so headers can be shared between multiple
 files, which can dramatically decrease build times.
 
-To peform an SCU build, use the ``scu_build=yes`` SCons option.
+To perform an SCU build, use the ``scu_build=yes`` SCons option.
 
 .. note:: When developing a Pull Request using SCU builds, be sure to make a
           regular build prior to submitting the PR. This is because SCU builds

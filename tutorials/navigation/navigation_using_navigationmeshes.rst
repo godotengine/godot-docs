@@ -200,6 +200,61 @@ The geometry data should be in general kept very simple. As many edges as are re
 Especially in 2D duplicated and nested geometry should be avoided as it forces polygon hole calculation that can result in flipped polygons.
 An example for nested geometry would be a smaller StaticBody2D shape placed completely inside the bounds of another StaticBody2D shape.
 
+Baking navigation mesh chunks for large worlds
+----------------------------------------------
+
+.. figure:: img/navmesh_chunk_build.gif
+   :align: center
+   :alt: Building navigation mesh chunks
+
+   Building and updating individual navigation mesh chunks at runtime.
+
+To avoid misaligned edges between different region chunks the navigation meshes have two important properties
+for the navigation mesh baking process. The baking bound and the border size.
+Together they can be used to ensure perfectly aligned edges between region chunks.
+
+.. figure:: img/navmesh_bound_bordersize.webp
+   :align: center
+   :alt: Navigation mesh chunk with bake bound and border size
+
+   Navigation mesh chunk baked with bake bound or baked with additional border size.
+
+The baking bound, which is an axis-aligned :ref:`Rect2<class_Rect2>` for 2D and :ref:`AABB<class_AABB>` for 3D,
+limits the used source geometry by discarding all the geometry that is outside of the bounds.
+
+The :ref:`NavigationPolygon<class_NavigationPolygon>` properties ``baking_rect`` and ``baking_rect_offset``
+can be used to create and place the 2D baking bound.
+
+The :ref:`NavigationMesh<class_NavigationMesh>` properties ``filter_baking_aabb`` and ``filter_baking_aabb_offset``
+can be used to create and place the 3D baking bound.
+
+With only the baking bound set another problem still exists. The resulting navigation mesh will
+inevitably be affected by necessary offsets like the ``agent_radius`` which makes the edges not align properly.
+
+.. figure:: img/navmesh_chunk_gaps.webp
+   :align: center
+   :alt: Navigation mesh chunks with gaps
+
+   Navigation mesh chunks with noticeable gaps due to baked agent radius offset.
+
+This is where the ``border_size`` property for navigation mesh comes in. The border size is an inward margin
+from the baking bound. The important characteristic of the border size is that it is unaffected by most
+offsets and postprocessing like the ``agent_radius``.
+
+Instead of discarding source geometry, the border size discards parts of the final surface of the baked navigation mesh.
+If the baking bound is large enough the border size can remove the problematic surface
+parts so that only the intended chunk size is left.
+
+.. figure:: img/navmesh_chunks.webp
+   :align: center
+   :alt: Navigation mesh chunks without gaps
+
+   Navigation mesh chunks with aligned edges and without gaps.
+
+.. note::
+
+    The baking bounds need to be large enough to include a reasonable amount of source geometry from all the neighboring chunks.
+
 Navigation mesh baking common problems
 --------------------------------------
 

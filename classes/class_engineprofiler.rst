@@ -52,7 +52,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_add_frame**\ (\ data\: :ref:`Array<class_Array>`\ ) |virtual|
+|void| **_add_frame**\ (\ data\: :ref:`Array<class_Array>`\ ) |virtual| :ref:`🔗<class_EngineProfiler_private_method__add_frame>`
 
 Called when data is added to profiler using :ref:`EngineDebugger.profiler_add_frame_data<class_EngineDebugger_method_profiler_add_frame_data>`.
 
@@ -64,7 +64,7 @@ Called when data is added to profiler using :ref:`EngineDebugger.profiler_add_fr
 
 .. rst-class:: classref-method
 
-|void| **_tick**\ (\ frame_time\: :ref:`float<class_float>`, process_time\: :ref:`float<class_float>`, physics_time\: :ref:`float<class_float>`, physics_frame_time\: :ref:`float<class_float>`\ ) |virtual|
+|void| **_tick**\ (\ frame_time\: :ref:`float<class_float>`, process_time\: :ref:`float<class_float>`, physics_time\: :ref:`float<class_float>`, physics_frame_time\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_EngineProfiler_private_method__tick>`
 
 Called once every engine iteration when the profiler is active with information about the current frame. All time values are in seconds. Lower values represent faster processing times and are therefore considered better.
 
@@ -76,7 +76,7 @@ Called once every engine iteration when the profiler is active with information 
 
 .. rst-class:: classref-method
 
-|void| **_toggle**\ (\ enable\: :ref:`bool<class_bool>`, options\: :ref:`Array<class_Array>`\ ) |virtual|
+|void| **_toggle**\ (\ enable\: :ref:`bool<class_bool>`, options\: :ref:`Array<class_Array>`\ ) |virtual| :ref:`🔗<class_EngineProfiler_private_method__toggle>`
 
 Called when the profiler is enabled/disabled, along with a set of ``options``.
 

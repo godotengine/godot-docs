@@ -155,6 +155,8 @@ Methods
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`install_effect<class_RichTextLabel_method_install_effect>`\ (\ effect\: :ref:`Variant<class_Variant>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`invalidate_paragraph<class_RichTextLabel_method_invalidate_paragraph>`\ (\ paragraph\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`is_menu_visible<class_RichTextLabel_method_is_menu_visible>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`is_ready<class_RichTextLabel_method_is_ready>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -223,7 +225,7 @@ Methods
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`push_underline<class_RichTextLabel_method_push_underline>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`remove_paragraph<class_RichTextLabel_method_remove_paragraph>`\ (\ paragraph\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+   | :ref:`bool<class_bool>`             | :ref:`remove_paragraph<class_RichTextLabel_method_remove_paragraph>`\ (\ paragraph\: :ref:`int<class_int>`, no_invalidate\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`scroll_to_line<class_RichTextLabel_method_scroll_to_line>`\ (\ line\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -327,7 +329,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**finished**\ (\ )
+**finished**\ (\ ) :ref:`🔗<class_RichTextLabel_signal_finished>`
 
 Triggered when the document is fully loaded.
 
@@ -339,7 +341,7 @@ Triggered when the document is fully loaded.
 
 .. rst-class:: classref-signal
 
-**meta_clicked**\ (\ meta\: :ref:`Variant<class_Variant>`\ )
+**meta_clicked**\ (\ meta\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_RichTextLabel_signal_meta_clicked>`
 
 Triggered when the user clicks on content between meta (URL) tags. If the meta is defined in BBCode, e.g. ``[url={"key": "value"}]Text[/url]``, then the parameter for this signal will always be a :ref:`String<class_String>` type. If a particular type or an object is desired, the :ref:`push_meta<class_RichTextLabel_method_push_meta>` method must be used to manually insert the data into the tag stack. Alternatively, you can convert the :ref:`String<class_String>` input to the desired type based on its contents (such as calling :ref:`JSON.parse<class_JSON_method_parse>` on it).
 
@@ -366,7 +368,7 @@ For example, the following method can be connected to :ref:`meta_clicked<class_R
 
 .. rst-class:: classref-signal
 
-**meta_hover_ended**\ (\ meta\: :ref:`Variant<class_Variant>`\ )
+**meta_hover_ended**\ (\ meta\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_RichTextLabel_signal_meta_hover_ended>`
 
 Triggers when the mouse exits a meta tag.
 
@@ -378,7 +380,7 @@ Triggers when the mouse exits a meta tag.
 
 .. rst-class:: classref-signal
 
-**meta_hover_started**\ (\ meta\: :ref:`Variant<class_Variant>`\ )
+**meta_hover_started**\ (\ meta\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_RichTextLabel_signal_meta_hover_started>`
 
 Triggers when the mouse enters a meta tag.
 
@@ -395,7 +397,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ListType**:
+enum **ListType**: :ref:`🔗<enum_RichTextLabel_ListType>`
 
 .. _class_RichTextLabel_constant_LIST_NUMBERS:
 
@@ -437,7 +439,7 @@ Each list item has a filled circle marker.
 
 .. rst-class:: classref-enumeration
 
-enum **MenuItems**:
+enum **MenuItems**: :ref:`🔗<enum_RichTextLabel_MenuItems>`
 
 .. _class_RichTextLabel_constant_MENU_COPY:
 
@@ -471,7 +473,7 @@ Represents the size of the :ref:`MenuItems<enum_RichTextLabel_MenuItems>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **MetaUnderline**:
+enum **MetaUnderline**: :ref:`🔗<enum_RichTextLabel_MetaUnderline>`
 
 .. _class_RichTextLabel_constant_META_UNDERLINE_NEVER:
 
@@ -505,7 +507,7 @@ If :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>` is ``tru
 
 .. rst-class:: classref-enumeration
 
-flags **ImageUpdateMask**:
+flags **ImageUpdateMask**: :ref:`🔗<enum_RichTextLabel_ImageUpdateMask>`
 
 .. _class_RichTextLabel_constant_UPDATE_TEXTURE:
 
@@ -584,7 +586,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode** = ``3``
+:ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode** = ``3`` :ref:`🔗<class_RichTextLabel_property_autowrap_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -601,7 +603,7 @@ If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_co
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **bbcode_enabled** = ``false``
+:ref:`bool<class_bool>` **bbcode_enabled** = ``false`` :ref:`🔗<class_RichTextLabel_property_bbcode_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -620,7 +622,7 @@ If ``true``, the label uses BBCode formatting.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **context_menu_enabled** = ``false``
+:ref:`bool<class_bool>` **context_menu_enabled** = ``false`` :ref:`🔗<class_RichTextLabel_property_context_menu_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -637,7 +639,7 @@ If ``true``, a right-click displays the context menu.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **custom_effects** = ``[]``
+:ref:`Array<class_Array>` **custom_effects** = ``[]`` :ref:`🔗<class_RichTextLabel_property_custom_effects>`
 
 .. rst-class:: classref-property-setget
 
@@ -656,7 +658,7 @@ To add a custom effect, it's more convenient to use :ref:`install_effect<class_R
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **deselect_on_focus_loss_enabled** = ``true``
+:ref:`bool<class_bool>` **deselect_on_focus_loss_enabled** = ``true`` :ref:`🔗<class_RichTextLabel_property_deselect_on_focus_loss_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -673,7 +675,7 @@ If ``true``, the selected text will be deselected when focus is lost.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **drag_and_drop_selection_enabled** = ``true``
+:ref:`bool<class_bool>` **drag_and_drop_selection_enabled** = ``true`` :ref:`🔗<class_RichTextLabel_property_drag_and_drop_selection_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -690,7 +692,7 @@ If ``true``, allow drag and drop of selected text.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **fit_content** = ``false``
+:ref:`bool<class_bool>` **fit_content** = ``false`` :ref:`🔗<class_RichTextLabel_property_fit_content>`
 
 .. rst-class:: classref-property-setget
 
@@ -707,7 +709,7 @@ If ``true``, the label's minimum size will be automatically updated to fit its c
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **hint_underlined** = ``true``
+:ref:`bool<class_bool>` **hint_underlined** = ``true`` :ref:`🔗<class_RichTextLabel_property_hint_underlined>`
 
 .. rst-class:: classref-property-setget
 
@@ -724,7 +726,7 @@ If ``true``, the label underlines hint tags such as ``[hint=description]{text}[/
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **language** = ``""``
+:ref:`String<class_String>` **language** = ``""`` :ref:`🔗<class_RichTextLabel_property_language>`
 
 .. rst-class:: classref-property-setget
 
@@ -741,7 +743,7 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **meta_underlined** = ``true``
+:ref:`bool<class_bool>` **meta_underlined** = ``true`` :ref:`🔗<class_RichTextLabel_property_meta_underlined>`
 
 .. rst-class:: classref-property-setget
 
@@ -758,7 +760,7 @@ If ``true``, the label underlines meta tags such as ``[url]{text}[/url]``. These
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **progress_bar_delay** = ``1000``
+:ref:`int<class_int>` **progress_bar_delay** = ``1000`` :ref:`🔗<class_RichTextLabel_property_progress_bar_delay>`
 
 .. rst-class:: classref-property-setget
 
@@ -777,7 +779,7 @@ The delay after which the loading progress bar is displayed, in milliseconds. Se
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **scroll_active** = ``true``
+:ref:`bool<class_bool>` **scroll_active** = ``true`` :ref:`🔗<class_RichTextLabel_property_scroll_active>`
 
 .. rst-class:: classref-property-setget
 
@@ -794,7 +796,7 @@ If ``true``, the scrollbar is visible. Setting this to ``false`` does not block 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **scroll_following** = ``false``
+:ref:`bool<class_bool>` **scroll_following** = ``false`` :ref:`🔗<class_RichTextLabel_property_scroll_following>`
 
 .. rst-class:: classref-property-setget
 
@@ -811,7 +813,7 @@ If ``true``, the window scrolls down to display new content automatically.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **selection_enabled** = ``false``
+:ref:`bool<class_bool>` **selection_enabled** = ``false`` :ref:`🔗<class_RichTextLabel_property_selection_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -828,7 +830,7 @@ If ``true``, the label allows text selection.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shortcut_keys_enabled** = ``true``
+:ref:`bool<class_bool>` **shortcut_keys_enabled** = ``true`` :ref:`🔗<class_RichTextLabel_property_shortcut_keys_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -845,7 +847,7 @@ If ``true``, shortcut keys for context menu items are enabled, even if the conte
 
 .. rst-class:: classref-property
 
-:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0``
+:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0`` :ref:`🔗<class_RichTextLabel_property_structured_text_bidi_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -862,7 +864,7 @@ Set BiDi algorithm override for the structured text.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]``
+:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]`` :ref:`🔗<class_RichTextLabel_property_structured_text_bidi_override_options>`
 
 .. rst-class:: classref-property-setget
 
@@ -879,7 +881,7 @@ Set additional options for BiDi override.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **tab_size** = ``4``
+:ref:`int<class_int>` **tab_size** = ``4`` :ref:`🔗<class_RichTextLabel_property_tab_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -896,7 +898,7 @@ The number of spaces associated with a single tab length. Does not affect ``\t``
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **text** = ``""``
+:ref:`String<class_String>` **text** = ``""`` :ref:`🔗<class_RichTextLabel_property_text>`
 
 .. rst-class:: classref-property-setget
 
@@ -915,7 +917,7 @@ The label's text in BBCode format. Is not representative of manual modifications
 
 .. rst-class:: classref-property
 
-:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0``
+:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0`` :ref:`🔗<class_RichTextLabel_property_text_direction>`
 
 .. rst-class:: classref-property-setget
 
@@ -932,7 +934,7 @@ Base text writing direction.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **threaded** = ``false``
+:ref:`bool<class_bool>` **threaded** = ``false`` :ref:`🔗<class_RichTextLabel_property_threaded>`
 
 .. rst-class:: classref-property-setget
 
@@ -949,7 +951,7 @@ If ``true``, text processing is done in a background thread.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **visible_characters** = ``-1``
+:ref:`int<class_int>` **visible_characters** = ``-1`` :ref:`🔗<class_RichTextLabel_property_visible_characters>`
 
 .. rst-class:: classref-property-setget
 
@@ -968,7 +970,7 @@ The number of characters to display. If set to ``-1``, all characters are displa
 
 .. rst-class:: classref-property
 
-:ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` **visible_characters_behavior** = ``0``
+:ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` **visible_characters_behavior** = ``0`` :ref:`🔗<class_RichTextLabel_property_visible_characters_behavior>`
 
 .. rst-class:: classref-property-setget
 
@@ -985,7 +987,7 @@ Sets the clipping behavior when :ref:`visible_characters<class_RichTextLabel_pro
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **visible_ratio** = ``1.0``
+:ref:`float<class_float>` **visible_ratio** = ``1.0`` :ref:`🔗<class_RichTextLabel_property_visible_ratio>`
 
 .. rst-class:: classref-property-setget
 
@@ -1009,7 +1011,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **add_image**\ (\ image\: :ref:`Texture2D<class_Texture2D>`, width\: :ref:`int<class_int>` = 0, height\: :ref:`int<class_int>` = 0, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), key\: :ref:`Variant<class_Variant>` = null, pad\: :ref:`bool<class_bool>` = false, tooltip\: :ref:`String<class_String>` = "", size_in_percent\: :ref:`bool<class_bool>` = false\ )
+|void| **add_image**\ (\ image\: :ref:`Texture2D<class_Texture2D>`, width\: :ref:`int<class_int>` = 0, height\: :ref:`int<class_int>` = 0, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), key\: :ref:`Variant<class_Variant>` = null, pad\: :ref:`bool<class_bool>` = false, tooltip\: :ref:`String<class_String>` = "", size_in_percent\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RichTextLabel_method_add_image>`
 
 Adds an image's opening and closing tags to the tag stack, optionally providing a ``width`` and ``height`` to resize the image, a ``color`` to tint the image and a ``region`` to only use parts of the image.
 
@@ -1031,7 +1033,7 @@ If ``size_in_percent`` is set, ``width`` and ``height`` values are percentages o
 
 .. rst-class:: classref-method
 
-|void| **add_text**\ (\ text\: :ref:`String<class_String>`\ )
+|void| **add_text**\ (\ text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RichTextLabel_method_add_text>`
 
 Adds raw non-BBCode-parsed text to the tag stack.
 
@@ -1043,7 +1045,7 @@ Adds raw non-BBCode-parsed text to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **append_text**\ (\ bbcode\: :ref:`String<class_String>`\ )
+|void| **append_text**\ (\ bbcode\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RichTextLabel_method_append_text>`
 
 Parses ``bbcode`` and adds tags to the tag stack as needed.
 
@@ -1057,7 +1059,7 @@ Parses ``bbcode`` and adds tags to the tag stack as needed.
 
 .. rst-class:: classref-method
 
-|void| **clear**\ (\ )
+|void| **clear**\ (\ ) :ref:`🔗<class_RichTextLabel_method_clear>`
 
 Clears the tag stack, causing the label to display nothing.
 
@@ -1071,7 +1073,7 @@ Clears the tag stack, causing the label to display nothing.
 
 .. rst-class:: classref-method
 
-|void| **deselect**\ (\ )
+|void| **deselect**\ (\ ) :ref:`🔗<class_RichTextLabel_method_deselect>`
 
 Clears the current selection.
 
@@ -1083,7 +1085,7 @@ Clears the current selection.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_character_line**\ (\ character\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **get_character_line**\ (\ character\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_get_character_line>`
 
 Returns the line number of the character position provided. Line and character numbers are both zero-indexed.
 
@@ -1097,7 +1099,7 @@ Returns the line number of the character position provided. Line and character n
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_character_paragraph**\ (\ character\: :ref:`int<class_int>`\ )
+:ref:`int<class_int>` **get_character_paragraph**\ (\ character\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_get_character_paragraph>`
 
 Returns the paragraph number of the character position provided. Paragraph and character numbers are both zero-indexed.
 
@@ -1111,7 +1113,7 @@ Returns the paragraph number of the character position provided. Paragraph and c
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_content_height**\ (\ ) |const|
+:ref:`int<class_int>` **get_content_height**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_content_height>`
 
 Returns the height of the content.
 
@@ -1125,7 +1127,7 @@ Returns the height of the content.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_content_width**\ (\ ) |const|
+:ref:`int<class_int>` **get_content_width**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_content_width>`
 
 Returns the width of the content.
 
@@ -1139,7 +1141,7 @@ Returns the width of the content.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_line_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_line_count**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_line_count>`
 
 Returns the total number of lines in the text. Wrapped text is counted as multiple lines.
 
@@ -1153,7 +1155,7 @@ Returns the total number of lines in the text. Wrapped text is counted as multip
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_line_offset**\ (\ line\: :ref:`int<class_int>`\ )
+:ref:`float<class_float>` **get_line_offset**\ (\ line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_get_line_offset>`
 
 Returns the vertical offset of the line found at the provided index.
 
@@ -1167,7 +1169,7 @@ Returns the vertical offset of the line found at the provided index.
 
 .. rst-class:: classref-method
 
-:ref:`PopupMenu<class_PopupMenu>` **get_menu**\ (\ ) |const|
+:ref:`PopupMenu<class_PopupMenu>` **get_menu**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_menu>`
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` of this **RichTextLabel**. By default, this menu is displayed when right-clicking on the **RichTextLabel**.
 
@@ -1226,7 +1228,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_paragraph_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_paragraph_count**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_paragraph_count>`
 
 Returns the total number of paragraphs (newlines or ``p`` tags in the tag stack's text tags). Considers wrapped text as one paragraph.
 
@@ -1238,7 +1240,7 @@ Returns the total number of paragraphs (newlines or ``p`` tags in the tag stack'
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_paragraph_offset**\ (\ paragraph\: :ref:`int<class_int>`\ )
+:ref:`float<class_float>` **get_paragraph_offset**\ (\ paragraph\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_get_paragraph_offset>`
 
 Returns the vertical offset of the paragraph found at the provided index.
 
@@ -1252,7 +1254,7 @@ Returns the vertical offset of the paragraph found at the provided index.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_parsed_text**\ (\ ) |const|
+:ref:`String<class_String>` **get_parsed_text**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_parsed_text>`
 
 Returns the text without BBCode mark-up.
 
@@ -1264,7 +1266,7 @@ Returns the text without BBCode mark-up.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_selected_text**\ (\ ) |const|
+:ref:`String<class_String>` **get_selected_text**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_selected_text>`
 
 Returns the current selection text. Does not include BBCodes.
 
@@ -1276,7 +1278,7 @@ Returns the current selection text. Does not include BBCodes.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_from**\ (\ ) |const|
+:ref:`int<class_int>` **get_selection_from**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_selection_from>`
 
 Returns the current selection first character index if a selection is active, ``-1`` otherwise. Does not include BBCodes.
 
@@ -1288,7 +1290,7 @@ Returns the current selection first character index if a selection is active, ``
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_selection_to**\ (\ ) |const|
+:ref:`int<class_int>` **get_selection_to**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_selection_to>`
 
 Returns the current selection last character index if a selection is active, ``-1`` otherwise. Does not include BBCodes.
 
@@ -1300,7 +1302,7 @@ Returns the current selection last character index if a selection is active, ``-
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_total_character_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_total_character_count**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_total_character_count>`
 
 Returns the total number of characters from text tags. Does not include BBCodes.
 
@@ -1312,7 +1314,7 @@ Returns the total number of characters from text tags. Does not include BBCodes.
 
 .. rst-class:: classref-method
 
-:ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar**\ (\ )
+:ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar**\ (\ ) :ref:`🔗<class_RichTextLabel_method_get_v_scroll_bar>`
 
 Returns the vertical scrollbar.
 
@@ -1326,7 +1328,7 @@ Returns the vertical scrollbar.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_visible_line_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_visible_line_count**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_visible_line_count>`
 
 Returns the number of visible lines.
 
@@ -1340,7 +1342,7 @@ Returns the number of visible lines.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_visible_paragraph_count**\ (\ ) |const|
+:ref:`int<class_int>` **get_visible_paragraph_count**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_get_visible_paragraph_count>`
 
 Returns the number of visible paragraphs. A paragraph is considered visible if at least one of its lines is visible.
 
@@ -1354,7 +1356,7 @@ Returns the number of visible paragraphs. A paragraph is considered visible if a
 
 .. rst-class:: classref-method
 
-|void| **install_effect**\ (\ effect\: :ref:`Variant<class_Variant>`\ )
+|void| **install_effect**\ (\ effect\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_RichTextLabel_method_install_effect>`
 
 Installs a custom effect. This can also be done in the RichTextLabel inspector using the :ref:`custom_effects<class_RichTextLabel_property_custom_effects>` property. ``effect`` should be a valid :ref:`RichTextEffect<class_RichTextEffect>`.
 
@@ -1387,11 +1389,23 @@ Registering the above effect in RichTextLabel from script:
 
 ----
 
+.. _class_RichTextLabel_method_invalidate_paragraph:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **invalidate_paragraph**\ (\ paragraph\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_invalidate_paragraph>`
+
+Invalidates ``paragraph`` and all subsequent paragraphs cache.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RichTextLabel_method_is_menu_visible:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_menu_visible**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_menu_visible**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_is_menu_visible>`
 
 Returns whether the menu is visible. Use this instead of ``get_menu().visible`` to improve performance (so the creation of the menu is avoided).
 
@@ -1403,7 +1417,7 @@ Returns whether the menu is visible. Use this instead of ``get_menu().visible`` 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_ready**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_ready**\ (\ ) |const| :ref:`🔗<class_RichTextLabel_method_is_ready>`
 
 If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, returns ``true`` if the background thread has finished text processing, otherwise always return ``true``.
 
@@ -1415,7 +1429,7 @@ If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, returns ``
 
 .. rst-class:: classref-method
 
-|void| **menu_option**\ (\ option\: :ref:`int<class_int>`\ )
+|void| **menu_option**\ (\ option\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_menu_option>`
 
 Executes a given action as defined in the :ref:`MenuItems<enum_RichTextLabel_MenuItems>` enum.
 
@@ -1427,7 +1441,7 @@ Executes a given action as defined in the :ref:`MenuItems<enum_RichTextLabel_Men
 
 .. rst-class:: classref-method
 
-|void| **newline**\ (\ )
+|void| **newline**\ (\ ) :ref:`🔗<class_RichTextLabel_method_newline>`
 
 Adds a newline tag to the tag stack.
 
@@ -1439,7 +1453,7 @@ Adds a newline tag to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **parse_bbcode**\ (\ bbcode\: :ref:`String<class_String>`\ )
+|void| **parse_bbcode**\ (\ bbcode\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RichTextLabel_method_parse_bbcode>`
 
 The assignment version of :ref:`append_text<class_RichTextLabel_method_append_text>`. Clears the tag stack and inserts the new content.
 
@@ -1451,7 +1465,7 @@ The assignment version of :ref:`append_text<class_RichTextLabel_method_append_te
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **parse_expressions_for_values**\ (\ expressions\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+:ref:`Dictionary<class_Dictionary>` **parse_expressions_for_values**\ (\ expressions\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_RichTextLabel_method_parse_expressions_for_values>`
 
 Parses BBCode parameter ``expressions`` into a dictionary.
 
@@ -1463,7 +1477,7 @@ Parses BBCode parameter ``expressions`` into a dictionary.
 
 .. rst-class:: classref-method
 
-|void| **pop**\ (\ )
+|void| **pop**\ (\ ) :ref:`🔗<class_RichTextLabel_method_pop>`
 
 Terminates the current tag. Use after ``push_*`` methods to close BBCodes manually. Does not need to follow ``add_*`` methods.
 
@@ -1475,7 +1489,7 @@ Terminates the current tag. Use after ``push_*`` methods to close BBCodes manual
 
 .. rst-class:: classref-method
 
-|void| **pop_all**\ (\ )
+|void| **pop_all**\ (\ ) :ref:`🔗<class_RichTextLabel_method_pop_all>`
 
 Terminates all tags opened by ``push_*`` methods.
 
@@ -1487,7 +1501,7 @@ Terminates all tags opened by ``push_*`` methods.
 
 .. rst-class:: classref-method
 
-|void| **pop_context**\ (\ )
+|void| **pop_context**\ (\ ) :ref:`🔗<class_RichTextLabel_method_pop_context>`
 
 Terminates tags opened after the last :ref:`push_context<class_RichTextLabel_method_push_context>` call (including context marker), or all tags if there's no context marker on the stack.
 
@@ -1499,7 +1513,7 @@ Terminates tags opened after the last :ref:`push_context<class_RichTextLabel_met
 
 .. rst-class:: classref-method
 
-|void| **push_bgcolor**\ (\ bgcolor\: :ref:`Color<class_Color>`\ )
+|void| **push_bgcolor**\ (\ bgcolor\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RichTextLabel_method_push_bgcolor>`
 
 Adds a ``[bgcolor]`` tag to the tag stack.
 
@@ -1511,7 +1525,7 @@ Adds a ``[bgcolor]`` tag to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **push_bold**\ (\ )
+|void| **push_bold**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_bold>`
 
 Adds a ``[font]`` tag with a bold font to the tag stack. This is the same as adding a ``[b]`` tag if not currently in a ``[i]`` tag.
 
@@ -1523,7 +1537,7 @@ Adds a ``[font]`` tag with a bold font to the tag stack. This is the same as add
 
 .. rst-class:: classref-method
 
-|void| **push_bold_italics**\ (\ )
+|void| **push_bold_italics**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_bold_italics>`
 
 Adds a ``[font]`` tag with a bold italics font to the tag stack.
 
@@ -1535,9 +1549,9 @@ Adds a ``[font]`` tag with a bold italics font to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **push_cell**\ (\ )
+|void| **push_cell**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_cell>`
 
-Adds a ``[cell]`` tag to the tag stack. Must be inside a ``[table]`` tag. See :ref:`push_table<class_RichTextLabel_method_push_table>` for details.
+Adds a ``[cell]`` tag to the tag stack. Must be inside a ``[table]`` tag. See :ref:`push_table<class_RichTextLabel_method_push_table>` for details. Use :ref:`set_table_column_expand<class_RichTextLabel_method_set_table_column_expand>` to set column expansion ratio, :ref:`set_cell_border_color<class_RichTextLabel_method_set_cell_border_color>` to set cell border, :ref:`set_cell_row_background_color<class_RichTextLabel_method_set_cell_row_background_color>` to set cell background, :ref:`set_cell_size_override<class_RichTextLabel_method_set_cell_size_override>` to override cell size, and :ref:`set_cell_padding<class_RichTextLabel_method_set_cell_padding>` to set padding.
 
 .. rst-class:: classref-item-separator
 
@@ -1547,7 +1561,7 @@ Adds a ``[cell]`` tag to the tag stack. Must be inside a ``[table]`` tag. See :r
 
 .. rst-class:: classref-method
 
-|void| **push_color**\ (\ color\: :ref:`Color<class_Color>`\ )
+|void| **push_color**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RichTextLabel_method_push_color>`
 
 Adds a ``[color]`` tag to the tag stack.
 
@@ -1559,7 +1573,7 @@ Adds a ``[color]`` tag to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **push_context**\ (\ )
+|void| **push_context**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_context>`
 
 Adds a context marker to the tag stack. See :ref:`pop_context<class_RichTextLabel_method_pop_context>`.
 
@@ -1571,7 +1585,7 @@ Adds a context marker to the tag stack. See :ref:`pop_context<class_RichTextLabe
 
 .. rst-class:: classref-method
 
-|void| **push_customfx**\ (\ effect\: :ref:`RichTextEffect<class_RichTextEffect>`, env\: :ref:`Dictionary<class_Dictionary>`\ )
+|void| **push_customfx**\ (\ effect\: :ref:`RichTextEffect<class_RichTextEffect>`, env\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_RichTextLabel_method_push_customfx>`
 
 Adds a custom effect tag to the tag stack. The effect does not need to be in :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`. The environment is directly passed to the effect.
 
@@ -1583,7 +1597,7 @@ Adds a custom effect tag to the tag stack. The effect does not need to be in :re
 
 .. rst-class:: classref-method
 
-|void| **push_dropcap**\ (\ string\: :ref:`String<class_String>`, font\: :ref:`Font<class_Font>`, size\: :ref:`int<class_int>`, dropcap_margins\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), outline_size\: :ref:`int<class_int>` = 0, outline_color\: :ref:`Color<class_Color>` = Color(0, 0, 0, 0)\ )
+|void| **push_dropcap**\ (\ string\: :ref:`String<class_String>`, font\: :ref:`Font<class_Font>`, size\: :ref:`int<class_int>`, dropcap_margins\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), outline_size\: :ref:`int<class_int>` = 0, outline_color\: :ref:`Color<class_Color>` = Color(0, 0, 0, 0)\ ) :ref:`🔗<class_RichTextLabel_method_push_dropcap>`
 
 Adds a ``[dropcap]`` tag to the tag stack. Drop cap (dropped capital) is a decorative element at the beginning of a paragraph that is larger than the rest of the text.
 
@@ -1595,7 +1609,7 @@ Adds a ``[dropcap]`` tag to the tag stack. Drop cap (dropped capital) is a decor
 
 .. rst-class:: classref-method
 
-|void| **push_fgcolor**\ (\ fgcolor\: :ref:`Color<class_Color>`\ )
+|void| **push_fgcolor**\ (\ fgcolor\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RichTextLabel_method_push_fgcolor>`
 
 Adds a ``[fgcolor]`` tag to the tag stack.
 
@@ -1607,7 +1621,7 @@ Adds a ``[fgcolor]`` tag to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **push_font**\ (\ font\: :ref:`Font<class_Font>`, font_size\: :ref:`int<class_int>` = 0\ )
+|void| **push_font**\ (\ font\: :ref:`Font<class_Font>`, font_size\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RichTextLabel_method_push_font>`
 
 Adds a ``[font]`` tag to the tag stack. Overrides default fonts for its duration.
 
@@ -1621,7 +1635,7 @@ Passing ``0`` to ``font_size`` will use the existing default font size.
 
 .. rst-class:: classref-method
 
-|void| **push_font_size**\ (\ font_size\: :ref:`int<class_int>`\ )
+|void| **push_font_size**\ (\ font_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_push_font_size>`
 
 Adds a ``[font_size]`` tag to the tag stack. Overrides default font size for its duration.
 
@@ -1633,7 +1647,7 @@ Adds a ``[font_size]`` tag to the tag stack. Overrides default font size for its
 
 .. rst-class:: classref-method
 
-|void| **push_hint**\ (\ description\: :ref:`String<class_String>`\ )
+|void| **push_hint**\ (\ description\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RichTextLabel_method_push_hint>`
 
 Adds a ``[hint]`` tag to the tag stack. Same as BBCode ``[hint=something]{text}[/hint]``.
 
@@ -1645,7 +1659,7 @@ Adds a ``[hint]`` tag to the tag stack. Same as BBCode ``[hint=something]{text}[
 
 .. rst-class:: classref-method
 
-|void| **push_indent**\ (\ level\: :ref:`int<class_int>`\ )
+|void| **push_indent**\ (\ level\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_push_indent>`
 
 Adds an ``[indent]`` tag to the tag stack. Multiplies ``level`` by current :ref:`tab_size<class_RichTextLabel_property_tab_size>` to determine new margin length.
 
@@ -1657,7 +1671,7 @@ Adds an ``[indent]`` tag to the tag stack. Multiplies ``level`` by current :ref:
 
 .. rst-class:: classref-method
 
-|void| **push_italics**\ (\ )
+|void| **push_italics**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_italics>`
 
 Adds a ``[font]`` tag with an italics font to the tag stack. This is the same as adding an ``[i]`` tag if not currently in a ``[b]`` tag.
 
@@ -1669,7 +1683,7 @@ Adds a ``[font]`` tag with an italics font to the tag stack. This is the same as
 
 .. rst-class:: classref-method
 
-|void| **push_language**\ (\ language\: :ref:`String<class_String>`\ )
+|void| **push_language**\ (\ language\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RichTextLabel_method_push_language>`
 
 Adds language code used for text shaping algorithm and Open-Type font features.
 
@@ -1681,7 +1695,7 @@ Adds language code used for text shaping algorithm and Open-Type font features.
 
 .. rst-class:: classref-method
 
-|void| **push_list**\ (\ level\: :ref:`int<class_int>`, type\: :ref:`ListType<enum_RichTextLabel_ListType>`, capitalize\: :ref:`bool<class_bool>`, bullet\: :ref:`String<class_String>` = "•"\ )
+|void| **push_list**\ (\ level\: :ref:`int<class_int>`, type\: :ref:`ListType<enum_RichTextLabel_ListType>`, capitalize\: :ref:`bool<class_bool>`, bullet\: :ref:`String<class_String>` = "•"\ ) :ref:`🔗<class_RichTextLabel_method_push_list>`
 
 Adds ``[ol]`` or ``[ul]`` tag to the tag stack. Multiplies ``level`` by current :ref:`tab_size<class_RichTextLabel_property_tab_size>` to determine new margin length.
 
@@ -1693,7 +1707,7 @@ Adds ``[ol]`` or ``[ul]`` tag to the tag stack. Multiplies ``level`` by current 
 
 .. rst-class:: classref-method
 
-|void| **push_meta**\ (\ data\: :ref:`Variant<class_Variant>`, underline_mode\: :ref:`MetaUnderline<enum_RichTextLabel_MetaUnderline>` = 1\ )
+|void| **push_meta**\ (\ data\: :ref:`Variant<class_Variant>`, underline_mode\: :ref:`MetaUnderline<enum_RichTextLabel_MetaUnderline>` = 1\ ) :ref:`🔗<class_RichTextLabel_method_push_meta>`
 
 Adds a meta tag to the tag stack. Similar to the BBCode ``[url=something]{text}[/url]``, but supports non-:ref:`String<class_String>` metadata types.
 
@@ -1709,7 +1723,7 @@ If :ref:`meta_underlined<class_RichTextLabel_property_meta_underlined>` is ``tru
 
 .. rst-class:: classref-method
 
-|void| **push_mono**\ (\ )
+|void| **push_mono**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_mono>`
 
 Adds a ``[font]`` tag with a monospace font to the tag stack.
 
@@ -1721,7 +1735,7 @@ Adds a ``[font]`` tag with a monospace font to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **push_normal**\ (\ )
+|void| **push_normal**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_normal>`
 
 Adds a ``[font]`` tag with a normal font to the tag stack.
 
@@ -1733,7 +1747,7 @@ Adds a ``[font]`` tag with a normal font to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **push_outline_color**\ (\ color\: :ref:`Color<class_Color>`\ )
+|void| **push_outline_color**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RichTextLabel_method_push_outline_color>`
 
 Adds a ``[outline_color]`` tag to the tag stack. Adds text outline for its duration.
 
@@ -1745,7 +1759,7 @@ Adds a ``[outline_color]`` tag to the tag stack. Adds text outline for its durat
 
 .. rst-class:: classref-method
 
-|void| **push_outline_size**\ (\ outline_size\: :ref:`int<class_int>`\ )
+|void| **push_outline_size**\ (\ outline_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_push_outline_size>`
 
 Adds a ``[outline_size]`` tag to the tag stack. Overrides default text outline size for its duration.
 
@@ -1757,7 +1771,7 @@ Adds a ``[outline_size]`` tag to the tag stack. Overrides default text outline s
 
 .. rst-class:: classref-method
 
-|void| **push_paragraph**\ (\ alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`, base_direction\: :ref:`TextDirection<enum_Control_TextDirection>` = 0, language\: :ref:`String<class_String>` = "", st_parser\: :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` = 0, justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 163, tab_stops\: :ref:`PackedFloat32Array<class_PackedFloat32Array>` = PackedFloat32Array()\ )
+|void| **push_paragraph**\ (\ alignment\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`, base_direction\: :ref:`TextDirection<enum_Control_TextDirection>` = 0, language\: :ref:`String<class_String>` = "", st_parser\: :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` = 0, justification_flags\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] = 163, tab_stops\: :ref:`PackedFloat32Array<class_PackedFloat32Array>` = PackedFloat32Array()\ ) :ref:`🔗<class_RichTextLabel_method_push_paragraph>`
 
 Adds a ``[p]`` tag to the tag stack.
 
@@ -1769,7 +1783,7 @@ Adds a ``[p]`` tag to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **push_strikethrough**\ (\ )
+|void| **push_strikethrough**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_strikethrough>`
 
 Adds a ``[s]`` tag to the tag stack.
 
@@ -1781,9 +1795,9 @@ Adds a ``[s]`` tag to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **push_table**\ (\ columns\: :ref:`int<class_int>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 0, align_to_row\: :ref:`int<class_int>` = -1\ )
+|void| **push_table**\ (\ columns\: :ref:`int<class_int>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 0, align_to_row\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_RichTextLabel_method_push_table>`
 
-Adds a ``[table=columns,inline_align]`` tag to the tag stack.
+Adds a ``[table=columns,inline_align]`` tag to the tag stack. Use :ref:`set_table_column_expand<class_RichTextLabel_method_set_table_column_expand>` to set column expansion ratio. Use :ref:`push_cell<class_RichTextLabel_method_push_cell>` to add cells.
 
 .. rst-class:: classref-item-separator
 
@@ -1793,7 +1807,7 @@ Adds a ``[table=columns,inline_align]`` tag to the tag stack.
 
 .. rst-class:: classref-method
 
-|void| **push_underline**\ (\ )
+|void| **push_underline**\ (\ ) :ref:`🔗<class_RichTextLabel_method_push_underline>`
 
 Adds a ``[u]`` tag to the tag stack.
 
@@ -1805,11 +1819,13 @@ Adds a ``[u]`` tag to the tag stack.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **remove_paragraph**\ (\ paragraph\: :ref:`int<class_int>`\ )
+:ref:`bool<class_bool>` **remove_paragraph**\ (\ paragraph\: :ref:`int<class_int>`, no_invalidate\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RichTextLabel_method_remove_paragraph>`
 
 Removes a paragraph of content from the label. Returns ``true`` if the paragraph exists.
 
 The ``paragraph`` argument is the index of the paragraph to remove, it can take values in the interval ``[0, get_paragraph_count() - 1]``.
+
+If ``no_invalidate`` is set to ``true``, cache for the subsequent paragraphs is not invalidated. Use it for faster updates if deleted paragraph is fully self-contained (have no unclosed tags), or this call is part of the complex edit operation and :ref:`invalidate_paragraph<class_RichTextLabel_method_invalidate_paragraph>` will be called at the end of operation.
 
 .. rst-class:: classref-item-separator
 
@@ -1819,7 +1835,7 @@ The ``paragraph`` argument is the index of the paragraph to remove, it can take 
 
 .. rst-class:: classref-method
 
-|void| **scroll_to_line**\ (\ line\: :ref:`int<class_int>`\ )
+|void| **scroll_to_line**\ (\ line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_scroll_to_line>`
 
 Scrolls the window's top line to match ``line``.
 
@@ -1831,7 +1847,7 @@ Scrolls the window's top line to match ``line``.
 
 .. rst-class:: classref-method
 
-|void| **scroll_to_paragraph**\ (\ paragraph\: :ref:`int<class_int>`\ )
+|void| **scroll_to_paragraph**\ (\ paragraph\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RichTextLabel_method_scroll_to_paragraph>`
 
 Scrolls the window's top line to match first line of the ``paragraph``.
 
@@ -1843,7 +1859,7 @@ Scrolls the window's top line to match first line of the ``paragraph``.
 
 .. rst-class:: classref-method
 
-|void| **scroll_to_selection**\ (\ )
+|void| **scroll_to_selection**\ (\ ) :ref:`🔗<class_RichTextLabel_method_scroll_to_selection>`
 
 Scrolls to the beginning of the current selection.
 
@@ -1855,7 +1871,7 @@ Scrolls to the beginning of the current selection.
 
 .. rst-class:: classref-method
 
-|void| **select_all**\ (\ )
+|void| **select_all**\ (\ ) :ref:`🔗<class_RichTextLabel_method_select_all>`
 
 Select all the text.
 
@@ -1869,7 +1885,7 @@ If :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>` is `
 
 .. rst-class:: classref-method
 
-|void| **set_cell_border_color**\ (\ color\: :ref:`Color<class_Color>`\ )
+|void| **set_cell_border_color**\ (\ color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RichTextLabel_method_set_cell_border_color>`
 
 Sets color of a table cell border.
 
@@ -1881,7 +1897,7 @@ Sets color of a table cell border.
 
 .. rst-class:: classref-method
 
-|void| **set_cell_padding**\ (\ padding\: :ref:`Rect2<class_Rect2>`\ )
+|void| **set_cell_padding**\ (\ padding\: :ref:`Rect2<class_Rect2>`\ ) :ref:`🔗<class_RichTextLabel_method_set_cell_padding>`
 
 Sets inner padding of a table cell.
 
@@ -1893,7 +1909,7 @@ Sets inner padding of a table cell.
 
 .. rst-class:: classref-method
 
-|void| **set_cell_row_background_color**\ (\ odd_row_bg\: :ref:`Color<class_Color>`, even_row_bg\: :ref:`Color<class_Color>`\ )
+|void| **set_cell_row_background_color**\ (\ odd_row_bg\: :ref:`Color<class_Color>`, even_row_bg\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_RichTextLabel_method_set_cell_row_background_color>`
 
 Sets color of a table cell. Separate colors for alternating rows can be specified.
 
@@ -1905,7 +1921,7 @@ Sets color of a table cell. Separate colors for alternating rows can be specifie
 
 .. rst-class:: classref-method
 
-|void| **set_cell_size_override**\ (\ min_size\: :ref:`Vector2<class_Vector2>`, max_size\: :ref:`Vector2<class_Vector2>`\ )
+|void| **set_cell_size_override**\ (\ min_size\: :ref:`Vector2<class_Vector2>`, max_size\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_RichTextLabel_method_set_cell_size_override>`
 
 Sets minimum and maximum size overrides for a table cell.
 
@@ -1917,7 +1933,7 @@ Sets minimum and maximum size overrides for a table cell.
 
 .. rst-class:: classref-method
 
-|void| **set_table_column_expand**\ (\ column\: :ref:`int<class_int>`, expand\: :ref:`bool<class_bool>`, ratio\: :ref:`int<class_int>` = 1\ )
+|void| **set_table_column_expand**\ (\ column\: :ref:`int<class_int>`, expand\: :ref:`bool<class_bool>`, ratio\: :ref:`int<class_int>` = 1\ ) :ref:`🔗<class_RichTextLabel_method_set_table_column_expand>`
 
 Edits the selected column's expansion options. If ``expand`` is ``true``, the column expands in proportion to its expansion ratio versus the other columns' ratios.
 
@@ -1933,7 +1949,7 @@ If ``expand`` is ``false``, the column will not contribute to the total ratio.
 
 .. rst-class:: classref-method
 
-|void| **update_image**\ (\ key\: :ref:`Variant<class_Variant>`, mask\: |bitfield|\[:ref:`ImageUpdateMask<enum_RichTextLabel_ImageUpdateMask>`\], image\: :ref:`Texture2D<class_Texture2D>`, width\: :ref:`int<class_int>` = 0, height\: :ref:`int<class_int>` = 0, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), pad\: :ref:`bool<class_bool>` = false, tooltip\: :ref:`String<class_String>` = "", size_in_percent\: :ref:`bool<class_bool>` = false\ )
+|void| **update_image**\ (\ key\: :ref:`Variant<class_Variant>`, mask\: |bitfield|\[:ref:`ImageUpdateMask<enum_RichTextLabel_ImageUpdateMask>`\], image\: :ref:`Texture2D<class_Texture2D>`, width\: :ref:`int<class_int>` = 0, height\: :ref:`int<class_int>` = 0, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1), inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), pad\: :ref:`bool<class_bool>` = false, tooltip\: :ref:`String<class_String>` = "", size_in_percent\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_RichTextLabel_method_update_image>`
 
 Updates the existing images with the key ``key``. Only properties specified by ``mask`` bits are updated. See :ref:`add_image<class_RichTextLabel_method_add_image>`.
 
@@ -1950,7 +1966,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **default_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **default_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_RichTextLabel_theme_color_default_color>`
 
 The default text color.
 
@@ -1962,7 +1978,7 @@ The default text color.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_RichTextLabel_theme_color_font_outline_color>`
 
 The default tint of text outline.
 
@@ -1974,7 +1990,7 @@ The default tint of text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_selected_color** = ``Color(0, 0, 0, 0)``
+:ref:`Color<class_Color>` **font_selected_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_RichTextLabel_theme_color_font_selected_color>`
 
 The color of selected text, used when :ref:`selection_enabled<class_RichTextLabel_property_selection_enabled>` is ``true``. If equal to ``Color(0, 0, 0, 0)``, it will be ignored.
 
@@ -1986,7 +2002,7 @@ The color of selected text, used when :ref:`selection_enabled<class_RichTextLabe
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_shadow_color** = ``Color(0, 0, 0, 0)``
+:ref:`Color<class_Color>` **font_shadow_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_RichTextLabel_theme_color_font_shadow_color>`
 
 The color of the font's shadow.
 
@@ -1998,7 +2014,7 @@ The color of the font's shadow.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **selection_color** = ``Color(0.1, 0.1, 1, 0.8)``
+:ref:`Color<class_Color>` **selection_color** = ``Color(0.1, 0.1, 1, 0.8)`` :ref:`🔗<class_RichTextLabel_theme_color_selection_color>`
 
 The color of the selection box.
 
@@ -2010,7 +2026,7 @@ The color of the selection box.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **table_border** = ``Color(0, 0, 0, 0)``
+:ref:`Color<class_Color>` **table_border** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_RichTextLabel_theme_color_table_border>`
 
 The default cell border color.
 
@@ -2022,7 +2038,7 @@ The default cell border color.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **table_even_row_bg** = ``Color(0, 0, 0, 0)``
+:ref:`Color<class_Color>` **table_even_row_bg** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_RichTextLabel_theme_color_table_even_row_bg>`
 
 The default background color for even rows.
 
@@ -2034,7 +2050,7 @@ The default background color for even rows.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **table_odd_row_bg** = ``Color(0, 0, 0, 0)``
+:ref:`Color<class_Color>` **table_odd_row_bg** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_RichTextLabel_theme_color_table_odd_row_bg>`
 
 The default background color for odd rows.
 
@@ -2046,7 +2062,7 @@ The default background color for odd rows.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **line_separation** = ``0``
+:ref:`int<class_int>` **line_separation** = ``0`` :ref:`🔗<class_RichTextLabel_theme_constant_line_separation>`
 
 The vertical space between lines.
 
@@ -2058,7 +2074,7 @@ The vertical space between lines.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **outline_size** = ``0``
+:ref:`int<class_int>` **outline_size** = ``0`` :ref:`🔗<class_RichTextLabel_theme_constant_outline_size>`
 
 The size of the text outline.
 
@@ -2072,7 +2088,7 @@ The size of the text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **shadow_offset_x** = ``1``
+:ref:`int<class_int>` **shadow_offset_x** = ``1`` :ref:`🔗<class_RichTextLabel_theme_constant_shadow_offset_x>`
 
 The horizontal offset of the font's shadow.
 
@@ -2084,7 +2100,7 @@ The horizontal offset of the font's shadow.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **shadow_offset_y** = ``1``
+:ref:`int<class_int>` **shadow_offset_y** = ``1`` :ref:`🔗<class_RichTextLabel_theme_constant_shadow_offset_y>`
 
 The vertical offset of the font's shadow.
 
@@ -2096,7 +2112,7 @@ The vertical offset of the font's shadow.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **shadow_outline_size** = ``1``
+:ref:`int<class_int>` **shadow_outline_size** = ``1`` :ref:`🔗<class_RichTextLabel_theme_constant_shadow_outline_size>`
 
 The size of the shadow outline.
 
@@ -2108,7 +2124,7 @@ The size of the shadow outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **table_h_separation** = ``3``
+:ref:`int<class_int>` **table_h_separation** = ``3`` :ref:`🔗<class_RichTextLabel_theme_constant_table_h_separation>`
 
 The horizontal separation of elements in a table.
 
@@ -2120,7 +2136,7 @@ The horizontal separation of elements in a table.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **table_v_separation** = ``3``
+:ref:`int<class_int>` **table_v_separation** = ``3`` :ref:`🔗<class_RichTextLabel_theme_constant_table_v_separation>`
 
 The vertical separation of elements in a table.
 
@@ -2132,7 +2148,7 @@ The vertical separation of elements in a table.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **text_highlight_h_padding** = ``3``
+:ref:`int<class_int>` **text_highlight_h_padding** = ``3`` :ref:`🔗<class_RichTextLabel_theme_constant_text_highlight_h_padding>`
 
 The horizontal padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]`` tags. This does not affect the appearance of text selection.
 
@@ -2144,7 +2160,7 @@ The horizontal padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]``
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **text_highlight_v_padding** = ``3``
+:ref:`int<class_int>` **text_highlight_v_padding** = ``3`` :ref:`🔗<class_RichTextLabel_theme_constant_text_highlight_v_padding>`
 
 The vertical padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]`` tags. This does not affect the appearance of text selection.
 
@@ -2156,7 +2172,7 @@ The vertical padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]`` t
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **bold_font**
+:ref:`Font<class_Font>` **bold_font** :ref:`🔗<class_RichTextLabel_theme_font_bold_font>`
 
 The font used for bold text.
 
@@ -2168,7 +2184,7 @@ The font used for bold text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **bold_italics_font**
+:ref:`Font<class_Font>` **bold_italics_font** :ref:`🔗<class_RichTextLabel_theme_font_bold_italics_font>`
 
 The font used for bold italics text.
 
@@ -2180,7 +2196,7 @@ The font used for bold italics text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **italics_font**
+:ref:`Font<class_Font>` **italics_font** :ref:`🔗<class_RichTextLabel_theme_font_italics_font>`
 
 The font used for italics text.
 
@@ -2192,7 +2208,7 @@ The font used for italics text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **mono_font**
+:ref:`Font<class_Font>` **mono_font** :ref:`🔗<class_RichTextLabel_theme_font_mono_font>`
 
 The font used for monospace text.
 
@@ -2204,7 +2220,7 @@ The font used for monospace text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` **normal_font**
+:ref:`Font<class_Font>` **normal_font** :ref:`🔗<class_RichTextLabel_theme_font_normal_font>`
 
 The default text font.
 
@@ -2216,7 +2232,7 @@ The default text font.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **bold_font_size**
+:ref:`int<class_int>` **bold_font_size** :ref:`🔗<class_RichTextLabel_theme_font_size_bold_font_size>`
 
 The font size used for bold text.
 
@@ -2228,7 +2244,7 @@ The font size used for bold text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **bold_italics_font_size**
+:ref:`int<class_int>` **bold_italics_font_size** :ref:`🔗<class_RichTextLabel_theme_font_size_bold_italics_font_size>`
 
 The font size used for bold italics text.
 
@@ -2240,7 +2256,7 @@ The font size used for bold italics text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **italics_font_size**
+:ref:`int<class_int>` **italics_font_size** :ref:`🔗<class_RichTextLabel_theme_font_size_italics_font_size>`
 
 The font size used for italics text.
 
@@ -2252,7 +2268,7 @@ The font size used for italics text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **mono_font_size**
+:ref:`int<class_int>` **mono_font_size** :ref:`🔗<class_RichTextLabel_theme_font_size_mono_font_size>`
 
 The font size used for monospace text.
 
@@ -2264,7 +2280,7 @@ The font size used for monospace text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **normal_font_size**
+:ref:`int<class_int>` **normal_font_size** :ref:`🔗<class_RichTextLabel_theme_font_size_normal_font_size>`
 
 The default text font size.
 
@@ -2276,7 +2292,7 @@ The default text font size.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **focus**
+:ref:`StyleBox<class_StyleBox>` **focus** :ref:`🔗<class_RichTextLabel_theme_style_focus>`
 
 The background used when the **RichTextLabel** is focused. The :ref:`focus<class_RichTextLabel_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
@@ -2288,7 +2304,7 @@ The background used when the **RichTextLabel** is focused. The :ref:`focus<class
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **normal**
+:ref:`StyleBox<class_StyleBox>` **normal** :ref:`🔗<class_RichTextLabel_theme_style_normal>`
 
 The normal background for the **RichTextLabel**.
 

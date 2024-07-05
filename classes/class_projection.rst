@@ -158,7 +158,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**PLANE_NEAR** = ``0``
+**PLANE_NEAR** = ``0`` :ref:`🔗<class_Projection_constant_PLANE_NEAR>`
 
 The index value of the projection's near clipping plane.
 
@@ -166,7 +166,7 @@ The index value of the projection's near clipping plane.
 
 .. rst-class:: classref-constant
 
-**PLANE_FAR** = ``1``
+**PLANE_FAR** = ``1`` :ref:`🔗<class_Projection_constant_PLANE_FAR>`
 
 The index value of the projection's far clipping plane.
 
@@ -174,7 +174,7 @@ The index value of the projection's far clipping plane.
 
 .. rst-class:: classref-constant
 
-**PLANE_LEFT** = ``2``
+**PLANE_LEFT** = ``2`` :ref:`🔗<class_Projection_constant_PLANE_LEFT>`
 
 The index value of the projection's left clipping plane.
 
@@ -182,7 +182,7 @@ The index value of the projection's left clipping plane.
 
 .. rst-class:: classref-constant
 
-**PLANE_TOP** = ``3``
+**PLANE_TOP** = ``3`` :ref:`🔗<class_Projection_constant_PLANE_TOP>`
 
 The index value of the projection's top clipping plane.
 
@@ -190,7 +190,7 @@ The index value of the projection's top clipping plane.
 
 .. rst-class:: classref-constant
 
-**PLANE_RIGHT** = ``4``
+**PLANE_RIGHT** = ``4`` :ref:`🔗<class_Projection_constant_PLANE_RIGHT>`
 
 The index value of the projection's right clipping plane.
 
@@ -198,7 +198,7 @@ The index value of the projection's right clipping plane.
 
 .. rst-class:: classref-constant
 
-**PLANE_BOTTOM** = ``5``
+**PLANE_BOTTOM** = ``5`` :ref:`🔗<class_Projection_constant_PLANE_BOTTOM>`
 
 The index value of the projection bottom clipping plane.
 
@@ -206,7 +206,7 @@ The index value of the projection bottom clipping plane.
 
 .. rst-class:: classref-constant
 
-**IDENTITY** = ``Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)``
+**IDENTITY** = ``Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)`` :ref:`🔗<class_Projection_constant_IDENTITY>`
 
 A **Projection** with no transformation defined. When applied to other data structures, no transformation is performed.
 
@@ -214,7 +214,7 @@ A **Projection** with no transformation defined. When applied to other data stru
 
 .. rst-class:: classref-constant
 
-**ZERO** = ``Projection(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)``
+**ZERO** = ``Projection(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)`` :ref:`🔗<class_Projection_constant_ZERO>`
 
 A **Projection** with all values initialized to 0. When applied to other data structures, they will be zeroed.
 
@@ -231,7 +231,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Vector4<class_Vector4>` **w** = ``Vector4(0, 0, 0, 1)``
+:ref:`Vector4<class_Vector4>` **w** = ``Vector4(0, 0, 0, 1)`` :ref:`🔗<class_Projection_property_w>`
 
 The projection matrix's W vector (column 3). Equivalent to array index ``3``.
 
@@ -243,7 +243,7 @@ The projection matrix's W vector (column 3). Equivalent to array index ``3``.
 
 .. rst-class:: classref-property
 
-:ref:`Vector4<class_Vector4>` **x** = ``Vector4(1, 0, 0, 0)``
+:ref:`Vector4<class_Vector4>` **x** = ``Vector4(1, 0, 0, 0)`` :ref:`🔗<class_Projection_property_x>`
 
 The projection matrix's X vector (column 0). Equivalent to array index ``0``.
 
@@ -255,7 +255,7 @@ The projection matrix's X vector (column 0). Equivalent to array index ``0``.
 
 .. rst-class:: classref-property
 
-:ref:`Vector4<class_Vector4>` **y** = ``Vector4(0, 1, 0, 0)``
+:ref:`Vector4<class_Vector4>` **y** = ``Vector4(0, 1, 0, 0)`` :ref:`🔗<class_Projection_property_y>`
 
 The projection matrix's Y vector (column 1). Equivalent to array index ``1``.
 
@@ -267,7 +267,7 @@ The projection matrix's Y vector (column 1). Equivalent to array index ``1``.
 
 .. rst-class:: classref-property
 
-:ref:`Vector4<class_Vector4>` **z** = ``Vector4(0, 0, 1, 0)``
+:ref:`Vector4<class_Vector4>` **z** = ``Vector4(0, 0, 1, 0)`` :ref:`🔗<class_Projection_property_z>`
 
 The projection matrix's Z vector (column 2). Equivalent to array index ``2``.
 
@@ -284,7 +284,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`Projection<class_Projection>` **Projection**\ (\ )
+:ref:`Projection<class_Projection>` **Projection**\ (\ ) :ref:`🔗<class_Projection_constructor_Projection>`
 
 Constructs a default-initialized **Projection** set to :ref:`IDENTITY<class_Projection_constant_IDENTITY>`.
 
@@ -331,7 +331,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **create_depth_correction**\ (\ flip_y\: :ref:`bool<class_bool>`\ ) |static|
+:ref:`Projection<class_Projection>` **create_depth_correction**\ (\ flip_y\: :ref:`bool<class_bool>`\ ) |static| :ref:`🔗<class_Projection_method_create_depth_correction>`
 
 Creates a new **Projection** that projects positions from a depth range of ``-1`` to ``1`` to one that ranges from ``0`` to ``1``, and flips the projected positions vertically, according to ``flip_y``.
 
@@ -343,7 +343,7 @@ Creates a new **Projection** that projects positions from a depth range of ``-1`
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **create_fit_aabb**\ (\ aabb\: :ref:`AABB<class_AABB>`\ ) |static|
+:ref:`Projection<class_Projection>` **create_fit_aabb**\ (\ aabb\: :ref:`AABB<class_AABB>`\ ) |static| :ref:`🔗<class_Projection_method_create_fit_aabb>`
 
 Creates a new **Projection** that scales a given projection to fit around a given :ref:`AABB<class_AABB>` in projection space.
 
@@ -355,7 +355,7 @@ Creates a new **Projection** that scales a given projection to fit around a give
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **create_for_hmd**\ (\ eye\: :ref:`int<class_int>`, aspect\: :ref:`float<class_float>`, intraocular_dist\: :ref:`float<class_float>`, display_width\: :ref:`float<class_float>`, display_to_lens\: :ref:`float<class_float>`, oversample\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`\ ) |static|
+:ref:`Projection<class_Projection>` **create_for_hmd**\ (\ eye\: :ref:`int<class_int>`, aspect\: :ref:`float<class_float>`, intraocular_dist\: :ref:`float<class_float>`, display_width\: :ref:`float<class_float>`, display_to_lens\: :ref:`float<class_float>`, oversample\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`\ ) |static| :ref:`🔗<class_Projection_method_create_for_hmd>`
 
 Creates a new **Projection** for projecting positions onto a head-mounted display with the given X:Y aspect ratio, distance between eyes, display width, distance to lens, oversampling factor, and depth clipping planes.
 
@@ -369,7 +369,7 @@ Creates a new **Projection** for projecting positions onto a head-mounted displa
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **create_frustum**\ (\ left\: :ref:`float<class_float>`, right\: :ref:`float<class_float>`, bottom\: :ref:`float<class_float>`, top\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`\ ) |static|
+:ref:`Projection<class_Projection>` **create_frustum**\ (\ left\: :ref:`float<class_float>`, right\: :ref:`float<class_float>`, bottom\: :ref:`float<class_float>`, top\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`\ ) |static| :ref:`🔗<class_Projection_method_create_frustum>`
 
 Creates a new **Projection** that projects positions in a frustum with the given clipping planes.
 
@@ -381,7 +381,7 @@ Creates a new **Projection** that projects positions in a frustum with the given
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **create_frustum_aspect**\ (\ size\: :ref:`float<class_float>`, aspect\: :ref:`float<class_float>`, offset\: :ref:`Vector2<class_Vector2>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`, flip_fov\: :ref:`bool<class_bool>` = false\ ) |static|
+:ref:`Projection<class_Projection>` **create_frustum_aspect**\ (\ size\: :ref:`float<class_float>`, aspect\: :ref:`float<class_float>`, offset\: :ref:`Vector2<class_Vector2>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`, flip_fov\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_Projection_method_create_frustum_aspect>`
 
 Creates a new **Projection** that projects positions in a frustum with the given size, X:Y aspect ratio, offset, and clipping planes.
 
@@ -395,7 +395,7 @@ Creates a new **Projection** that projects positions in a frustum with the given
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **create_light_atlas_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |static|
+:ref:`Projection<class_Projection>` **create_light_atlas_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |static| :ref:`🔗<class_Projection_method_create_light_atlas_rect>`
 
 Creates a new **Projection** that projects positions into the given :ref:`Rect2<class_Rect2>`.
 
@@ -407,7 +407,7 @@ Creates a new **Projection** that projects positions into the given :ref:`Rect2<
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **create_orthogonal**\ (\ left\: :ref:`float<class_float>`, right\: :ref:`float<class_float>`, bottom\: :ref:`float<class_float>`, top\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`\ ) |static|
+:ref:`Projection<class_Projection>` **create_orthogonal**\ (\ left\: :ref:`float<class_float>`, right\: :ref:`float<class_float>`, bottom\: :ref:`float<class_float>`, top\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`\ ) |static| :ref:`🔗<class_Projection_method_create_orthogonal>`
 
 Creates a new **Projection** that projects positions using an orthogonal projection with the given clipping planes.
 
@@ -419,7 +419,7 @@ Creates a new **Projection** that projects positions using an orthogonal project
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **create_orthogonal_aspect**\ (\ size\: :ref:`float<class_float>`, aspect\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`, flip_fov\: :ref:`bool<class_bool>` = false\ ) |static|
+:ref:`Projection<class_Projection>` **create_orthogonal_aspect**\ (\ size\: :ref:`float<class_float>`, aspect\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`, flip_fov\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_Projection_method_create_orthogonal_aspect>`
 
 Creates a new **Projection** that projects positions using an orthogonal projection with the given size, X:Y aspect ratio, and clipping planes.
 
@@ -433,7 +433,7 @@ Creates a new **Projection** that projects positions using an orthogonal project
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **create_perspective**\ (\ fovy\: :ref:`float<class_float>`, aspect\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`, flip_fov\: :ref:`bool<class_bool>` = false\ ) |static|
+:ref:`Projection<class_Projection>` **create_perspective**\ (\ fovy\: :ref:`float<class_float>`, aspect\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`, flip_fov\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_Projection_method_create_perspective>`
 
 Creates a new **Projection** that projects positions using a perspective projection with the given Y-axis field of view (in degrees), X:Y aspect ratio, and clipping planes.
 
@@ -447,7 +447,7 @@ Creates a new **Projection** that projects positions using a perspective project
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **create_perspective_hmd**\ (\ fovy\: :ref:`float<class_float>`, aspect\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`, flip_fov\: :ref:`bool<class_bool>`, eye\: :ref:`int<class_int>`, intraocular_dist\: :ref:`float<class_float>`, convergence_dist\: :ref:`float<class_float>`\ ) |static|
+:ref:`Projection<class_Projection>` **create_perspective_hmd**\ (\ fovy\: :ref:`float<class_float>`, aspect\: :ref:`float<class_float>`, z_near\: :ref:`float<class_float>`, z_far\: :ref:`float<class_float>`, flip_fov\: :ref:`bool<class_bool>`, eye\: :ref:`int<class_int>`, intraocular_dist\: :ref:`float<class_float>`, convergence_dist\: :ref:`float<class_float>`\ ) |static| :ref:`🔗<class_Projection_method_create_perspective_hmd>`
 
 Creates a new **Projection** that projects positions using a perspective projection with the given Y-axis field of view (in degrees), X:Y aspect ratio, and clipping distances. The projection is adjusted for a head-mounted display with the given distance between eyes and distance to a point that can be focused on.
 
@@ -463,7 +463,7 @@ Creates a new **Projection** that projects positions using a perspective project
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **determinant**\ (\ ) |const|
+:ref:`float<class_float>` **determinant**\ (\ ) |const| :ref:`🔗<class_Projection_method_determinant>`
 
 Returns a scalar value that is the signed factor by which areas are scaled by this matrix. If the sign is negative, the matrix flips the orientation of the area.
 
@@ -477,7 +477,7 @@ The determinant can be used to calculate the invertibility of a matrix or solve 
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **flipped_y**\ (\ ) |const|
+:ref:`Projection<class_Projection>` **flipped_y**\ (\ ) |const| :ref:`🔗<class_Projection_method_flipped_y>`
 
 Returns a copy of this **Projection** with the signs of the values of the Y column flipped.
 
@@ -489,7 +489,7 @@ Returns a copy of this **Projection** with the signs of the values of the Y colu
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_aspect**\ (\ ) |const|
+:ref:`float<class_float>` **get_aspect**\ (\ ) |const| :ref:`🔗<class_Projection_method_get_aspect>`
 
 Returns the X:Y aspect ratio of this **Projection**'s viewport.
 
@@ -501,7 +501,7 @@ Returns the X:Y aspect ratio of this **Projection**'s viewport.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_far_plane_half_extents**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_far_plane_half_extents**\ (\ ) |const| :ref:`🔗<class_Projection_method_get_far_plane_half_extents>`
 
 Returns the dimensions of the far clipping plane of the projection, divided by two.
 
@@ -513,7 +513,7 @@ Returns the dimensions of the far clipping plane of the projection, divided by t
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_fov**\ (\ ) |const|
+:ref:`float<class_float>` **get_fov**\ (\ ) |const| :ref:`🔗<class_Projection_method_get_fov>`
 
 Returns the horizontal field of view of the projection (in degrees).
 
@@ -525,7 +525,7 @@ Returns the horizontal field of view of the projection (in degrees).
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_fovy**\ (\ fovx\: :ref:`float<class_float>`, aspect\: :ref:`float<class_float>`\ ) |static|
+:ref:`float<class_float>` **get_fovy**\ (\ fovx\: :ref:`float<class_float>`, aspect\: :ref:`float<class_float>`\ ) |static| :ref:`🔗<class_Projection_method_get_fovy>`
 
 Returns the vertical field of view of the projection (in degrees) associated with the given horizontal field of view (in degrees) and aspect ratio.
 
@@ -537,7 +537,7 @@ Returns the vertical field of view of the projection (in degrees) associated wit
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_lod_multiplier**\ (\ ) |const|
+:ref:`float<class_float>` **get_lod_multiplier**\ (\ ) |const| :ref:`🔗<class_Projection_method_get_lod_multiplier>`
 
 Returns the factor by which the visible level of detail is scaled by this **Projection**.
 
@@ -549,7 +549,7 @@ Returns the factor by which the visible level of detail is scaled by this **Proj
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_pixels_per_meter**\ (\ for_pixel_width\: :ref:`int<class_int>`\ ) |const|
+:ref:`int<class_int>` **get_pixels_per_meter**\ (\ for_pixel_width\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Projection_method_get_pixels_per_meter>`
 
 Returns the number of pixels with the given pixel width displayed per meter, after this **Projection** is applied.
 
@@ -561,7 +561,7 @@ Returns the number of pixels with the given pixel width displayed per meter, aft
 
 .. rst-class:: classref-method
 
-:ref:`Plane<class_Plane>` **get_projection_plane**\ (\ plane\: :ref:`int<class_int>`\ ) |const|
+:ref:`Plane<class_Plane>` **get_projection_plane**\ (\ plane\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Projection_method_get_projection_plane>`
 
 Returns the clipping plane of this **Projection** whose index is given by ``plane``.
 
@@ -575,7 +575,7 @@ Returns the clipping plane of this **Projection** whose index is given by ``plan
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_viewport_half_extents**\ (\ ) |const|
+:ref:`Vector2<class_Vector2>` **get_viewport_half_extents**\ (\ ) |const| :ref:`🔗<class_Projection_method_get_viewport_half_extents>`
 
 Returns the dimensions of the viewport plane that this **Projection** projects positions onto, divided by two.
 
@@ -587,7 +587,7 @@ Returns the dimensions of the viewport plane that this **Projection** projects p
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_z_far**\ (\ ) |const|
+:ref:`float<class_float>` **get_z_far**\ (\ ) |const| :ref:`🔗<class_Projection_method_get_z_far>`
 
 Returns the distance for this **Projection** beyond which positions are clipped.
 
@@ -599,7 +599,7 @@ Returns the distance for this **Projection** beyond which positions are clipped.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_z_near**\ (\ ) |const|
+:ref:`float<class_float>` **get_z_near**\ (\ ) |const| :ref:`🔗<class_Projection_method_get_z_near>`
 
 Returns the distance for this **Projection** before which positions are clipped.
 
@@ -611,7 +611,7 @@ Returns the distance for this **Projection** before which positions are clipped.
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **inverse**\ (\ ) |const|
+:ref:`Projection<class_Projection>` **inverse**\ (\ ) |const| :ref:`🔗<class_Projection_method_inverse>`
 
 Returns a **Projection** that performs the inverse of this **Projection**'s projective transformation.
 
@@ -623,7 +623,7 @@ Returns a **Projection** that performs the inverse of this **Projection**'s proj
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_orthogonal**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_orthogonal**\ (\ ) |const| :ref:`🔗<class_Projection_method_is_orthogonal>`
 
 Returns ``true`` if this **Projection** performs an orthogonal projection.
 
@@ -635,7 +635,7 @@ Returns ``true`` if this **Projection** performs an orthogonal projection.
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **jitter_offseted**\ (\ offset\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`Projection<class_Projection>` **jitter_offseted**\ (\ offset\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Projection_method_jitter_offseted>`
 
 Returns a **Projection** with the X and Y values from the given :ref:`Vector2<class_Vector2>` added to the first and second values of the final column respectively.
 
@@ -647,7 +647,7 @@ Returns a **Projection** with the X and Y values from the given :ref:`Vector2<cl
 
 .. rst-class:: classref-method
 
-:ref:`Projection<class_Projection>` **perspective_znear_adjusted**\ (\ new_znear\: :ref:`float<class_float>`\ ) |const|
+:ref:`Projection<class_Projection>` **perspective_znear_adjusted**\ (\ new_znear\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Projection_method_perspective_znear_adjusted>`
 
 Returns a **Projection** with the near clipping distance adjusted to be ``new_znear``.
 
@@ -666,7 +666,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Projection<class_Projection>`\ )
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Projection<class_Projection>`\ ) :ref:`🔗<class_Projection_operator_neq_Projection>`
 
 Returns ``true`` if the projections are not equal.
 
@@ -680,7 +680,7 @@ Returns ``true`` if the projections are not equal.
 
 .. rst-class:: classref-operator
 
-:ref:`Projection<class_Projection>` **operator ***\ (\ right\: :ref:`Projection<class_Projection>`\ )
+:ref:`Projection<class_Projection>` **operator ***\ (\ right\: :ref:`Projection<class_Projection>`\ ) :ref:`🔗<class_Projection_operator_mul_Projection>`
 
 Returns a **Projection** that applies the combined transformations of this **Projection** and ``right``.
 
@@ -692,7 +692,7 @@ Returns a **Projection** that applies the combined transformations of this **Pro
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4<class_Vector4>` **operator ***\ (\ right\: :ref:`Vector4<class_Vector4>`\ )
+:ref:`Vector4<class_Vector4>` **operator ***\ (\ right\: :ref:`Vector4<class_Vector4>`\ ) :ref:`🔗<class_Projection_operator_mul_Vector4>`
 
 Projects (multiplies) the given :ref:`Vector4<class_Vector4>` by this **Projection** matrix.
 
@@ -704,7 +704,7 @@ Projects (multiplies) the given :ref:`Vector4<class_Vector4>` by this **Projecti
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Projection<class_Projection>`\ )
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Projection<class_Projection>`\ ) :ref:`🔗<class_Projection_operator_eq_Projection>`
 
 Returns ``true`` if the projections are equal.
 
@@ -718,7 +718,7 @@ Returns ``true`` if the projections are equal.
 
 .. rst-class:: classref-operator
 
-:ref:`Vector4<class_Vector4>` **operator []**\ (\ index\: :ref:`int<class_int>`\ )
+:ref:`Vector4<class_Vector4>` **operator []**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Projection_operator_idx_int>`
 
 Returns the column of the **Projection** with the given index.
 

@@ -16,24 +16,15 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
-- GCC 7+ or Clang 6+.
-
+- GCC 9+ or Clang 6+.
 - `Python 3.6+ <https://www.python.org/downloads/>`_.
-
-- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
-
-  .. note::
-
-      If your distribution uses Python 2 by default, or you are using a version of SCons prior to 3.1.2,
-      you will need to change the version of Python that SCons uses by changing the shebang
-      (the first line) of the SCons script file to ``#! /usr/bin/python3``.
-      Use the command ``which scons`` to find the location of the SCons script file.
-
+- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system.
 - pkg-config (used to detect the development libraries listed below).
 - Development libraries:
 
   - X11, Xcursor, Xinerama, Xi and XRandR.
-  - MesaGL.
+  - Wayland and wayland-scanner.
+  - Mesa.
   - ALSA.
   - PulseAudio.
 
@@ -67,7 +58,6 @@ Distro-specific one-liners
               libxi-dev \
               libxrandr-dev \
               mesa-dev \
-              libexecinfo-dev \
               eudev-dev \
               alsa-lib-dev \
               pulseaudio-dev
@@ -76,7 +66,7 @@ Distro-specific one-liners
 
         ::
 
-            pacman -S --needed \
+            pacman -Sy --noconfirm --needed \
               scons \
               pkgconf \
               gcc \
@@ -84,6 +74,7 @@ Distro-specific one-liners
               libxinerama \
               libxi \
               libxrandr \
+              wayland-utils \
               mesa \
               glu \
               libglvnd \
@@ -94,7 +85,8 @@ Distro-specific one-liners
 
         ::
 
-            apt-get install \
+            sudo apt-get update
+            sudo apt-get install -y \
               build-essential \
               scons \
               pkg-config \
@@ -102,18 +94,19 @@ Distro-specific one-liners
               libxcursor-dev \
               libxinerama-dev \
               libgl1-mesa-dev \
-              libglu-dev \
+              libglu1-mesa-dev \
               libasound2-dev \
               libpulse-dev \
               libudev-dev \
               libxi-dev \
-              libxrandr-dev
+              libxrandr-dev \
+              libwayland-dev
 
     .. tab:: Fedora
 
         ::
 
-            dnf install \
+            sudo dnf install -y \
               scons \
               pkgconfig \
               libX11-devel \
@@ -121,6 +114,7 @@ Distro-specific one-liners
               libXrandr-devel \
               libXinerama-devel \
               libXi-devel \
+              wayland-devel \
               mesa-libGL-devel \
               mesa-libGLU-devel \
               alsa-lib-devel \
@@ -141,7 +135,8 @@ Distro-specific one-liners
               libXcursor \
               libXrandr \
               libXi \
-              xorgproto libGLU \
+              xorgproto \
+              libGLU \
               alsa-lib \
               pulseaudio
 
@@ -149,12 +144,14 @@ Distro-specific one-liners
 
         ::
 
+            emerge --sync
             emerge -an \
-              dev-util/scons \
+              dev-build/scons \
               x11-libs/libX11 \
               x11-libs/libXcursor \
               x11-libs/libXinerama \
               x11-libs/libXi \
+              dev-util/wayland-scanner \
               media-libs/mesa \
               media-libs/glu \
               media-libs/alsa-lib \
@@ -164,10 +161,10 @@ Distro-specific one-liners
 
         ::
 
-            urpmi \
+            sudo urpmi --auto \
               scons \
               task-c++-devel \
-              pkgconfig \
+              wayland-devel \
               "pkgconfig(alsa)" \
               "pkgconfig(glu)" \
               "pkgconfig(libpulse)" \
@@ -177,6 +174,18 @@ Distro-specific one-liners
               "pkgconfig(xinerama)" \
               "pkgconfig(xi)" \
               "pkgconfig(xrandr)"
+
+    .. tab:: NetBSD
+
+        ::
+
+            pkg_add \
+              pkg-config \
+              py37-scons
+
+        .. hint::
+
+            For audio support, you can optionally install ``pulseaudio``.
 
     .. tab:: OpenBSD
 
@@ -191,7 +200,7 @@ Distro-specific one-liners
 
         ::
 
-            zypper install \
+            sudo zypper install -y \
               scons \
               pkgconfig \
               libX11-devel \
@@ -199,6 +208,7 @@ Distro-specific one-liners
               libXrandr-devel \
               libXinerama-devel \
               libXi-devel \
+              wayland-devel \
               Mesa-libGL-devel \
               alsa-devel \
               libpulse-devel \
@@ -206,29 +216,18 @@ Distro-specific one-liners
               gcc-c++ \
               libGLU1
 
-    .. tab:: NetBSD
-
-        ::
-
-            pkg_add \
-              pkg-config \
-              py37-scons
-
-        .. hint::
-
-            For audio support, you can optionally install ``pulseaudio``.
-
     .. tab:: Solus
 
         ::
 
-            eopkg install -c \
-              system.devel \
+            eopkg install -y \
+              -c system.devel \
               scons \
               libxcursor-devel \
               libxinerama-devel \
               libxi-devel \
               libxrandr-devel \
+              wayland-devel \
               mesalib-devel \
               libglu \
               alsa-lib-devel \
@@ -395,7 +394,7 @@ There are two solutions:
 - Follow `these instructions <https://github.com/ivmai/libatomic_ops#installation-and-usage>`__ to configure, build, and
   install ``libatomic_ops``. Then, copy ``/usr/lib/libatomic_ops.a`` to ``/usr/lib/libatomic.a``, or create a soft link
   to ``libatomic_ops`` by command ``ln -s /usr/lib/libatomic_ops.a /usr/lib/libatomic.a``. The soft link can ensure the
-  latest ``libatomic_ops`` will be used without the need to copy it everytime when it is updated.
+  latest ``libatomic_ops`` will be used without the need to copy it every time when it is updated.
 
 Using mold for faster development
 ---------------------------------
@@ -407,7 +406,7 @@ As of January 2023, mold is not readily available in Linux distribution
 repositories, so you will have to install its binaries manually.
 
 - Download mold binaries from its `releases page <https://github.com/rui314/mold/releases/latest>`__.
-- Extract the ``.tar.gz`` file, then move the extraced folder to a location such as ``.local/share/mold``.
+- Extract the ``.tar.gz`` file, then move the extracted folder to a location such as ``.local/share/mold``.
 - Add ``$HOME/.local/share/mold/bin`` to your user's ``PATH`` environment variable.
   For example, you can add the following line at the end of your ``$HOME/.bash_profile`` file:
 

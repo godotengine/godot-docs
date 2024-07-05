@@ -120,7 +120,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TransformFormat**:
+enum **TransformFormat**: :ref:`🔗<enum_MultiMesh_TransformFormat>`
 
 .. _class_MultiMesh_constant_TRANSFORM_2D:
 
@@ -151,7 +151,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` **buffer** = ``PackedFloat32Array()``
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **buffer** = ``PackedFloat32Array()`` :ref:`🔗<class_MultiMesh_property_buffer>`
 
 .. rst-class:: classref-property-setget
 
@@ -170,7 +170,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedColorArray<class_PackedColorArray>` **color_array**
+:ref:`PackedColorArray<class_PackedColorArray>` **color_array** :ref:`🔗<class_MultiMesh_property_color_array>`
 
 **Deprecated:** Accessing this property is very slow. Use :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>` and :ref:`get_instance_color<class_MultiMesh_method_get_instance_color>` instead.
 
@@ -186,7 +186,7 @@ Array containing each :ref:`Color<class_Color>` used by all instances of this me
 
 .. rst-class:: classref-property
 
-:ref:`AABB<class_AABB>` **custom_aabb** = ``AABB(0, 0, 0, 0, 0, 0)``
+:ref:`AABB<class_AABB>` **custom_aabb** = ``AABB(0, 0, 0, 0, 0, 0)`` :ref:`🔗<class_MultiMesh_property_custom_aabb>`
 
 .. rst-class:: classref-property-setget
 
@@ -203,7 +203,7 @@ Custom AABB for this MultiMesh resource. Setting this manually prevents costly r
 
 .. rst-class:: classref-property
 
-:ref:`PackedColorArray<class_PackedColorArray>` **custom_data_array**
+:ref:`PackedColorArray<class_PackedColorArray>` **custom_data_array** :ref:`🔗<class_MultiMesh_property_custom_data_array>`
 
 **Deprecated:** Accessing this property is very slow. Use :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>` and :ref:`get_instance_custom_data<class_MultiMesh_method_get_instance_custom_data>` instead.
 
@@ -219,7 +219,7 @@ Array containing each custom data value used by all instances of this mesh, as a
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **instance_count** = ``0``
+:ref:`int<class_int>` **instance_count** = ``0`` :ref:`🔗<class_MultiMesh_property_instance_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -238,7 +238,7 @@ By default, all instances are drawn but you can limit this with :ref:`visible_in
 
 .. rst-class:: classref-property
 
-:ref:`Mesh<class_Mesh>` **mesh**
+:ref:`Mesh<class_Mesh>` **mesh** :ref:`🔗<class_MultiMesh_property_mesh>`
 
 .. rst-class:: classref-property-setget
 
@@ -257,7 +257,7 @@ The looks of the individual instances can be modified using :ref:`set_instance_c
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **transform_2d_array**
+:ref:`PackedVector2Array<class_PackedVector2Array>` **transform_2d_array** :ref:`🔗<class_MultiMesh_property_transform_2d_array>`
 
 **Deprecated:** Accessing this property is very slow. Use :ref:`set_instance_transform_2d<class_MultiMesh_method_set_instance_transform_2d>` and :ref:`get_instance_transform_2d<class_MultiMesh_method_get_instance_transform_2d>` instead.
 
@@ -273,7 +273,7 @@ Array containing each :ref:`Transform2D<class_Transform2D>` value used by all in
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **transform_array**
+:ref:`PackedVector3Array<class_PackedVector3Array>` **transform_array** :ref:`🔗<class_MultiMesh_property_transform_array>`
 
 **Deprecated:** Accessing this property is very slow. Use :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>` and :ref:`get_instance_transform<class_MultiMesh_method_get_instance_transform>` instead.
 
@@ -289,7 +289,7 @@ Array containing each :ref:`Transform3D<class_Transform3D>` value used by all in
 
 .. rst-class:: classref-property
 
-:ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **transform_format** = ``0``
+:ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **transform_format** = ``0`` :ref:`🔗<class_MultiMesh_property_transform_format>`
 
 .. rst-class:: classref-property-setget
 
@@ -306,7 +306,7 @@ Format of transform used to transform mesh, either 2D or 3D.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_colors** = ``false``
+:ref:`bool<class_bool>` **use_colors** = ``false`` :ref:`🔗<class_MultiMesh_property_use_colors>`
 
 .. rst-class:: classref-property-setget
 
@@ -323,7 +323,7 @@ If ``true``, the **MultiMesh** will use color data (see :ref:`set_instance_color
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_custom_data** = ``false``
+:ref:`bool<class_bool>` **use_custom_data** = ``false`` :ref:`🔗<class_MultiMesh_property_use_custom_data>`
 
 .. rst-class:: classref-property-setget
 
@@ -340,7 +340,7 @@ If ``true``, the **MultiMesh** will use custom data (see :ref:`set_instance_cust
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **visible_instance_count** = ``-1``
+:ref:`int<class_int>` **visible_instance_count** = ``-1`` :ref:`🔗<class_MultiMesh_property_visible_instance_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -362,7 +362,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`AABB<class_AABB>` **get_aabb**\ (\ ) |const|
+:ref:`AABB<class_AABB>` **get_aabb**\ (\ ) |const| :ref:`🔗<class_MultiMesh_method_get_aabb>`
 
 Returns the visibility axis-aligned bounding box in local space.
 
@@ -374,7 +374,7 @@ Returns the visibility axis-aligned bounding box in local space.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_instance_color**\ (\ instance\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_instance_color**\ (\ instance\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MultiMesh_method_get_instance_color>`
 
 Gets a specific instance's color multiplier.
 
@@ -386,7 +386,7 @@ Gets a specific instance's color multiplier.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_instance_custom_data**\ (\ instance\: :ref:`int<class_int>`\ ) |const|
+:ref:`Color<class_Color>` **get_instance_custom_data**\ (\ instance\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MultiMesh_method_get_instance_custom_data>`
 
 Returns the custom data that has been set for a specific instance.
 
@@ -398,7 +398,7 @@ Returns the custom data that has been set for a specific instance.
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_instance_transform**\ (\ instance\: :ref:`int<class_int>`\ ) |const|
+:ref:`Transform3D<class_Transform3D>` **get_instance_transform**\ (\ instance\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MultiMesh_method_get_instance_transform>`
 
 Returns the :ref:`Transform3D<class_Transform3D>` of a specific instance.
 
@@ -410,7 +410,7 @@ Returns the :ref:`Transform3D<class_Transform3D>` of a specific instance.
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_instance_transform_2d**\ (\ instance\: :ref:`int<class_int>`\ ) |const|
+:ref:`Transform2D<class_Transform2D>` **get_instance_transform_2d**\ (\ instance\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_MultiMesh_method_get_instance_transform_2d>`
 
 Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
 
@@ -422,7 +422,7 @@ Returns the :ref:`Transform2D<class_Transform2D>` of a specific instance.
 
 .. rst-class:: classref-method
 
-|void| **set_instance_color**\ (\ instance\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )
+|void| **set_instance_color**\ (\ instance\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_MultiMesh_method_set_instance_color>`
 
 Sets the color of a specific instance by *multiplying* the mesh's existing vertex colors. This allows for different color tinting per instance.
 
@@ -436,7 +436,7 @@ For the color to take effect, ensure that :ref:`use_colors<class_MultiMesh_prope
 
 .. rst-class:: classref-method
 
-|void| **set_instance_custom_data**\ (\ instance\: :ref:`int<class_int>`, custom_data\: :ref:`Color<class_Color>`\ )
+|void| **set_instance_custom_data**\ (\ instance\: :ref:`int<class_int>`, custom_data\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_MultiMesh_method_set_instance_custom_data>`
 
 Sets custom data for a specific instance. ``custom_data`` is a :ref:`Color<class_Color>` type only to contain 4 floating-point numbers.
 
@@ -452,7 +452,7 @@ This custom instance data has to be manually accessed in your custom shader usin
 
 .. rst-class:: classref-method
 
-|void| **set_instance_transform**\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ )
+|void| **set_instance_transform**\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform3D<class_Transform3D>`\ ) :ref:`🔗<class_MultiMesh_method_set_instance_transform>`
 
 Sets the :ref:`Transform3D<class_Transform3D>` for a specific instance.
 
@@ -464,7 +464,7 @@ Sets the :ref:`Transform3D<class_Transform3D>` for a specific instance.
 
 .. rst-class:: classref-method
 
-|void| **set_instance_transform_2d**\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ )
+|void| **set_instance_transform_2d**\ (\ instance\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ ) :ref:`🔗<class_MultiMesh_method_set_instance_transform_2d>`
 
 Sets the :ref:`Transform2D<class_Transform2D>` for a specific instance.
 

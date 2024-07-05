@@ -52,7 +52,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **EnableMode**:
+enum **EnableMode**: :ref:`🔗<enum_VisibleOnScreenEnabler3D_EnableMode>`
 
 .. _class_VisibleOnScreenEnabler3D_constant_ENABLE_MODE_INHERIT:
 
@@ -91,7 +91,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **enable_mode** = ``0``
+:ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **enable_mode** = ``0`` :ref:`🔗<class_VisibleOnScreenEnabler3D_property_enable_mode>`
 
 .. rst-class:: classref-property-setget
 
@@ -108,7 +108,7 @@ Determines how the target node is enabled. Corresponds to :ref:`ProcessMode<enum
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **enable_node_path** = ``NodePath("..")``
+:ref:`NodePath<class_NodePath>` **enable_node_path** = ``NodePath("..")`` :ref:`🔗<class_VisibleOnScreenEnabler3D_property_enable_node_path>`
 
 .. rst-class:: classref-property-setget
 

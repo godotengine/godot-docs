@@ -60,7 +60,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **height** = ``0.0``
+:ref:`float<class_float>` **height** = ``0.0`` :ref:`🔗<class_DirectionalLight2D_property_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -77,7 +77,7 @@ The height of the light. Used with 2D normal mapping. Ranges from 0 (parallel to
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **max_distance** = ``10000.0``
+:ref:`float<class_float>` **max_distance** = ``10000.0`` :ref:`🔗<class_DirectionalLight2D_property_max_distance>`
 
 .. rst-class:: classref-property-setget
 

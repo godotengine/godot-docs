@@ -116,7 +116,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**area_entered**\ (\ area\: :ref:`Area2D<class_Area2D>`\ )
+**area_entered**\ (\ area\: :ref:`Area2D<class_Area2D>`\ ) :ref:`🔗<class_Area2D_signal_area_entered>`
 
 Emitted when the received ``area`` enters this area. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
@@ -128,7 +128,7 @@ Emitted when the received ``area`` enters this area. Requires :ref:`monitoring<c
 
 .. rst-class:: classref-signal
 
-**area_exited**\ (\ area\: :ref:`Area2D<class_Area2D>`\ )
+**area_exited**\ (\ area\: :ref:`Area2D<class_Area2D>`\ ) :ref:`🔗<class_Area2D_signal_area_exited>`
 
 Emitted when the received ``area`` exits this area. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
@@ -140,7 +140,7 @@ Emitted when the received ``area`` exits this area. Requires :ref:`monitoring<cl
 
 .. rst-class:: classref-signal
 
-**area_shape_entered**\ (\ area_rid\: :ref:`RID<class_RID>`, area\: :ref:`Area2D<class_Area2D>`, area_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
+**area_shape_entered**\ (\ area_rid\: :ref:`RID<class_RID>`, area\: :ref:`Area2D<class_Area2D>`, area_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Area2D_signal_area_shape_entered>`
 
 Emitted when a :ref:`Shape2D<class_Shape2D>` of the received ``area`` enters a shape of this area. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
@@ -169,7 +169,7 @@ Emitted when a :ref:`Shape2D<class_Shape2D>` of the received ``area`` enters a s
 
 .. rst-class:: classref-signal
 
-**area_shape_exited**\ (\ area_rid\: :ref:`RID<class_RID>`, area\: :ref:`Area2D<class_Area2D>`, area_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
+**area_shape_exited**\ (\ area_rid\: :ref:`RID<class_RID>`, area\: :ref:`Area2D<class_Area2D>`, area_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Area2D_signal_area_shape_exited>`
 
 Emitted when a :ref:`Shape2D<class_Shape2D>` of the received ``area`` exits a shape of this area. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
@@ -183,7 +183,7 @@ See also :ref:`area_shape_entered<class_Area2D_signal_area_shape_entered>`.
 
 .. rst-class:: classref-signal
 
-**body_entered**\ (\ body\: :ref:`Node2D<class_Node2D>`\ )
+**body_entered**\ (\ body\: :ref:`Node2D<class_Node2D>`\ ) :ref:`🔗<class_Area2D_signal_body_entered>`
 
 Emitted when the received ``body`` enters this area. ``body`` can be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>`. :ref:`TileMap<class_TileMap>`\ s are detected if their :ref:`TileSet<class_TileSet>` has collision shapes configured. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
@@ -195,7 +195,7 @@ Emitted when the received ``body`` enters this area. ``body`` can be a :ref:`Phy
 
 .. rst-class:: classref-signal
 
-**body_exited**\ (\ body\: :ref:`Node2D<class_Node2D>`\ )
+**body_exited**\ (\ body\: :ref:`Node2D<class_Node2D>`\ ) :ref:`🔗<class_Area2D_signal_body_exited>`
 
 Emitted when the received ``body`` exits this area. ``body`` can be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>`. :ref:`TileMap<class_TileMap>`\ s are detected if their :ref:`TileSet<class_TileSet>` has collision shapes configured. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
@@ -207,7 +207,7 @@ Emitted when the received ``body`` exits this area. ``body`` can be a :ref:`Phys
 
 .. rst-class:: classref-signal
 
-**body_shape_entered**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node2D<class_Node2D>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
+**body_shape_entered**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node2D<class_Node2D>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Area2D_signal_body_shape_entered>`
 
 Emitted when a :ref:`Shape2D<class_Shape2D>` of the received ``body`` enters a shape of this area. ``body`` can be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>`. :ref:`TileMap<class_TileMap>`\ s are detected if their :ref:`TileSet<class_TileSet>` has collision shapes configured. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
@@ -236,7 +236,7 @@ Emitted when a :ref:`Shape2D<class_Shape2D>` of the received ``body`` enters a s
 
 .. rst-class:: classref-signal
 
-**body_shape_exited**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node2D<class_Node2D>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
+**body_shape_exited**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node2D<class_Node2D>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Area2D_signal_body_shape_exited>`
 
 Emitted when a :ref:`Shape2D<class_Shape2D>` of the received ``body`` exits a shape of this area. ``body`` can be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or a :ref:`TileMap<class_TileMap>`. :ref:`TileMap<class_TileMap>`\ s are detected if their :ref:`TileSet<class_TileSet>` has collision shapes configured. Requires :ref:`monitoring<class_Area2D_property_monitoring>` to be set to ``true``.
 
@@ -255,7 +255,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **SpaceOverride**:
+enum **SpaceOverride**: :ref:`🔗<enum_Area2D_SpaceOverride>`
 
 .. _class_Area2D_constant_SPACE_OVERRIDE_DISABLED:
 
@@ -310,7 +310,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_damp** = ``1.0``
+:ref:`float<class_float>` **angular_damp** = ``1.0`` :ref:`🔗<class_Area2D_property_angular_damp>`
 
 .. rst-class:: classref-property-setget
 
@@ -329,7 +329,7 @@ See :ref:`ProjectSettings.physics/2d/default_angular_damp<class_ProjectSettings_
 
 .. rst-class:: classref-property
 
-:ref:`SpaceOverride<enum_Area2D_SpaceOverride>` **angular_damp_space_override** = ``0``
+:ref:`SpaceOverride<enum_Area2D_SpaceOverride>` **angular_damp_space_override** = ``0`` :ref:`🔗<class_Area2D_property_angular_damp_space_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -346,7 +346,7 @@ Override mode for angular damping calculations within this area. See :ref:`Space
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **audio_bus_name** = ``&"Master"``
+:ref:`StringName<class_StringName>` **audio_bus_name** = ``&"Master"`` :ref:`🔗<class_Area2D_property_audio_bus_name>`
 
 .. rst-class:: classref-property-setget
 
@@ -363,7 +363,7 @@ The name of the area's audio bus.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **audio_bus_override** = ``false``
+:ref:`bool<class_bool>` **audio_bus_override** = ``false`` :ref:`🔗<class_Area2D_property_audio_bus_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -380,7 +380,7 @@ If ``true``, the area's audio bus overrides the default audio bus.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gravity** = ``980.0``
+:ref:`float<class_float>` **gravity** = ``980.0`` :ref:`🔗<class_Area2D_property_gravity>`
 
 .. rst-class:: classref-property-setget
 
@@ -397,7 +397,7 @@ The area's gravity intensity (in pixels per second squared). This value multipli
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **gravity_direction** = ``Vector2(0, 1)``
+:ref:`Vector2<class_Vector2>` **gravity_direction** = ``Vector2(0, 1)`` :ref:`🔗<class_Area2D_property_gravity_direction>`
 
 .. rst-class:: classref-property-setget
 
@@ -414,7 +414,7 @@ The area's gravity vector (not normalized).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **gravity_point** = ``false``
+:ref:`bool<class_bool>` **gravity_point** = ``false`` :ref:`🔗<class_Area2D_property_gravity_point>`
 
 .. rst-class:: classref-property-setget
 
@@ -431,7 +431,7 @@ If ``true``, gravity is calculated from a point (set via :ref:`gravity_point_cen
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **gravity_point_center** = ``Vector2(0, 1)``
+:ref:`Vector2<class_Vector2>` **gravity_point_center** = ``Vector2(0, 1)`` :ref:`🔗<class_Area2D_property_gravity_point_center>`
 
 .. rst-class:: classref-property-setget
 
@@ -448,7 +448,7 @@ If gravity is a point (see :ref:`gravity_point<class_Area2D_property_gravity_poi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gravity_point_unit_distance** = ``0.0``
+:ref:`float<class_float>` **gravity_point_unit_distance** = ``0.0`` :ref:`🔗<class_Area2D_property_gravity_point_unit_distance>`
 
 .. rst-class:: classref-property-setget
 
@@ -467,7 +467,7 @@ The above is true only when the unit distance is a positive number. When this is
 
 .. rst-class:: classref-property
 
-:ref:`SpaceOverride<enum_Area2D_SpaceOverride>` **gravity_space_override** = ``0``
+:ref:`SpaceOverride<enum_Area2D_SpaceOverride>` **gravity_space_override** = ``0`` :ref:`🔗<class_Area2D_property_gravity_space_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -484,7 +484,7 @@ Override mode for gravity calculations within this area. See :ref:`SpaceOverride
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_damp** = ``0.1``
+:ref:`float<class_float>` **linear_damp** = ``0.1`` :ref:`🔗<class_Area2D_property_linear_damp>`
 
 .. rst-class:: classref-property-setget
 
@@ -503,7 +503,7 @@ See :ref:`ProjectSettings.physics/2d/default_linear_damp<class_ProjectSettings_p
 
 .. rst-class:: classref-property
 
-:ref:`SpaceOverride<enum_Area2D_SpaceOverride>` **linear_damp_space_override** = ``0``
+:ref:`SpaceOverride<enum_Area2D_SpaceOverride>` **linear_damp_space_override** = ``0`` :ref:`🔗<class_Area2D_property_linear_damp_space_override>`
 
 .. rst-class:: classref-property-setget
 
@@ -520,7 +520,7 @@ Override mode for linear damping calculations within this area. See :ref:`SpaceO
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **monitorable** = ``true``
+:ref:`bool<class_bool>` **monitorable** = ``true`` :ref:`🔗<class_Area2D_property_monitorable>`
 
 .. rst-class:: classref-property-setget
 
@@ -537,7 +537,7 @@ If ``true``, other monitoring areas can detect this area.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **monitoring** = ``true``
+:ref:`bool<class_bool>` **monitoring** = ``true`` :ref:`🔗<class_Area2D_property_monitoring>`
 
 .. rst-class:: classref-property-setget
 
@@ -554,7 +554,7 @@ If ``true``, the area detects bodies or areas entering and exiting it.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **priority** = ``0``
+:ref:`int<class_int>` **priority** = ``0`` :ref:`🔗<class_Area2D_property_priority>`
 
 .. rst-class:: classref-property-setget
 
@@ -576,7 +576,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Area2D<class_Area2D>`\] **get_overlapping_areas**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Area2D<class_Area2D>`\] **get_overlapping_areas**\ (\ ) |const| :ref:`🔗<class_Area2D_method_get_overlapping_areas>`
 
 Returns a list of intersecting **Area2D**\ s. The overlapping area's :ref:`CollisionObject2D.collision_layer<class_CollisionObject2D_property_collision_layer>` must be part of this area's :ref:`CollisionObject2D.collision_mask<class_CollisionObject2D_property_collision_mask>` in order to be detected.
 
@@ -590,7 +590,7 @@ For performance reasons (collisions are all processed at the same time) this lis
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>`\[:ref:`Node2D<class_Node2D>`\] **get_overlapping_bodies**\ (\ ) |const|
+:ref:`Array<class_Array>`\[:ref:`Node2D<class_Node2D>`\] **get_overlapping_bodies**\ (\ ) |const| :ref:`🔗<class_Area2D_method_get_overlapping_bodies>`
 
 Returns a list of intersecting :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s and :ref:`TileMap<class_TileMap>`\ s. The overlapping body's :ref:`CollisionObject2D.collision_layer<class_CollisionObject2D_property_collision_layer>` must be part of this area's :ref:`CollisionObject2D.collision_mask<class_CollisionObject2D_property_collision_mask>` in order to be detected.
 
@@ -604,7 +604,7 @@ For performance reasons (collisions are all processed at the same time) this lis
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_overlapping_areas**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_overlapping_areas**\ (\ ) |const| :ref:`🔗<class_Area2D_method_has_overlapping_areas>`
 
 Returns ``true`` if intersecting any **Area2D**\ s, otherwise returns ``false``. The overlapping area's :ref:`CollisionObject2D.collision_layer<class_CollisionObject2D_property_collision_layer>` must be part of this area's :ref:`CollisionObject2D.collision_mask<class_CollisionObject2D_property_collision_mask>` in order to be detected.
 
@@ -618,7 +618,7 @@ For performance reasons (collisions are all processed at the same time) the list
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_overlapping_bodies**\ (\ ) |const|
+:ref:`bool<class_bool>` **has_overlapping_bodies**\ (\ ) |const| :ref:`🔗<class_Area2D_method_has_overlapping_bodies>`
 
 Returns ``true`` if intersecting any :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s or :ref:`TileMap<class_TileMap>`\ s, otherwise returns ``false``. The overlapping body's :ref:`CollisionObject2D.collision_layer<class_CollisionObject2D_property_collision_layer>` must be part of this area's :ref:`CollisionObject2D.collision_mask<class_CollisionObject2D_property_collision_mask>` in order to be detected.
 
@@ -632,7 +632,7 @@ For performance reasons (collisions are all processed at the same time) the list
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **overlaps_area**\ (\ area\: :ref:`Node<class_Node>`\ ) |const|
+:ref:`bool<class_bool>` **overlaps_area**\ (\ area\: :ref:`Node<class_Node>`\ ) |const| :ref:`🔗<class_Area2D_method_overlaps_area>`
 
 Returns ``true`` if the given **Area2D** intersects or overlaps this **Area2D**, ``false`` otherwise.
 
@@ -646,7 +646,7 @@ Returns ``true`` if the given **Area2D** intersects or overlaps this **Area2D**,
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **overlaps_body**\ (\ body\: :ref:`Node<class_Node>`\ ) |const|
+:ref:`bool<class_bool>` **overlaps_body**\ (\ body\: :ref:`Node<class_Node>`\ ) |const| :ref:`🔗<class_Area2D_method_overlaps_body>`
 
 Returns ``true`` if the given physics body intersects or overlaps this **Area2D**, ``false`` otherwise.
 

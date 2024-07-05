@@ -46,7 +46,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gizmo_extents** = ``0.25``
+:ref:`float<class_float>` **gizmo_extents** = ``0.25`` :ref:`🔗<class_Marker3D_property_gizmo_extents>`
 
 .. rst-class:: classref-property-setget
 

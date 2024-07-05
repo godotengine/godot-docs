@@ -82,7 +82,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **allow_system_fallback** = ``true``
+:ref:`bool<class_bool>` **allow_system_fallback** = ``true`` :ref:`🔗<class_SystemFont_property_allow_system_fallback>`
 
 .. rst-class:: classref-property-setget
 
@@ -99,7 +99,7 @@ If set to ``true``, system fonts can be automatically used as fallbacks.
 
 .. rst-class:: classref-property
 
-:ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **antialiasing** = ``1``
+:ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **antialiasing** = ``1`` :ref:`🔗<class_SystemFont_property_antialiasing>`
 
 .. rst-class:: classref-property-setget
 
@@ -116,7 +116,7 @@ Font anti-aliasing mode.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disable_embedded_bitmaps** = ``true``
+:ref:`bool<class_bool>` **disable_embedded_bitmaps** = ``true`` :ref:`🔗<class_SystemFont_property_disable_embedded_bitmaps>`
 
 .. rst-class:: classref-property-setget
 
@@ -133,7 +133,7 @@ If set to ``true``, embedded font bitmap loading is disabled (bitmap-only and co
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **font_italic** = ``false``
+:ref:`bool<class_bool>` **font_italic** = ``false`` :ref:`🔗<class_SystemFont_property_font_italic>`
 
 .. rst-class:: classref-property-setget
 
@@ -150,7 +150,7 @@ If set to ``true``, italic or oblique font is preferred.
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **font_names** = ``PackedStringArray()``
+:ref:`PackedStringArray<class_PackedStringArray>` **font_names** = ``PackedStringArray()`` :ref:`🔗<class_SystemFont_property_font_names>`
 
 .. rst-class:: classref-property-setget
 
@@ -169,7 +169,7 @@ Array of font family names to search, first matching font found is used.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **font_stretch** = ``100``
+:ref:`int<class_int>` **font_stretch** = ``100`` :ref:`🔗<class_SystemFont_property_font_stretch>`
 
 .. rst-class:: classref-property-setget
 
@@ -186,7 +186,7 @@ Preferred font stretch amount, compared to a normal width. A percentage value be
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **font_weight** = ``400``
+:ref:`int<class_int>` **font_weight** = ``400`` :ref:`🔗<class_SystemFont_property_font_weight>`
 
 .. rst-class:: classref-property-setget
 
@@ -203,7 +203,7 @@ Preferred weight (boldness) of the font. A value in the ``100...999`` range, nor
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **force_autohinter** = ``false``
+:ref:`bool<class_bool>` **force_autohinter** = ``false`` :ref:`🔗<class_SystemFont_property_force_autohinter>`
 
 .. rst-class:: classref-property-setget
 
@@ -220,7 +220,7 @@ If set to ``true``, auto-hinting is supported and preferred over font built-in h
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **generate_mipmaps** = ``false``
+:ref:`bool<class_bool>` **generate_mipmaps** = ``false`` :ref:`🔗<class_SystemFont_property_generate_mipmaps>`
 
 .. rst-class:: classref-property-setget
 
@@ -237,7 +237,7 @@ If set to ``true``, generate mipmaps for the font textures.
 
 .. rst-class:: classref-property
 
-:ref:`Hinting<enum_TextServer_Hinting>` **hinting** = ``1``
+:ref:`Hinting<enum_TextServer_Hinting>` **hinting** = ``1`` :ref:`🔗<class_SystemFont_property_hinting>`
 
 .. rst-class:: classref-property-setget
 
@@ -254,7 +254,7 @@ Font hinting mode.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **msdf_pixel_range** = ``16``
+:ref:`int<class_int>` **msdf_pixel_range** = ``16`` :ref:`🔗<class_SystemFont_property_msdf_pixel_range>`
 
 .. rst-class:: classref-property-setget
 
@@ -271,7 +271,7 @@ The width of the range around the shape between the minimum and maximum represen
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **msdf_size** = ``48``
+:ref:`int<class_int>` **msdf_size** = ``48`` :ref:`🔗<class_SystemFont_property_msdf_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -288,7 +288,7 @@ Source font size used to generate MSDF textures. Higher values allow for more pr
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **multichannel_signed_distance_field** = ``false``
+:ref:`bool<class_bool>` **multichannel_signed_distance_field** = ``false`` :ref:`🔗<class_SystemFont_property_multichannel_signed_distance_field>`
 
 .. rst-class:: classref-property-setget
 
@@ -305,7 +305,7 @@ If set to ``true``, glyphs of all sizes are rendered using single multichannel s
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **oversampling** = ``0.0``
+:ref:`float<class_float>` **oversampling** = ``0.0`` :ref:`🔗<class_SystemFont_property_oversampling>`
 
 .. rst-class:: classref-property-setget
 
@@ -322,7 +322,7 @@ Font oversampling factor, if set to ``0.0`` global oversampling factor is used i
 
 .. rst-class:: classref-property
 
-:ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **subpixel_positioning** = ``1``
+:ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **subpixel_positioning** = ``1`` :ref:`🔗<class_SystemFont_property_subpixel_positioning>`
 
 .. rst-class:: classref-property-setget
 

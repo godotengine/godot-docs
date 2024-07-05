@@ -60,7 +60,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Resolution**:
+enum **Resolution**: :ref:`🔗<enum_GPUParticlesCollisionHeightField3D_Resolution>`
 
 .. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_256:
 
@@ -126,7 +126,7 @@ Represents the size of the :ref:`Resolution<enum_GPUParticlesCollisionHeightFiel
 
 .. rst-class:: classref-enumeration
 
-enum **UpdateMode**:
+enum **UpdateMode**: :ref:`🔗<enum_GPUParticlesCollisionHeightField3D_UpdateMode>`
 
 .. _class_GPUParticlesCollisionHeightField3D_constant_UPDATE_MODE_WHEN_MOVED:
 
@@ -157,7 +157,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **follow_camera_enabled** = ``false``
+:ref:`bool<class_bool>` **follow_camera_enabled** = ``false`` :ref:`🔗<class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled>`
 
 .. rst-class:: classref-property-setget
 
@@ -176,7 +176,7 @@ Following the camera has a performance cost, as it will force the heightmap to u
 
 .. rst-class:: classref-property
 
-:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **resolution** = ``2``
+:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **resolution** = ``2`` :ref:`🔗<class_GPUParticlesCollisionHeightField3D_property_resolution>`
 
 .. rst-class:: classref-property-setget
 
@@ -193,7 +193,7 @@ Higher resolutions can represent small details more accurately in large scenes, 
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)`` :ref:`🔗<class_GPUParticlesCollisionHeightField3D_property_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -210,7 +210,7 @@ The collision heightmap's size in 3D units. To improve heightmap quality, :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **update_mode** = ``0``
+:ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **update_mode** = ``0`` :ref:`🔗<class_GPUParticlesCollisionHeightField3D_property_update_mode>`
 
 .. rst-class:: classref-property-setget
 

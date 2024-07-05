@@ -50,7 +50,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **constant_id** = ``0``
+:ref:`int<class_int>` **constant_id** = ``0`` :ref:`🔗<class_RDPipelineSpecializationConstant_property_constant_id>`
 
 .. rst-class:: classref-property-setget
 
@@ -67,7 +67,7 @@ The identifier of the specialization constant. This is a value starting from ``0
 
 .. rst-class:: classref-property
 
-:ref:`Variant<class_Variant>` **value**
+:ref:`Variant<class_Variant>` **value** :ref:`🔗<class_RDPipelineSpecializationConstant_property_value>`
 
 .. rst-class:: classref-property-setget
 

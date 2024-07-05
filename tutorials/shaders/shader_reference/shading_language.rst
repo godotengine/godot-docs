@@ -205,9 +205,9 @@ submatrix of the larger matrix is used.
 
 .. code-block:: glsl
 
-	mat3 basis = mat3(MODEL_MATRIX);
-	mat4 m4 = mat4(basis);
-	mat2 m2 = mat2(m4);
+    mat3 basis = mat3(MODEL_MATRIX);
+    mat4 m4 = mat4(basis);
+    mat2 m2 = mat2(m4);
 
 Swizzling
 ~~~~~~~~~

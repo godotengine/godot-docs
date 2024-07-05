@@ -58,7 +58,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**IMPORT_SCENE** = ``1``
+**IMPORT_SCENE** = ``1`` :ref:`🔗<class_EditorSceneFormatImporter_constant_IMPORT_SCENE>`
 
 .. container:: contribute
 
@@ -70,7 +70,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**IMPORT_ANIMATION** = ``2``
+**IMPORT_ANIMATION** = ``2`` :ref:`🔗<class_EditorSceneFormatImporter_constant_IMPORT_ANIMATION>`
 
 .. container:: contribute
 
@@ -82,7 +82,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**IMPORT_FAIL_ON_MISSING_DEPENDENCIES** = ``4``
+**IMPORT_FAIL_ON_MISSING_DEPENDENCIES** = ``4`` :ref:`🔗<class_EditorSceneFormatImporter_constant_IMPORT_FAIL_ON_MISSING_DEPENDENCIES>`
 
 .. container:: contribute
 
@@ -94,7 +94,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**IMPORT_GENERATE_TANGENT_ARRAYS** = ``8``
+**IMPORT_GENERATE_TANGENT_ARRAYS** = ``8`` :ref:`🔗<class_EditorSceneFormatImporter_constant_IMPORT_GENERATE_TANGENT_ARRAYS>`
 
 .. container:: contribute
 
@@ -106,7 +106,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**IMPORT_USE_NAMED_SKIN_BINDS** = ``16``
+**IMPORT_USE_NAMED_SKIN_BINDS** = ``16`` :ref:`🔗<class_EditorSceneFormatImporter_constant_IMPORT_USE_NAMED_SKIN_BINDS>`
 
 .. container:: contribute
 
@@ -118,7 +118,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**IMPORT_DISCARD_MESHES_AND_MATERIALS** = ``32``
+**IMPORT_DISCARD_MESHES_AND_MATERIALS** = ``32`` :ref:`🔗<class_EditorSceneFormatImporter_constant_IMPORT_DISCARD_MESHES_AND_MATERIALS>`
 
 .. container:: contribute
 
@@ -130,7 +130,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**IMPORT_FORCE_DISABLE_MESH_COMPRESSION** = ``64``
+**IMPORT_FORCE_DISABLE_MESH_COMPRESSION** = ``64`` :ref:`🔗<class_EditorSceneFormatImporter_constant_IMPORT_FORCE_DISABLE_MESH_COMPRESSION>`
 
 .. container:: contribute
 
@@ -151,7 +151,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_extensions**\ (\ ) |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_extensions**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorSceneFormatImporter_private_method__get_extensions>`
 
 .. container:: contribute
 
@@ -165,7 +165,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_import_flags**\ (\ ) |virtual| |const|
+:ref:`int<class_int>` **_get_import_flags**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorSceneFormatImporter_private_method__get_import_flags>`
 
 .. container:: contribute
 
@@ -179,7 +179,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **_get_import_options**\ (\ path\: :ref:`String<class_String>`\ ) |virtual|
+|void| **_get_import_options**\ (\ path\: :ref:`String<class_String>`\ ) |virtual| :ref:`🔗<class_EditorSceneFormatImporter_private_method__get_import_options>`
 
 .. container:: contribute
 
@@ -193,7 +193,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **_get_option_visibility**\ (\ path\: :ref:`String<class_String>`, for_animation\: :ref:`bool<class_bool>`, option\: :ref:`String<class_String>`\ ) |virtual| |const|
+:ref:`Variant<class_Variant>` **_get_option_visibility**\ (\ path\: :ref:`String<class_String>`, for_animation\: :ref:`bool<class_bool>`, option\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_EditorSceneFormatImporter_private_method__get_option_visibility>`
 
 .. container:: contribute
 
@@ -207,7 +207,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **_import_scene**\ (\ path\: :ref:`String<class_String>`, flags\: :ref:`int<class_int>`, options\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual|
+:ref:`Object<class_Object>` **_import_scene**\ (\ path\: :ref:`String<class_String>`, flags\: :ref:`int<class_int>`, options\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| :ref:`🔗<class_EditorSceneFormatImporter_private_method__import_scene>`
 
 .. container:: contribute
 

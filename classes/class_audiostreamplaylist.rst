@@ -12,7 +12,7 @@ AudioStreamPlaylist
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`AudioStream<class_AudioStream>` that includes sub-streams and plays them back like a playslit.
+:ref:`AudioStream<class_AudioStream>` that includes sub-streams and plays them back like a playlist.
 
 .. rst-class:: classref-reftable-group
 
@@ -61,7 +61,7 @@ Constants
 
 .. rst-class:: classref-constant
 
-**MAX_STREAMS** = ``64``
+**MAX_STREAMS** = ``64`` :ref:`🔗<class_AudioStreamPlaylist_constant_MAX_STREAMS>`
 
 Maximum amount of streams supported in the playlist.
 
@@ -78,7 +78,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fade_time** = ``0.3``
+:ref:`float<class_float>` **fade_time** = ``0.3`` :ref:`🔗<class_AudioStreamPlaylist_property_fade_time>`
 
 .. rst-class:: classref-property-setget
 
@@ -95,14 +95,14 @@ Fade time used when a stream ends, when going to the next one. Streams are expec
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **loop** = ``true``
+:ref:`bool<class_bool>` **loop** = ``true`` :ref:`🔗<class_AudioStreamPlaylist_property_loop>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_loop**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **has_loop**\ (\ )
 
-If true, the playlist will loop, otherwise the playlist when end when the last stream is played.
+If ``true``, the playlist will loop, otherwise the playlist will end when the last stream is finished.
 
 .. rst-class:: classref-item-separator
 
@@ -112,14 +112,14 @@ If true, the playlist will loop, otherwise the playlist when end when the last s
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shuffle** = ``false``
+:ref:`bool<class_bool>` **shuffle** = ``false`` :ref:`🔗<class_AudioStreamPlaylist_property_shuffle>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_shuffle**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_shuffle**\ (\ )
 
-Shuffle the playlist. Streams are played in random order.
+If ``true``, the playlist will shuffle each time playback starts and each time it loops.
 
 .. rst-class:: classref-item-separator
 
@@ -129,7 +129,7 @@ Shuffle the playlist. Streams are played in random order.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stream_count** = ``0``
+:ref:`int<class_int>` **stream_count** = ``0`` :ref:`🔗<class_AudioStreamPlaylist_property_stream_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -151,9 +151,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_bpm**\ (\ ) |const|
+:ref:`float<class_float>` **get_bpm**\ (\ ) |const| :ref:`🔗<class_AudioStreamPlaylist_method_get_bpm>`
 
-Return the bpm of the playlist, which can vary depending on the clip being played.
+Returns the BPM of the playlist, which can vary depending on the clip being played.
 
 .. rst-class:: classref-item-separator
 
@@ -163,9 +163,9 @@ Return the bpm of the playlist, which can vary depending on the clip being playe
 
 .. rst-class:: classref-method
 
-:ref:`AudioStream<class_AudioStream>` **get_list_stream**\ (\ stream_index\: :ref:`int<class_int>`\ ) |const|
+:ref:`AudioStream<class_AudioStream>` **get_list_stream**\ (\ stream_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamPlaylist_method_get_list_stream>`
 
-Get the stream at playback position index.
+Returns the stream at playback position index.
 
 .. rst-class:: classref-item-separator
 
@@ -175,9 +175,9 @@ Get the stream at playback position index.
 
 .. rst-class:: classref-method
 
-|void| **set_list_stream**\ (\ stream_index\: :ref:`int<class_int>`, audio_stream\: :ref:`AudioStream<class_AudioStream>`\ )
+|void| **set_list_stream**\ (\ stream_index\: :ref:`int<class_int>`, audio_stream\: :ref:`AudioStream<class_AudioStream>`\ ) :ref:`🔗<class_AudioStreamPlaylist_method_set_list_stream>`
 
-Set the stream at playback position index.
+Sets the stream at playback position index.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

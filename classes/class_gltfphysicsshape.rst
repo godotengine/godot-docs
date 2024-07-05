@@ -91,7 +91,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **height** = ``2.0``
+:ref:`float<class_float>` **height** = ``2.0`` :ref:`🔗<class_GLTFPhysicsShape_property_height>`
 
 .. rst-class:: classref-property-setget
 
@@ -108,7 +108,7 @@ The height of the shape, in meters. This is only used when the shape type is "ca
 
 .. rst-class:: classref-property
 
-:ref:`ImporterMesh<class_ImporterMesh>` **importer_mesh**
+:ref:`ImporterMesh<class_ImporterMesh>` **importer_mesh** :ref:`🔗<class_GLTFPhysicsShape_property_importer_mesh>`
 
 .. rst-class:: classref-property-setget
 
@@ -125,7 +125,7 @@ The :ref:`ImporterMesh<class_ImporterMesh>` resource of the shape. This is only 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **is_trigger** = ``false``
+:ref:`bool<class_bool>` **is_trigger** = ``false`` :ref:`🔗<class_GLTFPhysicsShape_property_is_trigger>`
 
 .. rst-class:: classref-property-setget
 
@@ -144,7 +144,7 @@ This is the only variable not used in the :ref:`to_node<class_GLTFPhysicsShape_m
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **mesh_index** = ``-1``
+:ref:`int<class_int>` **mesh_index** = ``-1`` :ref:`🔗<class_GLTFPhysicsShape_property_mesh_index>`
 
 .. rst-class:: classref-property-setget
 
@@ -161,7 +161,7 @@ The index of the shape's mesh in the GLTF file. This is only used when the shape
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``0.5``
+:ref:`float<class_float>` **radius** = ``0.5`` :ref:`🔗<class_GLTFPhysicsShape_property_radius>`
 
 .. rst-class:: classref-property-setget
 
@@ -178,7 +178,7 @@ The radius of the shape, in meters. This is only used when the shape type is "ca
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **shape_type** = ``""``
+:ref:`String<class_String>` **shape_type** = ``""`` :ref:`🔗<class_GLTFPhysicsShape_property_shape_type>`
 
 .. rst-class:: classref-property-setget
 
@@ -195,7 +195,7 @@ The type of shape this shape represents. Valid values are "box", "capsule", "cyl
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **size** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(1, 1, 1)`` :ref:`🔗<class_GLTFPhysicsShape_property_size>`
 
 .. rst-class:: classref-property-setget
 
@@ -217,7 +217,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_dictionary**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static|
+:ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_dictionary**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static| :ref:`🔗<class_GLTFPhysicsShape_method_from_dictionary>`
 
 Creates a new GLTFPhysicsShape instance by parsing the given :ref:`Dictionary<class_Dictionary>`.
 
@@ -229,7 +229,7 @@ Creates a new GLTFPhysicsShape instance by parsing the given :ref:`Dictionary<cl
 
 .. rst-class:: classref-method
 
-:ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_node**\ (\ shape_node\: :ref:`CollisionShape3D<class_CollisionShape3D>`\ ) |static|
+:ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_node**\ (\ shape_node\: :ref:`CollisionShape3D<class_CollisionShape3D>`\ ) |static| :ref:`🔗<class_GLTFPhysicsShape_method_from_node>`
 
 Creates a new GLTFPhysicsShape instance from the given Godot :ref:`CollisionShape3D<class_CollisionShape3D>` node.
 
@@ -241,7 +241,7 @@ Creates a new GLTFPhysicsShape instance from the given Godot :ref:`CollisionShap
 
 .. rst-class:: classref-method
 
-:ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_resource**\ (\ shape_resource\: :ref:`Shape3D<class_Shape3D>`\ ) |static|
+:ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_resource**\ (\ shape_resource\: :ref:`Shape3D<class_Shape3D>`\ ) |static| :ref:`🔗<class_GLTFPhysicsShape_method_from_resource>`
 
 Creates a new GLTFPhysicsShape instance from the given Godot :ref:`Shape3D<class_Shape3D>` resource.
 
@@ -253,7 +253,7 @@ Creates a new GLTFPhysicsShape instance from the given Godot :ref:`Shape3D<class
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **to_dictionary**\ (\ ) |const|
+:ref:`Dictionary<class_Dictionary>` **to_dictionary**\ (\ ) |const| :ref:`🔗<class_GLTFPhysicsShape_method_to_dictionary>`
 
 Serializes this GLTFPhysicsShape instance into a :ref:`Dictionary<class_Dictionary>` in the format defined by ``OMI_physics_shape``.
 
@@ -265,7 +265,7 @@ Serializes this GLTFPhysicsShape instance into a :ref:`Dictionary<class_Dictiona
 
 .. rst-class:: classref-method
 
-:ref:`CollisionShape3D<class_CollisionShape3D>` **to_node**\ (\ cache_shapes\: :ref:`bool<class_bool>` = false\ )
+:ref:`CollisionShape3D<class_CollisionShape3D>` **to_node**\ (\ cache_shapes\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_GLTFPhysicsShape_method_to_node>`
 
 Converts this GLTFPhysicsShape instance into a Godot :ref:`CollisionShape3D<class_CollisionShape3D>` node.
 
@@ -277,7 +277,7 @@ Converts this GLTFPhysicsShape instance into a Godot :ref:`CollisionShape3D<clas
 
 .. rst-class:: classref-method
 
-:ref:`Shape3D<class_Shape3D>` **to_resource**\ (\ cache_shapes\: :ref:`bool<class_bool>` = false\ )
+:ref:`Shape3D<class_Shape3D>` **to_resource**\ (\ cache_shapes\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_GLTFPhysicsShape_method_to_resource>`
 
 Converts this GLTFPhysicsShape instance into a Godot :ref:`Shape3D<class_Shape3D>` resource.
 

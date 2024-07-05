@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Function**:
+enum **Function**: :ref:`🔗<enum_VisualShaderNodeColorFunc_Function>`
 
 .. _class_VisualShaderNodeColorFunc_constant_FUNC_GRAYSCALE:
 
@@ -117,7 +117,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Function<enum_VisualShaderNodeColorFunc_Function>` **function** = ``0``
+:ref:`Function<enum_VisualShaderNodeColorFunc_Function>` **function** = ``0`` :ref:`🔗<class_VisualShaderNodeColorFunc_property_function>`
 
 .. rst-class:: classref-property-setget
 

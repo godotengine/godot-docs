@@ -127,8 +127,8 @@ the path should be ``"."``. Here is an example scene tree
 
 .. tip::
 
-    To make the file structure easier to grasp, you can saving a file with any
-    given node or resource then inspect it yourself in an external editor. You
+    To make the file structure easier to grasp, you can save a file with any
+    given node or resource and then inspect it yourself in an external editor. You
     can also make incremental changes in the Godot editor, and keep an external
     text editor open on the ``.tscn`` or ``.tres`` file with auto-reload enabled
     to see what changes.
@@ -328,8 +328,6 @@ An ArrayMesh consists of several surfaces contained in the ``_surfaces`` array
 with the following keys:
 
 - ``aabb``: The computed axis-aligned bounding box for visibility.
-  ``Mesh.PrimitiveType`` Godot enum. ``0`` = points, ``1`` = lines, ``2`` = line
-  strip, ``3`` = triangles (most common), ``4`` = triangle strip.
 - ``attribute_data``: Vertex attribute data, such as normals, tangents, vertex
   colors, UV1, UV2 and custom vertex data.
 - ``bone_aabbs``: The axis-aligned bounding box of each bone for visibility.
@@ -345,7 +343,8 @@ with the following keys:
 - ``material``: The material used when drawing the surface.
 - ``name``: The surface's name. This can be used in scripts and is imported from
   3D DCCs.
-- ``primitive``: The surface's primitive type, matching the
+- ``primitive``: The surface's primitive type, matching the ``Mesh.PrimitiveType`` Godot enum. ``0`` = points, ``1`` = lines, ``2`` = line
+  strip, ``3`` = triangles (most common), ``4`` = triangle strip.
 - ``skin_data``: Bone weight data.
 - ``vertex_count``: Number of vertices in the surface. This must match ``vertex_data``'s size.
 - ``vertex_data``: The vertex position data.

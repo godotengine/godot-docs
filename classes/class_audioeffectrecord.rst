@@ -77,7 +77,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Format<enum_AudioStreamWAV_Format>` **format** = ``1``
+:ref:`Format<enum_AudioStreamWAV_Format>` **format** = ``1`` :ref:`🔗<class_AudioEffectRecord_property_format>`
 
 .. rst-class:: classref-property-setget
 
@@ -99,7 +99,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamWAV<class_AudioStreamWAV>` **get_recording**\ (\ ) |const|
+:ref:`AudioStreamWAV<class_AudioStreamWAV>` **get_recording**\ (\ ) |const| :ref:`🔗<class_AudioEffectRecord_method_get_recording>`
 
 Returns the recorded sample.
 
@@ -111,7 +111,7 @@ Returns the recorded sample.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_recording_active**\ (\ ) |const|
+:ref:`bool<class_bool>` **is_recording_active**\ (\ ) |const| :ref:`🔗<class_AudioEffectRecord_method_is_recording_active>`
 
 Returns whether the recording is active or not.
 
@@ -123,7 +123,7 @@ Returns whether the recording is active or not.
 
 .. rst-class:: classref-method
 
-|void| **set_recording_active**\ (\ record\: :ref:`bool<class_bool>`\ )
+|void| **set_recording_active**\ (\ record\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_AudioEffectRecord_method_set_recording_active>`
 
 If ``true``, the sound will be recorded. Note that restarting the recording will remove the previously recorded sample.
 

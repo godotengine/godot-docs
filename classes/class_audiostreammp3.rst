@@ -56,7 +56,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bar_beats** = ``4``
+:ref:`int<class_int>` **bar_beats** = ``4`` :ref:`🔗<class_AudioStreamMP3_property_bar_beats>`
 
 .. rst-class:: classref-property-setget
 
@@ -75,7 +75,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **beat_count** = ``0``
+:ref:`int<class_int>` **beat_count** = ``0`` :ref:`🔗<class_AudioStreamMP3_property_beat_count>`
 
 .. rst-class:: classref-property-setget
 
@@ -94,7 +94,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bpm** = ``0.0``
+:ref:`float<class_float>` **bpm** = ``0.0`` :ref:`🔗<class_AudioStreamMP3_property_bpm>`
 
 .. rst-class:: classref-property-setget
 
@@ -113,7 +113,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()`` :ref:`🔗<class_AudioStreamMP3_property_data>`
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +157,7 @@ You can load a file without having to import it beforehand using the code snippe
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **loop** = ``false``
+:ref:`bool<class_bool>` **loop** = ``false`` :ref:`🔗<class_AudioStreamMP3_property_loop>`
 
 .. rst-class:: classref-property-setget
 
@@ -174,7 +174,7 @@ If ``true``, the stream will automatically loop when it reaches the end.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **loop_offset** = ``0.0``
+:ref:`float<class_float>` **loop_offset** = ``0.0`` :ref:`🔗<class_AudioStreamMP3_property_loop_offset>`
 
 .. rst-class:: classref-property-setget
 

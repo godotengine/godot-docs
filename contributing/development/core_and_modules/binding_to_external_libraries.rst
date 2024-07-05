@@ -193,7 +193,7 @@ Example `SCsub` with custom flags:
 
     env_tts = env.Clone()
     env_tts.add_source_files(env.modules_sources, "*.cpp")
-	# Append CCFLAGS flags for both C and C++ code.
+    # Append CCFLAGS flags for both C and C++ code.
     env_tts.Append(CCFLAGS=['-O2'])
     # If you need to, you can:
     # - Append CFLAGS for C code only.

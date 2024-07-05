@@ -135,16 +135,16 @@ These files should contain the following:
     #include "summator.h"
 
     void initialize_summator_module(ModuleInitializationLevel p_level) {
-    	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
-    		return;
-    	}
+        if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
+            return;
+        }
         ClassDB::register_class<Summator>();
     }
 
     void uninitialize_summator_module(ModuleInitializationLevel p_level) {
-    	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
-    		return;
-    	}
+        if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
+            return;
+        }
        // Nothing to do here in this example.
     }
 

@@ -125,6 +125,8 @@ Methods
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`copy_absolute<class_DirAccess_method_copy_absolute>`\ (\ from\: :ref:`String<class_String>`, to\: :ref:`String<class_String>`, chmod_flags\: :ref:`int<class_int>` = -1\ ) |static| |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`create_link<class_DirAccess_method_create_link>`\ (\ source\: :ref:`String<class_String>`, target\: :ref:`String<class_String>`\ )                                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`current_is_dir<class_DirAccess_method_current_is_dir>`\ (\ ) |const|                                                                                                                |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`dir_exists<class_DirAccess_method_dir_exists>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                            |
@@ -157,6 +159,8 @@ Methods
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`is_case_sensitive<class_DirAccess_method_is_case_sensitive>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                                                                      |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_link<class_DirAccess_method_is_link>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`list_dir_begin<class_DirAccess_method_list_dir_begin>`\ (\ )                                                                                                                        |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`list_dir_end<class_DirAccess_method_list_dir_end>`\ (\ )                                                                                                                            |
@@ -170,6 +174,8 @@ Methods
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`make_dir_recursive_absolute<class_DirAccess_method_make_dir_recursive_absolute>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`DirAccess<class_DirAccess>`                 | :ref:`open<class_DirAccess_method_open>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`read_link<class_DirAccess_method_read_link>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                              |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`remove<class_DirAccess_method_remove>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                    |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -193,7 +199,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **include_hidden**
+:ref:`bool<class_bool>` **include_hidden** :ref:`🔗<class_DirAccess_property_include_hidden>`
 
 .. rst-class:: classref-property-setget
 
@@ -212,7 +218,7 @@ Affects :ref:`list_dir_begin<class_DirAccess_method_list_dir_begin>`, :ref:`get_
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **include_navigational**
+:ref:`bool<class_bool>` **include_navigational** :ref:`🔗<class_DirAccess_property_include_navigational>`
 
 .. rst-class:: classref-property-setget
 
@@ -236,7 +242,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **change_dir**\ (\ to_dir\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **change_dir**\ (\ to_dir\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DirAccess_method_change_dir>`
 
 Changes the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
 
@@ -252,7 +258,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **copy**\ (\ from\: :ref:`String<class_String>`, to\: :ref:`String<class_String>`, chmod_flags\: :ref:`int<class_int>` = -1\ )
+:ref:`Error<enum_@GlobalScope_Error>` **copy**\ (\ from\: :ref:`String<class_String>`, to\: :ref:`String<class_String>`, chmod_flags\: :ref:`int<class_int>` = -1\ ) :ref:`🔗<class_DirAccess_method_copy>`
 
 Copies the ``from`` file to the ``to`` destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
@@ -268,9 +274,25 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **copy_absolute**\ (\ from\: :ref:`String<class_String>`, to\: :ref:`String<class_String>`, chmod_flags\: :ref:`int<class_int>` = -1\ ) |static|
+:ref:`Error<enum_@GlobalScope_Error>` **copy_absolute**\ (\ from\: :ref:`String<class_String>`, to\: :ref:`String<class_String>`, chmod_flags\: :ref:`int<class_int>` = -1\ ) |static| :ref:`🔗<class_DirAccess_method_copy_absolute>`
 
 Static version of :ref:`copy<class_DirAccess_method_copy>`. Supports only absolute paths.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DirAccess_method_create_link:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **create_link**\ (\ source\: :ref:`String<class_String>`, target\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DirAccess_method_create_link>`
+
+Creates symbolic link between files or folders.
+
+\ **Note:** On Windows, this method works only if the application is running with elevated privileges or Developer Mode is enabled.
+
+\ **Note:** This method is implemented on macOS, Linux, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -280,7 +302,7 @@ Static version of :ref:`copy<class_DirAccess_method_copy>`. Supports only absolu
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **current_is_dir**\ (\ ) |const|
+:ref:`bool<class_bool>` **current_is_dir**\ (\ ) |const| :ref:`🔗<class_DirAccess_method_current_is_dir>`
 
 Returns whether the current item processed with the last :ref:`get_next<class_DirAccess_method_get_next>` call is a directory (``.`` and ``..`` are considered directories).
 
@@ -292,7 +314,7 @@ Returns whether the current item processed with the last :ref:`get_next<class_Di
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **dir_exists**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`bool<class_bool>` **dir_exists**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DirAccess_method_dir_exists>`
 
 Returns whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
 
@@ -304,7 +326,7 @@ Returns whether the target directory exists. The argument can be relative to the
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **dir_exists_absolute**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`bool<class_bool>` **dir_exists_absolute**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_DirAccess_method_dir_exists_absolute>`
 
 Static version of :ref:`dir_exists<class_DirAccess_method_dir_exists>`. Supports only absolute paths.
 
@@ -316,7 +338,7 @@ Static version of :ref:`dir_exists<class_DirAccess_method_dir_exists>`. Supports
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **file_exists**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`bool<class_bool>` **file_exists**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DirAccess_method_file_exists>`
 
 Returns whether the target file exists. The argument can be relative to the current directory, or an absolute path.
 
@@ -330,7 +352,7 @@ For a static equivalent, use :ref:`FileAccess.file_exists<class_FileAccess_metho
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_current_dir**\ (\ include_drive\: :ref:`bool<class_bool>` = true\ ) |const|
+:ref:`String<class_String>` **get_current_dir**\ (\ include_drive\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_DirAccess_method_get_current_dir>`
 
 Returns the absolute path to the currently opened directory (e.g. ``res://folder`` or ``C:\tmp\folder``).
 
@@ -342,7 +364,7 @@ Returns the absolute path to the currently opened directory (e.g. ``res://folder
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_current_drive**\ (\ )
+:ref:`int<class_int>` **get_current_drive**\ (\ ) :ref:`🔗<class_DirAccess_method_get_current_drive>`
 
 Returns the currently opened directory's drive index. See :ref:`get_drive_name<class_DirAccess_method_get_drive_name>` to convert returned index to the name of the drive.
 
@@ -354,7 +376,7 @@ Returns the currently opened directory's drive index. See :ref:`get_drive_name<c
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_directories**\ (\ )
+:ref:`PackedStringArray<class_PackedStringArray>` **get_directories**\ (\ ) :ref:`🔗<class_DirAccess_method_get_directories>`
 
 Returns a :ref:`PackedStringArray<class_PackedStringArray>` containing filenames of the directory contents, excluding files. The array is sorted alphabetically.
 
@@ -368,7 +390,7 @@ Affected by :ref:`include_hidden<class_DirAccess_property_include_hidden>` and :
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_directories_at**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_directories_at**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_DirAccess_method_get_directories_at>`
 
 Returns a :ref:`PackedStringArray<class_PackedStringArray>` containing filenames of the directory contents, excluding files, at the given ``path``. The array is sorted alphabetically.
 
@@ -382,7 +404,7 @@ Use :ref:`get_directories<class_DirAccess_method_get_directories>` if you want m
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_drive_count**\ (\ ) |static|
+:ref:`int<class_int>` **get_drive_count**\ (\ ) |static| :ref:`🔗<class_DirAccess_method_get_drive_count>`
 
 On Windows, returns the number of drives (partitions) mounted on the current filesystem.
 
@@ -400,7 +422,7 @@ On other platforms, the method returns 0.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_drive_name**\ (\ idx\: :ref:`int<class_int>`\ ) |static|
+:ref:`String<class_String>` **get_drive_name**\ (\ idx\: :ref:`int<class_int>`\ ) |static| :ref:`🔗<class_DirAccess_method_get_drive_name>`
 
 On Windows, returns the name of the drive (partition) passed as an argument (e.g. ``C:``).
 
@@ -418,7 +440,7 @@ On other platforms, or if the requested drive does not exist, the method returns
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_files**\ (\ )
+:ref:`PackedStringArray<class_PackedStringArray>` **get_files**\ (\ ) :ref:`🔗<class_DirAccess_method_get_files>`
 
 Returns a :ref:`PackedStringArray<class_PackedStringArray>` containing filenames of the directory contents, excluding directories. The array is sorted alphabetically.
 
@@ -434,7 +456,7 @@ Affected by :ref:`include_hidden<class_DirAccess_property_include_hidden>`.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_files_at**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_files_at**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_DirAccess_method_get_files_at>`
 
 Returns a :ref:`PackedStringArray<class_PackedStringArray>` containing filenames of the directory contents, excluding directories, at the given ``path``. The array is sorted alphabetically.
 
@@ -448,7 +470,7 @@ Use :ref:`get_files<class_DirAccess_method_get_files>` if you want more control 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_next**\ (\ )
+:ref:`String<class_String>` **get_next**\ (\ ) :ref:`🔗<class_DirAccess_method_get_next>`
 
 Returns the next element (file or directory) in the current directory.
 
@@ -462,7 +484,7 @@ The name of the file or directory is returned (and not its full path). Once the 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **get_open_error**\ (\ ) |static|
+:ref:`Error<enum_@GlobalScope_Error>` **get_open_error**\ (\ ) |static| :ref:`🔗<class_DirAccess_method_get_open_error>`
 
 Returns the result of the last :ref:`open<class_DirAccess_method_open>` call in the current thread.
 
@@ -474,7 +496,7 @@ Returns the result of the last :ref:`open<class_DirAccess_method_open>` call in 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_space_left**\ (\ )
+:ref:`int<class_int>` **get_space_left**\ (\ ) :ref:`🔗<class_DirAccess_method_get_space_left>`
 
 Returns the available space on the current directory's disk, in bytes. Returns ``0`` if the platform-specific method to query the available space fails.
 
@@ -486,7 +508,7 @@ Returns the available space on the current directory's disk, in bytes. Returns `
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_case_sensitive**\ (\ path\: :ref:`String<class_String>`\ ) |const|
+:ref:`bool<class_bool>` **is_case_sensitive**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_DirAccess_method_is_case_sensitive>`
 
 Returns ``true`` if the file system or directory use case sensitive file names.
 
@@ -496,11 +518,25 @@ Returns ``true`` if the file system or directory use case sensitive file names.
 
 ----
 
+.. _class_DirAccess_method_is_link:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_link**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DirAccess_method_is_link>`
+
+Returns ``true`` if the file or directory is a symbolic link, directory junction, or other reparse point.
+
+\ **Note:** This method is implemented on macOS, Linux, and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DirAccess_method_list_dir_begin:
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **list_dir_begin**\ (\ )
+:ref:`Error<enum_@GlobalScope_Error>` **list_dir_begin**\ (\ ) :ref:`🔗<class_DirAccess_method_list_dir_begin>`
 
 Initializes the stream used to list all files and directories using the :ref:`get_next<class_DirAccess_method_get_next>` function, closing the currently opened stream if needed. Once the stream has been processed, it should typically be closed with :ref:`list_dir_end<class_DirAccess_method_list_dir_end>`.
 
@@ -516,7 +552,7 @@ Affected by :ref:`include_hidden<class_DirAccess_property_include_hidden>` and :
 
 .. rst-class:: classref-method
 
-|void| **list_dir_end**\ (\ )
+|void| **list_dir_end**\ (\ ) :ref:`🔗<class_DirAccess_method_list_dir_end>`
 
 Closes the current stream opened with :ref:`list_dir_begin<class_DirAccess_method_list_dir_begin>` (whether it has been fully processed with :ref:`get_next<class_DirAccess_method_get_next>` does not matter).
 
@@ -528,7 +564,7 @@ Closes the current stream opened with :ref:`list_dir_begin<class_DirAccess_metho
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **make_dir**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **make_dir**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DirAccess_method_make_dir>`
 
 Creates a directory. The argument can be relative to the current directory, or an absolute path. The target directory should be placed in an already existing directory (to create the full path recursively, see :ref:`make_dir_recursive<class_DirAccess_method_make_dir_recursive>`).
 
@@ -542,7 +578,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **make_dir_absolute**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`Error<enum_@GlobalScope_Error>` **make_dir_absolute**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_DirAccess_method_make_dir_absolute>`
 
 Static version of :ref:`make_dir<class_DirAccess_method_make_dir>`. Supports only absolute paths.
 
@@ -554,7 +590,7 @@ Static version of :ref:`make_dir<class_DirAccess_method_make_dir>`. Supports onl
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **make_dir_recursive**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **make_dir_recursive**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DirAccess_method_make_dir_recursive>`
 
 Creates a target directory and all necessary intermediate directories in its path, by calling :ref:`make_dir<class_DirAccess_method_make_dir>` recursively. The argument can be relative to the current directory, or an absolute path.
 
@@ -568,7 +604,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **make_dir_recursive_absolute**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`Error<enum_@GlobalScope_Error>` **make_dir_recursive_absolute**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_DirAccess_method_make_dir_recursive_absolute>`
 
 Static version of :ref:`make_dir_recursive<class_DirAccess_method_make_dir_recursive>`. Supports only absolute paths.
 
@@ -580,7 +616,7 @@ Static version of :ref:`make_dir_recursive<class_DirAccess_method_make_dir_recur
 
 .. rst-class:: classref-method
 
-:ref:`DirAccess<class_DirAccess>` **open**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`DirAccess<class_DirAccess>` **open**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_DirAccess_method_open>`
 
 Creates a new **DirAccess** object and opens an existing directory of the filesystem. The ``path`` argument can be within the project tree (``res://folder``), the user directory (``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
 
@@ -590,11 +626,25 @@ Returns ``null`` if opening the directory failed. You can use :ref:`get_open_err
 
 ----
 
+.. _class_DirAccess_method_read_link:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **read_link**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DirAccess_method_read_link>`
+
+Returns target of the symbolic link.
+
+\ **Note:** This method is implemented on macOS, Linux, and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DirAccess_method_remove:
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **remove**\ (\ path\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **remove**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DirAccess_method_remove>`
 
 Permanently deletes the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
 
@@ -610,7 +660,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **remove_absolute**\ (\ path\: :ref:`String<class_String>`\ ) |static|
+:ref:`Error<enum_@GlobalScope_Error>` **remove_absolute**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_DirAccess_method_remove_absolute>`
 
 Static version of :ref:`remove<class_DirAccess_method_remove>`. Supports only absolute paths.
 
@@ -622,7 +672,7 @@ Static version of :ref:`remove<class_DirAccess_method_remove>`. Supports only ab
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **rename**\ (\ from\: :ref:`String<class_String>`, to\: :ref:`String<class_String>`\ )
+:ref:`Error<enum_@GlobalScope_Error>` **rename**\ (\ from\: :ref:`String<class_String>`, to\: :ref:`String<class_String>`\ ) :ref:`🔗<class_DirAccess_method_rename>`
 
 Renames (move) the ``from`` file or directory to the ``to`` destination. Both arguments should be paths to files or directories, either relative or absolute. If the destination file or directory exists and is not access-protected, it will be overwritten.
 
@@ -636,7 +686,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **rename_absolute**\ (\ from\: :ref:`String<class_String>`, to\: :ref:`String<class_String>`\ ) |static|
+:ref:`Error<enum_@GlobalScope_Error>` **rename_absolute**\ (\ from\: :ref:`String<class_String>`, to\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_DirAccess_method_rename_absolute>`
 
 Static version of :ref:`rename<class_DirAccess_method_rename>`. Supports only absolute paths.
 
