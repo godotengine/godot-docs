@@ -21,7 +21,7 @@ explore broad topics while the search bar will help you find more specific
 pages. If a page exists for a given theme, it will often link to more related
 content.
 
-.. image:: img/manual_search.png
+.. image:: img/manual_search.webp
 
 The manual has a companion class reference that explains each Godot class's
 available functions and properties when programming. While the manual covers
@@ -56,7 +56,7 @@ A class reference's page tells you:
           <https://github.com/godotengine/godot-docs/issues>`_ GitHub repository
           to report it.
 
-You can Ctrl-click (Cmd-click on MacOS) any underlined text like the name of a class, property,
+You can :kbd:`Ctrl + Click` (macOS :kbd:`⌘ Command + click`) to underline text like the name of a class, property,
 method, signal, or constant to jump to it.
 
 Learning to think like a programmer
@@ -121,10 +121,12 @@ information:
    Also, please don't take a picture with your phone, the low quality and screen
    reflections can make it hard to understand the image. Your operating system
    should have a built-in tool to take screenshots with the :kbd:`PrtSc` (Print
-   Screen) key.
+   Screen) key (macOS: use :kbd:`⌘ Command + ⇧ Shift + 3` for a full screen shot).
 
    Alternatively, you can use a program like `ShareX <https://getsharex.com/>`_
-   on Windows or `FlameShot <https://flameshot.org/>`_ on Linux.
+   on Windows, `FlameShot <https://flameshot.org/>`_ on Linux
+   or `Screenshot <https://support.apple.com/guide/mac-help/take-a-screenshot-mh26782/mac>`_
+   on macOS.
 
 5. Sharing a video of your running game can also be really **useful to
    troubleshoot your game**. You can use programs like `OBS Studio
