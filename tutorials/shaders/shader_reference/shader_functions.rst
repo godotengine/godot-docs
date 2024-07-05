@@ -39,7 +39,7 @@ GLSL 4.00 specification.
     For example, the operation ``vec2(3, 4) * vec2(10, 20)`` would result in ``vec2(3 * 10, 4 * 20)``.
     or the operation ``min(vec2(3, 4), vec2(1, 8))`` would result in ``vec2(min(3, 1), min(4, 8))``.
 
-    The `GLSL Language Specification <http://www.opengl.org/registry/doc/GLSLangSpec.4.30.6.pdf>` says under section 5.10 Vector and Matrix Operations:
+    The `GLSL Language Specification <http://www.opengl.org/registry/doc/GLSLangSpec.4.30.6.pdf>`_ says under section 5.10 Vector and Matrix Operations:
 
         With a few exceptions, operations are component-wise. Usually, when an operator operates on a
         vector or matrix, it is operating independently on each component of the vector or matrix,
