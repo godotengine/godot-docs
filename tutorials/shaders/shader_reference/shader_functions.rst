@@ -719,26 +719,8 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-|vec_type| **abs** ( |vec_type| x )
-
-    Returns the absolute value of x. Returns X if X is positive or X * -1 if X is negative.
-
-    :param x:
-        the value of which to return the absolute.
-
-    :return:
-        the absolute value of x
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/abs.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_int_type| **abs** ( |vec_int_type| x )
+| |vec_type| **abs** ( |vec_type| x )
+| |vec_int_type| **abs** ( |vec_int_type| x )
 
     Returns the absolute value of x. Returns X if X is positive or X * -1 if X is negative.
 
@@ -761,27 +743,8 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-|vec_type| **sign** ( |vec_type| x )
-
-    Returns -1.0 if x is less than 0.0, 0.0 if x is equal to 0.0, and +1.0 if x is greater than 0.0.
-
-    :param x:
-        the value from which to extract the sign.
-
-    :return:
-        1, -1 or 0.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sign.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-
-.. rst-class:: classref-method
-
-|vec_int_type| **sign** ( |vec_int_type| x )
+| |vec_type| **sign** ( |vec_type| x )
+| |vec_int_type| **sign** ( |vec_int_type| x )
 
     Returns -1.0 if x is less than 0.0, 0.0 if x is equal to 0.0, and +1.0 if x is greater than 0.0.
 
@@ -951,29 +914,8 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-|vec_type| **mod** ( |vec_type| x, |vec_type| y )
-
-    Returns the value of ``x modulo y``.
-    This is also sometimes called the remainder.
-
-    This is computed as ``x - y * floor(x/y)``.
-
-    :param x:
-        the value to evaluate.
-
-    :return:
-        the value of ``x modulo y``.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mod.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_type| **mod** ( |vec_type| x, float y )
+| |vec_type| **mod** ( |vec_type| x, |vec_type| y )
+| |vec_type| **mod** ( |vec_type| x, float y )
 
     Returns the value of ``x modulo y``.
     This is also sometimes called the remainder.
@@ -1028,134 +970,16 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-|vec_type| **min** ( |vec_type| a, |vec_type| b )
+| |vec_type| **min** ( |vec_type| a, |vec_type| b )
+| |vec_type| **min** ( |vec_type| a, float b )
+| |vec_int_type| **min** ( |vec_int_type| a, |vec_int_type| b )
+| |vec_int_type| **min** ( |vec_int_type| a, int b )
+| |vec_uint_type| **min** ( |vec_uint_type| a, |vec_uint_type| b )
+| |vec_uint_type| **min** ( |vec_uint_type| a, uint b )
 
     Returns the minimum of the two parameters.
 
-    It returns y if y is less than x, otherwise it returns x.
-
-    :param a:
-        the first value to compare.
-
-    :param b:
-        the second value to compare.
-
-    :return:
-        the minimum of the two parameters.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_type| **min** ( |vec_type| a, float b )
-
-    Returns the minimum of the two parameters.
-
-    It returns y if y is less than x, otherwise it returns x.
-
-    :param a:
-        the first value to compare.
-
-    :param b:
-        the second value to compare.
-
-    :return:
-        the minimum of the two parameters.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-
-.. rst-class:: classref-method
-
-|vec_int_type| **min** ( |vec_int_type| a, |vec_int_type| b )
-
-    Returns the minimum of the two parameters.
-
-    It returns y if y is less than x, otherwise it returns x.
-
-    :param a:
-        the first value to compare.
-
-    :param b:
-        the second value to compare.
-
-    :return:
-        the minimum of the two parameters.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-
-.. rst-class:: classref-method
-
-|vec_int_type| **min** ( |vec_int_type| a, int b )
-
-    Returns the minimum of the two parameters.
-
-    It returns y if y is less than x, otherwise it returns x.
-
-    :param a:
-        the first value to compare.
-
-    :param b:
-        the second value to compare.
-
-    :return:
-        the minimum of the two parameters.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_uint_type| **min** ( |vec_uint_type| a, |vec_uint_type| b )
-
-    Returns the minimum of the two parameters.
-
-    It returns y if y is less than x, otherwise it returns x.
-
-    :param a:
-        the first value to compare.
-
-    :param b:
-        the second value to compare.
-
-    :return:
-        the minimum of the two parameters.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-
-.. rst-class:: classref-method
-
-|vec_uint_type| **min** ( |vec_uint_type| a, uint b )
-
-    Returns the minimum of the two parameters.
-
-    It returns y if y is less than x, otherwise it returns x.
+    It returns b if b is less than a, otherwise it returns a.
 
     :param a:
         the first value to compare.
@@ -1179,135 +1003,16 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-|vec_type| **max** ( |vec_type| a, |vec_type| b )
+| |vec_type| **max** ( |vec_type| a, |vec_type| b )
+| |vec_type| **max** ( |vec_type| a, float b )
+| |vec_uint_type| **max** ( |vec_uint_type| a, |vec_uint_type| b )
+| |vec_uint_type| **max** ( |vec_uint_type| a, uint b )
+| |vec_int_type| **max** ( |vec_int_type| a, |vec_int_type| b )
+| |vec_int_type| **max** ( |vec_int_type| a, int b )
 
     Returns the maximum of the two parameters.
 
-    It returns y if y is greater than x, otherwise it returns x.
-
-    :param a:
-        the first value to compare.
-
-    :param b:
-        the second value to compare.
-
-    :return:
-        the maximum value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-
-.. rst-class:: classref-method
-
-|vec_type| **max** ( |vec_type| a, float b )
-
-    Returns the maximum of the two parameters.
-
-    It returns y if y is greater than x, otherwise it returns x.
-
-    :param a:
-        the first value to compare.
-
-    :param b:
-        the second value to compare.
-
-    :return:
-        the maximum value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-
-.. rst-class:: classref-method
-
-|vec_uint_type| **max** ( |vec_uint_type| a, |vec_uint_type| b )
-
-    Returns the maximum of the two parameters.
-
-    It returns y if y is greater than x, otherwise it returns x.
-
-    :param a:
-        the first value to compare.
-
-    :param b:
-        the second value to compare.
-
-    :return:
-        the maximum value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-
-.. rst-class:: classref-method
-
-|vec_uint_type| **max** ( |vec_uint_type| a, uint b )
-
-    Returns the maximum of the two parameters.
-
-    It returns y if y is greater than x, otherwise it returns x.
-
-    :param a:
-        the first value to compare.
-
-    :param b:
-        the second value to compare.
-
-    :return:
-        the maximum value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-
-.. rst-class:: classref-method
-
-|vec_int_type| **max** ( |vec_int_type| a, |vec_int_type| b )
-
-    Returns the maximum of the two parameters.
-
-    It returns y if y is greater than x, otherwise it returns x.
-
-    :param a:
-        the first value to compare.
-
-    :param b:
-        the second value to compare.
-
-    :return:
-        the maximum value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_int_type| **max** ( |vec_int_type| a, int b )
-
-    Returns the maximum of the two parameters.
-
-    It returns y if y is greater than x, otherwise it returns x.
+    It returns b if b is greater than a, otherwise it returns a.
 
     :param a:
         the first value to compare.
@@ -1331,154 +1036,24 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-|vec_type| **clamp** ( |vec_type| x, |vec_type| min, |vec_type| max )
+| |vec_type| **clamp** ( |vec_type| x, |vec_type| minVal, |vec_type| maxVal )
+| |vec_type| **clamp** ( |vec_type| x, float min, float max )
+| |vec_type| **clamp** ( |vec_type| x, float min, float max )
+| |vec_uint_type| **clamp** ( |vec_int_type| x, float min, float max )
+| |vec_int_type| **clamp** ( |vec_type| x, |vec_type| min, |vec_type| max )
+| |vec_int_type| **clamp** ( |vec_type| x, float min, float max )
 
     Returns the value of x constrained to the range minVal to maxVal.
 
-    The returned value is computed as min(max(x, minVal), maxVal).
+    The returned value is computed as ``min(max(x, minVal), maxVal)``.
 
     :param x:
         the value to constrain.
 
-    :param min:
+    :param minVal:
         the lower end of the range into which to constrain x.
 
-    :param max:
-        the upper end of the range into which to constrain x.
-
-    :return:
-        the constrained value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_type| **clamp** ( |vec_type| x, float min, float max )
-
-    Returns the value of x constrained to the range minVal to maxVal.
-
-    The returned value is computed as min(max(x, minVal), maxVal).
-
-    :param x:
-        the value to constrain.
-
-    :param min:
-        the lower end of the range into which to constrain x.
-
-    :param max:
-        the upper end of the range into which to constrain x.
-
-    :return:
-        the constrained value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_uint_type| **clamp** ( |vec_int_type| x, |vec_int_type| min, |vec_int_type| max )
-
-    Returns the value of x constrained to the range minVal to maxVal.
-
-    The returned value is computed as min(max(x, minVal), maxVal).
-
-    :param x:
-        the value to constrain.
-
-    :param min:
-        the lower end of the range into which to constrain x.
-
-    :param max:
-        the upper end of the range into which to constrain x.
-
-    :return:
-        the constrained value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_uint_type| **clamp** ( |vec_int_type| x, float min, float max )
-
-    Returns the value of x constrained to the range minVal to maxVal.
-
-    The returned value is computed as min(max(x, minVal), maxVal).
-
-    :param x:
-        the value to constrain.
-
-    :param min:
-        the lower end of the range into which to constrain x.
-
-    :param max:
-        the upper end of the range into which to constrain x.
-
-    :return:
-        the constrained value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_int_type| **clamp** ( |vec_type| x, |vec_type| min, |vec_type| max )
-
-    Returns the value of x constrained to the range minVal to maxVal.
-
-    The returned value is computed as min(max(x, minVal), maxVal).
-
-    :param x:
-        the value to constrain.
-
-    :param min:
-        the lower end of the range into which to constrain x.
-
-    :param max:
-        the upper end of the range into which to constrain x.
-
-    :return:
-        the constrained value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_int_type| **clamp** ( |vec_type| x, float min, float max )
-
-    Returns the value of x constrained to the range minVal to maxVal.
-
-    The returned value is computed as min(max(x, minVal), maxVal).
-
-    :param x:
-        the value to constrain.
-
-    :param min:
-        the lower end of the range into which to constrain x.
-
-    :param max:
+    :param maxVal:
         the upper end of the range into which to constrain x.
 
     :return:
@@ -1497,34 +1072,8 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-|vec_type| **mix** ( |vec_type| a, |vec_type| b, |vec_type| c )
-
-    Performs a linear interpolation between a and b using c to weight between them.
-
-    computed as ``a × (1 − c) + b × c``.
-
-    :param a:
-        the start of the range in which to interpolate.
-
-    :param b:
-        the end of the range in which to interpolate.
-
-    :param c:
-        the value to use to interpolate between x and y.
-
-    :return:
-        The interpolated value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mix.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_type| **mix** ( |vec_type| a, |vec_type| b, float c )
+| |vec_type| **mix** ( |vec_type| a, |vec_type| b, |vec_type| c )
+| |vec_type| **mix** ( |vec_type| a, |vec_type| b, float c )
 
     Performs a linear interpolation between a and b using c to weight between them.
 
@@ -1686,41 +1235,8 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 .. rst-class:: classref-method
 
-|vec_type| **smoothstep** ( |vec_type| a, |vec_type| b, |vec_type| c )
-
-    Performs smooth Hermite interpolation between 0 and 1 when a < c < b.
-    This is useful in cases where a threshold function with a smooth transition is desired.
-
-    Smoothstep is equivalent to::
-
-        vec_type t;
-        t = clamp((c - a) / (b - a), 0.0, 1.0);
-        return t * t * (3.0 - 2.0 * t);
-
-    Results are undefined if a ≥ b.
-
-    :param a:
-        the value of the lower edge of the Hermite function.
-
-    :param b:
-        the value of the upper edge of the Hermite function.
-
-    :param c:
-        the source value for interpolation.
-
-    :return:
-        the interpolated value
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/smoothstep.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_type| **smoothstep** ( float a, float b, |vec_type| c )
+| |vec_type| **smoothstep** ( |vec_type| a, |vec_type| b, |vec_type| c )
+| |vec_type| **smoothstep** ( float a, float b, |vec_type| c )
 
     Performs smooth Hermite interpolation between 0 and 1 when a < c < b.
     This is useful in cases where a threshold function with a smooth transition is desired.
@@ -2743,119 +2259,11 @@ Texture Functions
 
 .. rst-class:: classref-method
 
-ivec2 **textureSize** ( |gsampler2D| s, int lod )
-
-    Retrieve the dimensions of a level of a texture.
-
-    Returns the dimensions of level lod (if present) of the texture bound to sampler.
-
-    The components in the return value are filled in, in order, with the width, height and depth
-    of the texture. For the array forms, the last component of the return value is
-    the number of layers in the texture array.
-
-    :param s:
-        the sampler to which the texture whose dimensions to retrieve is bound.
-
-    :param lod:
-        the level of the texture for which to retrieve the dimensions.
-
-    :return:
-        the dimensions of level lod (if present) of the texture bound to sampler.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-ivec2 **textureSize** ( samplerCube s, int lod )
-
-    Retrieve the dimensions of a level of a texture.
-
-    Returns the dimensions of level lod (if present) of the texture bound to sampler.
-
-    The components in the return value are filled in, in order, with the width, height and depth
-    of the texture. For the array forms, the last component of the return value is
-    the number of layers in the texture array.
-
-    :param s:
-        the sampler to which the texture whose dimensions to retrieve is bound.
-
-    :param lod:
-        the level of the texture for which to retrieve the dimensions.
-
-    :return:
-        the dimensions of level lod (if present) of the texture bound to sampler.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-ivec2 **textureSize** ( samplerCubeArray s, int lod )
-
-    Retrieve the dimensions of a level of a texture.
-
-    Returns the dimensions of level lod (if present) of the texture bound to sampler.
-
-    The components in the return value are filled in, in order, with the width, height and depth
-    of the texture. For the array forms, the last component of the return value is
-    the number of layers in the texture array.
-
-    :param s:
-        the sampler to which the texture whose dimensions to retrieve is bound.
-
-    :param lod:
-        the level of the texture for which to retrieve the dimensions.
-
-    :return:
-        the dimensions of level lod (if present) of the texture bound to sampler.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-ivec3 **textureSize** ( |gsampler2DArray| s, int lod )
-
-    Retrieve the dimensions of a level of a texture.
-
-    Returns the dimensions of level lod (if present) of the texture bound to sampler.
-
-    The components in the return value are filled in, in order, with the width, height and depth
-    of the texture. For the array forms, the last component of the return value is
-    the number of layers in the texture array.
-
-    :param s:
-        the sampler to which the texture whose dimensions to retrieve is bound.
-
-    :param lod:
-        the level of the texture for which to retrieve the dimensions.
-
-    :return:
-        the dimensions of level lod (if present) of the texture bound to sampler.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-ivec3 **textureSize** ( |gsampler3D| s, int lod )
+| ivec2 **textureSize** ( |gsampler2D| s, int lod )
+| ivec2 **textureSize** ( samplerCube s, int lod )
+| ivec2 **textureSize** ( samplerCubeArray s, int lod )
+| ivec3 **textureSize** ( |gsampler2DArray| s, int lod )
+| ivec3 **textureSize** ( |gsampler3D| s, int lod )
 
     Retrieve the dimensions of a level of a texture.
 
@@ -2916,72 +2324,18 @@ vec2 **textureQueryLod** ( |gsampler2D| s, vec2 p )
 
 .. rst-class:: classref-method
 
-vec3 **textureQueryLod** ( |gsampler2DArray| s, vec2 p )
-
-    Compute the level-of-detail that would be used to sample from a texture.
-
-    Available only in the fragment shader, textureQueryLod computes the level-of-detail
-    that would be used to sample from a texture. The mipmap array(s) that would be
-    accessed is returned in the x component of the return value. The computed level-of-detail
-    relative to the base level is returned in the y component of the return value.
-
-    If called on an incomplete texture, the result of the operation is undefined.
-
-    :param s:
-        the sampler to which the texture whose level-of-detail will be queried is bound.
-
-    :param p:
-        the texture coordinates at which the level-of-detail will be queried.
-
-    :return:
-        see description.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
+vec2 **textureQueryLod** ( |gsampler2D| s, vec2 p )
+vec2 **textureQueryLod** ( |gsampler2DArray| s, vec2 p )
 vec2 **textureQueryLod** ( |gsampler3D| s, vec3 p )
-
-    Compute the level-of-detail that would be used to sample from a texture.
-
-    Available only in the fragment shader, textureQueryLod computes the level-of-detail
-    that would be used to sample from a texture. The mipmap array(s) that would be
-    accessed is returned in the x component of the return value. The computed level-of-detail
-    relative to the base level is returned in the y component of the return value.
-
-    If called on an incomplete texture, the result of the operation is undefined.
-
-    :param s:
-        the sampler to which the texture whose level-of-detail will be queried is bound.
-
-    :param p:
-        the texture coordinates at which the level-of-detail will be queried.
-
-    :return:
-        see description.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
 vec2 **textureQueryLod** ( samplerCube s, vec3 p )
 
+    .. note:: Available only in the fragment shader.
+
     Compute the level-of-detail that would be used to sample from a texture.
 
-    Available only in the fragment shader, textureQueryLod computes the level-of-detail
-    that would be used to sample from a texture. The mipmap array(s) that would be
-    accessed is returned in the x component of the return value. The computed level-of-detail
-    relative to the base level is returned in the y component of the return value.
+    The mipmap array(s) that would be accessed is returned in the x component of
+    the return value. The computed level-of-detail relative to the base level is
+    returned in the y component of the return value.
 
     If called on an incomplete texture, the result of the operation is undefined.
 
@@ -3007,70 +2361,10 @@ vec2 **textureQueryLod** ( samplerCube s, vec3 p )
 
 .. rst-class:: classref-method
 
-int **textureQueryLevels** ( |gsampler2D| s )
-
-    Compute the number of accessible mipmap levels of a texture.
-
-    If called on an incomplete texture, or if no texture is associated with sampler, zero is returned.
-
-    :param s:
-        the sampler to which the texture whose mipmap level count will be queried is bound.
-
-    :return:
-        the number of accessible mipmap levels in the texture, or zero.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-int **textureQueryLevels** ( |gsampler2DArray| s )
-
-    Compute the number of accessible mipmap levels of a texture.
-
-    If called on an incomplete texture, or if no texture is associated with sampler, zero is returned.
-
-    :param s:
-        the sampler to which the texture whose mipmap level count will be queried is bound.
-
-    :return:
-        the number of accessible mipmap levels in the texture, or zero.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-int **textureQueryLevels** ( |gsampler3D| s )
-
-    Compute the number of accessible mipmap levels of a texture.
-
-    If called on an incomplete texture, or if no texture is associated with sampler, zero is returned.
-
-    :param s:
-        the sampler to which the texture whose mipmap level count will be queried is bound.
-
-    :return:
-        the number of accessible mipmap levels in the texture, or zero.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-int **textureQueryLevels** ( samplerCube s )
+| int **textureQueryLevels** ( |gsampler2D| s )
+| int **textureQueryLevels** ( |gsampler2DArray| s )
+| int **textureQueryLevels** ( |gsampler3D| s )
+| int **textureQueryLevels** ( samplerCube s )
 
     Compute the number of accessible mipmap levels of a texture.
 
@@ -3095,139 +2389,11 @@ int **textureQueryLevels** ( samplerCube s )
 
 .. rst-class:: classref-method
 
-|gvec4_type| **texture** ( |gsampler2D| s, vec2 p [, float bias] )
-
-    Retrieves texels from a texture.
-
-    Samples texels from the texture bound to ``s`` at texture coordinate ``p``. An optional bias, specified in ``bias`` is
-    included in the level-of-detail computation that is used to choose mipmap(s) from which to sample.
-
-    For shadow forms, the last component of ``p`` is used as Dsub and the array layer is specified in the second to last
-    component of ``p``. (The second component of ``p`` is unused for 1D shadow lookups.)
-
-    For non-shadow variants, the array layer comes from the last component of P.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param bias:
-        an optional bias to be applied during level-of-detail computation.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **texture** ( |gsampler2DArray| s, vec3 p [, float bias] )
-
-    Retrieves texels from a texture.
-
-    Samples texels from the texture bound to ``s`` at texture coordinate ``p``. An optional bias, specified in ``bias`` is
-    included in the level-of-detail computation that is used to choose mipmap(s) from which to sample.
-
-    For shadow forms, the last component of ``p`` is used as Dsub and the array layer is specified in the second to last
-    component of ``p``. (The second component of ``p`` is unused for 1D shadow lookups.)
-
-    For non-shadow variants, the array layer comes from the last component of P.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param bias:
-        an optional bias to be applied during level-of-detail computation.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **texture** ( |gsampler3D| s, vec3 p [, float bias] )
-
-    Retrieves texels from a texture.
-
-    Samples texels from the texture bound to ``s`` at texture coordinate ``p``. An optional bias, specified in ``bias`` is
-    included in the level-of-detail computation that is used to choose mipmap(s) from which to sample.
-
-    For shadow forms, the last component of ``p`` is used as Dsub and the array layer is specified in the second to last
-    component of ``p``. (The second component of ``p`` is unused for 1D shadow lookups.)
-
-    For non-shadow variants, the array layer comes from the last component of P.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param bias:
-        an optional bias to be applied during level-of-detail computation.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-vec4 **texture** ( samplerCube s, vec3 p [, float bias] )
-
-    Retrieves texels from a texture.
-
-    Samples texels from the texture bound to ``s`` at texture coordinate ``p``. An optional bias, specified in ``bias`` is
-    included in the level-of-detail computation that is used to choose mipmap(s) from which to sample.
-
-    For shadow forms, the last component of ``p`` is used as Dsub and the array layer is specified in the second to last
-    component of ``p``. (The second component of ``p`` is unused for 1D shadow lookups.)
-
-    For non-shadow variants, the array layer comes from the last component of P.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param bias:
-        an optional bias to be applied during level-of-detail computation.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
+| |gvec4_type| **texture** ( |gsampler2D| s, vec2 p [, float bias] )
+| |gvec4_type| **texture** ( |gsampler2DArray| s, vec3 p [, float bias] )
+| |gvec4_type| **texture** ( |gsampler3D| s, vec3 p [, float bias] )
+| vec4 **texture** ( samplerCube s, vec3 p [, float bias] )
+| vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
 
     Retrieves texels from a texture.
 
@@ -3264,65 +2430,9 @@ vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureProj** ( |gsampler2D| s, vec3 p [, float bias] )
-
-    Perform a texture lookup with projection.
-
-    The texture coordinates consumed from ``p``, not including the last component of ``p``, are
-    divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
-    forms is used as Dref. After these values are computed, the texture lookup proceeds as in texture.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param bias:
-        optional bias to be applied during level-of-detail computation.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProj.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **textureProj** ( |gsampler2D| s, vec4 p [, float bias] )
-
-    Perform a texture lookup with projection.
-
-    The texture coordinates consumed from ``p``, not including the last component of ``p``, are
-    divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
-    forms is used as Dref. After these values are computed, the texture lookup proceeds as in texture.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param bias:
-        optional bias to be applied during level-of-detail computation.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProj.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **textureProj** ( |gsampler3D| s, vec4 p [, float bias] )
+| |gvec4_type| **textureProj** ( |gsampler2D| s, vec3 p [, float bias] )
+| |gvec4_type| **textureProj** ( |gsampler2D| s, vec4 p [, float bias] )
+| |gvec4_type| **textureProj** ( |gsampler3D| s, vec4 p [, float bias] )
 
     Perform a texture lookup with projection.
 
@@ -3355,127 +2465,11 @@ vec4 **texture** ( samplerCubeArray s, vec4 p [, float bias] )
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureLod** ( |gsampler2D| s, vec2 p, float lod )
-
-    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
-    an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
-    partial derivatives as follows::
-
-        δu/δx=0, δv/δx=0, δw/δx=0
-        δu/δy=0, δv/δy=0, δw/δy=0
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param lod:
-        the explicit level-of-detail
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **textureLod** ( |gsampler2DArray| s, vec3 p, float lod )
-
-    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
-    an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
-    partial derivatives as follows::
-
-        δu/δx=0, δv/δx=0, δw/δx=0
-        δu/δy=0, δv/δy=0, δw/δy=0
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param lod:
-        the explicit level-of-detail
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **textureLod** ( |gsampler3D| s, vec3 p, float lod )
-
-    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
-    an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
-    partial derivatives as follows::
-
-        δu/δx=0, δv/δx=0, δw/δx=0
-        δu/δy=0, δv/δy=0, δw/δy=0
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param lod:
-        the explicit level-of-detail
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-vec4 **textureLod** ( samplerCube s, vec3 p, float lod )
-
-    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
-    an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
-    partial derivatives as follows::
-
-        δu/δx=0, δv/δx=0, δw/δx=0
-        δu/δy=0, δv/δy=0, δw/δy=0
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param lod:
-        the explicit level-of-detail
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
+| |gvec4_type| **textureLod** ( |gsampler2D| s, vec2 p, float lod )
+| |gvec4_type| **textureLod** ( |gsampler2DArray| s, vec3 p, float lod )
+| |gvec4_type| **textureLod** ( |gsampler3D| s, vec3 p, float lod )
+| vec4 **textureLod** ( samplerCube s, vec3 p, float lod )
+| vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
 
     Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
     an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
@@ -3510,67 +2504,7 @@ vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
 .. rst-class:: classref-method
 
 |gvec4_type| **textureProjLod** ( |gsampler2D| s, vec3 p, float lod )
-
-    Performs a texture lookup with projection from an explicitly specified level-of-detail.
-
-    The texture coordinates consumed from P, not including the last component of ``p``, are
-    divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
-    forms is used as Dref. After these values are computed, the texture lookup proceeds as in
-    `textureLod<shader_func_textureLod>`, with ``lod`` used to specify the level-of-detail from
-    which the texture will be sampled.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param lod:
-        the explicit level-of-detail from which to fetch texels.
-
-    :return:
-       a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjLod.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
 |gvec4_type| **textureProjLod** ( |gsampler2D| s, vec4 p, float lod )
-
-    Performs a texture lookup with projection from an explicitly specified level-of-detail.
-
-    The texture coordinates consumed from P, not including the last component of ``p``, are
-    divided by the last component of ``p``. The resulting 3rd component of ``p`` in the shadow
-    forms is used as Dref. After these values are computed, the texture lookup proceeds as in
-    `textureLod<shader_func_textureLod>`, with ``lod`` used to specify the level-of-detail from
-    which the texture will be sampled.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param lod:
-        the explicit level-of-detail from which to fetch texels.
-
-    :return:
-       a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjLod.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
 |gvec4_type| **textureProjLod** ( |gsampler3D| s, vec4 p, float lod )
 
     Performs a texture lookup with projection from an explicitly specified level-of-detail.
@@ -3606,151 +2540,11 @@ vec4 **textureLod** ( samplerCubeArray s, vec4 p, float lod )
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureGrad** ( |gsampler2D| s, vec2 p, vec2 dPdx, vec2 dPdy )
-
-    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
-     - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
-     - ``δs/δy=δp/δy`` for a 1D texture, ``δp.s/δy`` otherwise
-     - ``δt/δx=0.0`` for a 1D texture, ``δp.t/δx`` otherwise
-     - ``δt/δy=0.0`` for a 1D texture, ``δp.t/δy`` otherwise
-     - ``δr/δx=0.0`` for a 1D or 2D texture, ``δp.p/δx`` otherwise
-     - ``δr/δy=0.0``  for a 1D or 2D texture, ``δp.p/δy`` otherwise
-
-    For the cube version, the partial derivatives of ``p`` are assumed to be in the coordinate system used before texture coordinates are projected onto the appropriate cube face.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param dPdx:
-        the partial derivative of P with respect to window x.
-
-    :param dPdy:
-        the partial derivative of P with respect to window y.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **textureGrad** ( |gsampler2DArray| s, vec3 p, vec2 dPdx, vec2 dPdy )
-
-    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
-     - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
-     - ``δs/δy=δp/δy`` for a 1D texture, ``δp.s/δy`` otherwise
-     - ``δt/δx=0.0`` for a 1D texture, ``δp.t/δx`` otherwise
-     - ``δt/δy=0.0`` for a 1D texture, ``δp.t/δy`` otherwise
-     - ``δr/δx=0.0`` for a 1D or 2D texture, ``δp.p/δx`` otherwise
-     - ``δr/δy=0.0``  for a 1D or 2D texture, ``δp.p/δy`` otherwise
-
-    For the cube version, the partial derivatives of ``p`` are assumed to be in the coordinate system used before texture coordinates are projected onto the appropriate cube face.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param dPdx:
-        the partial derivative of P with respect to window x.
-
-    :param dPdy:
-        the partial derivative of P with respect to window y.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **textureGrad** ( |gsampler3D| s, vec3 p, vec2 dPdx, vec2 dPdy )
-
-    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
-     - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
-     - ``δs/δy=δp/δy`` for a 1D texture, ``δp.s/δy`` otherwise
-     - ``δt/δx=0.0`` for a 1D texture, ``δp.t/δx`` otherwise
-     - ``δt/δy=0.0`` for a 1D texture, ``δp.t/δy`` otherwise
-     - ``δr/δx=0.0`` for a 1D or 2D texture, ``δp.p/δx`` otherwise
-     - ``δr/δy=0.0``  for a 1D or 2D texture, ``δp.p/δy`` otherwise
-
-    For the cube version, the partial derivatives of ``p`` are assumed to be in the coordinate system used before texture coordinates are projected onto the appropriate cube face.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param dPdx:
-        the partial derivative of P with respect to window x.
-
-    :param dPdy:
-        the partial derivative of P with respect to window y.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-vec4 **textureGrad** ( samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy )
-
-    Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
-     - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
-     - ``δs/δy=δp/δy`` for a 1D texture, ``δp.s/δy`` otherwise
-     - ``δt/δx=0.0`` for a 1D texture, ``δp.t/δx`` otherwise
-     - ``δt/δy=0.0`` for a 1D texture, ``δp.t/δy`` otherwise
-     - ``δr/δx=0.0`` for a 1D or 2D texture, ``δp.p/δx`` otherwise
-     - ``δr/δy=0.0``  for a 1D or 2D texture, ``δp.p/δy`` otherwise
-
-    For the cube version, the partial derivatives of ``p`` are assumed to be in the coordinate system used before texture coordinates are projected onto the appropriate cube face.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param dPdx:
-        the partial derivative of P with respect to window x.
-
-    :param dPdy:
-        the partial derivative of P with respect to window y.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
+| |gvec4_type| **textureGrad** ( |gsampler2D| s, vec2 p, vec2 dPdx, vec2 dPdy )
+| |gvec4_type| **textureGrad** ( |gsampler2DArray| s, vec3 p, vec2 dPdx, vec2 dPdy )
+| |gvec4_type| **textureGrad** ( |gsampler3D| s, vec3 p, vec2 dPdx, vec2 dPdy )
+| vec4 **textureGrad** ( samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy )
+| vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
     Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
      - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
@@ -3790,69 +2584,9 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureProjGrad** ( |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy )
-
-    Perform a texture lookup with projection and explicit gradients.
-
-    The texture coordinates consumed from ``p``, not including the last component of ``p``, are divided by the last component of ``p``.
-    After these values are computed, the texture lookup proceeds as in `textureGrad<shader_func_textureGrad>`, passing ``dPdx`` and ``dPdy`` as gradients.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param dPdx:
-        the partial derivative of ``p`` with respect to window x.
-
-    :param dPdy:
-        the partial derivative of ``p`` with respect to window y.
-
-    :return:
-        a texel.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjGrad.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **textureProjGrad** ( |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy )
-
-    Perform a texture lookup with projection and explicit gradients.
-
-    The texture coordinates consumed from ``p``, not including the last component of ``p``, are divided by the last component of ``p``.
-    After these values are computed, the texture lookup proceeds as in `textureGrad<shader_func_textureGrad>`, passing ``dPdx`` and ``dPdy`` as gradients.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param dPdx:
-        the partial derivative of ``p`` with respect to window x.
-
-    :param dPdy:
-        the partial derivative of ``p`` with respect to window y.
-
-    :return:
-        a texel.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjGrad.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **textureProjGrad** ( |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy )
+| |gvec4_type| **textureProjGrad** ( |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy )
+| |gvec4_type| **textureProjGrad** ( |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy )
+| |gvec4_type| **textureProjGrad** ( |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy )
 
     Perform a texture lookup with projection and explicit gradients.
 
@@ -3887,59 +2621,9 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 .. rst-class:: classref-method
 
-|gvec4_type| **texelFetch** ( |gsampler2D| s, ivec2 p, int lod )
-
-    Performs a lookup of a single texel from texture coordinate ``p`` in the texture bound to sampler.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param lod:
-        specifies the level-of-detail within the texture from which the texel will be fetched.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **texelFetch** ( |gsampler2DArray| s, ivec3 p, int lod )
-
-    Performs a lookup of a single texel from texture coordinate ``p`` in the texture bound to sampler.
-
-    The array layer is specified in the last component of P for array forms.
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled. ``p.z`` specifies which layer of ``s`` is fetched.
-
-    :param lod:
-        specifies the level-of-detail within the texture from which the texel will be fetched.
-
-    :return:
-        a texel
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **texelFetch** ( |gsampler3D| s, ivec3 p, int lod )
+| |gvec4_type| **texelFetch** ( |gsampler2D| s, ivec2 p, int lod )
+| |gvec4_type| **texelFetch** ( |gsampler2DArray| s, ivec3 p, int lod )
+| |gvec4_type| **texelFetch** ( |gsampler3D| s, ivec3 p, int lod )
 
     Performs a lookup of a single texel from texture coordinate ``p`` in the texture bound to sampler.
 
@@ -3968,71 +2652,9 @@ vec4 **textureGrad** ( samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureGather** ( |gsampler2D| s, vec2 p [, int comps] )
-
-    Gathers four texels from a texture.
-
-    Returns the value::
-
-        vec4(Sample_i0_j1(p, base).comps,
-             Sample_i1_j1(p, base).comps,
-             Sample_i1_j0(p, base).comps,
-             Sample_i0_j0(p, base).comps);
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param comps:
-        *optional* the component of the source texture (0 -> x, 1 -> y, 2 -> z, 3 -> w) that will be used to generate the resulting vector. Zero if not specified.
-
-    :return:
-        the gathered texel.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGather.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|gvec4_type| **textureGather** ( |gsampler2DArray| s, vec3 p [, int comps] )
-
-    Gathers four texels from a texture.
-
-    Returns the value::
-
-        vec4(Sample_i0_j1(p, base).comps,
-             Sample_i1_j1(p, base).comps,
-             Sample_i1_j0(p, base).comps,
-             Sample_i0_j0(p, base).comps);
-
-    :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
-
-    :param p:
-        the texture coordinates at which texture will be sampled.
-
-    :param comps:
-        *optional* the component of the source texture (0 -> x, 1 -> y, 2 -> z, 3 -> w) that will be used to generate the resulting vector. Zero if not specified.
-
-    :return:
-        the gathered texel.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGather.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
+| |gvec4_type| **textureGather** ( |gsampler2D| s, vec2 p [, int comps] )
+| |gvec4_type| **textureGather** ( |gsampler2DArray| s, vec3 p [, int comps] )
+| vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
     Gathers four texels from a texture.
 
@@ -4816,45 +3438,8 @@ Bitwise operations
 
 .. rst-class:: classref-method
 
-|vec_int_type| **bitfieldInsert** ( |vec_int_type| base, |vec_int_type| insert, int offset, int bits )
-
-    Inserts the ``bits`` least significant bits of ``insert`` into ``base`` at offset ``offset``.
-
-    The returned value will have bits [offset, offset + bits + 1] taken from [0, bits - 1] of ``insert`` and
-    all other bits taken directly from the corresponding bits of base.
-
-    .. note:: If bits is zero, the result will simply be the original value of base.
-
-    .. warning::
-        The result will be undefined if:
-         - offset or bits is negative
-         - if the sum of offset and bits is greater than the number of bits used to store the operand.
-
-    :param base:
-        the integer into which to insert ``insert``.
-
-    :param insert:
-        the value of the bits to insert.
-
-    :param offset:
-        the index of the first bit to insert.
-
-    :param bits:
-        the number of bits to insert.
-
-    :return:
-        ``base`` with inserted bits.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldInsert.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_uint_type| **bitfieldInsert** ( |vec_uint_type| base, |vec_uint_type| insert, int offset, int bits )
+| |vec_int_type| **bitfieldInsert** ( |vec_int_type| base, |vec_int_type| insert, int offset, int bits )
+| |vec_uint_type| **bitfieldInsert** ( |vec_uint_type| base, |vec_uint_type| insert, int offset, int bits )
 
     Inserts the ``bits`` least significant bits of ``insert`` into ``base`` at offset ``offset``.
 
@@ -4896,28 +3481,8 @@ Bitwise operations
 
 .. rst-class:: classref-method
 
-|vec_int_type| **bitfieldReverse** ( |vec_int_type| value )
-
-    Reverse the order of bits in an integer.
-
-    The bit numbered n will be taken from bit (bits - 1) - n of ``value``, where bits is the total number of bits used to represent ``value``.
-
-    :param value:
-        the value whose bits to reverse.
-
-    :return:
-        ``value`` but with its bits reversed.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldReverse.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_uint_type| **bitfieldReverse** ( |vec_uint_type| value )
+| |vec_int_type| **bitfieldReverse** ( |vec_int_type| value )
+| |vec_uint_type| **bitfieldReverse** ( |vec_uint_type| value )
 
     Reverse the order of bits in an integer.
 
@@ -4942,26 +3507,8 @@ Bitwise operations
 
 .. rst-class:: classref-method
 
-|vec_int_type| **bitCount** ( |vec_int_type| value )
-
-    Counts the number of 1 bits in an integer.
-
-    :param value:
-        the value whose bits to count.
-
-    :return:
-        the number of bits that are set to 1 in the binary representation of ``value``.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitCount.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_uint_type| **bitCount** ( |vec_uint_type| value )
+| |vec_int_type| **bitCount** ( |vec_int_type| value )
+| |vec_uint_type| **bitCount** ( |vec_uint_type| value )
 
     Counts the number of 1 bits in an integer.
 
@@ -4984,28 +3531,8 @@ Bitwise operations
 
 .. rst-class:: classref-method
 
-|vec_int_type| **findLSB** ( |vec_int_type| value )
-
-    Find the index of the least significant bit set to 1.
-
-    .. note:: If ``value`` is zero, -1 will be returned.
-
-    :param value:
-        the value whose bits to scan.
-
-    :return:
-        the bit number of the least significant bit that is set to 1 in the binary representation of value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findLSB.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-|vec_uint_type| **findLSB** ( |vec_uint_type| value )
+| |vec_int_type| **findLSB** ( |vec_int_type| value )
+| |vec_uint_type| **findLSB** ( |vec_uint_type| value )
 
     Find the index of the least significant bit set to 1.
 
@@ -5031,33 +3558,14 @@ Bitwise operations
 .. rst-class:: classref-method
 
 |vec_int_type| **findMSB** ( |vec_int_type| value )
-
-    Find the index of the most significant bit set to 1.
-
-    For positive integers, the result will be the bit number of the most significant bit that is set to 1.
-
-    For negative integers, the result will be the bit number of the most significant bit set to 0.
-
-    .. note:: For a value of zero or negative 1, -1 will be returned.
-
-    :param value:
-        the value whose bits to scan.
-
-    :return:
-        the bit number of the most significant bit that is set to 1 in the binary representation of value.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findMSB.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
 |vec_uint_type| **findMSB** ( |vec_uint_type| value )
 
     Find the index of the most significant bit set to 1.
+
+    .. note::
+        For signed integer types, the sign bit is checked first and then:
+         - For positive integers, the result will be the bit number of the most significant bit that is set to 1.
+         - For negative integers, the result will be the bit number of the most significant bit set to 0.
 
     .. note:: For a value of zero or negative 1, -1 will be returned.
 
