@@ -1134,3 +1134,11 @@ please see the corresponding pages:
 - :ref:`Particle shaders <doc_particle_shader>`
 - :ref:`Sky shaders <doc_sky_shader>`
 - :ref:`Fog shaders <doc_fog_shader>`
+
+Built-in functions
+------------------
+
+A large number of built-in functions are supported, conforming to GLSL ES 3.0.
+See the following page for details:
+
+- :ref:`Built-In Functions <doc_shader_functions>`

@@ -55,35 +55,35 @@ Trigonometric Functions
 +-----------------+-------------------------------------------------------------+-----------------------------+
 |    Return Type  |                          Function                           | Description / Return value  |
 +=================+=============================================================+=============================+
-| |vec_type|      | :ref:`radians<shader_func_radians>` ( |vec_type| degrees)   | Convert degrees to radians. |
+| |vec_type|      | :ref:`radians<shader_func_radians>` ( |vec_type| degrees )  | Convert degrees to radians. |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`degrees<shader_func_degrees>` ( |vec_type| radians)   | Convert radians to degrees. |
+| |vec_type|      | :ref:`degrees<shader_func_degrees>` ( |vec_type| radians )  | Convert radians to degrees. |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`sin<shader_func_sin>` ( |vec_type| x)                 | Sine.                       |
+| |vec_type|      | :ref:`sin<shader_func_sin>` ( |vec_type| x )                | Sine.                       |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`cos<shader_func_cos>` ( |vec_type| x)                 | Cosine.                     |
+| |vec_type|      | :ref:`cos<shader_func_cos>` ( |vec_type| x )                | Cosine.                     |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`tan<shader_func_tan>` ( |vec_type| x)                 | Tangent.                    |
+| |vec_type|      | :ref:`tan<shader_func_tan>` ( |vec_type| x )                | Tangent.                    |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`asin<shader_func_asin>` ( |vec_type| x)               | Arcsine.                    |
+| |vec_type|      | :ref:`asin<shader_func_asin>` ( |vec_type| x )              | Arcsine.                    |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`acos<shader_func_acos>` ( |vec_type| x)               | Arccosine.                  |
+| |vec_type|      | :ref:`acos<shader_func_acos>` ( |vec_type| x )              | Arccosine.                  |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`atan<shader_func_atan>` ( |vec_type| y_over_x)        | Arctangent.                 |
+| |vec_type|      | :ref:`atan<shader_func_atan>` ( |vec_type| y_over_x )       | Arctangent.                 |
 +-----------------+-------------------------------------------------------------+                             |
-| |vec_type|      | :ref:`atan<shader_func_atan>` ( |vec_type| y, |vec_type| x) |                             |
+| |vec_type|      | :ref:`atan<shader_func_atan>` ( |vec_type| y, |vec_type| x )|                             |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`sinh<shader_func_sinh>` ( |vec_type| x)               | Hyperbolic sine.            |
+| |vec_type|      | :ref:`sinh<shader_func_sinh>` ( |vec_type| x )              | Hyperbolic sine.            |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`cosh<shader_func_cosh>` ( |vec_type| x)               | Hyperbolic cosine.          |
+| |vec_type|      | :ref:`cosh<shader_func_cosh>` ( |vec_type| x )              | Hyperbolic cosine.          |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`tanh<shader_func_tanh>` ( |vec_type| x)               | Hyperbolic tangent.         |
+| |vec_type|      | :ref:`tanh<shader_func_tanh>` ( |vec_type| x )              | Hyperbolic tangent.         |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`asinh<shader_func_asinh>` ( |vec_type| x)             | Inverse hyperbolic sine.    |
+| |vec_type|      | :ref:`asinh<shader_func_asinh>` ( |vec_type| x )            | Inverse hyperbolic sine.    |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`acosh<shader_func_acosh>` ( |vec_type| x)             | Inverse hyperbolic cosine.  |
+| |vec_type|      | :ref:`acosh<shader_func_acosh>` ( |vec_type| x )            | Inverse hyperbolic cosine.  |
 +-----------------+-------------------------------------------------------------+-----------------------------+
-| |vec_type|      | :ref:`atanh<shader_func_atanh>` ( |vec_type| x)             | Inverse hyperbolic tangent. |
+| |vec_type|      | :ref:`atanh<shader_func_atanh>` ( |vec_type| x )            | Inverse hyperbolic tangent. |
 +-----------------+-------------------------------------------------------------+-----------------------------+
 
 .. rst-class:: classref-section-separator
@@ -248,10 +248,12 @@ vec_type acos( |vec_type| x)
 
 vec_type atan( |vec_type| y_over_x)
 
-    Calculate the arctangent given a tangent value of ``y/x``. Note: becuase of
-    the sign ambiguity, the function cannot determine with certainty in which
-    quadrant the angle falls only by its tangent value. If you need to know the
-    quadrant, use ``atan( |vec_type| y, |vec_type| x )``.
+    Calculate the arctangent given a tangent value of ``y/x``.
+
+    .. Note::
+        because of the sign ambiguity, the function cannot determine with certainty in
+        which quadrant the angle falls only by its tangent value. If you need to know the
+        quadrant, use ``atan( |vec_type| y, |vec_type| x )``.
 
     :param y_over_x:
         The fraction whose arctangent to return.
@@ -406,7 +408,7 @@ vec_type acosh( |vec_type| x)
 
 vec_type atanh( |vec_type| x)
 
-    Calculate the arctangent given a tangent value of ``y/x``. Note: becuase of
+    Calculate the arctangent given a tangent value of ``y/x``. Note: because of
     the sign ambiguity, the function cannot determine with certainty in which
     quadrant the angle falls only by its tangent value. If you need to know the
     quadrant, use the other overload of ``atan``.
@@ -432,109 +434,109 @@ Exponential and Common Math Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`pow<shader_func_pow>` ( |vec_type| x, |vec_type| y)                                   | Power (undefined if ``x < 0`` or if ``x == 0`` and ``y <= 0``). |
+| |vec_type|      | :ref:`pow<shader_func_pow>` ( |vec_type| x, |vec_type| y )                                  | Power (undefined if ``x < 0`` or if ``x == 0`` and ``y <= 0``). |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`exp<shader_func_exp>` ( |vec_type| x)                                                 | Base-e exponential.                                             |
+| |vec_type|      | :ref:`exp<shader_func_exp>` ( |vec_type| x )                                                | Base-e exponential.                                             |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`exp2<shader_func_exp2>` ( |vec_type| x)                                               | Base-2 exponential.                                             |
+| |vec_type|      | :ref:`exp2<shader_func_exp2>` ( |vec_type| x )                                              | Base-2 exponential.                                             |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`log<shader_func_log>` ( |vec_type| x)                                                 | Natural logarithm.                                              |
+| |vec_type|      | :ref:`log<shader_func_log>` ( |vec_type| x )                                                | Natural logarithm.                                              |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`log2<shader_func_log2>` ( |vec_type| x)                                               | Base-2 logarithm.                                               |
+| |vec_type|      | :ref:`log2<shader_func_log2>` ( |vec_type| x )                                              | Base-2 logarithm.                                               |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`sqrt<shader_func_sqrt>` ( |vec_type| x)                                               | Square root.                                                    |
+| |vec_type|      | :ref:`sqrt<shader_func_sqrt>` ( |vec_type| x )                                              | Square root.                                                    |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`inversesqrt<shader_func_inversesqrt>` ( |vec_type| x)                                 | Inverse square root.                                            |
+| |vec_type|      | :ref:`inversesqrt<shader_func_inversesqrt>` ( |vec_type| x )                                | Inverse square root.                                            |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`abs<shader_func_abs>` ( |vec_type| x)                                                 | Absolute value (returns positive value if negative).            |
+| |vec_type|      | :ref:`abs<shader_func_abs>` ( |vec_type| x )                                                | Absolute value (returns positive value if negative).            |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_int_type|  | :ref:`abs<shader_func_abs>` ( |vec_int_type| x)                                             |                                                                 |
+| |vec_int_type|  | :ref:`abs<shader_func_abs>` ( |vec_int_type| x )                                            |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`sign<shader_func_sign>` ( |vec_type| x)                                               | returns ``1.0`` if positive, ``-1.0`` if negative,              |
+| |vec_type|      | :ref:`sign<shader_func_sign>` ( |vec_type| x )                                              | returns ``1.0`` if positive, ``-1.0`` if negative,              |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_int_type|  | :ref:`sign<shader_func_sign>` ( |vec_int_type| x)                                           | returns ``1`` if positive, ``-1`` if negative,                  |
+| |vec_int_type|  | :ref:`sign<shader_func_sign>` ( |vec_int_type| x )                                          | returns ``1`` if positive, ``-1`` if negative,                  |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`floor<shader_func_floor>` ( |vec_type| x)                                             | Round to the integer below.                                     |
+| |vec_type|      | :ref:`floor<shader_func_floor>` ( |vec_type| x )                                            | Round to the integer below.                                     |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`round<shader_func_round>` ( |vec_type| x)                                             | Round to the nearest integer.                                   |
+| |vec_type|      | :ref:`round<shader_func_round>` ( |vec_type| x )                                            | Round to the nearest integer.                                   |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`roundEven<shader_func_roundEven>` ( |vec_type| x)                                     | Round to the nearest even integer.                              |
+| |vec_type|      | :ref:`roundEven<shader_func_roundEven>` ( |vec_type| x )                                    | Round to the nearest even integer.                              |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`trunc<shader_func_trunc>` ( |vec_type| x)                                             | Truncation.                                                     |
+| |vec_type|      | :ref:`trunc<shader_func_trunc>` ( |vec_type| x )                                            | Truncation.                                                     |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`ceil<shader_func_ceil>` ( |vec_type| x)                                               | Round to the integer above.                                     |
+| |vec_type|      | :ref:`ceil<shader_func_ceil>` ( |vec_type| x )                                              | Round to the integer above.                                     |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`fract<shader_func_fract>` ( |vec_type| x)                                             | Fractional (returns ``x - floor(x)``).                          |
+| |vec_type|      | :ref:`fract<shader_func_fract>` ( |vec_type| x )                                            | Fractional (returns ``x - floor(x)``).                          |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`mod<shader_func_mod>` ( |vec_type| x, |vec_type| y)                                   | Modulo (division remainder).                                    |
+| |vec_type|      | :ref:`mod<shader_func_mod>` ( |vec_type| x, |vec_type| y )                                  | Modulo (division remainder).                                    |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_type|      | :ref:`mod<shader_func_mod>` ( |vec_type| x, float y)                                        |                                                                 |
+| |vec_type|      | :ref:`mod<shader_func_mod>` ( |vec_type| x, float y )                                       |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`modf<shader_func_modf>` (|vec_type| x, out |vec_type| i)                              | Fractional of ``x``, with ``i`` as integer part.                |
+| |vec_type|      | :ref:`modf<shader_func_modf>` (|vec_type| x, out |vec_type| i )                             | Fractional of ``x``, with ``i`` as integer part.                |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`min<shader_func_min>` ( |vec_type| a, |vec_type| b)                                   | Lowest value between ``a`` and ``b``.                           |
+| |vec_type|      | :ref:`min<shader_func_min>` ( |vec_type| a, |vec_type| b )                                  | Lowest value between ``a`` and ``b``.                           |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_type|      | :ref:`min<shader_func_min>` ( |vec_type| a, float b)                                        |                                                                 |
+| |vec_type|      | :ref:`min<shader_func_min>` ( |vec_type| a, float b )                                       |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_int_type|  | :ref:`min<shader_func_min>` ( |vec_int_type| a, |vec_int_type| b)                           |                                                                 |
+| |vec_int_type|  | :ref:`min<shader_func_min>` ( |vec_int_type| a, |vec_int_type| b )                          |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_int_type|  | :ref:`min<shader_func_min>` ( |vec_int_type| a, int b)                                      |                                                                 |
+| |vec_int_type|  | :ref:`min<shader_func_min>` ( |vec_int_type| a, int b )                                     |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_uint_type| | :ref:`min<shader_func_min>` ( |vec_uint_type| a, |vec_uint_type| b)                         |                                                                 |
+| |vec_uint_type| | :ref:`min<shader_func_min>` ( |vec_uint_type| a, |vec_uint_type| b )                        |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_uint_type| | :ref:`min<shader_func_min>` ( |vec_uint_type| a, uint b)                                    |                                                                 |
+| |vec_uint_type| | :ref:`min<shader_func_min>` ( |vec_uint_type| a, uint b )                                   |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`max<shader_func_max>` ( |vec_type| a, |vec_type| b)                                   | Highest value between ``a`` and ``b``.                          |
+| |vec_type|      | :ref:`max<shader_func_max>` ( |vec_type| a, |vec_type| b )                                  | Highest value between ``a`` and ``b``.                          |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_type|      | :ref:`max<shader_func_max>` ( |vec_type| a, float b)                                        |                                                                 |
+| |vec_type|      | :ref:`max<shader_func_max>` ( |vec_type| a, float b )                                       |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_uint_type| | :ref:`max<shader_func_max>` ( |vec_uint_type| a, |vec_uint_type| b)                         |                                                                 |
+| |vec_uint_type| | :ref:`max<shader_func_max>` ( |vec_uint_type| a, |vec_uint_type| b )                        |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_uint_type| | :ref:`max<shader_func_max>` ( |vec_uint_type| a, uint b)                                    |                                                                 |
+| |vec_uint_type| | :ref:`max<shader_func_max>` ( |vec_uint_type| a, uint b )                                   |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_int_type|  | :ref:`max<shader_func_max>` ( |vec_int_type| a, |vec_int_type| b)                           |                                                                 |
+| |vec_int_type|  | :ref:`max<shader_func_max>` ( |vec_int_type| a, |vec_int_type| b )                          |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_int_type|  | :ref:`max<shader_func_max>` ( |vec_int_type| a, int b)                                      |                                                                 |
+| |vec_int_type|  | :ref:`max<shader_func_max>` ( |vec_int_type| a, int b )                                     |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`clamp<shader_func_clamp>` (|vec_type| x, |vec_type| min, |vec_type| max)              | Clamp ``x`` between ``min`` and ``max`` (inclusive).            |
+| |vec_type|      | :ref:`clamp<shader_func_clamp>` (|vec_type| x, |vec_type| min, |vec_type| max )             | Clamp ``x`` between ``min`` and ``max`` (inclusive).            |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_type|      | :ref:`clamp<shader_func_clamp>` ( |vec_type| x, float min, float max)                       |                                                                 |
+| |vec_type|      | :ref:`clamp<shader_func_clamp>` ( |vec_type| x, float min, float max )                      |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_uint_type| | :ref:`clamp<shader_func_clamp>` ( |vec_int_type| x, |vec_int_type| min, |vec_int_type| max) |                                                                 |
+| |vec_uint_type| | :ref:`clamp<shader_func_clamp>` ( |vec_int_type| x, |vec_int_type| min, |vec_int_type| max )|                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_uint_type| | :ref:`clamp<shader_func_clamp>` ( |vec_int_type| x, float min, float max)                   |                                                                 |
+| |vec_uint_type| | :ref:`clamp<shader_func_clamp>` ( |vec_int_type| x, float min, float max )                  |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_int_type|  | :ref:`clamp<shader_func_clamp>` (|vec_type| x, |vec_type| min, |vec_type| max)              |                                                                 |
+| |vec_int_type|  | :ref:`clamp<shader_func_clamp>` (|vec_type| x, |vec_type| min, |vec_type| max )             |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_int_type|  | :ref:`clamp<shader_func_clamp>` ( |vec_type| x, float min, float max)                       |                                                                 |
+| |vec_int_type|  | :ref:`clamp<shader_func_clamp>` ( |vec_type| x, float min, float max )                      |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`mix<shader_func_mix>` (|vec_type| a, |vec_type| b, |vec_type| c)                      | Linear interpolate between ``a`` and ``b`` by ``c``.            |
+| |vec_type|      | :ref:`mix<shader_func_mix>` (|vec_type| a, |vec_type| b, |vec_type| c )                     | Linear interpolate between ``a`` and ``b`` by ``c``.            |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_type|      | :ref:`mix<shader_func_mix>` (|vec_type| a, |vec_type| b, float c)                           |                                                                 |
+| |vec_type|      | :ref:`mix<shader_func_mix>` (|vec_type| a, |vec_type| b, float c )                          |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_type|      | :ref:`mix<shader_func_mix>` (|vec_type| a, |vec_type| b, |vec_bool_type| c)                 |                                                                 |
+| |vec_type|      | :ref:`mix<shader_func_mix>` (|vec_type| a, |vec_type| b, |vec_bool_type| c )                |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`fma<shader_func_fma>` (|vec_type| a, |vec_type| b, |vec_type| c)                      | Fused multiply-add operation: ``(a * b + c)``                   |
+| |vec_type|      | :ref:`fma<shader_func_fma>` (|vec_type| a, |vec_type| b, |vec_type| c )                     | Fused multiply-add operation: ``(a * b + c)``                   |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`step<shader_func_step>` ( |vec_type| a, |vec_type| b)                                 | ``b[i] < a[i] ? 0.0 : 1.0``.                                    |
+| |vec_type|      | :ref:`step<shader_func_step>` ( |vec_type| a, |vec_type| b )                                | ``b[i] < a[i] ? 0.0 : 1.0``.                                    |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`step<shader_func_step>` (float a, |vec_type| b)                                       | ``b[i] < a ? 0.0 : 1.0``.                                       |
+| |vec_type|      | :ref:`step<shader_func_step>` (float a, |vec_type| b )                                      | ``b[i] < a ? 0.0 : 1.0``.                                       |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`smoothstep<shader_func_smoothstep>` (|vec_type| a, |vec_type| b, |vec_type| c)        | Hermite interpolate between ``a`` and ``b`` by ``c``.           |
+| |vec_type|      | :ref:`smoothstep<shader_func_smoothstep>` (|vec_type| a, |vec_type| b, |vec_type| c )       | Hermite interpolate between ``a`` and ``b`` by ``c``.           |
 +-----------------+---------------------------------------------------------------------------------------------+                                                                 |
-| |vec_type|      | :ref:`smoothstep<shader_func_smoothstep>` (float a, float b, |vec_type| c)                  |                                                                 |
+| |vec_type|      | :ref:`smoothstep<shader_func_smoothstep>` (float a, float b, |vec_type| c )                 |                                                                 |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_bool_type| | :ref:`isnan<shader_func_isnan>` ( |vec_type| x)                                             | Returns ``true`` if scalar or vector component is ``NaN``.      |
+| |vec_bool_type| | :ref:`isnan<shader_func_isnan>` ( |vec_type| x )                                            | Returns ``true`` if scalar or vector component is ``NaN``.      |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_bool_type| | :ref:`isinf<shader_func_isinf>` ( |vec_type| x)                                             | Returns ``true`` if scalar or vector component is ``INF``.      |
+| |vec_bool_type| | :ref:`isinf<shader_func_isinf>` ( |vec_type| x )                                            | Returns ``true`` if scalar or vector component is ``INF``.      |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_int_type|  | :ref:`floatBitsToInt<shader_func_floatBitsToInt>` ( |vec_type| x)                           | Float->Int bit copying, no conversion.                          |
+| |vec_int_type|  | :ref:`floatBitsToInt<shader_func_floatBitsToInt>` ( |vec_type| x )                          | Float->Int bit copying, no conversion.                          |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_uint_type| | :ref:`floatBitsToUint<shader_func_floatBitsToUint>` ( |vec_type| x)                         | Float->UInt bit copying, no conversion.                         |
+| |vec_uint_type| | :ref:`floatBitsToUint<shader_func_floatBitsToUint>` ( |vec_type| x )                        | Float->UInt bit copying, no conversion.                         |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`intBitsToFloat<shader_func_intBitsToFloat>` ( |vec_int_type| x)                       | Int->Float bit copying, no conversion.                          |
+| |vec_type|      | :ref:`intBitsToFloat<shader_func_intBitsToFloat>` ( |vec_int_type| x )                      | Int->Float bit copying, no conversion.                          |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| |vec_type|      | :ref:`uintBitsToFloat<shader_func_uintBitsToFloat>` ( |vec_uint_type| x)                    | UInt->Float bit copying, no conversion.                         |
+| |vec_type|      | :ref:`uintBitsToFloat<shader_func_uintBitsToFloat>` ( |vec_uint_type| x )                   | UInt->Float bit copying, no conversion.                         |
 +-----------------+---------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -1913,31 +1915,31 @@ Geometric Functions
 ^^^^^^^^^^^^^^^^^^^
 
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| float      | :ref:`length<shader_func_length>` ( |vec_type| x)                                         | Vector length.                                           |
+| float      | :ref:`length<shader_func_length>` ( |vec_type| x )                                        | Vector length.                                           |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| float      | :ref:`distance<shader_func_distance>` ( |vec_type| a, |vec_type| b)                       | Distance between vectors i.e ``length(a - b)``.          |
+| float      | :ref:`distance<shader_func_distance>` ( |vec_type| a, |vec_type| b )                      | Distance between vectors i.e ``length(a - b)``.          |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| float      | :ref:`dot<shader_func_dot>` ( |vec_type| a, |vec_type| b)                                 | Dot product.                                             |
+| float      | :ref:`dot<shader_func_dot>` ( |vec_type| a, |vec_type| b )                                | Dot product.                                             |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| vec3       | :ref:`cross<shader_func_cross>` (vec3 a, vec3 b)                                          | Cross product.                                           |
+| vec3       | :ref:`cross<shader_func_cross>` (vec3 a, vec3 b )                                         | Cross product.                                           |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |vec_type| | :ref:`normalize<shader_func_normalize>` ( |vec_type| x)                                   | Normalize to unit length.                                |
+| |vec_type| | :ref:`normalize<shader_func_normalize>` ( |vec_type| x )                                  | Normalize to unit length.                                |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| vec3       | :ref:`reflect<shader_func_reflect>` (vec3 I, vec3 N)                                      | Reflect.                                                 |
+| vec3       | :ref:`reflect<shader_func_reflect>` (vec3 I, vec3 N )                                     | Reflect.                                                 |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| vec3       | :ref:`refract<shader_func_refract>` (vec3 I, vec3 N, float eta)                           | Refract.                                                 |
+| vec3       | :ref:`refract<shader_func_refract>` (vec3 I, vec3 N, float eta )                          | Refract.                                                 |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |vec_type| | :ref:`faceforward<shader_func_faceforward>` (|vec_type| N, |vec_type| I, |vec_type| Nref) | If ``dot(Nref, I)`` < 0, return ``N``, otherwise ``-N``. |
+| |vec_type| | :ref:`faceforward<shader_func_faceforward>` (|vec_type| N, |vec_type| I, |vec_type| Nref )| If ``dot(Nref, I)`` < 0, return ``N``, otherwise ``-N``. |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |mat_type| | :ref:`matrixCompMult<shader_func_matrixCompMult>` (|mat_type| x, |mat_type| y)            | Matrix component multiplication.                         |
+| |mat_type| | :ref:`matrixCompMult<shader_func_matrixCompMult>` (|mat_type| x, |mat_type| y )           | Matrix component multiplication.                         |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |mat_type| | :ref:`outerProduct<shader_func_outerProduct>` ( |vec_type| column, |vec_type| row)        | Matrix outer product.                                    |
+| |mat_type| | :ref:`outerProduct<shader_func_outerProduct>` ( |vec_type| column, |vec_type| row )       | Matrix outer product.                                    |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |mat_type| | :ref:`transpose<shader_func_transpose>` (|mat_type| m)                                    | Transpose matrix.                                        |
+| |mat_type| | :ref:`transpose<shader_func_transpose>` (|mat_type| m )                                   | Transpose matrix.                                        |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| float      | :ref:`determinant<shader_func_determinant>` (|mat_type| m)                                | Matrix determinant.                                      |
+| float      | :ref:`determinant<shader_func_determinant>` (|mat_type| m )                               | Matrix determinant.                                      |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| |mat_type| | :ref:`inverse<shader_func_inverse>` (|mat_type| m)                                        | Inverse matrix.                                          |
+| |mat_type| | :ref:`inverse<shader_func_inverse>` (|mat_type| m )                                       | Inverse matrix.                                          |
 +------------+-------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -2330,23 +2332,23 @@ Comparison Functions
 ^^^^^^^^^^^^^^^^^^^^
 
 +-----------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| |vec_bool_type| | :ref:`lessThan<shader_func_lessThan>` ( |vec_type| x, |vec_type| y)                 | Bool vector comparison on < int/uint/float vectors.           |
+| |vec_bool_type| | :ref:`lessThan<shader_func_lessThan>` ( |vec_type| x, |vec_type| y )                | Bool vector comparison on < int/uint/float vectors.           |
 +-----------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| |vec_bool_type| | :ref:`greaterThan<shader_func_greaterThan>` ( |vec_type| x, |vec_type| y)           | Bool vector comparison on > int/uint/float vectors.           |
+| |vec_bool_type| | :ref:`greaterThan<shader_func_greaterThan>` ( |vec_type| x, |vec_type| y )          | Bool vector comparison on > int/uint/float vectors.           |
 +-----------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| |vec_bool_type| | :ref:`lessThanEqual<shader_func_lessThanEqual>` ( |vec_type| x, |vec_type| y)       | Bool vector comparison on <= int/uint/float vectors.          |
+| |vec_bool_type| | :ref:`lessThanEqual<shader_func_lessThanEqual>` ( |vec_type| x, |vec_type| y )      | Bool vector comparison on <= int/uint/float vectors.          |
 +-----------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| |vec_bool_type| | :ref:`greaterThanEqual<shader_func_greaterThanEqual>` ( |vec_type| x, |vec_type| y) | Bool vector comparison on >= int/uint/float vectors.          |
+| |vec_bool_type| | :ref:`greaterThanEqual<shader_func_greaterThanEqual>` ( |vec_type| x, |vec_type| y )| Bool vector comparison on >= int/uint/float vectors.          |
 +-----------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| |vec_bool_type| | :ref:`equal<shader_func_equal>` ( |vec_type| x, |vec_type| y)                       | Bool vector comparison on == int/uint/float vectors.          |
+| |vec_bool_type| | :ref:`equal<shader_func_equal>` ( |vec_type| x, |vec_type| y )                      | Bool vector comparison on == int/uint/float vectors.          |
 +-----------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| |vec_bool_type| | :ref:`notEqual<shader_func_notEqual>` ( |vec_type| x, |vec_type| y)                 | Bool vector comparison on != int/uint/float vectors.          |
+| |vec_bool_type| | :ref:`notEqual<shader_func_notEqual>` ( |vec_type| x, |vec_type| y )                | Bool vector comparison on != int/uint/float vectors.          |
 +-----------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| bool            | :ref:`any<shader_func_any>` ( |vec_bool_type| x)                                    | ``true`` if any component is ``true``, ``false`` otherwise.   |
+| bool            | :ref:`any<shader_func_any>` ( |vec_bool_type| x )                                   | ``true`` if any component is ``true``, ``false`` otherwise.   |
 +-----------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| bool            | :ref:`all<shader_func_all>` ( |vec_bool_type| x)                                    | ``true`` if all components are ``true``, ``false`` otherwise. |
+| bool            | :ref:`all<shader_func_all>` ( |vec_bool_type| x )                                   | ``true`` if all components are ``true``, ``false`` otherwise. |
 +-----------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| |vec_bool_type| | :ref:`not<shader_func_not>` ( |vec_bool_type| x)                                    | Invert boolean vector.                                        |
+| |vec_bool_type| | :ref:`not<shader_func_not>` ( |vec_bool_type| x )                                   | Invert boolean vector.                                        |
 +-----------------+-------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -2607,129 +2609,126 @@ Texture Functions
 ^^^^^^^^^^^^^^^^^
 
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| ivec2        | :ref:`textureSize<shader_func_textureSize>` ( |gsampler2D| s, int lod)                              | Get the size of a texture.                                          |
-+--------------+-----------------------------------------------------------------------------------------------------+ The LOD defines which mipmap level is used. An LOD value of ``0``   |
-| ivec2        | :ref:`textureSize<shader_func_textureSize>` (samplerCube s, int lod)                                | will use the full resolution texture.                               |
+| ivec2        | :ref:`textureSize<shader_func_textureSize>` ( |gsampler2D| s, int lod )                             | Get the size of a texture.                                          |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| ivec2        | :ref:`textureSize<shader_func_textureSize>` (samplerCubeArray s, int lod)                           |                                                                     |
+| ivec2        | :ref:`textureSize<shader_func_textureSize>` (samplerCube s, int lod )                               |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| ivec3        | :ref:`textureSize<shader_func_textureSize>` ( |gsampler2DArray| s, int lod)                         |                                                                     |
+| ivec2        | :ref:`textureSize<shader_func_textureSize>` (samplerCubeArray s, int lod )                          |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| ivec3        | :ref:`textureSize<shader_func_textureSize>` ( |gsampler3D| s, int lod)                              |                                                                     |
+| ivec3        | :ref:`textureSize<shader_func_textureSize>` ( |gsampler2DArray| s, int lod )                        |                                                                     |
++--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
+| ivec3        | :ref:`textureSize<shader_func_textureSize>` ( |gsampler3D| s, int lod )                             |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| vec2         | :ref:`textureQueryLod<shader_func_textureQueryLod>` ( |gsampler2D| s, vec2 p)                       | Compute the level-of-detail that would be used to sample from a     |
-+--------------+-----------------------------------------------------------------------------------------------------+ texture. The ``x`` component of the resulted value is the mipmap    |
-| vec3         | :ref:`textureQueryLod<shader_func_textureQueryLod>` ( |gsampler2DArray| s, vec2 p)                  | array that would be accessed. The ``y`` component is computed       |
-+--------------+-----------------------------------------------------------------------------------------------------+ level-of-detail relative to the base level (regardless of the       |
-| vec2         | :ref:`textureQueryLod<shader_func_textureQueryLod>` ( |gsampler3D| s, vec3 p)                       | mipmap levels of the texture).                                      |
+| vec2         | :ref:`textureQueryLod<shader_func_textureQueryLod>` ( |gsampler2D| s, vec2 p )                      | Compute the level-of-detail that would be used to sample from a     |
++--------------+-----------------------------------------------------------------------------------------------------+ texture.                                                            |
+| vec3         | :ref:`textureQueryLod<shader_func_textureQueryLod>` ( |gsampler2DArray| s, vec2 p )                 |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| vec2         | :ref:`textureQueryLod<shader_func_textureQueryLod>` (samplerCube s, vec3 p)                         |                                                                     |
+| vec2         | :ref:`textureQueryLod<shader_func_textureQueryLod>` ( |gsampler3D| s, vec3 p )                      |                                                                     |
++--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
+| vec2         | :ref:`textureQueryLod<shader_func_textureQueryLod>` (samplerCube s, vec3 p )                        |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` ( |gsampler2D| s)                         | Get the number of accessible mipmap levels of a texture.            |
-+--------------+-----------------------------------------------------------------------------------------------------+ If the texture is unassigned to a sampler, ``1`` is returned (Godot |
-| int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` ( |gsampler2DArray| s)                    | always internally assigns a texture even to an empty sampler).      |
+| int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` ( |gsampler2D| s )                        | Get the number of accessible mipmap levels of a texture.            |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` ( |gsampler3D| s)                         |                                                                     |
+| int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` ( |gsampler2DArray| s )                   |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` (samplerCube s)                           |                                                                     |
+| int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` ( |gsampler3D| s )                        |                                                                     |
++--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
+| int          | :ref:`textureQueryLevels<shader_func_textureQueryLevels>` (samplerCube s )                          |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |gvec4_type| | :ref:`texture<shader_func_texture>` ( |gsampler2D| s, vec2 p [, float bias])                        | Perform a texture read.                                             |
+| |gvec4_type| | :ref:`texture<shader_func_texture>` ( |gsampler2D| s, vec2 p [, float bias] )                       | Perform a texture read.                                             |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`texture<shader_func_texture>` ( |gsampler2DArray| s, vec3 p [, float bias])                   |                                                                     |
+| |gvec4_type| | :ref:`texture<shader_func_texture>` ( |gsampler2DArray| s, vec3 p [, float bias] )                  |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`texture<shader_func_texture>` ( |gsampler3D| s, vec3 p [, float bias])                        |                                                                     |
+| |gvec4_type| | :ref:`texture<shader_func_texture>` ( |gsampler3D| s, vec3 p [, float bias] )                       |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| vec4         | :ref:`texture<shader_func_texture>` (samplerCube s, vec3 p [, float bias])                          |                                                                     |
+| vec4         | :ref:`texture<shader_func_texture>` (samplerCube s, vec3 p [, float bias] )                         |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| vec4         | :ref:`texture<shader_func_texture>` (samplerCubeArray s, vec4 p [, float bias])                     |                                                                     |
+| vec4         | :ref:`texture<shader_func_texture>` (samplerCubeArray s, vec4 p [, float bias] )                    |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |gvec4_type| | :ref:`textureProj<shader_func_textureProj>` ( |gsampler2D| s, vec3 p [, float bias])                | Perform a texture read with projection.                             |
+| |gvec4_type| | :ref:`textureProj<shader_func_textureProj>` ( |gsampler2D| s, vec3 p [, float bias] )               | Perform a texture read with projection.                             |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`textureProj<shader_func_textureProj>` ( |gsampler2D| s, vec4 p [, float bias])                |                                                                     |
+| |gvec4_type| | :ref:`textureProj<shader_func_textureProj>` ( |gsampler2D| s, vec4 p [, float bias] )               |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`textureProj<shader_func_textureProj>` ( |gsampler3D| s, vec4 p [, float bias])                |                                                                     |
+| |gvec4_type| | :ref:`textureProj<shader_func_textureProj>` ( |gsampler3D| s, vec4 p [, float bias] )               |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |gvec4_type| | :ref:`textureLod<shader_func_textureLod>` ( |gsampler2D| s, vec2 p, float lod)                      | Perform a texture read at custom mipmap.                            |
-+--------------+-----------------------------------------------------------------------------------------------------+ The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
-| |gvec4_type| | :ref:`textureLod<shader_func_textureLod>` ( |gsampler2DArray| s, vec3 p, float lod)                 | will use the full resolution texture. If the texture lacks mipmaps, |
-+--------------+-----------------------------------------------------------------------------------------------------+ all LOD values will act like ``0.0``.                               |
-| |gvec4_type| | :ref:`textureLod<shader_func_textureLod>` ( |gsampler3D| s, vec3 p, float lod)                      |                                                                     |
+| |gvec4_type| | :ref:`textureLod<shader_func_textureLod>` ( |gsampler2D| s, vec2 p, float lod )                     | Perform a texture read at custom mipmap.                            |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| vec4         | :ref:`textureLod<shader_func_textureLod>` (samplerCube s, vec3 p, float lod)                        |                                                                     |
+| |gvec4_type| | :ref:`textureLod<shader_func_textureLod>` ( |gsampler2DArray| s, vec3 p, float lod )                |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| vec4         | :ref:`textureLod<shader_func_textureLod>` (samplerCubeArray s, vec4 p, float lod)                   |                                                                     |
+| |gvec4_type| | :ref:`textureLod<shader_func_textureLod>` ( |gsampler3D| s, vec3 p, float lod )                     |                                                                     |
++--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
+| vec4         | :ref:`textureLod<shader_func_textureLod>` (samplerCube s, vec3 p, float lod )                       |                                                                     |
++--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
+| vec4         | :ref:`textureLod<shader_func_textureLod>` (samplerCubeArray s, vec4 p, float lod )                  |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |gvec4_type| | :ref:`textureProjLod<shader_func_textureProjLod>` ( |gsampler2D| s, vec3 p, float lod)              | Performs a texture read with projection/LOD.                        |
-+--------------+-----------------------------------------------------------------------------------------------------+ The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
-| |gvec4_type| | :ref:`textureProjLod<shader_func_textureProjLod>` ( |gsampler2D| s, vec4 p, float lod)              | will use the full resolution texture. If the texture lacks mipmaps, |
-+--------------+-----------------------------------------------------------------------------------------------------+ all LOD values will act like ``0.0``.                               |
-| |gvec4_type| | :ref:`textureProjLod<shader_func_textureProjLod>` ( |gsampler3D| s, vec4 p, float lod)              |                                                                     |
+| |gvec4_type| | :ref:`textureProjLod<shader_func_textureProjLod>` ( |gsampler2D| s, vec3 p, float lod )             | Performs a texture read with projection/LOD.                        |
++--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
+| |gvec4_type| | :ref:`textureProjLod<shader_func_textureProjLod>` ( |gsampler2D| s, vec4 p, float lod )             |                                                                     |
++--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
+| |gvec4_type| | :ref:`textureProjLod<shader_func_textureProjLod>` ( |gsampler3D| s, vec4 p, float lod )             |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |gvec4_type| | :ref:`textureGrad<shader_func_textureGrad>` ( |gsampler2D| s, vec2 p, vec2 dPdx, vec2 dPdy)         | Performs a texture read with explicit gradients.                    |
+| |gvec4_type| | :ref:`textureGrad<shader_func_textureGrad>` ( |gsampler2D| s, vec2 p, vec2 dPdx, vec2 dPdy )        | Performs a texture read with explicit gradients.                    |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`textureGrad<shader_func_textureGrad>` ( |gsampler2DArray| s, vec3 p, vec2 dPdx, vec2 dPdy)    |                                                                     |
+| |gvec4_type| | :ref:`textureGrad<shader_func_textureGrad>` ( |gsampler2DArray| s, vec3 p, vec2 dPdx, vec2 dPdy )   |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`textureGrad<shader_func_textureGrad>` ( |gsampler3D| s, vec3 p, vec2 dPdx, vec2 dPdy)         |                                                                     |
+| |gvec4_type| | :ref:`textureGrad<shader_func_textureGrad>` ( |gsampler3D| s, vec3 p, vec2 dPdx, vec2 dPdy )        |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| vec4         | :ref:`textureGrad<shader_func_textureGrad>` (samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy)           |                                                                     |
+| vec4         | :ref:`textureGrad<shader_func_textureGrad>` (samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy )          |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| vec4         | :ref:`textureGrad<shader_func_textureGrad>` (samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy)      |                                                                     |
+| vec4         | :ref:`textureGrad<shader_func_textureGrad>` (samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy )     |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |gvec4_type| | :ref:`textureProjGrad<shader_func_textureProjGrad>` ( |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy) | Performs a texture read with projection/LOD and with explicit       |
+| |gvec4_type| | :ref:`textureProjGrad<shader_func_textureProjGrad>` ( |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy )| Performs a texture read with projection/LOD and with explicit       |
 +--------------+-----------------------------------------------------------------------------------------------------+ gradients.                                                          |
-| |gvec4_type| | :ref:`textureProjGrad<shader_func_textureProjGrad>` ( |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy) |                                                                     |
+| |gvec4_type| | :ref:`textureProjGrad<shader_func_textureProjGrad>` ( |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy )|                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`textureProjGrad<shader_func_textureProjGrad>` ( |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy) |                                                                     |
+| |gvec4_type| | :ref:`textureProjGrad<shader_func_textureProjGrad>` ( |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy )|                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |gvec4_type| | :ref:`texelFetch<shader_func_texelFetch>` ( |gsampler2D| s, ivec2 p, int lod)                       | Fetches a single texel using integer coordinates.                   |
-+--------------+-----------------------------------------------------------------------------------------------------+ The LOD defines which mipmap level is used. An LOD value of ``0``   |
-| |gvec4_type| | :ref:`texelFetch<shader_func_texelFetch>` ( |gsampler2DArray| s, ivec3 p, int lod)                  | will use the full resolution texture.                               |
+| |gvec4_type| | :ref:`texelFetch<shader_func_texelFetch>` ( |gsampler2D| s, ivec2 p, int lod )                      | Fetches a single texel using integer coordinates.                   |
 +--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
-| |gvec4_type| | :ref:`texelFetch<shader_func_texelFetch>` ( |gsampler3D| s, ivec3 p, int lod)                       |                                                                     |
+| |gvec4_type| | :ref:`texelFetch<shader_func_texelFetch>` ( |gsampler2DArray| s, ivec3 p, int lod )                 |                                                                     |
++--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
+| |gvec4_type| | :ref:`texelFetch<shader_func_texelFetch>` ( |gsampler3D| s, ivec3 p, int lod )                      |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |gvec4_type| | :ref:`textureGather<shader_func_textureGather>` ( |gsampler2D| s, vec2 p [, int comps])             | Gathers four texels from a texture.                                 |
-+--------------+-----------------------------------------------------------------------------------------------------+ Use ``comps`` within range of 0..3 to                               |
-| |gvec4_type| | :ref:`textureGather<shader_func_textureGather>` ( |gsampler2DArray| s, vec3 p [, int comps])        | define which component (x, y, z, w) is returned.                    |
-+--------------+-----------------------------------------------------------------------------------------------------+ If ``comps`` is not provided: 0 (or x-component) is used.           |
-| vec4         | :ref:`textureGather<shader_func_textureGather>` (samplerCube s, vec3 p [, int comps])               |                                                                     |
+| |gvec4_type| | :ref:`textureGather<shader_func_textureGather>` ( |gsampler2D| s, vec2 p [, int comps] )            | Gathers four texels from a texture.                                 |
++--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
+| |gvec4_type| | :ref:`textureGather<shader_func_textureGather>` ( |gsampler2DArray| s, vec3 p [, int comps] )       |                                                                     |
++--------------+-----------------------------------------------------------------------------------------------------+                                                                     |
+| vec4         | :ref:`textureGather<shader_func_textureGather>` (samplerCube s, vec3 p [, int comps] )              |                                                                     |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|   | :ref:`dFdx<shader_func_dFdx>` ( |vec_type| p)                                                       | Derivative in ``x`` using local differencing.                       |
-|              |                                                                                                     | Internally, can use either ``dFdxCoarse`` or ``dFdxFine``, but the  |
-|              |                                                                                                     | decision for which to use is made by the GPU driver.                |
+| |vec_type|   | :ref:`dFdx<shader_func_dFdx>` ( |vec_type| p )                                                      | Derivative with respect to ``x`` window coordinate,                 |
+|              |                                                                                                     | automatic granularity.                                              |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|   | :ref:`dFdxCoarse<shader_func_dFdxCoarse>` ( |vec_type| p)                                           | Calculates derivative with respect to ``x`` window coordinate using |
-|              |                                                                                                     | local differencing based on the value of ``p`` for the current      |
-|              |                                                                                                     | fragment neighbour(s), and will possibly, but not necessarily,      |
-|              |                                                                                                     | include the value for the current fragment.                         |
+| |vec_type|   | :ref:`dFdxCoarse<shader_func_dFdxCoarse>` ( |vec_type| p )                                          | Derivative with respect to ``x`` window coordinate,                 |
+|              |                                                                                                     | course granularity.                                                 |
+|              |                                                                                                     |                                                                     |
 |              |                                                                                                     | Not available on ``gl_compatibility`` profile.                      |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|   | :ref:`dFdxFine<shader_func_dFdxFine>` ( |vec_type| p)                                               | Calculates derivative with respect to ``x`` window coordinate using |
-|              |                                                                                                     | local differencing based on the value of ``p`` for the current      |
-|              |                                                                                                     | fragment and its immediate neighbour(s).                            |
+| |vec_type|   | :ref:`dFdxFine<shader_func_dFdxFine>` ( |vec_type| p )                                              | Derivative with respect to ``x`` window coordinate,                 |
+|              |                                                                                                     | fine granularity.                                                   |
+|              |                                                                                                     |                                                                     |
 |              |                                                                                                     | Not available on ``gl_compatibility`` profile.                      |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|   | :ref:`dFdy<shader_func_dFdy>` ( |vec_type| p)                                                       | Derivative in ``y`` using local differencing.                       |
-|              |                                                                                                     | Internally, can use either ``dFdyCoarse`` or ``dFdyFine``, but the  |
-|              |                                                                                                     | decision for which to use is made by the GPU driver.                |
+| |vec_type|   | :ref:`dFdy<shader_func_dFdy>` ( |vec_type| p )                                                      | Derivative with respect to ``y`` window coordinate.                 |
+|              |                                                                                                     | Automatic granularity.                                              |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|   | :ref:`dFdyCoarse<shader_func_dFdyCoarse>` ( |vec_type| p)                                           | Calculates derivative with respect to ``y`` window coordinate using |
-|              |                                                                                                     | local differencing based on the value of ``p`` for the current      |
-|              |                                                                                                     | fragment neighbour(s), and will possibly, but not necessarily,      |
-|              |                                                                                                     | include the value for the current fragment.                         |
+| |vec_type|   | :ref:`dFdyCoarse<shader_func_dFdyCoarse>` ( |vec_type| p )                                          | Derivative with respect to ``y`` window coordinate,                 |
+|              |                                                                                                     | course granularity.                                                 |
+|              |                                                                                                     |                                                                     |
 |              |                                                                                                     | Not available on ``gl_compatibility`` profile.                      |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|   | :ref:`dFdyFine<shader_func_dFdyFine>` ( |vec_type| p)                                               | Calculates derivative with respect to ``y`` window coordinate using |
-|              |                                                                                                     | local differencing based on the value of ``p`` for the current      |
-|              |                                                                                                     | fragment and its immediate neighbour(s).                            |
+| |vec_type|   | :ref:`dFdyFine<shader_func_dFdyFine>` ( |vec_type| p )                                              | Derivative with respect to ``y`` window coordinate,                 |
+|              |                                                                                                     | fine granularity.                                                   |
+|              |                                                                                                     |                                                                     |
 |              |                                                                                                     | Not available on ``gl_compatibility`` profile.                      |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|   | :ref:`fwidth<shader_func_fwidth>` ( |vec_type| p)                                                   | Sum of absolute derivative in ``x`` and ``y``.                      |
-|              |                                                                                                     | This is the equivalent of using ``abs(dFdx(p)) + abs(dFdy(p))``.    |
+| |vec_type|   | :ref:`fwidth<shader_func_fwidth>` ( |vec_type| p )                                                  | Sum of absolute derivative in ``x`` and ``y``.                      |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|   | :ref:`fwidthCoarse<shader_func_fwidthCoarse>` ( |vec_type| p)                                       | Sum of absolute derivative in ``x`` and ``y``.                      |
+| |vec_type|   | :ref:`fwidthCoarse<shader_func_fwidthCoarse>` ( |vec_type| p )                                      | Sum of absolute derivative in ``x`` and ``y``.                      |
+|              |                                                                                                     |                                                                     |
 |              |                                                                                                     | Not available on ``gl_compatibility`` profile.                      |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|   | :ref:`fwidthFine<shader_func_fwidthFine>` ( |vec_type| p)                                           | Sum of absolute derivative in ``x`` and ``y``.                      |
+| |vec_type|   | :ref:`fwidthFine<shader_func_fwidthFine>` ( |vec_type| p )                                          | Sum of absolute derivative in ``x`` and ``y``.                      |
+|              |                                                                                                     |                                                                     |
 |              |                                                                                                     | Not available on ``gl_compatibility`` profile.                      |
 +--------------+-----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
@@ -4071,11 +4070,9 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdx** ( |vec_type| p )
 
-    Return the partial derivative of ``p`` with respect to the window x coordinate.
+    .. note:: Available only in the fragment shader.
 
-    .. note::
-
-        Available only in the fragment shader
+    Return the partial derivative of ``p`` with respect to the window x coordinate using local differencing.
 
     Returns either `dFdxCoarse<shader_func_dFdxCoarse>` or `dFdxFine<shader_func_dfdxFine>`. The implementation may choose which calculation to perform based upon factors
     such as performance or the value of the API GL_FRAGMENT_SHADER_DERIVATIVE_HINT hint.
@@ -4086,9 +4083,7 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
     :param p:
         the expression of which to take the partial derivative.
 
-        .. note::
-
-            It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
+        .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
         the partial derivative of ``p``.
@@ -4108,16 +4103,15 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdxCoarse** ( |vec_type| p )
 
-    Return the partial derivative of ``p`` with respect to the window x coordinate.
-
     .. note::
+        | Available only in the fragment shader.
+        | Not available when using the GL_Compatibility rendering backend.
 
-        Available only in the fragment shader
+    Return the partial derivative of ``p`` with respect to the window x coordinate.
 
     Calculates derivatives using local differencing based on the value of ``p`` for the current fragment's neighbors, and will possibly,
     but not necessarily, include the value for the current fragment. That is, over a given area, the implementation can compute derivatives in fewer unique locations than
     would be allowed for the corresponding `dFdxFine<shader_func_dfdxFine>`` function.
-
 
     .. warning::
         Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
@@ -4125,9 +4119,7 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
     :param p:
         the expression of which to take the partial derivative.
 
-        .. note::
-
-            It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
+        .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
         the partial derivative of ``p``.
@@ -4147,9 +4139,11 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdxFine** ( |vec_type| p )
 
-    Return the partial derivative of ``p`` with respect to the window x coordinate.
+    .. note::
+        | Available only in the fragment shader.
+        | Not available when using the GL_Compatibility rendering backend.
 
-    .. note:: Available only in the fragment shader
+    Return the partial derivative of ``p`` with respect to the window x coordinate.
 
     Calculates derivatives using local differencing based on the value of ``p`` for the current fragment and its immediate neighbor(s).
 
@@ -4178,9 +4172,9 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdy** ( |vec_type| p )
 
-    Return the partial derivative of ``p`` with respect to the window y coordinate.
-
     .. note:: Available only in the fragment shader
+
+    Return the partial derivative of ``p`` with respect to the window y coordinate using local differencing.
 
     Returns either `dFdyCoarse<shader_func_dFdyCoarse>` or `dFdyFine<shader_func_dfdyFine>`. The implementation may choose which calculation to perform based upon factors
     such as performance or the value of the API GL_FRAGMENT_SHADER_DERIVATIVE_HINT hint.
@@ -4210,9 +4204,11 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdyCoarse** ( |vec_type| p )
 
-    Return the partial derivative of ``p`` with respect to the window y coordinate.
+    .. note::
+        | Available only in the fragment shader.
+        | Not available when using the GL_Compatibility rendering backend.
 
-    .. note:: Available only in the fragment shader
+    Return the partial derivative of ``p`` with respect to the window y coordinate.
 
     Calculates derivatives using local differencing based on the value of ``p`` for the current fragment's neighbors, and will possibly,
     but not necessarily, include the value for the current fragment. That is, over a given area, the implementation can compute derivatives in fewer unique locations than
@@ -4243,9 +4239,11 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdyFine** ( |vec_type| p )
 
-    Return the partial derivative of ``p`` with respect to the window y coordinate.
+    .. note::
+        | Available only in the fragment shader.
+        | Not available when using the GL_Compatibility rendering backend.
 
-    .. note:: Available only in the fragment shader
+    Return the partial derivative of ``p`` with respect to the window y coordinate.
 
     Calculates derivatives using local differencing based on the value of ``p`` for the current fragment and its immediate neighbor(s).
 
@@ -4280,9 +4278,6 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
     Equivalent to ``abs(dFdx(p)) + abs(dFdy(p))``.
 
-    fwidthCoarse is equivalent to ``abs(dFdxCoarse(p)) + abs(dFdyCoarse(p))``.
-    fwidthFine is equivalent to ``abs(dFdxFine(p)) + abs(dFdyFine(p))``.
-
     :param p:
         the expression of which to take the partial derivative.
 
@@ -4303,6 +4298,10 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 .. rst-class:: classref-method
 
 |vec_type| **fwidthCoarse** ( |vec_type| p )
+
+    .. note::
+        | Available only in the fragment shader.
+        | Not available when using the GL_Compatibility rendering backend.
 
     Return the sum of the absolute value of derivatives in x and y.
 
@@ -4331,6 +4330,10 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **fwidthFine** ( |vec_type| p )
 
+    .. note::
+        | Available only in the fragment shader.
+        | Not available when using the GL_Compatibility rendering backend.
+
     Return the sum of the absolute value of derivatives in x and y.
 
     Uses local differencing for the input argument p.
@@ -4355,31 +4358,29 @@ vec4 **textureGather** ( samplerCube s, vec3 p [, int comps] )
 Packing/Unpacking Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+These functions convert floating point numbers into various sized integers and then pack those integers into a single 32bit unsigned integer.
+The 'unpack' functions perform the opposite operation, returning the original floating point numbers.
+
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
-| uint | :ref:`packHalf2x16<shader_func_packHalf2x16>` (vec2 v)       | Convert two 32-bit floating-point numbers into 16-bit        |
-|      |                                                              | and pack them into a 32-bit unsigned integer and vice-versa. |
+| uint | :ref:`packHalf2x16<shader_func_packHalf2x16>` (vec2 v )      | Convert two 32-bit floats to 16 bit floats and pack them.    |
 +------+--------------------------------------------------------------+                                                              +
-| vec2 | :ref:`unpackHalf2x16<shader_func_unpackHalf2x16>` (uint v)   |                                                              |
+| vec2 | :ref:`unpackHalf2x16<shader_func_unpackHalf2x16>` (uint v )  |                                                              |
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
-| uint | :ref:`packUnorm2x16<shader_func_packUnorm2x16>` (vec2 v)     | Convert two 32-bit floating-point numbers (clamped           |
-|      |                                                              | within 0..1 range) into 16-bit and pack them                 |
-+------+--------------------------------------------------------------+                                                              +
-| vec2 | :ref:`unpackUnorm2x16<shader_func_unpackUnorm2x16>` (uint v) | into a 32-bit unsigned integer and vice-versa.               |
+| uint | :ref:`packUnorm2x16<shader_func_packUnorm2x16>` (vec2 v )    | Convert two normalized (range 0..1) 32-bit floats            |
++------+--------------------------------------------------------------+ to 16-bit floats and pack them.                              +
+| vec2 | :ref:`unpackUnorm2x16<shader_func_unpackUnorm2x16>` (uint v )|                                                              |
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
-| uint | :ref:`packSnorm2x16<shader_func_packSnorm2x16>` (vec2 v)     | Convert two 32-bit floating-point numbers (clamped           |
-|      |                                                              | within -1..1 range) into 16-bit and pack them                |
-+------+--------------------------------------------------------------+                                                              +
-| vec2 | :ref:`unpackSnorm2x16<shader_func_unpackSnorm2x16>` (uint v) | into a 32-bit unsigned integer and vice-versa.               |
+| uint | :ref:`packSnorm2x16<shader_func_packSnorm2x16>` (vec2 v )    | Convert two signed normalized (range -1..1) 32-bit floats    |
++------+--------------------------------------------------------------+ to 16-bit floats and pack them.                              +
+| vec2 | :ref:`unpackSnorm2x16<shader_func_unpackSnorm2x16>` (uint v )|                                                              |
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
-| uint | :ref:`packUnorm4x8<shader_func_packUnorm4x8>` (vec4 v)       | Convert four 32-bit floating-point numbers (clamped          |
-|      |                                                              | within 0..1 range) into 8-bit and pack them                  |
-+------+--------------------------------------------------------------+                                                              +
-| vec4 | :ref:`unpackUnorm4x8<shader_func_unpackUnorm4x8>` (uint v)   | into a 32-bit unsigned integer and vice-versa.               |
+| uint | :ref:`packUnorm4x8<shader_func_packUnorm4x8>` (vec4 v )      | Convert four normalized (range 0..1) 32-bit floats           |
++------+--------------------------------------------------------------+ into 8-bit floats and pack them.                             +
+| vec4 | :ref:`unpackUnorm4x8<shader_func_unpackUnorm4x8>` (uint v )  |                                                              |
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
-| uint | :ref:`packSnorm4x8<shader_func_packSnorm4x8>` (vec4 v)       | Convert four 32-bit floating-point numbers (clamped          |
-|      |                                                              | within -1..1 range) into 8-bit and pack them                 |
-+------+--------------------------------------------------------------+                                                              +
-| vec4 | :ref:`unpackSnorm4x8<shader_func_unpackSnorm4x8>` (uint v)   | into a 32-bit unsigned integer and vice-versa.               |
+| uint | :ref:`packSnorm4x8<shader_func_packSnorm4x8>` (vec4 v )      | Convert four signed normalized (range -1..1) 32-bit floats   |
++------+--------------------------------------------------------------+ into 8-bit floats and pack them.                             +
+| vec4 | :ref:`unpackSnorm4x8<shader_func_unpackSnorm4x8>` (uint v )  |                                                              |
 +------+--------------------------------------------------------------+--------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -4394,7 +4395,7 @@ Packing/Unpacking Functions
 
 uint **packHalf2x16** ( vec2 v )
 
-    Convert two 32-bit floating-point quantities to 16-bit quantities and pack them into a single 32-bit integer.
+    Convert two 32-bit floating-point quantities to 16-bit floating point quantities and pack them into a single 32-bit integer.
 
     Returns an unsigned integer obtained by converting the components of a two-component floating-point vector to
     the 16-bit floating-point representation found in the OpenGL Specification, and then packing these two
@@ -4422,12 +4423,11 @@ uint **packHalf2x16** ( vec2 v )
 
 vec2 **unpackHalf2x16** ( uint v )
 
-    Convert two 16-bit floating-point values packed into a single 32-bit integer into a vector of two 32-bit floating-point quantities.
+    Inverse of :ref:`packHalf2x16<shader_func_packHalf2x16>`.
 
-    Returns a two-component floating-point vector with components obtained by unpacking a 32-bit unsigned integer into a pair of 16-bit
-    values, interpreting those values as 16-bit floating-point numbers according to the OpenGL Specification, and converting them to
-    32-bit floating-point values. The first component of the vector is obtained from the 16 least-significant bits of v; the second
-    component is obtained from the 16 most-significant bits of v.
+    Unpack a 32-bit integer into two 16-bit floating-point values, convert them to 32-bit floating-point values, and put them into a vector.
+    The first component of the vector is obtained from the 16 least-significant bits of v; the second component is obtained from the
+    16 most-significant bits of v.
 
     :param v:
         a single 32-bit unsigned integer containing 2 packed 16-bit floating point values.
@@ -4452,7 +4452,7 @@ uint **packUnorm2x16** ( vec2 v )
 
     Pack floating-point values into an unsigned integer.
 
-    Convert each component of the normalized floating-point value v into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
+    Converts each component of the normalized floating-point value v into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
     The conversion for component c of v to fixed-point is performed as follows::
 
@@ -4691,41 +4691,41 @@ Bitwise operations
 ^^^^^^^^^^^^^^^^^^
 
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`bitfieldExtract<shader_func_bitfieldExtract>` ( |vec_int_type| value, int offset, int bits)                                      | Extracts a range of bits from an integer.                           |
+| |vec_int_type|  | :ref:`bitfieldExtract<shader_func_bitfieldExtract>` ( |vec_int_type| value, int offset, int bits )                                     | Extracts a range of bits from an integer.                           |
 |                 |                                                                                                                                        |                                                                     |
-| |vec_uint_type| | :ref:`bitfieldExtract<shader_func_bitfieldExtract>` ( |vec_uint_type| value, int offset, int bits)                                     |                                                                     |
+| |vec_uint_type| | :ref:`bitfieldExtract<shader_func_bitfieldExtract>` ( |vec_uint_type| value, int offset, int bits )                                    |                                                                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` ( |vec_int_type| base, |vec_int_type| insert,int offset, int bits)                   | Insert a range of bits into an integer.                             |
+| |vec_int_type|  | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` ( |vec_int_type| base, |vec_int_type| insert, int offset, int bits )                 | Insert a range of bits into an integer.                             |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
-| |vec_uint_type| | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` (|vec_uint_type| base, |vec_uint_type| insert, int offset, int bits)                 |                                                                     |
+| |vec_uint_type| | :ref:`bitfieldInsert<shader_func_bitfieldInsert>` (|vec_uint_type| base, |vec_uint_type| insert, int offset, int bits )                |                                                                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`bitfieldReverse<shader_func_bitfieldReverse>` ( |vec_int_type| value)                                                            | Reverse the order of bits in an integer.                            |
+| |vec_int_type|  | :ref:`bitfieldReverse<shader_func_bitfieldReverse>` ( |vec_int_type| value )                                                           | Reverse the order of bits in an integer.                            |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
-| |vec_uint_type| | :ref:`bitfieldReverse<shader_func_bitfieldReverse>` ( |vec_uint_type| value)                                                           |                                                                     |
+| |vec_uint_type| | :ref:`bitfieldReverse<shader_func_bitfieldReverse>` ( |vec_uint_type| value )                                                          |                                                                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`bitCount<shader_func_bitCount>` ( |vec_int_type| value)                                                                          | Counts the number of 1 bits in an integer.                          |
+| |vec_int_type|  | :ref:`bitCount<shader_func_bitCount>` ( |vec_int_type| value )                                                                         | Counts the number of 1 bits in an integer.                          |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
-| |vec_uint_type| | :ref:`bitCount<shader_func_bitCount>` ( |vec_uint_type| value)                                                                         |                                                                     |
+| |vec_uint_type| | :ref:`bitCount<shader_func_bitCount>` ( |vec_uint_type| value )                                                                        |                                                                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`findLSB<shader_func_findLSB>` ( |vec_int_type| value)                                                                            | Find the index of the least significant bit set to 1 in an integer. |
+| |vec_int_type|  | :ref:`findLSB<shader_func_findLSB>` ( |vec_int_type| value )                                                                           | Find the index of the least significant bit set to 1 in an integer. |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
-| |vec_uint_type| | :ref:`findLSB<shader_func_findLSB>` ( |vec_uint_type| value)                                                                           |                                                                     |
+| |vec_uint_type| | :ref:`findLSB<shader_func_findLSB>` ( |vec_uint_type| value )                                                                          |                                                                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_int_type|  | :ref:`findMSB<shader_func_findMSB>` ( |vec_int_type| value)                                                                            | Find the index of the most significant bit set to 1 in an integer.  |
+| |vec_int_type|  | :ref:`findMSB<shader_func_findMSB>` ( |vec_int_type| value )                                                                           | Find the index of the most significant bit set to 1 in an integer.  |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
-| |vec_uint_type| | :ref:`findMSB<shader_func_findMSB>` ( |vec_uint_type| value)                                                                           |                                                                     |
+| |vec_uint_type| | :ref:`findMSB<shader_func_findMSB>` ( |vec_uint_type| value )                                                                          |                                                                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |void|          | :ref:`imulExtended<shader_func_imulExtended>` ( |vec_int_type| x, |vec_int_type| y, out |vec_int_type| msb, out |vec_int_type| lsb)    | Multiplies two 32-bit numbers and produce a 64-bit result.          |
+| |void|          | :ref:`imulExtended<shader_func_imulExtended>` ( |vec_int_type| x, |vec_int_type| y, out |vec_int_type| msb, out |vec_int_type| lsb )   | Multiplies two 32-bit numbers and produce a 64-bit result.          |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+                                                                     |
-| |void|          | :ref:`umulExtended<shader_func_umulExtended>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| msb, out |vec_uint_type| lsb) |                                                                     |
+| |void|          | :ref:`umulExtended<shader_func_umulExtended>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| msb, out |vec_uint_type| lsb )|                                                                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_uint_type| | :ref:`uaddCarry<shader_func_uaddCarry>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| carry)                              | Adds two unsigned integers and generates carry.                     |
+| |vec_uint_type| | :ref:`uaddCarry<shader_func_uaddCarry>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| carry )                             | Adds two unsigned integers and generates carry.                     |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_uint_type| | :ref:`usubBorrow<shader_func_usubBorrow>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| borrow)                           | Subtracts two unsigned integers and generates borrow.               |
+| |vec_uint_type| | :ref:`usubBorrow<shader_func_usubBorrow>` (|vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| borrow )                          | Subtracts two unsigned integers and generates borrow.               |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|      | :ref:`ldexp<shader_func_ldexp>` (|vec_type| x, out |vec_int_type| exp)                                                                 | Assemble a floating-point number from a value and exponent.         |
+| |vec_type|      | :ref:`ldexp<shader_func_ldexp>` (|vec_type| x, out |vec_int_type| exp )                                                                | Assemble a floating-point number from a value and exponent.         |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| |vec_type|      | :ref:`frexp<shader_func_frexp>` (|vec_type| x, out |vec_int_type| exp)                                                                 | Splits a floating-point number (``x``) into significand integral    |
+| |vec_type|      | :ref:`frexp<shader_func_frexp>` (|vec_type| x, out |vec_int_type| exp )                                                                | Splits a floating-point number (``x``) into significand integral    |
 |                 |                                                                                                                                        | components                                                          |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
