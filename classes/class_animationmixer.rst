@@ -504,6 +504,18 @@ A virtual function for processing after getting a key during playback.
 
 Adds ``library`` to the animation player, under the key ``name``.
 
+AnimationMixer has a global library by default with an empty string as key. For adding an animation to the global library:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var global_library = mixer.get_animation_library("")
+    global_library.add_animation("animation_name", animation_resource)
+
+
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -763,10 +775,10 @@ For example, if an animation with only one key ``Quaternion(0, 0, 0, 1)`` is pla
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
-        var current_root_motion_rotation_accumulator: Quaternion = animation_tree.get_root_motion_Quaternion_accumulator()
+        var current_root_motion_rotation_accumulator: Quaternion = animation_tree.get_root_motion_rotation_accumulator()
         var difference: Quaternion = prev_root_motion_rotation_accumulator.inverse() * current_root_motion_rotation_accumulator
         prev_root_motion_rotation_accumulator = current_root_motion_rotation_accumulator
-        transform.basis *= difference
+        transform.basis *=  Basis(difference)
 
 
 

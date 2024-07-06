@@ -1143,7 +1143,7 @@ Optionally, you can specify a shortcut parameter. When pressed, this shortcut wi
 
 |void| **add_custom_type**\ (\ type\: :ref:`String<class_String>`, base\: :ref:`String<class_String>`, script\: :ref:`Script<class_Script>`, icon\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_EditorPlugin_method_add_custom_type>`
 
-Adds a custom type, which will appear in the list of nodes or resources. An icon can be optionally passed.
+Adds a custom type, which will appear in the list of nodes or resources.
 
 When a given node or resource is selected, the base type will be instantiated (e.g. "Node3D", "Control", "Resource"), then the script will be loaded and set to this object.
 

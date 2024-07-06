@@ -127,7 +127,7 @@ Method Descriptions
 
 Return ``true`` if this plugin will customize resources based on the platform and features used.
 
-When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_private_method__get_customization_configuration_hash>`, :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` and :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>` will be called and must be implemented.
+When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_private_method__get_customization_configuration_hash>` and :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` will be called and must be implemented.
 
 .. rst-class:: classref-item-separator
 
@@ -139,7 +139,9 @@ When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlug
 
 :ref:`bool<class_bool>` **_begin_customize_scenes**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| |const| :ref:`🔗<class_EditorExportPlugin_private_method__begin_customize_scenes>`
 
-Return true if this plugin will customize scenes based on the platform and features used.
+Return ``true`` if this plugin will customize scenes based on the platform and features used.
+
+When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_private_method__get_customization_configuration_hash>` and :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>` will be called and must be implemented.
 
 .. rst-class:: classref-item-separator
 
@@ -229,7 +231,7 @@ Virtual method to be overridden by the user. Called when the export is finished.
 
 |void| **_export_file**\ (\ path\: :ref:`String<class_String>`, type\: :ref:`String<class_String>`, features\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| :ref:`🔗<class_EditorExportPlugin_private_method__export_file>`
 
-Virtual method to be overridden by the user. Called for each exported file, providing arguments that can be used to identify the file. ``path`` is the path of the file, ``type`` is the :ref:`Resource<class_Resource>` represented by the file (e.g. :ref:`PackedScene<class_PackedScene>`) and ``features`` is the list of features for the export.
+Virtual method to be overridden by the user. Called for each exported file before :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` and :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>`. The arguments can be used to identify the file. ``path`` is the path of the file, ``type`` is the :ref:`Resource<class_Resource>` represented by the file (e.g. :ref:`PackedScene<class_PackedScene>`), and ``features`` is the list of features for the export.
 
 Calling :ref:`skip<class_EditorExportPlugin_method_skip>` inside this callback will make the file not included in the export.
 
@@ -467,6 +469,8 @@ Adds a custom file to be exported. ``path`` is the virtual path that can be used
 
 When called inside :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>` and ``remap`` is ``true``, the current file will not be exported, but instead remapped to this custom file. ``remap`` is ignored when called in other places.
 
+\ ``file`` will not be imported, so consider using :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>` to remap imported resources.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -607,7 +611,7 @@ Returns the current value of an export option supplied by :ref:`_get_export_opti
 
 |void| **skip**\ (\ ) :ref:`🔗<class_EditorExportPlugin_method_skip>`
 
-To be called inside :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>`, :ref:`_customize_resource<class_EditorExportPlugin_private_method__customize_resource>`, or :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>`. Skips the current file, so it's not included in the export.
+To be called inside :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>`. Skips the current file, so it's not included in the export.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
