@@ -120,7 +120,7 @@ If you run into errors, you may try the following command:
 
 If you get a ``MemoryError`` or ``EOFError``, you can remove the ``classes/`` folder and
 run ``make`` again.
-This will drop the class references from the final HTML documentation but will keep the
+This will drop the class references from the final HTML documentation, but will keep the
 rest intact.
 
 .. important::

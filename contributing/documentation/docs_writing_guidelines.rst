@@ -137,7 +137,7 @@ Write as few adjectives and adverbs as possible. Only use them if they
 add key information to the description.
 
 **Don't** use redundant or meaningless adverbs. Words that lengthen the
-documentation but don't add any information:
+documentation, but don't add any information:
 
 ::
 

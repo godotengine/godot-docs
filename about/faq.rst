@@ -190,7 +190,7 @@ game with them, as either open- or closed-source.
 To see how support for your SDK of choice could still be provided, look at the
 Plugins question below.
 
-If you know of a third-party SDK that is not supported by Godot but that offers
+If you know of a third-party SDK that is not supported by Godot, but that offers
 free and open source integration, consider starting the integration work yourself.
 Godot is not owned by one person; it belongs to the community, and it grows along
 with ambitious community contributors like you.

@@ -215,7 +215,7 @@ video resolution will vary depending on the source's aspect ratio.
 
 .. tip::
 
-    If the video was recorded with an audio track but this audio track is not
+    If the video was recorded with an audio track, but this audio track is not
     necessary, consider stripping it by adding the ``-an`` option to the FFmpeg
     command line (before the output file name). This will reduce file size and
     also ensure audio controls don't show up on the video when played in a

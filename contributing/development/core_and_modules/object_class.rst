@@ -53,7 +53,7 @@ Classes are registered by calling:
 Registering it will allow the class to be instanced by scripts, code, or
 creating them again when deserializing.
 
-Registering as virtual is the same but it can't be instanced.
+Registering as virtual is the same, but it can't be instanced.
 
 .. code-block:: cpp
 
@@ -63,7 +63,7 @@ Object-derived classes can override the static function
 ``static void _bind_methods()``. When one class is registered, this
 static function is called to register all the object methods,
 properties, constants, etc. It's only called once. If an Object derived
-class is instanced but has not been registered, it will be registered as
+class is instanced, but has not been registered, it will be registered as
 virtual automatically.
 
 Inside ``_bind_methods``, there are a couple of things that can be done.
@@ -148,7 +148,7 @@ For example:
 
 This is an integer property named "amount". The hint is a range, and the range
 goes from 0 to 49 in steps of 1 (integers). It is only usable for the editor
-(editing the value visually) but won't be serialized.
+(editing the value visually), but won't be serialized.
 
 Another example:
 

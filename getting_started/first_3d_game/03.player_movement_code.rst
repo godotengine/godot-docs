@@ -174,7 +174,7 @@ that looks in the ``direction`` direction.
 
 Then, we update the velocity. We have to calculate the ground velocity and the
 fall speed separately. Be sure to go back one tab so the lines are inside the
-``_physics_process()`` function but outside the condition we just wrote above.
+``_physics_process()`` function, but outside the condition we just wrote above.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
