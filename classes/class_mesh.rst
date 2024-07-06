@@ -191,6 +191,8 @@ enum **ArrayType**: :ref:`🔗<enum_Mesh_ArrayType>`
 
 :ref:`PackedVector3Array<class_PackedVector3Array>` of vertex normals.
 
+\ **Note:** The array has to consist of normal vectors, otherwise they will be normalized by the engine, potentially causing visual discrepancies.
+
 .. _class_Mesh_constant_ARRAY_TANGENT:
 
 .. rst-class:: classref-enumeration-constant
