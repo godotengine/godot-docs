@@ -557,7 +557,7 @@ Icon modulate :ref:`Color<class_Color>` used when the **Button** is being presse
 
 :ref:`int<class_int>` **align_to_largest_stylebox** = ``0`` :ref:`🔗<class_Button_theme_constant_align_to_largest_stylebox>`
 
-This constant acts as a boolean. If ``true``, text and icon are always aligned to the largest stylebox margins, otherwise it's aligned to the current button state stylebox margins.
+This constant acts as a boolean. If ``true``, the minimum size of the button and text/icon alignment is always based on the largest stylebox margins, otherwise it's based on the current button state stylebox margins.
 
 .. rst-class:: classref-item-separator
 

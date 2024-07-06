@@ -27,6 +27,8 @@ Description
 
 \ **Performance:** It is greatly advised to enable low-processor usage mode (see :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`) when using GraphEdits.
 
+\ **Note:** Keep in mind that :ref:`Node.get_children<class_Node_method_get_children>` will also return the connection layer node named ``_connection_layer`` due to technical limitations. This behavior may change in future releases.
+
 .. rst-class:: classref-reftable-group
 
 Properties

@@ -44,10 +44,12 @@ Despite their name, node paths may also point to a property:
 
 ::
 
-    ^"position"            # Points to this object's position.
-    ^"position:x"          # Points to this object's position in the x axis.
+    ^":position"           # Points to this object's position.
+    ^":position:x"         # Points to this object's position in the x axis.
     ^"Camera3D:rotation:y" # Points to the child Camera3D and its y rotation.
     ^"/root:size:x"        # Points to the root Window and its width.
+
+In some situations, it's possible to omit the leading ``:`` when pointing to an object's property. As an example, this is the case with :ref:`Object.set_indexed<class_Object_method_set_indexed>` and :ref:`Tween.tween_property<class_Tween_method_tween_property>`, as those methods call :ref:`get_as_property_path<class_NodePath_method_get_as_property_path>` under the hood. However, it's generally recommended to keep the ``:`` prefix.
 
 Node paths cannot check whether they are valid and may point to nodes or properties that do not exist. Their meaning depends entirely on the context in which they're used.
 

@@ -705,6 +705,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/buffering/agile_event_flushing<class_ProjectSettings_property_input_devices/buffering/agile_event_flushing>`                                                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input_devices/buffering/android/use_accumulated_input<class_ProjectSettings_property_input_devices/buffering/android/use_accumulated_input>`                                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input_devices/buffering/android/use_input_buffering<class_ProjectSettings_property_input_devices/buffering/android/use_input_buffering>`                                                             | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/compatibility/legacy_just_pressed_behavior<class_ProjectSettings_property_input_devices/compatibility/legacy_just_pressed_behavior>`                                                   | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`input_devices/pen_tablet/driver<class_ProjectSettings_property_input_devices/pen_tablet/driver>`                                                                                                     |                                                                                                  |
@@ -6008,6 +6012,30 @@ Enabling this can greatly improve the responsiveness to input, specially in devi
 
 ----
 
+.. _class_ProjectSettings_property_input_devices/buffering/android/use_accumulated_input:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input_devices/buffering/android/use_accumulated_input** = ``true`` :ref:`🔗<class_ProjectSettings_property_input_devices/buffering/android/use_accumulated_input>`
+
+If ``true``, multiple input events will be accumulated into a single input event when possible.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input_devices/buffering/android/use_input_buffering:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input_devices/buffering/android/use_input_buffering** = ``true`` :ref:`🔗<class_ProjectSettings_property_input_devices/buffering/android/use_input_buffering>`
+
+If ``true``, input events will be buffered prior to being dispatched.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_input_devices/compatibility/legacy_just_pressed_behavior:
 
 .. rst-class:: classref-property
@@ -9654,8 +9682,6 @@ Sets the number of MSAA samples to use for 2D/Canvas rendering (as a power of tw
 
 Sets the number of MSAA samples to use for 3D rendering (as a power of two). MSAA is used to reduce aliasing around the edges of polygons. A higher MSAA value results in smoother edges but can be significantly slower on some hardware, especially integrated graphics due to their limited memory bandwidth. See also :ref:`rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` for supersampling, which provides higher quality but is much more expensive. This has no effect on shader-induced aliasing or texture aliasing.
 
-\ **Note:** MSAA is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -11813,7 +11839,7 @@ Specify whether OpenXR should be configured for an HMD or a hand held device.
 
 If true and foveation is supported, will automatically adjust foveation level based on framerate up to the level set on :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`.
 
-\ **Note:** Only works on compatibility renderer.
+\ **Note:** Only works on the Compatibility rendering method.
 
 .. rst-class:: classref-item-separator
 
@@ -11827,7 +11853,7 @@ If true and foveation is supported, will automatically adjust foveation level ba
 
 Applied foveation level if supported: 0 = off, 1 = low, 2 = medium, 3 = high.
 
-\ **Note:** Only works on compatibility renderer.
+\ **Note:** Only works on the Compatibility rendering method. On platforms other than Android, if :ref:`rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` is enabled, this feature will be disabled.
 
 .. rst-class:: classref-item-separator
 

@@ -187,6 +187,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/autorename_animation_tracks<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`editors/animation/confirm_insert_track<class_EditorSettings_property_editors/animation/confirm_insert_track>`                                                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/default_create_bezier_tracks<class_EditorSettings_property_editors/animation/default_create_bezier_tracks>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/animation/default_create_reset_tracks<class_EditorSettings_property_editors/animation/default_create_reset_tracks>`                                                                                 |
@@ -1594,6 +1596,20 @@ The 3D editor gizmo color for :ref:`Joint3D<class_Joint3D>`\ s and :ref:`Physica
 :ref:`bool<class_bool>` **editors/animation/autorename_animation_tracks** :ref:`🔗<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`
 
 If ``true``, automatically updates animation tracks' target paths when renaming or reparenting nodes in the Scene tree dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/animation/confirm_insert_track:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/animation/confirm_insert_track** :ref:`🔗<class_EditorSettings_property_editors/animation/confirm_insert_track>`
+
+If ``true``, display a confirmation dialog when adding a new track to an animation by pressing the "key" icon next to a property. Holding Shift will bypass the dialog.
+
+If ``false``, the behavior is reversed, i.e. the dialog only appears when Shift is held.
 
 .. rst-class:: classref-item-separator
 
@@ -4041,7 +4057,7 @@ The indentation style to use (tabs or spaces).
 
 :ref:`String<class_String>` **text_editor/behavior/navigation/custom_word_separators** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/custom_word_separators>`
 
-The characters to consider as word delimiters if :ref:`text_editor/behavior/navigation/use_custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators>` is ``true``. The characters should be defined without separation, for example ``#_!``.
+The characters to consider as word delimiters if :ref:`text_editor/behavior/navigation/use_custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators>` is ``true``. This is in addition to default characters if :ref:`text_editor/behavior/navigation/use_default_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators>` is ``true``. The characters should be defined without separation, for example ``_♥=``.
 
 .. rst-class:: classref-item-separator
 
@@ -4127,7 +4143,7 @@ If ``true``, prevents automatically switching between the Script and 2D/3D scree
 
 :ref:`bool<class_bool>` **text_editor/behavior/navigation/use_custom_word_separators** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators>`
 
-If ``false``, using :kbd:`Ctrl + Left` or :kbd:`Ctrl + Right` (:kbd:`Cmd + Left` or :kbd:`Cmd + Right` on macOS) bindings will use the behavior of :ref:`text_editor/behavior/navigation/use_default_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators>`. If ``true``, it will also stop the caret if a character within :ref:`text_editor/behavior/navigation/custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/custom_word_separators>` is detected. Useful for subword moving. This behavior also will be applied to the behavior of text selection.
+If ``true``, uses the characters in :ref:`text_editor/behavior/navigation/custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/custom_word_separators>` as word separators for word navigation and operations. This is in addition to the default characters if :ref:`text_editor/behavior/navigation/use_default_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators>` is also enabled. Word navigation and operations include double-clicking on a word or holding :kbd:`Ctrl` (:kbd:`Cmd` on macOS) while pressing :kbd:`left`, :kbd:`right`, :kbd:`backspace`, or :kbd:`delete`.
 
 .. rst-class:: classref-item-separator
 
@@ -4139,7 +4155,7 @@ If ``false``, using :kbd:`Ctrl + Left` or :kbd:`Ctrl + Right` (:kbd:`Cmd + Left`
 
 :ref:`bool<class_bool>` **text_editor/behavior/navigation/use_default_word_separators** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/use_default_word_separators>`
 
-If ``false``, using :kbd:`Ctrl + Left` or :kbd:`Ctrl + Right` (:kbd:`Cmd + Left` or :kbd:`Cmd + Right` on macOS) bindings will stop moving caret only if a space or punctuation is detected. If ``true``, it will also stop the caret if a character is part of ```!"#$%&'()*+,-./:;<=>?@[\]^`{|}~``, the Unicode General Punctuation table, or the Unicode CJK Punctuation table. Useful for subword moving. This behavior also will be applied to the behavior of text selection.
+If ``true``, uses the characters in ```!"#$%&'()*+,-./:;<=>?@[\]^`{|}~``, the Unicode General Punctuation table, and the Unicode CJK Punctuation table as word separators for word navigation and operations. If ``false``, a subset of these characters are used and does not include the characters ``<>$~^=+|``. This is in addition to custom characters if :ref:`text_editor/behavior/navigation/use_custom_word_separators<class_EditorSettings_property_text_editor/behavior/navigation/use_custom_word_separators>` is also enabled. These characters are used to determine where a word stops. Word navigation and operations include double-clicking on a word or holding :kbd:`Ctrl` (:kbd:`Cmd` on macOS) while pressing :kbd:`left`, :kbd:`right`, :kbd:`backspace`, or :kbd:`delete`.
 
 .. rst-class:: classref-item-separator
 
@@ -4225,7 +4241,7 @@ The delay in seconds after which autocompletion suggestions should be displayed 
 
 :ref:`bool<class_bool>` **text_editor/completion/code_complete_enabled** :ref:`🔗<class_EditorSettings_property_text_editor/completion/code_complete_enabled>`
 
-If ``true``, code completion will be triggered automatically after :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`. If ``false``, you can still trigger completion manually by pressing :kbd:`Ctrl + Space` (:kbd:`Cmd + Space` on macOS).
+If ``true``, code completion will be triggered automatically after :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`. Even if ``false``, code completion can be triggered manually with the ``ui_text_completion_query`` action (by default :kbd:`Ctrl + Space` or :kbd:`Cmd + Space` on macOS).
 
 .. rst-class:: classref-item-separator
 
