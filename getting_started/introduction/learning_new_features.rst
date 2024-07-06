@@ -124,7 +124,7 @@ information:
    Screen) key (macOS: use :kbd:`⌘ Command + ⇧ Shift + 3` for a full screen shot).
 
    Alternatively, you can use a program like `ShareX <https://getsharex.com/>`_
-   on Windows, `FlameShot <https://flameshot.org/>`_ on Linux
+   on Windows, `FlameShot <https://flameshot.org/>`_ on Linux,
    or `Screenshot <https://support.apple.com/guide/mac-help/take-a-screenshot-mh26782/mac>`_
    on macOS.
 
