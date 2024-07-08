@@ -23,6 +23,7 @@ Rendering
    particle_systems_2d
    2d_antialiasing
    custom_drawing_in_2d
+   2d_parallax
 
 Physics and movement
 --------------------
