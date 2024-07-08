@@ -93,7 +93,7 @@ resource to create a visible box.
 Once again, it's too small by default. Click the box icon to expand the
 resource and set its *Size* to ``60``, ``2``, and ``60``.
 
-.. image:: img/01.game_setup/12.cube_resized.webp
+.. image:: img/01.game_setup/12.cube_resized.png
 
 You should see a wide grey slab that covers the grid and blue and red axes in
 the viewport.
