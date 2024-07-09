@@ -133,7 +133,7 @@ All builds are optimized. Each mode means:
 
 The editor is enabled by default in all PC targets (Linux, Windows, macOS),
 disabled for everything else. Disabling the editor produces a binary that can
-run projects, but does not include the editor or the Project Manager.
+run projects but does not include the editor or the Project Manager.
 
 ::
 
