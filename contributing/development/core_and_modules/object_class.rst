@@ -53,7 +53,7 @@ Classes are registered by calling:
 Registering it will allow the class to be instanced by scripts, code, or
 creating them again when deserializing.
 
-Registering as virtual is the same, but it can't be instanced.
+Registering as virtual is the same but it can't be instanced.
 
 .. code-block:: cpp
 
