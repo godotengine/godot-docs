@@ -41,11 +41,11 @@ Setting up the playable area
 We're going to create our main scene with a plain :ref:`Node <class_Node>` as its root. In the
 *Scene* dock, click the *Add Child Node* button represented by a "+" icon in the
 top-left and double-click on *Node*. Name the node ``Main``. An alternate method to rename the node is to right-click on *Node* and choose *Rename* (or :kbd:`F2`). Alternatively, to add
-a node to the scene, you can press :kbd:`Ctrl + A` (:kbd:`⌘ Cmd + A` on macOS).
+a node to the scene, you can press :kbd:`Ctrl + A` (:kbd:`Cmd + A` on macOS).
 
 .. image:: img/01.game_setup/05.main_node.png
 
-Save the scene as ``main.tscn`` by pressing :kbd:`Ctrl + S` (:kbd:`⌘ Cmd + S` on macOS).
+Save the scene as ``main.tscn`` by pressing :kbd:`Ctrl + S` (:kbd:`Cmd + S` on macOS).
 
 We'll start by adding a floor that'll prevent the characters from falling. To
 create static colliders like the floor, walls, or ceilings, you can use :ref:`StaticBody3D <class_StaticBody3D>` nodes. They require :ref:`CollisionShape3D <class_CollisionShape3D>` child nodes to
