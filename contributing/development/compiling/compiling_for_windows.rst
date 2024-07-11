@@ -167,12 +167,8 @@ Compiling with support for Direct3D 12
 By default, builds of Godot do not contain support for the Direct3D 12 graphics
 API.
 
-To compile Godot with Direct3D 12 support you need at least the following:
+To compile Godot with Direct3D 12 support you need at least the following item:
 
-- `The DirectX Shader Compiler <https://github.com/Microsoft/DirectXShaderCompiler/releases>`_.
-  The zip folder will be named "dxc\_" followed by the date of release. Download
-  it anywhere, unzip it and remember the path to the unzipped folder, you will
-  need it below.
 - `godot-nir-static library <https://github.com/godotengine/godot-nir-static/releases/>`_.
   We compile the Mesa libraries you will need into a static library. Download it
   anywhere, unzip it and remember the path to the unzipped folder, you will
@@ -232,23 +228,13 @@ look for the additional libraries:
 
 .. code-block:: doscon
 
-    C:\godot> scons platform=windows d3d12=yes dxc_path=<...> mesa_libs=<...>
+    C:\godot> scons platform=windows d3d12=yes mesa_libs=<...>
 
 Or, with all options enabled:
 
 .. code-block:: doscon
 
-    C:\godot> scons platform=windows d3d12=yes dxc_path=<...> mesa_libs=<...> agility_sdk_path=<...> pix_path=<...>
-
-.. note:: The build process will copy ``dxil.dll`` from the ``bin/<arch>/``
-          directory in the DXC folder to the Godot binary directory and the
-          appropriate ``bin/<arch>`` file in the Godot binary directory.
-          Direct3D 12-enabled Godot packages for distribution to end users must
-          include the ``dxil.dll`` (and relevant folders if using multi-arch),
-          both for the editor and games. At runtime, the renderer will try to
-          load the DLL from the arch-specific folders, and will fall back to the
-          same directory as the Godot executable if the appropriate arch isn't
-          found.
+    C:\godot> scons platform=windows d3d12=yes mesa_libs=<...> agility_sdk_path=<...> pix_path=<...>
 
 .. note:: For the Agility SDK's DLLs you have to explicitly choose the kind of
           workflow. Single-arch is the default (DLLs copied to ``bin/``). If you
