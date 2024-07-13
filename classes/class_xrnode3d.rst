@@ -196,6 +196,14 @@ Triggers a haptic pulse on a device associated with this interface.
 
 \ ``action_name`` is the name of the action for this pulse.
 
+\ ``frequency`` is the frequency of the pulse, set to ``0.0`` to have the system use a default frequency.
+
+\ ``amplitude`` is the amplitude of the pulse between ``0.0`` and ``1.0``.
+
+\ ``duration_sec`` is the duration of the pulse in seconds.
+
+\ ``delay_sec`` is a delay in seconds before the pulse is given.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
