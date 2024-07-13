@@ -926,7 +926,7 @@ Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``, cli
 
 Blits ``src_rect`` area from ``src`` image to this image at the coordinates given by ``dst``, clipped accordingly to both image bounds. ``src`` pixel is copied onto ``dst`` if the corresponding ``mask`` pixel's alpha value is not 0. This image and ``src`` image **must** have the same format. ``src`` image and ``mask`` image **must** have the same size (width and height) but they can have different formats. ``src_rect`` with non-positive size is treated as empty.
 
-Any alpha channel data in ``src`` will overwrite the corresponding coordindates in the original image. In order to blend alpha channels see :ref:`blend_rect<class_Image_method_blend_rect>` instead.
+Any alpha channel data in ``src`` will overwrite the corresponding coordinates in the original image. In order to blend alpha channels see :ref:`blend_rect<class_Image_method_blend_rect>` instead.
 
 .. rst-class:: classref-item-separator
 
