@@ -54,7 +54,7 @@ Method Descriptions
 
 :ref:`RID<class_RID>` **_get_camera_attributes**\ (\ ) |virtual| |const| :ref:`🔗<class_RenderDataExtension_private_method__get_camera_attributes>`
 
-Implement this in GDExtension to return the :ref:`RID<class_RID>` for the implementations camera attributes object.
+Implement this in GDExtension to return the :ref:`RID<class_RID>` for the implementation's camera attributes object.
 
 .. rst-class:: classref-item-separator
 
@@ -66,9 +66,7 @@ Implement this in GDExtension to return the :ref:`RID<class_RID>` for the implem
 
 :ref:`RID<class_RID>` **_get_environment**\ (\ ) |virtual| |const| :ref:`🔗<class_RenderDataExtension_private_method__get_environment>`
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement this in GDExtension to return the :ref:`RID<class_RID>` of the implementation's environment object.
 
 .. rst-class:: classref-item-separator
 
@@ -80,7 +78,7 @@ Implement this in GDExtension to return the :ref:`RID<class_RID>` for the implem
 
 :ref:`RenderSceneBuffers<class_RenderSceneBuffers>` **_get_render_scene_buffers**\ (\ ) |virtual| |const| :ref:`🔗<class_RenderDataExtension_private_method__get_render_scene_buffers>`
 
-Implement this in GDExtension to return the :ref:`RID<class_RID>` of the implementations environment object.
+Implement this in GDExtension to return the implementation's :ref:`RenderSceneBuffers<class_RenderSceneBuffers>` object.
 
 .. rst-class:: classref-item-separator
 
@@ -92,7 +90,7 @@ Implement this in GDExtension to return the :ref:`RID<class_RID>` of the impleme
 
 :ref:`RenderSceneData<class_RenderSceneData>` **_get_render_scene_data**\ (\ ) |virtual| |const| :ref:`🔗<class_RenderDataExtension_private_method__get_render_scene_data>`
 
-Implement this in GDExtension to return the implementations :ref:`RenderSceneDataExtension<class_RenderSceneDataExtension>` object.
+Implement this in GDExtension to return the implementation's :ref:`RenderSceneDataExtension<class_RenderSceneDataExtension>` object.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

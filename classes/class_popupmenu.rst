@@ -148,6 +148,8 @@ Methods
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                          | :ref:`is_item_shortcut_disabled<class_PopupMenu_method_is_item_shortcut_disabled>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                            |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`is_native_menu<class_PopupMenu_method_is_native_menu>`\ (\ ) |const|                                                                                                                                                                                                                 |
+   +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                          | :ref:`is_system_menu<class_PopupMenu_method_is_system_menu>`\ (\ ) |const|                                                                                                                                                                                                                 |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                           | :ref:`remove_item<class_PopupMenu_method_remove_item>`\ (\ index\: :ref:`int<class_int>`\ )                                                                                                                                                                                                |
@@ -444,6 +446,8 @@ The number of items currently in the list.
 - :ref:`bool<class_bool>` **is_prefer_native_menu**\ (\ )
 
 If ``true``, :ref:`MenuBar<class_MenuBar>` will use native menu when supported.
+
+\ **Note:** If **PopupMenu** is linked to :ref:`StatusIndicator<class_StatusIndicator>`, :ref:`MenuBar<class_MenuBar>`, or another **PopupMenu** item it can use native menu regardless of this property, use :ref:`is_native_menu<class_PopupMenu_method_is_native_menu>` to check it.
 
 .. rst-class:: classref-item-separator
 
@@ -1071,6 +1075,18 @@ Returns ``true`` if the item is a separator. If it is, it will be displayed as a
 :ref:`bool<class_bool>` **is_item_shortcut_disabled**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PopupMenu_method_is_item_shortcut_disabled>`
 
 Returns ``true`` if the specified item's shortcut is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_method_is_native_menu:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_native_menu**\ (\ ) |const| :ref:`🔗<class_PopupMenu_method_is_native_menu>`
+
+Returns ``true`` if the system native menu is supported and currently used by this **PopupMenu**.
 
 .. rst-class:: classref-item-separator
 

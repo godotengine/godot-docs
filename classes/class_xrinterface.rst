@@ -704,6 +704,14 @@ Triggers a haptic pulse on a device associated with this interface.
 
 \ ``tracker_name`` is optional and can be used to direct the pulse to a specific device provided that device is bound to this haptic.
 
+\ ``frequency`` is the frequency of the pulse, set to ``0.0`` to have the system use a default frequency.
+
+\ ``amplitude`` is the amplitude of the pulse between ``0.0`` and ``1.0``.
+
+\ ``duration_sec`` is the duration of the pulse in seconds.
+
+\ ``delay_sec`` is a delay in seconds before the pulse is given.
+
 .. rst-class:: classref-item-separator
 
 ----

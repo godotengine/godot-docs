@@ -279,6 +279,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/settings/profiler/max_functions<class_ProjectSettings_property_debug/settings/profiler/max_functions>`                                                                                         | ``16384``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/settings/profiler/max_timestamp_query_elements<class_ProjectSettings_property_debug/settings/profiler/max_timestamp_query_elements>`                                                           | ``256``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/settings/stdout/print_fps<class_ProjectSettings_property_debug/settings/stdout/print_fps>`                                                                                                     | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/settings/stdout/print_gpu_profile<class_ProjectSettings_property_debug/settings/stdout/print_gpu_profile>`                                                                                     | ``false``                                                                                        |
@@ -3198,6 +3200,18 @@ Maximum number of functions per frame allowed when profiling.
 
 ----
 
+.. _class_ProjectSettings_property_debug/settings/profiler/max_timestamp_query_elements:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/settings/profiler/max_timestamp_query_elements** = ``256`` :ref:`🔗<class_ProjectSettings_property_debug/settings/profiler/max_timestamp_query_elements>`
+
+Maximum number of timestamp query elements allowed per frame for visual profiling.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/settings/stdout/print_fps:
 
 .. rst-class:: classref-property
@@ -4220,9 +4234,9 @@ Defines how the base size is stretched to fit the resolution of the window or sc
 
 \ **"disabled"**: No stretching happens. One unit in the scene corresponds to one pixel on the screen. In this mode, :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` has no effect. Recommended for non-game applications.
 
-\ **"canvas_items"**: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art esthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
+\ **"canvas_items"**: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art aesthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
 
-\ **"viewport"**: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art esthetic.
+\ **"viewport"**: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art aesthetic.
 
 .. rst-class:: classref-item-separator
 
@@ -4336,9 +4350,11 @@ Changing this value allows setting up a multi-project scenario where there are m
 
 :ref:`bool<class_bool>` **editor/export/convert_text_resources_to_binary** = ``true`` :ref:`🔗<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>`
 
-If ``true``, text resources are converted to a binary format on export. This decreases file sizes and speeds up loading slightly.
+If ``true``, text resource (``tres``) and text scene (``tscn``) files are converted to their corresponding binary format on export. This decreases file sizes and speeds up loading slightly.
 
-\ **Note:** If :ref:`editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` is ``true``, :ref:`@GDScript.load<class_@GDScript_method_load>` will not be able to return the converted files in an exported project. Some file paths within the exported PCK will also change, such as ``project.godot`` becoming ``project.binary``. If you rely on run-time loading of files present within the PCK, set :ref:`editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` to ``false``.
+\ **Note:** Because a resource's file extension may change in an exported project, it is heavily recommended to use :ref:`@GDScript.load<class_@GDScript_method_load>` or :ref:`ResourceLoader<class_ResourceLoader>` instead of :ref:`FileAccess<class_FileAccess>` to load resources dynamically.
+
+\ **Note:** The project settings file (``project.godot``) will always be converted to binary on export, regardless of this setting.
 
 .. rst-class:: classref-item-separator
 
