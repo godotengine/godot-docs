@@ -234,8 +234,8 @@ The Input singleton has a method for this:
 
     var ev = new InputEventAction();
     // Set as ui_left, pressed.
-    ev.SetAction("ui_left");
-    ev.SetPressed(true);
+    ev.Action = "ui_left";
+    ev.Pressed = true;
     // Feedback.
     Input.ParseInputEvent(ev);
 
