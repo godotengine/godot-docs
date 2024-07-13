@@ -144,7 +144,7 @@ Emitted when the user contextual goto and the item is in the same script.
 
 .. rst-class:: classref-signal
 
-**request_save_previous_state**\ (\ line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ScriptEditorBase_signal_request_save_previous_state>`
+**request_save_previous_state**\ (\ state\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_ScriptEditorBase_signal_request_save_previous_state>`
 
 Emitted when the user changes current script or moves caret by 10 or more columns within the same script.
 

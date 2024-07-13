@@ -829,7 +829,7 @@ Returns the value of the given environment variable, or an empty string if ``var
 
 Returns the file path to the current engine executable.
 
-\ **Note:** On macOS, always use :ref:`create_instance<class_OS_method_create_instance>` instead of relying on executable path.
+\ **Note:** On macOS, if you want to launch another instance of Godot, always use :ref:`create_instance<class_OS_method_create_instance>` instead of relying on the executable path.
 
 .. rst-class:: classref-item-separator
 
