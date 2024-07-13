@@ -101,7 +101,8 @@ the following line of code:
  .. code-tab:: csharp C#
 
     using Godot;
-
+    using System;
+    
     public partial class MySprite2D : Sprite2D
     {
     }
@@ -327,7 +328,8 @@ Here is the complete ``sprite_2d.gd`` file for reference.
  .. code-tab:: csharp C#
 
     using Godot;
-
+    using System;
+    
     public partial class MySprite2D : Sprite2D
     {
         private int _speed = 400;
