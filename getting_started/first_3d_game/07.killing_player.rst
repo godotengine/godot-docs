@@ -213,7 +213,7 @@ Starting with ``main.gd``.
         }
     }
 
-Next is ``Mob.gd``.
+Next is ``mob.gd``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -308,7 +308,7 @@ Next is ``Mob.gd``.
         }
     }
 
-Finally, the longest script, ``Player.gd``:
+Finally, the longest script, ``player.gd``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

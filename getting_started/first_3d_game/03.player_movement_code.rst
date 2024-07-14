@@ -246,7 +246,7 @@ smooth it out for you. It uses the *velocity* value native to the :ref:`Characte
 
 And that's all the code you need to move the character on the floor.
 
-Here is the complete ``Player.gd`` code for reference.
+Here is the complete ``player.gd`` code for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

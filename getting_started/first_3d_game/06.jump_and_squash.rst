@@ -318,7 +318,7 @@ such as counting the score multiple times for one kill.
 We are calling one undefined function, ``mob.squash()``, so we have to add it to
 the Mob class.
 
-Open the script ``Mob.gd`` by double-clicking on it in the *FileSystem* dock. At
+Open the script ``mob.gd`` by double-clicking on it in the *FileSystem* dock. At
 the top of the script, we want to define a new signal named ``squashed``. And at
 the bottom, you can add the squash function, where we emit the signal and
 destroy the mob.
