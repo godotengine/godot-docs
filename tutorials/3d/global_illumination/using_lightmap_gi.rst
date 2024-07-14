@@ -33,6 +33,11 @@ quality *and* performance at the same time in (mostly) static scenes. This makes
 lightmaps still popular in game development, despite lightmaps being the
 oldest technique for global illumination in video games.
 
+.. important::
+
+    LightmapGI is only supported when using the Forward Plus and Mobile
+    rendering backends, not the Compatibility backend.
+
 .. seealso::
 
     Not sure if LightmapGI is suited to your needs?
@@ -60,9 +65,6 @@ Visual comparison
    but lower quality visuals. Notice the blurrier sun shadow in the top-right
    corner.
 
-Visual comparison
------------------
-
 Here are some comparisons of how LightmapGI vs. VoxelGI look. Notice that
 lightmaps are more accurate, but also suffer from the fact
 that lighting is on an unwrapped texture, so transitions and resolution may not
@@ -76,6 +78,14 @@ large open worlds without any need for baking.
 
 Setting up
 ----------
+
+.. warning::
+
+    Baking lightmaps in the Android and web editors is not supported due to
+    graphics API limitations on those devices. On Android, only *rendering*
+    lightmaps that were baked on a desktop PC is supported, and only when using
+    the Mobile rendering method on Android. Rendering lightmaps on the web
+    platform is not supported until Godot 4.3.
 
 First of all, before the lightmapper can do anything, the objects to be baked need
 an UV2 layer and a texture size. An UV2 layer is a set of secondary texture coordinates
