@@ -223,6 +223,12 @@ The following script will result in the same visual output as using
 Reference
 ---------
 
+.. seealso::
+
+    *Some* of these BBCode tags can be used in tooltips for ``@export`` script
+    variables as well as in the XML source of the class reference. For more
+    information, see :ref:`Class reference BBCode <doc_class_reference_bbcode>`.
+
 .. list-table::
   :class: wrap-normal
   :width: 100%
