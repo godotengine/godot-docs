@@ -98,11 +98,14 @@ resource and set its *Size* to ``60``, ``2``, and ``60``.
 You should see a wide grey slab that covers the grid and blue and red axes in
 the viewport.
 
-We're going to move the ground down so we can see the floor grid. Select the
-``Ground`` node, click on the *Use Snap* button (or press the :kbd:`Y` key) to turn on grid snapping,
-and click and drag down on the Y-axis. It's the green arrow in the move gizmo.
+We're going to move the ground down so we can see the floor grid. To do this, the grid snapping feature can be used.
+Grid snapping can be activated 2 ways in the 3D editor.
+The first is by pressing the *Use Snap* button (or pressing the :kbd:`Y` key).
+The second is by selecting a node, dragging a handle on the gizmo **then** holding :kbd:`Ctrl` while still clicking to enable snapping as long as :kbd:`Ctrl` is held. 
 
 .. image:: img/01.game_setup/use_snap.webp
+
+Start by setting snapping with your prefered method. Then move the ``Ground`` node using the Y-axis (the green arrow on the gizmo).
 
 .. image:: img/01.game_setup/move_gizmo_y_axis.webp
 
