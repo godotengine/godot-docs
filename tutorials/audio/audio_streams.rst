@@ -20,10 +20,9 @@ many places, but is most commonly loaded from the filesystem. Audio files can be
 loaded as AudioStreams and placed inside an AudioStreamPlayer. You can find
 information on supported formats and differences in :ref:`doc_importing_audio_samples`.
 
-There are other types of AudioStreams, such as AudioStreamRandomPitch.
-This one makes a random adjustment to the sound's pitch every time it's
-played back. This can be helpful for adding variation to sounds that are
-played back often.
+There are other types of AudioStreams, such as :ref:`AudioStreamRandomizer<class_AudioStreamRandomizer>`.
+This one picks a different sound from a list of streams each time it's played back.
+This can be helpful for adding variation to sounds that are played back often.
 
 AudioStreamPlayer
 -----------------
