@@ -1,7 +1,7 @@
 .. _doc_ways_to_contribute:
 
 How to contribute
-==================
+=================
 
 The Godot Engine is free and open-source. Like any community-driven project, we rely on volunteer contributions. 
 On this page we want to showcase the various ways you as users can participate - to help you find the right starting place with the skillset you have.
