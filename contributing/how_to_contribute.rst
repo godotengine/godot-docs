@@ -9,7 +9,7 @@ Because contrary to popular opinion, we need more than just programmers on the p
 
 
 Fundraising
-------------
+-----------
 
 - **Donate**
 
