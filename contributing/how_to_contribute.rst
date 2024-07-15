@@ -65,7 +65,7 @@ Technical contributions
   `List of teams <https://godotengine.org/teams/>`
 
 - **Review Code Contributions**
-  All proposals need to be throroughly reviewed before they can be merged into main.
+  All pull requests need to be throroughly reviewed before they can be merged into the master branch.
   Help us get a headstart by participating in the code review process.
   .. add a howto/chat to join
   
