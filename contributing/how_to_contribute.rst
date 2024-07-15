@@ -38,7 +38,8 @@ Fundraising
 
 
 Technical contributions
-------------------------
+-----------------------
+
 - **Report bugs & other issues**
   As active users of the engine, you are better equipped to identify bugs and other issues than anyone else.
   To let us know about your findings, fill out `this bug report form <https://github.com/godotengine/godot/issues/new?assignees=&labels=&projects=&template=bug_report.yml>` on our GitHub.
