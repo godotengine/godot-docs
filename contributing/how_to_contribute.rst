@@ -89,7 +89,7 @@ Technical contributions
 
 
 Community support
-------------------
+-----------------
 
 - **Call for Moderators**
   With a community of our size, we need people to step up as volunteer moderators in all kinds of places. 
