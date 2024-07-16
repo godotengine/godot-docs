@@ -21,8 +21,9 @@ loaded as AudioStreams and placed inside an AudioStreamPlayer. You can find
 information on supported formats and differences in :ref:`doc_importing_audio_samples`.
 
 There are other types of AudioStreams, such as :ref:`AudioStreamRandomizer<class_AudioStreamRandomizer>`.
-This one picks a different sound from a list of streams each time it's played back.
-This can be helpful for adding variation to sounds that are played back often.
+This one picks a different audio stream from a list of streams each time it's played
+back, and applies random pitch and volume shifting. This can be helpful for adding
+variation to sounds that are played back often.
 
 AudioStreamPlayer
 -----------------
