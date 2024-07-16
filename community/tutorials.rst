@@ -19,6 +19,7 @@ Some tutorials mentioned below provide more advanced tutorials, e.g. on 3D or sh
 Video tutorials
 ---------------
 
+- `Bacon and Games <https://www.youtube.com/@baconandgames>`_ (2D, GDScript)
 - `Bastiaan Olij <https://www.youtube.com/BastiaanOlij>`_ (3D, AR and VR, GDScript)
 - `BornCG <https://www.youtube.com/playlist?list=PLda3VoSoc_TTp8Ng3C57spnNkOw3Hm_35>`_ (2D and 3D, GDScript)
 - `Clear Code <https://www.youtube.com/watch?v=nAh_Kx5Zh5Q>`_ (2D, GDScript, Programming Basics)
