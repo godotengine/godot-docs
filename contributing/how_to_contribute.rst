@@ -18,7 +18,7 @@ Fundraising
   These jobs include engine development as well as related tasks like code reviews, production management, community & marketing efforts, and more.
 
   With as little as 5 Euro per month, you can help us keep going strong. 
-  Currently, we are intending to hire more core developers, as to cover more ground with full-time specialists that suplement and guide volunteer work.
+  Currently, we are intending to hire more core developers, as to cover more ground with full-time specialists that supplement and guide volunteer work.
 
   `Join the Development Fund <fund.godotengine.org>`
 
