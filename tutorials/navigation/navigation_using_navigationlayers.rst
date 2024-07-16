@@ -3,14 +3,12 @@
 Using NavigationLayers
 ======================
 
-NavigationLayers are an optional feature to further control which navigation meshes are considered in a path query and which regions can be connected.
+NavigationLayers are an optional feature to further control which navigation meshes are considered in a path query.
 They work similar to how physics layers control collision between collision objects or how visual layers control what is rendered to the Viewport.
 
 NavigationLayers can be named in the **ProjectSettings** the same as physics layers or visual layers.
 
 .. image:: img/navigationlayers_naming.png
-
-If two regions have not a single compatible layer they will not be merged by the NavigationServer. See :ref:`doc_navigation_connecting_navmesh` for more information on merging navigation meshes.
 
 If a region has not a single compatible navigation layer with the ``navigation_layers`` parameter of a path query this regions navigation mesh will be skipped in pathfinding.
 See :ref:`doc_navigation_using_navigationpaths` for more information on querying the NavigationServer for paths.
@@ -96,5 +94,4 @@ trigger large scale updates on the NavigationServer.
 
 Changing the navigation layers of NavigationAgent nodes will have an immediate
 effect on the next path query. Changing the navigation layers of
-regions will have an immediate effect on the region but any new region
-connect or disconnect will only be in effect after the next physics frame.
+regions will have an effect after the next NavigationServer sync.
