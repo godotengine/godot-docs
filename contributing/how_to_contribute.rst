@@ -58,7 +58,7 @@ Technical contributions
 
   Read more about the **technical submission process**: :ref:`doc_first_steps`
 
-  *Attention: this page is currently under re-contruction, and some teams might be more active than others*
+  *Attention: this page is currently under re-construction, and some teams might be more active than others*
   For each subject area of the engine, there is a corresponding team to coordinate the work. 
   Join the linked chat to get more eyes on your related PR, learn about open todos, or partake in meetings. 
   For some areas, specialists might even be encouraged to step up as maintainer!
