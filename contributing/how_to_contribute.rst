@@ -81,7 +81,7 @@ Technical contributions
   Help improve existing projects or supply your own to be added to the pool, and join the `Contributor RocketChat <https://chat.godotengine.org/channel/demo-content>` to talk about it.
 
 - **Documentation**
-  The documentation is one of the most essential parts of any tech project, yet the need to document new features and substential often gets overlooked. 
+  The documentation is one of the most essential parts of any tech project, yet the need to document new features and substantial changes often gets overlooked. 
   Join the `Contributor RocketChat <https://chat.godotengine.org/channel/documentation>` to improve the Godot Engine with your technical writing skills.
 
 - **Translations (spoken languages other than English)**
