@@ -34,7 +34,7 @@ Fundraising
 - **Publish Godot Games.**
   You heard right, simply publishing a game #MadeWithGodot can positively impact the well-being of this project. 
   Your personal success elevates the engine to a viable alternative for other developers, growing the community further. 
-  Additionally, it opens the doors for us to approach industry contacts aboout possible cooperations.
+  Additionally, it opens the doors for us to approach industry contacts about possible cooperations.
 
 
 Technical contributions
