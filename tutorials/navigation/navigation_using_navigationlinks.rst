@@ -16,7 +16,7 @@ interacting with gameplay objects e.g. ladders, jump pads or teleports.
 :ref:`NavigationLink3D<class_NavigationLink3D>` respectively.
 
 Different NavigationRegions can connect their navigation meshes without the need for a NavigationLink
-as long as they are within navigation map ``edge_connection_margin`` and have compatible ``navigation_layers``.
+as long as they have overlapping edges or edges that are within navigation map ``edge_connection_margin``.
 As soon as the distance becomes too large, building valid connections becomes a problem - a problem that NavigationLinks can solve.
 
 See :ref:`doc_navigation_using_navigationregions` to learn more about the use of navigation regions.
