@@ -107,3 +107,4 @@ Community support
   How did you get started with the Godot Engine? 
   Chances are you looked for learning materials outside of what the documentation provides.
   Without content creators covering the game development process, there would not be this big of a community today.
+  
