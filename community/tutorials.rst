@@ -43,7 +43,7 @@ Video tutorials
 Text tutorials
 --------------
 
-- `FinepointCGI website by Mitch <https://finepointcgi.io/>`__
+- `FinePointCGI website by Mitch <https://finepointcgi.io/>`__
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
 - `Godot Recipes by KidsCanCode <https://kidscancode.org/godot_recipes/4.x/>`__
 - `Godot Tutorials by SomethingLikeGames <https://www.somethinglikegames.de/en/tags/godot-engine/>`__
