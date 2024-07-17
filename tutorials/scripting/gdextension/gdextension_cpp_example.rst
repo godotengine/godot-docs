@@ -365,6 +365,7 @@ loaded for each platform and the entry function for the module. It is called ``g
 
     entry_symbol = "example_library_init"
     compatibility_minimum = "4.1"
+    reloadable = true
 
     [libraries]
 
@@ -388,6 +389,8 @@ loaded for each platform and the entry function for the module. It is called ``g
 This file contains a ``configuration`` section that controls the entry function of the module.
 You should also set the minimum compatible Godot version with ``compatability_minimum``,
 which prevents older version of Godot from trying to load your extension.
+The ``reloadable`` flag enables automatic reloading of your extension by the editor every time you recompile it,
+without needing to restart the editor. This only works if you compile your extension in debug mode (default).
 
 The ``libraries`` section is the important bit: it tells Godot the location of the
 dynamic library in the project's filesystem for each supported platform. It will
