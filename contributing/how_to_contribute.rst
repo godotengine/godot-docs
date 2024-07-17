@@ -45,6 +45,8 @@ Technical contributions
   To let us know about your findings, fill out `this bug report form <https://github.com/godotengine/godot/issues/new>`_ on our GitHub.
   Make sure to include as much information as possible to ensure these issues can easily be reproduced by others.
 
+  If you are interested in helping fix those problems you discovered, you may also join the `bugsquad <https://chat.godotengine.org/channel/bugsquad>`_!
+
 - **Test Development Versions**
   While it is recommended to use the stable releases for your projects, you can help us test dev releases, betas, and release candidates
   by opening a copy of your project in them and checking what problems this introduces or maybe even solves. 
@@ -58,7 +60,6 @@ Technical contributions
 
   Read more about the **technical submission process**: :ref:`doc_first_steps`
 
-  *Attention: this page is currently under re-construction, and some teams might be more active than others*
   For each subject area of the engine, there is a corresponding team to coordinate the work. 
   Join the linked chat to get more eyes on your related PR, learn about open todos, or partake in meetings. 
   For some areas, specialists might even be encouraged to step up as maintainer!
@@ -67,26 +68,27 @@ Technical contributions
 - **Review Code Contributions**
   All pull requests need to be thoroughly reviewed before they can be merged into the master branch.
   Help us get a headstart by participating in the code review process.
-  .. add a howto/chat to join
+  .. where should devs go to join these efforts?
   
   Read more about our **style guide and other requirements**: :ref:`doc_pr_review_guidelines`
 
 - **Write Plugins (GDScript, C#, & more)**
   Community addons are not directly included in the core engine download or repository, yet they provide essential quality of life upgrades for your fellow game developers.
   Upload your plugins to the `Godot Asset Library <https://godotengine.org/asset-library/asset>`_ to make them available to others.
+  .. update to talk about Asset Store later
 
 - **Demo projects (GDScript, C#, and making Assets)**
   We provide new users with `demo projects <https://github.com/godotengine/godot-demo-projects/>`_ so they can quickly test new features or get familiar with the engine in the first place.
   At industry events, we might even exhibit these demo projects to showcase what Godot can do! 
-  Help improve existing projects or supply your own to be added to the pool, and join the `Contributor RocketChat <https://chat.godotengine.org/channel/demo-content>`_ to talk about it.
+  Help improve existing projects or supply your own to be added to the pool, and join `this channel <https://chat.godotengine.org/channel/demo-content>`_ in the Contributor RocketChat to talk about it.
 
 - **Documentation**
   The documentation is one of the most essential parts of any tech project, yet the need to document new features and substantial changes often gets overlooked. 
-  Join the `Contributor RocketChat <https://chat.godotengine.org/channel/documentation>`_ to improve the Godot Engine with your technical writing skills.
+  Join the `documentation team <https://chat.godotengine.org/channel/documentation>`_ to improve the Godot Engine with your technical writing skills.
 
 - **Translations (spoken languages other than English)**
   Are you interested in making the Godot Engine more accessible to non-English speakers? 
-  Community-translations are hosted `here <https://hosted.weblate.org/projects/godot-engine/godot/>`_
+  Community-translations are hosted `here <https://hosted.weblate.org/projects/godot-engine/godot/>`_.
 
 
 Community support
@@ -96,8 +98,7 @@ Community support
   With a community of our size, we need people to step up as volunteer moderators in all kinds of places. 
   These teams are organized by the Godot Foundation, but would not function without the dedication of active community members like you.
 
-  Have a look around your favorite community platform and you might come across open application calls. Currently we are looking for:
-  *List under construction*
+  Have a look around your favorite community platform and you might come across open application calls. 
 
 - **Answer tech-support questions**
   With many new people discovering the Godot Engine recently, the need for peer-to-peer tech-support has never been greater. 
@@ -107,4 +108,4 @@ Community support
   How did you get started with the Godot Engine? 
   Chances are you looked for learning materials outside of what the documentation provides.
   Without content creators covering the game development process, there would not be this big of a community today.
-  
+  Therefore it seemed only right to mention them in a page about important contributions to the project.
