@@ -109,3 +109,4 @@ Community support
   Chances are you looked for learning materials outside of what the documentation provides.
   Without content creators covering the game development process, there would not be this big of a community today.
   Therefore it seemed only right to mention them in a page about important contributions to the project.
+  
