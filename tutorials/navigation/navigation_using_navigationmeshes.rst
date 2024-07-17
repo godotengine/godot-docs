@@ -284,6 +284,14 @@ There are some common user problems and important caveats to consider when creat
     Remove the geometry that is on the ground inside the other geometry. If that is not possible, add smaller "dummy" geometry inside with as few triangles as possible so the cells
     are occupied with something.
 
+    A :ref:`NavigationObstacle3D<class_NavigationObstacle3D>` shape set to bake with navigation mesh can be used to discard geometry as well.
+
+.. figure:: img/nav_mesh_obstacles_discard.webp
+   :align: center
+   :alt: NavigationObstacle3D unwanted geometry discard
+
+   A NavigationObstacle3D shape can be used to discard unwanted navigation mesh parts.
+
 Navigation mesh script templates
 --------------------------------
 
