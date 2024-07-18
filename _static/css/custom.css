@@ -647,6 +647,7 @@ footer {
 .wy-body-for-nav {
     position: relative;
     background-color: var(--content-wrap-background-color);
+    overflow: visible;
 }
 
 @media only screen and (min-width: 769px) {
