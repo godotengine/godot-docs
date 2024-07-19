@@ -14,7 +14,7 @@ Fundraising
 - **Donate**
 
   We created the non-profit `Godot Foundation <https://godot.foundation/>`_ to be able to support the Godot Engine in both matters of finance and administration. 
-  In action, this means we can hire people to work part-time or full-time on the project. 
+  In practice, this means the Foundation hires people to work part-time or full-time on the project. 
   These jobs include engine development as well as related tasks like code reviews, production management, community & marketing efforts, and more.
 
   With as little as 5 EUR per month, you can help us keep going strong. 
