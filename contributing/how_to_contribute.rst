@@ -42,7 +42,7 @@ Technical contributions
 
 - **Report bugs & other issues**
   As active users of the engine, you are better equipped to identify bugs and other issues than anyone else.
-  To let us know about your findings, fill out `this bug report form <https://github.com/godotengine/godot/issues/new/choose>`_ on our GitHub.
+  To let us know about your findings, fill out this `bug report form <https://github.com/godotengine/godot/issues/new/choose>`_ on our GitHub.
   Make sure to include as much information as possible to ensure these issues can easily be reproduced by others.
 
   If you are interested in helping fix those problems you discovered, you may also join the `bugsquad <https://chat.godotengine.org/channel/bugsquad>`_!
@@ -52,7 +52,7 @@ Technical contributions
   by opening a copy of your project in them and checking what problems this introduces or maybe even solves. 
   Make sure to have a backup ready, since this can produce irreversible changes.
 
-  Find recent development versions `here <https://godotengine.org/download/preview/>`_
+  Find recent `development versions <https://godotengine.org/download/preview/>`_ directly on our download page, or linked in their own blog posts.
   
 - **Contribute Engine Code (mainly C++)**
   The engine development is mainly coordinated on our `Contributor RocketChat <https://chat.godotengine.org/>`_, 
@@ -68,9 +68,8 @@ Technical contributions
 - **Review Code Contributions**
   All pull requests need to be thoroughly reviewed before they can be merged into the master branch.
   Help us get a headstart by participating in the code review process.
-  .. where should devs go to join these efforts?
   
-  Read more about our **style guide and other requirements**: :ref:`doc_pr_review_guidelines`
+  To get started, chose any `open pull request <https://github.com/godotengine/godot/pulls>`_ and reference our **style guide**: :ref:`doc_pr_review_guidelines`
 
 - **Write Plugins (GDScript, C#, & more)**
   Community addons are not directly included in the core engine download or repository, yet they provide essential quality of life upgrades for your fellow game developers.
@@ -80,7 +79,7 @@ Technical contributions
 - **Demo projects (GDScript, C#, and making Assets)**
   We provide new users with `demo projects <https://github.com/godotengine/godot-demo-projects/>`_ so they can quickly test new features or get familiar with the engine in the first place.
   At industry events, we might even exhibit these demo projects to showcase what Godot can do! 
-  Help improve existing projects or supply your own to be added to the pool, and join `this channel <https://chat.godotengine.org/channel/demo-content>`_ in the Contributor RocketChat to talk about it.
+  Help improve existing projects or supply your own to be added to the pool, and join the `demo channel <https://chat.godotengine.org/channel/demo-content>`_ in the Contributor RocketChat to talk about it.
 
 - **Documentation**
   The documentation is one of the most essential parts of any tech project, yet the need to document new features and substantial changes often gets overlooked. 
@@ -88,8 +87,7 @@ Technical contributions
 
 - **Translations (spoken languages other than English)**
   Are you interested in making the Godot Engine more accessible to non-English speakers? 
-  Community-translations are hosted `here <https://hosted.weblate.org/projects/godot-engine/godot/>`_.
-
+  Contribute to our `community-translations <https://hosted.weblate.org/projects/godot-engine/godot/>`_.
 
 Community support
 -----------------

@@ -133,7 +133,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
    :caption: Contributing
    :name: sec-contributing
 
-   contributing/ways_to_contribute
+   contributing/how_to_contribute
    contributing/workflow/index
    contributing/development/index
    contributing/documentation/index
