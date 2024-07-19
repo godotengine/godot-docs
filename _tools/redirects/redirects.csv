@@ -14,6 +14,7 @@ source,destination
 /community/contributing/docs_writing_guidelines.html,/contributing/documentation/docs_writing_guidelines.html
 /community/contributing/editor_and_docs_localization.html,/contributing/documentation/editor_and_docs_localization.html
 /community/contributing/index.html,/contributing/ways_to_contribute.html
+/community/contributing/ways_to_contribute.html,/contributing/how_to_contribute.html
 /community/contributing/pr_workflow.html,/contributing/workflow/pr_workflow.html
 /community/contributing/testing_pull_requests.html,/contributing/workflow/testing_pull_requests.html
 /community/contributing/updating_the_class_reference.html,/contributing/documentation/updating_the_class_reference.html
