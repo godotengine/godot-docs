@@ -45,7 +45,7 @@ Technical contributions
   To let us know about your findings, fill out this `bug report form <https://github.com/godotengine/godot/issues/new/choose>`_ on our GitHub.
   Make sure to include as much information as possible to ensure these issues can easily be reproduced by others.
 
-  If you are interested in helping fix those problems you discovered, you may also join the `bugsquad <https://chat.godotengine.org/channel/bugsquad>`_!
+  If you are interested in helping keep our bug tracker organized, you can even join the `bugsquad <https://chat.godotengine.org/channel/bugsquad>`_!
 
 - **Test Development Versions**
   While it is recommended to use the stable releases for your projects, you can help us test dev releases, betas, and release candidates
