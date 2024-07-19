@@ -12,6 +12,7 @@ approach the project.
    :maxdepth: 1
    :name: toc-contributing-workflow
 
+   first_steps
    bisecting_regressions
    bug_triage_guidelines
    pr_workflow
