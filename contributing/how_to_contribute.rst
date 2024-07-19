@@ -42,7 +42,7 @@ Technical contributions
 
 - **Report bugs & other issues**
   As active users of the engine, you are better equipped to identify bugs and other issues than anyone else.
-  To let us know about your findings, fill out `this bug report form <https://github.com/godotengine/godot/issues/new>`_ on our GitHub.
+  To let us know about your findings, fill out `this bug report form <https://github.com/godotengine/godot/issues/new/choose>`_ on our GitHub.
   Make sure to include as much information as possible to ensure these issues can easily be reproduced by others.
 
   If you are interested in helping fix those problems you discovered, you may also join the `bugsquad <https://chat.godotengine.org/channel/bugsquad>`_!
