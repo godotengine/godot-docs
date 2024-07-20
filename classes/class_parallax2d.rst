@@ -25,6 +25,13 @@ A **Parallax2D** is used to create a parallax effect. It can move at a different
 
 \ **Note:** Any changes to this node's position made after it enters the scene tree will be overridden if :ref:`ignore_camera_scroll<class_Parallax2D_property_ignore_camera_scroll>` is ``false`` or :ref:`screen_offset<class_Parallax2D_property_screen_offset>` is modified.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`2D Parallax <../tutorials/2d/2d_parallax>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

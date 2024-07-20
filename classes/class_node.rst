@@ -971,7 +971,7 @@ Implemented on desktop platforms.
 
 Notification received from the OS when a go back request is sent (e.g. pressing the "Back" button on Android).
 
-Implemented only on iOS.
+Implemented only on Android.
 
 .. _class_Node_constant_NOTIFICATION_WM_SIZE_CHANGED:
 
