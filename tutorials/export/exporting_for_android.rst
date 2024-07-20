@@ -87,7 +87,7 @@ project).
 
 Scroll down to the section where the Android settings are located:
 
-.. image:: img/androidsdk.png
+.. image:: img/androidsdk.webp
 
 In that screen, 2 paths need to be set:
 
@@ -96,6 +96,8 @@ In that screen, 2 paths need to be set:
 
 - The debug ``.keystore`` file
   - It can be found in the folder where you put the ``debug.keystore`` file you created above.
+
+- ``Java SDK Path`` should be the location where OpenJDK 17 was installed.
 
 Once that is configured, everything is ready to export to Android!
 
