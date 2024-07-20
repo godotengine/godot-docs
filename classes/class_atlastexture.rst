@@ -116,7 +116,7 @@ The margin around the :ref:`region<class_AtlasTexture_property_region>`. Useful 
 - |void| **set_region**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
 - :ref:`Rect2<class_Rect2>` **get_region**\ (\ )
 
-The region used to draw the :ref:`atlas<class_AtlasTexture_property_atlas>`.
+The region used to draw the :ref:`atlas<class_AtlasTexture_property_atlas>`. If either dimension of the region's size is ``0``, the value from :ref:`atlas<class_AtlasTexture_property_atlas>` size will be used for that axis instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

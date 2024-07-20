@@ -266,6 +266,8 @@ Returns ``true`` if the script, or a base class, defines a signal with the given
 
 Returns ``true`` if the script contains non-empty source code.
 
+\ **Note:** If a script does not have source code, this does not mean that it is invalid or unusable. For example, a :ref:`GDScript<class_GDScript>` that was exported with binary tokenization has no source code, but still behaves as expected and could be instantiated. This can be checked with :ref:`can_instantiate<class_Script_method_can_instantiate>`.
+
 .. rst-class:: classref-item-separator
 
 ----

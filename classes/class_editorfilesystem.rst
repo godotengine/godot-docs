@@ -84,6 +84,18 @@ Emitted if a resource is reimported.
 
 ----
 
+.. _class_EditorFileSystem_signal_resources_reimporting:
+
+.. rst-class:: classref-signal
+
+**resources_reimporting**\ (\ resources\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_EditorFileSystem_signal_resources_reimporting>`
+
+Emitted before a resource is reimported.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorFileSystem_signal_resources_reload:
 
 .. rst-class:: classref-signal

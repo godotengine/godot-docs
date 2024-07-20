@@ -273,6 +273,22 @@ The user aborted the lightmap baking operation (typically by clicking the **Canc
 
 Lightmap baking failed as the maximum texture size is too small to fit some of the meshes marked for baking.
 
+.. _class_LightmapGI_constant_BAKE_ERROR_LIGHTMAP_TOO_SMALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_LIGHTMAP_TOO_SMALL** = ``10``
+
+Lightmap baking failed as the lightmap is too small.
+
+.. _class_LightmapGI_constant_BAKE_ERROR_ATLAS_TOO_SMALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_ATLAS_TOO_SMALL** = ``11``
+
+Lightmap baking failed as the lightmap was unable to fit into an atlas.
+
 .. rst-class:: classref-item-separator
 
 ----

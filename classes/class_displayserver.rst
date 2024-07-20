@@ -190,6 +190,8 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`global_menu_set_popup_callbacks<class_DisplayServer_method_global_menu_set_popup_callbacks>`\ (\ menu_root\: :ref:`String<class_String>`, open_callback\: :ref:`Callable<class_Callable>`, close_callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                                                                                                                                                |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`has_additional_outputs<class_DisplayServer_method_has_additional_outputs>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`has_feature<class_DisplayServer_method_has_feature>`\ (\ feature\: :ref:`Feature<enum_DisplayServer_Feature>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`help_set_search_callbacks<class_DisplayServer_method_help_set_search_callbacks>`\ (\ search_callback\: :ref:`Callable<class_Callable>`, action_callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                                                                                                                                                                                                  |
@@ -229,6 +231,8 @@ Methods
    | |void|                                                                  | :ref:`mouse_set_mode<class_DisplayServer_method_mouse_set_mode>`\ (\ mouse_mode\: :ref:`MouseMode<enum_DisplayServer_MouseMode>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`process_events<class_DisplayServer_method_process_events>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`register_additional_output<class_DisplayServer_method_register_additional_output>`\ (\ object\: :ref:`Object<class_Object>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                   | :ref:`screen_get_dpi<class_DisplayServer_method_screen_get_dpi>`\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -297,6 +301,8 @@ Methods
    | |void|                                                                  | :ref:`tts_speak<class_DisplayServer_method_tts_speak>`\ (\ text\: :ref:`String<class_String>`, voice\: :ref:`String<class_String>`, volume\: :ref:`int<class_int>` = 50, pitch\: :ref:`float<class_float>` = 1.0, rate\: :ref:`float<class_float>` = 1.0, utterance_id\: :ref:`int<class_int>` = 0, interrupt\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`tts_stop<class_DisplayServer_method_tts_stop>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`unregister_additional_output<class_DisplayServer_method_unregister_additional_output>`\ (\ object\: :ref:`Object<class_Object>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                   | :ref:`virtual_keyboard_get_height<class_DisplayServer_method_virtual_keyboard_get_height>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1507,6 +1513,8 @@ Returns the user's clipboard as a string if possible.
 :ref:`Image<class_Image>` **clipboard_get_image**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_clipboard_get_image>`
 
 Returns the user's clipboard as an image if possible.
+
+\ **Note:** This method uses the copied pixel data, e.g. from a image editing software or a web browser, not an image file copied from file explorer.
 
 .. rst-class:: classref-item-separator
 
@@ -2875,6 +2883,18 @@ Registers callables to emit when the menu is respectively about to show or close
 
 ----
 
+.. _class_DisplayServer_method_has_additional_outputs:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_additional_outputs**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_has_additional_outputs>`
+
+Returns ``true`` if any additional outputs have been registered via :ref:`register_additional_output<class_DisplayServer_method_register_additional_output>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DisplayServer_method_has_feature:
 
 .. rst-class:: classref-method
@@ -3138,6 +3158,20 @@ Sets the current mouse mode. See also :ref:`mouse_get_mode<class_DisplayServer_m
 |void| **process_events**\ (\ ) :ref:`🔗<class_DisplayServer_method_process_events>`
 
 Perform window manager processing, including input flushing. See also :ref:`force_process_and_drop_events<class_DisplayServer_method_force_process_and_drop_events>`, :ref:`Input.flush_buffered_events<class_Input_method_flush_buffered_events>` and :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_register_additional_output:
+
+.. rst-class:: classref-method
+
+|void| **register_additional_output**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_DisplayServer_method_register_additional_output>`
+
+Registers an :ref:`Object<class_Object>` which represents an additional output that will be rendered too, beyond normal windows. The :ref:`Object<class_Object>` is only used as an identifier, which can be later passed to :ref:`unregister_additional_output<class_DisplayServer_method_unregister_additional_output>`.
+
+This can be used to prevent Godot from skipping rendering when no normal windows are visible.
 
 .. rst-class:: classref-item-separator
 
@@ -3708,6 +3742,18 @@ Stops synthesis in progress and removes all utterances from the queue.
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Linux), macOS, and Windows.
 
 \ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_unregister_additional_output:
+
+.. rst-class:: classref-method
+
+|void| **unregister_additional_output**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_DisplayServer_method_unregister_additional_output>`
+
+Unregisters an :ref:`Object<class_Object>` representing an additional output, that was registered via :ref:`register_additional_output<class_DisplayServer_method_register_additional_output>`.
 
 .. rst-class:: classref-item-separator
 

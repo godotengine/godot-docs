@@ -1719,7 +1719,7 @@ VRAM-compressed signed red/green channel data format with normalized value. Valu
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC6H_UFLOAT_BLOCK** = ``142``
 
-VRAM-compressed unsigned red/green/blue channel data format with the floating-point value stored as-is. The format's precision is 8 bits of red channel and 8 bits of green channel. Using BC6H texture compression (also known as BPTC HDR).
+VRAM-compressed unsigned red/green/blue channel data format with the floating-point value stored as-is. The format's precision is between 10 and 13 bits for the red/green/blue channels. Using BC6H texture compression (also known as BPTC HDR).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC6H_SFLOAT_BLOCK:
 
@@ -1727,7 +1727,7 @@ VRAM-compressed unsigned red/green/blue channel data format with the floating-po
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC6H_SFLOAT_BLOCK** = ``143``
 
-VRAM-compressed signed red/green/blue channel data format with the floating-point value stored as-is. The format's precision is between 4 and 7 bits for the red/green/blue channels and between 0 and 8 bits for the alpha channel. Using BC7 texture compression (also known as BPTC HDR).
+VRAM-compressed signed red/green/blue channel data format with the floating-point value stored as-is. The format's precision is between 10 and 13 bits for the red/green/blue channels. Using BC6H texture compression (also known as BPTC HDR).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC7_UNORM_BLOCK:
 
@@ -1807,7 +1807,7 @@ VRAM-compressed unsigned red/green/blue/alpha channel data format with normalize
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_EAC_R11_SNORM_BLOCK** = ``153``
 
-11-bit VRAM-compressed signed red channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Using ETC2 texture compression.
+11-bit VRAM-compressed signed red channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_EAC_R11G11_UNORM_BLOCK:
 
@@ -1823,7 +1823,7 @@ VRAM-compressed unsigned red/green/blue/alpha channel data format with normalize
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_EAC_R11G11_SNORM_BLOCK** = ``155``
 
-11-bit VRAM-compressed signed red/green channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Using ETC2 texture compression.
+11-bit VRAM-compressed signed red/green channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_4x4_UNORM_BLOCK:
 
