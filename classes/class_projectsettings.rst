@@ -707,10 +707,6 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/buffering/agile_event_flushing<class_ProjectSettings_property_input_devices/buffering/agile_event_flushing>`                                                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`input_devices/buffering/android/use_accumulated_input<class_ProjectSettings_property_input_devices/buffering/android/use_accumulated_input>`                                                         | ``true``                                                                                         |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`input_devices/buffering/android/use_input_buffering<class_ProjectSettings_property_input_devices/buffering/android/use_input_buffering>`                                                             | ``true``                                                                                         |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/compatibility/legacy_just_pressed_behavior<class_ProjectSettings_property_input_devices/compatibility/legacy_just_pressed_behavior>`                                                   | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`input_devices/pen_tablet/driver<class_ProjectSettings_property_input_devices/pen_tablet/driver>`                                                                                                     |                                                                                                  |
@@ -6023,30 +6019,6 @@ If ``false``, such events will be flushed only once per process frame, between i
 Enabling this can greatly improve the responsiveness to input, specially in devices that need to run multiple physics frames per visible (process) frame, because they can't run at the target frame rate.
 
 \ **Note:** Currently implemented only on Android.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_input_devices/buffering/android/use_accumulated_input:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **input_devices/buffering/android/use_accumulated_input** = ``true`` :ref:`🔗<class_ProjectSettings_property_input_devices/buffering/android/use_accumulated_input>`
-
-If ``true``, multiple input events will be accumulated into a single input event when possible.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_input_devices/buffering/android/use_input_buffering:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **input_devices/buffering/android/use_input_buffering** = ``true`` :ref:`🔗<class_ProjectSettings_property_input_devices/buffering/android/use_input_buffering>`
-
-If ``true``, input events will be buffered prior to being dispatched.
 
 .. rst-class:: classref-item-separator
 

@@ -441,7 +441,7 @@ For an example, see :ref:`get_longest_axis<class_AABB_method_get_longest_axis>`.
 
 :ref:`Vector3<class_Vector3>` **get_shortest_axis**\ (\ ) |const| :ref:`🔗<class_AABB_method_get_shortest_axis>`
 
-Returns the shortest normaalized axis of this bounding box's :ref:`size<class_AABB_property_size>`, as a :ref:`Vector3<class_Vector3>` (:ref:`Vector3.RIGHT<class_Vector3_constant_RIGHT>`, :ref:`Vector3.UP<class_Vector3_constant_UP>`, or :ref:`Vector3.BACK<class_Vector3_constant_BACK>`).
+Returns the shortest normalized axis of this bounding box's :ref:`size<class_AABB_property_size>`, as a :ref:`Vector3<class_Vector3>` (:ref:`Vector3.RIGHT<class_Vector3_constant_RIGHT>`, :ref:`Vector3.UP<class_Vector3_constant_UP>`, or :ref:`Vector3.BACK<class_Vector3_constant_BACK>`).
 
 
 .. tabs::

@@ -1470,6 +1470,8 @@ Returns ``true`` if global transform notifications are communicated to children.
 
 Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree, and is therefore not drawn (see :ref:`_draw<class_CanvasItem_private_method__draw>`).
 
+Visibility is checked only in parent nodes that inherit from **CanvasItem**, :ref:`CanvasLayer<class_CanvasLayer>`, and :ref:`Window<class_Window>`. If the parent is of any other type (such as :ref:`Node<class_Node>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, or :ref:`Node3D<class_Node3D>`), it is assumed to be visible.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -23,6 +23,39 @@ When placed on a :ref:`TileMap<class_TileMap>`, tiles from **TileSetScenesCollec
 
 Scenes are instantiated as children of the :ref:`TileMap<class_TileMap>` when it enters the tree. If you add/remove a scene tile in the :ref:`TileMap<class_TileMap>` that is already inside the tree, the :ref:`TileMap<class_TileMap>` will automatically instantiate/free the scene accordingly.
 
+\ **Note:** Scene tiles all occupy one tile slot and instead use alternate tile ID to identify scene index. :ref:`TileSetSource.get_tiles_count<class_TileSetSource_method_get_tiles_count>` will always return ``1``. Use :ref:`get_scene_tiles_count<class_TileSetScenesCollectionSource_method_get_scene_tiles_count>` to get a number of scenes in a **TileSetScenesCollectionSource**.
+
+Use this code if you want to find the scene path at a given tile in :ref:`TileMapLayer<class_TileMapLayer>`:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var source_id = tile_map_layer.get_cell_source_id(Vector2i(x, y))
+    if source_id > -1:
+        var scene_source = tile_map_layer.tile_set.get_source(source_id)
+        if scene_source is TileSetScenesCollectionSource:
+            var alt_id = tile_map_layer.get_cell_alternative_tile(Vector2i(x, y))
+            # The assigned PackedScene.
+            var scene = scene_source.get_scene_tile_scene(alt_id)
+
+ .. code-tab:: csharp
+
+    int sourceId = tileMapLayer.GetCellSourceId(new Vector2I(x, y));
+    if (sourceId > -1)
+    {
+        TileSetSource source = tileMapLayer.TileSet.GetSource(sourceId);
+        if (source is TileSetScenesCollectionSource sceneSource)
+        {
+            int altId = tileMapLayer.GetCellAlternativeTile(new Vector2I(x, y));
+            // The assigned PackedScene.
+            PackedScene scene = sceneSource.GetSceneTileScene(altId);
+        }
+    }
+
+
+
 .. rst-class:: classref-reftable-group
 
 Methods

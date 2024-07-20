@@ -290,7 +290,7 @@ Sets the compression method used for network packets. These have different trade
 
 Initiates a connection to a foreign ``address`` using the specified ``port`` and allocating the requested ``channels``. Optional ``data`` can be passed during connection in the form of a 32 bit integer.
 
-\ **Note:** You must call either :ref:`create_host<class_ENetConnection_method_create_host>` or :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` before calling this method.
+\ **Note:** You must call either :ref:`create_host<class_ENetConnection_method_create_host>` or :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` on both ends before calling this method.
 
 .. rst-class:: classref-item-separator
 
@@ -302,7 +302,11 @@ Initiates a connection to a foreign ``address`` using the specified ``port`` and
 
 :ref:`Error<enum_@GlobalScope_Error>` **create_host**\ (\ max_peers\: :ref:`int<class_int>` = 32, max_channels\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_create_host>`
 
-Create an ENetHost that will allow up to ``max_peers`` connected peers, each allocating up to ``max_channels`` channels, optionally limiting bandwidth to ``in_bandwidth`` and ``out_bandwidth``.
+Creates an ENetHost that allows up to ``max_peers`` connected peers, each allocating up to ``max_channels`` channels, optionally limiting bandwidth to ``in_bandwidth`` and ``out_bandwidth`` (if greater than zero).
+
+This method binds a random available dynamic UDP port on the host machine at the *unspecified* address. Use :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` to specify the address and port.
+
+\ **Note:** It is necessary to create a host in both client and server in order to establish a connection.
 
 .. rst-class:: classref-item-separator
 
@@ -314,7 +318,9 @@ Create an ENetHost that will allow up to ``max_peers`` connected peers, each all
 
 :ref:`Error<enum_@GlobalScope_Error>` **create_host_bound**\ (\ bind_address\: :ref:`String<class_String>`, bind_port\: :ref:`int<class_int>`, max_peers\: :ref:`int<class_int>` = 32, max_channels\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_create_host_bound>`
 
-Create an ENetHost like :ref:`create_host<class_ENetConnection_method_create_host>` which is also bound to the given ``bind_address`` and ``bind_port``.
+Creates an ENetHost bound to the given ``bind_address`` and ``bind_port`` that allows up to ``max_peers`` connected peers, each allocating up to ``max_channels`` channels, optionally limiting bandwidth to ``in_bandwidth`` and ``out_bandwidth`` (if greater than zero).
+
+\ **Note:** It is necessary to create a host in both client and server in order to establish a connection.
 
 .. rst-class:: classref-item-separator
 
@@ -438,9 +444,11 @@ Configures the DTLS server to automatically drop new connections.
 
 :ref:`Array<class_Array>` **service**\ (\ timeout\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_ENetConnection_method_service>`
 
-Waits for events on the specified host and shuttles packets between the host and its peers, with the given ``timeout`` (in milliseconds). The returned :ref:`Array<class_Array>` will have 4 elements. An :ref:`EventType<enum_ENetConnection_EventType>`, the :ref:`ENetPacketPeer<class_ENetPacketPeer>` which generated the event, the event associated data (if any), the event associated channel (if any). If the generated event is :ref:`EVENT_RECEIVE<class_ENetConnection_constant_EVENT_RECEIVE>`, the received packet will be queued to the associated :ref:`ENetPacketPeer<class_ENetPacketPeer>`.
+Waits for events on this connection and shuttles packets between the host and its peers, with the given ``timeout`` (in milliseconds). The returned :ref:`Array<class_Array>` will have 4 elements. An :ref:`EventType<enum_ENetConnection_EventType>`, the :ref:`ENetPacketPeer<class_ENetPacketPeer>` which generated the event, the event associated data (if any), the event associated channel (if any). If the generated event is :ref:`EVENT_RECEIVE<class_ENetConnection_constant_EVENT_RECEIVE>`, the received packet will be queued to the associated :ref:`ENetPacketPeer<class_ENetPacketPeer>`.
 
 Call this function regularly to handle connections, disconnections, and to receive new packets.
+
+\ **Note:** This method must be called on both ends involved in the event (sending and receiving hosts).
 
 .. rst-class:: classref-item-separator
 

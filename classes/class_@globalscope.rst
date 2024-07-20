@@ -3878,7 +3878,7 @@ The property is not stored, and does not display in the editor. This is the defa
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_STORAGE** = ``2``
 
-The property is serialized and saved in the scene file (default).
+The property is serialized and saved in the scene file (default for exported properties).
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR:
 
@@ -3886,7 +3886,7 @@ The property is serialized and saved in the scene file (default).
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_EDITOR** = ``4``
 
-The property is shown in the :ref:`EditorInspector<class_EditorInspector>` (default).
+The property is shown in the :ref:`EditorInspector<class_EditorInspector>` (default for exported properties).
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_INTERNAL:
 
