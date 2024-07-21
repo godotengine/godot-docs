@@ -60,8 +60,8 @@ You can create an Autoload to load a scene or a script that inherits from
 
 .. image:: img/singleton.webp
 
-To autoload a scene or script, select **Project > Project Settings** from the
-menu and switch to the **Autoload** tab.
+To autoload a scene or script, start from the menu and navigate to 
+**Project > Project Settings > Globals > Autoload**.
 
 .. image:: img/autoload_tab.webp
 
@@ -145,8 +145,9 @@ Make sure it inherits from ``Node``:
 
 .. image:: img/autoload_script.webp
 
-The next step is to add this script to the autoLoad list. Open
-**Project > Project Settings** from the menu, switch to the **Autoload** tab and
+The next step is to add this script to the autoLoad list.
+ Starting from the menu, open
+**Project > Project Settings > Globals > Autoload** and
 select the script by clicking the browse button or typing its path:
 ``res://global.gd``. Press **Add** to add it to the autoload list:
 
