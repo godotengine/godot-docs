@@ -14,7 +14,6 @@ source,destination
 /community/contributing/docs_writing_guidelines.html,/contributing/documentation/docs_writing_guidelines.html
 /community/contributing/editor_and_docs_localization.html,/contributing/documentation/editor_and_docs_localization.html
 /community/contributing/index.html,/contributing/ways_to_contribute.html
-/community/contributing/ways_to_contribute.html,/contributing/how_to_contribute.html
 /community/contributing/pr_workflow.html,/contributing/workflow/pr_workflow.html
 /community/contributing/testing_pull_requests.html,/contributing/workflow/testing_pull_requests.html
 /community/contributing/updating_the_class_reference.html,/contributing/documentation/updating_the_class_reference.html
@@ -31,6 +30,7 @@ source,destination
 /contributing/development/core_and_modules/introduction_to_godot_development.html,/contributing/development/core_and_modules/index.html
 /contributing/doc_and_l10n_guidelines.html,/community/contributing/doc_and_l10n_guidelines.html
 /contributing/updating_the_class_reference.html,/community/contributing/updating_the_class_reference.html
+/contributing/ways_to_contribute.html,/contributing/how_to_contribute.html
 /development/compiling/compiling_for_android.html,/contributing/development/compiling/compiling_for_android.html
 /development/compiling/compiling_for_ios.html,/contributing/development/compiling/compiling_for_ios.html
 /development/compiling/compiling_for_linuxbsd.html,/contributing/development/compiling/compiling_for_linuxbsd.html
