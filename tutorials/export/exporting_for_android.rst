@@ -31,7 +31,7 @@ Download and install the Android SDK.
 - You can install the Android SDK using `Android Studio Hedgehog (version 2023.1.1) or later <https://developer.android.com/studio/>`__.
 
   - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
-  - Ensure that the `required packages <https://developer.android.com/studio/intro/update#recommended>`__ are installed as well.
+  - Ensure that the `required packages <https://developer.android.com/studio/intro/update#required>`__ are installed as well.
 
     - Android SDK Platform-Tools version 34.0.0 or later
     - Android SDK Build-Tools version 34.0.0
