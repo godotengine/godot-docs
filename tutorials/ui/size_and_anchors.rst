@@ -19,35 +19,42 @@ that the screen resolution has changed and the controls need to be
 re-positioned. Some will need to follow the bottom of the screen, others
 the top of the screen, or maybe the right or left margins.
 
-.. image:: img/anchors.png
+.. image:: img/anchors.webp
 
-This is done by editing the *margin* properties of controls. Each
-control has four margins: left, right, bottom, and top, which correspond
-to the respective edges of the control. By default, all of
-them represent a distance in pixels relative to the top-left corner of
-the parent control or (in case there is no parent control) the viewport.
+.. note::
 
-.. image:: img/margin.png
+   The simplest approach to control node positioning is to pick a layout
+   preset from the toolbar above the viewport (see the section at the end).
+   We go into a bit more detail here for demonstration purposes, and so you
+   can get a better understanding of how the layout system works.
 
-So to make the control wider you can make the right margin larger and/or
-make the left margin smaller. This lets you set the exact placement
-and shape of the control.
+This is done by first selecting **Anchors** under Layout > Layout Mode and then
+**Custom** Under Layout > Anchors Preset. This opens up a menu where we can
+edit the **Anchor Points** and **Anchor Offset** properties. Each control
+has four anchor points and their corresponding offsets: left, right, bottom,
+and top. Anchor points represent a distance in the range of [0, 1] relative to
+the equivalent point of the parent control or (in case there is no parent
+control) the viewport.
 
-The *anchor* properties adjust where the margin distances are relative *to*.
-Each margin has an individual anchor that can be adjusted from the
-beginning to the end of the parent. So the vertical (top, bottom) anchors
-adjust from 0 (top of parent) to 1.0 (bottom of parent) with 0.5 being
-the center, and the control margins will be placed relative to that
-point. The horizontal (left, right) anchors similarly adjust from left to
-right of the parent.
+.. image:: img/margin.webp
+
+The other important group of properties that affects positioning is the
+anchor offsets. The *anchor points* adjust where the *anchor offsets*
+are relative *to*. Each individual anchor point can be adjusted from the
+beginning to the end of the parent. So the vertical (top, bottom) anchor points
+adjust from 0 (top of parent) to 1.0 (bottom of parent) with 0.5 being the
+center, and the control anchor offsets will be placed relative to that point.
+The horizontal (left, right) anchor points similarly adjust from left to right
+of the parent.
 
 Note that when you wish the edge of a control to be above or left of the
-anchor point, you must change the margin value to be negative.
+anchor point, you must change the anchor offset value to be negative.
 
-For example: when horizontal anchors are changed to 1, the margin values
-become relative to the top-right corner of the parent control or viewport.
+For example: when the horizontal anchors are changed to 1, the anchor offset
+values become relative to the top-right corner of the parent control or
+viewport.
 
-.. image:: img/marginend.png
+.. image:: img/marginend.webp
 
 Adjusting the two horizontal or the two vertical anchors to different
 values will make the control change size when the parent control does.
@@ -56,14 +63,14 @@ parent's bottom-right, while the top-left control margins are still
 anchored to the top-left of the parent, so when re-sizing the parent,
 the control will always cover it, leaving a 20 pixel margin:
 
-.. image:: img/marginaround.png
+.. image:: img/marginaround.webp
 
 Centering a control
 -------------------
 
-To center a control in its parent, set its anchors to 0.5 and each margin
-to half of its relevant dimension. For example, the code below shows how
-a TextureRect can be centered in its parent:
+To center a control in its parent, set its anchor points to 0.5 and each anchor
+offset to half of its relevant dimension. For example, the code below shows
+how a TextureRect can be centered in its parent:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -99,15 +106,24 @@ a TextureRect can be centered in its parent:
     rect.OffsetBottom = textureSize.Y / 2;
     AddChild(rect);
 
-Setting each anchor to 0.5 moves the reference point for the margins to
-the center of its parent. From there, we set negative margins so that
-the control gets its natural size.
+Setting each anchor point to 0.5 moves the reference point for the anchor
+offsets to the center of its parent. From there, we set negative margins so
+that the control gets its natural size.
 
 Layout Presets
 --------------
 
-Instead of manually adjusting the margin and anchor values, you can use the
-toolbar's Layout menu, above the viewport. Besides centering, it gives you many
-options to align and resize control nodes.
+Instead of manually adjusting the margin and anchor values for every node, you
+can use the toolbar's Layout menu, above the viewport. This offers multiple
+common presets (e.g. top right, bottom left, center, full rect, bottom wide).
 
-.. image:: img/layout_dropdown_menu.png
+.. image:: img/layout_dropdown_menu.webp
+
+After picking a preset (bottom right in the image below), you can also offset
+the control node manually by simply dragging it away:
+
+.. image:: img/manual_offset.webp
+
+and it will work the same as if you had set an offset:
+
+.. image:: img/manual_offset.gif
