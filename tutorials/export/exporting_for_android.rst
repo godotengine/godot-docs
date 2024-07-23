@@ -114,8 +114,11 @@ This way, your application will look great on all Android devices and versions.
 Exporting for Google Play Store
 -------------------------------
 
-Uploading an APK to Google's Play Store requires you to sign using a non-debug
-keystore file; such file can be generated like this:
+All new apps uploaded to Google Play after August 2021 must be an AAB (Android App Bundle)
+file.
+
+Uploading an AAB or APK to Google's Play Store requires you to sign using a non-debug
+keystore file; such a file can be generated like this:
 
 .. code-block:: shell
 
@@ -123,7 +126,7 @@ keystore file; such file can be generated like this:
 
 This keystore and key are used to verify your developer identity, remember the password and keep it in a safe place!
 It is suggested to use only upper and lowercase letters and numbers. Special characters may cause errors.
-Use Google's Android Developer guides to learn more about `APK signing <https://developer.android.com/studio/publish/app-signing>`__.
+Use Google's Android Developer guides to learn more about `app signing <https://developer.android.com/studio/publish/app-signing>`__.
 
 Now fill in the following forms in your Android Export Presets:
 
@@ -137,22 +140,17 @@ Don't forget to uncheck the **Export With Debug** checkbox while exporting.
 
 .. image:: img/export-with-debug-button.png
 
-Optimizing the APK size
------------------------
+Optimizing the file size
+------------------------
 
-By default, the APK will contain native libraries for both ARMv7 and ARMv8
-architectures. This increases its size significantly. To create a smaller APK,
-uncheck either **Armeabi-v 7a** or **Arm 64 -v 8a** in your project's Android
-export preset. This will create an APK that only contains a library for
-a single architecture. Note that applications targeting ARMv7 can also run on
-ARMv8 devices, but the opposite is not true.
-
-Since August 2019, Google Play requires all applications to be available in
-64-bit form. This means you cannot upload an APK that contains *just* an ARMv7
-library. To solve this, you can upload several APKs to Google Play using its
-`Multiple APK support <https://developer.android.com/google/play/publishing/multiple-apks>`__.
-Each APK should target a single architecture; creating an APK for ARMv7
-and ARMv8 is usually sufficient to cover most devices in use today.
+If you're working with APKs an not AABs, By default, the APK will contain native
+libraries for both ARMv7 and ARMv8 architectures. This increases its size significantly.
+To create a smaller file, uncheck either **Armeabi-v 7a** or **Arm 64 -v 8a** in
+your project's Android export preset. This will create an APK that only contains
+a library for a single architecture. Note that applications targeting ARMv7 can
+also run on ARMv8 devices, but the opposite is not true. The reason you don't do
+this to save space with AABs is that google automatically splits up the AAB on their
+backend, so the user only downloads what they need.
 
 You can optimize the size further by compiling an Android export template with
 only the features you need. See :ref:`doc_optimizing_for_size` for more
