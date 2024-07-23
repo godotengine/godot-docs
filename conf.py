@@ -301,3 +301,6 @@ rst_epilog = """
     image_locale="-" if language == "en" else language,
     target_locale="" if language == "en" else "/" + language,
 )
+
+# Needed so the table of contents is created for EPUB
+epub_tocscope = 'includehidden'
