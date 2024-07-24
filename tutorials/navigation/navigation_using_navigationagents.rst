@@ -98,7 +98,7 @@ The ``velocity_computed`` signal of the NavigationAgent node must be connected t
 
 .. image:: img/agent_safevelocity_signal.png
 
-Use ``set_velocity()`` on the NavigationAgent node in ``_physics_process()`` to update the agent with the current velocity of the agent's parent node.
+Set the ``velocity`` of the NavigationAgent node in ``_physics_process()`` to update the agent with the current velocity of the agent's parent node.
 
 While avoidance is enabled on the agent the ``safe_velocity`` vector will be received with the velocity_computed signal every physics frame.
 This velocity vector should be used to move the NavigationAgent's parent node in order to avoidance collision with other avoidance using agents or avoidance obstacles.
@@ -130,6 +130,11 @@ NavigationObstacles can be used to add some environment constrains to the avoida
 .. note::
 
     Avoidance does not affect the pathfinding. It should be seen as an additional option for constantly moving objects that cannot be (re)baked to a navigation mesh efficiently in order to move around them.
+
+.. note::
+
+    RVO avoidance makes implicit assumptions about natural agent behavior. E.g. that agents move on reasonable passing sides that can be assigned when they encounter each other.
+    This means that very clinical avoidance test scenarios will commonly fail. E.g. agents moved directly against each other with perfect opposite velocities will fail because the agents can not get their passing sides assigned.
 
 Using the NavigationAgent ``enable_avoidance`` property is the preferred option
 to toggle avoidance. The following code snippets can be used to
@@ -204,7 +209,7 @@ This script adds basic navigation movement to a :ref:`Node3D <class_Node3D>` wit
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
         var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_delta
         if navigation_agent.avoidance_enabled:
-            navigation_agent.set_velocity(new_velocity)
+            navigation_agent.velocity = new_velocity
         else:
             _on_velocity_computed(new_velocity)
 
@@ -237,7 +242,7 @@ This script adds basic navigation movement to a :ref:`CharacterBody3D <class_Cha
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
         var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
         if navigation_agent.avoidance_enabled:
-            navigation_agent.set_velocity(new_velocity)
+            navigation_agent.velocity = new_velocity
         else:
             _on_velocity_computed(new_velocity)
 
@@ -271,7 +276,7 @@ This script adds basic navigation movement to a :ref:`RigidBody3D <class_RigidBo
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
         var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
         if navigation_agent.avoidance_enabled:
-            navigation_agent.set_velocity(new_velocity)
+            navigation_agent.velocity = new_velocity
         else:
             _on_velocity_computed(new_velocity)
 

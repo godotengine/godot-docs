@@ -218,6 +218,18 @@ Yay! Our animation runs:
 
    The animation
 
+Autoplay on load
+~~~~~~~~~~~~~~~~
+
+You can make it so an animation plays automatically when the AnimationPlayer nodes
+scene starts, or joins another scene. To do this click the "Autoplay on load"
+button in the animation editor, it's right next to the edit button.
+
+.. image:: img/autoplay_on_load.webp
+
+The icon for it will also appear in front of the name of the animation, so you can
+easily identify which one is the autoplay animation.
+
 Back and forth
 ~~~~~~~~~~~~~~
 
@@ -240,7 +252,7 @@ in the next chapter.
 Track settings
 ~~~~~~~~~~~~~~
 
-Each track has a settings panel at the end, where you can set its update
+Each property track has a settings panel at the end, where you can set its update
 mode, track interpolation, and loop mode.
 
 .. figure:: img/animation_track_settings.webp
@@ -361,9 +373,21 @@ If you want to reset the tracks in the editor, select the AnimationPlayer node,
 open the **Animation** bottom panel then choose **Apply Reset** in the
 animation editor's **Edit** dropdown menu.
 
-When adding tracks on new animations, the editor will ask you to automatically
-create a RESET track when using the keyframe icon next to a property in the inspector.
-This does not apply on tracks created with Godot versions prior to 3.4,
-as the animation reset track feature was added in 3.4.
+when using the keyframe icon next to a property in the inspector the editor will
+ask you to automatically create a RESET track.
 
 .. note:: RESET tracks is also used as a reference value for blending. See also `For better blending <../animation/animation_tree.html#for-better-blending>`__.
+
+Onion Skinning
+--------------
+
+Godot's animation editor allows you use onion skinning while creating an
+animation. To turn this feature on click on the onion icon in the top right
+of the animation editor. Now there will be transparent red copies of what
+is being animated in its previous positions in the animation.
+
+.. image:: img/onion_skin.webp
+
+The three dots button next to the onion skinning button opens a dropdown
+menu that lets you adjust how it works, including the ability to use
+onion skinning for future frames.

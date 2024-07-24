@@ -68,8 +68,7 @@ See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>` for a full list.
       - :ref:`PackedInt32Array <class_PackedInt32Array>`
 
 In most cases when creating a mesh, we define it by its vertex positions. So usually, the array of vertices (at index 0) is required, while the index array (at index 12) is optional and
-will only be used if included. It is also possible to create a mesh with only the index array and no vertex array, but that's beyond the scope of this tutorial. In fact, we won't use the
-index array at all.
+will only be used if included. It is also possible to create a mesh with only the index array and no vertex array, but that's beyond the scope of this tutorial.
 
 All the other arrays carry information about the vertices. They are optional and will only be used if included. Some of these arrays (e.g. ``ARRAY_COLOR``)
 use one entry per vertex to provide extra information about vertices. They must have the same size as the vertex array. Other arrays (e.g. ``ARRAY_TANGENT``) use

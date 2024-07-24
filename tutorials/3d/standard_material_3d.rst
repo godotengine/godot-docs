@@ -492,6 +492,12 @@ Remember to use a transparent albedo texture (or reduce the albedo color's alpha
 channel) to make refraction visible, as refraction relies on transparency to
 have a visible effect.
 
+Refraction also takes the material roughness into account. Higher roughness
+values will make the objects behind the refraction look blurrier, which
+simulates real life behavior. If you can't see behind the object when refraction
+is enabled and albedo transparency is reduced, decrease the material's
+**Roughness** value.
+
 A normal map can optionally be specified in the **Refraction Texture** property
 to allow distorting the refraction's direction on a per-pixel basis.
 

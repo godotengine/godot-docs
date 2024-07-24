@@ -26,18 +26,19 @@ The 2D default navigation map RID can be obtained with ``get_world_2d().get_navi
 The 3D default navigation map RID can be obtained with ``get_world_3d().get_navigation_map()`` from any :ref:`Node3D<class_Node3D>` inheriting Node.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
 
     extends Node2D
 
-    var default_2d_navigation_map_rid: RID = get_world_2d().get_navigation_map()
+    func _ready() -> void:
+        var default_navigation_map_rid: RID = get_world_2d().get_navigation_map()
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
 
-    var default_3d_navigation_map_rid: RID = get_world_3d().get_navigation_map()
+    func _ready() -> void:
+        var default_navigation_map_rid: RID = get_world_3d().get_navigation_map()
 
 Creating new navigation maps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,20 +58,21 @@ Navigation regions and avoidance agents can only be part of a single navigation 
     A navigation map switch will take effect only after the next NavigationServer synchronization.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
 
     extends Node2D
 
-    var new_navigation_map: RID = NavigationServer2D.map_create()
-    NavigationServer2D.map_set_active(true)
+    func _ready() -> void:
+        var new_navigation_map: RID = NavigationServer2D.map_create()
+        NavigationServer2D.map_set_active(true)
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
 
-    var new_navigation_map: RID = NavigationServer3D.map_create()
-    NavigationServer3D.map_set_active(true)
+    func _ready() -> void:
+        var new_navigation_map: RID = NavigationServer3D.map_create()
+        NavigationServer3D.map_set_active(true)
 
 .. note::
 

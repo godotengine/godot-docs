@@ -43,7 +43,7 @@ either ``template_release`` for a release build or ``template_debug`` for a debu
     scons platform=web target=template_release
     scons platform=web target=template_debug
 
-By default, the :ref:`JavaScript singleton <doc_javascript_eval>` will be built
+By default, the :ref:`JavaScriptBridge singleton <doc_web_javascript_bridge>` will be built
 into the engine. Official export templates also have the JavaScript singleton
 enabled. Since ``eval()`` calls can be a security concern, the
 ``javascript_eval`` option can be used to build without the singleton::
