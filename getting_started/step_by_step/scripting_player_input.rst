@@ -79,6 +79,24 @@ right arrows on the keyboard or left and right on a gamepad's D-pad.
 Finally, we use the ``direction`` as a multiplier when we update the node's
 ``rotation``: ``rotation += angular_speed * direction * delta``.
 
+Comment out the lines ``var velocity = Vector2.UP.rotated(rotation) * speed`` and ``position += velocity * delta`` like this:
+
+.. tabs::
+
+ .. code-tab:: gdscript GDScript
+
+    #var velocity = Vector2.UP.rotated(rotation) * speed
+	
+    #position += velocity * delta
+
+ .. code-tab:: csharp C#
+
+    //var velocity = Vector2.Up.Rotated(Rotation) * _speed;
+
+    //Position += velocity * (float)delta;
+
+This will ignore the code that moved the icon's position in a circle without user input from the previous exercise.
+
 If you run the scene with this code, the icon should rotate when you press
 :kbd:`Left` and :kbd:`Right`.
 
@@ -86,7 +104,7 @@ Moving when pressing "up"
 -------------------------
 
 To only move when pressing a key, we need to modify the code that calculates the
-velocity. Replace the line starting with ``var velocity`` with the code below.
+velocity. Uncomment the code and replace the line starting with ``var velocity`` with the code below.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

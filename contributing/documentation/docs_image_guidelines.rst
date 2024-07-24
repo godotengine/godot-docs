@@ -64,7 +64,7 @@ have cropping built in it's not always easy to get something precise. And while
 Krita is designed as a painting program the cropping tool gives you pixel precision
 by default. Of course, feel free to use a different program you are familiar with.
 
-If you've never used Krita before download it from the `official Krita website <https://krita.org/en/download/krita-desktop/>`_,
+If you've never used Krita before download it from the `official Krita website <https://krita.org/en/download/>`_,
 on Linux you may also be able to download it from your distributions repository,
 flathub is also an option. Once it's installed on your computer open Krita then
 open the image you want to crop. This button on the left panel is the crop tool.

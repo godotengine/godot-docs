@@ -26,7 +26,7 @@ them visible and editable in the editor. This way, artists and game designers
 can modify values that later influence how the program runs. For this, a
 special export syntax is provided.
 
-Exporting can only be done with :ref:`Variant-compatible <doc_c_sharp_variant>` types.
+Exporting can only be done with :ref:`c_sharp_variant_compatible_types`.
 
 .. note::
 
@@ -71,15 +71,17 @@ Exported members can specify a default value; otherwise, the `default value of t
         set => _greeting = value;
     }
 
-Resources and nodes can be exported.
+Any type of ``Resource`` or ``Node`` can be exported. The property editor shows
+a user-friendly assignment dialog for these types. This can be used instead of
+``GD.Load`` and ``GetNode``. See :ref:`Nodes and Resources <doc_c_sharp_exports_nodes>`.
 
 .. code-block:: csharp
 
     [Export]
-    public Resource Resource { get; set; }
+    public PackedScene PackedScene { get; set; }
 
     [Export]
-    public Node Node { get; set; }
+    public RigidBody2D RigidBody2D { get; set; }
 
 Grouping exports
 ----------------
@@ -240,6 +242,8 @@ Color given as red-green-blue value (alpha will always be 1).
 
     [Export(PropertyHint.ColorNoAlpha)]
     private Color Color { get; set; }
+
+.. _doc_c_sharp_exports_nodes:
 
 Nodes
 -----
@@ -501,7 +505,7 @@ The default value of Godot dictionaries is null, a different default can be spec
 Exporting C# arrays
 ^^^^^^^^^^^^^^^^^^^
 
-C# arrays can exported as long as the element type is a :ref:`Variant-compatible <doc_c_sharp_variant>` type.
+C# arrays can exported as long as the element type is a :ref:`Variant-compatible type <c_sharp_variant_compatible_types>`.
 
 .. code-block:: csharp
 

@@ -30,6 +30,7 @@ source,destination
 /contributing/development/core_and_modules/introduction_to_godot_development.html,/contributing/development/core_and_modules/index.html
 /contributing/doc_and_l10n_guidelines.html,/community/contributing/doc_and_l10n_guidelines.html
 /contributing/updating_the_class_reference.html,/community/contributing/updating_the_class_reference.html
+/contributing/ways_to_contribute.html,/contributing/how_to_contribute.html
 /development/compiling/compiling_for_android.html,/contributing/development/compiling/compiling_for_android.html
 /development/compiling/compiling_for_ios.html,/contributing/development/compiling/compiling_for_ios.html
 /development/compiling/compiling_for_linuxbsd.html,/contributing/development/compiling/compiling_for_linuxbsd.html

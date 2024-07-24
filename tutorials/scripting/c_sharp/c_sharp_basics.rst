@@ -55,6 +55,8 @@ If you are building Godot from source, make sure to follow the steps to enable
 .NET support in your build as outlined in the :ref:`doc_compiling_with_dotnet`
 page.
 
+.. _doc_c_sharp_setup_external_editor:
+
 Configuring an external editor
 ------------------------------
 
@@ -110,11 +112,52 @@ In Visual Studio Code:
     for the C# tools plugin to work.
 
 To configure a project for debugging, you need a ``tasks.json`` and ``launch.json`` file in
-the ``.vscode`` folder with the necessary configuration. An example configuration can be
-found `here <https://github.com/godotengine/godot-csharp-vscode/issues/43#issuecomment-1258321229>`__ .
-In the ``launch.json`` file, make sure the ``program`` parameter in the relevant configuration points to your Godot executable, either by
-changing it to the path of the executable or by defining a ``GODOT4`` environment variable that points to the
-executable. Now, when you start the debugger in Visual Studio Code, your Godot project will run.
+the ``.vscode`` folder with the necessary configuration.
+
+Here is an example ``launch.json``:
+
+.. code-block:: json
+
+    {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Play",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "build",
+                "program": "${env:GODOT4}",
+                "args": [],
+                "cwd": "${workspaceFolder}",
+                "stopAtEntry": false,
+            }
+        ]
+    }
+
+For this launch configuration to work, you need to either setup a GODOT4
+environment variable that points to the Godot executable, or replace ``program``
+parameter with the path to the Godot executable.
+
+Here is an example ``tasks.json``:
+
+.. code-block:: json
+
+    {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "build",
+                "command": "dotnet",
+                "type": "process",
+                "args": [
+                    "build"
+                ],
+                "problemMatcher": "$msCompile"
+            }
+        ]
+    }
+
+Now, when you start the debugger in Visual Studio Code, your Godot project will run.
 
 Visual Studio (Windows only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,6 +183,19 @@ In Godot's **Editor → Editor Settings** menu:
           In a file explorer window, go to ``%AppData%\NuGet``. Rename or delete
           the ``NuGet.Config`` file. When you build your Godot project again,
           the file will be automatically created with default values.
+
+To debug your C# scripts using Visual Studio, open the .sln file that is generated
+after opening the first C# script in the editor. In the **Debug** menu, go to the
+**Debug Properties** menu item for your project. Click the **Create a new profile**
+button and choose **Executable**. In the **Executable** field, browse to the path
+of the C# version of the Godot editor, or type ``%GODOT4%`` if you have created an
+environment variable for the Godot executable path. It must be the path to the main Godot
+executable, not the 'console' version. For the **Working Directory**, type a single period,
+``.``, meaning the current directory. Also check the **Enable native code debugging**
+checkbox. You may now close this window, click downward arrow on the debug profile
+dropdown, and select your new launch profile. Hit the green start button, and your
+game will begin playing in debug mode.
+
 
 Creating a C# script
 --------------------

@@ -178,6 +178,10 @@ is required in the submission form here as well.
     The **icon** must be square (1:1 aspect ratio). It should have a minimum
     resolution of 128×128 pixels.
 
+.. note::
+
+    For icons hosted on GitHub, URLs must be provided in the form of `https://raw.githubusercontent.com/<user>/<project>/<branch>/Icon.png`.
+
 * **License**:
     The license under which you are distributing the asset. The list
     includes a variety of free and open source software licenses, such as GPL

@@ -204,7 +204,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | preload    | Preloads a class or variable. See `Classes as resources`_.                                                                                        |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| await      | Waits for a signal or a coroutine to finish. See `Awaiting for signals or coroutines`_.                                                           |
+| await      | Waits for a signal or a coroutine to finish. See `Awaiting signals or coroutines`_.                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | yield      | Previously used for coroutines. Kept as keyword for transition.                                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -224,7 +224,9 @@ in case you want to take a look under the hood.
 Operators
 ~~~~~~~~~
 
-The following is the list of supported operators and their precedence.
+The following is the list of supported operators and their precedence. All binary operators are `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_,
+including the ``**`` operator. This means that ``2 ** 2 ** 3`` is equal to ``(2 ** 2) ** 3``. Use parentheses to explicitly specify precedence you need, for
+example ``2 ** (2 ** 3)``. The ternary ``if/else`` operator is right-associative.
 
 +---------------------------------------+-----------------------------------------------------------------------------+
 | **Operator**                          | **Description**                                                             |
@@ -240,7 +242,7 @@ The following is the list of supported operators and their precedence.
 +---------------------------------------+-----------------------------------------------------------------------------+
 | ``foo()``                             | Function call                                                               |
 +---------------------------------------+-----------------------------------------------------------------------------+
-| ``await x``                           | `Awaiting for signals or coroutines`_                                       |
+| ``await x``                           | `Awaiting signals or coroutines`_                                           |
 +---------------------------------------+-----------------------------------------------------------------------------+
 | ``x is Node``                         | Type checking                                                               |
 |                                       |                                                                             |
@@ -251,10 +253,6 @@ The following is the list of supported operators and their precedence.
 |                                       |                                                                             |
 |                                       | Multiplies ``x`` by itself ``y`` times, similar to calling                  |
 |                                       | :ref:`pow() <class_@GlobalScope_method_pow>` function.                      |
-|                                       |                                                                             |
-|                                       | **Note:** In GDScript, the ``**`` operator is                               |
-|                                       | `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_. |
-|                                       | See a detailed note after the table.                                        |
 +---------------------------------------+-----------------------------------------------------------------------------+
 | ``~x``                                | Bitwise NOT                                                                 |
 +---------------------------------------+-----------------------------------------------------------------------------+
@@ -330,9 +328,7 @@ The following is the list of supported operators and their precedence.
     3. For negative values, the ``%`` operator and ``fmod()`` use `truncation <https://en.wikipedia.org/wiki/Truncation>`_ instead of rounding towards negative infinity.
        This means that the remainder has a sign. If you need the remainder in a mathematical sense, use the :ref:`posmod() <class_@GlobalScope_method_posmod>` and
        :ref:`fposmod() <class_@GlobalScope_method_fposmod>` functions instead.
-    4. The ``**`` operator is `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_. This means that ``2 ** 2 ** 3`` is equal to ``(2 ** 2) ** 3``.
-       Use parentheses to explicitly specify precedence you need, for example ``2 ** (2 ** 3)``.
-    5. The ``==`` and ``!=`` operators sometimes allow you to compare values of different types (for example, ``1 == 1.0`` is true), but in other cases it can cause
+    4. The ``==`` and ``!=`` operators sometimes allow you to compare values of different types (for example, ``1 == 1.0`` is true), but in other cases it can cause
        a runtime error. If you're not sure about the types of the operands, you can safely use the :ref:`is_same() <class_@GlobalScope_method_is_same>` function
        (but note that it is more strict about types and references). To compare floats, use the :ref:`is_equal_approx() <class_@GlobalScope_method_is_equal_approx>`
        and :ref:`is_zero_approx() <class_@GlobalScope_method_is_zero_approx>` functions instead.
@@ -433,13 +429,21 @@ A string enclosed in quotes of one type (for example ``"``) can contain quotes o
 two consecutive quotes of the same type (unless they are adjacent to the string edges).
 
 **Raw string literals** always encode the string as it appears in the source code.
-This is especially useful for regular expressions. Raw strings do not process escape sequences,
-but you can "escape" a quote or backslash (they replace themselves).
+This is especially useful for regular expressions. A raw string literal doesn't process escape sequences,
+however it does recognize ``\\`` and ``\"`` (``\'``) and replaces them with themselves.
+Thus, a string can have a quote that matches the opening one, but only if it's preceded by a backslash.
 
 ::
 
     print("\tchar=\"\\t\"")  # Prints `    char="\t"`.
     print(r"\tchar=\"\\t\"") # Prints `\tchar=\"\\t\"`.
+
+.. note::
+
+    Some strings cannot be represented using raw string literals: you cannot have an odd number
+    of backslashes at the end of a string or have an unescaped opening quote inside the string.
+    However, in practice this doesn't matter since you can use a different quote type
+    or use concatenation with a regular string literal.
 
 GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 
@@ -1236,12 +1240,6 @@ Assigning a value of an incompatible type will raise an error.
 
 You can also create constants inside a function, which is useful to name local
 magic values.
-
-.. note::
-
-    Since objects, arrays and dictionaries are passed by reference, constants are "flat".
-    This means that if you declare a constant array or dictionary, it can still
-    be modified afterwards. They can't be reassigned with another value though.
 
 Enums
 ^^^^^
@@ -2333,7 +2331,7 @@ character's name in the binds array argument::
         var character_node = get_node('Character')
         var battle_log_node = get_node('UserInterface/BattleLog')
 
-        character_node.health_changed.connect(battle_log_node._on_Character_health_changed, [character_node.name])
+        character_node.health_changed.connect(battle_log_node._on_Character_health_changed.bind(character_node.name))
 
 Our ``BattleLog`` node receives each element in the binds array as an extra argument::
 
@@ -2347,8 +2345,8 @@ Our ``BattleLog`` node receives each element in the binds array as an extra argu
         label.text += character_name + " took " + str(damage) + " damage."
 
 
-Awaiting for signals or coroutines
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Awaiting signals or coroutines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``await`` keyword can be used to create `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
 which wait until a signal is emitted before continuing execution. Using the ``await`` keyword with a signal or a
@@ -2363,7 +2361,7 @@ For example, to stop execution until the user presses a button, you can do somet
         print("User confirmed")
         return true
 
-In this case, the ``wait_confirmation`` becomes a coroutine, which means that the caller also needs to await for it::
+In this case, the ``wait_confirmation`` becomes a coroutine, which means that the caller also needs to await it::
 
     func request_confirmation():
         print("Will ask the user")
@@ -2395,7 +2393,7 @@ function won't give the control back to the caller::
     func get_five():
         return 5
 
-This also means that returning a signal from a function that isn't a coroutine will make the caller await on that signal::
+This also means that returning a signal from a function that isn't a coroutine will make the caller await that signal::
 
     func get_signal():
         return $Button.button_up

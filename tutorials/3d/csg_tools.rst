@@ -15,13 +15,14 @@ Interior environments can be created by using inverted primitives.
 
 .. note:: The CSG nodes in Godot are mainly intended for prototyping. There is
           no built-in support for UV mapping or editing 3D polygons (though
-          extruded 2D polygons can be used with the CSGPolygon3D node).
+          extruded 2D polygons can be used with the CSGPolygon3D node). In
+          addition CSG can't reliably create meshes made up of multiple nodes
+          without holes.
 
           If you're looking for an easy to use level design tool for a project,
-          you may want to use `Qodot <https://github.com/QodotPlugin/Qodot>`__
-          instead. It lets you design levels using
-          `TrenchBroom <https://kristianduske.com/trenchbroom/>`__ and import
-          them in Godot.
+          you may want to use `FuncGodot <https://github.com/func-godot/func_godot_plugin>`__
+          or `Cyclops Level Builder <https://github.com/blackears/cyclopsLevelBuilder>`__
+          instead.
 
 .. image:: img/csg.gif
 

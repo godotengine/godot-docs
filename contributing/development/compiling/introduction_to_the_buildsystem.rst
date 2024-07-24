@@ -12,16 +12,16 @@ that compiling Godot from source can be as simple as running::
 
     scons
 
-This produces an *export template* for your current platform, operating system, and architecture.
-An export template is a build of the engine that is used for running exported projects. To build
-the *editor* instead you can run the following command::
+This produces an editor build for your current platform, operating system, and architecture.
+You can change what gets built by specifying a target, a platform, and/or an architecture.
+For example, to build an export template used for running exported games, you can run::
 
-    scons target=editor
+    scons target=template_release
 
-If you plan to debug or develop the engine, then you might want to add another option to the command::
+If you plan to debug or develop the engine, then you might want to enable the ``dev_build``
+option to enable dev-only debugging code::
 
     scons dev_build=yes
-    scons target=editor dev_build=yes
 
 Following sections in the article will explain these and other universal options in more detail. But
 before you can compile Godot, you need to install a few prerequisites. Please refer to the platform
@@ -422,20 +422,34 @@ platform:
 
     android_debug.apk
     android_release.apk
-    web_debug.zip
-    web_release.zip
-    linux_server_32
-    linux_server_64
-    linux_x11_32_debug
-    linux_x11_32_release
-    linux_x11_64_debug
-    linux_x11_64_release
+    android_source.zip
+    ios.zip
+    linux_debug.arm32
+    linux_debug.arm64
+    linux_debug.x86_32
+    linux_debug.x86_64
+    linux_release.arm32
+    linux_release.arm64
+    linux_release.x86_32
+    linux_release.x86_64
     macos.zip
     version.txt
-    windows_32_debug.exe
-    windows_32_release.exe
-    windows_64_debug.exe
-    windows_64_release.exe
+    web_debug.zip
+    web_dlink_debug.zip
+    web_dlink_nothreads_debug.zip
+    web_dlink_nothreads_release.zip
+    web_dlink_release.zip
+    web_nothreads_debug.zip
+    web_nothreads_release.zip
+    web_release.zip
+    windows_debug_x86_32_console.exe
+    windows_debug_x86_32.exe
+    windows_debug_x86_64_console.exe
+    windows_debug_x86_64.exe
+    windows_release_x86_32_console.exe
+    windows_release_x86_32.exe
+    windows_release_x86_64_console.exe
+    windows_release_x86_64.exe
 
 To create those yourself, follow the instructions detailed for each
 platform in this same tutorial section. Each platform explains how to

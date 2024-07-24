@@ -130,14 +130,16 @@ it manually with the following code:
     void vertex() {
         VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
         NORMAL = normalize((MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
-        // same as above for binormal and tangent, if normal mapping is used
+        BINORMAL = normalize((MODELVIEW_MATRIX * vec4(BINORMAL, 0.0)).xyz);
+        TANGENT = normalize((MODELVIEW_MATRIX * vec4(TANGENT, 0.0)).xyz);
     }
 
 Other built-ins, such as UV, UV2 and COLOR, are also passed through to the fragment function if not modified.
 
-Users can override the modelview and projection transforms using the ``POSITION`` built-in. When ``POSITION`` is used,
-the value from ``VERTEX`` is ignored and projection does not happen. However, the value passed to the fragment shader
-still comes from ``VERTEX``.
+Users can override the modelview and projection transforms using the ``POSITION`` built-in. If ``POSITION`` is written
+to anywhere in the shader, it will always be used, so the user becomes responsible for ensuring that it always has
+an acceptable value. When ``POSITION`` is used, the value from ``VERTEX`` is ignored and projection does not happen.
+However, the value passed to the fragment shader still comes from ``VERTEX``.
 
 For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
 is usually:
@@ -167,6 +169,8 @@ shader, this value can be used as desired.
 | in vec3 **CAMERA_POSITION_WORLD**      | Camera world space position.                           |
 +----------------------------------------+--------------------------------------------------------+
 | in vec3 **CAMERA_DIRECTION_WORLD**     | Camera world space direction.                          |
++----------------------------------------+--------------------------------------------------------+
+| in int **CAMERA_VISIBLE_LAYERS**       | Cull layers of the camera rendering the current pass.  |
 +----------------------------------------+--------------------------------------------------------+
 | in bool **OUTPUT_IS_SRGB**             | ``true`` when output is in sRGB color space            |
 |                                        | (this is ``true`` in the Compatibility renderer,       |
@@ -321,7 +325,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **ALBEDO**                    | Albedo (default white).                                                                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **ALPHA**                    | Alpha (0..1); if written to, the material will go to the transparent pipeline.                   |
+| out float **ALPHA**                    | Alpha (0..1); if read from or written to, the material will go to the transparent pipeline.      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ALPHA_SCISSOR_THRESHOLD**  | If written to, values below a certain amount of alpha are discarded.                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+

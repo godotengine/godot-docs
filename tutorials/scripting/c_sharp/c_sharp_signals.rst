@@ -6,8 +6,14 @@ C# signals
 For a detailed explanation of signals in general, see the :ref:`doc_signals` section in the step
 by step tutorial.
 
-While it is still possible to use signals through the ``Connect``/``Disconnect`` API, C# gives us
-a more idiomatic way to implement the :ref:`observer pattern<doc_key_concepts_signals>`.
+Signals are implemented using C# events, the idiomatic way to represent
+:ref:`the observer pattern<doc_key_concepts_signals>` in C#. This is the
+recommended way to use signals in C# and the focus of this page.
+
+In some cases it's necessary to use the older
+:ref:`Connect()<class_object_method_connect>` and
+:ref:`Disconnect()<class_object_method_disconnect>` APIs.
+See :ref:`using_connect_and_disconnect` for more details.
 
 Signals as C# events
 --------------------
@@ -30,8 +36,13 @@ In addition, you can always access signal names associated with a node type thro
 .. warning::
 
     While all engine signals connected as events are automatically disconnected when nodes are freed, custom
-    signals aren't. Meaning that: you will need to manually disconnect (using ``-=``) all the custom signals you
-    connected as C# events (using ``+=``).
+    signals connected using ``+=`` aren't. Meaning that: you will need to manually disconnect (using ``-=``)
+    all the custom signals you connected as C# events (using ``+=``).
+
+    An alternative to manually disconnecting using ``-=`` is to
+    :ref:`use Connect <using_connect_and_disconnect>` rather than ``+=``.
+
+    See `Godot issue #70414 <https://github.com/godotengine/godot/issues/70414>`_.
 
 Custom signals as C# events
 ---------------------------
@@ -87,7 +98,7 @@ your custom signal names are listed under the nested ``SignalName`` class.
 
 In contrast with other C# events, you cannot use ``Invoke`` to raise events tied to Godot signals.
 
-Signals support arguments of any :ref:`Variant-compatible <doc_c_sharp_variant>` type.
+Signals support arguments of any :ref:`Variant-compatible type <c_sharp_variant_compatible_types>`.
 
 Consequently, any ``Node`` or ``RefCounted`` will be compatible automatically, but custom data objects will need
 to inherit from ``GodotObject`` or one of its subclasses.
@@ -145,4 +156,33 @@ connecting to them or emitting them). Also, note that signals created this way w
     {
         AddUserSignal("MyCustomSignal");
         EmitSignal("MyCustomSignal");
+    }
+
+.. _using_connect_and_disconnect:
+
+Using Connect and Disconnect
+----------------------------
+
+In general, it isn't recommended to use
+:ref:`Connect()<class_object_method_connect>` and
+:ref:`Disconnect()<class_object_method_disconnect>`. These APIs don't provide as
+much type safety as the events. However, they're necessary for
+:ref:`connecting to signals defined by GDScript <connecting_to_signals_cross_language>`
+and passing :ref:`ConnectFlags<enum_Object_ConnectFlags>`.
+
+In the following example, pressing the button for the first time prints
+``Greetings!``. ``OneShot`` disconnects the signal, so pressing the button again
+does nothing.
+
+.. code-block:: csharp
+
+    public override void _Ready()
+    {
+        Button button = GetNode<Button>("GreetButton");
+        button.Connect(Button.SignalName.Pressed, Callable.From(OnButtonPressed), (uint)GodotObject.ConnectFlags.OneShot);
+    }
+
+    public void OnButtonPressed()
+    {
+        GD.Print("Greetings!");
     }

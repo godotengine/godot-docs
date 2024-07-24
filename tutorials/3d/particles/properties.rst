@@ -16,8 +16,8 @@ want to activate or deactivate particle systems dynamically.
 The ``Amount`` property controls the maximum number of particles visible at any given time. Increase the
 value to spawn more particles at the cost of performance.
 
-The ``Amount Ratio`` property is the radio of particles compared to the ammount that will be emitted.
-If it's less than ``1.0`` the ammount of particles emitted through the lifetime will be the ``Ammount`` *
+The ``Amount Ratio`` property is the ratio of particles compared to the amount that will be emitted.
+If it's less than ``1.0``, the amount of particles emitted through the lifetime will be the ``Amount`` *
 ``Amount Ratio``. Changing this value while emitted doesn't affect already created particles and doesn't
 cause the particle system to restart. It's useful for making effects where the number of emitted particles
 varies over time.
@@ -113,10 +113,21 @@ That's what the ``Interpolate`` property does. It blends particle properties bet
 updates so that even a particle system running at ``10`` FPS appears as smooth as
 running at ``60``.
 
+.. note::
+
+    When using :ref:`particle collision <doc_3d_particles_collision>`, tunneling can occur
+    if the particles move fast and colliders are thin. This can be remedied by increasing
+    ``Fixed FPS`` (at a performance cost).
+
 .. _doc_3d_particles_properties_collision:
 
 Collision properties
 ~~~~~~~~~~~~~~~~~~~~
+
+.. seealso::
+
+    Setting up particle collision requires following further steps described in
+    :ref:`doc_3d_particles_collision`.
 
 The ``Base Size`` property defines each particle's default collision size, which is used
 to check whether a particle is currently colliding with the environment. You would usually want this
@@ -141,7 +152,8 @@ box as small as possible.
 
 One thing to keep in mind when you set a size for the ``Visibility AABB`` is that particles
 that are outside of its bounds disappear instantly when it leaves the camera's field of view.
-This, while not technically a bug, can have a negative effect on the visual experience.
+Particle collision will also not occur outside the ``Visibility AABB``.
+While not technically a bug, this can have a negative effect on the visual experience.
 
 When the ``Local Coords`` property is checked, all particle calculations use the local
 coordinate system to determine things like up and down, gravity, and movement direction.

@@ -218,6 +218,9 @@ Leaving the screen
 We still have to destroy the mobs when they leave the screen. To do so, we'll
 connect our :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>` node's ``screen_exited`` signal to the ``Mob``.
 
+Head back to the 3D viewport by clicking on the *3D* label at the top of the
+editor. You can also press :kbd:`Ctrl + F2` (:kbd:`Opt + 2` on macOS).
+
 |image8|
 
 Select the :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>` node and on the right side of the interface,
@@ -241,7 +244,7 @@ method. This function destroys the instance it's called on.
 
  .. code-tab:: csharp
 
-    // We also specified this function name in PascalCase in the editor's connection window
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnVisibilityNotifierScreenExited()
     {
         QueueFree();
@@ -271,7 +274,7 @@ Here is the complete ``Mob.gd`` script for reference.
         # We position the mob by placing it at start_position
         # and rotate it towards player_position, so it looks at the player.
         look_at_from_position(start_position, player_position, Vector3.UP)
-        # Rotate this mob randomly within range of -90 and +90 degrees,
+        # Rotate this mob randomly within range of -45 and +45 degrees,
         # so that it doesn't move directly towards the player.
         rotate_y(randf_range(-PI / 4, PI / 4))
 
@@ -310,7 +313,7 @@ Here is the complete ``Mob.gd`` script for reference.
             // We position the mob by placing it at startPosition
             // and rotate it towards playerPosition, so it looks at the player.
             LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
-            // Rotate this mob randomly within range of -90 and +90 degrees,
+            // Rotate this mob randomly within range of -45 and +45 degrees,
             // so that it doesn't move directly towards the player.
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
@@ -323,7 +326,7 @@ Here is the complete ``Mob.gd`` script for reference.
             Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
         }
 
-        // We also specified this function name in PascalCase in the editor's connection window
+        // We also specified this function name in PascalCase in the editor's connection window.
         private void OnVisibilityNotifierScreenExited()
         {
             QueueFree();

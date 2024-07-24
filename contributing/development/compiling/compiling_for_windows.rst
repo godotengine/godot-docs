@@ -188,7 +188,7 @@ Cross-compiling for Windows from other operating systems
 --------------------------------------------------------
 
 If you are a Linux or macOS user, you need to install
-`MinGW-w64 <https://mingw-w64.org/doku.php>`__, which typically comes in 32-bit
+`MinGW-w64 <https://www.mingw-w64.org/>`__, which typically comes in 32-bit
 and 64-bit variants. The package names may differ based on your distribution,
 here are some known ones:
 
@@ -281,18 +281,22 @@ with the following flags:
 
 If you plan on replacing the standard export templates, copy these to the
 following location, replacing ``<version>`` with the version identifier
-(such as ``3.1.1.stable`` or ``3.2.dev``):
+(such as ``4.2.1.stable`` or ``4.3.dev``):
 
 .. code-block:: none
 
-    %USERPROFILE%\AppData\Roaming\Godot\templates\<version>\
+    %APPDATA%\Godot\export_templates\<version>\
 
 With the following names::
 
-    windows_32_debug.exe
-    windows_32_release.exe
-    windows_64_debug.exe
-    windows_64_release.exe
+    windows_debug_x86_32_console.exe
+    windows_debug_x86_32.exe
+    windows_debug_x86_64_console.exe
+    windows_debug_x86_64.exe
+    windows_release_x86_32_console.exe
+    windows_release_x86_32.exe
+    windows_release_x86_64_console.exe
+    windows_release_x86_64.exe
 
 However, if you are using custom modules or custom engine code, you
 may instead want to configure your binaries as custom export templates

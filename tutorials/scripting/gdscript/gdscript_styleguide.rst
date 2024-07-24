@@ -35,7 +35,6 @@ Here is a complete class example based on these guidelines:
     ## Initializes states and delegates engine callbacks ([method Node._physics_process],
     ## [method Node._unhandled_input]) to the state.
 
-
     signal state_changed(previous, new)
 
     @export var initial_state: Node
@@ -232,12 +231,11 @@ line doesn't need to be modified when adding new elements.
 
 ::
 
-    enum Tiles {
-        TILE_BRICK,
-        TILE_FLOOR,
-        TILE_SPIKE,
-        TILE_TELEPORT,
-    }
+    var array = [
+        1,
+        2,
+        3,
+    ]
 
 **Bad**:
 
@@ -245,12 +243,11 @@ line doesn't need to be modified when adding new elements.
 
 ::
 
-    enum Tiles {
-        TILE_BRICK,
-        TILE_FLOOR,
-        TILE_SPIKE,
-        TILE_TELEPORT
-    }
+    var array = [
+        1,
+        2,
+        3
+    ]
 
 Trailing commas are unnecessary in single-line lists, so don't add them in this case.
 
@@ -260,7 +257,7 @@ Trailing commas are unnecessary in single-line lists, so don't add them in this 
 
 ::
 
-    enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}
+    var array = [1, 2, 3]
 
 **Bad**:
 
@@ -268,7 +265,7 @@ Trailing commas are unnecessary in single-line lists, so don't add them in this 
 
 ::
 
-    enum Tiles {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT,}
+    var array = [1, 2, 3,]
 
 Blank lines
 ~~~~~~~~~~~
@@ -307,8 +304,8 @@ editor. For example, when looking at a differential revision.
 One statement per line
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Never combine multiple statements on a single line. No, C programmers,
-not even with a single line conditional statement.
+Avoid combining multiple statements on a single line, including conditional
+statements, to adhere to the GDScript style guidelines for readability.
 
 **Good**:
 
@@ -485,7 +482,11 @@ Whitespace
 ~~~~~~~~~~
 
 Always use one space around operators and after commas. Also, avoid extra spaces
-in dictionary references and function calls.
+in dictionary references and function calls. One exception to this is for
+single-line dictionary declarations, where a space should be added after the
+opening brace and before the closing brace. This makes the dictionary easier to
+visually distinguish from an array, as the ``[]`` characters look close to
+``{}`` with most fonts.
 
 **Good**:
 
@@ -497,6 +498,7 @@ in dictionary references and function calls.
     position.y = target_position.y + 10
     dict["key"] = 5
     my_array = [4, 5, 6]
+    my_dictionary = { key = "value" }
     print("foo")
 
 **Bad**:
@@ -509,6 +511,7 @@ in dictionary references and function calls.
     position.y = mpos.y+10
     dict ["key"] = 5
     myarray = [4,5,6]
+    my_dictionary = {key = "value"}
     print ("foo")
 
 Don't use spaces to align expressions vertically:
@@ -704,6 +707,29 @@ are constants:
         FIRE,
     }
 
+Write enums with each item on its own line. This allows adding documentation comments abve each item
+more easily, and also makes for cleaner diffs in version control when items are added or removed.
+
+**Good**:
+
+.. rst-class:: code-example-good
+
+::
+
+    enum Element {
+        EARTH,
+        WATER,
+        AIR,
+        FIRE,
+    }
+
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
+
+    enum Element { EARTH, WATER, AIR, FIRE }
 
 Code order
 ----------
@@ -791,7 +817,13 @@ variables, in that order.
 
     signal player_spawned(position)
 
-    enum Jobs {KNIGHT, WIZARD, ROGUE, HEALER, SHAMAN}
+    enum Jobs {
+        KNIGHT,
+        WIZARD,
+        ROGUE,
+        HEALER,
+        SHAMAN,
+    }
 
     const MAX_LIVES = 3
 

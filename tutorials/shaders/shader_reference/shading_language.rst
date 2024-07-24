@@ -870,7 +870,7 @@ table of the corresponding types:
 | **mat3**             | **Basis**               |                                                            |
 +----------------------+-------------------------+------------------------------------------------------------+
 | **mat4**             | **Projection**,         | When a Transform3D is used, the w Vector is set to the     |
-| **mat4**             | **Transform3D**         | identity.                                                  |
+|                      | **Transform3D**         | identity.                                                  |
 +----------------------+-------------------------+------------------------------------------------------------+
 | **sampler2D**        | **Texture2D**           |                                                            |
 +----------------------+-------------------------+------------------------------------------------------------+
@@ -1017,6 +1017,10 @@ Per-instance uniforms
 .. note::
 
     Per-instance uniforms are only available in ``spatial`` (3D) shaders.
+
+.. note::
+
+    Per-instance uniforms are not supported when using the Compatibility renderer.
 
 Sometimes, you want to modify a parameter on each node using the material. As an
 example, in a forest full of trees, when you want each tree to have a slightly

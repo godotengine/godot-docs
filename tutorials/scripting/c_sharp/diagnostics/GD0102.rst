@@ -16,7 +16,8 @@ Cause
 -----
 
 An unsupported type is specified for a member annotated with the ``[Export]``
-attribute when a :ref:`Variant-compatible <doc_c_sharp_variant>` type is expected.
+attribute when a
+:ref:`Variant-compatible type <c_sharp_variant_compatible_types>` is expected.
 
 Rule description
 ----------------

@@ -116,7 +116,7 @@ AMD FidelityFX Super Resolution 2.2 (FSR2)
 ------------------------------------------
 
 Since Godot 4.2, there is built-in support for
-`AMD FidelityFX Super Resolution <https://www.amd.com/en/technologies/fidelityfx-super-resolution>`__
+`AMD FidelityFX Super Resolution <https://www.amd.com/en/products/graphics/technologies/fidelityfx/super-resolution.html>`__
 2.2. This is an :ref:`upscaling method <doc_resolution_scaling>`
 compatible with all recent GPUs from any vendor. FSR2 is normally designed to
 improve performance by lowering the internal 3D rendering resolution,

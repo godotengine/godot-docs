@@ -238,7 +238,7 @@ is the next best thing. Inevitably, changes may need to be made to a class and
 if these changes cause it to interact with other scenes in unforeseen ways,
 then things will start to break down. The whole point of all this indirection
 is to avoid ending up in a situation where changing one class results in
-adversely effecting other classes dependent on it.
+adversely affecting other classes dependent on it.
 
 Scripts and scenes, as extensions of engine classes, should abide
 by *all* OOP principles. Examples include...
