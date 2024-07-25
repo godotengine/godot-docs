@@ -231,7 +231,7 @@ other object:
 
 .. image:: img/vector_reflect1.png
 
-The surface normal has a value of ``(0, -1)`` because this is a horizontal
+The surface normal has a value of ``(0, 1)`` because this is a horizontal
 surface. When the ball collides, we take its remaining motion (the amount left
 over when it hits the surface) and reflect it using the normal. In Godot, there
 is a :ref:`bounce() <class_Vector2_method_bounce>` method to handle this.
