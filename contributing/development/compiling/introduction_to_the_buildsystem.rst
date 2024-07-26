@@ -446,10 +446,14 @@ platform:
     windows_debug_x86_32.exe
     windows_debug_x86_64_console.exe
     windows_debug_x86_64.exe
+    windows_debug_arm64_console.exe
+    windows_debug_arm64.exe
     windows_release_x86_32_console.exe
     windows_release_x86_32.exe
     windows_release_x86_64_console.exe
     windows_release_x86_64.exe
+    windows_release_arm64_console.exe
+    windows_release_arm64.exe
 
 To create those yourself, follow the instructions detailed for each
 platform in this same tutorial section. Each platform explains how to
