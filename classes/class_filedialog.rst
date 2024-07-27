@@ -279,7 +279,7 @@ Property Descriptions
 
 The file system access scope. See :ref:`Access<enum_FileDialog_Access>` constants.
 
-\ **Warning:** Currently, in sandboxed environments such as Web builds or sandboxed macOS apps, FileDialog cannot access the host file system. See `godot-proposals#1123 <https://github.com/godotengine/godot-proposals/issues/1123>`__.
+\ **Warning:** In Web builds, FileDialog cannot access the host file system. In sandboxed Linux and macOS environments, :ref:`use_native_dialog<class_FileDialog_property_use_native_dialog>` is automatically used to allow limited access to host file system.
 
 .. rst-class:: classref-item-separator
 
@@ -297,6 +297,8 @@ The file system access scope. See :ref:`Access<enum_FileDialog_Access>` constant
 - :ref:`String<class_String>` **get_current_dir**\ (\ )
 
 The current working directory of the file dialog.
+
+\ **Note:** For native file dialogs, this property is only treated as a hint and may not be respected by specific OS implementations.
 
 .. rst-class:: classref-item-separator
 
@@ -419,6 +421,8 @@ The number of additional :ref:`OptionButton<class_OptionButton>`\ s and :ref:`Ch
 
 If non-empty, the given sub-folder will be "root" of this **FileDialog**, i.e. user won't be able to go to its parent directory.
 
+\ **Note:** This property is ignored by native file dialogs.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -435,6 +439,8 @@ If non-empty, the given sub-folder will be "root" of this **FileDialog**, i.e. u
 - :ref:`bool<class_bool>` **is_showing_hidden_files**\ (\ )
 
 If ``true``, the dialog will show hidden files.
+
+\ **Note:** This property is ignored by native file dialogs on Linux.
 
 .. rst-class:: classref-item-separator
 
@@ -453,7 +459,11 @@ If ``true``, the dialog will show hidden files.
 
 If ``true``, :ref:`access<class_FileDialog_property_access>` is set to :ref:`ACCESS_FILESYSTEM<class_FileDialog_constant_ACCESS_FILESYSTEM>`, and it is supported by the current :ref:`DisplayServer<class_DisplayServer>`, OS native dialog will be used instead of custom one.
 
-\ **Note:** On macOS, sandboxed apps always use native dialogs to access host filesystem.
+\ **Note:** On Linux and macOS, sandboxed apps always use native dialogs to access the host file system.
+
+\ **Note:** On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use :ref:`OS.get_granted_permissions<class_OS_method_get_granted_permissions>` to get a list of saved bookmarks.
+
+\ **Note:** Native dialogs are isolated from the base process, file dialog properties can't be modified once the dialog is shown.
 
 .. rst-class:: classref-section-separator
 
@@ -590,6 +600,8 @@ Returns the vertical box container of the dialog, custom controls can be added t
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
+\ **Note:** Changes to this node are ignored by native file dialogs, use :ref:`add_option<class_FileDialog_method_add_option>` to add custom elements to the dialog instead.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -601,6 +613,8 @@ Returns the vertical box container of the dialog, custom controls can be added t
 |void| **invalidate**\ (\ ) :ref:`🔗<class_FileDialog_method_invalidate>`
 
 Invalidate and update the current dialog content list.
+
+\ **Note:** This method does nothing on native file dialogs.
 
 .. rst-class:: classref-item-separator
 

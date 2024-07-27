@@ -208,6 +208,8 @@ Methods
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`body_set_state<class_PhysicsServer2D_method_body_set_state>`\ (\ body\: :ref:`RID<class_RID>`, state\: :ref:`BodyState<enum_PhysicsServer2D_BodyState>`, value\: :ref:`Variant<class_Variant>`\ )                                                                                                                       |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`body_set_state_sync_callback<class_PhysicsServer2D_method_body_set_state_sync_callback>`\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`body_test_motion<class_PhysicsServer2D_method_body_test_motion>`\ (\ body\: :ref:`RID<class_RID>`, parameters\: :ref:`PhysicsTestMotionParameters2D<class_PhysicsTestMotionParameters2D>`, result\: :ref:`PhysicsTestMotionResult2D<class_PhysicsTestMotionResult2D>` = null\ )                                         |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                             | :ref:`capsule_shape_create<class_PhysicsServer2D_method_capsule_shape_create>`\ (\ )                                                                                                                                                                                                                                          |
@@ -2146,6 +2148,24 @@ Adds the body to the given space, after removing the body from the previously as
 Sets the value of a body's state. See :ref:`BodyState<enum_PhysicsServer2D_BodyState>` for the list of available states.
 
 \ **Note:** The state change doesn't take effect immediately. The state will change on the next physics frame.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer2D_method_body_set_state_sync_callback:
+
+.. rst-class:: classref-method
+
+|void| **body_set_state_sync_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_PhysicsServer2D_method_body_set_state_sync_callback>`
+
+Sets the body's state synchronization callback function to ``callable``. Use an empty :ref:`Callable<class_Callable>` (``Callable()``) to clear the callback.
+
+The function ``callable`` will be called every physics frame, assuming that the body was active during the previous physics tick, and can be used to fetch the latest state from the physics server.
+
+The function ``callable`` must take the following parameters:
+
+1. ``state``: a :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`, used to retrieve the body's state.
 
 .. rst-class:: classref-item-separator
 
