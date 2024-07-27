@@ -148,7 +148,7 @@ For example:
 
 This is an integer property named "amount". The hint is a range, and the range
 goes from 0 to 49 in steps of 1 (integers). It is only usable for the editor
-(editing the value visually), but won't be serialized.
+(editing the value visually) but won't be serialized.
 
 Another example:
 
