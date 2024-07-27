@@ -140,6 +140,8 @@ General Editor Actions
 | Clear Pose                   | :kbd:`Shift + K`        | :kbd:`Shift + K`       | ``canvas_item_editor/anim_clear_pose``                 |
 +------------------------------+-------------------------+------------------------+--------------------------------------------------------+
 
+.. _doc_default_key_mapping_shortcuts_spatial_editor:
+
 3D / Spatial Editor
 -------------------
 
