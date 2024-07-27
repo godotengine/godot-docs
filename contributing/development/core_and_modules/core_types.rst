@@ -53,7 +53,7 @@ Segmentation slowly creates holes that are too small for most common
 allocations, so that memory is wasted. There is a lot of literature
 about heap and segmentation, so this topic will not be developed
 further here. Modern operating systems use paged memory, which helps
-mitigate the problem of segmentation, but doesn't solve it.
+mitigate the problem of segmentation but doesn't solve it.
 
 However, in many studies and tests, it is shown that given enough
 memory, if the maximum allocation size is below a given threshold in
