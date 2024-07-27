@@ -482,7 +482,7 @@ Sends the given ``message`` using WebSocket text mode. Prefer this method over :
 
 |void| **set_no_delay**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_WebSocketPeer_method_set_no_delay>`
 
-Disable Nagle's algorithm on the underling TCP socket (default). See :ref:`StreamPeerTCP.set_no_delay<class_StreamPeerTCP_method_set_no_delay>` for more information.
+Disable Nagle's algorithm on the underlying TCP socket (default). See :ref:`StreamPeerTCP.set_no_delay<class_StreamPeerTCP_method_set_no_delay>` for more information.
 
 \ **Note:** Not available in the Web export.
 

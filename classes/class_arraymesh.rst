@@ -197,7 +197,9 @@ Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frus
 - |void| **set_shadow_mesh**\ (\ value\: :ref:`ArrayMesh<class_ArrayMesh>`\ )
 - :ref:`ArrayMesh<class_ArrayMesh>` **get_shadow_mesh**\ (\ )
 
-An optional mesh which is used for rendering shadows and can be used for the depth prepass. Can be used to increase performance of shadow rendering by using a mesh that only contains vertex position data (without normals, UVs, colors, etc.).
+An optional mesh which can be used for rendering shadows and the depth prepass. Can be used to increase performance by supplying a mesh with fused vertices and only vertex position data (without normals, UVs, colors, etc.).
+
+\ **Note:** This mesh must have exactly the same vertex positions as the source mesh (including the source mesh's LODs, if present). If vertex positions differ, then the mesh will not draw correctly.
 
 .. rst-class:: classref-section-separator
 
