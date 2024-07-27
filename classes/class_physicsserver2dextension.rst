@@ -1386,7 +1386,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_state<class_PhysicsServer2
 
 Assigns the ``body`` to call the given ``callable`` during the synchronization phase of the loop, before :ref:`_step<class_PhysicsServer2DExtension_private_method__step>` is called. See also :ref:`_sync<class_PhysicsServer2DExtension_private_method__sync>`.
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_set_state_sync_callback`` method.
+Overridable version of :ref:`PhysicsServer2D.body_set_state_sync_callback<class_PhysicsServer2D_method_body_set_state_sync_callback>`.
 
 .. rst-class:: classref-item-separator
 

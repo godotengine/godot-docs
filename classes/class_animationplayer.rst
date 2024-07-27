@@ -661,7 +661,7 @@ If ``duration`` is a negative value, the duration is set to the interval between
 
 |void| **queue**\ (\ name\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_AnimationPlayer_method_queue>`
 
-Queues an animation for playback once the current one is done.
+Queues an animation for playback once the current animation and all previously queued animations are done.
 
 \ **Note:** If a looped animation is currently playing, the queued animation will never play unless the looped animation is stopped somehow.
 

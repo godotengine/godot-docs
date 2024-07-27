@@ -730,7 +730,7 @@ Returns ``true`` if a node added to the given group ``name`` exists in the tree.
 
 |void| **notify_group**\ (\ group\: :ref:`StringName<class_StringName>`, notification\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SceneTree_method_notify_group>`
 
-Calls :ref:`Object.notification<class_Object_method_notification>` with the given ``notification`` to all nodes inside this tree added to the ``group``. See also :ref:`call_group<class_SceneTree_method_call_group>` and :ref:`set_group<class_SceneTree_method_set_group>`.
+Calls :ref:`Object.notification<class_Object_method_notification>` with the given ``notification`` to all nodes inside this tree added to the ``group``. See also :doc:`Godot notifications <../tutorials/best_practices/godot_notifications>` and :ref:`call_group<class_SceneTree_method_call_group>` and :ref:`set_group<class_SceneTree_method_set_group>`.
 
 \ **Note:** This method acts immediately on all selected nodes at once, which may cause stuttering in some performance-intensive situations.
 

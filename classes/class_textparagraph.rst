@@ -593,7 +593,7 @@ Returns TextServer line buffer RID.
 
 :ref:`Vector2<class_Vector2>` **get_line_size**\ (\ line\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextParagraph_method_get_line_size>`
 
-Returns size of the bounding box of the line of text.
+Returns size of the bounding box of the line of text. Returned size is rounded up.
 
 .. rst-class:: classref-item-separator
 
