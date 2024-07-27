@@ -23,9 +23,9 @@ Desktop or laptop PC - Minimum
 .. which can run up to macOS 10.13.
 
 +----------------------+-----------------------------------------------------------------------------------------+
-| **CPU**              | - **Windows:** x86_32 CPU with SSE2 instructions, or any x86_64 CPU                     |
+| **CPU**              | - **Windows:** x86_32 CPU with SSE2 instructions, x86_64 CPU, ARMv8 CPU                 |
 |                      |                                                                                         |
-|                      |   - *Example: Intel Core 2 Duo E8200, AMD Athlon XE BE-2300*                            |
+|                      |   - *Example: Intel Core 2 Duo E8200, AMD Athlon XE BE-2300, Snapdragon X Elite*        |
 |                      |                                                                                         |
 |                      | - **macOS:** x86_64 or ARM CPU (Apple Silicon)                                          |
 |                      |                                                                                         |
@@ -112,40 +112,40 @@ Godot editor on a simple 2D or 3D project:
 Desktop or laptop PC - Recommended
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------------------+-----------------------------------------------------------------------------------------+
-| **CPU**              | - **Windows:** x86_64 CPU with SSE4.2 instructions, with 4 physical cores or more       |
-|                      |                                                                                         |
-|                      |   - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600*                                    |
-|                      |                                                                                         |
-|                      | - **macOS:** x86_64 or ARM CPU (Apple Silicon)                                          |
-|                      |                                                                                         |
-|                      |   - *Example: Intel Core i5-8500, Apple M1*                                             |
-|                      |                                                                                         |
-|                      | - **Linux:** x86_32 CPU with SSE2 instructions, x86_64 CPU, ARMv7 or ARMv8 CPU          |
-|                      |                                                                                         |
-|                      |   - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600, Raspberry Pi 5 with overclocking*  |
-+----------------------+-----------------------------------------------------------------------------------------+
-| **GPU**              | - **Forward+ rendering method:** Dedicated graphics with full Vulkan 1.2 support        |
-|                      |                                                                                         |
-|                      |   - *Example: NVIDIA GeForce GTX 1050 (Pascal), AMD Radeon RX 460 (GCN 4.0)*            |
-|                      |                                                                                         |
-|                      | - **Mobile rendering method:** Dedicated graphics with full Vulkan 1.2 support          |
-|                      |                                                                                         |
-|                      |   - *Example: NVIDIA GeForce GTX 1050 (Pascal), AMD Radeon RX 460 (GCN 4.0)*            |
-|                      |                                                                                         |
-|                      | - **Compatibility rendering method:** Dedicated graphics with full OpenGL 4.6 support   |
-|                      |                                                                                         |
-|                      |   - *Example: NVIDIA GeForce GTX 650 (Kepler), AMD Radeon HD 7750 (GCN 1.0)*            |
-+----------------------+-----------------------------------------------------------------------------------------+
-| **RAM**              | - **Native editor:** 8 GB                                                               |
-|                      | - **Web editor:** 12 GB                                                                 |
-+----------------------+-----------------------------------------------------------------------------------------+
-| **Storage**          | 1.5 GB (used for the executable, project files, all export templates and cache)         |
-+----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Windows 10, macOS 10.15,                                           |
-|                      |   Linux distribution released after 2020                                                |
-|                      | - **Web editor:** Latest version of Firefox, Chrome, Edge, Safari, Opera                |
-+----------------------+-----------------------------------------------------------------------------------------+
++----------------------+---------------------------------------------------------------------------------------------+
+| **CPU**              | - **Windows:** x86_64 CPU with SSE4.2 instructions, with 4 physical cores or more, ARMv8 CPU|
+|                      |                                                                                             |
+|                      |   - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600, Snapdragon X Elite*                    |
+|                      |                                                                                             |
+|                      | - **macOS:** x86_64 or ARM CPU (Apple Silicon)                                              |
+|                      |                                                                                             |
+|                      |   - *Example: Intel Core i5-8500, Apple M1*                                                 |
+|                      |                                                                                             |
+|                      | - **Linux:** x86_32 CPU with SSE2 instructions, x86_64 CPU, ARMv7 or ARMv8 CPU              |
+|                      |                                                                                             |
+|                      |   - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600, Raspberry Pi 5 with overclocking*      |
++----------------------+---------------------------------------------------------------------------------------------+
+| **GPU**              | - **Forward+ rendering method:** Dedicated graphics with full Vulkan 1.2 support            |
+|                      |                                                                                             |
+|                      |   - *Example: NVIDIA GeForce GTX 1050 (Pascal), AMD Radeon RX 460 (GCN 4.0)*                |
+|                      |                                                                                             |
+|                      | - **Mobile rendering method:** Dedicated graphics with full Vulkan 1.2 support              |
+|                      |                                                                                             |
+|                      |   - *Example: NVIDIA GeForce GTX 1050 (Pascal), AMD Radeon RX 460 (GCN 4.0)*                |
+|                      |                                                                                             |
+|                      | - **Compatibility rendering method:** Dedicated graphics with full OpenGL 4.6 support       |
+|                      |                                                                                             |
+|                      |   - *Example: NVIDIA GeForce GTX 650 (Kepler), AMD Radeon HD 7750 (GCN 1.0)*                |
++----------------------+---------------------------------------------------------------------------------------------+
+| **RAM**              | - **Native editor:** 8 GB                                                                   |
+|                      | - **Web editor:** 12 GB                                                                     |
++----------------------+---------------------------------------------------------------------------------------------+
+| **Storage**          | 1.5 GB (used for the executable, project files, all export templates and cache)             |
++----------------------+---------------------------------------------------------------------------------------------+
+| **Operating system** | - **Native editor:** Windows 10, macOS 10.15,                                               |
+|                      |   Linux distribution released after 2020                                                    |
+|                      | - **Web editor:** Latest version of Firefox, Chrome, Edge, Safari, Opera                    |
++----------------------+---------------------------------------------------------------------------------------------+
 
 Mobile device (smartphone/tablet) - Recommended
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -208,9 +208,9 @@ Desktop or laptop PC - Minimum
 .. which can run up to macOS 10.13.
 
 +----------------------+-----------------------------------------------------------------------------------------+
-| **CPU**              | - **Windows:** x86_32 CPU with SSE2 instructions, or any x86_64 CPU                     |
+| **CPU**              | - **Windows:** x86_32 CPU with SSE2 instructions, any x86_64 CPU, ARMv8 CPU             |
 |                      |                                                                                         |
-|                      |  - *Example: Intel Core 2 Duo E8200, AMD Athlon XE BE-2300*                             |
+|                      |  - *Example: Intel Core 2 Duo E8200, AMD Athlon XE BE-2300, Snapdragon X Elite*         |
 |                      |                                                                                         |
 |                      | - **macOS:** x86_64 or ARM CPU (Apple Silicon)                                          |
 |                      |                                                                                         |
@@ -295,40 +295,40 @@ simple 2D or 3D project exported with Godot:
 Desktop or laptop PC - Recommended
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------------------+-----------------------------------------------------------------------------------------+
-| **CPU**              | - **Windows:** x86_64 CPU with SSE4.2 instructions, with 4 physical cores or more       |
-|                      |                                                                                         |
-|                      |  - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600*                                     |
-|                      |                                                                                         |
-|                      | - **macOS:** x86_64 or ARM CPU (Apple Silicon)                                          |
-|                      |                                                                                         |
-|                      |  - *Example: Intel Core i5-8500, Apple M1*                                              |
-|                      |                                                                                         |
-|                      | - **Linux:** x86_32 CPU with SSE2 instructions, x86_64 CPU, ARMv7 or ARMv8 CPU          |
-|                      |                                                                                         |
-|                      |  - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600, Raspberry Pi 5 with overclocking*   |
-+----------------------+-----------------------------------------------------------------------------------------+
-| **GPU**              | - **Forward+ rendering method:** Dedicated graphics with full Vulkan 1.2 support        |
-|                      |                                                                                         |
-|                      |   - *Example: NVIDIA GeForce GTX 1050 (Pascal), AMD Radeon RX 460 (GCN 4.0)*            |
-|                      |                                                                                         |
-|                      | - **Mobile rendering method:** Dedicated graphics with full Vulkan 1.2 support          |
-|                      |                                                                                         |
-|                      |   - *Example: NVIDIA GeForce GTX 1050 (Pascal), AMD Radeon RX 460 (GCN 4.0)*            |
-|                      |                                                                                         |
-|                      | - **Compatibility rendering method:** Dedicated graphics with full OpenGL 4.6 support   |
-|                      |                                                                                         |
-|                      |   - *Example: NVIDIA GeForce GTX 650 (Kepler), AMD Radeon HD 7750 (GCN 1.0)*            |
-+----------------------+-----------------------------------------------------------------------------------------+
-| **RAM**              | - **For native exports:** 4 GB                                                          |
-|                      | - **For web exports:** 8 GB                                                             |
-+----------------------+-----------------------------------------------------------------------------------------+
-| **Storage**          | 150 MB (used for the executable, project files and cache)                               |
-+----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **For native exports:** Windows 10, macOS 10.15,                                      |
-|                      |   Linux distribution released after 2020                                                |
-|                      | - **For web exports:** Latest version of Firefox, Chrome, Edge, Safari, Opera           |
-+----------------------+-----------------------------------------------------------------------------------------+
++----------------------+---------------------------------------------------------------------------------------------+
+| **CPU**              | - **Windows:** x86_64 CPU with SSE4.2 instructions, with 4 physical cores or more, ARMv8 CPU|
+|                      |                                                                                             |
+|                      |  - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600, Snapdragon X Elite*                     |
+|                      |                                                                                             |
+|                      | - **macOS:** x86_64 or ARM CPU (Apple Silicon)                                              |
+|                      |                                                                                             |
+|                      |  - *Example: Intel Core i5-8500, Apple M1*                                                  |
+|                      |                                                                                             |
+|                      | - **Linux:** x86_32 CPU with SSE2 instructions, x86_64 CPU, ARMv7 or ARMv8 CPU              |
+|                      |                                                                                             |
+|                      |  - *Example: Intel Core i5-6600K, AMD Ryzen 5 1600, Raspberry Pi 5 with overclocking*       |
++----------------------+---------------------------------------------------------------------------------------------+
+| **GPU**              | - **Forward+ rendering method:** Dedicated graphics with full Vulkan 1.2 support            |
+|                      |                                                                                             |
+|                      |   - *Example: NVIDIA GeForce GTX 1050 (Pascal), AMD Radeon RX 460 (GCN 4.0)*                |
+|                      |                                                                                             |
+|                      | - **Mobile rendering method:** Dedicated graphics with full Vulkan 1.2 support              |
+|                      |                                                                                             |
+|                      |   - *Example: NVIDIA GeForce GTX 1050 (Pascal), AMD Radeon RX 460 (GCN 4.0)*                |
+|                      |                                                                                             |
+|                      | - **Compatibility rendering method:** Dedicated graphics with full OpenGL 4.6 support       |
+|                      |                                                                                             |
+|                      |   - *Example: NVIDIA GeForce GTX 650 (Kepler), AMD Radeon HD 7750 (GCN 1.0)*                |
++----------------------+---------------------------------------------------------------------------------------------+
+| **RAM**              | - **For native exports:** 4 GB                                                              |
+|                      | - **For web exports:** 8 GB                                                                 |
++----------------------+---------------------------------------------------------------------------------------------+
+| **Storage**          | 150 MB (used for the executable, project files and cache)                                   |
++----------------------+---------------------------------------------------------------------------------------------+
+| **Operating system** | - **For native exports:** Windows 10, macOS 10.15,                                          |
+|                      |   Linux distribution released after 2020                                                    |
+|                      | - **For web exports:** Latest version of Firefox, Chrome, Edge, Safari, Opera               |
++----------------------+---------------------------------------------------------------------------------------------+
 
 Mobile device (smartphone/tablet) - Recommended
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

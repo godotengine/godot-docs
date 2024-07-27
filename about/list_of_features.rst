@@ -22,7 +22,7 @@ Platforms
 
 **Can run both the editor and exported projects:**
 
-- Windows (x86, 64-bit and 32-bit).
+- Windows (x86 and ARM, 64-bit and 32-bit).
 - macOS (x86 and ARM, 64-bit only).
 - Linux (x86 and ARM, 64-bit and 32-bit).
 
