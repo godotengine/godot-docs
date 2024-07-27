@@ -63,7 +63,7 @@ Object-derived classes can override the static function
 ``static void _bind_methods()``. When one class is registered, this
 static function is called to register all the object methods,
 properties, constants, etc. It's only called once. If an Object derived
-class is instanced, but has not been registered, it will be registered as
+class is instanced but has not been registered, it will be registered as
 virtual automatically.
 
 Inside ``_bind_methods``, there are a couple of things that can be done.

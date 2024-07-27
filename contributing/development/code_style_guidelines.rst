@@ -35,7 +35,7 @@ fine. If you plan to contribute regularly, however, we strongly advise that you
 set up clang-format locally to check and automatically fix all your commits.
 
 .. warning:: Godot's code style should *not* be applied to third-party code,
-             i.e. that is included in Godot's source tree, but was not written
+             i.e. code that is included in Godot's source tree, but was not written
              specifically for our project. Such code usually comes from
              different upstream projects with their own style guides (or lack
              thereof), and don't want to introduce differences that would make
