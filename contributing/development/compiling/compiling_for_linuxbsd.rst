@@ -437,16 +437,53 @@ you may not be able to use system libraries for everything due to bugs in the
 system library packages (or in the build system, as this feature is less
 tested).
 
-To compile Godot with system libraries, install these dependencies *on top* of the ones
+To compile Godot with system libraries, install these dependencies **on top** of the ones
 listed in the :ref:`doc_compiling_for_linuxbsd_oneliners`:
 
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **Fedora**       | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     sudo dnf install embree3-devel enet-devel glslang-devel graphite2-devel harfbuzz-devel libicu-devel \ |
-|                  |         libsquish-devel libtheora-devel libvorbis-devel libwebp-devel libzstd-devel mbedtls-devel \       |
-|                  |         miniupnpc-devel                                                                                   |
-+------------------+-----------------------------------------------------------------------------------------------------------+
+.. tabs::
+
+    .. tab:: Debian/Ubuntu
+
+        ::
+
+            sudo apt-get update
+            sudo apt-get install -y \
+              libembree-dev \
+              libenet-dev \
+              libfreetype-dev \
+              libpng-dev \
+              zlib1g-dev \
+              libgraphite2-dev \
+              libharfbuzz-dev \
+              libogg-dev \
+              libtheora-dev \
+              libvorbis-dev \
+              libwebp-dev \
+              libmbedtls-dev \
+              libminiupnpc-dev \
+              libpcre2-dev \
+              libzstd-dev \
+              libsquish-dev \
+              libicu-dev
+
+    .. tab:: Fedora
+
+        ::
+
+            sudo dnf install -y \
+              embree3-devel \
+              enet-devel \
+              glslang-devel \
+              graphite2-devel \
+              harfbuzz-devel \
+              libicu-devel \
+              libsquish-devel \
+              libtheora-devel \
+              libvorbis-devel \
+              libwebp-devel \
+              libzstd-devel \
+              mbedtls-devel \
+              miniupnpc-devel
 
 After installing all required packages, use the following command to build Godot:
 
@@ -456,6 +493,10 @@ After installing all required packages, use the following command to build Godot
 ::
 
     scons platform=linuxbsd builtin_embree=no builtin_enet=no builtin_freetype=no builtin_graphite=no builtin_harfbuzz=no builtin_libogg=no builtin_libpng=no builtin_libtheora=no builtin_libvorbis=no builtin_libwebp=no builtin_mbedtls=no builtin_miniupnpc=no builtin_pcre2=no builtin_zlib=no builtin_zstd=no
+
+On Debian stable, you will need to remove `builtin_embree=no` as the system-provided
+Embree version is too old to work with Godot's latest `master` branch
+(which requires Embree 4).
 
 You can view a list of all built-in libraries that have system alternatives by
 running ``scons -h``, then looking for options starting with ``builtin_``.
