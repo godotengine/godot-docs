@@ -90,10 +90,10 @@ Setting up the buildsystem
 Building the export templates
 -----------------------------
 
-Godot needs two export templates for Android: the optimized "release"
-template (``android_release.apk``) and the debug template (``android_debug.apk``).
+Godot needs three export templates for Android: the optimized "release"
+template (``android_release.apk``), the debug template (``android_debug.apk``), and the gradle build template (``android_source.zip``).
 As Google requires all APKs to include ARMv8 (64-bit) libraries since August 2019,
-the commands below build an APK containing both ARMv7 and ARMv8 libraries.
+the commands below build templates containing both ARMv7 and ARMv8 libraries.
 
 Compiling the standard export templates is done by calling SCons from the Godot
 root directory with the following arguments:
@@ -105,14 +105,6 @@ root directory with the following arguments:
     scons platform=android target=template_release arch=arm32
     scons platform=android target=template_release arch=arm64 generate_apk=yes
 
-.. note::
-
-    If you are changing the list of architectures you're building, remember to add
-    ``generate_apk=yes`` to the *last* architecture you're building, so that an APK
-    file is generated after the build.
-
-The resulting APK will be located at ``bin/android_release.apk``.
-
 -  Debug template (used when exporting with **Debugging Enabled** checked)
 
 ::
@@ -120,7 +112,25 @@ The resulting APK will be located at ``bin/android_release.apk``.
     scons platform=android target=template_debug arch=arm32
     scons platform=android target=template_debug arch=arm64 generate_apk=yes
 
-The resulting APK will be located at ``bin/android_debug.apk``.
+- (**Optional**) Dev template (used when troubleshooting)
+
+::
+
+    scons platform=android target=template_debug arch=arm32 dev_build=yes
+    scons platform=android target=template_debug arch=arm64 dev_build=yes generate_apk=yes
+
+The resulting templates will be located under the ``bin`` directory:
+
+- ``bin/android_release.apk`` for the release template
+- ``bin/android_debug.apk`` for the debug template
+- ``bin/android_dev.apk`` for the dev template
+- ``bin/android_source.zip`` for the gradle build template
+
+.. note::
+
+   - If you are changing the list of architectures you're building, remember to add ``generate_apk=yes`` to the *last* architecture you're building, so that the template files are generated after the build.
+
+   - To include debug symbols in the generated templates, add the ``debug_symbols=yes`` parameter to the SCons command.
 
 .. seealso::
 
@@ -142,10 +152,10 @@ example, for the release template:
     scons platform=android target=template_release arch=x86_32
     scons platform=android target=template_release arch=x86_64 generate_apk=yes
 
-This will create a fat binary that works on all platforms.
-The final APK size of exported projects will depend on the platforms you choose
+This will create template binaries that works on all platforms.
+The final binary size of exported projects will depend on the platforms you choose
 to support when exporting; in other words, unused platforms will be removed from
-the APK.
+the binary.
 
 Cleaning the generated export templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -164,19 +174,18 @@ You can use the following commands to remove the generated export templates:
 Using the export templates
 --------------------------
 
-Godot needs release and debug APKs that were compiled against the same
+Godot needs release and debug binaries that were compiled against the same
 version/commit as the editor. If you are using official binaries
 for the editor, make sure to install the matching export templates,
 or build your own from the same version.
 
-When exporting your game, Godot opens the APK, changes a few things inside and
-adds your files.
+When exporting your game, Godot uses the templates as a base, and updates their content as needed.
 
 Installing the templates
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The newly-compiled templates (``android_debug.apk``
-and ``android_release.apk``) must be copied to Godot's templates folder
+, ``android_release.apk``, and ``android_source.zip``) must be copied to Godot's templates folder
 with their respective names. The templates folder can be located in:
 
 -  Windows: ``%APPDATA%\Godot\export_templates\<version>\``
@@ -191,7 +200,7 @@ next to your export templates.
 .. TODO: Move these paths to a common reference page
 
 However, if you are writing your custom modules or custom C++ code, you
-might instead want to configure your APKs as custom export templates
+might instead want to configure your template binaries as custom export templates
 here:
 
 .. image:: img/andtemplates.png
@@ -214,16 +223,20 @@ root directory with the following arguments:
    scons platform=android arch=x86_32 production=yes target=editor
    scons platform=android arch=x86_64 production=yes target=editor generate_apk=yes
 
-You can skip certain architectures depending on your target device to speed up
-compilation. Remember to add ``generate_apk=yes`` to the *last* architecture
-you're building, so that an APK file is generated after the build.
+- You can add the ``dev_build=yes`` parameter to generate a dev build of the Godot editor.
 
-The resulting APK will be located at ``bin/android_editor_builds/android_editor-release.apk``.
+- You can add the ``debug_symbols=yes`` parameter to include the debug symbols in the generated build.
 
-Removing the Editor templates
------------------------------
+- You can skip certain architectures depending on your target device to speed up compilation. 
 
-You can use the following commands to remove the generated editor templates:
+Remember to add ``generate_apk=yes`` to the *last* architecture you're building, so that binaries are generated after the build.
+
+The resulting binaries will be located under ``bin/android_editor_builds/``.
+
+Removing the Editor binaries
+----------------------------
+
+You can use the following commands to remove the generated editor binaries:
 
 ::
 
@@ -233,8 +246,8 @@ You can use the following commands to remove the generated editor templates:
    # On Linux and macOS
    ./gradlew clean
 
-Installing the Godot editor
----------------------------
+Installing the Godot editor APK
+-------------------------------
 
 With an Android device with Developer Options enabled, connect the Android device to your computer via its charging cable to a USB/USB-C port.
 Open up a Terminal/Command Prompt and run the following commands from the root directory with the following arguments:
