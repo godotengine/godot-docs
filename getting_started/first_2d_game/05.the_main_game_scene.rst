@@ -181,6 +181,10 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
         GetNode<Timer>("ScoreTimer").Start();
     }
 
+After connecting the ``timeout()`` signal for each Timer nodes, Your scene should look like below (see connection icon next to each node):
+
+.. image:: img/timer_signal.webp
+
 In ``_on_mob_timer_timeout()``, we will create a mob instance, pick a random
 starting location along the ``Path2D``, and set the mob in motion. The
 ``PathFollow2D`` node will automatically rotate as it follows the path, so we
