@@ -193,7 +193,7 @@ For example, the ``skeleton`` property in the MeshInstance3D node called
 Skeleton3D
 ~~~~~~~~~~
 
-The :ref:`class_Skeleton3D` node inherits the Node3D node, but may alsohave a
+The :ref:`class_Skeleton3D` node inherits the Node3D node, but may also have a
 list of bones described in key-value pairs in the format
 ``bones/<id>/<attribute> = value``. The bone attributes consist of:
 
