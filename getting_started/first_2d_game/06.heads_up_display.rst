@@ -273,8 +273,7 @@ with the changing score:
     ``_ready()`` if you haven't already, otherwise
     your game will start automatically.
 
-Now you're ready to play! Click the "Play the Project" button. You will be asked
-to select a main scene, so choose ``main.tscn``.
+Now you're ready to play! Click the "Play the Project" button.
 
 Removing old creeps
 ~~~~~~~~~~~~~~~~~~~
