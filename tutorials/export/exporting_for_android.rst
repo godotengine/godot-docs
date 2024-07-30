@@ -28,7 +28,7 @@ Download the Android SDK
 
 Download and install the Android SDK.
 
-- You can install the Android SDK using `Android Studio Hedgehog (version 2023.1.1) or later <https://developer.android.com/studio/>`__.
+- You can install the Android SDK using `Android Studio Iguana (version 2023.2.1) or later <https://developer.android.com/studio/>`__.
 
   - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
   - Ensure that the `required packages <https://developer.android.com/studio/intro/update#required>`__ are installed as well.
@@ -37,6 +37,9 @@ Download and install the Android SDK.
     - Android SDK Build-Tools version 34.0.0
     - Android SDK Platform 34
     - Android SDK Command-line Tools (latest)
+
+  - Ensure that the `NDK and CMake are installed and configured <https://developer.android.com/studio/projects/install-ndk>`__.
+  
     - CMake version 3.10.2.4988404
     - NDK version r23c (23.2.8568313)
 

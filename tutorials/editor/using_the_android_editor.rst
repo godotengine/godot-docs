@@ -9,7 +9,7 @@ that can be used to work on new or existing projects on Android devices.
 
 .. note::
 
-    The Android editor is in beta testing stage, while we continue to refine the experience,
+    The Android editor is in early access, while we continue to refine the experience,
     and bring it up to parity with the Desktop version of the editor. See :ref:`doc_using_the_android_editor_limitations` below.
 
 Android devices support
@@ -41,7 +41,6 @@ Here are the known limitations and issues of the Android editor:
 - No support for building and exporting an Android APK binary.
   As a workaround, you can generate and export a `Godot PCK or ZIP file <https://docs.godotengine.org/en/stable/tutorials/export/exporting_projects.html#pck-versus-zip-pack-file-formats>`__
 - No support for building and exporting binaries for other platforms
-- Performance and stability issues when using the *Vulkan Mobile* renderer for a project
 - UX not optimized for Android phones form-factor
 - `Android Go devices <https://developer.android.com/guide/topics/androidgo>`__ lacks
   the *All files access* permission required for device read/write access.
