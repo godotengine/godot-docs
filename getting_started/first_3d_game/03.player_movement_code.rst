@@ -418,6 +418,11 @@ character.
 
 |image9|
 
+.. note::
+
+    If your preview image does not look like the screenshots above, try deleting the *Camera3D* node. 
+    And first set the Rotation X ``-45`` for *CameraPivot*, and then repeat the instructions after creating *Camera3D* node.
+
 We can see some empty space around the character due to the perspective
 projection. In this game, we're going to use an orthographic projection instead
 to better frame the gameplay area and make it easier for the player to read
