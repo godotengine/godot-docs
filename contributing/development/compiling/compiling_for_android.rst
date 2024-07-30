@@ -125,7 +125,7 @@ The resulting templates will be located under the ``bin`` directory:
 - ``bin/android_release.apk`` for the release template
 - ``bin/android_debug.apk`` for the debug template
 - ``bin/android_dev.apk`` for the dev template
-- ``bin/android_source.zip`` for the gradle build template
+- ``bin/android_source.zip`` for the Gradle build template
 
 .. note::
 
