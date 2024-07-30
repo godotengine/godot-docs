@@ -132,7 +132,7 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
     when running a project exported to Web on a mobile device.
 
     To check whether a project exported to Web is running on a mobile device,
-    use ``OS.has_feature("web_android") or OS.web_has_feature("web_ios")``.
+    use ``OS.has_feature("web_android") or OS.has_feature("web_ios")``.
 
 Custom features
 ---------------
