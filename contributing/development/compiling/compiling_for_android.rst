@@ -91,7 +91,8 @@ Building the export templates
 -----------------------------
 
 Godot needs three export templates for Android: the optimized "release"
-template (``android_release.apk``), the debug template (``android_debug.apk``), and the gradle build template (``android_source.zip``).
+template (``android_release.apk``), the debug template (``android_debug.apk``),
+and the Gradle build template (``android_source.zip``).
 As Google requires all APKs to include ARMv8 (64-bit) libraries since August 2019,
 the commands below build templates containing both ARMv7 and ARMv8 libraries.
 
