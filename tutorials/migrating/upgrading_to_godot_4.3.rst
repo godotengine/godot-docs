@@ -237,7 +237,7 @@ Core
 .. note::
 
     ``PackedByteArray`` is now able to use a more compact base64 encoding for storage. But the trade-off is that it breaks
-    compatibility, meaning that older versions of Godot may not be able to open resources saved by 4.3. (`GH-89186`_).
+    compatibility, meaning that older versions of Godot may not be able to open resources saved by 4.3 (`GH-89186`_).
 
     To maximize compatibility, this new storage format will only be enabled for resources and scenes that contain large
     PackedByteArrays for now. Support for this new format will also be added in patch updates for older versions of Godot.
@@ -281,7 +281,7 @@ GUI nodes
 
 .. note::
 
-    The default font outline color was changed from white to black. (`GH-54641`_).
+    The default font outline color was changed from white to black (`GH-54641`_).
 
 .. note::
 
@@ -289,6 +289,16 @@ GUI nodes
     The default value for ``auto_translate_mode`` is ``AUTO_TRANSLATE_INHERIT``, which means nodes inherit the ``auto_translate_mode`` value
     from their parent. This means, existing nodes with the ``auto_translate`` property set to ``true`` may no longer be translated if they
     are children of a node with the ``auto_translate`` property set to ``false``.
+
+Multiplayer
+^^^^^^^^^^^
+
+.. note::
+
+    The ``SceneMultiplayer`` caching protocol was changed to send the received ID instead of the Node path when sending a node removal confirmation packet (`GH-90027`_).
+
+    This is a breaking change for the high-level multiplayer protocol making it incompatible with previous Godot versions.
+    Upgrade both your server and client versions to Godot 4.3 to handle this change gracefully.
 
 Rendering
 ^^^^^^^^^
@@ -357,6 +367,7 @@ Android
 .. _GH-89843: https://github.com/godotengine/godot/pull/89843
 .. _GH-89849: https://github.com/godotengine/godot/pull/89849
 .. _GH-89851: https://github.com/godotengine/godot/pull/89851
+.. _GH-90027: https://github.com/godotengine/godot/pull/90027
 .. _GH-90575: https://github.com/godotengine/godot/pull/90575
 .. _GH-90645: https://github.com/godotengine/godot/pull/90645
 .. _GH-90732: https://github.com/godotengine/godot/pull/90732
