@@ -81,6 +81,13 @@ output). You can work this around by changing the debug port used by the project
 in the Editor Settings (**Network > Debug > Remote Port**). The default is
 ``6007``; try another value that is greater than ``1024``, such as ``7007``.
 
+On Windows, when loading the project for the first time after the PC is turned on,
+Windows Defender will cause the filesystem cache validation on project startup
+to take significantly longer. This is especially noticable in projects with a
+large number of files. Consinder adding the project folder to the list of exclusions
+by going to Virus & threat protection > Virus & threat protection settings >
+Add or remove exclusions.
+
 The Godot editor appears frozen after clicking the system console
 -----------------------------------------------------------------
 
