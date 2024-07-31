@@ -33,7 +33,7 @@ material, the material must be attached to each object.
 
 All objects derived from a :ref:`CanvasItem <class_CanvasItem>` have a material
 property. This includes all :ref:`GUI elements <class_Control>`, :ref:`Sprite2Ds
-<class_Sprite2D>`, :ref:`TileMaps <class_Tilemap>`, :ref:`MeshInstance2Ds
+<class_Sprite2D>`, :ref:`TileMapLayers <class_TileMapLayer>`, :ref:`MeshInstance2Ds
 <class_MeshInstance2D>` etc. They also have an option to inherit their parent's
 material. This can be useful if you have a large number of nodes that you want
 to use the same material.

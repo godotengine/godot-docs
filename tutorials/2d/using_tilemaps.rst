@@ -13,7 +13,7 @@ Introduction
 ------------
 
 A tilemap is a grid of tiles used to create a game's layout. There are several
-benefits to using :ref:`TileMap <class_TileMap>` nodes to design your levels.
+benefits to using :ref:`TileMapLayer <class_TileMapLayer>` nodes to design your levels.
 First, they make it possible to draw the layout by "painting" the tiles onto a
 grid, which is much faster than placing individual :ref:`Sprite2D <class_Sprite2D>`
 nodes one by one. Second, they allow for much larger levels because they are
@@ -21,15 +21,15 @@ optimized for drawing large numbers of tiles. Finally, you can add collision,
 occlusion, and navigation shapes to tiles, adding greater functionality to
 the TileMap.
 
-Specifying the TileSet in the TileMap
--------------------------------------
+Specifying the TileSet in the TileMapLayer
+------------------------------------------
 
 If you've followed the previous page on :ref:`doc_using_tilesets`, you should
-have a TileSet resource that is built-in to the TileMap node. This is good for
+have a TileSet resource that is built-in to the TileMapLayer node. This is good for
 prototyping, but in a real world project, you will generally have multiple
 levels reusing the same tileset.
 
-The recommended way to reuse the same TileSet in several TileMap nodes is to save
+The recommended way to reuse the same TileSet in several TileMapLayer nodes is to save
 the TileSet to an external resource. To do so, click the dropdown next to the TileSet
 resource and choose **Save**:
 
@@ -39,48 +39,51 @@ resource and choose **Save**:
 
    Saving the built-in TileSet resource to an external resource file
 
-Creating TileMap layers
------------------------
+Multiple TileMaplayers and settings
+-----------------------------------
 
-As of Godot 4.0, you can place several *layers* in a single TileMap node. For
-example, this allows you to distinguish foreground tiles from background tiles
-for better organization. You can place one tile per layer at a given location,
-which allows you to overlap several tiles together if you have more than one layer.
+When working with tilemaps it's generally advised that you use multiple TileMapLayer
+nodes when appropriate. Using multiple layers can be advantageous, for example,
+this allows you to distinguish foreground tiles from background tiles for better
+organization. You can place one tile per layer at a given location, which allows you
+to overlap several tiles together if you have more than one layer.
 
-By default, a TileMap node automatically has one premade layer. You do not have
-to create additional layers if you only need a single layer, but if you wish to
-do so now, select the TileMap node and unfold the **Layers** section in the
-inspector:
+Each TileMapLayer node has several properties you can adjust:
 
-.. figure:: img/using_tilemaps_create_layers.webp
-   :align: center
-   :alt: Creating layers in a TileMap node (example with "background" and "foreground")
-
-   Creating layers in a TileMap node (example with "background" and "foreground")
-
-Each layer has several properties you can adjust:
-
-- **Name:** A human-readable name to display in the TileMap editor. This can be
-  something like "background", "buildings", "vegetation", etc.
 - **Enabled:** If ``true``, the layer is visible in the editor and when running
   the project.
-- **Modulate:** The color to use as a multiplier for all tiles on the layer.
-  This is also multiplied with the per-tile **Modulate** property and the
-  TileMap node's **Modulate** property. For example, you can use this to darken
-  background tiles to make foreground tiles stand out more.
-- **Y Sort Enabled:** If ``true``, sorts tiles based on their Y position on the
-  TileMap. This can be used to prevent sorting issues with certain tile setups,
-  especially with isometric tiles.
-- **Y Sort Origin:** The vertical offset to use for Y-sorting on each tile (in pixels).
-  Only effective if **Y Sort Enabled** is ``true``.
-- **Z Index:** Controls whether this layer is drawn in front of or behind other
-  TileMap layers. This value can be positive or negative; the layer with the highest Z
-  Index is drawn on top of other layers. If several layers have an equal Z Index
-  property, the layer that is *last* in the list of layers (the one which
-  appears at the bottom in the list) is drawn on top.
+- **TileSet** The tileset used by the TileMapLayer node.
 
-You can reorder layers by drag-and-dropping the "three horizontal bars" icon on
-the left of the entries in the **Layers** section.
+Rendering
+^^^^^^^^^
+
+- **Y Sort Origin:** The vertical offset to use for Y-sorting on each tile (in pixels).
+  Only effective if **Y Sort Enabled** under CanvasItem settings is ``true``.
+- **X Draw Order Reversed** Reverses the order tiles are drawn on the X axis. Requires
+  that **Y Sort Enabled** under CanvasItem settings is ``true``.
+- **Rendering Quadrant Size** A quadrant is a group of tiles drawn together on a single
+  CanvasItem for optimization purposes. This setting defines the length of a square's
+  side in the map's coordinate system. The quadrant size does not apply to a Y sorted
+  TileMapLayer since tiles are grouped by Y position in that case.
+
+Physics
+^^^^^^^
+- **Collision Enabled** Enables or disables collision.
+- **Use Kinematic Bodies** When true TileMapLayer collision shapes will be instantiated
+  as kinematic bodies.
+- **Collision Visibility Mode** Whether or not the TileMapLayer's collision shapes are
+  visible. If set to default, then it depends on the show collision debug settings.
+
+Navigation
+^^^^^^^^^^
+
+- **Navigation Enabled** Whether or not navigation regions are enabled.
+- **Navigation Visible** Whether or not the TileMapLayer's navigation meshes are
+  visible. If set to default then it depends on the show navigation debug settings.
+
+You can reorder layers by drag-and-dropping their node in the Scene tab. You can
+also switch between which TileMapLayer node you're working on by using the buttons
+in the top right corner of the TileMap editor.
 
 .. note::
 
@@ -91,7 +94,7 @@ the left of the entries in the **Layers** section.
 Opening the TileMap editor
 --------------------------
 
-Select the TileMap node, then open the TileMap panel at the bottom
+Select the TileMapLayer node, then open the TileMap panel at the bottom
 of the editor:
 
 .. figure:: img/using_tilemaps_open_tilemap_editor.webp
@@ -386,7 +389,7 @@ Rectangle or Bucket Fill painting modes.
 .. note::
 
     Despite being edited in the TileMap editor, patterns are stored in the
-    TileSet resource. This allows reusing patterns in different TileMap nodes
+    TileSet resource. This allows reusing patterns in different TileMapLayer nodes
     after loading a TileSet resource saved to an external file.
 
 Handling tile connections automatically using terrains
@@ -400,7 +403,7 @@ set for the TileSet yet.
 There are 3 kinds of painting modes available for terrain connections:
 
 - **Connect**, where tiles are connected to surrounding tiles on the same
-  TileMap layer.
+  TileMapLayer.
 - **Path**, where tiles are connected to tiles painted in the same stroke (until
   the mouse button is released).
 - Tile-specific overrides to resolve conflicts or handle situations not covered
@@ -454,5 +457,5 @@ the new tile's appearance.
 
 .. note::
 
-    Missing tile placeholders may not be visible until you select the TileMap
+    Missing tile placeholders may not be visible until you select the TileMapLayer
     node and open the TileMap editor.

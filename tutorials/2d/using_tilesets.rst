@@ -7,16 +7,16 @@ Introduction
 ------------
 
 A tilemap is a grid of tiles used to create a game's layout. There are several
-benefits to using :ref:`TileMap <class_TileMap>` nodes to design your levels.
-First, they let you draw a layout by "painting" tiles onto a grid,
+benefits to using :ref:`TileMapLayer <class_TileMapLayer>` nodes to design your
+levels. First, they let you draw a layout by "painting" tiles onto a grid,
 which is much faster than placing individual :ref:`Sprite2D
 <class_Sprite2D>` nodes one by one. Second, they allow for larger levels
 because they are optimized for drawing large numbers of tiles.
 Finally, they allow you to add greater functionality to your tiles with
 collision, occlusion, and navigation shapes.
 
-To use tilemaps, you will need to create a TileSet first. A TileSet is a
-collection of tiles that can be placed in a TileMap node. After creating a
+To use TileMapLayer nodes, you will need to create a TileSet first. A TileSet is a
+collection of tiles that can be placed in a TileMapLayer node. After creating a
 TileSet, you will be able to place them :ref:`using the TileMap editor
 <doc_using_tilemaps>`.
 
@@ -43,13 +43,13 @@ We'll use this particular *tilesheet* from the set:
 
    Tilesheet with 64×64 tiles. Credit: `Kenney <https://kenney.nl/assets/abstract-platformer>`__
 
-Create a new **TileMap** node, then select it and create a new TileSet resource in the inspector:
+Create a new **TileMapLayer** node, then select it and create a new TileSet resource in the inspector:
 
 .. figure:: img/using_tilesets_create_new_tileset.webp
    :align: center
-   :alt: Creating a new TileSet resource within the TileMap node
+   :alt: Creating a new TileSet resource within the TileMapLayer node
 
-   Creating a new TileSet resource within the TileMap node
+   Creating a new TileSet resource within the TileMapLayer node
 
 After creating the TileSet resource, click the value to unfold it in the
 inspector. The default tile shape is Square, but you can also choose Isometric,
@@ -70,7 +70,7 @@ Set the tile size to 64×64 in the inspector to match the example tilesheet:
 
 If relying on automatic tiles creation (like we're about to do here), you must
 set the tile size **before** creating the *atlas*. The atlas will
-determine which tiles from the tilesheet can be added to a TileMap node
+determine which tiles from the tilesheet can be added to a TileMapLayer node
 (as not every part of the image may be a valid tile).
 
 Open the **TileSet** panel at the bottom of the editor, then click and drag the
@@ -135,7 +135,7 @@ The following properties can be adjusted on the atlas:
   Increasing this can be useful if the tilesheet image you're using contains
   guides (such as outlines between every tile).
 - **Texture Region Size:** The size of each tile on the atlas in pixels. In most
-  cases, this should match the tile size defined in the TileMap property
+  cases, this should match the tile size defined in the TileMapLayer property
   (although this is not strictly necessary).
 - **Use Texture Padding:** If checked, adds a 1-pixel transparent edge around
   each tile to prevent texture bleeding when filtering is enabled.
@@ -174,7 +174,7 @@ sounds), particle effects, and more.
 
 For this example, we'll create a scene containing a CPUParticles2D root node.
 Save this scene to a scene file (separate from the scene containing the
-TileMap), then switch to the scene containing the TileMap node. Open the TileSet
+TileMapLayer), then switch to the scene containing the TileMapLayer node. Open the TileSet
 editor, and create a new **Scenes Collection** in the left column:
 
 .. figure:: img/using_tilesets_creating_scene_collection.webp
@@ -258,7 +258,7 @@ Adding collision, navigation and occlusion to the TileSet
 ---------------------------------------------------------
 
 We've now successfully created a basic TileSet. We could start using in the
-TileMap node now, but it currently lacks any form of collision detection.
+TileMapLayer node now, but it currently lacks any form of collision detection.
 This means the player and other objects could walk straight through the floor or
 walls.
 
@@ -272,31 +272,31 @@ This requires defining occluder polygons for "solid" tiles on the TileSet.
 
 To be able to define collision, navigation and occlusion shapes for each tile,
 you will need to create a physics, navigation or occlusion layer for the TileSet
-resource first. To do so, select the TileMap node, click the TileSet property
+resource first. To do so, select the TileMapLayer node, click the TileSet property
 value in the inspector to edit it then unfold **Physics Layers** and choose
 **Add Element**:
 
 .. figure:: img/using_tilesets_create_physics_layer.webp
    :align: center
-   :alt: Creating a physics layer in the TileSet resource inspector (within the TileMap node)
+   :alt: Creating a physics layer in the TileSet resource inspector (within the TileMapLayer node)
 
-   Creating a physics layer in the TileSet resource inspector (within the TileMap node)
+   Creating a physics layer in the TileSet resource inspector (within the TileMapLayer node)
 
 If you also need navigation support, now is a good time to create a navigation layer:
 
 .. figure:: img/using_tilesets_create_navigation_layer.webp
    :align: center
-   :alt: Creating a navigation layer in the TileSet resource inspector (within the TileMap node)
+   :alt: Creating a navigation layer in the TileSet resource inspector (within the TileMapLayer node)
 
-   Creating a navigation layer in the TileSet resource inspector (within the TileMap node)
+   Creating a navigation layer in the TileSet resource inspector (within the TileMapLayer node)
 
 If you need support for light polygon occluders, now is a good time to create an occlusion layer:
 
 .. figure:: img/using_tilesets_create_occlusion_layer.webp
    :align: center
-   :alt: Creating an occlusion layer in the TileSet resource inspector (within the TileMap node)
+   :alt: Creating an occlusion layer in the TileSet resource inspector (within the TileMapLayer node)
 
-   Creating an occlusion layer in the TileSet resource inspector (within the TileMap node)
+   Creating an occlusion layer in the TileSet resource inspector (within the TileMapLayer node)
 
 .. note::
 
@@ -381,9 +381,9 @@ the custom data for the alternative tile only.
 
 .. figure:: img/using_tilesets_create_custom_data_layer.webp
    :align: center
-   :alt: Creating a custom data layer in the TileSet resource inspector (within the TileMap node)
+   :alt: Creating a custom data layer in the TileSet resource inspector (within the TileMapLayer node)
 
-   Creating a custom data layer in the TileSet resource inspector (within the TileMap node)
+   Creating a custom data layer in the TileSet resource inspector (within the TileMapLayer node)
 
 .. figure:: img/using_tilesets_custom_data_layers_example.webp
    :align: center
@@ -451,13 +451,13 @@ terrains are matched to each other in a terrain set.
     Godot 3.x: 2×2, 3×3 or 3×3 minimal. This is also similar to what
     the `Tiled <https://www.mapeditor.org/>`__ editor features.
 
-Select the TileMap node, go to the inspector and create a new terrain set within the TileSet *resource*:
+Select the TileMapLayer node, go to the inspector and create a new terrain set within the TileSet *resource*:
 
 .. figure:: img/using_tilesets_create_terrain_set.webp
    :align: center
-   :alt: Creating a terrain set in the TileSet resource inspector (within the TileMap node)
+   :alt: Creating a terrain set in the TileSet resource inspector (within the TileMapLayer node)
 
-   Creating a terrain set in the TileSet resource inspector (within the TileMap node)
+   Creating a terrain set in the TileSet resource inspector (within the TileMapLayer node)
 
 After creating a terrain set, you **must** create one or more terrains *within* the terrain set:
 
@@ -643,7 +643,7 @@ properties is different compared to base tiles:
   coordinate (in pixels). This allows using layers as if they were on different
   height for top-down games. Adjusting this can help alleviate issues with
   sorting certain tiles. Only effective if **Y Sort Enabled** is ``true`` on
-  the TileMap layer the tile is placed on.
+  the TileMapLayer node under **CanvasItem > Ordering**
 
 You can create an additional alternative tile variant by clicking the large "+"
 icon next to the alternative tile. This is equivalent to selecting the base tile

@@ -329,7 +329,7 @@ the other :ref:`Node <class_Node>` objects discussed here. One might create
 a :ref:`Sprite2D <class_Sprite2D>` node that uses AnimatedTexture as its texture.
 Or (something the others can't do) one could add AnimatedTextures as tiles
 in a :ref:`TileSet <class_TileSet>` and integrate it with a
-:ref:`TileMap <class_TileMap>` for many auto-animating backgrounds that
+:ref:`TileMapLayer <class_TileMapLayer>` for many auto-animating backgrounds that
 all render in a single batched draw call.
 
 The AnimatedSprite2D node, in combination with the
