@@ -7,7 +7,7 @@ pygments==2.15.1
 
 # Sphinx base and RTD theme.
 sphinx==4.4.0
-sphinx_rtd_theme==1.1.1
+sphinx_rtd_theme==2.0.0
 
 # Sphinx extensions.
 
