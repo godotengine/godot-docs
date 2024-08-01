@@ -555,10 +555,33 @@ For example, here's the `Inter V <https://rsms.me/inter/>`__ font with a
 
 .. tip::
 
-    While variable font axis names and scales aren't standardized, some common
-    conventions are usually followed by font designers. For instance, the
-    *weight* axis typically uses ``400`` as the "regular" font weight and
-    ``700`` as the "bold" font weight.
+    While variable font axis names and scales aren't standardized,
+    some common conventions are usually followed by font designers.
+    The *weight* axis is standardized in OpenType to work as follows:
+
+    +------------+--------------------------------+
+    | Axis value | Effective font weight          |
+    +============+================================+
+    | ``100``    | Thin (Hairline)                |
+    +------------+--------------------------------+
+    | ``200``    | Extra Light (Ultra Light)      |
+    +------------+--------------------------------+
+    | ``300``    | Light                          |
+    +------------+--------------------------------+
+    | ``400``    | **Regular (Normal)**           |
+    +------------+--------------------------------+
+    | ``500``    | Medium                         |
+    +------------+--------------------------------+
+    | ``600``    | Semi-Bold (Demi-Bold)          |
+    +------------+--------------------------------+
+    | ``700``    | **Bold**                       |
+    +------------+--------------------------------+
+    | ``800``    | Extra Bold (Ultra Bold)        |
+    +------------+--------------------------------+
+    | ``900``    | Black (Heavy)                  |
+    +------------+--------------------------------+
+    | ``950``    | Extra Black (Ultra Black)      |
+    +------------+--------------------------------+
 
 You can save the FontVariation to a ``.tres`` resource file to reuse it in other
 places:
