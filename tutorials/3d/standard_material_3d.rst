@@ -457,7 +457,7 @@ Height
 
 Setting a height map on a material produces a ray-marched search to emulate the
 proper displacement of cavities along the view direction. This only creates an
-illusion of depth, and does not add real geometry — for height map shape used
+illusion of depth, and does not add real geometry — for a height map shape used
 for physics collision (such as terrain), see :ref:`class_HeightMapShape3D`. It
 may not work for complex objects, but it produces a realistic depth effect for
 textures. For best results, *Height* should be used together with normal
