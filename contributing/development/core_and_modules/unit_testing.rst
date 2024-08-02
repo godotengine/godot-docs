@@ -152,6 +152,26 @@ common test data for each test, or writing parameterized tests.
 Godot supports writing tests per C++ module. For instructions on how to write
 module tests, refer to :ref:`doc_custom_module_unit_tests`.
 
+Subcases
+~~~~~~~~
+
+In situations where you have a common setup for several test cases with only slight variations, subcases can be very helpful. Here's an example:
+
+.. code-block:: cpp
+
+    TEST_CASE("[SceneTree][Node] Testing node operations with a very simple scene tree") {
+        // ... common setup (e.g. creating a scene tree with a few nodes)
+        SUBCASE("Move node to specific index") {
+            // ... setup and checks for moving a node
+        }
+        SUBCASE("Remove node at specific index") {
+            // ... setup and checks for removing a node
+        }
+    }
+
+Each ``SUBCASE`` causes the ``TEST_CASE`` to be executed from the beginning.
+Subcases can be nested to an arbitrary depth, but it is advised to limit nesting to no more than one level deep.
+
 Assertions
 ~~~~~~~~~~
 
