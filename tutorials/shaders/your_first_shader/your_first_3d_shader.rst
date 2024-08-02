@@ -364,6 +364,10 @@ We can even drag the light around and the lighting will update automatically.
 
 .. image:: img/normalmap2.png
 
+.. note:: The default :ref:`FastNoiseLite <class_fastnoiselite>` implementation in Godot
+          changed in Godot 4. If you want your mesh to look smoother, try lowering
+          the number of Octaves in :ref:`FastNoiseLite <class_fastnoiselite>` of your normal map. 
+
 Here is the full code for this tutorial. You can see it is not very long as
 Godot handles most of the difficult stuff for you.
 
