@@ -1458,7 +1458,7 @@ self
 ^^^^
 
 ``self`` can be used to refer to the current instance and is often equivalent to directly referring to symbols available in
-the current script, however, ``self`` also allows you to access properties, methods, and other names that are defined dynamically
+the current script. However, ``self`` also allows you to access properties, methods, and other names that are defined dynamically
 (i.e. are expected to exist in subtypes of the current class, or are provided using :ref:`_get<class_Object_private_method__get>`).
 
 ::
