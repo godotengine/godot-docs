@@ -8,8 +8,7 @@ importing the start assets and setting up the game scene.
 
 We've prepared a Godot project with the 3D models and sounds we'll use for this
 tutorial, linked in the index page. If you haven't done so yet, you can download
-the archive here: `Squash the Creeps assets
-<https://github.com/godotengine/godot-3d-dodge-the-creeps/releases/tag/1.1.0>`__.
+the archive here: `Squash the Creeps assets <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/3d_squash_the_creeps_starter.zip>`_.
 
 Once you downloaded it, extract the .zip archive on your computer. Open the
 Godot Project Manager and click the *Import* button.
@@ -17,7 +16,7 @@ Godot Project Manager and click the *Import* button.
 .. image:: img/01.game_setup/01.import_button.webp
 
 In the import popup, enter the full path to the freshly created directory
-``squash_the_creeps_start/``. You can click the *Browse* button on the right to
+``3d_squash_the_creeps_starter/``. You can click the *Browse* button on the right to
 open a file browser and navigate to the ``project.godot`` file the folder
 contains.
 
@@ -108,7 +107,7 @@ the viewport.
 We're going to move the ground down so we can see the floor grid. To do this, the grid snapping feature can be used.
 Grid snapping can be activated 2 ways in the 3D editor.
 The first is by pressing the *Use Snap* button (or pressing the :kbd:`Y` key).
-The second is by selecting a node, dragging a handle on the gizmo **then** holding :kbd:`Ctrl` while still clicking to enable snapping as long as :kbd:`Ctrl` is held. 
+The second is by selecting a node, dragging a handle on the gizmo **then** holding :kbd:`Ctrl` while still clicking to enable snapping as long as :kbd:`Ctrl` is held.
 
 .. image:: img/01.game_setup/use_snap.webp
 
