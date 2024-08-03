@@ -29,7 +29,7 @@ You can initialize this interface as follows:
 
     var interface = XRServer.find_interface("Native mobile")
     if interface and interface.initialize():
-        get_viewport().xr = true
+        get_viewport().use_xr = true
 
 .. rst-class:: classref-reftable-group
 

@@ -1771,6 +1771,8 @@ Decodes a **Color** from an RGBE9995 format integer. See :ref:`Image.FORMAT_RGBE
 
 Creates a **Color** from the given string, which can be either an HTML color code or a named color (case-insensitive). Returns ``default`` if the color cannot be inferred from the string.
 
+If you want to create a color from String in a constant expression, use the equivalent constructor instead (i.e. ``Color("color string")``).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1815,6 +1817,8 @@ In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecima
     var my_color = new Color(0xbbefd2a4);
 
 
+
+If you want to use hex notation in a constant expression, use the equivalent constructor instead (i.e. ``Color(0xRRGGBBAA)``).
 
 .. rst-class:: classref-item-separator
 
