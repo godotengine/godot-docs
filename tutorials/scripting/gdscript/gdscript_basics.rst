@@ -185,7 +185,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | as         | Cast the value to a given type if possible.                                                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| self       | Refers to current class instance.                                                                                                                 |
+| self       | See `self`_.                                                                                                                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | super      | Resolves the scope of the parent method. See `Inheritance`_.                                                                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1296,9 +1296,9 @@ Functions
 
 Functions always belong to a `class <Classes_>`_. The scope priority for
 variable look-up is: local → class member → global. The ``self`` variable is
-always available and is provided as an option for accessing class members, but
-is not always required (and should *not* be sent as the function's first
-argument, unlike Python).
+always available and is provided as an option for accessing class members
+(see `self`_), but is not always required (and should *not* be sent as the
+function's first argument, unlike Python).
 
 ::
 
@@ -1499,6 +1499,55 @@ Here are some examples of expressions::
 
 Identifiers, attributes, and subscripts are valid assignment targets. Other expressions cannot be on the left side of
 an assignment.
+
+self
+^^^^
+
+``self`` can be used to refer to the current instance and is often equivalent to directly referring to symbols available in
+the current script. However, ``self`` also allows you to access properties, methods, and other names that are defined dynamically
+(i.e. are expected to exist in subtypes of the current class, or are provided using :ref:`_get<class_Object_private_method__get>`).
+
+::
+
+    class_name Item extends Node
+
+    # Returns the expected size an item will take up in player's inventory (or -1 if it cannot be collected).
+    func get_size() -> int:
+        var size = get(&"size")
+
+        return size if size else -1
+
+    # When player touches an item, collect it if it is collectible (i.e. has a `collect` method).
+    func on_player_touch() -> void:
+        if has_method(&"collect"):
+            # collect() # Would be an error!
+            # self.collect() # An error, too! `self` only bypasses property checks.
+            call(&"collect")
+
+``size`` nor ``collect()`` are defined in the base ``Item`` class, but if they are defined at runtime, our code will
+react appropriately. For example::
+
+    class_name Potion extends Item
+
+    var size := 2
+
+    func collect() -> void:
+        print("Collected a potion!")
+
+If we call ``get_size`` on our ``Potion``, it will return ``2``, and if we (hypothetically) touch the potion with our
+character, we will see "Collected a potion!" in the logs.
+
+.. warning::
+
+    Beware that accessing members of child classes in the base class is often considered a bad practice because this
+    makes the relationships between parts of your game's code harder to reason about. It is easy to forget to define
+    a variable that a base class expected, and more complex dependencies between classes cause the code to be
+    non-self-explanatory.
+
+    The above example isn't ideal too and is exaggerated for illustration purposes. In ``get_size``, instead of querying
+    for the ``size`` property, we could've instead made it return ``-1`` by default in our base class, and then in our
+    potion, we would've overridden it to return ``2``. Same for ``collect()`` - we could've defined it in our base class
+    but made it do nothing by default. Then, the potion subclass would've overridden it to do its own logic.
 
 if/else/elif
 ^^^^^^^^^^^^
