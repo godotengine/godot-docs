@@ -1256,7 +1256,7 @@ If ``deep`` is ``true``, all nested **Array** and :ref:`Dictionary<class_Diction
 
 |void| **sort**\ (\ ) :ref:`🔗<class_Array_method_sort>`
 
-Sorts the array in ascending order. The final order is dependent on the "less than" (``>``) comparison between elements.
+Sorts the array in ascending order. The final order is dependent on the "less than" (``<``) comparison between elements.
 
 
 .. tabs::

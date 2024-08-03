@@ -4155,7 +4155,7 @@ If ``true``, allows scrolling past the end of the file.
 
 :ref:`bool<class_bool>` **text_editor/behavior/navigation/smooth_scrolling** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/smooth_scrolling>`
 
-If ``true``, allows scrolling in sub-line intervals and enables a smooth scrolling animation when using the mouse wheel to scroll.
+If ``true``, enables a smooth scrolling animation when using the mouse wheel to scroll. See :ref:`text_editor/behavior/navigation/v_scroll_speed<class_EditorSettings_property_text_editor/behavior/navigation/v_scroll_speed>` for the speed of this animation.
 
 \ **Note:** :ref:`text_editor/behavior/navigation/smooth_scrolling<class_EditorSettings_property_text_editor/behavior/navigation/smooth_scrolling>` currently behaves poorly in projects where :ref:`ProjectSettings.physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` has been increased significantly from its default value (``60``). In this case, it is recommended to disable this setting.
 
@@ -4205,7 +4205,7 @@ If ``true``, uses the characters in ```!"#$%&'()*+,-./:;<=>?@[\]^`{|}~``, the Un
 
 :ref:`int<class_int>` **text_editor/behavior/navigation/v_scroll_speed** :ref:`🔗<class_EditorSettings_property_text_editor/behavior/navigation/v_scroll_speed>`
 
-The number of pixels to scroll with every mouse wheel increment. Higher values make the script scroll by faster when using the mouse wheel.
+The speed of scrolling in lines per second when :ref:`text_editor/behavior/navigation/smooth_scrolling<class_EditorSettings_property_text_editor/behavior/navigation/smooth_scrolling>` is ``true``. Higher values make the script scroll by faster when using the mouse wheel.
 
 \ **Note:** You can hold down :kbd:`Alt` while using the mouse wheel to temporarily scroll 5 times faster.
 

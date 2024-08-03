@@ -1523,6 +1523,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/rendering_device/driver.windows<class_ProjectSettings_property_rendering/rendering_device/driver.windows>`                                                                                 |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/rendering_device/fallback_to_d3d12<class_ProjectSettings_property_rendering/rendering_device/fallback_to_d3d12>`                                                                           | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/rendering_device/fallback_to_vulkan<class_ProjectSettings_property_rendering/rendering_device/fallback_to_vulkan>`                                                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/rendering_device/pipeline_cache/enable<class_ProjectSettings_property_rendering/rendering_device/pipeline_cache/enable>`                                                                   | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`rendering/rendering_device/pipeline_cache/save_chunk_size_mb<class_ProjectSettings_property_rendering/rendering_device/pipeline_cache/save_chunk_size_mb>`                                           | ``3.0``                                                                                          |
@@ -11197,6 +11201,34 @@ macOS override for :ref:`rendering/rendering_device/driver<class_ProjectSettings
 :ref:`String<class_String>` **rendering/rendering_device/driver.windows** :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver.windows>`
 
 Windows override for :ref:`rendering/rendering_device/driver<class_ProjectSettings_property_rendering/rendering_device/driver>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/rendering_device/fallback_to_d3d12:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/rendering_device/fallback_to_d3d12** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/fallback_to_d3d12>`
+
+If ``true``, the forward renderer will fall back to Direct3D 12 if Vulkan is not supported.
+
+\ **Note:** This setting is implemented only on Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/rendering_device/fallback_to_vulkan:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/rendering_device/fallback_to_vulkan** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/fallback_to_vulkan>`
+
+If ``true``, the forward renderer will fall back to Vulkan if Direct3D 12 is not supported.
+
+\ **Note:** This setting is implemented only on Windows.
 
 .. rst-class:: classref-item-separator
 

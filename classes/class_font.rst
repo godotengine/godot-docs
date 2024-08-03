@@ -501,7 +501,7 @@ To print available variation axes of a variable font:
 ::
 
     var fv = FontVariation.new()
-    fv.set_base_font = load("res://RobotoFlex.ttf")
+    fv.base_font = load("res://RobotoFlex.ttf")
     var variation_list = fv.get_supported_variation_list()
     for tag in variation_list:
         var name = TextServerManager.get_primary_interface().tag_to_name(tag)

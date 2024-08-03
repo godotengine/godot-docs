@@ -29,8 +29,8 @@ To use simulated bold font variant:
  .. code-tab:: gdscript
 
     var fv = FontVariation.new()
-    fv.set_base_font(load("res://BarlowCondensed-Regular.ttf"))
-    fv.set_variation_embolden(1.2)
+    fv.base_font = load("res://BarlowCondensed-Regular.ttf")
+    fv.variation_embolden = 1.2
     $Label.add_theme_font_override("font", fv)
     $Label.add_theme_font_size_override("font_size", 64)
 
