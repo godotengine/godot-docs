@@ -1057,6 +1057,8 @@ Returns the exit code of a spawned process once it has finished running (see :re
 
 Returns ``-1`` if the ``pid`` is not a PID of a spawned child process, the process is still running, or the method is not implemented for the current platform.
 
+\ **Note:** Returns ``-1`` if the ``pid`` is a macOS bundled app process.
+
 \ **Note:** This method is implemented on Android, Linux, macOS and Windows.
 
 .. rst-class:: classref-item-separator
