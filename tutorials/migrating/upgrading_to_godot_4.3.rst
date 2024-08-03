@@ -299,6 +299,8 @@ Multiplayer
 
     This is a breaking change for the high-level multiplayer protocol making it incompatible with previous Godot versions.
     Upgrade both your server and client versions to Godot 4.3 to handle this change gracefully.
+    
+    Note that high-level multiplayer facilities are only ever meant to be compatible with server and client using the same Godot version. It is recommended to implement some kind of version checking.
 
 Rendering
 ^^^^^^^^^
