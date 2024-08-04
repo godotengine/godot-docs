@@ -100,6 +100,8 @@ different ways:
 - Export PCK/ZIP: Export the project resources as a PCK or ZIP package.
   This is not a playable build, it only exports the project data without a Godot executable.
 
+.. _doc_exporting_projects_export_templates:
+
 Export templates
 ~~~~~~~~~~~~~~~~
 
