@@ -149,6 +149,8 @@ and assets to use in your projects.
 .. seealso:: You can learn more about the asset library in
              :ref:`doc_what_is_assetlib`.
 
+.. _doc_intro_to_the_editor_interface_integrated_class_reference:
+
 Integrated class reference
 --------------------------
 

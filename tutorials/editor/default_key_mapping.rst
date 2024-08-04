@@ -246,6 +246,8 @@ Others must be manually bound in the Editor Settings if desired.
 | 4 Viewports                        | :kbd:`Ctrl + 4`       | :kbd:`Cmd + 4`       | ``spatial_editor/4_viewports``                   |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 
+.. _doc_default_key_mapping_shortcuts_text_editor:
+
 Text editor
 -----------
 
