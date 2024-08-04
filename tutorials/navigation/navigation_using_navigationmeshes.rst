@@ -255,6 +255,10 @@ parts so that only the intended chunk size is left.
 
     The baking bounds need to be large enough to include a reasonable amount of source geometry from all the neighboring chunks.
 
+.. warning::
+
+    In 3D the functionality of the border size is limited to the xz-axis.
+
 Navigation mesh baking common problems
 --------------------------------------
 
