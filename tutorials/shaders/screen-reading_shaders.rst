@@ -115,6 +115,14 @@ With correct back-buffer copying, the two spheres blend correctly:
     If you plan to instance a scene that uses a material with ``hint_screen_texture``,
     you will need to use a BackBufferCopy node.
 
+.. note::
+
+    Since :ref:`BackBufferCopy <class_BackBufferCopy>` inherits from :ref:`Node2D<class_Node2D>` 
+    (and not :ref:`Control<class_Control>`), anchors and margins won't apply to child 
+    :ref:`Control<class_Control>`-derived nodes. This can be problematic when resizing the window.
+    To avoid this, add :ref:`Control<class_Control>`-derived nodes as *siblings* to the 
+    **BackBufferCopy** node instead of adding them as children.
+
 In 3D, there is less flexibility to solve this particular issue because the
 screen texture is only captured once. Be careful when using the screen texture
 in 3D as it won't capture transparent objects and may capture some opaque
