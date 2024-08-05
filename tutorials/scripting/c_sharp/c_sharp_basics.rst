@@ -328,7 +328,7 @@ objects, e.g. when trying to change the X coordinate of a ``Node2D``:
 
     public partial class MyNode2D : Node2D
     {
-        public override _Ready()
+        public override void _Ready()
         {
             Position.X = 100.0f;
             // CS1612: Cannot modify the return value of 'Node2D.Position' because
