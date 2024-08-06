@@ -421,7 +421,7 @@ character.
 .. note::
 
     If your preview image does not look like the screenshots above, try deleting the *Camera3D* node. 
-    Set the Rotation X on *CameraPivot* to ``-45`` degrees, then repeat the instructions after creating the *Camera3D* node.
+    Set the X-axis Rotation of *CameraPivot* to ``-45`` degrees, then repeat the instructions after creating the *Camera3D* node.
 
 We can see some empty space around the character due to the perspective
 projection. In this game, we're going to use an orthographic projection instead
