@@ -707,7 +707,7 @@ are constants:
         FIRE,
     }
 
-Write enums with each item on its own line. This allows adding documentation comments abve each item
+Write enums with each item on its own line. This allows adding documentation comments above each item
 more easily, and also makes for cleaner diffs in version control when items are added or removed.
 
 **Good**:
