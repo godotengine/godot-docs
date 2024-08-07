@@ -45,7 +45,7 @@ resizing or stretching the screen. This transform is used internally (as
 described in :ref:`doc_multiple_resolutions`), but can also be manually set
 on each viewport.
 
-Input events are multiplied by this transform but lack the ones above. To
+Input events are multiplied by this transform, but lack the ones above. To
 convert InputEvent coordinates to local CanvasItem coordinates, the
 :ref:`CanvasItem.make_input_local() <class_CanvasItem_method_make_input_local>`
 function was added for convenience.

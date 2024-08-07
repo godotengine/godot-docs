@@ -35,7 +35,7 @@ fine. If you plan to contribute regularly, however, we strongly advise that you
 set up clang-format locally to check and automatically fix all your commits.
 
 .. warning:: Godot's code style should *not* be applied to third-party code,
-             i.e. that is included in Godot's source tree but was not written
+             i.e. code that is included in Godot's source tree, but was not written
              specifically for our project. Such code usually comes from
              different upstream projects with their own style guides (or lack
              thereof), and don't want to introduce differences that would make
@@ -65,7 +65,7 @@ Pre-commit hook
 ^^^^^^^^^^^^^^^
 
 For ease of use, we provide hooks for Git with the `pre-commit <https://pre-commit.com/>`__
-Python framework that will run clang-format automatically on all your commits with the 
+Python framework that will run clang-format automatically on all your commits with the
 correct version of clang-format.
 To set up:
 
@@ -77,7 +77,7 @@ To set up:
 
 You can also run the hook manually with ``pre-commit run``.
 
-.. note:: 
+.. note::
 
     Previously, we supplied a hook in the folder ``misc/hooks``. If you copied the
     script manually, these hooks should still work, but symlinks will be broken.
@@ -382,7 +382,7 @@ instead.
         // ...
     }
 
-For member variables, don't use Javadoc-style comments but use single-line comments instead:
+For member variables, don't use Javadoc-style comments, but use single-line comments instead:
 
 .. code-block:: cpp
 

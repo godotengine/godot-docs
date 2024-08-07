@@ -167,7 +167,7 @@ who design software) to actually understand all future user needs. Trying to
 write very flexible structures that cater to many use cases at once is often a
 mistake.
 
-We may come up with something we believe is brilliant but later find out that
+We may come up with something we believe is brilliant, but later find out that
 users will never even use half of it or that they require features that don't
 quite fit into our original design, forcing us to either throw it away
 or make it even more complex.

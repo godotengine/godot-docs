@@ -160,12 +160,12 @@ at the cost of decreased performance.
     all" settings. To achieve the best visuals, you may need to use different
     shadow bias values on a per-light basis.
 
-**Note on Appearance Changes**: When enabling shadows on a light, be aware that the light's 
-appearance might change compared to when it's rendered without shadows in the compatibility 
-renderer. Due to limitations with older mobile devices, shadows are implemented using a multi-pass 
-rendering approach so lights with shadows are rendered in sRGB space instead of linear space. 
-This change in rendering space can sometimes drastically alter the light's appearance. To achieve a similar 
-appearance to an unshadowed light, you may need to adjust the light's energy setting. 
+**Note on Appearance Changes**: When enabling shadows on a light, be aware that the light's
+appearance might change compared to when it's rendered without shadows in the compatibility
+renderer. Due to limitations with older mobile devices, shadows are implemented using a multi-pass
+rendering approach so lights with shadows are rendered in sRGB space instead of linear space.
+This change in rendering space can sometimes drastically alter the light's appearance. To achieve a similar
+appearance to an unshadowed light, you may need to adjust the light's energy setting.
 
 Directional light
 -----------------
@@ -208,10 +208,10 @@ receive low-resolution shadows that may appear blocky.
 To fix this, a technique named *Parallel Split Shadow Maps* (PSSM) is used.
 This splits the view frustum in 2 or 4 areas. Each area gets its own shadow map.
 This allows small areas close to the viewer to have the same shadow resolution
-as a huge, far-away area. When shadows are enabled for DirectionalLight3D, the 
-default shadow mode is PSSM with 4 splits. In scenarios where an object is large 
-enough to appear in all four splits, it results in increased draw calls. Specifically, 
-such an object will be rendered five times in total: once for each of the four shadow 
+as a huge, far-away area. When shadows are enabled for DirectionalLight3D, the
+default shadow mode is PSSM with 4 splits. In scenarios where an object is large
+enough to appear in all four splits, it results in increased draw calls. Specifically,
+such an object will be rendered five times in total: once for each of the four shadow
 splits and once for the final scene rendering. This can impact performance, understanding
 this behavior is important for optimizing your scene and managing performance expectations.
 
@@ -535,7 +535,7 @@ not use mipmaps, which makes them faster to render. However, projectors will
 look grainy at distance. **Nearest/Linear Mipmaps** will look smoother at a
 distance, but projectors will look blurry when viewed from oblique angles. This
 can be resolved by using **Nearest/Linear Mipmaps Anisotropic**, which is the
-highest-quality mode but also the most expensive.
+highest-quality mode, but also the most expensive.
 
 If your project has a pixel art style, consider setting the filter to one of the
 **Nearest** values so that projectors use nearest-neighbor filtering. Otherwise,

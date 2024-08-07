@@ -89,7 +89,7 @@ and to log in to use it. Once logged in, you can propose change like so:
 
 4. At the bottom of the web page, summarize the changes you made and click the
    button **Propose file change**. Make sure to replace the placeholder "Update file.rst"
-   by a short but clear one-line description, as this is the commit title.
+   by a short, but clear one-line description, as this is the commit title.
 
 5. On the following screens, click the **Create pull request** button until you
    see a message like *Username wants to merge 1 commit into godotengine:master

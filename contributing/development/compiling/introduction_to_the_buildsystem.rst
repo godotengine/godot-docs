@@ -403,7 +403,7 @@ To perform an SCU build, use the ``scu_build=yes`` SCons option.
           regular build prior to submitting the PR. This is because SCU builds
           by nature include headers from earlier ``.cpp`` files in the
           translation unit, therefore won't catch all the includes you will
-          need in a regular build. The CI will catch these errors but it will
+          need in a regular build. The CI will catch these errors, but it will
           usually be faster to catch them on a local build on your machine.
 
 Export templates

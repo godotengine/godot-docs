@@ -499,7 +499,7 @@ own, the effect may not be that noticeable, which is intended.
 Instead, :abbr:`SSIL (Screen-Space Indirect Lighting)` is meant to be used as a
 *complement* to other global illumination techniques such as VoxelGI, SDFGI and
 LightmapGI. :abbr:`SSIL (Screen-Space Indirect Lighting)` also provides
-a subtle ambient occlusion effect, similar to SSAO but with less detail.
+a subtle ambient occlusion effect, similar to SSAO, but with less detail.
 
 This feature only provides indirect lighting. It is not a full global illumination
 solution. This makes it different from screen-space global illumination (SSGI)
