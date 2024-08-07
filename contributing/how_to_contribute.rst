@@ -93,18 +93,18 @@ Community support
 -----------------
 
 - **Call for Moderators**
-  With a community of our size, we need people to step up as volunteer moderators in all kinds of places. 
+  With a community of our size, we need people to step up as volunteer moderators in all kinds of places.
   These teams are organized by the Godot Foundation, but would not function without the dedication of active community members like you.
 
-  Have a look around your favorite community platform and you might come across open application calls. 
+  Have a look around your favorite community platform and you might come across open application calls.
 
 - **Answer tech-support questions**
-  With many new people discovering the Godot Engine recently, the need for peer-to-peer tech-support has never been greater. 
-  Be it on the `Forum <https://forum.godotengine.org/>`_, our `subreddit <https://www.reddit.com/r/godot/>`_, or on `Discord <https://discord.gg/bdcfAYM4W9>`_, you can always brighten someone's day by helping them get their personal projects back on track.
+  With many new people discovering the Godot Engine recently, the need for peer-to-peer tech-support has never been greater.
+  See the `Godot website <https://godotengine.org/community>`_ for a list of official and user-supported Godot communities.
 
 - **Create tutorials & more**
-  How did you get started with the Godot Engine? 
+  How did you get started with the Godot Engine?
   Chances are you looked for learning materials outside of what the documentation provides.
   Without content creators covering the game development process, there would not be this big of a community today.
   Therefore it seemed only right to mention them in a page about important contributions to the project.
-  
+
