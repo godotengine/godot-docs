@@ -46,6 +46,7 @@ below will help you make the most of Godot.
    creating_script_templates
    evaluating_expressions
    change_scenes_manually
+   signals_concise_example
    instancing_with_signals
    pausing_games
    filesystem
