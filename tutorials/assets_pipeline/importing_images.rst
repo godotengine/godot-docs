@@ -97,11 +97,20 @@ It is possible to choose other types of imported resources in the Import dock:
   texture applied onto a 3D surface. Texture3D is similar to a texture array, but
   with interpolation between layers. Texture3D is typically used for
   :ref:`class_FogMaterial` density maps in :ref:`volumetric fog
-  <doc_volumetric_fog>`, :ref:`class_Environment` 3D LUT color correction and
-  custom shaders.
+  <doc_volumetric_fog>`, :ref:`particle attractor <doc_3d_particles_attractors>`
+  vector fields, :ref:`class_Environment` 3D LUT color correction, and custom shaders.
 - **TextureAtlas:** Import the image as an *atlas* of different textures. Can be
   used to reduce memory usage for animated 2D sprites. Only supported in 2D due
   to missing support in built-in 3D shaders.
+
+For **Cubemap**, the expected image order is X+, X-, Y+, Y-, Z+, Z-
+(in Godot's coordinate system, so Y+ is "up" and Z- is "forward").
+Here are templates you can use for cubemap images (right-click > **Save Link As…**):
+
+- :download:`2×3 cubemap template (default layout option) <img/cubemap_template_2x3.webp>`
+- :download:`3×2 cubemap template <img/cubemap_template_3x2.webp>`
+- :download:`1×6 cubemap template <img/cubemap_template_1x6.webp>`
+- :download:`6×1 cubemap template <img/cubemap_template_6x1.webp>`
 
 Detect 3D
 ^^^^^^^^^
