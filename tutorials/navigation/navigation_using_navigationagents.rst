@@ -199,7 +199,7 @@ This script adds basic navigation movement to a :ref:`Node3D <class_Node3D>` wit
         navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 
     func set_movement_target(movement_target: Vector3):
-        navigation_agent.set_target_position(movement_target)
+        navigation_agent.target_position = movement_target
 
     func _physics_process(delta):
         if navigation_agent.is_navigation_finished():
@@ -233,7 +233,7 @@ This script adds basic navigation movement to a :ref:`CharacterBody3D <class_Cha
         navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 
     func set_movement_target(movement_target: Vector3):
-        navigation_agent.set_target_position(movement_target)
+        navigation_agent.target_position = movement_target
 
     func _physics_process(delta):
         if navigation_agent.is_navigation_finished():
@@ -267,7 +267,7 @@ This script adds basic navigation movement to a :ref:`RigidBody3D <class_RigidBo
         navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 
     func set_movement_target(movement_target: Vector3):
-        navigation_agent.set_target_position(movement_target)
+        navigation_agent.target_position = movement_target
 
     func _physics_process(delta):
         if navigation_agent.is_navigation_finished():
