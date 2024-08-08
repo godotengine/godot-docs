@@ -100,7 +100,7 @@ Initializing the network
 High level networking in Godot is managed by the :ref:`SceneTree <class_SceneTree>`.
 
 Each node has a ``multiplayer`` property, which is a reference to the ``MultiplayerAPI`` instance configured for it
-by the scene tree. Initially, every node is configured with the same default ``MultiplayerAPI`` object.
+by the scene tree. Initially, every node is configured with the same default ``SceneMultiplayer`` object, which inherits ``MultiplayerAPI``.
 
 It is possible to create a new ``MultiplayerAPI`` object and assign it to a ``NodePath`` in the the scene tree,
 which will override ``multiplayer`` for the node at that path and all of its descendants.
@@ -186,7 +186,7 @@ call in a specific peer.
     func print_once_per_client():
         print("I will be printed to the console once per each connected client.")
 
-RPCs will not serialize objects or callables.
+RPCs will not serialize objects or callables by default. Set :ref:`SceneMultiplayer.allow_object_decoding<class_SceneMultiplayer_property_allow_object_decoding>` to `true` to change that.
 
 For a remote call to be successful, the sending and receiving node need to have the same ``NodePath``, which means they
 must have the same name. When using ``add_child()`` for nodes which are expected to use RPCs, set the argument
