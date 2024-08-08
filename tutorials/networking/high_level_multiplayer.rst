@@ -186,7 +186,7 @@ call in a specific peer.
     func print_once_per_client():
         print("I will be printed to the console once per each connected client.")
 
-RPCs will not serialize objects or callables by default. Set :ref:`SceneMultiplayer.allow_object_decoding<class_SceneMultiplayer_property_allow_object_decoding>` to `true` to change that.
+RPCs will not serialize objects or callables by default. Set :ref:`SceneMultiplayer.allow_object_decoding<class_SceneMultiplayer_property_allow_object_decoding>` to ``true`` to change that.
 
 For a remote call to be successful, the sending and receiving node need to have the same ``NodePath``, which means they
 must have the same name. When using ``add_child()`` for nodes which are expected to use RPCs, set the argument
