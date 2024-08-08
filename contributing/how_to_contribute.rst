@@ -20,7 +20,7 @@ Fundraising
   With as little as 5 EUR per month, you can help us keep going strong. 
   Currently, we are intending to hire more core developers, as to cover more ground with full-time specialists that supplement and guide volunteer work.
 
-  `Join the Development Fund <fund.godotengine.org>`_
+  `Join the Development Fund <https://fund.godotengine.org>`_
 
 - **Donation Drives**
   Think about your followers on social media, or other communities you are active in.
