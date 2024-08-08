@@ -331,7 +331,7 @@ If you haven't, you can connect a method to the signal that performs additional 
             xr_is_focussed = false
 
             # pause our game
-            process_mode = Node.PROCESS_MODE_DISABLED
+            get_tree().paused = true
 
             emit_signal("focus_lost")
  
@@ -355,7 +355,7 @@ If you haven't, you can connect a method to the signal that performs additional 
                 _xrIsFocused = false;
 
                 // Pause our game
-                ProcessMode = ProcessModeEnum.Disabled;
+                GetTree().Paused = true;
 
                 EmitSignal(SignalName.FocusLost);
             }
@@ -395,7 +395,7 @@ While handling our signal we will update the focusses state, unpause our node an
         xr_is_focussed = true
 
         # unpause our game
-        process_mode = Node.PROCESS_MODE_INHERIT
+        get_tree().paused = false
 
         emit_signal("focus_gained")
 
@@ -414,7 +414,7 @@ While handling our signal we will update the focusses state, unpause our node an
             _xrIsFocused = true;
 
             // Un-pause our game
-            ProcessMode = ProcessModeEnum.Inherit;
+            GetTree().Paused = false;
 
             EmitSignal(SignalName.FocusGained);
         }
