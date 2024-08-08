@@ -83,6 +83,7 @@ Most GLSL ES 3.0 datatypes are supported:
 | **samplerCube**      | Sampler type for binding Cubemaps, which are read as float.                     |
 +----------------------+---------------------------------------------------------------------------------+
 | **samplerCubeArray** | Sampler type for binding Cubemap arrays, which are read as float.               |
+|                      | Only supported in Forward+ and Mobile, not Compatibility.                       |
 +----------------------+---------------------------------------------------------------------------------+
 
 Comments
@@ -927,9 +928,10 @@ table of the corresponding types:
 +----------------------+-------------------------+------------------------------------------------------------+
 | **usampler3D**       | **Texture3D**           |                                                            |
 +----------------------+-------------------------+------------------------------------------------------------+
-| **samplerCube**      | **Cubemap**             |                                                            |
+| **samplerCube**      | **Cubemap**             | See :ref:`doc_importing_images_changing_import_type` for   |
+|                      |                         | instructions on importing cubemaps for use in Godot.       |
 +----------------------+-------------------------+------------------------------------------------------------+
-| **samplerCubeArray** | **CubemapArray**        |                                                            |
+| **samplerCubeArray** | **CubemapArray**        | Only supported in Forward+ and Mobile, not Compatibility.  |
 +----------------------+-------------------------+------------------------------------------------------------+
 
 .. note:: Be careful when setting shader uniforms from GDScript, no error will
