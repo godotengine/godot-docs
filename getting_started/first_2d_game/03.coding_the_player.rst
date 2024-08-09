@@ -374,8 +374,9 @@ be ``RigidBody2D`` nodes, we want the ``body_entered(body: Node2D)`` signal. Thi
 signal will be emitted when a body contacts the player. Click "Connect.." and
 the "Connect a Signal" window appears.
 
-Godot will create a function with that exact name directly in script
-for you. You don't need to change the default settings right now.
+Click the "Connect" button in the "Connect a Signal" window, then Godot will create 
+a function with that exact name directly in script for you. You don't need to change 
+the default settings right now.
 
 .. warning::
 
