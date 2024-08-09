@@ -342,7 +342,7 @@ Therefore, if you specify a type derived from Resource such as:
     public AnimationNode AnimationNode { get; set; }
 
 The drop-down menu will be limited to AnimationNode and all
-its inherited classes. Custom resource classes can also be used,
+its derived classes. Custom resource classes can also be used,
 see :ref:`doc_c_sharp_global_classes`.
 
 It must be noted that even if the script is not being run while in the
