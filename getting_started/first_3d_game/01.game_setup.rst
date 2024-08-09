@@ -23,7 +23,7 @@ contains.
 
 .. image:: img/01.game_setup/02.browse_to_project_folder.webp
 
-Click *Import & Edit* to open the project in the editor.
+Click *Import & Edit* to open the project in the editor. Another window will appear prompting you to update the project. Click *Convert Full Project* and then click *Ok* in the next window.
 
 .. image:: img/01.game_setup/03.import_and_edit.webp
 
