@@ -276,7 +276,8 @@ Example lobby implementation
 This is an example lobby that can handle peers joining and leaving, notify UI scenes through signals, and start the game after all clients
 have loaded the game scene.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Node
 
@@ -388,23 +389,189 @@ have loaded the game scene.
         players.clear()
         server_disconnected.emit()
 
+ .. code-tab:: csharp C#
+    using Godot;
+    using Godot.Collections;
+
+    // This script should setup as an Autoload singleton to ensure it's available in tree (/root/Lobby).
+    // https://docs.godotengine.org/en/stable/tutorials/scripting/singletons_autoload.html
+    public partial class Lobby : Node
+    {
+        // These signals can be connected to by a UI lobby scene or the game scene.
+        [Signal]
+        public delegate void PlayerConnectedEventHandler(int peerId, Godot.Collections.Dictionary<string, string> playerInfo);
+
+        [Signal]
+        public delegate void PlayerDisconnectedEventHandler(int peerId);
+
+        [Signal]
+        public delegate void ServerDisconnectedEventHandler();
+
+        private const int Port = 7000;
+        private const string DefaultServerIP = "127.0.0.1"; // IPv4 localhost
+        private const int MaxConnections = 20;
+
+        // This will contain player info for every player, with the keys being each player's unique IDs.
+        private readonly Godot.Collections.Dictionary<long, Godot.Collections.Dictionary<string, string>> _players = new();
+
+        // This is the local player info. This should be modified locally before the connection is made.
+        // It will be passed to every other peer.
+        // For example, the value of "name" can be set to something the player entered in a UI scene.
+        private readonly Godot.Collections.Dictionary<string, string> _playerInfo = new()
+        {
+            {"name", "Name"}
+        };
+
+        private int _playersLoaded = 0;
+
+        public override void _Ready()
+        {
+            Multiplayer.PeerConnected += OnPlayerConnected;
+            Multiplayer.PeerDisconnected += OnPlayerDisconnected;
+            Multiplayer.ConnectedToServer += OnConnectedOk;
+            Multiplayer.ConnectionFailed += OnConnectedFail;
+            Multiplayer.ServerDisconnected += OnServerDisconnected;
+        }
+
+        public Error JoinGame(string address = "")
+        {
+            if (string.IsNullOrEmpty(address))
+            {
+                address = DefaultServerIP;
+            }
+
+            ENetMultiplayerPeer peer = new();
+            Error error = peer.CreateClient(address, Port);
+            if (error != Error.Ok)
+            {
+                return error;
+            }
+
+            Multiplayer.MultiplayerPeer = peer;
+            return Error.Ok;
+        }
+
+        public Error CreateGame()
+        {
+            ENetMultiplayerPeer peer = new();
+            Error error = peer.CreateServer(Port, MaxConnections);
+            if (error != Error.Ok)
+            {
+                return error;
+            }
+
+            Multiplayer.MultiplayerPeer = peer;
+
+            _players[1] = _playerInfo;
+            EmitSignal(SignalName.PlayerConnected, 1, _playerInfo);
+            return Error.Ok;
+        }
+
+        public void RemoveMultiplayerPeer()
+        {
+            Multiplayer.MultiplayerPeer = null;
+        }
+
+        // When the server decides to start the game from a UI scene, do Lobby.LoadGame.Rpc(filepath)
+        [Rpc(CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+        public void LoadGame(string gameScenePath)
+        {
+            GetTree().ChangeSceneToFile(gameScenePath);
+        }
+
+        // Every peer will call this when they have loaded the game scene.
+        [Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+        public void PlayerLoaded()
+        {
+            if (!Multiplayer.IsServer()) return;
+            _playersLoaded++;
+            if (_playersLoaded == _players.Count)
+            {
+                GetNode<Game>("/root/Game").StartGame();
+                _playersLoaded = 0;
+            }
+        }
+
+        // When a peer connects, send them my player info.
+        // This allows transfer of all desired data for each player, not only the unique ID.
+        private void OnPlayerConnected(long id)
+        {
+            RpcId(id, MethodName.RegisterPlayer, _playerInfo);
+        }
+
+        [Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+        private void RegisterPlayer(Godot.Collections.Dictionary<string, string> newPlayerInfo)
+        {
+            int newPlayerId = Multiplayer.GetRemoteSenderId();
+            _players[newPlayerId] = newPlayerInfo;
+            EmitSignal(SignalName.PlayerConnected, newPlayerId, newPlayerInfo);
+        }
+
+        private void OnPlayerDisconnected(long id)
+        {
+            _players.Remove(id);
+            EmitSignal(SignalName.PlayerDisconnected, id);
+        }
+
+        private void OnConnectedOk()
+        {
+            int peerId = Multiplayer.GetUniqueId();
+            _players[peerId] = _playerInfo;
+            EmitSignal(SignalName.PlayerConnected, peerId, _playerInfo);
+        }
+            
+        private void OnConnectedFail()
+        {
+            Multiplayer.MultiplayerPeer = null;
+        }
+
+        private void OnServerDisconnected()
+        {
+            Multiplayer.MultiplayerPeer = null;
+            EmitSignal(SignalName.ServerDisconnected);
+        }
+    }
+
 The game scene's root node should be named Game. In the script attached to it:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Node3D # Or Node2D.
 
-
-
     func _ready():
         # Preconfigure game.
-
         Lobby.player_loaded.rpc_id(1) # Tell the server that this peer has loaded.
 
 
     # Called only on the server.
     func start_game():
         # All peers are ready to receive RPCs in this scene.
+
+ .. code-tab:: csharp C#
+
+    using Godot;
+
+    public partial class Game : Node3D // Or Node2D
+    {
+        [Export]
+        private PackedScene _mainMenuScene;
+    
+        public override void _Ready()
+        {
+            // Preconfigure game.
+            
+            // Tell the server that this peer has loaded.
+            Error error = GetTree().Root.GetNode<Lobby>("Lobby").RpcId(1, Lobby.MethodName.PlayerLoaded);
+        }
+    
+        // Called only on the server.
+        public void StartGame()
+        {
+            // All peers are ready to receive RPCs in this scene.
+        }
+    }
+
 
 Exporting for dedicated servers
 -------------------------------
