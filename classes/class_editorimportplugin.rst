@@ -120,18 +120,18 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
             };
         }
     
-        public override int _Import(string sourceFile, string savePath, Godot.Collections.Dictionary options, Godot.Collections.Array<string> platformVariants, Godot.Collections.Array<string> genFiles)
+        public override Error _Import(string sourceFile, string savePath, Godot.Collections.Dictionary options, Godot.Collections.Array<string> platformVariants, Godot.Collections.Array<string> genFiles)
         {
             using var file = FileAccess.Open(sourceFile, FileAccess.ModeFlags.Read);
             if (file.GetError() != Error.Ok)
             {
-                return (int)Error.Failed;
+                return Error.Failed;
             }
     
             var mesh = new ArrayMesh();
             // Fill the Mesh with data read in "file", left as an exercise to the reader.
             string filename = $"{savePath}.{_GetSaveExtension()}";
-            return (int)ResourceSaver.Save(mesh, filename);
+            return ResourceSaver.Save(mesh, filename);
         }
     }
 
