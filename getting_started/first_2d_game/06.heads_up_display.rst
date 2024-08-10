@@ -291,7 +291,7 @@ click "Groups" and you can type a new group name and click "Add".
 .. image:: img/group_tab.webp
 
 Now all mobs will be in the "mobs" group. We can then add the following line to
-the ``new_game()`` function in ``Main``:
+the ``game_over()`` function in ``Main``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
