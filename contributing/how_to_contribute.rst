@@ -26,7 +26,7 @@ Fundraising
   Think about your followers on social media, or other communities you are active in.
   Use that reach to remind your social environment that even small contributions can make a difference, especially when done by a great number of people at the same time. 
 
-  Are you a content creator? Consider adding a link to the `Godot Development Fund <fund.godotengine.org>`_ to your descriptions. 
+  Are you a content creator? Consider adding a link to the `Godot Development Fund <https://fund.godotengine.org>`_ to your descriptions. 
   If you do live streams, perhaps think about organizing a stream with donation incentives.
 
 .. - **Buy Official Merch**
