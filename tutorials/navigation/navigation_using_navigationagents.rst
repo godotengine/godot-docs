@@ -28,6 +28,7 @@ The result of the pathfinding can be influenced with the following properties.
 - The ``pathfinding_algorithm`` controls how the pathfinding travels through the navigation mesh polygons in the path search.
 - The ``path_postprocessing`` sets if or how the raw path corridor found by the pathfinding is altered before it is returned.
 - The ``path_metadata_flags`` enable the collection of additional path point meta data returned by the path.
+- The ``simplify_path`` and ``simplify_epsilon`` properties can be used to remove less critical points from the path.
 
 .. warning::
 
