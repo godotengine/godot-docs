@@ -25,7 +25,7 @@ Description
 
 If there is :ref:`AnimationMixer<class_AnimationMixer>`, modification always performs after playback process of the :ref:`AnimationMixer<class_AnimationMixer>`.
 
-This node should be used to implement custom IK solvers, constraints, or skeleton physics
+This node should be used to implement custom IK solvers, constraints, or skeleton physics.
 
 .. rst-class:: classref-reftable-group
 

@@ -137,7 +137,7 @@ Informs the user queued a recenter of the player position.
 
 Informs the user the HMD refresh rate has changed.
 
-\ **Node:** Only emitted if XR runtime supports the refresh rate extension.
+\ **Note:** Only emitted if XR runtime supports the refresh rate extension.
 
 .. rst-class:: classref-item-separator
 

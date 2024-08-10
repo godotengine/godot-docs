@@ -2137,6 +2137,12 @@ Causes the window to grab focus, allowing it to receive user input.
 
 Shows the **Window** and makes it transient (see :ref:`transient<class_Window_property_transient>`). If ``rect`` is provided, it will be set as the **Window**'s size. Fails if called on the main window.
 
+If :ref:`ProjectSettings.display/window/subwindows/embed_subwindows<class_ProjectSettings_property_display/window/subwindows/embed_subwindows>` is ``true`` (single-window mode), ``rect``'s coordinates are global and relative to the main window's top-left corner (excluding window decorations). If ``rect``'s position coordinates are negative, the window will be located outside the main window and may not be visible as a result.
+
+If :ref:`ProjectSettings.display/window/subwindows/embed_subwindows<class_ProjectSettings_property_display/window/subwindows/embed_subwindows>` is ``false`` (multi-window mode), ``rect``'s coordinates are global and relative to the top-left corner of the leftmost screen. If ``rect``'s position coordinates are negative, the window will be placed at the top-left corner of the screen.
+
+\ **Note:** ``rect`` must be in global coordinates if specified.
+
 .. rst-class:: classref-item-separator
 
 ----
