@@ -19,7 +19,7 @@ Helper class for creating and parsing JSON data.
 Description
 -----------
 
-The **JSON** enables all data types to be converted to and from a JSON string. This useful for serializing data to save to a file or send over the network.
+The **JSON** class enables all data types to be converted to and from a JSON string. This is useful for serializing data, e.g. to save to a file or send over the network.
 
 \ :ref:`stringify<class_JSON_method_stringify>` is used to convert any data type into a JSON string.
 
@@ -45,7 +45,7 @@ The **JSON** enables all data types to be converted to and from a JSON string. T
     else:
         print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 
-Alternatively, you can parse string using the static :ref:`parse_string<class_JSON_method_parse_string>` method, but it doesn't allow to handle errors.
+Alternatively, you can parse strings using the static :ref:`parse_string<class_JSON_method_parse_string>` method, but it doesn't handle errors.
 
 ::
 
@@ -156,7 +156,7 @@ Returns an empty string if the last call to :ref:`parse<class_JSON_method_parse>
 
 :ref:`String<class_String>` **get_parsed_text**\ (\ ) |const| :ref:`🔗<class_JSON_method_get_parsed_text>`
 
-Return the text parsed by :ref:`parse<class_JSON_method_parse>` as long as the function is instructed to keep it.
+Return the text parsed by :ref:`parse<class_JSON_method_parse>` (requires passing ``keep_text`` to :ref:`parse<class_JSON_method_parse>`).
 
 .. rst-class:: classref-item-separator
 
@@ -170,7 +170,7 @@ Return the text parsed by :ref:`parse<class_JSON_method_parse>` as long as the f
 
 Attempts to parse the ``json_text`` provided.
 
-Returns an :ref:`Error<enum_@GlobalScope_Error>`. If the parse was successful, it returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` and the result can be retrieved using :ref:`data<class_JSON_property_data>`. If unsuccessful, use :ref:`get_error_line<class_JSON_method_get_error_line>` and :ref:`get_error_message<class_JSON_method_get_error_message>` for identifying the source of the failure.
+Returns an :ref:`Error<enum_@GlobalScope_Error>`. If the parse was successful, it returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` and the result can be retrieved using :ref:`data<class_JSON_property_data>`. If unsuccessful, use :ref:`get_error_line<class_JSON_method_get_error_line>` and :ref:`get_error_message<class_JSON_method_get_error_message>` to identify the source of the failure.
 
 Non-static variant of :ref:`parse_string<class_JSON_method_parse_string>`, if you want custom error handling.
 
@@ -204,7 +204,7 @@ Converts a :ref:`Variant<class_Variant>` var to JSON text and returns the result
 
 \ **Note:** If ``full_precision`` is ``true``, when stringifying floats, the unreliable digits are stringified in addition to the reliable digits to guarantee exact decoding.
 
-The ``indent`` parameter controls if and how something is indented, the string used for this parameter will be used where there should be an indent in the output, even spaces like ``"   "`` will work. ``\t`` and ``\n`` can also be used for a tab indent, or to make a newline for each indent respectively.
+The ``indent`` parameter controls if and how something is indented; its contents will be used where there should be an indent in the output. Even spaces like ``"   "`` will work. ``\t`` and ``\n`` can also be used for a tab indent, or to make a newline for each indent respectively.
 
 \ **Example output:**\ 
 

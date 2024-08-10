@@ -615,8 +615,6 @@ This method is useful for quickly making dictionaries with default values:
     # Prints { "fruit": "apple", "vegetable": "potato", "dressing": "vinegar" }
     print(extra.merged(base, true))
 
-See also :ref:`merge<class_Dictionary_method_merge>`.
-
 .. rst-class:: classref-item-separator
 
 ----
