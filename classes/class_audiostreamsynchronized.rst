@@ -66,7 +66,7 @@ Constants
 
 **MAX_STREAMS** = ``32`` :ref:`🔗<class_AudioStreamSynchronized_constant_MAX_STREAMS>`
 
-Maximum amount of streams that can be synchrohized.
+Maximum amount of streams that can be synchronized.
 
 .. rst-class:: classref-section-separator
 
