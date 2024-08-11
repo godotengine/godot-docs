@@ -968,6 +968,8 @@ The syntax also supports subgroups (it's not mandatory to declare the base group
 
     group_uniforms MyGroup.MySubgroup;
 
+.. _doc_shading_language_global_uniforms:
+
 Global uniforms
 ~~~~~~~~~~~~~~~
 
