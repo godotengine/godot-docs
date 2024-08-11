@@ -230,13 +230,16 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in vec4 **BONE_WEIGHTS**               |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| in vec4 **CUSTOM0**                    |                                                        |
+| in vec4 **CUSTOM0**                    | Custom value from vertex primitive. When using extra   |
+|                                        | UVs, ``xy`` is UV3 and ``zw`` is UV4.                  |
 +----------------------------------------+--------------------------------------------------------+
-| in vec4 **CUSTOM1**                    |                                                        |
+| in vec4 **CUSTOM1**                    | Custom value from vertex primitive. When using extra   |
+|                                        | UVs, ``xy`` is UV5 and ``zw`` is UV6.                  |
 +----------------------------------------+--------------------------------------------------------+
-| in vec4 **CUSTOM2**                    |                                                        |
+| in vec4 **CUSTOM2**                    | Custom value from vertex primitive. When using extra   |
+|                                        | UVs, ``xy`` is UV7 and ``zw`` is UV8.                  |
 +----------------------------------------+--------------------------------------------------------+
-| in vec4 **CUSTOM3**                    |                                                        |
+| in vec4 **CUSTOM3**                    | Custom value from vertex primitive.                    |
 +----------------------------------------+--------------------------------------------------------+
 
 .. note::
