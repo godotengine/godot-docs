@@ -142,144 +142,240 @@ to toggle avoidance. The following code snippets can be used to
 toggle avoidance on agents, create or delete avoidance callbacks or switch avoidance modes.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
 
     extends NavigationAgent2D
 
-    var agent: RID = get_rid()
-    # Enable avoidance
-    NavigationServer2D.agent_set_avoidance_enabled(agent, true)
-    # Create avoidance callback
-    NavigationServer2D.agent_set_avoidance_callback(agent, Callable(self, "_avoidance_done"))
+    func _ready() -> void:
+        var agent: RID = get_rid()
+        # Enable avoidance
+        NavigationServer2D.agent_set_avoidance_enabled(agent, true)
+        # Create avoidance callback
+        NavigationServer2D.agent_set_avoidance_callback(agent, Callable(self, "_avoidance_done"))
 
-    # Disable avoidance
-    NavigationServer2D.agent_set_avoidance_enabled(agent, false)
-    # Delete avoidance callback
-    NavigationServer2D.agent_set_avoidance_callback(agent, Callable())
+        # Disable avoidance
+        NavigationServer2D.agent_set_avoidance_enabled(agent, false)
+        # Delete avoidance callback
+        NavigationServer2D.agent_set_avoidance_callback(agent, Callable())
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 3D GDScript
 
     extends NavigationAgent3D
 
-    var agent: RID = get_rid()
-    # Enable avoidance
-    NavigationServer3D.agent_set_avoidance_enabled(agent, true)
-    # Create avoidance callback
-    NavigationServer3D.agent_set_avoidance_callback(agent, Callable(self, "_avoidance_done"))
-    # Switch to 3D avoidance
-    NavigationServer3D.agent_set_use_3d_avoidance(agent, true)
+    func _ready() -> void:
+        var agent: RID = get_rid()
+        # Enable avoidance
+        NavigationServer3D.agent_set_avoidance_enabled(agent, true)
+        # Create avoidance callback
+        NavigationServer3D.agent_set_avoidance_callback(agent, Callable(self, "_avoidance_done"))
+        # Switch to 3D avoidance
+        NavigationServer3D.agent_set_use_3d_avoidance(agent, true)
 
-    # Disable avoidance
-    NavigationServer3D.agent_set_avoidance_enabled(agent, false)
-    # Delete avoidance callback
-    NavigationServer3D.agent_set_avoidance_callback(agent, Callable())
-    # Switch to 2D avoidance
-    NavigationServer3D.agent_set_use_3d_avoidance(agent, false)
+        # Disable avoidance
+        NavigationServer3D.agent_set_avoidance_enabled(agent, false)
+        # Delete avoidance callback
+        NavigationServer3D.agent_set_avoidance_callback(agent, Callable())
+        # Switch to 2D avoidance
+        NavigationServer3D.agent_set_use_3d_avoidance(agent, false)
+
 
 NavigationAgent Script Templates
 --------------------------------
 
 The following sections provides script templates for nodes commonly used with NavigationAgents.
 
-Actor as Node3D
-~~~~~~~~~~~~~~~
-
-This script adds basic navigation movement to a :ref:`Node3D <class_Node3D>` with a :ref:`NavigationAgent3D <class_NavigationAgent3D>` child node.
-
 .. tabs::
- .. code-tab:: gdscript GDScript
 
-    extends Node3D
+   .. tab:: 2D GDScript
 
-    @export var movement_speed: float = 4.0
-    @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
-    var movement_delta: float
+      .. tabs::
 
-    func _ready() -> void:
-        navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+         .. code-tab:: gdscript Node2D
 
-    func set_movement_target(movement_target: Vector3):
-        navigation_agent.set_target_position(movement_target)
+            extends Node2D
 
-    func _physics_process(delta):
-        if navigation_agent.is_navigation_finished():
-            return
+            @export var movement_speed: float = 4.0
+            @onready var navigation_agent: NavigationAgent2D = get_node("NavigationAgent2D")
+            var movement_delta: float
 
-        movement_delta = movement_speed * delta
-        var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-        var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_delta
-        if navigation_agent.avoidance_enabled:
-            navigation_agent.velocity = new_velocity
-        else:
-            _on_velocity_computed(new_velocity)
+            func _ready() -> void:
+                navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 
-    func _on_velocity_computed(safe_velocity: Vector3) -> void:
-        global_position = global_position.move_toward(global_position + safe_velocity, movement_delta)
+            func set_movement_target(movement_target: Vector2):
+                navigation_agent.set_target_position(movement_target)
 
-Actor as CharacterBody3D
-~~~~~~~~~~~~~~~~~~~~~~~~
+            func _physics_process(delta):
+                # Do not query when the map has never synchronized and is empty.
+                if NavigationServer2D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
+                    return
+                if navigation_agent.is_navigation_finished():
+                    return
 
-This script adds basic navigation movement to a :ref:`CharacterBody3D <class_CharacterBody3D>` with a :ref:`NavigationAgent3D <class_NavigationAgent3D>` child node.
+                movement_delta = movement_speed * delta
+                var next_path_position: Vector2 = navigation_agent.get_next_path_position()
+                var new_velocity: Vector2 = global_position.direction_to(next_path_position) * movement_delta
+                if navigation_agent.avoidance_enabled:
+                    navigation_agent.set_velocity(new_velocity)
+                else:
+                    _on_velocity_computed(new_velocity)
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+            func _on_velocity_computed(safe_velocity: Vector2) -> void:
+                global_position = global_position.move_toward(global_position + safe_velocity, movement_delta)
 
-    extends CharacterBody3D
+         .. code-tab:: gdscript CharacterBody2D
 
-    @export var movement_speed: float = 4.0
-    @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
+            extends CharacterBody2D
 
-    func _ready() -> void:
-        navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+            @export var movement_speed: float = 4.0
+            @onready var navigation_agent: NavigationAgent2D = get_node("NavigationAgent2D")
 
-    func set_movement_target(movement_target: Vector3):
-        navigation_agent.set_target_position(movement_target)
+            func _ready() -> void:
+                navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 
-    func _physics_process(delta):
-        if navigation_agent.is_navigation_finished():
-            return
+            func set_movement_target(movement_target: Vector2):
+                navigation_agent.set_target_position(movement_target)
 
-        var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-        var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
-        if navigation_agent.avoidance_enabled:
-            navigation_agent.velocity = new_velocity
-        else:
-            _on_velocity_computed(new_velocity)
+            func _physics_process(delta):
+                # Do not query when the map has never synchronized and is empty.
+                if NavigationServer2D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
+                    return
+                if navigation_agent.is_navigation_finished():
+                    return
 
-    func _on_velocity_computed(safe_velocity: Vector3):
-        velocity = safe_velocity
-        move_and_slide()
+                var next_path_position: Vector2 = navigation_agent.get_next_path_position()
+                var new_velocity: Vector2 = global_position.direction_to(next_path_position) * movement_speed
+                if navigation_agent.avoidance_enabled:
+                    navigation_agent.set_velocity(new_velocity)
+                else:
+                    _on_velocity_computed(new_velocity)
 
-Actor as RigidBody3D
-~~~~~~~~~~~~~~~~~~~~
+            func _on_velocity_computed(safe_velocity: Vector2):
+                velocity = safe_velocity
+                move_and_slide()
 
-This script adds basic navigation movement to a :ref:`RigidBody3D <class_RigidBody3D>` with a :ref:`NavigationAgent3D <class_NavigationAgent3D>` child node.
+         .. code-tab:: gdscript RigidBody2D
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+            extends RigidBody2D
 
-    extends RigidBody3D
+            @export var movement_speed: float = 4.0
+            @onready var navigation_agent: NavigationAgent2D = get_node("NavigationAgent2D")
 
-    @export var movement_speed: float = 4.0
-    @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
+            func _ready() -> void:
+                navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 
-    func _ready() -> void:
-        navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+            func set_movement_target(movement_target: Vector2):
+                navigation_agent.set_target_position(movement_target)
 
-    func set_movement_target(movement_target: Vector3):
-        navigation_agent.set_target_position(movement_target)
+            func _physics_process(delta):
+                # Do not query when the map has never synchronized and is empty.
+                if NavigationServer2D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
+                    return
+                if navigation_agent.is_navigation_finished():
+                    return
 
-    func _physics_process(delta):
-        if navigation_agent.is_navigation_finished():
-            return
+                var next_path_position: Vector2 = navigation_agent.get_next_path_position()
+                var new_velocity: Vector2 = global_position.direction_to(next_path_position) * movement_speed
+                if navigation_agent.avoidance_enabled:
+                    navigation_agent.set_velocity(new_velocity)
+                else:
+                    _on_velocity_computed(new_velocity)
 
-        var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-        var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
-        if navigation_agent.avoidance_enabled:
-            navigation_agent.velocity = new_velocity
-        else:
-            _on_velocity_computed(new_velocity)
+            func _on_velocity_computed(safe_velocity: Vector2):
+                linear_velocity = safe_velocity
 
-    func _on_velocity_computed(safe_velocity: Vector3):
-        linear_velocity = safe_velocity
+   .. tab:: 3D GDScript
+
+      .. tabs::
+
+         .. code-tab:: gdscript Node3D
+
+            extends Node3D
+
+            @export var movement_speed: float = 4.0
+            @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
+            var movement_delta: float
+
+            func _ready() -> void:
+                navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+
+            func set_movement_target(movement_target: Vector3):
+                navigation_agent.set_target_position(movement_target)
+
+            func _physics_process(delta):
+                # Do not query when the map has never synchronized and is empty.
+                if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
+                    return
+                if navigation_agent.is_navigation_finished():
+                    return
+
+                movement_delta = movement_speed * delta
+                var next_path_position: Vector3 = navigation_agent.get_next_path_position()
+                var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_delta
+                if navigation_agent.avoidance_enabled:
+                    navigation_agent.set_velocity(new_velocity)
+                else:
+                    _on_velocity_computed(new_velocity)
+
+            func _on_velocity_computed(safe_velocity: Vector3) -> void:
+                global_position = global_position.move_toward(global_position + safe_velocity, movement_delta)
+
+         .. code-tab:: gdscript CharacterBody3D
+
+            extends CharacterBody3D
+
+            @export var movement_speed: float = 4.0
+            @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
+
+            func _ready() -> void:
+                navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+
+            func set_movement_target(movement_target: Vector3):
+                navigation_agent.set_target_position(movement_target)
+
+            func _physics_process(delta):
+                # Do not query when the map has never synchronized and is empty.
+                if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
+                    return
+                if navigation_agent.is_navigation_finished():
+                    return
+
+                var next_path_position: Vector3 = navigation_agent.get_next_path_position()
+                var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
+                if navigation_agent.avoidance_enabled:
+                    navigation_agent.set_velocity(new_velocity)
+                else:
+                    _on_velocity_computed(new_velocity)
+
+            func _on_velocity_computed(safe_velocity: Vector3):
+                velocity = safe_velocity
+                move_and_slide()
+
+         .. code-tab:: gdscript RigidBody3D
+
+            extends RigidBody3D
+
+            @export var movement_speed: float = 4.0
+            @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
+
+            func _ready() -> void:
+                navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+
+            func set_movement_target(movement_target: Vector3):
+                navigation_agent.set_target_position(movement_target)
+
+            func _physics_process(delta):
+                # Do not query when the map has never synchronized and is empty.
+                if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
+                    return
+                if navigation_agent.is_navigation_finished():
+                    return
+
+                var next_path_position: Vector3 = navigation_agent.get_next_path_position()
+                var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
+                if navigation_agent.avoidance_enabled:
+                    navigation_agent.set_velocity(new_velocity)
+                else:
+                    _on_velocity_computed(new_velocity)
+
+            func _on_velocity_computed(safe_velocity: Vector3):
+                linear_velocity = safe_velocity
