@@ -81,6 +81,15 @@ Navigation
 - **Navigation Visible** Whether or not the TileMapLayer's navigation meshes are
   visible. If set to default then it depends on the show navigation debug settings.
 
+.. tip::
+
+    TileMap built-in navigation has many practical limitations that result in inferior pathfinding performance and pathfollowing quality.
+
+    After designing the TileMap consider baking it to a more optimized navigation mesh (and disabling the TileMap NavigationLayer) using a :ref:`NavigationRegion2D <class_NavigationRegion2D>` or the :ref:`NavigationServer2D <class_NavigationServer2D>`. See :ref:`doc_navigation_using_navigationmeshes` for additional information.
+
+.. warning::
+    2D navigation meshes can not be "layered" or stacked on top of each other like visuals or physic shapes. Attempting to stack navigation meshes on the same navigation map will result in merge and logical errors that break the pathfinding.
+
 You can reorder layers by drag-and-dropping their node in the Scene tab. You can
 also switch between which TileMapLayer node you're working on by using the buttons
 in the top right corner of the TileMap editor.
