@@ -245,6 +245,9 @@ available in the ``PATH``:
 
  .. code-tab:: sh Windows
 
+    # Add "Extras" bucket
+    scoop bucket add extras
+
     # Standard editor:
     scoop install godot
 
