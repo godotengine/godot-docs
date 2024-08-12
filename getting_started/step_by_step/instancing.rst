@@ -58,6 +58,9 @@ Finally, click the Import & Edit button.
 
 .. image:: img/instancing_import_and_edit_button.webp
 
+A window notifying you that the project was last opened in an older Godot version
+may appear, that's not an issue. Click *Ok* to open the project.
+
 The project contains two packed scenes: ``main.tscn``, containing walls against
 which the ball collides, and ``ball.tscn``. The Main scene should open
 automatically. If you're seeing an empty 3D scene instead of the main scene, click the 2D button at the top of the screen.

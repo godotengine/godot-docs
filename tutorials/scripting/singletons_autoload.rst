@@ -132,6 +132,9 @@ To begin, download the template from here:
 `singleton_autoload_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/singleton_autoload_starter.zip>`_
 and open it in Godot.
 
+A window notifying you that the project was last opened in an older Godot version
+may appear, that's not an issue. Click *Ok* to open the project.
+
 The project contains two scenes: ``scene_1.tscn`` and ``scene_2.tscn``. Each
 scene contains a label displaying the scene name and a button with its
 ``pressed()`` signal connected. When you run the project, it starts in
