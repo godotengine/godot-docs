@@ -44,7 +44,6 @@ Finally, the pages below cover customization options provided by Godot's editor:
    project_settings
    default_key_mapping
    customizing_editor
-   class_EditorSettings
 
 XR editor
 ---------

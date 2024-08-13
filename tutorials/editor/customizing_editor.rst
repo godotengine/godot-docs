@@ -21,19 +21,49 @@ vertically:
 
    Resizing a dock in the editor
 
-Click the "3 vertical dots" icon at the top of any dock to change its location,
-or split it to a separate window by choosing **Make Floating** in the submenu that appears:
+Click the "3 vertical dots" icon at the top of any dock to open a window to change its 
+location or split it to a separate window:
 
 .. figure:: img/editor_ui_move_dock.webp
    :align: center
-   :alt: Moving a dock in the editor
+   :alt: Moving dock menu
 
-   Moving a dock in the editor
+   Moving dock menu
+   
+You'll then see the following dialog:
 
+.. figure:: img/editor_ui_dock_position.webp
+   :align: center
+   :alt: Dock positioning settings
+
+   Dock positioning settings
+
+In this window, the vertical rectangles show where the docks can be placed in 
+the Godot's Editor. Currently, you can place docks in one of the eight possible dock locations
+at the edges and corners.
+
+The highlighted vertical rectangles mean that they are currently visible in the editor.
+The small horizontal rectangles above the vertical rectangles show how many docks are placed in
+that position. The current dock's position is shown as white.
+
+In the figure above, you can see that the selected dock is placed in the second column
+on the top left, and is the first dock visible in that location, which has two docks in total.
+
+Using the left and right arrows next to the `Dock Position`, you can change the current dock's 
+positioning in the same location.
+You can also click on a visible or non-visible dock location to move the dock to another place.
+
+You can split a dock by choosing **Make Floating** in this popup window.
 To move a floating dock back to the editor window, close the dock window using
 the **×** button in the top-right corner of the window (or in the top-left
 corner on macOS). Alternatively, you can press :kbd:`Alt + F4` while the split
 window is focused.
+
+You can also close a dock by selecting **Close** from this dialog. Closed docks can be displayed
+again using the `Editor > Editor Docks` menu and selecting the dock that you'd like to display.
+
+.. seealso:: If you'd like to have different layouts saved to recall later, consider reading
+  :ref:`doc_customizing_editor_editor_layouts`.
 
 .. This page lacks information about:
 
@@ -77,6 +107,8 @@ editor window), close the split window using the **×** button in the top-right
 corner of the window (or in the top-left corner on macOS). Alternatively, you
 can press :kbd:`Alt + F4` while the split window is focused.
 
+.. _doc_customizing_editor_editor_layouts:
+
 Customizing editor layouts
 --------------------------
 
@@ -101,18 +133,18 @@ following changes are persisted to the saved layout:
     Splitting the script or shader editor to its own window is *not* persisted
     as part of a layout.
 
-After making changes, open the **Editor** menu at the top of the editor then
-choose **Editor Layouts > Save**. Enter a name for the layout, then click
-**Save**. If you've already saved an editor layout, you can choose to override
+After making changes, open the `Editor` menu at the top of the editor then
+choose `Editor Layouts > Save`. Enter a name for the layout, then click
+`Save`. If you've already saved an editor layout, you can choose to override
 an existing layout using the list.
 
-After making changes, open the **Editor** menu at the top of the editor then
-choose **Editor Layouts**. In the dropdown list, you will see a list of saved
-editor layouts, plus **Default** which is a hardcoded editor layout that can't
+After making changes, open the `Editor` menu at the top of the editor then
+choose `Editor Layouts`. In the dropdown list, you will see a list of saved
+editor layouts, plus `Default` which is a hardcoded editor layout that can't
 be removed. The default layout matches a fresh Godot installation with no
 changes made to the docks' position and size, and no floating docks.
 
-You can remove a layout using the **Delete** option in the **Editor Layouts**
+You can remove a layout using the `Delete` option in the `Editor Layouts`
 dropdown.
 
 .. tip::
@@ -132,8 +164,8 @@ the configuration path of the :ref:`doc_data_paths_editor_data_paths`.
 Customizing editor settings
 ---------------------------
 
-In the **Editor** menu at the top of the editor, you can find an **Editor
-Settings** option. This opens a window similar to the Project Settings, but with
+In the `Editor` menu at the top of the editor, you can find an `Editor
+Settings` option. This opens a window similar to the Project Settings, but with
 settings used by the editor. These settings are shared across all projects and
 are not saved in the project files.
 
