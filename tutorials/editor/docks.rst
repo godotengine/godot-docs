@@ -13,6 +13,10 @@ Their usage is covered in their respective pages.
    :name: toc-editor-docks
 
    inspector_dock
+   import_dock
+   filesystem_dock
+   node_dock
+   history_dock
 
 - Scene Tree Dock
 - Import Dock
