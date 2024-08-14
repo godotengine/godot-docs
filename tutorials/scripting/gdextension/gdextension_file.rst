@@ -1,4 +1,4 @@
-.. _doc_gdextension_file_sections:
+.. _doc_gdextension_file:
 
 The .gdextension file
 =====================
