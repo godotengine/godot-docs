@@ -30,83 +30,12 @@ You can find these options in the **Debug** editor menu.
 
 .. image:: img/overview_debug.webp
 
-Here are the descriptions of the options:
+Read more about all available options in the :ref:`doc_main_menus_debug` menu's documentation page.
 
-Deploy with Remote Debug
-++++++++++++++++++++++++
+.. _doc_overview_of_debugging_tools_run_instances:
 
-When this option is enabled, using one-click deploy will make the executable
-attempt to connect to this computer's IP so the running project can be debugged.
-This option is intended to be used for remote debugging (typically with a mobile
-device).
-You don't need to enable it to use the GDScript debugger locally.
-
-Small Deploy with Network Filesystem
-++++++++++++++++++++++++++++++++++++
-
-This option speeds up testing for games with a large footprint on remote devices.
-
-When **Small Deploy with Network Filesystem** is on, instead of exporting the
-full game, deploying the game builds a minimal executable. The editor then
-provides files from the project over the network.
-
-Also, on Android, the game is deployed using the USB cable to speed up
-deployment.
-
-Visible Collision Shapes
-++++++++++++++++++++++++
-
-When this option is enabled, collision shapes and raycast nodes (for 2D and 3D)
-will be visible in the running project.
-
-Visible Paths
-+++++++++++++
-
-When this option is enabled, curve resources used by path nodes will be visible
-in the running project.
-
-Visible Navigation
-++++++++++++++++++
-
-When this option is enabled, navigation meshes, and polygons will be visible in
-the running project.
-
-Visible Avoidance
-+++++++++++++++++
-
-When this option is enabled, avoidance object shapes, radiuses, and velocities
-will be visible in the running project.
-
-Debug CanvasItem Redraws
-++++++++++++++++++++++++
-
-When this option is enabled, redraw requests of 2D objects will become visible
-(as a short flash) in the running project.
-This is useful to troubleshoot low processor mode.
-
-Synchronize Scene Changes
-++++++++++++++++++++++++++
-
-When this option is enabled, any changes made to the scene in the editor will be
-replicated in the running project.
-When used remotely on a device, this is more efficient when the network
-filesystem option is enabled.
-
-Synchronize Script Changes
-+++++++++++++++++++++++++++
-
-When this option is enabled, any changes made to the script in the editor will
-be reloaded in the running project. When used
-remotely on a device, this is more efficient with the network filesystem.
-
-Keep Debug Server Open
-++++++++++++++++++++++
-
-When this option is enabled, the editor debug server will stay open and listen
-for new sessions started outside of the editor itself.
-
-Customize Run Instances...
-++++++++++++++++++++++++++
+Customize Run Instances
+-----------------------
 
 This opens a dialog allowing you to tell Godot to run multiple instances of the
 game at once, and to specify the command line arguments for each instance. This
@@ -115,7 +44,7 @@ is especially useful when building and debugging multiplayer games.
 .. image:: img/customize_run_instances.webp
 
 Enable Multiple Instances
-^^^^^^^^^^^^^^^^^^^^^^^^^
++++++++++++++++++++++++++
 
 When this option is enabled, the editor will run multiple instances of the
 project at once when you Run Project.
@@ -126,7 +55,7 @@ Checking the box and setting this to only 1 is the same as not checking this box
 at all.
 
 Main Run Args
-^^^^^^^^^^^^^
++++++++++++++
 
 These are the arguments that will be passed to **every** instance of the project
 when you Run Project, unless you select "Enabled" under "Override Main Run Args"
@@ -145,33 +74,33 @@ Note that these arguments are space-separated.
     passed when you Run Project.
 
 Main Feature Tags
-^^^^^^^^^^^^^^^^^
++++++++++++++++++
 
 These are the feature tags that will be passed to **every** instance of the
 project when you Run Project, unless you select "Enabled" under "Override Main
 Tags" for a specific instance.
 
 Override Main Run Args
-^^^^^^^^^^^^^^^^^^^^^^
+++++++++++++++++++++++
 
 When this is enabled, the arguments in the "Main Run Args" field will **not be
 passed** to this specific instance of the project when you Run Project.
 
 Launch Arguments
-^^^^^^^^^^^^^^^^
+++++++++++++++++
 
 These are the arguments that will be passed to this specific instance of the
 project when you Run Project. They will be **combined with** the "Main Run Args"
 unless you select "Enabled" under "Override Main Run Args".
 
 Override Main Tags
-^^^^^^^^^^^^^^^^^^
+++++++++++++++++++
 
 When this is enabled, the tags in the "Main Feature Tags" field will **not be
 passed** to this specific instance of the project when you Run Project.
 
 Feature Tags
-^^^^^^^^^^^^
+++++++++++++
 
 These are the feature tags that will be passed to this specific instance of the
 project when you Run Project. They will be **combined with** the "Main Feature
@@ -191,6 +120,8 @@ Tags" unless you select "Enabled" under "Override Main Tags".
     `one two three -- four five six`. This is because the `--` is repeated in
     the "Launch Arguments".
 
+.. seealso:: Check out the :ref:`doc_feature_tags` page for a detailed guide on the 
+  feature tags.
 
 .. _doc_debugger_tools_and_options:
 

@@ -11,8 +11,10 @@ The root folder is the :ref:`res:// <doc_filesystem>` folder.
 
 The "<" and ">" arrows navigate between the previous and next selected file in the view history.
 The text field next to the arrows shows the relative path to the selected file or folder.
-The button next to this field switches through the look of the contents. The square shows 
-the resources in tree view, which the files and folders share the same location. 
+Below this field is the location of all files and folders in the project.
+
+The button next to the relative path field switches through the look of the contents. 
+The square shows the resources in tree view, which the files and folders share the same location. 
 Clicking on this button changes the split mode of the folders and files.
 Clicking once lists the folders above and the subfolders or the files inside
 the folders below. Clicking it again moves the folders to the left, and the subfolders and 
@@ -24,6 +26,13 @@ You can sort the contents by name, type, or modification time, in ascending or d
 
 If using a split mode, you can also change the look of thumbnails in the files section, by pressing
 the button next to the sort button.
+
+The blue ``.tscn`` file (Scene File) in the file list means that this scene is the main scene
+if the project.
+You can right click on any other scene files and choose "Set As Main Scene" to change it.
+This can also later be changed via navigating to `Project > Project Settings > Run`.
+You can also `instantiate` the scene or create a new scene by `inheriting` it using the context
+menu on the scene files.
 
 Hovering over a file gives information on the file size and the type.
 Right-clicking on a folder or a file provides a set of options such as renaming, deleting, moving,

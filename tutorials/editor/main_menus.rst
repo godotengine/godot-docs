@@ -73,10 +73,12 @@ This menu provides project-related items:
   - **Engine Compilation Configuration Profile**: Lets you configure the Godot Engine's 
     features to export while compiling your project to reduce the binary size.
   - **Upgrade Mesh Surfaces**: Upgrades the meshes used in the project if they are 
-    created or imported prior to Godot 4.2. Choosing will show a confirmation dialog 
+    created or imported prior to Godot 4.2. Choosing it will show a confirmation dialog 
     with an information without performing any actions.
   - **C#**: If you are using Mono version of Godot, an additional menu will provide
     an option to `Create a C# Solution`.
+  - **Download Project Source**: (This option will only be available in Web version).
+    Allows you to download the project as a ZIP file packing all resources in it.
 
 - **Reload Current Project**: This action reloads the current project, prompting the user 
   to discard or save any changes made in the project. The project will be reopened exactly 
@@ -120,7 +122,9 @@ Below, a brief description of each item is given:
   an external editor to debug.
 - **Customize Run Instances**: Allows you to create run configurations by specifying custom launch 
   arguments or feature tags for your game, for example, if you want to test the demo version of your 
-  game, simply by specifying a feature, and checking it in your game.
+  game, simply specify it as a feature, and check it in your game. This is also useful while debugging
+  multiplayer games. Read :ref:`doc_overview_of_debugging_tools_run_instances` for more on
+  this.
 
 .. note:: To learn more on Debugging, read the :ref:`Debug <toc-learn-features-debug>` section.
 
