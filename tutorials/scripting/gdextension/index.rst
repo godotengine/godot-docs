@@ -10,4 +10,4 @@ GDExtension
    what_is_gdextension
    gdextension_cpp_example
    gdextension_file
-   gdextension_docs_generation
+   gdextension_docs_system
