@@ -15,7 +15,12 @@ properties, fold and unfold areas, use the search bar, and more.
 Usage
 -----
 
-At the top are the file and navigation buttons.
+If the inspector dock is visible, clicking on a node in the scene tree will automatically
+display its properties.
+If it is not visible, you can show it by navigating to
+`Editor > Editor Settings > Editor Docks > Inspector`.
+
+At the top of the dock are the file and navigation buttons.
 
 .. image:: img/inspector_top_buttons.webp
 
@@ -66,6 +71,16 @@ it does as well as how it can be called inside the script.
 You can directly change the values by clicking, typing, or selecting from the menu.
 If the property is a number or a slider, you can keep your left mouse button 
 pressed and drag to change the values.
+
+.. image:: img/inspector_dock_subresource.webp
+
+If a node's property is a sub-resource, you can click on the down arrow to pick a 
+resource type, or load one using the "Quick Load" or "Load" options.
+Alternatively, a supported resource can be dragged from the :ref:`doc_filesystem_dock`.
+Once you start dragging, the compatible property will be highlighted.
+Simply drop it on the appropriate property's value.
+
+After loading a sub-resource, you can click on it to see its properties or adjust them.
 
 .. |undo| image:: img/inspector_dock_revert.webp
 

@@ -35,6 +35,10 @@ You can also `instantiate` the scene or create a new scene by `inheriting` it us
 menu on the scene files.
 
 Hovering over a file gives information on the file size and the type.
+Some resources can be dragged and dropped onto the 2D or 3D viewport if they are supported.
+If a resource is accepted as a sub-resource, you can also drag it onto a sub-resource section 
+inside the :ref:`doc_inspector_dock`.
+
 Right-clicking on a folder or a file provides a set of options such as renaming, deleting, moving,
 or duplicating.
 
