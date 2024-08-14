@@ -35,7 +35,13 @@ Global built-ins are available everywhere, including in custom functions.
 +---------------------------------+-----------------------------------------------------------------------------------------+
 | Built-in                        | Description                                                                             |
 +=================================+=========================================================================================+
-| in float **TIME**               | Global time, in seconds.                                                                |
+| in float **TIME**               | Global time since the engine has started, in seconds. It repeats after every 3,600      |
+|                                 | seconds (which can  be changed with the                                                 |
+|                                 | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`|
+|                                 | setting). It's not affected by :ref:`time_scale<class_Engine_property_time_scale>` or   |
+|                                 | pausing. If you need  a ``TIME`` variable that can be scaled or paused, add your own    |
+|                                 | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each   |
+|                                 | frame.                                                                                  | 
 +---------------------------------+-----------------------------------------------------------------------------------------+
 | in float **PI**                 | A ``PI`` constant (``3.141592``).                                                       |
 |                                 | A ratio of a circle's circumference to its diameter and amount of radians in half turn. |
