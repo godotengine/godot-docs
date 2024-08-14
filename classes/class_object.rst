@@ -695,7 +695,7 @@ Override this method to customize existing properties. Every property info goes 
     
         public override void _ValidateProperty(Godot.Collections.Dictionary property)
         {
-            if (property["name"].AsStringName() == PropertyName.Number && IsNumberEditable)
+            if (property["name"].AsStringName() == PropertyName.Number && !IsNumberEditable)
             {
                 var usage = property["usage"].As<PropertyUsageFlags>() | PropertyUsageFlags.ReadOnly;
                 property["usage"] = (int)usage;
