@@ -120,18 +120,18 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
             };
         }
     
-        public override int _Import(string sourceFile, string savePath, Godot.Collections.Dictionary options, Godot.Collections.Array<string> platformVariants, Godot.Collections.Array<string> genFiles)
+        public override Error _Import(string sourceFile, string savePath, Godot.Collections.Dictionary options, Godot.Collections.Array<string> platformVariants, Godot.Collections.Array<string> genFiles)
         {
             using var file = FileAccess.Open(sourceFile, FileAccess.ModeFlags.Read);
             if (file.GetError() != Error.Ok)
             {
-                return (int)Error.Failed;
+                return Error.Failed;
             }
     
             var mesh = new ArrayMesh();
             // Fill the Mesh with data read in "file", left as an exercise to the reader.
             string filename = $"{savePath}.{_GetSaveExtension()}";
-            return (int)ResourceSaver.Save(mesh, filename);
+            return ResourceSaver.Save(mesh, filename);
         }
     }
 
@@ -388,7 +388,7 @@ This method must be overridden to do the actual importing work. See this class' 
 
 :ref:`Error<enum_@GlobalScope_Error>` **append_import_external_resource**\ (\ path\: :ref:`String<class_String>`, custom_options\: :ref:`Dictionary<class_Dictionary>` = {}, custom_importer\: :ref:`String<class_String>` = "", generator_parameters\: :ref:`Variant<class_Variant>` = null\ ) :ref:`🔗<class_EditorImportPlugin_method_append_import_external_resource>`
 
-This function can only be called during the :ref:`_import<class_EditorImportPlugin_private_method__import>` callback and it allows manually importing resources from it. This is useful when the imported file generates external resources that require importing (as example, images). Custom parameters for the ".import" file can be passed via the ``custom_options``. Additionally, in cases where multiple importers can handle a file, the ``custom_importer`` ca be specified to force a specific one. This function performs a resource import and returns immediately with a success or error code. ``generator_parameters`` defines optional extra metadata which will be stored as ``generator_parameters`` in the ``remap`` section of the ``.import`` file, for example to store a md5 hash of the source data.
+This function can only be called during the :ref:`_import<class_EditorImportPlugin_private_method__import>` callback and it allows manually importing resources from it. This is useful when the imported file generates external resources that require importing (as example, images). Custom parameters for the ".import" file can be passed via the ``custom_options``. Additionally, in cases where multiple importers can handle a file, the ``custom_importer`` can be specified to force a specific one. This function performs a resource import and returns immediately with a success or error code. ``generator_parameters`` defines optional extra metadata which will be stored as ``generator_parameters`` in the ``remap`` section of the ``.import`` file, for example to store a md5 hash of the source data.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
