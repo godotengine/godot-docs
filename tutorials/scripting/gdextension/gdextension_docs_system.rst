@@ -7,6 +7,8 @@ GDExtension documentation system
 
     Adding documentation for GDExtensions is only possible for 4.3 and later. The support can be integrated into your project
     regardless because the snippet will check if you use the appropriate godot-cpp version.
+    If you set the ``compatability_minimum`` to 4.2 and you load a project with the extension through a 4.2 editor, the
+    documentation page for that class will be empty. The extension itself will still work.
 
 The GDExtension documentation system works in a similar manner to the built-in engine documentation. It uses a series of
 XML files (one per class) to document the exposed constructors, properties, methods, constants, signals, and theme items of each class.
