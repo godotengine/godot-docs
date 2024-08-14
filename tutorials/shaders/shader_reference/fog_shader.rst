@@ -21,10 +21,9 @@ touch a given :ref:`FogVolume <class_FogVolume>` will still be used.
 Built-ins
 ^^^^^^^^^
 
-Values marked as "in" are read-only. Values marked as "out" are for optional
-writing and will not necessarily contain sensible values. Samplers cannot be
-written to so they are not marked.
-
+Values marked as ``in`` are read-only. Values marked as ``out`` can optionally 
+be written to and will not necessarily contain sensible values. Samplers cannot 
+be written to so they are not marked.
 
 Global built-ins
 ^^^^^^^^^^^^^^^^
@@ -35,7 +34,7 @@ Global built-ins are available everywhere, including in custom functions.
 +---------------------------------+-----------------------------------------------------------------------------------------+
 | Built-in                        | Description                                                                             |
 +=================================+=========================================================================================+
-| in float **TIME**               | Global time since the engine has started, in seconds. It repeats after every 3,600      |
+| in float **TIME**               | Global time since the engine has started, in seconds. It repeats after every ``3,600``  |
 |                                 | seconds (which can  be changed with the                                                 |
 |                                 | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`|
 |                                 | setting). It's not affected by :ref:`time_scale<class_Engine_property_time_scale>` or   |
@@ -67,7 +66,7 @@ be drawn at once.
 +-------------------------------+-------------------------------------------------------------------------------------------------+
 | in vec3 **OBJECT_POSITION**   | Position of the center of the current :ref:`FogVolume <class_FogVolume>` in world space.        |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec3 **UVW**               | 3-dimensional uv, used to map a 3D texture to the current :ref:`FogVolume <class_FogVolume>`.   |
+| in vec3 **UVW**               | 3-dimensional UV, used to map a 3D texture to the current :ref:`FogVolume <class_FogVolume>`.   |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
 | in vec3 **SIZE**              | Size of the current :ref:`FogVolume <class_FogVolume>` when its                                 |
 |                               | :ref:`shape<class_FogVolume_property_shape>` has a size.                                        |
