@@ -80,3 +80,12 @@ will let you create and load instances of this type easily.
 .. image:: img/globalclasses_exportedproperty1.webp
 
 .. image:: img/globalclasses_exportedproperty2.webp
+
+.. warning::
+
+    The Godot editor will hide these custom classes with names that beging with the prefix
+    "Editor" in the 'Create New Node' or 'Create New Scene' dialog windows. The classes 
+    are available for instantiation at runtime via their class names, but are 
+    automatically hidden by the editor windows along with the built-in editor nodes used 
+    by the Godot editor.
+    
