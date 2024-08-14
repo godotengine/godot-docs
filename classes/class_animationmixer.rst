@@ -25,6 +25,13 @@ Base class for :ref:`AnimationPlayer<class_AnimationPlayer>` and :ref:`Animation
 
 After instantiating the playback information data within the extended class, the blending is processed by the **AnimationMixer**.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `Migrating Animations from Godot 4.0 to 4.3 <https://godotengine.org/article/migrating-animations-from-godot-4-0-to-4-3/>`__
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -665,7 +672,7 @@ The most basic example is applying position to :ref:`CharacterBody3D<class_Chara
 
 
 
-By using this in combination with :ref:`get_root_motion_position_accumulator<class_AnimationMixer_method_get_root_motion_position_accumulator>`, you can apply the root motion position more correctly to account for the rotation of the node.
+By using this in combination with :ref:`get_root_motion_rotation_accumulator<class_AnimationMixer_method_get_root_motion_rotation_accumulator>`, you can apply the root motion position more correctly to account for the rotation of the node.
 
 
 .. tabs::
