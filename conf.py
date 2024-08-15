@@ -194,7 +194,7 @@ html_context = {
     # Set this to `True` when in the `latest` branch to clearly indicate to the reader
     # that they are not reading the `stable` documentation.
     "godot_is_latest": True,
-    "godot_version": "4.3",
+    "godot_version": "4.4",
     # Enables a banner that displays the up-to-date status of each article.
     "godot_show_article_status": True,
     # Display user-contributed notes at the bottom of pages that don't have `:allow_comments: False` at the top.
