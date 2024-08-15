@@ -507,3 +507,158 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
     materials from appearing in screen-space reflections or refraction.
     :ref:`SDFGI <doc_using_sdfgi>` sharp reflections are not visible on transparent
     materials (only rough reflections are visible on transparent materials).
+
+
+
+Coordinate spaces
+^^^^^^^^^^^^^^^^^
+
+Spatial shaders do their work across multiple coordinate spaces. Some built-in variables with the same name are in different
+coordinate spaces in different processor functions.
+
++-------------------------------+----------------------------------------------------------------------------------------+
+| Coordinate space              | Description                                                                            |
++===============================+========================================================================================+
+| Model space                   | Also called "local space" or "local coordinates". Called "object space" in             |
+|                               | other renderers. Equivalent to the local coordinates used by Transform3D.              |
++-------------------------------+----------------------------------------------------------------------------------------+
+| World space                   | Equivalent to the global coordinates used by Transform3D.                              |
+|                               |                                                                                        |
++-------------------------------+----------------------------------------------------------------------------------------+
+| View space                    | Coordinate space relative to the camera.                                               | 
+|                               | Called "camera space" or "eye space" in other renderers.                               |
++-------------------------------+----------------------------------------------------------------------------------------+
+| Clip space                    | TODO                                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------+
+| Screen space                  | TODO                                                                                   |
++-------------------------------+----------------------------------------------------------------------------------------+
+| Normalized device coordinates | Usually not used directly. ``xy`` alues range from ``-1.0`` to ``1.0``, with           | 
+|                               | ``(-1.0,-1.0)`` in the ``x`` and ``y`` being the upper-left corner of the screen,      |
+|                               | and ``(1.0,1.0)`` the lower right. ``z`` ranges from ``0.0`` to ``1.0``                |
++-------------------------------+----------------------------------------------------------------------------------------+
+
+.. note::
+
+    Godot 4.3 introduced a change to clip space. If you are using a shader that uses clip space directly and was 
+    originally written for an earlier version, see `this <https://godotengine.org/article/introducing-reverse-z/>`_.
+    
+
+
+Working with coordinate spaces
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You don't need to know much matrix math in order to use coordinate spaces. You can convert vectors between different coordinate spaces by using the built-in transform matrices. 
+
+To transform a *position* vector ``VERTEX`` from view space to world space, multiply it by 
+the view-to-world matrix ``INV_VIEW_MATRIX``:
+
+.. code-block:: glsl
+
+    void fragment() {
+        vec3 position_world = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
+    }
+
+To transform a *direction* vector, such as ``NORMAL``, change the ``z`` field of the vec4 to ``0.0`` : 
+
+.. code-block:: glsl
+
+    void fragment() {
+        vec3 normal_world = (INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
+    }
+
+You can also compose multiple transformations together. To transform ``VERTEX`` from model space to view space, first 
+transform it from view to world space with ``MODEL_MATRIX``, then transform it from world space to view space with ``VIEW_MATRIX``. 
+Note the order of the matrices:
+
+.. code-block:: glsl
+
+    void vertex() {
+        vec3 position_view = (VIEW_MATRIX * MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+    }
+
+You can transform to one coordinate space, do some operations, and transform back. This code scales ``VERTEX`` in model space, 
+translates it in world space, then transforms back into model space, so it can be passed to ``fragment()``:
+
+.. code-block:: glsl
+
+    void vertex() {
+        VERTEX *= 2.0;
+        vec3 position_world = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+        position_world += vec3(1.0);
+        VERTEX = (inverse(MODEL_MATRIX) * vec4(position_world, 1.0)).xyz;
+    }
+
+Clip space, screen space, and normalized device coordinates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Transforming between view space, clip space, and screen space is more complicated. You need to use normalized device coordinates,
+an intermediate coordinate space.
+
+View space position to screen space UV:
+
+.. code-block:: glsl
+
+    vec2 screen_uv_from_view(vec3 position_view, mat4 projection_matrix) {
+        vec3 position_clip = projection_matrix * vec4(position_view, 1.0);
+        vec3 ndc = position_clip.xyz / position_clip.w;
+        return ndc.xy * 0.5 + 0.5;
+    }
+
+Screen space UV (and depth) to view space position:
+
+.. code-block:: glsl
+
+    vec3 view_position_from_uv_depth(vec2 screen_uv, float depth, mat4 inv_projection_matrix) {
+        vec3 ndc = vec3((screen_uv * 2.0) - 1.0, depth);
+        vec4 position_view = inv_projection_matrix * vec4(ndc, 1.0);
+        return position_view.xyz /= view_position.w;
+    }
+
+Clip space to screen space:
+
+.. code-block:: glsl
+
+    vec2 screen_uv_from_clip(vec3 position_clip, mat4 projection_matrix) {
+        vec3 ndc = position_clip.xyz / position_clip.w;
+        return ndc.xy * 0.5 + 0.5;
+    }
+
+Screen space to clip space:
+
+.. code-block:: glsl
+
+    vec3 clip_from_screen_uv_depth(vec3 ndc, float w) {
+        // TODO
+    }
+
+Sometimes you may need to work with normalized device coordinates directly:
+
+Clip space to NDC:
+
+.. code-block:: glsl
+
+    vec3 ndc_from_clip(vec4 position_clip) {
+        return position_clip.xyz / position_clip.w;
+    }
+
+Normalized device coordinates to clip space:
+
+.. code-block:: glsl
+
+    // TODO
+
+Normalized device coordinates to screen space:
+
+.. code-block:: glsl
+
+    vec2 screen_uv_from_ndc(vec3 ndc)) {
+        return ndc.xy * 0.5 + 0.5;
+    }
+
+Screen space (and depth) to normalized device coordinates:
+
+.. code-block:: glsl
+
+    vec3 ndc_from_uv_depth(vec2 screen_uv, float depth)) {
+        return vec3((screen_uv * 2.0) - 1.0, depth);
+    }
