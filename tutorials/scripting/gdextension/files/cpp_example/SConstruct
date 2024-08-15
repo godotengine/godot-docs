@@ -23,6 +23,17 @@ if env["platform"] == "macos":
         ),
         source=sources,
     )
+elif env["platform"] == "ios":
+    if env["ios_simulator"]:
+        library = env.StaticLibrary(
+            "demo/bin/libgdexample.{}.{}.simulator.a".format(env["platform"], env["target"]),
+            source=sources,
+        )
+    else:
+        library = env.StaticLibrary(
+            "demo/bin/libgdexample.{}.{}.a".format(env["platform"], env["target"]),
+            source=sources,
+        )
 else:
     library = env.SharedLibrary(
         "demo/bin/libgdexample{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
