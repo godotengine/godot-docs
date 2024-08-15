@@ -2,15 +2,10 @@ name: Sync Class Reference
 
 on:
   workflow_dispatch:
-  # Scheduled updates only run on the default/master branch.
-  schedule:
-    # Run it at night (European time) every Saturday.
-    # The offset is there to try and avoid the high load times.
-    - cron: '15 3 * * 6'
 
 # Make sure jobs cannot overlap.
 concurrency:
-  group: classref-sync-ci-master
+  group: classref-sync-ci-4.3
   cancel-in-progress: true
 
 jobs:
@@ -18,7 +13,7 @@ jobs:
     name: Update class reference files based on the engine revision
     runs-on: ubuntu-latest
     env:
-      engine_rev: 'master'
+      engine_rev: '4.3'
 
     steps:
       - name: Checkout the documentation repository
