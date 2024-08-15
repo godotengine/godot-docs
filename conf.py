@@ -88,7 +88,7 @@ author = "Juan Linietsky, Ariel Manzur and the Godot community"
 
 # Version info for the project, acts as replacement for |version| and |release|
 # The short X.Y version
-version = os.getenv("READTHEDOCS_VERSION", "latest")
+version = os.getenv("READTHEDOCS_VERSION", "4.3")
 # The full version, including alpha/beta/rc tags
 release = version
 
@@ -179,7 +179,7 @@ html_context = {
     "display_github": not is_i18n,  # Integrate GitHub
     "github_user": "godotengine",  # Username
     "github_repo": "godot-docs",  # Repo name
-    "github_version": "master",  # Version
+    "github_version": "4.3",  # Version
     "conf_py_path": "/",  # Path in the checkout to the docs root
     "godot_inject_language_links": True,
     "godot_docs_supported_languages": list(supported_languages.keys()),
@@ -193,7 +193,7 @@ html_context = {
     "godot_title_prefix": "" if on_rtd else "(DEV) ",
     # Set this to `True` when in the `latest` branch to clearly indicate to the reader
     # that they are not reading the `stable` documentation.
-    "godot_is_latest": True,
+    "godot_is_latest": False,
     "godot_version": "4.3",
     # Enables a banner that displays the up-to-date status of each article.
     "godot_show_article_status": True,
