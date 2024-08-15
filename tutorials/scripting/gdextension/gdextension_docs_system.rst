@@ -18,6 +18,8 @@ XML files (one per class) to document the exposed constructors, properties, meth
     We are assuming you are using the project files explained in the :ref:`GDExtension C++ Example <doc_gdextension_cpp_example>`
     with the following structure:
 
+.. code-block:: none
+
     gdextension_cpp_example/  # GDExtension directory
     |
     +--demo/                  # game example/demo to test the extension
