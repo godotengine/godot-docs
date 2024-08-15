@@ -51,10 +51,10 @@ You can rename it to ``Character``.
 
 .. note::
 
-    The ``.glb`` files contain 3D scene data based on the open source GLTF 2.0
+    The ``.glb`` files contain 3D scene data based on the open source glTF 2.0
     specification. They're a modern and powerful alternative to a proprietary format
     like FBX, which Godot also supports. To produce these files, we designed the
-    model in `Blender 3D <https://www.blender.org/>`__ and exported it to GLTF.
+    model in `Blender 3D <https://www.blender.org/>`__ and exported it to glTF.
 
 As with all kinds of physics nodes, we need a collision shape for our character
 to collide with the environment. Select the ``Player`` node again and add a child node
