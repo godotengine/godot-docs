@@ -120,3 +120,8 @@ Emacs
 
 Check the official instructions to configure `LSP <https://github.com/godotengine/emacs-gdscript-mode#auto-completion-with-the-language-server-protocol-lsp>`_, and `DAP <https://github.com/godotengine/emacs-gdscript-mode#using-the-debugger>`_.
 
+JetBrains Rider
+^^^^^^^^^^^^^^^
+
+Refer to `JetBrains Rider documentation <https://www.jetbrains.com/help/rider/Godot.html>`_.
+
