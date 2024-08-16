@@ -136,22 +136,51 @@ the distance to the point.
 Because the camera is facing the negative ``z`` direction, the position will have a negative ``z`` value.
 In order to get a usable depth value, we have to negate ``view.z``.
 
-The world position can be constructed from the depth buffer using the following code. Note
-that the ``INV_VIEW_MATRIX`` is needed to transform the position from view space into world space, so
-it needs to be passed to the fragment shader with a varying.
+The world position can be constructed from the depth buffer using the following code, using the 
+``INV_VIEW_MATRIX`` to transform the position from view space into world space.
 
 .. code-block:: glsl
 
-  varying mat4 CAMERA;
+  void fragment() {
+    ...
+    vec4 world = INV_VIEW_MATRIX * INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
+    vec3 world_position = world.xyz / world.w;
+  }
+
+Example shader
+--------------
+
+Once we add a line to output to ``ALBEDO``, we have a complete shader that looks something like this. 
+This shader lets you visualize the linear depth or world space coordinates, depending on which 
+line is commented out.
+
+.. code-block:: glsl
+
+  shader_type spatial;
+  // Prevent the quad from being affected by lighting and fog. This also improves performance.
+  render_mode unshaded, fog_disabled;
+
+  uniform sampler2D depth_texture : source_color, hint_depth_texture;
 
   void vertex() {
-    CAMERA = INV_VIEW_MATRIX;
+    POSITION = vec4(VERTEX.xy, 1.0, 1.0);
   }
 
   void fragment() {
-    ...
-    vec4 world = CAMERA * INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
+    float depth = texture(depth_texture, SCREEN_UV).x;
+    vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
+    vec4 view = INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
+    view.xyz /= view.w;
+    float linear_depth = -view.z;
+
+    vec4 world = INV_VIEW_MATRIX * INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
     vec3 world_position = world.xyz / world.w;
+
+    // Visualize linear depth
+    ALBEDO.rgb = vec3(fract(linear_depth));
+
+    // Visualize world coordinates
+    //ALBEDO.rgb = fract(world_position).xyz;
   }
 
 An optimization
