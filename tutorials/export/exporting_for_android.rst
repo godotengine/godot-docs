@@ -33,7 +33,7 @@ Download and install the Android SDK.
     - Android SDK Platform 34
     - Android SDK Command-line Tools (latest)
     - CMake version 3.10.2.4988404
-    - NDK version r26c (26.2.11394342)
+    - NDK version r23c (23.2.8568313)
 
 - You can install it using the `command line tools <https://developer.android.com/studio/#command-tools>`__.
 
@@ -41,7 +41,7 @@ Download and install the Android SDK.
 
 ::
 
-    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;26.2.11394342"
+    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"
 
 .. note::
 
