@@ -12,14 +12,14 @@ GLTFTextureSampler
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Represents a GLTF texture sampler
+Represents a glTF texture sampler
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Represents a texture sampler as defined by the base GLTF spec. Texture samplers in GLTF specify how to sample data from the texture's base image, when rendering the texture on an object.
+Represents a texture sampler as defined by the base glTF spec. Texture samplers in glTF specify how to sample data from the texture's base image, when rendering the texture on an object.
 
 .. rst-class:: classref-introduction-group
 

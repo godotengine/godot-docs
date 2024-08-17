@@ -12,7 +12,7 @@ GLTFTexture
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-GLTFTexture represents a texture in a GLTF file.
+GLTFTexture represents a texture in a glTF file.
 
 .. rst-class:: classref-introduction-group
 

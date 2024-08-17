@@ -73,7 +73,7 @@ Properties
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`Dictionary<class_Dictionary>` | :ref:`script_support<class_ResourceImporterDynamicFont_property_script_support>`                                         | ``{}``    |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`               | :ref:`subpixel_positioning<class_ResourceImporterDynamicFont_property_subpixel_positioning>`                             | ``1``     |
+   | :ref:`int<class_int>`               | :ref:`subpixel_positioning<class_ResourceImporterDynamicFont_property_subpixel_positioning>`                             | ``4``     |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-section-separator
@@ -299,7 +299,7 @@ Override the list of language scripts supported by this font. If left empty, thi
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **subpixel_positioning** = ``1`` :ref:`🔗<class_ResourceImporterDynamicFont_property_subpixel_positioning>`
+:ref:`int<class_int>` **subpixel_positioning** = ``4`` :ref:`🔗<class_ResourceImporterDynamicFont_property_subpixel_positioning>`
 
 Subpixel positioning improves font rendering appearance, especially at smaller font sizes. The downside is that it takes more time to initially render the font, which can cause stuttering during gameplay, especially if used with large font sizes. This should be set to **Disabled** for fonts with a pixel art appearance.
 
@@ -310,6 +310,8 @@ Subpixel positioning improves font rendering appearance, especially at smaller f
 \ **One Half of a Pixel:** Always perform intermediate subpixel positioning regardless of font size. High quality, slow rendering.
 
 \ **One Quarter of a Pixel:** Always perform precise subpixel positioning regardless of font size. Highest quality, slowest rendering.
+
+\ **Auto (Except Pixel Fonts):** **Disabled** for the pixel style fonts (each glyph contours contain only straight horizontal and vertical lines), **Auto** for the other fonts.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -132,6 +132,12 @@ Methods
    +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Rect2i<class_Rect2i>`                                  | :ref:`get_used_rect<class_TileMap_method_get_used_rect>`\ (\ ) |const|                                                                                                                                                                                                                                                    |
    +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`is_cell_flipped_h<class_TileMap_method_is_cell_flipped_h>`\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                    |
+   +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`is_cell_flipped_v<class_TileMap_method_is_cell_flipped_v>`\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                    |
+   +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`is_cell_transposed<class_TileMap_method_is_cell_transposed>`\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                  |
+   +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`is_layer_enabled<class_TileMap_method_is_layer_enabled>`\ (\ layer\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                               |
    +--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`is_layer_navigation_enabled<class_TileMap_method_is_layer_navigation_enabled>`\ (\ layer\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                         |
@@ -727,6 +733,42 @@ If ``layer`` is negative, the layers are accessed from the last one.
 :ref:`Rect2i<class_Rect2i>` **get_used_rect**\ (\ ) |const| :ref:`🔗<class_TileMap_method_get_used_rect>`
 
 Returns a rectangle enclosing the used (non-empty) tiles of the map, including all layers.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMap_method_is_cell_flipped_h:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_cell_flipped_h**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_is_cell_flipped_h>`
+
+Returns ``true`` if the cell on layer ``layer`` at coordinates ``coords`` is flipped horizontally. The result is valid only for atlas sources.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMap_method_is_cell_flipped_v:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_cell_flipped_v**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_is_cell_flipped_v>`
+
+Returns ``true`` if the cell on layer ``layer`` at coordinates ``coords`` is flipped vertically. The result is valid only for atlas sources.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMap_method_is_cell_transposed:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_cell_transposed**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_TileMap_method_is_cell_transposed>`
+
+Returns ``true`` if the cell on layer ``layer`` at coordinates ``coords`` is transposed. The result is valid only for atlas sources.
 
 .. rst-class:: classref-item-separator
 
