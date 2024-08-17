@@ -292,17 +292,16 @@ scene.
 Adding music
 ------------
 
-To add music that plays continuously in the background, we're going to use
-another feature in Godot: :ref:`autoloads <doc_singletons_autoload>`.
+To continuously play background music, we introduce the :ref:`Autoloads <autoloads_versus_internal_nodes>` function.
 
-To play audio, all you need to do is add an :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` node to your
-scene and attach an audio file to it. When you start the scene, it can play
+To play audio, all you need to do is add an :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` 
+node to your scene and attach an audio file to it. When you start the scene, it can play
 automatically. However, when you reload the scene, like we do to play again, the
 audio nodes are also reset, and the music starts back from the beginning.
 
-You can use the autoload feature to have Godot load a node or a scene
-automatically at the start of the game, outside the current scene. You can also
-use it to create globally accessible objects.
+With the :ref:`Autoloads <doc_singletons_autoload>` feature, Godot can load a ``node`` or ``scene``
+automatically at the start of the game, outside the current scene. 
+You can also use it to create globally accessible objects. 
 
 Create a new scene by going to the *Scene* menu and clicking *New Scene*
 or by using the *+* icon next to your currently opened scene.
@@ -323,17 +322,14 @@ game.
 
 Save the scene as ``music_player.tscn``.
 
-We have to register it as an autoload. Head to the *Project -> Project
-Settings…* menu and click on the *Autoload* tab.
-
-In the *Path* field, you want to enter the path to your scene. Click the folder
-icon to open the file browser and double-click on ``music_player.tscn``. Then,
+The next step is to register the scene as an Autoload. 
+Starting from the menu, open **Project > Project Settings > Globals > Autoload**. 
+Click the browse button and select ``music_player.tscn``, or by typing its path: ``res://music_player.tscn``. 
 click the *Add* button on the right to register the node.
 
 |image18|
 
-``music_player.tscn`` now loads into any scene you open or play.
-So if you run the game now, the music will play automatically in any scene.
+With that, ``music_player.tscn`` now loads automatically into any scene you open or play.
 
 Before we wrap up this lesson, here's a quick look at how it works under the
 hood. When you run the game, your *Scene* dock changes to give you two tabs:
