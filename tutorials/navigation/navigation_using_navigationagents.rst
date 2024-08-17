@@ -121,7 +121,7 @@ The following NavigationAgent properties are relevant for avoidance:
   - The property ``use_3d_avoidance`` switches the agent between the 2D avoidance (xz axis) and the 3D avoidance (xyz axis) on the next update.
     Note that 2D avoidance and 3D avoidance run in separate avoidance simulations so agents split between them do not affect each other.
   - The properties ``avoidance_layers`` and ``avoidance_mask`` are bitmasks similar to e.g. physics layers. Agents will only avoid other avoidance objects that are on an avoidance layer that matches at least one of their own avoidance mask bits.
-  - The ``avoidance_priority`` makes agents with a higher priority ignore agents with a lower priority. This can be used to give certain agents more importance in the avoidance simulation, e.g. important npcs characters, without constantly changing their entire avoidance layers or mask.
+  - The ``avoidance_priority`` makes agents with a higher priority ignore agents with a lower priority. This can be used to give certain agents more importance in the avoidance simulation, e.g. important non playable characters, without constantly changing their entire avoidance layers or mask.
 
 
 Avoidance exists in its own space and has no information from navigation meshes or physics collision.
