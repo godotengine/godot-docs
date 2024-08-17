@@ -269,7 +269,12 @@ get full autocompletion on the player variable thanks to that cast.
 
         player.damage()
 
-    or ``assert()`` statement::
+    You can also simplify the code by using the ``is not`` operator::
+
+        if body is not PlayerController:
+            push_error("Bug: body is not PlayerController")
+
+    Alternatively, you can use the ``assert()`` statement::
 
         assert(body is PlayerController, "Bug: body is not PlayerController.")
 
@@ -278,6 +283,7 @@ get full autocompletion on the player variable thanks to that cast.
             return
 
         player.damage()
+
 
 .. note::
 
@@ -407,10 +413,10 @@ that has a script attached with ``class_name MyScript`` and that ``extends
 Node2D``. If we have a reference to the object as a ``Node2D`` (for instance,
 as it was passed to us by the physics system), we can first check if the
 property and method exist and then set and call them if they do::
-    
+
     if "some_property" in node_2d:
         node_2d.some_property = 20  # Produces UNSAFE_PROPERTY_ACCESS warning.
-    
+
     if node_2d.has_method("some_function"):
         node_2d.some_function()  # Produces UNSAFE_METHOD_ACCESS warning.
 
@@ -420,7 +426,7 @@ in the referenced type - in this case a ``Node2D``. To make these operations
 safe, you can first check if the object is of type ``MyScript`` using the
 ``is`` keyword and then declare a variable with the type ``MyScript`` on
 which you can set its properties and call its methods::
-    
+
     if node_2d is MyScript:
         var my_script: MyScript = node_2d
         my_script.some_property = 20
@@ -443,7 +449,7 @@ collision area to show the area's name. Once the object enters the collision
 area, the physics system sends a signal with a ``Node2D`` object, and the most
 straightforward (but not statically typed) solution to do what we want could
 be achieved like this::
-    
+
     func _on_body_entered(body: Node2D) -> void:
         body.label.text = name  # Produces UNSAFE_PROPERTY_ACCESS warning.
 
