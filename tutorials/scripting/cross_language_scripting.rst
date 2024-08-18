@@ -195,6 +195,8 @@ Alternatively, you can use raw arrays, which are also compatible with the marsha
     public string[] GetStrings() { ... }
 
 
+For more details on how to choose the right C# collection for your use case, see :ref:`C# collections<doc_c_sharp_collections>`.
+
 Calling GDScript methods from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
