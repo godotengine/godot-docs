@@ -127,7 +127,7 @@ For this Godot uses the hand bone structure as defined for the :ref:`Godot Human
 but optionally supporting an extra tip bone for each finger.
 
 The `OpenXR hand tracking demo <https://github.com/godotengine/godot-demo-projects/tree/master/xr/openxr_hand_tracking_demo>`_
-contains example GLTF files of properly rigged hands.
+contains example glTF files of properly rigged hands.
 
 We will be using those here and add them as a child to our ``XRNode3D`` node.
 We also need to enable editable children to gain access to our :ref:`Skeleton3D <class_skeleton3d>` node.

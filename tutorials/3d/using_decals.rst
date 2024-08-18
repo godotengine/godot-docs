@@ -240,7 +240,7 @@ textures should be filtered. **Nearest/Linear** does not use mipmaps. However,
 decals will look grainy at a distance. **Nearest/Linear Mipmaps** will look
 smoother at a distance, but decals will look blurry when viewed from oblique
 angles. This can be resolved by using **Nearest/Linear Mipmaps Anisotropic**,
-which provides the highest quality but is also slower to render.
+which provides the highest quality, but is also slower to render.
 
 If your project has a pixel art style, consider setting the filter to one of the
 **Nearest** values so that decals use nearest-neighbor filtering. Otherwise,
