@@ -180,7 +180,7 @@ When passing or returning collections from C# methods, types from the `System.Co
     // These methods will not be visible to GDScript, and Godot will throw the "Invalid call" error
     public System.Collections.Generic.List<string> GetStrings() { ... }
 
-To ensure your collections can be used in GDScript, use Godot's collection types from the `Godot.Collections` namespace:
+To ensure your collections can be used in GDScript, use Godot's collection types from the `Godot.Collections` namespace. The types in your collection also must be :ref:`Variant-compatible <c_sharp_variant_compatible_types>`:
 
 .. code-block:: csharp
 
