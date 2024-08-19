@@ -267,6 +267,18 @@ when editing.
     [Export(PropertyHint.ExpEasing)]
     public float TransitionSpeed { get; set; }
 
+Export with Suffix Hint
+-----------------------
+
+Display a unit hint suffix for exported variables. Works with numeric types, such as floats or vectors:
+
+.. code-block:: csharp
+
+    [Export(PropertyHint.None,"suffix:m/s\u00b2")]
+    public float Gravity { get; set; } = 9.8f;
+    [Export(PropertyHint.None,"suffix:m/s")]
+    public Vector3 Velocity { get; set; }
+
 Colors
 ------
 
