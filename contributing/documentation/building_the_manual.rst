@@ -166,4 +166,4 @@ You can specify a list of files to build, which can greatly speed up compilation
 
 .. code:: sh
 
-    make FILELIST='classes/class_node.rst classes/class_resource.rst' html
+    make html FILELIST='classes/class_node.rst classes/class_resource.rst'
