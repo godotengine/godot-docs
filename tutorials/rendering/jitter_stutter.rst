@@ -155,7 +155,7 @@ default ``60``, or set ``Engine.physics_fps`` at run-time in a
 script. Values that are a multiple of the monitor refresh rate (typically
 ``60``) work best when physics interpolation is disabled, as they will avoid
 jitter. This means values such as ``120``, ``180`` and ``240`` are good starting
-points. As a bonus, higher physics FPSes make tunneling and physics unstability
+points. As a bonus, higher physics FPSes make tunneling and physics instability
 issues less likely to occur.
 
 The downside of increasing physics FPS is that CPU usage will increase, which
