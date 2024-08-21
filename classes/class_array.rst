@@ -522,7 +522,7 @@ Appends another ``array`` at the end of this array.
     var numbers = [1, 2, 3]
     var extra = [4, 5, 6]
     numbers.append_array(extra)
-    print(nums) # Prints [1, 2, 3, 4, 5, 6]
+    print(numbers) # Prints [1, 2, 3, 4, 5, 6]
 
 .. rst-class:: classref-item-separator
 
