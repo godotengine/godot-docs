@@ -13,10 +13,10 @@ Exporting for Android
 Exporting for Android has fewer requirements than compiling Godot for Android.
 The following steps detail what is needed to set up the Android SDK and the engine.
 
-Install OpenJDK 11
+Install OpenJDK 17
 ------------------
 
-Download and install  `OpenJDK 11 <https://adoptium.net/?variant=openjdk11>`__.
+Download and install  `OpenJDK 17 <https://adoptium.net/?variant=openjdk17>`__.
 
 Download the Android SDK
 ------------------------
@@ -29,8 +29,8 @@ Download and install the Android SDK.
   - Ensure that the `required packages <https://developer.android.com/studio/intro/update#recommended>`__ are installed as well.
 
     - Android SDK Platform-Tools version 30.0.5 or later
-    - Android SDK Build-Tools version 30.0.3
-    - Android SDK Platform 33
+    - Android SDK Build-Tools version 34.0.0
+    - Android SDK Platform 34
     - Android SDK Command-line Tools (latest)
     - CMake version 3.10.2.4988404
     - NDK version r23c (23.2.8568313)
@@ -41,7 +41,7 @@ Download and install the Android SDK.
 
 ::
 
-    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.3" "platforms;android-31" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;21.4.7075529"
+    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"
 
 .. note::
 
