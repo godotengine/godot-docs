@@ -97,7 +97,7 @@ Afterwards the function waits for the next physics frame before continuing with 
     func _ready():
         # Use call deferred to make sure the entire scene tree nodes are setup
         # else await on 'physics_frame' in a _ready() might get stuck.
-        call_deferred("custom_setup")
+        custom_setup.call_deferred()
 
     func custom_setup():
 
