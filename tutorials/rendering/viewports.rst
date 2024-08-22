@@ -56,35 +56,6 @@ audible, the :ref:`Viewport <class_Viewport>` needs to be enabled as a listener 
 If you are using a :ref:`SubViewport <class_SubViewport>` to display your :ref:`World3D <class_World3D>` or
 :ref:`World2D <class_World2D>`, don't forget to enable this!
 
-Cameras (2D & 3D)
------------------
-
-When using a :ref:`Camera3D <class_Camera3D>` or
-:ref:`Camera2D <class_Camera2D>`, it will always display on the
-closest parent :ref:`Viewport <class_Viewport>` (going towards the root). For example, in the
-following hierarchy:
-
-.. image:: img/cameras.webp
-
-``CameraA`` will display on the Root :ref:`Viewport <class_Viewport>` and it will draw ``MeshA``. ``CameraB``
-will be captured by the :ref:`SubViewport <class_SubViewport>` along with ``MeshB``. Even though ``MeshB`` is in the scene
-hierarchy, it will still not be drawn to the Root Viewport. Similarly, ``MeshA`` will not
-be visible from the SubViewport because SubViewports only
-capture nodes below them in the hierarchy.
-
-There can only be one active camera per :ref:`Viewport <class_Viewport>`, so if there is more
-than one, make sure that the desired one has the :ref:`current <class_Camera3D_property_current>` property set,
-or make it the current camera by calling:
-
-::
-
-    camera.make_current()
-
-By default, cameras will render all objects in their world. In 3D, cameras can use their
-:ref:`cull_mask <class_Camera3D_property_cull_mask>` property combined with the
-:ref:`VisualInstance3D's <class_VisualInstance3D>` :ref:`layer <class_VisualInstance3D_property_layers>`
-property to restrict which objects are rendered.
-
 Scale & stretching
 ------------------
 
@@ -129,6 +100,46 @@ This suffices in most cases, but in case sharing them may be desired, it
 is possible to do so by setting :ref:`world_2d<class_Viewport_property_world_2d>` on the Viewport through code.
 
 For an example of how this works, see the demo projects `3D in 2D <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/3d_in_2d>`_ and `2D in 3D <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/2d_in_3d>`_ respectively.
+
+Cameras (2D & 3D)
+-----------------
+
+When using a :ref:`Camera3D <class_Camera3D>` or
+:ref:`Camera2D <class_Camera2D>`, it will always display on the
+closest parent :ref:`Viewport <class_Viewport>` (going towards the root), which has an assigned World3D.
+That is, it will display on either the root viewport, or the closest parent viewport that either has 
+:ref:`Own World3D <class_Viewport_property_own_world_3d>` set to true, or a value in its 
+:ref:`World3D <class_World3D>`.
+
+For example, if the :ref:`SubViewport <class_SubViewport>` has an assigned :ref:`World3D <class_World3D>`, then in the following hierarchy:
+
+.. image:: img/cameras.webp
+
+``CameraA`` will display on the Root :ref:`Viewport <class_Viewport>` and it will draw ``MeshA``. ``CameraB``
+will be captured by the :ref:`SubViewport <class_SubViewport>` along with ``MeshB``. Even though ``MeshB`` is in the scene
+hierarchy, it will still not be drawn to the Root Viewport. Similarly, ``MeshA`` will not
+be visible from the SubViewport because SubViewports and their :ref:`World3D <class_World3D>` only
+capture nodes which are their children in the graph.
+
+.. note::
+
+    This behavior only occurs when the SubViewport has its own :ref:`World3D <class_World3D>` to guide its rendering. Otherwise, ``MeshB`` will continue up the graph,
+    and be rendered on the first viewport which does have an assigned :ref:`World3D <class_World3D>`; in this case, the Root :ref:`Viewport <class_Viewport>`.
+
+
+
+There can only be one active camera per :ref:`Viewport <class_Viewport>`, so if there is more
+than one, make sure that the desired one has the :ref:`current <class_Camera3D_property_current>` property set,
+or make it the current camera by calling:
+
+::
+
+    camera.make_current()
+
+By default, cameras will render all objects in their world. In 3D, cameras can use their
+:ref:`cull_mask <class_Camera3D_property_cull_mask>` property combined with the
+:ref:`VisualInstance3D's <class_VisualInstance3D>` :ref:`layer <class_VisualInstance3D_property_layers>`
+property to restrict which objects are rendered.
 
 Capture
 -------
