@@ -195,9 +195,15 @@ occluders in front of the camera.
 To toggle occlusion culling at run-time, set ``use_occlusion_culling`` on the
 root viewport as follows:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     get_tree().root.use_occlusion_culling = true
+
+ .. code-tab:: csharp
+
+    GetTree().Root.UseOcclusionCulling = true;
+
 
 Toggling occlusion culling at run-time is useful to compare performance on a
 running project.
