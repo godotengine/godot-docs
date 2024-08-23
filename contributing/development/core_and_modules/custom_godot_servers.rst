@@ -483,7 +483,7 @@ Here is the GDScript sample code:
 
     func _ready():
         print("Start debugging")
-        HilbertHotel.connect("occupy_room", self, "_print_occupy_room")
+        HilbertHotel.occupy_room.connect(_print_occupy_room)
         var rid = HilbertHotel.create_bus()
         OS.delay_msec(2000)
         HilbertHotel.create_bus()
