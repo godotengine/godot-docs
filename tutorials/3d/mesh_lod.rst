@@ -138,9 +138,14 @@ by changing the **Rendering > Mesh LOD > LOD Change > Threshold Pixels** project
 setting. To change this value at run-time, set ``mesh_lod_threshold`` on the
 root viewport as follows:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     get_tree().root.mesh_lod_threshold = 4.0
+
+ .. code-tab:: csharp
+
+    GetTree().Root.MeshLodThreshold = 4.0f;
 
 Each viewport has its own ``mesh_lod_threshold`` property, which can be set
 independently from other viewports.
