@@ -100,8 +100,7 @@ Mobile device (smartphone/tablet) - Minimum
 |                      | Exporting projects requires downloading export templates separately                     |
 |                      | (1.3 GB after installation).                                                            |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Android 6.0 (Compatibility) or Android 9.0 (Forward+/Mobile),      |
-|                      |   iOS 11.0                                                                              |
+| **Operating system** | - **Native editor:** Android 6.0 (Compatibility) or Android 9.0 (Forward+/Mobile)       |
 |                      | - **Web editor:** Firefox 79, Chrome 88, Edge 79, Safari 15.2, Opera 64,                |
 |                      |   Samsung Internet 15                                                                   |
 +----------------------+-----------------------------------------------------------------------------------------+
@@ -174,7 +173,7 @@ Mobile device (smartphone/tablet) - Recommended
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 1.5 GB (used for the executable, project files, all export templates and cache)         |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **Native editor:** Android 9.0 or iOS 11.0                                            |
+| **Operating system** | - **Native editor:** Android 9.0                                                        |
 |                      | - **Web editor:** Latest version of Firefox, Chrome, Edge, Safari, Opera,               |
 |                      |   Samsung Internet                                                                      |
 +----------------------+-----------------------------------------------------------------------------------------+
@@ -268,15 +267,15 @@ Mobile device (smartphone/tablet) - Minimum
 +----------------------+-----------------------------------------------------------------------------------------+
 | **GPU**              | - **Forward+ rendering method:** SoC featuring GPU with full Vulkan 1.0 support         |
 |                      |                                                                                         |
-|                      |   - *Example: Qualcomm Adreno 505, Mali-G71 MP2, PowerVR G6430 (iPhone 6S/iPhone SE 1)* |
+|                      |   - *Example: Qualcomm Adreno 505, Mali-G71 MP2, Apple A12 (iPhone XR/XS)*              |
 |                      |                                                                                         |
 |                      | - **Mobile rendering method:** SoC featuring GPU with full Vulkan 1.0 support           |
 |                      |                                                                                         |
-|                      |   - *Example: Qualcomm Adreno 505, Mali-G71 MP2, PowerVR G6430 (iPhone 6S/iPhone SE 1)* |
+|                      |   - *Example: Qualcomm Adreno 505, Mali-G71 MP2, Apple A12 (iPhone XR/XS)*              |
 |                      |                                                                                         |
 |                      | - **Compatibility rendering method:** SoC featuring GPU with full OpenGL ES 3.0 support |
 |                      |                                                                                         |
-|                      |   - *Example: Qualcomm Adreno 306, Mali-T628 MP6, PowerVR G6430 (iPhone 5S)*            |
+|                      |   - *Example: Qualcomm Adreno 306, Mali-T628 MP6, Apple A7 (iPhone 5S)*                 |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **RAM**              | - **For native exports:** 1 GB                                                          |
 |                      | - **For web exports:** 2 GB                                                             |
@@ -284,7 +283,7 @@ Mobile device (smartphone/tablet) - Minimum
 | **Storage**          | 150 MB (used for the executable, project files and cache)                               |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Operating system** | - **For native exports:** Android 6.0 (Compatibility) or Android 9.0 (Forward+/Mobile), |
-|                      |   iOS 11.0                                                                              |
+|                      |   iOS 12.0                                                                              |
 |                      | - **For web exports:** Firefox 79, Chrome 88, Edge 79, Safari 15.2, Opera 64,           |
 |                      |   Samsung Internet 15                                                                   |
 +----------------------+-----------------------------------------------------------------------------------------+
@@ -340,26 +339,26 @@ Mobile device (smartphone/tablet) - Recommended
 |                      |                                                                                         |
 |                      | - **iOS:** SoC with 64-bit ARM CPU                                                      |
 |                      |                                                                                         |
-|                      |   - *Example: Apple A11 (iPhone XS/XR)*                                                 |
+|                      |   - *Example: Apple A14 (iPhone 12)*                                                    |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **GPU**              | - **Forward+ rendering method:** SoC featuring GPU with full Vulkan 1.2 support         |
 |                      |                                                                                         |
-|                      |   - *Example: Qualcomm Adreno 630, Mali-G72 MP18, Apple G11P (iPhone XR/XS)*            |
+|                      |   - *Example: Qualcomm Adreno 630, Mali-G72 MP18, Apple A14 (iPhone 12)*                |
 |                      |                                                                                         |
 |                      | - **Mobile rendering method:** SoC featuring GPU with full Vulkan 1.2 support           |
 |                      |                                                                                         |
-|                      |   - *Example: Qualcomm Adreno 630, Mali-G72 MP18, Apple G11P (iPhone XR/XS)*            |
+|                      |   - *Example: Qualcomm Adreno 630, Mali-G72 MP18, Apple A14 (iPhone 12)*                |
 |                      |                                                                                         |
 |                      | - **Compatibility rendering method:** SoC featuring GPU with full OpenGL ES 3.2 support |
 |                      |                                                                                         |
-|                      |   - *Example: Qualcomm Adreno 630, Mali-G72 MP18, Apple G11P (iPhone XR/XS)*            |
+|                      |   - *Example: Qualcomm Adreno 630, Mali-G72 MP18, Apple A14 (iPhone 12)*                |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **RAM**              | - **For native exports:** 2 GB                                                          |
 |                      | - **For web exports:** 4 GB                                                             |
 +----------------------+-----------------------------------------------------------------------------------------+
 | **Storage**          | 150 MB (used for the executable, project files and cache)                               |
 +----------------------+-----------------------------------------------------------------------------------------+
-| **Operating system** | - **For native exports:** Android 9.0 or iOS 11.0                                       |
+| **Operating system** | - **For native exports:** Android 9.0 or iOS 14.1                                       |
 |                      | - **For web exports:** Latest version of Firefox, Chrome, Edge, Safari, Opera,          |
 |                      |   Samsung Internet                                                                      |
 +----------------------+-----------------------------------------------------------------------------------------+

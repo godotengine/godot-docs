@@ -47,7 +47,7 @@ and sets the vertex position in clip space directly.
 
   shader_type spatial;
   // Prevent the quad from being affected by lighting and fog. This also improves performance.
-  render_mode unshaded, disable_fog;
+  render_mode unshaded, fog_disabled;
 
   void vertex() {
     POSITION = vec4(VERTEX.xy, 1.0, 1.0);
@@ -93,11 +93,10 @@ Once defined, the depth texture can be read with the ``texture()`` function.
           possible when reading from the current viewport. The depth texture cannot be
           accessed from another viewport to which you have rendered.
 
-The values returned by ``depth_texture`` are between ``0.0`` and ``1.0`` and are nonlinear.
+The values returned by ``depth_texture`` are between ``1.0`` and ``0.0`` (corresponding to
+the near and far plane, respectively, because of using a "reverse-z" depth buffer) and are nonlinear.
 When displaying depth directly from the ``depth_texture``, everything will look almost
-white unless it is very close. This is because the depth buffer stores objects closer
-to the camera using more bits than those further, so most of the detail in depth
-buffer is found close to the camera. In order to make the depth value align with world or
+black unless it is very close due to that nonlinearity. In order to make the depth value align with world or
 model coordinates, we need to linearize the value. When we apply the projection matrix to the
 vertex position, the z value is made nonlinear, so to linearize it, we multiply it by the
 inverse of the projection matrix, which in Godot, is accessible with the variable

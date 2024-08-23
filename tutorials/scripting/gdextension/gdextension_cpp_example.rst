@@ -344,6 +344,18 @@ structure alongside ``godot-cpp``, ``src`` and ``demo``, then run:
 
 You should now be able to find the module in ``demo/bin/<platform>``.
 
+When building for iOS, package the module as a static `.xcframework`, you can use
+following commands to do so:
+
+::
+    # compile simulator and device modules
+    scons arch=universal ios_simulator=yes platform=ios target=<target>
+    scons arch=arm64 ios_simulator=no platform=ios target=<target>
+
+    # assembe xcframeworks
+    xcodebuild -create-xcframework -library demo/bin/libgdexample.ios.<target>.a -library demo/bin/libgdexample.ios.<target>.simulator.a -output demo/bin/libgdexample.ios.<target>.xcframework
+    xcodebuild -create-xcframework -library godot-cpp/bin/libgodot-cpp.ios.<target>.arm64.a -library godot-cpp/bin/libgodot-cpp.ios.<target>.universal.simulator.a  -output demo/bin/libgodot-cpp.ios.<target>.xcframework
+
 .. note::
 
     Here, we've compiled both godot-cpp and our gdexample library as debug
@@ -371,6 +383,8 @@ loaded for each platform and the entry function for the module. It is called ``g
 
     macos.debug = "res://bin/libgdexample.macos.template_debug.framework"
     macos.release = "res://bin/libgdexample.macos.template_release.framework"
+    ios.debug = "res://bin/libgdexample.ios.template_debug.xcframework"
+    ios.release = "res://bin/libgdexample.ios.template_release.xcframework"
     windows.debug.x86_32 = "res://bin/libgdexample.windows.template_debug.x86_32.dll"
     windows.release.x86_32 = "res://bin/libgdexample.windows.template_release.x86_32.dll"
     windows.debug.x86_64 = "res://bin/libgdexample.windows.template_debug.x86_64.dll"
@@ -385,6 +399,14 @@ loaded for each platform and the entry function for the module. It is called ``g
     android.release.x86_64 = "res://bin/libgdexample.android.template_release.x86_64.so"
     android.debug.arm64 = "res://bin/libgdexample.android.template_debug.arm64.so"
     android.release.arm64 = "res://bin/libgdexample.android.template_release.arm64.so"
+
+    [dependencies]
+    ios.debug = {
+        "res://bin/libgodot-cpp.ios.template_debug.xcframework": ""
+    }
+    ios.release = {
+        "res://bin/libgodot-cpp.ios.template_release.xcframework": ""
+    }
 
 This file contains a ``configuration`` section that controls the entry function of the module.
 You should also set the minimum compatible Godot version with ``compatability_minimum``,

@@ -242,7 +242,7 @@ Therefore, if you specify an extension of Resource such as:
     @export var resource: AnimationNode
 
 The drop-down menu will be limited to AnimationNode and all
-its inherited classes.
+its derived classes.
 
 It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
