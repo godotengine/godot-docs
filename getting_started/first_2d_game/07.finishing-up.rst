@@ -28,7 +28,7 @@ experience. In your game's **art** folder, you have two sound files: "House In a
 Forest Loop.ogg" for background music, and "gameover.wav" for when the player
 loses.
 
-Add two :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` nodes as children of
+Add two :ref:`AudioStreamPlayer2D <class_AudioStreamPlayer2D>` nodes as children of
 ``Main``. Name one of them ``Music`` and the other ``DeathSound``. On each one,
 click on the ``Stream`` property, select "Load", and choose the corresponding
 audio file.
@@ -59,14 +59,14 @@ Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
     public void GameOver()
     {
         ...
-        GetNode<AudioStreamPlayer>("Music").Stop();
-        GetNode<AudioStreamPlayer>("DeathSound").Play();
+        GetNode<AudioStreamPlayer2D>("Music").Stop();
+        GetNode<AudioStreamPlayer2D>("DeathSound").Play();
     }
 
     public void NewGame()
     {
         ...
-        GetNode<AudioStreamPlayer>("Music").Play();
+        GetNode<AudioStreamPlayer2D>("Music").Play();
     }
 
 
