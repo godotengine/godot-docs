@@ -268,7 +268,7 @@ To implement the chroma key effect, follow these steps:
 
 2. In the "ChromaKeyShader.gdshader" file, write the custom shader code as shown below:
 
-.. code-block:: gd
+.. code-block:: glsl
 
    shader_type canvas_item;
 
@@ -311,25 +311,64 @@ UI Controls
 
 To allow users to manipulate the chroma key effect in real-time, we created sliders in the `Control` node. The `Control` node's script contains the following functions:
 
-.. code-block:: gd
+.. tabs::
+ .. code-tab:: gdscript
 
-   extends Control
+    extends Control
 
-   func _on_color_picker_button_color_changed(color):
-       # Update the "chroma_key_color" shader parameter of the VideoStreamPlayer's material
-       $VideoStreamPlayer.material.set("shader_parameter/chroma_key_color", color)
+    func _on_color_picker_button_color_changed(color):
+        # Update the "chroma_key_color" shader parameter of the VideoStreamPlayer's material.
+        $VideoStreamPlayer.material.set("shader_parameter/chroma_key_color", color)
 
-   func _on_h_slider_value_changed(value):
-       # Update the "pickup_range" shader parameter of the VideoStreamPlayer's material
-       $VideoStreamPlayer.material.set("shader_parameter/pickup_range", value)
+    func _on_h_slider_value_changed(value):
+        # Update the "pickup_range" shader parameter of the VideoStreamPlayer's material.
+        $VideoStreamPlayer.material.set("shader_parameter/pickup_range", value)
 
-   func _on_h_slider_2_value_changed(value):
-       # Update the "fade_amount" shader parameter of the VideoStreamPlayer's material
-       $VideoStreamPlayer.material.set("shader_parameter/fade_amount", value)
+    func _on_h_slider_2_value_changed(value):
+        # Update the "fade_amount" shader parameter of the VideoStreamPlayer's material.
+        $VideoStreamPlayer.material.set("shader_parameter/fade_amount", value)
 
    func _on_video_stream_player_finished():
-       # Restart the video playback when it's finished
-       $VideoStreamPlayer.play()
+        # Restart the video playback when it's finished.
+        $VideoStreamPlayer.play()
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyControl : Control
+    {
+        private VideoStreamPlayer _videoStreamPlayer;
+
+        public override void _Ready()
+        {
+            _videoStreamPlayer = GetNode<VideoStreamPlayer>("VideoStreamPlayer");
+        }
+
+        private void OnColorPickerButtonColorChanged(Color color)
+        {
+            // Update the "chroma_key_color" shader parameter of the VideoStreamPlayer's material.
+            _videoStreamPlayer.Material.Set("shader_parameter/chroma_key_color", color);
+        }
+
+        private void OnHSliderValueChanged(double value)
+        {
+            // Update the "pickup_range" shader parameter of the VideoStreamPlayer's material.
+            _videoStreamPlayer.Material.Set("shader_parameter/pickup_range", value);
+        }
+
+        private void OnHSlider2ValueChanged(double value)
+        {
+            // Update the "fade_amount" shader parameter of the VideoStreamPlayer's material.
+            _videoStreamPlayer.Material.Set("shader_parameter/fade_amount", value);
+        }
+
+        private void OnVideoStreamPlayerFinished()
+        {
+            // Restart the video playback when it's finished.
+            _videoStreamPlayer.Play();
+        }
+    }
 
 also make sure that the range of the sliders are appropriate, our settings are :
 
