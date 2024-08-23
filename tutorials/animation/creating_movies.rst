@@ -285,7 +285,8 @@ This feature tag can also be queried in a script to increase quality settings
 that are set in the Environment resource. For example, to further improve SDFGI
 detail and reduce light leaking:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     extends Node3D
 
@@ -295,6 +296,24 @@ detail and reduce light leaking:
             # without decreasing its maximum distance.
             get_viewport().world_3d.environment.sdfgi_min_cell_size *= 0.25
             get_viewport().world_3d.environment.sdfgi_cascades = 8
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyNode3D : Node3D
+    {
+        public override void _Ready()
+        {
+            if (OS.HasFeature("movie"))
+            {
+                // When recording a movie, improve SDFGI cell density
+                // without decreasing its maximum distance.
+                GetViewport().World3D.Environment.SdfgiMinCellSize *= 0.25f;
+                GetViewport().World3D.Environment.SdfgiCascades = 8;
+            }
+        }
+    }
 
 .. _doc_creating_movies_recording_at_higher_resolution:
 
