@@ -165,6 +165,10 @@ The shape's collision mask. Only objects in at least one collision layer enabled
 
 :ref:`Array<class_Array>` **collision_result** = ``[]`` :ref:`🔗<class_ShapeCast2D_property_collision_result>`
 
+.. rst-class:: classref-property-setget
+
+- :ref:`Array<class_Array>` **get_collision_result**\ (\ )
+
 Returns the complete collision information from the collision sweep. The data returned is the same as in the :ref:`PhysicsDirectSpaceState2D.get_rest_info<class_PhysicsDirectSpaceState2D_method_get_rest_info>` method.
 
 .. rst-class:: classref-item-separator

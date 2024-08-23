@@ -12,14 +12,14 @@ GLTFCamera
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Represents a GLTF camera.
+Represents a glTF camera.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Represents a camera as defined by the base GLTF spec.
+Represents a camera as defined by the base glTF spec.
 
 .. rst-class:: classref-introduction-group
 
@@ -28,9 +28,9 @@ Tutorials
 
 - :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
 
-- `GLTF camera detailed specification <https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#reference-camera>`__
+- `glTF camera detailed specification <https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#reference-camera>`__
 
-- `GLTF camera spec and example file <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_015_SimpleCameras.md>`__
+- `glTF camera spec and example file <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_015_SimpleCameras.md>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -90,7 +90,7 @@ Property Descriptions
 - |void| **set_depth_far**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_depth_far**\ (\ )
 
-The distance to the far culling boundary for this camera relative to its local Z axis, in meters. This maps to GLTF's ``zfar`` property.
+The distance to the far culling boundary for this camera relative to its local Z axis, in meters. This maps to glTF's ``zfar`` property.
 
 .. rst-class:: classref-item-separator
 
@@ -107,7 +107,7 @@ The distance to the far culling boundary for this camera relative to its local Z
 - |void| **set_depth_near**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_depth_near**\ (\ )
 
-The distance to the near culling boundary for this camera relative to its local Z axis, in meters. This maps to GLTF's ``znear`` property.
+The distance to the near culling boundary for this camera relative to its local Z axis, in meters. This maps to glTF's ``znear`` property.
 
 .. rst-class:: classref-item-separator
 
@@ -124,7 +124,7 @@ The distance to the near culling boundary for this camera relative to its local 
 - |void| **set_fov**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_fov**\ (\ )
 
-The FOV of the camera. This class and GLTF define the camera FOV in radians, while Godot uses degrees. This maps to GLTF's ``yfov`` property. This value is only used for perspective cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is true.
+The FOV of the camera. This class and glTF define the camera FOV in radians, while Godot uses degrees. This maps to glTF's ``yfov`` property. This value is only used for perspective cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is true.
 
 .. rst-class:: classref-item-separator
 
@@ -141,7 +141,7 @@ The FOV of the camera. This class and GLTF define the camera FOV in radians, whi
 - |void| **set_perspective**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_perspective**\ (\ )
 
-Whether or not the camera is in perspective mode. If false, the camera is in orthographic/orthogonal mode. This maps to GLTF's camera ``type`` property. See :ref:`Camera3D.projection<class_Camera3D_property_projection>` and the GLTF spec for more information.
+Whether or not the camera is in perspective mode. If false, the camera is in orthographic/orthogonal mode. This maps to glTF's camera ``type`` property. See :ref:`Camera3D.projection<class_Camera3D_property_projection>` and the glTF spec for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -158,7 +158,7 @@ Whether or not the camera is in perspective mode. If false, the camera is in ort
 - |void| **set_size_mag**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_size_mag**\ (\ )
 
-The size of the camera. This class and GLTF define the camera size magnitude as a radius in meters, while Godot defines it as a diameter in meters. This maps to GLTF's ``ymag`` property. This value is only used for orthographic/orthogonal cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is false.
+The size of the camera. This class and glTF define the camera size magnitude as a radius in meters, while Godot defines it as a diameter in meters. This maps to glTF's ``ymag`` property. This value is only used for orthographic/orthogonal cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is false.
 
 .. rst-class:: classref-section-separator
 

@@ -337,6 +337,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/expand_to_title<class_EditorSettings_property_interface/editor/expand_to_title>`                                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/font_allow_msdf<class_EditorSettings_property_interface/editor/font_allow_msdf>`                                                                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/font_antialiasing<class_EditorSettings_property_interface/editor/font_antialiasing>`                                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/font_disable_embedded_bitmaps<class_EditorSettings_property_interface/editor/font_disable_embedded_bitmaps>`                                                                               |
@@ -1289,7 +1291,7 @@ The grid size in units. Higher values prevent the grid from appearing "cut off" 
 
 :ref:`bool<class_bool>` **editors/3d/grid_xy_plane** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_xy_plane>`
 
-If ``true``, render the grid on an XY plane. This can be useful for 3D side-scrolling games.
+If ``true``, renders the grid on the XY plane in perspective view. This can be useful for 3D side-scrolling games.
 
 .. rst-class:: classref-item-separator
 
@@ -1301,7 +1303,7 @@ If ``true``, render the grid on an XY plane. This can be useful for 3D side-scro
 
 :ref:`bool<class_bool>` **editors/3d/grid_xz_plane** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_xz_plane>`
 
-If ``true``, render the grid on an XZ plane.
+If ``true``, renders the grid on the XZ plane in perspective view.
 
 .. rst-class:: classref-item-separator
 
@@ -1313,7 +1315,7 @@ If ``true``, render the grid on an XZ plane.
 
 :ref:`bool<class_bool>` **editors/3d/grid_yz_plane** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_yz_plane>`
 
-If ``true``, render the grid on a YZ plane. This can be useful for 3D side-scrolling games.
+If ``true``, renders the grid on the YZ plane in perspective view. This can be useful for 3D side-scrolling games.
 
 .. rst-class:: classref-item-separator
 
@@ -2570,6 +2572,18 @@ The preferred monitor to display the editor.
 Expanding main editor window content to the title, if supported by :ref:`DisplayServer<class_DisplayServer>`. See :ref:`DisplayServer.WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>`.
 
 Specific to the macOS platform.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/font_allow_msdf:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/font_allow_msdf** :ref:`🔗<class_EditorSettings_property_interface/editor/font_allow_msdf>`
+
+If set to ``true``, MSDF font rendering will be used for the visual shader graph editor. You may need to set this to ``false`` when using a custom main font, as some fonts will look broken due to the use of self-intersecting outlines in their font data. Downloading the font from the font maker's official website as opposed to a service like Google Fonts can help resolve this issue.
 
 .. rst-class:: classref-item-separator
 

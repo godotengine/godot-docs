@@ -387,9 +387,40 @@ Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, other
 
 :ref:`Variant<class_Variant>` **line_intersects_line**\ (\ from_a\: :ref:`Vector2<class_Vector2>`, dir_a\: :ref:`Vector2<class_Vector2>`, from_b\: :ref:`Vector2<class_Vector2>`, dir_b\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_Geometry2D_method_line_intersects_line>`
 
-Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns ``null``.
+Returns the point of intersection between the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``). Returns a :ref:`Vector2<class_Vector2>`, or ``null`` if the lines are parallel.
 
-\ **Note:** The lines are specified using direction vectors, not end points.
+\ ``from`` and ``dir`` are *not* endpoints of a line segment or ray but the slope (``dir``) and a known point (``from``) on that line.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var from_a = Vector2.ZERO
+    var dir_a = Vector2.RIGHT
+    var from_b = Vector2.DOWN
+    
+    # Returns Vector2(1, 0)
+    Geometry2D.line_intersects_line(from_a, dir_a, from_b, Vector2(1, -1))
+    # Returns Vector2(-1, 0)
+    Geometry2D.line_intersects_line(from_a, dir_a, from_b, Vector2(-1, -1))
+    # Returns null
+    Geometry2D.line_intersects_line(from_a, dir_a, from_b, Vector2.RIGHT)
+
+ .. code-tab:: csharp
+
+    var fromA = Vector2.Zero;
+    var dirA = Vector2.Right;
+    var fromB = Vector2.Down;
+    
+    // Returns new Vector2(1, 0)
+    Geometry2D.LineIntersectsLine(fromA, dirA, fromB, new Vector2(1, -1));
+    // Returns new Vector2(-1, 0)
+    Geometry2D.LineIntersectsLine(fromA, dirA, fromB, new Vector2(-1, -1));
+    // Returns null
+    Geometry2D.LineIntersectsLine(fromA, dirA, fromB, Vector2.Right);
+
+
 
 .. rst-class:: classref-item-separator
 

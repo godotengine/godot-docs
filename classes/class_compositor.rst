@@ -23,6 +23,13 @@ Description
 
 The compositor resource stores attributes used to customize how a :ref:`Viewport<class_Viewport>` is rendered.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`The Compositor <../tutorials/rendering/compositor>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

@@ -45,8 +45,6 @@ Properties
    +-------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`Vector3<class_Vector3>` | :ref:`offset_mesh<class_ResourceImporterOBJ_property_offset_mesh>`                                       | ``Vector3(0, 0, 0)`` |
    +-------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`       | :ref:`optimize_mesh<class_ResourceImporterOBJ_property_optimize_mesh>`                                   | ``true``             |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`Vector3<class_Vector3>` | :ref:`scale_mesh<class_ResourceImporterOBJ_property_scale_mesh>`                                         | ``Vector3(1, 1, 1)`` |
    +-------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
 
@@ -92,18 +90,6 @@ If you don't need material features that require tangents, disabling this can re
 :ref:`Vector3<class_Vector3>` **offset_mesh** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_ResourceImporterOBJ_property_offset_mesh>`
 
 Offsets the mesh's data by the specified value. This can be used to work around misaligned meshes without having to modify the source file.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ResourceImporterOBJ_property_optimize_mesh:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **optimize_mesh** = ``true`` :ref:`🔗<class_ResourceImporterOBJ_property_optimize_mesh>`
-
-Unused parameter. This currently has no effect.
 
 .. rst-class:: classref-item-separator
 

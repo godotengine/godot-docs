@@ -23,7 +23,7 @@ Description
 
 GLTFDocument supports reading data from a glTF file, buffer, or Godot scene. This data can then be written to the filesystem, buffer, or used to create a Godot scene.
 
-All of the data in a GLTF scene is stored in the :ref:`GLTFState<class_GLTFState>` class. GLTFDocument processes state objects, but does not contain any scene data itself. GLTFDocument has member variables to store export configuration settings such as the image format, but is otherwise stateless. Multiple scenes can be processed with the same settings using the same GLTFDocument object and different :ref:`GLTFState<class_GLTFState>` objects.
+All of the data in a glTF scene is stored in the :ref:`GLTFState<class_GLTFState>` class. GLTFDocument processes state objects, but does not contain any scene data itself. GLTFDocument has member variables to store export configuration settings such as the image format, but is otherwise stateless. Multiple scenes can be processed with the same settings using the same GLTFDocument object and different :ref:`GLTFState<class_GLTFState>` objects.
 
 GLTFDocument can be extended with arbitrary functionality by extending the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` class and registering it with GLTFDocument via :ref:`register_gltf_document_extension<class_GLTFDocument_method_register_gltf_document_extension>`. This allows for custom data to be imported and exported.
 
@@ -139,7 +139,7 @@ Property Descriptions
 - |void| **set_image_format**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_image_format**\ (\ )
 
-The user-friendly name of the export image format. This is used when exporting the GLTF file, including writing to a file and writing to a byte array.
+The user-friendly name of the export image format. This is used when exporting the glTF file, including writing to a file and writing to a byte array.
 
 By default, Godot allows the following options: "None", "PNG", "JPEG", "Lossless WebP", and "Lossy WebP". Support for more image formats can be added in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes.
 
@@ -194,7 +194,7 @@ Method Descriptions
 
 :ref:`Error<enum_@GlobalScope_Error>` **append_from_buffer**\ (\ bytes\: :ref:`PackedByteArray<class_PackedByteArray>`, base_path\: :ref:`String<class_String>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_GLTFDocument_method_append_from_buffer>`
 
-Takes a :ref:`PackedByteArray<class_PackedByteArray>` defining a GLTF and imports the data to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
+Takes a :ref:`PackedByteArray<class_PackedByteArray>` defining a glTF and imports the data to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
 
 \ **Note:** The ``base_path`` tells :ref:`append_from_buffer<class_GLTFDocument_method_append_from_buffer>` where to find dependencies and can be empty.
 
@@ -208,7 +208,7 @@ Takes a :ref:`PackedByteArray<class_PackedByteArray>` defining a GLTF and import
 
 :ref:`Error<enum_@GlobalScope_Error>` **append_from_file**\ (\ path\: :ref:`String<class_String>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0, base_path\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_GLTFDocument_method_append_from_file>`
 
-Takes a path to a GLTF file and imports the data at that file path to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
+Takes a path to a glTF file and imports the data at that file path to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
 
 \ **Note:** The ``base_path`` tells :ref:`append_from_file<class_GLTFDocument_method_append_from_file>` where to find dependencies and can be empty.
 
@@ -234,7 +234,7 @@ Takes a Godot Engine scene node and exports it and its descendants to the given 
 
 :ref:`PackedByteArray<class_PackedByteArray>` **generate_buffer**\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ ) :ref:`🔗<class_GLTFDocument_method_generate_buffer>`
 
-Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and returns a GLTF :ref:`PackedByteArray<class_PackedByteArray>`.
+Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and returns a glTF :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. rst-class:: classref-item-separator
 
