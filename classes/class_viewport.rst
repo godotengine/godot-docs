@@ -2053,6 +2053,8 @@ Returns the viewport's texture.
         await RenderingServer.frame_post_draw
         $Viewport.get_texture().get_image().save_png("user://Screenshot.png")
 
+\ **Note:** When :ref:`use_hdr_2d<class_Viewport_property_use_hdr_2d>` is ``true`` the returned texture will be an HDR image encoded in linear space.
+
 .. rst-class:: classref-item-separator
 
 ----

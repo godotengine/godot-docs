@@ -127,6 +127,8 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_reload_all_scripts<class_ScriptLanguageExtension_private_method__reload_all_scripts>`\ (\ ) |virtual|                                                                                                                                                                                                                                                    |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`_reload_scripts<class_ScriptLanguageExtension_private_method__reload_scripts>`\ (\ scripts\: :ref:`Array<class_Array>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                                                |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_reload_tool_script<class_ScriptLanguageExtension_private_method__reload_tool_script>`\ (\ script\: :ref:`Script<class_Script>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                                       |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_remove_named_global_constant<class_ScriptLanguageExtension_private_method__remove_named_global_constant>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |virtual|                                                                                                                                                                                    |
@@ -1171,6 +1173,20 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 .. rst-class:: classref-method
 
 |void| **_reload_all_scripts**\ (\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__reload_all_scripts>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptLanguageExtension_private_method__reload_scripts:
+
+.. rst-class:: classref-method
+
+|void| **_reload_scripts**\ (\ scripts\: :ref:`Array<class_Array>`, soft_reload\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_ScriptLanguageExtension_private_method__reload_scripts>`
 
 .. container:: contribute
 

@@ -672,6 +672,8 @@ On Linux:
 
 \ ``steam_input_index``: The Steam Input gamepad index, if the device is not a Steam Input device this key won't be present.
 
+\ **Note:** The returned dictionary is always empty on Web, iOS, Android, and macOS.
+
 .. rst-class:: classref-item-separator
 
 ----

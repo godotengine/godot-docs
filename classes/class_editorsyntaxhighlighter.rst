@@ -12,6 +12,8 @@ EditorSyntaxHighlighter
 
 **Inherits:** :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`GDScriptSyntaxHighlighter<class_GDScriptSyntaxHighlighter>`
+
 Base class for :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` used by the :ref:`ScriptEditor<class_ScriptEditor>`.
 
 .. rst-class:: classref-introduction-group

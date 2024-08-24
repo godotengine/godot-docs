@@ -1427,6 +1427,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/denoising/denoiser<class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser>`                                                                                 | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/lightmapping/lightmap_gi/use_bicubic_filter<class_ProjectSettings_property_rendering/lightmapping/lightmap_gi/use_bicubic_filter>`                                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`rendering/lightmapping/primitive_meshes/texel_size<class_ProjectSettings_property_rendering/lightmapping/primitive_meshes/texel_size>`                                                               | ``0.2``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`rendering/lightmapping/probe_capture/update_speed<class_ProjectSettings_property_rendering/lightmapping/probe_capture/update_speed>`                                                                 | ``15``                                                                                           |
@@ -1593,6 +1595,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/lossless_compression/force_png<class_ProjectSettings_property_rendering/textures/lossless_compression/force_png>`                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/compress_with_gpu<class_ProjectSettings_property_rendering/textures/vram_compression/compress_with_gpu>`                                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc2_astc<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc>`                                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_s3tc_bptc<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc_bptc>`                                                           | ``false``                                                                                        |
@@ -1623,7 +1627,11 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_interaction_profile<class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile>`                                                                         | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`                                                                                               | ``true``                                                                                         |
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`                                                                                               | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking_controller_data_source<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_controller_data_source>`                                                 | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking_unobstructed_data_source<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_unobstructed_data_source>`                                             | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                         | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -10598,6 +10606,20 @@ If no GPU acceleration is configured on the system, multi-threaded CPU-based den
 
 ----
 
+.. _class_ProjectSettings_property_rendering/lightmapping/lightmap_gi/use_bicubic_filter:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/lightmapping/lightmap_gi/use_bicubic_filter** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/lightmap_gi/use_bicubic_filter>`
+
+If ``true``, applies a bicubic filter during lightmap sampling. This makes lightmaps look much smoother, at a moderate performance cost.
+
+\ **Note:** The bicubic filter exaggerates the 'bleeding' effect that occurs when a lightmap's resolution is low enough.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_rendering/lightmapping/primitive_meshes/texel_size:
 
 .. rst-class:: classref-property
@@ -11702,6 +11724,22 @@ If ``true``, the texture importer will import lossless textures using the PNG fo
 
 ----
 
+.. _class_ProjectSettings_property_rendering/textures/vram_compression/compress_with_gpu:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/textures/vram_compression/compress_with_gpu** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/vram_compression/compress_with_gpu>`
+
+If ``true``, the texture importer will utilize the GPU for compressing textures, which makes large textures import significantly faster.
+
+\ **Note:** This setting requires either Vulkan or D3D12 available as a rendering backend.
+
+\ **Note:** Currently this only affects BC6H compression, which is used on Desktop and Console for HDR images.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc:
 
 .. rst-class:: classref-property
@@ -11899,7 +11937,7 @@ Specify whether to enable eye tracking for this project. Depending on the platfo
 
 :ref:`bool<class_bool>` **xr/openxr/extensions/hand_interaction_profile** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile>`
 
-If true the hand interaction profile extension will be activated if supported by the platform.
+If ``true`` the hand interaction profile extension will be activated if supported by the platform.
 
 .. rst-class:: classref-item-separator
 
@@ -11909,9 +11947,39 @@ If true the hand interaction profile extension will be activated if supported by
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking** = ``true`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`
 
-If true we enable the hand tracking extension if available.
+If ``true``, the hand tracking extension is enabled if available.
+
+\ **Note:** By default hand tracking will only work for data sources chosen by the XR runtime. For SteamVR this is the controller inferred data source, for most other runtimes this is the unobstructed data source. There is no way to query this. If a runtime supports the OpenXR data source extension you can use the :ref:`xr/openxr/extensions/hand_tracking_controller_data_source<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_controller_data_source>` and/or :ref:`xr/openxr/extensions/hand_tracking_unobstructed_data_source<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_unobstructed_data_source>` to indicate you wish to enable these data sources. If neither is selected the data source extension is not enabled and the XR runtimes default behavior persists.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_controller_data_source:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking_controller_data_source** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_controller_data_source>`
+
+If ``true``, support for the controller inferred data source is requested. If supported, you will receive hand tracking data even if the user has a controller in hand, with finger positions automatically inferred from controller input and/or sensors.
+
+\ **Node:** This requires the OpenXR data source extension and controller inferred handtracking to be supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>` must be enabled for this setting to be used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_unobstructed_data_source:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking_unobstructed_data_source** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_unobstructed_data_source>`
+
+If ``true``, support for the unobstructed data source is requested. If supported, you will receive hand tracking data based on the actual finger positions of the user often determined by optical tracking.
+
+\ **Node:** This requires the OpenXR data source extension and unobstructed handtracking to be supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>` must be enabled for this setting to be used.
 
 .. rst-class:: classref-item-separator
 

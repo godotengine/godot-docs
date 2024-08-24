@@ -23,7 +23,15 @@ Description
 
 This is the CSG base class that provides CSG operation support to the various CSG nodes in Godot.
 
-\ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance3D<class_MeshInstance3D>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
+\ **Performance:** CSG nodes are only intended for prototyping as they have a significant CPU performance cost.
+
+Consider baking final CSG operation results into static geometry that replaces the CSG nodes.
+
+Individual CSG root node results can be baked to nodes with static resources with the editor menu that appears when a CSG root node is selected.
+
+Individual CSG root nodes can also be baked to static resources with scripts by calling :ref:`bake_static_mesh<class_CSGShape3D_method_bake_static_mesh>` for the visual mesh or :ref:`bake_collision_shape<class_CSGShape3D_method_bake_collision_shape>` for the physics collision.
+
+Entire scenes of CSG nodes can be baked to static geometry and exported with the editor gltf scene exporter.
 
 .. rst-class:: classref-introduction-group
 
@@ -64,19 +72,23 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`get_collision_layer_value<class_CSGShape3D_method_get_collision_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                          |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`get_collision_mask_value<class_CSGShape3D_method_get_collision_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                            |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>` | :ref:`get_meshes<class_CSGShape3D_method_get_meshes>`\ (\ ) |const|                                                                                              |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`is_root_shape<class_CSGShape3D_method_is_root_shape>`\ (\ ) |const|                                                                                        |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                    | :ref:`set_collision_layer_value<class_CSGShape3D_method_set_collision_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                    | :ref:`set_collision_mask_value<class_CSGShape3D_method_set_collision_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )   |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` | :ref:`bake_collision_shape<class_CSGShape3D_method_bake_collision_shape>`\ (\ )                                                                                  |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ArrayMesh<class_ArrayMesh>`                         | :ref:`bake_static_mesh<class_CSGShape3D_method_bake_static_mesh>`\ (\ )                                                                                          |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`get_collision_layer_value<class_CSGShape3D_method_get_collision_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                          |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`get_collision_mask_value<class_CSGShape3D_method_get_collision_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                            |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                                 | :ref:`get_meshes<class_CSGShape3D_method_get_meshes>`\ (\ ) |const|                                                                                              |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`is_root_shape<class_CSGShape3D_method_is_root_shape>`\ (\ ) |const|                                                                                        |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`set_collision_layer_value<class_CSGShape3D_method_set_collision_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`set_collision_mask_value<class_CSGShape3D_method_set_collision_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )   |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -253,6 +265,32 @@ Adds a collision shape to the physics engine for our CSG shape. This will always
 
 Method Descriptions
 -------------------
+
+.. _class_CSGShape3D_method_bake_collision_shape:
+
+.. rst-class:: classref-method
+
+:ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` **bake_collision_shape**\ (\ ) :ref:`🔗<class_CSGShape3D_method_bake_collision_shape>`
+
+Returns a baked physics :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` of this node's CSG operation result. Returns an empty shape if the node is not a CSG root node or has no valid geometry.
+
+\ **Performance:** If the CSG operation results in a very detailed geometry with many faces physics performance will be very slow. Concave shapes should in general only be used for static level geometry and not with dynamic objects that are moving.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CSGShape3D_method_bake_static_mesh:
+
+.. rst-class:: classref-method
+
+:ref:`ArrayMesh<class_ArrayMesh>` **bake_static_mesh**\ (\ ) :ref:`🔗<class_CSGShape3D_method_bake_static_mesh>`
+
+Returns a baked static :ref:`ArrayMesh<class_ArrayMesh>` of this node's CSG operation result. Materials from involved CSG nodes are added as extra mesh surfaces. Returns an empty mesh if the node is not a CSG root node or has no valid geometry.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_CSGShape3D_method_get_collision_layer_value:
 
