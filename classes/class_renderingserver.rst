@@ -565,6 +565,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`lightmap_set_textures<class_RenderingServer_method_lightmap_set_textures>`\ (\ lightmap\: :ref:`RID<class_RID>`, light\: :ref:`RID<class_RID>`, uses_sh\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`lightmaps_set_bicubic_filter<class_RenderingServer_method_lightmaps_set_bicubic_filter>`\ (\ enable\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`make_sphere_mesh<class_RenderingServer_method_make_sphere_mesh>`\ (\ latitudes\: :ref:`int<class_int>`, longitudes\: :ref:`int<class_int>`, radius\: :ref:`float<class_float>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`material_create<class_RenderingServer_method_material_create>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -653,6 +655,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform2D<class_Transform2D>`                                            | :ref:`multimesh_instance_get_transform_2d<class_RenderingServer_method_multimesh_instance_get_transform_2d>`\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`multimesh_instance_reset_physics_interpolation<class_RenderingServer_method_multimesh_instance_reset_physics_interpolation>`\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`multimesh_instance_set_color<class_RenderingServer_method_multimesh_instance_set_color>`\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`multimesh_instance_set_custom_data<class_RenderingServer_method_multimesh_instance_set_custom_data>`\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, custom_data\: :ref:`Color<class_Color>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -663,9 +667,15 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`multimesh_set_buffer<class_RenderingServer_method_multimesh_set_buffer>`\ (\ multimesh\: :ref:`RID<class_RID>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`multimesh_set_buffer_interpolated<class_RenderingServer_method_multimesh_set_buffer_interpolated>`\ (\ multimesh\: :ref:`RID<class_RID>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`, buffer_previous\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                  |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`multimesh_set_custom_aabb<class_RenderingServer_method_multimesh_set_custom_aabb>`\ (\ multimesh\: :ref:`RID<class_RID>`, aabb\: :ref:`AABB<class_AABB>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`multimesh_set_mesh<class_RenderingServer_method_multimesh_set_mesh>`\ (\ multimesh\: :ref:`RID<class_RID>`, mesh\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`multimesh_set_physics_interpolated<class_RenderingServer_method_multimesh_set_physics_interpolated>`\ (\ multimesh\: :ref:`RID<class_RID>`, interpolated\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`multimesh_set_physics_interpolation_quality<class_RenderingServer_method_multimesh_set_physics_interpolation_quality>`\ (\ multimesh\: :ref:`RID<class_RID>`, quality\: :ref:`MultimeshPhysicsInterpolationQuality<enum_RenderingServer_MultimeshPhysicsInterpolationQuality>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`multimesh_set_visible_instances<class_RenderingServer_method_multimesh_set_visible_instances>`\ (\ multimesh\: :ref:`RID<class_RID>`, visible\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1865,6 +1875,32 @@ Use :ref:`Transform2D<class_Transform2D>` to store MultiMesh transform.
 :ref:`MultimeshTransformFormat<enum_RenderingServer_MultimeshTransformFormat>` **MULTIMESH_TRANSFORM_3D** = ``1``
 
 Use :ref:`Transform3D<class_Transform3D>` to store MultiMesh transform.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_RenderingServer_MultimeshPhysicsInterpolationQuality:
+
+.. rst-class:: classref-enumeration
+
+enum **MultimeshPhysicsInterpolationQuality**: :ref:`🔗<enum_RenderingServer_MultimeshPhysicsInterpolationQuality>`
+
+.. _class_RenderingServer_constant_MULTIMESH_INTERP_QUALITY_FAST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MultimeshPhysicsInterpolationQuality<enum_RenderingServer_MultimeshPhysicsInterpolationQuality>` **MULTIMESH_INTERP_QUALITY_FAST** = ``0``
+
+MultiMesh physics interpolation favors speed over quality.
+
+.. _class_RenderingServer_constant_MULTIMESH_INTERP_QUALITY_HIGH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MultimeshPhysicsInterpolationQuality<enum_RenderingServer_MultimeshPhysicsInterpolationQuality>` **MULTIMESH_INTERP_QUALITY_HIGH** = ``1``
+
+MultiMesh physics interpolation favors quality over speed.
 
 .. rst-class:: classref-item-separator
 
@@ -7090,7 +7126,9 @@ Sets the shape of the occluder polygon.
 
 |void| **canvas_set_item_mirroring**\ (\ canvas\: :ref:`RID<class_RID>`, item\: :ref:`RID<class_RID>`, mirroring\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_set_item_mirroring>`
 
-A copy of the canvas item will be drawn with a local offset of the mirroring :ref:`Vector2<class_Vector2>`.
+A copy of the canvas item will be drawn with a local offset of the ``mirroring``.
+
+\ **Note:** This is equivalent to calling :ref:`canvas_set_item_repeat<class_RenderingServer_method_canvas_set_item_repeat>` like ``canvas_set_item_repeat(item, mirroring, 1)``, with an additional check ensuring ``canvas`` is a parent of ``item``.
 
 .. rst-class:: classref-item-separator
 
@@ -8992,6 +9030,18 @@ Set the textures on the given ``lightmap`` GI instance to the texture array poin
 
 ----
 
+.. _class_RenderingServer_method_lightmaps_set_bicubic_filter:
+
+.. rst-class:: classref-method
+
+|void| **lightmaps_set_bicubic_filter**\ (\ enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_lightmaps_set_bicubic_filter>`
+
+Toggles whether a bicubic filter should be used when lightmaps are sampled. This smoothens their appearance at a performance cost.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_make_sphere_mesh:
 
 .. rst-class:: classref-method
@@ -9556,6 +9606,20 @@ Returns the :ref:`Transform2D<class_Transform2D>` of the specified instance. For
 
 ----
 
+.. _class_RenderingServer_method_multimesh_instance_reset_physics_interpolation:
+
+.. rst-class:: classref-method
+
+|void| **multimesh_instance_reset_physics_interpolation**\ (\ multimesh\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_instance_reset_physics_interpolation>`
+
+Prevents physics interpolation for the specified instance during the current physics tick.
+
+This is useful when moving an instance to a new location, to give an instantaneous change rather than interpolation from the previous location.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_multimesh_instance_set_color:
 
 .. rst-class:: classref-method
@@ -9631,6 +9695,20 @@ The per-instance data size and expected data order is:
 
 ----
 
+.. _class_RenderingServer_method_multimesh_set_buffer_interpolated:
+
+.. rst-class:: classref-method
+
+|void| **multimesh_set_buffer_interpolated**\ (\ multimesh\: :ref:`RID<class_RID>`, buffer\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`, buffer_previous\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_set_buffer_interpolated>`
+
+Alternative version of :ref:`multimesh_set_buffer<class_RenderingServer_method_multimesh_set_buffer>` for use with physics interpolation.
+
+Takes both an array of current data and an array of data for the previous physics tick.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_multimesh_set_custom_aabb:
 
 .. rst-class:: classref-method
@@ -9650,6 +9728,32 @@ Sets the custom AABB for this MultiMesh resource.
 |void| **multimesh_set_mesh**\ (\ multimesh\: :ref:`RID<class_RID>`, mesh\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_set_mesh>`
 
 Sets the mesh to be drawn by the multimesh. Equivalent to :ref:`MultiMesh.mesh<class_MultiMesh_property_mesh>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_multimesh_set_physics_interpolated:
+
+.. rst-class:: classref-method
+
+|void| **multimesh_set_physics_interpolated**\ (\ multimesh\: :ref:`RID<class_RID>`, interpolated\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_set_physics_interpolated>`
+
+Turns on and off physics interpolation for this MultiMesh resource.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_multimesh_set_physics_interpolation_quality:
+
+.. rst-class:: classref-method
+
+|void| **multimesh_set_physics_interpolation_quality**\ (\ multimesh\: :ref:`RID<class_RID>`, quality\: :ref:`MultimeshPhysicsInterpolationQuality<enum_RenderingServer_MultimeshPhysicsInterpolationQuality>`\ ) :ref:`🔗<class_RenderingServer_method_multimesh_set_physics_interpolation_quality>`
+
+Sets the physics interpolation quality for the :ref:`MultiMesh<class_MultiMesh>`.
+
+A value of :ref:`MULTIMESH_INTERP_QUALITY_FAST<class_RenderingServer_constant_MULTIMESH_INTERP_QUALITY_FAST>` gives fast but low quality interpolation, a value of :ref:`MULTIMESH_INTERP_QUALITY_HIGH<class_RenderingServer_constant_MULTIMESH_INTERP_QUALITY_HIGH>` gives slower but higher quality interpolation.
 
 .. rst-class:: classref-item-separator
 

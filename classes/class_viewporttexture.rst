@@ -27,6 +27,13 @@ To get a **ViewportTexture** in code, use the :ref:`Viewport.get_texture<class_V
 
 \ **Note:** Instantiating scenes containing a high-resolution **ViewportTexture** may cause noticeable stutter.
 
+\ **Note:** When using a :ref:`Viewport<class_Viewport>` with :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` set to ``true`` the returned texture will be an HDR image encoded in linear space. This may look darker than normal when displayed directly on screen. To convert to gamma space, you can do the following:
+
+::
+
+    img.convert(Image.FORMAT_RGBA8)
+    imb.linear_to_srgb()
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

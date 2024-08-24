@@ -75,7 +75,7 @@ Properties
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`                                               | :ref:`geometry_collision_mask<class_NavigationMesh_property_geometry_collision_mask>`                   | ``4294967295``                      |
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`ParsedGeometryType<enum_NavigationMesh_ParsedGeometryType>`   | :ref:`geometry_parsed_geometry_type<class_NavigationMesh_property_geometry_parsed_geometry_type>`       | ``0``                               |
+   | :ref:`ParsedGeometryType<enum_NavigationMesh_ParsedGeometryType>`   | :ref:`geometry_parsed_geometry_type<class_NavigationMesh_property_geometry_parsed_geometry_type>`       | ``2``                               |
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`SourceGeometryMode<enum_NavigationMesh_SourceGeometryMode>`   | :ref:`geometry_source_geometry_mode<class_NavigationMesh_property_geometry_source_geometry_mode>`       | ``0``                               |
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
@@ -567,7 +567,7 @@ Only used when :ref:`geometry_parsed_geometry_type<class_NavigationMesh_property
 
 .. rst-class:: classref-property
 
-:ref:`ParsedGeometryType<enum_NavigationMesh_ParsedGeometryType>` **geometry_parsed_geometry_type** = ``0`` :ref:`🔗<class_NavigationMesh_property_geometry_parsed_geometry_type>`
+:ref:`ParsedGeometryType<enum_NavigationMesh_ParsedGeometryType>` **geometry_parsed_geometry_type** = ``2`` :ref:`🔗<class_NavigationMesh_property_geometry_parsed_geometry_type>`
 
 .. rst-class:: classref-property-setget
 

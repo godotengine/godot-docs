@@ -153,7 +153,7 @@ If ``true``, collisions with :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s will b
 - |void| **set_collision_mask**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_collision_mask**\ (\ )
 
-The shape's collision mask. Only objects in at least one collision layer enabled in the mask will be detected.
+The shape's collision mask. Only objects in at least one collision layer enabled in the mask will be detected. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -254,7 +254,7 @@ The number of intersections can be limited with this parameter, to reduce the pr
 - |void| **set_shape**\ (\ value\: :ref:`Shape2D<class_Shape2D>`\ )
 - :ref:`Shape2D<class_Shape2D>` **get_shape**\ (\ )
 
-The :ref:`Shape2D<class_Shape2D>`-derived shape to be used for collision queries.
+The shape to be used for collision queries.
 
 .. rst-class:: classref-item-separator
 
@@ -271,7 +271,7 @@ The :ref:`Shape2D<class_Shape2D>`-derived shape to be used for collision queries
 - |void| **set_target_position**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_target_position**\ (\ )
 
-The shape's destination point, relative to this node's ``position``.
+The shape's destination point, relative to this node's :ref:`Node2D.position<class_Node2D_property_position>`.
 
 .. rst-class:: classref-section-separator
 
@@ -288,7 +288,7 @@ Method Descriptions
 
 |void| **add_exception**\ (\ node\: :ref:`CollisionObject2D<class_CollisionObject2D>`\ ) :ref:`🔗<class_ShapeCast2D_method_add_exception>`
 
-Adds a collision exception so the shape does not report collisions with the specified :ref:`CollisionObject2D<class_CollisionObject2D>` node.
+Adds a collision exception so the shape does not report collisions with the specified node.
 
 .. rst-class:: classref-item-separator
 
@@ -326,7 +326,7 @@ Removes all collision exceptions for this shape.
 
 Updates the collision information for the shape immediately, without waiting for the next ``_physics_process`` call. Use this method, for example, when the shape or its parent has changed state.
 
-\ **Note:** ``enabled == true`` is not required for this to work.
+\ **Note:** Setting :ref:`enabled<class_ShapeCast2D_property_enabled>` to ``true`` is not required for this to work.
 
 .. rst-class:: classref-item-separator
 
@@ -338,7 +338,7 @@ Updates the collision information for the shape immediately, without waiting for
 
 :ref:`float<class_float>` **get_closest_collision_safe_fraction**\ (\ ) |const| :ref:`🔗<class_ShapeCast2D_method_get_closest_collision_safe_fraction>`
 
-The fraction from the **ShapeCast2D**'s origin to its :ref:`target_position<class_ShapeCast2D_property_target_position>` (between 0 and 1) of how far the shape can move without triggering a collision.
+Returns the fraction from this cast's origin to its :ref:`target_position<class_ShapeCast2D_property_target_position>` of how far the shape can move without triggering a collision, as a value between ``0.0`` and ``1.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -350,7 +350,7 @@ The fraction from the **ShapeCast2D**'s origin to its :ref:`target_position<clas
 
 :ref:`float<class_float>` **get_closest_collision_unsafe_fraction**\ (\ ) |const| :ref:`🔗<class_ShapeCast2D_method_get_closest_collision_unsafe_fraction>`
 
-The fraction from the **ShapeCast2D**'s origin to its :ref:`target_position<class_ShapeCast2D_property_target_position>` (between 0 and 1) of how far the shape must move to trigger a collision.
+Returns the fraction from this cast's origin to its :ref:`target_position<class_ShapeCast2D_property_target_position>` of how far the shape must move to trigger a collision, as a value between ``0.0`` and ``1.0``.
 
 In ideal conditions this would be the same as :ref:`get_closest_collision_safe_fraction<class_ShapeCast2D_method_get_closest_collision_safe_fraction>`, however shape casting is calculated in discrete steps, so the precise point of collision can occur between two calculated positions.
 
@@ -438,7 +438,7 @@ Returns the normal of one of the multiple collisions at ``index`` of the interse
 
 Returns the collision point of one of the multiple collisions at ``index`` where the shape intersects the colliding object.
 
-\ **Note:** this point is in the **global** coordinate system.
+\ **Note:** This point is in the **global** coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -462,7 +462,7 @@ Returns whether any object is intersecting with the shape's vector (considering 
 
 |void| **remove_exception**\ (\ node\: :ref:`CollisionObject2D<class_CollisionObject2D>`\ ) :ref:`🔗<class_ShapeCast2D_method_remove_exception>`
 
-Removes a collision exception so the shape does report collisions with the specified :ref:`CollisionObject2D<class_CollisionObject2D>` node.
+Removes a collision exception so the shape does report collisions with the specified node.
 
 .. rst-class:: classref-item-separator
 

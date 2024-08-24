@@ -117,11 +117,19 @@ The source of hand tracking data is unobstructed, meaning that an accurate metho
 
 The source of hand tracking data is a controller, meaning that joint positions are inferred from controller inputs.
 
+.. _class_XRHandTracker_constant_HAND_TRACKING_SOURCE_NOT_TRACKED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandTrackingSource<enum_XRHandTracker_HandTrackingSource>` **HAND_TRACKING_SOURCE_NOT_TRACKED** = ``3``
+
+No hand tracking data is tracked, this either means the hand is obscured, the controller is turned off, or tracking is not supported for the current input type.
+
 .. _class_XRHandTracker_constant_HAND_TRACKING_SOURCE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`HandTrackingSource<enum_XRHandTracker_HandTrackingSource>` **HAND_TRACKING_SOURCE_MAX** = ``3``
+:ref:`HandTrackingSource<enum_XRHandTracker_HandTrackingSource>` **HAND_TRACKING_SOURCE_MAX** = ``4``
 
 Represents the size of the :ref:`HandTrackingSource<enum_XRHandTracker_HandTrackingSource>` enum.
 
