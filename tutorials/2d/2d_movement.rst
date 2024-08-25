@@ -231,7 +231,7 @@ on the screen will cause the player to move to the target location.
     var target = position
 
     func _input(event):
-        #use is_action_just_pressed to only accept single taps as input
+        #use is_action_just_pressed to only accept single taps as input instead of mouse drags
         if event.is_action_pressed("click"):
 		    target = get_global_mouse_position()
 
