@@ -89,7 +89,7 @@ Signals
 
 **delta_synchronized**\ (\ ) :ref:`🔗<class_MultiplayerSynchronizer_signal_delta_synchronized>`
 
-Emitted when a new delta synchronization state is received by this synchronizer after the properties have been updated.
+Emitted when a new delta synchronization state is received by this synchronizer after the properties have been updated. This signal is only called when properties set to replicate "On Change" are synchronized. 
 
 .. rst-class:: classref-item-separator
 
@@ -101,7 +101,7 @@ Emitted when a new delta synchronization state is received by this synchronizer 
 
 **synchronized**\ (\ ) :ref:`🔗<class_MultiplayerSynchronizer_signal_synchronized>`
 
-Emitted when a new synchronization state is received by this synchronizer after the properties have been updated.
+Emitted when a new synchronization state is received by this synchronizer after the properties have been updated. This signal is only called when properties set to replicate "Always" are synchronized.
 
 .. rst-class:: classref-item-separator
 
