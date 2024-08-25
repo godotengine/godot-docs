@@ -37,6 +37,8 @@ All audio is automatically imported with the ``Loop`` setting disabled.
 If you want the music to loop seamlessly, click on the Stream file arrow,
 select ``Make Unique``, then click on the Stream file and check the ``Loop`` box.
 
+.. image:: img/unique_resource_music.webp
+
 To play the music, add ``$Music.play()`` in the ``new_game()``
 function and ``$Music.stop()`` in the ``game_over()`` function.
 
