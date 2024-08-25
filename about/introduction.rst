@@ -5,10 +5,18 @@
 Introduction
 ============
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     func _ready():
         print("Hello world!")
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        GD.Print("Hello world!");
+    }
 
 Welcome to the official documentation of **Godot Engine**, the free and open source
 community-driven 2D and 3D game engine! Behind this mouthful, you will find a
