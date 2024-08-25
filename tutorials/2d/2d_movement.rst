@@ -254,12 +254,9 @@ on the screen will cause the player to move to the target location.
 
         public override void _Input(InputEvent @event)
         {
-            if (@event is InputEventMouseButton eventMouseButton)
+            if (Input.IsActionPressed("click"))
             {
-                if (eventMouseButton.ButtonIndex == MouseButton.Left && eventMouseButton.Pressed)
-                {
-                    _target = GetGlobalMousePosition();
-                }
+                _target = GetGlobalMousePosition();
             }
         }
 
