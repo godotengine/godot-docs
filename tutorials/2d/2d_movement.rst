@@ -231,9 +231,9 @@ on the screen will cause the player to move to the target location.
     var target = position
 
     func _input(event):
-        if event is InputEventMouseButton:
-            if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-                target = get_global_mouse_position()
+        #use is_action_just_pressed to only accept single taps as input
+        if event.is_action_pressed("click"):
+		    target = get_global_mouse_position()
 
     func _physics_process(delta):
         velocity = position.direction_to(target) * speed
