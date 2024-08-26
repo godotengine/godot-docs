@@ -1304,7 +1304,7 @@ Sorts the array using a custom :ref:`Callable<class_Callable>`.
         print(my_items) # Prints [["Rice", 4], ["Tomato", 5], ["Apple", 9]]
     
         # Sort descending, using a lambda function.
-        my_items.sort_custom(func(a, b): return a[0] > b[0])
+        my_items.sort_custom(func(a, b): return a[1] > b[1])
         print(my_items) # Prints [["Apple", 9], ["Tomato", 5], ["Rice", 4]]
 
 It may also be necessary to use this method to sort strings by natural order, with :ref:`String.naturalnocasecmp_to<class_String_method_naturalnocasecmp_to>`, as in the following example:
