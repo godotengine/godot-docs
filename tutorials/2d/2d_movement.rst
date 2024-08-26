@@ -254,7 +254,8 @@ on the screen will cause the player to move to the target location.
 
         public override void _Input(InputEvent @event)
         {
-            if (Input.IsActionPressed("click"))
+            // Use IsActionPressed to only accept single taps as input instead of mouse drags.
+            if (@event.IsActionPressed("click"))
             {
                 _target = GetGlobalMousePosition();
             }
