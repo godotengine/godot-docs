@@ -781,6 +781,24 @@ GDScript:
 
   material.set_shader_parameter("colors", [Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1)])
 
+You can access ``int`` values as a readable dropdown widget using the ``hint_enum`` uniform:
+
+.. code-block:: glsl
+
+    uniform int noise_type : hint_enum("OpenSimplex2", "Cellular", "Perlin", "Value") = 0;
+
+.. note:: Unlike ``@export_enum`` in GDScript, the ``hint_enum`` uniform does not support
+          the use of ``String``s, it only supports ``int``s.
+
+You can assign explicit values to the ``hint_enum`` uniform using colon syntax similar to GDScript:
+
+.. code-block:: glsl
+ 
+    uniform int character_speed: hint_enum("Slow:30", "Average:60", "Very Fast:200") = 60;
+
+The value will be stored as an integer, corresponding to the index of the selected option (i.e. 0, 1, or 2)
+or the value assigned by colon syntax (i.e. 30, 60, or 200).
+
 .. note:: The first argument to ``set_shader_parameter`` is the name of the uniform
           in the shader. It must match *exactly* to the name of the uniform in
           the shader or else it will not be recognized.
@@ -817,6 +835,8 @@ Full list of hints below:
 | Type                 | Hint                                             | Description                                                                 |
 +======================+==================================================+=============================================================================+
 | **vec3, vec4**       | source_color                                     | Used as color.                                                              |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **int**              | hint_enum("String1", "String2")                  | Displays int input as a dropdown widget in the editor.                      |
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 | **int, float**       | hint_range(min, max[, step])                     | Restricted to values in a range (with min/max/step).                        |
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
