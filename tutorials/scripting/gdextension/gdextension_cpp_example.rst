@@ -348,11 +348,12 @@ When building for iOS, package the module as a static `.xcframework`, you can us
 following commands to do so:
 
 ::
+
     # compile simulator and device modules
     scons arch=universal ios_simulator=yes platform=ios target=<target>
     scons arch=arm64 ios_simulator=no platform=ios target=<target>
 
-    # assembe xcframeworks
+    # assemble xcframeworks
     xcodebuild -create-xcframework -library demo/bin/libgdexample.ios.<target>.a -library demo/bin/libgdexample.ios.<target>.simulator.a -output demo/bin/libgdexample.ios.<target>.xcframework
     xcodebuild -create-xcframework -library godot-cpp/bin/libgodot-cpp.ios.<target>.arm64.a -library godot-cpp/bin/libgodot-cpp.ios.<target>.universal.simulator.a  -output demo/bin/libgodot-cpp.ios.<target>.xcframework
 

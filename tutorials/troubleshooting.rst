@@ -83,7 +83,7 @@ in the Editor Settings (**Network > Debug > Remote Port**). The default is
 
 On Windows, when loading the project for the first time after the PC is turned on,
 Windows Defender will cause the filesystem cache validation on project startup
-to take significantly longer. This is especially noticable in projects with a
+to take significantly longer. This is especially noticeable in projects with a
 large number of files. Consinder adding the project folder to the list of exclusions
 by going to Virus & threat protection > Virus & threat protection settings >
 Add or remove exclusions.
