@@ -177,6 +177,7 @@ Nodes
     class_openxrcompositionlayerequirect
     class_openxrcompositionlayerquad
     class_openxrhand
+    class_openxrvisibilitymask
     class_optionbutton
     class_panel
     class_panelcontainer
@@ -406,6 +407,7 @@ Resources
     class_fontvariation
     class_gdextension
     class_gdscript
+    class_gdscriptsyntaxhighlighter
     class_gltfaccessor
     class_gltfanimation
     class_gltfbufferview

@@ -266,7 +266,7 @@ Returns ``true`` if the timer is stopped or has not started.
 
 |void| **start**\ (\ time_sec\: :ref:`float<class_float>` = -1\ ) :ref:`🔗<class_Timer_method_start>`
 
-Starts the timer, if it was not started already. Fails if the timer is not inside the tree. If ``time_sec`` is greater than ``0``, this value is used for the :ref:`wait_time<class_Timer_property_wait_time>`.
+Starts the timer, or resets the timer if it was started already. Fails if the timer is not inside the tree. If ``time_sec`` is greater than ``0``, this value is used for the :ref:`wait_time<class_Timer_property_wait_time>`.
 
 \ **Note:** This method does not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
 

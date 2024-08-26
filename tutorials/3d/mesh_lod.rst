@@ -138,9 +138,14 @@ by changing the **Rendering > Mesh LOD > LOD Change > Threshold Pixels** project
 setting. To change this value at run-time, set ``mesh_lod_threshold`` on the
 root viewport as follows:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     get_tree().root.mesh_lod_threshold = 4.0
+
+ .. code-tab:: csharp
+
+    GetTree().Root.MeshLodThreshold = 4.0f;
 
 Each viewport has its own ``mesh_lod_threshold`` property, which can be set
 independently from other viewports.
@@ -148,14 +153,14 @@ independently from other viewports.
 The default mesh LOD threshold of 1 pixel is tuned to look *perceptually*
 lossless; it provides a significant performance gain with an unnoticeable loss
 in quality. Higher values will make LOD transitions happen sooner when the
-camera moves away, resulting in higher performance but lower quality.
+camera moves away, resulting in higher performance, but lower quality.
 
 If you need to perform per-object adjustments to mesh LOD, you can adjust how
 aggressive LOD transitions should be by adjusting the **LOD Bias** property on
 any node that inherits from GeometryInstance3D. Values *above* ``1.0`` will make
-LOD transitions happen later than usual (resulting in higher quality but lower
+LOD transitions happen later than usual (resulting in higher quality, but lower
 performance). Values *below* ``1.0`` will make LOD transitions happen sooner than
-usual (resulting in lower quality but higher performance).
+usual (resulting in lower quality, but higher performance).
 
 Additionally, ReflectionProbe nodes have their own **Mesh LOD Threshold** property
 that can be adjusted to improve rendering performance when the reflection probe

@@ -142,6 +142,8 @@ Methods
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                     | :ref:`_font_get_supported_chars<class_TextServerExtension_private_method__font_get_supported_chars>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                        |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>`                 | :ref:`_font_get_supported_glyphs<class_TextServerExtension_private_method__font_get_supported_glyphs>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                      |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                           | :ref:`_font_get_texture_count<class_TextServerExtension_private_method__font_get_texture_count>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`Vector2i<class_Vector2i>`\ ) |virtual| |const|                                                                                                                                                                                                                    |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Image<class_Image>`                                       | :ref:`_font_get_texture_image<class_TextServerExtension_private_method__font_get_texture_image>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`Vector2i<class_Vector2i>`, texture_index\: :ref:`int<class_int>`\ ) |virtual| |const|                                                                                                                                                                             |
@@ -1239,6 +1241,20 @@ Returns font subpixel glyph positioning mode.
 **Required.**\ 
 
 Returns a string containing all the characters available in the font.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__font_get_supported_glyphs:
+
+.. rst-class:: classref-method
+
+:ref:`PackedInt32Array<class_PackedInt32Array>` **_font_get_supported_glyphs**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_get_supported_glyphs>`
+
+**Required.**\ 
+
+Returns an array containing all glyph indices in the font.
 
 .. rst-class:: classref-item-separator
 

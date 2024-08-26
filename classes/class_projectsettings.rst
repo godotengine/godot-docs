@@ -277,6 +277,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/settings/gdscript/max_call_stack<class_ProjectSettings_property_debug/settings/gdscript/max_call_stack>`                                                                                       | ``1024``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`debug/settings/physics_interpolation/enable_warnings<class_ProjectSettings_property_debug/settings/physics_interpolation/enable_warnings>`                                                           | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/settings/profiler/max_functions<class_ProjectSettings_property_debug/settings/profiler/max_functions>`                                                                                         | ``16384``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/settings/profiler/max_timestamp_query_elements<class_ProjectSettings_property_debug/settings/profiler/max_timestamp_query_elements>`                                                           | ``256``                                                                                          |
@@ -493,7 +495,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`editor/run/main_run_args<class_ProjectSettings_property_editor/run/main_run_args>`                                                                                                                   | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`editor/script/search_in_file_extensions<class_ProjectSettings_property_editor/script/search_in_file_extensions>`                                                                                     | ``PackedStringArray("gd", "gdshader")``                                                          |
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`editor/script/search_in_file_extensions<class_ProjectSettings_property_editor/script/search_in_file_extensions>`                                                                                     |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`editor/script/templates_search_path<class_ProjectSettings_property_editor/script/templates_search_path>`                                                                                             | ``"res://script_templates"``                                                                     |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -722,6 +724,14 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/emulate_mouse_from_touch<class_ProjectSettings_property_input_devices/pointing/emulate_mouse_from_touch>`                                                                     | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`                                                                     | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input_devices/sensors/enable_accelerometer<class_ProjectSettings_property_input_devices/sensors/enable_accelerometer>`                                                                               | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input_devices/sensors/enable_gravity<class_ProjectSettings_property_input_devices/sensors/enable_gravity>`                                                                                           | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input_devices/sensors/enable_gyroscope<class_ProjectSettings_property_input_devices/sensors/enable_gyroscope>`                                                                                       | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input_devices/sensors/enable_magnetometer<class_ProjectSettings_property_input_devices/sensors/enable_magnetometer>`                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`internationalization/locale/fallback<class_ProjectSettings_property_internationalization/locale/fallback>`                                                                                           | ``"en"``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1417,6 +1427,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/denoising/denoiser<class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser>`                                                                                 | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/lightmapping/lightmap_gi/use_bicubic_filter<class_ProjectSettings_property_rendering/lightmapping/lightmap_gi/use_bicubic_filter>`                                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`rendering/lightmapping/primitive_meshes/texel_size<class_ProjectSettings_property_rendering/lightmapping/primitive_meshes/texel_size>`                                                               | ``0.2``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`rendering/lightmapping/probe_capture/update_speed<class_ProjectSettings_property_rendering/lightmapping/probe_capture/update_speed>`                                                                 | ``15``                                                                                           |
@@ -1583,6 +1595,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/lossless_compression/force_png<class_ProjectSettings_property_rendering/textures/lossless_compression/force_png>`                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/compress_with_gpu<class_ProjectSettings_property_rendering/textures/vram_compression/compress_with_gpu>`                                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc2_astc<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc>`                                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_s3tc_bptc<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc_bptc>`                                                           | ``false``                                                                                        |
@@ -1613,7 +1627,11 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_interaction_profile<class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile>`                                                                         | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`                                                                                               | ``true``                                                                                         |
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`                                                                                               | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking_controller_data_source<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_controller_data_source>`                                                 | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking_unobstructed_data_source<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_unobstructed_data_source>`                                             | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                         | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -3188,6 +3206,20 @@ Maximum call stack allowed for debugging GDScript.
 
 ----
 
+.. _class_ProjectSettings_property_debug/settings/physics_interpolation/enable_warnings:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **debug/settings/physics_interpolation/enable_warnings** = ``true`` :ref:`🔗<class_ProjectSettings_property_debug/settings/physics_interpolation/enable_warnings>`
+
+If ``true``, enables warnings which can help pinpoint where nodes are being incorrectly updated, which will result in incorrect interpolation and visual glitches.
+
+When a node is being interpolated, it is essential that the transform is set during :ref:`Node._physics_process<class_Node_private_method__physics_process>` (during a physics tick) rather than :ref:`Node._process<class_Node_private_method__process>` (during a frame).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/settings/profiler/max_functions:
 
 .. rst-class:: classref-property
@@ -4586,7 +4618,7 @@ For example, this can be used to force the project to run on the dedicated GPU i
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **editor/script/search_in_file_extensions** = ``PackedStringArray("gd", "gdshader")`` :ref:`🔗<class_ProjectSettings_property_editor/script/search_in_file_extensions>`
+:ref:`PackedStringArray<class_PackedStringArray>` **editor/script/search_in_file_extensions** :ref:`🔗<class_ProjectSettings_property_editor/script/search_in_file_extensions>`
 
 Text-based file extensions to include in the script editor's "Find in Files" feature. You can add e.g. ``tscn`` if you wish to also parse your scene files, especially if you use built-in scripts which are serialized in the scene files.
 
@@ -6129,6 +6161,54 @@ If ``true``, sends mouse input events when tapping or swiping on the touchscreen
 :ref:`bool<class_bool>` **input_devices/pointing/emulate_touch_from_mouse** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`
 
 If ``true``, sends touch input events when clicking or dragging the mouse.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input_devices/sensors/enable_accelerometer:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input_devices/sensors/enable_accelerometer** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/sensors/enable_accelerometer>`
+
+If ``true``, the accelerometer sensor is enabled and :ref:`Input.get_accelerometer<class_Input_method_get_accelerometer>` returns valid data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input_devices/sensors/enable_gravity:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input_devices/sensors/enable_gravity** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/sensors/enable_gravity>`
+
+If ``true``, the gravity sensor is enabled and :ref:`Input.get_gravity<class_Input_method_get_gravity>` returns valid data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input_devices/sensors/enable_gyroscope:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input_devices/sensors/enable_gyroscope** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/sensors/enable_gyroscope>`
+
+If ``true``, the gyroscope sensor is enabled and :ref:`Input.get_gyroscope<class_Input_method_get_gyroscope>` returns valid data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input_devices/sensors/enable_magnetometer:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input_devices/sensors/enable_magnetometer** = ``false`` :ref:`🔗<class_ProjectSettings_property_input_devices/sensors/enable_magnetometer>`
+
+If ``true``, the magnetometer sensor is enabled and :ref:`Input.get_magnetometer<class_Input_method_get_magnetometer>` returns valid data.
 
 .. rst-class:: classref-item-separator
 
@@ -9552,7 +9632,9 @@ If ``true``, the renderer will interpolate the transforms of physics objects bet
 
 Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows smoothing out framerate jitters. The default value of 0.5 should be good enough for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
 
-\ **Note:** When using a physics interpolation solution (such as enabling :ref:`physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` or using a custom solution), the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0.0``.
+\ **Note:** Jitter fix is automatically disabled at runtime when :ref:`physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` is enabled.
+
+\ **Note:** When using a custom physics interpolation solution, the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0.0``.
 
 \ **Note:** This property is only read when the project starts. To change the physics jitter fix at runtime, set :ref:`Engine.physics_jitter_fix<class_Engine_property_physics_jitter_fix>` instead.
 
@@ -10519,6 +10601,20 @@ OIDN will use GPU acceleration when available. Unlike JNLM which uses compute sh
 - Intel GPUs: SYCL libraries
 
 If no GPU acceleration is configured on the system, multi-threaded CPU-based denoising will be performed instead. This CPU-based denoising is significantly slower than the JNLM denoiser in most cases.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/lightmapping/lightmap_gi/use_bicubic_filter:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/lightmapping/lightmap_gi/use_bicubic_filter** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/lightmap_gi/use_bicubic_filter>`
+
+If ``true``, applies a bicubic filter during lightmap sampling. This makes lightmaps look much smoother, at a moderate performance cost.
+
+\ **Note:** The bicubic filter exaggerates the 'bleeding' effect that occurs when a lightmap's resolution is low enough.
 
 .. rst-class:: classref-item-separator
 
@@ -11628,6 +11724,22 @@ If ``true``, the texture importer will import lossless textures using the PNG fo
 
 ----
 
+.. _class_ProjectSettings_property_rendering/textures/vram_compression/compress_with_gpu:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/textures/vram_compression/compress_with_gpu** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/vram_compression/compress_with_gpu>`
+
+If ``true``, the texture importer will utilize the GPU for compressing textures, which makes large textures import significantly faster.
+
+\ **Note:** This setting requires either Vulkan or D3D12 available as a rendering backend.
+
+\ **Note:** Currently this only affects BC6H compression, which is used on Desktop and Console for HDR images.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc:
 
 .. rst-class:: classref-property
@@ -11825,7 +11937,7 @@ Specify whether to enable eye tracking for this project. Depending on the platfo
 
 :ref:`bool<class_bool>` **xr/openxr/extensions/hand_interaction_profile** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile>`
 
-If true the hand interaction profile extension will be activated if supported by the platform.
+If ``true`` the hand interaction profile extension will be activated if supported by the platform.
 
 .. rst-class:: classref-item-separator
 
@@ -11835,9 +11947,39 @@ If true the hand interaction profile extension will be activated if supported by
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking** = ``true`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`
 
-If true we enable the hand tracking extension if available.
+If ``true``, the hand tracking extension is enabled if available.
+
+\ **Note:** By default hand tracking will only work for data sources chosen by the XR runtime. For SteamVR this is the controller inferred data source, for most other runtimes this is the unobstructed data source. There is no way to query this. If a runtime supports the OpenXR data source extension you can use the :ref:`xr/openxr/extensions/hand_tracking_controller_data_source<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_controller_data_source>` and/or :ref:`xr/openxr/extensions/hand_tracking_unobstructed_data_source<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_unobstructed_data_source>` to indicate you wish to enable these data sources. If neither is selected the data source extension is not enabled and the XR runtimes default behavior persists.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_controller_data_source:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking_controller_data_source** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_controller_data_source>`
+
+If ``true``, support for the controller inferred data source is requested. If supported, you will receive hand tracking data even if the user has a controller in hand, with finger positions automatically inferred from controller input and/or sensors.
+
+\ **Node:** This requires the OpenXR data source extension and controller inferred handtracking to be supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>` must be enabled for this setting to be used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_unobstructed_data_source:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking_unobstructed_data_source** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking_unobstructed_data_source>`
+
+If ``true``, support for the unobstructed data source is requested. If supported, you will receive hand tracking data based on the actual finger positions of the user often determined by optical tracking.
+
+\ **Node:** This requires the OpenXR data source extension and unobstructed handtracking to be supported by the XR runtime. If not supported this setting will be ignored. :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>` must be enabled for this setting to be used.
 
 .. rst-class:: classref-item-separator
 

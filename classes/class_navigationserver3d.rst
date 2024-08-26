@@ -472,6 +472,14 @@ Constant to get the number of navigation mesh polygon edges that are considered 
 
 Constant to get the number of navigation mesh polygon edges that could not be merged but may be still connected by edge proximity or with links.
 
+.. _class_NavigationServer3D_constant_INFO_OBSTACLE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_OBSTACLE_COUNT** = ``9``
+
+Constant to get the number of active navigation obstacles.
+
 .. rst-class:: classref-section-separator
 
 ----

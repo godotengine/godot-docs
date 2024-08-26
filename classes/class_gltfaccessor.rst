@@ -12,16 +12,16 @@ GLTFAccessor
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Represents a GLTF accessor.
+Represents a glTF accessor.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-GLTFAccessor is a data structure representing GLTF a ``accessor`` that would be found in the ``"accessors"`` array. A buffer is a blob of binary data. A buffer view is a slice of a buffer. An accessor is a typed interpretation of the data in a buffer view.
+GLTFAccessor is a data structure representing a glTF ``accessor`` that would be found in the ``"accessors"`` array. A buffer is a blob of binary data. A buffer view is a slice of a buffer. An accessor is a typed interpretation of the data in a buffer view.
 
-Most custom data stored in GLTF does not need accessors, only buffer views (see :ref:`GLTFBufferView<class_GLTFBufferView>`). Accessors are for more advanced use cases such as interleaved mesh data encoded for the GPU.
+Most custom data stored in glTF does not need accessors, only buffer views (see :ref:`GLTFBufferView<class_GLTFBufferView>`). Accessors are for more advanced use cases such as interleaved mesh data encoded for the GPU.
 
 .. rst-class:: classref-introduction-group
 
@@ -163,7 +163,7 @@ Property Descriptions
 - |void| **set_accessor_type**\ (\ value\: :ref:`GLTFAccessorType<enum_GLTFAccessor_GLTFAccessorType>`\ )
 - :ref:`GLTFAccessorType<enum_GLTFAccessor_GLTFAccessorType>` **get_accessor_type**\ (\ )
 
-The GLTF accessor type as an enum. Possible values are 0 for "SCALAR", 1 for "VEC2", 2 for "VEC3", 3 for "VEC4", 4 for "MAT2", 5 for "MAT3", and 6 for "MAT4".
+The glTF accessor type as an enum. Possible values are 0 for "SCALAR", 1 for "VEC2", 2 for "VEC3", 3 for "VEC4", 4 for "MAT2", 5 for "MAT3", and 6 for "MAT4".
 
 .. rst-class:: classref-item-separator
 
@@ -214,7 +214,7 @@ The offset relative to the start of the buffer view in bytes.
 - |void| **set_component_type**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_component_type**\ (\ )
 
-The GLTF component type as an enum. Possible values are 5120 for "BYTE", 5121 for "UNSIGNED_BYTE", 5122 for "SHORT", 5123 for "UNSIGNED_SHORT", 5125 for "UNSIGNED_INT", and 5126 for "FLOAT". A value of 5125 or "UNSIGNED_INT" must not be used for any accessor that is not referenced by mesh.primitive.indices.
+The glTF component type as an enum. Possible values are 5120 for "BYTE", 5121 for "UNSIGNED_BYTE", 5122 for "SHORT", 5123 for "UNSIGNED_SHORT", 5125 for "UNSIGNED_INT", and 5126 for "FLOAT". A value of 5125 or "UNSIGNED_INT" must not be used for any accessor that is not referenced by mesh.primitive.indices.
 
 .. rst-class:: classref-item-separator
 
@@ -403,7 +403,7 @@ The offset relative to the start of the bufferView in bytes.
 
 **Deprecated:** Use :ref:`accessor_type<class_GLTFAccessor_property_accessor_type>` instead.
 
-The GLTF accessor type as an enum. Use :ref:`accessor_type<class_GLTFAccessor_property_accessor_type>` instead.
+The glTF accessor type as an enum. Use :ref:`accessor_type<class_GLTFAccessor_property_accessor_type>` instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

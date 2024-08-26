@@ -21,7 +21,7 @@ GLTFDocumentExtension
 Description
 -----------
 
-Extends the functionality of the :ref:`GLTFDocument<class_GLTFDocument>` class by allowing you to run arbitrary code at various stages of GLTF import or export.
+Extends the functionality of the :ref:`GLTFDocument<class_GLTFDocument>` class by allowing you to run arbitrary code at various stages of glTF import or export.
 
 To use, make a new class extending GLTFDocumentExtension, override any methods you need, make an instance of your class, and register it using :ref:`GLTFDocument.register_gltf_document_extension<class_GLTFDocument_method_register_gltf_document_extension>`.
 
@@ -113,7 +113,7 @@ Runs when converting the data from a Godot scene node. This method can be used t
 
 Part of the export process. This method is run after :ref:`_get_saveable_image_formats<class_GLTFDocumentExtension_private_method__get_saveable_image_formats>` and before :ref:`_export_post<class_GLTFDocumentExtension_private_method__export_post>`. If this **GLTFDocumentExtension** is used for exporting images, this runs after :ref:`_serialize_texture_json<class_GLTFDocumentExtension_private_method__serialize_texture_json>`.
 
-This method can be used to modify the final JSON of each node. Data should be primarily stored in ``gltf_node`` prior to serializing the JSON, but the original Godot ``node`` is also provided if available. The node may be null if not available, such as when exporting GLTF data not generated from a Godot scene.
+This method can be used to modify the final JSON of each node. Data should be primarily stored in ``gltf_node`` prior to serializing the JSON, but the original Godot ``node`` is also provided if available. The node may be null if not available, such as when exporting glTF data not generated from a Godot scene.
 
 .. rst-class:: classref-item-separator
 
@@ -127,7 +127,7 @@ This method can be used to modify the final JSON of each node. Data should be pr
 
 Part of the export process. This method is run last, after all other parts of the export process.
 
-This method can be used to modify the final JSON of the generated GLTF file.
+This method can be used to modify the final JSON of the generated glTF file.
 
 .. rst-class:: classref-item-separator
 
@@ -141,7 +141,7 @@ This method can be used to modify the final JSON of the generated GLTF file.
 
 Part of the export process. This method is run first, before all other parts of the export process.
 
-The return value is used to determine if this **GLTFDocumentExtension** instance should be used for exporting a given GLTF file. If :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, the export will use this **GLTFDocumentExtension** instance. If not overridden, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned.
+The return value is used to determine if this **GLTFDocumentExtension** instance should be used for exporting a given glTF file. If :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, the export will use this **GLTFDocumentExtension** instance. If not overridden, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned.
 
 .. rst-class:: classref-item-separator
 
@@ -211,7 +211,7 @@ Returns an array of the image formats that can be saved/exported by this extensi
 
 Part of the import process. This method is run after :ref:`_import_preflight<class_GLTFDocumentExtension_private_method__import_preflight>` and before :ref:`_parse_node_extensions<class_GLTFDocumentExtension_private_method__parse_node_extensions>`.
 
-Returns an array of the GLTF extensions supported by this GLTFDocumentExtension class. This is used to validate if a GLTF file with required extensions can be loaded.
+Returns an array of the glTF extensions supported by this GLTFDocumentExtension class. This is used to validate if a glTF file with required extensions can be loaded.
 
 .. rst-class:: classref-item-separator
 
@@ -267,7 +267,7 @@ This method can be used to modify any of the data imported so far after parsing,
 
 Part of the import process. This method is run first, before all other parts of the import process.
 
-The return value is used to determine if this **GLTFDocumentExtension** instance should be used for importing a given GLTF file. If :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, the import will use this **GLTFDocumentExtension** instance. If not overridden, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned.
+The return value is used to determine if this **GLTFDocumentExtension** instance should be used for importing a given glTF file. If :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, the import will use this **GLTFDocumentExtension** instance. If not overridden, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned.
 
 .. rst-class:: classref-item-separator
 
@@ -281,7 +281,7 @@ The return value is used to determine if this **GLTFDocumentExtension** instance
 
 Part of the import process. This method is run after :ref:`_parse_node_extensions<class_GLTFDocumentExtension_private_method__parse_node_extensions>` and before :ref:`_parse_texture_json<class_GLTFDocumentExtension_private_method__parse_texture_json>`.
 
-Runs when parsing image data from a GLTF file. The data could be sourced from a separate file, a URI, or a buffer, and then is passed as a byte array.
+Runs when parsing image data from a glTF file. The data could be sourced from a separate file, a URI, or a buffer, and then is passed as a byte array.
 
 .. rst-class:: classref-item-separator
 
@@ -309,7 +309,7 @@ Runs when parsing the node extensions of a GLTFNode. This method can be used to 
 
 Part of the import process. This method is run after :ref:`_parse_image_data<class_GLTFDocumentExtension_private_method__parse_image_data>` and before :ref:`_generate_scene_node<class_GLTFDocumentExtension_private_method__generate_scene_node>`.
 
-Runs when parsing the texture JSON from the GLTF textures array. This can be used to set the source image index to use as the texture.
+Runs when parsing the texture JSON from the glTF textures array. This can be used to set the source image index to use as the texture.
 
 .. rst-class:: classref-item-separator
 
@@ -323,7 +323,7 @@ Runs when parsing the texture JSON from the GLTF textures array. This can be use
 
 Part of the export process. This method is run after :ref:`_get_saveable_image_formats<class_GLTFDocumentExtension_private_method__get_saveable_image_formats>` and before :ref:`_serialize_texture_json<class_GLTFDocumentExtension_private_method__serialize_texture_json>`.
 
-This method is run when saving images separately from the GLTF file. When images are embedded, :ref:`_serialize_image_to_bytes<class_GLTFDocumentExtension_private_method__serialize_image_to_bytes>` runs instead. Note that these methods only run when this **GLTFDocumentExtension** is selected as the image exporter.
+This method is run when saving images separately from the glTF file. When images are embedded, :ref:`_serialize_image_to_bytes<class_GLTFDocumentExtension_private_method__serialize_image_to_bytes>` runs instead. Note that these methods only run when this **GLTFDocumentExtension** is selected as the image exporter.
 
 .. rst-class:: classref-item-separator
 
@@ -337,7 +337,7 @@ This method is run when saving images separately from the GLTF file. When images
 
 Part of the export process. This method is run after :ref:`_get_saveable_image_formats<class_GLTFDocumentExtension_private_method__get_saveable_image_formats>` and before :ref:`_serialize_texture_json<class_GLTFDocumentExtension_private_method__serialize_texture_json>`.
 
-This method is run when embedding images in the GLTF file. When images are saved separately, :ref:`_save_image_at_path<class_GLTFDocumentExtension_private_method__save_image_at_path>` runs instead. Note that these methods only run when this **GLTFDocumentExtension** is selected as the image exporter.
+This method is run when embedding images in the glTF file. When images are saved separately, :ref:`_save_image_at_path<class_GLTFDocumentExtension_private_method__save_image_at_path>` runs instead. Note that these methods only run when this **GLTFDocumentExtension** is selected as the image exporter.
 
 This method must set the image MIME type in the ``image_dict`` with the ``"mimeType"`` key. For example, for a PNG image, it would be set to ``"image/png"``. The return value must be a :ref:`PackedByteArray<class_PackedByteArray>` containing the image data.
 

@@ -15,7 +15,7 @@ On this page, you'll learn:
 
 .. seealso::
 
-    If you only need meshes to become less detailed over distance but don't have
+    If you only need meshes to become less detailed over distance, but don't have
     manually authored LOD meshes, consider relying on automatic
     :ref:`doc_mesh_lod` instead.
 
