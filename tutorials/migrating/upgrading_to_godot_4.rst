@@ -407,65 +407,62 @@ table to find its new name.
   may not work in 100% of situations.
 - AcceptDialog's ``set_autowrap()`` is now ``set_autowrap_mode()``.
 - AnimationNode's ``process()`` is now ``_process()``
-  (note the leading underscore, which denotes a virtual method).
+(note the leading underscore, which denotes a virtual method).
+- AnimationPlayer's ``add_animation()`` is now ``add_animation_library()``.
+- AnimationTree's ``set_process_mode()`` is now ``set_process_callback()``.
+- Array's ``empty()`` is now ``is_empty()``.
+- Array's ``invert()`` is now ``reverse()``.
+- Array's ``remove()`` is now ``remove_at()``.
 - AStar2D and AStar3D's ``get_points()`` is now ``get_points_id()``.
 - BaseButton's ``set_event()`` is now ``set_shortcut()``.
-- Camera2D's ``get_v_offset()`` is now ``get_drag_vertical_offset()``.
-- Camera2D's ``set_v_offset()`` is now ``set_drag_vertical_offset()``.
-- Camera2D's ``make_current()`` is now ``set_current()``.
+- BoxShape's ``get_extents()`` is now ``get_size()``.
+- BoxShape's ``set_extents()`` is now ``set_size()``.
 - Camera2D's ``get_h_offset()`` is now ``get_drag_horizontal_offset()``.
+- Camera2D's ``get_v_offset()`` is now ``get_drag_vertical_offset()``.
 - Camera2D's ``set_h_offset()`` is now ``set_drag_horizontal_offset()``.
+- Camera2D's ``set_v_offset()`` is now ``set_drag_vertical_offset()``.
+- CanvasItem's ``raise()`` is now ``move_to_front()``.
 - CanvasItem's ``update()`` is now ``queue_redraw()``.
-- Control's ``set_tooltip()`` is now ``set_tooltip_text()``.
+- ClippedCamera3D's ``get_process_mode()`` is now ``get_process_callback()``.
 - Control's ``get_stylebox()`` is now ``get_theme_stylebox()``.
+- Control's ``set_tooltip()`` is now ``set_tooltip_text()``.
 - EditorNode3DGizmoPlugin's ``create_gizmo()`` is now ``_create_gizmo()``
-  (note the leading underscore, which denotes a virtual method).
+(note the leading underscore, which denotes a virtual method).
 - ENetMultiplayerPeer's ``get_peer_port()`` is now ``get_peer()``.
 - FileDialog's ``get_mode()`` is now ``get_file_mode()``.
 - FileDialog's ``set_mode()`` is now ``set_file_mode()``.
 - GraphNode's ``get_offset()`` is now ``get_position_offset()``.
-- GridMap's ``world_to_map()`` is now ``local_to_map()``.
 - GridMap's ``map_to_world()`` is now ``map_to_local()``.
+- GridMap's ``world_to_map()`` is now ``local_to_map()``.
 - Image's ``get_rect()`` is now ``get_region()``.
+- ImmediateGeometry's ``set_normal()`` is now ``surface_set_normal()``.
+- ImmediateMesh's ``set_color()`` is now ``surface_set_color()``.
+- ImmediateMesh's ``set_uv()`` is now ``surface_set_uv()``.
 - ItemList's ``get_v_scroll()`` is now ``get_v_scroll_bar()``.
 - MultiPlayerAPI's ``get_network_connected_peers()`` is now ``get_peers()``.
 - MultiPlayerAPI's ``get_network_peer()`` is now ``get_peer()``.
 - MultiPlayerAPI's ``get_network_unique_id()`` is now ``get_unique_id()``.
 - MultiPlayerAPI's ``has_network_peer()`` is now ``has_multiplayer_peer()``.
+- MultiplayerAPI's ``is_refusing_new_network_connections()`` is now ``is_refusing_new_connections()``.
 - PacketPeerUDP's ``is_listening()`` is now ``is_bound()``.
 - PacketPeerUDP's ``listen()`` is now ``bind()``.
 - ParticleProcessMaterial's ``set_flag()`` is now ``set_particle_flag()``.
+- PhysicsTestMotionResult2D's ``get_motion()`` is now ``get_travel()``.
+- RectangleShape's ``get_extents()`` is now ``get_size()``.
+- RectangleShape's ``set_extents()`` is now ``set_size()``.
+- RenderingServer's ``get_render_info()`` is now ``get_rendering_info()``.
 - ResourceFormatLoader's ``get_dependencies()`` is now ``_get_dependencies()``
-  (note the leading underscore, which denotes a virtual method).
+(note the leading underscore, which denotes a virtual method).
+- ResourceFormatLoader's ``load()`` is now ``_load()``.
 - SceneTree's ``change_scene()`` is now ``change_scene_to_file()``.
 - Shortcut's ``is_valid()`` is now ``has_valid_event()``.
-- TileMap's ``world_to_map()`` is now ``local_to_map()``.
 - TileMap's ``map_to_world()`` is now ``map_to_local()``.
+- TileMap's ``world_to_map()`` is now ``local_to_map()``.
 - Transform2D's ``xform()`` is ``mat * vec`` and ``xform_inv()`` is ``vec * mat``.
-- XRPositionalTracker's ``_set_name()`` is now ``get_tracker_name()``.
-- BaseButton's ``_unhandled_input()`` is now ``_unhandled_key_input()``.
-- ViewportContainer's ``_unhandled_input()`` is now ``_unhandled_key_input()``.
-- AnimationPlayer's ``add_animation()`` is now ``add_animation_library()``.
-- BoxShape's ``get_extents()`` is now ``get_size()``.
-- RectangleShape's ``get_extents()`` is now ``get_size()``.
-- PhysicsTestMotionResult2D's ``get_motion()`` is now ``get_travel()``.
 - XRPositionalTracker's ``get_name()`` is now ``get_tracker_name()``.
-- ClippedCamera3D's ``get_process_mode()`` is now ``get_process_callback()``.
-- RenderingServer's ``get_render_info()`` is now ``get_rendering_info()``.
 - XRPositionalTracker's ``get_type()`` is now ``get_tracker_type()``.
-- MultiplayerAPI's ``is_refusing_new_network_connections()`` is now ``is_refusing_new_connections()``.
-- ResourceFormatLoader's ``load()`` is now ``_load()``.
-- CanvasItem's ``raise()`` is now ``move_to_front()``.
-- ImmediateMesh's ``set_color()`` is now ``surface_set_color()``.
-- BoxShape's ``set_extents()`` is now ``set_size()``.
-- RectangleShape's ``set_extents()`` is now ``set_size()``.
-- ImmediateGeometry's ``set_normal()`` is now ``surface_set_normal()``.
-- AnimationTree's ``set_process_mode()`` is now ``set_process_callback()``.
-- ImmediateMesh's ``set_uv()`` is now ``surface_set_uv()``.
-- Array's ``empty()`` is now ``is_empty()``.
-- Array's ``invert()`` is now ``reverse()``.
-- Array's ``remove()`` is now ``remove_at()``.
-- Array's ``remove()`` is now ``remove_at()``.
+- XRPositionalTracker's ``_set_name()`` is now ``get_tracker_name()``.
+
 
 **Properties**
 
@@ -476,11 +473,28 @@ table to find its new name.
     and PathFollow3D's ``set_offset()`` and ``get_offset()`` must be renamed to
     ``set_progress()`` and ``get_progress()`` respectively.
 
+- AudioServer's ``device`` is now ``output_device``.
+- BaseButton's ``group`` is now ``button_group``.
+- Camera3D's ``zfar`` is now ``far``.
+- Camera3D's ``znear`` is now ``near``
 - Control's ``margin`` is now ``offset``.
+- InputEventMouseButton's ``doubleclick`` is now ``double_click``.
+- InputEventWithModifiers's ``alt`` is now ``alt_pressed``.
+- InputEventWithModifiers's ``command`` is now ``command_pressed``.
+- InputEventWithModifiers's ``control`` is now ``ctrl_pressed``.
+- InputEventWithModifiers's ``meta`` is now ``meta_pressed``.
+- InputEventWithModifiers's ``shift`` is now ``shift_pressed``.
 - Label's ``percent_visible`` is now ``visible_ratio``.
 - MultiPlayerAPI's ``refuse_new_network_connections`` is now ``refuse_new_connections``.
+- Node's ``filename`` is now ``scene_file_path``.
+- PathFollow2D's ``rotate`` is now ``rotates``.
 - PathFollow2D and PathFollow3D's ``offset`` is now ``progress``.
 - TextureProgressBar's ``percent_visible`` is now ``show_percentage``.
+- Theme's ``off`` is now ``unchecked``.
+- Theme's ``ofs`` is now ``offset``.
+- Theme's ``on`` is now ``checked``.
+- Window's ``window_title`` is now ``title``.
+- WorldMarginShape2D's ``d`` is now ``distance``.
 - The ``extents`` property on CSG nodes and VoxelGI will have to be replaced
   with ``size``, with the set value halved (as they're no longer half-extents).
   This also affects its setter/getter methods ``set_extents()`` and
@@ -488,25 +502,7 @@ table to find its new name.
 - The ``Engine.editor_hint`` property was removed in favor of the
   ``Engine.is_editor_hint()`` *method*. This is because it's read-only, and
   properties in Godot are not used for read-only values.
-- InputEventWithModifiers's ``alt()`` is now ``alt_pressed()``.
-- InputEventWithModifiers's ``command()`` is now ``command_pressed()``.
-- InputEventWithModifiers's ``control()`` is now ``ctrl_pressed()``.
-- WorldMarginShape2D's ``d()`` is now ``distance()``.
-- AudioServer's ``device()`` is now ``output_device()``.
-- InputEventMouseButton's ``doubleclick()`` is now ``double_click()``.
-- Node's ``filename()`` is now ``scene_file_path()``.
-- BaseButton's ``group()`` is now ``button_group()``.
-- InputEventWithModifiers's ``meta()`` is now ``meta_pressed()``.
-- PathFollow2D's ``rotate()`` is now ``rotates()``.
-- Theme's ``off()`` is now ``unchecked()``.
-- Theme's ``ofs()`` is now ``offset()``.
-- Theme's ``on()`` is now ``checked()``.
-- PathFollow2D's ``offset()`` is now ``progress()``.
-- PathFollow3D's ``offset()`` is now ``progress()``.
-- InputEventWithModifiers's ``shift()`` is now ``shift_pressed()``.
-- Window's ``window_title()`` is now ``title()``.
-- Camera3D's ``zfar()`` is now ``far()``.
-- Camera3D's ``znear()`` is now ``near()``
+
 
 **Enums**
 
