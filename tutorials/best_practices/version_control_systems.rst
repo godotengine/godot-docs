@@ -36,7 +36,7 @@ Files to exclude from VCS
     This lists files and folders that should be ignored from version control in
     Godot 4.1 and later.
 
-    The list of files of folders that should be ignored from version control in
+    The list of files and folders that should be ignored from version control in
     Godot 3.x and Godot 4.0 is **entirely** different. This is important, as Godot
     3.x and 4.0 may store sensitive credentials in ``export_presets.cfg`` (unlike Godot
     4.1 and later).
