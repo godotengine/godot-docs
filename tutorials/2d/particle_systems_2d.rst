@@ -203,6 +203,11 @@ Fract Delta
 ~~~~~~~~~~~
 
 This can be used to turn Fract Delta on or off.
+Fract Delta results in fractional delta calculation which has a smoother particles display effect.
+The smoothness effect comes from more accuracy, especially in systems with high randomness or fast-moving particles.
+It helps maintain the visual consistency of the particle system, making sure that each particle's motion aligns with its actual lifespan.
+Without it, particles might appear to jump or move more than they should in a single frame if they are emitted at a point within the frame.
+The greater accuracy has a performance tradeoff, especially in systems with an higher amount of particles.
 
 Drawing parameters
 ------------------
