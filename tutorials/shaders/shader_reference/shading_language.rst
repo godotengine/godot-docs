@@ -163,8 +163,8 @@ Individual scalar members of vector types are accessed via the "x", "y", "z" and
 equivalent. Use whatever fits best for your needs.
 
 For matrices, use the ``m[column][row]`` indexing syntax to access each scalar,
-or ``m[idx]`` to access a vector by row index. For example, for accessing the y
-position of an object in a mat4 you use ``m[3][1]``.
+or ``m[column]`` to access a vector by column index. For example, for accessing the
+y-component of the translation from a mat4 transform matrix (4th column, 2nd line) you use ``m[3][1]`` or ``m[3].y``.
 
 Constructing
 ~~~~~~~~~~~~
@@ -182,7 +182,7 @@ Construction of vector types must always pass:
     vec4 a = vec4(0.0);
 
 Construction of matrix types requires vectors of the same dimension as the
-matrix. You can also build a diagonal matrix using ``matx(float)`` syntax.
+matrix, interpreted as columns. You can also build a diagonal matrix using ``matx(float)`` syntax.
 Accordingly, ``mat4(1.0)`` is an identity matrix.
 
 .. code-block:: glsl
