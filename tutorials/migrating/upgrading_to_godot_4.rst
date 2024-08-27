@@ -412,8 +412,12 @@ table to find its new name.
 - BaseButton's ``set_event()`` is now ``set_shortcut()``.
 - Camera2D's ``get_v_offset()`` is now ``get_drag_vertical_offset()``.
 - Camera2D's ``set_v_offset()`` is now ``set_drag_vertical_offset()``.
+- Camera2D's ``make_current()`` is now ``set_current()``.
+- Camera2D's ``get_h_offset()`` is now ``get_drag_horizontal_offset()``.
+- Camera2D's ``set_h_offset()`` is now ``set_drag_horizontal_offset()``.
 - CanvasItem's ``update()`` is now ``queue_redraw()``.
 - Control's ``set_tooltip()`` is now ``set_tooltip_text()``.
+- Control's ``get_stylebox()`` is now ``get_theme_stylebox()``.
 - EditorNode3DGizmoPlugin's ``create_gizmo()`` is now ``_create_gizmo()``
   (note the leading underscore, which denotes a virtual method).
 - ENetMultiplayerPeer's ``get_peer_port()`` is now ``get_peer()``.
@@ -438,6 +442,30 @@ table to find its new name.
 - TileMap's ``world_to_map()`` is now ``local_to_map()``.
 - TileMap's ``map_to_world()`` is now ``map_to_local()``.
 - Transform2D's ``xform()`` is ``mat * vec`` and ``xform_inv()`` is ``vec * mat``.
+- XRPositionalTracker's ``_set_name()`` is now ``get_tracker_name()``.
+- BaseButton's ``_unhandled_input()`` is now ``_unhandled_key_input()``.
+- ViewportContainer's ``_unhandled_input()`` is now ``_unhandled_key_input()``.
+- AnimationPlayer's ``add_animation()`` is now ``add_animation_library()``.
+- BoxShape's ``get_extents()`` is now ``get_size()``.
+- RectangleShape's ``get_extents()`` is now ``get_size()``.
+- PhysicsTestMotionResult2D's ``get_motion()`` is now ``get_travel()``.
+- XRPositionalTracker's ``get_name()`` is now ``get_tracker_name()``.
+- ClippedCamera3D's ``get_process_mode()`` is now ``get_process_callback()``.
+- RenderingServer's ``get_render_info()`` is now ``get_rendering_info()``.
+- XRPositionalTracker's ``get_type()`` is now ``get_tracker_type()``.
+- MultiplayerAPI's ``is_refusing_new_network_connections()`` is now ``is_refusing_new_connections()``.
+- ResourceFormatLoader's ``load()`` is now ``_load()``.
+- CanvasItem's ``raise()`` is now ``move_to_front()``.
+- ImmediateMesh's ``set_color()`` is now ``surface_set_color()``.
+- BoxShape's ``set_extents()`` is now ``set_size()``.
+- RectangleShape's ``set_extents()`` is now ``set_size()``.
+- ImmediateGeometry's ``set_normal()`` is now ``surface_set_normal()``.
+- AnimationTree's ``set_process_mode()`` is now ``set_process_callback()``.
+- ImmediateMesh's ``set_uv()`` is now ``surface_set_uv()``.
+- Array's ``empty()`` is now ``is_empty()``.
+- Array's ``invert()`` is now ``reverse()``.
+- Array's ``remove()`` is now ``remove_at()``.
+- Array's ``remove()`` is now ``remove_at()``.
 
 **Properties**
 
@@ -460,6 +488,25 @@ table to find its new name.
 - The ``Engine.editor_hint`` property was removed in favor of the
   ``Engine.is_editor_hint()`` *method*. This is because it's read-only, and
   properties in Godot are not used for read-only values.
+- InputEventWithModifiers's ``alt()`` is now ``alt_pressed()``.
+- InputEventWithModifiers's ``command()`` is now ``command_pressed()``.
+- InputEventWithModifiers's ``control()`` is now ``ctrl_pressed()``.
+- WorldMarginShape2D's ``d()`` is now ``distance()``.
+- AudioServer's ``device()`` is now ``output_device()``.
+- InputEventMouseButton's ``doubleclick()`` is now ``double_click()``.
+- Node's ``filename()`` is now ``scene_file_path()``.
+- BaseButton's ``group()`` is now ``button_group()``.
+- InputEventWithModifiers's ``meta()`` is now ``meta_pressed()``.
+- PathFollow2D's ``rotate()`` is now ``rotates()``.
+- Theme's ``off()`` is now ``unchecked()``.
+- Theme's ``ofs()`` is now ``offset()``.
+- Theme's ``on()`` is now ``checked()``.
+- PathFollow2D's ``offset()`` is now ``progress()``.
+- PathFollow3D's ``offset()`` is now ``progress()``.
+- InputEventWithModifiers's ``shift()`` is now ``shift_pressed()``.
+- Window's ``window_title()`` is now ``title()``.
+- Camera3D's ``zfar()`` is now ``far()``.
+- Camera3D's ``znear()`` is now ``near()``
 
 **Enums**
 
