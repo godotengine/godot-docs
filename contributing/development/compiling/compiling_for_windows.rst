@@ -113,7 +113,10 @@ If you do not have Visual Studio installed, it will attempt to use
 MinGW instead. If you already have Visual Studio installed and want to
 use MinGW-w64, pass ``use_mingw=yes`` to the SCons command line. Note that MSVC
 builds cannot be performed from the MSYS2 or MinGW shells. Use either
-``cmd.exe`` or PowerShell instead. If you are using MinGW-LLVM, pass both
+``cmd.exe`` or PowerShell instead. You also need to add the directory
+that MingW64 is installed to (for exmaple `C:\msys64\mingw64\bin\`) to your `$PATH`,
+otherwise it will fail to locate DLL files required by the toolchain. 
+If you are using MinGW-LLVM, pass both
 ``use_mingw=yes`` and ``use_llvm=yes`` to the SCons command line.
 
 .. tip::
