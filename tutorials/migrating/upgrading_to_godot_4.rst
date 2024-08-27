@@ -222,6 +222,10 @@ a ``3D`` suffix to the old name:
 +-----------------------------------------+-------------------------------------------+
 | ARVRServer                              | XRServer                                  |
 +-----------------------------------------+-------------------------------------------+
+| BoxShape                                | BoxShape3D                                |
++-----------------------------------------+-------------------------------------------+
+| CapsuleShape                            | CapsuleShape3D                            |
++-----------------------------------------+-------------------------------------------+
 | CubeMesh                                | BoxMesh                                   |
 +-----------------------------------------+-------------------------------------------+
 | EditorSpatialGizmo                      | EditorNode3DGizmo                         |
@@ -406,28 +410,23 @@ table to find its new name.
   converter *should* handle this automatically, but this relies on custom code that
   may not work in 100% of situations.
 - AcceptDialog's ``set_autowrap()`` is now ``set_autowrap_mode()``.
-- AnimationNode's ``process()`` is now ``_process()``
-(note the leading underscore, which denotes a virtual method).
-- AnimationPlayer's ``add_animation()`` is now ``add_animation_library()``.
+- AnimationNode's ``process()`` is now ``_process()`` (note the leading underscore, which denotes a virtual method).
+- AnimationPlayer's ``add_animation()`` is now ``add_animation_library()`` and now uses :ref:`class_animationLibraries`. 
 - AnimationTree's ``set_process_mode()`` is now ``set_process_callback()``.
 - Array's ``empty()`` is now ``is_empty()``.
 - Array's ``invert()`` is now ``reverse()``.
 - Array's ``remove()`` is now ``remove_at()``.
 - AStar2D and AStar3D's ``get_points()`` is now ``get_points_id()``.
 - BaseButton's ``set_event()`` is now ``set_shortcut()``.
-- BoxShape's ``get_extents()`` is now ``get_size()``.
-- BoxShape's ``set_extents()`` is now ``set_size()``.
 - Camera2D's ``get_h_offset()`` is now ``get_drag_horizontal_offset()``.
 - Camera2D's ``get_v_offset()`` is now ``get_drag_vertical_offset()``.
 - Camera2D's ``set_h_offset()`` is now ``set_drag_horizontal_offset()``.
-- Camera2D's ``set_v_offset()`` is now ``set_drag_vertical_offset()``.
+- Camera2D's ``set_v_offset()`` is now ``set_drag_vertical_offset()``.f
 - CanvasItem's ``raise()`` is now ``move_to_front()``.
 - CanvasItem's ``update()`` is now ``queue_redraw()``.
-- ClippedCamera3D's ``get_process_mode()`` is now ``get_process_callback()``.
 - Control's ``get_stylebox()`` is now ``get_theme_stylebox()``.
 - Control's ``set_tooltip()`` is now ``set_tooltip_text()``.
-- EditorNode3DGizmoPlugin's ``create_gizmo()`` is now ``_create_gizmo()``
-(note the leading underscore, which denotes a virtual method).
+- EditorNode3DGizmoPlugin's ``create_gizmo()`` is now ``_create_gizmo()`` (note the leading underscore, which denotes a virtual method).
 - ENetMultiplayerPeer's ``get_peer_port()`` is now ``get_peer()``.
 - FileDialog's ``get_mode()`` is now ``get_file_mode()``.
 - FileDialog's ``set_mode()`` is now ``set_file_mode()``.
@@ -448,11 +447,8 @@ table to find its new name.
 - PacketPeerUDP's ``listen()`` is now ``bind()``.
 - ParticleProcessMaterial's ``set_flag()`` is now ``set_particle_flag()``.
 - PhysicsTestMotionResult2D's ``get_motion()`` is now ``get_travel()``.
-- RectangleShape's ``get_extents()`` is now ``get_size()``.
-- RectangleShape's ``set_extents()`` is now ``set_size()``.
 - RenderingServer's ``get_render_info()`` is now ``get_rendering_info()``.
-- ResourceFormatLoader's ``get_dependencies()`` is now ``_get_dependencies()``
-(note the leading underscore, which denotes a virtual method).
+- ResourceFormatLoader's ``get_dependencies()`` is now ``_get_dependencies()`` (note the leading underscore, which denotes a virtual method).
 - ResourceFormatLoader's ``load()`` is now ``_load()``.
 - SceneTree's ``change_scene()`` is now ``change_scene_to_file()``.
 - Shortcut's ``is_valid()`` is now ``has_valid_event()``.
@@ -489,6 +485,7 @@ table to find its new name.
 - Node's ``filename`` is now ``scene_file_path``.
 - PathFollow2D's ``rotate`` is now ``rotates``.
 - PathFollow2D and PathFollow3D's ``offset`` is now ``progress``.
+- RectangleShape2D's ``extents`` is now ``size``
 - TextureProgressBar's ``percent_visible`` is now ``show_percentage``.
 - Theme's ``off`` is now ``unchecked``.
 - Theme's ``ofs`` is now ``offset``.
@@ -681,6 +678,10 @@ converter doesn't support updating existing setups:
 | DynamicFont         | FontFile              |                                                                            |
 +---------------------+-----------------------+                                                                            |
 | DynamicFontData     | FontFile              |                                                                            |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| ClippedCamera       | Camera2D or Camera3D  | Camera's pyramid shape was moved to :ref:'class_Camera3D'.                 |
++---------------------+-----------------------+                                                                            |
+| InterpolatedCamera  | Camera2D or Camera3D  |                                                                            |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
 | Navigation2D        | Node2D                | Replaced by :ref:`other 2D Navigation nodes <doc_navigation_overview_2d>`. |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
