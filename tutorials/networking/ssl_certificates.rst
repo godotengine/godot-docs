@@ -74,7 +74,7 @@ Settings.
     :abbr:`CN (common name)` and alternative names. See
     :ref:`TLSOptions <class_TLSOptions>` to customize domain name validation.
 
-For development purposes Godot can generate self signed certificates via
+For development purposes Godot can generate self-signed certificates via
 :ref:`Crypto.generate_self_signed_certificate
 <class_Crypto_method_generate_self_signed_certificate>`.
 
