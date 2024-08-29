@@ -34,7 +34,7 @@ This file should contain any number of public certificates in
 There are two ways to obtain certificates:
 
 Obtain a certificate from a certificate authority
---------------------------------------------------
+-------------------------------------------------
 
 The main approach to getting a certificate is to use a certificate authority
 (CA) such as `Let's Encrypt <https://letsencrypt.org/>`__. This is a more
