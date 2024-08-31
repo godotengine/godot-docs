@@ -1292,6 +1292,9 @@ a dictionary can also be used with a named enum.
         # prints '[0, 5, 6]'
         print(State.values())
 
+If not assigning a value to a key of an enum it will be assigned the previous value plus one,
+or ``0`` if it is the first entry in the enum. Multiple keys with the same value are allowed.
+
 
 Functions
 ~~~~~~~~~
@@ -1897,9 +1900,9 @@ If you want to use ``extends`` too, you can keep both on the same line::
 .. warning::
 
     The Godot editor will hide these custom classes with names that begin with the prefix
-    "Editor" in the 'Create New Node' or 'Create New Scene' dialog windows. The classes 
-    are available for instantiation at runtime via their class names, but are 
-    automatically hidden by the editor windows along with the built-in editor nodes used 
+    "Editor" in the 'Create New Node' or 'Create New Scene' dialog windows. The classes
+    are available for instantiation at runtime via their class names, but are
+    automatically hidden by the editor windows along with the built-in editor nodes used
     by the Godot editor.
 
 Inheritance
