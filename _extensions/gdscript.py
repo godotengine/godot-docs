@@ -358,6 +358,7 @@ class GDScriptLexer(RegexLexer):
                         "PackedVector2iArray",
                         "PackedVector3Array",
                         "PackedVector3iArray",
+                        "PackedVector4Array",
                         "PackedColorArray",
                         "null",
                         "void",
