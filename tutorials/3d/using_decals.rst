@@ -29,7 +29,7 @@ On this page, you'll learn:
 .. seealso::
 
     The Godot demo projects repository contains a
-    `3D decals demo <https://github.com/godotengine/godot-demo-projects/tree/4.0-dev/3d/decals>`__.
+    `3D decals demo <https://github.com/godotengine/godot-demo-projects/tree/master/3d/decals>`__.
 
     If you're looking to write arbitrary 3D text on top of a surface, use
     :ref:`doc_3d_text` placed close to a surface instead of a Decal node.
