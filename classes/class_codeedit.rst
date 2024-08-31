@@ -280,6 +280,8 @@ Theme Properties
    +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`can_fold_code_region<class_CodeEdit_theme_icon_can_fold_code_region>`                        |                                   |
    +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`completion_color_bg<class_CodeEdit_theme_icon_completion_color_bg>`                          |                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`executing_line<class_CodeEdit_theme_icon_executing_line>`                                    |                                   |
    +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`folded<class_CodeEdit_theme_icon_folded>`                                                    |                                   |
@@ -1973,6 +1975,18 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutt
 :ref:`Texture2D<class_Texture2D>` **can_fold_code_region** :ref:`🔗<class_CodeEdit_theme_icon_can_fold_code_region>`
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutter when a code region can be folded.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CodeEdit_theme_icon_completion_color_bg:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **completion_color_bg** :ref:`🔗<class_CodeEdit_theme_icon_completion_color_bg>`
+
+Background panel for the color preview box in autocompletion (visible when the color is translucent).
 
 .. rst-class:: classref-item-separator
 

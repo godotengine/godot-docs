@@ -320,9 +320,7 @@ Calculates and returns the face normal of the given face.
 
 Returns the specified vertex index of the given face.
 
-Vertex argument must be either 0, 1, or 2 because faces contain three vertices.
-
-\ **Example:**\ 
+\ ``vertex`` must be either ``0``, ``1``, or ``2`` because faces contain three vertices.
 
 
 .. tabs::

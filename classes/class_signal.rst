@@ -279,7 +279,7 @@ Returns ``true`` if the specified :ref:`Callable<class_Callable>` is connected t
 
 :ref:`bool<class_bool>` **is_null**\ (\ ) |const| :ref:`🔗<class_Signal_method_is_null>`
 
-Returns ``true`` if the signal's name does not exist in its object, or the object is not valid.
+Returns ``true`` if this **Signal** has no object and the signal name is empty. Equivalent to ``signal == Signal()``.
 
 .. rst-class:: classref-section-separator
 

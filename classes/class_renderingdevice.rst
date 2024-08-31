@@ -165,6 +165,8 @@ Methods
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`get_driver_allocs_by_object_type<class_RenderingDevice_method_get_driver_allocs_by_object_type>`\ (\ type\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                | :ref:`get_driver_and_device_memory_report<class_RenderingDevice_method_get_driver_and_device_memory_report>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`get_driver_memory_by_object_type<class_RenderingDevice_method_get_driver_memory_by_object_type>`\ (\ type\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`get_driver_resource<class_RenderingDevice_method_get_driver_resource>`\ (\ resource\: :ref:`DriverResource<enum_RenderingDevice_DriverResource>`, rid\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -5452,7 +5454,7 @@ Returns the index of the last frame rendered that has rendering timestamps avail
 
 Returns how many allocations the GPU has performed for internal driver structures.
 
-This is only used by Vulkan in Debug builds and can return 0 when this information is not tracked or unknown.
+This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
 .. rst-class:: classref-item-separator
 
@@ -5468,7 +5470,7 @@ Same as :ref:`get_device_allocation_count<class_RenderingDevice_method_get_devic
 
 The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
 
-This is only used by Vulkan in Debug builds and can return 0 when this information is not tracked or unknown.
+This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
 .. rst-class:: classref-item-separator
 
@@ -5484,7 +5486,7 @@ Same as :ref:`get_device_total_memory<class_RenderingDevice_method_get_device_to
 
 The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
 
-This is only used by Vulkan in Debug builds and can return 0 when this information is not tracked or unknown.
+This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
 .. rst-class:: classref-item-separator
 
@@ -5522,7 +5524,7 @@ Returns the universally unique identifier for the pipeline cache. This is used t
 
 Returns how much bytes the GPU is using.
 
-This is only used by Vulkan in Debug builds and can return 0 when this information is not tracked or unknown.
+This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
 .. rst-class:: classref-item-separator
 
@@ -5548,7 +5550,7 @@ Returns the vendor of the video adapter (e.g. "NVIDIA Corporation"). Equivalent 
 
 Returns how many allocations the GPU driver has performed for internal driver structures.
 
-This is only used by Vulkan in Debug builds and can return 0 when this information is not tracked or unknown.
+This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
 .. rst-class:: classref-item-separator
 
@@ -5564,7 +5566,41 @@ Same as :ref:`get_driver_allocation_count<class_RenderingDevice_method_get_drive
 
 The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
 
-This is only used by Vulkan in Debug builds and can return 0 when this information is not tracked or unknown.
+This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingDevice_method_get_driver_and_device_memory_report:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_driver_and_device_memory_report**\ (\ ) |const| :ref:`🔗<class_RenderingDevice_method_get_driver_and_device_memory_report>`
+
+Returns string report in CSV format using the following methods:
+
+- :ref:`get_tracked_object_name<class_RenderingDevice_method_get_tracked_object_name>`\ 
+
+- :ref:`get_tracked_object_type_count<class_RenderingDevice_method_get_tracked_object_type_count>`\ 
+
+- :ref:`get_driver_total_memory<class_RenderingDevice_method_get_driver_total_memory>`\ 
+
+- :ref:`get_driver_allocation_count<class_RenderingDevice_method_get_driver_allocation_count>`\ 
+
+- :ref:`get_driver_memory_by_object_type<class_RenderingDevice_method_get_driver_memory_by_object_type>`\ 
+
+- :ref:`get_driver_allocs_by_object_type<class_RenderingDevice_method_get_driver_allocs_by_object_type>`\ 
+
+- :ref:`get_device_total_memory<class_RenderingDevice_method_get_device_total_memory>`\ 
+
+- :ref:`get_device_allocation_count<class_RenderingDevice_method_get_device_allocation_count>`\ 
+
+- :ref:`get_device_memory_by_object_type<class_RenderingDevice_method_get_device_memory_by_object_type>`\ 
+
+- :ref:`get_device_allocs_by_object_type<class_RenderingDevice_method_get_device_allocs_by_object_type>`\ 
+
+This is only used by Vulkan in debug builds. Godot must also be started with the ``--extra-gpu-memory-tracking`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5580,7 +5616,7 @@ Same as :ref:`get_driver_total_memory<class_RenderingDevice_method_get_driver_to
 
 The type argument must be in range ``[0; get_tracked_object_type_count - 1]``. If :ref:`get_tracked_object_type_count<class_RenderingDevice_method_get_tracked_object_type_count>` is 0, then type argument is ignored and always returns 0.
 
-This is only used by Vulkan in Debug builds and can return 0 when this information is not tracked or unknown.
+This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
 .. rst-class:: classref-item-separator
 
@@ -5606,7 +5642,7 @@ Returns the unique identifier of the driver ``resource`` for the specified ``rid
 
 Returns how much bytes the GPU driver is using for internal driver structures.
 
-This is only used by Vulkan in Debug builds and can return 0 when this information is not tracked or unknown.
+This is only used by Vulkan in debug builds and can return 0 when this information is not tracked or unknown.
 
 .. rst-class:: classref-item-separator
 
@@ -5668,7 +5704,7 @@ The return value is important because it gives meaning to the types passed to :r
 
 Thus if e.g. ``get_tracked_object_name(5)`` returns "COMMAND_POOL", then ``get_device_memory_by_object_type(5)`` returns the bytes used by the GPU for command pools.
 
-This is only used by Vulkan in Debug builds.
+This is only used by Vulkan in debug builds. Godot must also be started with the ``--extra-gpu-memory-tracking`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5682,7 +5718,7 @@ This is only used by Vulkan in Debug builds.
 
 Returns how many types of trackable objects are.
 
-This is only used by Vulkan in Debug builds.
+This is only used by Vulkan in debug builds. Godot must also be started with the ``--extra-gpu-memory-tracking`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
 .. rst-class:: classref-item-separator
 

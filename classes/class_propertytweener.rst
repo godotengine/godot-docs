@@ -21,6 +21,8 @@ Description
 
 **PropertyTweener** is used to interpolate a property in an object. See :ref:`Tween.tween_property<class_Tween_method_tween_property>` for more usage information.
 
+The tweener will finish automatically if the target object is freed.
+
 \ **Note:** :ref:`Tween.tween_property<class_Tween_method_tween_property>` is the only correct way to create **PropertyTweener**. Any **PropertyTweener** created manually will not function correctly.
 
 .. rst-class:: classref-reftable-group
@@ -64,12 +66,12 @@ Method Descriptions
 
 When called, the final value will be used as a relative value instead.
 
-\ **Example:**\ 
+\ **Example:** Move the node by ``100`` pixels to the right.
 
 ::
 
     var tween = get_tree().create_tween()
-    tween.tween_property(self, "position", Vector2.RIGHT * 100, 1).as_relative() #the node will move by 100 pixels to the right
+    tween.tween_property(self, "position", Vector2.RIGHT * 100, 1).as_relative()
 
 .. rst-class:: classref-item-separator
 
@@ -83,12 +85,12 @@ When called, the final value will be used as a relative value instead.
 
 Sets a custom initial value to the **PropertyTweener**.
 
-\ **Example:**\ 
+\ **Example:** Move the node from position ``(100, 100)`` to ``(200, 100)``.
 
 ::
 
     var tween = get_tree().create_tween()
-    tween.tween_property(self, "position", Vector2(200, 100), 1).from(Vector2(100, 100)) #this will move the node from position (100, 100) to (200, 100)
+    tween.tween_property(self, "position", Vector2(200, 100), 1).from(Vector2(100, 100))
 
 .. rst-class:: classref-item-separator
 
@@ -118,8 +120,6 @@ Makes the **PropertyTweener** use the current property value (i.e. at the time o
 :ref:`PropertyTweener<class_PropertyTweener>` **set_custom_interpolator**\ (\ interpolator_method\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_PropertyTweener_method_set_custom_interpolator>`
 
 Allows interpolating the value with a custom easing function. The provided ``interpolator_method`` will be called with a value ranging from ``0.0`` to ``1.0`` and is expected to return a value within the same range (values outside the range can be used for overshoot). The return value of the method is then used for interpolation between initial and final value. Note that the parameter passed to the method is still subject to the tweener's own easing.
-
-\ **Example:**\ 
 
 ::
 

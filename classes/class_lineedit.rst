@@ -887,9 +887,9 @@ Language code used for line-breaking and text shaping algorithms. If left empty,
 
 Maximum number of characters that can be entered inside the **LineEdit**. If ``0``, there is no limit.
 
-When a limit is defined, characters that would exceed :ref:`max_length<class_LineEdit_property_max_length>` are truncated. This happens both for existing :ref:`text<class_LineEdit_property_text>` contents when setting the max length, or for new text inserted in the **LineEdit**, including pasting. If any input text is truncated, the :ref:`text_change_rejected<class_LineEdit_signal_text_change_rejected>` signal is emitted with the truncated substring as parameter.
+When a limit is defined, characters that would exceed :ref:`max_length<class_LineEdit_property_max_length>` are truncated. This happens both for existing :ref:`text<class_LineEdit_property_text>` contents when setting the max length, or for new text inserted in the **LineEdit**, including pasting.
 
-\ **Example:**\ 
+If any input text is truncated, the :ref:`text_change_rejected<class_LineEdit_signal_text_change_rejected>` signal is emitted with the truncated substring as parameter:
 
 
 .. tabs::

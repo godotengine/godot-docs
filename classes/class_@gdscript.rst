@@ -1020,7 +1020,7 @@ Returns ``true`` if ``value`` is an instance of ``type``. The ``type`` value mus
 
 Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant value. The ``is`` operator supports more features (such as typed arrays). Use the operator instead of this method if you do not need dynamic type checking.
 
-Examples:
+\ **Examples:**\ 
 
 ::
 
@@ -1166,7 +1166,7 @@ Returns an array with the given range. :ref:`range<class_@GDScript_method_range>
 
 \ **Note:** Returns an empty array if no value meets the value constraint (e.g. ``range(2, 5, -1)`` or ``range(5, 5, 1)``).
 
-Examples:
+\ **Examples:**\ 
 
 ::
 

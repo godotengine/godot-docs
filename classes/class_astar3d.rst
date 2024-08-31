@@ -71,7 +71,7 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`_compute_cost<class_AStar3D_private_method__compute_cost>`\ (\ from_id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`\ ) |virtual| |const|                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                           | :ref:`_estimate_cost<class_AStar3D_private_method__estimate_cost>`\ (\ from_id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`\ ) |virtual| |const|                                      |
+   | :ref:`float<class_float>`                           | :ref:`_estimate_cost<class_AStar3D_private_method__estimate_cost>`\ (\ from_id\: :ref:`int<class_int>`, end_id\: :ref:`int<class_int>`\ ) |virtual| |const|                                     |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`add_point<class_AStar3D_method_add_point>`\ (\ id\: :ref:`int<class_int>`, position\: :ref:`Vector3<class_Vector3>`, weight_scale\: :ref:`float<class_float>` = 1.0\ )                    |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -147,7 +147,7 @@ Note that this function is hidden in the default **AStar3D** class.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_estimate_cost**\ (\ from_id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_AStar3D_private_method__estimate_cost>`
+:ref:`float<class_float>` **_estimate_cost**\ (\ from_id\: :ref:`int<class_int>`, end_id\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_AStar3D_private_method__estimate_cost>`
 
 Called when estimating the cost between a point and the path's ending point.
 
@@ -355,7 +355,7 @@ If there is no valid path to the target, and ``allow_partial_path`` is ``true``,
     astar.ConnectPoints(2, 3, false);
     astar.ConnectPoints(4, 3, false);
     astar.ConnectPoints(1, 4, false);
-    int[] res = astar.GetIdPath(1, 3); // Returns [1, 2, 3]
+    long[] res = astar.GetIdPath(1, 3); // Returns [1, 2, 3]
 
 
 
@@ -411,7 +411,7 @@ Returns an array with the IDs of the points that form the connection with the gi
     astar.ConnectPoints(1, 2, true);
     astar.ConnectPoints(1, 3, true);
     
-    int[] neighbors = astar.GetPointConnections(1); // Returns [2, 3]
+    long[] neighbors = astar.GetPointConnections(1); // Returns [2, 3]
 
 
 

@@ -276,6 +276,7 @@ The playback type of the stream player. If set other than to the default value, 
 
 .. rst-class:: classref-property-setget
 
+- |void| **set_playing**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_playing**\ (\ )
 
 If ``true``, this node is playing sounds. Setting this property has the same effect as :ref:`play<class_AudioStreamPlayer_method_play>` and :ref:`stop<class_AudioStreamPlayer_method_stop>`.

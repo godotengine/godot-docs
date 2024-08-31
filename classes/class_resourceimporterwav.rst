@@ -75,11 +75,11 @@ Property Descriptions
 
 The compression mode to use on import.
 
-\ **Disabled:** Imports audio data without any compression. This results in the highest possible quality.
+- **PCM (Uncompressed):** Imports audio data without any form of compression, preserving the highest possible quality. It has the lowest CPU cost, but the highest memory usage.
 
-\ **RAM (Ima-ADPCM):** Performs fast lossy compression on import. Low CPU cost, but quality is noticeably decreased compared to Ogg Vorbis or even MP3.
+- **IMA ADPCM:** Applies fast, lossy compression during import, noticeably decreasing the quality, but with low CPU cost and memory usage. Does not support seeking and only Forward loop mode is supported.
 
-\ **QOA (`Quite OK Audio <https://qoaformat.org/>`__):** Performs lossy compression on import. CPU cost is slightly higher than IMA-ADPCM, but quality is much higher.
+- **\ `Quite OK Audio <https://qoaformat.org/>`__:** Also applies lossy compression on import, having a slightly higher CPU cost compared to IMA ADPCM, but much higher quality and the lowest memory usage.
 
 .. rst-class:: classref-item-separator
 
@@ -115,15 +115,17 @@ The end loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_pr
 
 :ref:`int<class_int>` **edit/loop_mode** = ``0`` :ref:`🔗<class_ResourceImporterWAV_property_edit/loop_mode>`
 
-Controls how audio should loop. This is automatically read from the WAV metadata on import.
+Controls how audio should loop.
 
-\ **Disabled:** Don't loop audio, even if metadata indicates the file should be played back looping.
+- **Detect From WAV:** Uses loop information from the WAV metadata.
 
-\ **Forward:** Standard audio looping.
+- **Disabled:** Don't loop audio, even if the metadata indicates the file playback should loop.
 
-\ **Ping-Pong:** Play audio forward until it's done playing, then play it backward and repeat. This is similar to mirrored texture repeat, but for audio.
+- **Forward:** Standard audio looping. Plays the audio forward from the beginning to :ref:`edit/loop_end<class_ResourceImporterWAV_property_edit/loop_end>`, then returns to :ref:`edit/loop_begin<class_ResourceImporterWAV_property_edit/loop_begin>` and repeats.
 
-\ **Backward:** Play audio in reverse and loop back to the end when done playing.
+- **Ping-Pong:** Plays the audio forward until :ref:`edit/loop_end<class_ResourceImporterWAV_property_edit/loop_end>`, then backwards to :ref:`edit/loop_begin<class_ResourceImporterWAV_property_edit/loop_begin>`, repeating this cycle.
+
+- **Backward:** Plays the audio backwards from :ref:`edit/loop_end<class_ResourceImporterWAV_property_edit/loop_end>` to :ref:`edit/loop_begin<class_ResourceImporterWAV_property_edit/loop_begin>`, then repeats.
 
 \ **Note:** In :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, the :ref:`AudioStreamPlayer.finished<class_AudioStreamPlayer_signal_finished>` signal won't be emitted for looping audio when it reaches the end of the audio file, as the audio will keep playing indefinitely.
 

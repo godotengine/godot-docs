@@ -76,15 +76,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`Node3D<class_Node3D>` | :ref:`get_contact_body<class_VehicleWheel3D_method_get_contact_body>`\ (\ ) |const| |
-   +-----------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`   | :ref:`get_rpm<class_VehicleWheel3D_method_get_rpm>`\ (\ ) |const|                   |
-   +-----------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`   | :ref:`get_skidinfo<class_VehicleWheel3D_method_get_skidinfo>`\ (\ ) |const|         |
-   +-----------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`is_in_contact<class_VehicleWheel3D_method_is_in_contact>`\ (\ ) |const|       |
-   +-----------------------------+-------------------------------------------------------------------------------------+
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`Node3D<class_Node3D>`   | :ref:`get_contact_body<class_VehicleWheel3D_method_get_contact_body>`\ (\ ) |const|     |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_contact_normal<class_VehicleWheel3D_method_get_contact_normal>`\ (\ ) |const| |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_contact_point<class_VehicleWheel3D_method_get_contact_point>`\ (\ ) |const|   |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_rpm<class_VehicleWheel3D_method_get_rpm>`\ (\ ) |const|                       |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_skidinfo<class_VehicleWheel3D_method_get_skidinfo>`\ (\ ) |const|             |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_in_contact<class_VehicleWheel3D_method_is_in_contact>`\ (\ ) |const|           |
+   +-------------------------------+-----------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -353,6 +357,30 @@ Method Descriptions
 Returns the contacting body node if valid in the tree, as :ref:`Node3D<class_Node3D>`. At the moment, :ref:`GridMap<class_GridMap>` is not supported so the node will be always of type :ref:`PhysicsBody3D<class_PhysicsBody3D>`.
 
 Returns ``null`` if the wheel is not in contact with a surface, or the contact body is not a :ref:`PhysicsBody3D<class_PhysicsBody3D>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_VehicleWheel3D_method_get_contact_normal:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_contact_normal**\ (\ ) |const| :ref:`🔗<class_VehicleWheel3D_method_get_contact_normal>`
+
+Returns the normal of the suspension's collision in world space if the wheel is in contact. If the wheel isn't in contact with anything, returns a vector pointing directly along the suspension axis toward the vehicle in world space.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_VehicleWheel3D_method_get_contact_point:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_contact_point**\ (\ ) |const| :ref:`🔗<class_VehicleWheel3D_method_get_contact_point>`
+
+Returns the point of the suspension's collision in world space if the wheel is in contact. If the wheel isn't in contact with anything, returns the maximum point of the wheel's ray cast in world space, which is defined by ``wheel_rest_length + wheel_radius``.
 
 .. rst-class:: classref-item-separator
 

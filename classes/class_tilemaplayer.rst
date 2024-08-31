@@ -44,6 +44,8 @@ Properties
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`DebugVisibilityMode<enum_TileMapLayer_DebugVisibilityMode>` | :ref:`navigation_visibility_mode<class_TileMapLayer_property_navigation_visibility_mode>` | ``0``                 |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`occlusion_enabled<class_TileMapLayer_property_occlusion_enabled>`                   | ``true``              |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`                                             | :ref:`rendering_quadrant_size<class_TileMapLayer_property_rendering_quadrant_size>`       | ``16``                |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`                     | :ref:`tile_map_data<class_TileMapLayer_property_tile_map_data>`                           | ``PackedByteArray()`` |
@@ -276,6 +278,23 @@ If ``true``, navigation regions are enabled.
 - :ref:`DebugVisibilityMode<enum_TileMapLayer_DebugVisibilityMode>` **get_navigation_visibility_mode**\ (\ )
 
 Show or hide the **TileMapLayer**'s navigation meshes. If set to :ref:`DEBUG_VISIBILITY_MODE_DEFAULT<class_TileMapLayer_constant_DEBUG_VISIBILITY_MODE_DEFAULT>`, this depends on the show navigation debug settings.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMapLayer_property_occlusion_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **occlusion_enabled** = ``true`` :ref:`🔗<class_TileMapLayer_property_occlusion_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_occlusion_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_occlusion_enabled**\ (\ )
+
+Enable or disable light occlusion.
 
 .. rst-class:: classref-item-separator
 

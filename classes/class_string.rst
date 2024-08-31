@@ -137,6 +137,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_subsequence_ofn<class_String_method_is_subsequence_ofn>`\ (\ text\: :ref:`String<class_String>`\ ) |const|                                                                       |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`is_valid_ascii_identifier<class_String_method_is_valid_ascii_identifier>`\ (\ ) |const|                                                                                             |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_valid_filename<class_String_method_is_valid_filename>`\ (\ ) |const|                                                                                                             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_valid_float<class_String_method_is_valid_float>`\ (\ ) |const|                                                                                                                   |
@@ -150,6 +152,8 @@ Methods
    | :ref:`bool<class_bool>`                             | :ref:`is_valid_int<class_String_method_is_valid_int>`\ (\ ) |const|                                                                                                                       |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_valid_ip_address<class_String_method_is_valid_ip_address>`\ (\ ) |const|                                                                                                         |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`is_valid_unicode_identifier<class_String_method_is_valid_unicode_identifier>`\ (\ ) |const|                                                                                         |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`join<class_String_method_join>`\ (\ parts\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |const|                                                                            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -816,8 +820,6 @@ Splits the string using a ``delimiter`` and returns the substring at index ``sli
 
 This is faster than :ref:`split<class_String_method_split>`, if you only need one substring.
 
-\ **Example:**\ 
-
 ::
 
     print("i/am/example/hi".get_slice("/", 2)) # Prints "example"
@@ -1033,6 +1035,27 @@ Returns ``true`` if all characters of this string can be found in ``text`` in th
 
 ----
 
+.. _class_String_method_is_valid_ascii_identifier:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_valid_ascii_identifier**\ (\ ) |const| :ref:`🔗<class_String_method_is_valid_ascii_identifier>`
+
+Returns ``true`` if this string is a valid ASCII identifier. A valid ASCII identifier may contain only letters, digits, and underscores (``_``), and the first character may not be a digit.
+
+::
+
+    print("node_2d".is_valid_ascii_identifier())    # Prints true
+    print("TYPE_FLOAT".is_valid_ascii_identifier()) # Prints true
+    print("1st_method".is_valid_ascii_identifier()) # Prints false
+    print("MyMethod#2".is_valid_ascii_identifier()) # Prints false
+
+See also :ref:`is_valid_unicode_identifier<class_String_method_is_valid_unicode_identifier>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_String_method_is_valid_filename:
 
 .. rst-class:: classref-method
@@ -1104,6 +1127,8 @@ Returns ``true`` if this string is a valid color in hexadecimal HTML notation. T
 
 :ref:`bool<class_bool>` **is_valid_identifier**\ (\ ) |const| :ref:`🔗<class_String_method_is_valid_identifier>`
 
+**Deprecated:** Use :ref:`is_valid_ascii_identifier<class_String_method_is_valid_ascii_identifier>` instead.
+
 Returns ``true`` if this string is a valid identifier. A valid identifier may contain only letters, digits and underscores (``_``), and the first character may not be a digit.
 
 ::
@@ -1149,6 +1174,33 @@ Returns ``true`` if this string represents a well-formatted IPv4 or IPv6 address
 
 ----
 
+.. _class_String_method_is_valid_unicode_identifier:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_valid_unicode_identifier**\ (\ ) |const| :ref:`🔗<class_String_method_is_valid_unicode_identifier>`
+
+Returns ``true`` if this string is a valid Unicode identifier.
+
+A valid Unicode identifier must begin with a Unicode character of class ``XID_Start`` or ``"_"``, and may contain Unicode characters of class ``XID_Continue`` in the other positions.
+
+::
+
+    print("node_2d".is_valid_unicode_identifier())      # Prints true
+    print("1st_method".is_valid_unicode_identifier())   # Prints false
+    print("MyMethod#2".is_valid_unicode_identifier())   # Prints false
+    print("állóképesség".is_valid_unicode_identifier()) # Prints true
+    print("выносливость".is_valid_unicode_identifier()) # Prints true
+    print("体力".is_valid_unicode_identifier())         # Prints true
+
+See also :ref:`is_valid_ascii_identifier<class_String_method_is_valid_ascii_identifier>`.
+
+\ **Note:** This method checks identifiers the same way as GDScript. See :ref:`TextServer.is_valid_identifier<class_TextServer_method_is_valid_identifier>` for more advanced checks.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_String_method_join:
 
 .. rst-class:: classref-method
@@ -1156,8 +1208,6 @@ Returns ``true`` if this string represents a well-formatted IPv4 or IPv6 address
 :ref:`String<class_String>` **join**\ (\ parts\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |const| :ref:`🔗<class_String_method_join>`
 
 Returns the concatenation of ``parts``' elements, with each element separated by the string calling this method. This method is the opposite of :ref:`split<class_String_method_split>`.
-
-\ **Example:**\ 
 
 
 .. tabs::
@@ -1361,8 +1411,6 @@ Converts a :ref:`float<class_float>` to a string representation of a decimal num
 If ``decimals`` is ``-1`` as by default, the string representation may only have up to 14 significant digits, with digits before the decimal point having priority over digits after.
 
 Trailing zeros are not included in the string. The last digit is rounded, not truncated.
-
-\ **Example:**\ 
 
 ::
 
@@ -1598,8 +1646,6 @@ If ``allow_empty`` is ``false``, empty strings between adjacent delimiters are e
 
 If ``maxsplit`` is greater than ``0``, the number of splits may not exceed ``maxsplit``. By default, the entire string is split, which is mostly identical to :ref:`split<class_String_method_split>`.
 
-\ **Example:**\ 
-
 
 .. tabs::
 
@@ -1731,8 +1777,6 @@ Splits the string using a ``delimiter`` and returns an array of the substrings. 
 If ``allow_empty`` is ``false``, empty strings between adjacent delimiters are excluded from the array.
 
 If ``maxsplit`` is greater than ``0``, the number of splits may not exceed ``maxsplit``. By default, the entire string is split.
-
-\ **Example:**\ 
 
 
 .. tabs::

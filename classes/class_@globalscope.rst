@@ -3045,9 +3045,7 @@ enum **Error**: :ref:`🔗<enum_@GlobalScope_Error>`
 
 Methods that return :ref:`Error<enum_@GlobalScope_Error>` return :ref:`OK<class_@GlobalScope_constant_OK>` when no error occurred.
 
-Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other error constants are positive integers, it can also be used in boolean checks.
-
-\ **Example:**\ 
+Since :ref:`OK<class_@GlobalScope_constant_OK>` has value ``0``, and all other error constants are positive integers, it can also be used in boolean checks.
 
 ::
 
@@ -3702,7 +3700,7 @@ If a property is :ref:`Array<class_Array>`, hints the editor how to show element
 
 
 
-Examples:
+\ **Examples:**\ 
 
 
 .. tabs::
@@ -6150,15 +6148,12 @@ See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which perfo
 
 :ref:`float<class_float>` **linear_to_db**\ (\ lin\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_linear_to_db>`
 
-Converts from linear energy to decibels (audio). This can be used to implement volume sliders that behave as expected (since volume isn't linear).
+Converts from linear energy to decibels (audio). Since volume is not normally linear, this can be used to implement volume sliders that behave as expected.
 
-\ **Example:**\ 
+\ **Example:** Change the Master bus's volume through a :ref:`Slider<class_Slider>` node, which ranges from ``0.0`` to ``1.0``:
 
 ::
 
-    # "Slider" refers to a node that inherits Range such as HSlider or VSlider.
-    # Its range must be configured to go from 0 to 1.
-    # Change the bus name if you'd like to change the volume of a specific bus only.
     AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db($Slider.value))
 
 .. rst-class:: classref-item-separator

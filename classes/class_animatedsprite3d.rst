@@ -333,18 +333,15 @@ This method is a shorthand for :ref:`play<class_AnimatedSprite3D_method_play>` w
 
 |void| **set_frame_and_progress**\ (\ frame\: :ref:`int<class_int>`, progress\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AnimatedSprite3D_method_set_frame_and_progress>`
 
-The setter of :ref:`frame<class_AnimatedSprite3D_property_frame>` resets the :ref:`frame_progress<class_AnimatedSprite3D_property_frame_progress>` to ``0.0`` implicitly, but this method avoids that.
+Sets :ref:`frame<class_AnimatedSprite3D_property_frame>` the :ref:`frame_progress<class_AnimatedSprite3D_property_frame_progress>` to the given values. Unlike setting :ref:`frame<class_AnimatedSprite3D_property_frame>`, this method does not reset the :ref:`frame_progress<class_AnimatedSprite3D_property_frame_progress>` to ``0.0`` implicitly.
 
-This is useful when you want to carry over the current :ref:`frame_progress<class_AnimatedSprite3D_property_frame_progress>` to another :ref:`frame<class_AnimatedSprite3D_property_frame>`.
-
-\ **Example:**\ 
+\ **Example:** Change the animation while keeping the same :ref:`frame<class_AnimatedSprite3D_property_frame>` and :ref:`frame_progress<class_AnimatedSprite3D_property_frame_progress>`.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    # Change the animation with keeping the frame index and progress.
     var current_frame = animated_sprite.get_frame()
     var current_progress = animated_sprite.get_frame_progress()
     animated_sprite.play("walk_another_skin")
