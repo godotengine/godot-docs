@@ -1748,8 +1748,6 @@ Overwrites data of an existing **Image**. Non-static equivalent of :ref:`create_
 
 Sets the :ref:`Color<class_Color>` of the pixel at ``(x, y)`` to ``color``.
 
-\ **Example:**\ 
-
 
 .. tabs::
 
@@ -1784,8 +1782,6 @@ This is the same as :ref:`set_pixelv<class_Image_method_set_pixelv>`, but with a
 |void| **set_pixelv**\ (\ point\: :ref:`Vector2i<class_Vector2i>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Image_method_set_pixelv>`
 
 Sets the :ref:`Color<class_Color>` of the pixel at ``point`` to ``color``.
-
-\ **Example:**\ 
 
 
 .. tabs::

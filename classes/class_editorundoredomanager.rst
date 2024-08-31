@@ -56,6 +56,8 @@ Methods
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                          | :ref:`add_undo_reference<class_EditorUndoRedoManager_method_add_undo_reference>`\ (\ object\: :ref:`Object<class_Object>`\ )                                                                                                                                                           |
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`clear_history<class_EditorUndoRedoManager_method_clear_history>`\ (\ id\: :ref:`int<class_int>` = -99, increase_version\: :ref:`bool<class_bool>` = true\ )                                                                                                                      |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                          | :ref:`commit_action<class_EditorUndoRedoManager_method_commit_action>`\ (\ execute\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                 |
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                          | :ref:`create_action<class_EditorUndoRedoManager_method_create_action>`\ (\ name\: :ref:`String<class_String>`, merge_mode\: :ref:`MergeMode<enum_UndoRedo_MergeMode>` = 0, custom_context\: :ref:`Object<class_Object>` = null, backward_undo_ops\: :ref:`bool<class_bool>` = false\ ) |
@@ -221,6 +223,28 @@ If this is the first operation, the ``object`` will be used to deduce target und
 |void| **add_undo_reference**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_EditorUndoRedoManager_method_add_undo_reference>`
 
 Register a reference for "undo" that will be erased if the "undo" history is lost. This is useful mostly for nodes removed with the "do" call (not the "undo" call!).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorUndoRedoManager_method_clear_history:
+
+.. rst-class:: classref-method
+
+|void| **clear_history**\ (\ id\: :ref:`int<class_int>` = -99, increase_version\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_EditorUndoRedoManager_method_clear_history>`
+
+Clears the given undo history. You can clear history for a specific scene, global history, or for all scenes at once if ``id`` is :ref:`INVALID_HISTORY<class_EditorUndoRedoManager_constant_INVALID_HISTORY>`.
+
+If ``increase_version`` is ``true``, the undo history version will be increased, marking it as unsaved. Useful for operations that modify the scene, but don't support undo.
+
+::
+
+    var scene_root = EditorInterface.get_edited_scene_root()
+    var undo_redo = EditorInterface.get_editor_undo_redo()
+    undo_redo.clear_history(undo_redo.get_object_history_id(scene_root))
+
+\ **Note:** If you want to mark an edited scene as unsaved without clearing its history, use :ref:`EditorInterface.mark_scene_as_unsaved<class_EditorInterface_method_mark_scene_as_unsaved>` instead.
 
 .. rst-class:: classref-item-separator
 

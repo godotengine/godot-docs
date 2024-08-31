@@ -4397,7 +4397,7 @@ Sets the title of the given window to ``title``.
 
 |void| **window_set_transient**\ (\ window_id\: :ref:`int<class_int>`, parent_window_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_window_set_transient>`
 
-Sets window transient parent. Transient window is will be destroyed with its transient parent and will return focus to their parent when closed. The transient window is displayed on top of a non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
+Sets window transient parent. Transient window will be destroyed with its transient parent and will return focus to their parent when closed. The transient window is displayed on top of a non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
 
 \ **Note:** It's recommended to change this value using :ref:`Window.transient<class_Window_property_transient>` instead.
 

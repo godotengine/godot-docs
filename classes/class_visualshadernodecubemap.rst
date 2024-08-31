@@ -30,7 +30,7 @@ Properties
    :widths: auto
 
    +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
-   | :ref:`Cubemap<class_Cubemap>`                                | :ref:`cube_map<class_VisualShaderNodeCubemap_property_cube_map>`         |       |
+   | :ref:`TextureLayered<class_TextureLayered>`                  | :ref:`cube_map<class_VisualShaderNodeCubemap_property_cube_map>`         |       |
    +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
    | :ref:`Source<enum_VisualShaderNodeCubemap_Source>`           | :ref:`source<class_VisualShaderNodeCubemap_property_source>`             | ``0`` |
    +--------------------------------------------------------------+--------------------------------------------------------------------------+-------+
@@ -131,12 +131,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Cubemap<class_Cubemap>` **cube_map** :ref:`🔗<class_VisualShaderNodeCubemap_property_cube_map>`
+:ref:`TextureLayered<class_TextureLayered>` **cube_map** :ref:`🔗<class_VisualShaderNodeCubemap_property_cube_map>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_cube_map**\ (\ value\: :ref:`Cubemap<class_Cubemap>`\ )
-- :ref:`Cubemap<class_Cubemap>` **get_cube_map**\ (\ )
+- |void| **set_cube_map**\ (\ value\: :ref:`TextureLayered<class_TextureLayered>`\ )
+- :ref:`TextureLayered<class_TextureLayered>` **get_cube_map**\ (\ )
 
 The :ref:`Cubemap<class_Cubemap>` texture to sample when using :ref:`SOURCE_TEXTURE<class_VisualShaderNodeCubemap_constant_SOURCE_TEXTURE>` as :ref:`source<class_VisualShaderNodeCubemap_property_source>`.
 

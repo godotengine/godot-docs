@@ -38,7 +38,7 @@ Signals
 
 **finished**\ (\ ) :ref:`🔗<class_Tweener_signal_finished>`
 
-Emitted when the **Tweener** has just finished its job.
+Emitted when the **Tweener** has just finished its job or became invalid (e.g. due to a freed object).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

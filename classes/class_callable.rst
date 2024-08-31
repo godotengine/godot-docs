@@ -19,8 +19,6 @@ Description
 
 **Callable** is a built-in :ref:`Variant<class_Variant>` type that represents a function. It can either be a method within an :ref:`Object<class_Object>` instance, or a custom callable used for different purposes (see :ref:`is_custom<class_Callable_method_is_custom>`). Like all :ref:`Variant<class_Variant>` types, it can be stored in variables and passed to other functions. It is most commonly used for signal callbacks.
 
-\ **Example:**\ 
-
 
 .. tabs::
 
@@ -431,7 +429,9 @@ Returns ``true`` if this **Callable** is a custom callable. Custom callables are
 
 :ref:`bool<class_bool>` **is_null**\ (\ ) |const| :ref:`🔗<class_Callable_method_is_null>`
 
-Returns ``true`` if this **Callable** has no target to call the method on.
+Returns ``true`` if this **Callable** has no target to call the method on. Equivalent to ``callable == Callable()``.
+
+\ **Note:** This is *not* the same as ``not is_valid()`` and using ``not is_null()`` will *not* guarantee that this callable can be called. Use :ref:`is_valid<class_Callable_method_is_valid>` instead.
 
 .. rst-class:: classref-item-separator
 

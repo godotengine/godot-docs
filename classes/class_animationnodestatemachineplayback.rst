@@ -21,8 +21,6 @@ Description
 
 Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines created with :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`. Retrieve with ``$AnimationTree.get("parameters/playback")``.
 
-\ **Example:**\ 
-
 
 .. tabs::
 

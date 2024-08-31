@@ -95,6 +95,8 @@ Properties
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`scroll_fit_content_height<class_TextEdit_property_scroll_fit_content_height>`                         | ``false``                                                                           |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`scroll_fit_content_width<class_TextEdit_property_scroll_fit_content_width>`                           | ``false``                                                                           |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`scroll_horizontal<class_TextEdit_property_scroll_horizontal>`                                         | ``0``                                                                               |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`scroll_past_end_of_file<class_TextEdit_property_scroll_past_end_of_file>`                             | ``false``                                                                           |
@@ -1508,7 +1510,24 @@ Text shown when the **TextEdit** is empty. It is **not** the **TextEdit**'s defa
 - |void| **set_fit_content_height_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_fit_content_height_enabled**\ (\ )
 
-If ``true``, **TextEdit** will disable vertical scroll and fit minimum height to the number of visible lines.
+If ``true``, **TextEdit** will disable vertical scroll and fit minimum height to the number of visible lines. When both this property and :ref:`scroll_fit_content_width<class_TextEdit_property_scroll_fit_content_width>` are ``true``, no scrollbars will be displayed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextEdit_property_scroll_fit_content_width:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **scroll_fit_content_width** = ``false`` :ref:`🔗<class_TextEdit_property_scroll_fit_content_width>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_fit_content_width_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_fit_content_width_enabled**\ (\ )
+
+If ``true``, **TextEdit** will disable horizontal scroll and fit minimum width to the widest line in the text. When both this property and :ref:`scroll_fit_content_height<class_TextEdit_property_scroll_fit_content_height>` are ``true``, no scrollbars will be displayed.
 
 .. rst-class:: classref-item-separator
 

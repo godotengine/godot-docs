@@ -99,6 +99,8 @@ Methods
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`add_debugger_plugin<class_EditorPlugin_method_add_debugger_plugin>`\ (\ script\: :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`\ )                                                                                                      |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`add_export_platform<class_EditorPlugin_method_add_export_platform>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ )                                                                                                    |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`add_export_plugin<class_EditorPlugin_method_add_export_plugin>`\ (\ plugin\: :ref:`EditorExportPlugin<class_EditorExportPlugin>`\ )                                                                                                              |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`add_import_plugin<class_EditorPlugin_method_add_import_plugin>`\ (\ importer\: :ref:`EditorImportPlugin<class_EditorImportPlugin>`, first_priority\: :ref:`bool<class_bool>` = false\ )                                                          |
@@ -148,6 +150,8 @@ Methods
    | |void|                                                    | :ref:`remove_custom_type<class_EditorPlugin_method_remove_custom_type>`\ (\ type\: :ref:`String<class_String>`\ )                                                                                                                                      |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`remove_debugger_plugin<class_EditorPlugin_method_remove_debugger_plugin>`\ (\ script\: :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`\ )                                                                                                |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`remove_export_platform<class_EditorPlugin_method_remove_export_platform>`\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ )                                                                                              |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                    | :ref:`remove_export_plugin<class_EditorPlugin_method_remove_export_plugin>`\ (\ plugin\: :ref:`EditorExportPlugin<class_EditorExportPlugin>`\ )                                                                                                        |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -642,8 +646,6 @@ You need to enable calling of this method by using :ref:`set_force_draw_over_for
 
 Called when there is a root node in the current edited scene, :ref:`_handles<class_EditorPlugin_private_method__handles>` is implemented, and an :ref:`InputEvent<class_InputEvent>` happens in the 3D viewport. The return value decides whether the :ref:`InputEvent<class_InputEvent>` is consumed or forwarded to other **EditorPlugin**\ s. See :ref:`AfterGUIInput<enum_EditorPlugin_AfterGUIInput>` for options.
 
-\ **Example:**\ 
-
 
 .. tabs::
 
@@ -663,9 +665,7 @@ Called when there is a root node in the current edited scene, :ref:`_handles<cla
 
 
 
-Must ``return EditorPlugin.AFTER_GUI_INPUT_PASS`` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes.
-
-\ **Example:**\ 
+This method must return :ref:`AFTER_GUI_INPUT_PASS<class_EditorPlugin_constant_AFTER_GUI_INPUT_PASS>` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes.
 
 
 .. tabs::
@@ -759,9 +759,7 @@ You need to enable calling of this method by using :ref:`set_force_draw_over_for
 
 :ref:`bool<class_bool>` **_forward_canvas_gui_input**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |virtual| :ref:`🔗<class_EditorPlugin_private_method__forward_canvas_gui_input>`
 
-Called when there is a root node in the current edited scene, :ref:`_handles<class_EditorPlugin_private_method__handles>` is implemented and an :ref:`InputEvent<class_InputEvent>` happens in the 2D viewport. Intercepts the :ref:`InputEvent<class_InputEvent>`, if ``return true`` **EditorPlugin** consumes the ``event``, otherwise forwards ``event`` to other Editor classes.
-
-\ **Example:**\ 
+Called when there is a root node in the current edited scene, :ref:`_handles<class_EditorPlugin_private_method__handles>` is implemented, and an :ref:`InputEvent<class_InputEvent>` happens in the 2D viewport. If this method returns ``true``, ``event`` is intercepted by this **EditorPlugin**, otherwise ``event`` is forwarded to other Editor classes.
 
 
 .. tabs::
@@ -782,9 +780,7 @@ Called when there is a root node in the current edited scene, :ref:`_handles<cla
 
 
 
-Must ``return false`` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes.
-
-\ **Example:**\ 
+This method must return ``false`` in order to forward the :ref:`InputEvent<class_InputEvent>` to other Editor classes.
 
 
 .. tabs::
@@ -1171,6 +1167,18 @@ Adds a :ref:`Script<class_Script>` as debugger plugin to the Debugger. The scrip
 
 ----
 
+.. _class_EditorPlugin_method_add_export_platform:
+
+.. rst-class:: classref-method
+
+|void| **add_export_platform**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) :ref:`🔗<class_EditorPlugin_method_add_export_platform>`
+
+Registers a new :ref:`EditorExportPlatform<class_EditorExportPlatform>`. Export platforms provides functionality of exporting to the specific platform.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorPlugin_method_add_export_plugin:
 
 .. rst-class:: classref-method
@@ -1508,6 +1516,18 @@ Removes a custom type added by :ref:`add_custom_type<class_EditorPlugin_method_a
 |void| **remove_debugger_plugin**\ (\ script\: :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>`\ ) :ref:`🔗<class_EditorPlugin_method_remove_debugger_plugin>`
 
 Removes the debugger plugin with given script from the Debugger.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorPlugin_method_remove_export_platform:
+
+.. rst-class:: classref-method
+
+|void| **remove_export_platform**\ (\ platform\: :ref:`EditorExportPlatform<class_EditorExportPlatform>`\ ) :ref:`🔗<class_EditorPlugin_method_remove_export_platform>`
+
+Removes an export platform registered by :ref:`add_export_platform<class_EditorPlugin_method_add_export_platform>`.
 
 .. rst-class:: classref-item-separator
 

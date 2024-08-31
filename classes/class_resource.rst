@@ -65,7 +65,7 @@ Methods
    :widths: auto
 
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`           | :ref:`_get_rid<class_Resource_private_method__get_rid>`\ (\ ) |virtual|                                         |
+   | :ref:`RID<class_RID>`           | :ref:`_get_rid<class_Resource_private_method__get_rid>`\ (\ ) |virtual| |const|                                 |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
    | |void|                          | :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>`\ (\ ) |virtual|               |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -215,7 +215,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **_get_rid**\ (\ ) |virtual| :ref:`🔗<class_Resource_private_method__get_rid>`
+:ref:`RID<class_RID>` **_get_rid**\ (\ ) |virtual| |const| :ref:`🔗<class_Resource_private_method__get_rid>`
 
 Override this method to return a custom :ref:`RID<class_RID>` when :ref:`get_rid<class_Resource_method_get_rid>` is called.
 

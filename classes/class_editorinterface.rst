@@ -88,6 +88,8 @@ Methods
    +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Theme<class_Theme>`                                      | :ref:`get_editor_theme<class_EditorInterface_method_get_editor_theme>`\ (\ ) |const|                                                                                                                                                                             |
    +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>`      | :ref:`get_editor_undo_redo<class_EditorInterface_method_get_editor_undo_redo>`\ (\ ) |const|                                                                                                                                                                     |
+   +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`SubViewport<class_SubViewport>`                          | :ref:`get_editor_viewport_2d<class_EditorInterface_method_get_editor_viewport_2d>`\ (\ ) |const|                                                                                                                                                                 |
    +----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`SubViewport<class_SubViewport>`                          | :ref:`get_editor_viewport_3d<class_EditorInterface_method_get_editor_viewport_3d>`\ (\ idx\: :ref:`int<class_int>` = 0\ ) |const|                                                                                                                                |
@@ -390,6 +392,18 @@ Returns the editor's :ref:`EditorSettings<class_EditorSettings>` instance.
 Returns the editor's :ref:`Theme<class_Theme>`.
 
 \ **Note:** When creating custom editor UI, prefer accessing theme items directly from your GUI nodes using the ``get_theme_*`` methods.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_method_get_editor_undo_redo:
+
+.. rst-class:: classref-method
+
+:ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>` **get_editor_undo_redo**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_editor_undo_redo>`
+
+Returns the editor's :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>`.
 
 .. rst-class:: classref-item-separator
 
@@ -723,7 +737,7 @@ See also :ref:`Window.set_unparent_when_invisible<class_Window_method_set_unpare
 
 Pops up an editor dialog for selecting a :ref:`Node<class_Node>` from the edited scene. The ``callback`` must take a single argument of type :ref:`NodePath<class_NodePath>`. It is called on the selected :ref:`NodePath<class_NodePath>` or the empty path ``^""`` if the dialog is canceled. If ``valid_types`` is provided, the dialog will only show Nodes that match one of the listed Node types.
 
-\ **Example:**\ 
+\ **Example:** Display the node selection dialog as soon as this node is added to the tree for the first time:
 
 ::
 
@@ -748,8 +762,6 @@ Pops up an editor dialog for selecting a :ref:`Node<class_Node>` from the edited
 |void| **popup_property_selector**\ (\ object\: :ref:`Object<class_Object>`, callback\: :ref:`Callable<class_Callable>`, type_filter\: :ref:`PackedInt32Array<class_PackedInt32Array>` = PackedInt32Array()\ ) :ref:`🔗<class_EditorInterface_method_popup_property_selector>`
 
 Pops up an editor dialog for selecting properties from ``object``. The ``callback`` must take a single argument of type :ref:`NodePath<class_NodePath>`. It is called on the selected property path (see :ref:`NodePath.get_as_property_path<class_NodePath_method_get_as_property_path>`) or the empty path ``^""`` if the dialog is canceled. If ``type_filter`` is provided, the dialog will only show properties that match one of the listed :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
-
-\ **Example:**\ 
 
 ::
 

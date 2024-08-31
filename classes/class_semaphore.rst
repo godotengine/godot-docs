@@ -46,13 +46,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+--------------------------------------------------------+
-   | |void|                  | :ref:`post<class_Semaphore_method_post>`\ (\ )         |
-   +-------------------------+--------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`try_wait<class_Semaphore_method_try_wait>`\ (\ ) |
-   +-------------------------+--------------------------------------------------------+
-   | |void|                  | :ref:`wait<class_Semaphore_method_wait>`\ (\ )         |
-   +-------------------------+--------------------------------------------------------+
+   +-------------------------+-----------------------------------------------------------------------------------+
+   | |void|                  | :ref:`post<class_Semaphore_method_post>`\ (\ count\: :ref:`int<class_int>` = 1\ ) |
+   +-------------------------+-----------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`try_wait<class_Semaphore_method_try_wait>`\ (\ )                            |
+   +-------------------------+-----------------------------------------------------------------------------------+
+   | |void|                  | :ref:`wait<class_Semaphore_method_wait>`\ (\ )                                    |
+   +-------------------------+-----------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -67,9 +67,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|void| **post**\ (\ ) :ref:`🔗<class_Semaphore_method_post>`
+|void| **post**\ (\ count\: :ref:`int<class_int>` = 1\ ) :ref:`🔗<class_Semaphore_method_post>`
 
-Lowers the **Semaphore**, allowing one more thread in.
+Lowers the **Semaphore**, allowing one thread in, or more if ``count`` is specified.
 
 .. rst-class:: classref-item-separator
 

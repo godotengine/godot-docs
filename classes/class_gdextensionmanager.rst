@@ -63,6 +63,34 @@ Methods
 Signals
 -------
 
+.. _class_GDExtensionManager_signal_extension_loaded:
+
+.. rst-class:: classref-signal
+
+**extension_loaded**\ (\ extension\: :ref:`GDExtension<class_GDExtension>`\ ) :ref:`🔗<class_GDExtensionManager_signal_extension_loaded>`
+
+Emitted after the editor has finished loading a new extension.
+
+\ **Note:** This signal is only emitted in editor builds.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GDExtensionManager_signal_extension_unloading:
+
+.. rst-class:: classref-signal
+
+**extension_unloading**\ (\ extension\: :ref:`GDExtension<class_GDExtension>`\ ) :ref:`🔗<class_GDExtensionManager_signal_extension_unloading>`
+
+Emitted before the editor starts unloading an extension.
+
+\ **Note:** This signal is only emitted in editor builds.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GDExtensionManager_signal_extensions_reloaded:
 
 .. rst-class:: classref-signal

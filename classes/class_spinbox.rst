@@ -24,7 +24,7 @@ Description
 
 **SpinBox** is a numerical input text field. It allows entering integers and floating-point numbers.
 
-\ **Example:**\ 
+\ **Example:** Create a **SpinBox**, disable its context menu and set its text alignment to right.
 
 
 .. tabs::
@@ -47,13 +47,11 @@ Description
 
 
 
-The above code will create a **SpinBox**, disable context menu on it and set the text alignment to right.
-
 See :ref:`Range<class_Range>` class for more options over the **SpinBox**.
 
 \ **Note:** With the **SpinBox**'s context menu disabled, you can right-click the bottom half of the spinbox to set the value to its minimum, while right-clicking the top half sets the value to its maximum.
 
-\ **Note:** **SpinBox** relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a **SpinBox**'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
+\ **Note:** **SpinBox** relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a **SpinBox**'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them. The :ref:`LineEdit<class_LineEdit>` has the ``SpinBoxInnerLineEdit`` theme variation, so that you can give it a distinct appearance from regular :ref:`LineEdit<class_LineEdit>`\ s.
 
 \ **Note:** If you want to implement drag and drop for the underlying :ref:`LineEdit<class_LineEdit>`, you can use :ref:`Control.set_drag_forwarding<class_Control_method_set_drag_forwarding>` on the node returned by :ref:`get_line_edit<class_SpinBox_method_get_line_edit>`.
 
@@ -107,9 +105,69 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`updown<class_SpinBox_theme_icon_updown>` |
-   +-----------------------------------+------------------------------------------------+
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`down_disabled_icon_modulate<class_SpinBox_theme_color_down_disabled_icon_modulate>`              | ``Color(0.875, 0.875, 0.875, 0.5)`` |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`down_hover_icon_modulate<class_SpinBox_theme_color_down_hover_icon_modulate>`                    | ``Color(0.95, 0.95, 0.95, 1)``      |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`down_icon_modulate<class_SpinBox_theme_color_down_icon_modulate>`                                | ``Color(0.875, 0.875, 0.875, 1)``   |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`down_pressed_icon_modulate<class_SpinBox_theme_color_down_pressed_icon_modulate>`                | ``Color(0.95, 0.95, 0.95, 1)``      |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`up_disabled_icon_modulate<class_SpinBox_theme_color_up_disabled_icon_modulate>`                  | ``Color(0.875, 0.875, 0.875, 0.5)`` |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`up_hover_icon_modulate<class_SpinBox_theme_color_up_hover_icon_modulate>`                        | ``Color(0.95, 0.95, 0.95, 1)``      |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`up_icon_modulate<class_SpinBox_theme_color_up_icon_modulate>`                                    | ``Color(0.875, 0.875, 0.875, 1)``   |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`up_pressed_icon_modulate<class_SpinBox_theme_color_up_pressed_icon_modulate>`                    | ``Color(0.95, 0.95, 0.95, 1)``      |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`buttons_vertical_separation<class_SpinBox_theme_constant_buttons_vertical_separation>`           | ``0``                               |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`buttons_width<class_SpinBox_theme_constant_buttons_width>`                                       | ``16``                              |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`field_and_buttons_separation<class_SpinBox_theme_constant_field_and_buttons_separation>`         | ``2``                               |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`set_min_buttons_width_from_icons<class_SpinBox_theme_constant_set_min_buttons_width_from_icons>` | ``1``                               |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`down<class_SpinBox_theme_icon_down>`                                                             |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`down_disabled<class_SpinBox_theme_icon_down_disabled>`                                           |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`down_hover<class_SpinBox_theme_icon_down_hover>`                                                 |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`down_pressed<class_SpinBox_theme_icon_down_pressed>`                                             |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`up<class_SpinBox_theme_icon_up>`                                                                 |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`up_disabled<class_SpinBox_theme_icon_up_disabled>`                                               |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`up_hover<class_SpinBox_theme_icon_up_hover>`                                                     |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`up_pressed<class_SpinBox_theme_icon_up_pressed>`                                                 |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`updown<class_SpinBox_theme_icon_updown>`                                                         |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`down_background<class_SpinBox_theme_style_down_background>`                                      |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`down_background_disabled<class_SpinBox_theme_style_down_background_disabled>`                    |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`down_background_hovered<class_SpinBox_theme_style_down_background_hovered>`                      |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`down_background_pressed<class_SpinBox_theme_style_down_background_pressed>`                      |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`field_and_buttons_separator<class_SpinBox_theme_style_field_and_buttons_separator>`              |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`up_background<class_SpinBox_theme_style_up_background>`                                          |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`up_background_disabled<class_SpinBox_theme_style_up_background_disabled>`                        |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`up_background_hovered<class_SpinBox_theme_style_up_background_hovered>`                          |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`up_background_pressed<class_SpinBox_theme_style_up_background_pressed>`                          |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`up_down_buttons_separator<class_SpinBox_theme_style_up_down_buttons_separator>`                  |                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -275,13 +333,373 @@ Returns the :ref:`LineEdit<class_LineEdit>` instance from this **SpinBox**. You 
 Theme Property Descriptions
 ---------------------------
 
+.. _class_SpinBox_theme_color_down_disabled_icon_modulate:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **down_disabled_icon_modulate** = ``Color(0.875, 0.875, 0.875, 0.5)`` :ref:`🔗<class_SpinBox_theme_color_down_disabled_icon_modulate>`
+
+Down button icon modulation color, when the button is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_color_down_hover_icon_modulate:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **down_hover_icon_modulate** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_SpinBox_theme_color_down_hover_icon_modulate>`
+
+Down button icon modulation color, when the button is hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_color_down_icon_modulate:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **down_icon_modulate** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_SpinBox_theme_color_down_icon_modulate>`
+
+Down button icon modulation color.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_color_down_pressed_icon_modulate:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **down_pressed_icon_modulate** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_SpinBox_theme_color_down_pressed_icon_modulate>`
+
+Down button icon modulation color, when the button is being pressed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_color_up_disabled_icon_modulate:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **up_disabled_icon_modulate** = ``Color(0.875, 0.875, 0.875, 0.5)`` :ref:`🔗<class_SpinBox_theme_color_up_disabled_icon_modulate>`
+
+Up button icon modulation color, when the button is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_color_up_hover_icon_modulate:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **up_hover_icon_modulate** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_SpinBox_theme_color_up_hover_icon_modulate>`
+
+Up button icon modulation color, when the button is hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_color_up_icon_modulate:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **up_icon_modulate** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_SpinBox_theme_color_up_icon_modulate>`
+
+Up button icon modulation color.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_color_up_pressed_icon_modulate:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **up_pressed_icon_modulate** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_SpinBox_theme_color_up_pressed_icon_modulate>`
+
+Up button icon modulation color, when the button is being pressed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_constant_buttons_vertical_separation:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **buttons_vertical_separation** = ``0`` :ref:`🔗<class_SpinBox_theme_constant_buttons_vertical_separation>`
+
+Vertical separation between the up and down buttons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_constant_buttons_width:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **buttons_width** = ``16`` :ref:`🔗<class_SpinBox_theme_constant_buttons_width>`
+
+Width of the up and down buttons. If smaller than any icon set on the buttons, the respective icon may overlap neighboring elements, unless :ref:`set_min_buttons_width_from_icons<class_SpinBox_theme_constant_set_min_buttons_width_from_icons>` is different than ``0``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_constant_field_and_buttons_separation:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **field_and_buttons_separation** = ``2`` :ref:`🔗<class_SpinBox_theme_constant_field_and_buttons_separation>`
+
+Width of the horizontal separation between the text input field (:ref:`LineEdit<class_LineEdit>`) and the buttons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_constant_set_min_buttons_width_from_icons:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **set_min_buttons_width_from_icons** = ``1`` :ref:`🔗<class_SpinBox_theme_constant_set_min_buttons_width_from_icons>`
+
+If not ``0``, the minimum button width corresponds to the widest of all icons set on those buttons, even if :ref:`buttons_width<class_SpinBox_theme_constant_buttons_width>` is smaller.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_icon_down:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **down** :ref:`🔗<class_SpinBox_theme_icon_down>`
+
+Down button icon, displayed in the middle of the down (value-decreasing) button.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_icon_down_disabled:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **down_disabled** :ref:`🔗<class_SpinBox_theme_icon_down_disabled>`
+
+Down button icon when the button is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_icon_down_hover:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **down_hover** :ref:`🔗<class_SpinBox_theme_icon_down_hover>`
+
+Down button icon when the button is hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_icon_down_pressed:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **down_pressed** :ref:`🔗<class_SpinBox_theme_icon_down_pressed>`
+
+Down button icon when the button is being pressed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_icon_up:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **up** :ref:`🔗<class_SpinBox_theme_icon_up>`
+
+Up button icon, displayed in the middle of the up (value-increasing) button.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_icon_up_disabled:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **up_disabled** :ref:`🔗<class_SpinBox_theme_icon_up_disabled>`
+
+Up button icon when the button is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_icon_up_hover:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **up_hover** :ref:`🔗<class_SpinBox_theme_icon_up_hover>`
+
+Up button icon when the button is hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_icon_up_pressed:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **up_pressed** :ref:`🔗<class_SpinBox_theme_icon_up_pressed>`
+
+Up button icon when the button is being pressed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_SpinBox_theme_icon_updown:
 
 .. rst-class:: classref-themeproperty
 
 :ref:`Texture2D<class_Texture2D>` **updown** :ref:`🔗<class_SpinBox_theme_icon_updown>`
 
-Sets a custom :ref:`Texture2D<class_Texture2D>` for up and down arrows of the **SpinBox**.
+Single texture representing both the up and down buttons icons. It is displayed in the middle of the buttons and does not change upon interaction. It is recommended to use individual :ref:`up<class_SpinBox_theme_icon_up>` and :ref:`down<class_SpinBox_theme_icon_down>` graphics for better usability. This can also be used as additional decoration between the two buttons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_style_down_background:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **down_background** :ref:`🔗<class_SpinBox_theme_style_down_background>`
+
+Background style of the down button.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_style_down_background_disabled:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **down_background_disabled** :ref:`🔗<class_SpinBox_theme_style_down_background_disabled>`
+
+Background style of the down button when disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_style_down_background_hovered:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **down_background_hovered** :ref:`🔗<class_SpinBox_theme_style_down_background_hovered>`
+
+Background style of the down button when hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_style_down_background_pressed:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **down_background_pressed** :ref:`🔗<class_SpinBox_theme_style_down_background_pressed>`
+
+Background style of the down button when being pressed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_style_field_and_buttons_separator:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **field_and_buttons_separator** :ref:`🔗<class_SpinBox_theme_style_field_and_buttons_separator>`
+
+:ref:`StyleBox<class_StyleBox>` drawn in the space occupied by the separation between the input field and the buttons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_style_up_background:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **up_background** :ref:`🔗<class_SpinBox_theme_style_up_background>`
+
+Background style of the up button.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_style_up_background_disabled:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **up_background_disabled** :ref:`🔗<class_SpinBox_theme_style_up_background_disabled>`
+
+Background style of the up button when disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_style_up_background_hovered:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **up_background_hovered** :ref:`🔗<class_SpinBox_theme_style_up_background_hovered>`
+
+Background style of the up button when hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_style_up_background_pressed:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **up_background_pressed** :ref:`🔗<class_SpinBox_theme_style_up_background_pressed>`
+
+Background style of the up button when being pressed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_theme_style_up_down_buttons_separator:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **up_down_buttons_separator** :ref:`🔗<class_SpinBox_theme_style_up_down_buttons_separator>`
+
+:ref:`StyleBox<class_StyleBox>` drawn in the space occupied by the separation between the up and down buttons.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -234,7 +234,7 @@ Ellipsis character used for text clipping.
 - |void| **set_justification_flags**\ (\ value\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\]\ )
 - |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **get_justification_flags**\ (\ )
 
-Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`.
+Line fill alignment rules. See :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` for more information.
 
 .. rst-class:: classref-item-separator
 

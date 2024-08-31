@@ -25,18 +25,6 @@ Unlike its runtime counterpart, **ImporterMesh** contains mesh data before vario
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
-
-.. table::
-   :widths: auto
-
-   +-------------------------------------+-------------------------------------------------+------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`_data<class_ImporterMesh_property__data>` | ``{ "surfaces": [] }`` |
-   +-------------------------------------+-------------------------------------------------+------------------------+
-
-.. rst-class:: classref-reftable-group
-
 Methods
 -------
 
@@ -90,25 +78,6 @@ Methods
    +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                          | :ref:`set_surface_name<class_ImporterMesh_method_set_surface_name>`\ (\ surface_idx\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )                                                                                                                                                                                                                                                                         |
    +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. rst-class:: classref-section-separator
-
-----
-
-.. rst-class:: classref-descriptions-group
-
-Property Descriptions
----------------------
-
-.. _class_ImporterMesh_property__data:
-
-.. rst-class:: classref-property
-
-:ref:`Dictionary<class_Dictionary>` **_data** = ``{ "surfaces": [] }`` :ref:`🔗<class_ImporterMesh_property__data>`
-
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-section-separator
 

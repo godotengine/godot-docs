@@ -286,6 +286,7 @@ The playback type of the stream player. If set other than to the default value, 
 
 .. rst-class:: classref-property-setget
 
+- |void| **set_playing**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_playing**\ (\ )
 
 If ``true``, audio is playing or is queued to be played (see :ref:`play<class_AudioStreamPlayer2D_method_play>`).

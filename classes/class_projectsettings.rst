@@ -213,6 +213,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/integer_division<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`                                                                                   | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/missing_tool<class_ProjectSettings_property_debug/gdscript/warnings/missing_tool>`                                                                                           | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/narrowing_conversion<class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion>`                                                                           | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/native_method_override<class_ProjectSettings_property_debug/gdscript/warnings/native_method_override>`                                                                       | ``2``                                                                                            |
@@ -400,8 +402,6 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`display/window/dpi/allow_hidpi<class_ProjectSettings_property_display/window/dpi/allow_hidpi>`                                                                                                       | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`                                                                             | ``true``                                                                                         |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`display/window/energy_saving/keep_screen_on.editor_hint<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor_hint>`                                                     | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`display/window/handheld/orientation<class_ProjectSettings_property_display/window/handheld/orientation>`                                                                                             | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1623,6 +1623,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/environment_blend_mode<class_ProjectSettings_property_xr/openxr/environment_blend_mode>`                                                                                                   | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`xr/openxr/extensions/debug_message_types<class_ProjectSettings_property_xr/openxr/extensions/debug_message_types>`                                                                                   | ``"15"``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`xr/openxr/extensions/debug_utils<class_ProjectSettings_property_xr/openxr/extensions/debug_utils>`                                                                                                   | ``"0"``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/eye_gaze_interaction<class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction>`                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_interaction_profile<class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile>`                                                                         | ``false``                                                                                        |
@@ -2818,6 +2822,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
+.. _class_ProjectSettings_property_debug/gdscript/warnings/missing_tool:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/missing_tool** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/missing_tool>`
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when the base class script has the ``@tool`` annotation, but the current class script does not have it.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion:
 
 .. rst-class:: classref-property
@@ -3949,18 +3965,6 @@ If ``true``, allows HiDPI display on Windows, macOS, Android, iOS and Web. If ``
 :ref:`bool<class_bool>` **display/window/energy_saving/keep_screen_on** = ``true`` :ref:`🔗<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`
 
 If ``true``, keeps the screen on (even in case of inactivity), so the screensaver does not take over. Works on desktop and mobile platforms.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor_hint:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **display/window/energy_saving/keep_screen_on.editor_hint** = ``false`` :ref:`🔗<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor_hint>`
-
-Editor-only override for :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`. Does not affect running project.
 
 .. rst-class:: classref-item-separator
 
@@ -9618,8 +9622,6 @@ If ``true``, the renderer will interpolate the transforms of physics objects bet
 
 \ **Note:** This property is only read when the project starts. To toggle physics interpolation at runtime, set :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_interpolation>` instead.
 
-\ **Note:** This feature is currently only implemented in the 2D renderer.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -10328,9 +10330,9 @@ If ``true``, the compatibility renderer will fall back to OpenGLES if desktop Op
 
 :ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_native** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_native>`
 
-If ``true``, the compatibility renderer will fall back to native OpenGL if ANGLE over Metal is not supported.
+If ``true``, the compatibility renderer will fall back to native OpenGL if ANGLE is not supported, or ANGLE dynamic libraries aren't found.
 
-\ **Note:** This setting is implemented only on macOS.
+\ **Note:** This setting is implemented on macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -10950,9 +10952,9 @@ The minimum number of instances that must be present in a scene to enable cullin
 
 :ref:`float<class_float>` **rendering/limits/time/time_rollover_secs** = ``3600`` :ref:`🔗<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`
 
-.. container:: contribute
+Maximum time (in seconds) before the ``TIME`` shader built-in variable rolls over. The ``TIME`` variable increments by ``delta`` each frame, and when it exceeds this value, it rolls over to ``0.0``. Since large floating-point values are less precise than small floating-point values, this should be set as low as possible to maximize the precision of the ``TIME`` built-in variable in shaders. This is especially important on mobile platforms where precision in shaders is significantly reduced. However, if this is set too low, shader animations may appear to restart from the beginning while the project is running.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+On desktop platforms, values below ``4096`` are recommended, ideally below ``2048``. On mobile platforms, values below ``64`` are recommended, ideally below ``32``.
 
 .. rst-class:: classref-item-separator
 
@@ -11919,6 +11921,30 @@ Specify how OpenXR should blend in the environment. This is specific to certain 
 
 ----
 
+.. _class_ProjectSettings_property_xr/openxr/extensions/debug_message_types:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **xr/openxr/extensions/debug_message_types** = ``"15"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/debug_message_types>`
+
+Specifies the message types for which we request debug messages. Requires :ref:`xr/openxr/extensions/debug_utils<class_ProjectSettings_property_xr/openxr/extensions/debug_utils>` to be set and the extension to be supported by the XR runtime.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/debug_utils:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **xr/openxr/extensions/debug_utils** = ``"0"`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/extensions/debug_utils>`
+
+Enables debug utilities on XR runtimes that supports the debug utils extension. Sets the maximum severity being reported (0 = disabled, 1 = error, 2 = warning, 3 = info, 4 = verbose).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction:
 
 .. rst-class:: classref-property
@@ -12104,8 +12130,6 @@ Adds a custom property info to a property. The dictionary must contain:
 
 - optionally ``"hint"``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``"hint_string"``: :ref:`String<class_String>`\ 
 
-\ **Example:**\ 
-
 
 .. tabs::
 
@@ -12198,8 +12222,6 @@ Returns the order of a configuration value (influences when saved to the config 
 
 Returns the value of the setting identified by ``name``. If the setting doesn't exist and ``default_value`` is specified, the value of ``default_value`` is returned. Otherwise, ``null`` is returned.
 
-\ **Example:**\ 
-
 
 .. tabs::
 
@@ -12229,9 +12251,7 @@ Returns the value of the setting identified by ``name``. If the setting doesn't 
 
 Similar to :ref:`get_setting<class_ProjectSettings_method_get_setting>`, but applies feature tag overrides if any exists and is valid.
 
-\ **Example:**\ 
-
-If the following setting override exists "application/config/name.windows", and the following code is executed:
+\ **Example:**\ 	If the setting override ``"application/config/name.windows"`` exists, and the following code is executed on a *Windows* operating system, the overridden setting is printed instead:
 
 
 .. tabs::
@@ -12245,8 +12265,6 @@ If the following setting override exists "application/config/name.windows", and 
     GD.Print(ProjectSettings.GetSettingWithOverride("application/config/name"));
 
 
-
-Then the overridden setting will be returned instead if the project is running on the *Windows* operating system.
 
 .. rst-class:: classref-item-separator
 
@@ -12415,8 +12433,6 @@ Sets whether a setting requires restarting the editor to properly take effect.
 |void| **set_setting**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_ProjectSettings_method_set_setting>`
 
 Sets the value of a setting.
-
-\ **Example:**\ 
 
 
 .. tabs::

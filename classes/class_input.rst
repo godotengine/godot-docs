@@ -936,8 +936,6 @@ Returns ``true`` if you are pressing the key in the physical location on the 101
 
 Feeds an :ref:`InputEvent<class_InputEvent>` to the game. Can be used to artificially trigger input events from code. Also generates :ref:`Node._input<class_Node_private_method__input>` calls.
 
-\ **Example:**\ 
-
 
 .. tabs::
 
