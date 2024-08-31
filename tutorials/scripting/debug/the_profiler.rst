@@ -28,7 +28,7 @@ game and report back to the debugger, so it's off by default.
 
 To begin profiling, click on the **Start** button in the top-left. Run your game
 and data will start appearing. You can also start profiling at any time before
-or during gameplay, depending on if you want.
+or during gameplay.
 
 .. note::
 
