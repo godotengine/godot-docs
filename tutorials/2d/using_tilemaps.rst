@@ -126,9 +126,9 @@ layer you wish to paint on:
 
 .. tip::
 
-    In the 2D editor, the layers you aren't currently editing from the same
-    TileMap node will appear grayed out while in the TileMap editor. You can
-    disable this behavior by clicking the icon next to the layer selection menu
+    In the 2D editor, the layers you aren't currently editing,
+    from the same TileMap node, will appear grayed out while in the TileMap editor.
+    You can disable this behavior by clicking the icon next to the layer selection menu
     (**Highlight Selected TileMap Layer** tooltip).
 
 You can skip the above step if you haven't created additional layers, as the
