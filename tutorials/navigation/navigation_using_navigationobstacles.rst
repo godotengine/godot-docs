@@ -25,7 +25,7 @@ Obstacles and navigation mesh
 
    Navigation obstacles affecting navigation mesh baking.
 
-For navigation mesh baking obstacles can be used to discard parts of all other source geometry inside the obstacle shape.
+For navigation mesh baking, obstacles can be used to discard parts of all other source geometry inside the obstacle shape.
 
 This can be used to stop navigation meshes being baked in unwanted places,
 e.g. inside "solid" geometry like thick walls or on top of other geometry that should not be included for gameplay like roofs.
