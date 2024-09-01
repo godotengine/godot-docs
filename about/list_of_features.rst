@@ -631,10 +631,10 @@ Windowing and OS integration
 - Execute commands in a blocking or non-blocking manner (including running
   multiple instances of the same project).
 - Open file paths and URLs using default or custom protocol handlers (if registered on the system).
-- Parse custom command line arguments.
+- Parse custom command-line arguments.
 - Any Godot binary (editor or exported project) can be
   :ref:`used as a headless server <doc_exporting_for_dedicated_servers>`
-  by starting it with the ``--headless`` command line argument.
+  by starting it with the ``--headless`` command-line argument.
   This allows running the engine without a GPU or display server.
 
 Mobile
@@ -651,7 +651,7 @@ XR support (AR and VR)
 
    - Including support for popular desktop headsets like the Valve Index, WMR headsets, and Quest over Link.
 
-- Support for :ref:`Android based headsets <doc_deploying_to_android>` using OpenXR through a plugin.
+- Support for :ref:`Android-based headsets <doc_deploying_to_android>` using OpenXR through a plugin.
 
   - Including support for popular stand alone headsets like the Meta Quest 1/2/3 and Pro, Pico 4, Magic Leap 2, and Lynx R1.
 
@@ -753,7 +753,7 @@ Miscellaneous
   project with synchronized audio and perfect frame pacing.
 - :ref:`Low-level access to servers <doc_using_servers>` which allows bypassing
   the scene tree's overhead when needed.
-- :ref:`Command line interface <doc_command_line_tutorial>` for automation.
+- :ref:`Command-line interface <doc_command_line_tutorial>` for automation.
 
    - Export and deploy projects using continuous integration platforms.
    - `Shell completion scripts <https://github.com/godotengine/godot/tree/master/misc/dist/shell>`__

@@ -122,7 +122,7 @@ When you run the app for the first time, the following dialog is displayed:
 
 To run this app, you can ad-hoc sign it yourself:
 
-* Install ``Xcode`` for the App Store, start it and confirm command line tools installation.
+* Install ``Xcode`` for the App Store, start it and confirm command-line tools installation.
 
 * Open ``Terminal.app`` (press :kbd:`Cmd + Space` and enter ``Terminal``).
 

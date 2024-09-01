@@ -8,7 +8,7 @@ have a GPU or display server available, you'll need to run Godot with the ``head
 display server and ``Dummy`` :ref:`audio driver <class_ProjectSettings_property_audio/driver/driver>`.
 
 Since Godot 4.0, this can be done by running a Godot binary on any platform with
-the ``--headless`` command line argument, or running a project exported as
+the ``--headless`` command-line argument, or running a project exported as
 dedicated server. You do not need to use a specialized server binary anymore,
 unlike Godot 3.x.
 
@@ -238,7 +238,7 @@ main scene (or an autoload)'s ``_ready()`` method:
         // command-line argument.
     }
 
-If you wish to use a custom command line argument, this can be done by adding
+If you wish to use a custom command-line argument, this can be done by adding
 the following code snippet in your main scene (or an autoload)'s ``_ready()``
 method:
 

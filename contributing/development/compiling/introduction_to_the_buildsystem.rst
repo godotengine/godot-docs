@@ -346,7 +346,7 @@ line option, both overriding the default build configuration:
 
     scons profile=path/to/custom.py
 
-.. note:: Build options set from the file can be overridden by the command line
+.. note:: Build options set from the file can be overridden by the command-line
           options.
 
 It's also possible to override the options conditionally:

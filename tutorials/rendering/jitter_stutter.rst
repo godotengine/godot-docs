@@ -201,7 +201,7 @@ done with caution.
 .. tip::
 
     On any Godot project, you can use the ``--disable-vsync``
-    :ref:`command line argument <doc_command_line_tutorial>` to forcibly disable V-Sync.
+    :ref:`command-line argument <doc_command_line_tutorial>` to forcibly disable V-Sync.
     Since Godot 4.2, ``--max-fps <fps>`` can also be used to set a FPS limit
     (``0`` is unlimited). These arguments can be used at the same time.
 

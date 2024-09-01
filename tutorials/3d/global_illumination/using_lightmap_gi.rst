@@ -445,7 +445,7 @@ If hardware acceleration is not available, OIDN will fall back to multithreaded
 CPU-based denoising. To confirm whether GPU-based denoising is working, use a
 GPU utilization monitor while baking lightmaps and look at the GPU utilization
 percentage and VRAM utilization while the denoising step is shown in the Godot
-editor. The ``nvidia-smi`` command line tool can be useful for this.
+editor. The ``nvidia-smi`` command-line tool can be useful for this.
 
 OIDN is not included with Godot due to its relatively large download size. You
 can download precompiled OIDN binary packages from its

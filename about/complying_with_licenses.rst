@@ -88,14 +88,14 @@ Credits screen
 
 Include the above license text somewhere in the credits screen. It can be at the
 bottom after showing the rest of the credits. Most large studios use this
-approach with open source licenses.
+approach with open-source licenses.
 
 Licenses screen
 ^^^^^^^^^^^^^^^
 
 Some games have a special menu (often in the settings) to display licenses.
 This menu is typically accessed with a button called **Third-party Licenses**
-or **Open Source Licenses**.
+or **Open-source Licenses**.
 
 Output log
 ^^^^^^^^^^
@@ -147,7 +147,7 @@ Godot itself contains software written by
 `third parties <https://github.com/godotengine/godot/blob/master/thirdparty/README.md>`_,
 which is compatible with, but not covered by Godot's MIT license.
 
-Many of these dependencies are distributed under permissive open source licenses
+Many of these dependencies are distributed under permissive open-source licenses
 which require attribution by explicitly citing their copyright statement and
 license text in the final product's documentation.
 

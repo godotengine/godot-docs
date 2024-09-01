@@ -37,7 +37,7 @@ Disadvantages
 Installing gettext tools
 ------------------------
 
-The command line gettext tools are required to perform maintenance operations,
+The command-line gettext tools are required to perform maintenance operations,
 such as updating message files. Therefore, it's strongly recommended to
 install them.
 

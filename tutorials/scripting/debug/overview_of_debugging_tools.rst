@@ -109,7 +109,7 @@ Customize Run Instances...
 ++++++++++++++++++++++++++
 
 This opens a dialog allowing you to tell Godot to run multiple instances of the
-game at once, and to specify the command line arguments for each instance. This
+game at once, and to specify the command-line arguments for each instance. This
 is especially useful when building and debugging multiplayer games.
 
 .. image:: img/customize_run_instances.webp
@@ -187,7 +187,7 @@ Tags" unless you select "Enabled" under "Override Main Tags".
     when combining the `Main Run Args` and `Launch Arguments`.
 
     If you place `-- one two three` in the "Main Run Args" and `-- four five
-    six` in the "Launch Arguments" then the final command line arguments will be
+    six` in the "Launch Arguments" then the final command-line arguments will be
     `one two three -- four five six`. This is because the `--` is repeated in
     the "Launch Arguments".
 

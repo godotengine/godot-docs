@@ -40,8 +40,8 @@ only the ``-e`` option is required.
     $ gdb godot
     > run -e
 
-You can learn more about these launch options and other command line arguments
-in the :ref:`command line tutorial <doc_command_line_tutorial>`.
+You can learn more about these launch options and other command-line arguments
+in the :ref:`command-line tutorial <doc_command_line_tutorial>`.
 
 If you're using a code editor or an IDE to debug Godot, check out our
 :ref:`configuration guides <doc_configuring_an_ide>`, which cover the setup

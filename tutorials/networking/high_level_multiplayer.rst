@@ -97,7 +97,7 @@ for full IPv6 support.
 Initializing the network
 ------------------------
 
-High level networking in Godot is managed by the :ref:`SceneTree <class_SceneTree>`.
+High-level networking in Godot is managed by the :ref:`SceneTree <class_SceneTree>`.
 
 Each node has a ``multiplayer`` property, which is a reference to the ``MultiplayerAPI`` instance configured for it
 by the scene tree. Initially, every node is configured with the same default ``MultiplayerAPI`` object.

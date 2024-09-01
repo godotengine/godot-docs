@@ -97,7 +97,7 @@ To clone your fork from GitHub, use the following command:
 
     $ git clone https://github.com/USERNAME/godot
 
-.. note:: In our examples, the "$" character denotes the command line prompt
+.. note:: In our examples, the "$" character denotes the command-line prompt
           on typical UNIX shells. It is not part of the command and should
           not be typed.
 

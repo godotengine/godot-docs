@@ -141,7 +141,7 @@ auto-completion, and built-in code reference.
 
 .. image:: img/editor_intro_workspace_script.webp
 
-Finally, the **Asset Library** is a library of free and open source add-ons, scripts,
+Finally, the **Asset Library** is a library of free and open-source add-ons, scripts,
 and assets to use in your projects.
 
 .. image:: img/editor_intro_workspace_assetlib.webp

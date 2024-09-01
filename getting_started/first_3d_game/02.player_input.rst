@@ -51,7 +51,7 @@ You can rename it to ``Character``.
 
 .. note::
 
-    The ``.glb`` files contain 3D scene data based on the open source glTF 2.0
+    The ``.glb`` files contain 3D scene data based on the open-source glTF 2.0
     specification. They're a modern and powerful alternative to a proprietary format
     like FBX, which Godot also supports. To produce these files, we designed the
     model in `Blender 3D <https://www.blender.org/>`__ and exported it to glTF.

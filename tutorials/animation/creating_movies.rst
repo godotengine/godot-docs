@@ -109,7 +109,7 @@ or relative to the project root.
 Once you've configured and enabled Movie Maker mode, it will be automatically used
 when running the project from the editor.
 
-Command line usage
+Command-line usage
 ^^^^^^^^^^^^^^^^^^
 
 Movie Maker can also be enabled from the :ref:`command line <doc_command_line_tutorial>`:
@@ -121,7 +121,7 @@ Movie Maker can also be enabled from the :ref:`command line <doc_command_line_tu
 If the output path is relative, then it is **relative to the project folder**,
 not the current working directory. In the above example, the file will be
 written to ``/path/to/your_project/output.avi``. This behavior is similar to the
-``--export-release`` command line argument.
+``--export-release`` command-line argument.
 
 Since Movie Maker's output resolution is set by the viewport size, you can
 adjust the window size on startup to override it if the project uses the
@@ -144,7 +144,7 @@ without having to edit the Project Settings:
 
 .. note::
 
-    The ``--write-movie`` and ``--fixed-fps`` command line arguments are both available
+    The ``--write-movie`` and ``--fixed-fps`` command-line arguments are both available
     in exported projects. Movie Maker mode cannot be toggled while the project is running,
     but you can use the :ref:`OS.execute() <class_OS_method_execute>` method to
     run a second instance of the exported project that will record a video file.
@@ -248,7 +248,7 @@ Quitting Movie Maker mode
 
 To safely quit a project that is using Movie Maker mode, use the X button at the
 top of the window, or call ``get_tree().quit()`` in a script. You can also use
-the ``--quit-after N`` command line argument where ``N`` is the number of frames
+the ``--quit-after N`` command-line argument where ``N`` is the number of frames
 to render before quitting.
 
 Pressing :kbd:`F8` (:kbd:`Cmd + .` on macOS) or pressing :kbd:`Ctrl + C` on the
@@ -375,7 +375,7 @@ Converting AVI video to MP4
 
 While some platforms such as YouTube support uploading the AVI file directly, many
 others will require a conversion step beforehand. `HandBrake <https://handbrake.fr/>`__
-(GUI) and `FFmpeg <https://ffmpeg.org/>`__ (CLI) are popular open source tools
+(GUI) and `FFmpeg <https://ffmpeg.org/>`__ (CLI) are popular open-source tools
 for this purpose. FFmpeg has a steeper learning curve, but it's more powerful.
 
 The command below converts an AVI video to an MP4 (H.264) video with a Constant

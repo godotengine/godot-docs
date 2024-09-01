@@ -3,7 +3,7 @@
 Qt Creator
 ==========
 
-`Qt Creator <https://doc.qt.io/qtcreator/index.html>`_ is a free, open source IDE for all desktop platforms.
+`Qt Creator <https://doc.qt.io/qtcreator/index.html>`_ is a free, open-source IDE for all desktop platforms.
 
 Importing the project
 ---------------------
@@ -85,8 +85,8 @@ Debugging the project
    :figclass: figure-w480
    :align: center
 
-To learn more about command line arguments, refer to the
-:ref:`command line tutorial <doc_command_line_tutorial>`.
+To learn more about command-line arguments, refer to the
+:ref:`command-line tutorial <doc_command_line_tutorial>`.
 
 Code style configuration
 ------------------------

@@ -11,7 +11,7 @@ Frequently asked questions
 What can I do with Godot? How much does it cost? What are the license terms?
 ----------------------------------------------------------------------------
 
-Godot is `Free and open source Software <https://en.wikipedia.org/wiki/Free_and_open_source_software>`_
+Godot is `Free and open-source Software <https://en.wikipedia.org/wiki/Free_and_open-source_software>`_
 available under the `OSI-approved <https://opensource.org/licenses/MIT>`_ MIT license. This means it is
 free as in "free speech" as well as in "free beer."
 
@@ -62,7 +62,7 @@ being the default. Official macOS builds support Apple Silicon natively as well 
 Some users also report building and using Godot successfully on ARM-based
 systems with Linux, like the Raspberry Pi.
 
-The Godot team can't provide an open source console export due to the licensing
+The Godot team can't provide an open-source console export due to the licensing
 terms imposed by console manufacturers. Regardless of the engine you use,
 though, releasing games on consoles is always a lot of work. You can read more
 about :ref:`doc_consoles`.
@@ -93,7 +93,7 @@ way of developing your games.
 Note that C# support is still relatively new, and as such, you may encounter
 some issues along the way. C# support is also currently missing on the web
 platform. Our friendly and hard-working development community is always
-ready to tackle new problems as they arise, but since this is an open source
+ready to tackle new problems as they arise, but since this is an open-source
 project, we recommend that you first do some due diligence yourself. Searching
 through discussions on
 `open issues <https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Atopic%3Adotnet>`__
@@ -127,7 +127,7 @@ the dimensionality of issues, and allows the developers of the engine to focus o
 bugs and improving features related to the engine core, rather than spending a lot of time
 trying to get a small set of incremental features working across a large set of languages.
 
-Since Godot is an open source project, it was imperative from the start to prioritize a
+Since Godot is an open-source project, it was imperative from the start to prioritize a
 more integrated and seamless experience over attracting additional users by supporting
 more familiar programming languages, especially when supporting those more familiar
 languages would result in a worse experience. We understand if you would rather use
@@ -178,7 +178,7 @@ your 3D modeling software, and how to import them for Godot in the
 Will [insert closed SDK such as FMOD, GameWorks, etc.] be supported in Godot?
 -----------------------------------------------------------------------------
 
-The aim of Godot is to create a free and open source MIT-licensed engine that
+The aim of Godot is to create a free and open-source MIT-licensed engine that
 is modular and extendable. There are no plans for the core engine development
 community to support any third-party, closed-source/proprietary SDKs, as integrating
 with these would go against Godot's ethos.
@@ -191,7 +191,7 @@ To see how support for your SDK of choice could still be provided, look at the
 Plugins question below.
 
 If you know of a third-party SDK that is not supported by Godot but that offers
-free and open source integration, consider starting the integration work yourself.
+free and open-source integration, consider starting the integration work yourself.
 Godot is not owned by one person; it belongs to the community, and it grows along
 with ambitious community contributors like you.
 
@@ -397,7 +397,7 @@ should upgrade depends on your project's circumstances. See
 I would like to contribute! How can I get started?
 --------------------------------------------------
 
-Awesome! As an open source project, Godot thrives off of the innovation and
+Awesome! As an open-source project, Godot thrives off of the innovation and
 the ambition of developers like you.
 
 The best way to start contributing to Godot is by using it and reporting
@@ -456,7 +456,7 @@ in the Project Settings to decrease CPU and GPU usage.
 
 Check out `Material Maker <https://github.com/RodZill4/material-maker>`__ and
 `Pixelorama <https://github.com/Orama-Interactive/Pixelorama>`__ for examples of
-open source applications made with Godot.
+open-source applications made with Godot.
 
 .. _doc_faq_use_godot_as_library:
 

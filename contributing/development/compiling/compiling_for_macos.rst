@@ -98,7 +98,7 @@ projects in an automated manner, use the normal build::
 
     scons platform=macos target=editor
 
-And then use the ``--headless`` command line argument::
+And then use the ``--headless`` command-line argument::
 
     ./bin/godot.macos.editor.x86_64 --headless
 

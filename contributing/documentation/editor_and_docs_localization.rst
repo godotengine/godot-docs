@@ -20,7 +20,7 @@ These resources include:
    available both online and in the editor (ca. 200,000 words).
 
 To manage translations, we use the GNU gettext file format (``PO`` files), and
-the open source `Weblate <https://weblate.org>`__ web-based localization
+the open-source `Weblate <https://weblate.org>`__ web-based localization
 platform, which allows easy collaboration of many contributors to complete the
 translation for the various components, and keep them up to date. Click the bold
 links above to access each resource on Weblate.

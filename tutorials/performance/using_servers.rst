@@ -5,7 +5,7 @@
 Optimization using Servers
 ==========================
 
-Engines like Godot provide increased ease of use thanks to their high level constructs and features.
+Engines like Godot provide increased ease of use thanks to their high-level constructs and features.
 Most of them are accessed and used via the :ref:`Scene System<doc_scene_tree>`. Using nodes and
 resources simplifies project organization and asset management in complex games.
 
@@ -21,7 +21,7 @@ with signals, so no polling is required). Still, sometimes it can be. For exampl
 tens of thousands of instances for something that needs to be processed every frame can be a bottleneck.
 
 This type of situation makes programmers regret they are using a game engine and wish they could go
-back to a more handcrafted, low level implementation of game code.
+back to a more handcrafted, low-level implementation of game code.
 
 Still, Godot is designed to work around this problem.
 

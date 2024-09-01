@@ -296,7 +296,7 @@ typically created with manual editing, using the diffuse texture as a base.
 .. tip::
 
     If you don't have normal or specular maps for your sprites, you can generate
-    them using the free and open source `Laigter <https://azagaya.itch.io/laigter>`__
+    them using the free and open-source `Laigter <https://azagaya.itch.io/laigter>`__
     tool.
 
 To set up normal maps and/or specular maps on a 2D node, create a new

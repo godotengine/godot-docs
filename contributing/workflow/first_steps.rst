@@ -6,7 +6,7 @@ Contributing code
 The possibility to study, use, modify and redistribute modifications of the
 engine's source code are the fundamental rights that
 Godot's `MIT <https://tldrlegal.com/license/mit-license>`_ license grants you,
-making it `free and open source software <https://en.wikipedia.org/wiki/Free_and_open-source_software>`_.
+making it `free and open-source software <https://en.wikipedia.org/wiki/Free_and_open-source_software>`_.
 
 As such, everyone is entitled to modify
 `Godot's source code <https://github.com/godotengine/godot>`_, and send those
@@ -49,7 +49,7 @@ All pull requests must go through a review process before being accepted.
 Depending on the scope of the changes, it may take some time for a maintainer
 responsible for the modified part of the engine to provide their review.
 We value all of our contributors and ask them to be patient in the meantime,
-as it is expected that in an open source project like Godot, there is going to be
+as it is expected that in an open-source project like Godot, there is going to be
 way more contributions than people validating them.
 
 To make sure that your time and efforts aren't wasted, it is recommended to vet the idea

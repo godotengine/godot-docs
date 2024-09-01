@@ -94,7 +94,7 @@ When the folder path is correct, you'll see a green checkmark.
 Downloading demos and templates
 -------------------------------
 
-From the **Asset Library** tab you can download open source project
+From the **Asset Library** tab you can download open-source project
 templates and demos from the :ref:`Asset Library <toc-learn-features-assetlib>` to help
 you get started faster.
 

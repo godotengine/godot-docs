@@ -18,7 +18,7 @@ Introduction
         GD.Print("Hello world!");
     }
 
-Welcome to the official documentation of **Godot Engine**, the free and open source
+Welcome to the official documentation of **Godot Engine**, the free and open-source
 community-driven 2D and 3D game engine! Behind this mouthful, you will find a
 powerful yet user-friendly tool that you can use to develop any kind of game,
 for any platform and with no usage restriction whatsoever.

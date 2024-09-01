@@ -136,13 +136,13 @@ xcode-select points at wrong SDK location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 xcode-select is a tool that comes with Xcode and among other things points at iOS SDKs on your Mac.
-If you have Xcode installed, opened it, agreed to the license agreement, and installed the command line tools, 
+If you have Xcode installed, opened it, agreed to the license agreement, and installed the command-line tools, 
 xcode-select should point at the right location for the iPhone SDK. 
 If it somehow doesn't, Godot will fail exporting to iOS with an error that may look like this:
 
 ::
 
-    MSB3073: The command ""clang" <LOTS OF PATHS AND COMMAND LINE ARGUMENTS HERE>
+    MSB3073: The command ""clang" <LOTS OF PATHS AND COMMAND-LINE ARGUMENTS HERE>
     "/Library/Developer/CommandLineTools/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk"" exited with code 1.
 
 In this case, Godot is trying to find the ``Platforms`` folder containing the iPhone SDK inside the 

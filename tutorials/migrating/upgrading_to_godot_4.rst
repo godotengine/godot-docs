@@ -381,7 +381,7 @@ table to find its new name.
     :kbd:`Ctrl + Shift + R` while the script editor is open. However, be careful
     as the Replace in Files dialog doesn't offer any way to undo a replacement.
     Use version control to commit your upgrade work regularly.
-    Command line tools such as `sd <https://github.com/chmln/sd>`__ can also be used
+    Command-line tools such as `sd <https://github.com/chmln/sd>`__ can also be used
     if you need something more flexible than the editor's Replace in Files dialog.
 
     If using C#, remember to search for outdated API usage with PascalCase
@@ -521,7 +521,7 @@ Some notable renames you will need to perform in shaders are:
   than the texture files themselves.
 - ``hint_albedo`` is now ``source_color``.
 - ``hint_color`` is now ``source_color``.
-- :ref:`Built in matrix variables were renamed. <doc_spatial_shader>`
+- :ref:`Built-in matrix variables were renamed. <doc_spatial_shader>`
 - Particles shaders no longer use the ``vertex()`` processor function. Instead
   they use ``start()`` and ``process()``.
 

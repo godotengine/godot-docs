@@ -1,6 +1,6 @@
 .. _doc_command_line_tutorial:
 
-Command line tutorial
+Command-line tutorial
 =====================
 
 .. highlight:: shell
@@ -20,11 +20,11 @@ suitable for this workflow.
     ``.app`` bundle (which is a *folder*, not a file). To run a Godot binary
     from a terminal on macOS, you have to ``cd`` to the folder where the Godot
     application bundle is located, then run ``Godot.app/Contents/MacOS/Godot``
-    followed by any command line arguments. If you've renamed the application
+    followed by any command-line arguments. If you've renamed the application
     bundle from ``Godot`` to another name, make sure to edit this command line
     accordingly.
 
-Command line reference
+Command-line reference
 ----------------------
 
 .. |release| image:: img/template_release.svg
@@ -37,8 +37,8 @@ Command line reference
 - |debug| Available in editor builds and debug export templates only.
 - |editor| Only available in editor builds.
 
-Note that unknown command line arguments have no effect whatsoever. The engine
-will **not** warn you when using a command line argument that doesn't exist with a
+Note that unknown command-line arguments have no effect whatsoever. The engine
+will **not** warn you when using a command-line argument that doesn't exist with a
 given build type.
 
 **General options**
@@ -46,7 +46,7 @@ given build type.
 +----------------------------+-----------------------------------------------------------------------------+
 | Command                    | Description                                                                 |
 +----------------------------+-----------------------------------------------------------------------------+
-| ``-h``, ``--help``         | |release| Display the list of command line options.                         |
+| ``-h``, ``--help``         | |release| Display the list of command-line options.                         |
 +----------------------------+-----------------------------------------------------------------------------+
 | ``--version``              | |release| Display the version string.                                       |
 +----------------------------+-----------------------------------------------------------------------------+
@@ -371,7 +371,7 @@ Debugging
 ---------
 
 Catching errors in the command line can be a difficult task because they
-scroll quickly. For this, a command line debugger is provided by adding
+scroll quickly. For this, a command-line debugger is provided by adding
 ``-d``. It works for running either the game or a single scene.
 
 ::
@@ -392,7 +392,7 @@ especially useful for continuous integration setups.
 
 .. note::
 
-    Using the ``--headless`` command line argument is **required** on platforms
+    Using the ``--headless`` command-line argument is **required** on platforms
     that do not have GPU access (such as continuous integration). On platforms
     with GPU access, ``--headless`` prevents a window from spawning while the
     project is exporting.

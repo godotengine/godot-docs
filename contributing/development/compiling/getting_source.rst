@@ -26,7 +26,7 @@ In general, you need to install ``git`` and/or one of the various GUI clients.
 Afterwards, to get the latest development version of the Godot source code
 (the unstable ``master`` branch), you can use ``git clone``.
 
-If you are using the ``git`` command line client, this is done by entering
+If you are using the ``git`` command-line client, this is done by entering
 the following in a terminal:
 
 ::

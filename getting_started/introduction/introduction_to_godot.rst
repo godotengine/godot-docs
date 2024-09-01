@@ -21,7 +21,7 @@ on desktop or mobile, as well as on the web.
 You can also create console games with it, although you either need strong
 programming skills or a developer to port the game for you.
 
-.. note:: The Godot team can't provide an open source console export due to the
+.. note:: The Godot team can't provide an open-source console export due to the
           licensing terms imposed by console manufacturers. Regardless of the
           engine you use, though, releasing games on consoles is always a lot of
           work. You can read more on that here: :ref:`doc_consoles`.
@@ -31,7 +31,7 @@ What can the engine do?
 
 Godot was initially developed in-house by an Argentinian game studio. Its
 development started in 2001, and the engine was rewritten and improved
-tremendously since its open source release in 2014.
+tremendously since its open-source release in 2014.
 
 Some examples of games created with Godot include Ex-Zodiac and Helms of Fury.
 
@@ -39,7 +39,7 @@ Some examples of games created with Godot include Ex-Zodiac and Helms of Fury.
 
 .. image:: img/introduction_helms_of_fury.jpg
 
-As for applications, the open source pixel art drawing program Pixelorama is
+As for applications, the open-source pixel art drawing program Pixelorama is
 powered by Godot, and so is the voxel RPG creator RPG in a box.
 
 .. image:: img/introduction_rpg_in_a_box.png

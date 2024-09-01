@@ -18,7 +18,7 @@ For other backends you can enable OpenXR at any time by calling ``initialize`` o
 
 This also needs to be enabled to get access to the action map editor.
 
-You can use the ``--xr-mode on`` command line switch to force this to on.
+You can use the ``--xr-mode on`` command-line switch to force this to on.
 
 Default Action Map
 ------------------

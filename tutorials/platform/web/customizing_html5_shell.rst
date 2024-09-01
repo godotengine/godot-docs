@@ -18,7 +18,7 @@ Some use-cases where customizing the default page is useful include:
 - Adding a click-to-play button so that games can be started in the fullscreen mode;
 - Loading some extra files before the engine starts, making them available in
   the project file system as soon as possible;
-- Passing custom command line arguments, e.g. ``-s`` to start a ``MainLoop`` script.
+- Passing custom command-line arguments, e.g. ``-s`` to start a ``MainLoop`` script.
 
 The default HTML page is available in the Godot Engine repository at
 `/misc/dist/html/full-size.html <https://github.com/godotengine/godot/blob/master/misc/dist/html/full-size.html>`__

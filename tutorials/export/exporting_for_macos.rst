@@ -33,7 +33,7 @@ To notarize an app, you **must** have a valid `Apple Developer ID Certificate <h
 If you have an Apple Developer ID Certificate and exporting from macOS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install `Xcode <https://developer.apple.com/xcode/>`__ command line tools and open Xcode at least once or run the ``sudo xcodebuild -license accept`` command to accept license agreement.
+Install `Xcode <https://developer.apple.com/xcode/>`__ command-line tools and open Xcode at least once or run the ``sudo xcodebuild -license accept`` command to accept license agreement.
 
 To sign exported app
 ^^^^^^^^^^^^^^^^^^^^
@@ -99,7 +99,7 @@ Signing Options
 +------------------------------+---------------------------------------------------------------------------------------------------+
 | Certificate Password         | Password for the certificate file. [2]_                                                           |
 +------------------------------+---------------------------------------------------------------------------------------------------+
-| Custom Options               | Array of command line arguments passed to the code signing tool.                                  |
+| Custom Options               | Array of command-line arguments passed to the code signing tool.                                  |
 +------------------------------+---------------------------------------------------------------------------------------------------+
 
 .. [1] This option is visible only when signing with Xcode codesign.

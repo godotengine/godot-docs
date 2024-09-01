@@ -54,8 +54,8 @@ Project Manager opens a project, the initial process is terminated and the debug
 .. figure:: img/vs_3_debug_command_line.webp
    :align: center
 
-To learn more about command line arguments, refer to the
-:ref:`command line tutorial <doc_command_line_tutorial>`.
+To learn more about command-line arguments, refer to the
+:ref:`command-line tutorial <doc_command_line_tutorial>`.
 
 Even if you start the project without a debugger attached it can still be connected to the running
 process using **Debug > Attach to Process...** menu.

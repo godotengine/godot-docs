@@ -288,7 +288,7 @@ projects in an automated manner, use the normal build::
 
     scons platform=linuxbsd target=editor
 
-And then use the ``--headless`` command line argument::
+And then use the ``--headless`` command-line argument::
 
     ./bin/godot.linuxbsd.editor.x86_64 --headless
 

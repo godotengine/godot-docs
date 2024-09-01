@@ -283,9 +283,9 @@ Properties
 
    .. js:attribute:: args
 
-      The arguments to be passed as command line arguments on startup.
+      The arguments to be passed as command-line arguments on startup.
 
-      See :ref:`command line tutorial <doc_command_line_tutorial>`.
+      See :ref:`command-line tutorial <doc_command_line_tutorial>`.
 
       **Note**: :js:meth:`startGame <Engine.prototype.startGame>` will always add the ``--main-pack`` argument.
 

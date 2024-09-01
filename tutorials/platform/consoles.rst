@@ -8,7 +8,7 @@ Console porting process
 
 In order to develop for consoles in Godot, you need access to the console SDK and
 export templates for it. These export templates need to be developed either by
-yourself or someone hired to do it, or provided by a third party company.
+yourself or someone hired to do it, or provided by a third-party company.
 
 Currently, the only console Godot officially supports is Steam Deck (through the
 official Linux export templates).
@@ -16,10 +16,10 @@ official Linux export templates).
 The reason other consoles are not officially supported are:
 
 - To develop for consoles, one must be licensed as a company.
-  As an open source project, Godot has no legal structure to provide console ports.
+  As an open-source project, Godot has no legal structure to provide console ports.
 - Console SDKs are secret and covered by non-disclosure agreements.
   Even if we could get access to them, we could not publish the platform-specific
-  code under an open source license.
+  code under an open-source license.
 
 As explained, however, it is possible to port your games to consoles thanks to
 services provided by third-party companies.

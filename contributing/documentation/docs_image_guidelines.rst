@@ -133,7 +133,7 @@ if multiple outlines on an image are needed, red should be avoided. The second s
 is that all outlines and arrow lines should be 2 pixels wide.
 
 Finally, some images might require text to differentiate multiple parts of an image.
-There are no strict requirements other than use an easy to read non fancy font. As for
+There are no strict requirements other than use an easy to read non-fancy font. As for
 color the yellow color from before should also be used, but black or other colors can
 be used if appropriate. For example, if yellow blends into the image, or if there are
 multiple outlines in multiple colors.

@@ -75,7 +75,7 @@ process will build that type of file for the chosen platform.
        interfaces, expect modders to install Godot Engine, and then also expect
        those modders to conform to the documentation's defined API when building
        mod content for the game (so that it will work). Users would then use
-       Godot's built in exporting tools to create a PCK file, as detailed
+       Godot's built-in exporting tools to create a PCK file, as detailed
        above.
     2. The developer uses Godot to build a GUI tool for adding their exact API
        content to a project. This Godot tool must either run on a tools-enabled

@@ -21,7 +21,7 @@ Print text
     print_line("There are", 123, "nodes");
 
     // Prints a message to standard output, but only when the engine
-    // is started with the `--verbose` command line argument.
+    // is started with the `--verbose` command-line argument.
     print_verbose("Message");
 
     // Prints a rich-formatted message using BBCode to standard output.

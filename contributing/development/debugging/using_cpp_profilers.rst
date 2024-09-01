@@ -45,14 +45,14 @@ Benchmarking startup/shutdown times
 -----------------------------------
 
 If you're looking into optimizing Godot's startup/shutdown performance,
-you can tell the profiler to use the ``--quit`` command line option on the Godot binary.
+you can tell the profiler to use the ``--quit`` command-line option on the Godot binary.
 This will exit Godot just after it finished starting.
 The ``--quit`` option works with ``--editor``, ``--project-manager`` or
 ``--path <path to project directory>`` (which runs a project directly).
 
 .. seealso::
 
-    See :ref:`doc_command_line_tutorial` for more command line arguments
+    See :ref:`doc_command_line_tutorial` for more command-line arguments
     supported by Godot.
 
 Profiler-specific instructions
@@ -88,9 +88,9 @@ HotSpot
 .. image:: img/cpp_profiler_hotspot_welcome.png
 
 - In the next window, specify the path to the Godot binary that includes debug symbols.
-- Specify command line arguments to run a specific project, with or without the editor.
+- Specify command-line arguments to run a specific project, with or without the editor.
 - The path to the working directory can be anything if an absolute path is used
-  for the ``--path`` command line argument. Otherwise, it must be set to that
+  for the ``--path`` command-line argument. Otherwise, it must be set to that
   the relative path to the project is valid.
 - Make sure **Elevate Privileges** is checked if you have administrative privileges.
   While not essential for profiling Godot, this will ensure all events can be captured.
@@ -136,7 +136,7 @@ Xcode Instruments
 .. image:: img/cpp_profiler_xcode_menu.png
 
 - In the Time Profiler window, click on the **Target** menu, select **Choose target...**
-  and specify the path to the Godot binary, command line arguments and environment variables
+  and specify the path to the Godot binary, command-line arguments and environment variables
   in the next window.
 
 .. image:: img/cpp_profiler_time_profiler.png

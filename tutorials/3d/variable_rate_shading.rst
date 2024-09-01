@@ -107,7 +107,7 @@ For custom viewports, the VRS mode and texture must be set manually to the
     On unsupported hardware, there is no visual difference when variable rate
     shading is enabled. You can check whether hardware supports variable rate
     shading by running the editor or project with the ``--verbose``
-    :ref:`command line argument <doc_command_line_tutorial>`.
+    :ref:`command-line argument <doc_command_line_tutorial>`.
 
 Creating a VRS density map
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -167,7 +167,7 @@ However, there is no benefit to using a VRS density map that is larger than the
 viewport resolution divided by the GPU's *tile size*. The tile size is what
 determines the smallest area of pixels where the shading density can be changed
 separately from other tiles. On most GPUs, this tile size is 8×8 pixels. You can
-view the tile size by running Godot with the ``--verbose`` command line
+view the tile size by running Godot with the ``--verbose`` command-line
 argument, as it's printed in the VRS debugging information.
 
 Therefore, sticking to a relatively low resolution such as 256×256 (square) or

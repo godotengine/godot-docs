@@ -104,7 +104,7 @@ manage states and transitions visually.*
 Open source
 -----------
 
-Godot offers a fully open source codebase under the **MIT license**.
+Godot offers a fully open-source codebase under the **MIT license**.
 This means all the technologies that ship with it have to be Free
 (as in freedom) as well.
 For the most part, they're developed from the ground up by contributors.

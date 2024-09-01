@@ -22,7 +22,7 @@ don't need to reboot after installing the SDK, but you may need to close and
 reopen your current terminal.
 
 After installing the Vulkan SDK, run Godot with the ``--gpu-validation``
-:ref:`command line argument <doc_command_line_tutorial>`. You can also specify
+:ref:`command-line argument <doc_command_line_tutorial>`. You can also specify
 ``--gpu-abort`` which will make Godot quit as soon as a validation error happens.
 This can prevent your system from freezing if a validation error occurs.
 
@@ -49,7 +49,7 @@ reopen your current terminal.
 
 After installing the Vulkan SDK, run a Godot binary that was compiled with
 ``use_volk=yes`` SCons option. Specify the ``--gpu-validation``
-:ref:`command line argument <doc_command_line_tutorial>`.
+:ref:`command-line argument <doc_command_line_tutorial>`.
 You can also specify ``--gpu-abort`` which will make Godot quit as soon
 as a validation error happens. This can prevent your system from freezing
 if a validation error occurs.
@@ -125,7 +125,7 @@ You don't need to reboot after installing the validation layers, but you may
 need to close and reopen your current terminal.
 
 After installing the package, run Godot with the ``--gpu-validation``
-:ref:`command line argument <doc_command_line_tutorial>`. You can also specify
+:ref:`command-line argument <doc_command_line_tutorial>`. You can also specify
 ``--gpu-abort`` which will make Godot quit as soon as a validation error happens.
 This can prevent your system from freezing if a validation error occurs.
 

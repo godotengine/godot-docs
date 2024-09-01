@@ -184,7 +184,7 @@ is required in the submission form here as well.
 
 * **License**:
     The license under which you are distributing the asset. The list
-    includes a variety of free and open source software licenses, such as GPL
+    includes a variety of free and open-source software licenses, such as GPL
     (v2 and v3), MIT, BSD and Boost Software License. You can visit `OpenSource.org <https://opensource.org>`_
     for a detailed description of each of the listed licenses.
 * **Description**:
