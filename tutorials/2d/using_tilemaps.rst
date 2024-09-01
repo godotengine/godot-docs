@@ -39,7 +39,7 @@ resource and choose **Save**:
 
    Saving the built-in TileSet resource to an external resource file
 
-Multiple TileMaplayers and settings
+Multiple TileMapLayers and settings
 -----------------------------------
 
 When working with tilemaps it's generally advised that you use multiple TileMapLayer
