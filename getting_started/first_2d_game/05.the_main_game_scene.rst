@@ -206,7 +206,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         var direction = mob_spawn_location.rotation + PI / 2
 
         # Set the mob's position to a random location.
-        mob.position = mob_spawn_location.position
+        mob.position = mob_spawn_location.global_position
 
         # Add some randomness to the direction.
         direction += randf_range(-PI / 4, PI / 4)
@@ -239,7 +239,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         float direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
 
         // Set the mob's position to a random location.
-        mob.Position = mobSpawnLocation.Position;
+        mob.Position = mobSpawnLocation.GlobalPosition;
 
         // Add some randomness to the direction.
         direction += (float)GD.RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
