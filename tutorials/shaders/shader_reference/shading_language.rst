@@ -788,7 +788,7 @@ You can access ``int`` values as a readable dropdown widget using the ``hint_enu
     uniform int noise_type : hint_enum("OpenSimplex2", "Cellular", "Perlin", "Value") = 0;
 
 .. note:: Unlike ``@export_enum`` in GDScript, the ``hint_enum`` uniform does not support
-          the use of ``String``s, it only supports ``int``s.
+          the use of ``String``\ s, it only supports ``int``\ s.
 
 You can assign explicit values to the ``hint_enum`` uniform using colon syntax similar to GDScript:
 
