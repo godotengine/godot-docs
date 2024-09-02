@@ -67,7 +67,8 @@ Some example **Exec Flags** for various editors include:
 
 Automatically reloading your changes
 ------------------------------------
-To have Godot Editor automatically reload any changes to the scripts you make in an external text editor, enable **Editor > Editor Settings > Text Editor > Behavior > Auto Reload Scripts on External Change**
+To have the Godot Editor automatically reload any script that has been changed by an external text editor,
+enable **Editor > Editor Settings > Text Editor > Behavior > Auto Reload Scripts on External Change**.
 
 Using External Editor in Debugger
 ---------------------------------
