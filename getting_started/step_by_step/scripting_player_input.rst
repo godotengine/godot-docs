@@ -104,7 +104,7 @@ Moving when pressing "up"
 -------------------------
 
 To only move when pressing a key, we need to modify the code that calculates the
-velocity. Uncomment the code and replace the line starting with ``var velocity`` with the code below.
+velocity. Uncomment the code *(that you just commented)* and replace the line starting with ``var velocity`` with the code below.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
