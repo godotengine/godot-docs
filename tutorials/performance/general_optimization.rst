@@ -59,8 +59,9 @@ There are several methods of measuring performance, including:
 - Using :ref:`external CPU profilers <doc_using_cpp_profilers>`.
 - Using external GPU profilers/debuggers such as
   `NVIDIA Nsight Graphics <https://developer.nvidia.com/nsight-graphics>`__,
-  `Radeon GPU Profiler <https://gpuopen.com/rgp/>`__ or
-  `Intel Graphics Performance Analyzers <https://www.intel.com/content/www/us/en/developer/tools/graphics-performance-analyzers/overview.html>`__.
+  `Radeon GPU Profiler <https://gpuopen.com/rgp/>`__,
+  `Intel Graphics Performance Analyzers <https://www.intel.com/content/www/us/en/developer/tools/graphics-performance-analyzers/overview.html>`__, or
+  `Arm Performance Studio <https://developer.arm.com/Tools%20and%20Software/Arm%20Performance%20Studio>`__.
 - Checking the frame rate (with V-Sync disabled). Third-party utilities such as
   `RivaTuner Statistics Server <https://www.guru3d.com/files-details/rtss-rivatuner-statistics-server-download.html>`__
   (Windows) or `MangoHud <https://github.com/flightlessmango/MangoHud>`__
