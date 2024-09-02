@@ -5320,7 +5320,7 @@ Returns the hyperbolic arc (also called inverse) cosine of ``x``, returning a va
 
 :ref:`float<class_float>` **angle_difference**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_angle_difference>`
 
-Returns the difference between the two angles, in the range of ``[-PI, +PI]``. When ``from`` and ``to`` are opposite, returns ``-PI`` if ``from`` is smaller than ``to``, or ``PI`` otherwise.
+Returns the difference between the two radians, in the range of ``[-PI, +PI]``. When ``from`` and ``to`` are opposite, returns ``-PI`` if ``from`` is smaller than ``to``, or ``PI`` otherwise.
 
 .. rst-class:: classref-item-separator
 
