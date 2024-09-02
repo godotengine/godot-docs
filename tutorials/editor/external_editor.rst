@@ -65,6 +65,10 @@ Some example **Exec Flags** for various editors include:
     For Emacs, you can call ``emacsclient`` instead of ``emacs`` if
     you use the server mode.
 
+Automatically reloading your changes
+------------------------------------
+To have Godot Editor automatically reload any changes to the scripts you make in an external text editor, enable **Editor > Editor Settings > Text Editor > Behavior > Auto Reload Scripts on External Change**
+
 Using External Editor in Debugger
 ---------------------------------
 
