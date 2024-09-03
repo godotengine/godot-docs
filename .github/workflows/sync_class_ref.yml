@@ -51,7 +51,7 @@ jobs:
           ./.engine-src/doc/tools/make_rst.py --color -o ./classes -l en ./.engine-src/doc/classes ./.engine-src/modules ./.engine-src/platform
 
       - name: Submit a pull-request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ steps.engine.outputs.rev_hash_short }})'
           branch: 'classref/sync-${{ steps.engine.outputs.rev_hash_short }}'
