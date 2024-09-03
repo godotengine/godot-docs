@@ -895,6 +895,7 @@ arrays. They are therefore only recommended to use for large data sets:
 - :ref:`PackedStringArray <class_PackedStringArray>`: An array of strings.
 - :ref:`PackedVector2Array <class_PackedVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` values.
 - :ref:`PackedVector3Array <class_PackedVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` values.
+- :ref:`PackedVector4Array <class_PackedVector4Array>`: An array of :ref:`Vector4 <class_Vector4>` values.
 - :ref:`PackedColorArray <class_PackedColorArray>`: An array of :ref:`Color <class_Color>` values.
 
 :ref:`Dictionary <class_Dictionary>`
