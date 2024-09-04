@@ -129,6 +129,12 @@ Here's a minimal working test suite with a single test case written:
 
     #endif // TEST_STRING_H
 
+.. note::
+    You can quickly generate new tests using the ``create_test.py`` script found in the ``tests/`` directory.
+    This script automatically creates a new test file with the required boilerplate code in the appropriate location.
+    It's also able to automatically include the new header in ``tests/test_main.cpp`` using invasive mode (``-i`` flag).
+    To view usage instructions, run the script with the ``-h`` flag.
+
 The ``tests/test_macros.h`` header encapsulates everything which is needed for
 writing C++ unit tests in Godot. It includes doctest assertion and logging
 macros such as ``CHECK`` as seen above, and of course the definitions for
