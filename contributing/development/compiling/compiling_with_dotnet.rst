@@ -129,6 +129,16 @@ source and that conflicting versions of the package are removed from the NuGet
 cache. It's recommended to always use this option when building the C# solutions
 during development to avoid mistakes.
 
+Building without depending on deprecated features (NO_DEPRECATED)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When building Godot without deprecated classes and functions, i.e. the ``deprecated=no``
+argument for scons, the managed libraries must also be built without dependencies to deprecated code.
+This is done by passing the ``--no-deprecated`` argument:
+
+::
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir ./bin --push-nupkgs-local <my_local_source> --no-deprecated
+
 Double Precision Support (REAL_T_IS_DOUBLE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
