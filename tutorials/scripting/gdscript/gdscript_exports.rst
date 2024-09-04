@@ -427,3 +427,42 @@ described in :ref:`doc_accessing_data_or_logic_from_object`.
 
 .. warning:: The script must operate in the ``@tool`` mode so the above methods
              can work from within the editor.
+
+Retaining the value of renamed exported properties
+--------------------------------------------------
+
+When you change the name of an exported property, the value it held is lost by default. 
+In order to transfer the value from the old property to the new, the following workflow 
+can be applied.
+
+1. Close any scenes or other resources where the exported property is saved to.
+2. Add the ``@tool`` annotation to the script with the exported property you want to rename.
+3. Remember the 'old' name of the exported property and rename it.
+4. Add a ``_set(property, value)`` function to the script and check if its parameter 
+   ``property`` equals the name of the old exported property, in which case: set the new 
+   property to ``value``. Save the script.
+5. Open or load all scenes or other resources where the exported property is saved to and 
+   re-save them. The properties should have successfully transfered!
+6. Optionally, remove the ``@tool`` annotation and ``_set`` function.
+
+The following example shows the full script at step 4 of the workflow above in case a
+property named ``name_one`` is renamed to ``name_two``:
+
+::
+    
+    @tool
+    class_name MyScript
+    extends Node2D
+
+    @export var name_two: String  # this property used to be named 'name_one'
+
+
+    # _set is called for each property found in a loaded file, even if
+    #   that property no longer exists in our script. This implementation of _set
+    #   puts the value of the no-longer-existing 'name_one' property into the renamed
+    #   property 'name_two' and returns true to mark the property handled.
+    func _set(property: StringName, value: Variant) -> bool:
+        if property == "name_one":
+            name_two = value
+            return true
+        return false
