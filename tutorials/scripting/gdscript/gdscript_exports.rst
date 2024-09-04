@@ -248,6 +248,17 @@ It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
 in conjunction with a :ref:`script in "tool" mode <doc_gdscript_tool_mode>`.
 
+.. note::
+
+    Using ``@export`` variables for :ref:`Resource <class_Resource>` objects
+    makes them a dependency of the script, meaning that all the resources
+    referenced by ``@export`` variables are loaded when the scene
+    containing the script is instantiated. If you want to reference a
+    :ref:`Resource <class_Resource>` object but load it manually when you need
+    it (which, for example, is often the case for
+    :ref:`PackedScenes <class_PackedScene>` containing a whole level), use
+    ``@export_file`` instead.
+
 Exporting bit flags
 -------------------
 
