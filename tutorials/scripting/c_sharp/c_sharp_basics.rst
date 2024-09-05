@@ -106,11 +106,6 @@ In Visual Studio Code:
 
 - Install the `C# <https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp>`__ extension.
 
-.. note::
-
-    If you are using Linux you need to install the `Mono SDK <https://www.mono-project.com/download/stable/#download-lin>`__
-    for the C# tools plugin to work.
-
 To configure a project for debugging, you need a ``tasks.json`` and ``launch.json`` file in
 the ``.vscode`` folder with the necessary configuration.
 
