@@ -165,6 +165,8 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | match      | See match_.                                                                                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| when       | Used by `pattern guards <Pattern guards_>`_ in ``match`` statements.                                                                              |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | break      | Exits the execution of the current ``for`` or ``while`` loop.                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | continue   | Immediately skips to the next iteration of the ``for`` or ``while`` loop.                                                                         |
@@ -893,6 +895,7 @@ arrays. They are therefore only recommended to use for large data sets:
 - :ref:`PackedStringArray <class_PackedStringArray>`: An array of strings.
 - :ref:`PackedVector2Array <class_PackedVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` values.
 - :ref:`PackedVector3Array <class_PackedVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` values.
+- :ref:`PackedVector4Array <class_PackedVector4Array>`: An array of :ref:`Vector4 <class_Vector4>` values.
 - :ref:`PackedColorArray <class_PackedColorArray>`: An array of :ref:`Color <class_Color>` values.
 
 :ref:`Dictionary <class_Dictionary>`
@@ -1290,6 +1293,9 @@ a dictionary can also be used with a named enum.
         # prints '[0, 5, 6]'
         print(State.values())
 
+If not assigning a value to a key of an enum it will be assigned the previous value plus one,
+or ``0`` if it is the first entry in the enum. Multiple keys with the same value are allowed.
+
 
 Functions
 ~~~~~~~~~
@@ -1654,10 +1660,10 @@ Basic syntax
 
 ::
 
-    match <expression>:
+    match <test value>:
         <pattern(s)>:
             <block>
-        <pattern(s)> when <guard expression>:
+        <pattern(s)> when <pattern guard>:
             <block>
         <...>
 
@@ -1790,9 +1796,13 @@ The following pattern types are available:
 Pattern guards
 """"""""""""""
 
+A *pattern guard* is an optional condition that follows the pattern list
+and allows you to make additional checks before choosing a ``match`` branch.
+Unlike a pattern, a pattern guard can be an arbitrary expression.
+
 Only one branch can be executed per ``match``. Once a branch is chosen, the rest are not checked.
 If you want to use the same pattern for multiple branches or to prevent choosing a branch with too general pattern,
-you can specify a guard expression after the list of patterns with the ``when`` keyword::
+you can specify a pattern guard after the list of patterns with the ``when`` keyword::
 
     match point:
         [0, 0]:
@@ -1808,9 +1818,9 @@ you can specify a guard expression after the list of patterns with the ``when`` 
         [var x, var y]:
             print("Point (%s, %s)" % [x, y])
 
-- If there is no matching pattern for the current branch, the guard expression
+- If there is no matching pattern for the current branch, the pattern guard
   is **not** evaluated and the patterns of the next branch are checked.
-- If a matching pattern is found, the guard expression is evaluated.
+- If a matching pattern is found, the pattern guard is evaluated.
 
   - If it's true, then the body of the branch is executed and ``match`` ends.
   - If it's false, then the patterns of the next branch are checked.
@@ -1890,10 +1900,10 @@ If you want to use ``extends`` too, you can keep both on the same line::
 
 .. warning::
 
-    The Godot editor will hide these custom classes with names that beging with the prefix
-    "Editor" in the 'Create New Node' or 'Create New Scene' dialog windows. The classes 
-    are available for instantiation at runtime via their class names, but are 
-    automatically hidden by the editor windows along with the built-in editor nodes used 
+    The Godot editor will hide these custom classes with names that begin with the prefix
+    "Editor" in the 'Create New Node' or 'Create New Scene' dialog windows. The classes
+    are available for instantiation at runtime via their class names, but are
+    automatically hidden by the editor windows along with the built-in editor nodes used
     by the Godot editor.
 
 Inheritance

@@ -48,17 +48,19 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`NodePath<class_NodePath>` | :ref:`get_external_skeleton<class_BoneAttachment3D_method_get_external_skeleton>`\ (\ ) |const|                                                  |
-   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`get_use_external_skeleton<class_BoneAttachment3D_method_get_use_external_skeleton>`\ (\ ) |const|                                          |
-   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`on_skeleton_update<class_BoneAttachment3D_method_on_skeleton_update>`\ (\ )                                                                |
-   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`set_external_skeleton<class_BoneAttachment3D_method_set_external_skeleton>`\ (\ external_skeleton\: :ref:`NodePath<class_NodePath>`\ )     |
-   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`set_use_external_skeleton<class_BoneAttachment3D_method_set_use_external_skeleton>`\ (\ use_external_skeleton\: :ref:`bool<class_bool>`\ ) |
-   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>`     | :ref:`get_external_skeleton<class_BoneAttachment3D_method_get_external_skeleton>`\ (\ ) |const|                                                  |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Skeleton3D<class_Skeleton3D>` | :ref:`get_skeleton<class_BoneAttachment3D_method_get_skeleton>`\ (\ )                                                                            |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`get_use_external_skeleton<class_BoneAttachment3D_method_get_use_external_skeleton>`\ (\ ) |const|                                          |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`on_skeleton_update<class_BoneAttachment3D_method_on_skeleton_update>`\ (\ )                                                                |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`set_external_skeleton<class_BoneAttachment3D_method_set_external_skeleton>`\ (\ external_skeleton\: :ref:`NodePath<class_NodePath>`\ )     |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`set_use_external_skeleton<class_BoneAttachment3D_method_set_use_external_skeleton>`\ (\ use_external_skeleton\: :ref:`bool<class_bool>`\ ) |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -134,6 +136,18 @@ Method Descriptions
 :ref:`NodePath<class_NodePath>` **get_external_skeleton**\ (\ ) |const| :ref:`🔗<class_BoneAttachment3D_method_get_external_skeleton>`
 
 Returns the :ref:`NodePath<class_NodePath>` to the external :ref:`Skeleton3D<class_Skeleton3D>` node, if one has been set.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BoneAttachment3D_method_get_skeleton:
+
+.. rst-class:: classref-method
+
+:ref:`Skeleton3D<class_Skeleton3D>` **get_skeleton**\ (\ ) :ref:`🔗<class_BoneAttachment3D_method_get_skeleton>`
+
+Get parent or external :ref:`Skeleton3D<class_Skeleton3D>` node if found.
 
 .. rst-class:: classref-item-separator
 

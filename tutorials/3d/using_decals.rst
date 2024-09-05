@@ -29,7 +29,7 @@ On this page, you'll learn:
 .. seealso::
 
     The Godot demo projects repository contains a
-    `3D decals demo <https://github.com/godotengine/godot-demo-projects/tree/4.0-dev/3d/decals>`__.
+    `3D decals demo <https://github.com/godotengine/godot-demo-projects/tree/master/3d/decals>`__.
 
     If you're looking to write arbitrary 3D text on top of a surface, use
     :ref:`doc_3d_text` placed close to a surface instead of a Decal node.
@@ -240,7 +240,7 @@ textures should be filtered. **Nearest/Linear** does not use mipmaps. However,
 decals will look grainy at a distance. **Nearest/Linear Mipmaps** will look
 smoother at a distance, but decals will look blurry when viewed from oblique
 angles. This can be resolved by using **Nearest/Linear Mipmaps Anisotropic**,
-which provides the highest quality but is also slower to render.
+which provides the highest quality, but is also slower to render.
 
 If your project has a pixel art style, consider setting the filter to one of the
 **Nearest** values so that decals use nearest-neighbor filtering. Otherwise,

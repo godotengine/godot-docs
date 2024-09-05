@@ -87,7 +87,7 @@ enum **Format**: :ref:`🔗<enum_AudioStreamWAV_Format>`
 
 :ref:`Format<enum_AudioStreamWAV_Format>` **FORMAT_8_BITS** = ``0``
 
-8-bit audio codec.
+8-bit PCM audio codec.
 
 .. _class_AudioStreamWAV_constant_FORMAT_16_BITS:
 
@@ -95,7 +95,7 @@ enum **Format**: :ref:`🔗<enum_AudioStreamWAV_Format>`
 
 :ref:`Format<enum_AudioStreamWAV_Format>` **FORMAT_16_BITS** = ``1``
 
-16-bit audio codec.
+16-bit PCM audio codec.
 
 .. _class_AudioStreamWAV_constant_FORMAT_IMA_ADPCM:
 
@@ -103,7 +103,7 @@ enum **Format**: :ref:`🔗<enum_AudioStreamWAV_Format>`
 
 :ref:`Format<enum_AudioStreamWAV_Format>` **FORMAT_IMA_ADPCM** = ``2``
 
-Audio is compressed using IMA ADPCM.
+Audio is lossily compressed as IMA ADPCM.
 
 .. _class_AudioStreamWAV_constant_FORMAT_QOA:
 
@@ -111,7 +111,7 @@ Audio is compressed using IMA ADPCM.
 
 :ref:`Format<enum_AudioStreamWAV_Format>` **FORMAT_QOA** = ``3``
 
-Audio is compressed as QOA (`Quite OK Audio <https://qoaformat.org/>`__).
+Audio is lossily compressed as `Quite OK Audio <https://qoaformat.org/>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -177,7 +177,9 @@ Property Descriptions
 
 Contains the audio data in bytes.
 
-\ **Note:** This property expects signed PCM8 data. To convert unsigned PCM8 to signed PCM8, subtract 128 from each byte.
+\ **Note:** If :ref:`format<class_AudioStreamWAV_property_format>` is set to :ref:`FORMAT_8_BITS<class_AudioStreamWAV_constant_FORMAT_8_BITS>`, this property expects signed 8-bit PCM data. To convert from unsigned 8-bit PCM, subtract 128 from each byte.
+
+\ **Note:** If :ref:`format<class_AudioStreamWAV_property_format>` is set to :ref:`FORMAT_QOA<class_AudioStreamWAV_constant_FORMAT_QOA>`, this property expects data from a full QOA file.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
@@ -213,7 +215,7 @@ Audio format. See :ref:`Format<enum_AudioStreamWAV_Format>` constants for values
 - |void| **set_loop_begin**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_loop_begin**\ (\ )
 
-The loop start point (in number of samples, relative to the beginning of the stream). This information will be imported automatically from the WAV file if present.
+The loop start point (in number of samples, relative to the beginning of the stream).
 
 .. rst-class:: classref-item-separator
 
@@ -230,7 +232,7 @@ The loop start point (in number of samples, relative to the beginning of the str
 - |void| **set_loop_end**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_loop_end**\ (\ )
 
-The loop end point (in number of samples, relative to the beginning of the stream). This information will be imported automatically from the WAV file if present.
+The loop end point (in number of samples, relative to the beginning of the stream).
 
 .. rst-class:: classref-item-separator
 
@@ -247,7 +249,7 @@ The loop end point (in number of samples, relative to the beginning of the strea
 - |void| **set_loop_mode**\ (\ value\: :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>`\ )
 - :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` **get_loop_mode**\ (\ )
 
-The loop mode. This information will be imported automatically from the WAV file if present. See :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` constants for values.
+The loop mode. See :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` constants for values.
 
 .. rst-class:: classref-item-separator
 
@@ -302,7 +304,7 @@ Method Descriptions
 
 :ref:`Error<enum_@GlobalScope_Error>` **save_to_wav**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AudioStreamWAV_method_save_to_wav>`
 
-Saves the AudioStreamWAV as a WAV file to ``path``. Samples with IMA ADPCM or QOA formats can't be saved.
+Saves the AudioStreamWAV as a WAV file to ``path``. Samples with IMA ADPCM or Quite OK Audio formats can't be saved.
 
 \ **Note:** A ``.wav`` extension is automatically appended to ``path`` if it is missing.
 

@@ -111,6 +111,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/2d/viewport_border_color<class_EditorSettings_property_editors/2d/viewport_border_color>`                                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`editors/2d/zoom_speed_factor<class_EditorSettings_property_editors/2d/zoom_speed_factor>`                                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/3d/default_fov<class_EditorSettings_property_editors/3d/default_fov>`                                                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/3d/default_z_far<class_EditorSettings_property_editors/3d/default_z_far>`                                                                                                                           |
@@ -153,13 +155,13 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editors/3d/navigation/navigation_scheme<class_EditorSettings_property_editors/3d/navigation/navigation_scheme>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`editors/3d/navigation/orbit_modifier<class_EditorSettings_property_editors/3d/navigation/orbit_modifier>`                                                                                                   |
+   | :ref:`int<class_int>`                             | :ref:`editors/3d/navigation/orbit_mouse_button<class_EditorSettings_property_editors/3d/navigation/orbit_mouse_button>`                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`editors/3d/navigation/pan_modifier<class_EditorSettings_property_editors/3d/navigation/pan_modifier>`                                                                                                       |
+   | :ref:`int<class_int>`                             | :ref:`editors/3d/navigation/pan_mouse_button<class_EditorSettings_property_editors/3d/navigation/pan_mouse_button>`                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/3d/navigation/warped_mouse_panning<class_EditorSettings_property_editors/3d/navigation/warped_mouse_panning>`                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`editors/3d/navigation/zoom_modifier<class_EditorSettings_property_editors/3d/navigation/zoom_modifier>`                                                                                                     |
+   | :ref:`int<class_int>`                             | :ref:`editors/3d/navigation/zoom_mouse_button<class_EditorSettings_property_editors/3d/navigation/zoom_mouse_button>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editors/3d/navigation/zoom_style<class_EditorSettings_property_editors/3d/navigation/zoom_style>`                                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -337,6 +339,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/expand_to_title<class_EditorSettings_property_interface/editor/expand_to_title>`                                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/font_allow_msdf<class_EditorSettings_property_interface/editor/font_allow_msdf>`                                                                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/font_antialiasing<class_EditorSettings_property_interface/editor/font_antialiasing>`                                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/font_disable_embedded_bitmaps<class_EditorSettings_property_interface/editor/font_disable_embedded_bitmaps>`                                                                               |
@@ -346,6 +350,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`interface/editor/font_subpixel_positioning<class_EditorSettings_property_interface/editor/font_subpixel_positioning>`                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/import_resources_when_unfocused<class_EditorSettings_property_interface/editor/import_resources_when_unfocused>`                                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/keep_screen_on<class_EditorSettings_property_interface/editor/keep_screen_on>`                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/localize_settings<class_EditorSettings_property_interface/editor/localize_settings>`                                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -360,6 +366,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/mouse_extra_buttons_navigate_history<class_EditorSettings_property_interface/editor/mouse_extra_buttons_navigate_history>`                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/project_manager_screen<class_EditorSettings_property_interface/editor/project_manager_screen>`                                                                                             |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/remember_window_size_and_position<class_EditorSettings_property_interface/editor/remember_window_size_and_position>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/save_each_scene_on_quit<class_EditorSettings_property_interface/editor/save_each_scene_on_quit>`                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -506,6 +514,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`run/platforms/linuxbsd/prefer_wayland<class_EditorSettings_property_run/platforms/linuxbsd/prefer_wayland>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`run/window_placement/android_window<class_EditorSettings_property_run/window_placement/android_window>`                                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`run/window_placement/play_window_pip_mode<class_EditorSettings_property_run/window_placement/play_window_pip_mode>`                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>`                                                                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1095,7 +1105,7 @@ The color to use when drawing smart snapping lines in the 2D editor. The smart s
 
 :ref:`bool<class_bool>` **editors/2d/use_integer_zoom_by_default** :ref:`🔗<class_EditorSettings_property_editors/2d/use_integer_zoom_by_default>`
 
-If ``true``, the 2D editor will snap to integer zoom values while not holding the :kbd:`Alt` key and powers of two while holding it. If ``false``, this behavior is swapped.
+If ``true``, the 2D editor will snap to integer zoom values when not holding the :kbd:`Alt` key. If ``false``, this behavior is swapped.
 
 .. rst-class:: classref-item-separator
 
@@ -1108,6 +1118,18 @@ If ``true``, the 2D editor will snap to integer zoom values while not holding th
 :ref:`Color<class_Color>` **editors/2d/viewport_border_color** :ref:`🔗<class_EditorSettings_property_editors/2d/viewport_border_color>`
 
 The color of the viewport border in the 2D editor. This border represents the viewport's size at the base resolution defined in the Project Settings. Objects placed outside this border will not be visible unless a :ref:`Camera2D<class_Camera2D>` node is used, or unless the window is resized and the stretch mode is set to ``disabled``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/2d/zoom_speed_factor:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/2d/zoom_speed_factor** :ref:`🔗<class_EditorSettings_property_editors/2d/zoom_speed_factor>`
+
+The factor to use when zooming in or out in the 2D editor. For example, ``1.1`` will zoom in by 10% with every step. If set to ``2.0``, zooming will only cycle through powers of two.
 
 .. rst-class:: classref-item-separator
 
@@ -1289,7 +1311,7 @@ The grid size in units. Higher values prevent the grid from appearing "cut off" 
 
 :ref:`bool<class_bool>` **editors/3d/grid_xy_plane** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_xy_plane>`
 
-If ``true``, render the grid on an XY plane. This can be useful for 3D side-scrolling games.
+If ``true``, renders the grid on the XY plane in perspective view. This can be useful for 3D side-scrolling games.
 
 .. rst-class:: classref-item-separator
 
@@ -1301,7 +1323,7 @@ If ``true``, render the grid on an XY plane. This can be useful for 3D side-scro
 
 :ref:`bool<class_bool>` **editors/3d/grid_xz_plane** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_xz_plane>`
 
-If ``true``, render the grid on an XZ plane.
+If ``true``, renders the grid on the XZ plane in perspective view.
 
 .. rst-class:: classref-item-separator
 
@@ -1313,7 +1335,7 @@ If ``true``, render the grid on an XZ plane.
 
 :ref:`bool<class_bool>` **editors/3d/grid_yz_plane** :ref:`🔗<class_EditorSettings_property_editors/3d/grid_yz_plane>`
 
-If ``true``, render the grid on a YZ plane. This can be useful for 3D side-scrolling games.
+If ``true``, renders the grid on the YZ plane in perspective view. This can be useful for 3D side-scrolling games.
 
 .. rst-class:: classref-item-separator
 
@@ -1328,8 +1350,6 @@ If ``true``, render the grid on a YZ plane. This can be useful for 3D side-scrol
 If ``true``, enables 3-button mouse emulation mode. This is useful on laptops when using a trackpad.
 
 When 3-button mouse emulation mode is enabled, the pan, zoom and orbit modifiers can always be used in the 3D editor viewport, even when not holding down any mouse button.
-
-\ **Note:** No matter the orbit modifier configured in :ref:`editors/3d/navigation/orbit_modifier<class_EditorSettings_property_editors/3d/navigation/orbit_modifier>`, :kbd:`Alt` will always remain usable for orbiting in this mode to improve usability with graphics tablets.
 
 .. rst-class:: classref-item-separator
 
@@ -1377,15 +1397,17 @@ If ``true``, invert the vertical mouse axis when panning, orbiting, or using fre
 
 :ref:`int<class_int>` **editors/3d/navigation/navigation_scheme** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/navigation_scheme>`
 
-The navigation scheme to use in the 3D editor. Changing this setting will affect the mouse buttons that must be held down to perform certain operations in the 3D editor viewport.
+The navigation scheme preset to use in the 3D editor. Changing this setting will affect the mouse button and modifier controls used to navigate the 3D editor viewport.
 
-- **Godot** Middle mouse button to orbit, :kbd:`Shift + Middle mouse button` to pan. :kbd:`Mouse wheel` to zoom.
+All schemes can use :kbd:`Mouse wheel` to zoom.
 
-- **Maya:** :kbd:`Alt + Left mouse button` to orbit. :kbd:`Middle mouse button` to pan, :kbd:`Shift + Middle mouse button` to pan 10 times faster. :kbd:`Mouse wheel` to zoom.
+- **Godot:** :kbd:`Middle mouse button` to orbit. :kbd:`Shift + Middle mouse button` to pan. :kbd:`Ctrl + Shift + Middle mouse button` to zoom.
+
+- **Maya:** :kbd:`Alt + Left mouse button` to orbit. :kbd:`Middle mouse button` to pan, :kbd:`Shift + Middle mouse button` to pan 10 times faster. :kbd:`Alt + Right mouse button` to zoom.
 
 - **Modo:** :kbd:`Alt + Left mouse button` to orbit. :kbd:`Alt + Shift + Left mouse button` to pan. :kbd:`Ctrl + Alt + Left mouse button` to zoom.
 
-See also :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`.
+See also :ref:`editors/3d/navigation/orbit_mouse_button<class_EditorSettings_property_editors/3d/navigation/orbit_mouse_button>`, :ref:`editors/3d/navigation/pan_mouse_button<class_EditorSettings_property_editors/3d/navigation/pan_mouse_button>`, :ref:`editors/3d/navigation/zoom_mouse_button<class_EditorSettings_property_editors/3d/navigation/zoom_mouse_button>`, and :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`.
 
 \ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
 
@@ -1393,31 +1415,25 @@ See also :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettin
 
 ----
 
-.. _class_EditorSettings_property_editors/3d/navigation/orbit_modifier:
+.. _class_EditorSettings_property_editors/3d/navigation/orbit_mouse_button:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/navigation/orbit_modifier** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/orbit_modifier>`
+:ref:`int<class_int>` **editors/3d/navigation/orbit_mouse_button** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/orbit_mouse_button>`
 
-The modifier key that must be held to orbit in the 3D editor.
-
-\ **Note:** If :ref:`editors/3d/navigation/emulate_3_button_mouse<class_EditorSettings_property_editors/3d/navigation/emulate_3_button_mouse>` is ``true``, :kbd:`Alt` will always remain usable for orbiting to improve usability with graphics tablets.
-
-\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+The mouse button that needs to be held down to orbit in the 3D editor viewport.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_EditorSettings_property_editors/3d/navigation/pan_modifier:
+.. _class_EditorSettings_property_editors/3d/navigation/pan_mouse_button:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/navigation/pan_modifier** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/pan_modifier>`
+:ref:`int<class_int>` **editors/3d/navigation/pan_mouse_button** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/pan_mouse_button>`
 
-The modifier key that must be held to pan in the 3D editor.
-
-\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+The mouse button that needs to be held down to pan in the 3D editor viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -1435,15 +1451,13 @@ If ``true``, warps the mouse around the 3D viewport while panning in the 3D edit
 
 ----
 
-.. _class_EditorSettings_property_editors/3d/navigation/zoom_modifier:
+.. _class_EditorSettings_property_editors/3d/navigation/zoom_mouse_button:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/3d/navigation/zoom_modifier** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/zoom_modifier>`
+:ref:`int<class_int>` **editors/3d/navigation/zoom_mouse_button** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/zoom_mouse_button>`
 
-The modifier key that must be held to zoom in the 3D editor.
-
-\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+The mouse button that needs to be held down to zoom in the 3D editor viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -2575,6 +2589,18 @@ Specific to the macOS platform.
 
 ----
 
+.. _class_EditorSettings_property_interface/editor/font_allow_msdf:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/font_allow_msdf** :ref:`🔗<class_EditorSettings_property_interface/editor/font_allow_msdf>`
+
+If set to ``true``, MSDF font rendering will be used for the visual shader graph editor. You may need to set this to ``false`` when using a custom main font, as some fonts will look broken due to the use of self-intersecting outlines in their font data. Downloading the font from the font maker's official website as opposed to a service like Google Fonts can help resolve this issue.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/editor/font_antialiasing:
 
 .. rst-class:: classref-property
@@ -2638,6 +2664,18 @@ The subpixel positioning mode to use when rendering editor font glyphs. This aff
 :ref:`bool<class_bool>` **interface/editor/import_resources_when_unfocused** :ref:`🔗<class_EditorSettings_property_interface/editor/import_resources_when_unfocused>`
 
 If ``true``, (re)imports resources even if the editor window is unfocused or minimized. If ``false``, resources are only (re)imported when the editor window is focused. This can be set to ``true`` to speed up iteration by starting the import process earlier when saving files in the project folder. This also allows getting visual feedback on changes without having to click the editor window, which is useful with multi-monitor setups. The downside of setting this to ``true`` is that it increases idle CPU usage and may steal CPU time from other applications when importing resources.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/keep_screen_on:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/keep_screen_on** :ref:`🔗<class_EditorSettings_property_interface/editor/keep_screen_on>`
+
+If ``true``, keeps the screen on (even in case of inactivity), so the screensaver does not take over. Works on desktop and mobile platforms.
 
 .. rst-class:: classref-item-separator
 
@@ -2726,6 +2764,18 @@ If ``true``, the mouse's additional side buttons will be usable to navigate in t
 :ref:`int<class_int>` **interface/editor/project_manager_screen** :ref:`🔗<class_EditorSettings_property_interface/editor/project_manager_screen>`
 
 The preferred monitor to display the project manager.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/remember_window_size_and_position:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/remember_window_size_and_position** :ref:`🔗<class_EditorSettings_property_interface/editor/remember_window_size_and_position>`
+
+If ``true``, the editor window will remember its size, position, and which screen it was displayed on across restarts.
 
 .. rst-class:: classref-item-separator
 
@@ -3685,7 +3735,33 @@ If ``true``, on Linux/BSD, the editor will check for Wayland first instead of X1
 
 :ref:`int<class_int>` **run/window_placement/android_window** :ref:`🔗<class_EditorSettings_property_run/window_placement/android_window>`
 
-The Android window to display the project on when starting the project from the editor.
+Specifies how the Play window is launched relative to the Android editor.
+
+- **Auto (based on screen size)** (default) will automatically choose how to launch the Play window based on the device and screen metrics. Defaults to **Same as Editor** on phones and **Side-by-side with Editor** on tablets.
+
+- **Same as Editor** will launch the Play window in the same window as the Editor.
+
+- **Side-by-side with Editor** will launch the Play window side-by-side with the Editor window.
+
+\ **Note:** Only available in the Android editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_run/window_placement/play_window_pip_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **run/window_placement/play_window_pip_mode** :ref:`🔗<class_EditorSettings_property_run/window_placement/play_window_pip_mode>`
+
+Specifies the picture-in-picture (PiP) mode for the Play window.
+
+- **Disabled:** PiP is disabled for the Play window.
+
+- **Enabled:** If the device supports it, PiP is always enabled for the Play window. The Play window will contain a button to enter PiP mode.
+
+- **Enabled when Play window is same as Editor** (default for Android editor): If the device supports it, PiP is enabled when the Play window is the same as the Editor. The Play window will contain a button to enter PiP mode.
 
 \ **Note:** Only available in the Android editor.
 
@@ -4933,8 +5009,6 @@ Adds a custom property info to a property. The dictionary must contain:
 - ``type``: :ref:`int<class_int>` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`)
 
 - optionally ``hint``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``hint_string``: :ref:`String<class_String>`\ 
-
-\ **Example:**\ 
 
 
 .. tabs::

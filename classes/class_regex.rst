@@ -86,9 +86,9 @@ Methods
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`clear<class_RegEx_method_clear>`\ (\ )                                                                                                                                                                                                    |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                            | :ref:`compile<class_RegEx_method_compile>`\ (\ pattern\: :ref:`String<class_String>`\ )                                                                                                                                                         |
+   | :ref:`Error<enum_@GlobalScope_Error>`                            | :ref:`compile<class_RegEx_method_compile>`\ (\ pattern\: :ref:`String<class_String>`, show_error\: :ref:`bool<class_bool>` = true\ )                                                                                                            |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RegEx<class_RegEx>`                                        | :ref:`create_from_string<class_RegEx_method_create_from_string>`\ (\ pattern\: :ref:`String<class_String>`\ ) |static|                                                                                                                          |
+   | :ref:`RegEx<class_RegEx>`                                        | :ref:`create_from_string<class_RegEx_method_create_from_string>`\ (\ pattern\: :ref:`String<class_String>`, show_error\: :ref:`bool<class_bool>` = true\ ) |static|                                                                             |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`get_group_count<class_RegEx_method_get_group_count>`\ (\ ) |const|                                                                                                                                                                        |
    +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -130,9 +130,9 @@ This method resets the state of the object, as if it was freshly created. Namely
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **compile**\ (\ pattern\: :ref:`String<class_String>`\ ) :ref:`🔗<class_RegEx_method_compile>`
+:ref:`Error<enum_@GlobalScope_Error>` **compile**\ (\ pattern\: :ref:`String<class_String>`, show_error\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_RegEx_method_compile>`
 
-Compiles and assign the search pattern to use. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the compilation is successful. If an error is encountered, details are printed to standard output and an error is returned.
+Compiles and assign the search pattern to use. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the compilation is successful. If compilation fails, returns :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` and when ``show_error`` is ``true``, details are printed to standard output.
 
 .. rst-class:: classref-item-separator
 
@@ -142,9 +142,9 @@ Compiles and assign the search pattern to use. Returns :ref:`@GlobalScope.OK<cla
 
 .. rst-class:: classref-method
 
-:ref:`RegEx<class_RegEx>` **create_from_string**\ (\ pattern\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_RegEx_method_create_from_string>`
+:ref:`RegEx<class_RegEx>` **create_from_string**\ (\ pattern\: :ref:`String<class_String>`, show_error\: :ref:`bool<class_bool>` = true\ ) |static| :ref:`🔗<class_RegEx_method_create_from_string>`
 
-Creates and compiles a new **RegEx** object.
+Creates and compiles a new **RegEx** object. See also :ref:`compile<class_RegEx_method_compile>`.
 
 .. rst-class:: classref-item-separator
 

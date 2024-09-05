@@ -30,7 +30,7 @@ By itself the navigation system will never know "this is a tree / rock / wall co
 
 .. _doc_navigation_navmesh_baking:
 
-Navigation mesh baking can be done either by using a :ref:`NavigationRegion2D<class_NavigationRegion2D>` or :ref:`NavigationRegion3D<class_NavigationRegion3D>`, or by using the 
+Navigation mesh baking can be done either by using a :ref:`NavigationRegion2D<class_NavigationRegion2D>` or :ref:`NavigationRegion3D<class_NavigationRegion3D>`, or by using the
 :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>` API directly.
 
 .. _doc_navigation_using_navigationmeshes_baking_navigation_mesh_with_navigationregion:
@@ -84,6 +84,11 @@ The nodes are available in 2D and 3D as :ref:`NavigationRegion2D<class_Navigatio
             var on_thread: bool = true
             bake_navigation_polygon(on_thread)
 
+         .. code-tab:: csharp
+
+            bool onThread = true;
+            BakeNavigationPolygon(onThread);
+
         To quickly test the 2D baking with default settings:
 
         - Add a :ref:`NavigationRegion2D<class_NavigationRegion2D>`.
@@ -136,6 +141,11 @@ The nodes are available in 2D and 3D as :ref:`NavigationRegion2D<class_Navigatio
 
             var on_thread: bool = true
             bake_navigation_mesh(on_thread)
+
+         .. code-tab:: csharp
+
+            bool onThread = true;
+            BakeNavigationMesh(onThread);
 
         To quickly test the 3D baking with default settings:
 
@@ -370,6 +380,76 @@ The following script uses the NavigationServer to parse source geometry from the
         # Update the region with the updated navigation mesh.
         NavigationServer2D.region_set_navigation_polygon(region_rid, navigation_mesh)
 
+ .. code-tab:: csharp 2D C#
+
+    using Godot;
+
+    public partial class MyNode2D : Node2D
+    {
+        private NavigationPolygon _navigationMesh;
+        private NavigationMeshSourceGeometryData2D _sourceGeometry;
+        private Callable _callbackParsing;
+        private Callable _callbackBaking;
+        private Rid _regionRid;
+
+        public override void _Ready()
+        {
+            _navigationMesh = new NavigationPolygon();
+            _navigationMesh.AgentRadius = 10.0f;
+            _sourceGeometry = new NavigationMeshSourceGeometryData2D();
+            _callbackParsing = Callable.From(OnParsingDone);
+            _callbackBaking = Callable.From(OnBakingDone);
+            _regionRid = NavigationServer2D.RegionCreate();
+
+            // Enable the region and set it to the default navigation map.
+            NavigationServer2D.RegionSetEnabled(_regionRid, true);
+            NavigationServer2D.RegionSetMap(_regionRid, GetWorld2D().NavigationMap);
+
+            // Some mega-nodes like TileMap are often not ready on the first frame.
+            // Also the parsing needs to happen on the main-thread.
+            // So do a deferred call to avoid common parsing issues.
+            CallDeferred(MethodName.ParseSourceGeometry);
+        }
+
+        private void ParseSourceGeometry()
+        {
+            _sourceGeometry.Clear();
+            Node2D rootNode = this;
+
+            // Parse the obstruction outlines from all child nodes of the root node by default.
+            NavigationServer2D.ParseSourceGeometryData(
+                _navigationMesh,
+                _sourceGeometry,
+                rootNode,
+                _callbackParsing
+            );
+        }
+
+        private void OnParsingDone()
+        {
+            // If we did not parse a TileMap with navigation mesh cells we may now only
+            // have obstruction outlines so add at least one traversable outline
+            // so the obstructions outlines have something to "cut" into.
+            _sourceGeometry.AddTraversableOutline(new Vector2[]
+            {
+                new Vector2(0.0f, 0.0f),
+                new Vector2(500.0f, 0.0f),
+                new Vector2(500.0f, 500.0f),
+                new Vector2(0.0f, 500.0f),
+            });
+
+            // Bake the navigation mesh on a thread with the source geometry data.
+            NavigationServer2D.BakeFromSourceGeometryDataAsync(_navigationMesh, _sourceGeometry, _callbackBaking);
+        }
+
+        private void OnBakingDone()
+        {
+            // Update the region with the updated navigation mesh.
+            NavigationServer2D.RegionSetNavigationPolygon(_regionRid, _navigationMesh);
+        }
+    }
+
+
  .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
@@ -421,6 +501,64 @@ The following script uses the NavigationServer to parse source geometry from the
         # Update the region with the updated navigation mesh.
         NavigationServer3D.region_set_navigation_mesh(region_rid, navigation_mesh)
 
+ .. code-tab:: csharp 3D C#
+
+    using Godot;
+
+    public partial class MyNode3D : Node3D
+    {
+        private NavigationMesh _navigationMesh;
+        private NavigationMeshSourceGeometryData3D _sourceGeometry;
+        private Callable _callbackParsing;
+        private Callable _callbackBaking;
+        private Rid _regionRid;
+
+        public override void _Ready()
+        {
+            _navigationMesh = new NavigationMesh();
+            _navigationMesh.AgentRadius = 0.5f;
+            _sourceGeometry = new NavigationMeshSourceGeometryData3D();
+            _callbackParsing = Callable.From(OnParsingDone);
+            _callbackBaking = Callable.From(OnBakingDone);
+            _regionRid = NavigationServer3D.RegionCreate();
+
+            // Enable the region and set it to the default navigation map.
+            NavigationServer3D.RegionSetEnabled(_regionRid, true);
+            NavigationServer3D.RegionSetMap(_regionRid, GetWorld3D().NavigationMap);
+
+            // Some mega-nodes like GridMap are often not ready on the first frame.
+            // Also the parsing needs to happen on the main-thread.
+            // So do a deferred call to avoid common parsing issues.
+            CallDeferred(MethodName.ParseSourceGeometry);
+        }
+
+        private void ParseSourceGeometry ()
+        {
+            _sourceGeometry.Clear();
+            Node3D rootNode = this;
+
+            // Parse the geometry from all mesh child nodes of the root node by default.
+            NavigationServer3D.ParseSourceGeometryData(
+                _navigationMesh,
+                _sourceGeometry,
+                rootNode,
+                _callbackParsing
+            );
+        }
+
+        private void OnParsingDone()
+        {
+            // Bake the navigation mesh on a thread with the source geometry data.
+            NavigationServer3D.BakeFromSourceGeometryDataAsync(_navigationMesh, _sourceGeometry, _callbackBaking);
+        }
+
+        private void OnBakingDone()
+        {
+            // Update the region with the updated navigation mesh.
+            NavigationServer3D.RegionSetNavigationMesh(_regionRid, _navigationMesh);
+        }
+    }
+
 The following script uses the NavigationServer to update a navigation region with procedurally generated navigation mesh data.
 
 .. tabs::
@@ -444,7 +582,7 @@ The following script uses the NavigationServer to update a navigation region wit
             Vector2(0.0, 0.0),
             Vector2(100.0, 0.0),
             Vector2(100.0, 100.0),
-            Vector2(0.0, 100.0)
+            Vector2(0.0, 100.0),
         ])
 
         # Add indices for the polygon.
@@ -453,6 +591,41 @@ The following script uses the NavigationServer to update a navigation region wit
         )
 
         NavigationServer2D.region_set_navigation_polygon(region_rid, navigation_mesh)
+
+ .. code-tab:: csharp 2D C#
+
+    using Godot;
+
+    public partial class MyNode2D : Node2D
+    {
+        private NavigationPolygon _navigationMesh;
+        private Rid _regionRid;
+
+        public override void _Ready()
+        {
+            _navigationMesh = new NavigationPolygon();
+            _regionRid = NavigationServer2D.RegionCreate();
+
+            // Enable the region and set it to the default navigation map.
+            NavigationServer2D.RegionSetEnabled(_regionRid, true);
+            NavigationServer2D.RegionSetMap(_regionRid, GetWorld2D().NavigationMap);
+
+            // Add vertices for a convex polygon.
+            _navigationMesh.Vertices = new Vector2[]
+            {
+                new Vector2(0, 0),
+                new Vector2(100.0f, 0),
+                new Vector2(100.0f, 100.0f),
+                new Vector2(0, 100.0f),
+            };
+
+            // Add indices for the polygon.
+            _navigationMesh.AddPolygon(new int[] { 0, 1, 2, 3 });
+
+            NavigationServer2D.RegionSetNavigationPolygon(_regionRid, _navigationMesh);
+        }
+    }
+
 
  .. code-tab:: gdscript 3D GDScript
 
@@ -483,3 +656,38 @@ The following script uses the NavigationServer to update a navigation region wit
         )
 
         NavigationServer3D.region_set_navigation_mesh(region_rid, navigation_mesh)
+
+ .. code-tab:: csharp 3D C#
+
+    using Godot;
+
+    public partial class MyNode3D : Node3D
+    {
+        private NavigationMesh _navigationMesh;
+        private Rid _regionRid;
+
+        public override void _Ready()
+        {
+            _navigationMesh = new NavigationMesh();
+            _regionRid = NavigationServer3D.RegionCreate();
+
+            // Enable the region and set it to the default navigation map.
+            NavigationServer3D.RegionSetEnabled(_regionRid, true);
+            NavigationServer3D.RegionSetMap(_regionRid, GetWorld3D().NavigationMap);
+
+            // Add vertices for a convex polygon.
+            _navigationMesh.Vertices = new Vector3[]
+            {
+                new Vector3(-1.0f, 0.0f, 1.0f),
+                new Vector3(1.0f, 0.0f, 1.0f),
+                new Vector3(1.0f, 0.0f, -1.0f),
+                new Vector3(-1.0f, 0.0f, -1.0f),
+            };
+
+            // Add indices for the polygon.
+            _navigationMesh.AddPolygon(new int[] { 0, 1, 2, 3 });
+
+            NavigationServer3D.RegionSetNavigationMesh(_regionRid, _navigationMesh);
+        }
+    }
+

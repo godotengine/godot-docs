@@ -617,8 +617,6 @@ Aborts all tweening operations and invalidates the **Tween**.
 
 Makes the next :ref:`Tweener<class_Tweener>` run parallelly to the previous one.
 
-\ **Example:**\ 
-
 
 .. tabs::
 
@@ -964,8 +962,6 @@ Creates and appends a :ref:`MethodTweener<class_MethodTweener>`. This method is 
 :ref:`PropertyTweener<class_PropertyTweener>` **tween_property**\ (\ object\: :ref:`Object<class_Object>`, property\: :ref:`NodePath<class_NodePath>`, final_val\: :ref:`Variant<class_Variant>`, duration\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Tween_method_tween_property>`
 
 Creates and appends a :ref:`PropertyTweener<class_PropertyTweener>`. This method tweens a ``property`` of an ``object`` between an initial value and ``final_val`` in a span of time equal to ``duration``, in seconds. The initial value by default is the property's value at the time the tweening of the :ref:`PropertyTweener<class_PropertyTweener>` starts.
-
-\ **Example:**\ 
 
 
 .. tabs::

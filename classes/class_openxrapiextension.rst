@@ -51,7 +51,11 @@ Methods
    :widths: auto
 
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                  | :ref:`begin_debug_label_region<class_OpenXRAPIExtension_method_begin_debug_label_region>`\ (\ label_name\: :ref:`String<class_String>`\ )                                                                            |
+   +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                 | :ref:`can_render<class_OpenXRAPIExtension_method_can_render>`\ (\ )                                                                                                                                                  |
+   +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                  | :ref:`end_debug_label_region<class_OpenXRAPIExtension_method_end_debug_label_region>`\ (\ )                                                                                                                          |
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                             | :ref:`get_error_string<class_OpenXRAPIExtension_method_get_error_string>`\ (\ result\: :ref:`int<class_int>`\ )                                                                                                      |
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,6 +77,8 @@ Methods
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                                   | :ref:`get_system_id<class_OpenXRAPIExtension_method_get_system_id>`\ (\ )                                                                                                                                            |
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                  | :ref:`insert_debug_label<class_OpenXRAPIExtension_method_insert_debug_label>`\ (\ label_name\: :ref:`String<class_String>`\ )                                                                                        |
+   +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`OpenXRAlphaBlendModeSupport<enum_OpenXRAPIExtension_OpenXRAlphaBlendModeSupport>` | :ref:`is_environment_blend_mode_alpha_supported<class_OpenXRAPIExtension_method_is_environment_blend_mode_alpha_supported>`\ (\ )                                                                                    |
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                 | :ref:`is_initialized<class_OpenXRAPIExtension_method_is_initialized>`\ (\ )                                                                                                                                          |
@@ -84,6 +90,8 @@ Methods
    | |void|                                                                                  | :ref:`register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`\ (\ extension\: :ref:`OpenXRExtensionWrapperExtension<class_OpenXRExtensionWrapperExtension>`\ )     |
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                                  | :ref:`set_emulate_environment_blend_mode_alpha_blend<class_OpenXRAPIExtension_method_set_emulate_environment_blend_mode_alpha_blend>`\ (\ enabled\: :ref:`bool<class_bool>`\ )                                       |
+   +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                  | :ref:`set_object_name<class_OpenXRAPIExtension_method_set_object_name>`\ (\ object_type\: :ref:`int<class_int>`, object_handle\: :ref:`int<class_int>`, object_name\: :ref:`String<class_String>`\ )                 |
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform3D<class_Transform3D>`                                                   | :ref:`transform_from_pose<class_OpenXRAPIExtension_method_transform_from_pose>`\ (\ pose\: ``const void*``\ )                                                                                                        |
    +-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -140,6 +148,18 @@ Means that :ref:`XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_con
 Method Descriptions
 -------------------
 
+.. _class_OpenXRAPIExtension_method_begin_debug_label_region:
+
+.. rst-class:: classref-method
+
+|void| **begin_debug_label_region**\ (\ label_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_begin_debug_label_region>`
+
+Begins a new debug label region, this label will be reported in debug messages for any calls following this until :ref:`end_debug_label_region<class_OpenXRAPIExtension_method_end_debug_label_region>` is called. Debug labels can be stacked.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OpenXRAPIExtension_method_can_render:
 
 .. rst-class:: classref-method
@@ -147,6 +167,18 @@ Method Descriptions
 :ref:`bool<class_bool>` **can_render**\ (\ ) :ref:`🔗<class_OpenXRAPIExtension_method_can_render>`
 
 Returns ``true`` if OpenXR is initialized for rendering with an XR viewport.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRAPIExtension_method_end_debug_label_region:
+
+.. rst-class:: classref-method
+
+|void| **end_debug_label_region**\ (\ ) :ref:`🔗<class_OpenXRAPIExtension_method_end_debug_label_region>`
+
+Marks the end of a debug label region. Removes the latest debug label region added by calling :ref:`begin_debug_label_region<class_OpenXRAPIExtension_method_begin_debug_label_region>`.
 
 .. rst-class:: classref-item-separator
 
@@ -274,6 +306,18 @@ Returns the id of the system, which is a `XrSystemId <https://registry.khronos.o
 
 ----
 
+.. _class_OpenXRAPIExtension_method_insert_debug_label:
+
+.. rst-class:: classref-method
+
+|void| **insert_debug_label**\ (\ label_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_insert_debug_label>`
+
+Inserts a debug label, this label is reported in any debug message resulting from the OpenXR calls that follows, until any of :ref:`begin_debug_label_region<class_OpenXRAPIExtension_method_begin_debug_label_region>`, :ref:`end_debug_label_region<class_OpenXRAPIExtension_method_end_debug_label_region>`, or :ref:`insert_debug_label<class_OpenXRAPIExtension_method_insert_debug_label>` is called.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OpenXRAPIExtension_method_is_environment_blend_mode_alpha_supported:
 
 .. rst-class:: classref-method
@@ -341,6 +385,18 @@ Registers the given extension as a composition layer provider.
 |void| **set_emulate_environment_blend_mode_alpha_blend**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_set_emulate_environment_blend_mode_alpha_blend>`
 
 If set to ``true``, an OpenXR extension is loaded which is capable of emulating the :ref:`XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND>` blend mode.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRAPIExtension_method_set_object_name:
+
+.. rst-class:: classref-method
+
+|void| **set_object_name**\ (\ object_type\: :ref:`int<class_int>`, object_handle\: :ref:`int<class_int>`, object_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_set_object_name>`
+
+Set the object name of an OpenXR object, used for debug output. ``object_type`` must be a valid OpenXR ``XrObjectType`` enum and ``object_handle`` must be a valid OpenXR object handle.
 
 .. rst-class:: classref-item-separator
 

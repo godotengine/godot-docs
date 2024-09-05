@@ -54,12 +54,12 @@ Method Descriptions
 
 Makes the callback call delayed by given time in seconds.
 
-\ **Example:**\ 
+\ **Example:** Call :ref:`Node.queue_free<class_Node_method_queue_free>` after 2 seconds.
 
 ::
 
     var tween = get_tree().create_tween()
-    tween.tween_callback(queue_free).set_delay(2) #this will call queue_free() after 2 seconds
+    tween.tween_callback(queue_free).set_delay(2)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

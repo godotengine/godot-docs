@@ -899,9 +899,9 @@ Returns a single character (as a :ref:`String<class_String>`) of the given Unico
 
 ::
 
-    a = char(65)      # a is "A"
-    a = char(65 + 32) # a is "a"
-    a = char(8364)    # a is "€"
+    var upper = char(65)      # upper is "A"
+    var lower = char(65 + 32) # lower is "a"
+    var euro = char(8364)     # euro is "€"
 
 .. rst-class:: classref-item-separator
 
@@ -1020,7 +1020,7 @@ Returns ``true`` if ``value`` is an instance of ``type``. The ``type`` value mus
 
 Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant value. The ``is`` operator supports more features (such as typed arrays). Use the operator instead of this method if you do not need dynamic type checking.
 
-Examples:
+\ **Examples:**\ 
 
 ::
 
@@ -1047,10 +1047,10 @@ Returns the length of the given Variant ``var``. The length can be the character
 
 ::
 
-    a = [1, 2, 3, 4]
+    var a = [1, 2, 3, 4]
     len(a) # Returns 4
     
-    b = "Hello!"
+    var b = "Hello!"
     len(b) # Returns 6
 
 .. rst-class:: classref-item-separator
@@ -1166,7 +1166,7 @@ Returns an array with the given range. :ref:`range<class_@GDScript_method_range>
 
 \ **Note:** Returns an empty array if no value meets the value constraint (e.g. ``range(2, 5, -1)`` or ``range(5, 5, 1)``).
 
-Examples:
+\ **Examples:**\ 
 
 ::
 

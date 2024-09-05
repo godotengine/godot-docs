@@ -431,7 +431,7 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
             }
         }
     
-        private List<int> _numbers = new();
+        private Godot.Collections.Array<int> _numbers = new();
     
         public override Godot.Collections.Array<Godot.Collections.Dictionary> _GetPropertyList()
         {
@@ -468,7 +468,7 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
             if (propertyName.StartsWith("number_"))
             {
                 int index = int.Parse(propertyName.Substring("number_".Length));
-                numbers[index] = value.As<int>();
+                _numbers[index] = value.As<int>();
                 return true;
             }
             return false;

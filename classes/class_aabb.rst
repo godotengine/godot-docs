@@ -103,7 +103,7 @@ Methods
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`get_shortest_axis_size<class_AABB_method_get_shortest_axis_size>`\ (\ ) |const|                                                                   |
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>` | :ref:`get_support<class_AABB_method_get_support>`\ (\ dir\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                    |
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_support<class_AABB_method_get_support>`\ (\ direction\: :ref:`Vector3<class_Vector3>`\ ) |const|                                              |
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`get_volume<class_AABB_method_get_volume>`\ (\ ) |const|                                                                                           |
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -502,7 +502,7 @@ For an example, see :ref:`get_shortest_axis<class_AABB_method_get_shortest_axis>
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_support**\ (\ dir\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_AABB_method_get_support>`
+:ref:`Vector3<class_Vector3>` **get_support**\ (\ direction\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_AABB_method_get_support>`
 
 Returns the vertex's position of this bounding box that's the farthest in the given direction. This point is commonly known as the support point in collision detection algorithms.
 

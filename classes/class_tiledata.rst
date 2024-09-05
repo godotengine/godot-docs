@@ -521,7 +521,7 @@ Enables/disables one-way collisions on the polygon at index ``polygon_index`` fo
 
 |void| **set_collision_polygon_one_way_margin**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`, one_way_margin\: :ref:`float<class_float>`\ ) :ref:`🔗<class_TileData_method_set_collision_polygon_one_way_margin>`
 
-Enables/disables one-way collisions on the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+Sets the one-way margin (for one-way platforms) of the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
 
 .. rst-class:: classref-item-separator
 

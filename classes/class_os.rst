@@ -231,6 +231,14 @@ The OpenGL 3 rendering driver. It uses OpenGL 3.3 Core Profile on desktop platfo
 
 The Direct3D 12 rendering driver.
 
+.. _class_OS_constant_RENDERING_DRIVER_METAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RenderingDriver<enum_OS_RenderingDriver>` **RENDERING_DRIVER_METAL** = ``3``
+
+The Metal rendering driver.
+
 .. rst-class:: classref-item-separator
 
 ----

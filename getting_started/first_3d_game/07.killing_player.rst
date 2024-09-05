@@ -138,7 +138,7 @@ Also note that the enemy colliding with the player and dying depends on the size
 ``Player`` and the ``Mob``\ 's collision shapes. You may need to move them
 and resize them to achieve a tight game feel.
 
-You can pat yourself in the back: you prototyped a complete 3D game,
+You can pat yourself on the back: you prototyped a complete 3D game,
 even if it's still a bit rough.
 
 From there, we'll add a score, the option to retry the game, and you'll

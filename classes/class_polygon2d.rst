@@ -32,8 +32,6 @@ Properties
    +-----------------------------------------------------+------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`antialiased<class_Polygon2D_property_antialiased>`                     | ``false``                |
    +-----------------------------------------------------+------------------------------------------------------------------------------+--------------------------+
-   | :ref:`Array<class_Array>`                           | :ref:`bones<class_Polygon2D_property_bones>`                                 | ``[]``                   |
-   +-----------------------------------------------------+------------------------------------------------------------------------------+--------------------------+
    | :ref:`Color<class_Color>`                           | :ref:`color<class_Polygon2D_property_color>`                                 | ``Color(1, 1, 1, 1)``    |
    +-----------------------------------------------------+------------------------------------------------------------------------------+--------------------------+
    | :ref:`int<class_int>`                               | :ref:`internal_vertex_count<class_Polygon2D_property_internal_vertex_count>` | ``0``                    |
@@ -110,18 +108,6 @@ Property Descriptions
 - :ref:`bool<class_bool>` **get_antialiased**\ (\ )
 
 If ``true``, polygon edges will be anti-aliased.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_Polygon2D_property_bones:
-
-.. rst-class:: classref-property
-
-:ref:`Array<class_Array>` **bones** = ``[]`` :ref:`🔗<class_Polygon2D_property_bones>`
-
-Internal list of :ref:`Bone2D<class_Bone2D>` nodes used by the assigned :ref:`skeleton<class_Polygon2D_property_skeleton>`. Edited using the Polygon2D editor ("UV" button on the top toolbar).
 
 .. rst-class:: classref-item-separator
 

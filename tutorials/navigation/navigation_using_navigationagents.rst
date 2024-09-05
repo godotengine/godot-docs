@@ -121,7 +121,7 @@ The following NavigationAgent properties are relevant for avoidance:
   - The property ``use_3d_avoidance`` switches the agent between the 2D avoidance (xz axis) and the 3D avoidance (xyz axis) on the next update.
     Note that 2D avoidance and 3D avoidance run in separate avoidance simulations so agents split between them do not affect each other.
   - The properties ``avoidance_layers`` and ``avoidance_mask`` are bitmasks similar to e.g. physics layers. Agents will only avoid other avoidance objects that are on an avoidance layer that matches at least one of their own avoidance mask bits.
-  - The ``avoidance_priority`` makes agents with a higher priority ignore agents with a lower priority. This can be used to give certain agents more importance in the avoidance simulation, e.g. important npcs characters, without constantly changing their entire avoidance layers or mask.
+  - The ``avoidance_priority`` makes agents with a higher priority ignore agents with a lower priority. This can be used to give certain agents more importance in the avoidance simulation, e.g. important non-playable characters, without constantly changing their entire avoidance layers or mask.
 
 
 Avoidance exists in its own space and has no information from navigation meshes or physics collision.
@@ -158,6 +158,29 @@ toggle avoidance on agents, create or delete avoidance callbacks or switch avoid
         # Delete avoidance callback
         NavigationServer2D.agent_set_avoidance_callback(agent, Callable())
 
+ .. code-tab:: csharp 2D C#
+
+    using Godot;
+
+    public partial class MyNavigationAgent2D : NavigationAgent2D
+    {
+        public override void _Ready()
+        {
+            Rid agent = GetRid();
+            // Enable avoidance
+            NavigationServer2D.AgentSetAvoidanceEnabled(agent, true);
+            // Create avoidance callback
+            NavigationServer2D.AgentSetAvoidanceCallback(agent, Callable.From(AvoidanceDone));
+
+            // Disable avoidance
+            NavigationServer2D.AgentSetAvoidanceEnabled(agent, false);
+            //Delete avoidance callback
+            NavigationServer2D.AgentSetAvoidanceCallback(agent, default);
+        }
+
+        private void AvoidanceDone() { }
+    }
+
  .. code-tab:: gdscript 3D GDScript
 
     extends NavigationAgent3D
@@ -178,6 +201,32 @@ toggle avoidance on agents, create or delete avoidance callbacks or switch avoid
         # Switch to 2D avoidance
         NavigationServer3D.agent_set_use_3d_avoidance(agent, false)
 
+ .. code-tab:: csharp 3D C#
+
+    using Godot;
+
+    public partial class MyNavigationAgent3D : NavigationAgent3D
+    {
+        public override void _Ready()
+        {
+            Rid agent = GetRid();
+            // Enable avoidance
+            NavigationServer3D.AgentSetAvoidanceEnabled(agent, true);
+            // Create avoidance callback
+            NavigationServer3D.AgentSetAvoidanceCallback(agent, Callable.From(AvoidanceDone));
+            // Switch to 3D avoidance
+            NavigationServer3D.AgentSetUse3DAvoidance(agent, true);
+
+            // Disable avoidance
+            NavigationServer3D.AgentSetAvoidanceEnabled(agent, false);
+            //Delete avoidance callback
+            NavigationServer3D.AgentSetAvoidanceCallback(agent, default);
+            // Switch to 2D avoidance
+            NavigationServer3D.AgentSetUse3DAvoidance(agent, false);
+        }
+
+        private void AvoidanceDone() { }
+    }
 
 NavigationAgent Script Templates
 --------------------------------
@@ -283,6 +332,169 @@ The following sections provides script templates for nodes commonly used with Na
             func _on_velocity_computed(safe_velocity: Vector2):
                 linear_velocity = safe_velocity
 
+   .. tab:: 2D C#
+
+      .. tabs::
+
+         .. code-tab:: csharp Node2D
+
+            using Godot;
+
+            public partial class MyNode2D : Node2D
+            {
+                [Export]
+                public float MovementSpeed { get; set; } = 4.0f;
+                NavigationAgent2D _navigationAgent;
+                private float _movementDelta;
+
+                public override void _Ready()
+                {
+                    _navigationAgent = GetNode<NavigationAgent2D>("NavigationAgent2D");
+                    _navigationAgent.VelocityComputed += OnVelocityComputed;
+                }
+
+                private void SetMovementTarget(Vector2 movementTarget)
+                {
+                    _navigationAgent.TargetPosition = movementTarget;
+                }
+
+                public override void _PhysicsProcess(double delta)
+                {
+                    // Do not query when the map has never synchronized and is empty.
+                    if (NavigationServer2D.MapGetIterationId(_navigationAgent.GetNavigationMap()) == 0)
+                    {
+                        return;
+                    }
+
+                    if (_navigationAgent.IsNavigationFinished())
+                    {
+                        return;
+                    }
+
+                    _movementDelta = MovementSpeed * (float)delta;
+                    Vector2 nextPathPosition = _navigationAgent.GetNextPathPosition();
+                    Vector2 newVelocity = GlobalPosition.DirectionTo(nextPathPosition) * _movementDelta;
+                    if (_navigationAgent.AvoidanceEnabled)
+                    {
+                        _navigationAgent.Velocity = newVelocity;
+                    }
+                    else
+                    {
+                        OnVelocityComputed(newVelocity);
+                    }
+                }
+
+                private void OnVelocityComputed(Vector2 safeVelocity)
+                {
+                    GlobalPosition = GlobalPosition.MoveToward(GlobalPosition + safeVelocity, _movementDelta);
+                }
+            }
+
+         .. code-tab:: csharp CharacterBody2D
+
+            using Godot;
+
+            public partial class MyCharacterBody2D : CharacterBody2D
+            {
+                [Export]
+                public float MovementSpeed { get; set; } = 4.0f;
+                NavigationAgent2D _navigationAgent;
+
+                public override void _Ready()
+                {
+                    _navigationAgent = GetNode<NavigationAgent2D>("NavigationAgent2D");
+                    _navigationAgent.VelocityComputed += OnVelocityComputed;
+                }
+
+                private void SetMovementTarget(Vector2 movementTarget)
+                {
+                    _navigationAgent.TargetPosition = movementTarget;
+                }
+
+                public override void _PhysicsProcess(double delta)
+                {
+                    // Do not query when the map has never synchronized and is empty.
+                    if (NavigationServer2D.MapGetIterationId(_navigationAgent.GetNavigationMap()) == 0)
+                    {
+                        return;
+                    }
+
+                    if (_navigationAgent.IsNavigationFinished())
+                    {
+                        return;
+                    }
+
+                    Vector2 nextPathPosition = _navigationAgent.GetNextPathPosition();
+                    Vector2 newVelocity = GlobalPosition.DirectionTo(nextPathPosition) * MovementSpeed;
+                    if (_navigationAgent.AvoidanceEnabled)
+                    {
+                        _navigationAgent.Velocity = newVelocity;
+                    }
+                    else
+                    {
+                        OnVelocityComputed(newVelocity);
+                    }
+                }
+
+                private void OnVelocityComputed(Vector2 safeVelocity)
+                {
+                    Velocity = safeVelocity;
+                    MoveAndSlide();
+                }
+            }
+
+         .. code-tab:: csharp RigidBody2D
+
+            using Godot;
+
+            public partial class MyRigidBody2D : RigidBody2D
+            {
+                [Export]
+                public float MovementSpeed { get; set; } = 4.0f;
+                NavigationAgent2D _navigationAgent;
+
+                public override void _Ready()
+                {
+                    _navigationAgent = GetNode<NavigationAgent2D>("NavigationAgent2D");
+                    _navigationAgent.VelocityComputed += OnVelocityComputed;
+                }
+
+                private void SetMovementTarget(Vector2 movementTarget)
+                {
+                    _navigationAgent.TargetPosition = movementTarget;
+                }
+
+                public override void _PhysicsProcess(double delta)
+                {
+                    // Do not query when the map has never synchronized and is empty.
+                    if (NavigationServer2D.MapGetIterationId(_navigationAgent.GetNavigationMap()) == 0)
+                    {
+                        return;
+                    }
+
+                    if (_navigationAgent.IsNavigationFinished())
+                    {
+                        return;
+                    }
+
+                    Vector2 nextPathPosition = _navigationAgent.GetNextPathPosition();
+                    Vector2 newVelocity = GlobalPosition.DirectionTo(nextPathPosition) * MovementSpeed;
+                    if (_navigationAgent.AvoidanceEnabled)
+                    {
+                        _navigationAgent.Velocity = newVelocity;
+                    }
+                    else
+                    {
+                        OnVelocityComputed(newVelocity);
+                    }
+                }
+
+                private void OnVelocityComputed(Vector2 safeVelocity)
+                {
+                    LinearVelocity = safeVelocity;
+                }
+            }
+
    .. tab:: 3D GDScript
 
       .. tabs::
@@ -379,3 +591,166 @@ The following sections provides script templates for nodes commonly used with Na
 
             func _on_velocity_computed(safe_velocity: Vector3):
                 linear_velocity = safe_velocity
+
+   .. tab:: 3D C#
+
+      .. tabs::
+
+         .. code-tab:: csharp Node3D
+
+            using Godot;
+
+            public partial class MyNode3D : Node3D
+            {
+                [Export]
+                public float MovementSpeed { get; set; } = 4.0f;
+                NavigationAgent3D _navigationAgent;
+                private float _movementDelta;
+
+                public override void _Ready()
+                {
+                    _navigationAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
+                    _navigationAgent.VelocityComputed += OnVelocityComputed;
+                }
+
+                private void SetMovementTarget(Vector3 movementTarget)
+                {
+                    _navigationAgent.TargetPosition = movementTarget;
+                }
+
+                public override void _PhysicsProcess(double delta)
+                {
+                    // Do not query when the map has never synchronized and is empty.
+                    if (NavigationServer3D.MapGetIterationId(_navigationAgent.GetNavigationMap()) == 0)
+                    {
+                        return;
+                    }
+
+                    if (_navigationAgent.IsNavigationFinished())
+                    {
+                        return;
+                    }
+
+                    _movementDelta = MovementSpeed * (float)delta;
+                    Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
+                    Vector3 newVelocity = GlobalPosition.DirectionTo(nextPathPosition) * _movementDelta;
+                    if (_navigationAgent.AvoidanceEnabled)
+                    {
+                        _navigationAgent.Velocity = newVelocity;
+                    }
+                    else
+                    {
+                        OnVelocityComputed(newVelocity);
+                    }
+                }
+
+                private void OnVelocityComputed(Vector3 safeVelocity)
+                {
+                    GlobalPosition = GlobalPosition.MoveToward(GlobalPosition + safeVelocity, _movementDelta);
+                }
+            }
+
+         .. code-tab:: csharp CharacterBody3D
+
+            using Godot;
+
+            public partial class MyCharacterBody3D : CharacterBody3D
+            {
+                [Export]
+                public float MovementSpeed { get; set; } = 4.0f;
+                NavigationAgent3D _navigationAgent;
+
+                public override void _Ready()
+                {
+                    _navigationAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
+                    _navigationAgent.VelocityComputed += OnVelocityComputed;
+                }
+
+                private void SetMovementTarget(Vector3 movementTarget)
+                {
+                    _navigationAgent.TargetPosition = movementTarget;
+                }
+
+                public override void _PhysicsProcess(double delta)
+                {
+                    // Do not query when the map has never synchronized and is empty.
+                    if (NavigationServer3D.MapGetIterationId(_navigationAgent.GetNavigationMap()) == 0)
+                    {
+                        return;
+                    }
+
+                    if (_navigationAgent.IsNavigationFinished())
+                    {
+                        return;
+                    }
+
+                    Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
+                    Vector3 newVelocity = GlobalPosition.DirectionTo(nextPathPosition) * MovementSpeed;
+                    if (_navigationAgent.AvoidanceEnabled)
+                    {
+                        _navigationAgent.Velocity = newVelocity;
+                    }
+                    else
+                    {
+                        OnVelocityComputed(newVelocity);
+                    }
+                }
+
+                private void OnVelocityComputed(Vector3 safeVelocity)
+                {
+                    Velocity = safeVelocity;
+                    MoveAndSlide();
+                }
+            }
+
+         .. code-tab:: csharp RigidBody3D
+
+            using Godot;
+
+            public partial class MyRigidBody3D : RigidBody3D
+            {
+                [Export]
+                public float MovementSpeed { get; set; } = 4.0f;
+                NavigationAgent3D _navigationAgent;
+
+                public override void _Ready()
+                {
+                    _navigationAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
+                    _navigationAgent.VelocityComputed += OnVelocityComputed;
+                }
+
+                private void SetMovementTarget(Vector3 movementTarget)
+                {
+                    _navigationAgent.TargetPosition = movementTarget;
+                }
+
+                public override void _PhysicsProcess(double delta)
+                {
+                    // Do not query when the map has never synchronized and is empty.
+                    if (NavigationServer3D.MapGetIterationId(_navigationAgent.GetNavigationMap()) == 0)
+                    {
+                        return;
+                    }
+
+                    if (_navigationAgent.IsNavigationFinished())
+                    {
+                        return;
+                    }
+
+                    Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
+                    Vector3 newVelocity = GlobalPosition.DirectionTo(nextPathPosition) * MovementSpeed;
+                    if (_navigationAgent.AvoidanceEnabled)
+                    {
+                        _navigationAgent.Velocity = newVelocity;
+                    }
+                    else
+                    {
+                        OnVelocityComputed(newVelocity);
+                    }
+                }
+
+                private void OnVelocityComputed(Vector3 safeVelocity)
+                {
+                    LinearVelocity = safeVelocity;
+                }
+            }

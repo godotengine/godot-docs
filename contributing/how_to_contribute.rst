@@ -74,8 +74,9 @@ Technical contributions
 - **Write Plugins (GDScript, C#, & more)**
   Community addons are not directly included in the core engine download or repository, yet they provide essential quality of life upgrades for your fellow game developers.
   Upload your plugins to the `Godot Asset Library <https://godotengine.org/asset-library/asset>`_ to make them available to others.
-  .. update to talk about Asset Store later
 
+  ..
+    update to talk about Asset Store later
 - **Demo projects (GDScript, C#, and making Assets)**
   We provide new users with `demo projects <https://github.com/godotengine/godot-demo-projects/>`_ so they can quickly test new features or get familiar with the engine in the first place.
   At industry events, we might even exhibit these demo projects to showcase what Godot can do! 

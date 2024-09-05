@@ -672,6 +672,8 @@ On Linux:
 
 \ ``steam_input_index``: The Steam Input gamepad index, if the device is not a Steam Input device this key won't be present.
 
+\ **Note:** The returned dictionary is always empty on Web, iOS, Android, and macOS.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -933,8 +935,6 @@ Returns ``true`` if you are pressing the key in the physical location on the 101
 |void| **parse_input_event**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) :ref:`🔗<class_Input_method_parse_input_event>`
 
 Feeds an :ref:`InputEvent<class_InputEvent>` to the game. Can be used to artificially trigger input events from code. Also generates :ref:`Node._input<class_Node_private_method__input>` calls.
-
-\ **Example:**\ 
 
 
 .. tabs::

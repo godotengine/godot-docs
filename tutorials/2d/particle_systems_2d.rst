@@ -199,6 +199,12 @@ This setting can be used to set the particle system to render at a fixed
 FPS. For instance, changing the value to ``2`` will make the particles render
 at 2 frames per second. Note this does not slow down the particle system itself.
 
+.. note::
+
+    Godot 4.3 does not currently support physics interpolation for 2D particles.
+    As a workaround, disable physics interpolation for the particles node by setting
+    **Node > Physics Interpolation > Mode** at the bottom of the inspector.
+
 Fract Delta
 ~~~~~~~~~~~
 

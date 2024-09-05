@@ -75,10 +75,16 @@ Translate** in the inspector.
 In code, the :ref:`Object.tr() <class_Object_method_tr>` function can be used.
 This will just look up the text in the translations and convert it if found:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     level.text = tr("LEVEL_5_NAME")
     status.text = tr("GAME_STATUS_%d" % status_index)
+
+ .. code-tab:: csharp
+
+    level.Text = Tr("LEVEL_5_NAME");
+    status.Text = Tr($"GAME_STATUS_{statusIndex}");
 
 .. note::
 
@@ -105,7 +111,8 @@ allows translations to sound more natural. Named placeholders with the
 ``String.format()`` function should be used whenever possible, as they also
 allow translators to choose the *order* in which placeholders appear:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     # The placeholder's locations can be changed, but not their order.
     # This will probably not suffice for some target languages.
@@ -125,13 +132,22 @@ optionally specify a *translation context* to resolve this ambiguity and allow
 target languages to use different strings, even though the source string is
 identical:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     # "Close", as in an action (to close something).
     button.set_text(tr("Close", "Actions"))
 
     # "Close", as in a distance (opposite of "far").
     distance_label.set_text(tr("Close", "Distance"))
+
+ .. code-tab:: csharp
+
+    // "Close", as in an action (to close something).
+    GetNode<Button>("Button").Text = Tr("Close", "Actions");
+
+    // "Close", as in a distance (opposite of "far").
+    GetNode<Label>("Distance").Text = Tr("Close", "Distance");
 
 Pluralization
 ^^^^^^^^^^^^^
@@ -148,17 +164,29 @@ Pluralization is meant to be used with positive (or zero) integer numbers only.
 Negative and floating-point values usually represent physical entities for which
 singular and plural don't clearly apply.
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     var num_apples = 5
     label.text = tr_n("There is %d apple", "There are %d apples", num_apples) % num_apples
 
+ .. code-tab:: csharp
+
+    int numApples = 5;
+    GetNode<Label>("Label").Text = string.Format(TrN("There is {0} apple", "There are {0} apples", numApples), numApples);
+
 This can be combined with a context if needed:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     var num_jobs = 1
     label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs
+
+ .. code-tab:: csharp
+
+    int numJobs = 1;
+    GetNode<Label>("Label").Text = string.Format(TrN("{0} job", "{0} jobs", numJobs, "Task Manager"), numJobs);
 
 .. note::
 

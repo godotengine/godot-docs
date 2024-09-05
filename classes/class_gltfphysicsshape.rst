@@ -12,14 +12,14 @@ GLTFPhysicsShape
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Represents a GLTF physics shape.
+Represents a glTF physics shape.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Represents a physics shape as defined by the ``OMI_physics_shape`` or ``OMI_collider`` GLTF extensions. This class is an intermediary between the GLTF data and Godot's nodes, and it's abstracted in a way that allows adding support for different GLTF physics extensions in the future.
+Represents a physics shape as defined by the ``OMI_physics_shape`` or ``OMI_collider`` glTF extensions. This class is an intermediary between the glTF data and Godot's nodes, and it's abstracted in a way that allows adding support for different glTF physics extensions in the future.
 
 .. rst-class:: classref-introduction-group
 
@@ -28,9 +28,9 @@ Tutorials
 
 - :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
 
-- `OMI_physics_shape GLTF extension <https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/OMI_physics_shape>`__
+- `OMI_physics_shape glTF extension <https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/OMI_physics_shape>`__
 
-- `OMI_collider GLTF extension <https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/Archived/OMI_collider>`__
+- `OMI_collider glTF extension <https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/Archived/OMI_collider>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -151,7 +151,7 @@ This is the only variable not used in the :ref:`to_node<class_GLTFPhysicsShape_m
 - |void| **set_mesh_index**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_mesh_index**\ (\ )
 
-The index of the shape's mesh in the GLTF file. This is only used when the shape type is "hull" (convex hull) or "trimesh" (concave trimesh).
+The index of the shape's mesh in the glTF file. This is only used when the shape type is "hull" (convex hull) or "trimesh" (concave trimesh).
 
 .. rst-class:: classref-item-separator
 

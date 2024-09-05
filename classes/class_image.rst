@@ -137,6 +137,8 @@ Methods
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                       | :ref:`is_invisible<class_Image_method_is_invisible>`\ (\ ) |const|                                                                                                                                                                                                                 |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                        | :ref:`linear_to_srgb<class_Image_method_linear_to_srgb>`\ (\ )                                                                                                                                                                                                                     |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load<class_Image_method_load>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                                                                                                                     |
    +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_bmp_from_buffer<class_Image_method_load_bmp_from_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                 |
@@ -1382,6 +1384,18 @@ Returns ``true`` if all the image's pixels have an alpha value of 0. Returns ``f
 
 ----
 
+.. _class_Image_method_linear_to_srgb:
+
+.. rst-class:: classref-method
+
+|void| **linear_to_srgb**\ (\ ) :ref:`🔗<class_Image_method_linear_to_srgb>`
+
+Converts the entire image from the linear colorspace to the sRGB colorspace. Only works on images with :ref:`FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` or :ref:`FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` formats.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Image_method_load:
 
 .. rst-class:: classref-method
@@ -1734,8 +1748,6 @@ Overwrites data of an existing **Image**. Non-static equivalent of :ref:`create_
 
 Sets the :ref:`Color<class_Color>` of the pixel at ``(x, y)`` to ``color``.
 
-\ **Example:**\ 
-
 
 .. tabs::
 
@@ -1770,8 +1782,6 @@ This is the same as :ref:`set_pixelv<class_Image_method_set_pixelv>`, but with a
 |void| **set_pixelv**\ (\ point\: :ref:`Vector2i<class_Vector2i>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Image_method_set_pixelv>`
 
 Sets the :ref:`Color<class_Color>` of the pixel at ``point`` to ``color``.
-
-\ **Example:**\ 
 
 
 .. tabs::
@@ -1818,7 +1828,7 @@ Shrinks the image by a factor of 2 on each axis (this divides the pixel count by
 
 |void| **srgb_to_linear**\ (\ ) :ref:`🔗<class_Image_method_srgb_to_linear>`
 
-Converts the raw data from the sRGB colorspace to a linear scale.
+Converts the raw data from the sRGB colorspace to a linear scale. Only works on images with :ref:`FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` or :ref:`FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` formats.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

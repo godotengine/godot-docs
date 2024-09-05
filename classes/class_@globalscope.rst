@@ -3045,9 +3045,7 @@ enum **Error**: :ref:`🔗<enum_@GlobalScope_Error>`
 
 Methods that return :ref:`Error<enum_@GlobalScope_Error>` return :ref:`OK<class_@GlobalScope_constant_OK>` when no error occurred.
 
-Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other error constants are positive integers, it can also be used in boolean checks.
-
-\ **Example:**\ 
+Since :ref:`OK<class_@GlobalScope_constant_OK>` has value ``0``, and all other error constants are positive integers, it can also be used in boolean checks.
 
 ::
 
@@ -3702,7 +3700,7 @@ If a property is :ref:`Array<class_Array>`, hints the editor how to show element
 
 
 
-Examples:
+\ **Examples:**\ 
 
 
 .. tabs::
@@ -6150,15 +6148,12 @@ See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which perfo
 
 :ref:`float<class_float>` **linear_to_db**\ (\ lin\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_linear_to_db>`
 
-Converts from linear energy to decibels (audio). This can be used to implement volume sliders that behave as expected (since volume isn't linear).
+Converts from linear energy to decibels (audio). Since volume is not normally linear, this can be used to implement volume sliders that behave as expected.
 
-\ **Example:**\ 
+\ **Example:** Change the Master bus's volume through a :ref:`Slider<class_Slider>` node, which ranges from ``0.0`` to ``1.0``:
 
 ::
 
-    # "Slider" refers to a node that inherits Range such as HSlider or VSlider.
-    # Its range must be configured to go from 0 to 1.
-    # Change the bus name if you'd like to change the volume of a specific bus only.
     AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db($Slider.value))
 
 .. rst-class:: classref-item-separator
@@ -7072,9 +7067,11 @@ Returns the hyperbolic sine of ``x``.
 
 :ref:`float<class_float>` **smoothstep**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`, x\: :ref:`float<class_float>`\ ) :ref:`🔗<class_@GlobalScope_method_smoothstep>`
 
-Returns the result of smoothly interpolating the value of ``x`` between ``0`` and ``1``, based on the where ``x`` lies with respect to the edges ``from`` and ``to``.
+Returns a smooth cubic Hermite interpolation between ``0`` and ``1``.
 
-The return value is ``0`` if ``x <= from``, and ``1`` if ``x >= to``. If ``x`` lies between ``from`` and ``to``, the returned value follows an S-shaped curve that maps ``x`` between ``0`` and ``1``.
+For positive ranges (when ``from <= to``) the return value is ``0`` when ``x <= from``, and ``1`` when ``x >= to``. If ``x`` lies between ``from`` and ``to``, the return value follows an S-shaped curve that smoothly transitions from ``0`` to ``1``.
+
+For negative ranges (when ``from > to``) the function is mirrored and returns ``1`` when ``x <= to`` and ``0`` when ``x >= from``.
 
 This S-shaped curve is the cubic Hermite interpolator, given by ``f(y) = 3*y^2 - 2*y^3`` where ``y = (x-from) / (to-from)``.
 
@@ -7087,7 +7084,9 @@ This S-shaped curve is the cubic Hermite interpolator, given by ``f(y) = 3*y^2 -
 
 Compared to :ref:`ease<class_@GlobalScope_method_ease>` with a curve value of ``-1.6521``, :ref:`smoothstep<class_@GlobalScope_method_smoothstep>` returns the smoothest possible curve with no sudden changes in the derivative. If you need to perform more advanced transitions, use :ref:`Tween<class_Tween>` or :ref:`AnimationPlayer<class_AnimationPlayer>`.
 
-\ `Comparison between smoothstep() and ease(x, -1.6521) return values <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/smoothstep_ease_comparison.png>`__
+\ `Comparison between smoothstep() and ease(x, -1.6521) return values <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/smoothstep_ease_comparison.png>`__\ 
+
+\ `Smoothstep() return values with positive, zero, and negative ranges <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/smoothstep_range.webp>`__
 
 .. rst-class:: classref-item-separator
 

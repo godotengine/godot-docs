@@ -248,8 +248,6 @@ The underline mode to use for the text. See :ref:`UnderlineMode<enum_LinkButton_
 
 The `URI <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier>`__ for this **LinkButton**. If set to a valid URI, pressing the button opens the URI using the operating system's default program for the protocol (via :ref:`OS.shell_open<class_OS_method_shell_open>`). HTTP and HTTPS URLs open the default web browser.
 
-\ **Examples:**\ 
-
 
 .. tabs::
 

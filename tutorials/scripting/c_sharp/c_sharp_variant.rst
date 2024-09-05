@@ -129,6 +129,7 @@ Variant.Type             C# Type
 ``PackedStringArray``    ``string[]``
 ``PackedVector2Array``   ``Godot.Vector2[]``
 ``PackedVector3Array``   ``Godot.Vector3[]``
+``PackedVector4Array``   ``Godot.Vector4[]``
 ``PackedColorArray``     ``Godot.Color[]``
 =======================  ===========================================================
 

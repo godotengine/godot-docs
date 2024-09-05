@@ -39,7 +39,7 @@ resource and choose **Save**:
 
    Saving the built-in TileSet resource to an external resource file
 
-Multiple TileMaplayers and settings
+Multiple TileMapLayers and settings
 -----------------------------------
 
 When working with tilemaps it's generally advised that you use multiple TileMapLayer
@@ -108,9 +108,9 @@ of the editor:
 
 .. figure:: img/using_tilemaps_open_tilemap_editor.webp
    :align: center
-   :alt: Opening the TileMap panel at the bottom of the editor. The TileMap node must be selected first.
+   :alt: Opening the TileMap panel at the bottom of the editor. The TileMapLayer node must be selected first.
 
-   Opening the TileMap panel at the bottom of the editor. The TileMap node must be selected first.
+   Opening the TileMap panel at the bottom of the editor. The TileMapLayer node must be selected first.
 
 Selecting tiles to use for painting
 -----------------------------------
@@ -127,7 +127,7 @@ layer you wish to paint on:
 .. tip::
 
     In the 2D editor, the layers you aren't currently editing from the same
-    TileMap node will appear grayed out while in the TileMap editor. You can
+    TileMapLayer node will appear grayed out while in the TileMap editor. You can
     disable this behavior by clicking the icon next to the layer selection menu
     (**Highlight Selected TileMap Layer** tooltip).
 
@@ -404,7 +404,7 @@ Rectangle or Bucket Fill painting modes.
 Handling tile connections automatically using terrains
 ------------------------------------------------------
 
-To use terrains, the TileMap node must feature at least one terrain set and a
+To use terrains, the TileMapLayer node must feature at least one terrain set and a
 terrain within this terrain set. See
 :ref:`doc_using_tilesets_creating_terrain_sets` if you haven't created a terrain
 set for the TileSet yet.

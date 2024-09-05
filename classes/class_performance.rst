@@ -332,11 +332,19 @@ Number of polygon edges that are considered connected by edge proximity :ref:`Na
 
 Number of navigation mesh polygon edges that could not be merged in the :ref:`NavigationServer3D<class_NavigationServer3D>`. The edges still may be connected by edge proximity or with links.
 
+.. _class_Performance_constant_NAVIGATION_OBSTACLE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_OBSTACLE_COUNT** = ``33``
+
+Number of active navigation obstacles in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
 .. _class_Performance_constant_MONITOR_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``33``
+:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``34``
 
 Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
 

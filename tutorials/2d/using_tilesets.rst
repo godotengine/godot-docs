@@ -526,7 +526,7 @@ Depending on your use cases, one method may be faster than the other:
 Using multiple tile selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you wish to configure various properties on several times at once,
+If you wish to configure various properties on several tiles at once,
 choose the **Select** mode at the top of the TileSet editor:
 
 After doing this, you can select multiple tiles on the right column by holding

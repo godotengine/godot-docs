@@ -25,11 +25,11 @@ There are several ways to improve performance and battery life:
   which can be up to 4 times faster.
 - Open the Editor Settings and increase the value of **Low Processor Mode Sleep (µsec)**
   to ``33000`` (30 FPS). This value determines the amount of *microseconds*
-  between frames to render. Higher values will make the editor feel less reactive
+  between frames to render. Higher values will make the editor feel less reactive,
   but will help decrease CPU and GPU usage significantly.
 - If you have a node that causes the editor to redraw continuously (such as
   particles), hide it and show it using a script in the ``_ready()`` method.
-  This way, it will be hidden in the editor but will still be visible in the
+  This way, it will be hidden in the editor, but will still be visible in the
   running project.
 
 The editor stutters and flickers on my variable refresh rate monitor (G-Sync/FreeSync)
@@ -49,7 +49,7 @@ There are several workarounds for this:
   alleviate this, you can increase **Low Processor Mode Sleep (µsec)** to
   ``33000`` (30 FPS) in the Editor Settings. This value determines the amount of
   *microseconds* between frames to render. Higher values will make the editor
-  feel less reactive but will help decrease CPU and GPU usage significantly.
+  feel less reactive, but will help decrease CPU and GPU usage significantly.
 - Alternatively, disable variable refresh rate on your monitor or in the graphics driver.
 - VRR flicker can be reduced on some displays using the **VRR Control** or
   **Fine Tune Dark Areas** options in your monitor's OSD. These options may
@@ -83,7 +83,7 @@ in the Editor Settings (**Network > Debug > Remote Port**). The default is
 
 On Windows, when loading the project for the first time after the PC is turned on,
 Windows Defender will cause the filesystem cache validation on project startup
-to take significantly longer. This is especially noticable in projects with a
+to take significantly longer. This is especially noticeable in projects with a
 large number of files. Consinder adding the project folder to the list of exclusions
 by going to Virus & threat protection > Virus & threat protection settings >
 Add or remove exclusions.

@@ -183,7 +183,7 @@ Margin to cut on the sides of the entire image. This can be used to cut parts of
 
 Kerning pairs for the font. Kerning pair adjust the spacing between two characters.
 
-Each string consist of three space separated values: "from" string, "to" string and integer offset. Each combination form the two string for a kerning pair, e.g, ``ab cd -3`` will create kerning pairs ``ac``, ``ad``, ``bc``, and ``bd`` with offset ``-3``.
+Each string consist of three space separated values: "from" string, "to" string and integer offset. Each combination form the two string for a kerning pair, e.g, ``ab cd -3`` will create kerning pairs ``ac``, ``ad``, ``bc``, and ``bd`` with offset ``-3``. ``\uXXXX`` escape sequences can be used to add Unicode characters.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 

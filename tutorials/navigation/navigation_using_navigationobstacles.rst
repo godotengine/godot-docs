@@ -25,7 +25,7 @@ Obstacles and navigation mesh
 
    Navigation obstacles affecting navigation mesh baking.
 
-For navigation mesh baking obstacles can be used to discard parts of all other source geometry inside the obstacle shape.
+For navigation mesh baking, obstacles can be used to discard parts of all other source geometry inside the obstacle shape.
 
 This can be used to stop navigation meshes being baked in unwanted places,
 e.g. inside "solid" geometry like thick walls or on top of other geometry that should not be included for gameplay like roofs.
@@ -79,6 +79,26 @@ Obstacles are not involved in the source geometry parsing so adding them just be
 
     NavigationServer2D.bake_from_source_geometry_data(navigation_mesh, source_geometry)
 
+ .. code-tab:: csharp 2D C#
+
+    Vector2[] obstacleOutline = new Vector2[]
+    {
+        new Vector2(-50, -50),
+        new Vector2(50, -50),
+        new Vector2(50, 50),
+        new Vector2(-50, 50),
+    };
+
+    var navigationMesh = new NavigationPolygon();
+    var sourceGeometry = new NavigationMeshSourceGeometryData2D();
+
+    NavigationServer2D.ParseSourceGeometryData(navigationMesh, sourceGeometry, GetNode<Node2D>("MyTestRootNode"));
+
+    bool obstacleCarve = true;
+
+    sourceGeometry.AddProjectedObstruction(obstacleOutline, obstacleCarve);
+    NavigationServer2D.BakeFromSourceGeometryData(navigationMesh, sourceGeometry);
+
  .. code-tab:: gdscript 3D GDScript
 
     var obstacle_outline = PackedVector3Array([
@@ -100,6 +120,28 @@ Obstacles are not involved in the source geometry parsing so adding them just be
     source_geometry.add_projected_obstruction(obstacle_outline, obstacle_elevation, obstacle_height, obstacle_carve)
 
     NavigationServer3D.bake_from_source_geometry_data(navigation_mesh, source_geometry)
+
+ .. code-tab:: csharp 3D C#
+
+    Vector3[] obstacleOutline = new Vector3[]
+    {
+        new Vector3(-5, 0, -5),
+        new Vector3(5, 0, -5),
+        new Vector3(5, 0, 5),
+        new Vector3(-5, 0, 5),
+    };
+
+    var navigationMesh = new NavigationMesh();
+    var sourceGeometry = new NavigationMeshSourceGeometryData3D();
+
+    NavigationServer3D.ParseSourceGeometryData(navigationMesh, sourceGeometry, GetNode<Node3D>("MyTestRootNode"));
+
+    float obstacleElevation = GetNode<Node3D>("MyTestObstacleNode").GlobalPosition.Y;
+    float obstacleHeight = 50.0f;
+    bool obstacleCarve = true;
+
+    sourceGeometry.AddProjectedObstruction(obstacleOutline, obstacleElevation, obstacleHeight, obstacleCarve);
+    NavigationServer3D.BakeFromSourceGeometryData(navigationMesh, sourceGeometry);
 
 Obstacles and agent avoidance
 -----------------------------
@@ -179,6 +221,31 @@ For static use an array of ``vertices`` is required.
     # Enable the obstacle.
     NavigationServer2D.obstacle_set_avoidance_enabled(new_obstacle_rid, true)
 
+ .. code-tab:: csharp 2D C#
+
+    // Create a new "obstacle" and place it on the default navigation map.
+    Rid newObstacleRid = NavigationServer2D.ObstacleCreate();
+    Rid defaultMapRid = GetWorld2D().NavigationMap;
+
+    NavigationServer2D.ObstacleSetMap(newObstacleRid, defaultMapRid);
+    NavigationServer2D.ObstacleSetPosition(newObstacleRid, GlobalPosition);
+
+    // Use obstacle dynamic by increasing radius above zero.
+    NavigationServer2D.ObstacleSetRadius(newObstacleRid, 5.0f);
+
+    // Use obstacle static by adding a square that pushes agents out.
+    Vector2[] outline = new Vector2[]
+    {
+        new Vector2(-100, -100),
+        new Vector2(100, -100),
+        new Vector2(100, 100),
+        new Vector2(-100, 100),
+    };
+    NavigationServer2D.ObstacleSetVertices(newObstacleRid, outline);
+
+    // Enable the obstacle.
+    NavigationServer2D.ObstacleSetAvoidanceEnabled(newObstacleRid, true);
+
  .. code-tab:: gdscript 3D GDScript
 
     # Create a new "obstacle" and place it on the default navigation map.
@@ -199,3 +266,30 @@ For static use an array of ``vertices`` is required.
 
     # Enable the obstacle.
     NavigationServer3D.obstacle_set_avoidance_enabled(new_obstacle_rid, true)
+
+ .. code-tab:: csharp 3D C#
+
+    // Create a new "obstacle" and place it on the default navigation map.
+    Rid newObstacleRid = NavigationServer3D.ObstacleCreate();
+    Rid defaultMapRid = GetWorld3D().NavigationMap;
+
+    NavigationServer3D.ObstacleSetMap(newObstacleRid, defaultMapRid);
+    NavigationServer3D.ObstacleSetPosition(newObstacleRid, GlobalPosition);
+
+    // Use obstacle dynamic by increasing radius above zero.
+    NavigationServer3D.ObstacleSetRadius(newObstacleRid, 5.0f);
+
+    // Use obstacle static by adding a square that pushes agents out.
+    Vector3[] outline = new Vector3[]
+    {
+        new Vector3(-5, 0, -5),
+        new Vector3(5, 0, -5),
+        new Vector3(5, 0, 5),
+        new Vector3(-5, 0, 5),
+    };
+    NavigationServer3D.ObstacleSetVertices(newObstacleRid, outline);
+    // Set the obstacle height on the y-axis.
+    NavigationServer3D.ObstacleSetHeight(newObstacleRid, 1.0f);
+
+    // Enable the obstacle.
+    NavigationServer3D.ObstacleSetAvoidanceEnabled(newObstacleRid, true);
