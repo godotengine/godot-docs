@@ -81,19 +81,28 @@ and to log in to use it. Once logged in, you can propose change like so:
 
 1. Click the **Edit on GitHub** button.
 
-2. On the GitHub page you're taken to, click the pencil icon in the top-right
-   corner near the **Raw**, **Blame**, and **Delete** buttons. It has the
-   tooltip "Fork this project and edit the file".
+2. On the GitHub page you're taken to, make sure the current branch is "master".
+   Click the pencil icon in the top-right corner
+   near the **Raw**, **Blame**, and **Delete** buttons.
+   It has the tooltip "Fork this project and edit the file".
 
 3. Edit the text in the text editor.
 
-4. At the bottom of the web page, summarize the changes you made and click the
-   button **Propose file change**. Make sure to replace the placeholder "Update file.rst"
-   by a short, but clear one-line description, as this is the commit title.
+4. Click "Commit changes...", summarize the changes you made
+   and make sure to replace the placeholder "Update file.rst" by a short,
+   but clear one-line description, as this is the commit title.
+   Click the button **Propose changes**.
 
 5. On the following screens, click the **Create pull request** button until you
    see a message like *Username wants to merge 1 commit into godotengine:master
    from Username:patch-1*.
+
+.. note::
+
+   If there are more commits than your own in the pull request
+   it is likely that your branch was created using the wrong origin,
+   due to "master" not being the current branch in step 2.
+   You will need to rebase your branch to "master" or create a new branch.
 
 Another contributor will review your changes and merge them into the docs if
 they're good. They may also make changes or ask you to do so before merging.
