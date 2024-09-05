@@ -26,9 +26,8 @@ Godot's profiler does not automatically run because profiling is
 performance-intensive. It has to continually measure everything happening in the
 game and report back to the debugger, so it's off by default.
 
-To begin profiling, click on the **Start** button in the top-left. Run your game
-and data will start appearing. You can also start profiling at any time before
-or during gameplay.
+To begin profiling, run your game then focus back on the editor. Click on the
+**Start** button in the top-left corner of the **Profiler** tab.
 
 .. note::
 
