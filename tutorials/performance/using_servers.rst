@@ -114,7 +114,7 @@ This is an example of how to create a sprite from code and move it using the low
         # Remember, keep this reference.
         texture = load("res://my_texture.png")
         # Add it, centered.
-        RenderingServer.canvas_item_add_texture_rect(ci_rid, Rect2(texture.get_size() / 2, texture.get_size()), texture)
+        RenderingServer.canvas_item_add_texture_rect(ci_rid, Rect2(-texture.get_size() / 2, texture.get_size()), texture)
         # Add the item, rotated 45 degrees and translated.
         var xform = Transform2D().rotated(deg_to_rad(45)).translated(Vector2(20, 30))
         RenderingServer.canvas_item_set_transform(ci_rid, xform)
@@ -136,7 +136,7 @@ This is an example of how to create a sprite from code and move it using the low
             // Remember, keep this reference.
             _texture = ResourceLoader.Load<Texture2D>("res://MyTexture.png");
             // Add it, centered.
-            RenderingServer.CanvasItemAddTextureRect(ciRid, new Rect2(_texture.GetSize() / 2, _texture.GetSize()), _texture.GetRid());
+            RenderingServer.CanvasItemAddTextureRect(ciRid, new Rect2(-_texture.GetSize() / 2, _texture.GetSize()), _texture.GetRid());
             // Add the item, rotated 45 degrees and translated.
             Transform2D xform = Transform2D.Identity.Rotated(Mathf.DegToRad(45)).Translated(new Vector2(20, 30));
             RenderingServer.CanvasItemSetTransform(ciRid, xform);
