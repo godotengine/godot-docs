@@ -140,7 +140,7 @@ animation. Enter a name for the animation in the dialog box.
 
    Add a new animation
 
-Manage an animation libraries
+Managing animation libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For reusability, the animation is registered in a list in the animation library resource. If you add an animation to AnimationPlayer without specifying any particular settings, the animation will be registered in the [Global] animation library that AnimationPlayer has by default.
@@ -373,7 +373,7 @@ If you want to reset the tracks in the editor, select the AnimationPlayer node,
 open the **Animation** bottom panel then choose **Apply Reset** in the
 animation editor's **Edit** dropdown menu.
 
-when using the keyframe icon next to a property in the inspector the editor will
+When using the keyframe icon next to a property in the inspector the editor will
 ask you to automatically create a RESET track.
 
 .. note:: RESET tracks is also used as a reference value for blending. See also `For better blending <../animation/animation_tree.html#for-better-blending>`__.
