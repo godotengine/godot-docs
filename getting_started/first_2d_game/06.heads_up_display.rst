@@ -285,12 +285,20 @@ mobs to remove themselves. We can do this with the "group" feature.
 
 In the ``Mob`` scene, select the root node and click the "Node" tab next to the
 Inspector (the same place where you find the node's signals). Next to "Signals",
-click "Groups" and you can type a new group name and click "Add".
+click "Groups" to open the group overview
+and the "+" button to open the "Create New Group" dialog.
 
 .. image:: img/group_tab.webp
 
-Now all mobs will be in the "mobs" group. We can then add the following line to
-the ``new_game()`` function in ``Main``:
+Name the group ``mobs`` and click "ok" to add a new scene group.
+
+.. image:: img/add_group_dialog.webp
+
+Now all mobs will be in the "mobs" group.
+
+.. image:: img/scene_group_mobs.webp
+
+We can then add the following line to the ``new_game()`` function in ``Main``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
