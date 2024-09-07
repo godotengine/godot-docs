@@ -515,7 +515,7 @@ The ``.shader`` file extension is no longer supported, which means you must
 rename ``.shader`` files to ``.gdshader`` and update references accordingly in
 scene/resource files using an external text editor.
 
-Some notable renames you will need to perform in shaders are:
+Some notable changes you will need to perform in shaders are:
 
 - Texture filter and repeat modes are now set on individual uniforms, rather
   than the texture files themselves.
@@ -524,6 +524,7 @@ Some notable renames you will need to perform in shaders are:
 - :ref:`Built in matrix variables were renamed. <doc_spatial_shader>`
 - Particles shaders no longer use the ``vertex()`` processor function. Instead
   they use ``start()`` and ``process()``.
+- Viewports are no longer flipped, so screen reading shaders need to consider a new origin.
 
 See :ref:`doc_shading_language` for more information.
 
