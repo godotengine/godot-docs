@@ -136,6 +136,8 @@ it manually with the following code:
     void vertex() {
         VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
         NORMAL = normalize((MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
+        // If the mesh you apply this shader to involves non-uniform scaling, you may need to calculate the correct normals using the following method:
+        //NORMAL = normalize((transpose(inverse(MODELVIEW_MATRIX)) * vec4(NORMAL, 0.0)).xyz);
         BINORMAL = normalize((MODELVIEW_MATRIX * vec4(BINORMAL, 0.0)).xyz);
         TANGENT = normalize((MODELVIEW_MATRIX * vec4(TANGENT, 0.0)).xyz);
     }
