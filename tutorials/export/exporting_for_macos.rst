@@ -13,6 +13,11 @@ macOS apps exported with the official export templates are exported as a single 
 This bundle can be exported as is, packed in a ZIP archive or DMG disk image (only supported when exporting from a computer running macOS).
 `Universal binaries for macOS support both Intel x86_64 and ARM64 (Apple silicon, i.e. M1) architectures <https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary>`__.
 
+.. warning::
+    Due to file system limitations, raw ``.app`` bundles exported from Windows lack ``executable`` flag and won't run on macOS.
+    To fix it, use the ``chmod +x {executable_name}`` command after transferring the exported ``.app`` to macOS or Linux. Projects exported as ``.zip`` aren't affected by this issue.
+    The main executable located in the ``Contents/MacOS/`` subfolder, as well as optional helper executables in the ``Contents/Helpers/`` subfolder, should have ``executable`` permission for the ``.app`` bundle to be valid.
+
 Requirements
 ------------
 
