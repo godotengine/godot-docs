@@ -188,7 +188,7 @@ given build type.
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Command                                                          | Description                                                                                                                                             |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``-s``, ``--script <script>``                                    | |release| Run a script.                                                                                                                                 |
+| ``-s``, ``--script <script>``                                    | |release| Run a script. ``<script>`` must be a resource path relative to the project (``myscript.gd`` will be interpreted as ``res://myscript.gd``) or an aboslute filesystem path (for example on Windows ``C:/tmp/myscript.gd``)                                                                                                                                 |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--check-only``                                                 | |release| Only parse for errors and quit (use with ``--script``).                                                                                       |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -288,15 +288,15 @@ For example, the full command for exporting your game (as explained below) might
 
     godot --headless --path path_to_your_project --export-release my_export_preset_name game.exe
 
-When starting from a subdirectory of your project, use the ``--upwards`` argument for Godot to 
+When starting from a subdirectory of your project, use the ``--upwards`` argument for Godot to
 automatically find the ``project.godot`` file by recursively searching the parent directories.
 
-For example, running a scene (as explained below) nested in a subdirectory might look like this 
+For example, running a scene (as explained below) nested in a subdirectory might look like this
 when your working directory is in the same path:
 
 ::
 
-    godot --upwards nested_scene.tscn 
+    godot --upwards nested_scene.tscn
 
 
 ..
@@ -353,7 +353,7 @@ Otherwise, an error will be thrown upon opening the project.
 Running the game
 ----------------
 
-To run the game, execute Godot within the project directory or with the project path as explained above.  
+To run the game, execute Godot within the project directory or with the project path as explained above.
 
 ::
 
@@ -452,6 +452,11 @@ And how to run it:
 
 If no ``project.godot`` exists at the path, current path is assumed to be the
 current working directory (unless ``--path`` is specified).
+
+The script path will be interepreted as a resource path relative to
+the project, here ``res://sayhello.gd``. You can also use an absolute
+filesystem path instead, which is useful if the script is located
+outside of the project's directory.
 
 The first line of ``sayhello.gd`` above is commonly referred to as
 a *shebang*. If the Godot binary is in your ``PATH`` as ``godot``,
