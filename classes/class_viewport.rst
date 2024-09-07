@@ -193,6 +193,8 @@ Methods
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Rect2<class_Rect2>`                                                                     | :ref:`get_visible_rect<class_Viewport_method_get_visible_rect>`\ (\ ) |const|                                                                                                                                                                                         |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                        | :ref:`gui_cancel_drag<class_Viewport_method_gui_cancel_drag>`\ (\ )                                                                                                                                                                                                   |
+   +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                                                 | :ref:`gui_get_drag_data<class_Viewport_method_gui_get_drag_data>`\ (\ ) |const|                                                                                                                                                                                       |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Control<class_Control>`                                                                 | :ref:`gui_get_focus_owner<class_Viewport_method_gui_get_focus_owner>`\ (\ ) |const|                                                                                                                                                                                   |
@@ -2078,6 +2080,18 @@ Returns the viewport's RID from the :ref:`RenderingServer<class_RenderingServer>
 :ref:`Rect2<class_Rect2>` **get_visible_rect**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_visible_rect>`
 
 Returns the visible rectangle in global screen coordinates.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_method_gui_cancel_drag:
+
+.. rst-class:: classref-method
+
+|void| **gui_cancel_drag**\ (\ ) :ref:`🔗<class_Viewport_method_gui_cancel_drag>`
+
+Cancels the drag operation that was previously started through :ref:`Control._get_drag_data<class_Control_private_method__get_drag_data>` or forced with :ref:`Control.force_drag<class_Control_method_force_drag>`.
 
 .. rst-class:: classref-item-separator
 

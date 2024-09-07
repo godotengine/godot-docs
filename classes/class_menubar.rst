@@ -12,14 +12,14 @@ MenuBar
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A horizontal menu bar that creates a :ref:`MenuButton<class_MenuButton>` for each :ref:`PopupMenu<class_PopupMenu>` child.
+A horizontal menu bar that creates a menu for each :ref:`PopupMenu<class_PopupMenu>` child.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A horizontal menu bar that creates a :ref:`MenuButton<class_MenuButton>` for each :ref:`PopupMenu<class_PopupMenu>` child. New items are created by adding :ref:`PopupMenu<class_PopupMenu>`\ s to this node.
+A horizontal menu bar that creates a menu for each :ref:`PopupMenu<class_PopupMenu>` child. New items are created by adding :ref:`PopupMenu<class_PopupMenu>`\ s to this node.
 
 .. rst-class:: classref-reftable-group
 
@@ -185,6 +185,10 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 
 If ``true``, **MenuBar** will use system global menu when supported.
 
+\ **Note:** If ``true`` and global menu is supported, this node is not displayed, has zero size, and all its child nodes except :ref:`PopupMenu<class_PopupMenu>`\ s are inaccessible.
+
+\ **Note:** This property overrides the value of the :ref:`PopupMenu.prefer_native_menu<class_PopupMenu_property_prefer_native_menu>` property of the child nodes.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -200,7 +204,7 @@ If ``true``, **MenuBar** will use system global menu when supported.
 - |void| **set_start_index**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_start_index**\ (\ )
 
-Position in the global menu to insert first **MenuBar** item at.
+Position order in the global menu to insert **MenuBar** items at. All menu items in the **MenuBar** are always inserted as a continuous range. Menus with lower :ref:`start_index<class_MenuBar_property_start_index>` are inserted first. Menus with :ref:`start_index<class_MenuBar_property_start_index>` equal to ``-1`` are inserted last.
 
 .. rst-class:: classref-item-separator
 

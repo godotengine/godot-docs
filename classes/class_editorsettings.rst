@@ -67,11 +67,15 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debugger/profiler_frame_max_functions<class_EditorSettings_property_debugger/profiler_frame_max_functions>`                                                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debugger/profiler_target_fps<class_EditorSettings_property_debugger/profiler_target_fps>`                                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`debugger/remote_inspect_refresh_interval<class_EditorSettings_property_debugger/remote_inspect_refresh_interval>`                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`debugger/remote_scene_tree_refresh_interval<class_EditorSettings_property_debugger/remote_scene_tree_refresh_interval>`                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`docks/filesystem/always_show_folders<class_EditorSettings_property_docks/filesystem/always_show_folders>`                                                                                                   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`docks/filesystem/other_file_extensions<class_EditorSettings_property_docks/filesystem/other_file_extensions>`                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`docks/filesystem/textfile_extensions<class_EditorSettings_property_docks/filesystem/textfile_extensions>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -853,6 +857,18 @@ The maximum number of script functions that can be displayed per frame in the pr
 
 ----
 
+.. _class_EditorSettings_property_debugger/profiler_target_fps:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debugger/profiler_target_fps** :ref:`🔗<class_EditorSettings_property_debugger/profiler_target_fps>`
+
+The target frame rate shown in the visual profiler graph, in frames per second.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_debugger/remote_inspect_refresh_interval:
 
 .. rst-class:: classref-property
@@ -891,13 +907,25 @@ If ``true``, displays folders in the FileSystem dock's bottom pane when split mo
 
 ----
 
+.. _class_EditorSettings_property_docks/filesystem/other_file_extensions:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **docks/filesystem/other_file_extensions** :ref:`🔗<class_EditorSettings_property_docks/filesystem/other_file_extensions>`
+
+A comma separated list of unsupported file extensions to show in the FileSystem dock, e.g. ``"ico,icns"``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_docks/filesystem/textfile_extensions:
 
 .. rst-class:: classref-property
 
 :ref:`String<class_String>` **docks/filesystem/textfile_extensions** :ref:`🔗<class_EditorSettings_property_docks/filesystem/textfile_extensions>`
 
-List of file extensions to consider as editable text files in the FileSystem dock (by double-clicking on the files).
+A comma separated list of file extensions to consider as editable text files in the FileSystem dock (by double-clicking on the files), e.g. ``"txt,md,cfg,ini,log,json,yml,yaml,toml,xml"``.
 
 .. rst-class:: classref-item-separator
 
@@ -3742,6 +3770,8 @@ Specifies how the Play window is launched relative to the Android editor.
 - **Same as Editor** will launch the Play window in the same window as the Editor.
 
 - **Side-by-side with Editor** will launch the Play window side-by-side with the Editor window.
+
+- **Launch in PiP mode** will launch the Play window directly in picture-in-picture (PiP) mode if PiP mode is supported and enabled. When maximized, the Play window will occupy the same window as the Editor.
 
 \ **Note:** Only available in the Android editor.
 
