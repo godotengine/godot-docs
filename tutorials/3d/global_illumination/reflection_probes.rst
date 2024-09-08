@@ -194,3 +194,7 @@ advanced project setting.
 When using the Forward Mobile backend, only 8 reflection probes can be applied on each
 individual Mesh *resource*. If there are more reflection probes affecting a single mesh,
 not all of them will be rendered on the mesh.
+
+Similarly, when using the Compatibility backend, up to 2 reflection probes can be applied
+per mesh. If more than 2 reflection probes affect a single mesh, additional probes will
+not be rendered.
