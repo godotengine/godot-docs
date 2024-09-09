@@ -19,7 +19,9 @@ Imports a WAV audio file for playback.
 Description
 -----------
 
-WAV is an uncompressed format, which can provide higher quality compared to Ogg Vorbis and MP3. It also has the lowest CPU cost to decode. This means high numbers of WAV sounds can be played at the same time, even on low-end deviceS.
+WAV is an uncompressed format, which can provide higher quality compared to Ogg Vorbis and MP3. It also has the lowest CPU cost to decode. This means high numbers of WAV sounds can be played at the same time, even on low-end devices.
+
+By default, Godot imports WAV files using the lossy Quite OK Audio compression. You may change this by setting the :ref:`compress/mode<class_ResourceImporterWAV_property_compress/mode>` property.
 
 .. rst-class:: classref-introduction-group
 
@@ -37,7 +39,7 @@ Properties
    :widths: auto
 
    +---------------------------+--------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`     | :ref:`compress/mode<class_ResourceImporterWAV_property_compress/mode>`         | ``0``     |
+   | :ref:`int<class_int>`     | :ref:`compress/mode<class_ResourceImporterWAV_property_compress/mode>`         | ``2``     |
    +---------------------------+--------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`     | :ref:`edit/loop_begin<class_ResourceImporterWAV_property_edit/loop_begin>`     | ``0``     |
    +---------------------------+--------------------------------------------------------------------------------+-----------+
@@ -71,7 +73,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compress/mode** = ``0`` :ref:`🔗<class_ResourceImporterWAV_property_compress/mode>`
+:ref:`int<class_int>` **compress/mode** = ``2`` :ref:`🔗<class_ResourceImporterWAV_property_compress/mode>`
 
 The compression mode to use on import.
 

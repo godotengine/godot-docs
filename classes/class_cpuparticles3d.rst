@@ -91,6 +91,8 @@ Properties
    +---------------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------------+
    | :ref:`Vector3<class_Vector3>`                           | :ref:`emission_ring_axis<class_CPUParticles3D_property_emission_ring_axis>`                 |                            |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`float<class_float>`                               | :ref:`emission_ring_cone_angle<class_CPUParticles3D_property_emission_ring_cone_angle>`     |                            |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------------+
    | :ref:`float<class_float>`                               | :ref:`emission_ring_height<class_CPUParticles3D_property_emission_ring_height>`             |                            |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------------+----------------------------+
    | :ref:`float<class_float>`                               | :ref:`emission_ring_inner_radius<class_CPUParticles3D_property_emission_ring_inner_radius>` |                            |
@@ -964,6 +966,25 @@ Sets the initial positions to spawn particles when using :ref:`EMISSION_SHAPE_PO
 - :ref:`Vector3<class_Vector3>` **get_emission_ring_axis**\ (\ )
 
 The axis of the ring when using the emitter :ref:`EMISSION_SHAPE_RING<class_CPUParticles3D_constant_EMISSION_SHAPE_RING>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CPUParticles3D_property_emission_ring_cone_angle:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **emission_ring_cone_angle** :ref:`🔗<class_CPUParticles3D_property_emission_ring_cone_angle>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_emission_ring_cone_angle**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_emission_ring_cone_angle**\ (\ )
+
+The angle of the cone when using the emitter :ref:`EMISSION_SHAPE_RING<class_CPUParticles3D_constant_EMISSION_SHAPE_RING>`. The default angle of 90 degrees results in a ring, while an angle of 0 degrees results in a cone. Intermediate values will result in a ring where one end is larger than the other.
+
+\ **Note:** Depending on :ref:`emission_ring_height<class_CPUParticles3D_property_emission_ring_height>`, the angle may be clamped if the ring's end is reached to form a perfect cone.
 
 .. rst-class:: classref-item-separator
 
