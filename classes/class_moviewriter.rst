@@ -141,7 +141,7 @@ Called when the engine finishes writing. This occurs when the engine quits by pr
 
 :ref:`Error<enum_@GlobalScope_Error>` **_write_frame**\ (\ frame_image\: :ref:`Image<class_Image>`, audio_frame_block\: ``const int32_t*``\ ) |virtual| :ref:`🔗<class_MovieWriter_private_method__write_frame>`
 
-Called at the end of every rendered frame. The ``frame_image`` and ``audio_frame_block`` function arguments should be read from and encoded as video data. `audio_frame_block` represents a c-style array of packed audio samples, you must calculate its length yourself using the frame rate, audio sample rate, and speaker layout.
+Called at the end of every rendered frame. The ``frame_image`` and ``audio_frame_block`` function arguments should be read from and encoded as video data. ``audio_frame_block`` represents a c-style array of packed audio samples, you must calculate its length yourself using the frame rate, audio sample rate, and speaker layout.
 
 .. rst-class:: classref-item-separator
 
