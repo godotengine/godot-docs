@@ -141,7 +141,7 @@ watery effect.
 
 .. image:: img/rim.png
 
-In order to add fresnal reflectance, we will compute a fresnel term in our
+In order to add fresnel reflectance, we will compute a fresnel term in our
 fragment shader. Here, we aren't going to use a real fresnel term for
 performance reasons. Instead, we'll approximate it using the dot product of the
 ``NORMAL`` and ``VIEW`` vectors. The ``NORMAL`` vector points away from the

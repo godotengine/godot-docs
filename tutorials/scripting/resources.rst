@@ -206,7 +206,7 @@ Let's see some examples.
     export(Resource) var sub_resource
     export(Array, String) var strings
 
-    # Make sure that every parameter has a default value. 
+    # Make sure that every parameter has a default value.
     # Otherwise, there will be problems with creating and editing
     # your resource via the inspector.
     func _init(p_health = 0, p_sub_resource = null, p_strings = []):
@@ -230,7 +230,7 @@ Let's see some examples.
         using Godot;
 
         namespace ExampleProject {
-            public class BotStats : Resource
+            public partial class BotStats : Resource
             {
                 [Export]
                 public int Health { get; set; }
@@ -239,16 +239,20 @@ Let's see some examples.
                 public Resource SubResource { get; set; }
 
                 [Export]
-                public String[] Strings { get; set; }
+                public string[] Strings { get; set; }
 
-                // Make sure that every parameter has a default value. 
-                // Otherwise, there will be problems with creating and editing
-                // your resource via the inspector.
-                public BotStats(int health = 0, Resource subResource = null, String[] strings = null)
+                // Make sure you provide a parameterless constructor.
+                // In C#, a parameterless constructor is different from a
+                // constructor with all default values.
+                // Without a parameterless constructor, Godot will have problems
+                // creating and editing your resource via the inspector.
+                public BotStats() : this(0, null, null) {}
+
+                public BotStats(int health, Resource subResource, string[] strings)
                 {
                     Health = health;
                     SubResource = subResource;
-                    Strings = strings ?? new String[0];
+                    Strings = strings ?? Array.Empty<string>();
                 }
             }
         }
@@ -304,7 +308,7 @@ Let's see some examples.
         using System;
         using Godot;
 
-        public class BotStatsTable : Resource
+        public partial class BotStatsTable : Resource
         {
             private Godot.Dictionary<String, BotStats> _stats = new Godot.Dictionary<String, BotStats>();
 
@@ -357,9 +361,9 @@ Let's see some examples.
         using System;
         using Godot;
 
-        public class MyNode : Node
+        public partial class MyNode : Node
         {
-            public class MyResource : Resource
+            public partial class MyResource : Resource
             {
                 [Export]
                 public int Value { get; set; } = 5;

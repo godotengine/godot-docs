@@ -154,7 +154,7 @@ directories in your GDNative module.
 In the ``src`` folder, we'll start with creating our header file for the
 GDNative node we'll be creating. We will name it ``gdexample.h``:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     #ifndef GDEXAMPLE_H
     #define GDEXAMPLE_H
@@ -212,7 +212,7 @@ our object. It has to exist even if you don't place any code in it.
 
 Let's implement our functions by creating our ``gdexample.cpp`` file:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     #include "gdexample.h"
 
@@ -261,7 +261,7 @@ and source file like we've implemented ``GDExample`` up above. What we need now
 is a small bit of code that tells Godot about all the NativeScripts in our
 GDNative plugin.
 
-.. code-block:: C++
+.. code-block:: cpp
 
     #include "gdexample.h"
 
@@ -432,7 +432,7 @@ allows us to control the amplitude of our wave.
 
 In our ``gdexample.h`` file we simply need to add a member variable like so:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     ...
     private:
@@ -443,7 +443,7 @@ In our ``gdexample.h`` file we simply need to add a member variable like so:
 In our ``gdexample.cpp`` file we need to make a number of changes, we will only
 show the methods we end up changing, don't remove the lines we're omitting:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_register_methods() {
         register_method("_process", &GDExample::_process);
@@ -486,7 +486,7 @@ Let's do the same but for the speed of our animation and use a setter and getter
 function. Our ``gdexample.h`` header file again only needs a few more lines of
 code:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     ...
         float amplitude;
@@ -500,7 +500,7 @@ code:
 This requires a few more changes to our ``gdexample.cpp`` file, again we're only
 showing the methods that have changed so don't remove anything we're omitting:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_register_methods() {
         register_method("_process", &GDExample::_process);
@@ -565,7 +565,7 @@ would need to showcase a far more complete example.
 
 This is the required syntax:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     some_other_node->connect("the_signal", this, "my_method");
 
@@ -578,7 +578,7 @@ emit a signal every time a second has passed and pass the new location along.
 
 In our ``gdexample.h`` header file, we need to define a new member ``time_emit``:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     ...
         float time_passed;
@@ -593,7 +593,7 @@ constructor. We'll look at the other 2 needed changes one by one.
 In our ``_register_methods`` method, we need to declare our signal. This is done
 as follows:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_register_methods() {
         register_method("_process", &GDExample::_process);
@@ -609,7 +609,7 @@ type of each parameter we'll send along with this signal.
 
 Next, we'll need to change our ``_process`` method:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_process(float delta) {
         time_passed += speed * delta;

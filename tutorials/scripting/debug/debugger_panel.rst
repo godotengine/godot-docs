@@ -17,8 +17,24 @@ The Debugger tab opens automatically when the GDScript compiler reaches
 a breakpoint in your code.
 
 It gives you a `stack trace <https://en.wikipedia.org/wiki/Stack_trace>`__,
-information about the state of the object, and buttons to control
-the program's execution.
+information about the state of the object, and buttons to control the program's
+execution. When the debugger breaks on a breakpoint, a green triangle arrow is
+visible in the script editor's gutter. This arrow indicates the line of code the
+debugger broke on.
+
+.. tip::
+
+    You can create a breakpoint by clicking the gutter in the left of the script
+    editor (on the left of the line numbers). When hovering this gutter, you
+    will see a transparent red dot appearing, which turns into an opaque red dot
+    after the breakpoint is placed by clicking. Click the red dot again to
+    remove the breakpoint. Breakpoints created this way persist across editor
+    restarts, even if the script wasn't saved when exiting the editor.
+
+    You can also use the ``breakpoint`` keyword in GDScript to create a
+    breakpoint that is stored in the script itself. Unlike breakpoints created by
+    clicking in the gutter, this keyword-based breakpoint is persistent across
+    different machines when using version control.
 
 You can use the buttons in the top-right corner to:
 

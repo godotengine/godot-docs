@@ -22,7 +22,7 @@ Godot can import the following image formats:
 - PNG (``.png``)
   - Precision is limited to 8 bits per channel upon importing (no HDR images).
 - Truevision Targa (``.tga``)
-- SVG (``.svg``, ``.svgz``)
+- SVG (``.svg``)
   - SVGs are rasterized using `NanoSVG <https://github.com/memononen/nanosvg>`__
   when importing them. Support is limited; complex vectors may not render correctly.
   For complex vectors, rendering them to PNGs using Inkscape is often a better solution.
