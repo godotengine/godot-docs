@@ -70,7 +70,7 @@ open source `Sphinx <http://www.sphinx-doc.org>`_ and `ReadTheDocs
           <https://hosted.weblate.org/projects/godot-engine/godot-docs/>`_.
 
 All the contents are under the permissive Creative Commons Attribution 3.0
-(`CC-BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with
+(`CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with
 attribution to "Juan Linietsky, Ariel Manzur and the Godot Engine community".
 
 Organization of the documentation

@@ -180,8 +180,8 @@ License
 -------
 
 This documentation and every page it contains is published under the terms of
-the `Creative Commons Attribution 3.0 license (CC-BY-3.0)
-<https://tldrlegal.com/license/creative-commons-attribution-(cc)>`_, with
+the `Creative Commons Attribution 3.0 license (CC BY 3.0)
+<https://creativecommons.org/licenses/by/3.0/>`_, with
 attribution to "Juan Linietsky, Ariel Manzur and the Godot community".
 
 By contributing to the documentation on the GitHub repository, you agree that

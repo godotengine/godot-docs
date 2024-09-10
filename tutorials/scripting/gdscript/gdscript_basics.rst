@@ -192,7 +192,8 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | setget     | Defines setter and getter functions for a variable.                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------+
-| breakpoint | Editor helper for debugger breakpoints.                                                                       |
+| breakpoint | Editor helper for debugger breakpoints. Unlike breakpoints created by clicking in the gutter, ``breakpoint``  |
+|            | is stored in the script itself. This makes it persistent across different machines when using version control.|
 +------------+---------------------------------------------------------------------------------------------------------------+
 | preload    | Preloads a class or variable. See `Classes as resources`_.                                                    |
 +------------+---------------------------------------------------------------------------------------------------------------+

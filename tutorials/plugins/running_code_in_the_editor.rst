@@ -61,7 +61,7 @@ On the other hand, if you want to execute code only in game, simply negate the s
         // Code to execute when in game.
     }
 
-Pieces of code do not have either of the 2 conditions above will run both in-editor and in-game.
+Pieces of code that do not have either of the 2 conditions above will run both in-editor and in-game.
 
 Here is how a ``_process()`` function might look for you:
 

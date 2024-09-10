@@ -7,3 +7,5 @@ uint
 subtile
 implementors
 thirdparty
+inout
+findn

@@ -291,6 +291,23 @@ const registerOnScrollEvent = (function(){
       }
     }
 
+    // Change indentation from spaces to tabs for codeblocks.
+    const codeBlocks = document.querySelectorAll('.rst-content div[class^="highlight"] pre');
+    for (const codeBlock of codeBlocks) {
+      const classList = codeBlock.parentNode.parentNode.classList;
+      if (!classList.contains('highlight-gdscript') && !classList.contains('highlight-cpp')) {
+        // Only change indentation for GDScript and C++.
+        continue;
+      }
+      let html = codeBlock.innerHTML.replace(/^(<span class="w">)?( {4})/gm, '\t');
+      let html_old = "";
+      while (html != html_old) {
+        html_old = html;
+        html = html.replace(/\t( {4})/gm, '\t\t')
+      }
+      codeBlock.innerHTML = html;
+    }
+
     // See `godot_is_latest` in conf.py
     const isLatest = document.querySelector('meta[name=doc_is_latest]').content.toLowerCase() === 'true';
     if (isLatest) {
