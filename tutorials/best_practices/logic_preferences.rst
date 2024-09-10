@@ -6,6 +6,22 @@ Logic preferences
 Ever wondered whether one should approach problem X with strategy Y or Z?
 This article covers a variety of topics related to these dilemmas.
 
+Adding nodes and changing properties: which first?
+--------------------------------------------------
+
+When initializing nodes from a script at runtime, you may need to change
+properties such as the node's name or position. A common dilemma is, when
+should you change those values?
+
+It is the best practice to change values on a node before adding it to the
+scene tree. Some properties setters have code to update other
+corresponding values, and that code can be slow! For most cases, this code
+has no impact on your game's performance, but in heavy use cases such as
+procedural generation, it can bring your game to a crawl.
+
+For these reasons, it is always a best practice to set the initial values
+of a node before adding it to the scene tree.
+
 Loading vs. preloading
 ----------------------
 

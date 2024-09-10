@@ -35,7 +35,7 @@ Some example Exec Flags for various editors include:
 +=====================+=====================================================+
 | Geany/Kate          | ``{file} --line {line} --column {col}``             |
 +---------------------+-----------------------------------------------------+
-| Atom/Sublime Text   | ``{file}:{line}``                                   |
+| Atom                | ``{file}:{line}``                                   |
 +---------------------+-----------------------------------------------------+
 | JetBrains Rider     | ``{project} --line {line} {file}``                  |
 +---------------------+-----------------------------------------------------+
@@ -44,6 +44,8 @@ Some example Exec Flags for various editors include:
 | Vim (gVim)          | ``"+call cursor({line}, {col})" {file}``            |
 +---------------------+-----------------------------------------------------+
 | Emacs               | ``emacs +{line}:{col} {file}``                      |
++---------------------+-----------------------------------------------------+
+| Sublime Text        | ``{project} {file}:{line}:{column}``                |
 +---------------------+-----------------------------------------------------+
 
 .. note:: For Visual Studio Code, you will have to point to the ``code.cmd``

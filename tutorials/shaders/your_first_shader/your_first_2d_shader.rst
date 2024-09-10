@@ -22,9 +22,9 @@ fragment functions. This tutorial targets absolute beginners to shaders.
 Setup
 -----
 
-:ref:`CanvasItem <doc_canvas_item_shader>` shaders are used to draw all 2D
-     objects in Godot, while :ref:`Spatial <doc_spatial_shader>` shaders are
-     used to draw all 3D objects.
+:ref:`CanvasItem shaders <doc_canvas_item_shader>` are used to draw all 2D
+objects in Godot, while :ref:`Spatial <doc_spatial_shader>` shaders are used 
+to draw all 3D objects.
 
 In order to use a shader it must be attached inside a :ref:`Material
 <class_material>` which must be attached to an object. Materials are a type of

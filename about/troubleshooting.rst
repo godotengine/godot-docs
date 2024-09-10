@@ -91,6 +91,29 @@ resolve this, open **Project > Project Settings** and enable **Display > Window
 > Dpi > Allow Hidpi**. On top of that, make sure your project is configured to
 support :ref:`multiple resolutions <doc_multiple_resolutions>`.
 
+The editor or project appears to have washed out colors
+-------------------------------------------------------
+
+On Windows, this is usually caused by incorrect OS or monitor settings, as Godot
+currently does not support :abbr:`HDR (High Dynamic Range)` *output*
+(even though it may internally render in HDR).
+
+As `most displays are not designed to display SDR content in HDR mode <https://tftcentral.co.uk/articles/heres-why-you-should-only-enable-hdr-mode-on-your-pc-when-you-are-viewing-hdr-content>`__,
+it is recommended to disable HDR in the Windows settings when not running applications
+that use HDR output. On Windows 11, this can be done by pressing
+:kbd:`Windows + Alt + B` (this shortcut is part of the Xbox Game Bar app).
+To toggle HDR automatically based on applications currently running, you can use
+`AutoActions <https://github.com/Codectory/AutoActions>`__.
+
+If you insist on leaving HDR enabled, it is possible to somewhat improve the
+result by ensuring the display is configured to use :abbr:`HGIG (HDR Gaming Interest Group)`
+tonemapping (as opposed to :abbr:`DTM (Dynamic Tone Mapping)`), then
+`using the Windows HDR calibration app <https://support.microsoft.com/en-us/windows/calibrate-your-hdr-display-using-the-windows-hdr-calibration-app-f30f4809-3369-43e4-9b02-9eabebd23f19>`__.
+It is also strongly recommended to use Windows 11 instead of Windows 10 when using HDR.
+The end result will still likely be inferior to disabling HDR on the display, though.
+
+Support for HDR *output* is planned in a future release.
+
 The editor/project freezes or displays glitched visuals after resuming the PC from suspend
 ------------------------------------------------------------------------------------------
 

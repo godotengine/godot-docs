@@ -347,9 +347,16 @@ do:
 
     $ git push origin better-project-manager
 
-Git will ask you for your username and password, and the changes will be sent
-to your remote. If you check the fork's page on GitHub, you should see a new
-branch with your added commits.
+Git will ask you for your username and password. For your password, enter your
+GitHub Personal Access Token (PAT). If you do not have a GitHub Personal Access
+Token, or do not have one with the correct permissions for your newly forked
+repository, you will need to create one. Follow this link to create your Personal
+Access Token: `Creating a personal access token
+<https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token>`_.
+
+After you have successfully verified your account using your PAT, the changes
+will be sent to your remote repository. If you check the fork's page on GitHub,
+you should see a new branch with your added commits.
 
 Issuing a pull request
 ----------------------
@@ -511,7 +518,7 @@ will raise an error:
     hint: Updates were rejected because the tip of your current branch is behind
     hint: its remote counterpart.
 
-This is a sane behavior, Git will not let you push changes that would
+This is reasonable behavior, Git will not let you push changes that would
 override remote content. But that's actually what we want to do here, so we
 will have to *force* it:
 
@@ -522,6 +529,31 @@ will have to *force* it:
 And tadaa! Git will happily *replace* your remote branch with what you had
 locally (so make sure that's what you wanted, using ``git log``). This will
 also update the PR accordingly.
+
+Rebasing onto another branch
+----------------------------
+
+If you have accidentally opened your PR on the wrong branch, or need to target another branch
+for some reason, you might need to filter out a lot of commits that differ between the old branch
+(for example ``4.2``) and the new branch (for example ``master``). This can make rebasing difficult
+and tedious. Fortunately ``git`` has a command just for this situation, ``git rebase --onto``.
+
+If your PR was created from the ``4.2`` branch and you want to update it to instead start at ``master``
+the following steps *should* fix this in one step:
+
+.. code-block:: text
+
+    $ git rebase -i --onto master 4.2
+
+This will take all the commits on your branch *after* the ``4.2`` branch, and then splice them on top of ``master``,
+ignoring any commits from the ``4.2`` branch not on the ``master`` branch. You may still need to do some fixing, but
+this command should save you a lot of tedious work removing commits.
+
+Just like above for the interactive rebase you need to force push your branch to handle the different changes:
+
+::
+
+    $ git push --force origin better-project-manager
 
 Deleting a Git branch
 ---------------------

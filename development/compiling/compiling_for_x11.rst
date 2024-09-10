@@ -256,3 +256,10 @@ to get even faster builds.
 
 If you can't run ``pyston-scons`` after creating the symbolic link,
 make sure ``$HOME/.local/bin/`` is part of your user's ``PATH`` environment variable.
+
+.. note::
+
+    Alternatively, you can run ``python -m pip install pyston_lite_autoload``
+    then run SCons as usual. This will automatically load a subset of Pyston's
+    optimizations in any Python program you run. However, this won't bring as
+    much of a performance improvement compared to installing "full" Pyston.

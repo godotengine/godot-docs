@@ -489,7 +489,7 @@ Run command:
 
    ::
 
-      user@host:~/godot/bin$ ./bin/<godot_binary> --doctool .
+      user@host:~/godot$ ./bin/<godot_binary> --doctool .
 
 Now if you go to the ``godot/modules/summator/doc_classes`` folder, you will see
 that it contains a ``Summator.xml`` file, or any other classes, that you referenced

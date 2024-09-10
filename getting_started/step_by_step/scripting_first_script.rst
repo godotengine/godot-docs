@@ -132,7 +132,7 @@ our node's ``texture``.
     capitalized words separated by a space. In GDScript code, these properties
     are in "snake_case", which is lowercase with words separated by an underscore.
 
-    You can hover any property's name in the Inspector to see a description and
+    You can hover over any property's name in the Inspector to see a description and
     its identifier in code.
 
 Hello, world!

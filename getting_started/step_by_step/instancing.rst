@@ -117,12 +117,12 @@ There is more to instances. With this feature, you can:
 Let's try this. Open ``Ball.tscn`` and select the Ball node. In the Inspector on
 the right, click on the PhysicsMaterial property to expand it.
 
-.. image:: img/instancing_physics_material_expand.png
+.. image:: img/instancing_physics_material_expand.webp
 
-Set its Bounce property to ``2`` by clicking on the number field, typing ``2``,
+Set its Bounce property to ``0.5`` by clicking on the number field, typing ``0.5``,
 and pressing :kbd:`Enter`.
 
-.. image:: img/instancing_property_bounce_updated.png
+.. image:: img/instancing_property_bounce_updated.webp
 
 Play the game by pressing :kbd:`F5` and notice how all balls now bounce a lot
 more. As the Ball scene is a template for all instances, modifying it and saving
@@ -178,7 +178,7 @@ You can come up with a diagram like this for almost any type of game. Each
 rectangle represents an entity that's visible in the game from the player's
 perspective. The arrows tell you which scene owns which.
 
-Once you have a diagram, we recommended creating a scene for each element listed
+Once you have a diagram, we recommend creating a scene for each element listed
 in it to develop your game. You'll use instancing, either by code or directly in
 the editor, to build your tree of scenes.
 

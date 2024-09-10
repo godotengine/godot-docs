@@ -95,9 +95,10 @@ editor, and it must inherit from :ref:`class_EditorPlugin`.
 
 .. warning::
 
-    In addition to the EditorPlugin script, any other GDScript that your plugin uses
-    must *also* be a tool. Any GDScript without ``tool`` imported into the editor
-    will act like an empty file!
+    In addition to the EditorPlugin script, any other script that your plugin uses
+    must *also* be a tool.
+    * Any GDScript without ``tool`` imported into the editor will act like an empty file!
+    * Any C# class without ``[Tool]`` won't be reloaded when the project is built forcing you to re-enable the plugin!
 
 It's important to deal with initialization and clean-up of resources.
 A good practice is to use the virtual function

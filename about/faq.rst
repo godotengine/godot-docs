@@ -204,7 +204,7 @@ Windows
 - Move the Godot executable to a stable location (i.e. outside of your Downloads folder),
   so you don't accidentally move it and break the shortcut in the future.
 - Right-click the Godot executable and choose **Create Shortcut**.
-- Move the created shortcut to ``%LOCALAPPDATA%\Microsoft\Windows\Start Menu\Programs``.
+- Move the created shortcut to ``%APPDATA%\Microsoft\Windows\Start Menu\Programs``.
   This is the user-wide location for shortcuts that will appear in the Start menu.
   You can also pin Godot in the task bar by right-clicking the executable and choosing
   **Pin to Task Bar**.
@@ -435,9 +435,6 @@ size can make it a suitable alternative to frameworks like Electron or Qt.
 When creating a non-game application, make sure to enable
 :ref:`low-processor mode <class_ProjectSettings_property_application/run/low_processor_mode>`
 in the Project Settings to decrease CPU and GPU usage.
-
-That said, we wouldn't recommend using Godot to create a *mobile* application
-since low-processor mode isn't supported on mobile platforms yet.
 
 Check out `Material Maker <https://github.com/RodZill4/material-maker>`__ and
 `Pixelorama <https://github.com/Orama-Interactive/Pixelorama>`__ for examples of

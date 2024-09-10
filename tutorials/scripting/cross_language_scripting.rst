@@ -89,6 +89,9 @@ with :ref:`new() <class_CSharpScript_method_new>`.
     ``Invalid call. Nonexistent function `new` in base``.
 
     For example, MyCoolNode.cs should contain a class named MyCoolNode.
+    
+    The C# class needs to derive a Godot class, for example ``Godot.Object``.
+    Otherwise, the same error will occur.
 
     You also need to check your ``.cs`` file is referenced in the project's
     ``.csproj`` file. Otherwise, the same error will occur.
