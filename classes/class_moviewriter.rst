@@ -25,7 +25,7 @@ Godot has 2 built-in **MovieWriter**\ s:
 
 - AVI container with MJPEG for video and uncompressed audio (``.avi`` file extension). Lossy compression, medium file sizes, fast encoding. The lossy compression quality can be adjusted by changing :ref:`ProjectSettings.editor/movie_writer/mjpeg_quality<class_ProjectSettings_property_editor/movie_writer/mjpeg_quality>`. The resulting file can be viewed in most video players, but it must be converted to another format for viewing on the web or by Godot with :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`. MJPEG does not support transparency. AVI output is currently limited to a file of 4 GB in size at most.
 
-- PNG image sequence for video and WAV for audio (``.png`` file extension). Lossless compression, large file sizes, slow encoding. Designed to be encoded to a video file with another tool such as `FFmpeg <https://ffmpeg.org/>`__ after recording. Transparency is currently not supported, even if the root viewport is set to be transparent.
+- PNG image sequence for video and WAV for audio (``.png`` file extension). Lossless compression, large file sizes, slow encoding. Designed to be encoded to a video file with another tool such as `FFmpeg <https://ffmpeg.org/>`__ after recording. Transparency is supported for png sequences if the root viewport is set to be transparent.
 
 If you need to encode to a different format or pipe a stream through third-party software, you can extend the **MovieWriter** class to create your own movie writers. This should typically be done using GDExtension for performance reasons.
 
@@ -139,9 +139,9 @@ Called when the engine finishes writing. This occurs when the engine quits by pr
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_write_frame**\ (\ frame_image\: :ref:`Image<class_Image>`, audio_frame_block\: ``const void*``\ ) |virtual| :ref:`🔗<class_MovieWriter_private_method__write_frame>`
+:ref:`Error<enum_@GlobalScope_Error>` **_write_frame**\ (\ frame_image\: :ref:`Image<class_Image>`, audio_frame_block\: ``const int32_t*``\ ) |virtual| :ref:`🔗<class_MovieWriter_private_method__write_frame>`
 
-Called at the end of every rendered frame. The ``frame_image`` and ``audio_frame_block`` function arguments should be written to.
+Called at the end of every rendered frame. The ``frame_image`` and ``audio_frame_block`` function arguments should be read from and encoded as video data. `audio_frame_block` represents a c-style array of packed audio samples, you must calculate its length yourself using the frame rate, audio sample rate, and speaker layout.
 
 .. rst-class:: classref-item-separator
 
