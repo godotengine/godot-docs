@@ -410,8 +410,9 @@ table to find its new name.
   converter *should* handle this automatically, but this relies on custom code that
   may not work in 100% of situations.
 - AcceptDialog's ``set_autowrap()`` is now ``set_autowrap_mode()``.
-- AnimationNode's ``process()`` is now ``_process()`` (note the leading underscore, which denotes a virtual method).
-- AnimationPlayer's ``add_animation()`` is now ``add_animation_library()`` and now uses :ref:`class_animationLibraries`. 
+- AnimationNode's ``process()`` is now ``_process()``
+  (note the leading underscore, which denotes a virtual method).
+- AnimationPlayer's ``add_animation()`` is now ``add_animation_library()`` and now uses an :ref:`class_AnimationLibrary`. 
 - AnimationTree's ``set_process_mode()`` is now ``set_process_callback()``.
 - Array's ``empty()`` is now ``is_empty()``.
 - Array's ``invert()`` is now ``reverse()``.
@@ -421,12 +422,13 @@ table to find its new name.
 - Camera2D's ``get_h_offset()`` is now ``get_drag_horizontal_offset()``.
 - Camera2D's ``get_v_offset()`` is now ``get_drag_vertical_offset()``.
 - Camera2D's ``set_h_offset()`` is now ``set_drag_horizontal_offset()``.
-- Camera2D's ``set_v_offset()`` is now ``set_drag_vertical_offset()``.f
+- Camera2D's ``set_v_offset()`` is now ``set_drag_vertical_offset()``.
 - CanvasItem's ``raise()`` is now ``move_to_front()``.
 - CanvasItem's ``update()`` is now ``queue_redraw()``.
 - Control's ``get_stylebox()`` is now ``get_theme_stylebox()``.
 - Control's ``set_tooltip()`` is now ``set_tooltip_text()``.
-- EditorNode3DGizmoPlugin's ``create_gizmo()`` is now ``_create_gizmo()`` (note the leading underscore, which denotes a virtual method).
+- EditorNode3DGizmoPlugin's ``create_gizmo()`` is now ``_create_gizmo()``
+  (note the leading underscore, which denotes a virtual method).
 - ENetMultiplayerPeer's ``get_peer_port()`` is now ``get_peer()``.
 - FileDialog's ``get_mode()`` is now ``get_file_mode()``.
 - FileDialog's ``set_mode()`` is now ``set_file_mode()``.
@@ -448,7 +450,8 @@ table to find its new name.
 - ParticleProcessMaterial's ``set_flag()`` is now ``set_particle_flag()``.
 - PhysicsTestMotionResult2D's ``get_motion()`` is now ``get_travel()``.
 - RenderingServer's ``get_render_info()`` is now ``get_rendering_info()``.
-- ResourceFormatLoader's ``get_dependencies()`` is now ``_get_dependencies()`` (note the leading underscore, which denotes a virtual method).
+- ResourceFormatLoader's ``get_dependencies()`` is now ``_get_dependencies()``
+  (note the leading underscore, which denotes a virtual method).
 - ResourceFormatLoader's ``load()`` is now ``_load()``.
 - SceneTree's ``change_scene()`` is now ``change_scene_to_file()``.
 - Shortcut's ``is_valid()`` is now ``has_valid_event()``.
