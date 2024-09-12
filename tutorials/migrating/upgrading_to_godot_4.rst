@@ -57,7 +57,7 @@ Godot 3.x for the following reasons:
     generation) integrated graphics, this will prevent the project from running
     on such hardware after upgrading.
     `Software OpenGL implementations <https://github.com/pal1000/mesa-dist-win>`__
-    can be used to bypass this limitation, but they're too slow for gaming.
+    can be used to bypass this limitation, but they're too slow for heavy gaming,LLVMPipe is the recommended software OpenGL implementation,but softpipe is also used,but slower and not recommended unless you cant use LLVMPipe at this point.
 
 Caveats of upgrading
 ^^^^^^^^^^^^^^^^^^^^
