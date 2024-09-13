@@ -819,7 +819,7 @@ vec_type pow( |vec_type| x, |vec_type| y)
 
 |vec_type| **roundEven** ( |vec_type| x )
 
-    returns a value equal to the nearest integer to x.
+    Returns a value equal to the nearest integer to x.
 
     The fractional part of 0.5 will round toward the nearest even integer.
     For example, both 3.5 and 4.5 will round to 4.0.
