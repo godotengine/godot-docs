@@ -244,7 +244,7 @@ Here is the full plugin script:
         public override Texture2D _GetPluginIcon()
         {
             // Must return some kind of Texture for the icon.
-            return EditorInterface.GetEditorTheme().GetIcon("Node", "EditorIcons");
+            return EditorInterface.Singleton.GetEditorTheme().GetIcon("Node", "EditorIcons");
         }
     }
     #endif
