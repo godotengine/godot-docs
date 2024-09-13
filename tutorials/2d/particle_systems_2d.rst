@@ -208,7 +208,16 @@ at 2 frames per second. Note this does not slow down the particle system itself.
 Fract Delta
 ~~~~~~~~~~~
 
-This can be used to turn Fract Delta on or off.
+Setting Fract Delta to ``true`` results in fractional delta calculation,
+which has a smoother particles display effect.
+This increased smoothness stems from higher accuracy.
+The difference is more noticeable in systems with high randomness or fast-moving particles.
+It helps maintain the visual consistency of the particle system,
+making sure that each particle's motion aligns with its actual lifespan.
+Without it, particles might appear to jump or move more than they should in a single frame
+if they are emitted at a point within the frame.
+The greater accuracy has a performance tradeoff,
+particularly in systems with a higher amount of particles.
 
 Drawing parameters
 ------------------
