@@ -3364,7 +3364,7 @@ Bitwise operations
 
 |vec_int_type| **bitfieldExtract** ( |vec_int_type| value, int offset, int bits )
 
-    Eextracts a subset of the bits of value and returns it in the least significant bits of the result.
+    Extracts a subset of the bits of value and returns it in the least significant bits of the result.
     The range of bits extracted is ``[offset, offset + bits - 1]``.
 
     The most significant bits of the result will be set to zero.
