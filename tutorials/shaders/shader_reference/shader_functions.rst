@@ -143,7 +143,7 @@ vec_type sin( |vec_type| angle)
     Return the sine of the parameter.
 
     :param angle:
-        takehe quantity, in radians, of which to return the sine
+        the quantity, in radians, of which to return the sine
 
     :return:
         the trigonometric sine of ``angle``.
