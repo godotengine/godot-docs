@@ -188,7 +188,7 @@ given build type.
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Command                                                          | Description                                                                                                                                             |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``-s``, ``--script <script>``                                    | |release| Run a script. ``<script>`` must be a resource path relative to the project (``myscript.gd`` will be interpreted as ``res://myscript.gd``) or an aboslute filesystem path (for example on Windows ``C:/tmp/myscript.gd``)                                                                                                                                 |
+| ``-s``, ``--script <script>``                                    | |release| Run a script. ``<script>`` must be a resource path relative to the project (``myscript.gd`` will be interpreted as ``res://myscript.gd``) or an absolute filesystem path (for example on Windows ``C:/tmp/myscript.gd``)                                                                                                                                 |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--check-only``                                                 | |release| Only parse for errors and quit (use with ``--script``).                                                                                       |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -453,7 +453,7 @@ And how to run it:
 If no ``project.godot`` exists at the path, current path is assumed to be the
 current working directory (unless ``--path`` is specified).
 
-The script path will be interepreted as a resource path relative to
+The script path will be interpreted as a resource path relative to
 the project, here ``res://sayhello.gd``. You can also use an absolute
 filesystem path instead, which is useful if the script is located
 outside of the project's directory.
