@@ -31,13 +31,62 @@ Methods
 .. table::
    :widths: auto
 
-   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void| | :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>`\ (\ paths\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual|                                                                                                                            |
-   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void| | :ref:`add_context_menu_item<class_EditorContextMenuPlugin_method_add_context_menu_item>`\ (\ name\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`, icon\: :ref:`Texture2D<class_Texture2D>` = null, shortcut\: :ref:`Shortcut<class_Shortcut>` = null\ ) |
-   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void| | :ref:`add_menu_shortcut<class_EditorContextMenuPlugin_method_add_menu_shortcut>`\ (\ shortcut\: :ref:`Shortcut<class_Shortcut>`, callback\: :ref:`Callable<class_Callable>`\ )                                                                                                     |
-   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>`\ (\ paths\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual|                                                                                                     |
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`add_context_menu_item<class_EditorContextMenuPlugin_method_add_context_menu_item>`\ (\ name\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`, icon\: :ref:`Texture2D<class_Texture2D>` = null\ )                             |
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`add_context_menu_item_from_shortcut<class_EditorContextMenuPlugin_method_add_context_menu_item_from_shortcut>`\ (\ name\: :ref:`String<class_String>`, shortcut\: :ref:`Shortcut<class_Shortcut>`, icon\: :ref:`Texture2D<class_Texture2D>` = null\ ) |
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`add_menu_shortcut<class_EditorContextMenuPlugin_method_add_menu_shortcut>`\ (\ shortcut\: :ref:`Shortcut<class_Shortcut>`, callback\: :ref:`Callable<class_Callable>`\ )                                                                              |
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_EditorContextMenuPlugin_ContextMenuSlot:
+
+.. rst-class:: classref-enumeration
+
+enum **ContextMenuSlot**: :ref:`🔗<enum_EditorContextMenuPlugin_ContextMenuSlot>`
+
+.. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_SCENE_TREE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_SCENE_TREE** = ``0``
+
+Context menu of Scene dock. :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with a list of paths to currently selected nodes, while option callback will receive the list of currently selected nodes.
+
+.. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_FILESYSTEM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_FILESYSTEM** = ``1``
+
+Context menu of FileSystem dock. :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>` and option callback will be called with list of paths of the currently selected files.
+
+.. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_FILESYSTEM_CREATE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_FILESYSTEM_CREATE** = ``3``
+
+The "Create..." submenu of FileSystem dock's context menu. :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>` and option callback will be called with list of paths of the currently selected files.
+
+.. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_SCRIPT_EDITOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_SCRIPT_EDITOR** = ``2``
+
+Context menu of Scene dock. :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with the path to the currently edited script, while option callback will receive reference to that script.
 
 .. rst-class:: classref-section-separator
 
@@ -54,7 +103,7 @@ Method Descriptions
 
 |void| **_popup_menu**\ (\ paths\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual| :ref:`🔗<class_EditorContextMenuPlugin_private_method__popup_menu>`
 
-Called when creating a context menu, custom options can be added by using the :ref:`add_context_menu_item<class_EditorContextMenuPlugin_method_add_context_menu_item>` function.
+Called when creating a context menu, custom options can be added by using the :ref:`add_context_menu_item<class_EditorContextMenuPlugin_method_add_context_menu_item>` or :ref:`add_context_menu_item_from_shortcut<class_EditorContextMenuPlugin_method_add_context_menu_item_from_shortcut>` functions. ``paths`` contains currently selected paths (depending on menu), which can be used to conditionally add options.
 
 .. rst-class:: classref-item-separator
 
@@ -64,16 +113,36 @@ Called when creating a context menu, custom options can be added by using the :r
 
 .. rst-class:: classref-method
 
-|void| **add_context_menu_item**\ (\ name\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`, icon\: :ref:`Texture2D<class_Texture2D>` = null, shortcut\: :ref:`Shortcut<class_Shortcut>` = null\ ) :ref:`🔗<class_EditorContextMenuPlugin_method_add_context_menu_item>`
+|void| **add_context_menu_item**\ (\ name\: :ref:`String<class_String>`, callback\: :ref:`Callable<class_Callable>`, icon\: :ref:`Texture2D<class_Texture2D>` = null\ ) :ref:`🔗<class_EditorContextMenuPlugin_method_add_context_menu_item>`
 
-Add custom options to the context menu of the currently specified slot.
-
-To trigger a ``shortcut`` before the context menu is created, please additionally call the :ref:`add_menu_shortcut<class_EditorContextMenuPlugin_method_add_menu_shortcut>` function.
+Add custom option to the context menu of the plugin's specified slot. When the option is activated, ``callback`` will be called. Callback should take single :ref:`Array<class_Array>` argument; array contents depend on context menu slot.
 
 ::
 
     func _popup_menu(paths):
         add_context_menu_item("File Custom options", handle, ICON)
+
+If you want to assign shortcut to the menu item, use :ref:`add_context_menu_item_from_shortcut<class_EditorContextMenuPlugin_method_add_context_menu_item_from_shortcut>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorContextMenuPlugin_method_add_context_menu_item_from_shortcut:
+
+.. rst-class:: classref-method
+
+|void| **add_context_menu_item_from_shortcut**\ (\ name\: :ref:`String<class_String>`, shortcut\: :ref:`Shortcut<class_Shortcut>`, icon\: :ref:`Texture2D<class_Texture2D>` = null\ ) :ref:`🔗<class_EditorContextMenuPlugin_method_add_context_menu_item_from_shortcut>`
+
+Add custom option to the context menu of the plugin's specified slot. The option will have the ``shortcut`` assigned and reuse its callback. The shortcut has to be registered beforehand with :ref:`add_menu_shortcut<class_EditorContextMenuPlugin_method_add_menu_shortcut>`.
+
+::
+
+    func _init():
+        add_menu_shortcut(SHORTCUT, handle)
+    
+    func _popup_menu(paths):
+        add_context_menu_item_from_shortcut("File Custom options", SHORTCUT, ICON)
 
 .. rst-class:: classref-item-separator
 
@@ -85,14 +154,12 @@ To trigger a ``shortcut`` before the context menu is created, please additionall
 
 |void| **add_menu_shortcut**\ (\ shortcut\: :ref:`Shortcut<class_Shortcut>`, callback\: :ref:`Callable<class_Callable>`\ ) :ref:`🔗<class_EditorContextMenuPlugin_method_add_menu_shortcut>`
 
-To register the shortcut for the context menu, call this function within the :ref:`Object._init<class_Object_private_method__init>` function, even if the context menu has not been created yet.
-
-Note that this method should only be invoked from :ref:`Object._init<class_Object_private_method__init>`; otherwise, the shortcut will not be registered correctly.
+Registers a shortcut associated with the plugin's context menu. This method should be called once (e.g. in plugin's :ref:`Object._init<class_Object_private_method__init>`). ``callback`` will be called when user presses the specified ``shortcut`` while the menu's context is in effect (e.g. FileSystem dock is focused). Callback should take single :ref:`Array<class_Array>` argument; array contents depend on context menu slot.
 
 ::
 
     func _init():
-        add_menu_shortcut(SHORTCUT, handle);
+        add_menu_shortcut(SHORTCUT, handle)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

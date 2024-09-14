@@ -77,6 +77,8 @@ Properties
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`String<class_String>`         | :ref:`nodes/root_type<class_ResourceImporterScene_property_nodes/root_type>`                                     | ``""``    |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`nodes/use_node_type_suffixes<class_ResourceImporterScene_property_nodes/use_node_type_suffixes>`           | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`             | :ref:`skins/use_named_skins<class_ResourceImporterScene_property_skins/use_named_skins>`                         | ``true``  |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
 
@@ -304,6 +306,18 @@ The uniform scale to use for the scene root. The default value of ``1.0`` will n
 :ref:`String<class_String>` **nodes/root_type** = ``""`` :ref:`🔗<class_ResourceImporterScene_property_nodes/root_type>`
 
 Override for the root node type. If empty, the root node will use what the scene specifies, or :ref:`Node3D<class_Node3D>` if the scene does not specify a root type. Using a node type that inherits from :ref:`Node3D<class_Node3D>` is recommended. Otherwise, you'll lose the ability to position the node directly in the 3D editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterScene_property_nodes/use_node_type_suffixes:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **nodes/use_node_type_suffixes** = ``true`` :ref:`🔗<class_ResourceImporterScene_property_nodes/use_node_type_suffixes>`
+
+If ``true``, use suffixes in the node names to determine the node type, such as ``-col`` for collision shapes. Disabling this makes editor-imported files more similar to the original files, and more similar to importing files at runtime. See :doc:`Node type customization using name suffixes <../tutorials/assets_pipeline/importing_3d_scenes/node_type_customization>` for more information.
 
 .. rst-class:: classref-item-separator
 

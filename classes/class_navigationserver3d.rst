@@ -289,6 +289,12 @@ Methods
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`region_create<class_NavigationServer3D_method_region_create>`\ (\ )                                                                                                                                                                                                                                                                                                    |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`region_get_closest_point<class_NavigationServer3D_method_region_get_closest_point>`\ (\ region\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                                                                                                                                                            |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`region_get_closest_point_normal<class_NavigationServer3D_method_region_get_closest_point_normal>`\ (\ region\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                                                                                                                                              |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`region_get_closest_point_to_segment<class_NavigationServer3D_method_region_get_closest_point_to_segment>`\ (\ region\: :ref:`RID<class_RID>`, start\: :ref:`Vector3<class_Vector3>`, end\: :ref:`Vector3<class_Vector3>`, use_collision\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                   |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`region_get_connection_pathway_end<class_NavigationServer3D_method_region_get_connection_pathway_end>`\ (\ region\: :ref:`RID<class_RID>`, connection\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`region_get_connection_pathway_start<class_NavigationServer3D_method_region_get_connection_pathway_start>`\ (\ region\: :ref:`RID<class_RID>`, connection\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                            |
@@ -1325,7 +1331,7 @@ Returns the map cell size used to rasterize the navigation mesh vertices on the 
 
 :ref:`Vector3<class_Vector3>` **map_get_closest_point**\ (\ map\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_map_get_closest_point>`
 
-Returns the point closest to the provided ``to_point`` on the navigation mesh surface.
+Returns the navigation mesh surface point closest to the provided ``to_point`` on the navigation ``map``.
 
 .. rst-class:: classref-item-separator
 
@@ -1337,7 +1343,7 @@ Returns the point closest to the provided ``to_point`` on the navigation mesh su
 
 :ref:`Vector3<class_Vector3>` **map_get_closest_point_normal**\ (\ map\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_map_get_closest_point_normal>`
 
-Returns the normal for the point returned by :ref:`map_get_closest_point<class_NavigationServer3D_method_map_get_closest_point>`.
+Returns the navigation mesh surface normal closest to the provided ``to_point`` on the navigation ``map``.
 
 .. rst-class:: classref-item-separator
 
@@ -1349,7 +1355,7 @@ Returns the normal for the point returned by :ref:`map_get_closest_point<class_N
 
 :ref:`RID<class_RID>` **map_get_closest_point_owner**\ (\ map\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_map_get_closest_point_owner>`
 
-Returns the owner region RID for the point returned by :ref:`map_get_closest_point<class_NavigationServer3D_method_map_get_closest_point>`.
+Returns the owner region RID for the navigation mesh surface point closest to the provided ``to_point`` on the navigation ``map``.
 
 .. rst-class:: classref-item-separator
 
@@ -1361,7 +1367,9 @@ Returns the owner region RID for the point returned by :ref:`map_get_closest_poi
 
 :ref:`Vector3<class_Vector3>` **map_get_closest_point_to_segment**\ (\ map\: :ref:`RID<class_RID>`, start\: :ref:`Vector3<class_Vector3>`, end\: :ref:`Vector3<class_Vector3>`, use_collision\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_NavigationServer3D_method_map_get_closest_point_to_segment>`
 
-Returns the closest point between the navigation surface and the segment.
+Returns the navigation mesh surface point closest to the provided ``start`` and ``end`` segment on the navigation ``map``.
+
+If ``use_collision`` is ``true``, a closest point test is only done when the segment intersects with the navigation mesh surface.
 
 .. rst-class:: classref-item-separator
 
@@ -1914,6 +1922,44 @@ Bakes the ``navigation_mesh`` with bake source geometry collected starting from 
 :ref:`RID<class_RID>` **region_create**\ (\ ) :ref:`🔗<class_NavigationServer3D_method_region_create>`
 
 Creates a new region.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_region_get_closest_point:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **region_get_closest_point**\ (\ region\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_region_get_closest_point>`
+
+Returns the navigation mesh surface point closest to the provided ``to_point`` on the navigation ``region``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_region_get_closest_point_normal:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **region_get_closest_point_normal**\ (\ region\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector3<class_Vector3>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_region_get_closest_point_normal>`
+
+Returns the navigation mesh surface normal closest to the provided ``to_point`` on the navigation ``region``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_region_get_closest_point_to_segment:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **region_get_closest_point_to_segment**\ (\ region\: :ref:`RID<class_RID>`, start\: :ref:`Vector3<class_Vector3>`, end\: :ref:`Vector3<class_Vector3>`, use_collision\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_NavigationServer3D_method_region_get_closest_point_to_segment>`
+
+Returns the navigation mesh surface point closest to the provided ``start`` and ``end`` segment on the navigation ``region``.
+
+If ``use_collision`` is ``true``, a closest point test is only done when the segment intersects with the navigation mesh surface.
 
 .. rst-class:: classref-item-separator
 

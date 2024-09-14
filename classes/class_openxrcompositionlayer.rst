@@ -35,15 +35,19 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`               | :ref:`alpha_blend<class_OpenXRCompositionLayer_property_alpha_blend>`             | ``false`` |
-   +---------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`               | :ref:`enable_hole_punch<class_OpenXRCompositionLayer_property_enable_hole_punch>` | ``false`` |
-   +---------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`SubViewport<class_SubViewport>` | :ref:`layer_viewport<class_OpenXRCompositionLayer_property_layer_viewport>`       |           |
-   +---------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                 | :ref:`sort_order<class_OpenXRCompositionLayer_property_sort_order>`               | ``1``     |
-   +---------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   +---------------------------------------+-----------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`alpha_blend<class_OpenXRCompositionLayer_property_alpha_blend>`                   | ``false``                |
+   +---------------------------------------+-----------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`Vector2i<class_Vector2i>`       | :ref:`android_surface_size<class_OpenXRCompositionLayer_property_android_surface_size>` | ``Vector2i(1024, 1024)`` |
+   +---------------------------------------+-----------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`enable_hole_punch<class_OpenXRCompositionLayer_property_enable_hole_punch>`       | ``false``                |
+   +---------------------------------------+-----------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`SubViewport<class_SubViewport>` | :ref:`layer_viewport<class_OpenXRCompositionLayer_property_layer_viewport>`             |                          |
+   +---------------------------------------+-----------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                 | :ref:`sort_order<class_OpenXRCompositionLayer_property_sort_order>`                     | ``1``                    |
+   +---------------------------------------+-----------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`use_android_surface<class_OpenXRCompositionLayer_property_use_android_surface>`   | ``false``                |
+   +---------------------------------------+-----------------------------------------------------------------------------------------+--------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -53,11 +57,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`intersects_ray<class_OpenXRCompositionLayer_method_intersects_ray>`\ (\ origin\: :ref:`Vector3<class_Vector3>`, direction\: :ref:`Vector3<class_Vector3>`\ ) |const| |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`is_natively_supported<class_OpenXRCompositionLayer_method_is_natively_supported>`\ (\ ) |const|                                                                      |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`JavaObject<class_JavaObject>` | :ref:`get_android_surface<class_OpenXRCompositionLayer_method_get_android_surface>`\ (\ )                                                                                  |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`       | :ref:`intersects_ray<class_OpenXRCompositionLayer_method_intersects_ray>`\ (\ origin\: :ref:`Vector3<class_Vector3>`, direction\: :ref:`Vector3<class_Vector3>`\ ) |const| |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_natively_supported<class_OpenXRCompositionLayer_method_is_natively_supported>`\ (\ ) |const|                                                                      |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -82,6 +88,23 @@ Property Descriptions
 Enables the blending the layer using its alpha channel.
 
 Can be combined with :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` to give the layer a transparent background.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRCompositionLayer_property_android_surface_size:
+
+.. rst-class:: classref-property
+
+:ref:`Vector2i<class_Vector2i>` **android_surface_size** = ``Vector2i(1024, 1024)`` :ref:`🔗<class_OpenXRCompositionLayer_property_android_surface_size>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_android_surface_size**\ (\ value\: :ref:`Vector2i<class_Vector2i>`\ )
+- :ref:`Vector2i<class_Vector2i>` **get_android_surface_size**\ (\ )
+
+The size of the Android surface to create if :ref:`use_android_surface<class_OpenXRCompositionLayer_property_use_android_surface>` is enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -138,6 +161,27 @@ The sort order for this composition layer. Higher numbers will be shown in front
 
 \ **Note:** This will have no effect if a fallback mesh is being used.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRCompositionLayer_property_use_android_surface:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_android_surface** = ``false`` :ref:`🔗<class_OpenXRCompositionLayer_property_use_android_surface>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_android_surface**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_use_android_surface**\ (\ )
+
+If enabled, an Android surface will be created (with the dimensions from :ref:`android_surface_size<class_OpenXRCompositionLayer_property_android_surface_size>`) which will provide the 2D content for the composition layer, rather than using :ref:`layer_viewport<class_OpenXRCompositionLayer_property_layer_viewport>`.
+
+See :ref:`get_android_surface<class_OpenXRCompositionLayer_method_get_android_surface>` for information about how to get the surface so that your application can draw to it.
+
+\ **Note:** This will only work in Android builds.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -146,6 +190,20 @@ The sort order for this composition layer. Higher numbers will be shown in front
 
 Method Descriptions
 -------------------
+
+.. _class_OpenXRCompositionLayer_method_get_android_surface:
+
+.. rst-class:: classref-method
+
+:ref:`JavaObject<class_JavaObject>` **get_android_surface**\ (\ ) :ref:`🔗<class_OpenXRCompositionLayer_method_get_android_surface>`
+
+Returns a :ref:`JavaObject<class_JavaObject>` representing an ``android.view.Surface`` if :ref:`use_android_surface<class_OpenXRCompositionLayer_property_use_android_surface>` is enabled and OpenXR has created the surface. Otherwise, this will return ``null``.
+
+\ **Note:** The surface can only be created during an active OpenXR session. So, if :ref:`use_android_surface<class_OpenXRCompositionLayer_property_use_android_surface>` is enabled outside of an OpenXR session, it won't be created until a new session fully starts.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_OpenXRCompositionLayer_method_intersects_ray:
 

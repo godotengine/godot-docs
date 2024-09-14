@@ -22,7 +22,21 @@ An input field for single-line text.
 Description
 -----------
 
-**LineEdit** provides an input field for editing a single line of text. It features many built-in shortcuts that are always available (:kbd:`Ctrl` here maps to :kbd:`Cmd` on macOS):
+**LineEdit** provides an input field for editing a single line of text.
+
+- When the **LineEdit** control is focused using the keyboard arrow keys, it will only gain focus and not enter edit mode.
+
+- To enter edit mode, click on the control with the mouse or press the "ui_text_submit" action (default: :kbd:`Enter` or :kbd:`Kp Enter`).
+
+- To exit edit mode, press "ui_text_submit" or "ui_cancel" (default: :kbd:`Escape`) actions.
+
+- Check :ref:`is_editing<class_LineEdit_method_is_editing>` and :ref:`editing_toggled<class_LineEdit_signal_editing_toggled>` for more information.
+
+\ **Important:**\ 
+
+- Focusing the **LineEdit** with "ui_focus_next" (default: :kbd:`Tab`) or "ui_focus_prev" (default: :kbd:`Shift + Tab`) or :ref:`Control.grab_focus<class_Control_method_grab_focus>` still enters edit mode (for compatibility).
+
+\ **LineEdit** features many built-in shortcuts that are always available (:kbd:`Ctrl` here maps to :kbd:`Cmd` on macOS):
 
 - :kbd:`Ctrl + C`: Copy
 
@@ -149,6 +163,10 @@ Methods
    :widths: auto
 
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`apply_ime<class_LineEdit_method_apply_ime>`\ (\ )                                                                             |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`cancel_ime<class_LineEdit_method_cancel_ime>`\ (\ )                                                                           |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`clear<class_LineEdit_method_clear>`\ (\ )                                                                                     |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`delete_char_at_caret<class_LineEdit_method_delete_char_at_caret>`\ (\ )                                                       |
@@ -167,9 +185,13 @@ Methods
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`get_selection_to_column<class_LineEdit_method_get_selection_to_column>`\ (\ ) |const|                                         |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`has_ime_text<class_LineEdit_method_has_ime_text>`\ (\ ) |const|                                                               |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`has_selection<class_LineEdit_method_has_selection>`\ (\ ) |const|                                                             |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`insert_text_at_caret<class_LineEdit_method_insert_text_at_caret>`\ (\ text\: :ref:`String<class_String>`\ )                   |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`is_editing<class_LineEdit_method_is_editing>`\ (\ ) |const|                                                                   |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`is_menu_visible<class_LineEdit_method_is_menu_visible>`\ (\ ) |const|                                                         |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -234,6 +256,18 @@ Theme Properties
 
 Signals
 -------
+
+.. _class_LineEdit_signal_editing_toggled:
+
+.. rst-class:: classref-signal
+
+**editing_toggled**\ (\ toggled_on\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_LineEdit_signal_editing_toggled>`
+
+Emitted when the **LineEdit** switches in or out of edit mode.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_LineEdit_signal_text_change_rejected:
 
@@ -1167,6 +1201,30 @@ Specifies the type of virtual keyboard to show.
 Method Descriptions
 -------------------
 
+.. _class_LineEdit_method_apply_ime:
+
+.. rst-class:: classref-method
+
+|void| **apply_ime**\ (\ ) :ref:`🔗<class_LineEdit_method_apply_ime>`
+
+Applies text from the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME) and closes the IME if it is open.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_method_cancel_ime:
+
+.. rst-class:: classref-method
+
+|void| **cancel_ime**\ (\ ) :ref:`🔗<class_LineEdit_method_cancel_ime>`
+
+Closes the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME) if it is open. Any text in the IME will be lost.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LineEdit_method_clear:
 
 .. rst-class:: classref-method
@@ -1322,6 +1380,18 @@ Returns the selection end column.
 
 ----
 
+.. _class_LineEdit_method_has_ime_text:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_ime_text**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_has_ime_text>`
+
+Returns ``true`` if the user has text in the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LineEdit_method_has_selection:
 
 .. rst-class:: classref-method
@@ -1341,6 +1411,18 @@ Returns ``true`` if the user has selected text.
 |void| **insert_text_at_caret**\ (\ text\: :ref:`String<class_String>`\ ) :ref:`🔗<class_LineEdit_method_insert_text_at_caret>`
 
 Inserts ``text`` at the caret. If the resulting value is longer than :ref:`max_length<class_LineEdit_property_max_length>`, nothing happens.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_method_is_editing:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_editing**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_is_editing>`
+
+Returns whether the **LineEdit** is being edited.
 
 .. rst-class:: classref-item-separator
 
