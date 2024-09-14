@@ -253,6 +253,8 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`region_create<class_NavigationServer2D_method_region_create>`\ (\ )                                                                                                                                                                                                                                                                                                             |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`region_get_closest_point<class_NavigationServer2D_method_region_get_closest_point>`\ (\ region\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                                                                                                                                                     |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                       | :ref:`region_get_connection_pathway_end<class_NavigationServer2D_method_region_get_connection_pathway_end>`\ (\ region\: :ref:`RID<class_RID>`, connection\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                         |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                       | :ref:`region_get_connection_pathway_start<class_NavigationServer2D_method_region_get_connection_pathway_start>`\ (\ region\: :ref:`RID<class_RID>`, connection\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                     |
@@ -1104,7 +1106,7 @@ Returns the map cell size used to rasterize the navigation mesh vertices.
 
 :ref:`Vector2<class_Vector2>` **map_get_closest_point**\ (\ map\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_closest_point>`
 
-Returns the point closest to the provided ``to_point`` on the navigation mesh surface.
+Returns the navigation mesh surface point closest to the provided ``to_point`` on the navigation ``map``.
 
 .. rst-class:: classref-item-separator
 
@@ -1116,7 +1118,7 @@ Returns the point closest to the provided ``to_point`` on the navigation mesh su
 
 :ref:`RID<class_RID>` **map_get_closest_point_owner**\ (\ map\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_closest_point_owner>`
 
-Returns the owner region RID for the point returned by :ref:`map_get_closest_point<class_NavigationServer2D_method_map_get_closest_point>`.
+Returns the owner region RID for the navigation mesh surface point closest to the provided ``to_point`` on the navigation ``map``.
 
 .. rst-class:: classref-item-separator
 
@@ -1547,6 +1549,18 @@ Queries a path in a given navigation map. Start and target position and other pa
 :ref:`RID<class_RID>` **region_create**\ (\ ) :ref:`🔗<class_NavigationServer2D_method_region_create>`
 
 Creates a new region.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_region_get_closest_point:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **region_get_closest_point**\ (\ region\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_region_get_closest_point>`
+
+Returns the navigation mesh surface point closest to the provided ``to_point`` on the navigation ``region``.
 
 .. rst-class:: classref-item-separator
 

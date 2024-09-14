@@ -315,7 +315,7 @@ Use :ref:`has_default_font<class_Theme_method_has_default_font>` to check if thi
 
 The default font size of this theme resource. Used as the default value when trying to fetch a font size value that doesn't exist in this theme or is in invalid state. If the default font size is also missing or invalid, the engine fallback value is used (see :ref:`ThemeDB.fallback_font_size<class_ThemeDB_property_fallback_font_size>`).
 
-Values below ``0`` are invalid and can be used to unset the property. Use :ref:`has_default_font_size<class_Theme_method_has_default_font_size>` to check if this value is valid.
+Values below ``1`` are invalid and can be used to unset the property. Use :ref:`has_default_font_size<class_Theme_method_has_default_font_size>` to check if this value is valid.
 
 .. rst-class:: classref-section-separator
 
