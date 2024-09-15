@@ -131,7 +131,7 @@ Example usage:
 
 .. code-block:: shell
 
-    $ gd_snapshot_commit 4.0 beta4
+    gd_snapshot_commit 4.0 beta4
 
 To refer to the latest state of the master branch, you can use ``master``
 instead of a commit hash. Note that unlike tagged releases or snapshot commit
@@ -148,15 +148,15 @@ folder and enter the following command:
 
     # <good commit hash> is hash of the build that works as expected.
     # <bad commit hash> is hash of the build exhibiting the bug.
-    $ git bisect start
-    $ git bisect good <good commit hash>
-    $ git bisect bad <bad commit hash>
+    git bisect start
+    git bisect good <good commit hash>
+    git bisect bad <bad commit hash>
 
 Compile Godot. This assumes you've set up a build environment:
 
 .. code-block:: shell
 
-    $ scons
+    scons
 
 Run the engine
 ^^^^^^^^^^^^^^
@@ -173,13 +173,13 @@ If the build **still** exhibits the bug, run the following command:
 
 .. code-block:: shell
 
-    $ git bisect bad
+    git bisect bad
 
 If the build **does not** exhibit the bug, run the following command:
 
 .. code-block:: shell
 
-    $ git bisect good
+    git bisect good
 
 After entering one of the commands above, Git will switch to a different commit.
 You should now build Godot again, try to reproduce the bug, then enter ``git

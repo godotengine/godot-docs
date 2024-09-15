@@ -84,7 +84,7 @@ files contain important metadata.
 
 ::
 
-    $ ls
+    ls
     example.png
     example.png.import
     project.godot
@@ -94,7 +94,7 @@ Additionally, extra assets will be present in the hidden
 
 ::
 
-    $ ls .godot/imported
+    ls .godot/imported
     example.png-218a8f2b3041327d8a5756f3a245f83b.ctex
     example.png-218a8f2b3041327d8a5756f3a245f83b.md5
 
