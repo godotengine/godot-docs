@@ -232,17 +232,17 @@ load function:
         while save_file.get_position() < save_file.get_length():
             var json_string = save_file.get_line()
 
-            # Creates the helper class to interact with JSON
+            # Creates the helper class to interact with JSON.
             var json = JSON.new()
 
-            # Check if there is any error while parsing the JSON string, skip in case of failure
+            # Check if there is any error while parsing the JSON string, skip in case of failure.
             var parse_result = json.parse(json_string)
             if not parse_result == OK:
                 print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
                 continue
 
-            # Get the data from the JSON object
-            var node_data = json.get_data()
+            # Get the data from the JSON object.
+            var node_data = json.data
 
             # Firstly, we need to create the object and add it to the tree and set its position.
             var new_object = load(node_data["filename"]).instantiate()
@@ -284,7 +284,7 @@ load function:
         {
             var jsonString = saveFile.GetLine();
 
-            // Creates the helper class to interact with JSON
+            // Creates the helper class to interact with JSON.
             var json = new Json();
             var parseResult = json.Parse(jsonString);
             if (parseResult != Error.Ok)
@@ -293,7 +293,7 @@ load function:
                 continue;
             }
 
-            // Get the data from the JSON object
+            // Get the data from the JSON object.
             var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)json.Data);
 
             // Firstly, we need to create the object and add it to the tree and set its position.
