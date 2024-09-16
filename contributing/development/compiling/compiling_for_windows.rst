@@ -314,7 +314,7 @@ codebase. To edit projects with Visual Studio they need to be set up as a soluti
 You can create a Visual Studio solution via SCons by running SCons with
 the ``vsproj=yes`` parameter, like this::
 
-   scons p=windows vsproj=yes
+   scons platform=windows vsproj=yes
 
 You will be able to open Godot's source in a Visual Studio solution now,
 and able to build Godot using Visual Studio's **Build** button.

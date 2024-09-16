@@ -119,19 +119,19 @@ Alternatively, you can checkout the pull request directly with git:
 
 ::
 
-    $ git fetch upstream pull/PR_NUMBER/head:BRANCH_NAME
+    git fetch upstream pull/PR_NUMBER/head:BRANCH_NAME
 
 So for the pull request above, the actual command will be:
 
 ::
 
     # Fetch PR branch locally
-    $ git fetch upstream pull/48734/head:editor_file_dialog_filter_sort
+    git fetch upstream pull/48734/head:editor_file_dialog_filter_sort
 
 - Once the pull request finishes downloading, checkout its branch:
 
 ::
 
-    $ git checkout editor_file_dialog_filter_sort
+    git checkout editor_file_dialog_filter_sort
 
 - And follow the :ref:`compiling <toc-devel-compiling>` instructions for your operating system.
