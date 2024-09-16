@@ -107,16 +107,24 @@ which will override ``multiplayer`` for the node at that path and all of its des
 This allows sibling nodes to be configured with different peers, which makes it possible to run a server
 and a client simultaneously in one instance of Godot.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # By default, these expressions are interchangeable.
     multiplayer # Get the MultiplayerAPI object configured for this node.
     get_tree().get_multiplayer() # Get the default MultiplayerAPI object.
 
+ .. code-tab:: csharp
+
+    // By default, these expressions are interchangeable.
+    Multiplayer // Get the MultiplayerAPI object configured for this node.
+    GetTree().GetMultiplayer(); // Get the default MultiplayerAPI object.
+
 To initialize networking, a ``MultiplayerPeer`` object must be created, initialized as a server or client,
 and passed to the ``MultiplayerAPI``.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # Create client.
     var peer = ENetMultiplayerPeer.new()
@@ -128,11 +136,28 @@ and passed to the ``MultiplayerAPI``.
     peer.create_server(PORT, MAX_CLIENTS)
     multiplayer.multiplayer_peer = peer
 
+ .. code-tab:: csharp
+
+    // Create client.
+    var peer = new ENetMultiplayerPeer();
+    peer.CreateClient(IP_ADDRESS, PORT);
+    Multiplayer.MultiplayerPeer = peer;
+
+    // Create server.
+    var peer = new ENetMultiplayerPeer();
+    peer.CreateServer(PORT, MAX_CLIENTS);
+    Multiplayer.MultiplayerPeer = peer;
+
 To terminate networking:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     multiplayer.multiplayer_peer = null
+
+ .. code-tab:: csharp
+
+    Multiplayer.MultiplayerPeer = null;
 
 .. warning::
 
@@ -159,15 +184,25 @@ The rest are only emitted on clients:
 
 To get the unique ID of the associated peer:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     multiplayer.get_unique_id()
 
+ .. code-tab:: csharp
+
+    Multiplayer.GetUniqueId();
+
 To check whether the peer is server or client:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     multiplayer.is_server()
+
+ .. code-tab:: csharp
+
+    Multiplayer.IsServer();
 
 Remote procedure calls
 ----------------------
@@ -176,7 +211,8 @@ Remote procedure calls, or RPCs, are functions that can be called on other peers
 before a function definition. To call an RPC, use ``Callable``'s method ``rpc()`` to call in every peer, or ``rpc_id()`` to
 call in a specific peer.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _ready():
         if multiplayer.is_server():
@@ -185,6 +221,22 @@ call in a specific peer.
     @rpc
     func print_once_per_client():
         print("I will be printed to the console once per each connected client.")
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+	{
+		if (Multiplayer.IsServer())
+		{
+			Rpc("PrintOncePerClient");
+		}
+	}
+
+    [Rpc]
+	private void PrintOncePerClient()
+	{
+		GD.Print("I will be printed to the console once per each connected client.");
+	}
 
 RPCs will not serialize objects or callables.
 
@@ -215,9 +267,14 @@ must have the same name. When using ``add_child()`` for nodes which are expected
 
 The annotation can take a number of arguments, which have default values. ``@rpc`` is equivalent to:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     @rpc("authority", "call_remote", "unreliable", 0)
+
+ .. code-tab:: csharp
+
+    [Rpc(MultiplayerApi.RpcMode.Authority, CallLocal = false, TransferMode = MultiplayerPeer.TransferModeEnum.Unreliable, TransferChannel = 0)]
 
 The parameters and their functions are as follows:
 
@@ -243,7 +300,8 @@ The first 3 can be passed in any order, but ``transfer_channel`` must always be 
 
 The function ``multiplayer.get_remote_sender_id()`` can be used to get the unique id of an rpc sender, when used within the function called by rpc.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_some_input(): # Connected to some input.
         transfer_some_input.rpc_id(1) # Send the input only to the server.
@@ -255,6 +313,22 @@ The function ``multiplayer.get_remote_sender_id()`` can be used to get the uniqu
         # The server knows who sent the input.
         var sender_id = multiplayer.get_remote_sender_id()
         # Process the input and affect game logic.
+
+ .. code-tab:: csharp
+
+    private void _OnSomeInput()
+	{
+		RpcId(1, "TransferSomeInput");
+	}
+
+
+	[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+	private void TransferSomeInput()
+	{
+		// The server knows who sent the input.
+		var senderId = Multiplayer.GetRemoteSenderId();
+		// Process the input and affect game logic.
+	}
 
 Channels
 --------
@@ -276,7 +350,8 @@ Example lobby implementation
 This is an example lobby that can handle peers joining and leaving, notify UI scenes through signals, and start the game after all clients
 have loaded the game scene.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Node
 
@@ -388,9 +463,124 @@ have loaded the game scene.
         players.clear()
         server_disconnected.emit()
 
+ .. code-tab:: csharp
+
+    public partial class Lobby : Node
+	{
+		[Signal] public delegate void PlayerConnectedEventHandler(long peerId, Dictionary playerInfo);
+		[Signal] public delegate void PlayerDisconnectedEventHandler(long peerId);
+		[Signal] public delegate void ServerDisconnectedEventHandler();
+
+		private const int PORT = 7000;
+		private const string DEFAULT_SERVER_IP = "127.0.0.1";
+		private const int MAX_CONNECTIONS = 20;
+		
+		private Dictionary players = new();
+		private Dictionary playerInfo = new();
+		private int playersLoaded;
+		
+		public override void _Ready()
+		{
+			players.Add("name", "Name");
+			
+			Multiplayer.PeerConnected += _OnPlayerConnected;
+			Multiplayer.PeerDisconnected += _OnPlayerDisconnected;
+			Multiplayer.ConnectedToServer += _OnConnectedOk;
+			Multiplayer.ConnectionFailed += _OnConnecttedFail;
+			Multiplayer.ServerDisconnected += _OnServerDisconnected;
+		}
+
+		public Error JoinGame(string address = "")
+		{
+			if (address.Length == 0)
+				address = DEFAULT_SERVER_IP;
+			var peer = new ENetMultiplayerPeer();
+			var error = peer.CreateClient(address, PORT);
+			if (error != Error.Ok)
+				return error;
+			Multiplayer.MultiplayerPeer = peer;
+			return error;
+		}
+
+		public Error CreateGame()
+		{
+			var peer = new ENetMultiplayerPeer();
+			var error = peer.CreateServer(PORT, MAX_CONNECTIONS);
+			if (error != Error.Ok)
+				return error;
+			Multiplayer.MultiplayerPeer = peer;
+			players[1] = playerInfo;
+			EmitSignal(SignalName.PlayerConnected, 1, playerInfo);
+			return error;
+		}
+
+		public void RemoveMultiplayerPeer()
+		{
+			Multiplayer.MultiplayerPeer = null;
+		}
+
+		[Rpc(CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+		public void LoadGame(string gameScenePath)
+		{
+			GetTree().ChangeSceneToFile(gameScenePath);
+		}
+
+		[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+		public void PlayerLoaded()
+		{
+			if (!Multiplayer.IsServer())
+				return;
+			playersLoaded++;
+			if (playersLoaded != players.Count)
+				return;
+			GetNode<Game>("/root/Game").StartGame();
+			playersLoaded = 0;
+		}
+
+		private void _OnPlayerConnected(long id)
+		{
+			RpcId(id, "_RegisterPlayer", playerInfo);
+		}
+
+		[Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
+		private void _RegisterPlayer(Dictionary newPlayerInfo)
+		{
+			var newPlayerId = Multiplayer.GetRemoteSenderId();
+			players[newPlayerId] = newPlayerInfo;
+			EmitSignal(SignalName.PlayerConnected, newPlayerId, newPlayerInfo);
+		}
+		
+		private void _OnPlayerDisconnected(long id)
+		{
+			players.Remove(id);
+			EmitSignal(SignalName.PlayerDisconnected, id);
+		}
+		
+		private void _OnConnectedOk()
+		{
+			var peerId = Multiplayer.GetRemoteSenderId();
+			players[peerId] = playerInfo;
+			EmitSignal(SignalName.PlayerConnected, peerId, playerInfo);
+		}
+		
+		private void _OnConnecttedFail()
+		{
+			Multiplayer.MultiplayerPeer = null;
+		}
+		
+		private void _OnServerDisconnected()
+		{
+			Multiplayer.MultiplayerPeer = null;
+			players.Clear();
+			EmitSignal(SignalName.ServerDisconnected);
+		}
+	}
+
+
 The game scene's root node should be named Game. In the script attached to it:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     extends Node3D # Or Node2D.
 
@@ -405,6 +595,23 @@ The game scene's root node should be named Game. In the script attached to it:
     # Called only on the server.
     func start_game():
         # All peers are ready to receive RPCs in this scene.
+
+ .. code-tab:: csharp
+
+    public partial class Game : Node3D // or Node2D
+    {
+
+        public override void _Ready()
+    	{
+            GetNode<Lobby>("/root/Lobby").RpcId(1, "PlayerLoaded"); // Tell the server that this peer has loaded.
+    	}
+
+
+        // Called only on the server.
+        public void StartGame(){
+            // All peers are ready to receive RPCs in this scene.
+        }
+    }
 
 Exporting for dedicated servers
 -------------------------------
