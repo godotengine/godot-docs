@@ -88,6 +88,12 @@ tab within the Debugger bottom panel, then click **Start**:
 
    Visual Profiler tab after clicking **Start**, waiting for a few seconds, then clicking **Stop**
 
+.. tip::
+
+    You can also check **Autostart**, which will make the visual profiler automatically
+    start when the project is run the next time. Note that the **Autostart**
+    checkbox's state is not preserved across editor sessions.
+
 You will see categories and results appearing as the profiler is running. Graph
 lines also appear, with the left side being a CPU framegraph and the right side
 being a GPU framegraph.
