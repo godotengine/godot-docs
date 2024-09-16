@@ -648,7 +648,7 @@ Image options
 Image and table vertical alignment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a vertical alignment value is provided with the ``[img]`` or ``[table]``` tag
+When a vertical alignment value is provided with the ``[img]`` or ``[table]`` tag
 the image/table will try to align itself against the surrounding text. Alignment is
 performed using a vertical point of the image and a vertical point of the text.
 There are 3 possible points on the image (``top``, ``center``, and ``bottom``) and 4
