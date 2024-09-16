@@ -633,7 +633,7 @@ Image options
 
   If set to ``true``, and the image is smaller than the size specified by ``width`` and ``height``, the image padding is added to match the size instead of upscaling.
 
-- **tootip**
+- **tooltip**
 
   +-----------+--------------------------------------------+
   | `Values`  | String                                     |
