@@ -457,7 +457,7 @@ current working directory (unless ``--path`` is specified).
 The script path will be interpreted as a resource path relative to
 the project, here ``res://sayhello.gd``. You can also use an absolute
 filesystem path instead, which is useful if the script is located
-outside of the project's directory.
+outside of the project directory.
 
 The first line of ``sayhello.gd`` above is commonly referred to as
 a *shebang*. If the Godot binary is in your ``PATH`` as ``godot``,
