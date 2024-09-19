@@ -86,7 +86,9 @@ Most GLSL ES 3.0 datatypes are supported:
 +----------------------+---------------------------------------------------------------------------------+
 
 .. note::
-    Most operations on vectors (multiplication, division, etc) are performed component-wise.
+
+    Most operators and functions that accept multiple vectors (multiplication, division, etc) are performed component-wise, meaning the function
+    is applied to the first value of each vector and then on the second value of each vector, etc.
     For example, the operation ``vec2(3, 4) * vec2(10, 20)`` would result in ``vec2(3 * 10, 4 * 20)``.
     or the operation ``min(vec2(3, 4), vec2(1, 8))`` would result in ``vec2(min(3, 1), min(4, 8))``.
 
@@ -509,6 +511,21 @@ is the list of them in precedence order:
 +-------------+------------------------+------------------+
 | 12 (lowest) | logical inclusive OR   | **||**           |
 +-------------+------------------------+------------------+
+
+.. note::
+
+    Most operators that accept vectors or matrices (multiplication, division, etc) operate component-wise, meaning the function
+    is applied to the first value of each vector and then on the second value of each vector, etc.
+    For example, the operation ``vec2(3, 4) * vec2(10, 20)`` would result in ``vec2(3 * 10, 4 * 20)``.
+    or the operation ``min(vec2(3, 4), vec2(1, 8))`` would result in ``vec2(min(3, 1), min(4, 8))``.
+
+    The `GLSL Language Specification <http://www.opengl.org/registry/doc/GLSLangSpec.4.30.6.pdf>`_ says under section 5.10 Vector and Matrix Operations:
+
+        With a few exceptions, operations are component-wise. Usually, when an operator operates on a
+        vector or matrix, it is operating independently on each component of the vector or matrix,
+        in a component-wise fashion. [...] The exceptions are matrix multiplied by vector,
+        vector multiplied by matrix, and matrix multiplied by matrix. These do not operate component-wise,
+        but rather perform the correct linear algebraic multiply.
 
 Flow control
 ------------
