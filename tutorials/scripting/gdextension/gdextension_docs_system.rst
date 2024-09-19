@@ -177,7 +177,7 @@ Currently they supported tags for the GDExtension documentation system are:
 Publishing documentation online
 -------------------------------
 
-You may want to publish an online reference for your GDExtension, akin to this website.
+You may want to publish an online reference for your GDExtension, similar to this website.
 The most important step is to build reStructuredText (``.rst``) files from your XML class reference:
 
 .. code-block:: none
