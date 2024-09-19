@@ -450,12 +450,12 @@ Use the following code to register a singleton from an editor plugin:
     const AUTOLOAD_NAME = "SomeAutoload"
 
 
-    func _enter_tree():
+    func _enable_plugin():
         # The autoload can be a scene or script file.
         add_autoload_singleton(AUTOLOAD_NAME, "res://addons/my_addon/some_autoload.tscn")
 
 
-    func _exit_tree():
+    func _disable_plugin():
         remove_autoload_singleton(AUTOLOAD_NAME)
 
  .. code-tab:: csharp
@@ -469,13 +469,13 @@ Use the following code to register a singleton from an editor plugin:
         // Replace this value with a PascalCase autoload name.
         private const string AutoloadName = "SomeAutoload";
 
-        public override void _EnterTree()
+        public override void _EnablePlugin()
         {
             // The autoload can be a scene or script file.
             AddAutoloadSingleton(AutoloadName, "res://addons/MyAddon/SomeAutoload.tscn");
         }
 
-        public override void _ExitTree()
+        public override void _DisablePlugin()
         {
             RemoveAutoloadSingleton(AutoloadName);
         }
