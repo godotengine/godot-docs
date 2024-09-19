@@ -100,7 +100,7 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
     }
     
     String AudioStreamMyTone::get_stream_name() const {
-    	return "Adlib";
+    	return "MyTone";
     }
 
     void AudioStreamMyTone::reset() {
