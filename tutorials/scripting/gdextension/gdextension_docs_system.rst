@@ -178,8 +178,7 @@ Publishing documentation online
 -------------------------------
 
 You may want to publish an online reference for your GDExtension, akin to this website.
-The most important step is to build reStructuredText (``.rst``) files from your XML
-class reference:
+The most important step is to build reStructuredText (``.rst``) files from your XML class reference:
 
 .. code-block:: none
 
