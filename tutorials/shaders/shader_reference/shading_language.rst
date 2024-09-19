@@ -471,7 +471,6 @@ is the list of them in precedence order:
 
 .. table::
     :class: nowrap-col3
-    :width: auto
 
     +-------------+------------------------+------------------+
     | Precedence  | Class                  | Operator         |
