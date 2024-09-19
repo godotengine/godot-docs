@@ -868,7 +868,7 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    returns a value equal to the nearest integer to x.
+    Returns a value equal to the nearest integer to x.
 
     The fractional part of 0.5 will round toward the nearest even integer.
     For example, both 3.5 and 4.5 will round to 4.0.
@@ -3384,7 +3384,7 @@ Bitwise Function Descriptions
 
 |vec_int_type| **bitfieldExtract**\ (\ |vec_int_type| value, int offset, int bits)
 
-    Eextracts a subset of the bits of value and returns it in the least significant bits of the result.
+    Extracts a subset of the bits of value and returns it in the least significant bits of the result.
     The range of bits extracted is ``[offset, offset + bits - 1]``.
 
     The most significant bits of the result will be set to zero.
@@ -3422,7 +3422,7 @@ Bitwise Function Descriptions
 
     |componentwise|
 
-    Eextracts a subset of the bits of value and returns it in the least significant bits of the result.
+    Extracts a subset of the bits of value and returns it in the least significant bits of the result.
     The range of bits extracted is ``[offset, offset + bits - 1]``.
 
     The most significant bits will be set to the value of ``offset + base - 1`` (i.e., it is sign extended to the width of the return type).
