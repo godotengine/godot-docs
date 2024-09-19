@@ -85,21 +85,6 @@ Most GLSL ES 3.0 datatypes are supported:
 | **samplerCubeArray** | Sampler type for binding Cubemap arrays, which are read as float.               |
 +----------------------+---------------------------------------------------------------------------------+
 
-.. note::
-
-    Most operators and functions that accept multiple vectors (multiplication, division, etc) are performed component-wise, meaning the function
-    is applied to the first value of each vector and then on the second value of each vector, etc.
-    For example, the operation ``vec2(3, 4) * vec2(10, 20)`` would result in ``vec2(3 * 10, 4 * 20)``.
-    or the operation ``min(vec2(3, 4), vec2(1, 8))`` would result in ``vec2(min(3, 1), min(4, 8))``.
-
-    The `GLSL Language Specification <http://www.opengl.org/registry/doc/GLSLangSpec.4.30.6.pdf>`_ says under section 5.10 Vector and Matrix Operations:
-
-        With a few exceptions, operations are component-wise. Usually, when an operator operates on a
-        vector or matrix, it is operating independently on each component of the vector or matrix,
-        in a component-wise fashion. [...] The exceptions are matrix multiplied by vector,
-        vector multiplied by matrix, and matrix multiplied by matrix. These do not operate component-wise,
-        but rather perform the correct linear algebraic multiply.
-
 Comments
 ~~~~~~~~
 
@@ -484,40 +469,52 @@ Operators
 Godot shading language supports the same set of operators as GLSL ES 3.0. Below
 is the list of them in precedence order:
 
-+-------------+------------------------+------------------+
-| Precedence  | Class                  | Operator         |
-+-------------+------------------------+------------------+
-| 1 (highest) | parenthetical grouping | **()**           |
-+-------------+------------------------+------------------+
-| 2           | unary                  | **+, -, !, ~**   |
-+-------------+------------------------+------------------+
-| 3           | multiplicative         | **/, \*, %**     |
-+-------------+------------------------+------------------+
-| 4           | additive               | **+, -**         |
-+-------------+------------------------+------------------+
-| 5           | bit-wise shift         | **<<, >>**       |
-+-------------+------------------------+------------------+
-| 6           | relational             | **<, >, <=, >=** |
-+-------------+------------------------+------------------+
-| 7           | equality               | **==, !=**       |
-+-------------+------------------------+------------------+
-| 8           | bit-wise AND           | **&**            |
-+-------------+------------------------+------------------+
-| 9           | bit-wise exclusive OR  | **^**            |
-+-------------+------------------------+------------------+
-| 10          | bit-wise inclusive OR  | **|**            |
-+-------------+------------------------+------------------+
-| 11          | logical AND            | **&&**           |
-+-------------+------------------------+------------------+
-| 12 (lowest) | logical inclusive OR   | **||**           |
-+-------------+------------------------+------------------+
+.. table::
+    :class: nowrap-col3
+    :width: auto
+
+    +-------------+------------------------+------------------+
+    | Precedence  | Class                  | Operator         |
+    +-------------+------------------------+------------------+
+    | 1 (highest) | parenthetical grouping | **()**           |
+    +-------------+------------------------+------------------+
+    | 2           | unary                  | **+, -, !, ~**   |
+    +-------------+------------------------+------------------+
+    | 3           | multiplicative         | **/, \*, %**     |
+    +-------------+------------------------+------------------+
+    | 4           | additive               | **+, -**         |
+    +-------------+------------------------+------------------+
+    | 5           | bit-wise shift         | **<<, >>**       |
+    +-------------+------------------------+------------------+
+    | 6           | relational             | **<, >, <=, >=** |
+    +-------------+------------------------+------------------+
+    | 7           | equality               | **==, !=**       |
+    +-------------+------------------------+------------------+
+    | 8           | bit-wise AND           | **&**            |
+    +-------------+------------------------+------------------+
+    | 9           | bit-wise exclusive OR  | **^**            |
+    +-------------+------------------------+------------------+
+    | 10          | bit-wise inclusive OR  | **|**            |
+    +-------------+------------------------+------------------+
+    | 11          | logical AND            | **&&**           |
+    +-------------+------------------------+------------------+
+    | 12 (lowest) | logical inclusive OR   | **||**           |
+    +-------------+------------------------+------------------+
 
 .. note::
 
     Most operators that accept vectors or matrices (multiplication, division, etc) operate component-wise, meaning the function
-    is applied to the first value of each vector and then on the second value of each vector, etc.
-    For example, the operation ``vec2(3, 4) * vec2(10, 20)`` would result in ``vec2(3 * 10, 4 * 20)``.
-    or the operation ``min(vec2(3, 4), vec2(1, 8))`` would result in ``vec2(min(3, 1), min(4, 8))``.
+    is applied to the first value of each vector and then on the second value of each vector, etc. Some examples:
+
+    +--------------------------------------+-----------------------------------------------------+
+    | Operation                            | Equivalent Scalar Operation                         |
+    +======================================+=====================================================+
+    | ``vec3(4,5,6) + 2``                  | ``vec3(4+2, 5+2, 6+2)``                             |
+    +--------------------------------------+-----------------------------------------------------+
+    | ``vec2(3, 4) * vec2(10, 20)``        | ``vec2(3 * 10, 4 * 20)``                            |
+    +--------------------------------------+-----------------------------------------------------+
+    | ``mat2(vec2(1,2),vec2(3,4)) + 10``   | ``mat2(vec2(1+10,2+10),vec2(3+10,4+10))``           |
+    +--------------------------------------+-----------------------------------------------------+
 
     The `GLSL Language Specification <http://www.opengl.org/registry/doc/GLSLangSpec.4.30.6.pdf>`_ says under section 5.10 Vector and Matrix Operations:
 
