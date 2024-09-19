@@ -66,26 +66,27 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
     
     public:
     	void reset();
-    	void set_position(uint64_t pos);
-    	virtual Ref<AudioStreamPlayback> instantiate_playback();
+    	void set_position(uint64_t p_pos);
+    	virtual Ref<AudioStreamPlayback> instantiate_playback() override;
     	virtual String get_stream_name() const;
-    	void gen_tone(int16_t *pcm_buf, int size);
+    	void gen_tone(int16_t *p_pcm_buf, int p_size);
     	
-    	virtual double get_length() const { return 0; } // if supported, otherwise return 0
+    	virtual double get_length() const { return 0; } // If supported, otherwise return 0.
     	AudioStreamMyTone();
     
     protected:
     	static void _bind_methods();
     };
     
-    #endif
+    #endif // AUDIOSTREAM_MYTONE_H
 
 .. code-block:: cpp
 
     /* audiostream_mytone.cpp */
     
-    #include "audiostreamplayback_mytone.h"
     #include "audiostream_mytone.h"
+
+    #include "audiostreamplayback_mytone.h"
     
     AudioStreamMyTone::AudioStreamMyTone()
     		: mix_rate(44100), stereo(false), hz(639) {
@@ -101,6 +102,7 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
     String AudioStreamMyTone::get_stream_name() const {
     	return "Adlib";
     }
+
     void AudioStreamMyTone::reset() {
     	set_position(0);
     }
@@ -133,7 +135,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
 
 .. code-block:: cpp
 
-    /*  audiostreamplayback_mytone.h */
+    /* audiostreamplayback_mytone.h */
     
     #ifndef AUDIOSTREAMPLAYBACK_MYTONE_H
     #define AUDIOSTREAMPLAYBACK_MYTONE_H
@@ -158,10 +160,10 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
     	bool active;
     
     public:
-    	virtual void start(double p_from_pos = 0.0);
+    	virtual void start(double p_from_pos = 0.0) override;
     	virtual void stop();
     	virtual bool is_playing() const;
-    	virtual int get_loop_count() const; // times it looped
+        virtual int get_loop_count() const override; // Times it looped.
     	virtual double get_playback_position() const;
     	virtual void seek(double p_time);
     	virtual int mix(AudioFrame *p_buffer, float p_rate_scale, int p_frames);
@@ -170,13 +172,14 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
     	~AudioStreamPlaybackMyTone();
     };
     
-    #endif
+    #endif // AUDIOSTREAMPLAYBACK_MYTONE_H
 
 .. code-block:: cpp
 
     /* audiostreamplayback_mytone.cpp */
     
     #include "audiostreamplayback_mytone.h"
+
     #include "audiostream_mytone.h"
     
     #include "core/math/math_funcs.h"
@@ -247,10 +250,10 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
 
 .. code-block:: cpp
 
-    /*  audiostreamplaybackresampled_mytone.h */
+    /* audiostreamplaybackresampled_mytone.h */
     
     #ifndef AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
-    #define AUDIOSTREAMPLAYBACKRESAMPLED__MYTONE_H
+    #define AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
     
     #include "servers/audio/audio_stream.h"
     
@@ -265,20 +268,20 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
     	enum {
     		MIX_FRAC_BITS = 13,
     		MIX_FRAC_LEN = (1 << MIX_FRAC_BITS),
-    		MIX_FRAC_MASK = MIX_FRAC_LEN - 1
+            MIX_FRAC_MASK = MIX_FRAC_LEN - 1,
     	};
     	void *pcm_buffer;
     	Ref<AudioStreamMyTone> base;
     	bool active;
     
     protected:
-    	virtual int _mix_internal(AudioFrame *p_buffer, int p_frames);
+        virtual int _mix_internal(AudioFrame *p_buffer, int p_frames) override;
     
     public:
     	virtual void start(double p_from_pos = 0.0);
     	virtual void stop();
     	virtual bool is_playing() const;
-    	virtual int get_loop_count() const; // times it looped
+        virtual int get_loop_count() const override; // Times it looped.
     	virtual double get_playback_position() const;
     	virtual void seek(double p_time);
     	virtual float get_stream_sampling_rate();
@@ -287,13 +290,14 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
     	~AudioStreamPlaybackResampledMyTone();
     };
     
-    #endif
+    #endif // AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
 
 .. code-block:: cpp
 
     /* audiostreamplaybackresampled_mytone.cpp */
     
     #include "audiostreamplaybackresampled_mytone.h"
+
     #include "audiostream_mytone.h"
     
     #include "core/math/math_funcs.h"
