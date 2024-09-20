@@ -133,7 +133,7 @@ more familiar programming languages, especially when supporting those more famil
 languages would result in a worse experience. We understand if you would rather use
 another language in Godot (see the list of supported options above). That being said, if
 you haven't given GDScript a try, try it for **three days**. Just like Godot,
-once you see how powerful it is and rapid your development becomes, we think GDScript
+once you see how powerful it is and how rapid your development becomes, we think GDScript
 will grow on you.
 
 More information about getting comfortable with GDScript or dynamically typed
