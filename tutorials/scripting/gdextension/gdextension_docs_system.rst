@@ -182,6 +182,10 @@ The most important step is to build reStructuredText (``.rst``) files from your 
 
 .. code-block:: none
 
+    # The following script needs a dummy version.py.
+    curl -sSLO https://raw.githubusercontent.com/godotengine/godot/refs/heads/master/version.py
+
+    # Edit version.py with new valzes before proceeding.
     # You'll need to have Python installed for this command to work.
     curl -sSL https://raw.githubusercontent.com/godotengine/godot/master/doc/tools/make_rst.py | python3 - -o "docs/classes" -l "en" doc_classes
 
