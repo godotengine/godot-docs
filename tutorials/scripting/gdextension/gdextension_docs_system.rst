@@ -192,9 +192,9 @@ The most important step is to build reStructuredText (``.rst``) files from your 
 Your ``.rst`` files will now be available in ``docs/classes/``. From here, you can use
 any documentation builder that supports reStructuredText syntax to create a website from them.
 
-`godot-docs <https://hosted.weblate.org/projects/godot-engine/godot-docs>`_ uses `Sphinx <https://www.sphinx-doc.org/en/master/>`_. You can use the repository as a basis to build your own documentation system. The following guide describes the basic steps, but they are not exhaustive: You will need a bit of personal insight to make it work.
+`godot-docs <https://github.com/godotengine/godot-docs>`_ uses `Sphinx <https://www.sphinx-doc.org/en/master/>`_. You can use the repository as a basis to build your own documentation system. The following guide describes the basic steps, but they are not exhaustive: You will need a bit of personal insight to make it work.
 
-1. Add `godot-docs <https://hosted.weblate.org/projects/godot-engine/godot-docs>`_ as a submodule to your ``docs/`` folder.
+1. Add `godot-docs <https://github.com/godotengine/godot-docs>`_ as a submodule to your ``docs/`` folder.
 2. Copy over its ``conf.py``, ``index.rst``, ``.readthedocs.yaml`` files into ``/docs/``. You may later decide to copy over and edit more of godot-docs' files, like ``_templates/layout.html``.
 3. Modify these files according to your project. This mostly involves adjusting paths to point to the ``godot-docs`` subfolder, as well as strings to reflect it's your project rather than Godot you're building the docs for.
 4. Create an account on `readthedocs.org <http://readthedocs.org>`_. Import your project, and modify its base ``.readthedocs.yaml`` file path to ``/docs/.readthedocs.yaml``.
