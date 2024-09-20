@@ -182,7 +182,7 @@ The most important step is to build reStructuredText (``.rst``) files from your 
 
 .. code-block:: bash
 
-    # The upcoming script needs a dummy version.py, so download it first:
+    # You need a version.py file, so download it first.
     curl -sSLO https://raw.githubusercontent.com/godotengine/godot/refs/heads/master/version.py
 
     # Edit version.py according to your project before proceeding.
