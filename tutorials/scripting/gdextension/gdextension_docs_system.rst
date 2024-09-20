@@ -180,24 +180,22 @@ Publishing documentation online
 You may want to publish an online reference for your GDExtension, similar to this website.
 The most important step is to build reStructuredText (``.rst``) files from your XML class reference:
 
-.. code-block:: none
+.. code-block:: bash
 
-    # The following script needs a dummy version.py.
+    # The upcoming script needs a dummy version.py, so download it first:
     curl -sSLO https://raw.githubusercontent.com/godotengine/godot/refs/heads/master/version.py
 
-    # Edit version.py with new valzes before proceeding.
-    # You'll need to have Python installed for this command to work.
+    # Edit version.py according to your project before proceeding.
+    # Then, run the rst generator. You'll need to have Python installed for this command to work.
     curl -sSL https://raw.githubusercontent.com/godotengine/godot/master/doc/tools/make_rst.py | python3 - -o "docs/classes" -l "en" doc_classes
 
 Your ``.rst`` files will now be available in ``docs/classes/``. From here, you can use
 any documentation builder that supports reStructuredText syntax to create a website from them.
-`godot-docs <https://hosted.weblate.org/projects/godot-engine/godot-docs>`_ uses `Sphinx <https://www.sphinx-doc.org/en/master/>`_.
-You can use the repository as a basis to build your own documentation system.
-This is where you'll have to get a bit creative, but here's a rough outline
-of the steps involved:
+
+`godot-docs <https://hosted.weblate.org/projects/godot-engine/godot-docs>`_ uses `Sphinx <https://www.sphinx-doc.org/en/master/>`_. You can use the repository as a basis to build your own documentation system. The following guide describes the basic steps, but they are not exhaustive: You will need a bit of personal insight to make it work.
 
 1. Add `godot-docs <https://hosted.weblate.org/projects/godot-engine/godot-docs>`_ as a submodule to your ``docs/`` folder.
-2. Copy over its ``conf.py``, ``index.rst``, ``.readthedocs.yaml`` files into ``/docs/``. You may later decide to copy over more of godot-docs' files into your own project, like ``_templates/layout.html``.
+2. Copy over its ``conf.py``, ``index.rst``, ``.readthedocs.yaml`` files into ``/docs/``. You may later decide to copy over and edit more of godot-docs' files, like ``_templates/layout.html``.
 3. Modify these files according to your project. This mostly involves adjusting paths to point to the ``godot-docs`` subfolder, as well as strings to reflect it's your project rather than Godot you're building the docs for.
 4. Create an account on `readthedocs.org <http://readthedocs.org>`_. Import your project, and modify its base ``.readthedocs.yaml`` file path to ``/docs/.readthedocs.yaml``.
 
