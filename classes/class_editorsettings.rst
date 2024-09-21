@@ -941,6 +941,8 @@ If ``true``, the Asset Library uses multiple threads for its HTTP requests. This
 
 If ``true``, automatically switches to the **Remote** scene tree when running the project from the editor. If ``false``, stays on the **Local** scene tree when running the project from the editor.
 
+\ **Warning:** Enabling this setting can cause stuttering when running a project with a large amount of nodes (typically a few thousands of nodes or more), even if the editor window isn't focused. This is due to the remote scene tree being updated every second regardless of whether the editor is focused.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3681,7 +3683,7 @@ The default property name style to display in the Inspector dock. This style can
 
 If ``true``, add a margin around Array, Dictionary, and Resource Editors that are not already colored.
 
-\ **Note:** If :ref:`interface/inspector/nested_color_mode<class_EditorSettings_property_interface/inspector/nested_color_mode>` is set to **Containers & Resources** this parameter will have no effect since those editors will already be colored
+\ **Note:** If :ref:`interface/inspector/nested_color_mode<class_EditorSettings_property_interface/inspector/nested_color_mode>` is set to **Containers & Resources** this parameter will have no effect since those editors will already be colored.
 
 .. rst-class:: classref-item-separator
 

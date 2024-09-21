@@ -1593,7 +1593,7 @@ Removes an import plugin registered by :ref:`add_import_plugin<class_EditorPlugi
 
 |void| **remove_inspector_plugin**\ (\ plugin\: :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`\ ) :ref:`🔗<class_EditorPlugin_method_remove_inspector_plugin>`
 
-Removes an inspector plugin registered by :ref:`add_import_plugin<class_EditorPlugin_method_add_import_plugin>`
+Removes an inspector plugin registered by :ref:`add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>`.
 
 .. rst-class:: classref-item-separator
 

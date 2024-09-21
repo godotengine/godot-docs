@@ -139,6 +139,8 @@ Methods
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_signal_list<class_Object_method_get_signal_list>`\ (\ ) |const|                                                                                                                                                                |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`                              | :ref:`get_translation_domain<class_Object_method_get_translation_domain>`\ (\ ) |const|                                                                                                                                                  |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`has_meta<class_Object_method_has_meta>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                  |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`has_method<class_Object_method_has_method>`\ (\ method\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                            |
@@ -180,6 +182,8 @@ Methods
    | |void|                                                           | :ref:`set_meta<class_Object_method_set_meta>`\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ )                                                                                                   |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`set_script<class_Object_method_set_script>`\ (\ script\: :ref:`Variant<class_Variant>`\ )                                                                                                                                          |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`set_translation_domain<class_Object_method_set_translation_domain>`\ (\ domain\: :ref:`StringName<class_StringName>`\ )                                                                                                            |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                      | :ref:`to_string<class_Object_method_to_string>`\ (\ )                                                                                                                                                                                    |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -289,7 +293,7 @@ Notification received when the object is initialized, before its script is attac
 
 **NOTIFICATION_PREDELETE** = ``1`` :ref:`🔗<class_Object_constant_NOTIFICATION_PREDELETE>`
 
-Notification received when the object is about to be deleted. Can act as the deconstructor of some programming languages.
+Notification received when the object is about to be deleted. Can be used like destructors in object-oriented programming languages.
 
 .. _class_Object_constant_NOTIFICATION_EXTENSION_RELOADED:
 
@@ -1419,6 +1423,18 @@ Returns the list of existing signals as an :ref:`Array<class_Array>` of dictiona
 
 ----
 
+.. _class_Object_method_get_translation_domain:
+
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **get_translation_domain**\ (\ ) |const| :ref:`🔗<class_Object_method_get_translation_domain>`
+
+Returns the name of the translation domain used by :ref:`tr<class_Object_method_tr>` and :ref:`tr_n<class_Object_method_tr_n>`. See also :ref:`TranslationServer<class_TranslationServer>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Object_method_has_meta:
 
 .. rst-class:: classref-method
@@ -1811,6 +1827,18 @@ If ``value`` is ``null``, the entry is removed. This is the equivalent of using 
 Attaches ``script`` to the object, and instantiates it. As a result, the script's :ref:`_init<class_Object_private_method__init>` is called. A :ref:`Script<class_Script>` is used to extend the object's functionality.
 
 If a script already exists, its instance is detached, and its property values and state are lost. Built-in property values are still kept.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Object_method_set_translation_domain:
+
+.. rst-class:: classref-method
+
+|void| **set_translation_domain**\ (\ domain\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_Object_method_set_translation_domain>`
+
+Sets the name of the translation domain used by :ref:`tr<class_Object_method_tr>` and :ref:`tr_n<class_Object_method_tr_n>`. See also :ref:`TranslationServer<class_TranslationServer>`.
 
 .. rst-class:: classref-item-separator
 

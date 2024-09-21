@@ -1699,7 +1699,9 @@ Set additional options for BiDi override.
 - |void| **set_syntax_highlighter**\ (\ value\: :ref:`SyntaxHighlighter<class_SyntaxHighlighter>`\ )
 - :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` **get_syntax_highlighter**\ (\ )
 
-Sets the :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` to use.
+The syntax highlighter to use.
+
+\ **Note:** A :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` instance should not be used across multiple **TextEdit** nodes.
 
 .. rst-class:: classref-item-separator
 

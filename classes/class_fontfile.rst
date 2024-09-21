@@ -661,7 +661,7 @@ Removes all kerning overrides.
 
 |void| **clear_size_cache**\ (\ cache_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FontFile_method_clear_size_cache>`
 
-Removes all font sizes from the cache entry
+Removes all font sizes from the cache entry.
 
 .. rst-class:: classref-item-separator
 

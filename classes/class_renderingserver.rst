@@ -899,6 +899,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`texture_3d_update<class_RenderingServer_method_texture_3d_update>`\ (\ texture\: :ref:`RID<class_RID>`, data\: :ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\]\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`texture_create_from_native_handle<class_RenderingServer_method_texture_create_from_native_handle>`\ (\ type\: :ref:`TextureType<enum_RenderingServer_TextureType>`, format\: :ref:`Format<enum_Image_Format>`, native_handle\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>` = 1, layered_type\: :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` = 0\ )                                                                                                                                                                                                                  |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Format<enum_Image_Format>`                                                 | :ref:`texture_get_format<class_RenderingServer_method_texture_get_format>`\ (\ texture\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`texture_get_native_handle<class_RenderingServer_method_texture_get_native_handle>`\ (\ texture\: :ref:`RID<class_RID>`, srgb\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -1103,6 +1105,40 @@ Emitted at the beginning of the frame, before the RenderingServer updates all th
 
 Enumerations
 ------------
+
+.. _enum_RenderingServer_TextureType:
+
+.. rst-class:: classref-enumeration
+
+enum **TextureType**: :ref:`🔗<enum_RenderingServer_TextureType>`
+
+.. _class_RenderingServer_constant_TEXTURE_TYPE_2D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureType<enum_RenderingServer_TextureType>` **TEXTURE_TYPE_2D** = ``0``
+
+2D texture.
+
+.. _class_RenderingServer_constant_TEXTURE_TYPE_LAYERED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureType<enum_RenderingServer_TextureType>` **TEXTURE_TYPE_LAYERED** = ``1``
+
+Layered texture.
+
+.. _class_RenderingServer_constant_TEXTURE_TYPE_3D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureType<enum_RenderingServer_TextureType>` **TEXTURE_TYPE_3D** = ``2``
+
+3D texture.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _enum_RenderingServer_TextureLayeredType:
 
@@ -3864,7 +3900,7 @@ The callback is called before our transparent rendering pass, but after our sky 
 
 :ref:`CompositorEffectCallbackType<enum_RenderingServer_CompositorEffectCallbackType>` **COMPOSITOR_EFFECT_CALLBACK_TYPE_POST_TRANSPARENT** = ``4``
 
-The callback is called after our transparent rendering pass, but before any build in post effects and output to our render target.
+The callback is called after our transparent rendering pass, but before any built-in post-processing effects and output to our render target.
 
 .. _class_RenderingServer_constant_COMPOSITOR_EFFECT_CALLBACK_TYPE_ANY:
 
@@ -11115,7 +11151,7 @@ Creates a placeholder for a 2-dimensional layered texture and adds it to the Ren
 
 :ref:`RID<class_RID>` **texture_2d_placeholder_create**\ (\ ) :ref:`🔗<class_RenderingServer_method_texture_2d_placeholder_create>`
 
-Creates a placeholder for a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_layered_*`` RenderingServer functions, although it does nothing when used. See also :ref:`texture_2d_layered_placeholder_create<class_RenderingServer_method_texture_2d_layered_placeholder_create>`\ 
+Creates a placeholder for a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_layered_*`` RenderingServer functions, although it does nothing when used. See also :ref:`texture_2d_layered_placeholder_create<class_RenderingServer_method_texture_2d_layered_placeholder_create>`.
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
@@ -11188,6 +11224,20 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 Updates the texture specified by the ``texture`` :ref:`RID<class_RID>`'s data with the data in ``data``. All the texture's layers must be replaced at once.
 
 \ **Note:** The ``texture`` must have the same width, height, depth and format as the current texture data. Otherwise, an error will be printed and the original texture won't be modified. If you need to use different width, height, depth or format, use :ref:`texture_replace<class_RenderingServer_method_texture_replace>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_texture_create_from_native_handle:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **texture_create_from_native_handle**\ (\ type\: :ref:`TextureType<enum_RenderingServer_TextureType>`, format\: :ref:`Format<enum_Image_Format>`, native_handle\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, layers\: :ref:`int<class_int>` = 1, layered_type\: :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` = 0\ ) :ref:`🔗<class_RenderingServer_method_texture_create_from_native_handle>`
+
+Creates a texture based on a native handle that was created outside of Godot's renderer.
+
+\ **Note:** If using the rendering device renderer, using :ref:`RenderingDevice.texture_create_from_extension<class_RenderingDevice_method_texture_create_from_extension>` rather than this method is recommended. It will give you much more control over the texture's format and usage.
 
 .. rst-class:: classref-item-separator
 
@@ -11428,7 +11478,7 @@ Returns the CPU time taken to render the last frame in milliseconds. This *only*
 
 :ref:`float<class_float>` **viewport_get_measured_render_time_gpu**\ (\ viewport\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_viewport_get_measured_render_time_gpu>`
 
-Returns the GPU time taken to render the last frame in milliseconds. To get a complete readout of GPU time spent to render the scene, sum the render times of all viewports that are drawn every frame. Unlike :ref:`Engine.get_frames_per_second<class_Engine_method_get_frames_per_second>`, this method accurately reflects GPU utilization even if framerate is capped via V-Sync or :ref:`Engine.max_fps<class_Engine_property_max_fps>`. See also :ref:`viewport_get_measured_render_time_gpu<class_RenderingServer_method_viewport_get_measured_render_time_gpu>`.
+Returns the GPU time taken to render the last frame in milliseconds. To get a complete readout of GPU time spent to render the scene, sum the render times of all viewports that are drawn every frame. Unlike :ref:`Engine.get_frames_per_second<class_Engine_method_get_frames_per_second>`, this method accurately reflects GPU utilization even if framerate is capped via V-Sync or :ref:`Engine.max_fps<class_Engine_property_max_fps>`. See also :ref:`viewport_get_measured_render_time_cpu<class_RenderingServer_method_viewport_get_measured_render_time_cpu>`.
 
 \ **Note:** Requires measurements to be enabled on the specified ``viewport`` using :ref:`viewport_set_measure_render_time<class_RenderingServer_method_viewport_set_measure_render_time>`. Otherwise, this method returns ``0.0``.
 

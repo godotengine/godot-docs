@@ -127,7 +127,7 @@ Slows down the wheel by applying a braking force. The wheel is only slowed down 
 - |void| **set_damping_compression**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_damping_compression**\ (\ )
 
-The damping applied to the spring when the spring is being compressed. This value should be between 0.0 (no damping) and 1.0. A value of 0.0 means the car will keep bouncing as the spring keeps its energy. A good value for this is around 0.3 for a normal car, 0.5 for a race car.
+The damping applied to the suspension spring when being compressed, meaning when the wheel is moving up relative to the vehicle. It is measured in Newton-seconds per millimeter (N⋅s/mm), or megagrams per second (Mg/s). This value should be between 0.0 (no damping) and 1.0, but may be more. A value of 0.0 means the car will keep bouncing as the spring keeps its energy. A good value for this is around 0.3 for a normal car, 0.5 for a race car.
 
 .. rst-class:: classref-item-separator
 
@@ -144,7 +144,7 @@ The damping applied to the spring when the spring is being compressed. This valu
 - |void| **set_damping_relaxation**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_damping_relaxation**\ (\ )
 
-The damping applied to the spring when relaxing. This value should be between 0.0 (no damping) and 1.0. This value should always be slightly higher than the :ref:`damping_compression<class_VehicleWheel3D_property_damping_compression>` property. For a :ref:`damping_compression<class_VehicleWheel3D_property_damping_compression>` value of 0.3, try a relaxation value of 0.5.
+The damping applied to the suspension spring when rebounding or extending, meaning when the wheel is moving down relative to the vehicle. It is measured in Newton-seconds per millimeter (N⋅s/mm), or megagrams per second (Mg/s). This value should be between 0.0 (no damping) and 1.0, but may be more. This value should always be slightly higher than the :ref:`damping_compression<class_VehicleWheel3D_property_damping_compression>` property. For a :ref:`damping_compression<class_VehicleWheel3D_property_damping_compression>` value of 0.3, try a relaxation value of 0.5.
 
 .. rst-class:: classref-item-separator
 
@@ -216,7 +216,7 @@ The maximum force the spring can resist. This value should be higher than a quar
 - |void| **set_suspension_stiffness**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_suspension_stiffness**\ (\ )
 
-This value defines the stiffness of the suspension. Use a value lower than 50 for an off-road car, a value between 50 and 100 for a race car and try something around 200 for something like a Formula 1 car.
+The stiffness of the suspension, measured in Newtons per millimeter (N/mm), or megagrams per second squared (Mg/s²). Use a value lower than 50 for an off-road car, a value between 50 and 100 for a race car and try something around 200 for something like a Formula 1 car.
 
 .. rst-class:: classref-item-separator
 

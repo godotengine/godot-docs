@@ -119,7 +119,7 @@ The callback is called before our transparent rendering pass, but after our sky 
 
 :ref:`EffectCallbackType<enum_CompositorEffect_EffectCallbackType>` **EFFECT_CALLBACK_TYPE_POST_TRANSPARENT** = ``4``
 
-The callback is called after our transparent rendering pass, but before any build in post effects and output to our render target.
+The callback is called after our transparent rendering pass, but before any built-in post-processing effects and output to our render target.
 
 .. _class_CompositorEffect_constant_EFFECT_CALLBACK_TYPE_MAX:
 

@@ -187,7 +187,11 @@ Methods
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`has_ime_text<class_LineEdit_method_has_ime_text>`\ (\ ) |const|                                                               |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`has_redo<class_LineEdit_method_has_redo>`\ (\ ) |const|                                                                       |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`has_selection<class_LineEdit_method_has_selection>`\ (\ ) |const|                                                             |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`has_undo<class_LineEdit_method_has_undo>`\ (\ ) |const|                                                                       |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`insert_text_at_caret<class_LineEdit_method_insert_text_at_caret>`\ (\ text\: :ref:`String<class_String>`\ )                   |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -1392,6 +1396,18 @@ Returns ``true`` if the user has text in the `Input Method Editor <https://en.wi
 
 ----
 
+.. _class_LineEdit_method_has_redo:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_redo**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_has_redo>`
+
+Returns ``true`` if a "redo" action is available.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LineEdit_method_has_selection:
 
 .. rst-class:: classref-method
@@ -1399,6 +1415,18 @@ Returns ``true`` if the user has text in the `Input Method Editor <https://en.wi
 :ref:`bool<class_bool>` **has_selection**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_has_selection>`
 
 Returns ``true`` if the user has selected text.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_method_has_undo:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_undo**\ (\ ) |const| :ref:`🔗<class_LineEdit_method_has_undo>`
+
+Returns ``true`` if an "undo" action is available.
 
 .. rst-class:: classref-item-separator
 

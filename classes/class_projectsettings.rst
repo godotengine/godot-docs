@@ -1541,6 +1541,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/rendering_device/fallback_to_d3d12<class_ProjectSettings_property_rendering/rendering_device/fallback_to_d3d12>`                                                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/rendering_device/fallback_to_opengl3<class_ProjectSettings_property_rendering/rendering_device/fallback_to_opengl3>`                                                                       | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/rendering_device/fallback_to_vulkan<class_ProjectSettings_property_rendering/rendering_device/fallback_to_vulkan>`                                                                         | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/rendering_device/pipeline_cache/enable<class_ProjectSettings_property_rendering/rendering_device/pipeline_cache/enable>`                                                                   | ``true``                                                                                         |
@@ -1598,6 +1600,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`rendering/textures/light_projectors/filter<class_ProjectSettings_property_rendering/textures/light_projectors/filter>`                                                                               | ``3``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/lossless_compression/force_png<class_ProjectSettings_property_rendering/textures/lossless_compression/force_png>`                                                                 | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/cache_gpu_compressor<class_ProjectSettings_property_rendering/textures/vram_compression/cache_gpu_compressor>`                                                   | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/compress_with_gpu<class_ProjectSettings_property_rendering/textures/vram_compression/compress_with_gpu>`                                                         | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -11352,6 +11356,20 @@ If ``true``, the forward renderer will fall back to Direct3D 12 if Vulkan is not
 
 ----
 
+.. _class_ProjectSettings_property_rendering/rendering_device/fallback_to_opengl3:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/rendering_device/fallback_to_opengl3** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/fallback_to_opengl3>`
+
+If ``true``, the forward renderer will fall back to OpenGL 3 if both Direct3D 12, Metal and Vulkan are not supported.
+
+\ **Note:** This setting is implemented only on Windows, Android, macOS, iOS, and Linux/X11.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_rendering/rendering_device/fallback_to_vulkan:
 
 .. rst-class:: classref-property
@@ -11756,17 +11774,29 @@ If ``true``, the texture importer will import lossless textures using the PNG fo
 
 ----
 
+.. _class_ProjectSettings_property_rendering/textures/vram_compression/cache_gpu_compressor:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/textures/vram_compression/cache_gpu_compressor** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/vram_compression/cache_gpu_compressor>`
+
+If ``true``, the GPU texture compressor will cache the local RenderingDevice and its resources (shaders and pipelines), allowing for faster subsequent imports at a memory cost.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_rendering/textures/vram_compression/compress_with_gpu:
 
 .. rst-class:: classref-property
 
 :ref:`bool<class_bool>` **rendering/textures/vram_compression/compress_with_gpu** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/vram_compression/compress_with_gpu>`
 
-If ``true``, the texture importer will utilize the GPU for compressing textures, which makes large textures import significantly faster.
+If ``true``, the texture importer will utilize the GPU for compressing textures, improving the import time of large images.
 
 \ **Note:** This setting requires either Vulkan or D3D12 available as a rendering backend.
 
-\ **Note:** Currently this only affects BC6H compression, which is used on Desktop and Console for HDR images.
+\ **Note:** Currently this only affects BC1 and BC6H compression, which are used on Desktop and Console for fully opaque and HDR images respectively.
 
 .. rst-class:: classref-item-separator
 
