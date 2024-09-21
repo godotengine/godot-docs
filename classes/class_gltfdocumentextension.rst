@@ -49,6 +49,8 @@ Methods
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_export_post<class_GLTFDocumentExtension_private_method__export_post>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ ) |virtual|                                                                                                                                                                                                       |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_export_post_convert<class_GLTFDocumentExtension_private_method__export_post_convert>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`, root\: :ref:`Node<class_Node>`\ ) |virtual|                                                                                                                                                       |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_export_preflight<class_GLTFDocumentExtension_private_method__export_preflight>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`, root\: :ref:`Node<class_Node>`\ ) |virtual|                                                                                                                                                             |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_export_preserialize<class_GLTFDocumentExtension_private_method__export_preserialize>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ ) |virtual|                                                                                                                                                                                       |
@@ -66,6 +68,8 @@ Methods
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_import_post<class_GLTFDocumentExtension_private_method__import_post>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`, root\: :ref:`Node<class_Node>`\ ) |virtual|                                                                                                                                                                       |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_import_post_parse<class_GLTFDocumentExtension_private_method__import_post_parse>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ ) |virtual|                                                                                                                                                                                           |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_import_pre_generate<class_GLTFDocumentExtension_private_method__import_pre_generate>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ ) |virtual|                                                                                                                                                                                       |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_import_preflight<class_GLTFDocumentExtension_private_method__import_preflight>`\ (\ state\: :ref:`GLTFState<class_GLTFState>`, extensions\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |virtual|                                                                                                                             |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -97,7 +101,7 @@ Method Descriptions
 
 |void| **_convert_scene_node**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, gltf_node\: :ref:`GLTFNode<class_GLTFNode>`, scene_node\: :ref:`Node<class_Node>`\ ) |virtual| :ref:`🔗<class_GLTFDocumentExtension_private_method__convert_scene_node>`
 
-Part of the export process. This method is run after :ref:`_export_preflight<class_GLTFDocumentExtension_private_method__export_preflight>` and before :ref:`_export_preserialize<class_GLTFDocumentExtension_private_method__export_preserialize>`.
+Part of the export process. This method is run after :ref:`_export_preflight<class_GLTFDocumentExtension_private_method__export_preflight>` and before :ref:`_export_post_convert<class_GLTFDocumentExtension_private_method__export_post_convert>`.
 
 Runs when converting the data from a Godot scene node. This method can be used to process the Godot scene node data into a format that can be used by :ref:`_export_node<class_GLTFDocumentExtension_private_method__export_node>`.
 
@@ -133,6 +137,20 @@ This method can be used to modify the final JSON of the generated glTF file.
 
 ----
 
+.. _class_GLTFDocumentExtension_private_method__export_post_convert:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **_export_post_convert**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, root\: :ref:`Node<class_Node>`\ ) |virtual| :ref:`🔗<class_GLTFDocumentExtension_private_method__export_post_convert>`
+
+Part of the export process. This method is run after :ref:`_convert_scene_node<class_GLTFDocumentExtension_private_method__convert_scene_node>` and before :ref:`_export_preserialize<class_GLTFDocumentExtension_private_method__export_preserialize>`.
+
+This method can be used to modify the converted node data structures before serialization with any additional data from the scene tree.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GLTFDocumentExtension_private_method__export_preflight:
 
 .. rst-class:: classref-method
@@ -153,7 +171,7 @@ The return value is used to determine if this **GLTFDocumentExtension** instance
 
 :ref:`Error<enum_@GlobalScope_Error>` **_export_preserialize**\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ ) |virtual| :ref:`🔗<class_GLTFDocumentExtension_private_method__export_preserialize>`
 
-Part of the export process. This method is run after :ref:`_convert_scene_node<class_GLTFDocumentExtension_private_method__convert_scene_node>` and before :ref:`_get_saveable_image_formats<class_GLTFDocumentExtension_private_method__get_saveable_image_formats>`.
+Part of the export process. This method is run after :ref:`_export_post_convert<class_GLTFDocumentExtension_private_method__export_post_convert>` and before :ref:`_get_saveable_image_formats<class_GLTFDocumentExtension_private_method__get_saveable_image_formats>`.
 
 This method can be used to alter the state before performing serialization. It runs every time when generating a buffer with :ref:`GLTFDocument.generate_buffer<class_GLTFDocument_method_generate_buffer>` or writing to the file system with :ref:`GLTFDocument.write_to_filesystem<class_GLTFDocument_method_write_to_filesystem>`.
 
@@ -167,7 +185,7 @@ This method can be used to alter the state before performing serialization. It r
 
 :ref:`Node3D<class_Node3D>` **_generate_scene_node**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, gltf_node\: :ref:`GLTFNode<class_GLTFNode>`, scene_parent\: :ref:`Node<class_Node>`\ ) |virtual| :ref:`🔗<class_GLTFDocumentExtension_private_method__generate_scene_node>`
 
-Part of the import process. This method is run after :ref:`_import_post_parse<class_GLTFDocumentExtension_private_method__import_post_parse>` and before :ref:`_import_node<class_GLTFDocumentExtension_private_method__import_node>`.
+Part of the import process. This method is run after :ref:`_import_pre_generate<class_GLTFDocumentExtension_private_method__import_pre_generate>` and before :ref:`_import_node<class_GLTFDocumentExtension_private_method__import_node>`.
 
 Runs when generating a Godot scene node from a GLTFNode. The returned node will be added to the scene tree. Multiple nodes can be generated in this step if they are added as a child of the returned node.
 
@@ -251,9 +269,23 @@ This method can be used to modify the final Godot scene generated by the import 
 
 :ref:`Error<enum_@GlobalScope_Error>` **_import_post_parse**\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ ) |virtual| :ref:`🔗<class_GLTFDocumentExtension_private_method__import_post_parse>`
 
-Part of the import process. This method is run after :ref:`_parse_node_extensions<class_GLTFDocumentExtension_private_method__parse_node_extensions>` and before :ref:`_generate_scene_node<class_GLTFDocumentExtension_private_method__generate_scene_node>`.
+Part of the import process. This method is run after :ref:`_parse_node_extensions<class_GLTFDocumentExtension_private_method__parse_node_extensions>` and before :ref:`_import_pre_generate<class_GLTFDocumentExtension_private_method__import_pre_generate>`.
 
-This method can be used to modify any of the data imported so far after parsing, before generating the nodes and then running the final per-node import step.
+This method can be used to modify any of the data imported so far after parsing each node, but before generating the scene or any of its nodes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocumentExtension_private_method__import_pre_generate:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **_import_pre_generate**\ (\ state\: :ref:`GLTFState<class_GLTFState>`\ ) |virtual| :ref:`🔗<class_GLTFDocumentExtension_private_method__import_pre_generate>`
+
+Part of the import process. This method is run after :ref:`_import_post_parse<class_GLTFDocumentExtension_private_method__import_post_parse>` and before :ref:`_generate_scene_node<class_GLTFDocumentExtension_private_method__generate_scene_node>`.
+
+This method can be used to modify or read from any of the processed data structures, before generating the nodes and then running the final per-node import step.
 
 .. rst-class:: classref-item-separator
 

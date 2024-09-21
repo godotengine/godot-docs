@@ -545,6 +545,8 @@ Returns an array with the IDs of the points that form the path found by AStar2D 
 
 If there is no valid path to the target, and ``allow_partial_path`` is ``true``, returns a path to the point closest to the target that can be reached.
 
+\ **Note:** When ``allow_partial_path`` is ``true`` and ``to_id`` is solid the search may take an unusually long time to finish.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -572,6 +574,8 @@ Returns an array with the points that are in the path found by **AStarGrid2D** b
 If there is no valid path to the target, and ``allow_partial_path`` is ``true``, returns a path to the point closest to the target that can be reached.
 
 \ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty array and will print an error message.
+
+Additionally, when ``allow_partial_path`` is ``true`` and ``to_id`` is solid the search may take an unusually long time to finish.
 
 .. rst-class:: classref-item-separator
 

@@ -611,7 +611,7 @@ Specifies a normal to use for the *next* vertex. If every vertex needs to have t
 
 Set to :ref:`SKIN_8_WEIGHTS<class_SurfaceTool_constant_SKIN_8_WEIGHTS>` to indicate that up to 8 bone influences per vertex may be used.
 
-By default, only 4 bone influences are used (:ref:`SKIN_4_WEIGHTS<class_SurfaceTool_constant_SKIN_4_WEIGHTS>`)
+By default, only 4 bone influences are used (:ref:`SKIN_4_WEIGHTS<class_SurfaceTool_constant_SKIN_4_WEIGHTS>`).
 
 \ **Note:** This function takes an enum, not the exact number of weights.
 

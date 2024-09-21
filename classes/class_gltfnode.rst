@@ -77,6 +77,8 @@ Methods
    :widths: auto
 
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`append_child_index<class_GLTFNode_method_append_child_index>`\ (\ child_index\: :ref:`int<class_int>`\ )                                                                     |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>` | :ref:`get_additional_data<class_GLTFNode_method_get_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`\ )                                                  |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                        | :ref:`set_additional_data<class_GLTFNode_method_set_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ ) |
@@ -318,6 +320,18 @@ The transform of the glTF node relative to its parent. This property is usually 
 
 Method Descriptions
 -------------------
+
+.. _class_GLTFNode_method_append_child_index:
+
+.. rst-class:: classref-method
+
+|void| **append_child_index**\ (\ child_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GLTFNode_method_append_child_index>`
+
+Appends the given child node index to the :ref:`children<class_GLTFNode_property_children>` array.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_GLTFNode_method_get_additional_data:
 

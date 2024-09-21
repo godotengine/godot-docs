@@ -144,7 +144,7 @@ The operation to perform on the stencil buffer for back pixels that pass the ste
 - |void| **set_back_op_fail**\ (\ value\: :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>`\ )
 - :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_back_op_fail**\ (\ )
 
-The operation to perform on the stencil buffer for back pixels that fail the stencil test
+The operation to perform on the stencil buffer for back pixels that fail the stencil test.
 
 .. rst-class:: classref-item-separator
 

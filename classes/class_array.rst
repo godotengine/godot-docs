@@ -131,6 +131,8 @@ Methods
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`find<class_Array_method_find>`\ (\ what\: :ref:`Variant<class_Variant>`, from\: :ref:`int<class_int>` = 0\ ) |const|                                                                              |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`find_custom<class_Array_method_find_custom>`\ (\ method\: :ref:`Callable<class_Callable>`, from\: :ref:`int<class_int>` = 0\ ) |const|                                                            |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`       | :ref:`front<class_Array_method_front>`\ (\ ) |const|                                                                                                                                                    |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`get_typed_builtin<class_Array_method_get_typed_builtin>`\ (\ ) |const|                                                                                                                            |
@@ -182,6 +184,8 @@ Methods
    | |void|                              | :ref:`reverse<class_Array_method_reverse>`\ (\ )                                                                                                                                                        |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`rfind<class_Array_method_rfind>`\ (\ what\: :ref:`Variant<class_Variant>`, from\: :ref:`int<class_int>` = -1\ ) |const|                                                                           |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`rfind_custom<class_Array_method_rfind_custom>`\ (\ method\: :ref:`Callable<class_Callable>`, from\: :ref:`int<class_int>` = -1\ ) |const|                                                         |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`shuffle<class_Array_method_shuffle>`\ (\ )                                                                                                                                                        |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -639,6 +643,8 @@ Removes all elements from the array. This is equivalent to using :ref:`resize<cl
 
 Returns the number of times an element is in the array.
 
+To count how many elements in an array satisfy a condition, see :ref:`reduce<class_Array_method_reduce>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -748,6 +754,35 @@ Returns the index of the **first** occurrence of ``what`` in this array, or ``-1
 \ **Note:** If you just want to know whether the array contains ``what``, use :ref:`has<class_Array_method_has>` (``Contains`` in C#). In GDScript, you may also use the ``in`` operator.
 
 \ **Note:** For performance reasons, the search is affected by ``what``'s :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`. For example, ``7`` (:ref:`int<class_int>`) and ``7.0`` (:ref:`float<class_float>`) are not considered equal for this method.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Array_method_find_custom:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **find_custom**\ (\ method\: :ref:`Callable<class_Callable>`, from\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_Array_method_find_custom>`
+
+Returns the index of the **first** element in the array that causes ``method`` to return ``true``, or ``-1`` if there are none. The search's start can be specified with ``from``, continuing to the end of the array.
+
+\ ``method`` is a callable that takes an element of the array, and returns a :ref:`bool<class_bool>`.
+
+\ **Note:** If you just want to know whether the array contains *anything* that satisfies ``method``, use :ref:`any<class_Array_method_any>`.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func is_even(number):
+        return number % 2 == 0
+    
+    func _ready():
+        print([1, 3, 4, 7].find_custom(is_even.bind())) # prints 2
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -1129,6 +1164,19 @@ If :ref:`max<class_Array_method_max>` is not desirable, this method may also be 
     func is_length_greater(a, b):
         return a.length() > b.length()
 
+This method can also be used to count how many elements in an array satisfy a certain condition, similar to :ref:`count<class_Array_method_count>`:
+
+::
+
+    func is_even(number):
+        return number % 2 == 0
+    
+    func _ready():
+        var arr = [1, 2, 3, 4, 5]
+        # Increment count if it's even, else leaves count the same.
+        var even_count = arr.reduce(func(count, next): return count + 1 if is_even(next) else count, 0)
+        print(even_count) # Prints 2
+
 See also :ref:`map<class_Array_method_map>`, :ref:`filter<class_Array_method_filter>`, :ref:`any<class_Array_method_any>` and :ref:`all<class_Array_method_all>`.
 
 .. rst-class:: classref-item-separator
@@ -1188,6 +1236,18 @@ Reverses the order of all elements in the array.
 :ref:`int<class_int>` **rfind**\ (\ what\: :ref:`Variant<class_Variant>`, from\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_Array_method_rfind>`
 
 Returns the index of the **last** occurrence of ``what`` in this array, or ``-1`` if there are none. The search's start can be specified with ``from``, continuing to the beginning of the array. This method is the reverse of :ref:`find<class_Array_method_find>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Array_method_rfind_custom:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **rfind_custom**\ (\ method\: :ref:`Callable<class_Callable>`, from\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_Array_method_rfind_custom>`
+
+Returns the index of the **last** element of the array that causes ``method`` to return ``true``, or ``-1`` if there are none. The search's start can be specified with ``from``, continuing to the beginning of the array. This method is the reverse of :ref:`find_custom<class_Array_method_find_custom>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1287,7 +1347,7 @@ Sorts the array in ascending order. The final order is dependent on the "less th
 
 Sorts the array using a custom :ref:`Callable<class_Callable>`.
 
-\ ``func`` is called as many times as necessary, receiving two array elements as arguments. The function should return ``true`` if the first element should be moved *behind* the second one, otherwise it should return ``false``.
+\ ``func`` is called as many times as necessary, receiving two array elements as arguments. The function should return ``true`` if the first element should be moved *before* the second one, otherwise it should return ``false``.
 
 ::
 

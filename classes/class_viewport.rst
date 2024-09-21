@@ -169,6 +169,10 @@ Methods
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`World3D<class_World3D>`                                                                 | :ref:`find_world_3d<class_Viewport_method_find_world_3d>`\ (\ ) |const|                                                                                                                                                                                               |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioListener2D<class_AudioListener2D>`                                                 | :ref:`get_audio_listener_2d<class_Viewport_method_get_audio_listener_2d>`\ (\ ) |const|                                                                                                                                                                               |
+   +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioListener3D<class_AudioListener3D>`                                                 | :ref:`get_audio_listener_3d<class_Viewport_method_get_audio_listener_3d>`\ (\ ) |const|                                                                                                                                                                               |
+   +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Camera2D<class_Camera2D>`                                                               | :ref:`get_camera_2d<class_Viewport_method_get_camera_2d>`\ (\ ) |const|                                                                                                                                                                                               |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Camera3D<class_Camera3D>`                                                               | :ref:`get_camera_3d<class_Viewport_method_get_camera_3d>`\ (\ ) |const|                                                                                                                                                                                               |
@@ -1929,6 +1933,30 @@ Returns the first valid :ref:`World3D<class_World3D>` for this viewport, searchi
 
 ----
 
+.. _class_Viewport_method_get_audio_listener_2d:
+
+.. rst-class:: classref-method
+
+:ref:`AudioListener2D<class_AudioListener2D>` **get_audio_listener_2d**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_audio_listener_2d>`
+
+Returns the currently active 2D audio listener. Returns ``null`` if there are no active 2D audio listeners, in which case the active 2D camera will be treated as listener.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_method_get_audio_listener_3d:
+
+.. rst-class:: classref-method
+
+:ref:`AudioListener3D<class_AudioListener3D>` **get_audio_listener_3d**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_audio_listener_3d>`
+
+Returns the currently active 3D audio listener. Returns ``null`` if there are no active 3D audio listeners, in which case the active 3D camera will be treated as listener.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Viewport_method_get_camera_2d:
 
 .. rst-class:: classref-method
@@ -2153,7 +2181,7 @@ Returns ``true`` if the drag operation is successful.
 
 :ref:`bool<class_bool>` **gui_is_dragging**\ (\ ) |const| :ref:`🔗<class_Viewport_method_gui_is_dragging>`
 
-Returns ``true`` if the viewport is currently performing a drag operation.
+Returns ``true`` if a drag operation is currently ongoing and where the drop action could happen in this viewport.
 
 Alternative to :ref:`Node.NOTIFICATION_DRAG_BEGIN<class_Node_constant_NOTIFICATION_DRAG_BEGIN>` and :ref:`Node.NOTIFICATION_DRAG_END<class_Node_constant_NOTIFICATION_DRAG_END>` when you prefer polling the value.
 
