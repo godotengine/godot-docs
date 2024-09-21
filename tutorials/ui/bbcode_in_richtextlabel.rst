@@ -715,7 +715,7 @@ Font options
 
   Extra spacing for each glyph.
 
-- **glyph_spacing**, **sp**
+- **space_spacing**, **sp**
 
   +-----------+--------------------------------------------+
   | `Values`  | Number in pixels.                          |
