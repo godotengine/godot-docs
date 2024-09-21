@@ -6,7 +6,7 @@ Shading language
 Introduction
 ------------
 
-Godot uses a shading language similar to GLSL ES 3.0. Most datatypes and
+Godot uses a shading language called GDShader. It's similar to GLSL ES 3.0. Most datatypes and
 functions are supported, and the few remaining ones will likely be added over
 time.
 
