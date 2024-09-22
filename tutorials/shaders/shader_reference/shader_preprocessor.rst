@@ -195,7 +195,7 @@ Be careful, as ``defined()`` must only wrap a single identifier within parenthes
 
 **#if preprocessor versus if statement: Performance caveats**
 
-The :ref:`shading language <doc_shading_language>` supports run-time ``if`` statements:
+:ref:`GDShader<doc_shading_language>` supports run-time ``if`` statements:
 
 .. code-block:: glsl
 

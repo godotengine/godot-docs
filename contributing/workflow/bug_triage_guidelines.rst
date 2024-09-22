@@ -130,7 +130,7 @@ describe an issue or pull request.
 -  *Plugin*: relates to problems encountered while writing plugins.
 -  *Porting*: relates to some specific platforms or exporting projects.
 -  *Rendering*: relates to the 2D and 3D rendering engines.
--  *Shaders*: relates to the Godot shader language or visual shaders.
+-  *Shaders*: relates to GDShader or visual shaders.
 -  *Tests*: relates to unit tests.
 -  *Thirdparty*: relates to third-party libraries used in Godot.
 -  *XR*: relates to Augmented Reality or Virtual Reality.

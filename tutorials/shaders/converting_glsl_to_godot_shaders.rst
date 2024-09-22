@@ -1,21 +1,20 @@
 .. _doc_converting_glsl_to_godot_shaders:
 
-Converting GLSL to Godot shaders
-================================
+Converting GLSL to GDShader
+===========================
 
-This document explains the differences between Godot's shading language and GLSL
-and gives practical advice on how to migrate shaders from other sources, such as
-Shadertoy and The Book of Shaders, into Godot shaders.
+This document explains the differences between GLSL and Godot's shading language, GDShader.
+It also gives practical advice on how to migrate shaders from other sources, such as
+Shadertoy and The Book of Shaders, into GDShader.
 
-For detailed information on Godot's shading language, please refer to the
+For detailed information on GDShader, please refer to the
 :ref:`Shading Language <doc_shading_language>` reference.
 
 GLSL
 ----
 
-Godot uses a shading language based on GLSL with the addition of a few
-quality-of-life features. Accordingly, most features available in GLSL are
-available in Godot's shading language.
+GDShader is based on GLSL with the addition of a few quality-of-life features. 
+Accordingly, most features available in GLSL are available in GDShader.
 
 Shader programs
 ^^^^^^^^^^^^^^^
@@ -74,7 +73,7 @@ rename ``main`` to ``fragment``.
 Macros
 ^^^^^^
 
-The :ref:`Godot shader preprocessor<doc_shader_preprocessor>` supports the following macros:
+The :ref:`GDShader preprocessor<doc_shader_preprocessor>` supports the following macros:
 
 * ``#define`` / ``#undef``
 * ``#if``, ``#elif``, ``#else``, ``#endif``, ``defined()``, ``#ifdef``, ``#ifndef``
@@ -108,7 +107,7 @@ uniforms, so they are not editable from the main program.
 Coordinates
 ^^^^^^^^^^^
 
-``gl_FragCoord`` in GLSL and ``FRAGCOORD`` in the Godot shading language use the
+``gl_FragCoord`` in GLSL and ``FRAGCOORD`` in the GDShader use the
 same coordinate system. If using UV in Godot, the y-coordinate will be flipped
 upside down.
 

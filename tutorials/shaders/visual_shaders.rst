@@ -159,7 +159,7 @@ exhaustive and might be expanded with more nodes and examples.
 Expression node
 +++++++++++++++
 
-The ``Expression`` node allows you to write Godot Shading Language (GLSL-like)
+The ``Expression`` node allows you to write GDShader (GLSL-like)
 expressions inside your visual shaders. The node has buttons to add any amount
 of required input and output ports and can be resized. You can also set up the
 name and type of each port. The expression you have entered will apply

@@ -6,13 +6,13 @@ Shading language
 Introduction
 ------------
 
-Godot uses a shading language called GDShader. It's similar to GLSL ES 3.0. Most datatypes and
-functions are supported, and the few remaining ones will likely be added over
+Godot uses a shading language called GDShader, based on GLSL ES 3.0 with some differences.
+Most datatypes and functions are supported, and the few remaining ones will likely be added over
 time.
 
 If you are already familiar with GLSL, the :ref:`Godot Shader Migration
 Guide<doc_converting_glsl_to_godot_shaders>` is a resource that will help you
-transition from regular GLSL to Godot's shading language.
+transition from regular GLSL to GDShader.
 
 Data types
 ----------
@@ -89,7 +89,7 @@ Most GLSL ES 3.0 datatypes are supported:
 Comments
 ~~~~~~~~
 
-The shading language supports the same comment syntax as used in C# and C++:
+GDShader supports the same comment syntax as used in C# and C++:
 
 .. code-block:: glsl
 
@@ -501,7 +501,7 @@ is the list of them in precedence order:
 Flow control
 ------------
 
-Godot Shading language supports the most common types of flow control:
+GDShader supports the most common types of flow control:
 
 .. code-block:: glsl
 
@@ -601,7 +601,7 @@ render compared to not rendering any object in the first place.
 Functions
 ---------
 
-It is possible to define functions in a Godot shader. They use the following
+It is possible to define functions in GDShader. They use the following
 syntax:
 
 .. code-block:: glsl
@@ -639,7 +639,7 @@ Example below:
 
 .. note::
 
-    Unlike GLSL, Godot's shader language does **not** support function
+    Unlike GLSL, GDShader does **not** support function
     overloading. This means that a function cannot be defined several times with
     different argument types or numbers of arguments. As a workaround, use
     different names for functions that accept a different number of arguments or

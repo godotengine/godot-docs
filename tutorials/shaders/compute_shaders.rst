@@ -25,9 +25,9 @@ Now let's get started by creating a short compute shader.
 
 First, in the **external** text editor of your choice, create a new file called
 ``compute_example.glsl`` in your project folder. When you write compute shaders
-in Godot, you write them in GLSL directly. The Godot shader language is based on
-GLSL. If you are familiar with normal shaders in Godot, the syntax below will
-look somewhat familiar.
+in Godot, you write them in GLSL directly. Godot's shading language, GDShader, 
+is based on GLSL. If you are familiar with normal shaders in Godot, the syntax 
+below will look somewhat familiar.
 
 .. note::
 

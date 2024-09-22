@@ -307,9 +307,8 @@ recompile the editor or export template binary.
 
 Some material features such as height mapping, refraction and proximity fade are
 not part of core shaders, and are performed in the default BaseMaterial3D using
-the Godot shader language instead (not GLSL). This is done by procedurally
-generating the required shader code depending on the features enabled in the
-material.
+GDShader instead (not GLSL). This is done by procedurally generating the required
+shader code depending on the features enabled in the material.
 
 By convention, shader files with ``_inc`` in their name are included in other
 GLSL files for better code reuse. Standard GLSL preprocessing is used to achieve

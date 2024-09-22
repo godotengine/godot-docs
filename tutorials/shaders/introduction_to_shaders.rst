@@ -4,8 +4,8 @@ Introduction to shaders
 =======================
 
 This page explains what shaders are and will give you an overview of how they
-work in Godot. For a detailed reference of the engine's shading language, see
-:ref:`doc_shading_language`.
+work in Godot. For a detailed reference of the engine's shading language, GDShader,
+see :ref:`doc_shading_language`.
 
 Shaders are a special kind of program that runs on Graphics Processing Units
 (GPUs). They were initially used to shade 3D scenes but can nowadays do much
@@ -46,7 +46,7 @@ look like this.
 Shaders in Godot
 ----------------
 
-Godot provides a shading language based on the popular OpenGL Shading Language
+Godot provides a shading language called GDShader based on the popular OpenGL Shading Language
 (GLSL) but simplified. The engine handles some of the lower-level initialization
 work for you, making it easier to write complex shaders.
 
