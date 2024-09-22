@@ -15,21 +15,24 @@ Requirements
 
 For compiling under Windows, the following is required:
 
-- `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
-  version 2019 or later. Visual Studio 2022 is recommended.
-  **Make sure to enable C++ in the list of workflows to install.**
-  If you've already installed Visual Studio without C++ support, run the installer
-  again; it should present you a **Modify** button.
-  Supports ``x86_64``, ``x86_32``, and ``arm64``.
-- `MinGW-w64 <https://mingw-w64.org/>`_ with GCC can be used as an alternative to
-  Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
-  **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later.
-  Supports ``x86_64`` and ``x86_32`` only.
-- `MinGW-LLVM <https://github.com/mstorsjo/llvm-mingw/releases>`_ with clang can be used as
-  an alternative to Visual Studio and MinGW-w64.
-  Supports ``x86_64``, ``x86_32``, and ``arm64``.
-- `Python 3.6+ <https://www.python.org/downloads/windows/>`_.
-  **Make sure to enable the option to add Python to the ``PATH`` in the installer.**
+
+- A C++ compiler. Use one of the following:
+
+    - `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
+      version 2019 or later. Visual Studio 2022 is recommended.
+      **Make sure to enable C++ in the list of workflows to install.**
+      If you've already installed Visual Studio without C++ support, run the installer
+      again; it should present you a **Modify** button.
+      Supports ``x86_64``, ``x86_32``, and ``arm64``.
+    - `MinGW-w64 <https://mingw-w64.org/>`_ with GCC can be used as an alternative to
+      Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
+      **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later.
+      Supports ``x86_64`` and ``x86_32`` only.
+    - `MinGW-LLVM <https://github.com/mstorsjo/llvm-mingw/releases>`_ with clang can be used as
+      an alternative to Visual Studio and MinGW-w64.
+      Supports ``x86_64``, ``x86_32``, and ``arm64``.      
+- `Python 3.6+ <https://www.python.org/downloads/windows/>`_. 
+  **Make sure to enable the option to add Python to the** ``PATH`` **in the installer.**
 - `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system. Using the
   latest release is recommended, especially for proper support of recent Visual
   Studio releases.
