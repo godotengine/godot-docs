@@ -108,7 +108,7 @@ Properties with a backing field use the default value of the backing field.
     node with an attached tool script, ``_number`` will be ``2``, and
     ``NumberWithBackingField`` will return ``5``. This difference may cause
     confusing behavior. To avoid this, don't use complex properties. Alternatively,
-    if the default value can be explicitly specified, it can be overridden with the 
+    if the default value can be explicitly specified, it can be overridden with the
     :ref:`_PropertyCanRevert() <class_Object_private_method__property_can_revert>` and
     :ref:`_PropertyGetRevert() <class_Object_private_method__property_get_revert>` methods.
 
@@ -259,13 +259,29 @@ the slider.
 Floats with easing hint
 -----------------------
 
-Display a visual representation of the 'ease()' function
-when editing.
+Display a visual representation of the :ref:`ease<class_@GlobalScope_method_ease>`
+function when editing.
 
 .. code-block:: csharp
 
     [Export(PropertyHint.ExpEasing)]
     public float TransitionSpeed { get; set; }
+
+Export with suffix hint
+-----------------------
+
+Display a unit hint suffix for exported variables. Works with numeric types,
+such as floats or vectors:
+
+.. code-block:: csharp
+
+    [Export(PropertyHint.None, "suffix:m/s\u00b2")]
+    public float Gravity { get; set; } = 9.8f;
+    [Export(PropertyHint.None, "suffix:m/s")]
+    public Vector3 Velocity { get; set; }
+
+In the above example, ``\u00b2`` is used to write the "squared" character
+(``²``).
 
 Colors
 ------
