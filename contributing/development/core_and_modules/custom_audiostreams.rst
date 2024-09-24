@@ -70,7 +70,7 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
         virtual Ref<AudioStreamPlayback> instantiate_playback() override;
         virtual String get_stream_name() const override;
         void gen_tone(int16_t *p_pcm_buf, int p_size);
-        
+
         virtual double get_length() const override { return 0; } // If supported, otherwise return 0.
         AudioStreamMyTone();
 
@@ -228,7 +228,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
         memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
         int16_t *buf = (int16_t *)pcm_buffer;
         base->gen_tone(buf, p_frames);
-        
+
         for(int i = 0; i < p_frames; i++) {
             float sample = float(buf[i]) / 32767.0;
             p_buffer[i] = AudioFrame(sample, sample);
@@ -353,7 +353,7 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
         memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
         int16_t *buf = (int16_t *)pcm_buffer;
         base->gen_tone(buf, p_frames);
-        
+
         for(int i = 0; i < p_frames; i++) {
             float sample = float(buf[i]) / 32767.0;
             p_buffer[i] = AudioFrame(sample, sample);
