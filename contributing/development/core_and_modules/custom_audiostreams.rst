@@ -68,10 +68,10 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
     	void reset();
     	void set_position(uint64_t p_pos);
     	virtual Ref<AudioStreamPlayback> instantiate_playback() override;
-    	virtual String get_stream_name() const;
+    	virtual String get_stream_name() const override;
     	void gen_tone(int16_t *p_pcm_buf, int p_size);
     	
-    	virtual double get_length() const { return 0; } // If supported, otherwise return 0.
+    	virtual double get_length() const override { return 0; } // If supported, otherwise return 0.
     	AudioStreamMyTone();
 
     protected:
@@ -161,12 +161,12 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
 
     public:
     	virtual void start(double p_from_pos = 0.0) override;
-    	virtual void stop();
-    	virtual bool is_playing() const;
+    	virtual void stop() override;
+    	virtual bool is_playing() const override;
         virtual int get_loop_count() const override; // Times it looped.
-    	virtual double get_playback_position() const;
-    	virtual void seek(double p_time);
-    	virtual int mix(AudioFrame *p_buffer, float p_rate_scale, int p_frames);
+    	virtual double get_playback_position() const override;
+    	virtual void seek(double p_time) override;
+    	virtual int mix(AudioFrame *p_buffer, float p_rate_scale, int p_frames) override;
 
     	AudioStreamPlaybackMyTone();
     	~AudioStreamPlaybackMyTone();
@@ -278,13 +278,13 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
         virtual int _mix_internal(AudioFrame *p_buffer, int p_frames) override;
 
     public:
-    	virtual void start(double p_from_pos = 0.0);
-    	virtual void stop();
-    	virtual bool is_playing() const;
+    	virtual void start(double p_from_pos = 0.0) override;
+    	virtual void stop() override;
+    	virtual bool is_playing() const override;
         virtual int get_loop_count() const override; // Times it looped.
-    	virtual double get_playback_position() const;
-    	virtual void seek(double p_time);
-    	virtual float get_stream_sampling_rate();
+    	virtual double get_playback_position() const override;
+    	virtual void seek(double p_time) override;
+    	virtual float get_stream_sampling_rate() override;
 
     	AudioStreamPlaybackResampledMyTone();
     	~AudioStreamPlaybackResampledMyTone();
