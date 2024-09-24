@@ -803,6 +803,14 @@ GDScript              C#
 ``hex64(int)``        ``Color(ulong)``
 ====================  ==============================================================
 
+Bitmasks
+-------
+Some methods, such as :ref:`ResourceFormatSaver _Save <class-resourceformatsaver-private-method-save>`
+use a bitmask with multiple bit flags. While C# will convert a signed ``int`` to an
+unsigned ``uint`` when passing values into these methods, you must use a ``uint``
+when overriding these methods in your own code. Using an ``int`` can result in
+confusing "no suitable method found to override" error messages.
+
 Array
 -----
 
