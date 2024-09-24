@@ -90,6 +90,9 @@ Navigation
 .. warning::
     2D navigation meshes can not be "layered" or stacked on top of each other like visuals or physic shapes. Attempting to stack navigation meshes on the same navigation map will result in merge and logical errors that break the pathfinding.
 
+Reordering layers
+^^^^^^^^^^^^^^^^^
+
 You can reorder layers by drag-and-dropping their node in the Scene tab. You can
 also switch between which TileMapLayer node you're working on by using the buttons
 in the top right corner of the TileMap editor.
