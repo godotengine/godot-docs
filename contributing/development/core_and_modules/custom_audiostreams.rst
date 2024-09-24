@@ -48,22 +48,22 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
 .. code-block:: cpp
 
     /* audiostream_mytone.h */
-    
+
     #ifndef AUDIOSTREAM_MYTONE_H
     #define AUDIOSTREAM_MYTONE_H
-    
+
     #include "servers/audio/audio_stream.h"
-    
+
     class AudioStreamMyTone : public AudioStream {
     	GDCLASS(AudioStreamMyTone, AudioStream);
-    
+
     private:
     	friend class AudioStreamPlaybackMyTone;
     	uint64_t pos;
     	int mix_rate;
     	bool stereo;
     	int hz;
-    
+
     public:
     	void reset();
     	void set_position(uint64_t p_pos);
@@ -73,32 +73,32 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
     	
     	virtual double get_length() const { return 0; } // If supported, otherwise return 0.
     	AudioStreamMyTone();
-    
+
     protected:
     	static void _bind_methods();
     };
-    
+
     #endif // AUDIOSTREAM_MYTONE_H
 
 .. code-block:: cpp
 
     /* audiostream_mytone.cpp */
-    
+
     #include "audiostream_mytone.h"
 
     #include "audiostreamplayback_mytone.h"
-    
+
     AudioStreamMyTone::AudioStreamMyTone()
     		: mix_rate(44100), stereo(false), hz(639) {
     }
-    
+
     Ref<AudioStreamPlayback> AudioStreamMyTone::instantiate_playback() {
     	Ref<AudioStreamPlaybackMyTone> playback;
     	playback.instantiate();
     	playback->base = Ref<AudioStreamMyTone>(this);
     	return playback;
     }
-    
+
     String AudioStreamMyTone::get_stream_name() const {
     	return "MyTone";
     }
@@ -136,16 +136,16 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
 .. code-block:: cpp
 
     /* audiostreamplayback_mytone.h */
-    
+
     #ifndef AUDIOSTREAMPLAYBACK_MYTONE_H
     #define AUDIOSTREAMPLAYBACK_MYTONE_H
-    
+
     #include "servers/audio/audio_stream.h"
-    
+
     class AudioStreamPlaybackMyTone : public AudioStreamPlayback {
     	GDCLASS(AudioStreamPlaybackMyTone, AudioStreamPlayback);
     	friend class AudioStreamMyTone;
-    
+
     private:
     	enum {
     		PCM_BUFFER_SIZE = 4096
@@ -158,7 +158,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
     	void *pcm_buffer;
     	Ref<AudioStreamMyTone> base;
     	bool active;
-    
+
     public:
     	virtual void start(double p_from_pos = 0.0) override;
     	virtual void stop();
@@ -167,25 +167,25 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
     	virtual double get_playback_position() const;
     	virtual void seek(double p_time);
     	virtual int mix(AudioFrame *p_buffer, float p_rate_scale, int p_frames);
-    
+
     	AudioStreamPlaybackMyTone();
     	~AudioStreamPlaybackMyTone();
     };
-    
+
     #endif // AUDIOSTREAMPLAYBACK_MYTONE_H
 
 .. code-block:: cpp
 
     /* audiostreamplayback_mytone.cpp */
-    
+
     #include "audiostreamplayback_mytone.h"
 
     #include "audiostream_mytone.h"
-    
+
     #include "core/math/math_funcs.h"
-    
+
     #include "servers/audio_server.h"
-    
+
     AudioStreamPlaybackMyTone::AudioStreamPlaybackMyTone()
     		: active(false) {
     	AudioServer::get_singleton()->lock();
@@ -233,7 +233,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
     double AudioStreamPlaybackMyTone::get_playback_position() const {
     	return 0.0;
     }
-    
+
     bool AudioStreamPlaybackMyTone::is_playing() const {
     	return active;
     }
@@ -251,16 +251,16 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
 .. code-block:: cpp
 
     /* audiostreamplaybackresampled_mytone.h */
-    
+
     #ifndef AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
     #define AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
-    
+
     #include "servers/audio/audio_stream.h"
-    
+
     class AudioStreamPlaybackResampledMyTone : public AudioStreamPlaybackResampled {
     	GDCLASS(AudioStreamPlaybackResampledMyTone, AudioStreamPlaybackResampled);
     	friend class AudioStreamMyTone;
-    
+
     private:
     	enum {
     		PCM_BUFFER_SIZE = 4096
@@ -273,10 +273,10 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
     	void *pcm_buffer;
     	Ref<AudioStreamMyTone> base;
     	bool active;
-    
+
     protected:
         virtual int _mix_internal(AudioFrame *p_buffer, int p_frames) override;
-    
+
     public:
     	virtual void start(double p_from_pos = 0.0);
     	virtual void stop();
@@ -285,25 +285,25 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
     	virtual double get_playback_position() const;
     	virtual void seek(double p_time);
     	virtual float get_stream_sampling_rate();
-    	
+
     	AudioStreamPlaybackResampledMyTone();
     	~AudioStreamPlaybackResampledMyTone();
     };
-    
+
     #endif // AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
 
 .. code-block:: cpp
 
     /* audiostreamplaybackresampled_mytone.cpp */
-    
+
     #include "audiostreamplaybackresampled_mytone.h"
 
     #include "audiostream_mytone.h"
-    
+
     #include "core/math/math_funcs.h"
-    
+
     #include "servers/audio_server.h"
-    
+
     AudioStreamPlaybackResampledMyTone::AudioStreamPlaybackResampledMyTone()
     		: active(false) {
     	AudioServer::get_singleton()->lock();
@@ -331,7 +331,7 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
     	}
     	base->set_position(uint64_t(p_time * base->mix_rate) << MIX_FRAC_BITS);
     }
-    
+
     int AudioStreamPlaybackResampledMyTone::_mix_internal(AudioFrame *p_buffer, int p_frames) {
     	if (!active) {
     		return 0;
@@ -346,18 +346,18 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
     	}
     	return p_frames;
     }
-    
+
     float AudioStreamPlaybackResampledMyTone::get_stream_sampling_rate() {
     	return float(base->mix_rate);
     }
-    
+
     int AudioStreamPlaybackResampledMyTone::get_loop_count() const {
     	return 0;
     }
     double AudioStreamPlaybackResampledMyTone::get_playback_position() const {
     	return 0.0;
     }
-    
+
     bool AudioStreamPlaybackResampledMyTone::is_playing() const {
     	return active;
     }
