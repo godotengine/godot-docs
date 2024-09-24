@@ -106,15 +106,18 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
     void AudioStreamMyTone::reset() {
     	set_position(0);
     }
+
     void AudioStreamMyTone::set_position(uint64_t p) {
     	pos = p;
     }
+
     void AudioStreamMyTone::gen_tone(int16_t *pcm_buf, int size) {
     	for (int i = 0; i < size; i++) {
     		pcm_buf[i] = 32767.0 * sin(2.0 * Math_PI * double(pos + i) / (double(mix_rate) / double(hz)));
     	}
     	pos += size;
     }
+
     void AudioStreamMyTone::_bind_methods() {
     	ClassDB::bind_method(D_METHOD("reset"), &AudioStreamMyTone::reset);
     	ClassDB::bind_method(D_METHOD("get_stream_name"), &AudioStreamMyTone::get_stream_name);
@@ -193,26 +196,31 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
     	memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
     	AudioServer::get_singleton()->unlock();
     }
+
     AudioStreamPlaybackMyTone::~AudioStreamPlaybackMyTone() {
     	if (pcm_buffer) {
     		memfree(pcm_buffer);
     		pcm_buffer = NULL;
     	}
     }
+
     void AudioStreamPlaybackMyTone::stop() {
     	active = false;
     	base->reset();
     }
+
     void AudioStreamPlaybackMyTone::start(double p_from_pos) {
     	seek(p_from_pos);
     	active = true;
     }
+
     void AudioStreamPlaybackMyTone::seek(double p_time) {
     	if (p_time < 0) {
     			p_time = 0;
     	}
     	base->set_position(uint64_t(p_time * base->mix_rate) << MIX_FRAC_BITS);
     }
+
     int AudioStreamPlaybackMyTone::mix(AudioFrame *p_buffer, float p_rate, int p_frames) {
     	if (!active) {
     		return 0;
@@ -227,9 +235,11 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
     	}
     	return p_frames;
     }
+
     int AudioStreamPlaybackMyTone::get_loop_count() const {
     	return 0;
     }
+
     double AudioStreamPlaybackMyTone::get_playback_position() const {
     	return 0.0;
     }
@@ -311,20 +321,24 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
     	memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
     	AudioServer::get_singleton()->unlock();
     }
+
     AudioStreamPlaybackResampledMyTone::~AudioStreamPlaybackResampledMyTone() {
     	if (pcm_buffer) {
     		memfree(pcm_buffer);
     		pcm_buffer = NULL;
     	}
     }
+
     void AudioStreamPlaybackResampledMyTone::stop() {
     	active = false;
     	base->reset();
     }
+
     void AudioStreamPlaybackResampledMyTone::start(double p_from_pos) {
     	seek(p_from_pos);
     	active = true;
     }
+
     void AudioStreamPlaybackResampledMyTone::seek(double p_time) {
     	if (p_time < 0) {
     			p_time = 0;
@@ -354,6 +368,7 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
     int AudioStreamPlaybackResampledMyTone::get_loop_count() const {
     	return 0;
     }
+
     double AudioStreamPlaybackResampledMyTone::get_playback_position() const {
     	return 0.0;
     }
