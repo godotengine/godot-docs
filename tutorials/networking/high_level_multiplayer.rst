@@ -282,7 +282,9 @@ The parameters and their functions are as follows:
 
 ``mode``:
 
-- ``"authority"``: Only the multiplayer authority (the server) can call remotely.
+- ``"authority"``: Only the multiplayer authority can call remotely.
+  The authority is the server by default, but can be changed per-node using
+  :ref:`Node.set_multiplayer_authority <class_Node_method_set_multiplayer_authority>`.
 - ``"any_peer"``: Clients are allowed to call remotely. Useful for transferring user input.
 
 ``sync``:
