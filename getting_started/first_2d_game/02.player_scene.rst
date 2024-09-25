@@ -60,9 +60,13 @@ Click on the ``Player`` node and add (:kbd:`Ctrl + A` on Windows/Linux or
 appearance and animations for our player. Notice that there is a warning symbol
 next to the node. An ``AnimatedSprite2D`` requires a :ref:`SpriteFrames
 <class_SpriteFrames>` resource, which is a list of the animations it can
-display. To create one, find the ``Sprite Frames`` property under the ``Animation`` tab in the Inspector and click
-"[empty]" -> "New SpriteFrames". Click on the ``SpriteFrames`` you just
-created to open the "SpriteFrames" panel:
+display. 
+
+To create one, click on the ``AnimatedSprite2D`` you created, then look at the 
+Inspector (normally on your right), open the ``Animation`` tab, then 
+click on ``[empty]`` near ``Sprite Frames`` and click on ``New SpriteFrames``.
+Click again on the new ``SpriteFrames`` you just created to open the 
+``SpriteFrames`` panel:
 
 .. image:: img/spriteframes_panel.webp
 
@@ -77,9 +81,9 @@ side of the panel for the corresponding animation:
 .. image:: img/spriteframes_panel2.webp
 
 The player images are a bit too large for the game window, so we need to scale
-them down. Click on the ``AnimatedSprite2D`` node and set the ``Scale`` property
-to ``(0.5, 0.5)``. You can find it in the Inspector under the ``Node2D``
-heading.
+them down. Click on the ``AnimatedSprite2D`` node, go to the Inspector, click on 
+"Transform" under the the ``Node2D`` heading, and set the ``Scale`` property
+to ``(0.5, 0.5)``.
 
 .. image:: img/player_scale.webp
 
