@@ -58,6 +58,41 @@ Select the resource to be remapped then add some alternatives for each locale.
     the current language, making it ideal for things like multiplayer chat where
     the text language may not match the client's language.
 
+Automatically setting a language
+--------------------------------
+It is recommended to default to the user's preferred language which can be obtained via :ref:`OS.get_locale_language() <class_OS_public_method_get_locale_language>`. If your game is not available in that language, it will fallback to the one in **Project settings > General > Internationalization > Locale (Advanced settings)** (if empty `en` for English will be used which is recommended).
+Nevertheless letting players change the language in game is recommended for various reasons (e.g. translation quality or player preference).
+
+.. tabs::
+ .. code-tab:: gdscript
+    var language = "automatic"
+    # Load here language from the user settings file
+    if language == "automatic":
+       var preferred_language = OS.get_locale_language()
+       TranslationServer.set_locale(preferred_language)
+    else:
+       TranslationServer.set_locale(language)
+
+Locale vs. language
+-------------------
+A Locale is commonly a combination of a language with a region or country but can also contain more information like scripts.
+
+Examples:
+
+- `en`: English language
+- `en_GB`: English in Great Britain / British English
+- `en_US`: Enginsh in the USA / American English
+- `en_DE`: English in Germany
+
+Indie games generally only need to care about language, but read on for more information.
+
+Why locales exist can be illustrated through the USA and Great Britain. Both speak the same language (English), yet differ in many aspects:
+- Spelling: E.g. Gray (USA), grey (GB)
+- Use of words: E.g. eggplant (USA), aubergine (GB)
+- Units or currencies: E.g. feet/inches (USA), meter/cm (GB)
+
+It can get more complex however. Imagine you offer different content in Europe and in China (e.g. in an MMO). You will need to translate each of those content variations into many languages and store and load them accordingly.
+
 Converting keys to text
 -----------------------
 
