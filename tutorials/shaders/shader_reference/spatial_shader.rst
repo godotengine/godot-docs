@@ -10,6 +10,7 @@ write vertex, fragment, and light processor functions to affect how objects are 
 
 Render modes
 ^^^^^^^^^^^^
+For visual examples of these render modes, see :ref:`Standard Material 3D and ORM Material 3D<doc_standard_material_3d>`.
 
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | Render mode                   | Description                                                                                          |
@@ -58,9 +59,9 @@ Render modes
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **specular_disabled**         | Disable specular.                                                                                    |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **skip_vertex_transform**     | VERTEX/NORMAL/etc. need to be transformed manually in vertex function.                               |
+| **skip_vertex_transform**     | ``VERTEX``/``NORMAL``/etc. need to be transformed manually in the ``vertex()`` function.             |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **world_vertex_coords**       | VERTEX/NORMAL/etc. are modified in world coordinates instead of local.                               |
+| **world_vertex_coords**       | ``VERTEX``/``NORMAL``/etc. are modified in world space instead of model space.                       |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **ensure_correct_normals**    | Use when non-uniform scale is applied to mesh.                                                       |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
@@ -86,10 +87,9 @@ Render modes
 Built-ins
 ^^^^^^^^^
 
-Values marked as "in" are read-only. Values marked as "out" are for optional writing and will
-not necessarily contain sensible values. Values marked as "inout" provide a sensible default
-value, and can optionally be written to. Samplers are not subjects of writing and they are
-not marked.
+Values marked as ``in`` are read-only. Values marked as ``out`` can optionally be written to and will
+not necessarily contain sensible values. Values marked as ``inout`` provide a sensible default
+value, and can optionally be written to. Samplers cannot be written to so they are not marked.
 
 Global built-ins
 ^^^^^^^^^^^^^^^^
@@ -99,7 +99,7 @@ Global built-ins are available everywhere, including custom functions.
 +-------------------+-----------------------------------------------------------------------------------------+
 | Built-in          | Description                                                                             |
 +===================+=========================================================================================+
-| in float **TIME** | Global time since the engine has started, in seconds. It repeats after every 3,600      |
+| in float **TIME** | Global time since the engine has started, in seconds. It repeats after every ``3,600``  |
 |                   | seconds (which can  be changed with the                                                 |
 |                   | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`|
 |                   | setting). It's not affected by :ref:`time_scale<class_Engine_property_time_scale>` or   |
@@ -108,7 +108,7 @@ Global built-ins are available everywhere, including custom functions.
 |                   | frame.                                                                                  | 
 +-------------------+-----------------------------------------------------------------------------------------+
 | in float **PI**   | A ``PI`` constant (``3.141592``).                                                       |
-|                   | A ration of circle's circumference to its diameter and amount of radians in half turn.  |
+|                   | A ratio of a circle's circumference to its diameter and amount of radians in half turn. |
 +-------------------+-----------------------------------------------------------------------------------------+
 | in float **TAU**  | A ``TAU`` constant (``6.283185``).                                                      |
 |                   | An equivalent of ``PI * 2`` and amount of radians in full turn.                         |
@@ -119,11 +119,11 @@ Global built-ins are available everywhere, including custom functions.
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
 
-Vertex data (``VERTEX``, ``NORMAL``, ``TANGENT``, ``BITANGENT``) are presented in local
-model space. If not written to, these values will not be modified and be passed through
-as they came.
+Vertex data (``VERTEX``, ``NORMAL``, ``TANGENT``, ``BITANGENT``) are presented in model space
+(also called local space). If not written to, these values will not be modified and be 
+passed through as they came.
 
-They can optionally be presented in world space by using the *world_vertex_coords* render mode.
+They can optionally be presented in world space by using the ``world_vertex_coords`` render mode.
 
 Users can disable the built-in modelview transform (projection will still happen later) and do
 it manually with the following code:
@@ -140,18 +140,18 @@ it manually with the following code:
         TANGENT = normalize((MODELVIEW_MATRIX * vec4(TANGENT, 0.0)).xyz);
     }
 
-Other built-ins, such as UV, UV2 and COLOR, are also passed through to the fragment function if not modified.
+Other built-ins, such as ``UV``, ``UV2``, and ``COLOR``, are also passed through to the ``fragment()`` function if not modified.
 
 Users can override the modelview and projection transforms using the ``POSITION`` built-in. If ``POSITION`` is written
 to anywhere in the shader, it will always be used, so the user becomes responsible for ensuring that it always has
 an acceptable value. When ``POSITION`` is used, the value from ``VERTEX`` is ignored and projection does not happen.
 However, the value passed to the fragment shader still comes from ``VERTEX``.
 
-For instancing, the INSTANCE_CUSTOM variable contains the instance custom data. When using particles, this information
+For instancing, the ``INSTANCE_CUSTOM`` variable contains the instance custom data. When using particles, this information
 is usually:
 
 * **x**: Rotation angle in radians.
-* **y**: Phase during lifetime (0 to 1).
+* **y**: Phase during lifetime (``0.0`` to ``1.0``).
 * **z**: Animation frame.
 
 This allows you to easily adjust the shader to a particle system using default particles material. When writing a custom particle
@@ -171,13 +171,13 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in mat4 **INV_PROJECTION_MATRIX**      | Clip space to view space transform.                    |
 +----------------------------------------+--------------------------------------------------------+
-| in vec3 **NODE_POSITION_WORLD**        | Node world space position.                             |
+| in vec3 **NODE_POSITION_WORLD**        | Node position, in world space.                         |
 +----------------------------------------+--------------------------------------------------------+
-| in vec3 **NODE_POSITION_VIEW**         | Node view space position.                              |
+| in vec3 **NODE_POSITION_VIEW**         | Node position, in view space.                          |
 +----------------------------------------+--------------------------------------------------------+
-| in vec3 **CAMERA_POSITION_WORLD**      | Camera world space position.                           |
+| in vec3 **CAMERA_POSITION_WORLD**      | Camera position, in world space.                       |
 +----------------------------------------+--------------------------------------------------------+
-| in vec3 **CAMERA_DIRECTION_WORLD**     | Camera world space direction.                          |
+| in vec3 **CAMERA_DIRECTION_WORLD**     | Camera direction, in world space.                      |
 +----------------------------------------+--------------------------------------------------------+
 | in uint **CAMERA_VISIBLE_LAYERS**      | Cull layers of the camera rendering the current pass.  |
 +----------------------------------------+--------------------------------------------------------+
@@ -200,15 +200,15 @@ shader, this value can be used as desired.
 | in vec3 **EYE_OFFSET**                 | Position offset for the eye being rendered.            |
 |                                        | Only applicable for multiview rendering.               |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec3 **VERTEX**                  | Vertex in local coordinates.                           |
+| inout vec3 **VERTEX**                  | Vertex position in model space.                        |
 +----------------------------------------+--------------------------------------------------------+
 | in int **VERTEX_ID**                   | The index of the current vertex in the vertex buffer.  |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec3 **NORMAL**                  | Normal in local coordinates.                           |
+| inout vec3 **NORMAL**                  | Normal in model space.                                 |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec3 **TANGENT**                 | Tangent in local coordinates.                          |
+| inout vec3 **TANGENT**                 | Tangent in model space.                                |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec3 **BINORMAL**                | Binormal in local coordinates.                         |
+| inout vec3 **BINORMAL**                | Binormal in model space.                               |
 +----------------------------------------+--------------------------------------------------------+
 | out vec4 **POSITION**                  | If written to, overrides final vertex position.        |
 +----------------------------------------+--------------------------------------------------------+
@@ -222,11 +222,12 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | inout float **POINT_SIZE**             | Point size for point rendering.                        |
 +----------------------------------------+--------------------------------------------------------+
-| inout mat4 **MODELVIEW_MATRIX**        | Model space to view space transform (use if possible). |
+| inout mat4 **MODELVIEW_MATRIX**        | Model/local space to view space transform              |
+|                                        | (use if possible).                                     |
 +----------------------------------------+--------------------------------------------------------+
 | inout mat3 **MODELVIEW_NORMAL_MATRIX** |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| in mat4 **MODEL_MATRIX**               | Model space to world space transform.                  |
+| in mat4 **MODEL_MATRIX**               | Model/local space to world space transform.            |
 +----------------------------------------+--------------------------------------------------------+
 | in mat3 **MODEL_NORMAL_MATRIX**        |                                                        |
 +----------------------------------------+--------------------------------------------------------+
@@ -254,7 +255,7 @@ shader, this value can be used as desired.
 
 .. note::
 
-    ``INV_VIEW_MATRIX`` is the matrix used for rendering the object in that pass, not like ``MAIN_CAM_INV_VIEW_MATRIX``, which is the matrix of the camera in the scene. In the shadow pass, ``INV_VIEW_MATRIX``'s view is based on the camera that is located at the position of the light.
+    ``INV_VIEW_MATRIX`` is the matrix used for rendering the object in that pass, unlike ``MAIN_CAM_INV_VIEW_MATRIX``, which is the matrix of the camera in the scene. In the shadow pass, ``INV_VIEW_MATRIX``'s view is based on the camera that is located at the position of the light.
 
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
@@ -276,18 +277,18 @@ these properties, and if you don't write to them, Godot will optimize away the c
 | in vec3 **VIEW**                       | Normalized vector from fragment position to camera (in view space). This is the same for both    |
 |                                        | perspective and orthogonal cameras.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec2 **UV**                         | UV that comes from vertex function.                                                              |
+| in vec2 **UV**                         | UV that comes from the ``vertex()`` function.                                                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec2 **UV2**                        | UV2 that comes from vertex function.                                                             |
+| in vec2 **UV2**                        | UV2 that comes from the ``vertex()`` function.                                                   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec4 **COLOR**                      | COLOR that comes from vertex function.                                                           |
+| in vec4 **COLOR**                      | COLOR that comes from the ``vertex()`` function.                                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec2 **POINT_COORD**                | Point Coordinate for drawing points with POINT_SIZE.                                             |
+| in vec2 **POINT_COORD**                | Point coordinate for drawing points with ``POINT_SIZE``.                                         |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in bool **OUTPUT_IS_SRGB**             | ``true`` when output is in sRGB color space (this is ``true`` in the Compatibility renderer,     |
 |                                        | ``false`` in Forward+ and Forward Mobile).                                                       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in mat4 **MODEL_MATRIX**               | Model space to world space transform.                                                            |
+| in mat4 **MODEL_MATRIX**               | Model/local space to world space transform.                                                      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat3 **MODEL_NORMAL_MATRIX**        |                                                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -309,7 +310,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in uint **CAMERA_VISIBLE_LAYERS**      | Cull layers of the camera rendering the current pass.                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec3 **VERTEX**                     | Vertex that comes from vertex function (default, in view space).                                 |
+| in vec3 **VERTEX**                     | Vertex position that comes from the ``vertex()`` function (default, in view space).              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | inout vec3 **LIGHT_VERTEX**            | A writable version of ``VERTEX`` that can be used to alter light and shadows. Writing to this    |
 |                                        | will not change the position of the fragment.                                                    |
@@ -330,23 +331,24 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | sampler2D **DEPTH_TEXTURE**            | Removed in Godot 4. Use a ``sampler2D`` with ``hint_depth_texture`` instead.                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **DEPTH**                    | Custom depth value (0..1). If ``DEPTH`` is being written to in any shader branch, then you are   |
-|                                        | responsible for setting the ``DEPTH`` for **all** other branches. Otherwise, the graphics API    |
-|                                        | will leave them uninitialized.                                                                   |
+| out float **DEPTH**                    | Custom depth value (range of ``[0.0, 1.0]``). If ``DEPTH`` is being written to in any shader     |
+|                                        | branch, then you are responsible for setting the ``DEPTH`` for **all** other branches.           |
+|                                        | Otherwise, the graphics API will leave them uninitialized.                                       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec3 **NORMAL**                  | Normal that comes from vertex function (default, in view space).                                 |
+| inout vec3 **NORMAL**                  | Normal that comes from the ``vertex()`` function (default, in view space).                       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec3 **TANGENT**                 | Tangent that comes from vertex function.                                                         |
+| inout vec3 **TANGENT**                 | Tangent that comes from the ``vertex()`` function (default, in view space).                      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec3 **BINORMAL**                | Binormal that comes from vertex function.                                                        |
+| inout vec3 **BINORMAL**                | Binormal that comes from the ``vertex()`` function (default, in view space).                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec3 **NORMAL_MAP**                | Set normal here if reading normal from a texture instead of NORMAL.                              |
+| out vec3 **NORMAL_MAP**                | Set normal here if reading normal from a texture instead of ``NORMAL``.                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **NORMAL_MAP_DEPTH**         | Depth from variable above. Defaults to 1.0.                                                      |
+| out float **NORMAL_MAP_DEPTH**         | Depth from ``NORMAL_MAP``. Defaults to ``1.0``.                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec3 **ALBEDO**                    | Albedo (default white).                                                                          |
+| out vec3 **ALBEDO**                    | Albedo (default white). Base color.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **ALPHA**                    | Alpha (0..1); if read from or written to, the material will go to the transparent pipeline.      |
+| out float **ALPHA**                    | Alpha (range of ``[0.0, 1.0]``). If read from or written to, the material will go to the         |
+|                                        | transparent pipeline.                                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **ALPHA_SCISSOR_THRESHOLD**  | If written to, values below a certain amount of alpha are discarded.                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -356,15 +358,15 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec2 **ALPHA_TEXTURE_COORDINATE**  |                                                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **METALLIC**                 | Metallic (0..1).                                                                                 |
+| out float **METALLIC**                 | Metallic (range of ``[0.0, 1.0]``).                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **SPECULAR**                 | Specular. Defaults to 0.5, best not to modify unless you want to change IOR.                     |
+| out float **SPECULAR**                 | Specular. Defaults to ``0.5``, best not to modify unless you want to change IOR.                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **ROUGHNESS**                | Roughness (0..1).                                                                                |
+| out float **ROUGHNESS**                | Roughness (range of ``[0.0, 1.0]``).                                                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **RIM**                      | Rim (0..1). If used, Godot calculates rim lighting.                                              |
+| out float **RIM**                      | Rim (range of ``[0.0, 1.0]``). If used, Godot calculates rim lighting.                           |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **RIM_TINT**                 | Rim Tint, goes from 0 (white) to 1 (albedo). If used, Godot calculates rim lighting.             |
+| out float **RIM_TINT**                 | Rim Tint, range of ``0.0`` (white) to ``1.0`` (albedo). If used, Godot calculates rim lighting.  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **CLEARCOAT**                | Small added specular blob. If used, Godot calculates Clearcoat.                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -386,15 +388,16 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **AO**                       | Strength of Ambient Occlusion. For use with pre-baked AO.                                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **AO_LIGHT_AFFECT**          | How much AO affects lights (0..1; default 0).                                                    |
+| out float **AO_LIGHT_AFFECT**          | How much AO affects lights (range of ``[0.0, 1.0]``, default ``0.0``).                           |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec3 **EMISSION**                  | Emission color (can go over 1,1,1 for HDR).                                                      |
+| out vec3 **EMISSION**                  | Emission color (can go over ``(1.0, 1.0, 1.0)`` for HDR).                                        |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec4 **FOG**                       | If written to, blends final pixel color with FOG.rgb based on FOG.a.                             |
+| out vec4 **FOG**                       | If written to, blends final pixel color with ``FOG.rgb`` based on ``FOG.a``.                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec4 **RADIANCE**                  | If written to, blends environment map radiance with RADIANCE.rgb based on RADIANCE.a.            |
+| out vec4 **RADIANCE**                  | If written to, blends environment map radiance with ``RADIANCE.rgb`` based on ``RADIANCE.a``.    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out vec4 **IRRADIANCE**                | If written to, blends environment map IRRADIANCE with IRRADIANCE.rgb based on IRRADIANCE.a.      |
+| out vec4 **IRRADIANCE**                | If written to, blends environment map irradiance with ``IRRADIANCE.rgb`` based on                |
+|                                        | ``IRRADIANCE.a``.                                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 
 .. note::
@@ -407,15 +410,13 @@ these properties, and if you don't write to them, Godot will optimize away the c
 Light built-ins
 ^^^^^^^^^^^^^^^
 
-Writing light processor functions is completely optional. You can skip the light function by setting
-render_mode to ``unshaded``. If no light function is written, Godot will use the material
-properties written to in the fragment function to calculate the lighting for you (subject to
-the render_mode).
+Writing light processor functions is completely optional. You can skip the ``light()`` function by using
+the ``unshaded`` render mode. If no light function is written, Godot will use the material properties 
+written to in the ``fragment()`` function to calculate the lighting for you (subject to the render mode).
 
-The light function is called for every light in every pixel. It is called within a loop for
-each light type.
+The ``light()`` function is called for every light in every pixel. It is called within a loop for each light type.
 
-Below is an example of a custom light function using a Lambertian lighting model:
+Below is an example of a custom ``light()`` function using a Lambertian lighting model:
 
 .. code-block:: glsl
 
@@ -427,73 +428,73 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 
 .. warning::
 
-    The ``light()`` function won't be run if the ``vertex_lighting`` render mode
-    is enabled, or if
-    **Rendering > Quality > Shading > Force Vertex Shading** is enabled in the
-    Project Settings. (It's enabled by default on mobile platforms.)
+    The ``light()`` function won't be run if the ``vertex_lighting`` render mode is enabled, or if 
+    :ref:`Rendering > Quality > Shading > Force Vertex Shading<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading>`
+    is enabled in the Project Settings. (It's enabled by default on mobile platforms.)
 
-+-----------------------------------+----------------------------------------------------+
-| Built-in                          | Description                                        |
-+===================================+====================================================+
-| in vec2 **VIEWPORT_SIZE**         | Size of viewport (in pixels).                      |
-+-----------------------------------+----------------------------------------------------+
-| in vec4 **FRAGCOORD**             | Coordinate of pixel center in screen space.        |
-|                                   | ``xy`` specifies position in window, ``z``         |
-|                                   | specifies fragment depth if ``DEPTH`` is not used. |
-|                                   | Origin is lower-left.                              |
-+-----------------------------------+----------------------------------------------------+
-| in mat4 **MODEL_MATRIX**          | Model space to world space transform.              |
-+-----------------------------------+----------------------------------------------------+
-| in mat4 **INV_VIEW_MATRIX**       | View space to world space transform.               |
-+-----------------------------------+----------------------------------------------------+
-| in mat4 **VIEW_MATRIX**           | World space to view space transform.               |
-+-----------------------------------+----------------------------------------------------+
-| in mat4 **PROJECTION_MATRIX**     | View space to clip space transform.                |
-+-----------------------------------+----------------------------------------------------+
-| in mat4 **INV_PROJECTION_MATRIX** | Clip space to view space transform.                |
-+-----------------------------------+----------------------------------------------------+
-| in vec3 **NORMAL**                | Normal vector, in view space.                      |
-+-----------------------------------+----------------------------------------------------+
-| in vec2 **UV**                    | UV that comes from vertex function.                |
-+-----------------------------------+----------------------------------------------------+
-| in vec2 **UV2**                   | UV2 that comes from vertex function.               |
-+-----------------------------------+----------------------------------------------------+
-| in vec3 **VIEW**                  | View vector, in view space.                        |
-+-----------------------------------+----------------------------------------------------+
-| in vec3 **LIGHT**                 | Light Vector, in view space.                       |
-+-----------------------------------+----------------------------------------------------+
-| in vec3 **LIGHT_COLOR**           | Color of light multiplied by ``energy * PI``.      |
-|                                   | The ``PI`` multiplication is present because       |
-|                                   | physically-based lighting models include a         |
-|                                   | division by ``PI``.                                |
-+-----------------------------------+----------------------------------------------------+
-| in float **SPECULAR_AMOUNT**      | 2.0 * ``light_specular`` property for              |
-|                                   | ``OmniLight3D`` and ``SpotLight3D``.               |
-|                                   | 1.0 for ``DirectionalLight3D``.                    |
-+-----------------------------------+----------------------------------------------------+
-| in bool **LIGHT_IS_DIRECTIONAL**  | ``true`` if this pass is a ``DirectionalLight3D``. |
-+-----------------------------------+----------------------------------------------------+
-| in float **ATTENUATION**          | Attenuation based on distance or shadow.           |
-+-----------------------------------+----------------------------------------------------+
-| in vec3 **ALBEDO**                | Base albedo.                                       |
-+-----------------------------------+----------------------------------------------------+
-| in vec3 **BACKLIGHT**             |                                                    |
-+-----------------------------------+----------------------------------------------------+
-| in float **METALLIC**             | Metallic.                                          |
-+-----------------------------------+----------------------------------------------------+
-| in float **ROUGHNESS**            | Roughness.                                         |
-+-----------------------------------+----------------------------------------------------+
-| in bool **OUTPUT_IS_SRGB**        | ``true`` when output is in sRGB color space        |
-|                                   | (this is ``true`` in the Compatibility renderer,   |
-|                                   | ``false`` in Forward+ and Forward Mobile).         |
-+-----------------------------------+----------------------------------------------------+
-| out vec3 **DIFFUSE_LIGHT**        | Diffuse light result.                              |
-+-----------------------------------+----------------------------------------------------+
-| out vec3 **SPECULAR_LIGHT**       | Specular light result.                             |
-+-----------------------------------+----------------------------------------------------+
-| out float **ALPHA**               | Alpha (0..1); if written to, the material will go  |
-|                                   | to the transparent pipeline.                       |
-+-----------------------------------+----------------------------------------------------+
++-----------------------------------+------------------------------------------------------------------------+
+| Built-in                          | Description                                                            |
++===================================+========================================================================+
+| in vec2 **VIEWPORT_SIZE**         | Size of viewport (in pixels).                                          |
++-----------------------------------+------------------------------------------------------------------------+
+| in vec4 **FRAGCOORD**             | Coordinate of pixel center in screen space.                            |
+|                                   | ``xy`` specifies position in window, ``z``                             |
+|                                   | specifies fragment depth if ``DEPTH`` is not used.                     |
+|                                   | Origin is lower-left.                                                  |
++-----------------------------------+------------------------------------------------------------------------+
+| in mat4 **MODEL_MATRIX**          | Model/local space to world space transform.                            |
++-----------------------------------+------------------------------------------------------------------------+
+| in mat4 **INV_VIEW_MATRIX**       | View space to world space transform.                                   |
++-----------------------------------+------------------------------------------------------------------------+
+| in mat4 **VIEW_MATRIX**           | World space to view space transform.                                   |
++-----------------------------------+------------------------------------------------------------------------+
+| in mat4 **PROJECTION_MATRIX**     | View space to clip space transform.                                    |
++-----------------------------------+------------------------------------------------------------------------+
+| in mat4 **INV_PROJECTION_MATRIX** | Clip space to view space transform.                                    |
++-----------------------------------+------------------------------------------------------------------------+
+| in vec3 **NORMAL**                | Normal vector, in view space.                                          |
++-----------------------------------+------------------------------------------------------------------------+
+| in vec2 **UV**                    | UV that comes from the ``vertex()`` function.                          |
++-----------------------------------+------------------------------------------------------------------------+
+| in vec2 **UV2**                   | UV2 that comes from the ``vertex()`` function.                         |
++-----------------------------------+------------------------------------------------------------------------+
+| in vec3 **VIEW**                  | View vector, in view space.                                            |
++-----------------------------------+------------------------------------------------------------------------+
+| in vec3 **LIGHT**                 | Light vector, in view space.                                           |
++-----------------------------------+------------------------------------------------------------------------+
+| in vec3 **LIGHT_COLOR**           | :ref:`Light color<class_Light3D_property_light_color>` multiplied by   |
+|                                   | :ref:`light energy<class_Light3D_property_light_energy>` multiplied by |
+|                                   | ``PI``. The ``PI`` multiplication is present because                   |
+|                                   | physically-based lighting models include a division by ``PI``.         |
++-----------------------------------+------------------------------------------------------------------------+
+| in float **SPECULAR_AMOUNT**      | For :ref:`class_OmniLight3D` and :ref:`class_SpotLight3D`,             |
+|                                   | ``2.0`` multiplied by                                                  |
+|                                   | :ref:`light_specular<class_Light3D_property_light_specular>`.          |
+|                                   | For :ref:`class_DirectionalLight3D`, ``1.0``.                          |
++-----------------------------------+------------------------------------------------------------------------+
+| in bool **LIGHT_IS_DIRECTIONAL**  | ``true`` if this pass is a :ref:`class_DirectionalLight3D`.            |
++-----------------------------------+------------------------------------------------------------------------+
+| in float **ATTENUATION**          | Attenuation based on distance or shadow.                               |
++-----------------------------------+------------------------------------------------------------------------+
+| in vec3 **ALBEDO**                | Base albedo.                                                           |
++-----------------------------------+------------------------------------------------------------------------+
+| in vec3 **BACKLIGHT**             |                                                                        |
++-----------------------------------+------------------------------------------------------------------------+
+| in float **METALLIC**             | Metallic.                                                              |
++-----------------------------------+------------------------------------------------------------------------+
+| in float **ROUGHNESS**            | Roughness.                                                             |
++-----------------------------------+------------------------------------------------------------------------+
+| in bool **OUTPUT_IS_SRGB**        | ``true`` when output is in sRGB color space.                           |
+|                                   | This is ``true`` in the Compatibility renderer,                        |
+|                                   | ``false`` in Forward+ and Forward Mobile.                              |
++-----------------------------------+------------------------------------------------------------------------+
+| out vec3 **DIFFUSE_LIGHT**        | Diffuse light result.                                                  |
++-----------------------------------+------------------------------------------------------------------------+
+| out vec3 **SPECULAR_LIGHT**       | Specular light result.                                                 |
++-----------------------------------+------------------------------------------------------------------------+
+| out float **ALPHA**               | Alpha (range of ``[0.0, 1.0]``). If written to, the material will go   |
+|                                   | to the transparent pipeline.                                           |
++-----------------------------------+------------------------------------------------------------------------+
 
 .. note::
 
