@@ -142,8 +142,9 @@ depending on the platform. By default, these paths are:
 
 Godot complies with the `XDG Base Directory Specification
 <https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html>`__
-on all platforms. You can override environment variables following the
-specification to change the editor and project data paths.
+on Linux/*BSD. You can override the ``XDG_DATA_HOME``, ``XDG_CONFIG_HOME`` and
+``XDG_CACHE_HOME`` environment variables to change the editor and project data
+paths.
 
 .. note:: If you use `Godot packaged as a Flatpak
           <https://flathub.org/apps/details/org.godotengine.Godot>`__, the
