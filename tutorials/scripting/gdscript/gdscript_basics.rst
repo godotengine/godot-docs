@@ -572,8 +572,6 @@ considered a comment.
     The list of highlighted keywords and their colors can be changed in the **Text
     Editor > Theme > Comment Markers** section of the Editor Settings.
 
-.. _doc_gdscript_builtin_types:
-
 Code regions
 ~~~~~~~~~~~~
 
@@ -662,6 +660,8 @@ A line can be continued multiple times like this:
     4 + \
     10 + \
     4
+
+.. _doc_gdscript_builtin_types:
 
 Built-in types
 --------------
