@@ -115,9 +115,8 @@ If you've ever written anything in a language like Python before, then you'll fe
 right at home. For examples and a complete overview of the power GDScript offers
 you, check out the :ref:`GDScript scripting guide <doc_gdscript>`.
 
-There are several reasons to use GDScript, especially when you are prototyping, in
-alpha/beta stages of your project, or are not creating the next AAA title. The
-most salient reason is the overall **reduction of complexity**.
+There are several reasons to use GDScript, but the most salient reason is the overall
+**reduction of complexity**.
 
 The original intent of creating a tightly integrated, custom scripting language for
 Godot was two-fold: first, it reduces the amount of time necessary to get up and running
