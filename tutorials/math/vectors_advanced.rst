@@ -171,7 +171,7 @@ the normal and the point.
 For two points in space, there are actually two planes that pass through
 them, sharing the same space but with normal pointing to the opposite
 directions. To compute the normal from the two points, the direction
-vector must be obtained first, and then it needs to be rotated 90°
+vector must be obtained first, and then it needs to be rotated 90
 degrees to either side:
 
 .. tabs::
