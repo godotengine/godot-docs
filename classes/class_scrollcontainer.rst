@@ -166,6 +166,14 @@ Scrolling enabled, scrollbar will be always visible.
 
 Scrolling enabled, scrollbar will be hidden.
 
+.. _class_ScrollContainer_constant_SCROLL_MODE_RESERVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` **SCROLL_MODE_RESERVE** = ``4``
+
+Combines :ref:`SCROLL_MODE_AUTO<class_ScrollContainer_constant_SCROLL_MODE_AUTO>` and :ref:`SCROLL_MODE_SHOW_ALWAYS<class_ScrollContainer_constant_SCROLL_MODE_SHOW_ALWAYS>`. The scrollbar is only visible if necessary, but the content size is adjusted as if it was always visible. It's useful for ensuring that content size stays the same regardless if the scrollbar is visible.
+
 .. rst-class:: classref-section-separator
 
 ----

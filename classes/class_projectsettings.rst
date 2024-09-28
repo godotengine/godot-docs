@@ -2032,7 +2032,7 @@ It may take several seconds at a stable frame rate before the smoothing is initi
 
 If ``true``, disables printing to standard error. If ``true``, this also hides error and warning messages printed by :ref:`@GlobalScope.push_error<class_@GlobalScope_method_push_error>` and :ref:`@GlobalScope.push_warning<class_@GlobalScope_method_push_warning>`. See also :ref:`application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>`.
 
-Changes to this setting will only be applied upon restarting the application.
+Changes to this setting will only be applied upon restarting the application. To control this at runtime, use :ref:`Engine.print_error_messages<class_Engine_property_print_error_messages>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2046,7 +2046,7 @@ Changes to this setting will only be applied upon restarting the application.
 
 If ``true``, disables printing to standard output. This is equivalent to starting the editor or project with the ``--quiet`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`. See also :ref:`application/run/disable_stderr<class_ProjectSettings_property_application/run/disable_stderr>`.
 
-Changes to this setting will only be applied upon restarting the application.
+Changes to this setting will only be applied upon restarting the application. To control this at runtime, use :ref:`Engine.print_to_stdout<class_Engine_property_print_to_stdout>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9256,6 +9256,8 @@ Sets which physics engine to use for 2D physics.
 
 "DEFAULT" and "GodotPhysics2D" are the same, as there is currently no alternative 2D physics server implemented.
 
+"Dummy" is a 2D physics server that does nothing and returns only dummy values, effectively disabling all 2D physics functionality.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -9491,6 +9493,8 @@ During each physics tick, Godot will multiply the linear velocity of RigidBodies
 Sets which physics engine to use for 3D physics.
 
 "DEFAULT" and "GodotPhysics3D" are the same, as there is currently no alternative 3D physics server implemented.
+
+"Dummy" is a 3D physics server that does nothing and returns only dummy values, effectively disabling all 3D physics functionality.
 
 .. rst-class:: classref-item-separator
 

@@ -68,6 +68,8 @@ Methods
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`find<class_PackedColorArray_method_find>`\ (\ value\: :ref:`Color<class_Color>`, from\: :ref:`int<class_int>` = 0\ ) |const|       |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                       | :ref:`get<class_PackedColorArray_method_get>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                               |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`has<class_PackedColorArray_method_has>`\ (\ value\: :ref:`Color<class_Color>`\ ) |const|                                           |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`insert<class_PackedColorArray_method_insert>`\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`Color<class_Color>`\ )           |
@@ -258,6 +260,18 @@ Assigns the given value to all elements in the array. This can typically be used
 :ref:`int<class_int>` **find**\ (\ value\: :ref:`Color<class_Color>`, from\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PackedColorArray_method_find>`
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedColorArray_method_get:
+
+.. rst-class:: classref-method
+
+:ref:`Color<class_Color>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedColorArray_method_get>`
+
+Returns the :ref:`Color<class_Color>` at the given ``index`` in the array. This is the same as using the ``[]`` operator (``array[index]``).
 
 .. rst-class:: classref-item-separator
 

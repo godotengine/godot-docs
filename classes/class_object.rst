@@ -141,6 +141,8 @@ Methods
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>`                              | :ref:`get_translation_domain<class_Object_method_get_translation_domain>`\ (\ ) |const|                                                                                                                                                  |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`has_connections<class_Object_method_has_connections>`\ (\ signal\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                  |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`has_meta<class_Object_method_has_meta>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                  |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`has_method<class_Object_method_has_method>`\ (\ method\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                            |
@@ -1430,6 +1432,20 @@ Returns the list of existing signals as an :ref:`Array<class_Array>` of dictiona
 :ref:`StringName<class_StringName>` **get_translation_domain**\ (\ ) |const| :ref:`🔗<class_Object_method_get_translation_domain>`
 
 Returns the name of the translation domain used by :ref:`tr<class_Object_method_tr>` and :ref:`tr_n<class_Object_method_tr_n>`. See also :ref:`TranslationServer<class_TranslationServer>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Object_method_has_connections:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_connections**\ (\ signal\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_Object_method_has_connections>`
+
+Returns ``true`` if any connection exists on the given ``signal`` name.
+
+\ **Note:** In C#, ``signal`` must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the ``SignalName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
 
 .. rst-class:: classref-item-separator
 

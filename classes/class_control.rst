@@ -143,6 +143,8 @@ Properties
    +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>`                                 | :ref:`theme_type_variation<class_Control_property_theme_type_variation>`                     | ``&""``                                                                       |
    +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>`               | :ref:`tooltip_auto_translate_mode<class_Control_property_tooltip_auto_translate_mode>`       | ``0``                                                                         |
+   +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                         | :ref:`tooltip_text<class_Control_property_tooltip_text>`                                     | ``""``                                                                        |
    +---------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -1880,6 +1882,25 @@ When set, this property gives the highest priority to the type of the specified 
 \ **Note:** To look up **Control**'s own items use various ``get_theme_*`` methods without specifying ``theme_type``.
 
 \ **Note:** Theme items are looked for in the tree order, from branch to root, where each **Control** node is checked for its :ref:`theme<class_Control_property_theme>` property. The earliest match against any type/class name is returned. The project-level Theme and the default Theme are checked last.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Control_property_tooltip_auto_translate_mode:
+
+.. rst-class:: classref-property
+
+:ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>` **tooltip_auto_translate_mode** = ``0`` :ref:`🔗<class_Control_property_tooltip_auto_translate_mode>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_tooltip_auto_translate_mode**\ (\ value\: :ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>`\ )
+- :ref:`AutoTranslateMode<enum_Node_AutoTranslateMode>` **get_tooltip_auto_translate_mode**\ (\ )
+
+Defines if tooltip text should automatically change to its translated version depending on the current locale. Uses the same auto translate mode as this control when set to :ref:`Node.AUTO_TRANSLATE_MODE_INHERIT<class_Node_constant_AUTO_TRANSLATE_MODE_INHERIT>`.
+
+\ **Note:** When the tooltip is customized using :ref:`_make_custom_tooltip<class_Control_private_method__make_custom_tooltip>`, this auto translate mode is applied automatically to the returned control.
 
 .. rst-class:: classref-item-separator
 

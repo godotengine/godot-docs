@@ -96,6 +96,8 @@ Methods
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`get_object_id<class_Signal_method_get_object_id>`\ (\ ) |const|                                                            |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`has_connections<class_Signal_method_has_connections>`\ (\ ) |const|                                                        |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`is_connected<class_Signal_method_is_connected>`\ (\ callable\: :ref:`Callable<class_Callable>`\ ) |const|                  |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`is_null<class_Signal_method_is_null>`\ (\ ) |const|                                                                        |
@@ -150,7 +152,7 @@ Constructs a **Signal** as a copy of the given **Signal**.
 
 :ref:`Signal<class_Signal>` **Signal**\ (\ object\: :ref:`Object<class_Object>`, signal\: :ref:`StringName<class_StringName>`\ )
 
-Creates a new **Signal** named ``signal`` in the specified ``object``.
+Creates a **Signal** object referencing a signal named ``signal`` in the specified ``object``.
 
 .. rst-class:: classref-section-separator
 
@@ -256,6 +258,18 @@ Returns the object emitting this signal.
 :ref:`int<class_int>` **get_object_id**\ (\ ) |const| :ref:`🔗<class_Signal_method_get_object_id>`
 
 Returns the ID of the object emitting this signal (see :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Signal_method_has_connections:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_connections**\ (\ ) |const| :ref:`🔗<class_Signal_method_has_connections>`
+
+Returns ``true`` if any :ref:`Callable<class_Callable>` is connected to this signal.
 
 .. rst-class:: classref-item-separator
 

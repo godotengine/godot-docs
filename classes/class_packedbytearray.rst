@@ -124,6 +124,8 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`find<class_PackedByteArray_method_find>`\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = 0\ ) |const|                                                                 |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get<class_PackedByteArray_method_get>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                     |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>`\ (\ ) |const|                                                                                                |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`\ (\ ) |const|                                                                                                  |
@@ -672,6 +674,18 @@ Assigns the given value to all elements in the array. This can typically be used
 :ref:`int<class_int>` **find**\ (\ value\: :ref:`int<class_int>`, from\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PackedByteArray_method_find>`
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedByteArray_method_get:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedByteArray_method_get>`
+
+Returns the byte at the given ``index`` in the array. This is the same as using the ``[]`` operator (``array[index]``).
 
 .. rst-class:: classref-item-separator
 

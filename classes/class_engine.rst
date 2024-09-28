@@ -40,6 +40,8 @@ Properties
    +---------------------------+---------------------------------------------------------------------------------------+----------+
    | :ref:`bool<class_bool>`   | :ref:`print_error_messages<class_Engine_property_print_error_messages>`               | ``true`` |
    +---------------------------+---------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`   | :ref:`print_to_stdout<class_Engine_property_print_to_stdout>`                         | ``true`` |
+   +---------------------------+---------------------------------------------------------------------------------------+----------+
    | :ref:`float<class_float>` | :ref:`time_scale<class_Engine_property_time_scale>`                                   | ``1.0``  |
    +---------------------------+---------------------------------------------------------------------------------------+----------+
 
@@ -216,6 +218,25 @@ If ``false``, stops printing error and warning messages to the console and edito
 \ **Note:** This property does not impact the editor's Errors tab when running a project from the editor.
 
 \ **Warning:** If set to ``false`` anywhere in the project, important error messages may be hidden even if they are emitted from other scripts. In a ``@tool`` script, this will also impact the editor itself. Do *not* report bugs before ensuring error messages are enabled (as they are by default).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Engine_property_print_to_stdout:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **print_to_stdout** = ``true`` :ref:`🔗<class_Engine_property_print_to_stdout>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_print_to_stdout**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_printing_to_stdout**\ (\ )
+
+If ``false``, stops printing messages (for example using :ref:`@GlobalScope.print<class_@GlobalScope_method_print>`) to the console, log files, and editor Output log. This property is equivalent to the :ref:`ProjectSettings.application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>` project setting.
+
+\ **Note:** This does not stop printing errors or warnings produced by scripts to the console or log files, for more details see :ref:`print_error_messages<class_Engine_property_print_error_messages>`.
 
 .. rst-class:: classref-item-separator
 

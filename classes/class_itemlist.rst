@@ -234,7 +234,9 @@ Signals
 
 **empty_clicked**\ (\ at_position\: :ref:`Vector2<class_Vector2>`, mouse_button_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ItemList_signal_empty_clicked>`
 
-Triggered when any mouse click is issued within the rect of the list but on empty space.
+Emitted when any mouse click is issued within the rect of the list but on empty space.
+
+\ ``at_position`` is the click position in this control's local coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -246,7 +248,7 @@ Triggered when any mouse click is issued within the rect of the list but on empt
 
 **item_activated**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ItemList_signal_item_activated>`
 
-Triggered when specified list item is activated via double-clicking or by pressing :kbd:`Enter`.
+Emitted when specified list item is activated via double-clicking or by pressing :kbd:`Enter`.
 
 .. rst-class:: classref-item-separator
 
@@ -258,9 +260,9 @@ Triggered when specified list item is activated via double-clicking or by pressi
 
 **item_clicked**\ (\ index\: :ref:`int<class_int>`, at_position\: :ref:`Vector2<class_Vector2>`, mouse_button_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ItemList_signal_item_clicked>`
 
-Triggered when specified list item has been clicked with any mouse button.
+Emitted when specified list item has been clicked with any mouse button.
 
-The click position is also provided to allow appropriate popup of context menus at the correct location.
+\ ``at_position`` is the click position in this control's local coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -272,7 +274,7 @@ The click position is also provided to allow appropriate popup of context menus 
 
 **item_selected**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_ItemList_signal_item_selected>`
 
-Triggered when specified item has been selected.
+Emitted when specified item has been selected. Only applicable in single selection mode.
 
 \ :ref:`allow_reselect<class_ItemList_property_allow_reselect>` must be enabled to reselect an item.
 
@@ -286,7 +288,7 @@ Triggered when specified item has been selected.
 
 **multi_selected**\ (\ index\: :ref:`int<class_int>`, selected\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_ItemList_signal_multi_selected>`
 
-Triggered when a multiple selection is altered on a list allowing multiple selection.
+Emitted when a multiple selection is altered on a list allowing multiple selection.
 
 .. rst-class:: classref-section-separator
 

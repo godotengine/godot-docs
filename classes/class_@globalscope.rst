@@ -6434,7 +6434,7 @@ Converts one or more arguments of any type to string in the best way possible an
 
 
 
-\ **Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>` or :ref:`print_rich<class_@GlobalScope_method_print_rich>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
+\ **Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>` or :ref:`print_rich<class_@GlobalScope_method_print_rich>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed. See also :ref:`Engine.print_to_stdout<class_Engine_property_print_to_stdout>` and :ref:`ProjectSettings.application/run/disable_stdout<class_ProjectSettings_property_application/run/disable_stdout>`.
 
 .. rst-class:: classref-item-separator
 
