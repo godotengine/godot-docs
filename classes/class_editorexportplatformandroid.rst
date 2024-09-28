@@ -86,6 +86,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`launcher_icons/adaptive_foreground_432x432<class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_foreground_432x432>`         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`launcher_icons/adaptive_monochrome_432x432<class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_monochrome_432x432>`         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`launcher_icons/main_192x192<class_EditorExportPlatformAndroid_property_launcher_icons/main_192x192>`                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`package/app_category<class_EditorExportPlatformAndroid_property_package/app_category>`                                                     |
@@ -763,6 +765,18 @@ Background layer of the application adaptive icon file. See `Design adaptive ico
 :ref:`String<class_String>` **launcher_icons/adaptive_foreground_432x432** :ref:`🔗<class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_foreground_432x432>`
 
 Foreground layer of the application adaptive icon file. See `Design adaptive icons <https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#design-adaptive-icons>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_monochrome_432x432:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **launcher_icons/adaptive_monochrome_432x432** :ref:`🔗<class_EditorExportPlatformAndroid_property_launcher_icons/adaptive_monochrome_432x432>`
+
+Monochrome layer of the application adaptive icon file. See `Design adaptive icons <https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#design-adaptive-icons>`__.
 
 .. rst-class:: classref-item-separator
 

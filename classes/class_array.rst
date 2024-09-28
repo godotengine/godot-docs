@@ -135,6 +135,8 @@ Methods
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`       | :ref:`front<class_Array_method_front>`\ (\ ) |const|                                                                                                                                                    |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`get<class_Array_method_get>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                         |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`get_typed_builtin<class_Array_method_get_typed_builtin>`\ (\ ) |const|                                                                                                                            |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>` | :ref:`get_typed_class_name<class_Array_method_get_typed_class_name>`\ (\ ) |const|                                                                                                                      |
@@ -186,6 +188,8 @@ Methods
    | :ref:`int<class_int>`               | :ref:`rfind<class_Array_method_rfind>`\ (\ what\: :ref:`Variant<class_Variant>`, from\: :ref:`int<class_int>` = -1\ ) |const|                                                                           |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`rfind_custom<class_Array_method_rfind_custom>`\ (\ method\: :ref:`Callable<class_Callable>`, from\: :ref:`int<class_int>` = -1\ ) |const|                                                         |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`set<class_Array_method_set>`\ (\ index\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`\ )                                                                                          |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                              | :ref:`shuffle<class_Array_method_shuffle>`\ (\ )                                                                                                                                                        |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -802,6 +806,18 @@ Returns the first element of the array. If the array is empty, fails and returns
 
 ----
 
+.. _class_Array_method_get:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Array_method_get>`
+
+Returns the element at the given ``index`` in the array. This is the same as using the ``[]`` operator (``array[index]``).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Array_method_get_typed_builtin:
 
 .. rst-class:: classref-method
@@ -1248,6 +1264,18 @@ Returns the index of the **last** occurrence of ``what`` in this array, or ``-1`
 :ref:`int<class_int>` **rfind_custom**\ (\ method\: :ref:`Callable<class_Callable>`, from\: :ref:`int<class_int>` = -1\ ) |const| :ref:`🔗<class_Array_method_rfind_custom>`
 
 Returns the index of the **last** element of the array that causes ``method`` to return ``true``, or ``-1`` if there are none. The search's start can be specified with ``from``, continuing to the beginning of the array. This method is the reverse of :ref:`find_custom<class_Array_method_find_custom>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Array_method_set:
+
+.. rst-class:: classref-method
+
+|void| **set**\ (\ index\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_Array_method_set>`
+
+Sets the value of the element at the given ``index`` to the given ``value``. This will not change the size of the array, it only changes the value at an index already in the array. This is the same as using the ``[]`` operator (``array[index] = value``).
 
 .. rst-class:: classref-item-separator
 

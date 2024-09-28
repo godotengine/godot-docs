@@ -237,7 +237,7 @@ Emitted when the **CanvasItem** must redraw, *after* the related :ref:`NOTIFICAT
 
 **hidden**\ (\ ) :ref:`🔗<class_CanvasItem_signal_hidden>`
 
-Emitted when becoming hidden.
+Emitted when the **CanvasItem** is hidden, i.e. it's no longer visible in the tree (see :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>`).
 
 .. rst-class:: classref-item-separator
 
@@ -249,7 +249,7 @@ Emitted when becoming hidden.
 
 **item_rect_changed**\ (\ ) :ref:`🔗<class_CanvasItem_signal_item_rect_changed>`
 
-Emitted when the item's :ref:`Rect2<class_Rect2>` boundaries (position or size) have changed, or when an action is taking place that may have impacted these boundaries (e.g. changing :ref:`Sprite2D.texture<class_Sprite2D_property_texture>`).
+Emitted when the **CanvasItem**'s boundaries (position or size) change, or when an action took place that may have affected these boundaries (e.g. changing :ref:`Sprite2D.texture<class_Sprite2D_property_texture>`).
 
 .. rst-class:: classref-item-separator
 
@@ -261,7 +261,7 @@ Emitted when the item's :ref:`Rect2<class_Rect2>` boundaries (position or size) 
 
 **visibility_changed**\ (\ ) :ref:`🔗<class_CanvasItem_signal_visibility_changed>`
 
-Emitted when the visibility (hidden/visible) changes.
+Emitted when the **CanvasItem**'s visibility changes, either because its own :ref:`visible<class_CanvasItem_property_visible>` property changed or because its visibility in the tree changed (see :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>`).
 
 .. rst-class:: classref-section-separator
 
@@ -716,7 +716,7 @@ The rendering layer in which this **CanvasItem** is rendered by :ref:`Viewport<c
 - |void| **set_visible**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_visible**\ (\ )
 
-If ``true``, this **CanvasItem** is drawn. The node is only visible if all of its ancestors are visible as well (in other words, :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>` must return ``true``).
+If ``true``, this **CanvasItem** may be drawn. Whether this **CanvasItem** is actually drawn depends on the visibility of all of its **CanvasItem** ancestors. In other words: this **CanvasItem** will be drawn when :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>` returns ``true`` and all **CanvasItem** ancestors share at least one :ref:`visibility_layer<class_CanvasItem_property_visibility_layer>` with this **CanvasItem**.
 
 \ **Note:** For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
@@ -1475,6 +1475,8 @@ Returns ``true`` if global transform notifications are communicated to children.
 Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree, and is therefore not drawn (see :ref:`_draw<class_CanvasItem_private_method__draw>`).
 
 Visibility is checked only in parent nodes that inherit from **CanvasItem**, :ref:`CanvasLayer<class_CanvasLayer>`, and :ref:`Window<class_Window>`. If the parent is of any other type (such as :ref:`Node<class_Node>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, or :ref:`Node3D<class_Node3D>`), it is assumed to be visible.
+
+\ **Note:** This method does not take :ref:`visibility_layer<class_CanvasItem_property_visibility_layer>` into account, so even if this method returns ``true`` the node might end up not being rendered.
 
 .. rst-class:: classref-item-separator
 

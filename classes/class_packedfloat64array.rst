@@ -70,6 +70,8 @@ Methods
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`find<class_PackedFloat64Array_method_find>`\ (\ value\: :ref:`float<class_float>`, from\: :ref:`int<class_int>` = 0\ ) |const|       |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`get<class_PackedFloat64Array_method_get>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                               |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has<class_PackedFloat64Array_method_has>`\ (\ value\: :ref:`float<class_float>`\ ) |const|                                           |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`insert<class_PackedFloat64Array_method_insert>`\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ )           |
@@ -260,6 +262,18 @@ Assigns the given value to all elements in the array. This can typically be used
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
 
 \ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedFloat64Array_method_get:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedFloat64Array_method_get>`
+
+Returns the 64-bit float at the given ``index`` in the array. This is the same as using the ``[]`` operator (``array[index]``).
 
 .. rst-class:: classref-item-separator
 

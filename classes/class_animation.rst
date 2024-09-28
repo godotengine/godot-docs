@@ -146,6 +146,8 @@ Methods
    +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`                                  | :ref:`method_track_get_params<class_Animation_method_method_track_get_params>`\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                    |
    +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                     | :ref:`optimize<class_Animation_method_optimize>`\ (\ allowed_velocity_err\: :ref:`float<class_float>` = 0.01, allowed_angular_err\: :ref:`float<class_float>` = 0.01, precision\: :ref:`int<class_int>` = 3\ )                                                                                                      |
+   +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`position_track_insert_key<class_Animation_method_position_track_insert_key>`\ (\ track_idx\: :ref:`int<class_int>`, time\: :ref:`float<class_float>`, position\: :ref:`Vector3<class_Vector3>`\ )                                                                                                             |
    +------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                              | :ref:`position_track_interpolate<class_Animation_method_position_track_interpolate>`\ (\ track_idx\: :ref:`int<class_int>`, time_sec\: :ref:`float<class_float>`, backward\: :ref:`bool<class_bool>` = false\ ) |const|                                                                                             |
@@ -946,6 +948,18 @@ Returns the method name of a method track.
 :ref:`Array<class_Array>` **method_track_get_params**\ (\ track_idx\: :ref:`int<class_int>`, key_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Animation_method_method_track_get_params>`
 
 Returns the arguments values to be called on a method track for a given key in a given track.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Animation_method_optimize:
+
+.. rst-class:: classref-method
+
+|void| **optimize**\ (\ allowed_velocity_err\: :ref:`float<class_float>` = 0.01, allowed_angular_err\: :ref:`float<class_float>` = 0.01, precision\: :ref:`int<class_int>` = 3\ ) :ref:`🔗<class_Animation_method_optimize>`
+
+Optimize the animation and all its tracks in-place. This will preserve only as many keys as are necessary to keep the animation within the specified bounds.
 
 .. rst-class:: classref-item-separator
 

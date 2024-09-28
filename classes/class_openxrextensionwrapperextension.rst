@@ -82,6 +82,8 @@ Methods
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_on_viewport_composition_layer_destroyed<class_OpenXRExtensionWrapperExtension_private_method__on_viewport_composition_layer_destroyed>`\ (\ layer\: ``const void*``\ ) |virtual|                                                                                                          |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`_set_android_surface_swapchain_create_info_and_get_next_pointer<class_OpenXRExtensionWrapperExtension_private_method__set_android_surface_swapchain_create_info_and_get_next_pointer>`\ (\ property_values\: :ref:`Dictionary<class_Dictionary>`, next_pointer\: ``void*``\ ) |virtual|    |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`_set_hand_joint_locations_and_get_next_pointer<class_OpenXRExtensionWrapperExtension_private_method__set_hand_joint_locations_and_get_next_pointer>`\ (\ hand_index\: :ref:`int<class_int>`, next_pointer\: ``void*``\ ) |virtual|                                                         |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`_set_instance_create_info_and_get_next_pointer<class_OpenXRExtensionWrapperExtension_private_method__set_instance_create_info_and_get_next_pointer>`\ (\ next_pointer\: ``void*``\ ) |virtual|                                                                                             |
@@ -429,6 +431,20 @@ Called when the OpenXR session state is changed to visible. This means OpenXR is
 Called when a composition layer created via :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` is destroyed.
 
 \ ``layer`` is a pointer to an ``XrCompositionLayerBaseHeader`` struct.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRExtensionWrapperExtension_private_method__set_android_surface_swapchain_create_info_and_get_next_pointer:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_set_android_surface_swapchain_create_info_and_get_next_pointer**\ (\ property_values\: :ref:`Dictionary<class_Dictionary>`, next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__set_android_surface_swapchain_create_info_and_get_next_pointer>`
+
+Adds additional data structures to Android surface swapchains created by :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>`.
+
+\ ``property_values`` contains the values of the properties returned by :ref:`_get_viewport_composition_layer_extension_properties<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`.
 
 .. rst-class:: classref-item-separator
 

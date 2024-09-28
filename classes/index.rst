@@ -398,6 +398,7 @@ Resources
     class_editorsettings
     class_editorsyntaxhighlighter
     class_environment
+    class_externaltexture
     class_fastnoiselite
     class_fbxdocument
     class_fbxstate

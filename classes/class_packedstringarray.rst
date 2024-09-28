@@ -83,6 +83,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`find<class_PackedStringArray_method_find>`\ (\ value\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0\ ) |const|      |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get<class_PackedStringArray_method_get>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`has<class_PackedStringArray_method_has>`\ (\ value\: :ref:`String<class_String>`\ ) |const|                                          |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`insert<class_PackedStringArray_method_insert>`\ (\ at_index\: :ref:`int<class_int>`, value\: :ref:`String<class_String>`\ )          |
@@ -267,6 +269,18 @@ Assigns the given value to all elements in the array. This can typically be used
 :ref:`int<class_int>` **find**\ (\ value\: :ref:`String<class_String>`, from\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_PackedStringArray_method_find>`
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedStringArray_method_get:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PackedStringArray_method_get>`
+
+Returns the :ref:`String<class_String>` at the given ``index`` in the array. This is the same as using the ``[]`` operator (``array[index]``).
 
 .. rst-class:: classref-item-separator
 

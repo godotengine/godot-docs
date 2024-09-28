@@ -4156,7 +4156,7 @@ Output color as they came in. This can cause bright lighting to look blown out, 
 
 :ref:`EnvironmentToneMapper<enum_RenderingServer_EnvironmentToneMapper>` **ENV_TONE_MAPPER_REINHARD** = ``1``
 
-Use the Reinhard tonemapper. Performs a variation on rendered pixels' colors by this formula: ``color = color / (1 + color)``. This avoids clipping bright highlights, but the resulting image can look a bit dull.
+Use the Reinhard tonemapper. Performs a variation on rendered pixels' colors by this formula: ``color = color * (1 + color / (white * white)) / (1 + color)``. This avoids clipping bright highlights, but the resulting image can look a bit dull. When :ref:`Environment.tonemap_white<class_Environment_property_tonemap_white>` is left at the default value of ``1.0`` this is identical to :ref:`ENV_TONE_MAPPER_LINEAR<class_RenderingServer_constant_ENV_TONE_MAPPER_LINEAR>` while also being slightly less performant.
 
 .. _class_RenderingServer_constant_ENV_TONE_MAPPER_FILMIC:
 
@@ -5582,11 +5582,19 @@ Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:
 
 Cubemap sampler global shader parameter (``global uniform samplerCube ...``). Exposed as a :ref:`Cubemap<class_Cubemap>` in the editor UI.
 
+.. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_SAMPLEREXT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_SAMPLEREXT** = ``28``
+
+External sampler global shader parameter (``global uniform samplerExternalOES ...``). Exposed as a :ref:`ExternalTexture<class_ExternalTexture>` in the editor UI.
+
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_MAX** = ``28``
+:ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_MAX** = ``29``
 
 Represents the size of the :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` enum.
 
@@ -9742,6 +9750,12 @@ The per-instance data size and expected data order is:
       - Position + Vertex color: 16 floats (12 floats for Transform3D, 4 floats for Color)
       - Position + Custom data: 16 floats (12 floats for Transform3D, 4 floats of custom data)
       - Position + Vertex color + Custom data: 20 floats (12 floats for Transform3D, 4 floats for Color, 4 floats of custom data)
+
+Instance transforms are in row-major order. Specifically:
+
+- For :ref:`Transform2D<class_Transform2D>` the float-order is: ``(x.x, y.x, padding_float, origin.x, x.y, y.y, padding_float, origin.y)``.
+
+- For :ref:`Transform3D<class_Transform3D>` the float-order is: ``(basis.x.x, basis.y.x, basis.z.x, origin.x, basis.x.y, basis.y.y, basis.z.y, origin.y, basis.x.z, basis.y.z, basis.z.z, origin.z)``.
 
 .. rst-class:: classref-item-separator
 
