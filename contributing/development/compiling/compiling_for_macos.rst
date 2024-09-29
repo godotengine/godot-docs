@@ -59,6 +59,12 @@ To support both architectures in a single "Universal 2" binary, run the above tw
 
     lipo -create bin/godot.macos.editor.x86_64 bin/godot.macos.editor.arm64 -output bin/godot.macos.editor.universal
 
+.. tip::
+    If you are compiling Godot to make changes or contribute to the engine,
+    you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``. 
+    See :ref:`doc_introduction_to_the_buildsystem_development_and_production_aliases`
+    for more info.
+
 If all goes well, the resulting binary executable will be placed in the
 ``bin/`` subdirectory. This executable file contains the whole engine and
 runs without any dependencies. Executing it will bring up the Project

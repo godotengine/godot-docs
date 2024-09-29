@@ -146,6 +146,12 @@ the engine source code (using ``cd``) and type:
 .. note:: When compiling with multiple CPU threads, SCons may warn about
           pywin32 being missing. You can safely ignore this warning.
 
+.. tip::
+    If you are compiling Godot to make changes or contribute to the engine,
+    you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``. 
+    See :ref:`doc_introduction_to_the_buildsystem_development_and_production_aliases`
+    for more info.
+
 If all goes well, the resulting binary executable will be placed in
 ``C:\godot\bin\`` with the name ``godot.windows.editor.x86_32.exe`` or
 ``godot.windows.editor.x86_64.exe``. By default, SCons will build a binary matching
