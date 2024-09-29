@@ -270,6 +270,12 @@ Start a terminal, go to the root dir of the engine source code and type:
     ``linuxbsd``. If you are looking to compile Godot 3.x, make sure to use the
     `3.x branch of this documentation <https://docs.godotengine.org/en/3.6/development/compiling/compiling_for_x11.html>`__.
 
+.. tip::
+    If you are compiling Godot to make changes or contribute to the engine,
+    you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``. 
+    See :ref:`doc_introduction_to_the_buildsystem_development_and_production_aliases`
+    for more info.
+
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and
 runs without any dependencies. Executing it will bring up the Project
