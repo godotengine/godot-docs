@@ -1,4 +1,4 @@
-# Godot Engine documentation
+# Redot Engine documentation
 
 This repository contains the source files of [Godot Engine](https://godotengine.org)'s documentation, in reStructuredText markup language (reST).
 
