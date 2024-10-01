@@ -45,12 +45,12 @@ Rider comes with a built-in debugger that can be used to debug the Godot project
 by pressing the **Debug** icon at the top of the screen, this only works for the Project manager,
 if you want to debug the editor, you need to configure the debugger first.
 
-.. figure:: img/rider_run_debug.png
+.. figure:: img/rider_run_debug.webp
    :align: center
 
 - Click on the **Godot > Edit Configurations** option at the top of the screen.
 
-.. figure:: img/rider_configurations.png
+.. figure:: img/rider_configurations.webp
    :align: center
 
 - Ensure the following values for the C++ Project Run Configuration:
@@ -63,7 +63,7 @@ if you want to debug the editor, you need to configure the debugger first.
 This will tell the executable to debug the specified project without using the project manager.
 Use the root path to the project folder, not ``project.godot`` file path.
 
-.. figure:: img/rider_configurations_changed.png
+.. figure:: img/rider_configurations_changed.webp
    :align: center
 
 - Finally click on "Apply" and "OK" to save the changes.
@@ -72,12 +72,12 @@ Use the root path to the project folder, not ``project.godot`` file path.
 
 Alternatively you can use **Run > Attach to Process** to attach the debugger to a running Godot instance.
 
-.. figure:: img/rider_attach_to_process.png
+.. figure:: img/rider_attach_to_process.webp
    :align: center
 
 - You can find the Godot instance by searching for ``godot.editor`` and then clicking ``Attach with LLDB``
 
-.. figure:: img/rider_attach_to_process_dialog.png
+.. figure:: img/rider_attach_to_process_dialog.webp
    :align: center
 
 Please consult the `JetBrains Rider <https://www.jetbrains.com/rider/documentation/>`_ documentation for any specific information about the JetBrains IDE.
