@@ -138,4 +138,4 @@ Here is how it looks:
 
 .. image:: img/interpolation_follow.gif
 
-This useful for smoothing camera movement, allies following you (ensuring they stay within a certain range), and many other common game patterns.
+This is useful for smoothing camera movement, allies following you (ensuring they stay within a certain range), and many other common game patterns.
