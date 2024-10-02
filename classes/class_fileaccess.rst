@@ -62,6 +62,8 @@ In the example above, the file will be saved in the user data folder as specifie
 
 \ **Note:** Files are automatically closed only if the process exits "normally" (such as by clicking the window manager's close button or pressing **Alt + F4**). If you stop the project execution by pressing **F8** while the project is running, the file won't be closed as the game process will be killed. You can work around this by calling :ref:`flush<class_FileAccess_method_flush>` at regular intervals.
 
+\ **Note:** Files can not be deleted by **FileAccess** you must use :ref:`DirAccess<class_DirAccess>` remove or remove_absolute in order to delete it.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
