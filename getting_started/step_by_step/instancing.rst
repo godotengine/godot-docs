@@ -121,7 +121,7 @@ Let's try this. Double-click ``ball.tscn`` in the FileSystem to open it.
 
 .. image:: img/instancing_ball_scene_open.webp
 
-Select the Ball node. In the Inspector on the right, click on the PhysicsMaterial 
+Select the Ball node. In the Inspector on the right, click on the PhysicsMaterial
 property to expand it.
 
 .. image:: img/instancing_physics_material_expand.webp
@@ -156,14 +156,17 @@ property to the value in the saved scene.
 
 Rerun the game and notice how this ball now falls much faster than the others.
 
-.. note:: You may notice you are unable to change the values of the ``PhysicsMaterial``
-          of the ball. This is because ``PhysicsMaterial`` is a resource, and needs
-          to be made unique before you can edit it in a scene that is linking to its
-          original scene. To make a resource unique for one instance, right-click on
-          it in the Inspector and click Make Unique in the contextual menu.
+.. note::
 
-          Resources are another essential building block of Godot games we will
-          cover in a later lesson.
+    You may notice you are unable to change the values of the PhysicsMaterial
+    of the ball. This is because PhysicsMaterial is a *resource*, and needs
+    to be made unique before you can edit it in a scene that is linking to its
+    original scene. To make a resource unique for one instance, right-click on
+    the **Physics Material** property in the Inspector and click **Make Unique**
+    in the context menu.
+
+    Resources are another essential building block of Godot games we will cover
+    in a later lesson.
 
 Scene instances as a design language
 ------------------------------------
