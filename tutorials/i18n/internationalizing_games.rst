@@ -81,7 +81,7 @@ Examples:
 
 - `en`: English language
 - `en_GB`: English in Great Britain / British English
-- `en_US`: Enginsh in the USA / American English
+- `en_US`: English in the USA / American English
 - `en_DE`: English in Germany
 
 Indie games generally only need to care about language, but read on for more information.
