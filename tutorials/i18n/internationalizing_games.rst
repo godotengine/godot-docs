@@ -65,6 +65,7 @@ Nevertheless letting players change the language in game is recommended for vari
 
 .. tabs::
  .. code-tab:: gdscript
+
     var language = "automatic"
     # Load here language from the user settings file
     if language == "automatic":
