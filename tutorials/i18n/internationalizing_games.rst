@@ -87,7 +87,7 @@ Examples:
 Indie games generally only need to care about language, but read on for more information.
 
 Why locales exist can be illustrated through the USA and Great Britain. Both speak the same language (English), yet differ in many aspects:
-- Spelling: E.g. Gray (USA), grey (GB)
+- Spelling: E.g. gray (USA), grey (GB)
 - Use of words: E.g. eggplant (USA), aubergine (GB)
 - Units or currencies: E.g. feet/inches (USA), meter/cm (GB)
 
