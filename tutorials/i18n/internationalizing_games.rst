@@ -89,7 +89,7 @@ Indie games generally only need to care about language, but read on for more inf
 Why locales exist can be illustrated through the USA and Great Britain. Both speak the same language (English), yet differ in many aspects:
 - Spelling: E.g. gray (USA), grey (GB)
 - Use of words: E.g. eggplant (USA), aubergine (GB)
-- Units or currencies: E.g. feet/inches (USA), meter/cm (GB)
+- Units or currencies: E.g. feet/inches (USA), metres/cm (GB)
 
 It can get more complex however. Imagine you offer different content in Europe and in China (e.g. in an MMO). You will need to translate each of those content variations into many languages and store and load them accordingly.
 
