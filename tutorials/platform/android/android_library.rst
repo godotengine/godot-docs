@@ -45,11 +45,11 @@ These APIs can also be used to provide bidirectional communication between the h
 Godot instance allowing for greater control over the desired experience.
 
 We showcase how this is done using a sample Android app that embeds the Godot Engine as an Android view,
-and uses it to render 3D GLTF models.
+and uses it to render 3D glTF models.
 
 The `GLTF Viewer <https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer>`_ sample app uses an `Android RecyclerView component <https://developer.android.com/develop/ui/views/layout/recyclerview>`_ to create
-a list of GLTF items, populated from `Kenney's Food Kit pack <https://kenney.nl/assets/food-kit>`_.
-When an item on the list is selected, the app's logic interacts with the embedded Godot Engine to render the selected GLTF item as a 3D model.
+a list of glTF items, populated from `Kenney's Food Kit pack <https://kenney.nl/assets/food-kit>`_.
+When an item on the list is selected, the app's logic interacts with the embedded Godot Engine to render the selected glTF item as a 3D model.
 
 .. image:: img/gltf_viewer_sample_app_screenshot.webp
 
@@ -146,7 +146,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
 
 - Add any additional logic that will be used by your application
 
-  - For the sample app, this includes adding the `ItemsSelectionFragment fragment <https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/src/main/java/fhuyakou/godot/app/android/gltfviewer/ItemsSelectionFragment.kt>`_ (and related classes), a fragment used to build and show the list of GLTF items
+  - For the sample app, this includes adding the `ItemsSelectionFragment fragment <https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/src/main/java/fhuyakou/godot/app/android/gltfviewer/ItemsSelectionFragment.kt>`_ (and related classes), a fragment used to build and show the list of glTF items
 
 - Open the ``AndroidManifest.xml`` file, and configure the orientation if needed using the `android:screenOrientation attribute <https://developer.android.com/guide/topics/manifest/activity-element#screen>`_
 
@@ -191,7 +191,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
 - Update the Godot project script logic as needed
 
   - For the sample app, the `script logic <https://github.com/m4gr3d/Godot-Android-Samples/blob/master/apps/gltf_viewer/src/main/assets/main.gd>`_ queries for the runtime ``GodotPlugin`` instance and uses it to register for signals fired by the app logic
-  - The app logic fires a signal every time an item is selected in the list. The signal contains the filepath of the GLTF model, which is used by the ``gdscript`` logic to render the model.
+  - The app logic fires a signal every time an item is selected in the list. The signal contains the filepath of the glTF model, which is used by the ``gdscript`` logic to render the model.
 
   .. code-block:: gdscript
 

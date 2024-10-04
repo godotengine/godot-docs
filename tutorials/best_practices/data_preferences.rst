@@ -332,15 +332,15 @@ in a :ref:`TileSet <class_TileSet>` and integrate it with a
 :ref:`TileMapLayer <class_TileMapLayer>` for many auto-animating backgrounds that
 all render in a single batched draw call.
 
-The AnimatedSprite2D node, in combination with the
+The :ref:`AnimatedSprite2D <class_AnimatedSprite2D>` node, in combination with the
 :ref:`SpriteFrames <class_SpriteFrames>` resource, allows one to create a
 variety of animation sequences through spritesheets, flip between animations,
 and control their speed, regional offset, and orientation. This makes them
 well-suited to controlling 2D frame-based animations.
 
-If one needs trigger other effects in relation to animation changes (for
+If one needs to trigger other effects in relation to animation changes (for
 example, create particle effects, call functions, or manipulate other
-peripheral elements besides the frame-based animation), then will need to use
+peripheral elements besides the frame-based animation), then one will need to use
 an :ref:`AnimationPlayer <class_AnimationPlayer>` node in conjunction with
 the AnimatedSprite2D.
 

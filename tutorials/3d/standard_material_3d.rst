@@ -738,8 +738,21 @@ The rendering order of objects can be changed, although this is mostly
 useful for transparent objects (or opaque objects that perform depth draw
 but no color draw, such as cracks on the floor).
 
+Objects are sorted by an opaque/transparent queue, then :ref:`render_priority<class_Material_property_render_priority>`,
+with higher priority being drawn later. Transparent objects are also sorted by depth.
+
+Depth testing overrules priority. Priority alone cannot force opaque objects to be drawn over each other.
+
 Next Pass
 ---------
 
-Sets the material to be used for the next pass. This renders the object
-again with a different material.
+Setting :ref:`next_pass<class_Material_property_next_pass>` on a material
+will cause an object to be rendered again with that next material.
+
+Materials are sorted by an opaque/transparent queue, then :ref:`render_priority<class_Material_property_render_priority>`,
+with higher priority being drawn later.
+
+.. image:: img/next_pass.webp
+
+Depth will test equal between both materials unless the grow setting or other vertex transformations are used.
+Multiple transparent passes should use :ref:`render_priority<class_Material_property_render_priority>` to ensure correct ordering.

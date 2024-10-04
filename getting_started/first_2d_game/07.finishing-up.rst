@@ -37,6 +37,8 @@ All audio is automatically imported with the ``Loop`` setting disabled.
 If you want the music to loop seamlessly, click on the Stream file arrow,
 select ``Make Unique``, then click on the Stream file and check the ``Loop`` box.
 
+.. image:: img/unique_resource_music.webp
+
 To play the music, add ``$Music.play()`` in the ``new_game()``
 function and ``$Music.stop()`` in the ``game_over()`` function.
 
@@ -119,3 +121,14 @@ achieved.
 
 And when you're ready, you can move on to :ref:`doc_your_first_3d_game` to learn
 to create a complete 3D game from scratch, in Godot.
+
+Sharing the finished game with others
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you want people to try out your game without having to install Godot, you'll
+need to export the project for each operating system you want the game to be
+playable on. See :ref:`doc_exporting_projects` for instructions.
+
+After exporting the project, compress the exported executable and PCK file (not
+the raw project files) to a ZIP file, then upload this ZIP file to a file
+sharing website.

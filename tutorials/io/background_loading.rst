@@ -48,7 +48,8 @@ The path will be ``"Enemy.tscn"`` which is located at ``res://Enemy.tscn``.
 
 First, we will start a request to load the resource and connect the button:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     const ENEMY_SCENE_PATH : String = "Enemy.tscn"
 
@@ -56,14 +57,41 @@ First, we will start a request to load the resource and connect the button:
         ResourceLoader.load_threaded_request(ENEMY_SCENE_PATH)
         self.pressed.connect(_on_button_pressed)
 
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyButton : Button
+    {
+        private const string EnemyScenePath = "Enemy.tscn";
+
+        public override void _Ready()
+        {
+            ResourceLoader.LoadThreadedRequest(EnemyScenePath);
+            Pressed += OnButtonPressed;
+        }
+    }
+
 Now ``_on_button_pressed`` will be called when the button is pressed.
 This method will be used to spawn an enemy.
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
-    func _on_button_pressed(): # Button was pressed
-        # Obtain the resource now that we need it
+    func _on_button_pressed(): # Button was pressed.
+        # Obtain the resource now that we need it.
         var enemy_scene = ResourceLoader.load_threaded_get(ENEMY_SCENE_PATH)
-        # Instantiate the enemy scene and add it to the current scene
+        # Instantiate the enemy scene and add it to the current scene.
         var enemy = enemy_scene.instantiate()
         add_child(enemy)
+
+ .. code-tab:: csharp
+
+    private void OnButtonPressed() // Button was pressed.
+    {
+        // Obtain the resource now that we need it.
+        var enemyScene = (PackedScene)ResourceLoader.LoadThreadedGet(EnemyScenePath);
+        // Instantiate the enemy scene and add it to the current scene.
+        var enemy = enemyScene.Instantiate();
+        AddChild(enemy);
+    }

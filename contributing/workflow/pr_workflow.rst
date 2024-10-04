@@ -95,7 +95,7 @@ To clone your fork from GitHub, use the following command:
 
 ::
 
-    $ git clone https://github.com/USERNAME/godot
+    git clone https://github.com/USERNAME/godot
 
 .. note:: In our examples, the "$" character denotes the command line prompt
           on typical UNIX shells. It is not part of the command and should
@@ -106,14 +106,14 @@ working directory. Move into it using the ``cd`` command:
 
 ::
 
-    $ cd godot
+    cd godot
 
 We will start by setting up a reference to the original repository that we forked:
 
 ::
 
-    $ git remote add upstream https://github.com/godotengine/godot
-    $ git fetch upstream
+    git remote add upstream https://github.com/godotengine/godot
+    git fetch upstream
 
 This will create a reference named ``upstream`` pointing to the original
 ``godotengine/godot`` repository. This will be useful when you want to pull new
@@ -149,30 +149,30 @@ a feature branch:
 ::
 
     # Create the branch based on the current branch (master)
-    $ git branch better-project-manager
+    git branch better-project-manager
 
     # Change the current branch to the new one
-    $ git checkout better-project-manager
+    git checkout better-project-manager
 
 This command is equivalent:
 
 ::
 
     # Change the current branch to a new named one, based on the current branch
-    $ git checkout -b better-project-manager
+    git checkout -b better-project-manager
 
 If you want to go back to the ``master`` branch, you'd use:
 
 ::
 
-    $ git checkout master
+    git checkout master
 
 You can see which branch you are currently on with the ``git branch``
 command:
 
 ::
 
-    $ git branch
+    git branch
       2.1
     * better-project-manager
       master
@@ -183,7 +183,7 @@ you can specify a custom base branch after the new branch's name:
 
 ::
 
-    $ git checkout -b my-new-feature master
+    git checkout -b my-new-feature master
 
 Updating your branch
 --------------------
@@ -200,7 +200,7 @@ current upstream ``master`` branch, you will have to update your branch by
 
 ::
 
-    $ git pull --rebase upstream master
+    git pull --rebase upstream master
 
 The ``--rebase`` argument will ensure that any local changes that you committed
 will be re-applied *on top* of the pulled branch, which is usually what we want
@@ -296,32 +296,32 @@ Here's how the shell history could look like on our example:
 ::
 
     # It's nice to know where you're starting from
-    $ git log
+    git log
 
     # Do changes to the Project Manager with the nano text editor
-    $ nano editor/project_manager.cpp
+    nano editor/project_manager.cpp
 
     # Find an unrelated bug in Control and fix it
-    $ nano scene/gui/control.cpp
+    nano scene/gui/control.cpp
 
     # Review changes
-    $ git status
-    $ git diff
+    git status
+    git diff
 
     # We'll do two commits for our unrelated changes,
     # starting by the Control changes necessary for the PM enhancements
-    $ git add scene/gui/control.cpp
-    $ git commit -m "Fix handling of margins in Control"
+    git add scene/gui/control.cpp
+    git commit -m "Fix handling of margins in Control"
 
     # Check we did good
-    $ git log
-    $ git show
-    $ git status
+    git log
+    git show
+    git status
 
     # Make our second commit
-    $ git add editor/project_manager.cpp
-    $ git commit -m "Add a pretty banner to the Project Manager"
-    $ git log
+    git add editor/project_manager.cpp
+    git commit -m "Add a pretty banner to the Project Manager"
+    git log
 
 With this, we should have two new commits in our ``better-project-manager``
 branch which were not in the ``master`` branch. They are still only local
@@ -337,7 +337,7 @@ remote branch to share them with the world. The syntax for this is:
 
 ::
 
-    $ git push <remote> <local branch>[:<remote branch>]
+    git push <remote> <local branch>[:<remote branch>]
 
 The part about the remote branch can be omitted if you want it to have the
 same name as the local branch, which is our case in this example, so we will
@@ -345,7 +345,7 @@ do:
 
 ::
 
-    $ git push origin better-project-manager
+    git push origin better-project-manager
 
 Git will ask you for your username and password. For your password, enter your
 GitHub Personal Access Token (PAT). If you do not have a GitHub Personal Access
@@ -394,13 +394,13 @@ branch, push it to your fork, and the PR will be updated automatically:
 ::
 
     # Check out your branch again if you had changed in the meantime
-    $ git checkout better-project-manager
+    git checkout better-project-manager
 
     # Fix a mistake
-    $ nano editor/project_manager.cpp
-    $ git add editor/project_manager.cpp
-    $ git commit -m "Fix a typo in the banner's title"
-    $ git push origin better-project-manager
+    nano editor/project_manager.cpp
+    git add editor/project_manager.cpp
+    git commit -m "Fix a typo in the banner's title"
+    git push origin better-project-manager
 
 However, be aware that in our PR workflow, we favor commits that bring the
 codebase from one functional state to another functional state, without having
@@ -413,17 +413,17 @@ fixes. The above example would then become:
 ::
 
     # Check out your branch again if you had changed in the meantime
-    $ git checkout better-project-manager
+    git checkout better-project-manager
 
     # Fix a mistake
-    $ nano editor/project_manager.cpp
-    $ git add editor/project_manager.cpp
+    nano editor/project_manager.cpp
+    git add editor/project_manager.cpp
     # --amend will change the previous commit, so you will have the opportunity
     # to edit its commit message if relevant.
-    $ git commit --amend
+    git commit --amend
     # As we modified the last commit, it no longer matches the one from your
     # remote branch, so we need to force push to overwrite that branch.
-    $ git push --force origin better-project-manager
+    git push --force origin better-project-manager
 
 .. Kept for compatibility with the previous title, linked in many PRs.
 
@@ -460,7 +460,7 @@ upstream ``master`` branch, which you can do with:
 
 ::
 
-    $ git rebase -i upstream/master
+    git rebase -i upstream/master
 
 .. note:: Referencing branches in Git is a bit tricky due to the distinction
           between remote and local branches. Here, ``upstream/master`` (with a
@@ -511,7 +511,7 @@ will raise an error:
 
 ::
 
-    $ git push origin better-project-manager
+    git push origin better-project-manager
     To https://github.com/akien-mga/godot
      ! [rejected]        better-project-manager -> better-project-manager (non-fast-forward)
     error: failed to push some refs to 'https://akien-mga@github.com/akien-mga/godot'
@@ -524,7 +524,7 @@ will have to *force* it:
 
 ::
 
-    $ git push --force origin better-project-manager
+    git push --force origin better-project-manager
 
 And tadaa! Git will happily *replace* your remote branch with what you had
 locally (so make sure that's what you wanted, using ``git log``). This will
@@ -543,7 +543,7 @@ the following steps *should* fix this in one step:
 
 .. code-block:: text
 
-    $ git rebase -i --onto master 4.2
+    git rebase -i --onto master 4.2
 
 This will take all the commits on your branch *after* the ``4.2`` branch, and then splice them on top of ``master``,
 ignoring any commits from the ``4.2`` branch not on the ``master`` branch. You may still need to do some fixing, but
@@ -553,7 +553,7 @@ Just like above for the interactive rebase you need to force push your branch to
 
 ::
 
-    $ git push --force origin better-project-manager
+    git push --force origin better-project-manager
 
 Deleting a Git branch
 ---------------------
@@ -567,7 +567,7 @@ To delete our better Project Manager branch locally, use this command:
 
 ::
 
-    $ git branch -d better-project-manager
+    git branch -d better-project-manager
 
 Alternatively, if the branch hadn't been merged yet and we wanted to delete it anyway, instead
 of ``-d`` you would use ``-D``.
@@ -576,7 +576,7 @@ Next, to delete the remote branch on GitHub use this command:
 
 ::
 
-    $ git push origin -d better-project-manager
+    git push origin -d better-project-manager
 
 You can also delete the remote branch from the GitHub PR itself, a button should appear once
 it has been merged or closed.

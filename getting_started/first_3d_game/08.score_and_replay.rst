@@ -324,7 +324,7 @@ game.
 Save the scene as ``music_player.tscn``.
 
 We have to register it as an autoload. Head to the *Project -> Project
-Settings…* menu and click on the *Autoload* tab.
+Settings…* menu and click on the *Globals -> Autoload* tab.
 
 In the *Path* field, you want to enter the path to your scene. Click the folder
 icon to open the file browser and double-click on ``music_player.tscn``. Then,

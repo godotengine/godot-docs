@@ -201,21 +201,23 @@ The parallax effect fakes a perspective by moving the positions of different tex
 understandably problematic if you have multiple cameras, because your textures can't be in two places at once!
 
 This is still achievable by cloning the parallax nodes into the second (or third or fourth)
-:ref:`SubViewport<class_subviewport>`. Here's how it looks for a two player game:
+:ref:`SubViewport<class_subviewport>`. Here's how a setup looks for a two player game:
 
 .. image:: img/2d_parallax_splitscreen.webp
 
-Of course, now both backgrounds show in both SubViewports. What we want is for some nodes to be visible in one viewport
-but not another. While technically possible, this is not a feature officially supported by Godot at the moment. There is
-currently a proposal to make this much simpler, so please stay tuned.
+Of course, now both backgrounds show in both SubViewports. What we want is for each parallax to only show in their
+corresponding viewport. We can achieve this by doing the following:
 
-As a workaround, you can do the following:
+- Leave all parallax nodes at their default :ref:`visibility_layer<class_canvasitem_property_visibility_layer>` of 1.
+- Set the first SubViewport's :ref:`canvas_cull_mask<class_viewport_property_canvas_cull_mask>` to only layers 1 and 2.
+- Do the same for the second SubViewport but use layers 1 and 3.
+- Give your parallax nodes in the first SubViewport a common parent and set its :ref:`visibility_layer<class_canvasitem_property_visibility_layer>` to 2.
+- Do the same for the second SubViewport's parallax nodes, but use a layer of 3.
 
-- Set the first SubViewport's :ref:`canvas_cull_mask<class_viewport_property_canvas_cull_mask>` to only layer 1, so it displays all nodes with a :ref:`visibility_layer<class_canvasitem_property_visibility_layer>` of layer 1.
-- Set the second SubViewport's :ref:`canvas_cull_mask<class_viewport_property_canvas_cull_mask>` to only layer 2, so it displays all nodes with a :ref:`visibility_layer<class_canvasitem_property_visibility_layer>` of layer 2.
-- Set the :ref:`visibility_layer<class_canvasitem_property_visibility_layer>` of every node you want to display in both viewports to both layers 1 and 2.
-- Set the :ref:`visibility_layer<class_canvasitem_property_visibility_layer>` of the :ref:`Parallax2D<class_parallax2d>` node and all its descendants in the first :ref:`SubViewport<class_subviewport>` to layer 1.
-- Set the :ref:`visibility_layer<class_canvasitem_property_visibility_layer>` of the :ref:`Parallax2D<class_parallax2d>` node and all its descendants in the second :ref:`SubViewport<class_subviewport>` to layer 2.
+How does this work? If a canvas item has a :ref:`visibility_layer<class_canvasitem_property_visibility_layer>` that
+doesn't match the SubViewport's :ref:`canvas_cull_mask<class_viewport_property_canvas_cull_mask>`, it will hide all
+children, even if they do. We use this to our advantage, letting the SubViewports cut off rendering of parallax nodes
+whose parent doesn't have a supported :ref:`visibility_layer<class_canvasitem_property_visibility_layer>`.
 
 Previewing in the editor
 ------------------------

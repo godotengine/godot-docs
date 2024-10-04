@@ -18,6 +18,8 @@ XML files (one per class) to document the exposed constructors, properties, meth
     We are assuming you are using the project files explained in the :ref:`GDExtension C++ Example <doc_gdextension_cpp_example>`
     with the following structure:
 
+.. code-block:: none
+
     gdextension_cpp_example/  # GDExtension directory
     |
     +--demo/                  # game example/demo to test the extension
@@ -114,9 +116,9 @@ Currently they supported tags for the GDExtension documentation system are:
     - ``[s]{text}[/s]``
 
   * - | **kbd**
-      | Makes ``{text}`` use the mono font and styles the text color and background like a shortcut.
+      | Makes ``{text}`` use a grey beveled background, indicating a keyboard shortcut.
 
-    - ``[code]{text}[/code]``
+    - ``[kbd]{text}[/kbd]``
 
   * - | **code**
       | Makes inline ``{text}`` use the mono font and styles the text color and background like code.
@@ -140,9 +142,7 @@ Currently they supported tags for the GDExtension documentation system are:
     - ``[center]{text}[/center]``
 
   * - | **url**
-      | Creates a hyperlink (underlined and clickable text). Can contain optional
-        ``{text}`` or display ``{link}`` as is.
-      | **Must be handled with the "meta_clicked" signal to have an effect,** see :ref:`doc_bbcode_in_richtextlabel_handling_url_tag_clicks`.
+      | Creates a hyperlink (underlined and clickable text). Can contain optional ``{text}`` or display ``{link}`` as is.
 
     - | ``[url]{link}[/url]``
       | ``[url={link}]{text}[/url]``

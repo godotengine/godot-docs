@@ -152,7 +152,7 @@ We also need to clean up after ourselves, for this we react to the
         if what == NOTIFICATION_PREDELETE:
             if shader.is_valid():
                 # Freeing our shader will also free any dependents such as the pipeline!
-                RenderingServer.free_rid(shader)
+                rd.free_rid(shader)
 
 Note that we do not use our mutex here even though we create our shader inside
 of our render thread.

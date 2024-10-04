@@ -394,9 +394,7 @@ the custom data for the alternative tile only.
 You can reorder custom data without breaking existing metadata: the TileSet
 editor will update automatically after reordering custom data properties.
 
-Note that in the editor, property names do not appear (only their index, which
-matches the order in which they are defined). For example, with the custom data
-layers example shown above, we're assigning a tile to have the
+With the custom data layers example shown above, we're assigning a tile to have the
 ``damage_per_second`` metadata set to ``25`` and the ``destructible`` metadata
 to ``false``:
 
@@ -526,7 +524,7 @@ Depending on your use cases, one method may be faster than the other:
 Using multiple tile selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you wish to configure various properties on several times at once,
+If you wish to configure various properties on several tiles at once,
 choose the **Select** mode at the top of the TileSet editor:
 
 After doing this, you can select multiple tiles on the right column by holding
