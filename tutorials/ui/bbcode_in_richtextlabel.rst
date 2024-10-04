@@ -633,7 +633,7 @@ Image options
 
   If set to ``true``, and the image is smaller than the size specified by ``width`` and ``height``, the image padding is added to match the size instead of upscaling.
 
-- **tootip**
+- **tooltip**
 
   +-----------+--------------------------------------------+
   | `Values`  | String                                     |
@@ -648,7 +648,7 @@ Image options
 Image and table vertical alignment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a vertical alignment value is provided with the ``[img]`` or ``[table]``` tag
+When a vertical alignment value is provided with the ``[img]`` or ``[table]`` tag
 the image/table will try to align itself against the surrounding text. Alignment is
 performed using a vertical point of the image and a vertical point of the text.
 There are 3 possible points on the image (``top``, ``center``, and ``bottom``) and 4
@@ -715,7 +715,7 @@ Font options
 
   Extra spacing for each glyph.
 
-- **glyph_spacing**, **sp**
+- **space_spacing**, **sp**
 
   +-----------+--------------------------------------------+
   | `Values`  | Number in pixels.                          |

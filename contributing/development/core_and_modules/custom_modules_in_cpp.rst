@@ -547,7 +547,7 @@ main ``doc/classes`` directory.
     You can use Git to check if you have missed some of your classes by checking the
     untracked files with ``git status``. For example::
 
-        user@host:~/godot$ git status
+        git status
 
     Example output::
 
@@ -573,7 +573,7 @@ Run command:
 
    ::
 
-      user@host:~/godot$ ./bin/<godot_binary> --doctool .
+      bin/<godot_binary> --doctool .
 
 Now if you go to the ``godot/modules/summator/doc_classes`` folder, you will see
 that it contains a ``Summator.xml`` file, or any other classes, that you referenced

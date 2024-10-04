@@ -61,21 +61,19 @@ Both editor and project defined templates are organized in the following way:
 
 where:
 
-* ``template_path`` is one of the 2 locations discussed in the previous two sections
+* ``template_path`` is one of the 2 locations discussed in the previous two sections.
 
 * ``node_type`` is the node it will apply to (for example, :ref:`Node <class_Node>`, or :ref:`CharacterBody3D <class_CharacterBody3D>`),
-  casing doesn't matter for the folder name, however adding a ``_`` to a name will not work, for example ``Mesh_Instance3D`` does not work.
-  if a script isn't in the proper ``node_type`` folder it will not be detected.
+  This is **case-sensitive**. If a script isn't in the proper ``node_type`` folder, it won't be detected.
 
-* ``file`` is the custom name you can chose for the template (for example: ``platformer_movement`` or ``smooth_camera``)
+* ``file`` is the custom name you can chose for the template (for example, ``platformer_movement`` or ``smooth_camera``).
 
-* ``extension``: will indicate which language the template will apply to (it should be ``gd`` for GDScript or ``cs`` for C#)
+* ``extension`` indicates which language the template will apply to (it should be ``gd`` for GDScript or ``cs`` for C#).
 
 For example:
 
 -  ``template_scripts/Node/smooth_camera.gd``
 -  ``template_scripts/CharacterBody3D/platformer_movement.gd``
-
 
 Default behaviour and overriding it
 -----------------------------------

@@ -129,6 +129,12 @@ Here's a minimal working test suite with a single test case written:
 
     #endif // TEST_STRING_H
 
+.. note::
+    You can quickly generate new tests using the ``create_test.py`` script found in the ``tests/`` directory.
+    This script automatically creates a new test file with the required boilerplate code in the appropriate location.
+    It's also able to automatically include the new header in ``tests/test_main.cpp`` using invasive mode (``-i`` flag).
+    To view usage instructions, run the script with the ``-h`` flag.
+
 The ``tests/test_macros.h`` header encapsulates everything which is needed for
 writing C++ unit tests in Godot. It includes doctest assertion and logging
 macros such as ``CHECK`` as seen above, and of course the definitions for
@@ -278,6 +284,48 @@ These tags can be added to the test case name to modify or extend the test envir
 +-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 You can use them together to combine multiple test environment extensions.
+
+Testing signals
+~~~~~~~~~~~~~~~
+
+The following macros can be use to test signals:
+
+.. list-table::
+   :header-rows: 1
+   :widths: auto
+
+   * - Macro
+     - Description
+   * - ``SIGNAL_WATCH(object, "signal_name")``
+     - Starts watching the specified signal on the given object.
+   * - ``SIGNAL_UNWATCH(object, "signal_name")``
+     - Stops watching the specified signal on the given object.
+   * - ``SIGNAL_CHECK("signal_name", Vector<Vector<Variant>>)``
+     - Checks the arguments of all fired signals. The outer vector contains each fired signal, while the inner vector contains the list of arguments for that signal. The order of signals is significant.
+   * - ``SIGNAL_CHECK_FALSE("signal_name")``
+     - Checks if the specified signal was not fired.
+   * - ``SIGNAL_DISCARD("signal_name")``
+     - Discards all records of the specified signal.
+
+Below is an example demonstrating the use of these macros:
+
+.. code-block:: cpp
+
+    //...
+    SUBCASE("[Timer] Timer process timeout signal must be emitted") {
+        SIGNAL_WATCH(test_timer, SNAME("timeout"));
+        test_timer->start(0.1);
+
+        SceneTree::get_singleton()->process(0.2);
+
+        Array signal_args;
+        signal_args.push_back(Array());
+
+        SIGNAL_CHECK(SNAME("timeout"), signal_args);
+
+        SIGNAL_UNWATCH(test_timer, SNAME("timeout"));
+    }
+    //...
 
 Test tools
 ----------

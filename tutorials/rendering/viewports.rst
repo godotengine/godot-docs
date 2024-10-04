@@ -76,9 +76,14 @@ There can only be one active camera per :ref:`Viewport <class_Viewport>`, so if 
 than one, make sure that the desired one has the :ref:`current <class_Camera3D_property_current>` property set,
 or make it the current camera by calling:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     camera.make_current()
+
+ .. code-tab:: csharp
+
+    camera.MakeCurrent();
 
 By default, cameras will render all objects in their world. In 3D, cameras can use their
 :ref:`cull_mask <class_Camera3D_property_cull_mask>` property combined with the
@@ -95,10 +100,16 @@ these values are overridden, but for all others, this sets their resolution.
 It is also possible to scale the 2D content and make the :ref:`SubViewport <class_SubViewport>` resolution
 different from the one specified in size, by calling:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     sub_viewport.set_size_2d_override(Vector2i(width, height)) # Custom size for 2D.
     sub_viewport.set_size_2d_override_stretch(true) # Enable stretch for custom size.
+
+ .. code-tab:: csharp
+
+    subViewport.Size2DOverride = new Vector2I(width, height); // Custom size for 2D.
+    subViewport.Size2DOverrideStretch = true; // Enable stretch for custom size.
 
 For information on scaling and stretching with the Root Viewport visit the :ref:`Multiple Resolutions Tutorial <doc_multiple_resolutions>`
 
@@ -137,7 +148,8 @@ It is possible to query a capture of the :ref:`Viewport <class_Viewport>` conten
 Viewport, this is effectively a screen capture. This is done with the
 following code:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    # Retrieve the captured Image using get_image().
    var img = get_viewport().get_texture().get_image()
@@ -146,15 +158,31 @@ following code:
    # Set sprite texture.
    sprite.texture = tex
 
+ .. code-tab:: csharp
+
+    // Retrieve the captured Image using get_image().
+    var img = GetViewport().GetTexture().GetImage();
+    // Convert Image to ImageTexture.
+    var tex = ImageTexture.CreateFromImage(img);
+    // Set sprite texture.
+    sprite.Texture = tex;
+
 But if you use this in ``_ready()`` or from the first frame of the :ref:`Viewport's <class_Viewport>` initialization,
 you will get an empty texture because there is nothing to get as texture. You can deal with
 it using (for example):
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
    # Wait until the frame has finished before getting the texture.
    await RenderingServer.frame_post_draw
    # You can get the image after this.
+
+ .. code-tab:: csharp
+
+    // Wait until the frame has finished before getting the texture.
+    await RenderingServer.Singleton.ToSignal(RenderingServer.SignalName.FramePostDraw);
+    // You can get the image after this.
 
 Viewport Container
 ------------------
@@ -218,11 +246,18 @@ When rendering to a :ref:`SubViewport <class_SubViewport>`, whatever is inside w
 visible in the scene editor. To display the contents, you have to draw the SubViewport's :ref:`ViewportTexture <class_ViewportTexture>` somewhere.
 This can be requested via code using (for example):
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # This gives us the ViewportTexture.
     var tex = viewport.get_texture()
     sprite.texture = tex
+
+ .. code-tab:: csharp
+
+    // This gives us the ViewportTexture.
+    var tex = viewport.GetTexture();
+    sprite.Texture = tex;
 
 Or it can be assigned in the editor by selecting "New ViewportTexture"
 
@@ -245,6 +280,6 @@ This flexibility allows users to render an image once and then use the texture w
 
 .. note::
 
-    Make sure to check the Viewport demos. They are available in the 
+    Make sure to check the Viewport demos. They are available in the
     viewport folder of the demos archive, or at
     https://github.com/godotengine/godot-demo-projects/tree/master/viewport.

@@ -85,6 +85,7 @@ GDScript                C#
 ``PackedStringArray``   ``string[]``
 ``PackedVector2Array``  ``Vector2[]``
 ``PackedVector3Array``  ``Vector3[]``
+``PackedVector4Array``  ``Vector4[]``
 ``PackedColorArray``    ``Color[]``
 ======================  ==============================================================
 

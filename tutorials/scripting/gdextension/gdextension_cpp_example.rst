@@ -295,7 +295,7 @@ The ``initialize_example_module`` and ``uninitialize_example_module`` functions 
 called respectively when Godot loads our plugin and when it unloads it. All
 we're doing here is parse through the functions in our bindings module to
 initialize them, but you might have to set up more things depending on your
-needs. We call the function ``register_class`` for each of our classes in our library.
+needs. We call the ``GDREGISTER_CLASS`` macro for each of our classes in our library.
 
 The important function is the third function called ``example_library_init``.
 We first call a function in our bindings library that creates an initialization object.
@@ -344,6 +344,19 @@ structure alongside ``godot-cpp``, ``src`` and ``demo``, then run:
 
 You should now be able to find the module in ``demo/bin/<platform>``.
 
+When building for iOS, package the module as a static `.xcframework`, you can use
+following commands to do so:
+
+::
+
+    # compile simulator and device modules
+    scons arch=universal ios_simulator=yes platform=ios target=<target>
+    scons arch=arm64 ios_simulator=no platform=ios target=<target>
+
+    # assemble xcframeworks
+    xcodebuild -create-xcframework -library demo/bin/libgdexample.ios.<target>.a -library demo/bin/libgdexample.ios.<target>.simulator.a -output demo/bin/libgdexample.ios.<target>.xcframework
+    xcodebuild -create-xcframework -library godot-cpp/bin/libgodot-cpp.ios.<target>.arm64.a -library godot-cpp/bin/libgodot-cpp.ios.<target>.universal.simulator.a  -output demo/bin/libgodot-cpp.ios.<target>.xcframework
+
 .. note::
 
     Here, we've compiled both godot-cpp and our gdexample library as debug
@@ -371,6 +384,8 @@ loaded for each platform and the entry function for the module. It is called ``g
 
     macos.debug = "res://bin/libgdexample.macos.template_debug.framework"
     macos.release = "res://bin/libgdexample.macos.template_release.framework"
+    ios.debug = "res://bin/libgdexample.ios.template_debug.xcframework"
+    ios.release = "res://bin/libgdexample.ios.template_release.xcframework"
     windows.debug.x86_32 = "res://bin/libgdexample.windows.template_debug.x86_32.dll"
     windows.release.x86_32 = "res://bin/libgdexample.windows.template_release.x86_32.dll"
     windows.debug.x86_64 = "res://bin/libgdexample.windows.template_debug.x86_64.dll"
@@ -385,6 +400,14 @@ loaded for each platform and the entry function for the module. It is called ``g
     android.release.x86_64 = "res://bin/libgdexample.android.template_release.x86_64.so"
     android.debug.arm64 = "res://bin/libgdexample.android.template_debug.arm64.so"
     android.release.arm64 = "res://bin/libgdexample.android.template_release.arm64.so"
+
+    [dependencies]
+    ios.debug = {
+        "res://bin/libgodot-cpp.ios.template_debug.xcframework": ""
+    }
+    ios.release = {
+        "res://bin/libgodot-cpp.ios.template_release.xcframework": ""
+    }
 
 This file contains a ``configuration`` section that controls the entry function of the module.
 You should also set the minimum compatible Godot version with ``compatability_minimum``,
@@ -474,6 +497,7 @@ show the methods we end up changing, don't remove the lines we're omitting:
     void GDExample::_bind_methods() {
         ClassDB::bind_method(D_METHOD("get_amplitude"), &GDExample::get_amplitude);
         ClassDB::bind_method(D_METHOD("set_amplitude", "p_amplitude"), &GDExample::set_amplitude);
+
         ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "amplitude"), "set_amplitude", "get_amplitude");
     }
 
@@ -531,7 +555,8 @@ showing the methods that have changed so don't remove anything we're omitting:
         ...
         ClassDB::bind_method(D_METHOD("get_speed"), &GDExample::get_speed);
         ClassDB::bind_method(D_METHOD("set_speed", "p_speed"), &GDExample::set_speed);
-        ADD_PROPERTY("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
+
+        ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
     }
 
     GDExample::GDExample() {
@@ -625,7 +650,7 @@ as follows:
 
     void GDExample::_bind_methods() {
         ...
-        ADD_PROPERTY("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
+        ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
 
         ADD_SIGNAL(MethodInfo("position_changed", PropertyInfo(Variant::OBJECT, "node"), PropertyInfo(Variant::VECTOR2, "new_pos")));
     }

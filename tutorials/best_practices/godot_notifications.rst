@@ -279,7 +279,7 @@ nodes that one might create at runtime.
     {
         private Node _parentCache;
 
-        public void ConnectionCheck()
+        public bool ConnectionCheck()
         {
             return _parentCache.HasUserSignal("InteractedWith");
         }

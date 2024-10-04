@@ -734,7 +734,7 @@ more easily, and also makes for cleaner diffs in version control when items are 
 Code order
 ----------
 
-This first section focuses on code order. For formatting, see
+This section focuses on code order. For formatting, see
 :ref:`formatting`. For naming conventions, see :ref:`naming_conventions`.
 
 We suggest to organize GDScript code this way:

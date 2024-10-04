@@ -212,7 +212,7 @@ BPM
 
 The Beats Per Minute of the audio track. This should match the BPM measure that
 was used to compose the track. This is only relevant for music that wishes to
-make use of interactive music functionality (not implemented yet), not sound
+make use of interactive music functionality, not sound
 effects.
 
 A more convenient editor for **BPM** is provided in the
@@ -223,7 +223,7 @@ Beat Count
 ^^^^^^^^^^
 
 The beat count of the audio track. This is only relevant for music that wishes
-to make use of interactive music functionality (not implemented yet), not sound
+to make use of interactive music functionality, not sound
 effects.
 
 A more convenient editor for **Beat Count** is provided in the
@@ -235,7 +235,7 @@ Bar Beats
 
 The number of bars within a single beat in the audio track. This is only
 relevant for music that wishes to make use of interactive music functionality
-(not implemented yet), not sound effects.
+, not sound effects.
 
 A more convenient editor for **Bar Beats** is provided in the
 :ref:`Advanced import settings <doc_importing_audio_samples_advanced_import_settings>`
