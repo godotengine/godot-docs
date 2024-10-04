@@ -32,7 +32,7 @@ Most GLSL ES 3.0 datatypes are supported:
 +----------------------+---------------------------------------------------------------------------------+
 | **bvec4**            | Four-component vector of booleans.                                              |
 +----------------------+---------------------------------------------------------------------------------+
-| **int**              | Signed scalar integer.                                                          |
+| **int**              | 32 bit signed scalar integer.                                                   |
 +----------------------+---------------------------------------------------------------------------------+
 | **ivec2**            | Two-component vector of signed integers.                                        |
 +----------------------+---------------------------------------------------------------------------------+
@@ -48,7 +48,7 @@ Most GLSL ES 3.0 datatypes are supported:
 +----------------------+---------------------------------------------------------------------------------+
 | **uvec4**            | Four-component vector of unsigned integers.                                     |
 +----------------------+---------------------------------------------------------------------------------+
-| **float**            | Floating-point scalar.                                                          |
+| **float**            | 32 bit floating-point scalar.                                                   |
 +----------------------+---------------------------------------------------------------------------------+
 | **vec2**             | Two-component vector of floating-point values.                                  |
 +----------------------+---------------------------------------------------------------------------------+
@@ -227,7 +227,7 @@ variables, arguments and varyings:
 
     lowp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // low precision, usually 8 bits per component mapped to 0-1
     mediump vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // medium precision, usually 16 bits or half float
-    highp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // high precision, uses full float or integer range (default)
+    highp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // high precision, uses full float or integer range (32 bit default)
 
 
 Using lower precision for some operations can speed up the math involved (at the
@@ -937,6 +937,9 @@ table of the corresponding types:
 .. note:: Be careful when setting shader uniforms from GDScript, no error will
           be thrown if the type does not match. Your shader will just exhibit
           undefined behavior.
+
+.. warning::
+    As with the last note, no error will be thrown if the typing does not match while setting a shader uniform, this unintuitively includes setting a (GDscript) 64 bit int/float into a Godot shader language int/float (32 bit). This may lead to unintentional consequences in cases where high precision is required.
 
 Uniforms can also be assigned default values:
 
