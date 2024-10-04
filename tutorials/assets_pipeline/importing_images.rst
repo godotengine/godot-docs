@@ -18,6 +18,9 @@ Godot can import the following image formats:
   Only supports 2D images. Cubemaps, texture arrays and de-padding are not supported.
 - OpenEXR (``.exr``)
   - Supports HDR (highly recommended for panorama skies).
+  Can only be loaded and saved within the editor. In export templates,
+  this format is disabled unless custom export templates are compiled
+  with the ``tinyexr_export_templates=yes`` SCons option.
 - Radiance HDR (``.hdr``)
   - Supports HDR (highly recommended for panorama skies).
 - JPEG (``.jpg``, ``.jpeg``)
