@@ -157,7 +157,7 @@ If ``true``, the MultiplayerAPI will allow encoding and decoding of object durin
 - |void| **set_auth_callback**\ (\ value\: :ref:`Callable<class_Callable>`\ )
 - :ref:`Callable<class_Callable>` **get_auth_callback**\ (\ )
 
-The callback to execute when when receiving authentication data sent via :ref:`send_auth<class_SceneMultiplayer_method_send_auth>`. If the :ref:`Callable<class_Callable>` is empty (default), peers will be automatically accepted as soon as they connect.
+The callback to execute when receiving authentication data sent via :ref:`send_auth<class_SceneMultiplayer_method_send_auth>`. If the :ref:`Callable<class_Callable>` is empty (default), peers will be automatically accepted as soon as they connect.
 
 .. rst-class:: classref-item-separator
 

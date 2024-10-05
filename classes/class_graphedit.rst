@@ -296,6 +296,18 @@ Emitted when this **GraphEdit** captures a ``ui_copy`` action (:kbd:`Ctrl + C` b
 
 ----
 
+.. _class_GraphEdit_signal_cut_nodes_request:
+
+.. rst-class:: classref-signal
+
+**cut_nodes_request**\ (\ ) :ref:`🔗<class_GraphEdit_signal_cut_nodes_request>`
+
+Emitted when this **GraphEdit** captures a ``ui_cut`` action (:kbd:`Ctrl + X` by default). In general, this signal indicates that the selected :ref:`GraphElement<class_GraphElement>`\ s should be cut.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GraphEdit_signal_delete_nodes_request:
 
 .. rst-class:: classref-signal

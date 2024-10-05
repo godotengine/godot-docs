@@ -391,6 +391,10 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`filesystem/on_save/safe_save_on_backup_then_rename<class_EditorSettings_property_filesystem/on_save/safe_save_on_backup_then_rename>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`filesystem/quick_open_dialog/default_display_mode<class_EditorSettings_property_filesystem/quick_open_dialog/default_display_mode>`                                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`filesystem/quick_open_dialog/include_addons<class_EditorSettings_property_filesystem/quick_open_dialog/include_addons>`                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`filesystem/tools/oidn/oidn_denoise_path<class_EditorSettings_property_filesystem/tools/oidn/oidn_denoise_path>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input/buffering/agile_event_flushing<class_EditorSettings_property_input/buffering/agile_event_flushing>`                                                                                                   |
@@ -450,8 +454,6 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/mouse_extra_buttons_navigate_history<class_EditorSettings_property_interface/editor/mouse_extra_buttons_navigate_history>`                                                                 |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/project_manager_screen<class_EditorSettings_property_interface/editor/project_manager_screen>`                                                                                             |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/remember_window_size_and_position<class_EditorSettings_property_interface/editor/remember_window_size_and_position>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/save_each_scene_on_quit<class_EditorSettings_property_interface/editor/save_each_scene_on_quit>`                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3001,6 +3003,30 @@ If ``true``, when saving a file, the editor will rename the old file to a differ
 
 ----
 
+.. _class_EditorSettings_property_filesystem/quick_open_dialog/default_display_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **filesystem/quick_open_dialog/default_display_mode** :ref:`🔗<class_EditorSettings_property_filesystem/quick_open_dialog/default_display_mode>`
+
+If set to ``Adaptive``, the dialog opens in list view or grid view depending on the requested type. If set to ``Last Used``, the display mode will always open the way you last used it.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/quick_open_dialog/include_addons:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **filesystem/quick_open_dialog/include_addons** :ref:`🔗<class_EditorSettings_property_filesystem/quick_open_dialog/include_addons>`
+
+If ``true``, results will include files located in the ``addons`` folder.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_filesystem/tools/oidn/oidn_denoise_path:
 
 .. rst-class:: classref-property
@@ -3205,7 +3231,7 @@ Translations are provided by the community. If you spot a mistake, :doc:`contrib
 
 :ref:`int<class_int>` **interface/editor/editor_screen** :ref:`🔗<class_EditorSettings_property_interface/editor/editor_screen>`
 
-The preferred monitor to display the editor.
+The preferred monitor to display the editor. If **Auto**, the editor will remember the last screen it was displayed on across restarts.
 
 .. rst-class:: classref-item-separator
 
@@ -3400,18 +3426,6 @@ If ``true``, the mouse's additional side buttons will be usable to navigate in t
 :ref:`int<class_int>` **interface/editor/project_manager_screen** :ref:`🔗<class_EditorSettings_property_interface/editor/project_manager_screen>`
 
 The preferred monitor to display the project manager.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorSettings_property_interface/editor/remember_window_size_and_position:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **interface/editor/remember_window_size_and_position** :ref:`🔗<class_EditorSettings_property_interface/editor/remember_window_size_and_position>`
-
-If ``true``, the editor window will remember its size, position, and which screen it was displayed on across restarts.
 
 .. rst-class:: classref-item-separator
 

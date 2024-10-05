@@ -340,11 +340,51 @@ Number of navigation mesh polygon edges that could not be merged in the :ref:`Na
 
 Number of active navigation obstacles in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
+.. _class_Performance_constant_PIPELINE_COMPILATIONS_CANVAS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PIPELINE_COMPILATIONS_CANVAS** = ``34``
+
+Number of pipeline compilations that were triggered by the 2D canvas renderer.
+
+.. _class_Performance_constant_PIPELINE_COMPILATIONS_MESH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PIPELINE_COMPILATIONS_MESH** = ``35``
+
+Number of pipeline compilations that were triggered by loading meshes. These compilations will show up as longer loading times the first time a user runs the game and the pipeline is required.
+
+.. _class_Performance_constant_PIPELINE_COMPILATIONS_SURFACE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PIPELINE_COMPILATIONS_SURFACE** = ``36``
+
+Number of pipeline compilations that were triggered by building the surface cache before rendering the scene. These compilations will show up as a stutter when loading an scene the first time a user runs the game and the pipeline is required.
+
+.. _class_Performance_constant_PIPELINE_COMPILATIONS_DRAW:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PIPELINE_COMPILATIONS_DRAW** = ``37``
+
+Number of pipeline compilations that were triggered while drawing the scene. These compilations will show up as stutters during gameplay the first time a user runs the game and the pipeline is required.
+
+.. _class_Performance_constant_PIPELINE_COMPILATIONS_SPECIALIZATION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PIPELINE_COMPILATIONS_SPECIALIZATION** = ``38``
+
+Number of pipeline compilations that were triggered to optimize the current scene. These compilations are done in the background and should not cause any stutters whatsoever.
+
 .. _class_Performance_constant_MONITOR_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``34``
+:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``39``
 
 Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
 

@@ -1896,6 +1896,16 @@ Returns outline contours of the glyph as a :ref:`Dictionary<class_Dictionary>` w
 
 \ ``orientation``    - :ref:`bool<class_bool>`, contour orientation. If ``true``, clockwise contours must be filled.
 
+- Two successive :ref:`CONTOUR_CURVE_TAG_ON<class_TextServer_constant_CONTOUR_CURVE_TAG_ON>` points indicate a line segment.
+
+- One :ref:`CONTOUR_CURVE_TAG_OFF_CONIC<class_TextServer_constant_CONTOUR_CURVE_TAG_OFF_CONIC>` point between two :ref:`CONTOUR_CURVE_TAG_ON<class_TextServer_constant_CONTOUR_CURVE_TAG_ON>` points indicates a single conic (quadratic) Bézier arc.
+
+- Two :ref:`CONTOUR_CURVE_TAG_OFF_CUBIC<class_TextServer_constant_CONTOUR_CURVE_TAG_OFF_CUBIC>` points between two :ref:`CONTOUR_CURVE_TAG_ON<class_TextServer_constant_CONTOUR_CURVE_TAG_ON>` points indicate a single cubic Bézier arc.
+
+- Two successive :ref:`CONTOUR_CURVE_TAG_OFF_CONIC<class_TextServer_constant_CONTOUR_CURVE_TAG_OFF_CONIC>` points indicate two successive conic (quadratic) Bézier arcs with a virtual :ref:`CONTOUR_CURVE_TAG_ON<class_TextServer_constant_CONTOUR_CURVE_TAG_ON>` point at their middle.
+
+- Each contour is closed. The last point of a contour uses the first point of a contour as its next point, and vice versa. The first point can be :ref:`CONTOUR_CURVE_TAG_OFF_CONIC<class_TextServer_constant_CONTOUR_CURVE_TAG_OFF_CONIC>` point.
+
 .. rst-class:: classref-item-separator
 
 ----

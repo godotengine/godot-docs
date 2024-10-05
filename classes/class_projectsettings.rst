@@ -1583,8 +1583,6 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/shading/overrides/force_vertex_shading<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading>`                                                                   | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`rendering/shading/overrides/force_vertex_shading.mobile<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading.mobile>`                                                     | ``true``                                                                                         |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/textures/canvas_textures/default_texture_filter<class_ProjectSettings_property_rendering/textures/canvas_textures/default_texture_filter>`                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/textures/canvas_textures/default_texture_repeat<class_ProjectSettings_property_rendering/textures/canvas_textures/default_texture_repeat>`                                                 | ``0``                                                                                            |
@@ -5990,7 +5988,7 @@ macOS specific override for the shortcut to select the word currently under the 
 
 :ref:`Dictionary<class_Dictionary>` **input/ui_text_skip_selection_for_next_occurrence** :ref:`🔗<class_ProjectSettings_property_input/ui_text_skip_selection_for_next_occurrence>`
 
-If no selection is currently active with the last caret in text fields, searches for the next occurrence of the the word currently under the caret and moves the caret to the next occurrence. The action can be performed sequentially for other occurrences of the word under the last caret.
+If no selection is currently active with the last caret in text fields, searches for the next occurrence of the word currently under the caret and moves the caret to the next occurrence. The action can be performed sequentially for other occurrences of the word under the last caret.
 
 If a selection is currently active with the last caret in text fields, searches for the next occurrence of the selection, adds a caret, selects the next occurrence then deselects the previous selection and its associated caret. The action can be performed sequentially for other occurrences of the selection of the last caret.
 
@@ -11647,22 +11645,6 @@ Lower-end override for :ref:`rendering/shading/overrides/force_lambert_over_burl
 :ref:`bool<class_bool>` **rendering/shading/overrides/force_vertex_shading** = ``false`` :ref:`🔗<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading>`
 
 If ``true``, forces vertex shading for all rendering. This can increase performance a lot, but also reduces quality immensely. Can be used to optimize performance on low-end mobile devices.
-
-\ **Note:** This setting currently has no effect, as vertex shading is not implemented yet.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading.mobile:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **rendering/shading/overrides/force_vertex_shading.mobile** = ``true`` :ref:`🔗<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading.mobile>`
-
-Lower-end override for :ref:`rendering/shading/overrides/force_vertex_shading<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading>` on mobile devices, due to performance concerns or driver support.
-
-\ **Note:** This setting currently has no effect, as vertex shading is not implemented yet.
 
 .. rst-class:: classref-item-separator
 
