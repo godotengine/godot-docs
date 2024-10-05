@@ -1,7 +1,7 @@
 .. _doc_configuring_an_ide_rider:
 
 JetBrains Rider
-=====
+===============
 
 `JetBrains Rider <https://www.jetbrains.com/rider/>`_ is a commercial
 `JetBrains <https://www.jetbrains.com/>`_ IDE for C# and C++ that uses the same solution system as Visual Studio.
