@@ -33,7 +33,7 @@ Once Neovim is configured to the user's liking, the project can be set-up by fol
   | The compiledb=yes argument ensures that a compilation database file is generated, which is necessary for correct clangd function.
   | The ``dev_build`` parameter makes sure the debug symbols are included, allowing to e.g. step through code using breakpoints.
 - You should now be able to open the project by running ``nvim`` in a terminal window open to the project directory.
-- The project can be rebuilt at any time by running the ``:terminal`` Neovim command and running SCons with the previous arguments.
+- The project can be rebuilt at any time within Neovim by running the ``:terminal`` command and running SCons with the previous arguments.
 
 Using a LSPs, DAPs, and more in Neovim
 --------------------------------------
