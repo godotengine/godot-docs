@@ -144,6 +144,8 @@ Methods
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                         | :ref:`popup_property_selector<class_EditorInterface_method_popup_property_selector>`\ (\ object\: :ref:`Object<class_Object>`, callback\: :ref:`Callable<class_Callable>`, type_filter\: :ref:`PackedInt32Array<class_PackedInt32Array>` = PackedInt32Array(), current_value\: :ref:`String<class_String>` = ""\ ) |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                         | :ref:`popup_quick_open<class_EditorInterface_method_popup_quick_open>`\ (\ callback\: :ref:`Callable<class_Callable>`, base_types\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = []\ )                                                                                                       |
+   +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                         | :ref:`reload_scene_from_path<class_EditorInterface_method_reload_scene_from_path>`\ (\ scene_filepath\: :ref:`String<class_String>`\ )                                                                                                                                                                             |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                         | :ref:`restart_editor<class_EditorInterface_method_restart_editor>`\ (\ save\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                                                    |
@@ -774,6 +776,18 @@ Pops up an editor dialog for selecting properties from ``object``. The ``callbac
             print("property selection canceled")
         else:
             print("selected ", property_path)
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_method_popup_quick_open:
+
+.. rst-class:: classref-method
+
+|void| **popup_quick_open**\ (\ callback\: :ref:`Callable<class_Callable>`, base_types\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = []\ ) :ref:`🔗<class_EditorInterface_method_popup_quick_open>`
+
+Pops up an editor dialog for quick selecting a resource file. The ``callback`` must take a single argument of type :ref:`String<class_String>` which will contain the path of the selected resource or be empty if the dialog is canceled. If ``base_types`` is provided, the dialog will only show resources that match these types. Only types deriving from :ref:`Resource<class_Resource>` are supported.
 
 .. rst-class:: classref-item-separator
 

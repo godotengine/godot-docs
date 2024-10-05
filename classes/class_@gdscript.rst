@@ -711,6 +711,53 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_SUBGROUP<class_@GlobalScope_constant_
 
 ----
 
+.. _class_@GDScript_annotation_@export_tool_button:
+
+.. rst-class:: classref-annotation
+
+**@export_tool_button**\ (\ text\: :ref:`String<class_String>`, icon\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_@GDScript_annotation_@export_tool_button>`
+
+Export a :ref:`Callable<class_Callable>` property as a clickable button with the label ``text``. When the button is pressed, the callable is called.
+
+If ``icon`` is specified, it is used to fetch an icon for the button via :ref:`Control.get_theme_icon<class_Control_method_get_theme_icon>`, from the ``"EditorIcons"`` theme type. If ``icon`` is omitted, the default ``"Callable"`` icon is used instead.
+
+Consider using the :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>` to allow the action to be reverted safely.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_TOOL_BUTTON<class_@GlobalScope_constant_PROPERTY_HINT_TOOL_BUTTON>`.
+
+::
+
+    @tool
+    extends Sprite2D
+    
+    @export_tool_button("Hello") var hello_action = hello
+    @export_tool_button("Randomize the color!", "ColorRect")
+    var randomize_color_action = randomize_color
+    
+    func hello():
+        print("Hello world!")
+    
+    func randomize_color():
+        var undo_redo = EditorInterface.get_editor_undo_redo()
+        undo_redo.create_action("Randomized Sprite2D Color")
+        undo_redo.add_do_property(self, &"self_modulate", Color(randf(), randf(), randf()))
+        undo_redo.add_undo_property(self, &"self_modulate", self_modulate)
+        undo_redo.commit_action()
+
+\ **Note:** The property is exported without the :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` flag because a :ref:`Callable<class_Callable>` cannot be properly serialized and stored in a file.
+
+\ **Note:** In an exported project neither :ref:`EditorInterface<class_EditorInterface>` nor :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>` exist, which may cause some scripts to break. To prevent this, you can use :ref:`Engine.get_singleton<class_Engine_method_get_singleton>` and omit the static type from the variable declaration:
+
+::
+
+    var undo_redo = Engine.get_singleton(&"EditorInterface").get_editor_undo_redo()
+
+\ **Note:** Avoid storing lambda callables in member variables of :ref:`RefCounted<class_RefCounted>`-based classes (e.g. resources), as this can lead to memory leaks. Use only method callables and optionally :ref:`Callable.bind<class_Callable_method_bind>` or :ref:`Callable.unbind<class_Callable_method_unbind>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GDScript_annotation_@icon:
 
 .. rst-class:: classref-annotation

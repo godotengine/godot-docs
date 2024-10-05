@@ -376,7 +376,7 @@ enum **TargetRayMode**: :ref:`🔗<enum_WebXRInterface_TargetRayMode>`
 
 :ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **TARGET_RAY_MODE_UNKNOWN** = ``0``
 
-We don't know the the target ray mode.
+We don't know the target ray mode.
 
 .. _class_WebXRInterface_constant_TARGET_RAY_MODE_GAZE:
 

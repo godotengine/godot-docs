@@ -291,6 +291,8 @@ Methods
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`size<class_Dictionary_method_size>`\ (\ ) |const|                                                                                                                  |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`sort<class_Dictionary_method_sort>`\ (\ )                                                                                                                          |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`           | :ref:`values<class_Dictionary_method_values>`\ (\ ) |const|                                                                                                              |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -846,6 +848,18 @@ Sets the value of the element at the given ``key`` to the given ``value``. This 
 :ref:`int<class_int>` **size**\ (\ ) |const| :ref:`🔗<class_Dictionary_method_size>`
 
 Returns the number of entries in the dictionary. Empty dictionaries (``{ }``) always return ``0``. See also :ref:`is_empty<class_Dictionary_method_is_empty>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_sort:
+
+.. rst-class:: classref-method
+
+|void| **sort**\ (\ ) :ref:`🔗<class_Dictionary_method_sort>`
+
+Sorts the dictionary in-place by key. This can be used to ensure dictionaries with the same contents produce equivalent results when getting the :ref:`keys<class_Dictionary_method_keys>`, getting the :ref:`values<class_Dictionary_method_values>`, and converting to a string. This is also useful when wanting a JSON representation consistent with what is in memory, and useful for storing on a database that requires dictionaries to be sorted.
 
 .. rst-class:: classref-item-separator
 

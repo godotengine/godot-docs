@@ -5656,6 +5656,104 @@ Buffer memory used (in bytes). This includes vertex data, uniform buffers, and m
 
 Video memory used (in bytes). When using the Forward+ or mobile rendering backends, this is always greater than the sum of :ref:`RENDERING_INFO_TEXTURE_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_TEXTURE_MEM_USED>` and :ref:`RENDERING_INFO_BUFFER_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_BUFFER_MEM_USED>`, since there is miscellaneous data not accounted for by those two metrics. When using the GL Compatibility backend, this is equal to the sum of :ref:`RENDERING_INFO_TEXTURE_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_TEXTURE_MEM_USED>` and :ref:`RENDERING_INFO_BUFFER_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_BUFFER_MEM_USED>`.
 
+.. _class_RenderingServer_constant_RENDERING_INFO_PIPELINE_COMPILATIONS_CANVAS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_PIPELINE_COMPILATIONS_CANVAS** = ``6``
+
+Number of pipeline compilations that were triggered by the 2D canvas renderer.
+
+.. _class_RenderingServer_constant_RENDERING_INFO_PIPELINE_COMPILATIONS_MESH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_PIPELINE_COMPILATIONS_MESH** = ``7``
+
+Number of pipeline compilations that were triggered by loading meshes. These compilations will show up as longer loading times the first time a user runs the game and the pipeline is required.
+
+.. _class_RenderingServer_constant_RENDERING_INFO_PIPELINE_COMPILATIONS_SURFACE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_PIPELINE_COMPILATIONS_SURFACE** = ``8``
+
+Number of pipeline compilations that were triggered by building the surface cache before rendering the scene. These compilations will show up as a stutter when loading an scene the first time a user runs the game and the pipeline is required.
+
+.. _class_RenderingServer_constant_RENDERING_INFO_PIPELINE_COMPILATIONS_DRAW:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_PIPELINE_COMPILATIONS_DRAW** = ``9``
+
+Number of pipeline compilations that were triggered while drawing the scene. These compilations will show up as stutters during gameplay the first time a user runs the game and the pipeline is required.
+
+.. _class_RenderingServer_constant_RENDERING_INFO_PIPELINE_COMPILATIONS_SPECIALIZATION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_PIPELINE_COMPILATIONS_SPECIALIZATION** = ``10``
+
+Number of pipeline compilations that were triggered to optimize the current scene. These compilations are done in the background and should not cause any stutters whatsoever.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_RenderingServer_PipelineSource:
+
+.. rst-class:: classref-enumeration
+
+enum **PipelineSource**: :ref:`🔗<enum_RenderingServer_PipelineSource>`
+
+.. _class_RenderingServer_constant_PIPELINE_SOURCE_CANVAS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PipelineSource<enum_RenderingServer_PipelineSource>` **PIPELINE_SOURCE_CANVAS** = ``0``
+
+Pipeline compilation that was triggered by the 2D canvas renderer.
+
+.. _class_RenderingServer_constant_PIPELINE_SOURCE_MESH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PipelineSource<enum_RenderingServer_PipelineSource>` **PIPELINE_SOURCE_MESH** = ``1``
+
+Pipeline compilation that was triggered by loading a mesh.
+
+.. _class_RenderingServer_constant_PIPELINE_SOURCE_SURFACE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PipelineSource<enum_RenderingServer_PipelineSource>` **PIPELINE_SOURCE_SURFACE** = ``2``
+
+Pipeline compilation that was triggered by building the surface cache before rendering the scene.
+
+.. _class_RenderingServer_constant_PIPELINE_SOURCE_DRAW:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PipelineSource<enum_RenderingServer_PipelineSource>` **PIPELINE_SOURCE_DRAW** = ``3``
+
+Pipeline compilation that was triggered while drawing the scene.
+
+.. _class_RenderingServer_constant_PIPELINE_SOURCE_SPECIALIZATION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PipelineSource<enum_RenderingServer_PipelineSource>` **PIPELINE_SOURCE_SPECIALIZATION** = ``4``
+
+Pipeline compilation that was triggered to optimize the current scene.
+
+.. _class_RenderingServer_constant_PIPELINE_SOURCE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PipelineSource<enum_RenderingServer_PipelineSource>` **PIPELINE_SOURCE_MAX** = ``5``
+
+Represents the size of the :ref:`PipelineSource<enum_RenderingServer_PipelineSource>` enum.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -7120,7 +7218,7 @@ Sets the Z range of objects that will be affected by this light. Equivalent to :
 
 Transforms both the current and previous stored transform for a canvas light.
 
-This allows transforming a light without creating a "glitch" in the interpolation, which is is particularly useful for large worlds utilizing a shifting origin.
+This allows transforming a light without creating a "glitch" in the interpolation, which is particularly useful for large worlds utilizing a shifting origin.
 
 .. rst-class:: classref-item-separator
 

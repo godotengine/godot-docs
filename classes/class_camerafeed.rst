@@ -58,6 +58,14 @@ Methods
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`set_format<class_CameraFeed_method_set_format>`\ (\ index\: :ref:`int<class_int>`, parameters\: :ref:`Dictionary<class_Dictionary>`\ ) |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_name<class_CameraFeed_method_set_name>`\ (\ name\: :ref:`String<class_String>`\ )                                                  |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_position<class_CameraFeed_method_set_position>`\ (\ position\: :ref:`FeedPosition<enum_CameraFeed_FeedPosition>`\ )                |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_rgb_image<class_CameraFeed_method_set_rgb_image>`\ (\ rgb_image\: :ref:`Image<class_Image>`\ )                                     |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_ycbcr_image<class_CameraFeed_method_set_ycbcr_image>`\ (\ ycbcr_image\: :ref:`Image<class_Image>`\ )                               |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -294,6 +302,54 @@ Sets the feed format parameters for the given index in the :ref:`formats<class_C
 \ ``grayscale`` will result in desaturated FEED_RGB
 
 \ ``copy`` will result in FEED_YCBCR
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CameraFeed_method_set_name:
+
+.. rst-class:: classref-method
+
+|void| **set_name**\ (\ name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CameraFeed_method_set_name>`
+
+Sets the camera's name.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CameraFeed_method_set_position:
+
+.. rst-class:: classref-method
+
+|void| **set_position**\ (\ position\: :ref:`FeedPosition<enum_CameraFeed_FeedPosition>`\ ) :ref:`🔗<class_CameraFeed_method_set_position>`
+
+Sets the position of this camera.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CameraFeed_method_set_rgb_image:
+
+.. rst-class:: classref-method
+
+|void| **set_rgb_image**\ (\ rgb_image\: :ref:`Image<class_Image>`\ ) :ref:`🔗<class_CameraFeed_method_set_rgb_image>`
+
+Sets RGB image for this feed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CameraFeed_method_set_ycbcr_image:
+
+.. rst-class:: classref-method
+
+|void| **set_ycbcr_image**\ (\ ycbcr_image\: :ref:`Image<class_Image>`\ ) :ref:`🔗<class_CameraFeed_method_set_ycbcr_image>`
+
+Sets YCbCr image for this feed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
