@@ -86,4 +86,4 @@ Alternatively you can use **Run > Attach to Process** to attach the debugger to 
 .. figure:: img/rider_attach_to_process_dialog.webp
    :align: center
 
-Please consult the `JetBrains Rider <https://www.jetbrains.com/rider/documentation/>`_ documentation for any specific information about the JetBrains IDE.
+Please consult the `JetBrains Rider documentation <https://www.jetbrains.com/rider/documentation/>`_ for any specific information about the JetBrains IDE.
