@@ -2011,7 +2011,7 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`_get_dra
 
     public override bool _CanDropData(Vector2 atPosition, Variant data)
     {
-        return data.VariantType == Variant.Type.Dictionary && dict.AsGodotDictionary().ContainsKey("color");
+        return data.VariantType == Variant.Type.Dictionary && data.AsGodotDictionary().ContainsKey("color");
     }
     
     public override void _DropData(Vector2 atPosition, Variant data)
