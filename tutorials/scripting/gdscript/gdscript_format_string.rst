@@ -285,3 +285,6 @@ Combining both the ``String.format`` method and the ``%`` operator could be usef
 +---------------------------------------------------------------------------+-------------------+
 | ``"Hi, {0} v{version}".format({0:"Godette", "version":"%0.2f" % 3.114})`` | Hi, Godette v3.11 |
 +---------------------------------------------------------------------------+-------------------+
+
+In Godot's C++ code, GDScript format strings can accessed using the
+``vformat`` helper function in the :ref:`Variant<class_Variant>` header.
