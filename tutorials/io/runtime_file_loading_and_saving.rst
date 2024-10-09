@@ -171,7 +171,9 @@ Audio/video files
 Godot supports loading Ogg Vorbis audio at runtime.
 
 .. note::
-    Note that not *all* files with an ``.ogg`` extension may be Ogg Vorbis files.         Some may be Ogg Theora videos, or contain Opus audio within an Ogg container.         These files will **not** load correctly as audio files in Godot.
+    Not *all* files with an ``.ogg`` extension may be Ogg Vorbis files. Some may be
+    Ogg Theora videos, or contain Opus audio within an Ogg container. These files
+    will **not** load correctly as audio files in Godot.
 
 Example of loading an Ogg Vorbis audio file in an :ref:`class_AudioStreamPlayer` node:
 
