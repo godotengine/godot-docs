@@ -1,5 +1,12 @@
 Animation
 =========
+
+.. warning::
+   This chapter covers the Blender plugin
+   `Godot Blender Exporter <https://github.com/godotengine/godot-blender-exporter>`__,
+   which is deprecated in Godot 4.x. To export from Blender to Godot 4.x, use
+   one of the :ref:`available 3D formats <doc_importing_3d_scenes_available_formats>`.
+
 Animation supported:
  - transform animation of all types of objects
  - transform animation of pose bones
