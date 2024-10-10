@@ -3,6 +3,8 @@
 .env
 
 _build/
+_build-old/
+_migrated/
 env/
 __pycache__
 *.pyc

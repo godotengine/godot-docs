@@ -26,12 +26,16 @@ jobs:
           sudo apt update
           sudo apt install parallel libwebp7
 
+      - name: Migrate to Redot
+        run: |
+          python migrate.py . _migrated False
+  
       - name: Sphinx - Build HTML
-        run: make SPHINXOPTS='--color' html
+        run: make SPHINXOPTS='--color' SPHINXSOURCEDIR='./_migrated' html
 
       - uses: actions/upload-artifact@v4
         with:
-          name: godot-docs-html-${{ matrix.branch }}
+          name: redot-docs-html-${{ matrix.branch }}
           path: _build/html
           # Keep the current build and the previous build (in case a scheduled build failed).
           # This makes it more likely to have at least one successful build available at all times.
@@ -46,15 +50,15 @@ jobs:
           parallel --will-cite sed -i "s/\\.webp$/\\.png/g" ::: {about,community,contributing,getting_started,tutorials}/**/*.rst
 
           # Remove banners at the top of each page when building `latest`.
-          sed -i 's/"godot_is_latest": True/"godot_is_latest": False/' conf.py
-          sed -i 's/"godot_show_article_status": True/"godot_show_article_status": False/' conf.py
+          sed -i 's/"redot_is_latest": True/"redot_is_latest": False/' conf.py
+          sed -i 's/"redot_show_article_status": True/"redot_show_article_status": False/' conf.py
 
-          make SPHINXOPTS='--color' epub
+          make SPHINXOPTS='--color' SPHINXSOURCEDIR='./_migrated' epub
 
       - uses: actions/upload-artifact@v4
         with:
-          name: godot-docs-epub-${{ matrix.branch }}
-          path: _build/epub/GodotEngine.epub
+          name: redot-docs-epub-${{ matrix.branch }}
+          path: _build/epub/RedotEngine.epub
           # Keep the current build and the previous build (in case a scheduled build failed).
           # This makes it more likely to have at least one successful build available at all times.
           retention-days: 15
