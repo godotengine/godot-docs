@@ -6,7 +6,7 @@ labels: enhancement
 assignees: ''
 ---
 
-**Your Godot version:**
+**Your Redot version:**
 
 **Issue description:**
 
