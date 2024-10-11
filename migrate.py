@@ -176,6 +176,7 @@ mappings = [
     ('to_godot', 'to_redot'),
     ('godot.html', 'redot.html'),
     ('by-godot', 'by-redot'),
+    ('MadeWithGodot', 'MadeWithRedot'),
 ]
 
 filename_mappings = [
