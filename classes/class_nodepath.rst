@@ -293,14 +293,14 @@ Returns the node name indicated by ``idx``, starting from 0. If ``idx`` is out o
     var sprite_path = NodePath("../RigidBody2D/Sprite2D")
     print(sprite_path.get_name(0)) # Prints "..".
     print(sprite_path.get_name(1)) # Prints "RigidBody2D".
-    print(sprite_path.get_name(2)) # Prints "Sprite".
+    print(sprite_path.get_name(2)) # Prints "Sprite2D".
 
  .. code-tab:: csharp
 
     var spritePath = new NodePath("../RigidBody2D/Sprite2D");
     GD.Print(spritePath.GetName(0)); // Prints "..".
-    GD.Print(spritePath.GetName(1)); // Prints "PathFollow2D".
-    GD.Print(spritePath.GetName(2)); // Prints "Sprite".
+    GD.Print(spritePath.GetName(1)); // Prints "RigidBody2D".
+    GD.Print(spritePath.GetName(2)); // Prints "Sprite2D".
 
 
 
