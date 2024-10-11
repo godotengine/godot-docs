@@ -31,7 +31,7 @@ jobs:
           python migrate.py . _migrated False
   
       - name: Sphinx - Build HTML
-        run: make SPHINXOPTS='--color' SPHINXSOURCEDIR='./_migrated' html
+        run: make SPHINXOPTS='--color -j 4' SPHINXSOURCEDIR='./_migrated' html
 
       - uses: actions/upload-artifact@v4
         with:
@@ -53,7 +53,7 @@ jobs:
           sed -i 's/"redot_is_latest": True/"redot_is_latest": False/' conf.py
           sed -i 's/"redot_show_article_status": True/"redot_show_article_status": False/' conf.py
 
-          make SPHINXOPTS='--color' SPHINXSOURCEDIR='./_migrated' epub
+          make SPHINXOPTS='--color -j 4' SPHINXSOURCEDIR='./_migrated' epub
 
       - uses: actions/upload-artifact@v4
         with:

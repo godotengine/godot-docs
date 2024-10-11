@@ -66,10 +66,6 @@ Technical contributions
   The documentation is one of the most essential parts of any tech project, yet the need to document new features and substantial changes often gets overlooked.
   Join the `documentation team <https://chat.godotengine.org/channel/documentation>`_ to improve the Godot Engine with your technical writing skills.
 
-- **Translations (spoken languages other than English)**
-  Are you interested in making the Godot Engine more accessible to non-English speakers?
-  Contribute to our `community-translations <https://hosted.weblate.org/projects/godot-engine/godot/>`_.
-
 Community support
 -----------------
 

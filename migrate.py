@@ -141,6 +141,7 @@ mappings = [
     ('https://github.com/godotengine/godot-proposals', 'https://github.com/redot-engine/redot-proposals'),
     ('https://raw.githubusercontent.com/godotengine/godot-docs', 'https://raw.githubusercontent.com/redot-engine/redot-docs'),
     ('https://github.com/godotengine/', 'https://github.com/redot-engine/'),
+    ('https://chat.godotengine.org/', 'https://discord.gg/a53QyHJZ'),
     # Generic replacements
     ('GODOT_COPYRIGHT.txt', 'REDOT_COPYRIGHT.txt'),
     ('godot-docs', 'redot-docs'),
