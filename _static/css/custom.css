@@ -42,26 +42,26 @@
     --content-background-color: #fcfcfc;
     --logo-opacity: 1.0;
 
-    --navbar-background-color: #333f67;
-    --navbar-background-color-hover: #29355c;
-    --navbar-background-color-active: #212d51;
-    --navbar-current-background-color: #212d51;
-    --navbar-current-background-color-hover: #182343;
-    --navbar-current-background-color-active: #131e3b;
-    --navbar-category-active-color: rgba(255 115 129 / 10%);
-    --navbar-current-color: #f1f9ff;
-    --navbar-level-1-color: #c3e3ff;
-    --navbar-level-2-color: #b8d6f0;
-    --navbar-level-3-color: #a3c4e1;
-    --navbar-expand-base-color: #81a3c2;
-    --navbar-expand-hover-color: #c3e3ff;
-    --navbar-expand-active-color: #f1f9ff;
-    --navbar-dimmed-color: #a3c4e1;
-    --navbar-heading-color: #ff7381;
-    --navbar-scrollbar-color: #d45a66;
-    --navbar-scrollbar-hover-color: #b14550;
-    --navbar-scrollbar-active-color: #72383e;
-    --navbar-scrollbar-background: #131e2b;
+    --navbar-background-color: #25282b;
+    --navbar-background-color-hover: #333639;
+    --navbar-background-color-active: #111417;
+    --navbar-current-background-color: #333639;
+    --navbar-current-background-color-hover: #44474a;
+    --navbar-current-background-color-active: #222528;
+    --navbar-category-active-color: rgba(238 115 129 / 10%);
+    --navbar-current-color: #fefefe;
+    --navbar-level-1-color: #ddd;
+    --navbar-level-2-color: #ccc;
+    --navbar-level-3-color: #bbb;
+    --navbar-expand-base-color: #80848e;
+    --navbar-expand-hover-color: #ccc;
+    --navbar-expand-active-color: #ddd;
+    --navbar-dimmed-color: #bbb;
+    --navbar-heading-color: #fe3f02;
+    --navbar-scrollbar-color: #fe3f02;
+    --navbar-scrollbar-hover-color: #963e48;
+    --navbar-scrollbar-active-color: #5f3034;
+    --navbar-scrollbar-background: #1c1e21;
 
     --link-color: #2980b9;
     --link-color-hover: #3091d1;
@@ -74,7 +74,7 @@
     --table-row-odd-background-color: #f3f6f6;
     --code-background-color: #e9eae5;
     --code-border-color: #e1e4e5;
-    --code-literal-color: #c03e41;
+    --code-literal-color: #fe3f02;
     --input-background-color: #fcfcfc;
     --input-focus-border-color: #5f8cff;
 
@@ -134,7 +134,7 @@
     --admonition-note-title-color: #fff;
     --admonition-attention-background-color: #ffedcc;
     --admonition-attention-color: #404040;
-    --admonition-attention-title-background-color: #f0b37e;
+    --admonition-attention-title-background-color: #fe3f02;
     --admonition-attention-title-color: #fff;
     --admonition-danger-background-color: #fcf3f2;
     --admonition-danger-color: #404040;
@@ -186,8 +186,8 @@
         --navbar-expand-hover-color: #ccc;
         --navbar-expand-active-color: #ddd;
         --navbar-dimmed-color: #bbb;
-        --navbar-heading-color: #ee7381;
-        --navbar-scrollbar-color: #be5460;
+        --navbar-heading-color: #fe3f02;
+        --navbar-scrollbar-color: #fe3f02;
         --navbar-scrollbar-hover-color: #963e48;
         --navbar-scrollbar-active-color: #5f3034;
         --navbar-scrollbar-background: #1c1e21;
@@ -203,7 +203,7 @@
         --table-row-odd-background-color: #3b3e41;
         --code-background-color: #22252d;
         --code-border-color: #505356;
-        --code-literal-color: #d68f8f;
+        --code-literal-color: #fe3f02;
         --input-background-color: #333537;
         --input-focus-border-color: #5f8cff;
 
@@ -234,7 +234,7 @@
         --highlight-background-emph-color: #2d3444;
         --highlight-default-color: rgba(255, 255, 255, 0.85);
         --highlight-comment-color: rgba(204, 206, 211, 0.5);
-        --highlight-keyword-color: #ff7085;
+        --highlight-keyword-color: #fe3f02;
         --highlight-keyword2-color: #42ffc2;
         --highlight-control-flow-keyword-color: #ff8ccc;
         --highlight-number-color: #a1ffe0;
