@@ -27,7 +27,7 @@ jobs:
       - name: Checkout the engine repository
         uses: actions/checkout@v4
         with:
-          repository: 'redot-engine/redot-engine'
+          repository: 'Redot-Engine/redot-engine'
           # Use the appropriate branch for the documentation version.
           ref: ${{ env.engine_rev }}
           path: './.engine-src'
@@ -38,7 +38,7 @@ jobs:
           cd ./.engine-src
           hash=$(git rev-parse HEAD)
           hash_short=$(git rev-parse --short HEAD)
-          echo "Checked out redot-engine/redot at $hash"
+          echo "Checked out redot-engine/redot-engine at $hash"
           echo "rev_hash=$hash" >> $GITHUB_OUTPUT
           echo "rev_hash_short=$hash_short" >> $GITHUB_OUTPUT
 
@@ -59,10 +59,10 @@ jobs:
           delete-branch: true
 
           # Configure the commit author.
-          author: 'Redot Organization <noreply@redot-url.org>'
-          committer: 'Redot Organization <noreply@redot-url.org>'
+          author: 'Redot Organization <noreply@redotengine.org>'
+          committer: 'Redot Organization <noreply@redotengine.org>'
 
           # Configure the pull-request.
           title: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ steps.engine.outputs.rev_hash_short }})'
-          body: 'Update Redot API online class reference to match the engine at https://github.com/redot-engine/redot/commit/${{ steps.engine.outputs.rev_hash }} (`${{ env.engine_rev }}`).'
+          body: 'Update Redot API online class reference to match the engine at https://github.com/Redot-Engine/redot-engine/commit/${{ steps.engine.outputs.rev_hash }} (`${{ env.engine_rev }}`).'
           labels: 'area:class reference,bug,enhancement'
