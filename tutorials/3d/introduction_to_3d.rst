@@ -31,7 +31,7 @@ Editing 3D scenes is done in the 3D workspace. This workspace can be selected
 manually, but it will be automatically selected when a Node3D node is
 selected.
 
-.. image:: img/tuto_3d3.webp
+.. image:: img/redot01.png
 
 Similar to 2D, the tabs below the workspace selector are used to change between
 currently opened scenes or create a new one using the plus (+) button. The left and
@@ -49,7 +49,7 @@ Some buttons may have additional functionality if another keypress is performed.
 of main functionality of each button with its default shortcut is provided below from 
 left to right:
 
-.. image:: img/3d_toolbar.webp
+.. image:: img/redot02.jpg
 
 - **Select Mode** (:kbd:`Q`): Allows selection of nodes in the viewport. Left clicking
   on a node to select one. Left clicking and dragging a rectangle selects all 
@@ -105,13 +105,13 @@ left to right:
 
 - **View menu**: Controls the view options and enables additional viewports:
 
-.. image:: img/tuto_3d6.webp
+.. image:: img/redot03.png
 
 In this menu, you can also show/hide grids, which are set to 1x1 meter by default,
 and the origin, where the blue, green, and red axis lines intersect.
 Moreover, specific types of gizmos can be toggled in this menu.
 
-.. image:: img/tuto_3d6_2.webp
+.. image:: img/redot04.png
 
 An open eye means that the gizmo is visible, a closed eye means it is hidden.
 A half-open eye means that it is also visible through opaque surfaces.
