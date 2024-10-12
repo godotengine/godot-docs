@@ -164,7 +164,7 @@ The limits can be only for the slider if you add the hints "or_greater" and/or "
 
 ::
 
-    @export_range(0, 100, 1, "or_greater", "or_less")
+    @export_range(0, 100, 0.1, "or_greater", "or_less") var l
 
 .. TODO: Document other hint strings usable with export_range.
 
