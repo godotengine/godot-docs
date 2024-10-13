@@ -118,15 +118,8 @@ If you have previous experience with statically typed languages such as
 C, C++, or C# but never used a dynamically typed one before, it is advised you
 read this tutorial: :ref:`doc_gdscript_more_efficiently`.
 
-Language
---------
-
-In the following, an overview is given to GDScript. Details, such as which
-methods are available to arrays or other objects, should be looked up in
-the linked class descriptions.
-
 Identifiers
-~~~~~~~~~~~
+-----------
 
 Any string that restricts itself to alphabetic characters (``a`` to ``z`` and
 ``A`` to ``Z``), digits (``0`` to ``9``) and ``_`` qualifies as an identifier.
@@ -140,7 +133,7 @@ that are considered "confusable" for ASCII characters and emoji are not allowed
 in identifiers.
 
 Keywords
-~~~~~~~~
+--------
 
 The following is the list of keywords supported by the language. Since
 keywords are reserved words (tokens), they can't be used as identifiers.
@@ -226,7 +219,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Operators
-~~~~~~~~~
+---------
 
 The following is the list of supported operators and their precedence. All binary operators are `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_,
 including the ``**`` operator. This means that ``2 ** 2 ** 3`` is equal to ``(2 ** 2) ** 3``. Use parentheses to explicitly specify precedence you need, for
@@ -338,7 +331,7 @@ example ``2 ** (2 ** 3)``. The ternary ``if/else`` operator is right-associative
        and :ref:`is_zero_approx() <class_@GlobalScope_method_is_zero_approx>` functions instead.
 
 Literals
-~~~~~~~~
+--------
 
 +---------------------------------+-------------------------------------------+
 | **Example(s)**                  | **Description**                           |
@@ -452,7 +445,7 @@ Thus, a string can have a quote that matches the opening one, but only if it's p
 GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 
 Annotations
-~~~~~~~~~~~
+-----------
 
 Annotations are special tokens in GDScript that act as modifiers to a script or
 its code and may affect how the script is treated by the Godot engine or
@@ -538,7 +531,7 @@ can replace the above code with a single line::
     as an error by default. We do not recommend disabling or ignoring it.
 
 Comments
-~~~~~~~~
+--------
 
 Anything from a ``#`` to the end of the line is ignored and is
 considered a comment.
@@ -573,7 +566,7 @@ considered a comment.
     Editor > Theme > Comment Markers** section of the Editor Settings.
 
 Code regions
-~~~~~~~~~~~~
+------------
 
 Code regions are special types of comments that the script editor understands as
 *foldable regions*. This means that after writing code region comments, you can
@@ -641,7 +634,7 @@ folding code regions.
     group multiple elements together.
 
 Line continuation
-~~~~~~~~~~~~~~~~~
+-----------------
 
 A line of code in GDScript can be continued on the next line by using a backslash
 (``\``). Add one at the end of a line and the code on the next line will act like
@@ -975,11 +968,8 @@ will set the value of ``x`` to a callable with ``$Sprite2D`` as the object and
 
 You can call it using the ``call`` method: ``x.call(PI)``.
 
-Data
-----
-
 Variables
-~~~~~~~~~
+---------
 
 Variables can exist as class members or local to functions. They are
 created with the ``var`` keyword and may, optionally, be assigned a
@@ -1033,7 +1023,7 @@ Valid types are:
     the project settings. See :ref:`doc_gdscript_warning_system` for details.
 
 Initialization order
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Member variables are initialized in the following order:
 
@@ -1079,7 +1069,7 @@ Member variables are initialized in the following order:
     or remove the empty dictionary assignment (``= {}``).
 
 Static variables
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 A class member variable can be declared static::
 
@@ -1183,7 +1173,7 @@ and must be placed at the top of the script, before ``class_name`` and ``extends
 See also `Static functions`_ and `Static constructor`_.
 
 Casting
-^^^^^^^
+~~~~~~~
 
 Values assigned to typed variables must have a compatible type. If it's needed to
 coerce a value to be of a certain type, in particular for object types, you can
@@ -1223,7 +1213,7 @@ the scene tree::
     ($AnimPlayer as AnimationPlayer).play("walk")
 
 Constants
-~~~~~~~~~
+---------
 
 Constants are values you cannot change when the game is running.
 Their value must be known at compile-time. Using the
@@ -1255,7 +1245,7 @@ You can also create constants inside a function, which is useful to name local
 magic values.
 
 Enums
-^^^^^
+~~~~~
 
 Enums are basically a shorthand for constants, and are pretty useful if you
 want to assign consecutive integers to some constant.
@@ -1303,7 +1293,7 @@ or ``0`` if it is the first entry in the enum. Multiple keys with the same value
 
 
 Functions
-~~~~~~~~~
+---------
 
 Functions always belong to a `class <Classes_>`_. The scope priority for
 variable look-up is: local → class member → global. The ``self`` variable is
@@ -1362,7 +1352,7 @@ return early with the ``return`` keyword, but they can't return any value.
           valid value to return.
 
 Referencing functions
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 Functions are first-class values in terms of the :ref:`Callable <class_Callable>` object.
 Referencing a function by name without calling it will automatically generate the proper
@@ -1391,7 +1381,7 @@ callable. This can be used to pass functions as arguments.
     performance issues on direct function calls.
 
 Lambda functions
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 Lambda functions allow you to declare functions that do not belong to a class. Instead, a
 :ref:`Callable <class_Callable>` object is created and assigned to a variable directly.
@@ -1464,7 +1454,7 @@ Lambda functions capture the local environment::
         print(a) # Prints `[1]`.
 
 Static functions
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 A function can be declared static. When a function is static, it has no access to the instance member variables or ``self``.
 A static function has access to static variables. Also static functions are useful to make libraries of helper functions::
@@ -1477,14 +1467,14 @@ Lambda functions cannot be declared static.
 See also `Static variables`_ and `Static constructor`_.
 
 Statements and control flow
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 Statements are standard and can be assignments, function calls, control
 flow structures, etc (see below). ``;`` as a statement separator is
 entirely optional.
 
 Expressions
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Expressions are sequences of operators and their operands in orderly fashion. An expression by itself can be a
 statement too, though only calls are reasonable to use as statements since other expressions don't have side effects.
@@ -1512,7 +1502,7 @@ Identifiers, attributes, and subscripts are valid assignment targets. Other expr
 an assignment.
 
 if/else/elif
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 Simple conditions are created by using the ``if``/``else``/``elif`` syntax.
 Parenthesis around conditions are allowed, but not required. Given the
@@ -1575,7 +1565,7 @@ use an ``if`` statement combined with the ``in`` operator to accomplish this::
     if "varName" in get_parent(): print("varName is defined in parent!")
 
 while
-^^^^^
+~~~~~
 
 Simple loops are created by using ``while`` syntax. Loops can be broken
 using ``break`` or continued using ``continue`` (which skips to the next
@@ -1587,7 +1577,7 @@ iteration of the loop without executing any further code in the current iteratio
         statement(s)
 
 for
-^^^
+~~~
 
 To iterate through a range, such as an array or table, a *for* loop is
 used. When iterating over an array, the current array element is stored in
@@ -1650,7 +1640,7 @@ be manipulated by calling methods on the loop variable.
         node.add_to_group("Cool_Group") # This has an effect
 
 match
-^^^^^
+~~~~~
 
 A ``match`` statement is used to branch execution of a program.
 It's the equivalent of the ``switch`` statement found in many other languages, but offers some additional features.
@@ -1661,7 +1651,7 @@ It's the equivalent of the ``switch`` statement found in many other languages, b
     for example, the String ``"hello"`` is considered equal to the StringName ``&"hello"``.
 
 Basic syntax
-""""""""""""
+^^^^^^^^^^^^
 
 ::
 
@@ -1673,7 +1663,7 @@ Basic syntax
         <...>
 
 Crash-course for people who are familiar with switch statements
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Replace ``switch`` with ``match``.
 2. Remove ``case``.
@@ -1681,7 +1671,7 @@ Crash-course for people who are familiar with switch statements
 4. Change ``default`` to a single underscore.
 
 Control flow
-""""""""""""
+^^^^^^^^^^^^
 
 The patterns are matched from top to bottom.
 If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
@@ -1799,7 +1789,7 @@ The following pattern types are available:
                 print("Yep, you've taken damage")
 
 Pattern guards
-""""""""""""""
+^^^^^^^^^^^^^^
 
 A *pattern guard* is an optional condition that follows the pattern list
 and allows you to make additional checks before choosing a ``match`` branch.
@@ -1831,7 +1821,7 @@ you can specify a pattern guard after the list of patterns with the ``when`` key
   - If it's false, then the patterns of the next branch are checked.
 
 Classes
-~~~~~~~
+-------
 
 By default, all script files are unnamed classes. In this case, you can only
 reference them using the file's path, using either a relative or an absolute
@@ -1912,7 +1902,7 @@ If you want to use ``extends`` too, you can keep both on the same line::
     by the Godot editor.
 
 Inheritance
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 A class (stored as a file) can inherit from:
 
@@ -1989,7 +1979,7 @@ the function name with the attribute operator::
     Signals and notifications can also be useful for these purposes.
 
 Class constructor
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 The class constructor, called on class instantiation, is named ``_init``. If you
 want to call the base class constructor, you can also use the ``super`` syntax.
@@ -2042,7 +2032,7 @@ There are a few things to keep in mind here:
         super(5)
 
 Static constructor
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 A static constructor is a static function ``_static_init`` that is called automatically
 when the class is loaded, after the static variables have been initialized::
@@ -2057,7 +2047,7 @@ A static constructor cannot take arguments and must not return any value.
 .. _doc_gdscript_basics_inner_classes:
 
 Inner classes
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 A class file can contain inner classes. Inner classes are defined using the
 ``class`` keyword. They are instanced using the ``ClassName.new()``
@@ -2084,7 +2074,7 @@ function.
 .. _doc_gdscript_classes_as_resources:
 
 Classes as resources
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Classes stored as files are treated as :ref:`GDScripts <class_GDScript>`. They
 must be loaded from disk to access them in other classes. This is done using
@@ -2103,7 +2093,7 @@ class resource is done by calling the ``new`` function on the class object::
         a.some_function()
 
 Exports
-~~~~~~~
+-------
 
 .. note::
 
@@ -2113,7 +2103,7 @@ Exports
 .. _doc_gdscript_basics_setters_getters:
 
 Properties (setters and getters)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 Sometimes, you want a class' member variable to do more than just hold data and actually perform
 some validation or computation whenever its value changes. It may also be desired to
@@ -2140,7 +2130,7 @@ Example::
     code use that name.
 
 Alternative syntax
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Also there is another notation to use existing class functions if you want to split the code from the variable declaration
 or you need to reuse the code across multiple properties (but you can't distinguish which property the setter/getter is being called for)::
@@ -2161,7 +2151,7 @@ The setter and getter must use the same notation, mixing styles for the same var
     Separated setter/getter functions can have type hints, and the type must match the variable's type or be a wider type.
 
 When setter/getter is not called
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When a variable is initialized, the value of the initializer will be written directly to the variable.
 Including if the ``@onready`` annotation is applied to the variable.
@@ -2199,7 +2189,7 @@ This also applies to the alternative syntax::
 .. _doc_gdscript_tool_mode:
 
 Tool mode
-~~~~~~~~~
+---------
 
 By default, scripts don't run inside the editor and only the exported
 properties can be changed. In some cases, it is desired that they do run
@@ -2224,7 +2214,7 @@ See :ref:`doc_running_code_in_the_editor` for more information.
 .. _doc_gdscript_basics_memory_management:
 
 Memory management
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Godot implements reference counting to free certain instances that are no longer
 used, instead of a garbage collector, or requiring purely manual management.
@@ -2272,7 +2262,7 @@ freed.
 .. _doc_gdscript_signals:
 
 Signals
-~~~~~~~
+-------
 
 Signals are a tool to emit messages from an object that other objects can react
 to. To create custom signals for a class, use the ``signal`` keyword.
@@ -2483,7 +2473,7 @@ This also means that returning a signal from a function that isn't a coroutine w
           during runtime.
 
 Assert keyword
-~~~~~~~~~~~~~~
+--------------
 
 The ``assert`` keyword can be used to check conditions in debug builds. These
 assertions are ignored in non-debug builds. This means that the expression
