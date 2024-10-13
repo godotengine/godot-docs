@@ -130,7 +130,7 @@ Cellular includes both Worley noise and Voronoi diagrams which creates various r
 
 :ref:`NoiseType<enum_FastNoiseLite_NoiseType>` **TYPE_SIMPLEX** = ``0``
 
-As opposed to :ref:`TYPE_PERLIN<class_FastNoiseLite_constant_TYPE_PERLIN>`, gradients exist in a simplex lattice rather than a grid lattice, avoiding directional artifacts.
+As opposed to :ref:`TYPE_PERLIN<class_FastNoiseLite_constant_TYPE_PERLIN>`, gradients exist in a simplex lattice rather than a grid lattice, avoiding directional artifacts. Internally uses FastNoiseLite's OpenSimplex2 noise type.
 
 .. _class_FastNoiseLite_constant_TYPE_SIMPLEX_SMOOTH:
 
@@ -138,7 +138,7 @@ As opposed to :ref:`TYPE_PERLIN<class_FastNoiseLite_constant_TYPE_PERLIN>`, grad
 
 :ref:`NoiseType<enum_FastNoiseLite_NoiseType>` **TYPE_SIMPLEX_SMOOTH** = ``1``
 
-Modified, higher quality version of :ref:`TYPE_SIMPLEX<class_FastNoiseLite_constant_TYPE_SIMPLEX>`, but slower.
+Modified, higher quality version of :ref:`TYPE_SIMPLEX<class_FastNoiseLite_constant_TYPE_SIMPLEX>`, but slower. Internally uses FastNoiseLite's OpenSimplex2S noise type.
 
 .. rst-class:: classref-item-separator
 
