@@ -82,9 +82,9 @@ master_doc = "index"
 # General information about the project
 project = "Godot Engine"
 copyright = (
-    "2014-present Juan Linietsky, Ariel Manzur and the Godot community (CC BY 3.0)"
+    "2024-present by the Redot community, modified from an original work by Juan Linietsky, Ariel Manzur and the G-dot community (CC BY 3.0)"
 )
-author = "Juan Linietsky, Ariel Manzur and the Godot community"
+author = "the Redot community, modified from an original work by Juan Linietsky, Ariel Manzur and the G-dot community"
 
 # Version info for the project, acts as replacement for |version| and |release|
 # The short X.Y version

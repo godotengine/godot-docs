@@ -28,7 +28,7 @@ jobs:
 
       - name: Migrate to Redot
         run: |
-          python migrate.py . _migrated False
+          python migrate.py . _migrated
   
       - name: Sphinx - Build HTML
         run: make SPHINXOPTS='--color -j 4' SPHINXSOURCEDIR='./_migrated' html

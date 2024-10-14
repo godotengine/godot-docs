@@ -19,7 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       engine_rev: 'master'
-
+    permissions:
+      contents: write
+      pull-requests: write
+    
     steps:
       - name: Checkout the documentation repository
         uses: actions/checkout@v4

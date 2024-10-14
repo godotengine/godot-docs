@@ -6,7 +6,7 @@
     Sphinx extension to automatically generate HTML meta description tags
     for all pages. Also comes with some special support for Godot class docs.
 
-    :copyright: Copyright 2021 by The Godot Engine Community
+    :copyright: Copyright 2021 by the Redot community, modified from an original work by the G-dot Engine Community
     :license: MIT.
 
     based on the work of Takayuki Shimizukawa on OpenGraph support for Sphinx,
