@@ -80,8 +80,8 @@ affect** the following kinds of aliasing in any way:
 - Aliasing in font rendering.
 
 MSAA can be enabled in the Project Settings by changing the value of the
-**Rendering > Anti Aliasing > Quality > MSAA 2D** setting. It's important to change
-the value of the **MSAA 2D** setting and not **MSAA 3D**, as these are entirely
+:ref:`Rendering > Anti Aliasing > Quality > MSAA 2D<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_2d>`
+setting. It's important to change the value of the **MSAA 2D** setting and not **MSAA 3D**, as these are entirely
 separate settings.
 
 Comparison between no antialiasing (left) and various MSAA levels (right). The

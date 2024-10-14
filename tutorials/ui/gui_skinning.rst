@@ -184,8 +184,8 @@ with a custom theme. Custom themes can be applied in two ways: as a project sett
 and as a node property throughout the tree of control nodes.
 
 There are two project settings that can be adjusted to affect your entire project:
-:ref:`gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>` allows you to
-set a custom project-wide theme, and :ref:`gui/theme/custom_font<class_ProjectSettings_property_gui/theme/custom_font>`
+:ref:`GUI > Theme > Custom<class_ProjectSettings_property_gui/theme/custom>` allows you to
+set a custom project-wide theme, and :ref:`GUI > Theme > Custom Font<class_ProjectSettings_property_gui/theme/custom_font>`
 does the same to the default fallback font. When a theme item is requested by a control
 node the custom project theme, if present, is checked first. Only if it doesn't have
 the item the default theme is checked.

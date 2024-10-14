@@ -653,7 +653,8 @@ There are 2 ways to use glow in 2D:
   rendering output.
 
   - To enable HDR in 2D, open the Project Settings, enable
-    **Rendering > Viewport > HDR 2D** then restart the editor.
+    :ref:`Rendering > Viewport > HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+    then restart the editor.
 
 - If you want to maximize performance, you can leave HDR disabled for 2D
   rendering. However, you will have less control on which objects glow.
@@ -676,10 +677,10 @@ There are 2 ways to use glow in 2D:
 .. warning::
 
     The 2D renderer renders in linear color space if the
-    **Rendering > Viewport > HDR 2D** project setting is enabled, so
-    ``source_color`` must also be used for uniform samplers that are
-    used as color input in ``canvas_item`` shaders. If this is not done,
-    the texture will appear washed out.
+    :ref:`Rendering > Viewport > HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+    project setting is enabled, so the ``source_color`` hint must also be used
+    for uniform samplers that are used as color input in ``canvas_item`` shaders.
+    If this is not done, the texture will appear washed out.
 
     If 2D HDR is disabled, ``source_color`` will keep working correctly in
     ``canvas_item`` shaders, so it's recommend to use it when relevant either
