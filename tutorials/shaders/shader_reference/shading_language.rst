@@ -637,13 +637,23 @@ Example below:
         result = a + b;
     }
 
-.. note::
+Function overloading is supported. You can define multiple functions with the same
+name, but different arguments. Note that `implicit casting <Casting_>`_ in overloaded
+function calls is not allowed, such as from ``int`` to ``float`` (``1`` to ``1.0``).
 
-    Unlike GLSL, Godot's shader language does **not** support function
-    overloading. This means that a function cannot be defined several times with
-    different argument types or numbers of arguments. As a workaround, use
-    different names for functions that accept a different number of arguments or
-    arguments of different types.
+.. code-block:: glsl
+
+    vec3 get_color(int t) {
+        return vec3(1, 0, 0); // Red color.
+    }
+    vec3 get_color(float t) {
+        return vec3(0, 1, 0); // Green color.
+    }
+    void fragment() {
+        vec3 red = get_color(1);
+        vec3 green = get_color(1.0);
+    }
+
 
 Varyings
 --------
