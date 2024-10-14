@@ -25,6 +25,11 @@ It uses the many :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` classes
 
 \ **Note:** You have to import the files into the engine first to load them using :ref:`load<class_ResourceLoader_method_load>`. If you want to load :ref:`Image<class_Image>`\ s at run-time, you may use :ref:`Image.load<class_Image_method_load>`. If you want to import audio files, you can use the snippet described in :ref:`AudioStreamMP3.data<class_AudioStreamMP3_property_data>`.
 
+.. seealso::
+
+    If you want to load player data, look at :ref:`doc_saving_games` instead for information on saving and loading game progression.
+
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -294,6 +299,13 @@ Returns an empty resource if no :ref:`ResourceFormatLoader<class_ResourceFormatL
 
 GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` built-in method which can be used in most situations, leaving the use of **ResourceLoader** for more advanced scenarios.
 
+.. warning::
+
+    Do not use this for save files, as it may lead to remote code execution when users share saves.
+    You should only use this to load files that you know are trusted.
+    Read the :ref:`doc_saving_games` for further guidance.
+
+
 \ **Note:** If :ref:`ProjectSettings.editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` is ``true``, :ref:`@GDScript.load<class_@GDScript_method_load>` will not be able to read converted files in an exported project. If you rely on run-time loading of files present within the PCK, set :ref:`ProjectSettings.editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` to ``false``.
 
 \ **Note:** Relative paths will be prefixed with ``"res://"`` before loading, to avoid unexpected results make sure your paths are absolute.
@@ -311,6 +323,12 @@ GDScript has a simplified :ref:`@GDScript.load<class_@GDScript_method_load>` bui
 Returns the resource loaded by :ref:`load_threaded_request<class_ResourceLoader_method_load_threaded_request>`.
 
 If this is called before the loading thread is done (i.e. :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` is not :ref:`THREAD_LOAD_LOADED<class_ResourceLoader_constant_THREAD_LOAD_LOADED>`), the calling thread will be blocked until the resource has finished loading. However, it's recommended to use :ref:`load_threaded_get_status<class_ResourceLoader_method_load_threaded_get_status>` to known when the load has actually completed.
+
+.. warning::
+
+    Do not use this for save files, as it may lead to remote code execution when users share saves.
+    You should only use this to load files that you know are trusted.
+    Read the :ref:`doc_saving_games` for further guidance.
 
 .. rst-class:: classref-item-separator
 
