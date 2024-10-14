@@ -30,8 +30,8 @@ jobs:
 
       - name: Migrate to Redot
         run: |
-          python migrate.py . _migrated True
+          python migrate.py . _migrated
 
       # Use dummy builder to improve performance as we don't need the generated HTML in this workflow.
       - name: Sphinx build
-        run: make SPHINXOPTS='--color -W' SPHINXSOURCEDIR='./_migrated' dummy
+        run: make SPHINXOPTS='--color -W -j 4' SPHINXSOURCEDIR='./_migrated' dummy

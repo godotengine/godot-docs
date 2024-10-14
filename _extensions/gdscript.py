@@ -5,7 +5,7 @@
 
     Lexer for GDScript.
 
-    :copyright: Copyright 2xxx by The Godot Engine Community
+    :copyright: Copyright 2xxx by the Redot community, modified from an original work by the G-dot Engine Community
     :license: MIT.
 
     modified by Daniel J. Ramirez <djrmuv@gmail.com> based on the original python.py pygment

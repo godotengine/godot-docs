@@ -1,13 +1,21 @@
 """
 ## Migrate files from Godot to Redot
 
-Usage (order is important):
-py migrate.py [inputdir] [outputdir] [include unimplemented]
+usage: Migrate [-h] [-e] [-t] [-v] input output
 
-example:
-py migrate.py . _migrated True
+Simple file migrator. Uses str.replace to map from Godot to Redot. Also converts some filenames.
 
-Will replace specific godot strings with redot. It tries to ignore external projects and other things that can't
+positional arguments:
+  input           Input directory relative to current
+  output          Output directory relative to current
+
+options:
+  -h, --help      show this help message and exit
+  -e, --extended  Include unimplemented substitutions, don't use in production
+  -t, --tiny      Exclude classes directory
+  -v, --verbose
+
+Will replace specific godot strings with redot. It tries to ignore external projects and other things that shouldn't
 change.
 
 A distinction is made between unimplemented instances of the godot keyword (for instance references to the main 
@@ -23,18 +31,23 @@ if necessary, and then save them to the output directory (default _migrated)
 From there, the docs can be built in the normal way.
 """
 
+import argparse
 import fnmatch
 import os
+import re
 from shutil import copyfile
 import shutil
 import sys
 import codecs
 from distutils.dir_util import copy_tree
 
-encoding = 'utf-8'
 defaultInputDirectory = '.'
 defaultOutputDirectory = '_migrated'
 defaultIncludeUnimplemented = False
+defaultIgnoreClasses = True
+defaultVerbose = False
+
+encoding = 'utf-8'
 filename_masks = ['.rst', '.md']
 
 # Mappings that will currently lead to nowhere. Can be treated as a todo list.
@@ -49,11 +62,6 @@ mappings_unimplemented = [
     ('https://hosted.weblate.org/projects/godot-engine/', 'https://hosted.weblate.org/projects/redot-engine/'),
     ('https://hosted.weblate.org/browse/godot-engine', 'https://hosted.weblate.org/browse/redot-engine'),
     ('https://repo1.maven.org/maven2/org/godotengine/godot/', 'https://repo1.maven.org/maven2/org/redot-engine/redot/'),
-    # Non existing internal urls
-    ('https://chat.godotengine.org/', 'https://chat.redotengine.org/'),
-    ('https://editor.godotengine.org', 'https://editor.redotengine.org'),
-    ('https://forum.godotengine.org/', 'https://forum.redotengine.org/'),
-    ('https://fund.godotengine.org', 'https://fund.redotengine.org'),
     # The following mappings probably require changes to the core engine
     ('GodotEngine.epub', 'RedotEngine.epub'),
     ('godotengine.org/license', 'redotengine.org/license'),
@@ -72,7 +80,6 @@ mappings_unimplemented = [
     ('Support/Godot/', 'Support/Redot/'),
     ('config/godot/', 'config/redot/'),
     ('share/godot/', 'share/redot/'),
-    (' godot_', ' redot_'),
     ('org.godotengine.Godot', 'org.redotengine.Redot'),
     ('godot-ios-plugins', 'redot-ios-plugins'),
     ('godot-syntax-themes', 'redot-syntax-themes'),
@@ -124,13 +131,27 @@ mappings_unimplemented = [
 
 # Mappings that should work on first migration
 mappings = [
+    # These will have to change eventually.
+    ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-stable.zip', 'https://download.redotengine.org/docs/redot-docs-html-stable.zip'),
+    ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip', 'https://download.redotengine.org/docs/redot-docs-html-master.zip'),
+    ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-3.6.zip', 'https://download.redotengine.org/docs/redot-docs-html-3.6.zip'),
+    ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-stable.zip', 'https://download.redotengine.org/docs/redot-docs-epub-stable.zip'),
+    ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-master.zip', 'https://download.redotengine.org/docs/redot-docs-epub-master.zip'),
+    ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-3.6.zip', 'https://download.redotengine.org/docs/redot-docs-epub-3.6.zip'),
     # Table breakers
     ('| ``"Please include this when reporting the bug on: https://github.com/godotengine/godot/issues"`` |', '| ``"Please include this when reporting the bug on: https://github.com/redot-engine/godot/issues"``|'),
     ('https://github.com/godotengine/godot/pull/40364>`_ for more.     |', 'https://github.com/redot-engine/redot/pull/40364>`_ for more.    |'),
+    # Non existing internal urls
+    ('https://chat.godotengine.org/', 'https://www.redotengine.org/'),
+    ('https://editor.godotengine.org', 'https://www.redotengine.org'),
+    ('https://forum.godotengine.org/', 'https://www.redotengine.org/'),
+    ('https://fund.godotengine.org', 'https://www.redotengine.org'),
     # Almost existing urls
+    ('https://docs.godotengine.org/', '/'),
     ('https://docs.godotengine.org', 'https://docs.redotengine.org'),
     ('https://godotengine.org', 'https://redotengine.org'),
     # Existing urls
+    ('https://godotengine.org/community', 'https://www.redot.org'),
     ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot', 'https://nightly.link/redot-engine/redot-docs/workflows/build_offline_docs/master/redot'),
     ('https://github.com/godotengine/godot-docs/issues', 'https://github.com/redot-engine/redot-docs/issues'),
     ('https://github.com/godotengine/godot/blob/master', 'https://github.com/redot-engine/redot/blob/master'),
@@ -141,8 +162,10 @@ mappings = [
     ('https://github.com/godotengine/godot-proposals', 'https://github.com/redot-engine/redot-proposals'),
     ('https://raw.githubusercontent.com/godotengine/godot-docs', 'https://raw.githubusercontent.com/redot-engine/redot-docs'),
     ('https://github.com/godotengine/', 'https://github.com/redot-engine/'),
+    ('https://chat.godotengine.org/', 'https://discord.gg/redot'),
     # Generic replacements
     ('GODOT_COPYRIGHT.txt', 'REDOT_COPYRIGHT.txt'),
+    ('godotengine.org', 'redotengine.org'),
     ('godot-docs', 'redot-docs'),
     ('GODOT ENGINE', 'REDOT ENGINE'),
     ('/bin/godot', '/bin/redot'),
@@ -176,6 +199,17 @@ mappings = [
     ('to_godot', 'to_redot'),
     ('godot.html', 'redot.html'),
     ('by-godot', 'by-redot'),
+    ('MadeWithGodot', 'MadeWithRedot'),
+    (' if on_rtd else "(DEV) "', ''),
+    ('<span class="fa fa-book"> Read the Docs</span>', '<span class="fa fa-book"> Versions</span>'),
+    ("const homeUrl = baseUrl.split('/latest/')[0] + '/stable/';", "const homeUrl = 'https://docs-stable.redotengine.org/';"),
+    ('{% set listed_languages = ({"en":"#", "de":"#", "es":"#", "fr":"#"}).items() -%}', '{% set listed_languages = ({"en":"#"}).items() -%}'),
+    ('({"stable":"#", "latest":"#"})', '({"stable":"https://docs-stable.redotengine.org/", "latest":"https://docs-latest.redotengine.org/", "3.6":"https://docs-3-6.redotengine.org/"})'),
+    ('Hosted by <a href="https://readthedocs.org">Read the Docs', 'Hosted by <a href="https://cloudflare.com">CloudFlare'),
+    ('<a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>', ''),
+    ('G-dot', 'Godot'),
+    (' godot_', ' redot_'),
+    ('class_godotsharp', 'class_redotsharp'),
 ]
 
 filename_mappings = [
@@ -212,6 +246,13 @@ if (sys.stdout.encoding != encoding):
 def is_target(filename):
     return any(filename.lower().endswith(m) for m in filename_masks)
 
+def ensureDirExists(outputName):
+    dirname = os.path.dirname(outputName)
+    try:
+        os.makedirs(dirname)
+    except FileExistsError:
+        pass
+
 def generateOutputName(root, fileName, outputDirectory):
     on = os.path.join('.', outputDirectory, root, fileName)
     on = convertContent(on, filename_mappings)
@@ -225,25 +266,18 @@ def convertContent(content, mappings):
             content = content.replace(search, replace)
     return content
 
-def ensureDirExists(outputName):
-    dirname = os.path.dirname(outputName)
-    try:
-        os.makedirs(dirname)
-    except FileExistsError:
-        pass
-
-def copyFile(root, filename, outputDirectory):
+def copyFile(root, filename, outputDirectory, verbose):
     inputName = os.path.join(root, filename)
     outputName = generateOutputName(root, inputName.replace('.\\', '').replace('./', ''), outputDirectory)
 
-    print(f'Copying "{inputName}" to "{outputName}"')
+    if verbose: print(f'Copying "{inputName}" to "{outputName}"')
     shutil.copyfile(inputName, outputName)
 
-def convertFile(root, filename, outputDirectory, includeUnimplemented):
+def convertFile(root, filename, outputDirectory, includeUnimplemented, verbose):
     inputName = os.path.join(root, filename)
     outputName = generateOutputName(root, filename, outputDirectory)
 
-    print(f'Converting "{inputName}" to "{outputName}"')
+    if verbose: print(f'Converting "{inputName}" to "{outputName}"')
     with open(inputName, mode = 'r', encoding = encoding) as input: 
         data = input.read()
 
@@ -254,63 +288,94 @@ def convertFile(root, filename, outputDirectory, includeUnimplemented):
         with open(outputName, mode = 'w', encoding = encoding) as output:
             output.write(data)
 
-def copyGlobalDir(inputDirectory, inputMask, outputDirectory):
+def copyGlobalDir(inputDirectory, inputMask, outputDirectory, verbose):
     for root, dirs, files in os.walk(inputDirectory):
         if (inputMask in root and outputDirectory not in root):
             for f in files:
                 inputName = os.path.join(root, f)
                 outputName = generateOutputName(root, f, outputDirectory)
                 ensureDirExists(outputName)
-                print(f"Copying {inputName} to {outputName}")
+                if verbose: print(f"Copying {inputName} to {outputName}")
                 copyfile(inputName, outputName)
 
-def convertStaticDir(inputDirectory, outputDirectory):
+def convertStaticDir(inputDirectory, outputDirectory, verbose):
     for root, dirs, files in os.walk(inputDirectory):
         if (outputDirectory not in root and '__' not in root):
             for f in files:
                 if (f.split('.')[1] in alphanumeric):
-                    convertFile(root, f, outputDirectory, True)
+                    convertFile(root, f, outputDirectory, True, verbose)
                 else:
-                    copyFile(root, f, outputDirectory)
+                    copyFile(root, f, outputDirectory, verbose)
 
-def migrate(inputDirectory, outputDirectory, includeUnimplemented):
+def migrate(inputDirectory, outputDirectory, includeUnimplemented, ignoreClasses, verbose):
     outputsig = os.path.join('.', outputDirectory)
     for root, dirs, files in os.walk(inputDirectory):
         # ignore output path
         if (root.startswith(outputsig)):
             continue
 
+        if (ignoreClasses and 'classes' in root):
+            continue
+
         items = filter(is_target, files)
         for item in items:
-            convertFile(root, item, outputDirectory, includeUnimplemented)
+            convertFile(root, item, outputDirectory, includeUnimplemented, verbose)
 
-inputDir = defaultInputDirectory
-outputDir = defaultOutputDirectory
-includeUnimplemented = defaultIncludeUnimplemented
-if (len(sys.argv) > 1):
-    inputDir = sys.argv[1]
-if (len(sys.argv) > 2):
-    outputDir = sys.argv[2]
-if (len(sys.argv) > 3):
-    includeUnimplemented = sys.argv[3]
+def main():
+    inputDir = defaultInputDirectory
+    outputDir = defaultOutputDirectory
+    includeUnimplemented = defaultIncludeUnimplemented
+    ignoreClasses = defaultIgnoreClasses
+    verbose = defaultVerbose
 
-print(f"Simple rst migrator. Uses str.replace to map from Godot to Redot.")
-print(f"Usage: py migrate.py [inputDir] [outputDir] [includeUnimplemented], example: py migrate.py . _mymigration True")
-print(f"Author: @Craptain on X")
-print(f"Input directory: {inputDir}, output directory: {outputDir}, include unimplemented: {includeUnimplemented}")
+    parser = argparse.ArgumentParser(
+                    prog='Migrate',
+                    description='Simple file migrator. Uses str.replace to map from Godot to Redot. Also converts some filenames.',
+                    epilog='Done. Made by @Craptain')
+    
+    parser.add_argument('input', help='Input directory relative to current')
+    parser.add_argument('output', help='Output directory relative to current')
+    parser.add_argument('-e', '--extended', action='store_true', help='Include unimplemented substitutions, don\'t use in production')
+    parser.add_argument('-t', '--tiny', action='store_true', help='Exclude classes directory')
+    parser.add_argument('-v', '--verbose', action='store_true') 
 
-migrate(inputDir, outputDir, includeUnimplemented)
+    args = parser.parse_args()
+    verbose = args.verbose
+    if (verbose):
+        print("arguments:")
+        print(args)
 
-print("Copying config files...")
-convertFile(inputDir, 'conf.py', outputDir, includeUnimplemented)
-convertFile(inputDir, 'robots.txt', outputDir, includeUnimplemented)
-print("Copying static directories...")
-
-for dir in static_dirs:
-    if ('**' in dir):
-        print(f"Copying dirs with mask {dir}")
-        copyGlobalDir(inputDir, dir.split('/')[1], outputDir)
+    inputDir = args.input
+    if (args.output != '.' and not args.output.startswith('/')):
+        outputDir = args.output
     else:
-        print(f"Converting dir {dir}")
-        convertStaticDir(dir, outputDir)
-print("Done")
+        print("output can't be . or start with /")
+        exit(1)
+    includeUnimplemented = args.extended
+    ignoreClasses = args.tiny
+
+    if (os.path.exists(outputDir)):
+        print(f"Deleting {outputDir}")
+        shutil.rmtree(outputDir)
+    
+    print("Migrating...")
+    migrate(inputDir, outputDir, includeUnimplemented, ignoreClasses, verbose)
+
+    print("Copying config files...")
+    convertFile(inputDir, 'conf.py', outputDir, includeUnimplemented, verbose)
+    convertFile(inputDir, 'robots.txt', outputDir, includeUnimplemented, verbose)
+    copyFile(inputDir, 'favicon.ico', outputDir, verbose)
+
+    print("Copying static directories...")
+    for dir in static_dirs:
+        if ('**' in dir):
+            if verbose: print(f"Copying dirs with mask {dir}")
+            copyGlobalDir(inputDir, dir.split('/')[1], outputDir, verbose)
+        else:
+            if verbose: print(f"Converting dir {dir}")
+            convertStaticDir(dir, outputDir, verbose)
+
+    print(parser.epilog)
+
+if __name__ == "__main__":
+    main()

@@ -2543,8 +2543,6 @@ Tab style of editor docks.
 
 The language to use for the editor interface.
 
-Translations are provided by the community. If you spot a mistake, :doc:`contribute to editor translations on Weblate! <../contributing/documentation/editor_and_docs_localization>`
-
 .. rst-class:: classref-item-separator
 
 ----
