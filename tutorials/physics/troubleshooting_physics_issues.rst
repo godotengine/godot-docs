@@ -27,7 +27,8 @@ other solutions you can try:
   speed. The faster the object moves, the larger the collision shape should
   extend outside of the object to ensure it can collide with thin walls more
   reliably.
-- Increase **Physics Ticks per Second** in the advanced Project Settings. While
+- Increase :ref:`Physics Ticks per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
+  in the advanced Project Settings. While
   this has other benefits (such as more stable simulation and reduced input
   lag), this increases CPU utilization and may not be viable for mobile/web
   platforms. Multipliers of the default value of ``60`` (such as ``120``, ``180``
@@ -44,7 +45,8 @@ causes the simulation to become wobbly, making the objects unable to rest on top
 of each other without moving.
 
 Increasing the physics simulation rate can help alleviate this issue. To do so,
-increase **Physics Ticks per Second** in the advanced Project Settings. Note
+increase :ref:`Physics Ticks per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
+in the advanced Project Settings. Note
 that increases CPU utilization and may not be viable for mobile/web platforms.
 Multipliers of the default value of ``60`` (such as ``120``, ``180`` or ``240``)
 should be preferred for a smooth appearance on most displays.
@@ -83,7 +85,9 @@ simulation rate (as making the shape thicker would cause a disconnect between
 the RigidBody's visual representation and its collision).
 
 In both cases, increasing the physics simulation rate can also help alleviate
-this issue. To do so, increase **Physics Ticks per Second** in the advanced
+this issue. To do so, increase
+:ref:`Physics Ticks per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
+in the advanced
 Project Settings. Note that this increases CPU utilization and may not be viable
 for mobile/web platforms. Multipliers of the default value of ``60`` (such as
 ``120``, ``180`` or ``240``) should be preferred for a smooth appearance on most
@@ -115,7 +119,9 @@ vehicle (due to tunneling), but also that the simulation has little data to work
 with in general at such a high speed.
 
 Fast-moving vehicles can benefit a lot from an increased physics simulation
-rate. To do so, increase **Physics Ticks per Second** in the advanced Project
+rate. To do so, increase
+:ref:`Physics Ticks per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
+in the advanced Project
 Settings. Note that this increases CPU utilization and may not be viable for
 mobile/web platforms. Multipliers of the default value of ``60`` (such as
 ``120``, ``180`` or ``240``) should be preferred for a smooth appearance on most
