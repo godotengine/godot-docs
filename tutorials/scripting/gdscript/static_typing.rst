@@ -260,7 +260,7 @@ get full autocompletion on the player variable thanks to that cast.
     in some cases, it can also lead to bugs. Use the ``as`` keyword only if this
     behavior is intended. A safer alternative is to use the ``is`` keyword::
 
-        if not (body is PlayerController):
+        if body is not PlayerController:
             push_error("Bug: body is not PlayerController.")
 
         var player: PlayerController = body
