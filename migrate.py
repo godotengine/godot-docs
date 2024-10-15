@@ -199,6 +199,7 @@ mappings = [
     ('to_godot', 'to_redot'),
     ('godot.html', 'redot.html'),
     ('by-godot', 'by-redot'),
+    ('RocketChat', 'Discord'),
     ('MadeWithGodot', 'MadeWithRedot'),
     (' if on_rtd else "(DEV) "', ''),
     ('<span class="fa fa-book"> Read the Docs</span>', '<span class="fa fa-book"> Versions</span>'),

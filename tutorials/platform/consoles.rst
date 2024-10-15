@@ -55,35 +55,3 @@ to a console platform is as follows:
 Due to the complexity of the process, many studios and developers prefer to
 outsource console porting.
 
-You can read more about the console publishing process in this article:
-`Godot and consoles, all you need to know <https://godotengine.org/article/godot-consoles-all-you-need-know/>`__
-
-Third-party support
--------------------
-
-Console ports of Godot are offered by third-party companies (which have
-ported Godot on their own). These companies also offer publishing of
-your games to various consoles.
-
-Following is the list of providers:
-
-- `Lone Wolf Technology <https://www.lonewolftechnology.com/>`_ offers
-  Switch and Playstation 4 porting and publishing of Godot games.
-- `Pineapple Works <https://pineapple.works/>`_ offers
-  Switch, Xbox One & Xbox Series X/S (GDK) porting and publishing of Godot games (GDScript/C#).
-- `RAWRLAB games <https://www.rawrlab.com/>`_ offers
-  Switch porting of Godot games.
-- `mazette! games <https://mazette.games/>`_ offers
-  Switch, Xbox One and Xbox Series X/S porting and publishing of Godot games.
-- `Olde Sküül <https://oldeskuul.com/>`_ offers
-  Switch, Xbox One, Playstation 4 & Playstation 5 porting and publishing of Godot games.
-- `Tuanisapps <https://www.tuanisapps.com/>`_ offers
-  Switch porting and publishing of Godot games.
-- `Seaven Studio <https://www.seaven-studio.com/>`_ offers
-  Switch, Xbox One, Xbox Series, PlayStation 4 & PlayStation 5 porting of Godot games.
-- `Sickhead Games <https://www.sickhead.com>`_ offers console porting to Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S for Godot games.
-
-If your company offers porting, or porting *and* publishing services for Godot games,
-feel free to
-`contact the Godot Foundation <https://godot.foundation/#contact>`_
-to add your company to the list above.

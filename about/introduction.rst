@@ -58,8 +58,6 @@ if you need a quick write-up about Godot Engine:
     nothing. Users' games are theirs, down to the last line of engine code.
     Godot's development is fully independent and community-driven, empowering
     users to help shape their engine to match their expectations.
-    It is supported by the `Godot Foundation <https://godot.foundation/>`_
-    not-for-profit.
 
 
 Organization of the documentation
