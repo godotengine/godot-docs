@@ -99,6 +99,12 @@ Methods
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`NodePath<class_NodePath>`                                                | :ref:`get_root<class_AnimationPlayer_method_get_root>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                              |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                                      | :ref:`get_section_end_time<class_AnimationPlayer_method_get_section_end_time>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                      |
+   +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                                      | :ref:`get_section_start_time<class_AnimationPlayer_method_get_section_start_time>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                  |
+   +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                        | :ref:`has_section<class_AnimationPlayer_method_has_section>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                        |
+   +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                        | :ref:`is_playing<class_AnimationPlayer_method_is_playing>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                          |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                         | :ref:`pause<class_AnimationPlayer_method_pause>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -107,9 +113,19 @@ Methods
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                         | :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>`\ (\ name\: :ref:`StringName<class_StringName>` = &"", custom_blend\: :ref:`float<class_float>` = -1\ )                                                                                                                                                                                                                                                                         |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                         | :ref:`play_section<class_AnimationPlayer_method_play_section>`\ (\ name\: :ref:`StringName<class_StringName>` = &"", start_time\: :ref:`float<class_float>` = -1, end_time\: :ref:`float<class_float>` = -1, custom_blend\: :ref:`float<class_float>` = -1, custom_speed\: :ref:`float<class_float>` = 1.0, from_end\: :ref:`bool<class_bool>` = false\ )                                                                                         |
+   +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                         | :ref:`play_section_backwards<class_AnimationPlayer_method_play_section_backwards>`\ (\ name\: :ref:`StringName<class_StringName>` = &"", start_time\: :ref:`float<class_float>` = -1, end_time\: :ref:`float<class_float>` = -1, custom_blend\: :ref:`float<class_float>` = -1\ )                                                                                                                                                                 |
+   +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                         | :ref:`play_section_with_markers<class_AnimationPlayer_method_play_section_with_markers>`\ (\ name\: :ref:`StringName<class_StringName>` = &"", start_marker\: :ref:`StringName<class_StringName>` = &"", end_marker\: :ref:`StringName<class_StringName>` = &"", custom_blend\: :ref:`float<class_float>` = -1, custom_speed\: :ref:`float<class_float>` = 1.0, from_end\: :ref:`bool<class_bool>` = false\ )                                     |
+   +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                         | :ref:`play_section_with_markers_backwards<class_AnimationPlayer_method_play_section_with_markers_backwards>`\ (\ name\: :ref:`StringName<class_StringName>` = &"", start_marker\: :ref:`StringName<class_StringName>` = &"", end_marker\: :ref:`StringName<class_StringName>` = &"", custom_blend\: :ref:`float<class_float>` = -1\ )                                                                                                             |
+   +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                         | :ref:`play_with_capture<class_AnimationPlayer_method_play_with_capture>`\ (\ name\: :ref:`StringName<class_StringName>` = &"", duration\: :ref:`float<class_float>` = -1.0, custom_blend\: :ref:`float<class_float>` = -1, custom_speed\: :ref:`float<class_float>` = 1.0, from_end\: :ref:`bool<class_bool>` = false, trans_type\: :ref:`TransitionType<enum_Tween_TransitionType>` = 0, ease_type\: :ref:`EaseType<enum_Tween_EaseType>` = 0\ ) |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                         | :ref:`queue<class_AnimationPlayer_method_queue>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                                                                                                                                                                                                                                                                                |
+   +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                         | :ref:`reset_section<class_AnimationPlayer_method_reset_section>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                            |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                         | :ref:`seek<class_AnimationPlayer_method_seek>`\ (\ seconds\: :ref:`float<class_float>`, update\: :ref:`bool<class_bool>` = false, update_only\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -120,6 +136,10 @@ Methods
    | |void|                                                                         | :ref:`set_process_callback<class_AnimationPlayer_method_set_process_callback>`\ (\ mode\: :ref:`AnimationProcessCallback<enum_AnimationPlayer_AnimationProcessCallback>`\ )                                                                                                                                                                                                                                                                       |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                         | :ref:`set_root<class_AnimationPlayer_method_set_root>`\ (\ path\: :ref:`NodePath<class_NodePath>`\ )                                                                                                                                                                                                                                                                                                                                              |
+   +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                         | :ref:`set_section<class_AnimationPlayer_method_set_section>`\ (\ start_time\: :ref:`float<class_float>` = -1, end_time\: :ref:`float<class_float>` = -1\ )                                                                                                                                                                                                                                                                                        |
+   +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                         | :ref:`set_section_with_markers<class_AnimationPlayer_method_set_section_with_markers>`\ (\ start_marker\: :ref:`StringName<class_StringName>` = &"", end_marker\: :ref:`StringName<class_StringName>` = &""\ )                                                                                                                                                                                                                                    |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                         | :ref:`stop<class_AnimationPlayer_method_stop>`\ (\ keep_state\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                                                                                                |
    +--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -572,6 +592,42 @@ Returns the node which node path references will travel from.
 
 ----
 
+.. _class_AnimationPlayer_method_get_section_end_time:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_section_end_time**\ (\ ) |const| :ref:`🔗<class_AnimationPlayer_method_get_section_end_time>`
+
+Returns the end time of the section currently being played.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationPlayer_method_get_section_start_time:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_section_start_time**\ (\ ) |const| :ref:`🔗<class_AnimationPlayer_method_get_section_start_time>`
+
+Returns the start time of the section currently being played.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationPlayer_method_has_section:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_section**\ (\ ) |const| :ref:`🔗<class_AnimationPlayer_method_has_section>`
+
+Returns ``true`` if an animation is currently playing with section.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationPlayer_method_is_playing:
 
 .. rst-class:: classref-method
@@ -630,6 +686,62 @@ This method is a shorthand for :ref:`play<class_AnimationPlayer_method_play>` wi
 
 ----
 
+.. _class_AnimationPlayer_method_play_section:
+
+.. rst-class:: classref-method
+
+|void| **play_section**\ (\ name\: :ref:`StringName<class_StringName>` = &"", start_time\: :ref:`float<class_float>` = -1, end_time\: :ref:`float<class_float>` = -1, custom_blend\: :ref:`float<class_float>` = -1, custom_speed\: :ref:`float<class_float>` = 1.0, from_end\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_AnimationPlayer_method_play_section>`
+
+Plays the animation with key ``name`` and the section starting from ``start_time`` and ending on ``end_time``. See also :ref:`play<class_AnimationPlayer_method_play>`.
+
+Setting ``start_time`` to a value outside the range of the animation means the start of the animation will be used instead, and setting ``end_time`` to a value outside the range of the animation means the end of the animation will be used instead. ``start_time`` cannot be equal to ``end_time``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationPlayer_method_play_section_backwards:
+
+.. rst-class:: classref-method
+
+|void| **play_section_backwards**\ (\ name\: :ref:`StringName<class_StringName>` = &"", start_time\: :ref:`float<class_float>` = -1, end_time\: :ref:`float<class_float>` = -1, custom_blend\: :ref:`float<class_float>` = -1\ ) :ref:`🔗<class_AnimationPlayer_method_play_section_backwards>`
+
+Plays the animation with key ``name`` and the section starting from ``start_time`` and ending on ``end_time`` in reverse.
+
+This method is a shorthand for :ref:`play_section<class_AnimationPlayer_method_play_section>` with ``custom_speed = -1.0`` and ``from_end = true``, see its description for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationPlayer_method_play_section_with_markers:
+
+.. rst-class:: classref-method
+
+|void| **play_section_with_markers**\ (\ name\: :ref:`StringName<class_StringName>` = &"", start_marker\: :ref:`StringName<class_StringName>` = &"", end_marker\: :ref:`StringName<class_StringName>` = &"", custom_blend\: :ref:`float<class_float>` = -1, custom_speed\: :ref:`float<class_float>` = 1.0, from_end\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_AnimationPlayer_method_play_section_with_markers>`
+
+Plays the animation with key ``name`` and the section starting from ``start_marker`` and ending on ``end_marker``.
+
+If the start marker is empty, the section starts from the beginning of the animation. If the end marker is empty, the section ends on the end of the animation. See also :ref:`play<class_AnimationPlayer_method_play>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationPlayer_method_play_section_with_markers_backwards:
+
+.. rst-class:: classref-method
+
+|void| **play_section_with_markers_backwards**\ (\ name\: :ref:`StringName<class_StringName>` = &"", start_marker\: :ref:`StringName<class_StringName>` = &"", end_marker\: :ref:`StringName<class_StringName>` = &"", custom_blend\: :ref:`float<class_float>` = -1\ ) :ref:`🔗<class_AnimationPlayer_method_play_section_with_markers_backwards>`
+
+Plays the animation with key ``name`` and the section starting from ``start_marker`` and ending on ``end_marker`` in reverse.
+
+This method is a shorthand for :ref:`play_section_with_markers<class_AnimationPlayer_method_play_section_with_markers>` with ``custom_speed = -1.0`` and ``from_end = true``, see its description for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationPlayer_method_play_with_capture:
 
 .. rst-class:: classref-method
@@ -664,6 +776,18 @@ If ``duration`` is a negative value, the duration is set to the interval between
 Queues an animation for playback once the current animation and all previously queued animations are done.
 
 \ **Note:** If a looped animation is currently playing, the queued animation will never play unless the looped animation is stopped somehow.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationPlayer_method_reset_section:
+
+.. rst-class:: classref-method
+
+|void| **reset_section**\ (\ ) :ref:`🔗<class_AnimationPlayer_method_reset_section>`
+
+Resets the current section if section is set.
 
 .. rst-class:: classref-item-separator
 
@@ -734,6 +858,32 @@ Sets the process notification in which to update animations.
 **Deprecated:** Use :ref:`AnimationMixer.root_node<class_AnimationMixer_property_root_node>` instead.
 
 Sets the node which node path references will travel from.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationPlayer_method_set_section:
+
+.. rst-class:: classref-method
+
+|void| **set_section**\ (\ start_time\: :ref:`float<class_float>` = -1, end_time\: :ref:`float<class_float>` = -1\ ) :ref:`🔗<class_AnimationPlayer_method_set_section>`
+
+Changes the start and end times of the section being played. The current playback position will be clamped within the new section. See also :ref:`play_section<class_AnimationPlayer_method_play_section>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationPlayer_method_set_section_with_markers:
+
+.. rst-class:: classref-method
+
+|void| **set_section_with_markers**\ (\ start_marker\: :ref:`StringName<class_StringName>` = &"", end_marker\: :ref:`StringName<class_StringName>` = &""\ ) :ref:`🔗<class_AnimationPlayer_method_set_section_with_markers>`
+
+Changes the start and end markers of the section being played. The current playback position will be clamped within the new section. See also :ref:`play_section_with_markers<class_AnimationPlayer_method_play_section_with_markers>`.
+
+If the argument is empty, the section uses the beginning or end of the animation. If both are empty, it means that the section is not set.
 
 .. rst-class:: classref-item-separator
 

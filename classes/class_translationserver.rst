@@ -122,7 +122,7 @@ Property Descriptions
 - |void| **set_pseudolocalization_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_pseudolocalization_enabled**\ (\ )
 
-If ``true``, enables the use of pseudolocalization. See :ref:`ProjectSettings.internationalization/pseudolocalization/use_pseudolocalization<class_ProjectSettings_property_internationalization/pseudolocalization/use_pseudolocalization>` for details.
+If ``true``, enables the use of pseudolocalization on the main translation domain. See :ref:`ProjectSettings.internationalization/pseudolocalization/use_pseudolocalization<class_ProjectSettings_property_internationalization/pseudolocalization/use_pseudolocalization>` for details.
 
 .. rst-class:: classref-section-separator
 
@@ -337,6 +337,8 @@ Returns ``true`` if a translation domain with the specified name exists.
 
 Returns the pseudolocalized string based on the ``message`` passed in.
 
+\ **Note:** This method always uses the main translation domain.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -347,7 +349,7 @@ Returns the pseudolocalized string based on the ``message`` passed in.
 
 |void| **reload_pseudolocalization**\ (\ ) :ref:`🔗<class_TranslationServer_method_reload_pseudolocalization>`
 
-Reparses the pseudolocalization options and reloads the translation.
+Reparses the pseudolocalization options and reloads the translation for the main translation domain.
 
 .. rst-class:: classref-item-separator
 

@@ -156,7 +156,9 @@ the built-in Collada support may still work for simple scenes without animation.
 
 For complex scenes or scenes that contain animations, Godot provides a
 `Blender plugin <https://github.com/godotengine/collada-exporter>`_
-that will correctly export COLLADA scenes for use in Godot.
+that will correctly export COLLADA scenes for use in Godot. This plugin is
+not maintained or supported in Godot 4.x, but may still work depending on your
+Godot and Blender versions.
 
 Importing OBJ files in Godot
 ----------------------------

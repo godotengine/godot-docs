@@ -7,22 +7,25 @@
 
 Default editor shortcuts
 ========================
-Many of Godot Editor functions can be executed with keyboard shortcuts. This page
+
+Many Godot editor functions can be executed with keyboard shortcuts. This page
 lists functions which have associated shortcuts by default, but many others are
 available for customization in editor settings as well. To change keys associated
-with these and other actions navigate to ``Editor -> Editor Settings -> Shortcuts``.
+with these and other actions navigate to **Editor > Editor Settings > Shortcuts**.
 
 While some actions are universal, a lot of shortcuts are specific to individual
 tools. For this reason it is possible for some key combinations to be assigned
 to more than one function. The correct action will be performed depending on the
 context.
 
-.. note:: While Windows and Linux builds of the editor share most of the default settings,
-          some shortcuts may differ for macOS version. This is done for better integration
-          of the editor into macOS ecosystem. Users fluent with standard shortcuts on that
-          OS should find Godot Editor's default key mapping intuitive.
+.. note::
 
-General Editor Actions
+    While Windows and Linux builds of the editor share most of the default settings,
+    some shortcuts may differ for macOS version. This is done for better integration
+    of the editor into macOS ecosystem. Users fluent with standard shortcuts on that
+    OS should find Godot Editor's default key mapping intuitive.
+
+General editor actions
 ----------------------
 
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
@@ -86,9 +89,35 @@ General Editor Actions
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Expand Bottom Panel   | :kbd:`Shift + F12`            | :kbd:`Shift + F12`           | ``editor/bottom_panel_expand``   |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
+| Command Palette       | :kbd:`Ctrl + Shift + P`       | :kbd:`Cmd + Shift + P`       | ``editor/command_palette``       |
++-----------------------+-------------------------------+------------------------------+----------------------------------+
 
-2D / Canvas Item Editor
------------------------
+Bottom panels
+-------------
+
+Only bottom panels that are always available have a default shortcut assigned.
+Others must be manually bound in the Editor Settings if desired.
+
++-----------------------------------+-----------------+-----------------+-----------------------------------------------------+
+| Action name                       | Windows, Linux  | macOS           | Editor setting                                      |
++===================================+=================+=================+=====================================================+
+| Toggle Last Opened Panel          | :kbd:`Ctrl + J` | :kbd:`Ctrl + J` | ``editor/toggle_last_opened_bottom_panel``          |
++-----------------------------------+-----------------+-----------------+-----------------------------------------------------+
+| Toggle Animation Bottom Panel     | :kbd:`Alt + N`  | :kbd:`Alt + N`  | ``bottom_panels/toggle_animation_bottom_panel``     |
++-----------------------------------+-----------------+-----------------+-----------------------------------------------------+
+| Toggle Audio Bottom Panel         | :kbd:`Alt + A`  | :kbd:`Alt + A`  | ``bottom_panels/toggle_audio_bottom_panel``         |
++-----------------------------------+-----------------+-----------------+-----------------------------------------------------+
+| Toggle Debugger Bottom Panel      | :kbd:`Alt + D`  | :kbd:`Alt + D`  | ``bottom_panels/toggle_debugger_bottom_panel``      |
++-----------------------------------+-----------------+-----------------+-----------------------------------------------------+
+| Toggle FileSystem Bottom Panel    | :kbd:`Alt + F`  | :kbd:`Alt + F`  | ``bottom_panels/toggle_filesystem_bottom_panel``    |
++-----------------------------------+-----------------+-----------------+-----------------------------------------------------+
+| Toggle Output Bottom Panel        | :kbd:`Alt + O`  | :kbd:`Alt + O`  | ``bottom_panels/toggle_output_bottom_panel``        |
++-----------------------------------+-----------------+-----------------+-----------------------------------------------------+
+| Toggle Shader Editor Bottom Panel | :kbd:`Alt + S`  | :kbd:`Alt + S`  | ``bottom_panels/toggle_shader_editor_bottom_panel`` |
++-----------------------------------+-----------------+-----------------+-----------------------------------------------------+
+
+2D / CanvasItem editor
+----------------------
 
 +------------------------------+-------------------------+------------------------+--------------------------------------------------------+
 | Action name                  | Windows, Linux          | macOS                  | Editor setting                                         |
@@ -142,7 +171,7 @@ General Editor Actions
 
 .. _doc_default_key_mapping_shortcuts_spatial_editor:
 
-3D / Spatial Editor
+3D / Spatial editor
 -------------------
 
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
@@ -217,7 +246,7 @@ General Editor Actions
 | 4 Viewports                        | :kbd:`Ctrl + 4`       | :kbd:`Cmd + 4`       | ``spatial_editor/4_viewports``                   |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 
-Text Editor
+Text editor
 -----------
 
 +---------------------------+---------------------------------+----------------------------------+-------------------------------------------------+
@@ -300,7 +329,7 @@ Text Editor
 | Contextual Help           | :kbd:`Alt + F1`                 | :kbd:`Opt + Shift + Space`       | ``script_text_editor/contextual_help``          |
 +---------------------------+---------------------------------+----------------------------------+-------------------------------------------------+
 
-Script Editor
+Script editor
 -------------
 
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
@@ -347,7 +376,7 @@ Script Editor
 | Reset Zoom           | :kbd:`Ctrl + 0`                 | :kbd:`Cmd + 0`                  | ``script_editor/reset_zoom``           |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
 
-Editor Output
+Editor output
 -------------
 
 +----------------+-------------------------+------------------------+-------------------------+
@@ -371,7 +400,7 @@ Debugger
 | Continue    | :kbd:`F12`     | :kbd:`F12` | ``debugger/continue``  |
 +-------------+----------------+------------+------------------------+
 
-File Dialog
+File dialog
 -----------
 
 +---------------------+--------------------------+--------------------------+-------------------------------------+
@@ -395,14 +424,14 @@ File Dialog
 +---------------------+--------------------------+--------------------------+-------------------------------------+
 | Delete              | :kbd:`Del`               | :kbd:`Cmd + BkSp`        | ``file_dialog/delete``              |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
-| Focus Path          | :kbd:`Ctrl + D`          | :kbd:`Cmd + D`           | ``file_dialog/focus_path``          |
+| Focus Path          | :kbd:`Ctrl + L`          | :kbd:`Cmd + Shift + G`   | ``file_dialog/focus_path``          |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
 | Move Favorite Up    | :kbd:`Ctrl + Up Arrow`   | :kbd:`Cmd + Up Arrow`    | ``file_dialog/move_favorite_up``    |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
 | Move Favorite Down  | :kbd:`Ctrl + Down Arrow` | :kbd:`Cmd + Down Arrow`  | ``file_dialog/move_favorite_down``  |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
 
-FileSystem Dock
+FileSystem dock
 ---------------
 
 +-------------+-----------------+-------------------+-------------------------------+
@@ -415,7 +444,7 @@ FileSystem Dock
 | Delete      | :kbd:`Del`      | :kbd:`Cmd + BkSp` | ``filesystem_dock/delete``    |
 +-------------+-----------------+-------------------+-------------------------------+
 
-Scene Tree Dock
+Scene tree dock
 ---------------
 
 +----------------+--------------------------+-------------------------+----------------------------------+
@@ -438,7 +467,7 @@ Scene Tree Dock
 | Move Down      | :kbd:`Ctrl + Down Arrow` | :kbd:`Cmd + Down Arrow` | ``scene_tree/move_down``         |
 +----------------+--------------------------+-------------------------+----------------------------------+
 
-Animation Track Editor
+Animation track editor
 ----------------------
 
 +----------------------+---------------------------+--------------------------+-----------------------------------------------------+
@@ -455,8 +484,8 @@ Animation Track Editor
 | Go to Previous Step  | :kbd:`Ctrl + Left Arrow`  | :kbd:`Cmd + Left Arrow`  | ``animation_editor/goto_prev_step``                 |
 +----------------------+---------------------------+--------------------------+-----------------------------------------------------+
 
-Tile Map Editor
----------------
+TileMap editor
+--------------
 
 +-------------------+-----------------+-------------------+---------------------------------------+
 | Action name       | Windows, Linux  | macOS             | Editor setting                        |
@@ -494,7 +523,7 @@ Tile Map Editor
 | Rotate Right      | :kbd:`X`        | :kbd:`X`          | ``tiles_editor/rotate_tile_right``    |
 +-------------------+-----------------+-------------------+---------------------------------------+
 
-Tileset Editor
+TileSet Editor
 --------------
 
 +---------------------+----------------+---------------+----------------------------------------+
@@ -520,3 +549,24 @@ Tileset Editor
 +---------------------+----------------+---------------+----------------------------------------+
 | Z Index Mode        | :kbd:`8`       | :kbd:`8`      | ``tileset_editor/editmode_z_index``    |
 +---------------------+----------------+---------------+----------------------------------------+
+
+Project manager
+---------------
+
++---------------------+-----------------+-------------------+------------------------------------+
+| Action name         | Windows, Linux  | macOS             | Editor setting                     |
++=====================+=================+===================+====================================+
+| New Project         | :kbd:`Ctrl + N` | :kbd:`Cmd + N`    | ``project_manager/new_project``    |
++---------------------+-----------------+-------------------+------------------------------------+
+| Import Project      | :kbd:`Ctrl + I` | :kbd:`Cmd + I`    | ``project_manager/import_project`` |
++---------------------+-----------------+-------------------+------------------------------------+
+| Scan for Projects   | :kbd:`Ctrl + S` | :kbd:`Cmd + S`    | ``project_manager/scan_projects``  |
++---------------------+-----------------+-------------------+------------------------------------+
+| Edit Project        | :kbd:`Ctrl + E` | :kbd:`Cmd + E`    | ``project_manager/edit_project``   |
++---------------------+-----------------+-------------------+------------------------------------+
+| Run Project         | :kbd:`Ctrl + R` | :kbd:`Cmd + R`    | ``project_manager/run_project``    |
++---------------------+-----------------+-------------------+------------------------------------+
+| Rename Project      | :kbd:`F2`       | :kbd:`Enter`      | ``project_manager/rename_project`` |
++---------------------+-----------------+-------------------+------------------------------------+
+| Remove Project      | :kbd:`Delete`   | :kbd:`Cmd + BkSp` | ``project_manager/remove_project`` |
++---------------------+-----------------+-------------------+------------------------------------+
