@@ -2,7 +2,7 @@ blank_issues_enabled: false
 
 contact_links:
   - name: Redot community channels
-    url: https://redotengine.org/community
+    url: https://discord.gg/redot
     about: Please ask for technical support on one of the other community channels, not here.
 
   - name: Redot proposals
