@@ -139,6 +139,22 @@ To run and debug the project you need to create a new configuration in the ``lau
       "preLaunchTask": "build"
     }
 
+  .. code-tab:: js Mac
+
+    {
+      "name": "Launch Project",
+      "type": "lldb",
+      "request": "custom",
+      "targetCreateCommands": [
+        "target create ${workspaceFolder}/bin/godot.macos.editor.dev.x86_64"
+      ],
+      // Change the arguments below for the project you want to test with.
+      // To run the project instead of editing it, remove the "--editor" argument.
+      "processCreateCommands": [
+        "process launch -- --editor --path path-to-your-godot-project-folder"
+      ]
+    }
+
 .. figure:: img/vscode_2_launch.json.png
    :figclass: figure-w480
    :align: center
