@@ -92,7 +92,7 @@ Add five extra methods such that the script looks like this:
 
         public override Texture2D _GetPluginIcon()
         {
-            return EditorInterface.GetEditorTheme().GetIcon("Node", "EditorIcons");
+            return EditorInterface.Singleton.GetEditorTheme().GetIcon("Node", "EditorIcons");
         }
     }
     #endif
@@ -210,7 +210,7 @@ Here is the full plugin script:
         {
             MainPanelInstance = (Control)MainPanel.Instantiate();
             // Add the main panel to the editor's main viewport.
-            EditorInterface.GetEditorMainScreen().AddChild(MainPanelInstance);
+            EditorInterface.Singleton.GetEditorMainScreen().AddChild(MainPanelInstance);
             // Hide the main panel. Very much required.
             _MakeVisible(false);
         }
@@ -244,7 +244,7 @@ Here is the full plugin script:
         public override Texture2D _GetPluginIcon()
         {
             // Must return some kind of Texture for the icon.
-            return EditorInterface.GetEditorTheme().GetIcon("Node", "EditorIcons");
+            return EditorInterface.Singleton.GetEditorTheme().GetIcon("Node", "EditorIcons");
         }
     }
     #endif
