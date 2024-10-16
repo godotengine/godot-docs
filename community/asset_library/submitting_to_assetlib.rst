@@ -211,12 +211,6 @@ You can check all assets currently pending a review `here <https://godotengine.o
 The approval process is manual and may take up to a few days for your asset to be accepted (or rejected), so please
 be patient!
 
-.. note::
-
-    You may have some luck accelerating the approval process by messaging the
-    moderators and AssetLib reviewers on the `Godot Contributors Chat <https://chat.godotengine.org/>`_,
-    or the official Discord server.
-
 You will be informed when your asset is reviewed. If it was rejected,
 you will be told why that may have been, and you will be able to submit it again
 with the appropriate changes.
