@@ -125,54 +125,46 @@ To build macOS export templates, you have to compile using the targets without
 the editor: ``target=template_release`` (release template) and
 ``target=template_debug``.
 
-Official templates are universal binaries which support both Intel x86_64 and
-ARM64 architectures. You can also create export templates that support only one
-of those two architectures by leaving out the ``lipo`` step below.
+Official templates are *Universal 2* binaries which support both ARM64 and Intel
+x86_64 architectures.
 
-- For Intel x86_64::
+- To support ARM64 (Apple Silicon) + Intel x86_64::
 
-    scons platform=macos target=template_release arch=x86_64
-    scons platform=macos target=template_debug arch=x86_64
-
-- For Arm64 (Apple M1)::
-
-    scons platform=macos target=template_release arch=arm64
     scons platform=macos target=template_debug arch=arm64
+    scons platform=macos target=template_release arch=arm64
+    scons platform=macos target=template_debug arch=x86_64
+    scons platform=macos target=template_release arch=x86_64 generate_bundle=yes
 
-To support both architectures in a single "Universal 2" binary, run the above
-two commands blocks and then use ``lipo`` to bundle them together::
+- To support ARM64 (Apple Silicon) only (smaller file size, but less compatible with older hardware)::
 
-    lipo -create bin/godot.macos.template_release.x86_64 bin/godot.macos.template_release.arm64 -output bin/godot.macos.template_release.universal
-    lipo -create bin/godot.macos.template_debug.x86_64 bin/godot.macos.template_debug.arm64 -output bin/godot.macos.template_debug.universal
+    scons platform=macos target=template_debug arch=arm64
+    scons platform=macos target=template_release arch=arm64 generate_bundle=yes
 
 To create an ``.app`` bundle like in the official builds, you need to use the
-template located in ``misc/dist/macos_template.app``. The release and debug
-builds should be placed in ``macos_template.app/Contents/MacOS`` with the names
-``godot_macos_release.universal`` and ``godot_macos_debug.universal`` respectively. You can do so
-with the following commands (assuming a universal build, otherwise replace the
-``.universal`` extension with the one of your arch-specific binaries)::
-
-    cp -r misc/dist/macos_template.app .
-    mkdir -p macos_template.app/Contents/MacOS
-    cp bin/godot.macos.template_release.universal macos_template.app/Contents/MacOS/godot_macos_release.universal
-    cp bin/godot.macos.template_debug.universal macos_template.app/Contents/MacOS/godot_macos_debug.universal
-    chmod +x macos_template.app/Contents/MacOS/godot_macos*
+template located in ``misc/dist/macos_template.app``. This process can be automated by using
+the ``generate_bundle=yes`` option on the *last* SCons command used to build export templates
+(so that all binaries can be included). This option also takes care of calling ``lipo`` to create
+an *Universal 2* binary from two separate ARM64 and x86_64 binaries (if both were compiled beforehand).
 
 .. note::
 
-    If you are building the ``master`` branch, you also need to include support
-    for the MoltenVK Vulkan portability library. By default, it will be linked
-    statically from your installation of the Vulkan SDK for macOS.
-    You can also choose to link it dynamically by passing ``use_volk=yes`` and
-    including the dynamic library in your ``.app`` bundle::
+    You also need to include support for the MoltenVK Vulkan portability
+    library. By default, it will be linked statically from your installation of
+    the Vulkan SDK for macOS. You can also choose to link it dynamically by
+    passing ``use_volk=yes`` and including the dynamic library in your ``.app``
+    bundle::
 
         mkdir -p macos_template.app/Contents/Frameworks
         cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib macos_template.app/Contents/Frameworks/libMoltenVK.dylib
 
+    In most cases, static linking should be preferred as it makes distribution
+    easier. The main upside of dynamic linking is that it allows updating
+    MoltenVK without having to recompile export templates.
+
 You can then zip the ``macos_template.app`` folder to reproduce the ``macos.zip``
 template from the official Godot distribution::
 
-    zip -q -9 -r macos.zip macos_template.app
+    zip -r9 macos.zip macos_template.app
 
 Using Pyston for faster development
 -----------------------------------
