@@ -565,6 +565,21 @@ considered a comment.
     The list of highlighted keywords and their colors can be changed in the **Text
     Editor > Theme > Comment Markers** section of the Editor Settings.
 
+Use two hash symbols (``##``) instead of one (``#``) to add a *documentation
+comment*, which will appear in the script documentation and in the inspector
+description of an exported variable. Documentation comments must be placed
+directly *above* a documentable item (such as a member variable), or at the top
+of a file. Dedicated formatting options are also available. See
+:ref:`doc_gdscript_documentation_comments` for details.
+
+
+::
+    ## This comment will appear in the script documentation.
+    var value
+
+    ## This comment will appear in the inspector tooltip, and in the documentation.
+    @export var exported_value
+
 Code regions
 ------------
 
