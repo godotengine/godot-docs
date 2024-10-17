@@ -86,6 +86,14 @@ Most GLSL ES 3.0 datatypes are supported:
 |                      | Only supported in Forward+ and Mobile, not Compatibility.                       |
 +----------------------+---------------------------------------------------------------------------------+
 
+.. warning::
+
+    Local variables are not initialized to a default value such as ``0.0``. If
+    you use a variable without assigning it first, it will contain whatever
+    value was already present at that memory location, and unpredictable visual
+    glitches will appear. However, uniforms and varyings are initialized to a
+    default value.
+
 Comments
 ~~~~~~~~
 
