@@ -684,6 +684,11 @@ null
 ``null`` is an empty data type that contains no information and can not
 be assigned any other value.
 
+Only types that inherit from Object can have a ``null`` value
+(Object is therefore called a "nullable" type).
+:ref:`Variant types <doc_variant_class>` must have a valid value at all times,
+and therefore cannot have a ``null`` value.
+
 :ref:`bool <class_bool>`
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
