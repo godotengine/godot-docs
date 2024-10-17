@@ -810,6 +810,31 @@ html.writer-html5 .rst-content table.docutils th {
 .wy-table-responsive table.wrap-normal th {
     white-space: normal;
 }
+/* Turn nowrap on per-column */
+.wy-table-responsive table.nowrap-col1 td:nth-child(1),
+.wy-table-responsive table.nowrap-col1 th:nth-child(1) {
+    white-space: nowrap;
+}
+.wy-table-responsive table.nowrap-col2 td:nth-child(2),
+.wy-table-responsive table.nowrap-col2 th:nth-child(2) {
+    white-space: nowrap;
+}
+.wy-table-responsive table.nowrap-col3 td:nth-child(3),
+.wy-table-responsive table.nowrap-col3 th:nth-child(3) {
+    white-space: nowrap;
+}
+.wy-table-responsive table.nowrap-col4 td:nth-child(4),
+.wy-table-responsive table.nowrap-col4 th:nth-child(4) {
+    white-space: nowrap;
+}
+.wy-table-responsive table.nowrap-col5 td:nth-child(5),
+.wy-table-responsive table.nowrap-col5 th:nth-child(5) {
+    white-space: nowrap;
+}
+.wy-table-responsive table.nowrap-col6 td:nth-child(6),
+.wy-table-responsive table.nowrap-col6 th:nth-child(6) {
+    white-space: nowrap;
+}
 
 /* Make sure line blocks don't stretch tables */
 .wy-table-responsive table .line-block {
@@ -1136,6 +1161,7 @@ kbd.compound > .kbd,
 .classref-descriptions-group > p.classref-annotation,
 .classref-descriptions-group > p.classref-themeproperty,
 .classref-descriptions-group > p.classref-method,
+.classref-descriptions-group > div.classref-method.line-block,
 .classref-descriptions-group > p.classref-constructor,
 .classref-descriptions-group > p.classref-operator,
 .classref-descriptions-group > p.classref-constant,
