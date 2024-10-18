@@ -658,6 +658,12 @@ make it black and unshaded, reverse culling (Cull Front), and add some grow:
 
 .. image:: img/spatial_material11.png
 
+.. note::
+
+    For Grow to work as expected, the mesh must have connected faces with shared
+    vertices, or "smooth shading". If the mesh has disconnected faces with unique
+    vertices, or "flat shading", the mesh will appear to have gaps when using Grow.
+
 Transform
 ---------
 
