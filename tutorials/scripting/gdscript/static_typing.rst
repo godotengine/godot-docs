@@ -282,6 +282,11 @@ get full autocompletion on the player variable thanks to that cast.
 
         player.damage()
 
+You can also simplify the expression using the ``is not`` operator::
+
+    if body is not PlayerController:
+        push_error("Bug: body is not PlayerController")
+
 .. note::
 
     If you try to cast with a built-in type and it fails, Godot will throw an error.
