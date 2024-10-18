@@ -19,6 +19,7 @@ The articles below should help you navigate configuration options available, as 
 prerequisites required to compile Godot exactly the way you need.
 
 .. rubric:: Basics of building Godot
+   :class: class-fake-h2
 
 Let's start with basics, and learn how to get Godot's source code, and then which options
 to use to compile it regardless of your target platform.
@@ -31,6 +32,7 @@ to use to compile it regardless of your target platform.
    introduction_to_the_buildsystem
 
 .. rubric:: Building for target platforms
+   :class: class-fake-h2
 
 Below you can find instructions for compiling the engine for your specific target platform.
 Note that Godot supports cross-compilation, which means you can compile it for a target platform
@@ -50,6 +52,7 @@ will try their best to cover all possible situations.
    compiling_for_web
 
 .. rubric:: Other compilation targets and options
+   :class: class-fake-h2
 
 Some additional universal compilation options require further setup. Namely, while Godot
 does have C#/.NET support as a part of its main codebase, it does not get compiled by

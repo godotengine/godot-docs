@@ -7,6 +7,7 @@ The following pages are meant to introduce the global organization of Godot Engi
 source code, and give useful tips for extending and fixing the engine on the C++ side.
 
 .. rubric:: Getting started with Godot's source code
+   :class: class-fake-h2
 
 This section covers the basics that you will encounter in (almost) every source file.
 
@@ -25,6 +26,7 @@ This section covers the basics that you will encounter in (almost) every source 
    scripting_development
 
 .. rubric:: Extending Godot by modifying its source code
+   :class: class-fake-h2
 
 This section covers what you can do by modifying Godot's C++ source code.
 
