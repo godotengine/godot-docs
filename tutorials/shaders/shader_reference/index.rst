@@ -8,6 +8,7 @@ Shading reference
    :name: toc-shading-reference
 
    shading_language
+   shader_functions
    shader_preprocessor
    spatial_shader
    canvas_item_shader
