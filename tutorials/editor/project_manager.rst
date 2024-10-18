@@ -33,10 +33,11 @@ Creating and importing projects
 To create a new project:
 
 1. Click the **Create** button on the top-left of the window.
-2. Give the project a name, choose an empty folder on your computer to save the
-   files. Alternatively, you can enable **Create Folder** option to automatically create 
-   a new sub-folder with the project name, following the directory naming convention
-   set in the settings. An empty folder will show a green tick on the right.
+2. Give the project a name, then open the file browser using the **Browse** button,
+   and choose an empty folder on your computer to save the files. Alternatively,
+   you can enable **Create Folder** option to automatically create a new sub-folder
+   with the project name, following the directory naming convention set in the
+   settings. An empty folder will show a green tick on the right.
 3. Select one of the rendering backends (this can also be changed later).
 4. Click the **Create & Edit** button to create the project folder and open it in the editor.
 
@@ -49,8 +50,9 @@ To create a new project:
 Using the file browser
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Click the **Browse** button to open Godot's file browser.
-You can pick a location or type the folder's path in the **Path** field, after choosing a drive.
+From the **Create New Project** window, click the **Browse** button to open
+Godot's file browser. You can pick a location or type the folder's path in the
+**Path** field, after choosing a drive.
 
 Left of the path field on the top row contains arrows to navigate backward and forward through the last
 visited locations.
