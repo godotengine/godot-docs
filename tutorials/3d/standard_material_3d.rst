@@ -468,6 +468,8 @@ mapping.
 Subsurface Scattering
 ---------------------
 
+*This is only available in the Forward+ renderer, not the Mobile or Compatibility
+renderers.*
 
 This effect emulates light that penetrates an object's surface, is scattered,
 and then comes out. It is useful to create realistic skin, marble, colored

@@ -393,6 +393,11 @@ Some new versions are safer to upgrade to than others. In general, whether you
 should upgrade depends on your project's circumstances. See
 :ref:`doc_release_policy_should_i_upgrade_my_project` for more information.
 
+Should I use the Forward+, Mobile, or Compatibility renderer?
+-------------------------------------------------------------
+
+You can find a detailed comparison of the renderers in :ref:`doc_renderers`.
+
 I would like to contribute! How can I get started?
 --------------------------------------------------
 

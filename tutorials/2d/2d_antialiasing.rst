@@ -55,6 +55,9 @@ nodes, you can use 2D multisample antialiasing instead.
 Multisample antialiasing (MSAA)
 -------------------------------
 
+*This is only available in the Forward+ and Mobile renderers, not the
+Compatibility renderer.*
+
 Before enabling MSAA in 2D, it's important to understand what MSAA will operate
 on. MSAA in 2D follows similar restrictions as in 3D. While it does not
 introduce any blurriness, its scope of application is limited. The main

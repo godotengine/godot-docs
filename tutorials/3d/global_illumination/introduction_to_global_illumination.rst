@@ -121,7 +121,7 @@ In order of performance from fastest to slowest:
   - ReflectionProbes with their update mode set to **Always** are much more
     expensive than probes with their update mode set to **Once** (the default).
     Suited for integrated graphics when using the **Once** update mode.
-    *Available when using the Forward Mobile backend. Will be available in the Compatibility backend in later releases.*
+    *Available in all renderers.*
 
 - **LightmapGI:**
 
@@ -131,7 +131,8 @@ In order of performance from fastest to slowest:
     Directional information can be enabled before baking to improve visuals at
     a small performance cost (and at the cost of larger file sizes).
     Suited for integrated graphics.
-    *Available when using the Forward Mobile backend. Will be available in the Compatibility backend in later releases.*
+    *Available in all renderers. However, baking lightmaps requires hardware
+    with RenderingDevice support.*
 
 - **VoxelGI:**
 
@@ -139,14 +140,14 @@ In order of performance from fastest to slowest:
     The VoxelGI rendering quality can be adjusted in the Project Settings.
     The rendering can optionally be performed at half resolution
     (and then linearly scaled) to improve performance significantly.
-    **Not available** *when using the Forward Mobile or Compatibility backends.*
+    **Not available** *when using the Mobile or Compatibility renderers.*
 
 - **Screen-space indirect lighting (SSIL):**
 
   - The SSIL quality and number of blur passes can be adjusted in the Project Settings.
     By default, SSIL rendering is performed at half resolution (and then linearly scaled)
     to ensure a reasonable performance level.
-    **Not available** *when using the Forward Mobile or Compatibility backends.*
+    **Not available** *when using the Mobile or Compatibility renderers.*
 
 - **SDFGI:**
 
@@ -154,7 +155,7 @@ In order of performance from fastest to slowest:
     The number of rays thrown per frame can be adjusted in the Project Settings.
     The rendering can optionally be performed at half resolution
     (and then linearly scaled) to improve performance significantly.
-    **Not available** *when using the Forward Mobile or Compatibility backends.*
+    **Not available** *when using the Mobile or Compatibility renderers.*
 
 Visuals
 ^^^^^^^
