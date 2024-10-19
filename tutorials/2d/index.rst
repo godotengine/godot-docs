@@ -10,6 +10,8 @@
    canvas_layers
    2d_transforms
 
+.. _doc_2d_rendering:
+
 Rendering
 ---------
 

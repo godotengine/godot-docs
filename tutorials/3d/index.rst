@@ -12,6 +12,8 @@
    procedural_geometry/index
    3d_text
 
+.. _doc_3d_rendering:
+
 Rendering
 ---------
 
