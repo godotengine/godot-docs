@@ -11,3 +11,4 @@ Rendering
    multiple_resolutions
    jitter_stutter
    compositor
+   renderers

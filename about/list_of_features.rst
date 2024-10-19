@@ -108,6 +108,8 @@ Rendering
   advanced graphics backend, suited for low-end desktop and mobile platforms.
   Used by default on the web platform.
 
+See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
+
 2D graphics
 -----------
 
