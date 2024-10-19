@@ -496,7 +496,7 @@ If ``true``, the dialog will show hidden files.
 - |void| **set_use_native_dialog**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_use_native_dialog**\ (\ )
 
-If ``true``, :ref:`access<class_FileDialog_property_access>` is set to :ref:`ACCESS_FILESYSTEM<class_FileDialog_constant_ACCESS_FILESYSTEM>`, and it is supported by the current :ref:`DisplayServer<class_DisplayServer>`, OS native dialog will be used instead of custom one.
+If ``true``, and if supported by the current :ref:`DisplayServer<class_DisplayServer>`, OS native dialog will be used instead of custom one.
 
 \ **Note:** On Linux and macOS, sandboxed apps always use native dialogs to access the host file system.
 

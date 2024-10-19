@@ -199,6 +199,8 @@ Methods
    :widths: auto
 
    +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`   | :ref:`capture_aabb<class_CPUParticles3D_method_capture_aabb>`\ (\ ) |const|                                                                                                              |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                    | :ref:`convert_from_particles<class_CPUParticles3D_method_convert_from_particles>`\ (\ particles\: :ref:`Node<class_Node>`\ )                                                             |
    +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Curve<class_Curve>` | :ref:`get_param_curve<class_CPUParticles3D_method_get_param_curve>`\ (\ param\: :ref:`Parameter<enum_CPUParticles3D_Parameter>`\ ) |const|                                               |
@@ -1812,6 +1814,18 @@ Grow the box if particles suddenly appear/disappear when the node enters/exits t
 
 Method Descriptions
 -------------------
+
+.. _class_CPUParticles3D_method_capture_aabb:
+
+.. rst-class:: classref-method
+
+:ref:`AABB<class_AABB>` **capture_aabb**\ (\ ) |const| :ref:`🔗<class_CPUParticles3D_method_capture_aabb>`
+
+Returns the axis-aligned bounding box that contains all the particles that are active in the current frame.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_CPUParticles3D_method_convert_from_particles:
 

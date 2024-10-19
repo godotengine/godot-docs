@@ -1185,7 +1185,7 @@ Stores a floating-point number as 32 bits in the file.
 
 |void| **store_line**\ (\ line\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_line>`
 
-Appends ``line`` to the file followed by a line return character (``\n``), encoding the text as UTF-8.
+Stores ``line`` in the file followed by a newline character (``\n``), encoding the text as UTF-8.
 
 .. rst-class:: classref-item-separator
 
@@ -1223,7 +1223,7 @@ Stores a floating-point number in the file.
 
 |void| **store_string**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_string>`
 
-Appends ``string`` to the file without a line return, encoding the text as UTF-8.
+Stores ``string`` in the file without a newline character (``\n``), encoding the text as UTF-8.
 
 \ **Note:** This method is intended to be used to write text files. The string is stored as a UTF-8 encoded buffer without string length or terminating zero, which means that it can't be loaded back easily. If you want to store a retrievable string in a binary file, consider using :ref:`store_pascal_string<class_FileAccess_method_store_pascal_string>` instead. For retrieving strings from a text file, you can use ``get_buffer(length).get_string_from_utf8()`` (if you know the length) or :ref:`get_as_text<class_FileAccess_method_get_as_text>`.
 
