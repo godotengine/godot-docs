@@ -780,7 +780,7 @@ Uniforms
 Passing values to shaders is possible. These are global to the whole shader and
 are called *uniforms*. When a shader is later assigned to a material, the
 uniforms will appear as editable parameters in it. Uniforms can't be written
-from within the shader.
+from within the shader. Any GLSL type except for ``void`` can be a uniform.
 
 .. code-block:: glsl
 
@@ -803,9 +803,12 @@ GDScript:
           in the shader. It must match *exactly* to the name of the uniform in
           the shader or else it will not be recognized.
 
-Any GLSL type except for *void* can be a uniform. Additionally, Godot provides
-optional shader hints to make the compiler understand for what the uniform is
-used, and how the editor should allow users to modify it.
+
+Uniform hints
+~~~~~~~~~~~~~
+
+Godot provides optional uniform hints to make the compiler understand what the
+uniform is used for, and how the editor should allow users to modify it.
 
 .. code-block:: glsl
 
@@ -816,20 +819,26 @@ used, and how the editor should allow users to modify it.
     uniform vec4 other_color : source_color = vec4(1.0); // Default values go after the hint.
     uniform sampler2D image : source_color;
 
-It's important to understand that textures *that are supplied as color* require
-hints for proper sRGB -> linear conversion (i.e. ``source_color``), as Godot's
-3D engine renders in linear color space. If this is not done, the texture will
-appear washed out.
+.. admonition:: Source Color
 
-.. note::
+    Any texture which contains *sRGB color data* requires a ``source_color`` hint
+    in order to be correctly sampled. This is because Godot renders in linear
+    color space, but some textures contain sRGB color data. If this hint is not
+    used, the texture will appear washed out.
 
-    The 2D renderer also renders in linear color space if the
-    **Rendering > Viewport > HDR 2D** project setting is enabled, so
-    ``source_color`` must also be used in ``canvas_item`` shaders. If 2D HDR is
-    disabled, ``source_color`` will keep working correctly in ``canvas_item``
-    shaders, so it's recommend to use it either way.
+    Albedo and color textures should typically have a ``source_color`` hint. Normal,
+    roughness, metallic, and height textures typically do not need a ``source_color``
+    hint.
 
-Full list of hints below:
+    Using ``source_color`` hint is required in the Forward+ and Mobile renderers,
+    and in ``canvas_item`` shaders when :ref:`HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+    is enabled. The ``source_color`` hint is optional for the Compatibility renderer,
+    and for ``canvas_item`` shaders if ``HDR 2D`` is disabled. However, it is
+    recommended to always use the ``source_color`` hint, because it works even
+    if you change renderers or disable ``HDR 2D``.
+
+
+Full list of uniform hints below:
 
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 | Type                 | Hint                                             | Description                                                                 |
