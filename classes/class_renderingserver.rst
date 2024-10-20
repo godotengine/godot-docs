@@ -11854,7 +11854,7 @@ Sets the measurement for the given ``viewport`` RID (obtained using :ref:`Viewpo
 
 |void| **viewport_set_msaa_2d**\ (\ viewport\: :ref:`RID<class_RID>`, msaa\: :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_msaa_2d>`
 
-Sets the multisample antialiasing mode for 2D/Canvas on the specified ``viewport`` RID. See :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` for options. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_2d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_2d>` or :ref:`Viewport.msaa_2d<class_Viewport_property_msaa_2d>`.
+Sets the multisample anti-aliasing mode for 2D/Canvas on the specified ``viewport`` RID. See :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` for options.
 
 .. rst-class:: classref-item-separator
 
@@ -11866,7 +11866,7 @@ Sets the multisample antialiasing mode for 2D/Canvas on the specified ``viewport
 
 |void| **viewport_set_msaa_3d**\ (\ viewport\: :ref:`RID<class_RID>`, msaa\: :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_msaa_3d>`
 
-Sets the multisample antialiasing mode for 3D on the specified ``viewport`` RID. See :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` for options. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` or :ref:`Viewport.msaa_3d<class_Viewport_property_msaa_3d>`.
+Sets the multisample anti-aliasing mode for 3D on the specified ``viewport`` RID. See :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` for options.
 
 .. rst-class:: classref-item-separator
 
@@ -11990,7 +11990,7 @@ Sets a viewport's scenario. The scenario contains information about environment 
 
 |void| **viewport_set_screen_space_aa**\ (\ viewport\: :ref:`RID<class_RID>`, mode\: :ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_screen_space_aa>`
 
-Sets the viewport's screen-space antialiasing mode. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>` or :ref:`Viewport.screen_space_aa<class_Viewport_property_screen_space_aa>`.
+Sets the viewport's screen-space antialiasing mode.
 
 .. rst-class:: classref-item-separator
 
@@ -12088,7 +12088,7 @@ Sets when the viewport should be updated. See :ref:`ViewportUpdateMode<enum_Rend
 
 |void| **viewport_set_use_debanding**\ (\ viewport\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_use_debanding>`
 
-If ``true``, enables debanding on the specified viewport. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>` or :ref:`Viewport.use_debanding<class_Viewport_property_use_debanding>`.
+If ``true``, enables debanding on the specified viewport. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12126,7 +12126,7 @@ If ``true``, enables occlusion culling on the specified viewport. Equivalent to 
 
 |void| **viewport_set_use_taa**\ (\ viewport\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_use_taa>`
 
-If ``true``, use temporal antialiasing. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>` or :ref:`Viewport.use_taa<class_Viewport_property_use_taa>`.
+If ``true``, use Temporal Anti-Aliasing. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`.
 
 .. rst-class:: classref-item-separator
 
