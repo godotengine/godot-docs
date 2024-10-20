@@ -1337,7 +1337,9 @@ To control this property on the root viewport, set the :ref:`ProjectSettings.ren
 - |void| **set_msaa_2d**\ (\ value\: :ref:`MSAA<enum_Viewport_MSAA>`\ )
 - :ref:`MSAA<enum_Viewport_MSAA>` **get_msaa_2d**\ (\ )
 
-The multisample anti-aliasing mode for 2D/Canvas rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of 2 or 4 is best unless targeting very high-end systems. This has no effect on shader-induced aliasing or texture aliasing.
+The multisample antialiasing mode for 2D/Canvas rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of :ref:`MSAA_2X<class_Viewport_constant_MSAA_2X>` or :ref:`MSAA_4X<class_Viewport_constant_MSAA_4X>` is best unless targeting very high-end systems. This has no effect on shader-induced aliasing or texture aliasing.
+
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_2d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_2d>` and :ref:`RenderingServer.viewport_set_msaa_2d<class_RenderingServer_method_viewport_set_msaa_2d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1354,7 +1356,9 @@ The multisample anti-aliasing mode for 2D/Canvas rendering. A higher number resu
 - |void| **set_msaa_3d**\ (\ value\: :ref:`MSAA<enum_Viewport_MSAA>`\ )
 - :ref:`MSAA<enum_Viewport_MSAA>` **get_msaa_3d**\ (\ )
 
-The multisample anti-aliasing mode for 3D rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of 2 or 4 is best unless targeting very high-end systems. See also bilinear scaling 3d :ref:`scaling_3d_mode<class_Viewport_property_scaling_3d_mode>` for supersampling, which provides higher quality but is much more expensive. This has no effect on shader-induced aliasing or texture aliasing.
+The multisample antialiasing mode for 3D rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of :ref:`MSAA_2X<class_Viewport_constant_MSAA_2X>` or :ref:`MSAA_4X<class_Viewport_constant_MSAA_4X>` is best unless targeting very high-end systems. See also bilinear scaling 3d :ref:`scaling_3d_mode<class_Viewport_property_scaling_3d_mode>` for supersampling, which provides higher quality but is much more expensive. This has no effect on shader-induced aliasing or texture aliasing.
+
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` and :ref:`RenderingServer.viewport_set_msaa_3d<class_RenderingServer_method_viewport_set_msaa_3d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1595,6 +1599,8 @@ To control this property on the root viewport, set the :ref:`ProjectSettings.ren
 
 Sets the screen-space antialiasing method used. Screen-space antialiasing works by selectively blurring edges in a post-process shader. It differs from MSAA which takes multiple coverage samples while rendering objects. Screen-space AA methods are typically faster than MSAA and will smooth out specular aliasing, but tend to make scenes appear blurry.
 
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>` and :ref:`RenderingServer.viewport_set_screen_space_aa<class_RenderingServer_method_viewport_set_screen_space_aa>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1720,9 +1726,11 @@ If ``true``, the viewport should render its background as transparent.
 - |void| **set_use_debanding**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_debanding**\ (\ )
 
-If ``true``, uses a fast post-processing filter to make banding significantly less visible in 3D. 2D rendering is *not* affected by debanding unless the :ref:`Environment.background_mode<class_Environment_property_background_mode>` is :ref:`Environment.BG_CANVAS<class_Environment_constant_BG_CANVAS>`. See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`.
+If ``true``, uses a fast post-processing filter to make banding significantly less visible in 3D. 2D rendering is *not* affected by debanding unless the :ref:`Environment.background_mode<class_Environment_property_background_mode>` is :ref:`Environment.BG_CANVAS<class_Environment_constant_BG_CANVAS>`.
 
 In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
+
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>` and :ref:`RenderingServer.viewport_set_use_debanding<class_RenderingServer_method_viewport_set_use_debanding>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1779,9 +1787,11 @@ If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be u
 - |void| **set_use_taa**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_taa**\ (\ )
 
-Enables Temporal Anti-Aliasing for this viewport. TAA works by jittering the camera and accumulating the images of the last rendered frames, motion vector rendering is used to account for camera and object motion.
+Enables temporal antialiasing for this viewport. TAA works by jittering the camera and accumulating the images of the last rendered frames, motion vector rendering is used to account for camera and object motion.
 
 \ **Note:** The implementation is not complete yet, some visual instances such as particles and skinned meshes may show artifacts.
+
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>` and :ref:`RenderingServer.viewport_set_use_taa<class_RenderingServer_method_viewport_set_use_taa>`.
 
 .. rst-class:: classref-item-separator
 
