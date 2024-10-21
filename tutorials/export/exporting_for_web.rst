@@ -18,24 +18,39 @@ in the user's browser.
 .. attention::
 
     Projects written in C# using Godot 4 currently cannot be exported to the
-    web. To use C# on web platforms, use Godot 3 instead.
+    web. See `this blog post <https://godotengine.org/article/platform-state-in-csharp-for-godot-4-2/#web>`__
+    for more information.
+
+    To use C# on web platforms, use Godot 3 instead.
 
 .. tip::
 
     Use the browser-integrated developer console, usually opened
-    with :kbd:`F12` (:kbd:`Cmd + Option + I` on macOS), to view
+    with :kbd:`F12` or :kbd:`Ctrl + Shift + I` (:kbd:`Cmd + Option + I` on macOS), to view
     **debug information** like JavaScript, engine, and WebGL errors.
 
-.. attention::
+    If the shortcut doesn't work, it's simply because Godot actually captures the input.
+    You can still open the developer console by accessing the browser's menu.
 
-    Godot 4's HTML5 exports currently cannot run on macOS and iOS due to upstream bugs
-    with SharedArrayBuffer and WebGL 2.0. We recommend using
-    :ref:`macOS <doc_exporting_for_macos>` and :ref:`iOS <doc_exporting_for_ios>`
-    native export functionality instead, as it will also result in better performance.
+.. note::
 
-    Godot 3's HTML5 exports are more compatible with various browsers in
-    general, especially when using the GLES2 rendering backend (which only
-    requires WebGL 1.0).
+    Due to security concerns with ``SharedArrayBuffer`` due to various exploits,
+    the use of multiple threads for the Web platform has multiple drawbacks,
+    including requiring specific server-side headers and complete cross-origin isolation
+    (meaning no ads, nor third-party integrations on the website hosting your game).
+
+    Since the release of Godot 4.3, Godot now supports exporting your game on a single thread, which
+    solves this issue. While it has some drawbacks on it's own (it cannot use threads, and is
+    not as performant as the multi-threaded export), it doesn't require as much overhead to install.
+    It is also overall more compatible with stores like itch.io or Web publishers like
+    `Poki <https://poki.com/>`__ or `CrazyGames <https://crazygames.com/>`__. The single-threaded export
+    works very well too on macOS and iOS, where it always had compatibility issues with multiple threads
+    exports.
+
+    For these reasons, it is the prefered and now default way to export your games on the Web.
+
+    For more information, read `this blog post about single-threaded Web export
+    <https://godotengine.org/article/progress-report-web-export-in-4-3/#single-threaded-web-export>`__.
 
 WebGL version
 -------------
@@ -141,11 +156,22 @@ player to click, tap or press a key/button to enable audio, for instance when di
 .. seealso:: Google offers additional information about their `Web Audio autoplay
              policies <https://sites.google.com/a/chromium.org/dev/audio-video/autoplay>`__.
 
-             Apple's Safari team also posted additional information about their `Auto-Play Policy Changes for macOS 
+             Apple's Safari team also posted additional information about their `Auto-Play Policy Changes for macOS
              <https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/>`__.
 
 .. warning:: Access to microphone requires a
              :ref:`secure context <doc_javascript_secure_contexts>`.
+
+.. warning::
+
+        By default since Godot 4.3, Web exports will favor the use of samples instead of streams
+        to play audio.
+
+        This is due to the way browsers prefer to play audio and the lack of processing power
+        available when exporting Web games with the **Use Threads** export option off.
+
+        Please note that audio effects aren't yet implemented for samples.
+
 
 Networking
 ~~~~~~~~~~
@@ -187,14 +213,6 @@ to remap them based on model/vendor/OS due to privacy considerations.
 
 .. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
 
-Boot splash is not displayed
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The default HTML page does not display the boot splash while loading. However,
-the image is exported as a PNG file, so :ref:`custom HTML pages <doc_customizing_html5_shell>`
-can display it.
-
-.. _doc_exporting_for_web_serving_the_files:
 
 Serving the files
 -----------------
@@ -205,8 +223,8 @@ used, see :ref:`doc_customizing_html5_shell`.
 
 .. warning::
 
-    To ensure low audio latency and the ability to use :ref:`class_Thread` in web exports,
-    Godot 4 web exports always use
+    Only when exporting with **Use Threads**, to ensure low audio latency and the
+    ability to use :ref:`class_Thread` in web exports, Godot 4 web exports use
     `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__.
     This requires a :ref:`secure context <doc_javascript_secure_contexts>`,
     while also requiring the following CORS headers to be set when serving the files:
@@ -217,8 +235,9 @@ used, see :ref:`doc_customizing_html5_shell`.
         Cross-Origin-Embedder-Policy: require-corp
 
     If you don't control the web server or are unable to add response headers,
-    use `coi-serviceworker <https://github.com/gzuidhof/coi-serviceworker>`__
-    as a workaround.
+    please enable **Progressive Web App** and toggle on
+    **Ensure Cross-Origin Isolation Headers**. This ensures that the headers
+    are present, but will disable
 
     If the client doesn't receive the required response headers,
     **the project will not run**.
@@ -235,9 +254,7 @@ The other exported files are served as they are, next to the ``.html`` file,
 names unchanged. The ``.wasm`` file is a binary WebAssembly module implementing
 the engine. The ``.pck`` file is the Godot main pack containing your game. The
 ``.js`` file contains start-up code and is used by the ``.html`` file to access
-the engine. The ``.png`` file contains the boot splash image. It is not used in
-the default HTML page, but is included for
-:ref:`custom HTML pages <doc_customizing_html5_shell>`.
+the engine. The ``.png`` file contains the boot splash image.
 
 The ``.pck`` file is binary, usually delivered with the MIME-type
 :mimetype:`application/octet-stream`. The ``.wasm`` file is delivered as
