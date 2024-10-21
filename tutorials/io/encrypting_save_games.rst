@@ -36,8 +36,6 @@ some unique user identifier, for example:
 
 Note that ``OS.get_unique_id()`` does not work on UWP or HTML5.
 
-That is all! Thank you for your cooperation, citizen.
-
 .. note:: This method cannot really prevent players from editing their savegames
           locally because, since the encryption key is stored inside the game, the player
           can still decrypt and edit the file themselves. The only way to prevent this
