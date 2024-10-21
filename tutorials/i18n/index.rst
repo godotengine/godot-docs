@@ -9,5 +9,6 @@ Internationalization
 
    internationalizing_games
    localization_using_gettext
+   translating_using_poedit
    locales
    pseudolocalization
