@@ -74,7 +74,7 @@ GLSL ES 3.0 specification.
 
 .. rst-class:: classref-reftable-group
 
-Trigonometric Functions
+Trigonometric functions
 -----------------------
 
 .. table::
@@ -94,11 +94,11 @@ Trigonometric Functions
     +-----------------+-----------------------------------------------------------------+-----------------------------+
     | |vec_type|      | :ref:`tan<shader_func_tan>`\ (\ |vec_type| x)                   | Tangent.                    |
     +-----------------+-----------------------------------------------------------------+-----------------------------+
-    | |vec_type|      | :ref:`asin<shader_func_asin>`\ (\ |vec_type| x)                 | Arcsine.                    |
+    | |vec_type|      | :ref:`asin<shader_func_asin>`\ (\ |vec_type| x)                 | Arc sine.                   |
     +-----------------+-----------------------------------------------------------------+-----------------------------+
-    | |vec_type|      | :ref:`acos<shader_func_acos>`\ (\ |vec_type| x)                 | Arccosine.                  |
+    | |vec_type|      | :ref:`acos<shader_func_acos>`\ (\ |vec_type| x)                 | Arc cosine.                 |
     +-----------------+-----------------------------------------------------------------+-----------------------------+
-    | | |vec_type|    | | :ref:`atan<shader_func_atan>`\ (\ |vec_type| y_over_x)        | Arctangent.                 |
+    | | |vec_type|    | | :ref:`atan<shader_func_atan>`\ (\ |vec_type| y_over_x)        | Arc tangent.                |
     | | |vec_type|    | | :ref:`atan<shader_func_atan2>`\ (\ |vec_type| y, |vec_type| x)|                             |
     +-----------------+-----------------------------------------------------------------+-----------------------------+
     | |vec_type|      | :ref:`sinh<shader_func_sinh>`\ (\ |vec_type| x)                 | Hyperbolic sine.            |
@@ -107,18 +107,18 @@ Trigonometric Functions
     +-----------------+-----------------------------------------------------------------+-----------------------------+
     | |vec_type|      | :ref:`tanh<shader_func_tanh>`\ (\ |vec_type| x)                 | Hyperbolic tangent.         |
     +-----------------+-----------------------------------------------------------------+-----------------------------+
-    | |vec_type|      | :ref:`asinh<shader_func_asinh>`\ (\ |vec_type| x)               | Inverse hyperbolic sine.    |
+    | |vec_type|      | :ref:`asinh<shader_func_asinh>`\ (\ |vec_type| x)               | Arc hyperbolic sine.        |
     +-----------------+-----------------------------------------------------------------+-----------------------------+
-    | |vec_type|      | :ref:`acosh<shader_func_acosh>`\ (\ |vec_type| x)               | Inverse hyperbolic cosine.  |
+    | |vec_type|      | :ref:`acosh<shader_func_acosh>`\ (\ |vec_type| x)               | Arc hyperbolic cosine.      |
     +-----------------+-----------------------------------------------------------------+-----------------------------+
-    | |vec_type|      | :ref:`atanh<shader_func_atanh>`\ (\ |vec_type| x)               | Inverse hyperbolic tangent. |
+    | |vec_type|      | :ref:`atanh<shader_func_atanh>`\ (\ |vec_type| x)               | Arc hyperbolic tangent.     |
     +-----------------+-----------------------------------------------------------------+-----------------------------+
 
 
 .. rst-class:: classref-descriptions-group
 
-Trigonometric Function Details
-"""""""""""""""""""""""""""""""
+Trigonometric function descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _shader_func_radians:
 
@@ -131,10 +131,10 @@ Trigonometric Function Details
     Converts a quantity specified in degrees into radians.
 
     :param degrees:
-        Specify the quantity, in degrees, to be converted to radians.
+        The quantity, in degrees, to be converted to radians.
 
     :return:
-        ``(π * degrees) / 180``.
+        ``degrees * (PI / 180)``
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/radians.xhtml
 
@@ -154,10 +154,10 @@ Trigonometric Function Details
     Converts a quantity specified in radians into degrees.
 
     :param radians:
-        Specify the quantity, in radians, to be converted to degrees.
+        The quantity, in radians, to be converted to degrees.
 
     :return:
-        ``(radians * 180) / π``.
+        ``radians * (180 / PI)``
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/degrees.xhtml
 
@@ -174,13 +174,13 @@ Trigonometric Function Details
 
     |componentwise|
 
-    Return the sine of the parameter.
+    Return the trigonometric sine of ``angle``.
 
     :param angle:
-        the quantity, in radians, of which to return the sine
+        The quantity, in radians, of which to return the sine.
 
     :return:
-        the trigonometric sine of ``angle``.
+        The sine of ``angle``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sin.xhtml
 
@@ -197,13 +197,13 @@ Trigonometric Function Details
 
     |componentwise|
 
-    Return the cosine of the parameter.
+    Return the trigonometric cosine of ``angle``.
 
     :param angle:
-        the quantity, in radians, of which to return the cosine.
+        The quantity, in radians, of which to return the cosine.
 
     :return:
-        the trigonometric cosine of ``angle``.
+        The cosine of ``angle``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cos.xhtml
 
@@ -220,13 +220,13 @@ Trigonometric Function Details
 
     |componentwise|
 
-    Return the tangent of the parameter.
+    Return the trigonometric tangent of ``angle``.
 
     :param angle:
         The quantity, in radians, of which to return the tangent.
 
     :return:
-        the trigonometric tangent of ``angle``.
+        The tangent of ``angle``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/tan.xhtml
 
@@ -243,14 +243,15 @@ Trigonometric Function Details
 
     |componentwise|
 
+    Arcsine, or inverse sine.
     Calculates the angle whose sine is ``x``.
     The result is undefined if ``x < -1`` or ``x > 1``.
 
     :param x:
-        The value whose arccosine to return.
+        The value whose arc sine to return.
     :return:
-        the angle whose trigonometric sine is ``x`` and is
-        in the range ``[-π/2, π/2]``.
+        The angle whose trigonometric sine is ``x`` and is
+        in the range ``[-PI/2, PI/2]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/asin.xhtml
 
@@ -267,15 +268,16 @@ Trigonometric Function Details
 
     |componentwise|
 
+    Arccosine, or inverse cosine.
     Calculates the angle whose cosine is ``x``.
     The result is undefined if ``x < -1`` or ``x > 1``.
 
     :param x:
-        The value whose arccosine to return.
+        The value whose arc cosine to return.
 
     :return:
-        the angle whose trigonometric cosine is ``x`` and
-        is in the range ``[0, π]``.
+        The angle whose trigonometric cosine is ``x`` and
+        is in the range ``[0, PI]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/acos.xhtml
 
@@ -292,19 +294,19 @@ Trigonometric Function Details
 
     |componentwise|
 
-    Calculate the arctangent given a tangent value of ``y/x``.
+    Calculate the arc tangent given a tangent value of ``y/x``.
 
     .. Note::
-        because of the sign ambiguity, the function cannot determine with certainty in
+        Because of the sign ambiguity, the function cannot determine with certainty in
         which quadrant the angle falls only by its tangent value. If you need to know the
         quadrant, use :ref:`atan(vec_type y, vec_type x)<shader_func_atan2>`.
 
     :param y_over_x:
-        The fraction whose arctangent to return.
+        The fraction whose arc tangent to return.
 
     :return:
-        the trigonometric arc-tangent of ``y_over_x`` and is
-        in the range ``[-π/2, π/2]``.
+        The trigonometric arc-tangent of ``y_over_x`` and is
+        in the range ``[-PI/2, PI/2]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/atan.xhtml
 
@@ -321,19 +323,19 @@ Trigonometric Function Details
 
     |componentwise|
 
-    Calculate the arctangent given a numerator and denominator. The signs of
+    Calculate the arc tangent given a numerator and denominator. The signs of
     ``y`` and ``x`` are used to determine the quadrant that the angle lies in.
     The result is undefined if ``x == 0``.
 
     :param y:
-        The numerator of the fraction whose arctangent to return.
+        The numerator of the fraction whose arc tangent to return.
 
     :param x:
-        The denominator of the fraction whose arctangent to return.
+        The denominator of the fraction whose arc tangent to return.
 
     :return:
-        the trigonometric arc-tangent of ``y/x`` and is in
-        the range ``[-π, π]``.
+        The trigonometric arc tangent of ``y/x`` and is in
+        the range ``[-PI, PI]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/atan.xhtml
 
@@ -356,7 +358,7 @@ Trigonometric Function Details
         The value whose hyperbolic sine to return.
 
     :return:
-        the hyperbolic sine of ``x``.
+        The hyperbolic sine of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sinh.xhtml
 
@@ -379,7 +381,7 @@ Trigonometric Function Details
         The value whose hyperbolic cosine to return.
 
     :return:
-        the hyperbolic cosine of ``x``.
+        The hyperbolic cosine of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cosh.xhtml
 
@@ -402,7 +404,7 @@ Trigonometric Function Details
         The value whose hyperbolic tangent to return.
 
     :return:
-        the hyperbolic tangent of ``x``.
+        The hyperbolic tangent of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/tanh.xhtml
 
@@ -419,14 +421,13 @@ Trigonometric Function Details
 
     |componentwise|
 
-    Calculates the arc hyperbolic sine of a value.
+    Calculates the arc hyperbolic sine of ``x``, or the inverse of ``sinh``.
 
     :param x:
         The value whose arc hyperbolic sine to return.
 
     :return:
-        the arc hyperbolic sine of ``x`` which is the
-        inverse of sinh.
+        The arc hyperbolic sine of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/asinh.xhtml
 
@@ -443,16 +444,16 @@ Trigonometric Function Details
 
     |componentwise|
 
-    Calculates the arc hyperbolic cosine of a value.
+    Calculates the arc hyperbolic cosine of ``x``, or the non-negative inverse of ``cosh``.
     The result is undefined if ``x < 1``.
 
     :param x:
         The value whose arc hyperbolic cosine to return.
 
     :return:
-        <return_description/>
+        The arc hyperbolic cosine of ``x``.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/acos.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/acosh.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -467,21 +468,16 @@ Trigonometric Function Details
 
     |componentwise|
 
-    Calculate the arctangent given a tangent value of ``y/x``. Note: because of
-    the sign ambiguity, the function cannot determine with certainty in which
-    quadrant the angle falls only by its tangent value. If you need to know the
-    quadrant, use the other overload of ``atan``.
+    Calculates the arc hyperbolic tangent of ``x``, or the inverse of ``tanh``.
+    The result is undefined if ``|x| > 1``.
 
-    The result is undefined if ``x < -1`` or ``x > 1``.
-
-    :param y_over_x:
-        The fraction whose arc hyperbolic tangent to return.
+    :param x:
+        The value whose arc hyperbolic tangent to return.
 
     :return:
-        the arc hyperbolic tangent of ``x`` which is the
-        inverse of tanh.
+        The arc hyperbolic tangent of ``x``.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/atan.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/atanh.xhtml
 
 
 .. rst-class:: classref-section-separator
@@ -497,13 +493,16 @@ Trigonometric Function Details
 
 .. rst-class:: classref-reftable-group
 
-Exponential and Common Math Functions
--------------------------------------
+Exponential and math functions
+------------------------------
 
 .. table::
     :class: nowrap-col2
     :widths: auto
 
+    +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
+    |    Return Type      | Function                                                                                        | Description / Return value                                      |
+    +=====================+=================================================================================================+=================================================================+
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
     | |vec_type|          | :ref:`pow<shader_func_pow>`\ (\ |vec_type| x, |vec_type| y)                                     | Power (undefined if ``x < 0`` or if ``x == 0`` and ``y <= 0``). |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -592,8 +591,8 @@ Exponential and Common Math Functions
 
 .. rst-class:: classref-descriptions-group
 
-Exponential Function Descriptions
-"""""""""""""""""""""""""""""""""""
+Exponential and math function descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 .. _shader_func_pow:
@@ -615,7 +614,7 @@ Exponential Function Descriptions
         The power to which ``x`` will be raised.
 
     :return:
-        Returns the value of ``x`` raised to the ``y`` power.
+        The value of ``x`` raised to the ``y`` power.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/pow.xhtml
 
@@ -638,7 +637,7 @@ Exponential Function Descriptions
         The value to exponentiate.
 
     :return:
-        The natural exponentiation of x. i.e., e\ :sup:`x`
+        The natural exponentiation of ``x``. i.e., e\ :sup:`x`
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp.xhtml
 
@@ -655,13 +654,13 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Return 2 raised to the power of the parameter.
+    Return ``2`` raised to the power of ``x``.
 
     :param x:
-        The value of the power to which 2 will be raised.
+        The value of the power to which ``2`` will be raised.
 
     :return:
-        2 raised to the power of x. i.e., 2\ :sup:`x`
+        ``2`` raised to the power of x, i.e., 2\ :sup:`x`
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp2.xhtml
 
@@ -678,14 +677,14 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Return the natural logarithm of the parameter, i.e. the value y which satisfies x=e\ :sup:`y`.
-    The result is undefined if x ≤ 0.
+    Return the natural logarithm of ``x``, i.e. the value y which satisfies x=e\ :sup:`y`.
+    The result is undefined if ``x <= 0``.
 
     :param x:
         The value of which to take the natural logarithm.
 
     :return:
-        the natural logarithm of x,
+        The natural logarithm of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/log.xhtml
 
@@ -702,14 +701,14 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Return the base 2 logarithm of the parameter.
-    The result is undefined if x ≤ 0.
+    Return the base 2 logarithm of ``x``.
+    The result is undefined if ``x <= 0``.
 
     :param x:
-        the value of which to take the base 2 logarithm.
+        The value of which to take the base 2 logarithm.
 
     :return:
-        the base 2 logarithm of x, i.e. the value y which satisfies x=2\ :sup:`y`
+        The base 2 logarithm of ``x``, i.e. the value y which satisfies x=2\ :sup:`y`
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/log2.xhtml
 
@@ -726,14 +725,14 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Returns the square root of x.
-    The result is undefined if x < 0.
+    Returns the square root of ``x``.
+    The result is undefined if ``x < 0``.
 
     :param x:
-        the value of which to take the square root.
+        The value of which to take the square root.
 
     :return:
-        the square root of x
+        The square root of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sqrt.xhtml
 
@@ -750,14 +749,14 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Returns the inverse of the square root of x.
-    The result is undefined if x ≤ 0.
+    Returns the inverse of the square root of ``x``.
+    The result is undefined if ``x <= 0``.
 
     :param x:
         The value of which to take the inverse of the square root.
 
     :return:
-        The inverse of the square root of the parameter.
+        The inverse of the square root of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/inversesqrt.xhtml
 
@@ -770,18 +769,21 @@ Exponential Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_type| **abs**\ (\ |vec_type| x)
-| |vec_int_type| **abs**\ (\ |vec_int_type| x)
+|vec_type| **abs**\ (\ |vec_type| x)
+
+.. rst-class:: classref-method
+
+|vec_int_type| **abs**\ (\ |vec_int_type| x)
 
     |componentwise|
 
-    Returns the absolute value of x. Returns X if X is positive or X * -1 if X is negative.
+    Returns the absolute value of ``x``. Returns ``x`` if ``x`` is positive, otherwise returns ``-1 * x``. 
 
     :param x:
-        the value of which to return the absolute.
+        The value of which to return the absolute.
 
     :return:
-        the absolute value of x
+        The absolute value of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/abs.xhtml
 
@@ -794,18 +796,21 @@ Exponential Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_type| **sign**\ (\ |vec_type| x)
-| |vec_int_type| **sign**\ (\ |vec_int_type| x)
+|vec_type| **sign**\ (\ |vec_type| x)
+
+.. rst-class:: classref-method
+
+|vec_int_type| **sign**\ (\ |vec_int_type| x)
 
     |componentwise|
 
-    Returns -1.0 if x is less than 0.0, 0.0 if x is equal to 0.0, and +1.0 if x is greater than 0.0.
+    Returns ``-1`` if ``x < 0``, ``0`` if ``x == 0``, and ``1`` if ``x > 0``.
 
     :param x:
-        the value from which to extract the sign.
+        The value from which to extract the sign.
 
     :return:
-        1, -1 or 0.
+        The sign of ``x``, either ``1``, ``-1`` or ``0``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sign.xhtml
 
@@ -822,13 +827,13 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Returns a value equal to the nearest integer that is less than or equal to x.
+    Returns a value equal to the nearest integer that is less than or equal to ``x``.
 
     :param x:
-        the value to evaluate.
+        The value to evaluate.
 
     :return:
-        the nearest integer that is less than or equal to x.
+        The nearest integer that is less than or equal to ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floor.xhtml
 
@@ -845,17 +850,18 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Returns a value equal to the nearest integer to x.
+    Rounds ``x`` to the nearest integer.
 
-    The fraction 0.5 will round in a direction chosen by the implementation, presumably the direction
-    that is fastest. This includes the possibility that round(x) returns the same value as roundEven(x)
-    for all values of x.
+    .. note::
+        Rounding of values with a fractional part of ``0.5`` is implementation-dependent.
+        This includes the possibility that ``round(x)`` returns the same value as 
+        ``roundEven(x)``for all values of ``x``.
 
     :param x:
-        the value to evaluate.
+        The value to round.
 
     :return:
-        the rounded value.
+        The rounded value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/round.xhtml
 
@@ -872,16 +878,15 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Returns a value equal to the nearest integer to x.
-
-    The fractional part of 0.5 will round toward the nearest even integer.
-    For example, both 3.5 and 4.5 will round to 4.0.
+    Rounds ``x`` to the nearest integer. A value with a fractional part of ``0.5``
+    will always round toward the nearest even integer.
+    For example, both ``3.5`` and ``4.5`` will round to ``4.0``.
 
     :param x:
-        the value to evaluate.
+        The value to round.
 
     :return:
-        the rounded value.
+        The rounded value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/roundEven.xhtml
 
@@ -898,13 +903,14 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Returns a value equal to the nearest integer to x whose absolute value is not larger than the absolute value of x.
+    Truncates ``x``. Returns a value equal to the nearest integer to ``x`` whose
+    absolute value is not larger than the absolute value of ``x``.
 
     :param x:
-        the value to evaluate.
+        The value to evaluate.
 
     :return:
-        the truncated value.
+        The truncated value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/trunc.xhtml
 
@@ -921,13 +927,13 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Returns a value equal to the nearest integer that is greater than or equal to x.
+    Returns a value equal to the nearest integer that is greater than or equal to ``x``.
 
     :param x:
-        the value to evaluate.
+        The value to evaluate.
 
     :return:
-        the ceiling-ed value.
+        The ceiling-ed value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/ceil.xhtml
 
@@ -944,15 +950,15 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Returns the fractional part of x.
+    Returns the fractional part of ``x``.
 
-    This is calculated as x - floor(x).
+    This is calculated as ``x - floor(x)``.
 
     :param x:
-        the value to evaluate.
+        The value to evaluate.
 
     :return:
-        the fraction part of x.
+        The fractional part of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fract.xhtml
 
@@ -965,8 +971,11 @@ Exponential Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_type| **mod**\ (\ |vec_type| x, |vec_type| y)
-| |vec_type| **mod**\ (\ |vec_type| x, float y)
+|vec_type| **mod**\ (\ |vec_type| x, |vec_type| y)
+
+.. rst-class:: classref-method
+
+|vec_type| **mod**\ (\ |vec_type| x, float y)
 
     |componentwise|
 
@@ -976,10 +985,10 @@ Exponential Function Descriptions
     This is computed as ``x - y * floor(x/y)``.
 
     :param x:
-        the value to evaluate.
+        The value to evaluate.
 
     :return:
-        the value of ``x modulo y``.
+        The value of ``x modulo y``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/mod.xhtml
 
@@ -996,19 +1005,19 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Separates a floating point value x into its integer and fractional parts.
+    Separates a floating point value ``x`` into its integer and fractional parts.
 
     The fractional part of the number is returned from the function.
-    The integer part (as a floating point quantity) is returned in the output parameter i.
+    The integer part (as a floating point quantity) is returned in the output parameter ``i``.
 
     :param x:
-        the value to separate.
+        The value to separate.
 
     :param out i:
-        a variable that receives the integer part of the argument.
+        A variable that receives the integer part of the argument.
 
     :return:
-        the fractional part of the number.
+        The fractional part of the number.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/modf.xhtml
 
@@ -1021,27 +1030,42 @@ Exponential Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_type| **min**\ (\ |vec_type| a, |vec_type| b)
-| |vec_type| **min**\ (\ |vec_type| a, float b)
-| |vec_int_type| **min**\ (\ |vec_int_type| a, |vec_int_type| b)
-| |vec_int_type| **min**\ (\ |vec_int_type| a, int b)
-| |vec_uint_type| **min**\ (\ |vec_uint_type| a, |vec_uint_type| b)
-| |vec_uint_type| **min**\ (\ |vec_uint_type| a, uint b)
+|vec_type| **min**\ (\ |vec_type| a, |vec_type| b)
+
+.. rst-class:: classref-method
+
+|vec_type| **min**\ (\ |vec_type| a, float b)
+
+.. rst-class:: classref-method
+
+|vec_int_type| **min**\ (\ |vec_int_type| a, |vec_int_type| b)
+
+.. rst-class:: classref-method
+
+|vec_int_type| **min**\ (\ |vec_int_type| a, int b)
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **min**\ (\ |vec_uint_type| a, |vec_uint_type| b)
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **min**\ (\ |vec_uint_type| a, uint b)
 
     |componentwise|
 
-    Returns the minimum of the two parameters.
+    Returns the minimum of two values ``a`` and ``b``.
 
-    It returns b if b is less than a, otherwise it returns a.
+    Returns ``b`` if ``b < a``, otherwise returns ``a``.
 
     :param a:
-        the first value to compare.
+        The first value to compare.
 
     :param b:
-        the second value to compare.
+        The second value to compare.
 
     :return:
-        the minimum of the two parameters.
+        The minimum value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/min.xhtml
 
@@ -1054,27 +1078,42 @@ Exponential Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_type| **max**\ (\ |vec_type| a, |vec_type| b)
-| |vec_type| **max**\ (\ |vec_type| a, float b)
-| |vec_uint_type| **max**\ (\ |vec_uint_type| a, |vec_uint_type| b)
-| |vec_uint_type| **max**\ (\ |vec_uint_type| a, uint b)
-| |vec_int_type| **max**\ (\ |vec_int_type| a, |vec_int_type| b)
-| |vec_int_type| **max**\ (\ |vec_int_type| a, int b)
+|vec_type| **max**\ (\ |vec_type| a, |vec_type| b)
+
+.. rst-class:: classref-method
+
+|vec_type| **max**\ (\ |vec_type| a, float b)
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **max**\ (\ |vec_uint_type| a, |vec_uint_type| b)
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **max**\ (\ |vec_uint_type| a, uint b)
+
+.. rst-class:: classref-method
+
+|vec_int_type| **max**\ (\ |vec_int_type| a, |vec_int_type| b)
+
+.. rst-class:: classref-method
+
+|vec_int_type| **max**\ (\ |vec_int_type| a, int b)
 
     |componentwise|
 
-    Returns the maximum of the two parameters.
+    Returns the maximum of two values ``a`` and ``b``.
 
-    It returns b if b is greater than a, otherwise it returns a.
+    It returns ``b`` if ``b > a``, otherwise it returns ``a``.
 
     :param a:
-        the first value to compare.
+        The first value to compare.
 
     :param b:
-        the second value to compare.
+        The second value to compare.
 
     :return:
-        the maximum value.
+        The maximum value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/max.xhtml
 
@@ -1087,30 +1126,45 @@ Exponential Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_type| **clamp**\ (\ |vec_type| x, |vec_type| minVal, |vec_type| maxVal)
-| |vec_type| **clamp**\ (\ |vec_type| x, float min, float max)
-| |vec_type| **clamp**\ (\ |vec_type| x, float min, float max)
-| |vec_uint_type| **clamp**\ (\ |vec_int_type| x, float min, float max)
-| |vec_int_type| **clamp**\ (\ |vec_type| x, |vec_type| min, |vec_type| max)
-| |vec_int_type| **clamp**\ (\ |vec_type| x, float min, float max)
+|vec_type| **clamp**\ (\ |vec_type| x, |vec_type| minVal, |vec_type| maxVal)
+
+.. rst-class:: classref-method
+
+|vec_type| **clamp**\ (\ |vec_type| x, float min, float max)
+
+.. rst-class:: classref-method
+
+|vec_type| **clamp**\ (\ |vec_type| x, float min, float max)
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **clamp**\ (\ |vec_int_type| x, float min, float max)
+
+.. rst-class:: classref-method
+
+|vec_int_type| **clamp**\ (\ |vec_type| x, |vec_type| min, |vec_type| max)
+
+.. rst-class:: classref-method
+
+|vec_int_type| **clamp**\ (\ |vec_type| x, float min, float max)
 
     |componentwise|
 
-    Returns the value of x constrained to the range minVal to maxVal.
+    Returns the value of ``x`` constrained to the range ``minVal`` to ``maxVal``.
 
     The returned value is computed as ``min(max(x, minVal), maxVal)``.
 
     :param x:
-        the value to constrain.
+        The value to constrain.
 
     :param minVal:
-        the lower end of the range into which to constrain x.
+        The lower end of the range into which to constrain ``x``.
 
     :param maxVal:
-        the upper end of the range into which to constrain x.
+        The upper end of the range into which to constrain ``x``.
 
     :return:
-        the constrained value.
+        The clamped value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/clamp.xhtml
 
@@ -1123,23 +1177,26 @@ Exponential Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_type| **mix**\ (\ |vec_type| a, |vec_type| b, |vec_type| c)
-| |vec_type| **mix**\ (\ |vec_type| a, |vec_type| b, float c)
+|vec_type| **mix**\ (\ |vec_type| a, |vec_type| b, |vec_type| c)
+
+.. rst-class:: classref-method
+
+|vec_type| **mix**\ (\ |vec_type| a, |vec_type| b, float c)
 
     |componentwise|
 
-    Performs a linear interpolation between a and b using c to weight between them.
+    Performs a linear interpolation between ``a`` and ``b`` using ``c`` to weight between them.
 
-    computed as ``a × (1 − c) + b × c``.
+    Computed as ``a * (1 - c) + b * c``.
 
     :param a:
-        the start of the range in which to interpolate.
+        The start of the range in which to interpolate.
 
     :param b:
-        the end of the range in which to interpolate.
+        The end of the range in which to interpolate.
 
     :param c:
-        the value to use to interpolate between x and y.
+        The value to use to interpolate between ``a`` and ``b``.
 
     :return:
         The interpolated value.
@@ -1157,22 +1214,22 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Selects either value a or value b based on the value of c.
-    For a component of c that is false, the corresponding component of a is returned.
-    For a component of c that is true, the corresponding component of b is returned.
-    Components of a and b that are not selected are allowed to be invalid floating-point values and will have no effect on the results.
+    Selects either value ``a`` or value ``b`` based on the value of ``c``.
+    For a component of ``c`` that is false, the corresponding component of ``a`` is returned.
+    For a component of ``c`` that is true, the corresponding component of ``b`` is returned.
+    Components of ``a`` and ``b`` that are not selected are allowed to be invalid floating-point values and will have no effect on the results.
 
-    If a, b, and c are vector types the operation is performed component-wise.
+    If ``a``, ``b``, and ``c`` are vector types the operation is performed component-wise.
     ie. ``mix(vec2(42, 314), vec2(9.8, 6e23), vec_bool_type(true, false)))`` will return ``vec2(9.8, 314)``.
 
     :param a:
-        value returned when a is false.
+        Value returned when ``c`` is false.
 
     :param b:
-        value returned when a is true.
+        Value returned when ``c`` is true.
 
     :param c:
-        the value to use to interpolate between x and y.
+        The value used to select between ``a`` and ``b``.
 
     :return:
         The interpolated value.
@@ -1192,30 +1249,30 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Performs, where possible, a fused multiply-add operation, returning a * b + c. In use cases where the
+    Performs, where possible, a fused multiply-add operation, returning ``a * b + c``. In use cases where the
     return value is eventually consumed by a variable declared as precise:
 
-     - fma() is considered a single operation, whereas the expression a * b + c consumed by a variable declared as precise is considered two operations.
+     - ``fma()`` is considered a single operation, whereas the expression ``a * b + c`` consumed by a variable declared as precise is considered two operations.
 
-     - The precision of fma() can differ from the precision of the expression a * b + c.
+     - The precision of ``fma()`` can differ from the precision of the expression ``a * b + c``.
 
-     - fma() will be computed with the same precision as any other fma() consumed by a precise variable,
+     - ``fma()`` will be computed with the same precision as any other ``fma()`` consumed by a precise variable,
        giving invariant results for the same input values of a, b and c.
 
     Otherwise, in the absence of precise consumption, there are no special constraints on the number of operations
-    or difference in precision between fma() and the expression a * b + c.
+    or difference in precision between ``fma()`` and the expression ``a * b + c``.
 
     :param a:
-        the first multiplicand.
+        The first value to be multiplied.
 
     :param b:
-        the second multiplicand.
+        The second value to be multiplied.
 
     :param c:
-        the value to be added to the result.
+        The value to be added to the result.
 
     :return:
-        value of ``a * b + c``
+        The value of ``a * b + c``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fma.xhtml
 
@@ -1228,8 +1285,11 @@ Exponential Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_type| **step**\ (\ |vec_type| a, |vec_type| b)
-| |vec_type| **step**\ (\ float a, |vec_type| b)
+|vec_type| **step**\ (\ |vec_type| a, |vec_type| b)
+
+.. rst-class:: classref-method
+
+|vec_type| **step**\ (\ float a, |vec_type| b)
 
     |componentwise|
 
@@ -1239,13 +1299,13 @@ Exponential Function Descriptions
     For element i of the return value, 0.0 is returned if b[i] < a[i], and 1.0 is returned otherwise.
 
     :param a:
-        the location of the edge of the step function.
+        The location of the edge of the step function.
 
     :param b:
-        the value to be used to generate the step function.
+        The value to be used to generate the step function.
 
     :return:
-        0.0 or 1.0
+        ``0.0`` or ``1.0``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/step.xhtml
 
@@ -1258,12 +1318,15 @@ Exponential Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_type| **smoothstep**\ (\ |vec_type| a, |vec_type| b, |vec_type| c)
-| |vec_type| **smoothstep**\ (\ float a, float b, |vec_type| c)
+|vec_type| **smoothstep**\ (\ |vec_type| a, |vec_type| b, |vec_type| c)
+
+.. rst-class:: classref-method
+
+|vec_type| **smoothstep**\ (\ float a, float b, |vec_type| c)
 
     |componentwise|
 
-    Performs smooth Hermite interpolation between 0 and 1 when a < c < b.
+    Performs smooth Hermite interpolation between ``0`` and ``1`` when a < c < b.
     This is useful in cases where a threshold function with a smooth transition is desired.
 
     Smoothstep is equivalent to::
@@ -1272,19 +1335,19 @@ Exponential Function Descriptions
         t = clamp((c - a) / (b - a), 0.0, 1.0);
         return t * t * (3.0 - 2.0 * t);
 
-    Results are undefined if a ≥ b.
+    Results are undefined if ``a >= b``.
 
     :param a:
-        the value of the lower edge of the Hermite function.
+        The value of the lower edge of the Hermite function.
 
     :param b:
-        the value of the upper edge of the Hermite function.
+        The value of the upper edge of the Hermite function.
 
     :param c:
-        the source value for interpolation.
+        The source value for interpolation.
 
     :return:
-        the interpolated value
+        The interpolated value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/smoothstep.xhtml
 
@@ -1305,10 +1368,10 @@ Exponential Function Descriptions
     or negative floating point NaN (Not a Number) and false otherwise.
 
     :param x:
-        the value to test for NaN.
+        The value to test for NaN.
 
     :return:
-        true or false
+        ``true`` or ``false``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/isnan.xhtml
 
@@ -1329,10 +1392,10 @@ Exponential Function Descriptions
     floating point infinity and false otherwise.
 
     :param x:
-        the value to test for infinity.
+        The value to test for infinity.
 
     :return:
-        true or false
+        ``true`` or ``false``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/isinf.xhtml
 
@@ -1349,15 +1412,15 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Returns the encoding of the floating-point parameters as int.
+    Returns the encoding of the floating-point parameters as ``int``.
 
     The floating-point bit-level representation is preserved.
 
     :param x:
-        the value whose floating point encoding to return.
+        The value whose floating point encoding to return.
 
     :return:
-        the floating-point encoding of x.
+        The floating-point encoding of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToInt.xhtml
 
@@ -1374,15 +1437,15 @@ Exponential Function Descriptions
 
     |componentwise|
 
-    Returns the encoding of the floating-point parameters as uint.
+    Returns the encoding of the floating-point parameters as ``uint``.
 
     The floating-point bit-level representation is preserved.
 
     :param x:
-        the value whose floating point encoding to return.
+        The value whose floating point encoding to return.
 
     :return:
-        the floating-point encoding of x.
+        The floating-point encoding of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToUint.xhtml
 
@@ -1401,16 +1464,16 @@ Exponential Function Descriptions
 
     Converts a bit encoding to a floating-point value. Opposite of `floatBitsToInt<_shader_func_floatBitsToInt>`
 
-    If the encoding of a NaN is passed in x, it will not signal and the resulting value will be undefined.
+    If the encoding of a ``NaN`` is passed in ``x``, it will not signal and the resulting value will be undefined.
 
-    If the encoding of a floating point infinity is passed in parameter x, the resulting floating-point value is
+    If the encoding of a floating point infinity is passed in parameter ``x``, the resulting floating-point value is
     the corresponding (positive or negative) floating point infinity.
 
     :param x:
-        the bit encoding to return as a floating point value.
+        The bit encoding to return as a floating point value.
 
     :return:
-        a floating point value
+        A floating point value
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/intBitsToFloat.xhtml
 
@@ -1429,16 +1492,16 @@ Exponential Function Descriptions
 
     Converts a bit encoding to a floating-point value. Opposite of `floatBitsToUint<_shader_func_floatBitsToUint>`
 
-    If the encoding of a NaN is passed in x, it will not signal and the resulting value will be undefined.
+    If the encoding of a ``NaN`` is passed in ``x``, it will not signal and the resulting value will be undefined.
 
-    If the encoding of a floating point infinity is passed in parameter x, the resulting floating-point value is
+    If the encoding of a floating point infinity is passed in parameter ``x``, the resulting floating-point value is
     the corresponding (positive or negative) floating point infinity.
 
     :param x:
-        the bit encoding to return as a floating point value.
+        The bit encoding to return as a floating point value.
 
     :return:
-        a floating point value
+        A floating point value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/uintBitsToFloat.xhtml
 
@@ -1467,7 +1530,7 @@ Exponential Function Descriptions
 
 .. rst-class:: classref-reftable-group
 
-Geometric Functions
+Geometric functions
 -------------------
 
 .. table::
@@ -1505,8 +1568,8 @@ Geometric Functions
 
 .. rst-class:: classref-descriptions-group
 
-Geometric Function Descriptions
-"""""""""""""""""""""""""""""""""
+Geometric function descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 .. _shader_func_length:
@@ -1519,10 +1582,10 @@ float **length**\ (\ |vec_type| x)
     ie. ``sqrt(x[0] * x[0] + x[1] * x[1] + ... + x[n] * x[n])``
 
     :param x:
-        the vector
+        The vector
 
     :return:
-        the length of the vector.
+        The length of the vector.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/length.xhtml
 
@@ -1542,13 +1605,13 @@ float **distance**\ (\ |vec_type| a, |vec_type| b)
     i.e., ``length(b - a);``
 
     :param a:
-        the first point
+        The first point
 
     :param b:
-        the second point
+        The second point
 
     :return:
-        the scalar distance between the points
+        The scalar distance between the points
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/distance.xhtml
 
@@ -1563,17 +1626,17 @@ float **distance**\ (\ |vec_type| a, |vec_type| b)
 
 float **dot**\ (\ |vec_type| a, |vec_type| b)
 
-    Returns the dot product of two vectors, a and b.
+    Returns the dot product of two vectors, ``a`` and ``b``.
     i.e., ``a.x * b.x + a.y * b.y + ...``
 
     :param a:
-        the first vector
+        The first vector.
 
     :param b:
-        the second vector
+        The second vector.
 
     :return:
-        the dot product
+        The dot product.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dot.xhtml
 
@@ -1596,13 +1659,13 @@ vec3 **cross**\ (\ vec3 a, vec3 b)
               a.x * b.z - b.x * a.y)
 
     :param a:
-        the first vector
+        The first vector
 
     :param b:
-        the second vector
+        The second vector
 
     :return:
-        the cross product
+        The cross product
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cross.xhtml
 
@@ -1620,10 +1683,10 @@ vec3 **cross**\ (\ vec3 a, vec3 b)
     Returns a vector with the same direction as x but with length 1.
 
     :param x:
-        the vector to normalize.
+        The vector to normalize.
 
     :return:
-        the normalized vector.
+        The normalized vector.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/normalize.xhtml
 
@@ -1640,19 +1703,19 @@ vec3 **reflect**\ (\ vec3 I, vec3 N)
 
     Calculate the reflection direction for an incident vector.
 
-    For a given incident vector I and surface normal N reflect returns the reflection direction calculated as ``I - 2.0 * dot(N, I) * N``.
+    For a given incident vector ``I`` and surface normal ``N`` reflect returns the reflection direction calculated as ``I - 2.0 * dot(N, I) * N``.
 
     .. Note::
-        N should be normalized in order to achieve the desired result.
+        ``N`` should be normalized in order to achieve the desired result.
 
     :param I:
-        the incident vector
+        The incident vector.
 
     :param N:
-        the normal vector
+        The normal vector.
 
     :return:
-        the reflection vector
+        The reflection vector.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/reflect.xhtml
 
@@ -1669,7 +1732,7 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
 
     Calculate the refraction direction for an incident vector.
 
-    For a given incident vector I, surface normal N and ratio of indices of refraction, eta, refract returns the refraction vector, R.
+    For a given incident vector ``I``, surface normal ``N`` and ratio of indices of refraction, ``eta``, refract returns the refraction vector, ``R``.
 
     R is calculated as::
 
@@ -1683,16 +1746,16 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
         The input parameters I and N should be normalized in order to achieve the desired result.
 
     :param I:
-        the incident vector.
+        The incident vector.
 
     :param N:
-        the normal vector.
+        The normal vector.
 
     :param eta:
-        the ratio of indices of refraction.
+        The ratio of indices of refraction.
 
     :return:
-        the refraction vector.
+        The refraction vector.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/refract.xhtml
 
@@ -1713,16 +1776,16 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
     If ``dot(Nref, I) < 0`` faceforward returns ``N``, otherwise it returns ``-N``.
 
     :param N:
-        the vector to orient.
+        The vector to orient.
 
     :param I:
-        the incident vector.
+        The incident vector.
 
     :param Nref:
-        the reference vector.
+        The reference vector.
 
     :return:
-        the oriented vector.
+        The oriented vector.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/faceforward.xhtml
 
@@ -1744,13 +1807,13 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
     product of ``x[i][j]`` and ``y[i][j]``.
 
     :param x:
-        the first matrix multiplicand.
+        The first matrix multiplicand.
 
     :param y:
-        the second matrix multiplicand.
+        The second matrix multiplicand.
 
     :return:
-        the resultant matrix.
+        The resultant matrix.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/matrixCompMult.xhtml
 
@@ -1772,13 +1835,13 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
     components in ``row``.
 
     :param column:
-        the column vector for multiplication.
+        The column vector for multiplication.
 
     :param row:
-        the row vector for multiplication.
+        The row vector for multiplication.
 
     :return:
-        the outer product matrix.
+        The outer product matrix.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/outerProduct.xhtml
 
@@ -1796,10 +1859,10 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
     Calculate the transpose of a matrix.
 
     :param m:
-        the matrix to transpose.
+        The matrix to transpose.
 
     :return:
-        a new matrix that is the transpose of the input matrix.
+        A new matrix that is the transpose of the input matrix ``m``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/transpose.xhtml
 
@@ -1817,10 +1880,10 @@ float **determinant**\ (\ |mat_type| m)
     Calculate the determinant of a matrix.
 
     :param m:
-        the matrix.
+        The matrix.
 
     :return:
-        the determinant of the input matrix.
+        The determinant of the input matrix ``m``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/determinant.xhtml
 
@@ -1837,13 +1900,13 @@ float **determinant**\ (\ |mat_type| m)
 
     Calculate the inverse of a matrix.
 
-    The values in the returned matrix are undefined if m is singular or poorly-conditioned (nearly singular).
+    The values in the returned matrix are undefined if ``m`` is singular or poorly-conditioned (nearly singular).
 
     :param m:
-        the matrix of which to take the inverse.
+        The matrix of which to take the inverse.
 
     :return:
-        a new matrix which is the inverse of the input matrix.
+        A new matrix which is the inverse of the input matrix ``m``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/inverse.xhtml
 
@@ -1865,7 +1928,7 @@ float **determinant**\ (\ |mat_type| m)
 
 .. rst-class:: classref-reftable-group
 
-Comparison Functions
+Comparison functions
 --------------------
 
 .. table::
@@ -1895,8 +1958,8 @@ Comparison Functions
 
 .. rst-class:: classref-descriptions-group
 
-Comparison Function Details
-"""""""""""""""""""""""""""""""
+Comparison function descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 .. _shader_func_lessThan:
@@ -1908,13 +1971,13 @@ Comparison Function Details
     Perform a :ref:`component-wise<shading_componentwise>` less-than comparison of two vectors.
 
     :param x:
-        the first vector for comparison.
+        The first vector for comparison.
 
     :param y:
-        the first vector for comparison.
+        The first vector for comparison.
 
     :return:
-        a boolean vector in which each element i is computed as ``x[i] < y[i]``.
+        A boolean vector in which each element i is computed as ``x[i] < y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThan.xhtml
 
@@ -1934,13 +1997,13 @@ Comparison Function Details
     Perform a :ref:`component-wise<shading_componentwise>` greater-than comparison of two vectors.
 
     :param x:
-        the first vector for comparison.
+        The first vector for comparison.
 
     :param y:
-        the first vector for comparison.
+        The first vector for comparison.
 
     :return:
-        a boolean vector in which each element i is computed as ``x[i] > y[i]``.
+        A boolean vector in which each element i is computed as ``x[i] > y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThan.xhtml
 
@@ -1960,13 +2023,13 @@ Comparison Function Details
     Perform a :ref:`component-wise<shading_componentwise>` less-than-or-equal comparison of two vectors.
 
     :param x:
-        the first vector for comparison.
+        The first vector for comparison.
 
     :param y:
-        the first vector for comparison.
+        The first vector for comparison.
 
     :return:
-        a boolean vector in which each element i is computed as ``x[i] ≤ y[i]``.
+        A boolean vector in which each element i is computed as ``x[i] <= y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThanEqual.xhtml
 
@@ -1986,13 +2049,13 @@ Comparison Function Details
     Perform a :ref:`component-wise<shading_componentwise>` greater-than-or-equal comparison of two vectors.
 
     :param x:
-        the first vector for comparison.
+        The first vector for comparison.
 
     :param y:
-        the first vector for comparison.
+        The first vector for comparison.
 
     :return:
-        a boolean vector in which each element i is computed as ``x[i] ≥ y[i]``.
+        A boolean vector in which each element i is computed as ``x[i] >= y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThanEqual.xhtml
 
@@ -2012,13 +2075,13 @@ Comparison Function Details
     Perform a :ref:`component-wise<shading_componentwise>` equal-to comparison of two vectors.
 
     :param x:
-        the first vector for comparison.
+        The first vector for comparison.
 
     :param y:
-        the first vector for comparison.
+        The first vector for comparison.
 
     :return:
-        a boolean vector in which each element i is computed as ``x[i] == y[i]``.
+        A boolean vector in which each element i is computed as ``x[i] == y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/equal.xhtml
 
@@ -2038,13 +2101,13 @@ Comparison Function Details
     Perform a :ref:`component-wise<shading_componentwise>` not-equal-to comparison of two vectors.
 
     :param x:
-        the first vector for comparison.
+        The first vector for comparison.
 
     :param y:
-        the second vector for comparison.
+        The second vector for comparison.
 
     :return:
-        a boolean vector in which each element i is computed as ``x[i] != y[i]``.
+        A boolean vector in which each element i is computed as ``x[i] != y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/notEqual.xhtml
 
@@ -2075,10 +2138,10 @@ bool **any**\ (\ |vec_bool_type| x)
         }
 
     :param x:
-        the vector to be tested for truth.
+        The vector to be tested for truth.
 
     :return:
-        true if any element of x is true and false otherwise.
+        True if any element of x is true and false otherwise.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/any.xhtml
 
@@ -2111,10 +2174,10 @@ bool **all**\ (\ |vec_bool_type| x)
         }
 
     :param x:
-        the vector to be tested for truth.
+        The vector to be tested for truth.
 
     :return:
-        true if all elements of x are true and false otherwise.
+        True if all elements of x are true and false otherwise.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/all.xhtml
 
@@ -2132,10 +2195,10 @@ bool **all**\ (\ |vec_bool_type| x)
     Logically invert a boolean vector.
 
     :param x:
-        the vector to be inverted.
+        The vector to be inverted.
 
     :return:
-        a new boolean vector for which each element i is computed as !x[i].
+        A new boolean vector for which each element i is computed as !x[i].
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/not.xhtml
 
@@ -2155,7 +2218,7 @@ bool **all**\ (\ |vec_bool_type| x)
 
 .. rst-class:: classref-reftable-group
 
-Texture Functions
+Texture functions
 -----------------
 
 .. table::
@@ -2223,12 +2286,12 @@ Texture Functions
     | |vec_type|       | :ref:`dFdxCoarse<shader_func_dFdxCoarse>`\ (\ |vec_type| p)                                             | Derivative with respect to ``x`` window coordinate,                 |
     |                  |                                                                                                         | course granularity.                                                 |
     |                  |                                                                                                         |                                                                     |
-    |                  |                                                                                                         | Not available on ``gl_compatibility`` profile.                      |
+    |                  |                                                                                                         | Not available when using the Compatibility renderer.                |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
     | |vec_type|       | :ref:`dFdxFine<shader_func_dFdxFine>`\ (\ |vec_type| p)                                                 | Derivative with respect to ``x`` window coordinate,                 |
     |                  |                                                                                                         | fine granularity.                                                   |
     |                  |                                                                                                         |                                                                     |
-    |                  |                                                                                                         | Not available on ``gl_compatibility`` profile.                      |
+    |                  |                                                                                                         | Not available when using the Compatibility renderer.                |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
     | |vec_type|       | :ref:`dFdy<shader_func_dFdy>`\ (\ |vec_type| p)                                                         | Derivative with respect to ``y`` window coordinate,                 |
     |                  |                                                                                                         | automatic granularity.                                              |
@@ -2236,39 +2299,51 @@ Texture Functions
     | |vec_type|       | :ref:`dFdyCoarse<shader_func_dFdyCoarse>`\ (\ |vec_type| p)                                             | Derivative with respect to ``y`` window coordinate,                 |
     |                  |                                                                                                         | course granularity.                                                 |
     |                  |                                                                                                         |                                                                     |
-    |                  |                                                                                                         | Not available on ``gl_compatibility`` profile.                      |
+    |                  |                                                                                                         | Not available when using the Compatibility renderer.                |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
     | |vec_type|       | :ref:`dFdyFine<shader_func_dFdyFine>`\ (\ |vec_type| p)                                                 | Derivative with respect to ``y`` window coordinate,                 |
     |                  |                                                                                                         | fine granularity.                                                   |
     |                  |                                                                                                         |                                                                     |
-    |                  |                                                                                                         | Not available on ``gl_compatibility`` profile.                      |
+    |                  |                                                                                                         | Not available when using the Compatibility renderer.                |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
     | |vec_type|       | :ref:`fwidth<shader_func_fwidth>`\ (\ |vec_type| p)                                                     | Sum of absolute derivative in ``x`` and ``y``.                      |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
     | |vec_type|       | :ref:`fwidthCoarse<shader_func_fwidthCoarse>`\ (\ |vec_type| p)                                         | Sum of absolute derivative in ``x`` and ``y``.                      |
     |                  |                                                                                                         |                                                                     |
-    |                  |                                                                                                         | Not available on ``gl_compatibility`` profile.                      |
+    |                  |                                                                                                         | Not available when using the Compatibility renderer.                |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
     | |vec_type|       | :ref:`fwidthFine<shader_func_fwidthFine>`\ (\ |vec_type| p)                                             | Sum of absolute derivative in ``x`` and ``y``.                      |
     |                  |                                                                                                         |                                                                     |
-    |                  |                                                                                                         | Not available on ``gl_compatibility`` profile.                      |
+    |                  |                                                                                                         | Not available when using the Compatibility renderer.                |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 
 .. rst-class:: classref-descriptions-group
 
-Texture Function Descriptions
-"""""""""""""""""""""""""""""""""""""
+Texture function descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _shader_func_textureSize:
 
 .. rst-class:: classref-method
 
-| ivec2 **textureSize**\ (\ |gsampler2D| s, int lod)
-| ivec2 **textureSize**\ (\ samplerCube s, int lod)
-| ivec2 **textureSize**\ (\ samplerCubeArray s, int lod)
-| ivec3 **textureSize**\ (\ |gsampler2DArray| s, int lod)
-| ivec3 **textureSize**\ (\ |gsampler3D| s, int lod)
+ivec2 **textureSize**\ (\ |gsampler2D| s, int lod)
+
+.. rst-class:: classref-method
+
+ivec2 **textureSize**\ (\ samplerCube s, int lod)
+
+.. rst-class:: classref-method
+
+ivec2 **textureSize**\ (\ samplerCubeArray s, int lod)
+
+.. rst-class:: classref-method
+
+ivec3 **textureSize**\ (\ |gsampler2DArray| s, int lod)
+
+.. rst-class:: classref-method
+
+ivec3 **textureSize**\ (\ |gsampler3D| s, int lod)
 
     Retrieve the dimensions of a level of a texture.
 
@@ -2279,13 +2354,13 @@ Texture Function Descriptions
     the number of layers in the texture array.
 
     :param s:
-        the sampler to which the texture whose dimensions to retrieve is bound.
+        The sampler to which the texture whose dimensions to retrieve is bound.
 
     :param lod:
-        the level of the texture for which to retrieve the dimensions.
+        The level of the texture for which to retrieve the dimensions.
 
     :return:
-        the dimensions of level lod (if present) of the texture bound to sampler.
+        The dimensions of level lod (if present) of the texture bound to sampler.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
 
@@ -2312,13 +2387,13 @@ vec2 **textureQueryLod**\ (\ |gsampler2D| s, vec2 p)
     If called on an incomplete texture, the result of the operation is undefined.
 
     :param s:
-        the sampler to which the texture whose level-of-detail will be queried is bound.
+        The sampler to which the texture whose level-of-detail will be queried is bound.
 
     :param p:
-        the texture coordinates at which the level-of-detail will be queried.
+        The texture coordinates at which the level-of-detail will be queried.
 
     :return:
-        see description.
+        See description.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
 
@@ -2330,8 +2405,17 @@ vec2 **textureQueryLod**\ (\ |gsampler2D| s, vec2 p)
 .. rst-class:: classref-method
 
 vec2 **textureQueryLod**\ (\ |gsampler2D| s, vec2 p)
+
+.. rst-class:: classref-method
+
 vec2 **textureQueryLod**\ (\ |gsampler2DArray| s, vec2 p)
+
+.. rst-class:: classref-method
+
 vec2 **textureQueryLod**\ (\ |gsampler3D| s, vec3 p)
+
+.. rst-class:: classref-method
+
 vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
     .. note:: Available only in the fragment shader.
@@ -2345,13 +2429,13 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     If called on an incomplete texture, the result of the operation is undefined.
 
     :param s:
-        the sampler to which the texture whose level-of-detail will be queried is bound.
+        The sampler to which the texture whose level-of-detail will be queried is bound.
 
     :param p:
-        the texture coordinates at which the level-of-detail will be queried.
+        The texture coordinates at which the level-of-detail will be queried.
 
     :return:
-        see description.
+        See description.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
 
@@ -2366,20 +2450,29 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
 .. rst-class:: classref-method
 
-| int **textureQueryLevels**\ (\ |gsampler2D| s)
-| int **textureQueryLevels**\ (\ |gsampler2DArray| s)
-| int **textureQueryLevels**\ (\ |gsampler3D| s)
-| int **textureQueryLevels**\ (\ samplerCube s)
+int **textureQueryLevels**\ (\ |gsampler2D| s)
+
+.. rst-class:: classref-method
+
+int **textureQueryLevels**\ (\ |gsampler2DArray| s)
+
+.. rst-class:: classref-method
+
+int **textureQueryLevels**\ (\ |gsampler3D| s)
+
+.. rst-class:: classref-method
+
+int **textureQueryLevels**\ (\ samplerCube s)
 
     Compute the number of accessible mipmap levels of a texture.
 
-    If called on an incomplete texture, or if no texture is associated with sampler, zero is returned.
+    If called on an incomplete texture, or if no texture is associated with sampler, ``0`` is returned.
 
     :param s:
-        the sampler to which the texture whose mipmap level count will be queried is bound.
+        The sampler to which the texture whose mipmap level count will be queried is bound.
 
     :return:
-        the number of accessible mipmap levels in the texture, or zero.
+        The number of accessible mipmap levels in the texture, or ``0``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLevels.xhtml
 
@@ -2394,11 +2487,23 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
 .. rst-class:: classref-method
 
-| |gvec4_type| **texture**\ (\ |gsampler2D| s, vec2 p [, float bias] )
-| |gvec4_type| **texture**\ (\ |gsampler2DArray| s, vec3 p [, float bias] )
-| |gvec4_type| **texture**\ (\ |gsampler3D| s, vec3 p [, float bias] )
-| | vec4 **texture**\ (\ samplerCube s, vec3 p [, float bias] )
-| | vec4 **texture**\ (\ samplerCubeArray s, vec4 p [, float bias] )
+|gvec4_type| **texture**\ (\ |gsampler2D| s, vec2 p [, float bias] )
+
+.. rst-class:: classref-method
+
+|gvec4_type| **texture**\ (\ |gsampler2DArray| s, vec3 p [, float bias] )
+
+.. rst-class:: classref-method
+
+|gvec4_type| **texture**\ (\ |gsampler3D| s, vec3 p [, float bias] )
+
+.. rst-class:: classref-method
+
+vec4 **texture**\ (\ samplerCube s, vec3 p [, float bias] )
+
+.. rst-class:: classref-method
+
+vec4 **texture**\ (\ samplerCubeArray s, vec4 p [, float bias] )
 
     Retrieves texels from a texture.
 
@@ -2411,16 +2516,16 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     For non-shadow variants, the array layer comes from the last component of P.
 
     :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
+        The sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        the texture coordinates at which texture will be sampled.
+        The texture coordinates at which texture will be sampled.
 
     :param bias:
-        an optional bias to be applied during level-of-detail computation.
+        An optional bias to be applied during level-of-detail computation.
 
     :return:
-        a texel
+        A texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texture.xhtml
 
@@ -2435,9 +2540,15 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
 .. rst-class:: classref-method
 
-| |gvec4_type| **textureProj**\ (\ |gsampler2D| s, vec3 p [, float bias] )
-| |gvec4_type| **textureProj**\ (\ |gsampler2D| s, vec4 p [, float bias] )
-| |gvec4_type| **textureProj**\ (\ |gsampler3D| s, vec4 p [, float bias] )
+|gvec4_type| **textureProj**\ (\ |gsampler2D| s, vec3 p [, float bias] )
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProj**\ (\ |gsampler2D| s, vec4 p [, float bias] )
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProj**\ (\ |gsampler3D| s, vec4 p [, float bias] )
 
     Perform a texture lookup with projection.
 
@@ -2446,16 +2557,16 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     forms is used as Dref. After these values are computed, the texture lookup proceeds as in texture.
 
     :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
+        The sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        the texture coordinates at which texture will be sampled.
+        The texture coordinates at which texture will be sampled.
 
     :param bias:
-        optional bias to be applied during level-of-detail computation.
+        Optional bias to be applied during level-of-detail computation.
 
     :return:
-        a texel
+        A texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProj.xhtml
 
@@ -2470,11 +2581,23 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
 .. rst-class:: classref-method
 
-| |gvec4_type| **textureLod**\ (\ |gsampler2D| s, vec2 p, float lod)
-| |gvec4_type| **textureLod**\ (\ |gsampler2DArray| s, vec3 p, float lod)
-| |gvec4_type| **textureLod**\ (\ |gsampler3D| s, vec3 p, float lod)
-| | vec4 **textureLod**\ (\ samplerCube s, vec3 p, float lod)
-| | vec4 **textureLod**\ (\ samplerCubeArray s, vec4 p, float lod)
+|gvec4_type| **textureLod**\ (\ |gsampler2D| s, vec2 p, float lod)
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureLod**\ (\ |gsampler2DArray| s, vec3 p, float lod)
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureLod**\ (\ |gsampler3D| s, vec3 p, float lod)
+
+.. rst-class:: classref-method
+
+vec4 **textureLod**\ (\ samplerCube s, vec3 p, float lod)
+
+.. rst-class:: classref-method
+
+vec4 **textureLod**\ (\ samplerCubeArray s, vec4 p, float lod)
 
     Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
     an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
@@ -2484,16 +2607,16 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
         δu/δy=0, δv/δy=0, δw/δy=0
 
     :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
+        The sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        the texture coordinates at which texture will be sampled.
+        The texture coordinates at which texture will be sampled.
 
     :param lod:
-        the explicit level-of-detail
+        The explicit level-of-detail.
 
     :return:
-        a texel
+        A texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureLod.xhtml
 
@@ -2509,7 +2632,13 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 .. rst-class:: classref-method
 
 |gvec4_type| **textureProjLod**\ (\ |gsampler2D| s, vec3 p, float lod)
+
+.. rst-class:: classref-method
+
 |gvec4_type| **textureProjLod**\ (\ |gsampler2D| s, vec4 p, float lod)
+
+.. rst-class:: classref-method
+
 |gvec4_type| **textureProjLod**\ (\ |gsampler3D| s, vec4 p, float lod)
 
     Performs a texture lookup with projection from an explicitly specified level-of-detail.
@@ -2521,13 +2650,13 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     which the texture will be sampled.
 
     :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
+        The sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        the texture coordinates at which texture will be sampled.
+        The texture coordinates at which texture will be sampled.
 
     :param lod:
-        the explicit level-of-detail from which to fetch texels.
+        The explicit level-of-detail from which to fetch texels.
 
     :return:
        a texel
@@ -2545,11 +2674,23 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
 .. rst-class:: classref-method
 
-| |gvec4_type| **textureGrad**\ (\ |gsampler2D| s, vec2 p, vec2 dPdx, vec2 dPdy)
-| |gvec4_type| **textureGrad**\ (\ |gsampler2DArray| s, vec3 p, vec2 dPdx, vec2 dPdy)
-| |gvec4_type| **textureGrad**\ (\ |gsampler3D| s, vec3 p, vec2 dPdx, vec2 dPdy)
-| | vec4 **textureGrad**\ (\ samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy)
-| | vec4 **textureGrad**\ (\ samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy)
+|gvec4_type| **textureGrad**\ (\ |gsampler2D| s, vec2 p, vec2 dPdx, vec2 dPdy)
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureGrad**\ (\ |gsampler2DArray| s, vec3 p, vec2 dPdx, vec2 dPdy)
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureGrad**\ (\ |gsampler3D| s, vec3 p, vec2 dPdx, vec2 dPdy)
+
+.. rst-class:: classref-method
+
+vec4 **textureGrad**\ (\ samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy)
+
+.. rst-class:: classref-method
+
+vec4 **textureGrad**\ (\ samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy)
 
     Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
      - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
@@ -2562,19 +2703,19 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     For the cube version, the partial derivatives of ``p`` are assumed to be in the coordinate system used before texture coordinates are projected onto the appropriate cube face.
 
     :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
+        The sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        the texture coordinates at which texture will be sampled.
+        The texture coordinates at which texture will be sampled.
 
     :param dPdx:
-        the partial derivative of P with respect to window x.
+        The partial derivative of P with respect to window x.
 
     :param dPdy:
-        the partial derivative of P with respect to window y.
+        The partial derivative of P with respect to window y.
 
     :return:
-        a texel
+        A texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGrad.xhtml
 
@@ -2589,9 +2730,15 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
 .. rst-class:: classref-method
 
-| |gvec4_type| **textureProjGrad**\ (\ |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy)
-| |gvec4_type| **textureProjGrad**\ (\ |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy)
-| |gvec4_type| **textureProjGrad**\ (\ |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy)
+|gvec4_type| **textureProjGrad**\ (\ |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy)
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProjGrad**\ (\ |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy)
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureProjGrad**\ (\ |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy)
 
     Perform a texture lookup with projection and explicit gradients.
 
@@ -2599,19 +2746,19 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     After these values are computed, the texture lookup proceeds as in `textureGrad<shader_func_textureGrad>`, passing ``dPdx`` and ``dPdy`` as gradients.
 
     :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
+        The sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        the texture coordinates at which texture will be sampled.
+        The texture coordinates at which texture will be sampled.
 
     :param dPdx:
-        the partial derivative of ``p`` with respect to window x.
+        The partial derivative of ``p`` with respect to window x.
 
     :param dPdy:
-        the partial derivative of ``p`` with respect to window y.
+        The partial derivative of ``p`` with respect to window y.
 
     :return:
-        a texel.
+        A texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureProjGrad.xhtml
 
@@ -2626,23 +2773,29 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
 .. rst-class:: classref-method
 
-| |gvec4_type| **texelFetch**\ (\ |gsampler2D| s, ivec2 p, int lod)
-| |gvec4_type| **texelFetch**\ (\ |gsampler2DArray| s, ivec3 p, int lod)
-| |gvec4_type| **texelFetch**\ (\ |gsampler3D| s, ivec3 p, int lod)
+|gvec4_type| **texelFetch**\ (\ |gsampler2D| s, ivec2 p, int lod)
+
+.. rst-class:: classref-method
+
+|gvec4_type| **texelFetch**\ (\ |gsampler2DArray| s, ivec3 p, int lod)
+
+.. rst-class:: classref-method
+
+|gvec4_type| **texelFetch**\ (\ |gsampler3D| s, ivec3 p, int lod)
 
     Performs a lookup of a single texel from texture coordinate ``p`` in the texture bound to sampler.
 
     :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
+        The sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        the texture coordinates at which texture will be sampled.
+        The texture coordinates at which texture will be sampled.
 
     :param lod:
-        specifies the level-of-detail within the texture from which the texel will be fetched.
+        Specifies the level-of-detail within the texture from which the texel will be fetched.
 
     :return:
-        a texel
+        A texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/texelFetch.xhtml
 
@@ -2657,9 +2810,15 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
 .. rst-class:: classref-method
 
-| |gvec4_type| **textureGather**\ (\ |gsampler2D| s, vec2 p [, int comps] )
-| |gvec4_type| **textureGather**\ (\ |gsampler2DArray| s, vec3 p [, int comps] )
-| | vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
+|gvec4_type| **textureGather**\ (\ |gsampler2D| s, vec2 p [, int comps] )
+
+.. rst-class:: classref-method
+
+|gvec4_type| **textureGather**\ (\ |gsampler2DArray| s, vec3 p [, int comps] )
+
+.. rst-class:: classref-method
+
+vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
     Gathers four texels from a texture.
 
@@ -2671,16 +2830,16 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
              Sample_i0_j0(p, base).comps);
 
     :param s:
-        the sampler to which the texture from which texels will be retrieved is bound.
+        The sampler to which the texture from which texels will be retrieved is bound.
 
     :param p:
-        the texture coordinates at which texture will be sampled.
+        The texture coordinates at which texture will be sampled.
 
     :param comps:
         *optional* the component of the source texture (0 -> x, 1 -> y, 2 -> z, 3 -> w) that will be used to generate the resulting vector. Zero if not specified.
 
     :return:
-        the gathered texel.
+        The gathered texel.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureGather.xhtml
 
@@ -2701,19 +2860,20 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
     Return the partial derivative of ``p`` with respect to the window x coordinate using local differencing.
 
-    Returns either `dFdxCoarse<shader_func_dFdxCoarse>` or `dFdxFine<shader_func_dfdxFine>`. The implementation may choose which calculation to perform based upon factors
-    such as performance or the value of the API GL_FRAGMENT_SHADER_DERIVATIVE_HINT hint.
+    Returns either :ref:`dFdxCoarse<shader_func_dFdxCoarse>` or :ref:`dFdxFine<shader_func_dfdxFine>`. The implementation may choose which calculation to perform based upon factors
+    such as performance or the value of the API ``GL_FRAGMENT_SHADER_DERIVATIVE_HINT`` hint.
+
 
     .. warning::
         Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        the expression of which to take the partial derivative.
+        The expression of which to take the partial derivative.
 
         .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        the partial derivative of ``p``.
+        The partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdx.xhtml
 
@@ -2731,8 +2891,8 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 |vec_type| **dFdxCoarse**\ (\ |vec_type| p)
 
     .. note::
-        | Available only in the fragment shader.
-        | Not available when using the GL_Compatibility rendering backend.
+        Available only in the fragment shader.
+        Not available when using the Compatibility renderer.
 
     Return the partial derivative of ``p`` with respect to the window x coordinate.
 
@@ -2744,12 +2904,12 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
         Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        the expression of which to take the partial derivative.
+        The expression of which to take the partial derivative.
 
         .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        the partial derivative of ``p``.
+        The partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdxCoarse.xhtml
 
@@ -2767,8 +2927,8 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 |vec_type| **dFdxFine**\ (\ |vec_type| p)
 
     .. note::
-        | Available only in the fragment shader.
-        | Not available when using the GL_Compatibility rendering backend.
+        Available only in the fragment shader.
+        Not available when using the Compatibility renderer.
 
     Return the partial derivative of ``p`` with respect to the window x coordinate.
 
@@ -2777,12 +2937,12 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     .. warning:: Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        the expression of which to take the partial derivative.
+        The expression of which to take the partial derivative.
 
         .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        the partial derivative of ``p``.
+        The partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdxFine.xhtml
 
@@ -2809,12 +2969,12 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     .. warning:: Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        the expression of which to take the partial derivative.
+        The expression of which to take the partial derivative.
 
         .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        the partial derivative of ``p``.
+        The partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdy.xhtml
 
@@ -2832,8 +2992,8 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 |vec_type| **dFdyCoarse**\ (\ |vec_type| p)
 
     .. note::
-        | Available only in the fragment shader.
-        | Not available when using the GL_Compatibility rendering backend.
+        Available only in the fragment shader.
+        Not available when using the Compatibility renderer.
 
     Return the partial derivative of ``p`` with respect to the window y coordinate.
 
@@ -2844,12 +3004,12 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     .. warning:: Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        the expression of which to take the partial derivative.
+        The expression of which to take the partial derivative.
 
         .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        the partial derivative of ``p``.
+        The partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdyCoarse.xhtml
 
@@ -2867,8 +3027,8 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 |vec_type| **dFdyFine**\ (\ |vec_type| p)
 
     .. note::
-        | Available only in the fragment shader.
-        | Not available when using the GL_Compatibility rendering backend.
+        Available only in the fragment shader.
+        Not available when using the Compatibility renderer.
 
     Return the partial derivative of ``p`` with respect to the window y coordinate.
 
@@ -2877,12 +3037,12 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     .. warning:: Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
-        the expression of which to take the partial derivative.
+        The expression of which to take the partial derivative.
 
         .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
-        the partial derivative of ``p``.
+        The partial derivative of ``p``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/dFdyFine.xhtml
 
@@ -2906,10 +3066,10 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     Equivalent to ``abs(dFdx(p)) + abs(dFdy(p))``.
 
     :param p:
-        the expression of which to take the partial derivative.
+        The expression of which to take the partial derivative.
 
     :return:
-        the partial derivative.
+        The partial derivative.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidth.xhtml
 
@@ -2927,8 +3087,8 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 |vec_type| **fwidthCoarse**\ (\ |vec_type| p)
 
     .. note::
-        | Available only in the fragment shader.
-        | Not available when using the GL_Compatibility rendering backend.
+        Available only in the fragment shader.
+        Not available when using the Compatibility renderer.
 
     Return the sum of the absolute value of derivatives in x and y.
 
@@ -2937,10 +3097,10 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     Equivalent  to ``abs(dFdxCoarse(p)) + abs(dFdyCoarse(p))``.
 
     :param p:
-        the expression of which to take the partial derivative.
+        The expression of which to take the partial derivative.
 
     :return:
-        the partial derivative.
+        The partial derivative.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidthCoarse.xhtml
 
@@ -2958,8 +3118,8 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 |vec_type| **fwidthFine**\ (\ |vec_type| p)
 
     .. note::
-        | Available only in the fragment shader.
-        | Not available when using the GL_Compatibility rendering backend.
+        Available only in the fragment shader.
+        Not available when using the Compatibility renderer.
 
     Return the sum of the absolute value of derivatives in x and y.
 
@@ -2968,10 +3128,10 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
     Equivalent to ``abs(dFdxFine(p)) + abs(dFdyFine(p))``.
 
     :param p:
-        the expression of which to take the partial derivative.
+        The expression of which to take the partial derivative.
 
     :return:
-        the partial derivative.
+        The partial derivative.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/fwidthFine.xhtml
 
@@ -2994,8 +3154,8 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
 .. rst-class:: classref-reftable-group
 
-Packing/Unpacking Functions
-----------------------------
+Packing and unpacking functions
+-------------------------------
 
 These functions convert floating point numbers into various sized integers and then pack those integers into a single 32bit unsigned integer.
 The 'unpack' functions perform the opposite operation, returning the original floating point numbers.
@@ -3023,8 +3183,8 @@ The 'unpack' functions perform the opposite operation, returning the original fl
 
 .. rst-class:: classref-descriptions-group
 
-Packing/Unpacking Function Descriptions
-""""""""""""""""""""""""""""""""""""""""
+Packing and unpacking function descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _shader_func_packHalf2x16:
 
@@ -3040,10 +3200,10 @@ uint **packHalf2x16**\ (\ vec2 v)
     bits of the result; the second component specifies the 16 most-significant bits.
 
     :param v:
-        a vector of two 32-bit floating point values that are to be converted to 16-bit representation and packed into the result.
+        A vector of two 32-bit floating point values that are to be converted to 16-bit representation and packed into the result.
 
     :return:
-        the packed value.
+        The packed value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packHalf2x16.xhtml
 
@@ -3063,14 +3223,14 @@ vec2 **unpackHalf2x16**\ (\ uint v)
     Inverse of :ref:`packHalf2x16<shader_func_packHalf2x16>`.
 
     Unpack a 32-bit integer into two 16-bit floating-point values, convert them to 32-bit floating-point values, and put them into a vector.
-    The first component of the vector is obtained from the 16 least-significant bits of v; the second component is obtained from the
-    16 most-significant bits of v.
+    The first component of the vector is obtained from the 16 least-significant bits of ``v``; the second component is obtained from the
+    16 most-significant bits of ``v``.
 
     :param v:
-        a single 32-bit unsigned integer containing 2 packed 16-bit floating point values.
+        A single 32-bit unsigned integer containing 2 packed 16-bit floating point values.
 
     :return:
-        two unpacked floating point values.
+        Two unpacked floating point values.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackHalf2x16.xhtml
 
@@ -3091,7 +3251,7 @@ uint **packUnorm2x16**\ (\ vec2 v)
 
     Converts each component of the normalized floating-point value v into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
-    The conversion for component c of v to fixed-point is performed as follows::
+    The conversion for component c of ``v`` to fixed-point is performed as follows::
 
         round(clamp(c, 0.0, 1.0) * 65535.0)
 
@@ -3099,10 +3259,10 @@ uint **packUnorm2x16**\ (\ vec2 v)
 
 
     :param v:
-        a vector of values to be packed into an unsigned integer.
+        A vector of values to be packed into an unsigned integer.
 
     :return:
-        unsigned 32 bit integer containing the packed encoding of the vector.
+        Unsigned 32 bit integer containing the packed encoding of the vector.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
@@ -3131,7 +3291,7 @@ vec2 **unpackUnorm2x16**\ (\ uint v)
     The first component of the returned vector will be extracted from the least significant bits of the input; the last component will be extracted from the most significant bits.
 
     :param v:
-        an unsigned integer containing packed floating-point values.
+        An unsigned integer containing packed floating-point values.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
@@ -3150,19 +3310,19 @@ uint **packSnorm2x16**\ (\ vec2 v)
 
     Pack floating-point values into an unsigned integer.
 
-    Convert each component of the normalized floating-point value v into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
+    Convert each component of the normalized floating-point value ``v`` into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
-    The conversion for component c of v to fixed-point is performed as follows::
+    The conversion for component c of ``v`` to fixed-point is performed as follows::
 
         round(clamp(c, -1.0, 1.0) * 32767.0)
 
     The first component of the vector will be written to the least significant bits of the output; the last component will be written to the most significant bits.
 
     :param v:
-        a vector of values to be packed into an unsigned integer.
+        A vector of values to be packed into an unsigned integer.
 
     :return:
-        unsigned 32 bit integer containing the packed encoding of the vector.
+        Unsigned 32 bit integer containing the packed encoding of the vector.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
@@ -3191,7 +3351,7 @@ vec2 **unpackSnorm2x16**\ (\ uint v)
     The first component of the returned vector will be extracted from the least significant bits of the input; the last component will be extracted from the most significant bits.
 
     :param v:
-        an unsigned integer containing packed floating-point values.
+        An unsigned integer containing packed floating-point values.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
@@ -3210,9 +3370,9 @@ uint **packUnorm4x8**\ (\ vec4 v)
 
     Pack floating-point values into an unsigned integer.
 
-    Convert each component of the normalized floating-point value v into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
+    Convert each component of the normalized floating-point value ``v`` into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
-    The conversion for component c of v to fixed-point is performed as follows::
+    The conversion for component c of ``v`` to fixed-point is performed as follows::
 
         round(clamp(c, 0.0, 1.0) * 255.0)
 
@@ -3220,10 +3380,10 @@ uint **packUnorm4x8**\ (\ vec4 v)
 
 
     :param v:
-        a vector of values to be packed into an unsigned integer.
+        A vector of values to be packed into an unsigned integer.
 
     :return:
-        unsigned 32 bit integer containing the packed encoding of the vector.
+        Unsigned 32 bit integer containing the packed encoding of the vector.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
@@ -3252,7 +3412,7 @@ vec4 **unpackUnorm4x8**\ (\ uint v)
     The first component of the returned vector will be extracted from the least significant bits of the input; the last component will be extracted from the most significant bits.
 
     :param v:
-        an unsigned integer containing packed floating-point values.
+        An unsigned integer containing packed floating-point values.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
@@ -3271,9 +3431,9 @@ uint **packSnorm4x8**\ (\ vec4 v)
 
     Pack floating-point values into an unsigned integer.
 
-    Convert each component of the normalized floating-point value v into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
+    Convert each component of the normalized floating-point value ``v`` into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
-    The conversion for component c of v to fixed-point is performed as follows::
+    The conversion for component c of ``v`` to fixed-point is performed as follows::
 
         round(clamp(c, -1.0, 1.0) * 127.0)
 
@@ -3281,10 +3441,10 @@ uint **packSnorm4x8**\ (\ vec4 v)
 
 
     :param v:
-        a vector of values to be packed into an unsigned integer.
+        A vector of values to be packed into an unsigned integer.
 
     :return:
-        unsigned 32 bit integer containing the packed encoding of the vector.
+        Unsigned 32 bit integer containing the packed encoding of the vector.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/packUnorm.xhtml
 
@@ -3313,7 +3473,7 @@ vec4 **unpackSnorm4x8**\ (\ uint v)
     The first component of the returned vector will be extracted from the least significant bits of the input; the last component will be extracted from the most significant bits.
 
     :param v:
-        an unsigned integer containing packed floating-point values.
+        An unsigned integer containing packed floating-point values.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackUnorm.xhtml
 
@@ -3337,7 +3497,7 @@ vec4 **unpackSnorm4x8**\ (\ uint v)
 
 .. rst-class:: classref-reftable-group
 
-Bitwise Functions
+Bitwise functions
 -------------------
 
 .. table::
@@ -3379,8 +3539,8 @@ Bitwise Functions
 
 .. rst-class:: classref-descriptions-group
 
-Bitwise Function Descriptions
-"""""""""""""""""""""""""""""""
+Bitwise function descriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _shader_func_bitfieldExtract:
 
@@ -3388,7 +3548,7 @@ Bitwise Function Descriptions
 
 |vec_int_type| **bitfieldExtract**\ (\ |vec_int_type| value, int offset, int bits)
 
-    Extracts a subset of the bits of value and returns it in the least significant bits of the result.
+    Extracts a subset of the bits of ``value`` and returns it in the least significant bits of the result.
     The range of bits extracted is ``[offset, offset + bits - 1]``.
 
     The most significant bits of the result will be set to zero.
@@ -3398,20 +3558,20 @@ Bitwise Function Descriptions
 
     .. warning::
         The result will be undefined if:
-         - offset or bits is negative
+         - offset or bits is negative.
          - if the sum of offset and bits is greater than the number of bits used to store the operand.
 
     :param value:
-        the integer from which to extract bits.
+        The integer from which to extract bits.
 
     :param offset:
-        the index of the first bit to extract.
+        The index of the first bit to extract.
 
     :param bits:
-        the number of bits to extract.
+        The number of bits to extract.
 
     :return:
-        integer with the requested bits
+        Integer with the requested bits.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldExtract.xhtml
 
@@ -3426,7 +3586,7 @@ Bitwise Function Descriptions
 
     |componentwise|
 
-    Extracts a subset of the bits of value and returns it in the least significant bits of the result.
+    Extracts a subset of the bits of ``value`` and returns it in the least significant bits of the result.
     The range of bits extracted is ``[offset, offset + bits - 1]``.
 
     The most significant bits will be set to the value of ``offset + base - 1`` (i.e., it is sign extended to the width of the return type).
@@ -3436,20 +3596,20 @@ Bitwise Function Descriptions
 
     .. warning::
         The result will be undefined if:
-         - offset or bits is negative
+         - offset or bits is negative.
          - if the sum of offset and bits is greater than the number of bits used to store the operand.
 
     :param value:
-        the integer from which to extract bits.
+        The integer from which to extract bits.
 
     :param offset:
-        the index of the first bit to extract.
+        The index of the first bit to extract.
 
     :param bits:
-        the number of bits to extract.
+        The number of bits to extract.
 
     :return:
-        integer with the requested bits
+        Integer with the requested bits
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldExtract.xhtml
 
@@ -3462,8 +3622,11 @@ Bitwise Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_int_type| **bitfieldInsert**\ (\ |vec_int_type| base, |vec_int_type| insert, int offset, int bits)
-| |vec_uint_type| **bitfieldInsert**\ (\ |vec_uint_type| base, |vec_uint_type| insert, int offset, int bits)
+|vec_uint_type| **bitfieldExtract**\ (\ |vec_uint_type| value, int offset, int bits)
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **bitfieldInsert**\ (\ |vec_uint_type| base, |vec_uint_type| insert, int offset, int bits)
 
     |componentwise|
 
@@ -3476,20 +3639,20 @@ Bitwise Function Descriptions
 
     .. warning::
         The result will be undefined if:
-         - offset or bits is negative
+         - offset or bits is negative.
          - if the sum of offset and bits is greater than the number of bits used to store the operand.
 
     :param base:
-        the integer into which to insert ``insert``.
+        The integer into which to insert ``insert``.
 
     :param insert:
-        the value of the bits to insert.
+        The value of the bits to insert.
 
     :param offset:
-        the index of the first bit to insert.
+        The index of the first bit to insert.
 
     :param bits:
-        the number of bits to insert.
+        The number of bits to insert.
 
     :return:
         ``base`` with inserted bits.
@@ -3505,8 +3668,11 @@ Bitwise Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_int_type| **bitfieldReverse**\ (\ |vec_int_type| value)
-| |vec_uint_type| **bitfieldReverse**\ (\ |vec_uint_type| value)
+|vec_int_type| **bitfieldReverse**\ (\ |vec_int_type| value)
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **bitfieldReverse**\ (\ |vec_uint_type| value)
 
     |componentwise|
 
@@ -3515,7 +3681,7 @@ Bitwise Function Descriptions
     The bit numbered n will be taken from bit (bits - 1) - n of ``value``, where bits is the total number of bits used to represent ``value``.
 
     :param value:
-        the value whose bits to reverse.
+        The value whose bits to reverse.
 
     :return:
         ``value`` but with its bits reversed.
@@ -3531,18 +3697,21 @@ Bitwise Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_int_type| **bitCount**\ (\ |vec_int_type| value)
-| |vec_uint_type| **bitCount**\ (\ |vec_uint_type| value)
+|vec_int_type| **bitCount**\ (\ |vec_int_type| value)
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **bitCount**\ (\ |vec_uint_type| value)
 
     |componentwise|
 
     Counts the number of 1 bits in an integer.
 
     :param value:
-        the value whose bits to count.
+        The value whose bits to count.
 
     :return:
-        the number of bits that are set to 1 in the binary representation of ``value``.
+        The number of bits that are set to 1 in the binary representation of ``value``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitCount.xhtml
 
@@ -3555,8 +3724,11 @@ Bitwise Function Descriptions
 
 .. rst-class:: classref-method
 
-| |vec_int_type| **findLSB**\ (\ |vec_int_type| value)
-| |vec_uint_type| **findLSB**\ (\ |vec_uint_type| value)
+|vec_int_type| **findLSB**\ (\ |vec_int_type| value)
+
+.. rst-class:: classref-method
+
+|vec_uint_type| **findLSB**\ (\ |vec_uint_type| value)
 
     |componentwise|
 
@@ -3565,10 +3737,10 @@ Bitwise Function Descriptions
     .. note:: If ``value`` is zero, -1 will be returned.
 
     :param value:
-        the value whose bits to scan.
+        The value whose bits to scan.
 
     :return:
-        the bit number of the least significant bit that is set to 1 in the binary representation of value.
+        The bit number of the least significant bit that is set to 1 in the binary representation of value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findLSB.xhtml
 
@@ -3582,6 +3754,9 @@ Bitwise Function Descriptions
 .. rst-class:: classref-method
 
 |vec_int_type| **findMSB**\ (\ |vec_int_type| value)
+
+.. rst-class:: classref-method
+
 |vec_uint_type| **findMSB**\ (\ |vec_uint_type| value)
 
     |componentwise|
@@ -3596,10 +3771,10 @@ Bitwise Function Descriptions
     .. note:: For a value of zero or negative 1, -1 will be returned.
 
     :param value:
-        the value whose bits to scan.
+        The value whose bits to scan.
 
     :return:
-        the bit number of the most significant bit that is set to 1 in the binary representation of value.
+        The bit number of the most significant bit that is set to 1 in the binary representation of value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/findMSB.xhtml
 
@@ -3621,16 +3796,16 @@ Bitwise Function Descriptions
     The 32 least significant bits of this product are returned in ``lsb`` and the 32 most significant bits are returned in ``msb``.
 
     :param x:
-        the first multiplicand.
+        The first multiplicand.
 
     :param y:
-        the second multiplicand.
+        The second multiplicand.
 
     :param msb:
-        the variable to receive the most significant word of the product.
+        The variable to receive the most significant word of the product.
 
     :param lsb:
-        the variable to receive the least significant word of the product.
+        The variable to receive the least significant word of the product.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/umulExtended.xhtml
 
@@ -3652,16 +3827,16 @@ Bitwise Function Descriptions
     The 32 least significant bits of this product are returned in ``lsb`` and the 32 most significant bits are returned in ``msb``.
 
     :param x:
-        the first multiplicand.
+        The first multiplicand.
 
     :param y:
-        the second multiplicand.
+        The second multiplicand.
 
     :param msb:
-        the variable to receive the most significant word of the product.
+        The variable to receive the most significant word of the product.
 
     :param lsb:
-        the variable to receive the least significant word of the product.
+        The variable to receive the least significant word of the product.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/umulExtended.xhtml
 
@@ -3684,13 +3859,13 @@ Bitwise Function Descriptions
     The value carry is .
 
     :param x:
-        the first operand
+        The first operand.
 
     :param y:
-        the second operand
+        The second operand.
 
     :param carry:
-        0 if the sum is less than 2\ :sup:`32` otherwise 1
+        0 if the sum is less than 2\ :sup:`32`, otherwise 1.
 
     :return:
         ``(x + y) % 2^32``.
@@ -3713,16 +3888,16 @@ Bitwise Function Descriptions
     Subtract unsigned integers and generate borrow.
 
     :param x:
-        the first operand
+        The first operand.
 
     :param y:
-        the second operand
+        The second operand.
 
     :param borrow:
-        0 if ``x`` ≥ ``y`` and 1 otherwise.
+        ``0`` if ``x >= y``, otherwise ``1``.
 
     :return:
-        the difference of ``x`` and ``y`` if non-negative, or 2\ :sup:`32` plus that difference otherwise.
+        The difference of ``x`` and ``y`` if non-negative, or 2\ :sup:`32` plus that difference otherwise.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/usubBorrow.xhtml
 
@@ -3745,10 +3920,10 @@ Bitwise Function Descriptions
         If this product is too large to be represented in the floating point type, the result is undefined.
 
     :param x:
-        the value to be used as a source of significand.
+        The value to be used as a source of significand.
 
     :param exp:
-        the value to be used as a source of exponent.
+        The value to be used as a source of exponent.
 
     :return:
         ``x * 2^exp``
@@ -3768,7 +3943,7 @@ Bitwise Function Descriptions
 
     |componentwise|
 
-    Extracts ``x`` into a floating-point significand in the range [0.5, 1.0) and in integral exponent of two, such that::
+    Extracts ``x`` into a floating-point significand in the range ``[0.5, 1.0)`` and in integral exponent of two, such that::
 
         x = significand * 2 ^ exponent
 
@@ -3777,13 +3952,13 @@ Bitwise Function Descriptions
     .. warning:: For a floating-point value that is an infinity or a floating-point NaN, the results are undefined.
 
     :param x:
-        the value from which significand and exponent are to be extracted.
+        The value from which significand and exponent are to be extracted.
 
     :param exp:
-        the variable into which to place the exponent of ``x``
+        The variable into which to place the exponent of ``x``.
 
     :return:
-        the significand of ``x``
+        The significand of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/frexp.xhtml
 
