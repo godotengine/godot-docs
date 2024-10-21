@@ -1816,3 +1816,21 @@ p + .classref-constant {
 #godot-giscus {
     margin-bottom: 1em;
 }
+
+/* To ensure all pages are reachable from the sidebar, we use the rubric 
+   directive to create fake headers instead of real semantic headers in some
+   index pages. These classes emulate the existing real header styles.*/
+
+/* class-fake-h1 is not needed, since that would be a page title. */
+.class-fake-h2 {
+    font-size: 150%;
+    font-family: var(--header-font-family);
+}
+
+.class-fake-h3 {
+    font-size: 125%;
+    font-family: var(--header-font-family);
+}
+
+/* class-fake-h4 and smaller are not needed, since the index pages only have two
+   levels of header nesting. */

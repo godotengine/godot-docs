@@ -11,6 +11,7 @@ sections. For instance, to learn about inputs, we recommend you to read
 :ref:`Inputs <toc-learn-features-inputs>`.
 
 .. rubric:: Programming languages
+   :class: class-fake-h2
 
 The sections below each focus on a given programming language.
 
