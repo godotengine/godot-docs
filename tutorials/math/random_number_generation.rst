@@ -144,16 +144,12 @@ varying by the deviation (1.0 by default):
  .. code-tab:: gdscript GDScript
 
     # Prints a random floating-point number from a normal distribution with a mean 0.0 and deviation 1.0.
-    var random = RandomNumberGenerator.new()
-    random.randomize()
-    print(random.randfn())
+    print(randfn(0.0, 1.0))
 
  .. code-tab:: csharp
 
-    // Prints a normally distributed floating-point number between 0.0 and 1.0.
-    var random = new RandomNumberGenerator();
-    random.Randomize();
-    GD.Print(random.Randfn());
+    // Prints a random floating-point number from a normal distribution with a mean 0.0 and deviation 1.0.
+    GD.Print(GD.Randfn(0.0, 1.0));
 
 :ref:`randf_range() <class_@GlobalScope_method_randf_range>` takes two arguments
 ``from`` and ``to``, and returns a random floating-point number between ``from``
@@ -165,6 +161,11 @@ and ``to``:
     # Prints a random floating-point number between -4 and 6.5.
     print(randf_range(-4, 6.5))
 
+ .. code-tab:: csharp
+
+    // Prints a random floating-point number between -4 and 6.5.
+    GD.Print(GD.RandRange(-4.0, 6.5));
+
 :ref:`RandomNumberGenerator.randi_range()
 <class_RandomNumberGenerator_method_randi_range>` takes two arguments ``from``
 and ``to``, and returns a random integer between ``from`` and ``to``:
@@ -173,15 +174,12 @@ and ``to``, and returns a random integer between ``from`` and ``to``:
  .. code-tab:: gdscript GDScript
 
     # Prints a random integer between -10 and 10.
-    var random = RandomNumberGenerator.new()
-    random.randomize()
-    print(random.randi_range(-10, 10))
+    print(randi_range(-10, 10))
 
  .. code-tab:: csharp
 
     // Prints a random integer number between -10 and 10.
-    random.Randomize();
-    GD.Print(random.RandiRange(-10, 10));
+    GD.Print(GD.RandRange(-10, 10));
 
 Get a random array element
 --------------------------
@@ -194,8 +192,6 @@ We can use random integer generation to get a random element from an array:
     var _fruits = ["apple", "orange", "pear", "banana"]
 
     func _ready():
-        randomize()
-
         for i in range(100):
             # Pick 100 fruits randomly.
             print(get_fruit())
@@ -213,8 +209,6 @@ We can use random integer generation to get a random element from an array:
 
     public override void _Ready()
     {
-        GD.Randomize();
-
         for (int i = 0; i < 100; i++)
         {
             // Pick 100 fruits randomly.
@@ -241,8 +235,6 @@ more logic to this method:
 
 
     func _ready():
-        randomize()
-
         # Pick 100 fruits randomly.
         for i in range(100):
             print(get_fruit())
@@ -270,8 +262,6 @@ more logic to this method:
 
     public override void _Ready()
     {
-        GD.Randomize();
-
         for (int i = 0; i < 100; i++)
         {
             // Pick 100 fruits randomly.
@@ -308,7 +298,7 @@ We can apply similar logic from arrays to dictionaries as well:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var metals = {
+    var _metals = {
         "copper": {"quantity": 50, "price": 50},
         "silver": {"quantity": 20, "price": 150},
         "gold": {"quantity": 3, "price": 500},
@@ -316,17 +306,40 @@ We can apply similar logic from arrays to dictionaries as well:
 
 
     func _ready():
-        randomize()
-
         for i in range(20):
             print(get_metal())
 
 
     func get_metal():
-        var random_metal = metals.values()[randi() % metals.size()]
+        var random_metal = _metals.values()[randi() % metals.size()]
         # Returns a random metal value dictionary every time the code runs.
         # The same metal may be selected multiple times in succession.
         return random_metal
+
+ .. code-tab:: csharp
+
+    private Godot.Collections.Dictionary<string, Godot.Collections.Dictionary<string, int>> _metals = new()
+    {
+        {"copper", new Godot.Collections.Dictionary<string, int>{{"quantity", 50}, {"price", 50}}},
+        {"silver", new Godot.Collections.Dictionary<string, int>{{"quantity", 20}, {"price", 150}}},
+        {"gold", new Godot.Collections.Dictionary<string, int>{{"quantity", 3}, {"price", 500}}},
+    };
+
+    public override void _Ready()
+    {
+        for (int i = 0; i < 20; i++)
+        {
+            GD.Print(GetMetal());
+        }
+    }
+
+    public Godot.Collections.Dictionary<string, int> GetMetal()
+    {
+        var (_, randomMetal) = _metals.ElementAt((int)(GD.Randi() % _metals.Count));
+        // Returns a random metal value dictionary every time the code runs.
+        // The same metal may be selected multiple times in succession.
+        return randomMetal;
+    }
 
 .. _doc_random_number_generation_weighted_random_probability:
 
@@ -341,8 +354,6 @@ floating-point number between 0.0 and 1.0. We can use this to create a
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        randomize()
-
         for i in range(100):
             print(get_item_rarity())
 
@@ -364,8 +375,6 @@ floating-point number between 0.0 and 1.0. We can use this to create a
 
     public override void _Ready()
     {
-        GD.Randomize();
-
         for (int i = 0; i < 100; i++)
         {
             GD.Print(GetItemRarity());
@@ -405,7 +414,10 @@ could get the same fruit three or more times in a row.
 
 You can accomplish this using the *shuffle bag* pattern. It works by removing an
 element from the array after choosing it. After multiple selections, the array
-ends up empty. When that happens, you reinitialize it to its default value::
+ends up empty. When that happens, you reinitialize it to its default value:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var _fruits = ["apple", "orange", "pear", "banana"]
     # A copy of the fruits array so we can restore the original value into `fruits`.
@@ -413,7 +425,6 @@ ends up empty. When that happens, you reinitialize it to its default value::
 
 
     func _ready():
-        randomize()
         _fruits_full = _fruits.duplicate()
         _fruits.shuffle()
 
@@ -430,8 +441,44 @@ ends up empty. When that happens, you reinitialize it to its default value::
         # Get a random fruit, since we shuffled the array,
         # and remove it from the `_fruits` array.
         var random_fruit = _fruits.pop_front()
-        # Prints "apple", "orange", "pear", or "banana" every time the code runs.
+        # Returns "apple", "orange", "pear", or "banana" every time the code runs, removing it from the array.
+        # When all fruit are removed, it refills the array.
         return random_fruit
+
+ .. code-tab:: csharp
+
+    private Godot.Collections.Array<string> _fruits = new() { "apple", "orange", "pear", "banana" };
+    // A copy of the fruits array so we can restore the original value into `fruits`.
+    private Godot.Collections.Array<string> _fruitsFull;
+
+    public override void _Ready()
+    {
+        _fruitsFull = _fruits.Duplicate();
+        _fruits.Shuffle();
+
+        for (int i = 0; i < 100; i++)
+        {
+            GD.Print(GetFruit());
+        }
+    }
+
+    public string GetFruit()
+    {
+        if(_fruits.Count == 0)
+        {
+            // Fill the fruits array again and shuffle it.
+            _fruits = _fruitsFull.Duplicate();
+            _fruits.Shuffle();
+        }
+
+        // Get a random fruit, since we shuffled the array,
+        string randomFruit = _fruits[0];
+        // and remove it from the `_fruits` array.
+        _fruits.RemoveAt(0);
+        // Returns "apple", "orange", "pear", or "banana" every time the code runs, removing it from the array.
+        // When all fruit are removed, it refills the array.
+        return randomFruit;
+    }
 
 When running the above code, there is a chance to get the same fruit twice in a
 row. Once we picked a fruit, it will no longer be a possible return value unless
@@ -456,7 +503,6 @@ terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
     var _noise = FastNoiseLite.new()
 
     func _ready():
-        randomize()
         # Configure the FastNoiseLite instance.
         _noise.noise_type = FastNoiseLite.NoiseType.TYPE_SIMPLEX_SMOOTH
         _noise.seed = randi()
@@ -474,9 +520,8 @@ terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
 
     public override void _Ready()
     {
-        GD.Randomize();
         // Configure the FastNoiseLite instance.
-        _noise.NoiseType = NoiseTypeEnum.SimplexSmooth;
+        _noise.NoiseType = FastNoiseLite.NoiseTypeEnum.SimplexSmooth;
         _noise.Seed = (int)GD.Randi();
         _noise.FractalOctaves = 4;
         _noise.Frequency = 1.0f / 20.0f;
