@@ -71,9 +71,10 @@ in future Godot releases:
   manually change it to GodotPhysics. There are no plans to re-add Bullet physics
   in core, but a third-party add-on could be created for it thanks to
   GDExtension.
-- Rendering in 2D is no longer performed in HDR, which means "overbright"
-  modulate values have no visible effect. This is planned to be restored at some
-  point in the future.
+- By default, rendering in 2D is no longer performed in HDR, which means
+  "overbright" modulate values have no visible effect. Since Godot 4.2, you can
+  enable the project setting :ref:`HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+  to perform 2D rendering in HDR. See also :ref:`doc_environment_and_post_processing_using_glow_in_2d`.
 - While rendering still happens in HDR in 3D when using the Forward Plus or
   Forward Mobile backends, Viewports cannot return HDR data anymore. This is
   planned to be restored at some point in the future.
