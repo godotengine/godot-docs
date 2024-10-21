@@ -99,60 +99,106 @@ is usually:
 * **y**: Phase during lifetime (``0.0`` to ``1.0``).
 * **z**: Animation frame.
 
-+--------------------------------+----------------------------------------------------+
-| Built-in                       | Description                                        |
-+================================+====================================================+
-| in mat4 **MODEL_MATRIX**       | Local space to world space transform. World space  |
-|                                | is the coordinates you normally use in the editor. |
-+--------------------------------+----------------------------------------------------+
-| in mat4 **CANVAS_MATRIX**      | World space to canvas space transform. In canvas   |
-|                                | space the origin is the upper-left corner of the   |
-|                                | screen and coordinates ranging from ``(0.0, 0.0)`` |
-|                                | to viewport size.                                  |
-+--------------------------------+----------------------------------------------------+
-| in mat4 **SCREEN_MATRIX**      | Canvas space to clip space. In clip space          |
-|                                | coordinates ranging from ``(-1.0, -1.0)`` to       |
-|                                | ``(1.0, 1.0).``                                    |
-+--------------------------------+----------------------------------------------------+
-| in int  **INSTANCE_ID**        | Instance ID for instancing.                        |
-+--------------------------------+----------------------------------------------------+
-| in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                              |
-+--------------------------------+----------------------------------------------------+
-| in bool **AT_LIGHT_PASS**      | Always ``false``.                                  |
-+--------------------------------+----------------------------------------------------+
-| in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.       |
-|                                | For a Sprite2D with a texture of size 64x32px,     |
-|                                | **TEXTURE_PIXEL_SIZE** = ``vec2(1/64, 1/32)``      |
-+--------------------------------+----------------------------------------------------+
-| inout vec2 **VERTEX**          | Vertex position, in local space.                   |
-+--------------------------------+----------------------------------------------------+
-| in int **VERTEX_ID**           | The index of the current vertex in the vertex      |
-|                                | buffer.                                            |
-+--------------------------------+----------------------------------------------------+
-| inout vec2 **UV**              | Normalized texture coordinates. Range from ``0.0`` |
-|                                | to ``1.0``.                                        |
-+--------------------------------+----------------------------------------------------+
-| inout vec4 **COLOR**           | Color from vertex primitive.                       |
-+--------------------------------+----------------------------------------------------+
-| inout float **POINT_SIZE**     | Point size for point drawing.                      |
-+--------------------------------+----------------------------------------------------+
-| in vec4 **CUSTOM0**            | Custom value from vertex primitive.                |
-+--------------------------------+----------------------------------------------------+
-| in vec4 **CUSTOM1**            | Custom value from vertex primitive.                |
-+--------------------------------+----------------------------------------------------+
++--------------------------------+----------------------------------------------------------------+
+| Built-in                       | Description                                                    |
++================================+================================================================+
+| in mat4 **MODEL_MATRIX**       | Local space to world space transform. World space              |
+|                                | is the coordinates you normally use in the editor.             |
++--------------------------------+----------------------------------------------------------------+
+| in mat4 **CANVAS_MATRIX**      | World space to canvas space transform. In canvas               |
+|                                | space the origin is the upper-left corner of the               |
+|                                | screen and coordinates ranging from ``(0.0, 0.0)``             |
+|                                | to viewport size.                                              |
++--------------------------------+----------------------------------------------------------------+
+| in mat4 **SCREEN_MATRIX**      | Canvas space to clip space. In clip space                      |
+|                                | coordinates ranging from ``(-1.0, -1.0)`` to                   |
+|                                | ``(1.0, 1.0).``                                                |
++--------------------------------+----------------------------------------------------------------+
+| in int  **INSTANCE_ID**        | Instance ID for instancing.                                    |
++--------------------------------+----------------------------------------------------------------+
+| in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                                          |
++--------------------------------+----------------------------------------------------------------+
+| in bool **AT_LIGHT_PASS**      | Always ``false``.                                              |
++--------------------------------+----------------------------------------------------------------+
+| in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.                   |
+|                                | For a Sprite2D with a texture of size 64x32px,                 |
+|                                | **TEXTURE_PIXEL_SIZE** = ``vec2(1/64, 1/32)``                  |
++--------------------------------+----------------------------------------------------------------+
+| inout vec2 **VERTEX**          | Vertex position, in local space.                               |
++--------------------------------+----------------------------------------------------------------+
+| in int **VERTEX_ID**           | The index of the current vertex in the vertex                  |
+|                                | buffer.                                                        |
++--------------------------------+----------------------------------------------------------------+
+| inout vec2 **UV**              | Normalized texture coordinates. Range from ``0.0``             |
+|                                | to ``1.0``.                                                    |
++--------------------------------+----------------------------------------------------------------+
+| inout vec4 **COLOR**           | Color from vertex primitive multiplied by CanvasItem's         |
+|                                | :ref:`modulate<class_CanvasItem_property_modulate>`            |
+|                                | multiplied by CanvasItem's                                     |
+|                                | :ref:`self_modulate<class_CanvasItem_property_self_modulate>`. |
++--------------------------------+----------------------------------------------------------------+
+| inout float **POINT_SIZE**     | Point size for point drawing.                                  |
++--------------------------------+----------------------------------------------------------------+
+| in vec4 **CUSTOM0**            | Custom value from vertex primitive.                            |
++--------------------------------+----------------------------------------------------------------+
+| in vec4 **CUSTOM1**            | Custom value from vertex primitive.                            |
++--------------------------------+----------------------------------------------------------------+
+
+
 
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
 
-Certain Nodes (for example, :ref:`Sprite2Ds <class_Sprite2D>`) display a texture
-by default. However, when a custom ``fragment()`` function is attached to these nodes,
-the texture lookup needs to be done manually. Godot provides the texture color
-in the ``COLOR`` built-in variable multiplied by the node's color. To read the
-texture color by itself, you can use:
+COLOR and TEXTURE
+~~~~~~~~~~~~~~~~~
+
+The built-in variable ``COLOR`` is used for a few things:
+
+  - In the ``vertex()`` function, ``COLOR`` contains the color from the vertex
+    primitive multiplied by the CanvasItem's
+    :ref:`modulate<class_CanvasItem_property_modulate>` multiplied by the
+    CanvasItem's :ref:`self_modulate<class_CanvasItem_property_self_modulate>`.
+  - In the ``fragment()`` function, the input value ``COLOR`` is that same value
+    multiplied by the color from the default ``TEXTURE`` (if present).
+  - In the ``fragment()`` function, ``COLOR`` is also the final output.
+
+Certain nodes (for example, :ref:`Sprite2D <class_Sprite2D>`) display a texture
+by default, for example :ref:`texture <class_Sprite2D_property_texture>`. When
+using a custom ``fragment()`` function, you have a few options on how to sample
+this texture.
+
+To read only the contents of the default texture, ignoring the vertex ``COLOR``:
 
 .. code-block:: glsl
 
-  COLOR = texture(TEXTURE, UV);
+  void fragment() {
+    COLOR = texture(TEXTURE, UV);
+  }
+
+To read the contents of the default texture multiplied by vertex ``COLOR``:
+
+.. code-block:: glsl
+
+  void fragment() {
+    // Equivalent to an empty fragment() function, since COLOR is also the output variable.
+    COLOR = COLOR;
+  }
+
+To read only the vertex ``COLOR`` in ``fragment()``, ignoring the main texture,
+you must pass ``COLOR`` as a varying, then read it in ``fragment()``:
+
+.. code-block:: glsl
+
+  varying vec4 vertex_color;
+  void vertex() {
+    vertex_color = COLOR;
+  }
+  void fragment() {
+    COLOR = vertex_color;
+  }
+
+NORMAL
+~~~~~~
 
 Similarly, if a normal map is used in the :ref:`CanvasTexture <class_CanvasTexture>`, Godot uses
 it by default and assigns its value to the built-in ``NORMAL`` variable. If you are using a normal
@@ -178,7 +224,7 @@ it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE**              | Normalized pixel size of default 2D texture.                  |
 |                                             | For a Sprite2D with a texture of size 64x32px,                |
-|                                             | **TEXTURE_PIXEL_SIZE** = ``vec2(1/64, 1/32)``                 |
+|                                             | ``TEXTURE_PIXEL_SIZE`` = ``vec2(1/64, 1/32)``                 |
 +---------------------------------------------+---------------------------------------------------------------+
 | in bool **AT_LIGHT_PASS**                   | Always ``false``.                                             |
 +---------------------------------------------+---------------------------------------------------------------+
@@ -209,7 +255,7 @@ it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D
 | inout vec3 **LIGHT_VERTEX**                 | Same as ``VERTEX`` but can be written to alter lighting.      |
 |                                             | Z component represents height.                                |
 +---------------------------------------------+---------------------------------------------------------------+
-| inout vec4 **COLOR**                        | Color from the ``vertex()`` function multiplied by the        |
+| inout vec4 **COLOR**                        | ``COLOR`` from the ``vertex()`` function multiplied by the    |
 |                                             | ``TEXTURE`` color. Also output color value.                   |
 +---------------------------------------------+---------------------------------------------------------------+
 

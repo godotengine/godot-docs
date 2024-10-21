@@ -11,7 +11,7 @@ Exporting for macOS
 
 macOS apps exported with the official export templates are exported as a single "Universal 2" binary ``.app`` bundle, a folder with a specific structure which stores the executable, libraries and all the project files.
 This bundle can be exported as is, packed in a ZIP archive or DMG disk image (only supported when exporting from a computer running macOS).
-`Universal binaries for macOS support both Intel x86_64 and ARM64 (Apple silicon, i.e. M1) architectures <https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary>`__.
+`Universal binaries for macOS support both Intel x86_64 and ARM64 (Apple Silicon) architectures <https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary>`__.
 
 .. warning::
     Due to file system limitations, raw ``.app`` bundles exported from Windows lack ``executable`` flag and won't run on macOS.

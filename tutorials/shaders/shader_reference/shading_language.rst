@@ -86,6 +86,14 @@ Most GLSL ES 3.0 datatypes are supported:
 |                      | Only supported in Forward+ and Mobile, not Compatibility.                       |
 +----------------------+---------------------------------------------------------------------------------+
 
+.. warning::
+
+    Local variables are not initialized to a default value such as ``0.0``. If
+    you use a variable without assigning it first, it will contain whatever
+    value was already present at that memory location, and unpredictable visual
+    glitches will appear. However, uniforms and varyings are initialized to a
+    default value.
+
 Comments
 ~~~~~~~~
 
@@ -637,13 +645,23 @@ Example below:
         result = a + b;
     }
 
-.. note::
+Function overloading is supported. You can define multiple functions with the same
+name, but different arguments. Note that `implicit casting <Casting_>`_ in overloaded
+function calls is not allowed, such as from ``int`` to ``float`` (``1`` to ``1.0``).
 
-    Unlike GLSL, Godot's shader language does **not** support function
-    overloading. This means that a function cannot be defined several times with
-    different argument types or numbers of arguments. As a workaround, use
-    different names for functions that accept a different number of arguments or
-    arguments of different types.
+.. code-block:: glsl
+
+    vec3 get_color(int t) {
+        return vec3(1, 0, 0); // Red color.
+    }
+    vec3 get_color(float t) {
+        return vec3(0, 1, 0); // Green color.
+    }
+    void fragment() {
+        vec3 red = get_color(1);
+        vec3 green = get_color(1.0);
+    }
+
 
 Varyings
 --------
@@ -1061,10 +1079,6 @@ Per-instance uniforms
 .. note::
 
     Per-instance uniforms are only available in ``spatial`` (3D) shaders.
-
-.. note::
-
-    Per-instance uniforms are not supported when using the Compatibility renderer.
 
 Sometimes, you want to modify a parameter on each node using the material. As an
 example, in a forest full of trees, when you want each tree to have a slightly
