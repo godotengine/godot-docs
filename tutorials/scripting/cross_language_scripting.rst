@@ -171,6 +171,29 @@ If that's impossible, you'll see the following error: ``Invalid call. Nonexisten
     my_csharp_node.PrintArray(["a", "b", "c"]) # a, b, c
     my_csharp_node.PrintArray([1, 2, 3]) # 1, 2, 3
 
+Receiving C# collections from GDScript
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+When passing or returning collections from C# methods, types from the `System.Collections` and `System.Collections.Generic` namespaces are not compatible with Godot's marshalling system. For example, this method will not be visible to GDScript, and Godot will throw the "Invalid call" error:
+
+.. code-block:: csharp
+
+    public System.Collections.Generic.List<string> GetStrings() { ... }
+
+To ensure your collections can be used in GDScript, use Godot's collection types from the `Godot.Collections` namespace. The types in your collection also must be :ref:`Variant-compatible <c_sharp_variant_compatible_types>`. This method *will* be visible to GDScript:
+
+.. code-block:: csharp
+
+    public Godot.Collections.Array<string> GetStrings() { ... }
+
+Alternatively, you can use raw arrays, which are also compatible with the marshalling system. This method will also be visible to GDScript:
+
+.. code-block:: csharp
+
+    public string[] GetStrings() { ... }
+
+
+For more details on how to choose the right C# collection for your use case, see :ref:`C# collections<doc_c_sharp_collections>`.
+
 Calling GDScript methods from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
