@@ -917,7 +917,7 @@ in that order.
 Static typing
 -------------
 
-Since Godot 3.1, GDScript supports :ref:`optional static typing<doc_gdscript_static_typing>`.
+GDScript supports :ref:`optional static typing<doc_gdscript_static_typing>`.
 
 Declared types
 ~~~~~~~~~~~~~~

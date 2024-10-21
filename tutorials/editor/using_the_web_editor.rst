@@ -5,8 +5,8 @@
 Using the Web editor
 ====================
 
-Since Godot 3.3, there is a `Web editor <https://editor.godotengine.org/>`__
-you can use to work on new or existing projects.
+There is a `Web editor <https://editor.godotengine.org/>`__ you can use to work
+on new or existing projects.
 
 .. note::
 
