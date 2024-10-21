@@ -178,6 +178,17 @@ when editing.
 
     @export_exp_easing var transition_speed
 
+Export with Suffix Hint
+-----------------------
+
+Display a unit hint suffix for exported variables. Works with numeric types, such as floats or vectors:
+
+::
+
+    @export_custom(PROPERTY_HINT_NONE, "suffix:m/s\u00b2") var gravity = 9.8
+    @export_custom(PROPERTY_HINT_NONE, "suffix:m/s") var velocity: Vector3
+
+
 Colors
 ------
 
