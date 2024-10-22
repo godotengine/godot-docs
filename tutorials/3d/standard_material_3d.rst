@@ -295,13 +295,10 @@ Specifies how the specular blob will be rendered. The specular blob
 represents the shape of a light source reflected in the object.
 
 * **SchlickGGX:** The most common blob used by PBR 3D engines nowadays.
-* **Blinn:** Common in previous-generation engines.
-  Not worth using nowadays, but left here for the sake of compatibility.
-* **Phong:** Same as above.
 * **Toon:** Creates a toon blob, which changes size depending on roughness.
 * **Disabled:** Sometimes the blob gets in the way. Begone!
 
-.. image:: img/spatial_material7.png
+.. image:: img/spatial_material7.webp
 
 Disable Ambient Light
 ~~~~~~~~~~~~~~~~~~~~~
