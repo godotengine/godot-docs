@@ -69,11 +69,12 @@ Click on the ``SpriteFrames`` you just created to open the "SpriteFrames" panel:
 
 .. image:: img/spriteframes_panel.webp
 
-On the left is a list of animations. Click the "default" one and rename it to
-"walk". Then click the "Add Animation" button to create a second animation named
-"up". Find the player images in the "FileSystem" tab - they're in the ``art``
+On the left is a list of animations. Click the ``default`` one and rename it to
+``walk``. Then click the "Add Animation" button to create a second animation named
+``up``. Find the player images in the FileSystem dock - they're in the ``art``
 folder you unzipped earlier. Drag the two images for each animation, named
-``playerGrey_walk[1/2]`` and ``playerGrey_walk[2/2]``, into the "Animation Frames"
+``playerGrey_walk1``, ``playerGrey_walk2`` (for ``walk``),
+``playerGrey_up1``, and ``playerGrey_up2`` (for ``up``) to the **Animation Frames**
 side of the panel for the corresponding animation:
 
 .. image:: img/spriteframes_panel2.webp
