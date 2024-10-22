@@ -24,7 +24,7 @@ Code signing
 Godot is capable of automatic code signing on export. To do this you must have the
 ``Windows SDK`` (on Windows) or `osslsigncode <https://github.com/mtrojnar/osslsigncode>`__
 (on any other OS) installed. You will also need a package signing certificate,
-information on creating one can be found `here <https://docs.microsoft.com/en-us/windows/win32/appxpkg/how-to-create-a-package-signing-certificate?redirectedfrom=MSDN>`__.
+information on creating one can be found `here <https://learn.microsoft.com/en-us/windows/msix/package/create-certificate-package-signing>`__.
 
 .. warning::
 
