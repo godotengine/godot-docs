@@ -20,7 +20,7 @@ Signals for our script
 We are introducing 3 signals to our script so that our game can add further logic:
 
 - ``focus_lost`` is emitted when the player takes off their headset or when the player enters the menu system of the headset.
-- ``focus_gained`` is emitted when the player puts their headset back on or exists the menu system and returns to the game.
+- ``focus_gained`` is emitted when the player puts their headset back on or exits the menu system and returns to the game.
 - ``pose_recentered`` is emitted when the headset requests the players position to be reset.
 
 Our game should react accordingly to these signals.
