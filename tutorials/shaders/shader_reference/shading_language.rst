@@ -1169,6 +1169,4 @@ Built-in functions
 ------------------
 
 A large number of built-in functions are supported, conforming to GLSL ES 3.0.
-See the following page for details:
-
-- :ref:`Built-In Functions <doc_shader_functions>`
+See the :ref:`Built-in functions <doc_shader_functions>` page for details.
