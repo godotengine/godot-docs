@@ -185,6 +185,10 @@ shader, this value can be used as desired.
 |                                        | (this is ``true`` in the Compatibility renderer,       |
 |                                        | ``false`` in Forward+ and Forward Mobile).             |
 +----------------------------------------+--------------------------------------------------------+
+| in float **CLIP_SPACE_FAR**            | Clip space far ``z`` value.                            |
+|                                        | In the Forward+ or Mobile renderers, it's ``0.0``.     |
+|                                        | In the Compatibility renderer, it's ``-1.0``.          |
++----------------------------------------+--------------------------------------------------------+
 | in int **INSTANCE_ID**                 | Instance ID for instancing.                            |
 +----------------------------------------+--------------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**            | Instance custom data (for particles, mostly).          |
@@ -287,6 +291,10 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in bool **OUTPUT_IS_SRGB**             | ``true`` when output is in sRGB color space (this is ``true`` in the Compatibility renderer,     |
 |                                        | ``false`` in Forward+ and Forward Mobile).                                                       |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
+| in float **CLIP_SPACE_FAR**            | Clip space far ``z`` value.                                                                      |
+|                                        | In the Forward+ or Mobile renderers, it's ``0.0``.                                               |
+|                                        | In the Compatibility renderer, it's ``-1.0``.                                                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **MODEL_MATRIX**               | Model/local space to world space transform.                                                      |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -487,6 +495,10 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 | in bool **OUTPUT_IS_SRGB**        | ``true`` when output is in sRGB color space.                           |
 |                                   | This is ``true`` in the Compatibility renderer,                        |
 |                                   | ``false`` in Forward+ and Forward Mobile.                              |
++-----------------------------------+------------------------------------------------------------------------+
+| in float **CLIP_SPACE_FAR**       | Clip space far ``z`` value.                                            |
+|                                   | In the Forward+ or Mobile renderers, it's ``0.0``.                     |
+|                                   | In the Compatibility renderer, it's ``-1.0``.                          |
 +-----------------------------------+------------------------------------------------------------------------+
 | out vec3 **DIFFUSE_LIGHT**        | Diffuse light result.                                                  |
 +-----------------------------------+------------------------------------------------------------------------+
