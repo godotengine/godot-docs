@@ -335,7 +335,8 @@ SDF functions
 
 There are a few additional functions implemented to sample an automatically
 generated Signed Distance Field texture. These functions available for the ``fragment()``
-and ``light()`` functions of CanvasItem shaders.
+and ``light()`` functions of CanvasItem shaders. Custom functions may also use them as long
+as they called from supported functions.
 
 The signed distance field is generated from :ref:`class_LightOccluder2D` nodes
 present in the scene with the **SDF Collision** property enabled (which is the

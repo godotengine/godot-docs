@@ -597,8 +597,8 @@ information.
 Discarding
 ----------
 
-Fragment and light functions can use the ``discard`` keyword. If used, the
-fragment is discarded and nothing is written.
+Fragment, light, and custom functions (called from fragment or light) can use the
+``discard`` keyword. If used, the fragment is discarded and nothing is written.
 
 Beware that ``discard`` has a performance cost when used, as it will prevent the
 depth prepass from being effective on any surfaces using the shader. Also, a
