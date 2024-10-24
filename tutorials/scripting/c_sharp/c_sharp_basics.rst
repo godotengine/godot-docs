@@ -435,3 +435,234 @@ The following tools may be used for performance and memory profiling of your man
 - Visual Studio.
 
 Profiling managed and unmanaged code at once is possible with both JetBrains tools and Visual Studio, but limited to Windows.
+
+Using ``async``/``await``
+-------------------------
+
+You might face a scenario where you must ``await`` a method call.
+You will notice that when you use ``await``, you are required to mark the method you use it in as ``async``, 
+and change the return type to an awaitable type, such as ``Task`` or ``Task<T>``. 
+Consequently, you must call your now ``async`` method using ``await``, 
+which propagates the problem all the way up the call chain.
+This is why many people compare ``async``/``await`` to a "zombie virus", 
+because it tends to spread once introduced.
+
+In Godot, the conclusion to this spread is the entry point methods of a node, such as ``_Ready()`` or ``_Process()``.
+You will notice that the return types of these methods are ``void`` rather than ``Task``.
+It is considered conventional wisdom in C# to avoid ``async void`` at all times, with the exception of event handlers.
+The problem is that it is impossible to change the signatures of these methods since they are defined by the classes they inherit.
+
+There are a couple options to address this problem, but each option comes with its own caveats and considerations. 
+To compare these options, we will work with the following script:
+
+.. code-block:: csharp
+
+    using Godot;
+    using System;
+    using System.Threading.Tasks;
+
+    public partial class AsyncTestNode : Node
+    {
+        private int _taskCount = 0;
+        private DateTime start;
+        public override void _Ready()
+        {
+            start = DateTime.Now;
+        }
+    
+        public override void _Process(double delta)
+        {
+
+        }
+
+        // Prints the amount of time since _Ready started, the current thread, and the name of the calling method
+        // It prints this once when DoStuffAsync is first called, then once again after `duration` in seconds
+        private async Task DoStuffAsync(double duration, string methodName)
+        {
+            var taskId = ++_taskCount;
+            PrintCurrentThread($"Task {taskId} started from {methodName}");
+            await Task.Delay(TimeSpan.FromSeconds(duration));
+            PrintCurrentThread($"Task {taskId} completed");
+        }
+    
+        private void PrintCurrentThread(string info)
+        {
+            var timeStamp = DateTime.Now - start;
+            GD.PrintT(timeStamp.ToString(@"mm\:ss\.ff"), $"Thread: {System.Environment.CurrentManagedThreadId}", info);
+        }
+    }
+
+The first option is to start the task through the Task factory.
+
+.. code-block:: csharp
+
+    // This function can be put in a global static class for convenience
+    public static Task StartTaskFromFactory(Func<Task> newTask)
+    {
+        return Task.Factory.StartNew(newTask,
+                                    CancellationToken.None, 
+                                    TaskCreationOptions.None, 
+                                    TaskScheduler.FromCurrentSynchronizationContext());
+    }
+
+    public override void _Ready()
+    {
+        start = DateTime.Now;
+
+        StartTaskFromFactory(async () => await DoStuffAsync(.5, nameof(_Ready)));
+    }
+
+    public override void _Process(double delta)
+    {
+        if (_taskCount < 3)
+            StartTaskFromFactory(async () => await DoStuffAsync(.5, nameof(_Process)));
+    }
+
+The second option is to mark the entry point method as async anyway.
+
+.. code-block:: csharp
+    
+    public override async void _Ready()
+    {
+        start = DateTime.Now;
+        await DoStuffAsync(.5, nameof(_Ready));
+    }
+
+
+    public override async void _Process(double delta)
+    {
+        if (_taskCount < 3)
+            await DoStuffAsync(.5, nameof(_Process));
+    }
+
+Both the manual task starting method and the ``async void`` method 
+behave identically to an equivalent script written in GDScript 
+that uses its version of the ``await`` keyword; 
+the method pauses once it reaches the ``await``-ed method call.
+The game loop will run until the task completes, at which point execution will continue on the main thread.
+
+Let's look at the output from the above code:
+
+.. code-block::
+
+    00:00.00	Thread: 1	Task 1 started from _Ready
+    00:00.02	Thread: 1	Task 2 started from _Process
+    00:00.03	Thread: 1	Task 3 started from _Process
+    00:00.50	Thread: 1	Task 1 completed
+    00:00.53	Thread: 1	Task 2 completed
+    00:00.53	Thread: 1	Task 3 completed
+
+The first observation from the output is that the game loop continues 
+without waiting for the completion of the ``_Ready()`` method. 
+This continuation can introduce issues, especially if methods like ``_Process()`` 
+rely on variables or objects that get initialized only after the ``await`` call in ``_Ready()``.
+Such asynchronous timing problems are termed `Race Condition <https://en.wikipedia.org/wiki/Race_condition#In_software/>`_, 
+which is one of the main hazards when working with asynchronous code.
+To avoid errors due to race conditions, be sure to check that values are initialized before you use them, 
+and use ``IsInstanceValid()`` after you ``await`` a function.
+
+Here is a pattern you can adopt to avoid race conditions:
+
+.. code-block:: csharp
+
+    public partial class SampleAsyncNode : Node
+    {
+        [Signal] public delegate void InitializedEventHandler();
+        [Export] public int EntityID { get; set; } = 1;
+    
+        readonly SomeCustomRepository _db = new();
+        private int _health;
+        private bool _init;
+    
+        // We will check IsInvalid after we await async methods
+        // Otherwise we risk the continuation running in a disposed context
+        private bool IsInvalid => !IsInstanceValid(this) || this.IsQueuedForDeletion();
+    
+        public override async void _Ready()
+        {
+            var entity = await _db.FindAsync(EntityID);
+    
+            // Even though we are still in _Ready(), we need to check IsInvalid
+            // It's possible that this node was freed by its parent, or some other source while awaiting
+            if (IsInvalid)
+                return;
+    
+            _health = entity.Health;
+            _init = true;
+            EmitSignal(SignalName.Initialized);
+        }
+    
+        public async Task DealDamage(int damage)
+        {
+            // DealDamage depends on _health being inititalized
+            // Awaiting Initialized will cause all calls to DealDamage to queue up
+            // Once Initialized is emitted, all queued DealDamage calls will continue at once
+            await ToSignal(this, SignalName.Initialized);
+    
+            // If you don't want to queue calls while waiting for initialization, just return if not initialized
+            // if (!_init)
+            //     return;
+    
+            if (IsInvalid)
+                return;
+    
+            _health -= damage;
+    
+            // If the number of queued calls to DealDamage is greater than the initial value of _health...
+            // This line will free the node before all calls to DealDamage are continued
+            // That is why it is important to check IsInvalid after awaiting
+            if (_health < 0)
+                QueueFree();
+        }
+    
+        public override void _ExitTree()
+        {
+            // If this unit was freed before initialization completed...
+            // Emit the Initialized signal so that everything awaiting it will be released
+            if (!_init)
+                EmitSignal(SignalName.Initialized);
+    
+            _db.Dispose();
+        }
+    }
+
+The third option is to execute the ``async`` method synchronously. 
+This is most commonly done when you need to use an asynchronous 
+method from a third party library that has no synchronous equivalent, 
+and it is not feasible to convert everything upstream to ``async``.
+
+.. code-block:: csharp
+
+    public override void _Ready()
+    {
+        start = DateTime.Now;
+    
+        Task.Run(async () => await DoStuffAsync(.5, nameof(_Ready))).GetAwaiter().GetResult();
+    }
+    
+    public override void _Process(double delta)
+    {
+        if (_taskCount < 3)
+            Task.Run(async () => await DoStuffAsync(.5, nameof(_Process))).GetAwaiter().GetResult();
+    }
+
+Let's look at the output from the above code:
+
+.. code-block::
+
+    00:00.00	Thread: 4	Task 1 started from _Ready
+    00:00.50	Thread: 4	Task 1 completed
+    00:00.52	Thread: 4	Task 2 started from _Process
+    00:01.02	Thread: 4	Task 2 completed
+    00:01.03	Thread: 4	Task 3 started from _Process
+    00:01.53	Thread: 4	Task 3 completed
+
+The output from running the tasks synchronously shows that 
+the tasks executed in the expected order for synchronous operations. 
+The output also shows that the code was executed on Thread 4, 
+rather than Thread 1 like in the first two options.
+This is important to keep in mind, because any code that is not 
+executed on the main thread (Thread 1) cannot interact with the scene tree, as it is not thread safe.
+You should use ``CallDeferred``/``SetDeferred``, ``CallThreadSafe``/``SetThreadSafe``, 
+or ``CallDeferredThreadGroup``/``SetDeferredThreadGroup`` to interact with thread 
+safe objects or APIs from threads other than the main thread.
