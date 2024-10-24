@@ -15,8 +15,7 @@ format (text-based ``.po`` and compiled ``.mo`` since Godot 4.0).
 Advantages
 ----------
 
-- gettext is a standard format, which can be edited using any text editor
-  or GUI editors such as `Poedit <https://poedit.net/>`_.
+- gettext is a standard format, which can be edited using any text editor or GUI editors such as `Poedit <https://poedit.net/>`_. Usage tutorial could found here: :ref:`doc_translating_using_poedit`.
 - gettext is supported by translation platforms such as
   `Transifex <https://www.transifex.com/>`_ and `Weblate <https://weblate.org/>`_,
   which makes it easier for people to collaborate to localization.
