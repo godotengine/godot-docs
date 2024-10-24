@@ -13,6 +13,12 @@ Godot provides the following objects and classes for 2D navigation:
 
     The AStar2D class is best suited for cell-based 2D gameplay that does not require actors to reach any possible position within an area but only predefined, distinct positions.
 
+- :ref:`AstarGrid2D<class_AstarGrid2D>`
+    ``AstarGrid2D`` objects provide an option to find the shortest path between two points on a partial 2D grid.
+
+    The AStarGrid2D class is best suited for cell-based 2D gameplay that only require actors to move between distinct positions on a grid. 
+    AStarGrid2D is better used over AStar2D when applicable as it only requires the region of the grid to be set, rather than manually creating and connecting individual points.
+
 - :ref:`NavigationServer2D<class_NavigationServer2D>`
     ``NavigationServer2D`` provides a powerful server API to find the shortest path between two positions on an area defined by a navigation mesh.
 
