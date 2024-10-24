@@ -201,6 +201,8 @@ To rotate relative to object space (the node's own transform), use the following
     // Rotate around the object's local X axis by 0.1 radians.
     RotateObjectLocal(new Vector3(1, 0, 0), 0.1f);
 
+The axis should be defined in the local coordinate system of the object. For example, to rotate around the object's local X, Y, or Z axes, use ``Vector3.RIGHT`` for the X-axis, ``Vector3.UP`` for the Y-axis, and ``Vector3.FORWARD`` for the Z-axis.
+
 Precision errors
 ================
 
