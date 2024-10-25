@@ -11,7 +11,13 @@ then
     echo "We are on Cloudflare Pages. Retrieve branch from env."
     gitBranch=$CF_PAGES_BRANCH
 fi
-gitCommitMessage="branch $gitBranch on $date"
+
+liveDir=$gitBranch
+if [ $gitBranch == "master" ]
+then
+    liveDir="latest"
+fi
+gitCommitMessage="branch $gitBranch on $date, will deploy to $liveDir"
 redotDocsLiveBranch=${1:-develop}
 
 inputDir="."
@@ -21,7 +27,7 @@ repoDir="_repo"
 
 liveRoot="redot-docs-live"
 liveRepo="git@github.com:Redot-Engine/$liveRoot.git"
-buildDir="html/en/$gitBranch" # TODO: implement i18n support
+buildDir="html/en/$liveDir" # TODO: implement i18n support
 
 # Report vars and intention
 echo "Building $gitCommitMessage"
