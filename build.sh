@@ -35,6 +35,7 @@ rm -rf $sphinxDir
 rm -rf $repoDir
 
 if [ -n "$FULL_RUN" ]
+then
     echo "Migrate Godot to Redot"
     mkdir -p $migrateDir
     python migrate.py $inputDir $migrateDir
