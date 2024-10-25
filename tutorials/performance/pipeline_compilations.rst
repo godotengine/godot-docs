@@ -7,6 +7,13 @@ Pipeline compilation, also commonly known as shader compilation, is an expensive
 operation required by the engine to be able to draw any kind of content with the
 GPU.
 
+.. figure:: img/pipeline_compilations_shader_compilation_diagram.webp
+   :align: center
+   :alt: Flowchart showing the entire compilation process for a shader: VisualShader and Standard Material to Godot Shading Language to GLSL to Intermediate Format (SPIR-V) to Pipeline. Shader Compilation is the GLSL to Intermediate Format step. Pipeline Compilation is the Intermediate Format to Pipeline step.
+
+   Shaders and materials in Godot go through several steps before they can be run
+   by the GPU.
+
 In more precise terms, *shader compilation* involves the translation of the GLSL
 code that Godot generates into an intermediate format that can be shared across
 systems (such as SPIR-V when using Vulkan). However, this format can't be used
