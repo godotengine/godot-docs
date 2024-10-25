@@ -229,6 +229,23 @@ some limitations when it comes to 3D rendering precision:
 - :ref:`Triplanar mapping <doc_standard_material_3d_triplanar_mapping>` doesn't
   benefit from increased precision. Materials using triplanar mapping will exhibit
   visible jittering when far away from the world origin.
+- In double-precision builds, world space coordinates in a shader ``fragment()``
+  function can't be reconstructed from view space, for example:
+
+  .. code-block:: glsl
+
+    vec3 world = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
+    
+  Instead, calculate the world space coordinates in the ``vertex()`` function and
+  pass them using a :ref:`varying<doc_shading_language_varyings>`, for example:
+
+  .. code-block:: glsl
+  
+    varying vec3 world;
+    void vertex() {
+        world = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+    }
+
 
 2D rendering currently doesn't benefit from increased precision when large world
 coordinates are enabled. This can cause visible model snapping to occur when

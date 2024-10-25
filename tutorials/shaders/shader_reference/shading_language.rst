@@ -662,6 +662,7 @@ function calls is not allowed, such as from ``int`` to ``float`` (``1`` to ``1.0
         vec3 green = get_color(1.0);
     }
 
+.. _doc_shading_language_varyings:
 
 Varyings
 --------
