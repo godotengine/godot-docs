@@ -117,7 +117,7 @@ Global built-ins are available everywhere, including custom functions.
 +-----------------------------+------------------------------------------------------------------------------------------+
 | in bool **OUTPUT_IS_SRGB**  | ``true`` when output is in sRGB color space (this is ``true`` in the Compatibility       |
 |                             | renderer, ``false`` in Forward+ and Forward Mobile).                                     |
-+----------------------------------------+-------------------------------------------------------------------------------+
++-----------------------------+------------------------------------------------------------------------------------------+
 | in float **CLIP_SPACE_FAR** | Clip space far ``z`` value.                                                              |
 |                             | In the Forward+ or Mobile renderers, it's ``0.0``.                                       |
 |                             | In the Compatibility renderer, it's ``-1.0``.                                            |
