@@ -34,13 +34,16 @@ rm -rf $migrateDir
 rm -rf $sphinxDir
 rm -rf $repoDir
 
-echo "Migrate Godot to Redot"
 mkdir -p $migrateDir
-python migrate.py $inputDir $migrateDir
-
-echo "Translate to html"
 mkdir -p $sphinxDir
-sphinx-build -b html -j 4 $migrateDir $sphinxDir
+if [ -n "$FULL_RUN" ]
+then
+    echo "Migrate Godot to Redot"
+    python migrate.py $inputDir $migrateDir
+
+    echo "Translate to html"
+    sphinx-build -b html -j 4 $migrateDir $sphinxDir
+fi
 
 echo "DUMMY FILE FOR TESTING: $date" > $sphinxDir/test.html
 
@@ -80,7 +83,11 @@ then
     git config user.email "noreply_pages_bot@cloudflare.com"
     git config user.name "Redot Docs Build Worker"
 fi
-
+echo "### SSH CONFIG VALUES ###"
+ls -la ~/.ssh
+cat ~/.ssh/known_hosts
+echo "### SSH TEST ###"
+ssh -T -vv git@ssh.github.com
 echo "### GIT CONFIG VALUES ###"
 git config core.pager cat
 git config --list
