@@ -355,6 +355,24 @@ Defines the optional block which is included when the previously defined ``#if``
 
 Used as terminator for the ``#if``, ``#ifdef``, ``#ifndef`` or subsequent ``#else`` directives.
 
+#error
+^^^^^^
+
+**Syntax:** ``#error <message>``
+
+The ``#error`` directive forces the preprocessor to emit an error with optional message.
+For example, it's useful when used within ``#if`` block to provide a strict limitation of the
+defined value.
+
+.. code-block:: glsl
+
+    #define MAX_LOD 3
+    #define LOD 4
+
+    #if LOD > MAX_LOD
+    #error LOD exceeds MAX_LOD
+    #endif
+
 #include
 ^^^^^^^^
 

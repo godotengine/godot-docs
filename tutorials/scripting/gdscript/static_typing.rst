@@ -384,9 +384,9 @@ Warning system
     Detailed documentation about the GDScript warning system has been moved to
     :ref:`doc_gdscript_warning_system`.
 
-From version 3.1, Godot gives you warnings about your code as you write it:
-the engine identifies sections of your code that may lead to issues at runtime,
-but lets you decide whether or not you want to leave the code as it is.
+Godot gives you warnings about your code as you write it. The engine identifies
+sections of your code that may lead to issues at runtime, but lets you decide
+whether or not you want to leave the code as it is.
 
 We have a number of warnings aimed specifically at users of typed GDScript.
 By default, these warnings are disabled, you can enable them in Project Settings
