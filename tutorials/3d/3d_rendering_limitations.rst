@@ -33,12 +33,12 @@ without affecting the source file.
 Color banding
 -------------
 
-When using the Forward+ or Forward Mobile rendering methods, Godot's 3D engine
+When using the Forward+ or Mobile rendering methods, Godot's 3D engine
 renders internally in HDR. However, the rendering output will be tonemapped to a
 low dynamic range so it can be displayed on the screen. This can result in
 visible banding, especially when using untextured materials. For performance
-reasons, color precision is also lower when using the Forward Mobile rendering
-method compared to Forward+.
+reasons, color precision is also lower when using the Mobile rendering method
+compared to Forward+.
 
 When using the Compatibility rendering method, HDR is not used and the color
 precision is the lowest of all rendering methods. This also applies to 2D

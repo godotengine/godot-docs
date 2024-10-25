@@ -371,7 +371,7 @@ The Environment resource supports many popular mid- and post-processing effects.
 Screen-Space Reflections (SSR)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*This feature is only available when using the Forward+ backend, not
+*This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
 
 While Godot supports several sources of reflection data such as
@@ -413,7 +413,7 @@ uniforms.
 Screen-Space Ambient Occlusion (SSAO)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*This feature is only available when using the Forward+ backend, not
+*This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
 
 As mentioned in the **Ambient** section, areas where light from light nodes
@@ -487,7 +487,7 @@ parameters:
 Screen-Space Indirect Lighting (SSIL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*This feature is only available when using the Forward+ backend, not
+*This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
 
 :abbr:`SSIL (Screen-Space Indirect Lighting)` provides indirect lighting for
@@ -533,7 +533,7 @@ Tweaking :abbr:`SSIL (Screen-Space Indirect Lighting)` is possible with several 
 Signed Distance Field Global Illumination (SDFGI)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*This feature is only available when using the Forward+ backend, not
+*This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
 
 Signed distance field global illumination (SDFGI) is a form of real-time global
@@ -842,7 +842,7 @@ values result in a visually brighter scene.
 Auto Exposure
 ^^^^^^^^^^^^^
 
-*This feature is only available when using the Forward+ backend, not
+*This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
 
 Even though, in most cases, lighting and texturing are heavily artist controlled,

@@ -65,10 +65,9 @@ an omni light, a spot light, a :ref:`decal <doc_using_decals>` or a
 :ref:`Max Clustered Elements<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
 in **Project Settings > Rendering > Limits > Cluster Builder**.
 
-When using the Forward Mobile renderer, there is a limitation of 8 OmniLights +
-8 SpotLights per mesh resource. There is also a limit of 256 OmniLights + 256
-SpotLights that can be rendered in the current camera view. These limits
-currently cannot be changed.
+When using the Mobile renderer, there is a limitation of 8 OmniLights + 8 SpotLights
+per mesh resource. There is also a limit of 256 OmniLights + 256 SpotLights that
+can be rendered in the current camera view. These limits currently cannot be changed.
 
 When using the Compatibility renderer, up to 8 OmniLights + 8 SpotLights can be
 rendered per mesh resource. This limit can be increased in the advanced Project
@@ -90,7 +89,7 @@ nodes can help reduce this issue while also improving performance. Splitting
 your meshes into smaller portions can also help, especially for level geometry
 (which also improves culling efficiency).
 
-If you need to render more lights than possible in a given rendering backend,
+If you need to render more lights than possible in a given renderer,
 consider using :ref:`baked lightmaps <doc_using_lightmap_gi>` with lights' bake
 mode set to **Static**. This allows lights to be fully baked, which also makes
 them much faster to render. You can also use emissive materials with any

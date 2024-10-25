@@ -38,7 +38,7 @@ To create a new project:
    you can enable **Create Folder** option to automatically create a new sub-folder
    with the project name, following the directory naming convention set in the
    settings. An empty folder will show a green tick on the right.
-3. Select one of the rendering backends (this can also be changed later).
+3. Select one of the renderers (this can also be changed later).
 4. Click the **Create & Edit** button to create the project folder and open it in the editor.
 
 .. image:: img/editor_ui_intro_project_manager_04.webp

@@ -51,7 +51,7 @@ The official platform ports can be used as a reference when creating a custom pl
 
 While platform code is usually self-contained, there are exceptions to this
 rule. For instance, audio drivers that are shared across several platforms and
-rendering backends are located in the
+rendering drivers are located in the
 `drivers/ folder <https://github.com/godotengine/godot/tree/master/drivers>`__
 of the Godot source code.
 
@@ -184,7 +184,7 @@ clone's ``platform/`` folder, then run ``scons platform=<name>``. No other steps
 necessary for building, unless third-party platform-specific dependencies need
 to be installed first.
 
-However, when a custom rendering backend is needed, another folder must be added
+However, when a custom rendering driver is needed, another folder must be added
 in ``drivers/``. In this case, the platform port can be distributed as a fork of
 the Godot repository, or as a collection of several folders that can be added
 over a Godot Git repository clone.

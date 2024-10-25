@@ -5,8 +5,8 @@ Volumetric fog and fog volumes
 
 .. note::
 
-    Volumetric fog is only supported in the Clustered Forward rendering backend,
-    not Forward Mobile or Compatibility.
+    Volumetric fog is only supported in the Forward+ renderer, not the Mobile or
+    Compatibility renderers.
 
 As described in :ref:`doc_environment_and_post_processing`, Godot supports
 various visual effects including two types of fog: traditional (non-volumetric)
@@ -270,7 +270,7 @@ Faking volumetric fog using quads
 In some cases, it may be better to use specially configured QuadMeshes as an
 alternative to volumetric fog:
 
-- Quads work with any rendering method, including Forward Mobile and Compatibility.
+- Quads work with any rendering method, including Mobile and Compatibility.
 - Quads do not require temporal reprojection to look smooth, which makes
   them suited to fast-moving dynamic effects such as lasers. They can also
   represent small details which volumetric fog cannot do efficiently.

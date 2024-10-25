@@ -322,7 +322,7 @@ While Vulkan and OpenGL remain our primary focus for their open standard and
 cross-platform benefits, Godot 4.3 introduced experimental support for Direct3D 12.
 This addition aims to enhance performance and compatibility on platforms where
 Direct3D 12 is prevalent, such as Windows and Xbox. However, Vulkan and OpenGL
-will continue as the default rendering backends on all platforms, including Windows.
+will continue as the default rendering drivers on all platforms, including Windows.
 
 Why does Godot aim to keep its core feature set small?
 ------------------------------------------------------
