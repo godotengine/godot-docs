@@ -83,7 +83,11 @@ then
     git config user.email "noreply_pages_bot@cloudflare.com"
     git config user.name "Redot Docs Build Worker"
 fi
-
+echo "### SSH CONFIG VALUES ###"
+ls -la ~/..ssh
+echo ~/.ssh/known_hosts
+echo "### SSH TEST ###"
+ssh -T -vv git@ssh.github.com
 echo "### GIT CONFIG VALUES ###"
 git config core.pager cat
 git config --list
