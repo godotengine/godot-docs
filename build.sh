@@ -34,13 +34,15 @@ rm -rf $migrateDir
 rm -rf $sphinxDir
 rm -rf $repoDir
 
-echo "Migrate Godot to Redot"
-mkdir -p $migrateDir
-python migrate.py $inputDir $migrateDir
+if [ -n "$FULL_RUN" ]
+    echo "Migrate Godot to Redot"
+    mkdir -p $migrateDir
+    python migrate.py $inputDir $migrateDir
 
-echo "Translate to html"
-mkdir -p $sphinxDir
-sphinx-build -b html -j 4 $migrateDir $sphinxDir
+    echo "Translate to html"
+    mkdir -p $sphinxDir
+    sphinx-build -b html -j 4 $migrateDir $sphinxDir
+fi
 
 echo "DUMMY FILE FOR TESTING: $date" > $sphinxDir/test.html
 
