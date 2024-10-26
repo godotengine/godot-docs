@@ -71,8 +71,7 @@ who need maintenance updates.
 Whenever a new major version is released, we make the previous stable branch a
 long-term supported release, and do our best to provide fixes for issues
 encountered by users of that branch who cannot port complex projects to the new
-major version. This was the case for the 2.1 branch, and is the case for the
-3.6 branch.
+major version.
 
 In a given minor release series, only the latest patch release receives support.
 If you experience an issue using an older patch release, please upgrade to the
@@ -82,40 +81,11 @@ on GitHub.
 +--------------+----------------------+--------------------------------------------------------------------------+
 | **Version**  | **Release date**     | **Support level**                                                        |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.3    | June 2024            | |unstable| *Development.* Receives new features, usability and           |
-| (`master`)   | (estimate)           | performance improvements, as well as bug fixes, while under development. |
+| Godot 4.4    | Q1 2025 (estimate)   | |unstable| *Development.* Receives new features, usability and           |
+| (`master`)   |                      | performance improvements, as well as bug fixes, while under development. |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.2    | November 2023        | |supported| Receives fixes for bugs and security issues, as well as      |
+| Godot 4.3    | August 2024          | |supported| Receives fixes for bugs and security issues, as well as      |
 |              |                      | patches that enable platform support.                                    |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.1    | July 2023            | |supported| Receives fixes for bugs and security issues, as well as      |
-|              |                      | patches that enable platform support.                                    |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.0    | March 2023           | |eol| No longer supported (last update: 4.0.4).                          |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.6    | Q1 2024 (estimate)   | |supported| *Beta.* Receives new features, usability and performance     |
-| (`3.x`, LTS) |                      | improvements, as well as bug fixes, while under development.             |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.5    | August 2022          | |supported| Receives fixes for bugs and security issues, as well as      |
-|              |                      | patches that enable platform support.                                    |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.4    | November 2021        | |eol| No longer supported (last update: 3.4.5).                          |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.3    | April 2021           | |eol| No longer supported (last update: 3.3.4).                          |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.2    | January 2020         | |eol| No longer supported (last update: 3.2.3).                          |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.1    | March 2019           | |eol| No longer supported (last update: 3.1.2).                          |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.0    | January 2018         | |eol| No longer supported (last update: 3.0.6).                          |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 2.1    | July 2016            | |eol| No longer supported (last update: 2.1.6).                          |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 2.0    | February 2016        | |eol| No longer supported (last update: 2.0.4.1).                        |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 1.1    | May 2015             | |eol| No longer supported.                                               |
-+--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 1.0    | December 2014        | |eol| No longer supported.                                               |
 +--------------+----------------------+--------------------------------------------------------------------------+
 
 .. |supported| image:: img/supported.png
@@ -131,11 +101,6 @@ on GitHub.
 
 Pre-release Godot versions aren't intended to be used in production and are
 provided for testing purposes only.
-
-.. seealso::
-
-    See :ref:`doc_upgrading_to_godot_4` for instructions on migrating a project
-    from Godot 3.x to 4.x.
 
 .. _doc_release_policy_which_version_should_i_use:
 
@@ -186,10 +151,7 @@ the documentation.
 previously existing functionality and may raise hardware requirements. They also
 require much more work to upgrade to compared to minor releases. As a result, we
 recommend sticking with the major release you've started your project with if
-you are happy with how your project currently works. For example, if your
-project was started with 3.5, we recommend upgrading to 3.5.2 and possibly 3.6
-in the future, but not to 4.0+, unless your project really needs the new
-features that come with 4.0+.
+you are happy with how your project currently works.
 
 .. _doc_release_policy_when_is_next_release_out:
 
@@ -211,12 +173,6 @@ improved more steadily with a faster path to the end users.
 Maintenance (patch) releases are released as needed with potentially very
 short development cycles, to provide users of the current stable branch with
 the latest bug fixes for their production needs.
-
-The 3.6 release is still planned and should be the last stable branch of Godot
-3.x. It will be a Long-Term Support (LTS) release, which we plan to support for
-as long as users still need it (due to missing features in Godot 4.x, or
-having published games which they need to keep updating for platform
-requirements).
 
 What are the criteria for compatibility across engine versions?
 ---------------------------------------------------------------

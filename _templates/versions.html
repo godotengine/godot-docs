@@ -34,24 +34,10 @@
         <dd><a href="{{ url }}">{{ slug }}</a></dd>
       {% endfor %}
     </dl>
-    <dl>
-      {# Translators: The phrase "Read the Docs" is not translated #}
-      <dt>{{ _('On Read the Docs') }}</dt>
-        <dd>
-          <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}">{{ _('Project Home') }}</a>
-        </dd>
-        <dd>
-          <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/builds/">{{ _('Builds') }}</a>
-        </dd>
-        <dd>
-          <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/downloads/">{{ _('Downloads') }}</a>
-        </dd>
-    </dl>
 
     <hr>
     <small>
       <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
-      <span> · </span>
       <a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
     </small>
 

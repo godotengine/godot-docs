@@ -134,10 +134,8 @@ mappings = [
     # These will have to change eventually.
     ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-stable.zip', 'https://download.redotengine.org/docs/redot-docs-html-stable.zip'),
     ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip', 'https://download.redotengine.org/docs/redot-docs-html-master.zip'),
-    ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-3.6.zip', 'https://download.redotengine.org/docs/redot-docs-html-3.6.zip'),
     ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-stable.zip', 'https://download.redotengine.org/docs/redot-docs-epub-stable.zip'),
     ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-master.zip', 'https://download.redotengine.org/docs/redot-docs-epub-master.zip'),
-    ('https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-3.6.zip', 'https://download.redotengine.org/docs/redot-docs-epub-3.6.zip'),
     # Table breakers
     ('| ``"Please include this when reporting the bug on: https://github.com/godotengine/godot/issues"`` |', '| ``"Please include this when reporting the bug on: https://github.com/redot-engine/godot/issues"``|'),
     ('https://github.com/godotengine/godot/pull/40364>`_ for more.     |', 'https://github.com/redot-engine/redot/pull/40364>`_ for more.    |'),
@@ -205,7 +203,7 @@ mappings = [
     ('<span class="fa fa-book"> Read the Docs</span>', '<span class="fa fa-book"> Versions</span>'),
     ("const homeUrl = baseUrl.split('/latest/')[0] + '/stable/';", "const homeUrl = '/en/stable';"),
     ('{% set listed_languages = ({"en":"#", "de":"#", "es":"#", "fr":"#"}).items() -%}', '{% set listed_languages = ({"en":"#"}).items() -%}'),
-    ('({"stable":"#", "latest":"#"})', '({"stable":"/en/stable", "latest":"/en/latest", "3.6":"/en/3.6"})'),
+    ('({"stable":"#", "latest":"#"})', '({"stable":"/en/stable", "latest":"/en/latest"})'),
     ('Hosted by <a href="https://readthedocs.org">Read the Docs', 'Hosted by <a href="https://cloudflare.com">CloudFlare'),
     ('<a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>', ''),
     ('G-dot', 'Godot'),
