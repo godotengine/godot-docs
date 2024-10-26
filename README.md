@@ -8,14 +8,12 @@ They are meant to be parsed with the [Sphinx](https://www.sphinx-doc.org/) docum
 
 To browse the documentation offline, you can download an HTML copy (updated every Monday):
 [stable](https://download.redotengine.org/docs/redot-docs-html-stable.zip),
-[latest](https://download.redotengine.org/docs/redot-docs-html-master.zip),
-[3.6](https://download.redotengine.org/docs/redot-docs-html-3.6.zip). Extract
+[latest](https://download.redotengine.org/docs/redot-docs-html-master.zip). Extract
 the ZIP archive then open the top-level `index.html` in a web browser.
 
 For mobile devices or e-readers, you can also download an ePub copy (updated every Monday):
 [stable](https://download.redotengine.org/docs/redot-docs-epub-stable.zip),
-[latest](https://download.redotengine.org/docs/redot-docs-epub-master.zip),
-[3.6](https://download.redotengine.org/docs/redot-docs-epub-3.6.zip). Extract
+[latest](https://download.redotengine.org/docs/redot-docs-epub-master.zip). Extract
 the ZIP archive then open the `RedotEngine.epub` file in an e-book reader application.
 
 ## Migrating
