@@ -85,6 +85,8 @@ Properties
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`              | :ref:`shadow_blur<class_Light3D_property_shadow_blur>`                                 | ``1.0``               |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                  | :ref:`shadow_caster_mask<class_Light3D_property_shadow_caster_mask>`                   | ``4294967295``        |
+   +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                | :ref:`shadow_enabled<class_Light3D_property_shadow_enabled>`                           | ``false``             |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`              | :ref:`shadow_normal_bias<class_Light3D_property_shadow_normal_bias>`                   | ``2.0``               |
@@ -736,6 +738,23 @@ Used to adjust shadow appearance. Too small a value results in self-shadowing ("
 - :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_Light3D_Param>`\ ) |const|
 
 Blurs the edges of the shadow. Can be used to hide pixel artifacts in low-resolution shadow maps. A high value can impact performance, make shadows appear grainy and can cause other unwanted artifacts. Try to keep as near default as possible.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Light3D_property_shadow_caster_mask:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **shadow_caster_mask** = ``4294967295`` :ref:`🔗<class_Light3D_property_shadow_caster_mask>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_shadow_caster_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_shadow_caster_mask**\ (\ )
+
+The light will only cast shadows using objects in the selected layers.
 
 .. rst-class:: classref-item-separator
 

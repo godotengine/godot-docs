@@ -80,6 +80,8 @@ On macOS, some extra keyboard shortcuts are available:
 
 - :kbd:`Cmd + Right Arrow`: Same as :kbd:`End`, move the caret to the end of the line
 
+\ **Note:** Caret movement shortcuts listed above are not affected by :ref:`shortcut_keys_enabled<class_LineEdit_property_shortcut_keys_enabled>`.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -1094,7 +1096,7 @@ If ``false``, it's impossible to select the text using mouse nor keyboard.
 - |void| **set_shortcut_keys_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_shortcut_keys_enabled**\ (\ )
 
-If ``false``, using shortcuts will be disabled.
+If ``true``, shortcut keys for context menu items are enabled, even if the context menu is disabled.
 
 .. rst-class:: classref-item-separator
 

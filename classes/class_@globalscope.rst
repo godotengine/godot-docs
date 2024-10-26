@@ -21,7 +21,7 @@ A list of global scope enumerated constants and built-in functions. This is all 
 
 Singletons are also documented here, since they can be accessed from anywhere.
 
-For the entries related to GDScript which can be accessed in any script see :ref:`@GDScript<class_@GDScript>`.
+For the entries that can only be accessed from scripts written in GDScript, see :ref:`@GDScript<class_@GDScript>`.
 
 .. note::
 

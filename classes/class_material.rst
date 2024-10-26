@@ -217,7 +217,7 @@ Creates a placeholder version of this resource (:ref:`PlaceholderMaterial<class_
 
 |void| **inspect_native_shader_code**\ (\ ) :ref:`🔗<class_Material_method_inspect_native_shader_code>`
 
-Only available when running in the editor. Opens a popup that visualizes the generated shader code, including all variants and internal shader code.
+Only available when running in the editor. Opens a popup that visualizes the generated shader code, including all variants and internal shader code. See also :ref:`Shader.inspect_native_shader_code<class_Shader_method_inspect_native_shader_code>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

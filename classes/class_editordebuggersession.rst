@@ -117,7 +117,7 @@ Method Descriptions
 
 |void| **add_session_tab**\ (\ control\: :ref:`Control<class_Control>`\ ) :ref:`🔗<class_EditorDebuggerSession_method_add_session_tab>`
 
-Adds the given ``control`` to the debug session UI in the debugger bottom panel.
+Adds the given ``control`` to the debug session UI in the debugger bottom panel. The ``control``'s node name will be used as the tab title.
 
 .. rst-class:: classref-item-separator
 

@@ -17,9 +17,9 @@ Built-in GDScript constants, functions, and annotations.
 Description
 -----------
 
-A list of GDScript-specific utility functions and annotations accessible from any script.
+A list of utility functions and annotations accessible from any script written in GDScript.
 
-For the list of the global functions and constants see :ref:`@GlobalScope<class_@GlobalScope>`.
+For the list of global functions and constants that can be accessed in any scripting language, see :ref:`@GlobalScope<class_@GlobalScope>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -43,7 +43,7 @@ Methods
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`char<class_@GDScript_method_char>`\ (\ char\: :ref:`int<class_int>`\ )                                                                                             |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`       | :ref:`convert<class_@GDScript_method_convert>`\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`int<class_int>`\ )                                                 |
+   | :ref:`Variant<class_Variant>`       | :ref:`convert<class_@GDScript_method_convert>`\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ )                   |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Object<class_Object>`         | :ref:`dict_to_inst<class_@GDScript_method_dict_to_inst>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ )                                                         |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -958,7 +958,7 @@ Returns a single character (as a :ref:`String<class_String>`) of the given Unico
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **convert**\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GDScript_method_convert>`
+:ref:`Variant<class_Variant>` **convert**\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ ) :ref:`🔗<class_@GDScript_method_convert>`
 
 **Deprecated:** Use :ref:`@GlobalScope.type_convert<class_@GlobalScope_method_type_convert>` instead.
 

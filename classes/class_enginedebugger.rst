@@ -266,7 +266,9 @@ Calls the ``toggle`` callable of the profiler with given ``name`` and ``argument
 
 Registers a message capture with given ``name``. If ``name`` is "my_message" then messages starting with "my_message:" will be called with the given callable.
 
-Callable must accept a message string and a data array as argument. If the message and data are valid then callable must return ``true`` otherwise ``false``.
+The callable must accept a message string and a data array as argument. The callable should return ``true`` if the message is recognized.
+
+\ **Note:** The callable will receive the message with the prefix stripped, unlike :ref:`EditorDebuggerPlugin._capture<class_EditorDebuggerPlugin_private_method__capture>`. See the :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>` description for an example.
 
 .. rst-class:: classref-item-separator
 

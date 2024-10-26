@@ -23,7 +23,7 @@ Description
 
 Multiple **AtlasTexture** resources can be cropped from the same :ref:`atlas<class_AtlasTexture_property_atlas>`. Packing many smaller textures into a singular large texture helps to optimize video memory costs and render calls.
 
-\ **Note:** **AtlasTexture** cannot be used in an :ref:`AnimatedTexture<class_AnimatedTexture>`, and may not tile properly in nodes such as :ref:`TextureRect<class_TextureRect>`, when inside other **AtlasTexture** resources.
+\ **Note:** **AtlasTexture** cannot be used in an :ref:`AnimatedTexture<class_AnimatedTexture>`, and will not tile properly in nodes such as :ref:`TextureRect<class_TextureRect>` or :ref:`Sprite2D<class_Sprite2D>`. To tile an **AtlasTexture**, modify its :ref:`region<class_AtlasTexture_property_region>` instead.
 
 .. rst-class:: classref-reftable-group
 
