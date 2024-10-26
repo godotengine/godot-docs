@@ -98,7 +98,7 @@ property has no effect.
    :alt: Particles running at low FPS
    :align: right
 
-   Interpolation on (left) vs. off (right)
+   Interpolation off (left) vs. on (right)
 
 The ``Fixed FPS`` property limits how often the particle system is processed. This includes
 property updates as well as collision and attractors. This can improve performance a lot,

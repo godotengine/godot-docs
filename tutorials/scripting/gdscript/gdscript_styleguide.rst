@@ -744,7 +744,7 @@ We suggest to organize GDScript code this way:
     01. @tool
     02. class_name
     03. extends
-    04. # docstring
+    04. ## docstring
 
     05. signals
     06. enums
@@ -917,7 +917,7 @@ in that order.
 Static typing
 -------------
 
-Since Godot 3.1, GDScript supports :ref:`optional static typing<doc_gdscript_static_typing>`.
+GDScript supports :ref:`optional static typing<doc_gdscript_static_typing>`.
 
 Declared types
 ~~~~~~~~~~~~~~

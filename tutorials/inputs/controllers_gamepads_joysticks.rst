@@ -136,10 +136,6 @@ use ``Input.is_action_pressed()``:
     held, ``Input.is_action_just_pressed()`` will only return ``true`` for one
     frame after the button has been pressed.
 
-In Godot versions before 3.4, such as 3.3, ``Input.get_vector()`` and
-``Input.get_axis()`` aren't available. Only ``Input.get_action_strength()``
-and ``Input.is_action_pressed()`` are available in Godot 3.3.
-
 Vibration
 ---------
 
