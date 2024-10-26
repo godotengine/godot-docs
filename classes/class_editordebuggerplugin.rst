@@ -37,18 +37,20 @@ You can retrieve the available :ref:`EditorDebuggerSession<class_EditorDebuggerS
     
     class ExampleEditorDebugger extends EditorDebuggerPlugin:
     
-        func _has_capture(prefix):
-            # Return true if you wish to handle message with this prefix.
-            return prefix == "my_plugin"
+        func _has_capture(capture):
+            # Return true if you wish to handle messages with the prefix "my_plugin:".
+            return capture == "my_plugin"
     
         func _capture(message, data, session_id):
             if message == "my_plugin:ping":
                 get_session(session_id).send_message("my_plugin:echo", data)
+                return true
+            return false
     
         func _setup_session(session_id):
             # Add a new tab in the debugger session UI containing a label.
             var label = Label.new()
-            label.name = "Example plugin"
+            label.name = "Example plugin" # Will be used as the tab title.
             label.text = "Example plugin"
             var session = get_session(session_id)
             # Listens to the session started and stopped signals.
@@ -65,6 +67,30 @@ You can retrieve the available :ref:`EditorDebuggerSession<class_EditorDebuggerS
         remove_debugger_plugin(debugger)
 
 
+
+To connect on the running game side, use the :ref:`EngineDebugger<class_EngineDebugger>` singleton:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    extends Node
+    
+    func _ready():
+        EngineDebugger.register_message_capture("my_plugin", _capture)
+        EngineDebugger.send_message("my_plugin:ping", ["test"])
+    
+    func _capture(message, data):
+        # Note that the "my_plugin:" prefix is not used here.
+        if message == "echo":
+            prints("Echo received:", data)
+            return true
+        return false
+
+
+
+\ **Note:** While the game is running, :ref:`@GlobalScope.print<class_@GlobalScope_method_print>` and similar functions *called in the editor* do not print anything, the Output Log prints only game messages.
 
 .. rst-class:: classref-reftable-group
 
@@ -131,7 +157,7 @@ Override this method to be notified when all breakpoints are cleared in the edit
 
 :ref:`bool<class_bool>` **_capture**\ (\ message\: :ref:`String<class_String>`, data\: :ref:`Array<class_Array>`, session_id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorDebuggerPlugin_private_method__capture>`
 
-Override this method to process incoming messages. The ``session_id`` is the ID of the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` that received the message (which you can retrieve via :ref:`get_session<class_EditorDebuggerPlugin_method_get_session>`).
+Override this method to process incoming messages. The ``session_id`` is the ID of the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` that received the ``message``. Use :ref:`get_session<class_EditorDebuggerPlugin_method_get_session>` to retrieve the session. This method should return ``true`` if the message is recognized.
 
 .. rst-class:: classref-item-separator
 
@@ -167,7 +193,7 @@ Override this method to enable receiving messages from the debugger. If ``captur
 
 |void| **_setup_session**\ (\ session_id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorDebuggerPlugin_private_method__setup_session>`
 
-Override this method to be notified whenever a new :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` is created (the session may be inactive during this stage).
+Override this method to be notified whenever a new :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` is created. Note that the session may be inactive during this stage.
 
 .. rst-class:: classref-item-separator
 

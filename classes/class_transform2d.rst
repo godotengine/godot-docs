@@ -181,7 +181,7 @@ The identity **Transform2D**. A transform with no translation, no rotation, and 
 
 - The :ref:`x<class_Transform2D_property_x>` points right (:ref:`Vector2.RIGHT<class_Vector2_constant_RIGHT>`);
 
-- The :ref:`y<class_Transform2D_property_y>` points up (:ref:`Vector2.UP<class_Vector2_constant_UP>`).
+- The :ref:`y<class_Transform2D_property_y>` points down (:ref:`Vector2.DOWN<class_Vector2_constant_DOWN>`).
 
 ::
 
@@ -259,7 +259,7 @@ On the identity transform, this vector points right (:ref:`Vector2.RIGHT<class_V
 
 The transform basis's Y axis, and the column ``1`` of the matrix. Combined with :ref:`x<class_Transform2D_property_x>`, this represents the transform's rotation, scale, and skew.
 
-On the identity transform, this vector points up (:ref:`Vector2.UP<class_Vector2_constant_UP>`).
+On the identity transform, this vector points down (:ref:`Vector2.DOWN<class_Vector2_constant_DOWN>`).
 
 .. rst-class:: classref-section-separator
 

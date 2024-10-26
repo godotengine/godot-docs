@@ -76,6 +76,8 @@ Properties
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`position<class_Window_property_position>`                                   | ``Vector2i(0, 0)``       |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`sharp_corners<class_Window_property_sharp_corners>`                         | ``false``                |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`size<class_Window_property_size>`                                           | ``Vector2i(100, 100)``   |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Theme<class_Theme>`                                       | :ref:`theme<class_Window_property_theme>`                                         |                          |
@@ -623,11 +625,23 @@ All mouse events are passed to the underlying window of the same application.
 
 \ **Note:** This flag has no effect in embedded windows.
 
+.. _class_Window_constant_FLAG_SHARP_CORNERS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Window_Flags>` **FLAG_SHARP_CORNERS** = ``8``
+
+Window style is overridden, forcing sharp corners.
+
+\ **Note:** This flag has no effect in embedded windows.
+
+\ **Note:** This flag is implemented only on Windows (11).
+
 .. _class_Window_constant_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Flags<enum_Window_Flags>` **FLAG_MAX** = ``8``
+:ref:`Flags<enum_Window_Flags>` **FLAG_MAX** = ``9``
 
 Max value of the :ref:`Flags<enum_Window_Flags>`.
 
@@ -759,11 +773,11 @@ enum **LayoutDirection**: :ref:`🔗<enum_Window_LayoutDirection>`
 
 Automatic layout direction, determined from the parent window layout direction.
 
-.. _class_Window_constant_LAYOUT_DIRECTION_LOCALE:
+.. _class_Window_constant_LAYOUT_DIRECTION_APPLICATION_LOCALE:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`LayoutDirection<enum_Window_LayoutDirection>` **LAYOUT_DIRECTION_LOCALE** = ``1``
+:ref:`LayoutDirection<enum_Window_LayoutDirection>` **LAYOUT_DIRECTION_APPLICATION_LOCALE** = ``1``
 
 Automatic layout direction, determined from the current locale.
 
@@ -782,6 +796,32 @@ Left-to-right layout direction.
 :ref:`LayoutDirection<enum_Window_LayoutDirection>` **LAYOUT_DIRECTION_RTL** = ``3``
 
 Right-to-left layout direction.
+
+.. _class_Window_constant_LAYOUT_DIRECTION_SYSTEM_LOCALE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LayoutDirection<enum_Window_LayoutDirection>` **LAYOUT_DIRECTION_SYSTEM_LOCALE** = ``4``
+
+Automatic layout direction, determined from the system locale.
+
+.. _class_Window_constant_LAYOUT_DIRECTION_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LayoutDirection<enum_Window_LayoutDirection>` **LAYOUT_DIRECTION_MAX** = ``5``
+
+Represents the size of the :ref:`LayoutDirection<enum_Window_LayoutDirection>` enum.
+
+.. _class_Window_constant_LAYOUT_DIRECTION_LOCALE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LayoutDirection<enum_Window_LayoutDirection>` **LAYOUT_DIRECTION_LOCALE** = ``1``
+
+**Deprecated:** Use :ref:`LAYOUT_DIRECTION_APPLICATION_LOCALE<class_Window_constant_LAYOUT_DIRECTION_APPLICATION_LOCALE>` instead.
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -1296,6 +1336,27 @@ The window's position in pixels.
 If :ref:`ProjectSettings.display/window/subwindows/embed_subwindows<class_ProjectSettings_property_display/window/subwindows/embed_subwindows>` is ``false``, the position is in absolute screen coordinates. This typically applies to editor plugins. If the setting is ``true``, the window's position is in the coordinates of its parent :ref:`Viewport<class_Viewport>`.
 
 \ **Note:** This property only works if :ref:`initial_position<class_Window_property_initial_position>` is set to :ref:`WINDOW_INITIAL_POSITION_ABSOLUTE<class_Window_constant_WINDOW_INITIAL_POSITION_ABSOLUTE>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_property_sharp_corners:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **sharp_corners** = ``false`` :ref:`🔗<class_Window_property_sharp_corners>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|
+
+If ``true``, the **Window** will override the OS window style to display sharp corners.
+
+\ **Note:** This property is implemented only on Windows (11).
+
+\ **Note:** This property only works with native windows.
 
 .. rst-class:: classref-item-separator
 

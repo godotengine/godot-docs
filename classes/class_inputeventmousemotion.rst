@@ -21,7 +21,7 @@ Description
 
 Stores information about a mouse or a pen motion. This includes relative position, absolute position, and velocity. See :ref:`Node._input<class_Node_private_method__input>`.
 
-\ **Note:** By default, this event is only emitted once per frame rendered at most. If you need more precise input reporting, set :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>` to ``false`` to make events emitted as often as possible. If you use InputEventMouseMotion to draw lines, consider implementing `Bresenham's line algorithm <https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>`__ as well to avoid visible gaps in lines if the user is moving the mouse quickly.
+\ **Note:** By default, this event is only emitted once per frame rendered at most. If you need more precise input reporting, set :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>` to ``false`` to make events emitted as often as possible. If you use InputEventMouseMotion to draw lines, consider using :ref:`Geometry2D.bresenham_line<class_Geometry2D_method_bresenham_line>` as well to avoid visible gaps in lines if the user is moving the mouse quickly.
 
 \ **Note:** This event may be emitted even when the mouse hasn't moved, either by the operating system or by Godot itself. If you really need to know if the mouse has moved (e.g. to suppress displaying a tooltip), you should check that ``relative.is_zero_approx()`` is ``false``.
 

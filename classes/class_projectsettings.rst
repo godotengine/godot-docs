@@ -32,6 +32,8 @@ When naming a Project Settings property, use the full path to the setting includ
 Tutorials
 ---------
 
+- :doc:`Project Settings <../tutorials/editor/project_settings>`
+
 - `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
@@ -432,6 +434,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/no_focus<class_ProjectSettings_property_display/window/size/no_focus>`                                                                                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/resizable<class_ProjectSettings_property_display/window/size/resizable>`                                                                                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`display/window/size/sharp_corners<class_ProjectSettings_property_display/window/size/sharp_corners>`                                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/transparent<class_ProjectSettings_property_display/window/size/transparent>`                                                                                                     | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2243,6 +2247,8 @@ Default :ref:`AudioBusLayout<class_AudioBusLayout>` resource file to use in the 
 Specifies the audio driver to use. This setting is platform-dependent as each platform supports different audio drivers. If left empty, the default audio driver will be used.
 
 The ``Dummy`` audio driver disables all audio playback and recording, which is useful for non-game applications as it reduces CPU usage. It also prevents the engine from appearing as an application playing audio in the OS' audio mixer.
+
+To query the value that is being used at run-time (which may be overridden by command-line arguments or headless mode), use :ref:`AudioServer.get_driver_name<class_AudioServer_method_get_driver_name>`.
 
 \ **Note:** The driver in use can be overridden at runtime via the ``--audio-driver`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
@@ -4179,6 +4185,20 @@ If ``true``, allows the window to be resizable by default.
 \ **Note:** Certain window managers can be configured to ignore the non-resizable status of a window. Do not rely on this setting as a guarantee that the window will *never* be resizable.
 
 \ **Note:** This setting is ignored on iOS.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_display/window/size/sharp_corners:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **display/window/size/sharp_corners** = ``false`` :ref:`🔗<class_ProjectSettings_property_display/window/size/sharp_corners>`
+
+If ``true``, the main window uses sharp corners by default.
+
+\ **Note:** This property is implemented only on Windows (11).
 
 .. rst-class:: classref-item-separator
 

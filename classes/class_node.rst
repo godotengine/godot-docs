@@ -1267,7 +1267,7 @@ The node's processing behavior (see :ref:`ProcessMode<enum_Node_ProcessMode>`). 
 - |void| **set_physics_process_priority**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_physics_process_priority**\ (\ )
 
-Similar to :ref:`process_priority<class_Node_property_process_priority>` but for :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>`, :ref:`_physics_process<class_Node_private_method__physics_process>` or the internal version.
+Similar to :ref:`process_priority<class_Node_property_process_priority>` but for :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>`, :ref:`_physics_process<class_Node_private_method__physics_process>`, or :ref:`NOTIFICATION_INTERNAL_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1284,7 +1284,7 @@ Similar to :ref:`process_priority<class_Node_property_process_priority>` but for
 - |void| **set_process_priority**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_process_priority**\ (\ )
 
-The node's execution order of the process callbacks (:ref:`_process<class_Node_private_method__process>`, :ref:`_physics_process<class_Node_private_method__physics_process>`, and internal processing). Nodes whose priority value is *lower* call their process callbacks first, regardless of tree order.
+The node's execution order of the process callbacks (:ref:`_process<class_Node_private_method__process>`, :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, and :ref:`NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`). Nodes whose priority value is *lower* call their process callbacks first, regardless of tree order.
 
 .. rst-class:: classref-item-separator
 
@@ -1475,6 +1475,8 @@ Called during the physics processing step of the main loop. Physics processing m
 
 It is only called if physics processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_physics_process<class_Node_method_set_physics_process>`.
 
+Processing happens in order of :ref:`process_physics_priority<class_Node_property_process_physics_priority>`, lower priority values are called first. Nodes with the same priority are processed in tree order, or top to bottom as seen in the editor (also known as pre-order traversal).
+
 Corresponds to the :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` notification in :ref:`Object._notification<class_Object_private_method__notification>`.
 
 \ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
@@ -1492,6 +1494,8 @@ Corresponds to the :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFI
 Called during the processing step of the main loop. Processing happens at every frame and as fast as possible, so the ``delta`` time since the previous frame is not constant. ``delta`` is in seconds.
 
 It is only called if processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process<class_Node_method_set_process>`.
+
+Processing happens in order of :ref:`process_priority<class_Node_property_process_priority>`, lower priority values are called first. Nodes with the same priority are processed in tree order, or top to bottom as seen in the editor (also known as pre-order traversal).
 
 Corresponds to the :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` notification in :ref:`Object._notification<class_Object_private_method__notification>`.
 

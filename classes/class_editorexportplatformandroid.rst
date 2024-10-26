@@ -2700,7 +2700,7 @@ Allows an application to write to the user dictionary.
 
 :ref:`bool<class_bool>` **screen/immersive_mode** :ref:`🔗<class_EditorExportPlatformAndroid_property_screen/immersive_mode>`
 
-If ``true``, hides navigation and status bar.
+If ``true``, hides navigation and status bar. See :ref:`DisplayServer.window_set_mode<class_DisplayServer_method_window_set_mode>` to toggle it at runtime.
 
 .. rst-class:: classref-item-separator
 
