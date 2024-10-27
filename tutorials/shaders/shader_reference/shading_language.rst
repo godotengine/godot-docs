@@ -804,6 +804,18 @@ GDScript:
           in the shader. It must match *exactly* to the name of the uniform in
           the shader or else it will not be recognized.
 
+.. note:: There is a limit to the total size of shader uniforms that you can use
+          in a single shader. On most desktop platforms, this limit is ``65536``
+          bytes, or 4096 ``vec4`` uniforms. On mobile platforms, the limit is
+          typically ``16384`` bytes, or 1024 ``vec4`` uniforms. Vector uniforms
+          smaller than a ``vec4``, such as ``vec2`` or ``vec3``, are padded to
+          the size of a ``vec4``. Scalar uniforms such as ``int`` or ``float``
+          are not padded, and ``bool`` is padded to the size of an ``int``.
+          
+          Arrays count as the total size of their contents. If you need a uniform
+          array that is larger than this limit, consider packing the data into a
+          texture instead, since the *contents* of a texture do not count towards
+          this limit, only the size of the sampler uniform.
 
 Uniform hints
 ~~~~~~~~~~~~~
