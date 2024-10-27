@@ -161,6 +161,7 @@ In the ``src`` folder, we'll start with creating our header file for the
 GDExtension node we'll be creating. We will name it ``gdexample.h``:
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/gdexample.h
 
     #ifndef GDEXAMPLE_H
     #define GDEXAMPLE_H
@@ -214,6 +215,7 @@ as the ``_process`` function you're used to in GDScript.
 Let's implement our functions by creating our ``gdexample.cpp`` file:
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/gdexample.cpp
 
     #include "gdexample.h"
     #include <godot_cpp/core/class_db.hpp>
@@ -253,6 +255,7 @@ is a small bit of code that tells Godot about all the classes in our
 GDExtension plugin.
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/register_types.cpp
 
     #include "register_types.h"
 
@@ -306,6 +309,7 @@ At last, we need the header file for the ``register_types.cpp`` named
 ``register_types.h``.
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/register_types.h
 
     #ifndef GDEXAMPLE_REGISTER_TYPES_H
     #define GDEXAMPLE_REGISTER_TYPES_H

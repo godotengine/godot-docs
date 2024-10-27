@@ -169,6 +169,7 @@ ones, the following rules should be followed:
 Example:
 
 .. code-block:: cpp
+    :caption: my_new_file.h
 
     /**************************************************************************/
     /*  my_new_file.h                                                         */
@@ -214,6 +215,7 @@ Example:
     #endif // MY_NEW_FILE_H
 
 .. code-block:: cpp
+    :caption: my_new_file.cpp
 
     /**************************************************************************/
     /*  my_new_file.cpp                                                       */

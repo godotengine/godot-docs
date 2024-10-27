@@ -20,8 +20,7 @@ To bind to an external library, set up a module directory similar to the Summato
 Next, you will create a header file with a TTS class:
 
 .. code-block:: cpp
-
-    /* tts.h */
+    :caption: godot/modules/tts/tts.h
 
     #ifndef GODOT_TTS_H
     #define GODOT_TTS_H
@@ -45,8 +44,7 @@ Next, you will create a header file with a TTS class:
 And then you'll add the cpp file.
 
 .. code-block:: cpp
-
-    /* tts.cpp */
+    :caption: godot/modules/tts/tts.cpp
 
     #include "tts.h"
 
@@ -82,16 +80,14 @@ need to be created:
 These files should contain the following:
 
 .. code-block:: cpp
-
-    /* register_types.h */
+    :caption: godot/modules/tts/register_types.h
 
     void initialize_tts_module(ModuleInitializationLevel p_level);
     void uninitialize_tts_module(ModuleInitializationLevel p_level);
     /* yes, the word in the middle must be the same as the module folder name */
 
 .. code-block:: cpp
-
-    /* register_types.cpp */
+    :caption: godot/modules/tts/register_types.cpp
 
     #include "register_types.h"
 
@@ -113,8 +109,7 @@ Next, you need to create an ``SCsub`` file so the build system compiles
 this module:
 
 .. code-block:: python
-
-    # SCsub
+    :caption: godot/modules/tts/SCsub
 
     Import('env')
 
@@ -127,9 +122,9 @@ installation commands for Linux below, for reference.
 
 .. code-block:: shell
 
-    sudo apt-get install festival festival-dev <-- Installs festival and speech_tools libraries
-    apt-cache search festvox-* <-- Displays list of voice packages
-    sudo apt-get install festvox-don festvox-rablpc16k festvox-kallpc16k festvox-kdlpc16k <-- Installs voices
+    sudo apt-get install festival festival-dev  # Installs festival and speech_tools libraries
+    apt-cache search festvox-*  # Displays list of voice packages
+    sudo apt-get install festvox-don festvox-rablpc16k festvox-kallpc16k festvox-kdlpc16k  # Installs voices
 
 .. important::
     The voices that Festival uses (and any other potential external/3rd-party
@@ -165,6 +160,7 @@ To add include directories for the compiler to look at you can append it to the
 environment's paths:
 
 .. code-block:: python
+    :caption: godot/modules/tts/SCsub
 
     # These paths are relative to /modules/tts/
     env_tts.Append(CPPPATH=["speech_tools/include", "festival/src/include"])
@@ -186,8 +182,7 @@ If you want to add custom compiler flags when building your module, you need to 
 Example `SCsub` with custom flags:
 
 .. code-block:: python
-
-    # SCsub
+    :caption: godot/modules/tts/SCsub
 
     Import('env')
 

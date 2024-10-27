@@ -36,6 +36,7 @@ Importing the project
 - Within the ``tasks.json`` file find the ``"tasks"`` array and add a new section to it:
 
   .. code-block:: js
+    :caption: .vscode/tasks.json
 
     {
       "label": "build",
@@ -199,6 +200,7 @@ To fix include errors you may be having, you need to configure some settings in 
 - The ``c_cpp_properties.json`` file should look similar to this for Windows:
 
   .. code-block:: js
+    :caption: .vscode/c_cpp_properties.json
 
     {
       "configurations": [

@@ -39,6 +39,7 @@ At minimum, a server must have a static instance, a sleep timer, a thread loop,
 an initialization state and a cleanup procedure.
 
 .. code-block:: cpp
+    :caption: hilbert_hotel.h
 
     #ifndef HILBERT_HOTEL_H
     #define HILBERT_HOTEL_H
@@ -93,6 +94,7 @@ an initialization state and a cleanup procedure.
     #endif
 
 .. code-block:: cpp
+    :caption: hilbert_hotel.cpp
 
     #include "hilbert_hotel.h"
 
@@ -235,8 +237,7 @@ an initialization state and a cleanup procedure.
     }
 
 .. code-block:: cpp
-
-    /* prime_225.h */
+    :caption: prime_255.h
 
     const uint64_t PRIME[225] = {
             2,3,5,7,11,13,17,19,23,
@@ -275,6 +276,7 @@ RID_Owner maintains a list of RIDs. In practice, RIDs are similar to writing
 object-oriented C code.
 
 .. code-block:: cpp
+    :caption: infinite_bus.h
 
     class InfiniteBus : public RID_Data {
         RID self;
@@ -329,8 +331,14 @@ In ``register_server_types()``, ``Engine::get_singleton()->add_singleton``
 is used to register the dummy class in GDScript.
 
 .. code-block:: cpp
+    :caption: register_types.h
 
-    /* register_types.cpp */
+    /* Yes, the word in the middle must be the same as the module folder name */
+    void register_hilbert_hotel_types();
+    void unregister_hilbert_hotel_types();
+
+.. code-block:: cpp
+    :caption: register_types.cpp
 
     #include "register_types.h"
 
@@ -360,14 +368,6 @@ is used to register the dummy class in GDScript.
             memdelete(_hilbert_hotel);
         }
     }
-
-.. code-block:: cpp
-
-    /* register_types.h */
-
-    /* Yes, the word in the middle must be the same as the module folder name */
-    void register_hilbert_hotel_types();
-    void unregister_hilbert_hotel_types();
 
 - `servers/register_server_types.cpp <https://github.com/godotengine/godot/blob/master/servers/register_server_types.cpp>`__
 
