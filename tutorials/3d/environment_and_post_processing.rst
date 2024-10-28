@@ -410,6 +410,8 @@ geometry. Transparent materials won't be reflected, as they don't write to the d
 This also applies to shaders that use ``hint_screen_texture`` or ``hint_depth_texture``
 uniforms.
 
+.. _doc_environment_and_post_processing_ssao:
+
 Screen-Space Ambient Occlusion (SSAO)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
