@@ -46,8 +46,7 @@ object regardless how many times ``load`` is called on a specific resource.
 Therefore, playback state must be self-contained in AudioStreamPlayback.
 
 .. code-block:: cpp
-
-    /* audiostream_mytone.h */
+    :caption: audiostream_mytone.h
 
     #include "core/reference.h"
     #include "core/resource.h"
@@ -77,8 +76,7 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
     };
 
 .. code-block:: cpp
-
-    /* audiostream_mytone.cpp */
+    :caption: audiostream_mytone.cpp
 
     #include "audiostream_mytone.h"
 
@@ -127,8 +125,7 @@ AudioStreamPlayer uses ``mix`` callback to obtain PCM data. The callback must ma
 Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic memory allocation are forbidden.
 
 .. code-block:: cpp
-
-    /*  audiostreamplayer_mytone.h */
+    :caption: audiostreamplayer_mytone.h
 
     #include "core/reference.h"
     #include "core/resource.h"
@@ -165,8 +162,7 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
     };
 
 .. code-block:: cpp
-
-    /* audiostreamplayer_mytone.cpp */
+    :caption: audiostreamplayer_mytone.cpp
 
     #include "audiostreamplayer_mytone.h"
 
@@ -239,6 +235,7 @@ Instead of overloading ``mix``, AudioStreamPlaybackResampled uses ``_mix_interna
 query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
 
 .. code-block:: cpp
+    :caption: mytone_audiostream_resampled.h
 
     #include "core/reference.h"
     #include "core/resource.h"
@@ -280,6 +277,7 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
     };
 
 .. code-block:: cpp
+    :caption: mytone_audiostream_resampled.cpp
 
     #include "mytone_audiostream_resampled.h"
 

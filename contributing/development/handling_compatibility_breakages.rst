@@ -49,6 +49,7 @@ that introduced the change (``88047`` in this example). These compatibility meth
 like ``core/math/a_star_grid_2d.compat.inc`` in this case:
 
 .. code-block:: cpp
+    :caption: core/math/a_star_grid_2d.compat.inc
 
     /**************************************************************************/
     /*  a_star_grid_2d.compat.inc                                             */
@@ -106,6 +107,7 @@ This file should always be placed next to the original file, and have ``.compat.
 Next, this should be included in the ``.cpp`` file we're adding compatibility methods to, so ``core/math/a_star_grid_2d.cpp``:
 
 .. code-block:: cpp
+    :caption: core/math/a_star_grid_2d.cpp
 
     #include "a_star_grid_2d.h"
     #include "a_star_grid_2d.compat.inc"
@@ -117,6 +119,7 @@ done during the development of 4.3, this would be ``misc/extension_api_validatio
 this example):
 
 .. code-block:: text
+    :caption: misc/extension_api_validation/4.2-stable.expected
 
     GH-88047
     --------

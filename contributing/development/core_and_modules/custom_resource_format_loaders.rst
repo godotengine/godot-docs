@@ -56,8 +56,7 @@ read and handle data serialization.
 
 
 .. code-block:: cpp
-
-    /* resource_loader_json.h */
+    :caption: resource_loader_json.h
 
     #ifndef RESOURCE_LOADER_JSON_H
     #define RESOURCE_LOADER_JSON_H
@@ -75,8 +74,7 @@ read and handle data serialization.
     #endif // RESOURCE_LOADER_JSON_H
 
 .. code-block:: cpp
-
-    /* resource_loader_json.cpp */
+    :caption: resource_loader_json.cpp
 
     #include "resource_loader_json.h"
 
@@ -112,8 +110,7 @@ If you'd like to be able to edit and save a resource, you can implement a
 ``ResourceFormatSaver``:
 
 .. code-block:: cpp
-
-    /* resource_saver_json.h */
+    :caption: resource_saver_json.h
 
     #ifndef RESOURCE_SAVER_JSON_H
     #define RESOURCE_SAVER_JSON_H
@@ -130,8 +127,7 @@ If you'd like to be able to edit and save a resource, you can implement a
     #endif // RESOURCE_SAVER_JSON_H
 
 .. code-block:: cpp
-
-    /* resource_saver_json.cpp */
+    :caption: resource_saver_json.cpp
 
     #include "resource_saver_json.h"
 
@@ -164,8 +160,7 @@ understand additional binary formats such as machine learning models.
 Here is an example of creating a custom datatype:
 
 .. code-block:: cpp
-
-    /* resource_json.h */
+    :caption: resource_json.h
 
     #ifndef RESOURCE_JSON_H
     #define RESOURCE_JSON_H
@@ -197,8 +192,7 @@ Here is an example of creating a custom datatype:
     #endif // RESOURCE_JSON_H
 
 .. code-block:: cpp
-
-    /* resource_json.cpp */
+    :caption: resource_json.cpp
 
     #include "resource_json.h"
 
@@ -314,15 +308,13 @@ handler. The handler selects the proper loader automatically
 when ``load`` is called.
 
 .. code-block:: cpp
-
-    /* register_types.h */
+    :caption: register_types.h
 
     void register_json_types();
     void unregister_json_types();
 
 .. code-block:: cpp
-
-    /* register_types.cpp */
+    :caption: register_types.cpp
 
     #include "register_types.h"
 
