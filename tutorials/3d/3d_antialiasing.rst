@@ -66,6 +66,9 @@ StandardMaterial3D or ORMMaterial3D properties. Alpha to coverage has a
 moderate performance cost, but it's effective at reducing aliasing on
 transparent materials without introducing any blurriness.
 
+To make specular aliasing less noticeable, use the `Screen-space roughness limiter`_,
+which is enabled by default.
+
 MSAA can be enabled in the Project Settings by changing the value of the
 **Rendering > Anti Aliasing > Quality > MSAA 3D** setting. It's important to change
 the value of the **MSAA 3D** setting and not **MSAA 2D**, as these are entirely
@@ -231,7 +234,9 @@ an effect on roughness map rendering itself, its impact is limited there.
 
 The screen-space roughness limiter is enabled by default; it doesn't require
 any manual setup. It has a small performance impact, so consider disabling it
-if your project isn't affected by specular aliasing much.
+if your project isn't affected by specular aliasing much. You can disable it
+with the **Rendering > Quality > Screen Space Filters > Screen Space Roughness Limiter**
+project setting.
 
 Texture roughness limiter on import
 -----------------------------------
@@ -279,3 +284,37 @@ usually unnecessary, but it can provide better visuals on high-end GPUs or for
 :ref:`non-real-time rendering <doc_creating_movies>`. For example, to make
 moving edges look better when TAA is enabled, you can also enable MSAA at the
 same time.
+
+Antialiasing comparison
+~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Feature                  | MSAA                     | TAA                      | FSR2                     | FXAA                     | SSAA                     | SSRL                     |
++==========================+==========================+==========================+==========================+==========================+==========================+==========================+
+| Edge antialiasing        | 🟢 Yes                   | 🟢 Yes                   | 🟢 Yes                   | 🟢 Yes                   | 🟢 Yes                   | 🔴 No                    |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Specular antialiasing    | 🟡 Some                  | 🟢 Yes                   | 🟢 Yes                   | 🟡 Some                  | 🟢 Yes                   | 🟢 Yes                   |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Transparency antialiasing| 🟡 Some [1]_             | 🟢 Yes [2]_              | 🟢 Yes [2]_              | 🟢 Yes                   | 🟢 Yes                   | 🔴 No                    |
+|                          |                          |                          |                          |                          |                          |                          |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Added blur               | 🟢 None                  | 🟡 Some                  | 🟡 Some                  | 🟡 Some                  | 🟡 Some [3]_             | 🟢 None                  |
+|                          |                          |                          |                          |                          |                          |                          |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Ghosting artifacts       | 🟢 None                  | 🔴 Yes                   | 🔴 Yes                   | 🟢 None                  | 🟢 None                  | 🟢 None                  |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Performance cost         | 🟡 Medium                | 🟡 Medium                | 🔴 High                  | 🟢 Low                   | 🔴 Very High             | 🟡 Medium                |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Forward+                 | ✔️ Yes                   | ✔️ Yes                   | ✔️ Yes                   | ✔️ Yes                   | ✔️ Yes                   | ✔️ Yes                   |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Mobile                   | ✔️ Yes                   | ❌ No                    | ❌ No                    | ✔️ Yes                   | ✔️ Yes                   | ✔️ Yes                   |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+| Compatibility            | ✔️ Yes                   | ❌ No                    | ❌ No                    | ❌ No                    | ✔️ Yes                   | ❌ No                    |
++--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
+
+
+.. [1] MSAA does not work well with materials with Alpha Scissor (1-bit transparency).
+       This can be mitigated by enabling ``alpha antialiasing`` on the material.
+.. [2] TAA/FSR2 transparency antialiasing is most effective when using Alpha Scissor.
+.. [3] SSAA has some blur from bilinear downscaling. This can be mitigated by
+       using an integer scaling factor of ``2.0``.
