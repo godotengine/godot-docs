@@ -506,3 +506,34 @@ examples with the ``:kbd:`` tag left as-is for better visibility:
 - Press ``:kbd:`Ctrl + Alt + T``` to toggle the panel (``:kbd:`Opt + Cmd + T``` on macOS).
 - Press ``:kbd:`Space``` and hold the left mouse button to pan in the 2D editor.
 - Press ``:kbd:`Shift + Up Arrow``` to move the node upwards by 8 pixels.
+
+When to refer to a specific Godot version
+-----------------------------------------
+
+Most of the time, the class reference and the manual should not specify the first
+version in which a feature is added. This is because the documentation describes
+the *current* features of the engine. Documentation will be read and maintained
+for many versions after it is initially written, and a reference to a first supported
+version is only relevant for a few versions after a feature is added. After that,
+it becomes historical trivia best left to a dedicated changelog.
+
+Follow these guidelines for when to refer to a specific Godot version:
+
+- If a feature was added in the current major version (4.x), **you can specify**
+  the feature is new in 4.x.
+- If a feature or default approach to a problem was changed between major versions
+  (3.x -> 4.x), describe the current feature in the main body of the page, and
+  optionally add a brief sentence or note block to compare 3.x and 4.x.
+- If a large feature is added in a 4.x minor version, **you can specify** the minor
+  version when it was added. Large features have a whole page or large section of
+  documentation. In many cases it should still be avoided, since it's only relevant
+  for the next few minor versions.
+- If a small feature is added in a 4.x minor version, **do not specify** the minor
+  version when it was added. Small features have only a short section of
+  documentation, or are minor additions to existing features.
+- If the default approach to a problem is changed in a 4.x minor version, **do
+  specify** the minor version in which a new default approach was added. For example,
+  the change from ``TileMap`` to ``TileMapLayer`` in 4.3.
+- If a feature was added in a 3.x major or minor version, **do not specify** when 
+  the feature was added. These features are old enough that the exact version
+  in which they were added is not relevant.
