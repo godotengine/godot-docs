@@ -49,12 +49,13 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
 
     /* audiostream_mytone.h */
 
-    #include "core/reference.h"
-    #include "core/resource.h"
+    #ifndef AUDIOSTREAM_MYTONE_H
+    #define AUDIOSTREAM_MYTONE_H
+
     #include "servers/audio/audio_stream.h"
 
     class AudioStreamMyTone : public AudioStream {
-        GDCLASS(AudioStreamMyTone, AudioStream)
+        GDCLASS(AudioStreamMyTone, AudioStream);
 
     private:
         friend class AudioStreamPlaybackMyTone;
@@ -65,16 +66,19 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
 
     public:
         void reset();
-        void set_position(uint64_t pos);
-        virtual Ref<AudioStreamPlayback> instance_playback();
-        virtual String get_stream_name() const;
-        void gen_tone(int16_t *pcm_buf, int size);
-        virtual float get_length() const { return 0; } // if supported, otherwise return 0
+        void set_position(uint64_t p_pos);
+        virtual Ref<AudioStreamPlayback> instantiate_playback() override;
+        virtual String get_stream_name() const override;
+        void gen_tone(int16_t *p_pcm_buf, int p_size);
+
+        virtual double get_length() const override { return 0; } // If supported, otherwise return 0.
         AudioStreamMyTone();
 
     protected:
         static void _bind_methods();
     };
+
+    #endif // AUDIOSTREAM_MYTONE_H
 
 .. code-block:: cpp
 
@@ -82,32 +86,38 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
 
     #include "audiostream_mytone.h"
 
+    #include "audiostreamplayback_mytone.h"
+
     AudioStreamMyTone::AudioStreamMyTone()
             : mix_rate(44100), stereo(false), hz(639) {
     }
 
-    Ref<AudioStreamPlayback> AudioStreamMyTone::instance_playback() {
-        Ref<AudioStreamPlaybackMyTone> talking_tree;
-        talking_tree.instantiate();
-        talking_tree->base = Ref<AudioStreamMyTone>(this);
-        return talking_tree;
+    Ref<AudioStreamPlayback> AudioStreamMyTone::instantiate_playback() {
+        Ref<AudioStreamPlaybackMyTone> playback;
+        playback.instantiate();
+        playback->base = Ref<AudioStreamMyTone>(this);
+        return playback;
     }
 
     String AudioStreamMyTone::get_stream_name() const {
         return "MyTone";
     }
+
     void AudioStreamMyTone::reset() {
         set_position(0);
     }
+
     void AudioStreamMyTone::set_position(uint64_t p) {
         pos = p;
     }
+
     void AudioStreamMyTone::gen_tone(int16_t *pcm_buf, int size) {
         for (int i = 0; i < size; i++) {
             pcm_buf[i] = 32767.0 * sin(2.0 * Math_PI * double(pos + i) / (double(mix_rate) / double(hz)));
         }
         pos += size;
     }
+
     void AudioStreamMyTone::_bind_methods() {
         ClassDB::bind_method(D_METHOD("reset"), &AudioStreamMyTone::reset);
         ClassDB::bind_method(D_METHOD("get_stream_name"), &AudioStreamMyTone::get_stream_name);
@@ -128,14 +138,15 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
 
 .. code-block:: cpp
 
-    /*  audiostreamplayer_mytone.h */
+    /* audiostreamplayback_mytone.h */
 
-    #include "core/reference.h"
-    #include "core/resource.h"
+    #ifndef AUDIOSTREAMPLAYBACK_MYTONE_H
+    #define AUDIOSTREAMPLAYBACK_MYTONE_H
+
     #include "servers/audio/audio_stream.h"
 
     class AudioStreamPlaybackMyTone : public AudioStreamPlayback {
-        GDCLASS(AudioStreamPlaybackMyTone, AudioStreamPlayback)
+        GDCLASS(AudioStreamPlaybackMyTone, AudioStreamPlayback);
         friend class AudioStreamMyTone;
 
     private:
@@ -145,68 +156,76 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
         enum {
             MIX_FRAC_BITS = 13,
             MIX_FRAC_LEN = (1 << MIX_FRAC_BITS),
-            MIX_FRAC_MASK = MIX_FRAC_LEN - 1,
+            MIX_FRAC_MASK = MIX_FRAC_LEN - 1
         };
         void *pcm_buffer;
         Ref<AudioStreamMyTone> base;
         bool active;
 
     public:
-        virtual void start(float p_from_pos = 0.0);
-        virtual void stop();
-        virtual bool is_playing() const;
-        virtual int get_loop_count() const; // times it looped
-        virtual float get_playback_position() const;
-        virtual void seek(float p_time);
-        virtual void mix(AudioFrame *p_buffer, float p_rate_scale, int p_frames);
-        virtual float get_length() const; // if supported, otherwise return 0
+        virtual void start(double p_from_pos = 0.0) override;
+        virtual void stop() override;
+        virtual bool is_playing() const override;
+        virtual int get_loop_count() const override; // Times it looped.
+        virtual double get_playback_position() const override;
+        virtual void seek(double p_time) override;
+        virtual int mix(AudioFrame *p_buffer, float p_rate_scale, int p_frames) override;
+
         AudioStreamPlaybackMyTone();
         ~AudioStreamPlaybackMyTone();
     };
 
+    #endif // AUDIOSTREAMPLAYBACK_MYTONE_H
+
 .. code-block:: cpp
 
-    /* audiostreamplayer_mytone.cpp */
+    /* audiostreamplayback_mytone.cpp */
 
-    #include "audiostreamplayer_mytone.h"
+    #include "audiostreamplayback_mytone.h"
+
+    #include "audiostream_mytone.h"
 
     #include "core/math/math_funcs.h"
-    #include "core/print_string.h"
+
+    #include "servers/audio_server.h"
 
     AudioStreamPlaybackMyTone::AudioStreamPlaybackMyTone()
             : active(false) {
         AudioServer::get_singleton()->lock();
-        pcm_buffer = AudioServer::get_singleton()->audio_data_alloc(PCM_BUFFER_SIZE);
-        zeromem(pcm_buffer, PCM_BUFFER_SIZE);
+        pcm_buffer = memalloc(PCM_BUFFER_SIZE);
+        memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
         AudioServer::get_singleton()->unlock();
     }
+
     AudioStreamPlaybackMyTone::~AudioStreamPlaybackMyTone() {
-        if(pcm_buffer) {
-            AudioServer::get_singleton()->audio_data_free(pcm_buffer);
+        if (pcm_buffer) {
+            memfree(pcm_buffer);
             pcm_buffer = NULL;
         }
     }
+
     void AudioStreamPlaybackMyTone::stop() {
         active = false;
         base->reset();
     }
-    void AudioStreamPlaybackMyTone::start(float p_from_pos) {
+
+    void AudioStreamPlaybackMyTone::start(double p_from_pos) {
         seek(p_from_pos);
         active = true;
     }
-    void AudioStreamPlaybackMyTone::seek(float p_time) {
-        float max = get_length();
+
+    void AudioStreamPlaybackMyTone::seek(double p_time) {
         if (p_time < 0) {
                 p_time = 0;
         }
         base->set_position(uint64_t(p_time * base->mix_rate) << MIX_FRAC_BITS);
     }
-    void AudioStreamPlaybackMyTone::mix(AudioFrame *p_buffer, float p_rate, int p_frames) {
-        ERR_FAIL_COND(!active);
+
+    int AudioStreamPlaybackMyTone::mix(AudioFrame *p_buffer, float p_rate, int p_frames) {
         if (!active) {
-                return;
+            return 0;
         }
-        zeromem(pcm_buffer, PCM_BUFFER_SIZE);
+        memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
         int16_t *buf = (int16_t *)pcm_buffer;
         base->gen_tone(buf, p_frames);
 
@@ -214,16 +233,17 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
             float sample = float(buf[i]) / 32767.0;
             p_buffer[i] = AudioFrame(sample, sample);
         }
+        return p_frames;
     }
+
     int AudioStreamPlaybackMyTone::get_loop_count() const {
         return 0;
     }
-    float AudioStreamPlaybackMyTone::get_playback_position() const {
+
+    double AudioStreamPlaybackMyTone::get_playback_position() const {
         return 0.0;
     }
-    float AudioStreamPlaybackMyTone::get_length() const {
-        return 0.0;
-    }
+
     bool AudioStreamPlaybackMyTone::is_playing() const {
         return active;
     }
@@ -240,15 +260,16 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
 
 .. code-block:: cpp
 
-    #include "core/reference.h"
-    #include "core/resource.h"
+    /* audiostreamplaybackresampled_mytone.h */
+
+    #ifndef AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
+    #define AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
+
     #include "servers/audio/audio_stream.h"
 
-    class AudioStreamMyToneResampled;
-
     class AudioStreamPlaybackResampledMyTone : public AudioStreamPlaybackResampled {
-        GDCLASS(AudioStreamPlaybackResampledMyTone, AudioStreamPlaybackResampled)
-        friend class AudioStreamMyToneResampled;
+        GDCLASS(AudioStreamPlaybackResampledMyTone, AudioStreamPlaybackResampled);
+        friend class AudioStreamMyTone;
 
     private:
         enum {
@@ -260,86 +281,98 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
             MIX_FRAC_MASK = MIX_FRAC_LEN - 1,
         };
         void *pcm_buffer;
-        Ref<AudioStreamMyToneResampled> base;
+        Ref<AudioStreamMyTone> base;
         bool active;
 
     protected:
-        virtual void _mix_internal(AudioFrame *p_buffer, int p_frames);
+        virtual int _mix_internal(AudioFrame *p_buffer, int p_frames) override;
 
     public:
-        virtual void start(float p_from_pos = 0.0);
-        virtual void stop();
-        virtual bool is_playing() const;
-        virtual int get_loop_count() const; // times it looped
-        virtual float get_playback_position() const;
-        virtual void seek(float p_time);
-        virtual float get_length() const; // if supported, otherwise return 0
-        virtual float get_stream_sampling_rate();
+        virtual void start(double p_from_pos = 0.0) override;
+        virtual void stop() override;
+        virtual bool is_playing() const override;
+        virtual int get_loop_count() const override; // Times it looped.
+        virtual double get_playback_position() const override;
+        virtual void seek(double p_time) override;
+        virtual float get_stream_sampling_rate() override;
+
         AudioStreamPlaybackResampledMyTone();
         ~AudioStreamPlaybackResampledMyTone();
     };
 
+    #endif // AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
+
 .. code-block:: cpp
 
-    #include "mytone_audiostream_resampled.h"
+    /* audiostreamplaybackresampled_mytone.cpp */
+
+    #include "audiostreamplaybackresampled_mytone.h"
+
+    #include "audiostream_mytone.h"
 
     #include "core/math/math_funcs.h"
-    #include "core/print_string.h"
+
+    #include "servers/audio_server.h"
 
     AudioStreamPlaybackResampledMyTone::AudioStreamPlaybackResampledMyTone()
             : active(false) {
         AudioServer::get_singleton()->lock();
-        pcm_buffer = AudioServer::get_singleton()->audio_data_alloc(PCM_BUFFER_SIZE);
-        zeromem(pcm_buffer, PCM_BUFFER_SIZE);
+        pcm_buffer = memalloc(PCM_BUFFER_SIZE);
+        memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
         AudioServer::get_singleton()->unlock();
     }
+
     AudioStreamPlaybackResampledMyTone::~AudioStreamPlaybackResampledMyTone() {
         if (pcm_buffer) {
-            AudioServer::get_singleton()->audio_data_free(pcm_buffer);
+            memfree(pcm_buffer);
             pcm_buffer = NULL;
         }
     }
+
     void AudioStreamPlaybackResampledMyTone::stop() {
         active = false;
         base->reset();
     }
-    void AudioStreamPlaybackResampledMyTone::start(float p_from_pos) {
+
+    void AudioStreamPlaybackResampledMyTone::start(double p_from_pos) {
         seek(p_from_pos);
         active = true;
     }
-    void AudioStreamPlaybackResampledMyTone::seek(float p_time) {
-        float max = get_length();
+
+    void AudioStreamPlaybackResampledMyTone::seek(double p_time) {
         if (p_time < 0) {
                 p_time = 0;
         }
         base->set_position(uint64_t(p_time * base->mix_rate) << MIX_FRAC_BITS);
     }
-    void AudioStreamPlaybackResampledMyTone::_mix_internal(AudioFrame *p_buffer, int p_frames) {
-        ERR_FAIL_COND(!active);
+
+    int AudioStreamPlaybackResampledMyTone::_mix_internal(AudioFrame *p_buffer, int p_frames) {
         if (!active) {
-            return;
+            return 0;
         }
-        zeromem(pcm_buffer, PCM_BUFFER_SIZE);
+        memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
         int16_t *buf = (int16_t *)pcm_buffer;
         base->gen_tone(buf, p_frames);
 
-        for(int i = 0;  i < p_frames; i++) {
+        for(int i = 0; i < p_frames; i++) {
             float sample = float(buf[i]) / 32767.0;
-                p_buffer[i] = AudioFrame(sample, sample);
+            p_buffer[i] = AudioFrame(sample, sample);
         }
+        return p_frames;
     }
+
     float AudioStreamPlaybackResampledMyTone::get_stream_sampling_rate() {
         return float(base->mix_rate);
     }
+
     int AudioStreamPlaybackResampledMyTone::get_loop_count() const {
         return 0;
     }
-    float AudioStreamPlaybackResampledMyTone::get_playback_position() const {
+
+    double AudioStreamPlaybackResampledMyTone::get_playback_position() const {
         return 0.0;
     }
-    float AudioStreamPlaybackResampledMyTone::get_length() const {
-        return 0.0;
-    }
+
     bool AudioStreamPlaybackResampledMyTone::is_playing() const {
         return active;
     }
