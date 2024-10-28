@@ -41,6 +41,8 @@ detailed below.
 Multisample antialiasing (MSAA)
 -------------------------------
 
+*This is available in all renderers.*
+
 This technique is the "historical" way of dealing with aliasing. MSAA is very
 effective on geometry edges (especially at higher levels). MSAA does not
 introduce any blurriness whatsoever.
@@ -83,8 +85,8 @@ Note that alpha antialiasing is not used here:
 Temporal antialiasing (TAA)
 ---------------------------
 
-*This is only available in the Clustered Forward backend, not the Forward Mobile
-or Compatibility backends.*
+*This is only available in the Forward+ renderer, not the Mobile or Compatibility
+renderers.*
 
 Temporal antialiasing works by *converging* the result of previously rendered
 frames into a single, high-quality frame. This is a continuous process that
@@ -114,6 +116,9 @@ Comparison between no antialiasing (left) and TAA (right):
 
 AMD FidelityFX Super Resolution 2.2 (FSR2)
 ------------------------------------------
+
+*This is only available in the Forward+ renderer, not the Mobile or Compatibility
+renderers.*
 
 Since Godot 4.2, there is built-in support for
 `AMD FidelityFX Super Resolution <https://www.amd.com/en/products/graphics/technologies/fidelityfx/super-resolution.html>`__
@@ -148,8 +153,8 @@ Comparison between no antialiasing (left) and FSR2 at native resolution (right):
 Fast approximate antialiasing (FXAA)
 ------------------------------------
 
-*This is only available in the Clustered Forward and Forward Mobile backends,
-not the Compatibility backend.*
+*This is only available in the Forward+ and Mobile renderers, not the Compatibility
+renderer.*
 
 Fast approximate antialiasing is a post-processing antialiasing solution. It is
 faster to run than any other antialiasing technique and also supports
@@ -175,8 +180,7 @@ Comparison between no antialiasing (left) and FXAA (right):
 Supersample antialiasing (SSAA)
 -------------------------------
 
-*This is only available in the Clustered Forward and Forward Mobile backends,
-not the Compatibility backend.*
+*This is available in all renderers.*
 
 Supersampling provides the highest quality of antialiasing possible, but it's
 also the most expensive. It works by shading every pixel in the scene multiple
@@ -216,8 +220,8 @@ Comparison between no antialiasing (left) and various SSAA levels (right):
 Screen-space roughness limiter
 ------------------------------
 
-*This is only available in the Clustered Forward and Forward Mobile backends,
-not the Compatibility backend.*
+*This is only available in the Forward+ and Mobile renderers, not the Compatibility
+renderer.*
 
 This is not an edge antialiasing method, but it is a way of reducing specular
 aliasing in 3D.

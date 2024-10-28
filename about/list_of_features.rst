@@ -108,6 +108,8 @@ Rendering
   advanced graphics backend, suited for low-end desktop and mobile platforms.
   Used by default on the web platform.
 
+See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
+
 2D graphics
 -----------
 
@@ -279,7 +281,8 @@ Rendering
   rendered with clustered forward optimizations to decrease their individual cost.
   Clustered rendering also lifts any limits on the number of reflection probes that can be used on a mesh.
 - When using the Forward Mobile backend, up to 8 reflection probes can be displayed per mesh
-  resource.
+  resource. When using the Compatibility renderer, up to 2 reflection probes can
+  be displayed per mesh resource.
 
 **Decals:**
 
