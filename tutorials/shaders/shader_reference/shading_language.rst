@@ -383,7 +383,7 @@ accessible outside of the shader.
 
     shader_type spatial;
 
-    const float PI = 3.14159265358979323846;
+    const float GOLDEN_RATIO = 1.618033988749894;
 
 Constants of the ``float`` type must be initialized using ``.`` notation after the
 decimal part or by using the scientific notation. The optional ``f`` post-suffix is
@@ -811,7 +811,7 @@ GDScript:
           smaller than a ``vec4``, such as ``vec2`` or ``vec3``, are padded to
           the size of a ``vec4``. Scalar uniforms such as ``int`` or ``float``
           are not padded, and ``bool`` is padded to the size of an ``int``.
-          
+
           Arrays count as the total size of their contents. If you need a uniform
           array that is larger than this limit, consider packing the data into a
           texture instead, since the *contents* of a texture do not count towards
