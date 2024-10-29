@@ -218,11 +218,10 @@ Maintenance (patch) releases are released as needed with potentially very
 short development cycles, to provide users of the current stable branch with
 the latest bug fixes for their production needs.
 
-The 3.6 release is out, and may be the last stable branch of Godot 3.x. It is a
-Long-Term Support (LTS) release, which we plan to support for as long as users
-still need it (due to missing features in Godot 4.x, or having published games
-which they need to keep updating for platform requirements). There is a
-development branch for 3.x, which may become 3.7, but it has no ETA.
+There is currently no planned release date for the next 3.x minor version, 3.7.
+The current stable release, 3.6, may be the last stable branch of Godot 3.x.
+Godot 3.x is supported on a best-effort basis, as long as contributors continue
+to maintain it.
 
 What are the criteria for compatibility across engine versions?
 ---------------------------------------------------------------
