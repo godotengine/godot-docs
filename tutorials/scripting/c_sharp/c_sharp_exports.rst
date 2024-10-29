@@ -363,7 +363,7 @@ combine multiple flags using logical OR (``|``) are also possible.
 .. code-block:: csharp
 
     [Flags]
-    public enum MyEnum
+    public enum SpellElements
     {
         Fire = 1 << 1,
         Water = 1 << 2,
