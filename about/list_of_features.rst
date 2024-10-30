@@ -10,8 +10,8 @@ This page aims to list **all** features currently supported by Godot.
 .. note::
 
     This page lists features supported by the current stable version of
-    Godot. Some of these features may not be available in the
-    `LTS release series (3.x) <https://docs.godotengine.org/en/3.5/about/list_of_features.html>`__.
+    Godot. Some of these features are not available in the
+    `3.x release series <https://docs.godotengine.org/en/3.6/about/list_of_features.html>`__.
 
 Platforms
 ---------
@@ -30,8 +30,7 @@ Platforms
      on an old enough base distribution.
    - Official binaries are compiled using the
      `Godot Engine buildroot <https://github.com/godotengine/buildroot>`__,
-     allowing for binaries that work across common Linux distributions
-     (including LTS variants).
+     allowing for binaries that work across common Linux distributions.
 
 - Android (editor support is experimental).
 - :ref:`Web browsers <doc_using_the_web_editor>`. Experimental in 4.0,
