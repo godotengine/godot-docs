@@ -43,7 +43,7 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **unshaded**                  | Result is just albedo. No lighting/shading happens in material.                                      |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **wireframe**                 | Geometry draws using lines.                                                                          |
+| **wireframe**                 | Geometry draws using lines. Not supported in the Compatibility renderer.                             |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **diffuse_burley**            | Burley (Disney PBS) for diffuse (default).                                                           |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
