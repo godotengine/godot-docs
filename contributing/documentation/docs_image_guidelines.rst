@@ -36,6 +36,8 @@ dramatically increases file size. If you're taking screenshots on a higher
 resolution screen the screenshot should be scaled down. There are instructions
 on how to do this later on this page.
 
+.. _doc_docs_image_guidelines_format_conversion:
+
 Format conversion
 ^^^^^^^^^^^^^^^^^
 
@@ -52,6 +54,8 @@ compression is fine, even if the file size is bigger.
 
 If you already have an image editor such as GIMP, Krita or Photoshop installed
 it may have the ability to open an image then save it as a WebP file.
+
+.. _doc_docs_image_guidelines_cropping:
 
 Cropping
 ^^^^^^^^
@@ -88,6 +92,8 @@ If you make a mistake and overcrop don't worry, cropping is non-destructive in
 Krita and can be adjusted. Click on the image with your cropping tool still selected
 and the controls will return.
 
+.. _doc_docs_image_guidelines_scaling_down:
+
 Scaling down an image
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -112,6 +118,8 @@ If the image is over 300KB in size try compressing it losslessly using `Squoosh 
 If it's still over 300KB change to lossy compression and slowly increase the compression until it's under
 300KB. If this results in noticeable compression artifacts using less compression is fine, even if the file
 size is bigger.
+
+.. _doc_docs_image_guidelines_outlines:
 
 Outlines, arrows and text
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -153,6 +161,8 @@ images should be included with the following code snippet::
 Where ``documentation_image.webp`` would be changed to the name of the image you
 created. Name your images in a way that makes their meaning clear, possibly with
 a prefix that makes their relationship to a documentation page explicit.
+
+.. _doc_docs_image_guidelines_videos:
 
 Videos
 ------
