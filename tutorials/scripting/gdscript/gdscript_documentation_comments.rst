@@ -73,13 +73,13 @@ Documenting script members
 
 Members that are applicable for documentation:
 
-- Inner class
-- Constant
-- Function
 - Signal
-- Variable
 - Enum
 - Enum value
+- Constant
+- Variable
+- Function
+- Inner class
 
 Documentation of a script member must immediately precede the member or its annotations
 if it has any. The description can have more than one line but every line must start with
@@ -106,6 +106,8 @@ For example::
 
 Alternatively, you can use inline documentation comments::
 
+    signal my_signal ## My signal.
+
     enum MyEnum { ## My enum.
         VALUE_A = 0, ## Value A.
         VALUE_B = 1, ## Value B.
@@ -115,10 +117,10 @@ Alternatively, you can use inline documentation comments::
 
     var my_var ## My variable.
 
-    signal my_signal ## My signal.
 
     func my_func(): ## My func.
         pass
+
 
     class MyClass: ## My class.
         pass
@@ -142,9 +144,6 @@ Complete script example
     ## @tutorial(Tutorial 2): https://example.com/tutorial_2
     ## @experimental
 
-    ## The description of a constant.
-    const GRAVITY = 9.8
-
     ## The description of a signal.
     signal my_signal
 
@@ -159,6 +158,9 @@ Complete script example
         ## Direction right.
         RIGHT = 3,
     }
+
+    ## The description of a constant.
+    const GRAVITY = 9.8
 
     ## The description of the variable v1.
     var v1
