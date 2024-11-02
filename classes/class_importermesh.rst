@@ -144,7 +144,9 @@ Removes all surfaces and blend shapes from this **ImporterMesh**.
 
 Generates all lods for this ImporterMesh.
 
-\ ``normal_merge_angle`` and ``normal_split_angle`` are in degrees and used in the same way as the importer settings in ``lods``. As a good default, use 25 and 60 respectively.
+\ ``normal_merge_angle`` is in degrees and used in the same way as the importer settings in ``lods``.
+
+\ ``normal_split_angle`` is not used and only remains for compatibility with older versions of the API.
 
 The number of generated lods can be accessed using :ref:`get_surface_lod_count<class_ImporterMesh_method_get_surface_lod_count>`, and each LOD is available in :ref:`get_surface_lod_size<class_ImporterMesh_method_get_surface_lod_size>` and :ref:`get_surface_lod_indices<class_ImporterMesh_method_get_surface_lod_indices>`.
 

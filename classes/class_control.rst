@@ -1926,7 +1926,7 @@ When set, this property gives the highest priority to the type of the specified 
 
 Defines if tooltip text should automatically change to its translated version depending on the current locale. Uses the same auto translate mode as this control when set to :ref:`Node.AUTO_TRANSLATE_MODE_INHERIT<class_Node_constant_AUTO_TRANSLATE_MODE_INHERIT>`.
 
-\ **Note:** When the tooltip is customized using :ref:`_make_custom_tooltip<class_Control_private_method__make_custom_tooltip>`, this auto translate mode is applied automatically to the returned control.
+\ **Note:** Tooltips customized using :ref:`_make_custom_tooltip<class_Control_private_method__make_custom_tooltip>` do not use this auto translate mode automatically.
 
 .. rst-class:: classref-item-separator
 
