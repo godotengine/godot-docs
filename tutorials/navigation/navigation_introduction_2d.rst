@@ -131,7 +131,7 @@ It uses the NavigationServer2D and a NavigationAgent2D for path movement.
         navigation_agent.target_desired_distance = 4.0
 
         # Make sure to not await during _ready.
-        actor_setup.call_deferred()
+        actor_setup()
 
     func actor_setup():
         # Wait for the first physics frame so the NavigationServer can sync.
