@@ -23,7 +23,7 @@ Occlusion culling can improve rendering performance in closed/semi-open areas by
 
 The occlusion culling system is mostly static. **OccluderInstance3D**\ s can be moved or hidden at run-time, but doing so will trigger a background recomputation that can take several frames. It is recommended to only move **OccluderInstance3D**\ s sporadically (e.g. for procedural generation purposes), rather than doing so every frame.
 
-The occlusion culling system works by rendering the occluders on the CPU in parallel using `Embree <https://www.embree.org/>`__, drawing the result to a low-resolution buffer then using this to cull 3D nodes individually. In the 3D editor, you can preview the occlusion culling buffer by choosing **Perspective > Debug Advanced... > Occlusion Culling Buffer** in the top-left corner of the 3D viewport. The occlusion culling buffer quality can be adjusted in the Project Settings.
+The occlusion culling system works by rendering the occluders on the CPU in parallel using `Embree <https://www.embree.org/>`__, drawing the result to a low-resolution buffer then using this to cull 3D nodes individually. In the 3D editor, you can preview the occlusion culling buffer by choosing **Perspective > Display Advanced... > Occlusion Culling Buffer** in the top-left corner of the 3D viewport. The occlusion culling buffer quality can be adjusted in the Project Settings.
 
 \ **Baking:** Select an **OccluderInstance3D** node, then use the **Bake Occluders** button at the top of the 3D editor. Only opaque materials will be taken into account; transparent materials (alpha-blended or alpha-tested) will be ignored by the occluder generation.
 

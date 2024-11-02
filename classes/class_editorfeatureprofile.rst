@@ -134,11 +134,19 @@ The Import dock. If this feature is disabled, the Import dock won't be visible.
 
 The History dock. If this feature is disabled, the History dock won't be visible.
 
+.. _class_EditorFeatureProfile_constant_FEATURE_GAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_EditorFeatureProfile_Feature>` **FEATURE_GAME** = ``8``
+
+The Game tab, which allows embedding the game window and selecting nodes by clicking inside of it. If this feature is disabled, the Game tab won't display.
+
 .. _class_EditorFeatureProfile_constant_FEATURE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Feature<enum_EditorFeatureProfile_Feature>` **FEATURE_MAX** = ``8``
+:ref:`Feature<enum_EditorFeatureProfile_Feature>` **FEATURE_MAX** = ``9``
 
 Represents the size of the :ref:`Feature<enum_EditorFeatureProfile_Feature>` enum.
 

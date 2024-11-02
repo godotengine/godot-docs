@@ -704,7 +704,7 @@ Returns the index of the **first** **case-insensitive** occurrence of ``what`` i
 
 Formats the string by replacing all occurrences of ``placeholder`` with the elements of ``values``.
 
-\ ``values`` can be a :ref:`Dictionary<class_Dictionary>` or an :ref:`Array<class_Array>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
+\ ``values`` can be a :ref:`Dictionary<class_Dictionary>`, an :ref:`Array<class_Array>` or an :ref:`Object<class_Object>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
 
 ::
 
@@ -722,6 +722,14 @@ Some additional handling is performed when ``values`` is an :ref:`Array<class_Ar
     # Prints "User 42 is Godot."
     print("User {} is {}.".format([42, "Godot"], "{}"))
     print("User {id} is {name}.".format([["id", 42], ["name", "Godot"]]))
+
+When passing an :ref:`Object<class_Object>`, the property names from :ref:`Object.get_property_list<class_Object_method_get_property_list>` are used as keys.
+
+::
+
+    # Prints: Visible true, position (0, 0).
+    var node = Node2D.new()
+    print("Visible {visible}, position {position}".format(node))
 
 See also the :doc:`GDScript format string <../tutorials/scripting/gdscript/gdscript_format_string>` tutorial.
 

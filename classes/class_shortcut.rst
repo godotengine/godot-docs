@@ -21,7 +21,7 @@ Description
 
 Shortcuts are commonly used for interacting with a :ref:`Control<class_Control>` element from an :ref:`InputEvent<class_InputEvent>` (also known as hotkeys).
 
-One shortcut can contain multiple :ref:`InputEvent<class_InputEvent>`'s, allowing the possibility of triggering one action with multiple different inputs.
+One shortcut can contain multiple :ref:`InputEvent<class_InputEvent>`\ s, allowing the possibility of triggering one action with multiple different inputs.
 
 .. rst-class:: classref-reftable-group
 

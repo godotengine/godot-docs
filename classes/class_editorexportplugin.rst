@@ -149,6 +149,8 @@ Return ``true`` if this plugin will customize scenes based on the platform and f
 
 When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_private_method__get_customization_configuration_hash>` and :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>` will be called and must be implemented.
 
+\ **Note:** :ref:`_customize_scene<class_EditorExportPlugin_private_method__customize_scene>` will only be called for scenes that have been modified since the last export.
+
 .. rst-class:: classref-item-separator
 
 ----
