@@ -170,6 +170,11 @@ html_theme_options = {
     "logo_only": True,
     # Collapse navigation (False makes it tree-like)
     "collapse_navigation": False,
+    # Remove version and language picker beneath the title
+    "version_selector": False,
+    "language_selector": False,
+    # Set Flyout menu to attached
+    "flyout_display": "attached",
 }
 
 html_title = supported_languages[language] % ( "(" + version + ")" )
