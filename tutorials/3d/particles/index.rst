@@ -9,6 +9,7 @@ This section of the tutorial covers (3D) GPU-accelerated particle systems. Most 
 discussed here apply to CPU particles as well.
 
 .. rubric:: Introduction
+   :heading-level: 2
 
 You can use particle systems to simulate complex physical effects like fire, sparks,
 smoke, magical effects, and many more. They are very well suited for creating dynamic and organic
@@ -22,6 +23,7 @@ parameters and behaviors.
 Every particle system you create in Godot consists of two main parts: particles and emitters.
 
 .. rubric:: Particles
+   :heading-level: 3
 
 A particle is the visible part of a particle system. It's what you see on the screen when a particle
 system is active: The tiny specks of dust, the flames of a fire, the glowing orbs of a magical
@@ -31,6 +33,7 @@ color over the course of its lifetime. When you think of a fire, you can think o
 embers flying away from it as individual particles.
 
 .. rubric:: Emitters
+   :heading-level: 3
 
 An emitter is what's creating the particles. Emitters are usually not visible, but they can have
 a shape. That shape controls where and how particles are spawned, for example whether they should fill
@@ -38,6 +41,7 @@ a room like dust or shoot away from a single point like a fountain. Going back t
 an emitter would be the heat at the center of the fire that creates the embers and the flames.
 
 .. rubric:: Node overview
+   :heading-level: 3
 
 .. figure:: img/particle_nodes.webp
    :alt: A list of nodes related to 3D particles
@@ -72,6 +76,7 @@ objects in it and uses that for large-scale particle collisions.
 
 
 .. rubric:: Basic usage
+   :heading-level: 2
 
 .. toctree::
    :maxdepth: 1
@@ -82,6 +87,7 @@ objects in it and uses that for large-scale particle collisions.
    process_material_properties
 
 .. rubric:: Advanced topics
+   :heading-level: 2
 
 .. toctree::
    :maxdepth: 1
