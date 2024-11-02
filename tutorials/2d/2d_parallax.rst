@@ -1,4 +1,4 @@
-.. doc_2d_parallax:
+.. _doc_2d_parallax:
 
 2D Parallax
 ===========
