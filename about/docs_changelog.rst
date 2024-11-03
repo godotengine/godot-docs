@@ -13,6 +13,24 @@ added since version 3.0.
 .. note:: This document only contains new pages so not all changes are reflected,
           many pages have been substantially updated but are not reflected in this document.
 
+New pages since version 4.3
+---------------------------
+
+Editor
+^^^^^^
+
+- :ref:`doc_using_the_xr_editor`
+
+Performance
+^^^^^^^^^^^
+
+- :ref:`doc_pipeline_compilations`
+
+Rendering
+^^^^^^^^^
+
+- :ref:`doc_renderers`
+
 New pages since version 4.2
 ---------------------------
 

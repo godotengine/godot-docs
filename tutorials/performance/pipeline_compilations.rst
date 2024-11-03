@@ -1,3 +1,5 @@
+.. _doc_pipeline_compilations:
+
 Reducing Stutter from Shader (Pipeline) Compilations
 ====================================================
 
