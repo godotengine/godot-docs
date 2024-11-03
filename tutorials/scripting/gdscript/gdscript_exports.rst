@@ -52,6 +52,10 @@ Resources and nodes can be exported.
     @export var resource: Resource
     @export var node: Node
 
+Even if a script is not executed in the editor, exported properties
+can still be edited. However, getters and setters will only be used
+if the script is in :ref:`doc_gdscript_tool_mode`.
+
 Grouping Exports
 ----------------
 
@@ -243,10 +247,6 @@ Therefore, if you specify an extension of Resource such as:
 
 The drop-down menu will be limited to AnimationNode and all
 its derived classes.
-
-It must be noted that even if the script is not being run while in the
-editor, the exported properties are still editable. This can be used
-in conjunction with a :ref:`script in "tool" mode <doc_gdscript_tool_mode>`.
 
 Exporting bit flags
 -------------------
