@@ -61,6 +61,8 @@ You need to use **clang-format 17** to be compatible with Godot's format. Later 
 be suitable, but previous versions may not support all used options, or format
 some things differently, leading to style issues in pull requests.
 
+.. _doc_pre_commit_hook:
+
 Pre-commit hook
 ^^^^^^^^^^^^^^^
 
