@@ -322,22 +322,24 @@ return the array's size.
 Global arrays
 ~~~~~~~~~~~~~
 
-You can declare arrays at global space like:
+You can declare arrays in global space as either ``const`` or ``uniform``:
 
 .. code-block:: glsl
 
     shader_type spatial;
 
     const lowp vec3 v[1] = lowp vec3[1] ( vec3(0, 0, 1) );
+    uniform lowp vec3 w[1];
 
     void fragment() {
-      ALBEDO = v[0];
+      ALBEDO = v[0] + w[0];
     }
 
 .. note::
 
-    Global arrays have to be declared as global constants, otherwise they can be
-    declared the same as local arrays.
+    Global arrays use the same syntax as local arrays, except with a ``const``
+    or ``uniform`` added to their declaration. Note that uniform arrays can't
+    have a default value.
 
 Constants
 ---------
