@@ -16,6 +16,11 @@ added since version 3.0.
 New pages since version 4.3
 ---------------------------
 
+3D
+^^
+
+- :ref:`doc_spring_arm`
+
 Editor
 ^^^^^^
 
