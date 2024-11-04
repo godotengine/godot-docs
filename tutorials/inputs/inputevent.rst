@@ -194,8 +194,6 @@ There are several specialized types of InputEvent, described in the table below:
 |                                                                   | as feedback. (more on this below)       |
 +-------------------------------------------------------------------+-----------------------------------------+
 
-.. _doc_input_actions:
-
 Input actions
 -------------
 
