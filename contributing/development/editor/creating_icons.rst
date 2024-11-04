@@ -48,7 +48,7 @@ Icon optimization
 
 Because the editor renders SVGs once at load time, they need to be small
 in size so they can be efficiently parsed. When the
-:ref:`pre-commit hook <doc_pre_commit_hook>` runs, it automatically optimizes
+:ref:`pre-commit hook <doc_code_style_guidelines_pre_commit_hook>` runs, it automatically optimizes
 the SVG using `svgo <https://github.com/svg/svgo>`_.
 
 .. note::
