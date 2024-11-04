@@ -243,6 +243,7 @@ The Input singleton has a method for this:
 
 
 .. seealso::
+
    See :ref:`doc_first_3d_game_input_actions` for a tutorial on adding input
    actions in the project settings.
 
