@@ -194,10 +194,10 @@ There are several specialized types of InputEvent, described in the table below:
 |                                                                   | as feedback. (more on this below)       |
 +-------------------------------------------------------------------+-----------------------------------------+
 
-Actions
--------
+Input actions
+-------------
 
-Actions are a grouping of zero or more InputEvents into a commonly
+Input actions are a grouping of zero or more InputEvents into a commonly
 understood title (for example, the default "ui_left" action grouping both joypad-left input and a keyboard's left arrow key). They are not required to represent an
 InputEvent but are useful because they abstract various inputs when
 programming the game logic.
@@ -238,6 +238,12 @@ The Input singleton has a method for this:
     ev.Pressed = true;
     // Feedback.
     Input.ParseInputEvent(ev);
+
+
+.. seealso::
+
+   See :ref:`doc_first_3d_game_input_actions` for a tutorial on adding input
+   actions in the project settings.
 
 InputMap
 --------
