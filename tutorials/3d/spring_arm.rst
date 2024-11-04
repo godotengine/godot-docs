@@ -12,7 +12,7 @@ Introduction
 rotates around something such as a player character or a vehicle.
 
 In Godot, this can be done by setting a :ref:`Camera3D <class_Camera3D>` as a child of a node.
-However, if you try this without any extra steps you'll notice that the camera clips through geometry and hides the scene.
+However, if you try this without any extra steps, you'll notice that the camera clips through geometry and hides the scene.
 
 This is where the :ref:`SpringArm3D <class_SpringArm3D>` node comes in.
 
