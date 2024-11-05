@@ -8,6 +8,9 @@ on:
 
 jobs:
   build:
+    # Don't run scheduled runs on forks unless the CI_OFFLINE_DOCS_CRON variable is set to 'true'.
+    # Manual runs can still be triggered as normal.
+    if: ${{ github.repository_owner == 'godotengine' || github.event_name != 'schedule' || vars.CI_OFFLINE_DOCS_CRON == 'true' }}
     runs-on: ubuntu-22.04
     strategy:
       matrix:
