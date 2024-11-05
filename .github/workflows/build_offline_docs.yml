@@ -36,6 +36,8 @@ jobs:
           # Keep the current build and the previous build (in case a scheduled build failed).
           # This makes it more likely to have at least one successful build available at all times.
           retention-days: 15
+          if-no-files-found: error
+          overwrite: true
 
       - name: Sphinx - Build ePub
         run: |
@@ -58,3 +60,5 @@ jobs:
           # Keep the current build and the previous build (in case a scheduled build failed).
           # This makes it more likely to have at least one successful build available at all times.
           retention-days: 15
+          if-no-files-found: error
+          overwrite: true
