@@ -82,7 +82,7 @@ for reference.
     class to get much of the work done automatically.
 
     If the platform is not UNIX-like, you might use the
-    `Windows port <https://github.com/godotengine/godot/blob/master/platform/windows/os_windows.cpp>`
+    `Windows port <https://github.com/godotengine/godot/blob/master/platform/windows/os_windows.cpp>`__
     as a reference.
 
 **detect.py file**
@@ -131,7 +131,8 @@ games.
     platform's screen resolution feature (if relevant). Any attempt to create
     or manipulate other window IDs can be rejected.
 - *If the target platform supports the graphics APIs in question:* Rendering
-  context for `Vulkan <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/x11/vulkan_context_x11.cpp>`__,
+  context for `Vulkan <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/x11/rendering_context_driver_vulkan_x11.cpp>`__,
+  `Direct3D 12 <https://github.com/godotengine/godot/blob/master/drivers/d3d12/rendering_context_driver_d3d12.cpp>`__
   `OpenGL 3.3 or OpenGL ES 3.0 <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/x11/gl_manager_x11.cpp>`__.
 - Input handlers for `keyboard <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/x11/key_mapping_x11.cpp>`__
   and `controller <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/joypad_linux.cpp>`__.
@@ -157,8 +158,8 @@ games.
   is displayed at the top of the editor when one-click deploy is set up for the
   target platform.
 
-If the target platform doesn't support running Vulkan, OpenGL 3.3 or OpenGL ES 3.0,
-you have two options:
+If the target platform doesn't support running Vulkan, Direct3D 12, OpenGL 3.3,
+or OpenGL ES 3.0, you have two options:
 
 - Use a library at run-time to translate Vulkan or OpenGL calls to another graphics API.
   For example, `MoltenVK <https://moltengl.com/moltenvk/>`__ is used on macOS
