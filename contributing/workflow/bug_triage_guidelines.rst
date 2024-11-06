@@ -34,7 +34,8 @@ to both issues and pull requests.
 Labels
 ~~~~~~
 
-The following labels are currently defined in the Godot repository:
+The following `labels <https://github.com/godotengine/godot/labels>`__ are
+currently defined in the Godot repository:
 
 **Categories:**
 
@@ -58,16 +59,19 @@ The following labels are currently defined in the Godot repository:
 -  *Discussion*: the issue is not consensual and needs further
    discussion to define what exactly should be done to address the
    topic.
--  *Documentation*: issue related to the documentation. Mainly to request
-   enhancements in the API documentation. Issues related to the ReadTheDocs
-   documentation should be filed on the
-   `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
+-  *Documentation*: related to the documentation. PRs with this label improve the
+   class reference. Issues with this label are either for wrong documentation, or
+   are user-reported "bugs" that are actually limitations to be further documented.
+   Often paired with *Discussion*. Issues related to the ReadTheDocs documentation
+   should be filed on the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
 -  *Enhancement*: describes a proposed enhancement to an existing
    functionality.
 -  *Feature proposal*: describes a wish for a new feature to be
    implemented. Note that the main Godot repository no longer accepts
    feature requests. Please use
    `godot-proposals <https://github.com/godotengine/godot-proposals>`__ instead.
+   PRs which add new features but do not have a corresponding proposal use this
+   label.
 -  *For PR meeting*: the issue needs to be discussed in a pull request meeting.
    These meetings are public and are held on the `Godot Contributors Chat <https://chat.godotengine.org/>`_.
 -  *Good first issue*: the issue is *assumed* to be an easy one to fix, which makes
@@ -81,6 +85,7 @@ The following labels are currently defined in the Godot repository:
    on different hardware/software configurations or even that the steps to
    reproduce are not certain.
 -  *Needs work*: the pull request needs additional work before it can be merged.
+   Also for issues that are very incomplete, such as missing reproduction steps.
 -  *Performance*: issues that directly impact engine or editor performance.
    Can also be used for pull requests that improve performance or add low-end-friendly options.
    Should not be coupled with *Usability*.
@@ -124,7 +129,7 @@ describe an issue or pull request.
 -  *Input*: relates to the input system.
 -  *Multiplayer*: relates to multiplayer (high-level networking) systems.
 -  *Navigation*: relates to the navigation system (including A* and navmeshes).
--  *Network*: relates to (lot-level) networking.
+-  *Network*: relates to (low-level) networking.
 -  *Particles*: particles, particle systems and their editors.
 -  *Physics*: relates to the physics engine (2D/3D).
 -  *Plugin*: relates to problems encountered while writing plugins.
@@ -153,7 +158,7 @@ Documentation labels
 ~~~~~~~~~~~~~~~~~~~~
 
 In the `documentation repository <https://github.com/godotengine/godot-docs>`__, we
-use the following labels:
+use the following `labels <https://github.com/godotengine/godot-docs/labels>`__:
 
 -  *Archived*: either a duplicate of another issue, or invalid. Such an
    issue would also be closed.
