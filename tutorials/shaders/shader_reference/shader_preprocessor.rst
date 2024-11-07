@@ -191,11 +191,11 @@ Be careful, as ``defined()`` must only wrap a single identifier within parenthes
 
     In the shader editor, preprocessor branches that evaluate to ``false`` (and
     are therefore excluded from the final compiled shader) will appear grayed
-    out. This does not apply to run-time ``if`` statements.
+    out. This does not apply to runtime ``if`` statements.
 
 **#if preprocessor versus if statement: Performance caveats**
 
-The :ref:`shading language <doc_shading_language>` supports run-time ``if`` statements:
+The :ref:`shading language <doc_shading_language>` supports runtime ``if`` statements:
 
 .. code-block:: glsl
 
@@ -221,7 +221,7 @@ of the ``#if`` preprocessor statement:
     #endif
 
 However, the ``#if`` variant can be faster in certain scenarios. This is because
-all run-time branches in a shader are still compiled and variables within
+all runtime branches in a shader are still compiled and variables within
 those branches may still take up register space, even if they are never run in
 practice.
 

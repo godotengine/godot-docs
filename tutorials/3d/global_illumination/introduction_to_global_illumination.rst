@@ -272,7 +272,7 @@ Real-time ability
 - **LightmapGI:** |bad| Baked, and therefore not real-time.
 
   - Both indirect lighting and SH reflections are baked and can't be changed at
-    run-time. Real-time GI must be
+    runtime. Real-time GI must be
     :ref:`simulated via other means <doc_faking_global_illumination>`,
     such as real-time positional lights. Dynamic objects receive indirect lighting
     via light probes, which can be placed automatically or manually by the user
@@ -286,7 +286,7 @@ Real-time ability
     is set to **Always** (which is expensive).
 
   - Indirect lighting must be configured manually by the user, but can be changed
-    at run-time without causing an expensive computation to happen behind the scenes.
+    at runtime without causing an expensive computation to happen behind the scenes.
     This makes ReflectionProbes viable for procedurally generated levels.
 
 User work needed

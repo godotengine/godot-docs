@@ -206,8 +206,8 @@ This allows for:
 
 -  The same code to work on different devices with different inputs (e.g.,
    keyboard on PC, Joypad on console).
--  Input to be reconfigured at run-time.
--  Actions to be triggered programmatically at run-time.
+-  Input to be reconfigured at runtime.
+-  Actions to be triggered programmatically at runtime.
 
 Actions can be created from the Project Settings menu in the **Input Map**
 tab and assigned input events.
@@ -250,7 +250,7 @@ InputMap
 
 Customizing and re-mapping input from code is often desired. If your
 whole workflow depends on actions, the :ref:`InputMap <class_InputMap>` singleton is
-ideal for reassigning or creating different actions at run-time. This
+ideal for reassigning or creating different actions at runtime. This
 singleton is not saved (must be modified manually) and its state is run
 from the project settings (project.godot). So any dynamic system of this
 type needs to store settings in the way the programmer best sees fit.

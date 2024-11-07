@@ -239,7 +239,7 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 
 **Global illumination with indirect lighting:**
 
-- :ref:`Baked lightmaps <doc_using_lightmap_gi>` (fast, but can't be updated at run-time).
+- :ref:`Baked lightmaps <doc_using_lightmap_gi>` (fast, but can't be updated at runtime).
 
    - Supports baking indirect light only or baking both direct and indirect lighting.
      The bake mode can be adjusted on a per-light basis to allow for hybrid light
@@ -256,7 +256,7 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 - :ref:`Voxel-based GI probes <doc_using_voxel_gi>`. Supports
   dynamic lights *and* dynamic occluders, while also supporting reflections.
   Requires a fast baking step which can be performed in the editor or at
-  run-time (including from an exported project).
+  runtime (including from an exported project).
 - :ref:`Signed-distance field GI <doc_using_sdfgi>` designed for large open worlds.
   Supports dynamic lights, but not dynamic occluders. Supports reflections.
   No baking required.
@@ -290,7 +290,7 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 - Texture channels are smoothly overlaid on top of the underlying material,
   with support for normal/ORM-only decals.
 - Support for normal fade to fade the decal depending on its incidence angle.
-- Does not rely on run-time mesh generation. This means decals can be used on
+- Does not rely on runtime mesh generation. This means decals can be used on
   complex skinned meshes with no performance penalty, even if the decal moves every frame.
 - Support for nearest, bilinear, trilinear or anisotropic texture filtering (configured globally).
 - Optional distance fade system to fade distant decals, improving performance.
@@ -407,7 +407,7 @@ improve quality. This can be helpful when
 
 - :ref:`3D geometry helper class <class_Geometry3D>`.
 - Support for exporting the current scene as a glTF 2.0 file, both from the editor
-  and at run-time from an exported project.
+  and at runtime from an exported project.
 
 3D physics
 ----------
@@ -544,7 +544,7 @@ Import
    - Collada (.dae).
    - Wavefront OBJ (static scenes only, can be loaded directly as a mesh or imported as a 3D scene).
 
-- Support for loading glTF 2.0 scenes at run-time, including from an exported project.
+- Support for loading glTF 2.0 scenes at runtime, including from an exported project.
 - 3D meshes use `Mikktspace <http://www.mikktspace.com/>`__ to generate tangents
   on import, which ensures consistency with other 3D applications such as Blender.
 
@@ -576,7 +576,7 @@ Navigation
 - A* algorithm in :ref:`2D <class_AStar2D>` and :ref:`3D <class_AStar3D>`.
 - Navigation meshes with dynamic obstacle avoidance in
   :ref:`2D <doc_navigation_overview_2d>` and :ref:`3D <doc_navigation_overview_3d>`.
-- Generate navigation meshes from the editor or at run-time (including from an exported project).
+- Generate navigation meshes from the editor or at runtime (including from an exported project).
 
 Networking
 ----------

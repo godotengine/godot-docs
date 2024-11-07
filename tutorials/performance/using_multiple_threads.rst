@@ -54,7 +54,7 @@ wait until the thread is done (if not done yet), then properly dispose of it.
 
 .. warning::
 
-    Creating threads at run-time is slow on Windows and should be avoided to
+    Creating threads at runtime is slow on Windows and should be avoided to
     prevent stuttering. Semaphores, explained later on this page, should be used
     instead.
 

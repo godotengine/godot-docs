@@ -247,7 +247,7 @@ to the region outside the blue frame you see in the 2D editor.
     landscape mode, use 720×720 as the project's base window size in the
     Project Settings.
 
-    To allow the user to choose their preferred screen orientation at run-time,
+    To allow the user to choose their preferred screen orientation at runtime,
     remember to set **Display > Window > Handheld > Orientation** to ``sensor``.
 
 To configure the stretch aspect at runtime from a script, use the

@@ -233,8 +233,8 @@ TranslationServer
 
 Godot has a server handling low-level translation management
 called the :ref:`TranslationServer <class_TranslationServer>`.
-Translations can be added or removed during run-time;
-the current language can also be changed at run-time.
+Translations can be added or removed during runtime;
+the current language can also be changed at runtime.
 
 .. _doc_internationalizing_games_bidi:
 
