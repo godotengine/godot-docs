@@ -24,6 +24,8 @@ in other sections where appropriate. For example, the :ref:`animation editor
    project_manager
    inspector_dock
    project_settings
+   orphan_resource_explorer
+   engine_compilation_config_editor
    default_key_mapping
    customizing_editor
 
