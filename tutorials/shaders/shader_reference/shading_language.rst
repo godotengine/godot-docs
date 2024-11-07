@@ -1059,7 +1059,7 @@ value using ``global uniform vec4 my_color = ...`` in the shader code, it will
 be ignored as the global uniform must always be defined in the Project Settings
 anyway.
 
-To change the value of a global uniform at run-time, use the
+To change the value of a global uniform at runtime, use the
 :ref:`RenderingServer.global_shader_parameter_set <class_RenderingServer_method_global_shader_parameter_set>`
 method in a script:
 
@@ -1071,20 +1071,20 @@ Assigning global uniform values can be done as many times as desired without
 impacting performance, as setting data doesn't require synchronization between
 the CPU and GPU.
 
-You can also add or remove global uniforms at run-time:
+You can also add or remove global uniforms at runtime:
 
 .. code-block:: gdscript
 
     RenderingServer.global_shader_parameter_add("my_color", RenderingServer.GLOBAL_VAR_TYPE_COLOR, Color(0.3, 0.6, 1.0))
     RenderingServer.global_shader_parameter_remove("my_color")
 
-Adding or removing global uniforms at run-time has a performance cost, although
+Adding or removing global uniforms at runtime has a performance cost, although
 it's not as pronounced compared to getting global uniform values from a script
 (see the warning below).
 
 .. warning::
 
-    While you *can* query the value of a global uniform at run-time in a script
+    While you *can* query the value of a global uniform at runtime in a script
     using ``RenderingServer.global_shader_parameter_get("uniform_name")``, this
     has a large performance penalty as the rendering thread needs to synchronize
     with the calling thread.
@@ -1138,7 +1138,7 @@ the inspector:
 
    Setting a per-instance uniform's value in the GeometryInstance3D section of the inspector
 
-Per-instance uniform values can also be set at run-time using
+Per-instance uniform values can also be set at runtime using
 :ref:`set_instance_shader_parameter <class_GeometryInstance3D_method_set_instance_shader_parameter>`
 method on a node that inherits from :ref:`class_GeometryInstance3D`:
 

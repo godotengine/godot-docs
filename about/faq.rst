@@ -567,7 +567,7 @@ resulted in better usability while still being fast enough for most use cases.
 
 That said, nothing prevents you from making use of composition in your project
 by creating child Nodes with individual scripts. These nodes can then be added and
-removed at run-time to dynamically add and remove behaviors.
+removed at runtime to dynamically add and remove behaviors.
 
 More information about Godot's design choices can be found in
 `this article <https://godotengine.org/article/why-isnt-godot-ecs-based-game-engine>`__.

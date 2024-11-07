@@ -17,7 +17,7 @@ Each *feature* is represented as a string, which can refer to many of the follow
 * Whether the project is running from the editor or a "standalone" binary.
 * Many more things.
 
-Features can be queried at run-time from the singleton API by calling:
+Features can be queried at runtime from the singleton API by calling:
 
 .. tabs::
  .. code-tab:: gdscript
@@ -127,7 +127,7 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 
     With the exception of texture compression, ``web_<platform>`` and
     ``movie`` feature tags, default feature tags are **immutable**.
-    This means that they will *not* change depending on run-time conditions.
+    This means that they will *not* change depending on runtime conditions.
     For example, ``OS.has_feature("mobile")`` will return ``false``
     when running a project exported to Web on a mobile device.
 

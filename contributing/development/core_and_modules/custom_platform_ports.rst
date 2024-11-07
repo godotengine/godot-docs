@@ -161,9 +161,9 @@ games.
 If the target platform doesn't support running Vulkan, Direct3D 12, OpenGL 3.3,
 or OpenGL ES 3.0, you have two options:
 
-- Use a library at run-time to translate Vulkan or OpenGL calls to another graphics API.
+- Use a library at runtime to translate Vulkan or OpenGL calls to another graphics API.
   For example, `MoltenVK <https://moltengl.com/moltenvk/>`__ is used on macOS
-  to translate Vulkan to Metal at run-time.
+  to translate Vulkan to Metal at runtime.
 - Create a new renderer from scratch. This is a large undertaking, especially if
   you want to support both 2D and 3D rendering with advanced features.
 

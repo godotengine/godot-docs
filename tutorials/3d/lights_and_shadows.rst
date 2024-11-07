@@ -431,10 +431,10 @@ Balancing performance and quality
 Shadow rendering is a critical topic in 3D rendering performance. It's important
 to make the right choices here to avoid creating bottlenecks.
 
-Directional shadow quality settings can be changed at run-time by calling the
+Directional shadow quality settings can be changed at runtime by calling the
 appropriate :ref:`class_RenderingServer` methods.
 
-Positional (omni/spot) shadow quality settings can be changed at run-time on the
+Positional (omni/spot) shadow quality settings can be changed at runtime on the
 root :ref:`class_Viewport`.
 
 Shadow map size

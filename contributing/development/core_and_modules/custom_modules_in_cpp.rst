@@ -339,7 +339,7 @@ type registration methods:
     ScriptServer::init_languages();
 
 Our ``Summator`` class is initialized during the ``register_module_types()``
-call. Imagine that we need to satisfy some common module run-time dependency
+call. Imagine that we need to satisfy some common module runtime dependency
 (like singletons), or allow us to override existing engine method callbacks
 before they can be assigned by the engine itself. In that case, we want to
 ensure that our module classes are registered *before* any other built-in type.
