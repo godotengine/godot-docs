@@ -50,7 +50,7 @@ after the ``--branch`` (or just ``-b``) argument::
 
     # After cloning, optionally go to a specific commit.
     # This can be used to access the source code at a specific point in time,
-    # e.g. for development snapshots, betas and releaes candidates.
+    # e.g. for development snapshots, betas and release candidates.
     cd godot
     git checkout f4af8201bac157b9d47e336203d3e8a8ef729de2
 
