@@ -71,7 +71,9 @@ Rendering
 ---------
 
 Instancing nodes that render anything in 2D or 3D (such as Sprite) is *not* thread-safe by default.
-To make rendering thread-safe, set the **Rendering > Driver > Thread Model** project setting to **Multi-Threaded**.
+To make rendering thread-safe, set the
+:ref:`Rendering > Driver > Thread Model<class_ProjectSettings_property_rendering/driver/threads/thread_model>`
+project setting to **Multi-Threaded**.
 
 Note that the Multi-Threaded thread model has several known bugs, so it may not be usable
 in all scenarios.

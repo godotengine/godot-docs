@@ -254,9 +254,9 @@ You will have to code a function to perform this and draw it yourself.
 
     The following instructions use a fixed set of coordinates that could be too small
     for high resolution screens (larger than 1080p). If that is your case, and the
-    drawing is too small consider increasing your window scale in
-    ``Menu > Project > Project settings > display/window/stretch/scale`` to adjust
-    the project to a higher resolution (a 2 or 4 scale tends to work well).
+    drawing is too small consider increasing your window scale in the project setting
+    :ref:`Display > Window > Stretch > Scale<class_ProjectSettings_property_display/window/stretch/scale>`
+    to adjust the project to a higher resolution (a 2 or 4 scale tends to work well).
 
 Drawing a custom polygon shape
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

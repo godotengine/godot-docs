@@ -70,8 +70,8 @@ To make specular aliasing less noticeable, use the `Screen-space roughness limit
 which is enabled by default.
 
 MSAA can be enabled in the Project Settings by changing the value of the
-**Rendering > Anti Aliasing > Quality > MSAA 3D** setting. It's important to change
-the value of the **MSAA 3D** setting and not **MSAA 2D**, as these are entirely
+:ref:`Rendering > Anti Aliasing > Quality > MSAA 3D<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>`
+setting. It's important to change the value of the **MSAA 3D** setting and not **MSAA 2D**, as these are entirely
 separate settings.
 
 Comparison between no antialiasing (left) and various MSAA levels (right).
@@ -108,8 +108,9 @@ downside of TAA is that it can exhibit *ghosting* artifacts behind moving
 objects. Rendering at a higher framerate will allow TAA to converge faster,
 therefore making those ghosting artifacts less visible.
 
-Temporal antialiasing can be enabled in the Project Settings by changing the
-value of the **Rendering > Anti Aliasing > Quality > Use TAA** setting.
+Temporal antialiasing can be enabled in the Project Settings by changing the value of the
+:ref:`Rendering > Anti Aliasing > Quality > TAA<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`
+setting.
 
 Comparison between no antialiasing (left) and TAA (right):
 
@@ -172,9 +173,9 @@ as an in-game option may still be worthwhile for players with low-end GPUs.
 FXAA introduces a moderate amount of blur when enabled (more than TAA when
 still, but less than TAA when the camera is moving).
 
-FXAA can be enabled in the Project Settings by changing the
-value of the **Rendering > Anti Aliasing > Quality > Screen Space AA** setting to
-**FXAA**.
+FXAA can be enabled in the Project Settings by changing the value of the
+:ref:`Rendering > Anti Aliasing > Quality > Screen Space AA<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>`
+setting to ``FXAA``.
 
 Comparison between no antialiasing (left) and FXAA (right):
 
@@ -194,9 +195,11 @@ The downside of SSAA is its *extremely* high cost. This cost generally makes
 SSAA difficult to use for game purposes, but you may still find supersampling
 useful for :ref:`offline rendering <doc_creating_movies>`.
 
-Supersample antialiasing is performed by increasing the **Rendering > Scaling 3D
-> Scale** advanced project setting above ``1.0`` while ensuring
-**Rendering > Scaling 3D > Mode** is set to **Bilinear** (the default).
+Supersample antialiasing is performed by increasing the
+:ref:`Rendering > Scaling 3D > Scale<class_ProjectSettings_property_rendering/scaling_3d/scale>`
+advanced project setting above ``1.0`` while ensuring
+:ref:`Rendering > Scaling 3D > Mode<class_ProjectSettings_property_rendering/scaling_3d/mode>`
+is set to ``Bilinear`` (the default).
 Since the scale factor is defined per-axis, a scale factor of ``1.5`` will result
 in 2.25× SSAA while a scale factor of ``2.0`` will result in 4× SSAA. Since Godot
 uses the hardware's own bilinear filtering to perform the downsampling, the result

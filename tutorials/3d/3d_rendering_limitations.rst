@@ -46,8 +46,9 @@ rendering, where banding may be visible when using smooth gradient textures.
 
 There are two main ways to alleviate banding:
 
-- If using the Forward+ or Forward Mobile rendering methods, enable **Use
-  Debanding** in the advanced Project Settings. This applies a fullscreen debanding
+- If using the Forward+ or Forward Mobile rendering methods, enable 
+  :ref:`Use Debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`
+  in **Project Settings > Rendering > Anti Aliasing**. This applies a fullscreen debanding
   shader as a post-processing effect and is very cheap.
 - Alternatively, bake some noise into your textures. This is mainly effective in
   2D, e.g. for vignetting effects. In 3D, you can also use a `custom debanding
