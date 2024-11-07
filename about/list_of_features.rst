@@ -366,7 +366,7 @@ Rendering
 - ETC2 (not supported on macOS).
 - S3TC (not supported on mobile/Web platforms).
 
-**Anti-aliasing:**
+**Antialiasing:**
 
 - Temporal :ref:`antialiasing <doc_3d_antialiasing>` (TAA).
 - AMD FidelityFX Super Resolution 2.2 :ref:`antialiasing <doc_3d_antialiasing>` (FSR2),
