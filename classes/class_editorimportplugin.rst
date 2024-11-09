@@ -201,7 +201,9 @@ Method Descriptions
 
 Tells whether this importer can be run in parallel on threads, or, on the contrary, it's only safe for the editor to call it from the main thread, for one file at a time.
 
-If this method is not overridden, it will return ``true`` by default (i.e., safe for parallel importing).
+If this method is not overridden, it will return ``false`` by default.
+
+If this importer's implementation is thread-safe and can be run in parallel, override this with ``true`` to optimize for concurrency.
 
 .. rst-class:: classref-item-separator
 

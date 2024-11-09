@@ -1828,7 +1828,7 @@ Forces window manager processing while ignoring all :ref:`InputEvent<class_Input
 
 Returns OS theme accent color. Returns ``Color(0, 0, 0, 0)``, if accent color is unknown.
 
-\ **Note:** This method is implemented on macOS and Windows.
+\ **Note:** This method is implemented on macOS, Windows, and Android.
 
 .. rst-class:: classref-item-separator
 
