@@ -1816,3 +1816,15 @@ p + .classref-constant {
 #godot-giscus {
     margin-bottom: 1em;
 }
+
+/* Display :guilabel: and :menuselection: tags as simple bold. */
+.rst-content .guilabel,
+.rst-content .menuselection {
+    border: 0px;
+    background: none;
+    font-size: 100%;
+    font-weight: 700;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
