@@ -56,6 +56,10 @@ Methods
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`FeedPosition<enum_CameraFeed_FeedPosition>` | :ref:`get_position<class_CameraFeed_method_get_position>`\ (\ ) |const|                                                                      |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`get_texture_tex_id<class_CameraFeed_method_get_texture_tex_id>`\ (\ feed_image_type\: :ref:`FeedImage<enum_CameraServer_FeedImage>`\ ) |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_external<class_CameraFeed_method_set_external>`\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`\ )               |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`set_format<class_CameraFeed_method_set_format>`\ (\ index\: :ref:`int<class_int>`, parameters\: :ref:`Dictionary<class_Dictionary>`\ ) |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`set_name<class_CameraFeed_method_set_name>`\ (\ name\: :ref:`String<class_String>`\ )                                                  |
@@ -142,6 +146,14 @@ Feed supplies YCbCr images that need to be converted to RGB.
 :ref:`FeedDataType<enum_CameraFeed_FeedDataType>` **FEED_YCBCR_SEP** = ``3``
 
 Feed supplies separate Y and CbCr images that need to be combined and converted to RGB.
+
+.. _class_CameraFeed_constant_FEED_EXTERNAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FeedDataType<enum_CameraFeed_FeedDataType>` **FEED_EXTERNAL** = ``4``
+
+Feed supplies external image.
 
 .. rst-class:: classref-item-separator
 
@@ -284,6 +296,30 @@ Returns the camera's name.
 :ref:`FeedPosition<enum_CameraFeed_FeedPosition>` **get_position**\ (\ ) |const| :ref:`🔗<class_CameraFeed_method_get_position>`
 
 Returns the position of camera on the device.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CameraFeed_method_get_texture_tex_id:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_texture_tex_id**\ (\ feed_image_type\: :ref:`FeedImage<enum_CameraServer_FeedImage>`\ ) :ref:`🔗<class_CameraFeed_method_get_texture_tex_id>`
+
+Returns the texture backend ID (usable by some external libraries that need a handle to a texture to write data).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CameraFeed_method_set_external:
+
+.. rst-class:: classref-method
+
+|void| **set_external**\ (\ width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CameraFeed_method_set_external>`
+
+Sets the feed as external feed provided by another library.
 
 .. rst-class:: classref-item-separator
 
