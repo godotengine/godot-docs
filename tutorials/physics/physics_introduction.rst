@@ -180,6 +180,12 @@ would be as follows::
     # (2^(1-1)) + (2^(3-1)) + (2^(4-1)) = 1 + 4 + 8 = 13
     pow(2, 1-1) + pow(2, 3-1) + pow(2, 4-1)
 
+A bitmask can also be set with a user-friendly GUI in the inspector by using export annotations::
+
+	# @export_flags_2d_physics var layers_2d_physics
+
+Additional bitmask flag export annotations are provided for render and navigation layers, in both 2D and 3D. See :ref:`doc_exporting_bit_flags`.
+
 
 Area2D
 ------
