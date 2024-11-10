@@ -311,6 +311,9 @@ post processes have run.
 From our internal size we calculate our group size, see our local size in our
 template shader.
 
+.. UPDATE: Not supported yet. When structs are supported here, update this
+.. paragraph.
+
 We also populate our push constant so our shader knows our size.
 Godot does not support structs here **yet** so we use a
 ``PackedFloat32Array`` to store this data into. Note that we have

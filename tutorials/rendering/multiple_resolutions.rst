@@ -467,6 +467,9 @@ Non-game application
   script's ``_ready()`` function. This prevents the user from resizing the application
   below a certain size, which could break the UI layout.
 
+.. UPDATE: Planned feature. When manually override the 2D scale factor is supported,
+.. update this note.
+
 .. note::
 
     Godot doesn't support manually overriding the 2D scale factor yet, so it is

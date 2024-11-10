@@ -369,6 +369,9 @@ github template for reference on how to do so.
 Godot crashes upon load
 ^^^^^^^^^^^^^^^^^^^^^^^
 
+.. UPDATE: Not supported yet. When more complex datatypes are supported,
+.. update this section.
+
 Check ``adb logcat`` for possible problems, then:
 
 - Check that the methods exposed by the plugin used the following Java types: ``void``, ``boolean``, ``int``, ``float``, ``java.lang.String``, ``org.godotengine.godot.Dictionary``, ``int[]``, ``byte[]``, ``float[]``, ``java.lang.String[]``.

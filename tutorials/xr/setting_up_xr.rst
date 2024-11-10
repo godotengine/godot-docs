@@ -35,8 +35,14 @@ While in Godot 3 most things worked out of the box, Godot 4 needs a little more 
 
 .. image:: img/xr_shaders.png
 
+.. UPDATE: Not supported yet. When all or most post process effects work in
+.. stereoscopic rendering, remove or update this note.
+
 .. warning::
     As Godot 4 is still in development, many post process effects have not yet been updated to support stereoscopic rendering. Using these will have adverse effects.
+
+.. UPDATE: Recommended renderer may change. If the Mobile renderer (or any other
+.. renderer) is recommended for all XR projects, update this note.
 
 .. note::
     Godot 4 has 3 renderer options, Compatibility, Mobile, and Forward+. In the future XR desktop projects should use Forward+, and projects for standalone headsets

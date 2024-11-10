@@ -377,6 +377,9 @@ mipmaps but memory usage will increase.
 Mipmaps > Limit
 ^^^^^^^^^^^^^^^
 
+.. UPDATE: Not implemented. When Mipmaps > Limit is implemented, remove this
+.. warning and remove this comment.
+
 .. warning::
 
     **Mipmaps > Limit** is currently not implemented and has no effect when changed.

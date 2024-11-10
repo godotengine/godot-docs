@@ -389,6 +389,9 @@ The default value **must** be a constant expression.
 
     @export var a = [1, 2, 3]
 
+.. UPDATE: Not supported yet. When nested typed arrays are supported, update
+.. the example.
+
 Exported arrays can specify type (using the same hints as before).
 
 ::

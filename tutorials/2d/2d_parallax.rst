@@ -10,6 +10,9 @@ Parallax is an effect used to simulate depth by having textures move at differen
 provides the :ref:`Parallax2D<class_parallax2d>` node to achieve this effect. It can still be easy to get tripped
 up though, so this page provides in-depth descriptions of some properties and how to fix some common mistakes.
 
+.. UPDATE: Experimental. When Parallax2D is no longer experimental, remove this
+.. note and remove this comment.
+
 .. note::
     This page only covers how to use :ref:`Parallax2D<class_parallax2d>`. This node is still experimental, so the
     implementation might change in future versions of Godot. However, it is still recommended to use over the

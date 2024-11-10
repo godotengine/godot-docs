@@ -59,6 +59,8 @@ pipeline recompilations.
 Pipeline precompilation monitors
 --------------------------------
 
+.. UPDATE: Future versions mentioned.
+
 Compiling pipelines ahead of time is the main mechanism Godot uses to mitigate
 shader stutters, but it's not a perfect solution. Being aware of the situations
 that can lead to pipeline stutters can be very helpful, and the workarounds are
