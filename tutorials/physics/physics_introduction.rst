@@ -184,7 +184,7 @@ Export annotations can be used to export bitmasks in the editor with a user-frie
 
     # @export_flags_2d_physics var layers_2d_physics
 
-Additional export annotations are available for render and navigation layers, in both 2D and 3D. See :ref:`exporting_bit_flags`
+Additional export annotations are available for render and navigation layers, in both 2D and 3D. See :ref:`doc_gdscript_exports_exporting_bit_flags`.
 
 
 Area2D
