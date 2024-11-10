@@ -12,8 +12,8 @@ Rendering
    :maxdepth: 1
    :name: toc-learn-features-rendering
 
+   renderers
    viewports
    multiple_resolutions
    jitter_stutter
    compositor
-   renderers

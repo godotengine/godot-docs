@@ -1,7 +1,7 @@
 .. _doc_renderers:
 
-Renderers
-=========
+List of renderers
+=================
 
 .. seealso::
 
@@ -112,7 +112,7 @@ Feature comparison
 
 This is not a complete list of the features of each renderer. If a feature is
 not listed here, it is available in all renderers, though it may be much faster
-on some renderers. For a list of *all* features in Godot, see :ref:`doc_list_of_features`. 
+on some renderers. For a list of *all* features in Godot, see :ref:`doc_list_of_features`.
 
 Hardware with RenderingDevice support is hardware which can run Vulkan, Direct3D
 12, or Metal.
