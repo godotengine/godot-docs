@@ -248,6 +248,8 @@ It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
 in conjunction with a :ref:`script in "tool" mode <doc_gdscript_tool_mode>`.
 
+.. _doc_gdscript_exports_exporting_bit_flags:
+
 Exporting bit flags
 -------------------
 
