@@ -254,6 +254,23 @@ linkcheck_anchors = False
 
 linkcheck_timeout = 10
 
+# -- Custom Sphinx roles for UI -------------------------------------------
+
+rst_prolog = """
+.. role:: button
+   :class: role-button role-ui
+
+.. role:: menu
+    :class: role-menu role-ui
+
+.. role:: inspector
+    :class: role-ui
+
+.. role:: ui
+    :class: role-ui
+
+"""
+
 # -- I18n settings --------------------------------------------------------
 
 # Godot localization is handled via https://github.com/godotengine/godot-docs-l10n
