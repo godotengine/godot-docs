@@ -76,6 +76,7 @@ Choose **Compatibility** if:
 
     - You are developing for older mobile devices, or older desktop devices. The
       Compatibility renderer supports the widest range of hardware.
+    - You are developing for web. In this case, Compatibility is the only choice.
     - You have older hardware which does not support Vulkan. In this case,
       Compatibility is the only choice.
     - You are developing a 2D game, or a 3D game which does not need advanced
