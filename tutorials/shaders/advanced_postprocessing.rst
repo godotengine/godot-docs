@@ -108,17 +108,23 @@ from ``0.0`` to ``1.0`` in the ``z`` direction when using the Vulkan backend.
 Reconstruct the NDC using ``SCREEN_UV`` for the ``x`` and ``y`` axis, and
 the depth value for ``z``.
 
-.. note::
-
-    This tutorial assumes the use of the Vulkan renderer, which uses NDCs with a Z-range
-    of ``[0.0, 1.0]``. In contrast, OpenGL uses NDCs with a Z-range of ``[-1.0, 1.0]``.
-
 .. code-block:: glsl
 
   void fragment() {
     float depth = texture(depth_texture, SCREEN_UV).x;
     vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
   }
+
+.. note::
+
+  This tutorial assumes the use of the Forward+ or Mobile renderers, which both
+  use Vulkan NDCs with a Z-range of ``[0.0, 1.0]``. In contrast, the Compatibility
+  renderer uses OpenGL NDCs with a Z-range of ``[-1.0, 1.0]``. For the Compatibility
+  renderer, replace the NDC calculation with this instead:
+
+  .. code-block:: glsl
+
+    vec3 ndc = vec3(SCREEN_UV, depth) * 2.0 - 1.0;
 
 Convert NDC to view space by multiplying the NDC by ``INV_PROJECTION_MATRIX``.
 Recall that view space gives positions relative to the camera, so the ``z`` value will give us
