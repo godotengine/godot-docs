@@ -52,7 +52,7 @@ Resources and nodes can be exported.
     @export var resource: Resource
     @export var node: Node
 
-Grouping Exports
+Grouping exports
 ----------------
 
 It is possible to group your exported properties inside the Inspector
@@ -160,18 +160,68 @@ Allow floats from -10 to 20 and snap the value to multiples of 0.2.
 
     @export_range(-10, 20, 0.2) var k: float
 
-The limits can be only for the slider if you add the hints "or_greater" and/or "or_less".
+The limits can be made to affect only the slider if you add the hints ``"or_less"``
+and/or ``"or_greater"``. If either these hints are used, it will be possible for
+the user to enter any value or drag the value with the mouse when not using
+the slider, even if outside the specified range.
 
 ::
 
-    @export_range(0, 100, 0.1, "or_greater", "or_less") var l
+    @export_range(0, 100, 1, "or_less", "or_greater") var l: int
 
-.. TODO: Document other hint strings usable with export_range.
+The ``"exp"`` hint can be used to make a value have an exponential slider
+instead of a linear slider. This means that when dragging the slider towards
+the right, changes will become progressively faster when dragging the mouse.
+This is useful to make editing values that can be either very small or very large
+easier, at the cost of being less intuitive.
+
+::
+
+    @export_range(0, 100000, 0.01, "exp") var exponential: float
+
+For values that are meant to represent an easing factor, use
+:ref:`doc_gdscript_exports_floats_with_easing_hint` instead.
+
+The ``"hide_slider"`` hint can be used to hide the horizontal bar that
+appears below ``float`` properties, or the up/down arrows that appear besides
+``int`` properties:
+
+::
+
+    @export_range(0, 1000, 0.01, "hide_slider") var no_slider: float
+
+Adding suffixes and handling degrees/radians
+--------------------------------------------
+
+A suffix can also be defined to make the value more self-explanatory in the
+inspector. For example, to define a value that is meant to be configured as
+"meters" (``m``) by the user:
+
+::
+
+    @export_range(0, 100, 1, "suffix:m") var m: int
+
+For angles that are stored in radians but displayed as degrees to the user, use
+the `"radians_as_degrees"` hint:
+
+::
+
+    @export_range(0, 360, 0.1, "radians_as_degrees") var angle: float
+
+This performs automatic conversion when the value is displayed or modified in
+the inspector and also displays a degree (``°``) suffix. This approach is used
+by Godot's own `rotation` properties throughout the editor.
+
+If the angle is stored in degrees instead, use the `"degrees"` hint to display
+the degree symbol while disabling the automatic degrees-to-radians conversion
+when the value is modified from the inspector.
+
+.. _doc_gdscript_exports_floats_with_easing_hint:
 
 Floats with easing hint
 -----------------------
 
-Display a visual representation of the 'ease()' function
+Display a visual representation of the ``ease()`` function
 when editing.
 
 ::
@@ -372,7 +422,7 @@ Other export variants can also be used when exporting arrays:
 
 ::
 
-    @export_range(-360, 360, 0.001, "radians") var laser_angles: Array[float] = []
+    @export_range(-360, 360, 0.001, "degrees") var laser_angles: Array[float] = []
     @export_file("*.json") var skill_trees: Array[String] = []
     @export_color_no_alpha var hair_colors = PackedColorArray()
     @export_enum("Espresso", "Mocha", "Latte", "Capuccino") var barista_suggestions: Array[String] = []
@@ -398,6 +448,32 @@ or :ref:`Node.duplicate() <class_Node_method_duplicate>` is called, unlike non-e
     var a # Not stored in the file, not displayed in the editor.
     @export_storage var b # Stored in the file, not displayed in the editor.
     @export var c: int # Stored in the file, displayed in the editor.
+
+``@export_custom``
+------------------
+
+If you need more control than what's exposed with the built-in ``@export``
+annotations, you can use ``@export_custom`` instead. This allows defining any
+property hint, hint string and usage flags, with a syntax similar to the one
+used by the editor for built-in nodes.
+
+For example, this exposes the ``altitude`` property with no range limits but a
+``m`` (meter) suffix defined:
+
+::
+
+    @export_custom(PROPERTY_HINT_NONE, "altitude:m") var altitude: Vector3
+
+The above is normally not feasible with the standard ``@export_range`` syntax,
+since it requires defining a range.
+
+See the :ref:`class reference <class_@GDScript_annotation_@export_custom>`
+for a list of parameters and their allowed values.
+
+.. warning::
+
+    When using ``@export_custom``, GDScript does not perform any validation on
+    the syntax. Invalid syntax may have unexpected behavior in the inspector.
 
 Setting exported variables from a tool script
 ---------------------------------------------
