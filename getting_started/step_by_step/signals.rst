@@ -147,8 +147,8 @@ methods "_on_node_name_signal_name". Here, it'll be "_on_button_pressed".
 
 .. note::
 
-    If you are using an external editor (such as VS Code) this
-    automatic code generation might not work. In this case you need to connect
+    If you are using an external editor (such as VS Code), this
+    automatic code generation might not work. In this case, you need to connect
     the signal via code as explained in the next section.
 
 Click the Connect button to complete the signal connection and jump to the
