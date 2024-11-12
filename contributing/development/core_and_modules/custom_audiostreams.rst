@@ -48,15 +48,21 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
 .. code-block:: cpp
     :caption: audiostream_mytone.h
 
-    #include "core/reference.h"
-    #include "core/resource.h"
-    #include "servers/audio/audio_stream.h"
+    #ifndef AUDIOSTREAM_MYTONE_H
+    #define AUDIOSTREAM_MYTONE_H
+
+    #include <godot_cpp/classes/ref.hpp>
+    #include <godot_cpp/classes/resource.hpp>
+    #include <godot_cpp/classes/audio_stream.hpp>
+
+    using namespace godot;
 
     class AudioStreamMyTone : public AudioStream {
-        GDCLASS(AudioStreamMyTone, AudioStream)
+        GDCLASS(AudioStreamMyTone, AudioStream);
 
     private:
         friend class AudioStreamPlaybackMyTone;
+        friend class AudioStreamPlaybackResampledMyTone;
         uint64_t pos;
         int mix_rate;
         bool stereo;
@@ -64,51 +70,54 @@ Therefore, playback state must be self-contained in AudioStreamPlayback.
 
     public:
         void reset();
-        void set_position(uint64_t pos);
-        virtual Ref<AudioStreamPlayback> instance_playback();
-        virtual String get_stream_name() const;
-        void gen_tone(int16_t *pcm_buf, int size);
-        virtual float get_length() const { return 0; } // if supported, otherwise return 0
+        void set_position(uint64_t p_value);
+        virtual Ref<AudioStreamPlayback> _instantiate_playback() const;
+        virtual String _get_stream_name() const;
+        void gen_tone(int16_t *p_pcm_buf, int p_size);
+        virtual double _get_length() const { return 0; } // if supported, otherwise return 0
         AudioStreamMyTone();
 
     protected:
         static void _bind_methods();
     };
 
+    #endif // AUDIOSTREAM_MYTONE_H
+
 .. code-block:: cpp
     :caption: audiostream_mytone.cpp
 
     #include "audiostream_mytone.h"
+    #include "audiostreamplayer_mytone.h"
 
     AudioStreamMyTone::AudioStreamMyTone()
             : mix_rate(44100), stereo(false), hz(639) {
     }
 
-    Ref<AudioStreamPlayback> AudioStreamMyTone::instance_playback() {
-        Ref<AudioStreamPlaybackMyTone> talking_tree;
-        talking_tree.instantiate();
-        talking_tree->base = Ref<AudioStreamMyTone>(this);
-        return talking_tree;
+    Ref<AudioStreamPlayback> AudioStreamMyTone::_instantiate_playback() const {
+        Ref<AudioStreamPlaybackMyTone> playback;
+        playback.instantiate();
+        playback->base = Ref<AudioStreamMyTone>(this);
+        return playback;
     }
 
-    String AudioStreamMyTone::get_stream_name() const {
+    String AudioStreamMyTone::_get_stream_name() const {
         return "MyTone";
     }
     void AudioStreamMyTone::reset() {
         set_position(0);
     }
-    void AudioStreamMyTone::set_position(uint64_t p) {
-        pos = p;
+    void AudioStreamMyTone::set_position(uint64_t p_value) {
+        pos = p_value;
     }
-    void AudioStreamMyTone::gen_tone(int16_t *pcm_buf, int size) {
-        for (int i = 0; i < size; i++) {
-            pcm_buf[i] = 32767.0 * sin(2.0 * Math_PI * double(pos + i) / (double(mix_rate) / double(hz)));
+    void AudioStreamMyTone::gen_tone(int16_t *p_pcm_buf, int p_size) {
+        for (int i = 0; i < p_size; i++) {
+            p_pcm_buf[i] = 32767.0 * sin(2.0 * Math_PI * double(pos + i) / (double(mix_rate) / double(hz)));
         }
-        pos += size;
+        pos += p_size;
     }
     void AudioStreamMyTone::_bind_methods() {
         ClassDB::bind_method(D_METHOD("reset"), &AudioStreamMyTone::reset);
-        ClassDB::bind_method(D_METHOD("get_stream_name"), &AudioStreamMyTone::get_stream_name);
+        ClassDB::bind_method(D_METHOD("set_position", "value"), &AudioStreamMyTone::set_position);
     }
 
 References:
@@ -120,19 +129,27 @@ References:
 Create an AudioStreamPlayback
 -----------------------------
 
-AudioStreamPlayer uses ``mix`` callback to obtain PCM data. The callback must match sample rate and fill the buffer.
+AudioStreamPlayer uses ``_mix`` callback to obtain PCM data. The callback must match sample rate and fill the buffer.
 
 Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic memory allocation are forbidden.
 
 .. code-block:: cpp
     :caption: audiostreamplayer_mytone.h
 
-    #include "core/reference.h"
-    #include "core/resource.h"
-    #include "servers/audio/audio_stream.h"
+    #ifndef AUDIOSTREAMPLAYBACK_MYTONE_H
+    #define AUDIOSTREAMPLAYBACK_MYTONE_H
+
+    #include <godot_cpp/classes/ref.hpp>
+    #include <godot_cpp/classes/resource.hpp>
+    #include <godot_cpp/classes/audio_stream.hpp>
+    #include <godot_cpp/classes/audio_stream_playback.hpp>
+
+    #include "audiostream_mytone.h"
+
+    using namespace godot;
 
     class AudioStreamPlaybackMyTone : public AudioStreamPlayback {
-        GDCLASS(AudioStreamPlaybackMyTone, AudioStreamPlayback)
+        GDCLASS(AudioStreamPlaybackMyTone, AudioStreamPlayback);
         friend class AudioStreamMyTone;
 
     private:
@@ -149,78 +166,83 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
         bool active;
 
     public:
-        virtual void start(float p_from_pos = 0.0);
-        virtual void stop();
-        virtual bool is_playing() const;
-        virtual int get_loop_count() const; // times it looped
-        virtual float get_playback_position() const;
-        virtual void seek(float p_time);
-        virtual void mix(AudioFrame *p_buffer, float p_rate_scale, int p_frames);
-        virtual float get_length() const; // if supported, otherwise return 0
+        virtual void _start(double p_from_pos) override;
+        virtual void _stop() override;
+        virtual bool _is_playing() const override;
+        virtual int _get_loop_count() const override;
+        virtual double _get_playback_position() const override;
+        virtual void _seek(double p_position) override;
+        virtual int _mix(AudioFrame *p_buffer, double p_rate_scale, int p_frames) override;
+
         AudioStreamPlaybackMyTone();
         ~AudioStreamPlaybackMyTone();
+
+    protected:
+        static void _bind_methods() {};
     };
+
+    #endif // AUDIOSTREAMPLAYBACK_MYTONE_H
 
 .. code-block:: cpp
     :caption: audiostreamplayer_mytone.cpp
 
     #include "audiostreamplayer_mytone.h"
 
-    #include "core/math/math_funcs.h"
-    #include "core/print_string.h"
+    #include <godot_cpp/classes/audio_server.hpp>
+    #include <godot_cpp/core/math.hpp>
 
     AudioStreamPlaybackMyTone::AudioStreamPlaybackMyTone()
             : active(false) {
         AudioServer::get_singleton()->lock();
-        pcm_buffer = AudioServer::get_singleton()->audio_data_alloc(PCM_BUFFER_SIZE);
-        zeromem(pcm_buffer, PCM_BUFFER_SIZE);
+        pcm_buffer = memalloc(PCM_BUFFER_SIZE);
+        memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
         AudioServer::get_singleton()->unlock();
     }
+
     AudioStreamPlaybackMyTone::~AudioStreamPlaybackMyTone() {
-        if(pcm_buffer) {
-            AudioServer::get_singleton()->audio_data_free(pcm_buffer);
+        if (pcm_buffer) {
+            memfree(pcm_buffer);
             pcm_buffer = NULL;
         }
     }
-    void AudioStreamPlaybackMyTone::stop() {
+
+    void AudioStreamPlaybackMyTone::_stop() {
         active = false;
         base->reset();
     }
-    void AudioStreamPlaybackMyTone::start(float p_from_pos) {
-        seek(p_from_pos);
+    void AudioStreamPlaybackMyTone::_start(double p_from_pos) {
+        _seek(p_from_pos);
         active = true;
     }
-    void AudioStreamPlaybackMyTone::seek(float p_time) {
-        float max = get_length();
+    void AudioStreamPlaybackMyTone::_seek(double p_time) {
         if (p_time < 0) {
                 p_time = 0;
         }
         base->set_position(uint64_t(p_time * base->mix_rate) << MIX_FRAC_BITS);
     }
-    void AudioStreamPlaybackMyTone::mix(AudioFrame *p_buffer, float p_rate, int p_frames) {
-        ERR_FAIL_COND(!active);
+    int AudioStreamPlaybackMyTone::_mix(AudioFrame *p_buffer, double p_rate_scale, int p_frames) {
         if (!active) {
-                return;
+            return 0;
         }
-        zeromem(pcm_buffer, PCM_BUFFER_SIZE);
+
+        memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
         int16_t *buf = (int16_t *)pcm_buffer;
         base->gen_tone(buf, p_frames);
 
         for(int i = 0; i < p_frames; i++) {
             float sample = float(buf[i]) / 32767.0;
-            p_buffer[i] = AudioFrame(sample, sample);
+            AudioFrame frame = {sample, sample};
+            p_buffer[i] = frame;
         }
+        return p_frames;
     }
-    int AudioStreamPlaybackMyTone::get_loop_count() const {
+    int AudioStreamPlaybackMyTone::_get_loop_count() const {
         return 0;
     }
-    float AudioStreamPlaybackMyTone::get_playback_position() const {
+    double AudioStreamPlaybackMyTone::_get_playback_position() const {
         return 0.0;
     }
-    float AudioStreamPlaybackMyTone::get_length() const {
-        return 0.0;
-    }
-    bool AudioStreamPlaybackMyTone::is_playing() const {
+    bool AudioStreamPlaybackMyTone::_is_playing() const {
         return active;
     }
 
@@ -231,21 +253,27 @@ Godot's AudioServer currently uses 44100 Hz sample rate. When other sample rates
 needed such as 48000, either provide one or use AudioStreamPlaybackResampled.
 Godot provides cubic interpolation for audio resampling.
 
-Instead of overloading ``mix``, AudioStreamPlaybackResampled uses ``_mix_internal`` to
-query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
+Instead of overloading ``_mix``, AudioStreamPlaybackResampled uses ``_mix_resampled`` to
+query AudioFrames and ``_get_stream_sampling_rate`` to query current mix rate.
 
 .. code-block:: cpp
     :caption: mytone_audiostream_resampled.h
 
-    #include "core/reference.h"
-    #include "core/resource.h"
-    #include "servers/audio/audio_stream.h"
+    #ifndef AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
+    #define AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
 
-    class AudioStreamMyToneResampled;
+    #include <godot_cpp/classes/ref.hpp>
+    #include <godot_cpp/classes/resource.hpp>
+    #include <godot_cpp/classes/audio_stream.hpp>
+    #include <godot_cpp/classes/audio_stream_playback_resampled.hpp>
+
+    #include "audiostream_mytone.h"
+
+    using namespace godot;
 
     class AudioStreamPlaybackResampledMyTone : public AudioStreamPlaybackResampled {
-        GDCLASS(AudioStreamPlaybackResampledMyTone, AudioStreamPlaybackResampled)
-        friend class AudioStreamMyToneResampled;
+        GDCLASS(AudioStreamPlaybackResampledMyTone, AudioStreamPlaybackResampled);
+        friend class AudioStreamMyTone;
 
     private:
         enum {
@@ -257,88 +285,100 @@ query AudioFrames and ``get_stream_sampling_rate`` to query current mix rate.
             MIX_FRAC_MASK = MIX_FRAC_LEN - 1,
         };
         void *pcm_buffer;
-        Ref<AudioStreamMyToneResampled> base;
+        Ref<AudioStreamMyTone> base;
         bool active;
 
     protected:
-        virtual void _mix_internal(AudioFrame *p_buffer, int p_frames);
+
 
     public:
-        virtual void start(float p_from_pos = 0.0);
-        virtual void stop();
-        virtual bool is_playing() const;
-        virtual int get_loop_count() const; // times it looped
-        virtual float get_playback_position() const;
-        virtual void seek(float p_time);
-        virtual float get_length() const; // if supported, otherwise return 0
-        virtual float get_stream_sampling_rate();
+        virtual void _start(double p_from_pos) override;
+        virtual void _stop() override;
+        virtual bool _is_playing() const override;
+        virtual int _get_loop_count() const override;
+        virtual double _get_playback_position() const override;
+        virtual void _seek(double p_position) override;
+        virtual int _mix_resampled(AudioFrame *p_dst_buffer, int p_frame_count) override;
+        virtual double _get_stream_sampling_rate() const override;
+
         AudioStreamPlaybackResampledMyTone();
         ~AudioStreamPlaybackResampledMyTone();
+
+    protected:
+        static void _bind_methods() {};
     };
+
+    #endif // AUDIOSTREAMPLAYBACKRESAMPLED_MYTONE_H
 
 .. code-block:: cpp
     :caption: mytone_audiostream_resampled.cpp
 
     #include "mytone_audiostream_resampled.h"
 
-    #include "core/math/math_funcs.h"
-    #include "core/print_string.h"
+    #include <godot_cpp/classes/audio_server.hpp>
+    #include <godot_cpp/core/math.hpp>
 
     AudioStreamPlaybackResampledMyTone::AudioStreamPlaybackResampledMyTone()
             : active(false) {
         AudioServer::get_singleton()->lock();
-        pcm_buffer = AudioServer::get_singleton()->audio_data_alloc(PCM_BUFFER_SIZE);
-        zeromem(pcm_buffer, PCM_BUFFER_SIZE);
+        pcm_buffer = memalloc(PCM_BUFFER_SIZE);
+        memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
         AudioServer::get_singleton()->unlock();
     }
+
     AudioStreamPlaybackResampledMyTone::~AudioStreamPlaybackResampledMyTone() {
         if (pcm_buffer) {
-            AudioServer::get_singleton()->audio_data_free(pcm_buffer);
+            memfree(pcm_buffer);
             pcm_buffer = NULL;
         }
     }
-    void AudioStreamPlaybackResampledMyTone::stop() {
+
+    void AudioStreamPlaybackResampledMyTone::_stop() {
         active = false;
         base->reset();
     }
-    void AudioStreamPlaybackResampledMyTone::start(float p_from_pos) {
-        seek(p_from_pos);
+
+    void AudioStreamPlaybackResampledMyTone::_start(double p_from_pos) {
+        _seek(p_from_pos);
         active = true;
     }
-    void AudioStreamPlaybackResampledMyTone::seek(float p_time) {
-        float max = get_length();
+
+    void AudioStreamPlaybackResampledMyTone::_seek(double p_time) {
         if (p_time < 0) {
                 p_time = 0;
         }
         base->set_position(uint64_t(p_time * base->mix_rate) << MIX_FRAC_BITS);
     }
-    void AudioStreamPlaybackResampledMyTone::_mix_internal(AudioFrame *p_buffer, int p_frames) {
-        ERR_FAIL_COND(!active);
-        if (!active) {
-            return;
-        }
-        zeromem(pcm_buffer, PCM_BUFFER_SIZE);
-        int16_t *buf = (int16_t *)pcm_buffer;
-        base->gen_tone(buf, p_frames);
 
-        for(int i = 0;  i < p_frames; i++) {
-            float sample = float(buf[i]) / 32767.0;
-                p_buffer[i] = AudioFrame(sample, sample);
+    int AudioStreamPlaybackResampledMyTone::_mix_resampled(AudioFrame *p_dst_buffer, int p_frame_count) {
+        if (!active) {
+            return 0;
         }
+        memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
+        int16_t *buf = (int16_t *)pcm_buffer;
+        base->gen_tone(buf, p_frame_count);
+
+        for(int i = 0; i < p_frame_count; i++) {
+            float sample = float(buf[i]) / 32767.0;
+            AudioFrame frame = {sample, sample};
+            p_dst_buffer[i] = frame;
+        }
+        return p_frame_count;
     }
-    float AudioStreamPlaybackResampledMyTone::get_stream_sampling_rate() {
+
+    double AudioStreamPlaybackResampledMyTone::_get_stream_sampling_rate() const{
         return float(base->mix_rate);
     }
-    int AudioStreamPlaybackResampledMyTone::get_loop_count() const {
+
+    int AudioStreamPlaybackResampledMyTone::_get_loop_count() const {
         return 0;
     }
-    float AudioStreamPlaybackResampledMyTone::get_playback_position() const {
+
+    double AudioStreamPlaybackResampledMyTone::_get_playback_position() const {
         return 0.0;
     }
-    float AudioStreamPlaybackResampledMyTone::get_length() const {
-        return 0.0;
-    }
-    bool AudioStreamPlaybackResampledMyTone::is_playing() const {
+
+    bool AudioStreamPlaybackResampledMyTone::_is_playing() const {
         return active;
     }
 
