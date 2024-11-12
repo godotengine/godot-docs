@@ -288,9 +288,6 @@ query AudioFrames and ``_get_stream_sampling_rate`` to query current mix rate.
         Ref<AudioStreamMyTone> base;
         bool active;
 
-    protected:
-
-
     public:
         virtual void _start(double p_from_pos) override;
         virtual void _stop() override;
