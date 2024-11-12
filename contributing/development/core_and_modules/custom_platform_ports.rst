@@ -169,7 +169,7 @@ you have two options:
 Distributing a custom platform port
 -----------------------------------
 
-.. warning::
+.. danger::
 
     Before distributing a custom platform port, make sure you're allowed to
     distribute all the code that is being linked against. Console SDKs are
