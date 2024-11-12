@@ -45,6 +45,7 @@ We need to extend our node from :ref:`CompositorEffect <class_CompositorEffect>`
 We must also give our script a class name.
 
 .. code-block:: gdscript
+    :caption: post_process_shader.gd
 
     @tool
     extends CompositorEffect
@@ -120,7 +121,7 @@ and thus runs within our rendering thread.
 
 We need to ensure that we set our new shader code, and mark our
 shader code as dirty, without our render thread accessing this
-data at the same time. 
+data at the same time.
 
 Next we initialize our effect.
 
@@ -254,7 +255,7 @@ this at the right stage of rendering.
                 if size.x == 0 and size.y == 0:
                     return
 
-                # We can use a compute shader here 
+                # We can use a compute shader here
                 var x_groups = (size.x - 1) / 8 + 1
                 var y_groups = (size.y - 1) / 8 + 1
                 var z_groups = 1

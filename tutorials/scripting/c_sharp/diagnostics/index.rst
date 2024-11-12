@@ -8,8 +8,8 @@ C# diagnostics
 Godot includes analyzers that inspect your C# source code to check for invalid
 or unsupported code and let you know that something is wrong during build time.
 
-Rules
------
+.. rubric:: Rules
+   :heading-level: 2
 
 .. toctree::
    :maxdepth: 1

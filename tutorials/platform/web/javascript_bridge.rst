@@ -1,6 +1,6 @@
 .. _doc_web_javascript_bridge:
 
-The JavaScriptBridge Singleton
+The JavaScriptBridge singleton
 ==============================
 
 In web builds, the :ref:`JavaScriptBridge <class_JavaScriptBridge>` singleton
@@ -92,6 +92,12 @@ Arguments passed by JavaScript to the callback will be passed as a single Godot
         # Call preventDefault and set the `returnValue` property of the DOM event.
         js_event.preventDefault()
         js_event.returnValue = ''
+
+.. warning::
+
+    The number of arguments accepted by the callback method (``_my_callback`` in the above example)
+    **must** match the number of arguments sent by JavaScript. Otherwise, the callback method will
+    not be called.
 
 Here is another example that asks the user for the `Notification permission <https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API>`__
 and waits asynchronously to deliver a notification if the permission is

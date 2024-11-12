@@ -147,7 +147,7 @@ writing test cases themselves.
 
 Test cases are created using ``TEST_CASE`` function-like macro. Each test case
 must have a brief description written in parentheses, optionally including
-custom tags which allow to filter the tests at run-time, such as ``[String]``,
+custom tags which allow to filter the tests at runtime, such as ``[String]``,
 ``[Stress]`` etc.
 
 Test cases are written in a dedicated namespace. This is not required, but
@@ -227,7 +227,7 @@ macros which allow to log test output in a format written by doctest.
 | ``FAIL``       | Fails the test immediately. Can be wrapped in conditionals for complex checks.                            |
 +----------------+-----------------------------------------------------------------------------------------------------------+
 
-Different reporters can be chosen at run-time. For instance, here's how the
+Different reporters can be chosen at runtime. For instance, here's how the
 output can be redirected to an XML file:
 
 .. code-block:: shell

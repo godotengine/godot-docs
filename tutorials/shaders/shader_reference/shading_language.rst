@@ -322,22 +322,24 @@ return the array's size.
 Global arrays
 ~~~~~~~~~~~~~
 
-You can declare arrays at global space like:
+You can declare arrays in global space as either ``const`` or ``uniform``:
 
 .. code-block:: glsl
 
     shader_type spatial;
 
     const lowp vec3 v[1] = lowp vec3[1] ( vec3(0, 0, 1) );
+    uniform lowp vec3 w[1];
 
     void fragment() {
-      ALBEDO = v[0];
+      ALBEDO = v[0] + w[0];
     }
 
 .. note::
 
-    Global arrays have to be declared as global constants, otherwise they can be
-    declared the same as local arrays.
+    Global arrays use the same syntax as local arrays, except with a ``const``
+    or ``uniform`` added to their declaration. Note that uniform arrays can't
+    have a default value.
 
 Constants
 ---------
@@ -383,7 +385,7 @@ accessible outside of the shader.
 
     shader_type spatial;
 
-    const float PI = 3.14159265358979323846;
+    const float GOLDEN_RATIO = 1.618033988749894;
 
 Constants of the ``float`` type must be initialized using ``.`` notation after the
 decimal part or by using the scientific notation. The optional ``f`` post-suffix is
@@ -662,6 +664,7 @@ function calls is not allowed, such as from ``int`` to ``float`` (``1`` to ``1.0
         vec3 green = get_color(1.0);
     }
 
+.. _doc_shading_language_varyings:
 
 Varyings
 --------
@@ -780,7 +783,7 @@ Uniforms
 Passing values to shaders is possible. These are global to the whole shader and
 are called *uniforms*. When a shader is later assigned to a material, the
 uniforms will appear as editable parameters in it. Uniforms can't be written
-from within the shader.
+from within the shader. Any GLSL type except for ``void`` can be a uniform.
 
 .. code-block:: glsl
 
@@ -803,9 +806,24 @@ GDScript:
           in the shader. It must match *exactly* to the name of the uniform in
           the shader or else it will not be recognized.
 
-Any GLSL type except for *void* can be a uniform. Additionally, Godot provides
-optional shader hints to make the compiler understand for what the uniform is
-used, and how the editor should allow users to modify it.
+.. note:: There is a limit to the total size of shader uniforms that you can use
+          in a single shader. On most desktop platforms, this limit is ``65536``
+          bytes, or 4096 ``vec4`` uniforms. On mobile platforms, the limit is
+          typically ``16384`` bytes, or 1024 ``vec4`` uniforms. Vector uniforms
+          smaller than a ``vec4``, such as ``vec2`` or ``vec3``, are padded to
+          the size of a ``vec4``. Scalar uniforms such as ``int`` or ``float``
+          are not padded, and ``bool`` is padded to the size of an ``int``.
+
+          Arrays count as the total size of their contents. If you need a uniform
+          array that is larger than this limit, consider packing the data into a
+          texture instead, since the *contents* of a texture do not count towards
+          this limit, only the size of the sampler uniform.
+
+Uniform hints
+~~~~~~~~~~~~~
+
+Godot provides optional uniform hints to make the compiler understand what the
+uniform is used for, and how the editor should allow users to modify it.
 
 .. code-block:: glsl
 
@@ -816,20 +834,26 @@ used, and how the editor should allow users to modify it.
     uniform vec4 other_color : source_color = vec4(1.0); // Default values go after the hint.
     uniform sampler2D image : source_color;
 
-It's important to understand that textures *that are supplied as color* require
-hints for proper sRGB -> linear conversion (i.e. ``source_color``), as Godot's
-3D engine renders in linear color space. If this is not done, the texture will
-appear washed out.
+.. admonition:: Source Color
 
-.. note::
+    Any texture which contains *sRGB color data* requires a ``source_color`` hint
+    in order to be correctly sampled. This is because Godot renders in linear
+    color space, but some textures contain sRGB color data. If this hint is not
+    used, the texture will appear washed out.
 
-    The 2D renderer also renders in linear color space if the
-    **Rendering > Viewport > HDR 2D** project setting is enabled, so
-    ``source_color`` must also be used in ``canvas_item`` shaders. If 2D HDR is
-    disabled, ``source_color`` will keep working correctly in ``canvas_item``
-    shaders, so it's recommend to use it either way.
+    Albedo and color textures should typically have a ``source_color`` hint. Normal,
+    roughness, metallic, and height textures typically do not need a ``source_color``
+    hint.
 
-Full list of hints below:
+    Using ``source_color`` hint is required in the Forward+ and Mobile renderers,
+    and in ``canvas_item`` shaders when :ref:`HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+    is enabled. The ``source_color`` hint is optional for the Compatibility renderer,
+    and for ``canvas_item`` shaders if ``HDR 2D`` is disabled. However, it is
+    recommended to always use the ``source_color`` hint, because it works even
+    if you change renderers or disable ``HDR 2D``.
+
+
+Full list of uniform hints below:
 
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 | Type                 | Hint                                             | Description                                                                 |
@@ -1035,7 +1059,7 @@ value using ``global uniform vec4 my_color = ...`` in the shader code, it will
 be ignored as the global uniform must always be defined in the Project Settings
 anyway.
 
-To change the value of a global uniform at run-time, use the
+To change the value of a global uniform at runtime, use the
 :ref:`RenderingServer.global_shader_parameter_set <class_RenderingServer_method_global_shader_parameter_set>`
 method in a script:
 
@@ -1047,20 +1071,20 @@ Assigning global uniform values can be done as many times as desired without
 impacting performance, as setting data doesn't require synchronization between
 the CPU and GPU.
 
-You can also add or remove global uniforms at run-time:
+You can also add or remove global uniforms at runtime:
 
 .. code-block:: gdscript
 
     RenderingServer.global_shader_parameter_add("my_color", RenderingServer.GLOBAL_VAR_TYPE_COLOR, Color(0.3, 0.6, 1.0))
     RenderingServer.global_shader_parameter_remove("my_color")
 
-Adding or removing global uniforms at run-time has a performance cost, although
+Adding or removing global uniforms at runtime has a performance cost, although
 it's not as pronounced compared to getting global uniform values from a script
 (see the warning below).
 
 .. warning::
 
-    While you *can* query the value of a global uniform at run-time in a script
+    While you *can* query the value of a global uniform at runtime in a script
     using ``RenderingServer.global_shader_parameter_get("uniform_name")``, this
     has a large performance penalty as the rendering thread needs to synchronize
     with the calling thread.
@@ -1114,7 +1138,7 @@ the inspector:
 
    Setting a per-instance uniform's value in the GeometryInstance3D section of the inspector
 
-Per-instance uniform values can also be set at run-time using
+Per-instance uniform values can also be set at runtime using
 :ref:`set_instance_shader_parameter <class_GeometryInstance3D_method_set_instance_shader_parameter>`
 method on a node that inherits from :ref:`class_GeometryInstance3D`:
 

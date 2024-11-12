@@ -37,6 +37,19 @@ in the user's browser.
     general, especially when using the GLES2 rendering backend (which only
     requires WebGL 1.0).
 
+Export file name
+----------------
+
+We do suggest users to export their Web projects with ``index.html`` as the file name.
+``index.html`` is usually the default file loaded by web servers when accessing the
+parent directory, usually hiding the name of that file.
+
+.. attention::
+
+    The Godot 4 Web export expects some files to be named the same name as the one set in the
+    initial export. Some issues could occur if some exported files are renamed, including the
+    main HTML file.
+
 WebGL version
 -------------
 
@@ -141,7 +154,7 @@ player to click, tap or press a key/button to enable audio, for instance when di
 .. seealso:: Google offers additional information about their `Web Audio autoplay
              policies <https://sites.google.com/a/chromium.org/dev/audio-video/autoplay>`__.
 
-             Apple's Safari team also posted additional information about their `Auto-Play Policy Changes for macOS 
+             Apple's Safari team also posted additional information about their `Auto-Play Policy Changes for macOS
              <https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/>`__.
 
 .. warning:: Access to microphone requires a

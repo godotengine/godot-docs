@@ -13,16 +13,6 @@
 
 {% block linktags -%}
   <meta name="theme-color" content="#3d8fcc" />
-  {% if godot_inject_language_links -%}
-  {% for alternate_lang in godot_docs_supported_languages -%}
-  {# Convert to ISO 639-1 format, e.g. zh_CN -> zh-cn -#}
-  {% set alternate_lang_href = alternate_lang.lower().replace("_", "-") -%}
-  <link rel="alternate" hreflang="{{ alternate_lang_href }}" href="{{ godot_docs_basepath }}{{ alternate_lang }}/{{ godot_canonical_version }}/{{ pagename }}{{ godot_docs_suffix }}" />
-  {% endfor -%}
-  <link rel="alternate" hreflang="x-default" href="{{ godot_docs_basepath }}{{ godot_default_lang }}/{{ godot_canonical_version }}/{{ pagename }}{{ godot_docs_suffix }}" />
-
-  <link rel="canonical" href="{{ godot_docs_basepath }}{{ lang_attr }}/{{ godot_canonical_version }}/{{ pagename }}{{ godot_docs_suffix }}" />
-  {% endif -%}
   {{ super() }}
 {% endblock -%}
 

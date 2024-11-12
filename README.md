@@ -43,7 +43,7 @@ add-on.
 
 All contributors are welcome to help on the Redot documentation.
 
-To get started, head to the [Contributing section](https://docs.redotengine.org/contributing/ways_to_contribute.html#contributing-to-the-documentation) of the online manual. There, you will find all the information you need to write and submit changes.
+To get started, head to the [Contributing section](https://docs.redotengine.org/contributing/how_to_contribute.html) of the online manual. There, you will find all the information you need to write and submit changes.
 
 Here are some quick links to the areas you might be interested in:
 

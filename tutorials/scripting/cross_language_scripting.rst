@@ -19,6 +19,7 @@ The following two scripts will be used as references throughout this page.
     var my_field: String = "foo"
 
     signal my_signal
+    signal my_signal_with_params(msg: String, n: int)
 
     func print_node_name(node: Node) -> void:
         print(node.get_name())
@@ -34,6 +35,9 @@ The following two scripts will be used as references throughout this page.
     func my_signal_handler():
         print("The signal handler was called!")
 
+    func my_signal_with_params_handler(msg: String, n: int):
+        print_n_times(msg, n)
+
  .. code-tab:: csharp
 
     using Godot;
@@ -43,6 +47,7 @@ The following two scripts will be used as references throughout this page.
         public string myField = "bar";
 
         [Signal] public delegate void MySignalEventHandler();
+        [Signal] public delegate void MySignalWithParamsEventHandler(string msg, int n);
 
         public void PrintNodeName(Node node)
         {
@@ -68,6 +73,11 @@ The following two scripts will be used as references throughout this page.
         public void MySignalHandler()
         {
             GD.Print("The signal handler was called!");
+        }
+
+        public void MySignalWithParamsHandler(string msg, int n)
+        {
+            PrintNTimes(msg, n);
         }
     }
 
@@ -213,6 +223,8 @@ defined in GDScript:
 
     my_csharp_node.MySignal.connect(my_signal_handler)
 
+    my_csharp_node.MySignalWithParams.connect(my_signal_with_params_handler)
+
 Connecting to GDScript signals from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -222,6 +234,8 @@ because no C# static types exist for signals defined by GDScript:
 .. code-block:: csharp
 
     myGDScriptNode.Connect("my_signal", Callable.From(MySignalHandler));
+
+    myGDScriptNode.Connect("my_signal_with_params", Callable.From<string, int>(MySignalWithParamsHandler));
 
 Inheritance
 -----------

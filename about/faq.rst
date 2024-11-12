@@ -393,6 +393,11 @@ Some new versions are safer to upgrade to than others. In general, whether you
 should upgrade depends on your project's circumstances. See
 :ref:`doc_release_policy_should_i_upgrade_my_project` for more information.
 
+Should I use the Forward+, Mobile, or Compatibility renderer?
+-------------------------------------------------------------
+
+You can find a detailed comparison of the renderers in :ref:`doc_renderers`.
+
 I would like to contribute! How can I get started?
 --------------------------------------------------
 
@@ -562,7 +567,7 @@ resulted in better usability while still being fast enough for most use cases.
 
 That said, nothing prevents you from making use of composition in your project
 by creating child Nodes with individual scripts. These nodes can then be added and
-removed at run-time to dynamically add and remove behaviors.
+removed at runtime to dynamically add and remove behaviors.
 
 More information about Godot's design choices can be found in
 `this article <https://godotengine.org/article/why-isnt-godot-ecs-based-game-engine>`__.
