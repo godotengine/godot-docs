@@ -2968,7 +2968,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when defining a local or member variable that would shadow a member variable that the class defines.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a local variable or local constant shadows a member declared in the current class.
 
 .. rst-class:: classref-item-separator
 
@@ -2980,7 +2980,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable_base_class** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable_base_class>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when defining a local or subclass member variable that would shadow a variable that is inherited from a parent class.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a local variable or local constant shadows a member declared in a base class.
 
 .. rst-class:: classref-item-separator
 

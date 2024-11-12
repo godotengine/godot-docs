@@ -54,6 +54,10 @@ Methods
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_on_main_swapchains_created<class_OpenXRExtensionWrapperExtension_private_method__on_main_swapchains_created>`\ (\ ) |virtual|                                                                                                                                                             |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`_on_post_draw_viewport<class_OpenXRExtensionWrapperExtension_private_method__on_post_draw_viewport>`\ (\ viewport\: :ref:`RID<class_RID>`\ ) |virtual|                                                                                                                                     |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`_on_pre_draw_viewport<class_OpenXRExtensionWrapperExtension_private_method__on_pre_draw_viewport>`\ (\ viewport\: :ref:`RID<class_RID>`\ ) |virtual|                                                                                                                                       |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_on_pre_render<class_OpenXRExtensionWrapperExtension_private_method__on_pre_render>`\ (\ ) |virtual|                                                                                                                                                                                       |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_on_process<class_OpenXRExtensionWrapperExtension_private_method__on_process>`\ (\ ) |virtual|                                                                                                                                                                                             |
@@ -259,6 +263,32 @@ Called right before the OpenXR instance is destroyed.
 |void| **_on_main_swapchains_created**\ (\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_main_swapchains_created>`
 
 Called right after the main swapchains are (re)created.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRExtensionWrapperExtension_private_method__on_post_draw_viewport:
+
+.. rst-class:: classref-method
+
+|void| **_on_post_draw_viewport**\ (\ viewport\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_post_draw_viewport>`
+
+Called right after the given viewport is rendered.
+
+\ **Note:** The draw commands might only be queued at this point, not executed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRExtensionWrapperExtension_private_method__on_pre_draw_viewport:
+
+.. rst-class:: classref-method
+
+|void| **_on_pre_draw_viewport**\ (\ viewport\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_pre_draw_viewport>`
+
+Called right before the given viewport is rendered.
 
 .. rst-class:: classref-item-separator
 
