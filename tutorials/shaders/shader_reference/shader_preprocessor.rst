@@ -458,3 +458,35 @@ the preprocessor step.
     // This causes a shader compilation error, as the `#if USE_LIGHT` and `#endif`
     // are included as-is in the final shader code.
     #endif
+
+Built-in defines
+----------------
+
+Current renderer
+^^^^^^^^^^^^^^^^
+
+Since Godot 4.4, you can check which renderer is currently used with the built-in
+defines ``CURRENT_RENDERER``, ``RENDERER_COMPATIBILITY``, ``RENDERER_MOBILE``,
+and ``RENDERER_FORWARD_PLUS``:
+
+- ``CURRENT_RENDERER`` is set to either ``0``, ``1``, or ``2`` depending on the
+  current renderer.
+- ``RENDERER_COMPATIBILITY`` is always ``0``.
+- ``RENDERER_MOBILE`` is always ``1``.
+- ``RENDERER_FORWARD_PLUS`` is always ``2``.
+
+As an example, this shader sets ``ALBEDO`` to a different color in each renderer:
+
+.. code-block:: glsl
+
+    shader_type spatial;
+
+    void fragment() {
+    #if CURRENT_RENDERER == RENDERER_COMPATIBILITY
+        ALBEDO = vec3(0.0, 0.0, 1.0);
+    #elif CURRENT_RENDERER == RENDERER_MOBILE
+        ALBEDO = vec3(1.0, 0.0, 0.0);
+    #else // CURRENT_RENDERER == RENDERER_FORWARD_PLUS
+        ALBEDO = vec3(0.0, 1.0, 0.0);
+    #endif
+    }
