@@ -1,4 +1,4 @@
-.. doc_2d_parallax:
+.. _doc_2d_parallax:
 
 2D Parallax
 ===========
@@ -78,8 +78,11 @@ do?
 Make the viewport smaller
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The simplest answer is to make the viewport the same size or smaller than your textures. Click on
-``Project -> Project Settings -> Window`` and change the viewport height and width to match your background.
+The simplest answer is to make the viewport the same size or smaller than your textures. 
+In **Project Settings > Display > Window**, change the
+:ref:`Viewport Width<class_ProjectSettings_property_display/window/size/viewport_width>`
+and :ref:`Viewport Height<class_ProjectSettings_property_display/window/size/viewport_height>`
+settings to match your background.
 
 .. image:: img/2d_parallax_size_viewport.webp
 

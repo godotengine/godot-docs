@@ -286,7 +286,7 @@ sample rate and number of channels for your audio:
 - There's no *audible* benefit to using 24-bit audio, especially in a game
   where several sounds are often playing at the same time (which makes it
   harder to appreciate individual sounds).
-- Unless you are slowing down the audio at run-time, there's no *audible*
+- Unless you are slowing down the audio at runtime, there's no *audible*
   benefit to using a sample rate greater than 48 kHz. If you wish to keep a
   source with a higher sample rate for editing, use the **Force > Max Rate**
   import option to limit the sample rate of the imported sound (only available

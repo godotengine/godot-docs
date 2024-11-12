@@ -135,7 +135,7 @@ Configuring mesh LOD performance and quality
 
 You can adjust how aggressive mesh LOD transitions should be in the root viewport
 by changing the **Rendering > Mesh LOD > LOD Change > Threshold Pixels** project
-setting. To change this value at run-time, set ``mesh_lod_threshold`` on the
+setting. To change this value at runtime, set ``mesh_lod_threshold`` on the
 root viewport as follows:
 
 .. tabs::

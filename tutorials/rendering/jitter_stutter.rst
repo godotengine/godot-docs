@@ -174,7 +174,7 @@ Increasing the number of physics iterations per second can also reduce
 physics-induced input latency. This is especially noticeable when using physics
 interpolation (which improves smoothness but increases latency). To do so, set
 **Physics > Common > Physics Ticks Per Second** to a value higher than the
-default ``60``, or set ``Engine.physics_ticks_per_second`` at run-time in a
+default ``60``, or set ``Engine.physics_ticks_per_second`` at runtime in a
 script. Values that are a multiple of the monitor refresh rate (typically
 ``60``) work best when physics interpolation is disabled, as they will avoid
 jitter. This means values such as ``120``, ``180`` and ``240`` are good starting
@@ -220,7 +220,7 @@ the same framerate cap (usually less than 1 ms greater), but without any
 tearing.
 
 This can be done by changing the **Application > Run > Max FPS** project
-setting or assigning ``Engine.max_fps`` at run-time in a script.
+setting or assigning ``Engine.max_fps`` at runtime in a script.
 
 On some platforms, you can also opt into a low-latency mode in the graphics
 driver options (such as the NVIDIA Control Panel on Windows). The **Ultra**

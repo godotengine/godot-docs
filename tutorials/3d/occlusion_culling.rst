@@ -192,7 +192,7 @@ your scene. Note that the performance benefit highly depends on the 3D editor
 camera's view angle, as occlusion culling is only effective if there are
 occluders in front of the camera.
 
-To toggle occlusion culling at run-time, set ``use_occlusion_culling`` on the
+To toggle occlusion culling at runtime, set ``use_occlusion_culling`` on the
 root viewport as follows:
 
 .. tabs::
@@ -205,7 +205,7 @@ root viewport as follows:
     GetTree().Root.UseOcclusionCulling = true;
 
 
-Toggling occlusion culling at run-time is useful to compare performance on a
+Toggling occlusion culling at runtime is useful to compare performance on a
 running project.
 
 Performance considerations

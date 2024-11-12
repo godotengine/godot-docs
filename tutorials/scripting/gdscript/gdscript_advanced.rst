@@ -38,7 +38,7 @@ While the main disadvantages are:
    statically typed languages only appear while running the code
    (because expression parsing is more strict).
 -  Less flexibility for code-completion (some variable types are only
-   known at run-time).
+   known at runtime).
 
 This, translated to reality, means that Godot used with GDScript is a combination
 designed to create games quickly and efficiently. For games that are very

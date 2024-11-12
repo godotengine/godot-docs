@@ -226,8 +226,7 @@ Alternatively, you can supply a list of disabled modules by creating
 following:
 
 .. code-block:: python
-
-    # custom.py
+    :caption: custom.py
 
     module_basis_universal_enabled = "no"
     module_bmp_enabled = "no"

@@ -15,7 +15,7 @@ Requirements
 
 To compile export templates for the Web, the following is required:
 
-- `Emscripten 3.1.39+ <https://emscripten.org>`__.
+- `Emscripten 3.1.62+ <https://emscripten.org>`__.
 - `Python 3.6+ <https://www.python.org/>`__.
 - `SCons 3.1.2+ <https://scons.org/pages/download.html>`__ build system.
 
@@ -24,10 +24,6 @@ To compile export templates for the Web, the following is required:
 
              For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
-
-.. note:: Emscripten 3.1.39+ is recommended, but older 3.x versions are known to work.
-
-          Please note that the minimum requirement for GDExtension support is 3.1.14.
 
 Building export templates
 -------------------------

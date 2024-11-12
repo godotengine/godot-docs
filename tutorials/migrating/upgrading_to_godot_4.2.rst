@@ -44,7 +44,7 @@ This article indicates whether each breaking change affects GDScript and whether
 the C# breaking change is *binary compatible* or *source compatible*:
 
 - **Binary compatible** - Existing binaries will load and execute successfully without
-  recompilation, and the run-time behavior won't change.
+  recompilation, and the runtime behavior won't change.
 - **Source compatible** - Source code will compile successfully without changes when
   upgrading Godot.
 

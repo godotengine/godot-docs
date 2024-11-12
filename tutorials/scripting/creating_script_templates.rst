@@ -43,9 +43,9 @@ Project-defined templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The default path to search for templates is the
-``res://script_templates/`` directory. The path can be changed by configuring
-the ``editor/script_templates_search_path`` setting in the
-:ref:`ProjectSettings <class_ProjectSettings>`, both via code and the editor.
+``res://script_templates/`` directory. The path can be changed by configuring the project setting
+:ref:`Editor > Script > Templates Search Path<class_ProjectSettings_property_editor/script/templates_search_path>`,
+both via code and the editor.
 
 If no ``script_templates`` directory is found within a project, it is simply
 ignored.

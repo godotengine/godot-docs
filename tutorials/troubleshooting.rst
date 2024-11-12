@@ -177,7 +177,7 @@ OpenGL applications by your graphics driver.
 - **AMD (Windows):** Open the start menu and choose **AMD Software**. Click the
   settings "cog" icon in the top-right corner. Go to the **Graphics** tab,
   scroll to the bottom and click **Advanced** to unfold its settings. Disable
-  **Morphological Anti-Aliasing**.
+  **Morphological Antialiasing**.
 
 Third-party vendor-independent utilities such as vkBasalt may also force
 sharpening or FXAA on all Vulkan applications. You may want to check their

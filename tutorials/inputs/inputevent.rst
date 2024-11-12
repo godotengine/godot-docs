@@ -194,10 +194,10 @@ There are several specialized types of InputEvent, described in the table below:
 |                                                                   | as feedback. (more on this below)       |
 +-------------------------------------------------------------------+-----------------------------------------+
 
-Actions
--------
+Input actions
+-------------
 
-Actions are a grouping of zero or more InputEvents into a commonly
+Input actions are a grouping of zero or more InputEvents into a commonly
 understood title (for example, the default "ui_left" action grouping both joypad-left input and a keyboard's left arrow key). They are not required to represent an
 InputEvent but are useful because they abstract various inputs when
 programming the game logic.
@@ -206,8 +206,8 @@ This allows for:
 
 -  The same code to work on different devices with different inputs (e.g.,
    keyboard on PC, Joypad on console).
--  Input to be reconfigured at run-time.
--  Actions to be triggered programmatically at run-time.
+-  Input to be reconfigured at runtime.
+-  Actions to be triggered programmatically at runtime.
 
 Actions can be created from the Project Settings menu in the **Input Map**
 tab and assigned input events.
@@ -239,12 +239,18 @@ The Input singleton has a method for this:
     // Feedback.
     Input.ParseInputEvent(ev);
 
+
+.. seealso::
+
+   See :ref:`doc_first_3d_game_input_actions` for a tutorial on adding input
+   actions in the project settings.
+
 InputMap
 --------
 
 Customizing and re-mapping input from code is often desired. If your
 whole workflow depends on actions, the :ref:`InputMap <class_InputMap>` singleton is
-ideal for reassigning or creating different actions at run-time. This
+ideal for reassigning or creating different actions at runtime. This
 singleton is not saved (must be modified manually) and its state is run
 from the project settings (project.godot). So any dynamic system of this
 type needs to store settings in the way the programmer best sees fit.

@@ -494,7 +494,7 @@ Checking Environment settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Graphics quality settings were moved from Environment properties to project
-settings. This was done to make run-time quality adjustments easier, without
+settings. This was done to make runtime quality adjustments easier, without
 having to access the currently active Environment resource then modify its
 properties.
 
@@ -569,7 +569,7 @@ The most notable examples of this are:
   The conversion tool will use the string-based syntax which is still present in
   Godot 4, but it's recommended to switch to the :ref:`class_Signal`-based syntax
   described on the linked page. This way, strings are no longer involved,
-  which avoids issues with signal name errors that can only be discovered at run-time.
+  which avoids issues with signal name errors that can only be discovered at runtime.
 - Built-in scripts that are :ref:`tool scripts <doc_running_code_in_the_editor>`
   do not get the ``tool`` keyword converted to the ``@tool`` annotation.
 - The Tween node was removed in favor of Tweeners, which are also available in

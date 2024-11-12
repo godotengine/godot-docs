@@ -744,7 +744,7 @@ This is done by rasterizing a low-resolution buffer on the CPU using
 `Embree <https://github.com/embree/embree>`__. The buffer's resolution depends
 on the number of CPU threads on the system, as this is done in parallel.
 This buffer includes occluder shapes that were baked in the editor or created at
-run-time.
+runtime.
 
 As complex occluders can introduce a lot of strain on the CPU, baked occluders
 can be simplified automatically when generated in the editor.
@@ -752,7 +752,7 @@ can be simplified automatically when generated in the editor.
 Godot's occlusion culling doesn't support dynamic occluders yet, but
 OccluderInstance3D nodes can still have their visibility toggled or be moved.
 However, this will be slow when updating complex occluders this way. Therefore,
-updating occluders at run-time is best done only on simple occluder shapes such
+updating occluders at runtime is best done only on simple occluder shapes such
 as quads or cuboids.
 
 This CPU-based approach has a few advantages over other solutions, such as

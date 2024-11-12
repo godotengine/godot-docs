@@ -61,6 +61,8 @@ You need to use **clang-format 17** to be compatible with Godot's format. Later 
 be suitable, but previous versions may not support all used options, or format
 some things differently, leading to style issues in pull requests.
 
+.. _doc_code_style_guidelines_pre_commit_hook:
+
 Pre-commit hook
 ^^^^^^^^^^^^^^^
 
@@ -169,6 +171,7 @@ ones, the following rules should be followed:
 Example:
 
 .. code-block:: cpp
+    :caption: my_new_file.h
 
     /**************************************************************************/
     /*  my_new_file.h                                                         */
@@ -215,6 +218,7 @@ Example:
     #endif // MY_NEW_FILE_H
 
 .. code-block:: cpp
+    :caption: my_new_file.cpp
 
     /**************************************************************************/
     /*  my_new_file.cpp                                                       */
