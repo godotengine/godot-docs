@@ -39,8 +39,9 @@ While in Godot 3 most things worked out of the box, Godot 4 needs a little more 
     As Godot 4 is still in development, many post process effects have not yet been updated to support stereoscopic rendering. Using these will have adverse effects.
 
 .. note::
-    Godot 4 has 3 renderer options, Compatibility, Mobile, and Forward+. In the future XR desktop projects should use Forward+, and projects for stand-alone headsets
-    should use Mobile. However Compatibility is the recommended renderer for now due to it having the best XR performance.
+    Godot 4 has 3 renderer options, Compatibility, Mobile, and Forward+. In the future XR desktop projects should use Forward+, and projects for standalone headsets
+    should use Mobile. Currently Compatibility is the recommended renderer for standalone headsets, and ironically Mobile is the recommended renderer for desktop.
+    This is based on current XR performance on the different devices with each renderer.
 
 OpenXR
 ------
