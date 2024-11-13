@@ -82,8 +82,10 @@ Setting up
 
 .. note::
 
-    The LightmapGI node only bakes nodes under its parent.
-    This is because some people may require several separate lightmaps in the same scene.
+    The LightmapGI node only bakes nodes that are on the same level as the
+    LightmapGI node (siblings), or nodes that are children of the
+    LightmapGI node. This allows you to use several LightmapGI nodes to bake
+    different parts of the scene, independently from each other.
 
 First of all, before the lightmapper can do anything, the objects to be baked need
 a UV2 layer and a texture size. A UV2 layer is a set of secondary texture coordinates
