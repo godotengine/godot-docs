@@ -226,7 +226,8 @@ Since AudioStreamPlayback is controlled by the audio thread, i/o and dynamic mem
         }
 
         memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
-        int16_t *buf = (int16_t *)pcm_buffer;
+        int16_t *buf = static_cast<int16_t *>(pcm_buffer);
+        p_frames = MIN(p_frames, PCM_BUFFER_SIZE);
         base->gen_tone(buf, p_frames);
 
         for(int i = 0; i < p_frames; i++) {
@@ -352,7 +353,8 @@ query AudioFrames and ``_get_stream_sampling_rate`` to query current mix rate.
             return 0;
         }
         memset(pcm_buffer, 0, PCM_BUFFER_SIZE);
-        int16_t *buf = (int16_t *)pcm_buffer;
+        int16_t *buf = static_cast<int16_t *>(pcm_buffer);
+        p_frame_count = MIN(p_frame_count, PCM_BUFFER_SIZE);
         base->gen_tone(buf, p_frame_count);
 
         for(int i = 0; i < p_frame_count; i++) {
@@ -364,7 +366,7 @@ query AudioFrames and ``_get_stream_sampling_rate`` to query current mix rate.
     }
 
     double AudioStreamPlaybackResampledMyTone::_get_stream_sampling_rate() const{
-        return float(base->mix_rate);
+        return double(base->mix_rate);
     }
 
     int AudioStreamPlaybackResampledMyTone::_get_loop_count() const {
