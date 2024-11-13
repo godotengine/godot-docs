@@ -59,9 +59,11 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **specular_disabled**         | Disable specular.                                                                                    |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **skip_vertex_transform**     | ``VERTEX``/``NORMAL``/etc. need to be transformed manually in the ``vertex()`` function.             |
+| **skip_vertex_transform**     | ``VERTEX``, ``NORMAL``, ``TANGENT``, and ``BITANGENT``                                               |
+|                               | need to be transformed manually in the ``vertex()`` function.                                        |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **world_vertex_coords**       | ``VERTEX``/``NORMAL``/etc. are modified in world space instead of model space.                       |
+| **world_vertex_coords**       | ``VERTEX``, ``NORMAL``, ``TANGENT``, and ``BITANGENT``                                               |
+|                               | are modified in world space instead of model space.                                                  |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **ensure_correct_normals**    | Use when non-uniform scale is applied to mesh.                                                       |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
@@ -126,9 +128,9 @@ Global built-ins are available everywhere, including custom functions.
 Vertex built-ins
 ^^^^^^^^^^^^^^^^
 
-Vertex data (``VERTEX``, ``NORMAL``, ``TANGENT``, ``BITANGENT``) are presented in model space
+Vertex data (``VERTEX``, ``NORMAL``, ``TANGENT``, and ``BITANGENT``) are presented in model space
 (also called local space). If not written to, these values will not be modified and be 
-passed through as they came.
+passed through as they came, then transformed into view space to be used in ``fragment()``.
 
 They can optionally be presented in world space by using the ``world_vertex_coords`` render mode.
 
@@ -203,17 +205,22 @@ shader, this value can be used as desired.
 | in vec3 **EYE_OFFSET**                 | Position offset for the eye being rendered.            |
 |                                        | Only applicable for multiview rendering.               |
 +----------------------------------------+--------------------------------------------------------+
-| inout vec3 **VERTEX**                  | Vertex position in model space.                        |
+| inout vec3 **VERTEX**                  | Position of the vertex, in model space.                |
+|                                        | In world space if ``world_vertex_coords`` is used.     |
 +----------------------------------------+--------------------------------------------------------+
 | in int **VERTEX_ID**                   | The index of the current vertex in the vertex buffer.  |
 +----------------------------------------+--------------------------------------------------------+
 | inout vec3 **NORMAL**                  | Normal in model space.                                 |
+|                                        | In world space if ``world_vertex_coords`` is used.     |
 +----------------------------------------+--------------------------------------------------------+
 | inout vec3 **TANGENT**                 | Tangent in model space.                                |
+|                                        | In world space if ``world_vertex_coords`` is used.     |
 +----------------------------------------+--------------------------------------------------------+
 | inout vec3 **BINORMAL**                | Binormal in model space.                               |
+|                                        | In world space if ``world_vertex_coords`` is used.     |
 +----------------------------------------+--------------------------------------------------------+
-| out vec4 **POSITION**                  | If written to, overrides final vertex position.        |
+| out vec4 **POSITION**                  | If written to, overrides final vertex position in clip |
+|                                        | space.                                                 |
 +----------------------------------------+--------------------------------------------------------+
 | inout vec2 **UV**                      | UV main channel.                                       |
 +----------------------------------------+--------------------------------------------------------+
@@ -311,7 +318,9 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in uint **CAMERA_VISIBLE_LAYERS**      | Cull layers of the camera rendering the current pass.                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec3 **VERTEX**                     | Vertex position that comes from the ``vertex()`` function (default, in view space).              |
+| in vec3 **VERTEX**                     | Position of the fragment (pixel), in view space. It is the ``VERTEX`` value from ``vertex()``    |
+|                                        | interpolated between the face's vertices and transformed into view space.                        |
+|                                        | If ``skip_vertex_transform`` is enabled, it may not be in view space.                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | inout vec3 **LIGHT_VERTEX**            | A writable version of ``VERTEX`` that can be used to alter light and shadows. Writing to this    |
 |                                        | will not change the position of the fragment.                                                    |
@@ -336,11 +345,14 @@ these properties, and if you don't write to them, Godot will optimize away the c
 |                                        | branch, then you are responsible for setting the ``DEPTH`` for **all** other branches.           |
 |                                        | Otherwise, the graphics API will leave them uninitialized.                                       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec3 **NORMAL**                  | Normal that comes from the ``vertex()`` function (default, in view space).                       |
+| inout vec3 **NORMAL**                  | Normal that comes from the ``vertex()`` function, in view space.                                 |
+|                                        | If ``skip_vertex_transform`` is enabled, it may not be in view space.                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec3 **TANGENT**                 | Tangent that comes from the ``vertex()`` function (default, in view space).                      |
+| inout vec3 **TANGENT**                 | Tangent that comes from the ``vertex()`` function, in view space.                                |
+|                                        | If ``skip_vertex_transform`` is enabled, it may not be in view space.                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| inout vec3 **BINORMAL**                | Binormal that comes from the ``vertex()`` function (default, in view space).                     |
+| inout vec3 **BINORMAL**                | Binormal that comes from the ``vertex()`` function, in view space.                               |
+|                                        | If ``skip_vertex_transform`` is enabled, it may not be in view space.                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out vec3 **NORMAL_MAP**                | Set normal here if reading normal from a texture instead of ``NORMAL``.                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
