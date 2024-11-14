@@ -63,7 +63,7 @@ make an image look clean. Below is an example of good cropping.
 .. image:: img/cropped_image.webp
 
 For cropping Krita is the recommended program. While some screenshot programs do
-have cropping built in it's not always easy to get something precise. And while
+have cropping built-in it's not always easy to get something precise. And while
 Krita is designed as a painting program the cropping tool gives you pixel precision
 by default. Of course, feel free to use a different program you are familiar with.
 

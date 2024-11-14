@@ -25,7 +25,7 @@ Specifying the TileSet in the TileMapLayer
 ------------------------------------------
 
 If you've followed the previous page on :ref:`doc_using_tilesets`, you should
-have a TileSet resource that is built-in to the TileMapLayer node. This is good for
+have a TileSet resource that is built into the TileMapLayer node. This is good for
 prototyping, but in a real world project, you will generally have multiple
 levels reusing the same tileset.
 
