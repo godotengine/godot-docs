@@ -89,12 +89,11 @@ To create a thread, use the following code:
     using namespace godot;
 
     void MultithreadingDemo::_bind_methods() {
-        // THREADING
         ClassDB::bind_method(D_METHOD("threaded_function"), &MultithreadingDemo::demo_threaded_function);
     }
 
     void MultithreadingDemo::_notification(int p_what) {
-        // Prevents this from running in the editor, only during game mode.
+        // Prevents this from running in the editor, only during game mode. In Godot 4.3+ use Runtime classes.
         if (Engine::get_singleton()->is_editor_hint()) {
             return;
         }
