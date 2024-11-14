@@ -121,6 +121,10 @@ Hardware with RenderingDevice support is hardware which can run Vulkan, Direct3D
 Overall comparison
 ~~~~~~~~~~~~~~~~~~
 
+.. Note that these tables use emojis, which are not monospaced in most editors.
+.. The tables look malformed but are not. When making changes, check the nearby
+.. lines for guidance.
+
 +---------------------+--------------------------+--------------------------+--------------------------+
 | Feature             | Compatibility            | Mobile                   | Forward+                 |
 +=====================+==========================+==========================+==========================+
