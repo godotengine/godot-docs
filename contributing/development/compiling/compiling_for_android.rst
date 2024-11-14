@@ -26,8 +26,8 @@ Requirements
 
 For compiling under Windows, Linux or macOS, the following is required:
 
-- `Python 3.6+ <https://www.python.org/downloads/>`_.
-- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system.
+- `Python 3.8+ <https://www.python.org/downloads/>`_.
+- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
 - `Android SDK <https://developer.android.com/studio/#command-tools>`_
   (command-line tools are sufficient).
 
@@ -228,7 +228,7 @@ root directory with the following arguments:
 
 - You can add the ``debug_symbols=yes`` parameter to include the debug symbols in the generated build.
 
-- You can skip certain architectures depending on your target device to speed up compilation. 
+- You can skip certain architectures depending on your target device to speed up compilation.
 
 Remember to add ``generate_apk=yes`` to the *last* architecture you're building, so that binaries are generated after the build.
 

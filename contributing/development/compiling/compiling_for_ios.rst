@@ -13,8 +13,8 @@ Compiling for iOS
 Requirements
 ------------
 
-- `Python 3.6+ <https://www.python.org/downloads/macos/>`_.
-- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system.
+- `Python 3.8+ <https://www.python.org/downloads/macos/>`_.
+- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_.
     - Launch Xcode once and install iOS support. If you have already launched
       Xcode and need to install iOS support, go to *Xcode -> Settings... -> Platforms*.
