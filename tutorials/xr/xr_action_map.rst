@@ -385,4 +385,3 @@ This is why many XR runtimes only use it as a last resort and will attempt to us
   This is our advice as well: limit your action map to the interaction profiles for devices you have actually tested your game with.
   The Oculus Touch controller is widely used as a fallback controller by many runtimes.
   If you are able to test your game using a Meta Rift or Quest and add this profile there is a high probability your game will work with other headsets.
-

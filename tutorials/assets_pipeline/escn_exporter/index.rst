@@ -11,4 +11,3 @@ is not maintained or supported in Godot 4.x. While not officially supported, the
 partially work for some Godot and Blender versions, particularly before Blender version 4.0.
 For complete docs on the Blender exporter, see the 
 `previous version of this page <https://docs.godotengine.org/en/4.0/tutorials/assets_pipeline/escn_exporter/index.html>`__.
-
