@@ -13,7 +13,7 @@ Advantages of upgrading
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Along with the
-`new features present in 4.0 <https://github.com/godotengine/godot/blob/master/CHANGELOG.md>`__,
+`new features present in 4.0 <https://godotengine.org/article/godot-4-0-sets-sail>`__,
 upgrading gives the following advantages:
 
 - Many bugs are fixed in 4.0, but cannot be resolved in 3.x for various reasons
@@ -22,7 +22,8 @@ upgrading gives the following advantages:
   will continue to be supported for some time after 4.0 is released, but it will
   eventually stop receiving support.
 
-See :ref:`doc_docs_changelog` for a list of pages documenting new features in Godot 4.0.
+See :ref:`doc_docs_changelog` for a list of pages documenting new features in
+Godot 4.0, and :ref:`doc_list_of_features` for a list of all features in Godot.
 
 Disadvantages of upgrading
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
