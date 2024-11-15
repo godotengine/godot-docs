@@ -12,7 +12,7 @@ code that Godot generates into an intermediate format that can be shared across
 systems (such as SPIR-V when using Vulkan). However, this format can't be used
 by the GPU directly.
 
-*Pipeline compilation* is the step the GPU driver performs where it'll convert
+*Pipeline compilation* is the step where the GPU driver converts
 the intermediate shader format (the result from shader compilation) to something
 the GPU can actually use for rendering. Drivers usually keep a cache of
 pipelines stored somewhere in the system to avoid repeating the process every
