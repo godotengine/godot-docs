@@ -42,7 +42,7 @@ whether the issue is a regression in 4.0 or not.
 - If the issue is **not present** in 3.x, then you can try older 4.0 alphas and
   betas to determine when the regression started.
 
-.. warning::
+.. danger::
 
     Project files may be incompatible between Godot versions.
     **Make a backup of your project** before starting the bisection process.

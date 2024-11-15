@@ -106,7 +106,7 @@ only ``.gdshader`` is supported in Godot 4.0.
 Running the project upgrade tool
 --------------------------------
 
-.. warning::
+.. danger::
 
     **Make a full backup of your project** before upgrading! The project upgrade
     tool will *not* perform any backups of the project that is being upgraded.
