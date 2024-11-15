@@ -291,6 +291,10 @@ same time.
 Antialiasing comparison
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+.. Note that this table uses emojis, which are not monospaced in most editors.
+.. The table looks malformed but is not. When making changes, check the nearby
+.. lines for guidance.
+
 +--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+
 | Feature                  | MSAA                     | TAA                      | FSR2                     | FXAA                     | SSAA                     | SSRL                     |
 +==========================+==========================+==========================+==========================+==========================+==========================+==========================+

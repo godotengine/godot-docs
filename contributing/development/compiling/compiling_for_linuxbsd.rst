@@ -17,8 +17,8 @@ For compiling under Linux or other Unix variants, the following is
 required:
 
 - GCC 9+ or Clang 6+.
-- `Python 3.6+ <https://www.python.org/downloads/>`_.
-- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system.
+- `Python 3.8+ <https://www.python.org/downloads/>`_.
+- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
 - pkg-config (used to detect the development libraries listed below).
 - Development libraries:
 
