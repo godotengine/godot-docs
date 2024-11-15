@@ -271,7 +271,7 @@ run. Use the ``light_only`` render mode if you only want to see the impact of
 lighting on an object; this can be useful when you only want the object visible
 where it is covered by light.
 
-If you define a ``light()`` function it will replace the built in light function,
+If you define a ``light()`` function it will replace the built-in light function,
 even if your light function is empty.
 
 Below is an example of a light shader that takes a CanvasItem's normal map into account:

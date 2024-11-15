@@ -23,7 +23,7 @@ use cases:
 - If your player doesn't use a sprite, but draws itself using code, you can make
   that drawing code execute in the editor to see your player.
 
-.. DANGER::
+.. danger::
 
     ``@tool`` scripts run inside the editor, and let you access the scene tree
     of the currently edited scene. This is a powerful feature which also comes
@@ -503,7 +503,7 @@ currently focused on the script editor.
 
 Scripts that extend EditorScript must be ``@tool`` scripts to function.
 
-.. warning::
+.. danger::
 
     EditorScripts have no undo/redo functionality, so **make sure to save your
     scene before running one** if the script is designed to modify any data.
