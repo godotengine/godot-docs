@@ -152,6 +152,18 @@ Emitted when a property was deleted. Used internally.
 
 ----
 
+.. _class_EditorProperty_signal_property_favorited:
+
+.. rst-class:: classref-signal
+
+**property_favorited**\ (\ property\: :ref:`StringName<class_StringName>`, favorited\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorProperty_signal_property_favorited>`
+
+Emit it if you want to mark a property as favorited, making it appear at the top of the inspector.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorProperty_signal_property_keyed:
 
 .. rst-class:: classref-signal

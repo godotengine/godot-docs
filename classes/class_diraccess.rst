@@ -36,7 +36,7 @@ Most of the methods have a static alternative that can be used without creating 
     # Static
     DirAccess.make_dir_absolute("user://levels/world1")
 
-\ **Note:** Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. Use :ref:`ResourceLoader<class_ResourceLoader>` to access imported resources.
+\ **Note:** Accessing project ("res://") directories once exported may behave unexpectedly as some files are converted to engine-specific formats and their original source files may not be present in the expected PCK package. Because of this, to access resources in an exported project, it is recommended to use :ref:`ResourceLoader<class_ResourceLoader>` instead of :ref:`FileAccess<class_FileAccess>`.
 
 Here is an example on how to iterate through the files of a directory:
 
@@ -88,6 +88,8 @@ Here is an example on how to iterate through the files of a directory:
     }
 
 
+
+Keep in mind that file names may change or be remapped after export. If you want to see the actual resource file list as it appears in the editor, use :ref:`ResourceLoader.list_directory<class_ResourceLoader_method_list_directory>` instead.
 
 .. rst-class:: classref-introduction-group
 
@@ -318,6 +320,8 @@ Returns whether the current item processed with the last :ref:`get_next<class_Di
 
 Returns whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
 
+\ **Note:** The returned :ref:`bool<class_bool>` in the editor and after exporting when used on a path in the ``res://`` directory may be different. Some files are converted to engine-specific formats when exported, potentially changing the directory structure.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -329,6 +333,8 @@ Returns whether the target directory exists. The argument can be relative to the
 :ref:`bool<class_bool>` **dir_exists_absolute**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_DirAccess_method_dir_exists_absolute>`
 
 Static version of :ref:`dir_exists<class_DirAccess_method_dir_exists>`. Supports only absolute paths.
+
+\ **Note:** The returned :ref:`bool<class_bool>` in the editor and after exporting when used on a path in the ``res://`` directory may be different. Some files are converted to engine-specific formats when exported, potentially changing the directory structure.
 
 .. rst-class:: classref-item-separator
 
@@ -343,6 +349,8 @@ Static version of :ref:`dir_exists<class_DirAccess_method_dir_exists>`. Supports
 Returns whether the target file exists. The argument can be relative to the current directory, or an absolute path.
 
 For a static equivalent, use :ref:`FileAccess.file_exists<class_FileAccess_method_file_exists>`.
+
+\ **Note:** Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. See :ref:`ResourceLoader.exists<class_ResourceLoader_method_exists>` for an alternative approach that takes resource remapping into account.
 
 .. rst-class:: classref-item-separator
 
@@ -382,6 +390,8 @@ Returns a :ref:`PackedStringArray<class_PackedStringArray>` containing filenames
 
 Affected by :ref:`include_hidden<class_DirAccess_property_include_hidden>` and :ref:`include_navigational<class_DirAccess_property_include_navigational>`.
 
+\ **Note:** The returned directories in the editor and after exporting in the ``res://`` directory may differ as some files are converted to engine-specific formats when exported.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -395,6 +405,8 @@ Affected by :ref:`include_hidden<class_DirAccess_property_include_hidden>` and :
 Returns a :ref:`PackedStringArray<class_PackedStringArray>` containing filenames of the directory contents, excluding files, at the given ``path``. The array is sorted alphabetically.
 
 Use :ref:`get_directories<class_DirAccess_method_get_directories>` if you want more control of what gets included.
+
+\ **Note:** The returned directories in the editor and after exporting in the ``res://`` directory may differ as some files are converted to engine-specific formats when exported.
 
 .. rst-class:: classref-item-separator
 
@@ -461,6 +473,8 @@ Affected by :ref:`include_hidden<class_DirAccess_property_include_hidden>`.
 Returns a :ref:`PackedStringArray<class_PackedStringArray>` containing filenames of the directory contents, excluding directories, at the given ``path``. The array is sorted alphabetically.
 
 Use :ref:`get_files<class_DirAccess_method_get_files>` if you want more control of what gets included.
+
+\ **Note:** When used on a ``res://`` path in an exported project, only the files included in the PCK at the given folder level are returned. In practice, this means that since imported resources are stored in a top-level ``.godot/`` folder, only paths to ``.gd`` and ``.import`` files are returned (plus a few other files, such as ``project.godot`` or ``project.binary`` and the project icon). In an exported project, the list of returned files will also vary depending on :ref:`ProjectSettings.editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>`.
 
 .. rst-class:: classref-item-separator
 

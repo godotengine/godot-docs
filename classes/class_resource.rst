@@ -269,7 +269,7 @@ Sets the resource's path to ``path`` without involving the resource cache.
 
 Override this method to customize the newly duplicated resource created from :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`, if the original's :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is set to ``true``.
 
-\ **Example:** Set a random ``damage`` value to every local resource from an instantiated scene.
+\ **Example:** Set a random ``damage`` value to every local resource from an instantiated scene:
 
 ::
 

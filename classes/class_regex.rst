@@ -60,7 +60,7 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_method_sea
         print(result.get_string("digit"))
     # Would print 01 03 0 3f 42
 
-\ **Example of splitting a string using a RegEx:**\ 
+\ **Example:** Split a string using a RegEx:
 
 ::
 
@@ -69,7 +69,7 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_method_sea
     var results = []
     for result in regex.search_all("One  Two \n\tThree"):
         results.push_back(result.get_string())
-    # The `results` array now contains "One", "Two", "Three".
+    # The `results` array now contains "One", "Two", and "Three".
 
 \ **Note:** Godot's regex implementation is based on the `PCRE2 <https://www.pcre.org/>`__ library. You can view the full pattern reference `here <https://www.pcre.org/current/doc/html/pcre2pattern.html>`__.
 

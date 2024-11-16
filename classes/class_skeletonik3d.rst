@@ -283,7 +283,7 @@ Method Descriptions
 
 :ref:`Skeleton3D<class_Skeleton3D>` **get_parent_skeleton**\ (\ ) |const| :ref:`🔗<class_SkeletonIK3D_method_get_parent_skeleton>`
 
-Returns the parent :ref:`Skeleton3D<class_Skeleton3D>` Node that was present when SkeletonIK entered the :ref:`SceneTree<class_SceneTree>`. Returns null if the parent node was not a :ref:`Skeleton3D<class_Skeleton3D>` Node when SkeletonIK3D entered the :ref:`SceneTree<class_SceneTree>`.
+Returns the parent :ref:`Skeleton3D<class_Skeleton3D>` node that was present when SkeletonIK entered the scene tree. Returns ``null`` if the parent node was not a :ref:`Skeleton3D<class_Skeleton3D>` node when SkeletonIK3D entered the scene tree.
 
 .. rst-class:: classref-item-separator
 

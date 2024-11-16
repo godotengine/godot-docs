@@ -658,7 +658,7 @@ Returns the index of the **first** **case-insensitive** occurrence of ``what`` i
 
 Formats the string by replacing all occurrences of ``placeholder`` with the elements of ``values``.
 
-\ ``values`` can be a :ref:`Dictionary<class_Dictionary>` or an :ref:`Array<class_Array>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
+\ ``values`` can be a :ref:`Dictionary<class_Dictionary>`, an :ref:`Array<class_Array>`, or an :ref:`Object<class_Object>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
 
 ::
 
@@ -677,7 +677,24 @@ Some additional handling is performed when ``values`` is an :ref:`Array<class_Ar
     print("User {} is {}.".format([42, "Godot"], "{}"))
     print("User {id} is {name}.".format([["id", 42], ["name", "Godot"]]))
 
+When passing an :ref:`Object<class_Object>`, the property names from :ref:`Object.get_property_list<class_Object_method_get_property_list>` are used as keys.
+
+::
+
+    # Prints "Visible true, position (0, 0)"
+    var node = Node2D.new()
+    print("Visible {visible}, position {position}".format(node))
+
 See also the :doc:`GDScript format string <../tutorials/scripting/gdscript/gdscript_format_string>` tutorial.
+
+\ **Note:** Each replacement is done sequentially for each element of ``values``, **not** all at once. This means that if any element is inserted and it contains another placeholder, it may be changed by the next replacement. While this can be very useful, it often causes unexpected results. If not necessary, make sure ``values``'s elements do not contain placeholders.
+
+::
+
+    print("{0} {1}".format(["{1}", "x"]))           # Prints "x x".
+    print("{0} {1}".format(["x", "{0}"]))           # Prints "x {0}".
+    print("{a} {b}".format({"a": "{b}", "b": "c"})) # Prints "c c".
+    print("{a} {b}".format({"b": "c", "a": "{b}"})) # Prints "{b} c".
 
 \ **Note:** In C#, it's recommended to `interpolate strings with "$" <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated>`__, instead.
 
@@ -763,7 +780,7 @@ If the string is a valid file path, returns the file name, including the extensi
 
 :ref:`String<class_String>` **get_slice**\ (\ delimiter\: :ref:`String<class_String>`, slice\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_StringName_method_get_slice>`
 
-Splits the string using a ``delimiter`` and returns the substring at index ``slice``. Returns an empty string if the ``slice`` does not exist.
+Splits the string using a ``delimiter`` and returns the substring at index ``slice``. Returns the original string if ``delimiter`` does not occur in the string. Returns an empty string if the ``slice`` does not exist.
 
 This is faster than :ref:`split<class_StringName_method_split>`, if you only need one substring.
 
@@ -1574,7 +1591,7 @@ Returns the `SHA-256 <https://en.wikipedia.org/wiki/SHA-2>`__ hash of the string
 
 :ref:`float<class_float>` **similarity**\ (\ text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_StringName_method_similarity>`
 
-Returns the similarity index (`Sorensen-Dice coefficient <https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient>`__) of this string compared to another. A result of ``1.0`` means totally similar, while ``0.0`` means totally dissimilar.
+Returns the similarity index (`Sørensen-Dice coefficient <https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient>`__) of this string compared to another. A result of ``1.0`` means totally similar, while ``0.0`` means totally dissimilar.
 
 ::
 
@@ -1709,7 +1726,7 @@ Returns part of the string from the position ``from`` with length ``len``. If ``
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_ascii_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_ascii_buffer>`
 
-Converts the string to an `ASCII <https://en.wikipedia.org/wiki/ASCII>`__/Latin-1 encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly faster than :ref:`to_utf8_buffer<class_StringName_method_to_utf8_buffer>`, but replaces all unsupported characters with spaces.
+Converts the string to an `ASCII <https://en.wikipedia.org/wiki/ASCII>`__/Latin-1 encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly faster than :ref:`to_utf8_buffer<class_StringName_method_to_utf8_buffer>`, but replaces all unsupported characters with spaces. This is the inverse of :ref:`PackedByteArray.get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1737,11 +1754,11 @@ Converts the string representing a decimal number into a :ref:`float<class_float
 
 ::
 
-    var a = "12.35".to_float() # a is 12.35
-    var b = "1.2.3".to_float() # b is 1.2
-    var c = "12xy3".to_float() # c is 12.0
-    var d = "1e3".to_float()   # d is 1000.0
-    var e = "Hello!".to_int()  # e is 0.0
+    var a = "12.35".to_float()  # a is 12.35
+    var b = "1.2.3".to_float()  # b is 1.2
+    var c = "12xy3".to_float()  # c is 12.0
+    var d = "1e3".to_float()    # d is 1000.0
+    var e = "Hello!".to_float() # e is 0.0
 
 .. rst-class:: classref-item-separator
 
@@ -1839,7 +1856,7 @@ Returns the string converted to ``UPPERCASE``.
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_utf8_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_utf8_buffer>`
 
-Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly slower than :ref:`to_ascii_buffer<class_StringName_method_to_ascii_buffer>`, but supports all UTF-8 characters. For most cases, prefer using this method.
+Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly slower than :ref:`to_ascii_buffer<class_StringName_method_to_ascii_buffer>`, but supports all UTF-8 characters. For most cases, prefer using this method. This is the inverse of :ref:`PackedByteArray.get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1851,7 +1868,7 @@ Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_utf16_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_utf16_buffer>`
 
-Converts the string to a `UTF-16 <https://en.wikipedia.org/wiki/UTF-16>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`.
+Converts the string to a `UTF-16 <https://en.wikipedia.org/wiki/UTF-16>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This is the inverse of :ref:`PackedByteArray.get_string_from_utf16<class_PackedByteArray_method_get_string_from_utf16>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1863,7 +1880,7 @@ Converts the string to a `UTF-16 <https://en.wikipedia.org/wiki/UTF-16>`__ encod
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_utf32_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_utf32_buffer>`
 
-Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`.
+Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This is the inverse of :ref:`PackedByteArray.get_string_from_utf32<class_PackedByteArray_method_get_string_from_utf32>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1875,7 +1892,7 @@ Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encod
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_wchar_buffer**\ (\ ) |const| :ref:`🔗<class_StringName_method_to_wchar_buffer>`
 
-Converts the string to a `wide character <https://en.wikipedia.org/wiki/Wide_character>`__ (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded :ref:`PackedByteArray<class_PackedByteArray>`.
+Converts the string to a `wide character <https://en.wikipedia.org/wiki/Wide_character>`__ (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded :ref:`PackedByteArray<class_PackedByteArray>`. This is the inverse of :ref:`PackedByteArray.get_string_from_wchar<class_PackedByteArray_method_get_string_from_wchar>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1923,7 +1940,7 @@ Returns the character code at position ``at``.
 
 :ref:`String<class_String>` **uri_decode**\ (\ ) |const| :ref:`🔗<class_StringName_method_uri_decode>`
 
-Decodes the string from its URL-encoded format. This method is meant to properly decode the parameters in a URL when receiving an HTTP request.
+Decodes the string from its URL-encoded format. This method is meant to properly decode the parameters in a URL when receiving an HTTP request. See also :ref:`uri_encode<class_StringName_method_uri_encode>`.
 
 
 .. tabs::
@@ -1950,7 +1967,7 @@ Decodes the string from its URL-encoded format. This method is meant to properly
 
 :ref:`String<class_String>` **uri_encode**\ (\ ) |const| :ref:`🔗<class_StringName_method_uri_encode>`
 
-Encodes the string to URL-friendly format. This method is meant to properly encode the parameters in a URL when sending an HTTP request.
+Encodes the string to URL-friendly format. This method is meant to properly encode the parameters in a URL when sending an HTTP request. See also :ref:`uri_decode<class_StringName_method_uri_decode>`.
 
 
 .. tabs::

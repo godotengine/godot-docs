@@ -656,7 +656,7 @@ Adds an item to the item list with specified text. Returns the index of an added
 
 Specify an ``icon``, or use ``null`` as the ``icon`` for a list item with no icon.
 
-If selectable is ``true``, the list item will be selectable.
+If ``selectable`` is ``true``, the list item will be selectable.
 
 .. rst-class:: classref-item-separator
 

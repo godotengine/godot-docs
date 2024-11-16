@@ -304,7 +304,7 @@ Determines a mapping between the given glTF Object Model ``json_pointer`` and th
 
 |void| **register_gltf_document_extension**\ (\ extension\: :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>`, first_priority\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_GLTFDocument_method_register_gltf_document_extension>`
 
-Registers the given :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` instance with GLTFDocument. If ``first_priority`` is true, this extension will be run first. Otherwise, it will be run last.
+Registers the given :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` instance with GLTFDocument. If ``first_priority`` is ``true``, this extension will be run first. Otherwise, it will be run last.
 
 \ **Note:** Like GLTFDocument itself, all GLTFDocumentExtension classes must be stateless in order to function properly. If you need to store data, use the ``set_additional_data`` and ``get_additional_data`` methods in :ref:`GLTFState<class_GLTFState>` or :ref:`GLTFNode<class_GLTFNode>`.
 

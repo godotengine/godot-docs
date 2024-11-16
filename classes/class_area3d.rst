@@ -160,7 +160,7 @@ Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``area`` enters a s
 
 \ ``local_shape_index`` and ``area_shape_index`` contain indices of the interacting shapes from this area and the other area, respectively. ``area_rid`` contains the :ref:`RID<class_RID>` of the other area. These values can be used with the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
-\ **Example of getting the** :ref:`CollisionShape3D<class_CollisionShape3D>` **node from the shape index:**\ 
+\ **Example:** Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node from the shape index:
 
 
 .. tabs::
@@ -227,7 +227,7 @@ Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``body`` enters a s
 
 \ ``local_shape_index`` and ``body_shape_index`` contain indices of the interacting shapes from this area and the interacting body, respectively. ``body_rid`` contains the :ref:`RID<class_RID>` of the body. These values can be used with the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
-\ **Example of getting the** :ref:`CollisionShape3D<class_CollisionShape3D>` **node from the shape index:**\ 
+\ **Example:** Get the :ref:`CollisionShape3D<class_CollisionShape3D>` node from the shape index:
 
 
 .. tabs::

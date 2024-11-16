@@ -107,7 +107,7 @@ Unknown or not set object model type. If the object model type is set to this va
 
 :ref:`GLTFObjectModelType<enum_GLTFObjectModelProperty_GLTFObjectModelType>` **GLTF_OBJECT_MODEL_TYPE_BOOL** = ``1``
 
-Object model type "bool". Represented in the glTF JSON as a boolean, and encoded in a :ref:`GLTFAccessor<class_GLTFAccessor>` as "SCALAR". When encoded in an accessor, a value of 0 is false, and any other value is true.
+Object model type "bool". Represented in the glTF JSON as a boolean, and encoded in a :ref:`GLTFAccessor<class_GLTFAccessor>` as "SCALAR". When encoded in an accessor, a value of ``0`` is ``false``, and any other value is ``true``.
 
 .. _class_GLTFObjectModelProperty_constant_GLTF_OBJECT_MODEL_TYPE_FLOAT:
 

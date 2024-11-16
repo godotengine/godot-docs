@@ -2025,8 +2025,6 @@ Starts a multipart edit. All edits will be treated as one action until :ref:`end
 
 Starts an edit for multiple carets. The edit must be ended with :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>`. Multicaret edits can be used to edit text at multiple carets and delay merging the carets until the end, so the caret indexes aren't affected immediately. :ref:`begin_multicaret_edit<class_TextEdit_method_begin_multicaret_edit>` and :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>` can be nested, and the merge will happen at the last :ref:`end_multicaret_edit<class_TextEdit_method_end_multicaret_edit>`.
 
-Example usage:
-
 ::
 
     begin_complex_operation()
@@ -3107,7 +3105,9 @@ Returns ``true`` if the caret of the selection is after the selection origin. Th
 
 :ref:`bool<class_bool>` **is_caret_visible**\ (\ caret_index\: :ref:`int<class_int>` = 0\ ) |const| :ref:`🔗<class_TextEdit_method_is_caret_visible>`
 
-Returns ``true`` if the caret is visible on the screen.
+Returns ``true`` if the caret is visible, ``false`` otherwise. A caret will be considered hidden if it is outside the scrollable area when scrolling is enabled.
+
+\ **Note:** :ref:`is_caret_visible<class_TextEdit_method_is_caret_visible>` does not account for a caret being off-screen if it is still within the scrollable area. It will return ``true`` even if the caret is off-screen as long as it meets **TextEdit**'s own conditions for being visible. This includes uses of :ref:`scroll_fit_content_width<class_TextEdit_property_scroll_fit_content_width>` and :ref:`scroll_fit_content_height<class_TextEdit_property_scroll_fit_content_height>` that cause the **TextEdit** to expand beyond the viewport's bounds.
 
 .. rst-class:: classref-item-separator
 
@@ -4049,7 +4049,7 @@ The caret's width in pixels. Greater values can be used to improve accessibility
 
 :ref:`int<class_int>` **line_spacing** = ``4`` :ref:`🔗<class_TextEdit_theme_constant_line_spacing>`
 
-Sets the spacing between the lines.
+Additional vertical spacing between lines (in pixels), spacing is added to line descent. This value can be negative.
 
 .. rst-class:: classref-item-separator
 

@@ -215,7 +215,7 @@ Component type "UNSIGNED_INT". The value is ``0x1405`` which comes from OpenGL. 
 
 :ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>` **COMPONENT_TYPE_SINGLE_FLOAT** = ``5126``
 
-Component type "FLOAT". The value is ``0x1406`` which comes from OpenGL. This indicates data is stored in 4-byte or 32-bit floating point numbers. This is a core part of the glTF specification.
+Component type "FLOAT". The value is ``0x1406`` which comes from OpenGL. This indicates data is stored in 4-byte or 32-bit floating-point numbers. This is a core part of the glTF specification.
 
 .. _class_GLTFAccessor_constant_COMPONENT_TYPE_DOUBLE_FLOAT:
 
@@ -223,7 +223,7 @@ Component type "FLOAT". The value is ``0x1406`` which comes from OpenGL. This in
 
 :ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>` **COMPONENT_TYPE_DOUBLE_FLOAT** = ``5130``
 
-Component type "DOUBLE". The value is ``0x140A`` which comes from OpenGL. This indicates data is stored in 8-byte or 64-bit floating point numbers. This is NOT a core part of the glTF specification, and may not be supported by all glTF importers. May be used by some extensions including ``KHR_interactivity``.
+Component type "DOUBLE". The value is ``0x140A`` which comes from OpenGL. This indicates data is stored in 8-byte or 64-bit floating-point numbers. This is NOT a core part of the glTF specification, and may not be supported by all glTF importers. May be used by some extensions including ``KHR_interactivity``.
 
 .. _class_GLTFAccessor_constant_COMPONENT_TYPE_HALF_FLOAT:
 
@@ -231,7 +231,7 @@ Component type "DOUBLE". The value is ``0x140A`` which comes from OpenGL. This i
 
 :ref:`GLTFComponentType<enum_GLTFAccessor_GLTFComponentType>` **COMPONENT_TYPE_HALF_FLOAT** = ``5131``
 
-Component type "HALF_FLOAT". The value is ``0x140B`` which comes from OpenGL. This indicates data is stored in 2-byte or 16-bit floating point numbers. This is NOT a core part of the glTF specification, and may not be supported by all glTF importers. May be used by some extensions including ``KHR_interactivity``.
+Component type "HALF_FLOAT". The value is ``0x140B`` which comes from OpenGL. This indicates data is stored in 2-byte or 16-bit floating-point numbers. This is NOT a core part of the glTF specification, and may not be supported by all glTF importers. May be used by some extensions including ``KHR_interactivity``.
 
 .. _class_GLTFAccessor_constant_COMPONENT_TYPE_SIGNED_LONG:
 

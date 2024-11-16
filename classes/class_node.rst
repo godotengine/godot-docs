@@ -1212,9 +1212,9 @@ The name of the node. This name must be unique among the siblings (other child n
 - |void| **set_owner**\ (\ value\: :ref:`Node<class_Node>`\ )
 - :ref:`Node<class_Node>` **get_owner**\ (\ )
 
-The owner of this node. The owner must be an ancestor of this node. When packing the owner node in a :ref:`PackedScene<class_PackedScene>`, all the nodes it owns are also saved with it.
+The owner of this node. The owner must be an ancestor of this node. When packing the owner node in a :ref:`PackedScene<class_PackedScene>`, all the nodes it owns are also saved with it. See also :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`.
 
-\ **Note:** In the editor, nodes not owned by the scene root are usually not displayed in the Scene dock, and will **not** be saved. To prevent this, remember to set the owner after calling :ref:`add_child<class_Node_method_add_child>`. See also (see :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`)
+\ **Note:** In the editor, nodes not owned by the scene root are usually not displayed in the Scene dock, and will **not** be saved. To prevent this, remember to set the owner after calling :ref:`add_child<class_Node_method_add_child>`.
 
 .. rst-class:: classref-item-separator
 

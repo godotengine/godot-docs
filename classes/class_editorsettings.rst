@@ -393,7 +393,15 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`filesystem/quick_open_dialog/default_display_mode<class_EditorSettings_property_filesystem/quick_open_dialog/default_display_mode>`                                                                         |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`filesystem/quick_open_dialog/enable_fuzzy_matching<class_EditorSettings_property_filesystem/quick_open_dialog/enable_fuzzy_matching>`                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`filesystem/quick_open_dialog/include_addons<class_EditorSettings_property_filesystem/quick_open_dialog/include_addons>`                                                                                     |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`filesystem/quick_open_dialog/max_fuzzy_misses<class_EditorSettings_property_filesystem/quick_open_dialog/max_fuzzy_misses>`                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`filesystem/quick_open_dialog/max_results<class_EditorSettings_property_filesystem/quick_open_dialog/max_results>`                                                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`filesystem/quick_open_dialog/show_search_highlight<class_EditorSettings_property_filesystem/quick_open_dialog/show_search_highlight>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`filesystem/tools/oidn/oidn_denoise_path<class_EditorSettings_property_filesystem/tools/oidn/oidn_denoise_path>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -740,6 +748,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/help/sort_functions_alphabetically<class_EditorSettings_property_text_editor/help/sort_functions_alphabetically>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/script_list/group_help_pages<class_EditorSettings_property_text_editor/script_list/group_help_pages>`                                                                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/script_list/highlight_scene_scripts<class_EditorSettings_property_text_editor/script_list/highlight_scene_scripts>`                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/script_list/list_script_names_as<class_EditorSettings_property_text_editor/script_list/list_script_names_as>`                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1117,7 +1127,7 @@ If ``true``, when a node is deleted with animation tracks referencing it, a conf
 
 :ref:`bool<class_bool>` **docks/scene_tree/ask_before_revoking_unique_name** :ref:`🔗<class_EditorSettings_property_docks/scene_tree/ask_before_revoking_unique_name>`
 
-If ``true``, displays a confirmation dialog before left-clicking the "percent" icon next to a node name in the Scene tree dock. When clicked, this icon revokes the node's scene-unique name, which can impact the behavior of scripts that rely on this scene-unique name due to identifiers not being found anymore.
+If ``true``, displays a confirmation dialog after left-clicking the "percent" icon next to a node name in the Scene tree dock. When clicked, this icon revokes the node's scene-unique name, which can impact the behavior of scripts that rely on this scene-unique name due to identifiers not being found anymore.
 
 .. rst-class:: classref-item-separator
 
@@ -1609,7 +1619,7 @@ The navigation scheme preset to use in the 3D editor. Changing this setting will
 
 All schemes can use :kbd:`Mouse wheel` to zoom.
 
-- **Godot:** :kbd:`Middle mouse button` to orbit. :kbd:`Shift + Middle mouse button` to pan. :kbd:`Ctrl + Shift + Middle mouse button` to zoom.
+- **Godot:** :kbd:`Middle mouse button` to orbit. :kbd:`Shift + Middle mouse button` to pan. :kbd:`Ctrl + Middle mouse button` to zoom.
 
 - **Maya:** :kbd:`Alt + Left mouse button` to orbit. :kbd:`Middle mouse button` to pan, :kbd:`Shift + Middle mouse button` to pan 10 times faster. :kbd:`Alt + Right mouse button` to zoom.
 
@@ -3015,6 +3025,18 @@ If set to ``Adaptive``, the dialog opens in list view or grid view depending on 
 
 ----
 
+.. _class_EditorSettings_property_filesystem/quick_open_dialog/enable_fuzzy_matching:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **filesystem/quick_open_dialog/enable_fuzzy_matching** :ref:`🔗<class_EditorSettings_property_filesystem/quick_open_dialog/enable_fuzzy_matching>`
+
+If ``true``, fuzzy matching of search tokens is allowed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_filesystem/quick_open_dialog/include_addons:
 
 .. rst-class:: classref-property
@@ -3022,6 +3044,42 @@ If set to ``Adaptive``, the dialog opens in list view or grid view depending on 
 :ref:`bool<class_bool>` **filesystem/quick_open_dialog/include_addons** :ref:`🔗<class_EditorSettings_property_filesystem/quick_open_dialog/include_addons>`
 
 If ``true``, results will include files located in the ``addons`` folder.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/quick_open_dialog/max_fuzzy_misses:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **filesystem/quick_open_dialog/max_fuzzy_misses** :ref:`🔗<class_EditorSettings_property_filesystem/quick_open_dialog/max_fuzzy_misses>`
+
+The number of allowed missed query characters in a match, if fuzzy matching is enabled. For example, with the default value of 2, ``foobar`` would match ``foobur`` and ``foob`` but not ``foo``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/quick_open_dialog/max_results:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **filesystem/quick_open_dialog/max_results** :ref:`🔗<class_EditorSettings_property_filesystem/quick_open_dialog/max_results>`
+
+Maximum number of matches to show in dialog.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/quick_open_dialog/show_search_highlight:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **filesystem/quick_open_dialog/show_search_highlight** :ref:`🔗<class_EditorSettings_property_filesystem/quick_open_dialog/show_search_highlight>`
+
+If ``true``, results will be highlighted with their search matches.
 
 .. rst-class:: classref-item-separator
 
@@ -4225,7 +4283,7 @@ Determines whether online features are enabled in the editor, such as the Asset 
 
 :ref:`String<class_String>` **network/debug/remote_host** :ref:`🔗<class_EditorSettings_property_network/debug/remote_host>`
 
-The address to listen to when starting the remote debugger. This can be set to ``0.0.0.0`` to allow external clients to connect to the remote debugger (instead of restricting the remote debugger to connections from ``localhost``).
+The address to listen to when starting the remote debugger. This can be set to this device's local IP address to allow external clients to connect to the remote debugger (instead of restricting the remote debugger to connections from ``localhost``).
 
 .. rst-class:: classref-item-separator
 
@@ -4339,6 +4397,8 @@ If ``true``, saves all scenes and scripts automatically before running the proje
 
 The action to execute on the bottom panel when running the project.
 
+\ **Note:** This option won't do anything if the bottom panel switching is locked using the pin button in the corner of the bottom panel.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -4350,6 +4410,8 @@ The action to execute on the bottom panel when running the project.
 :ref:`int<class_int>` **run/bottom_panel/action_on_stop** :ref:`🔗<class_EditorSettings_property_run/bottom_panel/action_on_stop>`
 
 The action to execute on the bottom panel when stopping the project.
+
+\ **Note:** This option won't do anything if the bottom panel switching is locked using the pin button in the corner of the bottom panel.
 
 .. rst-class:: classref-item-separator
 
@@ -5255,6 +5317,18 @@ If ``true``, class reference pages are grouped together at the bottom of the Scr
 
 ----
 
+.. _class_EditorSettings_property_text_editor/script_list/highlight_scene_scripts:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/script_list/highlight_scene_scripts** :ref:`🔗<class_EditorSettings_property_text_editor/script_list/highlight_scene_scripts>`
+
+If ``true``, the scripts that are used by the current scene are highlighted in the Script Editor's script list.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_text_editor/script_list/list_script_names_as:
 
 .. rst-class:: classref-property
@@ -5571,7 +5645,7 @@ The script editor's documentation comment color. In GDScript, this is used for c
 
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/engine_type_color** :ref:`🔗<class_EditorSettings_property_text_editor/theme/highlighting/engine_type_color>`
 
-The script editor's engine type color (:ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Color<class_Color>`, ...).
+The script editor's engine type color (:ref:`Object<class_Object>`, :ref:`Mesh<class_Mesh>`, :ref:`Node<class_Node>`, ...).
 
 .. rst-class:: classref-item-separator
 
@@ -6054,7 +6128,7 @@ Sets the list of favorite files and directories for this project.
 
 |void| **set_initial_value**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`, update_current\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorSettings_method_set_initial_value>`
 
-Sets the initial value of the setting specified by ``name`` to ``value``. This is used to provide a value for the Revert button in the Editor Settings. If ``update_current`` is true, the current value of the setting will be set to ``value`` as well.
+Sets the initial value of the setting specified by ``name`` to ``value``. This is used to provide a value for the Revert button in the Editor Settings. If ``update_current`` is ``true``, the setting is reset to ``value`` as well.
 
 .. rst-class:: classref-item-separator
 

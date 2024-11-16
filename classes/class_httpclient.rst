@@ -331,7 +331,15 @@ HTTP status code ``102 Processing`` (WebDAV). Indicates that the server has rece
 
 :ref:`ResponseCode<enum_HTTPClient_ResponseCode>` **RESPONSE_OK** = ``200``
 
-HTTP status code ``200 OK``. The request has succeeded. Default response for successful requests. Meaning varies depending on the request. GET: The resource has been fetched and is transmitted in the message body. HEAD: The entity headers are in the message body. POST: The resource describing the result of the action is transmitted in the message body. TRACE: The message body contains the request message as received by the server.
+HTTP status code ``200 OK``. The request has succeeded. Default response for successful requests. Meaning varies depending on the request:
+
+- :ref:`METHOD_GET<class_HTTPClient_constant_METHOD_GET>`: The resource has been fetched and is transmitted in the message body.
+
+- :ref:`METHOD_HEAD<class_HTTPClient_constant_METHOD_HEAD>`: The entity headers are in the message body.
+
+- :ref:`METHOD_POST<class_HTTPClient_constant_METHOD_POST>`: The resource describing the result of the action is transmitted in the message body.
+
+- :ref:`METHOD_TRACE<class_HTTPClient_constant_METHOD_TRACE>`: The message body contains the request message as received by the server.
 
 .. _class_HTTPClient_constant_RESPONSE_CREATED:
 

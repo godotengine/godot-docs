@@ -124,7 +124,7 @@ The distance to the near culling boundary for this camera relative to its local 
 - |void| **set_fov**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_fov**\ (\ )
 
-The FOV of the camera. This class and glTF define the camera FOV in radians, while Godot uses degrees. This maps to glTF's ``yfov`` property. This value is only used for perspective cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is true.
+The FOV of the camera. This class and glTF define the camera FOV in radians, while Godot uses degrees. This maps to glTF's ``yfov`` property. This value is only used for perspective cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -141,7 +141,7 @@ The FOV of the camera. This class and glTF define the camera FOV in radians, whi
 - |void| **set_perspective**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_perspective**\ (\ )
 
-Whether or not the camera is in perspective mode. If false, the camera is in orthographic/orthogonal mode. This maps to glTF's camera ``type`` property. See :ref:`Camera3D.projection<class_Camera3D_property_projection>` and the glTF spec for more information.
+If ``true``, the camera is in perspective mode. Otherwise, the camera is in orthographic/orthogonal mode. This maps to glTF's camera ``type`` property. See :ref:`Camera3D.projection<class_Camera3D_property_projection>` and the glTF spec for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -158,7 +158,7 @@ Whether or not the camera is in perspective mode. If false, the camera is in ort
 - |void| **set_size_mag**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_size_mag**\ (\ )
 
-The size of the camera. This class and glTF define the camera size magnitude as a radius in meters, while Godot defines it as a diameter in meters. This maps to glTF's ``ymag`` property. This value is only used for orthographic/orthogonal cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is false.
+The size of the camera. This class and glTF define the camera size magnitude as a radius in meters, while Godot defines it as a diameter in meters. This maps to glTF's ``ymag`` property. This value is only used for orthographic/orthogonal cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is ``false``.
 
 .. rst-class:: classref-section-separator
 

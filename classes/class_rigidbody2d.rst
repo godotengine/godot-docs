@@ -356,7 +356,7 @@ Property Descriptions
 - |void| **set_angular_damp**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_angular_damp**\ (\ )
 
-Damps the body's rotation. By default, the body will use the **Default Angular Damp** in **Project > Project Settings > Physics > 2d** or any value override set by an :ref:`Area2D<class_Area2D>` the body is in. Depending on :ref:`angular_damp_mode<class_RigidBody2D_property_angular_damp_mode>`, you can set :ref:`angular_damp<class_RigidBody2D_property_angular_damp>` to be added to or to replace the body's damping value.
+Damps the body's rotation. By default, the body will use the :ref:`ProjectSettings.physics/2d/default_angular_damp<class_ProjectSettings_property_physics/2d/default_angular_damp>` setting or any value override set by an :ref:`Area2D<class_Area2D>` the body is in. Depending on :ref:`angular_damp_mode<class_RigidBody2D_property_angular_damp_mode>`, you can set :ref:`angular_damp<class_RigidBody2D_property_angular_damp>` to be added to or to replace the body's damping value.
 
 See :ref:`ProjectSettings.physics/2d/default_angular_damp<class_ProjectSettings_property_physics/2d/default_angular_damp>` for more details about damping.
 
@@ -597,7 +597,7 @@ For a body that is always frozen, use :ref:`StaticBody2D<class_StaticBody2D>` or
 - |void| **set_gravity_scale**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_gravity_scale**\ (\ )
 
-Multiplies the gravity applied to the body. The body's gravity is calculated from the **Default Gravity** value in **Project > Project Settings > Physics > 2d** and/or any additional gravity vector applied by :ref:`Area2D<class_Area2D>`\ s.
+Multiplies the gravity applied to the body. The body's gravity is calculated from the :ref:`ProjectSettings.physics/2d/default_gravity<class_ProjectSettings_property_physics/2d/default_gravity>` project setting and/or any additional gravity vector applied by :ref:`Area2D<class_Area2D>`\ s.
 
 .. rst-class:: classref-item-separator
 
@@ -661,7 +661,7 @@ If set to ``0``, inertia is automatically computed (default value).
 - |void| **set_linear_damp**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_linear_damp**\ (\ )
 
-Damps the body's movement. By default, the body will use the **Default Linear Damp** in **Project > Project Settings > Physics > 2d** or any value override set by an :ref:`Area2D<class_Area2D>` the body is in. Depending on :ref:`linear_damp_mode<class_RigidBody2D_property_linear_damp_mode>`, you can set :ref:`linear_damp<class_RigidBody2D_property_linear_damp>` to be added to or to replace the body's damping value.
+Damps the body's movement. By default, the body will use the :ref:`ProjectSettings.physics/2d/default_linear_damp<class_ProjectSettings_property_physics/2d/default_linear_damp>` setting or any value override set by an :ref:`Area2D<class_Area2D>` the body is in. Depending on :ref:`linear_damp_mode<class_RigidBody2D_property_linear_damp_mode>`, you can set :ref:`linear_damp<class_RigidBody2D_property_linear_damp>` to be added to or to replace the body's damping value.
 
 See :ref:`ProjectSettings.physics/2d/default_linear_damp<class_ProjectSettings_property_physics/2d/default_linear_damp>` for more details about damping.
 

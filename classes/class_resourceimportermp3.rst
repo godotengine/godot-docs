@@ -67,7 +67,7 @@ Property Descriptions
 
 :ref:`int<class_int>` **bar_beats** = ``4`` :ref:`🔗<class_ResourceImporterMP3_property_bar_beats>`
 
-The number of bars within a single beat in the audio track. This is only relevant for music that wishes to make use of interactive music functionality (not implemented yet), not sound effects.
+The number of bars within a single beat in the audio track. This is only relevant for music that wishes to make use of interactive music functionality, not sound effects.
 
 A more convenient editor for :ref:`bar_beats<class_ResourceImporterMP3_property_bar_beats>` is provided in the **Advanced Import Settings** dialog, as it lets you preview your changes without having to reimport the audio.
 
@@ -81,7 +81,7 @@ A more convenient editor for :ref:`bar_beats<class_ResourceImporterMP3_property_
 
 :ref:`int<class_int>` **beat_count** = ``0`` :ref:`🔗<class_ResourceImporterMP3_property_beat_count>`
 
-The beat count of the audio track. This is only relevant for music that wishes to make use of interactive music functionality (not implemented yet), not sound effects.
+The beat count of the audio track. This is only relevant for music that wishes to make use of interactive music functionality, not sound effects.
 
 A more convenient editor for :ref:`beat_count<class_ResourceImporterMP3_property_beat_count>` is provided in the **Advanced Import Settings** dialog, as it lets you preview your changes without having to reimport the audio.
 
@@ -95,7 +95,7 @@ A more convenient editor for :ref:`beat_count<class_ResourceImporterMP3_property
 
 :ref:`float<class_float>` **bpm** = ``0`` :ref:`🔗<class_ResourceImporterMP3_property_bpm>`
 
-The Beats Per Minute of the audio track. This should match the BPM measure that was used to compose the track. This is only relevant for music that wishes to make use of interactive music functionality (not implemented yet), not sound effects.
+The beats per minute of the audio track. This should match the BPM measure that was used to compose the track. This is only relevant for music that wishes to make use of interactive music functionality, not sound effects.
 
 A more convenient editor for :ref:`bpm<class_ResourceImporterMP3_property_bpm>` is provided in the **Advanced Import Settings** dialog, as it lets you preview your changes without having to reimport the audio.
 

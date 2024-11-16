@@ -209,7 +209,7 @@ Minimum value. Range is clamped if :ref:`value<class_Range_property_value>` is l
 - |void| **set_page**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_page**\ (\ )
 
-Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length is its size multiplied by :ref:`page<class_Range_property_page>` over the difference between :ref:`min_value<class_Range_property_min_value>` and :ref:`max_value<class_Range_property_max_value>`.
+Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. A :ref:`ScrollBar<class_ScrollBar>`'s grabber length is the :ref:`ScrollBar<class_ScrollBar>`'s size multiplied by :ref:`page<class_Range_property_page>` over the difference between :ref:`min_value<class_Range_property_min_value>` and :ref:`max_value<class_Range_property_max_value>`.
 
 .. rst-class:: classref-item-separator
 

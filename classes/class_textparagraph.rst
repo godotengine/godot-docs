@@ -42,6 +42,8 @@ Properties
    +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
    | |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] | :ref:`justification_flags<class_TextParagraph_property_justification_flags>`     | ``163``   |
    +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                                 | :ref:`line_spacing<class_TextParagraph_property_line_spacing>`                   | ``0.0``   |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`                                                     | :ref:`max_lines_visible<class_TextParagraph_property_max_lines_visible>`         | ``-1``    |
    +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
    | :ref:`Orientation<enum_TextServer_Orientation>`                           | :ref:`orientation<class_TextParagraph_property_orientation>`                     | ``0``     |
@@ -235,6 +237,23 @@ Ellipsis character used for text clipping.
 - |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **get_justification_flags**\ (\ )
 
 Line fill alignment rules. See :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextParagraph_property_line_spacing:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **line_spacing** = ``0.0`` :ref:`🔗<class_TextParagraph_property_line_spacing>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_line_spacing**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_line_spacing**\ (\ )
+
+Additional vertical spacing between lines (in pixels), spacing is added to line descent. This value can be negative.
 
 .. rst-class:: classref-item-separator
 

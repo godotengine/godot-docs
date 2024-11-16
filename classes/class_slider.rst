@@ -88,7 +88,7 @@ Signals
 
 **drag_ended**\ (\ value_changed\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Slider_signal_drag_ended>`
 
-Emitted when dragging stops. If ``value_changed`` is true, :ref:`Range.value<class_Range_property_value>` is different from the value when you started the dragging.
+Emitted when the grabber stops being dragged. If ``value_changed`` is ``true``, :ref:`Range.value<class_Range_property_value>` is different from the value when the dragging was started.
 
 .. rst-class:: classref-item-separator
 
@@ -100,7 +100,7 @@ Emitted when dragging stops. If ``value_changed`` is true, :ref:`Range.value<cla
 
 **drag_started**\ (\ ) :ref:`🔗<class_Slider_signal_drag_started>`
 
-Emitted when dragging is started. This is emitted before the corresponding :ref:`Range.value_changed<class_Range_signal_value_changed>` signal.
+Emitted when the grabber starts being dragged. This is emitted before the corresponding :ref:`Range.value_changed<class_Range_signal_value_changed>` signal.
 
 .. rst-class:: classref-section-separator
 
