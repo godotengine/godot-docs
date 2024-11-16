@@ -1419,9 +1419,9 @@ Returns the number of visible paragraphs. A paragraph is considered visible if a
 
 |void| **install_effect**\ (\ effect\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_RichTextLabel_method_install_effect>`
 
-Installs a custom effect. This can also be done in the RichTextLabel inspector using the :ref:`custom_effects<class_RichTextLabel_property_custom_effects>` property. ``effect`` should be a valid :ref:`RichTextEffect<class_RichTextEffect>`.
+Installs a custom effect. This can also be done in the Inspector through the :ref:`custom_effects<class_RichTextLabel_property_custom_effects>` property. ``effect`` should be a valid :ref:`RichTextEffect<class_RichTextEffect>`.
 
-Example RichTextEffect:
+\ **Example:** With the following script extending from :ref:`RichTextEffect<class_RichTextEffect>`:
 
 ::
 
@@ -1433,7 +1433,7 @@ Example RichTextEffect:
     
     # ...
 
-Registering the above effect in RichTextLabel from script:
+The above effect can be installed in **RichTextLabel** from a script:
 
 ::
 
@@ -2139,7 +2139,7 @@ The default background color for odd rows.
 
 :ref:`int<class_int>` **line_separation** = ``0`` :ref:`🔗<class_RichTextLabel_theme_constant_line_separation>`
 
-The vertical space between lines.
+Additional vertical spacing between lines (in pixels), spacing is added to line descent. This value can be negative.
 
 .. rst-class:: classref-item-separator
 

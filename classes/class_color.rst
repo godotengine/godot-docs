@@ -48,29 +48,35 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`a<class_Color_property_a>`   | ``1.0`` |
-   +---------------------------+------------------------------------+---------+
-   | :ref:`int<class_int>`     | :ref:`a8<class_Color_property_a8>` | ``255`` |
-   +---------------------------+------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`b<class_Color_property_b>`   | ``0.0`` |
-   +---------------------------+------------------------------------+---------+
-   | :ref:`int<class_int>`     | :ref:`b8<class_Color_property_b8>` | ``0``   |
-   +---------------------------+------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`g<class_Color_property_g>`   | ``0.0`` |
-   +---------------------------+------------------------------------+---------+
-   | :ref:`int<class_int>`     | :ref:`g8<class_Color_property_g8>` | ``0``   |
-   +---------------------------+------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`h<class_Color_property_h>`   | ``0.0`` |
-   +---------------------------+------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`r<class_Color_property_r>`   | ``0.0`` |
-   +---------------------------+------------------------------------+---------+
-   | :ref:`int<class_int>`     | :ref:`r8<class_Color_property_r8>` | ``0``   |
-   +---------------------------+------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`s<class_Color_property_s>`   | ``0.0`` |
-   +---------------------------+------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`v<class_Color_property_v>`   | ``0.0`` |
-   +---------------------------+------------------------------------+---------+
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`a<class_Color_property_a>`               | ``1.0`` |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`a8<class_Color_property_a8>`             | ``255`` |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`b<class_Color_property_b>`               | ``0.0`` |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`b8<class_Color_property_b8>`             | ``0``   |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`g<class_Color_property_g>`               | ``0.0`` |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`g8<class_Color_property_g8>`             | ``0``   |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`h<class_Color_property_h>`               | ``0.0`` |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`ok_hsl_h<class_Color_property_ok_hsl_h>` | ``0.0`` |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`ok_hsl_l<class_Color_property_ok_hsl_l>` | ``0.0`` |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`ok_hsl_s<class_Color_property_ok_hsl_s>` | ``0.0`` |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`r<class_Color_property_r>`               | ``0.0`` |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`r8<class_Color_property_r8>`             | ``0``   |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`s<class_Color_property_s>`               | ``0.0`` |
+   +---------------------------+------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`v<class_Color_property_v>`               | ``0.0`` |
+   +---------------------------+------------------------------------------------+---------+
 
 .. rst-class:: classref-reftable-group
 
@@ -1462,6 +1468,42 @@ The HSV hue of this color, on the range 0 to 1.
 
 ----
 
+.. _class_Color_property_ok_hsl_h:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **ok_hsl_h** = ``0.0`` :ref:`🔗<class_Color_property_ok_hsl_h>`
+
+The OKHSL hue of this color, on the range 0 to 1.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Color_property_ok_hsl_l:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **ok_hsl_l** = ``0.0`` :ref:`🔗<class_Color_property_ok_hsl_l>`
+
+The OKHSL lightness of this color, on the range 0 to 1.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Color_property_ok_hsl_s:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **ok_hsl_s** = ``0.0`` :ref:`🔗<class_Color_property_ok_hsl_s>`
+
+The OKHSL saturation of this color, on the range 0 to 1.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Color_property_r:
 
 .. rst-class:: classref-property
@@ -1523,7 +1565,7 @@ Constructor Descriptions
 
 Constructs a default **Color** from opaque black. This is the same as :ref:`BLACK<class_Color_constant_BLACK>`.
 
-\ **Note:** in C#, constructs an empty color with all of its components set to ``0.0`` (transparent black).
+\ **Note:** In C#, this constructs a **Color** with all of its components set to ``0.0`` (transparent black).
 
 .. rst-class:: classref-item-separator
 

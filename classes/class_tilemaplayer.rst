@@ -70,6 +70,8 @@ Methods
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                       | :ref:`_tile_data_runtime_update<class_TileMapLayer_private_method__tile_data_runtime_update>`\ (\ coords\: :ref:`Vector2i<class_Vector2i>`, tile_data\: :ref:`TileData<class_TileData>`\ ) |virtual|                                                                                            |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                       | :ref:`_update_cells<class_TileMapLayer_private_method__update_cells>`\ (\ coords\: :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\], forced_cleanup\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                          |
+   +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`_use_tile_data_runtime_update<class_TileMapLayer_private_method__use_tile_data_runtime_update>`\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |virtual|                                                                                                                                 |
    +--------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                       | :ref:`clear<class_TileMapLayer_method_clear>`\ (\ )                                                                                                                                                                                                                                             |
@@ -431,6 +433,32 @@ This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMapL
 
 ----
 
+.. _class_TileMapLayer_private_method__update_cells:
+
+.. rst-class:: classref-method
+
+|void| **_update_cells**\ (\ coords\: :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\], forced_cleanup\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_TileMapLayer_private_method__update_cells>`
+
+Called when this **TileMapLayer**'s cells need an internal update. This update may be caused from individual cells being modified or by a change in the :ref:`tile_set<class_TileMapLayer_property_tile_set>` (causing all cells to be queued for an update). The first call to this function is always for initializing all the **TileMapLayer**'s cells. ``coords`` contains the coordinates of all modified cells, roughly in the order they were modified. ``forced_cleanup`` is ``true`` when the **TileMapLayer**'s internals should be fully cleaned up. This is the case when:
+
+- The layer is disabled;
+
+- The layer is not visible;
+
+- :ref:`tile_set<class_TileMapLayer_property_tile_set>` is set to ``null``;
+
+- The node is removed from the tree;
+
+- The node is freed.
+
+Note that any internal update happening while one of these conditions is verified is considered to be a "cleanup". See also :ref:`update_internals<class_TileMapLayer_method_update_internals>`.
+
+\ **Warning:** Implementing this method may degrade the **TileMapLayer**'s performance.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TileMapLayer_private_method__use_tile_data_runtime_update:
 
 .. rst-class:: classref-method
@@ -597,7 +625,7 @@ Creates and returns a new :ref:`TileMapPattern<class_TileMapPattern>` from the g
 
 :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_surrounding_cells**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_TileMapLayer_method_get_surrounding_cells>`
 
-Returns the list of all neighboring cells to the one at ``coords``.
+Returns the list of all neighboring cells to the one at ``coords``. Any neighboring cell is one that is touching edges, so for a square cell 4 cells would be returned, for a hexagon 6 cells are returned.
 
 .. rst-class:: classref-item-separator
 
@@ -773,7 +801,7 @@ If ``source_id`` is set to ``-1``, ``atlas_coords`` to ``Vector2i(-1, -1)``, or 
 
 Update all the cells in the ``cells`` coordinates array so that they use the given ``terrain`` for the given ``terrain_set``. If an updated cell has the same terrain as one of its neighboring cells, this function tries to join the two. This function might update neighboring tiles if needed to create correct terrain transitions.
 
-If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
+If ``ignore_empty_terrains`` is ``true``, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
 
 \ **Note:** To work correctly, this method requires the **TileMapLayer**'s TileSet to have terrains set up with all required terrain combinations. Otherwise, it may produce unexpected results.
 
@@ -789,7 +817,7 @@ If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying
 
 Update all the cells in the ``path`` coordinates array so that they use the given ``terrain`` for the given ``terrain_set``. The function will also connect two successive cell in the path with the same terrain. This function might update neighboring tiles if needed to create correct terrain transitions.
 
-If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
+If ``ignore_empty_terrains`` is ``true``, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
 
 \ **Note:** To work correctly, this method requires the **TileMapLayer**'s TileSet to have terrains set up with all required terrain combinations. Otherwise, it may produce unexpected results.
 

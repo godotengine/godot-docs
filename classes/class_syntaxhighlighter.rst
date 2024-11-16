@@ -116,15 +116,15 @@ Then calls overridable method :ref:`_clear_highlighting_cache<class_SyntaxHighli
 
 :ref:`Dictionary<class_Dictionary>` **get_line_syntax_highlighting**\ (\ line\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SyntaxHighlighter_method_get_line_syntax_highlighting>`
 
-Returns syntax highlighting data for a single line. If the line is not cached, calls :ref:`_get_line_syntax_highlighting<class_SyntaxHighlighter_private_method__get_line_syntax_highlighting>` to calculate the data.
+Returns the syntax highlighting data for the line at index ``line``. If the line is not cached, calls :ref:`_get_line_syntax_highlighting<class_SyntaxHighlighter_private_method__get_line_syntax_highlighting>` first to calculate the data.
 
-The return :ref:`Dictionary<class_Dictionary>` is column number to :ref:`Dictionary<class_Dictionary>`. The column number notes the start of a region, the region will end if another region is found, or at the end of the line. The nested :ref:`Dictionary<class_Dictionary>` contains the data for that region, currently only the key "color" is supported.
+Each entry is a column number containing a nested :ref:`Dictionary<class_Dictionary>`. The column number denotes the start of a region, the region will end if another region is found, or at the end of the line. The nested :ref:`Dictionary<class_Dictionary>` contains the data for that region. Currently only the key ``"color"`` is supported.
 
-\ **Example return:**\ 
+\ **Example:** Possible return value. This means columns ``0`` to ``4`` should be red, and columns ``5`` to the end of the line should be green:
 
 ::
 
-    var color_map = {
+    {
         0: {
             "color": Color(1, 0, 0)
         },
@@ -132,8 +132,6 @@ The return :ref:`Dictionary<class_Dictionary>` is column number to :ref:`Diction
             "color": Color(0, 1, 0)
         }
     }
-
-This will color columns 0-4 red, and columns 5-eol in green.
 
 .. rst-class:: classref-item-separator
 

@@ -347,6 +347,14 @@ If set to a value greater than ``0``, the size of the texture is limited on impo
 
 This can be used to reduce memory usage without affecting the source images, or avoid issues with textures not displaying on mobile/web platforms (as these usually can't display textures larger than 4096×4096).
 
+\ **Note:** Even if this is set to ``0``, import size is limited to the following dimensions for technical reasons. Depending on :ref:`compress/mode<class_ResourceImporterTexture_property_compress/mode>`, textures will be downsampled on import if necessary:
+
+- **Lossy:** 16383 pixels width or height, whichever is larger;
+
+- **Basis Universal:** 16384 pixels width or height, whichever is larger;
+
+- **All other modes:** 32768 pixels width or height, whichever is larger.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -357,7 +365,7 @@ This can be used to reduce memory usage without affecting the source images, or 
 
 :ref:`int<class_int>` **roughness/mode** = ``0`` :ref:`🔗<class_ResourceImporterTexture_property_roughness/mode>`
 
-The color channel to consider as a roughness map in this texture. Only effective if Roughness > Src Normal is not empty.
+The color channel to consider as a roughness map in this texture. Only effective if :ref:`roughness/src_normal<class_ResourceImporterTexture_property_roughness/src_normal>` is not empty.
 
 .. rst-class:: classref-item-separator
 

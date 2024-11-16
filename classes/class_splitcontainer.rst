@@ -202,7 +202,7 @@ Property Descriptions
 - |void| **set_collapsed**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_collapsed**\ (\ )
 
-If ``true``, the area of the first :ref:`Control<class_Control>` will be collapsed and the dragger will be disabled.
+If ``true``, the dragger will be disabled and the children will be sized as if the :ref:`split_offset<class_SplitContainer_property_split_offset>` was ``0``.
 
 .. rst-class:: classref-item-separator
 

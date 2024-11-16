@@ -529,6 +529,8 @@ Property Descriptions
 
 Allows the current node to clip child nodes, essentially acting as a mask.
 
+\ **Note:** Clipping nodes cannot be nested or placed within :ref:`CanvasGroup<class_CanvasGroup>`\ s. If an ancestor of this node clips its children or is a :ref:`CanvasGroup<class_CanvasGroup>`, then this node's clip mode should be set to :ref:`CLIP_CHILDREN_DISABLED<class_CanvasItem_constant_CLIP_CHILDREN_DISABLED>` to avoid unexpected behavior.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -737,7 +739,7 @@ If ``true``, this **CanvasItem** may be drawn. Whether this **CanvasItem** is ac
 
 If ``true``, this and child **CanvasItem** nodes with a higher Y position are rendered in front of nodes with a lower Y position. If ``false``, this and child **CanvasItem** nodes are rendered normally in scene tree order.
 
-With Y-sorting enabled on a parent node ('A') but disabled on a child node ('B'), the child node ('B') is sorted but its children ('C1', 'C2', etc) render together on the same Y position as the child node ('B'). This allows you to organize the render order of a scene without changing the scene tree.
+With Y-sorting enabled on a parent node ('A') but disabled on a child node ('B'), the child node ('B') is sorted but its children ('C1', 'C2', etc.) render together on the same Y position as the child node ('B'). This allows you to organize the render order of a scene without changing the scene tree.
 
 Nodes sort relative to each other only if they are on the same :ref:`z_index<class_CanvasItem_property_z_index>`.
 
@@ -1155,7 +1157,7 @@ Sets a custom transform for drawing via matrix. Anything drawn afterwards will b
 
 Draws ``text`` using the specified ``font`` at the ``pos`` (bottom-left corner using the baseline of the font). The text will have its color multiplied by ``modulate``. If ``width`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
-\ **Example using the default project font:**\ 
+\ **Example:** Draw "Hello world", using the project's default font:
 
 
 .. tabs::

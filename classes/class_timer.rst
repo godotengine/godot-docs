@@ -151,6 +151,8 @@ If ``true``, the timer will start immediately when it enters the scene tree.
 
 \ **Note:** After the timer enters the tree, this property is automatically set to ``false``.
 
+\ **Note:** This property does nothing when the timer is running in the editor.
+
 .. rst-class:: classref-item-separator
 
 ----

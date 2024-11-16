@@ -692,7 +692,7 @@ The segment begins at ``from`` and ends at ``to``.
 
 :ref:`bool<class_bool>` **is_equal_approx**\ (\ aabb\: :ref:`AABB<class_AABB>`\ ) |const| :ref:`🔗<class_AABB_method_is_equal_approx>`
 
-Returns ``true`` if this bounding box and ``aabb`` are approximately equal, by calling :ref:`Vector2.is_equal_approx<class_Vector2_method_is_equal_approx>` on the :ref:`position<class_AABB_property_position>` and the :ref:`size<class_AABB_property_size>`.
+Returns ``true`` if this bounding box and ``aabb`` are approximately equal, by calling :ref:`Vector3.is_equal_approx<class_Vector3_method_is_equal_approx>` on the :ref:`position<class_AABB_property_position>` and the :ref:`size<class_AABB_property_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -704,7 +704,7 @@ Returns ``true`` if this bounding box and ``aabb`` are approximately equal, by c
 
 :ref:`bool<class_bool>` **is_finite**\ (\ ) |const| :ref:`🔗<class_AABB_method_is_finite>`
 
-Returns ``true`` if this bounding box's values are finite, by calling :ref:`Vector2.is_finite<class_Vector2_method_is_finite>` on the :ref:`position<class_AABB_property_position>` and the :ref:`size<class_AABB_property_size>`.
+Returns ``true`` if this bounding box's values are finite, by calling :ref:`Vector3.is_finite<class_Vector3_method_is_finite>` on the :ref:`position<class_AABB_property_position>` and the :ref:`size<class_AABB_property_size>`.
 
 .. rst-class:: classref-item-separator
 

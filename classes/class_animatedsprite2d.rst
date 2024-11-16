@@ -415,7 +415,7 @@ This method is a shorthand for :ref:`play<class_AnimatedSprite2D_method_play>` w
 
 Sets :ref:`frame<class_AnimatedSprite2D_property_frame>` the :ref:`frame_progress<class_AnimatedSprite2D_property_frame_progress>` to the given values. Unlike setting :ref:`frame<class_AnimatedSprite2D_property_frame>`, this method does not reset the :ref:`frame_progress<class_AnimatedSprite2D_property_frame_progress>` to ``0.0`` implicitly.
 
-\ **Example:** Change the animation while keeping the same :ref:`frame<class_AnimatedSprite2D_property_frame>` and :ref:`frame_progress<class_AnimatedSprite2D_property_frame_progress>`.
+\ **Example:** Change the animation while keeping the same :ref:`frame<class_AnimatedSprite2D_property_frame>` and :ref:`frame_progress<class_AnimatedSprite2D_property_frame_progress>`:
 
 
 .. tabs::

@@ -676,9 +676,16 @@ Resumes a paused or stopped **Tween**.
 
 :ref:`Tween<class_Tween>` **set_ease**\ (\ ease\: :ref:`EaseType<enum_Tween_EaseType>`\ ) :ref:`🔗<class_Tween_method_set_ease>`
 
-Sets the default ease type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this **Tween**.
+Sets the default ease type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s appended after this method.
 
-If not specified, the default value is :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`.
+Before this method is called, the default ease type is :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`.
+
+::
+
+    var tween = create_tween()
+    tween.tween_property(self, "position", Vector2(300, 0), 0.5) # Uses EASE_IN_OUT.
+    tween.set_ease(Tween.EASE_IN)
+    tween.tween_property(self, "rotation_degrees", 45.0, 0.5) # Uses EASE_IN.
 
 .. rst-class:: classref-item-separator
 
@@ -766,9 +773,16 @@ Scales the speed of tweening. This affects all :ref:`Tweener<class_Tweener>`\ s 
 
 :ref:`Tween<class_Tween>` **set_trans**\ (\ trans\: :ref:`TransitionType<enum_Tween_TransitionType>`\ ) :ref:`🔗<class_Tween_method_set_trans>`
 
-Sets the default transition type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this **Tween**.
+Sets the default transition type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s appended after this method.
 
-If not specified, the default value is :ref:`TRANS_LINEAR<class_Tween_constant_TRANS_LINEAR>`.
+Before this method is called, the default transition type is :ref:`TRANS_LINEAR<class_Tween_constant_TRANS_LINEAR>`.
+
+::
+
+    var tween = create_tween()
+    tween.tween_property(self, "position", Vector2(300, 0), 0.5) # Uses TRANS_LINEAR.
+    tween.set_trans(Tween.TRANS_SINE)
+    tween.tween_property(self, "rotation_degrees", 45.0, 0.5) # Uses TRANS_SINE.
 
 .. rst-class:: classref-item-separator
 
@@ -781,6 +795,24 @@ If not specified, the default value is :ref:`TRANS_LINEAR<class_Tween_constant_T
 |void| **stop**\ (\ ) :ref:`🔗<class_Tween_method_stop>`
 
 Stops the tweening and resets the **Tween** to its initial state. This will not remove any appended :ref:`Tweener<class_Tweener>`\ s.
+
+\ **Note:** This does *not* reset targets of :ref:`PropertyTweener<class_PropertyTweener>`\ s to their values when the **Tween** first started.
+
+::
+
+    var tween = create_tween()
+    
+    # Will move from 0 to 500 over 1 second.
+    position.x = 0.0
+    tween.tween_property(self, "position:x", 500, 1.0)
+    
+    # Will be at (about) 250 when the timer finishes.
+    await get_tree().create_timer(0.5).timeout
+    
+    # Will now move from (about) 250 to 500 over 1 second,
+    # thus at half the speed as before.
+    tween.stop()
+    tween.play()
 
 \ **Note:** If a Tween is stopped and not bound to any node, it will exist indefinitely until manually started or invalidated. If you lose a reference to such Tween, you can retrieve it using :ref:`SceneTree.get_processed_tweens<class_SceneTree_method_get_processed_tweens>`.
 

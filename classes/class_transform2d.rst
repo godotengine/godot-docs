@@ -278,6 +278,8 @@ Constructor Descriptions
 
 Constructs a **Transform2D** identical to :ref:`IDENTITY<class_Transform2D_constant_IDENTITY>`.
 
+\ **Note:** In C#, this constructs a **Transform2D** with all of its components set to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
+
 .. rst-class:: classref-item-separator
 
 ----

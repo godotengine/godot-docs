@@ -534,7 +534,7 @@ Adds additional data structures when creating OpenXR swapchains.
 
 :ref:`int<class_int>` **_set_system_properties_and_get_next_pointer**\ (\ next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__set_system_properties_and_get_next_pointer>`
 
-Adds additional data structures when interogating OpenXR system abilities.
+Adds additional data structures when querying OpenXR system abilities.
 
 .. rst-class:: classref-item-separator
 
