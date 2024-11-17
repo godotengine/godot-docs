@@ -80,6 +80,13 @@ Setting up
     graphics API limitations on those devices. On Android and web platforms,
     only *rendering* lightmaps that were baked on a desktop PC is supported.
 
+.. note::
+
+    The LightmapGI node only bakes nodes that are on the same level as the
+    LightmapGI node (siblings), or nodes that are children of the
+    LightmapGI node. This allows you to use several LightmapGI nodes to bake
+    different parts of the scene, independently from each other.
+
 First of all, before the lightmapper can do anything, the objects to be baked need
 a UV2 layer and a texture size. A UV2 layer is a set of secondary texture coordinates
 that ensures any face in the object has its own place in the UV map. Faces must
