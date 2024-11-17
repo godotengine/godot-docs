@@ -466,7 +466,7 @@ of the selected option (i.e. ``0``, ``1``, or ``2``).
 .. code-block:: csharp
 
     [Export(PropertyHint.Enum, "Warrior,Magician,Thief")]
-    public int CharacterClass { get; set; };
+    public int CharacterClass { get; set; }
 
 You can add explicit values using a colon:
 
