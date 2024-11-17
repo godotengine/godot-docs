@@ -14,7 +14,7 @@ Nodes
 -----
 
 **Nodes are the fundamental building blocks of your game**. They are like the
-ingredients in a recipe. There are dozens of kinds that can display an image,
+ingredients in a recipe. There are dozens of kinds that can diplay an image,
 play a sound, represent a camera, and much more.
 
 .. image:: img/nodes_and_scenes_nodes.webp
