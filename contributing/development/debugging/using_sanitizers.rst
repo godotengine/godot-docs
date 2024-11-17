@@ -142,7 +142,7 @@ slower, while also multiplying memory usage by an approximately 8× factor.
 
 .. note::
 
-    In Linux, if you stumble upon the following error:
+    On Linux, if you stumble upon the following error:
 
     ``FATAL: ThreadSanitizer: unexpected memory mapping``
 
@@ -158,7 +158,7 @@ slower, while also multiplying memory usage by an approximately 8× factor.
 
         sudo sysctl kernel.randomize_va_space=0
 
-    And as soon as you are done with thread sanitizer, increase the ASLR entropy with:
+    And as soon as you are done with the thread sanitizer, increase the ASLR entropy with:
 
     .. code:: sh
 
