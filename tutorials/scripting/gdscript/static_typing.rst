@@ -272,7 +272,12 @@ get full autocompletion on the player variable thanks to that cast.
 
         player.damage()
 
-    or ``assert()`` statement::
+    You can also simplify the code by using the ``is not`` operator::
+
+        if body is not PlayerController:
+            push_error("Bug: body is not PlayerController")
+
+    Alternatively, you can use the ``assert()`` statement::
 
         assert(body is PlayerController, "Bug: body is not PlayerController.")
 
@@ -281,6 +286,7 @@ get full autocompletion on the player variable thanks to that cast.
             return
 
         player.damage()
+
 
 .. note::
 
