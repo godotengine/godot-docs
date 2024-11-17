@@ -143,13 +143,13 @@ Don't forget to uncheck the **Export With Debug** checkbox while exporting.
 Optimizing the file size
 ------------------------
 
-If you're working with APKs an not AABs, By default, the APK will contain native
+If you're working with APKs and not AABs, by default, the APK will contain native
 libraries for both ARMv7 and ARMv8 architectures. This increases its size significantly.
 To create a smaller file, uncheck either **Armeabi-v 7a** or **Arm 64 -v 8a** in
 your project's Android export preset. This will create an APK that only contains
 a library for a single architecture. Note that applications targeting ARMv7 can
 also run on ARMv8 devices, but the opposite is not true. The reason you don't do
-this to save space with AABs is that google automatically splits up the AAB on their
+this to save space with AABs is that Google automatically splits up the AAB on their
 backend, so the user only downloads what they need.
 
 You can optimize the size further by compiling an Android export template with
