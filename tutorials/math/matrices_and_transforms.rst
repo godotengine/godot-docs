@@ -352,7 +352,7 @@ from X*1 + Y*-1, which is (1, 0) - (1, 1), or (1 - 1, 0 - 1), or (0, -1).
 This matches up with our observation of where the top-right corner
 of the image is.
 
-Hopefully you now fully understand the how a transformation matrix affects
+Hopefully you now fully understand how a transformation matrix affects
 the object, and the relationship between the basis vectors and how the
 object's "UV" or "intra-coordinates" have their world position changed.
 
