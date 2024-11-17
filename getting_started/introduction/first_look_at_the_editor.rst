@@ -181,4 +181,3 @@ Alternatively,
   or built-in variable in the script editor.
 * Right-clicking on nodes and choosing **Open Documentation** or choosing **Lookup Symbol**
   for elements in script editor will directly open their documentation.
-
