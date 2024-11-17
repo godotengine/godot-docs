@@ -311,7 +311,7 @@ This has several benefits:
 - Better performance when updating the node's transform if using the mesh within another CSG node.
 
 To convert a CSG node to a MeshInstance3D node, select it, then choose
-**CSG > Bake Mesh Instance** at the top of the 3D editor viewport. The MeshInstance3D node
+**CSG > Bake Mesh Instance** in the toolbar. The MeshInstance3D node
 will be created as a sibling. Note that the CSG node that was used for baking is **not** hidden
 automatically, so remember to hide it to prevent its geometry from overlapping with the newly created
 MeshInstance3D.
