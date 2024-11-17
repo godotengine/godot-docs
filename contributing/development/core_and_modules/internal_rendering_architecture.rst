@@ -20,11 +20,11 @@ ask in the ``#rendering`` channel of the
     recommended to go through an OpenGL tutorial such as
     `LearnOpenGL <https://learnopengl.com/>`__.
 
-    Modern low-level APIs (Vulkan/Direct3D 12) require intermediate
+    Modern low-level APIs (Vulkan/Direct3D 12/Metal) require intermediate
     knowledge of higher-level APIs (OpenGL/Direct3D 11) to be used
     effectively. Thankfully, contributors rarely need to work directly with
     low-level APIs. Godot's renderers are built entirely on OpenGL and
-    RenderingDevice, which is our abstraction over Vulkan/Direct3D 12.
+    RenderingDevice, which is our abstraction over Vulkan/Direct3D 12/Metal.
 
 .. _doc_internal_rendering_architecture_methods:
 
@@ -108,7 +108,7 @@ Compatibility
 .. note::
 
     This is the only rendering method available when using the OpenGL driver.
-    This rendering method is not available when using Vulkan or Direct3D 12.
+    This rendering method is not available when using Vulkan, Direct3D 12 or Metal.
 
 This is a traditional (non-clustered) forward renderer. It's intended for old
 GPUs that don't have Vulkan support, but still works very efficiently on newer
@@ -207,18 +207,23 @@ for more information.
 Metal
 ^^^^^
 
-Godot supports Metal rendering via `MoltenVK <https://github.com/KhronosGroup/MoltenVK>`__,
-as macOS and iOS do not support Vulkan natively.
-This is done automatically when specifying the Vulkan driver in the Project Settings.
+Godot provides a native Metal driver that works on all Apple Silicon hardware
+(macOS ARM). Compared to using the MoltenVK translation layer, this is
+significantly faster, particularly in CPU-bound scenarios.
 
-MoltenVK makes driver maintenance easy at the cost of some performance overhead.
-Also, MoltenVK has several limitations that a native Metal driver implementation
-wouldn't have. Both the clustered and mobile
-:ref:`doc_internal_rendering_architecture_methods` can be used with a Metal
-backend via MoltenVK.
+Both the Forward+ and Mobile :ref:`doc_internal_rendering_architecture_methods` can be
+used with Metal.
 
-A native Metal driver is planned in the future for better performance and
-compatibility.
+:ref:`doc_internal_rendering_architecture_core_shaders` are shared with the
+Vulkan renderer. Shaders are transpiled from GLSL to :abbr:`MSL (Metal Shading Language)`
+using SPIRV-Cross.
+
+Godot also supports Metal rendering via `MoltenVK <https://github.com/KhronosGroup/MoltenVK>`__,
+which is used as a fallback when native Metal support is not available (e.g. on x86 macOS).
+
+**This driver is still experimental and only available in Godot 4.x (TODO) and later.**
+See the `pull request that introduced Metal support <https://github.com/godotengine/godot/pull/88199>`__
+for more information.
 
 OpenGL
 ^^^^^^
@@ -247,13 +252,13 @@ Summary of rendering drivers/methods
 
 The following rendering API + rendering method combinations are currently possible:
 
-- Vulkan + Forward+
-- Vulkan + Forward Mobile
+- Vulkan + Forward+ (optionally through MoltenVK on macOS and iOS)
+- Vulkan + Forward Mobile (optionally through MoltenVK on macOS and iOS)
 - Direct3D 12 + Forward+
 - Direct3D 12 + Forward Mobile
-- Metal + Forward+ (via MoltenVK)
-- Metal + Forward Mobile (via MoltenVK)
-- OpenGL + Compatibility
+- Metal + Forward+
+- Metal + Forward Mobile
+- OpenGL + Compatibility (optionally through ANGLE on Windows and macOS)
 
 Each combination has its own limitations and performance characteristics. Make
 sure to test your changes on all rendering methods if possible before opening a
@@ -270,10 +275,10 @@ To make the complexity of modern low-level graphics APIs more manageable,
 Godot uses its own abstraction called RenderingDevice.
 
 This means that when writing code for modern rendering methods, you don't
-actually use the Vulkan or Direct3D 12 APIs directly. While this is still
+actually use the Vulkan, Direct3D 12 or Metal APIs directly. While this is still
 lower-level than an API like OpenGL, this makes working on the renderer easier,
 as RenderingDevice will abstract many API-specific quirks for you. The
-RenderingDevice presents a similar level of abstraction as Metal or WebGPU.
+RenderingDevice presents a similar level of abstraction as WebGPU.
 
 **Vulkan RenderingDevice implementation:**
 
@@ -282,6 +287,10 @@ RenderingDevice presents a similar level of abstraction as Metal or WebGPU.
 **Direct3D 12 RenderingDevice implementation:**
 
 - `drivers/d3d12/rendering_device_driver_d3d12.cpp <https://github.com/godotengine/godot/blob/master/drivers/d3d12/rendering_device_driver_d3d12.cpp>`__
+
+**Metal RenderingDevice implementation:**
+
+- `drivers/metal/rendering_device_driver_metal.mm <https://github.com/godotengine/godot/blob/master/drivers/metal/rendering_device_driver_metal.mm>`__
 
 Core rendering classes architecture
 -----------------------------------
@@ -736,7 +745,8 @@ Occlusion culling
 ^^^^^^^^^^^^^^^^^
 
 While modern GPUs can handle drawing a lot of triangles, the number of draw
-calls in complex scenes can still be a bottleneck (even with Vulkan and Direct3D 12).
+calls in complex scenes can still be a bottleneck (even with Vulkan, Direct3D 12
+and Metal).
 
 Godot 4 supports occlusion culling to reduce overdraw (when the depth prepass
 is disabled) and reduce vertex throughput.
