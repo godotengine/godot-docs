@@ -23,7 +23,7 @@ Scripts extending this class and implementing its :ref:`_run<class_EditorScript_
 
 \ **Note:** Extending scripts need to have ``tool`` mode enabled.
 
-\ **Example script:**\ 
+\ **Example:** Running the following script prints "Hello from the Godot Editor!":
 
 
 .. tabs::

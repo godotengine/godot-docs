@@ -100,9 +100,7 @@ To add a translatable string associated with context or plural, add it to ``msgi
 
 
 
-\ **Note:** If you override parsing logic for standard script types (GDScript, C#, etc.), it would be better to load the ``path`` argument using :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`. This is because built-in scripts are loaded as :ref:`Resource<class_Resource>` type, not :ref:`FileAccess<class_FileAccess>` type.
-
-For example:
+\ **Note:** If you override parsing logic for standard script types (GDScript, C#, etc.), it would be better to load the ``path`` argument using :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`. This is because built-in scripts are loaded as :ref:`Resource<class_Resource>` type, not :ref:`FileAccess<class_FileAccess>` type. For example:
 
 
 .. tabs::
@@ -144,6 +142,8 @@ Methods
    :widths: auto
 
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`_get_comments<class_EditorTranslationParserPlugin_private_method__get_comments>`\ (\ msgids_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\]\ ) |virtual|               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_EditorTranslationParserPlugin_private_method__get_recognized_extensions>`\ (\ ) |virtual| |const|                                                                                                                                                  |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`_parse_file<class_EditorTranslationParserPlugin_private_method__parse_file>`\ (\ path\: :ref:`String<class_String>`, msgids\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural\: :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\]\ ) |virtual| |
@@ -157,6 +157,18 @@ Methods
 
 Method Descriptions
 -------------------
+
+.. _class_EditorTranslationParserPlugin_private_method__get_comments:
+
+.. rst-class:: classref-method
+
+|void| **_get_comments**\ (\ msgids_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\]\ ) |virtual| :ref:`🔗<class_EditorTranslationParserPlugin_private_method__get_comments>`
+
+If overridden, called after :ref:`_parse_file<class_EditorTranslationParserPlugin_private_method__parse_file>` to get comments for the parsed entries. This method should fill the arrays with the same number of elements and in the same order as :ref:`_parse_file<class_EditorTranslationParserPlugin_private_method__parse_file>`.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_EditorTranslationParserPlugin_private_method__get_recognized_extensions:
 

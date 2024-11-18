@@ -139,6 +139,8 @@ Methods
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`get_object_id<class_Callable_method_get_object_id>`\ (\ ) |const|                                                                           |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_unbound_arguments_count<class_Callable_method_get_unbound_arguments_count>`\ (\ ) |const|                                               |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`hash<class_Callable_method_hash>`\ (\ ) |const|                                                                                             |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`is_custom<class_Callable_method_is_custom>`\ (\ ) |const|                                                                                   |
@@ -335,7 +337,15 @@ Returns the total number of arguments this **Callable** should take, including o
 
 :ref:`Array<class_Array>` **get_bound_arguments**\ (\ ) |const| :ref:`🔗<class_Callable_method_get_bound_arguments>`
 
-Return the bound arguments (as long as :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>` is greater than zero), or empty (if :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>` is less than or equal to zero).
+Returns the array of arguments bound via successive :ref:`bind<class_Callable_method_bind>` or :ref:`unbind<class_Callable_method_unbind>` calls. These arguments will be added *after* the arguments passed to the call, from which :ref:`get_unbound_arguments_count<class_Callable_method_get_unbound_arguments_count>` arguments on the right have been previously excluded.
+
+::
+
+    func get_effective_arguments(callable, call_args):
+        assert(call_args.size() - callable.get_unbound_arguments_count() >= 0)
+        var result = call_args.slice(0, call_args.size() - callable.get_unbound_arguments_count())
+        result.append_array(callable.get_bound_arguments())
+        return result
 
 .. rst-class:: classref-item-separator
 
@@ -347,7 +357,9 @@ Return the bound arguments (as long as :ref:`get_bound_arguments_count<class_Cal
 
 :ref:`int<class_int>` **get_bound_arguments_count**\ (\ ) |const| :ref:`🔗<class_Callable_method_get_bound_arguments_count>`
 
-Returns the total amount of arguments bound (or unbound) via successive :ref:`bind<class_Callable_method_bind>` or :ref:`unbind<class_Callable_method_unbind>` calls. If the amount of arguments unbound is greater than the ones bound, this function returns a value less than zero.
+Returns the total amount of arguments bound via successive :ref:`bind<class_Callable_method_bind>` or :ref:`unbind<class_Callable_method_unbind>` calls. This is the same as the size of the array returned by :ref:`get_bound_arguments<class_Callable_method_get_bound_arguments>`. See :ref:`get_bound_arguments<class_Callable_method_get_bound_arguments>` for details.
+
+\ **Note:** The :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>` and :ref:`get_unbound_arguments_count<class_Callable_method_get_unbound_arguments_count>` methods can both return positive values.
 
 .. rst-class:: classref-item-separator
 
@@ -384,6 +396,20 @@ Returns the object on which this **Callable** is called.
 :ref:`int<class_int>` **get_object_id**\ (\ ) |const| :ref:`🔗<class_Callable_method_get_object_id>`
 
 Returns the ID of this **Callable**'s object (see :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Callable_method_get_unbound_arguments_count:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_unbound_arguments_count**\ (\ ) |const| :ref:`🔗<class_Callable_method_get_unbound_arguments_count>`
+
+Returns the total amount of arguments unbound via successive :ref:`bind<class_Callable_method_bind>` or :ref:`unbind<class_Callable_method_unbind>` calls. See :ref:`get_bound_arguments<class_Callable_method_get_bound_arguments>` for details.
+
+\ **Note:** The :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>` and :ref:`get_unbound_arguments_count<class_Callable_method_get_unbound_arguments_count>` methods can both return positive values.
 
 .. rst-class:: classref-item-separator
 

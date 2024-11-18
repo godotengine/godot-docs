@@ -608,7 +608,7 @@ The color of text outline.
 
 :ref:`int<class_int>` **line_spacing** = ``3`` :ref:`🔗<class_Label_theme_constant_line_spacing>`
 
-Vertical space between lines in multiline **Label**.
+Additional vertical spacing between lines (in pixels), spacing is added to line descent. This value can be negative.
 
 .. rst-class:: classref-item-separator
 

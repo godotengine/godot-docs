@@ -146,7 +146,7 @@ Only use this transition during :ref:`AnimationNodeStateMachinePlayback.travel<c
 
 :ref:`AdvanceMode<enum_AnimationNodeStateMachineTransition_AdvanceMode>` **ADVANCE_MODE_AUTO** = ``2``
 
-Automatically use this transition if the :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` and :ref:`advance_expression<class_AnimationNodeStateMachineTransition_property_advance_expression>` checks are true (if assigned).
+Automatically use this transition if the :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` and :ref:`advance_expression<class_AnimationNodeStateMachineTransition_property_advance_expression>` checks are ``true`` (if assigned).
 
 .. rst-class:: classref-section-separator
 
@@ -215,7 +215,7 @@ Use an expression as a condition for state machine transitions. It is possible t
 - |void| **set_advance_mode**\ (\ value\: :ref:`AdvanceMode<enum_AnimationNodeStateMachineTransition_AdvanceMode>`\ )
 - :ref:`AdvanceMode<enum_AnimationNodeStateMachineTransition_AdvanceMode>` **get_advance_mode**\ (\ )
 
-Determines whether the transition should disabled, enabled when using :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>`, or traversed automatically if the :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` and :ref:`advance_expression<class_AnimationNodeStateMachineTransition_property_advance_expression>` checks are true (if assigned).
+Determines whether the transition should be disabled, enabled when using :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>`, or traversed automatically if the :ref:`advance_condition<class_AnimationNodeStateMachineTransition_property_advance_condition>` and :ref:`advance_expression<class_AnimationNodeStateMachineTransition_property_advance_expression>` checks are ``true`` (if assigned).
 
 .. rst-class:: classref-item-separator
 

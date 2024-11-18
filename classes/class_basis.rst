@@ -296,6 +296,8 @@ Constructor Descriptions
 
 Constructs a **Basis** identical to the :ref:`IDENTITY<class_Basis_constant_IDENTITY>`.
 
+\ **Note:** In C#, this constructs a **Basis** with all of its components set to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -716,7 +718,7 @@ The basis matrix's rows are multiplied by ``scale``'s components. This operation
 
 Performs a spherical-linear interpolation with the ``to`` basis, given a ``weight``. Both this basis and ``to`` should represent a rotation.
 
-\ **Example:** Smoothly rotate a :ref:`Node3D<class_Node3D>` to the target basis over time, with a :ref:`Tween<class_Tween>`.
+\ **Example:** Smoothly rotate a :ref:`Node3D<class_Node3D>` to the target basis over time, with a :ref:`Tween<class_Tween>`:
 
 ::
 

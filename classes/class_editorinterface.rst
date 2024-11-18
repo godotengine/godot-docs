@@ -88,6 +88,8 @@ Methods
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Theme<class_Theme>`                                      | :ref:`get_editor_theme<class_EditorInterface_method_get_editor_theme>`\ (\ ) |const|                                                                                                                                                                                                                               |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`EditorToaster<class_EditorToaster>`                      | :ref:`get_editor_toaster<class_EditorInterface_method_get_editor_toaster>`\ (\ ) |const|                                                                                                                                                                                                                           |
+   +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>`      | :ref:`get_editor_undo_redo<class_EditorInterface_method_get_editor_undo_redo>`\ (\ ) |const|                                                                                                                                                                                                                       |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`SubViewport<class_SubViewport>`                          | :ref:`get_editor_viewport_2d<class_EditorInterface_method_get_editor_viewport_2d>`\ (\ ) |const|                                                                                                                                                                                                                   |
@@ -139,6 +141,8 @@ Methods
    | |void|                                                         | :ref:`popup_dialog_centered_clamped<class_EditorInterface_method_popup_dialog_centered_clamped>`\ (\ dialog\: :ref:`Window<class_Window>`, minsize\: :ref:`Vector2i<class_Vector2i>` = Vector2i(0, 0), fallback_ratio\: :ref:`float<class_float>` = 0.75\ )                                                        |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                         | :ref:`popup_dialog_centered_ratio<class_EditorInterface_method_popup_dialog_centered_ratio>`\ (\ dialog\: :ref:`Window<class_Window>`, ratio\: :ref:`float<class_float>` = 0.8\ )                                                                                                                                  |
+   +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                         | :ref:`popup_method_selector<class_EditorInterface_method_popup_method_selector>`\ (\ object\: :ref:`Object<class_Object>`, callback\: :ref:`Callable<class_Callable>`, current_value\: :ref:`String<class_String>` = ""\ )                                                                                         |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                         | :ref:`popup_node_selector<class_EditorInterface_method_popup_node_selector>`\ (\ callback\: :ref:`Callable<class_Callable>`, valid_types\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = [], current_value\: :ref:`Node<class_Node>` = null\ )                                                |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -394,6 +398,18 @@ Returns the editor's :ref:`EditorSettings<class_EditorSettings>` instance.
 Returns the editor's :ref:`Theme<class_Theme>`.
 
 \ **Note:** When creating custom editor UI, prefer accessing theme items directly from your GUI nodes using the ``get_theme_*`` methods.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_method_get_editor_toaster:
+
+.. rst-class:: classref-method
+
+:ref:`EditorToaster<class_EditorToaster>` **get_editor_toaster**\ (\ ) |const| :ref:`🔗<class_EditorInterface_method_get_editor_toaster>`
+
+Returns the editor's :ref:`EditorToaster<class_EditorToaster>`.
 
 .. rst-class:: classref-item-separator
 
@@ -726,6 +742,18 @@ See also :ref:`Window.set_unparent_when_invisible<class_Window_method_set_unpare
 Pops up the ``dialog`` in the editor UI with :ref:`Window.popup_exclusive_centered_ratio<class_Window_method_popup_exclusive_centered_ratio>`. The dialog must have no current parent, otherwise the method fails.
 
 See also :ref:`Window.set_unparent_when_invisible<class_Window_method_set_unparent_when_invisible>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_method_popup_method_selector:
+
+.. rst-class:: classref-method
+
+|void| **popup_method_selector**\ (\ object\: :ref:`Object<class_Object>`, callback\: :ref:`Callable<class_Callable>`, current_value\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_EditorInterface_method_popup_method_selector>`
+
+Pops up an editor dialog for selecting a method from ``object``. The ``callback`` must take a single argument of type :ref:`String<class_String>` which will contain the name of the selected method or be empty if the dialog is canceled. If ``current_value`` is provided, the method will be selected automatically in the method list, if it exists.
 
 .. rst-class:: classref-item-separator
 

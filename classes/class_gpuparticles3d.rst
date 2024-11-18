@@ -137,9 +137,9 @@ Signals
 
 **finished**\ (\ ) :ref:`🔗<class_GPUParticles3D_signal_finished>`
 
-Emitted when all active particles have finished processing. To immediately emit new particles, call :ref:`restart<class_GPUParticles3D_method_restart>`.
+Emitted when all active particles have finished processing. To immediately restart the emission cycle, call :ref:`restart<class_GPUParticles3D_method_restart>`.
 
-Never emitted when :ref:`one_shot<class_GPUParticles3D_property_one_shot>` is disabled, as particles will be emitted and processed continuously.
+This signal is never emitted when :ref:`one_shot<class_GPUParticles3D_property_one_shot>` is disabled, as particles will be emitted and processed continuously.
 
 \ **Note:** For :ref:`one_shot<class_GPUParticles3D_property_one_shot>` emitters, due to the particles being computed on the GPU, there may be a short period after receiving the signal during which setting :ref:`emitting<class_GPUParticles3D_property_emitting>` to ``true`` will not restart the emission cycle. This delay is avoided by instead calling :ref:`restart<class_GPUParticles3D_method_restart>`.
 

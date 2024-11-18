@@ -12,7 +12,7 @@ SkeletonModifier3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`XRBodyModifier3D<class_XRBodyModifier3D>`, :ref:`XRHandModifier3D<class_XRHandModifier3D>`
+**Inherited By:** :ref:`LookAtModifier3D<class_LookAtModifier3D>`, :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`XRBodyModifier3D<class_XRBodyModifier3D>`, :ref:`XRHandModifier3D<class_XRHandModifier3D>`
 
 A Node that may modify Skeleton3D's bone.
 

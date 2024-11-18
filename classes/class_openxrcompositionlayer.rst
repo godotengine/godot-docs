@@ -225,7 +225,7 @@ Returns ``Vector2(-1.0, -1.0)`` if the ray doesn't intersect.
 
 :ref:`bool<class_bool>` **is_natively_supported**\ (\ ) |const| :ref:`🔗<class_OpenXRCompositionLayer_method_is_natively_supported>`
 
-Returns true if the OpenXR runtime natively supports this composition layer type.
+Returns ``true`` if the OpenXR runtime natively supports this composition layer type.
 
 \ **Note:** This will only return an accurate result after the OpenXR session has started.
 

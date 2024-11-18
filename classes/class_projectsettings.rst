@@ -2598,7 +2598,7 @@ If the ``--log-file <file>`` :doc:`command line argument <../tutorials/editor/co
 
 :ref:`int<class_int>` **debug/gdscript/warnings/assert_always_false** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_false>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when an ``assert`` call always evaluates to false.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when an ``assert`` call always evaluates to ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -2610,7 +2610,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/assert_always_true** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_true>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when an ``assert`` call always evaluates to true.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when an ``assert`` call always evaluates to ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -2968,7 +2968,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when defining a local or member variable that would shadow a member variable that the class defines.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a local variable or local constant shadows a member declared in the current class.
 
 .. rst-class:: classref-item-separator
 
@@ -2980,7 +2980,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/shadowed_variable_base_class** = ``1`` :ref:`🔗<class_ProjectSettings_property_debug/gdscript/warnings/shadowed_variable_base_class>`
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when defining a local or subclass member variable that would shadow a variable that is inherited from a parent class.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a local variable or local constant shadows a member declared in a base class.
 
 .. rst-class:: classref-item-separator
 
@@ -10138,7 +10138,7 @@ Number of blur passes to use when computing screen-space ambient occlusion. A hi
 
 :ref:`float<class_float>` **rendering/environment/ssao/fadeout_from** = ``50.0`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssao/fadeout_from>`
 
-Distance at which the screen-space ambient occlusion effect starts to fade out. Use this hide ambient occlusion at great distances.
+Distance at which the screen-space ambient occlusion effect starts to fade out. Use this hide ambient occlusion from far away.
 
 .. rst-class:: classref-item-separator
 
@@ -10150,7 +10150,7 @@ Distance at which the screen-space ambient occlusion effect starts to fade out. 
 
 :ref:`float<class_float>` **rendering/environment/ssao/fadeout_to** = ``300.0`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssao/fadeout_to>`
 
-Distance at which the screen-space ambient occlusion is fully faded out. Use this hide ambient occlusion at great distances.
+Distance at which the screen-space ambient occlusion is fully faded out. Use this hide ambient occlusion from far away.
 
 .. rst-class:: classref-item-separator
 
@@ -10210,7 +10210,7 @@ Number of blur passes to use when computing screen-space indirect lighting. A hi
 
 :ref:`float<class_float>` **rendering/environment/ssil/fadeout_from** = ``50.0`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssil/fadeout_from>`
 
-Distance at which the screen-space indirect lighting effect starts to fade out. Use this hide screen-space indirect lighting at great distances.
+Distance at which the screen-space indirect lighting effect starts to fade out. Use this to hide screen-space indirect lighting from far away.
 
 .. rst-class:: classref-item-separator
 
@@ -10222,7 +10222,7 @@ Distance at which the screen-space indirect lighting effect starts to fade out. 
 
 :ref:`float<class_float>` **rendering/environment/ssil/fadeout_to** = ``300.0`` :ref:`🔗<class_ProjectSettings_property_rendering/environment/ssil/fadeout_to>`
 
-Distance at which the screen-space indirect lighting is fully faded out. Use this hide screen-space indirect lighting at great distances.
+Distance at which the screen-space indirect lighting is fully faded out. Use this to hide screen-space indirect lighting from far away.
 
 .. rst-class:: classref-item-separator
 
@@ -11272,6 +11272,10 @@ Sets the renderer that will be used by the project. Options are:
 
 \ **GL Compatibility**: Low-end renderer designed for older devices. Based on the limitations of the OpenGL 3.3/ OpenGL ES 3.0 / WebGL 2 APIs.
 
+This can be overridden using the ``--rendering-method <method>`` command line argument.
+
+\ **Note:** The actual rendering method may be automatically changed by the engine as a result of a fallback, or a user-specified command line argument. To get the actual rendering method that is used at runtime, use :ref:`RenderingServer.get_current_rendering_method<class_RenderingServer_method_get_current_rendering_method>` instead of reading this project setting's value.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -11360,7 +11364,9 @@ Depending on the complexity of scenes, this value may be lowered or may need to 
 
 :ref:`String<class_String>` **rendering/rendering_device/driver** :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver>`
 
-Sets the driver to be used by the renderer when using a RenderingDevice-based renderer like the clustered renderer or the mobile renderer. This property can not be edited directly, instead, set the driver using the platform-specific overrides.
+Sets the driver to be used by the renderer when using a RenderingDevice-based renderer like the clustered renderer or the mobile renderer. This property can't be edited directly. Instead, set the driver using the platform-specific overrides. This can be overridden using the ``--rendering-driver <driver>`` command line argument.
+
+\ **Note:** The actual rendering driver may be automatically changed by the engine as a result of a fallback, or a user-specified command line argument. To get the actual rendering driver that is used at runtime, use :ref:`RenderingServer.get_current_rendering_driver_name<class_RenderingServer_method_get_current_rendering_driver_name>` instead of reading this project setting's value.
 
 .. rst-class:: classref-item-separator
 
@@ -11738,7 +11744,7 @@ If ``true``, forces vertex shading for all rendering. This can increase performa
 
 :ref:`int<class_int>` **rendering/textures/canvas_textures/default_texture_filter** = ``1`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/canvas_textures/default_texture_filter>`
 
-The default texture filtering mode to use on :ref:`CanvasItem<class_CanvasItem>`\ s.
+The default texture filtering mode to use for :ref:`CanvasItem<class_CanvasItem>`\ s built-in texture. In shaders, this texture is accessed as ``TEXTURE``.
 
 \ **Note:** For pixel art aesthetics, see also :ref:`rendering/2d/snap/snap_2d_vertices_to_pixel<class_ProjectSettings_property_rendering/2d/snap/snap_2d_vertices_to_pixel>` and :ref:`rendering/2d/snap/snap_2d_transforms_to_pixel<class_ProjectSettings_property_rendering/2d/snap/snap_2d_transforms_to_pixel>`.
 
@@ -11752,7 +11758,7 @@ The default texture filtering mode to use on :ref:`CanvasItem<class_CanvasItem>`
 
 :ref:`int<class_int>` **rendering/textures/canvas_textures/default_texture_repeat** = ``0`` :ref:`🔗<class_ProjectSettings_property_rendering/textures/canvas_textures/default_texture_repeat>`
 
-The default texture repeating mode to use on :ref:`CanvasItem<class_CanvasItem>`\ s.
+The default texture repeating mode to use for :ref:`CanvasItem<class_CanvasItem>`\ s built-in texture. In shaders, this texture is accessed as ``TEXTURE``.
 
 .. rst-class:: classref-item-separator
 
@@ -12161,7 +12167,7 @@ Specify whether OpenXR should be configured for an HMD or a hand held device.
 
 :ref:`bool<class_bool>` **xr/openxr/foveation_dynamic** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/foveation_dynamic>`
 
-If true and foveation is supported, will automatically adjust foveation level based on framerate up to the level set on :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`.
+If ``true`` and foveation is supported, will automatically adjust foveation level based on framerate up to the level set on :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`.
 
 \ **Note:** Only works on the Compatibility rendering method.
 
@@ -12383,7 +12389,7 @@ Returns the value of the setting identified by ``name``. If the setting doesn't 
 
 Similar to :ref:`get_setting<class_ProjectSettings_method_get_setting>`, but applies feature tag overrides if any exists and is valid.
 
-\ **Example:**\ 	If the setting override ``"application/config/name.windows"`` exists, and the following code is executed on a *Windows* operating system, the overridden setting is printed instead:
+\ **Example:** If the setting override ``"application/config/name.windows"`` exists, and the following code is executed on a *Windows* operating system, the overridden setting is printed instead:
 
 
 .. tabs::

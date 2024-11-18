@@ -76,7 +76,7 @@ Return whether this importer is active.
 
 :ref:`bool<class_bool>` **_query**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorFileSystemImportFormatSupportQuery_private_method__query>`
 
-Query support. Return false if import must not continue.
+Query support. Return ``false`` if import must not continue.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

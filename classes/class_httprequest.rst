@@ -27,7 +27,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
-\ **Example of contacting a REST API and printing one of its returned fields:**\ 
+\ **Example:** Contact a REST API and print one of its returned fields:
 
 
 .. tabs::
@@ -105,7 +105,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 
 
-\ **Example of loading and displaying an image using HTTPRequest:**\ 
+\ **Example:** Load an image using **HTTPRequest** and display it:
 
 
 .. tabs::
@@ -181,7 +181,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 
 
-\ **Gzipped response bodies**: HTTPRequest will automatically handle decompression of response bodies. A ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
+\ **Note:** **HTTPRequest** nodes will automatically handle decompression of response bodies. A ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
 
 .. rst-class:: classref-introduction-group
 

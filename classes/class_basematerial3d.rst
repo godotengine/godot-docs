@@ -645,7 +645,7 @@ The object will be shaded per pixel. Useful for realistic shading effects.
 
 :ref:`ShadingMode<enum_BaseMaterial3D_ShadingMode>` **SHADING_MODE_PER_VERTEX** = ``2``
 
-The object will be shaded per vertex. Useful when you want cheaper shaders and do not care about visual quality. Not implemented yet (this mode will act like :ref:`SHADING_MODE_PER_PIXEL<class_BaseMaterial3D_constant_SHADING_MODE_PER_PIXEL>`).
+The object will be shaded per vertex. Useful when you want cheaper shaders and do not care about visual quality.
 
 .. _class_BaseMaterial3D_constant_SHADING_MODE_MAX:
 
@@ -2928,8 +2928,6 @@ Specifies the channel of the :ref:`roughness_texture<class_BaseMaterial3D_proper
 - :ref:`ShadingMode<enum_BaseMaterial3D_ShadingMode>` **get_shading_mode**\ (\ )
 
 Sets whether the shading takes place, per-pixel, per-vertex or unshaded. Per-vertex lighting is faster, making it the best choice for mobile applications, however it looks considerably worse than per-pixel. Unshaded rendering is the fastest, but disables all interactions with lights.
-
-\ **Note:** Setting the shading mode vertex shading currently has no effect, as vertex shading is not implemented yet.
 
 .. rst-class:: classref-item-separator
 

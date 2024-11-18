@@ -21,7 +21,7 @@ Description
 
 Imported scenes can be automatically modified right after import by setting their **Custom Script** Import property to a ``tool`` script that inherits from this class.
 
-The :ref:`_post_import<class_EditorScenePostImport_private_method__post_import>` callback receives the imported scene's root node and returns the modified version of the scene. Usage example:
+The :ref:`_post_import<class_EditorScenePostImport_private_method__post_import>` callback receives the imported scene's root node and returns the modified version of the scene:
 
 
 .. tabs::

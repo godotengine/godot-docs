@@ -1350,7 +1350,9 @@ The texture that should be used as a glow map to *multiply* the resulting glow c
 - |void| **set_glow_map_strength**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_glow_map_strength**\ (\ )
 
-How strong of an impact the :ref:`glow_map<class_Environment_property_glow_map>` should have on the overall glow effect. A strength of ``0.0`` means the glow map has no effect on the overall glow effect. A strength of ``1.0`` means the glow has a full effect on the overall glow effect (and can turn off glow entirely in specific areas of the screen if the glow map has black areas).
+How strong of an influence the :ref:`glow_map<class_Environment_property_glow_map>` should have on the overall glow effect. A strength of ``0.0`` means the glow map has no influence, while a strength of ``1.0`` means the glow map has full influence.
+
+\ **Note:** If the glow map has black areas, a value of ``1.0`` can also turn off the glow effect entirely in specific areas of the screen.
 
 \ **Note:** :ref:`glow_map_strength<class_Environment_property_glow_map_strength>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 

@@ -350,7 +350,7 @@ The binary buffer attached to a .glb file.
 - |void| **set_import_as_skeleton_bones**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_import_as_skeleton_bones**\ (\ )
 
-True to force all GLTFNodes in the document to be bones of a single Skeleton3D godot node.
+If ``true``, forces all GLTFNodes in the document to be bones of a single :ref:`Skeleton3D<class_Skeleton3D>` Godot node.
 
 .. rst-class:: classref-item-separator
 
@@ -477,7 +477,7 @@ Method Descriptions
 
 |void| **add_used_extension**\ (\ extension_name\: :ref:`String<class_String>`, required\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_GLTFState_method_add_used_extension>`
 
-Appends an extension to the list of extensions used by this glTF file during serialization. If ``required`` is true, the extension will also be added to the list of required extensions. Do not run this in :ref:`GLTFDocumentExtension._export_post<class_GLTFDocumentExtension_private_method__export_post>`, as that stage is too late to add extensions. The final list is sorted alphabetically.
+Appends an extension to the list of extensions used by this glTF file during serialization. If ``required`` is ``true``, the extension will also be added to the list of required extensions. Do not run this in :ref:`GLTFDocumentExtension._export_post<class_GLTFDocumentExtension_private_method__export_post>`, as that stage is too late to add extensions. The final list is sorted alphabetically.
 
 .. rst-class:: classref-item-separator
 
@@ -489,7 +489,7 @@ Appends an extension to the list of extensions used by this glTF file during ser
 
 :ref:`int<class_int>` **append_data_to_buffers**\ (\ data\: :ref:`PackedByteArray<class_PackedByteArray>`, deduplication\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_GLTFState_method_append_data_to_buffers>`
 
-Appends the given byte array data to the buffers and creates a :ref:`GLTFBufferView<class_GLTFBufferView>` for it. The index of the destination :ref:`GLTFBufferView<class_GLTFBufferView>` is returned. If ``deduplication`` is true, the buffers will first be searched for duplicate data, otherwise new bytes will always be appended.
+Appends the given byte array data to the buffers and creates a :ref:`GLTFBufferView<class_GLTFBufferView>` for it. The index of the destination :ref:`GLTFBufferView<class_GLTFBufferView>` is returned. If ``deduplication`` is ``true``, the buffers will first be searched for duplicate data, otherwise new bytes will always be appended.
 
 .. rst-class:: classref-item-separator
 
@@ -503,7 +503,7 @@ Appends the given byte array data to the buffers and creates a :ref:`GLTFBufferV
 
 Append the given :ref:`GLTFNode<class_GLTFNode>` to the state, and return its new index. This can be used to export one Godot node as multiple glTF nodes, or inject new glTF nodes at import time. On import, this must be called before :ref:`GLTFDocumentExtension._generate_scene_node<class_GLTFDocumentExtension_private_method__generate_scene_node>` finishes for the parent node. On export, this must be called before :ref:`GLTFDocumentExtension._export_node<class_GLTFDocumentExtension_private_method__export_node>` runs for the parent node.
 
-The ``godot_scene_node`` parameter is the Godot scene node that corresponds to this glTF node. This is highly recommended to be set to a valid node, but may be null if there is no corresponding Godot scene node. One Godot scene node may be used for multiple glTF nodes, so if exporting multiple glTF nodes for one Godot scene node, use the same Godot scene node for each.
+The ``godot_scene_node`` parameter is the Godot scene node that corresponds to this glTF node. This is highly recommended to be set to a valid node, but may be ``null`` if there is no corresponding Godot scene node. One Godot scene node may be used for multiple glTF nodes, so if exporting multiple glTF nodes for one Godot scene node, use the same Godot scene node for each.
 
 The ``parent_node_index`` parameter is the index of the parent :ref:`GLTFNode<class_GLTFNode>` in the state. If ``-1``, the node will be a root node, otherwise the new node will be added to the parent's list of children. The index will also be written to the :ref:`GLTFNode.parent<class_GLTFNode_property_parent>` property of the new node.
 
@@ -533,7 +533,7 @@ The ``parent_node_index`` parameter is the index of the parent :ref:`GLTFNode<cl
 
 Gets additional arbitrary data in this **GLTFState** instance. This can be used to keep per-file state data in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes, which is important because they are stateless.
 
-The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the glTF file), and the return value can be anything you set. If nothing was set, the return value is null.
+The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the glTF file), and the return value can be anything you set. If nothing was set, the return value is ``null``.
 
 .. rst-class:: classref-item-separator
 

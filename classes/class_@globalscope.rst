@@ -3987,7 +3987,7 @@ Editing the property prompts the user for restarting the editor.
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_SCRIPT_VARIABLE** = ``4096``
 
-The property is a script variable which should be serialized and saved in the scene file.
+The property is a script variable. :ref:`PROPERTY_USAGE_SCRIPT_VARIABLE<class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE>` can be used to distinguish between exported script variables from built-in variables (which don't have this usage flag). By default, :ref:`PROPERTY_USAGE_SCRIPT_VARIABLE<class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE>` is **not** applied to variables that are created by overriding :ref:`Object._get_property_list<class_Object_private_method__get_property_list>` in a script.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_STORE_IF_NULL:
 
@@ -4021,7 +4021,7 @@ If this property is modified, all inspector fields will be refreshed.
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_CLASS_IS_ENUM** = ``65536``
 
-The property is an enum, i.e. it only takes named integer constants from its associated enumeration.
+The property is a variable of enum type, i.e. it only takes named integer constants from its associated enumeration.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_NIL_IS_VARIANT:
 
@@ -6698,8 +6698,8 @@ Given a ``seed``, returns a :ref:`PackedInt64Array<class_PackedInt64Array>` of s
 
     var a = rand_from_seed(4)
     
-    print(a[0])	# Prints 2879024997
-    print(a[1])	# Prints 4
+    print(a[0]) # Prints 2879024997
+    print(a[1]) # Prints 4
 
 .. rst-class:: classref-item-separator
 

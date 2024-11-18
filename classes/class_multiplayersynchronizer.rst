@@ -174,7 +174,7 @@ Property Descriptions
 - |void| **set_delta_interval**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_delta_interval**\ (\ )
 
-Time interval between delta synchronizations. When set to ``0.0`` (the default), delta synchronizations happen every network process frame.
+Time interval between delta synchronizations. Used when the replication is set to :ref:`SceneReplicationConfig.REPLICATION_MODE_ON_CHANGE<class_SceneReplicationConfig_constant_REPLICATION_MODE_ON_CHANGE>`. If set to ``0.0`` (the default), delta synchronizations happen every network process frame.
 
 .. rst-class:: classref-item-separator
 
@@ -225,7 +225,7 @@ Resource containing which properties to synchronize.
 - |void| **set_replication_interval**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_replication_interval**\ (\ )
 
-Time interval between synchronizations. When set to ``0.0`` (the default), synchronizations happen every network process frame.
+Time interval between synchronizations. Used when the replication is set to :ref:`SceneReplicationConfig.REPLICATION_MODE_ALWAYS<class_SceneReplicationConfig_constant_REPLICATION_MODE_ALWAYS>`. If set to ``0.0`` (the default), synchronizations happen every network process frame.
 
 .. rst-class:: classref-item-separator
 

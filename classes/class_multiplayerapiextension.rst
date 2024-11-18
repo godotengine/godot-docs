@@ -22,9 +22,9 @@ Base class used for extending the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 Description
 -----------
 
-This class can be used to augment or replace the default :ref:`MultiplayerAPI<class_MultiplayerAPI>` implementation via script or extensions.
+This class can be used to extend or replace the default :ref:`MultiplayerAPI<class_MultiplayerAPI>` implementation via script or extensions.
 
-The following example augment the default implementation (:ref:`SceneMultiplayer<class_SceneMultiplayer>`) by logging every RPC being made, and every object being configured for replication.
+The following example extend the default implementation (:ref:`SceneMultiplayer<class_SceneMultiplayer>`) by logging every RPC being made, and every object being configured for replication.
 
 
 .. tabs::
@@ -34,7 +34,7 @@ The following example augment the default implementation (:ref:`SceneMultiplayer
     extends MultiplayerAPIExtension
     class_name LogMultiplayer
     
-    # We want to augment the default SceneMultiplayer.
+    # We want to extend the default SceneMultiplayer.
     var base_multiplayer = SceneMultiplayer.new()
     
     func _init():
@@ -72,7 +72,7 @@ The following example augment the default implementation (:ref:`SceneMultiplayer
             print("Removing node %s from the spawn list. Spawner: %s" % [object, config])
         return base_multiplayer.object_configuration_remove(object, config)
     
-    # These can be optional, but in our case we want to augment SceneMultiplayer, so forward everything.
+    # These can be optional, but in our case we want to extend SceneMultiplayer, so forward everything.
     func _set_multiplayer_peer(p_peer: MultiplayerPeer):
         base_multiplayer.multiplayer_peer = p_peer
     
@@ -97,7 +97,7 @@ Then in your main scene or in an autoload call :ref:`SceneTree.set_multiplayer<c
     # autoload.gd
     func _enter_tree():
         # Sets our custom multiplayer as the main one in SceneTree.
-    get_tree().set_multiplayer(LogMultiplayer.new())
+        get_tree().set_multiplayer(LogMultiplayer.new())
 
 
 

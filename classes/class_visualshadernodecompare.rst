@@ -206,7 +206,7 @@ enum **Condition**: :ref:`🔗<enum_VisualShaderNodeCompare_Condition>`
 
 :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **COND_ALL** = ``0``
 
-The result will be true if all of component in vector satisfy the comparison condition.
+The result will be ``true`` if all components in the vector satisfy the comparison condition.
 
 .. _class_VisualShaderNodeCompare_constant_COND_ANY:
 
@@ -214,7 +214,7 @@ The result will be true if all of component in vector satisfy the comparison con
 
 :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **COND_ANY** = ``1``
 
-The result will be true if any of component in vector satisfy the comparison condition.
+The result will be ``true`` if any component in the vector satisfies the comparison condition.
 
 .. _class_VisualShaderNodeCompare_constant_COND_MAX:
 

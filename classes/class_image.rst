@@ -916,6 +916,8 @@ Alpha-blends ``src_rect`` from ``src`` image to this image using ``mask`` image 
 
 Copies ``src_rect`` from ``src`` image to this image at coordinates ``dst``, clipped accordingly to both image bounds. This image and ``src`` image **must** have the same format. ``src_rect`` with non-positive size is treated as empty.
 
+\ **Note:** The alpha channel data in ``src`` will overwrite the corresponding data in this image at the target position. To blend alpha channels, use :ref:`blend_rect<class_Image_method_blend_rect>` instead.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1706,7 +1708,7 @@ Saves the image as a PNG file to a byte array.
 
 :ref:`Error<enum_@GlobalScope_Error>` **save_webp**\ (\ path\: :ref:`String<class_String>`, lossy\: :ref:`bool<class_bool>` = false, quality\: :ref:`float<class_float>` = 0.75\ ) |const| :ref:`🔗<class_Image_method_save_webp>`
 
-Saves the image as a WebP (Web Picture) file to the file at ``path``. By default it will save lossless. If ``lossy`` is true, the image will be saved lossy, using the ``quality`` setting between 0.0 and 1.0 (inclusive). Lossless WebP offers more efficient compression than PNG.
+Saves the image as a WebP (Web Picture) file to the file at ``path``. By default it will save lossless. If ``lossy`` is ``true``, the image will be saved lossy, using the ``quality`` setting between ``0.0`` and ``1.0`` (inclusive). Lossless WebP offers more efficient compression than PNG.
 
 \ **Note:** The WebP format is limited to a size of 16383×16383 pixels, while PNG can save larger images.
 
@@ -1720,7 +1722,7 @@ Saves the image as a WebP (Web Picture) file to the file at ``path``. By default
 
 :ref:`PackedByteArray<class_PackedByteArray>` **save_webp_to_buffer**\ (\ lossy\: :ref:`bool<class_bool>` = false, quality\: :ref:`float<class_float>` = 0.75\ ) |const| :ref:`🔗<class_Image_method_save_webp_to_buffer>`
 
-Saves the image as a WebP (Web Picture) file to a byte array. By default it will save lossless. If ``lossy`` is true, the image will be saved lossy, using the ``quality`` setting between 0.0 and 1.0 (inclusive). Lossless WebP offers more efficient compression than PNG.
+Saves the image as a WebP (Web Picture) file to a byte array. By default it will save lossless. If ``lossy`` is ``true``, the image will be saved lossy, using the ``quality`` setting between ``0.0`` and ``1.0`` (inclusive). Lossless WebP offers more efficient compression than PNG.
 
 \ **Note:** The WebP format is limited to a size of 16383×16383 pixels, while PNG can save larger images.
 

@@ -267,7 +267,7 @@ This can simplify the setup to serve the exported game.
 
 File path to the smallest icon for this web application. If not defined, defaults to the project icon.
 
-\ **Note:** If the icon is not 144x144, it will be automatically resized for the final build.
+\ **Note:** If the icon is not 144×144, it will be automatically resized for the final build.
 
 .. rst-class:: classref-item-separator
 
@@ -281,7 +281,7 @@ File path to the smallest icon for this web application. If not defined, default
 
 File path to the small icon for this web application. If not defined, defaults to the project icon.
 
-\ **Note:** If the icon is not 180x180, it will be automatically resized for the final build.
+\ **Note:** If the icon is not 180×180, it will be automatically resized for the final build.
 
 .. rst-class:: classref-item-separator
 
@@ -293,9 +293,9 @@ File path to the small icon for this web application. If not defined, defaults t
 
 :ref:`String<class_String>` **progressive_web_app/icon_512x512** :ref:`🔗<class_EditorExportPlatformWeb_property_progressive_web_app/icon_512x512>`
 
-File path to the smallest icon for this web application. If not defined, defaults to the project icon.
+File path to the largest icon for this web application. If not defined, defaults to the project icon.
 
-\ **Note:** If the icon is not 512x512, it will be automatically resized for the final build.
+\ **Note:** If the icon is not 512×512, it will be automatically resized for the final build.
 
 .. rst-class:: classref-item-separator
 
