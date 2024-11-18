@@ -149,7 +149,7 @@ varying by the deviation (1.0 by default):
 
  .. code-tab:: csharp
 
-    // Prints a random floating-point number from a normal distribution with a mean 0.0 and deviation 1.0.
+    // Prints a random floating-point number from a normal distribution with a mean of 0.0 and deviation of 1.0.
     GD.Print(GD.Randfn());
 
 :ref:`randf_range() <class_@GlobalScope_method_randf_range>` takes two arguments
@@ -396,7 +396,7 @@ floating-point number between 0.0 and 1.0. We can use this to create a
 You can also get a weighted random *index* using the
 :ref:`rand_weighted() <class_RandomNumberGenerator_method_rand_weighted>` method
 on a RandomNumberGenerator instance. This returns a random integer
-between 0 and the size of the array that is passed as a paramter. Each value in the
+between 0 and the size of the array that is passed as a parameter. Each value in the
 array is a floating-point number that represents the *relative* likelihood that it
 will be returned as an index. A higher value means the value is more likely to be
 returned as an index, while a value of ``0`` means it will never be returned as an index.
