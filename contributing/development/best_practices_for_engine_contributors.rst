@@ -219,7 +219,7 @@ is always the advised one.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Not every problem has a simple solution and, many times, the right choice is to
-use a third party library to solve the problem.
+use a third-party library to solve the problem.
 
 As Godot requires to be shipped in a large amount of platforms, we can't
 link libraries dynamically. Instead, we bundle them in our source tree.

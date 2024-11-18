@@ -104,7 +104,7 @@ effects of each of them.
     *Viewport's* :ref:`canvas transform <class_Viewport_property_canvas_transform>` and the
     *CanvasLayer's* :ref:`follow viewport scale <class_CanvasLayer_property_follow_viewport_scale>`
     and can be used, if :ref:`enabled <class_CanvasLayer_property_follow_viewport_enabled>`, to
-    achieve a pseudo 3D effect. It affects the same child nodes as the *CanvasLayer transform*.
+    achieve a pseudo-3D effect. It affects the same child nodes as the *CanvasLayer transform*.
 
 - **Viewport canvas transform**
     The :ref:`canvas transform <class_Viewport_property_canvas_transform>` affects all

@@ -3,7 +3,7 @@
 Code::Blocks
 ============
 
-`Code::Blocks <https://codeblocks.org/>`_ is a free, open source, cross platform IDE.
+`Code::Blocks <https://codeblocks.org/>`_ is a free, open-source, cross-platform IDE.
 
 Creating a new project
 ----------------------

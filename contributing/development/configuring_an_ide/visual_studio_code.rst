@@ -70,7 +70,7 @@ To run and debug the project you need to create a new configuration in the ``lau
 .. figure:: img/vscode_1_create_launch.json.png
    :align: center
 
-- Select **C++ (GDB/LLDB)**. There may be another platform specific option here. If selected,
+- Select **C++ (GDB/LLDB)**. There may be another platform-specific option here. If selected,
   adjust the configuration example provided accordingly.
 - Within the ``launch.json`` file find the ``"configurations"`` array and add a new section to it:
 
