@@ -266,9 +266,11 @@ performance, especially when the camera is close to particles.
 
 You can also use per-vertex lighting to achieve a retro look.
 
-.. image:: img/standard_material_shading_modes_textured.webp
+.. figure:: img/standard_material_shading_modes_textured.webp
   :align: center
   :alt: Two cubes with a brick texture, one shaded and one unshaded.
+  
+  Texture from `AmbientCG <https://ambientcg.com/view?id=Bricks051>`__
 
 The **Unshaded** shading mode does not calculate lighting at all. Instead, the
 **Albedo** color is output directly. Lights will not affect the material at all,
