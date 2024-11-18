@@ -244,34 +244,42 @@ Shading
 Shading mode
 ~~~~~~~~~~~~
 
-Godot has a more or less uniform cost per pixel thanks to the depth pre-pass.
-All lighting calculations are made by running the lighting shader on every
-pixel.
+Materials support three shading modes: **Per-Pixel**, **Per-Vertex**, and
+**Unshaded**.
 
-As these calculations are costly, performance can be brought down considerably
-in some corner cases such as drawing several layers of transparency (which is
-common in particle systems). Switching to the **Unshaded** shading mode may help improve
-performance in these cases, especially when the camera is close to particles.
+.. figure:: img/standard_material_shading_modes.webp
+  :align: center
+  :alt: Three spheres showing the Per-Pixel, Per-Vertex, and Unshaded modes.
 
-Additionally, on low-end or mobile devices, switching to unshaded rendering
-can considerably increase rendering performance.
+The **Per-Pixel** shading mode calculates lighting for each pixel, and is a good
+fit for most use cases. However, in some cases you may want to increase
+performance by using another shading mode.
 
-.. image:: img/spatial_material26.png
+The **Per-Vertex** shading mode, often called "vertex shading" or "vertex lighting",
+instead calculates lighting once for each vertex, and interpolates the result
+between each pixel.
 
-Keep in mind that when unshaded rendering is enabled, lights will not affect the
-material at all.
+On low-end or mobile devices, using per-vertex lighting can considerably increase
+rendering performance. When rendering several layers of transparency,
+such as when using particle systems, using per-vertex shading can improve
+performance, especially when the camera is close to particles.
 
-.. UPDATE: Not implemented. When per-vertex shading is implemented, remove this
-.. note and remove this comment.
+You can also use per-vertex lighting to achieve a retro look.
 
-.. note::
+.. figure:: img/standard_material_shading_modes_textured.webp
+  :align: center
+  :alt: Two cubes with a brick texture, one shaded and one unshaded.
+  
+  Texture from `AmbientCG <https://ambientcg.com/view?id=Bricks051>`__
 
-    **Per-Vertex** shading is listed as an option in the shading mode property.
-    However, per-vertex shading is currently unimplemented and will act
-    identical to per-pixel shading.
+The **Unshaded** shading mode does not calculate lighting at all. Instead, the
+**Albedo** color is output directly. Lights will not affect the material at all,
+and unshaded materials will tend to appear considerably brighter than shaded
+materials.
 
-    Support for per-vertex shading is planned to be reimplemented in a future
-    Godot release.
+Rendering unshaded is useful for some specific visual effects. If maximum
+performance is needed, it can also be used for particles, or low-end or
+mobile devices.
 
 Diffuse Mode
 ~~~~~~~~~~~~
