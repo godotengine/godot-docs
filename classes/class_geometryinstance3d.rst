@@ -47,6 +47,8 @@ Properties
    +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
    | :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>`                     | :ref:`gi_lightmap_scale<class_GeometryInstance3D_property_gi_lightmap_scale>`                         | ``0``                      |
    +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`float<class_float>`                                                       | :ref:`gi_lightmap_texel_scale<class_GeometryInstance3D_property_gi_lightmap_texel_scale>`             | ``1.0``                    |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
    | :ref:`GIMode<enum_GeometryInstance3D_GIMode>`                                   | :ref:`gi_mode<class_GeometryInstance3D_property_gi_mode>`                                             | ``1``                      |
    +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
    | :ref:`bool<class_bool>`                                                         | :ref:`ignore_occlusion_culling<class_GeometryInstance3D_property_ignore_occlusion_culling>`           | ``false``                  |
@@ -187,6 +189,8 @@ enum **LightmapScale**: :ref:`🔗<enum_GeometryInstance3D_LightmapScale>`
 
 :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **LIGHTMAP_SCALE_1X** = ``0``
 
+**Deprecated:** Use :ref:`gi_lightmap_texel_scale<class_GeometryInstance3D_property_gi_lightmap_texel_scale>` instead.
+
 The standard texel density for lightmapping with :ref:`LightmapGI<class_LightmapGI>`.
 
 .. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_2X:
@@ -194,6 +198,8 @@ The standard texel density for lightmapping with :ref:`LightmapGI<class_Lightmap
 .. rst-class:: classref-enumeration-constant
 
 :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **LIGHTMAP_SCALE_2X** = ``1``
+
+**Deprecated:** Use :ref:`gi_lightmap_texel_scale<class_GeometryInstance3D_property_gi_lightmap_texel_scale>` instead.
 
 Multiplies texel density by 2× for lightmapping with :ref:`LightmapGI<class_LightmapGI>`. To ensure consistency in texel density, use this when scaling a mesh by a factor between 1.5 and 3.0.
 
@@ -203,6 +209,8 @@ Multiplies texel density by 2× for lightmapping with :ref:`LightmapGI<class_Lig
 
 :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **LIGHTMAP_SCALE_4X** = ``2``
 
+**Deprecated:** Use :ref:`gi_lightmap_texel_scale<class_GeometryInstance3D_property_gi_lightmap_texel_scale>` instead.
+
 Multiplies texel density by 4× for lightmapping with :ref:`LightmapGI<class_LightmapGI>`. To ensure consistency in texel density, use this when scaling a mesh by a factor between 3.0 and 6.0.
 
 .. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_8X:
@@ -211,6 +219,8 @@ Multiplies texel density by 4× for lightmapping with :ref:`LightmapGI<class_Lig
 
 :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **LIGHTMAP_SCALE_8X** = ``3``
 
+**Deprecated:** Use :ref:`gi_lightmap_texel_scale<class_GeometryInstance3D_property_gi_lightmap_texel_scale>` instead.
+
 Multiplies texel density by 8× for lightmapping with :ref:`LightmapGI<class_LightmapGI>`. To ensure consistency in texel density, use this when scaling a mesh by a factor greater than 6.0.
 
 .. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_MAX:
@@ -218,6 +228,8 @@ Multiplies texel density by 8× for lightmapping with :ref:`LightmapGI<class_Lig
 .. rst-class:: classref-enumeration-constant
 
 :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **LIGHTMAP_SCALE_MAX** = ``4``
+
+**Deprecated:** Use :ref:`gi_lightmap_texel_scale<class_GeometryInstance3D_property_gi_lightmap_texel_scale>` instead.
 
 Represents the size of the :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` enum.
 
@@ -330,7 +342,28 @@ The extra distance added to the GeometryInstance3D's bounding box (:ref:`AABB<cl
 - |void| **set_lightmap_scale**\ (\ value\: :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>`\ )
 - :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **get_lightmap_scale**\ (\ )
 
+**Deprecated:** Use :ref:`gi_lightmap_texel_scale<class_GeometryInstance3D_property_gi_lightmap_texel_scale>` instead.
+
+The texel density to use for lightmapping in :ref:`LightmapGI<class_LightmapGI>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GeometryInstance3D_property_gi_lightmap_texel_scale:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **gi_lightmap_texel_scale** = ``1.0`` :ref:`🔗<class_GeometryInstance3D_property_gi_lightmap_texel_scale>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_lightmap_texel_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_lightmap_texel_scale**\ (\ )
+
 The texel density to use for lightmapping in :ref:`LightmapGI<class_LightmapGI>`. Greater scale values provide higher resolution in the lightmap, which can result in sharper shadows for lights that have both direct and indirect light baked. However, greater scale values will also increase the space taken by the mesh in the lightmap texture, which increases the memory, storage, and bake time requirements. When using a single mesh at different scales, consider adjusting this value to keep the lightmap texel density consistent across meshes.
+
+For example, doubling :ref:`gi_lightmap_texel_scale<class_GeometryInstance3D_property_gi_lightmap_texel_scale>` doubles the lightmap texture resolution for this object *on each axis*, so it will *quadruple* the texel count.
 
 .. rst-class:: classref-item-separator
 

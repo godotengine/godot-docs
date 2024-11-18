@@ -89,7 +89,7 @@ Property Descriptions
 - |void| **set_flip_bend_direction**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_flip_bend_direction**\ (\ )
 
-If ``true``, the bones in the modification will blend outward as opposed to inwards when contracting. If ``false``, the bones will bend inwards when contracting.
+If ``true``, the bones in the modification will bend outward as opposed to inwards when contracting. If ``false``, the bones will bend inwards when contracting.
 
 .. rst-class:: classref-item-separator
 

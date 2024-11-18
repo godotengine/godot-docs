@@ -1655,7 +1655,7 @@ Returns the minimum value range for the given parameter.
 
 :ref:`bool<class_bool>` **get_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>`\ ) |const| :ref:`🔗<class_CPUParticles2D_method_get_particle_flag>`
 
-Returns the enabled state of the given flag (see :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>` for options).
+Returns the enabled state of the given particle flag (see :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>` for options).
 
 .. rst-class:: classref-item-separator
 

@@ -161,11 +161,25 @@ When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlug
 
 :ref:`Resource<class_Resource>` **_customize_resource**\ (\ resource\: :ref:`Resource<class_Resource>`, path\: :ref:`String<class_String>`\ ) |virtual| :ref:`🔗<class_EditorExportPlugin_private_method__customize_resource>`
 
-Customize a resource. If changes are made to it, return the same or a new resource. Otherwise, return ``null``.
+Customize a resource. If changes are made to it, return the same or a new resource. Otherwise, return ``null``. When a new resource is returned, ``resource`` will be replaced by a copy of the new resource.
 
-The *path* argument is only used when customizing an actual file, otherwise this means that this resource is part of another one and it will be empty.
+The ``path`` argument is only used when customizing an actual file, otherwise this means that this resource is part of another one and it will be empty.
 
 Implementing this method is required if :ref:`_begin_customize_resources<class_EditorExportPlugin_private_method__begin_customize_resources>` returns ``true``.
+
+\ **Note:** When customizing any of the following types and returning another resource, the other resource should not be skipped using :ref:`skip<class_EditorExportPlugin_method_skip>` in :ref:`_export_file<class_EditorExportPlugin_private_method__export_file>`:
+
+- :ref:`AtlasTexture<class_AtlasTexture>`\ 
+
+- :ref:`CompressedCubemap<class_CompressedCubemap>`\ 
+
+- :ref:`CompressedCubemapArray<class_CompressedCubemapArray>`\ 
+
+- :ref:`CompressedTexture2D<class_CompressedTexture2D>`\ 
+
+- :ref:`CompressedTexture2DArray<class_CompressedTexture2DArray>`\ 
+
+- :ref:`CompressedTexture3D<class_CompressedTexture3D>`
 
 .. rst-class:: classref-item-separator
 

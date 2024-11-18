@@ -717,7 +717,7 @@ Return ``true`` if the specified ``agent`` has an avoidance callback.
 
 :ref:`bool<class_bool>` **agent_is_map_changed**\ (\ agent\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_agent_is_map_changed>`
 
-Returns true if the map got changed the previous frame.
+Returns ``true`` if the map got changed the previous frame.
 
 .. rst-class:: classref-item-separator
 
@@ -853,7 +853,7 @@ Sets the maximum distance to other agents this agent takes into account in the n
 
 |void| **agent_set_paused**\ (\ agent\: :ref:`RID<class_RID>`, paused\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer3D_method_agent_set_paused>`
 
-If ``paused`` is true the specified ``agent`` will not be processed, e.g. calculate avoidance velocities or receive avoidance callbacks.
+If ``paused`` is ``true`` the specified ``agent`` will not be processed, e.g. calculate avoidance velocities or receive avoidance callbacks.
 
 .. rst-class:: classref-item-separator
 
@@ -1507,7 +1507,7 @@ Returns the map's up direction.
 
 :ref:`bool<class_bool>` **map_get_use_edge_connections**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_map_get_use_edge_connections>`
 
-Returns true if the navigation ``map`` allows navigation regions to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
+Returns ``true`` if the navigation ``map`` allows navigation regions to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
 
 .. rst-class:: classref-item-separator
 
@@ -1519,7 +1519,7 @@ Returns true if the navigation ``map`` allows navigation regions to use edge con
 
 :ref:`bool<class_bool>` **map_is_active**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_map_is_active>`
 
-Returns true if the map is active.
+Returns ``true`` if the map is active.
 
 .. rst-class:: classref-item-separator
 
@@ -1807,7 +1807,7 @@ Assigns the ``obstacle`` to a navigation map.
 
 |void| **obstacle_set_paused**\ (\ obstacle\: :ref:`RID<class_RID>`, paused\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer3D_method_obstacle_set_paused>`
 
-If ``paused`` is true the specified ``obstacle`` will not be processed, e.g. affect avoidance velocities.
+If ``paused`` is ``true`` the specified ``obstacle`` will not be processed, e.g. affect avoidance velocities.
 
 .. rst-class:: classref-item-separator
 
@@ -2107,7 +2107,7 @@ Returns the travel cost of this ``region``.
 
 :ref:`bool<class_bool>` **region_get_use_edge_connections**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_region_get_use_edge_connections>`
 
-Returns true if the navigation ``region`` is set to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
+Returns ``true`` if the navigation ``region`` is set to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
 
 .. rst-class:: classref-item-separator
 

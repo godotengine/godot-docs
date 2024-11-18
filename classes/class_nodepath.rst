@@ -171,7 +171,7 @@ Constructs a **NodePath** from a :ref:`String<class_String>`. The created path i
 
 The "subnames" optionally included after the path to the target node can point to properties, and can also be nested.
 
-Examples of strings that could be node paths:
+The following strings can be valid node paths:
 
 ::
 

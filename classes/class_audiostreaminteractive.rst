@@ -471,7 +471,7 @@ Return the destination time position for a transition (see :ref:`add_transition<
 
 :ref:`bool<class_bool>` **has_transition**\ (\ from_clip\: :ref:`int<class_int>`, to_clip\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamInteractive_method_has_transition>`
 
-Return true if a given transition exists (was added via :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
+Returns ``true`` if a given transition exists (was added via :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
 
 .. rst-class:: classref-item-separator
 

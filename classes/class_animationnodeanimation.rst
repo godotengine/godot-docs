@@ -41,6 +41,8 @@ Properties
    :widths: auto
 
    +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                               | :ref:`advance_on_start<class_AnimationNodeAnimation_property_advance_on_start>`       | ``false`` |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
    | :ref:`StringName<class_StringName>`                   | :ref:`animation<class_AnimationNodeAnimation_property_animation>`                     | ``&""``   |
    +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
    | :ref:`LoopMode<enum_Animation_LoopMode>`              | :ref:`loop_mode<class_AnimationNodeAnimation_property_loop_mode>`                     |           |
@@ -95,6 +97,25 @@ Plays animation in backward direction.
 
 Property Descriptions
 ---------------------
+
+.. _class_AnimationNodeAnimation_property_advance_on_start:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **advance_on_start** = ``false`` :ref:`🔗<class_AnimationNodeAnimation_property_advance_on_start>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_advance_on_start**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_advance_on_start**\ (\ )
+
+If ``true``, on receiving a request to play an animation from the start, the first frame is not drawn, but only processed, and playback starts from the next frame.
+
+See also the notes of :ref:`AnimationPlayer.play<class_AnimationPlayer_method_play>`.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_AnimationNodeAnimation_property_animation:
 

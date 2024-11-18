@@ -146,7 +146,7 @@ Emitted when a :ref:`Shape2D<class_Shape2D>` of the received ``area`` enters a s
 
 \ ``local_shape_index`` and ``area_shape_index`` contain indices of the interacting shapes from this area and the other area, respectively. ``area_rid`` contains the :ref:`RID<class_RID>` of the other area. These values can be used with the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
-\ **Example of getting the** :ref:`CollisionShape2D<class_CollisionShape2D>` **node from the shape index:**\ 
+\ **Example:** Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node from the shape index:
 
 
 .. tabs::
@@ -213,7 +213,7 @@ Emitted when a :ref:`Shape2D<class_Shape2D>` of the received ``body`` enters a s
 
 \ ``local_shape_index`` and ``body_shape_index`` contain indices of the interacting shapes from this area and the interacting body, respectively. ``body_rid`` contains the :ref:`RID<class_RID>` of the body. These values can be used with the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
-\ **Example of getting the** :ref:`CollisionShape2D<class_CollisionShape2D>` **node from the shape index:**\ 
+\ **Example:** Get the :ref:`CollisionShape2D<class_CollisionShape2D>` node from the shape index:
 
 
 .. tabs::

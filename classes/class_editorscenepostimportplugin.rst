@@ -203,7 +203,7 @@ Override to add internal import options. These will appear in the 3D scene impor
 
 :ref:`Variant<class_Variant>` **_get_internal_option_update_view_required**\ (\ category\: :ref:`int<class_int>`, option\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_EditorScenePostImportPlugin_private_method__get_internal_option_update_view_required>`
 
-Return true whether updating the 3D view of the import dialog needs to be updated if an option has changed.
+Should return ``true`` if the 3D view of the import dialog needs to update when changing the given option.
 
 .. rst-class:: classref-item-separator
 
@@ -215,7 +215,7 @@ Return true whether updating the 3D view of the import dialog needs to be update
 
 :ref:`Variant<class_Variant>` **_get_internal_option_visibility**\ (\ category\: :ref:`int<class_int>`, for_animation\: :ref:`bool<class_bool>`, option\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_EditorScenePostImportPlugin_private_method__get_internal_option_visibility>`
 
-Return true or false whether a given option should be visible. Return null to ignore.
+Should return ``true`` to show the given option, ``false`` to hide the given option, or ``null`` to ignore.
 
 .. rst-class:: classref-item-separator
 
@@ -227,7 +227,7 @@ Return true or false whether a given option should be visible. Return null to ig
 
 :ref:`Variant<class_Variant>` **_get_option_visibility**\ (\ path\: :ref:`String<class_String>`, for_animation\: :ref:`bool<class_bool>`, option\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_EditorScenePostImportPlugin_private_method__get_option_visibility>`
 
-Return true or false whether a given option should be visible. Return null to ignore.
+Should return ``true`` to show the given option, ``false`` to hide the given option, or ``null`` to ignore.
 
 .. rst-class:: classref-item-separator
 

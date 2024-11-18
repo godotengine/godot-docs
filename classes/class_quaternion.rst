@@ -267,6 +267,8 @@ Constructor Descriptions
 
 Constructs a **Quaternion** identical to the :ref:`IDENTITY<class_Quaternion_constant_IDENTITY>`.
 
+\ **Note:** In C#, this constructs a **Quaternion** with all of its components set to ``0.0``.
+
 .. rst-class:: classref-item-separator
 
 ----

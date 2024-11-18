@@ -1930,7 +1930,7 @@ Returns the number of displays available.
 
 :ref:`int<class_int>` **get_screen_from_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |const| :ref:`🔗<class_DisplayServer_method_get_screen_from_rect>`
 
-Returns index of the screen which contains specified rectangle.
+Returns the index of the screen that overlaps the most with the given rectangle. Returns ``-1`` if the rectangle doesn't overlap with any screen or has no area.
 
 .. rst-class:: classref-item-separator
 

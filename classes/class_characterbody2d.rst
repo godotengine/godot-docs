@@ -574,7 +574,7 @@ Returns the current real velocity since the last call to :ref:`move_and_slide<cl
 
 Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contains information about a collision that occurred during the last call to :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>`. Since the body can collide several times in a single call to :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>`, you must specify the index of the collision in the range 0 to (:ref:`get_slide_collision_count<class_CharacterBody2D_method_get_slide_collision_count>` - 1).
 
-\ **Example usage:**\ 
+\ **Example:** Iterate through the collisions with a ``for`` loop:
 
 
 .. tabs::

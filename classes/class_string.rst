@@ -704,7 +704,7 @@ Returns the index of the **first** **case-insensitive** occurrence of ``what`` i
 
 Formats the string by replacing all occurrences of ``placeholder`` with the elements of ``values``.
 
-\ ``values`` can be a :ref:`Dictionary<class_Dictionary>`, an :ref:`Array<class_Array>` or an :ref:`Object<class_Object>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
+\ ``values`` can be a :ref:`Dictionary<class_Dictionary>`, an :ref:`Array<class_Array>`, or an :ref:`Object<class_Object>`. Any underscores in ``placeholder`` will be replaced with the corresponding keys in advance. Array elements use their index as keys.
 
 ::
 
@@ -727,20 +727,20 @@ When passing an :ref:`Object<class_Object>`, the property names from :ref:`Objec
 
 ::
 
-    # Prints: Visible true, position (0, 0).
+    # Prints "Visible true, position (0, 0)"
     var node = Node2D.new()
     print("Visible {visible}, position {position}".format(node))
 
 See also the :doc:`GDScript format string <../tutorials/scripting/gdscript/gdscript_format_string>` tutorial.
 
-\ **Note:** The replacement of placeholders is not done all at once, instead each placeholder is replaced in the order they are passed, this means that if one of the replacement strings contains a key it will also be replaced. This can be very powerful, but can also cause unexpected results if you are not careful. If you do not need to perform replacement in the replacement strings, make sure your replacements do not contain placeholders to ensure reliable results.
+\ **Note:** Each replacement is done sequentially for each element of ``values``, **not** all at once. This means that if any element is inserted and it contains another placeholder, it may be changed by the next replacement. While this can be very useful, it often causes unexpected results. If not necessary, make sure ``values``'s elements do not contain placeholders.
 
 ::
 
-    print("{0} {1}".format(["{1}", "x"]))                       # Prints "x x".
-    print("{0} {1}".format(["x", "{0}"]))                       # Prints "x {0}".
-    print("{foo} {bar}".format({"foo": "{bar}", "bar": "baz"})) # Prints "baz baz".
-    print("{foo} {bar}".format({"bar": "baz", "foo": "{bar}"})) # Prints "{bar} baz".
+    print("{0} {1}".format(["{1}", "x"]))           # Prints "x x".
+    print("{0} {1}".format(["x", "{0}"]))           # Prints "x {0}".
+    print("{a} {b}".format({"a": "{b}", "b": "c"})) # Prints "c c".
+    print("{a} {b}".format({"b": "c", "a": "{b}"})) # Prints "{b} c".
 
 \ **Note:** In C#, it's recommended to `interpolate strings with "$" <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated>`__, instead.
 
@@ -1746,7 +1746,7 @@ Returns the `SHA-256 <https://en.wikipedia.org/wiki/SHA-2>`__ hash of the string
 
 :ref:`float<class_float>` **similarity**\ (\ text\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_String_method_similarity>`
 
-Returns the similarity index (`Sorensen-Dice coefficient <https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient>`__) of this string compared to another. A result of ``1.0`` means totally similar, while ``0.0`` means totally dissimilar.
+Returns the similarity index (`Sørensen-Dice coefficient <https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient>`__) of this string compared to another. A result of ``1.0`` means totally similar, while ``0.0`` means totally dissimilar.
 
 ::
 

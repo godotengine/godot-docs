@@ -705,7 +705,20 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_SUBGROUP<class_@GlobalScope_constant_
     @export var car_label = "Speedy"
     @export var car_number = 3
 
-\ **Note:** Subgroups cannot be nested, they only provide one extra level of depth. Just like the next group ends the previous group, so do the subsequent subgroups.
+\ **Note:** Subgroups cannot be nested, but you can use the slash separator (``/``) to achieve the desired effect:
+
+::
+
+    @export_group("Car Properties")
+    @export_subgroup("Wheels", "wheel_")
+    @export_subgroup("Wheels/Front", "front_wheel_")
+    @export var front_wheel_strength = 10
+    @export var front_wheel_mobility = 5
+    @export_subgroup("Wheels/Rear", "rear_wheel_")
+    @export var rear_wheel_strength = 8
+    @export var rear_wheel_mobility = 3
+    @export_subgroup("Wheels", "wheel_")
+    @export var wheel_material: PhysicsMaterial
 
 .. rst-class:: classref-item-separator
 

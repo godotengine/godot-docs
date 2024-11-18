@@ -840,7 +840,7 @@ Returns the metadata value that was set for the given column using :ref:`set_met
 
 :ref:`TreeItem<class_TreeItem>` **get_next**\ (\ ) |const| :ref:`🔗<class_TreeItem_method_get_next>`
 
-Returns the next sibling TreeItem in the tree or a null object if there is none.
+Returns the next sibling TreeItem in the tree or a ``null`` object if there is none.
 
 .. rst-class:: classref-item-separator
 
@@ -880,7 +880,7 @@ If ``wrap`` is enabled, the method will wrap around to the first visible element
 
 :ref:`TreeItem<class_TreeItem>` **get_parent**\ (\ ) |const| :ref:`🔗<class_TreeItem_method_get_parent>`
 
-Returns the parent TreeItem or a null object if there is none.
+Returns the parent TreeItem or a ``null`` object if there is none.
 
 .. rst-class:: classref-item-separator
 
@@ -892,7 +892,7 @@ Returns the parent TreeItem or a null object if there is none.
 
 :ref:`TreeItem<class_TreeItem>` **get_prev**\ (\ ) :ref:`🔗<class_TreeItem_method_get_prev>`
 
-Returns the previous sibling TreeItem in the tree or a null object if there is none.
+Returns the previous sibling TreeItem in the tree or a ``null`` object if there is none.
 
 .. rst-class:: classref-item-separator
 

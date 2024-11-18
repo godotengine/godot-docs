@@ -348,10 +348,6 @@ Emitted when the **Window**'s DPI changes as a result of OS-level changes (e.g. 
 
 Emitted when files are dragged from the OS file manager and dropped in the game window. The argument is a list of file paths.
 
-Note that this method only works with native windows, i.e. the main window and **Window**-derived nodes when :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>` is disabled in the main viewport.
-
-Example usage:
-
 ::
 
     func _ready():
@@ -359,6 +355,8 @@ Example usage:
     
     func on_files_dropped(files):
         print(files)
+
+\ **Note:** This signal only works with native windows, i.e. the main window and **Window**-derived nodes when :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>` is disabled in the main viewport.
 
 .. rst-class:: classref-item-separator
 

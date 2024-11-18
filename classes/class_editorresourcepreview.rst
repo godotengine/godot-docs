@@ -101,7 +101,7 @@ Check if the resource changed, if so, it will be invalidated and the correspondi
 
 Queue the ``resource`` being edited for preview. Once the preview is ready, the ``receiver``'s ``receiver_func`` will be called. The ``receiver_func`` must take the following four arguments: :ref:`String<class_String>` path, :ref:`Texture2D<class_Texture2D>` preview, :ref:`Texture2D<class_Texture2D>` thumbnail_preview, :ref:`Variant<class_Variant>` userdata. ``userdata`` can be anything, and will be returned when ``receiver_func`` is called.
 
-\ **Note:** If it was not possible to create the preview the ``receiver_func`` will still be called, but the preview will be null.
+\ **Note:** If it was not possible to create the preview the ``receiver_func`` will still be called, but the preview will be ``null``.
 
 .. rst-class:: classref-item-separator
 
@@ -115,7 +115,7 @@ Queue the ``resource`` being edited for preview. Once the preview is ready, the 
 
 Queue a resource file located at ``path`` for preview. Once the preview is ready, the ``receiver``'s ``receiver_func`` will be called. The ``receiver_func`` must take the following four arguments: :ref:`String<class_String>` path, :ref:`Texture2D<class_Texture2D>` preview, :ref:`Texture2D<class_Texture2D>` thumbnail_preview, :ref:`Variant<class_Variant>` userdata. ``userdata`` can be anything, and will be returned when ``receiver_func`` is called.
 
-\ **Note:** If it was not possible to create the preview the ``receiver_func`` will still be called, but the preview will be null.
+\ **Note:** If it was not possible to create the preview the ``receiver_func`` will still be called, but the preview will be ``null``.
 
 .. rst-class:: classref-item-separator
 

@@ -38,7 +38,7 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`int<class_int>`                             | :ref:`inbound_buffer_size<class_WebSocketMultiplayerPeer_property_inbound_buffer_size>`   | ``65535``               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
-   | :ref:`int<class_int>`                             | :ref:`max_queued_packets<class_WebSocketMultiplayerPeer_property_max_queued_packets>`     | ``2048``                |
+   | :ref:`int<class_int>`                             | :ref:`max_queued_packets<class_WebSocketMultiplayerPeer_property_max_queued_packets>`     | ``4096``                |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`int<class_int>`                             | :ref:`outbound_buffer_size<class_WebSocketMultiplayerPeer_property_outbound_buffer_size>` | ``65535``               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
@@ -131,7 +131,7 @@ The inbound buffer size for connected peers. See :ref:`WebSocketPeer.inbound_buf
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_queued_packets** = ``2048`` :ref:`🔗<class_WebSocketMultiplayerPeer_property_max_queued_packets>`
+:ref:`int<class_int>` **max_queued_packets** = ``4096`` :ref:`🔗<class_WebSocketMultiplayerPeer_property_max_queued_packets>`
 
 .. rst-class:: classref-property-setget
 

@@ -70,7 +70,7 @@ Returns the :ref:`RID<class_RID>` of the camera attributes object in the :ref:`R
 
 :ref:`RID<class_RID>` **get_environment**\ (\ ) |const| :ref:`🔗<class_RenderData_method_get_environment>`
 
-Returns the :ref:`RID<class_RID>` of the environments object in the :ref:`RenderingServer<class_RenderingServer>` being used to render this viewport.
+Returns the :ref:`RID<class_RID>` of the environment object in the :ref:`RenderingServer<class_RenderingServer>` being used to render this viewport.
 
 .. rst-class:: classref-item-separator
 

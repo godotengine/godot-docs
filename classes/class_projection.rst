@@ -286,7 +286,9 @@ Constructor Descriptions
 
 :ref:`Projection<class_Projection>` **Projection**\ (\ ) :ref:`🔗<class_Projection_constructor_Projection>`
 
-Constructs a default-initialized **Projection** set to :ref:`IDENTITY<class_Projection_constant_IDENTITY>`.
+Constructs a default-initialized **Projection** identical to :ref:`IDENTITY<class_Projection_constant_IDENTITY>`.
+
+\ **Note:** In C#, this constructs a **Projection** identical to :ref:`ZERO<class_Projection_constant_ZERO>`.
 
 .. rst-class:: classref-item-separator
 
