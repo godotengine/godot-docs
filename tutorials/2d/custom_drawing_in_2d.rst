@@ -613,7 +613,7 @@ Drawing text
 ^^^^^^^^^^^^
 
 While using the :ref:`Label <class_Label>` Node is the most common way to add
-text to your application, the low level `_draw` function includes functionality
+text to your application, the low-level `_draw` function includes functionality
 to add text to your custom Node drawing. We will use it to add the name "GODOT"
 under the robot head.
 
@@ -844,7 +844,7 @@ It will look somewhat like this when run:
 
 Please note that ``_mouth_width`` is a user defined property like any other
 and it or any other used as a drawing argument can be animated using more
-standard and high level methods such as a :ref:`Tween<class_Tween>` or an
+standard and high-level methods such as a :ref:`Tween<class_Tween>` or an
 :ref:`AnimationPlayer<class_AnimationPlayer>` Node. The only difference is
 that a ``queue_redraw()`` call is needed to apply those changes so they get
 shown on screen.

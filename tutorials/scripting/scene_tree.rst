@@ -32,11 +32,11 @@ level and when making games in Godot, writing your own MainLoop seldom makes sen
 SceneTree
 ---------
 
-One of the ways to explain how Godot works is that it's a high level
-game engine over a low level middleware.
+One of the ways to explain how Godot works is that it's a high-level
+game engine over a low-level middleware.
 
 The scene system is the game engine, while the :ref:`OS <class_OS>`
-and servers are the low level API.
+and servers are the low-level API.
 
 The scene system provides its own main loop to OS,
 :ref:`SceneTree <class_SceneTree>`.

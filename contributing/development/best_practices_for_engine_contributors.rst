@@ -179,7 +179,7 @@ they'll need to do* in the future?
 .. image:: img/best_practices6.png
 
 The answer to this question is that, to ensure users still can do what they want
-to do, we need to give them access to a *low level API* that they can use to
+to do, we need to give them access to a *low-level API* that they can use to
 achieve what they want, even if it's more work for them because it means
 reimplementing some logic that already exists.
 
