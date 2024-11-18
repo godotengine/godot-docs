@@ -114,7 +114,7 @@ describe an issue or pull request.
 -  *3D*: relates to 3D-specific issues. Should be coupled with one of the labels below, and should not be coupled with *2D*.
 -  *Animation*: relates to the Animation system, editors and importers.
 -  *Assetlib*: relates to issues with the asset library.
--  *Audio*: relates to the audio features (low and high level).
+-  *Audio*: relates to the audio features (low- and high-level).
 -  *Buildsystem*: relates to building issues, either linked to the SCons
    buildsystem or to compiler peculiarities.
 -  *Codestyle*: relates to the programming style used within the codebase.

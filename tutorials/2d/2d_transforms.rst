@@ -8,7 +8,7 @@ Introduction
 
 This is an overview of the 2D transforms going on for nodes from the
 moment they draw their content locally to the time they are drawn onto
-the screen. This overview discusses very low level details of the engine.
+the screen. This overview discusses very low-level details of the engine.
 
 The goal of this tutorial is to teach a way for feeding input events to the
 Input with a position in the correct coordinate system.
