@@ -211,6 +211,9 @@ tonemapping (as opposed to :abbr:`DTM (Dynamic Tone Mapping)`), then
 It is also strongly recommended to use Windows 11 instead of Windows 10 when using HDR.
 The end result will still likely be inferior to disabling HDR on the display, though.
 
+.. UPDATE: Planned feature. When HDR output is implemented, remove or update
+.. this paragraph.
+
 Support for HDR *output* is planned in a future release.
 
 The editor/project freezes or displays glitched visuals after resuming the PC from suspend

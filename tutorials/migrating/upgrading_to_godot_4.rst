@@ -63,6 +63,10 @@ Godot 3.x for the following reasons:
 Caveats of upgrading
 ^^^^^^^^^^^^^^^^^^^^
 
+.. UPDATE: Planned feature. There are several planned or missing features that
+.. may be added back in the future. Check this section for accuracy and update
+.. it if things have changed!
+
 **Since Godot 4 is a complete rewrite in many aspects, some features have
 unfortunately been lost in the process.** Some of these features may be restored
 in future Godot releases:

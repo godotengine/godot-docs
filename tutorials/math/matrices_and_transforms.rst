@@ -607,6 +607,9 @@ this project which has colored lines and cubes to help visualize the
 :ref:`class_Basis` vectors and the origin in both 2D and 3D:
 https://github.com/godotengine/godot-demo-projects/tree/master/misc/matrix_transform
 
+.. UPDATE: May change in future. When you can edit a Node2D's transform matrix
+.. directly, remove or update this note.
+
 .. note:: You cannot edit Node2D's transform matrix directly in Godot 4.0's
           inspector. This may be changed in a future release of Godot.
 

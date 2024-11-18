@@ -235,6 +235,9 @@ player to click, tap or press a key/button to enable audio, for instance when di
 Networking
 ~~~~~~~~~~
 
+.. UPDATE: Not implemented. When low level networking is implemented, remove
+.. this paragraph.
+
 Low level networking is not implemented due to lacking support in browsers.
 
 Currently, only :ref:`HTTP client <doc_http_client_class>`,

@@ -261,6 +261,9 @@ can considerably increase rendering performance.
 Keep in mind that when unshaded rendering is enabled, lights will not affect the
 material at all.
 
+.. UPDATE: Not implemented. When per-vertex shading is implemented, remove this
+.. note and remove this comment.
+
 .. note::
 
     **Per-Vertex** shading is listed as an option in the shading mode property.

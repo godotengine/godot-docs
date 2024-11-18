@@ -155,7 +155,7 @@ Pay attention to the additional vertex processing required when using:
 -  Skinning (skeletal animation)
 -  Morphs (shape keys)
 
-.. Not implemented in Godot 4.x yet. Uncomment when this is implemented.
+.. UPDATE: Not implemented in Godot 4.x yet. Uncomment when this is implemented.
    -  Vertex-lit objects (common on mobile)
 
 Pixel/fragment shaders and fill rate

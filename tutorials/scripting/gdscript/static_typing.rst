@@ -59,6 +59,8 @@ methods, properties, constants, etc. from the value:
     **Text Editor > Completion > Add Type Hints** editor setting. Also consider
     enabling `some warnings <Warning system_>`_ that are disabled by default.
 
+.. UPDATE: Planned feature. If JIT/AOT are implemented, update this paragraph.
+
 Also, typed GDScript improves performance by using optimized opcodes when operand/argument
 types are known at compile time. More GDScript optimizations are planned in the future,
 such as JIT/AOT compilation.
@@ -481,6 +483,8 @@ finally declare a statically typed variable with the object::
 Cases where you can't specify types
 -----------------------------------
 
+.. UPDATE: Not supported. If nested types are supported, update this section.
+
 To wrap up this introduction, let's mention cases where you can't use type hints.
 This will trigger a **syntax error**.
 
@@ -497,12 +501,11 @@ This will trigger a **syntax error**.
 
         var teams: Array[Array[Character]] = []
 
-3. Typed dictionaries are not currently supported::
-
-        var map: Dictionary[Vector2i, Item] = {}
-
 Summary
 -------
+
+.. UPDATE: Planned feature. If more optimizations (possibly JIT/AOT?) are
+.. implemented, update this paragraph.
 
 Typed GDScript is a powerful tool. It helps you write more structured code,
 avoid common errors, and create scalable and reliable systems. Static types
