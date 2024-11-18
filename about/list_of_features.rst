@@ -653,7 +653,7 @@ XR support (AR and VR)
 
    - Including support for popular desktop headsets like the Valve Index, WMR headsets, and Quest over Link.
 
-- Support for :ref:`Android based headsets <doc_deploying_to_android>` using OpenXR through a plugin.
+- Support for :ref:`Android-based headsets <doc_deploying_to_android>` using OpenXR through a plugin.
 
   - Including support for popular stand alone headsets like the Meta Quest 1/2/3 and Pro, Pico 4, Magic Leap 2, and Lynx R1.
 

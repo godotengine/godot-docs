@@ -141,7 +141,7 @@ select every scene or resource you want to export.
     ``.git`` from being included in the exported PCK file.
 
 Below the list of resources are two filters that can be setup. The first allows
-non resource files such as ``.txt``, ``.json`` and ``.csv`` to be exported with
+non-resource files such as ``.txt``, ``.json`` and ``.csv`` to be exported with
 the project. The second filter can be used to exclude every file of a certain
 type without manually deselecting every one. For example, ``.png`` files.
 
