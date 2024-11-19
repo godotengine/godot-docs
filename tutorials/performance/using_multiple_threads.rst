@@ -498,4 +498,3 @@ ready to be processed:
         mutex->unlock();
         return counter_value;
     }
-
