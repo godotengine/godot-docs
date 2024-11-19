@@ -223,7 +223,7 @@ The **Break** button causes a break in the script like a breakpoint would.
 a function if possible. Otherwise, it does the same thing as **Step Over**.
 
 The **Debug with External Editor** option lets you debug your game with an external editor.
-This option is also accessible in **Editor Settings > Debugger**.
+You can set a shortcut for it in **Editor Settings > Shortcuts > Debugger**.
 
 When the debugger breaks on a breakpoint, a green triangle arrow is visible in
 the script editor's gutter. This arrow indicates the line of code the debugger
