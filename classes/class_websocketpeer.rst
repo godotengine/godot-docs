@@ -67,9 +67,11 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`handshake_headers<class_WebSocketPeer_property_handshake_headers>`       | ``PackedStringArray()`` |
    +---------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                         | :ref:`heartbeat_interval<class_WebSocketPeer_property_heartbeat_interval>`     | ``0.0``                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
    | :ref:`int<class_int>`                             | :ref:`inbound_buffer_size<class_WebSocketPeer_property_inbound_buffer_size>`   | ``65535``               |
    +---------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-   | :ref:`int<class_int>`                             | :ref:`max_queued_packets<class_WebSocketPeer_property_max_queued_packets>`     | ``2048``                |
+   | :ref:`int<class_int>`                             | :ref:`max_queued_packets<class_WebSocketPeer_property_max_queued_packets>`     | ``4096``                |
    +---------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
    | :ref:`int<class_int>`                             | :ref:`outbound_buffer_size<class_WebSocketPeer_property_outbound_buffer_size>` | ``65535``               |
    +---------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
@@ -221,6 +223,25 @@ The extra HTTP headers to be sent during the WebSocket handshake.
 
 ----
 
+.. _class_WebSocketPeer_property_heartbeat_interval:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **heartbeat_interval** = ``0.0`` :ref:`🔗<class_WebSocketPeer_property_heartbeat_interval>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_heartbeat_interval**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_heartbeat_interval**\ (\ )
+
+The interval (in seconds) at which the peer will automatically send WebSocket "ping" control frames. When set to ``0``, no "ping" control frames will be sent.
+
+\ **Note:** Has no effect in Web exports due to browser restrictions.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_WebSocketPeer_property_inbound_buffer_size:
 
 .. rst-class:: classref-property
@@ -242,7 +263,7 @@ The size of the input buffer in bytes (roughly the maximum amount of memory that
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_queued_packets** = ``2048`` :ref:`🔗<class_WebSocketPeer_property_max_queued_packets>`
+:ref:`int<class_int>` **max_queued_packets** = ``4096`` :ref:`🔗<class_WebSocketPeer_property_max_queued_packets>`
 
 .. rst-class:: classref-property-setget
 

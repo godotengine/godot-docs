@@ -566,7 +566,7 @@ clicked URLs using the user's default web browser::
     # the function below using the signal connection dialog.
     func _richtextlabel_on_meta_clicked(meta):
         # `meta` is not guaranteed to be a String, so convert it to a String
-        # to avoid script errors at run-time.
+        # to avoid script errors at runtime.
         OS.shell_open(str(meta))
 
 For more advanced use cases, it's also possible to store JSON in an ``[url]``
@@ -633,7 +633,7 @@ Image options
 
   If set to ``true``, and the image is smaller than the size specified by ``width`` and ``height``, the image padding is added to match the size instead of upscaling.
 
-- **tootip**
+- **tooltip**
 
   +-----------+--------------------------------------------+
   | `Values`  | String                                     |
@@ -648,7 +648,7 @@ Image options
 Image and table vertical alignment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When a vertical alignment value is provided with the ``[img]`` or ``[table]``` tag
+When a vertical alignment value is provided with the ``[img]`` or ``[table]`` tag
 the image/table will try to align itself against the surrounding text. Alignment is
 performed using a vertical point of the image and a vertical point of the text.
 There are 3 possible points on the image (``top``, ``center``, and ``bottom``) and 4
@@ -715,7 +715,7 @@ Font options
 
   Extra spacing for each glyph.
 
-- **glyph_spacing**, **sp**
+- **space_spacing**, **sp**
 
   +-----------+--------------------------------------------+
   | `Values`  | Number in pixels.                          |
@@ -812,10 +812,16 @@ Font options
 Named colors
 ~~~~~~~~~~~~
 
-For tags that allow specifying a color by name you can use names of the constants from
+For tags that allow specifying a color by name, you can use names of the constants from
 the built-in :ref:`class_Color` class. Named classes can be specified in a number of
 styles using different casings: ``DARK_RED``, ``DarkRed``, and ``darkred`` will give
 the same exact result.
+
+See this image for a list of color constants:
+
+.. image:: /img/color_constants.png
+
+`View at full size <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__
 
 .. _doc_bbcode_in_richtextlabel_hex_colors:
 

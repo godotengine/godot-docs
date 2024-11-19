@@ -19,7 +19,7 @@ Audio stream that can playback music interactively, combining clips and a transi
 Description
 -----------
 
-This is an audio stream that can playback music interactively, combining clips and a transition table. Clips must be added first, and the transition rules via the :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`. Additionally, this stream export a property parameter to control the playback via :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`, or :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`.
+This is an audio stream that can playback music interactively, combining clips and a transition table. Clips must be added first, and then the transition rules via the :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`. Additionally, this stream exports a property parameter to control the playback via :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`AudioStreamPlayer2D<class_AudioStreamPlayer2D>`, or :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`.
 
 The way this is used is by filling a number of clips, then configuring the transition table. From there, clips are selected for playback and the music will smoothly go from the current to the new one while using the corresponding transition rule defined in the transition table.
 
@@ -471,7 +471,7 @@ Return the destination time position for a transition (see :ref:`add_transition<
 
 :ref:`bool<class_bool>` **has_transition**\ (\ from_clip\: :ref:`int<class_int>`, to_clip\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioStreamInteractive_method_has_transition>`
 
-Return true if a given transition exists (was added via :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
+Returns ``true`` if a given transition exists (was added via :ref:`add_transition<class_AudioStreamInteractive_method_add_transition>`).
 
 .. rst-class:: classref-item-separator
 

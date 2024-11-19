@@ -223,7 +223,7 @@ The **Break** button causes a break in the script like a breakpoint would.
 a function if possible. Otherwise, it does the same thing as **Step Over**.
 
 The **Debug with External Editor** option lets you debug your game with an external editor.
-This option is also accessible in **Editor Settings > Debugger**.
+You can set a shortcut for it in **Editor Settings > Shortcuts > Debugger**.
 
 When the debugger breaks on a breakpoint, a green triangle arrow is visible in
 the script editor's gutter. This arrow indicates the line of code the debugger
@@ -232,8 +232,8 @@ broke on.
 Debug project settings
 ----------------------
 
-In the project settings, there is a **Debug** category with three subcategories
-which control different things.
+In the project settings, there is a **Debug** category with subcategories which
+control different things. Enable **Advanced Settings** to change these settings.
 
 Settings
 ++++++++
@@ -242,11 +242,28 @@ These are some general settings such as printing the current FPS
 to the **Output** panel, the maximum amount of functions when profiling
 and others.
 
+File Logging
+++++++++++++
+
+These settings allow you to log console output and error messages to files.
+
 GDScript
 ++++++++
 
 These settings allow you to toggle specific GDScript warnings, such as for
+unused variables. You can also turn off warnings completely. See 
+:ref:`doc_gdscript_warning_system` for more information.
+
+Shader Language
++++++++++++++++
+
+These settings allow you to toggle specific shader warnings, such as for
 unused variables. You can also turn off warnings completely.
+
+Canvas Items
+++++++++++++
+
+These settings are for canvas item redraw debugging.
 
 Shapes
 ++++++

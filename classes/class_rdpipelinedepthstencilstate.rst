@@ -144,7 +144,7 @@ The operation to perform on the stencil buffer for back pixels that pass the ste
 - |void| **set_back_op_fail**\ (\ value\: :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>`\ )
 - :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_back_op_fail**\ (\ )
 
-The operation to perform on the stencil buffer for back pixels that fail the stencil test
+The operation to perform on the stencil buffer for back pixels that fail the stencil test.
 
 .. rst-class:: classref-item-separator
 
@@ -229,7 +229,7 @@ The method used for comparing the previous and current depth values.
 - |void| **set_depth_range_max**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_depth_range_max**\ (\ )
 
-The maximum depth that returns true for :ref:`enable_depth_range<class_RDPipelineDepthStencilState_property_enable_depth_range>`.
+The maximum depth that returns ``true`` for :ref:`enable_depth_range<class_RDPipelineDepthStencilState_property_enable_depth_range>`.
 
 .. rst-class:: classref-item-separator
 
@@ -246,7 +246,7 @@ The maximum depth that returns true for :ref:`enable_depth_range<class_RDPipelin
 - |void| **set_depth_range_min**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_depth_range_min**\ (\ )
 
-The minimum depth that returns true for :ref:`enable_depth_range<class_RDPipelineDepthStencilState_property_enable_depth_range>`.
+The minimum depth that returns ``true`` for :ref:`enable_depth_range<class_RDPipelineDepthStencilState_property_enable_depth_range>`.
 
 .. rst-class:: classref-item-separator
 
@@ -297,7 +297,7 @@ If ``true``, enables depth testing which allows objects to be automatically occl
 - |void| **set_enable_depth_write**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_enable_depth_write**\ (\ )
 
-If ``true``, writes to the depth buffer whenever the depth test returns true. Only works when enable_depth_test is also true.
+If ``true``, writes to the depth buffer whenever the depth test returns ``true``. Only works when enable_depth_test is also ``true``.
 
 .. rst-class:: classref-item-separator
 

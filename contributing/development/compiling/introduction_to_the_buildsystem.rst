@@ -321,15 +321,14 @@ The default ``custom.py`` file can be created at the root of the Godot Engine
 source to initialize any SCons build options passed via the command line:
 
 .. code-block:: python
-
-    # custom.py
+    :caption: custom.py
 
     optimize = "size"
     module_mono_enabled = "yes"
     use_llvm = "yes"
     extra_suffix = "game_title"
 
-You can also disable some of the builtin modules before compiling, saving some
+You can also disable some of the built-in modules before compiling, saving some
 time it takes to build the engine. See :ref:`doc_optimizing_for_size` page for more details.
 
 .. seealso::
@@ -352,8 +351,7 @@ line option, both overriding the default build configuration:
 It's also possible to override the options conditionally:
 
 .. code-block:: python
-
-    # custom.py
+    :caption: custom.py
 
     import version
 

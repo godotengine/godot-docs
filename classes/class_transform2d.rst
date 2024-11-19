@@ -181,7 +181,7 @@ The identity **Transform2D**. A transform with no translation, no rotation, and 
 
 - The :ref:`x<class_Transform2D_property_x>` points right (:ref:`Vector2.RIGHT<class_Vector2_constant_RIGHT>`);
 
-- The :ref:`y<class_Transform2D_property_y>` points up (:ref:`Vector2.UP<class_Vector2_constant_UP>`).
+- The :ref:`y<class_Transform2D_property_y>` points down (:ref:`Vector2.DOWN<class_Vector2_constant_DOWN>`).
 
 ::
 
@@ -259,7 +259,7 @@ On the identity transform, this vector points right (:ref:`Vector2.RIGHT<class_V
 
 The transform basis's Y axis, and the column ``1`` of the matrix. Combined with :ref:`x<class_Transform2D_property_x>`, this represents the transform's rotation, scale, and skew.
 
-On the identity transform, this vector points up (:ref:`Vector2.UP<class_Vector2_constant_UP>`).
+On the identity transform, this vector points down (:ref:`Vector2.DOWN<class_Vector2_constant_DOWN>`).
 
 .. rst-class:: classref-section-separator
 
@@ -277,6 +277,8 @@ Constructor Descriptions
 :ref:`Transform2D<class_Transform2D>` **Transform2D**\ (\ ) :ref:`🔗<class_Transform2D_constructor_Transform2D>`
 
 Constructs a **Transform2D** identical to :ref:`IDENTITY<class_Transform2D_constant_IDENTITY>`.
+
+\ **Note:** In C#, this constructs a **Transform2D** with all of its components set to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
 
 .. rst-class:: classref-item-separator
 

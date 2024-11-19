@@ -30,7 +30,7 @@ functionality.
 
 Before we add any children to the ``Player`` node, we want to make sure we don't
 accidentally move or resize them by clicking on them. Select the node and click
-the icon to the right of the lock. Its tooltip says "Groups the selected node 
+the icon to the right of the lock. Its tooltip says "Groups the selected node
 with its children. This causes the parent to be selected when any child
 node is clicked in 2D and 3D view."
 
@@ -73,7 +73,7 @@ On the left is a list of animations. Click the "default" one and rename it to
 "walk". Then click the "Add Animation" button to create a second animation named
 "up". Find the player images in the "FileSystem" tab - they're in the ``art``
 folder you unzipped earlier. Drag the two images for each animation, named
-``playerGrey_up[1/2]`` and ``playerGrey_walk[1/2]``, into the "Animation Frames"
+``playerGrey_walk[1/2]`` and ``playerGrey_walk[2/2]``, into the "Animation Frames"
 side of the panel for the corresponding animation:
 
 .. image:: img/spriteframes_panel2.webp

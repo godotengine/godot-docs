@@ -169,6 +169,10 @@ Methods
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`World3D<class_World3D>`                                                                 | :ref:`find_world_3d<class_Viewport_method_find_world_3d>`\ (\ ) |const|                                                                                                                                                                                               |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioListener2D<class_AudioListener2D>`                                                 | :ref:`get_audio_listener_2d<class_Viewport_method_get_audio_listener_2d>`\ (\ ) |const|                                                                                                                                                                               |
+   +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioListener3D<class_AudioListener3D>`                                                 | :ref:`get_audio_listener_3d<class_Viewport_method_get_audio_listener_3d>`\ (\ ) |const|                                                                                                                                                                               |
+   +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Camera2D<class_Camera2D>`                                                               | :ref:`get_camera_2d<class_Viewport_method_get_camera_2d>`\ (\ ) |const|                                                                                                                                                                                               |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Camera3D<class_Camera3D>`                                                               | :ref:`get_camera_3d<class_Viewport_method_get_camera_3d>`\ (\ ) |const|                                                                                                                                                                                               |
@@ -192,6 +196,8 @@ Methods
    | :ref:`RID<class_RID>`                                                                         | :ref:`get_viewport_rid<class_Viewport_method_get_viewport_rid>`\ (\ ) |const|                                                                                                                                                                                         |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Rect2<class_Rect2>`                                                                     | :ref:`get_visible_rect<class_Viewport_method_get_visible_rect>`\ (\ ) |const|                                                                                                                                                                                         |
+   +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                        | :ref:`gui_cancel_drag<class_Viewport_method_gui_cancel_drag>`\ (\ )                                                                                                                                                                                                   |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                                                 | :ref:`gui_get_drag_data<class_Viewport_method_gui_get_drag_data>`\ (\ ) |const|                                                                                                                                                                                       |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1331,7 +1337,9 @@ To control this property on the root viewport, set the :ref:`ProjectSettings.ren
 - |void| **set_msaa_2d**\ (\ value\: :ref:`MSAA<enum_Viewport_MSAA>`\ )
 - :ref:`MSAA<enum_Viewport_MSAA>` **get_msaa_2d**\ (\ )
 
-The multisample anti-aliasing mode for 2D/Canvas rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of 2 or 4 is best unless targeting very high-end systems. This has no effect on shader-induced aliasing or texture aliasing.
+The multisample antialiasing mode for 2D/Canvas rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of :ref:`MSAA_2X<class_Viewport_constant_MSAA_2X>` or :ref:`MSAA_4X<class_Viewport_constant_MSAA_4X>` is best unless targeting very high-end systems. This has no effect on shader-induced aliasing or texture aliasing.
+
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_2d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_2d>` and :ref:`RenderingServer.viewport_set_msaa_2d<class_RenderingServer_method_viewport_set_msaa_2d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1348,7 +1356,9 @@ The multisample anti-aliasing mode for 2D/Canvas rendering. A higher number resu
 - |void| **set_msaa_3d**\ (\ value\: :ref:`MSAA<enum_Viewport_MSAA>`\ )
 - :ref:`MSAA<enum_Viewport_MSAA>` **get_msaa_3d**\ (\ )
 
-The multisample anti-aliasing mode for 3D rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of 2 or 4 is best unless targeting very high-end systems. See also bilinear scaling 3d :ref:`scaling_3d_mode<class_Viewport_property_scaling_3d_mode>` for supersampling, which provides higher quality but is much more expensive. This has no effect on shader-induced aliasing or texture aliasing.
+The multisample antialiasing mode for 3D rendering. A higher number results in smoother edges at the cost of significantly worse performance. A value of :ref:`MSAA_2X<class_Viewport_constant_MSAA_2X>` or :ref:`MSAA_4X<class_Viewport_constant_MSAA_4X>` is best unless targeting very high-end systems. See also bilinear scaling 3D :ref:`scaling_3d_mode<class_Viewport_property_scaling_3d_mode>` for supersampling, which provides higher quality but is much more expensive. This has no effect on shader-induced aliasing or texture aliasing.
+
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/msaa_3d<class_ProjectSettings_property_rendering/anti_aliasing/quality/msaa_3d>` and :ref:`RenderingServer.viewport_set_msaa_3d<class_RenderingServer_method_viewport_set_msaa_3d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1547,7 +1557,7 @@ The shadow atlas' resolution (used for omni and spot lights). The value is round
 - |void| **set_scaling_3d_mode**\ (\ value\: :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>`\ )
 - :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **get_scaling_3d_mode**\ (\ )
 
-Sets scaling 3d mode. Bilinear scaling renders at different resolution to either undersample or supersample the viewport. FidelityFX Super Resolution 1.0, abbreviated to FSR, is an upscaling technology that produces high quality images at fast framerates by using a spatially aware upscaling algorithm. FSR is slightly more expensive than bilinear, but it produces significantly higher image quality. FSR should be used where possible.
+Sets scaling 3D mode. Bilinear scaling renders at different resolution to either undersample or supersample the viewport. FidelityFX Super Resolution 1.0, abbreviated to FSR, is an upscaling technology that produces high quality images at fast framerates by using a spatially aware upscaling algorithm. FSR is slightly more expensive than bilinear, but it produces significantly higher image quality. FSR should be used where possible.
 
 To control this property on the root viewport, set the :ref:`ProjectSettings.rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` project setting.
 
@@ -1588,6 +1598,8 @@ To control this property on the root viewport, set the :ref:`ProjectSettings.ren
 - :ref:`ScreenSpaceAA<enum_Viewport_ScreenSpaceAA>` **get_screen_space_aa**\ (\ )
 
 Sets the screen-space antialiasing method used. Screen-space antialiasing works by selectively blurring edges in a post-process shader. It differs from MSAA which takes multiple coverage samples while rendering objects. Screen-space AA methods are typically faster than MSAA and will smooth out specular aliasing, but tend to make scenes appear blurry.
+
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/screen_space_aa<class_ProjectSettings_property_rendering/anti_aliasing/quality/screen_space_aa>` and :ref:`RenderingServer.viewport_set_screen_space_aa<class_RenderingServer_method_viewport_set_screen_space_aa>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1714,9 +1726,11 @@ If ``true``, the viewport should render its background as transparent.
 - |void| **set_use_debanding**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_debanding**\ (\ )
 
-If ``true``, uses a fast post-processing filter to make banding significantly less visible in 3D. 2D rendering is *not* affected by debanding unless the :ref:`Environment.background_mode<class_Environment_property_background_mode>` is :ref:`Environment.BG_CANVAS<class_Environment_constant_BG_CANVAS>`. See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`.
+If ``true``, uses a fast post-processing filter to make banding significantly less visible in 3D. 2D rendering is *not* affected by debanding unless the :ref:`Environment.background_mode<class_Environment_property_background_mode>` is :ref:`Environment.BG_CANVAS<class_Environment_constant_BG_CANVAS>`.
 
 In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
+
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>` and :ref:`RenderingServer.viewport_set_use_debanding<class_RenderingServer_method_viewport_set_use_debanding>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1773,9 +1787,11 @@ If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be u
 - |void| **set_use_taa**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_taa**\ (\ )
 
-Enables Temporal Anti-Aliasing for this viewport. TAA works by jittering the camera and accumulating the images of the last rendered frames, motion vector rendering is used to account for camera and object motion.
+Enables temporal antialiasing for this viewport. TAA works by jittering the camera and accumulating the images of the last rendered frames, motion vector rendering is used to account for camera and object motion.
 
 \ **Note:** The implementation is not complete yet, some visual instances such as particles and skinned meshes may show artifacts.
+
+See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>` and :ref:`RenderingServer.viewport_set_use_taa<class_RenderingServer_method_viewport_set_use_taa>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1927,13 +1943,37 @@ Returns the first valid :ref:`World3D<class_World3D>` for this viewport, searchi
 
 ----
 
+.. _class_Viewport_method_get_audio_listener_2d:
+
+.. rst-class:: classref-method
+
+:ref:`AudioListener2D<class_AudioListener2D>` **get_audio_listener_2d**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_audio_listener_2d>`
+
+Returns the currently active 2D audio listener. Returns ``null`` if there are no active 2D audio listeners, in which case the active 2D camera will be treated as listener.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_method_get_audio_listener_3d:
+
+.. rst-class:: classref-method
+
+:ref:`AudioListener3D<class_AudioListener3D>` **get_audio_listener_3d**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_audio_listener_3d>`
+
+Returns the currently active 3D audio listener. Returns ``null`` if there are no active 3D audio listeners, in which case the active 3D camera will be treated as listener.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Viewport_method_get_camera_2d:
 
 .. rst-class:: classref-method
 
 :ref:`Camera2D<class_Camera2D>` **get_camera_2d**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_camera_2d>`
 
-Returns the currently active 2D camera. Returns null if there are no active cameras.
+Returns the currently active 2D camera. Returns ``null`` if there are no active cameras.
 
 .. rst-class:: classref-item-separator
 
@@ -2083,6 +2123,18 @@ Returns the visible rectangle in global screen coordinates.
 
 ----
 
+.. _class_Viewport_method_gui_cancel_drag:
+
+.. rst-class:: classref-method
+
+|void| **gui_cancel_drag**\ (\ ) :ref:`🔗<class_Viewport_method_gui_cancel_drag>`
+
+Cancels the drag operation that was previously started through :ref:`Control._get_drag_data<class_Control_private_method__get_drag_data>` or forced with :ref:`Control.force_drag<class_Control_method_force_drag>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Viewport_method_gui_get_drag_data:
 
 .. rst-class:: classref-method
@@ -2101,7 +2153,7 @@ Returns the drag data from the GUI, that was previously returned by :ref:`Contro
 
 :ref:`Control<class_Control>` **gui_get_focus_owner**\ (\ ) |const| :ref:`🔗<class_Viewport_method_gui_get_focus_owner>`
 
-Returns the :ref:`Control<class_Control>` having the focus within this viewport. If no :ref:`Control<class_Control>` has the focus, returns null.
+Returns the currently focused :ref:`Control<class_Control>` within this viewport. If no :ref:`Control<class_Control>` is focused, returns ``null``.
 
 .. rst-class:: classref-item-separator
 
@@ -2113,7 +2165,7 @@ Returns the :ref:`Control<class_Control>` having the focus within this viewport.
 
 :ref:`Control<class_Control>` **gui_get_hovered_control**\ (\ ) |const| :ref:`🔗<class_Viewport_method_gui_get_hovered_control>`
 
-Returns the :ref:`Control<class_Control>` that the mouse is currently hovering over in this viewport. If no :ref:`Control<class_Control>` has the cursor, returns null.
+Returns the :ref:`Control<class_Control>` that the mouse is currently hovering over in this viewport. If no :ref:`Control<class_Control>` has the cursor, returns ``null``.
 
 Typically the leaf :ref:`Control<class_Control>` node or deepest level of the subtree which claims hover. This is very useful when used together with :ref:`Node.is_ancestor_of<class_Node_method_is_ancestor_of>` to find if the mouse is within a control tree.
 
@@ -2139,7 +2191,7 @@ Returns ``true`` if the drag operation is successful.
 
 :ref:`bool<class_bool>` **gui_is_dragging**\ (\ ) |const| :ref:`🔗<class_Viewport_method_gui_is_dragging>`
 
-Returns ``true`` if the viewport is currently performing a drag operation.
+Returns ``true`` if a drag operation is currently ongoing and where the drop action could happen in this viewport.
 
 Alternative to :ref:`Node.NOTIFICATION_DRAG_BEGIN<class_Node_constant_NOTIFICATION_DRAG_BEGIN>` and :ref:`Node.NOTIFICATION_DRAG_END<class_Node_constant_NOTIFICATION_DRAG_END>` when you prefer polling the value.
 

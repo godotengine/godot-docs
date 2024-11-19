@@ -54,6 +54,10 @@ Methods
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_on_main_swapchains_created<class_OpenXRExtensionWrapperExtension_private_method__on_main_swapchains_created>`\ (\ ) |virtual|                                                                                                                                                             |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`_on_post_draw_viewport<class_OpenXRExtensionWrapperExtension_private_method__on_post_draw_viewport>`\ (\ viewport\: :ref:`RID<class_RID>`\ ) |virtual|                                                                                                                                     |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`_on_pre_draw_viewport<class_OpenXRExtensionWrapperExtension_private_method__on_pre_draw_viewport>`\ (\ viewport\: :ref:`RID<class_RID>`\ ) |virtual|                                                                                                                                       |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_on_pre_render<class_OpenXRExtensionWrapperExtension_private_method__on_pre_render>`\ (\ ) |virtual|                                                                                                                                                                                       |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_on_process<class_OpenXRExtensionWrapperExtension_private_method__on_process>`\ (\ ) |virtual|                                                                                                                                                                                             |
@@ -81,6 +85,8 @@ Methods
    | |void|                                                           | :ref:`_on_state_visible<class_OpenXRExtensionWrapperExtension_private_method__on_state_visible>`\ (\ ) |virtual|                                                                                                                                                                                 |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`_on_viewport_composition_layer_destroyed<class_OpenXRExtensionWrapperExtension_private_method__on_viewport_composition_layer_destroyed>`\ (\ layer\: ``const void*``\ ) |virtual|                                                                                                          |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`_set_android_surface_swapchain_create_info_and_get_next_pointer<class_OpenXRExtensionWrapperExtension_private_method__set_android_surface_swapchain_create_info_and_get_next_pointer>`\ (\ property_values\: :ref:`Dictionary<class_Dictionary>`, next_pointer\: ``void*``\ ) |virtual|    |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`_set_hand_joint_locations_and_get_next_pointer<class_OpenXRExtensionWrapperExtension_private_method__set_hand_joint_locations_and_get_next_pointer>`\ (\ hand_index\: :ref:`int<class_int>`, next_pointer\: ``void*``\ ) |virtual|                                                         |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -262,6 +268,32 @@ Called right after the main swapchains are (re)created.
 
 ----
 
+.. _class_OpenXRExtensionWrapperExtension_private_method__on_post_draw_viewport:
+
+.. rst-class:: classref-method
+
+|void| **_on_post_draw_viewport**\ (\ viewport\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_post_draw_viewport>`
+
+Called right after the given viewport is rendered.
+
+\ **Note:** The draw commands might only be queued at this point, not executed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRExtensionWrapperExtension_private_method__on_pre_draw_viewport:
+
+.. rst-class:: classref-method
+
+|void| **_on_pre_draw_viewport**\ (\ viewport\: :ref:`RID<class_RID>`\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__on_pre_draw_viewport>`
+
+Called right before the given viewport is rendered.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OpenXRExtensionWrapperExtension_private_method__on_pre_render:
 
 .. rst-class:: classref-method
@@ -434,6 +466,20 @@ Called when a composition layer created via :ref:`OpenXRCompositionLayer<class_O
 
 ----
 
+.. _class_OpenXRExtensionWrapperExtension_private_method__set_android_surface_swapchain_create_info_and_get_next_pointer:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_set_android_surface_swapchain_create_info_and_get_next_pointer**\ (\ property_values\: :ref:`Dictionary<class_Dictionary>`, next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__set_android_surface_swapchain_create_info_and_get_next_pointer>`
+
+Adds additional data structures to Android surface swapchains created by :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>`.
+
+\ ``property_values`` contains the values of the properties returned by :ref:`_get_viewport_composition_layer_extension_properties<class_OpenXRExtensionWrapperExtension_private_method__get_viewport_composition_layer_extension_properties>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OpenXRExtensionWrapperExtension_private_method__set_hand_joint_locations_and_get_next_pointer:
 
 .. rst-class:: classref-method
@@ -488,7 +534,7 @@ Adds additional data structures when creating OpenXR swapchains.
 
 :ref:`int<class_int>` **_set_system_properties_and_get_next_pointer**\ (\ next_pointer\: ``void*``\ ) |virtual| :ref:`🔗<class_OpenXRExtensionWrapperExtension_private_method__set_system_properties_and_get_next_pointer>`
 
-Adds additional data structures when interogating OpenXR system abilities.
+Adds additional data structures when querying OpenXR system abilities.
 
 .. rst-class:: classref-item-separator
 

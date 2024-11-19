@@ -71,7 +71,7 @@ Methods
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`execute<class_OS_method_execute>`\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, output\: :ref:`Array<class_Array>` = [], read_stderr\: :ref:`bool<class_bool>` = false, open_console\: :ref:`bool<class_bool>` = false\ )                                                                                                    |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`               | :ref:`execute_with_pipe<class_OS_method_execute_with_pipe>`\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`\ )                                                                                                                                                                                                                        |
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`execute_with_pipe<class_OS_method_execute_with_pipe>`\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, blocking\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                             |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Key<enum_@GlobalScope_Key>`                 | :ref:`find_keycode_from_string<class_OS_method_find_keycode_from_string>`\ (\ string\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                                                               |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -125,6 +125,12 @@ Methods
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_static_memory_usage<class_OS_method_get_static_memory_usage>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                       |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StdHandleType<enum_OS_StdHandleType>`       | :ref:`get_stderr_type<class_OS_method_get_stderr_type>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                       |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StdHandleType<enum_OS_StdHandleType>`       | :ref:`get_stdin_type<class_OS_method_get_stdin_type>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                         |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StdHandleType<enum_OS_StdHandleType>`       | :ref:`get_stdout_type<class_OS_method_get_stdout_type>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                       |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_system_ca_certificates<class_OS_method_get_system_ca_certificates>`\ (\ )                                                                                                                                                                                                                                                                                                         |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_system_dir<class_OS_method_get_system_dir>`\ (\ dir\: :ref:`SystemDir<enum_OS_SystemDir>`, shared_storage\: :ref:`bool<class_bool>` = true\ ) |const|                                                                                                                                                                                                                             |
@@ -169,7 +175,9 @@ Methods
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`\ (\ )                                                                                                                                                                                                                                                                                                                             |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>`\ (\ )                                                                                                                                                                                                                                                                                                                 |
+   | :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`read_buffer_from_stdin<class_OS_method_read_buffer_from_stdin>`\ (\ buffer_size\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                            |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>`\ (\ buffer_size\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                            |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`request_permission<class_OS_method_request_permission>`\ (\ name\: :ref:`String<class_String>`\ )                                                                                                                                                                                                                                                                                     |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -313,6 +321,56 @@ Refers to the Pictures directory path.
 
 Refers to the Ringtones directory path.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_OS_StdHandleType:
+
+.. rst-class:: classref-enumeration
+
+enum **StdHandleType**: :ref:`🔗<enum_OS_StdHandleType>`
+
+.. _class_OS_constant_STD_HANDLE_INVALID:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_INVALID** = ``0``
+
+Standard I/O device is invalid. No data can be received from or sent to these standard I/O devices.
+
+.. _class_OS_constant_STD_HANDLE_CONSOLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_CONSOLE** = ``1``
+
+Standard I/O device is a console. This typically occurs when Godot is run from a terminal with no redirection. This is also used for all standard I/O devices when running Godot from the editor, at least on desktop platforms.
+
+.. _class_OS_constant_STD_HANDLE_FILE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_FILE** = ``2``
+
+Standard I/O device is a regular file. This typically occurs with redirection from a terminal, e.g. ``godot > stdout.txt``, ``godot < stdin.txt`` or ``godot > stdout_stderr.txt 2>&1``.
+
+.. _class_OS_constant_STD_HANDLE_PIPE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_PIPE** = ``3``
+
+Standard I/O device is a FIFO/pipe. This typically occurs with pipe usage from a terminal, e.g. ``echo "Hello" | godot``.
+
+.. _class_OS_constant_STD_HANDLE_UNKNOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_UNKNOWN** = ``4``
+
+Standard I/O device type is unknown.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -404,7 +462,7 @@ Displays a modal dialog box using the host platform's implementation. The engine
 
 Shuts down the system MIDI driver. Godot will no longer receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>` and :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -454,7 +512,7 @@ On Windows, if ``open_console`` is ``true`` and the process is a console app, a 
 
 If the process is successfully created, this method returns its process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). Otherwise, this method returns ``-1``.
 
-For example, running another instance of the project:
+\ **Example:** Run another instance of the project:
 
 
 .. tabs::
@@ -581,9 +639,11 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **execute_with_pipe**\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_OS_method_execute_with_pipe>`
+:ref:`Dictionary<class_Dictionary>` **execute_with_pipe**\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, blocking\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_OS_method_execute_with_pipe>`
 
 Creates a new process that runs independently of Godot with redirected IO. It will not terminate when Godot terminates. The path specified in ``path`` must exist and be an executable file or macOS ``.app`` bundle. The path is resolved based on the current platform. The ``arguments`` are used in the given order and separated by a space.
+
+If ``blocking`` is ``false``, created pipes work in non-blocking mode, i.e. read and write operations will return immediately. Use :ref:`FileAccess.get_error<class_FileAccess_method_get_error>` to check if the last read/write operation was successful.
 
 If the process cannot be created, this method returns an empty :ref:`Dictionary<class_Dictionary>`. Otherwise, this method returns a :ref:`Dictionary<class_Dictionary>` with the following keys:
 
@@ -670,7 +730,7 @@ You can also incorporate environment variables using the :ref:`get_environment<c
 
 You can set :ref:`ProjectSettings.editor/run/main_run_args<class_ProjectSettings_property_editor/run/main_run_args>` to define command-line arguments to be passed by the editor when running the project.
 
-Here's a minimal example on how to parse command-line arguments into a :ref:`Dictionary<class_Dictionary>` using the ``--key=value`` form for arguments:
+\ **Example:** Parse command-line arguments into a :ref:`Dictionary<class_Dictionary>` using the ``--key=value`` form for arguments:
 
 
 .. tabs::
@@ -759,7 +819,7 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 Returns an array of connected MIDI device names, if they exist. Returns an empty array if the system MIDI driver has not previously been initialized with :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. See also :ref:`close_midi_inputs<class_OS_method_close_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -970,7 +1030,7 @@ Returns a :ref:`Dictionary<class_Dictionary>` containing information about the c
 
 Returns the model name of the current device.
 
-\ **Note:** This method is implemented on Android and iOS. Returns ``"GenericDevice"`` on unsupported platforms.
+\ **Note:** This method is implemented on Android, iOS, macOS, and Windows. Returns ``"GenericDevice"`` on unsupported platforms.
 
 .. rst-class:: classref-item-separator
 
@@ -1144,6 +1204,42 @@ Returns the maximum amount of static memory used. Only works in debug builds.
 :ref:`int<class_int>` **get_static_memory_usage**\ (\ ) |const| :ref:`🔗<class_OS_method_get_static_memory_usage>`
 
 Returns the amount of static memory being used by the program in bytes. Only works in debug builds.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_get_stderr_type:
+
+.. rst-class:: classref-method
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **get_stderr_type**\ (\ ) |const| :ref:`🔗<class_OS_method_get_stderr_type>`
+
+Returns type of the standard error device.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_get_stdin_type:
+
+.. rst-class:: classref-method
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **get_stdin_type**\ (\ ) |const| :ref:`🔗<class_OS_method_get_stdin_type>`
+
+Returns type of the standard input device.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_get_stdout_type:
+
+.. rst-class:: classref-method
+
+:ref:`StdHandleType<enum_OS_StdHandleType>` **get_stdout_type**\ (\ ) |const| :ref:`🔗<class_OS_method_get_stdout_type>`
+
+Returns type of the standard output device.
 
 .. rst-class:: classref-item-separator
 
@@ -1525,7 +1621,29 @@ Returns :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` if the fi
 
 Initializes the singleton for the system MIDI driver, allowing Godot to receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>` and :ref:`close_midi_inputs<class_OS_method_close_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+\ **Note:** This method is implemented on Linux, macOS, and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_read_buffer_from_stdin:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **read_buffer_from_stdin**\ (\ buffer_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OS_method_read_buffer_from_stdin>`
+
+Reads a user input as raw data from the standard input. This operation can be *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` is called on the main thread.
+
+- If standard input is console, this method will block until the program receives a line break in standard input (usually by the user pressing :kbd:`Enter`).
+
+- If standard input is pipe, this method will block until a specific amount of data is read or pipe is closed.
+
+- If standard input is a file, this method will read a specific amount of data (or less if end-of-file is reached) and return immediately.
+
+\ **Note:** This method is implemented on Linux, macOS, and Windows.
+
+\ **Note:** On exported Windows builds, run the console wrapper executable to access the terminal. If standard input is console, calling this method without console wrapped will freeze permanently. If standard input is pipe or file, it can be used without console wrapper. If you need a single executable with full console support, use a custom build compiled with the ``windows_subsystem=console`` flag.
 
 .. rst-class:: classref-item-separator
 
@@ -1535,13 +1653,19 @@ Initializes the singleton for the system MIDI driver, allowing Godot to receive 
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **read_string_from_stdin**\ (\ ) :ref:`🔗<class_OS_method_read_string_from_stdin>`
+:ref:`String<class_String>` **read_string_from_stdin**\ (\ buffer_size\: :ref:`int<class_int>`\ ) :ref:`🔗<class_OS_method_read_string_from_stdin>`
 
-Reads a user input string from the standard input (usually the terminal). This operation is *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` is called on the main thread. The thread calling :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` will block until the program receives a line break in standard input (usually by the user pressing :kbd:`Enter`).
+Reads a user input as a UTF-8 encoded string from the standard input. This operation can be *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` is called on the main thread.
 
-\ **Note:** This method is implemented on Linux, macOS and Windows.
+- If standard input is console, this method will block until the program receives a line break in standard input (usually by the user pressing :kbd:`Enter`).
 
-\ **Note:** On exported Windows builds, run the console wrapper executable to access the terminal. Otherwise, the standard input will not work correctly. If you need a single executable with console support, use a custom build compiled with the ``windows_subsystem=console`` flag.
+- If standard input is pipe, this method will block until a specific amount of data is read or pipe is closed.
+
+- If standard input is a file, this method will read a specific amount of data (or less if end-of-file is reached) and return immediately.
+
+\ **Note:** This method is implemented on Linux, macOS, and Windows.
+
+\ **Note:** On exported Windows builds, run the console wrapper executable to access the terminal. If standard input is console, calling this method without console wrapped will freeze permanently. If standard input is pipe or file, it can be used without console wrapper. If you need a single executable with full console support, use a custom build compiled with the ``windows_subsystem=console`` flag.
 
 .. rst-class:: classref-item-separator
 

@@ -23,7 +23,9 @@ The most common way to reduce latency is to shrink the audio buffers (again, by 
 
 This is a common tradeoff, so Godot ships with sensible defaults that should not need to be altered.
 
-The problem, in the end, is not this slight delay but synchronizing graphics and audio for games that require it. Beginning with Godot 3.2, some helpers were added to obtain more precise playback timing.
+The problem, in the end, is not this slight delay but synchronizing graphics and
+audio for games that require it. Some helpers are available to obtain more 
+precise playback timing.
 
 Using the system clock to sync
 ------------------------------

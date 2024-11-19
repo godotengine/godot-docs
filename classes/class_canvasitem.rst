@@ -191,7 +191,7 @@ Methods
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`               | :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`         | :ref:`make_canvas_position_local<class_CanvasItem_method_make_canvas_position_local>`\ (\ screen_point\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+   | :ref:`Vector2<class_Vector2>`         | :ref:`make_canvas_position_local<class_CanvasItem_method_make_canvas_position_local>`\ (\ viewport_point\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`InputEvent<class_InputEvent>`   | :ref:`make_input_local<class_CanvasItem_method_make_input_local>`\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -237,7 +237,7 @@ Emitted when the **CanvasItem** must redraw, *after* the related :ref:`NOTIFICAT
 
 **hidden**\ (\ ) :ref:`🔗<class_CanvasItem_signal_hidden>`
 
-Emitted when becoming hidden.
+Emitted when the **CanvasItem** is hidden, i.e. it's no longer visible in the tree (see :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>`).
 
 .. rst-class:: classref-item-separator
 
@@ -249,7 +249,7 @@ Emitted when becoming hidden.
 
 **item_rect_changed**\ (\ ) :ref:`🔗<class_CanvasItem_signal_item_rect_changed>`
 
-Emitted when the item's :ref:`Rect2<class_Rect2>` boundaries (position or size) have changed, or when an action is taking place that may have impacted these boundaries (e.g. changing :ref:`Sprite2D.texture<class_Sprite2D_property_texture>`).
+Emitted when the **CanvasItem**'s boundaries (position or size) change, or when an action took place that may have affected these boundaries (e.g. changing :ref:`Sprite2D.texture<class_Sprite2D_property_texture>`).
 
 .. rst-class:: classref-item-separator
 
@@ -261,7 +261,7 @@ Emitted when the item's :ref:`Rect2<class_Rect2>` boundaries (position or size) 
 
 **visibility_changed**\ (\ ) :ref:`🔗<class_CanvasItem_signal_visibility_changed>`
 
-Emitted when the visibility (hidden/visible) changes.
+Emitted when the **CanvasItem**'s visibility changes, either because its own :ref:`visible<class_CanvasItem_property_visible>` property changed or because its visibility in the tree changed (see :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>`).
 
 .. rst-class:: classref-section-separator
 
@@ -529,6 +529,8 @@ Property Descriptions
 
 Allows the current node to clip child nodes, essentially acting as a mask.
 
+\ **Note:** Clipping nodes cannot be nested or placed within :ref:`CanvasGroup<class_CanvasGroup>`\ s. If an ancestor of this node clips its children or is a :ref:`CanvasGroup<class_CanvasGroup>`, then this node's clip mode should be set to :ref:`CLIP_CHILDREN_DISABLED<class_CanvasItem_constant_CLIP_CHILDREN_DISABLED>` to avoid unexpected behavior.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -716,7 +718,7 @@ The rendering layer in which this **CanvasItem** is rendered by :ref:`Viewport<c
 - |void| **set_visible**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_visible**\ (\ )
 
-If ``true``, this **CanvasItem** is drawn. The node is only visible if all of its ancestors are visible as well (in other words, :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>` must return ``true``).
+If ``true``, this **CanvasItem** may be drawn. Whether this **CanvasItem** is actually drawn depends on the visibility of all of its **CanvasItem** ancestors. In other words: this **CanvasItem** will be drawn when :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>` returns ``true`` and all **CanvasItem** ancestors share at least one :ref:`visibility_layer<class_CanvasItem_property_visibility_layer>` with this **CanvasItem**.
 
 \ **Note:** For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
@@ -737,7 +739,7 @@ If ``true``, this **CanvasItem** is drawn. The node is only visible if all of it
 
 If ``true``, this and child **CanvasItem** nodes with a higher Y position are rendered in front of nodes with a lower Y position. If ``false``, this and child **CanvasItem** nodes are rendered normally in scene tree order.
 
-With Y-sorting enabled on a parent node ('A') but disabled on a child node ('B'), the child node ('B') is sorted but its children ('C1', 'C2', etc) render together on the same Y position as the child node ('B'). This allows you to organize the render order of a scene without changing the scene tree.
+With Y-sorting enabled on a parent node ('A') but disabled on a child node ('B'), the child node ('B') is sorted but its children ('C1', 'C2', etc.) render together on the same Y position as the child node ('B'). This allows you to organize the render order of a scene without changing the scene tree.
 
 Nodes sort relative to each other only if they are on the same :ref:`z_index<class_CanvasItem_property_z_index>`.
 
@@ -879,6 +881,8 @@ If ``antialiased`` is ``true``, half transparent "feathers" will be attached to 
 |void| **draw_colored_polygon**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, color\: :ref:`Color<class_Color>`, uvs\: :ref:`PackedVector2Array<class_PackedVector2Array>` = PackedVector2Array(), texture\: :ref:`Texture2D<class_Texture2D>` = null\ ) :ref:`🔗<class_CanvasItem_method_draw_colored_polygon>`
 
 Draws a colored polygon of any number of points, convex or concave. Unlike :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`, a single color must be specified for the whole polygon.
+
+\ **Note:** If you frequently redraw the same polygon with a large number of vertices, consider pre-calculating the triangulation with :ref:`Geometry2D.triangulate_polygon<class_Geometry2D_method_triangulate_polygon>` and using :ref:`draw_mesh<class_CanvasItem_method_draw_mesh>`, :ref:`draw_multimesh<class_CanvasItem_method_draw_multimesh>`, or :ref:`RenderingServer.canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1053,6 +1057,8 @@ Draws a :ref:`MultiMesh<class_MultiMesh>` in 2D with the provided texture. See :
 
 Draws a solid polygon of any number of points, convex or concave. Unlike :ref:`draw_colored_polygon<class_CanvasItem_method_draw_colored_polygon>`, each point's color can be changed individually. See also :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`. If you need more flexibility (such as being able to use bones), use :ref:`RenderingServer.canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>` instead.
 
+\ **Note:** If you frequently redraw the same polygon with a large number of vertices, consider pre-calculating the triangulation with :ref:`Geometry2D.triangulate_polygon<class_Geometry2D_method_triangulate_polygon>` and using :ref:`draw_mesh<class_CanvasItem_method_draw_mesh>`, :ref:`draw_multimesh<class_CanvasItem_method_draw_multimesh>`, or :ref:`RenderingServer.canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1151,7 +1157,7 @@ Sets a custom transform for drawing via matrix. Anything drawn afterwards will b
 
 Draws ``text`` using the specified ``font`` at the ``pos`` (bottom-left corner using the baseline of the font). The text will have its color multiplied by ``modulate``. If ``width`` is greater than or equal to 0, the text will be clipped if it exceeds the specified width.
 
-\ **Example using the default project font:**\ 
+\ **Example:** Draw "Hello world", using the project's default font:
 
 
 .. tabs::
@@ -1472,6 +1478,8 @@ Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`
 
 Visibility is checked only in parent nodes that inherit from **CanvasItem**, :ref:`CanvasLayer<class_CanvasLayer>`, and :ref:`Window<class_Window>`. If the parent is of any other type (such as :ref:`Node<class_Node>`, :ref:`AnimationPlayer<class_AnimationPlayer>`, or :ref:`Node3D<class_Node3D>`), it is assumed to be visible.
 
+\ **Note:** This method does not take :ref:`visibility_layer<class_CanvasItem_property_visibility_layer>` into account, so even if this method returns ``true`` the node might end up not being rendered.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1480,9 +1488,15 @@ Visibility is checked only in parent nodes that inherit from **CanvasItem**, :re
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **make_canvas_position_local**\ (\ screen_point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_CanvasItem_method_make_canvas_position_local>`
+:ref:`Vector2<class_Vector2>` **make_canvas_position_local**\ (\ viewport_point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_CanvasItem_method_make_canvas_position_local>`
 
-Assigns ``screen_point`` as this node's new local transform.
+Transforms ``viewport_point`` from the viewport's coordinates to this node's local coordinates.
+
+For the opposite operation, use :ref:`get_global_transform_with_canvas<class_CanvasItem_method_get_global_transform_with_canvas>`.
+
+::
+
+    var viewport_point = get_global_transform_with_canvas() * local_point
 
 .. rst-class:: classref-item-separator
 

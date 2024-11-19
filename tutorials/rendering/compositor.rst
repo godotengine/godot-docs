@@ -45,6 +45,7 @@ We need to extend our node from :ref:`CompositorEffect <class_CompositorEffect>`
 We must also give our script a class name.
 
 .. code-block:: gdscript
+    :caption: post_process_shader.gd
 
     @tool
     extends CompositorEffect
@@ -120,7 +121,7 @@ and thus runs within our rendering thread.
 
 We need to ensure that we set our new shader code, and mark our
 shader code as dirty, without our render thread accessing this
-data at the same time. 
+data at the same time.
 
 Next we initialize our effect.
 
@@ -152,7 +153,7 @@ We also need to clean up after ourselves, for this we react to the
         if what == NOTIFICATION_PREDELETE:
             if shader.is_valid():
                 # Freeing our shader will also free any dependents such as the pipeline!
-                RenderingServer.free_rid(shader)
+                rd.free_rid(shader)
 
 Note that we do not use our mutex here even though we create our shader inside
 of our render thread.
@@ -254,7 +255,7 @@ this at the right stage of rendering.
                 if size.x == 0 and size.y == 0:
                     return
 
-                # We can use a compute shader here 
+                # We can use a compute shader here
                 var x_groups = (size.x - 1) / 8 + 1
                 var y_groups = (size.y - 1) / 8 + 1
                 var z_groups = 1
@@ -309,6 +310,9 @@ post processes have run.
 
 From our internal size we calculate our group size, see our local size in our
 template shader.
+
+.. UPDATE: Not supported yet. When structs are supported here, update this
+.. paragraph.
 
 We also populate our push constant so our shader knows our size.
 Godot does not support structs here **yet** so we use a

@@ -16,9 +16,14 @@ The following two scripts will be used as references throughout this page.
 
     extends Node
 
-    var my_field: String = "foo"
+    var my_property: String = "my gdscript value":
+        get:
+            return my_property
+        set(value):
+            my_property = value
 
     signal my_signal
+    signal my_signal_with_params(msg: String, n: int)
 
     func print_node_name(node: Node) -> void:
         print(node.get_name())
@@ -34,15 +39,19 @@ The following two scripts will be used as references throughout this page.
     func my_signal_handler():
         print("The signal handler was called!")
 
+    func my_signal_with_params_handler(msg: String, n: int):
+        print_n_times(msg, n)
+
  .. code-tab:: csharp
 
     using Godot;
 
     public partial class MyCSharpNode : Node
     {
-        public string myField = "bar";
+        public string MyProperty { get; set; } = "my c# value";
 
         [Signal] public delegate void MySignalEventHandler();
+        [Signal] public delegate void MySignalWithParamsEventHandler(string msg, int n);
 
         public void PrintNodeName(Node node)
         {
@@ -69,6 +78,11 @@ The following two scripts will be used as references throughout this page.
         {
             GD.Print("The signal handler was called!");
         }
+
+        public void MySignalWithParamsHandler(string msg, int n)
+        {
+            PrintNTimes(msg, n);
+        }
     }
 
 Instantiating nodes
@@ -86,8 +100,8 @@ with :ref:`new() <class_CSharpScript_method_new>`.
 
 .. code-block:: gdscript
 
-    var my_csharp_script = load("res://Path/To/MyCSharpNode.cs")
-    var my_csharp_node = my_csharp_script.new()
+    var MyCSharpScript = load("res://Path/To/MyCSharpNode.cs")
+    var my_csharp_node = MyCSharpScript.new()
 
 .. warning::
 
@@ -112,8 +126,8 @@ be instantiated with :ref:`GDScript.New() <class_GDScript_method_new>`.
 
 .. code-block:: csharp
 
-    GDScript MyGDScript = GD.Load<GDScript>("res://path/to/my_gd_script.gd");
-    GodotObject myGDScriptNode = (GodotObject)MyGDScript.New(); // This is a GodotObject.
+    var myGDScript = GD.Load<GDScript>("res://path/to/my_gd_script.gd");
+    var myGDScriptNode = (GodotObject)myGDScript.New(); // This is a GodotObject.
 
 Here we are using an :ref:`class_Object`, but you can use type conversion like
 explained in :ref:`doc_c_sharp_features_type_conversion_and_casting`.
@@ -129,22 +143,26 @@ anything to worry about.
 
 .. code-block:: gdscript
 
-    print(my_csharp_node.myField) # bar
-    my_csharp_node.myField = "BAR"
-    print(my_csharp_node.myField) # BAR
+    # Output: "my c# value".
+    print(my_csharp_node.MyProperty)
+    my_csharp_node.MyProperty = "MY C# VALUE"
+    # Output: "MY C# VALUE".
+    print(my_csharp_node.MyProperty)
 
 Accessing GDScript fields from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As C# is statically typed, accessing GDScript from C# is a bit more
-convoluted, you will have to use :ref:`GodotObject.Get() <class_Object_method_get>`
+convoluted. You will have to use :ref:`GodotObject.Get() <class_Object_method_get>`
 and :ref:`GodotObject.Set() <class_Object_method_set>`. The first argument is the name of the field you want to access.
 
 .. code-block:: csharp
 
-    GD.Print(myGDScriptNode.Get("my_field")); // foo
-    myGDScriptNode.Set("my_field", "FOO");
-    GD.Print(myGDScriptNode.Get("my_field")); // FOO
+    // Output: "my gdscript value".
+    GD.Print(myGDScriptNode.Get("my_property"));
+    myGDScriptNode.Set("my_property", "MY GDSCRIPT VALUE");
+    // Output: "MY GDSCRIPT VALUE".
+    GD.Print(myGDScriptNode.Get("my_property"));
 
 Keep in mind that when setting a field value you should only use types the
 GDScript side knows about.
@@ -163,13 +181,18 @@ If that's impossible, you'll see the following error: ``Invalid call. Nonexisten
 
 .. code-block:: gdscript
 
-    my_csharp_node.PrintNodeName(self) # myGDScriptNode
-    # my_csharp_node.PrintNodeName() # This line will fail.
+    # Output: "my_gd_script_node" (or name of node where this code is placed).
+    my_csharp_node.PrintNodeName(self)
+    # This line will fail.
+    # my_csharp_node.PrintNodeName()
 
-    my_csharp_node.PrintNTimes("Hello there!", 2) # Hello there! Hello there!
+    # Outputs "Hello there!" twice, once per line.
+    my_csharp_node.PrintNTimes("Hello there!", 2)
 
-    my_csharp_node.PrintArray(["a", "b", "c"]) # a, b, c
-    my_csharp_node.PrintArray([1, 2, 3]) # 1, 2, 3
+    # Output: "a", "b", "c" (one per line).
+    my_csharp_node.PrintArray(["a", "b", "c"])
+    # Output: "1", "2", "3"  (one per line).
+    my_csharp_node.PrintArray([1, 2, 3])
 
 Calling GDScript methods from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -181,22 +204,21 @@ to said method.
 
 .. code-block:: csharp
 
-    myGDScriptNode.Call("print_node_name", this); // my_csharp_node
-    // myGDScriptNode.Call("print_node_name"); // This line will fail silently and won't error out.
+    // Output: "MyCSharpNode" (or name of node where this code is placed).
+    myGDScriptNode.Call("print_node_name", this);
+    // This line will fail silently and won't error out.
+    // myGDScriptNode.Call("print_node_name");
 
-    myGDScriptNode.Call("print_n_times", "Hello there!", 2); // Hello there! Hello there!
+    // Outputs "Hello there!" twice, once per line.
+    myGDScriptNode.Call("print_n_times", "Hello there!", 2);
 
     string[] arr = new string[] { "a", "b", "c" };
-    myGDScriptNode.Call("print_array", arr); // a, b, c
-    myGDScriptNode.Call("print_array", new int[] { 1, 2, 3 }); // 1, 2, 3
-    // Note how the type of each array entry does not matter as long as it can be handled by the marshaller.
-
-.. warning::
-
-    As you can see, if the first argument of the called method is an array,
-    you'll need to cast it as ``object``.
-    Otherwise, each element of your array will be treated as a single argument
-    and the function signature won't match.
+    // Output: "a", "b", "c" (one per line).
+    myGDScriptNode.Call("print_array", arr);
+    // Output: "1", "2", "3"  (one per line).
+    myGDScriptNode.Call("print_array", new int[] { 1, 2, 3 });
+    // Note how the type of each array entry does not matter
+    // as long as it can be handled by the marshaller.
 
 .. _connecting_to_signals_cross_language:
 
@@ -213,6 +235,8 @@ defined in GDScript:
 
     my_csharp_node.MySignal.connect(my_signal_handler)
 
+    my_csharp_node.MySignalWithParams.connect(my_signal_with_params_handler)
+
 Connecting to GDScript signals from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -222,6 +246,8 @@ because no C# static types exist for signals defined by GDScript:
 .. code-block:: csharp
 
     myGDScriptNode.Connect("my_signal", Callable.From(MySignalHandler));
+
+    myGDScriptNode.Connect("my_signal_with_params", Callable.From<string, int>(MySignalWithParamsHandler));
 
 Inheritance
 -----------

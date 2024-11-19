@@ -289,6 +289,8 @@ Returns an array with the IDs of the points that form the path found by AStar2D 
 
 If there is no valid path to the target, and ``allow_partial_path`` is ``true``, returns a path to the point closest to the target that can be reached.
 
+\ **Note:** When ``allow_partial_path`` is ``true`` and ``to_id`` is disabled the search may take an unusually long time to finish.
+
 
 .. tabs::
 
@@ -420,6 +422,8 @@ If there is no valid path to the target, and ``allow_partial_path`` is ``true``,
 
 \ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty array and will print an error message.
 
+Additionally, when ``allow_partial_path`` is ``true`` and ``to_id`` is disabled the search may take an unusually long time to finish.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -490,7 +494,7 @@ Removes the point associated with the given ``id`` from the points pool.
 
 |void| **reserve_space**\ (\ num_nodes\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AStar2D_method_reserve_space>`
 
-Reserves space internally for ``num_nodes`` points, useful if you're adding a known large number of points at once, such as points on a grid. New capacity must be greater or equals to old capacity.
+Reserves space internally for ``num_nodes`` points. Useful if you're adding a known large number of points at once, such as points on a grid. The new capacity must be greater or equal to the old capacity.
 
 .. rst-class:: classref-item-separator
 

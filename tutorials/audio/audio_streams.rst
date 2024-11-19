@@ -33,6 +33,9 @@ AudioStreamPlayer
 This is the standard, non-positional stream player. It can play to any bus.
 In 5.1 sound setups, it can send audio to stereo mix or front speakers.
 
+.. UPDATE: Experimental. When Playback Type is no longer experimental, update
+.. this paragraph.
+
 Playback Type is an experimental setting, and could change in future versions
 of Godot. It exists so Web exports use Web Audio-API based samples instead of
 streaming all sounds to the browser, unlike most platforms. This prevents the
@@ -80,6 +83,16 @@ Unlike for 2D, the 3D version of AudioStreamPlayer has a few more advanced optio
 Reverb buses
 ~~~~~~~~~~~~
 
+.. warning::
+
+    This feature is not supported on the web platform if the AudioStreamPlayer's
+    playback mode is set to **Sample**, which is the default. It will only work if the
+    playback mode is set to **Stream**, at the cost of increased latency if threads
+    are not enabled.
+
+    See :ref:`Audio playback in the Exporting for the Web documentation <doc_exporting_for_web_audio_playback>`
+    for details.
+
 Godot allows for 3D audio streams that enter a specific Area3D node to send dry
 and wet audio to separate buses. This is useful when you have several reverb
 configurations for different types of rooms. This is done by enabling this type
@@ -101,6 +114,16 @@ that effect.
 
 Doppler
 ~~~~~~~
+
+.. warning::
+
+    This feature is not supported on the web platform if the AudioStreamPlayer's
+    playback mode is set to **Sample**, which is the default. It will only work if the
+    playback mode is set to **Stream**, at the cost of increased latency if threads
+    are not enabled.
+
+    See :ref:`Audio playback in the Exporting for the Web documentation <doc_exporting_for_web_audio_playback>`
+    for details.
 
 When the relative velocity between an emitter and listener changes, this is
 perceived as an increase or decrease in the pitch of the emitted sound.

@@ -19,7 +19,7 @@ Tile library for tilemaps.
 Description
 -----------
 
-A TileSet is a library of tiles for a :ref:`TileMap<class_TileMap>`. A TileSet handles a list of :ref:`TileSetSource<class_TileSetSource>`, each of them storing a set of tiles.
+A TileSet is a library of tiles for a :ref:`TileMapLayer<class_TileMapLayer>`. A TileSet handles a list of :ref:`TileSetSource<class_TileSetSource>`, each of them storing a set of tiles.
 
 Tiles can either be from a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`, which renders tiles out of a texture with support for physics, navigation, etc., or from a :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>`, which exposes scene-based tiles.
 
@@ -133,6 +133,8 @@ Methods
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`get_physics_layer_collision_mask<class_TileSet_method_get_physics_layer_collision_mask>`\ (\ layer_index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                          |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`get_physics_layer_collision_priority<class_TileSet_method_get_physics_layer_collision_priority>`\ (\ layer_index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                  |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PhysicsMaterial<class_PhysicsMaterial>`       | :ref:`get_physics_layer_physics_material<class_TileSet_method_get_physics_layer_physics_material>`\ (\ layer_index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                      |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`get_physics_layers_count<class_TileSet_method_get_physics_layers_count>`\ (\ ) |const|                                                                                                                                                                                                                                                               |
@@ -218,6 +220,8 @@ Methods
    | |void|                                              | :ref:`set_physics_layer_collision_layer<class_TileSet_method_set_physics_layer_collision_layer>`\ (\ layer_index\: :ref:`int<class_int>`, layer\: :ref:`int<class_int>`\ )                                                                                                                                                                                 |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_physics_layer_collision_mask<class_TileSet_method_set_physics_layer_collision_mask>`\ (\ layer_index\: :ref:`int<class_int>`, mask\: :ref:`int<class_int>`\ )                                                                                                                                                                                    |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_physics_layer_collision_priority<class_TileSet_method_set_physics_layer_collision_priority>`\ (\ layer_index\: :ref:`int<class_int>`, priority\: :ref:`float<class_float>`\ )                                                                                                                                                                    |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_physics_layer_physics_material<class_TileSet_method_set_physics_layer_physics_material>`\ (\ layer_index\: :ref:`int<class_int>`, physics_material\: :ref:`PhysicsMaterial<class_PhysicsMaterial>`\ )                                                                                                                                            |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -976,6 +980,18 @@ Returns the collision mask of bodies on the given TileSet's physics layer.
 
 ----
 
+.. _class_TileSet_method_get_physics_layer_collision_priority:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_physics_layer_collision_priority**\ (\ layer_index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TileSet_method_get_physics_layer_collision_priority>`
+
+Returns the collision priority of bodies on the given TileSet's physics layer.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TileSet_method_get_physics_layer_physics_material:
 
 .. rst-class:: classref-method
@@ -1488,7 +1504,7 @@ Enables or disables SDF collision for occluders in the given TileSet occlusion l
 
 |void| **set_physics_layer_collision_layer**\ (\ layer_index\: :ref:`int<class_int>`, layer\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_set_physics_layer_collision_layer>`
 
-Sets the physics layer (as in the physics server) for bodies in the given TileSet physics layer.
+Sets the collision layer (as in the physics server) for bodies in the given TileSet physics layer.
 
 .. rst-class:: classref-item-separator
 
@@ -1500,7 +1516,19 @@ Sets the physics layer (as in the physics server) for bodies in the given TileSe
 
 |void| **set_physics_layer_collision_mask**\ (\ layer_index\: :ref:`int<class_int>`, mask\: :ref:`int<class_int>`\ ) :ref:`🔗<class_TileSet_method_set_physics_layer_collision_mask>`
 
-Sets the physics layer (as in the physics server) for bodies in the given TileSet physics layer.
+Sets the collision mask for bodies in the given TileSet physics layer.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileSet_method_set_physics_layer_collision_priority:
+
+.. rst-class:: classref-method
+
+|void| **set_physics_layer_collision_priority**\ (\ layer_index\: :ref:`int<class_int>`, priority\: :ref:`float<class_float>`\ ) :ref:`🔗<class_TileSet_method_set_physics_layer_collision_priority>`
+
+Sets the collision priority for bodies in the given TileSet physics layer.
 
 .. rst-class:: classref-item-separator
 

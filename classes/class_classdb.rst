@@ -32,9 +32,11 @@ Methods
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`can_instantiate<class_ClassDB_method_can_instantiate>`\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                 |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`                                    | :ref:`class_call_static_method<class_ClassDB_method_class_call_static_method>`\ (\ class\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg|                                                           |
+   | :ref:`Variant<class_Variant>`                                    | :ref:`class_call_static<class_ClassDB_method_class_call_static>`\ (\ class\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg|                                                                         |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`class_exists<class_ClassDB_method_class_exists>`\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                       |
+   +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`APIType<enum_ClassDB_APIType>`                             | :ref:`class_get_api_type<class_ClassDB_method_class_get_api_type>`\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                           |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`                | :ref:`class_get_enum_constants<class_ClassDB_method_class_get_enum_constants>`\ (\ class\: :ref:`StringName<class_StringName>`, enum\: :ref:`StringName<class_StringName>`, no_inheritance\: :ref:`bool<class_bool>` = false\ ) |const|                 |
    +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -95,6 +97,61 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Enumerations
+------------
+
+.. _enum_ClassDB_APIType:
+
+.. rst-class:: classref-enumeration
+
+enum **APIType**: :ref:`🔗<enum_ClassDB_APIType>`
+
+.. _class_ClassDB_constant_API_CORE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`APIType<enum_ClassDB_APIType>` **API_CORE** = ``0``
+
+Native Core class type.
+
+.. _class_ClassDB_constant_API_EDITOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`APIType<enum_ClassDB_APIType>` **API_EDITOR** = ``1``
+
+Native Editor class type.
+
+.. _class_ClassDB_constant_API_EXTENSION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`APIType<enum_ClassDB_APIType>` **API_EXTENSION** = ``2``
+
+GDExtension class type.
+
+.. _class_ClassDB_constant_API_EDITOR_EXTENSION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`APIType<enum_ClassDB_APIType>` **API_EDITOR_EXTENSION** = ``3``
+
+GDExtension Editor class type.
+
+.. _class_ClassDB_constant_API_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`APIType<enum_ClassDB_APIType>` **API_NONE** = ``4``
+
+Unknown class type.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Method Descriptions
 -------------------
 
@@ -110,11 +167,11 @@ Returns ``true`` if objects can be instantiated from the specified ``class``, ot
 
 ----
 
-.. _class_ClassDB_method_class_call_static_method:
+.. _class_ClassDB_method_class_call_static:
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **class_call_static_method**\ (\ class\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg| :ref:`🔗<class_ClassDB_method_class_call_static_method>`
+:ref:`Variant<class_Variant>` **class_call_static**\ (\ class\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg| :ref:`🔗<class_ClassDB_method_class_call_static>`
 
 Calls a static method on a class.
 
@@ -129,6 +186,18 @@ Calls a static method on a class.
 :ref:`bool<class_bool>` **class_exists**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_exists>`
 
 Returns whether the specified ``class`` is available or not.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ClassDB_method_class_get_api_type:
+
+.. rst-class:: classref-method
+
+:ref:`APIType<enum_ClassDB_APIType>` **class_get_api_type**\ (\ class\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ClassDB_method_class_get_api_type>`
+
+Returns the API type of ``class``. See :ref:`APIType<enum_ClassDB_APIType>`.
 
 .. rst-class:: classref-item-separator
 

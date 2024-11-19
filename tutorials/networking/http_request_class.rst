@@ -149,7 +149,7 @@ For example, to set a custom user agent (the HTTP ``User-Agent`` header) you cou
         HttpRequest httpRequest = GetNode<HttpRequest>("HTTPRequest");
         httpRequest.Request("https://api.github.com/repos/godotengine/godot/releases/latest", new string[] { "User-Agent: YourCustomUserAgent" });
 
-.. warning::
+.. danger::
 
     Be aware that someone might analyse and decompile your released application and
     thus may gain access to any embedded authorization information like tokens, usernames or passwords.

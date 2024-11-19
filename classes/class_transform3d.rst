@@ -235,6 +235,8 @@ Constructor Descriptions
 
 Constructs a **Transform3D** identical to the :ref:`IDENTITY<class_Transform3D_constant_IDENTITY>`.
 
+\ **Note:** In C#, this constructs a **Transform3D** with its :ref:`origin<class_Transform3D_property_origin>` and the components of its :ref:`basis<class_Transform3D_property_basis>` set to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -406,7 +408,7 @@ This can be seen as transforming with respect to the global/parent frame.
 
 Returns a copy of this transform rotated around the given ``axis`` by the given ``angle`` (in radians).
 
-The ``axis`` must be a normalized vector.
+The ``axis`` must be a normalized vector in the transform's local coordinate system. For example, to rotate around the local X-axis, use :ref:`Vector3.RIGHT<class_Vector3_constant_RIGHT>`.
 
 This method is an optimized version of multiplying the given transform ``X`` with a corresponding rotation transform ``R`` from the right, i.e., ``X * R``.
 

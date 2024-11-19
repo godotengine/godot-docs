@@ -276,11 +276,11 @@ Modulates the color of the texture when this style box is drawn.
 - |void| **set_region_rect**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
 - :ref:`Rect2<class_Rect2>` **get_region_rect**\ (\ )
 
-Species a sub-region of the texture to use.
+The region to use from the :ref:`texture<class_StyleBoxTexture_property_texture>`.
 
-This is equivalent to first wrapping the texture in an :ref:`AtlasTexture<class_AtlasTexture>` with the same region.
+This is equivalent to first wrapping the :ref:`texture<class_StyleBoxTexture_property_texture>` in an :ref:`AtlasTexture<class_AtlasTexture>` with the same region.
 
-If empty (``Rect2(0, 0, 0, 0)``), the whole texture will be used.
+If empty (``Rect2(0, 0, 0, 0)``), the whole :ref:`texture<class_StyleBoxTexture_property_texture>` is used.
 
 .. rst-class:: classref-item-separator
 

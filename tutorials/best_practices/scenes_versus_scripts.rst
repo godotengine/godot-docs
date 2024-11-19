@@ -118,8 +118,6 @@ There are two systems for registering types:
    - Engine developers must add support for languages manually (both name exposure and
      runtime accessibility).
 
-   - Godot 3.1+ only.
-
    - The Editor scans project folders and registers any exposed names for all
      scripting languages. Each scripting language must implement its own
      support for exposing this information.

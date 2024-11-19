@@ -23,6 +23,13 @@ Node for back-buffering the currently-displayed screen. The region defined in th
 
 \ **Note:** Since this node inherits from :ref:`Node2D<class_Node2D>` (and not :ref:`Control<class_Control>`), anchors and margins won't apply to child :ref:`Control<class_Control>`-derived nodes. This can be problematic when resizing the window. To avoid this, add :ref:`Control<class_Control>`-derived nodes as *siblings* to the **BackBufferCopy** node instead of adding them as children.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Screen-reading shaders <../tutorials/shaders/screen-reading_shaders>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

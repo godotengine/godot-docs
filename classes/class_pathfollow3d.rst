@@ -212,6 +212,8 @@ The distance from the first vertex, measured in 3D units along the path. Changin
 
 The distance from the first vertex, considering 0.0 as the first vertex and 1.0 as the last. This is just another way of expressing the progress within the path, as the progress supplied is multiplied internally by the path's length.
 
+It can be set or get only if the **PathFollow3D** is the child of a :ref:`Path3D<class_Path3D>` which is part of the scene tree, and that this :ref:`Path3D<class_Path3D>` has a :ref:`Curve3D<class_Curve3D>` with a non-zero length. Otherwise, trying to set this field will print an error, and getting this field will return ``0.0``.
+
 .. rst-class:: classref-item-separator
 
 ----

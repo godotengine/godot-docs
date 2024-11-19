@@ -10,8 +10,8 @@ This page aims to list **all** features currently supported by Godot.
 .. note::
 
     This page lists features supported by the current stable version of
-    Godot. Some of these features may not be available in the
-    `LTS release series (3.x) <https://docs.godotengine.org/en/3.5/about/list_of_features.html>`__.
+    Godot. Some of these features are not available in the
+    `3.x release series <https://docs.godotengine.org/en/3.6/about/list_of_features.html>`__.
 
 Platforms
 ---------
@@ -30,8 +30,7 @@ Platforms
      on an old enough base distribution.
    - Official binaries are compiled using the
      `Godot Engine buildroot <https://github.com/godotengine/buildroot>`__,
-     allowing for binaries that work across common Linux distributions
-     (including LTS variants).
+     allowing for binaries that work across common Linux distributions.
 
 - Android (editor support is experimental).
 - :ref:`Web browsers <doc_using_the_web_editor>`. Experimental in 4.0,
@@ -107,6 +106,8 @@ Rendering
 - **Compatibility**, running over OpenGL 3.3 / OpenGL ES 3.0 / WebGL 2.0. The least
   advanced graphics backend, suited for low-end desktop and mobile platforms.
   Used by default on the web platform.
+
+See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 
 2D graphics
 -----------
@@ -238,7 +239,7 @@ Rendering
 
 **Global illumination with indirect lighting:**
 
-- :ref:`Baked lightmaps <doc_using_lightmap_gi>` (fast, but can't be updated at run-time).
+- :ref:`Baked lightmaps <doc_using_lightmap_gi>` (fast, but can't be updated at runtime).
 
    - Supports baking indirect light only or baking both direct and indirect lighting.
      The bake mode can be adjusted on a per-light basis to allow for hybrid light
@@ -255,7 +256,7 @@ Rendering
 - :ref:`Voxel-based GI probes <doc_using_voxel_gi>`. Supports
   dynamic lights *and* dynamic occluders, while also supporting reflections.
   Requires a fast baking step which can be performed in the editor or at
-  run-time (including from an exported project).
+  runtime (including from an exported project).
 - :ref:`Signed-distance field GI <doc_using_sdfgi>` designed for large open worlds.
   Supports dynamic lights, but not dynamic occluders. Supports reflections.
   No baking required.
@@ -279,7 +280,8 @@ Rendering
   rendered with clustered forward optimizations to decrease their individual cost.
   Clustered rendering also lifts any limits on the number of reflection probes that can be used on a mesh.
 - When using the Forward Mobile backend, up to 8 reflection probes can be displayed per mesh
-  resource.
+  resource. When using the Compatibility renderer, up to 2 reflection probes can
+  be displayed per mesh resource.
 
 **Decals:**
 
@@ -288,7 +290,7 @@ Rendering
 - Texture channels are smoothly overlaid on top of the underlying material,
   with support for normal/ORM-only decals.
 - Support for normal fade to fade the decal depending on its incidence angle.
-- Does not rely on run-time mesh generation. This means decals can be used on
+- Does not rely on runtime mesh generation. This means decals can be used on
   complex skinned meshes with no performance penalty, even if the decal moves every frame.
 - Support for nearest, bilinear, trilinear or anisotropic texture filtering (configured globally).
 - Optional distance fade system to fade distant decals, improving performance.
@@ -367,7 +369,7 @@ Rendering
 - ETC2 (not supported on macOS).
 - S3TC (not supported on mobile/Web platforms).
 
-**Anti-aliasing:**
+**Antialiasing:**
 
 - Temporal :ref:`antialiasing <doc_3d_antialiasing>` (TAA).
 - AMD FidelityFX Super Resolution 2.2 :ref:`antialiasing <doc_3d_antialiasing>` (FSR2),
@@ -405,7 +407,7 @@ improve quality. This can be helpful when
 
 - :ref:`3D geometry helper class <class_Geometry3D>`.
 - Support for exporting the current scene as a glTF 2.0 file, both from the editor
-  and at run-time from an exported project.
+  and at runtime from an exported project.
 
 3D physics
 ----------
@@ -542,7 +544,7 @@ Import
    - Collada (.dae).
    - Wavefront OBJ (static scenes only, can be loaded directly as a mesh or imported as a 3D scene).
 
-- Support for loading glTF 2.0 scenes at run-time, including from an exported project.
+- Support for loading glTF 2.0 scenes at runtime, including from an exported project.
 - 3D meshes use `Mikktspace <http://www.mikktspace.com/>`__ to generate tangents
   on import, which ensures consistency with other 3D applications such as Blender.
 
@@ -574,7 +576,7 @@ Navigation
 - A* algorithm in :ref:`2D <class_AStar2D>` and :ref:`3D <class_AStar3D>`.
 - Navigation meshes with dynamic obstacle avoidance in
   :ref:`2D <doc_navigation_overview_2d>` and :ref:`3D <doc_navigation_overview_3d>`.
-- Generate navigation meshes from the editor or at run-time (including from an exported project).
+- Generate navigation meshes from the editor or at runtime (including from an exported project).
 
 Networking
 ----------
@@ -651,7 +653,7 @@ XR support (AR and VR)
 
    - Including support for popular desktop headsets like the Valve Index, WMR headsets, and Quest over Link.
 
-- Support for :ref:`Android based headsets <doc_deploying_to_android>` using OpenXR through a plugin.
+- Support for :ref:`Android-based headsets <doc_deploying_to_android>` using OpenXR through a plugin.
 
   - Including support for popular stand alone headsets like the Meta Quest 1/2/3 and Pro, Pico 4, Magic Leap 2, and Lynx R1.
 

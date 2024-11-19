@@ -17,8 +17,8 @@ For compiling under Linux or other Unix variants, the following is
 required:
 
 - GCC 9+ or Clang 6+.
-- `Python 3.6+ <https://www.python.org/downloads/>`_.
-- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system.
+- `Python 3.8+ <https://www.python.org/downloads/>`_.
+- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
 - pkg-config (used to detect the development libraries listed below).
 - Development libraries:
 
@@ -196,6 +196,28 @@ Distro-specific one-liners
               scons \
               llvm
 
+    .. tab:: openKylin
+
+        ::
+
+            sudo apt update
+            sudo apt install -y \
+              python3-pip \
+              build-essential \
+              pkg-config \
+              libx11-dev \
+              libxcursor-dev \
+              libxinerama-dev \
+              libgl1-mesa-dev \
+              libglu1-mesa-dev \
+              libasound2-dev \
+              libpulse-dev \
+              libudev-dev \
+              libxi-dev \
+              libxrandr-dev \
+              libwayland-dev
+            sudo pip install scons
+
     .. tab:: openSUSE
 
         ::
@@ -362,6 +384,72 @@ here:
 You don't even need to copy them, you can just reference the resulting
 files in the ``bin/`` directory of your Godot source folder, so the next
 time you build, you automatically have the custom templates referenced.
+
+Cross-compiling for RISC-V devices
+----------------------------------
+
+To cross-compile Godot for RISC-V devices, we need to setup the following items:
+
+- `riscv-gnu-toolchain <https://github.com/riscv-collab/riscv-gnu-toolchain/releases>`__.
+  While we are not going to use this directly, it provides us with a sysroot, as well
+  as header and libraries files that we will need. There are many versions to choose
+  from, however, the older the toolchain, the more compatible our final binaries will be.
+  If in doubt, `use this version <https://github.com/riscv-collab/riscv-gnu-toolchain/releases/tag/2021.12.22>`__,
+  and download ``riscv64-glibc-ubuntu-18.04-nightly-2021.12.22-nightly.tar.gz``. Extract
+  it somewhere and remember its path.
+- Clang. RISC-V GCC has
+  `bugs with its atomic operations <https://github.com/riscv-collab/riscv-gcc/issues/15>`__
+  which prevent it from compiling Godot correctly. Any version of Clang from 16.0.0 upwards
+  will suffice. Download it from the package manager of your distro, and make sure that
+  it *can* compile to RISC-V. You can verify by executing this command ``clang -print-targets``,
+  make sure you see ``riscv64`` on the list of targets.
+- `mold <https://github.com/rui314/mold/releases>`__. This fast linker,
+  is the only one that correctly links the resulting binary. Download it, extract it,
+  and make sure to add its ``bin`` folder to your PATH. Run
+  ``mold --help | grep support`` to check if your version of Mold supports RISC-V.
+  If you don't see RISC-V, your Mold may need to be updated.
+
+To make referencing our toolchain easier, we can set an environment
+variable like this:
+
+::
+
+    export RISCV_TOOLCHAIN_PATH="path to toolchain here"
+
+This way, we won't have to manually set the directory location
+each time we want to reference it.
+
+With all the above setup, we are now ready to build Godot.
+
+Go to the root of the source code, and execute the following build command:
+
+::
+
+    scons arch=rv64 use_llvm=yes linker=mold lto=none target=editor \
+        ccflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu" \
+        linkflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu"
+
+The command is similar in nature, but with some key changes. ``ccflags`` and
+``linkflags`` append additional flags to the build. ``--sysroot`` points to
+a folder simulating a Linux system, it contains all the headers, libraries,
+and ``.so`` files Clang will use. ``--gcc-toolchain`` tells Clang where
+the complete toolchain is, and ``-target riscv64-unknown-linux-gnu``
+indicates to Clang the target architecture, and OS we want to build for.
+
+If all went well, you should now see a ``bin`` directory, and within it,
+a binary similar to the following:
+
+::
+
+    godot.linuxbsd.editor.rv64.llvm
+
+You can now copy this executable to your favorite RISC-V device,
+then launch it there by double-clicking, which should bring up
+the project manager.
+
+If you later decide to compile the export templates, copy the above
+build command but change the value of ``target`` to ``template_debug`` for
+a debug build, or ``template_release`` for a release build.
 
 Using Clang and LLD for faster development
 ------------------------------------------

@@ -21,7 +21,7 @@ Description
 
 The runtime part of an :ref:`AudioEffectSpectrumAnalyzer<class_AudioEffectSpectrumAnalyzer>`, which can be used to query the magnitude of a frequency range on its host bus.
 
-An instance of this class can be acquired with :ref:`AudioServer.get_bus_effect_instance<class_AudioServer_method_get_bus_effect_instance>`.
+An instance of this class can be obtained with :ref:`AudioServer.get_bus_effect_instance<class_AudioServer_method_get_bus_effect_instance>`.
 
 .. rst-class:: classref-introduction-group
 

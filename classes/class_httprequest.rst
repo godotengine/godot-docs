@@ -27,7 +27,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
-\ **Example of contacting a REST API and printing one of its returned fields:**\ 
+\ **Example:** Contact a REST API and print one of its returned fields:
 
 
 .. tabs::
@@ -105,7 +105,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 
 
-\ **Example of loading and displaying an image using HTTPRequest:**\ 
+\ **Example:** Load an image using **HTTPRequest** and display it:
 
 
 .. tabs::
@@ -181,7 +181,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 
 
-\ **Gzipped response bodies**: HTTPRequest will automatically handle decompression of response bodies. A ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
+\ **Note:** **HTTPRequest** nodes will automatically handle decompression of response bodies. A ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
 
 .. rst-class:: classref-introduction-group
 
@@ -290,11 +290,7 @@ Request successful.
 
 :ref:`Result<enum_HTTPRequest_Result>` **RESULT_CHUNKED_BODY_SIZE_MISMATCH** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Request failed due to a mismatch between the expected and actual chunked body size during transfer. Possible causes include network errors, server misconfiguration, or issues with chunked encoding.
 
 .. _class_HTTPRequest_constant_RESULT_CANT_CONNECT:
 
@@ -350,11 +346,7 @@ Request exceeded its maximum size limit, see :ref:`body_size_limit<class_HTTPReq
 
 :ref:`Result<enum_HTTPRequest_Result>` **RESULT_BODY_DECOMPRESS_FAILED** = ``8``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Request failed due to an error while decompressing the response body. Possible causes include unsupported or incorrect compression format, corrupted data, or incomplete transfer.
 
 .. _class_HTTPRequest_constant_RESULT_REQUEST_FAILED:
 

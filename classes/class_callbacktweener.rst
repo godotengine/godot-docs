@@ -54,7 +54,7 @@ Method Descriptions
 
 Makes the callback call delayed by given time in seconds.
 
-\ **Example:** Call :ref:`Node.queue_free<class_Node_method_queue_free>` after 2 seconds.
+\ **Example:** Call :ref:`Node.queue_free<class_Node_method_queue_free>` after 2 seconds:
 
 ::
 

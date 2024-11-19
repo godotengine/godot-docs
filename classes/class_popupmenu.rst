@@ -654,10 +654,6 @@ Contrarily to normal binary items, multistate items can have more than two state
 
 An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
-\ **Note:** Multistate items don't update their state automatically and must be done manually. See :ref:`toggle_item_multistate<class_PopupMenu_method_toggle_item_multistate>`, :ref:`set_item_multistate<class_PopupMenu_method_set_item_multistate>` and :ref:`get_item_multistate<class_PopupMenu_method_get_item_multistate>` for more info on how to control it.
-
-Example usage:
-
 ::
 
     func _ready():
@@ -673,6 +669,8 @@ Example usage:
                     2:
                         print("Third state")
             )
+
+\ **Note:** Multistate items don't update their state automatically and must be done manually. See :ref:`toggle_item_multistate<class_PopupMenu_method_toggle_item_multistate>`, :ref:`set_item_multistate<class_PopupMenu_method_set_item_multistate>` and :ref:`get_item_multistate<class_PopupMenu_method_get_item_multistate>` for more info on how to control it.
 
 .. rst-class:: classref-item-separator
 
@@ -1835,7 +1833,7 @@ Font size of the menu items.
 
 :ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_PopupMenu_theme_style_panel>`
 
-:ref:`StyleBox<class_StyleBox>` for the the background panel.
+:ref:`StyleBox<class_StyleBox>` for the background panel.
 
 .. rst-class:: classref-item-separator
 

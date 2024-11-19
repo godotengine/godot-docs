@@ -69,11 +69,7 @@ enum **FilterDB**: :ref:`🔗<enum_AudioEffectFilter_FilterDB>`
 
 :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **FILTER_6DB** = ``0``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Cutting off at 6dB per octave.
 
 .. _class_AudioEffectFilter_constant_FILTER_12DB:
 
@@ -81,11 +77,7 @@ enum **FilterDB**: :ref:`🔗<enum_AudioEffectFilter_FilterDB>`
 
 :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **FILTER_12DB** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Cutting off at 12dB per octave.
 
 .. _class_AudioEffectFilter_constant_FILTER_18DB:
 
@@ -93,11 +85,7 @@ enum **FilterDB**: :ref:`🔗<enum_AudioEffectFilter_FilterDB>`
 
 :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **FILTER_18DB** = ``2``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Cutting off at 18dB per octave.
 
 .. _class_AudioEffectFilter_constant_FILTER_24DB:
 
@@ -105,11 +93,7 @@ enum **FilterDB**: :ref:`🔗<enum_AudioEffectFilter_FilterDB>`
 
 :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **FILTER_24DB** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Cutting off at 24dB per octave.
 
 .. rst-class:: classref-section-separator
 
@@ -148,9 +132,7 @@ Threshold frequency for the filter, in Hz.
 - |void| **set_db**\ (\ value\: :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>`\ )
 - :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **get_db**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Steepness of the cutoff curve in dB per octave, also known as the order of the filter. Higher orders have a more aggressive cutoff.
 
 .. rst-class:: classref-item-separator
 

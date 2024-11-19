@@ -79,7 +79,7 @@ Signals
 
 **despawned**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_MultiplayerSpawner_signal_despawned>`
 
-Emitted when a spawnable scene or custom spawn was despawned by the multiplayer authority. Only called on puppets.
+Emitted when a spawnable scene or custom spawn was despawned by the multiplayer authority. Only called on remote peers.
 
 .. rst-class:: classref-item-separator
 
@@ -91,7 +91,7 @@ Emitted when a spawnable scene or custom spawn was despawned by the multiplayer 
 
 **spawned**\ (\ node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_MultiplayerSpawner_signal_spawned>`
 
-Emitted when a spawnable scene or custom spawn was spawned by the multiplayer authority. Only called on puppets.
+Emitted when a spawnable scene or custom spawn was spawned by the multiplayer authority. Only called on remote peers.
 
 .. rst-class:: classref-section-separator
 

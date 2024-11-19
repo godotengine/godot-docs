@@ -201,7 +201,9 @@ Method Descriptions
 
 Tells whether this importer can be run in parallel on threads, or, on the contrary, it's only safe for the editor to call it from the main thread, for one file at a time.
 
-If this method is not overridden, it will return ``true`` by default (i.e., safe for parallel importing).
+If this method is not overridden, it will return ``false`` by default.
+
+If this importer's implementation is thread-safe and can be run in parallel, override this with ``true`` to optimize for concurrency.
 
 .. rst-class:: classref-item-separator
 
@@ -249,7 +251,7 @@ Gets the unique name of the importer.
 
 :ref:`bool<class_bool>` **_get_option_visibility**\ (\ path\: :ref:`String<class_String>`, option_name\: :ref:`StringName<class_StringName>`, options\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| |const| :ref:`🔗<class_EditorImportPlugin_private_method__get_option_visibility>`
 
-This method can be overridden to hide specific import options if conditions are met. This is mainly useful for hiding options that depend on others if one of them is disabled. For example:
+This method can be overridden to hide specific import options if conditions are met. This is mainly useful for hiding options that depend on others if one of them is disabled.
 
 
 .. tabs::

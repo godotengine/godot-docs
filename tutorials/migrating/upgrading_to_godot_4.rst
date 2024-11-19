@@ -13,7 +13,7 @@ Advantages of upgrading
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Along with the
-`new features present in 4.0 <https://github.com/godotengine/godot/blob/master/CHANGELOG.md>`__,
+`new features present in 4.0 <https://godotengine.org/article/godot-4-0-sets-sail>`__,
 upgrading gives the following advantages:
 
 - Many bugs are fixed in 4.0, but cannot be resolved in 3.x for various reasons
@@ -22,7 +22,8 @@ upgrading gives the following advantages:
   will continue to be supported for some time after 4.0 is released, but it will
   eventually stop receiving support.
 
-See :ref:`doc_docs_changelog` for a list of pages documenting new features in Godot 4.0.
+See :ref:`doc_docs_changelog` for a list of pages documenting new features in
+Godot 4.0, and :ref:`doc_list_of_features` for a list of all features in Godot.
 
 Disadvantages of upgrading
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -62,6 +63,10 @@ Godot 3.x for the following reasons:
 Caveats of upgrading
 ^^^^^^^^^^^^^^^^^^^^
 
+.. UPDATE: Planned feature. There are several planned or missing features that
+.. may be added back in the future. Check this section for accuracy and update
+.. it if things have changed!
+
 **Since Godot 4 is a complete rewrite in many aspects, some features have
 unfortunately been lost in the process.** Some of these features may be restored
 in future Godot releases:
@@ -71,9 +76,10 @@ in future Godot releases:
   manually change it to GodotPhysics. There are no plans to re-add Bullet physics
   in core, but a third-party add-on could be created for it thanks to
   GDExtension.
-- Rendering in 2D is no longer performed in HDR, which means "overbright"
-  modulate values have no visible effect. This is planned to be restored at some
-  point in the future.
+- By default, rendering in 2D is no longer performed in HDR, which means
+  "overbright" modulate values have no visible effect. Since Godot 4.2, you can
+  enable the project setting :ref:`HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+  to perform 2D rendering in HDR. See also :ref:`doc_environment_and_post_processing_using_glow_in_2d`.
 - While rendering still happens in HDR in 3D when using the Forward Plus or
   Forward Mobile backends, Viewports cannot return HDR data anymore. This is
   planned to be restored at some point in the future.
@@ -104,7 +110,7 @@ only ``.gdshader`` is supported in Godot 4.0.
 Running the project upgrade tool
 --------------------------------
 
-.. warning::
+.. danger::
 
     **Make a full backup of your project** before upgrading! The project upgrade
     tool will *not* perform any backups of the project that is being upgraded.
@@ -493,7 +499,7 @@ Checking Environment settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Graphics quality settings were moved from Environment properties to project
-settings. This was done to make run-time quality adjustments easier, without
+settings. This was done to make runtime quality adjustments easier, without
 having to access the currently active Environment resource then modify its
 properties.
 
@@ -509,13 +515,15 @@ environment effect and its visual knobs remain within the Environment resource.
 Updating shaders
 ^^^^^^^^^^^^^^^^
 
-There have been some changes to shaders that aren't covered by the upgrade tool.
+There have been some changes to shaders that aren't covered by the upgrade tool. 
+You will need to make some manual changes, especially if your shader uses coordinate
+space transformations or a custom ``light()`` function.
 
 The ``.shader`` file extension is no longer supported, which means you must
 rename ``.shader`` files to ``.gdshader`` and update references accordingly in
 scene/resource files using an external text editor.
 
-Some notable renames you will need to perform in shaders are:
+Some notable changes you will need to perform in shaders are:
 
 - Texture filter and repeat modes are now set on individual uniforms, rather
   than the texture files themselves.
@@ -524,8 +532,21 @@ Some notable renames you will need to perform in shaders are:
 - :ref:`Built in matrix variables were renamed. <doc_spatial_shader>`
 - Particles shaders no longer use the ``vertex()`` processor function. Instead
   they use ``start()`` and ``process()``.
+- In the Forward+ and Mobile renderers, normalized device coordinates now have a Z-range of ``[0.0,1.0]``
+  instead of ``[-1.0,1.0]``. When reconstructing NDC from ``SCREEN_UV`` and depth, use 
+  ``vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);`` instead of 
+  ``vec3 ndc = vec3(SCREEN_UV, depth) * 2.0 - 1.0;``. The Compatibility renderer is unchanged,
+  using the same NDC Z-range as 3.x.
+- The lighting model changed. If your shader has a custom ``light()`` function,
+  you may need to make changes to get the same visual result.
+- In 4.3 and up, the reverse Z depth buffer technique is now implemented, which 
+  may break advanced shaders. See 
+  `Introducing Reverse Z (AKA I'm sorry for breaking your shader) <https://godotengine.org/article/introducing-reverse-z/>`__.
 
 See :ref:`doc_shading_language` for more information.
+
+This list is not exhaustive. If you made all the changes mentioned here and your 
+shader still doesn't work, try asking for help in one of the `community channels <https://godotengine.org/community/>`__.
 
 Updating scripts to take backwards-incompatible changes into account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -553,7 +574,7 @@ The most notable examples of this are:
   The conversion tool will use the string-based syntax which is still present in
   Godot 4, but it's recommended to switch to the :ref:`class_Signal`-based syntax
   described on the linked page. This way, strings are no longer involved,
-  which avoids issues with signal name errors that can only be discovered at run-time.
+  which avoids issues with signal name errors that can only be discovered at runtime.
 - Built-in scripts that are :ref:`tool scripts <doc_running_code_in_the_editor>`
   do not get the ``tool`` keyword converted to the ``@tool`` annotation.
 - The Tween node was removed in favor of Tweeners, which are also available in

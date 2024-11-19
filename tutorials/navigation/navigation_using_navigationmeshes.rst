@@ -49,6 +49,10 @@ node, the individual parsing, baking, and region update steps are all combined i
 
 The nodes are available in 2D and 3D as :ref:`NavigationRegion2D<class_NavigationRegion2D>` and :ref:`NavigationRegion3D<class_NavigationRegion3D>` respectively.
 
+.. tip::
+
+    The navigation mesh ``source_geometry_mode`` can be switched to parse specific node group names so nodes that should be baked can be placed anywhere in the scene.
+
 .. tabs::
 
    .. tab:: Baking with a NavigationRegion2D
@@ -690,4 +694,3 @@ The following script uses the NavigationServer to update a navigation region wit
             NavigationServer3D.RegionSetNavigationMesh(_regionRid, _navigationMesh);
         }
     }
-

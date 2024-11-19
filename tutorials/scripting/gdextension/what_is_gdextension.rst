@@ -8,7 +8,7 @@ Introduction
 
 **GDExtension** is a Godot-specific technology that lets the engine interact with
 native `shared libraries <https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries>`__
-at run-time. You can use it to run native code without compiling it with the engine.
+at runtime. You can use it to run native code without compiling it with the engine.
 
 .. note:: GDExtension is *not* a scripting language and has no relation to
           :ref:`GDScript <doc_gdscript>`.
@@ -50,7 +50,7 @@ Also:
   languages.
 - You can use the same compiled GDExtension library in the editor and exported
   project. With C++ modules, you have to recompile all the export templates you
-  plan to use if you require its functionality at run-time.
+  plan to use if you require its functionality at runtime.
 - GDExtension only requires you to compile your library, not the whole engine.
   That's unlike C++ modules, which are statically compiled into the engine.
   Every time you change a module, you need to recompile the engine. Even with
@@ -97,7 +97,6 @@ The bindings below are developed and maintained by the community:
 
 - `D <https://github.com/godot-dlang/godot-dlang>`__
 - `Go <https://github.com/grow-graphics/gd>`__
-- `Haxe <https://hxgodot.github.io/>`__
 - `Rust <https://github.com/godot-rust/gdext>`__
 - `Swift <https://github.com/migueldeicaza/SwiftGodot>`__
 

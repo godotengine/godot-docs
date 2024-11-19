@@ -19,7 +19,7 @@ result is used.
 
     In Godot 4.3 we have implemented a unified approach that is explained on this help page
     so you don't need to worry about these differences, the :ref:`XRInterface <class_xrinterface>`
-    implementation is now responsible for applying the correct platform dependent method [#]_.
+    implementation is now responsible for applying the correct platform-dependent method [#]_.
 
     For headsets such as the Meta Quest and HTC Elite you will need to use the
     `OpenXR vendors plugin v3.0.0 <https://github.com/GodotVR/godot_openxr_vendors/releases>`__
@@ -91,7 +91,7 @@ by the XR runtime.
 .. image:: img/openxr_default_blend_mode.webp
 
 For passthrough devices OpenXR requires additional settings to be configured.
-These settings are platform dependent and provided through the OpenXR vendors plugin.
+These settings are platform-dependent and provided through the OpenXR vendors plugin.
 
 For example, these are the settings required on Meta Quest:
 

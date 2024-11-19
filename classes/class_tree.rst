@@ -197,6 +197,10 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_Tree_theme_color_font_disabled_color>`                   | ``Color(0.875, 0.875, 0.875, 0.5)`` |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`font_hovered_color<class_Tree_theme_color_font_hovered_color>`                     | ``Color(0.95, 0.95, 0.95, 1)``      |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`font_hovered_dimmed_color<class_Tree_theme_color_font_hovered_dimmed_color>`       | ``Color(0.875, 0.875, 0.875, 1)``   |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_Tree_theme_color_font_outline_color>`                     | ``Color(0, 0, 0, 1)``               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_Tree_theme_color_font_selected_color>`                   | ``Color(1, 1, 1, 1)``               |
@@ -287,6 +291,8 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`updown<class_Tree_theme_icon_updown>`                                              |                                     |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`button_hover<class_Tree_theme_style_button_hover>`                                 |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`button_pressed<class_Tree_theme_style_button_pressed>`                             |                                     |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`cursor<class_Tree_theme_style_cursor>`                                             |                                     |
@@ -300,6 +306,10 @@ Theme Properties
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`custom_button_pressed<class_Tree_theme_style_custom_button_pressed>`               |                                     |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`focus<class_Tree_theme_style_focus>`                                               |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hovered<class_Tree_theme_style_hovered>`                                           |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hovered_dimmed<class_Tree_theme_style_hovered_dimmed>`                             |                                     |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_Tree_theme_style_panel>`                                               |                                     |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
@@ -1364,6 +1374,30 @@ Text :ref:`Color<class_Color>` for a :ref:`TreeItem.CELL_MODE_CHECK<class_TreeIt
 
 ----
 
+.. _class_Tree_theme_color_font_hovered_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **font_hovered_color** = ``Color(0.95, 0.95, 0.95, 1)`` :ref:`🔗<class_Tree_theme_color_font_hovered_color>`
+
+Text :ref:`Color<class_Color>` used when the item is hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_color_font_hovered_dimmed_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **font_hovered_dimmed_color** = ``Color(0.875, 0.875, 0.875, 1)`` :ref:`🔗<class_Tree_theme_color_font_hovered_dimmed_color>`
+
+Text :ref:`Color<class_Color>` used when the item is hovered, while a button of the same item is hovered as the same time.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Tree_theme_color_font_outline_color:
 
 .. rst-class:: classref-themeproperty
@@ -1906,6 +1940,18 @@ The updown arrow icon to display for the :ref:`TreeItem.CELL_MODE_RANGE<class_Tr
 
 ----
 
+.. _class_Tree_theme_style_button_hover:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **button_hover** :ref:`🔗<class_Tree_theme_style_button_hover>`
+
+:ref:`StyleBox<class_StyleBox>` used when a button in the tree is hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Tree_theme_style_button_pressed:
 
 .. rst-class:: classref-themeproperty
@@ -1985,6 +2031,30 @@ Default :ref:`StyleBox<class_StyleBox>` for a :ref:`TreeItem.CELL_MODE_CUSTOM<cl
 :ref:`StyleBox<class_StyleBox>` **focus** :ref:`🔗<class_Tree_theme_style_focus>`
 
 The focused style for the **Tree**, drawn on top of everything.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_style_hovered:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hovered** :ref:`🔗<class_Tree_theme_style_hovered>`
+
+:ref:`StyleBox<class_StyleBox>` for the item being hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_style_hovered_dimmed:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hovered_dimmed** :ref:`🔗<class_Tree_theme_style_hovered_dimmed>`
+
+:ref:`StyleBox<class_StyleBox>` for the item being hovered, while a button of the same item is hovered as the same time.
 
 .. rst-class:: classref-item-separator
 

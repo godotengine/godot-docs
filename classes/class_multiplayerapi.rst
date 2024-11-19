@@ -349,7 +349,7 @@ Method used for polling the MultiplayerAPI. You only need to worry about this if
 
 Sends an RPC to the target ``peer``. The given ``method`` will be called on the remote ``object`` with the provided ``arguments``. The RPC may also be called locally depending on the implementation and RPC configuration. See :ref:`Node.rpc<class_Node_method_rpc>` and :ref:`Node.rpc_config<class_Node_method_rpc_config>`.
 
-\ **Note:** Prefer using :ref:`Node.rpc<class_Node_method_rpc>`, :ref:`Node.rpc_id<class_Node_method_rpc_id>`, or ``my_method.rpc(peer, arg1, arg2, ...)`` (in GDScript), since they are faster. This method is mostly useful in conjunction with :ref:`MultiplayerAPIExtension<class_MultiplayerAPIExtension>` when augmenting or replacing the multiplayer capabilities.
+\ **Note:** Prefer using :ref:`Node.rpc<class_Node_method_rpc>`, :ref:`Node.rpc_id<class_Node_method_rpc_id>`, or ``my_method.rpc(peer, arg1, arg2, ...)`` (in GDScript), since they are faster. This method is mostly useful in conjunction with :ref:`MultiplayerAPIExtension<class_MultiplayerAPIExtension>` when extending or replacing the multiplayer capabilities.
 
 .. rst-class:: classref-item-separator
 

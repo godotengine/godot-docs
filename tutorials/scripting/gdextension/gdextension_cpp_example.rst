@@ -161,6 +161,7 @@ In the ``src`` folder, we'll start with creating our header file for the
 GDExtension node we'll be creating. We will name it ``gdexample.h``:
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/gdexample.h
 
     #ifndef GDEXAMPLE_H
     #define GDEXAMPLE_H
@@ -214,6 +215,7 @@ as the ``_process`` function you're used to in GDScript.
 Let's implement our functions by creating our ``gdexample.cpp`` file:
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/gdexample.cpp
 
     #include "gdexample.h"
     #include <godot_cpp/core/class_db.hpp>
@@ -253,6 +255,7 @@ is a small bit of code that tells Godot about all the classes in our
 GDExtension plugin.
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/register_types.cpp
 
     #include "register_types.h"
 
@@ -295,7 +298,7 @@ The ``initialize_example_module`` and ``uninitialize_example_module`` functions 
 called respectively when Godot loads our plugin and when it unloads it. All
 we're doing here is parse through the functions in our bindings module to
 initialize them, but you might have to set up more things depending on your
-needs. We call the function ``register_class`` for each of our classes in our library.
+needs. We call the ``GDREGISTER_CLASS`` macro for each of our classes in our library.
 
 The important function is the third function called ``example_library_init``.
 We first call a function in our bindings library that creates an initialization object.
@@ -306,6 +309,7 @@ At last, we need the header file for the ``register_types.cpp`` named
 ``register_types.h``.
 
 .. code-block:: cpp
+    :caption: gdextension_cpp_example/src/register_types.h
 
     #ifndef GDEXAMPLE_REGISTER_TYPES_H
     #define GDEXAMPLE_REGISTER_TYPES_H
@@ -497,6 +501,7 @@ show the methods we end up changing, don't remove the lines we're omitting:
     void GDExample::_bind_methods() {
         ClassDB::bind_method(D_METHOD("get_amplitude"), &GDExample::get_amplitude);
         ClassDB::bind_method(D_METHOD("set_amplitude", "p_amplitude"), &GDExample::set_amplitude);
+
         ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "amplitude"), "set_amplitude", "get_amplitude");
     }
 
@@ -554,7 +559,8 @@ showing the methods that have changed so don't remove anything we're omitting:
         ...
         ClassDB::bind_method(D_METHOD("get_speed"), &GDExample::get_speed);
         ClassDB::bind_method(D_METHOD("set_speed", "p_speed"), &GDExample::set_speed);
-        ADD_PROPERTY("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
+
+        ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
     }
 
     GDExample::GDExample() {
@@ -648,7 +654,7 @@ as follows:
 
     void GDExample::_bind_methods() {
         ...
-        ADD_PROPERTY("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
+        ADD_PROPERTY(PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
 
         ADD_SIGNAL(MethodInfo("position_changed", PropertyInfo(Variant::OBJECT, "node"), PropertyInfo(Variant::VECTOR2, "new_pos")));
     }

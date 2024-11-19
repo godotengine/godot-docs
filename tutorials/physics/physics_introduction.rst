@@ -132,7 +132,7 @@ These properties can be configured via code, or by editing them in the Inspector
 
 Keeping track of what you're using each layer for can be difficult, so you
 may find it useful to assign names to the layers you're using. Names can
-be assigned in Project Settings -> Layer Names.
+be assigned in **Project Settings > Layer Names**.
 
 .. image:: img/physics_layer_names.png
 
@@ -190,6 +190,12 @@ or ``set_collision_mask_value(layer_number, value)`` on any given :ref:`Collisio
     collider.set_collision_mask_value(3, true)
     collider.set_collision_mask_value(4, true)
 
+Export annotations can be used to export bitmasks in the editor with a user-friendly GUI::
+
+    @export_flags_2d_physics var layers_2d_physics
+
+Additional export annotations are available for render and navigation layers, in both 2D and 3D. See :ref:`doc_gdscript_exports_exporting_bit_flags`.
+
 Area2D
 ------
 
@@ -238,7 +244,7 @@ You can modify a rigid body's behavior via properties such as "Mass",
 "Friction", or "Bounce", which can be set in the Inspector.
 
 The body's behavior is also affected by the world's properties, as set in
-`Project Settings -> Physics`, or by entering an :ref:`Area2D <class_Area2D>`
+**Project Settings > Physics**, or by entering an :ref:`Area2D <class_Area2D>`
 that is overriding the global physics properties.
 
 When a rigid body is at rest and hasn't moved for a while, it goes to sleep.

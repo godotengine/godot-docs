@@ -19,7 +19,7 @@ Custom generator of previews.
 Description
 -----------
 
-Custom code to generate previews. Please check ``file_dialog/thumbnail_size`` in :ref:`EditorSettings<class_EditorSettings>` to find out the right size to do previews at.
+Custom code to generate previews. Check :ref:`EditorSettings.filesystem/file_dialog/thumbnail_size<class_EditorSettings_property_filesystem/file_dialog/thumbnail_size>` to find a proper size to generate previews at.
 
 .. rst-class:: classref-reftable-group
 
@@ -72,7 +72,7 @@ By default, it returns ``false``.
 
 Generate a preview from a given resource with the specified size. This must always be implemented.
 
-Returning an empty texture is an OK way to fail and let another generator take care.
+Returning ``null`` is an OK way to fail and let another generator take care.
 
 Care must be taken because this function is always called from a thread (not the main thread).
 
@@ -90,7 +90,7 @@ Care must be taken because this function is always called from a thread (not the
 
 Generate a preview directly from a path with the specified size. Implementing this is optional, as default code will load and call :ref:`_generate<class_EditorResourcePreviewGenerator_private_method__generate>`.
 
-Returning an empty texture is an OK way to fail and let another generator take care.
+Returning ``null`` is an OK way to fail and let another generator take care.
 
 Care must be taken because this function is always called from a thread (not the main thread).
 

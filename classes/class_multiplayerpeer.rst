@@ -381,7 +381,7 @@ Returns the ID of this **MultiplayerPeer**.
 
 :ref:`bool<class_bool>` **is_server_relay_supported**\ (\ ) |const| :ref:`🔗<class_MultiplayerPeer_method_is_server_relay_supported>`
 
-Returns true if the server can act as a relay in the current configuration (i.e. if the higher level :ref:`MultiplayerAPI<class_MultiplayerAPI>` should notify connected clients of other peers, and implement a relay protocol to allow communication between them).
+Returns ``true`` if the server can act as a relay in the current configuration. That is, if the higher level :ref:`MultiplayerAPI<class_MultiplayerAPI>` should notify connected clients of other peers, and implement a relay protocol to allow communication between them.
 
 .. rst-class:: classref-item-separator
 

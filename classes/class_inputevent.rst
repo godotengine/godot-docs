@@ -266,6 +266,8 @@ Returns ``true`` if the specified ``event`` matches this event. Only valid for a
 
 If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
+\ **Note:** Only considers the event configuration (such as the keyboard key or joypad axis), not state information like :ref:`is_pressed<class_InputEvent_method_is_pressed>`, :ref:`is_released<class_InputEvent_method_is_released>`, :ref:`is_echo<class_InputEvent_method_is_echo>`, or :ref:`is_canceled<class_InputEvent_method_is_canceled>`.
+
 .. rst-class:: classref-item-separator
 
 ----

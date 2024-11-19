@@ -194,6 +194,8 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`has_feature<class_DisplayServer_method_has_feature>`\ (\ feature\: :ref:`Feature<enum_DisplayServer_Feature>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`has_hardware_keyboard<class_DisplayServer_method_has_hardware_keyboard>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`help_set_search_callbacks<class_DisplayServer_method_help_set_search_callbacks>`\ (\ search_callback\: :ref:`Callable<class_Callable>`, action_callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                         | :ref:`ime_get_selection<class_DisplayServer_method_ime_get_selection>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -616,7 +618,15 @@ Display server supports spawning text input dialogs using the operating system's
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG_FILE** = ``25``
 
-Display server supports spawning dialogs for selecting files or directories using the operating system's native look-and-feel. See :ref:`file_dialog_show<class_DisplayServer_method_file_dialog_show>` and :ref:`file_dialog_with_options_show<class_DisplayServer_method_file_dialog_with_options_show>`. **Windows, macOS, Linux (X11/Wayland)**
+Display server supports spawning dialogs for selecting files or directories using the operating system's native look-and-feel. See :ref:`file_dialog_show<class_DisplayServer_method_file_dialog_show>`. **Windows, macOS, Linux (X11/Wayland), Android**
+
+.. _class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE_EXTRA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG_FILE_EXTRA** = ``26``
+
+The display server supports all features of :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>`, with the added functionality of Options and native dialog file access to ``res://`` and ``user://`` paths. See :ref:`file_dialog_show<class_DisplayServer_method_file_dialog_show>` and :ref:`file_dialog_with_options_show<class_DisplayServer_method_file_dialog_with_options_show>`. **Windows, macOS, Linux (X11/Wayland)**
 
 .. rst-class:: classref-item-separator
 
@@ -1060,6 +1070,8 @@ Full screen mode with full multi-window support.
 
 Full screen window covers the entire display area of a screen and has no decorations. The display's video mode is not changed.
 
+\ **On Android:** This enables immersive mode.
+
 \ **On Windows:** Multi-window full-screen mode has a 1px border of the :ref:`ProjectSettings.rendering/environment/defaults/default_clear_color<class_ProjectSettings_property_rendering/environment/defaults/default_clear_color>` color.
 
 \ **On macOS:** A new desktop is used to display the running project.
@@ -1075,6 +1087,8 @@ Full screen window covers the entire display area of a screen and has no decorat
 A single window full screen mode. This mode has less overhead, but only one window can be open on a given screen at a time (opening a child window or application switching will trigger a full screen transition).
 
 Full screen window covers the entire display area of a screen and has no border or decorations. The display's video mode is not changed.
+
+\ **On Android:** This enables immersive mode.
 
 \ **On Windows:** Depending on video driver, full screen transition might cause screens to go black for a moment.
 
@@ -1168,11 +1182,21 @@ Use :ref:`window_get_safe_title_margins<class_DisplayServer_method_window_get_sa
 
 All mouse events are passed to the underlying window of the same application.
 
+.. _class_DisplayServer_constant_WINDOW_FLAG_SHARP_CORNERS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_SHARP_CORNERS** = ``8``
+
+Window style is overridden, forcing sharp corners.
+
+\ **Note:** This flag is implemented only on Windows (11).
+
 .. _class_DisplayServer_constant_WINDOW_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MAX** = ``8``
+:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MAX** = ``9``
 
 Max value of the :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`.
 
@@ -1320,6 +1344,8 @@ Display handle:
 
 - Linux (X11): ``X11::Display*`` for the display.
 
+- Linux (Wayland): ``wl_display`` for the display.
+
 - Android: ``EGLDisplay`` for the display.
 
 .. _class_DisplayServer_constant_WINDOW_HANDLE:
@@ -1333,6 +1359,8 @@ Window handle:
 - Windows: ``HWND`` for the window.
 
 - Linux (X11): ``X11::Window*`` for the window.
+
+- Linux (Wayland): ``wl_surface`` for the window.
 
 - macOS: ``NSWindow*`` for the window.
 
@@ -1366,9 +1394,35 @@ OpenGL context (only with the GL Compatibility renderer):
 
 - Linux (X11): ``GLXContext*`` for the window.
 
+- Linux (Wayland): ``EGLContext`` for the window.
+
 - macOS: ``NSOpenGLContext*`` for the window (native GL), or ``EGLContext`` for the window (ANGLE).
 
 - Android: ``EGLContext`` for the window.
+
+.. _class_DisplayServer_constant_EGL_DISPLAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandleType<enum_DisplayServer_HandleType>` **EGL_DISPLAY** = ``4``
+
+- Windows: ``EGLDisplay`` for the window (ANGLE).
+
+- macOS: ``EGLDisplay`` for the window (ANGLE).
+
+- Linux (Wayland): ``EGLDisplay`` for the window.
+
+.. _class_DisplayServer_constant_EGL_CONFIG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandleType<enum_DisplayServer_HandleType>` **EGL_CONFIG** = ``5``
+
+- Windows: ``EGLConfig`` for the window (ANGLE).
+
+- macOS: ``EGLConfig`` for the window (ANGLE).
+
+- Linux (Wayland): ``EGLConfig`` for the window.
 
 .. rst-class:: classref-item-separator
 
@@ -1656,7 +1710,7 @@ Removes the application status indicator.
 
 Shows a text input dialog which uses the operating system's native look-and-feel. ``callback`` should accept a single :ref:`String<class_String>` parameter which contains the text field's contents.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_INPUT<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_INPUT>` feature. Supported platforms include macOS and Windows.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_INPUT<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_INPUT>` feature. Supported platforms include macOS, Windows, and Android.
 
 .. rst-class:: classref-item-separator
 
@@ -1700,15 +1754,17 @@ Displays OS native dialog for selecting files or directories in the file system.
 
 Each filter string in the ``filters`` array should be formatted like this: ``*.txt,*.doc;Text Files``. The description text of the filter is optional and can be omitted. See also :ref:`FileDialog.filters<class_FileDialog_property_filters>`.
 
-Callbacks have the following arguments: ``status: bool, selected_paths: PackedStringArray, selected_filter_index: int``.
+Callbacks have the following arguments: ``status: bool, selected_paths: PackedStringArray, selected_filter_index: int``. **On Android,** callback argument ``selected_filter_index`` is always zero.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>` feature. Supported platforms include Linux (X11/Wayland), Windows, and macOS.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>` feature. Supported platforms include Linux (X11/Wayland), Windows, macOS, and Android.
 
 \ **Note:** ``current_directory`` might be ignored.
 
-\ **Note:** On Linux, ``show_hidden`` is ignored.
+\ **Note:** On Android, the filter strings in the ``filters`` array should be specified using MIME types, for example:``image/png, image/jpeg"``. Additionally, the ``mode`` :ref:`FILE_DIALOG_MODE_OPEN_ANY<class_DisplayServer_constant_FILE_DIALOG_MODE_OPEN_ANY>` is not supported on Android.
 
-\ **Note:** On macOS, native file dialogs have no title.
+\ **Note:** On Android and Linux, ``show_hidden`` is ignored.
+
+\ **Note:** On Android and macOS, native file dialogs have no title.
 
 \ **Note:** On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use :ref:`OS.get_granted_permissions<class_OS_method_get_granted_permissions>` to get a list of saved bookmarks.
 
@@ -1736,7 +1792,7 @@ Each filter string in the ``filters`` array should be formatted like this: ``*.t
 
 Callbacks have the following arguments: ``status: bool, selected_paths: PackedStringArray, selected_filter_index: int, selected_option: Dictionary``.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>` feature. Supported platforms include Linux (X11/Wayland), Windows, and macOS.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_FILE_EXTRA<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE_EXTRA>` feature. Supported platforms include Linux (X11/Wayland), Windows, and macOS.
 
 \ **Note:** ``current_directory`` might be ignored.
 
@@ -1772,7 +1828,7 @@ Forces window manager processing while ignoring all :ref:`InputEvent<class_Input
 
 Returns OS theme accent color. Returns ``Color(0, 0, 0, 0)``, if accent color is unknown.
 
-\ **Note:** This method is implemented on macOS and Windows.
+\ **Note:** This method is implemented on macOS, Windows, and Android.
 
 .. rst-class:: classref-item-separator
 
@@ -1874,7 +1930,7 @@ Returns the number of displays available.
 
 :ref:`int<class_int>` **get_screen_from_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |const| :ref:`🔗<class_DisplayServer_method_get_screen_from_rect>`
 
-Returns index of the screen which contains specified rectangle.
+Returns the index of the screen that overlaps the most with the given rectangle. Returns ``-1`` if the rectangle doesn't overlap with any screen or has no area.
 
 .. rst-class:: classref-item-separator
 
@@ -2902,6 +2958,20 @@ Returns ``true`` if any additional outputs have been registered via :ref:`regist
 :ref:`bool<class_bool>` **has_feature**\ (\ feature\: :ref:`Feature<enum_DisplayServer_Feature>`\ ) |const| :ref:`🔗<class_DisplayServer_method_has_feature>`
 
 Returns ``true`` if the specified ``feature`` is supported by the current **DisplayServer**, ``false`` otherwise.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_has_hardware_keyboard:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_hardware_keyboard**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_has_hardware_keyboard>`
+
+Returns ``true`` if hardware keyboard is connected.
+
+\ **Note:** This method is implemented on Android and iOS, on other platforms this method always returns ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -4256,6 +4326,8 @@ Sets the minimum size for the given window to ``min_size`` in pixels. Normally, 
 |void| **window_set_mode**\ (\ mode\: :ref:`WindowMode<enum_DisplayServer_WindowMode>`, window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_set_mode>`
 
 Sets window mode for the given window to ``mode``. See :ref:`WindowMode<enum_DisplayServer_WindowMode>` for possible values and how each mode behaves.
+
+\ **Note:** On Android, setting it to :ref:`WINDOW_MODE_FULLSCREEN<class_DisplayServer_constant_WINDOW_MODE_FULLSCREEN>` or :ref:`WINDOW_MODE_EXCLUSIVE_FULLSCREEN<class_DisplayServer_constant_WINDOW_MODE_EXCLUSIVE_FULLSCREEN>` will enable immersive mode.
 
 \ **Note:** Setting the window to full screen forcibly sets the borderless flag to ``true``, so make sure to set it back to ``false`` when not wanted.
 

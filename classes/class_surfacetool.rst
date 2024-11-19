@@ -429,7 +429,7 @@ Generates an LOD for a given ``nd_threshold`` in linear units (square root of qu
 
 Generates normals from vertices so you do not have to do it manually. If ``flip`` is ``true``, the resulting normals will be inverted. :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` should be called *after* generating geometry and *before* committing the mesh using :ref:`commit<class_SurfaceTool_method_commit>` or :ref:`commit_to_arrays<class_SurfaceTool_method_commit_to_arrays>`. For correct display of normal-mapped surfaces, you will also have to generate tangents using :ref:`generate_tangents<class_SurfaceTool_method_generate_tangents>`.
 
-\ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` only works if the primitive type to be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
+\ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` only works if the primitive type is set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
 \ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` takes smooth groups into account. To generate smooth normals, set the smooth group to a value greater than or equal to ``0`` using :ref:`set_smooth_group<class_SurfaceTool_method_set_smooth_group>` or leave the smooth group at the default of ``0``. To generate flat normals, set the smooth group to ``-1`` using :ref:`set_smooth_group<class_SurfaceTool_method_set_smooth_group>` prior to adding vertices.
 
@@ -611,7 +611,7 @@ Specifies a normal to use for the *next* vertex. If every vertex needs to have t
 
 Set to :ref:`SKIN_8_WEIGHTS<class_SurfaceTool_constant_SKIN_8_WEIGHTS>` to indicate that up to 8 bone influences per vertex may be used.
 
-By default, only 4 bone influences are used (:ref:`SKIN_4_WEIGHTS<class_SurfaceTool_constant_SKIN_4_WEIGHTS>`)
+By default, only 4 bone influences are used (:ref:`SKIN_4_WEIGHTS<class_SurfaceTool_constant_SKIN_4_WEIGHTS>`).
 
 \ **Note:** This function takes an enum, not the exact number of weights.
 

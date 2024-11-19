@@ -33,7 +33,7 @@ add-on.
 
 All contributors are welcome to help on the Godot documentation.
 
-To get started, head to the [Contributing section](https://docs.godotengine.org/en/latest/contributing/ways_to_contribute.html#contributing-to-the-documentation) of the online manual. There, you will find all the information you need to write and submit changes.
+To get started, head to the [Contributing section](https://docs.godotengine.org/en/latest/contributing/how_to_contribute.html) of the online manual. There, you will find all the information you need to write and submit changes.
 
 Here are some quick links to the areas you might be interested in:
 

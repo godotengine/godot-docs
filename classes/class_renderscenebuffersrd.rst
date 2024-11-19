@@ -142,7 +142,7 @@ Create a new texture using the given format and view and cache this under the gi
 
 :ref:`RID<class_RID>` **create_texture_view**\ (\ context\: :ref:`StringName<class_StringName>`, name\: :ref:`StringName<class_StringName>`, view_name\: :ref:`StringName<class_StringName>`, view\: :ref:`RDTextureView<class_RDTextureView>`\ ) :ref:`🔗<class_RenderSceneBuffersRD_method_create_texture_view>`
 
-Create a new texture view for an existing texture and cache this under the given view_name. Will return the existing teture view if it already exists. Will error if the source texture doesn't exist.
+Create a new texture view for an existing texture and cache this under the given ``view_name``. Will return the existing texture view if it already exists. Will error if the source texture doesn't exist.
 
 .. rst-class:: classref-item-separator
 
@@ -156,7 +156,7 @@ Create a new texture view for an existing texture and cache this under the given
 
 Returns the specified layer from the color texture we are rendering 3D content to.
 
-If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of the buffer.
+If ``msaa`` is ``true`` and MSAA is enabled, this returns the MSAA variant of the buffer.
 
 .. rst-class:: classref-item-separator
 
@@ -170,7 +170,7 @@ If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of th
 
 Returns the color texture we are rendering 3D content to. If multiview is used this will be a texture array with all views.
 
-If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of the buffer.
+If ``msaa`` is ``true`` and MSAA is enabled, this returns the MSAA variant of the buffer.
 
 .. rst-class:: classref-item-separator
 
@@ -184,7 +184,7 @@ If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of th
 
 Returns the specified layer from the depth texture we are rendering 3D content to.
 
-If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of the buffer.
+If ``msaa`` is ``true`` and MSAA is enabled, this returns the MSAA variant of the buffer.
 
 .. rst-class:: classref-item-separator
 
@@ -198,7 +198,7 @@ If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of th
 
 Returns the depth texture we are rendering 3D content to. If multiview is used this will be a texture array with all views.
 
-If ``msaa`` is **true** and MSAA is enabled, this returns the MSAA variant of the buffer.
+If ``msaa`` is ``true`` and MSAA is enabled, this returns the MSAA variant of the buffer.
 
 .. rst-class:: classref-item-separator
 

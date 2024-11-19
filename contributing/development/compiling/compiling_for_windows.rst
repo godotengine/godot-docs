@@ -15,22 +15,25 @@ Requirements
 
 For compiling under Windows, the following is required:
 
-- `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
-  version 2019 or later. Visual Studio 2022 is recommended.
-  **Make sure to enable C++ in the list of workflows to install.**
-  If you've already installed Visual Studio without C++ support, run the installer
-  again; it should present you a **Modify** button.
-  Supports ``x86_64``, ``x86_32``, and ``arm64``.
-- `MinGW-w64 <https://mingw-w64.org/>`_ with GCC can be used as an alternative to
-  Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
-  **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later.
-  Supports ``x86_64`` and ``x86_32`` only.
-- `MinGW-LLVM <https://github.com/mstorsjo/llvm-mingw/releases>`_ with clang can be used as
-  an alternative to Visual Studio and MinGW-w64.
-  Supports ``x86_64``, ``x86_32``, and ``arm64``.
-- `Python 3.6+ <https://www.python.org/downloads/windows/>`_.
-  **Make sure to enable the option to add Python to the ``PATH`` in the installer.**
-- `SCons 3.1.2+ <https://scons.org/pages/download.html>`_ build system. Using the
+
+- A C++ compiler. Use one of the following:
+
+    - `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
+      version 2019 or later. Visual Studio 2022 is recommended.
+      **Make sure to enable C++ in the list of workflows to install.**
+      If you've already installed Visual Studio without C++ support, run the installer
+      again; it should present you a **Modify** button.
+      Supports ``x86_64``, ``x86_32``, and ``arm64``.
+    - `MinGW-w64 <https://mingw-w64.org/>`_ with GCC can be used as an alternative to
+      Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
+      **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later.
+      Supports ``x86_64`` and ``x86_32`` only.
+    - `MinGW-LLVM <https://github.com/mstorsjo/llvm-mingw/releases>`_ with clang can be used as
+      an alternative to Visual Studio and MinGW-w64.
+      Supports ``x86_64``, ``x86_32``, and ``arm64``.
+- `Python 3.8+ <https://www.python.org/downloads/windows/>`_.
+  **Make sure to enable the option to add Python to the** ``PATH`` **in the installer.**
+- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system. Using the
   latest release is recommended, especially for proper support of recent Visual
   Studio releases.
 
@@ -314,7 +317,7 @@ codebase. To edit projects with Visual Studio they need to be set up as a soluti
 You can create a Visual Studio solution via SCons by running SCons with
 the ``vsproj=yes`` parameter, like this::
 
-   scons p=windows vsproj=yes
+   scons platform=windows vsproj=yes
 
 You will be able to open Godot's source in a Visual Studio solution now,
 and able to build Godot using Visual Studio's **Build** button.

@@ -62,7 +62,7 @@ the radiance cubemap:
 Try to avoid updating the radiance cubemap needlessly. If you do need to
 update the radiance cubemap each frame, make sure your
 :ref:`Sky process mode <class_Sky_property_process_mode>` is set to
-:ref:`REALTIME <class_Sky_constant_PROCESS_MODE_REALTIME>`.
+:ref:`PROCESS_MODE_REALTIME <class_Sky_constant_PROCESS_MODE_REALTIME>`.
 
 Note that the :ref:`process mode <class_Sky_property_process_mode>` only
 affects the rendering of the radiance cubemap. The visible sky is always
@@ -139,9 +139,9 @@ a lower resolution than the rest of the sky:
 Built-ins
 ^^^^^^^^^
 
-Values marked as "in" are read-only. Values marked as "out" are for optional
-writing and will not necessarily contain sensible values. Samplers cannot be
-written to so they are not marked.
+Values marked as ``in`` are read-only. Values marked as ``out`` can optionally 
+be written to and will not necessarily contain sensible values. Samplers cannot 
+be written to so they are not marked.
 
 Global built-ins
 ^^^^^^^^^^^^^^^^
@@ -154,7 +154,7 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | Built-in                        | Description                                                                                                              |
 +=================================+==========================================================================================================================+
-| in float **TIME**               | Global time since the engine has started, in seconds. It repeats after every 3,600                                       |
+| in float **TIME**               | Global time since the engine has started, in seconds. It repeats after every ``3,600``                                   |
 |                                 | seconds (which can  be changed with the                                                                                  |
 |                                 | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`                                 |
 |                                 | setting). It's not affected by :ref:`time_scale<class_Engine_property_time_scale>` or                                    |
@@ -162,17 +162,17 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 |                                 | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each                                    |
 |                                 | frame.                                                                                                                   |                          
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| in vec3 **POSITION**            | Camera position in world space                                                                                           |
+| in vec3 **POSITION**            | Camera position, in world space.                                                                                         |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | samplerCube **RADIANCE**        | Radiance cubemap. Can only be read from during background pass. Check ``!AT_CUBEMAP_PASS`` before using.                 |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| in bool **AT_HALF_RES_PASS**    | Currently rendering to half resolution pass.                                                                             |
+| in bool **AT_HALF_RES_PASS**    | ``true`` when rendering to half resolution pass.                                                                         |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| in bool **AT_QUARTER_RES_PASS** | Currently rendering to quarter resolution pass.                                                                          |
+| in bool **AT_QUARTER_RES_PASS** | ``true`` when rendering to quarter resolution pass.                                                                      |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| in bool **AT_CUBEMAP_PASS**     | Currently rendering to radiance cubemap.                                                                                 |
+| in bool **AT_CUBEMAP_PASS**     | ``true`` when rendering to radiance cubemap.                                                                             |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| in bool **LIGHTX_ENABLED**      | ``LightX`` is visible and in the scene. If ``false``, other light properties may be garbage.                             |
+| in bool **LIGHTX_ENABLED**      | ``true`` if ``LIGHTX`` is visible and in the scene. If ``false``, other light properties may be garbage.                 |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in float **LIGHTX_ENERGY**      | Energy multiplier for ``LIGHTX``.                                                                                        |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+

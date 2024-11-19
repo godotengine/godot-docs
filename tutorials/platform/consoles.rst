@@ -8,7 +8,7 @@ Console porting process
 
 In order to develop for consoles in Godot, you need access to the console SDK and
 export templates for it. These export templates need to be developed either by
-yourself or someone hired to do it, or provided by a third party company.
+yourself or someone hired to do it, or provided by a third-party company.
 
 Currently, the only console Godot officially supports is Steam Deck (through the
 official Linux export templates).
@@ -82,6 +82,7 @@ Following is the list of providers:
 - `Seaven Studio <https://www.seaven-studio.com/>`_ offers
   Switch, Xbox One, Xbox Series, PlayStation 4 & PlayStation 5 porting of Godot games.
 - `Sickhead Games <https://www.sickhead.com>`_ offers console porting to Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S for Godot games.
+- `W4 Games <https://www.w4games.com/>`_ offers console ports for Nintendo Switch, Xbox Series X/S, and Playstation 5 for you to port your game yourself.
 
 If your company offers porting, or porting *and* publishing services for Godot games,
 feel free to

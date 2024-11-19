@@ -64,25 +64,39 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`           | :ref:`_get_rid<class_Resource_private_method__get_rid>`\ (\ ) |virtual| |const|                                 |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>`\ (\ ) |virtual|               |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>`\ (\ subresources\: :ref:`bool<class_bool>` = false\ ) |const| |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`emit_changed<class_Resource_method_emit_changed>`\ (\ )                                                   |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`     | :ref:`generate_scene_unique_id<class_Resource_method_generate_scene_unique_id>`\ (\ ) |static|                  |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | :ref:`Node<class_Node>`         | :ref:`get_local_scene<class_Resource_method_get_local_scene>`\ (\ ) |const|                                     |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`           | :ref:`get_rid<class_Resource_method_get_rid>`\ (\ ) |const|                                                     |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>`\ (\ )                                   |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`take_over_path<class_Resource_method_take_over_path>`\ (\ path\: :ref:`String<class_String>`\ )           |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`           | :ref:`_get_rid<class_Resource_private_method__get_rid>`\ (\ ) |virtual| |const|                                                           |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`_reset_state<class_Resource_private_method__reset_state>`\ (\ ) |virtual|                                                           |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`_set_path_cache<class_Resource_private_method__set_path_cache>`\ (\ path\: :ref:`String<class_String>`\ ) |virtual| |const|         |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>`\ (\ ) |virtual|                                         |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>`\ (\ subresources\: :ref:`bool<class_bool>` = false\ ) |const|                           |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`emit_changed<class_Resource_method_emit_changed>`\ (\ )                                                                             |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`generate_scene_unique_id<class_Resource_method_generate_scene_unique_id>`\ (\ ) |static|                                            |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`get_id_for_path<class_Resource_method_get_id_for_path>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                           |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`         | :ref:`get_local_scene<class_Resource_method_get_local_scene>`\ (\ ) |const|                                                               |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`           | :ref:`get_rid<class_Resource_method_get_rid>`\ (\ ) |const|                                                                               |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`is_built_in<class_Resource_method_is_built_in>`\ (\ ) |const|                                                                       |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`reset_state<class_Resource_method_reset_state>`\ (\ )                                                                               |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_id_for_path<class_Resource_method_set_id_for_path>`\ (\ path\: :ref:`String<class_String>`, id\: :ref:`String<class_String>`\ ) |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_path_cache<class_Resource_method_set_path_cache>`\ (\ path\: :ref:`String<class_String>`\ )                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>`\ (\ )                                                             |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`take_over_path<class_Resource_method_take_over_path>`\ (\ path\: :ref:`String<class_String>`\ )                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -223,6 +237,30 @@ Override this method to return a custom :ref:`RID<class_RID>` when :ref:`get_rid
 
 ----
 
+.. _class_Resource_private_method__reset_state:
+
+.. rst-class:: classref-method
+
+|void| **_reset_state**\ (\ ) |virtual| :ref:`🔗<class_Resource_private_method__reset_state>`
+
+For resources that use a variable number of properties, either via :ref:`Object._validate_property<class_Object_private_method__validate_property>` or :ref:`Object._get_property_list<class_Object_private_method__get_property_list>`, this method should be implemented to correctly clear the resource's state.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Resource_private_method__set_path_cache:
+
+.. rst-class:: classref-method
+
+|void| **_set_path_cache**\ (\ path\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_Resource_private_method__set_path_cache>`
+
+Sets the resource's path to ``path`` without involving the resource cache.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Resource_private_method__setup_local_to_scene:
 
 .. rst-class:: classref-method
@@ -231,7 +269,7 @@ Override this method to return a custom :ref:`RID<class_RID>` when :ref:`get_rid
 
 Override this method to customize the newly duplicated resource created from :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`, if the original's :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is set to ``true``.
 
-\ **Example:** Set a random ``damage`` value to every local resource from an instantiated scene.
+\ **Example:** Set a random ``damage`` value to every local resource from an instantiated scene:
 
 ::
 
@@ -304,6 +342,20 @@ Generates a unique identifier for a resource to be contained inside a :ref:`Pack
 
 ----
 
+.. _class_Resource_method_get_id_for_path:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_id_for_path**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_Resource_method_get_id_for_path>`
+
+Returns the unique identifier for the resource with the given ``path`` from the resource cache. If the resource is not loaded and cached, an empty string is returned.
+
+\ **Note:** This method is only implemented when running in an editor context. At runtime, it returns an empty string.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Resource_method_get_local_scene:
 
 .. rst-class:: classref-method
@@ -323,6 +375,56 @@ If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene
 :ref:`RID<class_RID>` **get_rid**\ (\ ) |const| :ref:`🔗<class_Resource_method_get_rid>`
 
 Returns the :ref:`RID<class_RID>` of this resource (or an empty RID). Many resources (such as :ref:`Texture2D<class_Texture2D>`, :ref:`Mesh<class_Mesh>`, and so on) are high-level abstractions of resources stored in a specialized server (:ref:`DisplayServer<class_DisplayServer>`, :ref:`RenderingServer<class_RenderingServer>`, etc.), so this function will return the original :ref:`RID<class_RID>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Resource_method_is_built_in:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_built_in**\ (\ ) |const| :ref:`🔗<class_Resource_method_is_built_in>`
+
+Returns ``true`` if the resource is built-in (from the engine) or ``false`` if it is user-defined.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Resource_method_reset_state:
+
+.. rst-class:: classref-method
+
+|void| **reset_state**\ (\ ) :ref:`🔗<class_Resource_method_reset_state>`
+
+For resources that use a variable number of properties, either via :ref:`Object._validate_property<class_Object_private_method__validate_property>` or :ref:`Object._get_property_list<class_Object_private_method__get_property_list>`, override :ref:`_reset_state<class_Resource_private_method__reset_state>` to correctly clear the resource's state.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Resource_method_set_id_for_path:
+
+.. rst-class:: classref-method
+
+|void| **set_id_for_path**\ (\ path\: :ref:`String<class_String>`, id\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Resource_method_set_id_for_path>`
+
+Sets the unique identifier to ``id`` for the resource with the given ``path`` in the resource cache. If the unique identifier is empty, the cache entry using ``path`` is removed if it exists.
+
+\ **Note:** This method is only implemented when running in an editor context.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Resource_method_set_path_cache:
+
+.. rst-class:: classref-method
+
+|void| **set_path_cache**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Resource_method_set_path_cache>`
+
+Sets the resource's path to ``path`` without involving the resource cache.
 
 .. rst-class:: classref-item-separator
 

@@ -69,6 +69,19 @@ initialize it:
        // Child
        EmitSignal("SignalName"); // Triggers parent-defined behavior.
 
+     .. code-tab:: cpp C++
+
+       // Parent
+       Node *node = get_node<Node>("Child");
+       if (node != nullptr) {
+           // Note that get_node may return a nullptr, which would make calling the connect method crash the engine if "Child" does not exist!
+           // So unless you are 1000% sure get_node will never return a nullptr, it's a good idea to always do a nullptr check.
+           node->connect("signal_name", callable_mp(this, &ObjectWithMethod::method_on_the_object));
+       }
+
+       // Child
+       emit_signal("signal_name"); // Triggers parent-defined behavior.
+
 2. Call a method. Used to start behavior.
 
    .. tabs::
@@ -87,6 +100,17 @@ initialize it:
 
        // Child
        Call(MethodName); // Call parent-defined method (which child must own).
+
+     .. code-tab:: cpp C++
+
+       // Parent
+       Node *node = get_node<Node>("Child");
+       if (node != nullptr) {
+           node->set("method_name", "do");
+       }
+
+       // Child
+       call(method_name); // Call parent-defined method (which child must own).
 
 3. Initialize a :ref:`Callable <class_Callable>` property. Safer than a method
    as ownership of the method is unnecessary. Used to start behavior.
@@ -108,6 +132,17 @@ initialize it:
        // Child
        FuncProperty.Call(); // Call parent-defined method (can come from anywhere).
 
+     .. code-tab:: cpp C++
+
+       // Parent
+       Node *node = get_node<Node>("Child");
+       if (node != nullptr) {
+           node->set("func_property", Callable(&ObjectWithMethod::method_on_the_object));
+       }
+
+       // Child
+       func_property.call(); // Call parent-defined method (can come from anywhere).
+
 4. Initialize a Node or other Object reference.
 
    .. tabs::
@@ -127,6 +162,17 @@ initialize it:
        // Child
        GD.Print(Target); // Use parent-defined node.
 
+     .. code-tab:: cpp C++
+
+       // Parent
+       Node *node = get_node<Node>("Child");
+       if (node != nullptr) {
+           node->set("target", this);
+       }
+
+       // Child
+       UtilityFunctions::print(target);
+
 5. Initialize a NodePath.
 
    .. tabs::
@@ -145,6 +191,17 @@ initialize it:
 
        // Child
        GetNode(TargetPath); // Use parent-defined NodePath.
+
+     .. code-tab:: cpp C++
+
+       // Parent
+       Node *node = get_node<Node>("Child");
+       if (node != nullptr) {
+           node->set("target_path", NodePath(".."));
+       }
+
+       // Child
+       get_node<Node>(target_path); // Use parent-defined NodePath.
 
 These options hide the points of access from the child node. This in turn
 keeps the child **loosely coupled** to its environment. You can reuse it
@@ -198,6 +255,42 @@ in another context without any extra changes to its API.
               AddChild(Receiver);
           }
       }
+
+    .. code-tab:: cpp C++
+
+      // Parent
+      get_node<Left>("Left")->target = get_node<Node>("Right/Receiver");
+
+      class Left : public Node {
+          GDCLASS(Left, Node)
+
+          protected:
+              static void _bind_methods() {} 
+
+          public:
+              Node *target = nullptr;
+
+              Left() {}
+
+              void execute() {
+                  // Do something with 'target'.
+              }
+      };
+
+      class Right : public Node {
+          GDCLASS(Right, Node)
+
+          protected:
+              static void _bind_methods() {}
+
+          public:
+              Node *receiver = nullptr;
+
+              Right() {
+                  receiver = memnew(Node);
+                  add_child(receiver);
+              }
+      };
 
   The same principles also apply to non-Node objects that maintain dependencies
   on other objects. Whichever object owns the other objects should manage

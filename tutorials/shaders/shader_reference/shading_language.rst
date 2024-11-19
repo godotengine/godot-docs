@@ -32,7 +32,7 @@ Most GLSL ES 3.0 datatypes are supported:
 +----------------------+---------------------------------------------------------------------------------+
 | **bvec4**            | Four-component vector of booleans.                                              |
 +----------------------+---------------------------------------------------------------------------------+
-| **int**              | Signed scalar integer.                                                          |
+| **int**              | 32 bit signed scalar integer.                                                   |
 +----------------------+---------------------------------------------------------------------------------+
 | **ivec2**            | Two-component vector of signed integers.                                        |
 +----------------------+---------------------------------------------------------------------------------+
@@ -48,7 +48,7 @@ Most GLSL ES 3.0 datatypes are supported:
 +----------------------+---------------------------------------------------------------------------------+
 | **uvec4**            | Four-component vector of unsigned integers.                                     |
 +----------------------+---------------------------------------------------------------------------------+
-| **float**            | Floating-point scalar.                                                          |
+| **float**            | 32 bit floating-point scalar.                                                   |
 +----------------------+---------------------------------------------------------------------------------+
 | **vec2**             | Two-component vector of floating-point values.                                  |
 +----------------------+---------------------------------------------------------------------------------+
@@ -85,6 +85,14 @@ Most GLSL ES 3.0 datatypes are supported:
 | **samplerCubeArray** | Sampler type for binding Cubemap arrays, which are read as float.               |
 |                      | Only supported in Forward+ and Mobile, not Compatibility.                       |
 +----------------------+---------------------------------------------------------------------------------+
+
+.. warning::
+
+    Local variables are not initialized to a default value such as ``0.0``. If
+    you use a variable without assigning it first, it will contain whatever
+    value was already present at that memory location, and unpredictable visual
+    glitches will appear. However, uniforms and varyings are initialized to a
+    default value.
 
 Comments
 ~~~~~~~~
@@ -155,8 +163,8 @@ Individual scalar members of vector types are accessed via the "x", "y", "z" and
 equivalent. Use whatever fits best for your needs.
 
 For matrices, use the ``m[column][row]`` indexing syntax to access each scalar,
-or ``m[idx]`` to access a vector by row index. For example, for accessing the y
-position of an object in a mat4 you use ``m[3][1]``.
+or ``m[column]`` to access a vector by column index. For example, for accessing the
+y-component of the translation from a mat4 transform matrix (4th column, 2nd line) you use ``m[3][1]`` or ``m[3].y``.
 
 Constructing
 ~~~~~~~~~~~~
@@ -174,7 +182,7 @@ Construction of vector types must always pass:
     vec4 a = vec4(0.0);
 
 Construction of matrix types requires vectors of the same dimension as the
-matrix. You can also build a diagonal matrix using ``matx(float)`` syntax.
+matrix, interpreted as columns. You can also build a diagonal matrix using ``matx(float)`` syntax.
 Accordingly, ``mat4(1.0)`` is an identity matrix.
 
 .. code-block:: glsl
@@ -227,7 +235,7 @@ variables, arguments and varyings:
 
     lowp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // low precision, usually 8 bits per component mapped to 0-1
     mediump vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // medium precision, usually 16 bits or half float
-    highp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // high precision, uses full float or integer range (default)
+    highp vec4 a = vec4(0.0, 1.0, 2.0, 3.0); // high precision, uses full float or integer range (32 bit default)
 
 
 Using lower precision for some operations can speed up the math involved (at the
@@ -314,22 +322,24 @@ return the array's size.
 Global arrays
 ~~~~~~~~~~~~~
 
-You can declare arrays at global space like:
+You can declare arrays in global space as either ``const`` or ``uniform``:
 
 .. code-block:: glsl
 
     shader_type spatial;
 
     const lowp vec3 v[1] = lowp vec3[1] ( vec3(0, 0, 1) );
+    uniform lowp vec3 w[1];
 
     void fragment() {
-      ALBEDO = v[0];
+      ALBEDO = v[0] + w[0];
     }
 
 .. note::
 
-    Global arrays have to be declared as global constants, otherwise they can be
-    declared the same as local arrays.
+    Global arrays use the same syntax as local arrays, except with a ``const``
+    or ``uniform`` added to their declaration. Note that uniform arrays can't
+    have a default value.
 
 Constants
 ---------
@@ -375,7 +385,7 @@ accessible outside of the shader.
 
     shader_type spatial;
 
-    const float PI = 3.14159265358979323846;
+    const float GOLDEN_RATIO = 1.618033988749894;
 
 Constants of the ``float`` type must be initialized using ``.`` notation after the
 decimal part or by using the scientific notation. The optional ``f`` post-suffix is
@@ -589,8 +599,8 @@ information.
 Discarding
 ----------
 
-Fragment and light functions can use the ``discard`` keyword. If used, the
-fragment is discarded and nothing is written.
+Fragment, light, and custom functions (called from fragment or light) can use the
+``discard`` keyword. If used, the fragment is discarded and nothing is written.
 
 Beware that ``discard`` has a performance cost when used, as it will prevent the
 depth prepass from being effective on any surfaces using the shader. Also, a
@@ -637,13 +647,24 @@ Example below:
         result = a + b;
     }
 
-.. note::
+Function overloading is supported. You can define multiple functions with the same
+name, but different arguments. Note that `implicit casting <Casting_>`_ in overloaded
+function calls is not allowed, such as from ``int`` to ``float`` (``1`` to ``1.0``).
 
-    Unlike GLSL, Godot's shader language does **not** support function
-    overloading. This means that a function cannot be defined several times with
-    different argument types or numbers of arguments. As a workaround, use
-    different names for functions that accept a different number of arguments or
-    arguments of different types.
+.. code-block:: glsl
+
+    vec3 get_color(int t) {
+        return vec3(1, 0, 0); // Red color.
+    }
+    vec3 get_color(float t) {
+        return vec3(0, 1, 0); // Green color.
+    }
+    void fragment() {
+        vec3 red = get_color(1);
+        vec3 green = get_color(1.0);
+    }
+
+.. _doc_shading_language_varyings:
 
 Varyings
 --------
@@ -762,7 +783,7 @@ Uniforms
 Passing values to shaders is possible. These are global to the whole shader and
 are called *uniforms*. When a shader is later assigned to a material, the
 uniforms will appear as editable parameters in it. Uniforms can't be written
-from within the shader.
+from within the shader. Any GLSL type except for ``void`` can be a uniform.
 
 .. code-block:: glsl
 
@@ -785,9 +806,24 @@ GDScript:
           in the shader. It must match *exactly* to the name of the uniform in
           the shader or else it will not be recognized.
 
-Any GLSL type except for *void* can be a uniform. Additionally, Godot provides
-optional shader hints to make the compiler understand for what the uniform is
-used, and how the editor should allow users to modify it.
+.. note:: There is a limit to the total size of shader uniforms that you can use
+          in a single shader. On most desktop platforms, this limit is ``65536``
+          bytes, or 4096 ``vec4`` uniforms. On mobile platforms, the limit is
+          typically ``16384`` bytes, or 1024 ``vec4`` uniforms. Vector uniforms
+          smaller than a ``vec4``, such as ``vec2`` or ``vec3``, are padded to
+          the size of a ``vec4``. Scalar uniforms such as ``int`` or ``float``
+          are not padded, and ``bool`` is padded to the size of an ``int``.
+
+          Arrays count as the total size of their contents. If you need a uniform
+          array that is larger than this limit, consider packing the data into a
+          texture instead, since the *contents* of a texture do not count towards
+          this limit, only the size of the sampler uniform.
+
+Uniform hints
+~~~~~~~~~~~~~
+
+Godot provides optional uniform hints to make the compiler understand what the
+uniform is used for, and how the editor should allow users to modify it.
 
 .. code-block:: glsl
 
@@ -798,20 +834,26 @@ used, and how the editor should allow users to modify it.
     uniform vec4 other_color : source_color = vec4(1.0); // Default values go after the hint.
     uniform sampler2D image : source_color;
 
-It's important to understand that textures *that are supplied as color* require
-hints for proper sRGB -> linear conversion (i.e. ``source_color``), as Godot's
-3D engine renders in linear color space. If this is not done, the texture will
-appear washed out.
+.. admonition:: Source Color
 
-.. note::
+    Any texture which contains *sRGB color data* requires a ``source_color`` hint
+    in order to be correctly sampled. This is because Godot renders in linear
+    color space, but some textures contain sRGB color data. If this hint is not
+    used, the texture will appear washed out.
 
-    The 2D renderer also renders in linear color space if the
-    **Rendering > Viewport > HDR 2D** project setting is enabled, so
-    ``source_color`` must also be used in ``canvas_item`` shaders. If 2D HDR is
-    disabled, ``source_color`` will keep working correctly in ``canvas_item``
-    shaders, so it's recommend to use it either way.
+    Albedo and color textures should typically have a ``source_color`` hint. Normal,
+    roughness, metallic, and height textures typically do not need a ``source_color``
+    hint.
 
-Full list of hints below:
+    Using ``source_color`` hint is required in the Forward+ and Mobile renderers,
+    and in ``canvas_item`` shaders when :ref:`HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+    is enabled. The ``source_color`` hint is optional for the Compatibility renderer,
+    and for ``canvas_item`` shaders if ``HDR 2D`` is disabled. However, it is
+    recommended to always use the ``source_color`` hint, because it works even
+    if you change renderers or disable ``HDR 2D``.
+
+
+Full list of uniform hints below:
 
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 | Type                 | Hint                                             | Description                                                                 |
@@ -938,6 +980,9 @@ table of the corresponding types:
           be thrown if the type does not match. Your shader will just exhibit
           undefined behavior.
 
+.. warning::
+    As with the last note, no error will be thrown if the typing does not match while setting a shader uniform, this unintuitively includes setting a (GDscript) 64 bit int/float into a Godot shader language int/float (32 bit). This may lead to unintentional consequences in cases where high precision is required.
+
 Uniforms can also be assigned default values:
 
 .. code-block:: glsl
@@ -1014,7 +1059,7 @@ value using ``global uniform vec4 my_color = ...`` in the shader code, it will
 be ignored as the global uniform must always be defined in the Project Settings
 anyway.
 
-To change the value of a global uniform at run-time, use the
+To change the value of a global uniform at runtime, use the
 :ref:`RenderingServer.global_shader_parameter_set <class_RenderingServer_method_global_shader_parameter_set>`
 method in a script:
 
@@ -1026,20 +1071,20 @@ Assigning global uniform values can be done as many times as desired without
 impacting performance, as setting data doesn't require synchronization between
 the CPU and GPU.
 
-You can also add or remove global uniforms at run-time:
+You can also add or remove global uniforms at runtime:
 
 .. code-block:: gdscript
 
     RenderingServer.global_shader_parameter_add("my_color", RenderingServer.GLOBAL_VAR_TYPE_COLOR, Color(0.3, 0.6, 1.0))
     RenderingServer.global_shader_parameter_remove("my_color")
 
-Adding or removing global uniforms at run-time has a performance cost, although
+Adding or removing global uniforms at runtime has a performance cost, although
 it's not as pronounced compared to getting global uniform values from a script
 (see the warning below).
 
 .. warning::
 
-    While you *can* query the value of a global uniform at run-time in a script
+    While you *can* query the value of a global uniform at runtime in a script
     using ``RenderingServer.global_shader_parameter_get("uniform_name")``, this
     has a large performance penalty as the rendering thread needs to synchronize
     with the calling thread.
@@ -1058,10 +1103,6 @@ Per-instance uniforms
 .. note::
 
     Per-instance uniforms are only available in ``spatial`` (3D) shaders.
-
-.. note::
-
-    Per-instance uniforms are not supported when using the Compatibility renderer.
 
 Sometimes, you want to modify a parameter on each node using the material. As an
 example, in a forest full of trees, when you want each tree to have a slightly
@@ -1097,7 +1138,7 @@ the inspector:
 
    Setting a per-instance uniform's value in the GeometryInstance3D section of the inspector
 
-Per-instance uniform values can also be set at run-time using
+Per-instance uniform values can also be set at runtime using
 :ref:`set_instance_shader_parameter <class_GeometryInstance3D_method_set_instance_shader_parameter>`
 method on a node that inherits from :ref:`class_GeometryInstance3D`:
 

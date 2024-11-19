@@ -10,23 +10,16 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          # Install tools used by `_tools/format.sh`.
-          sudo apt-get -qq update
-          sudo apt-get -qq install dos2unix recode
-          sudo pip3 install -r requirements.txt
-          sudo pip3 install codespell
+      - name: Style checks via pre-commit
+        uses: pre-commit/action@v3.0.1
 
-      - name: Linter checks
-        run: |
-          bash _tools/format.sh
-          codespell -I _tools/codespell-ignore.txt -x _tools/codespell-ignore-lines.txt -S tutorials/i18n/locales.rst {about,community,contributing,getting_started,tutorials}/**/*.rst
+      - name: Install dependencies
+        run: sudo pip3 install -r requirements.txt
 
       # Use dummy builder to improve performance as we don't need the generated HTML in this workflow.
       - name: Sphinx build

@@ -25,7 +25,7 @@ Specifying the TileSet in the TileMapLayer
 ------------------------------------------
 
 If you've followed the previous page on :ref:`doc_using_tilesets`, you should
-have a TileSet resource that is built-in to the TileMapLayer node. This is good for
+have a TileSet resource that is built into the TileMapLayer node. This is good for
 prototyping, but in a real world project, you will generally have multiple
 levels reusing the same tileset.
 
@@ -89,6 +89,9 @@ Navigation
 
 .. warning::
     2D navigation meshes can not be "layered" or stacked on top of each other like visuals or physic shapes. Attempting to stack navigation meshes on the same navigation map will result in merge and logical errors that break the pathfinding.
+
+Reordering layers
+^^^^^^^^^^^^^^^^^
 
 You can reorder layers by drag-and-dropping their node in the Scene tab. You can
 also switch between which TileMapLayer node you're working on by using the buttons

@@ -447,7 +447,7 @@ Vertical separation between the up and down buttons.
 
 :ref:`int<class_int>` **buttons_width** = ``16`` :ref:`🔗<class_SpinBox_theme_constant_buttons_width>`
 
-Width of the up and down buttons. If smaller than any icon set on the buttons, the respective icon may overlap neighboring elements, unless :ref:`set_min_buttons_width_from_icons<class_SpinBox_theme_constant_set_min_buttons_width_from_icons>` is different than ``0``.
+Width of the up and down buttons. If smaller than any icon set on the buttons, the respective icon may overlap neighboring elements. If smaller than ``0``, the width is automatically adjusted from the icon size.
 
 .. rst-class:: classref-item-separator
 

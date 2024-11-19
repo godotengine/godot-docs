@@ -12,9 +12,6 @@ function calling, audio and sub-animation tracks, is pretty much unique.
 
 However, the support for blending those animations via ``AnimationPlayer`` is relatively limited, as only a fixed cross-fade transition time can be set.
 
-:ref:`AnimationTree <class_AnimationTree>` is a new node introduced in Godot 3.1 to deal with advanced transitions.
-It supersedes the ancient ``AnimationTreePlayer``, while adding a huge amount of features and flexibility.
-
 Creating an AnimationTree
 -------------------------
 

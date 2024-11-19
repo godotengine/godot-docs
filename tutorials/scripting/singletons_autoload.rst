@@ -60,7 +60,7 @@ You can create an Autoload to load a scene or a script that inherits from
 
 .. image:: img/singleton.webp
 
-To autoload a scene or script, start from the menu and navigate to 
+To autoload a scene or script, start from the menu and navigate to
 **Project > Project Settings > Globals > Autoload**.
 
 .. image:: img/autoload_tab.webp
@@ -172,7 +172,8 @@ means that the last child of root is always the loaded scene.
 
     func _ready():
         var root = get_tree().root
-        current_scene = root.get_child(root.get_child_count() - 1)
+        # Using a negative index counts from the end, so this gets the last child node of `root`.
+        current_scene = root.get_child(-1)
 
  .. code-tab:: csharp
 
@@ -185,7 +186,8 @@ means that the last child of root is always the loaded scene.
         public override void _Ready()
         {
             Viewport root = GetTree().Root;
-            CurrentScene = root.GetChild(root.GetChildCount() - 1);
+            // Using a negative index counts from the end, so this gets the last child node of `root`.
+            CurrentScene = root.GetChild(-1);
         }
     }
 

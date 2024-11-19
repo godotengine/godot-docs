@@ -100,6 +100,8 @@ Properties
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`Vector3<class_Vector3>`                                      | :ref:`emission_ring_axis<class_ParticleProcessMaterial_property_emission_ring_axis>`                                   |                         |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                                          | :ref:`emission_ring_cone_angle<class_ParticleProcessMaterial_property_emission_ring_cone_angle>`                       |                         |
+   +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`float<class_float>`                                          | :ref:`emission_ring_height<class_ParticleProcessMaterial_property_emission_ring_height>`                               |                         |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`float<class_float>`                                          | :ref:`emission_ring_inner_radius<class_ParticleProcessMaterial_property_emission_ring_inner_radius>`                   |                         |
@@ -674,6 +676,8 @@ Property Descriptions
 
 The alpha value of each particle's color will be multiplied by this :ref:`CurveTexture<class_CurveTexture>` over its lifetime.
 
+\ **Note:** :ref:`alpha_curve<class_ParticleProcessMaterial_property_alpha_curve>` multiplies the particle mesh's vertex colors. To have a visible effect on a :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` *must* be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALBEDO *= COLOR.rgb;`` must be inserted in the shader's ``fragment()`` function. Otherwise, :ref:`alpha_curve<class_ParticleProcessMaterial_property_alpha_curve>` will have no visible effect.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1210,7 +1214,7 @@ Particle color will be modulated by color determined by sampling this texture at
 
 Each particle's color will be multiplied by this :ref:`CurveTexture<class_CurveTexture>` over its lifetime.
 
-\ **Note:** This property won't have a visible effect unless the render material is marked as unshaded.
+\ **Note:** :ref:`emission_curve<class_ParticleProcessMaterial_property_emission_curve>` multiplies the particle mesh's vertex colors. To have a visible effect on a :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` *must* be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALBEDO *= COLOR.rgb;`` must be inserted in the shader's ``fragment()`` function. Otherwise, :ref:`emission_curve<class_ParticleProcessMaterial_property_emission_curve>` will have no visible effect.
 
 .. rst-class:: classref-item-separator
 
@@ -1279,6 +1283,25 @@ Particles will be emitted at positions determined by sampling this texture at a 
 - :ref:`Vector3<class_Vector3>` **get_emission_ring_axis**\ (\ )
 
 The axis of the ring when using the emitter :ref:`EMISSION_SHAPE_RING<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_RING>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ParticleProcessMaterial_property_emission_ring_cone_angle:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **emission_ring_cone_angle** :ref:`🔗<class_ParticleProcessMaterial_property_emission_ring_cone_angle>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_emission_ring_cone_angle**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_emission_ring_cone_angle**\ (\ )
+
+The angle of the cone when using the emitter :ref:`EMISSION_SHAPE_RING<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_RING>`. The default angle of 90 degrees results in a ring, while an angle of 0 degrees results in a cone. Intermediate values will result in a ring where one end is larger than the other.
+
+\ **Note:** Depending on :ref:`emission_ring_height<class_ParticleProcessMaterial_property_emission_ring_height>`, the angle may be clamped if the ring's end is reached to form a perfect cone.
 
 .. rst-class:: classref-item-separator
 

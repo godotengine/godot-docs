@@ -23,7 +23,7 @@ use cases:
 - If your player doesn't use a sprite, but draws itself using code, you can make
   that drawing code execute in the editor to see your player.
 
-.. DANGER::
+.. danger::
 
     ``@tool`` scripts run inside the editor, and let you access the scene tree
     of the currently edited scene. This is a powerful feature which also comes
@@ -248,7 +248,7 @@ angle add a setter ``set(new_speed)`` which is executed with the input from the 
 Getting notified when resources change
 --------------------------------------
 
-Some times you want your tool to use a resource. However, when you change a
+Sometimes you want your tool to use a resource. However, when you change a
 property of that resource in the editor, the ``set()`` method of your tool will
 not be called.
 
@@ -503,7 +503,7 @@ currently focused on the script editor.
 
 Scripts that extend EditorScript must be ``@tool`` scripts to function.
 
-.. warning::
+.. danger::
 
     EditorScripts have no undo/redo functionality, so **make sure to save your
     scene before running one** if the script is designed to modify any data.

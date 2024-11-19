@@ -118,7 +118,7 @@ Property Descriptions
 - |void| **set_global_position**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_global_position**\ (\ )
 
-Global position.
+Global position. See also :ref:`position<class_Node2D_property_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -135,7 +135,7 @@ Global position.
 - |void| **set_global_rotation**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_global_rotation**\ (\ )
 
-Global rotation in radians.
+Global rotation in radians. See also :ref:`rotation<class_Node2D_property_rotation>`.
 
 .. rst-class:: classref-item-separator
 
@@ -152,7 +152,7 @@ Global rotation in radians.
 - |void| **set_global_rotation_degrees**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_global_rotation_degrees**\ (\ )
 
-Helper property to access :ref:`global_rotation<class_Node2D_property_global_rotation>` in degrees instead of radians.
+Helper property to access :ref:`global_rotation<class_Node2D_property_global_rotation>` in degrees instead of radians. See also :ref:`rotation_degrees<class_Node2D_property_rotation_degrees>`.
 
 .. rst-class:: classref-item-separator
 
@@ -169,7 +169,7 @@ Helper property to access :ref:`global_rotation<class_Node2D_property_global_rot
 - |void| **set_global_scale**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_global_scale**\ (\ )
 
-Global scale.
+Global scale. See also :ref:`scale<class_Node2D_property_scale>`.
 
 .. rst-class:: classref-item-separator
 
@@ -186,7 +186,7 @@ Global scale.
 - |void| **set_global_skew**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_global_skew**\ (\ )
 
-Global skew in radians.
+Global skew in radians. See also :ref:`skew<class_Node2D_property_skew>`.
 
 .. rst-class:: classref-item-separator
 
@@ -203,7 +203,7 @@ Global skew in radians.
 - |void| **set_global_transform**\ (\ value\: :ref:`Transform2D<class_Transform2D>`\ )
 - :ref:`Transform2D<class_Transform2D>` **get_global_transform**\ (\ )
 
-Global :ref:`Transform2D<class_Transform2D>`.
+Global :ref:`Transform2D<class_Transform2D>`. See also :ref:`transform<class_Node2D_property_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -220,7 +220,7 @@ Global :ref:`Transform2D<class_Transform2D>`.
 - |void| **set_position**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_position**\ (\ )
 
-Position, relative to the node's parent.
+Position, relative to the node's parent. See also :ref:`global_position<class_Node2D_property_global_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -237,7 +237,7 @@ Position, relative to the node's parent.
 - |void| **set_rotation**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_rotation**\ (\ )
 
-Rotation in radians, relative to the node's parent.
+Rotation in radians, relative to the node's parent. See also :ref:`global_rotation<class_Node2D_property_global_rotation>`.
 
 \ **Note:** This property is edited in the inspector in degrees. If you want to use degrees in a script, use :ref:`rotation_degrees<class_Node2D_property_rotation_degrees>`.
 
@@ -256,7 +256,7 @@ Rotation in radians, relative to the node's parent.
 - |void| **set_rotation_degrees**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_rotation_degrees**\ (\ )
 
-Helper property to access :ref:`rotation<class_Node2D_property_rotation>` in degrees instead of radians.
+Helper property to access :ref:`rotation<class_Node2D_property_rotation>` in degrees instead of radians. See also :ref:`global_rotation_degrees<class_Node2D_property_global_rotation_degrees>`.
 
 .. rst-class:: classref-item-separator
 
@@ -273,7 +273,7 @@ Helper property to access :ref:`rotation<class_Node2D_property_rotation>` in deg
 - |void| **set_scale**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
 - :ref:`Vector2<class_Vector2>` **get_scale**\ (\ )
 
-The node's scale. Unscaled value: ``(1, 1)``.
+The node's scale, relative to the node's parent. Unscaled value: ``(1, 1)``. See also :ref:`global_scale<class_Node2D_property_global_scale>`.
 
 \ **Note:** Negative X scales in 2D are not decomposable from the transformation matrix. Due to the way scale is represented with transformation matrices in Godot, negative scales on the X axis will be changed to negative scales on the Y axis and a rotation of 180 degrees when decomposed.
 
@@ -292,9 +292,11 @@ The node's scale. Unscaled value: ``(1, 1)``.
 - |void| **set_skew**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_skew**\ (\ )
 
-Slants the node.
+If set to a non-zero value, slants the node in one direction or another. This can be used for pseudo-3D effects. See also :ref:`global_skew<class_Node2D_property_global_skew>`.
 
-\ **Note:** Skew is X axis only.
+\ **Note:** Skew is performed on the X axis only, and *between* rotation and scaling.
+
+\ **Note:** This property is edited in the inspector in degrees. If you want to use degrees in a script, use ``skew = deg_to_rad(value_in_degrees)``.
 
 .. rst-class:: classref-item-separator
 
@@ -311,7 +313,7 @@ Slants the node.
 - |void| **set_transform**\ (\ value\: :ref:`Transform2D<class_Transform2D>`\ )
 - :ref:`Transform2D<class_Transform2D>` **get_transform**\ (\ )
 
-Local :ref:`Transform2D<class_Transform2D>`.
+The node's :ref:`Transform2D<class_Transform2D>`, relative to the node's parent. See also :ref:`global_transform<class_Node2D_property_global_transform>`.
 
 .. rst-class:: classref-section-separator
 

@@ -56,11 +56,11 @@ The function should not be called after the target position or path end has been
 as it can make the agent jitter in place due to the repeated path updates.
 Always check very early in script with ``is_navigation_finished()`` if the path is already finished.
 
-The following properties influence the path following behavior.
+The following distance properties influence the path following behavior.
 
-- The ``path_desired_distance`` defines the distance at which the agent advances its internal path index to the next path position.
-- The ``target_desired_distance`` defines the distance at which the agent considers the target position to be reached and the path at its end.
-- The ``path_max_distance`` defines when an agent requests a new path cause it was moved too far away from the current path point segment.
+- At ``path_desired_distance`` from the next path position, the agent advances its internal path index to the subsequent next path position.
+- At ``target_desired_distance`` from the target path position, the agent considers the target position to be reached and the path at its end.
+- At ``path_max_distance`` from the ideal path to the next path position, the agent requests a new path because it was pushed too far off.
 
 The important updates are all triggered with the ``get_next_path_position()`` function
 when called in ``_physics_process()``.

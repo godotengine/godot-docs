@@ -256,7 +256,7 @@ If ``increase_version`` is ``true``, the undo history version will be increased,
 
 |void| **commit_action**\ (\ execute\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_EditorUndoRedoManager_method_commit_action>`
 
-Commit the action. If ``execute`` is true (default), all "do" methods/properties are called/set when this function is called.
+Commits the action. If ``execute`` is ``true`` (default), all "do" methods/properties are called/set when this function is called.
 
 .. rst-class:: classref-item-separator
 

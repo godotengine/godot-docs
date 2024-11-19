@@ -46,7 +46,7 @@ the desired targets without having to repeat this process.
 ``<godot_binary>`` refers to the editor binary you compiled with the .NET module
 enabled. Its exact name will differ based on your system and configuration, but
 should be of the form ``bin/godot.<platform>.editor.<arch>.mono``, e.g.
-``bin/godot.linuxbsd.editor.x86_64.mono`` or 
+``bin/godot.linuxbsd.editor.x86_64.mono`` or
 ``bin/godot.windows.editor.x86_32.mono.exe``. Be especially aware of the
 **.mono** suffix! If you've previously compiled Godot without .NET support, you
 might have similarly named binaries without this suffix. These binaries can't be
@@ -129,6 +129,16 @@ source and that conflicting versions of the package are removed from the NuGet
 cache. It's recommended to always use this option when building the C# solutions
 during development to avoid mistakes.
 
+Building without depending on deprecated features (NO_DEPRECATED)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When building Godot without deprecated classes and functions, i.e. the ``deprecated=no``
+argument for scons, the managed libraries must also be built without dependencies to deprecated code.
+This is done by passing the ``--no-deprecated`` argument:
+
+::
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir ./bin --push-nupkgs-local <my_local_source> --no-deprecated
+
 Double Precision Support (REAL_T_IS_DOUBLE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -149,11 +159,11 @@ Example (Windows)
 ::
 
     # Build editor binary
-    scons p=windows target=editor module_mono_enabled=yes
+    scons platform=windows target=editor module_mono_enabled=yes
     # Build export templates
-    scons p=windows target=template_debug module_mono_enabled=yes
-    scons p=windows target=template_release module_mono_enabled=yes
-    
+    scons platform=windows target=template_debug module_mono_enabled=yes
+    scons platform=windows target=template_release module_mono_enabled=yes
+
     # Generate glue sources
     bin/godot.windows.editor.x86_64.mono --headless --generate-mono-glue modules/mono/glue
     # Build .NET assemblies
@@ -166,10 +176,10 @@ Example (Linux, \*BSD)
 ::
 
     # Build editor binary
-    scons p=linuxbsd target=editor module_mono_enabled=yes
+    scons platform=linuxbsd target=editor module_mono_enabled=yes
     # Build export templates
-    scons p=linuxbsd target=template_debug module_mono_enabled=yes
-    scons p=linuxbsd target=template_release module_mono_enabled=yes
+    scons platform=linuxbsd target=template_debug module_mono_enabled=yes
+    scons platform=linuxbsd target=template_release module_mono_enabled=yes
 
     # Generate glue sources
     bin/godot.linuxbsd.editor.x86_64.mono --headless --generate-mono-glue modules/mono/glue

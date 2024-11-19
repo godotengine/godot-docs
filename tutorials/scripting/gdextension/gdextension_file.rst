@@ -182,4 +182,3 @@ If no path is supplied Godot will move the libraries into the same directory as 
         "res://bin/libdependency.linux.template_release.arm64.so" : "",
         "res://bin/libdependency.linux.template_release.rv64.so" : ""
     }
-

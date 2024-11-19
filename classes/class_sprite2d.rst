@@ -263,7 +263,7 @@ If ``true``, texture is cut from a larger atlas texture. See :ref:`region_rect<c
 - |void| **set_region_filter_clip_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_region_filter_clip_enabled**\ (\ )
 
-If ``true``, the outermost pixels get blurred out. :ref:`region_enabled<class_Sprite2D_property_region_enabled>` must be ``true``.
+If ``true``, the area outside of the :ref:`region_rect<class_Sprite2D_property_region_rect>` is clipped to avoid bleeding of the surrounding texture pixels. :ref:`region_enabled<class_Sprite2D_property_region_enabled>` must be ``true``.
 
 .. rst-class:: classref-item-separator
 

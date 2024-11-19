@@ -100,6 +100,9 @@ There are two types of icons required by Godot:
 
 - **Main Icon:** The "classic" icon. This will be used on all Android versions up to Android 8 (Oreo), exclusive. Must be at least 192×192 px.
 - **Adaptive Icons:** Starting from Android 8 (inclusive), `Adaptive Icons <https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive>`_ were introduced. Applications will need to include separate background and foreground icons to have a native look. The user's launcher application will control the icon's animation and masking. Must be at least 432×432 px.
+- **Themed Icons:** Starting from Android 13 (inclusive), Themed Icons were introduced. Applications will need to include a monochrome icon to enable this feature. The user's launcher application will control the icon's theme. Must be at least 432×432 px.
+
+.. caution:: It is mandatory to provide a monochrome icon. Failure to do so will result in the default Godot monochrome icon being used.
 
 .. seealso:: It's important to adhere to some rules when designing adaptive icons. `Google Design has provided a nice article <https://medium.com/google-design/designing-adaptive-icons-515af294c783>`_ that helps to understand those rules and some of the capabilities of adaptive icons.
 
@@ -110,6 +113,7 @@ If you don't provide some of the requested icons, Godot will replace them using 
 - **Main Icon:** Provided main icon -> Project icon -> Default Godot main icon.
 - **Adaptive Icon Foreground:** Provided foreground icon -> Provided main icon -> Project icon -> Default Godot foreground icon.
 - **Adaptive Icon Background:** Provided background icon -> Default Godot background icon.
+- **Adaptive Icon Monochrome:** Provided monochrome icon -> Default Godot monochrome icon.
 
 It's highly recommended to provide all the requested icons with their specified resolutions.
 This way, your application will look great on all Android devices and versions.
@@ -117,8 +121,11 @@ This way, your application will look great on all Android devices and versions.
 Exporting for Google Play Store
 -------------------------------
 
-Uploading an APK to Google's Play Store requires you to sign using a non-debug
-keystore file; such file can be generated like this:
+All new apps uploaded to Google Play after August 2021 must be an AAB (Android App Bundle)
+file.
+
+Uploading an AAB or APK to Google's Play Store requires you to sign using a non-debug
+keystore file; such a file can be generated like this:
 
 .. code-block:: shell
 
@@ -126,7 +133,7 @@ keystore file; such file can be generated like this:
 
 This keystore and key are used to verify your developer identity, remember the password and keep it in a safe place!
 It is suggested to use only upper and lowercase letters and numbers. Special characters may cause errors.
-Use Google's Android Developer guides to learn more about `APK signing <https://developer.android.com/studio/publish/app-signing>`__.
+Use Google's Android Developer guides to learn more about `app signing <https://developer.android.com/studio/publish/app-signing>`__.
 
 Now fill in the following forms in your Android Export Presets:
 
@@ -140,22 +147,17 @@ Don't forget to uncheck the **Export With Debug** checkbox while exporting.
 
 .. image:: img/export-with-debug-button.png
 
-Optimizing the APK size
------------------------
+Optimizing the file size
+------------------------
 
-By default, the APK will contain native libraries for both ARMv7 and ARMv8
-architectures. This increases its size significantly. To create a smaller APK,
-uncheck either **Armeabi-v 7a** or **Arm 64 -v 8a** in your project's Android
-export preset. This will create an APK that only contains a library for
-a single architecture. Note that applications targeting ARMv7 can also run on
-ARMv8 devices, but the opposite is not true.
-
-Since August 2019, Google Play requires all applications to be available in
-64-bit form. This means you cannot upload an APK that contains *just* an ARMv7
-library. To solve this, you can upload several APKs to Google Play using its
-`Multiple APK support <https://developer.android.com/google/play/publishing/multiple-apks>`__.
-Each APK should target a single architecture; creating an APK for ARMv7
-and ARMv8 is usually sufficient to cover most devices in use today.
+If you're working with APKs and not AABs, by default, the APK will contain native
+libraries for both ARMv7 and ARMv8 architectures. This increases its size significantly.
+To create a smaller file, uncheck either **Armeabi-v 7a** or **Arm 64 -v 8a** in
+your project's Android export preset. This will create an APK that only contains
+a library for a single architecture. Note that applications targeting ARMv7 can
+also run on ARMv8 devices, but the opposite is not true. The reason you don't do
+this to save space with AABs is that Google automatically splits up the AAB on their
+backend, so the user only downloads what they need.
 
 You can optimize the size further by compiling an Android export template with
 only the features you need. See :ref:`doc_optimizing_for_size` for more

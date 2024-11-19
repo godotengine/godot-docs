@@ -36,6 +36,7 @@ Importing the project
 - Within the ``tasks.json`` file find the ``"tasks"`` array and add a new section to it:
 
   .. code-block:: js
+    :caption: .vscode/tasks.json
 
     {
       "label": "build",
@@ -69,7 +70,7 @@ To run and debug the project you need to create a new configuration in the ``lau
 .. figure:: img/vscode_1_create_launch.json.png
    :align: center
 
-- Select **C++ (GDB/LLDB)**. There may be another platform specific option here. If selected,
+- Select **C++ (GDB/LLDB)**. There may be another platform-specific option here. If selected,
   adjust the configuration example provided accordingly.
 - Within the ``launch.json`` file find the ``"configurations"`` array and add a new section to it:
 
@@ -139,6 +140,22 @@ To run and debug the project you need to create a new configuration in the ``lau
       "preLaunchTask": "build"
     }
 
+  .. code-tab:: js Mac
+
+    {
+      "name": "Launch Project",
+      "type": "lldb",
+      "request": "custom",
+      "targetCreateCommands": [
+        "target create ${workspaceFolder}/bin/godot.macos.editor.dev.x86_64"
+      ],
+      // Change the arguments below for the project you want to test with.
+      // To run the project instead of editing it, remove the "--editor" argument.
+      "processCreateCommands": [
+        "process launch -- --editor --path path-to-your-godot-project-folder"
+      ]
+    }
+
 .. figure:: img/vscode_2_launch.json.png
    :figclass: figure-w480
    :align: center
@@ -183,6 +200,7 @@ To fix include errors you may be having, you need to configure some settings in 
 - The ``c_cpp_properties.json`` file should look similar to this for Windows:
 
   .. code-block:: js
+    :caption: .vscode/c_cpp_properties.json
 
     {
       "configurations": [

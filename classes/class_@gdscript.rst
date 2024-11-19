@@ -17,9 +17,9 @@ Built-in GDScript constants, functions, and annotations.
 Description
 -----------
 
-A list of GDScript-specific utility functions and annotations accessible from any script.
+A list of utility functions and annotations accessible from any script written in GDScript.
 
-For the list of the global functions and constants see :ref:`@GlobalScope<class_@GlobalScope>`.
+For the list of global functions and constants that can be accessed in any scripting language, see :ref:`@GlobalScope<class_@GlobalScope>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -43,7 +43,7 @@ Methods
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`char<class_@GDScript_method_char>`\ (\ char\: :ref:`int<class_int>`\ )                                                                                             |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`       | :ref:`convert<class_@GDScript_method_convert>`\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`int<class_int>`\ )                                                 |
+   | :ref:`Variant<class_Variant>`       | :ref:`convert<class_@GDScript_method_convert>`\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ )                   |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Object<class_Object>`         | :ref:`dict_to_inst<class_@GDScript_method_dict_to_inst>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ )                                                         |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -705,7 +705,67 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_SUBGROUP<class_@GlobalScope_constant_
     @export var car_label = "Speedy"
     @export var car_number = 3
 
-\ **Note:** Subgroups cannot be nested, they only provide one extra level of depth. Just like the next group ends the previous group, so do the subsequent subgroups.
+\ **Note:** Subgroups cannot be nested, but you can use the slash separator (``/``) to achieve the desired effect:
+
+::
+
+    @export_group("Car Properties")
+    @export_subgroup("Wheels", "wheel_")
+    @export_subgroup("Wheels/Front", "front_wheel_")
+    @export var front_wheel_strength = 10
+    @export var front_wheel_mobility = 5
+    @export_subgroup("Wheels/Rear", "rear_wheel_")
+    @export var rear_wheel_strength = 8
+    @export var rear_wheel_mobility = 3
+    @export_subgroup("Wheels", "wheel_")
+    @export var wheel_material: PhysicsMaterial
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GDScript_annotation_@export_tool_button:
+
+.. rst-class:: classref-annotation
+
+**@export_tool_button**\ (\ text\: :ref:`String<class_String>`, icon\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_@GDScript_annotation_@export_tool_button>`
+
+Export a :ref:`Callable<class_Callable>` property as a clickable button with the label ``text``. When the button is pressed, the callable is called.
+
+If ``icon`` is specified, it is used to fetch an icon for the button via :ref:`Control.get_theme_icon<class_Control_method_get_theme_icon>`, from the ``"EditorIcons"`` theme type. If ``icon`` is omitted, the default ``"Callable"`` icon is used instead.
+
+Consider using the :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>` to allow the action to be reverted safely.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_TOOL_BUTTON<class_@GlobalScope_constant_PROPERTY_HINT_TOOL_BUTTON>`.
+
+::
+
+    @tool
+    extends Sprite2D
+    
+    @export_tool_button("Hello") var hello_action = hello
+    @export_tool_button("Randomize the color!", "ColorRect")
+    var randomize_color_action = randomize_color
+    
+    func hello():
+        print("Hello world!")
+    
+    func randomize_color():
+        var undo_redo = EditorInterface.get_editor_undo_redo()
+        undo_redo.create_action("Randomized Sprite2D Color")
+        undo_redo.add_do_property(self, &"self_modulate", Color(randf(), randf(), randf()))
+        undo_redo.add_undo_property(self, &"self_modulate", self_modulate)
+        undo_redo.commit_action()
+
+\ **Note:** The property is exported without the :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` flag because a :ref:`Callable<class_Callable>` cannot be properly serialized and stored in a file.
+
+\ **Note:** In an exported project neither :ref:`EditorInterface<class_EditorInterface>` nor :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>` exist, which may cause some scripts to break. To prevent this, you can use :ref:`Engine.get_singleton<class_Engine_method_get_singleton>` and omit the static type from the variable declaration:
+
+::
+
+    var undo_redo = Engine.get_singleton(&"EditorInterface").get_editor_undo_redo()
+
+\ **Note:** Avoid storing lambda callables in member variables of :ref:`RefCounted<class_RefCounted>`-based classes (e.g. resources), as this can lead to memory leaks. Use only method callables and optionally :ref:`Callable.bind<class_Callable_method_bind>` or :ref:`Callable.unbind<class_Callable_method_unbind>`.
 
 .. rst-class:: classref-item-separator
 
@@ -911,7 +971,7 @@ Returns a single character (as a :ref:`String<class_String>`) of the given Unico
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **convert**\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`int<class_int>`\ ) :ref:`🔗<class_@GDScript_method_convert>`
+:ref:`Variant<class_Variant>` **convert**\ (\ what\: :ref:`Variant<class_Variant>`, type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ ) :ref:`🔗<class_@GDScript_method_convert>`
 
 **Deprecated:** Use :ref:`@GlobalScope.type_convert<class_@GlobalScope_method_type_convert>` instead.
 

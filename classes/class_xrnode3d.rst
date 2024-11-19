@@ -14,7 +14,7 @@ XRNode3D
 
 **Inherited By:** :ref:`XRAnchor3D<class_XRAnchor3D>`, :ref:`XRController3D<class_XRController3D>`
 
-A spatial node that has its position automatically updated by the :ref:`XRServer<class_XRServer>`.
+A 3D node that has its position automatically updated by the :ref:`XRServer<class_XRServer>`.
 
 .. rst-class:: classref-introduction-group
 
