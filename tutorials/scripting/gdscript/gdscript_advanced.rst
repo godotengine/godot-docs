@@ -24,7 +24,6 @@ are that:
 
 -  The language is easy to get started with.
 -  Most code can be written and changed quickly and without hassle.
--  Less code written means less errors & mistakes to fix.
 -  The code is easy to read (little clutter).
 -  No compilation is required to test.
 -  Runtime is tiny.
@@ -33,6 +32,7 @@ are that:
 While the main disadvantages are:
 
 -  Less performance than statically typed languages.
+-  Prone to type errors which can cause bugs that are hard to trace and fix.
 -  More difficult to refactor (symbols can't be traced).
 -  Some errors that would typically be detected at compile time in
    statically typed languages only appear while running the code
