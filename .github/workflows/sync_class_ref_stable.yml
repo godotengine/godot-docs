@@ -60,8 +60,8 @@ jobs:
       - name: Submit a pull-request
         uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ env.merge_into }})'
-          branch: 'classref/sync-${{ env.merge_into }}'
+          commit-message: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ steps.engine.outputs.rev_hash_short }})'
+          branch: 'classref/sync-${{ steps.engine.outputs.rev_hash_short }}'
           base: '${{ env.merge_into }}'
           add-paths: './classes'
           delete-branch: true
