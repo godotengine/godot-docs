@@ -71,6 +71,6 @@ jobs:
           committer: 'Redot Organization <noreply@redotengine.org>'
 
           # Configure the pull-request.
-          title: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ env.merge_into }})'
-          body: 'Update Redot API online class reference to match the engine at https://github.com/Redot-Engine/redot-engine/commit/${{ env.merge_into }} (`${{ env.engine_rev }}`).'
+          title: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ steps.engine.outputs.rev_hash_short }})'
+          body: 'Update Redot API online class reference to match the engine at https://github.com/Redot-Engine/redot-engine/commit/${{ steps.engine.outputs.rev_hash }} (`${{ env.engine_rev }}`).'
           labels: 'area:class reference,bug,enhancement'
