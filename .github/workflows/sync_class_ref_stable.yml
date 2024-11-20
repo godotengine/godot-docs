@@ -62,6 +62,7 @@ jobs:
         with:
           commit-message: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ env.merge_into }})'
           branch: 'classref/sync-${{ env.merge_into }}'
+          base: '${{ env.merge_into }}'
           add-paths: './classes'
           delete-branch: true
 
