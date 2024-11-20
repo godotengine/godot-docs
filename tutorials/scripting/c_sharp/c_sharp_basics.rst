@@ -357,6 +357,11 @@ You can read more about this error on the `C# language reference <https://learn.
 Performance of C# in Godot
 --------------------------
 
+.. seealso:: 
+    
+    For a performance comparison of the languages Godot supports,
+    see :ref:`doc_faq_which_programming_language_is_fastest`.
+
 Most properties of Godot C# objects that are based on ``GodotObject``
 (e.g. any ``Node`` like ``Control`` or ``Node3D`` like ``Camera3D``) require native (interop) calls as they talk to
 Godot's C++ core.
