@@ -357,12 +357,6 @@ You can read more about this error on the `C# language reference <https://learn.
 Performance of C# in Godot
 --------------------------
 
-According to some preliminary `benchmarks <https://github.com/cart/godot3-bunnymark>`_,
-the performance of C# in Godot — while generally in the same order of magnitude
-— is roughly **~4×** that of GDScript in some naive cases. C++ is still
-a little faster; the specifics are going to vary according to your use case.
-GDScript is likely fast enough for most general scripting workloads.
-
 Most properties of Godot C# objects that are based on ``GodotObject``
 (e.g. any ``Node`` like ``Control`` or ``Node3D`` like ``Camera3D``) require native (interop) calls as they talk to
 Godot's C++ core.
