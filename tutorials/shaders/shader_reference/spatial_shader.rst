@@ -83,7 +83,9 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **alpha_to_coverage_and_one** | Alpha antialiasing mode, see `here <https://github.com/godotengine/godot/pull/40364>`_ for more.     |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
-| **fog_disabled**              | Disable receiving depth-based or volumetric fog. Useful for blend_add materials like particles.      |
+| **fog_disabled**              | Disable receiving depth-based or volumetric fog. Useful for ``blend_add`` materials like particles.  |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **use_debanding**             | Use material-based debanding to reduce color banding. Useful for lit stylized materials.             |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 
 Built-ins
