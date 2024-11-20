@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       engine_rev: '4.3'
+      merge_into: 'stable'
     permissions:
       contents: write
       pull-requests: write
@@ -59,8 +60,8 @@ jobs:
       - name: Submit a pull-request
         uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ steps.engine.outputs.rev_hash_short }})'
-          branch: 'classref/sync-${{ steps.engine.outputs.rev_hash_short }}'
+          commit-message: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ env.merge_into }})'
+          branch: 'classref/sync-${{ env.merge_into }}'
           add-paths: './classes'
           delete-branch: true
 
@@ -69,6 +70,6 @@ jobs:
           committer: 'Redot Organization <noreply@redotengine.org>'
 
           # Configure the pull-request.
-          title: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ steps.engine.outputs.rev_hash_short }})'
-          body: 'Update Redot API online class reference to match the engine at https://github.com/Redot-Engine/redot-engine/commit/${{ steps.engine.outputs.rev_hash }} (`${{ env.engine_rev }}`).'
+          title: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ env.merge_into }})'
+          body: 'Update Redot API online class reference to match the engine at https://github.com/Redot-Engine/redot-engine/commit/${{ env.merge_into }} (`${{ env.engine_rev }}`).'
           labels: 'area:class reference,bug,enhancement'
