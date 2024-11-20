@@ -50,7 +50,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **OpType**:
+enum **OpType**: :ref:`🔗<enum_VisualShaderNodeDerivativeFunc_OpType>`
 
 .. _class_VisualShaderNodeDerivativeFunc_constant_OP_TYPE_SCALAR:
 
@@ -100,7 +100,7 @@ Represents the size of the :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpTy
 
 .. rst-class:: classref-enumeration
 
-enum **Function**:
+enum **Function**: :ref:`🔗<enum_VisualShaderNodeDerivativeFunc_Function>`
 
 .. _class_VisualShaderNodeDerivativeFunc_constant_FUNC_SUM:
 
@@ -142,7 +142,7 @@ Represents the size of the :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Fu
 
 .. rst-class:: classref-enumeration
 
-enum **Precision**:
+enum **Precision**: :ref:`🔗<enum_VisualShaderNodeDerivativeFunc_Precision>`
 
 .. _class_VisualShaderNodeDerivativeFunc_constant_PRECISION_NONE:
 
@@ -189,12 +189,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **function** = ``0``
+:ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **function** = ``0`` :ref:`🔗<class_VisualShaderNodeDerivativeFunc_property_function>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` value **)**
-- :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **get_function** **(** **)**
+- |void| **set_function**\ (\ value\: :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>`\ )
+- :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **get_function**\ (\ )
 
 A derivative function type. See :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` for options.
 
@@ -206,12 +206,12 @@ A derivative function type. See :ref:`Function<enum_VisualShaderNodeDerivativeFu
 
 .. rst-class:: classref-property
 
-:ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **op_type** = ``0``
+:ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **op_type** = ``0`` :ref:`🔗<class_VisualShaderNodeDerivativeFunc_property_op_type>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_op_type** **(** :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` value **)**
-- :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **get_op_type** **(** **)**
+- |void| **set_op_type**\ (\ value\: :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>`\ )
+- :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **get_op_type**\ (\ )
 
 A type of operands and returned value. See :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` for options.
 
@@ -223,12 +223,12 @@ A type of operands and returned value. See :ref:`OpType<enum_VisualShaderNodeDer
 
 .. rst-class:: classref-property
 
-:ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **precision** = ``0``
+:ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **precision** = ``0`` :ref:`🔗<class_VisualShaderNodeDerivativeFunc_property_precision>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_precision** **(** :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` value **)**
-- :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **get_precision** **(** **)**
+- |void| **set_precision**\ (\ value\: :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>`\ )
+- :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **get_precision**\ (\ )
 
 Sets the level of precision to use for the derivative function. See :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` for options. When using the GL Compatibility renderer, this setting has no effect.
 
@@ -239,3 +239,4 @@ Sets the level of precision to use for the derivative function. See :ref:`Precis
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

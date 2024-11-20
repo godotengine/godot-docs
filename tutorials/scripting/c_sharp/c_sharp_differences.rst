@@ -8,8 +8,22 @@ This is a (incomplete) list of API differences between C# and GDScript.
 General differences
 -------------------
 
-As explained in the :ref:`doc_c_sharp`, C# generally uses ``PascalCase`` instead
-of the ``snake_case`` used in GDScript and C++.
+As explained in :ref:`doc_c_sharp_general_differences`, ``PascalCase`` is used
+to access Godot APIs in C# instead of the ``snake_case`` used by GDScript and
+C++. Where possible, fields and getters/setters have been converted to
+properties. In general, the C# Godot API strives to be as idiomatic as is
+reasonably possible. See the :ref:`doc_c_sharp_styleguide`, which we encourage
+you to also use for your own C# code.
+
+In GDScript, the setters/getters of a property can be called directly, although
+this is not encouraged. In C#, only the property is defined. For example, to
+translate the GDScript code ``x.set_name("Friend")`` to C#, write
+``x.Name = "Friend";``.
+
+A C# IDE will provide intellisense, which is extremely useful when figuring out
+renamed C# APIs. The built-in Godot script editor has no support for C#
+intellisense, and it also doesn't provide many other C# development tools that
+are considered essential. See :ref:`doc_c_sharp_setup_external_editor`.
 
 Global scope
 ------------
@@ -113,6 +127,7 @@ absf                             Mathf.Abs
 absi                             Mathf.Abs
 acos                             Mathf.Acos
 acosh                            Mathf.Acosh
+angle_difference                 Mathf.AngleDifference
 asin                             Mathf.Asin
 asinh                            Mathf.Asinh
 atan                             Mathf.Atan
@@ -191,6 +206,7 @@ randomize                        GD.Randomize
 remap                            Mathf.Remap
 rid_allocate_id                  N/A
 rid_from_int64                   N/A
+rotate_toward                    Mathf.RotateToward
 round                            Mathf.Round
 roundf                           Mathf.Round
 roundi                           Mathf.RoundToInt
@@ -210,6 +226,8 @@ str                              Use `$ string interpolation`_
 str_to_var                       GD.StrToVar
 tan                              Mathf.Tan
 tanh                             Mathf.Tanh
+type_convert                     Variant.As<T> or GD.Convert
+type_string                      Variant.Type.ToString
 typeof                           Variant.VariantType
 var_to_bytes                     GD.VarToBytes
 var_to_bytes_with_objects        GD.VarToBytesWithObjects
@@ -433,6 +451,7 @@ path_join                StringExtensions.PathJoin
 repeat                   Use `string constructor`_ or a `StringBuilder`_
 replace                  `string.Replace`_ or `RegEx`_
 replacen                 StringExtensions.ReplaceN (Consider using `string.Replace`_ or `RegEx`_)
+reverse                  N/A
 rfind                    StringExtensions.RFind (Consider using `string.LastIndexOf`_ or `string.LastIndexOfAny`_)
 rfindn                   StringExtensions.RFindN (Consider using `string.LastIndexOf`_ or `string.LastIndexOfAny`_)
 right                    StringExtensions.Right (Consider using `string.Substring`_ or `string.AsSpan`_)
@@ -484,10 +503,13 @@ get_string_from_utf8       StringExtensions.GetStringFromUtf8 (Consider using `S
 hex_encode                 StringExtensions.HexEncode (Consider using `System.Convert.ToHexString`_)
 =========================  ==============================================================
 
-* .NET contains many path utility methods available under the
-  `System.IO.Path`_
-  class that can be used when not dealing with Godot paths (paths that start
-  with ``res://`` or ``user://``)
+.. note::
+
+    .NET provides path utility methods under the
+    `System.IO.Path`_
+    class. They can only be used with native OS paths, not Godot paths
+    (paths that start with ``res://`` or ``user://``).
+    See :ref:`doc_data_paths`.
 
 .. _$ string interpolation: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated
 .. _double.ToString: https://learn.microsoft.com/en-us/dotnet/api/system.double.tostring
@@ -805,7 +827,7 @@ Variant
 -------
 
 ``Godot.Variant`` is used to represent Godot's native :ref:`Variant <class_Variant>` type.
-Any Variant-compatible type can be converted from/to it.
+Any :ref:`Variant-compatible type <c_sharp_variant_compatible_types>` can be converted from/to it.
 
 See also: :ref:`doc_c_sharp_variant`.
 
@@ -849,5 +871,8 @@ Example:
 
 .. code-block:: csharp
 
-  await ToSignal(timer, "timeout");
-  GD.Print("After timeout");
+  public async Task SomeFunction()
+  {
+      await ToSignal(timer, Timer.SignalName.Timeout);
+      GD.Print("After timeout");
+  }

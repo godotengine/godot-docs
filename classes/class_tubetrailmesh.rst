@@ -71,12 +71,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **cap_bottom** = ``true``
+:ref:`bool<class_bool>` **cap_bottom** = ``true`` :ref:`🔗<class_TubeTrailMesh_property_cap_bottom>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_cap_bottom** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_cap_bottom** **(** **)**
+- |void| **set_cap_bottom**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_cap_bottom**\ (\ )
 
 If ``true``, generates a cap at the bottom of the tube. This can be set to ``false`` to speed up generation and rendering when the cap is never seen by the camera.
 
@@ -88,12 +88,12 @@ If ``true``, generates a cap at the bottom of the tube. This can be set to ``fal
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **cap_top** = ``true``
+:ref:`bool<class_bool>` **cap_top** = ``true`` :ref:`🔗<class_TubeTrailMesh_property_cap_top>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_cap_top** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_cap_top** **(** **)**
+- |void| **set_cap_top**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_cap_top**\ (\ )
 
 If ``true``, generates a cap at the top of the tube. This can be set to ``false`` to speed up generation and rendering when the cap is never seen by the camera.
 
@@ -105,12 +105,12 @@ If ``true``, generates a cap at the top of the tube. This can be set to ``false`
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **curve**
+:ref:`Curve<class_Curve>` **curve** :ref:`🔗<class_TubeTrailMesh_property_curve>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_curve** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_curve** **(** **)**
+- |void| **set_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_curve**\ (\ )
 
 Determines the radius of the tube along its length. The radius of a particular section ring is obtained by multiplying the baseline :ref:`radius<class_TubeTrailMesh_property_radius>` by the value of this curve at the given distance. For values smaller than ``0``, the faces will be inverted.
 
@@ -122,12 +122,12 @@ Determines the radius of the tube along its length. The radius of a particular s
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **radial_steps** = ``8``
+:ref:`int<class_int>` **radial_steps** = ``8`` :ref:`🔗<class_TubeTrailMesh_property_radial_steps>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_radial_steps** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_radial_steps** **(** **)**
+- |void| **set_radial_steps**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_radial_steps**\ (\ )
 
 The number of sides on the tube. For example, a value of ``5`` means the tube will be pentagonal. Higher values result in a more detailed tube at the cost of performance.
 
@@ -139,12 +139,12 @@ The number of sides on the tube. For example, a value of ``5`` means the tube wi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``0.5``
+:ref:`float<class_float>` **radius** = ``0.5`` :ref:`🔗<class_TubeTrailMesh_property_radius>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_radius** **(** **)**
+- |void| **set_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_radius**\ (\ )
 
 The baseline radius of the tube. The radius of a particular section ring is obtained by multiplying this radius by the value of the :ref:`curve<class_TubeTrailMesh_property_curve>` at the given distance.
 
@@ -156,12 +156,12 @@ The baseline radius of the tube. The radius of a particular section ring is obta
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **section_length** = ``0.2``
+:ref:`float<class_float>` **section_length** = ``0.2`` :ref:`🔗<class_TubeTrailMesh_property_section_length>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_section_length** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_section_length** **(** **)**
+- |void| **set_section_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_section_length**\ (\ )
 
 The length of a section of the tube.
 
@@ -173,12 +173,12 @@ The length of a section of the tube.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **section_rings** = ``3``
+:ref:`int<class_int>` **section_rings** = ``3`` :ref:`🔗<class_TubeTrailMesh_property_section_rings>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_section_rings** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_section_rings** **(** **)**
+- |void| **set_section_rings**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_section_rings**\ (\ )
 
 The number of rings in a section. The :ref:`curve<class_TubeTrailMesh_property_curve>` is sampled on each ring to determine its radius. Higher values result in a more detailed tube at the cost of performance.
 
@@ -190,12 +190,12 @@ The number of rings in a section. The :ref:`curve<class_TubeTrailMesh_property_c
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sections** = ``5``
+:ref:`int<class_int>` **sections** = ``5`` :ref:`🔗<class_TubeTrailMesh_property_sections>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_sections** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_sections** **(** **)**
+- |void| **set_sections**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_sections**\ (\ )
 
 The total number of sections on the tube.
 
@@ -206,3 +206,4 @@ The total number of sections on the tube.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

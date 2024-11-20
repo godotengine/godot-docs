@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_jumping_and_squashing_monsters:
 
 Jumping and squashing monsters
@@ -236,25 +234,31 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
  .. code-tab:: gdscript GDScript
 
     func _physics_process(delta):
-       #...
+        #...
 
-       # Iterate through all collisions that occurred this frame
-       for index in range(get_slide_collision_count()):
-           # We get one of the collisions with the player
-           var collision = get_slide_collision(index)
+        # Iterate through all collisions that occurred this frame
+        for index in range(get_slide_collision_count()):
+            # We get one of the collisions with the player
+            var collision = get_slide_collision(index)
 
-           # If the collision is with ground
-           if (collision.get_collider() == null):
-               continue
+            # If there are duplicate collisions with a mob in a single frame
+            # the mob will be deleted after the first collision, and a second call to 
+            # get_collider will return null, leading to a null pointer when calling 
+            # collision.get_collider().is_in_group("mob").
+            # This block of code prevents processing duplicate collisions.
+            if collision.get_collider() == null:
+                continue
 
-           # If the collider is with a mob
-           if collision.get_collider().is_in_group("mob"):
-               var mob = collision.get_collider()
-               # we check that we are hitting it from above.
-               if Vector3.UP.dot(collision.get_normal()) > 0.1:
-                   # If so, we squash it and bounce.
-                   mob.squash()
-                   target_velocity.y = bounce_impulse
+            # If the collider is with a mob
+            if collision.get_collider().is_in_group("mob"):
+                var mob = collision.get_collider()
+                # we check that we are hitting it from above.
+                if Vector3.UP.dot(collision.get_normal()) > 0.1:
+                    # If so, we squash it and bounce.
+                    mob.squash()
+                    target_velocity.y = bounce_impulse
+                    # Prevent further duplicate calls.
+                    break
 
  .. code-tab:: csharp
 
@@ -269,6 +273,8 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
             KinematicCollision3D collision = GetSlideCollision(index);
 
             // If the collision is with a mob.
+            // With C# we leverage typing and pattern-matching
+            // instead of checking for the group we created.
             if (collision.GetCollider() is Mob mob)
             {
                 // We check that we are hitting it from above.
@@ -277,12 +283,14 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
                     // If so, we squash it and bounce.
                     mob.Squash();
                     _targetVelocity.Y = BounceImpulse;
+                    // Prevent further duplicate calls.
+                    break;
                 }
             }
         }
     }
 
- That's a lot of new functions. Here's some more information about them.
+That's a lot of new functions. Here's some more information about them.
 
 The functions ``get_slide_collision_count()`` and ``get_slide_collision()`` both come from
 the :ref:`CharacterBody3D <class_CharacterBody3D>` class and are related to
@@ -307,10 +315,14 @@ With dot products, when the result is greater than ``0``, the two vectors are at
 an angle of fewer than 90 degrees. A value higher than ``0.1`` tells us that we
 are roughly above the monster.
 
+After handling the squash and bounce logic, we terminate the loop early via the ``break`` statement
+to prevent further duplicate calls to ``mob.squash()``, which may otherwise result in unintended bugs
+such as counting the score multiple times for one kill.
+
 We are calling one undefined function, ``mob.squash()``, so we have to add it to
 the Mob class.
 
-Open the script ``Mob.gd`` by double-clicking on it in the *FileSystem* dock. At
+Open the script ``mob.gd`` by double-clicking on it in the *FileSystem* dock. At
 the top of the script, we want to define a new signal named ``squashed``. And at
 the bottom, you can add the squash function, where we emit the signal and
 destroy the mob.
@@ -343,6 +355,10 @@ destroy the mob.
         EmitSignal(SignalName.Squashed);
         QueueFree();
     }
+
+.. note::
+
+    When using C#, Godot will create the appropriate events automatically for all Signals ending with `EventHandler`, see :ref:`C# Signals <doc_c_sharp_signals>`.
 
 We will use the signal to add points to the score in the next lesson.
 

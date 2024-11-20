@@ -21,7 +21,7 @@ Description
 
 A 3D trimesh shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape3D<class_CollisionShape3D>`.
 
-Being just a collection of interconnected triangles, **ConcavePolygonShape3D** is the most freely configurable single 3D shape. It can be used to form polyhedra of any nature, or even shapes that don't enclose a volume. However, :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` is *hollow* even if the interconnected triangles do enclose a volume, which often makes it unsuitable for physics or detection.
+Being just a collection of interconnected triangles, **ConcavePolygonShape3D** is the most freely configurable single 3D shape. It can be used to form polyhedra of any nature, or even shapes that don't enclose a volume. However, **ConcavePolygonShape3D** is *hollow* even if the interconnected triangles do enclose a volume, which often makes it unsuitable for physics or detection.
 
 \ **Note:** When used for collision, **ConcavePolygonShape3D** is intended to work with static :ref:`CollisionShape3D<class_CollisionShape3D>` nodes like :ref:`StaticBody3D<class_StaticBody3D>` and will likely not behave well for :ref:`CharacterBody3D<class_CharacterBody3D>`\ s or :ref:`RigidBody3D<class_RigidBody3D>`\ s in a mode other than Static.
 
@@ -34,7 +34,7 @@ Being just a collection of interconnected triangles, **ConcavePolygonShape3D** i
 Tutorials
 ---------
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -56,11 +56,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_faces<class_ConcavePolygonShape3D_method_get_faces>` **(** **)** |const|                                                   |
-   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_faces<class_ConcavePolygonShape3D_method_set_faces>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` faces **)** |
-   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_faces<class_ConcavePolygonShape3D_method_get_faces>`\ (\ ) |const|                                                      |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_faces<class_ConcavePolygonShape3D_method_set_faces>`\ (\ faces\: :ref:`PackedVector3Array<class_PackedVector3Array>`\ ) |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -75,12 +75,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **backface_collision** = ``false``
+:ref:`bool<class_bool>` **backface_collision** = ``false`` :ref:`🔗<class_ConcavePolygonShape3D_property_backface_collision>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_backface_collision_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_backface_collision_enabled** **(** **)**
+- |void| **set_backface_collision_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_backface_collision_enabled**\ (\ )
 
 If set to ``true``, collisions occur on both sides of the concave shape faces. Otherwise they occur only along the face normals.
 
@@ -97,7 +97,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **get_faces** **(** **)** |const|
+:ref:`PackedVector3Array<class_PackedVector3Array>` **get_faces**\ (\ ) |const| :ref:`🔗<class_ConcavePolygonShape3D_method_get_faces>`
 
 Returns the faces of the trimesh shape as an array of vertices. The array (of length divisible by three) is naturally divided into triples; each triple of vertices defines a triangle.
 
@@ -109,7 +109,7 @@ Returns the faces of the trimesh shape as an array of vertices. The array (of le
 
 .. rst-class:: classref-method
 
-void **set_faces** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` faces **)**
+|void| **set_faces**\ (\ faces\: :ref:`PackedVector3Array<class_PackedVector3Array>`\ ) :ref:`🔗<class_ConcavePolygonShape3D_method_set_faces>`
 
 Sets the faces of the trimesh shape from an array of vertices. The ``faces`` array should be composed of triples such that each triple of vertices defines a triangle.
 
@@ -120,3 +120,4 @@ Sets the faces of the trimesh shape from an array of vertices. The ``faces`` arr
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

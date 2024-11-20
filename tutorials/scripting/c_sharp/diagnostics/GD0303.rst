@@ -1,5 +1,5 @@
-GD0303: Symbol parent of a type argument that must be Variant compatible was not handled
-========================================================================================
+GD0303: The parent symbol of a type argument that must be Variant compatible was not handled
+============================================================================================
 
 ====================================  ======================================
                                       Value

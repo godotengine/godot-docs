@@ -29,9 +29,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>` | :ref:`get_ref<class_WeakRef_method_get_ref>` **(** **)** |const| |
-   +-------------------------------+------------------------------------------------------------------+
+   +-------------------------------+------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_ref<class_WeakRef_method_get_ref>`\ (\ ) |const| |
+   +-------------------------------+------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -46,7 +46,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_ref** **(** **)** |const|
+:ref:`Variant<class_Variant>` **get_ref**\ (\ ) |const| :ref:`🔗<class_WeakRef_method_get_ref>`
 
 Returns the :ref:`Object<class_Object>` this weakref is referring to. Returns ``null`` if that object no longer exists.
 
@@ -57,3 +57,4 @@ Returns the :ref:`Object<class_Object>` this weakref is referring to. Returns ``
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

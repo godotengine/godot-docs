@@ -9,7 +9,7 @@ import os
 
 # -- General configuration ------------------------------------------------
 
-needs_sphinx = "1.3"
+needs_sphinx = "8.1"
 
 # Sphinx extension module names and templates location
 sys.path.append(os.path.abspath("_extensions"))
@@ -18,12 +18,16 @@ extensions = [
     "notfound.extension",
     "sphinxext.opengraph",
     "sphinx_copybutton",
+    "sphinxcontrib.video",
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown
 # builders (like the dummy builder) - as it doesn't cause errors,
 # we can ignore this so we still can treat other warnings as errors.
 sphinx_tabs_nowarn = True
+
+# Disable collapsing tabs for codeblocks.
+sphinx_tabs_disable_tab_closing = True
 
 # Custom 4O4 page HTML template.
 # https://github.com/readthedocs/sphinx-notfound-page
@@ -59,6 +63,9 @@ if not on_rtd:
 
 # Specify the site name for the Open Graph extension.
 ogp_site_name = "Godot Engine documentation"
+ogp_social_cards = {
+    "enable": False
+}
 
 if not os.getenv("SPHINX_NO_GDSCRIPT"):
     extensions.append("gdscript")
@@ -114,7 +121,14 @@ supported_languages = {
     "zh_TW": "Godot Engine %s 正體中文 (台灣) 文件",
 }
 
+# RTD normalized their language codes to ll-cc (e.g. zh-cn),
+# but Sphinx did not and still uses ll_CC (e.g. zh_CN).
+# `language` is the Sphinx configuration so it needs to be converted back.
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
+if "-" in language:
+    (lang_name, lang_country) = language.split("-")
+    language = lang_name + "_" + lang_country.upper()
+
 if not language in supported_languages.keys():
     print("Unknown language: " + language)
     print("Supported languages: " + ", ".join(supported_languages.keys()))
@@ -124,6 +138,7 @@ if not language in supported_languages.keys():
     language = "en"
 
 is_i18n = tags.has("i18n")  # noqa: F821
+print("Build language: {}, i18n tag: {}".format(language, is_i18n))
 
 exclude_patterns = ["_build"]
 
@@ -146,7 +161,6 @@ highlight_language = "gdscript"
 # -- Options for HTML output ----------------------------------------------
 
 html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 if on_rtd:
     using_rtd_theme = True
 
@@ -156,8 +170,11 @@ html_theme_options = {
     "logo_only": True,
     # Collapse navigation (False makes it tree-like)
     "collapse_navigation": False,
-    # Hide the documentation version name/number under the logo
-    "display_version": False,
+    # Remove version and language picker beneath the title
+    "version_selector": False,
+    "language_selector": False,
+    # Set Flyout menu to attached
+    "flyout_display": "attached",
 }
 
 html_title = supported_languages[language] % ( "(" + version + ")" )
@@ -169,22 +186,20 @@ html_context = {
     "github_repo": "godot-docs",  # Repo name
     "github_version": "master",  # Version
     "conf_py_path": "/",  # Path in the checkout to the docs root
-    "godot_inject_language_links": True,
-    "godot_docs_supported_languages": list(supported_languages.keys()),
     "godot_docs_title": supported_languages[language],
     "godot_docs_basepath": "https://docs.godotengine.org/",
     "godot_docs_suffix": ".html",
-    "godot_default_lang": "en",
-    "godot_canonical_version": "stable",
     # Distinguish local development website from production website.
     # This prevents people from looking for changes on the production website after making local changes :)
     "godot_title_prefix": "" if on_rtd else "(DEV) ",
     # Set this to `True` when in the `latest` branch to clearly indicate to the reader
     # that they are not reading the `stable` documentation.
     "godot_is_latest": True,
-    "godot_version": "4.2",
+    "godot_version": "4.4",
     # Enables a banner that displays the up-to-date status of each article.
     "godot_show_article_status": True,
+    # Display user-contributed notes at the bottom of pages that don't have `:allow_comments: False` at the top.
+    "godot_show_article_comments": on_rtd and not is_i18n,
 }
 
 html_logo = "img/docs_logo.svg"
@@ -197,18 +212,14 @@ html_extra_path = ["robots.txt"]
 # These paths are either relative to html_static_path
 # or fully qualified paths (e.g. https://...)
 html_css_files = [
-    'css/algolia.css',
-    'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css',
-    "css/custom.css?10", # Increment the number at the end when the file changes to bust the cache.
+    "css/custom.css",
 ]
 
 if not on_rtd:
     html_css_files.append("css/dev.css")
 
 html_js_files = [
-    "js/custom.js?6", # Increment the number at the end when the file changes to bust the cache.
-    ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
-    ('js/algolia.js', {'defer': 'defer'})
+    "js/custom.js",
 ]
 
 # Output file base name for HTML help builder
@@ -306,3 +317,6 @@ rst_epilog = """
     image_locale="-" if language == "en" else language,
     target_locale="" if language == "en" else "/" + language,
 )
+
+# Needed so the table of contents is created for EPUB
+epub_tocscope = 'includehidden'

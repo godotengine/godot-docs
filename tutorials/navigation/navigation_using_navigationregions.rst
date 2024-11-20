@@ -3,7 +3,7 @@
 Using NavigationRegions
 =======================
 
-NavigationRegions are the visual Node representation of a ``region`` of the navigation ``map`` on the NavigationServer.
+NavigationRegions are the visual Node representation of a **region** of the navigation **map** on the NavigationServer.
 Each NavigationRegion node holds a resource for the navigation mesh data.
 
 Both 2D and 3D version are available as :ref:`NavigationRegion2D<class_NavigationRegion2D>`
@@ -12,7 +12,7 @@ and :ref:`NavigationRegion3D<class_NavigationRegion3D>` respectively.
 Individual NavigationRegions upload their 2D NavigationPolygon or 3D NavigationMesh resource data to the NavigationServer.
 The NavigationServer map turns this information into a combined navigation map for pathfinding.
 
-To create a navigation region using the SceneTree add a ``NavigationRegion2D`` or ``NavigationRegion3D`` node to the scene.
+To create a navigation region using the scene tree add a ``NavigationRegion2D`` or ``NavigationRegion3D`` node to the scene.
 All regions require a navigation mesh resource to function. See :ref:`doc_navigation_using_navigationmeshes` to learn how to create and apply navigation meshes.
 
 NavigationRegions will automatically push ``global_transform`` changes to the region on the NavigationServer which makes them suitable for moving platforms.
@@ -36,38 +36,89 @@ Creating new navigation regions
 
 New NavigationRegion nodes will automatically register to the default world navigation map for their 2D/3D dimension.
 
-The region RID can then be obtained from NavigationRegion Nodes with ``get_region_rid()``.
+The region RID can then be obtained from NavigationRegion Nodes with ``get_rid()``.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
+
+    extends NavigationRegion2D
+
+    var navigationserver_region_rid: RID = get_rid()
+
+ .. code-tab:: csharp 2D C#
+
+    public partial class MyNavigationRegion2D : NavigationRegion2D
+    {
+        public override void _Ready()
+        {
+            Rid navigationServerRegionRid = GetRid();
+        }
+    }
+
+ .. code-tab:: gdscript 3D GDScript
 
     extends NavigationRegion3D
 
-    var navigationserver_region_rid: RID = get_region_rid()
+    var navigationserver_region_rid: RID = get_rid()
+
+ .. code-tab:: csharp 3D C#
+
+    public partial class MyNavigationRegion3D : NavigationRegion3D
+    {
+        public override void _Ready()
+        {
+            Rid navigationServerRegionRid = GetRid();
+        }
+    }
 
 New regions can also be created with the NavigationServer API and added to any existing map.
 
 If regions are created with the NavigationServer API directly they need to be assigned a navigation map manually.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
 
     extends Node2D
 
-    var new_2d_region_rid: RID = NavigationServer2D.region_create()
-    var default_2d_map_rid: RID = get_world_2d().get_navigation_map()
-    NavigationServer2D.region_set_map(new_2d_region_rid, default_2d_map_rid)
+    func _ready() -> void:
+        var new_region_rid: RID = NavigationServer2D.region_create()
+        var default_map_rid: RID = get_world_2d().get_navigation_map()
+        NavigationServer2D.region_set_map(new_region_rid, default_map_rid)
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: csharp 2D C#
+
+    public partial class MyNode2D : Node2D
+    {
+        public override void _Ready()
+        {
+            Rid newRegionRid = NavigationServer2D.RegionCreate();
+            Rid defaultMapRid = GetWorld2D().NavigationMap;
+            NavigationServer2D.RegionSetMap(newRegionRid, defaultMapRid);
+        }
+    }
+
+ .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
 
-    var new_3d_region_rid: RID = NavigationServer3D.region_create()
-    var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
-    NavigationServer3D.region_set_map(new_3d_region_rid, default_3d_map_rid)
+    func _ready() -> void:
+        var new_region_rid: RID = NavigationServer3D.region_create()
+        var default_map_rid: RID = get_world_3d().get_navigation_map()
+        NavigationServer3D.region_set_map(new_region_rid, default_map_rid)
+
+ .. code-tab:: csharp 3D C#
+
+    public partial class MyNode3D : Node3D
+    {
+        public override void _Ready()
+        {
+            Rid newRegionRid = NavigationServer3D.RegionCreate();
+            Rid defaultMapRid = GetWorld3D().NavigationMap;
+            NavigationServer3D.RegionSetMap(newRegionRid, defaultMapRid);
+        }
+    }
 
 .. note::
 
-    NavigationRegions can only be assigned to a single NavigationMap.
-    If an existing region is assigned to a new map it will leave the old map.
+    Navigation regions can only be assigned to a single navigation map.
+    If an existing region is assigned to a new navigation map it will leave the old map.

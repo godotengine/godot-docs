@@ -12,9 +12,23 @@ AudioEffectSpectrumAnalyzerInstance
 
 **Inherits:** :ref:`AudioEffectInstance<class_AudioEffectInstance>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Queryable instance of an :ref:`AudioEffectSpectrumAnalyzer<class_AudioEffectSpectrumAnalyzer>`.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+The runtime part of an :ref:`AudioEffectSpectrumAnalyzer<class_AudioEffectSpectrumAnalyzer>`, which can be used to query the magnitude of a frequency range on its host bus.
+
+An instance of this class can be obtained with :ref:`AudioServer.get_bus_effect_instance<class_AudioServer_method_get_bus_effect_instance>`.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `Audio Spectrum Visualizer Demo <https://godotengine.org/asset-library/asset/2762>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -24,9 +38,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`get_magnitude_for_frequency_range<class_AudioEffectSpectrumAnalyzerInstance_method_get_magnitude_for_frequency_range>` **(** :ref:`float<class_float>` from_hz, :ref:`float<class_float>` to_hz, :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` mode=1 **)** |const| |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_magnitude_for_frequency_range<class_AudioEffectSpectrumAnalyzerInstance_method_get_magnitude_for_frequency_range>`\ (\ from_hz\: :ref:`float<class_float>`, to_hz\: :ref:`float<class_float>`, mode\: :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` = 1\ ) |const| |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -41,7 +55,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **MagnitudeMode**:
+enum **MagnitudeMode**: :ref:`🔗<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>`
 
 .. _class_AudioEffectSpectrumAnalyzerInstance_constant_MAGNITUDE_AVERAGE:
 
@@ -49,7 +63,7 @@ enum **MagnitudeMode**:
 
 :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` **MAGNITUDE_AVERAGE** = ``0``
 
-Use the average value as magnitude.
+Use the average value across the frequency range as magnitude.
 
 .. _class_AudioEffectSpectrumAnalyzerInstance_constant_MAGNITUDE_MAX:
 
@@ -57,7 +71,7 @@ Use the average value as magnitude.
 
 :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` **MAGNITUDE_MAX** = ``1``
 
-Use the maximum value as magnitude.
+Use the maximum value of the frequency range as magnitude.
 
 .. rst-class:: classref-section-separator
 
@@ -72,11 +86,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_magnitude_for_frequency_range** **(** :ref:`float<class_float>` from_hz, :ref:`float<class_float>` to_hz, :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` mode=1 **)** |const|
+:ref:`Vector2<class_Vector2>` **get_magnitude_for_frequency_range**\ (\ from_hz\: :ref:`float<class_float>`, to_hz\: :ref:`float<class_float>`, mode\: :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>` = 1\ ) |const| :ref:`🔗<class_AudioEffectSpectrumAnalyzerInstance_method_get_magnitude_for_frequency_range>`
 
-.. container:: contribute
+Returns the magnitude of the frequencies from ``from_hz`` to ``to_hz`` in linear energy as a Vector2. The ``x`` component of the return value represents the left stereo channel, and ``y`` represents the right channel.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ ``mode`` determines how the frequency range will be processed. See :ref:`MagnitudeMode<enum_AudioEffectSpectrumAnalyzerInstance_MagnitudeMode>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -85,3 +99,4 @@ Method Descriptions
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

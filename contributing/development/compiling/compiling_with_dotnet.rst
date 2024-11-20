@@ -8,7 +8,7 @@ Compiling with .NET
 Requirements
 ------------
 
-- `.NET SDK 6.0+ <https://dotnet.microsoft.com/download>`_
+- `.NET SDK 8.0+ <https://dotnet.microsoft.com/download>`_
 
   You can use ``dotnet --info`` to check which .NET SDK versions are installed.
 
@@ -46,7 +46,7 @@ the desired targets without having to repeat this process.
 ``<godot_binary>`` refers to the editor binary you compiled with the .NET module
 enabled. Its exact name will differ based on your system and configuration, but
 should be of the form ``bin/godot.<platform>.editor.<arch>.mono``, e.g.
-``bin/godot.linuxbsd.editor.x86_64.mono`` or 
+``bin/godot.linuxbsd.editor.x86_64.mono`` or
 ``bin/godot.windows.editor.x86_32.mono.exe``. Be especially aware of the
 **.mono** suffix! If you've previously compiled Godot without .NET support, you
 might have similarly named binaries without this suffix. These binaries can't be
@@ -100,28 +100,44 @@ distributed as NuGet packages. This is all transparent to the user, but it can
 make things complicated during development.
 
 In order to use Godot with a development version of those packages, a local
-NuGet source must be created where MSBuild can find them. This can be done with
-the .NET CLI:
+NuGet source must be created where MSBuild can find them.
+
+First, pick a location for the local NuGet source. If you don't have a
+preference, create an empty directory at one of these recommended locations:
+
+- On Windows, ``C:\Users\<username>\MyLocalNugetSource``
+- On Linux, \*BSD, etc., ``~/MyLocalNugetSource``
+
+This path is referred to later as ``<my_local_source>``.
+
+After picking a directory, run this .NET CLI command to configure NuGet to use
+your local source:
 
 ::
 
-    dotnet nuget add source ~/MyLocalNugetSource --name MyLocalNugetSource
+    dotnet nuget add source <my_local_source> --name MyLocalNugetSource
 
-The Godot NuGet packages must be added to that local source. Additionally, we
-must make sure there are no other versions of the package in the NuGet cache, as
-MSBuild may pick one of those instead.
-
-In order to simplify this process, the ``build_assemblies.py`` script provides
-the following ``--push-nupkgs-local`` option:
+When you run the ``build_assemblies.py`` script, pass ``<my_local_source>`` to
+the ``--push-nupkgs-local`` option:
 
 ::
 
-    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir ./bin --push-nupkgs-local ~/MyLocalNugetSource
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir ./bin --push-nupkgs-local <my_local_source>
 
 This option ensures the packages will be added to the specified local NuGet
 source and that conflicting versions of the package are removed from the NuGet
 cache. It's recommended to always use this option when building the C# solutions
 during development to avoid mistakes.
+
+Building without depending on deprecated features (NO_DEPRECATED)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When building Godot without deprecated classes and functions, i.e. the ``deprecated=no``
+argument for scons, the managed libraries must also be built without dependencies to deprecated code.
+This is done by passing the ``--no-deprecated`` argument:
+
+::
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir ./bin --push-nupkgs-local <my_local_source> --no-deprecated
 
 Double Precision Support (REAL_T_IS_DOUBLE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -132,7 +148,7 @@ the ``--precision=double`` argument:
 
 ::
 
-    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir ./bin --push-nupkgs-local ~/MyLocalNugetSource --precision=double
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir ./bin --push-nupkgs-local <my_local_source> --precision=double
 
 Examples
 --------
@@ -143,13 +159,13 @@ Example (Windows)
 ::
 
     # Build editor binary
-    scons p=windows target=editor module_mono_enabled=yes
+    scons platform=windows target=editor module_mono_enabled=yes
     # Build export templates
-    scons p=windows target=template_debug module_mono_enabled=yes
-    scons p=windows target=template_release module_mono_enabled=yes
-    
+    scons platform=windows target=template_debug module_mono_enabled=yes
+    scons platform=windows target=template_release module_mono_enabled=yes
+
     # Generate glue sources
-    bin/godot.windows.editor.x86_64.mono --generate-mono-glue modules/mono/glue
+    bin/godot.windows.editor.x86_64.mono --headless --generate-mono-glue modules/mono/glue
     # Build .NET assemblies
     ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=windows
 
@@ -160,13 +176,13 @@ Example (Linux, \*BSD)
 ::
 
     # Build editor binary
-    scons p=linuxbsd target=editor module_mono_enabled=yes
+    scons platform=linuxbsd target=editor module_mono_enabled=yes
     # Build export templates
-    scons p=linuxbsd target=template_debug module_mono_enabled=yes
-    scons p=linuxbsd target=template_release module_mono_enabled=yes
+    scons platform=linuxbsd target=template_debug module_mono_enabled=yes
+    scons platform=linuxbsd target=template_release module_mono_enabled=yes
 
     # Generate glue sources
-    bin/godot.linuxbsd.editor.x86_64.mono --generate-mono-glue modules/mono/glue
+    bin/godot.linuxbsd.editor.x86_64.mono --headless --generate-mono-glue modules/mono/glue
     # Generate binaries
     ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=linuxbsd
 

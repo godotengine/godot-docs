@@ -51,10 +51,7 @@ It will connect and fetch a website.
         while http.get_status() == HTTPClient.STATUS_CONNECTING or http.get_status() == HTTPClient.STATUS_RESOLVING:
             http.poll()
             print("Connecting...")
-            if not OS.has_feature("web"):
-                OS.delay_msec(500)
-            else:
-                yield(Engine.get_main_loop(), "idle_frame")
+            await get_tree().process_frame
 
         assert(http.get_status() == HTTPClient.STATUS_CONNECTED) # Check if the connection was made successfully.
 
@@ -71,12 +68,7 @@ It will connect and fetch a website.
             # Keep polling for as long as the request is being processed.
             http.poll()
             print("Requesting...")
-            if OS.has_feature("web"):
-                # Synchronous HTTP requests are not supported on the web,
-                # so wait for the next main loop iteration.
-                yield(Engine.get_main_loop(), "idle_frame")
-            else:
-                OS.delay_msec(500)
+            await get_tree().process_frame
 
         assert(http.get_status() == HTTPClient.STATUS_BODY or http.get_status() == HTTPClient.STATUS_CONNECTED) # Make sure request finished well.
 
@@ -109,11 +101,7 @@ It will connect and fetch a website.
                 # Get a chunk.
                 var chunk = http.read_response_body_chunk()
                 if chunk.size() == 0:
-                    if not OS.has_feature("web"):
-                        # Got nothing, wait for buffers to fill a bit.
-                        OS.delay_usec(1000)
-                    else:
-                        yield(Engine.get_main_loop(), "idle_frame")
+                    await get_tree().process_frame
                 else:
                     rb = rb + chunk # Append to read buffer.
             # Done!

@@ -1,5 +1,6 @@
 source,destination
 /about/index.html,/index.html
+/about/troubleshooting.html,/tutorials/troubleshooting.html
 /classes/_classes.html,/classes/
 /community/contributing/best_practices_for_engine_contributors.html,/contributing/development/best_practices_for_engine_contributors.html
 /community/contributing/bisecting_regressions.html,/contributing/workflow/bisecting_regressions.html
@@ -29,6 +30,7 @@ source,destination
 /contributing/development/core_and_modules/introduction_to_godot_development.html,/contributing/development/core_and_modules/index.html
 /contributing/doc_and_l10n_guidelines.html,/community/contributing/doc_and_l10n_guidelines.html
 /contributing/updating_the_class_reference.html,/community/contributing/updating_the_class_reference.html
+/contributing/ways_to_contribute.html,/contributing/how_to_contribute.html
 /development/compiling/compiling_for_android.html,/contributing/development/compiling/compiling_for_android.html
 /development/compiling/compiling_for_ios.html,/contributing/development/compiling/compiling_for_ios.html
 /development/compiling/compiling_for_linuxbsd.html,/contributing/development/compiling/compiling_for_linuxbsd.html
@@ -106,13 +108,13 @@ source,destination
 /getting_started/step_by_step/resources.html,/tutorials/scripting/resources.html
 /getting_started/step_by_step/scene_tree.html,/tutorials/scripting/scene_tree.html
 /getting_started/step_by_step/singletons_autoload.html,/tutorials/scripting/singletons_autoload.html
-/getting_started/workflow/assets/escn_exporter/animation.html,/tutorials/assets_pipeline/escn_exporter/animation.html
+/getting_started/workflow/assets/escn_exporter/animation.html,/tutorials/assets_pipeline/escn_exporter/index.html
 /getting_started/workflow/assets/escn_exporter/index.html,/tutorials/assets_pipeline/escn_exporter/index.html
-/getting_started/workflow/assets/escn_exporter/lights.html,/tutorials/assets_pipeline/escn_exporter/lights.html
-/getting_started/workflow/assets/escn_exporter/material.html,/tutorials/assets_pipeline/escn_exporter/material.html
-/getting_started/workflow/assets/escn_exporter/mesh.html,/tutorials/assets_pipeline/escn_exporter/mesh.html
-/getting_started/workflow/assets/escn_exporter/physics.html,/tutorials/assets_pipeline/escn_exporter/physics.html
-/getting_started/workflow/assets/escn_exporter/skeleton.html,/tutorials/assets_pipeline/escn_exporter/skeleton.html
+/getting_started/workflow/assets/escn_exporter/lights.html,/tutorials/assets_pipeline/escn_exporter/index.html
+/getting_started/workflow/assets/escn_exporter/material.html,/tutorials/assets_pipeline/escn_exporter/index.html
+/getting_started/workflow/assets/escn_exporter/mesh.html,/tutorials/assets_pipeline/escn_exporter/index.html
+/getting_started/workflow/assets/escn_exporter/physics.html,/tutorials/assets_pipeline/escn_exporter/index.html
+/getting_started/workflow/assets/escn_exporter/skeleton.html,/tutorials/assets_pipeline/escn_exporter/index.html
 /getting_started/workflow/assets/import_process.html,/tutorials/assets_pipeline/import_process.html
 /getting_started/workflow/assets/importing_audio_samples.html,/tutorials/assets_pipeline/importing_audio_samples.html
 /getting_started/workflow/assets/importing_images.html,/tutorials/assets_pipeline/importing_images.html
@@ -130,7 +132,7 @@ source,destination
 /getting_started/workflow/best_practices/scene_organization.html,/tutorials/best_practices/scene_organization.html
 /getting_started/workflow/best_practices/scenes_versus_scripts.html,/tutorials/best_practices/scenes_versus_scripts.html
 /getting_started/workflow/best_practices/what_are_godot_classes.html,/tutorials/best_practices/what_are_godot_classes.html
-/getting_started/workflow/export/android_custom_build.html,/tutorials/export/android_custom_build.html
+/getting_started/workflow/export/android_custom_build.html,/tutorials/export/android_gradle_build.html
 /getting_started/workflow/export/changing_application_icon_for_windows.html,/tutorials/export/changing_application_icon_for_windows.html
 /getting_started/workflow/export/exporting_for_android.html,/tutorials/export/exporting_for_android.html
 /getting_started/workflow/export/exporting_for_dedicated_servers.html,/tutorials/export/exporting_for_dedicated_servers.html
@@ -343,6 +345,7 @@ source,destination
 /tutorials/assetlib/uploading_to_assetlib.html,/community/asset_library/uploading_to_assetlib.html
 /tutorials/assetlib/using_assetlib.html,/community/asset_library/using_assetlib.html
 /tutorials/assetlib/what_is_assetlib.html,/community/asset_library/what_is_assetlib.html
+/tutorials/assets_pipeline/importing_scenes.html,/tutorials/assets_pipeline/importing_3d_scenes/index.html
 /tutorials/content/making_trees.html,/tutorials/shaders/making_trees.html
 /tutorials/content/procedural_geometry/arraymesh.html,/tutorials/3d/procedural_geometry/arraymesh.html
 /tutorials/content/procedural_geometry/immediategeometry.html,/tutorials/3d/procedural_geometry/immediategeometry.html
@@ -375,6 +378,8 @@ source,destination
 /tutorials/misc/pausing_games.html,/tutorials/scripting/pausing_games.html
 /tutorials/misc/running_code_in_the_editor.html,/tutorials/plugins/running_code_in_the_editor.html
 /tutorials/misc/saving_games.html,/tutorials/io/saving_games.html
+/tutorials/navigation/navigation_using_navigationobstacles.html#static-obstacles,/tutorials/navigation/navigation_using_navigationobstacles.html#static-avoidance-obstacles
+/tutorials/navigation/navigation_using_navigationobstacles.html#static-obstacles,/tutorials/navigation/navigation_using_navigationobstacles.html#dynamic-avoidance-obstacles
 /tutorials/optimization/batching.html,/tutorials/performance/batching.html
 /tutorials/optimization/cpu_optimization.html,/tutorials/performance/cpu_optimization.html
 /tutorials/optimization/general_optimization.html,/tutorials/performance/general_optimization.html
@@ -418,3 +423,6 @@ source,destination
 /tutorials/viewports/multiple_resolutions.html,/tutorials/rendering/multiple_resolutions.html
 /tutorials/viewports/using_viewport_as_texture.html,/tutorials/shaders/using_viewport_as_texture.html
 /tutorials/viewports/viewports.html,/tutorials/rendering/viewports.html
+/contributing/development/compiling/compiling_for_uwp.html,/about/faq.html#which-platforms-are-supported-by-godot
+/tutorials/export/exporting_for_uwp.html,/about/faq.html#which-platforms-are-supported-by-godot
+/tutorials/xr/openxr_passthrough.html,/tutorials/xr/ar_passthrough.html

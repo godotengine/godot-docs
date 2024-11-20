@@ -51,11 +51,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+------------------------------------------------------------------------------+
-   | :ref:`Theme<class_Theme>` | :ref:`get_default_theme<class_ThemeDB_method_get_default_theme>` **(** **)** |
-   +---------------------------+------------------------------------------------------------------------------+
-   | :ref:`Theme<class_Theme>` | :ref:`get_project_theme<class_ThemeDB_method_get_project_theme>` **(** **)** |
-   +---------------------------+------------------------------------------------------------------------------+
+   +---------------------------+------------------------------------------------------------------------+
+   | :ref:`Theme<class_Theme>` | :ref:`get_default_theme<class_ThemeDB_method_get_default_theme>`\ (\ ) |
+   +---------------------------+------------------------------------------------------------------------+
+   | :ref:`Theme<class_Theme>` | :ref:`get_project_theme<class_ThemeDB_method_get_project_theme>`\ (\ ) |
+   +---------------------------+------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -70,7 +70,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**fallback_changed** **(** **)**
+**fallback_changed**\ (\ ) :ref:`🔗<class_ThemeDB_signal_fallback_changed>`
 
 Emitted when one of the fallback values had been changed. Use it to refresh the look of controls that may rely on the fallback theme items.
 
@@ -87,12 +87,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fallback_base_scale** = ``1.0``
+:ref:`float<class_float>` **fallback_base_scale** = ``1.0`` :ref:`🔗<class_ThemeDB_property_fallback_base_scale>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_fallback_base_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_fallback_base_scale** **(** **)**
+- |void| **set_fallback_base_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_fallback_base_scale**\ (\ )
 
 The fallback base scale factor of every :ref:`Control<class_Control>` node and :ref:`Theme<class_Theme>` resource. Used when no other value is available to the control.
 
@@ -106,12 +106,12 @@ See also :ref:`Theme.default_base_scale<class_Theme_property_default_base_scale>
 
 .. rst-class:: classref-property
 
-:ref:`Font<class_Font>` **fallback_font**
+:ref:`Font<class_Font>` **fallback_font** :ref:`🔗<class_ThemeDB_property_fallback_font>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_fallback_font** **(** :ref:`Font<class_Font>` value **)**
-- :ref:`Font<class_Font>` **get_fallback_font** **(** **)**
+- |void| **set_fallback_font**\ (\ value\: :ref:`Font<class_Font>`\ )
+- :ref:`Font<class_Font>` **get_fallback_font**\ (\ )
 
 The fallback font of every :ref:`Control<class_Control>` node and :ref:`Theme<class_Theme>` resource. Used when no other value is available to the control.
 
@@ -125,12 +125,12 @@ See also :ref:`Theme.default_font<class_Theme_property_default_font>`.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **fallback_font_size** = ``16``
+:ref:`int<class_int>` **fallback_font_size** = ``16`` :ref:`🔗<class_ThemeDB_property_fallback_font_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_fallback_font_size** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_fallback_font_size** **(** **)**
+- |void| **set_fallback_font_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_fallback_font_size**\ (\ )
 
 The fallback font size of every :ref:`Control<class_Control>` node and :ref:`Theme<class_Theme>` resource. Used when no other value is available to the control.
 
@@ -144,12 +144,12 @@ See also :ref:`Theme.default_font_size<class_Theme_property_default_font_size>`.
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **fallback_icon**
+:ref:`Texture2D<class_Texture2D>` **fallback_icon** :ref:`🔗<class_ThemeDB_property_fallback_icon>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_fallback_icon** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_fallback_icon** **(** **)**
+- |void| **set_fallback_icon**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_fallback_icon**\ (\ )
 
 The fallback icon of every :ref:`Control<class_Control>` node and :ref:`Theme<class_Theme>` resource. Used when no other value is available to the control.
 
@@ -161,12 +161,12 @@ The fallback icon of every :ref:`Control<class_Control>` node and :ref:`Theme<cl
 
 .. rst-class:: classref-property
 
-:ref:`StyleBox<class_StyleBox>` **fallback_stylebox**
+:ref:`StyleBox<class_StyleBox>` **fallback_stylebox** :ref:`🔗<class_ThemeDB_property_fallback_stylebox>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_fallback_stylebox** **(** :ref:`StyleBox<class_StyleBox>` value **)**
-- :ref:`StyleBox<class_StyleBox>` **get_fallback_stylebox** **(** **)**
+- |void| **set_fallback_stylebox**\ (\ value\: :ref:`StyleBox<class_StyleBox>`\ )
+- :ref:`StyleBox<class_StyleBox>` **get_fallback_stylebox**\ (\ )
 
 The fallback stylebox of every :ref:`Control<class_Control>` node and :ref:`Theme<class_Theme>` resource. Used when no other value is available to the control.
 
@@ -183,7 +183,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Theme<class_Theme>` **get_default_theme** **(** **)**
+:ref:`Theme<class_Theme>` **get_default_theme**\ (\ ) :ref:`🔗<class_ThemeDB_method_get_default_theme>`
 
 Returns a reference to the default engine :ref:`Theme<class_Theme>`. This theme resource is responsible for the out-of-the-box look of :ref:`Control<class_Control>` nodes and cannot be overridden.
 
@@ -195,7 +195,7 @@ Returns a reference to the default engine :ref:`Theme<class_Theme>`. This theme 
 
 .. rst-class:: classref-method
 
-:ref:`Theme<class_Theme>` **get_project_theme** **(** **)**
+:ref:`Theme<class_Theme>` **get_project_theme**\ (\ ) :ref:`🔗<class_ThemeDB_method_get_project_theme>`
 
 Returns a reference to the custom project :ref:`Theme<class_Theme>`. This theme resources allows to override the default engine theme for every control node in the project.
 
@@ -208,3 +208,4 @@ To set the project theme, see :ref:`ProjectSettings.gui/theme/custom<class_Proje
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

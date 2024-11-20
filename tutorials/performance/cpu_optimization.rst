@@ -92,15 +92,26 @@ using a profiler, is to manually time the function or area under test.
 The specifics vary depending on the language, but in GDScript, you would do
 the following:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
-    var time_start = OS.get_ticks_usec()
+    var time_start = Time.get_ticks_usec()
 
     # Your function you want to time
     update_enemies()
 
-    var time_end = OS.get_ticks_usec()
+    var time_end = Time.get_ticks_usec()
     print("update_enemies() took %d microseconds" % time_end - time_start)
+
+ .. code-tab:: csharp
+
+    var timeStart = Time.GetTicksUsec();
+
+    // Your function you want to time.
+    UpdateEnemies();
+
+    var timeEnd = Time.GetTicksUsec();
+    GD.Print($"UpdateEnemies() took {timeEnd - timeStart} microseconds");
 
 When manually timing functions, it is usually a good idea to run the function
 many times (1,000 or more times), instead of just once (unless it is a very slow

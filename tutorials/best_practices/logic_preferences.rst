@@ -70,7 +70,7 @@ either? Let's see an example:
     #
     # 4. It is when one instantiates this script on its own with .new() that
     #    one will load "office.tscn" rather than the exported value.
-    export(PackedScene) var a_building = preload("office.tscn")
+    @export var a_building : PackedScene = preload("office.tscn")
 
     # Uh oh! This results in an error!
     # One must assign constant values to constants. Because `load` performs a
@@ -96,9 +96,26 @@ either? Let's see an example:
         public override void _Ready()
         {
             // Can assign the value during initialization.
-            ABuilding = GD.Load<PackedScene>("res://office.tscn");
+            ABuilding = GD.Load<PackedScene>("res://Office.tscn");
         }
     }
+
+  .. code-tab:: cpp C++
+
+    using namespace godot;
+
+    class MyBuildings : public Node {
+        GDCLASS(MyBuildings, Node)
+
+    public:
+        const Ref<PackedScene> building = ResourceLoader::get_singleton()->load("res://building.tscn");
+        Ref<PackedScene> a_building;
+
+        virtual void _ready() override {
+            // Can assign the value during initialization.
+            a_building = ResourceLoader::get_singleton()->load("res://office.tscn");
+        }
+    };
 
 Preloading allows the script to handle all the loading the moment one loads the
 script. Preloading is useful, but there are also times when one doesn't wish
@@ -119,7 +136,7 @@ consider:
    in exceptional cases, one may wish not to do this:
 
    1. If the 'imported' class is liable to change, then it should be a property
-      instead, initialized either using an ``export`` or a ``load()`` (and
+      instead, initialized either using an ``@export`` or a ``load()`` (and
       perhaps not even initialized until later).
 
    2. If the script requires a great many dependencies, and one does not wish

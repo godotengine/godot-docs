@@ -38,7 +38,7 @@ While the main disadvantages are:
    statically typed languages only appear while running the code
    (because expression parsing is more strict).
 -  Less flexibility for code-completion (some variable types are only
-   known at run-time).
+   known at runtime).
 
 This, translated to reality, means that Godot used with GDScript is a combination
 designed to create games quickly and efficiently. For games that are very
@@ -327,17 +327,17 @@ Iterating using the C-style for loop in C-derived languages can be quite complex
     [..]
 
     for (int i = 0; i < 50; i++) {
-		printf("Value: %c Index: %d\n", strings[i], i);
-	}
+        printf("Value: %c Index: %d\n", strings[i], i);
+    }
 
     // Even in STL:
     std::list<std::string> strings;
-    
+
     [..]
 
-	for (std::string::const_iterator it = strings.begin(); it != strings.end(); it++) {
-		std::cout << *it << std::endl;
-	}
+    for (std::string::const_iterator it = strings.begin(); it != strings.end(); it++) {
+        std::cout << *it << std::endl;
+    }
 
 Because of this, GDScript makes the opinionated decision to have a for-in loop over iterables instead:
 

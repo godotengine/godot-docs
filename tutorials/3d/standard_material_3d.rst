@@ -47,30 +47,134 @@ with the export preset for unreal engine, which also uses ORM textures.
 Transparency
 ------------
 
-In Godot, materials are not transparent unless specifically configured to be.
-The main reason behind this is that transparent materials are rendered
-using a different technique (sorted from back to front and rendered in order).
+By default, materials in Godot are opaque. This is fast to render, but it means
+the material can't be seen through even if you use a transparent texture in the
+**Albedo > Texture** property (or set **Albedo > Color** to a transparent color).
 
-This technique is less efficient (many state changes happen) and makes
-the materials unusable with many mid- and post-processing effects
-(such as SSAO, SSR, etc.) that require perfectly opaque geometry.
+To be able to see through a material, the material needs to be made *transparent*.
+Godot offers several transparency modes:
 
-For this reason, materials in Godot are assumed opaque unless
-specified otherwise. The main settings that enable transparency are:
+- **Disabled:** Material is opaque. This is the fastest to render, with all
+  rendering features supported.
 
-* Transparency (this one)
-* Blend mode set to other than "Mix"
-* Enabling distance or proximity fade
+- **Alpha:** Material is transparent. Semi-transparent areas are drawn with
+  blending. This is slow to render, but it allows for partial transparency (also
+  known as translucency). Materials using alpha blending also can't cast
+  shadows, and are not visible in screen-space reflections.
 
-When transparency other than ``0`` or ``1`` is not needed, it's possible to
-set a threshold to prevent the object from rendering semi-transparent pixels
-using the alpha scissor option.
+  - **Alpha** is a good fit for particle effects and VFX.
+
+- **Alpha Scissor:** Material is transparent. Semi-transparent areas whose
+  opacity is below **Alpha Scissor Threshold** are not drawn (above this
+  opacity, these are drawn as opaque). This is faster to render than Alpha and
+  doesn't exhibit transparency sorting issues. The downside is that this results
+  in "all or nothing" transparency, with no intermediate values possible.
+  Materials using alpha scissor can cast shadows.
+
+  - **Alpha Scissor** is ideal for foliage and fences, since these have hard
+    edges and require correct sorting to look good.
+
+- **Alpha Hash:** Material is transparent. Semi-transparent areas are drawn
+  using dithering. This is also "all or nothing" transparency, but dithering
+  helps represent partially opaque areas with limited precision depending on
+  viewport resolution. Materials using alpha hash can cast shadows.
+
+  - **Alpha Hash** is suited for realistic-looking hair, although stylized hair
+    may work better with alpha scissor.
+
+- **Depth Pre-Pass:** This renders the object's fully opaque pixels via the
+  opaque pipeline first, then renders the rest with alpha blending. This allows
+  transparency sorting to be *mostly* correct (albeit not fully so, as partially
+  transparent regions may still exhibit incorrect sorting). Materials using
+  depth prepass can cast shadows.
+
+.. note::
+
+    Godot will automatically force the material to be transparent with alpha
+    blending if *any* of these conditions is met:
+
+    - Setting the transparency mode to **Alpha** (as described here).
+    - Setting a blend mode other than the default **Mix**
+    - Enabling **Refraction**, **Proximity Fade**, or **Distance Fade**.
+
+Comparison between alpha blending (left) and alpha scissor (right) transparency:
 
 .. image:: img/spatial_material12.png
 
-This renders the object via the opaque pipeline when opaque pre-pass is on,
-which is faster and allows it to use mid- and post-process effects such as
-SSAO, SSR, etc.
+.. warning::
+
+    Alpha-blended transparency has several
+    :ref:`limitations <doc_3d_rendering_limitations_transparency_sorting>`:
+
+    - Alpha-blended materials are significantly slower to render, especially if
+      they overlap.
+    - Alpha-blended materials may exhibit sorting issues when transparent
+      surfaces overlap each other. This means that surfaces may render in the
+      incorrect order, with surfaces in the back appearing to be in front of
+      those which are actually closer to the camera.
+    - Alpha-blended materials don't cast shadows, although they can receive shadows.
+    - Alpha-blended materials don't appear in any reflections (other than
+      reflection probes).
+    - Screen-space reflections and sharp SDFGI reflections don't appear on
+      alpha-blended materials. When SDFGI is enabled, rough reflections are used
+      as a fallback regardless of material roughness.
+
+    Before using the **Alpha** transparency mode, always consider whether
+    another transparency mode is more suited for your needs.
+
+.. _doc_standard_material_3d_alpha_antialiasing:
+
+Alpha Antialiasing
+~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This property is only visible when the transparency mode is
+    **Alpha Scissor** or **Alpha Hash**.
+
+While alpha scissor and alpha hash materials are faster to render than
+alpha-blended materials, they exhibit hard edges between opaque and transparent
+regions. While it's possible to use post-processing-based :ref:`antialiasing
+techniques <doc_3d_antialiasing>` such as FXAA and TAA, this is not always
+desired as these techniques tend to make the final result look blurrier or
+exhibit ghosting artifacts.
+
+There are 3 alpha antialiasing modes available:
+
+- **Disabled:** No alpha antialiasing. Edges of transparent materials will
+  appear aliased unless a post-processing-based antialiasing solution is used.
+- **Alpha Edge Blend:** Results in a smooth transition between opaque and
+  transparent areas. Also known as "alpha to coverage".
+- **Alpha Edge Clip:** Results in a sharp, but still antialiased transition
+  between opaque and transparent areas. Also known as "alpha to coverage + alpha
+  to one".
+
+When the alpha antialiasing mode is set to **Alpha Edge Blend** or **Alpha Edge
+Clip**, a new **Alpha Antialiasing Edge** property becomes visible below in the
+inspector. This property controls the threshold below which pixels should be
+made transparent. While you've already defined an alpha scissor threshold (when
+using **Alpha Scissor** only), this additional threshold is used to smoothly
+transition between opaque and transparent pixels. **Alpha Antialiasing Edge**
+must *always* be set to a value that is strictly below the alpha scissor
+threshold. The default of ``0.3`` is a sensible value with an alpha scissor of
+threshold of ``0.5``, but remember to adjust this alpha antialiasing edge when
+modifying the alpha scissor threshold.
+
+If you find the antialiasing effect not effective enough, try increasing **Alpha
+Antialiasing Edge** while making sure it's below **Alpha Scissor Threshold** (if
+the material uses alpha scissor). On the other hand, if you notice the texture's
+appearance visibly changing as the camera moves closer to the material, try
+decreasing **Alpha Antialiasing Edge**.
+
+.. important::
+
+    For best results, MSAA 3D should be set to at least 2× in the Project
+    Settings when using alpha antialiasing. This is because this feature relies
+    on alpha to coverage, which is a feature provided by MSAA.
+
+    Without MSAA, a fixed dithering pattern is applied on the material's edges,
+    which isn't very effective at smoothing out edges (although it can still
+    help a little).
 
 Blend Mode
 ~~~~~~~~~~
@@ -140,46 +244,60 @@ Shading
 Shading mode
 ~~~~~~~~~~~~
 
-Godot has a more or less uniform cost per pixel thanks to depth pre-pass. All
-lighting calculations are made by running the lighting shader on every pixel.
+Materials support three shading modes: **Per-Pixel**, **Per-Vertex**, and
+**Unshaded**.
 
-As these calculations are costly, performance can be brought down considerably
-in some corner cases such as drawing several layers of transparency (which is
-common in particle systems). Switching to per-vertex lighting may help in these
-cases.
+.. figure:: img/standard_material_shading_modes.webp
+  :align: center
+  :alt: Three spheres showing the Per-Pixel, Per-Vertex, and Unshaded modes.
 
-Additionally, on low-end or mobile devices, switching to vertex lighting
-can considerably increase rendering performance.
+The **Per-Pixel** shading mode calculates lighting for each pixel, and is a good
+fit for most use cases. However, in some cases you may want to increase
+performance by using another shading mode.
 
-.. image:: img/spatial_material2.png
+The **Per-Vertex** shading mode, often called "vertex shading" or "vertex lighting",
+instead calculates lighting once for each vertex, and interpolates the result
+between each pixel.
 
-Keep in mind that when vertex lighting is enabled, only directional lighting
-can produce shadows (for performance reasons).
+On low-end or mobile devices, using per-vertex lighting can considerably increase
+rendering performance. When rendering several layers of transparency,
+such as when using particle systems, using per-vertex shading can improve
+performance, especially when the camera is close to particles.
 
-However, in some cases you might want to show just the albedo (color) and
-ignore the rest. To do this you can set the shading mode to unshaded
+You can also use per-vertex lighting to achieve a retro look.
 
-.. image:: img/spatial_material26.png
+.. figure:: img/standard_material_shading_modes_textured.webp
+  :align: center
+  :alt: Two cubes with a brick texture, one shaded and one unshaded.
+  
+  Texture from `AmbientCG <https://ambientcg.com/view?id=Bricks051>`__
+
+The **Unshaded** shading mode does not calculate lighting at all. Instead, the
+**Albedo** color is output directly. Lights will not affect the material at all,
+and unshaded materials will tend to appear considerably brighter than shaded
+materials.
+
+Rendering unshaded is useful for some specific visual effects. If maximum
+performance is needed, it can also be used for particles, or low-end or
+mobile devices.
 
 Diffuse Mode
 ~~~~~~~~~~~~
 
 Specifies the algorithm used by diffuse scattering of light when hitting
-the object. The default is *Burley*. Other modes are also available:
+the object. The default is **Burley**. Other modes are also available:
 
 * **Burley:** Default mode, the original Disney Principled PBS diffuse algorithm.
 * **Lambert:** Is not affected by roughness.
 * **Lambert Wrap:** Extends Lambert to cover more than 90 degrees when
   roughness increases. Works great for hair and simulating cheap
   subsurface scattering. This implementation is energy conserving.
-* **Oren Nayar:** This implementation aims to take microsurfacing into account
-  (via roughness). Works well for clay-like materials and some types of cloth.
 * **Toon:** Provides a hard cut for lighting, with smoothing affected by roughness.
   It is recommended you disable sky contribution from your environment's
   ambient light settings or disable ambient light in the StandardMaterial3D
   to achieve a better effect.
 
-.. image:: img/spatial_material6.png
+.. image:: img/spatial_material6.webp
 
 Specular Mode
 ~~~~~~~~~~~~~
@@ -188,13 +306,10 @@ Specifies how the specular blob will be rendered. The specular blob
 represents the shape of a light source reflected in the object.
 
 * **SchlickGGX:** The most common blob used by PBR 3D engines nowadays.
-* **Blinn:** Common in previous-generation engines.
-  Not worth using nowadays, but left here for the sake of compatibility.
-* **Phong:** Same as above.
 * **Toon:** Creates a toon blob, which changes size depending on roughness.
 * **Disabled:** Sometimes the blob gets in the way. Begone!
 
-.. image:: img/spatial_material7.png
+.. image:: img/spatial_material7.webp
 
 Disable Ambient Light
 ~~~~~~~~~~~~~~~~~~~~~
@@ -211,7 +326,7 @@ Vertex Color
 ------------
 
 This setting allows choosing what is done by default to vertex colors that come
-from your 3D modelling application. By default, they are ignored.
+from your 3D modeling application. By default, they are ignored.
 
 .. image:: img/spatial_material4.png
 
@@ -348,18 +463,21 @@ AO map. It is recommended to bake ambient occlusion whenever possible.
 Height
 ------
 
-
-Setting a depth map on a material produces a ray-marched search to emulate the
-proper displacement of cavities along the view direction. This is not real
-added geometry, but an illusion of depth. It may not work for complex objects,
-but it produces a realistic depth effect for textures. For best results,
-*Depth* should be used together with normal mapping.
+Setting a height map on a material produces a ray-marched search to emulate the
+proper displacement of cavities along the view direction. This only creates an
+illusion of depth, and does not add real geometry — for a height map shape used
+for physics collision (such as terrain), see :ref:`class_HeightMapShape3D`. It
+may not work for complex objects, but it produces a realistic depth effect for
+textures. For best results, *Height* should be used together with normal
+mapping.
 
 .. image:: img/spatial_material20.png
 
 Subsurface Scattering
 ---------------------
 
+*This is only available in the Forward+ renderer, not the Mobile or Compatibility
+renderers.*
 
 This effect emulates light that penetrates an object's surface, is scattered,
 and then comes out. It is useful to create realistic skin, marble, colored
@@ -377,13 +495,19 @@ such as plant leaves, grass, human ears, etc.
 Refraction
 ----------
 
-When refraction is enabled, it supersedes alpha blending, and Godot attempts to
-fetch information from behind the object being rendered instead. This allows
-distorting the transparency in a way similar to refraction in real life.
+When refraction is enabled, Godot attempts to fetch information from behind the
+object being rendered. This allows distorting the transparency in a way similar
+to refraction in real life.
 
 Remember to use a transparent albedo texture (or reduce the albedo color's alpha
 channel) to make refraction visible, as refraction relies on transparency to
 have a visible effect.
+
+Refraction also takes the material roughness into account. Higher roughness
+values will make the objects behind the refraction look blurrier, which
+simulates real life behavior. If you can't see behind the object when refraction
+is enabled and albedo transparency is reduced, decrease the material's
+**Roughness** value.
 
 A normal map can optionally be specified in the **Refraction Texture** property
 to allow distorting the refraction's direction on a per-pixel basis.
@@ -544,6 +668,12 @@ make it black and unshaded, reverse culling (Cull Front), and add some grow:
 
 .. image:: img/spatial_material11.png
 
+.. note::
+
+    For Grow to work as expected, the mesh must have connected faces with shared
+    vertices, or "smooth shading". If the mesh has disconnected faces with unique
+    vertices, or "flat shading", the mesh will appear to have gaps when using Grow.
+
 Transform
 ---------
 
@@ -555,7 +685,7 @@ This is useful mostly for indicators (no depth test and high render priority)
 and some types of billboards.
 
 Use Point Size
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 This option is only effective when the geometry rendered is made of points
 (generally it's made of triangles when imported from 3D modeling software). If
@@ -591,9 +721,28 @@ Keep in mind enabling proximity fade or distance fade with **Pixel Alpha** mode
 enables alpha blending. Alpha blending is more GPU-intensive and can cause
 transparency sorting issues. Alpha blending also disables many material
 features such as the ability to cast shadows.
-To hide a character when they get too close to the camera, consider using
-**Pixel Dither** or better, **Object Dither** (which is even faster than
-**Pixel Dither**).
+
+.. note::
+
+    To hide a character when they get too close to the camera, consider using
+    **Pixel Dither** or better, **Object Dither** (which is even faster than
+    **Pixel Dither**).
+
+**Pixel Alpha** mode: The actual transparency of a pixel of the object changes
+with distance to the camera. This is the most effect, but forces the material
+into the transparency pipeline (which leads, for example, to no shadows).
+
+.. image:: img/standart_material_distance_fade_pixel_alpha_mode.webp
+
+**Pixel Dither** mode: What this does is sort of approximate the transparency
+by only having a fraction of the pixels rendered.
+
+.. image:: img/standart_material_distance_fade_pixel_dither_mode.webp
+
+**Object Dither** mode: Like the previous mode, but the calculated transparency
+is the same across the entire object's surface.
+
+.. image:: img/standart_material_distance_fade_object_dither_mode.webp
 
 Material Settings
 -----------------
@@ -605,8 +754,21 @@ The rendering order of objects can be changed, although this is mostly
 useful for transparent objects (or opaque objects that perform depth draw
 but no color draw, such as cracks on the floor).
 
+Objects are sorted by an opaque/transparent queue, then :ref:`render_priority<class_Material_property_render_priority>`,
+with higher priority being drawn later. Transparent objects are also sorted by depth.
+
+Depth testing overrules priority. Priority alone cannot force opaque objects to be drawn over each other.
+
 Next Pass
 ---------
 
-Sets the material to be used for the next pass. This renders the object
-again with a different material.
+Setting :ref:`next_pass<class_Material_property_next_pass>` on a material
+will cause an object to be rendered again with that next material.
+
+Materials are sorted by an opaque/transparent queue, then :ref:`render_priority<class_Material_property_render_priority>`,
+with higher priority being drawn later.
+
+.. image:: img/next_pass.webp
+
+Depth will test equal between both materials unless the grow setting or other vertex transformations are used.
+Multiple transparent passes should use :ref:`render_priority<class_Material_property_render_priority>` to ensure correct ordering.

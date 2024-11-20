@@ -23,7 +23,7 @@ because of its usage. (Just like we call (0,0) the Origin!).
 
 The plane passes by the origin and the
 surface of it is perpendicular to the unit vector (or *normal*). The
-side towards the vector points to is the positive half-space, while the
+side the vector points to is the positive half-space, while the
 other side is the negative half-space. In 3D this is exactly the same,
 except that the plane is an infinite surface (imagine an infinite, flat
 sheet of paper that you can orient and is pinned to the origin) instead
@@ -171,7 +171,7 @@ the normal and the point.
 For two points in space, there are actually two planes that pass through
 them, sharing the same space but with normal pointing to the opposite
 directions. To compute the normal from the two points, the direction
-vector must be obtained first, and then it needs to be rotated 90°
+vector must be obtained first, and then it needs to be rotated 90
 degrees to either side:
 
 .. tabs::
@@ -189,9 +189,9 @@ degrees to either side:
     // Calculate vector from `a` to `b`.
     var dvec = pointA.DirectionTo(pointB);
     // Rotate 90 degrees.
-    var normal = new Vector2(dvec.y, -dvec.x);
+    var normal = new Vector2(dvec.Y, -dvec.X);
     // Alternatively (depending the desired side of the normal):
-    // var normal = new Vector2(-dvec.y, dvec.x);
+    // var normal = new Vector2(-dvec.Y, dvec.X);
 
 The rest is the same as the previous example. Either point_a or
 point_b will work, as they are in the same plane:

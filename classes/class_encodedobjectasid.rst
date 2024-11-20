@@ -48,12 +48,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **object_id** = ``0``
+:ref:`int<class_int>` **object_id** = ``0`` :ref:`🔗<class_EncodedObjectAsID_property_object_id>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_object_id** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_object_id** **(** **)**
+- |void| **set_object_id**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_object_id**\ (\ )
 
 The :ref:`Object<class_Object>` identifier stored in this **EncodedObjectAsID** instance. The object instance can be retrieved with :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>`.
 
@@ -64,3 +64,4 @@ The :ref:`Object<class_Object>` identifier stored in this **EncodedObjectAsID** 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -26,19 +26,19 @@ Requirements
 
 For compiling under Windows, Linux or macOS, the following is required:
 
-- `Python 3.6+ <https://www.python.org/downloads/>`_.
-- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
+- `Python 3.8+ <https://www.python.org/downloads/>`_.
+- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
 - `Android SDK <https://developer.android.com/studio/#command-tools>`_
   (command-line tools are sufficient).
 
    - Required SDK components will be automatically installed.
-   - On Linux,
-      **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
+   - On Linux, **do not use an Android SDK provided by your distribution's repositories** as it will often be outdated.
+   - On macOS, **do not use an Android SDK provided by Homebrew** as it will not be installed in a unified location.
 
 - Gradle (will be downloaded and installed automatically if missing).
-- JDK 11 (either OpenJDK or Oracle JDK).
+- JDK 17 (either OpenJDK or Oracle JDK).
 
-   - You can download a build from `ojdkbuild <https://github.com/ojdkbuild/ojdkbuild>`_.
+   - You can download a build from `Adoptium <https://adoptium.net/temurin/releases/?variant=openjdk17>`_.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.
@@ -51,9 +51,17 @@ For compiling under Windows, Linux or macOS, the following is required:
 Setting up the buildsystem
 --------------------------
 
--  Set the environment variable ``ANDROID_SDK_ROOT`` to point to the Android
+-  Set the environment variable ``ANDROID_HOME`` to point to the Android
    SDK. If you downloaded the Android command-line tools, this would be
    the folder where you extracted the contents of the ZIP archive.
+
+    -  Windows: Press :kbd:`Windows + R`, type "control system",
+       then click on **Advanced system settings** in the left pane,
+       then click on **Environment variables** on the window that appears.
+
+    -  Linux or macOS: Add the text ``export ANDROID_HOME="/path/to/android-sdk"``
+       to your ``.bashrc`` or ``.zshrc`` where ``/path/to/android-sdk`` points to
+       the root of the SDK directories.
 
 -  Install the necessary SDK components in this folder:
 
@@ -68,24 +76,25 @@ Setting up the buildsystem
 
     ::
 
-        cmdline-tools/latest/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.3" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404"
+        cmdline-tools/latest/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"
 
-.. seealso::   To set the environment variable on Windows, press :kbd:`Windows + R`, type
-            "control system", then click on **Advanced system settings** in the left
-            pane, then click on **Environment variables** on the window that appears.
+-  After setting up the SDK and environment variables, be sure to
+   **restart your terminal** to apply the changes. If you are using
+   an IDE with an integrated terminal, you need to restart the IDE.
 
-.. seealso::   To set the environment variable on Linux or macOS, use
-            ``export ANDROID_SDK_ROOT=/path/to/android-sdk`` where ``/path/to/android-sdk`` points to
-            the root of the SDK directories.
+-  Run ``scons platform=android``. If this fails, go back and check the steps.
+   If you completed the setup correctly, the NDK will begin downloading.
+   If you are trying to compile GDExtension, you need to first compile
+   the engine to download the NDK, then you can compile GDExtension.
 
 Building the export templates
 -----------------------------
 
-Godot needs two export templates for Android: the optimized "release"
-template (``android_release.apk``) and the debug template (``android_debug.apk``).
-As Google will require all APKs to include ARMv8 (64-bit) libraries starting
-from August 2019, the commands below will build an APK containing both
-ARMv7 and ARMv8 libraries.
+Godot needs three export templates for Android: the optimized "release"
+template (``android_release.apk``), the debug template (``android_debug.apk``),
+and the Gradle build template (``android_source.zip``).
+As Google requires all APKs to include ARMv8 (64-bit) libraries since August 2019,
+the commands below build templates containing both ARMv7 and ARMv8 libraries.
 
 Compiling the standard export templates is done by calling SCons from the Godot
 root directory with the following arguments:
@@ -94,31 +103,35 @@ root directory with the following arguments:
 
 ::
 
-    scons platform=android target=template_release arch=armv7
-    scons platform=android target=template_release arch=arm64v8
-    cd platform/android/java
-    # On Windows
-    .\gradlew generateGodotTemplates
-    # On Linux and macOS
-    ./gradlew generateGodotTemplates
-
-
-The resulting APK will be located at ``bin/android_release.apk``.
+    scons platform=android target=template_release arch=arm32
+    scons platform=android target=template_release arch=arm64 generate_apk=yes
 
 -  Debug template (used when exporting with **Debugging Enabled** checked)
 
 ::
 
-    scons platform=android target=template_debug arch=armv7
-    scons platform=android target=template_debug arch=arm64v8
-    cd platform/android/java
-    # On Windows
-    .\gradlew generateGodotTemplates
-    # On Linux and macOS
-    ./gradlew generateGodotTemplates
+    scons platform=android target=template_debug arch=arm32
+    scons platform=android target=template_debug arch=arm64 generate_apk=yes
 
+- (**Optional**) Dev template (used when troubleshooting)
 
-The resulting APK will be located at ``bin/android_debug.apk``.
+::
+
+    scons platform=android target=template_debug arch=arm32 dev_build=yes
+    scons platform=android target=template_debug arch=arm64 dev_build=yes generate_apk=yes
+
+The resulting templates will be located under the ``bin`` directory:
+
+- ``bin/android_release.apk`` for the release template
+- ``bin/android_debug.apk`` for the debug template
+- ``bin/android_dev.apk`` for the dev template
+- ``bin/android_source.zip`` for the Gradle build template
+
+.. note::
+
+   - If you are changing the list of architectures you're building, remember to add ``generate_apk=yes`` to the *last* architecture you're building, so that the template files are generated after the build.
+
+   - To include debug symbols in the generated templates, add the ``debug_symbols=yes`` parameter to the SCons command.
 
 .. seealso::
 
@@ -128,28 +141,22 @@ The resulting APK will be located at ``bin/android_debug.apk``.
 Adding support for x86 devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you also want to include support for x86 and x86-64 devices, run the SCons
+If you also want to include support for x86 and x86_64 devices, run the SCons
 command a third and fourth time with the ``arch=x86_32``, and
 ``arch=x86_64`` arguments before building the APK with Gradle. For
 example, for the release template:
 
 ::
 
-    scons platform=android target=template_release arch=armv7
-    scons platform=android target=template_release arch=arm64v8
-    scons platform=android target=template_release arch=x86
-    scons platform=android target=template_release arch=x86_64
-    cd platform/android/java
-    # On Windows
-    .\gradlew generateGodotTemplates
-    # On Linux and macOS
-    ./gradlew generateGodotTemplates
+    scons platform=android target=template_release arch=arm32
+    scons platform=android target=template_release arch=arm64
+    scons platform=android target=template_release arch=x86_32
+    scons platform=android target=template_release arch=x86_64 generate_apk=yes
 
-
-This will create a fat binary that works on all platforms.
-The final APK size of exported projects will depend on the platforms you choose
+This will create template binaries that works on all platforms.
+The final binary size of exported projects will depend on the platforms you choose
 to support when exporting; in other words, unused platforms will be removed from
-the APK.
+the binary.
 
 Cleaning the generated export templates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -160,27 +167,26 @@ You can use the following commands to remove the generated export templates:
 
     cd platform/android/java
     # On Windows
-    .\gradlew cleanGodotTemplates
+    .\gradlew clean
     # On Linux and macOS
-    ./gradlew cleanGodotTemplates
+    ./gradlew clean
 
 
 Using the export templates
 --------------------------
 
-Godot needs release and debug APKs that were compiled against the same
+Godot needs release and debug binaries that were compiled against the same
 version/commit as the editor. If you are using official binaries
 for the editor, make sure to install the matching export templates,
 or build your own from the same version.
 
-When exporting your game, Godot opens the APK, changes a few things inside and
-adds your files.
+When exporting your game, Godot uses the templates as a base, and updates their content as needed.
 
 Installing the templates
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The newly-compiled templates (``android_debug.apk``
-and ``android_release.apk``) must be copied to Godot's templates folder
+, ``android_release.apk``, and ``android_source.zip``) must be copied to Godot's templates folder
 with their respective names. The templates folder can be located in:
 
 -  Windows: ``%APPDATA%\Godot\export_templates\<version>\``
@@ -188,14 +194,14 @@ with their respective names. The templates folder can be located in:
 -  macOS: ``$HOME/Library/Application Support/Godot/export_templates/<version>/``
 
 ``<version>`` is of the form ``major.minor[.patch].status`` using values from
-``version.py`` in your Godot source repository (e.g. ``3.0.5.stable`` or ``3.1.dev``).
+``version.py`` in your Godot source repository (e.g. ``4.1.3.stable`` or ``4.2.dev``).
 You also need to write this same version string to a ``version.txt`` file located
 next to your export templates.
 
 .. TODO: Move these paths to a common reference page
 
 However, if you are writing your custom modules or custom C++ code, you
-might instead want to configure your APKs as custom export templates
+might instead want to configure your template binaries as custom export templates
 here:
 
 .. image:: img/andtemplates.png
@@ -213,41 +219,43 @@ root directory with the following arguments:
 
 ::
 
-   scons platform=android arch=armv7 production=yes target=editor
-   scons platform=android arch=arm64v8 production=yes target=editor
-   scons platform=android arch=x86 production=yes target=editor
-   scons platform=android arch=x86_64 production=yes target=editor
-   cd platform/android/java
-   # On Windows
-   .\gradlew generateGodotEditor
-   # On Linux and macOS
-   ./gradlew generateGodotEditor
+   scons platform=android arch=arm32 production=yes target=editor
+   scons platform=android arch=arm64 production=yes target=editor
+   scons platform=android arch=x86_32 production=yes target=editor
+   scons platform=android arch=x86_64 production=yes target=editor generate_apk=yes
 
+- You can add the ``dev_build=yes`` parameter to generate a dev build of the Godot editor.
 
-The resulting APK will be located at ``bin/android_editor.apk``.
+- You can add the ``debug_symbols=yes`` parameter to include the debug symbols in the generated build.
 
-Removing the Editor templates
------------------------------
+- You can skip certain architectures depending on your target device to speed up compilation.
 
-You can use the following commands to remove the generated editor templates:
+Remember to add ``generate_apk=yes`` to the *last* architecture you're building, so that binaries are generated after the build.
+
+The resulting binaries will be located under ``bin/android_editor_builds/``.
+
+Removing the Editor binaries
+----------------------------
+
+You can use the following commands to remove the generated editor binaries:
 
 ::
 
     cd platform/android/java
     # On Windows
-   .\gradlew cleanGodotEditor
+   .\gradlew clean
    # On Linux and macOS
-   ./gradlew cleanGodotEditor
+   ./gradlew clean
 
-Installing the Godot editor
----------------------------
+Installing the Godot editor APK
+-------------------------------
 
 With an Android device with Developer Options enabled, connect the Android device to your computer via its charging cable to a USB/USB-C port.
 Open up a Terminal/Command Prompt and run the following commands from the root directory with the following arguments:
 
 ::
 
-   adb install ./bin/android_editor.apk
+   adb install ./bin/android_editor_builds/android_editor-release.apk
 
 Troubleshooting
 ---------------
@@ -255,7 +263,7 @@ Troubleshooting
 Platform doesn't appear in SCons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Double-check that you've set the ``ANDROID_SDK_ROOT``
+Double-check that you've set the ``ANDROID_HOME``
 environment variable. This is required for the platform to appear in SCons'
 list of detected platforms.
 See :ref:`Setting up the buildsystem <doc_android_setting_up_the_buildsystem>`

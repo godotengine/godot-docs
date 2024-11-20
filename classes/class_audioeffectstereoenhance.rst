@@ -57,14 +57,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pan_pullout** = ``1.0``
+:ref:`float<class_float>` **pan_pullout** = ``1.0`` :ref:`🔗<class_AudioEffectStereoEnhance_property_pan_pullout>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_pan_pullout** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_pan_pullout** **(** **)**
+- |void| **set_pan_pullout**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_pan_pullout**\ (\ )
 
-Values greater than 1.0 increase intensity of any panning on audio passing through this effect, whereas values less than 1.0 will decrease the panning intensity. A value of 0.0 will downmix audio to mono.
+Amplifies the difference between stereo channels, increasing or decreasing existing panning. A value of 0.0 will downmix stereo to mono. Does not affect a mono signal.
 
 .. rst-class:: classref-item-separator
 
@@ -74,16 +74,14 @@ Values greater than 1.0 increase intensity of any panning on audio passing throu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **surround** = ``0.0``
+:ref:`float<class_float>` **surround** = ``0.0`` :ref:`🔗<class_AudioEffectStereoEnhance_property_surround>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_surround** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_surround** **(** **)**
+- |void| **set_surround**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_surround**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Widens sound stage through phase shifting in conjunction with :ref:`time_pullout_ms<class_AudioEffectStereoEnhance_property_time_pullout_ms>`. Just pans sound to the left channel if :ref:`time_pullout_ms<class_AudioEffectStereoEnhance_property_time_pullout_ms>` is 0.
 
 .. rst-class:: classref-item-separator
 
@@ -93,16 +91,14 @@ Values greater than 1.0 increase intensity of any panning on audio passing throu
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **time_pullout_ms** = ``0.0``
+:ref:`float<class_float>` **time_pullout_ms** = ``0.0`` :ref:`🔗<class_AudioEffectStereoEnhance_property_time_pullout_ms>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_time_pullout** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_time_pullout** **(** **)**
+- |void| **set_time_pullout**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_time_pullout**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Widens sound stage through phase shifting in conjunction with :ref:`surround<class_AudioEffectStereoEnhance_property_surround>`. Just delays the right channel if :ref:`surround<class_AudioEffectStereoEnhance_property_surround>` is 0.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -111,3 +107,4 @@ Values greater than 1.0 increase intensity of any panning on audio passing throu
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

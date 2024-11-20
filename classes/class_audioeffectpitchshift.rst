@@ -59,7 +59,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FFTSize**:
+enum **FFTSize**: :ref:`🔗<enum_AudioEffectPitchShift_FFTSize>`
 
 .. _class_AudioEffectPitchShift_constant_FFT_SIZE_256:
 
@@ -122,12 +122,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`FFTSize<enum_AudioEffectPitchShift_FFTSize>` **fft_size** = ``3``
+:ref:`FFTSize<enum_AudioEffectPitchShift_FFTSize>` **fft_size** = ``3`` :ref:`🔗<class_AudioEffectPitchShift_property_fft_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_fft_size** **(** :ref:`FFTSize<enum_AudioEffectPitchShift_FFTSize>` value **)**
-- :ref:`FFTSize<enum_AudioEffectPitchShift_FFTSize>` **get_fft_size** **(** **)**
+- |void| **set_fft_size**\ (\ value\: :ref:`FFTSize<enum_AudioEffectPitchShift_FFTSize>`\ )
+- :ref:`FFTSize<enum_AudioEffectPitchShift_FFTSize>` **get_fft_size**\ (\ )
 
 The size of the `Fast Fourier transform <https://en.wikipedia.org/wiki/Fast_Fourier_transform>`__ buffer. Higher values smooth out the effect over time, but have greater latency. The effects of this higher latency are especially noticeable on sounds that have sudden amplitude changes.
 
@@ -139,12 +139,12 @@ The size of the `Fast Fourier transform <https://en.wikipedia.org/wiki/Fast_Four
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **oversampling** = ``4``
+:ref:`int<class_int>` **oversampling** = ``4`` :ref:`🔗<class_AudioEffectPitchShift_property_oversampling>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_oversampling** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_oversampling** **(** **)**
+- |void| **set_oversampling**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_oversampling**\ (\ )
 
 The oversampling factor to use. Higher values result in better quality, but are more demanding on the CPU and may cause audio cracking if the CPU can't keep up.
 
@@ -156,14 +156,14 @@ The oversampling factor to use. Higher values result in better quality, but are 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **pitch_scale** = ``1.0``
+:ref:`float<class_float>` **pitch_scale** = ``1.0`` :ref:`🔗<class_AudioEffectPitchShift_property_pitch_scale>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_pitch_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_pitch_scale** **(** **)**
+- |void| **set_pitch_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_pitch_scale**\ (\ )
 
-The pitch scale to use. ``1.0`` is the default pitch and plays sounds unaltered. :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>` can range from ``0.0`` (infinitely low pitch, inaudible) to ``16`` (16 times higher than the initial pitch).
+The pitch scale to use. ``1.0`` is the default pitch and plays sounds unaffected. :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>` can range from ``0.0`` (infinitely low pitch, inaudible) to ``16`` (16 times higher than the initial pitch).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -172,3 +172,4 @@ The pitch scale to use. ``1.0`` is the default pitch and plays sounds unaltered.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

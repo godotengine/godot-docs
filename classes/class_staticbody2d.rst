@@ -21,7 +21,7 @@ A 2D physics body that can't be moved by external forces. When moved manually, i
 Description
 -----------
 
-A static 2D physics body. It can't be moved by external forces or contacts, but can be moved manually by other means such as code, :ref:`AnimationPlayer<class_AnimationPlayer>`\ s (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to :ref:`AnimationPlayer.ANIMATION_PROCESS_PHYSICS<class_AnimationPlayer_constant_ANIMATION_PROCESS_PHYSICS>`), and :ref:`RemoteTransform2D<class_RemoteTransform2D>`.
+A static 2D physics body. It can't be moved by external forces or contacts, but can be moved manually by other means such as code, :ref:`AnimationMixer<class_AnimationMixer>`\ s (with :ref:`AnimationMixer.callback_mode_process<class_AnimationMixer_property_callback_mode_process>` set to :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS>`), and :ref:`RemoteTransform2D<class_RemoteTransform2D>`.
 
 When **StaticBody2D** is moved, it is teleported to its new position without affecting other physics bodies in its path. If this is not desired, use :ref:`AnimatableBody2D<class_AnimatableBody2D>` instead.
 
@@ -56,12 +56,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **constant_angular_velocity** = ``0.0``
+:ref:`float<class_float>` **constant_angular_velocity** = ``0.0`` :ref:`🔗<class_StaticBody2D_property_constant_angular_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_constant_angular_velocity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_constant_angular_velocity** **(** **)**
+- |void| **set_constant_angular_velocity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_constant_angular_velocity**\ (\ )
 
 The body's constant angular velocity. This does not rotate the body, but affects touching bodies, as if it were rotating.
 
@@ -73,12 +73,12 @@ The body's constant angular velocity. This does not rotate the body, but affects
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **constant_linear_velocity** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **constant_linear_velocity** = ``Vector2(0, 0)`` :ref:`🔗<class_StaticBody2D_property_constant_linear_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_constant_linear_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_constant_linear_velocity** **(** **)**
+- |void| **set_constant_linear_velocity**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_constant_linear_velocity**\ (\ )
 
 The body's constant linear velocity. This does not move the body, but affects touching bodies, as if it were moving.
 
@@ -90,12 +90,12 @@ The body's constant linear velocity. This does not move the body, but affects to
 
 .. rst-class:: classref-property
 
-:ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
+:ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override** :ref:`🔗<class_StaticBody2D_property_physics_material_override>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_physics_material_override** **(** :ref:`PhysicsMaterial<class_PhysicsMaterial>` value **)**
-- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_material_override** **(** **)**
+- |void| **set_physics_material_override**\ (\ value\: :ref:`PhysicsMaterial<class_PhysicsMaterial>`\ )
+- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_material_override**\ (\ )
 
 The physics material override for the body.
 
@@ -108,3 +108,4 @@ If a material is assigned to this property, it will be used instead of any other
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

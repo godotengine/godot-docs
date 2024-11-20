@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_procedural_geometry:
 
 Procedural geometry
@@ -30,9 +32,12 @@ by an array of positions called "vertices". In Godot, geometry is represented by
 What is a Mesh?
 ---------------
 
-Many things in Godot have mesh in their name: the :ref:`Mesh <class_Mesh>`, the :ref:`ArrayMesh <class_ArrayMesh>`,
-the :ref:`MeshInstance3D <class_MeshInstance3D>`, the :ref:`MultiMesh <class_MultiMesh>`, and
-the :ref:`MultiMeshInstance3D <class_MultiMeshInstance3D>`. While they are all related, they have slightly different uses.
+Many things in Godot have mesh in their name: the :ref:`Mesh <class_Mesh>`, the
+:ref:`ArrayMesh <class_ArrayMesh>`, the :ref:`ImmediateMesh
+<class_ImmediateMesh>`, the :ref:`MeshInstance3D <class_MeshInstance3D>`, the
+:ref:`MultiMesh <class_MultiMesh>`, and the :ref:`MultiMeshInstance3D
+<class_MultiMeshInstance3D>`. While they are all related, they have slightly
+different uses.
 
 Meshes and ArrayMeshes are resources that are drawn using a MeshInstance3D node. Resources like
 Meshes and ArrayMeshes cannot be added to the scene directly. A MeshInstance3D represents one
@@ -109,14 +114,16 @@ For more information about the SurfaceTool, please see the :ref:`SurfaceTool tut
 ImmediateMesh
 ^^^^^^^^^^^^^
 
-ImmediateMesh is a node that uses an immediate mode style interface (like SurfaceTool) to draw objects. The
-difference between ImmediateMesh and the SurfaceTool is that ImmediateMesh is a node itself that can be
-added to the scene tree and is drawn directly from the code, while The SurfaceTool generates a Mesh that needs to be added to
-a MeshInstance3D to be seen.
+ImmediateMesh is a mesh that uses an immediate mode style interface (like
+SurfaceTool) to draw objects. The difference between ImmediateMesh and the
+SurfaceTool is that ImmediateMesh is drawn directly with code dynamically, while
+the SurfaceTool is used to generate a Mesh that you can do whatever you want
+with.
 
-ImmediateMesh is useful for prototyping because of its straightforward API, but it is slow because the geometry
-is rebuilt every frame. It is most useful for adding simple geometry for visual debugging (e.g. by drawing lines to
-visualize physics raycasts etc.).
+ImmediateMesh is useful for prototyping because of its straightforward API, but
+it is slow because the geometry is rebuilt each time you make a change. It is
+most useful for adding simple geometry for visual debugging (e.g. by drawing
+lines to visualize physics raycasts etc.).
 
 For more information about ImmediateMesh, please see the :ref:`ImmediateMesh tutorial <doc_immediatemesh>`.
 
@@ -130,9 +137,9 @@ Both SurfaceTool and ArrayMesh are excellent for generating static geometry (mes
 Using an ArrayMesh is slightly faster than using a SurfaceTool, but the API is a little more challenging.
 Additionally, SurfaceTool has a few quality of life methods such as ``generate_normals()`` and ``index()``.
 
-ImmediateMesh regenerates the mesh every frame, so it is much slower than ArrayMesh or SurfaceTool. However, if you
-need the geometry to change every frame anyway, it provides a much easier interface that may even be a little faster than generating
-an ArrayMesh every frame.
+ImmediateMesh is more limited than both ArrayMesh and SurfaceTool. However, if
+you need the geometry to change every frame anyway, it provides a much easier
+interface that can be slightly faster than generating an ArrayMesh every frame.
 
 The MeshDataTool is not fast, but it gives you access to all kinds of properties of the mesh that you don't get with the others
 (edges, faces, etc.). It is incredibly useful when you need that sort of data to transform the mesh, but it is not a good idea

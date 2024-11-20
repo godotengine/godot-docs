@@ -50,7 +50,7 @@ your project's features.
 
    - **Example:** Scripts, PackedScene (for scene files), and other types like
      each of the :ref:`AudioEffect <class_AudioEffect>` classes. Each of these
-     can be save and loaded, therefore they extend from Resource.
+     can be saved and loaded, therefore they extend from Resource.
 
    - **Advantages:** Much has
      :ref:`already been said <doc_resources>`

@@ -52,11 +52,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>` | :ref:`get_shader_parameter<class_ShaderMaterial_method_get_shader_parameter>` **(** :ref:`StringName<class_StringName>` param **)** |const|                              |
-   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`set_shader_parameter<class_ShaderMaterial_method_set_shader_parameter>` **(** :ref:`StringName<class_StringName>` param, :ref:`Variant<class_Variant>` value **)** |
-   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_shader_parameter<class_ShaderMaterial_method_get_shader_parameter>`\ (\ param\: :ref:`StringName<class_StringName>`\ ) |const|                                |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_shader_parameter<class_ShaderMaterial_method_set_shader_parameter>`\ (\ param\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -71,12 +71,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Shader<class_Shader>` **shader**
+:ref:`Shader<class_Shader>` **shader** :ref:`🔗<class_ShaderMaterial_property_shader>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_shader** **(** :ref:`Shader<class_Shader>` value **)**
-- :ref:`Shader<class_Shader>` **get_shader** **(** **)**
+- |void| **set_shader**\ (\ value\: :ref:`Shader<class_Shader>`\ )
+- :ref:`Shader<class_Shader>` **get_shader**\ (\ )
 
 The :ref:`Shader<class_Shader>` program used to render this material.
 
@@ -93,7 +93,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_shader_parameter** **(** :ref:`StringName<class_StringName>` param **)** |const|
+:ref:`Variant<class_Variant>` **get_shader_parameter**\ (\ param\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_ShaderMaterial_method_get_shader_parameter>`
 
 Returns the current value set for this material of a uniform in the shader.
 
@@ -105,7 +105,7 @@ Returns the current value set for this material of a uniform in the shader.
 
 .. rst-class:: classref-method
 
-void **set_shader_parameter** **(** :ref:`StringName<class_StringName>` param, :ref:`Variant<class_Variant>` value **)**
+|void| **set_shader_parameter**\ (\ param\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_ShaderMaterial_method_set_shader_parameter>`
 
 Changes the value set for this material of a uniform in the shader.
 
@@ -120,3 +120,4 @@ Changes the value set for this material of a uniform in the shader.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

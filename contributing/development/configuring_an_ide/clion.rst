@@ -24,7 +24,7 @@ CLion does not support compiling and debugging Godot via SCons out of the box. T
 
 ::
 
-    scons
+    scons dev_build=yes
 
 To add a custom build target that invokes SCons for compilation:
 
@@ -47,7 +47,7 @@ To add a custom build target that invokes SCons for compilation:
 
    .. note:: CLion does not expand shell commands like ``scons -j$(nproc)``. Use concrete values instead, e.g. ``scons -j8``.
 
-.. figure:: img/clion-create-build-tool.png
+.. figure:: img/clion-create-build-tool.webp
    :align: center
 
 - Back in the **External Tools** dialog, click the **+** again to add a second external tool for cleaning the Godot build via SCons. Give the tool a name, e.g. ``Clean Godot debug``, set **Program** to ``scons``, set **Arguments** to ``-c`` (which will clean the build), and set the **Working directory** to ``$ProjectFileDir$``. Click **OK** to create the tool.

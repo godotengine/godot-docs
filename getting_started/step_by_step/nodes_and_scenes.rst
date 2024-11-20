@@ -31,7 +31,7 @@ The last characteristic is important. **Together, nodes form a tree**, which is 
 feature to organize projects. Since different nodes have different functions,
 combining them produces more complex behavior. As we saw before, you can build a
 playable character the camera follows using a :ref:`CharacterBody2D <class_CharacterBody2D>`
-node named "Character", a :ref:`Sprite2D <class_Sprite2D>` node,
+node, a :ref:`Sprite2D <class_Sprite2D>` node,
 a :ref:`Camera2D <class_Camera2D>` node, and a :ref:`CollisionShape2D <class_CollisionShape2D>` node.
 
 .. image:: img/nodes_and_scenes_character_nodes.webp
@@ -58,7 +58,7 @@ you or a player runs the game.
 
 On top of acting like nodes, scenes have the following characteristics:
 
-1. They always have one root node, like the "Character" in our example.
+1. They always have one root node, like the "Player" in our example.
 2. You can save them to your local drive and load them later.
 3. You can create as many instances of a scene as you'd like. You could have
    five or ten characters in your game, created from your Character scene.
@@ -121,7 +121,7 @@ below the Text property and type "Hello World".
 You will see the text draw in the viewport as you type.
 
 .. seealso:: You can edit any property listed in the Inspector as we did with
-             the Text. For a complete reference of the Inspector dock, see the
+             the Text. For a complete reference of the Inspector dock, see
              :ref:`doc_editor_inspector_dock`.
 
 You can move your Label node in the viewport by selecting the move tool in the
@@ -143,7 +143,7 @@ top-right of the screen or press :kbd:`F6` (:kbd:`Cmd + R` on macOS).
 .. image:: img/nodes_and_scenes_09_play_scene_button.webp
 
 A popup invites you to save the scene, which is required to run it.
-Click the Save button in the file browser to save it as "label.tscn".
+Click the Save button in the file browser to save it as ``label.tscn``.
 
 .. image:: img/nodes_and_scenes_10_save_scene_as.webp
 
@@ -162,7 +162,7 @@ Close the window or press :kbd:`F8` (:kbd:`Cmd + .` on macOS) to quit the runnin
 Setting the main scene
 ----------------------
 
-To run our test scene, we used the Play Scene button. Another button next to it
+To run our test scene, we used the Run Current Scene button. Another button next to it
 allows you to set and run the project's main scene. You can press :kbd:`F5`
 (:kbd:`Cmd + B` on macOS) to do so.
 

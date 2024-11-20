@@ -25,7 +25,7 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 
 \ **Note:** The node doesn't need to own itself.
 
-\ **Example of loading a saved scene:**\ 
+\ **Example:** Load a saved scene:
 
 
 .. tabs::
@@ -46,7 +46,7 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 
 
 
-\ **Example of saving a node with different owners:** The following example creates 3 objects: :ref:`Node2D<class_Node2D>` (``node``), :ref:`RigidBody2D<class_RigidBody2D>` (``body``) and :ref:`CollisionObject2D<class_CollisionObject2D>` (``collision``). ``collision`` is a child of ``body`` which is a child of ``node``. Only ``body`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
+\ **Example:** Save a node with different owners. The following example creates 3 objects: :ref:`Node2D<class_Node2D>` (``node``), :ref:`RigidBody2D<class_RigidBody2D>` (``body``) and :ref:`CollisionObject2D<class_CollisionObject2D>` (``collision``). ``collision`` is a child of ``body`` which is a child of ``node``. Only ``body`` is owned by ``node`` and :ref:`pack<class_PackedScene_method_pack>` will therefore only save those two nodes, but not ``collision``.
 
 
 .. tabs::
@@ -106,19 +106,7 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 Tutorials
 ---------
 
-- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`__
-
-.. rst-class:: classref-reftable-group
-
-Properties
-----------
-
-.. table::
-   :widths: auto
-
-   +-------------------------------------+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene_property__bundled>` | ``{ "conn_count": 0, "conns": PackedInt32Array(), "editable_instances": [], "names": PackedStringArray(), "node_count": 0, "node_paths": [], "nodes": PackedInt32Array(), "variants": [], "version": 3 }`` |
-   +-------------------------------------+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+- `2D Role Playing Game (RPG) Demo <https://godotengine.org/asset-library/asset/2729>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -128,15 +116,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`can_instantiate<class_PackedScene_method_can_instantiate>` **(** **)** |const|                                                         |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>` **(** **)** |const|                                                                     |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Node<class_Node>`               | :ref:`instantiate<class_PackedScene_method_instantiate>` **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** |const| |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedScene_method_pack>` **(** :ref:`Node<class_Node>` path **)**                                                          |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`can_instantiate<class_PackedScene_method_can_instantiate>`\ (\ ) |const|                                                              |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>`\ (\ ) |const|                                                                          |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`               | :ref:`instantiate<class_PackedScene_method_instantiate>`\ (\ edit_state\: :ref:`GenEditState<enum_PackedScene_GenEditState>` = 0\ ) |const| |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedScene_method_pack>`\ (\ path\: :ref:`Node<class_Node>`\ )                                                            |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -151,7 +139,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **GenEditState**:
+enum **GenEditState**: :ref:`🔗<enum_PackedScene_GenEditState>`
 
 .. _class_PackedScene_constant_GEN_EDIT_STATE_DISABLED:
 
@@ -197,25 +185,6 @@ It's similar to :ref:`GEN_EDIT_STATE_MAIN<class_PackedScene_constant_GEN_EDIT_ST
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
-
-.. _class_PackedScene_property__bundled:
-
-.. rst-class:: classref-property
-
-:ref:`Dictionary<class_Dictionary>` **_bundled** = ``{ "conn_count": 0, "conns": PackedInt32Array(), "editable_instances": [], "names": PackedStringArray(), "node_count": 0, "node_paths": [], "nodes": PackedInt32Array(), "variants": [], "version": 3 }``
-
-A dictionary representation of the scene contents.
-
-Available keys include "rnames" and "variants" for resources, "node_count", "nodes", "node_paths" for nodes, "editable_instances" for base scene children overrides, "conn_count" and "conns" for signal connections, and "version" for the format style of the PackedScene.
-
-.. rst-class:: classref-section-separator
-
-----
-
-.. rst-class:: classref-descriptions-group
-
 Method Descriptions
 -------------------
 
@@ -223,7 +192,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **can_instantiate** **(** **)** |const|
+:ref:`bool<class_bool>` **can_instantiate**\ (\ ) |const| :ref:`🔗<class_PackedScene_method_can_instantiate>`
 
 Returns ``true`` if the scene file has nodes.
 
@@ -235,9 +204,9 @@ Returns ``true`` if the scene file has nodes.
 
 .. rst-class:: classref-method
 
-:ref:`SceneState<class_SceneState>` **get_state** **(** **)** |const|
+:ref:`SceneState<class_SceneState>` **get_state**\ (\ ) |const| :ref:`🔗<class_PackedScene_method_get_state>`
 
-Returns the ``SceneState`` representing the scene file contents.
+Returns the :ref:`SceneState<class_SceneState>` representing the scene file contents.
 
 .. rst-class:: classref-item-separator
 
@@ -247,7 +216,7 @@ Returns the ``SceneState`` representing the scene file contents.
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **instantiate** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** |const|
+:ref:`Node<class_Node>` **instantiate**\ (\ edit_state\: :ref:`GenEditState<enum_PackedScene_GenEditState>` = 0\ ) |const| :ref:`🔗<class_PackedScene_method_instantiate>`
 
 Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers a :ref:`Node.NOTIFICATION_SCENE_INSTANTIATED<class_Node_constant_NOTIFICATION_SCENE_INSTANTIATED>` notification on the root node.
 
@@ -259,9 +228,9 @@ Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Node<class_Node>` path **)**
+:ref:`Error<enum_@GlobalScope_Error>` **pack**\ (\ path\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_PackedScene_method_pack>`
 
-Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.owner<class_Node_property_owner>`.
+Packs the ``path`` node, and all owned sub-nodes, into this **PackedScene**. Any existing data will be cleared. See :ref:`Node.owner<class_Node_property_owner>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -270,3 +239,4 @@ Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.owner<cla
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

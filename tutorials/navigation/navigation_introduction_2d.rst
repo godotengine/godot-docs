@@ -14,7 +14,7 @@ Godot provides the following objects and classes for 2D navigation:
     The AStar2D class is best suited for cell-based 2D gameplay that does not require actors to reach any possible position within an area but only predefined, distinct positions.
 
 - :ref:`NavigationServer2D<class_NavigationServer2D>`
-    ``NavigationServer2D`` provides a powerful server API to find the shortest path between two positions on a area defined by a navigation mesh.
+    ``NavigationServer2D`` provides a powerful server API to find the shortest path between two positions on an area defined by a navigation mesh.
 
     The NavigationServer is best suited for 2D realtime gameplay that does require actors to reach any possible position within a navigation mesh defined area.
     Mesh-based navigation scales well with large game worlds as a large area can often be defined with a single polygon when it would require many, many grid cells.
@@ -39,7 +39,7 @@ Godot provides the following objects and classes for 2D navigation:
         - NavObstacle RID
             Reference to a specific avoidance obstacle used to affect and constrain the avoidance velocity of agents.
 
-The following SceneTree Nodes are available as helpers to work with the NavigationServer2D API.
+The following scene tree nodes are available as helpers to work with the NavigationServer2D API.
 
 - :ref:`NavigationRegion2D<class_NavigationRegion2D>` Node
     A Node that holds a NavigationPolygon resource that defines a navigation mesh for the NavigationServer2D.
@@ -94,7 +94,8 @@ It uses the NavigationServer2D and a NavigationAgent2D for path movement.
 
    .. image:: img/nav_2d_min_setup_step1.png
 
-#. Define the moveable navigation area with the NavigationPolygon draw tool.
+#. Define the movable navigation area with the NavigationPolygon draw tool. Then click
+   the `Bake NavigationPolygon`` button on the toolbar.
 
    .. image:: img/nav_2d_min_setup_step2.png
 
@@ -130,7 +131,7 @@ It uses the NavigationServer2D and a NavigationAgent2D for path movement.
         navigation_agent.target_desired_distance = 4.0
 
         # Make sure to not await during _ready.
-        call_deferred("actor_setup")
+        actor_setup.call_deferred()
 
     func actor_setup():
         # Wait for the first physics frame so the NavigationServer can sync.

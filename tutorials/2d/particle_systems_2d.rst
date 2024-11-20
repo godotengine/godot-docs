@@ -33,10 +33,10 @@ While GPUParticles2D is configured via a :ref:`class_ParticleProcessMaterial`
 node properties in CPUParticles2D (with the exception of the trail settings).
 
 You can convert a GPUParticles2D node into a CPUParticles2D node by clicking on
-the node in the inspector, and selecting **Particles > Convert to
-CPUParticles2D** in the toolbar at the top of the 3D editor viewport.
+the node in the inspector, selecting the 2D viewport, and selecting
+**GPUParticles2D > Convert to CPUParticles2D** in the viewport toolbar.
 
-.. image:: img/particles_convert.png
+.. image:: img/particles_convert.webp
 
 The rest of this tutorial is going to use the GPUParticles2D node. First, add a GPUParticles2D
 node to your scene. After creating that node you will notice that only a white dot was created,
@@ -198,6 +198,12 @@ Fixed FPS
 This setting can be used to set the particle system to render at a fixed
 FPS. For instance, changing the value to ``2`` will make the particles render
 at 2 frames per second. Note this does not slow down the particle system itself.
+
+.. note::
+
+    Godot 4.3 does not currently support physics interpolation for 2D particles.
+    As a workaround, disable physics interpolation for the particles node by setting
+    **Node > Physics Interpolation > Mode** at the bottom of the inspector.
 
 Fract Delta
 ~~~~~~~~~~~
@@ -388,9 +394,10 @@ To set up the particle flipbook for linear playback, set the **Speed Min** and *
    Setting up particle animation for playback during the particle's lifetime
 
 By default, looping is disabled. If the particle is done playing before its
-lifetime ends, the particle will keep using the flipbook's frame (which may be
-fully transparent depending on how the flipbook texture is designed). If looping
-is enabled, the animation will loop back to the first frame and resume playing.
+lifetime ends, the particle will keep using the flipbook's last frame (which may
+be fully transparent depending on how the flipbook texture is designed). If
+looping is enabled, the animation will loop back to the first frame and resume
+playing.
 
 Depending on how many images your sprite sheet contains and for how long your
 particle is alive, the animation might not look smooth. The relationship between

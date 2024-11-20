@@ -45,11 +45,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_param<class_PinJoint3D_method_get_param>` **(** :ref:`Param<enum_PinJoint3D_Param>` param **)** |const|                          |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_param<class_PinJoint3D_method_set_param>` **(** :ref:`Param<enum_PinJoint3D_Param>` param, :ref:`float<class_float>` value **)** |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_param<class_PinJoint3D_method_get_param>`\ (\ param\: :ref:`Param<enum_PinJoint3D_Param>`\ ) |const|                            |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_param<class_PinJoint3D_method_set_param>`\ (\ param\: :ref:`Param<enum_PinJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -64,7 +64,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Param**:
+enum **Param**: :ref:`🔗<enum_PinJoint3D_Param>`
 
 .. _class_PinJoint3D_constant_PARAM_BIAS:
 
@@ -103,12 +103,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **params/bias** = ``0.3``
+:ref:`float<class_float>` **params/bias** = ``0.3`` :ref:`🔗<class_PinJoint3D_property_params/bias>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`Param<enum_PinJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_PinJoint3D_Param>` param **)** |const|
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_PinJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_PinJoint3D_Param>`\ ) |const|
 
 The force with which the pinned objects stay in positional relation to each other. The higher, the stronger.
 
@@ -120,12 +120,12 @@ The force with which the pinned objects stay in positional relation to each othe
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **params/damping** = ``1.0``
+:ref:`float<class_float>` **params/damping** = ``1.0`` :ref:`🔗<class_PinJoint3D_property_params/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`Param<enum_PinJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_PinJoint3D_Param>` param **)** |const|
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_PinJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_PinJoint3D_Param>`\ ) |const|
 
 The force with which the pinned objects stay in velocity relation to each other. The higher, the stronger.
 
@@ -137,12 +137,12 @@ The force with which the pinned objects stay in velocity relation to each other.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **params/impulse_clamp** = ``0.0``
+:ref:`float<class_float>` **params/impulse_clamp** = ``0.0`` :ref:`🔗<class_PinJoint3D_property_params/impulse_clamp>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`Param<enum_PinJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_PinJoint3D_Param>` param **)** |const|
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_PinJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_PinJoint3D_Param>`\ ) |const|
 
 If above 0, this value is the maximum value for an impulse that this Joint3D produces.
 
@@ -159,7 +159,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_PinJoint3D_Param>` param **)** |const|
+:ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_PinJoint3D_Param>`\ ) |const| :ref:`🔗<class_PinJoint3D_method_get_param>`
 
 Returns the value of the specified parameter.
 
@@ -171,7 +171,7 @@ Returns the value of the specified parameter.
 
 .. rst-class:: classref-method
 
-void **set_param** **(** :ref:`Param<enum_PinJoint3D_Param>` param, :ref:`float<class_float>` value **)**
+|void| **set_param**\ (\ param\: :ref:`Param<enum_PinJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PinJoint3D_method_set_param>`
 
 Sets the value of the specified parameter.
 
@@ -182,3 +182,4 @@ Sets the value of the specified parameter.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

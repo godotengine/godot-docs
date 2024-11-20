@@ -23,7 +23,7 @@ Description
 
 To interact with the debugger, an instance of this class must be added to the editor via :ref:`EditorPlugin.add_debugger_plugin<class_EditorPlugin_method_add_debugger_plugin>`.
 
-Once added, the :ref:`_setup_session<class_EditorDebuggerPlugin_method__setup_session>` callback will be called for every :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` available to the plugin, and when new ones are created (the sessions may be inactive during this stage).
+Once added, the :ref:`_setup_session<class_EditorDebuggerPlugin_private_method__setup_session>` callback will be called for every :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` available to the plugin, and when new ones are created (the sessions may be inactive during this stage).
 
 You can retrieve the available :ref:`EditorDebuggerSession<class_EditorDebuggerSession>`\ s via :ref:`get_sessions<class_EditorDebuggerPlugin_method_get_sessions>` or get a specific one via :ref:`get_session<class_EditorDebuggerPlugin_method_get_session>`.
 
@@ -37,18 +37,20 @@ You can retrieve the available :ref:`EditorDebuggerSession<class_EditorDebuggerS
     
     class ExampleEditorDebugger extends EditorDebuggerPlugin:
     
-        func _has_capture(prefix):
-            # Return true if you wish to handle message with this prefix.
-            return prefix == "my_plugin"
+        func _has_capture(capture):
+            # Return true if you wish to handle messages with the prefix "my_plugin:".
+            return capture == "my_plugin"
     
         func _capture(message, data, session_id):
             if message == "my_plugin:ping":
                 get_session(session_id).send_message("my_plugin:echo", data)
+                return true
+            return false
     
         func _setup_session(session_id):
             # Add a new tab in the debugger session UI containing a label.
             var label = Label.new()
-            label.name = "Example plugin"
+            label.name = "Example plugin" # Will be used as the tab title.
             label.text = "Example plugin"
             var session = get_session(session_id)
             # Listens to the session started and stopped signals.
@@ -66,6 +68,30 @@ You can retrieve the available :ref:`EditorDebuggerSession<class_EditorDebuggerS
 
 
 
+To connect on the running game side, use the :ref:`EngineDebugger<class_EngineDebugger>` singleton:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    extends Node
+    
+    func _ready():
+        EngineDebugger.register_message_capture("my_plugin", _capture)
+        EngineDebugger.send_message("my_plugin:ping", ["test"])
+    
+    func _capture(message, data):
+        # Note that the "my_plugin:" prefix is not used here.
+        if message == "echo":
+            prints("Echo received:", data)
+            return true
+        return false
+
+
+
+\ **Note:** While the game is running, :ref:`@GlobalScope.print<class_@GlobalScope_method_print>` and similar functions *called in the editor* do not print anything, the Output Log prints only game messages.
+
 .. rst-class:: classref-reftable-group
 
 Methods
@@ -74,17 +100,23 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`_capture<class_EditorDebuggerPlugin_method__capture>` **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data, :ref:`int<class_int>` session_id **)** |virtual| |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`_has_capture<class_EditorDebuggerPlugin_method__has_capture>` **(** :ref:`String<class_String>` capture **)** |virtual| |const|                                                   |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                      | :ref:`_setup_session<class_EditorDebuggerPlugin_method__setup_session>` **(** :ref:`int<class_int>` session_id **)** |virtual|                                                          |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` | :ref:`get_session<class_EditorDebuggerPlugin_method_get_session>` **(** :ref:`int<class_int>` id **)**                                                                                  |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`                                 | :ref:`get_sessions<class_EditorDebuggerPlugin_method_get_sessions>` **(** **)**                                                                                                         |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`_breakpoint_set_in_tree<class_EditorDebuggerPlugin_private_method__breakpoint_set_in_tree>`\ (\ script\: :ref:`Script<class_Script>`, line\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ ) |virtual| |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`_breakpoints_cleared_in_tree<class_EditorDebuggerPlugin_private_method__breakpoints_cleared_in_tree>`\ (\ ) |virtual|                                                                                              |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`_capture<class_EditorDebuggerPlugin_private_method__capture>`\ (\ message\: :ref:`String<class_String>`, data\: :ref:`Array<class_Array>`, session_id\: :ref:`int<class_int>`\ ) |virtual|                         |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`_goto_script_line<class_EditorDebuggerPlugin_private_method__goto_script_line>`\ (\ script\: :ref:`Script<class_Script>`, line\: :ref:`int<class_int>`\ ) |virtual|                                                |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`_has_capture<class_EditorDebuggerPlugin_private_method__has_capture>`\ (\ capture\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                               |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                    | :ref:`_setup_session<class_EditorDebuggerPlugin_private_method__setup_session>`\ (\ session_id\: :ref:`int<class_int>`\ ) |virtual|                                                                                      |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` | :ref:`get_session<class_EditorDebuggerPlugin_method_get_session>`\ (\ id\: :ref:`int<class_int>`\ )                                                                                                                      |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                                 | :ref:`get_sessions<class_EditorDebuggerPlugin_method_get_sessions>`\ (\ )                                                                                                                                                |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -95,37 +127,73 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EditorDebuggerPlugin_method__capture:
+.. _class_EditorDebuggerPlugin_private_method__breakpoint_set_in_tree:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_capture** **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data, :ref:`int<class_int>` session_id **)** |virtual|
+|void| **_breakpoint_set_in_tree**\ (\ script\: :ref:`Script<class_Script>`, line\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_EditorDebuggerPlugin_private_method__breakpoint_set_in_tree>`
 
-Override this method to process incoming messages. The ``session_id`` is the ID of the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` that received the message (which you can retrieve via :ref:`get_session<class_EditorDebuggerPlugin_method_get_session>`).
+Override this method to be notified when a breakpoint is set in the editor.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_EditorDebuggerPlugin_method__has_capture:
+.. _class_EditorDebuggerPlugin_private_method__breakpoints_cleared_in_tree:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_capture** **(** :ref:`String<class_String>` capture **)** |virtual| |const|
+|void| **_breakpoints_cleared_in_tree**\ (\ ) |virtual| :ref:`🔗<class_EditorDebuggerPlugin_private_method__breakpoints_cleared_in_tree>`
 
-Override this method to enable receiving messages from the debugger. If ``capture`` is "my_message" then messages starting with "my_message:" will be passes to the :ref:`_capture<class_EditorDebuggerPlugin_method__capture>` method.
+Override this method to be notified when all breakpoints are cleared in the editor.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_EditorDebuggerPlugin_method__setup_session:
+.. _class_EditorDebuggerPlugin_private_method__capture:
 
 .. rst-class:: classref-method
 
-void **_setup_session** **(** :ref:`int<class_int>` session_id **)** |virtual|
+:ref:`bool<class_bool>` **_capture**\ (\ message\: :ref:`String<class_String>`, data\: :ref:`Array<class_Array>`, session_id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorDebuggerPlugin_private_method__capture>`
 
-Override this method to be notified whenever a new :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` is created (the session may be inactive during this stage).
+Override this method to process incoming messages. The ``session_id`` is the ID of the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` that received the ``message``. Use :ref:`get_session<class_EditorDebuggerPlugin_method_get_session>` to retrieve the session. This method should return ``true`` if the message is recognized.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorDebuggerPlugin_private_method__goto_script_line:
+
+.. rst-class:: classref-method
+
+|void| **_goto_script_line**\ (\ script\: :ref:`Script<class_Script>`, line\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorDebuggerPlugin_private_method__goto_script_line>`
+
+Override this method to be notified when a breakpoint line has been clicked in the debugger breakpoint panel.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorDebuggerPlugin_private_method__has_capture:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_has_capture**\ (\ capture\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_EditorDebuggerPlugin_private_method__has_capture>`
+
+Override this method to enable receiving messages from the debugger. If ``capture`` is "my_message" then messages starting with "my_message:" will be passes to the :ref:`_capture<class_EditorDebuggerPlugin_private_method__capture>` method.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorDebuggerPlugin_private_method__setup_session:
+
+.. rst-class:: classref-method
+
+|void| **_setup_session**\ (\ session_id\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_EditorDebuggerPlugin_private_method__setup_session>`
+
+Override this method to be notified whenever a new :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` is created. Note that the session may be inactive during this stage.
 
 .. rst-class:: classref-item-separator
 
@@ -135,7 +203,7 @@ Override this method to be notified whenever a new :ref:`EditorDebuggerSession<c
 
 .. rst-class:: classref-method
 
-:ref:`EditorDebuggerSession<class_EditorDebuggerSession>` **get_session** **(** :ref:`int<class_int>` id **)**
+:ref:`EditorDebuggerSession<class_EditorDebuggerSession>` **get_session**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EditorDebuggerPlugin_method_get_session>`
 
 Returns the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` with the given ``id``.
 
@@ -147,7 +215,7 @@ Returns the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` with the g
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_sessions** **(** **)**
+:ref:`Array<class_Array>` **get_sessions**\ (\ ) :ref:`🔗<class_EditorDebuggerPlugin_method_get_sessions>`
 
 Returns an array of :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` currently available to this debugger plugin.
 
@@ -160,3 +228,4 @@ Returns an array of :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` cu
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -46,7 +46,7 @@ As opposed to :ref:`Timer<class_Timer>`, it does not require the instantiation o
 
 The timer will be dereferenced after its time elapses. To preserve the timer, you can keep a reference to it. See :ref:`RefCounted<class_RefCounted>`.
 
-\ **Note:** The timer is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_method__process>` method would be called before the timer (or :ref:`Node._physics_process<class_Node_method__physics_process>` if ``process_in_physics`` in :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>` has been set to ``true``).
+\ **Note:** The timer is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_private_method__process>` method would be called before the timer (or :ref:`Node._physics_process<class_Node_private_method__physics_process>` if ``process_in_physics`` in :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>` has been set to ``true``).
 
 .. rst-class:: classref-reftable-group
 
@@ -73,7 +73,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**timeout** **(** **)**
+**timeout**\ (\ ) :ref:`🔗<class_SceneTreeTimer_signal_timeout>`
 
 Emitted when the timer reaches 0.
 
@@ -90,12 +90,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **time_left**
+:ref:`float<class_float>` **time_left** :ref:`🔗<class_SceneTreeTimer_property_time_left>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_time_left** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_time_left** **(** **)**
+- |void| **set_time_left**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_time_left**\ (\ )
 
 The time remaining (in seconds).
 
@@ -106,3 +106,4 @@ The time remaining (in seconds).
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

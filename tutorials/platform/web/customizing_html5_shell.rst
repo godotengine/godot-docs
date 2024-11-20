@@ -71,6 +71,9 @@ The following optional placeholders will enable some extra features in your cust
   control the HTML page you create, this variable can be useful for configuring parts of the
   HTML ``head`` element from the Godot Editor, e.g. for different Web export presets.
 
+- ``$GODOT_SPLASH``:
+  Path to an image used as the boot splash as defined in the Project Settings.
+
 When the custom page is ready, it can be selected in the export options under the *Html / Custom Html Shell*
 section.
 

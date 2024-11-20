@@ -85,7 +85,7 @@ There are two types of internationalization in Godot's codebase:
   editor. If a user uses the same text in one of their projects, it won't be
   translated if they provide a translation for it. When contributing to the
   engine, this is generally the macro you should use for localizable strings.
-- ``RTR()``: **Run-time translations** will be automatically localized in
+- ``RTR()``: **Runtime translations** will be automatically localized in
   projects if they provide a translation for the given string. This kind of
   translation shouldn't be used in editor-only code.
 
@@ -137,11 +137,11 @@ use this snippet:
 
 .. code-block:: cpp
 
-    uint64_t begin = OS::get_singleton()->get_ticks_usec();
+    uint64_t begin = Time::get_singleton()->get_ticks_usec();
 
     // Your code here...
 
-    uint64_t end = OS::get_singleton()->get_ticks_usec();
+    uint64_t end = Time::get_singleton()->get_ticks_usec();
     print_line(vformat("Snippet took %d microseconds", end - begin));
 
 This will print the time spent between the ``begin`` declaration and the ``end``

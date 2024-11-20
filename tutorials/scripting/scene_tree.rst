@@ -32,11 +32,11 @@ level and when making games in Godot, writing your own MainLoop seldom makes sen
 SceneTree
 ---------
 
-One of the ways to explain how Godot works is that it's a high level
-game engine over a low level middleware.
+One of the ways to explain how Godot works is that it's a high-level
+game engine over a low-level middleware.
 
 The scene system is the game engine, while the :ref:`OS <class_OS>`
-and servers are the low level API.
+and servers are the low-level API.
 
 The scene system provides its own main loop to OS,
 :ref:`SceneTree <class_SceneTree>`.
@@ -106,18 +106,26 @@ Tree order
 ----------
 
 Most node operations in Godot, such as drawing 2D, processing, or getting
-notifications are done in tree order, or top to bottom. For example, the
-top node in a scene has its ``_ready()`` function called first, then the
-node below it has its function called, then the node below that and so
-on. However, children of a node will get called before their parent, also
-in top to bottom order. So the top child node of the top node will get its
-``_ready()`` function called first.
+notifications are done in *tree order*, or top to bottom as seen in the
+editor (also known as pre-order traversal):
 
 .. image:: img/toptobottom.webp
 
-This can also be overridden using the ``process_priority`` node property.
-Nodes with a lower number are called first. For example, nodes with the
-priorities "0, 1, 2, 3" would be called in that order (from left to right).
+For example, the top node in a scene has its ``_process()`` function
+called first, then the node below it has its ``_process()`` function called,
+then the node below that and so on.
+
+An important exception is the ``_ready()`` function: each parent node has its
+``_ready()`` function called only after all its child nodes have their
+``_ready()`` functions called, so that the parent knows its children are
+completely ready to be accessed. This is also known as post-order traversal.
+In the above image, ``NameLabel`` would be notified first (but only after its
+children, if it had any!), followed by ``Name``, etc., and ``Panel`` would be
+notified last.
+
+The order of operations can also be overridden using the ``process_priority``
+node property. Nodes with a lower number are called first. For example, nodes
+with the priorities "0, 1, 2, 3" would be called in that order from left to right.
 
 "Becoming active" by entering the *Scene Tree*
 ----------------------------------------------
@@ -126,15 +134,15 @@ priorities "0, 1, 2, 3" would be called in that order (from left to right).
 #. The root node of that scene (only one root, remember?) is added as
    either a child of the "root" Viewport (from SceneTree), or to any
    of its descendants.
-#. Every node of the newly added scene, will receive the "enter_tree"
+#. Every node of the newly added scene will receive the "enter_tree"
    notification ( ``_enter_tree()`` callback in GDScript) in
-   top-to-bottom order.
-#. An extra notification, "ready" ( ``_ready()`` callback in GDScript)
-   is provided for convenience, when a node and all its children are
-   inside the active scene.
+   top-to-bottom order (pre-order traversal).
+#. Every node will receive the "ready" notification ( ``_ready()``
+   callback in GDScript) for convenience, once all its children have
+   received the "ready" notification (post-order traversal).
 #. When a scene (or part of it) is removed, they receive the "exit
    scene" notification ( ``_exit_tree()`` callback in GDScript) in
-   bottom-to-top order
+   bottom-to-top order (the exact reverse of top-to-bottom order).
 
 Changing current scene
 ----------------------
@@ -168,7 +176,7 @@ function
     var next_scene = preload("res://levels/level2.tscn")
 
     func _my_level_was_completed():
-    	get_tree().change_scene_to_packed(next_scene)
+        get_tree().change_scene_to_packed(next_scene)
 
  .. code-tab:: csharp
 

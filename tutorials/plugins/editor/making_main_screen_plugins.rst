@@ -55,7 +55,7 @@ Add five extra methods such that the script looks like this:
 
 
     func _get_plugin_icon():
-        return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons")
+        return EditorInterface.get_editor_theme().get_icon("Node", "EditorIcons")
 
  .. code-tab:: csharp
 
@@ -92,7 +92,7 @@ Add five extra methods such that the script looks like this:
 
         public override Texture2D _GetPluginIcon()
         {
-            return GetEditorInterface().GetBaseControl().GetThemeIcon("Node", "EditorIcons");
+            return EditorInterface.GetEditorTheme().GetIcon("Node", "EditorIcons");
         }
     }
     #endif
@@ -168,7 +168,7 @@ Here is the full plugin script:
     func _enter_tree():
         main_panel_instance = MainPanel.instantiate()
         # Add the main panel to the editor's main viewport.
-        get_editor_interface().get_editor_main_screen().add_child(main_panel_instance)
+        EditorInterface.get_editor_main_screen().add_child(main_panel_instance)
         # Hide the main panel. Very much required.
         _make_visible(false)
 
@@ -193,7 +193,7 @@ Here is the full plugin script:
 
     func _get_plugin_icon():
         # Must return some kind of Texture for the icon.
-        return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons")
+        return EditorInterface.get_editor_theme().get_icon("Node", "EditorIcons")
 
  .. code-tab:: csharp
 
@@ -210,7 +210,7 @@ Here is the full plugin script:
         {
             MainPanelInstance = (Control)MainPanel.Instantiate();
             // Add the main panel to the editor's main viewport.
-            GetEditorInterface().GetEditorMainScreen().AddChild(MainPanelInstance);
+            EditorInterface.GetEditorMainScreen().AddChild(MainPanelInstance);
             // Hide the main panel. Very much required.
             _MakeVisible(false);
         }
@@ -244,7 +244,7 @@ Here is the full plugin script:
         public override Texture2D _GetPluginIcon()
         {
             // Must return some kind of Texture for the icon.
-            return GetEditorInterface().GetBaseControl().GetThemeIcon("Node", "EditorIcons");
+            return EditorInterface.GetEditorTheme().GetIcon("Node", "EditorIcons");
         }
     }
     #endif
@@ -254,7 +254,7 @@ a reference to the scene, and we instance it into `main_panel_instance`.
 
 The ``_enter_tree()`` function is called before ``_ready()``. This is where
 we instance the main panel scene, and add them as children of specific parts
-of the editor. We use ``get_editor_interface().get_editor_main_screen()`` to
+of the editor. We use ``EditorInterface.get_editor_main_screen()`` to
 obtain the main editor screen and add our main panel instance as a child to it.
 We call the ``_make_visible(false)`` function to hide the main panel so
 it doesn't compete for space when first activating the plugin.

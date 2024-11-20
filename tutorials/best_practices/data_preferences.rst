@@ -129,7 +129,7 @@ the expense of memory and some minor operational efficiency.
 
     - HashMaps maintain gaps of unused memory interspersed in the table
       on purpose to reduce hash collisions and maintain the speed of
-      accesses. This is why it constantly increases in size quadratically by
+      accesses. This is why it constantly increases in size exponentially by
       powers of 2.
 
 As one might be able to tell, Dictionaries specialize in tasks that Arrays
@@ -240,7 +240,7 @@ tree structures.
     class_name TreeNode
 
     var _parent: TreeNode = null
-    var _children: = [] setget
+    var _children := []
 
     func _notification(p_what):
         match p_what:
@@ -283,7 +283,7 @@ Enumerations: int vs. string
 
 Most languages offer an enumeration type option. GDScript is no different, but
 unlike most other languages, it allows one to use either integers or strings for
-the enum values (the latter only when using the ``export`` keyword in GDScript).
+the enum values (the latter only when using the ``@export_enum`` annotation in GDScript).
 The question then arises, "which should one use?"
 
 The short answer is, "whichever you are more comfortable with." This
@@ -329,18 +329,18 @@ the other :ref:`Node <class_Node>` objects discussed here. One might create
 a :ref:`Sprite2D <class_Sprite2D>` node that uses AnimatedTexture as its texture.
 Or (something the others can't do) one could add AnimatedTextures as tiles
 in a :ref:`TileSet <class_TileSet>` and integrate it with a
-:ref:`TileMap <class_TileMap>` for many auto-animating backgrounds that
+:ref:`TileMapLayer <class_TileMapLayer>` for many auto-animating backgrounds that
 all render in a single batched draw call.
 
-The AnimatedSprite2D node, in combination with the
+The :ref:`AnimatedSprite2D <class_AnimatedSprite2D>` node, in combination with the
 :ref:`SpriteFrames <class_SpriteFrames>` resource, allows one to create a
 variety of animation sequences through spritesheets, flip between animations,
 and control their speed, regional offset, and orientation. This makes them
 well-suited to controlling 2D frame-based animations.
 
-If one needs trigger other effects in relation to animation changes (for
+If one needs to trigger other effects in relation to animation changes (for
 example, create particle effects, call functions, or manipulate other
-peripheral elements besides the frame-based animation), then will need to use
+peripheral elements besides the frame-based animation), then one will need to use
 an :ref:`AnimationPlayer <class_AnimationPlayer>` node in conjunction with
 the AnimatedSprite2D.
 

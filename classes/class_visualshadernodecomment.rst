@@ -10,16 +10,18 @@
 VisualShaderNodeComment
 =======================
 
-**Inherits:** :ref:`VisualShaderNodeResizableBase<class_VisualShaderNodeResizableBase>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Deprecated:** This class has no function anymore and only exists for compatibility.
 
-A comment node to be placed on visual shader graph.
+**Inherits:** :ref:`VisualShaderNodeFrame<class_VisualShaderNodeFrame>` **<** :ref:`VisualShaderNodeResizableBase<class_VisualShaderNodeResizableBase>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+
+Only exists for compatibility. Use :ref:`VisualShaderNodeFrame<class_VisualShaderNodeFrame>` as a replacement.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A resizable rectangular area with changeable :ref:`title<class_VisualShaderNodeComment_property_title>` and :ref:`description<class_VisualShaderNodeComment_property_description>` used for better organizing of other visual shader nodes.
+This node was replaced by :ref:`VisualShaderNodeFrame<class_VisualShaderNodeFrame>` and only exists to preserve compatibility. In the :ref:`VisualShader<class_VisualShader>` editor it behaves exactly like :ref:`VisualShaderNodeFrame<class_VisualShaderNodeFrame>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -29,11 +31,9 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------+------------------------------------------------------------------------+---------------+
-   | :ref:`String<class_String>` | :ref:`description<class_VisualShaderNodeComment_property_description>` | ``""``        |
-   +-----------------------------+------------------------------------------------------------------------+---------------+
-   | :ref:`String<class_String>` | :ref:`title<class_VisualShaderNodeComment_property_title>`             | ``"Comment"`` |
-   +-----------------------------+------------------------------------------------------------------------+---------------+
+   +-----------------------------+------------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`description<class_VisualShaderNodeComment_property_description>` | ``""`` |
+   +-----------------------------+------------------------------------------------------------------------+--------+
 
 .. rst-class:: classref-section-separator
 
@@ -48,31 +48,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **description** = ``""``
+:ref:`String<class_String>` **description** = ``""`` :ref:`🔗<class_VisualShaderNodeComment_property_description>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_description** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_description** **(** **)**
+- |void| **set_description**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_description**\ (\ )
 
-An additional description which placed below the title.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_VisualShaderNodeComment_property_title:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **title** = ``"Comment"``
-
-.. rst-class:: classref-property-setget
-
-- void **set_title** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_title** **(** **)**
-
-A title of the node.
+This property only exists to preserve data authored in earlier versions of Godot. It has currently no function.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -81,3 +64,4 @@ A title of the node.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

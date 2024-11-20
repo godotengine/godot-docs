@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. Intention: provide the necessary information to make the most of the getting
    started series, answering questions like "do I want to learn Godot?", "how
    does it look and feel?", "how does it work?", and "how do I best learn it?".
@@ -20,6 +22,7 @@ make the most of your time learning it.
    :name: toc-learn-introduction
 
    introduction_to_godot
+   learn_to_code_with_gdscript
    key_concepts_overview
    first_look_at_the_editor
    learning_new_features

@@ -56,7 +56,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TextureType**:
+enum **TextureType**: :ref:`🔗<enum_VisualShaderNodeTextureParameter_TextureType>`
 
 .. _class_VisualShaderNodeTextureParameter_constant_TYPE_DATA:
 
@@ -106,7 +106,7 @@ Represents the size of the :ref:`TextureType<enum_VisualShaderNodeTextureParamet
 
 .. rst-class:: classref-enumeration
 
-enum **ColorDefault**:
+enum **ColorDefault**: :ref:`🔗<enum_VisualShaderNodeTextureParameter_ColorDefault>`
 
 .. _class_VisualShaderNodeTextureParameter_constant_COLOR_DEFAULT_WHITE:
 
@@ -148,7 +148,7 @@ Represents the size of the :ref:`ColorDefault<enum_VisualShaderNodeTextureParame
 
 .. rst-class:: classref-enumeration
 
-enum **TextureFilter**:
+enum **TextureFilter**: :ref:`🔗<enum_VisualShaderNodeTextureParameter_TextureFilter>`
 
 .. _class_VisualShaderNodeTextureParameter_constant_FILTER_DEFAULT:
 
@@ -164,7 +164,7 @@ Sample the texture using the filter determined by the node this shader is attach
 
 :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_NEAREST** = ``1``
 
-The texture filter reads from the nearest pixel only. The simplest and fastest method of filtering, but the texture will look pixelized.
+The texture filter reads from the nearest pixel only. This makes the texture look pixelated from up close, and grainy from a distance (due to mipmaps not being sampled).
 
 .. _class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR:
 
@@ -172,7 +172,7 @@ The texture filter reads from the nearest pixel only. The simplest and fastest m
 
 :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_LINEAR** = ``2``
 
-The texture filter blends between the nearest four pixels. Use this for most cases where you want to avoid a pixelated style.
+The texture filter blends between the nearest 4 pixels. This makes the texture look smooth from up close, and grainy from a distance (due to mipmaps not being sampled).
 
 .. _class_VisualShaderNodeTextureParameter_constant_FILTER_NEAREST_MIPMAP:
 
@@ -180,7 +180,9 @@ The texture filter blends between the nearest four pixels. Use this for most cas
 
 :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_NEAREST_MIPMAP** = ``3``
 
-The texture filter reads from the nearest pixel in the nearest mipmap. This is the fastest way to read from textures with mipmaps.
+The texture filter reads from the nearest pixel and blends between the nearest 2 mipmaps (or uses the nearest mipmap if :ref:`ProjectSettings.rendering/textures/default_filters/use_nearest_mipmap_filter<class_ProjectSettings_property_rendering/textures/default_filters/use_nearest_mipmap_filter>` is ``true``). This makes the texture look pixelated from up close, and smooth from a distance.
+
+Use this for non-pixel art textures that may be viewed at a low scale (e.g. due to :ref:`Camera2D<class_Camera2D>` zoom or sprite scaling), as mipmaps are important to smooth out pixels that are smaller than on-screen pixels.
 
 .. _class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR_MIPMAP:
 
@@ -188,7 +190,9 @@ The texture filter reads from the nearest pixel in the nearest mipmap. This is t
 
 :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_LINEAR_MIPMAP** = ``4``
 
-The texture filter blends between the nearest 4 pixels and between the nearest 2 mipmaps. Use this for non-pixel art textures that may be viewed at a low scale (e.g. due to :ref:`Camera2D<class_Camera2D>` zoom), as mipmaps are important to smooth out pixels that are smaller than on-screen pixels.
+The texture filter blends between the nearest 4 pixels and between the nearest 2 mipmaps (or uses the nearest mipmap if :ref:`ProjectSettings.rendering/textures/default_filters/use_nearest_mipmap_filter<class_ProjectSettings_property_rendering/textures/default_filters/use_nearest_mipmap_filter>` is ``true``). This makes the texture look smooth from up close, and smooth from a distance.
+
+Use this for non-pixel art textures that may be viewed at a low scale (e.g. due to :ref:`Camera2D<class_Camera2D>` zoom or sprite scaling), as mipmaps are important to smooth out pixels that are smaller than on-screen pixels.
 
 .. _class_VisualShaderNodeTextureParameter_constant_FILTER_NEAREST_MIPMAP_ANISOTROPIC:
 
@@ -196,9 +200,9 @@ The texture filter blends between the nearest 4 pixels and between the nearest 2
 
 :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_NEAREST_MIPMAP_ANISOTROPIC** = ``5``
 
-The texture filter reads from the nearest pixel, but selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
+The texture filter reads from the nearest pixel and blends between 2 mipmaps (or uses the nearest mipmap if :ref:`ProjectSettings.rendering/textures/default_filters/use_nearest_mipmap_filter<class_ProjectSettings_property_rendering/textures/default_filters/use_nearest_mipmap_filter>` is ``true``) based on the angle between the surface and the camera view. This makes the texture look pixelated from up close, and smooth from a distance. Anisotropic filtering improves texture quality on surfaces that are almost in line with the camera, but is slightly slower. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
 
-\ **Note:** This texture filter is rarely useful in 2D projects. :ref:`FILTER_LINEAR_MIPMAP<class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR_MIPMAP>` is usually more appropriate.
+\ **Note:** This texture filter is rarely useful in 2D projects. :ref:`FILTER_NEAREST_MIPMAP<class_VisualShaderNodeTextureParameter_constant_FILTER_NEAREST_MIPMAP>` is usually more appropriate in this case.
 
 .. _class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR_MIPMAP_ANISOTROPIC:
 
@@ -206,9 +210,9 @@ The texture filter reads from the nearest pixel, but selects a mipmap based on t
 
 :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **FILTER_LINEAR_MIPMAP_ANISOTROPIC** = ``6``
 
-The texture filter blends between the nearest 4 pixels and selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera. This is the slowest of the filtering options, but results in the highest quality texturing. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
+The texture filter blends between the nearest 4 pixels and blends between 2 mipmaps (or uses the nearest mipmap if :ref:`ProjectSettings.rendering/textures/default_filters/use_nearest_mipmap_filter<class_ProjectSettings_property_rendering/textures/default_filters/use_nearest_mipmap_filter>` is ``true``) based on the angle between the surface and the camera view. This makes the texture look smooth from up close, and smooth from a distance. Anisotropic filtering improves texture quality on surfaces that are almost in line with the camera, but is slightly slower. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
 
-\ **Note:** This texture filter is rarely useful in 2D projects. :ref:`FILTER_LINEAR_MIPMAP<class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR_MIPMAP>` is usually more appropriate.
+\ **Note:** This texture filter is rarely useful in 2D projects. :ref:`FILTER_LINEAR_MIPMAP<class_VisualShaderNodeTextureParameter_constant_FILTER_LINEAR_MIPMAP>` is usually more appropriate in this case.
 
 .. _class_VisualShaderNodeTextureParameter_constant_FILTER_MAX:
 
@@ -226,7 +230,7 @@ Represents the size of the :ref:`TextureFilter<enum_VisualShaderNodeTextureParam
 
 .. rst-class:: classref-enumeration
 
-enum **TextureRepeat**:
+enum **TextureRepeat**: :ref:`🔗<enum_VisualShaderNodeTextureParameter_TextureRepeat>`
 
 .. _class_VisualShaderNodeTextureParameter_constant_REPEAT_DEFAULT:
 
@@ -268,7 +272,7 @@ Represents the size of the :ref:`TextureRepeat<enum_VisualShaderNodeTextureParam
 
 .. rst-class:: classref-enumeration
 
-enum **TextureSource**:
+enum **TextureSource**: :ref:`🔗<enum_VisualShaderNodeTextureParameter_TextureSource>`
 
 .. _class_VisualShaderNodeTextureParameter_constant_SOURCE_NONE:
 
@@ -323,12 +327,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **color_default** = ``0``
+:ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **color_default** = ``0`` :ref:`🔗<class_VisualShaderNodeTextureParameter_property_color_default>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_color_default** **(** :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` value **)**
-- :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **get_color_default** **(** **)**
+- |void| **set_color_default**\ (\ value\: :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>`\ )
+- :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **get_color_default**\ (\ )
 
 Sets the default color if no texture is assigned to the uniform.
 
@@ -340,12 +344,12 @@ Sets the default color if no texture is assigned to the uniform.
 
 .. rst-class:: classref-property
 
-:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **texture_filter** = ``0``
+:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **texture_filter** = ``0`` :ref:`🔗<class_VisualShaderNodeTextureParameter_property_texture_filter>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_filter** **(** :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` value **)**
-- :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **get_texture_filter** **(** **)**
+- |void| **set_texture_filter**\ (\ value\: :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>`\ )
+- :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **get_texture_filter**\ (\ )
 
 Sets the texture filtering mode. See :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` for options.
 
@@ -357,12 +361,12 @@ Sets the texture filtering mode. See :ref:`TextureFilter<enum_VisualShaderNodeTe
 
 .. rst-class:: classref-property
 
-:ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **texture_repeat** = ``0``
+:ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **texture_repeat** = ``0`` :ref:`🔗<class_VisualShaderNodeTextureParameter_property_texture_repeat>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_repeat** **(** :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` value **)**
-- :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **get_texture_repeat** **(** **)**
+- |void| **set_texture_repeat**\ (\ value\: :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>`\ )
+- :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **get_texture_repeat**\ (\ )
 
 Sets the texture repeating mode. See :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` for options.
 
@@ -374,12 +378,12 @@ Sets the texture repeating mode. See :ref:`TextureRepeat<enum_VisualShaderNodeTe
 
 .. rst-class:: classref-property
 
-:ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **texture_source** = ``0``
+:ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **texture_source** = ``0`` :ref:`🔗<class_VisualShaderNodeTextureParameter_property_texture_source>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_source** **(** :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` value **)**
-- :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **get_texture_source** **(** **)**
+- |void| **set_texture_source**\ (\ value\: :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>`\ )
+- :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **get_texture_source**\ (\ )
 
 Sets the texture source mode. Used for reading from the screen, depth, or normal_roughness texture. See :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` for options.
 
@@ -391,12 +395,12 @@ Sets the texture source mode. Used for reading from the screen, depth, or normal
 
 .. rst-class:: classref-property
 
-:ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **texture_type** = ``0``
+:ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **texture_type** = ``0`` :ref:`🔗<class_VisualShaderNodeTextureParameter_property_texture_type>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_type** **(** :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` value **)**
-- :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **get_texture_type** **(** **)**
+- |void| **set_texture_type**\ (\ value\: :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>`\ )
+- :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **get_texture_type**\ (\ )
 
 Defines the type of data provided by the source texture. See :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` for options.
 
@@ -407,3 +411,4 @@ Defines the type of data provided by the source texture. See :ref:`TextureType<e
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

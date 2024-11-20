@@ -16,6 +16,8 @@ These are the four concepts you will learn here. We're going to look at them
 briefly to give you a sense of how the engine works. In the getting started
 series, you will get to use them in practice.
 
+.. _doc_key_concepts_overview_scenes:
+
 Scenes
 ------
 
@@ -40,8 +42,8 @@ nodes.
 
 .. image:: img/key_concepts_character_nodes.webp
 
-It is made of a ``CharacterBody2D`` node named "Player", a ``Sprite2D``, a
-``Camera2D``, and a ``CollisionShape2D``.
+It is made of a ``CharacterBody2D`` node named "Player", a ``Camera2D``, a
+``Sprite2D``, and a ``CollisionShape2D``.
 
 .. note:: The node names end with "2D" because this is a 2D scene. Their 3D
           counterparts have names that end with "3D". Be aware that "Spatial"

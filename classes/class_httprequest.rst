@@ -27,7 +27,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
-\ **Example of contacting a REST API and printing one of its returned fields:**\ 
+\ **Example:** Contact a REST API and print one of its returned fields:
 
 
 .. tabs::
@@ -67,7 +67,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
     public override void _Ready()
     {
         // Create an HTTP request node and connect its completion signal.
-        var httpRequest = new HTTPRequest();
+        var httpRequest = new HttpRequest();
         AddChild(httpRequest);
         httpRequest.RequestCompleted += HttpRequestCompleted;
     
@@ -85,7 +85,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         {
             { "name", "Godette" }
         });
-        error = httpRequest.Request("https://httpbin.org/post", null, HTTPClient.Method.Post, body);
+        error = httpRequest.Request("https://httpbin.org/post", null, HttpClient.Method.Post, body);
         if (error != Error.Ok)
         {
             GD.PushError("An error occurred in the HTTP request.");
@@ -105,7 +105,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 
 
-\ **Example of loading and displaying an image using HTTPRequest:**\ 
+\ **Example:** Load an image using **HTTPRequest** and display it:
 
 
 .. tabs::
@@ -145,7 +145,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
     public override void _Ready()
     {
         // Create an HTTP request node and connect its completion signal.
-        var httpRequest = new HTTPRequest();
+        var httpRequest = new HttpRequest();
         AddChild(httpRequest);
         httpRequest.RequestCompleted += HttpRequestCompleted;
     
@@ -160,7 +160,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
     // Called when the HTTP request is completed.
     private void HttpRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
     {
-        if (result != (long)HTTPRequest.Result.Success)
+        if (result != (long)HttpRequest.Result.Success)
         {
             GD.PushError("Image couldn't be downloaded. Try a different image.");
         }
@@ -181,7 +181,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
 
 
 
-\ **Gzipped response bodies**: HTTPRequest will automatically handle decompression of response bodies. A ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
+\ **Note:** **HTTPRequest** nodes will automatically handle decompression of response bodies. A ``Accept-Encoding`` header will be automatically added to each of your requests, unless one is already specified. Any response with a ``Content-Encoding: gzip`` header will automatically be decompressed and delivered to you as uncompressed bytes.
 
 .. rst-class:: classref-introduction-group
 
@@ -224,25 +224,25 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`cancel_request<class_HTTPRequest_method_cancel_request>` **(** **)**                                                                                                                                                                                                                                                   |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`get_body_size<class_HTTPRequest_method_get_body_size>` **(** **)** |const|                                                                                                                                                                                                                                             |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`get_downloaded_bytes<class_HTTPRequest_method_get_downloaded_bytes>` **(** **)** |const|                                                                                                                                                                                                                               |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Status<enum_HTTPClient_Status>` | :ref:`get_http_client_status<class_HTTPRequest_method_get_http_client_status>` **(** **)** |const|                                                                                                                                                                                                                           |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request<class_HTTPRequest_method_request>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**                                              |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request_raw<class_HTTPRequest_method_request_raw>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`PackedByteArray<class_PackedByteArray>` request_data_raw=PackedByteArray() **)** |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`set_http_proxy<class_HTTPRequest_method_set_http_proxy>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                                                                                                                                                                      |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`set_https_proxy<class_HTTPRequest_method_set_https_proxy>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                                                                                                                                                                    |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`set_tls_options<class_HTTPRequest_method_set_tls_options>` **(** :ref:`TLSOptions<class_TLSOptions>` client_options **)**                                                                                                                                                                                              |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`cancel_request<class_HTTPRequest_method_cancel_request>`\ (\ )                                                                                                                                                                                                                                                                  |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_body_size<class_HTTPRequest_method_get_body_size>`\ (\ ) |const|                                                                                                                                                                                                                                                            |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_downloaded_bytes<class_HTTPRequest_method_get_downloaded_bytes>`\ (\ ) |const|                                                                                                                                                                                                                                              |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Status<enum_HTTPClient_Status>` | :ref:`get_http_client_status<class_HTTPRequest_method_get_http_client_status>`\ (\ ) |const|                                                                                                                                                                                                                                          |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request<class_HTTPRequest_method_request>`\ (\ url\: :ref:`String<class_String>`, custom_headers\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray(), method\: :ref:`Method<enum_HTTPClient_Method>` = 0, request_data\: :ref:`String<class_String>` = ""\ )                                              |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request_raw<class_HTTPRequest_method_request_raw>`\ (\ url\: :ref:`String<class_String>`, custom_headers\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray(), method\: :ref:`Method<enum_HTTPClient_Method>` = 0, request_data_raw\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray()\ ) |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`set_http_proxy<class_HTTPRequest_method_set_http_proxy>`\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ )                                                                                                                                                                                                |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`set_https_proxy<class_HTTPRequest_method_set_https_proxy>`\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ )                                                                                                                                                                                              |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`set_tls_options<class_HTTPRequest_method_set_tls_options>`\ (\ client_options\: :ref:`TLSOptions<class_TLSOptions>`\ )                                                                                                                                                                                                          |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -257,7 +257,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**request_completed** **(** :ref:`int<class_int>` result, :ref:`int<class_int>` response_code, :ref:`PackedStringArray<class_PackedStringArray>` headers, :ref:`PackedByteArray<class_PackedByteArray>` body **)**
+**request_completed**\ (\ result\: :ref:`int<class_int>`, response_code\: :ref:`int<class_int>`, headers\: :ref:`PackedStringArray<class_PackedStringArray>`, body\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_HTTPRequest_signal_request_completed>`
 
 Emitted when a request is completed.
 
@@ -274,7 +274,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Result**:
+enum **Result**: :ref:`🔗<enum_HTTPRequest_Result>`
 
 .. _class_HTTPRequest_constant_RESULT_SUCCESS:
 
@@ -290,7 +290,7 @@ Request successful.
 
 :ref:`Result<enum_HTTPRequest_Result>` **RESULT_CHUNKED_BODY_SIZE_MISMATCH** = ``1``
 
-
+Request failed due to a mismatch between the expected and actual chunked body size during transfer. Possible causes include network errors, server misconfiguration, or issues with chunked encoding.
 
 .. _class_HTTPRequest_constant_RESULT_CANT_CONNECT:
 
@@ -346,7 +346,7 @@ Request exceeded its maximum size limit, see :ref:`body_size_limit<class_HTTPReq
 
 :ref:`Result<enum_HTTPRequest_Result>` **RESULT_BODY_DECOMPRESS_FAILED** = ``8``
 
-
+Request failed due to an error while decompressing the response body. Possible causes include unsupported or incorrect compression format, corrupted data, or incomplete transfer.
 
 .. _class_HTTPRequest_constant_RESULT_REQUEST_FAILED:
 
@@ -401,20 +401,20 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **accept_gzip** = ``true``
+:ref:`bool<class_bool>` **accept_gzip** = ``true`` :ref:`🔗<class_HTTPRequest_property_accept_gzip>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_accept_gzip** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_accepting_gzip** **(** **)**
+- |void| **set_accept_gzip**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_accepting_gzip**\ (\ )
 
 If ``true``, this header will be added to each request: ``Accept-Encoding: gzip, deflate`` telling servers that it's okay to compress response bodies.
 
-Any Response body declaring a ``Content-Encoding`` of either ``gzip`` or ``deflate`` will then be automatically decompressed, and the uncompressed bytes will be delivered via ``request_completed``.
+Any Response body declaring a ``Content-Encoding`` of either ``gzip`` or ``deflate`` will then be automatically decompressed, and the uncompressed bytes will be delivered via :ref:`request_completed<class_HTTPRequest_signal_request_completed>`.
 
-If the user has specified their own ``Accept-Encoding`` header, then no header will be added regardless of ``accept_gzip``.
+If the user has specified their own ``Accept-Encoding`` header, then no header will be added regardless of :ref:`accept_gzip<class_HTTPRequest_property_accept_gzip>`.
 
-If ``false`` no header will be added, and no decompression will be performed on response bodies. The raw bytes of the response body will be returned via ``request_completed``.
+If ``false`` no header will be added, and no decompression will be performed on response bodies. The raw bytes of the response body will be returned via :ref:`request_completed<class_HTTPRequest_signal_request_completed>`.
 
 .. rst-class:: classref-item-separator
 
@@ -424,12 +424,12 @@ If ``false`` no header will be added, and no decompression will be performed on 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **body_size_limit** = ``-1``
+:ref:`int<class_int>` **body_size_limit** = ``-1`` :ref:`🔗<class_HTTPRequest_property_body_size_limit>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_body_size_limit** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_body_size_limit** **(** **)**
+- |void| **set_body_size_limit**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_body_size_limit**\ (\ )
 
 Maximum allowed size for response bodies. If the response body is compressed, this will be used as the maximum allowed size for the decompressed body.
 
@@ -441,12 +441,12 @@ Maximum allowed size for response bodies. If the response body is compressed, th
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **download_chunk_size** = ``65536``
+:ref:`int<class_int>` **download_chunk_size** = ``65536`` :ref:`🔗<class_HTTPRequest_property_download_chunk_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_download_chunk_size** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_download_chunk_size** **(** **)**
+- |void| **set_download_chunk_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_download_chunk_size**\ (\ )
 
 The size of the buffer used and maximum bytes to read per iteration. See :ref:`HTTPClient.read_chunk_size<class_HTTPClient_property_read_chunk_size>`.
 
@@ -460,12 +460,12 @@ Set this to a lower value (e.g. 4096 for 4 KiB) when downloading small files to 
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **download_file** = ``""``
+:ref:`String<class_String>` **download_file** = ``""`` :ref:`🔗<class_HTTPRequest_property_download_file>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_download_file** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_download_file** **(** **)**
+- |void| **set_download_file**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_download_file**\ (\ )
 
 The file to download into. Will output any received file into it.
 
@@ -477,12 +477,12 @@ The file to download into. Will output any received file into it.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_redirects** = ``8``
+:ref:`int<class_int>` **max_redirects** = ``8`` :ref:`🔗<class_HTTPRequest_property_max_redirects>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_max_redirects** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_max_redirects** **(** **)**
+- |void| **set_max_redirects**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_max_redirects**\ (\ )
 
 Maximum number of allowed redirects.
 
@@ -494,12 +494,12 @@ Maximum number of allowed redirects.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **timeout** = ``0.0``
+:ref:`float<class_float>` **timeout** = ``0.0`` :ref:`🔗<class_HTTPRequest_property_timeout>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_timeout** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_timeout** **(** **)**
+- |void| **set_timeout**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_timeout**\ (\ )
 
 The duration to wait in seconds before a request times out. If :ref:`timeout<class_HTTPRequest_property_timeout>` is set to ``0.0`` then the request will never time out. For simple requests, such as communication with a REST API, it is recommended that :ref:`timeout<class_HTTPRequest_property_timeout>` is set to a value suitable for the server response time (e.g. between ``1.0`` and ``10.0``). This will help prevent unwanted timeouts caused by variation in server response times while still allowing the application to detect when a request has timed out. For larger requests such as file downloads it is suggested the :ref:`timeout<class_HTTPRequest_property_timeout>` be set to ``0.0``, disabling the timeout functionality. This will help to prevent large transfers from failing due to exceeding the timeout value.
 
@@ -511,12 +511,12 @@ The duration to wait in seconds before a request times out. If :ref:`timeout<cla
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_threads** = ``false``
+:ref:`bool<class_bool>` **use_threads** = ``false`` :ref:`🔗<class_HTTPRequest_property_use_threads>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_threads** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_threads** **(** **)**
+- |void| **set_use_threads**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_threads**\ (\ )
 
 If ``true``, multithreading is used to improve performance.
 
@@ -533,7 +533,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **cancel_request** **(** **)**
+|void| **cancel_request**\ (\ ) :ref:`🔗<class_HTTPRequest_method_cancel_request>`
 
 Cancels the current request.
 
@@ -545,7 +545,7 @@ Cancels the current request.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_body_size** **(** **)** |const|
+:ref:`int<class_int>` **get_body_size**\ (\ ) |const| :ref:`🔗<class_HTTPRequest_method_get_body_size>`
 
 Returns the response body length.
 
@@ -559,7 +559,7 @@ Returns the response body length.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_downloaded_bytes** **(** **)** |const|
+:ref:`int<class_int>` **get_downloaded_bytes**\ (\ ) |const| :ref:`🔗<class_HTTPRequest_method_get_downloaded_bytes>`
 
 Returns the number of bytes this HTTPRequest downloaded.
 
@@ -571,7 +571,7 @@ Returns the number of bytes this HTTPRequest downloaded.
 
 .. rst-class:: classref-method
 
-:ref:`Status<enum_HTTPClient_Status>` **get_http_client_status** **(** **)** |const|
+:ref:`Status<enum_HTTPClient_Status>` **get_http_client_status**\ (\ ) |const| :ref:`🔗<class_HTTPRequest_method_get_http_client_status>`
 
 Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`. See :ref:`Status<enum_HTTPClient_Status>`.
 
@@ -583,7 +583,7 @@ Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**
+:ref:`Error<enum_@GlobalScope_Error>` **request**\ (\ url\: :ref:`String<class_String>`, custom_headers\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray(), method\: :ref:`Method<enum_HTTPClient_Method>` = 0, request_data\: :ref:`String<class_String>` = ""\ ) :ref:`🔗<class_HTTPRequest_method_request>`
 
 Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
 
@@ -601,7 +601,7 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is suc
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **request_raw** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`PackedByteArray<class_PackedByteArray>` request_data_raw=PackedByteArray() **)**
+:ref:`Error<enum_@GlobalScope_Error>` **request_raw**\ (\ url\: :ref:`String<class_String>`, custom_headers\: :ref:`PackedStringArray<class_PackedStringArray>` = PackedStringArray(), method\: :ref:`Method<enum_HTTPClient_Method>` = 0, request_data_raw\: :ref:`PackedByteArray<class_PackedByteArray>` = PackedByteArray()\ ) :ref:`🔗<class_HTTPRequest_method_request_raw>`
 
 Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>` using a raw array of bytes for the request body. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
 
@@ -615,7 +615,7 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is suc
 
 .. rst-class:: classref-method
 
-void **set_http_proxy** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
+|void| **set_http_proxy**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ ) :ref:`🔗<class_HTTPRequest_method_set_http_proxy>`
 
 Sets the proxy server for HTTP requests.
 
@@ -629,7 +629,7 @@ The proxy server is unset if ``host`` is empty or ``port`` is -1.
 
 .. rst-class:: classref-method
 
-void **set_https_proxy** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
+|void| **set_https_proxy**\ (\ host\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`\ ) :ref:`🔗<class_HTTPRequest_method_set_https_proxy>`
 
 Sets the proxy server for HTTPS requests.
 
@@ -643,7 +643,7 @@ The proxy server is unset if ``host`` is empty or ``port`` is -1.
 
 .. rst-class:: classref-method
 
-void **set_tls_options** **(** :ref:`TLSOptions<class_TLSOptions>` client_options **)**
+|void| **set_tls_options**\ (\ client_options\: :ref:`TLSOptions<class_TLSOptions>`\ ) :ref:`🔗<class_HTTPRequest_method_set_tls_options>`
 
 Sets the :ref:`TLSOptions<class_TLSOptions>` to be used when connecting to an HTTPS server. See :ref:`TLSOptions.client<class_TLSOptions_method_client>`.
 
@@ -654,3 +654,4 @@ Sets the :ref:`TLSOptions<class_TLSOptions>` to be used when connecting to an HT
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

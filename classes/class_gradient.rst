@@ -49,25 +49,25 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`add_point<class_Gradient_method_add_point>` **(** :ref:`float<class_float>` offset, :ref:`Color<class_Color>` color **)** |
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Color<class_Color>` | :ref:`get_color<class_Gradient_method_get_color>` **(** :ref:`int<class_int>` point **)**                                       |
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_offset<class_Gradient_method_get_offset>` **(** :ref:`int<class_int>` point **)**                                     |
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`     | :ref:`get_point_count<class_Gradient_method_get_point_count>` **(** **)** |const|                                               |
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`remove_point<class_Gradient_method_remove_point>` **(** :ref:`int<class_int>` point **)**                                 |
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`reverse<class_Gradient_method_reverse>` **(** **)**                                                                       |
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Color<class_Color>` | :ref:`sample<class_Gradient_method_sample>` **(** :ref:`float<class_float>` offset **)**                                        |
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_color<class_Gradient_method_set_color>` **(** :ref:`int<class_int>` point, :ref:`Color<class_Color>` color **)**      |
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_offset<class_Gradient_method_set_offset>` **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset **)**   |
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`add_point<class_Gradient_method_add_point>`\ (\ offset\: :ref:`float<class_float>`, color\: :ref:`Color<class_Color>`\ ) |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>` | :ref:`get_color<class_Gradient_method_get_color>`\ (\ point\: :ref:`int<class_int>`\ )                                         |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_offset<class_Gradient_method_get_offset>`\ (\ point\: :ref:`int<class_int>`\ )                                       |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`get_point_count<class_Gradient_method_get_point_count>`\ (\ ) |const|                                                    |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`remove_point<class_Gradient_method_remove_point>`\ (\ point\: :ref:`int<class_int>`\ )                                   |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`reverse<class_Gradient_method_reverse>`\ (\ )                                                                            |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>` | :ref:`sample<class_Gradient_method_sample>`\ (\ offset\: :ref:`float<class_float>`\ )                                          |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_color<class_Gradient_method_set_color>`\ (\ point\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ )      |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_offset<class_Gradient_method_set_offset>`\ (\ point\: :ref:`int<class_int>`, offset\: :ref:`float<class_float>`\ )   |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -82,7 +82,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **InterpolationMode**:
+enum **InterpolationMode**: :ref:`🔗<enum_Gradient_InterpolationMode>`
 
 .. _class_Gradient_constant_GRADIENT_INTERPOLATE_LINEAR:
 
@@ -116,7 +116,7 @@ Cubic interpolation.
 
 .. rst-class:: classref-enumeration
 
-enum **ColorSpace**:
+enum **ColorSpace**: :ref:`🔗<enum_Gradient_ColorSpace>`
 
 .. _class_Gradient_constant_GRADIENT_COLOR_SPACE_SRGB:
 
@@ -155,16 +155,18 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedColorArray<class_PackedColorArray>` **colors** = ``PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)``
+:ref:`PackedColorArray<class_PackedColorArray>` **colors** = ``PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)`` :ref:`🔗<class_Gradient_property_colors>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_colors** **(** :ref:`PackedColorArray<class_PackedColorArray>` value **)**
-- :ref:`PackedColorArray<class_PackedColorArray>` **get_colors** **(** **)**
+- |void| **set_colors**\ (\ value\: :ref:`PackedColorArray<class_PackedColorArray>`\ )
+- :ref:`PackedColorArray<class_PackedColorArray>` **get_colors**\ (\ )
 
-Gradient's colors returned as a :ref:`PackedColorArray<class_PackedColorArray>`.
+Gradient's colors as a :ref:`PackedColorArray<class_PackedColorArray>`.
 
-\ **Note:** This property returns a copy, modifying the return value does not update the gradient. To update the gradient use :ref:`set_color<class_Gradient_method_set_color>` method (for updating colors individually) or assign to this property directly (for bulk-updating all colors at once).
+\ **Note:** Setting this property updates all colors at once. To update any color individually use :ref:`set_color<class_Gradient_method_set_color>`.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -174,12 +176,12 @@ Gradient's colors returned as a :ref:`PackedColorArray<class_PackedColorArray>`.
 
 .. rst-class:: classref-property
 
-:ref:`ColorSpace<enum_Gradient_ColorSpace>` **interpolation_color_space** = ``0``
+:ref:`ColorSpace<enum_Gradient_ColorSpace>` **interpolation_color_space** = ``0`` :ref:`🔗<class_Gradient_property_interpolation_color_space>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_interpolation_color_space** **(** :ref:`ColorSpace<enum_Gradient_ColorSpace>` value **)**
-- :ref:`ColorSpace<enum_Gradient_ColorSpace>` **get_interpolation_color_space** **(** **)**
+- |void| **set_interpolation_color_space**\ (\ value\: :ref:`ColorSpace<enum_Gradient_ColorSpace>`\ )
+- :ref:`ColorSpace<enum_Gradient_ColorSpace>` **get_interpolation_color_space**\ (\ )
 
 The color space used to interpolate between points of the gradient. It does not affect the returned colors, which will always be in sRGB space. See :ref:`ColorSpace<enum_Gradient_ColorSpace>` for available modes.
 
@@ -193,12 +195,12 @@ The color space used to interpolate between points of the gradient. It does not 
 
 .. rst-class:: classref-property
 
-:ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **interpolation_mode** = ``0``
+:ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **interpolation_mode** = ``0`` :ref:`🔗<class_Gradient_property_interpolation_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_interpolation_mode** **(** :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` value **)**
-- :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **get_interpolation_mode** **(** **)**
+- |void| **set_interpolation_mode**\ (\ value\: :ref:`InterpolationMode<enum_Gradient_InterpolationMode>`\ )
+- :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **get_interpolation_mode**\ (\ )
 
 The algorithm used to interpolate between points of the gradient. See :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` for available modes.
 
@@ -210,16 +212,18 @@ The algorithm used to interpolate between points of the gradient. See :ref:`Inte
 
 .. rst-class:: classref-property
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` **offsets** = ``PackedFloat32Array(0, 1)``
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **offsets** = ``PackedFloat32Array(0, 1)`` :ref:`🔗<class_Gradient_property_offsets>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_offsets** **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` value **)**
-- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_offsets** **(** **)**
+- |void| **set_offsets**\ (\ value\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )
+- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_offsets**\ (\ )
 
-Gradient's offsets returned as a :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
+Gradient's offsets as a :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
 
-\ **Note:** This property returns a copy, modifying the return value does not update the gradient. To update the gradient use :ref:`set_offset<class_Gradient_method_set_offset>` method (for updating offsets individually) or assign to this property directly (for bulk-updating all offsets at once).
+\ **Note:** Setting this property updates all offsets at once. To update any offset individually use :ref:`set_offset<class_Gradient_method_set_offset>`.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
 
 .. rst-class:: classref-section-separator
 
@@ -234,7 +238,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_point** **(** :ref:`float<class_float>` offset, :ref:`Color<class_Color>` color **)**
+|void| **add_point**\ (\ offset\: :ref:`float<class_float>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Gradient_method_add_point>`
 
 Adds the specified color to the gradient, with the specified offset.
 
@@ -246,7 +250,7 @@ Adds the specified color to the gradient, with the specified offset.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_color** **(** :ref:`int<class_int>` point **)**
+:ref:`Color<class_Color>` **get_color**\ (\ point\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Gradient_method_get_color>`
 
 Returns the color of the gradient color at index ``point``.
 
@@ -258,7 +262,7 @@ Returns the color of the gradient color at index ``point``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_offset** **(** :ref:`int<class_int>` point **)**
+:ref:`float<class_float>` **get_offset**\ (\ point\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Gradient_method_get_offset>`
 
 Returns the offset of the gradient color at index ``point``.
 
@@ -270,7 +274,7 @@ Returns the offset of the gradient color at index ``point``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_point_count** **(** **)** |const|
+:ref:`int<class_int>` **get_point_count**\ (\ ) |const| :ref:`🔗<class_Gradient_method_get_point_count>`
 
 Returns the number of colors in the gradient.
 
@@ -282,7 +286,7 @@ Returns the number of colors in the gradient.
 
 .. rst-class:: classref-method
 
-void **remove_point** **(** :ref:`int<class_int>` point **)**
+|void| **remove_point**\ (\ point\: :ref:`int<class_int>`\ ) :ref:`🔗<class_Gradient_method_remove_point>`
 
 Removes the color at index ``point``.
 
@@ -294,7 +298,7 @@ Removes the color at index ``point``.
 
 .. rst-class:: classref-method
 
-void **reverse** **(** **)**
+|void| **reverse**\ (\ ) :ref:`🔗<class_Gradient_method_reverse>`
 
 Reverses/mirrors the gradient.
 
@@ -308,7 +312,7 @@ Reverses/mirrors the gradient.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **sample** **(** :ref:`float<class_float>` offset **)**
+:ref:`Color<class_Color>` **sample**\ (\ offset\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Gradient_method_sample>`
 
 Returns the interpolated color specified by ``offset``.
 
@@ -320,7 +324,7 @@ Returns the interpolated color specified by ``offset``.
 
 .. rst-class:: classref-method
 
-void **set_color** **(** :ref:`int<class_int>` point, :ref:`Color<class_Color>` color **)**
+|void| **set_color**\ (\ point\: :ref:`int<class_int>`, color\: :ref:`Color<class_Color>`\ ) :ref:`🔗<class_Gradient_method_set_color>`
 
 Sets the color of the gradient color at index ``point``.
 
@@ -332,7 +336,7 @@ Sets the color of the gradient color at index ``point``.
 
 .. rst-class:: classref-method
 
-void **set_offset** **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset **)**
+|void| **set_offset**\ (\ point\: :ref:`int<class_int>`, offset\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Gradient_method_set_offset>`
 
 Sets the offset for the gradient color at index ``point``.
 
@@ -343,3 +347,4 @@ Sets the offset for the gradient color at index ``point``.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

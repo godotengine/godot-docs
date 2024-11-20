@@ -282,19 +282,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`get_feature<class_BaseMaterial3D_method_get_feature>` **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|                                            |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`get_flag<class_BaseMaterial3D_method_get_flag>` **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|                                                         |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`get_texture<class_BaseMaterial3D_method_get_texture>` **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|                                    |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_feature<class_BaseMaterial3D_method_set_feature>` **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**                    |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_flag<class_BaseMaterial3D_method_set_flag>` **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**                                 |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_texture<class_BaseMaterial3D_method_set_texture>` **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)** |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`get_feature<class_BaseMaterial3D_method_get_feature>`\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|                                              |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`get_flag<class_BaseMaterial3D_method_get_flag>`\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|                                                           |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`get_texture<class_BaseMaterial3D_method_get_texture>`\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|                                      |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`set_feature<class_BaseMaterial3D_method_set_feature>`\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )                    |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`set_flag<class_BaseMaterial3D_method_set_flag>`\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )                                 |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`set_texture<class_BaseMaterial3D_method_set_texture>`\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ ) |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -309,7 +309,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TextureParam**:
+enum **TextureParam**: :ref:`🔗<enum_BaseMaterial3D_TextureParam>`
 
 .. _class_BaseMaterial3D_constant_TEXTURE_ALBEDO:
 
@@ -471,7 +471,7 @@ Represents the size of the :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`
 
 .. rst-class:: classref-enumeration
 
-enum **TextureFilter**:
+enum **TextureFilter**: :ref:`🔗<enum_BaseMaterial3D_TextureFilter>`
 
 .. _class_BaseMaterial3D_constant_TEXTURE_FILTER_NEAREST:
 
@@ -479,7 +479,7 @@ enum **TextureFilter**:
 
 :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **TEXTURE_FILTER_NEAREST** = ``0``
 
-The texture filter reads from the nearest pixel only. The simplest and fastest method of filtering, but the texture will look pixelized.
+The texture filter reads from the nearest pixel only. This makes the texture look pixelated from up close, and grainy from a distance (due to mipmaps not being sampled).
 
 .. _class_BaseMaterial3D_constant_TEXTURE_FILTER_LINEAR:
 
@@ -487,7 +487,7 @@ The texture filter reads from the nearest pixel only. The simplest and fastest m
 
 :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **TEXTURE_FILTER_LINEAR** = ``1``
 
-The texture filter blends between the nearest 4 pixels. Use this when you want to avoid a pixelated style, but do not want mipmaps.
+The texture filter blends between the nearest 4 pixels. This makes the texture look smooth from up close, and grainy from a distance (due to mipmaps not being sampled).
 
 .. _class_BaseMaterial3D_constant_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS:
 
@@ -495,7 +495,7 @@ The texture filter blends between the nearest 4 pixels. Use this when you want t
 
 :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **TEXTURE_FILTER_NEAREST_WITH_MIPMAPS** = ``2``
 
-The texture filter reads from the nearest pixel in the nearest mipmap. The fastest way to read from textures with mipmaps.
+The texture filter reads from the nearest pixel and blends between the nearest 2 mipmaps (or uses the nearest mipmap if :ref:`ProjectSettings.rendering/textures/default_filters/use_nearest_mipmap_filter<class_ProjectSettings_property_rendering/textures/default_filters/use_nearest_mipmap_filter>` is ``true``). This makes the texture look pixelated from up close, and smooth from a distance.
 
 .. _class_BaseMaterial3D_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS:
 
@@ -503,7 +503,7 @@ The texture filter reads from the nearest pixel in the nearest mipmap. The faste
 
 :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **TEXTURE_FILTER_LINEAR_WITH_MIPMAPS** = ``3``
 
-The texture filter blends between the nearest 4 pixels and between the nearest 2 mipmaps. Use this for most cases as mipmaps are important to smooth out pixels that are far from the camera.
+The texture filter blends between the nearest 4 pixels and between the nearest 2 mipmaps (or uses the nearest mipmap if :ref:`ProjectSettings.rendering/textures/default_filters/use_nearest_mipmap_filter<class_ProjectSettings_property_rendering/textures/default_filters/use_nearest_mipmap_filter>` is ``true``). This makes the texture look smooth from up close, and smooth from a distance.
 
 .. _class_BaseMaterial3D_constant_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC:
 
@@ -511,7 +511,7 @@ The texture filter blends between the nearest 4 pixels and between the nearest 2
 
 :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC** = ``4``
 
-The texture filter reads from the nearest pixel, but selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
+The texture filter reads from the nearest pixel and blends between 2 mipmaps (or uses the nearest mipmap if :ref:`ProjectSettings.rendering/textures/default_filters/use_nearest_mipmap_filter<class_ProjectSettings_property_rendering/textures/default_filters/use_nearest_mipmap_filter>` is ``true``) based on the angle between the surface and the camera view. This makes the texture look pixelated from up close, and smooth from a distance. Anisotropic filtering improves texture quality on surfaces that are almost in line with the camera, but is slightly slower. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
 
 .. _class_BaseMaterial3D_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC:
 
@@ -519,7 +519,7 @@ The texture filter reads from the nearest pixel, but selects a mipmap based on t
 
 :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC** = ``5``
 
-The texture filter blends between the nearest 4 pixels and selects a mipmap based on the angle between the surface and the camera view. This reduces artifacts on surfaces that are almost in line with the camera. This is the slowest of the filtering options, but results in the highest quality texturing. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
+The texture filter blends between the nearest 4 pixels and blends between 2 mipmaps (or uses the nearest mipmap if :ref:`ProjectSettings.rendering/textures/default_filters/use_nearest_mipmap_filter<class_ProjectSettings_property_rendering/textures/default_filters/use_nearest_mipmap_filter>` is ``true``) based on the angle between the surface and the camera view. This makes the texture look smooth from up close, and smooth from a distance. Anisotropic filtering improves texture quality on surfaces that are almost in line with the camera, but is slightly slower. The anisotropic filtering level can be changed by adjusting :ref:`ProjectSettings.rendering/textures/default_filters/anisotropic_filtering_level<class_ProjectSettings_property_rendering/textures/default_filters/anisotropic_filtering_level>`.
 
 .. _class_BaseMaterial3D_constant_TEXTURE_FILTER_MAX:
 
@@ -537,7 +537,7 @@ Represents the size of the :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter
 
 .. rst-class:: classref-enumeration
 
-enum **DetailUV**:
+enum **DetailUV**: :ref:`🔗<enum_BaseMaterial3D_DetailUV>`
 
 .. _class_BaseMaterial3D_constant_DETAIL_UV_1:
 
@@ -563,7 +563,7 @@ Use ``UV2`` with the detail texture.
 
 .. rst-class:: classref-enumeration
 
-enum **Transparency**:
+enum **Transparency**: :ref:`🔗<enum_BaseMaterial3D_Transparency>`
 
 .. _class_BaseMaterial3D_constant_TRANSPARENCY_DISABLED:
 
@@ -621,7 +621,7 @@ Represents the size of the :ref:`Transparency<enum_BaseMaterial3D_Transparency>`
 
 .. rst-class:: classref-enumeration
 
-enum **ShadingMode**:
+enum **ShadingMode**: :ref:`🔗<enum_BaseMaterial3D_ShadingMode>`
 
 .. _class_BaseMaterial3D_constant_SHADING_MODE_UNSHADED:
 
@@ -645,7 +645,7 @@ The object will be shaded per pixel. Useful for realistic shading effects.
 
 :ref:`ShadingMode<enum_BaseMaterial3D_ShadingMode>` **SHADING_MODE_PER_VERTEX** = ``2``
 
-The object will be shaded per vertex. Useful when you want cheaper shaders and do not care about visual quality. Not implemented yet (this mode will act like :ref:`SHADING_MODE_PER_PIXEL<class_BaseMaterial3D_constant_SHADING_MODE_PER_PIXEL>`).
+The object will be shaded per vertex. Useful when you want cheaper shaders and do not care about visual quality.
 
 .. _class_BaseMaterial3D_constant_SHADING_MODE_MAX:
 
@@ -663,7 +663,7 @@ Represents the size of the :ref:`ShadingMode<enum_BaseMaterial3D_ShadingMode>` e
 
 .. rst-class:: classref-enumeration
 
-enum **Feature**:
+enum **Feature**: :ref:`🔗<enum_BaseMaterial3D_Feature>`
 
 .. _class_BaseMaterial3D_constant_FEATURE_EMISSION:
 
@@ -777,7 +777,7 @@ Represents the size of the :ref:`Feature<enum_BaseMaterial3D_Feature>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **BlendMode**:
+enum **BlendMode**: :ref:`🔗<enum_BaseMaterial3D_BlendMode>`
 
 .. _class_BaseMaterial3D_constant_BLEND_MODE_MIX:
 
@@ -811,6 +811,14 @@ The color of the object is subtracted from the background.
 
 The color of the object is multiplied by the background.
 
+.. _class_BaseMaterial3D_constant_BLEND_MODE_PREMULT_ALPHA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **BLEND_MODE_PREMULT_ALPHA** = ``4``
+
+The color of the object is added to the background and the alpha channel is used to mask out the background. This is effectively a hybrid of the blend mix and add modes, useful for effects like fire where you want the flame to add but the smoke to mix. By default, this works with unshaded materials using premultiplied textures. For shaded materials, use the ``PREMUL_ALPHA_FACTOR`` built-in so that lighting can be modulated as well.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -819,7 +827,7 @@ The color of the object is multiplied by the background.
 
 .. rst-class:: classref-enumeration
 
-enum **AlphaAntiAliasing**:
+enum **AlphaAntiAliasing**: :ref:`🔗<enum_BaseMaterial3D_AlphaAntiAliasing>`
 
 .. _class_BaseMaterial3D_constant_ALPHA_ANTIALIASING_OFF:
 
@@ -853,7 +861,7 @@ Enables AlphaToCoverage and forces all non-zero alpha values to ``1``. Alpha val
 
 .. rst-class:: classref-enumeration
 
-enum **DepthDrawMode**:
+enum **DepthDrawMode**: :ref:`🔗<enum_BaseMaterial3D_DepthDrawMode>`
 
 .. _class_BaseMaterial3D_constant_DEPTH_DRAW_OPAQUE_ONLY:
 
@@ -889,7 +897,7 @@ Objects will not write their depth to the depth buffer, even during the depth pr
 
 .. rst-class:: classref-enumeration
 
-enum **CullMode**:
+enum **CullMode**: :ref:`🔗<enum_BaseMaterial3D_CullMode>`
 
 .. _class_BaseMaterial3D_constant_CULL_BACK:
 
@@ -923,7 +931,7 @@ No face culling is performed; both the front face and back face will be visible.
 
 .. rst-class:: classref-enumeration
 
-enum **Flags**:
+enum **Flags**: :ref:`🔗<enum_BaseMaterial3D_Flags>`
 
 .. _class_BaseMaterial3D_constant_FLAG_DISABLE_DEPTH_TEST:
 
@@ -1119,7 +1127,7 @@ Represents the size of the :ref:`Flags<enum_BaseMaterial3D_Flags>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **DiffuseMode**:
+enum **DiffuseMode**: :ref:`🔗<enum_BaseMaterial3D_DiffuseMode>`
 
 .. _class_BaseMaterial3D_constant_DIFFUSE_BURLEY:
 
@@ -1161,7 +1169,7 @@ Uses a hard cut for lighting, with smoothing affected by roughness.
 
 .. rst-class:: classref-enumeration
 
-enum **SpecularMode**:
+enum **SpecularMode**: :ref:`🔗<enum_BaseMaterial3D_SpecularMode>`
 
 .. _class_BaseMaterial3D_constant_SPECULAR_SCHLICK_GGX:
 
@@ -1195,7 +1203,7 @@ No specular blob. This is slightly faster to render than other specular modes.
 
 .. rst-class:: classref-enumeration
 
-enum **BillboardMode**:
+enum **BillboardMode**: :ref:`🔗<enum_BaseMaterial3D_BillboardMode>`
 
 .. _class_BaseMaterial3D_constant_BILLBOARD_DISABLED:
 
@@ -1227,7 +1235,7 @@ The object's X axis will always face the camera.
 
 :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **BILLBOARD_PARTICLES** = ``3``
 
-Used for particle systems when assigned to :ref:`GPUParticles3D<class_GPUParticles3D>` and :ref:`CPUParticles3D<class_CPUParticles3D>` nodes. Enables ``particles_anim_*`` properties.
+Used for particle systems when assigned to :ref:`GPUParticles3D<class_GPUParticles3D>` and :ref:`CPUParticles3D<class_CPUParticles3D>` nodes (flipbook animation). Enables ``particles_anim_*`` properties.
 
 The :ref:`ParticleProcessMaterial.anim_speed_min<class_ParticleProcessMaterial_property_anim_speed_min>` or :ref:`CPUParticles3D.anim_speed_min<class_CPUParticles3D_property_anim_speed_min>` should also be set to a value bigger than zero for the animation to play.
 
@@ -1239,7 +1247,7 @@ The :ref:`ParticleProcessMaterial.anim_speed_min<class_ParticleProcessMaterial_p
 
 .. rst-class:: classref-enumeration
 
-enum **TextureChannel**:
+enum **TextureChannel**: :ref:`🔗<enum_BaseMaterial3D_TextureChannel>`
 
 .. _class_BaseMaterial3D_constant_TEXTURE_CHANNEL_RED:
 
@@ -1289,7 +1297,7 @@ Used to read from the linear (non-perceptual) average of the red, green and blue
 
 .. rst-class:: classref-enumeration
 
-enum **EmissionOperator**:
+enum **EmissionOperator**: :ref:`🔗<enum_BaseMaterial3D_EmissionOperator>`
 
 .. _class_BaseMaterial3D_constant_EMISSION_OP_ADD:
 
@@ -1315,7 +1323,7 @@ Multiplies the emission color by the color from the emission texture.
 
 .. rst-class:: classref-enumeration
 
-enum **DistanceFadeMode**:
+enum **DistanceFadeMode**: :ref:`🔗<enum_BaseMaterial3D_DistanceFadeMode>`
 
 .. _class_BaseMaterial3D_constant_DISTANCE_FADE_DISABLED:
 
@@ -1362,12 +1370,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **albedo_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **albedo_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_BaseMaterial3D_property_albedo_color>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_albedo** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_albedo** **(** **)**
+- |void| **set_albedo**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_albedo**\ (\ )
 
 The material's base color.
 
@@ -1381,12 +1389,12 @@ The material's base color.
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **albedo_texture**
+:ref:`Texture2D<class_Texture2D>` **albedo_texture** :ref:`🔗<class_BaseMaterial3D_property_albedo_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture to multiply by :ref:`albedo_color<class_BaseMaterial3D_property_albedo_color>`. Used for basic texturing of objects.
 
@@ -1400,12 +1408,12 @@ If the texture appears unexpectedly too dark or too bright, check :ref:`albedo_t
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **albedo_texture_force_srgb** = ``false``
+:ref:`bool<class_bool>` **albedo_texture_force_srgb** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_albedo_texture_force_srgb>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, forces a conversion of the :ref:`albedo_texture<class_BaseMaterial3D_property_albedo_texture>` from sRGB color space to linear color space. See also :ref:`vertex_color_is_srgb<class_BaseMaterial3D_property_vertex_color_is_srgb>`.
 
@@ -1419,12 +1427,12 @@ This should only be enabled when needed (typically when using a :ref:`ViewportTe
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **albedo_texture_msdf** = ``false``
+:ref:`bool<class_bool>` **albedo_texture_msdf** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_albedo_texture_msdf>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 Enables multichannel signed distance field rendering shader. Use :ref:`msdf_pixel_range<class_BaseMaterial3D_property_msdf_pixel_range>` and :ref:`msdf_outline_size<class_BaseMaterial3D_property_msdf_outline_size>` to configure MSDF parameters.
 
@@ -1436,12 +1444,12 @@ Enables multichannel signed distance field rendering shader. Use :ref:`msdf_pixe
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **alpha_antialiasing_edge**
+:ref:`float<class_float>` **alpha_antialiasing_edge** :ref:`🔗<class_BaseMaterial3D_property_alpha_antialiasing_edge>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_alpha_antialiasing_edge** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_alpha_antialiasing_edge** **(** **)**
+- |void| **set_alpha_antialiasing_edge**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_alpha_antialiasing_edge**\ (\ )
 
 Threshold at which antialiasing will be applied on the alpha channel.
 
@@ -1453,12 +1461,12 @@ Threshold at which antialiasing will be applied on the alpha channel.
 
 .. rst-class:: classref-property
 
-:ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **alpha_antialiasing_mode**
+:ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **alpha_antialiasing_mode** :ref:`🔗<class_BaseMaterial3D_property_alpha_antialiasing_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_alpha_antialiasing** **(** :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` value **)**
-- :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **get_alpha_antialiasing** **(** **)**
+- |void| **set_alpha_antialiasing**\ (\ value\: :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>`\ )
+- :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **get_alpha_antialiasing**\ (\ )
 
 The type of alpha antialiasing to apply. See :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>`.
 
@@ -1470,12 +1478,12 @@ The type of alpha antialiasing to apply. See :ref:`AlphaAntiAliasing<enum_BaseMa
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **alpha_hash_scale**
+:ref:`float<class_float>` **alpha_hash_scale** :ref:`🔗<class_BaseMaterial3D_property_alpha_hash_scale>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_alpha_hash_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_alpha_hash_scale** **(** **)**
+- |void| **set_alpha_hash_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_alpha_hash_scale**\ (\ )
 
 The hashing scale for Alpha Hash. Recommended values between ``0`` and ``2``.
 
@@ -1487,12 +1495,12 @@ The hashing scale for Alpha Hash. Recommended values between ``0`` and ``2``.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **alpha_scissor_threshold**
+:ref:`float<class_float>` **alpha_scissor_threshold** :ref:`🔗<class_BaseMaterial3D_property_alpha_scissor_threshold>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_alpha_scissor_threshold** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_alpha_scissor_threshold** **(** **)**
+- |void| **set_alpha_scissor_threshold**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_alpha_scissor_threshold**\ (\ )
 
 Threshold at which the alpha scissor will discard values. Higher values will result in more pixels being discarded. If the material becomes too opaque at a distance, try increasing :ref:`alpha_scissor_threshold<class_BaseMaterial3D_property_alpha_scissor_threshold>`. If the material disappears at a distance, try decreasing :ref:`alpha_scissor_threshold<class_BaseMaterial3D_property_alpha_scissor_threshold>`.
 
@@ -1504,12 +1512,12 @@ Threshold at which the alpha scissor will discard values. Higher values will res
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **anisotropy** = ``0.0``
+:ref:`float<class_float>` **anisotropy** = ``0.0`` :ref:`🔗<class_BaseMaterial3D_property_anisotropy>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_anisotropy** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_anisotropy** **(** **)**
+- |void| **set_anisotropy**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_anisotropy**\ (\ )
 
 The strength of the anisotropy effect. This is multiplied by :ref:`anisotropy_flowmap<class_BaseMaterial3D_property_anisotropy_flowmap>`'s alpha channel if a texture is defined there and the texture contains an alpha channel.
 
@@ -1521,12 +1529,12 @@ The strength of the anisotropy effect. This is multiplied by :ref:`anisotropy_fl
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **anisotropy_enabled** = ``false``
+:ref:`bool<class_bool>` **anisotropy_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_anisotropy_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, anisotropy is enabled. Anisotropy changes the shape of the specular blob and aligns it to tangent space. This is useful for brushed aluminium and hair reflections.
 
@@ -1542,12 +1550,12 @@ If ``true``, anisotropy is enabled. Anisotropy changes the shape of the specular
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **anisotropy_flowmap**
+:ref:`Texture2D<class_Texture2D>` **anisotropy_flowmap** :ref:`🔗<class_BaseMaterial3D_property_anisotropy_flowmap>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture that offsets the tangent map for anisotropy calculations and optionally controls the anisotropy effect (if an alpha channel is present). The flowmap texture is expected to be a derivative map, with the red channel representing distortion on the X axis and green channel representing distortion on the Y axis. Values below 0.5 will result in negative distortion, whereas values above 0.5 will result in positive distortion.
 
@@ -1561,12 +1569,12 @@ If present, the texture's alpha channel will be used to multiply the strength of
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **ao_enabled** = ``false``
+:ref:`bool<class_bool>` **ao_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_ao_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, ambient occlusion is enabled. Ambient occlusion darkens areas based on the :ref:`ao_texture<class_BaseMaterial3D_property_ao_texture>`.
 
@@ -1578,12 +1586,12 @@ If ``true``, ambient occlusion is enabled. Ambient occlusion darkens areas based
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **ao_light_affect** = ``0.0``
+:ref:`float<class_float>` **ao_light_affect** = ``0.0`` :ref:`🔗<class_BaseMaterial3D_property_ao_light_affect>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_ao_light_affect** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_ao_light_affect** **(** **)**
+- |void| **set_ao_light_affect**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_ao_light_affect**\ (\ )
 
 Amount that ambient occlusion affects lighting from lights. If ``0``, ambient occlusion only affects ambient light. If ``1``, ambient occlusion affects lights just as much as it affects ambient light. This can be used to impact the strength of the ambient occlusion effect, but typically looks unrealistic.
 
@@ -1595,12 +1603,12 @@ Amount that ambient occlusion affects lighting from lights. If ``0``, ambient oc
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **ao_on_uv2** = ``false``
+:ref:`bool<class_bool>` **ao_on_uv2** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_ao_on_uv2>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, use ``UV2`` coordinates to look up from the :ref:`ao_texture<class_BaseMaterial3D_property_ao_texture>`.
 
@@ -1612,12 +1620,12 @@ If ``true``, use ``UV2`` coordinates to look up from the :ref:`ao_texture<class_
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **ao_texture**
+:ref:`Texture2D<class_Texture2D>` **ao_texture** :ref:`🔗<class_BaseMaterial3D_property_ao_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture that defines the amount of ambient occlusion for a given point on the object.
 
@@ -1629,12 +1637,12 @@ Texture that defines the amount of ambient occlusion for a given point on the ob
 
 .. rst-class:: classref-property
 
-:ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **ao_texture_channel** = ``0``
+:ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **ao_texture_channel** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_ao_texture_channel>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_ao_texture_channel** **(** :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` value **)**
-- :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **get_ao_texture_channel** **(** **)**
+- |void| **set_ao_texture_channel**\ (\ value\: :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>`\ )
+- :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **get_ao_texture_channel**\ (\ )
 
 Specifies the channel of the :ref:`ao_texture<class_BaseMaterial3D_property_ao_texture>` in which the ambient occlusion information is stored. This is useful when you store the information for multiple effects in a single texture. For example if you stored metallic in the red channel, roughness in the blue, and ambient occlusion in the green you could reduce the number of textures you use.
 
@@ -1646,12 +1654,12 @@ Specifies the channel of the :ref:`ao_texture<class_BaseMaterial3D_property_ao_t
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **backlight** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **backlight** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_BaseMaterial3D_property_backlight>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_backlight** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_backlight** **(** **)**
+- |void| **set_backlight**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_backlight**\ (\ )
 
 The color used by the backlight effect. Represents the light passing through an object.
 
@@ -1663,12 +1671,12 @@ The color used by the backlight effect. Represents the light passing through an 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **backlight_enabled** = ``false``
+:ref:`bool<class_bool>` **backlight_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_backlight_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, the backlight effect is enabled. See also :ref:`subsurf_scatter_transmittance_enabled<class_BaseMaterial3D_property_subsurf_scatter_transmittance_enabled>`.
 
@@ -1680,12 +1688,12 @@ If ``true``, the backlight effect is enabled. See also :ref:`subsurf_scatter_tra
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **backlight_texture**
+:ref:`Texture2D<class_Texture2D>` **backlight_texture** :ref:`🔗<class_BaseMaterial3D_property_backlight_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture used to control the backlight effect per-pixel. Added to :ref:`backlight<class_BaseMaterial3D_property_backlight>`.
 
@@ -1697,12 +1705,12 @@ Texture used to control the backlight effect per-pixel. Added to :ref:`backlight
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **billboard_keep_scale** = ``false``
+:ref:`bool<class_bool>` **billboard_keep_scale** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_billboard_keep_scale>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, the shader will keep the scale set for the mesh. Otherwise, the scale is lost when billboarding. Only applies when :ref:`billboard_mode<class_BaseMaterial3D_property_billboard_mode>` is not :ref:`BILLBOARD_DISABLED<class_BaseMaterial3D_constant_BILLBOARD_DISABLED>`.
 
@@ -1714,14 +1722,16 @@ If ``true``, the shader will keep the scale set for the mesh. Otherwise, the sca
 
 .. rst-class:: classref-property
 
-:ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **billboard_mode** = ``0``
+:ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **billboard_mode** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_billboard_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_billboard_mode** **(** :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` value **)**
-- :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **get_billboard_mode** **(** **)**
+- |void| **set_billboard_mode**\ (\ value\: :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`\ )
+- :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **get_billboard_mode**\ (\ )
 
 Controls how the object faces the camera. See :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`.
+
+\ **Note:** When billboarding is enabled and the material also casts shadows, billboards will face **the** camera in the scene when rendering shadows. In scenes with multiple cameras, the intended shadow cannot be determined and this will result in undefined behavior. See `GitHub Pull Request #72638 <https://github.com/godotengine/godot/pull/72638>`__ for details.
 
 \ **Note:** Billboard mode is not suitable for VR because the left-right vector of the camera is not horizontal when the screen is attached to your head instead of on the table. See `GitHub issue #41567 <https://github.com/godotengine/godot/issues/41567>`__ for details.
 
@@ -1733,12 +1743,12 @@ Controls how the object faces the camera. See :ref:`BillboardMode<enum_BaseMater
 
 .. rst-class:: classref-property
 
-:ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **blend_mode** = ``0``
+:ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **blend_mode** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_blend_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_blend_mode** **(** :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` value **)**
-- :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **get_blend_mode** **(** **)**
+- |void| **set_blend_mode**\ (\ value\: :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>`\ )
+- :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **get_blend_mode**\ (\ )
 
 The material's blend mode.
 
@@ -1752,12 +1762,12 @@ The material's blend mode.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **clearcoat** = ``1.0``
+:ref:`float<class_float>` **clearcoat** = ``1.0`` :ref:`🔗<class_BaseMaterial3D_property_clearcoat>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_clearcoat** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_clearcoat** **(** **)**
+- |void| **set_clearcoat**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_clearcoat**\ (\ )
 
 Sets the strength of the clearcoat effect. Setting to ``0`` looks the same as disabling the clearcoat effect.
 
@@ -1769,12 +1779,12 @@ Sets the strength of the clearcoat effect. Setting to ``0`` looks the same as di
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **clearcoat_enabled** = ``false``
+:ref:`bool<class_bool>` **clearcoat_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_clearcoat_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass to the lighting calculation resulting in an added specular blob. This makes materials appear as if they have a clear layer on them that can be either glossy or rough.
 
@@ -1788,12 +1798,12 @@ If ``true``, clearcoat rendering is enabled. Adds a secondary transparent pass t
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **clearcoat_roughness** = ``0.5``
+:ref:`float<class_float>` **clearcoat_roughness** = ``0.5`` :ref:`🔗<class_BaseMaterial3D_property_clearcoat_roughness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_clearcoat_roughness** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_clearcoat_roughness** **(** **)**
+- |void| **set_clearcoat_roughness**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_clearcoat_roughness**\ (\ )
 
 Sets the roughness of the clearcoat pass. A higher value results in a rougher clearcoat while a lower value results in a smoother clearcoat.
 
@@ -1805,12 +1815,12 @@ Sets the roughness of the clearcoat pass. A higher value results in a rougher cl
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **clearcoat_texture**
+:ref:`Texture2D<class_Texture2D>` **clearcoat_texture** :ref:`🔗<class_BaseMaterial3D_property_clearcoat_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture that defines the strength of the clearcoat effect and the glossiness of the clearcoat. Strength is specified in the red channel while glossiness is specified in the green channel.
 
@@ -1822,12 +1832,12 @@ Texture that defines the strength of the clearcoat effect and the glossiness of 
 
 .. rst-class:: classref-property
 
-:ref:`CullMode<enum_BaseMaterial3D_CullMode>` **cull_mode** = ``0``
+:ref:`CullMode<enum_BaseMaterial3D_CullMode>` **cull_mode** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_cull_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_cull_mode** **(** :ref:`CullMode<enum_BaseMaterial3D_CullMode>` value **)**
-- :ref:`CullMode<enum_BaseMaterial3D_CullMode>` **get_cull_mode** **(** **)**
+- |void| **set_cull_mode**\ (\ value\: :ref:`CullMode<enum_BaseMaterial3D_CullMode>`\ )
+- :ref:`CullMode<enum_BaseMaterial3D_CullMode>` **get_cull_mode**\ (\ )
 
 Determines which side of the triangle to cull depending on whether the triangle faces towards or away from the camera. See :ref:`CullMode<enum_BaseMaterial3D_CullMode>`.
 
@@ -1839,12 +1849,12 @@ Determines which side of the triangle to cull depending on whether the triangle 
 
 .. rst-class:: classref-property
 
-:ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>` **depth_draw_mode** = ``0``
+:ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>` **depth_draw_mode** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_depth_draw_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_depth_draw_mode** **(** :ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>` value **)**
-- :ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>` **get_depth_draw_mode** **(** **)**
+- |void| **set_depth_draw_mode**\ (\ value\: :ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>`\ )
+- :ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>` **get_depth_draw_mode**\ (\ )
 
 Determines when depth rendering takes place. See :ref:`DepthDrawMode<enum_BaseMaterial3D_DepthDrawMode>`. See also :ref:`transparency<class_BaseMaterial3D_property_transparency>`.
 
@@ -1856,12 +1866,12 @@ Determines when depth rendering takes place. See :ref:`DepthDrawMode<enum_BaseMa
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **detail_albedo**
+:ref:`Texture2D<class_Texture2D>` **detail_albedo** :ref:`🔗<class_BaseMaterial3D_property_detail_albedo>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture that specifies the color of the detail overlay. :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>`'s alpha channel is used as a mask, even when the material is opaque. To use a dedicated texture as a mask, see :ref:`detail_mask<class_BaseMaterial3D_property_detail_mask>`.
 
@@ -1875,12 +1885,12 @@ Texture that specifies the color of the detail overlay. :ref:`detail_albedo<clas
 
 .. rst-class:: classref-property
 
-:ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **detail_blend_mode** = ``0``
+:ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **detail_blend_mode** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_detail_blend_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_detail_blend_mode** **(** :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` value **)**
-- :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **get_detail_blend_mode** **(** **)**
+- |void| **set_detail_blend_mode**\ (\ value\: :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>`\ )
+- :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` **get_detail_blend_mode**\ (\ )
 
 Specifies how the :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>` should blend with the current ``ALBEDO``. See :ref:`BlendMode<enum_BaseMaterial3D_BlendMode>` for options.
 
@@ -1892,12 +1902,12 @@ Specifies how the :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albed
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **detail_enabled** = ``false``
+:ref:`bool<class_bool>` **detail_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_detail_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, enables the detail overlay. Detail is a second texture that gets mixed over the surface of the object based on :ref:`detail_mask<class_BaseMaterial3D_property_detail_mask>` and :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>`'s alpha channel. This can be used to add variation to objects, or to blend between two different albedo/normal textures.
 
@@ -1909,12 +1919,12 @@ If ``true``, enables the detail overlay. Detail is a second texture that gets mi
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **detail_mask**
+:ref:`Texture2D<class_Texture2D>` **detail_mask** :ref:`🔗<class_BaseMaterial3D_property_detail_mask>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture used to specify how the detail textures get blended with the base textures. :ref:`detail_mask<class_BaseMaterial3D_property_detail_mask>` can be used together with :ref:`detail_albedo<class_BaseMaterial3D_property_detail_albedo>`'s alpha channel (if any).
 
@@ -1926,12 +1936,12 @@ Texture used to specify how the detail textures get blended with the base textur
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **detail_normal**
+:ref:`Texture2D<class_Texture2D>` **detail_normal** :ref:`🔗<class_BaseMaterial3D_property_detail_normal>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture that specifies the per-pixel normal of the detail overlay. The :ref:`detail_normal<class_BaseMaterial3D_property_detail_normal>` texture only uses the red and green channels; the blue and alpha channels are ignored. The normal read from :ref:`detail_normal<class_BaseMaterial3D_property_detail_normal>` is oriented around the surface normal provided by the :ref:`Mesh<class_Mesh>`.
 
@@ -1945,12 +1955,12 @@ Texture that specifies the per-pixel normal of the detail overlay. The :ref:`det
 
 .. rst-class:: classref-property
 
-:ref:`DetailUV<enum_BaseMaterial3D_DetailUV>` **detail_uv_layer** = ``0``
+:ref:`DetailUV<enum_BaseMaterial3D_DetailUV>` **detail_uv_layer** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_detail_uv_layer>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_detail_uv** **(** :ref:`DetailUV<enum_BaseMaterial3D_DetailUV>` value **)**
-- :ref:`DetailUV<enum_BaseMaterial3D_DetailUV>` **get_detail_uv** **(** **)**
+- |void| **set_detail_uv**\ (\ value\: :ref:`DetailUV<enum_BaseMaterial3D_DetailUV>`\ )
+- :ref:`DetailUV<enum_BaseMaterial3D_DetailUV>` **get_detail_uv**\ (\ )
 
 Specifies whether to use ``UV`` or ``UV2`` for the detail layer. See :ref:`DetailUV<enum_BaseMaterial3D_DetailUV>` for options.
 
@@ -1962,12 +1972,12 @@ Specifies whether to use ``UV`` or ``UV2`` for the detail layer. See :ref:`Detai
 
 .. rst-class:: classref-property
 
-:ref:`DiffuseMode<enum_BaseMaterial3D_DiffuseMode>` **diffuse_mode** = ``0``
+:ref:`DiffuseMode<enum_BaseMaterial3D_DiffuseMode>` **diffuse_mode** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_diffuse_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_diffuse_mode** **(** :ref:`DiffuseMode<enum_BaseMaterial3D_DiffuseMode>` value **)**
-- :ref:`DiffuseMode<enum_BaseMaterial3D_DiffuseMode>` **get_diffuse_mode** **(** **)**
+- |void| **set_diffuse_mode**\ (\ value\: :ref:`DiffuseMode<enum_BaseMaterial3D_DiffuseMode>`\ )
+- :ref:`DiffuseMode<enum_BaseMaterial3D_DiffuseMode>` **get_diffuse_mode**\ (\ )
 
 The algorithm used for diffuse light scattering. See :ref:`DiffuseMode<enum_BaseMaterial3D_DiffuseMode>`.
 
@@ -1979,12 +1989,12 @@ The algorithm used for diffuse light scattering. See :ref:`DiffuseMode<enum_Base
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disable_ambient_light** = ``false``
+:ref:`bool<class_bool>` **disable_ambient_light** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_disable_ambient_light>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, the object receives no ambient light.
 
@@ -1996,12 +2006,12 @@ If ``true``, the object receives no ambient light.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disable_fog** = ``false``
+:ref:`bool<class_bool>` **disable_fog** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_disable_fog>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, the object will not be affected by fog (neither volumetric nor depth fog). This is useful for unshaded or transparent materials (e.g. particles), which without this setting will be affected even if fully transparent.
 
@@ -2013,12 +2023,12 @@ If ``true``, the object will not be affected by fog (neither volumetric nor dept
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **disable_receive_shadows** = ``false``
+:ref:`bool<class_bool>` **disable_receive_shadows** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_disable_receive_shadows>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, the object receives no shadow that would otherwise be cast onto it.
 
@@ -2030,16 +2040,16 @@ If ``true``, the object receives no shadow that would otherwise be cast onto it.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **distance_fade_max_distance** = ``10.0``
+:ref:`float<class_float>` **distance_fade_max_distance** = ``10.0`` :ref:`🔗<class_BaseMaterial3D_property_distance_fade_max_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_distance_fade_max_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_distance_fade_max_distance** **(** **)**
+- |void| **set_distance_fade_max_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_distance_fade_max_distance**\ (\ )
 
 Distance at which the object appears fully opaque.
 
-\ **Note:** If ``distance_fade_max_distance`` is less than ``distance_fade_min_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+\ **Note:** If :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>` is less than :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>`, the behavior will be reversed. The object will start to fade away at :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>` and will fully disappear once it reaches :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2049,16 +2059,16 @@ Distance at which the object appears fully opaque.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **distance_fade_min_distance** = ``0.0``
+:ref:`float<class_float>` **distance_fade_min_distance** = ``0.0`` :ref:`🔗<class_BaseMaterial3D_property_distance_fade_min_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_distance_fade_min_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_distance_fade_min_distance** **(** **)**
+- |void| **set_distance_fade_min_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_distance_fade_min_distance**\ (\ )
 
 Distance at which the object starts to become visible. If the object is less than this distance away, it will be invisible.
 
-\ **Note:** If ``distance_fade_min_distance`` is greater than ``distance_fade_max_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+\ **Note:** If :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>` is greater than :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>`, the behavior will be reversed. The object will start to fade away at :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>` and will fully disappear once it reaches :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2068,12 +2078,12 @@ Distance at which the object starts to become visible. If the object is less tha
 
 .. rst-class:: classref-property
 
-:ref:`DistanceFadeMode<enum_BaseMaterial3D_DistanceFadeMode>` **distance_fade_mode** = ``0``
+:ref:`DistanceFadeMode<enum_BaseMaterial3D_DistanceFadeMode>` **distance_fade_mode** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_distance_fade_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_distance_fade** **(** :ref:`DistanceFadeMode<enum_BaseMaterial3D_DistanceFadeMode>` value **)**
-- :ref:`DistanceFadeMode<enum_BaseMaterial3D_DistanceFadeMode>` **get_distance_fade** **(** **)**
+- |void| **set_distance_fade**\ (\ value\: :ref:`DistanceFadeMode<enum_BaseMaterial3D_DistanceFadeMode>`\ )
+- :ref:`DistanceFadeMode<enum_BaseMaterial3D_DistanceFadeMode>` **get_distance_fade**\ (\ )
 
 Specifies which type of fade to use. Can be any of the :ref:`DistanceFadeMode<enum_BaseMaterial3D_DistanceFadeMode>`\ s.
 
@@ -2085,12 +2095,12 @@ Specifies which type of fade to use. Can be any of the :ref:`DistanceFadeMode<en
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **emission** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **emission** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_BaseMaterial3D_property_emission>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_emission** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_emission** **(** **)**
+- |void| **set_emission**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_emission**\ (\ )
 
 The emitted light's color. See :ref:`emission_enabled<class_BaseMaterial3D_property_emission_enabled>`.
 
@@ -2102,12 +2112,12 @@ The emitted light's color. See :ref:`emission_enabled<class_BaseMaterial3D_prope
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **emission_enabled** = ``false``
+:ref:`bool<class_bool>` **emission_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_emission_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, the body emits light. Emitting light makes the object appear brighter. The object can also cast light on other objects if a :ref:`VoxelGI<class_VoxelGI>`, SDFGI, or :ref:`LightmapGI<class_LightmapGI>` is used and this object is used in baked lighting.
 
@@ -2119,12 +2129,12 @@ If ``true``, the body emits light. Emitting light makes the object appear bright
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **emission_energy_multiplier** = ``1.0``
+:ref:`float<class_float>` **emission_energy_multiplier** = ``1.0`` :ref:`🔗<class_BaseMaterial3D_property_emission_energy_multiplier>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_emission_energy_multiplier** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_emission_energy_multiplier** **(** **)**
+- |void| **set_emission_energy_multiplier**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_emission_energy_multiplier**\ (\ )
 
 Multiplier for emitted light. See :ref:`emission_enabled<class_BaseMaterial3D_property_emission_enabled>`.
 
@@ -2136,12 +2146,12 @@ Multiplier for emitted light. See :ref:`emission_enabled<class_BaseMaterial3D_pr
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **emission_intensity**
+:ref:`float<class_float>` **emission_intensity** :ref:`🔗<class_BaseMaterial3D_property_emission_intensity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_emission_intensity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_emission_intensity** **(** **)**
+- |void| **set_emission_intensity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_emission_intensity**\ (\ )
 
 Luminance of emitted light, measured in nits (candela per square meter). Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is enabled. The default is roughly equivalent to an indoor lightbulb.
 
@@ -2153,12 +2163,12 @@ Luminance of emitted light, measured in nits (candela per square meter). Only av
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **emission_on_uv2** = ``false``
+:ref:`bool<class_bool>` **emission_on_uv2** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_emission_on_uv2>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 Use ``UV2`` to read from the :ref:`emission_texture<class_BaseMaterial3D_property_emission_texture>`.
 
@@ -2170,12 +2180,12 @@ Use ``UV2`` to read from the :ref:`emission_texture<class_BaseMaterial3D_propert
 
 .. rst-class:: classref-property
 
-:ref:`EmissionOperator<enum_BaseMaterial3D_EmissionOperator>` **emission_operator** = ``0``
+:ref:`EmissionOperator<enum_BaseMaterial3D_EmissionOperator>` **emission_operator** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_emission_operator>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_emission_operator** **(** :ref:`EmissionOperator<enum_BaseMaterial3D_EmissionOperator>` value **)**
-- :ref:`EmissionOperator<enum_BaseMaterial3D_EmissionOperator>` **get_emission_operator** **(** **)**
+- |void| **set_emission_operator**\ (\ value\: :ref:`EmissionOperator<enum_BaseMaterial3D_EmissionOperator>`\ )
+- :ref:`EmissionOperator<enum_BaseMaterial3D_EmissionOperator>` **get_emission_operator**\ (\ )
 
 Sets how :ref:`emission<class_BaseMaterial3D_property_emission>` interacts with :ref:`emission_texture<class_BaseMaterial3D_property_emission_texture>`. Can either add or multiply. See :ref:`EmissionOperator<enum_BaseMaterial3D_EmissionOperator>` for options.
 
@@ -2187,12 +2197,12 @@ Sets how :ref:`emission<class_BaseMaterial3D_property_emission>` interacts with 
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **emission_texture**
+:ref:`Texture2D<class_Texture2D>` **emission_texture** :ref:`🔗<class_BaseMaterial3D_property_emission_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture that specifies how much surface emits light at a given point.
 
@@ -2204,12 +2214,12 @@ Texture that specifies how much surface emits light at a given point.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **fixed_size** = ``false``
+:ref:`bool<class_bool>` **fixed_size** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_fixed_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, the object is rendered at the same size regardless of distance.
 
@@ -2221,12 +2231,12 @@ If ``true``, the object is rendered at the same size regardless of distance.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **grow** = ``false``
+:ref:`bool<class_bool>` **grow** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_grow>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_grow_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_grow_enabled** **(** **)**
+- |void| **set_grow_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_grow_enabled**\ (\ )
 
 If ``true``, enables the vertex grow setting. This can be used to create mesh-based outlines using a second material pass and its :ref:`cull_mode<class_BaseMaterial3D_property_cull_mode>` set to :ref:`CULL_FRONT<class_BaseMaterial3D_constant_CULL_FRONT>`. See also :ref:`grow_amount<class_BaseMaterial3D_property_grow_amount>`.
 
@@ -2240,12 +2250,12 @@ If ``true``, enables the vertex grow setting. This can be used to create mesh-ba
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **grow_amount** = ``0.0``
+:ref:`float<class_float>` **grow_amount** = ``0.0`` :ref:`🔗<class_BaseMaterial3D_property_grow_amount>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_grow** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_grow** **(** **)**
+- |void| **set_grow**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_grow**\ (\ )
 
 Grows object vertices in the direction of their normals. Only effective if :ref:`grow<class_BaseMaterial3D_property_grow>` is ``true``.
 
@@ -2257,12 +2267,12 @@ Grows object vertices in the direction of their normals. Only effective if :ref:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **heightmap_deep_parallax** = ``false``
+:ref:`bool<class_bool>` **heightmap_deep_parallax** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_heightmap_deep_parallax>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_heightmap_deep_parallax** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_heightmap_deep_parallax_enabled** **(** **)**
+- |void| **set_heightmap_deep_parallax**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_heightmap_deep_parallax_enabled**\ (\ )
 
 If ``true``, uses parallax occlusion mapping to represent depth in the material instead of simple offset mapping (see :ref:`heightmap_enabled<class_BaseMaterial3D_property_heightmap_enabled>`). This results in a more convincing depth effect, but is much more expensive on the GPU. Only enable this on materials where it makes a significant visual difference.
 
@@ -2274,12 +2284,12 @@ If ``true``, uses parallax occlusion mapping to represent depth in the material 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **heightmap_enabled** = ``false``
+:ref:`bool<class_bool>` **heightmap_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_heightmap_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, height mapping is enabled (also called "parallax mapping" or "depth mapping"). See also :ref:`normal_enabled<class_BaseMaterial3D_property_normal_enabled>`. Height mapping is a demanding feature on the GPU, so it should only be used on materials where it makes a significant visual difference.
 
@@ -2293,12 +2303,12 @@ If ``true``, height mapping is enabled (also called "parallax mapping" or "depth
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **heightmap_flip_binormal** = ``false``
+:ref:`bool<class_bool>` **heightmap_flip_binormal** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_heightmap_flip_binormal>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_heightmap_deep_parallax_flip_binormal** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_heightmap_deep_parallax_flip_binormal** **(** **)**
+- |void| **set_heightmap_deep_parallax_flip_binormal**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_heightmap_deep_parallax_flip_binormal**\ (\ )
 
 If ``true``, flips the mesh's binormal vectors when interpreting the height map. If the heightmap effect looks strange when the camera moves (even with a reasonable :ref:`heightmap_scale<class_BaseMaterial3D_property_heightmap_scale>`), try setting this to ``true``.
 
@@ -2310,12 +2320,12 @@ If ``true``, flips the mesh's binormal vectors when interpreting the height map.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **heightmap_flip_tangent** = ``false``
+:ref:`bool<class_bool>` **heightmap_flip_tangent** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_heightmap_flip_tangent>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_heightmap_deep_parallax_flip_tangent** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_heightmap_deep_parallax_flip_tangent** **(** **)**
+- |void| **set_heightmap_deep_parallax_flip_tangent**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_heightmap_deep_parallax_flip_tangent**\ (\ )
 
 If ``true``, flips the mesh's tangent vectors when interpreting the height map. If the heightmap effect looks strange when the camera moves (even with a reasonable :ref:`heightmap_scale<class_BaseMaterial3D_property_heightmap_scale>`), try setting this to ``true``.
 
@@ -2327,12 +2337,12 @@ If ``true``, flips the mesh's tangent vectors when interpreting the height map. 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **heightmap_flip_texture** = ``false``
+:ref:`bool<class_bool>` **heightmap_flip_texture** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_heightmap_flip_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, interprets the height map texture as a depth map, with brighter values appearing to be "lower" in altitude compared to darker values.
 
@@ -2346,12 +2356,12 @@ This can be enabled for compatibility with some materials authored for Godot 3.x
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **heightmap_max_layers**
+:ref:`int<class_int>` **heightmap_max_layers** :ref:`🔗<class_BaseMaterial3D_property_heightmap_max_layers>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_heightmap_deep_parallax_max_layers** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_heightmap_deep_parallax_max_layers** **(** **)**
+- |void| **set_heightmap_deep_parallax_max_layers**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_heightmap_deep_parallax_max_layers**\ (\ )
 
 The number of layers to use for parallax occlusion mapping when the camera is up close to the material. Higher values result in a more convincing depth effect, especially in materials that have steep height changes. Higher values have a significant cost on the GPU, so it should only be increased on materials where it makes a significant visual difference.
 
@@ -2365,12 +2375,12 @@ The number of layers to use for parallax occlusion mapping when the camera is up
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **heightmap_min_layers**
+:ref:`int<class_int>` **heightmap_min_layers** :ref:`🔗<class_BaseMaterial3D_property_heightmap_min_layers>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_heightmap_deep_parallax_min_layers** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_heightmap_deep_parallax_min_layers** **(** **)**
+- |void| **set_heightmap_deep_parallax_min_layers**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_heightmap_deep_parallax_min_layers**\ (\ )
 
 The number of layers to use for parallax occlusion mapping when the camera is far away from the material. Higher values result in a more convincing depth effect, especially in materials that have steep height changes. Higher values have a significant cost on the GPU, so it should only be increased on materials where it makes a significant visual difference.
 
@@ -2384,12 +2394,12 @@ The number of layers to use for parallax occlusion mapping when the camera is fa
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **heightmap_scale** = ``5.0``
+:ref:`float<class_float>` **heightmap_scale** = ``5.0`` :ref:`🔗<class_BaseMaterial3D_property_heightmap_scale>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_heightmap_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_heightmap_scale** **(** **)**
+- |void| **set_heightmap_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_heightmap_scale**\ (\ )
 
 The heightmap scale to use for the parallax effect (see :ref:`heightmap_enabled<class_BaseMaterial3D_property_heightmap_enabled>`). The default value is tuned so that the highest point (value = 255) appears to be 5 cm higher than the lowest point (value = 0). Higher values result in a deeper appearance, but may result in artifacts appearing when looking at the material from oblique angles, especially when the camera moves. Negative values can be used to invert the parallax effect, but this is different from inverting the texture using :ref:`heightmap_flip_texture<class_BaseMaterial3D_property_heightmap_flip_texture>` as the material will also appear to be "closer" to the camera. In most cases, :ref:`heightmap_scale<class_BaseMaterial3D_property_heightmap_scale>` should be kept to a positive value.
 
@@ -2403,12 +2413,12 @@ The heightmap scale to use for the parallax effect (see :ref:`heightmap_enabled<
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **heightmap_texture**
+:ref:`Texture2D<class_Texture2D>` **heightmap_texture** :ref:`🔗<class_BaseMaterial3D_property_heightmap_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 The texture to use as a height map. See also :ref:`heightmap_enabled<class_BaseMaterial3D_property_heightmap_enabled>`.
 
@@ -2424,12 +2434,12 @@ For best results, the texture should be normalized (with :ref:`heightmap_scale<c
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **metallic** = ``0.0``
+:ref:`float<class_float>` **metallic** = ``0.0`` :ref:`🔗<class_BaseMaterial3D_property_metallic>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_metallic** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_metallic** **(** **)**
+- |void| **set_metallic**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_metallic**\ (\ )
 
 A high value makes the material appear more like a metal. Non-metals use their albedo as the diffuse color and add diffuse to the specular reflection. With non-metals, the reflection appears on top of the albedo color. Metals use their albedo as a multiplier to the specular reflection and set the diffuse color to black resulting in a tinted reflection. Materials work better when fully metal or fully non-metal, values between ``0`` and ``1`` should only be used for blending between metal and non-metal sections. To alter the amount of reflection use :ref:`roughness<class_BaseMaterial3D_property_roughness>`.
 
@@ -2441,12 +2451,12 @@ A high value makes the material appear more like a metal. Non-metals use their a
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **metallic_specular** = ``0.5``
+:ref:`float<class_float>` **metallic_specular** = ``0.5`` :ref:`🔗<class_BaseMaterial3D_property_metallic_specular>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_specular** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_specular** **(** **)**
+- |void| **set_specular**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_specular**\ (\ )
 
 Adjusts the strength of specular reflections. Specular reflections are composed of scene reflections and the specular lobe which is the bright spot that is reflected from light sources. When set to ``0.0``, no specular reflections will be visible. This differs from the :ref:`SPECULAR_DISABLED<class_BaseMaterial3D_constant_SPECULAR_DISABLED>` :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>` as :ref:`SPECULAR_DISABLED<class_BaseMaterial3D_constant_SPECULAR_DISABLED>` only applies to the specular lobe from the light source.
 
@@ -2460,12 +2470,12 @@ Adjusts the strength of specular reflections. Specular reflections are composed 
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **metallic_texture**
+:ref:`Texture2D<class_Texture2D>` **metallic_texture** :ref:`🔗<class_BaseMaterial3D_property_metallic_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture used to specify metallic for an object. This is multiplied by :ref:`metallic<class_BaseMaterial3D_property_metallic>`.
 
@@ -2477,12 +2487,12 @@ Texture used to specify metallic for an object. This is multiplied by :ref:`meta
 
 .. rst-class:: classref-property
 
-:ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **metallic_texture_channel** = ``0``
+:ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **metallic_texture_channel** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_metallic_texture_channel>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_metallic_texture_channel** **(** :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` value **)**
-- :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **get_metallic_texture_channel** **(** **)**
+- |void| **set_metallic_texture_channel**\ (\ value\: :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>`\ )
+- :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **get_metallic_texture_channel**\ (\ )
 
 Specifies the channel of the :ref:`metallic_texture<class_BaseMaterial3D_property_metallic_texture>` in which the metallic information is stored. This is useful when you store the information for multiple effects in a single texture. For example if you stored metallic in the red channel, roughness in the blue, and ambient occlusion in the green you could reduce the number of textures you use.
 
@@ -2494,12 +2504,12 @@ Specifies the channel of the :ref:`metallic_texture<class_BaseMaterial3D_propert
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **msdf_outline_size** = ``0.0``
+:ref:`float<class_float>` **msdf_outline_size** = ``0.0`` :ref:`🔗<class_BaseMaterial3D_property_msdf_outline_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_msdf_outline_size** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_msdf_outline_size** **(** **)**
+- |void| **set_msdf_outline_size**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_msdf_outline_size**\ (\ )
 
 The width of the shape outline.
 
@@ -2511,12 +2521,12 @@ The width of the shape outline.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **msdf_pixel_range** = ``4.0``
+:ref:`float<class_float>` **msdf_pixel_range** = ``4.0`` :ref:`🔗<class_BaseMaterial3D_property_msdf_pixel_range>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_msdf_pixel_range** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_msdf_pixel_range** **(** **)**
+- |void| **set_msdf_pixel_range**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_msdf_pixel_range**\ (\ )
 
 The width of the range around the shape between the minimum and maximum representable signed distance.
 
@@ -2528,12 +2538,12 @@ The width of the range around the shape between the minimum and maximum represen
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **no_depth_test** = ``false``
+:ref:`bool<class_bool>` **no_depth_test** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_no_depth_test>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, depth testing is disabled and the object will be drawn in render order.
 
@@ -2545,12 +2555,12 @@ If ``true``, depth testing is disabled and the object will be drawn in render or
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **normal_enabled** = ``false``
+:ref:`bool<class_bool>` **normal_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_normal_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, normal mapping is enabled. This has a slight performance cost, especially on mobile GPUs.
 
@@ -2562,12 +2572,12 @@ If ``true``, normal mapping is enabled. This has a slight performance cost, espe
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **normal_scale** = ``1.0``
+:ref:`float<class_float>` **normal_scale** = ``1.0`` :ref:`🔗<class_BaseMaterial3D_property_normal_scale>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_normal_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_normal_scale** **(** **)**
+- |void| **set_normal_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_normal_scale**\ (\ )
 
 The strength of the normal map's effect.
 
@@ -2579,12 +2589,12 @@ The strength of the normal map's effect.
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **normal_texture**
+:ref:`Texture2D<class_Texture2D>` **normal_texture** :ref:`🔗<class_BaseMaterial3D_property_normal_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture used to specify the normal at a given pixel. The :ref:`normal_texture<class_BaseMaterial3D_property_normal_texture>` only uses the red and green channels; the blue and alpha channels are ignored. The normal read from :ref:`normal_texture<class_BaseMaterial3D_property_normal_texture>` is oriented around the surface normal provided by the :ref:`Mesh<class_Mesh>`.
 
@@ -2602,12 +2612,12 @@ Texture used to specify the normal at a given pixel. The :ref:`normal_texture<cl
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **orm_texture**
+:ref:`Texture2D<class_Texture2D>` **orm_texture** :ref:`🔗<class_BaseMaterial3D_property_orm_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 The Occlusion/Roughness/Metallic texture to use. This is a more efficient replacement of :ref:`ao_texture<class_BaseMaterial3D_property_ao_texture>`, :ref:`roughness_texture<class_BaseMaterial3D_property_roughness_texture>` and :ref:`metallic_texture<class_BaseMaterial3D_property_metallic_texture>` in :ref:`ORMMaterial3D<class_ORMMaterial3D>`. Ambient occlusion is stored in the red channel. Roughness map is stored in the green channel. Metallic map is stored in the blue channel. The alpha channel is ignored.
 
@@ -2619,12 +2629,12 @@ The Occlusion/Roughness/Metallic texture to use. This is a more efficient replac
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **particles_anim_h_frames**
+:ref:`int<class_int>` **particles_anim_h_frames** :ref:`🔗<class_BaseMaterial3D_property_particles_anim_h_frames>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_particles_anim_h_frames** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_particles_anim_h_frames** **(** **)**
+- |void| **set_particles_anim_h_frames**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_particles_anim_h_frames**\ (\ )
 
 The number of horizontal frames in the particle sprite sheet. Only enabled when using :ref:`BILLBOARD_PARTICLES<class_BaseMaterial3D_constant_BILLBOARD_PARTICLES>`. See :ref:`billboard_mode<class_BaseMaterial3D_property_billboard_mode>`.
 
@@ -2636,12 +2646,12 @@ The number of horizontal frames in the particle sprite sheet. Only enabled when 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **particles_anim_loop**
+:ref:`bool<class_bool>` **particles_anim_loop** :ref:`🔗<class_BaseMaterial3D_property_particles_anim_loop>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_particles_anim_loop** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_particles_anim_loop** **(** **)**
+- |void| **set_particles_anim_loop**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_particles_anim_loop**\ (\ )
 
 If ``true``, particle animations are looped. Only enabled when using :ref:`BILLBOARD_PARTICLES<class_BaseMaterial3D_constant_BILLBOARD_PARTICLES>`. See :ref:`billboard_mode<class_BaseMaterial3D_property_billboard_mode>`.
 
@@ -2653,12 +2663,12 @@ If ``true``, particle animations are looped. Only enabled when using :ref:`BILLB
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **particles_anim_v_frames**
+:ref:`int<class_int>` **particles_anim_v_frames** :ref:`🔗<class_BaseMaterial3D_property_particles_anim_v_frames>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_particles_anim_v_frames** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_particles_anim_v_frames** **(** **)**
+- |void| **set_particles_anim_v_frames**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_particles_anim_v_frames**\ (\ )
 
 The number of vertical frames in the particle sprite sheet. Only enabled when using :ref:`BILLBOARD_PARTICLES<class_BaseMaterial3D_constant_BILLBOARD_PARTICLES>`. See :ref:`billboard_mode<class_BaseMaterial3D_property_billboard_mode>`.
 
@@ -2670,12 +2680,12 @@ The number of vertical frames in the particle sprite sheet. Only enabled when us
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **point_size** = ``1.0``
+:ref:`float<class_float>` **point_size** = ``1.0`` :ref:`🔗<class_BaseMaterial3D_property_point_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_point_size** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_point_size** **(** **)**
+- |void| **set_point_size**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_point_size**\ (\ )
 
 The point size in pixels. See :ref:`use_point_size<class_BaseMaterial3D_property_use_point_size>`.
 
@@ -2687,12 +2697,12 @@ The point size in pixels. See :ref:`use_point_size<class_BaseMaterial3D_property
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **proximity_fade_distance** = ``1.0``
+:ref:`float<class_float>` **proximity_fade_distance** = ``1.0`` :ref:`🔗<class_BaseMaterial3D_property_proximity_fade_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_proximity_fade_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_proximity_fade_distance** **(** **)**
+- |void| **set_proximity_fade_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_proximity_fade_distance**\ (\ )
 
 Distance over which the fade effect takes place. The larger the distance the longer it takes for an object to fade.
 
@@ -2704,12 +2714,12 @@ Distance over which the fade effect takes place. The larger the distance the lon
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **proximity_fade_enabled** = ``false``
+:ref:`bool<class_bool>` **proximity_fade_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_proximity_fade_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_proximity_fade_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_proximity_fade_enabled** **(** **)**
+- |void| **set_proximity_fade_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_proximity_fade_enabled**\ (\ )
 
 If ``true``, the proximity fade effect is enabled. The proximity fade effect fades out each pixel based on its distance to another object.
 
@@ -2721,12 +2731,12 @@ If ``true``, the proximity fade effect is enabled. The proximity fade effect fad
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **refraction_enabled** = ``false``
+:ref:`bool<class_bool>` **refraction_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_refraction_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, the refraction effect is enabled. Distorts transparency based on light from behind the object.
 
@@ -2738,12 +2748,12 @@ If ``true``, the refraction effect is enabled. Distorts transparency based on li
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **refraction_scale** = ``0.05``
+:ref:`float<class_float>` **refraction_scale** = ``0.05`` :ref:`🔗<class_BaseMaterial3D_property_refraction_scale>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_refraction** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_refraction** **(** **)**
+- |void| **set_refraction**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_refraction**\ (\ )
 
 The strength of the refraction effect.
 
@@ -2755,12 +2765,12 @@ The strength of the refraction effect.
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **refraction_texture**
+:ref:`Texture2D<class_Texture2D>` **refraction_texture** :ref:`🔗<class_BaseMaterial3D_property_refraction_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture that controls the strength of the refraction per-pixel. Multiplied by :ref:`refraction_scale<class_BaseMaterial3D_property_refraction_scale>`.
 
@@ -2772,12 +2782,12 @@ Texture that controls the strength of the refraction per-pixel. Multiplied by :r
 
 .. rst-class:: classref-property
 
-:ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **refraction_texture_channel** = ``0``
+:ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **refraction_texture_channel** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_refraction_texture_channel>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_refraction_texture_channel** **(** :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` value **)**
-- :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **get_refraction_texture_channel** **(** **)**
+- |void| **set_refraction_texture_channel**\ (\ value\: :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>`\ )
+- :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **get_refraction_texture_channel**\ (\ )
 
 Specifies the channel of the :ref:`refraction_texture<class_BaseMaterial3D_property_refraction_texture>` in which the refraction information is stored. This is useful when you store the information for multiple effects in a single texture. For example if you stored refraction in the red channel, roughness in the blue, and ambient occlusion in the green you could reduce the number of textures you use.
 
@@ -2789,12 +2799,12 @@ Specifies the channel of the :ref:`refraction_texture<class_BaseMaterial3D_prope
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rim** = ``1.0``
+:ref:`float<class_float>` **rim** = ``1.0`` :ref:`🔗<class_BaseMaterial3D_property_rim>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_rim** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_rim** **(** **)**
+- |void| **set_rim**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_rim**\ (\ )
 
 Sets the strength of the rim lighting effect.
 
@@ -2806,12 +2816,12 @@ Sets the strength of the rim lighting effect.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rim_enabled** = ``false``
+:ref:`bool<class_bool>` **rim_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_rim_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, rim effect is enabled. Rim lighting increases the brightness at glancing angles on an object.
 
@@ -2825,12 +2835,12 @@ If ``true``, rim effect is enabled. Rim lighting increases the brightness at gla
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **rim_texture**
+:ref:`Texture2D<class_Texture2D>` **rim_texture** :ref:`🔗<class_BaseMaterial3D_property_rim_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture used to set the strength of the rim lighting effect per-pixel. Multiplied by :ref:`rim<class_BaseMaterial3D_property_rim>`.
 
@@ -2842,12 +2852,12 @@ Texture used to set the strength of the rim lighting effect per-pixel. Multiplie
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **rim_tint** = ``0.5``
+:ref:`float<class_float>` **rim_tint** = ``0.5`` :ref:`🔗<class_BaseMaterial3D_property_rim_tint>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_rim_tint** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_rim_tint** **(** **)**
+- |void| **set_rim_tint**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_rim_tint**\ (\ )
 
 The amount of to blend light and albedo color when rendering rim effect. If ``0`` the light color is used, while ``1`` means albedo color is used. An intermediate value generally works best.
 
@@ -2859,12 +2869,12 @@ The amount of to blend light and albedo color when rendering rim effect. If ``0`
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **roughness** = ``1.0``
+:ref:`float<class_float>` **roughness** = ``1.0`` :ref:`🔗<class_BaseMaterial3D_property_roughness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_roughness** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_roughness** **(** **)**
+- |void| **set_roughness**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_roughness**\ (\ )
 
 Surface reflection. A value of ``0`` represents a perfect mirror while a value of ``1`` completely blurs the reflection. See also :ref:`metallic<class_BaseMaterial3D_property_metallic>`.
 
@@ -2876,12 +2886,12 @@ Surface reflection. A value of ``0`` represents a perfect mirror while a value o
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **roughness_texture**
+:ref:`Texture2D<class_Texture2D>` **roughness_texture** :ref:`🔗<class_BaseMaterial3D_property_roughness_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture used to control the roughness per-pixel. Multiplied by :ref:`roughness<class_BaseMaterial3D_property_roughness>`.
 
@@ -2893,12 +2903,12 @@ Texture used to control the roughness per-pixel. Multiplied by :ref:`roughness<c
 
 .. rst-class:: classref-property
 
-:ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **roughness_texture_channel** = ``0``
+:ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **roughness_texture_channel** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_roughness_texture_channel>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_roughness_texture_channel** **(** :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` value **)**
-- :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **get_roughness_texture_channel** **(** **)**
+- |void| **set_roughness_texture_channel**\ (\ value\: :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>`\ )
+- :ref:`TextureChannel<enum_BaseMaterial3D_TextureChannel>` **get_roughness_texture_channel**\ (\ )
 
 Specifies the channel of the :ref:`roughness_texture<class_BaseMaterial3D_property_roughness_texture>` in which the roughness information is stored. This is useful when you store the information for multiple effects in a single texture. For example if you stored metallic in the red channel, roughness in the blue, and ambient occlusion in the green you could reduce the number of textures you use.
 
@@ -2910,16 +2920,14 @@ Specifies the channel of the :ref:`roughness_texture<class_BaseMaterial3D_proper
 
 .. rst-class:: classref-property
 
-:ref:`ShadingMode<enum_BaseMaterial3D_ShadingMode>` **shading_mode** = ``1``
+:ref:`ShadingMode<enum_BaseMaterial3D_ShadingMode>` **shading_mode** = ``1`` :ref:`🔗<class_BaseMaterial3D_property_shading_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_shading_mode** **(** :ref:`ShadingMode<enum_BaseMaterial3D_ShadingMode>` value **)**
-- :ref:`ShadingMode<enum_BaseMaterial3D_ShadingMode>` **get_shading_mode** **(** **)**
+- |void| **set_shading_mode**\ (\ value\: :ref:`ShadingMode<enum_BaseMaterial3D_ShadingMode>`\ )
+- :ref:`ShadingMode<enum_BaseMaterial3D_ShadingMode>` **get_shading_mode**\ (\ )
 
 Sets whether the shading takes place, per-pixel, per-vertex or unshaded. Per-vertex lighting is faster, making it the best choice for mobile applications, however it looks considerably worse than per-pixel. Unshaded rendering is the fastest, but disables all interactions with lights.
-
-\ **Note:** Setting the shading mode vertex shading currently has no effect, as vertex shading is not implemented yet.
 
 .. rst-class:: classref-item-separator
 
@@ -2929,12 +2937,12 @@ Sets whether the shading takes place, per-pixel, per-vertex or unshaded. Per-ver
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **shadow_to_opacity** = ``false``
+:ref:`bool<class_bool>` **shadow_to_opacity** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_shadow_to_opacity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, enables the "shadow to opacity" render mode where lighting modifies the alpha so shadowed areas are opaque and non-shadowed areas are transparent. Useful for overlaying shadows onto a camera feed in AR.
 
@@ -2946,12 +2954,12 @@ If ``true``, enables the "shadow to opacity" render mode where lighting modifies
 
 .. rst-class:: classref-property
 
-:ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>` **specular_mode** = ``0``
+:ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>` **specular_mode** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_specular_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_specular_mode** **(** :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>` value **)**
-- :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>` **get_specular_mode** **(** **)**
+- |void| **set_specular_mode**\ (\ value\: :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>`\ )
+- :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>` **get_specular_mode**\ (\ )
 
 The method for rendering the specular blob. See :ref:`SpecularMode<enum_BaseMaterial3D_SpecularMode>`.
 
@@ -2965,12 +2973,12 @@ The method for rendering the specular blob. See :ref:`SpecularMode<enum_BaseMate
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **subsurf_scatter_enabled** = ``false``
+:ref:`bool<class_bool>` **subsurf_scatter_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_subsurf_scatter_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, subsurface scattering is enabled. Emulates light that penetrates an object's surface, is scattered, and then emerges. Subsurface scattering quality is controlled by :ref:`ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_quality<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_quality>`.
 
@@ -2982,12 +2990,12 @@ If ``true``, subsurface scattering is enabled. Emulates light that penetrates an
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **subsurf_scatter_skin_mode** = ``false``
+:ref:`bool<class_bool>` **subsurf_scatter_skin_mode** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_subsurf_scatter_skin_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, subsurface scattering will use a special mode optimized for the color and density of human skin, such as boosting the intensity of the red channel in subsurface scattering.
 
@@ -2999,12 +3007,12 @@ If ``true``, subsurface scattering will use a special mode optimized for the col
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **subsurf_scatter_strength** = ``0.0``
+:ref:`float<class_float>` **subsurf_scatter_strength** = ``0.0`` :ref:`🔗<class_BaseMaterial3D_property_subsurf_scatter_strength>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_subsurface_scattering_strength** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_subsurface_scattering_strength** **(** **)**
+- |void| **set_subsurface_scattering_strength**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_subsurface_scattering_strength**\ (\ )
 
 The strength of the subsurface scattering effect. The depth of the effect is also controlled by :ref:`ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_scale<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_scale>`, which is set globally.
 
@@ -3016,12 +3024,12 @@ The strength of the subsurface scattering effect. The depth of the effect is als
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **subsurf_scatter_texture**
+:ref:`Texture2D<class_Texture2D>` **subsurf_scatter_texture** :ref:`🔗<class_BaseMaterial3D_property_subsurf_scatter_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
 Texture used to control the subsurface scattering strength. Stored in the red texture channel. Multiplied by :ref:`subsurf_scatter_strength<class_BaseMaterial3D_property_subsurf_scatter_strength>`.
 
@@ -3033,12 +3041,12 @@ Texture used to control the subsurface scattering strength. Stored in the red te
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **subsurf_scatter_transmittance_boost** = ``0.0``
+:ref:`float<class_float>` **subsurf_scatter_transmittance_boost** = ``0.0`` :ref:`🔗<class_BaseMaterial3D_property_subsurf_scatter_transmittance_boost>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_transmittance_boost** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_transmittance_boost** **(** **)**
+- |void| **set_transmittance_boost**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_transmittance_boost**\ (\ )
 
 The intensity of the subsurface scattering transmittance effect.
 
@@ -3050,12 +3058,12 @@ The intensity of the subsurface scattering transmittance effect.
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **subsurf_scatter_transmittance_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **subsurf_scatter_transmittance_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_BaseMaterial3D_property_subsurf_scatter_transmittance_color>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_transmittance_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_transmittance_color** **(** **)**
+- |void| **set_transmittance_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_transmittance_color**\ (\ )
 
 The color to multiply the subsurface scattering transmittance effect with. Ignored if :ref:`subsurf_scatter_skin_mode<class_BaseMaterial3D_property_subsurf_scatter_skin_mode>` is ``true``.
 
@@ -3067,12 +3075,12 @@ The color to multiply the subsurface scattering transmittance effect with. Ignor
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **subsurf_scatter_transmittance_depth** = ``0.1``
+:ref:`float<class_float>` **subsurf_scatter_transmittance_depth** = ``0.1`` :ref:`🔗<class_BaseMaterial3D_property_subsurf_scatter_transmittance_depth>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_transmittance_depth** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_transmittance_depth** **(** **)**
+- |void| **set_transmittance_depth**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_transmittance_depth**\ (\ )
 
 The depth of the subsurface scattering transmittance effect.
 
@@ -3084,12 +3092,12 @@ The depth of the subsurface scattering transmittance effect.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **subsurf_scatter_transmittance_enabled** = ``false``
+:ref:`bool<class_bool>` **subsurf_scatter_transmittance_enabled** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_subsurf_scatter_transmittance_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+- |void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const|
 
 If ``true``, enables subsurface scattering transmittance. Only effective if :ref:`subsurf_scatter_enabled<class_BaseMaterial3D_property_subsurf_scatter_enabled>` is ``true``. See also :ref:`backlight_enabled<class_BaseMaterial3D_property_backlight_enabled>`.
 
@@ -3101,14 +3109,14 @@ If ``true``, enables subsurface scattering transmittance. Only effective if :ref
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **subsurf_scatter_transmittance_texture**
+:ref:`Texture2D<class_Texture2D>` **subsurf_scatter_transmittance_texture** :ref:`🔗<class_BaseMaterial3D_property_subsurf_scatter_transmittance_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+- |void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const|
 
-The texture to use for multiplying the intensity of the subsurface scattering transmitteance intensity. See also :ref:`subsurf_scatter_texture<class_BaseMaterial3D_property_subsurf_scatter_texture>`. Ignored if :ref:`subsurf_scatter_skin_mode<class_BaseMaterial3D_property_subsurf_scatter_skin_mode>` is ``true``.
+The texture to use for multiplying the intensity of the subsurface scattering transmittance intensity. See also :ref:`subsurf_scatter_texture<class_BaseMaterial3D_property_subsurf_scatter_texture>`. Ignored if :ref:`subsurf_scatter_skin_mode<class_BaseMaterial3D_property_subsurf_scatter_skin_mode>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -3118,12 +3126,12 @@ The texture to use for multiplying the intensity of the subsurface scattering tr
 
 .. rst-class:: classref-property
 
-:ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **texture_filter** = ``3``
+:ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **texture_filter** = ``3`` :ref:`🔗<class_BaseMaterial3D_property_texture_filter>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_filter** **(** :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` value **)**
-- :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **get_texture_filter** **(** **)**
+- |void| **set_texture_filter**\ (\ value\: :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>`\ )
+- :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **get_texture_filter**\ (\ )
 
 Filter flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` for options.
 
@@ -3137,12 +3145,12 @@ Filter flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_Textur
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **texture_repeat** = ``true``
+:ref:`bool<class_bool>` **texture_repeat** = ``true`` :ref:`🔗<class_BaseMaterial3D_property_texture_repeat>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 Repeat flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` for options.
 
@@ -3154,12 +3162,12 @@ Repeat flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_Textur
 
 .. rst-class:: classref-property
 
-:ref:`Transparency<enum_BaseMaterial3D_Transparency>` **transparency** = ``0``
+:ref:`Transparency<enum_BaseMaterial3D_Transparency>` **transparency** = ``0`` :ref:`🔗<class_BaseMaterial3D_property_transparency>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_transparency** **(** :ref:`Transparency<enum_BaseMaterial3D_Transparency>` value **)**
-- :ref:`Transparency<enum_BaseMaterial3D_Transparency>` **get_transparency** **(** **)**
+- |void| **set_transparency**\ (\ value\: :ref:`Transparency<enum_BaseMaterial3D_Transparency>`\ )
+- :ref:`Transparency<enum_BaseMaterial3D_Transparency>` **get_transparency**\ (\ )
 
 The material's transparency mode. Some transparency modes will disable shadow casting. Any transparency mode other than :ref:`TRANSPARENCY_DISABLED<class_BaseMaterial3D_constant_TRANSPARENCY_DISABLED>` has a greater performance impact compared to opaque rendering. See also :ref:`blend_mode<class_BaseMaterial3D_property_blend_mode>`.
 
@@ -3171,12 +3179,12 @@ The material's transparency mode. Some transparency modes will disable shadow ca
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_particle_trails** = ``false``
+:ref:`bool<class_bool>` **use_particle_trails** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_use_particle_trails>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, enables parts of the shader required for :ref:`GPUParticles3D<class_GPUParticles3D>` trails to function. This also requires using a mesh with appropriate skinning, such as :ref:`RibbonTrailMesh<class_RibbonTrailMesh>` or :ref:`TubeTrailMesh<class_TubeTrailMesh>`. Enabling this feature outside of materials used in :ref:`GPUParticles3D<class_GPUParticles3D>` meshes will break material rendering.
 
@@ -3188,12 +3196,12 @@ If ``true``, enables parts of the shader required for :ref:`GPUParticles3D<class
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_point_size** = ``false``
+:ref:`bool<class_bool>` **use_point_size** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_use_point_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, render point size can be changed.
 
@@ -3207,12 +3215,12 @@ If ``true``, render point size can be changed.
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **uv1_offset** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **uv1_offset** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_BaseMaterial3D_property_uv1_offset>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_uv1_offset** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_uv1_offset** **(** **)**
+- |void| **set_uv1_offset**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_uv1_offset**\ (\ )
 
 How much to offset the ``UV`` coordinates. This amount will be added to ``UV`` in the vertex function. This can be used to offset a texture. The Z component is used when :ref:`uv1_triplanar<class_BaseMaterial3D_property_uv1_triplanar>` is enabled, but it is not used anywhere else.
 
@@ -3224,12 +3232,12 @@ How much to offset the ``UV`` coordinates. This amount will be added to ``UV`` i
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **uv1_scale** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **uv1_scale** = ``Vector3(1, 1, 1)`` :ref:`🔗<class_BaseMaterial3D_property_uv1_scale>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_uv1_scale** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_uv1_scale** **(** **)**
+- |void| **set_uv1_scale**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_uv1_scale**\ (\ )
 
 How much to scale the ``UV`` coordinates. This is multiplied by ``UV`` in the vertex function. The Z component is used when :ref:`uv1_triplanar<class_BaseMaterial3D_property_uv1_triplanar>` is enabled, but it is not used anywhere else.
 
@@ -3241,12 +3249,12 @@ How much to scale the ``UV`` coordinates. This is multiplied by ``UV`` in the ve
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **uv1_triplanar** = ``false``
+:ref:`bool<class_bool>` **uv1_triplanar** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_uv1_triplanar>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, instead of using ``UV`` textures will use a triplanar texture lookup to determine how to apply textures. Triplanar uses the orientation of the object's surface to blend between texture coordinates. It reads from the source texture 3 times, once for each axis and then blends between the results based on how closely the pixel aligns with each axis. This is often used for natural features to get a realistic blend of materials. Because triplanar texturing requires many more texture reads per-pixel it is much slower than normal UV texturing. Additionally, because it is blending the texture between the three axes, it is unsuitable when you are trying to achieve crisp texturing.
 
@@ -3258,12 +3266,12 @@ If ``true``, instead of using ``UV`` textures will use a triplanar texture looku
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **uv1_triplanar_sharpness** = ``1.0``
+:ref:`float<class_float>` **uv1_triplanar_sharpness** = ``1.0`` :ref:`🔗<class_BaseMaterial3D_property_uv1_triplanar_sharpness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_uv1_triplanar_blend_sharpness** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_uv1_triplanar_blend_sharpness** **(** **)**
+- |void| **set_uv1_triplanar_blend_sharpness**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_uv1_triplanar_blend_sharpness**\ (\ )
 
 A lower number blends the texture more softly while a higher number blends the texture more sharply.
 
@@ -3277,12 +3285,12 @@ A lower number blends the texture more softly while a higher number blends the t
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **uv1_world_triplanar** = ``false``
+:ref:`bool<class_bool>` **uv1_world_triplanar** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_uv1_world_triplanar>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, triplanar mapping for ``UV`` is calculated in world space rather than object local space. See also :ref:`uv1_triplanar<class_BaseMaterial3D_property_uv1_triplanar>`.
 
@@ -3294,12 +3302,12 @@ If ``true``, triplanar mapping for ``UV`` is calculated in world space rather th
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **uv2_offset** = ``Vector3(0, 0, 0)``
+:ref:`Vector3<class_Vector3>` **uv2_offset** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_BaseMaterial3D_property_uv2_offset>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_uv2_offset** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_uv2_offset** **(** **)**
+- |void| **set_uv2_offset**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_uv2_offset**\ (\ )
 
 How much to offset the ``UV2`` coordinates. This amount will be added to ``UV2`` in the vertex function. This can be used to offset a texture. The Z component is used when :ref:`uv2_triplanar<class_BaseMaterial3D_property_uv2_triplanar>` is enabled, but it is not used anywhere else.
 
@@ -3311,12 +3319,12 @@ How much to offset the ``UV2`` coordinates. This amount will be added to ``UV2``
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **uv2_scale** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **uv2_scale** = ``Vector3(1, 1, 1)`` :ref:`🔗<class_BaseMaterial3D_property_uv2_scale>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_uv2_scale** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_uv2_scale** **(** **)**
+- |void| **set_uv2_scale**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_uv2_scale**\ (\ )
 
 How much to scale the ``UV2`` coordinates. This is multiplied by ``UV2`` in the vertex function. The Z component is used when :ref:`uv2_triplanar<class_BaseMaterial3D_property_uv2_triplanar>` is enabled, but it is not used anywhere else.
 
@@ -3328,12 +3336,12 @@ How much to scale the ``UV2`` coordinates. This is multiplied by ``UV2`` in the 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **uv2_triplanar** = ``false``
+:ref:`bool<class_bool>` **uv2_triplanar** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_uv2_triplanar>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, instead of using ``UV2`` textures will use a triplanar texture lookup to determine how to apply textures. Triplanar uses the orientation of the object's surface to blend between texture coordinates. It reads from the source texture 3 times, once for each axis and then blends between the results based on how closely the pixel aligns with each axis. This is often used for natural features to get a realistic blend of materials. Because triplanar texturing requires many more texture reads per-pixel it is much slower than normal UV texturing. Additionally, because it is blending the texture between the three axes, it is unsuitable when you are trying to achieve crisp texturing.
 
@@ -3345,12 +3353,12 @@ If ``true``, instead of using ``UV2`` textures will use a triplanar texture look
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **uv2_triplanar_sharpness** = ``1.0``
+:ref:`float<class_float>` **uv2_triplanar_sharpness** = ``1.0`` :ref:`🔗<class_BaseMaterial3D_property_uv2_triplanar_sharpness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_uv2_triplanar_blend_sharpness** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_uv2_triplanar_blend_sharpness** **(** **)**
+- |void| **set_uv2_triplanar_blend_sharpness**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_uv2_triplanar_blend_sharpness**\ (\ )
 
 A lower number blends the texture more softly while a higher number blends the texture more sharply.
 
@@ -3364,12 +3372,12 @@ A lower number blends the texture more softly while a higher number blends the t
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **uv2_world_triplanar** = ``false``
+:ref:`bool<class_bool>` **uv2_world_triplanar** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_uv2_world_triplanar>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, triplanar mapping for ``UV2`` is calculated in world space rather than object local space. See also :ref:`uv2_triplanar<class_BaseMaterial3D_property_uv2_triplanar>`.
 
@@ -3381,12 +3389,12 @@ If ``true``, triplanar mapping for ``UV2`` is calculated in world space rather t
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **vertex_color_is_srgb** = ``false``
+:ref:`bool<class_bool>` **vertex_color_is_srgb** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_vertex_color_is_srgb>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, vertex colors are considered to be stored in sRGB color space and are converted to linear color space during rendering. If ``false``, vertex colors are considered to be stored in linear color space and are rendered as-is. See also :ref:`albedo_texture_force_srgb<class_BaseMaterial3D_property_albedo_texture_force_srgb>`.
 
@@ -3400,12 +3408,12 @@ If ``true``, vertex colors are considered to be stored in sRGB color space and a
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **vertex_color_use_as_albedo** = ``false``
+:ref:`bool<class_bool>` **vertex_color_use_as_albedo** = ``false`` :ref:`🔗<class_BaseMaterial3D_property_vertex_color_use_as_albedo>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const|
 
 If ``true``, the vertex color is used as albedo color.
 
@@ -3422,7 +3430,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
+:ref:`bool<class_bool>` **get_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`\ ) |const| :ref:`🔗<class_BaseMaterial3D_method_get_feature>`
 
 Returns ``true``, if the specified :ref:`Feature<enum_BaseMaterial3D_Feature>` is enabled.
 
@@ -3434,7 +3442,7 @@ Returns ``true``, if the specified :ref:`Feature<enum_BaseMaterial3D_Feature>` i
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+:ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`\ ) |const| :ref:`🔗<class_BaseMaterial3D_method_get_flag>`
 
 Returns ``true``, if the specified flag is enabled. See :ref:`Flags<enum_BaseMaterial3D_Flags>` enumerator for options.
 
@@ -3446,7 +3454,7 @@ Returns ``true``, if the specified flag is enabled. See :ref:`Flags<enum_BaseMat
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
+:ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`\ ) |const| :ref:`🔗<class_BaseMaterial3D_method_get_texture>`
 
 Returns the :ref:`Texture2D<class_Texture2D>` associated with the specified :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`.
 
@@ -3458,7 +3466,7 @@ Returns the :ref:`Texture2D<class_Texture2D>` associated with the specified :ref
 
 .. rst-class:: classref-method
 
-void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
+|void| **set_feature**\ (\ feature\: :ref:`Feature<enum_BaseMaterial3D_Feature>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_BaseMaterial3D_method_set_feature>`
 
 If ``true``, enables the specified :ref:`Feature<enum_BaseMaterial3D_Feature>`. Many features that are available in **BaseMaterial3D**\ s need to be enabled before use. This way the cost for using the feature is only incurred when specified. Features can also be enabled by setting the corresponding member to ``true``.
 
@@ -3470,7 +3478,7 @@ If ``true``, enables the specified :ref:`Feature<enum_BaseMaterial3D_Feature>`. 
 
 .. rst-class:: classref-method
 
-void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
+|void| **set_flag**\ (\ flag\: :ref:`Flags<enum_BaseMaterial3D_Flags>`, enable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_BaseMaterial3D_method_set_flag>`
 
 If ``true``, enables the specified flag. Flags are optional behavior that can be turned on and off. Only one flag can be enabled at a time with this function, the flag enumerators cannot be bit-masked together to enable or disable multiple flags at once. Flags can also be enabled by setting the corresponding member to ``true``. See :ref:`Flags<enum_BaseMaterial3D_Flags>` enumerator for options.
 
@@ -3482,7 +3490,7 @@ If ``true``, enables the specified flag. Flags are optional behavior that can be
 
 .. rst-class:: classref-method
 
-void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
+|void| **set_texture**\ (\ param\: :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>`, texture\: :ref:`Texture2D<class_Texture2D>`\ ) :ref:`🔗<class_BaseMaterial3D_method_set_texture>`
 
 Sets the texture for the slot specified by ``param``. See :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` for available slots.
 
@@ -3493,3 +3501,4 @@ Sets the texture for the slot specified by ``param``. See :ref:`TextureParam<enu
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

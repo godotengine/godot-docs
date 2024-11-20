@@ -60,12 +60,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **cubic_interp** = ``true``
+:ref:`bool<class_bool>` **cubic_interp** = ``true`` :ref:`🔗<class_PathFollow2D_property_cubic_interp>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_cubic_interpolation** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_cubic_interpolation** **(** **)**
+- |void| **set_cubic_interpolation**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_cubic_interpolation**\ (\ )
 
 If ``true``, the position between two cached points is interpolated cubically, and linearly otherwise.
 
@@ -81,12 +81,12 @@ There are two answers to this problem: either increase the number of cached poin
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **h_offset** = ``0.0``
+:ref:`float<class_float>` **h_offset** = ``0.0`` :ref:`🔗<class_PathFollow2D_property_h_offset>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_h_offset** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_h_offset** **(** **)**
+- |void| **set_h_offset**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_h_offset**\ (\ )
 
 The node's offset along the curve.
 
@@ -98,12 +98,12 @@ The node's offset along the curve.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **loop** = ``true``
+:ref:`bool<class_bool>` **loop** = ``true`` :ref:`🔗<class_PathFollow2D_property_loop>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_loop** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **has_loop** **(** **)**
+- |void| **set_loop**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **has_loop**\ (\ )
 
 If ``true``, any offset outside the path's length will wrap around, instead of stopping at the ends. Use it for cyclic paths.
 
@@ -115,12 +115,12 @@ If ``true``, any offset outside the path's length will wrap around, instead of s
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **progress** = ``0.0``
+:ref:`float<class_float>` **progress** = ``0.0`` :ref:`🔗<class_PathFollow2D_property_progress>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_progress** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_progress** **(** **)**
+- |void| **set_progress**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_progress**\ (\ )
 
 The distance along the path, in pixels. Changing this value sets this node's position to a point within the path.
 
@@ -132,14 +132,16 @@ The distance along the path, in pixels. Changing this value sets this node's pos
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **progress_ratio** = ``0.0``
+:ref:`float<class_float>` **progress_ratio** = ``0.0`` :ref:`🔗<class_PathFollow2D_property_progress_ratio>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_progress_ratio** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_progress_ratio** **(** **)**
+- |void| **set_progress_ratio**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_progress_ratio**\ (\ )
 
 The distance along the path as a number in the range 0.0 (for the first vertex) to 1.0 (for the last). This is just another way of expressing the progress within the path, as the offset supplied is multiplied internally by the path's length.
+
+It can be set or get only if the **PathFollow2D** is the child of a :ref:`Path2D<class_Path2D>` which is part of the scene tree, and that this :ref:`Path2D<class_Path2D>` has a :ref:`Curve2D<class_Curve2D>` with a non-zero length. Otherwise, trying to set this field will print an error, and getting this field will return ``0.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -149,12 +151,12 @@ The distance along the path as a number in the range 0.0 (for the first vertex) 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rotates** = ``true``
+:ref:`bool<class_bool>` **rotates** = ``true`` :ref:`🔗<class_PathFollow2D_property_rotates>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_rotates** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_rotating** **(** **)**
+- |void| **set_rotates**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_rotating**\ (\ )
 
 If ``true``, this node rotates to follow the path, with the +X direction facing forward on the path.
 
@@ -166,12 +168,12 @@ If ``true``, this node rotates to follow the path, with the +X direction facing 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **v_offset** = ``0.0``
+:ref:`float<class_float>` **v_offset** = ``0.0`` :ref:`🔗<class_PathFollow2D_property_v_offset>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_v_offset** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_v_offset** **(** **)**
+- |void| **set_v_offset**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_v_offset**\ (\ )
 
 The node's offset perpendicular to the curve.
 
@@ -182,3 +184,4 @@ The node's offset perpendicular to the curve.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

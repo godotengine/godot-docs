@@ -66,7 +66,7 @@ Below a small example of how to use it:
     {
         private DtlsServer _dtls = new DtlsServer();
         private UdpServer _server = new UdpServer();
-        private Godot.Collections.Array<PacketPeerDTLS> _peers = new Godot.Collections.Array<PacketPeerDTLS>();
+        private Godot.Collections.Array<PacketPeerDtls> _peers = new Godot.Collections.Array<PacketPeerDtls>();
     
         public override void _Ready()
         {
@@ -80,8 +80,8 @@ Below a small example of how to use it:
         {
             while (Server.IsConnectionAvailable())
             {
-                PacketPeerUDP peer = _server.TakeConnection();
-                PacketPeerDTLS dtlsPeer = _dtls.TakeConnection(peer);
+                PacketPeerUdp peer = _server.TakeConnection();
+                PacketPeerDtls dtlsPeer = _dtls.TakeConnection(peer);
                 if (dtlsPeer.GetStatus() != PacketPeerDtls.Status.Handshaking)
                 {
                     continue; // It is normal that 50% of the connections fails due to cookie exchange.
@@ -180,11 +180,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`setup<class_DTLSServer_method_setup>` **(** :ref:`TLSOptions<class_TLSOptions>` server_options **)**                     |
-   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` | :ref:`take_connection<class_DTLSServer_method_take_connection>` **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` udp_peer **)** |
-   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`setup<class_DTLSServer_method_setup>`\ (\ server_options\: :ref:`TLSOptions<class_TLSOptions>`\ )                     |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` | :ref:`take_connection<class_DTLSServer_method_take_connection>`\ (\ udp_peer\: :ref:`PacketPeerUDP<class_PacketPeerUDP>`\ ) |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -199,7 +199,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **setup** **(** :ref:`TLSOptions<class_TLSOptions>` server_options **)**
+:ref:`Error<enum_@GlobalScope_Error>` **setup**\ (\ server_options\: :ref:`TLSOptions<class_TLSOptions>`\ ) :ref:`🔗<class_DTLSServer_method_setup>`
 
 Setup the DTLS server to use the given ``server_options``. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
 
@@ -211,7 +211,7 @@ Setup the DTLS server to use the given ``server_options``. See :ref:`TLSOptions.
 
 .. rst-class:: classref-method
 
-:ref:`PacketPeerDTLS<class_PacketPeerDTLS>` **take_connection** **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` udp_peer **)**
+:ref:`PacketPeerDTLS<class_PacketPeerDTLS>` **take_connection**\ (\ udp_peer\: :ref:`PacketPeerUDP<class_PacketPeerUDP>`\ ) :ref:`🔗<class_DTLSServer_method_take_connection>`
 
 Try to initiate the DTLS handshake with the given ``udp_peer`` which must be already connected (see :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`).
 
@@ -224,3 +224,4 @@ Try to initiate the DTLS handshake with the given ``udp_peer`` which must be alr
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

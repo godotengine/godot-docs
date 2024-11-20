@@ -44,6 +44,12 @@ the third argument to ``textureLod`` and change the hint ``filter_nearest`` to
 filter with mipmaps, Godot will automatically calculate the blurred texture for
 you.
 
+.. warning::
+
+    If the filter mode is not changed to a filter mode that contains ``mipmap`` in its name,
+    ``textureLod`` with an LOD parameter greater than ``0.0`` will have the same appearance
+    as with the ``0.0`` LOD parameter.
+
 Screen texture example
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -102,7 +108,7 @@ With correct back-buffer copying, the two spheres blend correctly:
 
 .. image:: img/texscreen_demo2.png
 
-.. warning:
+.. warning::
 
     In 3D, materials that use ``hint_screen_texture`` are considered transparent themselves and
     will not appear in the resulting screen texture of other materials.
@@ -162,6 +168,11 @@ The following code retrieves the 3D position below the pixel being drawn:
 
 Normal-roughness texture
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    Normal-roughness texture is only supported in the Forward+ rendering method,
+    not Mobile or Compatibility.
 
 Similarly, the normal-roughness texture can be used to read the normals and
 roughness of objects rendered in the depth prepass. The normal is stored in the

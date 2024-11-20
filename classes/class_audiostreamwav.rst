@@ -23,6 +23,13 @@ AudioStreamWAV stores sound samples loaded from WAV files. To play the stored so
 
 This class can also be used to store dynamically-generated PCM audio data. See also :ref:`AudioStreamGenerator<class_AudioStreamGenerator>` for procedural audio generation.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -55,9 +62,9 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save_to_wav<class_AudioStreamWAV_method_save_to_wav>` **(** :ref:`String<class_String>` path **)** |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save_to_wav<class_AudioStreamWAV_method_save_to_wav>`\ (\ path\: :ref:`String<class_String>`\ ) |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -72,7 +79,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Format**:
+enum **Format**: :ref:`🔗<enum_AudioStreamWAV_Format>`
 
 .. _class_AudioStreamWAV_constant_FORMAT_8_BITS:
 
@@ -80,7 +87,7 @@ enum **Format**:
 
 :ref:`Format<enum_AudioStreamWAV_Format>` **FORMAT_8_BITS** = ``0``
 
-8-bit audio codec.
+8-bit PCM audio codec.
 
 .. _class_AudioStreamWAV_constant_FORMAT_16_BITS:
 
@@ -88,7 +95,7 @@ enum **Format**:
 
 :ref:`Format<enum_AudioStreamWAV_Format>` **FORMAT_16_BITS** = ``1``
 
-16-bit audio codec.
+16-bit PCM audio codec.
 
 .. _class_AudioStreamWAV_constant_FORMAT_IMA_ADPCM:
 
@@ -96,7 +103,15 @@ enum **Format**:
 
 :ref:`Format<enum_AudioStreamWAV_Format>` **FORMAT_IMA_ADPCM** = ``2``
 
-Audio is compressed using IMA ADPCM.
+Audio is lossily compressed as IMA ADPCM.
+
+.. _class_AudioStreamWAV_constant_FORMAT_QOA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Format<enum_AudioStreamWAV_Format>` **FORMAT_QOA** = ``3``
+
+Audio is lossily compressed as `Quite OK Audio <https://qoaformat.org/>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -106,7 +121,7 @@ Audio is compressed using IMA ADPCM.
 
 .. rst-class:: classref-enumeration
 
-enum **LoopMode**:
+enum **LoopMode**: :ref:`🔗<enum_AudioStreamWAV_LoopMode>`
 
 .. _class_AudioStreamWAV_constant_LOOP_DISABLED:
 
@@ -153,16 +168,20 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()`` :ref:`🔗<class_AudioStreamWAV_property_data>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_data** **(** :ref:`PackedByteArray<class_PackedByteArray>` value **)**
-- :ref:`PackedByteArray<class_PackedByteArray>` **get_data** **(** **)**
+- |void| **set_data**\ (\ value\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_data**\ (\ )
 
 Contains the audio data in bytes.
 
-\ **Note:** This property expects signed PCM8 data. To convert unsigned PCM8 to signed PCM8, subtract 128 from each byte.
+\ **Note:** If :ref:`format<class_AudioStreamWAV_property_format>` is set to :ref:`FORMAT_8_BITS<class_AudioStreamWAV_constant_FORMAT_8_BITS>`, this property expects signed 8-bit PCM data. To convert from unsigned 8-bit PCM, subtract 128 from each byte.
+
+\ **Note:** If :ref:`format<class_AudioStreamWAV_property_format>` is set to :ref:`FORMAT_QOA<class_AudioStreamWAV_constant_FORMAT_QOA>`, this property expects data from a full QOA file.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -172,12 +191,12 @@ Contains the audio data in bytes.
 
 .. rst-class:: classref-property
 
-:ref:`Format<enum_AudioStreamWAV_Format>` **format** = ``0``
+:ref:`Format<enum_AudioStreamWAV_Format>` **format** = ``0`` :ref:`🔗<class_AudioStreamWAV_property_format>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_format** **(** :ref:`Format<enum_AudioStreamWAV_Format>` value **)**
-- :ref:`Format<enum_AudioStreamWAV_Format>` **get_format** **(** **)**
+- |void| **set_format**\ (\ value\: :ref:`Format<enum_AudioStreamWAV_Format>`\ )
+- :ref:`Format<enum_AudioStreamWAV_Format>` **get_format**\ (\ )
 
 Audio format. See :ref:`Format<enum_AudioStreamWAV_Format>` constants for values.
 
@@ -189,14 +208,14 @@ Audio format. See :ref:`Format<enum_AudioStreamWAV_Format>` constants for values
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **loop_begin** = ``0``
+:ref:`int<class_int>` **loop_begin** = ``0`` :ref:`🔗<class_AudioStreamWAV_property_loop_begin>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_loop_begin** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_loop_begin** **(** **)**
+- |void| **set_loop_begin**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_loop_begin**\ (\ )
 
-The loop start point (in number of samples, relative to the beginning of the sample). This information will be imported automatically from the WAV file if present.
+The loop start point (in number of samples, relative to the beginning of the stream).
 
 .. rst-class:: classref-item-separator
 
@@ -206,14 +225,14 @@ The loop start point (in number of samples, relative to the beginning of the sam
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **loop_end** = ``0``
+:ref:`int<class_int>` **loop_end** = ``0`` :ref:`🔗<class_AudioStreamWAV_property_loop_end>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_loop_end** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_loop_end** **(** **)**
+- |void| **set_loop_end**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_loop_end**\ (\ )
 
-The loop end point (in number of samples, relative to the beginning of the sample). This information will be imported automatically from the WAV file if present.
+The loop end point (in number of samples, relative to the beginning of the stream).
 
 .. rst-class:: classref-item-separator
 
@@ -223,14 +242,14 @@ The loop end point (in number of samples, relative to the beginning of the sampl
 
 .. rst-class:: classref-property
 
-:ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` **loop_mode** = ``0``
+:ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` **loop_mode** = ``0`` :ref:`🔗<class_AudioStreamWAV_property_loop_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_loop_mode** **(** :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` value **)**
-- :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` **get_loop_mode** **(** **)**
+- |void| **set_loop_mode**\ (\ value\: :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>`\ )
+- :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` **get_loop_mode**\ (\ )
 
-The loop mode. This information will be imported automatically from the WAV file if present. See :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` constants for values.
+The loop mode. See :ref:`LoopMode<enum_AudioStreamWAV_LoopMode>` constants for values.
 
 .. rst-class:: classref-item-separator
 
@@ -240,12 +259,12 @@ The loop mode. This information will be imported automatically from the WAV file
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **mix_rate** = ``44100``
+:ref:`int<class_int>` **mix_rate** = ``44100`` :ref:`🔗<class_AudioStreamWAV_property_mix_rate>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_mix_rate** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_mix_rate** **(** **)**
+- |void| **set_mix_rate**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_mix_rate**\ (\ )
 
 The sample rate for mixing this audio. Higher values require more storage space, but result in better quality.
 
@@ -261,12 +280,12 @@ According to the `Nyquist-Shannon sampling theorem <https://en.wikipedia.org/wik
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **stereo** = ``false``
+:ref:`bool<class_bool>` **stereo** = ``false`` :ref:`🔗<class_AudioStreamWAV_property_stereo>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_stereo** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_stereo** **(** **)**
+- |void| **set_stereo**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_stereo**\ (\ )
 
 If ``true``, audio is stereo.
 
@@ -283,9 +302,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save_to_wav** **(** :ref:`String<class_String>` path **)**
+:ref:`Error<enum_@GlobalScope_Error>` **save_to_wav**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_AudioStreamWAV_method_save_to_wav>`
 
-Saves the AudioStreamWAV as a WAV file to ``path``. Samples with IMA ADPCM format can't be saved.
+Saves the AudioStreamWAV as a WAV file to ``path``. Samples with IMA ADPCM or Quite OK Audio formats can't be saved.
 
 \ **Note:** A ``.wav`` extension is automatically appended to ``path`` if it is missing.
 
@@ -296,3 +315,4 @@ Saves the AudioStreamWAV as a WAV file to ``path``. Samples with IMA ADPCM forma
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

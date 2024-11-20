@@ -22,21 +22,23 @@ Creating a VisualShader
 VisualShaders can be created in any :ref:`class_ShaderMaterial`. To begin using
 VisualShaders, create a new ``ShaderMaterial`` in an object of your choice.
 
-.. image:: img/shader_material_create_mesh.png
+.. image:: img/shader_material_create_mesh.webp
 
-Then assign a :ref:`class_VisualShader` resource to the ``Shader`` property.
+Then assign a :ref:`class_Shader` resource to the ``Shader`` property.
 
 .. image:: img/visual_shader_create.webp
 
 Click on the new ``Shader`` resource and the Create Shader dialog will
-open automatically. Change the Type option to VisualShader in the dropdown.
+open automatically. Change the Type option to :ref:`class_VisualShader`
+in the dropdown, then give it a name.
 
 .. image:: img/visual_shader_create2.webp
 
-The layout of the Visual Shader Editor comprises two parts:
+Click on the visual shader you just created to open the Shader Editor.
+The layout of the Shader Editor comprises two parts:
 the upper toolbar and the graph itself.
 
-.. image:: img/visual_shader_editor2.png
+.. image:: img/visual_shader_editor2.webp
 
 From left to right in the toolbar:
 
@@ -46,6 +48,12 @@ From left to right in the toolbar:
   script shaders, it defines what built-in nodes will be available.
 - The following buttons and number input control the zooming level, grid
   snapping and distance between grid lines (in pixels).
+- The toggle controls if the graph minimap in the bottom right of the editor
+  is visible or not.
+- The automatically arrange selected nodes button will try to organize any
+  nodes you have selected as efficiently and cleanly as possible.
+- The Manage Varyings button opens a dropdown that lets you add or remove a
+  varying.
 - The last icon shows the generated shader code corresponding to your graph.
 
 .. note::
@@ -68,7 +76,7 @@ create your shader. To add a new node, click on the ``Add Node`` button on the
 upper left corner or right click on any empty location in the graph, and a menu
 will pop up.
 
-.. image:: img/vs_popup.png
+.. image:: img/vs_popup.webp
 
 This popup has the following properties:
 
@@ -92,6 +100,56 @@ the vector will take the value of the scalar.
 When connecting any ``vector`` output to a ``scalar`` input, the value of the
 scalar will be the average of the vector's components.
 
+Visual Shader node interface
+------------------------------
+
+Visual shader nodes have input and output ports. The input ports are located on the left side of the node, and output ports are located on the right side of the node.
+
+.. figure:: img/vs_node.webp
+
+These ports are colored to differentiate type of port:
+
+.. |scalar| image:: img/vs_scalar.webp
+.. |vector| image:: img/vs_vector.webp
+.. |boolean| image:: img/vs_boolean.webp
+.. |transform| image:: img/vs_transform.webp
+.. |sampler| image:: img/vs_sampler.webp
+
+
+.. list-table:: Port types
+   :widths: auto
+   :header-rows: 1
+
+   * - Type
+     - Color
+     - Description
+     - Example
+   * - Scalar
+     - Gray
+     - Scalar is a single value.
+     - |scalar|
+   * - Vector
+     - Purple
+     - Vector is a set of values.
+     - |vector|
+   * - Boolean
+     - Green
+     - On or off, true or false.
+     - |boolean|
+   * - Transform
+     - Pink
+     - A matrix, usually used to transform vertices.
+     - |transform|
+   * - Sampler
+     - Orange
+     - A texture sampler. It can be used to sample textures.
+     - |sampler|
+
+All of the types are used in the calculations of vertices, fragments, and lights in the shader. For example: matrix multiplication, 
+vector addition, or scalar division.
+
+There are other types but these are the main ones.
+
 Visual Shader nodes
 -------------------
 
@@ -110,13 +168,27 @@ parsing or compilation errors will be printed to the Output tab. The outputs are
 initialized to their zero value by default. The node is located under the
 Special tab and can be used in all shader modes.
 
-.. image:: img/vs_expression.gif
-
 The possibilities of this node are almost limitless – you can write complex
 procedures, and use all the power of text-based shaders, such as loops, the
 ``discard`` keyword, extended types, etc. For example:
 
 .. image:: img/vs_expression2.png
+
+Reroute node
+++++++++++++
+
+The ``Reroute`` node is used purely for organizational purposes. In a complicated
+shader with many nodes you may find that the paths between nodes can make
+things hard to read. Reroute, as its name suggests, allows you to adjust the path
+between nodes to make things easier to read. You can even have multiple reroute
+nodes for a single path, which can be used to make right angles.
+
+.. image:: img/vs_reroute.webp
+
+To move a reroute node move your mouse cursor above it, and grab the handle that
+appears.
+
+.. image:: img/vs_reroute_handle.webp
 
 Fresnel node
 ++++++++++++
@@ -126,7 +198,7 @@ a scalar which is the saturated dot product between them. Additionally, you can
 setup the inversion and the power of equation. The ``Fresnel`` node is great for
 adding a rim-like lighting effect to objects.
 
-.. image:: img/vs_fresnel.png
+.. image:: img/vs_fresnel.webp
 
 Boolean node
 ++++++++++++
@@ -155,4 +227,4 @@ The ``Switch`` node returns a vector if the boolean condition is ``true`` or
 ``false``. ``Boolean`` was introduced above. If you convert a vector to a true
 boolean, all components of the vector should be above zero.
 
-.. image:: img/vs_switch.png
+.. image:: img/vs_switch.webp

@@ -1,3 +1,5 @@
+:allow_comments: False
+
 2D
 ==
 
@@ -7,6 +9,8 @@
 
    canvas_layers
    2d_transforms
+
+.. _doc_2d_rendering:
 
 Rendering
 ---------
@@ -21,6 +25,7 @@ Rendering
    particle_systems_2d
    2d_antialiasing
    custom_drawing_in_2d
+   2d_parallax
 
 Physics and movement
 --------------------

@@ -29,14 +29,14 @@ The rules used by clang-format are outlined in the
 `.clang-format <https://github.com/godotengine/godot/blob/master/.clang-format>`__
 file of the Godot repository.
 
-As long as you ensure that your style matches the surrounding code and that you
+As long as you ensure that your style matches the surrounding code and that you're
 not introducing trailing whitespace or space-based indentation, you should be
-fine. If you plan to contribute regularly however, we strongly advise that you
-setup clang-format locally to check and automatically fix all your commits.
+fine. If you plan to contribute regularly, however, we strongly advise that you
+set up clang-format locally to check and automatically fix all your commits.
 
 .. warning:: Godot's code style should *not* be applied to third-party code,
-             i.e. that is included in Godot's source tree but was not written
-             specifically for our project. Such code usually come from
+             i.e. code that is included in Godot's source tree, but was not written
+             specifically for our project. Such code usually comes from
              different upstream projects with their own style guides (or lack
              thereof), and don't want to introduce differences that would make
              syncing with upstream repositories harder.
@@ -53,13 +53,39 @@ setup clang-format locally to check and automatically fix all your commits.
     These guidelines only cover code formatting. See :ref:`doc_cpp_usage_guidelines`
     for a list of language features that are permitted in pull requests.
 
+
 Using clang-format locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First of all, you will need to install clang-format. As of now, you need to use
-**clang-format 13** to be compatible with Godot's format. Later versions might
+You need to use **clang-format 17** to be compatible with Godot's format. Later versions might
 be suitable, but previous versions may not support all used options, or format
 some things differently, leading to style issues in pull requests.
+
+.. _doc_code_style_guidelines_pre_commit_hook:
+
+Pre-commit hook
+^^^^^^^^^^^^^^^
+
+For ease of use, we provide hooks for Git with the `pre-commit <https://pre-commit.com/>`__
+Python framework that will run clang-format automatically on all your commits with the
+correct version of clang-format.
+To set up:
+
+::
+
+  pip install pre-commit
+  pre-commit install
+
+
+You can also run the hook manually with ``pre-commit run``.
+
+.. note::
+
+    Previously, we supplied a hook in the folder ``misc/hooks``. If you copied the
+    script manually, these hooks should still work, but symlinks will be broken.
+    If you are using the new system, run ``rm .git/hooks/*`` to remove the old hooks
+    that are no longer needed.
+
 
 Installation
 ^^^^^^^^^^^^
@@ -74,14 +100,14 @@ Here's how to install clang-format:
 - macOS and Windows: You can download precompiled binaries from the
   `LLVM website <https://releases.llvm.org/download.html>`__. You may need to add
   the path to the binary's folder to your system's ``PATH`` environment
-  variable to be able to call ``clang-format`` out of the box.
+  variable to be able to call clang-format out of the box.
 
 You then have different possibilities to apply clang-format to your changes:
 
 Manual usage
 ^^^^^^^^^^^^
 
-You can apply clang-format manually one or more files with the following
+You can apply clang-format manually for one or more files with the following
 command:
 
 ::
@@ -95,37 +121,23 @@ command:
   you don't run clang-format on compiled objects (.o and .a files) that are
   in Godot's tree. So better use ``core/*.{cpp,h}`` than ``core/*``.
 
-Pre-commit hook
-^^^^^^^^^^^^^^^
-
-For ease of use, we provide a pre-commit hook for Git that will run
-clang-format automatically on all your commits to check them, and let you apply
-its changes in the final commit.
-
-This "hook" is a script which can be found in ``misc/hooks``, refer to that
-folder's README.md for installation instructions.
-
-If your clang-format is not in the ``PATH``, you may have to edit the
-``pre-commit-clang-format`` to point to the correct binary for it to work.
-The hook was tested on Linux and macOS, but should also work in the Git Shell
-on Windows.
 
 IDE plugin
 ^^^^^^^^^^
 
 Most IDEs or code editors have beautifier plugins that can be configured to run
-clang-format automatically, for example each time you save a file.
+clang-format automatically, for example, each time you save a file.
 
 Here is a non-exhaustive list of beautifier plugins for some IDEs:
 
 - Qt Creator: `Beautifier plugin <https://doc.qt.io/qtcreator/creator-beautifier.html>`__
 - Visual Studio Code: `Clang-Format <https://marketplace.visualstudio.com/items?itemName=xaver.clang-format>`__
-- Visual Studio: `ClangFormat <https://marketplace.visualstudio.com/items?itemName=LLVMExtensions.ClangFormat>`__
+- Visual Studio: `Clang Power Tools 2022 <https://marketplace.visualstudio.com/items?itemName=caphyon.ClangPowerTools2022>`__
 - vim: `vim-clang-format <https://github.com/rhysd/vim-clang-format>`__
 - CLion: Starting from version ``2019.1``, no plugin is required. Instead, enable
   `ClangFormat <https://www.jetbrains.com/help/clion/clangformat-as-alternative-formatter.html#clion-support>`__
 
-(Pull requests welcome to extend this list with tested plugins.)
+(Pull requests are welcome to extend this list with tested plugins.)
 
 .. _doc_code_style_guidelines_header_includes:
 
@@ -159,36 +171,37 @@ ones, the following rules should be followed:
 Example:
 
 .. code-block:: cpp
+    :caption: my_new_file.h
 
-    /*************************************************************************/
-    /*  my_new_file.h                                                        */
-    /*************************************************************************/
-    /*                       This file is part of:                           */
-    /*                           GODOT ENGINE                                */
-    /*                      https://godotengine.org                          */
-    /*************************************************************************/
-    /* Copyright (c) 2007-2021 Juan Linietsky, Ariel Manzur.                 */
-    /* Copyright (c) 2014-2021 Godot Engine contributors (cf. AUTHORS.md).   */
-    /*                                                                       */
-    /* Permission is hereby granted, free of charge, to any person obtaining */
-    /* a copy of this software and associated documentation files (the       */
-    /* "Software"), to deal in the Software without restriction, including   */
-    /* without limitation the rights to use, copy, modify, merge, publish,   */
-    /* distribute, sublicense, and/or sell copies of the Software, and to    */
-    /* permit persons to whom the Software is furnished to do so, subject to */
-    /* the following conditions:                                             */
-    /*                                                                       */
-    /* The above copyright notice and this permission notice shall be        */
-    /* included in all copies or substantial portions of the Software.       */
-    /*                                                                       */
-    /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,       */
-    /* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF    */
-    /* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.*/
-    /* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY  */
-    /* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,  */
-    /* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE     */
-    /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                */
-    /*************************************************************************/
+    /**************************************************************************/
+    /*  my_new_file.h                                                         */
+    /**************************************************************************/
+    /*                         This file is part of:                          */
+    /*                             GODOT ENGINE                               */
+    /*                        https://godotengine.org                         */
+    /**************************************************************************/
+    /* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+    /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
+    /*                                                                        */
+    /* Permission is hereby granted, free of charge, to any person obtaining  */
+    /* a copy of this software and associated documentation files (the        */
+    /* "Software"), to deal in the Software without restriction, including    */
+    /* without limitation the rights to use, copy, modify, merge, publish,    */
+    /* distribute, sublicense, and/or sell copies of the Software, and to     */
+    /* permit persons to whom the Software is furnished to do so, subject to  */
+    /* the following conditions:                                              */
+    /*                                                                        */
+    /* The above copyright notice and this permission notice shall be         */
+    /* included in all copies or substantial portions of the Software.        */
+    /*                                                                        */
+    /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,        */
+    /* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF     */
+    /* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. */
+    /* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY   */
+    /* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,   */
+    /* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE      */
+    /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
+    /**************************************************************************/
 
     #ifndef MY_NEW_FILE_H
     #define MY_NEW_FILE_H
@@ -204,36 +217,37 @@ Example:
     #endif // MY_NEW_FILE_H
 
 .. code-block:: cpp
+    :caption: my_new_file.cpp
 
-    /*************************************************************************/
-    /*  my_new_file.cpp                                                      */
-    /*************************************************************************/
-    /*                       This file is part of:                           */
-    /*                           GODOT ENGINE                                */
-    /*                      https://godotengine.org                          */
-    /*************************************************************************/
-    /* Copyright (c) 2007-2021 Juan Linietsky, Ariel Manzur.                 */
-    /* Copyright (c) 2014-2021 Godot Engine contributors (cf. AUTHORS.md).   */
-    /*                                                                       */
-    /* Permission is hereby granted, free of charge, to any person obtaining */
-    /* a copy of this software and associated documentation files (the       */
-    /* "Software"), to deal in the Software without restriction, including   */
-    /* without limitation the rights to use, copy, modify, merge, publish,   */
-    /* distribute, sublicense, and/or sell copies of the Software, and to    */
-    /* permit persons to whom the Software is furnished to do so, subject to */
-    /* the following conditions:                                             */
-    /*                                                                       */
-    /* The above copyright notice and this permission notice shall be        */
-    /* included in all copies or substantial portions of the Software.       */
-    /*                                                                       */
-    /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,       */
-    /* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF    */
-    /* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.*/
-    /* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY  */
-    /* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,  */
-    /* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE     */
-    /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                */
-    /*************************************************************************/
+    /**************************************************************************/
+    /*  my_new_file.cpp                                                       */
+    /**************************************************************************/
+    /*                         This file is part of:                          */
+    /*                             GODOT ENGINE                               */
+    /*                        https://godotengine.org                         */
+    /**************************************************************************/
+    /* Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md). */
+    /* Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.                  */
+    /*                                                                        */
+    /* Permission is hereby granted, free of charge, to any person obtaining  */
+    /* a copy of this software and associated documentation files (the        */
+    /* "Software"), to deal in the Software without restriction, including    */
+    /* without limitation the rights to use, copy, modify, merge, publish,    */
+    /* distribute, sublicense, and/or sell copies of the Software, and to     */
+    /* permit persons to whom the Software is furnished to do so, subject to  */
+    /* the following conditions:                                              */
+    /*                                                                        */
+    /* The above copyright notice and this permission notice shall be         */
+    /* included in all copies or substantial portions of the Software.        */
+    /*                                                                        */
+    /* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,        */
+    /* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF     */
+    /* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. */
+    /* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY   */
+    /* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,   */
+    /* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE      */
+    /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
+    /**************************************************************************/
 
     #include "my_new_file.h"
 
@@ -257,58 +271,71 @@ Python
 Godot's SCons buildsystem is written in Python, and various scripts included
 in the source tree are also using Python.
 
-For those, we follow the `Black style guide <https://github.com/psf/black#the-black-code-style>`__.
-Blacken your Python changes using `Black <https://pypi.org/project/black/>`__.
+For those, we use the `Ruff linter and code formatter <https://docs.astral.sh/ruff/>`__.
 
-Using black locally
+Using ruff locally
 ~~~~~~~~~~~~~~~~~~~
 
-First of all, you will need to install Black. Black requires Python 3.7+ to run.
+First of all, you will need to install Ruff. Ruff requires Python 3.7+ to run.
 
 Installation
 ^^^^^^^^^^^^
 
-Here's how to install black:
+Here's how to install ruff:
 
 ::
 
-    pip3 install black --user
+    pip3 install ruff --user
 
 
-You then have different possibilities to apply black to your changes:
+You then have different possibilities to apply ruff to your changes:
 
 Manual usage
 ^^^^^^^^^^^^
 
-You can apply ``black`` manually to one or more files with the following
+You can apply ``ruff`` manually to one or more files with the following
 command:
 
 ::
 
-    black -l 120 <path/to/file(s)>
+    ruff -l 120 <path/to/file(s)>
 
 - ``-l 120`` means that the allowed number of characters per line is 120.
   This number was agreed upon by the developers.
 - The path can point to several files, either one after the other or using
   wildcards like in a typical Unix shell.
 
+
 Pre-commit hook
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
-For ease of use, we provide a pre-commit hook for Git that will run
-black automatically on all your commits to check them, and let you apply
-its changes in the final commit.
+For ease of use, we provide hooks for Git with the `pre-commit <https://pre-commit.com/>`__
+Python framework that will run ``ruff`` automatically on all your commits with the
+correct version of ``ruff``.
+To set up:
 
-This "hook" is a script which can be found in ``misc/hooks``. Refer to that
-folder's ``README.md`` for installation instructions.
+::
+
+  pip install pre-commit
+  pre-commit install
+
+
+You can also run the hook manually with ``pre-commit run``.
+
+.. note::
+
+    Previously, we supplied a hook in the folder ``misc/hooks``. If you copied the
+    script manually, these hooks should still work, but symlinks will be broken.
+    If you are using the new system, run ``rm .git/hooks/*`` to remove the old hooks
+    that are no longer needed.
 
 
 Editor integration
 ^^^^^^^^^^^^^^^^^^
 
 Many IDEs or code editors have beautifier plugins that can be configured to run
-black automatically, for example each time you save a file. For details you can
-check `Black editor integration <https://github.com/psf/black#editor-integration>`__.
+ruff automatically, for example, each time you save a file. For details, you can
+check `Ruff Integrations <https://docs.astral.sh/ruff/integrations/>`__.
 
 Comment style guide
 -------------------
@@ -321,7 +348,7 @@ Godot's codebase.
   always end them with a period.
 - Reference variable/function names and values using backticks.
 - Wrap comments to ~100 characters.
-- You can use ``TODO:``, ``FIXME:``, ``NOTE:``, or ``HACK:`` as admonitions
+- You can use ``TODO:``, ``FIXME:``, ``NOTE:``, ``WARNING:``, or ``HACK:`` as admonitions
   when needed.
 
 **Example:**
@@ -359,7 +386,7 @@ instead.
         // ...
     }
 
-For member variables, don't use Javadoc-style comments but use single-line comments instead:
+For member variables, don't use Javadoc-style comments, but use single-line comments instead:
 
 .. code-block:: cpp
 

@@ -87,7 +87,8 @@ There are two ways to load resources from code. First, you can use the ``load()`
 
     public override void _Ready()
     {
-        var texture = (Texture)GD.Load("res://robi.png"); // Godot loads the Resource when it reads the line.
+        // Godot loads the Resource when it executes this line.
+        var texture = GD.Load<Texture>("res://Robi.png");
         var sprite = GetNode<Sprite2D>("sprite");
         sprite.Texture = texture;
     }
@@ -128,7 +129,7 @@ To get an instance of the scene, you have to use the
 
  .. code-tab:: csharp
 
-    private PackedScene _bulletScene = (PackedScene)GD.Load("res://bullet.tscn");
+    private PackedScene _bulletScene = GD.Load<PackedScene>("res://Bullet.tscn");
 
     private void OnShoot()
     {
@@ -159,7 +160,7 @@ Creating your own resources
 Like any Object in Godot, users can also script Resources. Resource scripts
 inherit the ability to freely translate between object properties and serialized
 text or binary data (\*.tres, \*.res). They also inherit the reference-counting
-memory management from the Reference type.
+memory management from the RefCounted type.
 
 This comes with many distinct advantages over alternative data
 structures, such as JSON, CSV, or custom TXT files. Users can only import these
@@ -207,6 +208,9 @@ It should appear in your file tab with the full name ``bot_stats.tres``.
 Without a script, it's useless, so let's add some data and logic!
 Attach a script to it named ``bot_stats.gd`` (or just create a new script, and then drag it to it).
 
+.. note::
+    If you're using C#, you need to annotate your Resource class with the ``[GlobalClass]`` attribute for it to show up in the create resource GUI.
+
 .. tabs::
   .. code-tab:: gdscript GDScript
 
@@ -231,6 +235,7 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
 
         namespace ExampleProject
         {
+            [GlobalClass]
             public partial class BotStats : Resource
             {
                 [Export]
@@ -329,9 +334,10 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
 
         using Godot;
 
+        [GlobalClass]
         public partial class BotStatsTable : Resource
         {
-            private Godot.Dictionary<string, BotStats> _stats = new Godot.Dictionary<string, BotStats>();
+            private Godot.Collections.Dictionary<string, BotStats> _stats = new Godot.Collections.Dictionary<string, BotStats>();
 
             public BotStatsTable()
             {
@@ -383,6 +389,7 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
 
         public partial class MyNode : Node
         {
+            [GlobalClass]
             public partial class MyResource : Resource
             {
                 [Export]

@@ -8,10 +8,19 @@ Basic Usage
 
 Basic usage of text-to-speech involves the following one-time steps:
 
+- Enable TTS in the Godot editor for your project
 - Query the system for a list of usable voices
 - Store the ID of the voice you want to use
 
-Once you have the voice ID, you can use it to speak some text:
+By default, the Godot project-level setting for text-to-speech is disabled, to avoid unnecessary overhead. To enable it:
+
+- Go to **Project > Project Settings**
+- Make sure the **Advanced Settings** toggle is enabled
+- Click on **Audio > General**
+- Ensure the **Text to Speech** option is checked
+- Restart Godot if prompted to do so.
+
+Text-to-speech uses a specific voice. Depending on the user's system, they might have multiple voices installed. Once you have the voice ID, you can use it to speak some text:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -62,7 +71,7 @@ Godot includes text-to-speech functionality. You can find these under the :ref:`
 
 Godot depends on system libraries for text-to-speech functionality. These libraries are installed by default on Windows and macOS, but not on all Linux distributions. If they are not present, text-to-speech functionality will not work. Specifically, the ``tts_get_voices()`` method will return an empty list, indicating that there are no usable voices.
 
-Both Godot users on Linux and end-users on Linux running Godot games need to ensure that their system includes the system libraries for text-to-speech to work. Please consult the table below or your own distibution's documentation to determine what libraries you need to install.
+Both Godot users on Linux and end-users on Linux running Godot games need to ensure that their system includes the system libraries for text-to-speech to work. Please consult the table below or your own distribution's documentation to determine what libraries you need to install.
 
 Distro-specific one-liners
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -72,6 +81,13 @@ Distro-specific one-liners
 |                  |     pacman -S speech-dispatcher festival espeakup                                                         |
 +------------------+-----------------------------------------------------------------------------------------------------------+
 
+Troubleshooting
+---------------
+
+If you get the error `Invalid get index '0' (on base: 'PackedStringArray').` for the line `var voice_id = voices[0]`, check if there are any items in `voices`. If not:
+
+- All users: make sure you enabled **Text to Speech** in project settings
+- Linux users: ensure you installed the system-specific libraries for text to speech
 
 Best practices
 --------------

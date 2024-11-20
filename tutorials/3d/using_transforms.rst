@@ -158,12 +158,16 @@ It is possible to rotate a transform, either by multiplying its basis by another
 
  .. code-tab:: csharp
 
+    Transform3D transform = Transform;
     Vector3 axis = new Vector3(1, 0, 0); // Or Vector3.Right
     float rotationAmount = 0.1f;
+
     // Rotate the transform around the X axis by 0.1 radians.
     transform.Basis = new Basis(axis, rotationAmount) * transform.Basis;
     // shortened
     transform.Basis = transform.Basis.Rotated(axis, rotationAmount);
+
+    Transform = transform;
 
 A method in Node3D simplifies this:
 
@@ -196,6 +200,8 @@ To rotate relative to object space (the node's own transform), use the following
 
     // Rotate around the object's local X axis by 0.1 radians.
     RotateObjectLocal(new Vector3(1, 0, 0), 0.1f);
+
+The axis should be defined in the local coordinate system of the object. For example, to rotate around the object's local X, Y, or Z axes, use ``Vector3.RIGHT`` for the X-axis, ``Vector3.UP`` for the Y-axis, and ``Vector3.FORWARD`` for the Z-axis.
 
 Precision errors
 ================
@@ -310,7 +316,7 @@ Setting information
 
 There are, of course, cases where you want to set information to a transform. Imagine a first person controller or orbiting camera. Those are definitely done using angles, because you *do want* the transforms to happen in a specific order.
 
-For such cases, keep the angles and rotations *outside* the transform and set them every frame. Don't try to retrieve and re-use them because the transform is not meant to be used this way.
+For such cases, keep the angles and rotations *outside* the transform and set them every frame. Don't try to retrieve and reuse them because the transform is not meant to be used this way.
 
 Example of looking around, FPS style:
 

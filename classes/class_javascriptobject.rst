@@ -21,8 +21,6 @@ Description
 
 JavaScriptObject is used to interact with JavaScript objects retrieved or created via :ref:`JavaScriptBridge.get_interface<class_JavaScriptBridge_method_get_interface>`, :ref:`JavaScriptBridge.create_object<class_JavaScriptBridge_method_create_object>`, or :ref:`JavaScriptBridge.create_callback<class_JavaScriptBridge_method_create_callback>`.
 
-\ **Example:**\ 
-
 ::
 
     extends Node
@@ -58,3 +56,4 @@ JavaScriptObject is used to interact with JavaScript objects retrieved or create
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

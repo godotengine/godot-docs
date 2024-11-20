@@ -68,8 +68,7 @@ See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>` for a full list.
       - :ref:`PackedInt32Array <class_PackedInt32Array>`
 
 In most cases when creating a mesh, we define it by its vertex positions. So usually, the array of vertices (at index 0) is required, while the index array (at index 12) is optional and
-will only be used if included. It is also possible to create a mesh with only the index array and no vertex array, but that's beyond the scope of this tutorial. In fact, we won't use the
-index array at all.
+will only be used if included. It is also possible to create a mesh with only the index array and no vertex array, but that's beyond the scope of this tutorial.
 
 All the other arrays carry information about the vertices. They are optional and will only be used if included. Some of these arrays (e.g. ``ARRAY_COLOR``)
 use one entry per vertex to provide extra information about vertices. They must have the same size as the vertex array. Other arrays (e.g. ``ARRAY_TANGENT``) use
@@ -265,7 +264,7 @@ that you find online.
             var y = cos(PI * v)
 
             # Loop over segments in ring.
-            for j in range(radial_segments):
+            for j in range(radial_segments + 1):
                 var u = float(j) / radial_segments
                 var x = sin(u * PI * 2.0)
                 var z = cos(u * PI * 2.0)
@@ -284,15 +283,6 @@ that you find online.
                     indices.append(prevrow + j)
                     indices.append(thisrow + j)
                     indices.append(thisrow + j - 1)
-
-            if i > 0:
-                indices.append(prevrow + radial_segments - 1)
-                indices.append(prevrow)
-                indices.append(thisrow + radial_segments - 1)
-
-                indices.append(prevrow)
-                indices.append(prevrow + radial_segments)
-                indices.append(thisrow + radial_segments - 1)
 
             prevrow = thisrow
             thisrow = point
@@ -324,7 +314,7 @@ that you find online.
                 var y = Mathf.Cos(Mathf.Pi * v);
 
                 // Loop over segments in ring.
-                for (var j = 0; j < _radialSegments; j++)
+                for (var j = 0; j < _radialSegments + 1; j++)
                 {
                     var u = ((float)j) / _radialSegments;
                     var x = Mathf.Sin(u * Mathf.Pi * 2);
@@ -346,17 +336,6 @@ that you find online.
                         indices.Add(thisRow + j);
                         indices.Add(thisRow + j - 1);
                     }
-                }
-
-                if (i > 0)
-                {
-                    indices.Add(prevRow + _radialSegments - 1);
-                    indices.Add(prevRow);
-                    indices.Add(thisRow + _radialSegments - 1);
-
-                    indices.Add(prevRow);
-                    indices.Add(prevRow + _radialSegments);
-                    indices.Add(thisRow + _radialSegments - 1);
                 }
 
                 prevRow = thisRow;

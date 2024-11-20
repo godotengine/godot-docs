@@ -21,7 +21,7 @@ Description
 
 Resource tooltip plugins are used by :ref:`FileSystemDock<class_FileSystemDock>` to generate customized tooltips for specific resources. E.g. tooltip for a :ref:`Texture2D<class_Texture2D>` displays a bigger preview and the texture's dimensions.
 
-A plugin must be first registered with :ref:`FileSystemDock.add_resource_tooltip_plugin<class_FileSystemDock_method_add_resource_tooltip_plugin>`. When the user hovers a resource in filesystem dock which is handled by the plugin, :ref:`_make_tooltip_for_path<class_EditorResourceTooltipPlugin_method__make_tooltip_for_path>` is called to create the tooltip. It works similarly to :ref:`Control._make_custom_tooltip<class_Control_method__make_custom_tooltip>`.
+A plugin must be first registered with :ref:`FileSystemDock.add_resource_tooltip_plugin<class_FileSystemDock_method_add_resource_tooltip_plugin>`. When the user hovers a resource in filesystem dock which is handled by the plugin, :ref:`_make_tooltip_for_path<class_EditorResourceTooltipPlugin_private_method__make_tooltip_for_path>` is called to create the tooltip. It works similarly to :ref:`Control._make_custom_tooltip<class_Control_private_method__make_custom_tooltip>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -31,13 +31,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`_handles<class_EditorResourceTooltipPlugin_method__handles>` **(** :ref:`String<class_String>` type **)** |virtual| |const|                                                                                                               |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Control<class_Control>` | :ref:`_make_tooltip_for_path<class_EditorResourceTooltipPlugin_method__make_tooltip_for_path>` **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` metadata, :ref:`Control<class_Control>` base **)** |virtual| |const| |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`request_thumbnail<class_EditorResourceTooltipPlugin_method_request_thumbnail>` **(** :ref:`String<class_String>` path, :ref:`TextureRect<class_TextureRect>` control **)** |const|                                                        |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`_handles<class_EditorResourceTooltipPlugin_private_method__handles>`\ (\ type\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                   |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Control<class_Control>` | :ref:`_make_tooltip_for_path<class_EditorResourceTooltipPlugin_private_method__make_tooltip_for_path>`\ (\ path\: :ref:`String<class_String>`, metadata\: :ref:`Dictionary<class_Dictionary>`, base\: :ref:`Control<class_Control>`\ ) |virtual| |const| |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`request_thumbnail<class_EditorResourceTooltipPlugin_method_request_thumbnail>`\ (\ path\: :ref:`String<class_String>`, control\: :ref:`TextureRect<class_TextureRect>`\ ) |const|                                                                  |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -48,11 +48,11 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EditorResourceTooltipPlugin_method__handles:
+.. _class_EditorResourceTooltipPlugin_private_method__handles:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_handles** **(** :ref:`String<class_String>` type **)** |virtual| |const|
+:ref:`bool<class_bool>` **_handles**\ (\ type\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_EditorResourceTooltipPlugin_private_method__handles>`
 
 Return ``true`` if the plugin is going to handle the given :ref:`Resource<class_Resource>` ``type``.
 
@@ -60,15 +60,15 @@ Return ``true`` if the plugin is going to handle the given :ref:`Resource<class_
 
 ----
 
-.. _class_EditorResourceTooltipPlugin_method__make_tooltip_for_path:
+.. _class_EditorResourceTooltipPlugin_private_method__make_tooltip_for_path:
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **_make_tooltip_for_path** **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` metadata, :ref:`Control<class_Control>` base **)** |virtual| |const|
+:ref:`Control<class_Control>` **_make_tooltip_for_path**\ (\ path\: :ref:`String<class_String>`, metadata\: :ref:`Dictionary<class_Dictionary>`, base\: :ref:`Control<class_Control>`\ ) |virtual| |const| :ref:`🔗<class_EditorResourceTooltipPlugin_private_method__make_tooltip_for_path>`
 
 Create and return a tooltip that will be displayed when the user hovers a resource under the given ``path`` in filesystem dock.
 
-The ``metadata`` dictionary is provided by preview generator (see :ref:`EditorResourcePreviewGenerator._generate<class_EditorResourcePreviewGenerator_method__generate>`).
+The ``metadata`` dictionary is provided by preview generator (see :ref:`EditorResourcePreviewGenerator._generate<class_EditorResourcePreviewGenerator_private_method__generate>`).
 
 \ ``base`` is the base default tooltip, which is a :ref:`VBoxContainer<class_VBoxContainer>` with a file name, type and size labels. If another plugin handled the same file type, ``base`` will be output from the previous plugin. For best result, make sure the base tooltip is part of the returned :ref:`Control<class_Control>`.
 
@@ -92,7 +92,7 @@ The ``metadata`` dictionary is provided by preview generator (see :ref:`EditorRe
 
 .. rst-class:: classref-method
 
-void **request_thumbnail** **(** :ref:`String<class_String>` path, :ref:`TextureRect<class_TextureRect>` control **)** |const|
+|void| **request_thumbnail**\ (\ path\: :ref:`String<class_String>`, control\: :ref:`TextureRect<class_TextureRect>`\ ) |const| :ref:`🔗<class_EditorResourceTooltipPlugin_method_request_thumbnail>`
 
 Requests a thumbnail for the given :ref:`TextureRect<class_TextureRect>`. The thumbnail is created asynchronously by :ref:`EditorResourcePreview<class_EditorResourcePreview>` and automatically set when available.
 
@@ -103,3 +103,4 @@ Requests a thumbnail for the given :ref:`TextureRect<class_TextureRect>`. The th
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

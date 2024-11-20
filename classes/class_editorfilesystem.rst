@@ -31,25 +31,25 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                                       | :ref:`get_file_type<class_EditorFileSystem_method_get_file_type>` **(** :ref:`String<class_String>` path **)** |const|                  |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem<class_EditorFileSystem_method_get_filesystem>` **(** **)**                                                         |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem_path<class_EditorFileSystem_method_get_filesystem_path>` **(** :ref:`String<class_String>` path **)**              |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                         | :ref:`get_scanning_progress<class_EditorFileSystem_method_get_scanning_progress>` **(** **)** |const|                                   |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`is_scanning<class_EditorFileSystem_method_is_scanning>` **(** **)** |const|                                                       |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                              | :ref:`reimport_files<class_EditorFileSystem_method_reimport_files>` **(** :ref:`PackedStringArray<class_PackedStringArray>` files **)** |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                              | :ref:`scan<class_EditorFileSystem_method_scan>` **(** **)**                                                                             |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                              | :ref:`scan_sources<class_EditorFileSystem_method_scan_sources>` **(** **)**                                                             |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                              | :ref:`update_file<class_EditorFileSystem_method_update_file>` **(** :ref:`String<class_String>` path **)**                              |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`get_file_type<class_EditorFileSystem_method_get_file_type>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                  |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem<class_EditorFileSystem_method_get_filesystem>`\ (\ )                                                            |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` | :ref:`get_filesystem_path<class_EditorFileSystem_method_get_filesystem_path>`\ (\ path\: :ref:`String<class_String>`\ )              |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                         | :ref:`get_scanning_progress<class_EditorFileSystem_method_get_scanning_progress>`\ (\ ) |const|                                      |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`is_scanning<class_EditorFileSystem_method_is_scanning>`\ (\ ) |const|                                                          |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`reimport_files<class_EditorFileSystem_method_reimport_files>`\ (\ files\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`scan<class_EditorFileSystem_method_scan>`\ (\ )                                                                                |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`scan_sources<class_EditorFileSystem_method_scan_sources>`\ (\ )                                                                |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`update_file<class_EditorFileSystem_method_update_file>`\ (\ path\: :ref:`String<class_String>`\ )                              |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -64,7 +64,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**filesystem_changed** **(** **)**
+**filesystem_changed**\ (\ ) :ref:`🔗<class_EditorFileSystem_signal_filesystem_changed>`
 
 Emitted if the filesystem changed.
 
@@ -76,9 +76,21 @@ Emitted if the filesystem changed.
 
 .. rst-class:: classref-signal
 
-**resources_reimported** **(** :ref:`PackedStringArray<class_PackedStringArray>` resources **)**
+**resources_reimported**\ (\ resources\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_EditorFileSystem_signal_resources_reimported>`
 
 Emitted if a resource is reimported.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileSystem_signal_resources_reimporting:
+
+.. rst-class:: classref-signal
+
+**resources_reimporting**\ (\ resources\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_EditorFileSystem_signal_resources_reimporting>`
+
+Emitted before a resource is reimported.
 
 .. rst-class:: classref-item-separator
 
@@ -88,7 +100,7 @@ Emitted if a resource is reimported.
 
 .. rst-class:: classref-signal
 
-**resources_reload** **(** :ref:`PackedStringArray<class_PackedStringArray>` resources **)**
+**resources_reload**\ (\ resources\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_EditorFileSystem_signal_resources_reload>`
 
 Emitted if at least one resource is reloaded when the filesystem is scanned.
 
@@ -100,7 +112,7 @@ Emitted if at least one resource is reloaded when the filesystem is scanned.
 
 .. rst-class:: classref-signal
 
-**script_classes_updated** **(** **)**
+**script_classes_updated**\ (\ ) :ref:`🔗<class_EditorFileSystem_signal_script_classes_updated>`
 
 Emitted when the list of global script classes gets updated.
 
@@ -112,7 +124,7 @@ Emitted when the list of global script classes gets updated.
 
 .. rst-class:: classref-signal
 
-**sources_changed** **(** :ref:`bool<class_bool>` exist **)**
+**sources_changed**\ (\ exist\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorFileSystem_signal_sources_changed>`
 
 Emitted if the source of any imported file changed.
 
@@ -129,7 +141,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_file_type** **(** :ref:`String<class_String>` path **)** |const|
+:ref:`String<class_String>` **get_file_type**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_EditorFileSystem_method_get_file_type>`
 
 Returns the resource type of the file, given the full path. This returns a string such as ``"Resource"`` or ``"GDScript"``, *not* a file extension such as ``".gd"``.
 
@@ -141,7 +153,7 @@ Returns the resource type of the file, given the full path. This returns a strin
 
 .. rst-class:: classref-method
 
-:ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` **get_filesystem** **(** **)**
+:ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` **get_filesystem**\ (\ ) :ref:`🔗<class_EditorFileSystem_method_get_filesystem>`
 
 Gets the root directory object.
 
@@ -153,7 +165,7 @@ Gets the root directory object.
 
 .. rst-class:: classref-method
 
-:ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` **get_filesystem_path** **(** :ref:`String<class_String>` path **)**
+:ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>` **get_filesystem_path**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorFileSystem_method_get_filesystem_path>`
 
 Returns a view into the filesystem at ``path``.
 
@@ -165,7 +177,7 @@ Returns a view into the filesystem at ``path``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_scanning_progress** **(** **)** |const|
+:ref:`float<class_float>` **get_scanning_progress**\ (\ ) |const| :ref:`🔗<class_EditorFileSystem_method_get_scanning_progress>`
 
 Returns the scan progress for 0 to 1 if the FS is being scanned.
 
@@ -177,7 +189,7 @@ Returns the scan progress for 0 to 1 if the FS is being scanned.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_scanning** **(** **)** |const|
+:ref:`bool<class_bool>` **is_scanning**\ (\ ) |const| :ref:`🔗<class_EditorFileSystem_method_is_scanning>`
 
 Returns ``true`` if the filesystem is being scanned.
 
@@ -189,13 +201,13 @@ Returns ``true`` if the filesystem is being scanned.
 
 .. rst-class:: classref-method
 
-void **reimport_files** **(** :ref:`PackedStringArray<class_PackedStringArray>` files **)**
+|void| **reimport_files**\ (\ files\: :ref:`PackedStringArray<class_PackedStringArray>`\ ) :ref:`🔗<class_EditorFileSystem_method_reimport_files>`
 
 Reimports a set of files. Call this if these files or their ``.import`` files were directly edited by script or an external program.
 
 If the file type changed or the file was newly created, use :ref:`update_file<class_EditorFileSystem_method_update_file>` or :ref:`scan<class_EditorFileSystem_method_scan>`.
 
-\ **Note:** This function blocks until the import is finished. However, the main loop iteration, including timers and :ref:`Node._process<class_Node_method__process>`, will occur during the import process due to progress bar updates. Avoid calls to :ref:`reimport_files<class_EditorFileSystem_method_reimport_files>` or :ref:`scan<class_EditorFileSystem_method_scan>` while an import is in progress.
+\ **Note:** This function blocks until the import is finished. However, the main loop iteration, including timers and :ref:`Node._process<class_Node_private_method__process>`, will occur during the import process due to progress bar updates. Avoid calls to :ref:`reimport_files<class_EditorFileSystem_method_reimport_files>` or :ref:`scan<class_EditorFileSystem_method_scan>` while an import is in progress.
 
 .. rst-class:: classref-item-separator
 
@@ -205,7 +217,7 @@ If the file type changed or the file was newly created, use :ref:`update_file<cl
 
 .. rst-class:: classref-method
 
-void **scan** **(** **)**
+|void| **scan**\ (\ ) :ref:`🔗<class_EditorFileSystem_method_scan>`
 
 Scan the filesystem for changes.
 
@@ -217,7 +229,7 @@ Scan the filesystem for changes.
 
 .. rst-class:: classref-method
 
-void **scan_sources** **(** **)**
+|void| **scan_sources**\ (\ ) :ref:`🔗<class_EditorFileSystem_method_scan_sources>`
 
 Check if the source of any imported resource changed.
 
@@ -229,7 +241,7 @@ Check if the source of any imported resource changed.
 
 .. rst-class:: classref-method
 
-void **update_file** **(** :ref:`String<class_String>` path **)**
+|void| **update_file**\ (\ path\: :ref:`String<class_String>`\ ) :ref:`🔗<class_EditorFileSystem_method_update_file>`
 
 Add a file in an existing directory, or schedule file information to be updated on editor restart. Can be used to update text files saved by an external program.
 
@@ -242,3 +254,4 @@ This will not import the file. To reimport, call :ref:`reimport_files<class_Edit
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

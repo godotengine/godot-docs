@@ -142,18 +142,24 @@ and quality:
   for better performance.
 - **Rendering > Environment > Volumetric Fog > Volume Depth:** Number of slices
   to use along the depth of the froxel buffer for volumetric fog. A lower number
-  will be more efficient but may result in artifacts appearing during camera
+  will be more efficient, but may result in artifacts appearing during camera
   movement.
 - **Rendering > Environment > Volumetric Fog > Use Filter:** Enables filtering
   of the volumetric fog effect prior to integration. This substantially blurs
-  the fog which reduces fine details but also smooths out harsh edges and
+  the fog which reduces fine details, but also smooths out harsh edges and
   aliasing artifacts. Disable when more detail is required.
+
+.. note::
+
+    Volumetric fog can cause banding to appear on the viewport, especially at
+    higher density levels. See :ref:`doc_3d_rendering_limitations_color_banding`
+    for guidance on reducing banding.
 
 Using fog volumes for local volumetric fog
 ------------------------------------------
 
 Sometimes, you want fog to be constrained to specific areas. Conversely, you may
-want to have global volumetric fog but fog should be excluded from certain
+want to have global volumetric fog, but fog should be excluded from certain
 areas. Both approaches can be followed using FogVolume nodes.
 
 Here's a quick start guide to using FogVolumes:

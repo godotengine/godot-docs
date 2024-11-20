@@ -19,7 +19,7 @@ Plugin for adding custom parsers to extract strings that are to be translated fr
 Description
 -----------
 
-**EditorTranslationParserPlugin** is invoked when a file is being parsed to extract strings that require translation. To define the parsing and string extraction logic, override the :ref:`_parse_file<class_EditorTranslationParserPlugin_method__parse_file>` method in script.
+**EditorTranslationParserPlugin** is invoked when a file is being parsed to extract strings that require translation. To define the parsing and string extraction logic, override the :ref:`_parse_file<class_EditorTranslationParserPlugin_private_method__parse_file>` method in script.
 
 Add the extracted strings to argument ``msgids`` or ``msgids_context_plural`` if context or plural is used.
 
@@ -100,9 +100,7 @@ To add a translatable string associated with context or plural, add it to ``msgi
 
 
 
-\ **Note:** If you override parsing logic for standard script types (GDScript, C#, etc.), it would be better to load the ``path`` argument using :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`. This is because built-in scripts are loaded as :ref:`Resource<class_Resource>` type, not :ref:`FileAccess<class_FileAccess>` type.
-
-For example:
+\ **Note:** If you override parsing logic for standard script types (GDScript, C#, etc.), it would be better to load the ``path`` argument using :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`. This is because built-in scripts are loaded as :ref:`Resource<class_Resource>` type, not :ref:`FileAccess<class_FileAccess>` type. For example:
 
 
 .. tabs::
@@ -143,11 +141,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_EditorTranslationParserPlugin_method__get_recognized_extensions>` **(** **)** |virtual| |const|                                                                                     |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`_parse_file<class_EditorTranslationParserPlugin_method__parse_file>` **(** :ref:`String<class_String>` path, :ref:`String[]<class_String>` msgids, :ref:`Array[]<class_Array>` msgids_context_plural **)** |virtual| |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`_get_comments<class_EditorTranslationParserPlugin_private_method__get_comments>`\ (\ msgids_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\]\ ) |virtual|               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_EditorTranslationParserPlugin_private_method__get_recognized_extensions>`\ (\ ) |virtual| |const|                                                                                                                                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`_parse_file<class_EditorTranslationParserPlugin_private_method__parse_file>`\ (\ path\: :ref:`String<class_String>`, msgids\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural\: :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\]\ ) |virtual| |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -158,11 +158,23 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EditorTranslationParserPlugin_method__get_recognized_extensions:
+.. _class_EditorTranslationParserPlugin_private_method__get_comments:
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions** **(** **)** |virtual| |const|
+|void| **_get_comments**\ (\ msgids_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural_comment\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\]\ ) |virtual| :ref:`🔗<class_EditorTranslationParserPlugin_private_method__get_comments>`
+
+If overridden, called after :ref:`_parse_file<class_EditorTranslationParserPlugin_private_method__parse_file>` to get comments for the parsed entries. This method should fill the arrays with the same number of elements and in the same order as :ref:`_parse_file<class_EditorTranslationParserPlugin_private_method__parse_file>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorTranslationParserPlugin_private_method__get_recognized_extensions:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorTranslationParserPlugin_private_method__get_recognized_extensions>`
 
 Gets the list of file extensions to associate with this parser, e.g. ``["csv"]``.
 
@@ -170,11 +182,11 @@ Gets the list of file extensions to associate with this parser, e.g. ``["csv"]``
 
 ----
 
-.. _class_EditorTranslationParserPlugin_method__parse_file:
+.. _class_EditorTranslationParserPlugin_private_method__parse_file:
 
 .. rst-class:: classref-method
 
-void **_parse_file** **(** :ref:`String<class_String>` path, :ref:`String[]<class_String>` msgids, :ref:`Array[]<class_Array>` msgids_context_plural **)** |virtual|
+|void| **_parse_file**\ (\ path\: :ref:`String<class_String>`, msgids\: :ref:`Array<class_Array>`\[:ref:`String<class_String>`\], msgids_context_plural\: :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\]\ ) |virtual| :ref:`🔗<class_EditorTranslationParserPlugin_private_method__parse_file>`
 
 Override this method to define a custom parsing logic to extract the translatable strings.
 
@@ -185,3 +197,4 @@ Override this method to define a custom parsing logic to extract the translatabl
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -15,8 +15,8 @@ Requirements
 
 For compiling under macOS, the following is required:
 
-- `Python 3.6+ <https://www.python.org/downloads/macos/>`_.
-- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
+- `Python 3.8+ <https://www.python.org/downloads/macos/>`_.
+- `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_
   (or the more lightweight Command Line Tools for Xcode).
 - `Vulkan SDK <https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.dmg>`_
@@ -57,7 +57,7 @@ To compile for Apple Silicon (ARM64) powered Macs, use::
 
 To support both architectures in a single "Universal 2" binary, run the above two commands and then use ``lipo`` to bundle them together::
 
-    lipo -create bin/godot.macos.tools.x86_64 bin/godot.macos.tools.arm64 -output bin/godot.macos.tools.universal
+    lipo -create bin/godot.macos.editor.x86_64 bin/godot.macos.editor.arm64 -output bin/godot.macos.editor.universal
 
 If all goes well, the resulting binary executable will be placed in the
 ``bin/`` subdirectory. This executable file contains the whole engine and
@@ -71,11 +71,11 @@ Manager.
 
 To create an ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/macos_tools.app``. Typically, for an optimized
-editor binary built with ``target=release_debug``::
+editor binary built with ``dev_build=yes``::
 
     cp -r misc/dist/macos_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
-    cp bin/godot.macos.tools.universal Godot.app/Contents/MacOS/Godot
+    cp bin/godot.macos.editor.universal Godot.app/Contents/MacOS/Godot
     chmod +x Godot.app/Contents/MacOS/Godot
     codesign --force --timestamp --options=runtime --entitlements misc/dist/macos/editor.entitlements -s - Godot.app
 
@@ -119,54 +119,46 @@ To build macOS export templates, you have to compile using the targets without
 the editor: ``target=template_release`` (release template) and
 ``target=template_debug``.
 
-Official templates are universal binaries which support both Intel x86_64 and
-ARM64 architectures. You can also create export templates that support only one
-of those two architectures by leaving out the ``lipo`` step below.
+Official templates are *Universal 2* binaries which support both ARM64 and Intel
+x86_64 architectures.
 
-- For Intel x86_64::
+- To support ARM64 (Apple Silicon) + Intel x86_64::
 
-    scons platform=macos target=template_release arch=x86_64
-    scons platform=macos target=template_debug arch=x86_64
-
-- For ARM64 (Apple M1)::
-
-    scons platform=macos target=template_release arch=arm64
     scons platform=macos target=template_debug arch=arm64
+    scons platform=macos target=template_release arch=arm64
+    scons platform=macos target=template_debug arch=x86_64
+    scons platform=macos target=template_release arch=x86_64 generate_bundle=yes
 
-To support both architectures in a single "Universal 2" binary, run the above
-two commands blocks and then use ``lipo`` to bundle them together::
+- To support ARM64 (Apple Silicon) only (smaller file size, but less compatible with older hardware)::
 
-    lipo -create bin/godot.macos.opt.x86_64 bin/godot.macos.opt.arm64 -output bin/godot.macos.opt.universal
-    lipo -create bin/godot.macos.opt.debug.x86_64 bin/godot.macos.opt.debug.arm64 -output bin/godot.macos.opt.debug.universal
+    scons platform=macos target=template_debug arch=arm64
+    scons platform=macos target=template_release arch=arm64 generate_bundle=yes
 
 To create an ``.app`` bundle like in the official builds, you need to use the
-template located in ``misc/dist/macos_template.app``. The release and debug
-builds should be placed in ``macos_template.app/Contents/MacOS`` with the names
-``godot_macos_release.64`` and ``godot_macos_debug.64`` respectively. You can do so
-with the following commands (assuming a universal build, otherwise replace the
-``.universal`` extension with the one of your arch-specific binaries)::
-
-    cp -r misc/dist/macos_template.app .
-    mkdir -p macos_template.app/Contents/MacOS
-    cp bin/godot.macos.opt.universal macos_template.app/Contents/MacOS/godot_macos_release.64
-    cp bin/godot.macos.opt.debug.universal macos_template.app/Contents/MacOS/godot_macos_debug.64
-    chmod +x macos_template.app/Contents/MacOS/godot_macos*
+template located in ``misc/dist/macos_template.app``. This process can be automated by using
+the ``generate_bundle=yes`` option on the *last* SCons command used to build export templates
+(so that all binaries can be included). This option also takes care of calling ``lipo`` to create
+an *Universal 2* binary from two separate ARM64 and x86_64 binaries (if both were compiled beforehand).
 
 .. note::
 
-    If you are building the ``master`` branch, you also need to include support
-    for the MoltenVK Vulkan portability library. By default, it will be linked
-    statically from your installation of the Vulkan SDK for macOS.
-    You can also choose to link it dynamically by passing ``use_volk=yes`` and
-    including the dynamic library in your ``.app`` bundle::
+    You also need to include support for the MoltenVK Vulkan portability
+    library. By default, it will be linked statically from your installation of
+    the Vulkan SDK for macOS. You can also choose to link it dynamically by
+    passing ``use_volk=yes`` and including the dynamic library in your ``.app``
+    bundle::
 
         mkdir -p macos_template.app/Contents/Frameworks
         cp <Vulkan SDK path>/macOS/libs/libMoltenVK.dylib macos_template.app/Contents/Frameworks/libMoltenVK.dylib
 
+    In most cases, static linking should be preferred as it makes distribution
+    easier. The main upside of dynamic linking is that it allows updating
+    MoltenVK without having to recompile export templates.
+
 You can then zip the ``macos_template.app`` folder to reproduce the ``macos.zip``
 template from the official Godot distribution::
 
-    zip -q -9 -r macos.zip macos_template.app
+    zip -r9 macos.zip macos_template.app
 
 Using Pyston for faster development
 -----------------------------------

@@ -19,7 +19,7 @@ A :ref:`Transform3D<class_Transform3D>` operator to be used within the visual sh
 Description
 -----------
 
-Applies :ref:`operator<class_VisualShaderNodeTransformOp_property_operator>` to two transform (4x4 matrices) inputs.
+Applies :ref:`operator<class_VisualShaderNodeTransformOp_property_operator>` to two transform (4×4 matrices) inputs.
 
 .. rst-class:: classref-reftable-group
 
@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Operator**:
+enum **Operator**: :ref:`🔗<enum_VisualShaderNodeTransformOp_Operator>`
 
 .. _class_VisualShaderNodeTransformOp_constant_OP_AxB:
 
@@ -141,12 +141,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Operator<enum_VisualShaderNodeTransformOp_Operator>` **operator** = ``0``
+:ref:`Operator<enum_VisualShaderNodeTransformOp_Operator>` **operator** = ``0`` :ref:`🔗<class_VisualShaderNodeTransformOp_property_operator>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_operator** **(** :ref:`Operator<enum_VisualShaderNodeTransformOp_Operator>` value **)**
-- :ref:`Operator<enum_VisualShaderNodeTransformOp_Operator>` **get_operator** **(** **)**
+- |void| **set_operator**\ (\ value\: :ref:`Operator<enum_VisualShaderNodeTransformOp_Operator>`\ )
+- :ref:`Operator<enum_VisualShaderNodeTransformOp_Operator>` **get_operator**\ (\ )
 
 The type of the operation to be performed on the transforms. See :ref:`Operator<enum_VisualShaderNodeTransformOp_Operator>` for options.
 
@@ -157,3 +157,4 @@ The type of the operation to be performed on the transforms. See :ref:`Operator<
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -1,5 +1,5 @@
-GD0106: Attempted to export explicit interface property implementation
-======================================================================
+GD0106: The exported property is an explicit interface implementation
+=====================================================================
 
 ====================================  ======================================
                                       Value

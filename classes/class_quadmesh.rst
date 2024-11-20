@@ -26,9 +26,9 @@ Class representing a square :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat
 Tutorials
 ---------
 
-- `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
+- `GUI in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2807>`__
 
-- `2D in 3D Demo <https://godotengine.org/asset-library/asset/129>`__
+- `2D in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2803>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -51,3 +51,4 @@ Properties
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

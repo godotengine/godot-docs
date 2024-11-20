@@ -6,22 +6,13 @@
 {% endblock -%}
 
 {% block extrahead -%}
-<meta name="doc_version" content="{{ version }}">
-<meta name="doc_is_latest" content="{{ godot_is_latest }}">
+<meta name="doc_version" content="{{ version }}" />
+<meta name="doc_is_latest" content="{{ godot_is_latest }}" />
+<meta name="doc_pagename" content="{{ pagename }}" />
 {% endblock -%}
 
 {% block linktags -%}
-  <meta name="theme-color" content="#3d8fcc">
-  {% if godot_inject_language_links -%}
-  {% for alternate_lang in godot_docs_supported_languages -%}
-  {# Convert to ISO 639-1 format, e.g. zh_CN -> zh-cn -#}
-  {% set alternate_lang_href = alternate_lang.lower().replace("_", "-") -%}
-  <link rel="alternate" hreflang="{{ alternate_lang_href }}" href="{{ godot_docs_basepath }}{{ alternate_lang }}/{{ godot_canonical_version }}/{{ pagename }}{{ godot_docs_suffix }}" />
-  {% endfor -%}
-  <link rel="alternate" hreflang="x-default" href="{{ godot_docs_basepath }}{{ godot_default_lang }}/{{ godot_canonical_version }}/{{ pagename }}{{ godot_docs_suffix }}" />
-
-  <link rel="canonical" href="{{ godot_docs_basepath }}{{ lang_attr }}/{{ godot_canonical_version }}/{{ pagename }}{{ godot_docs_suffix }}" />
-  {% endif -%}
+  <meta name="theme-color" content="#3d8fcc" />
   {{ super() }}
 {% endblock -%}
 
@@ -66,7 +57,17 @@
   {% endif %}
 
   {% block body %}{% endblock %}
+
+{% if (not meta or meta.get('allow_comments') != 'False') and godot_show_article_comments %}
+<div id="godot-giscus">
+    <hr>
+        <h2>User-contributed notes</h2>
+    <p>
+        <em>Please read the <a href="https://github.com/godotengine/godot-docs-user-notes/discussions/1">User-contributed notes policy</a> before submitting a comment.</em>
+    </p>
 </div>
+{% endif %}
+
 {%- if self.comments()|trim %}
   <div class="articleComments">
     {%- block comments %}{% endblock %}

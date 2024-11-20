@@ -36,9 +36,9 @@ Signals
 
 .. rst-class:: classref-signal
 
-**finished** **(** **)**
+**finished**\ (\ ) :ref:`🔗<class_Tweener_signal_finished>`
 
-Emitted when the **Tweener** has just finished its job.
+Emitted when the **Tweener** has just finished its job or became invalid (e.g. due to a freed object).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -47,3 +47,4 @@ Emitted when the **Tweener** has just finished its job.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -41,6 +41,18 @@ Properties
    | :ref:`int<class_int>`                    | :ref:`stretch_shrink<class_SubViewportContainer_property_stretch_shrink>` | ``1``                                                               |
    +------------------------------------------+---------------------------------------------------------------------------+---------------------------------------------------------------------+
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_propagate_input_event<class_SubViewportContainer_private_method__propagate_input_event>`\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |virtual| |const| |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -54,12 +66,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **stretch** = ``false``
+:ref:`bool<class_bool>` **stretch** = ``false`` :ref:`🔗<class_SubViewportContainer_property_stretch>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_stretch** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_stretch_enabled** **(** **)**
+- |void| **set_stretch**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_stretch_enabled**\ (\ )
 
 If ``true``, the sub-viewport will be automatically resized to the control's size.
 
@@ -73,18 +85,37 @@ If ``true``, the sub-viewport will be automatically resized to the control's siz
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **stretch_shrink** = ``1``
+:ref:`int<class_int>` **stretch_shrink** = ``1`` :ref:`🔗<class_SubViewportContainer_property_stretch_shrink>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_stretch_shrink** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_stretch_shrink** **(** **)**
+- |void| **set_stretch_shrink**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_stretch_shrink**\ (\ )
 
 Divides the sub-viewport's effective resolution by this value while preserving its scale. This can be used to speed up rendering.
 
 For example, a 1280×720 sub-viewport with :ref:`stretch_shrink<class_SubViewportContainer_property_stretch_shrink>` set to ``2`` will be rendered at 640×360 while occupying the same size in the container.
 
 \ **Note:** :ref:`stretch<class_SubViewportContainer_property_stretch>` must be ``true`` for this property to work.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_SubViewportContainer_private_method__propagate_input_event:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_propagate_input_event**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |virtual| |const| :ref:`🔗<class_SubViewportContainer_private_method__propagate_input_event>`
+
+**Experimental:** This method may be changed or removed in future versions.
+
+Virtual method to be implemented by the user. If it returns ``true``, the ``event`` is propagated to :ref:`SubViewport<class_SubViewport>` children. Propagation doesn't happen if it returns ``false``. If the function is not implemented, all events are propagated to SubViewports.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -93,3 +124,4 @@ For example, a 1280×720 sub-viewport with :ref:`stretch_shrink<class_SubViewpor
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

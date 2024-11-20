@@ -43,6 +43,13 @@ Visual comparison
 
    Reflection probe enabled.
 
+
+.. figure:: img/gi_lightmap_gi_indirect_only_reflection_probe.webp
+   :align: center
+   :alt: Reflection probe enabled.
+
+   Reflection probe enabled with LightmapGI used at the same time. The lightmap appears in the reflection.
+
 By combining reflection probes with screen-space reflections, you can get the
 best of both worlds: high-quality reflections for general room structure (that
 remain present when off-screen), while also having real-time reflections for
@@ -180,10 +187,14 @@ reflection probe rendering. As many reflection probes as desired can be added (a
 performance allows). However, there's still a default limit of 512 *clustered
 elements* that can be present in the current camera view. A clustered element is
 an omni light, a spot light, a :ref:`decal <doc_using_decals>` or a
-:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by
-adjusting the **Rendering > Limits > Cluster Builder > Max Clustered Elements**
-advanced project setting.
+:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by adjusting
+:ref:`Max Clustered Elements<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
+in **Project Settings > Rendering > Limits > Cluster Builder**.
 
 When using the Forward Mobile backend, only 8 reflection probes can be applied on each
 individual Mesh *resource*. If there are more reflection probes affecting a single mesh,
 not all of them will be rendered on the mesh.
+
+Similarly, when using the Compatibility backend, up to 2 reflection probes can be applied
+per mesh. If more than 2 reflection probes affect a single mesh, additional probes will
+not be rendered.

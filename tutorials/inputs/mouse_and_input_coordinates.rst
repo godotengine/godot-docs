@@ -29,14 +29,14 @@ for example:
  .. code-tab:: gdscript GDScript
 
     func _input(event):
-       # Mouse in viewport coordinates.
-       if event is InputEventMouseButton:
-           print("Mouse Click/Unclick at: ", event.position)
-       elif event is InputEventMouseMotion:
-           print("Mouse Motion at: ", event.position)
+        # Mouse in viewport coordinates.
+        if event is InputEventMouseButton:
+            print("Mouse Click/Unclick at: ", event.position)
+        elif event is InputEventMouseMotion:
+            print("Mouse Motion at: ", event.position)
 
-       # Print the size of the viewport.
-       print("Viewport Resolution is: ", get_viewport_rect().size)
+        # Print the size of the viewport.
+        print("Viewport Resolution is: ", get_viewport().get_visible_rect().size)
 
  .. code-tab:: csharp
 
@@ -49,7 +49,7 @@ for example:
             GD.Print("Mouse Motion at: ", eventMouseMotion.Position);
 
         // Print the size of the viewport.
-        GD.Print("Viewport Resolution is: ", GetViewportRect().Size);
+        GD.Print("Viewport Resolution is: ", GetViewport().GetVisibleRect().Size);
     }
 
 Alternatively, it's possible to ask the viewport for the mouse position:

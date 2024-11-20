@@ -90,7 +90,7 @@ possible. Godot's priorities are:
    scene, the faster the rendering will be. If a scene has a huge amount
    of objects (in the hundreds or thousands), try reusing the materials.
    In the worst case, use atlases to decrease the amount of texture changes.
--  **Reusing Shaders:** If materials can't be reused, at least try to re-use
+-  **Reusing Shaders:** If materials can't be reused, at least try to reuse
    shaders. Note: shaders are automatically reused between
    StandardMaterial3Ds that share the same configuration (features
    that are enabled or disabled with a check box) even if they have different
@@ -154,9 +154,7 @@ Pay attention to the additional vertex processing required when using:
 
 -  Skinning (skeletal animation)
 -  Morphs (shape keys)
-
-.. Not implemented in Godot 4.x yet. Uncomment when this is implemented.
-   -  Vertex-lit objects (common on mobile)
+-  Vertex-lit objects (common on mobile)
 
 Pixel/fragment shaders and fill rate
 ------------------------------------

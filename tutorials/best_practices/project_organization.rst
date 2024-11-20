@@ -80,9 +80,12 @@ This can be useful to speed up the initial project importing.
 
 .. note::
 
-    To create a file whose name starts with a dot on Windows, you can use a
-    text editor such as Notepad++ or use the following command in a
-    command prompt: ``type nul > .gdignore``
+    To create a file whose name starts with a dot on Windows, place a dot
+    at both the beginning and end of the filename (".gdignore."). Windows
+    will automatically remove the trailing dot when you confirm the name.
+
+    Alternatively, you can use a text editor such as Notepad++ or use the
+    following command in a command prompt: ``type nul > .gdignore``
 
 Once the folder is ignored, resources in that folder can't be loaded anymore
 using the ``load()`` and ``preload()`` methods. Ignoring a folder will also

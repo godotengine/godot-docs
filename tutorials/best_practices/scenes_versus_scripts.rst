@@ -29,9 +29,9 @@ a change in API:
     const MyNode = preload("my_node.gd")
     const MyScene = preload("my_scene.tscn")
     var node = Node.new()
-    var my_node = MyNode.new() # Same method call
-    var my_scene = MyScene.instantiate() # Different method call
-    var my_inherited_scene = MyScene.instantiate(PackedScene.GEN_EDIT_STATE_MAIN) # Create scene inheriting from MyScene
+    var my_node = MyNode.new() # Same method call.
+    var my_scene = MyScene.instantiate() # Different method call.
+    var my_inherited_scene = MyScene.instantiate(PackedScene.GEN_EDIT_STATE_MAIN) # Create scene inheriting from MyScene.
 
   .. code-tab:: csharp
 
@@ -39,8 +39,10 @@ a change in API:
 
     public partial class Game : Node
     {
-        public static CSharpScript MyNode { get; } = GD.Load<CSharpScript>("MyNode.cs");
-        public static PackedScene MyScene { get; } = GD.Load<PackedScene>("MyScene.tscn");
+        public static CSharpScript MyNode { get; } =
+            GD.Load<CSharpScript>("res://Path/To/MyNode.cs");
+        public static PackedScene MyScene { get; } =
+            GD.Load<PackedScene>("res://Path/To/MyScene.tscn");
         private Node _node;
         private Node _myNode;
         private Node _myScene;
@@ -50,8 +52,10 @@ a change in API:
         {
             _node = new Node();
             _myNode = MyNode.New().As<Node>();
-            _myScene = MyScene.Instantiate(); // Different. Instantiated from a PackedScene
-            _myInheritedScene = MyScene.Instantiate(PackedScene.GenEditState.Main); // Create scene inheriting from MyScene
+            // Different than calling new() or MyNode.New(). Instantiated from a PackedScene.
+            _myScene = MyScene.Instantiate();
+            // Create scene inheriting from MyScene.
+            _myInheritedScene = MyScene.Instantiate(PackedScene.GenEditState.Main);
         }
     }
 
@@ -114,8 +118,6 @@ There are two systems for registering types:
    - Engine developers must add support for languages manually (both name exposure and
      runtime accessibility).
 
-   - Godot 3.1+ only.
-
    - The Editor scans project folders and registers any exposed names for all
      scripting languages. Each scripting language must implement its own
      support for exposing this information.
@@ -155,14 +157,14 @@ with it, and finally adds it as a child of the ``Main`` node:
         var child = Node.new()
         child.name = "Child"
         child.script = preload("child.gd")
-        child.owner = self
         add_child(child)
+        child.owner = self
 
   .. code-tab:: csharp
 
     using Godot;
 
-    public partial class Main : Resource
+    public partial class Main : Node
     {
         public Node Child { get; set; }
 
@@ -170,9 +172,13 @@ with it, and finally adds it as a child of the ``Main`` node:
         {
             Child = new Node();
             Child.Name = "Child";
-            Child.SetScript(GD.Load<Script>("child.gd"));
-            Child.Owner = this;
+            var childID = Child.GetInstanceId();
+            Child.SetScript(GD.Load<Script>("res://Path/To/Child.cs"));
+            // SetScript() causes the C# wrapper object to be disposed, so obtain a new
+            // wrapper for the Child node using its instance ID before proceeding.
+            Child = (Node)GodotObject.InstanceFromId(childID);
             AddChild(Child);
+            Child.Owner = this;
         }
     }
 
@@ -207,7 +213,7 @@ In the end, the best approach is to consider the following:
     .. code-tab:: gdscript GDScript
 
       # game.gd
-      class_name Game # extends RefCounted, so it won't show up in the node creation dialog
+      class_name Game # extends RefCounted, so it won't show up in the node creation dialog.
       extends RefCounted
 
       const MyScene = preload("my_scene.tscn")
@@ -222,7 +228,8 @@ In the end, the best approach is to consider the following:
       // Game.cs
       public partial class Game : RefCounted
       {
-          public static PackedScene MyScene { get; } = GD.Load<PackedScene>("MyScene.tscn");
+          public static PackedScene MyScene { get; } =
+              GD.Load<PackedScene>("res://Path/To/MyScene.tscn");
       }
 
       // Main.cs

@@ -6,17 +6,6 @@ C# basics
 Introduction
 ------------
 
-.. warning::
-
-    .NET support has been heavily modified between Godot 3 and 4. As such, you
-    may still run into some issues, or find spots where the documentation could
-    be improved.
-
-    Please report issues with C# in Godot on the
-    `engine GitHub page <https://github.com/godotengine/godot/issues>`_,
-    and any documentation issues on the
-    `documentation GitHub page <https://github.com/godotengine/godot-docs/issues>`_.
-
 This page provides a brief introduction to C#, both what it is and
 how to use it in Godot. Afterwards, you may want to look at
 :ref:`how to use specific features <doc_c_sharp_features>`, read about the
@@ -29,9 +18,10 @@ it is implemented with .NET 6.0.
 
 .. attention::
 
-    Projects written in C# using Godot 4.x currently cannot be exported to
-    Android, iOS and web platforms. To use C# on those platforms, use Godot 3
-    instead.
+    Projects written in C# using Godot 4 currently cannot be exported to the web
+    platform. To use C# on the web platform, consider Godot 3 instead.
+    Android and iOS platform support is available as of Godot 4.2, but is
+    experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
 .. note::
 
@@ -64,6 +54,8 @@ Download and install the latest stable version of the SDK from the
 If you are building Godot from source, make sure to follow the steps to enable
 .NET support in your build as outlined in the :ref:`doc_compiling_with_dotnet`
 page.
+
+.. _doc_c_sharp_setup_external_editor:
 
 Configuring an external editor
 ------------------------------
@@ -114,23 +106,53 @@ In Visual Studio Code:
 
 - Install the `C# <https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp>`__ extension.
 
-.. note::
-
-    If you are using Linux you need to install the `Mono SDK <https://www.mono-project.com/download/stable/#download-lin>`__
-    for the C# tools plugin to work.
-
 To configure a project for debugging, you need a ``tasks.json`` and ``launch.json`` file in
-the ``.vscode`` folder with the necessary configuration. An example configuration can be
-found `here <https://github.com/godotengine/godot-csharp-vscode/issues/43#issuecomment-1258321229>`__ .
-In the ``launch.json`` file, make sure the ``program`` parameter in the relevant configuration points to your Godot executable, either by
-changing it to the path of the executable or by defining a ``GODOT4`` environment variable that points to the
-executable. Now, when you start the debugger in Visual Studio Code, your Godot project will run.
+the ``.vscode`` folder with the necessary configuration.
 
-.. note::
+Here is an example ``launch.json``:
 
-    There is also a `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__
-    Visual Studio Code extension, that is meant to make this setup easier and to provide further useful tools.
-    But it is not yet updated to work with Godot 4.
+.. code-block:: json
+
+    {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Play",
+                "type": "coreclr",
+                "request": "launch",
+                "preLaunchTask": "build",
+                "program": "${env:GODOT4}",
+                "args": [],
+                "cwd": "${workspaceFolder}",
+                "stopAtEntry": false,
+            }
+        ]
+    }
+
+For this launch configuration to work, you need to either setup a GODOT4
+environment variable that points to the Godot executable, or replace ``program``
+parameter with the path to the Godot executable.
+
+Here is an example ``tasks.json``:
+
+.. code-block:: json
+
+    {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "build",
+                "command": "dotnet",
+                "type": "process",
+                "args": [
+                    "build"
+                ],
+                "problemMatcher": "$msCompile"
+            }
+        ]
+    }
+
+Now, when you start the debugger in Visual Studio Code, your Godot project will run.
 
 Visual Studio (Windows only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -156,6 +178,19 @@ In Godot's **Editor → Editor Settings** menu:
           In a file explorer window, go to ``%AppData%\NuGet``. Rename or delete
           the ``NuGet.Config`` file. When you build your Godot project again,
           the file will be automatically created with default values.
+
+To debug your C# scripts using Visual Studio, open the .sln file that is generated
+after opening the first C# script in the editor. In the **Debug** menu, go to the
+**Debug Properties** menu item for your project. Click the **Create a new profile**
+button and choose **Executable**. In the **Executable** field, browse to the path
+of the C# version of the Godot editor, or type ``%GODOT4%`` if you have created an
+environment variable for the Godot executable path. It must be the path to the main Godot
+executable, not the 'console' version. For the **Working Directory**, type a single period,
+``.``, meaning the current directory. Also check the **Enable native code debugging**
+checkbox. You may now close this window, click downward arrow on the debug profile
+dropdown, and select your new launch profile. Hit the green start button, and your
+game will begin playing in debug mode.
+
 
 Creating a C# script
 --------------------
@@ -226,6 +261,8 @@ class reference pages for
 
     *"Cannot find class XXX for script res://XXX.cs"*
 
+.. _doc_c_sharp_general_differences:
+
 General differences between C# and GDScript
 -------------------------------------------
 
@@ -239,10 +276,10 @@ For more information, see the :ref:`doc_c_sharp_differences` page.
 
     You need to (re)build the project assemblies whenever you want to see new
     exported variables or signals in the editor. This build can be manually
-    triggered by clicking the word **Build** in the top right corner of the
-    editor. You can also click **MSBuild** at the bottom of the editor window
-    to reveal the MSBuild panel, then click the **Build** button to reveal a
-    dropdown, then click the **Build Solution** option.
+    triggered by clicking the **Build** button in the top right corner of the
+    editor.
+
+    .. image:: img/build_dotnet.webp
 
     You will also need to rebuild the project assemblies to apply changes in
     "tool" scripts.
@@ -286,7 +323,7 @@ objects, e.g. when trying to change the X coordinate of a ``Node2D``:
 
     public partial class MyNode2D : Node2D
     {
-        public override _Ready()
+        public override void _Ready()
         {
             Position.X = 100.0f;
             // CS1612: Cannot modify the return value of 'Node2D.Position' because

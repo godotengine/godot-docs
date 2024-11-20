@@ -21,7 +21,7 @@ Description
 
 Shortcuts are commonly used for interacting with a :ref:`Control<class_Control>` element from an :ref:`InputEvent<class_InputEvent>` (also known as hotkeys).
 
-One shortcut can contain multiple :ref:`InputEvent<class_InputEvent>`'s, allowing the possibility of triggering one action with multiple different inputs.
+One shortcut can contain multiple :ref:`InputEvent<class_InputEvent>`\ s, allowing the possibility of triggering one action with multiple different inputs.
 
 .. rst-class:: classref-reftable-group
 
@@ -43,13 +43,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`get_as_text<class_Shortcut_method_get_as_text>` **(** **)** |const|                                               |
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`has_valid_event<class_Shortcut_method_has_valid_event>` **(** **)** |const|                                       |
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`matches_event<class_Shortcut_method_matches_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |const| |
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_as_text<class_Shortcut_method_get_as_text>`\ (\ ) |const|                                                  |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`has_valid_event<class_Shortcut_method_has_valid_event>`\ (\ ) |const|                                          |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`matches_event<class_Shortcut_method_matches_event>`\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |const| |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -64,12 +64,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **events** = ``[]``
+:ref:`Array<class_Array>` **events** = ``[]`` :ref:`🔗<class_Shortcut_property_events>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_events** **(** :ref:`Array<class_Array>` value **)**
-- :ref:`Array<class_Array>` **get_events** **(** **)**
+- |void| **set_events**\ (\ value\: :ref:`Array<class_Array>`\ )
+- :ref:`Array<class_Array>` **get_events**\ (\ )
 
 The shortcut's :ref:`InputEvent<class_InputEvent>` array.
 
@@ -88,7 +88,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_as_text** **(** **)** |const|
+:ref:`String<class_String>` **get_as_text**\ (\ ) |const| :ref:`🔗<class_Shortcut_method_get_as_text>`
 
 Returns the shortcut's first valid :ref:`InputEvent<class_InputEvent>` as a :ref:`String<class_String>`.
 
@@ -100,7 +100,7 @@ Returns the shortcut's first valid :ref:`InputEvent<class_InputEvent>` as a :ref
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_valid_event** **(** **)** |const|
+:ref:`bool<class_bool>` **has_valid_event**\ (\ ) |const| :ref:`🔗<class_Shortcut_method_has_valid_event>`
 
 Returns whether :ref:`events<class_Shortcut_property_events>` contains an :ref:`InputEvent<class_InputEvent>` which is valid.
 
@@ -112,9 +112,9 @@ Returns whether :ref:`events<class_Shortcut_property_events>` contains an :ref:`
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **matches_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** |const|
+:ref:`bool<class_bool>` **matches_event**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |const| :ref:`🔗<class_Shortcut_method_matches_event>`
 
-Returns whether any :ref:`InputEvent<class_InputEvent>` in :ref:`events<class_Shortcut_property_events>` equals ``event``.
+Returns whether any :ref:`InputEvent<class_InputEvent>` in :ref:`events<class_Shortcut_property_events>` equals ``event``. This uses :ref:`InputEvent.is_match<class_InputEvent_method_is_match>` to compare events.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -123,3 +123,4 @@ Returns whether any :ref:`InputEvent<class_InputEvent>` in :ref:`events<class_Sh
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

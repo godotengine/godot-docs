@@ -29,7 +29,7 @@ The **LightmapGI** node is used to compute and store baked lightmaps. Lightmaps 
 
 \ **Note:** Lightmap baking on :ref:`CSGShape3D<class_CSGShape3D>`\ s and :ref:`PrimitiveMesh<class_PrimitiveMesh>`\ es is not supported, as these cannot store UV2 data required for baking.
 
-\ **Note:** If no custom lightmappers are installed, **LightmapGI** can only be baked when using the Vulkan backend (Forward+ or Mobile), not OpenGL.
+\ **Note:** If no custom lightmappers are installed, **LightmapGI** can only be baked from devices that support the Forward+ or Mobile rendering backends.
 
 .. rst-class:: classref-introduction-group
 
@@ -49,9 +49,15 @@ Properties
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`float<class_float>`                               | :ref:`bias<class_LightmapGI_property_bias>`                                           | ``0.0005`` |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`float<class_float>`                               | :ref:`bounce_indirect_energy<class_LightmapGI_property_bounce_indirect_energy>`       | ``1.0``    |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`int<class_int>`                                   | :ref:`bounces<class_LightmapGI_property_bounces>`                                     | ``3``      |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`CameraAttributes<class_CameraAttributes>`         | :ref:`camera_attributes<class_LightmapGI_property_camera_attributes>`                 |            |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`int<class_int>`                                   | :ref:`denoiser_range<class_LightmapGI_property_denoiser_range>`                       | ``10``     |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`float<class_float>`                               | :ref:`denoiser_strength<class_LightmapGI_property_denoiser_strength>`                 | ``0.1``    |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`bool<class_bool>`                                 | :ref:`directional<class_LightmapGI_property_directional>`                             | ``false``  |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
@@ -73,7 +79,11 @@ Properties
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`BakeQuality<enum_LightmapGI_BakeQuality>`         | :ref:`quality<class_LightmapGI_property_quality>`                                     | ``1``      |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`float<class_float>`                               | :ref:`texel_scale<class_LightmapGI_property_texel_scale>`                             | ``1.0``    |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`bool<class_bool>`                                 | :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>`                           | ``true``   |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`bool<class_bool>`                                 | :ref:`use_texture_for_bounces<class_LightmapGI_property_use_texture_for_bounces>`     | ``true``   |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
 
 .. rst-class:: classref-section-separator
@@ -89,7 +99,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **BakeQuality**:
+enum **BakeQuality**: :ref:`🔗<enum_LightmapGI_BakeQuality>`
 
 .. _class_LightmapGI_constant_BAKE_QUALITY_LOW:
 
@@ -131,7 +141,7 @@ Highest bake quality (slowest bake times). The quality of this preset can be adj
 
 .. rst-class:: classref-enumeration
 
-enum **GenerateProbes**:
+enum **GenerateProbes**: :ref:`🔗<enum_LightmapGI_GenerateProbes>`
 
 .. _class_LightmapGI_constant_GENERATE_PROBES_DISABLED:
 
@@ -181,7 +191,7 @@ Highest level of subdivision (slowest bake times, largest file sizes).
 
 .. rst-class:: classref-enumeration
 
-enum **BakeError**:
+enum **BakeError**: :ref:`🔗<enum_LightmapGI_BakeError>`
 
 .. _class_LightmapGI_constant_BAKE_ERROR_OK:
 
@@ -263,6 +273,22 @@ The user aborted the lightmap baking operation (typically by clicking the **Canc
 
 Lightmap baking failed as the maximum texture size is too small to fit some of the meshes marked for baking.
 
+.. _class_LightmapGI_constant_BAKE_ERROR_LIGHTMAP_TOO_SMALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_LIGHTMAP_TOO_SMALL** = ``10``
+
+Lightmap baking failed as the lightmap is too small.
+
+.. _class_LightmapGI_constant_BAKE_ERROR_ATLAS_TOO_SMALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_ATLAS_TOO_SMALL** = ``11``
+
+Lightmap baking failed as the lightmap was unable to fit into an atlas.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -271,7 +297,7 @@ Lightmap baking failed as the maximum texture size is too small to fit some of t
 
 .. rst-class:: classref-enumeration
 
-enum **EnvironmentMode**:
+enum **EnvironmentMode**: :ref:`🔗<enum_LightmapGI_EnvironmentMode>`
 
 .. _class_LightmapGI_constant_ENVIRONMENT_MODE_DISABLED:
 
@@ -320,14 +346,33 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bias** = ``0.0005``
+:ref:`float<class_float>` **bias** = ``0.0005`` :ref:`🔗<class_LightmapGI_property_bias>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_bias** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bias** **(** **)**
+- |void| **set_bias**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bias**\ (\ )
 
 The bias to use when computing shadows. Increasing :ref:`bias<class_LightmapGI_property_bias>` can fix shadow acne on the resulting baked lightmap, but can introduce peter-panning (shadows not connecting to their casters). Real-time :ref:`Light3D<class_Light3D>` shadows are not affected by this :ref:`bias<class_LightmapGI_property_bias>` property.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LightmapGI_property_bounce_indirect_energy:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **bounce_indirect_energy** = ``1.0`` :ref:`🔗<class_LightmapGI_property_bounce_indirect_energy>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_bounce_indirect_energy**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bounce_indirect_energy**\ (\ )
+
+The energy multiplier for each bounce. Higher values will make indirect lighting brighter. A value of ``1.0`` represents physically accurate behavior, but higher values can be used to make indirect lighting propagate more visibly when using a low number of bounces. This can be used to speed up bake times by lowering the number of :ref:`bounces<class_LightmapGI_property_bounces>` then increasing :ref:`bounce_indirect_energy<class_LightmapGI_property_bounce_indirect_energy>`.
+
+\ **Note:** :ref:`bounce_indirect_energy<class_LightmapGI_property_bounce_indirect_energy>` only has an effect if :ref:`bounces<class_LightmapGI_property_bounces>` is set to a value greater than or equal to ``1``.
 
 .. rst-class:: classref-item-separator
 
@@ -337,12 +382,12 @@ The bias to use when computing shadows. Increasing :ref:`bias<class_LightmapGI_p
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bounces** = ``3``
+:ref:`int<class_int>` **bounces** = ``3`` :ref:`🔗<class_LightmapGI_property_bounces>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_bounces** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_bounces** **(** **)**
+- |void| **set_bounces**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_bounces**\ (\ )
 
 Number of light bounces that are taken into account during baking. Higher values result in brighter, more realistic lighting, at the cost of longer bake times. If set to ``0``, only environment lighting, direct light and emissive lighting is baked.
 
@@ -354,14 +399,48 @@ Number of light bounces that are taken into account during baking. Higher values
 
 .. rst-class:: classref-property
 
-:ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes**
+:ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes** :ref:`🔗<class_LightmapGI_property_camera_attributes>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_camera_attributes** **(** :ref:`CameraAttributes<class_CameraAttributes>` value **)**
-- :ref:`CameraAttributes<class_CameraAttributes>` **get_camera_attributes** **(** **)**
+- |void| **set_camera_attributes**\ (\ value\: :ref:`CameraAttributes<class_CameraAttributes>`\ )
+- :ref:`CameraAttributes<class_CameraAttributes>` **get_camera_attributes**\ (\ )
 
 The :ref:`CameraAttributes<class_CameraAttributes>` resource that specifies exposure levels to bake at. Auto-exposure and non exposure properties will be ignored. Exposure settings should be used to reduce the dynamic range present when baking. If exposure is too high, the **LightmapGI** will have banding artifacts or may have over-exposure artifacts.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LightmapGI_property_denoiser_range:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **denoiser_range** = ``10`` :ref:`🔗<class_LightmapGI_property_denoiser_range>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_denoiser_range**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_denoiser_range**\ (\ )
+
+The distance in pixels from which the denoiser samples. Lower values preserve more details, but may give blotchy results if the lightmap quality is not high enough. Only effective if :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>` is ``true`` and :ref:`ProjectSettings.rendering/lightmapping/denoising/denoiser<class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser>` is set to JNLM.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LightmapGI_property_denoiser_strength:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **denoiser_strength** = ``0.1`` :ref:`🔗<class_LightmapGI_property_denoiser_strength>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_denoiser_strength**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_denoiser_strength**\ (\ )
+
+The strength of denoising step applied to the generated lightmaps. Only effective if :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>` is ``true`` and :ref:`ProjectSettings.rendering/lightmapping/denoising/denoiser<class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser>` is set to JNLM.
 
 .. rst-class:: classref-item-separator
 
@@ -371,14 +450,14 @@ The :ref:`CameraAttributes<class_CameraAttributes>` resource that specifies expo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **directional** = ``false``
+:ref:`bool<class_bool>` **directional** = ``false`` :ref:`🔗<class_LightmapGI_property_directional>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_directional** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_directional** **(** **)**
+- |void| **set_directional**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_directional**\ (\ )
 
-If ``true``, bakes lightmaps to contain directional information as spherical harmonics. This results in more realistic lighting appearance, especially with normal mapped materials and for lights that have their direct light baked (:ref:`Light3D.light_bake_mode<class_Light3D_property_light_bake_mode>` set to :ref:`Light3D.BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>`). The directional information is also used to provide rough reflections for static and dynamic objects. This has a small run-time performance cost as the shader has to perform more work to interpret the direction information from the lightmap. Directional lightmaps also take longer to bake and result in larger file sizes.
+If ``true``, bakes lightmaps to contain directional information as spherical harmonics. This results in more realistic lighting appearance, especially with normal mapped materials and for lights that have their direct light baked (:ref:`Light3D.light_bake_mode<class_Light3D_property_light_bake_mode>` set to :ref:`Light3D.BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>` and with :ref:`Light3D.editor_only<class_Light3D_property_editor_only>` set to ``false``). The directional information is also used to provide rough reflections for static and dynamic objects. This has a small run-time performance cost as the shader has to perform more work to interpret the direction information from the lightmap. Directional lightmaps also take longer to bake and result in larger file sizes.
 
 \ **Note:** The property's name has no relationship with :ref:`DirectionalLight3D<class_DirectionalLight3D>`. :ref:`directional<class_LightmapGI_property_directional>` works with all light types.
 
@@ -390,12 +469,12 @@ If ``true``, bakes lightmaps to contain directional information as spherical har
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **environment_custom_color**
+:ref:`Color<class_Color>` **environment_custom_color** :ref:`🔗<class_LightmapGI_property_environment_custom_color>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_environment_custom_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_environment_custom_color** **(** **)**
+- |void| **set_environment_custom_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_environment_custom_color**\ (\ )
 
 The color to use for environment lighting. Only effective if :ref:`environment_mode<class_LightmapGI_property_environment_mode>` is :ref:`ENVIRONMENT_MODE_CUSTOM_COLOR<class_LightmapGI_constant_ENVIRONMENT_MODE_CUSTOM_COLOR>`.
 
@@ -407,12 +486,12 @@ The color to use for environment lighting. Only effective if :ref:`environment_m
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **environment_custom_energy**
+:ref:`float<class_float>` **environment_custom_energy** :ref:`🔗<class_LightmapGI_property_environment_custom_energy>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_environment_custom_energy** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_environment_custom_energy** **(** **)**
+- |void| **set_environment_custom_energy**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_environment_custom_energy**\ (\ )
 
 The color multiplier to use for environment lighting. Only effective if :ref:`environment_mode<class_LightmapGI_property_environment_mode>` is :ref:`ENVIRONMENT_MODE_CUSTOM_COLOR<class_LightmapGI_constant_ENVIRONMENT_MODE_CUSTOM_COLOR>`.
 
@@ -424,12 +503,12 @@ The color multiplier to use for environment lighting. Only effective if :ref:`en
 
 .. rst-class:: classref-property
 
-:ref:`Sky<class_Sky>` **environment_custom_sky**
+:ref:`Sky<class_Sky>` **environment_custom_sky** :ref:`🔗<class_LightmapGI_property_environment_custom_sky>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_environment_custom_sky** **(** :ref:`Sky<class_Sky>` value **)**
-- :ref:`Sky<class_Sky>` **get_environment_custom_sky** **(** **)**
+- |void| **set_environment_custom_sky**\ (\ value\: :ref:`Sky<class_Sky>`\ )
+- :ref:`Sky<class_Sky>` **get_environment_custom_sky**\ (\ )
 
 The sky to use as a source of environment lighting. Only effective if :ref:`environment_mode<class_LightmapGI_property_environment_mode>` is :ref:`ENVIRONMENT_MODE_CUSTOM_SKY<class_LightmapGI_constant_ENVIRONMENT_MODE_CUSTOM_SKY>`.
 
@@ -441,12 +520,12 @@ The sky to use as a source of environment lighting. Only effective if :ref:`envi
 
 .. rst-class:: classref-property
 
-:ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>` **environment_mode** = ``1``
+:ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>` **environment_mode** = ``1`` :ref:`🔗<class_LightmapGI_property_environment_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_environment_mode** **(** :ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>` value **)**
-- :ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>` **get_environment_mode** **(** **)**
+- |void| **set_environment_mode**\ (\ value\: :ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>`\ )
+- :ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>` **get_environment_mode**\ (\ )
 
 The environment mode to use when baking lightmaps.
 
@@ -458,12 +537,12 @@ The environment mode to use when baking lightmaps.
 
 .. rst-class:: classref-property
 
-:ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>` **generate_probes_subdiv** = ``2``
+:ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>` **generate_probes_subdiv** = ``2`` :ref:`🔗<class_LightmapGI_property_generate_probes_subdiv>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_generate_probes** **(** :ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>` value **)**
-- :ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>` **get_generate_probes** **(** **)**
+- |void| **set_generate_probes**\ (\ value\: :ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>`\ )
+- :ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>` **get_generate_probes**\ (\ )
 
 The level of subdivision to use when automatically generating :ref:`LightmapProbe<class_LightmapProbe>`\ s for dynamic object lighting. Higher values result in more accurate indirect lighting on dynamic objects, at the cost of longer bake times and larger file sizes.
 
@@ -479,12 +558,12 @@ The level of subdivision to use when automatically generating :ref:`LightmapProb
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **interior** = ``false``
+:ref:`bool<class_bool>` **interior** = ``false`` :ref:`🔗<class_LightmapGI_property_interior>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_interior** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_interior** **(** **)**
+- |void| **set_interior**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_interior**\ (\ )
 
 If ``true``, ignore environment lighting when baking lightmaps.
 
@@ -496,12 +575,12 @@ If ``true``, ignore environment lighting when baking lightmaps.
 
 .. rst-class:: classref-property
 
-:ref:`LightmapGIData<class_LightmapGIData>` **light_data**
+:ref:`LightmapGIData<class_LightmapGIData>` **light_data** :ref:`🔗<class_LightmapGI_property_light_data>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_light_data** **(** :ref:`LightmapGIData<class_LightmapGIData>` value **)**
-- :ref:`LightmapGIData<class_LightmapGIData>` **get_light_data** **(** **)**
+- |void| **set_light_data**\ (\ value\: :ref:`LightmapGIData<class_LightmapGIData>`\ )
+- :ref:`LightmapGIData<class_LightmapGIData>` **get_light_data**\ (\ )
 
 The :ref:`LightmapGIData<class_LightmapGIData>` associated to this **LightmapGI** node. This resource is automatically created after baking, and is not meant to be created manually.
 
@@ -513,12 +592,12 @@ The :ref:`LightmapGIData<class_LightmapGIData>` associated to this **LightmapGI*
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **max_texture_size** = ``16384``
+:ref:`int<class_int>` **max_texture_size** = ``16384`` :ref:`🔗<class_LightmapGI_property_max_texture_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_max_texture_size** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_max_texture_size** **(** **)**
+- |void| **set_max_texture_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_max_texture_size**\ (\ )
 
 The maximum texture size for the generated texture atlas. Higher values will result in fewer slices being generated, but may not work on all hardware as a result of hardware limitations on texture sizes. Leave :ref:`max_texture_size<class_LightmapGI_property_max_texture_size>` at its default value of ``16384`` if unsure.
 
@@ -530,16 +609,35 @@ The maximum texture size for the generated texture atlas. Higher values will res
 
 .. rst-class:: classref-property
 
-:ref:`BakeQuality<enum_LightmapGI_BakeQuality>` **quality** = ``1``
+:ref:`BakeQuality<enum_LightmapGI_BakeQuality>` **quality** = ``1`` :ref:`🔗<class_LightmapGI_property_quality>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_bake_quality** **(** :ref:`BakeQuality<enum_LightmapGI_BakeQuality>` value **)**
-- :ref:`BakeQuality<enum_LightmapGI_BakeQuality>` **get_bake_quality** **(** **)**
+- |void| **set_bake_quality**\ (\ value\: :ref:`BakeQuality<enum_LightmapGI_BakeQuality>`\ )
+- :ref:`BakeQuality<enum_LightmapGI_BakeQuality>` **get_bake_quality**\ (\ )
 
 The quality preset to use when baking lightmaps. This affects bake times, but output file sizes remain mostly identical across quality levels.
 
-To further speed up bake times, decrease :ref:`bounces<class_LightmapGI_property_bounces>`, disable :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>` and increase the lightmap texel size on 3D scenes in the Import doc.
+To further speed up bake times, decrease :ref:`bounces<class_LightmapGI_property_bounces>`, disable :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>` and increase the lightmap texel size on 3D scenes in the Import dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LightmapGI_property_texel_scale:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **texel_scale** = ``1.0`` :ref:`🔗<class_LightmapGI_property_texel_scale>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_texel_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_texel_scale**\ (\ )
+
+Scales the lightmap texel density of all meshes for the current bake. This is a multiplier that builds upon the existing lightmap texel size defined in each imported 3D scene, along with the per-mesh density multiplier (which is designed to be used when the same mesh is used at different scales). Lower values will result in faster bake times.
+
+For example, doubling :ref:`texel_scale<class_LightmapGI_property_texel_scale>` doubles the lightmap texture resolution for all objects *on each axis*, so it will *quadruple* the texel count.
 
 .. rst-class:: classref-item-separator
 
@@ -549,16 +647,33 @@ To further speed up bake times, decrease :ref:`bounces<class_LightmapGI_property
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_denoiser** = ``true``
+:ref:`bool<class_bool>` **use_denoiser** = ``true`` :ref:`🔗<class_LightmapGI_property_use_denoiser>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_denoiser** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_denoiser** **(** **)**
+- |void| **set_use_denoiser**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_denoiser**\ (\ )
 
-If ``true``, uses a CPU-based denoising algorithm on the generated lightmap. This eliminates most noise within the generated lightmap at the cost of longer bake times. File sizes are generally not impacted significantly by the use of a denoiser, although lossless compression may do a better job at compressing a denoised image.
+If ``true``, uses a GPU-based denoising algorithm on the generated lightmap. This eliminates most noise within the generated lightmap at the cost of longer bake times. File sizes are generally not impacted significantly by the use of a denoiser, although lossless compression may do a better job at compressing a denoised image.
 
-\ **Note:** The built-in denoiser (OpenImageDenoise) may crash when denoising lightmaps in large scenes. If you encounter a crash at the end of lightmap baking, try disabling :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>`.
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LightmapGI_property_use_texture_for_bounces:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_texture_for_bounces** = ``true`` :ref:`🔗<class_LightmapGI_property_use_texture_for_bounces>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_texture_for_bounces**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_texture_for_bounces**\ (\ )
+
+If ``true``, a texture with the lighting information will be generated to speed up the generation of indirect lighting at the cost of some accuracy. The geometry might exhibit extra light leak artifacts when using low resolution lightmaps or UVs that stretch the lightmap significantly across surfaces. Leave :ref:`use_texture_for_bounces<class_LightmapGI_property_use_texture_for_bounces>` at its default value of ``true`` if unsure.
+
+\ **Note:** :ref:`use_texture_for_bounces<class_LightmapGI_property_use_texture_for_bounces>` only has an effect if :ref:`bounces<class_LightmapGI_property_bounces>` is set to a value greater than or equal to ``1``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -567,3 +682,4 @@ If ``true``, uses a CPU-based denoising algorithm on the generated lightmap. Thi
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

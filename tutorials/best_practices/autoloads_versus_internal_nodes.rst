@@ -87,7 +87,7 @@ limitation of static functions is that they can't reference member variables,
 non-static functions or ``self``.
 
 Since Godot 4.1, GDScript also supports ``static`` variables using ``static var``.
-This means you can now share a variables across instances of a class without
+This means you can now share variables across instances of a class without
 having to create a separate autoload.
 
 Still, autoloaded nodes can simplify your code for systems with a wide scope. If

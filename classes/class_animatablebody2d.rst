@@ -19,7 +19,7 @@ A 2D physics body that can't be moved by external forces. When moved manually, i
 Description
 -----------
 
-An animatable 2D physics body. It can't be moved by external forces or contacts, but can be moved manually by other means such as code, :ref:`AnimationPlayer<class_AnimationPlayer>`\ s (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to :ref:`AnimationPlayer.ANIMATION_PROCESS_PHYSICS<class_AnimationPlayer_constant_ANIMATION_PROCESS_PHYSICS>`), and :ref:`RemoteTransform2D<class_RemoteTransform2D>`.
+An animatable 2D physics body. It can't be moved by external forces or contacts, but can be moved manually by other means such as code, :ref:`AnimationMixer<class_AnimationMixer>`\ s (with :ref:`AnimationMixer.callback_mode_process<class_AnimationMixer_property_callback_mode_process>` set to :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS>`), and :ref:`RemoteTransform2D<class_RemoteTransform2D>`.
 
 When **AnimatableBody2D** is moved, its linear and angular velocity are estimated and used to affect other physics bodies in its path. This makes it useful for moving platforms, doors, and other moving objects.
 
@@ -48,12 +48,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **sync_to_physics** = ``true``
+:ref:`bool<class_bool>` **sync_to_physics** = ``true`` :ref:`🔗<class_AnimatableBody2D_property_sync_to_physics>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_sync_to_physics** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_sync_to_physics_enabled** **(** **)**
+- |void| **set_sync_to_physics**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_sync_to_physics_enabled**\ (\ )
 
 If ``true``, the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_AnimationPlayer>`, for example on moving platforms. Do **not** use together with :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>`.
 
@@ -64,3 +64,4 @@ If ``true``, the body's movement will be synchronized to the physics frame. This
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

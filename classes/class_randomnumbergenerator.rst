@@ -23,7 +23,7 @@ RandomNumberGenerator is a class for generating pseudo-random numbers. It curren
 
 \ **Note:** The underlying algorithm is an implementation detail and should not be depended upon.
 
-To generate a random float number (within a given range) based on a time-dependant seed:
+To generate a random float number (within a given range) based on a time-dependent seed:
 
 ::
 
@@ -60,19 +60,21 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`randf<class_RandomNumberGenerator_method_randf>` **(** **)**                                                                               |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`randf_range<class_RandomNumberGenerator_method_randf_range>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**      |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`randfn<class_RandomNumberGenerator_method_randfn>` **(** :ref:`float<class_float>` mean=0.0, :ref:`float<class_float>` deviation=1.0 **)** |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`     | :ref:`randi<class_RandomNumberGenerator_method_randi>` **(** **)**                                                                               |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`     | :ref:`randi_range<class_RandomNumberGenerator_method_randi_range>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**              |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`randomize<class_RandomNumberGenerator_method_randomize>` **(** **)**                                                                       |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`rand_weighted<class_RandomNumberGenerator_method_rand_weighted>`\ (\ weights\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )         |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`randf<class_RandomNumberGenerator_method_randf>`\ (\ )                                                                                        |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`randf_range<class_RandomNumberGenerator_method_randf_range>`\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`\ )          |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`randfn<class_RandomNumberGenerator_method_randfn>`\ (\ mean\: :ref:`float<class_float>` = 0.0, deviation\: :ref:`float<class_float>` = 1.0\ ) |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`randi<class_RandomNumberGenerator_method_randi>`\ (\ )                                                                                        |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`randi_range<class_RandomNumberGenerator_method_randi_range>`\ (\ from\: :ref:`int<class_int>`, to\: :ref:`int<class_int>`\ )                  |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`randomize<class_RandomNumberGenerator_method_randomize>`\ (\ )                                                                                |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -87,12 +89,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **seed** = ``0``
+:ref:`int<class_int>` **seed** = ``0`` :ref:`🔗<class_RandomNumberGenerator_property_seed>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_seed** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_seed** **(** **)**
+- |void| **set_seed**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_seed**\ (\ )
 
 Initializes the random number generator state based on the given seed value. A given seed will give a reproducible sequence of pseudo-random numbers.
 
@@ -116,12 +118,12 @@ Initializes the random number generator state based on the given seed value. A g
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **state** = ``0``
+:ref:`int<class_int>` **state** = ``0`` :ref:`🔗<class_RandomNumberGenerator_property_state>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_state** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_state** **(** **)**
+- |void| **set_state**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_state**\ (\ )
 
 The current state of the random number generator. Save and restore this property to restore the generator to a previous state:
 
@@ -147,11 +149,39 @@ The current state of the random number generator. Save and restore this property
 Method Descriptions
 -------------------
 
+.. _class_RandomNumberGenerator_method_rand_weighted:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **rand_weighted**\ (\ weights\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ ) :ref:`🔗<class_RandomNumberGenerator_method_rand_weighted>`
+
+Returns a random index with non-uniform weights. Prints an error and returns ``-1`` if the array is empty.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var rng = RandomNumberGenerator.new()
+    
+    var my_array = ["one", "two", "three", "four"]
+    var weights = PackedFloat32Array([0.5, 1, 1, 2])
+    
+    # Prints one of the four elements in `my_array`.
+    # It is more likely to print "four", and less likely to print "one".
+    print(my_array[rng.rand_weighted(weights)])
+
+
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RandomNumberGenerator_method_randf:
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **randf** **(** **)**
+:ref:`float<class_float>` **randf**\ (\ ) :ref:`🔗<class_RandomNumberGenerator_method_randf>`
 
 Returns a pseudo-random float between ``0.0`` and ``1.0`` (inclusive).
 
@@ -163,7 +193,7 @@ Returns a pseudo-random float between ``0.0`` and ``1.0`` (inclusive).
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **randf_range** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**
+:ref:`float<class_float>` **randf_range**\ (\ from\: :ref:`float<class_float>`, to\: :ref:`float<class_float>`\ ) :ref:`🔗<class_RandomNumberGenerator_method_randf_range>`
 
 Returns a pseudo-random float between ``from`` and ``to`` (inclusive).
 
@@ -175,9 +205,11 @@ Returns a pseudo-random float between ``from`` and ``to`` (inclusive).
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **randfn** **(** :ref:`float<class_float>` mean=0.0, :ref:`float<class_float>` deviation=1.0 **)**
+:ref:`float<class_float>` **randfn**\ (\ mean\: :ref:`float<class_float>` = 0.0, deviation\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_RandomNumberGenerator_method_randfn>`
 
-Returns a `normally-distributed <https://en.wikipedia.org/wiki/Normal_distribution>`__ pseudo-random number, using Box-Muller transform with the specified ``mean`` and a standard ``deviation``. This is also called Gaussian distribution.
+Returns a `normally-distributed <https://en.wikipedia.org/wiki/Normal_distribution>`__, pseudo-random floating-point number from the specified ``mean`` and a standard ``deviation``. This is also known as a Gaussian distribution.
+
+\ **Note:** This method uses the `Box-Muller transform <https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform>`__ algorithm.
 
 .. rst-class:: classref-item-separator
 
@@ -187,7 +219,7 @@ Returns a `normally-distributed <https://en.wikipedia.org/wiki/Normal_distributi
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **randi** **(** **)**
+:ref:`int<class_int>` **randi**\ (\ ) :ref:`🔗<class_RandomNumberGenerator_method_randi>`
 
 Returns a pseudo-random 32-bit unsigned integer between ``0`` and ``4294967295`` (inclusive).
 
@@ -199,7 +231,7 @@ Returns a pseudo-random 32-bit unsigned integer between ``0`` and ``4294967295``
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **randi_range** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
+:ref:`int<class_int>` **randi_range**\ (\ from\: :ref:`int<class_int>`, to\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RandomNumberGenerator_method_randi_range>`
 
 Returns a pseudo-random 32-bit signed integer between ``from`` and ``to`` (inclusive).
 
@@ -211,9 +243,9 @@ Returns a pseudo-random 32-bit signed integer between ``from`` and ``to`` (inclu
 
 .. rst-class:: classref-method
 
-void **randomize** **(** **)**
+|void| **randomize**\ (\ ) :ref:`🔗<class_RandomNumberGenerator_method_randomize>`
 
-Setups a time-based seed to for this **RandomNumberGenerator** instance. Unlike the :ref:`@GlobalScope<class_@GlobalScope>` random number generation functions, different **RandomNumberGenerator** instances can use different seeds.
+Sets up a time-based seed for this **RandomNumberGenerator** instance. Unlike the :ref:`@GlobalScope<class_@GlobalScope>` random number generation functions, different **RandomNumberGenerator** instances can use different seeds.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -222,3 +254,4 @@ Setups a time-based seed to for this **RandomNumberGenerator** instance. Unlike 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -56,8 +56,7 @@ read and handle data serialization.
 
 
 .. code-block:: cpp
-
-    /* resource_loader_json.h */
+    :caption: resource_loader_json.h
 
     #ifndef RESOURCE_LOADER_JSON_H
     #define RESOURCE_LOADER_JSON_H
@@ -65,18 +64,17 @@ read and handle data serialization.
     #include "core/io/resource_loader.h"
 
     class ResourceFormatLoaderJson : public ResourceFormatLoader {
-    	GDCLASS(ResourceFormatLoaderJson, ResourceFormatLoader);
+        GDCLASS(ResourceFormatLoaderJson, ResourceFormatLoader);
     public:
-    	virtual RES load(const String &p_path, const String &p_original_path, Error *r_error = NULL);
-    	virtual void get_recognized_extensions(List<String> *r_extensions) const;
-    	virtual bool handles_type(const String &p_type) const;
-    	virtual String get_resource_type(const String &p_path) const;
+        virtual RES load(const String &p_path, const String &p_original_path, Error *r_error = NULL);
+        virtual void get_recognized_extensions(List<String> *r_extensions) const;
+        virtual bool handles_type(const String &p_type) const;
+        virtual String get_resource_type(const String &p_path) const;
     };
     #endif // RESOURCE_LOADER_JSON_H
 
 .. code-block:: cpp
-
-    /* resource_loader_json.cpp */
+    :caption: resource_loader_json.cpp
 
     #include "resource_loader_json.h"
 
@@ -84,25 +82,25 @@ read and handle data serialization.
 
     RES ResourceFormatLoaderJson::load(const String &p_path, const String &p_original_path, Error *r_error) {
     Ref<JsonResource> json = memnew(JsonResource);
-    	if (r_error) {
-    		*r_error = OK;
-    	}
-    	Error err = json->load_file(p_path);
-    	return json;
+        if (r_error) {
+            *r_error = OK;
+        }
+        Error err = json->load_file(p_path);
+        return json;
     }
 
     void ResourceFormatLoaderJson::get_recognized_extensions(List<String> *r_extensions) const {
-    	if (!r_extensions->find("json")) {
-    		r_extensions->push_back("json");
-    	}
+        if (!r_extensions->find("json")) {
+            r_extensions->push_back("json");
+        }
     }
 
     String ResourceFormatLoaderJson::get_resource_type(const String &p_path) const {
-    	return "Resource";
+        return "Resource";
     }
 
     bool ResourceFormatLoaderJson::handles_type(const String &p_type) const {
-    	return ClassDB::is_parent_class(p_type, "Resource");
+        return ClassDB::is_parent_class(p_type, "Resource");
     }
 
 Creating a ResourceFormatSaver
@@ -112,8 +110,7 @@ If you'd like to be able to edit and save a resource, you can implement a
 ``ResourceFormatSaver``:
 
 .. code-block:: cpp
-
-    /* resource_saver_json.h */
+    :caption: resource_saver_json.h
 
     #ifndef RESOURCE_SAVER_JSON_H
     #define RESOURCE_SAVER_JSON_H
@@ -121,17 +118,16 @@ If you'd like to be able to edit and save a resource, you can implement a
     #include "core/io/resource_saver.h"
 
     class ResourceFormatSaverJson : public ResourceFormatSaver {
-    	GDCLASS(ResourceFormatSaverJson, ResourceFormatSaver);
+        GDCLASS(ResourceFormatSaverJson, ResourceFormatSaver);
     public:
-    	virtual Error save(const String &p_path, const RES &p_resource, uint32_t p_flags = 0);
-    	virtual bool recognize(const RES &p_resource) const;
-    	virtual void get_recognized_extensions(const RES &p_resource, List<String> *r_extensions) const;
+        virtual Error save(const String &p_path, const RES &p_resource, uint32_t p_flags = 0);
+        virtual bool recognize(const RES &p_resource) const;
+        virtual void get_recognized_extensions(const RES &p_resource, List<String> *r_extensions) const;
     };
     #endif // RESOURCE_SAVER_JSON_H
 
 .. code-block:: cpp
-
-    /* resource_saver_json.cpp */
+    :caption: resource_saver_json.cpp
 
     #include "resource_saver_json.h"
 
@@ -139,19 +135,19 @@ If you'd like to be able to edit and save a resource, you can implement a
     #include "scene/resources/resource_format_text.h"
 
     Error ResourceFormatSaverJson::save(const String &p_path, const RES &p_resource, uint32_t p_flags) {
-    	Ref<JsonResource> json = memnew(JsonResource);
-    	Error error = json->save_file(p_path, p_resource);
-    	return error;
+        Ref<JsonResource> json = memnew(JsonResource);
+        Error error = json->save_file(p_path, p_resource);
+        return error;
     }
 
     bool ResourceFormatSaverJson::recognize(const RES &p_resource) const {
-    	return Object::cast_to<JsonResource>(*p_resource) != NULL;
+        return Object::cast_to<JsonResource>(*p_resource) != NULL;
     }
 
     void ResourceFormatSaverJson::get_recognized_extensions(const RES &p_resource, List<String> *r_extensions) const {
-    	if (Object::cast_to<JsonResource>(*p_resource)) {
-    		r_extensions->push_back("json");
-    	}
+        if (Object::cast_to<JsonResource>(*p_resource)) {
+            r_extensions->push_back("json");
+        }
     }
 
 Creating custom data types
@@ -164,8 +160,7 @@ understand additional binary formats such as machine learning models.
 Here is an example of creating a custom datatype:
 
 .. code-block:: cpp
-
-    /* resource_json.h */
+    :caption: resource_json.h
 
     #ifndef RESOURCE_JSON_H
     #define RESOURCE_JSON_H
@@ -174,88 +169,87 @@ Here is an example of creating a custom datatype:
     #include "core/variant_parser.h"
 
     class JsonResource : public Resource {
-    	GDCLASS(JsonResource, Resource);
+        GDCLASS(JsonResource, Resource);
 
     protected:
-    	static void _bind_methods() {
-    		ClassDB::bind_method(D_METHOD("set_dict", "dict"), &JsonResource::set_dict);
-    		ClassDB::bind_method(D_METHOD("get_dict"), &JsonResource::get_dict);
+        static void _bind_methods() {
+            ClassDB::bind_method(D_METHOD("set_dict", "dict"), &JsonResource::set_dict);
+            ClassDB::bind_method(D_METHOD("get_dict"), &JsonResource::get_dict);
 
-    		ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY, "content"), "set_dict", "get_dict");
-    	}
+            ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY, "content"), "set_dict", "get_dict");
+        }
 
     private:
-    	Dictionary content;
+        Dictionary content;
 
     public:
-    	Error load_file(const String &p_path);
-    	Error save_file(const String &p_path, const RES &p_resource);
+        Error load_file(const String &p_path);
+        Error save_file(const String &p_path, const RES &p_resource);
 
-    	void set_dict(const Dictionary &p_dict);
-    	Dictionary get_dict();
+        void set_dict(const Dictionary &p_dict);
+        Dictionary get_dict();
     };
     #endif // RESOURCE_JSON_H
 
 .. code-block:: cpp
-
-    /* resource_json.cpp */
+    :caption: resource_json.cpp
 
     #include "resource_json.h"
 
     Error JsonResource::load_file(const String &p_path) {
-    	Error error;
-    	FileAccess *file = FileAccess::open(p_path, FileAccess::READ, &error);
-    	if (error != OK) {
-    		if (file) {
-    			file->close();
-    		}
-    		return error;
-    	}
+        Error error;
+        FileAccess *file = FileAccess::open(p_path, FileAccess::READ, &error);
+        if (error != OK) {
+            if (file) {
+                file->close();
+            }
+            return error;
+        }
 
-    	String json_string = String("");
-    	while (!file->eof_reached()) {
-    		json_string += file->get_line();
-    	}
-    	file->close();
+        String json_string = String("");
+        while (!file->eof_reached()) {
+            json_string += file->get_line();
+        }
+        file->close();
 
-    	String error_string;
-    	int error_line;
-    	JSON json;
-    	Variant result;
-    	error = json.parse(json_string, result, error_string, error_line);
-    	if (error != OK) {
-    		file->close();
-    		return error;
-    	}
+        String error_string;
+        int error_line;
+        JSON json;
+        Variant result;
+        error = json.parse(json_string, result, error_string, error_line);
+        if (error != OK) {
+            file->close();
+            return error;
+        }
 
-    	content = Dictionary(result);
-    	return OK;
+        content = Dictionary(result);
+        return OK;
     }
 
     Error JsonResource::save_file(const String &p_path, const RES &p_resource) {
-    	Error error;
-    	FileAccess *file = FileAccess::open(p_path, FileAccess::WRITE, &error);
-    	if (error != OK) {
-    		if (file) {
-    			file->close();
-    		}
-    		return error;
-    	}
+        Error error;
+        FileAccess *file = FileAccess::open(p_path, FileAccess::WRITE, &error);
+        if (error != OK) {
+            if (file) {
+                file->close();
+            }
+            return error;
+        }
 
-    	Ref<JsonResource> json_ref = p_resource.get_ref_ptr();
-    	JSON json;
+        Ref<JsonResource> json_ref = p_resource.get_ref_ptr();
+        JSON json;
 
-    	file->store_string(json.print(json_ref->get_dict(), "    "));
-    	file->close();
-    	return OK;
+        file->store_string(json.print(json_ref->get_dict(), "    "));
+        file->close();
+        return OK;
     }
 
     void JsonResource::set_dict(const Dictionary &p_dict) {
-    	content = p_dict;
+        content = p_dict;
     }
 
     Dictionary JsonResource::get_dict() {
-    	return content;
+        return content;
     }
 
 Considerations
@@ -277,25 +271,25 @@ calls into ``std::istream``.
     class GodotFileInStreamBuf : public std::streambuf {
 
     public:
-    	GodotFileInStreamBuf(FileAccess *fa) {
-    		_file = fa;
-    	}
-    	int underflow() {
-    		if (_file->eof_reached()) {
-    			return EOF;
-    		} else {
-    			size_t pos = _file->get_position();
-    			uint8_t ret = _file->get_8();
-    			_file->seek(pos); // Required since get_8() advances the read head.
-    			return ret;
-    		}
-    	}
-    	int uflow() {
-    		return _file->eof_reached() ? EOF : _file->get_8();
-    	}
+        GodotFileInStreamBuf(FileAccess *fa) {
+            _file = fa;
+        }
+        int underflow() {
+            if (_file->eof_reached()) {
+                return EOF;
+            } else {
+                size_t pos = _file->get_position();
+                uint8_t ret = _file->get_8();
+                _file->seek(pos); // Required since get_8() advances the read head.
+                return ret;
+            }
+        }
+        int uflow() {
+            return _file->eof_reached() ? EOF : _file->get_8();
+        }
 
     private:
-    	FileAccess *_file;
+        FileAccess *_file;
     };
 
 
@@ -314,15 +308,13 @@ handler. The handler selects the proper loader automatically
 when ``load`` is called.
 
 .. code-block:: cpp
-
-    /* register_types.h */
+    :caption: register_types.h
 
     void register_json_types();
     void unregister_json_types();
 
 .. code-block:: cpp
-
-    /* register_types.cpp */
+    :caption: register_types.cpp
 
     #include "register_types.h"
 
@@ -335,21 +327,21 @@ when ``load`` is called.
     static Ref<ResourceFormatSaverJson> json_saver;
 
     void register_json_types() {
-    	ClassDB::register_class<JsonResource>();
+        ClassDB::register_class<JsonResource>();
 
-    	json_loader.instantiate();
-    	ResourceLoader::add_resource_format_loader(json_loader);
+        json_loader.instantiate();
+        ResourceLoader::add_resource_format_loader(json_loader);
 
-    	json_saver.instantiate();
-    	ResourceSaver::add_resource_format_saver(json_saver);
+        json_saver.instantiate();
+        ResourceSaver::add_resource_format_saver(json_saver);
     }
 
     void unregister_json_types() {
-    	ResourceLoader::remove_resource_format_loader(json_loader);
-    	json_loader.unref();
+        ResourceLoader::remove_resource_format_loader(json_loader);
+        json_loader.unref();
 
-    	ResourceSaver::remove_resource_format_saver(json_saver);
-    	json_saver.unref();
+        ResourceSaver::remove_resource_format_saver(json_saver);
+        json_saver.unref();
     }
 
 References

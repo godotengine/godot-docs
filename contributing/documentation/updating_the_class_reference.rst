@@ -72,7 +72,7 @@ worry. Leave it for now, and list the methods you skipped when you open a pull r
 with your changes. Another writer will take care of it.
 
 You can still look at the methods' implementation in Godot's source code on GitHub.
-If you have doubts, feel free to ask on the `Q&A website <https://godotengine.org/qa/>`_
+If you have doubts, feel free to ask on the `Q&A website <https://ask.godotengine.org/>`_
 and `Godot Contributors Chat <https://chat.godotengine.org/>`_.
 
 .. warning::
@@ -110,3 +110,5 @@ Please only include changes that are relevant to your work on the API in your co
 You can discard changes in other XML files using ``git checkout``, but consider reporting
 if you notice unrelated files being updated. Ideally, running this command should only
 bring up the changes that you yourself have made.
+
+You will then need to add descriptions to any newly generated entries.

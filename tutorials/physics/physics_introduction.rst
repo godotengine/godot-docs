@@ -83,17 +83,17 @@ These nodes allow you to draw the shape directly in the editor workspace.
 Physics process callback
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The physics engine runs at a fixed rate (a default of 60 iterations per second). This rate 
+The physics engine runs at a fixed rate (a default of 60 iterations per second). This rate
 is typically different from the frame rate which fluctuates based on what is rendered and
 available resources.
 
-It is important that all physics related code runs at this fixed rate. Therefore Godot 
+It is important that all physics related code runs at this fixed rate. Therefore Godot
 differentiates :ref:`between physics and idle processing <doc_idle_and_physics_processing>`.
-Code that runs each frame is called idle processing and code that runs on each physics 
-tick is called physics processing. Godot provides two different callbacks, one for each 
+Code that runs each frame is called idle processing and code that runs on each physics
+tick is called physics processing. Godot provides two different callbacks, one for each
 of those processing rates.
 
-The physics callback, :ref:`Node._physics_process() <class_Node_method__physics_process>`, 
+The physics callback, :ref:`Node._physics_process() <class_Node_private_method__physics_process>`,
 is called before each physics step. Any code that needs to access a body's properties should
 be run in here. This method will be passed a ``delta``
 parameter, which is a floating-point number equal to the time passed in
@@ -132,7 +132,7 @@ These properties can be configured via code, or by editing them in the Inspector
 
 Keeping track of what you're using each layer for can be difficult, so you
 may find it useful to assign names to the layers you're using. Names can
-be assigned in Project Settings -> Layer Names.
+be assigned in **Project Settings > Layer Names**.
 
 .. image:: img/physics_layer_names.png
 
@@ -180,6 +180,21 @@ would be as follows::
     # (2^(1-1)) + (2^(3-1)) + (2^(4-1)) = 1 + 4 + 8 = 13
     pow(2, 1-1) + pow(2, 3-1) + pow(2, 4-1)
 
+You can also set bits independently by calling ``set_collision_layer_value(layer_number, value)``
+or ``set_collision_mask_value(layer_number, value)`` on any given :ref:`CollisionObject2D <class_CollisionObject2D>` as follows::
+
+    # Example: Setting mask value to enable layers 1, 3, and 4.
+
+    var collider: CollisionObject2D = $CollisionObject2D  # Any given collider.
+    collider.set_collision_mask_value(1, true)
+    collider.set_collision_mask_value(3, true)
+    collider.set_collision_mask_value(4, true)
+
+Export annotations can be used to export bitmasks in the editor with a user-friendly GUI::
+
+    @export_flags_2d_physics var layers_2d_physics
+
+Additional export annotations are available for render and navigation layers, in both 2D and 3D. See :ref:`doc_gdscript_exports_exporting_bit_flags`.
 
 Area2D
 ------
@@ -229,7 +244,7 @@ You can modify a rigid body's behavior via properties such as "Mass",
 "Friction", or "Bounce", which can be set in the Inspector.
 
 The body's behavior is also affected by the world's properties, as set in
-`Project Settings -> Physics`, or by entering an :ref:`Area2D <class_Area2D>`
+**Project Settings > Physics**, or by entering an :ref:`Area2D <class_Area2D>`
 that is overriding the global physics properties.
 
 When a rigid body is at rest and hasn't moved for a while, it goes to sleep.
@@ -249,7 +264,7 @@ automatically be calculated by the physics engine.
 However, if you do wish to have some control over the body, you should take
 care - altering the ``position``, ``linear_velocity``, or other physics properties
 of a rigid body can result in unexpected behavior. If you need to alter any
-of the physics-related properties, you should use the :ref:`_integrate_forces() <class_RigidBody2D_method__integrate_forces>`
+of the physics-related properties, you should use the :ref:`_integrate_forces() <class_RigidBody2D_private_method__integrate_forces>`
 callback instead of ``_physics_process()``. In this callback, you have access
 to the body's :ref:`PhysicsDirectBodyState2D <class_PhysicsDirectBodyState2D>`,
 which allows for safely changing properties and synchronizing them with
@@ -429,7 +444,9 @@ without writing much code.
 
 .. warning:: ``move_and_slide()`` automatically includes the timestep in its
              calculation, so you should **not** multiply the velocity vector
-             by ``delta``.
+             by ``delta``. This does **not** apply to ``gravity`` as it is an
+             acceleration and is time dependent, and needs to be scaled by
+             ``delta``.
 
 For example, use the following code to make a character that can walk along
 the ground (including slopes) and jump when standing on the ground:

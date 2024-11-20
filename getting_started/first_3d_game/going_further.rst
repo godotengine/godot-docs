@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_going_further:
 
 Going further
@@ -19,7 +17,7 @@ Where should you begin? Below, you'll find a few pages to start exploring and
 build upon what you've learned so far.
 
 But before that, here's a link to download a completed version of the project:
-`<https://github.com/godotengine/godot-3d-dodge-the-creeps>`_.
+`<https://github.com/godotengine/godot-demo-projects/releases>`_.
 
 Exploring the manual
 --------------------

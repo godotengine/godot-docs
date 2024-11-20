@@ -56,12 +56,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **layers** = ``1``
+:ref:`int<class_int>` **layers** = ``1`` :ref:`🔗<class_PlaceholderTextureLayered_property_layers>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_layers** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_layers** **(** **)**
+- |void| **set_layers**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_layers**\ (\ )
 
 The number of layers in the texture array.
 
@@ -73,12 +73,12 @@ The number of layers in the texture array.
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **size** = ``Vector2i(1, 1)``
+:ref:`Vector2i<class_Vector2i>` **size** = ``Vector2i(1, 1)`` :ref:`🔗<class_PlaceholderTextureLayered_property_size>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_size** **(** :ref:`Vector2i<class_Vector2i>` value **)**
-- :ref:`Vector2i<class_Vector2i>` **get_size** **(** **)**
+- |void| **set_size**\ (\ value\: :ref:`Vector2i<class_Vector2i>`\ )
+- :ref:`Vector2i<class_Vector2i>` **get_size**\ (\ )
 
 The size of each texture layer (in pixels).
 
@@ -89,3 +89,4 @@ The size of each texture layer (in pixels).
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

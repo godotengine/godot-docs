@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_your_first_2d_game:
 
 Your first 2D game
@@ -40,7 +42,7 @@ before tackling 3D games, which tend to be more complicated.
 
 You can find a completed version of this project at this location:
 
-- https://github.com/godotengine/godot-demo-projects
+- https://github.com/godotengine/godot-demo-projects/tree/master/2d/dodge_the_creeps
 
 Prerequisites
 -------------
@@ -49,8 +51,8 @@ This step-by-step tutorial is intended for beginners who followed the complete
 :ref:`Getting Started <toc-learn-step_by_step>`.
 
 If you're an experienced programmer, you can find the complete demo's source
-code here: `Godot demo projects
-<https://github.com/godotengine/godot-demo-projects>`__.
+code here: `Dodge the Creeps source code
+<https://github.com/godotengine/godot-demo-projects/tree/master/2d/dodge_the_creeps>`__.
 
 We prepared some game assets you'll need to download so we can jump straight to
 the code.

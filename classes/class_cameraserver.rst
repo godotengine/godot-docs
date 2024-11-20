@@ -23,7 +23,7 @@ The **CameraServer** keeps track of different cameras accessible in Godot. These
 
 It is notably used to provide AR modules with a video feed from the camera.
 
-\ **Note:** This class is currently only implemented on macOS and iOS. On other platforms, no :ref:`CameraFeed<class_CameraFeed>`\ s will be available.
+\ **Note:** This class is currently only implemented on Linux, macOS, and iOS, on other platforms no :ref:`CameraFeed<class_CameraFeed>`\ s will be available. To get a :ref:`CameraFeed<class_CameraFeed>` on iOS, the camera plugin from `godot-ios-plugins <https://github.com/godotengine/godot-ios-plugins>`__ is required.
 
 .. rst-class:: classref-reftable-group
 
@@ -33,17 +33,17 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`add_feed<class_CameraServer_method_add_feed>` **(** :ref:`CameraFeed<class_CameraFeed>` feed **)**       |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------+
-   | :ref:`CameraFeed[]<class_CameraFeed>` | :ref:`feeds<class_CameraServer_method_feeds>` **(** **)**                                                      |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------+
-   | :ref:`CameraFeed<class_CameraFeed>`   | :ref:`get_feed<class_CameraServer_method_get_feed>` **(** :ref:`int<class_int>` index **)**                    |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`get_feed_count<class_CameraServer_method_get_feed_count>` **(** **)**                                    |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`remove_feed<class_CameraServer_method_remove_feed>` **(** :ref:`CameraFeed<class_CameraFeed>` feed **)** |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_feed<class_CameraServer_method_add_feed>`\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ )       |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`CameraFeed<class_CameraFeed>`\] | :ref:`feeds<class_CameraServer_method_feeds>`\ (\ )                                                         |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`CameraFeed<class_CameraFeed>`                              | :ref:`get_feed<class_CameraServer_method_get_feed>`\ (\ index\: :ref:`int<class_int>`\ )                    |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`get_feed_count<class_CameraServer_method_get_feed_count>`\ (\ )                                       |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`remove_feed<class_CameraServer_method_remove_feed>`\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ ) |
+   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -58,7 +58,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**camera_feed_added** **(** :ref:`int<class_int>` id **)**
+**camera_feed_added**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CameraServer_signal_camera_feed_added>`
 
 Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (e.g. a webcam is plugged in).
 
@@ -70,7 +70,7 @@ Emitted when a :ref:`CameraFeed<class_CameraFeed>` is added (e.g. a webcam is pl
 
 .. rst-class:: classref-signal
 
-**camera_feed_removed** **(** :ref:`int<class_int>` id **)**
+**camera_feed_removed**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CameraServer_signal_camera_feed_removed>`
 
 Emitted when a :ref:`CameraFeed<class_CameraFeed>` is removed (e.g. a webcam is unplugged).
 
@@ -87,7 +87,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **FeedImage**:
+enum **FeedImage**: :ref:`🔗<enum_CameraServer_FeedImage>`
 
 .. _class_CameraServer_constant_FEED_RGBA_IMAGE:
 
@@ -134,7 +134,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_feed** **(** :ref:`CameraFeed<class_CameraFeed>` feed **)**
+|void| **add_feed**\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ ) :ref:`🔗<class_CameraServer_method_add_feed>`
 
 Adds the camera ``feed`` to the camera server.
 
@@ -146,7 +146,7 @@ Adds the camera ``feed`` to the camera server.
 
 .. rst-class:: classref-method
 
-:ref:`CameraFeed[]<class_CameraFeed>` **feeds** **(** **)**
+:ref:`Array<class_Array>`\[:ref:`CameraFeed<class_CameraFeed>`\] **feeds**\ (\ ) :ref:`🔗<class_CameraServer_method_feeds>`
 
 Returns an array of :ref:`CameraFeed<class_CameraFeed>`\ s.
 
@@ -158,7 +158,7 @@ Returns an array of :ref:`CameraFeed<class_CameraFeed>`\ s.
 
 .. rst-class:: classref-method
 
-:ref:`CameraFeed<class_CameraFeed>` **get_feed** **(** :ref:`int<class_int>` index **)**
+:ref:`CameraFeed<class_CameraFeed>` **get_feed**\ (\ index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CameraServer_method_get_feed>`
 
 Returns the :ref:`CameraFeed<class_CameraFeed>` corresponding to the camera with the given ``index``.
 
@@ -170,7 +170,7 @@ Returns the :ref:`CameraFeed<class_CameraFeed>` corresponding to the camera with
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_feed_count** **(** **)**
+:ref:`int<class_int>` **get_feed_count**\ (\ ) :ref:`🔗<class_CameraServer_method_get_feed_count>`
 
 Returns the number of :ref:`CameraFeed<class_CameraFeed>`\ s registered.
 
@@ -182,7 +182,7 @@ Returns the number of :ref:`CameraFeed<class_CameraFeed>`\ s registered.
 
 .. rst-class:: classref-method
 
-void **remove_feed** **(** :ref:`CameraFeed<class_CameraFeed>` feed **)**
+|void| **remove_feed**\ (\ feed\: :ref:`CameraFeed<class_CameraFeed>`\ ) :ref:`🔗<class_CameraServer_method_remove_feed>`
 
 Removes the specified camera ``feed``.
 
@@ -193,3 +193,4 @@ Removes the specified camera ``feed``.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

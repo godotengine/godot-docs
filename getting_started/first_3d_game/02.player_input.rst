@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_player_scene_and_input:
 
 Player scene and input actions
@@ -53,10 +51,10 @@ You can rename it to ``Character``.
 
 .. note::
 
-    The ``.glb`` files contain 3D scene data based on the open source GLTF 2.0
+    The ``.glb`` files contain 3D scene data based on the open source glTF 2.0
     specification. They're a modern and powerful alternative to a proprietary format
     like FBX, which Godot also supports. To produce these files, we designed the
-    model in `Blender 3D <https://www.blender.org/>`__ and exported it to GLTF.
+    model in `Blender 3D <https://www.blender.org/>`__ and exported it to glTF.
 
 As with all kinds of physics nodes, we need a collision shape for our character
 to collide with the environment. Select the ``Player`` node again and add a child node
@@ -69,15 +67,15 @@ The sphere's wireframe appears below the character.
 |image3|
 
 It will be the shape the physics engine uses to collide with the environment, so
-we want it to better fit the 3D model. Shrink it a bit by dragging the orange
+we want it to better fit the 3D model. Make it a bit larger by dragging the orange
 dot in the viewport. My sphere has a radius of about ``0.8`` meters.
 
-Then, move the shape up so its bottom roughly aligns with the grid's plane.
+Then, move the collision shape up so its bottom roughly aligns with the grid's plane.
 
 |image4|
 
-You can toggle the model's visibility by clicking the eye icon next to the
-``Character`` or the ``Pivot`` nodes.
+To make moving the shape easier, you can toggle the model's visibility by clicking
+the eye icon next to the ``Character`` or the ``Pivot`` nodes.
 
 |image5|
 
@@ -85,6 +83,8 @@ Save the scene as ``player.tscn``
 
 With the nodes ready, we can almost get coding. But first, we need to define
 some input actions.
+
+.. _doc_first_3d_game_input_actions:
 
 Creating input actions
 ----------------------
@@ -106,7 +106,9 @@ can bind keys to these actions.
 |image7|
 
 Godot projects come with some predefined actions designed for user interface
-design, which we could use here. But we're defining our own to support gamepads.
+design (see above screenshot). These will become visible if you enable the
+*Show Built-in Actions* toggle. We could use these here, but instead we're
+defining our own to support gamepads. Leave *Show Built-in Actions* disabled.
 
 We're going to name our actions ``move_left``, ``move_right``, ``move_forward``,
 ``move_back``, and ``jump``.
@@ -131,7 +133,7 @@ Bind also the :kbd:`A` key, onto the action ``move_left``.
 Let's now add support for a gamepad's left joystick. Click the "+" button again
 but this time, select *Manual Selection -> Joypad Axes*.
 
-.. image:: img/02.player_input/left_inputmap.webp
+.. image:: img/02.player_input/joystick_axis_input.webp
 
 Select the negative X axis of the left joystick.
 
@@ -171,7 +173,7 @@ In the next part, we'll code and test the player's movement.
 .. |image5| image:: img/02.player_input/06.toggling_visibility.webp
 .. |image6| image:: img/02.player_input/07.project_settings.png
 .. |image7| image:: img/02.player_input/07.input_map_tab.png
-.. |image8| image:: img/02.player_input/07.adding_action.png
+.. |image8| image:: img/02.player_input/07.adding_action.webp
 .. |image9| image:: img/02.player_input/08.actions_list_empty.png
 .. |image11| image:: img/02.player_input/09.keyboard_key_popup.png
 .. |image12| image:: img/02.player_input/09.keyboard_keys.png

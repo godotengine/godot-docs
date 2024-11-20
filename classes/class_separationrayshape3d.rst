@@ -19,7 +19,7 @@ A 3D ray shape used for physics collision that tries to separate itself from any
 Description
 -----------
 
-A 3D ray shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape3D<class_CollisionShape3D>`. When a **SeparationRayShape3D** collides with an object, it tries to separate itself from it by moving its endpoint to the collision point. It can for example be used for spears falling from the sky.
+A 3D ray shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape3D<class_CollisionShape3D>`. When a **SeparationRayShape3D** collides with an object, it tries to separate itself from it by moving its endpoint to the collision point. For example, a **SeparationRayShape3D** next to a character can allow it to instantly move up when touching stairs.
 
 .. rst-class:: classref-reftable-group
 
@@ -48,12 +48,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **length** = ``1.0``
+:ref:`float<class_float>` **length** = ``1.0`` :ref:`🔗<class_SeparationRayShape3D_property_length>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_length** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_length** **(** **)**
+- |void| **set_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_length**\ (\ )
 
 The ray's length.
 
@@ -65,12 +65,12 @@ The ray's length.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **slide_on_slope** = ``false``
+:ref:`bool<class_bool>` **slide_on_slope** = ``false`` :ref:`🔗<class_SeparationRayShape3D_property_slide_on_slope>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_slide_on_slope** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_slide_on_slope** **(** **)**
+- |void| **set_slide_on_slope**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_slide_on_slope**\ (\ )
 
 If ``false`` (default), the shape always separates and returns a normal along its own direction.
 
@@ -83,3 +83,4 @@ If ``true``, the shape can return the correct normal and separate in any directi
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

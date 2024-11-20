@@ -21,8 +21,6 @@ Description
 
 This class represents a C# script. It is the C# equivalent of the :ref:`GDScript<class_GDScript>` class and is only available in Mono-enabled Godot builds.
 
-See also :ref:`GodotSharp<class_GodotSharp>`.
-
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -38,9 +36,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+--------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>` | :ref:`new<class_CSharpScript_method_new>` **(** ... **)** |vararg| |
-   +-------------------------------+--------------------------------------------------------------------+
+   +-------------------------------+---------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`new<class_CSharpScript_method_new>`\ (\ ...\ ) |vararg| |
+   +-------------------------------+---------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -55,7 +53,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
+:ref:`Variant<class_Variant>` **new**\ (\ ...\ ) |vararg| :ref:`🔗<class_CSharpScript_method_new>`
 
 Returns a new instance of the script.
 
@@ -66,3 +64,4 @@ Returns a new instance of the script.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -9,7 +9,7 @@ Introduction to the XR system in Godot
 Godot provides a modular XR system that abstracts many of the different XR platform specifics away from the user.
 At the core sits the :ref:`XRServer <class_xrserver>` which acts as a central interface to the XR system that allows users to discover interfaces and interact with the components of the XR system.
 
-Each supported XR platform is implemented as an :ref:`XRInterface <class_xrinterface>`. Supported interfaces register themselves with the :ref:`XRServer <class_xrserver>` and can be queried with the ``find_interface`` method on the :ref:`XRServer <class_xrserver>`. When the desired interface is found it can be initialised by calling ``initialize`` on the interface.
+Each supported XR platform is implemented as an :ref:`XRInterface <class_xrinterface>`. Supported interfaces register themselves with the :ref:`XRServer <class_xrserver>` and can be queried with the ``find_interface`` method on the :ref:`XRServer <class_xrserver>`. When the desired interface is found it can be initialized by calling ``initialize`` on the interface.
 
 .. warning::
     A registered interface means nothing more than that the interface is available, if the interface is not supported by the host system, initialization may fail and return ``false``. This can have many reasons and sadly the reasons differ from platform to platform. It can be because the user hasn't installed the required software, or that the user simply hasn't plugged in their headset. You as a developer must thus react properly on an interface failing to initialize.
@@ -35,11 +35,19 @@ While in Godot 3 most things worked out of the box, Godot 4 needs a little more 
 
 .. image:: img/xr_shaders.png
 
+.. UPDATE: Not supported yet. When all or most post process effects work in
+.. stereoscopic rendering, remove or update this note.
+
 .. warning::
     As Godot 4 is still in development, many post process effects have not yet been updated to support stereoscopic rendering. Using these will have adverse effects.
 
+.. UPDATE: Recommended renderer may change. If the Mobile renderer (or any other
+.. renderer) is recommended for all XR projects, update this note.
+
 .. note::
-    Godot also has the choice between a desktop and mobile Vulkan renderer. There are a number of optimisations added to the mobile renderer that benefit XR applications. You may wish to enable this even on desktop.
+    Godot 4 has 3 renderer options, Compatibility, Mobile, and Forward+. In the future XR desktop projects should use Forward+, and projects for standalone headsets
+    should use Mobile. Currently Compatibility is the recommended renderer for standalone headsets, and ironically Mobile is the recommended renderer for desktop.
+    This is based on current XR performance on the different devices with each renderer.
 
 OpenXR
 ------
@@ -70,7 +78,7 @@ And the right hand:
 
 .. image:: img/xr_right_hand.png
 
-Right now all these nodes are on the floor, the will be positioned correctly in runtime. To help during development, it can be helpful to move the camera upwards so its ``y`` is set to ``1.7``, and move the controller nodes to ``-0.5, 1.0, -0.5`` and ``0.5, 1.0, -0.5`` for respectively the left and right hand.
+Right now all these nodes are on the floor, they will be positioned correctly in runtime. To help during development, it can be helpful to move the camera upwards so its ``y`` is set to ``1.7``, and move the controller nodes to ``-0.5, 1.0, -0.5`` and ``0.5, 1.0, -0.5`` for respectively the left and right hand.
 
 Next we need to add a script to our root node. Add the following code into this script:
 
@@ -84,7 +92,7 @@ Next we need to add a script to our root node. Add the following code into this 
     func _ready():
         xr_interface = XRServer.find_interface("OpenXR")
         if xr_interface and xr_interface.is_initialized():
-            print("OpenXR initialised successfully")
+            print("OpenXR initialized successfully")
 
             # Turn off v-sync!
             DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)

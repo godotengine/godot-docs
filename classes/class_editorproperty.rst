@@ -53,23 +53,23 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`_set_read_only<class_EditorProperty_method__set_read_only>` **(** :ref:`bool<class_bool>` read_only **)** |virtual|                                                                                                                          |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`_update_property<class_EditorProperty_method__update_property>` **(** **)** |virtual|                                                                                                                                                        |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`add_focusable<class_EditorProperty_method_add_focusable>` **(** :ref:`Control<class_Control>` control **)**                                                                                                                                  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`emit_changed<class_EditorProperty_method_emit_changed>` **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value, :ref:`StringName<class_StringName>` field=&"", :ref:`bool<class_bool>` changing=false **)** |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>`         | :ref:`get_edited_object<class_EditorProperty_method_get_edited_object>` **(** **)**                                                                                                                                                                |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_edited_property<class_EditorProperty_method_get_edited_property>` **(** **)** |const|                                                                                                                                                    |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`set_bottom_editor<class_EditorProperty_method_set_bottom_editor>` **(** :ref:`Control<class_Control>` editor **)**                                                                                                                           |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`update_property<class_EditorProperty_method_update_property>` **(** **)**                                                                                                                                                                    |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`_set_read_only<class_EditorProperty_private_method__set_read_only>`\ (\ read_only\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                            |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`_update_property<class_EditorProperty_private_method__update_property>`\ (\ ) |virtual|                                                                                                                                                             |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`add_focusable<class_EditorProperty_method_add_focusable>`\ (\ control\: :ref:`Control<class_Control>`\ )                                                                                                                                            |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`emit_changed<class_EditorProperty_method_emit_changed>`\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`, field\: :ref:`StringName<class_StringName>` = &"", changing\: :ref:`bool<class_bool>` = false\ ) |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>`         | :ref:`get_edited_object<class_EditorProperty_method_get_edited_object>`\ (\ )                                                                                                                                                                             |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_edited_property<class_EditorProperty_method_get_edited_property>`\ (\ ) |const|                                                                                                                                                                 |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`set_bottom_editor<class_EditorProperty_method_set_bottom_editor>`\ (\ editor\: :ref:`Control<class_Control>`\ )                                                                                                                                     |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`update_property<class_EditorProperty_method_update_property>`\ (\ )                                                                                                                                                                                 |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -84,9 +84,9 @@ Signals
 
 .. rst-class:: classref-signal
 
-**multiple_properties_changed** **(** :ref:`PackedStringArray<class_PackedStringArray>` properties, :ref:`Array<class_Array>` value **)**
+**multiple_properties_changed**\ (\ properties\: :ref:`PackedStringArray<class_PackedStringArray>`, value\: :ref:`Array<class_Array>`\ ) :ref:`🔗<class_EditorProperty_signal_multiple_properties_changed>`
 
-Emit it if you want multiple properties modified at the same time. Do not use if added via :ref:`EditorInspectorPlugin._parse_property<class_EditorInspectorPlugin_method__parse_property>`.
+Emit it if you want multiple properties modified at the same time. Do not use if added via :ref:`EditorInspectorPlugin._parse_property<class_EditorInspectorPlugin_private_method__parse_property>`.
 
 .. rst-class:: classref-item-separator
 
@@ -96,7 +96,7 @@ Emit it if you want multiple properties modified at the same time. Do not use if
 
 .. rst-class:: classref-signal
 
-**object_id_selected** **(** :ref:`StringName<class_StringName>` property, :ref:`int<class_int>` id **)**
+**object_id_selected**\ (\ property\: :ref:`StringName<class_StringName>`, id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EditorProperty_signal_object_id_selected>`
 
 Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
@@ -108,7 +108,7 @@ Used by sub-inspectors. Emit it if what was selected was an Object ID.
 
 .. rst-class:: classref-signal
 
-**property_can_revert_changed** **(** :ref:`StringName<class_StringName>` property, :ref:`bool<class_bool>` can_revert **)**
+**property_can_revert_changed**\ (\ property\: :ref:`StringName<class_StringName>`, can_revert\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorProperty_signal_property_can_revert_changed>`
 
 Emitted when the revertability (i.e., whether it has a non-default value and thus is displayed with a revert icon) of a property has changed.
 
@@ -120,7 +120,7 @@ Emitted when the revertability (i.e., whether it has a non-default value and thu
 
 .. rst-class:: classref-signal
 
-**property_changed** **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value, :ref:`StringName<class_StringName>` field, :ref:`bool<class_bool>` changing **)**
+**property_changed**\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`, field\: :ref:`StringName<class_StringName>`, changing\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorProperty_signal_property_changed>`
 
 Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_method_emit_changed>` method instead.
 
@@ -132,7 +132,7 @@ Do not emit this manually, use the :ref:`emit_changed<class_EditorProperty_metho
 
 .. rst-class:: classref-signal
 
-**property_checked** **(** :ref:`StringName<class_StringName>` property, :ref:`bool<class_bool>` checked **)**
+**property_checked**\ (\ property\: :ref:`StringName<class_StringName>`, checked\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorProperty_signal_property_checked>`
 
 Emitted when a property was checked. Used internally.
 
@@ -144,9 +144,21 @@ Emitted when a property was checked. Used internally.
 
 .. rst-class:: classref-signal
 
-**property_deleted** **(** :ref:`StringName<class_StringName>` property **)**
+**property_deleted**\ (\ property\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EditorProperty_signal_property_deleted>`
 
 Emitted when a property was deleted. Used internally.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorProperty_signal_property_favorited:
+
+.. rst-class:: classref-signal
+
+**property_favorited**\ (\ property\: :ref:`StringName<class_StringName>`, favorited\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorProperty_signal_property_favorited>`
+
+Emit it if you want to mark a property as favorited, making it appear at the top of the inspector.
 
 .. rst-class:: classref-item-separator
 
@@ -156,7 +168,7 @@ Emitted when a property was deleted. Used internally.
 
 .. rst-class:: classref-signal
 
-**property_keyed** **(** :ref:`StringName<class_StringName>` property **)**
+**property_keyed**\ (\ property\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_EditorProperty_signal_property_keyed>`
 
 Emit it if you want to add this value as an animation key (check for keying being enabled first).
 
@@ -168,7 +180,7 @@ Emit it if you want to add this value as an animation key (check for keying bein
 
 .. rst-class:: classref-signal
 
-**property_keyed_with_value** **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**
+**property_keyed_with_value**\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_EditorProperty_signal_property_keyed_with_value>`
 
 Emit it if you want to key a property with a single value.
 
@@ -180,7 +192,7 @@ Emit it if you want to key a property with a single value.
 
 .. rst-class:: classref-signal
 
-**property_pinned** **(** :ref:`StringName<class_StringName>` property, :ref:`bool<class_bool>` pinned **)**
+**property_pinned**\ (\ property\: :ref:`StringName<class_StringName>`, pinned\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_EditorProperty_signal_property_pinned>`
 
 Emit it if you want to mark (or unmark) the value of a property for being saved regardless of being equal to the default value.
 
@@ -194,7 +206,7 @@ The default value is the one the property will get when the node is just instant
 
 .. rst-class:: classref-signal
 
-**resource_selected** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource **)**
+**resource_selected**\ (\ path\: :ref:`String<class_String>`, resource\: :ref:`Resource<class_Resource>`\ ) :ref:`🔗<class_EditorProperty_signal_resource_selected>`
 
 If you want a sub-resource to be edited, emit this signal with the resource.
 
@@ -206,7 +218,7 @@ If you want a sub-resource to be edited, emit this signal with the resource.
 
 .. rst-class:: classref-signal
 
-**selected** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` focusable_idx **)**
+**selected**\ (\ path\: :ref:`String<class_String>`, focusable_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_EditorProperty_signal_selected>`
 
 Emitted when selected. Used internally.
 
@@ -223,12 +235,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **checkable** = ``false``
+:ref:`bool<class_bool>` **checkable** = ``false`` :ref:`🔗<class_EditorProperty_property_checkable>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_checkable** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_checkable** **(** **)**
+- |void| **set_checkable**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_checkable**\ (\ )
 
 Used by the inspector, set to ``true`` when the property is checkable.
 
@@ -240,12 +252,12 @@ Used by the inspector, set to ``true`` when the property is checkable.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **checked** = ``false``
+:ref:`bool<class_bool>` **checked** = ``false`` :ref:`🔗<class_EditorProperty_property_checked>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_checked** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_checked** **(** **)**
+- |void| **set_checked**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_checked**\ (\ )
 
 Used by the inspector, set to ``true`` when the property is checked.
 
@@ -257,12 +269,12 @@ Used by the inspector, set to ``true`` when the property is checked.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **deletable** = ``false``
+:ref:`bool<class_bool>` **deletable** = ``false`` :ref:`🔗<class_EditorProperty_property_deletable>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_deletable** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_deletable** **(** **)**
+- |void| **set_deletable**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_deletable**\ (\ )
 
 Used by the inspector, set to ``true`` when the property can be deleted by the user.
 
@@ -274,12 +286,12 @@ Used by the inspector, set to ``true`` when the property can be deleted by the u
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **draw_warning** = ``false``
+:ref:`bool<class_bool>` **draw_warning** = ``false`` :ref:`🔗<class_EditorProperty_property_draw_warning>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_draw_warning** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_draw_warning** **(** **)**
+- |void| **set_draw_warning**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_draw_warning**\ (\ )
 
 Used by the inspector, set to ``true`` when the property is drawn with the editor theme's warning color. This is used for editable children's properties.
 
@@ -291,12 +303,12 @@ Used by the inspector, set to ``true`` when the property is drawn with the edito
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **keying** = ``false``
+:ref:`bool<class_bool>` **keying** = ``false`` :ref:`🔗<class_EditorProperty_property_keying>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_keying** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_keying** **(** **)**
+- |void| **set_keying**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_keying**\ (\ )
 
 Used by the inspector, set to ``true`` when the property can add keys for animation.
 
@@ -308,12 +320,12 @@ Used by the inspector, set to ``true`` when the property can add keys for animat
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **label** = ``""``
+:ref:`String<class_String>` **label** = ``""`` :ref:`🔗<class_EditorProperty_property_label>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_label** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_label** **(** **)**
+- |void| **set_label**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_label**\ (\ )
 
 Set this property to change the label (if you want to show one).
 
@@ -325,12 +337,12 @@ Set this property to change the label (if you want to show one).
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **read_only** = ``false``
+:ref:`bool<class_bool>` **read_only** = ``false`` :ref:`🔗<class_EditorProperty_property_read_only>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_read_only** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_read_only** **(** **)**
+- |void| **set_read_only**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_read_only**\ (\ )
 
 Used by the inspector, set to ``true`` when the property is read-only.
 
@@ -343,11 +355,11 @@ Used by the inspector, set to ``true`` when the property is read-only.
 Method Descriptions
 -------------------
 
-.. _class_EditorProperty_method__set_read_only:
+.. _class_EditorProperty_private_method__set_read_only:
 
 .. rst-class:: classref-method
 
-void **_set_read_only** **(** :ref:`bool<class_bool>` read_only **)** |virtual|
+|void| **_set_read_only**\ (\ read_only\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_EditorProperty_private_method__set_read_only>`
 
 Called when the read-only status of the property is changed. It may be used to change custom controls into a read-only or modifiable state.
 
@@ -355,11 +367,11 @@ Called when the read-only status of the property is changed. It may be used to c
 
 ----
 
-.. _class_EditorProperty_method__update_property:
+.. _class_EditorProperty_private_method__update_property:
 
 .. rst-class:: classref-method
 
-void **_update_property** **(** **)** |virtual|
+|void| **_update_property**\ (\ ) |virtual| :ref:`🔗<class_EditorProperty_private_method__update_property>`
 
 When this virtual function is called, you must update your editor.
 
@@ -371,7 +383,7 @@ When this virtual function is called, you must update your editor.
 
 .. rst-class:: classref-method
 
-void **add_focusable** **(** :ref:`Control<class_Control>` control **)**
+|void| **add_focusable**\ (\ control\: :ref:`Control<class_Control>`\ ) :ref:`🔗<class_EditorProperty_method_add_focusable>`
 
 If any of the controls added can gain keyboard focus, add it here. This ensures that focus will be restored if the inspector is refreshed.
 
@@ -383,7 +395,7 @@ If any of the controls added can gain keyboard focus, add it here. This ensures 
 
 .. rst-class:: classref-method
 
-void **emit_changed** **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value, :ref:`StringName<class_StringName>` field=&"", :ref:`bool<class_bool>` changing=false **)**
+|void| **emit_changed**\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`, field\: :ref:`StringName<class_StringName>` = &"", changing\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_EditorProperty_method_emit_changed>`
 
 If one or several properties have changed, this must be called. ``field`` is used in case your editor can modify fields separately (as an example, Vector3.x). The ``changing`` argument avoids the editor requesting this property to be refreshed (leave as ``false`` if unsure).
 
@@ -395,7 +407,7 @@ If one or several properties have changed, this must be called. ``field`` is use
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_edited_object** **(** **)**
+:ref:`Object<class_Object>` **get_edited_object**\ (\ ) :ref:`🔗<class_EditorProperty_method_get_edited_object>`
 
 Gets the edited object.
 
@@ -407,9 +419,9 @@ Gets the edited object.
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_edited_property** **(** **)** |const|
+:ref:`StringName<class_StringName>` **get_edited_property**\ (\ ) |const| :ref:`🔗<class_EditorProperty_method_get_edited_property>`
 
-Gets the edited property. If your editor is for a single property (added via :ref:`EditorInspectorPlugin._parse_property<class_EditorInspectorPlugin_method__parse_property>`), then this will return the property.
+Gets the edited property. If your editor is for a single property (added via :ref:`EditorInspectorPlugin._parse_property<class_EditorInspectorPlugin_private_method__parse_property>`), then this will return the property.
 
 .. rst-class:: classref-item-separator
 
@@ -419,7 +431,7 @@ Gets the edited property. If your editor is for a single property (added via :re
 
 .. rst-class:: classref-method
 
-void **set_bottom_editor** **(** :ref:`Control<class_Control>` editor **)**
+|void| **set_bottom_editor**\ (\ editor\: :ref:`Control<class_Control>`\ ) :ref:`🔗<class_EditorProperty_method_set_bottom_editor>`
 
 Puts the ``editor`` control below the property label. The control must be previously added using :ref:`Node.add_child<class_Node_method_add_child>`.
 
@@ -431,7 +443,7 @@ Puts the ``editor`` control below the property label. The control must be previo
 
 .. rst-class:: classref-method
 
-void **update_property** **(** **)**
+|void| **update_property**\ (\ ) :ref:`🔗<class_EditorProperty_method_update_property>`
 
 Forces refresh of the property display.
 
@@ -442,3 +454,4 @@ Forces refresh of the property display.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

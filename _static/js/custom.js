@@ -238,6 +238,65 @@ const registerSidebarObserver = (function(){
   };
 })();
 
+/**
+ * Registers Giscus if there's an #godot-giscus container.
+ * @returns {void} Nothing.
+ */
+const registerGiscus = function () {
+  const giscusContainer = document.getElementById("godot-giscus");
+  if (giscusContainer == null) {
+    return;
+  }
+
+  const removeGiscusContainer = function() {
+    giscusContainer.remove();
+  };
+
+  const pageNameMetaElement = Array.from(document.head.querySelectorAll("meta")).find((meta) => meta.name === "doc_pagename");
+  if (pageNameMetaElement == null) {
+    removeGiscusContainer();
+    return;
+  }
+
+  const pageNameDenyList = [
+    "search"
+  ];
+  if (pageNameDenyList.includes(pageNameMetaElement.content)) {
+    removeGiscusContainer();
+    return;
+  }
+
+  // Use https://giscus.app/ to regenerate the script tag if needed.
+  // data-term is set to be language-independent and version-independent, so that comments can be centralized for each page.
+  // This increases the likelihood that users will encounter comments on less frequently visited pages.
+  const scriptElement = document.createElement("script");
+  scriptElement.src = "https://giscus.app/client.js";
+  scriptElement.crossOrigin = "anonymous";
+  scriptElement.async = true;
+
+  const dataset = {
+    repo: "godotengine/godot-docs-user-notes",
+    repoId: "R_kgDOKuNx0w",
+    category: "User-contributed notes",
+    categoryId: "DIC_kwDOKuNx084CbANb",
+    mapping: "specific",
+    term: pageNameMetaElement.content,
+    strict: "1",
+    reactionsEnabled: "0",
+    emitMetadata: "0",
+    inputPosition: "bottom",
+    theme: "preferred_color_scheme",
+    lang: "en",
+    loading: "lazy",
+  };
+
+  for (const [key, value] of Object.entries(dataset)) {
+    scriptElement.dataset[key] = value;
+  }
+
+  giscusContainer.append(scriptElement);
+};
+
 $(document).ready(() => {
   // Remove the search match highlights from the page, and adjust the URL in the
   // navigation history.
@@ -245,6 +304,17 @@ $(document).ready(() => {
   if (url.searchParams.has('highlight')) {
     Documentation.hideSearchWords();
   }
+
+  window.addEventListener('keydown', function(event) {
+    if (event.key === '/') {
+        var searchField = document.querySelector('#rtd-search-form input[type=text]');
+        if (document.activeElement !== searchField) {
+            searchField.focus();
+            searchField.select();
+            event.preventDefault();
+        }
+    }
+  });
 
   // Initialize handlers for page scrolling and our custom sidebar.
   const mediaQuery = window.matchMedia('only screen and (min-width: 769px)');
@@ -289,6 +359,23 @@ $(document).ready(() => {
         linkItem.removeChild(textNode);
         linkItem.insertAdjacentHTML('beforeend', text);
     }
+  }
+
+  // Change indentation from spaces to tabs for codeblocks.
+  const codeBlocks = document.querySelectorAll('.rst-content div[class^="highlight"] pre');
+  for (const codeBlock of codeBlocks) {
+    const classList = codeBlock.parentNode.parentNode.classList;
+    if (!classList.contains('highlight-gdscript') && !classList.contains('highlight-cpp')) {
+      // Only change indentation for GDScript and C++.
+      continue;
+    }
+    let html = codeBlock.innerHTML.replace(/^(<span class="w">)?( {4})/gm, '\t');
+    let html_old = "";
+    while (html != html_old) {
+      html_old = html;
+      html = html.replace(/\t( {4})/gm, '\t\t')
+    }
+    codeBlock.innerHTML = html;
   }
 
   // See `godot_is_latest` in conf.py
@@ -397,6 +484,9 @@ $(document).ready(() => {
 
     registerOnScrollEvent(mediaQuery);
   }
+
+  // Giscus
+  registerGiscus();
 });
 
 // Override the default implementation from doctools.js to avoid this behavior.

@@ -121,7 +121,7 @@ Movie Maker can also be enabled from the :ref:`command line <doc_command_line_tu
 If the output path is relative, then it is **relative to the project folder**,
 not the current working directory. In the above example, the file will be
 written to ``/path/to/your_project/output.avi``. This behavior is similar to the
-``--export`` command line argument.
+``--export-release`` command line argument.
 
 Since Movie Maker's output resolution is set by the viewport size, you can
 adjust the window size on startup to override it if the project uses the
@@ -285,7 +285,8 @@ This feature tag can also be queried in a script to increase quality settings
 that are set in the Environment resource. For example, to further improve SDFGI
 detail and reduce light leaking:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     extends Node3D
 
@@ -295,6 +296,24 @@ detail and reduce light leaking:
             # without decreasing its maximum distance.
             get_viewport().world_3d.environment.sdfgi_min_cell_size *= 0.25
             get_viewport().world_3d.environment.sdfgi_cascades = 8
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyNode3D : Node3D
+    {
+        public override void _Ready()
+        {
+            if (OS.HasFeature("movie"))
+            {
+                // When recording a movie, improve SDFGI cell density
+                // without decreasing its maximum distance.
+                GetViewport().World3D.Environment.SdfgiMinCellSize *= 0.25f;
+                GetViewport().World3D.Environment.SdfgiCascades = 8;
+            }
+        }
+    }
 
 .. _doc_creating_movies_recording_at_higher_resolution:
 
@@ -359,7 +378,7 @@ others will require a conversion step beforehand. `HandBrake <https://handbrake.
 (GUI) and `FFmpeg <https://ffmpeg.org/>`__ (CLI) are popular open source tools
 for this purpose. FFmpeg has a steeper learning curve, but it's more powerful.
 
-The command below converts an AVI video to a MP4 (H.264) video with a Constant
+The command below converts an AVI video to an MP4 (H.264) video with a Constant
 Rate Factor (CRF) of 15. This results in a relatively large file, but is
 well-suited for platforms that will re-encode your videos to reduce their size
 (such as most video sharing websites):

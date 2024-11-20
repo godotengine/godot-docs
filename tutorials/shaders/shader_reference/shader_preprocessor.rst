@@ -191,11 +191,11 @@ Be careful, as ``defined()`` must only wrap a single identifier within parenthes
 
     In the shader editor, preprocessor branches that evaluate to ``false`` (and
     are therefore excluded from the final compiled shader) will appear grayed
-    out. This does not apply to run-time ``if`` statements.
+    out. This does not apply to runtime ``if`` statements.
 
 **#if preprocessor versus if statement: Performance caveats**
 
-The :ref:`shading language <doc_shading_language>` supports run-time ``if`` statements:
+The :ref:`shading language <doc_shading_language>` supports runtime ``if`` statements:
 
 .. code-block:: glsl
 
@@ -221,7 +221,7 @@ of the ``#if`` preprocessor statement:
     #endif
 
 However, the ``#if`` variant can be faster in certain scenarios. This is because
-all run-time branches in a shader are still compiled and variables within
+all runtime branches in a shader are still compiled and variables within
 those branches may still take up register space, even if they are never run in
 practice.
 
@@ -355,6 +355,24 @@ Defines the optional block which is included when the previously defined ``#if``
 
 Used as terminator for the ``#if``, ``#ifdef``, ``#ifndef`` or subsequent ``#else`` directives.
 
+#error
+^^^^^^
+
+**Syntax:** ``#error <message>``
+
+The ``#error`` directive forces the preprocessor to emit an error with optional message.
+For example, it's useful when used within ``#if`` block to provide a strict limitation of the
+defined value.
+
+.. code-block:: glsl
+
+    #define MAX_LOD 3
+    #define LOD 4
+
+    #if LOD > MAX_LOD
+    #error LOD exceeds MAX_LOD
+    #endif
+
 #include
 ^^^^^^^^
 
@@ -440,3 +458,35 @@ the preprocessor step.
     // This causes a shader compilation error, as the `#if USE_LIGHT` and `#endif`
     // are included as-is in the final shader code.
     #endif
+
+Built-in defines
+----------------
+
+Current renderer
+^^^^^^^^^^^^^^^^
+
+Since Godot 4.4, you can check which renderer is currently used with the built-in
+defines ``CURRENT_RENDERER``, ``RENDERER_COMPATIBILITY``, ``RENDERER_MOBILE``,
+and ``RENDERER_FORWARD_PLUS``:
+
+- ``CURRENT_RENDERER`` is set to either ``0``, ``1``, or ``2`` depending on the
+  current renderer.
+- ``RENDERER_COMPATIBILITY`` is always ``0``.
+- ``RENDERER_MOBILE`` is always ``1``.
+- ``RENDERER_FORWARD_PLUS`` is always ``2``.
+
+As an example, this shader sets ``ALBEDO`` to a different color in each renderer:
+
+.. code-block:: glsl
+
+    shader_type spatial;
+
+    void fragment() {
+    #if CURRENT_RENDERER == RENDERER_COMPATIBILITY
+        ALBEDO = vec3(0.0, 0.0, 1.0);
+    #elif CURRENT_RENDERER == RENDERER_MOBILE
+        ALBEDO = vec3(1.0, 0.0, 0.0);
+    #else // CURRENT_RENDERER == RENDERER_FORWARD_PLUS
+        ALBEDO = vec3(0.0, 1.0, 0.0);
+    #endif
+    }

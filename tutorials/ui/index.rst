@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_user_interface:
 
 User interface (UI)
@@ -11,7 +13,7 @@ UI building blocks
 
 Like everything else in Godot the user interface is built using nodes, specifically
 :ref:`Control <class_Control>` nodes. There are many different types of controls
-which are useful for creating specific types of the GUI. For simplicity we can
+which are useful for creating specific types of GUIs. For simplicity we can
 separate them into two groups: content and layout.
 
 Typical content controls include:

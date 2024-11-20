@@ -31,57 +31,57 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                           | :ref:`_compute_cost<class_AStar2D_method__compute_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** |virtual| |const|                                            |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                           | :ref:`_estimate_cost<class_AStar2D_method__estimate_cost>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** |virtual| |const|                                          |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`add_point<class_AStar2D_method_add_point>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` weight_scale=1.0 **)**                    |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`are_points_connected<class_AStar2D_method_are_points_connected>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)** |const| |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`clear<class_AStar2D_method_clear>` **(** **)**                                                                                                                                         |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`connect_points<class_AStar2D_method_connect_points>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)**                     |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`disconnect_points<class_AStar2D_method_disconnect_points>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)**               |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_available_point_id<class_AStar2D_method_get_available_point_id>` **(** **)** |const|                                                                                               |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_closest_point<class_AStar2D_method_get_closest_point>` **(** :ref:`Vector2<class_Vector2>` to_position, :ref:`bool<class_bool>` include_disabled=false **)** |const|               |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                       | :ref:`get_closest_position_in_segment<class_AStar2D_method_get_closest_position_in_segment>` **(** :ref:`Vector2<class_Vector2>` to_position **)** |const|                                   |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`get_id_path<class_AStar2D_method_get_id_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                                                  |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_point_capacity<class_AStar2D_method_get_point_capacity>` **(** **)** |const|                                                                                                       |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`get_point_connections<class_AStar2D_method_get_point_connections>` **(** :ref:`int<class_int>` id **)**                                                                                |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_point_count<class_AStar2D_method_get_point_count>` **(** **)** |const|                                                                                                             |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`get_point_ids<class_AStar2D_method_get_point_ids>` **(** **)**                                                                                                                         |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_point_path<class_AStar2D_method_get_point_path>` **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**                                                            |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                       | :ref:`get_point_position<class_AStar2D_method_get_point_position>` **(** :ref:`int<class_int>` id **)** |const|                                                                              |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                           | :ref:`get_point_weight_scale<class_AStar2D_method_get_point_weight_scale>` **(** :ref:`int<class_int>` id **)** |const|                                                                      |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`has_point<class_AStar2D_method_has_point>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`is_point_disabled<class_AStar2D_method_is_point_disabled>` **(** :ref:`int<class_int>` id **)** |const|                                                                                |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`remove_point<class_AStar2D_method_remove_point>` **(** :ref:`int<class_int>` id **)**                                                                                                  |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`reserve_space<class_AStar2D_method_reserve_space>` **(** :ref:`int<class_int>` num_nodes **)**                                                                                         |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_point_disabled<class_AStar2D_method_set_point_disabled>` **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` disabled=true **)**                                               |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_point_position<class_AStar2D_method_set_point_position>` **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` position **)**                                              |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_point_weight_scale<class_AStar2D_method_set_point_weight_scale>` **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**                                      |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`_compute_cost<class_AStar2D_private_method__compute_cost>`\ (\ from_id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`\ ) |virtual| |const|                                        |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`_estimate_cost<class_AStar2D_private_method__estimate_cost>`\ (\ from_id\: :ref:`int<class_int>`, end_id\: :ref:`int<class_int>`\ ) |virtual| |const|                                     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`add_point<class_AStar2D_method_add_point>`\ (\ id\: :ref:`int<class_int>`, position\: :ref:`Vector2<class_Vector2>`, weight_scale\: :ref:`float<class_float>` = 1.0\ )                    |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`are_points_connected<class_AStar2D_method_are_points_connected>`\ (\ id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`, bidirectional\: :ref:`bool<class_bool>` = true\ ) |const| |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`clear<class_AStar2D_method_clear>`\ (\ )                                                                                                                                                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`connect_points<class_AStar2D_method_connect_points>`\ (\ id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`, bidirectional\: :ref:`bool<class_bool>` = true\ )                     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`disconnect_points<class_AStar2D_method_disconnect_points>`\ (\ id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`, bidirectional\: :ref:`bool<class_bool>` = true\ )               |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_available_point_id<class_AStar2D_method_get_available_point_id>`\ (\ ) |const|                                                                                                        |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_closest_point<class_AStar2D_method_get_closest_point>`\ (\ to_position\: :ref:`Vector2<class_Vector2>`, include_disabled\: :ref:`bool<class_bool>` = false\ ) |const|                 |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`get_closest_position_in_segment<class_AStar2D_method_get_closest_position_in_segment>`\ (\ to_position\: :ref:`Vector2<class_Vector2>`\ ) |const|                                         |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`get_id_path<class_AStar2D_method_get_id_path>`\ (\ from_id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`, allow_partial_path\: :ref:`bool<class_bool>` = false\ )                |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_point_capacity<class_AStar2D_method_get_point_capacity>`\ (\ ) |const|                                                                                                                |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`get_point_connections<class_AStar2D_method_get_point_connections>`\ (\ id\: :ref:`int<class_int>`\ )                                                                                      |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_point_count<class_AStar2D_method_get_point_count>`\ (\ ) |const|                                                                                                                      |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`get_point_ids<class_AStar2D_method_get_point_ids>`\ (\ )                                                                                                                                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_point_path<class_AStar2D_method_get_point_path>`\ (\ from_id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`, allow_partial_path\: :ref:`bool<class_bool>` = false\ )          |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`get_point_position<class_AStar2D_method_get_point_position>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                                    |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`get_point_weight_scale<class_AStar2D_method_get_point_weight_scale>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                            |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`has_point<class_AStar2D_method_has_point>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                                                      |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`is_point_disabled<class_AStar2D_method_is_point_disabled>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                                      |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`remove_point<class_AStar2D_method_remove_point>`\ (\ id\: :ref:`int<class_int>`\ )                                                                                                        |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`reserve_space<class_AStar2D_method_reserve_space>`\ (\ num_nodes\: :ref:`int<class_int>`\ )                                                                                               |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_point_disabled<class_AStar2D_method_set_point_disabled>`\ (\ id\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>` = true\ )                                                 |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_point_position<class_AStar2D_method_set_point_position>`\ (\ id\: :ref:`int<class_int>`, position\: :ref:`Vector2<class_Vector2>`\ )                                                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_point_weight_scale<class_AStar2D_method_set_point_weight_scale>`\ (\ id\: :ref:`int<class_int>`, weight_scale\: :ref:`float<class_float>`\ )                                          |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -92,11 +92,11 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_AStar2D_method__compute_cost:
+.. _class_AStar2D_private_method__compute_cost:
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_compute_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** |virtual| |const|
+:ref:`float<class_float>` **_compute_cost**\ (\ from_id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_AStar2D_private_method__compute_cost>`
 
 Called when computing the cost between two connected points.
 
@@ -106,11 +106,11 @@ Note that this function is hidden in the default **AStar2D** class.
 
 ----
 
-.. _class_AStar2D_method__estimate_cost:
+.. _class_AStar2D_private_method__estimate_cost:
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_estimate_cost** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)** |virtual| |const|
+:ref:`float<class_float>` **_estimate_cost**\ (\ from_id\: :ref:`int<class_int>`, end_id\: :ref:`int<class_int>`\ ) |virtual| |const| :ref:`🔗<class_AStar2D_private_method__estimate_cost>`
 
 Called when estimating the cost between a point and the path's ending point.
 
@@ -124,11 +124,11 @@ Note that this function is hidden in the default **AStar2D** class.
 
 .. rst-class:: classref-method
 
-void **add_point** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` weight_scale=1.0 **)**
+|void| **add_point**\ (\ id\: :ref:`int<class_int>`, position\: :ref:`Vector2<class_Vector2>`, weight_scale\: :ref:`float<class_float>` = 1.0\ ) :ref:`🔗<class_AStar2D_method_add_point>`
 
 Adds a new point at the given position with the given identifier. The ``id`` must be 0 or larger, and the ``weight_scale`` must be 0.0 or greater.
 
-The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar2D_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point. Thus, all else being equal, the algorithm prefers points with lower ``weight_scale``\ s to form a path.
+The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar2D_private_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point. Thus, all else being equal, the algorithm prefers points with lower ``weight_scale``\ s to form a path.
 
 
 .. tabs::
@@ -155,7 +155,7 @@ If there already exists a point for the given ``id``, its position and weight sc
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **are_points_connected** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)** |const|
+:ref:`bool<class_bool>` **are_points_connected**\ (\ id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`, bidirectional\: :ref:`bool<class_bool>` = true\ ) |const| :ref:`🔗<class_AStar2D_method_are_points_connected>`
 
 Returns whether there is a connection/segment between the given points. If ``bidirectional`` is ``false``, returns whether movement from ``id`` to ``to_id`` is possible through this segment.
 
@@ -167,7 +167,7 @@ Returns whether there is a connection/segment between the given points. If ``bid
 
 .. rst-class:: classref-method
 
-void **clear** **(** **)**
+|void| **clear**\ (\ ) :ref:`🔗<class_AStar2D_method_clear>`
 
 Clears all the points and segments.
 
@@ -179,7 +179,7 @@ Clears all the points and segments.
 
 .. rst-class:: classref-method
 
-void **connect_points** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)**
+|void| **connect_points**\ (\ id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`, bidirectional\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_AStar2D_method_connect_points>`
 
 Creates a segment between the given points. If ``bidirectional`` is ``false``, only movement from ``id`` to ``to_id`` is allowed, not the reverse direction.
 
@@ -210,7 +210,7 @@ Creates a segment between the given points. If ``bidirectional`` is ``false``, o
 
 .. rst-class:: classref-method
 
-void **disconnect_points** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` to_id, :ref:`bool<class_bool>` bidirectional=true **)**
+|void| **disconnect_points**\ (\ id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`, bidirectional\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_AStar2D_method_disconnect_points>`
 
 Deletes the segment between the given points. If ``bidirectional`` is ``false``, only movement from ``id`` to ``to_id`` is prevented, and a unidirectional segment possibly remains.
 
@@ -222,7 +222,7 @@ Deletes the segment between the given points. If ``bidirectional`` is ``false``,
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_available_point_id** **(** **)** |const|
+:ref:`int<class_int>` **get_available_point_id**\ (\ ) |const| :ref:`🔗<class_AStar2D_method_get_available_point_id>`
 
 Returns the next available point ID with no point associated to it.
 
@@ -234,7 +234,7 @@ Returns the next available point ID with no point associated to it.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` to_position, :ref:`bool<class_bool>` include_disabled=false **)** |const|
+:ref:`int<class_int>` **get_closest_point**\ (\ to_position\: :ref:`Vector2<class_Vector2>`, include_disabled\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_AStar2D_method_get_closest_point>`
 
 Returns the ID of the closest point to ``to_position``, optionally taking disabled points into account. Returns ``-1`` if there are no points in the points pool.
 
@@ -248,7 +248,7 @@ Returns the ID of the closest point to ``to_position``, optionally taking disabl
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_closest_position_in_segment** **(** :ref:`Vector2<class_Vector2>` to_position **)** |const|
+:ref:`Vector2<class_Vector2>` **get_closest_position_in_segment**\ (\ to_position\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_AStar2D_method_get_closest_position_in_segment>`
 
 Returns the closest position to ``to_position`` that resides inside a segment between two connected points.
 
@@ -283,9 +283,13 @@ The result is in the segment that goes from ``y = 0`` to ``y = 5``. It's the clo
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **get_id_path** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**
+:ref:`PackedInt64Array<class_PackedInt64Array>` **get_id_path**\ (\ from_id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`, allow_partial_path\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_AStar2D_method_get_id_path>`
 
 Returns an array with the IDs of the points that form the path found by AStar2D between the given points. The array is ordered from the starting point to the ending point of the path.
+
+If there is no valid path to the target, and ``allow_partial_path`` is ``true``, returns a path to the point closest to the target that can be reached.
+
+\ **Note:** When ``allow_partial_path`` is ``true`` and ``to_id`` is disabled the search may take an unusually long time to finish.
 
 
 .. tabs::
@@ -317,7 +321,7 @@ Returns an array with the IDs of the points that form the path found by AStar2D 
     astar.ConnectPoints(2, 3, false);
     astar.ConnectPoints(4, 3, false);
     astar.ConnectPoints(1, 4, false);
-    int[] res = astar.GetIdPath(1, 3); // Returns [1, 2, 3]
+    long[] res = astar.GetIdPath(1, 3); // Returns [1, 2, 3]
 
 
 
@@ -331,7 +335,7 @@ If you change the 2nd point's weight to 3, then the result will be ``[1, 4, 3]``
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_point_capacity** **(** **)** |const|
+:ref:`int<class_int>` **get_point_capacity**\ (\ ) |const| :ref:`🔗<class_AStar2D_method_get_point_capacity>`
 
 Returns the capacity of the structure backing the points, useful in conjunction with :ref:`reserve_space<class_AStar2D_method_reserve_space>`.
 
@@ -343,7 +347,7 @@ Returns the capacity of the structure backing the points, useful in conjunction 
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **get_point_connections** **(** :ref:`int<class_int>` id **)**
+:ref:`PackedInt64Array<class_PackedInt64Array>` **get_point_connections**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AStar2D_method_get_point_connections>`
 
 Returns an array with the IDs of the points that form the connection with the given point.
 
@@ -374,7 +378,7 @@ Returns an array with the IDs of the points that form the connection with the gi
     astar.ConnectPoints(1, 2, true);
     astar.ConnectPoints(1, 3, true);
     
-    int[] neighbors = astar.GetPointConnections(1); // Returns [2, 3]
+    long[] neighbors = astar.GetPointConnections(1); // Returns [2, 3]
 
 
 
@@ -386,7 +390,7 @@ Returns an array with the IDs of the points that form the connection with the gi
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_point_count** **(** **)** |const|
+:ref:`int<class_int>` **get_point_count**\ (\ ) |const| :ref:`🔗<class_AStar2D_method_get_point_count>`
 
 Returns the number of points currently in the points pool.
 
@@ -398,7 +402,7 @@ Returns the number of points currently in the points pool.
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt64Array<class_PackedInt64Array>` **get_point_ids** **(** **)**
+:ref:`PackedInt64Array<class_PackedInt64Array>` **get_point_ids**\ (\ ) :ref:`🔗<class_AStar2D_method_get_point_ids>`
 
 Returns an array of all point IDs.
 
@@ -410,11 +414,15 @@ Returns an array of all point IDs.
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **get_point_path** **(** :ref:`int<class_int>` from_id, :ref:`int<class_int>` to_id **)**
+:ref:`PackedVector2Array<class_PackedVector2Array>` **get_point_path**\ (\ from_id\: :ref:`int<class_int>`, to_id\: :ref:`int<class_int>`, allow_partial_path\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_AStar2D_method_get_point_path>`
 
 Returns an array with the points that are in the path found by AStar2D between the given points. The array is ordered from the starting point to the ending point of the path.
 
-\ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PackedVector2Array<class_PackedVector2Array>` and will print an error message.
+If there is no valid path to the target, and ``allow_partial_path`` is ``true``, returns a path to the point closest to the target that can be reached.
+
+\ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty array and will print an error message.
+
+Additionally, when ``allow_partial_path`` is ``true`` and ``to_id`` is disabled the search may take an unusually long time to finish.
 
 .. rst-class:: classref-item-separator
 
@@ -424,7 +432,7 @@ Returns an array with the points that are in the path found by AStar2D between t
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` id **)** |const|
+:ref:`Vector2<class_Vector2>` **get_point_position**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AStar2D_method_get_point_position>`
 
 Returns the position of the point associated with the given ``id``.
 
@@ -436,7 +444,7 @@ Returns the position of the point associated with the given ``id``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_point_weight_scale** **(** :ref:`int<class_int>` id **)** |const|
+:ref:`float<class_float>` **get_point_weight_scale**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AStar2D_method_get_point_weight_scale>`
 
 Returns the weight scale of the point associated with the given ``id``.
 
@@ -448,7 +456,7 @@ Returns the weight scale of the point associated with the given ``id``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_point** **(** :ref:`int<class_int>` id **)** |const|
+:ref:`bool<class_bool>` **has_point**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AStar2D_method_has_point>`
 
 Returns whether a point associated with the given ``id`` exists.
 
@@ -460,7 +468,7 @@ Returns whether a point associated with the given ``id`` exists.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_point_disabled** **(** :ref:`int<class_int>` id **)** |const|
+:ref:`bool<class_bool>` **is_point_disabled**\ (\ id\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AStar2D_method_is_point_disabled>`
 
 Returns whether a point is disabled or not for pathfinding. By default, all points are enabled.
 
@@ -472,7 +480,7 @@ Returns whether a point is disabled or not for pathfinding. By default, all poin
 
 .. rst-class:: classref-method
 
-void **remove_point** **(** :ref:`int<class_int>` id **)**
+|void| **remove_point**\ (\ id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AStar2D_method_remove_point>`
 
 Removes the point associated with the given ``id`` from the points pool.
 
@@ -484,9 +492,9 @@ Removes the point associated with the given ``id`` from the points pool.
 
 .. rst-class:: classref-method
 
-void **reserve_space** **(** :ref:`int<class_int>` num_nodes **)**
+|void| **reserve_space**\ (\ num_nodes\: :ref:`int<class_int>`\ ) :ref:`🔗<class_AStar2D_method_reserve_space>`
 
-Reserves space internally for ``num_nodes`` points, useful if you're adding a known large number of points at once, such as points on a grid. New capacity must be greater or equals to old capacity.
+Reserves space internally for ``num_nodes`` points. Useful if you're adding a known large number of points at once, such as points on a grid. The new capacity must be greater or equal to the old capacity.
 
 .. rst-class:: classref-item-separator
 
@@ -496,7 +504,7 @@ Reserves space internally for ``num_nodes`` points, useful if you're adding a kn
 
 .. rst-class:: classref-method
 
-void **set_point_disabled** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` disabled=true **)**
+|void| **set_point_disabled**\ (\ id\: :ref:`int<class_int>`, disabled\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_AStar2D_method_set_point_disabled>`
 
 Disables or enables the specified point for pathfinding. Useful for making a temporary obstacle.
 
@@ -508,7 +516,7 @@ Disables or enables the specified point for pathfinding. Useful for making a tem
 
 .. rst-class:: classref-method
 
-void **set_point_position** **(** :ref:`int<class_int>` id, :ref:`Vector2<class_Vector2>` position **)**
+|void| **set_point_position**\ (\ id\: :ref:`int<class_int>`, position\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_AStar2D_method_set_point_position>`
 
 Sets the ``position`` for the point with the given ``id``.
 
@@ -520,9 +528,9 @@ Sets the ``position`` for the point with the given ``id``.
 
 .. rst-class:: classref-method
 
-void **set_point_weight_scale** **(** :ref:`int<class_int>` id, :ref:`float<class_float>` weight_scale **)**
+|void| **set_point_weight_scale**\ (\ id\: :ref:`int<class_int>`, weight_scale\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AStar2D_method_set_point_weight_scale>`
 
-Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar2D_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
+Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStar2D_private_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -531,3 +539,4 @@ Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scal
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

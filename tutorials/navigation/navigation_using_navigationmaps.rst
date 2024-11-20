@@ -21,23 +21,44 @@ Default navigation maps
 
 By default Godot creates a navigation map for each :ref:`World2D<class_World2D>` and :ref:`World3D<class_World3D>` of the root viewport.
 
-The 2D default navigation ``map`` RID can be obtained with ``get_world_2d().get_navigation_map()`` from any :ref:`Node2D<class_Node2D>` inheriting Node.
+The 2D default navigation map RID can be obtained with ``get_world_2d().get_navigation_map()`` from any :ref:`Node2D<class_Node2D>` inheriting Node.
 
-The 3D default navigation ``map`` RID can be obtained with ``get_world_3d().get_navigation_map()`` from any :ref:`Node3D<class_Node3D>` inheriting Node.
+The 3D default navigation map RID can be obtained with ``get_world_3d().get_navigation_map()`` from any :ref:`Node3D<class_Node3D>` inheriting Node.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
 
     extends Node2D
 
-    var default_2d_navigation_map_rid: RID = get_world_2d().get_navigation_map()
+    func _ready() -> void:
+        var default_navigation_map_rid: RID = get_world_2d().get_navigation_map()
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: csharp 2D C#
+
+    public partial class MyNode2D : Node2D
+    {
+        public override void _Ready()
+        {
+            Rid defaultNavigationMapRid = GetWorld2D().NavigationMap;
+        }
+    }
+
+ .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
 
-    var default_3d_navigation_map_rid: RID = get_world_3d().get_navigation_map()
+    func _ready() -> void:
+        var default_navigation_map_rid: RID = get_world_3d().get_navigation_map()
+
+ .. code-tab:: csharp 3D C#
+
+    public partial class MyNode3D : Node3D
+    {
+        public override void _Ready()
+        {
+            Rid defaultNavigationMapRid = GetWorld3D().NavigationMap;
+        }
+    }
 
 Creating new navigation maps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,20 +78,43 @@ Navigation regions and avoidance agents can only be part of a single navigation 
     A navigation map switch will take effect only after the next NavigationServer synchronization.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
 
     extends Node2D
 
-    var new_navigation_map: RID = NavigationServer2D.map_create()
-    NavigationServer2D.map_set_active(true)
+    func _ready() -> void:
+        var new_navigation_map: RID = NavigationServer2D.map_create()
+        NavigationServer2D.map_set_active(new_navigation_map, true)
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: csharp 2D C#
+
+    public partial class MyNode2D : Node2D
+    {
+        public override void _Ready()
+        {
+            Rid newNavigationMap = NavigationServer2D.MapCreate();
+            NavigationServer2D.MapSetActive(newNavigationMap, true);
+        }
+    }
+
+ .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
 
-    var new_navigation_map: RID = NavigationServer3D.map_create()
-    NavigationServer3D.map_set_active(true)
+    func _ready() -> void:
+        var new_navigation_map: RID = NavigationServer3D.map_create()
+        NavigationServer3D.map_set_active(new_navigation_map, true)
+
+ .. code-tab:: csharp 3D C#
+
+    public partial class MyNode3D : Node3D
+    {
+        public override void _Ready()
+        {
+            Rid newNavigationMap = NavigationServer3D.MapCreate();
+            NavigationServer3D.MapSetActive(newNavigationMap, true);
+        }
+    }
 
 .. note::
 

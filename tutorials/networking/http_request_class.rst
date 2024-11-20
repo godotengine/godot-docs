@@ -17,7 +17,9 @@ lots of small updates as is common for multiplayer gameplay.
 
 HTTP, however, offers interoperability with external
 web resources and is great at sending and receiving large amounts
-of data, for example to transfer files like game assets.
+of data, for example to transfer files like game assets. These assets can then
+be loaded using
+:ref:`runtime file loading and saving <doc_runtime_loading_and_saving>`.
 
 So HTTP may be useful for your game's login system, lobby browser,
 to retrieve some information from the web or to download game assets.
@@ -49,7 +51,7 @@ Preparing the scene
 -------------------
 
 Create a new empty scene, add a root :ref:`Node <class_Node>` and add a script to it.
-Then add a :ref:`HTTPRequest <class_HTTPRequest>` node as a child.
+Then add an :ref:`HTTPRequest <class_HTTPRequest>` node as a child.
 
 .. image:: img/rest_api_scene.webp
 
@@ -147,7 +149,7 @@ For example, to set a custom user agent (the HTTP ``User-Agent`` header) you cou
         HttpRequest httpRequest = GetNode<HttpRequest>("HTTPRequest");
         httpRequest.Request("https://api.github.com/repos/godotengine/godot/releases/latest", new string[] { "User-Agent: YourCustomUserAgent" });
 
-.. warning::
+.. danger::
 
     Be aware that someone might analyse and decompile your released application and
     thus may gain access to any embedded authorization information like tokens, usernames or passwords.

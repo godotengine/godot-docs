@@ -26,6 +26,30 @@ lifetime. A value of ``0`` means there is no randomness at all and all particles
 the same amount of time, set by the :ref:`Lifetime <doc_3d_particles_properties_time>` property. A value of ``1`` means
 that a particle's lifetime is completely random within the range of [0.0, ``Lifetime``].
 
+Particle flags
+--------------
+
+The ``Align Y`` property aligns each particle's Y-axis with its velocity. Enabling this
+property is the same as setting the :ref:`Transform Align <doc_3d_particles_properties_draw>` property to
+``Y to Velocity``.
+
+The ``Rotate Y`` property works with the properties in the `Angle <#angle>`__ and
+`Angular Velocity <#angular-velocity>`__ groups to control particle rotation. ``Rotate Y``
+has to be enabled if you want to apply any rotation to particles. The exception to this
+is any particle that uses the :ref:`Standard Material <doc_standard_material_3d>`
+where the ``Billboard`` property is set to ``Particle Billboard``. In that case, particles
+rotate even without ``Rotate Y`` enabled.
+
+When the ``Disable Z`` property is enabled, particles will not move along the Z-axis.
+Whether that is going to be the particle system's local Z-axis or the world Z-axis is
+determined by the :ref:`Local Coords <doc_3d_particles_properties_draw>` property.
+
+The ``Damping as Friction`` property changes the behavior of damping from a constant
+deceleration to a deceleration based on speed.
+
+Spawn
+-----
+
 .. _doc_process_material_properties_shapes:
 
 Emission shape
@@ -61,38 +85,14 @@ In addition to these relatively simple shapes, you can select the ``Points`` or
 :ref:`Complex emission shapes <doc_3d_particles_complex_shapes>` section for a detailed
 explanation of how to set these up.
 
-Particle flags
-~~~~~~~~~~~~~~
+Angle
+~~~~~
 
-The ``Align Y`` property aligns each particle's Y-axis with its velocity. Enabling this
-property is the same as setting the :ref:`Transform Align <doc_3d_particles_properties_draw>` property to
-``Y to Velocity``.
-
-The ``Rotate Y`` property works with the properties in the `Angle <#angle>`__ and
-`Angular Velocity <#angular-velocity>`__ groups to control particle rotation. ``Rotate Y``
-has to be enabled if you want to apply any rotation to particles. The exception to this
-is any particle that uses the :ref:`Standard Material <doc_standard_material_3d>`
-where the ``Billboard`` property is set to ``Particle Billboard``. In that case, particles
-rotate even without ``Rotate Y`` enabled.
-
-When the ``Disable Z`` property is enabled, particles will not move along the Z-axis.
-Whether that is going to be the particle system's local Z-axis or the world Z-axis is
-determined by the :ref:`Local Coords <doc_3d_particles_properties_draw>` property.
-
-Gravity
-~~~~~~~
-
-The next few property groups work closely together to control particle movement and rotation.
-``Gravity`` drags particles in the direction it points at, which is straight down at the strength
-of Earth's gravity by default. Gravity affects all particle movement.
-If your game uses physics and the world's gravity can change at runtime, you can use this property
-to keep the game's gravity in sync with particle gravity. A ``Gravity`` value of ``(X=0,Y=0,Z=0)`` means
-no particle will ever move at all if none of the other movement properties are set.
-
-.. figure:: img/particle_gravity.webp
-   :alt: Different values for particle gravity
-
-   Left\: (X=0,Y=-9.8,Z=0), middle\: (X=0,Y=9.8,Z=0), right\: (X=4,Y=2,Z=0).
+The ``Angle`` property controls a particle's starting rotation `as described above <#process-material-properties>`__.
+In order to have an actual effect on the particle, you have to enable one of two properties: `Rotate Y <#particle-flags>`__
+rotates the particle around the particle system's Y-axis. The ``Billboard`` property in
+the :ref:`Standard Material <doc_standard_material_3d>`, if it is set to ``Particle Billboard``, rotates
+the particle around the axis that points from the particle to the camera.
 
 Direction
 ~~~~~~~~~
@@ -139,6 +139,36 @@ set to ``0`` by default, which is why you don't see any movement initially. As s
 values for either of these properties `as described above <#process-material-properties>`__, the
 particles begin to move. The direction is multiplied by these values, so you can make particles
 move in the opposite direction by setting a negative velocity.
+
+Accelerations
+-------------
+
+Gravity
+~~~~~~~
+
+The next few property groups work closely together to control particle movement and rotation.
+``Gravity`` drags particles in the direction it points at, which is straight down at the strength
+of Earth's gravity by default. Gravity affects all particle movement.
+If your game uses physics and the world's gravity can change at runtime, you can use this property
+to keep the game's gravity in sync with particle gravity. A ``Gravity`` value of ``(X=0,Y=0,Z=0)`` means
+no particle will ever move at all if none of the other movement properties are set.
+
+.. figure:: img/particle_gravity.webp
+   :alt: Different values for particle gravity
+
+   Left\: (X=0,Y=-9.8,Z=0), middle\: (X=0,Y=9.8,Z=0), right\: (X=4,Y=2,Z=0).
+
+Angular velocity
+~~~~~~~~~~~~~~~~
+
+``Angular Velocity`` controls a particle's speed of rotation `as described above <#process-material-properties>`__.
+You can reverse the direction by using negative numbers for ``Velocity Min`` or ``Velocity Max``. Like the
+`Angle <#angle>`__ property, the rotation will only be visible if the `Rotate Y <#particle-flags>`__ flag is set
+or the ``Particle Billboard`` mode is selected in the :ref:`Standard Material <doc_standard_material_3d>`.
+
+.. note::
+
+   The `Damping <#damping>`__ property has no effect on the angular velocity.
 
 Linear acceleration
 ~~~~~~~~~~~~~~~~~~~
@@ -214,26 +244,15 @@ is slowed down a little unless the total acceleration is greater than the dampin
 it isn't, the particle will keep slowing down until it doesn't move at all. The greater the value, the less
 time it takes to bring particles to a complete halt.
 
-Angle
-~~~~~
+Attractor interaction
+~~~~~~~~~~~~~~~~~~~~~
 
-The ``Angle`` property controls a particle's starting rotation `as described above <#process-material-properties>`__.
-In order to have an actual effect on the particle, you have to enable one of two properties: `Rotate Y <#particle-flags>`__
-rotates the particle around the particle system's Y-axis. The ``Billboard`` property in
-the :ref:`Standard Material <doc_standard_material_3d>`, if it is set to ``Particle Billboard``, rotates
-the particle around the axis that points from the particle to the camera.
+If you want the particle system to interact with :ref:`particle attractors <doc_3d_particles_attractors>`,
+you have to check the ``Enabled`` property. When it is disabled, the particle system
+ignores all particle attractors.
 
-Angular velocity
-~~~~~~~~~~~~~~~~
-
-``Angular Velocity`` controls a particle's speed of rotation `as described above <#process-material-properties>`__.
-You can reverse the direction by using negative numbers for ``Velocity Min`` or ``Velocity Max``. Like the
-`Angle <#angle>`__ property, the rotation will only be visible if the `Rotate Y <#particle-flags>`__ flag is set
-or the ``Particle Billboard`` mode is selected in the :ref:`Standard Material <doc_standard_material_3d>`.
-
-.. note::
-
-   The `Damping <#damping>`__ property has no effect on the angular velocity.
+Display
+-------
 
 Scale
 ~~~~~
@@ -292,17 +311,6 @@ limits the available colors to the closest neighbors of the original color.
    :alt: Different values for hue variation
 
    Different values for hue variation, both times with blue as base color: 0.6 (left) and 0.1 (right)
-
-.. _doc_process_material_properties_turbulence:
-
-Turbulence
-~~~~~~~~~~
-
-Turbulence adds noise to particle movement, creating interesting and lively patterns.
-Check the box next to the ``Enabled`` property to activate it. A number
-of new properties show up that control the movement speed, noise pattern and overall influence
-on the particle system. You can find a detailed explanation of these in the section on
-:ref:`particle turbulence <doc_3d_particles_turbulence>`.
 
 .. _doc_process_material_properties_animation:
 
@@ -376,10 +384,44 @@ the particle is simulated on every rendered frame. If this is not an option for
 your use case, set **Fixed FPS** to be equal to the effective framerate used by
 the flipbook animation (see above for the formula).
 
+.. _doc_process_material_properties_turbulence:
+
+Turbulence
+~~~~~~~~~~
+
+Turbulence adds noise to particle movement, creating interesting and lively patterns.
+Check the box next to the ``Enabled`` property to activate it. A number
+of new properties show up that control the movement speed, noise pattern and overall influence
+on the particle system. You can find a detailed explanation of these in the section on
+:ref:`particle turbulence <doc_3d_particles_turbulence>`.
+
 .. _doc_process_material_properties_subemitter:
 
+Collision
+---------
+
+The ``Mode`` property controls how and if emitters collide with particle collision nodes. Set it
+to ``Disabled`` to disable any collision for this particle system. Set it to ``Hide On Contact``
+if you want particles to disappear as soon as they collide. Set it to ``Constant`` to make
+particles collide and bounce around. You will see two new properties appear in the inspector.
+They control how particles behave during collision events.
+
+A high ``Friction`` value will reduce sliding along surfaces. This is especially
+helpful if particles collide with sloped surfaces and you want them to stay in
+place instead of sliding all the way to the bottom, like snow falling on a mountain.
+A high ``Bounce`` value will make particles bounce off surfaces they collide with,
+like rubber balls on a solid floor.
+
+If the ``Use Scale`` property is enabled, the :ref:`collision base size <doc_3d_particles_properties_collision>`
+is multiplied by the particle's `current scale <#scale>`__. You can use this to
+make sure that the rendered size and the collision size match for particles
+with random scale or scale that varies over time.
+
+You can learn more about particle collisions in the :ref:`Collisions <doc_3d_particles_collision>`
+section in this manual.
+
 Sub-emitter
-~~~~~~~~~~~
+-----------
 
 .. figure:: img/particle_sub_mode.webp
    :alt: Sub-emitter modes
@@ -401,33 +443,3 @@ with the parent particle's velocity at the time the sub-emitter is created.
 
 See the :ref:`Sub-emitters <doc_3d_particles_subemitters>` section in this manual for a detailed explanation of how
 to add a sub-emitter to a particle system.
-
-Attractor interaction
-~~~~~~~~~~~~~~~~~~~~~
-
-If you want the particle system to interact with :ref:`particle attractors <doc_3d_particles_attractors>`,
-you have to check the ``Enabled`` property. When it is disabled, the particle system
-ignores all particle attractors.
-
-Collision
-~~~~~~~~~
-
-The ``Mode`` property controls how and if emitters collide with particle collision nodes. Set it
-to ``Disabled`` to disable any collision for this particle system. Set it to ``Hide On Contact``
-if you want particles to disappear as soon as they collide. Set it to ``Constant`` to make
-particles collide and bounce around. You will see two new properties appear in the inspector.
-They control how particles behave during collision events.
-
-A high ``Friction`` value will reduce sliding along surfaces. This is especially
-helpful if particles collide with sloped surfaces and you want them to stay in
-place instead of sliding all the way to the bottom, like snow falling on a mountain.
-A high ``Bounce`` value will make particles bounce off surfaces they collide with,
-like rubber balls on a solid floor.
-
-If the ``Use Scale`` property is enabled, the :ref:`collision base size <doc_3d_particles_properties_collision>`
-is multiplied by the particle's `current scale <#scale>`__. You can use this to
-make sure that the rendered size and the collision size match for particles
-with random scale or scale that varies over time.
-
-You can learn more about particle collisions in the :ref:`Collisions <doc_3d_particles_collision>`
-section in this manual.

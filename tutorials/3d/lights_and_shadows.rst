@@ -61,9 +61,9 @@ real-time lighting. As many lights as desired can be added (as long as
 performance allows). However, there's still a default limit of 512 *clustered
 elements* that can be present in the current camera view. A clustered element is
 an omni light, a spot light, a :ref:`decal <doc_using_decals>` or a
-:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by
-adjusting the **Rendering > Limits > Cluster Builder > Max Clustered Elements**
-advanced project setting.
+:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by adjusting
+:ref:`Max Clustered Elements<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
+in **Project Settings > Rendering > Limits > Cluster Builder**.
 
 When using the Forward Mobile renderer, there is a limitation of 8 OmniLights +
 8 SpotLights per mesh resource. There is also a limit of 256 OmniLights + 256
@@ -72,10 +72,12 @@ currently cannot be changed.
 
 When using the Compatibility renderer, up to 8 OmniLights + 8 SpotLights can be
 rendered per mesh resource. This limit can be increased in the advanced Project
-Settings by adjusting **Rendering > Limits > OpenGL > Max Renderable Lights**
-and/or **Rendering > Limits > OpenGL > Max Lights Per Object** at the cost of
-performance and longer shader compilation times. The limit can also be decreased
-to reduce shader compilation times and improve performance slightly.
+Settings by adjusting
+:ref:`Max Renderable Elements<class_ProjectSettings_property_rendering/limits/opengl/max_renderable_elements>`
+and/or :ref:`Max Lights per Object<class_ProjectSettings_property_rendering/limits/opengl/max_lights_per_object>`
+in **Rendering > Limits > OpenGL**, at the cost of performance and longer shader
+compilation times. The limit can also be decreased to reduce shader compilation
+times and improve performance slightly.
 
 With all rendering methods, up to 8 DirectionalLights can be visible at a time.
 However, each additional DirectionalLight with shadows enabled will reduce the
@@ -96,7 +98,7 @@ them much faster to render. You can also use emissive materials with any
 as a replacement for light nodes that emit light over a large area.
 
 Shadow mapping
-^^^^^^^^^^^^^^
+--------------
 
 Lights can optionally cast shadows. This gives them greater realism (light does
 not reach occluded areas), but it can incur a bigger performance cost.
@@ -123,6 +125,11 @@ There is a list of generic shadow parameters, each also has a specific function:
   moving objects. The downside of increasing shadow blur is that it will make
   the grainy pattern used for filtering more noticeable.
   See also :ref:`doc_lights_and_shadows_shadow_filter_mode`.
+
+.. image:: img/lights_and_shadows_blur.webp
+
+Tweaking shadow bias
+^^^^^^^^^^^^^^^^^^^^
 
 Below is an image of what tweaking bias looks like. Default values work for most
 cases, but in general, it depends on the size and complexity of geometry.
@@ -155,6 +162,13 @@ at the cost of decreased performance.
     all" settings. To achieve the best visuals, you may need to use different
     shadow bias values on a per-light basis.
 
+**Note on Appearance Changes**: When enabling shadows on a light, be aware that the light's
+appearance might change compared to when it's rendered without shadows in the compatibility
+renderer. Due to limitations with older mobile devices, shadows are implemented using a multi-pass
+rendering approach so lights with shadows are rendered in sRGB space instead of linear space.
+This change in rendering space can sometimes drastically alter the light's appearance. To achieve a similar
+appearance to an unshadowed light, you may need to adjust the light's energy setting.
+
 Directional light
 -----------------
 
@@ -171,7 +185,7 @@ does not affect the lighting at all and can be anywhere.
 .. image:: img/light_directional.png
 
 Every face whose front-side is hit by the light rays is lit, while the others
-stay dark. Unlike most other light types directional lights, don't have specific
+stay dark. Unlike most other light types, directional lights don't have specific
 parameters.
 
 The directional light also offers a **Angular Distance** property, which
@@ -196,7 +210,12 @@ receive low-resolution shadows that may appear blocky.
 To fix this, a technique named *Parallel Split Shadow Maps* (PSSM) is used.
 This splits the view frustum in 2 or 4 areas. Each area gets its own shadow map.
 This allows small areas close to the viewer to have the same shadow resolution
-as a huge, far-away area.
+as a huge, far-away area. When shadows are enabled for DirectionalLight3D, the
+default shadow mode is PSSM with 4 splits. In scenarios where an object is large
+enough to appear in all four splits, it results in increased draw calls. Specifically,
+such an object will be rendered five times in total: once for each of the four shadow
+splits and once for the final scene rendering. This can impact performance, understanding
+this behavior is important for optimizing your scene and managing performance expectations.
 
 .. image:: img/lights_and_shadows_pssm_explained.webp
 
@@ -266,6 +285,8 @@ called a *contact-hardening* shadow (also known as PCSS). This kind of shadow is
 expensive, so check the recommendations in
 :ref:`doc_lights_and_shadows_pcss_recommendations` if setting this value above
 ``0.0`` on lights with shadows enabled.
+
+.. image:: img/lights_and_shadows_pcss.webp
 
 Omni shadow mapping
 ^^^^^^^^^^^^^^^^^^^
@@ -410,10 +431,10 @@ Balancing performance and quality
 Shadow rendering is a critical topic in 3D rendering performance. It's important
 to make the right choices here to avoid creating bottlenecks.
 
-Directional shadow quality settings can be changed at run-time by calling the
+Directional shadow quality settings can be changed at runtime by calling the
 appropriate :ref:`class_RenderingServer` methods.
 
-Positional (omni/spot) shadow quality settings can be changed at run-time on the
+Positional (omni/spot) shadow quality settings can be changed at runtime on the
 root :ref:`class_Viewport`.
 
 Shadow map size
@@ -440,13 +461,16 @@ textures, as the texture detail will help make the dithering pattern less notice
 
 However, in projects with less detailed textures, the shadow dithering pattern
 may be more visible. To hide this pattern, you can either enable
-:ref:`doc_3d_antialiasing_taa`, :ref:`doc_3d_antialiasing_fxaa`, or increase the
-shadow filter quality to **Soft Medium** or higher.
+:ref:`doc_3d_antialiasing_taa`, :ref:`doc_3d_antialiasing_fsr2`,
+:ref:`doc_3d_antialiasing_fxaa`, or increase the shadow filter quality to
+**Soft Medium** or higher.
 
 The **Soft Very Low** setting will automatically decrease shadow blur to make
 artifacts from the low sample count less visible. Conversely, the **Soft High**
 and **Soft Ultra** settings will automatically increase shadow blur to better
 make use of the increased sample count.
+
+.. image:: img/lights_and_shadows_filter_quality.webp
 
 16-bits versus 32-bit
 ^^^^^^^^^^^^^^^^^^^^^
@@ -513,7 +537,7 @@ not use mipmaps, which makes them faster to render. However, projectors will
 look grainy at distance. **Nearest/Linear Mipmaps** will look smoother at a
 distance, but projectors will look blurry when viewed from oblique angles. This
 can be resolved by using **Nearest/Linear Mipmaps Anisotropic**, which is the
-highest-quality mode but also the most expensive.
+highest-quality mode, but also the most expensive.
 
 If your project has a pixel art style, consider setting the filter to one of the
 **Nearest** values so that projectors use nearest-neighbor filtering. Otherwise,

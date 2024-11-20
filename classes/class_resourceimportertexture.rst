@@ -91,7 +91,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compress/channel_pack** = ``0``
+:ref:`int<class_int>` **compress/channel_pack** = ``0`` :ref:`🔗<class_ResourceImporterTexture_property_compress/channel_pack>`
 
 Controls how color channels should be used in the imported texture.
 
@@ -107,7 +107,7 @@ Controls how color channels should be used in the imported texture.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compress/hdr_compression** = ``1``
+:ref:`int<class_int>` **compress/hdr_compression** = ``1`` :ref:`🔗<class_ResourceImporterTexture_property_compress/hdr_compression>`
 
 Controls how VRAM compression should be performed for HDR images.
 
@@ -127,7 +127,7 @@ Controls how VRAM compression should be performed for HDR images.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **compress/high_quality** = ``false``
+:ref:`bool<class_bool>` **compress/high_quality** = ``false`` :ref:`🔗<class_ResourceImporterTexture_property_compress/high_quality>`
 
 If ``true``, uses BPTC compression on desktop platforms and ASTC compression on mobile platforms. When using BPTC, BC7 is used for SDR textures and BC6H is used for HDR textures.
 
@@ -143,7 +143,7 @@ BPTC and ASTC support VRAM compression for HDR textures, but S3TC and ETC2 do no
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **compress/lossy_quality** = ``0.7``
+:ref:`float<class_float>` **compress/lossy_quality** = ``0.7`` :ref:`🔗<class_ResourceImporterTexture_property_compress/lossy_quality>`
 
 The quality to use when using the **Lossy** compression mode. Higher values result in better quality, at the cost of larger file sizes. Lossy quality does not affect memory usage of the imported texture, only its file size on disk.
 
@@ -155,7 +155,7 @@ The quality to use when using the **Lossy** compression mode. Higher values resu
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compress/mode** = ``0``
+:ref:`int<class_int>` **compress/mode** = ``0`` :ref:`🔗<class_ResourceImporterTexture_property_compress/mode>`
 
 The compression mode to use. Each compression mode provides a different tradeoff:
 
@@ -179,7 +179,7 @@ See `Compress mode <../tutorials/assets_pipeline/importing_images.html#compress-
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **compress/normal_map** = ``0``
+:ref:`int<class_int>` **compress/normal_map** = ``0`` :ref:`🔗<class_ResourceImporterTexture_property_compress/normal_map>`
 
 When using a texture as normal map, only the red and green channels are required. Given regular texture compression algorithms produce artifacts that don't look that nice in normal maps, the RGTC compression format is the best fit for this data. Forcing this option to Enable will make Godot import the image as RGTC compressed. By default, it's set to Detect. This means that if the texture is ever detected to be used as a normal map, it will be changed to Enable and reimported automatically.
 
@@ -193,7 +193,7 @@ Note that RGTC compression affects the resulting normal map image. You will have
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **detect_3d/compress_to** = ``1``
+:ref:`int<class_int>` **detect_3d/compress_to** = ``1`` :ref:`🔗<class_ResourceImporterTexture_property_detect_3d/compress_to>`
 
 This changes the :ref:`compress/mode<class_ResourceImporterTexture_property_compress/mode>` option that is used when a texture is detected as being used in 3D.
 
@@ -207,7 +207,7 @@ Changing this import option only has an effect if a texture is detected as being
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor/convert_colors_with_editor_theme** = ``false``
+:ref:`bool<class_bool>` **editor/convert_colors_with_editor_theme** = ``false`` :ref:`🔗<class_ResourceImporterTexture_property_editor/convert_colors_with_editor_theme>`
 
 If ``true``, converts the imported image's colors to match :ref:`EditorSettings.interface/theme/icon_and_font_color<class_EditorSettings_property_interface/theme/icon_and_font_color>`. This assumes the image uses the exact same colors as :doc:`Godot's own color palette for editor icons <../contributing/development/editor/creating_icons>`, with the source file designed for a dark editor theme. This should be enabled for editor plugin icons and custom class icons, but should be left disabled otherwise.
 
@@ -221,7 +221,7 @@ If ``true``, converts the imported image's colors to match :ref:`EditorSettings.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **editor/scale_with_editor_scale** = ``false``
+:ref:`bool<class_bool>` **editor/scale_with_editor_scale** = ``false`` :ref:`🔗<class_ResourceImporterTexture_property_editor/scale_with_editor_scale>`
 
 If ``true``, scales the imported image to match :ref:`EditorSettings.interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>`. This should be enabled for editor plugin icons and custom class icons, but should be left disabled otherwise.
 
@@ -235,7 +235,7 @@ If ``true``, scales the imported image to match :ref:`EditorSettings.interface/e
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **mipmaps/generate** = ``false``
+:ref:`bool<class_bool>` **mipmaps/generate** = ``false`` :ref:`🔗<class_ResourceImporterTexture_property_mipmaps/generate>`
 
 If ``true``, smaller versions of the texture are generated on import. For example, a 64×64 texture will generate 6 mipmaps (32×32, 16×16, 8×8, 4×4, 2×2, 1×1). This has several benefits:
 
@@ -255,7 +255,7 @@ It's recommended to enable mipmaps in 3D. However, in 2D, this should only be en
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **mipmaps/limit** = ``-1``
+:ref:`int<class_int>` **mipmaps/limit** = ``-1`` :ref:`🔗<class_ResourceImporterTexture_property_mipmaps/limit>`
 
 Unimplemented. This currently has no effect when changed.
 
@@ -267,9 +267,9 @@ Unimplemented. This currently has no effect when changed.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **process/fix_alpha_border** = ``true``
+:ref:`bool<class_bool>` **process/fix_alpha_border** = ``true`` :ref:`🔗<class_ResourceImporterTexture_property_process/fix_alpha_border>`
 
-If ``true``, puts pixels of the same surrounding color in transition from transparent to opaque areas. For textures displayed with bilinear filtering, this helps mitigate the outline effect when exporting images from an image editor.
+If ``true``, puts pixels of the same surrounding color in transition from transparent to opaque areas. For textures displayed with bilinear filtering, this helps to reduce the outline effect when exporting images from an image editor.
 
 It's recommended to leave this enabled (as it is by default), unless this causes issues for a particular image.
 
@@ -281,7 +281,7 @@ It's recommended to leave this enabled (as it is by default), unless this causes
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **process/hdr_as_srgb** = ``false``
+:ref:`bool<class_bool>` **process/hdr_as_srgb** = ``false`` :ref:`🔗<class_ResourceImporterTexture_property_process/hdr_as_srgb>`
 
 Some HDR images you can find online may be broken and contain sRGB color data (instead of linear color data). It is advised not to use those files. If you absolutely have to, enabling :ref:`process/hdr_as_srgb<class_ResourceImporterTexture_property_process/hdr_as_srgb>` will make them look correct.
 
@@ -295,7 +295,7 @@ Some HDR images you can find online may be broken and contain sRGB color data (i
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **process/hdr_clamp_exposure** = ``false``
+:ref:`bool<class_bool>` **process/hdr_clamp_exposure** = ``false`` :ref:`🔗<class_ResourceImporterTexture_property_process/hdr_clamp_exposure>`
 
 If ``true``, clamps exposure in the imported high dynamic range images using a smart clamping formula (without introducing *visible* clipping).
 
@@ -311,7 +311,7 @@ While these HDR panorama images are accurate to real life, this can cause the ra
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **process/normal_map_invert_y** = ``false``
+:ref:`bool<class_bool>` **process/normal_map_invert_y** = ``false`` :ref:`🔗<class_ResourceImporterTexture_property_process/normal_map_invert_y>`
 
 If ``true``, convert the normal map from Y- (DirectX-style) to Y+ (OpenGL-style) by inverting its green color channel. This is the normal map convention expected by Godot.
 
@@ -325,13 +325,13 @@ More information about normal maps (including a coordinate order table for popul
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **process/premult_alpha** = ``false``
+:ref:`bool<class_bool>` **process/premult_alpha** = ``false`` :ref:`🔗<class_ResourceImporterTexture_property_process/premult_alpha>`
 
 An alternative to fixing darkened borders with :ref:`process/fix_alpha_border<class_ResourceImporterTexture_property_process/fix_alpha_border>` is to use premultiplied alpha. By enabling this option, the texture will be converted to this format. A premultiplied alpha texture requires specific materials to be displayed correctly:
 
-- In 2D, a :ref:`CanvasItemMaterial<class_CanvasItemMaterial>` will need to be created and configured to use the :ref:`CanvasItemMaterial.BLEND_MODE_PREMULT_ALPHA<class_CanvasItemMaterial_constant_BLEND_MODE_PREMULT_ALPHA>` blend mode on :ref:`CanvasItem<class_CanvasItem>`\ s that use this texture.
+- In 2D, a :ref:`CanvasItemMaterial<class_CanvasItemMaterial>` will need to be created and configured to use the :ref:`CanvasItemMaterial.BLEND_MODE_PREMULT_ALPHA<class_CanvasItemMaterial_constant_BLEND_MODE_PREMULT_ALPHA>` blend mode on :ref:`CanvasItem<class_CanvasItem>`\ s that use this texture. In custom ``@canvas_item`` shaders, ``render_mode blend_premul_alpha;`` should be used.
 
-- In 3D, there is no support for premultiplied alpha blend mode yet, so this option is only suited for 2D.
+- In 3D, a :ref:`BaseMaterial3D<class_BaseMaterial3D>` will need to be created and configured to use the :ref:`BaseMaterial3D.BLEND_MODE_PREMULT_ALPHA<class_BaseMaterial3D_constant_BLEND_MODE_PREMULT_ALPHA>` blend mode on materials that use this texture. In custom ``spatial`` shaders, ``render_mode blend_premul_alpha;`` should be used.
 
 .. rst-class:: classref-item-separator
 
@@ -341,11 +341,19 @@ An alternative to fixing darkened borders with :ref:`process/fix_alpha_border<cl
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **process/size_limit** = ``0``
+:ref:`int<class_int>` **process/size_limit** = ``0`` :ref:`🔗<class_ResourceImporterTexture_property_process/size_limit>`
 
 If set to a value greater than ``0``, the size of the texture is limited on import to a value smaller than or equal to the value specified here. For non-square textures, the size limit affects the longer dimension, with the shorter dimension scaled to preserve aspect ratio. Resizing is performed using cubic interpolation.
 
 This can be used to reduce memory usage without affecting the source images, or avoid issues with textures not displaying on mobile/web platforms (as these usually can't display textures larger than 4096×4096).
+
+\ **Note:** Even if this is set to ``0``, import size is limited to the following dimensions for technical reasons. Depending on :ref:`compress/mode<class_ResourceImporterTexture_property_compress/mode>`, textures will be downsampled on import if necessary:
+
+- **Lossy:** 16383 pixels width or height, whichever is larger;
+
+- **Basis Universal:** 16384 pixels width or height, whichever is larger;
+
+- **All other modes:** 32768 pixels width or height, whichever is larger.
 
 .. rst-class:: classref-item-separator
 
@@ -355,9 +363,9 @@ This can be used to reduce memory usage without affecting the source images, or 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **roughness/mode** = ``0``
+:ref:`int<class_int>` **roughness/mode** = ``0`` :ref:`🔗<class_ResourceImporterTexture_property_roughness/mode>`
 
-The color channel to consider as a roughness map in this texture. Only effective if Roughness > Src Normal is not empty.
+The color channel to consider as a roughness map in this texture. Only effective if :ref:`roughness/src_normal<class_ResourceImporterTexture_property_roughness/src_normal>` is not empty.
 
 .. rst-class:: classref-item-separator
 
@@ -367,7 +375,7 @@ The color channel to consider as a roughness map in this texture. Only effective
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **roughness/src_normal** = ``""``
+:ref:`String<class_String>` **roughness/src_normal** = ``""`` :ref:`🔗<class_ResourceImporterTexture_property_roughness/src_normal>`
 
 The path to the texture to consider as a normal map for roughness filtering on import. Specifying this can help decrease specular aliasing slightly in 3D.
 
@@ -381,7 +389,7 @@ Roughness filtering on import is only used in 3D rendering, not 2D.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **svg/scale** = ``1.0``
+:ref:`float<class_float>` **svg/scale** = ``1.0`` :ref:`🔗<class_ResourceImporterTexture_property_svg/scale>`
 
 The scale the SVG should be rendered at, with ``1.0`` being the original design size. Higher values result in a larger image. Note that unlike font oversampling, this affects the size the SVG is rendered at in 2D. See also :ref:`editor/scale_with_editor_scale<class_ResourceImporterTexture_property_editor/scale_with_editor_scale>`.
 
@@ -394,3 +402,4 @@ The scale the SVG should be rendered at, with ``1.0`` being the original design 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -26,7 +26,7 @@ navigation region edge connections on the NavigationServer and should be avoided
     Exactly means exactly for the vertex position merge. Small float errors
     that happen quite regularly with imported meshes will prevent a successful vertex merge.
 
-Alternatively navigation meshes are not merged but still considered as ``connected`` by
+Alternatively navigation meshes are not merged but still considered as **connected** by
 the NavigationServer when their edges are nearly parallel and within distance
 to each other. The connection distance is defined by the  ``edge_connection_margin`` for each
 navigation map. In many cases navigation mesh edges cannot properly connect when they partly overlap.
@@ -44,20 +44,51 @@ The default 3D ``edge_connection_margin`` can be changed in the ProjectSettings 
 The edge connection margin value of any navigation map can also be changed at runtime with the NavigationServer API.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
 
     extends Node2D
-    # 2D margins are designed to work with "pixel" values
-    var default_2d_map_rid: RID = get_world_2d().get_navigation_map()
-    NavigationServer2D.map_set_edge_connection_margin(default_2d_map_rid, 50.0)
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+    func _ready() -> void:
+        # 2D margins are designed to work with 2D "pixel" values.
+        var default_map_rid: RID = get_world_2d().get_navigation_map()
+        NavigationServer2D.map_set_edge_connection_margin(default_map_rid, 50.0)
+
+ .. code-tab:: csharp 2D C#
+
+    using Godot;
+
+    public partial class MyNode2D : Node2D
+    {
+        public override void _Ready()
+        {
+            // 2D margins are designed to work with 2D "pixel" values.
+            Rid defaultMapRid = GetWorld2D().NavigationMap;
+            NavigationServer2D.MapSetEdgeConnectionMargin(defaultMapRid, 50.0f);
+        }
+    }
+
+ .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
-    # 3D margins are designed to work with 3D unit values
-    var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
-    NavigationServer3D.map_set_edge_connection_margin(default_3d_map_rid, 0.5)
+
+    func _ready() -> void:
+        # 3D margins are designed to work with 3D world unit values.
+        var default_map_rid: RID = get_world_3d().get_navigation_map()
+        NavigationServer3D.map_set_edge_connection_margin(default_map_rid, 0.5)
+
+ .. code-tab:: csharp 3D C#
+
+    using Godot;
+
+    public partial class MyNode3D : Node3D
+    {
+        public override void _Ready()
+        {
+            // 3D margins are designed to work with 3D world unit values.
+            Rid defaultMapRid = GetWorld3D().NavigationMap;
+            NavigationServer3D.MapSetEdgeConnectionMargin(defaultMapRid, 0.5f);
+        }
+    }
 
 .. note::
 

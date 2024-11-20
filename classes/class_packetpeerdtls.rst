@@ -33,15 +33,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`connect_to_peer<class_PacketPeerDTLS_method_connect_to_peer>` **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` packet_peer, :ref:`String<class_String>` hostname, :ref:`TLSOptions<class_TLSOptions>` client_options=null **)** |
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                      | :ref:`disconnect_from_peer<class_PacketPeerDTLS_method_disconnect_from_peer>` **(** **)**                                                                                                                                            |
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Status<enum_PacketPeerDTLS_Status>` | :ref:`get_status<class_PacketPeerDTLS_method_get_status>` **(** **)** |const|                                                                                                                                                        |
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                      | :ref:`poll<class_PacketPeerDTLS_method_poll>` **(** **)**                                                                                                                                                                            |
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`connect_to_peer<class_PacketPeerDTLS_method_connect_to_peer>`\ (\ packet_peer\: :ref:`PacketPeerUDP<class_PacketPeerUDP>`, hostname\: :ref:`String<class_String>`, client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ ) |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                    | :ref:`disconnect_from_peer<class_PacketPeerDTLS_method_disconnect_from_peer>`\ (\ )                                                                                                                                                     |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Status<enum_PacketPeerDTLS_Status>` | :ref:`get_status<class_PacketPeerDTLS_method_get_status>`\ (\ ) |const|                                                                                                                                                                 |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                    | :ref:`poll<class_PacketPeerDTLS_method_poll>`\ (\ )                                                                                                                                                                                     |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -56,7 +56,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Status**:
+enum **Status**: :ref:`🔗<enum_PacketPeerDTLS_Status>`
 
 .. _class_PacketPeerDTLS_constant_STATUS_DISCONNECTED:
 
@@ -111,7 +111,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **connect_to_peer** **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` packet_peer, :ref:`String<class_String>` hostname, :ref:`TLSOptions<class_TLSOptions>` client_options=null **)**
+:ref:`Error<enum_@GlobalScope_Error>` **connect_to_peer**\ (\ packet_peer\: :ref:`PacketPeerUDP<class_PacketPeerUDP>`, hostname\: :ref:`String<class_String>`, client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ ) :ref:`🔗<class_PacketPeerDTLS_method_connect_to_peer>`
 
 Connects a ``packet_peer`` beginning the DTLS handshake using the underlying :ref:`PacketPeerUDP<class_PacketPeerUDP>` which must be connected (see :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`). You can optionally specify the ``client_options`` to be used while verifying the TLS connections. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
 
@@ -123,7 +123,7 @@ Connects a ``packet_peer`` beginning the DTLS handshake using the underlying :re
 
 .. rst-class:: classref-method
 
-void **disconnect_from_peer** **(** **)**
+|void| **disconnect_from_peer**\ (\ ) :ref:`🔗<class_PacketPeerDTLS_method_disconnect_from_peer>`
 
 Disconnects this peer, terminating the DTLS session.
 
@@ -135,7 +135,7 @@ Disconnects this peer, terminating the DTLS session.
 
 .. rst-class:: classref-method
 
-:ref:`Status<enum_PacketPeerDTLS_Status>` **get_status** **(** **)** |const|
+:ref:`Status<enum_PacketPeerDTLS_Status>` **get_status**\ (\ ) |const| :ref:`🔗<class_PacketPeerDTLS_method_get_status>`
 
 Returns the status of the connection. See :ref:`Status<enum_PacketPeerDTLS_Status>` for values.
 
@@ -147,7 +147,7 @@ Returns the status of the connection. See :ref:`Status<enum_PacketPeerDTLS_Statu
 
 .. rst-class:: classref-method
 
-void **poll** **(** **)**
+|void| **poll**\ (\ ) :ref:`🔗<class_PacketPeerDTLS_method_poll>`
 
 Poll the connection to check for incoming packets. Call this frequently to update the status and keep the connection working.
 
@@ -158,3 +158,4 @@ Poll the connection to check for incoming packets. Call this frequently to updat
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

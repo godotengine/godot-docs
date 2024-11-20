@@ -46,7 +46,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **EmitFlags**:
+enum **EmitFlags**: :ref:`🔗<enum_VisualShaderNodeParticleEmit_EmitFlags>`
 
 .. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_POSITION:
 
@@ -101,12 +101,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **flags** = ``31``
+:ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **flags** = ``31`` :ref:`🔗<class_VisualShaderNodeParticleEmit_property_flags>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flags** **(** :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` value **)**
-- :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **get_flags** **(** **)**
+- |void| **set_flags**\ (\ value\: :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>`\ )
+- :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **get_flags**\ (\ )
 
 Flags used to override the properties defined in the sub-emitter's process material.
 
@@ -117,3 +117,4 @@ Flags used to override the properties defined in the sub-emitter's process mater
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -53,13 +53,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Resource<class_Resource>` | :ref:`_convert<class_EditorResourceConversionPlugin_method__convert>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const| |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`     | :ref:`_converts_to<class_EditorResourceConversionPlugin_method__converts_to>` **(** **)** |virtual| |const|                                  |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`_handles<class_EditorResourceConversionPlugin_method__handles>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const| |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`_convert<class_EditorResourceConversionPlugin_private_method__convert>`\ (\ resource\: :ref:`Resource<class_Resource>`\ ) |virtual| |const| |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`_converts_to<class_EditorResourceConversionPlugin_private_method__converts_to>`\ (\ ) |virtual| |const|                                     |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`_handles<class_EditorResourceConversionPlugin_private_method__handles>`\ (\ resource\: :ref:`Resource<class_Resource>`\ ) |virtual| |const| |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -70,23 +70,23 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EditorResourceConversionPlugin_method__convert:
+.. _class_EditorResourceConversionPlugin_private_method__convert:
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **_convert** **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|
+:ref:`Resource<class_Resource>` **_convert**\ (\ resource\: :ref:`Resource<class_Resource>`\ ) |virtual| |const| :ref:`🔗<class_EditorResourceConversionPlugin_private_method__convert>`
 
-Takes an input :ref:`Resource<class_Resource>` and converts it to the type given in :ref:`_converts_to<class_EditorResourceConversionPlugin_method__converts_to>`. The returned :ref:`Resource<class_Resource>` is the result of the conversion, and the input :ref:`Resource<class_Resource>` remains unchanged.
+Takes an input :ref:`Resource<class_Resource>` and converts it to the type given in :ref:`_converts_to<class_EditorResourceConversionPlugin_private_method__converts_to>`. The returned :ref:`Resource<class_Resource>` is the result of the conversion, and the input :ref:`Resource<class_Resource>` remains unchanged.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_EditorResourceConversionPlugin_method__converts_to:
+.. _class_EditorResourceConversionPlugin_private_method__converts_to:
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_converts_to** **(** **)** |virtual| |const|
+:ref:`String<class_String>` **_converts_to**\ (\ ) |virtual| |const| :ref:`🔗<class_EditorResourceConversionPlugin_private_method__converts_to>`
 
 Returns the class name of the target type of :ref:`Resource<class_Resource>` that this plugin converts source resources to.
 
@@ -94,11 +94,11 @@ Returns the class name of the target type of :ref:`Resource<class_Resource>` tha
 
 ----
 
-.. _class_EditorResourceConversionPlugin_method__handles:
+.. _class_EditorResourceConversionPlugin_private_method__handles:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_handles** **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|
+:ref:`bool<class_bool>` **_handles**\ (\ resource\: :ref:`Resource<class_Resource>`\ ) |virtual| |const| :ref:`🔗<class_EditorResourceConversionPlugin_private_method__handles>`
 
 Called to determine whether a particular :ref:`Resource<class_Resource>` can be converted to the target resource type by this plugin.
 
@@ -109,3 +109,4 @@ Called to determine whether a particular :ref:`Resource<class_Resource>` can be 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

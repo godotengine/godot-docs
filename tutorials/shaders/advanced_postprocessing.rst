@@ -11,18 +11,11 @@ In particular, it will explain how to write a post-processing shader that
 uses the depth buffer. You should already be familiar with post-processing
 generally and, in particular, with the methods outlined in the :ref:`custom post-processing tutorial <doc_custom_postprocessing>`.
 
-In the previous post-processing tutorial, we rendered the scene to a :ref:`Viewport <class_Viewport>`
-and then rendered the Viewport in a :ref:`SubViewportContainer <class_SubViewportContainer>`
-to the main scene. One limitation of this method is that we could not access the
-depth buffer because the depth buffer is only available in shaders and
-Viewports do not maintain depth information.
-
 Full screen quad
 ----------------
 
-In the :ref:`custom post-processing tutorial <doc_custom_postprocessing>`, we
-covered how to use a Viewport to make custom post-processing effects. There are
-two main drawbacks of using a Viewport:
+One way to make custom post-processing effects is by using a viewport. However,
+there are two main drawbacks of using a Viewport:
 
 1. The depth buffer cannot be accessed
 2. The effect of the post-processing shader is not visible in the editor
@@ -48,15 +41,22 @@ of the screen. This is why the QuadMesh needs to have height and width of ``2``.
 Godot handles the transform from model to view space to clip space behind the scenes,
 so we need to nullify the effects of Godot's transformations. We do this by setting the
 ``POSITION`` built-in to our desired position. ``POSITION`` bypasses the built-in transformations
-and sets the vertex position directly.
+and sets the vertex position in clip space directly.
 
 .. code-block:: glsl
 
   shader_type spatial;
+  // Prevent the quad from being affected by lighting and fog. This also improves performance.
+  render_mode unshaded, fog_disabled;
 
   void vertex() {
-    POSITION = vec4(VERTEX, 1.0);
+    POSITION = vec4(VERTEX.xy, 1.0, 1.0);
   }
+
+.. note:: In versions of Godot earlier than 4.3, this code recommended using ``POSITION = vec4(VERTEX, 1.0);``
+          which implicitly assumed the clip-space near plane was at ``0.0``.
+          That code is now incorrect and will not work in versions 4.3+ as we
+          use a "reversed-z" depth buffer now where the near plane is at ``1.0``.
 
 Even with this vertex shader, the quad keeps disappearing. This is due to frustum
 culling, which is done on the CPU. Frustum culling uses the camera matrix and the
@@ -93,11 +93,10 @@ Once defined, the depth texture can be read with the ``texture()`` function.
           possible when reading from the current viewport. The depth texture cannot be
           accessed from another viewport to which you have rendered.
 
-The values returned by ``depth_texture`` are between ``0.0`` and ``1.0`` and are nonlinear.
+The values returned by ``depth_texture`` are between ``1.0`` and ``0.0`` (corresponding to
+the near and far plane, respectively, because of using a "reverse-z" depth buffer) and are nonlinear.
 When displaying depth directly from the ``depth_texture``, everything will look almost
-white unless it is very close. This is because the depth buffer stores objects closer
-to the camera using more bits than those further, so most of the detail in depth
-buffer is found close to the camera. In order to make the depth value align with world or
+black unless it is very close due to that nonlinearity. In order to make the depth value align with world or
 model coordinates, we need to linearize the value. When we apply the projection matrix to the
 vertex position, the z value is made nonlinear, so to linearize it, we multiply it by the
 inverse of the projection matrix, which in Godot, is accessible with the variable
@@ -109,10 +108,6 @@ from ``0.0`` to ``1.0`` in the ``z`` direction when using the Vulkan backend.
 Reconstruct the NDC using ``SCREEN_UV`` for the ``x`` and ``y`` axis, and
 the depth value for ``z``.
 
-.. note::
-
-    This tutorial assumes the use of the Vulkan renderer, which uses NDCs with a Z-range
-    of ``[0.0, 1.0]``. In contrast, OpenGL uses NDCs with a Z-range of ``[-1.0, 1.0]``.
 
 .. code-block:: glsl
 
@@ -120,6 +115,28 @@ the depth value for ``z``.
     float depth = texture(depth_texture, SCREEN_UV).x;
     vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
   }
+
+.. note::
+
+  This tutorial assumes the use of the Forward+ or Mobile renderers, which both
+  use Vulkan NDCs with a Z-range of ``[0.0, 1.0]``. In contrast, the Compatibility
+  renderer uses OpenGL NDCs with a Z-range of ``[-1.0, 1.0]``. For the Compatibility
+  renderer, replace the NDC calculation with this instead:
+  
+  .. code-block:: glsl
+
+    vec3 ndc = vec3(SCREEN_UV, depth) * 2.0 - 1.0;
+
+  You can also use the ``CURRENT_RENDERER`` and ``RENDERER_COMPATIBILITY``
+  built-in defines for a shader that will work in all renderers:
+
+  .. code-block:: glsl
+
+    #if CURRENT_RENDERER == RENDERER_COMPATIBILITY
+    vec3 ndc = vec3(SCREEN_UV, depth) * 2.0 - 1.0;
+    #else
+    vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
+    #endif
 
 Convert NDC to view space by multiplying the NDC by ``INV_PROJECTION_MATRIX``.
 Recall that view space gives positions relative to the camera, so the ``z`` value will give us
@@ -137,22 +154,51 @@ the distance to the point.
 Because the camera is facing the negative ``z`` direction, the position will have a negative ``z`` value.
 In order to get a usable depth value, we have to negate ``view.z``.
 
-The world position can be constructed from the depth buffer using the following code. Note
-that the ``INV_VIEW_MATRIX`` is needed to transform the position from view space into world space, so
-it needs to be passed to the fragment shader with a varying.
+The world position can be constructed from the depth buffer using the following code, using the 
+``INV_VIEW_MATRIX`` to transform the position from view space into world space.
 
 .. code-block:: glsl
 
-  varying mat4 CAMERA;
+  void fragment() {
+    ...
+    vec4 world = INV_VIEW_MATRIX * INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
+    vec3 world_position = world.xyz / world.w;
+  }
+
+Example shader
+--------------
+
+Once we add a line to output to ``ALBEDO``, we have a complete shader that looks something like this. 
+This shader lets you visualize the linear depth or world space coordinates, depending on which 
+line is commented out.
+
+.. code-block:: glsl
+
+  shader_type spatial;
+  // Prevent the quad from being affected by lighting and fog. This also improves performance.
+  render_mode unshaded, fog_disabled;
+
+  uniform sampler2D depth_texture : source_color, hint_depth_texture;
 
   void vertex() {
-    CAMERA = INV_VIEW_MATRIX;
+    POSITION = vec4(VERTEX.xy, 1.0, 1.0);
   }
 
   void fragment() {
-    ...
-    vec4 world = CAMERA * INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
+    float depth = texture(depth_texture, SCREEN_UV).x;
+    vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
+    vec4 view = INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
+    view.xyz /= view.w;
+    float linear_depth = -view.z;
+
+    vec4 world = INV_VIEW_MATRIX * INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
     vec3 world_position = world.xyz / world.w;
+
+    // Visualize linear depth
+    ALBEDO.rgb = vec3(fract(linear_depth));
+
+    // Visualize world coordinates
+    //ALBEDO.rgb = fract(world_position).xyz;
   }
 
 An optimization
@@ -200,5 +246,5 @@ Assign the same vertex shader from above and everything should look exactly the 
 
 The one drawback to using an ArrayMesh over using a QuadMesh is that the ArrayMesh
 is not visible in the editor because the triangle is not constructed until the scene
-is run. To get around that, construct a single triangle Mesh in a modelling program
+is run. To get around that, construct a single triangle Mesh in a modeling program
 and use that in the MeshInstance3D instead.

@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_performance:
 
 Performance
@@ -67,6 +69,7 @@ GPU
 
    gpu_optimization
    using_multimesh
+   pipeline_compilations
 
 3D
 --

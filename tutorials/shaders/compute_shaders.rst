@@ -143,7 +143,7 @@ careful not to read from an index larger than the size of the buffer.
 
 Finally, we write the ``main`` function which is where all the logic happens. We
 access a position in the storage buffer using the ``gl_GlobalInvocationID``
-built in variables. ``gl_GlobalInvocationID`` gives you the global unique ID for
+built-in variables. ``gl_GlobalInvocationID`` gives you the global unique ID for
 the current invocation.
 
 To continue, write the code above into your newly created ``compute_example.glsl``
@@ -188,6 +188,10 @@ and create a precompiled version of it using this:
     var shaderBytecode = shaderFile.GetSpirV();
     var shader = rd.ShaderCreateFromSpirV(shaderBytecode);
 
+.. warning::
+
+    Local RenderingDevices cannot be debugged using tools such as
+    `RenderDoc <https://renderdoc.org/>`__.
 
 Provide input data
 ------------------

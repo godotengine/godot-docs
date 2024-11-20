@@ -34,7 +34,7 @@ This would be a basic setup:
     extends EditorNode3DGizmoPlugin
 
 
-    func get_name():
+    func _get_gizmo_name():
         return "CustomNode"
 
 
@@ -66,7 +66,7 @@ to 3.1+, you should go with the second approach.
 Simple approach
 ---------------
 
-The first step is to, in our custom gizmo plugin, override the :ref:`_has_gizmo()<class_EditorNode3DGizmoPlugin_method__has_gizmo>`
+The first step is to, in our custom gizmo plugin, override the :ref:`_has_gizmo()<class_EditorNode3DGizmoPlugin_private_method__has_gizmo>`
 method so that it returns ``true`` when the node parameter is of our target type.
 
 ::
@@ -80,7 +80,7 @@ method so that it returns ``true`` when the node parameter is of our target type
 
     # ...
 
-Then we can override methods like :ref:`_redraw()<class_EditorNode3DGizmoPlugin_method__redraw>`
+Then we can override methods like :ref:`_redraw()<class_EditorNode3DGizmoPlugin_private_method__redraw>`
 or all the handle related ones.
 
 ::
@@ -172,7 +172,7 @@ maybe because we want to have some state stored in each gizmo or because we are 
 an old gizmo plugin and we don't want to go through the rewriting process.
 
 In these cases all we need to do is, in our new gizmo plugin, override
-:ref:`_create_gizmo()<class_EditorNode3DGizmoPlugin_method__create_gizmo>`, so it returns our custom gizmo implementation
+:ref:`_create_gizmo()<class_EditorNode3DGizmoPlugin_private_method__create_gizmo>`, so it returns our custom gizmo implementation
 for the Node3D nodes we want to target.
 
 ::

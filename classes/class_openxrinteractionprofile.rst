@@ -45,11 +45,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`OpenXRIPBinding<class_OpenXRIPBinding>` | :ref:`get_binding<class_OpenXRInteractionProfile_method_get_binding>` **(** :ref:`int<class_int>` index **)** |const| |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                         | :ref:`get_binding_count<class_OpenXRInteractionProfile_method_get_binding_count>` **(** **)** |const|                 |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OpenXRIPBinding<class_OpenXRIPBinding>` | :ref:`get_binding<class_OpenXRInteractionProfile_method_get_binding>`\ (\ index\: :ref:`int<class_int>`\ ) |const| |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`get_binding_count<class_OpenXRInteractionProfile_method_get_binding_count>`\ (\ ) |const|                    |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -64,12 +64,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **bindings** = ``[]``
+:ref:`Array<class_Array>` **bindings** = ``[]`` :ref:`🔗<class_OpenXRInteractionProfile_property_bindings>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_bindings** **(** :ref:`Array<class_Array>` value **)**
-- :ref:`Array<class_Array>` **get_bindings** **(** **)**
+- |void| **set_bindings**\ (\ value\: :ref:`Array<class_Array>`\ )
+- :ref:`Array<class_Array>` **get_bindings**\ (\ )
 
 Action bindings for this interaction profile.
 
@@ -81,12 +81,12 @@ Action bindings for this interaction profile.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **interaction_profile_path** = ``""``
+:ref:`String<class_String>` **interaction_profile_path** = ``""`` :ref:`🔗<class_OpenXRInteractionProfile_property_interaction_profile_path>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_interaction_profile_path** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_interaction_profile_path** **(** **)**
+- |void| **set_interaction_profile_path**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_interaction_profile_path**\ (\ )
 
 The interaction profile path identifying the XR device.
 
@@ -103,7 +103,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`OpenXRIPBinding<class_OpenXRIPBinding>` **get_binding** **(** :ref:`int<class_int>` index **)** |const|
+:ref:`OpenXRIPBinding<class_OpenXRIPBinding>` **get_binding**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OpenXRInteractionProfile_method_get_binding>`
 
 Retrieve the binding at this index.
 
@@ -115,7 +115,7 @@ Retrieve the binding at this index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_binding_count** **(** **)** |const|
+:ref:`int<class_int>` **get_binding_count**\ (\ ) |const| :ref:`🔗<class_OpenXRInteractionProfile_method_get_binding_count>`
 
 Get the number of bindings in this interaction profile.
 
@@ -126,3 +126,4 @@ Get the number of bindings in this interaction profile.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

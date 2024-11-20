@@ -65,7 +65,7 @@ be disabled using the buttons at the top of the 3D editor:
 Clicking on the 3 vertical dots on the right will display a dialog which allows
 you to customize the appearance of the preview environment:
 
-.. image:: img/environment_preview_sun_sky_toggle.webp
+.. image:: img/environment_preview_sun_sky_dialog.webp
 
 **The preview sun and sky is only visible in the editor, not in the running
 project.** Using the buttons at the bottom of the dialog, you can add the
@@ -88,9 +88,9 @@ Camera attributes
     adjusting those properties independently of other Environment settings more
     easily.
 
-The :ref:`class_CameraAttributes` resource stores exposure and depth of field information. It
-also allows enabling automatic exposure adjustments depending on scene
-brightness.
+The :ref:`class_CameraAttributes` resource stores exposure and depth of field
+information. It also allows enabling automatic exposure adjustments depending on
+scene brightness.
 
 There are two kinds of CameraAttribute resources available:
 
@@ -152,7 +152,9 @@ There are several background modes available:
 - **Sky** lets you define a background sky material (see below). By default,
   objects in the scene will reflect this sky material and absorb ambient light
   from it.
-- **Canvas** displays the 2D scene as a background to the 3D scene.
+- **Canvas** displays the 2D scene as a background to the 3D scene. This can be used
+  to make environment effects visible on 2D rendering, such as
+  :ref:`glow in 2D <doc_environment_and_post_processing_using_glow_in_2d>`.
 - **Keep** does not draw any sky, keeping what was present on previous frames
   instead. This improves performance in purely indoor scenes, but creates a
   "hall of mirrors" visual glitch if the sky is visible at any time.
@@ -298,6 +300,12 @@ The second is **Transmit Enabled** which simulates more realistic light transmit
 In practice, it makes light stand out more across the fog.
 
 .. image:: img/environment_fog_transmission.webp
+
+.. note::
+
+    Fog can cause banding to appear on the viewport, especially at
+    higher density levels. See :ref:`doc_3d_rendering_limitations_color_banding`
+    for guidance on reducing banding.
 
 Volumetric Fog
 ^^^^^^^^^^^^^^
@@ -474,6 +482,8 @@ parameters:
   direct light. Values above ``0.0`` are not physically accurate, but some
   artists prefer this effect.
 
+.. _doc_environment_and_post_processing_ssil:
+
 Screen-Space Indirect Lighting (SSIL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -489,7 +499,7 @@ own, the effect may not be that noticeable, which is intended.
 Instead, :abbr:`SSIL (Screen-Space Indirect Lighting)` is meant to be used as a
 *complement* to other global illumination techniques such as VoxelGI, SDFGI and
 LightmapGI. :abbr:`SSIL (Screen-Space Indirect Lighting)` also provides
-a subtle ambient occlusion effect, similar to SSAO but with less detail.
+a subtle ambient occlusion effect, similar to SSAO, but with less detail.
 
 This feature only provides indirect lighting. It is not a full global illumination
 solution. This makes it different from screen-space global illumination (SSGI)
@@ -542,6 +552,16 @@ illumination for off-screen elements (unlike :abbr:`SSIL (Screen-Space Indirect 
 Glow
 ^^^^
 
+.. note::
+
+    When using the Compatibility rendering method, glow uses a different
+    implementation with some properties being unavailable and hidden from the
+    inspector: **Levels**, **Normalized**, **Strength**, **Blend Mode**,
+    **Mix**, **Map**, and **Map Strength**.
+
+    This implementation is optimized to run on low-end devices and is less
+    flexible as a result.
+
 In photography and film, when light amount exceeds the maximum *luminance*
 (brightness) supported by the media, it generally bleeds outwards to darker
 regions of the image. This is simulated in Godot with the **Glow** effect.
@@ -584,8 +604,9 @@ The **Blend Mode** of the effect can also be changed:
   an all around.
 - **Softlight** is the default and weakest one, producing only a subtle color
   disturbance around the objects. This mode works best on dark scenes.
-- **Replace** can be used to blur the whole screen or debug the effect. It only
-  shows the glow effect without the image below.
+- **Replace** can be used to
+  :ref:`blur the whole screen <doc_environment_and_post_processing_using_glow_to_blur_the_screen>`
+  or debug the effect. It only shows the glow effect without the image below.
 - **Mix** mixes the glow effect with the main image. This can be used for
   greater artistic control. The mix factor is controlled by the **Mix** property
   which appears above the blend mode (only when the blend mode is set to Mix).
@@ -617,11 +638,81 @@ There are 2 main use cases for a glow map texture:
 
 .. image:: img/environment_glow_map.webp
 
-.. note::
+.. _doc_environment_and_post_processing_using_glow_in_2d:
 
-    Glow can be used in 2D as well. To do so, set the environment background
-    mode to **Canvas** then enable glow as usual. You may have to decrease
-    **Glow HDR Threshold** to see a difference.
+Using glow in 2D
+^^^^^^^^^^^^^^^^
+
+There are 2 ways to use glow in 2D:
+
+- Since Godot 4.2, you can enable HDR for 2D rendering when using the Forward+
+  and Mobile rendering methods. This has a performance cost, but it allows for a
+  greater dynamic range. This also allows you to control which objects glow
+  using their individual **Modulate** or **Self Modulate** properties (use the
+  RAW mode in the color picker). Enabling HDR can also reduce banding in the 2D
+  rendering output.
+
+  - To enable HDR in 2D, open the Project Settings, enable
+    :ref:`Rendering > Viewport > HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+    then restart the editor.
+
+- If you want to maximize performance, you can leave HDR disabled for 2D
+  rendering. However, you will have less control on which objects glow.
+
+  - Enable glow, set the environment background mode to **Canvas** then decrease
+    **Glow HDR Threshold** so that pixels that are not overbright will still
+    glow. To prevent UI elements from glowing, make them children of a
+    :ref:`class_CanvasLayer` node. You can control which layers are affected by
+    glow using the **Background > Canvas Max Layer** property of the Environment
+    resource.
+
+.. figure:: img/environment_and_post_processing_glow_in_2d.webp
+   :align: center
+   :alt: Example of using glow in a 2D scene
+
+   Example of using glow in a 2D scene. HDR 2D is enabled, while coins and the
+   bullet have their **Modulate** property increased to overbright values using the
+   RAW mode in the color picker.
+
+.. warning::
+
+    The 2D renderer renders in linear color space if the
+    :ref:`Rendering > Viewport > HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+    project setting is enabled, so the ``source_color`` hint must also be used
+    for uniform samplers that are used as color input in ``canvas_item`` shaders.
+    If this is not done, the texture will appear washed out.
+
+    If 2D HDR is disabled, ``source_color`` will keep working correctly in
+    ``canvas_item`` shaders, so it's recommend to use it when relevant either
+    way.
+
+.. _doc_environment_and_post_processing_using_glow_to_blur_the_screen:
+
+Using glow to blur the screen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Glow can be used to blur the whole viewport, which is useful for background blur
+when a menu is open. Only 3D rendering will be affected unless the environment's
+background mode is set to **Canvas**. To prevent UI elements from being blurred
+when using the Canvas background mode, make them children of a :ref:`class_CanvasLayer`
+node. You can control which layers are affected by this blurring effect using the
+**Background > Canvas Max Layer** property of the Environment resource.
+
+To use glow as a blurring solution:
+
+- Enable **Normalized** and adjust levels according to preference. Increasing
+  higher level indices will result in a more blurred image. It's recommended to
+  leave a single glow level at ``1.0`` and leave all other glow levels at
+  ``0.0``, but this is not required. Note that the final appearance will vary
+  depending on viewport resolution.
+- Set **Intensity** to ``1.0`` and **Bloom** to ``1.0``.
+- Set the blend mode to **Replace** and **HDR Luminance Cap** to ``1.0``.
+
+.. figure:: img/environment_and_post_processing_glow_blur.webp
+   :align: center
+   :alt: Example of using glow to blur the 2D rendering in the menu's background
+
+   Example of using glow to blur the 2D rendering in the menu's background
 
 Adjustments
 ^^^^^^^^^^^
@@ -715,7 +806,8 @@ a given range. It has an initial **Distance** with a **Transition** region
 .. image:: img/environment_dof_far.webp
 
 The **Amount** parameter controls the amount of blur. For larger blurs, tweaking
-the **Quality** may be needed in order to avoid artifacts.
+the depth of field quality in the advanced project settings may be needed to
+avoid artifacts.
 
 Depth of Field / Near Blur
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

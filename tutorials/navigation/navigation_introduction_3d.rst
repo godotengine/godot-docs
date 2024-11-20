@@ -39,7 +39,7 @@ Godot provides the following objects and classes for 3D navigation:
         - NavObstacle RID
             Reference to a specific avoidance obstacle used to affect and constrain the avoidance velocity of agents.
 
-The following SceneTree Nodes are available as helpers to work with the NavigationServer3D API.
+The following scene tree nodes are available as helpers to work with the NavigationServer3D API.
 
 - :ref:`NavigationRegion3D<class_NavigationRegion3D>` Node
     A Node that holds a Navigation Mesh resource that defines a navigation mesh for the NavigationServer3D.
@@ -132,7 +132,7 @@ It uses the NavigationServer3D and a NavigationAgent3D for path movement.
         navigation_agent.target_desired_distance = 0.5
 
         # Make sure to not await during _ready.
-        call_deferred("actor_setup")
+        actor_setup.call_deferred()
 
     func actor_setup():
         # Wait for the first physics frame so the NavigationServer can sync.

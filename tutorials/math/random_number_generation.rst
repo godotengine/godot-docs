@@ -9,13 +9,18 @@ Godot.
 
 After giving you a brief overview of useful functions that generate random
 numbers, you will learn how to get random elements from arrays, dictionaries,
-and how to use a noise generator in GDScript.
+and how to use a noise generator in GDScript. Lastly, we'll take a look at
+cryptographically secure random number generation and how it differs from
+typical random number generation.
 
 .. note::
 
     Computers cannot generate "true" random numbers. Instead, they rely on
     `pseudorandom number generators
     <https://en.wikipedia.org/wiki/Pseudorandom_number_generator>`__ (PRNGs).
+
+    Godot internally uses the `PCG Family <https://www.pcg-random.org/>`__
+    of pseudorandom number generators.
 
 Global scope versus RandomNumberGenerator class
 -----------------------------------------------
@@ -33,6 +38,14 @@ the RandomNumberGenerator class.
 
 The randomize() method
 ----------------------
+
+.. note::
+
+    Since Godot 4.0, the random seed is automatically set to a random value when
+    the project starts. This means you don't need to call ``randomize()`` in
+    ``_ready()`` anymore to ensure that results are random across project runs.
+    However, you can still use ``randomize()`` if you want to use a specific
+    seed number, or generate it using a different method.
 
 In global scope, you can find a :ref:`randomize()
 <class_@GlobalScope_method_randomize>` method. **This method should be called only
@@ -71,6 +84,7 @@ across runs:
     public override void _Ready()
     {
         GD.Seed(12345);
+        // To use a string as a seed, you can hash it to a number.
         GD.Seed("Hello world".Hash());
     }
 
@@ -95,9 +109,9 @@ Let's look at some of the most commonly used functions and methods to generate
 random numbers in Godot.
 
 The function :ref:`randi() <class_@GlobalScope_method_randi>` returns a random
-number between 0 and 2^32-1. Since the maximum value is huge, you most likely
-want to use the modulo operator (``%``) to bound the result between 0 and the
-denominator:
+number between ``0`` and ``2^32 - 1``. Since the maximum value is huge, you most
+likely want to use the modulo operator (``%``) to bound the result between 0 and
+the denominator:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -121,7 +135,7 @@ number between 0 and 1. This is useful to implement a
 :ref:`doc_random_number_generation_weighted_random_probability` system, among
 other things.
 
-:ref:`randfn() <class_RandomNumberGenerator_method_randfn>` returns a random
+:ref:`randfn() <class_@GlobalScope_method_randfn>` returns a random
 floating-point number following a `normal distribution
 <https://en.wikipedia.org/wiki/Normal_distribution>`__. This means the returned
 value is more likely to be around the mean (0.0 by default),
@@ -153,8 +167,7 @@ and ``to``:
     // Prints a random floating-point number between -4 and 6.5.
     GD.Print(GD.RandRange(-4.0, 6.5));
 
-:ref:`RandomNumberGenerator.randi_range()
-<class_RandomNumberGenerator_method_randi_range>` takes two arguments ``from``
+:ref:`randi_range() <class_@GlobalScope_method_randi_range>` takes two arguments ``from``
 and ``to``, and returns a random integer between ``from`` and ``to``:
 
 .. tabs::
@@ -171,7 +184,9 @@ and ``to``, and returns a random integer between ``from`` and ``to``:
 Get a random array element
 --------------------------
 
-We can use random integer generation to get a random element from an array:
+We can use random integer generation to get a random element from an array,
+or use the :ref:`Array.pick_random<class_Array_method_pick_random>` method
+to do it for us:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -183,6 +198,10 @@ We can use random integer generation to get a random element from an array:
             # Pick 100 fruits randomly.
             print(get_fruit())
 
+        for i in range(100):
+            # Pick 100 fruits randomly, this time using the `Array.pick_random()`
+            # helper method. This has the same behavior as `get_fruit()`.
+            print(_fruits.pick_random())
 
     func get_fruit():
         var random_fruit = _fruits[randi() % _fruits.size()]
@@ -192,7 +211,8 @@ We can use random integer generation to get a random element from an array:
 
  .. code-tab:: csharp
 
-    private string[] _fruits = { "apple", "orange", "pear", "banana" };
+    // Use Godot's Array type instead of a BCL type so we can use `PickRandom()` on it.
+    private Godot.Collections.Array<string> _fruits = new Godot.Collections.Array<string> { "apple", "orange", "pear", "banana" };
 
     public override void _Ready()
     {
@@ -201,18 +221,27 @@ We can use random integer generation to get a random element from an array:
             // Pick 100 fruits randomly.
             GD.Print(GetFruit());
         }
+
+        for (int i = 0; i < 100; i++)
+        {
+            // Pick 100 fruits randomly, this time using the `Array.PickRandom()`
+            // helper method. This has the same behavior as `GetFruit()`.
+            GD.Print(_fruits.PickRandom());
+        }
     }
 
     public string GetFruit()
     {
-        string randomFruit = _fruits[GD.Randi() % _fruits.Length];
+        string randomFruit = _fruits[GD.Randi() % _fruits.Size()];
         // Returns "apple", "orange", "pear", or "banana" every time the code runs.
         // We may get the same fruit multiple times in a row.
         return randomFruit;
     }
 
 To prevent the same fruit from being picked more than once in a row, we can add
-more logic to this method:
+more logic to the above method. In this case, we can't use
+:ref:`Array.pick_random<class_Array_method_pick_random>` since it lacks a way to
+prevent repetition:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -230,7 +259,7 @@ more logic to this method:
     func get_fruit():
         var random_fruit = _fruits[randi() % _fruits.size()]
         while random_fruit == _last_fruit:
-            # The last fruit was picked, try again until we get a different fruit.
+            # The last fruit was picked. Try again until we get a different fruit.
             random_fruit = _fruits[randi() % _fruits.size()]
 
         # Note: if the random element to pick is passed by reference,
@@ -261,7 +290,7 @@ more logic to this method:
         string randomFruit = _fruits[GD.Randi() % _fruits.Length];
         while (randomFruit == _lastFruit)
         {
-            // The last fruit was picked, try again until we get a different fruit.
+            // The last fruit was picked. Try again until we get a different fruit.
             randomFruit = _fruits[GD.Randi() % _fruits.Length];
         }
 
@@ -379,7 +408,7 @@ floating-point number between 0.0 and 1.0. We can use this to create a
         }
         else if (randomFloat < 0.95f)
         {
-            // 15% chance of being returned
+            // 15% chance of being returned.
             return "Uncommon";
         }
         else
@@ -388,6 +417,44 @@ floating-point number between 0.0 and 1.0. We can use this to create a
             return "Rare";
         }
     }
+
+You can also get a weighted random *index* using the
+:ref:`rand_weighted() <class_RandomNumberGenerator_method_rand_weighted>` method
+on a RandomNumberGenerator instance. This returns a random integer
+between 0 and the size of the array that is passed as a parameter. Each value in the
+array is a floating-point number that represents the *relative* likelihood that it
+will be returned as an index. A higher value means the value is more likely to be
+returned as an index, while a value of ``0`` means it will never be returned as an index.
+
+For example, if ``[0.5, 1, 1, 2]`` is passed as a parameter, then the method is twice
+as likely to return ``3`` (the index of the value ``2``) and twice as unlikely to return
+``0`` (the index of the value ``0.5``) compared to the indices ``1`` and ``2``.
+
+Since the returned value matches the array's size, it can be used as an index to
+get a value from another array as follows:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # Prints a random element using the weighted index that is returned by `rand_weighted()`.
+    # Here, "apple" will be returned twice as rarely as "orange" and "pear".
+    # "banana" is twice as common as "orange" and "pear", and four times as common as "apple".
+    var fruits = ["apple", "orange", "pear", "banana"]
+    var probabilities = [0.5, 1, 1, 2];
+
+    var random = RandomNumberGenerator.new()
+    print(fruits[random.rand_weighted(probabilities)])
+
+ .. code-tab:: csharp
+
+    // Prints a random element using the weighted index that is returned by `RandWeighted()`.
+    // Here, "apple" will be returned twice as rarely as "orange" and "pear".
+    // "banana" is twice as common as "orange" and "pear", and four times as common as "apple".
+    string[] fruits = { "apple", "orange", "pear", "banana" };
+    float[] probabilities = { 0.5, 1, 1, 2 };
+
+    var random = new RandomNumberGenerator();
+    GD.Print(fruits[random.RandWeighted(probabilities)]);
 
 .. _doc_random_number_generation_shuffle_bags:
 
@@ -518,3 +585,48 @@ terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
             GD.Print(_noise.GetNoise1D(i));
         }
     }
+
+Cryptographically secure pseudorandom number generation
+-------------------------------------------------------
+
+So far, the approaches mentioned above are **not** suitable for
+*cryptographically secure* pseudorandom number generation (CSPRNG). This is fine
+for games, but this is not sufficient for scenarios where encryption,
+authentication or signing is involved.
+
+Godot offers a :ref:`class_Crypto` class for this. This class can perform
+asymmetric key encryption/decryption, signing/verification, while also
+generating cryptographically secure random bytes, RSA keys, HMAC digests, and
+self-signed :ref:`class_X509Certificate`\ s.
+
+The downside of :abbr:`CSPRNG (Cryptographically secure pseudorandom number generation)`
+is that it's much slower than standard pseudorandom number generation. Its API
+is also less convenient to use. As a result,
+:abbr:`CSPRNG (Cryptographically secure pseudorandom number generation)`
+should be avoided for gameplay elements.
+
+Example of using the Crypto class to generate 2 random integers between ``0``
+and ``2^32 - 1`` (inclusive):
+
+::
+
+    var crypto := Crypto.new()
+    # Request as many bytes as you need, but try to minimize the amount
+    # of separate requests to improve performance.
+    # Each 32-bit integer requires 4 bytes, so we request 8 bytes.
+    var byte_array := crypto.generate_random_bytes(8)
+
+    # Use the ``decode_u32()`` method from PackedByteArray to decode a 32-bit unsigned integer
+    # from the beginning of `byte_array`. This method doesn't modify `byte_array`.
+    var random_int_1 := byte_array.decode_u32(0)
+    # Do the same as above, but with an offset of 4 bytes since we've already decoded
+    # the first 4 bytes previously.
+    var random_int_2 := byte_array.decode_u32(4)
+
+    prints("Random integers:", random_int_1, random_int_2)
+
+.. seealso::
+
+    See :ref:`class_PackedByteArray`'s documentation for other methods you can
+    use to decode the generated bytes into various types of data, such as
+    integers or floats.

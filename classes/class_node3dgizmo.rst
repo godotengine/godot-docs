@@ -14,9 +14,16 @@ Node3DGizmo
 
 **Inherited By:** :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`
 
-.. container:: contribute
+Abstract class to expose editor gizmos for :ref:`Node3D<class_Node3D>`.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This abstract class helps connect the :ref:`Node3D<class_Node3D>` scene with the editor-specific :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` class.
+
+\ **Node3DGizmo** by itself has no exposed API, refer to :ref:`Node3D.add_gizmo<class_Node3D_method_add_gizmo>` and pass it an :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` instance.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -25,3 +32,4 @@ Node3DGizmo
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

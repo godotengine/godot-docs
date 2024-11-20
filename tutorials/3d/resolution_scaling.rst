@@ -3,6 +3,9 @@
 Resolution scaling
 ==================
 
+.. Images on this page were generated using the project below:
+.. https://github.com/Calinou/godot-antialiasing-comparison
+
 Why use resolution scaling?
 ---------------------------
 
@@ -43,20 +46,32 @@ Scaling mode
 - **Bilinear:** Standard bilinear filtering (default).
 - **FSR 1.0:** `AMD FidelityFX Super Resolution 1.0 <https://gpuopen.com/fidelityfx-superresolution/>`__.
   Slower, but higher quality compared to bilinear scaling. On very slow GPUs,
-  the cost of FSR 1.0 may be too expensive to be worth using it over bilinear
+  the cost of FSR1 may be too expensive to be worth using it over bilinear
   scaling.
+- **FSR 2.2:** AMD FidelityFX Super Resolution 2.2 (since Godot 4.2). Slowest,
+  but even higher quality compared to FSR1 and bilinear scaling. On slow GPUs,
+  the cost of FSR2 may be too expensive to be worth using it over bilinear
+  scaling or FSR1. To match FSR2 performance with FSR1, you need to use a lower
+  resolution scale factor.
 
 Here are comparison images between native resolution, bilinear scaling with 50%
-resolution scale and FSR 1.0 scaling with 50% resolution scale:
+resolution scale, FSR1, and FSR2 scaling with 50% resolution scale:
 
 .. image:: img/resolution_scaling_bilinear_0.5.png
 
 .. image:: img/resolution_scaling_fsr1_0.5.png
 
-FSR 1.0 upscaling works best when coupled with another form of antialiasing.
+.. image:: img/resolution_scaling_fsr2_0.5.webp
+
+FSR1 upscaling works best when coupled with another form of antialiasing.
 Temporal antialiasing (TAA) or multisample antialiasing (MSAA) should preferably
 be used in this case, as FXAA does not add temporal information and introduces
 more blurring to the image.
+
+On the other hand, FSR2 provides its own temporal antialiasing. This means you
+don't need to enable other antialiasing methods for the resulting image to look
+smooth. The **Use TAA** project setting is ignored when FSR2 is used as the 3D
+scaling method, since FSR2's temporal antialiasing takes priority.
 
 Here's the same comparison, but with 4× MSAA enabled on all images:
 
@@ -64,8 +79,11 @@ Here's the same comparison, but with 4× MSAA enabled on all images:
 
 .. image:: img/resolution_scaling_fsr1_msaa_4x_0.5.png
 
-Notice how the edge upscaling of FSR 1.0 becomes much more convincing once 4×
-MSAA is enabled.
+.. image:: img/resolution_scaling_fsr2_msaa_4x_0.5.webp
+
+Notice how the edge upscaling of FSR1 becomes much more convincing once 4×
+MSAA is enabled. However, FSR2 doesn't benefit much from enabling MSAA since it
+already performs temporal antialiasing.
 
 Rendering scale
 ^^^^^^^^^^^^^^^
@@ -75,7 +93,7 @@ The **Rendering > Scaling 3D > Scale** setting adjusts the resolution scale.
 matching the 2D rendering resolution. Resolution scales *below* ``1.0`` can be
 used to speed up rendering, at the cost of a blurrier final image and more aliasing.
 
-The rendering scale can be adjusted at run-time by changing the ``scaling_3d_scale``
+The rendering scale can be adjusted at runtime by changing the ``scaling_3d_scale``
 property on a :ref:`class_Viewport` node.
 
 Resolution scales *above* ``1.0`` can be used for supersample antialiasing
@@ -165,7 +183,7 @@ in each table.
 FSR Sharpness
 ^^^^^^^^^^^^^
 
-When using the FSR 1.0 scaling mode, the sharpness can be controlled using the
+When using the FSR1 or FSR2 scaling modes, the sharpness can be controlled using the
 **Rendering > Scaling 3D > FSR Sharpness** advanced project setting.
 
 The intensity is inverted compared to most other sharpness sliders: *lower*
@@ -178,12 +196,17 @@ to oversharpening.
 .. note::
 
     If you wish to use sharpening when rendering at native resolution, Godot
-    currently doesn't allow using the sharpening component of FSR (RCAS)
+    currently doesn't allow using the sharpening component of FSR1 (RCAS)
     independently from the upscaling component (EASU).
 
     As a workaround, you can set the 3D rendering scale to ``0.99``, set the
     scaling mode to **FSR 1.0** then adjust FSR sharpness as needed. This allows
-    using FSR 1.0 while rendering at a near-native resolution.
+    using FSR1 while rendering at a near-native resolution.
+
+    Alternatively, you can set the scaling mode to **FSR 2.2** with the 3D
+    rendering scale set to ``1.0`` if you have enough GPU headroom. This also
+    provides high-quality temporal antialiasing. The **FSR Sharpness** setting
+    remains functional in this case.
 
 .. _doc_resolution_scaling_mipmap_bias:
 
@@ -200,7 +223,8 @@ Textures used in 2D don't have mipmaps enabled by default, which means only 3D
 rendering is affected unless you enabled mipmaps on 2D textures in the Import
 dock.
 
-The formula used to determine the texture mipmap bias is: TODO
+The formula used to determine the texture mipmap bias is:
+``log2f(min(scaling_3d_scale, 1.0)) + custom_texture_mipmap_bias``
 
 To counteract the blurriness added by some antialiasing methods, Godot also adds
 a ``-0.25`` offset when FXAA is enabled, and a ``-0.5`` offset when TAA is
@@ -210,7 +234,7 @@ not change depending on resolution scale.
 
 The texture LOD bias can manually be changed by adjusting the **Rendering >
 Textures > Default Filters > Texture Mipmap Bias** advanced project setting. It
-can also be changed at run-time on :ref:`Viewports <class_Viewport>` by
+can also be changed at runtime on :ref:`Viewports <class_Viewport>` by
 adjusting the ``texture_mipmap_bias`` property.
 
 .. warning::

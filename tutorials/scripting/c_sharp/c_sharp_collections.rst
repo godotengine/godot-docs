@@ -46,8 +46,8 @@ To choose which collection type to use for each situation, consider the followin
 * Does your collection need to interact with the Godot engine?
   (e.g.: the type of an exported property, calling a Godot method).
 
-   * If yes, since Godot only supports :ref:`Variant-compatible <doc_c_sharp_variant>`
-     types, use a Godot collection.
+   * If yes, since Godot only supports :ref:`c_sharp_variant_compatible_types`,
+     use a Godot collection.
    * If not, consider `choosing an appropriate .NET collection <https://learn.microsoft.com/en-us/dotnet/standard/collections/selecting-a-collection-class>`_.
 
 * Do you need a Godot collection that represents a list or sequential set of data?
@@ -77,20 +77,20 @@ In C#, packed arrays are replaced by ``System.Array``:
 ======================  ==============================================================
 GDScript                C#
 ======================  ==============================================================
+``PackedByteArray``     ``byte[]``
 ``PackedInt32Array``    ``int[]``
 ``PackedInt64Array``    ``long[]``
-``PackedByteArray``     ``byte[]``
 ``PackedFloat32Array``  ``float[]``
 ``PackedFloat64Array``  ``double[]``
 ``PackedStringArray``   ``string[]``
-``PackedColorArray``    ``Color[]``
 ``PackedVector2Array``  ``Vector2[]``
 ``PackedVector3Array``  ``Vector3[]``
+``PackedVector4Array``  ``Vector4[]``
+``PackedColorArray``    ``Color[]``
 ======================  ==============================================================
 
 Other C# arrays are not supported by the Godot C# API since a packed array equivalent
-does not exist. See :ref:`Variant <doc_c_sharp_variant>` for a list of all the compatible
-types.
+does not exist. See the list of :ref:`c_sharp_variant_compatible_types`.
 
 .. _doc_c_sharp_collections_array:
 
@@ -101,7 +101,7 @@ Godot arrays are implemented as an array of ``Variant`` and can contain several 
 of any type. In C#, the equivalent type is ``Godot.Collections.Array``.
 
 The generic ``Godot.Collections.Array<T>`` type allows restricting the element type to
-a :ref:`Variant-compatible <doc_c_sharp_variant>` type.
+a :ref:`Variant-compatible type <c_sharp_variant_compatible_types>`.
 
 An untyped ``Godot.Collections.Array`` can be converted to a typed array using the
 ``Godot.Collections.Array<T>(Godot.Collections.Array)`` constructor.
@@ -195,7 +195,7 @@ Godot dictionaries are implemented as a dictionary with ``Variant`` keys and val
 In C#, the equivalent type is ``Godot.Collections.Dictionary``.
 
 The generic ``Godot.Collections.Dictionary<TKey, TValue>`` type allows restricting the key
-and value types to a :ref:`Variant-compatible <doc_c_sharp_variant>` type.
+and value types to a :ref:`Variant-compatible type <c_sharp_variant_compatible_types>`.
 
 An untyped ``Godot.Collections.Dictionary`` can be converted to a typed dictionary using the
 ``Godot.Collections.Dictionary<TKey, TValue>(Godot.Collections.Dictionary)`` constructor.

@@ -54,14 +54,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format_override** = ``218``
+:ref:`DataFormat<enum_RenderingDevice_DataFormat>` **format_override** = ``218`` :ref:`🔗<class_RDTextureView_property_format_override>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_format_override** **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` value **)**
-- :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **get_format_override** **(** **)**
+- |void| **set_format_override**\ (\ value\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`\ )
+- :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **get_format_override**\ (\ )
 
-Optional override for the data format to return sampled values in. The default value of :ref:`RenderingDevice.DATA_FORMAT_MAX<class_RenderingDevice_constant_DATA_FORMAT_MAX>` does not override the format.
+Optional override for the data format to return sampled values in. The corresponding :ref:`RDTextureFormat<class_RDTextureFormat>` must have had this added as a shareable format. The default value of :ref:`RenderingDevice.DATA_FORMAT_MAX<class_RenderingDevice_constant_DATA_FORMAT_MAX>` does not override the format.
 
 .. rst-class:: classref-item-separator
 
@@ -71,12 +71,12 @@ Optional override for the data format to return sampled values in. The default v
 
 .. rst-class:: classref-property
 
-:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_a** = ``6``
+:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_a** = ``6`` :ref:`🔗<class_RDTextureView_property_swizzle_a>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_swizzle_a** **(** :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` value **)**
-- :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **get_swizzle_a** **(** **)**
+- |void| **set_swizzle_a**\ (\ value\: :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>`\ )
+- :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **get_swizzle_a**\ (\ )
 
 The channel to sample when sampling the alpha channel.
 
@@ -88,12 +88,12 @@ The channel to sample when sampling the alpha channel.
 
 .. rst-class:: classref-property
 
-:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_b** = ``5``
+:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_b** = ``5`` :ref:`🔗<class_RDTextureView_property_swizzle_b>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_swizzle_b** **(** :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` value **)**
-- :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **get_swizzle_b** **(** **)**
+- |void| **set_swizzle_b**\ (\ value\: :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>`\ )
+- :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **get_swizzle_b**\ (\ )
 
 The channel to sample when sampling the blue color channel.
 
@@ -105,12 +105,12 @@ The channel to sample when sampling the blue color channel.
 
 .. rst-class:: classref-property
 
-:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_g** = ``4``
+:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_g** = ``4`` :ref:`🔗<class_RDTextureView_property_swizzle_g>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_swizzle_g** **(** :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` value **)**
-- :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **get_swizzle_g** **(** **)**
+- |void| **set_swizzle_g**\ (\ value\: :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>`\ )
+- :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **get_swizzle_g**\ (\ )
 
 The channel to sample when sampling the green color channel.
 
@@ -122,12 +122,12 @@ The channel to sample when sampling the green color channel.
 
 .. rst-class:: classref-property
 
-:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_r** = ``3``
+:ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **swizzle_r** = ``3`` :ref:`🔗<class_RDTextureView_property_swizzle_r>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_swizzle_r** **(** :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` value **)**
-- :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **get_swizzle_r** **(** **)**
+- |void| **set_swizzle_r**\ (\ value\: :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>`\ )
+- :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **get_swizzle_r**\ (\ )
 
 The channel to sample when sampling the red color channel.
 
@@ -138,3 +138,4 @@ The channel to sample when sampling the red color channel.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

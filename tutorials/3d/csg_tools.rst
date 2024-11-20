@@ -6,7 +6,7 @@ Prototyping levels with CSG
 ===========================
 
 CSG stands for **Constructive Solid Geometry**, and is a tool to combine basic
-shapes or custom meshes to create more complex shapes. In 3D modelling software,
+shapes or custom meshes to create more complex shapes. In 3D modeling software,
 CSG is mostly known as "Boolean Operators".
 
 Level prototyping is one of the main uses of CSG in Godot. This technique allows
@@ -15,15 +15,20 @@ Interior environments can be created by using inverted primitives.
 
 .. note:: The CSG nodes in Godot are mainly intended for prototyping. There is
           no built-in support for UV mapping or editing 3D polygons (though
-          extruded 2D polygons can be used with the CSGPolygon3D node).
+          extruded 2D polygons can be used with the CSGPolygon3D node). In
+          addition CSG can't reliably create meshes made up of multiple nodes
+          without holes.
 
           If you're looking for an easy to use level design tool for a project,
-          you may want to use `Qodot <https://github.com/Shfty/qodot-plugin>`__
-          instead. It lets you design levels using
-          `TrenchBroom <https://kristianduske.com/trenchbroom/>`__ and import
-          them in Godot.
+          you may want to use `FuncGodot <https://github.com/func-godot/func_godot_plugin>`__
+          or `Cyclops Level Builder <https://github.com/blackears/cyclopsLevelBuilder>`__
+          instead.
 
-.. image:: img/csg.gif
+.. video:: video/csg_tools.webm
+   :alt: CSG being used to subtract a torus shape from a box
+   :autoplay:
+   :loop:
+   :muted:
 
 .. seealso::
 
@@ -87,7 +92,7 @@ Custom meshes
 ~~~~~~~~~~~~~
 
 Any mesh can be used for :ref:`CSGMesh3D <class_CSGMesh3D>`; the mesh can be
-modelled in other software and imported into Godot. Multiple materials are
+modeled in other software and imported into Godot. Multiple materials are
 supported. There are some restrictions for geometry:
 
 - it must be closed,
@@ -291,11 +296,42 @@ in the **Scale** property will cause the texture to repeat more often.
          the material onto, click the dropdown arrow next to its material
          property then choose **Paste**.
 
+.. _doc_csg_tools_converting_to_mesh_instance_3d:
+
+Converting to MeshInstance3D
+----------------------------
+
+Since Godot 4.4, you can convert a CSG node and its children to a :ref:`class_MeshInstance3D` node.
+
+This has several benefits:
+
+- Bake lightmaps, since UV2 can be generated on a MeshInstance3D.
+- Bake occlusion culling, since the occlusion culling bake process only takes MeshInstance3D into account.
+- Faster loading times, since the CSG mesh no longer needs to be rebuilt when the scene loads.
+- Better performance when updating the node's transform if using the mesh within another CSG node.
+
+To convert a CSG node to a MeshInstance3D node, select it, then choose
+**CSG > Bake Mesh Instance** in the toolbar. The MeshInstance3D node
+will be created as a sibling. Note that the CSG node that was used for baking is **not** hidden
+automatically, so remember to hide it to prevent its geometry from overlapping with the newly created
+MeshInstance3D.
+
+You can also create a trimesh collision shape using **CSG > Bake Collision Shape**.
+The generated :ref:`class_CollisionShape3D` node must be a child of a :ref:`class_StaticBody3D`
+or :ref:`class_AnimatableBody3D` node to be effective.
+
+.. tip::
+
+    Remember to keep the original CSG node in the scene tree, so that you can
+    perform changes to the geometry later if needed. To make changes to the
+    geometry, remove the MeshInstance3D node and make the root CSG node visible
+    again.
+
 Exporting as glTF
-------------------------
+-----------------
 
 It can be useful to block out a level using CSG, then export it as a 3d model, to
-import into 3D modelling software. You can do this by selecting **Scene > Export As... >
+import into 3D modeling software. You can do this by selecting **Scene > Export As... >
 glTF 2.0 Scene**.
 
 .. image:: img/export_as_gltf.webp

@@ -1,3 +1,7 @@
+:allow_comments: False
+
+.. _doc_shading_reference:
+
 Shading reference
 =================
 
