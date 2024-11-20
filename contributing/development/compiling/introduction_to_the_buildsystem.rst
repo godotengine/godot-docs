@@ -139,6 +139,8 @@ run projects but does not include the editor or the Project Manager.
 
     scons platform=<platform> target=editor/template_debug/template_release
 
+.. _doc_introduction_to_the_buildsystem_development_and_production_aliases:
+
 Development and production aliases
 ----------------------------------
 
