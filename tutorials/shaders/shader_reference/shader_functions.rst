@@ -2247,6 +2247,7 @@ Texture functions
     | | |gvec4_type|   | | :ref:`texture<shader_func_texture>`\ (\ |gsampler3D| s, vec3 p [, float bias] )                       |                                                                     |
     | | vec4           | | :ref:`texture<shader_func_texture>`\ (\ samplerCube s, vec3 p [, float bias] )                        |                                                                     |
     | | vec4           | | :ref:`texture<shader_func_texture>`\ (\ samplerCubeArray s, vec4 p [, float bias] )                   |                                                                     |
+    | | vec4           | | :ref:`texture<shader_func_texture>`\ (\ samplerExternalOES s, vec2 p [, float bias] )                 |                                                                     |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
     | | |gvec4_type|   | | :ref:`textureProj<shader_func_textureProj>`\ (\ |gsampler2D| s, vec3 p [, float bias] )               | Perform a texture read with projection.                             |
     | | |gvec4_type|   | | :ref:`textureProj<shader_func_textureProj>`\ (\ |gsampler2D| s, vec4 p [, float bias] )               |                                                                     |
@@ -2504,6 +2505,10 @@ vec4 **texture**\ (\ samplerCube s, vec3 p [, float bias] )
 .. rst-class:: classref-method
 
 vec4 **texture**\ (\ samplerCubeArray s, vec4 p [, float bias] )
+
+.. rst-class:: classref-method
+
+vec4 **texture**\ (\ samplerExternalOES s, vec2 p [, float bias] )
 
     Retrieves texels from a texture.
 
