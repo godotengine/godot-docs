@@ -20,12 +20,12 @@ what the object *is*. Click the "Other Node" button and add an :ref:`Area2D
 
 .. image:: img/add_node.webp
 
-When you add the `Area2D` node, Godot will display the following **warning icon** 
+When you add the ``Area2D`` node, Godot will display the following **warning icon** 
 next to it in the scene tree:
 
 .. image:: img/no_shape_warning.webp
 
-This warning tells us that the `Area2D` node requires a shape to detect collisions or overlaps. 
+This warning tells us that the ``Area2D`` node requires a shape to detect collisions or overlaps. 
 We can **ignore the warning temporarily** because we will first set up the player's visuals 
 (using an animated sprite). Once the visuals are ready, we will add a collision shape as a child 
 node. This will allow us to accurately size and position the shape based on the sprite’s appearance.
@@ -106,7 +106,7 @@ When you're finished, your ``Player`` scene should look like this:
 
 .. image:: img/player_scene_nodes.webp
 
-Once this is done, the warning on the `Area2D` node will disappear, as it now has 
+Once this is done, the warning on the ``Area2D`` node will disappear, as it now has 
 a shape assigned and can interact with other objects.
 
 Make sure to save the scene again after these changes.
