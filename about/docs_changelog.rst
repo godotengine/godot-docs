@@ -36,6 +36,11 @@ Rendering
 
 - :ref:`doc_renderers`
 
+Shaders
+^^^^^^^
+
+- :ref:`doc_shader_functions`
+
 New pages since version 4.2
 ---------------------------
 
