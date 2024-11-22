@@ -904,7 +904,7 @@ modify than untyped Arrays.
 
 While all Arrays can cause memory fragmentation when they become large enough,
 if memory usage and performance (iteration and modification speed) is a concern
-and the type of data you're storing is compatible with one of the `Packed`
+and the type of data you're storing is compatible with one of the ``Packed``
 Array types, then using those may yield improvements. However, if you do not
 have such concerns (e.g. the size of your array does not reach the tens of
 thousands of elements) it is likely more helpful to use regular or typed
