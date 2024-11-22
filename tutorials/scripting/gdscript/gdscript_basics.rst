@@ -894,7 +894,7 @@ Packed arrays
 ^^^^^^^^^^^^^
 
 PackedArrays are generally faster to iterate on and modify compared to a typed
-Array of the same type (e.g. PackedInt32Array versus Array[int]) and consume
+Array of the same type (e.g. PackedInt64Array versus Array[int]) and consume
 less memory. In the worst case, they are expected to be as fast as an untyped
 Array. Conversely, non-Packed Arrays (typed or not) have extra convenience
 methods such as :ref:`Array.map <class_Array_method_map>` that PackedArrays
