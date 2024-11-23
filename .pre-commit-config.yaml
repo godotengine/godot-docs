@@ -12,7 +12,6 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
-      - id: end-of-file-fixer
       - id: fix-byte-order-marker
       - id: mixed-line-ending
         args: ['--fix=lf']
