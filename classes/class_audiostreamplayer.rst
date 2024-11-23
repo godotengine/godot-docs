@@ -355,6 +355,8 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>` of the latest 
 
 \ **Note:** The position is not always accurate, as the :ref:`AudioServer<class_AudioServer>` does not mix audio every processed frame. To get more accurate results, add :ref:`AudioServer.get_time_since_last_mix<class_AudioServer_method_get_time_since_last_mix>` to the returned position.
 
+\ **Note:** This method always returns ``0.0`` if the :ref:`stream<class_AudioStreamPlayer_property_stream>` is an :ref:`AudioStreamInteractive<class_AudioStreamInteractive>`, since it can have multiple clips playing at once.
+
 .. rst-class:: classref-item-separator
 
 ----

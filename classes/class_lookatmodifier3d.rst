@@ -12,14 +12,14 @@ LookAtModifier3D
 
 **Inherits:** :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-The :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` rotates a bone to look a target.
+The **LookAtModifier3D** rotates a bone to look at a target.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` rotates a bone to look a target. This is helpful for moving character's head to look at the player, rotating a turret to look at a target, or any other case where you want to make a bone rotate towards something quickly and easily.
+This :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` rotates a bone to look at a target. This is helpful for moving a character's head to look at the player, rotating a turret to look at a target, or any other case where you want to make a bone rotate towards something quickly and easily.
 
 When applying multiple **LookAtModifier3D**\ s, the **LookAtModifier3D** assigned to the parent bone must be put above the **LookAtModifier3D** assigned to the child bone in the list in order for the child bone results to be correct.
 
@@ -62,7 +62,7 @@ Properties
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`float<class_float>`                           | :ref:`primary_positive_limit_angle<class_LookAtModifier3D_property_primary_positive_limit_angle>`           |                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
-   | Vector3.Axis                                        | :ref:`primary_rotation_axis<class_LookAtModifier3D_property_primary_rotation_axis>`                         | ``1``                |
+   | :ref:`Axis<enum_Vector3_Axis>`                      | :ref:`primary_rotation_axis<class_LookAtModifier3D_property_primary_rotation_axis>`                         | ``1``                |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`float<class_float>`                           | :ref:`secondary_damp_threshold<class_LookAtModifier3D_property_secondary_damp_threshold>`                   |                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
@@ -482,12 +482,12 @@ The limit angle of positive side of the primary rotation when :ref:`symmetry_lim
 
 .. rst-class:: classref-property
 
-Vector3.Axis **primary_rotation_axis** = ``1`` :ref:`🔗<class_LookAtModifier3D_property_primary_rotation_axis>`
+:ref:`Axis<enum_Vector3_Axis>` **primary_rotation_axis** = ``1`` :ref:`🔗<class_LookAtModifier3D_property_primary_rotation_axis>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_primary_rotation_axis**\ (\ value\: Vector3.Axis\ )
-- Vector3.Axis **get_primary_rotation_axis**\ (\ )
+- |void| **set_primary_rotation_axis**\ (\ value\: :ref:`Axis<enum_Vector3_Axis>`\ )
+- :ref:`Axis<enum_Vector3_Axis>` **get_primary_rotation_axis**\ (\ )
 
 The axis of the first rotation. This :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` works by compositing the rotation by Euler angles to prevent to rotate the :ref:`forward_axis<class_LookAtModifier3D_property_forward_axis>`.
 

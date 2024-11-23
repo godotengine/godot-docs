@@ -163,7 +163,7 @@ Property Descriptions
 
 :ref:`Vector3<class_Vector3>` **end** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_AABB_property_end>`
 
-The ending point. This is usually the corner on the top-right and forward of the bounding box, and is equivalent to ``position + size``. Setting this point affects the :ref:`size<class_AABB_property_size>`.
+The ending point. This is usually the corner on the top-right and back of the bounding box, and is equivalent to ``position + size``. Setting this point affects the :ref:`size<class_AABB_property_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -175,7 +175,7 @@ The ending point. This is usually the corner on the top-right and forward of the
 
 :ref:`Vector3<class_Vector3>` **position** = ``Vector3(0, 0, 0)`` :ref:`🔗<class_AABB_property_position>`
 
-The origin point. This is usually the corner on the bottom-left and back of the bounding box.
+The origin point. This is usually the corner on the bottom-left and forward of the bounding box.
 
 .. rst-class:: classref-item-separator
 
@@ -189,7 +189,7 @@ The origin point. This is usually the corner on the bottom-left and back of the 
 
 The bounding box's width, height, and depth starting from :ref:`position<class_AABB_property_position>`. Setting this value also affects the :ref:`end<class_AABB_property_end>` point.
 
-\ **Note:** It's recommended setting the width, height, and depth to non-negative values. This is because most methods in Godot assume that the :ref:`position<class_AABB_property_position>` is the bottom-left-back corner, and the :ref:`end<class_AABB_property_end>` is the top-right-forward corner. To get an equivalent bounding box with non-negative size, use :ref:`abs<class_AABB_method_abs>`.
+\ **Note:** It's recommended setting the width, height, and depth to non-negative values. This is because most methods in Godot assume that the :ref:`position<class_AABB_property_position>` is the bottom-left-forward corner, and the :ref:`end<class_AABB_property_end>` is the top-right-back corner. To get an equivalent bounding box with non-negative size, use :ref:`abs<class_AABB_method_abs>`.
 
 .. rst-class:: classref-section-separator
 

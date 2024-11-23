@@ -649,6 +649,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedFloat32Array<class_PackedFloat32Array>`                              | :ref:`multimesh_get_buffer<class_RenderingServer_method_multimesh_get_buffer>`\ (\ multimesh\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`multimesh_get_buffer_rd_rid<class_RenderingServer_method_multimesh_get_buffer_rd_rid>`\ (\ multimesh\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`AABB<class_AABB>`                                                          | :ref:`multimesh_get_custom_aabb<class_RenderingServer_method_multimesh_get_custom_aabb>`\ (\ multimesh\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`multimesh_get_instance_count<class_RenderingServer_method_multimesh_get_instance_count>`\ (\ multimesh\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -3501,6 +3503,8 @@ Objects are displayed semi-transparent with additive blending so you can see whe
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_WIREFRAME** = ``4``
 
 Debug draw draws objects in wireframe.
+
+\ **Note:** :ref:`set_debug_generate_wireframes<class_RenderingServer_method_set_debug_generate_wireframes>` must be called before loading any meshes for wireframes to be visible when using the Compatibility renderer.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_NORMAL_BUFFER:
 
@@ -9728,6 +9732,18 @@ Returns the MultiMesh data (such as instance transforms, colors, etc.). See :ref
 
 ----
 
+.. _class_RenderingServer_method_multimesh_get_buffer_rd_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **multimesh_get_buffer_rd_rid**\ (\ multimesh\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_multimesh_get_buffer_rd_rid>`
+
+Returns the :ref:`RenderingDevice<class_RenderingDevice>` :ref:`RID<class_RID>` handle of the :ref:`MultiMesh<class_MultiMesh>`, which can be used as any other buffer on the Rendering Device.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_multimesh_get_custom_aabb:
 
 .. rst-class:: classref-method
@@ -10919,7 +10935,9 @@ Sets a boot image. The color defines the background color. If ``scale`` is ``tru
 
 |void| **set_debug_generate_wireframes**\ (\ generate\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_set_debug_generate_wireframes>`
 
-This method is currently unimplemented and does nothing if called with ``generate`` set to ``true``.
+If ``generate`` is ``true``, generates debug wireframes for all meshes that are loaded when using the Compatibility renderer. By default, the engine does not generate debug wireframes at runtime, since they slow down loading of assets and take up VRAM.
+
+\ **Note:** You must call this method before loading any meshes when using the Compatibility renderer, otherwise wireframes will not be used.
 
 .. rst-class:: classref-item-separator
 

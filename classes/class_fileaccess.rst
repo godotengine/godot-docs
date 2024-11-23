@@ -19,7 +19,7 @@ Provides methods for file reading and writing operations.
 Description
 -----------
 
-This class can be used to permanently store data in the user device's file system and to read from it. This is useful for store game save data or player configuration files.
+This class can be used to permanently store data in the user device's file system and to read from it. This is useful for storing game save data or player configuration files.
 
 Here's a sample on how to write and read from a file:
 
@@ -126,6 +126,8 @@ Methods
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                                     | :ref:`get_float<class_FileAccess_method_get_float>`\ (\ ) |const|                                                                                                                                                                                                                                       |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                                     | :ref:`get_half<class_FileAccess_method_get_half>`\ (\ ) |const|                                                                                                                                                                                                                                         |
+   +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                       | :ref:`get_hidden_attribute<class_FileAccess_method_get_hidden_attribute>`\ (\ file\: :ref:`String<class_String>`\ ) |static|                                                                                                                                                                            |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                         | :ref:`get_length<class_FileAccess_method_get_length>`\ (\ ) |const|                                                                                                                                                                                                                                     |
@@ -193,6 +195,8 @@ Methods
    | |void|                                                                        | :ref:`store_double<class_FileAccess_method_store_double>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                                                                                                      |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                        | :ref:`store_float<class_FileAccess_method_store_float>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                                                                                                        |
+   +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                        | :ref:`store_half<class_FileAccess_method_store_half>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                                                                                                          |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                        | :ref:`store_line<class_FileAccess_method_store_line>`\ (\ line\: :ref:`String<class_String>`\ )                                                                                                                                                                                                         |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -679,6 +683,18 @@ Returns an empty :ref:`String<class_String>` if an error occurred while opening 
 :ref:`float<class_float>` **get_float**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_float>`
 
 Returns the next 32 bits from the file as a floating-point number.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileAccess_method_get_half:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_half**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_half>`
+
+Returns the next 16 bits from the file as a half-precision floating-point number.
 
 .. rst-class:: classref-item-separator
 
@@ -1174,6 +1190,18 @@ Stores a floating-point number as 64 bits in the file.
 |void| **store_float**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_float>`
 
 Stores a floating-point number as 32 bits in the file.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileAccess_method_store_half:
+
+.. rst-class:: classref-method
+
+|void| **store_half**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_half>`
+
+Stores a half-precision floating-point number as 16 bits in the file.
 
 .. rst-class:: classref-item-separator
 

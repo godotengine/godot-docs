@@ -5107,7 +5107,7 @@ If ``true``, adds :doc:`GDScript static typing <../tutorials/scripting/gdscript/
 
 :ref:`bool<class_bool>` **text_editor/completion/auto_brace_complete** :ref:`🔗<class_EditorSettings_property_text_editor/completion/auto_brace_complete>`
 
-If ``true``, automatically completes braces when making use of code completion.
+If ``true``, automatically inserts the matching closing brace when the opening brace is inserted by typing or autocompletion. Also automatically removes the closing brace when pressing :kbd:`Backspace` on the opening brace. This includes brackets (``()``, ``[]``, ``{}``), string quotation marks (``''``, ``""``), and comments (``/**/``) if the language supports it.
 
 .. rst-class:: classref-item-separator
 

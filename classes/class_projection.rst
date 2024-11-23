@@ -151,56 +151,71 @@ Operators
 
 .. rst-class:: classref-descriptions-group
 
-Constants
----------
+Enumerations
+------------
+
+.. _enum_Projection_Planes:
+
+.. rst-class:: classref-enumeration
+
+enum **Planes**: :ref:`🔗<enum_Projection_Planes>`
 
 .. _class_Projection_constant_PLANE_NEAR:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**PLANE_NEAR** = ``0`` :ref:`🔗<class_Projection_constant_PLANE_NEAR>`
+:ref:`Planes<enum_Projection_Planes>` **PLANE_NEAR** = ``0``
 
 The index value of the projection's near clipping plane.
 
 .. _class_Projection_constant_PLANE_FAR:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**PLANE_FAR** = ``1`` :ref:`🔗<class_Projection_constant_PLANE_FAR>`
+:ref:`Planes<enum_Projection_Planes>` **PLANE_FAR** = ``1``
 
 The index value of the projection's far clipping plane.
 
 .. _class_Projection_constant_PLANE_LEFT:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**PLANE_LEFT** = ``2`` :ref:`🔗<class_Projection_constant_PLANE_LEFT>`
+:ref:`Planes<enum_Projection_Planes>` **PLANE_LEFT** = ``2``
 
 The index value of the projection's left clipping plane.
 
 .. _class_Projection_constant_PLANE_TOP:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**PLANE_TOP** = ``3`` :ref:`🔗<class_Projection_constant_PLANE_TOP>`
+:ref:`Planes<enum_Projection_Planes>` **PLANE_TOP** = ``3``
 
 The index value of the projection's top clipping plane.
 
 .. _class_Projection_constant_PLANE_RIGHT:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**PLANE_RIGHT** = ``4`` :ref:`🔗<class_Projection_constant_PLANE_RIGHT>`
+:ref:`Planes<enum_Projection_Planes>` **PLANE_RIGHT** = ``4``
 
 The index value of the projection's right clipping plane.
 
 .. _class_Projection_constant_PLANE_BOTTOM:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**PLANE_BOTTOM** = ``5`` :ref:`🔗<class_Projection_constant_PLANE_BOTTOM>`
+:ref:`Planes<enum_Projection_Planes>` **PLANE_BOTTOM** = ``5``
 
 The index value of the projection bottom clipping plane.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Constants
+---------
 
 .. _class_Projection_constant_IDENTITY:
 
