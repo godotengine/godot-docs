@@ -2378,35 +2378,6 @@ ivec3 **textureSize**\ (\ |gsampler3D| s, int lod)
 
 vec2 **textureQueryLod**\ (\ |gsampler2D| s, vec2 p)
 
-    Compute the level-of-detail that would be used to sample from a texture.
-
-    Available only in the fragment shader, textureQueryLod computes the level-of-detail
-    that would be used to sample from a texture. The mipmap array(s) that would be
-    accessed is returned in the x component of the return value. The computed level-of-detail
-    relative to the base level is returned in the y component of the return value.
-
-    If called on an incomplete texture, the result of the operation is undefined.
-
-    :param s:
-        The sampler to which the texture whose level-of-detail will be queried is bound.
-
-    :param p:
-        The texture coordinates at which the level-of-detail will be queried.
-
-    :return:
-        See description.
-
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureQueryLod.xhtml
-
-.. rst-class:: classref-item-separator
-
-----
-
-
-.. rst-class:: classref-method
-
-vec2 **textureQueryLod**\ (\ |gsampler2D| s, vec2 p)
-
 .. rst-class:: classref-method
 
 vec2 **textureQueryLod**\ (\ |gsampler2DArray| s, vec2 p)
