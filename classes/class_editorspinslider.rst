@@ -96,6 +96,18 @@ Emitted when the spinner/slider is ungrabbed.
 
 ----
 
+.. _class_EditorSpinSlider_signal_updown_pressed:
+
+.. rst-class:: classref-signal
+
+**updown_pressed**\ (\ ) :ref:`🔗<class_EditorSpinSlider_signal_updown_pressed>`
+
+Emitted when the updown button is pressed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSpinSlider_signal_value_focus_entered:
 
 .. rst-class:: classref-signal

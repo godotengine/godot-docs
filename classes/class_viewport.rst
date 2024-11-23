@@ -600,6 +600,8 @@ Objects are displayed semi-transparent with additive blending so you can see whe
 
 Objects are displayed as wireframe models.
 
+\ **Note:** :ref:`RenderingServer.set_debug_generate_wireframes<class_RenderingServer_method_set_debug_generate_wireframes>` must be called before loading any meshes for wireframes to be visible when using the Compatibility renderer.
+
 .. _class_Viewport_constant_DEBUG_DRAW_NORMAL_BUFFER:
 
 .. rst-class:: classref-enumeration-constant

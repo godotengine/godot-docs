@@ -55,6 +55,8 @@ Properties
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
    | :ref:`bool<class_bool>`                                                                 | :ref:`reset_on_save<class_AnimationMixer_property_reset_on_save>`                   | ``true``           |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
+   | :ref:`bool<class_bool>`                                                                 | :ref:`root_motion_local<class_AnimationMixer_property_root_motion_local>`           |                    |
+   +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
    | :ref:`NodePath<class_NodePath>`                                                         | :ref:`root_motion_track<class_AnimationMixer_property_root_motion_track>`           | ``NodePath("")``   |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+--------------------+
    | :ref:`NodePath<class_NodePath>`                                                         | :ref:`root_node<class_AnimationMixer_property_root_node>`                           | ``NodePath("..")`` |
@@ -474,6 +476,23 @@ This makes it more convenient to preview and edit animations in the editor, as c
 
 ----
 
+.. _class_AnimationMixer_property_root_motion_local:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **root_motion_local** :ref:`🔗<class_AnimationMixer_property_root_motion_local>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_root_motion_local**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_root_motion_local**\ (\ )
+
+If ``true``, :ref:`get_root_motion_position<class_AnimationMixer_method_get_root_motion_position>` value is extracted as a local translation value before blending. In other words, it is treated like the translation is done after the rotation.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationMixer_property_root_motion_track:
 
 .. rst-class:: classref-property
@@ -684,13 +703,13 @@ The most basic example is applying position to :ref:`CharacterBody3D<class_Chara
 
  .. code-tab:: gdscript
 
-    var current_rotation: Quaternion
+    var current_rotation
     
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             current_rotation = get_quaternion()
             state_machine.travel("Animate")
-        var velocity: Vector3 = current_rotation * animation_tree.get_root_motion_position() / delta
+        var velocity = current_rotation * animation_tree.get_root_motion_position() / delta
         set_velocity(velocity)
         move_and_slide()
 
@@ -707,7 +726,26 @@ By using this in combination with :ref:`get_root_motion_rotation_accumulator<cla
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
         set_quaternion(get_quaternion() * animation_tree.get_root_motion_rotation())
-        var velocity: Vector3 = (animation_tree.get_root_motion_rotation_accumulator().inverse() * get_quaternion()) * animation_tree.get_root_motion_position() / delta
+        var velocity = (animation_tree.get_root_motion_rotation_accumulator().inverse() * get_quaternion()) * animation_tree.get_root_motion_position() / delta
+        set_velocity(velocity)
+        move_and_slide()
+
+
+
+If :ref:`root_motion_local<class_AnimationMixer_property_root_motion_local>` is ``true``, return the pre-multiplied translation value with the inverted rotation.
+
+In this case, the code can be written as follows:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _process(delta):
+        if Input.is_action_just_pressed("animate"):
+            state_machine.travel("Animate")
+        set_quaternion(get_quaternion() * animation_tree.get_root_motion_rotation())
+        var velocity = get_quaternion() * animation_tree.get_root_motion_position() / delta
         set_velocity(velocity)
         move_and_slide()
 
@@ -734,13 +772,13 @@ For example, if an animation with only one key ``Vector3(0, 0, 0)`` is played in
 
  .. code-tab:: gdscript
 
-    var prev_root_motion_position_accumulator: Vector3
+    var prev_root_motion_position_accumulator
     
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
-        var current_root_motion_position_accumulator: Vector3 = animation_tree.get_root_motion_position_accumulator()
-        var difference: Vector3 = current_root_motion_position_accumulator - prev_root_motion_position_accumulator
+        var current_root_motion_position_accumulator = animation_tree.get_root_motion_position_accumulator()
+        var difference = current_root_motion_position_accumulator - prev_root_motion_position_accumulator
         prev_root_motion_position_accumulator = current_root_motion_position_accumulator
         transform.origin += difference
 
@@ -801,13 +839,13 @@ For example, if an animation with only one key ``Quaternion(0, 0, 0, 1)`` is pla
 
  .. code-tab:: gdscript
 
-    var prev_root_motion_rotation_accumulator: Quaternion
+    var prev_root_motion_rotation_accumulator
     
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
-        var current_root_motion_rotation_accumulator: Quaternion = animation_tree.get_root_motion_rotation_accumulator()
-        var difference: Quaternion = prev_root_motion_rotation_accumulator.inverse() * current_root_motion_rotation_accumulator
+        var current_root_motion_rotation_accumulator = animation_tree.get_root_motion_rotation_accumulator()
+        var difference = prev_root_motion_rotation_accumulator.inverse() * current_root_motion_rotation_accumulator
         prev_root_motion_rotation_accumulator = current_root_motion_rotation_accumulator
         transform.basis *=  Basis(difference)
 
@@ -838,8 +876,8 @@ The most basic example is applying scale to :ref:`CharacterBody3D<class_Characte
 
  .. code-tab:: gdscript
 
-    var current_scale: Vector3 = Vector3(1, 1, 1)
-    var scale_accum: Vector3 = Vector3(1, 1, 1)
+    var current_scale = Vector3(1, 1, 1)
+    var scale_accum = Vector3(1, 1, 1)
     
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
@@ -870,13 +908,13 @@ For example, if an animation with only one key ``Vector3(1, 1, 1)`` is played in
 
  .. code-tab:: gdscript
 
-    var prev_root_motion_scale_accumulator: Vector3
+    var prev_root_motion_scale_accumulator
     
     func _process(delta):
         if Input.is_action_just_pressed("animate"):
             state_machine.travel("Animate")
-        var current_root_motion_scale_accumulator: Vector3 = animation_tree.get_root_motion_scale_accumulator()
-        var difference: Vector3 = current_root_motion_scale_accumulator - prev_root_motion_scale_accumulator
+        var current_root_motion_scale_accumulator = animation_tree.get_root_motion_scale_accumulator()
+        var difference = current_root_motion_scale_accumulator - prev_root_motion_scale_accumulator
         prev_root_motion_scale_accumulator = current_root_motion_scale_accumulator
         transform.basis = transform.basis.scaled(difference)
 

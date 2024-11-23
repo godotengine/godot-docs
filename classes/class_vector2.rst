@@ -232,24 +232,39 @@ Operators
 
 .. rst-class:: classref-descriptions-group
 
-Constants
----------
+Enumerations
+------------
+
+.. _enum_Vector2_Axis:
+
+.. rst-class:: classref-enumeration
+
+enum **Axis**: :ref:`🔗<enum_Vector2_Axis>`
 
 .. _class_Vector2_constant_AXIS_X:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**AXIS_X** = ``0`` :ref:`🔗<class_Vector2_constant_AXIS_X>`
+:ref:`Axis<enum_Vector2_Axis>` **AXIS_X** = ``0``
 
 Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector2_method_max_axis_index>` and :ref:`min_axis_index<class_Vector2_method_min_axis_index>`.
 
 .. _class_Vector2_constant_AXIS_Y:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**AXIS_Y** = ``1`` :ref:`🔗<class_Vector2_constant_AXIS_Y>`
+:ref:`Axis<enum_Vector2_Axis>` **AXIS_Y** = ``1``
 
 Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector2_method_max_axis_index>` and :ref:`min_axis_index<class_Vector2_method_min_axis_index>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Constants
+---------
 
 .. _class_Vector2_constant_ZERO:
 

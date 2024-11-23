@@ -42,7 +42,7 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                       | :ref:`alpha_scissor_threshold<class_SpriteBase3D_property_alpha_scissor_threshold>` | ``0.5``               |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
-   | Vector3.Axis                                                    | :ref:`axis<class_SpriteBase3D_property_axis>`                                       | ``2``                 |
+   | :ref:`Axis<enum_Vector3_Axis>`                                  | :ref:`axis<class_SpriteBase3D_property_axis>`                                       | ``2``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
    | :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`         | :ref:`billboard<class_SpriteBase3D_property_billboard>`                             | ``0``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
@@ -294,12 +294,12 @@ Threshold at which the alpha scissor will discard values.
 
 .. rst-class:: classref-property
 
-Vector3.Axis **axis** = ``2`` :ref:`🔗<class_SpriteBase3D_property_axis>`
+:ref:`Axis<enum_Vector3_Axis>` **axis** = ``2`` :ref:`🔗<class_SpriteBase3D_property_axis>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_axis**\ (\ value\: Vector3.Axis\ )
-- Vector3.Axis **get_axis**\ (\ )
+- |void| **set_axis**\ (\ value\: :ref:`Axis<enum_Vector3_Axis>`\ )
+- :ref:`Axis<enum_Vector3_Axis>` **get_axis**\ (\ )
 
 The direction in which the front of the texture faces.
 
