@@ -1029,6 +1029,12 @@ Global uniforms are especially useful for environmental effects that affect many
 objects in a scene, like having foliage bend when the player is nearby, or having
 objects move with the wind.
 
+.. note:: *Global uniforms* are not the same as *global scope* for an individual
+    shader. While regular uniforms are defined outside of shader functions and are
+    therefore the global scope of the shader, global uniforms are global to all
+    shaders in the entire project (but within each shader, are also in the global
+    scope).
+
 To create a global uniform, open the **Project Settings** then go to the
 **Shader Globals** tab. Specify a name for the uniform (case-sensitive) and a
 type, then click **Add** in the top-right corner of the dialog. You can then
