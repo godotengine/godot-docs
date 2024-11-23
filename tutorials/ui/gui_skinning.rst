@@ -86,6 +86,12 @@ a unique name and must be one of the following data types:
    not limited to the :ref:`Panel <class_Panel>` control, as styleboxes
    are used by many controls for their backgrounds and overlays.
 
+   Different controls will apply StyleBoxes in a different manner. Most notably,
+   ``focus`` styleboxes are drawn as an *overlay* to other styleboxes (such as
+   ``normal`` or ``pressed``) to allow the base stylebox to remain visible.
+   This means the focus stylebox should be designed as an outline or translucent
+   box, so that its background can remain visible.
+
 Theme types
 ~~~~~~~~~~~
 
