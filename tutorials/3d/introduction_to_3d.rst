@@ -19,10 +19,9 @@ which are almost identical to their 2D counterparts.
    `Github repository <https://github.com/godotengine/tps-demo>`__ or the 
    :ref:`Asset Library <doc_project_manager_downloading_demos>`.
 
-In 3D, math is a little more complex than in 2D, so also checking the
-:ref:`doc_vector_math` entry in the wiki (which was especially created for game
-developers, not mathematicians or engineers) will help pave the way for you
-to develop 3D games efficiently.
+In 3D, math is a little more complex than in 2D. For an introduction to the
+relevant math written for game developers, not mathemeticians or engineers,
+check out :ref:`doc_vector_math` and :ref:`doc_using_transforms`.
 
 3D workspace
 ~~~~~~~~~~~~
