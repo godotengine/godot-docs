@@ -503,6 +503,11 @@ currently focused on the script editor.
 
 Scripts that extend EditorScript must be ``@tool`` scripts to function.
 
+.. note::
+
+    If you are using an external editor, open the script inside the Godot
+    script editor so you can execute the function.
+
 .. danger::
 
     EditorScripts have no undo/redo functionality, so **make sure to save your
