@@ -467,6 +467,8 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+------------------------------------------------------------------------+
 | in vec3 **NORMAL**                | Normal vector, in view space.                                          |
 +-----------------------------------+------------------------------------------------------------------------+
+| in vec2 **SCREEN_UV**             | Screen UV coordinate for current pixel.                                |
++-----------------------------------+------------------------------------------------------------------------+
 | in vec2 **UV**                    | UV that comes from the ``vertex()`` function.                          |
 +-----------------------------------+------------------------------------------------------------------------+
 | in vec2 **UV2**                   | UV2 that comes from the ``vertex()`` function.                         |
