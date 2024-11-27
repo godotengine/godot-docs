@@ -125,6 +125,8 @@ There is a list of generic shadow parameters, each also has a specific function:
   moving objects. The downside of increasing shadow blur is that it will make
   the grainy pattern used for filtering more noticeable.
   See also :ref:`doc_lights_and_shadows_shadow_filter_mode`.
+- **Caster Mask:** Shadows are only cast by objects in these layers. Note that
+  this mask does not affect which objects shadows are cast *onto*.
 
 .. image:: img/lights_and_shadows_blur.webp
 
