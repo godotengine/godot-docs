@@ -32,7 +32,7 @@ GLSL ES 3.0 specification.
     | gsampler3D      | sampler3D, isampler3D, or uSampler3D                | gsampler3D               |
     +-----------------+-----------------------------------------------------+--------------------------+
 
-    If  any of these are specified for multiple parameters, they must all be the same type unless otherwise noted.
+    If any of these are specified for multiple parameters, they must all be the same type unless otherwise noted.
 
 .. _shading_componentwise:
 
@@ -136,13 +136,14 @@ Trigonometric function descriptions
 
     |componentwise|
 
-    Converts a quantity specified in degrees into radians.
+    Converts a quantity specified in degrees into radians, with the formula
+    ``degrees * (PI / 180)``.
 
     :param degrees:
         The quantity, in degrees, to be converted to radians.
 
     :return:
-        ``degrees * (PI / 180)``
+        The input ``degrees`` converted to radians.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/radians.xhtml
 
@@ -159,13 +160,14 @@ Trigonometric function descriptions
 
     |componentwise|
 
-    Converts a quantity specified in radians into degrees.
+    Converts a quantity specified in radians into degrees, with the formula
+    ``radians * (180 / PI)``
 
     :param radians:
         The quantity, in radians, to be converted to degrees.
 
     :return:
-        ``radians * (180 / PI)``
+        The input ``radians`` converted to degrees.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/degrees.xhtml
 
@@ -182,7 +184,7 @@ Trigonometric function descriptions
 
     |componentwise|
 
-    Return the trigonometric sine of ``angle``.
+    Returns the trigonometric sine of ``angle``.
 
     :param angle:
         The quantity, in radians, of which to return the sine.
@@ -205,7 +207,7 @@ Trigonometric function descriptions
 
     |componentwise|
 
-    Return the trigonometric cosine of ``angle``.
+    Returns the trigonometric cosine of ``angle``.
 
     :param angle:
         The quantity, in radians, of which to return the cosine.
@@ -228,7 +230,7 @@ Trigonometric function descriptions
 
     |componentwise|
 
-    Return the trigonometric tangent of ``angle``.
+    Returns the trigonometric tangent of ``angle``.
 
     :param angle:
         The quantity, in radians, of which to return the tangent.
@@ -251,15 +253,14 @@ Trigonometric function descriptions
 
     |componentwise|
 
-    Arcsine, or inverse sine.
-    Calculates the angle whose sine is ``x``.
+    Arc sine, or inverse sine.
+    Calculates the angle whose sine is ``x`` and is in the range ``[-PI/2, PI/2]``.
     The result is undefined if ``x < -1`` or ``x > 1``.
 
     :param x:
         The value whose arc sine to return.
     :return:
-        The angle whose trigonometric sine is ``x`` and is
-        in the range ``[-PI/2, PI/2]``.
+        The angle whose trigonometric sine is ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/asin.xhtml
 
@@ -276,17 +277,17 @@ Trigonometric function descriptions
 
     |componentwise|
 
-    Arccosine, or inverse cosine.
-    Calculates the angle whose cosine is ``x``.
+    Arc cosine, or inverse cosine.
+    Calculates the angle whose cosine is ``x`` and is in the range ``[0, PI]``.
+
     The result is undefined if ``x < -1`` or ``x > 1``.
 
     :param x:
         The value whose arc cosine to return.
 
     :return:
-        The angle whose trigonometric cosine is ``x`` and
-        is in the range ``[0, PI]``.
-
+        The angle whose trigonometric cosine is ``x``.
+        
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/acos.xhtml
 
 .. rst-class:: classref-item-separator
@@ -302,7 +303,7 @@ Trigonometric function descriptions
 
     |componentwise|
 
-    Calculate the arc tangent given a tangent value of ``y/x``.
+    Calculates the arc tangent given a tangent value of ``y/x``.
 
     .. Note::
         Because of the sign ambiguity, the function cannot determine with certainty in
@@ -331,9 +332,11 @@ Trigonometric function descriptions
 
     |componentwise|
 
-    Calculate the arc tangent given a numerator and denominator. The signs of
+    Calculates the arc tangent given a numerator and denominator. The signs of
     ``y`` and ``x`` are used to determine the quadrant that the angle lies in.
     The result is undefined if ``x == 0``.
+
+    Equivalent to :ref:`atan2() <class_@GlobalScope_method_atan2>` in GDScript.
 
     :param y:
         The numerator of the fraction whose arc tangent to return.
@@ -477,7 +480,7 @@ Trigonometric function descriptions
     |componentwise|
 
     Calculates the arc hyperbolic tangent of ``x``, or the inverse of ``tanh``.
-    The result is undefined if ``|x| > 1``.
+    The result is undefined if ``abs(x) > 1``.
 
     :param x:
         The value whose arc hyperbolic tangent to return.
@@ -518,7 +521,7 @@ Exponential and math functions
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
     | |vec_type|          | :ref:`exp2<shader_func_exp2>`\ (\ |vec_type| x)                                                 | Base-2 exponential.                                             |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | |vec_type|          | :ref:`log<shader_func_log>`\ (\ |vec_type| x)                                                   | Natural logarithm.                                              |
+    | |vec_type|          | :ref:`log<shader_func_log>`\ (\ |vec_type| x)                                                   | Natural (base-e) logarithm.                                     |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
     | |vec_type|          | :ref:`log2<shader_func_log2>`\ (\ |vec_type| x)                                                 | Base-2 logarithm.                                               |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -529,19 +532,21 @@ Exponential and math functions
     | | |vec_type|        | | :ref:`abs<shader_func_abs>`\ (\ |vec_type| x)                                                 | Absolute value (returns positive value if negative).            |
     | | |vec_int_type|    | | :ref:`abs<shader_func_abs>`\ (\ |vec_int_type| x)                                             |                                                                 |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | |vec_type|          | :ref:`sign<shader_func_sign>`\ (\ |vec_type| x)                                                 | returns ``1.0`` if positive, ``-1.0`` if negative,              |
+    | |vec_type|          | :ref:`sign<shader_func_sign>`\ (\ |vec_type| x)                                                 | Returns ``1.0`` if positive, ``-1.0`` if negative,              |
+    |                     |                                                                                                 | ``0.0`` otherwise.                                              |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | |vec_int_type|      | :ref:`sign<shader_func_sign>`\ (\ |vec_int_type| x)                                             | returns ``1`` if positive, ``-1`` if negative,                  |
+    | |vec_int_type|      | :ref:`sign<shader_func_sign>`\ (\ |vec_int_type| x)                                             | Returns ``1`` if positive, ``-1`` if negative,                  |
+    |                     |                                                                                                 | ``0`` otherwise.                                                |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | |vec_type|          | :ref:`floor<shader_func_floor>`\ (\ |vec_type| x)                                               | Round to the integer below.                                     |
+    | |vec_type|          | :ref:`floor<shader_func_floor>`\ (\ |vec_type| x)                                               | Rounds to the integer below.                                    |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | |vec_type|          | :ref:`round<shader_func_round>`\ (\ |vec_type| x)                                               | Round to the nearest integer.                                   |
+    | |vec_type|          | :ref:`round<shader_func_round>`\ (\ |vec_type| x)                                               | Rounds to the nearest integer.                                  |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | |vec_type|          | :ref:`roundEven<shader_func_roundEven>`\ (\ |vec_type| x)                                       | Round to the nearest even integer.                              |
+    | |vec_type|          | :ref:`roundEven<shader_func_roundEven>`\ (\ |vec_type| x)                                       | Rounds to the nearest even integer.                             |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
     | |vec_type|          | :ref:`trunc<shader_func_trunc>`\ (\ |vec_type| x)                                               | Truncation.                                                     |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | |vec_type|          | :ref:`ceil<shader_func_ceil>`\ (\ |vec_type| x)                                                 | Round to the integer above.                                     |
+    | |vec_type|          | :ref:`ceil<shader_func_ceil>`\ (\ |vec_type| x)                                                 | Rounds to the integer above.                                    |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
     | |vec_type|          | :ref:`fract<shader_func_fract>`\ (\ |vec_type| x)                                               | Fractional (returns ``x - floor(x)``).                          |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -564,7 +569,7 @@ Exponential and math functions
     | | |vec_int_type|    | | :ref:`max<shader_func_max>`\ (\ |vec_int_type| a, |vec_int_type| b)                           |                                                                 |
     | | |vec_int_type|    | | :ref:`max<shader_func_max>`\ (\ |vec_int_type| a, int b)                                      |                                                                 |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | | |vec_type|        | | :ref:`clamp<shader_func_clamp>`\ (\ |vec_type| x, |vec_type| min, |vec_type| max)             | Clamp ``x`` between ``min`` and ``max`` (inclusive).            |
+    | | |vec_type|        | | :ref:`clamp<shader_func_clamp>`\ (\ |vec_type| x, |vec_type| min, |vec_type| max)             | Clamps ``x`` between ``min`` and ``max`` (inclusive).           |
     | | |vec_type|        | | :ref:`clamp<shader_func_clamp>`\ (\ |vec_type| x, float min, float max)                       |                                                                 |
     | | |vec_uint_type|   | | :ref:`clamp<shader_func_clamp>`\ (\ |vec_int_type| x, |vec_int_type| min, |vec_int_type| max) |                                                                 |
     | | |vec_uint_type|   | | :ref:`clamp<shader_func_clamp>`\ (\ |vec_int_type| x, float min, float max)                   |                                                                 |
@@ -587,13 +592,13 @@ Exponential and math functions
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
     | |vec_bool_type|     | :ref:`isinf<shader_func_isinf>`\ (\ |vec_type| x)                                               | Returns ``true`` if scalar or vector component is ``INF``.      |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | |vec_int_type|      | :ref:`floatBitsToInt<shader_func_floatBitsToInt>`\ (\ |vec_type| x)                             | Float->Int bit copying, no conversion.                          |
+    | |vec_int_type|      | :ref:`floatBitsToInt<shader_func_floatBitsToInt>`\ (\ |vec_type| x)                             | ``float`` to ``int`` bit copying, no conversion.                |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | |vec_uint_type|     | :ref:`floatBitsToUint<shader_func_floatBitsToUint>`\ (\ |vec_type| x)                           | Float->UInt bit copying, no conversion.                         |
+    | |vec_uint_type|     | :ref:`floatBitsToUint<shader_func_floatBitsToUint>`\ (\ |vec_type| x)                           | ``float`` to ``uint`` bit copying, no conversion.               |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | |vec_type|          | :ref:`intBitsToFloat<shader_func_intBitsToFloat>`\ (\ |vec_int_type| x)                         | Int->Float bit copying, no conversion.                          |
+    | |vec_type|          | :ref:`intBitsToFloat<shader_func_intBitsToFloat>`\ (\ |vec_int_type| x)                         | ``int`` to ``float`` bit copying, no conversion.                |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-    | |vec_type|          | :ref:`uintBitsToFloat<shader_func_uintBitsToFloat>`\ (\ |vec_uint_type| x)                      | UInt->Float bit copying, no conversion.                         |
+    | |vec_type|          | :ref:`uintBitsToFloat<shader_func_uintBitsToFloat>`\ (\ |vec_uint_type| x)                      | ``uint`` to ``float`` bit copying, no conversion.               |
     +---------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 
@@ -639,13 +644,15 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    Return the natural exponentiation of the parameter.
+    Raises ``e`` to the power of ``x``, or the the natural exponentiation.
+
+    Equivalent to ``pow(e, x)``.
 
     :param x:
         The value to exponentiate.
 
     :return:
-        The natural exponentiation of ``x``. i.e., e\ :sup:`x`
+        The natural exponentiation of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp.xhtml
 
@@ -662,13 +669,16 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    Return ``2`` raised to the power of ``x``.
+    Raises ``2`` to the power of ``x``.
+
+    Equivalent to ``pow(2.0, x)``.
+
 
     :param x:
         The value of the power to which ``2`` will be raised.
 
     :return:
-        ``2`` raised to the power of x, i.e., 2\ :sup:`x`
+        ``2`` raised to the power of x.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/exp2.xhtml
 
@@ -685,7 +695,7 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    Return the natural logarithm of ``x``, i.e. the value y which satisfies x=e\ :sup:`y`.
+    Returns the natural logarithm of ``x``, i.e. the value ``y`` which satisfies ``x == pow(e, y)``.
     The result is undefined if ``x <= 0``.
 
     :param x:
@@ -709,14 +719,14 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    Return the base 2 logarithm of ``x``.
+    Returns the base-2 logarithm of ``x``, i.e. the value ``y`` which satisfies ``x == pow(2, y)``.
     The result is undefined if ``x <= 0``.
 
     :param x:
-        The value of which to take the base 2 logarithm.
+        The value of which to take the base-2 logarithm.
 
     :return:
-        The base 2 logarithm of ``x``, i.e. the value y which satisfies x=2\ :sup:`y`
+        The base-2 logarithm of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/log2.xhtml
 
@@ -757,7 +767,7 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    Returns the inverse of the square root of ``x``.
+    Returns the inverse of the square root of ``x``, or ``1.0 / sqrt(x)``.
     The result is undefined if ``x <= 0``.
 
     :param x:
@@ -818,7 +828,7 @@ Exponential and math function descriptions
         The value from which to extract the sign.
 
     :return:
-        The sign of ``x``, either ``1``, ``-1`` or ``0``.
+        The sign of ``x``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/sign.xhtml
 
@@ -838,7 +848,7 @@ Exponential and math function descriptions
     Returns a value equal to the nearest integer that is less than or equal to ``x``.
 
     :param x:
-        The value to evaluate.
+        The value to floor.
 
     :return:
         The nearest integer that is less than or equal to ``x``.
@@ -1013,16 +1023,16 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    Separates a floating point value ``x`` into its integer and fractional parts.
+    Separates a floating-point value ``x`` into its integer and fractional parts.
 
     The fractional part of the number is returned from the function.
-    The integer part (as a floating point quantity) is returned in the output parameter ``i``.
+    The integer part (as a floating-point quantity) is returned in the output parameter ``i``.
 
     :param x:
         The value to separate.
 
     :param out i:
-        A variable that receives the integer part of the argument.
+        A variable that receives the integer part of ``x``.
 
     :return:
         The fractional part of the number.
@@ -1138,23 +1148,23 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **clamp**\ (\ |vec_type| x, float min, float max)
+|vec_type| **clamp**\ (\ |vec_type| x, float minVal, float maxVal)
 
 .. rst-class:: classref-method
 
-|vec_type| **clamp**\ (\ |vec_type| x, float min, float max)
+|vec_type| **clamp**\ (\ |vec_type| x, float minVal, float maxVal)
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **clamp**\ (\ |vec_int_type| x, float min, float max)
+|vec_uint_type| **clamp**\ (\ |vec_int_type| x, float minVal, float maxVal)
 
 .. rst-class:: classref-method
 
-|vec_int_type| **clamp**\ (\ |vec_type| x, |vec_type| min, |vec_type| max)
+|vec_int_type| **clamp**\ (\ |vec_type| x, |vec_type| minVal, |vec_type| maxVal)
 
 .. rst-class:: classref-method
 
-|vec_int_type| **clamp**\ (\ |vec_type| x, float min, float max)
+|vec_int_type| **clamp**\ (\ |vec_type| x, float minVal, float maxVal)
 
     |componentwise|
 
@@ -1197,6 +1207,8 @@ Exponential and math function descriptions
 
     Computed as ``a * (1 - c) + b * c``.
 
+    Equivalent to :ref:`lerp() <class_@GlobalScope_method_lerp>` in GDScript.
+
     :param a:
         The start of the range in which to interpolate.
 
@@ -1220,15 +1232,13 @@ Exponential and math function descriptions
 
 |vec_type| **mix**\ (\ |vec_type| a, |vec_type| b, |vec_bool_type| c)
 
-    |componentwise|
-
     Selects either value ``a`` or value ``b`` based on the value of ``c``.
     For a component of ``c`` that is false, the corresponding component of ``a`` is returned.
     For a component of ``c`` that is true, the corresponding component of ``b`` is returned.
     Components of ``a`` and ``b`` that are not selected are allowed to be invalid floating-point values and will have no effect on the results.
 
-    If ``a``, ``b``, and ``c`` are vector types the operation is performed component-wise.
-    ie. ``mix(vec2(42, 314), vec2(9.8, 6e23), vec_bool_type(true, false)))`` will return ``vec2(9.8, 314)``.
+    If ``a``, ``b``, and ``c`` are vector types the operation is performed :ref:`component-wise <shading_componentwise>`.
+    ie. ``mix(vec2(42, 314), vec2(9.8, 6e23), bvec2(true, false)))`` will return ``vec2(9.8, 314)``.
 
     :param a:
         Value returned when ``c`` is false.
@@ -1372,8 +1382,8 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    For each element i of the result, returns true if x[i] is positive
-    or negative floating point NaN (Not a Number) and false otherwise.
+    For each element i of the result, returns ``true`` if x[i] is positive
+    or negative floating-point NaN (Not a Number) and false otherwise.
 
     :param x:
         The value to test for NaN.
@@ -1396,8 +1406,8 @@ Exponential and math function descriptions
 
     |componentwise|
 
-    For each element i of the result, returns true if x[i] is positive or negative
-    floating point infinity and false otherwise.
+    For each element i of the result, returns ``true`` if x[i] is positive or negative
+    floating-point infinity and false otherwise.
 
     :param x:
         The value to test for infinity.
@@ -1425,7 +1435,7 @@ Exponential and math function descriptions
     The floating-point bit-level representation is preserved.
 
     :param x:
-        The value whose floating point encoding to return.
+        The value whose floating-point encoding to return.
 
     :return:
         The floating-point encoding of ``x``.
@@ -1450,12 +1460,12 @@ Exponential and math function descriptions
     The floating-point bit-level representation is preserved.
 
     :param x:
-        The value whose floating point encoding to return.
+        The value whose floating-point encoding to return.
 
     :return:
         The floating-point encoding of ``x``.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToUint.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/floatBitsToInt.xhtml
 
 .. rst-class:: classref-item-separator
 
@@ -1474,14 +1484,14 @@ Exponential and math function descriptions
 
     If the encoding of a ``NaN`` is passed in ``x``, it will not signal and the resulting value will be undefined.
 
-    If the encoding of a floating point infinity is passed in parameter ``x``, the resulting floating-point value is
-    the corresponding (positive or negative) floating point infinity.
+    If the encoding of a floating-point infinity is passed in parameter ``x``, the resulting floating-point value is
+    the corresponding (positive or negative) floating-point infinity.
 
     :param x:
-        The bit encoding to return as a floating point value.
+        The bit encoding to return as a floating-point value.
 
     :return:
-        A floating point value
+        A floating-point value.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/intBitsToFloat.xhtml
 
@@ -1502,16 +1512,16 @@ Exponential and math function descriptions
 
     If the encoding of a ``NaN`` is passed in ``x``, it will not signal and the resulting value will be undefined.
 
-    If the encoding of a floating point infinity is passed in parameter ``x``, the resulting floating-point value is
-    the corresponding (positive or negative) floating point infinity.
+    If the encoding of a floating-point infinity is passed in parameter ``x``, the resulting floating-point value is
+    the corresponding (positive or negative) floating-point infinity.
 
     :param x:
-        The bit encoding to return as a floating point value.
+        The bit encoding to return as a floating-point value.
 
     :return:
-        A floating point value.
+        A floating-point value.
 
-    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/uintBitsToFloat.xhtml
+    https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/intBitsToFloat.xhtml
 
 
 .. rst-class:: classref-section-separator
@@ -1613,10 +1623,10 @@ float **distance**\ (\ |vec_type| a, |vec_type| b)
     i.e., ``length(b - a);``
 
     :param a:
-        The first point
+        The first point.
 
     :param b:
-        The second point
+        The second point.
 
     :return:
         The scalar distance between the points
@@ -1667,13 +1677,13 @@ vec3 **cross**\ (\ vec3 a, vec3 b)
               a.x * b.z - b.x * a.y)
 
     :param a:
-        The first vector
+        The first vector.
 
     :param b:
-        The second vector
+        The second vector.
 
     :return:
-        The cross product
+        The cross product of ``a`` and ``b``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/cross.xhtml
 
@@ -1688,7 +1698,7 @@ vec3 **cross**\ (\ vec3 a, vec3 b)
 
 |vec_type| **normalize**\ (\ |vec_type| x)
 
-    Returns a vector with the same direction as x but with length 1.
+    Returns a vector with the same direction as ``x`` but with length ``1.0``.
 
     :param x:
         The vector to normalize.
@@ -1742,7 +1752,7 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
 
     For a given incident vector ``I``, surface normal ``N`` and ratio of indices of refraction, ``eta``, refract returns the refraction vector, ``R``.
 
-    R is calculated as::
+    ``R`` is calculated as::
 
         k = 1.0 - eta * eta * (1.0 - dot(N, I) * dot(N, I));
         if (k < 0.0)
@@ -1778,7 +1788,7 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
 
 |vec_type| **faceforward**\ (\ |vec_type| N, |vec_type| I, |vec_type| Nref)
 
-    Return a vector pointing in the same direction as another.
+    Returns a vector pointing in the same direction as another.
 
     Orients a vector to point away from a surface as defined by its normal.
     If ``dot(Nref, I) < 0`` faceforward returns ``N``, otherwise it returns ``-N``.
@@ -1808,7 +1818,7 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
 
 |mat_type| **matrixCompMult**\ (\ |mat_type| x, |mat_type| y)
 
-    Perform a component-wise multiplication of two matrices.
+    Perform a :ref:`component-wise <shading_componentwise>` multiplication of two matrices.
 
     Performs a component-wise multiplication of two matrices, yielding a result
     matrix where each component, ``result[i][j]`` is computed as the scalar
@@ -1976,16 +1986,16 @@ Comparison function descriptions
 
 |vec_bool_type| **lessThan**\ (\ |vec_type| x, |vec_type| y)
 
-    Perform a :ref:`component-wise<shading_componentwise>` less-than comparison of two vectors.
+    Performs a :ref:`component-wise<shading_componentwise>` less-than comparison of two vectors.
 
     :param x:
-        The first vector for comparison.
+        The first vector to compare.
 
     :param y:
-        The first vector for comparison.
+        The second vector to compare.
 
     :return:
-        A boolean vector in which each element i is computed as ``x[i] < y[i]``.
+        A boolean vector in which each element ``i`` is computed as ``x[i] < y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThan.xhtml
 
@@ -2002,16 +2012,16 @@ Comparison function descriptions
 
 |vec_bool_type| **greaterThan**\ (\ |vec_type| x, |vec_type| y)
 
-    Perform a :ref:`component-wise<shading_componentwise>` greater-than comparison of two vectors.
+    Performs a :ref:`component-wise<shading_componentwise>` greater-than comparison of two vectors.
 
     :param x:
-        The first vector for comparison.
+        The first vector to compare.
 
     :param y:
-        The first vector for comparison.
+        The second vector to compare.
 
     :return:
-        A boolean vector in which each element i is computed as ``x[i] > y[i]``.
+        A boolean vector in which each element ``i`` is computed as ``x[i] > y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThan.xhtml
 
@@ -2028,16 +2038,16 @@ Comparison function descriptions
 
 |vec_bool_type| **lessThanEqual**\ (\ |vec_type| x, |vec_type| y)
 
-    Perform a :ref:`component-wise<shading_componentwise>` less-than-or-equal comparison of two vectors.
+    Performs a :ref:`component-wise<shading_componentwise>` less-than-or-equal comparison of two vectors.
 
     :param x:
-        The first vector for comparison.
+        The first vector to compare.
 
     :param y:
-        The first vector for comparison.
+        The second vector to compare.
 
     :return:
-        A boolean vector in which each element i is computed as ``x[i] <= y[i]``.
+        A boolean vector in which each element ``i`` is computed as ``x[i] <= y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/lessThanEqual.xhtml
 
@@ -2054,16 +2064,16 @@ Comparison function descriptions
 
 |vec_bool_type| **greaterThanEqual**\ (\ |vec_type| x, |vec_type| y)
 
-    Perform a :ref:`component-wise<shading_componentwise>` greater-than-or-equal comparison of two vectors.
+    Performs a :ref:`component-wise<shading_componentwise>` greater-than-or-equal comparison of two vectors.
 
     :param x:
-        The first vector for comparison.
+        The first vector to compare.
 
     :param y:
-        The first vector for comparison.
+        The second vector to compare.
 
     :return:
-        A boolean vector in which each element i is computed as ``x[i] >= y[i]``.
+        A boolean vector in which each element ``i`` is computed as ``x[i] >= y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/greaterThanEqual.xhtml
 
@@ -2080,16 +2090,16 @@ Comparison function descriptions
 
 |vec_bool_type| **equal**\ (\ |vec_type| x, |vec_type| y)
 
-    Perform a :ref:`component-wise<shading_componentwise>` equal-to comparison of two vectors.
+    Performs a :ref:`component-wise<shading_componentwise>` equal-to comparison of two vectors.
 
     :param x:
-        The first vector for comparison.
+        The first vector to compare.
 
     :param y:
-        The first vector for comparison.
+        The second vector to compare.
 
     :return:
-        A boolean vector in which each element i is computed as ``x[i] == y[i]``.
+        A boolean vector in which each element ``i`` is computed as ``x[i] == y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/equal.xhtml
 
@@ -2106,7 +2116,7 @@ Comparison function descriptions
 
 |vec_bool_type| **notEqual**\ (\ |vec_type| x, |vec_type| y)
 
-    Perform a :ref:`component-wise<shading_componentwise>` not-equal-to comparison of two vectors.
+    Performs a :ref:`component-wise<shading_componentwise>` not-equal-to comparison of two vectors.
 
     :param x:
         The first vector for comparison.
@@ -2115,7 +2125,7 @@ Comparison function descriptions
         The second vector for comparison.
 
     :return:
-        A boolean vector in which each element i is computed as ``x[i] != y[i]``.
+        A boolean vector in which each element ``i`` is computed as ``x[i] != y[i]``.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/notEqual.xhtml
 
@@ -2132,7 +2142,7 @@ Comparison function descriptions
 
 bool **any**\ (\ |vec_bool_type| x)
 
-    Check whether any element of a boolean vector is true.
+    Returns ``true`` if any element of a boolean vector is ``true``, ``false`` otherwise.
 
     Functionally equivalent to::
 
@@ -2166,7 +2176,7 @@ bool **any**\ (\ |vec_bool_type| x)
 
 bool **all**\ (\ |vec_bool_type| x)
 
-    Check whether all elements of a boolean vector are true.
+    Returns ``true`` if all elements of a boolean vector are ``true``, ``false`` otherwise.
 
     Functionally equivalent to::
 
@@ -2185,7 +2195,7 @@ bool **all**\ (\ |vec_bool_type| x)
         The vector to be tested for truth.
 
     :return:
-        True if all elements of x are true and false otherwise.
+        ``true`` if all elements of ``x`` are ``true`` and ``false`` otherwise.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/all.xhtml
 
@@ -2250,18 +2260,18 @@ Texture functions
     | | int            | | :ref:`textureQueryLevels<shader_func_textureQueryLevels>`\ (\ |gsampler3D| s)                         |                                                                     |
     | | int            | | :ref:`textureQueryLevels<shader_func_textureQueryLevels>`\ (\ samplerCube s)                          |                                                                     |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-    | | |gvec4_type|   | | :ref:`texture<shader_func_texture>`\ (\ |gsampler2D| s, vec2 p [, float bias] )                       | Perform a texture read.                                             |
+    | | |gvec4_type|   | | :ref:`texture<shader_func_texture>`\ (\ |gsampler2D| s, vec2 p [, float bias] )                       | Performs a texture read.                                            |
     | | |gvec4_type|   | | :ref:`texture<shader_func_texture>`\ (\ |gsampler2DArray| s, vec3 p [, float bias] )                  |                                                                     |
     | | |gvec4_type|   | | :ref:`texture<shader_func_texture>`\ (\ |gsampler3D| s, vec3 p [, float bias] )                       |                                                                     |
     | | vec4           | | :ref:`texture<shader_func_texture>`\ (\ samplerCube s, vec3 p [, float bias] )                        |                                                                     |
     | | vec4           | | :ref:`texture<shader_func_texture>`\ (\ samplerCubeArray s, vec4 p [, float bias] )                   |                                                                     |
     | | vec4           | | :ref:`texture<shader_func_texture>`\ (\ samplerExternalOES s, vec2 p [, float bias] )                 |                                                                     |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-    | | |gvec4_type|   | | :ref:`textureProj<shader_func_textureProj>`\ (\ |gsampler2D| s, vec3 p [, float bias] )               | Perform a texture read with projection.                             |
+    | | |gvec4_type|   | | :ref:`textureProj<shader_func_textureProj>`\ (\ |gsampler2D| s, vec3 p [, float bias] )               | Performs a texture read with projection.                            |
     | | |gvec4_type|   | | :ref:`textureProj<shader_func_textureProj>`\ (\ |gsampler2D| s, vec4 p [, float bias] )               |                                                                     |
     | | |gvec4_type|   | | :ref:`textureProj<shader_func_textureProj>`\ (\ |gsampler3D| s, vec4 p [, float bias] )               |                                                                     |
     +------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-    | | |gvec4_type|   | | :ref:`textureLod<shader_func_textureLod>`\ (\ |gsampler2D| s, vec2 p, float lod)                      | Perform a texture read at custom mipmap.                            |
+    | | |gvec4_type|   | | :ref:`textureLod<shader_func_textureLod>`\ (\ |gsampler2D| s, vec2 p, float lod)                      | Performs a texture read at custom mipmap.                           |
     | | |gvec4_type|   | | :ref:`textureLod<shader_func_textureLod>`\ (\ |gsampler2DArray| s, vec3 p, float lod)                 |                                                                     |
     | | |gvec4_type|   | | :ref:`textureLod<shader_func_textureLod>`\ (\ |gsampler3D| s, vec3 p, float lod)                      |                                                                     |
     | | vec4           | | :ref:`textureLod<shader_func_textureLod>`\ (\ samplerCube s, vec3 p, float lod)                       |                                                                     |
@@ -2354,9 +2364,9 @@ ivec3 **textureSize**\ (\ |gsampler2DArray| s, int lod)
 
 ivec3 **textureSize**\ (\ |gsampler3D| s, int lod)
 
-    Retrieve the dimensions of a level of a texture.
+    Retrieves the dimensions of a level of a texture.
 
-    Returns the dimensions of level lod (if present) of the texture bound to sampler.
+    Returns the dimensions of level ``lod`` (if present) of the texture bound to sampler.
 
     The components in the return value are filled in, in order, with the width, height and depth
     of the texture. For the array forms, the last component of the return value is
@@ -2369,7 +2379,7 @@ ivec3 **textureSize**\ (\ |gsampler3D| s, int lod)
         The level of the texture for which to retrieve the dimensions.
 
     :return:
-        The dimensions of level lod (if present) of the texture bound to sampler.
+        The dimensions of level ``lod`` (if present) of the texture bound to sampler.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/textureSize.xhtml
 
@@ -2842,14 +2852,16 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
     .. note:: Available only in the fragment shader.
 
-    Return the partial derivative of ``p`` with respect to the window x coordinate using local differencing.
+    Returns the partial derivative of ``p`` with respect to the window x coordinate using local differencing.
 
-    Returns either :ref:`dFdxCoarse<shader_func_dFdxCoarse>` or :ref:`dFdxFine<shader_func_dfdxFine>`. The implementation may choose which calculation to perform based upon factors
+    Returns either :ref:`dFdxCoarse<shader_func_dFdxCoarse>` or :ref:`dFdxFine<shader_func_dfdxFine>`.
+    The implementation may choose which calculation to perform based upon factors
     such as performance or the value of the API ``GL_FRAGMENT_SHADER_DERIVATIVE_HINT`` hint.
 
 
     .. warning::
-        Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
+        Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))``
+        have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
         The expression of which to take the partial derivative.
@@ -2878,19 +2890,23 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
         Available only in the fragment shader.
         Not available when using the Compatibility renderer.
 
-    Return the partial derivative of ``p`` with respect to the window x coordinate.
+    Returns the partial derivative of ``p`` with respect to the window x coordinate.
 
-    Calculates derivatives using local differencing based on the value of ``p`` for the current fragment's neighbors, and will possibly,
-    but not necessarily, include the value for the current fragment. That is, over a given area, the implementation can compute derivatives in fewer unique locations than
-    would be allowed for the corresponding `dFdxFine<shader_func_dfdxFine>`` function.
+    Calculates derivatives using local differencing based on the value of ``p``
+    for the current fragment's neighbors, and will possibly, but not necessarily,
+    include the value for the current fragment. That is, over a given area, the
+    implementation can compute derivatives in fewer unique locations than would
+    be allowed for the corresponding :ref:`dFdxFine<shader_func_dFdxFine>` function.
 
     .. warning::
-        Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
+        Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))``
+        have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
         The expression of which to take the partial derivative.
 
-        .. note:: It is assumed that the expression ``p`` is continuous and therefore expressions evaluated via non-uniform control flow may be undefined.
+        .. note:: It is assumed that the expression ``p`` is continuous and therefore
+            expressions evaluated via non-uniform control flow may be undefined.
 
     :return:
         The partial derivative of ``p``.
@@ -2914,11 +2930,13 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
         Available only in the fragment shader.
         Not available when using the Compatibility renderer.
 
-    Return the partial derivative of ``p`` with respect to the window x coordinate.
+    Returns the partial derivative of ``p`` with respect to the window x coordinate.
 
     Calculates derivatives using local differencing based on the value of ``p`` for the current fragment and its immediate neighbor(s).
 
-    .. warning:: Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
+    .. warning::
+        Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))``
+        have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
         The expression of which to take the partial derivative.
@@ -2943,14 +2961,17 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **dFdy**\ (\ |vec_type| p)
 
-    .. note:: Available only in the fragment shader
+    .. note:: Available only in the fragment shader.
 
-    Return the partial derivative of ``p`` with respect to the window y coordinate using local differencing.
+    Returns the partial derivative of ``p`` with respect to the window y coordinate using local differencing.
 
-    Returns either `dFdyCoarse<shader_func_dFdyCoarse>` or `dFdyFine<shader_func_dfdyFine>`. The implementation may choose which calculation to perform based upon factors
-    such as performance or the value of the API GL_FRAGMENT_SHADER_DERIVATIVE_HINT hint.
+    Returns either :ref:`dFdyCoarse<shader_func_dFdyCoarse>` or :ref:`dFdyFine<shader_func_dfdyFine>`.
+    The implementation may choose which calculation to perform based upon factors
+    such as performance or the value of the API ``GL_FRAGMENT_SHADER_DERIVATIVE_HINT`` hint.
 
-    .. warning:: Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))`` have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
+    .. warning::
+        Expressions that imply higher order derivatives such as ``dFdx(dFdx(n))``
+        have undefined results, as do mixed-order derivatives such as ``dFdx(dFdy(n))``.
 
     :param p:
         The expression of which to take the partial derivative.
@@ -2979,7 +3000,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
         Available only in the fragment shader.
         Not available when using the Compatibility renderer.
 
-    Return the partial derivative of ``p`` with respect to the window y coordinate.
+    Returns the partial derivative of ``p`` with respect to the window y coordinate.
 
     Calculates derivatives using local differencing based on the value of ``p`` for the current fragment's neighbors, and will possibly,
     but not necessarily, include the value for the current fragment. That is, over a given area, the implementation can compute derivatives in fewer unique locations than
@@ -3014,7 +3035,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
         Available only in the fragment shader.
         Not available when using the Compatibility renderer.
 
-    Return the partial derivative of ``p`` with respect to the window y coordinate.
+    Returns the partial derivative of ``p`` with respect to the window y coordinate.
 
     Calculates derivatives using local differencing based on the value of ``p`` for the current fragment and its immediate neighbor(s).
 
@@ -3043,9 +3064,9 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
 |vec_type| **fwidth**\ (\ |vec_type| p)
 
-    Return the sum of the absolute value of derivatives in x and y.
+    Returns the sum of the absolute value of derivatives in x and y.
 
-    Uses local differencing for the input argument p.
+    Uses local differencing for the input argument ``p``.
 
     Equivalent to ``abs(dFdx(p)) + abs(dFdy(p))``.
 
@@ -3074,7 +3095,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
         Available only in the fragment shader.
         Not available when using the Compatibility renderer.
 
-    Return the sum of the absolute value of derivatives in x and y.
+    Returns the sum of the absolute value of derivatives in x and y.
 
     Uses local differencing for the input argument p.
 
@@ -3105,7 +3126,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
         Available only in the fragment shader.
         Not available when using the Compatibility renderer.
 
-    Return the sum of the absolute value of derivatives in x and y.
+    Returns the sum of the absolute value of derivatives in x and y.
 
     Uses local differencing for the input argument p.
 
@@ -3141,8 +3162,10 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 Packing and unpacking functions
 -------------------------------
 
-These functions convert floating point numbers into various sized integers and then pack those integers into a single 32bit unsigned integer.
-The 'unpack' functions perform the opposite operation, returning the original floating point numbers.
+These functions convert floating-point numbers into various sized integers and
+then pack those integers into a single 32bit unsigned integer. The 'unpack'
+functions perform the opposite operation, returning the original
+floating-point numbers.
 
 .. table::
     :class: nowrap-col2
@@ -3176,7 +3199,8 @@ Packing and unpacking function descriptions
 
 uint **packHalf2x16**\ (\ vec2 v)
 
-    Convert two 32-bit floating-point quantities to 16-bit floating point quantities and pack them into a single 32-bit integer.
+    Converts two 32-bit floating-point quantities to 16-bit floating-point
+    quantities and packs them into a single 32-bit integer.
 
     Returns an unsigned integer obtained by converting the components of a two-component floating-point vector to
     the 16-bit floating-point representation found in the OpenGL Specification, and then packing these two
@@ -3184,7 +3208,7 @@ uint **packHalf2x16**\ (\ vec2 v)
     bits of the result; the second component specifies the 16 most-significant bits.
 
     :param v:
-        A vector of two 32-bit floating point values that are to be converted to 16-bit representation and packed into the result.
+        A vector of two 32-bit floating-point values that are to be converted to 16-bit representation and packed into the result.
 
     :return:
         The packed value.
@@ -3206,15 +3230,15 @@ vec2 **unpackHalf2x16**\ (\ uint v)
 
     Inverse of :ref:`packHalf2x16<shader_func_packHalf2x16>`.
 
-    Unpack a 32-bit integer into two 16-bit floating-point values, convert them to 32-bit floating-point values, and put them into a vector.
+    Unpacks a 32-bit integer into two 16-bit floating-point values, converts them to 32-bit floating-point values, and puts them into a vector.
     The first component of the vector is obtained from the 16 least-significant bits of ``v``; the second component is obtained from the
     16 most-significant bits of ``v``.
 
     :param v:
-        A single 32-bit unsigned integer containing 2 packed 16-bit floating point values.
+        A single 32-bit unsigned integer containing 2 packed 16-bit floating-point values.
 
     :return:
-        Two unpacked floating point values.
+        Two unpacked floating-point values.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/unpackHalf2x16.xhtml
 
@@ -3292,7 +3316,7 @@ vec2 **unpackUnorm2x16**\ (\ uint v)
 
 uint **packSnorm2x16**\ (\ vec2 v)
 
-    Pack floating-point values into an unsigned integer.
+    Packs floating-point values into an unsigned integer.
 
     Convert each component of the normalized floating-point value ``v`` into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
@@ -3323,9 +3347,9 @@ uint **packSnorm2x16**\ (\ vec2 v)
 
 vec2 **unpackSnorm2x16**\ (\ uint v)
 
-    Unpack floating-point values from an unsigned integer.
+    Unpacks floating-point values from an unsigned integer.
 
-    Unpack single 32-bit unsigned integers into a pair of 16-bit signed integers.
+    Unpacks single 32-bit unsigned integers into a pair of 16-bit signed integers.
     Then, each component is converted to a normalized floating-point value to generate the returned two-component vector.
 
     The conversion for unpacked fixed point value f to floating-point is performed as follows:
@@ -3352,9 +3376,9 @@ vec2 **unpackSnorm2x16**\ (\ uint v)
 
 uint **packUnorm4x8**\ (\ vec4 v)
 
-    Pack floating-point values into an unsigned integer.
+    Packs floating-point values into an unsigned integer.
 
-    Convert each component of the normalized floating-point value ``v`` into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
+    Converts each component of the normalized floating-point value ``v`` into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
     The conversion for component c of ``v`` to fixed-point is performed as follows::
 
@@ -3384,9 +3408,9 @@ uint **packUnorm4x8**\ (\ vec4 v)
 
 vec4 **unpackUnorm4x8**\ (\ uint v)
 
-    Unpack floating-point values from an unsigned integer.
+    Unpacks floating-point values from an unsigned integer.
 
-    Unpack single 32-bit unsigned integers into four 8-bit unsigned integers.
+    Unpacks single 32-bit unsigned integers into four 8-bit unsigned integers.
     Then, each component is converted to a normalized floating-point value to generate the returned four-component vector.
 
     The conversion for unpacked fixed point value f to floating-point is performed as follows:
@@ -3413,7 +3437,7 @@ vec4 **unpackUnorm4x8**\ (\ uint v)
 
 uint **packSnorm4x8**\ (\ vec4 v)
 
-    Pack floating-point values into an unsigned integer.
+    Packs floating-point values into an unsigned integer.
 
     Convert each component of the normalized floating-point value ``v`` into 16-bit integer values and then packs the results into a 32-bit unsigned integer.
 
@@ -3542,8 +3566,9 @@ Bitwise function descriptions
 
     .. warning::
         The result will be undefined if:
-         - offset or bits is negative.
-         - if the sum of offset and bits is greater than the number of bits used to store the operand.
+        
+        - offset or bits is negative.
+        - if the sum of offset and bits is greater than the number of bits used to store the operand.
 
     :param value:
         The integer from which to extract bits.
@@ -3580,8 +3605,9 @@ Bitwise function descriptions
 
     .. warning::
         The result will be undefined if:
-         - offset or bits is negative.
-         - if the sum of offset and bits is greater than the number of bits used to store the operand.
+
+        - offset or bits is negative.
+        - if the sum of offset and bits is greater than the number of bits used to store the operand.
 
     :param value:
         The integer from which to extract bits.
@@ -3593,7 +3619,7 @@ Bitwise function descriptions
         The number of bits to extract.
 
     :return:
-        Integer with the requested bits
+        Integer with the requested bits.
 
     https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/bitfieldExtract.xhtml
 
@@ -3623,8 +3649,9 @@ Bitwise function descriptions
 
     .. warning::
         The result will be undefined if:
-         - offset or bits is negative.
-         - if the sum of offset and bits is greater than the number of bits used to store the operand.
+
+        - offset or bits is negative.
+        - if the sum of offset and bits is greater than the number of bits used to store the operand.
 
     :param base:
         The integer into which to insert ``insert``.
@@ -3662,7 +3689,7 @@ Bitwise function descriptions
 
     Reverse the order of bits in an integer.
 
-    The bit numbered n will be taken from bit (bits - 1) - n of ``value``, where bits is the total number of bits used to represent ``value``.
+    The bit numbered ``n`` will be taken from bit ``(bits - 1) - n`` of ``value``, where bits is the total number of bits used to represent ``value``.
 
     :param value:
         The value whose bits to reverse.
@@ -3716,9 +3743,9 @@ Bitwise function descriptions
 
     |componentwise|
 
-    Find the index of the least significant bit set to 1.
+    Find the index of the least significant bit set to ``1``.
 
-    .. note:: If ``value`` is zero, -1 will be returned.
+    .. note:: If ``value`` is zero, ``-1`` will be returned.
 
     :param value:
         The value whose bits to scan.
@@ -3898,10 +3925,11 @@ Bitwise function descriptions
 
     |componentwise|
 
-    Assemble a floating point number from a value and exponent.
+    Assembles a floating-point number from a value and exponent.
 
     .. warning::
-        If this product is too large to be represented in the floating point type, the result is undefined.
+        If this product is too large to be represented in the floating-point
+        type, the result is undefined.
 
     :param x:
         The value to be used as a source of significand.
