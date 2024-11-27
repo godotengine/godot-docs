@@ -90,7 +90,7 @@ In Godot's **Editor → Editor Settings** menu:
 In Rider:
 
 - Set **MSBuild version** to **.NET Core**.
-- Install the **Godot support** plugin.
+- If you are using a Rider version below 2024.2, install the **Godot support** plugin. This functionality is now built into Rider.
 
 Visual Studio Code
 ~~~~~~~~~~~~~~~~~~
