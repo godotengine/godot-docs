@@ -89,6 +89,10 @@ Clicking on this icon reverts the value to its original state.
 If the values are linked with each other, they will have a chain icon and changing one
 will change others as well. You can unchain them by clicking on this icon.
 
+If you are changing a property a lot, you may consider favoriting it by right-clicking and
+choosing `Favorite Property`. This will show it at the top of the inspector for all objects 
+of this class.
+
 Now that we have a better understanding of the terms, we can proceed with the tool menu. 
 If you click the tool menu icon next to the filter bar, a drop-down menu will offer
 various view and edit options.
