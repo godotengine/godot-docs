@@ -263,7 +263,7 @@ calls into ``std::istream``.
 
 .. code-block:: cpp
 
-    #include "core/os/file_access.h"
+    #include "core/io/file_access.h"
 
     #include <istream>
     #include <streambuf>
@@ -298,7 +298,7 @@ References
 
 - `istream <https://cplusplus.com/reference/istream/istream/>`_
 - `streambuf <https://cplusplus.com/reference/streambuf/streambuf/?kw=streambuf>`_
-- `core/io/file_access.h <https://github.com/godotengine/godot/blob/master/core/os/file_access.h>`_
+- `core/io/file_access.h <https://github.com/godotengine/godot/blob/master/core/io/file_access.h>`_
 
 Registering the new file format
 -------------------------------
