@@ -58,16 +58,16 @@ performance gains.
 
 .. note::
 
-    When using the Clustered Forward rendering backend, the engine already
+    When using the Forward+ renderer, the engine already
     performs a *depth prepass*. This consists in rendering a depth-only version
     of the scene before rendering the scene's actual materials. This is used to
     ensure each opaque pixel is only shaded once, reducing the cost of overdraw
     significantly.
 
-    The greatest performance benefits can be observed when using the Forward
-    Mobile rendering backend, as it does not feature a
-    depth prepass for performance reasons. As a result, occlusion culling will
-    actively decrease shading overdraw with that rendering backend.
+    The greatest performance benefits can be observed when using the Mobile
+    renderer, as it does not feature a depth prepass for performance reasons. As
+    a result, occlusion culling will actively decrease shading overdraw with 
+    that renderer.
 
     Nonetheless, even when using a depth prepass, there is still a noticeable
     benefit to occlusion culling in complex 3D scenes. However, in scenes with

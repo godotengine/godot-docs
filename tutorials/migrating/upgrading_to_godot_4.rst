@@ -51,7 +51,7 @@ Godot 3.x for the following reasons:
   :ref:`exporting to the Web <doc_exporting_for_web>`, as binary size directly
   influences how fast the engine can initialize (regardless of download speed).
 - Godot 4 does not and will not have support for GLES2 rendering.
-  (There is still support for GLES3 rendering using the new OpenGL backend,
+  (There is still support for GLES3 rendering using the new Compatibility renderer,
   which means that devices without Vulkan support can still run Godot 4.)
 
   - If you are targeting **very** old hardware such as Intel Sandy Bridge (2nd
@@ -80,9 +80,9 @@ in future Godot releases:
   "overbright" modulate values have no visible effect. Since Godot 4.2, you can
   enable the project setting :ref:`HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
   to perform 2D rendering in HDR. See also :ref:`doc_environment_and_post_processing_using_glow_in_2d`.
-- While rendering still happens in HDR in 3D when using the Forward Plus or
-  Forward Mobile backends, Viewports cannot return HDR data anymore. This is
-  planned to be restored at some point in the future.
+- While rendering still happens in HDR in 3D when using the Forward+ or Mobile
+  renderers, Viewports cannot return HDR data anymore. This is planned to be 
+  restored at some point in the future.
 - Mono was replaced by .NET 6. This means exporting C# projects to Android, iOS
   and HTML5 is no longer supported for now. Exporting C# projects to desktop
   platforms is still supported, and as of 4.2 there's experimental support for

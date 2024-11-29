@@ -95,17 +95,18 @@ Editor
 Rendering
 ---------
 
-3 rendering *methods* (running over 2 rendering *drivers*) are available:
+Godot 4 includes three renderers:
 
-- **Forward+**, running over Vulkan 1.0 (with optional Vulkan 1.1 and 1.2
-  features). The most advanced graphics backend, suited for desktop platforms
-  only. Used by default on desktop platforms.
-- **Forward Mobile**, running over Vulkan 1.0 (with optional Vulkan 1.1 and 1.2
-  features). Less features, but renders simple scenes faster. Suited for mobile
-  and desktop platforms. Used by default on mobile platforms.
-- **Compatibility**, running over OpenGL 3.3 / OpenGL ES 3.0 / WebGL 2.0. The least
-  advanced graphics backend, suited for low-end desktop and mobile platforms.
-  Used by default on the web platform.
+- **Forward+**. The most advanced renderer, suited for desktop platforms only.
+  Used by default on desktop platforms. This renderer uses **Vulkan**, **Direct3D 12**,
+  or **Metal** as the rendering driver, and it uses the **RenderingDevice** backend.
+- **Mobile**. Fewer features, but renders simple scenes faster. Suited for mobile
+  and desktop platforms. Used by default on mobile platforms. This renderer uses
+  **Vulkan**, **Direct3D 12**, or **Metal** as the rendering driver, and it uses
+  the **RenderingDevice** backend.
+- **Compatibility**, sometimes called **GL Compatibility**. The least advanced
+  renderer, suited for low-end desktop and mobile platforms. Used by default on
+  the web platform. This renderer uses **OpenGL** as the rendering driver.
 
 See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 
@@ -188,9 +189,9 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 
 - HDR rendering with sRGB.
 - Perspective, orthographic and frustum-offset cameras.
-- When using the Forward+ backend, a depth prepass is used to improve
+- When using the Forward+ renderer, a depth prepass is used to improve
   performance in complex scenes by reducing the cost of overdraw.
-- :ref:`doc_variable_rate_shading` on supported GPUs in Forward+ and Forward Mobile.
+- :ref:`doc_variable_rate_shading` on supported GPUs in Forward+ and Mobile.
 
 **Physically-based rendering (built-in material features):**
 
@@ -217,10 +218,10 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
 - Specular, indirect light, and volumetric fog energy can be adjusted on a per-light basis.
 - Adjustable light "size" for fake area lights (will also make shadows blurrier).
 - Optional distance fade system to fade distant lights and their shadows, improving performance.
-- When using the Forward+ backend (default on desktop), lights are
+- When using the Forward+ renderer (default on desktop), lights are
   rendered with clustered forward optimizations to decrease their individual cost.
   Clustered rendering also lifts any limits on the number of lights that can be used on a mesh.
-- When using the Forward Mobile backend, up to 8 omni lights and 8 spot lights can
+- When using the Mobile renderer, up to 8 omni lights and 8 spot lights can
   be displayed per mesh resource. Baked lighting can be used to overcome this limit
   if needed.
 
@@ -276,10 +277,10 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
   Parallax box correction can optionally be enabled.
 - Screen-space reflections with support for material roughness.
 - Reflection techniques can be mixed together for greater accuracy or scalability.
-- When using the Forward+ backend (default on desktop), reflection probes are
+- When using the Forward+ renderer (default on desktop), reflection probes are
   rendered with clustered forward optimizations to decrease their individual cost.
   Clustered rendering also lifts any limits on the number of reflection probes that can be used on a mesh.
-- When using the Forward Mobile backend, up to 8 reflection probes can be displayed per mesh
+- When using the Mobile renderer, up to 8 reflection probes can be displayed per mesh
   resource. When using the Compatibility renderer, up to 2 reflection probes can
   be displayed per mesh resource.
 
@@ -294,10 +295,10 @@ See :ref:`doc_renderers` for a detailed comparison of the rendering methods.
   complex skinned meshes with no performance penalty, even if the decal moves every frame.
 - Support for nearest, bilinear, trilinear or anisotropic texture filtering (configured globally).
 - Optional distance fade system to fade distant decals, improving performance.
-- When using the Forward+ backend (default on desktop), decals are
+- When using the Forward+ renderer (default on desktop), decals are
   rendered with clustered forward optimizations to decrease their individual cost.
   Clustered rendering also lifts any limits on the number of decals that can be used on a mesh.
-- When using the Forward Mobile backend, up to 8 decals can be displayed per mesh
+- When using the Mobile renderer, up to 8 decals can be displayed per mesh
   resource.
 
 **Sky:**

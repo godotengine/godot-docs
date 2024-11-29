@@ -60,8 +60,8 @@ There are several workarounds for this:
 The editor or project takes a very long time to start
 -----------------------------------------------------
 
-When using one of the Vulkan-based renderers (Forward+ or Forward Mobile),
-the first startup is expected to be relatively long. This is because shaders
+When using one of the Vulkan-based renderers (Forward+ or Mobile), the first
+startup is expected to be relatively long. This is because shaders
 need to be compiled before they can be cached. Shaders also need to be cached
 again after updating Godot, after updating graphics drivers or after switching
 graphics cards.
@@ -223,7 +223,7 @@ This is a known issue on Linux with NVIDIA graphics when using the proprietary
 driver. There is no definitive fix yet, as suspend on Linux + NVIDIA is often
 buggy when OpenGL or Vulkan is involved. The Compatibility rendering method
 (which uses OpenGL) is generally less prone to suspend-related issues compared
-to the Forward+ and Forward Mobile rendering methods (which use Vulkan).
+to the Forward+ and Mobile renderers (which use Vulkan).
 
 The NVIDIA driver offers an *experimental*
 `option to preserve video memory after suspend <https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Preserve_video_memory_after_suspend>`__

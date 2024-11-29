@@ -14,14 +14,13 @@ Introduction
 
 Godot 4 includes three renderers:
 
-- **Forward+**, sometimes called **Clustered Forward**. The most advanced renderer,
-  suited for desktop platforms only. Used by default on desktop platforms. This
-  renderer uses **Vulkan**, **Direct3D 12**, or **Metal** as the rendering driver,
-  and it uses the **RenderingDevice** backend.
-- **Mobile**, sometimes called **Forward Mobile**. Fewer features, but renders
-  simple scenes faster. Suited for mobile and desktop platforms. Used by default
-  on mobile platforms. This renderer uses **Vulkan**, **Direct3D 12**, or **Metal**
-  as the rendering driver, and it uses the **RenderingDevice** backend.
+- **Forward+**. The most advanced renderer, suited for desktop platforms only.
+  Used by default on desktop platforms. This renderer uses **Vulkan**, **Direct3D 12**,
+  or **Metal** as the rendering driver, and it uses the **RenderingDevice** backend.
+- **Mobile**. Fewer features, but renders simple scenes faster. Suited for mobile
+  and desktop platforms. Used by default on mobile platforms. This renderer uses
+  **Vulkan**, **Direct3D 12**, or **Metal** as the rendering driver, and it uses
+  the **RenderingDevice** backend.
 - **Compatibility**, sometimes called **GL Compatibility**. The least advanced
   renderer, suited for low-end desktop and mobile platforms. Used by default on
   the web platform. This renderer uses **OpenGL** as the rendering driver.
