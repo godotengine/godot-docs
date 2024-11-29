@@ -481,7 +481,7 @@ for a list of parameters and their allowed values.
     the syntax. Invalid syntax may have unexpected behavior in the inspector.
 
 ``@export_tool_button``
-------------------
+-----------------------
 
 If you need to create a clickable inspector button, you can use ``@export_tool_button``. 
 This would export a Callable property as a clickable button. When the button is pressed, the callable is called. 
