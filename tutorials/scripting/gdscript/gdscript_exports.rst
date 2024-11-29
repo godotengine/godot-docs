@@ -484,7 +484,7 @@ for a list of parameters and their allowed values.
 -----------------------
 
 If you need to create a clickable inspector button, you can use ``@export_tool_button``.
-This exports a Callable property as a clickable button. When the button is pressed, the callable is called.
+This exports a ``Callable`` property as a clickable button. When the button is pressed, the callable is called.
 
 Export a button with label ``"Hello"`` and icon ``"Callable"``. When you press it, it will print ``"Hello world!"``.
 
@@ -493,7 +493,7 @@ Export a button with label ``"Hello"`` and icon ``"Callable"``. When you press i
     @tool
     extends Node
 
-    @export_tool_button("Hello","Callable") var hello_action = hello
+    @export_tool_button("Hello", "Callable") var hello_action = hello
 
     func hello():
         print("Hello world!")
