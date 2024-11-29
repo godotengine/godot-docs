@@ -1035,7 +1035,7 @@ it will raise an error.
 Valid types are:
 
 - Built-in types (Array, Vector2, int, String, etc.).
-- Engine classes (Node, Resource, Reference, etc.).
+- Engine classes (Node, Resource, RefCounted, etc.).
 - Constant names if they contain a script resource (``MyScript`` if you declared ``const MyScript = preload("res://my_script.gd")``).
 - Other classes in the same script, respecting scope (``InnerClass.NestedClass`` if you declared ``class NestedClass`` inside the ``class InnerClass`` in the same scope).
 - Script classes declared with the ``class_name`` keyword.
