@@ -81,7 +81,7 @@ a good time to find the size of the game window:
 
     public override void _Ready()
     {
-        ScreenSize = GetViewportRect().Size;
+        ScreenSize = GetViewportRect().GetVisibleRect().Size;
     }
 
 Now we can use the ``_process()`` function to define what the player will do.
