@@ -78,6 +78,9 @@ top-right corner, then specify the path to the output file. This file can be
 placed anywhere in the project directory, but it's recommended to keep it in a
 subdirectory such as ``locale``, as each locale will be defined in its own file.
 
+See :ref:`below <doc_localization_using_gettext_gdscript>` for how to add comments for translators
+or exclude some strings from being added to the PO template for GDScript files.
+
 You can then move over to
 :ref:`creating a messages file from a PO template <doc_localization_using_gettext_messages_file>`.
 
@@ -226,3 +229,39 @@ wish to decompile an MO file into a text-based PO file, you can do so with:
 
 The decompiled file will not include comments or fuzzy strings, as these are
 never compiled in the MO file in the first place.
+
+.. _doc_localization_using_gettext_gdscript:
+
+Extracting localizable strings from GDScript files
+--------------------------------------------------
+
+The built-in `editor plugin <https://github.com/godotengine/godot/blob/master/modules/gdscript/editor/gdscript_translation_parser_plugin.h>`_
+recognizes a variety of patterns in source code to extract localizable strings
+from GDScript files, including but not limited to the following:
+
+- ``tr()``, ``tr_n()``, ``atr()``, and ``atr_n()`` calls;
+- assigning properties ``text``, ``placeholder_text``, and ``tooltip_text``;
+- ``add_tab()``, ``add_item()``, ``set_tab_title()``, and other calls;
+- ``FileDialog`` filters like ``"*.png ; PNG Images"``.
+
+.. note::
+
+    The argument or right operand must be a constant string, otherwise the plugin
+    will not be able to evaluate the expression and will ignore it.
+
+If the plugin extracts unnecessary strings, you can ignore them with the ``NO_TRANSLATE`` comment.
+You can also provide additional information for translators using the ``TRANSLATORS:`` comment.
+These comments must be placed either on the same line as the recognized pattern or precede it.
+
+::
+
+    $CharacterName.text = "???" # NO_TRANSLATE
+
+    # NO_TRANSLATE: Language name.
+    $TabContainer.set_tab_title(0, "Python")
+
+    item.text = "Tool" # TRANSLATORS: Up to 10 characters.
+
+    # TRANSLATORS: This is a reference to Lewis Carroll's poem "Jabberwocky",
+    # make sure to keep this as it is important to the plot.
+    say(tr("He took his vorpal sword in hand. The end?"))
