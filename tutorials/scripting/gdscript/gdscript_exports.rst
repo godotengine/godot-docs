@@ -483,17 +483,17 @@ for a list of parameters and their allowed values.
 ``@export_tool_button``
 -----------------------
 
-If you need to create a clickable inspector button, you can use ``@export_tool_button``. 
-This would export a Callable property as a clickable button. When the button is pressed, the callable is called. 
+If you need to create a clickable inspector button, you can use ``@export_tool_button``.
+This exports a Callable property as a clickable button. When the button is pressed, the callable is called.
 
-Export a button with label ``"Hello"`` and icon ``"Callable"``. When you press it, it will print ``"Hello world!"``. 
+Export a button with label ``"Hello"`` and icon ``"Callable"``. When you press it, it will print ``"Hello world!"``.
 
 ::
 
     @tool
-    extends Node3D
+    extends Node
 
-    @export_tool_button("Hello","Callable") var action=hello
+    @export_tool_button("Hello","Callable") var hello_action = hello
 
     func hello():
         print("Hello world!")
