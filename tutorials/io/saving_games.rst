@@ -61,7 +61,7 @@ Serializing
 The next step is to serialize the data. This makes it much easier to
 read from and store to disk. In this case, we're assuming each member of
 group Persist is an instanced node and thus has a path. GDScript
-has helper class :ref:`JSON<class_json>` to convert between dictionary and string,
+has the helper class :ref:`JSON<class_json>` to convert between dictionary and string.
 Our node needs to contain a save function that returns this data.
 The save function will look like this:
 
