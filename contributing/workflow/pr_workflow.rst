@@ -88,9 +88,6 @@ repository (in Git speak, the *origin remote*). If you haven't already,
 download Git from `its website <https://git-scm.com>`_ if you're using Windows or
 macOS, or install it through your package manager if you're using Linux.
 
-.. note:: If you are on Windows, open Git Bash to type commands. macOS and Linux users
-          can use their respective terminals.
-
 To clone your fork from GitHub, use the following command:
 
 ::
