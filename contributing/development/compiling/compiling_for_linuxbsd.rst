@@ -250,7 +250,7 @@ Start a terminal, go to the root dir of the engine source code and type:
 
 .. tip::
     If you are compiling Godot to make changes or contribute to the engine,
-    you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``. 
+    you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``.
     See :ref:`doc_introduction_to_the_buildsystem_development_and_production_aliases`
     for more info.
 
@@ -579,34 +579,3 @@ running ``scons -h``, then looking for options starting with ``builtin_``.
     across Linux distributions anymore. Do not use this approach for creating
     binaries you intend to distribute to others, unless you're creating a
     package for a Linux distribution.
-
-Using Pyston for faster development
------------------------------------
-
-You can use `Pyston <https://www.pyston.org/>`__ to run SCons. Pyston is a JIT-enabled
-implementation of the Python language (which SCons is written in). It is currently
-only compatible with Linux. Pyston can speed up incremental builds significantly,
-often by a factor between 1.5× and 2×. Pyston can be combined with Clang and LLD
-to get even faster builds.
-
-- Download the `latest portable Pyston release <https://github.com/pyston/pyston/releases/latest>`__.
-- Extract the portable ``.tar.gz`` to a set location, such as ``$HOME/.local/opt/pyston/`` (create folders as needed).
-- Use ``cd`` to reach the extracted Pyston folder from a terminal,
-  then run ``./pyston -m pip install scons`` to install SCons within Pyston.
-- To make SCons via Pyston easier to run, create a symbolic link of its wrapper
-  script to a location in your ``PATH`` environment variable::
-
-    ln -s ~/.local/opt/pyston/bin/scons ~/.local/bin/pyston-scons
-
-- Instead of running ``scons <build arguments>``, run ``pyston-scons <build arguments>``
-  to compile Godot.
-
-If you can't run ``pyston-scons`` after creating the symbolic link,
-make sure ``$HOME/.local/bin/`` is part of your user's ``PATH`` environment variable.
-
-.. note::
-
-    Alternatively, you can run ``python -m pip install pyston_lite_autoload``
-    then run SCons as usual. This will automatically load a subset of Pyston's
-    optimizations in any Python program you run. However, this won't bring as
-    much of a performance improvement compared to installing "full" Pyston.
