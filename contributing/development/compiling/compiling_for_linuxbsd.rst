@@ -508,6 +508,12 @@ repositories, so you will have to install its binaries manually.
 
     PATH="$HOME/.local/share/mold/bin:$PATH"
 
+If your GCC version < 12.1 and you want to use ``mold`` with it, you also need to create a link ``/usr/lib/mold/ld`` to the ``mold`` file inside the ``mold/bin`` folder:
+
+::
+
+	ln $HOME/.local/share/mold/bin/mold /usr/lib/mold/ld
+
 - Open a new terminal (or run ``source "$HOME/.bash_profile"``),
   then use the following SCons command when compiling Godot::
 
