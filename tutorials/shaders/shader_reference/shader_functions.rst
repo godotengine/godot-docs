@@ -66,6 +66,14 @@ GLSL ES 3.0 specification.
         vector multiplied by matrix, and matrix multiplied by matrix. These do not operate component-wise,
         but rather perform the correct linear algebraic multiply.
 
+These function descriptions are adapted and modified from
+`official OpenGL documentation <https://registry.khronos.org/OpenGL-Refpages/gl4/>`__
+originally published by Khronos Group under the
+`Open Publication License <https://opencontent.org/openpub>`__.
+Each function description links to the corresponding official OpenGL
+documentation. Modification history for this page can be found on
+`GitHub <https://github.com/godotengine/godot-docs/blob/master/tutorials/shaders/shader_reference/shader_functions.rst>`__.
+
 .. rst-class:: classref-section-separator
 
 ----
