@@ -565,6 +565,21 @@ considered a comment.
     The list of highlighted keywords and their colors can be changed in the **Text
     Editor > Theme > Comment Markers** section of the Editor Settings.
 
+Use two hash symbols (``##``) instead of one (``#``) to add a *documentation
+comment*, which will appear in the script documentation and in the inspector
+description of an exported variable. Documentation comments must be placed
+directly *above* a documentable item (such as a member variable), or at the top
+of a file. Dedicated formatting options are also available. See
+:ref:`doc_gdscript_documentation_comments` for details.
+
+
+::
+    ## This comment will appear in the script documentation.
+    var value
+
+    ## This comment will appear in the inspector tooltip, and in the documentation.
+    @export var exported_value
+
 Code regions
 ------------
 
@@ -878,12 +893,26 @@ native or user class, or enum. Nested array types (like ``Array[Array[int]]``) a
 Packed arrays
 ^^^^^^^^^^^^^
 
-GDScript arrays are allocated linearly in memory for speed.
-Large arrays (more than tens of thousands of elements) may however cause
-memory fragmentation. If this is a concern, special types of
-arrays are available. These only accept a single data type. They avoid memory
-fragmentation and use less memory, but are atomic and tend to run slower than generic
-arrays. They are therefore only recommended to use for large data sets:
+PackedArrays are generally faster to iterate on and modify compared to a typed
+Array of the same type (e.g. PackedInt64Array versus Array[int]) and consume
+less memory. In the worst case, they are expected to be as fast as an untyped
+Array. Conversely, non-Packed Arrays (typed or not) have extra convenience
+methods such as :ref:`Array.map <class_Array_method_map>` that PackedArrays
+lack. Consult the :ref:`class reference <class_PackedFloat32Array>` for details
+on the methods available. Typed Arrays are generally faster to iterate on and
+modify than untyped Arrays.
+
+While all Arrays can cause memory fragmentation when they become large enough,
+if memory usage and performance (iteration and modification speed) is a concern
+and the type of data you're storing is compatible with one of the ``Packed``
+Array types, then using those may yield improvements. However, if you do not
+have such concerns (e.g. the size of your array does not reach the tens of
+thousands of elements) it is likely more helpful to use regular or typed
+Arrays, as they provide convenience methods that can make your code easier to
+write and maintain (and potentially faster if your data requires such
+operations a lot). If the data you will store is of a known type (including
+your own defined classes), prefer to use a typed Array as it may yield better
+performance in iteration and modification compared to an untyped Array.
 
 - :ref:`PackedByteArray <class_PackedByteArray>`: An array of bytes (integers from 0 to 255).
 - :ref:`PackedInt32Array <class_PackedInt32Array>`: An array of 32-bit integers.
@@ -1006,7 +1035,7 @@ it will raise an error.
 Valid types are:
 
 - Built-in types (Array, Vector2, int, String, etc.).
-- Engine classes (Node, Resource, Reference, etc.).
+- Engine classes (Node, Resource, RefCounted, etc.).
 - Constant names if they contain a script resource (``MyScript`` if you declared ``const MyScript = preload("res://my_script.gd")``).
 - Other classes in the same script, respecting scope (``InnerClass.NestedClass`` if you declared ``class NestedClass`` inside the ``class InnerClass`` in the same scope).
 - Script classes declared with the ``class_name`` keyword.

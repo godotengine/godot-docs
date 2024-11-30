@@ -228,8 +228,8 @@ support Vulkan. OpenGL 3.3 Core Profile is used on desktop platforms to run this
 driver, as most graphics drivers on desktop don't support OpenGL ES.
 WebGL 2.0 is used for web exports.
 
-It is possible to use the use of OpenGL ES 3.0 directly on desktop platforms
-using the ``--rendering-driver opengl3_es`` command line argument, although this
+It is possible to use OpenGL ES 3.0 directly on desktop platforms
+by passing the ``--rendering-driver opengl3_es`` command line argument, although this
 will only work on graphics drivers that feature native OpenGL ES support (such
 as Mesa).
 

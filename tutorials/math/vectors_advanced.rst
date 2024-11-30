@@ -23,7 +23,7 @@ because of its usage. (Just like we call (0,0) the Origin!).
 
 The plane passes by the origin and the
 surface of it is perpendicular to the unit vector (or *normal*). The
-side towards the vector points to is the positive half-space, while the
+side the vector points to is the positive half-space, while the
 other side is the negative half-space. In 3D this is exactly the same,
 except that the plane is an infinite surface (imagine an infinite, flat
 sheet of paper that you can orient and is pinned to the origin) instead
