@@ -1753,7 +1753,7 @@ Space key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_EXCLAM** = ``33``
 
-! key.
+Exclamation mark (``!``) key.
 
 .. _class_@GlobalScope_constant_KEY_QUOTEDBL:
 
@@ -1761,7 +1761,7 @@ Space key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_QUOTEDBL** = ``34``
 
-" key.
+Double quotation mark (``"``) key.
 
 .. _class_@GlobalScope_constant_KEY_NUMBERSIGN:
 
@@ -1769,7 +1769,7 @@ Space key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_NUMBERSIGN** = ``35``
 
-# key.
+Number sign or *hash* (``#``) key.
 
 .. _class_@GlobalScope_constant_KEY_DOLLAR:
 
@@ -1777,7 +1777,7 @@ Space key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_DOLLAR** = ``36``
 
-$ key.
+Dollar sign (``$``) key.
 
 .. _class_@GlobalScope_constant_KEY_PERCENT:
 
@@ -1785,7 +1785,7 @@ $ key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_PERCENT** = ``37``
 
-% key.
+Percent sign (``%``) key.
 
 .. _class_@GlobalScope_constant_KEY_AMPERSAND:
 
@@ -1793,7 +1793,7 @@ $ key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_AMPERSAND** = ``38``
 
-& key.
+Ampersand (``&``) key.
 
 .. _class_@GlobalScope_constant_KEY_APOSTROPHE:
 
@@ -1801,7 +1801,7 @@ $ key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_APOSTROPHE** = ``39``
 
-' key.
+Apostrophe (``'``) key.
 
 .. _class_@GlobalScope_constant_KEY_PARENLEFT:
 
@@ -1809,7 +1809,7 @@ $ key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_PARENLEFT** = ``40``
 
-( key.
+Left parenthesis (``(``) key.
 
 .. _class_@GlobalScope_constant_KEY_PARENRIGHT:
 
@@ -1817,7 +1817,7 @@ $ key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_PARENRIGHT** = ``41``
 
-) key.
+Right parenthesis (``)``) key.
 
 .. _class_@GlobalScope_constant_KEY_ASTERISK:
 
@@ -1825,7 +1825,7 @@ $ key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_ASTERISK** = ``42``
 
-\* key.
+Asterisk (``*``) key.
 
 .. _class_@GlobalScope_constant_KEY_PLUS:
 
@@ -1833,7 +1833,7 @@ $ key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_PLUS** = ``43``
 
-+ key.
+Plus (``+``) key.
 
 .. _class_@GlobalScope_constant_KEY_COMMA:
 
@@ -1841,7 +1841,7 @@ $ key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_COMMA** = ``44``
 
-, key.
+Comma (``,``) key.
 
 .. _class_@GlobalScope_constant_KEY_MINUS:
 
@@ -1849,7 +1849,7 @@ $ key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_MINUS** = ``45``
 
-- key.
+Minus (``-``) key.
 
 .. _class_@GlobalScope_constant_KEY_PERIOD:
 
@@ -1857,7 +1857,7 @@ $ key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_PERIOD** = ``46``
 
-. key.
+Period (``.``) key.
 
 .. _class_@GlobalScope_constant_KEY_SLASH:
 
@@ -1865,7 +1865,7 @@ $ key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_SLASH** = ``47``
 
-/ key.
+Slash (``/``) key.
 
 .. _class_@GlobalScope_constant_KEY_0:
 
@@ -1953,7 +1953,7 @@ Number 9 key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_COLON** = ``58``
 
-: key.
+Colon (``:``) key.
 
 .. _class_@GlobalScope_constant_KEY_SEMICOLON:
 
@@ -1961,7 +1961,7 @@ Number 9 key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_SEMICOLON** = ``59``
 
-; key.
+Semicolon (``;``) key.
 
 .. _class_@GlobalScope_constant_KEY_LESS:
 
@@ -1969,7 +1969,7 @@ Number 9 key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_LESS** = ``60``
 
-< key.
+Less-than sign (``<``) key.
 
 .. _class_@GlobalScope_constant_KEY_EQUAL:
 
@@ -1977,7 +1977,7 @@ Number 9 key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_EQUAL** = ``61``
 
-= key.
+Equal sign (``=``) key.
 
 .. _class_@GlobalScope_constant_KEY_GREATER:
 
@@ -1985,7 +1985,7 @@ Number 9 key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_GREATER** = ``62``
 
-> key.
+Greater-than sign (``>``) key.
 
 .. _class_@GlobalScope_constant_KEY_QUESTION:
 
@@ -1993,7 +1993,7 @@ Number 9 key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_QUESTION** = ``63``
 
-? key.
+Question mark (``?``) key.
 
 .. _class_@GlobalScope_constant_KEY_AT:
 
@@ -2001,7 +2001,7 @@ Number 9 key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_AT** = ``64``
 
-@ key.
+At sign (``@``) key.
 
 .. _class_@GlobalScope_constant_KEY_A:
 
@@ -2217,7 +2217,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BRACKETLEFT** = ``91``
 
-[ key.
+Left bracket (``[lb]``) key.
 
 .. _class_@GlobalScope_constant_KEY_BACKSLASH:
 
@@ -2225,7 +2225,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BACKSLASH** = ``92``
 
-\\ key.
+Backslash (``\``) key.
 
 .. _class_@GlobalScope_constant_KEY_BRACKETRIGHT:
 
@@ -2233,7 +2233,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BRACKETRIGHT** = ``93``
 
-] key.
+Right bracket (``[rb]``) key.
 
 .. _class_@GlobalScope_constant_KEY_ASCIICIRCUM:
 
@@ -2241,7 +2241,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_ASCIICIRCUM** = ``94``
 
-^ key.
+Caret (``^``) key.
 
 .. _class_@GlobalScope_constant_KEY_UNDERSCORE:
 
@@ -2249,7 +2249,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_UNDERSCORE** = ``95``
 
-\_ key.
+Underscore (``_``) key.
 
 .. _class_@GlobalScope_constant_KEY_QUOTELEFT:
 
@@ -2257,7 +2257,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_QUOTELEFT** = ``96``
 
-` key.
+Backtick (`````) key.
 
 .. _class_@GlobalScope_constant_KEY_BRACELEFT:
 
@@ -2265,7 +2265,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BRACELEFT** = ``123``
 
-{ key.
+Left brace (``{``) key.
 
 .. _class_@GlobalScope_constant_KEY_BAR:
 
@@ -2273,7 +2273,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BAR** = ``124``
 
-| key.
+Vertical bar or *pipe* (``|``) key.
 
 .. _class_@GlobalScope_constant_KEY_BRACERIGHT:
 
@@ -2281,7 +2281,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BRACERIGHT** = ``125``
 
-} key.
+Right brace (``}``) key.
 
 .. _class_@GlobalScope_constant_KEY_ASCIITILDE:
 
@@ -2289,7 +2289,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_ASCIITILDE** = ``126``
 
-~ key.
+Tilde (``~``) key.
 
 .. _class_@GlobalScope_constant_KEY_YEN:
 
@@ -2297,7 +2297,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_YEN** = ``165``
 
-¥ key.
+Yen symbol (``¥``) key.
 
 .. _class_@GlobalScope_constant_KEY_SECTION:
 
@@ -2305,7 +2305,7 @@ Z key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_SECTION** = ``167``
 
-§ key.
+Section sign (``§``) key.
 
 .. rst-class:: classref-item-separator
 
@@ -5741,7 +5741,7 @@ Returns an "eased" value of ``x`` based on an easing function defined with ``cur
 .. code:: text
 
     - Lower than -1.0 (exclusive): Ease in-out
-    - 1.0: Linear
+    - -1.0: Linear
     - Between -1.0 and 0.0 (exclusive): Ease out-in
     - 0.0: Constant
     - Between 0.0 to 1.0 (exclusive): Ease out

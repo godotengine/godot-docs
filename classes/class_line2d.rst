@@ -450,7 +450,7 @@ The polyline's width.
 - |void| **set_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_curve**\ (\ )
 
-The polyline's width curve. The width of the polyline over its length will be equivalent to the value of the width curve over its domain.
+The polyline's width curve. The width of the polyline over its length will be equivalent to the value of the width curve over its domain. The width curve should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-section-separator
 

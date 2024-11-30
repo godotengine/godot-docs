@@ -636,7 +636,7 @@ Duplicate the node's script (also overriding the duplicated children's scripts, 
 
 :ref:`DuplicateFlags<enum_Node_DuplicateFlags>` **DUPLICATE_USE_INSTANTIATION** = ``8``
 
-Duplicate using :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`. If the node comes from a scene saved on disk, re-uses :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` as the base for the duplicated node and its children.
+Duplicate using :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`. If the node comes from a scene saved on disk, reuses :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` as the base for the duplicated node and its children.
 
 .. rst-class:: classref-item-separator
 

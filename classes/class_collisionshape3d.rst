@@ -44,11 +44,15 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+-----------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape3D_property_disabled>` | ``false`` |
-   +-------------------------------+-----------------------------------------------------------+-----------+
-   | :ref:`Shape3D<class_Shape3D>` | :ref:`shape<class_CollisionShape3D_property_shape>`       |           |
-   +-------------------------------+-----------------------------------------------------------+-----------+
+   +-------------------------------+-----------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`debug_color<class_CollisionShape3D_property_debug_color>` | ``Color(0, 0, 0, 0)`` |
+   +-------------------------------+-----------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`debug_fill<class_CollisionShape3D_property_debug_fill>`   | ``true``              |
+   +-------------------------------+-----------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape3D_property_disabled>`       | ``false``             |
+   +-------------------------------+-----------------------------------------------------------------+-----------------------+
+   | :ref:`Shape3D<class_Shape3D>` | :ref:`shape<class_CollisionShape3D_property_shape>`             |                       |
+   +-------------------------------+-----------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -72,6 +76,40 @@ Methods
 
 Property Descriptions
 ---------------------
+
+.. _class_CollisionShape3D_property_debug_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **debug_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_CollisionShape3D_property_debug_color>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_debug_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_debug_color**\ (\ )
+
+The collision shape color that is displayed in the editor, or in the running project if **Debug > Visible Collision Shapes** is checked at the top of the editor. If this is reset to its default value of ``Color(0, 0, 0, 0)``, the value of :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>` will be used instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CollisionShape3D_property_debug_fill:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **debug_fill** = ``true`` :ref:`🔗<class_CollisionShape3D_property_debug_fill>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_enable_debug_fill**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_debug_fill**\ (\ )
+
+If ``true``, when the shape is displayed, it will show a solid fill color in addition to its wireframe.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_CollisionShape3D_property_disabled:
 

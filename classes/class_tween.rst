@@ -141,7 +141,7 @@ Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accep
 
 \ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.webp>`__\ 
 
-\ **Note:** Tweens are not designed to be re-used and trying to do so results in an undefined behavior. Create a new Tween for each animation and every time you replay an animation from start. Keep in mind that Tweens start immediately, so only create a Tween when you want to start animating.
+\ **Note:** Tweens are not designed to be reused and trying to do so results in an undefined behavior. Create a new Tween for each animation and every time you replay an animation from start. Keep in mind that Tweens start immediately, so only create a Tween when you want to start animating.
 
 \ **Note:** The tween is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_private_method__process>` method would be called before the tween (or :ref:`Node._physics_process<class_Node_private_method__physics_process>` depending on the value passed to :ref:`set_process_mode<class_Tween_method_set_process_mode>`).
 

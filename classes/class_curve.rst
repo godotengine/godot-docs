@@ -19,9 +19,9 @@ A mathematical curve.
 Description
 -----------
 
-This resource describes a mathematical curve by defining a set of points and tangents at each point. By default, it ranges between ``0`` and ``1`` on the Y axis and positions points relative to the ``0.5`` Y position.
+This resource describes a mathematical curve by defining a set of points and tangents at each point. By default, it ranges between ``0`` and ``1`` on the X and Y axes, but these ranges can be changed.
 
-See also :ref:`Gradient<class_Gradient>` which is designed for color interpolation. See also :ref:`Curve2D<class_Curve2D>` and :ref:`Curve3D<class_Curve3D>`.
+Please note that many resources and nodes assume they are given *unit curves*. A unit curve is a curve whose domain (the X axis) is between ``0`` and ``1``. Some examples of unit curve usage are :ref:`CPUParticles2D.angle_curve<class_CPUParticles2D_property_angle_curve>` and :ref:`Line2D.width_curve<class_Line2D_property_width_curve>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -34,7 +34,11 @@ Properties
    +---------------------------+--------------------------------------------------------------+---------+
    | :ref:`int<class_int>`     | :ref:`bake_resolution<class_Curve_property_bake_resolution>` | ``100`` |
    +---------------------------+--------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`max_domain<class_Curve_property_max_domain>`           | ``1.0`` |
+   +---------------------------+--------------------------------------------------------------+---------+
    | :ref:`float<class_float>` | :ref:`max_value<class_Curve_property_max_value>`             | ``1.0`` |
+   +---------------------------+--------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`min_domain<class_Curve_property_min_domain>`           | ``0.0`` |
    +---------------------------+--------------------------------------------------------------+---------+
    | :ref:`float<class_float>` | :ref:`min_value<class_Curve_property_min_value>`             | ``0.0`` |
    +---------------------------+--------------------------------------------------------------+---------+
@@ -58,6 +62,8 @@ Methods
    +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                     | :ref:`clear_points<class_Curve_method_clear_points>`\ (\ )                                                                                                                                                                                                                                                           |
    +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                  | :ref:`get_domain_range<class_Curve_method_get_domain_range>`\ (\ ) |const|                                                                                                                                                                                                                                           |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TangentMode<enum_Curve_TangentMode>` | :ref:`get_point_left_mode<class_Curve_method_get_point_left_mode>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                      |
    +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                  | :ref:`get_point_left_tangent<class_Curve_method_get_point_left_tangent>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                |
@@ -67,6 +73,8 @@ Methods
    | :ref:`TangentMode<enum_Curve_TangentMode>` | :ref:`get_point_right_mode<class_Curve_method_get_point_right_mode>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                    |
    +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                  | :ref:`get_point_right_tangent<class_Curve_method_get_point_right_tangent>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                              |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                  | :ref:`get_value_range<class_Curve_method_get_value_range>`\ (\ ) |const|                                                                                                                                                                                                                                             |
    +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                     | :ref:`remove_point<class_Curve_method_remove_point>`\ (\ index\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                            |
    +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -95,6 +103,18 @@ Methods
 
 Signals
 -------
+
+.. _class_Curve_signal_domain_changed:
+
+.. rst-class:: classref-signal
+
+**domain_changed**\ (\ ) :ref:`🔗<class_Curve_signal_domain_changed>`
+
+Emitted when :ref:`max_domain<class_Curve_property_max_domain>` or :ref:`min_domain<class_Curve_property_min_domain>` is changed.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_Curve_signal_range_changed:
 
@@ -169,6 +189,23 @@ The number of points to include in the baked (i.e. cached) curve data.
 
 ----
 
+.. _class_Curve_property_max_domain:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **max_domain** = ``1.0`` :ref:`🔗<class_Curve_property_max_domain>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_max_domain**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_max_domain**\ (\ )
+
+The maximum domain (x-coordinate) that points can have.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Curve_property_max_value:
 
 .. rst-class:: classref-property
@@ -180,7 +217,24 @@ The number of points to include in the baked (i.e. cached) curve data.
 - |void| **set_max_value**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_max_value**\ (\ )
 
-The maximum value the curve can reach.
+The maximum value (y-coordinate) that points can have. Tangents can cause higher values between points.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Curve_property_min_domain:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **min_domain** = ``0.0`` :ref:`🔗<class_Curve_property_min_domain>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_min_domain**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_min_domain**\ (\ )
+
+The minimum domain (x-coordinate) that points can have.
 
 .. rst-class:: classref-item-separator
 
@@ -197,7 +251,7 @@ The maximum value the curve can reach.
 - |void| **set_min_value**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_min_value**\ (\ )
 
-The minimum value the curve can reach.
+The minimum value (y-coordinate) that points can have. Tangents can cause lower values between points.
 
 .. rst-class:: classref-item-separator
 
@@ -273,6 +327,18 @@ Removes all points from the curve.
 
 ----
 
+.. _class_Curve_method_get_domain_range:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_domain_range**\ (\ ) |const| :ref:`🔗<class_Curve_method_get_domain_range>`
+
+Returns the difference between :ref:`min_domain<class_Curve_property_min_domain>` and :ref:`max_domain<class_Curve_property_max_domain>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Curve_method_get_point_left_mode:
 
 .. rst-class:: classref-method
@@ -328,6 +394,18 @@ Returns the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``
 :ref:`float<class_float>` **get_point_right_tangent**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Curve_method_get_point_right_tangent>`
 
 Returns the right tangent angle (in degrees) for the point at ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Curve_method_get_value_range:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_value_range**\ (\ ) |const| :ref:`🔗<class_Curve_method_get_value_range>`
+
+Returns the difference between :ref:`min_value<class_Curve_property_min_value>` and :ref:`max_value<class_Curve_property_max_value>`.
 
 .. rst-class:: classref-item-separator
 

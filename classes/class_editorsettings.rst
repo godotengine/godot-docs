@@ -4181,7 +4181,7 @@ The editor theme spacing preset to use. See also :ref:`interface/theme/base_spac
 
 If ``true``, set accent color based on system settings.
 
-\ **Note:** This setting is only effective on Windows and MacOS.
+\ **Note:** This setting is only effective on Windows, MacOS, and Android.
 
 .. rst-class:: classref-item-separator
 

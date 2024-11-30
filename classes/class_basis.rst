@@ -21,7 +21,17 @@ The **Basis** built-in :ref:`Variant<class_Variant>` type is a 3×3 `matrix <htt
 
 A **Basis** is composed by 3 axis vectors, each representing a column of the matrix: :ref:`x<class_Basis_property_x>`, :ref:`y<class_Basis_property_y>`, and :ref:`z<class_Basis_property_z>`. The length of each axis (:ref:`Vector3.length<class_Vector3_method_length>`) influences the basis's scale, while the direction of all axes influence the rotation. Usually, these axes are perpendicular to one another. However, when you rotate any axis individually, the basis becomes sheared. Applying a sheared basis to a 3D model will make the model appear distorted.
 
-A **Basis** is **orthogonal** if its axes are perpendicular to each other. A basis is **normalized** if the length of every axis is ``1``. A basis is **uniform** if all axes share the same length (see :ref:`get_scale<class_Basis_method_get_scale>`). A basis is **orthonormal** if it is both orthogonal and normalized, which allows it to only represent rotations. A basis is **conformal** if it is both orthogonal and uniform, which ensures it is not distorted.
+A **Basis** is:
+
+- **Orthogonal** if its axes are perpendicular to each other.
+
+- **Normalized** if the length of every axis is ``1.0``.
+
+- **Uniform** if all axes share the same length (see :ref:`get_scale<class_Basis_method_get_scale>`).
+
+- **Orthonormal** if it is both orthogonal and normalized, which allows it to only represent rotations (see :ref:`orthonormalized<class_Basis_method_orthonormalized>`).
+
+- **Conformal** if it is both orthogonal and uniform, which ensures it is not distorted.
 
 For a general introduction, see the :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>` tutorial.
 
@@ -179,7 +189,7 @@ Constants
 
 **IDENTITY** = ``Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)`` :ref:`🔗<class_Basis_constant_IDENTITY>`
 
-The identity basis. This is a basis with no rotation, no shear, and its scale being ``1``. This means that:
+The identity **Basis**. This is an orthonormal basis with no rotation, no shear, and a scale of :ref:`Vector3.ONE<class_Vector3_constant_ONE>`. This also means that:
 
 - The :ref:`x<class_Basis_property_x>` points right (:ref:`Vector3.RIGHT<class_Vector3_constant_RIGHT>`);
 
@@ -189,18 +199,20 @@ The identity basis. This is a basis with no rotation, no shear, and its scale be
 
 ::
 
-    var basis := Basis.IDENTITY
+    var basis = Basis.IDENTITY
     print("| X | Y | Z")
-    print("| %s | %s | %s" % [basis.x.x, basis.y.x, basis.z.x])
-    print("| %s | %s | %s" % [basis.x.y, basis.y.y, basis.z.y])
-    print("| %s | %s | %s" % [basis.x.z, basis.y.z, basis.z.z])
+    print("| %.f | %.f | %.f" % [basis.x.x, basis.y.x, basis.z.x])
+    print("| %.f | %.f | %.f" % [basis.x.y, basis.y.y, basis.z.y])
+    print("| %.f | %.f | %.f" % [basis.x.z, basis.y.z, basis.z.z])
     # Prints:
     # | X | Y | Z
     # | 1 | 0 | 0
     # | 0 | 1 | 0
     # | 0 | 0 | 1
 
-This is identical to creating :ref:`Basis<class_Basis_constructor_Basis>` without any parameters. This constant can be used to make your code clearer, and for consistency with C#.
+If a :ref:`Vector3<class_Vector3>` or another **Basis** is transformed (multiplied) by this constant, no transformation occurs.
+
+\ **Note:** In GDScript, this constant is equivalent to creating a :ref:`Basis<class_Basis_constructor_Basis>` without any arguments. It can be used to make your code clearer, and for consistency with C#.
 
 .. _class_Basis_constant_FLIP_X:
 
@@ -294,7 +306,7 @@ Constructor Descriptions
 
 :ref:`Basis<class_Basis>` **Basis**\ (\ ) :ref:`🔗<class_Basis_constructor_Basis>`
 
-Constructs a **Basis** identical to the :ref:`IDENTITY<class_Basis_constant_IDENTITY>`.
+Constructs a **Basis** identical to :ref:`IDENTITY<class_Basis_constant_IDENTITY>`.
 
 \ **Note:** In C#, this constructs a **Basis** with all of its components set to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
@@ -359,7 +371,7 @@ Method Descriptions
 
 Returns the `determinant <https://en.wikipedia.org/wiki/Determinant>`__ of this basis's matrix. For advanced math, this number can be used to determine a few attributes:
 
-- If the determinant is exactly ``0``, the basis is not invertible (see :ref:`inverse<class_Basis_method_inverse>`).
+- If the determinant is exactly ``0.0``, the basis is not invertible (see :ref:`inverse<class_Basis_method_inverse>`).
 
 - If the determinant is a negative number, the basis represents a negative scale.
 
@@ -377,9 +389,9 @@ Returns the `determinant <https://en.wikipedia.org/wiki/Determinant>`__ of this 
 
 Constructs a new **Basis** that only represents rotation from the given :ref:`Vector3<class_Vector3>` of `Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`__, in radians.
 
-- The :ref:`Vector3.x<class_Vector3_property_x>` should contain the angle around the :ref:`x<class_Basis_property_x>` axis (pitch).
+- The :ref:`Vector3.x<class_Vector3_property_x>` should contain the angle around the :ref:`x<class_Basis_property_x>` axis (pitch);
 
-- The :ref:`Vector3.y<class_Vector3_property_y>` should contain the angle around the :ref:`y<class_Basis_property_y>` axis (yaw).
+- The :ref:`Vector3.y<class_Vector3_property_y>` should contain the angle around the :ref:`y<class_Basis_property_y>` axis (yaw);
 
 - The :ref:`Vector3.z<class_Vector3_property_z>` should contain the angle around the :ref:`z<class_Basis_property_z>` axis (roll).
 
@@ -391,14 +403,14 @@ Constructs a new **Basis** that only represents rotation from the given :ref:`Ve
     # Creates a Basis whose z axis points down.
     var my_basis = Basis.from_euler(Vector3(TAU / 4, 0, 0))
     
-    print(my_basis.z) # Prints (0, -1, 0).
+    print(my_basis.z) # Prints (0, -1, 0)
 
  .. code-tab:: csharp
 
     // Creates a Basis whose z axis points down.
     var myBasis = Basis.FromEuler(new Vector3(Mathf.Tau / 4.0f, 0.0f, 0.0f));
     
-    GD.Print(myBasis.Z); // Prints (0, -1, 0).
+    GD.Print(myBasis.Z); // Prints (0, -1, 0)
 
 
 
@@ -423,17 +435,17 @@ Constructs a new **Basis** that only represents scale, with no rotation or shear
 
     var my_basis = Basis.from_scale(Vector3(2, 4, 8))
     
-    print(my_basis.x) # Prints (2, 0, 0).
-    print(my_basis.y) # Prints (0, 4, 0).
-    print(my_basis.z) # Prints (0, 0, 8).
+    print(my_basis.x) # Prints (2, 0, 0)
+    print(my_basis.y) # Prints (0, 4, 0)
+    print(my_basis.z) # Prints (0, 0, 8)
 
  .. code-tab:: csharp
 
     var myBasis = Basis.FromScale(new Vector3(2.0f, 4.0f, 8.0f));
     
-    GD.Print(myBasis.X); // Prints (2, 0, 0).
-    GD.Print(myBasis.Y); // Prints (0, 4, 0).
-    GD.Print(myBasis.Z); // Prints (0, 0, 8).
+    GD.Print(myBasis.X); // Prints (2, 0, 0)
+    GD.Print(myBasis.Y); // Prints (0, 4, 0)
+    GD.Print(myBasis.Z); // Prints (0, 0, 8)
 
 
 
@@ -449,7 +461,7 @@ Constructs a new **Basis** that only represents scale, with no rotation or shear
 
 :ref:`Vector3<class_Vector3>` **get_euler**\ (\ order\: :ref:`int<class_int>` = 2\ ) |const| :ref:`🔗<class_Basis_method_get_euler>`
 
-Returns this basis's rotation as a :ref:`Vector3<class_Vector3>` of `Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`__, in radians.
+Returns this basis's rotation as a :ref:`Vector3<class_Vector3>` of `Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`__, in radians. For the returned value:
 
 - The :ref:`Vector3.x<class_Vector3_property_x>` contains the angle around the :ref:`x<class_Basis_property_x>` axis (pitch);
 
@@ -458,6 +470,8 @@ Returns this basis's rotation as a :ref:`Vector3<class_Vector3>` of `Euler angle
 - The :ref:`Vector3.z<class_Vector3_property_z>` contains the angle around the :ref:`z<class_Basis_property_z>` axis (roll).
 
 The order of each consecutive rotation can be changed with ``order`` (see :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` constants). By default, the YXZ convention is used (:ref:`@GlobalScope.EULER_ORDER_YXZ<class_@GlobalScope_constant_EULER_ORDER_YXZ>`): Z (roll) is calculated first, then X (pitch), and lastly Y (yaw). When using the opposite method :ref:`from_euler<class_Basis_method_from_euler>`, this order is reversed.
+
+\ **Note:** For this method to return correctly, the basis needs to be *orthonormal* (see :ref:`orthonormalized<class_Basis_method_orthonormalized>`).
 
 \ **Note:** Euler angles are much more intuitive but are not suitable for 3D math. Because of this, consider using the :ref:`get_rotation_quaternion<class_Basis_method_get_rotation_quaternion>` method instead, which returns a :ref:`Quaternion<class_Quaternion>`.
 
@@ -487,7 +501,7 @@ Returns this basis's rotation as a :ref:`Quaternion<class_Quaternion>`.
 
 :ref:`Vector3<class_Vector3>` **get_scale**\ (\ ) |const| :ref:`🔗<class_Basis_method_get_scale>`
 
-Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>`. If the basis is not sheared, this is the scaling factor. It is not affected by rotation.
+Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>`. If the basis is not sheared, this value is the scaling factor. It is not affected by rotation.
 
 
 .. tabs::
@@ -503,7 +517,7 @@ Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>
     my_basis = my_basis.rotated(Vector3.UP, TAU / 2)
     my_basis = my_basis.rotated(Vector3.RIGHT, TAU / 4)
     
-    print(my_basis.get_scale()) # Prints (2, 4, 8).
+    print(my_basis.get_scale()) # Prints (2, 4, 8)
 
  .. code-tab:: csharp
 
@@ -516,7 +530,7 @@ Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>
     myBasis = myBasis.Rotated(Vector3.Up, Mathf.Tau / 2.0f);
     myBasis = myBasis.Rotated(Vector3.Right, Mathf.Tau / 4.0f);
     
-    GD.Print(myBasis.Scale); // Prints (2, 4, 8).
+    GD.Print(myBasis.Scale); // Prints (2, 4, 8)
 
 
 
@@ -596,7 +610,7 @@ The up axis (+Y) points as close to the ``up`` vector as possible while staying 
 
 :ref:`Basis<class_Basis>` **orthonormalized**\ (\ ) |const| :ref:`🔗<class_Basis_method_orthonormalized>`
 
-Returns the orthonormalized version of this basis. An orthonormal basis is both *orthogonal* (the axes are perpendicular to each other) and *normalized* (the axes have a length of ``1``), which also means it can only represent rotation.
+Returns the orthonormalized version of this basis. An orthonormal basis is both *orthogonal* (the axes are perpendicular to each other) and *normalized* (the axes have a length of ``1.0``), which also means it can only represent a rotation.
 
 It is often useful to call this method to avoid rounding errors on a rotating basis:
 
@@ -634,9 +648,9 @@ It is often useful to call this method to avoid rounding errors on a rotating ba
 
 :ref:`Basis<class_Basis>` **rotated**\ (\ axis\: :ref:`Vector3<class_Vector3>`, angle\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Basis_method_rotated>`
 
-Returns this basis rotated around the given ``axis`` by ``angle`` (in radians). The ``axis`` must be a normalized vector (see :ref:`Vector3.normalized<class_Vector3_method_normalized>`).
+Returns a copy of this basis rotated around the given ``axis`` by the given ``angle`` (in radians).
 
-Positive values rotate this basis clockwise around the axis, while negative values rotate it counterclockwise.
+The ``axis`` must be a normalized vector (see :ref:`Vector3.normalized<class_Vector3_method_normalized>`). If ``angle`` is positive, the basis is rotated counter-clockwise around the axis.
 
 
 .. tabs::
@@ -687,9 +701,9 @@ The basis matrix's rows are multiplied by ``scale``'s components. This operation
     )
     my_basis = my_basis.scaled(Vector3(0, 2, -2))
     
-    print(my_basis.x) # Prints (0, 2, -2).
-    print(my_basis.y) # Prints (0, 4, -4).
-    print(my_basis.z) # Prints (0, 6, -6).
+    print(my_basis.x) # Prints (0, 2, -2)
+    print(my_basis.y) # Prints (0, 4, -4)
+    print(my_basis.z) # Prints (0, 6, -6)
 
  .. code-tab:: csharp
 
@@ -700,9 +714,9 @@ The basis matrix's rows are multiplied by ``scale``'s components. This operation
     );
     myBasis = myBasis.Scaled(new Vector3(0.0f, 2.0f, -2.0f));
     
-    GD.Print(myBasis.X); // Prints (0, 2, -2).
-    GD.Print(myBasis.Y); // Prints (0, 4, -4).
-    GD.Print(myBasis.Z); // Prints (0, 6, -6).
+    GD.Print(myBasis.X); // Prints (0, 2, -2)
+    GD.Print(myBasis.Y); // Prints (0, 4, -4)
+    GD.Print(myBasis.Z); // Prints (0, 6, -6)
 
 
 
@@ -797,9 +811,9 @@ Returns the transposed version of this basis. This turns the basis matrix's colu
     )
     my_basis = my_basis.transposed()
     
-    print(my_basis.x) # Prints (1, 4, 7).
-    print(my_basis.y) # Prints (2, 5, 8).
-    print(my_basis.z) # Prints (3, 6, 9).
+    print(my_basis.x) # Prints (1, 4, 7)
+    print(my_basis.y) # Prints (2, 5, 8)
+    print(my_basis.z) # Prints (3, 6, 9)
 
  .. code-tab:: csharp
 
@@ -810,9 +824,9 @@ Returns the transposed version of this basis. This turns the basis matrix's colu
     );
     myBasis = myBasis.Transposed();
     
-    GD.Print(myBasis.X); // Prints (1, 4, 7).
-    GD.Print(myBasis.Y); // Prints (2, 5, 8).
-    GD.Print(myBasis.Z); // Prints (3, 6, 9).
+    GD.Print(myBasis.X); // Prints (1, 4, 7)
+    GD.Print(myBasis.Y); // Prints (2, 5, 8)
+    GD.Print(myBasis.Z); // Prints (3, 6, 9)
 
 
 

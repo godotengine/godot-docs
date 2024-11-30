@@ -49,6 +49,8 @@ Lastly, every object can also contain metadata (data about data). :ref:`set_meta
 
 \ **Note:** The ``script`` is not exposed like most properties. To set or get an object's :ref:`Script<class_Script>` in code, use :ref:`set_script<class_Object_method_set_script>` and :ref:`get_script<class_Object_method_get_script>`, respectively.
 
+\ **Note:** In a boolean context, an **Object** will evaluate to ``false`` if it is equal to ``null`` or it has been freed. Otherwise, an **Object** will always evaluate to ``true``. See also :ref:`@GlobalScope.is_instance_valid<class_@GlobalScope_method_is_instance_valid>`.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

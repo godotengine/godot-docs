@@ -105,7 +105,7 @@ Property Descriptions
 - |void| **set_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_curve**\ (\ )
 
-Determines the size of the ribbon along its length. The size of a particular section segment is obtained by multiplying the baseline :ref:`size<class_RibbonTrailMesh_property_size>` by the value of this curve at the given distance. For values smaller than ``0``, the faces will be inverted.
+Determines the size of the ribbon along its length. The size of a particular section segment is obtained by multiplying the baseline :ref:`size<class_RibbonTrailMesh_property_size>` by the value of this curve at the given distance. For values smaller than ``0``, the faces will be inverted. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 

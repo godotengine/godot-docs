@@ -19,7 +19,7 @@ A 1D texture where the red, green, and blue color channels correspond to points 
 Description
 -----------
 
-A 1D texture where the red, green, and blue color channels correspond to points on 3 :ref:`Curve<class_Curve>` resources. Compared to using separate :ref:`CurveTexture<class_CurveTexture>`\ s, this further simplifies the task of saving curves as image files.
+A 1D texture where the red, green, and blue color channels correspond to points on 3 unit :ref:`Curve<class_Curve>` resources. Compared to using separate :ref:`CurveTexture<class_CurveTexture>`\ s, this further simplifies the task of saving curves as image files.
 
 If you only need to store one curve within a single texture, use :ref:`CurveTexture<class_CurveTexture>` instead. See also :ref:`GradientTexture1D<class_GradientTexture1D>` and :ref:`GradientTexture2D<class_GradientTexture2D>`.
 
@@ -63,7 +63,7 @@ Property Descriptions
 - |void| **set_curve_x**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_curve_x**\ (\ )
 
-The :ref:`Curve<class_Curve>` that is rendered onto the texture's red channel.
+The :ref:`Curve<class_Curve>` that is rendered onto the texture's red channel. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -80,7 +80,7 @@ The :ref:`Curve<class_Curve>` that is rendered onto the texture's red channel.
 - |void| **set_curve_y**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_curve_y**\ (\ )
 
-The :ref:`Curve<class_Curve>` that is rendered onto the texture's green channel.
+The :ref:`Curve<class_Curve>` that is rendered onto the texture's green channel. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -97,7 +97,7 @@ The :ref:`Curve<class_Curve>` that is rendered onto the texture's green channel.
 - |void| **set_curve_z**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_curve_z**\ (\ )
 
-The :ref:`Curve<class_Curve>` that is rendered onto the texture's blue channel.
+The :ref:`Curve<class_Curve>` that is rendered onto the texture's blue channel. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 

@@ -177,7 +177,7 @@ Constants
 
 **IDENTITY** = ``Transform2D(1, 0, 0, 1, 0, 0)`` :ref:`🔗<class_Transform2D_constant_IDENTITY>`
 
-The identity **Transform2D**. A transform with no translation, no rotation, and its scale being ``1``. When multiplied by another :ref:`Variant<class_Variant>` such as :ref:`Rect2<class_Rect2>` or another **Transform2D**, no transformation occurs. This means that:
+The identity **Transform2D**. This is a transform with no translation, no rotation, and a scale of :ref:`Vector2.ONE<class_Vector2_constant_ONE>`. This also means that:
 
 - The :ref:`x<class_Transform2D_property_x>` points right (:ref:`Vector2.RIGHT<class_Vector2_constant_RIGHT>`);
 
@@ -187,14 +187,16 @@ The identity **Transform2D**. A transform with no translation, no rotation, and 
 
     var transform = Transform2D.IDENTITY
     print("| X | Y | Origin")
-    print("| %s | %s | %s" % [transform.x.x, transform.y.x, transform.origin.x])
-    print("| %s | %s | %s" % [transform.x.y, transform.y.y, transform.origin.y])
+    print("| %.f | %.f | %.f" % [transform.x.x, transform.y.x, transform.origin.x])
+    print("| %.f | %.f | %.f" % [transform.x.y, transform.y.y, transform.origin.y])
     # Prints:
     # | X | Y | Origin
     # | 1 | 0 | 0
     # | 0 | 1 | 0
 
-This is identical to creating :ref:`Transform2D<class_Transform2D_constructor_Transform2D>` without any parameters. This constant can be used to make your code clearer, and for consistency with C#.
+If a :ref:`Vector2<class_Vector2>`, a :ref:`Rect2<class_Rect2>`, a :ref:`PackedVector2Array<class_PackedVector2Array>`, or another **Transform2D** is transformed (multiplied) by this constant, no transformation occurs.
+
+\ **Note:** In GDScript, this constant is equivalent to creating a :ref:`Transform2D<class_Transform2D_constructor_Transform2D>` without any arguments. It can be used to make your code clearer, and for consistency with C#.
 
 .. _class_Transform2D_constant_FLIP_X:
 
@@ -204,7 +206,7 @@ This is identical to creating :ref:`Transform2D<class_Transform2D_constructor_Tr
 
 When any transform is multiplied by :ref:`FLIP_X<class_Transform2D_constant_FLIP_X>`, it negates all components of the :ref:`x<class_Transform2D_property_x>` axis (the X column).
 
-When :ref:`FLIP_X<class_Transform2D_constant_FLIP_X>` is multiplied by any basis, it negates the :ref:`Vector2.x<class_Vector2_property_x>` component of all axes (the X row).
+When :ref:`FLIP_X<class_Transform2D_constant_FLIP_X>` is multiplied by any transform, it negates the :ref:`Vector2.x<class_Vector2_property_x>` component of all axes (the X row).
 
 .. _class_Transform2D_constant_FLIP_Y:
 
@@ -214,7 +216,7 @@ When :ref:`FLIP_X<class_Transform2D_constant_FLIP_X>` is multiplied by any basis
 
 When any transform is multiplied by :ref:`FLIP_Y<class_Transform2D_constant_FLIP_Y>`, it negates all components of the :ref:`y<class_Transform2D_property_y>` axis (the Y column).
 
-When :ref:`FLIP_Y<class_Transform2D_constant_FLIP_Y>` is multiplied by any basis, it negates the :ref:`Vector2.y<class_Vector2_property_y>` component of all axes (the Y row).
+When :ref:`FLIP_Y<class_Transform2D_constant_FLIP_Y>` is multiplied by any transform, it negates the :ref:`Vector2.y<class_Vector2_property_y>` component of all axes (the Y row).
 
 .. rst-class:: classref-section-separator
 
@@ -335,9 +337,9 @@ Method Descriptions
 
 :ref:`Transform2D<class_Transform2D>` **affine_inverse**\ (\ ) |const| :ref:`🔗<class_Transform2D_method_affine_inverse>`
 
-Returns the inverted version of this transform. Unlike :ref:`inverse<class_Transform2D_method_inverse>`, this method works with almost any basis, including non-uniform ones, but is slower. See also :ref:`inverse<class_Transform2D_method_inverse>`.
+Returns the inverted version of this transform. Unlike :ref:`inverse<class_Transform2D_method_inverse>`, this method works with almost any basis, including non-uniform ones, but is slower.
 
-\ **Note:** For this method to return correctly, the transform's basis needs to have a determinant that is not exactly ``0`` (see :ref:`determinant<class_Transform2D_method_determinant>`).
+\ **Note:** For this method to return correctly, the transform's basis needs to have a determinant that is not exactly ``0.0`` (see :ref:`determinant<class_Transform2D_method_determinant>`).
 
 .. rst-class:: classref-item-separator
 
@@ -377,7 +379,7 @@ Returns a copy of the ``v`` vector, transformed (multiplied) by the inverse tran
 
 Returns the `determinant <https://en.wikipedia.org/wiki/Determinant>`__ of this transform basis's matrix. For advanced math, this number can be used to determine a few attributes:
 
-- If the determinant is exactly ``0``, the basis is not invertible (see :ref:`inverse<class_Transform2D_method_inverse>`).
+- If the determinant is exactly ``0.0``, the basis is not invertible (see :ref:`inverse<class_Transform2D_method_inverse>`).
 
 - If the determinant is a negative number, the basis represents a negative scale.
 
@@ -432,7 +434,7 @@ Returns the length of both :ref:`x<class_Transform2D_property_x>` and :ref:`y<cl
     # Rotating the Transform2D in any way preserves its scale.
     my_transform = my_transform.rotated(TAU / 2)
     
-    print(my_transform.get_scale()) # Prints (2, 4).
+    print(my_transform.get_scale()) # Prints (2, 4)
 
  .. code-tab:: csharp
 
@@ -444,7 +446,7 @@ Returns the length of both :ref:`x<class_Transform2D_property_x>` and :ref:`y<cl
     // Rotating the Transform2D in any way preserves its scale.
     myTransform = myTransform.Rotated(Mathf.Tau / 2.0f);
     
-    GD.Print(myTransform.GetScale()); // Prints (2, 4, 8).
+    GD.Print(myTransform.GetScale()); // Prints (2, 4)
 
 
 
@@ -488,7 +490,7 @@ The ``weight`` should be between ``0.0`` and ``1.0`` (inclusive). Values outside
 
 Returns the `inverted version of this transform <https://en.wikipedia.org/wiki/Invertible_matrix>`__.
 
-\ **Note:** For this method to return correctly, the transform's basis needs to be *orthonormal* (see :ref:`orthonormalized<class_Transform2D_method_orthonormalized>`). That means, the basis should only represent a rotation. If it does not, use :ref:`affine_inverse<class_Transform2D_method_affine_inverse>` instead.
+\ **Note:** For this method to return correctly, the transform's basis needs to be *orthonormal* (see :ref:`orthonormalized<class_Transform2D_method_orthonormalized>`). That means the basis should only represent a rotation. If it does not, use :ref:`affine_inverse<class_Transform2D_method_affine_inverse>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -548,7 +550,7 @@ Returns a copy of the transform rotated such that the rotated X-axis points towa
 
 :ref:`Transform2D<class_Transform2D>` **orthonormalized**\ (\ ) |const| :ref:`🔗<class_Transform2D_method_orthonormalized>`
 
-Returns a copy of this transform with its basis orthonormalized. An orthonormal basis is both *orthogonal* (the axes are perpendicular to each other) and *normalized* (the axes have a length of ``1``), which also means it can only represent rotation.
+Returns a copy of this transform with its basis orthonormalized. An orthonormal basis is both *orthogonal* (the axes are perpendicular to each other) and *normalized* (the axes have a length of ``1.0``), which also means it can only represent a rotation.
 
 .. rst-class:: classref-item-separator
 
@@ -560,7 +562,9 @@ Returns a copy of this transform with its basis orthonormalized. An orthonormal 
 
 :ref:`Transform2D<class_Transform2D>` **rotated**\ (\ angle\: :ref:`float<class_float>`\ ) |const| :ref:`🔗<class_Transform2D_method_rotated>`
 
-Returns a copy of the transform rotated by the given ``angle`` (in radians).
+Returns a copy of this transform rotated by the given ``angle`` (in radians).
+
+If ``angle`` is positive, the transform is rotated clockwise.
 
 This method is an optimized version of multiplying the given transform ``X`` with a corresponding rotation transform ``R`` from the left, i.e., ``R * X``.
 
