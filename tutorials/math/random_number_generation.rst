@@ -33,9 +33,6 @@ Global scope methods are easier to set up, but they don't offer as much control.
 RandomNumberGenerator requires more code to use, but allows creating
 multiple instances, each with their own seed and state.
 
-This tutorial uses global scope methods, except when the method only exists in
-the RandomNumberGenerator class.
-
 The randomize() method
 ----------------------
 
@@ -134,7 +131,7 @@ number between 0 and 1. This is useful to implement a
 :ref:`doc_random_number_generation_weighted_random_probability` system, among
 other things.
 
-:ref:`randfn() <class_RandomNumberGenerator_method_randfn>` returns a random
+:ref:`randfn() <class_@GlobalScope_method_randfn>` returns a random
 floating-point number following a `normal distribution
 <https://en.wikipedia.org/wiki/Normal_distribution>`__. This means the returned
 value is more likely to be around the mean (0.0 by default),
@@ -144,16 +141,12 @@ varying by the deviation (1.0 by default):
  .. code-tab:: gdscript GDScript
 
     # Prints a random floating-point number from a normal distribution with a mean 0.0 and deviation 1.0.
-    var random = RandomNumberGenerator.new()
-    random.randomize()
-    print(random.randfn())
+    print(randfn())
 
  .. code-tab:: csharp
 
     // Prints a normally distributed floating-point number between 0.0 and 1.0.
-    var random = new RandomNumberGenerator();
-    random.Randomize();
-    GD.Print(random.Randfn());
+    GD.Print(GD.Randfn());
 
 :ref:`randf_range() <class_@GlobalScope_method_randf_range>` takes two arguments
 ``from`` and ``to``, and returns a random floating-point number between ``from``
@@ -165,28 +158,31 @@ and ``to``:
     # Prints a random floating-point number between -4 and 6.5.
     print(randf_range(-4, 6.5))
 
-:ref:`RandomNumberGenerator.randi_range()
-<class_RandomNumberGenerator_method_randi_range>` takes two arguments ``from``
+ .. code-tab:: csharp
+
+    // Prints a random floating-point number between -4 and 6.5.
+    GD.Print(GD.RandfRange(-4, 6.5));
+
+:ref:`randi_range() <class_@GlobalScope_method_randi_range>` takes two arguments ``from``
 and ``to``, and returns a random integer between ``from`` and ``to``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     # Prints a random integer between -10 and 10.
-    var random = RandomNumberGenerator.new()
-    random.randomize()
-    print(random.randi_range(-10, 10))
+    print(randi_range(-10, 10))
 
  .. code-tab:: csharp
 
     // Prints a random integer number between -10 and 10.
-    random.Randomize();
-    GD.Print(random.RandiRange(-10, 10));
+    GD.Print(GD.RandiRange(-10, 10));
 
 Get a random array element
 --------------------------
 
-We can use random integer generation to get a random element from an array:
+We can use random integer generation to get a random element from an array,
+or use the :ref:`Array.pick_random<class_Array_method_pick_random>` method
+to do it for us:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -194,12 +190,14 @@ We can use random integer generation to get a random element from an array:
     var _fruits = ["apple", "orange", "pear", "banana"]
 
     func _ready():
-        randomize()
-
         for i in range(100):
             # Pick 100 fruits randomly.
             print(get_fruit())
 
+        for i in range(100):
+            # Pick 100 fruits randomly, this time using the `Array.pick_random()`
+            # helper method. This has the same behavior as `get_fruit()`.
+            print(_fruits.pick_random())
 
     func get_fruit():
         var random_fruit = _fruits[randi() % _fruits.size()]
@@ -209,29 +207,37 @@ We can use random integer generation to get a random element from an array:
 
  .. code-tab:: csharp
 
-    private string[] _fruits = { "apple", "orange", "pear", "banana" };
+    // Use Godot's Array type instead of a BCL type so we can use `PickRandom()` on it.
+    private Godot.Collections.Array<string> _fruits = new Godot.Collections.Array<string> { "apple", "orange", "pear", "banana" };
 
     public override void _Ready()
     {
-        GD.Randomize();
-
         for (int i = 0; i < 100; i++)
         {
             // Pick 100 fruits randomly.
             GD.Print(GetFruit());
         }
+
+        for (int i = 0; i < 100; i++)
+        {
+            // Pick 100 fruits randomly, this time using the `Array.PickRandom()`
+            // helper method. This has the same behavior as `GetFruit()`.
+            GD.Print(_fruits.PickRandom());
+        }
     }
 
     public string GetFruit()
     {
-        string randomFruit = _fruits[GD.Randi() % _fruits.Length];
+        string randomFruit = _fruits[GD.Randi() % _fruits.Size()];
         // Returns "apple", "orange", "pear", or "banana" every time the code runs.
         // We may get the same fruit multiple times in a row.
         return randomFruit;
     }
 
 To prevent the same fruit from being picked more than once in a row, we can add
-more logic to this method:
+more logic to the above method. In this case, we can't use
+:ref:`Array.pick_random<class_Array_method_pick_random>` since it lacks a way to
+prevent repetition:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -241,8 +247,6 @@ more logic to this method:
 
 
     func _ready():
-        randomize()
-
         # Pick 100 fruits randomly.
         for i in range(100):
             print(get_fruit())
@@ -270,8 +274,6 @@ more logic to this method:
 
     public override void _Ready()
     {
-        GD.Randomize();
-
         for (int i = 0; i < 100; i++)
         {
             // Pick 100 fruits randomly.
@@ -316,8 +318,6 @@ We can apply similar logic from arrays to dictionaries as well:
 
 
     func _ready():
-        randomize()
-
         for i in range(20):
             print(get_metal())
 
@@ -341,8 +341,6 @@ floating-point number between 0.0 and 1.0. We can use this to create a
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        randomize()
-
         for i in range(100):
             print(get_item_rarity())
 
@@ -364,8 +362,6 @@ floating-point number between 0.0 and 1.0. We can use this to create a
 
     public override void _Ready()
     {
-        GD.Randomize();
-
         for (int i = 0; i < 100; i++)
         {
             GD.Print(GetItemRarity());
@@ -413,7 +409,6 @@ ends up empty. When that happens, you reinitialize it to its default value::
 
 
     func _ready():
-        randomize()
         _fruits_full = _fruits.duplicate()
         _fruits.shuffle()
 
@@ -456,7 +451,6 @@ terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
     var _noise = FastNoiseLite.new()
 
     func _ready():
-        randomize()
         # Configure the FastNoiseLite instance.
         _noise.noise_type = FastNoiseLite.NoiseType.TYPE_SIMPLEX_SMOOTH
         _noise.seed = randi()
@@ -474,7 +468,6 @@ terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
 
     public override void _Ready()
     {
-        GD.Randomize();
         // Configure the FastNoiseLite instance.
         _noise.NoiseType = NoiseTypeEnum.SimplexSmooth;
         _noise.Seed = (int)GD.Randi();

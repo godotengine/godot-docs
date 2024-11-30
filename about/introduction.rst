@@ -29,7 +29,7 @@ is a great starting point.
 
 In case you have trouble with one of the tutorials or your project,
 you can find help on the various `Community channels <https://godotengine.org/community/>`_,
-especially the Godot `Discord <https://discord.gg/bdcfAYM4W9>`_ community and
+especially the Godot `Discord <https://discord.gg/godotengine>`_ community and
 `Forum <https://forum.godotengine.org/>`_.
 
 About Godot Engine

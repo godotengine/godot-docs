@@ -10,7 +10,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,7 +26,8 @@ jobs:
       - name: Linter checks
         run: |
           bash _tools/format.sh
-          codespell -I _tools/codespell-ignore.txt -x _tools/codespell-ignore-lines.txt -S tutorials/i18n/locales.rst {about,community,contributing,getting_started,tutorials}/**/*.rst
+
+          codespell -D- -D _tools/codespell-dict.txt -I _tools/codespell-ignore.txt -x _tools/codespell-ignore-lines.txt -S tutorials/i18n/locales.rst {about,community,contributing,getting_started,tutorials}/{*.rst,**/*.rst,**/**/*.rst,**/**/**/*.rst}
 
       # Use dummy builder to improve performance as we don't need the generated HTML in this workflow.
       - name: Sphinx build

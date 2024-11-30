@@ -487,7 +487,7 @@ You should get the following output:
 Unlike ``draw_polygon()``, polylines can only have a single unique color
 for all its points (the second argument). This method has 2 additional
 arguments: the width of the line (which is as small as possible by default)
-and enabling or disabling the anti-aliasing (it is disabled by default).
+and enabling or disabling the antialiasing (it is disabled by default).
 
 The order of the ``_draw`` calls is important- like with the Node positions on
 the tree hierarchy, the different shapes will be drawn from top to bottom,

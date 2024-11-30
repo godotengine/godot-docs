@@ -84,6 +84,8 @@ Save the scene as ``player.tscn``
 With the nodes ready, we can almost get coding. But first, we need to define
 some input actions.
 
+.. _doc_first_3d_game_input_actions:
+
 Creating input actions
 ----------------------
 

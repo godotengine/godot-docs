@@ -5,8 +5,8 @@
 Using the Web editor
 ====================
 
-Since Godot 3.3, there is a `Web editor <https://editor.godotengine.org/>`__
-you can use to work on new or existing projects.
+There is a `Web editor <https://editor.godotengine.org/>`__ you can use to work
+on new or existing projects.
 
 .. note::
 
@@ -69,7 +69,8 @@ of the Web platform:
 .. seealso::
 
     See the
-    `list of open issues on GitHub related to the web editor <https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Aplatform%3Ahtml5+label%3Atopic%3Aeditor>`__ for a list of known bugs.
+    `list of open issues on GitHub related to the web editor <https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Aplatform%3Aweb+label%3Atopic%3Aeditor>`__
+    for a list of known bugs.
 
 Importing a project
 -------------------

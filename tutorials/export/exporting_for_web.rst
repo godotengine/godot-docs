@@ -11,8 +11,7 @@ Exporting for the Web
 
 HTML5 export allows publishing games made in Godot Engine to the browser.
 This requires support for `WebAssembly
-<https://webassembly.org/>`__, `WebGL <https://www.khronos.org/webgl/>`__ and
-`SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`_
+<https://webassembly.org/>`__ and `WebGL 2.0 <https://www.khronos.org/webgl/>`__
 in the user's browser.
 
 .. attention::
@@ -26,27 +25,60 @@ in the user's browser.
     with :kbd:`F12` (:kbd:`Cmd + Option + I` on macOS), to view
     **debug information** like JavaScript, engine, and WebGL errors.
 
+.. seealso::
+
+    See the
+    `list of open issues on GitHub related to the web export <https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Aplatform%3Aweb>`__
+    for a list of known bugs.
+
+Export file name
+----------------
+
+We suggest users to export their Web projects with ``index.html`` as the file name.
+``index.html`` is usually the default file loaded by web servers when accessing the
+parent directory, usually hiding the name of that file.
+
 .. attention::
 
-    Godot 4's HTML5 exports currently cannot run on macOS and iOS due to upstream bugs
-    with SharedArrayBuffer and WebGL 2.0. We recommend using
-    :ref:`macOS <doc_exporting_for_macos>` and :ref:`iOS <doc_exporting_for_ios>`
-    native export functionality instead, as it will also result in better performance.
-
-    Godot 3's HTML5 exports are more compatible with various browsers in
-    general, especially when using the GLES2 rendering backend (which only
-    requires WebGL 1.0).
+    The Godot 4 Web export expects some files to be named the same name as the one set in the
+    initial export. Some issues could occur if some exported files are renamed, including the
+    main HTML file.
 
 WebGL version
 -------------
 
 Godot 4.0 and later can only target WebGL 2.0 (using the Compatibility rendering
-method). There is no stable way to run Vulkan applications on the web yet.
+method). Forward+/Mobile are not supported on the web platform, as these
+rendering methods are designed around modern low-level graphics APIs. Godot
+currently does not support WebGPU, which is a prerequisite for allowing
+Forward+/Mobile to run on the web platform.
 
 See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for a list of browser
 versions supporting WebGL 2.0. Note that Safari has several issues with WebGL
 2.0 support that other browsers don't have, so we recommend using a
 Chromium-based browser or Firefox if possible.
+
+.. _doc_exporting_for_web_audio_playback:
+
+Audio playback
+--------------
+
+Since Godot 4.3, audio playback is done using the Web Audio API on the web
+platform. This **Sample** playback mode allows for low latency even when the
+project is exported without thread support, but it has several limitations:
+
+- AudioEffects are not supported.
+- :ref:`Reverberation and doppler <doc_audio_streams_reverb_buses>` effects are not supported.
+- Procedural audio generation is not supported.
+- Positional audio may not always work correctly depending on the node's properties.
+
+To use Godot's own audio playback system on the web platform, you can change the
+default playback mode using the **Audio > General > Default Playback Type.web**
+project setting, or change the **Playback Type** property to **Stream** on an
+:ref:`class_AudioStreamPlayer`, :ref:`class_AudioStreamPlayer2D` or
+:ref:`class_AudioStreamPlayer3D` node. This leads to increased latency
+(especially when thread support is disabled), but it allows the full suite
+of Godot's audio features to work.
 
 .. _doc_javascript_export_options:
 
@@ -60,7 +92,7 @@ game in the default browser for testing.
 If your project uses GDExtension **Extension Support** needs to be enabled.
 
 If you plan to use :ref:`VRAM compression <doc_importing_images>` make sure that
-**Vram Texture Compression** is enabled for the targeted platforms (enabling
+**VRAM Texture Compression** is enabled for the targeted platforms (enabling
 both **For Desktop** and **For Mobile** will result in a bigger, but more
 compatible export).
 
@@ -77,6 +109,59 @@ JavaScript APIs, include CSS, or run JavaScript code.
                modifications to that HTML file will be lost in future exports.
                To customize the generated file, use the **Custom HTML shell**
                option.
+
+.. _doc_exporting_for_web_thread_extension_support:
+
+Thread and extension support
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If **Thread Support** is enabled, the exported project will be able to
+:ref:`make use of multithreading <doc_using_multiple_threads>` to improve
+performance. This also allows for low-latency audio playback
+when the playback type is set to **Stream** (instead of the default **Sample**
+that is used in web exports). Enabling this feature requires the use of
+cross-origin isolation headers, which are described in the
+:ref:`doc_exporting_for_web_serving_the_files` section below.
+
+If **Extensions Support** is enabled, :ref:`GDExtensions <doc_what_is_gdextension>`
+will be able to be loaded. Note that GDExtensions still need to be specifically
+compiled for the web platform to work. Like thread support, enabling this feature
+requires the use of cross-origin isolation headers.
+
+Exporting as a Progressive Web App (PWA)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If **Progressive Web App > Enable** is enabled, it will have several effects:
+
+- Configure high-resolution icons, a display mode and screen orientation. These
+  are configured at the end of the Progressive Web App section in the export
+  options. These options are used if the user adds the project to their device's
+  homescreen, which is common on mobile platforms. This is also supported on
+  desktop platforms, albeit in a more limited capacity.
+
+- Allow the project to be loaded without an Internet connection if it has been
+  loaded at least once beforehand. This works thanks to the *service worker*
+  that is installed when the project is first loaded in the user's browser. This
+  service worker provides a local fallback when no Internet connection is
+  available.
+
+  - Note that web browsers can choose to evict the cached data if the user runs
+    low on disk space, or if the user hasn't opened the project for a while.
+    To ensure data is cached for a longer duration, the user can bookmark the page,
+    or ideally add it to their device's home screen.
+
+  - If the offline data is not available because it was evicted from the cache,
+    you can configure an **Offline Page** that will be displayed in this case.
+    The page must be in HTML format and will be saved on the client's machine
+    the first time the project is loaded.
+
+- Ensure cross-origin isolation headers are always present, even if the web
+  server hasn't been configured to send them. This allows exports with threads
+  enabled to work when hosted on any website, even if there is no way for you to
+  control the headers it sends.
+
+  - This behavior can be disabled by unchecking **Enable Cross Origin Isolation Headers**
+    in the Progressive Web App section.
 
 Limitations
 -----------
@@ -141,7 +226,7 @@ player to click, tap or press a key/button to enable audio, for instance when di
 .. seealso:: Google offers additional information about their `Web Audio autoplay
              policies <https://sites.google.com/a/chromium.org/dev/audio-video/autoplay>`__.
 
-             Apple's Safari team also posted additional information about their `Auto-Play Policy Changes for macOS 
+             Apple's Safari team also posted additional information about their `Auto-Play Policy Changes for macOS
              <https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/>`__.
 
 .. warning:: Access to microphone requires a
@@ -205,8 +290,8 @@ used, see :ref:`doc_customizing_html5_shell`.
 
 .. warning::
 
-    To ensure low audio latency and the ability to use :ref:`class_Thread` in web exports,
-    Godot 4 web exports always use
+    If either :ref:`thread support or extension support <doc_exporting_for_web_thread_extension_support>`
+    are enabled, the exported project will require
     `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__.
     This requires a :ref:`secure context <doc_javascript_secure_contexts>`,
     while also requiring the following CORS headers to be set when serving the files:
@@ -217,11 +302,13 @@ used, see :ref:`doc_customizing_html5_shell`.
         Cross-Origin-Embedder-Policy: require-corp
 
     If you don't control the web server or are unable to add response headers,
-    use `coi-serviceworker <https://github.com/gzuidhof/coi-serviceworker>`__
-    as a workaround.
+    check **Progressive Web App > Enable** in the export options. This applies
+    a service worker-based workaround that allows the project to run by
+    simulating the presence of these response headers. A secure context
+    is still required in this case.
 
-    If the client doesn't receive the required response headers,
-    **the project will not run**.
+    If the client doesn't receive the required response headers or the service
+    worker-based workaround is not applied, **the project will not run**.
 
 The generated ``.html`` file can be used as ``DirectoryIndex`` in Apache
 servers and can be renamed to e.g. ``index.html`` at any time. Its name is
@@ -289,7 +376,8 @@ supported on your web server for further file size savings.
 Interacting with the browser and JavaScript
 -------------------------------------------
 
-See the :ref:`dedicated page <doc_web_javascript_bridge>` on how to interact with JavaScript and access some unique Web browser features.
+See the :ref:`dedicated page <doc_web_javascript_bridge>` on how to interact
+with JavaScript and access some unique Web browser features.
 
 Environment variables
 ---------------------

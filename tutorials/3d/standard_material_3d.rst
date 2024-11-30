@@ -295,13 +295,10 @@ Specifies how the specular blob will be rendered. The specular blob
 represents the shape of a light source reflected in the object.
 
 * **SchlickGGX:** The most common blob used by PBR 3D engines nowadays.
-* **Blinn:** Common in previous-generation engines.
-  Not worth using nowadays, but left here for the sake of compatibility.
-* **Phong:** Same as above.
 * **Toon:** Creates a toon blob, which changes size depending on roughness.
 * **Disabled:** Sometimes the blob gets in the way. Begone!
 
-.. image:: img/spatial_material7.png
+.. image:: img/spatial_material7.webp
 
 Disable Ambient Light
 ~~~~~~~~~~~~~~~~~~~~~
@@ -657,6 +654,12 @@ This is commonly used to create cheap outlines. Add a second material pass,
 make it black and unshaded, reverse culling (Cull Front), and add some grow:
 
 .. image:: img/spatial_material11.png
+
+.. note::
+
+    For Grow to work as expected, the mesh must have connected faces with shared
+    vertices, or "smooth shading". If the mesh has disconnected faces with unique
+    vertices, or "flat shading", the mesh will appear to have gaps when using Grow.
 
 Transform
 ---------
