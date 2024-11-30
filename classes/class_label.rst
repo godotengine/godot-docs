@@ -60,6 +60,8 @@ Properties
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`MouseFilter<enum_Control_MouseFilter>`                                | mouse_filter                                                                                             | ``2`` (overrides :ref:`Control<class_Control_property_mouse_filter>`)        |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                                 | :ref:`paragraph_separator<class_Label_property_paragraph_separator>`                                     | ``"\\n"``                                                                    |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | |bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\]                      | size_flags_vertical                                                                                      | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`           | :ref:`structured_text_bidi_override<class_Label_property_structured_text_bidi_override>`                 | ``0``                                                                        |
@@ -123,6 +125,8 @@ Theme Properties
    | :ref:`int<class_int>`           | :ref:`line_spacing<class_Label_theme_constant_line_spacing>`               | ``3``                 |
    +---------------------------------+----------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`           | :ref:`outline_size<class_Label_theme_constant_outline_size>`               | ``0``                 |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`           | :ref:`paragraph_spacing<class_Label_theme_constant_paragraph_spacing>`     | ``0``                 |
    +---------------------------------+----------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`           | :ref:`shadow_offset_x<class_Label_theme_constant_shadow_offset_x>`         | ``1``                 |
    +---------------------------------+----------------------------------------------------------------------------+-----------------------+
@@ -294,6 +298,23 @@ The number of the lines ignored and not displayed from the start of the :ref:`te
 - :ref:`int<class_int>` **get_max_lines_visible**\ (\ )
 
 Limits the lines of text the node shows on screen.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label_property_paragraph_separator:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **paragraph_separator** = ``"\\n"`` :ref:`🔗<class_Label_property_paragraph_separator>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_paragraph_separator**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_paragraph_separator**\ (\ )
+
+String used as a paragraph separator. Each paragraph is processed independently, in its own BiDi context.
 
 .. rst-class:: classref-item-separator
 
@@ -625,6 +646,18 @@ Text outline size.
 \ **Note:** If using a font with :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` enabled, its :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the value of :ref:`outline_size<class_Label_theme_constant_outline_size>` for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
 
 \ **Note:** Using a value that is larger than half the font size is not recommended, as the font outline may fail to be fully closed in this case.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label_theme_constant_paragraph_spacing:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **paragraph_spacing** = ``0`` :ref:`🔗<class_Label_theme_constant_paragraph_spacing>`
+
+Vertical space between paragraphs. Added on top of :ref:`line_spacing<class_Label_theme_constant_line_spacing>`.
 
 .. rst-class:: classref-item-separator
 

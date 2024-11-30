@@ -1663,6 +1663,8 @@ Reads a user input as a UTF-8 encoded string from the standard input. This opera
 
 - If standard input is a file, this method will read a specific amount of data (or less if end-of-file is reached) and return immediately.
 
+\ **Note:** This method automatically replaces ``\r\n`` line breaks with ``\n`` and removes them from the end of the string. Use :ref:`read_buffer_from_stdin<class_OS_method_read_buffer_from_stdin>` to read the unprocessed data.
+
 \ **Note:** This method is implemented on Linux, macOS, and Windows.
 
 \ **Note:** On exported Windows builds, run the console wrapper executable to access the terminal. If standard input is console, calling this method without console wrapped will freeze permanently. If standard input is pipe or file, it can be used without console wrapper. If you need a single executable with full console support, use a custom build compiled with the ``windows_subsystem=console`` flag.

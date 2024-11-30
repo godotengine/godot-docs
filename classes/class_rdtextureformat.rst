@@ -29,25 +29,29 @@ Properties
 .. table::
    :widths: auto
 
-   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`                                                        | :ref:`array_layers<class_RDTextureFormat_property_array_layers>` | ``1`` |
-   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`                                                        | :ref:`depth<class_RDTextureFormat_property_depth>`               | ``1`` |
-   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`DataFormat<enum_RenderingDevice_DataFormat>`                           | :ref:`format<class_RDTextureFormat_property_format>`             | ``8`` |
-   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`                                                        | :ref:`height<class_RDTextureFormat_property_height>`             | ``1`` |
-   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`                                                        | :ref:`mipmaps<class_RDTextureFormat_property_mipmaps>`           | ``1`` |
-   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`                   | :ref:`samples<class_RDTextureFormat_property_samples>`           | ``0`` |
-   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`TextureType<enum_RenderingDevice_TextureType>`                         | :ref:`texture_type<class_RDTextureFormat_property_texture_type>` | ``1`` |
-   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | |bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\] | :ref:`usage_bits<class_RDTextureFormat_property_usage_bits>`     | ``0`` |
-   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`                                                        | :ref:`width<class_RDTextureFormat_property_width>`               | ``1`` |
-   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                        | :ref:`array_layers<class_RDTextureFormat_property_array_layers>`           | ``1``     |
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                        | :ref:`depth<class_RDTextureFormat_property_depth>`                         | ``1``     |
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
+   | :ref:`DataFormat<enum_RenderingDevice_DataFormat>`                           | :ref:`format<class_RDTextureFormat_property_format>`                       | ``8``     |
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                        | :ref:`height<class_RDTextureFormat_property_height>`                       | ``1``     |
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                      | :ref:`is_discardable<class_RDTextureFormat_property_is_discardable>`       | ``false`` |
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                      | :ref:`is_resolve_buffer<class_RDTextureFormat_property_is_resolve_buffer>` | ``false`` |
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                        | :ref:`mipmaps<class_RDTextureFormat_property_mipmaps>`                     | ``1``     |
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
+   | :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`                   | :ref:`samples<class_RDTextureFormat_property_samples>`                     | ``0``     |
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
+   | :ref:`TextureType<enum_RenderingDevice_TextureType>`                         | :ref:`texture_type<class_RDTextureFormat_property_texture_type>`           | ``1``     |
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
+   | |bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\] | :ref:`usage_bits<class_RDTextureFormat_property_usage_bits>`               | ``0``     |
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                        | :ref:`width<class_RDTextureFormat_property_width>`                         | ``1``     |
+   +------------------------------------------------------------------------------+----------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -135,6 +139,42 @@ The texture's pixel data format.
 - :ref:`int<class_int>` **get_height**\ (\ )
 
 The texture's height (in pixels).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RDTextureFormat_property_is_discardable:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **is_discardable** = ``false`` :ref:`🔗<class_RDTextureFormat_property_is_discardable>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_is_discardable**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_is_discardable**\ (\ )
+
+If a texture is discardable, its contents do not need to be preserved between frames. This flag is only relevant when the texture is used as target in a draw list.
+
+This information is used by :ref:`RenderingDevice<class_RenderingDevice>` to figure out if a texture's contents can be discarded, eliminating unnecessary writes to memory and boosting performance.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RDTextureFormat_property_is_resolve_buffer:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **is_resolve_buffer** = ``false`` :ref:`🔗<class_RDTextureFormat_property_is_resolve_buffer>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_is_resolve_buffer**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_is_resolve_buffer**\ (\ )
+
+The texture will be used as the destination of a resolve operation.
 
 .. rst-class:: classref-item-separator
 

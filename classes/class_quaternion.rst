@@ -189,6 +189,8 @@ The identity quaternion, representing no rotation. This has the same rotation as
 
 If a :ref:`Vector3<class_Vector3>` is rotated (multiplied) by this quaternion, it does not change.
 
+\ **Note:** In GDScript, this constant is equivalent to creating a :ref:`Quaternion<class_Quaternion_constructor_Quaternion>` without any arguments. It can be used to make your code clearer, and for consistency with C#.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -265,7 +267,7 @@ Constructor Descriptions
 
 :ref:`Quaternion<class_Quaternion>` **Quaternion**\ (\ ) :ref:`🔗<class_Quaternion_constructor_Quaternion>`
 
-Constructs a **Quaternion** identical to the :ref:`IDENTITY<class_Quaternion_constant_IDENTITY>`.
+Constructs a **Quaternion** identical to :ref:`IDENTITY<class_Quaternion_constant_IDENTITY>`.
 
 \ **Note:** In C#, this constructs a **Quaternion** with all of its components set to ``0.0``.
 
@@ -442,7 +444,7 @@ Returns the inverse version of this quaternion, inverting the sign of every comp
 
 :ref:`bool<class_bool>` **is_equal_approx**\ (\ to\: :ref:`Quaternion<class_Quaternion>`\ ) |const| :ref:`🔗<class_Quaternion_method_is_equal_approx>`
 
-Returns ``true`` if this quaternion and ``to`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this quaternion and ``to`` are approximately equal, by calling :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 .. rst-class:: classref-item-separator
 

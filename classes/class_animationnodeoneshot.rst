@@ -272,7 +272,7 @@ If ``true``, breaks the loop at the end of the loop cycle for transition, even i
 - |void| **set_fadein_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_fadein_curve**\ (\ )
 
-Determines how cross-fading between animations is eased. If empty, the transition will be linear.
+Determines how cross-fading between animations is eased. If empty, the transition will be linear. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -308,7 +308,7 @@ The fade-in duration. For example, setting this to ``1.0`` for a 5 second length
 - |void| **set_fadeout_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_fadeout_curve**\ (\ )
 
-Determines how cross-fading between animations is eased. If empty, the transition will be linear.
+Determines how cross-fading between animations is eased. If empty, the transition will be linear. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 

@@ -99,6 +99,8 @@ Properties
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                     | :ref:`threaded<class_RichTextLabel_property_threaded>`                                                           | ``false``                                                                 |
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>`               | :ref:`vertical_alignment<class_RichTextLabel_property_vertical_alignment>`                                       | ``0``                                                                     |
+   +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                       | :ref:`visible_characters<class_RichTextLabel_property_visible_characters>`                                       | ``-1``                                                                    |
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` | :ref:`visible_characters_behavior<class_RichTextLabel_property_visible_characters_behavior>`                     | ``0``                                                                     |
@@ -1003,6 +1005,23 @@ Base text writing direction.
 - :ref:`bool<class_bool>` **is_threaded**\ (\ )
 
 If ``true``, text processing is done in a background thread.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RichTextLabel_property_vertical_alignment:
+
+.. rst-class:: classref-property
+
+:ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **vertical_alignment** = ``0`` :ref:`🔗<class_RichTextLabel_property_vertical_alignment>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_vertical_alignment**\ (\ value\: :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>`\ )
+- :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **get_vertical_alignment**\ (\ )
+
+Controls the text's vertical alignment. Supports top, center, bottom, and fill. Set it to one of the :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` constants.
 
 .. rst-class:: classref-item-separator
 

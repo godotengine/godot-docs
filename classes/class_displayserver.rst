@@ -3395,7 +3395,7 @@ Returns the scale factor of the specified screen by index.
 
 \ **Note:** On Linux (Wayland), the returned value is accurate only when ``screen`` is :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`. Due to API limitations, passing a direct index will return a rounded-up integer, if the screen has a fractional scale (e.g. ``1.25`` would get rounded up to ``2.0``).
 
-\ **Note:** This method is implemented only on macOS and Linux (Wayland).
+\ **Note:** This method is implemented on Android, iOS, Web, macOS, and Linux (Wayland).
 
 .. rst-class:: classref-item-separator
 

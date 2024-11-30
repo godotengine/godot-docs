@@ -191,6 +191,8 @@ Methods
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform2D<class_Transform2D>`                                                         | :ref:`get_screen_transform<class_Viewport_method_get_screen_transform>`\ (\ ) |const|                                                                                                                                                                                 |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform2D<class_Transform2D>`                                                         | :ref:`get_stretch_transform<class_Viewport_method_get_stretch_transform>`\ (\ ) |const|                                                                                                                                                                               |
+   +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`ViewportTexture<class_ViewportTexture>`                                                 | :ref:`get_texture<class_Viewport_method_get_texture>`\ (\ ) |const|                                                                                                                                                                                                   |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                                         | :ref:`get_viewport_rid<class_Viewport_method_get_viewport_rid>`\ (\ ) |const|                                                                                                                                                                                         |
@@ -2074,6 +2076,20 @@ Returns rendering statistics of the given type. See :ref:`RenderInfoType<enum_Vi
 :ref:`Transform2D<class_Transform2D>` **get_screen_transform**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_screen_transform>`
 
 Returns the transform from the Viewport's coordinates to the screen coordinates of the containing window manager window.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_method_get_stretch_transform:
+
+.. rst-class:: classref-method
+
+:ref:`Transform2D<class_Transform2D>` **get_stretch_transform**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_stretch_transform>`
+
+Returns the automatically computed 2D stretch transform, taking the **Viewport**'s stretch settings into account. The final value is multiplied by :ref:`Window.content_scale_factor<class_Window_property_content_scale_factor>`, but only for the root viewport. If this method is called on a :ref:`SubViewport<class_SubViewport>` (e.g., in a scene tree with :ref:`SubViewportContainer<class_SubViewportContainer>` and :ref:`SubViewport<class_SubViewport>`), the scale factor of the root window will not be applied. Using :ref:`Transform2D.get_scale<class_Transform2D_method_get_scale>` on the returned value, this can be used to compensate for scaling when zooming a :ref:`Camera2D<class_Camera2D>` node, or to scale down a :ref:`TextureRect<class_TextureRect>` to be pixel-perfect regardless of the automatically computed scale factor.
+
+\ **Note:** Due to how pixel scaling works, the transform's X scale value may differ slightly from the Y scale, even when :ref:`Window.content_scale_aspect<class_Window_property_content_scale_aspect>` is set to a mode that preserves pixel aspect ratio. If :ref:`Window.content_scale_aspect<class_Window_property_content_scale_aspect>` is :ref:`Window.CONTENT_SCALE_ASPECT_IGNORE<class_Window_constant_CONTENT_SCALE_ASPECT_IGNORE>`, the X value may differ *significantly* from Y due to differences between the original aspect ratio and the window aspect ratio.
 
 .. rst-class:: classref-item-separator
 

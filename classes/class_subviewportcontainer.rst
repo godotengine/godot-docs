@@ -33,15 +33,15 @@ Properties
 .. table::
    :widths: auto
 
-   +------------------------------------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                  | :ref:`consume_drag_and_drop<class_SubViewportContainer_property_consume_drag_and_drop>` | ``false``                                                           |
-   +------------------------------------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-   | :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                              | ``1`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
-   +------------------------------------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                  | :ref:`stretch<class_SubViewportContainer_property_stretch>`                             | ``false``                                                           |
-   +------------------------------------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-   | :ref:`int<class_int>`                    | :ref:`stretch_shrink<class_SubViewportContainer_property_stretch_shrink>`               | ``1``                                                               |
-   +------------------------------------------+-----------------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   +------------------------------------------+---------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                                | ``1`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
+   +------------------------------------------+---------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`mouse_target<class_SubViewportContainer_property_mouse_target>`     | ``false``                                                           |
+   +------------------------------------------+---------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`stretch<class_SubViewportContainer_property_stretch>`               | ``false``                                                           |
+   +------------------------------------------+---------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`int<class_int>`                    | :ref:`stretch_shrink<class_SubViewportContainer_property_stretch_shrink>` | ``1``                                                               |
+   +------------------------------------------+---------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -64,20 +64,22 @@ Methods
 Property Descriptions
 ---------------------
 
-.. _class_SubViewportContainer_property_consume_drag_and_drop:
+.. _class_SubViewportContainer_property_mouse_target:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **consume_drag_and_drop** = ``false`` :ref:`🔗<class_SubViewportContainer_property_consume_drag_and_drop>`
+:ref:`bool<class_bool>` **mouse_target** = ``false`` :ref:`🔗<class_SubViewportContainer_property_mouse_target>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_consume_drag_and_drop**\ (\ value\: :ref:`bool<class_bool>`\ )
-- :ref:`bool<class_bool>` **is_consume_drag_and_drop_enabled**\ (\ )
+- |void| **set_mouse_target**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_mouse_target_enabled**\ (\ )
 
-If ``false``, the **SubViewportContainer** is not available as a drop target in drag-and-drop operations, and instead the :ref:`Control<class_Control>` nodes inside its :ref:`Viewport<class_Viewport>` children are potential drop targets.
+Configure, if either the **SubViewportContainer** or alternatively the :ref:`Control<class_Control>` nodes of its :ref:`SubViewport<class_SubViewport>` children should be available as targets of mouse-related functionalities, like identifying the drop target in drag-and-drop operations or cursor shape of hovered :ref:`Control<class_Control>` node.
 
-If ``true``, the **SubViewportContainer** itself will be considered as a drop target in drag-and-drop operations, preventing the :ref:`Control<class_Control>` nodes inside its :ref:`Viewport<class_Viewport>` children from becoming drop targets.
+If ``false``, the :ref:`Control<class_Control>` nodes inside its :ref:`SubViewport<class_SubViewport>` children are considered as targets.
+
+If ``true``, the **SubViewportContainer** itself will be considered as a target.
 
 .. rst-class:: classref-item-separator
 

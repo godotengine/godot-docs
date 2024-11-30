@@ -85,7 +85,7 @@ Methods
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                     | :ref:`draw_command_insert_label<class_RenderingDevice_method_draw_command_insert_label>`\ (\ name\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                      | :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>`\ (\ framebuffer\: :ref:`RID<class_RID>`, initial_color_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_color_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, initial_depth_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_depth_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, clear_color_values\: :ref:`PackedColorArray<class_PackedColorArray>` = PackedColorArray(), clear_depth\: :ref:`float<class_float>` = 1.0, clear_stencil\: :ref:`int<class_int>` = 0, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), breadcrumb\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                     |
+   | :ref:`int<class_int>`                                      | :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>`\ (\ framebuffer\: :ref:`RID<class_RID>`, draw_flags\: |bitfield|\[:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>`\] = 0, clear_color_values\: :ref:`PackedColorArray<class_PackedColorArray>` = PackedColorArray(), clear_depth_value\: :ref:`float<class_float>` = 1.0, clear_stencil_value\: :ref:`int<class_int>` = 0, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), breadcrumb\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`draw_list_begin_for_screen<class_RenderingDevice_method_draw_list_begin_for_screen>`\ (\ screen\: :ref:`int<class_int>` = 0, clear_color\: :ref:`Color<class_Color>` = Color(0, 0, 0, 1)\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -245,6 +245,8 @@ Methods
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`texture_get_native_handle<class_RenderingDevice_method_texture_get_native_handle>`\ (\ texture\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`texture_is_discardable<class_RenderingDevice_method_texture_is_discardable>`\ (\ texture\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                    | :ref:`texture_is_format_supported_for_usage<class_RenderingDevice_method_texture_is_format_supported_for_usage>`\ (\ format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`, usage_flags\: |bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\]\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                    | :ref:`texture_is_shared<class_RenderingDevice_method_texture_is_shared>`\ (\ texture\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -252,6 +254,8 @@ Methods
    | :ref:`bool<class_bool>`                                    | :ref:`texture_is_valid<class_RenderingDevice_method_texture_is_valid>`\ (\ texture\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`                      | :ref:`texture_resolve_multisample<class_RenderingDevice_method_texture_resolve_multisample>`\ (\ from_texture\: :ref:`RID<class_RID>`, to_texture\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                     | :ref:`texture_set_discardable<class_RenderingDevice_method_texture_set_discardable>`\ (\ texture\: :ref:`RID<class_RID>`, discardable\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`                      | :ref:`texture_update<class_RenderingDevice_method_texture_update>`\ (\ texture\: :ref:`RID<class_RID>`, layer\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3905,6 +3909,8 @@ enum **InitialAction**: :ref:`🔗<enum_RenderingDevice_InitialAction>`
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_LOAD** = ``0``
 
+**Deprecated:** Initial actions are solved automatically by RenderingDevice.
+
 Load the previous contents of the framebuffer.
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_CLEAR:
@@ -3912,6 +3918,8 @@ Load the previous contents of the framebuffer.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_CLEAR** = ``1``
+
+**Deprecated:** Initial actions are solved automatically by RenderingDevice.
 
 Clear the whole framebuffer or its specified region.
 
@@ -3921,6 +3929,8 @@ Clear the whole framebuffer or its specified region.
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_DISCARD** = ``2``
 
+**Deprecated:** Initial actions are solved automatically by RenderingDevice.
+
 Ignore the previous contents of the framebuffer. This is the fastest option if you'll overwrite all of the pixels and don't need to read any of them.
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_MAX:
@@ -3928,6 +3938,8 @@ Ignore the previous contents of the framebuffer. This is the fastest option if y
 .. rst-class:: classref-enumeration-constant
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_MAX** = ``3``
+
+**Deprecated:** Initial actions are solved automatically by RenderingDevice.
 
 Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialAction>` enum.
 
@@ -3937,7 +3949,7 @@ Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialActio
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_CLEAR_REGION** = ``1``
 
-**Deprecated:** Use :ref:`INITIAL_ACTION_CLEAR<class_RenderingDevice_constant_INITIAL_ACTION_CLEAR>` instead.
+**Deprecated:** Initial actions are solved automatically by RenderingDevice.
 
 
 
@@ -3947,7 +3959,7 @@ Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialActio
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_CLEAR_REGION_CONTINUE** = ``1``
 
-**Deprecated:** Use :ref:`INITIAL_ACTION_LOAD<class_RenderingDevice_constant_INITIAL_ACTION_LOAD>` instead.
+**Deprecated:** Initial actions are solved automatically by RenderingDevice.
 
 
 
@@ -3957,7 +3969,7 @@ Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialActio
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_KEEP** = ``0``
 
-**Deprecated:** Use :ref:`INITIAL_ACTION_LOAD<class_RenderingDevice_constant_INITIAL_ACTION_LOAD>` instead.
+**Deprecated:** Initial actions are solved automatically by RenderingDevice.
 
 
 
@@ -3967,7 +3979,7 @@ Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialActio
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_DROP** = ``2``
 
-**Deprecated:** Use :ref:`INITIAL_ACTION_DISCARD<class_RenderingDevice_constant_INITIAL_ACTION_DISCARD>` instead.
+**Deprecated:** Initial actions are solved automatically by RenderingDevice.
 
 
 
@@ -3977,7 +3989,7 @@ Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialActio
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_CONTINUE** = ``0``
 
-**Deprecated:** Use :ref:`INITIAL_ACTION_LOAD<class_RenderingDevice_constant_INITIAL_ACTION_LOAD>` instead.
+**Deprecated:** Initial actions are solved automatically by RenderingDevice.
 
 
 
@@ -3997,6 +4009,8 @@ enum **FinalAction**: :ref:`🔗<enum_RenderingDevice_FinalAction>`
 
 :ref:`FinalAction<enum_RenderingDevice_FinalAction>` **FINAL_ACTION_STORE** = ``0``
 
+**Deprecated:** Final actions are solved automatically by RenderingDevice.
+
 Store the result of the draw list in the framebuffer. This is generally what you want to do.
 
 .. _class_RenderingDevice_constant_FINAL_ACTION_DISCARD:
@@ -4004,6 +4018,8 @@ Store the result of the draw list in the framebuffer. This is generally what you
 .. rst-class:: classref-enumeration-constant
 
 :ref:`FinalAction<enum_RenderingDevice_FinalAction>` **FINAL_ACTION_DISCARD** = ``1``
+
+**Deprecated:** Final actions are solved automatically by RenderingDevice.
 
 Discard the contents of the framebuffer. This is the fastest option if you don't need to use the results of the draw list.
 
@@ -4013,6 +4029,8 @@ Discard the contents of the framebuffer. This is the fastest option if you don't
 
 :ref:`FinalAction<enum_RenderingDevice_FinalAction>` **FINAL_ACTION_MAX** = ``2``
 
+**Deprecated:** Final actions are solved automatically by RenderingDevice.
+
 Represents the size of the :ref:`FinalAction<enum_RenderingDevice_FinalAction>` enum.
 
 .. _class_RenderingDevice_constant_FINAL_ACTION_READ:
@@ -4021,7 +4039,7 @@ Represents the size of the :ref:`FinalAction<enum_RenderingDevice_FinalAction>` 
 
 :ref:`FinalAction<enum_RenderingDevice_FinalAction>` **FINAL_ACTION_READ** = ``0``
 
-**Deprecated:** Use :ref:`FINAL_ACTION_STORE<class_RenderingDevice_constant_FINAL_ACTION_STORE>` instead.
+**Deprecated:** Final actions are solved automatically by RenderingDevice.
 
 
 
@@ -4031,7 +4049,7 @@ Represents the size of the :ref:`FinalAction<enum_RenderingDevice_FinalAction>` 
 
 :ref:`FinalAction<enum_RenderingDevice_FinalAction>` **FINAL_ACTION_CONTINUE** = ``0``
 
-**Deprecated:** Use :ref:`FINAL_ACTION_STORE<class_RenderingDevice_constant_FINAL_ACTION_STORE>` instead.
+**Deprecated:** Final actions are solved automatically by RenderingDevice.
 
 
 
@@ -4699,6 +4717,232 @@ enum **BreadcrumbMarker**: :ref:`🔗<enum_RenderingDevice_BreadcrumbMarker>`
 
 
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_RenderingDevice_DrawFlags:
+
+.. rst-class:: classref-enumeration
+
+flags **DrawFlags**: :ref:`🔗<enum_RenderingDevice_DrawFlags>`
+
+.. _class_RenderingDevice_constant_DRAW_DEFAULT_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_DEFAULT_ALL** = ``0``
+
+Do not clear or ignore any attachments.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_COLOR_0:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_COLOR_0** = ``1``
+
+Clear the first color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_COLOR_1:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_COLOR_1** = ``2``
+
+Clear the second color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_COLOR_2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_COLOR_2** = ``4``
+
+Clear the third color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_COLOR_3:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_COLOR_3** = ``8``
+
+Clear the fourth color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_COLOR_4:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_COLOR_4** = ``16``
+
+Clear the fifth color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_COLOR_5:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_COLOR_5** = ``32``
+
+Clear the sixth color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_COLOR_6:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_COLOR_6** = ``64``
+
+Clear the seventh color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_COLOR_7:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_COLOR_7** = ``128``
+
+Clear the eighth color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_COLOR_MASK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_COLOR_MASK** = ``255``
+
+Mask for clearing all color attachments.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_COLOR_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_COLOR_ALL** = ``255``
+
+Clear all color attachments.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_COLOR_0:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_COLOR_0** = ``256``
+
+Ignore the previous contents of the first color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_COLOR_1:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_COLOR_1** = ``512``
+
+Ignore the previous contents of the second color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_COLOR_2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_COLOR_2** = ``1024``
+
+Ignore the previous contents of the third color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_COLOR_3:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_COLOR_3** = ``2048``
+
+Ignore the previous contents of the fourth color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_COLOR_4:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_COLOR_4** = ``4096``
+
+Ignore the previous contents of the fifth color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_COLOR_5:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_COLOR_5** = ``8192``
+
+Ignore the previous contents of the sixth color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_COLOR_6:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_COLOR_6** = ``16384``
+
+Ignore the previous contents of the seventh color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_COLOR_7:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_COLOR_7** = ``32768``
+
+Ignore the previous contents of the eighth color attachment.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_COLOR_MASK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_COLOR_MASK** = ``65280``
+
+Mask for ignoring all the previous contents of the color attachments.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_COLOR_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_COLOR_ALL** = ``65280``
+
+Ignore the previous contents of all color attachments.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_DEPTH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_DEPTH** = ``65536``
+
+Clear the depth attachment.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_DEPTH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_DEPTH** = ``131072``
+
+Ignore the previous contents of the depth attachment.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_STENCIL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_STENCIL** = ``262144``
+
+Clear the stencil attachment.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_STENCIL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_STENCIL** = ``524288``
+
+Ignore the previous contents of the stencil attachment.
+
+.. _class_RenderingDevice_constant_DRAW_CLEAR_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_CLEAR_ALL** = ``327935``
+
+Clear all attachments.
+
+.. _class_RenderingDevice_constant_DRAW_IGNORE_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>` **DRAW_IGNORE_ALL** = ``720640``
+
+Ignore the previous contents of all attachments.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -5031,7 +5275,7 @@ This method does nothing.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **draw_list_begin**\ (\ framebuffer\: :ref:`RID<class_RID>`, initial_color_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_color_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, initial_depth_action\: :ref:`InitialAction<enum_RenderingDevice_InitialAction>`, final_depth_action\: :ref:`FinalAction<enum_RenderingDevice_FinalAction>`, clear_color_values\: :ref:`PackedColorArray<class_PackedColorArray>` = PackedColorArray(), clear_depth\: :ref:`float<class_float>` = 1.0, clear_stencil\: :ref:`int<class_int>` = 0, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), breadcrumb\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_begin>`
+:ref:`int<class_int>` **draw_list_begin**\ (\ framebuffer\: :ref:`RID<class_RID>`, draw_flags\: |bitfield|\[:ref:`DrawFlags<enum_RenderingDevice_DrawFlags>`\] = 0, clear_color_values\: :ref:`PackedColorArray<class_PackedColorArray>` = PackedColorArray(), clear_depth_value\: :ref:`float<class_float>` = 1.0, clear_stencil_value\: :ref:`int<class_int>` = 0, region\: :ref:`Rect2<class_Rect2>` = Rect2(0, 0, 0, 0), breadcrumb\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_RenderingDevice_method_draw_list_begin>`
 
 Starts a list of raster drawing commands created with the ``draw_*`` methods. The returned value should be passed to other ``draw_list_*`` functions.
 
@@ -5043,7 +5287,7 @@ A simple drawing operation might look like this (code is not a complete example)
 
     var rd = RenderingDevice.new()
     var clear_colors = PackedColorArray([Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 0)])
-    var draw_list = rd.draw_list_begin(framebuffers[i], RenderingDevice.INITIAL_ACTION_CLEAR, RenderingDevice.FINAL_ACTION_READ, RenderingDevice.INITIAL_ACTION_CLEAR, RenderingDevice.FINAL_ACTION_DISCARD, clear_colors, RenderingDevice.OPAQUE_PASS)
+    var draw_list = rd.draw_list_begin(framebuffers[i], RenderingDevice.CLEAR_COLOR_ALL, clear_colors, true, 1.0f, true, 0, Rect2(), RenderingDevice.OPAQUE_PASS)
     
     # Draw opaque.
     rd.draw_list_bind_render_pipeline(draw_list, raster_pipeline)
@@ -5058,13 +5302,15 @@ A simple drawing operation might look like this (code is not a complete example)
     
     rd.draw_list_end()
 
+The ``draw_flags`` indicates if the texture attachments of the framebuffer should be cleared or ignored. Only one of the two flags can be used for each individual attachment. Ignoring an attachment means that any contents that existed before the draw list will be completely discarded, reducing the memory bandwidth used by the render pass but producing garbage results if the pixels aren't replaced. The default behavior allows the engine to figure out the right operation to use if the texture is discardable, which can result in increased performance. See :ref:`RDTextureFormat<class_RDTextureFormat>` or :ref:`texture_set_discardable<class_RenderingDevice_method_texture_set_discardable>`.
+
 The ``breadcrumb`` parameter can be an arbitrary 32-bit integer that is useful to diagnose GPU crashes. If Godot is built in dev or debug mode; when the GPU crashes Godot will dump all shaders that were being executed at the time of the crash and the breadcrumb is useful to diagnose what passes did those shaders belong to.
 
 It does not affect rendering behavior and can be set to 0. It is recommended to use :ref:`BreadcrumbMarker<enum_RenderingDevice_BreadcrumbMarker>` enumerations for consistency but it's not required. It is also possible to use bitwise operations to add extra data. e.g.
 
 ::
 
-    rd.draw_list_begin(fb[i], RenderingDevice.INITIAL_ACTION_CLEAR, RenderingDevice.FINAL_ACTION_READ, RenderingDevice.INITIAL_ACTION_CLEAR, RenderingDevice.FINAL_ACTION_DISCARD, clear_colors, RenderingDevice.OPAQUE_PASS | 5)
+    rd.draw_list_begin(fb[i], RenderingDevice.CLEAR_COLOR_ALL, clear_colors, true, 1.0f, true, 0, Rect2(), RenderingDevice.OPAQUE_PASS | 5)
 
 .. rst-class:: classref-item-separator
 
@@ -6164,6 +6410,18 @@ Returns the internal graphics handle for this texture object. For use when commu
 
 ----
 
+.. _class_RenderingDevice_method_texture_is_discardable:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **texture_is_discardable**\ (\ texture\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_is_discardable>`
+
+Returns ``true`` if the ``texture`` is discardable, ``false`` otherwise. See :ref:`RDTextureFormat<class_RDTextureFormat>` or :ref:`texture_set_discardable<class_RenderingDevice_method_texture_set_discardable>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingDevice_method_texture_is_format_supported_for_usage:
 
 .. rst-class:: classref-method
@@ -6221,6 +6479,22 @@ Resolves the ``from_texture`` texture onto ``to_texture`` with multisample antia
 \ **Note:** ``to_texture`` texture requires the :ref:`TEXTURE_USAGE_CAN_COPY_TO_BIT<class_RenderingDevice_constant_TEXTURE_USAGE_CAN_COPY_TO_BIT>` to be retrieved.
 
 \ **Note:** ``to_texture`` texture must **not** be multisampled and must also be 2D (or a slice of a 3D/cubemap texture).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingDevice_method_texture_set_discardable:
+
+.. rst-class:: classref-method
+
+|void| **texture_set_discardable**\ (\ texture\: :ref:`RID<class_RID>`, discardable\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingDevice_method_texture_set_discardable>`
+
+Updates the discardable property of ``texture``.
+
+If a texture is discardable, its contents do not need to be preserved between frames. This flag is only relevant when the texture is used as target in a draw list.
+
+This information is used by **RenderingDevice** to figure out if a texture's contents can be discarded, eliminating unnecessary writes to memory and boosting performance.
 
 .. rst-class:: classref-item-separator
 

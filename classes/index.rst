@@ -211,6 +211,7 @@ Nodes
     class_remotetransform2d
     class_remotetransform3d
     class_resourcepreloader
+    class_retargetmodifier3d
     class_richtextlabel
     class_rigidbody2d
     class_rigidbody3d

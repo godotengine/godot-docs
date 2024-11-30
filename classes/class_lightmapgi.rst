@@ -31,6 +31,8 @@ The **LightmapGI** node is used to compute and store baked lightmaps. Lightmaps 
 
 \ **Note:** If no custom lightmappers are installed, **LightmapGI** can only be baked from devices that support the Forward+ or Mobile rendering backends.
 
+\ **Note:** The **LightmapGI** node only bakes light data for child nodes of its parent. Nodes further up the hierarchy of the scene will not be baked.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

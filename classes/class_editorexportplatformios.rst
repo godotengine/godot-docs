@@ -56,6 +56,10 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/min_ios_version<class_EditorExportPlatformIOS_property_application/min_ios_version>`                                                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/provisioning_profile_specifier_debug<class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_debug>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/provisioning_profile_specifier_release<class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_release>`                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/provisioning_profile_uuid_debug<class_EditorExportPlatformIOS_property_application/provisioning_profile_uuid_debug>`                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/provisioning_profile_uuid_release<class_EditorExportPlatformIOS_property_application/provisioning_profile_uuid_release>`                                           |
@@ -658,6 +662,34 @@ Interpolation method used to resize application icon.
 :ref:`String<class_String>` **application/min_ios_version** :ref:`🔗<class_EditorExportPlatformIOS_property_application/min_ios_version>`
 
 Minimum version of iOS required for this application to run in the ``major.minor.patch`` or ``major.minor`` format, can only contain numeric characters (``0-9``) and periods (``.``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_debug:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **application/provisioning_profile_specifier_debug** :ref:`🔗<class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_debug>`
+
+Name of the provisioning profile. Sets XCode PROVISIONING_PROFILE_SPECIFIER for debug. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
+
+Can be overridden with the environment variable ``GODOT_IOS_PROFILE_SPECIFIER_DEBUG``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_release:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **application/provisioning_profile_specifier_release** :ref:`🔗<class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_release>`
+
+Name of the provisioning profile. Sets XCode PROVISIONING_PROFILE_SPECIFIER for release. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
+
+Can be overridden with the environment variable ``GODOT_IOS_PROFILE_SPECIFIER_RELEASE``.
 
 .. rst-class:: classref-item-separator
 
