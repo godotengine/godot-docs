@@ -1368,13 +1368,12 @@ p + .classref-constant {
 }
 
 .wy-side-nav-search {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: max-content;
     background-color: var(--navbar-background-color);
     color: var(--navbar-level-1-color);
     margin-right: 8px;
-}
-
-.wy-side-nav-search.fixed {
-    position: fixed;
 }
 
 @media only screen and (min-width: 769px) {
@@ -1692,6 +1691,8 @@ p + .classref-constant {
 @media only screen and (min-width: 769px) {
     .wy-side-scroll {
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
     }
 
     .wy-nav-side .wy-side-scroll .ethical-rtd {
@@ -1702,7 +1703,7 @@ p + .classref-constant {
 .wy-menu.wy-menu-vertical {
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: calc(100% - 348px);
+    flex: 1;
     padding-bottom: 24px;
 }
 @media screen and (max-width: 768px) {

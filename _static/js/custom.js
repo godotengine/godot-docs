@@ -54,22 +54,11 @@ const registerOnScrollEvent = (function(){
         if (currentScroll >= scrollTopPixels) {
           // After the page is scrolled below the threshold, we fix everything in place.
           $search.css('margin-top', `-${scrollTopPixels}px`);
-          $menu.css('margin-top', `${menuTopMargin}px`);
-          $menu.css('max-height', `calc(100% - ${menuHeightOffset_fixed}px)`);
         }
         else {
           // Between the top of the page and the threshold we calculate intermediate values
           // to guarantee a smooth transition.
           $search.css('margin-top', `-${currentScroll}px`);
-          $menu.css('margin-top', `${menuTopMargin + (scrollTopPixels - currentScroll)}px`);
-
-          if (currentScroll > 0) {
-            const scrolledPercent = (scrollTopPixels - currentScroll) / scrollTopPixels;
-            const offsetValue = menuHeightOffset_fixed + menuHeightOffset_diff * scrolledPercent;
-            $menu.css('max-height', `calc(100% - ${offsetValue}px)`);
-          } else {
-            $menu.css('max-height', `calc(100% - ${menuHeightOffset_default}px)`);
-          }
         }
       };
 
@@ -98,7 +87,6 @@ const registerOnScrollEvent = (function(){
         }
       };
 
-      $search.addClass('fixed');
       $ethical.addClass('fixed');
 
       // Adjust the inner height of navigation so that the banner can be overlaid there later.
@@ -126,12 +114,9 @@ const registerOnScrollEvent = (function(){
       $window.unbind('scroll');
       $menu.unbind('scroll');
 
-      $search.removeClass('fixed');
       $ethical.removeClass('fixed');
 
       $search.css('margin-top', `0px`);
-      $menu.css('margin-top', `0px`);
-      $menu.css('max-height', 'initial');
       $menuPadding.css('height', `0px`);
       $ethical.css('margin-top', '0px');
       $ethical.css('display', 'block');
