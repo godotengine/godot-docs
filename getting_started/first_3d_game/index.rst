@@ -33,7 +33,7 @@ This tutorial is for beginners who followed the complete getting started series.
 We'll start slow with detailed instructions and shorten them as we do similar
 steps. If you're an experienced programmer, you can browse the complete demo's
 source code here: `Squash the Creep source code
-<https://github.com/godotengine/godot-3d-dodge-the-creeps>`__.
+<https://github.com/godotengine/godot-demo-projects/tree/master/3d/squash_the_creeps>`__.
 
 .. note::
 
