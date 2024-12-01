@@ -168,7 +168,7 @@ sounds), particle effects, and more.
    Scene tiles come with a greater performance overhead compared to atlases, as
    every scene is instanced individually for every placed tile.
 
-   It's recommended to use only scene tiles when necessary. To draw sprites in a
+   It's recommended to only use scene tiles when necessary. To draw sprites in a
    tile without any kind of advanced manipulation,
    :ref:`use atlases instead <doc_creating_tilesets_using_tilesheet>`.
 
@@ -257,7 +257,7 @@ TileSet resource, choose **Merge (Keep Original Atlases)** instead.
 Adding collision, navigation and occlusion to the TileSet
 ---------------------------------------------------------
 
-We've now successfully created a basic TileSet. We could start using in the
+We've now successfully created a basic TileSet. We could start using it in the
 TileMapLayer node now, but it currently lacks any form of collision detection.
 This means the player and other objects could walk straight through the floor or
 walls.
@@ -436,7 +436,7 @@ corners or edges of platforms, floors, etc. While these can be placed manually,
 this quickly becomes tedious. Handling this situation with procedurally
 generated levels can also be difficult and require a lot of code.
 
-Godot offers *terrains* to perform this kind of tile connections automatically.
+Godot offers *terrains* to perform this kind of tile connection automatically.
 This allows you to have the "correct" tile variants automatically used.
 
 Terrains are grouped into terrain sets. Each terrain set is assigned a mode from
