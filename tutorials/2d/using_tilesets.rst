@@ -257,7 +257,7 @@ TileSet resource, choose **Merge (Keep Original Atlases)** instead.
 Adding collision, navigation and occlusion to the TileSet
 ---------------------------------------------------------
 
-We've now successfully created a basic TileSet. We could start using in the
+We've now successfully created a basic TileSet. We could start using it in the
 TileMapLayer node now, but it currently lacks any form of collision detection.
 This means the player and other objects could walk straight through the floor or
 walls.
