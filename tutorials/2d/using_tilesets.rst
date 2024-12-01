@@ -168,7 +168,7 @@ sounds), particle effects, and more.
    Scene tiles come with a greater performance overhead compared to atlases, as
    every scene is instanced individually for every placed tile.
 
-   It's recommended to use only scene tiles when necessary. To draw sprites in a
+   It's recommended to only use scene tiles when necessary. To draw sprites in a
    tile without any kind of advanced manipulation,
    :ref:`use atlases instead <doc_creating_tilesets_using_tilesheet>`.
 
