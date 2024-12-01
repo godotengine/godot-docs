@@ -16,6 +16,11 @@ added since version 3.0.
 New pages since version 4.3
 ---------------------------
 
+2D
+^^
+
+- :ref:`doc_introduction_to_2d`
+
 3D
 ^^
 
