@@ -436,7 +436,7 @@ corners or edges of platforms, floors, etc. While these can be placed manually,
 this quickly becomes tedious. Handling this situation with procedurally
 generated levels can also be difficult and require a lot of code.
 
-Godot offers *terrains* to perform this kind of tile connections automatically.
+Godot offers *terrains* to perform this kind of tile connection automatically.
 This allows you to have the "correct" tile variants automatically used.
 
 Terrains are grouped into terrain sets. Each terrain set is assigned a mode from
