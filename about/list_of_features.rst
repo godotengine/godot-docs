@@ -492,8 +492,6 @@ Scripting
   `Swift <https://github.com/migueldeicaza/SwiftGodot>`__, and `Rust <https://github.com/godot-rust/gdextension>`__
   bindings provided by the community. (Some of these bindings may be experimental and not production-ready).
 
-- Archived partial GDExtension bindings for `Haxe <https://github.com/HxGodot/hxgodot>`__.
-
 Audio
 -----
 
