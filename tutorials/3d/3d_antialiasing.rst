@@ -38,6 +38,8 @@ detailed below.
     You can compare antialiasing algorithms in action using the
     `3D Antialiasing demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/antialiasing>`__.
 
+.. _doc_3d_antialiasing_msaa:
+
 Multisample antialiasing (MSAA)
 -------------------------------
 
@@ -180,6 +182,8 @@ setting to ``FXAA``.
 Comparison between no antialiasing (left) and FXAA (right):
 
 .. image:: img/antialiasing_fxaa.webp
+
+.. _doc_3d_antialiasing_ssaa:
 
 Supersample antialiasing (SSAA)
 -------------------------------
