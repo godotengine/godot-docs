@@ -234,8 +234,9 @@ away from the camera (and may have little to no impact on the final scene
 rendering). Using node groups, you can also prevent non-essential decorative
 decals from spawning based on user configuration.
 
-The way decals are rendered also has an impact on performance. The **Rendering >
-Textures > Decals > Filter** advanced project setting lets you control how decal
+The way decals are rendered also has an impact on performance. The
+:ref:`Rendering > Textures > Decals > Filter<class_ProjectSettings_property_rendering/textures/decals/filter>`
+advanced project setting lets you control how decal
 textures should be filtered. **Nearest/Linear** does not use mipmaps. However,
 decals will look grainy at a distance. **Nearest/Linear Mipmaps** will look
 smoother at a distance, but decals will look blurry when viewed from oblique
@@ -262,9 +263,9 @@ decal rendering. As many decals as desired can be added (as long as
 performance allows). However, there's still a default limit of 512 *clustered
 elements* that can be present in the current camera view. A clustered element is
 an omni light, a spot light, a :ref:`decal <doc_using_decals>` or a
-:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by
-adjusting the **Rendering > Limits > Cluster Builder > Max Clustered Elements**
-advanced project setting.
+:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by adjusting
+:ref:`Max Clustered Elements<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
+in **Project Settings > Rendering > Limits > Cluster Builder**.
 
 When using the Forward Mobile backend, only 8 decals can be applied on each
 individual Mesh *resource*. If there are more decals affecting a single mesh,

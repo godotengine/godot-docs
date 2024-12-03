@@ -61,9 +61,9 @@ real-time lighting. As many lights as desired can be added (as long as
 performance allows). However, there's still a default limit of 512 *clustered
 elements* that can be present in the current camera view. A clustered element is
 an omni light, a spot light, a :ref:`decal <doc_using_decals>` or a
-:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by
-adjusting the **Rendering > Limits > Cluster Builder > Max Clustered Elements**
-advanced project setting.
+:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by adjusting
+:ref:`Max Clustered Elements<class_ProjectSettings_property_rendering/limits/cluster_builder/max_clustered_elements>`
+in **Project Settings > Rendering > Limits > Cluster Builder**.
 
 When using the Forward Mobile renderer, there is a limitation of 8 OmniLights +
 8 SpotLights per mesh resource. There is also a limit of 256 OmniLights + 256
@@ -72,10 +72,12 @@ currently cannot be changed.
 
 When using the Compatibility renderer, up to 8 OmniLights + 8 SpotLights can be
 rendered per mesh resource. This limit can be increased in the advanced Project
-Settings by adjusting **Rendering > Limits > OpenGL > Max Renderable Lights**
-and/or **Rendering > Limits > OpenGL > Max Lights Per Object** at the cost of
-performance and longer shader compilation times. The limit can also be decreased
-to reduce shader compilation times and improve performance slightly.
+Settings by adjusting
+:ref:`Max Renderable Elements<class_ProjectSettings_property_rendering/limits/opengl/max_renderable_elements>`
+and/or :ref:`Max Lights per Object<class_ProjectSettings_property_rendering/limits/opengl/max_lights_per_object>`
+in **Rendering > Limits > OpenGL**, at the cost of performance and longer shader
+compilation times. The limit can also be decreased to reduce shader compilation
+times and improve performance slightly.
 
 With all rendering methods, up to 8 DirectionalLights can be visible at a time.
 However, each additional DirectionalLight with shadows enabled will reduce the
