@@ -16,7 +16,7 @@ These are the **minimum** specifications required to run the Godot editor and wo
 on a simple 2D or 3D project:
 
 Desktop or laptop PC - Minimum
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. When adjusting specifications, make sure to only mention hardware that can run the required OS version.
 .. For example, the x86 CPU requirement for macOS is set after the MacBook Air 11" (late 2010 model),
@@ -72,7 +72,7 @@ Desktop or laptop PC - Minimum
     rendering method when running Godot on a Windows version older than 10.
 
 Mobile device (smartphone/tablet) - Minimum
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+-----------------------------------------------------------------------------------------+
 | **CPU**              | - **Android:** SoC with any 32-bit or 64-bit ARM or x86 CPU                             |
@@ -109,7 +109,7 @@ These are the **recommended** specifications to get a smooth experience with the
 Godot editor on a simple 2D or 3D project:
 
 Desktop or laptop PC - Recommended
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+---------------------------------------------------------------------------------------------+
 | **CPU**              | - **Windows:** x86_64 CPU with SSE4.2 instructions, with 4 physical cores or more, ARMv8 CPU|
@@ -147,7 +147,7 @@ Desktop or laptop PC - Recommended
 +----------------------+---------------------------------------------------------------------------------------------+
 
 Mobile device (smartphone/tablet) - Recommended
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+-----------------------------------------------------------------------------------------+
 | **CPU**              | - **Android:** SoC with 64-bit ARM or x86 CPU, with 3 "performance" cores or more       |
@@ -200,7 +200,7 @@ These are the **minimum** specifications required to run a simple 2D or 3D
 project exported with Godot:
 
 Desktop or laptop PC - Minimum
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. When adjusting specifications, make sure to only mention hardware that can run the required OS version.
 .. For example, the x86 CPU requirement for macOS is set after the MacBook Air 11" (late 2010 model),
@@ -254,7 +254,7 @@ Desktop or laptop PC - Minimum
     rendering method when running Godot on a Windows version older than 10.
 
 Mobile device (smartphone/tablet) - Minimum
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+-----------------------------------------------------------------------------------------+
 | **CPU**              | - **Android:** SoC with any 32-bit or 64-bit ARM or x86 CPU                             |
@@ -292,7 +292,7 @@ These are the **recommended** specifications to get a smooth experience with a
 simple 2D or 3D project exported with Godot:
 
 Desktop or laptop PC - Recommended
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+---------------------------------------------------------------------------------------------+
 | **CPU**              | - **Windows:** x86_64 CPU with SSE4.2 instructions, with 4 physical cores or more, ARMv8 CPU|
@@ -330,7 +330,7 @@ Desktop or laptop PC - Recommended
 +----------------------+---------------------------------------------------------------------------------------------+
 
 Mobile device (smartphone/tablet) - Recommended
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+-----------------------------------------------------------------------------------------+
 | **CPU**              | - **Android:** SoC with 64-bit ARM or x86 CPU, with 3 "performance" cores or more       |
