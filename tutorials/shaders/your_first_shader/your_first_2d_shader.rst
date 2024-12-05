@@ -130,7 +130,7 @@ other functions or to assign values to ``COLOR`` directly.
 .. image:: img/UV.png
 
 Using ``TEXTURE`` built-in
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The default fragment function reads from the set Sprite2D texture and displays it.
 
@@ -159,7 +159,7 @@ this variable. Use them to redraw the Sprite2D with the texture.
 .. image:: img/blue-tex.png
 
 Uniform input
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Uniform input is used to pass data into a shader that will be the same across
 the entire shader.
@@ -191,7 +191,7 @@ declared. If you change the value in the editor, it will overwrite the default
 value you provided in the shader.
 
 Interacting with shaders from code
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can change uniforms from code using the function ``set_shader_parameter()``
 which is called on the node's material resource. With a Sprite2D node, the

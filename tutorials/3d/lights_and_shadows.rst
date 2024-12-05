@@ -130,7 +130,7 @@ There is a list of generic shadow parameters, each also has a specific function:
 .. image:: img/lights_and_shadows_blur.webp
 
 Tweaking shadow bias
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Below is an image of what tweaking bias looks like. Default values work for most
 cases, but in general, it depends on the size and complexity of geometry.
@@ -201,7 +201,7 @@ recommendations in :ref:`doc_lights_and_shadows_pcss_recommendations` if setting
 this value above ``0.0`` on lights with shadows enabled.
 
 Directional shadow mapping
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To compute shadow maps, the scene is rendered (only depth) from an orthogonal
 point of view that covers the whole scene (or up to the max distance). There is,
@@ -290,7 +290,7 @@ expensive, so check the recommendations in
 .. image:: img/lights_and_shadows_pcss.webp
 
 Omni shadow mapping
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 Omni light shadow mapping is relatively straightforward. The main issue that
 needs to be considered is the algorithm used to render it.
@@ -343,7 +343,7 @@ and add two extra parameters:
 - **Angle Attenuation:** The cone attenuation, which helps soften the cone borders.
 
 Spot shadow mapping
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 Spots feature the same parameters as omni lights for shadow mapping. Rendering
 spot shadow maps is significantly faster compared to omni lights, as only one
@@ -439,7 +439,7 @@ Positional (omni/spot) shadow quality settings can be changed at runtime on the
 root :ref:`class_Viewport`.
 
 Shadow map size
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 High shadow resolutions result in sharper shadows, but at a significant
 performance cost. It should also be noted that *sharper shadows are not always
@@ -454,7 +454,7 @@ fewer shadows. This will allow each shadow to be rendered at a higher resolution
 .. _doc_lights_and_shadows_shadow_filter_mode:
 
 Shadow filter mode
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Several shadow map quality settings can be chosen here. The default **Soft Low**
 is a good balance between performance and quality for scenes with detailed
@@ -474,7 +474,7 @@ make use of the increased sample count.
 .. image:: img/lights_and_shadows_filter_quality.webp
 
 16-bits versus 32-bit
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 By default, Godot uses 16-bit depth textures for shadow map rendering. This is
 recommended in most cases as it performs better without a noticeable difference
@@ -486,7 +486,7 @@ enabled. However, the difference is often barely visible, yet this can have a
 significant performance cost.
 
 Light/shadow distance fade
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OmniLight3D and SpotLight3D offer several properties to hide distant lights.
 This can improve performance significantly in large scenes with dozens of lights
@@ -509,7 +509,7 @@ or more.
 .. _doc_lights_and_shadows_pcss_recommendations:
 
 PCSS recommendations
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Percentage-closer soft shadows (PCSS) provide a more realistic shadow mapping
 appearance, with the penumbra size varying depending on the distance between the
@@ -529,7 +529,7 @@ To avoid performance issues, it's recommended to:
   ``light_size`` property to ``0.0`` in a script.
 
 Projector filter mode
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 The way projectors are rendered also has an impact on performance. The
 **Rendering > Textures > Light Projectors > Filter** advanced project setting

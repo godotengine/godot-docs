@@ -259,7 +259,7 @@ You will have to code a function to perform this and draw it yourself.
     to adjust the project to a higher resolution (a 2 or 4 scale tends to work well).
 
 Drawing a custom polygon shape
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While there is a dedicated node to draw custom polygons (
 :ref:`Polygon2D <class_Polygon2D>`), we will use in this case exclusively lower
@@ -394,7 +394,7 @@ Polygons will always **connect its last defined point to its first
 one** in order to have a closed shape.
 
 Drawing connected lines
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Drawing a sequence of connected lines that don't close down to form a polygon
 is very similar to the previous method. We will use a connected set of lines to
@@ -499,7 +499,7 @@ code or a predefined color name. Check the class :ref:`Color <class_Color>` for 
 constants and ways to define Colors.
 
 Drawing circles
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 To create the eyes, we are going to add 4 additional calls to draw the eye
 shapes, in different sizes, colors and positions.
@@ -555,7 +555,7 @@ arbitrary angles), you can use the method
 :ref:`draw_arc <class_CanvasItem_method_draw_arc>`.
 
 Drawing lines
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 To draw the final shape (the nose) we will use a line to approximate it.
 
@@ -610,7 +610,7 @@ you may get additional performance by drawing all of them in a single call, usin
 the :ref:`draw_multiline <class_CanvasItem_method_draw_multiline>` method.
 
 Drawing text
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 While using the :ref:`Label <class_Label>` Node is the most common way to add
 text to your application, the low-level `_draw` function includes functionality
@@ -680,7 +680,7 @@ can be found on the :ref:`CanvasItem <class_CanvasItem>` class reference.
 .. _doc_draw_show_drawing_while_editing_example:
 
 Show the drawing while editing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While the code so far is able to draw the logo on a running window, it will
 not show up on the ``2D view`` on the editor. In certain cases you would
@@ -710,7 +710,7 @@ to refresh the current node in the ``2D`` view the first time you add or remove
 the ``@tool`` annotation.
 
 Animation
-^^^^^^^^^
+~~~~~~~~~
 
 If we wanted to make the custom shape change at runtime, we could modify the
 methods called or its arguments at execution time, or apply a transform.
@@ -870,7 +870,7 @@ will see how to draw a dynamic line whose coordinates are not known beforehand,
 and are affected by the user's input.
 
 Drawing a straight line between 2 points
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's assume we want to draw a straight line between 2 points, the first one
 will be fixed on the upper left corner ``(0, 0)`` and the second will be defined
@@ -943,7 +943,7 @@ It should look like this when run:
 .. image:: img/draw_line_between_2_points.webp
 
 Drawing an arc between 2 points
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The above example works, but we may want to join those 2 points with a
 different shape or function, other than a straight line.

@@ -6,7 +6,7 @@ Script Editor
 .. _doc_script_editor_introduction:
 
 Introduction
-~~~~~~~~~~~~
+------------
 
 Godot Engine's script editor is a powerful and fully-integrated text editor
 that not only streamlines the process of writing and debugging code written in
@@ -25,7 +25,7 @@ be accessed in several ways as described in the
 .. _doc_script_editor_features:
 
 Features
-~~~~~~~~
+--------
 
 Some of the key features of the text editor are listed below:
 
@@ -44,7 +44,7 @@ Some of the key features of the text editor are listed below:
 .. _doc_script_editor_usage:
 
 Usage
-~~~~~
+-----
 
 If you are using GDScript in your project, the built-in text editor in
 Godot provides everything you need, serving as a one-stop location to
@@ -106,7 +106,7 @@ You can also select a section below to jump to a specific topic:
 .. _doc_script_editor_script_panel:
 
 Script Panel
-------------
+~~~~~~~~~~~~
 
 .. |script| image:: img/script_editor_icons/Script.webp
 .. |scriptcsharp| image:: img/script_editor_icons/ScriptCSharp.webp
@@ -165,7 +165,7 @@ behavior as filtering scripts.
 .. _doc_script_editor_menus:
 
 Menus
------
+~~~~~
 
 The text editor's menus lie below the scene switcher and allow you to access a
 variety of tools and options, such as file management, search and replace, debugging
@@ -365,7 +365,7 @@ The **Go To** menu lets you navigate within the code at ease with these options:
 .. _doc_script_editor_coding_area:
 
 Coding area
------------
+~~~~~~~~~~~
 
 .. note:: This section will only cover the basics of the coding area in terms of the user
   interface. To learn more about scripting in Godot, refer to the :ref:`doc_gdscript` or

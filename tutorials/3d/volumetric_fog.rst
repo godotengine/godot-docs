@@ -224,7 +224,7 @@ the following properties in FogMaterial:
   :ref:`changing its import type in the Import dock <doc_importing_images_changing_import_type>`.
 
 Using 3D noise density textures
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since Godot 4.1, there is a NoiseTexture3D resource that can be used to
 procedurally generate 3D noise. This is well-suited to FogMaterial density

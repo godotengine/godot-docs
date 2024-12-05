@@ -56,14 +56,14 @@ use "Anchor Presets".
 .. image:: img/ui_anchor.webp
 
 ScoreLabel
-~~~~~~~~~~
+----------
 
 1. Add the text ``0``.
 2. Set the "Horizontal Alignment" and "Vertical Alignment" to ``Center``.
 3. Choose the "Anchor Preset" ``Center Top``.
 
 Message
-~~~~~~~~~~~~
+-------
 
 1. Add the text ``Dodge the Creeps!``.
 2. Set the "Horizontal Alignment" and "Vertical Alignment" to ``Center``.
@@ -72,7 +72,7 @@ Message
 5. Choose the "Anchor Preset" ``Center``.
 
 StartButton
-~~~~~~~~~~~
+-----------
 
 1. Add the text ``Start``.
 2. Under "Control - Layout/Transform", set "Size X" to ``200`` and "Size Y" to ``100``
@@ -213,7 +213,7 @@ signal of ``MessageTimer`` to the ``HUD`` node, and add the following code to th
     }
 
 Connecting HUD to Main
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 Now that we're done creating the ``HUD`` scene, go back to ``Main``. Instance
 the ``HUD`` scene in ``Main`` like you did the ``Player`` scene. The scene tree
@@ -276,7 +276,7 @@ with the changing score:
 Now you're ready to play! Click the "Play the Project" button.
 
 Removing old creeps
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 If you play until "Game Over" and then start a new game right away, the creeps
 from the previous game may still be on the screen. It would be better if they

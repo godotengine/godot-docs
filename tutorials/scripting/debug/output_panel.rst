@@ -69,7 +69,7 @@ To get more advanced formatting capabilities, consider using
 .. _doc_output_panel_printing_rich_text:
 
 Printing rich text
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Using :ref:`print_rich() <class_@GlobalScope_method_print_rich>`, you can print
 rich text to the editor Output panel and standard output (visible when the user

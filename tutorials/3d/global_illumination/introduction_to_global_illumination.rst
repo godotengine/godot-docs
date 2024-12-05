@@ -24,7 +24,7 @@ being reflected back onto the rest of the scene.
 Global illumination is composed of several key concepts:
 
 Indirect diffuse lighting
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the lighting that does not change depending on the camera's angle.
 There are two main sources of indirect diffuse lighting:
@@ -64,7 +64,7 @@ it when targeting low-end hardware.
     limitations documentation for ways to reduce this effect.
 
 Specular lighting
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Specular lighting is also referred to as *reflections*.
 This is the lighting that changes in intensity depending on the camera's angle.
@@ -112,7 +112,7 @@ there are several criteria to keep in mind:
 Here's a comparison of all the global illumination techniques available in Godot:
 
 Performance
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 In order of performance from fastest to slowest:
 
@@ -158,7 +158,7 @@ In order of performance from fastest to slowest:
     **Not available** *when using the Mobile or Compatibility renderers.*
 
 Visuals
-^^^^^^^
+~~~~~~~
 
 For comparison, here's a 3D scene with no global illumination options used:
 
@@ -242,7 +242,7 @@ Here's how Godot's various global illumination techniques compare:
        ReflectionProbe in action (without any other GI technique). Notice the reflective sphere.
 
 Real-time ability
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 - **VoxelGI:** |good| Fully real-time.
 
@@ -290,7 +290,7 @@ Real-time ability
     This makes ReflectionProbes viable for procedurally generated levels.
 
 User work needed
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 - **VoxelGI:** One or more VoxelGI nodes need to be created and baked.
 
@@ -325,7 +325,7 @@ User work needed
 .. |bad| image:: img/score_bad.webp
 
 Summary
-^^^^^^^
+~~~~~~~
 
 If you are unsure about which GI technique to use:
 
@@ -349,7 +349,7 @@ If you are unsure about which GI technique to use:
 .. _doc_introduction_to_global_illumination_gi_mode_recommendations:
 
 Which global illumination mode should I use on meshes and lights?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Regardless of which global illumination technique you use, there is no
 universally "better" global illumination mode. Still, here are some

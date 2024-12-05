@@ -115,7 +115,7 @@ There are two ways to set up occluders in a scene:
 .. _doc_occlusion_culling_baking:
 
 Automatically baking occluders (recommended)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -156,7 +156,7 @@ on the **VisualInstance3D > Layers** property, uncheck layer 1 then check layer
 following the above process.
 
 Manually placing occluders
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This approach is more suited for specialized use cases, such as creating occlusion
 for MultiMeshInstance3D setups or CSG nodes (due to the aforementioned limitation).
@@ -217,7 +217,7 @@ Performance considerations
 --------------------------
 
 Design your levels to take advantage of occlusion culling
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **This is the most important guideline.** A good level design is not just about
 what the gameplay demands; it should also be built with occlusion in mind.
@@ -230,7 +230,7 @@ when possible. This provides the greatest culling opportunities compared to any
 other terrain shape.
 
 Avoid moving OccluderInstance3D nodes during gameplay
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This includes moving the parents of OccluderInstance3D nodes, as this will cause
 the nodes themselves to move in global space, therefore requiring the :abbr:`BVH
@@ -250,7 +250,7 @@ If you absolutely have to move an OccluderInstance3D node during gameplay, use a
 primitive Occluder3D shape for it instead of a complex baked shape.
 
 Use the simplest possible occluder shapes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you notice low performance or stuttering in complex 3D scenes, it may mean
 that the CPU is overloaded as a result of rendering detailed occluders.
@@ -272,7 +272,7 @@ Troubleshooting
 ---------------
 
 My occludee isn't being culled when it should be
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **On the occluder side:**
 
@@ -302,7 +302,7 @@ the occluder shapes for the occludee to be hidden.
 .. _doc_occlusion_culling_troubleshooting_false_negative:
 
 My occludee is being culled when it shouldn't be
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The most likely cause for this is that objects that were included in the
 occluder bake have been moved after baking occluders. For instance, this can

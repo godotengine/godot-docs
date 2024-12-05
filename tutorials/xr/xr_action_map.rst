@@ -507,7 +507,7 @@ modifiers that work on the interaction profile level,
 and modifiers that work on individual bindings.
 
 Binding modifiers on an interaction profile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Binding modifiers that are applied to the whole interaction profile can be accessed
 through the modifier button on the right side of the interaction profile editor.
@@ -522,7 +522,7 @@ You can add a new modifier by pressing the ``Add binding modifier`` button.
   Unsupported modifiers will be ignored.
 
 Dpad Binding modifier
-"""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^
 
 The dpad binding modifier adds new inputs to an interaction profile for each joystick
 and thumbpad input on this controller.
@@ -574,7 +574,7 @@ These settings are used as follows:
 
 
 Binding modifiers on individual bindings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Binding modifiers that are applied to individual bindings can be accessed through
 the binding modifier button next to action attached to an input:
@@ -593,7 +593,7 @@ You can add a new modifier by pressing the ``Add binding modifier`` button.
   the proper setup.
 
 Analog threshold modifier
-"""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The analog threshold modifier allows you to specify the thresholds used for any analog
 input, like the trigger, that has a boolean input. This controls when the input is in
@@ -622,7 +622,7 @@ These are defined as follows:
     when the input is released.
 
 Haptics on modifiers
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Modifiers can support automatic haptic output that is triggered when thresholds
 are reached.
@@ -634,7 +634,7 @@ are reached.
   may become available.
 
 Haptic vibration
-""""""""""""""""
+^^^^^^^^^^^^^^^^
 
 The haptic vibration allows us to specify a simple haptic pulse:
 
