@@ -35,7 +35,7 @@ you should choose depends on your needs.
     4.1 (see :ref:`updating_your_gdextension_for_godot_4_1`).
 
 Advantages of GDExtension
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Unlike modules, GDExtension doesn't require compiling the engine's source code,
 making it easier to distribute your work. It gives you access to most of the API
@@ -57,7 +57,7 @@ Also:
   incremental builds, this process is slower than using GDExtension.
 
 Advantages of C++ modules
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We recommend :ref:`C++ modules <doc_custom_modules_in_cpp>` in cases where
 GDExtension isn't enough:

@@ -32,7 +32,7 @@ Rendering methods
 -----------------
 
 Forward+
-^^^^^^^^
+~~~~~~~~
 
 This is a forward renderer that uses a *clustered* approach to lighting.
 
@@ -45,7 +45,7 @@ This approach can greatly speed up rendering performance on desktop hardware,
 but is substantially less efficient on mobile.
 
 Mobile
-^^^^^^
+~~~~~~
 
 This is a forward renderer that uses a traditional single-pass approach to lighting.
 Internally, it is called **Forward Mobile**.
@@ -104,7 +104,7 @@ post-processing effects are also not available.
 .. _doc_internal_rendering_architecture_compatibility:
 
 Compatibility
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 .. note::
 
@@ -139,7 +139,7 @@ rendering features (even less so compared to Mobile). Most
 post-processing effects are not available.
 
 Why not deferred rendering?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Forward rendering generally provides a better tradeoff for performance versus
 flexibility, especially when a clustered approach to lighting is used. While
@@ -161,7 +161,7 @@ Rendering drivers
 Godot 4 supports the following graphics APIs:
 
 Vulkan
-^^^^^^
+~~~~~~
 
 This is the main driver in Godot 4, with most of the development focus going
 towards this driver.
@@ -185,7 +185,7 @@ Vulkan driver.
 - `drivers/d3d12/d3d12_context.cpp <https://github.com/godotengine/godot/blob/master/drivers/d3d12/d3d12_context.cpp>`__
 
 Direct3D 12
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Like Vulkan, the Direct3D 12 driver targets modern platforms only. It is
 designed to target both Windows and Xbox (whereas Vulkan can't be used directly on Xbox).
@@ -206,7 +206,7 @@ See the `pull request that introduced Direct3D 12 support <https://github.com/go
 for more information.
 
 Metal
-^^^^^
+~~~~~
 
 Godot supports Metal rendering via `MoltenVK <https://github.com/KhronosGroup/MoltenVK>`__,
 as macOS and iOS do not support Vulkan natively.
@@ -224,7 +224,7 @@ A native Metal driver is planned in the future for better performance and
 compatibility.
 
 OpenGL
-^^^^^^
+~~~~~~
 
 This driver uses OpenGL ES 3.0 and targets legacy and low-end devices that don't
 support Vulkan. OpenGL 3.3 Core Profile is used on desktop platforms to run this
@@ -246,7 +246,7 @@ Many advanced features are not supported with this driver, as it targets low-end
 devices first and foremost.
 
 Summary of rendering drivers/methods
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following rendering API + rendering method combinations are currently possible:
 
@@ -447,14 +447,14 @@ used to calculate particle collisions in 2D.
 -----------------------
 
 Batching and instancing
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 In the Forward+ renderer, Vulkan instancing is used to group rendering
 of identical objects for performance. This is not as fast as static mesh
 merging, but it still allows instances to be culled individually.
 
 Light, decal and reflection probe rendering
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -497,7 +497,7 @@ Clustering is also used for reflection probes and decal rendering in the
 Forward+ renderer.
 
 Shadow mapping
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Both Forward+ and Mobile methods use
 :abbr:`PCF (Percentage Closer Filtering)` to filter shadow maps and create a
@@ -517,7 +517,7 @@ The Compatibility renderer supports shadow mapping for DirectionalLight3D,
 OmniLight3D, and SpotLight3D lights.
 
 Temporal antialiasing
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -549,7 +549,7 @@ RenderingDevice abstraction as opposed to using AMD's reference code directly.
 - `thirdparty/amd-fsr2/ <https://github.com/godotengine/godot/tree/master/thirdparty/amd-fsr2>`__
 
 Global illumination
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -600,7 +600,7 @@ This would allow baking lightmaps while using the Compatibility renderer.
 - `modules/lightmapper_rd/lm_blendseams.glsl <https://github.com/godotengine/godot/blob/4.2/modules/lightmapper_rd/lm_blendseams.glsl>`__
 
 Depth of field
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 .. note::
 
@@ -629,7 +629,7 @@ when temporal antialiasing is enabled.
 - `servers/rendering/renderer_rd/shaders/effects/bokeh_dof_raster.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/effects/bokeh_dof_raster.glsl>`__
 
 Screen-space effects (SSAO, SSIL, SSR, SSS)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -678,7 +678,7 @@ SSR is always performed at half resolution to improve performance.
 - `servers/rendering/renderer_rd/shaders/effects/subsurface_scattering.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/effects/subsurface_scattering.glsl>`__
 
 Sky rendering
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 .. seealso::
 
@@ -705,7 +705,7 @@ article.
 **Sky rendering GLSL shader:**
 
 Volumetric fog
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 .. note::
 
@@ -740,7 +740,7 @@ article.
 - `servers/rendering/renderer_rd/shaders/environment/volumetric_fog_process.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/environment/volumetric_fog_process.glsl>`__
 
 Occlusion culling
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 While modern GPUs can handle drawing a lot of triangles, the number of draw
 calls in complex scenes can still be a bottleneck (even with Vulkan and Direct3D 12).
@@ -782,7 +782,7 @@ RendererSceneOcclusionCull.
 - `servers/rendering/renderer_scene_occlusion_cull.cpp <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_scene_occlusion_cull.cpp>`__
 
 Visibility range (LOD)
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 Godot supports manually authored hierarchical level of detail (HLOD), with
 distances specified by the user in the inspector.
@@ -796,7 +796,7 @@ same mesh with different LODs (to allow for split screen rendering to look corre
 - `servers/rendering/renderer_scene_cull.cpp <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_scene_cull.cpp>`__
 
 Automatic mesh LOD
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 The ImporterMesh class is used for the 3D mesh import workflow in the editor.
 Its ``generate_lods()`` function handles generating using the

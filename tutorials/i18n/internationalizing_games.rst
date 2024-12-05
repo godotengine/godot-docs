@@ -102,7 +102,7 @@ This will just look up the text in the translations and convert it if found:
     define the DynamicFont as the Default Font in the theme.
 
 Placeholders
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 To feature placeholders in your translated strings, use
 :ref:`doc_gdscript_printf` or the equivalent feature in C#. This lets
@@ -123,7 +123,7 @@ allow translators to choose the *order* in which placeholders appear:
     message.text = tr("{character} picked up the {weapon}").format({character = "Ogre", weapon = "Sword"})
 
 Translation contexts
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 If you're using plain English as source strings (rather than message codes
 ``LIKE_THIS``), you may run into ambiguities when you have to translate the same
@@ -150,7 +150,7 @@ identical:
     GetNode<Label>("Distance").Text = Tr("Close", "Distance");
 
 Pluralization
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Most languages require different strings depending on whether an object is in
 singular or plural form. However, hardcoding the "is plural" condition depending

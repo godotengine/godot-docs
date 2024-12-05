@@ -15,7 +15,7 @@ You could try to optimize everything and run the game repeatedly, but you can be
 smarter about this and narrow down the possibilities. Enter Godot's profiler.
 
 An overview of the profiler
-+++++++++++++++++++++++++++
+---------------------------
 
 You can open the profiler by opening the **Debugger** panel and clicking on the
 **Profiler** tab.
@@ -42,7 +42,7 @@ You can clear the data by clicking the **Clear** button anytime. Use the
 measurements panel and the graph will update accordingly.
 
 The measured data
-+++++++++++++++++
+-----------------
 
 The profiler's interface is split into two. There is a list of functions on the
 left and the performance graph on the right.
@@ -77,7 +77,7 @@ left. In the top right, there is also a frame counter where you can manually
 adjust the frame you are looking at more granularly.
 
 Scope of measurement and measurement windows
-++++++++++++++++++++++++++++++++++++++++++++
+--------------------------------------------
 
 You can change what measurement you are looking at using the **Measure**
 drop-down menu. By default, it starts with Frame Time and lists the time it
@@ -110,7 +110,7 @@ spent more time waiting for some other function call to finish than not, and
 `find_nearest_neighbor` is **actually** slow.
 
 Debugging slow code with the profiler
-+++++++++++++++++++++++++++++++++++++
+-------------------------------------
 
 Finding slow code with the profiler boils down to running your game and watching
 the performance graph as it draws. When an unacceptable spike occurs in the
@@ -122,7 +122,7 @@ Under the Script functions, turn on the checkboxes for some functions to find
 which take time. These are the functions you need to review and optimize.
 
 Measuring manually in microseconds
-++++++++++++++++++++++++++++++++++
+----------------------------------
 
 If your function is complex, it could be challenging to figure out which part
 needs optimization. Is it your math or the way you access other pieces of data

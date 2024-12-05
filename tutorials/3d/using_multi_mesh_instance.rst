@@ -3,10 +3,10 @@
 .. _doc_using_multi_mesh_instance:
 
 Using MultiMeshInstance3D
--------------------------
+=========================
 
 Introduction
-~~~~~~~~~~~~
+------------
 
 In a normal scenario, you would use a :ref:`MeshInstance3D <class_MeshInstance3D>`
 node to display a 3D mesh like a human model for the main character, but in some
@@ -22,7 +22,7 @@ MeshInstance over a surface of a specific mesh. An example would be having a
 tree mesh populate a landscape mesh with trees of random scales and orientations.
 
 Setting up the nodes
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 The basic setup requires three nodes: the MultiMeshInstance3D node
 and two MeshInstance3D nodes.
@@ -50,48 +50,48 @@ Click it and select *Populate surface* in the dropdown menu. A new window titled
 .. image:: img/multimesh_settings.png
 
 MultiMesh settings
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Below are descriptions of the options.
 
 Target Surface
-++++++++++++++
+~~~~~~~~~~~~~~
 
 The mesh used as the target surface on which to place copies of your
 source mesh.
 
 Source Mesh
-+++++++++++
+~~~~~~~~~~~
 
 The mesh you want duplicated on the target surface.
 
 Mesh Up Axis
-++++++++++++
+~~~~~~~~~~~~
 
 The axis used as the up axis of the source mesh.
 
 Random Rotation
-+++++++++++++++
+~~~~~~~~~~~~~~~
 
 Randomizing the rotation around the up axis of the source mesh.
 
 Random Tilt
-+++++++++++
+~~~~~~~~~~~
 
 Randomizing the overall rotation of the source mesh.
 
 Random Scale
-++++++++++++
+~~~~~~~~~~~~
 
 Randomizing the scale of the source mesh.
 
 Scale
-+++++
+~~~~~
 
 The scale of the source mesh that will be placed over the target surface.
 
 Amount
-++++++
+~~~~~~
 
 The amount of mesh instances placed over the target surface.
 

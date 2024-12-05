@@ -63,7 +63,7 @@ knowledge of the platform's SDKs. Depending on what features you need, the
 amount of work needed varies:
 
 Required features of a platform port
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 At the very least, a platform port must have methods from the :ref:`class_OS`
 singleton implemented to be buildable and usable for headless operation.
@@ -109,7 +109,7 @@ All methods should be implemented within ``detect.py`` as follows:
   options depending on SCons options chosen.
 
 Optional features of a platform port
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In practice, headless operation doesn't suffice if you want to see anything on
 screen and handle input devices. You may also want audio output for most

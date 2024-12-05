@@ -95,7 +95,7 @@ not share pixels in the texture.
 There are a few ways to ensure your object has a unique UV2 layer and texture size:
 
 Unwrap on scene import (recommended)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In most scenarios, this is the best approach to use. The only downside is that,
 on large models, unwrapping can take a while on import. Nonetheless, Godot will
@@ -137,7 +137,7 @@ their UV2 maps properly generated.
     and engine versions.
 
 Unwrap from within Godot
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
 
@@ -154,7 +154,7 @@ This will generate a second set of UV2 coordinates which can be used for baking.
 It will also set the texture size automatically.
 
 Unwrap from your 3D modeling software
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The last option is to do it from your favorite 3D app. This approach is
 generally **not recommended**, but it's explained so that you know it exists.
@@ -177,7 +177,7 @@ to work quickly. You will mostly need to use seams or other techniques to create
 better unwrapping.
 
 Generating UV2 for primitive meshes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -203,7 +203,7 @@ lightmap texture, which varies depending on the mesh's size properties and the
 any modifications will be lost when the scene is reloaded.
 
 Generating UV2 for CSG nodes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since Godot 4.4, you can
 :ref:`convert a CSG node and its children to a MeshInstance3D <doc_csg_tools_converting_to_mesh_instance_3d>`.
@@ -222,7 +222,7 @@ This can be used to bake lightmaps on a CSG node by following these steps:
     again.
 
 Checking UV2
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 In the **Mesh** menu mentioned before, the UV2 texture coordinates can be visualized.
 If something is failing, double-check that the meshes have these UV2 coordinates:
@@ -244,7 +244,7 @@ inconsistent lightmap texel scaling, make sure to respect the rule about mesh
 scaling mentioned before.
 
 Setting up meshes
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 For a **MeshInstance3D** node to take part in the baking process, it needs to have
 its bake mode set to **Static**. Meshes that have their bake mode set to **Disabled**
@@ -255,7 +255,7 @@ or **Dynamic** will be ignored by the lightmapper.
 When auto-generating lightmaps on scene import, this is enabled automatically.
 
 Setting up lights
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Lights are baked with indirect light only by default. This means that shadowmapping
 and lighting are still dynamic and affect moving objects, but light bounces from
@@ -269,7 +269,7 @@ can be controlled from the **Bake Mode** menu in lights:
 The modes are:
 
 Disabled
-^^^^^^^^
+~~~~~~~~
 
 The light is ignored when baking lightmaps. This is the mode to use for dynamic
 lighting effects such as explosions and weapon effects.
@@ -281,7 +281,7 @@ lighting effects such as explosions and weapon effects.
     disabling its **Visible** property.
 
 Dynamic
-^^^^^^^
+~~~~~~~
 
 This is the default mode, and is a compromise between performance and real-time
 friendliness. Only indirect lighting will be baked. Direct light and shadows are
@@ -292,7 +292,7 @@ position while still looking fairly correct. For example, you can use this
 to create flickering static torches that have their indirect light baked.
 
 Static
-^^^^^^
+~~~~~~
 
 Both indirect and direct lighting will be baked. Since static surfaces can skip
 lighting and shadow computations entirely, this mode provides the best
@@ -343,7 +343,7 @@ method and quality selected.
     set to a high enough value.
 
 Tweaks
-^^^^^^
+~~~~~~
 
 - **Quality:** Four bake quality modes are provided: Low, Medium, High, and
   Ultra. Higher quality takes more time, but result in a better-looking lightmap
@@ -433,7 +433,7 @@ noise and softens them while attempting to best preserve detail.
 Godot offers two denoising algorithms:
 
 JNLM (Non-Local Means with Joint Filtering)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 JNLM is the default denoising method and is included in Godot. It uses a simple
 but efficient denoising algorithm known as *non-local means*. JNLM runs on the
@@ -451,7 +451,7 @@ removing noise, at the cost of suppressing shadow detail for static shadows.
    Comparison between JNLM denoiser strength values. Higher values can reduce detail.
 
 OIDN (Open Image Denoise)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Unlike JNLM, OIDN uses a machine learning approach to denoising lightmaps. It
 features a model specifically trained to remove noise from lightmaps while
