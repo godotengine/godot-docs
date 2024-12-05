@@ -493,3 +493,489 @@ $(document).ready(() => {
 Documentation.highlightSearchWords = function() {
   // Nope.
 }
+
+// ========
+// Tutorial
+// ========
+const TUTORIAL_VIEW_DYNAMIC_MIN_SIZE = 1036;
+const TUTORIAL_VIEW_TYPE_LOCAL_STORAGE_KEY = "tutorialViewType";
+const TUTORIAL_VIEW_TYPE_CHANGE_EVENT = "godottutorialviewchange";
+
+const TutorialToggleLabelI18n = Object.freeze({
+  "en": "Dynamic view"
+});
+
+const TutorialViewType = Object.freeze({
+  STATIC: "STATIC",
+  DYNAMIC: "DYNAMIC"
+});
+
+const TutorialStepType = Object.freeze({
+  COMPOUND: "COMPOUND",
+  COMMENT: "COMMENT"
+});
+
+/** @type {() => (typeof TutorialViewType)[keyof typeof TutorialViewType]} */
+function getTutorialViewType() {
+  const localStorageType = localStorage.getItem(TUTORIAL_VIEW_TYPE_LOCAL_STORAGE_KEY);
+  if (localStorageType === "STATIC") {
+    return "STATIC";
+  }
+
+  return window.innerWidth < TUTORIAL_VIEW_DYNAMIC_MIN_SIZE
+    ? "STATIC"
+    : "DYNAMIC";
+}
+
+function getTutorialToggleLabel() {
+  let documentLang = document.documentElement.lang ?? "en";
+  let label = TutorialToggleLabelI18n[documentLang];
+  if (label != null) {
+    return label;
+  }
+
+  // Check if the lang is in the `xx-XX` format.
+  if (documentLang.charAt(2) !== "-") {
+    // Let's return the default value.
+    return TutorialToggleLabelI18n.en;
+  }
+
+  label = TutorialToggleLabelI18n[documentLang.substring(0, 1)];
+  if (label != null) {
+    return label;
+  }
+
+  return TutorialToggleLabelI18n.en;
+}
+
+let nextTutorialId = 0;
+
+/** @type {(tutorial: HTMLDivElement) => void} */
+function setupTutorial(tutorial) {
+  let tutorialId = nextTutorialId;
+  nextTutorialId++;
+
+  tutorial.classList.remove("tutorial");
+  tutorial.classList.add("tutorial-js");
+
+  /**
+   * Boolean set each screen refresh to know if the screen has been resized.
+   */
+  let resized = false;
+
+  /**
+   * Current view type
+   * @type {(typeof TutorialViewType)[keyof typeof TutorialViewType]}
+   */
+  let currentViewType;
+
+  /** @type {Array<HTMLElement>} */
+  const tutorialChildren = Array.from(tutorial.children);
+  /**
+   * @typedef {{ type: (typeof TutorialStepType)[keyof typeof TutorialStepType], index: number }} StepBase
+   * @typedef {StepBase & { type: "COMPOUND", title: HTMLDivElement, description: HTMLDivElement, content: HTMLDivElement }} StepAdmonition
+   * @typedef {StepBase & { type: "COMMENT", comment: HTMLDivElement }} StepComment
+   */
+  const steps = tutorialChildren.map((step, index) => {
+    const type = step.classList.contains("admonition")
+      ? "ADMONITION"
+      : "COMMENT";
+
+    /** @type {StepComment | StepAdmonition} */
+    let returnVal;
+
+    switch (type) {
+      case "COMMENT": {
+        const comment = document.createElement("div");
+        comment.append(...Array.from(step.children));
+        /** @type {StepComment} */
+        returnVal = {
+          type,
+          index,
+          comment
+        };
+      } break;
+
+      case "ADMONITION": {
+        const title = step.querySelector(".admonition-title");
+        if (title == null) throw new Error("error while parsing step: title is null");
+        title.classList.add("step-title");
+        title.remove();
+
+        const content = step.querySelector(".step-content");
+        if (content == null) throw new Error("error while parsing step: content is null");
+        content.remove();
+
+        const description = document.createElement("div");
+        description.classList.add("step-description");
+        description.append(...Array.from(step.children))
+
+        const context = step.query
+        /** @type {StepAdmonition} */
+        returnVal = {
+          type,
+          index,
+          title,
+          description,
+          content
+        };
+      } break;
+    }
+
+    return returnVal;
+  });
+
+  // Intersection observer
+  /** @type {Map<HTMLElement, IntersectionObserverEntry>} */
+  const observedEntries = new Map();
+  /** @type {HTMLDivElement | null} */
+  let activeEntry = null;
+
+  /** @type {IntersectionObserverInit} */
+  const observerOptions = {
+    root: null,
+  };
+  /** @type {IntersectionObserverCallback} */
+  const observerCallback = (entries, observer) => {
+    for (const entry of entries) {
+      if (observedEntries.has(entry.target)) {
+        observedEntries.delete(entry.target);
+      }
+      if (entry.isIntersecting) {
+        observedEntries.set(entry.target, entry);
+      }
+    }
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  /**
+   * Toggle that handles the static/dynamic style.
+   */
+  const toggle = document.createElement("input");
+  {
+    /** @type {(typeof TutorialViewType)[keyof typeof TutorialViewType] | null} */
+    let localStorageValue = localStorage.getItem(TUTORIAL_VIEW_TYPE_LOCAL_STORAGE_KEY);
+    if (localStorageValue == null) {
+      localStorageValue = TutorialViewType.DYNAMIC;
+      localStorage.setItem(TUTORIAL_VIEW_TYPE_LOCAL_STORAGE_KEY, localStorageValue);
+    }
+
+    toggle.id = `godot-tutorial-${tutorialId}`;
+    toggle.type = "checkbox";
+    toggle.checked = localStorageValue === "DYNAMIC";
+    toggle.addEventListener("change", () => {
+      if (toggle.checked) {
+        currentViewType = TutorialViewType.DYNAMIC;
+      } else {
+        currentViewType = TutorialViewType.STATIC;
+      }
+
+      localStorage.setItem(TUTORIAL_VIEW_TYPE_LOCAL_STORAGE_KEY, currentViewType);
+      window.dispatchEvent(new CustomEvent(TUTORIAL_VIEW_TYPE_CHANGE_EVENT, { detail: { viewType: currentViewType, source: tutorial } }));
+      onViewTypeChange();
+
+      toggle.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    });
+  }
+
+  /** @type {(entry: HTMLDivElement) => void} */
+  const switchEntry = (entry) => {
+    if (entry === activeEntry || entry == null || currentViewType !== "DYNAMIC") {
+      return;
+    }
+
+    if (activeEntry !== null) {
+      activeEntry.classList.remove("active");
+    }
+    entry.classList.add("active");
+    activeEntry = entry;
+
+    // Let's activate the correct display content.
+    const entryIndex = entry.dataset["stepIndex"];
+    const displayContainerSteps = tutorial.querySelectorAll(".display-container .step-admonition-content");
+    for (const displayContainerStep of Array.from(displayContainerSteps)) {
+      if (displayContainerStep.dataset["stepIndex"] === entryIndex) {
+        displayContainerStep.classList.add("active");
+      } else {
+        displayContainerStep.classList.remove("active");
+      }
+    }
+  };
+
+  /** @type {FrameRequestCallback} */
+  const animationFrameRequest = (_time) => {
+    window.requestAnimationFrame(animationFrameRequest);
+
+    if (resized) {
+      handleResize();
+      resized = false;
+    }
+
+    if (observedEntries.size === 0) {
+      return;
+    }
+
+    /** @type {Array<{ entry: IntersectionObserverEntry, distance: number }>} */
+    let entries = [];
+    const clientHeight = document.documentElement.clientHeight;
+    const clientHeightQuarter = clientHeight / 4;
+    for (const [target, entry] of Array.from(observedEntries)) {
+      const entryCenter = (entry.target.getBoundingClientRect().bottom + entry.target.getBoundingClientRect().top) / 2;
+      const entryDistance = Math.abs(entryCenter - clientHeightQuarter);
+      entries.push({ entry, distance: entryDistance });
+    }
+    entries = entries.sort((a, b) => {
+      return a.distance - b.distance;
+    });
+
+    if (entries.length > 0) {
+      const firstEntry = entries[0];
+      switchEntry(firstEntry.entry.target);
+    } else {
+      switchEntry(null);
+    }
+  };
+  window.requestAnimationFrame(animationFrameRequest);
+
+  window.addEventListener("resize", () => {
+    resized = true;
+  });
+
+  const handleResize = () => {
+    const oldViewType = currentViewType;
+    currentViewType = getTutorialViewType();
+    if (oldViewType !== currentViewType) {
+      onViewTypeChange();
+    }
+  };
+
+  const onViewTypeChange = () => {
+    toggle.checked = currentViewType === "DYNAMIC";
+
+    // Rebuild the layout.
+    clearLayout();
+
+    switch (currentViewType) {
+      case "STATIC": {
+        buildStaticLayout(steps);
+      } break;
+
+      case "DYNAMIC": {
+        buildDynamicLayout(steps);
+      } break;
+    }
+  };
+
+  const clearLayout = () => {
+    for (const child of Array.from(tutorial.children)) {
+      tutorial.removeChild(child);
+    }
+
+    tutorial.classList.remove("static");
+    tutorial.classList.remove("dynamic");
+    observer.disconnect();
+    observedEntries.clear();
+
+    buildToggleContainer();
+  };
+
+  const buildToggleContainer = () => {
+    const toggleContainer = document.createElement("div");
+    toggleContainer.classList.add("toggle-container");
+
+    const label = document.createElement("label");
+    label.htmlFor = toggle.id;
+    label.innerText = getTutorialToggleLabel();
+
+    toggleContainer.append(label, toggle);
+    tutorial.append(toggleContainer);
+  };
+
+  const buildStaticLayout = () => {
+    tutorial.classList.add("static");
+
+    for (const step of steps) {
+      const stepContainer = document.createElement("div");
+      stepContainer.classList.add("step-container");
+
+      switch (step.type) {
+        case "COMMENT": {
+          stepContainer.classList.add("step-comment");
+          stepContainer.append(step.comment);
+        } break;
+
+        case "ADMONITION": {
+          stepContainer.classList.add("step-admonition");
+
+          const stepTextContainer = document.createElement("div");
+          stepTextContainer.classList.add("step-admonition-box");
+          stepTextContainer.append(step.title, step.description);
+          stepContainer.append(stepTextContainer);
+
+          const stepContentContainer = document.createElement("div");
+          stepContentContainer.classList.add("step-admonition-content");
+          stepContentContainer.append(step.content);
+          stepContainer.append(stepContentContainer);
+
+          // Resets the "scrolled" tag, as there's no scroll anymore.
+          /** @type {HTMLDivElement[]} */
+          const scrollableAreas = stepContentContainer.querySelectorAll("div[class^='highlight-'] .highlight");
+          for (const scrollableArea of scrollableAreas) {
+            delete scrollableArea.dataset["scrolled"];
+          }
+        } break;
+      }
+
+      tutorial.append(stepContainer);
+    }
+  };
+
+  const buildDynamicLayout = () => {
+    tutorial.classList.add("dynamic");
+
+    const topContainer = document.createElement("div");
+    topContainer.classList.add("top-container");
+
+    const stepsContainer = document.createElement("div");
+    stepsContainer.classList.add("steps-container");
+
+    const bottomContainer = document.createElement("div");
+    bottomContainer.classList.add("bottom-container");
+
+    const displayContainer = document.createElement("div");
+    displayContainer.classList.add("display-container");
+
+    const displaySticky = document.createElement("div");
+    displaySticky.classList.add("display-sticky");
+    displayContainer.append(displaySticky);
+
+    for (const step of steps) {
+      const stepContainer = document.createElement("div");
+      stepContainer.classList.add("step-container");
+      stepContainer.dataset["stepIndex"] = step.index;
+
+      switch (step.type) {
+        case "COMMENT": {
+          stepContainer.classList.add("step-comment");
+          stepContainer.append(step.comment);
+        } break;
+
+        case "ADMONITION": {
+          stepContainer.classList.add("step-admonition");
+
+          const stepTextContainer = document.createElement("div");
+          stepTextContainer.classList.add("step-admonition-box");
+          stepTextContainer.append(step.title, step.description);
+          stepContainer.append(stepTextContainer);
+
+          // Instead of adding "step-admonition-content" to the `stepContainer`
+          // (which is being added in `stepsContainer`), let's put it in
+          // `displayContainer` instead.
+          const stepContentContainer = document.createElement("div");
+          stepContentContainer.classList.add("step-admonition-content");
+          stepContentContainer.dataset["stepIndex"] = step.index;
+          stepContentContainer.append(step.content);
+          displaySticky.append(stepContentContainer);
+
+          // Scroll to the mean of the highlighted lines.
+          requestAnimationFrame(() => {
+            /** @type {HTMLDivElement | null} */
+            const scrollContainer = stepContentContainer.querySelector("div[class^='highlight-']");
+            if (scrollContainer == null) {
+              return;
+            }
+
+            /** @type {HTMLDivElement | null} */
+            const scrollableArea = scrollContainer.querySelector(".highlight");
+            if (scrollableArea == null) {
+              throw new Error("scrollableArea is null");
+            }
+
+            // Return early if the container has been already "scrolled".
+            if (scrollableArea.dataset["scrolled"] != null) {
+              return;
+            }
+            scrollableArea.dataset["scrolled"] = "scrolled";
+
+            // If the browser has remembered the scroll before a refresh, the `scrollTop`
+            // value will not be 0.
+            // @TODO: Fix (if possible) the bug where the browser remembers that the
+            //        scroll was at 0. Currently, we just ignore it and reset the scroll
+            //        to the mean.
+            if (scrollableArea.scrollTop !== 0) {
+              return;
+            }
+
+            const { top: scrollableTop, height: scrollableHeight } = scrollableArea.getBoundingClientRect();
+
+            /** @type {[smallest: number, highest: number]} */
+            let positions = [0, 0];
+            /** @type {HTMLDivElement | null} */
+            const codeTab = stepContentContainer.querySelector(".sphinx-tabs");
+
+            if (codeTab == null) {
+              return;
+            }
+
+            /** @type {HTMLSpanElement[]} */
+            const highlightedLines = Array.from(codeTab.querySelectorAll(".highlight .hll"));
+            if (highlightedLines.length === 0) {
+              return;
+            }
+
+            for (const highlightedLine of highlightedLines) {
+              const { top, height } = highlightedLine.getBoundingClientRect();
+              positions = [
+                Math.min(positions[0], top),
+                Math.max(positions[1], top + height)
+              ];
+            }
+
+            const mean = (positions[0] + positions[1]) / 2;
+            const targetScrollTop = Math.max((mean - scrollableTop) + (scrollContainer.clientHeight / 2), scrollableHeight);
+            scrollableArea.scrollTo({ top: targetScrollTop });
+          });
+
+          // Only observe "COMPOUND" steps.
+          observer.observe(stepContainer);
+        } break;
+      }
+
+      stepsContainer.append(stepContainer);
+    }
+
+    tutorial.append(topContainer, stepsContainer, bottomContainer, displayContainer);
+  };
+
+  /** @type {(event: CustomEvent) => void} */
+  const tutorialViewTypeChangeEventListener = (event) => {
+    const {
+      viewType,
+      source
+    } = event.detail;
+
+    if (source === tutorial) {
+      return;
+    }
+
+    const oldViewType = currentViewType;
+    currentViewType = viewType;
+
+    if (oldViewType !== currentViewType) {
+      onViewTypeChange();
+    }
+  };
+  window.addEventListener(TUTORIAL_VIEW_TYPE_CHANGE_EVENT, tutorialViewTypeChangeEventListener);
+
+  // Initialize the display.
+  handleResize();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  /** @type {NodeListOf<HTMLDivElement>} */
+  const tutorials = document.querySelectorAll(".tutorial");
+  for (const tutorial of Array.from(tutorials)) {
+    setupTutorial(tutorial);
+  }
+});
