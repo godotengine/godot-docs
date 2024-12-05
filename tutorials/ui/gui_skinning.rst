@@ -131,12 +131,12 @@ is applied to them. Those methods accept the theme type as one of the arguments.
  .. code-tab:: gdscript
 
    var accent_color = get_theme_color("accent_color", "MyType")
-   label.add_color_override("font_color", accent_color)
+   label.add_theme_color_override("font_color", accent_color)
 
  .. code-tab:: csharp
 
    Color accentColor = GetThemeColor("accent_color", "MyType");
-   label.AddColorOverride("font_color", accentColor);
+   label.AddThemeColorOverride("font_color", accentColor);
 
 To give more customization opportunities types can also be linked together as
 type variations. This is another use-case for custom theme types. For example,
