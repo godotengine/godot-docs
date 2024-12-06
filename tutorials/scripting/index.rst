@@ -37,7 +37,6 @@ below will help you make the most of Godot.
    :name: toc-scripting-core-features
 
    how_to_read_the_godot_api
-   debug/index
    idle_and_physics_processing
    groups
    nodes_and_scene_instances

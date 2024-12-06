@@ -54,6 +54,8 @@ You can access any file relative to it by writing paths starting with
 file ``character.png`` located in the project's root folder in code with the
 following path: ``res://character.png``.
 
+.. _doc_data_paths_persistent_user_data:
+
 Accessing persistent user data (``user://``)
 --------------------------------------------
 
