@@ -97,6 +97,7 @@ The bindings below are developed and maintained by the community:
 
 - `D <https://github.com/godot-dlang/godot-dlang>`__
 - `Go <https://github.com/grow-graphics/gd>`__
+- `Nim <https://github.com/godot-nim/gdext-nim>`__
 - `Rust <https://github.com/godot-rust/gdext>`__
 - `Swift <https://github.com/migueldeicaza/SwiftGodot>`__
 
