@@ -15,8 +15,8 @@ Node structure
 
 To begin, we need to choose a root node for the player object. As a general
 rule, a scene's root node should reflect the object's desired functionality -
-what the object *is*. Click the "Other Node" button and add an :ref:`Area2D
-<class_Area2D>` node to the scene.
+what the object *is*. In the upper left corner, below "Scene", Click the 
+"Other Node" button and add an :ref:`Area2D <class_Area2D>` node to the scene.
 
 .. image:: img/add_node.webp
 
@@ -68,8 +68,8 @@ Click on the ``Player`` node and add (:kbd:`Ctrl + A` on Windows/Linux or
 appearance and animations for our player. Notice that there is a warning symbol
 next to the node. An ``AnimatedSprite2D`` requires a :ref:`SpriteFrames
 <class_SpriteFrames>` resource, which is a list of the animations it can
-display. To create one, find the ``Sprite Frames`` property under the ``Animation`` tab in the Inspector and click
-"[empty]" -> "New SpriteFrames":
+display. Make sure ``AnimatedSprite2D`` is selected and then find the ``Sprite Frames`` property under 
+the ``Animation`` tab in the Inspector and click "[empty]" -> "New SpriteFrames":
 
 .. image:: img/new_spriteframes.webp
 
