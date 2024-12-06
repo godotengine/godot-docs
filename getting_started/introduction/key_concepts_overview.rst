@@ -84,8 +84,9 @@ flexibility in how you structure your scenes.
           more about it here:
           https://gameprogrammingpatterns.com/observer.html
 
-For example, buttons emit a signal when pressed. You can connect to this signal
-to run code in reaction to this event, like starting the game or opening a menu.
+For example, buttons emit a signal when pressed. You can connect a piece of code
+to this signal which will run in reaction to this event, like starting the game
+or opening a menu.
 
 Other built-in signals can tell you when two objects collided, when a character
 or monster entered a given area, and much more. You can also define new signals
