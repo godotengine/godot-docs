@@ -72,7 +72,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
   - By declaring that the Activity will handle these configuration events using the `android:configChanges attribute <https://developer.android.com/guide/topics/manifest/activity-element#config>`_.
 
 1. Create the Android app
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -167,7 +167,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
 
 
 2. Create the Godot project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -228,7 +228,7 @@ Below we break-down the steps used to create the GLTF Viewer app.
 
 
 3. Build and run the app
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once you complete configuration of your Godot project, build and run the Android app.
 If set up correctly, the host Activity will initialize the embedded Godot Engine on startup.

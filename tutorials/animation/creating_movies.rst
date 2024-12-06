@@ -110,7 +110,7 @@ Once you've configured and enabled Movie Maker mode, it will be automatically us
 when running the project from the editor.
 
 Command line usage
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 Movie Maker can also be enabled from the :ref:`command line <doc_command_line_tutorial>`:
 
@@ -157,7 +157,7 @@ Godot has 2 built-in :ref:`MovieWriters <class_MovieWriter>`, and more can be
 implemented by extensions:
 
 AVI (recommended)
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 AVI container with MJPEG for video and uncompressed audio. Features lossy video
 compression, resulting in medium file sizes and fast encoding. The lossy
@@ -173,7 +173,7 @@ To use AVI, specify a path to an ``.avi`` file to be created in the
 **Editor > Movie Writer > Movie File** project setting.
 
 PNG
-^^^
+~~~
 
 PNG image sequence for video and WAV for audio. Features lossless video
 compression, at the cost of large file sizes and slow encoding. This is designed
@@ -193,7 +193,7 @@ To use PNG, specify a ``.png`` file to be created in the
 file will have the same name as the ``.png`` file (minus the extension).
 
 Custom
-^^^^^^
+~~~~~~
 
 If you need to encode directly to a different format or pipe a stream through
 third-party software, you can extend the MovieWriter class to create your own
@@ -371,7 +371,7 @@ Some common post-processing steps are listed below.
 .. _doc_creating_movies_converting_avi:
 
 Converting AVI video to MP4
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While some platforms such as YouTube support uploading the AVI file directly, many
 others will require a conversion step beforehand. `HandBrake <https://handbrake.fr/>`__
@@ -398,7 +398,7 @@ cost of a worse size/quality ratio.
 .. _doc_creating_movies_converting_image_sequence:
 
 Converting PNG image sequence + WAV audio to a video
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you chose to record a PNG image sequence with a WAV file beside it,
 you need to convert it to a video before you can use it elsewhere.
@@ -428,7 +428,7 @@ storing transparency, so you can use WebM/VP9 as an alternative:
 .. _doc_creating_movies_motion_blur:
 
 Cutting video
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 You can trim parts of the video you don't want to keep after the video is
 recorded. For example, to discard everything before 12.1 seconds and keep
@@ -442,7 +442,7 @@ Cutting videos can also be done with the GUI tool
 `LosslessCut <https://mifi.github.io/lossless-cut/>`__.
 
 Resizing video
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 The following command resizes a video to be 1080 pixels tall (1080p),
 while preserving its existing aspect ratio:
@@ -455,7 +455,7 @@ while preserving its existing aspect ratio:
 .. _doc_creating_movies_reducing_framerate:
 
 Reducing framerate
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 The following command changes a video's framerate to 30 FPS, dropping some of
 the original frames if there are more in the input video:
@@ -465,7 +465,7 @@ the original frames if there are more in the input video:
     ffmpeg -i input.avi -r 30 -crf 15 output.mp4
 
 Generating accumulation motion blur with FFmpeg
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot does not have built-in support for motion blur, but it can still be
 created in recorded videos.

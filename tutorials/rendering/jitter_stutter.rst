@@ -74,7 +74,7 @@ Forcing your graphics card to use the maximum performance profile can also help
 reduce stuttering, at the cost of increased GPU power draw.
 
 Windows
-^^^^^^^
+~~~~~~~
 
 Windows is known to cause stutter in windowed games. This mostly depends on the
 hardware installed, drivers version and processes running in parallel (e.g.
@@ -109,7 +109,7 @@ Windows 10 and older versions.
     Windows to reduce jitter and input lag for fullscreen games.
 
 Linux
-^^^^^
+~~~~~
 
 Stutter may be visible on desktop Linux, but this is usually associated with
 different video drivers and compositors. Some compositors may also trigger this
@@ -128,21 +128,21 @@ to automatically apply optimizations (such as forcing the GPU performance profil
 when running specific processes.
 
 macOS
-^^^^^
+~~~~~
 
 Generally, macOS is stutter-free, although recently some bugs were reported when
 running on fullscreen (this is a macOS bug). If you have a machine exhibiting
 this behavior, please let us know.
 
 Android
-^^^^^^^
+~~~~~~~
 
 Generally, Android is stutter and jitter-free because the running activity gets
 all the priority. That said, there may be problematic devices (older Kindle Fire
 is known to be one). If you see this problem on Android, please let us know.
 
 iOS
-^^^
+~~~
 
 iOS devices are generally stutter-free, but older devices running newer versions
 of the operating system may exhibit problems. This is generally unavoidable.
@@ -151,7 +151,7 @@ Input lag
 ---------
 
 Project configuration
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 On platforms that support disabling V-Sync, input lag can be made less
 noticeable by disabling V-Sync in the project settings. This will however cause
@@ -206,7 +206,7 @@ done with caution.
     (``0`` is unlimited). These arguments can be used at the same time.
 
 Hardware/OS-specific
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 If your monitor supports it, consider enabling variable refresh rate
 (G-Sync/FreeSync) while leaving V-Sync enabled, then cap the framerate in the
