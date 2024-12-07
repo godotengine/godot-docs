@@ -129,6 +129,8 @@ Methods
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`create_link<class_DirAccess_method_create_link>`\ (\ source\: :ref:`String<class_String>`, target\: :ref:`String<class_String>`\ )                                                  |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`DirAccess<class_DirAccess>`                 | :ref:`create_temp<class_DirAccess_method_create_temp>`\ (\ prefix\: :ref:`String<class_String>` = "", keep\: :ref:`bool<class_bool>` = false\ ) |static|                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`current_is_dir<class_DirAccess_method_current_is_dir>`\ (\ ) |const|                                                                                                                |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`dir_exists<class_DirAccess_method_dir_exists>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                            |
@@ -158,6 +160,8 @@ Methods
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`get_open_error<class_DirAccess_method_get_open_error>`\ (\ ) |static|                                                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_space_left<class_DirAccess_method_get_space_left>`\ (\ )                                                                                                                        |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_bundle<class_DirAccess_method_is_bundle>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                                                                                      |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`is_case_sensitive<class_DirAccess_method_is_case_sensitive>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                                                                      |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -295,6 +299,24 @@ Creates symbolic link between files or folders.
 \ **Note:** On Windows, this method works only if the application is running with elevated privileges or Developer Mode is enabled.
 
 \ **Note:** This method is implemented on macOS, Linux, and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DirAccess_method_create_temp:
+
+.. rst-class:: classref-method
+
+:ref:`DirAccess<class_DirAccess>` **create_temp**\ (\ prefix\: :ref:`String<class_String>` = "", keep\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_DirAccess_method_create_temp>`
+
+Creates a temporary directory. This directory will be freed when the returned **DirAccess** is freed.
+
+If ``prefix`` is not empty, it will be prefixed to the directory name, separated by a ``-``.
+
+If ``keep`` is ``true``, the directory is not deleted when the returned **DirAccess** is freed.
+
+Returns ``null`` if opening the directory failed. You can use :ref:`get_open_error<class_DirAccess_method_get_open_error>` to check the error that occurred.
 
 .. rst-class:: classref-item-separator
 
@@ -513,6 +535,20 @@ Returns the result of the last :ref:`open<class_DirAccess_method_open>` call in 
 :ref:`int<class_int>` **get_space_left**\ (\ ) :ref:`🔗<class_DirAccess_method_get_space_left>`
 
 Returns the available space on the current directory's disk, in bytes. Returns ``0`` if the platform-specific method to query the available space fails.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DirAccess_method_is_bundle:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_bundle**\ (\ path\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_DirAccess_method_is_bundle>`
+
+Returns ``true`` if the directory is a macOS bundle.
+
+\ **Note:** This method is implemented on macOS.
 
 .. rst-class:: classref-item-separator
 

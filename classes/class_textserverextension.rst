@@ -102,6 +102,8 @@ Methods
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Hinting<enum_TextServer_Hinting>`                         | :ref:`_font_get_hinting<class_TextServerExtension_private_method__font_get_hinting>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                        |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`_font_get_keep_rounding_remainders<class_TextServerExtension_private_method__font_get_keep_rounding_remainders>`\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const|                                                                                                                                                                                                                                      |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                   | :ref:`_font_get_kerning<class_TextServerExtension_private_method__font_get_kerning>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`, glyph_pair\: :ref:`Vector2i<class_Vector2i>`\ ) |virtual| |const|                                                                                                                                                                                            |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\]    | :ref:`_font_get_kerning_list<class_TextServerExtension_private_method__font_get_kerning_list>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`\ ) |virtual| |const|                                                                                                                                                                                                                                |
@@ -230,6 +232,8 @@ Methods
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                          | :ref:`_font_set_hinting<class_TextServerExtension_private_method__font_set_hinting>`\ (\ font_rid\: :ref:`RID<class_RID>`, hinting\: :ref:`Hinting<enum_TextServer_Hinting>`\ ) |virtual|                                                                                                                                                                                                                             |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                          | :ref:`_font_set_keep_rounding_remainders<class_TextServerExtension_private_method__font_set_keep_rounding_remainders>`\ (\ font_rid\: :ref:`RID<class_RID>`, keep_rounding_remainders\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                                                          |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                          | :ref:`_font_set_kerning<class_TextServerExtension_private_method__font_set_kerning>`\ (\ font_rid\: :ref:`RID<class_RID>`, size\: :ref:`int<class_int>`, glyph_pair\: :ref:`Vector2i<class_Vector2i>`, kerning\: :ref:`Vector2<class_Vector2>`\ ) |virtual|                                                                                                                                                           |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                          | :ref:`_font_set_language_support_override<class_TextServerExtension_private_method__font_set_language_support_override>`\ (\ font_rid\: :ref:`RID<class_RID>`, language\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ ) |virtual|                                                                                                                                                               |
@@ -287,6 +291,8 @@ Methods
    | :ref:`Vector2<class_Vector2>`                                   | :ref:`_get_hex_code_box_size<class_TextServerExtension_private_method__get_hex_code_box_size>`\ (\ size\: :ref:`int<class_int>`, index\: :ref:`int<class_int>`\ ) |virtual| |const|                                                                                                                                                                                                                                   |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                     | :ref:`_get_name<class_TextServerExtension_private_method__get_name>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                                                                                                          |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`                   | :ref:`_get_support_data<class_TextServerExtension_private_method__get_support_data>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                                                                                          |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                     | :ref:`_get_support_data_filename<class_TextServerExtension_private_method__get_support_data_filename>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                                                                                        |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -961,6 +967,20 @@ Returns rectangle in the cache texture containing the glyph.
 **Optional.**\ 
 
 Returns the font hinting mode. Used by dynamic fonts only.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__font_get_keep_rounding_remainders:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_font_get_keep_rounding_remainders**\ (\ font_rid\: :ref:`RID<class_RID>`\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__font_get_keep_rounding_remainders>`
+
+**Optional.**\ 
+
+Returns glyph position rounding behavior. If set to ``true``, when aligning glyphs to the pixel boundaries rounding remainders are accumulated to ensure more uniform glyph distribution. This setting has no effect if subpixel positioning is enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -1860,6 +1880,20 @@ Sets font hinting mode. Used by dynamic fonts only.
 
 ----
 
+.. _class_TextServerExtension_private_method__font_set_keep_rounding_remainders:
+
+.. rst-class:: classref-method
+
+|void| **_font_set_keep_rounding_remainders**\ (\ font_rid\: :ref:`RID<class_RID>`, keep_rounding_remainders\: :ref:`bool<class_bool>`\ ) |virtual| :ref:`🔗<class_TextServerExtension_private_method__font_set_keep_rounding_remainders>`
+
+**Optional.**\ 
+
+Sets glyph position rounding behavior. If set to ``true``, when aligning glyphs to the pixel boundaries rounding remainders are accumulated to ensure more uniform glyph distribution. This setting has no effect if subpixel positioning is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServerExtension_private_method__font_set_kerning:
 
 .. rst-class:: classref-method
@@ -2261,6 +2295,20 @@ Returns size of the replacement character (box with character hexadecimal code t
 **Required.**\ 
 
 Returns the name of the server interface.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__get_support_data:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **_get_support_data**\ (\ ) |virtual| |const| :ref:`🔗<class_TextServerExtension_private_method__get_support_data>`
+
+**Optional.**\ 
+
+Returns default TextServer database (e.g. ICU break iterators and dictionaries).
 
 .. rst-class:: classref-item-separator
 

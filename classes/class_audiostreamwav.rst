@@ -62,9 +62,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save_to_wav<class_AudioStreamWAV_method_save_to_wav>`\ (\ path\: :ref:`String<class_String>`\ ) |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamWAV<class_AudioStreamWAV>` | :ref:`load_from_buffer<class_AudioStreamWAV_method_load_from_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, options\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static| |
+   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamWAV<class_AudioStreamWAV>` | :ref:`load_from_file<class_AudioStreamWAV_method_load_from_file>`\ (\ path\: :ref:`String<class_String>`, options\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static|                         |
+   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`save_to_wav<class_AudioStreamWAV_method_save_to_wav>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                            |
+   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -297,6 +301,49 @@ If ``true``, audio is stereo.
 
 Method Descriptions
 -------------------
+
+.. _class_AudioStreamWAV_method_load_from_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`AudioStreamWAV<class_AudioStreamWAV>` **load_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, options\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static| :ref:`🔗<class_AudioStreamWAV_method_load_from_buffer>`
+
+Creates a new **AudioStreamWAV** instance from the given buffer. The keys and values of ``options`` match the properties of :ref:`ResourceImporterWAV<class_ResourceImporterWAV>`.
+
+The usage of ``options`` is identical to :ref:`load_from_file<class_AudioStreamWAV_method_load_from_file>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioStreamWAV_method_load_from_file:
+
+.. rst-class:: classref-method
+
+:ref:`AudioStreamWAV<class_AudioStreamWAV>` **load_from_file**\ (\ path\: :ref:`String<class_String>`, options\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static| :ref:`🔗<class_AudioStreamWAV_method_load_from_file>`
+
+Creates a new **AudioStreamWAV** instance from the given file path. The keys and values of ``options`` match the properties of :ref:`ResourceImporterWAV<class_ResourceImporterWAV>`.
+
+\ **Example:** Load the first file dropped as a WAV and play it:
+
+::
+
+    @onready var audio_player = $AudioStreamPlayer
+    
+    func _ready():
+        get_window().files_dropped.connect(_on_files_dropped)
+    
+    func _on_files_dropped(files):
+        if files[0].get_extension() == "wav":
+            audio_player.stream = AudioStreamWAV.load_from_file(files[0], {
+                    "force/max_rate": true,
+                    "force/max_rate_hz": 11025
+                })
+            audio_player.play()
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_AudioStreamWAV_method_save_to_wav:
 

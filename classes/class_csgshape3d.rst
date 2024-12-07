@@ -59,7 +59,7 @@ Properties
    +---------------------------------------------+-------------------------------------------------------------------------+-----------+
    | :ref:`Operation<enum_CSGShape3D_Operation>` | :ref:`operation<class_CSGShape3D_property_operation>`                   | ``0``     |
    +---------------------------------------------+-------------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                   | :ref:`snap<class_CSGShape3D_property_snap>`                             | ``0.001`` |
+   | :ref:`float<class_float>`                   | :ref:`snap<class_CSGShape3D_property_snap>`                             |           |
    +---------------------------------------------+-------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`                     | :ref:`use_collision<class_CSGShape3D_property_use_collision>`           | ``false`` |
    +---------------------------------------------+-------------------------------------------------------------------------+-----------+
@@ -231,14 +231,16 @@ The operation that is performed on this shape. This is ignored for the first CSG
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **snap** = ``0.001`` :ref:`🔗<class_CSGShape3D_property_snap>`
+:ref:`float<class_float>` **snap** :ref:`🔗<class_CSGShape3D_property_snap>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_snap**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_snap**\ (\ )
 
-Snap makes the mesh vertices snap to a given distance so that the faces of two meshes can be perfectly aligned. A lower value results in greater precision but may be harder to adjust. The top-level CSG shape's snap value is used for the entire CSG tree.
+**Deprecated:** The CSG library no longer uses snapping.
+
+This property does nothing.
 
 .. rst-class:: classref-item-separator
 

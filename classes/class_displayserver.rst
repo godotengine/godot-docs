@@ -32,6 +32,8 @@ Methods
    :widths: auto
 
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`beep<class_DisplayServer_method_beep>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                             | :ref:`clipboard_get<class_DisplayServer_method_clipboard_get>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Image<class_Image>`                                               | :ref:`clipboard_get_image<class_DisplayServer_method_clipboard_get_image>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -402,6 +404,8 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                       |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`window_start_drag<class_DisplayServer_method_window_start_drag>`\ (\ window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -627,6 +631,14 @@ Display server supports spawning dialogs for selecting files or directories usin
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG_FILE_EXTRA** = ``26``
 
 The display server supports all features of :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>`, with the added functionality of Options and native dialog file access to ``res://`` and ``user://`` paths. See :ref:`file_dialog_show<class_DisplayServer_method_file_dialog_show>` and :ref:`file_dialog_with_options_show<class_DisplayServer_method_file_dialog_with_options_show>`. **Windows, macOS, Linux (X11/Wayland)**
+
+.. _class_DisplayServer_constant_FEATURE_WINDOW_DRAG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_WINDOW_DRAG** = ``27``
+
+The display server supports initiating window drag operation on demand. See :ref:`window_start_drag<class_DisplayServer_method_window_start_drag>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1376,7 +1388,7 @@ Window handle:
 
 Window view:
 
-- Windows: ``HDC`` for the window (only with the GL Compatibility renderer).
+- Windows: ``HDC`` for the window (only with the Compatibility renderer).
 
 - macOS: ``NSView*`` for the window main view.
 
@@ -1388,7 +1400,7 @@ Window view:
 
 :ref:`HandleType<enum_DisplayServer_HandleType>` **OPENGL_CONTEXT** = ``3``
 
-OpenGL context (only with the GL Compatibility renderer):
+OpenGL context (only with the Compatibility renderer):
 
 - Windows: ``HGLRC`` for the window (native GL), or ``EGLContext`` for the window (ANGLE).
 
@@ -1547,6 +1559,20 @@ The ID that refers to a nonexistent application status indicator.
 
 Method Descriptions
 -------------------
+
+.. _class_DisplayServer_method_beep:
+
+.. rst-class:: classref-method
+
+|void| **beep**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_beep>`
+
+Plays the beep sound from the operative system, if possible. Because it comes from the OS, the beep sound will be audible even if the application is muted. It may also be disabled for the entire OS by the user.
+
+\ **Note:** This method is implemented on macOS, Linux (X11/Wayland), and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_DisplayServer_method_clipboard_get:
 
@@ -4520,6 +4546,20 @@ When :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_
 Sets the ``callback`` that will be called when an event occurs in the window specified by ``window_id``.
 
 \ **Warning:** Advanced users only! Adding such a callback to a :ref:`Window<class_Window>` node will override its default implementation, which can introduce bugs.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_window_start_drag:
+
+.. rst-class:: classref-method
+
+|void| **window_start_drag**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_start_drag>`
+
+Starts a drag operation on the window with the given ``window_id``, using the current mouse position. Call this method when handling a mouse button being pressed to simulate a pressed event on the window's title bar. Using this method allows the window to participate in space switching, tiling, and other system features.
+
+\ **Note:** This method is implemented only on macOS.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

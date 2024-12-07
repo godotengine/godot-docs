@@ -67,6 +67,8 @@ Methods
    +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`                     | :ref:`get_forced_export_files<class_EditorExportPlatform_method_get_forced_export_files>`\ (\ ) |static|                                                                                                                                                                                                                                                                                     |
    +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                                   | :ref:`get_internal_export_files<class_EditorExportPlatform_method_get_internal_export_files>`\ (\ ) |static|                                                                                                                                                                                                                                                                                 |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                           | :ref:`get_message_category<class_EditorExportPlatform_method_get_message_category>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                             |
    +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                 | :ref:`get_message_count<class_EditorExportPlatform_method_get_message_count>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                  |
@@ -361,6 +363,18 @@ Returns array of :ref:`EditorExportPreset<class_EditorExportPreset>`\ s for this
 :ref:`PackedStringArray<class_PackedStringArray>` **get_forced_export_files**\ (\ ) |static| :ref:`🔗<class_EditorExportPlatform_method_get_forced_export_files>`
 
 Returns array of core file names that always should be exported regardless of preset config.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatform_method_get_internal_export_files:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_internal_export_files**\ (\ ) |static| :ref:`🔗<class_EditorExportPlatform_method_get_internal_export_files>`
+
+Returns additional files that should always be exported regardless of preset configuration, and are not part of the project source. The returned :ref:`Dictionary<class_Dictionary>` contains filename keys (:ref:`String<class_String>`) and their corresponding raw data (:ref:`PackedByteArray<class_PackedByteArray>`).
 
 .. rst-class:: classref-item-separator
 

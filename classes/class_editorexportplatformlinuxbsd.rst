@@ -76,7 +76,7 @@ Property Descriptions
 
 Application executable architecture.
 
-Supported architectures: ``x86_32``, ``x86_64``, ``arm64``, ``arm32``, ``rv64``, ``ppc64``, and ``ppc32``.
+Supported architectures: ``x86_32``, ``x86_64``, ``arm64``, ``arm32``, ``rv64``, ``ppc64``, ``ppc32``, and ``loongarch64``.
 
 Official export templates include ``x86_32`` and ``x86_64`` binaries only.
 

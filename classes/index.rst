@@ -922,6 +922,7 @@ Other objects
     class_scriptlanguage
     class_scriptlanguageextension
     class_semaphore
+    class_shaderincludedb
     class_skinreference
     class_streampeer
     class_streampeerbuffer

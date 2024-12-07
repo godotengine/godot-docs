@@ -57,6 +57,8 @@ Properties
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`               | :ref:`hinting<class_ResourceImporterDynamicFont_property_hinting>`                                                       | ``1``     |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`keep_rounding_remainders<class_ResourceImporterDynamicFont_property_keep_rounding_remainders>`                     | ``true``  |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`Dictionary<class_Dictionary>` | :ref:`language_support<class_ResourceImporterDynamicFont_property_language_support>`                                     | ``{}``    |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`               | :ref:`msdf_pixel_range<class_ResourceImporterDynamicFont_property_msdf_pixel_range>`                                     | ``8``     |
@@ -192,6 +194,18 @@ The hinting mode to use. This controls how aggressively glyph edges should be sn
 \ **Light:** Sharp result by snapping glyph edges to pixels on the Y axis only.
 
 \ **Full:** Sharpest by snapping glyph edges to pixels on both X and Y axes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterDynamicFont_property_keep_rounding_remainders:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **keep_rounding_remainders** = ``true`` :ref:`🔗<class_ResourceImporterDynamicFont_property_keep_rounding_remainders>`
+
+If set to ``true``, when aligning glyphs to the pixel boundaries rounding remainders are accumulated to ensure more uniform glyph distribution. This setting has no effect if subpixel positioning is enabled.
 
 .. rst-class:: classref-item-separator
 
