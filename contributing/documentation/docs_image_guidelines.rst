@@ -53,6 +53,12 @@ compression is fine, even if the file size is bigger.
 If you already have an image editor such as GIMP, Krita or Photoshop installed
 it may have the ability to open an image then save it as a WebP file.
 
+.. note::
+
+    Since WebP supports animations and the documentation can display videos,
+    GIFs should be avoided. Their compression is inefficient and they only support
+    a 256-color palette with 1-bit transparency.
+
 Cropping
 ^^^^^^^^
 
