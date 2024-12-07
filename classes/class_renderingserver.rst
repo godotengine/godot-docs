@@ -5666,7 +5666,7 @@ Buffer memory used (in bytes). This includes vertex data, uniform buffers, and m
 
 :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_VIDEO_MEM_USED** = ``5``
 
-Video memory used (in bytes). When using the Forward+ or mobile rendering backends, this is always greater than the sum of :ref:`RENDERING_INFO_TEXTURE_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_TEXTURE_MEM_USED>` and :ref:`RENDERING_INFO_BUFFER_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_BUFFER_MEM_USED>`, since there is miscellaneous data not accounted for by those two metrics. When using the GL Compatibility backend, this is equal to the sum of :ref:`RENDERING_INFO_TEXTURE_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_TEXTURE_MEM_USED>` and :ref:`RENDERING_INFO_BUFFER_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_BUFFER_MEM_USED>`.
+Video memory used (in bytes). When using the Forward+ or Mobile renderers, this is always greater than the sum of :ref:`RENDERING_INFO_TEXTURE_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_TEXTURE_MEM_USED>` and :ref:`RENDERING_INFO_BUFFER_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_BUFFER_MEM_USED>`, since there is miscellaneous data not accounted for by those two metrics. When using the Compatibility renderer, this is equal to the sum of :ref:`RENDERING_INFO_TEXTURE_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_TEXTURE_MEM_USED>` and :ref:`RENDERING_INFO_BUFFER_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_BUFFER_MEM_USED>`.
 
 .. _class_RenderingServer_constant_RENDERING_INFO_PIPELINE_COMPILATIONS_CANVAS:
 
@@ -7488,7 +7488,7 @@ Sets the compositor effects for the specified compositor RID. ``effects`` should
 
 Creates a RenderingDevice that can be used to do draw and compute operations on a separate thread. Cannot draw to the screen nor share data with the global RenderingDevice.
 
-\ **Note:** When using the OpenGL backend or when running in headless mode, this function always returns ``null``.
+\ **Note:** When using the OpenGL rendering driver or when running in headless mode, this function always returns ``null``.
 
 .. rst-class:: classref-item-separator
 
@@ -8182,7 +8182,7 @@ Returns the time taken to setup rendering on the CPU in milliseconds. This value
 
 Returns the global RenderingDevice.
 
-\ **Note:** When using the OpenGL backend or when running in headless mode, this function always returns ``null``.
+\ **Note:** When using the OpenGL rendering driver or when running in headless mode, this function always returns ``null``.
 
 .. rst-class:: classref-item-separator
 
@@ -8294,7 +8294,7 @@ Returns the name of the video adapter (e.g. "GeForce GTX 1080/PCIe/SSE2").
 
 Returns the type of the video adapter. Since dedicated graphics cards from a given generation will *usually* be significantly faster than integrated graphics made in the same generation, the device type can be used as a basis for automatic graphics settings adjustment. However, this is not always true, so make sure to provide users with a way to manually override graphics settings.
 
-\ **Note:** When using the OpenGL backend or when running in headless mode, this function always returns :ref:`RenderingDevice.DEVICE_TYPE_OTHER<class_RenderingDevice_constant_DEVICE_TYPE_OTHER>`.
+\ **Note:** When using the OpenGL rendering driver or when running in headless mode, this function always returns :ref:`RenderingDevice.DEVICE_TYPE_OTHER<class_RenderingDevice_constant_DEVICE_TYPE_OTHER>`.
 
 .. rst-class:: classref-item-separator
 
@@ -12180,7 +12180,7 @@ If ``true``, enables debanding on the specified viewport. Equivalent to :ref:`Pr
 
 If ``true``, 2D rendering will use a high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ renderer this will be an ``RGBA16`` framebuffer, while when using the Mobile renderer it will be an ``RGB10_A2`` framebuffer. Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen (if the Viewport is attached to the screen). Practically speaking, this means that the end result of the Viewport will not be clamped into the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients. This setting has the same effect as :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>`.
 
-\ **Note:** This setting will have no effect when using the GL Compatibility renderer as the GL Compatibility renderer always renders in low dynamic range for performance reasons.
+\ **Note:** This setting will have no effect when using the Compatibility renderer, which always renders in low dynamic range for performance reasons.
 
 .. rst-class:: classref-item-separator
 

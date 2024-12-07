@@ -515,7 +515,7 @@ Clear the filter for file names.
 
 |void| **clear_filters**\ (\ ) :ref:`🔗<class_EditorFileDialog_method_clear_filters>`
 
-Removes all filters except for "All Files (\*)".
+Removes all filters except for "All Files (\*.\*)".
 
 .. rst-class:: classref-item-separator
 

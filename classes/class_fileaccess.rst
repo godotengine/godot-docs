@@ -96,6 +96,8 @@ Methods
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                        | :ref:`close<class_FileAccess_method_close>`\ (\ )                                                                                                                                                                                                                                                       |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`FileAccess<class_FileAccess>`                                           | :ref:`create_temp<class_FileAccess_method_create_temp>`\ (\ mode_flags\: :ref:`int<class_int>`, prefix\: :ref:`String<class_String>` = "", extension\: :ref:`String<class_String>` = "", keep\: :ref:`bool<class_bool>` = false\ ) |static|                                                             |
+   +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                       | :ref:`eof_reached<class_FileAccess_method_eof_reached>`\ (\ ) |const|                                                                                                                                                                                                                                   |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                       | :ref:`file_exists<class_FileAccess_method_file_exists>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                                                                                                                                                                                              |
@@ -460,6 +462,26 @@ Method Descriptions
 Closes the currently opened file and prevents subsequent read/write operations. Use :ref:`flush<class_FileAccess_method_flush>` to persist the data to disk without closing the file.
 
 \ **Note:** **FileAccess** will automatically close when it's freed, which happens when it goes out of scope or when it gets assigned with ``null``. In C# the reference must be disposed after we are done using it, this can be done with the ``using`` statement or calling the ``Dispose`` method directly.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileAccess_method_create_temp:
+
+.. rst-class:: classref-method
+
+:ref:`FileAccess<class_FileAccess>` **create_temp**\ (\ mode_flags\: :ref:`int<class_int>`, prefix\: :ref:`String<class_String>` = "", extension\: :ref:`String<class_String>` = "", keep\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_FileAccess_method_create_temp>`
+
+Creates a temporary file. This file will be freed when the returned **FileAccess** is freed.
+
+If ``prefix`` is not empty, it will be prefixed to the file name, separated by a ``-``.
+
+If ``extension`` is not empty, it will be appended to the temporary file name.
+
+If ``keep`` is ``true``, the file is not deleted when the returned **FileAccess** is freed.
+
+Returns ``null`` if opening the file failed. You can use :ref:`get_open_error<class_FileAccess_method_get_open_error>` to check the error that occurred.
 
 .. rst-class:: classref-item-separator
 

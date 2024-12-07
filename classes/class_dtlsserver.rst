@@ -31,8 +31,8 @@ Below a small example of how to use it:
     # server_node.gd
     extends Node
     
-    var dtls := DTLSServer.new()
-    var server := UDPServer.new()
+    var dtls = DTLSServer.new()
+    var server = UDPServer.new()
     var peers = []
     
     func _ready():
@@ -115,8 +115,8 @@ Below a small example of how to use it:
     # client_node.gd
     extends Node
     
-    var dtls := PacketPeerDTLS.new()
-    var udp := PacketPeerUDP.new()
+    var dtls = PacketPeerDTLS.new()
+    var udp = PacketPeerUDP.new()
     var connected = false
     
     func _ready():

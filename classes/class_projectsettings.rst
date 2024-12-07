@@ -10990,7 +10990,7 @@ Decreasing this value may improve GPU performance on certain setups, even if the
 
 The maximum number of uniforms that can be used by the global shader uniform buffer. Each item takes up one slot. In other words, a single uniform float and a uniform vec4 will take the same amount of space in the buffer.
 
-\ **Note:** When using the Compatibility backend, most mobile devices (and all web exports) will be limited to a maximum size of 1024 due to hardware constraints.
+\ **Note:** When using the Compatibility renderer, most mobile devices (and all web exports) will be limited to a maximum size of 1024 due to hardware constraints.
 
 .. rst-class:: classref-item-separator
 
@@ -11266,11 +11266,11 @@ Lower-end override for :ref:`rendering/reflections/sky_reflections/texture_array
 
 Sets the renderer that will be used by the project. Options are:
 
-\ **Forward Plus**: High-end renderer designed for Desktop devices. Has a higher base overhead, but scales well with complex scenes. Not suitable for older devices or mobile.
+\ **forward_plus** (Forward+): High-end renderer designed for desktop devices. Has a higher base overhead, but scales well with complex scenes. Not suitable for older devices or mobile.
 
-\ **Mobile**: Modern renderer designed for mobile devices. Has a lower base overhead than Forward Plus, but does not scale as well to large scenes with many elements.
+\ **mobile** (Mobile): Modern renderer designed for mobile devices. Has a lower base overhead than Forward+, but does not scale as well to large scenes with many elements.
 
-\ **GL Compatibility**: Low-end renderer designed for older devices. Based on the limitations of the OpenGL 3.3/ OpenGL ES 3.0 / WebGL 2 APIs.
+\ **gl_compatibility** (Compatibility): Low-end renderer designed for older devices. Based on the limitations of the OpenGL 3.3 / OpenGL ES 3.0 / WebGL 2 APIs.
 
 This can be overridden using the ``--rendering-method <method>`` command line argument.
 
@@ -11364,7 +11364,7 @@ Depending on the complexity of scenes, this value may be lowered or may need to 
 
 :ref:`String<class_String>` **rendering/rendering_device/driver** :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/driver>`
 
-Sets the driver to be used by the renderer when using a RenderingDevice-based renderer like the clustered renderer or the mobile renderer. This property can't be edited directly. Instead, set the driver using the platform-specific overrides. This can be overridden using the ``--rendering-driver <driver>`` command line argument.
+Sets the driver to be used by the renderer when using a RenderingDevice-based renderer like the Forward+ or Mobile renderers. This property can't be edited directly. Instead, set the driver using the platform-specific overrides. This can be overridden using the ``--rendering-driver <driver>`` command line argument.
 
 \ **Note:** The actual rendering driver may be automatically changed by the engine as a result of a fallback, or a user-specified command line argument. To get the actual rendering driver that is used at runtime, use :ref:`RenderingServer.get_current_rendering_driver_name<class_RenderingServer_method_get_current_rendering_driver_name>` instead of reading this project setting's value.
 
@@ -11868,9 +11868,9 @@ If ``true``, the GPU texture compressor will cache the local RenderingDevice and
 
 If ``true``, the texture importer will utilize the GPU for compressing textures, improving the import time of large images.
 
-\ **Note:** This only functions on a device which supports either Vulkan, D3D12, or Metal available as a rendering backend.
+\ **Note:** This only functions on a device which supports either Vulkan, Direct3D 12, or Metal as a rendering driver.
 
-\ **Note:** Currently this only affects certain compressed formats (BC1, BC4, and BC6), all of which are exclusive to desktop platforms and consoles.
+\ **Note:** Currently this only affects certain compressed formats (BC1, BC3, BC4, BC5, and BC6), all of which are exclusive to desktop platforms and consoles.
 
 .. rst-class:: classref-item-separator
 
@@ -11940,7 +11940,7 @@ The default compression factor for lossless WebP. Decompression speed is mostly 
 
 If ``true``, enables :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` on the root viewport. 2D rendering will use an high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ renderer this will be an ``RGBA16`` framebuffer, while when using the Mobile renderer it will be an ``RGB10_A2`` framebuffer. Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen. Practically speaking, this means that the end result of the Viewport will not be clamped into the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
 
-\ **Note:** This setting will have no effect when using the GL Compatibility renderer as the GL Compatibility renderer always renders in low dynamic range for performance reasons.
+\ **Note:** This setting will have no effect when using the Compatibility renderer, which always renders in low dynamic range for performance reasons.
 
 \ **Note:** This property is only read when the project starts. To toggle HDR 2D at runtime, set :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` on the root :ref:`Viewport<class_Viewport>`.
 

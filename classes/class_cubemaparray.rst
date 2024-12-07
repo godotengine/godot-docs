@@ -25,7 +25,7 @@ The primary benefit of **CubemapArray**\ s is that they can be accessed in shade
 
 \ **Note:** Godot uses **CubemapArray**\ s internally for many effects, including the :ref:`Sky<class_Sky>` if you set :ref:`ProjectSettings.rendering/reflections/sky_reflections/texture_array_reflections<class_ProjectSettings_property_rendering/reflections/sky_reflections/texture_array_reflections>` to ``true``. To create such a texture file yourself, reimport your image files using the import presets of the File System dock.
 
-\ **Note:** **CubemapArray** is not supported in the OpenGL 3 rendering backend.
+\ **Note:** **CubemapArray** is not supported in the Compatibility renderer.
 
 .. rst-class:: classref-reftable-group
 

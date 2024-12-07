@@ -443,7 +443,7 @@ Generates normals from vertices so you do not have to do it manually. If ``flip`
 
 |void| **generate_tangents**\ (\ ) :ref:`🔗<class_SurfaceTool_method_generate_tangents>`
 
-Generates a tangent vector for each vertex. Requires that each vertex have UVs and normals set already (see :ref:`generate_normals<class_SurfaceTool_method_generate_normals>`).
+Generates a tangent vector for each vertex. Requires that each vertex already has UVs and normals set (see :ref:`generate_normals<class_SurfaceTool_method_generate_normals>`).
 
 .. rst-class:: classref-item-separator
 

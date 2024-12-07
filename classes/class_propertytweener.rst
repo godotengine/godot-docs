@@ -68,10 +68,20 @@ When called, the final value will be used as a relative value instead.
 
 \ **Example:** Move the node by ``100`` pixels to the right.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
     tween.tween_property(self, "position", Vector2.RIGHT * 100, 1).as_relative()
+
+ .. code-tab:: csharp
+
+    Tween tween = GetTree().CreateTween();
+    tween.TweenProperty(this, "position", Vector2.Right * 100.0f, 1.0f).AsRelative();
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -87,10 +97,20 @@ Sets a custom initial value to the **PropertyTweener**.
 
 \ **Example:** Move the node from position ``(100, 100)`` to ``(200, 100)``.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
     tween.tween_property(self, "position", Vector2(200, 100), 1).from(Vector2(100, 100))
+
+ .. code-tab:: csharp
+
+    Tween tween = GetTree().CreateTween();
+    tween.TweenProperty(this, "position", new Vector2(200.0f, 100.0f), 1.0f).From(new Vector2(100.0f, 100.0f));
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -104,10 +124,20 @@ Sets a custom initial value to the **PropertyTweener**.
 
 Makes the **PropertyTweener** use the current property value (i.e. at the time of creating this **PropertyTweener**) as a starting point. This is equivalent of using :ref:`from<class_PropertyTweener_method_from>` with the current value. These two calls will do the same:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     tween.tween_property(self, "position", Vector2(200, 100), 1).from(position)
     tween.tween_property(self, "position", Vector2(200, 100), 1).from_current()
+
+ .. code-tab:: csharp
+
+    tween.TweenProperty(this, "position", new Vector2(200.0f, 100.0f), 1.0f).From(Position);
+    tween.TweenProperty(this, "position", new Vector2(200.0f, 100.0f), 1.0f).FromCurrent();
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -121,7 +151,10 @@ Makes the **PropertyTweener** use the current property value (i.e. at the time o
 
 Allows interpolating the value with a custom easing function. The provided ``interpolator_method`` will be called with a value ranging from ``0.0`` to ``1.0`` and is expected to return a value within the same range (values outside the range can be used for overshoot). The return value of the method is then used for interpolation between initial and final value. Note that the parameter passed to the method is still subject to the tweener's own easing.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     @export var curve: Curve
     
@@ -132,6 +165,26 @@ Allows interpolating the value with a custom easing function. The provided ``int
     
     func tween_curve(v):
         return curve.sample_baked(v)
+
+ .. code-tab:: csharp
+
+    [Export]
+    public Curve Curve { get; set; }
+    
+    public override void _Ready()
+    {
+        Tween tween = CreateTween();
+        // Interpolate the value using a custom curve.
+        Callable tweenCurveCallable = Callable.From<float, float>(TweenCurve);
+        tween.TweenProperty(this, "position:x", 300.0f, 1.0f).AsRelative().SetCustomInterpolator(tweenCurveCallable);
+    }
+    
+    private float TweenCurve(float value)
+    {
+        return Curve.SampleBaked(value);
+    }
+
+
 
 .. rst-class:: classref-item-separator
 

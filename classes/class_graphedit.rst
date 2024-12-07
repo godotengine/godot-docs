@@ -130,6 +130,8 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                              | :ref:`get_closest_connection_at_point<class_GraphEdit_method_get_closest_connection_at_point>`\ (\ point\: :ref:`Vector2<class_Vector2>`, max_distance\: :ref:`float<class_float>` = 4.0\ ) |const|                                                                                          |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`get_connection_count<class_GraphEdit_method_get_connection_count>`\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`\ )                                                                                                                           |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector2Array<class_PackedVector2Array>`              | :ref:`get_connection_line<class_GraphEdit_method_get_connection_line>`\ (\ from_node\: :ref:`Vector2<class_Vector2>`, to_node\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                                                                     |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_connection_list<class_GraphEdit_method_get_connection_list>`\ (\ ) |const|                                                                                                                                                                                                         |
@@ -1153,6 +1155,18 @@ For example, getting a connection at a given mouse position can be achieved like
     var connection = get_closest_connection_at_point(mouse_event.get_position())
 
 
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_method_get_connection_count:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_connection_count**\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GraphEdit_method_get_connection_count>`
+
+Returns the number of connections from ``from_port`` of ``from_node``.
 
 .. rst-class:: classref-item-separator
 
