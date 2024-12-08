@@ -42,6 +42,9 @@ here's an example of how GDScript looks.
     # Inheritance:
     extends BaseClass
 
+    # Trait usage:
+    uses Talkable, Flammable
+
 
     # Member variables.
     var a = 5
@@ -101,6 +104,19 @@ here's an example of how GDScript looks.
     # It's also possible to call another function in the super class:
     func other_something(p1, p2):
         super.something(p1, p2)
+
+
+    # When traits are used, they may have to implement abstract
+    # methods defined by the trait:
+    func talk_to():
+        print("Hi, you just talked to me!")
+
+
+    # Traits can also implement methods that the concrete class
+    # can use without defining itself:
+    func yet_another_something():
+        print("I'm going to light on fire!")
+        light_on_fire()
 
 
     # Inner class
@@ -174,7 +190,13 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | extends    | Defines what class to extend with the current class.                                                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| is         | Tests whether a variable extends a given class, or is of a given built-in type.                                                                   |
+| trait      | Defines an inner trait. See `Inner traits`_.                                                                                                      |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| trait_name | Defines the script as a globally accessible trait with the specified name. See `Registering named traits`_.                                       |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| uses       | Defines what trait(s) the current class should use.                                                                                               |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| is         | Tests whether a variable extends a given class, uses a given trait, or is of a given built-in type.                                               |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | in         | Tests whether a value is within a string, array, range, dictionary, or node. When used with ``for``, it iterates through them instead of testing. |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -865,7 +887,7 @@ The GDScript static analyzer takes typed arrays into account, however array meth
 ``front()`` and ``back()`` still have the ``Variant`` return type.
 
 Typed arrays have the syntax ``Array[Type]``, where ``Type`` can be any ``Variant`` type,
-native or user class, or enum. Nested array types (like ``Array[Array[int]]``) are not supported.
+native or user class, trait, or enum. Nested array types (like ``Array[Array[int]]``) are not supported.
 
 ::
 
@@ -873,7 +895,8 @@ native or user class, or enum. Nested array types (like ``Array[Array[int]]``) a
     var b: Array[Node]
     var c: Array[MyClass]
     var d: Array[MyEnum]
-    var e: Array[Variant]
+    var e: Array[MyTrait]
+    var f: Array[Variant]
 
 ``Array`` and ``Array[Variant]`` are the same thing.
 
@@ -1081,9 +1104,10 @@ Valid types are:
 
 - Built-in types (Array, Vector2, int, String, etc.).
 - Engine classes (Node, Resource, RefCounted, etc.).
-- Constant names if they contain a script resource (``MyScript`` if you declared ``const MyScript = preload("res://my_script.gd")``).
-- Other classes in the same script, respecting scope (``InnerClass.NestedClass`` if you declared ``class NestedClass`` inside the ``class InnerClass`` in the same scope).
+- Constant names if they contain a script or trait resource (``MyScript`` if you declared ``const MyScript = preload("res://my_script.gd")``).
+- Other classes or traits in the same file, respecting scope (``InnerClass.NestedClass`` if you declared ``class NestedClass`` inside the ``class InnerClass`` in the same scope).
 - Script classes declared with the ``class_name`` keyword.
+- Traits declared with the ``trait_name`` keyword.
 - Autoloads registered as singletons.
 
 .. note::
@@ -1155,11 +1179,11 @@ A class member variable can be declared static:
 
     static var a
 
-Static variables belong to the class, not instances. This means that static variables
+Static variables belong to the class or trait, not instances. This means that static variables
 share values between multiple instances, unlike regular member variables.
 
-From inside a class, you can access static variables from any function, both static and non-static.
-From outside the class, you can access static variables using the class or an instance
+From inside a class or trait, you can access static variables from any function, both static and non-static.
+From outside the class or trait, you can access static variables using the class or an instance
 (the second is not recommended as it is less readable).
 
 .. note::
@@ -1234,6 +1258,18 @@ A base class static variable can also be accessed via a child class:
         B.x = 3
         prints(A.x, B.x) # 3 3
 
+Likewise, if a class uses a trait with static variables, it will inherit those
+variables::
+
+    trait HasStatic:
+        static var static_var = 3
+
+    class UsingClass:
+        uses HasStatic
+
+    func _ready():
+        print(UsingClass.static_var)
+
 ``@static_unload`` annotation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1263,15 +1299,15 @@ Values assigned to typed variables must have a compatible type. If it's needed t
 coerce a value to be of a certain type, in particular for object types, you can
 use the casting operator ``as``.
 
-Casting between object types results in the same object if the value is of the
-same type or a subtype of the cast type.
+Casting between object types or traits results in the same object if the value is of the
+same type or a subtype of the cast type, or if the value uses the trait.
 
 ::
 
     var my_node2D: Node2D
     my_node2D = $Sprite2D as Node2D # Works since Sprite2D is a subtype of Node2D.
 
-If the value is not a subtype, the casting operation will result in a ``null`` value.
+If the value is not a subtype or does not use the trait, the casting operation will result in a ``null`` value.
 
 ::
 
@@ -1383,7 +1419,7 @@ or ``0`` if it is the first entry in the enum. Multiple keys with the same value
 Functions
 ---------
 
-Functions always belong to a `class <Classes_>`_. The scope priority for
+Functions always belong to a `class <Classes_>`_ or a `trait <Traits_>`_. The scope priority for
 variable look-up is: local → class member → global. The ``self`` variable is
 always available and is provided as an option for accessing class members
 (see `self`_), but is not always required (and should *not* be sent as the
@@ -2143,6 +2179,7 @@ A class (stored as a file) can inherit from:
 
 Multiple inheritance is not allowed.
 
+Multiple inheritance is not allowed, but Godot does support `traits <Traits_>`_, which cover many of the same use cases. 
 Inheritance uses the ``extends`` keyword::
 
     # Inherit/extend a globally available class.
@@ -2159,7 +2196,7 @@ Inheritance uses the ``extends`` keyword::
     If inheritance is not explicitly defined, the class will default to inheriting
     :ref:`class_RefCounted`.
 
-To check if a given instance inherits from a given class,
+To check if a given instance inherits from a given class or uses a given trait,
 the ``is`` keyword can be used:
 
 ::
@@ -2172,6 +2209,15 @@ the ``is`` keyword can be used:
     # Use 'is' to check inheritance.
     if entity is Enemy:
         entity.apply_damage()
+
+    # Cache the Flammable trait.
+    const Flammable = preload("flammable.gdt")
+
+    # [...]
+
+    # Use 'is' to check usage of the trait.
+    if entity is Flammable:
+        entity.light_on_fire()
 
 To call a function in a *super class* (i.e. one ``extend``-ed in your current
 class), use the ``super`` keyword::
@@ -2334,6 +2380,137 @@ class resource is done by calling the ``new`` function on the class object:
     func _init():
         var a = MyClass.new()
         a.some_function()
+
+Traits
+------
+
+Since Godot 4.x, GDScript supports traits, which are collections of behaviors and attributes
+that classes can use to guarantee
+functionality to themselves and other objects that may be attempting to use them.
+
+Like classes, by default all ``.gdt`` files are unnamed traits, and you must reference
+them using a relative or absolute path.
+::
+    # Use the trait 'interactable.gdt'.
+    uses "res://path/to/interactable.gdt"
+
+Note that traits on their own *cannot* be instantiated the same way that classes can.
+
+.. _doc_gdscript_basics_trait_name:
+
+Registering named traits
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Traits can be given a global name by using the ``trait_name`` keyword.
+::
+    trait_name MyTrait
+    
+Using traits in a class
+~~~~~~~~~~~~~~~~~~~~~~~
+
+For a class to use a trait, use the ``uses`` keyword:
+::
+    class_name MyScript
+    uses MyTrait
+
+
+Traits may also extend classes. If a trait extends a class, then any class
+that uses that trait must also have that class as an ancestor.
+::
+    # movable.gdt
+    trait_name Movable
+    extends PhysicsBody2D
+
+    # character.gd
+    class_name Character
+    extends CharacterBody2D
+    uses Movable  # Allowed, since CharacterBody2D inherits from PhysicsBody2D.
+
+The ``is`` keyword can be used to determine if a given instance uses a particular trait.
+::
+    if entity is Movable:
+        entity.move()
+
+If a trait provides a method signature, but no body, then the using class must implement
+a body for the method.
+::
+    # explosive.gdt
+    trait_name Explosive
+    
+    func explode()  # Body is not defined here, so it must be defined in each class that uses it.
+
+
+    # exploding_barrel.gd
+    class_name ExplodingBarrel
+    extends Sprite2D
+    uses Explosive
+
+    func explode():  # If this definition of Explosive.explode isn't provided, we will get an error.
+        print("Kaboom!")
+        queue_free()
+
+If a trait provides a method signature *and* a body, then the using class inherits it by default
+and doesn't need to provide its own implementation. It still can override the trait's
+implementation if desired, but the parameter count must stay the same, and the parameter and return
+types must be compatible.
+::
+    # damageable.gdt
+    trait_name Damageable
+
+    func take_damage():
+        print("Ouch!")
+
+
+    # invincible_npc.gd
+    class_name InvincibleNPC
+    extends Sprite2D
+    uses Damageable
+
+    # Allowed, and will run instead of Damageable's original take_damage method.
+    func take_damage():
+        print("You can't hurt me!")
+
+..
+    TODO: Confirm these behaviors
+
+Other class members have similar rules:
+
+- Variables and constants can be overridden, as long as the type is compatible and the value is changed.
+- Signals can be overriden, as long as the parameter count is maintained and the parameter types are compatible.
+- Named enums can be overriden and have new enum values.
+
+.. _doc_gdscript_basics_inner_traits:
+
+Inner traits
+~~~~~~~~~~~~
+
+Like inner classes, a class or trait file may contain inner traits, defined with the ``trait``
+keyword. Unlike inner classes, they cannot be instantiated directly, but their name can be
+referenced for using or checking use of themselves.
+::
+    # An inner trait in this class file.
+    trait SomeInnerTrait:
+        func do_something():
+            print("I did something!")
+
+
+    # An inner class in this class file, which uses the inner trait.    
+    class SomeInnerClass:
+        uses SomeInnerTrait
+
+
+    func _init():
+        var c = SomeInnerClass.new()
+        if c is SomeInnerTrait:
+            c.do_something()
+
+.. _doc_gdscript_basics_traits_as_resources:
+
+Traits as resources
+~~~~~~~~~~~~~~~~~~~
+
+Traits stored as files are treated as :ref:`GDTraits <class_GDTrait>`, and must
+be loaded similarly to classes (see `Classes as resources`_).
 
 Exports
 -------

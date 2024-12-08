@@ -151,7 +151,9 @@ class GDScriptLexer(RegexLexer):
                         "namespace", # Reserved for potential future use.
                         "signal",
                         "static",
-                        "trait", # Reserved for potential future use.
+                        "trait",
+                        "trait_name",
+                        "uses",
                         "var",
                         # Other keywords.
                         "await",

@@ -122,8 +122,10 @@ Here is a complete list of what can be used as a type hint:
 7. Global, native and custom named enums. Note that an enum type is just an ``int``,
    there is no guarantee that the value belongs to the set of enum values.
 8. Constants (including local ones) if they contain a preloaded class or enum.
+9. :ref:`Global traits <doc_gdscript_basics_trait_name>`.
+10. :ref:`Inner traits <_doc_gdscript_basics_inner_traits>`.
 
-You can use any class, including your custom classes, as types. There are two ways
+You can use any class or trait, including your custom classes and traits, as types. There are two ways
 to use them in scripts. The first method is to preload the script you want to use
 as a type in a constant:
 
@@ -147,6 +149,20 @@ and you can use it anywhere, without having to preload it into a constant:
 
     var my_rifle: Rifle
 
+These methods also work with traits, except using ``trait_name`` and ``uses`` in place
+of ``class_name`` and ``extends``::
+
+    const Shootable = preload("res://player/weapons/shootable.gdt")
+    var something_shootable: Shootable
+
+::
+
+    class_name Rifle
+    uses Shootable
+
+    # Somewhere else...
+    var my_shootable_thing: Shootable
+
 Specify the return type of a function with the arrow ``->``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -167,7 +183,7 @@ as with variables:
         health_points -= damage
         return health_points <= 0
 
-You can also use your own classes as return types:
+You can also use your own classes or traits as return types:
 
 ::
 
@@ -217,7 +233,7 @@ To define the type of an ``Array``, enclose the type name in ``[]``.
 
 An array's type applies to ``for`` loop variables, as well as some operators like
 ``[]``, ``[]=``, and ``+``. Array methods (such as ``push_back``) and other operators
-(such as ``==``) are still untyped. Built-in types, native and custom classes,
+(such as ``==``) are still untyped. Built-in types, native and custom classes and traits,
 and enums may be used as element types. Nested array types
 (like ``Array[Array[int]]``) are not supported.
 

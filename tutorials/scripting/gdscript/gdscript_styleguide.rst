@@ -30,6 +30,7 @@ Here is a complete class example based on these guidelines:
 
     class_name StateMachine
     extends Node
+    uses Activatable
     ## Hierarchical State machine for the player.
     ##
     ## Initializes states and delegates engine callbacks ([method Node._physics_process],
@@ -650,6 +651,8 @@ code. As a summary table:
 +---------------+----------------+----------------------------------------------------+
 | Class names   | PascalCase     | ``class_name YAMLParser``                          |
 +---------------+----------------+----------------------------------------------------+
+| Trait names   | PascalCase     | ``trait_name Interactable``                        |
++---------------+----------------+----------------------------------------------------+
 | Node names    | PascalCase     | ``Camera3D``, ``Player``                           |
 +---------------+----------------+----------------------------------------------------+
 | Functions     | snake_case     | ``func load_level():``                             |
@@ -668,7 +671,7 @@ code. As a summary table:
 File names
 ~~~~~~~~~~
 
-Use snake_case for file names. For named classes, convert the PascalCase class
+Use snake_case for file names. For named classes and traits, convert the PascalCase class or trait
 name to snake_case::
 
     # This file should be saved as `weapon.gd`.
@@ -681,6 +684,12 @@ name to snake_case::
     class_name YAMLParser
     extends Object
 
+::
+    
+    # This file should be saved as `interactable.gdt`.
+    trait_name Interactable
+    extends Node
+
 This is consistent with how C++ files are named in Godot's source code. This
 also avoids case sensitivity issues that can crop up when exporting a project
 from Windows to other platforms.
@@ -688,13 +697,13 @@ from Windows to other platforms.
 Classes and nodes
 ~~~~~~~~~~~~~~~~~
 
-Use PascalCase for class and node names:
+Use PascalCase for class, trait, and node names:
 
 ::
 
     extends CharacterBody3D
 
-Also use PascalCase when loading a class into a constant or a variable:
+Also use PascalCase when loading a class or trait into a constant or a variable:
 
 ::
 
@@ -787,28 +796,29 @@ We suggest to organize GDScript code this way:
     01. @tool, @icon, @static_unload
     02. class_name
     03. extends
-    04. ## doc comment
+    04. uses
+    05. ## doc comment
 
-    05. signals
-    06. enums
-    07. constants
-    08. static variables
-    09. @export variables
-    10. remaining regular variables
-    11. @onready variables
+    06. signals
+    07. enums
+    08. constants
+    09. static variables
+    10. @export variables
+    11. remaining regular variables
+    12. @onready variables
 
-    12. _static_init()
-    13. remaining static methods
-    14. overridden built-in virtual methods:
+    13. _static_init()
+    14. remaining static methods
+    15. overridden built-in virtual methods:
         1. _init()
         2. _enter_tree()
         3. _ready()
         4. _process()
         5. _physics_process()
         6. remaining virtual methods
-    15. overridden custom methods
-    16. remaining methods
-    17. subclasses
+    16. overridden custom methods
+    17. remaining methods
+    18. subclasses
 
 And put the class methods and variables in the following order depending on their access modifiers:
 
@@ -842,6 +852,8 @@ to be an :ref:`abstract class <doc_gdscript_basics_abstract_class>`,
 add ``abstract`` *before* the ``class_name`` keyword, but on the same line.
 
 Then, add the ``extends`` keyword if the class extends a built-in type.
+If the class uses any traits, add the ``uses`` keyword along with all of the trait
+names (or filepaths, if the traits are unnamed) of the traits it uses.
 
 Following that, you should have the class's optional
 :ref:`documentation comments <doc_gdscript_documentation_comments>`.
@@ -852,6 +864,7 @@ and how other developers should use it, for example.
 
     abstract class_name MyNode
     extends Node
+    uses MyTrait
     ## A brief description of the class's role and functionality.
     ##
     ## The description of the script, what it can do,
