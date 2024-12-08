@@ -1,5 +1,7 @@
 :allow_comments: False
 
+.. _doc_physics_index:
+
 Physics
 =======
 
