@@ -21,8 +21,11 @@ scrollbar is automatically displayed if the text does not fit within the
 control's size. The scrollbar can be disabled by unchecking the
 **Scroll Active** property in the RichTextLabel inspector.
 
-Note that the BBCode tags can also be used to some extent in the XML source of
-the class reference. For more information, see :ref:`doc_class_reference_primer`.
+Note that the BBCode tags can also be used to some extent for other use cases:
+
+- BBCode can be used to :ref:`format comments in the XML source of the class reference <doc_class_reference_bbcode>`.
+- BBCode can be used in :ref:`GDScript documentation comments <doc_gdscript_documentation_comments_bbcode_and_class_reference>`.
+- BBCode can be used when :ref:`printing rich text to the Output bottom panel <doc_output_panel_printing_rich_text>`.
 
 .. seealso::
 

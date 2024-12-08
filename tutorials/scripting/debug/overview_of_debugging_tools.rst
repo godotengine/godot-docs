@@ -14,6 +14,12 @@ in the running game.
 Finally, you have options to debug the game running on a remote device
 and to reload changes to your scenes or your code while the game is running.
 
+Output Panel
+--------------
+
+The output panel allows you to see text printed by the project, but also by the editor (e.g. from ``@tool`` scripts).
+You can find information about in :ref:`doc_output_panel`.
+
 Debugger Panel
 --------------
 
@@ -251,7 +257,7 @@ GDScript
 ++++++++
 
 These settings allow you to toggle specific GDScript warnings, such as for
-unused variables. You can also turn off warnings completely. See 
+unused variables. You can also turn off warnings completely. See
 :ref:`doc_gdscript_warning_system` for more information.
 
 Shader Language
