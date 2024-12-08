@@ -21,6 +21,7 @@ This section covers the basics that you will encounter in (almost) every source 
    variant_class
    object_class
    inheritance_class_tree
+   internal_audio_architecture
    internal_rendering_architecture
    2d_coordinate_systems
    scripting_development
