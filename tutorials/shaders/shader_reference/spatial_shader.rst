@@ -98,32 +98,32 @@ Global built-ins
 
 Global built-ins are available everywhere, including custom functions.
 
-+-----------------------------+------------------------------------------------------------------------------------------+
-| Built-in                    | Description                                                                              |
-+=============================+==========================================================================================+
-| in float **TIME**           | Global time since the engine has started, in seconds. It repeats after every ``3,600``   |
-|                             | seconds (which can  be changed with the                                                  |
-|                             | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>` |
-|                             | setting). It's not affected by :ref:`time_scale<class_Engine_property_time_scale>` or    |
-|                             | pausing. If you need  a ``TIME`` variable that can be scaled or paused, add your own     |
-|                             | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each    |
-|                             | frame.                                                                                   | 
-+-----------------------------+------------------------------------------------------------------------------------------+
-| in float **PI**             | A ``PI`` constant (``3.141592``).                                                        |
-|                             | A ratio of a circle's circumference to its diameter and amount of radians in half turn.  |
-+-----------------------------+------------------------------------------------------------------------------------------+
-| in float **TAU**            | A ``TAU`` constant (``6.283185``).                                                       |
-|                             | An equivalent of ``PI * 2`` and amount of radians in full turn.                          |
-+-----------------------------+------------------------------------------------------------------------------------------+
-| in float **E**              | An ``E`` constant (``2.718281``). Euler's number and a base of the natural logarithm.    |
-+-----------------------------+------------------------------------------------------------------------------------------+
-| in bool **OUTPUT_IS_SRGB**  | ``true`` when output is in sRGB color space (this is ``true`` in the Compatibility       |
-|                             | renderer, ``false`` in Forward+ and Mobile).                                             |
-+-----------------------------+------------------------------------------------------------------------------------------+
-| in float **CLIP_SPACE_FAR** | Clip space far ``z`` value.                                                              |
-|                             | In the Forward+ or Mobile renderers, it's ``0.0``.                                       |
-|                             | In the Compatibility renderer, it's ``-1.0``.                                            |
-+-----------------------------+------------------------------------------------------------------------------------------+
++-----------------------------+-----------------------------------------------------------------------------------------------------+
+| Built-in                    | Description                                                                                         |
++=============================+=====================================================================================================+
+| in float **TIME**           | Global time since the engine has started, in seconds. It repeats after every ``3,600``              |
+|                             | seconds (which can  be changed with the                                                             |
+|                             | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`            |
+|                             | setting). It's affected by :ref:`time_scale<class_Engine_property_time_scale>` but not by pausing.  |
+|                             | If you need a ``TIME`` variable that is not affected by time scale, add your own                    |
+|                             | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each               |
+|                             | frame.                                                                                              |
++-----------------------------+-----------------------------------------------------------------------------------------------------+
+| in float **PI**             | A ``PI`` constant (``3.141592``).                                                                   |
+|                             | A ratio of a circle's circumference to its diameter and amount of radians in half turn.             |
++-----------------------------+-----------------------------------------------------------------------------------------------------+
+| in float **TAU**            | A ``TAU`` constant (``6.283185``).                                                                  |
+|                             | An equivalent of ``PI * 2`` and amount of radians in full turn.                                     |
++-----------------------------+-----------------------------------------------------------------------------------------------------+
+| in float **E**              | An ``E`` constant (``2.718281``). Euler's number and a base of the natural logarithm.               |
++-----------------------------+-----------------------------------------------------------------------------------------------------+
+| in bool **OUTPUT_IS_SRGB**  | ``true`` when output is in sRGB color space (this is ``true`` in the Compatibility                  |
+|                             | renderer, ``false`` in Forward+ and Mobile).                                                        |
++-----------------------------+-----------------------------------------------------------------------------------------------------+
+| in float **CLIP_SPACE_FAR** | Clip space far ``z`` value.                                                                         |
+|                             | In the Forward+ or Mobile renderers, it's ``0.0``.                                                  |
+|                             | In the Compatibility renderer, it's ``-1.0``.                                                       |
++-----------------------------+-----------------------------------------------------------------------------------------------------+
 
 Vertex built-ins
 ^^^^^^^^^^^^^^^^

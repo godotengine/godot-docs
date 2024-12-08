@@ -157,10 +157,10 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 | in float **TIME**               | Global time since the engine has started, in seconds. It repeats after every ``3,600``                                   |
 |                                 | seconds (which can  be changed with the                                                                                  |
 |                                 | :ref:`rollover<class_ProjectSettings_property_rendering/limits/time/time_rollover_secs>`                                 |
-|                                 | setting). It's not affected by :ref:`time_scale<class_Engine_property_time_scale>` or                                    |
-|                                 | pausing. If you need  a ``TIME`` variable that can be scaled or paused, add your own                                     |
+|                                 | setting). It's affected by :ref:`time_scale<class_Engine_property_time_scale>` but not by pausing. If you need a         |
+|                                 | ``TIME`` variable that is not affected by time scale, add your own                                                       |
 |                                 | :ref:`global shader uniform<doc_shading_language_global_uniforms>` and update it each                                    |
-|                                 | frame.                                                                                                                   |                          
+|                                 | frame.                                                                                                                   |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in vec3 **POSITION**            | Camera position, in world space.                                                                                         |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
