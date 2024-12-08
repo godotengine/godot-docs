@@ -103,7 +103,18 @@ which are equivalent to new, delete, new[] and delete[].
 memnew/memdelete also use a little C++ magic and notify Objects right
 after they are created, and right before they are deleted.
 
-For dynamic memory, use Vector<>.
+For dynamic memory, use Godot's ``Vector<>`` or one of its variations.
+Godot's ``Vector<>`` behaves much like an STL ``Vector<>``, but is simpler,
+thread safe, and uses Copy-On-Write semantics.
+It can be safely passed via public API.
+
+The ``Packed*Array`` :ref:`types <doc_gdscript_packed_arrays>` are aliases for
+specific ``Vector<*>`` types (e.g., ``PackedByteArray``, ``PackedInt32Array``)
+that are accessible via GDScript. Prefer using the ``Packed*Array`` aliases
+when available.
+
+``LocalVector<>`` is a non-COW version, with less overhead. It is intended for
+internal use where the benefits of COW are not needed.
 
 References:
 ~~~~~~~~~~~
