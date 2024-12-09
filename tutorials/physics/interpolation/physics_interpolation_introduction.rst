@@ -4,7 +4,7 @@ Introduction
 ============
 
 Physics ticks and rendered frames
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 One key concept to understand in Godot is the distinction between physics ticks
 (sometimes referred to as iterations or physics frames), and rendered frames. The
