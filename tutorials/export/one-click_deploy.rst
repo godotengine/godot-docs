@@ -102,7 +102,7 @@ Troubleshooting
 ---------------
 
 Android
-^^^^^^^
+~~~~~~~
 
 If you can't see the device in the list of devices when running the
 ``adb devices`` command in a terminal, it will not be visible by Godot either.
@@ -123,7 +123,7 @@ To resolve this:
 .. _doc_one-click_deploy_troubleshooting_web:
 
 Web
-^^^
+~~~
 
 By default, the web server started by the editor is only accessible from
 ``localhost``. This means the web server can't be reached by other devices on

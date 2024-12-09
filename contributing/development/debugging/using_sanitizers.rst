@@ -197,7 +197,7 @@ Platform-specific sanitizers
 ----------------------------
 
 Web
-^^^
+~~~
 
 When :ref:`compiling for the Web <doc_compiling_for_web>`,
 there are 2 additional sanitizer SCons options available:

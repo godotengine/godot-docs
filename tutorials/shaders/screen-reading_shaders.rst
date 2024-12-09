@@ -4,7 +4,7 @@ Screen-reading shaders
 ======================
 
 Introduction
-~~~~~~~~~~~~
+------------
 
 It is often desired to make a shader that reads from the same
 screen to which it's writing. 3D APIs, such as OpenGL or DirectX, make this very
@@ -18,7 +18,7 @@ to a back-buffer and then read from it while drawing. Godot provides a
 few tools that make this process easy.
 
 Screen texture
-~~~~~~~~~~~~~~
+--------------
 
 Godot :ref:`doc_shading_language` has a special texture to access the already
 rendered contents of the screen. It is used by specifying a hint when declaring
@@ -51,7 +51,7 @@ you.
     as with the ``0.0`` LOD parameter.
 
 Screen texture example
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 The screen texture can be used for many things. There is a
 special demo for *Screen Space Shaders*, that you can download to see
@@ -79,7 +79,7 @@ and saturation:
     }
 
 Behind the scenes
-~~~~~~~~~~~~~~~~~
+-----------------
 
 While this seems magical, it's not. In 2D, when ``hint_screen_texture`` is first
 found in a node that is about to be drawn, Godot does a full-screen copy to a
@@ -125,7 +125,7 @@ with a camera in the same position as your object, and then use the
 :ref:`Viewport's <class_Viewport>` texture instead of the screen texture.
 
 Back-buffer logic
-~~~~~~~~~~~~~~~~~
+-----------------
 
 So, to make it clearer, here's how the backbuffer copying logic works in 2D in
 Godot:
@@ -148,7 +148,7 @@ Godot:
 
 
 Depth texture
-~~~~~~~~~~~~~
+-------------
 
 For 3D shaders, it's also possible to access the screen depth buffer. For this,
 the ``hint_depth_texture`` hint is used. This texture is not linear; it must be
@@ -167,7 +167,7 @@ The following code retrieves the 3D position below the pixel being drawn:
     }
 
 Normal-roughness texture
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 .. note::
 
@@ -189,7 +189,7 @@ roughness of objects rendered in the depth prepass. The normal is stored in the
         screen_normal = screen_normal * 2.0 - 1.0;
 
 Redefining screen textures
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 The screen texture hints (``hint_screen_texture``, ``hint_depth_texture``, and
 ``hint_normal_roughness_texture``) can be used with multiple uniforms. For

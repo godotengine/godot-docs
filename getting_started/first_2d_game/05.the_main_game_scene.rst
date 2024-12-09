@@ -35,7 +35,7 @@ In addition, set the ``One Shot`` property of ``StartTimer`` to "On" and set
 ``Position`` of the ``StartPosition`` node to ``(240, 450)``.
 
 Spawning mobs
-~~~~~~~~~~~~~
+-------------
 
 The Main node will be spawning new mobs, and we want them to appear at a random
 location on the edge of the screen. Add a :ref:`Path2D <class_Path2D>` node
@@ -70,7 +70,7 @@ Your scene should look like this:
 .. image:: img/main_scene_nodes.webp
 
 Main script
-~~~~~~~~~~~
+-----------
 
 Add a script to ``Main``. At the top of the script, we use
 ``@export var mob_scene: PackedScene`` to allow us to choose the Mob scene we want
@@ -257,7 +257,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
                convert between the two.
 
 Testing the scene
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Let's test the scene to make sure everything is working. Add this ``new_game``
 call to ``_ready()``:

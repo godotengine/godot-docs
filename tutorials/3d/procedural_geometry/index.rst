@@ -61,13 +61,13 @@ hidden from the user in the :ref:`RenderingServer <class_RenderingServer>`, but 
 manually by passing in an array containing the surface information.
 
 Surfaces
-^^^^^^^^
+~~~~~~~~
 
 Each surface has its own material. Alternatively, you can override the material for all surfaces
 in the Mesh when you use a MeshInstance3D using the :ref:`material_override <class_GeometryInstance3D_property_material_override>` property.
 
 Surface array
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 The surface array is an array of length ``ArrayMesh.ARRAY_MAX``. Each position in the array is
 filled with a sub-array containing per-vertex information. For example, the array located at
@@ -89,7 +89,7 @@ Godot provides different ways of accessing and working with geometry. More infor
 be provided in the following tutorials.
 
 ArrayMesh
-^^^^^^^^^
+~~~~~~~~~
 
 The ArrayMesh resource extends Mesh to add a few different quality of life functions and, most
 importantly, the ability to construct a Mesh surface through scripting.
@@ -97,7 +97,7 @@ importantly, the ability to construct a Mesh surface through scripting.
 For more information about the ArrayMesh, please see the :ref:`ArrayMesh tutorial <doc_arraymesh>`.
 
 MeshDataTool
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 The MeshDataTool is a resource that converts Mesh data into arrays of vertices, faces, and edges that can
 be modified at runtime.
@@ -105,14 +105,14 @@ be modified at runtime.
 For more information about the MeshDataTool, please see the :ref:`MeshDataTool tutorial <doc_meshdatatool>`.
 
 SurfaceTool
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 The SurfaceTool allows the creation of Meshes using an OpenGL 1.x immediate mode style interface.
 
 For more information about the SurfaceTool, please see the :ref:`SurfaceTool tutorial <doc_surfacetool>`.
 
 ImmediateMesh
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 ImmediateMesh is a mesh that uses an immediate mode style interface (like
 SurfaceTool) to draw objects. The difference between ImmediateMesh and the

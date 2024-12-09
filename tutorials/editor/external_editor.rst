@@ -94,7 +94,7 @@ To use these protocols, a Godot instance must be running on your current project
 Below are some configuration steps for specific editors:
 
 Visual Studio Code
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 You need to install the official `Visual Studio Code plugin <https://github.com/godotengine/godot-vscode-plugin>`_.
 
@@ -121,6 +121,6 @@ For **DAP**, specify the ``debugServer`` property in your ``launch.json`` file:
     }
 
 Emacs
-^^^^^
+~~~~~
 
 Check the official instructions to configure `LSP <https://github.com/godotengine/emacs-gdscript-mode#auto-completion-with-the-language-server-protocol-lsp>`_, and `DAP <https://github.com/godotengine/emacs-gdscript-mode#using-the-debugger>`_.
