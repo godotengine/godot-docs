@@ -11,9 +11,10 @@ games will work with few changes. That said there are some situations which requ
 special treatment, and these will be described.
 
 Turn on the physics interpolation setting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------
 
-The first step is to turn on physics interpolation in :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>`.
+The first step is to turn on physics interpolation in
+:ref:`Project Settings > Physics > Common > Physics Interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>`
 You can now run your game.
 
 It is likely that nothing looks hugely different, particularly if you are running
@@ -23,11 +24,12 @@ behind the scenes.
 .. tip::
 
     To convert an existing game to use interpolation, it is highly recommended that
-    you temporarily set :ref:`ProjectSettings.physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
-    to a low value such as 10, which will make interpolation problems more obvious.
+    you temporarily set
+    :ref:`Project Settings > Physics > Common > Physics Tick per Second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`
+    to a low value such as ``10``, which will make interpolation problems more obvious.
 
 Move (almost) all game logic from _process to _physics_process
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------------------------
 
 The most fundamental requirement for physics interpolation (which you may be doing
 already) is that you should be moving and performing game logic on your objects
@@ -57,9 +59,9 @@ longer run on every rendered frame.
 
 
 Ensure that all indirect movement happens during physics ticks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------------------------------
 
-Consider that in Godot, Nodes can be moved not just directly in your own scripts,
+Consider that in Godot, nodes can be moved not just directly in your own scripts,
 but also by automatic methods such as tweening, animation, and navigation. All
 these methods should also have their timing set to operate on the physics tick
 rather than each frame ("idle"), **if** you are using them to move objects (*these
@@ -70,7 +72,7 @@ methods can also be used to control properties that are not interpolated*).
           movement of parents should therefore also only occur during physics ticks.
 
 Choose a physics tick rate
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 When using physics interpolation, the rendering is decoupled from physics, and you
 can choose any value that makes sense for your game. You are no longer limited to
@@ -91,7 +93,7 @@ As a rough guide:
           changing the project setting.
 
 Call ``reset_physics_interpolation()`` when teleporting objects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------------
 
 Most of the time, interpolation is what you want between two physics ticks.
 However, there is one situation in which it may *not* be what you want. That is

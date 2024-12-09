@@ -17,8 +17,8 @@ Global versus local interpolation
 This has some implications:
 
 - In 3D, it is easy to turn interpolation on and off at the level of each ``Node``,
-  via the ``physics_interpolation_mode`` property in the Inspector, which can be
-  set to ``On``, ``Off``, or ``Inherited``.
+  via the :ref:`physics_interpolation_mode<class_Node_property_physics_interpolation_mode>`
+  property in the Inspector, which can be set to ``On``, ``Off``, or ``Inherited``.
 
 .. figure:: img/physics_interpolation_mode.webp
     :align: center
@@ -28,7 +28,7 @@ This has some implications:
   physics tick. In most cases this will not matter, but in some situations the
   interpolation can look slightly wrong.
 - In 2D, interpolated local transforms are passed down to children during
-  rendering. This means that if a parent is set to ``physics_interpolation_mode``
+  rendering. This means that if a parent has ``physics_interpolation_mode`` set to
   ``On``, but the child is set to ``Off``, the child will still be interpolated if
   the parent is moving. *Only the child's local transform is uninterpolated.*
   Controlling the on / off behavior of 2D nodes therefore requires a little more
@@ -64,6 +64,6 @@ recommended to convert to ``CPUParticles2D`` (but keep a backup of your
 Other
 -----
 
-- ``get_global_transform_interpolated()`` - this is currently only available for 3D.
-- ``MultiMeshes`` - these should be supported in both 2D and 3D.
+- ``get_global_transform_interpolated()`` is currently only available for 3D.
+- ``MultiMeshes`` are supported in both 2D and 3D.
 

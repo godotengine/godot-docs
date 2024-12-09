@@ -76,8 +76,8 @@ What we really want to focus the camera on, is not the position of the target on
 the physics tick, but the *interpolated* position, i.e. the position at which the
 target will be rendered.
 
-We can do this using the :ref:`Spatial.get_global_transform_interpolated<class_Node3D_method_get_global_transform_interpolated>`
-function. This acts exactly like getting :ref:`Spatial.global_transform<class_Node3D_property_global_transform>`
+We can do this using the :ref:`Node3D.get_global_transform_interpolated<class_Node3D_method_get_global_transform_interpolated>`
+function. This acts exactly like getting :ref:`Node3D.global_transform<class_Node3D_property_global_transform>`
 but it gives you the *interpolated* transform (during a ``_process()`` call).
 
 .. important:: ``get_global_transform_interpolated()`` should only be used once or
@@ -142,8 +142,12 @@ and directly apply the mouse input to the camera rotation, rather than apply it 
 Sometimes, especially with cameras, you will want to use a combination of
 interpolation and non-interpolation:
 
-* A first person camera may position the camera at a player location (perhaps using :ref:`Spatial.get_global_transform_interpolated<class_Node3D_method_get_global_transform_interpolated>`), but control the Camera rotation from mouse look *without* interpolation.
-* A third person camera may similarly determine the look at (target location) of the camera using :ref:`Spatial.get_global_transform_interpolated<class_Node3D_method_get_global_transform_interpolated>`, but position the camera using mouse look *without* interpolation.
+- A first person camera may position the camera at a player location (perhaps using
+  :ref:`Node3D.get_global_transform_interpolated<class_Node3D_method_get_global_transform_interpolated>`),
+  but control the Camera rotation from mouse look *without* interpolation.
+- A third person camera may similarly determine the look at (target location) of the camera using
+  :ref:`Node3D.get_global_transform_interpolated<class_Node3D_method_get_global_transform_interpolated>`,
+  but position the camera using mouse look *without* interpolation.
 
 There are many permutations and variations of camera types, but it should be clear
 that in many cases, disabling automatic physics interpolation and handling this
