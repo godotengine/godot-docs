@@ -26,6 +26,11 @@ New pages since version 4.3
 
 - :ref:`doc_spring_arm`
 
+Debug
+^^^^^
+
+- :ref:`doc_output_panel`
+
 Editor
 ^^^^^^
 
