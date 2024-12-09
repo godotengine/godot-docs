@@ -107,6 +107,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
    tutorials/animation/index
    tutorials/assets_pipeline/index
    tutorials/audio/index
+   tutorials/core/index
    tutorials/export/index
    tutorials/io/index
    tutorials/i18n/index
