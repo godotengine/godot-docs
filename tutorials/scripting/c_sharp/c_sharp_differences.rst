@@ -363,6 +363,17 @@ Example:
 
     Input.Singleton.JoyConnectionChanged += Input_JoyConnectionChanged;
 
+If you are developing main screen plugins using C#, it is essential to note the 
+distinctions between ``GDScript`` and ``C#`` during setup. Unlike in ``GDScript``, 
+this portion is not a static class in ``C#``. Consequently, you must employ the singleton 
+pattern to obtain an instance of the ``EditorInterface``:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``EditorInterface``        ``EditorInterface.Singleton``
+====================  ==============================================================
+
 String
 ------
 
