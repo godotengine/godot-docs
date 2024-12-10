@@ -456,6 +456,8 @@ By default, the warning only updates when closing and reopening the scene.
         # Returning an empty array means "no warning".
         return warnings
 
+.. _doc_running_code_in_the_editor_editorscript:
+
 Running one-off scripts using EditorScript
 ------------------------------------------
 
