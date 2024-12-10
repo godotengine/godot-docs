@@ -44,7 +44,7 @@ Which platforms are supported by Godot?
 * Windows
 * macOS
 * Linux, \*BSD
-* Android (experimental)
+* Android (experimental, including Meta Quest 3)
 * `Web <https://editor.godotengine.org/>`__ (experimental)
 
 **For exporting your games:**
@@ -52,7 +52,7 @@ Which platforms are supported by Godot?
 * Windows
 * macOS
 * Linux, \*BSD
-* Android
+* Android (including Meta Quest 3)
 * iOS
 * Web
 
@@ -205,6 +205,12 @@ What 3D model formats does Godot support?
 You can find detailed information on supported formats, how to export them from
 your 3D modeling software, and how to import them for Godot in the
 :ref:`doc_importing_3d_scenes` documentation.
+
+What renderer should I use?
+---------------------------
+
+To choose Renderer when making a new project, see: :ref:`doc_internal_rendering_architecture`
+
 
 Will [insert closed SDK such as FMOD, GameWorks, etc.] be supported in Godot?
 -----------------------------------------------------------------------------
@@ -622,7 +628,8 @@ for the rest of the game.
 How can I support Godot development or contribute?
 --------------------------------------------------
 
-See :ref:`doc_ways_to_contribute`.
+See :ref:`doc_ways_to_contribute`, or click "Edit on GitHub" on the top-right to add
+caveats or answers to questions you find yourself coming back to repeatedly.
 
 Who is working on Godot? How can I contact you?
 -----------------------------------------------
