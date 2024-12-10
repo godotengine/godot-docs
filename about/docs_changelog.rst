@@ -41,6 +41,16 @@ Performance
 
 - :ref:`doc_pipeline_compilations`
 
+Physics
+^^^^^^^
+
+- :ref:`doc_physics_interpolation`
+- :ref:`doc_physics_interpolation_quick_start_guide`
+- :ref:`doc_physics_interpolation_introduction`
+- :ref:`doc_using_physics_interpolation`
+- :ref:`doc_advanced_physics_interpolation`
+- :ref:`doc_2d_and_3d_physics_interpolation`
+
 Rendering
 ^^^^^^^^^
 
