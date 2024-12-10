@@ -167,7 +167,7 @@ way to pull the data out of the file as well.
 
     // Note: This can be called from anywhere inside the tree. This function is
     // path independent.
-    // Go through everything in the persist category and ask them to return a
+    // Go through everything in the persist category that implements the ISaveable interface and ask them to return a
     // dict of relevant variables.
     public void SaveGame()
     {
@@ -183,21 +183,24 @@ way to pull the data out of the file as well.
                 continue;
             }
 
-            // Check the node has a save function.
-            if (!saveNode.HasMethod("Save"))
+            // Check the node implements the expected interface
+            if (saveNode is ISaveable saveableNode)
             {
-                GD.Print($"persistent node '{saveNode.Name}' is missing a Save() function, skipped");
+                // Call the node's save function.
+                var nodeData = saveableNode.Save();
+
+                // Json provides a static method to serialized JSON string.
+                var jsonString = Json.Stringify(nodeData);
+
+                // Store the save dictionary as a new line in the save file.
+                saveFile.StoreLine(jsonString);
+            }
+            else
+            {
+                GD.Print($"persistent node '{saveNode.Name}' does not implement the ISaveable interface, skipped");
                 continue;
             }
 
-            // Call the node's save function.
-            var nodeData = saveNode.Call("Save");
-
-            // Json provides a static method to serialized JSON string.
-            var jsonString = Json.Stringify(nodeData);
-
-            // Store the save dictionary as a new line in the save file.
-            saveFile.StoreLine(jsonString);
         }
     }
 
