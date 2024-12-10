@@ -118,6 +118,14 @@ The save function will look like this:
         };
     }
 
+    // ISaveable.cs
+    // Define an interface to be used by the overarching Save() method
+    // which the Node you wish to persist will need to implement.
+    public interface ISaveable
+    {
+        public Godot.Collections.Dictionary<string, Variant> Save();
+    }
+
 
 This gives us a dictionary with the style
 ``{ "variable_name":value_of_variable }``, which will be useful when
