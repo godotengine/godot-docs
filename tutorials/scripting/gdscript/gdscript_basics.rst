@@ -1134,7 +1134,7 @@ Static variables belong to the class or trait, not instances. This means that st
 share values between multiple instances, unlike regular member variables.
 
 From inside a class or trait, you can access static variables from any function, both static and non-static.
-From outside the class or trait, you can access static variables using the class/trait or an instance
+From outside the class or trait, you can access static variables using the class or an instance
 (the second is not recommended as it is less readable).
 
 .. note::
@@ -1205,23 +1205,17 @@ A base class static variable can also be accessed via a child class::
         B.x = 3
         prints(A.x, B.x) # 3 3
 
-.. warning::
+Likewise, if a class uses a trait with static variables, it will inherit those
+variables::
 
-    Static variables declared on traits belong to the trait *itself*, and are *not*
-    inherited by classes that use the trait::
+    trait HasStatic:
+        static var static_var = 3
 
-        trait HasStatic:
-            static var static_var = 3
+    class UsingClass:
+        uses HasStatic
 
-        class UsingClass:
-            uses HasStatic
-
-        func _ready():
-            # Will work
-            print(HasStatic.static_var)
-
-            # Will NOT work, as UsingClass does not get static_var from HasStatic
-            print(UsingClass.static_var)
+    func _ready():
+        print(UsingClass.static_var)
 
 ``@static_unload`` annotation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
