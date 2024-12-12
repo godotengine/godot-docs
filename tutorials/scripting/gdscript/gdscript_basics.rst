@@ -1133,8 +1133,8 @@ A class member variable can be declared static::
 Static variables belong to the class or trait, not instances. This means that static variables
 share values between multiple instances, unlike regular member variables.
 
-From inside a class/trait, you can access static variables from any function, both static and non-static.
-From outside the class/trait, you can access static variables using the class/trait or an instance
+From inside a class or trait, you can access static variables from any function, both static and non-static.
+From outside the class or trait, you can access static variables using the class/trait or an instance
 (the second is not recommended as it is less readable).
 
 .. note::
@@ -2018,11 +2018,7 @@ A class (stored as a file) can inherit from:
 
 Multiple inheritance is not allowed.
 
-.. note:: 
-    Godot 4.x introduces `traits <Traits_>`_ to GDScript, which may cover many of
-    the use cases for multiple inheritance. See their section for more information
-    about how they work.
-
+Multiple inheritance is not allowed, but Godot does support `traits <Traits_>`_, which cover many of the same use cases. 
 Inheritance uses the ``extends`` keyword::
 
     # Inherit/extend a globally available class.
@@ -2215,7 +2211,8 @@ class resource is done by calling the ``new`` function on the class object::
 Traits
 ------
 
-Traits are collections of behaviors and attributes that classes can use to guarantee
+Since Godot 4.x, GDScript supports traits, which are collections of behaviors and attributes
+that classes can use to guarantee
 functionality to themselves and other objects that may be attempting to use them.
 
 Like classes, by default all ``.gdt`` files are unnamed traits, and you must reference
