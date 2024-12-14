@@ -163,6 +163,8 @@ If a mode is selected that is not supported by the headset, the first available 
   From Godot 4.3 onwards selecting the alpha blend mode will also perform these extra steps.
   This does require the latest vendor plugin to be installed.
 
+.. _doc_openxr_settings_foveation_level:
+
 Foveation Level
 ---------------
 
