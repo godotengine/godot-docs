@@ -191,6 +191,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/3d/navigation_feel/translation_inertia<class_EditorSettings_property_editors/3d/navigation_feel/translation_inertia>`                                                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`editors/3d/navigation_feel/translation_sensitivity<class_EditorSettings_property_editors/3d/navigation_feel/translation_sensitivity>`                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/3d/navigation_feel/zoom_inertia<class_EditorSettings_property_editors/3d/navigation_feel/zoom_inertia>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>`                                                                                                                 |
@@ -1629,7 +1631,7 @@ If ``true``, invert the vertical mouse axis when panning, orbiting, or using fre
 
 :ref:`int<class_int>` **editors/3d/navigation/navigation_scheme** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation/navigation_scheme>`
 
-The navigation scheme preset to use in the 3D editor. Changing this setting will affect the mouse button and modifier controls used to navigate the 3D editor viewport.
+The navigation scheme preset to use in the 3D editor. Changing this setting will affect the mouse button and modifier keys used to navigate the 3D editor viewport.
 
 All schemes can use :kbd:`Mouse wheel` to zoom.
 
@@ -1639,7 +1641,9 @@ All schemes can use :kbd:`Mouse wheel` to zoom.
 
 - **Modo:** :kbd:`Alt + Left mouse button` to orbit. :kbd:`Alt + Shift + Left mouse button` to pan. :kbd:`Ctrl + Alt + Left mouse button` to zoom.
 
-See also :ref:`editors/3d/navigation/orbit_mouse_button<class_EditorSettings_property_editors/3d/navigation/orbit_mouse_button>`, :ref:`editors/3d/navigation/pan_mouse_button<class_EditorSettings_property_editors/3d/navigation/pan_mouse_button>`, :ref:`editors/3d/navigation/zoom_mouse_button<class_EditorSettings_property_editors/3d/navigation/zoom_mouse_button>`, and :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`.
+- **Tablet/Trackpad:** :kbd:`Alt` to orbit. :kbd:`Shift` to pan. :kbd:`Ctrl` to zoom. Enables 3-button mouse emulation mode.
+
+See also :ref:`editors/3d/navigation/orbit_mouse_button<class_EditorSettings_property_editors/3d/navigation/orbit_mouse_button>`, :ref:`editors/3d/navigation/pan_mouse_button<class_EditorSettings_property_editors/3d/navigation/pan_mouse_button>`, :ref:`editors/3d/navigation/zoom_mouse_button<class_EditorSettings_property_editors/3d/navigation/zoom_mouse_button>`, :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`, and :ref:`editors/3d/navigation/emulate_3_button_mouse<class_EditorSettings_property_editors/3d/navigation/emulate_3_button_mouse>`.
 
 \ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
 
@@ -1762,6 +1766,18 @@ The mouse sensitivity to use when orbiting in the 3D editor. See also :ref:`edit
 :ref:`float<class_float>` **editors/3d/navigation_feel/translation_inertia** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation_feel/translation_inertia>`
 
 The inertia to use when panning in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/3d/navigation_feel/translation_sensitivity:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/navigation_feel/translation_sensitivity** :ref:`🔗<class_EditorSettings_property_editors/3d/navigation_feel/translation_sensitivity>`
+
+The mouse sensitivity to use when panning in the 3D editor.
 
 .. rst-class:: classref-item-separator
 

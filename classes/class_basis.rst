@@ -403,7 +403,7 @@ Constructs a new **Basis** that only represents rotation from the given :ref:`Ve
     # Creates a Basis whose z axis points down.
     var my_basis = Basis.from_euler(Vector3(TAU / 4, 0, 0))
     
-    print(my_basis.z) # Prints (0, -1, 0)
+    print(my_basis.z) # Prints (0.0, -1.0, 0.0)
 
  .. code-tab:: csharp
 
@@ -435,9 +435,9 @@ Constructs a new **Basis** that only represents scale, with no rotation or shear
 
     var my_basis = Basis.from_scale(Vector3(2, 4, 8))
     
-    print(my_basis.x) # Prints (2, 0, 0)
-    print(my_basis.y) # Prints (0, 4, 0)
-    print(my_basis.z) # Prints (0, 0, 8)
+    print(my_basis.x) # Prints (2.0, 0.0, 0.0)
+    print(my_basis.y) # Prints (0.0, 4.0, 0.0)
+    print(my_basis.z) # Prints (0.0, 0.0, 8.0)
 
  .. code-tab:: csharp
 
@@ -517,7 +517,7 @@ Returns the length of each axis of this basis, as a :ref:`Vector3<class_Vector3>
     my_basis = my_basis.rotated(Vector3.UP, TAU / 2)
     my_basis = my_basis.rotated(Vector3.RIGHT, TAU / 4)
     
-    print(my_basis.get_scale()) # Prints (2, 4, 8)
+    print(my_basis.get_scale()) # Prints (2.0, 4.0, 8.0)
 
  .. code-tab:: csharp
 
@@ -701,9 +701,9 @@ The basis matrix's rows are multiplied by ``scale``'s components. This operation
     )
     my_basis = my_basis.scaled(Vector3(0, 2, -2))
     
-    print(my_basis.x) # Prints (0, 2, -2)
-    print(my_basis.y) # Prints (0, 4, -4)
-    print(my_basis.z) # Prints (0, 6, -6)
+    print(my_basis.x) # Prints (0.0, 2.0, -2.0)
+    print(my_basis.y) # Prints (0.0, 4.0, -4.0)
+    print(my_basis.z) # Prints (0.0, 6.0, -6.0)
 
  .. code-tab:: csharp
 
@@ -811,9 +811,9 @@ Returns the transposed version of this basis. This turns the basis matrix's colu
     )
     my_basis = my_basis.transposed()
     
-    print(my_basis.x) # Prints (1, 4, 7)
-    print(my_basis.y) # Prints (2, 5, 8)
-    print(my_basis.z) # Prints (3, 6, 9)
+    print(my_basis.x) # Prints (1.0, 4.0, 7.0)
+    print(my_basis.y) # Prints (2.0, 5.0, 8.0)
+    print(my_basis.z) # Prints (3.0, 6.0, 9.0)
 
  .. code-tab:: csharp
 
@@ -882,7 +882,7 @@ Transforms (multiplies) the ``right`` vector by this basis, returning a :ref:`Ve
 
     # Basis that swaps the X/Z axes and doubles the scale.
     var my_basis = Basis(Vector3(0, 2, 0), Vector3(2, 0, 0), Vector3(0, 0, 2))
-    print(my_basis * Vector3(1, 2, 3)) # Prints (4, 2, 6)
+    print(my_basis * Vector3(1, 2, 3)) # Prints (4.0, 2.0, 6.0)
 
  .. code-tab:: csharp
 

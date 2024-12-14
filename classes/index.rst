@@ -174,11 +174,14 @@ Nodes
     class_node3d
     class_occluderinstance3d
     class_omnilight3d
+    class_openxrbindingmodifiereditor
     class_openxrcompositionlayer
     class_openxrcompositionlayercylinder
     class_openxrcompositionlayerequirect
     class_openxrcompositionlayerquad
     class_openxrhand
+    class_openxrinteractionprofileeditor
+    class_openxrinteractionprofileeditorbase
     class_openxrvisibilitymask
     class_optionbutton
     class_panel
@@ -302,6 +305,7 @@ Resources
     class_animationnodeblendspace1d
     class_animationnodeblendspace2d
     class_animationnodeblendtree
+    class_animationnodeextension
     class_animationnodeoneshot
     class_animationnodeoutput
     class_animationnodestatemachine
@@ -374,6 +378,7 @@ Resources
     class_capsuleshape3d
     class_circleshape2d
     class_codehighlighter
+    class_colorpalette
     class_compositor
     class_compositoreffect
     class_compressedcubemap
@@ -477,10 +482,17 @@ Resources
     class_occluderpolygon2d
     class_oggpacketsequence
     class_openxraction
+    class_openxractionbindingmodifier
     class_openxractionmap
     class_openxractionset
+    class_openxranalogthresholdmodifier
+    class_openxrbindingmodifier
+    class_openxrdpadbindingmodifier
+    class_openxrhapticbase
+    class_openxrhapticvibration
     class_openxrinteractionprofile
     class_openxripbinding
+    class_openxripbindingmodifier
     class_optimizedtranslation
     class_ormmaterial3d
     class_packeddatacontainer

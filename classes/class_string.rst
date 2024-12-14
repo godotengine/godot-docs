@@ -536,8 +536,8 @@ Returns ``true`` if the string contains ``what``. In GDScript, this corresponds 
 
  .. code-tab:: csharp
 
-    GD.Print("Node".Contains("de")); // Prints true
-    GD.Print("team".Contains("I"));  // Prints false
+    GD.Print("Node".Contains("de")); // Prints True
+    GD.Print("team".Contains("I"));  // Prints False
 
 
 

@@ -48,45 +48,47 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>`                               | :ref:`bias<class_LightmapGI_property_bias>`                                           | ``0.0005`` |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>`                               | :ref:`bounce_indirect_energy<class_LightmapGI_property_bounce_indirect_energy>`       | ``1.0``    |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`int<class_int>`                                   | :ref:`bounces<class_LightmapGI_property_bounces>`                                     | ``3``      |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`CameraAttributes<class_CameraAttributes>`         | :ref:`camera_attributes<class_LightmapGI_property_camera_attributes>`                 |            |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`int<class_int>`                                   | :ref:`denoiser_range<class_LightmapGI_property_denoiser_range>`                       | ``10``     |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>`                               | :ref:`denoiser_strength<class_LightmapGI_property_denoiser_strength>`                 | ``0.1``    |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`directional<class_LightmapGI_property_directional>`                             | ``false``  |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`Color<class_Color>`                               | :ref:`environment_custom_color<class_LightmapGI_property_environment_custom_color>`   |            |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>`                               | :ref:`environment_custom_energy<class_LightmapGI_property_environment_custom_energy>` |            |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`Sky<class_Sky>`                                   | :ref:`environment_custom_sky<class_LightmapGI_property_environment_custom_sky>`       |            |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>` | :ref:`environment_mode<class_LightmapGI_property_environment_mode>`                   | ``1``      |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>`   | :ref:`generate_probes_subdiv<class_LightmapGI_property_generate_probes_subdiv>`       | ``2``      |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`interior<class_LightmapGI_property_interior>`                                   | ``false``  |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`LightmapGIData<class_LightmapGIData>`             | :ref:`light_data<class_LightmapGI_property_light_data>`                               |            |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`int<class_int>`                                   | :ref:`max_texture_size<class_LightmapGI_property_max_texture_size>`                   | ``16384``  |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`BakeQuality<enum_LightmapGI_BakeQuality>`         | :ref:`quality<class_LightmapGI_property_quality>`                                     | ``1``      |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>`                               | :ref:`texel_scale<class_LightmapGI_property_texel_scale>`                             | ``1.0``    |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>`                           | ``true``   |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`use_texture_for_bounces<class_LightmapGI_property_use_texture_for_bounces>`     | ``true``   |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`float<class_float>`                                 | :ref:`bias<class_LightmapGI_property_bias>`                                           | ``0.0005`` |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`float<class_float>`                                 | :ref:`bounce_indirect_energy<class_LightmapGI_property_bounce_indirect_energy>`       | ``1.0``    |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`int<class_int>`                                     | :ref:`bounces<class_LightmapGI_property_bounces>`                                     | ``3``      |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`CameraAttributes<class_CameraAttributes>`           | :ref:`camera_attributes<class_LightmapGI_property_camera_attributes>`                 |            |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`int<class_int>`                                     | :ref:`denoiser_range<class_LightmapGI_property_denoiser_range>`                       | ``10``     |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`float<class_float>`                                 | :ref:`denoiser_strength<class_LightmapGI_property_denoiser_strength>`                 | ``0.1``    |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`directional<class_LightmapGI_property_directional>`                             | ``false``  |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`Color<class_Color>`                                 | :ref:`environment_custom_color<class_LightmapGI_property_environment_custom_color>`   |            |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`float<class_float>`                                 | :ref:`environment_custom_energy<class_LightmapGI_property_environment_custom_energy>` |            |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`Sky<class_Sky>`                                     | :ref:`environment_custom_sky<class_LightmapGI_property_environment_custom_sky>`       |            |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`EnvironmentMode<enum_LightmapGI_EnvironmentMode>`   | :ref:`environment_mode<class_LightmapGI_property_environment_mode>`                   | ``1``      |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`GenerateProbes<enum_LightmapGI_GenerateProbes>`     | :ref:`generate_probes_subdiv<class_LightmapGI_property_generate_probes_subdiv>`       | ``2``      |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`interior<class_LightmapGI_property_interior>`                                   | ``false``  |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`LightmapGIData<class_LightmapGIData>`               | :ref:`light_data<class_LightmapGI_property_light_data>`                               |            |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`int<class_int>`                                     | :ref:`max_texture_size<class_LightmapGI_property_max_texture_size>`                   | ``16384``  |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`BakeQuality<enum_LightmapGI_BakeQuality>`           | :ref:`quality<class_LightmapGI_property_quality>`                                     | ``1``      |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`ShadowmaskMode<enum_LightmapGIData_ShadowmaskMode>` | :ref:`shadowmask_mode<class_LightmapGI_property_shadowmask_mode>`                     | ``0``      |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`float<class_float>`                                 | :ref:`texel_scale<class_LightmapGI_property_texel_scale>`                             | ``1.0``    |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>`                           | ``true``   |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`use_texture_for_bounces<class_LightmapGI_property_use_texture_for_bounces>`     | ``true``   |
+   +-----------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
 
 .. rst-class:: classref-section-separator
 
@@ -621,6 +623,29 @@ The maximum texture size for the generated texture atlas. Higher values will res
 The quality preset to use when baking lightmaps. This affects bake times, but output file sizes remain mostly identical across quality levels.
 
 To further speed up bake times, decrease :ref:`bounces<class_LightmapGI_property_bounces>`, disable :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>` and increase the lightmap texel size on 3D scenes in the Import dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LightmapGI_property_shadowmask_mode:
+
+.. rst-class:: classref-property
+
+:ref:`ShadowmaskMode<enum_LightmapGIData_ShadowmaskMode>` **shadowmask_mode** = ``0`` :ref:`🔗<class_LightmapGI_property_shadowmask_mode>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_shadowmask_mode**\ (\ value\: :ref:`ShadowmaskMode<enum_LightmapGIData_ShadowmaskMode>`\ )
+- :ref:`ShadowmaskMode<enum_LightmapGIData_ShadowmaskMode>` **get_shadowmask_mode**\ (\ )
+
+**Experimental:** This property may be changed or removed in future versions.
+
+The shadowmasking policy to use for directional shadows on static objects that are baked with this **LightmapGI** instance.
+
+Shadowmasking allows :ref:`DirectionalLight3D<class_DirectionalLight3D>` nodes to cast shadows even outside the range defined by their :ref:`DirectionalLight3D.directional_shadow_max_distance<class_DirectionalLight3D_property_directional_shadow_max_distance>` property. This is done by baking a texture that contains a shadowmap for the directional light, then using this texture according to the current shadowmask mode.
+
+\ **Note:** The shadowmask texture is only created if :ref:`shadowmask_mode<class_LightmapGI_property_shadowmask_mode>` is not :ref:`LightmapGIData.SHADOWMASK_MODE_NONE<class_LightmapGIData_constant_SHADOWMASK_MODE_NONE>`. To see a difference, you need to bake lightmaps again after switching from :ref:`LightmapGIData.SHADOWMASK_MODE_NONE<class_LightmapGIData_constant_SHADOWMASK_MODE_NONE>` to any other mode.
 
 .. rst-class:: classref-item-separator
 

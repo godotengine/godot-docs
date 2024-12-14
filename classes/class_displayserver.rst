@@ -242,6 +242,8 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Image<class_Image>`                                               | :ref:`screen_get_image<class_DisplayServer_method_screen_get_image>`\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                             |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>`                                               | :ref:`screen_get_image_rect<class_DisplayServer_method_screen_get_image_rect>`\ (\ rect\: :ref:`Rect2i<class_Rect2i>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                               | :ref:`screen_get_max_scale<class_DisplayServer_method_screen_get_max_scale>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>`          | :ref:`screen_get_orientation<class_DisplayServer_method_screen_get_orientation>`\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -639,6 +641,14 @@ The display server supports all features of :ref:`FEATURE_NATIVE_DIALOG_FILE<cla
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_WINDOW_DRAG** = ``27``
 
 The display server supports initiating window drag operation on demand. See :ref:`window_start_drag<class_DisplayServer_method_window_start_drag>`.
+
+.. _class_DisplayServer_constant_FEATURE_SCREEN_EXCLUDE_FROM_CAPTURE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_SCREEN_EXCLUDE_FROM_CAPTURE** = ``28``
+
+Display server supports :ref:`WINDOW_FLAG_EXCLUDE_FROM_CAPTURE<class_DisplayServer_constant_WINDOW_FLAG_EXCLUDE_FROM_CAPTURE>` window flag.
 
 .. rst-class:: classref-item-separator
 
@@ -1204,11 +1214,23 @@ Window style is overridden, forcing sharp corners.
 
 \ **Note:** This flag is implemented only on Windows (11).
 
+.. _class_DisplayServer_constant_WINDOW_FLAG_EXCLUDE_FROM_CAPTURE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_EXCLUDE_FROM_CAPTURE** = ``9``
+
+Windows is excluded from screenshots taken by :ref:`screen_get_image<class_DisplayServer_method_screen_get_image>`, :ref:`screen_get_image_rect<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`screen_get_pixel<class_DisplayServer_method_screen_get_pixel>`.
+
+\ **Note:** This flag is implemented on macOS and Windows.
+
+\ **Note:** Setting this flag will **NOT** prevent other apps from capturing an image, it should not be used as a security measure.
+
 .. _class_DisplayServer_constant_WINDOW_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MAX** = ``9``
+:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MAX** = ``10``
 
 Max value of the :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`.
 
@@ -3309,6 +3331,22 @@ Returns the dots per inch density of the specified screen. If ``screen`` is :ref
 Returns screenshot of the ``screen``.
 
 \ **Note:** This method is implemented on Linux (X11), macOS, and Windows.
+
+\ **Note:** On macOS, this method requires "Screen Recording" permission, if permission is not granted it will return desktop wallpaper color.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_screen_get_image_rect:
+
+.. rst-class:: classref-method
+
+:ref:`Image<class_Image>` **screen_get_image_rect**\ (\ rect\: :ref:`Rect2i<class_Rect2i>`\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_image_rect>`
+
+Returns screenshot of the screen ``rect``.
+
+\ **Note:** This method is implemented on macOS and Windows.
 
 \ **Note:** On macOS, this method requires "Screen Recording" permission, if permission is not granted it will return desktop wallpaper color.
 

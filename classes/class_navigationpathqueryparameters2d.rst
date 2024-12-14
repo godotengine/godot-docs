@@ -107,6 +107,14 @@ Applies a funnel algorithm to the raw path corridor found by the pathfinding alg
 
 Centers every path position in the middle of the traveled navigation mesh polygon edge. This creates better paths for tile- or gridbased layouts that restrict the movement to the cells center.
 
+.. _class_NavigationPathQueryParameters2D_constant_PATH_POSTPROCESSING_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>` **PATH_POSTPROCESSING_NONE** = ``2``
+
+Applies no postprocessing and returns the raw path corridor as found by the pathfinding algorithm.
+
 .. rst-class:: classref-item-separator
 
 ----

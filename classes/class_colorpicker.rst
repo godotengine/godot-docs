@@ -117,6 +117,8 @@ Theme Properties
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`folded_arrow<class_ColorPicker_theme_icon_folded_arrow>`                         |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`menu_option<class_ColorPicker_theme_icon_menu_option>`                           |         |
+   +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`overbright_indicator<class_ColorPicker_theme_icon_overbright_indicator>`         |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`picker_cursor<class_ColorPicker_theme_icon_picker_cursor>`                       |         |
@@ -697,6 +699,18 @@ The icon for color preset drop down menu when expanded.
 :ref:`Texture2D<class_Texture2D>` **folded_arrow** :ref:`🔗<class_ColorPicker_theme_icon_folded_arrow>`
 
 The icon for color preset drop down menu when folded.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ColorPicker_theme_icon_menu_option:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **menu_option** :ref:`🔗<class_ColorPicker_theme_icon_menu_option>`
+
+The icon for color preset option menu.
 
 .. rst-class:: classref-item-separator
 

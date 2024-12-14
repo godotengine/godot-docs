@@ -54,6 +54,8 @@ Properties
    +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
    | :ref:`AmbientMode<enum_ReflectionProbe_AmbientMode>` | :ref:`ambient_mode<class_ReflectionProbe_property_ambient_mode>`                 | ``1``                   |
    +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                            | :ref:`blend_distance<class_ReflectionProbe_property_blend_distance>`             | ``1.0``                 |
+   +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                              | :ref:`box_projection<class_ReflectionProbe_property_box_projection>`             | ``false``               |
    +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
    | :ref:`int<class_int>`                                | :ref:`cull_mask<class_ReflectionProbe_property_cull_mask>`                       | ``1048575``             |
@@ -197,6 +199,23 @@ The custom ambient color energy to use within the **ReflectionProbe**'s box defi
 - :ref:`AmbientMode<enum_ReflectionProbe_AmbientMode>` **get_ambient_mode**\ (\ )
 
 The ambient color to use within the **ReflectionProbe**'s box defined by its :ref:`size<class_ReflectionProbe_property_size>`. The ambient color will smoothly blend with other **ReflectionProbe**\ s and the rest of the scene (outside the **ReflectionProbe**'s box defined by its :ref:`size<class_ReflectionProbe_property_size>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ReflectionProbe_property_blend_distance:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **blend_distance** = ``1.0`` :ref:`🔗<class_ReflectionProbe_property_blend_distance>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_blend_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_blend_distance**\ (\ )
+
+Defines the distance in meters over which a probe blends into the scene.
 
 .. rst-class:: classref-item-separator
 

@@ -700,6 +700,8 @@ Emits a single particle. Whether ``xform``, ``velocity``, ``color`` and ``custom
 
 The default ParticleProcessMaterial will overwrite ``color`` and use the contents of ``custom`` as ``(rotation, age, animation, lifetime)``.
 
+\ **Note:** :ref:`emit_particle<class_GPUParticles2D_method_emit_particle>` is only supported on the Forward+ and Mobile rendering methods, not Compatibility.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -29,13 +29,15 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+------------------------------------------------------------------+--------+
-   | :ref:`OpenXRAction<class_OpenXRAction>`           | :ref:`action<class_OpenXRIPBinding_property_action>`             |        |
-   +---------------------------------------------------+------------------------------------------------------------------+--------+
-   | :ref:`String<class_String>`                       | :ref:`binding_path<class_OpenXRIPBinding_property_binding_path>` | ``""`` |
-   +---------------------------------------------------+------------------------------------------------------------------+--------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`paths<class_OpenXRIPBinding_property_paths>`               |        |
-   +---------------------------------------------------+------------------------------------------------------------------+--------+
+   +---------------------------------------------------+----------------------------------------------------------------------------+--------+
+   | :ref:`OpenXRAction<class_OpenXRAction>`           | :ref:`action<class_OpenXRIPBinding_property_action>`                       |        |
+   +---------------------------------------------------+----------------------------------------------------------------------------+--------+
+   | :ref:`Array<class_Array>`                         | :ref:`binding_modifiers<class_OpenXRIPBinding_property_binding_modifiers>` | ``[]`` |
+   +---------------------------------------------------+----------------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>`                       | :ref:`binding_path<class_OpenXRIPBinding_property_binding_path>`           | ``""`` |
+   +---------------------------------------------------+----------------------------------------------------------------------------+--------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`paths<class_OpenXRIPBinding_property_paths>`                         |        |
+   +---------------------------------------------------+----------------------------------------------------------------------------+--------+
 
 .. rst-class:: classref-reftable-group
 
@@ -45,15 +47,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+----------------------------------------------------------------------------------------------------------+
-   | |void|                  | :ref:`add_path<class_OpenXRIPBinding_method_add_path>`\ (\ path\: :ref:`String<class_String>`\ )         |
-   +-------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`   | :ref:`get_path_count<class_OpenXRIPBinding_method_get_path_count>`\ (\ ) |const|                         |
-   +-------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`has_path<class_OpenXRIPBinding_method_has_path>`\ (\ path\: :ref:`String<class_String>`\ ) |const| |
-   +-------------------------+----------------------------------------------------------------------------------------------------------+
-   | |void|                  | :ref:`remove_path<class_OpenXRIPBinding_method_remove_path>`\ (\ path\: :ref:`String<class_String>`\ )   |
-   +-------------------------+----------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                | :ref:`add_path<class_OpenXRIPBinding_method_add_path>`\ (\ path\: :ref:`String<class_String>`\ )                            |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OpenXRActionBindingModifier<class_OpenXRActionBindingModifier>` | :ref:`get_binding_modifier<class_OpenXRIPBinding_method_get_binding_modifier>`\ (\ index\: :ref:`int<class_int>`\ ) |const| |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                 | :ref:`get_binding_modifier_count<class_OpenXRIPBinding_method_get_binding_modifier_count>`\ (\ ) |const|                    |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                 | :ref:`get_path_count<class_OpenXRIPBinding_method_get_path_count>`\ (\ ) |const|                                            |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`has_path<class_OpenXRIPBinding_method_has_path>`\ (\ path\: :ref:`String<class_String>`\ ) |const|                    |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                | :ref:`remove_path<class_OpenXRIPBinding_method_remove_path>`\ (\ path\: :ref:`String<class_String>`\ )                      |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -76,6 +82,23 @@ Property Descriptions
 - :ref:`OpenXRAction<class_OpenXRAction>` **get_action**\ (\ )
 
 :ref:`OpenXRAction<class_OpenXRAction>` that is bound to :ref:`binding_path<class_OpenXRIPBinding_property_binding_path>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRIPBinding_property_binding_modifiers:
+
+.. rst-class:: classref-property
+
+:ref:`Array<class_Array>` **binding_modifiers** = ``[]`` :ref:`🔗<class_OpenXRIPBinding_property_binding_modifiers>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_binding_modifiers**\ (\ value\: :ref:`Array<class_Array>`\ )
+- :ref:`Array<class_Array>` **get_binding_modifiers**\ (\ )
+
+Binding modifiers for this binding.
 
 .. rst-class:: classref-item-separator
 
@@ -135,6 +158,30 @@ Method Descriptions
 **Deprecated:** Binding is for a single path.
 
 Add an input/output path to this binding.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRIPBinding_method_get_binding_modifier:
+
+.. rst-class:: classref-method
+
+:ref:`OpenXRActionBindingModifier<class_OpenXRActionBindingModifier>` **get_binding_modifier**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OpenXRIPBinding_method_get_binding_modifier>`
+
+Get the :ref:`OpenXRBindingModifier<class_OpenXRBindingModifier>` at this index.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRIPBinding_method_get_binding_modifier_count:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_binding_modifier_count**\ (\ ) |const| :ref:`🔗<class_OpenXRIPBinding_method_get_binding_modifier_count>`
+
+Get the number of binding modifiers for this binding.
 
 .. rst-class:: classref-item-separator
 
