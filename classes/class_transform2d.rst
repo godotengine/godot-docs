@@ -434,7 +434,7 @@ Returns the length of both :ref:`x<class_Transform2D_property_x>` and :ref:`y<cl
     # Rotating the Transform2D in any way preserves its scale.
     my_transform = my_transform.rotated(TAU / 2)
     
-    print(my_transform.get_scale()) # Prints (2, 4)
+    print(my_transform.get_scale()) # Prints (2.0, 4.0)
 
  .. code-tab:: csharp
 

@@ -152,8 +152,8 @@ Returns ``true`` if ``point`` falls inside the polygon area.
     };
     var connections = new int[] { 0, 1, 1, 2, 2, 0 };
     polygonPathFinder.Setup(points, connections);
-    GD.Print(polygonPathFinder.IsPointInside(new Vector2(0.2f, 0.2f))); // Prints true
-    GD.Print(polygonPathFinder.IsPointInside(new Vector2(1.0f, 1.0f))); // Prints false
+    GD.Print(polygonPathFinder.IsPointInside(new Vector2(0.2f, 0.2f))); // Prints True
+    GD.Print(polygonPathFinder.IsPointInside(new Vector2(1.0f, 1.0f))); // Prints False
 
 
 

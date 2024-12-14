@@ -1704,13 +1704,13 @@ Assigns ``value`` to the given ``property``. If the property does not exist or t
 
     var node = Node2D.new()
     node.set("global_scale", Vector2(8, 2.5))
-    print(node.global_scale) # Prints (8, 2.5)
+    print(node.global_scale) # Prints (8.0, 2.5)
 
  .. code-tab:: csharp
 
     var node = new Node2D();
-    node.Set(Node2D.PropertyName.GlobalScale, new Vector2(8, 2.5));
-    GD.Print(node.GlobalScale); // Prints Vector2(8, 2.5)
+    node.Set(Node2D.PropertyName.GlobalScale, new Vector2(8, 2.5f));
+    GD.Print(node.GlobalScale); // Prints (8, 2.5)
 
 
 
@@ -1789,7 +1789,7 @@ Assigns a new ``value`` to the property identified by the ``property_path``. The
     var node = Node2D.new()
     node.set_indexed("position", Vector2(42, 0))
     node.set_indexed("position:y", -10)
-    print(node.position) # Prints (42, -10)
+    print(node.position) # Prints (42.0, -10.0)
 
  .. code-tab:: csharp
 

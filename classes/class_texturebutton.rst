@@ -21,9 +21,9 @@ Description
 
 **TextureButton** has the same functionality as :ref:`Button<class_Button>`, except it uses sprites instead of Godot's :ref:`Theme<class_Theme>` resource. It is faster to create, but it doesn't support localization like more complex :ref:`Control<class_Control>`\ s.
 
-The "normal" state must contain a texture (:ref:`texture_normal<class_TextureButton_property_texture_normal>`); other textures are optional.
-
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
+
+\ **Note:** Setting a texture for the "normal" state (:ref:`texture_normal<class_TextureButton_property_texture_normal>`) is recommended. If :ref:`texture_normal<class_TextureButton_property_texture_normal>` is not set, the **TextureButton** will still receive input events and be clickable, but the user will not be able to see it unless they activate another one of its states with a texture assigned (e.g., hover over it to show :ref:`texture_hover<class_TextureButton_property_texture_hover>`).
 
 .. rst-class:: classref-introduction-group
 
@@ -238,7 +238,7 @@ Pure black and white :ref:`BitMap<class_BitMap>` image to use for click detectio
 - |void| **set_texture_disabled**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
 - :ref:`Texture2D<class_Texture2D>` **get_texture_disabled**\ (\ )
 
-Texture to display when the node is disabled. See :ref:`BaseButton.disabled<class_BaseButton_property_disabled>`.
+Texture to display when the node is disabled. See :ref:`BaseButton.disabled<class_BaseButton_property_disabled>`. If not assigned, the **TextureButton** displays :ref:`texture_normal<class_TextureButton_property_texture_normal>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -255,7 +255,7 @@ Texture to display when the node is disabled. See :ref:`BaseButton.disabled<clas
 - |void| **set_texture_focused**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
 - :ref:`Texture2D<class_Texture2D>` **get_texture_focused**\ (\ )
 
-Texture to display when the node has mouse or keyboard focus. :ref:`texture_focused<class_TextureButton_property_texture_focused>` is displayed *over* the base texture, so a partially transparent texture should be used to ensure the base texture remains visible. A texture that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a fully transparent texture of any size. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+Texture to *overlay on the base texture* when the node has mouse or keyboard focus. Because :ref:`texture_focused<class_TextureButton_property_texture_focused>` is displayed on top of the base texture, a partially transparent texture should be used to ensure the base texture remains visible. A texture that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a fully transparent texture of any size. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
 .. rst-class:: classref-item-separator
 
@@ -272,7 +272,7 @@ Texture to display when the node has mouse or keyboard focus. :ref:`texture_focu
 - |void| **set_texture_hover**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
 - :ref:`Texture2D<class_Texture2D>` **get_texture_hover**\ (\ )
 
-Texture to display when the mouse hovers the node.
+Texture to display when the mouse hovers over the node. If not assigned, the **TextureButton** displays :ref:`texture_normal<class_TextureButton_property_texture_normal>` instead when hovered over.
 
 .. rst-class:: classref-item-separator
 
@@ -306,7 +306,7 @@ Texture to display by default, when the node is **not** in the disabled, hover o
 - |void| **set_texture_pressed**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
 - :ref:`Texture2D<class_Texture2D>` **get_texture_pressed**\ (\ )
 
-Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the Enter key or if the player presses the :ref:`BaseButton.shortcut<class_BaseButton_property_shortcut>` key.
+Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the Enter key or if the player presses the :ref:`BaseButton.shortcut<class_BaseButton_property_shortcut>` key. If not assigned, the **TextureButton** displays :ref:`texture_hover<class_TextureButton_property_texture_hover>` instead when pressed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

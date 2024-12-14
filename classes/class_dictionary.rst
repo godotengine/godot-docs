@@ -548,9 +548,9 @@ Returns ``true`` if the dictionary contains an entry with the given ``key``.
         { 210, default },
     };
     
-    GD.Print(myDict.ContainsKey("Godot")); // Prints true
-    GD.Print(myDict.ContainsKey(210));     // Prints true
-    GD.Print(myDict.ContainsKey(4));       // Prints false
+    GD.Print(myDict.ContainsKey("Godot")); // Prints True
+    GD.Print(myDict.ContainsKey(210));     // Prints True
+    GD.Print(myDict.ContainsKey(4));       // Prints False
 
 
 
@@ -608,7 +608,7 @@ Returns a hashed 32-bit integer value representing the dictionary contents.
     var dict2 = new Godot.Collections.Dictionary{{"A", 10}, {"B", 2}};
     
     // Godot.Collections.Dictionary has no Hash() method. Use GD.Hash() instead.
-    GD.Print(GD.Hash(dict1) == GD.Hash(dict2)); // Prints true
+    GD.Print(GD.Hash(dict1) == GD.Hash(dict2)); // Prints True
 
 
 

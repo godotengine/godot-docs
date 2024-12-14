@@ -1501,10 +1501,10 @@ Returns ``true`` if the input keycode corresponds to a Unicode character. For a 
 
  .. code-tab:: csharp
 
-    GD.Print(OS.IsKeycodeUnicode((long)Key.G));      // Prints true
-    GD.Print(OS.IsKeycodeUnicode((long)Key.Kp4));    // Prints true
-    GD.Print(OS.IsKeycodeUnicode((long)Key.Tab));    // Prints false
-    GD.Print(OS.IsKeycodeUnicode((long)Key.Escape)); // Prints false
+    GD.Print(OS.IsKeycodeUnicode((long)Key.G));      // Prints True
+    GD.Print(OS.IsKeycodeUnicode((long)Key.Kp4));    // Prints True
+    GD.Print(OS.IsKeycodeUnicode((long)Key.Tab));    // Prints False
+    GD.Print(OS.IsKeycodeUnicode((long)Key.Escape)); // Prints False
 
 
 

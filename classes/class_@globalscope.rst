@@ -6473,8 +6473,6 @@ Converts one or more arguments of any type to string in the best way possible an
 
 The following BBCode tags are supported: ``b``, ``i``, ``u``, ``s``, ``indent``, ``code``, ``url``, ``center``, ``right``, ``color``, ``bgcolor``, ``fgcolor``.
 
-Color tags only support the following named colors: ``black``, ``red``, ``green``, ``yellow``, ``blue``, ``magenta``, ``pink``, ``purple``, ``cyan``, ``white``, ``orange``, ``gray``. Hexadecimal color codes are not supported.
-
 URL tags only support URLs wrapped by a URL tag, not URLs with a different title.
 
 When printing to standard output, the supported subset of BBCode is converted to ANSI escape codes for the terminal emulator to display. Support for ANSI escape codes varies across terminal emulators, especially for italic and strikethrough. In standard output, ``code`` is represented with faint text but without any font change. Unsupported tags are left as-is in standard output.

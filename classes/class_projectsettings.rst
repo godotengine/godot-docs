@@ -1209,6 +1209,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/baking/use_crash_prevention_checks<class_ProjectSettings_property_navigation/baking/use_crash_prevention_checks>`                                                                         | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`navigation/pathfinding/max_threads<class_ProjectSettings_property_navigation/pathfinding/max_threads>`                                                                                               | ``4``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/limits/debugger/max_chars_per_second<class_ProjectSettings_property_network/limits/debugger/max_chars_per_second>`                                                                           | ``32768``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/limits/debugger/max_errors_per_second<class_ProjectSettings_property_network/limits/debugger/max_errors_per_second>`                                                                         | ``400``                                                                                          |
@@ -1293,9 +1295,75 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`                                                                                     | ``60``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/collisions/active_edge_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/collisions/active_edge_threshold>`                                                   | ``0.872665``                                                                                     |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/collisions/collision_margin_fraction<class_ProjectSettings_property_physics/jolt_physics_3d/collisions/collision_margin_fraction>`                                           | ``0.08``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`physics/jolt_physics_3d/joints/world_node<class_ProjectSettings_property_physics/jolt_physics_3d/joints/world_node>`                                                                                 | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/limits/max_angular_velocity<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_angular_velocity>`                                                             | ``47.1239``                                                                                      |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`physics/jolt_physics_3d/limits/max_bodies<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_bodies>`                                                                                 | ``10240``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`physics/jolt_physics_3d/limits/max_body_pairs<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_body_pairs>`                                                                         | ``65536``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`physics/jolt_physics_3d/limits/max_contact_constraints<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_contact_constraints>`                                                       | ``20480``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/limits/max_linear_velocity<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_linear_velocity>`                                                               | ``500.0``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`physics/jolt_physics_3d/limits/temporary_memory_buffer_size<class_ProjectSettings_property_physics/jolt_physics_3d/limits/temporary_memory_buffer_size>`                                             | ``32``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/limits/world_boundary_shape_size<class_ProjectSettings_property_physics/jolt_physics_3d/limits/world_boundary_shape_size>`                                                   | ``2000.0``                                                                                       |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/motion_queries/recovery_amount<class_ProjectSettings_property_physics/jolt_physics_3d/motion_queries/recovery_amount>`                                                       | ``0.4``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`physics/jolt_physics_3d/motion_queries/recovery_iterations<class_ProjectSettings_property_physics/jolt_physics_3d/motion_queries/recovery_iterations>`                                               | ``4``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`physics/jolt_physics_3d/motion_queries/use_enhanced_internal_edge_removal<class_ProjectSettings_property_physics/jolt_physics_3d/motion_queries/use_enhanced_internal_edge_removal>`                 | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`physics/jolt_physics_3d/queries/enable_ray_cast_face_index<class_ProjectSettings_property_physics/jolt_physics_3d/queries/enable_ray_cast_face_index>`                                               | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`physics/jolt_physics_3d/queries/use_enhanced_internal_edge_removal<class_ProjectSettings_property_physics/jolt_physics_3d/queries/use_enhanced_internal_edge_removal>`                               | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`physics/jolt_physics_3d/simulation/allow_sleep<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/allow_sleep>`                                                                       | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`physics/jolt_physics_3d/simulation/areas_detect_static_bodies<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/areas_detect_static_bodies>`                                         | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/baumgarte_stabilization_factor<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/baumgarte_stabilization_factor>`                                 | ``0.2``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold>`               | ``0.0349066``                                                                                    |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/body_pair_contact_cache_distance_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_distance_threshold>`         | ``0.001``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`physics/jolt_physics_3d/simulation/body_pair_contact_cache_enabled<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_enabled>`                               | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/bounce_velocity_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/bounce_velocity_threshold>`                                           | ``1.0``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/continuous_cd_max_penetration<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/continuous_cd_max_penetration>`                                   | ``0.25``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/continuous_cd_movement_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/continuous_cd_movement_threshold>`                             | ``0.75``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`physics/jolt_physics_3d/simulation/generate_all_kinematic_contacts<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/generate_all_kinematic_contacts>`                               | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/penetration_slop<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/penetration_slop>`                                                             | ``0.02``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`physics/jolt_physics_3d/simulation/position_steps<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/position_steps>`                                                                 | ``2``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/sleep_time_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/sleep_time_threshold>`                                                     | ``0.5``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/sleep_velocity_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/sleep_velocity_threshold>`                                             | ``0.03``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/soft_body_point_radius<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/soft_body_point_radius>`                                                 | ``0.01``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`physics/jolt_physics_3d/simulation/speculative_contact_distance<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/speculative_contact_distance>`                                     | ``0.02``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`physics/jolt_physics_3d/simulation/use_enhanced_internal_edge_removal<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/use_enhanced_internal_edge_removal>`                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`physics/jolt_physics_3d/simulation/velocity_steps<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/velocity_steps>`                                                                 | ``10``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/2d/batching/item_buffer_size<class_ProjectSettings_property_rendering/2d/batching/item_buffer_size>`                                                                                       | ``16384``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/2d/batching/uniform_set_cache_size<class_ProjectSettings_property_rendering/2d/batching/uniform_set_cache_size>`                                                                           | ``256``                                                                                          |
+   | :ref:`int<class_int>`                             | :ref:`rendering/2d/batching/uniform_set_cache_size<class_ProjectSettings_property_rendering/2d/batching/uniform_set_cache_size>`                                                                           | ``4096``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/2d/sdf/oversize<class_ProjectSettings_property_rendering/2d/sdf/oversize>`                                                                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1563,6 +1631,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/staging_buffer/max_size_mb<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/max_size_mb>`                                                         | ``128``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/staging_buffer/texture_download_region_size_px<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/texture_download_region_size_px>`                 | ``64``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/staging_buffer/texture_upload_region_size_px<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/texture_upload_region_size_px>`                     | ``64``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/vsync/frame_queue_size<class_ProjectSettings_property_rendering/rendering_device/vsync/frame_queue_size>`                                                                 | ``2``                                                                                            |
@@ -1632,6 +1702,10 @@ Properties
    | :ref:`float<class_float>`                         | :ref:`threading/worker_pool/low_priority_thread_ratio<class_ProjectSettings_property_threading/worker_pool/low_priority_thread_ratio>`                                                                     | ``0.3``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`threading/worker_pool/max_threads<class_ProjectSettings_property_threading/worker_pool/max_threads>`                                                                                                 | ``-1``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/binding_modifiers/analog_threshold<class_ProjectSettings_property_xr/openxr/binding_modifiers/analog_threshold>`                                                                           | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/binding_modifiers/dpad_binding<class_ProjectSettings_property_xr/openxr/binding_modifiers/dpad_binding>`                                                                                   | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`xr/openxr/default_action_map<class_ProjectSettings_property_xr/openxr/default_action_map>`                                                                                                           | ``"res://openxr_action_map.tres"``                                                               |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -9108,6 +9182,18 @@ If enabled, and baking would potentially lead to an engine crash, the baking wil
 
 ----
 
+.. _class_ProjectSettings_property_navigation/pathfinding/max_threads:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **navigation/pathfinding/max_threads** = ``4`` :ref:`🔗<class_ProjectSettings_property_navigation/pathfinding/max_threads>`
+
+Maximum number of threads that can run pathfinding queries simultaneously on the same pathfinding graph, for example the same navigation map. Additional threads increase memory consumption and synchronization time due to the need for extra data copies prepared for each thread. A value of ``-1`` means unlimited and the maximum available OS processor count is used. Defaults to ``1`` when the OS does not support threads.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_network/limits/debugger/max_chars_per_second:
 
 .. rst-class:: classref-property
@@ -9744,6 +9830,466 @@ The number of fixed iterations per second. This controls how often physics simul
 
 ----
 
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/collisions/active_edge_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/collisions/active_edge_threshold** = ``0.872665`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/collisions/active_edge_threshold>`
+
+The maximum angle, in radians, between two adjacent triangles in a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` or :ref:`HeightMapShape3D<class_HeightMapShape3D>` for which the edge between those triangles is considered inactive.
+
+Collisions against an inactive edge will have its normal overridden to instead be the surface normal of the triangle. This can help alleviate ghost collisions.
+
+\ **Note:** Setting this too high can result in objects not depenetrating properly.
+
+\ **Note:** This applies to all shape queries, as well as physics bodies within the simulation.
+
+\ **Note:** This does not apply when enabling Jolt's enhanced internal edge removal, which supersedes this.
+
+\ **Note:** This setting will only be read once during the lifetime of the application.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/collisions/collision_margin_fraction:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/collisions/collision_margin_fraction** = ``0.08`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/collisions/collision_margin_fraction>`
+
+The amount of collision margin to use for certain convex collision shapes, such as :ref:`BoxShape3D<class_BoxShape3D>`, :ref:`CylinderShape3D<class_CylinderShape3D>` and :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`, as a fraction of the shape's shortest axis, with :ref:`Shape3D.margin<class_Shape3D_property_margin>` as the upper bound. This is mainly used to speed up collision detection with convex shapes.
+
+\ **Note:** Collision margins in Jolt do not add any extra size to the shape. Instead the shape is first shrunk by the margin and then expanded by the same amount, resulting in a shape with rounded corners.
+
+\ **Note:** Setting this value too close to ``0.0`` may also negatively affect the accuracy of the collision detection with convex shapes.
+
+\ **Note:** This setting will only be read once during the lifetime of the application.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/joints/world_node:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **physics/jolt_physics_3d/joints/world_node** = ``0`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/joints/world_node>`
+
+Which of the two nodes bound by a joint should represent the world when one of the two is omitted, as either :ref:`Joint3D.node_a<class_Joint3D_property_node_a>` or :ref:`Joint3D.node_b<class_Joint3D_property_node_b>`. This can be thought of as having the omitted node be a :ref:`StaticBody3D<class_StaticBody3D>` at the joint's position. Joint limits are more easily expressed when :ref:`Joint3D.node_a<class_Joint3D_property_node_a>` represents the world.
+
+\ **Note:** In Godot Physics, only :ref:`Joint3D.node_b<class_Joint3D_property_node_b>` can represent the world.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_angular_velocity:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/limits/max_angular_velocity** = ``47.1239`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_angular_velocity>`
+
+The maximum angular velocity that a :ref:`RigidBody3D<class_RigidBody3D>` can reach, in radians per second.
+
+This is mainly used as a fail-safe, to prevent the simulation from exploding, as fast-moving objects colliding with complex physics structures can otherwise cause them to go out of control. Fast-moving objects can also cause a lot of stress on the collision detection system, which can slow down the simulation considerably.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_bodies:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **physics/jolt_physics_3d/limits/max_bodies** = ``10240`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_bodies>`
+
+The maximum number of :ref:`PhysicsBody3D<class_PhysicsBody3D>` to support at the same time, awake or sleeping. When this limit is exceeded, an error is reported and anything past that point is undefined behavior.
+
+\ **Note:** This limit also applies within the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_body_pairs:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **physics/jolt_physics_3d/limits/max_body_pairs** = ``65536`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_body_pairs>`
+
+The maximum number of body pairs to allow processing of. When this limit is exceeded, a warning is reported and collisions will randomly be ignored while bodies pass through each other.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_contact_constraints:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **physics/jolt_physics_3d/limits/max_contact_constraints** = ``20480`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_contact_constraints>`
+
+The maximum number of contact constraints to allow processing of. When this limit is exceeded, a warning is reported and collisions will randomly be ignored while bodies pass through each other.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_linear_velocity:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/limits/max_linear_velocity** = ``500.0`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/limits/max_linear_velocity>`
+
+The maximum linear velocity that a :ref:`RigidBody3D<class_RigidBody3D>` can reach, in meters per second.
+
+This is mainly used as a fail-safe, to prevent the simulation from exploding, as fast-moving objects colliding with complex physics structures can otherwise cause them to go out of control. Fast-moving objects can also cause a lot of stress on the collision detection system, which can slow down the simulation considerably.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/limits/temporary_memory_buffer_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **physics/jolt_physics_3d/limits/temporary_memory_buffer_size** = ``32`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/limits/temporary_memory_buffer_size>`
+
+The amount of memory to pre-allocate for the stack allocator used within Jolt, in MiB. This allocator is used within the physics step to store things that are only needed during it, like which bodies are in contact, how they form islands and the data needed to solve the contacts.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/limits/world_boundary_shape_size:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/limits/world_boundary_shape_size** = ``2000.0`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/limits/world_boundary_shape_size>`
+
+The size of :ref:`WorldBoundaryShape3D<class_WorldBoundaryShape3D>` boundaries, for all three dimensions. The plane is effectively centered within a box of this size, and anything outside of the box will not collide with it. This is necessary as :ref:`WorldBoundaryShape3D<class_WorldBoundaryShape3D>` is not unbounded when using Jolt, in order to prevent precision issues.
+
+\ **Note:** Setting this value too high can make collision detection less accurate.
+
+\ **Note:** Collisions against the effective edges of a :ref:`WorldBoundaryShape3D<class_WorldBoundaryShape3D>` will be inconsistent.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/motion_queries/recovery_amount:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/motion_queries/recovery_amount** = ``0.4`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/motion_queries/recovery_amount>`
+
+Fraction of the total penetration to depenetrate per iteration during motion queries.
+
+\ **Note:** This affects methods :ref:`CharacterBody3D.move_and_slide<class_CharacterBody3D_method_move_and_slide>`, :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`, :ref:`PhysicsBody3D.test_move<class_PhysicsBody3D_method_test_move>` and :ref:`PhysicsServer3D.body_test_motion<class_PhysicsServer3D_method_body_test_motion>`.
+
+\ **Note:** This setting will only be read once during the lifetime of the application.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/motion_queries/recovery_iterations:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **physics/jolt_physics_3d/motion_queries/recovery_iterations** = ``4`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/motion_queries/recovery_iterations>`
+
+The number of iterations to run when depenetrating during motion queries.
+
+\ **Note:** This affects methods :ref:`CharacterBody3D.move_and_slide<class_CharacterBody3D_method_move_and_slide>`, :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`, :ref:`PhysicsBody3D.test_move<class_PhysicsBody3D_method_test_move>` and :ref:`PhysicsServer3D.body_test_motion<class_PhysicsServer3D_method_body_test_motion>`.
+
+\ **Note:** This setting will only be read once during the lifetime of the application.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/motion_queries/use_enhanced_internal_edge_removal:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics/jolt_physics_3d/motion_queries/use_enhanced_internal_edge_removal** = ``true`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/motion_queries/use_enhanced_internal_edge_removal>`
+
+If ``true``, enables Jolt's enhanced internal edge removal during motion queries. This can help alleviate ghost collisions, but only with edges within a single body, meaning edges between separate bodies can still cause ghost collisions.
+
+\ **Note:** This affects methods :ref:`CharacterBody3D.move_and_slide<class_CharacterBody3D_method_move_and_slide>`, :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`, :ref:`PhysicsBody3D.test_move<class_PhysicsBody3D_method_test_move>` and :ref:`PhysicsServer3D.body_test_motion<class_PhysicsServer3D_method_body_test_motion>`.
+
+\ **Note:** This setting will only be read once during the lifetime of the application.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/queries/enable_ray_cast_face_index:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics/jolt_physics_3d/queries/enable_ray_cast_face_index** = ``false`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/queries/enable_ray_cast_face_index>`
+
+If ``true``, populates the ``face_index`` field in the results of :ref:`PhysicsDirectSpaceState3D.intersect_ray<class_PhysicsDirectSpaceState3D_method_intersect_ray>`, also accessed through :ref:`RayCast3D.get_collision_face_index<class_RayCast3D_method_get_collision_face_index>`. If ``false``, the ``face_index`` field will be left at its default value of ``-1``.
+
+\ **Note:** Enabling this setting will increase Jolt's memory usage for :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` by around 25%.
+
+\ **Note:** This setting will only be read once during the lifetime of the application.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/queries/use_enhanced_internal_edge_removal:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics/jolt_physics_3d/queries/use_enhanced_internal_edge_removal** = ``false`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/queries/use_enhanced_internal_edge_removal>`
+
+If ``true``, enables Jolt's enhanced internal edge removal during shape queries. This can help alleviate ghost collisions when using shape queries for things like character movement, but only with edges within a single body, meaning edges between separate bodies can still cause ghost collisions.
+
+\ **Note:** This affects methods :ref:`PhysicsDirectSpaceState3D.cast_motion<class_PhysicsDirectSpaceState3D_method_cast_motion>`, :ref:`PhysicsDirectSpaceState3D.collide_shape<class_PhysicsDirectSpaceState3D_method_collide_shape>`, :ref:`PhysicsDirectSpaceState3D.get_rest_info<class_PhysicsDirectSpaceState3D_method_get_rest_info>` and :ref:`PhysicsDirectSpaceState3D.intersect_shape<class_PhysicsDirectSpaceState3D_method_intersect_shape>`.
+
+\ **Note:** Enabling this setting can cause certain shapes to be culled from the results entirely, but you will get at least one intersection per body.
+
+\ **Note:** This setting will only be read once during the lifetime of the application.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/allow_sleep:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics/jolt_physics_3d/simulation/allow_sleep** = ``true`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/allow_sleep>`
+
+If ``true``, :ref:`RigidBody3D<class_RigidBody3D>` nodes are allowed to go to sleep if their velocity is below the threshold defined in :ref:`physics/jolt_physics_3d/simulation/sleep_velocity_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/sleep_velocity_threshold>` for the duration set in :ref:`physics/jolt_physics_3d/simulation/sleep_time_threshold<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/sleep_time_threshold>`. This can improve physics simulation performance when there are non-moving :ref:`RigidBody3D<class_RigidBody3D>` nodes, at the cost of some nodes possibly failing to wake up in certain scenarios. Consider disabling this temporarily to troubleshoot :ref:`RigidBody3D<class_RigidBody3D>` nodes not moving when they should.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/areas_detect_static_bodies:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics/jolt_physics_3d/simulation/areas_detect_static_bodies** = ``false`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/areas_detect_static_bodies>`
+
+If ``true``, :ref:`Area3D<class_Area3D>` nodes are able to detect overlaps with :ref:`StaticBody3D<class_StaticBody3D>` nodes.
+
+\ **Note:** Enabling this setting can come at a heavy CPU and memory cost if you allow many/large :ref:`Area3D<class_Area3D>` to overlap with complex static geometry, such as :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` or :ref:`HeightMapShape3D<class_HeightMapShape3D>`. It is strongly recommended that you set up your collision layers and masks in such a way that only a few small :ref:`Area3D<class_Area3D>` nodes can detect :ref:`StaticBody3D<class_StaticBody3D>` nodes.
+
+\ **Note:** This also applies to overlaps with a :ref:`RigidBody3D<class_RigidBody3D>` frozen with :ref:`RigidBody3D.FREEZE_MODE_STATIC<class_RigidBody3D_constant_FREEZE_MODE_STATIC>`.
+
+\ **Note:** This is not needed to detect overlaps with :ref:`AnimatableBody3D<class_AnimatableBody3D>`, as it is a kinematic body, despite inheriting from :ref:`StaticBody3D<class_StaticBody3D>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/baumgarte_stabilization_factor:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/baumgarte_stabilization_factor** = ``0.2`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/baumgarte_stabilization_factor>`
+
+How much of the position error of a :ref:`RigidBody3D<class_RigidBody3D>` to fix during a physics step, where ``0.0`` is none and ``1.0`` is the full amount. This affects things like how quickly bodies depenetrate.
+
+\ **Note:** Setting this value too high can make :ref:`RigidBody3D<class_RigidBody3D>` nodes unstable.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold** = ``0.0349066`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_angle_threshold>`
+
+The maximum relative angle by which a body pair can move and still reuse the collision results from the previous physics step, in radians.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_distance_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/body_pair_contact_cache_distance_threshold** = ``0.001`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_distance_threshold>`
+
+The maximum relative distance by which a body pair can move and still reuse the collision results from the previous physics step, in meters.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics/jolt_physics_3d/simulation/body_pair_contact_cache_enabled** = ``true`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/body_pair_contact_cache_enabled>`
+
+If ``true``, enables the body pair contact cache, which removes the need for potentially expensive collision detection when the relative orientation between two bodies hasn't changed much.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/bounce_velocity_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/bounce_velocity_threshold** = ``1.0`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/bounce_velocity_threshold>`
+
+The minimum velocity needed before a collision can be bouncy, in meters per second.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/continuous_cd_max_penetration:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/continuous_cd_max_penetration** = ``0.25`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/continuous_cd_max_penetration>`
+
+Fraction of a body's inner radius that may penetrate another body while using continuous collision detection.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/continuous_cd_movement_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/continuous_cd_movement_threshold** = ``0.75`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/continuous_cd_movement_threshold>`
+
+Fraction of a body's inner radius that the body must move per step to make use of continuous collision detection.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/generate_all_kinematic_contacts:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics/jolt_physics_3d/simulation/generate_all_kinematic_contacts** = ``false`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/generate_all_kinematic_contacts>`
+
+If ``true``, a :ref:`RigidBody3D<class_RigidBody3D>` frozen with :ref:`RigidBody3D.FREEZE_MODE_KINEMATIC<class_RigidBody3D_constant_FREEZE_MODE_KINEMATIC>` is able to collide with other kinematic and static bodies, and therefore generate contacts for them.
+
+\ **Note:** This setting can come at a heavy CPU and memory cost if you allow many/large frozen kinematic bodies with a non-zero :ref:`RigidBody3D.max_contacts_reported<class_RigidBody3D_property_max_contacts_reported>` to overlap with complex static geometry, such as :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` or :ref:`HeightMapShape3D<class_HeightMapShape3D>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/penetration_slop:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/penetration_slop** = ``0.02`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/penetration_slop>`
+
+How much bodies are allowed to penetrate each other, in meters.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/position_steps:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **physics/jolt_physics_3d/simulation/position_steps** = ``2`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/position_steps>`
+
+Number of solver position iterations. The greater the number of iterations, the more accurate the simulation will be, at the cost of CPU performance.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/sleep_time_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/sleep_time_threshold** = ``0.5`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/sleep_time_threshold>`
+
+Time in seconds a :ref:`RigidBody3D<class_RigidBody3D>` will spend below the sleep velocity threshold before going to sleep.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/sleep_velocity_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/sleep_velocity_threshold** = ``0.03`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/sleep_velocity_threshold>`
+
+The linear velocity of specific points on the bounding box of a :ref:`RigidBody3D<class_RigidBody3D>`, below which it can be put to sleep, in meters per second. These points help capture both the linear and angular motion of a :ref:`RigidBody3D<class_RigidBody3D>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/soft_body_point_radius:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/soft_body_point_radius** = ``0.01`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/soft_body_point_radius>`
+
+How big the points of a :ref:`SoftBody3D<class_SoftBody3D>` are, in meters. A higher value can prevent behavior such as cloth laying perfectly flush against other surfaces and causing Z-fighting.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/speculative_contact_distance:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **physics/jolt_physics_3d/simulation/speculative_contact_distance** = ``0.02`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/speculative_contact_distance>`
+
+Radius around physics bodies, inside which speculative contact points will be detected, in meters. This is mainly used to prevent tunneling/penetration for :ref:`RigidBody3D<class_RigidBody3D>` nodes during simulation.
+
+\ **Note:** Setting this too high may result in ghost collisions, as speculative contacts are based on the closest points during the collision detection step which may not be the actual closest points by the time the two bodies hit.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/use_enhanced_internal_edge_removal:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics/jolt_physics_3d/simulation/use_enhanced_internal_edge_removal** = ``true`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/use_enhanced_internal_edge_removal>`
+
+If ``true``, enables Jolt's enhanced internal edge removal for :ref:`RigidBody3D<class_RigidBody3D>`. This can help alleviate ghost collisions when, for example, a :ref:`RigidBody3D<class_RigidBody3D>` collides with the edges of two perfectly joined :ref:`BoxShape3D<class_BoxShape3D>`. The removal only applies to edges internal to a single body, meaning edges between separate bodies can still cause ghost collisions.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_physics/jolt_physics_3d/simulation/velocity_steps:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **physics/jolt_physics_3d/simulation/velocity_steps** = ``10`` :ref:`🔗<class_ProjectSettings_property_physics/jolt_physics_3d/simulation/velocity_steps>`
+
+Number of solver velocity iterations. The greater the number of iterations, the more accurate the simulation will be, at the cost of CPU performance.
+
+\ **Note:** This needs to be at least ``2`` in order for friction to work, as friction is applied using the non-penetration impulse from the previous iteration.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_rendering/2d/batching/item_buffer_size:
 
 .. rst-class:: classref-property
@@ -9760,7 +10306,7 @@ Maximum number of canvas item commands that can be batched into a single draw ca
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/2d/batching/uniform_set_cache_size** = ``256`` :ref:`🔗<class_ProjectSettings_property_rendering/2d/batching/uniform_set_cache_size>`
+:ref:`int<class_int>` **rendering/2d/batching/uniform_set_cache_size** = ``4096`` :ref:`🔗<class_ProjectSettings_property_rendering/2d/batching/uniform_set_cache_size>`
 
 Maximum number of uniform sets that will be cached by the 2D renderer when batching draw calls.
 
@@ -11506,9 +12052,9 @@ Determines at which interval pipeline cache is saved to disk. The lower the valu
 
 :ref:`int<class_int>` **rendering/rendering_device/staging_buffer/block_size_kb** = ``256`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/block_size_kb>`
 
-.. container:: contribute
+The size of a block allocated in the staging buffers. Staging buffers are the intermediate resources the engine uses to upload or download data to the GPU. This setting determines the max amount of data that can be transferred in a copy operation. Increasing this will result in faster data transfers at the cost of extra memory.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** This property is only read when the project starts. There is currently no way to change this value at run-time.
 
 .. rst-class:: classref-item-separator
 
@@ -11520,9 +12066,25 @@ Determines at which interval pipeline cache is saved to disk. The lower the valu
 
 :ref:`int<class_int>` **rendering/rendering_device/staging_buffer/max_size_mb** = ``128`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/max_size_mb>`
 
-.. container:: contribute
+The maximum amount of memory allowed to be used by staging buffers. If the amount of data being uploaded or downloaded exceeds this amount, the GPU will stall and wait for previous frames to finish.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** This property is only read when the project starts. There is currently no way to change this value at run-time.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/rendering_device/staging_buffer/texture_download_region_size_px:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **rendering/rendering_device/staging_buffer/texture_download_region_size_px** = ``64`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/texture_download_region_size_px>`
+
+The region size in pixels used to download texture data from the GPU when using methods like :ref:`RenderingDevice.texture_get_data_async<class_RenderingDevice_method_texture_get_data_async>`.
+
+\ **Note:** This property's upper limit is controlled by :ref:`rendering/rendering_device/staging_buffer/block_size_kb<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/block_size_kb>` and whether it's possible to allocate a single block of texture data with this region size in the format that is requested.
+
+\ **Note:** This property is only read when the project starts. There is currently no way to change this value at run-time.
 
 .. rst-class:: classref-item-separator
 
@@ -11534,9 +12096,11 @@ Determines at which interval pipeline cache is saved to disk. The lower the valu
 
 :ref:`int<class_int>` **rendering/rendering_device/staging_buffer/texture_upload_region_size_px** = ``64`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/texture_upload_region_size_px>`
 
-.. container:: contribute
+The region size in pixels used to upload texture data from the GPU when using methods like :ref:`RenderingDevice.texture_update<class_RenderingDevice_method_texture_update>`.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** This property's upper limit is controlled by :ref:`rendering/rendering_device/staging_buffer/block_size_kb<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/block_size_kb>` and whether it's possible to allocate a single block of texture data with this region size in the format that is requested.
+
+\ **Note:** This property is only read when the project starts. There is currently no way to change this value at run-time.
 
 .. rst-class:: classref-item-separator
 
@@ -11588,9 +12152,11 @@ Try the `V-Sync Simulator <https://darksylinc.github.io/vsync_simulator/>`__, an
 
 :ref:`int<class_int>` **rendering/rendering_device/vulkan/max_descriptors_per_pool** = ``64`` :ref:`🔗<class_ProjectSettings_property_rendering/rendering_device/vulkan/max_descriptors_per_pool>`
 
-.. container:: contribute
+The number of descriptors per pool. Godot's Vulkan backend uses linear pools for descriptors that will be created and destroyed within a single frame. Instead of destroying every single descriptor every frame, they all can be destroyed at once by resetting the pool they belong to.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+A larger number is more efficient up to a limit, after that it will only waste RAM (maximum efficiency is achieved when there is no more than 1 pool per frame). A small number could end up with one pool per descriptor, which negatively impacts performance.
+
+\ **Note:** Changing this property requires a restart to take effect.
 
 .. rst-class:: classref-item-separator
 
@@ -12018,6 +12584,30 @@ The ratio of :ref:`WorkerThreadPool<class_WorkerThreadPool>`'s threads that will
 :ref:`int<class_int>` **threading/worker_pool/max_threads** = ``-1`` :ref:`🔗<class_ProjectSettings_property_threading/worker_pool/max_threads>`
 
 Maximum number of threads to be used by :ref:`WorkerThreadPool<class_WorkerThreadPool>`. Value of ``-1`` means no limit.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/binding_modifiers/analog_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/binding_modifiers/analog_threshold** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/binding_modifiers/analog_threshold>`
+
+If ``true``, enables the analog threshold binding modifier if supported by the XR runtime.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/binding_modifiers/dpad_binding:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/binding_modifiers/dpad_binding** = ``false`` :ref:`🔗<class_ProjectSettings_property_xr/openxr/binding_modifiers/dpad_binding>`
+
+If ``true``, enables the D-pad binding modifier if supported by the XR runtime.
 
 .. rst-class:: classref-item-separator
 

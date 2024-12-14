@@ -606,7 +606,7 @@ Gets the remainder of each component of the **Vector3i** with the components of 
 
 ::
 
-    print(Vector3i(10, -20, 30) % Vector3i(7, 8, 9)) # Prints "(3, -4, 3)"
+    print(Vector3i(10, -20, 30) % Vector3i(7, 8, 9)) # Prints (3, -4, 3)
 
 .. rst-class:: classref-item-separator
 
@@ -622,7 +622,7 @@ Gets the remainder of each component of the **Vector3i** with the given :ref:`in
 
 ::
 
-    print(Vector3i(10, -20, 30) % 7) # Prints "(3, -6, 2)"
+    print(Vector3i(10, -20, 30) % 7) # Prints (3, -6, 2)
 
 .. rst-class:: classref-item-separator
 
@@ -638,7 +638,7 @@ Multiplies each component of the **Vector3i** by the components of the given **V
 
 ::
 
-    print(Vector3i(10, 20, 30) * Vector3i(3, 4, 5)) # Prints "(30, 80, 150)"
+    print(Vector3i(10, 20, 30) * Vector3i(3, 4, 5)) # Prints (30, 80, 150)
 
 .. rst-class:: classref-item-separator
 
@@ -654,7 +654,7 @@ Multiplies each component of the **Vector3i** by the given :ref:`float<class_flo
 
 ::
 
-    print(Vector3i(10, 15, 20) * 0.9) # Prints "(9, 13.5, 18)"
+    print(Vector3i(10, 15, 20) * 0.9) # Prints (9.0, 13.5, 18.0)
 
 .. rst-class:: classref-item-separator
 
@@ -682,7 +682,7 @@ Adds each component of the **Vector3i** by the components of the given **Vector3
 
 ::
 
-    print(Vector3i(10, 20, 30) + Vector3i(3, 4, 5)) # Prints "(13, 24, 35)"
+    print(Vector3i(10, 20, 30) + Vector3i(3, 4, 5)) # Prints (13, 24, 35)
 
 .. rst-class:: classref-item-separator
 
@@ -698,7 +698,7 @@ Subtracts each component of the **Vector3i** by the components of the given **Ve
 
 ::
 
-    print(Vector3i(10, 20, 30) - Vector3i(3, 4, 5)) # Prints "(7, 16, 25)"
+    print(Vector3i(10, 20, 30) - Vector3i(3, 4, 5)) # Prints (7, 16, 25)
 
 .. rst-class:: classref-item-separator
 
@@ -714,7 +714,7 @@ Divides each component of the **Vector3i** by the components of the given **Vect
 
 ::
 
-    print(Vector3i(10, 20, 30) / Vector3i(2, 5, 3)) # Prints "(5, 4, 10)"
+    print(Vector3i(10, 20, 30) / Vector3i(2, 5, 3)) # Prints (5, 4, 10)
 
 .. rst-class:: classref-item-separator
 
@@ -730,7 +730,7 @@ Divides each component of the **Vector3i** by the given :ref:`float<class_float>
 
 ::
 
-    print(Vector3i(10, 20, 30) / 2.9) # Prints "(5, 10, 15)"
+    print(Vector3i(10, 20, 30) / 2.9) # Prints (5.0, 10.0, 15.0)
 
 .. rst-class:: classref-item-separator
 

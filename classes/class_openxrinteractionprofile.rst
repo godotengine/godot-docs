@@ -32,6 +32,8 @@ Properties
    :widths: auto
 
    +-----------------------------+---------------------------------------------------------------------------------------------------+--------+
+   | :ref:`Array<class_Array>`   | :ref:`binding_modifiers<class_OpenXRInteractionProfile_property_binding_modifiers>`               | ``[]`` |
+   +-----------------------------+---------------------------------------------------------------------------------------------------+--------+
    | :ref:`Array<class_Array>`   | :ref:`bindings<class_OpenXRInteractionProfile_property_bindings>`                                 | ``[]`` |
    +-----------------------------+---------------------------------------------------------------------------------------------------+--------+
    | :ref:`String<class_String>` | :ref:`interaction_profile_path<class_OpenXRInteractionProfile_property_interaction_profile_path>` | ``""`` |
@@ -45,11 +47,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`OpenXRIPBinding<class_OpenXRIPBinding>` | :ref:`get_binding<class_OpenXRInteractionProfile_method_get_binding>`\ (\ index\: :ref:`int<class_int>`\ ) |const| |
-   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                         | :ref:`get_binding_count<class_OpenXRInteractionProfile_method_get_binding_count>`\ (\ ) |const|                    |
-   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OpenXRIPBinding<class_OpenXRIPBinding>`                 | :ref:`get_binding<class_OpenXRInteractionProfile_method_get_binding>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                   |
+   +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`get_binding_count<class_OpenXRInteractionProfile_method_get_binding_count>`\ (\ ) |const|                                      |
+   +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OpenXRIPBindingModifier<class_OpenXRIPBindingModifier>` | :ref:`get_binding_modifier<class_OpenXRInteractionProfile_method_get_binding_modifier>`\ (\ index\: :ref:`int<class_int>`\ ) |const| |
+   +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                         | :ref:`get_binding_modifier_count<class_OpenXRInteractionProfile_method_get_binding_modifier_count>`\ (\ ) |const|                    |
+   +---------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -59,6 +65,23 @@ Methods
 
 Property Descriptions
 ---------------------
+
+.. _class_OpenXRInteractionProfile_property_binding_modifiers:
+
+.. rst-class:: classref-property
+
+:ref:`Array<class_Array>` **binding_modifiers** = ``[]`` :ref:`🔗<class_OpenXRInteractionProfile_property_binding_modifiers>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_binding_modifiers**\ (\ value\: :ref:`Array<class_Array>`\ )
+- :ref:`Array<class_Array>` **get_binding_modifiers**\ (\ )
+
+Binding modifiers for this interaction profile.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_OpenXRInteractionProfile_property_bindings:
 
@@ -118,6 +141,30 @@ Retrieve the binding at this index.
 :ref:`int<class_int>` **get_binding_count**\ (\ ) |const| :ref:`🔗<class_OpenXRInteractionProfile_method_get_binding_count>`
 
 Get the number of bindings in this interaction profile.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInteractionProfile_method_get_binding_modifier:
+
+.. rst-class:: classref-method
+
+:ref:`OpenXRIPBindingModifier<class_OpenXRIPBindingModifier>` **get_binding_modifier**\ (\ index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_OpenXRInteractionProfile_method_get_binding_modifier>`
+
+Get the :ref:`OpenXRBindingModifier<class_OpenXRBindingModifier>` at this index.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInteractionProfile_method_get_binding_modifier_count:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_binding_modifier_count**\ (\ ) |const| :ref:`🔗<class_OpenXRInteractionProfile_method_get_binding_modifier_count>`
+
+Get the number of binding modifiers in this interaction profile.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

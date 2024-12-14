@@ -623,10 +623,10 @@ Returns ``true`` if a singleton with the given ``name`` exists in the global sco
 
  .. code-tab:: csharp
 
-    GD.Print(Engine.HasSingleton("OS"));          // Prints true
-    GD.Print(Engine.HasSingleton("Engine"));      // Prints true
-    GD.Print(Engine.HasSingleton("AudioServer")); // Prints true
-    GD.Print(Engine.HasSingleton("Unknown"));     // Prints false
+    GD.Print(Engine.HasSingleton("OS"));          // Prints True
+    GD.Print(Engine.HasSingleton("Engine"));      // Prints True
+    GD.Print(Engine.HasSingleton("AudioServer")); // Prints True
+    GD.Print(Engine.HasSingleton("Unknown"));     // Prints False
 
 
 
