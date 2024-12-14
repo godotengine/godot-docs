@@ -132,7 +132,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **radians**\ (\ |vec_type| degrees)
+|vec_type| **radians**\ (\ |vec_type| degrees) :ref:`🔗<shader_func_radians>`
 
     |componentwise|
 
@@ -156,7 +156,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **degrees**\ (\ |vec_type| radians)
+|vec_type| **degrees**\ (\ |vec_type| radians) :ref:`🔗<shader_func_degrees>`
 
     |componentwise|
 
@@ -180,7 +180,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **sin**\ (\ |vec_type| angle)
+|vec_type| **sin**\ (\ |vec_type| angle) :ref:`🔗<shader_func_sin>`
 
     |componentwise|
 
@@ -203,7 +203,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **cos**\ (\ |vec_type| angle)
+|vec_type| **cos**\ (\ |vec_type| angle) :ref:`🔗<shader_func_cos>`
 
     |componentwise|
 
@@ -226,7 +226,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **tan**\ (\ |vec_type| angle)
+|vec_type| **tan**\ (\ |vec_type| angle) :ref:`🔗<shader_func_tan>`
 
     |componentwise|
 
@@ -249,7 +249,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **asin**\ (\ |vec_type| x)
+|vec_type| **asin**\ (\ |vec_type| x) :ref:`🔗<shader_func_asin>`
 
     |componentwise|
 
@@ -273,7 +273,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **acos**\ (\ |vec_type| x)
+|vec_type| **acos**\ (\ |vec_type| x) :ref:`🔗<shader_func_acos>`
 
     |componentwise|
 
@@ -299,7 +299,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **atan**\ (\ |vec_type| y_over_x)
+|vec_type| **atan**\ (\ |vec_type| y_over_x) :ref:`🔗<shader_func_atan>`
 
     |componentwise|
 
@@ -328,7 +328,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **atan**\ (\ |vec_type| y, |vec_type| x)
+|vec_type| **atan**\ (\ |vec_type| y, |vec_type| x) :ref:`🔗<shader_func_atan2>`
 
     |componentwise|
 
@@ -359,7 +359,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **sinh**\ (\ |vec_type| x)
+|vec_type| **sinh**\ (\ |vec_type| x) :ref:`🔗<shader_func_sinh>`
 
     |componentwise|
 
@@ -382,7 +382,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **cosh**\ (\ |vec_type| x)
+|vec_type| **cosh**\ (\ |vec_type| x) :ref:`🔗<shader_func_cosh>`
 
     |componentwise|
 
@@ -405,7 +405,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **tanh**\ (\ |vec_type| x)
+|vec_type| **tanh**\ (\ |vec_type| x) :ref:`🔗<shader_func_tanh>`
 
     |componentwise|
 
@@ -428,7 +428,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **asinh**\ (\ |vec_type| x)
+|vec_type| **asinh**\ (\ |vec_type| x) :ref:`🔗<shader_func_asinh>`
 
     |componentwise|
 
@@ -451,7 +451,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **acosh**\ (\ |vec_type| x)
+|vec_type| **acosh**\ (\ |vec_type| x) :ref:`🔗<shader_func_acosh>`
 
     |componentwise|
 
@@ -475,7 +475,7 @@ Trigonometric function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **atanh**\ (\ |vec_type| x)
+|vec_type| **atanh**\ (\ |vec_type| x) :ref:`🔗<shader_func_atanh>`
 
     |componentwise|
 
@@ -612,7 +612,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **pow**\ (\ |vec_type| x, |vec_type| y)
+|vec_type| **pow**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_pow>`
 
     |componentwise|
 
@@ -640,7 +640,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **exp**\ (\ |vec_type| x)
+|vec_type| **exp**\ (\ |vec_type| x) :ref:`🔗<shader_func_exp>`
 
     |componentwise|
 
@@ -665,7 +665,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **exp2**\ (\ |vec_type| x)
+|vec_type| **exp2**\ (\ |vec_type| x) :ref:`🔗<shader_func_exp2>`
 
     |componentwise|
 
@@ -691,7 +691,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **log**\ (\ |vec_type| x)
+|vec_type| **log**\ (\ |vec_type| x) :ref:`🔗<shader_func_log>`
 
     |componentwise|
 
@@ -715,7 +715,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **log2**\ (\ |vec_type| x)
+|vec_type| **log2**\ (\ |vec_type| x) :ref:`🔗<shader_func_log2>`
 
     |componentwise|
 
@@ -739,7 +739,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **sqrt**\ (\ |vec_type| x)
+|vec_type| **sqrt**\ (\ |vec_type| x) :ref:`🔗<shader_func_sqrt>`
 
     |componentwise|
 
@@ -763,7 +763,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **inversesqrt**\ (\ |vec_type| x)
+|vec_type| **inversesqrt**\ (\ |vec_type| x) :ref:`🔗<shader_func_inversesqrt>`
 
     |componentwise|
 
@@ -787,11 +787,11 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **abs**\ (\ |vec_type| x)
+|vec_type| **abs**\ (\ |vec_type| x) :ref:`🔗<shader_func_abs>`
 
 .. rst-class:: classref-method
 
-|vec_int_type| **abs**\ (\ |vec_int_type| x)
+|vec_int_type| **abs**\ (\ |vec_int_type| x) :ref:`🔗<shader_func_abs>`
 
     |componentwise|
 
@@ -814,11 +814,11 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **sign**\ (\ |vec_type| x)
+|vec_type| **sign**\ (\ |vec_type| x) :ref:`🔗<shader_func_sign>`
 
 .. rst-class:: classref-method
 
-|vec_int_type| **sign**\ (\ |vec_int_type| x)
+|vec_int_type| **sign**\ (\ |vec_int_type| x) :ref:`🔗<shader_func_sign>`
 
     |componentwise|
 
@@ -841,7 +841,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **floor**\ (\ |vec_type| x)
+|vec_type| **floor**\ (\ |vec_type| x) :ref:`🔗<shader_func_floor>`
 
     |componentwise|
 
@@ -864,7 +864,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **round**\ (\ |vec_type| x)
+|vec_type| **round**\ (\ |vec_type| x) :ref:`🔗<shader_func_round>`
 
     |componentwise|
 
@@ -892,7 +892,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **roundEven**\ (\ |vec_type| x)
+|vec_type| **roundEven**\ (\ |vec_type| x) :ref:`🔗<shader_func_roundEven>`
 
     |componentwise|
 
@@ -917,7 +917,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **trunc**\ (\ |vec_type| x)
+|vec_type| **trunc**\ (\ |vec_type| x) :ref:`🔗<shader_func_trunc>`
 
     |componentwise|
 
@@ -941,7 +941,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **ceil**\ (\ |vec_type| x)
+|vec_type| **ceil**\ (\ |vec_type| x) :ref:`🔗<shader_func_ceil>`
 
     |componentwise|
 
@@ -964,7 +964,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **fract**\ (\ |vec_type| x)
+|vec_type| **fract**\ (\ |vec_type| x) :ref:`🔗<shader_func_fract>`
 
     |componentwise|
 
@@ -989,11 +989,11 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **mod**\ (\ |vec_type| x, |vec_type| y)
+|vec_type| **mod**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_mod>`
 
 .. rst-class:: classref-method
 
-|vec_type| **mod**\ (\ |vec_type| x, float y)
+|vec_type| **mod**\ (\ |vec_type| x, float y) :ref:`🔗<shader_func_mod>`
 
     |componentwise|
 
@@ -1019,7 +1019,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **modf**\ (\ |vec_type| x, out |vec_type| i)
+|vec_type| **modf**\ (\ |vec_type| x, out |vec_type| i) :ref:`🔗<shader_func_modf>`
 
     |componentwise|
 
@@ -1048,27 +1048,27 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **min**\ (\ |vec_type| a, |vec_type| b)
+|vec_type| **min**\ (\ |vec_type| a, |vec_type| b) :ref:`🔗<shader_func_min>`
 
 .. rst-class:: classref-method
 
-|vec_type| **min**\ (\ |vec_type| a, float b)
+|vec_type| **min**\ (\ |vec_type| a, float b) :ref:`🔗<shader_func_min>`
 
 .. rst-class:: classref-method
 
-|vec_int_type| **min**\ (\ |vec_int_type| a, |vec_int_type| b)
+|vec_int_type| **min**\ (\ |vec_int_type| a, |vec_int_type| b) :ref:`🔗<shader_func_min>`
 
 .. rst-class:: classref-method
 
-|vec_int_type| **min**\ (\ |vec_int_type| a, int b)
+|vec_int_type| **min**\ (\ |vec_int_type| a, int b) :ref:`🔗<shader_func_min>`
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **min**\ (\ |vec_uint_type| a, |vec_uint_type| b)
+|vec_uint_type| **min**\ (\ |vec_uint_type| a, |vec_uint_type| b) :ref:`🔗<shader_func_min>`
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **min**\ (\ |vec_uint_type| a, uint b)
+|vec_uint_type| **min**\ (\ |vec_uint_type| a, uint b) :ref:`🔗<shader_func_min>`
 
     |componentwise|
 
@@ -1096,27 +1096,27 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **max**\ (\ |vec_type| a, |vec_type| b)
+|vec_type| **max**\ (\ |vec_type| a, |vec_type| b) :ref:`🔗<shader_func_max>`
 
 .. rst-class:: classref-method
 
-|vec_type| **max**\ (\ |vec_type| a, float b)
+|vec_type| **max**\ (\ |vec_type| a, float b) :ref:`🔗<shader_func_max>`
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **max**\ (\ |vec_uint_type| a, |vec_uint_type| b)
+|vec_uint_type| **max**\ (\ |vec_uint_type| a, |vec_uint_type| b) :ref:`🔗<shader_func_max>`
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **max**\ (\ |vec_uint_type| a, uint b)
+|vec_uint_type| **max**\ (\ |vec_uint_type| a, uint b) :ref:`🔗<shader_func_max>`
 
 .. rst-class:: classref-method
 
-|vec_int_type| **max**\ (\ |vec_int_type| a, |vec_int_type| b)
+|vec_int_type| **max**\ (\ |vec_int_type| a, |vec_int_type| b) :ref:`🔗<shader_func_max>`
 
 .. rst-class:: classref-method
 
-|vec_int_type| **max**\ (\ |vec_int_type| a, int b)
+|vec_int_type| **max**\ (\ |vec_int_type| a, int b) :ref:`🔗<shader_func_max>`
 
     |componentwise|
 
@@ -1144,27 +1144,27 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **clamp**\ (\ |vec_type| x, |vec_type| minVal, |vec_type| maxVal)
+|vec_type| **clamp**\ (\ |vec_type| x, |vec_type| minVal, |vec_type| maxVal) :ref:`🔗<shader_func_clamp>`
 
 .. rst-class:: classref-method
 
-|vec_type| **clamp**\ (\ |vec_type| x, float minVal, float maxVal)
+|vec_type| **clamp**\ (\ |vec_type| x, float minVal, float maxVal) :ref:`🔗<shader_func_clamp>`
 
 .. rst-class:: classref-method
 
-|vec_type| **clamp**\ (\ |vec_type| x, float minVal, float maxVal)
+|vec_type| **clamp**\ (\ |vec_type| x, float minVal, float maxVal) :ref:`🔗<shader_func_clamp>`
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **clamp**\ (\ |vec_int_type| x, float minVal, float maxVal)
+|vec_uint_type| **clamp**\ (\ |vec_int_type| x, float minVal, float maxVal) :ref:`🔗<shader_func_clamp>`
 
 .. rst-class:: classref-method
 
-|vec_int_type| **clamp**\ (\ |vec_type| x, |vec_type| minVal, |vec_type| maxVal)
+|vec_int_type| **clamp**\ (\ |vec_type| x, |vec_type| minVal, |vec_type| maxVal) :ref:`🔗<shader_func_clamp>`
 
 .. rst-class:: classref-method
 
-|vec_int_type| **clamp**\ (\ |vec_type| x, float minVal, float maxVal)
+|vec_int_type| **clamp**\ (\ |vec_type| x, float minVal, float maxVal) :ref:`🔗<shader_func_clamp>`
 
     |componentwise|
 
@@ -1195,11 +1195,11 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **mix**\ (\ |vec_type| a, |vec_type| b, |vec_type| c)
+|vec_type| **mix**\ (\ |vec_type| a, |vec_type| b, |vec_type| c) :ref:`🔗<shader_func_mix>`
 
 .. rst-class:: classref-method
 
-|vec_type| **mix**\ (\ |vec_type| a, |vec_type| b, float c)
+|vec_type| **mix**\ (\ |vec_type| a, |vec_type| b, float c) :ref:`🔗<shader_func_mix>`
 
     |componentwise|
 
@@ -1230,7 +1230,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **mix**\ (\ |vec_type| a, |vec_type| b, |vec_bool_type| c)
+|vec_type| **mix**\ (\ |vec_type| a, |vec_type| b, |vec_bool_type| c) :ref:`🔗<shader_func_mix>`
 
     Selects either value ``a`` or value ``b`` based on the value of ``c``.
     For a component of ``c`` that is false, the corresponding component of ``a`` is returned.
@@ -1263,7 +1263,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **fma**\ (\ |vec_type| a, |vec_type| b, |vec_type| c)
+|vec_type| **fma**\ (\ |vec_type| a, |vec_type| b, |vec_type| c) :ref:`🔗<shader_func_fma>`
 
     |componentwise|
 
@@ -1303,11 +1303,11 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **step**\ (\ |vec_type| a, |vec_type| b)
+|vec_type| **step**\ (\ |vec_type| a, |vec_type| b) :ref:`🔗<shader_func_step>`
 
 .. rst-class:: classref-method
 
-|vec_type| **step**\ (\ float a, |vec_type| b)
+|vec_type| **step**\ (\ float a, |vec_type| b) :ref:`🔗<shader_func_step>`
 
     |componentwise|
 
@@ -1336,11 +1336,11 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **smoothstep**\ (\ |vec_type| a, |vec_type| b, |vec_type| c)
+|vec_type| **smoothstep**\ (\ |vec_type| a, |vec_type| b, |vec_type| c) :ref:`🔗<shader_func_smoothstep>`
 
 .. rst-class:: classref-method
 
-|vec_type| **smoothstep**\ (\ float a, float b, |vec_type| c)
+|vec_type| **smoothstep**\ (\ float a, float b, |vec_type| c) :ref:`🔗<shader_func_smoothstep>`
 
     |componentwise|
 
@@ -1378,7 +1378,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **isnan**\ (\ |vec_type| x)
+|vec_bool_type| **isnan**\ (\ |vec_type| x) :ref:`🔗<shader_func_isnan>`
 
     |componentwise|
 
@@ -1402,7 +1402,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **isinf**\ (\ |vec_type| x)
+|vec_bool_type| **isinf**\ (\ |vec_type| x) :ref:`🔗<shader_func_isinf>`
 
     |componentwise|
 
@@ -1426,7 +1426,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_int_type| **floatBitsToInt**\ (\ |vec_type| x)
+|vec_int_type| **floatBitsToInt**\ (\ |vec_type| x) :ref:`🔗<shader_func_floatBitsToInt>`
 
     |componentwise|
 
@@ -1451,7 +1451,7 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **floatBitsToUint**\ (\ |vec_type| x)
+|vec_uint_type| **floatBitsToUint**\ (\ |vec_type| x) :ref:`🔗<shader_func_floatBitsToUint>`
 
     |componentwise|
 
@@ -1476,11 +1476,11 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **intBitsToFloat**\ (\ |vec_int_type| x)
+|vec_type| **intBitsToFloat**\ (\ |vec_int_type| x) :ref:`🔗<shader_func_intBitsToFloat>`
 
     |componentwise|
 
-    Converts a bit encoding to a floating-point value. Opposite of `floatBitsToInt<_shader_func_floatBitsToInt>`
+    Converts a bit encoding to a floating-point value. Opposite of `floatBitsToInt<shader_func_floatBitsToInt>`
 
     If the encoding of a ``NaN`` is passed in ``x``, it will not signal and the resulting value will be undefined.
 
@@ -1504,11 +1504,11 @@ Exponential and math function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **uintBitsToFloat**\ (\ |vec_uint_type| x)
+|vec_type| **uintBitsToFloat**\ (\ |vec_uint_type| x) :ref:`🔗<shader_func_uintBitsToFloat>`
 
     |componentwise|
 
-    Converts a bit encoding to a floating-point value. Opposite of `floatBitsToUint<_shader_func_floatBitsToUint>`
+    Converts a bit encoding to a floating-point value. Opposite of `floatBitsToUint<shader_func_floatBitsToUint>`
 
     If the encoding of a ``NaN`` is passed in ``x``, it will not signal and the resulting value will be undefined.
 
@@ -1594,7 +1594,7 @@ Geometric function descriptions
 
 .. rst-class:: classref-method
 
-float **length**\ (\ |vec_type| x)
+float **length**\ (\ |vec_type| x) :ref:`🔗<shader_func_length>`
 
     Returns the length of the vector.
     ie. ``sqrt(x[0] * x[0] + x[1] * x[1] + ... + x[n] * x[n])``
@@ -1616,7 +1616,7 @@ float **length**\ (\ |vec_type| x)
 
 .. rst-class:: classref-method
 
-float **distance**\ (\ |vec_type| a, |vec_type| b)
+float **distance**\ (\ |vec_type| a, |vec_type| b) :ref:`🔗<shader_func_distance>`
 
     Returns the distance between the two points a and b.
 
@@ -1642,7 +1642,7 @@ float **distance**\ (\ |vec_type| a, |vec_type| b)
 
 .. rst-class:: classref-method
 
-float **dot**\ (\ |vec_type| a, |vec_type| b)
+float **dot**\ (\ |vec_type| a, |vec_type| b) :ref:`🔗<shader_func_dot>`
 
     Returns the dot product of two vectors, ``a`` and ``b``.
     i.e., ``a.x * b.x + a.y * b.y + ...``
@@ -1667,7 +1667,7 @@ float **dot**\ (\ |vec_type| a, |vec_type| b)
 
 .. rst-class:: classref-method
 
-vec3 **cross**\ (\ vec3 a, vec3 b)
+vec3 **cross**\ (\ vec3 a, vec3 b) :ref:`🔗<shader_func_cross>`
 
     Returns the cross product of two vectors.
     i.e.::
@@ -1696,7 +1696,7 @@ vec3 **cross**\ (\ vec3 a, vec3 b)
 
 .. rst-class:: classref-method
 
-|vec_type| **normalize**\ (\ |vec_type| x)
+|vec_type| **normalize**\ (\ |vec_type| x) :ref:`🔗<shader_func_normalize>`
 
     Returns a vector with the same direction as ``x`` but with length ``1.0``.
 
@@ -1717,7 +1717,7 @@ vec3 **cross**\ (\ vec3 a, vec3 b)
 
 .. rst-class:: classref-method
 
-vec3 **reflect**\ (\ vec3 I, vec3 N)
+vec3 **reflect**\ (\ vec3 I, vec3 N) :ref:`🔗<shader_func_reflect>`
 
     Calculate the reflection direction for an incident vector.
 
@@ -1746,7 +1746,7 @@ vec3 **reflect**\ (\ vec3 I, vec3 N)
 
 .. rst-class:: classref-method
 
-vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
+vec3 **refract**\ (\ vec3 I, vec3 N, float eta) :ref:`🔗<shader_func_refract>`
 
     Calculate the refraction direction for an incident vector.
 
@@ -1786,7 +1786,7 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
 
 .. rst-class:: classref-method
 
-|vec_type| **faceforward**\ (\ |vec_type| N, |vec_type| I, |vec_type| Nref)
+|vec_type| **faceforward**\ (\ |vec_type| N, |vec_type| I, |vec_type| Nref) :ref:`🔗<shader_func_faceforward>`
 
     Returns a vector pointing in the same direction as another.
 
@@ -1816,7 +1816,7 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
 
 .. rst-class:: classref-method
 
-|mat_type| **matrixCompMult**\ (\ |mat_type| x, |mat_type| y)
+|mat_type| **matrixCompMult**\ (\ |mat_type| x, |mat_type| y) :ref:`🔗<shader_func_matrixCompMult>`
 
     Perform a :ref:`component-wise <shading_componentwise>` multiplication of two matrices.
 
@@ -1844,7 +1844,7 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
 
 .. rst-class:: classref-method
 
-|mat_type| **outerProduct**\ (\ |vec_type| column, |vec_type| row)
+|mat_type| **outerProduct**\ (\ |vec_type| column, |vec_type| row) :ref:`🔗<shader_func_outerProduct>`
 
     Calculate the outer product of a pair of vectors.
 
@@ -1872,7 +1872,7 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
 
 .. rst-class:: classref-method
 
-|mat_type| **transpose**\ (\ |mat_type| m)
+|mat_type| **transpose**\ (\ |mat_type| m) :ref:`🔗<shader_func_transpose>`
 
     Calculate the transpose of a matrix.
 
@@ -1893,7 +1893,7 @@ vec3 **refract**\ (\ vec3 I, vec3 N, float eta)
 
 .. rst-class:: classref-method
 
-float **determinant**\ (\ |mat_type| m)
+float **determinant**\ (\ |mat_type| m) :ref:`🔗<shader_func_determinant>`
 
     Calculate the determinant of a matrix.
 
@@ -1914,7 +1914,7 @@ float **determinant**\ (\ |mat_type| m)
 
 .. rst-class:: classref-method
 
-|mat_type| **inverse**\ (\ |mat_type| m)
+|mat_type| **inverse**\ (\ |mat_type| m) :ref:`🔗<shader_func_inverse>`
 
     Calculate the inverse of a matrix.
 
@@ -1984,7 +1984,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **lessThan**\ (\ |vec_type| x, |vec_type| y)
+|vec_bool_type| **lessThan**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_lessThan>`
 
     Performs a :ref:`component-wise<shading_componentwise>` less-than comparison of two vectors.
 
@@ -2010,7 +2010,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **greaterThan**\ (\ |vec_type| x, |vec_type| y)
+|vec_bool_type| **greaterThan**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_greaterThan>`
 
     Performs a :ref:`component-wise<shading_componentwise>` greater-than comparison of two vectors.
 
@@ -2036,7 +2036,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **lessThanEqual**\ (\ |vec_type| x, |vec_type| y)
+|vec_bool_type| **lessThanEqual**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_lessThanEqual>`
 
     Performs a :ref:`component-wise<shading_componentwise>` less-than-or-equal comparison of two vectors.
 
@@ -2062,7 +2062,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **greaterThanEqual**\ (\ |vec_type| x, |vec_type| y)
+|vec_bool_type| **greaterThanEqual**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_greaterThanEqual>`
 
     Performs a :ref:`component-wise<shading_componentwise>` greater-than-or-equal comparison of two vectors.
 
@@ -2088,7 +2088,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **equal**\ (\ |vec_type| x, |vec_type| y)
+|vec_bool_type| **equal**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_equal>`
 
     Performs a :ref:`component-wise<shading_componentwise>` equal-to comparison of two vectors.
 
@@ -2114,7 +2114,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **notEqual**\ (\ |vec_type| x, |vec_type| y)
+|vec_bool_type| **notEqual**\ (\ |vec_type| x, |vec_type| y) :ref:`🔗<shader_func_notEqual>`
 
     Performs a :ref:`component-wise<shading_componentwise>` not-equal-to comparison of two vectors.
 
@@ -2140,7 +2140,7 @@ Comparison function descriptions
 
 .. rst-class:: classref-method
 
-bool **any**\ (\ |vec_bool_type| x)
+bool **any**\ (\ |vec_bool_type| x) :ref:`🔗<shader_func_any>`
 
     Returns ``true`` if any element of a boolean vector is ``true``, ``false`` otherwise.
 
@@ -2174,7 +2174,7 @@ bool **any**\ (\ |vec_bool_type| x)
 
 .. rst-class:: classref-method
 
-bool **all**\ (\ |vec_bool_type| x)
+bool **all**\ (\ |vec_bool_type| x) :ref:`🔗<shader_func_all>`
 
     Returns ``true`` if all elements of a boolean vector are ``true``, ``false`` otherwise.
 
@@ -2208,7 +2208,7 @@ bool **all**\ (\ |vec_bool_type| x)
 
 .. rst-class:: classref-method
 
-|vec_bool_type| **not**\ (\ |vec_bool_type| x)
+|vec_bool_type| **not**\ (\ |vec_bool_type| x) :ref:`🔗<shader_func_not>`
 
     Logically invert a boolean vector.
 
@@ -2346,23 +2346,23 @@ Texture function descriptions
 
 .. rst-class:: classref-method
 
-ivec2 **textureSize**\ (\ |gsampler2D| s, int lod)
+ivec2 **textureSize**\ (\ |gsampler2D| s, int lod) :ref:`🔗<shader_func_textureSize>`
 
 .. rst-class:: classref-method
 
-ivec2 **textureSize**\ (\ samplerCube s, int lod)
+ivec2 **textureSize**\ (\ samplerCube s, int lod) :ref:`🔗<shader_func_textureSize>`
 
 .. rst-class:: classref-method
 
-ivec2 **textureSize**\ (\ samplerCubeArray s, int lod)
+ivec2 **textureSize**\ (\ samplerCubeArray s, int lod) :ref:`🔗<shader_func_textureSize>`
 
 .. rst-class:: classref-method
 
-ivec3 **textureSize**\ (\ |gsampler2DArray| s, int lod)
+ivec3 **textureSize**\ (\ |gsampler2DArray| s, int lod) :ref:`🔗<shader_func_textureSize>`
 
 .. rst-class:: classref-method
 
-ivec3 **textureSize**\ (\ |gsampler3D| s, int lod)
+ivec3 **textureSize**\ (\ |gsampler3D| s, int lod) :ref:`🔗<shader_func_textureSize>`
 
     Retrieves the dimensions of a level of a texture.
 
@@ -2394,19 +2394,19 @@ ivec3 **textureSize**\ (\ |gsampler3D| s, int lod)
 
 .. rst-class:: classref-method
 
-vec2 **textureQueryLod**\ (\ |gsampler2D| s, vec2 p)
+vec2 **textureQueryLod**\ (\ |gsampler2D| s, vec2 p) :ref:`🔗<shader_func_textureQueryLod>`
 
 .. rst-class:: classref-method
 
-vec2 **textureQueryLod**\ (\ |gsampler2DArray| s, vec2 p)
+vec2 **textureQueryLod**\ (\ |gsampler2DArray| s, vec2 p) :ref:`🔗<shader_func_textureQueryLod>`
 
 .. rst-class:: classref-method
 
-vec2 **textureQueryLod**\ (\ |gsampler3D| s, vec3 p)
+vec2 **textureQueryLod**\ (\ |gsampler3D| s, vec3 p) :ref:`🔗<shader_func_textureQueryLod>`
 
 .. rst-class:: classref-method
 
-vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
+vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p) :ref:`🔗<shader_func_textureQueryLod>`
 
     .. note:: Available only in the fragment shader.
 
@@ -2440,19 +2440,19 @@ vec2 **textureQueryLod**\ (\ samplerCube s, vec3 p)
 
 .. rst-class:: classref-method
 
-int **textureQueryLevels**\ (\ |gsampler2D| s)
+int **textureQueryLevels**\ (\ |gsampler2D| s) :ref:`🔗<shader_func_textureQueryLevels>`
 
 .. rst-class:: classref-method
 
-int **textureQueryLevels**\ (\ |gsampler2DArray| s)
+int **textureQueryLevels**\ (\ |gsampler2DArray| s) :ref:`🔗<shader_func_textureQueryLevels>`
 
 .. rst-class:: classref-method
 
-int **textureQueryLevels**\ (\ |gsampler3D| s)
+int **textureQueryLevels**\ (\ |gsampler3D| s) :ref:`🔗<shader_func_textureQueryLevels>`
 
 .. rst-class:: classref-method
 
-int **textureQueryLevels**\ (\ samplerCube s)
+int **textureQueryLevels**\ (\ samplerCube s) :ref:`🔗<shader_func_textureQueryLevels>`
 
     Compute the number of accessible mipmap levels of a texture.
 
@@ -2477,27 +2477,27 @@ int **textureQueryLevels**\ (\ samplerCube s)
 
 .. rst-class:: classref-method
 
-|gvec4_type| **texture**\ (\ |gsampler2D| s, vec2 p [, float bias] )
+|gvec4_type| **texture**\ (\ |gsampler2D| s, vec2 p [, float bias] ) :ref:`🔗<shader_func_texture>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **texture**\ (\ |gsampler2DArray| s, vec3 p [, float bias] )
+|gvec4_type| **texture**\ (\ |gsampler2DArray| s, vec3 p [, float bias] ) :ref:`🔗<shader_func_texture>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **texture**\ (\ |gsampler3D| s, vec3 p [, float bias] )
+|gvec4_type| **texture**\ (\ |gsampler3D| s, vec3 p [, float bias] ) :ref:`🔗<shader_func_texture>`
 
 .. rst-class:: classref-method
 
-vec4 **texture**\ (\ samplerCube s, vec3 p [, float bias] )
+vec4 **texture**\ (\ samplerCube s, vec3 p [, float bias] ) :ref:`🔗<shader_func_texture>`
 
 .. rst-class:: classref-method
 
-vec4 **texture**\ (\ samplerCubeArray s, vec4 p [, float bias] )
+vec4 **texture**\ (\ samplerCubeArray s, vec4 p [, float bias] ) :ref:`🔗<shader_func_texture>`
 
 .. rst-class:: classref-method
 
-vec4 **texture**\ (\ samplerExternalOES s, vec2 p [, float bias] )
+vec4 **texture**\ (\ samplerExternalOES s, vec2 p [, float bias] ) :ref:`🔗<shader_func_texture>`
 
     Retrieves texels from a texture.
 
@@ -2534,15 +2534,15 @@ vec4 **texture**\ (\ samplerExternalOES s, vec2 p [, float bias] )
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureProj**\ (\ |gsampler2D| s, vec3 p [, float bias] )
+|gvec4_type| **textureProj**\ (\ |gsampler2D| s, vec3 p [, float bias] ) :ref:`🔗<shader_func_textureProj>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureProj**\ (\ |gsampler2D| s, vec4 p [, float bias] )
+|gvec4_type| **textureProj**\ (\ |gsampler2D| s, vec4 p [, float bias] ) :ref:`🔗<shader_func_textureProj>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureProj**\ (\ |gsampler3D| s, vec4 p [, float bias] )
+|gvec4_type| **textureProj**\ (\ |gsampler3D| s, vec4 p [, float bias] ) :ref:`🔗<shader_func_textureProj>`
 
     Perform a texture lookup with projection.
 
@@ -2575,23 +2575,23 @@ vec4 **texture**\ (\ samplerExternalOES s, vec2 p [, float bias] )
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureLod**\ (\ |gsampler2D| s, vec2 p, float lod)
+|gvec4_type| **textureLod**\ (\ |gsampler2D| s, vec2 p, float lod) :ref:`🔗<shader_func_textureLod>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureLod**\ (\ |gsampler2DArray| s, vec3 p, float lod)
+|gvec4_type| **textureLod**\ (\ |gsampler2DArray| s, vec3 p, float lod) :ref:`🔗<shader_func_textureLod>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureLod**\ (\ |gsampler3D| s, vec3 p, float lod)
+|gvec4_type| **textureLod**\ (\ |gsampler3D| s, vec3 p, float lod) :ref:`🔗<shader_func_textureLod>`
 
 .. rst-class:: classref-method
 
-vec4 **textureLod**\ (\ samplerCube s, vec3 p, float lod)
+vec4 **textureLod**\ (\ samplerCube s, vec3 p, float lod) :ref:`🔗<shader_func_textureLod>`
 
 .. rst-class:: classref-method
 
-vec4 **textureLod**\ (\ samplerCubeArray s, vec4 p, float lod)
+vec4 **textureLod**\ (\ samplerCubeArray s, vec4 p, float lod) :ref:`🔗<shader_func_textureLod>`
 
     Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with
     an explicit level-of-detail as specified in ``lod``. ``lod`` specifies λbase and sets the
@@ -2625,15 +2625,15 @@ vec4 **textureLod**\ (\ samplerCubeArray s, vec4 p, float lod)
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureProjLod**\ (\ |gsampler2D| s, vec3 p, float lod)
+|gvec4_type| **textureProjLod**\ (\ |gsampler2D| s, vec3 p, float lod) :ref:`🔗<shader_func_textureProjLod>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureProjLod**\ (\ |gsampler2D| s, vec4 p, float lod)
+|gvec4_type| **textureProjLod**\ (\ |gsampler2D| s, vec4 p, float lod) :ref:`🔗<shader_func_textureProjLod>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureProjLod**\ (\ |gsampler3D| s, vec4 p, float lod)
+|gvec4_type| **textureProjLod**\ (\ |gsampler3D| s, vec4 p, float lod) :ref:`🔗<shader_func_textureProjLod>`
 
     Performs a texture lookup with projection from an explicitly specified level-of-detail.
 
@@ -2668,23 +2668,23 @@ vec4 **textureLod**\ (\ samplerCubeArray s, vec4 p, float lod)
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureGrad**\ (\ |gsampler2D| s, vec2 p, vec2 dPdx, vec2 dPdy)
+|gvec4_type| **textureGrad**\ (\ |gsampler2D| s, vec2 p, vec2 dPdx, vec2 dPdy) :ref:`🔗<shader_func_textureGrad>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureGrad**\ (\ |gsampler2DArray| s, vec3 p, vec2 dPdx, vec2 dPdy)
+|gvec4_type| **textureGrad**\ (\ |gsampler2DArray| s, vec3 p, vec2 dPdx, vec2 dPdy) :ref:`🔗<shader_func_textureGrad>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureGrad**\ (\ |gsampler3D| s, vec3 p, vec2 dPdx, vec2 dPdy)
+|gvec4_type| **textureGrad**\ (\ |gsampler3D| s, vec3 p, vec2 dPdx, vec2 dPdy) :ref:`🔗<shader_func_textureGrad>`
 
 .. rst-class:: classref-method
 
-vec4 **textureGrad**\ (\ samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy)
+vec4 **textureGrad**\ (\ samplerCube s, vec3 p, vec3 dPdx, vec3 dPdy) :ref:`🔗<shader_func_textureGrad>`
 
 .. rst-class:: classref-method
 
-vec4 **textureGrad**\ (\ samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy)
+vec4 **textureGrad**\ (\ samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy) :ref:`🔗<shader_func_textureGrad>`
 
     Performs a texture lookup at coordinate ``p`` from the texture bound to sampler with explicit texture coordinate gradiends as specified in ``dPdx`` and ``dPdy``. Set:
      - ``δs/δx=δp/δx`` for a 1D texture, ``δp.s/δx`` otherwise
@@ -2724,15 +2724,15 @@ vec4 **textureGrad**\ (\ samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy)
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureProjGrad**\ (\ |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy)
+|gvec4_type| **textureProjGrad**\ (\ |gsampler2D| s, vec3 p, vec2 dPdx, vec2 dPdy) :ref:`🔗<shader_func_textureProjGrad>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureProjGrad**\ (\ |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy)
+|gvec4_type| **textureProjGrad**\ (\ |gsampler2D| s, vec4 p, vec2 dPdx, vec2 dPdy) :ref:`🔗<shader_func_textureProjGrad>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureProjGrad**\ (\ |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy)
+|gvec4_type| **textureProjGrad**\ (\ |gsampler3D| s, vec4 p, vec3 dPdx, vec3 dPdy) :ref:`🔗<shader_func_textureProjGrad>`
 
     Perform a texture lookup with projection and explicit gradients.
 
@@ -2767,15 +2767,15 @@ vec4 **textureGrad**\ (\ samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy)
 
 .. rst-class:: classref-method
 
-|gvec4_type| **texelFetch**\ (\ |gsampler2D| s, ivec2 p, int lod)
+|gvec4_type| **texelFetch**\ (\ |gsampler2D| s, ivec2 p, int lod) :ref:`🔗<shader_func_texelFetch>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **texelFetch**\ (\ |gsampler2DArray| s, ivec3 p, int lod)
+|gvec4_type| **texelFetch**\ (\ |gsampler2DArray| s, ivec3 p, int lod) :ref:`🔗<shader_func_texelFetch>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **texelFetch**\ (\ |gsampler3D| s, ivec3 p, int lod)
+|gvec4_type| **texelFetch**\ (\ |gsampler3D| s, ivec3 p, int lod) :ref:`🔗<shader_func_texelFetch>`
 
     Performs a lookup of a single texel from texture coordinate ``p`` in the texture bound to sampler.
 
@@ -2804,15 +2804,15 @@ vec4 **textureGrad**\ (\ samplerCubeArray s, vec3 p, vec3 dPdx, vec3 dPdy)
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureGather**\ (\ |gsampler2D| s, vec2 p [, int comps] )
+|gvec4_type| **textureGather**\ (\ |gsampler2D| s, vec2 p [, int comps] ) :ref:`🔗<shader_func_textureGather>`
 
 .. rst-class:: classref-method
 
-|gvec4_type| **textureGather**\ (\ |gsampler2DArray| s, vec3 p [, int comps] )
+|gvec4_type| **textureGather**\ (\ |gsampler2DArray| s, vec3 p [, int comps] ) :ref:`🔗<shader_func_textureGather>`
 
 .. rst-class:: classref-method
 
-vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
+vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] ) :ref:`🔗<shader_func_textureGather>`
 
     Gathers four texels from a texture.
 
@@ -2848,7 +2848,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
 .. rst-class:: classref-method
 
-|vec_type| **dFdx**\ (\ |vec_type| p)
+|vec_type| **dFdx**\ (\ |vec_type| p) :ref:`🔗<shader_func_dFdx>`
 
     .. note:: Available only in the fragment shader.
 
@@ -2884,7 +2884,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
 .. rst-class:: classref-method
 
-|vec_type| **dFdxCoarse**\ (\ |vec_type| p)
+|vec_type| **dFdxCoarse**\ (\ |vec_type| p) :ref:`🔗<shader_func_dFdxCoarse>`
 
     .. note::
         Available only in the fragment shader.
@@ -2924,7 +2924,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
 .. rst-class:: classref-method
 
-|vec_type| **dFdxFine**\ (\ |vec_type| p)
+|vec_type| **dFdxFine**\ (\ |vec_type| p) :ref:`🔗<shader_func_dFdxFine>`
 
     .. note::
         Available only in the fragment shader.
@@ -2959,7 +2959,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
 .. rst-class:: classref-method
 
-|vec_type| **dFdy**\ (\ |vec_type| p)
+|vec_type| **dFdy**\ (\ |vec_type| p) :ref:`🔗<shader_func_dFdy>`
 
     .. note:: Available only in the fragment shader.
 
@@ -2994,7 +2994,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
 .. rst-class:: classref-method
 
-|vec_type| **dFdyCoarse**\ (\ |vec_type| p)
+|vec_type| **dFdyCoarse**\ (\ |vec_type| p) :ref:`🔗<shader_func_dFdyCoarse>`
 
     .. note::
         Available only in the fragment shader.
@@ -3029,7 +3029,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
 .. rst-class:: classref-method
 
-|vec_type| **dFdyFine**\ (\ |vec_type| p)
+|vec_type| **dFdyFine**\ (\ |vec_type| p) :ref:`🔗<shader_func_dFdyFine>`
 
     .. note::
         Available only in the fragment shader.
@@ -3062,7 +3062,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
 .. rst-class:: classref-method
 
-|vec_type| **fwidth**\ (\ |vec_type| p)
+|vec_type| **fwidth**\ (\ |vec_type| p) :ref:`🔗<shader_func_fwidth>`
 
     Returns the sum of the absolute value of derivatives in x and y.
 
@@ -3089,7 +3089,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
 .. rst-class:: classref-method
 
-|vec_type| **fwidthCoarse**\ (\ |vec_type| p)
+|vec_type| **fwidthCoarse**\ (\ |vec_type| p) :ref:`🔗<shader_func_fwidthCoarse>`
 
     .. note::
         Available only in the fragment shader.
@@ -3120,7 +3120,7 @@ vec4 **textureGather**\ (\ samplerCube s, vec3 p [, int comps] )
 
 .. rst-class:: classref-method
 
-|vec_type| **fwidthFine**\ (\ |vec_type| p)
+|vec_type| **fwidthFine**\ (\ |vec_type| p) :ref:`🔗<shader_func_fwidthFine>`
 
     .. note::
         Available only in the fragment shader.
@@ -3197,7 +3197,7 @@ Packing and unpacking function descriptions
 
 .. rst-class:: classref-method
 
-uint **packHalf2x16**\ (\ vec2 v)
+uint **packHalf2x16**\ (\ vec2 v) :ref:`🔗<shader_func_packHalf2x16>`
 
     Converts two 32-bit floating-point quantities to 16-bit floating-point
     quantities and packs them into a single 32-bit integer.
@@ -3226,7 +3226,7 @@ uint **packHalf2x16**\ (\ vec2 v)
 
 .. rst-class:: classref-method
 
-vec2 **unpackHalf2x16**\ (\ uint v)
+vec2 **unpackHalf2x16**\ (\ uint v) :ref:`🔗<shader_func_unpackHalf2x16>`
 
     Inverse of :ref:`packHalf2x16<shader_func_packHalf2x16>`.
 
@@ -3253,7 +3253,7 @@ vec2 **unpackHalf2x16**\ (\ uint v)
 
 .. rst-class:: classref-method
 
-uint **packUnorm2x16**\ (\ vec2 v)
+uint **packUnorm2x16**\ (\ vec2 v) :ref:`🔗<shader_func_packUnorm2x16>`
 
     Pack floating-point values into an unsigned integer.
 
@@ -3285,7 +3285,7 @@ uint **packUnorm2x16**\ (\ vec2 v)
 
 .. rst-class:: classref-method
 
-vec2 **unpackUnorm2x16**\ (\ uint v)
+vec2 **unpackUnorm2x16**\ (\ uint v) :ref:`🔗<shader_func_unpackUnorm2x16>`
 
     Unpack floating-point values from an unsigned integer.
 
@@ -3314,7 +3314,7 @@ vec2 **unpackUnorm2x16**\ (\ uint v)
 
 .. rst-class:: classref-method
 
-uint **packSnorm2x16**\ (\ vec2 v)
+uint **packSnorm2x16**\ (\ vec2 v) :ref:`🔗<shader_func_packSnorm2x16>`
 
     Packs floating-point values into an unsigned integer.
 
@@ -3345,7 +3345,7 @@ uint **packSnorm2x16**\ (\ vec2 v)
 
 .. rst-class:: classref-method
 
-vec2 **unpackSnorm2x16**\ (\ uint v)
+vec2 **unpackSnorm2x16**\ (\ uint v) :ref:`🔗<shader_func_unpackSnorm2x16>`
 
     Unpacks floating-point values from an unsigned integer.
 
@@ -3374,7 +3374,7 @@ vec2 **unpackSnorm2x16**\ (\ uint v)
 
 .. rst-class:: classref-method
 
-uint **packUnorm4x8**\ (\ vec4 v)
+uint **packUnorm4x8**\ (\ vec4 v) :ref:`🔗<shader_func_packUnorm4x8>`
 
     Packs floating-point values into an unsigned integer.
 
@@ -3406,7 +3406,7 @@ uint **packUnorm4x8**\ (\ vec4 v)
 
 .. rst-class:: classref-method
 
-vec4 **unpackUnorm4x8**\ (\ uint v)
+vec4 **unpackUnorm4x8**\ (\ uint v) :ref:`🔗<shader_func_unpackUnorm4x8>`
 
     Unpacks floating-point values from an unsigned integer.
 
@@ -3435,7 +3435,7 @@ vec4 **unpackUnorm4x8**\ (\ uint v)
 
 .. rst-class:: classref-method
 
-uint **packSnorm4x8**\ (\ vec4 v)
+uint **packSnorm4x8**\ (\ vec4 v) :ref:`🔗<shader_func_packSnorm4x8>`
 
     Packs floating-point values into an unsigned integer.
 
@@ -3467,7 +3467,7 @@ uint **packSnorm4x8**\ (\ vec4 v)
 
 .. rst-class:: classref-method
 
-vec4 **unpackSnorm4x8**\ (\ uint v)
+vec4 **unpackSnorm4x8**\ (\ uint v) :ref:`🔗<shader_func_unpackSnorm4x8>`
 
     Unpack floating-point values from an unsigned integer.
 
@@ -3554,7 +3554,7 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|vec_int_type| **bitfieldExtract**\ (\ |vec_int_type| value, int offset, int bits)
+|vec_int_type| **bitfieldExtract**\ (\ |vec_int_type| value, int offset, int bits) :ref:`🔗<shader_func_bitfieldExtract>`
 
     Extracts a subset of the bits of ``value`` and returns it in the least significant bits of the result.
     The range of bits extracted is ``[offset, offset + bits - 1]``.
@@ -3591,7 +3591,7 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **bitfieldExtract**\ (\ |vec_uint_type| value, int offset, int bits)
+|vec_uint_type| **bitfieldExtract**\ (\ |vec_uint_type| value, int offset, int bits) :ref:`🔗<shader_func_bitfieldExtract>`
 
     |componentwise|
 
@@ -3632,11 +3632,11 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **bitfieldExtract**\ (\ |vec_uint_type| value, int offset, int bits)
+|vec_uint_type| **bitfieldExtract**\ (\ |vec_uint_type| value, int offset, int bits) :ref:`🔗<shader_func_bitfieldInsert>`
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **bitfieldInsert**\ (\ |vec_uint_type| base, |vec_uint_type| insert, int offset, int bits)
+|vec_uint_type| **bitfieldInsert**\ (\ |vec_uint_type| base, |vec_uint_type| insert, int offset, int bits) :ref:`🔗<shader_func_bitfieldInsert>`
 
     |componentwise|
 
@@ -3679,11 +3679,11 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|vec_int_type| **bitfieldReverse**\ (\ |vec_int_type| value)
+|vec_int_type| **bitfieldReverse**\ (\ |vec_int_type| value) :ref:`🔗<shader_func_bitfieldReverse>`
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **bitfieldReverse**\ (\ |vec_uint_type| value)
+|vec_uint_type| **bitfieldReverse**\ (\ |vec_uint_type| value) :ref:`🔗<shader_func_bitfieldReverse>`
 
     |componentwise|
 
@@ -3708,11 +3708,11 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|vec_int_type| **bitCount**\ (\ |vec_int_type| value)
+|vec_int_type| **bitCount**\ (\ |vec_int_type| value) :ref:`🔗<shader_func_bitCount>`
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **bitCount**\ (\ |vec_uint_type| value)
+|vec_uint_type| **bitCount**\ (\ |vec_uint_type| value) :ref:`🔗<shader_func_bitCount>`
 
     |componentwise|
 
@@ -3735,11 +3735,11 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|vec_int_type| **findLSB**\ (\ |vec_int_type| value)
+|vec_int_type| **findLSB**\ (\ |vec_int_type| value) :ref:`🔗<shader_func_findLSB>`
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **findLSB**\ (\ |vec_uint_type| value)
+|vec_uint_type| **findLSB**\ (\ |vec_uint_type| value) :ref:`🔗<shader_func_findLSB>`
 
     |componentwise|
 
@@ -3764,11 +3764,11 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|vec_int_type| **findMSB**\ (\ |vec_int_type| value)
+|vec_int_type| **findMSB**\ (\ |vec_int_type| value) :ref:`🔗<shader_func_findMSB>`
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **findMSB**\ (\ |vec_uint_type| value)
+|vec_uint_type| **findMSB**\ (\ |vec_uint_type| value) :ref:`🔗<shader_func_findMSB>`
 
     |componentwise|
 
@@ -3798,7 +3798,7 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|void| **imulExtended**\ (\ |vec_int_type| x, |vec_int_type| y, out |vec_int_type| msb, out |vec_int_type| lsb)
+|void| **imulExtended**\ (\ |vec_int_type| x, |vec_int_type| y, out |vec_int_type| msb, out |vec_int_type| lsb) :ref:`🔗<shader_func_imulExtended>`
 
     |componentwise|
 
@@ -3829,7 +3829,7 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|void| **umulExtended**\ (\ |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| msb, out |vec_uint_type| lsb)
+|void| **umulExtended**\ (\ |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| msb, out |vec_uint_type| lsb) :ref:`🔗<shader_func_umulExtended>`
 
     |componentwise|
 
@@ -3860,7 +3860,7 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **uaddCarry**\ (\ |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| carry)
+|vec_uint_type| **uaddCarry**\ (\ |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| carry) :ref:`🔗<shader_func_uaddCarry>`
 
     |componentwise|
 
@@ -3892,7 +3892,7 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|vec_uint_type| **usubBorrow**\ (\ |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| borrow)
+|vec_uint_type| **usubBorrow**\ (\ |vec_uint_type| x, |vec_uint_type| y, out |vec_uint_type| borrow) :ref:`🔗<shader_func_usubBorrow>`
 
     |componentwise|
 
@@ -3921,7 +3921,7 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **ldexp**\ (\ |vec_type| x, out |vec_int_type| exp)
+|vec_type| **ldexp**\ (\ |vec_type| x, out |vec_int_type| exp) :ref:`🔗<shader_func_ldexp>`
 
     |componentwise|
 
@@ -3951,7 +3951,7 @@ Bitwise function descriptions
 
 .. rst-class:: classref-method
 
-|vec_type| **frexp**\ (\ |vec_type| x, out |vec_int_type| exp)
+|vec_type| **frexp**\ (\ |vec_type| x, out |vec_int_type| exp) :ref:`🔗<shader_func_frexp>`
 
     |componentwise|
 

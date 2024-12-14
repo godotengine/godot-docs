@@ -398,6 +398,7 @@ a.btn:hover {
 
 /* Style self-links to make them appear only on hover. */
 .classref-method > a[href*="-method-"].reference,
+.classref-method > a[href*="-func-"].reference,
 .classref-property > a[href*="-property-"].reference,
 .classref-signal > a[href*="-signal-"].reference,
 .classref-annotation > a[href*="-annotation-"].reference,
@@ -412,6 +413,7 @@ a.btn:hover {
     padding-right: 20px;
 }
 .classref-method:hover > a[href*="-method-"].reference,
+.classref-method:hover > a[href*="-func-"].reference,
 .classref-property:hover > a[href*="-property-"].reference,
 .classref-signal:hover > a[href*="-signal-"].reference,
 .classref-annotation:hover > a[href*="-annotation-"].reference,
