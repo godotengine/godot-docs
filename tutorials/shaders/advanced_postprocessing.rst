@@ -81,7 +81,7 @@ by using ``hint_depth_texture``.
 
 .. code-block:: glsl
 
-  uniform sampler2D depth_texture : source_color, hint_depth_texture;
+  uniform sampler2D depth_texture : hint_depth_texture;
 
 Once defined, the depth texture can be read with the ``texture()`` function.
 
@@ -178,7 +178,7 @@ line is commented out.
   // Prevent the quad from being affected by lighting and fog. This also improves performance.
   render_mode unshaded, fog_disabled;
 
-  uniform sampler2D depth_texture : source_color, hint_depth_texture;
+  uniform sampler2D depth_texture : hint_depth_texture;
 
   void vertex() {
     POSITION = vec4(VERTEX.xy, 1.0, 1.0);
