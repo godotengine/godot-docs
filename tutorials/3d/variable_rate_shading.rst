@@ -87,6 +87,8 @@ Using variable rate shading in Godot
     shading. VRS can be used in both pancake (non-XR) and XR display modes.
 
     The Compatibility renderer does **not** support variable rate shading.
+    For XR, you can use :ref:`foveation level <doc_openxr_settings_foveation_level>`
+    as an alternative.
 
 In the advanced Project Settings, the **Rendering > VRS** section offers settings
 to control variable rate shading on the root viewport:
