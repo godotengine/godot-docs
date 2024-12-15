@@ -101,6 +101,8 @@ The bindings below are developed and maintained by the community:
     Also, double-check whether the binding is compatible with the Godot version
     you're using.
 
+.. _doc_what_is_gdextension_version_compatibility:
+
 Version compatibility
 ---------------------
 
