@@ -525,5 +525,4 @@ exists is desirable:
         if object.has_method("smash"):
             object.smash()
 
-Then, simply define that method and anything the rock touches can be
-smashed.
+Then, define that method and anything the rock touches can be smashed.

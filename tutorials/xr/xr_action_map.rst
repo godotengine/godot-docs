@@ -52,7 +52,7 @@ Godot will automatically create a default action map if no action map file is fo
   It prevents having to design a proper action map for their game/application first.
 
 For this walkthrough we're going to start with a blank action map.
-You can simply delete the "Godot action set" entry at the top by pressing the trash can icon.
+You can delete the "Godot action set" entry at the top by pressing the trash can icon.
 This will clear out all actions.
 You might also want to remove the controllers that you do not wish to setup, more on this later.
 
@@ -257,7 +257,7 @@ Profiles
 --------
 
 In OpenXR controller bindings are captured in so-called "Interaction Profiles".
-We've simply shortened it to "Profiles" because it takes up less space.
+We've shortened it to "Profiles" because it takes up less space.
 
 This generic name is chosen because controllers don't cover the entire system.
 Currently there are also profiles for trackers, remotes and tracked pens.

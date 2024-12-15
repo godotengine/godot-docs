@@ -72,7 +72,7 @@ Adding a composition layer
 --------------------------
 
 The second step is adding our composition layer.
-We simply add the correct composition layer node as a child node of
+We can add the correct composition layer node as a child node of
 our :ref:`XROrigin3D <class_xrorigin3d>` node.
 This is very important as the XR runtime positions everything in relation to our origin.
 
@@ -263,7 +263,7 @@ Next we remember our state for next frame.
 
     ...
 
-Finally, if we aren't intersecting, we simply clear our state.
+Finally, if we aren't intersecting, we clear our state.
 
 .. code:: gdscript
 

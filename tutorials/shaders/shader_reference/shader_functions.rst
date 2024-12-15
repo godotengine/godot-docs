@@ -3645,7 +3645,7 @@ Bitwise function descriptions
     The returned value will have bits [offset, offset + bits + 1] taken from [0, bits - 1] of ``insert`` and
     all other bits taken directly from the corresponding bits of base.
 
-    .. note:: If bits is zero, the result will simply be the original value of base.
+    .. note:: If bits is zero, the result will be the original value of base.
 
     .. warning::
         The result will be undefined if:
