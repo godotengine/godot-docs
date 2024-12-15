@@ -260,7 +260,7 @@ without having to use NodePaths:
 
 .. note::
 
-    Node export is only supported in Node-derived classes. When a Node is
+    Node exporting is only supported in Node-derived classes. When a Node is
     saved to a PackedScene, using ``Node`` or ``Array[Node]`` will store a
     reference to a Node in the scene, but using ``Array`` or `Dictionary`
     to store Nodes will cause a copy of each Node to be created.
