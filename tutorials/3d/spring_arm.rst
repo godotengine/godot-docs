@@ -1,5 +1,3 @@
-:article_outdated: False
-
 .. _doc_spring_arm:
 
 Third-person camera with spring arm
