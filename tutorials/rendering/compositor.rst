@@ -12,8 +12,7 @@ a :ref:`Camera3D <class_Camera3D>` and apply only to
 the Viewport using that camera.
 
 The :ref:`Compositor <class_Compositor>` resource is used to configure
-the compositor. To get started, simply create a new compositor on
-the appropriate node:
+the compositor. To get started, create a new compositor on the appropriate node:
 
 .. image:: img/new_compositor.webp
 

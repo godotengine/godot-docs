@@ -47,7 +47,7 @@ be discarded. After clicking **Reimport**, the chosen parameters will only be
 used for this asset and on future reimports.
 
 Changing the import parameters of several assets at the same time is also
-possible. Simply select all of them together in the resources dock and the
+possible. Select all of them together in the FileSystem dock and the
 exposed parameters will apply to all of them when reimporting.
 
 Reimporting multiple assets

@@ -31,7 +31,11 @@ There are other XR related nodes and there is much more to say about these three
 Prerequisites for XR in Godot 4
 -------------------------------
 
-While in Godot 3 most things worked out of the box, Godot 4 needs a little more setup. This is mainly due to the more advanced nature of the Vulkan renderer. There are many rendering features in Vulkan the XR system uses that aren't enabled by default. They are very easy to turn on, simply open up your project settings and tick the XR shaders tickbox in the XR section:
+While in Godot 3 most things worked out of the box, Godot 4 needs a little more
+setup. This is mainly due to the more advanced nature of the Vulkan renderer.
+There are many rendering features in Vulkan the XR system uses that aren't
+enabled by default. To turn them on, open up your project settings and tick
+:ref:`XR > Shaders > Enabled <class_ProjectSettings_property_xr/shaders/enabled>`:
 
 .. image:: img/xr_shaders.png
 
