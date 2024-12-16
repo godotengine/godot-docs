@@ -88,6 +88,29 @@ additional nodes can be added as source geometry just for baking the navmesh.
     The baked cell size of the NavigationMesh must match the NavigationServer map cell
     size to properly merge the navigation meshes of different grid cells.
 
+MeshLibrary format
+------------------
+
+To summarize the specific constraints of the MeshLibrary format, a MeshLibrary
+scene has a Node3D as the root node, and several child nodes which will become
+MeshLibrary items. Each child of the root node should:
+
+- Be a :ref:`class_MeshInstance3D`, which will become the MeshLibrary item. Only
+  this visual mesh will be exported.
+- Have a material, in the mesh's material slot, *not* the MeshInstance3D's
+  material slots.
+- Have up to one :ref:`class_StaticBody3D` child, for collision. The
+  StaticBody3D should have one or more :ref:`class_CollisionShape3D` children.
+- Have up to one :ref:`class_NavigationRegion3D` child, for navigation. The
+  NavigationRegion3D can have one or more additional :ref:`class_MeshInstance3D`
+  children, which can be baked for navigation, but won't be exported as a visual
+  mesh.
+
+Only this specific format is recognized. Other node types placed as children
+will not be recognized and exported. GridMap is not a general-purpose system for
+placing *nodes* on a grid, but rather a specific, optimized system, designed to
+place *meshes* with collisions and navigation.
+
 Exporting the MeshLibrary
 -------------------------
 
