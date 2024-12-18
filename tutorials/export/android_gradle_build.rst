@@ -57,3 +57,20 @@ configuration is needed.
 
     For example, ``_example/image.png`` will **not** be included as an asset,
     but ``_image.png`` will.
+
+Disable Swipe-to-Dismiss on Wear OS
+-----------------------------------
+
+To disable swipe-to-dismiss functionality on Wear OS devices, follow these steps:
+
+1. Open the file ``res://android/build/res/values/themes.xml`` in your file editor.
+2. Add or update the ``android:windowSwipeToDismiss`` attribute to ``false`` in the `GodotAppMainTheme` style.
+
+Example:
+
+.. code-block:: xml
+
+    <style name="GodotAppMainTheme" parent="@android:style/Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:windowSwipeToDismiss">false</item>
+    </style>
