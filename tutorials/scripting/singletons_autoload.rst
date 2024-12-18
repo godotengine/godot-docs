@@ -153,8 +153,8 @@ Starting from the menu, open
 **Project > Project Settings > Globals > Autoload** and
 select the script by clicking the browse button or typing its path:
 ``res://global.gd``. Press **Add** to add it to the autoload list
-and name it "Global"(this is required for scripts to access it
-by the name "Global"):
+and name it "Global", which is required for scripts to access it
+by the name "Global":
 
 .. image:: img/autoload_tutorial1.webp
 
