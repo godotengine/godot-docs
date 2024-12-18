@@ -196,6 +196,7 @@ use the following `labels <https://github.com/godotengine/godot-docs/labels>`__:
 **Content:**
 
 -  *Images*: Issues and PRs involving outdated or incorrect images in articles.
+-  *Example code*: Issues and PRs involving writing or updating code examples.
 -  *New page*: Issues and PRs related to creation of new documentation pages for new or undocumented features.
 -  *Organization*: Issues and PRs related to reorganizing the content.
 -  *Proofreading*: Issues and PRs related to proofreading the documentation.
