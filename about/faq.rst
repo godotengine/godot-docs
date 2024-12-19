@@ -256,7 +256,7 @@ This will automatically perform the required steps for desktop integration.
 Alternatively, you can manually perform the steps that an installer would do for you:
 
 Windows
-^^^^^^^
+~~~~~~~
 
 - Move the Godot executable to a stable location (i.e. outside of your Downloads folder),
   so you don't accidentally move it and break the shortcut in the future.
@@ -267,14 +267,14 @@ Windows
   **Pin to Task Bar**.
 
 macOS
-^^^^^
+~~~~~
 
 Drag the extracted Godot application to ``/Applications/Godot.app``, then drag it
 to the Dock if desired. Spotlight will be able to find Godot as long as it's in
 ``/Applications`` or ``~/Applications``.
 
 Linux
-^^^^^
+~~~~~
 
 - Move the Godot binary to a stable location (i.e. outside of your Downloads folder),
   so you don't accidentally move it and break the shortcut in the future.
