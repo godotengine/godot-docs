@@ -11,7 +11,7 @@ CanvasItem shaders contain fewer built-in variables and functionality than
 with vertex, fragment, and light processor functions.
 
 Render modes
-^^^^^^^^^^^^
+------------
 
 +---------------------------------+----------------------------------------------------------------------+
 | Render mode                     | Description                                                          |
@@ -39,14 +39,14 @@ Render modes
 +---------------------------------+----------------------------------------------------------------------+
 
 Built-ins
-^^^^^^^^^
+---------
 
 Values marked as ``in`` are read-only. Values marked as ``out`` can optionally be written to and will
 not necessarily contain sensible values. Values marked as ``inout`` provide a sensible default
 value, and can optionally be written to. Samplers cannot be written to so they are not marked.
 
 Global built-ins
-^^^^^^^^^^^^^^^^
+----------------
 
 Global built-ins are available everywhere, including custom functions.
 
@@ -73,7 +73,7 @@ Global built-ins are available everywhere, including custom functions.
 +-------------------+------------------------------------------------------------------------------------------+
 
 Vertex built-ins
-^^^^^^^^^^^^^^^^
+----------------
 
 Vertex data (``VERTEX``) is presented in local space (pixel coordinates, relative to the Node2D's origin).
 If not written to, these values will not be modified and be passed through as they came.
@@ -148,7 +148,7 @@ is usually:
 
 
 Fragment built-ins
-^^^^^^^^^^^^^^^^^^
+------------------
 
 COLOR and TEXTURE
 ~~~~~~~~~~~~~~~~~
@@ -261,7 +261,7 @@ it to the ``NORMAL_MAP`` property. Godot will handle converting it for use in 2D
 +---------------------------------------------+---------------------------------------------------------------+
 
 Light built-ins
-^^^^^^^^^^^^^^^
+---------------
 
 Light processor functions work differently in Godot 4.x than they did in Godot
 3.x. In Godot 4.x all lighting is done during the regular draw pass. In other
@@ -332,7 +332,7 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 +----------------------------------+------------------------------------------------------------------------------+
 
 SDF functions
-^^^^^^^^^^^^^
+-------------
 
 There are a few additional functions implemented to sample an automatically
 generated Signed Distance Field texture. These functions available for the ``fragment()``

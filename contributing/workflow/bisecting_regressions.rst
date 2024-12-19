@@ -77,7 +77,7 @@ reproduce the bug.
     another contributor can continue bisecting from there.
 
 Determine the commit hashes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To start bisecting, you must first determine the commit hashes (identifiers) of
 the "bad" and "good" build. "bad" refers to the build that exhibits the bug,
@@ -138,7 +138,7 @@ instead of a commit hash. Note that unlike tagged releases or snapshot commit
 hashes, ``master`` is a perpetually moving target.
 
 Build the engine
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 :ref:`Get Godot's source code using Git <doc_getting_source>`. Once this
 is done, in the terminal window, use ``cd`` to reach the Godot repository
@@ -159,7 +159,7 @@ Compile Godot. This assumes you've set up a build environment:
     scons
 
 Run the engine
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Run the binary located in the ``bin/`` folder and try to reproduce the bug.
 

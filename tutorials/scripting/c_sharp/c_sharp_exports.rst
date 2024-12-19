@@ -497,7 +497,7 @@ certain C# arrays and the collection types defined in the ``Godot.Collections``
 namespace are Variant-compatible, therefore, only those types can be exported.
 
 Exporting Godot arrays
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: csharp
 
@@ -537,7 +537,7 @@ drag-and-dropping multiple files from the FileSystem dock.
     public Godot.Collections.Array<PackedScene> Scenes { get; set; }
 
 Exporting Godot dictionaries
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: csharp
 
@@ -571,7 +571,7 @@ The default value of Godot dictionaries is null. A different default can be spec
     };
 
 Exporting C# arrays
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 C# arrays can exported as long as the element type is a :ref:`Variant-compatible type <c_sharp_variant_compatible_types>`.
 

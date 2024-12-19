@@ -13,7 +13,7 @@ tradeoffs that aren't worth it for many games. As Godot favors ease of use by
 default, physical light units are disabled by default.
 
 Advantages of physical units
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you aim for photorealism in your project, using real world units as a basis
 can help make things easier to adjust. References for real world materials,
@@ -24,7 +24,7 @@ Using real world units in Godot can also be useful when porting a scene from
 other 3D software that uses physical light units (such as Blender).
 
 Disadvantages of physical units
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The biggest disadvantage of using physical light units is you will have to pay
 close attention to the dynamic range in use at a given time. You can run into
@@ -68,13 +68,13 @@ this performance impact, depth of field quality can be decreased in the advanced
 Project Settings.
 
 Enable the project setting
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Open the Project Settings, enable the **Advanced** toggle then enable
 **Rendering > Lights And Shadows > Use Physical Light Units**. Restart the editor.
 
 Configure the camera
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
 
@@ -136,7 +136,7 @@ for a description of CameraAttributesPhysical properties that are also available
 **not** using physical light units.
 
 Configure the environment
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
 
@@ -160,7 +160,7 @@ the :ref:`class_Environment` resource:
   is set, this energy is multiplied by the intensity.
 
 Configure the light nodes
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After enabling physical light units, 2 new properties become available in Light3D nodes:
 

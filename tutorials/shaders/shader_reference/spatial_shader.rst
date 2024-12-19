@@ -9,7 +9,7 @@ Spatial shaders are highly configurable with different render modes and differen
 write vertex, fragment, and light processor functions to affect how objects are drawn.
 
 Render modes
-^^^^^^^^^^^^
+------------
 For visual examples of these render modes, see :ref:`Standard Material 3D and ORM Material 3D<doc_standard_material_3d>`.
 
 +-------------------------------+------------------------------------------------------------------------------------------------------+
@@ -87,14 +87,14 @@ For visual examples of these render modes, see :ref:`Standard Material 3D and OR
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 
 Built-ins
-^^^^^^^^^
+---------
 
 Values marked as ``in`` are read-only. Values marked as ``out`` can optionally be written to and will
 not necessarily contain sensible values. Values marked as ``inout`` provide a sensible default
 value, and can optionally be written to. Samplers cannot be written to so they are not marked.
 
 Global built-ins
-^^^^^^^^^^^^^^^^
+----------------
 
 Global built-ins are available everywhere, including custom functions.
 
@@ -126,7 +126,7 @@ Global built-ins are available everywhere, including custom functions.
 +-----------------------------+-----------------------------------------------------------------------------------------------------+
 
 Vertex built-ins
-^^^^^^^^^^^^^^^^
+----------------
 
 Vertex data (``VERTEX``, ``NORMAL``, ``TANGENT``, and ``BITANGENT``) are presented in model space
 (also called local space). If not written to, these values will not be modified and be 
@@ -268,7 +268,7 @@ shader, this value can be used as desired.
     ``INV_VIEW_MATRIX`` is the matrix used for rendering the object in that pass, unlike ``MAIN_CAM_INV_VIEW_MATRIX``, which is the matrix of the camera in the scene. In the shadow pass, ``INV_VIEW_MATRIX``'s view is based on the camera that is located at the position of the light.
 
 Fragment built-ins
-^^^^^^^^^^^^^^^^^^
+------------------
 
 The default use of a Godot fragment processor function is to set up the material properties of your object
 and to let the built-in renderer handle the final shading. However, you are not required to use all
@@ -421,7 +421,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
     for more information and ways to avoid issues.
 
 Light built-ins
-^^^^^^^^^^^^^^^
+---------------
 
 Writing light processor functions is completely optional. You can skip the ``light()`` function by using
 the ``unshaded`` render mode. If no light function is written, Godot will use the material properties 

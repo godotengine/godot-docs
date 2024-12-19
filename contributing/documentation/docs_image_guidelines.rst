@@ -11,7 +11,7 @@ Images
 ------
 
 Capturing an image
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 To take a picture of something in Godot, a screen capture tool can be used.
 
@@ -37,7 +37,7 @@ resolution screen the screenshot should be scaled down. There are instructions
 on how to do this later on this page.
 
 Format conversion
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 The current format for images in Godot's documentation is WebP (``.webp``).
 While some Linux programs will support saving screenshots in this format, macOS
@@ -60,7 +60,7 @@ it may have the ability to open an image then save it as a WebP file.
     a 256-color palette with 1-bit transparency.
 
 Cropping
-^^^^^^^^
+~~~~~~~~
 
 For a screenshot of a 2D or 3D scene in the editor, the above steps will be enough.
 But for most UI images some extra work should be done, specifically cropping to
@@ -95,7 +95,7 @@ Krita and can be adjusted. Click on the image with your cropping tool still sele
 and the controls will return.
 
 Scaling down an image
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 As explained earlier on this page, all images taken on a screen that is a higher resolution
 than 1080p should be scaled down. To do this in Krita click on **Image** on the top bar, and
@@ -107,7 +107,7 @@ sure the **Constrain Proportions** box at the bottom of the menu is checked so y
 to change 1 value.
 
 Saving as WebP in Krita
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 To save an image as webp if it isn't already one, Go to **File > Save As**. Select **webp** from the
 **Save as type:** dropdown, then choose wherever you want to save it. After clicking **Save** a menu
@@ -120,7 +120,7 @@ If it's still over 300KB change to lossy compression and slowly increase the com
 size is bigger.
 
 Outlines, arrows and text
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sometimes an image needs something extra to properly direct the readers
 attention, or make something clear. Outlines and arrows can be used
@@ -145,7 +145,7 @@ be used if appropriate. For example, if yellow blends into the image, or if ther
 multiple outlines in multiple colors.
 
 Adding an image to a documentation page
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once you've finished working on your image, it can be added to the documentation.
 All images are stored in folders named ``img`` next to the page they are used in.
@@ -164,7 +164,7 @@ Videos
 ------
 
 Capturing a video
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 To record a video of something in Godot, a screen capture tool can be used.
 Operating systems generally don't come with tools that are flexible enough
@@ -188,7 +188,7 @@ use a resolution of 1280×720.
     recording on a slow device), but it's less flexible.
 
 Compressing the captured video
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The recommendation is to record your video in the highest quality possible
 (without dropping frames due to excessive CPU/GPU utilization), then re-encode

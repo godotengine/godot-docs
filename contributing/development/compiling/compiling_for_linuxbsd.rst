@@ -39,7 +39,7 @@ required:
 .. _doc_compiling_for_linuxbsd_oneliners:
 
 Distro-specific one-liners
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 

@@ -94,7 +94,7 @@ Now you need to add 3 components into your scene for each hand:
 .. image:: img/openxr_hand_tracking_nodes.webp
 
 Hand tracking node
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 The hand tracking system uses separate hand trackers to track the position of the player's hands
 within our tracking space. 
@@ -120,7 +120,7 @@ For this you need to add an :ref:`XRNode3D <class_xrnode3d>` node to your ``XROr
     or make this node visible if tracking data is available. 
 
 Rigged hand mesh
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 In order to display our hand we need a hand mesh that is properly rigged and skinned.
 For this Godot uses the hand bone structure as defined for the :ref:`Godot Humanoid <class_skeletonprofilehumanoid>`
@@ -133,7 +133,7 @@ We will be using those here and add them as a child to our ``XRNode3D`` node.
 We also need to enable editable children to gain access to our :ref:`Skeleton3D <class_skeleton3d>` node.
 
 The hand skeleton modifier
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Finally we need to add a :ref:`XRHandModifier3D <class_xrhandmodifier3d>` node as a child to our ``Skeleton3D`` node.
 This node will obtain the finger tracking data from OpenXR and apply it the hand model.
@@ -216,7 +216,7 @@ a number of extensions were added to the specification that provide some basic g
 and can be used with the action map.
 
 The hand interaction profile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `hand interaction profile extension <https://github.khronos.org/OpenXR-Inventory/extension_support.html#XR_EXT_hand_interaction>`_
 is a new core extension which supports pinch, grasp, and poke gestures and related poses.
@@ -257,7 +257,7 @@ thus seamlessly switch between controller and hand tracking input.
     You need to enable the hand interaction profile extension in the OpenXR project settings.
 
 Microsoft hand interaction profile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `Microsoft hand interaction profile extension <https://github.khronos.org/OpenXR-Inventory/extension_support.html#XR_MSFT_hand_interaction>`_
 was introduced by Microsoft and loosely mimics the simple controller profile.
@@ -280,7 +280,7 @@ With this setup the normal ``left_hand`` and ``right_hand`` trackers are used an
 thus seamlessly switch between controller and hand tracking input.
 
 HTC hand interaction profile
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The `HTC hand interaction profile extension <https://github.khronos.org/OpenXR-Inventory/extension_support.html#XR_HTC_hand_interaction>`_
 was introduced by HTC and is defined similarly to the Microsoft extension.
@@ -296,7 +296,7 @@ This means that extra logic needs to be implemented to switch between the defaul
 and the HTC specific trackers when the user puts down, or picks up, their controller.
 
 Simple controller profile
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The simple controller profile is a standard core profile defined as a fallback profile
 when a controller is used for which no profile exists.
@@ -337,7 +337,7 @@ thus seamlessly switch between controller and hand tracking input.
     and simple controller profiles.
 
 Gesture based input
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 If the platform doesn't support any interaction profiles when hand tracking is used,
 or if you're building an application where you need more complicated gesture support

@@ -206,7 +206,7 @@ double-precision builds and vice versa. Text-based resources don't store a
 double-precision flag, as they don't require such a flag for correct reading.
 
 Known incompatibilities
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 - In a networked multiplayer game, the server and all clients should be using
   the same build type to ensure precision remains consistent across clients.

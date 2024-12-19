@@ -65,7 +65,7 @@ image in the FileSystem dock:
 .. _doc_importing_images_changing_import_type:
 
 Changing import type
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 It is possible to choose other types of imported resources in the Import dock:
 
@@ -113,7 +113,7 @@ Here are templates you can use for cubemap images (right-click > **Save Link As�
 - :download:`6×1 cubemap template <img/cubemap_template_6x1.webp>`
 
 Detect 3D
-^^^^^^^^^
+~~~~~~~~~
 
 The default import options (no mipmaps and **Lossless** compression) are suited
 for 2D, but are not ideal for most 3D projects. **Detect 3D** makes Godot aware
@@ -152,7 +152,7 @@ Import options
 .. _doc_importing_images_compress_mode:
 
 Compress > Mode
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Images are one of the largest assets in a game. To handle them efficiently, they
 need to be compressed. Godot offers several compression methods, depending on
@@ -256,7 +256,7 @@ FileSystem dock, then looking at the Inspector:
    Previewing a texture in the Inspector. Credit: `Red Brick 03 - Poly Haven <https://polyhaven.com/a/red_brick_03>`__
 
 Compress > High Quality
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -279,7 +279,7 @@ BPTC and ASTC support VRAM compression for HDR textures, but S3TC and ETC2 do
 not (see **HDR Compression** below).
 
 Compress > HDR Compression
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -299,7 +299,7 @@ If set to **Always**, will force VRAM compression even for HDR textures with an
 alpha channel. To perform this, the alpha channel is discarded on import.
 
 Compress > Normal Map
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 When using a texture as normal map, only the red and green channels are
 required. Given regular texture compression algorithms produce artifacts that
@@ -337,7 +337,7 @@ using the same amount of memory as a standard RGBA VRAM-compressed texture:
   `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__.
 
 Compress > Channel Pack
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 If set to **sRGB Friendly** (default), prevents the RG color format from being
 used as it does not support sRGB color.
@@ -355,7 +355,7 @@ or **Basis Universal** compression modes.
 .. _doc_importing_images_mipmaps:
 
 Mipmaps > Generate
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 If enabled, smaller versions of the texture are generated on import. For
 example, a 64×64 texture will generate 6 mipmaps (32×32, 16×16, 8×8, 4×4, 2×2,
@@ -375,7 +375,7 @@ camera never zooms out significantly, there won't be a benefit to enabling
 mipmaps but memory usage will increase.
 
 Mipmaps > Limit
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 .. UPDATE: Not implemented. When Mipmaps > Limit is implemented, remove this
 .. warning and remove this comment.
@@ -389,13 +389,13 @@ can be generated. This can be decreased if you don't want textures to become too
 low-resolution at extreme distances, at the cost of some graininess.
 
 Roughness > Mode
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 The color channel to consider as a roughness map in this texture. Only effective if
 **Roughness > Src Normal** is not empty.
 
 Roughness > Src Normal
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 The path to the texture to consider as a normal map for roughness filtering on
 import. Specifying this can help decrease specular aliasing slightly in 3D.
@@ -403,7 +403,7 @@ import. Specifying this can help decrease specular aliasing slightly in 3D.
 Roughness filtering on import is only used in 3D rendering, not 2D.
 
 Process > Fix Alpha Border
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This puts pixels of the same surrounding color in transition from transparent to
 opaque areas. For textures displayed with bilinear filtering, this helps
@@ -415,7 +415,7 @@ It's recommended to leave this enabled (as it is by default), unless this causes
 issues for a particular image.
 
 Process > Premult Alpha
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 An alternative to fixing darkened borders with **Fix Alpha Border** is to use
 premultiplied alpha. By enabling this option, the texture will be converted to
@@ -429,7 +429,7 @@ displayed correctly:
   option is only suited for 2D.
 
 Process > Normal Map Invert Y
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot requires the normal map to use the X+, Y+ and Z+ coordinates, which is
 known as an OpenGL-style normal map. If you've imported a material made to be
@@ -441,7 +441,7 @@ popular engines) can be found
 `here <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details>`__.
 
 Process > HDR as sRGB
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 Some HDR images you can find online may be broken and contain sRGB color data
 (instead of linear color data). It is advised not to use those files. If you
@@ -453,7 +453,7 @@ absolutely have to, enabling this option on will make them look correct.
     resulting image to look too dark, so leave this disabled if unsure.
 
 Process > HDR Clamp Exposure
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some HDR panorama images you can find online may contain extremely bright
 pixels, due to being taken from real life sources without any clipping.
@@ -466,7 +466,7 @@ clamping formula that does not introduce *visible* clipping – glow will keep
 working when looking at the background sky.
 
 Process > Size Limit
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 If set to a value greater than ``0``, the size of the texture is limited on
 import to a value smaller than or equal to the value specified here. For
@@ -481,7 +481,7 @@ usually can't display textures larger than 4096×4096).
 .. _doc_importing_images_detect_3d_compress_to:
 
 Detect 3D > Compress To
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 This changes the :ref:`doc_importing_images_compress_mode` option that is used
 when a texture is detected as being used in 3D.
@@ -492,7 +492,7 @@ existing compress mode on a texture (if it's detected to be used in 3D), but
 choosing **VRAM Compressed** or **Basis Universal** will.
 
 SVG > Scale
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 *This is only available for SVG images.*
 
@@ -504,7 +504,7 @@ also **Editor > Scale With Editor Scale** below.
 .. _doc_importing_images_editor_import_options:
 
 Editor > Scale With Editor Scale
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *This is only available for SVG images.*
 
@@ -513,7 +513,7 @@ This should be enabled for editor plugin icons and custom class icons, but
 should be left disabled otherwise.
 
 Editor > Convert Colors With Editor Theme
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *This is only available for SVG images.*
 
@@ -549,7 +549,7 @@ Best practices
 --------------
 
 Supporting high-resolution texture sizes in 2D without artifacts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To support :ref:`multiple resolutions <doc_multiple_resolutions>` with crisp
 visuals at high resolutions, you will need to use high-resolution source images
@@ -575,7 +575,7 @@ to make textures sharper (at the cost of some graininess) by setting
 negative value.
 
 Use appropriate texture sizes in 3D
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While there's no "one size fits all" recommendation, here are some general
 recommendations for choosing texture sizes in 3D:

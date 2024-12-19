@@ -19,14 +19,14 @@ every froxel that is touched by an axis aligned bounding box of the associated
 touch a given :ref:`FogVolume <class_FogVolume>` will still be used.
 
 Built-ins
-^^^^^^^^^
+---------
 
 Values marked as ``in`` are read-only. Values marked as ``out`` can optionally 
 be written to and will not necessarily contain sensible values. Samplers cannot 
 be written to so they are not marked.
 
 Global built-ins
-^^^^^^^^^^^^^^^^
+----------------
 
 Global built-ins are available everywhere, including in custom functions.
 
@@ -54,7 +54,7 @@ Global built-ins are available everywhere, including in custom functions.
 +-----------------------------------+------------------------------------------------------------------------------------------+
 
 Fog built-ins
-^^^^^^^^^^^^^
+-------------
 
 All of the output values of fog volumes overlap one another. This allows
 :ref:`FogVolumes <class_FogVolume>` to be rendered efficiently as they can all

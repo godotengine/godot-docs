@@ -157,7 +157,7 @@ Below are some special nodes that are worth knowing about. The list is not
 exhaustive and might be expanded with more nodes and examples.
 
 Expression node
-+++++++++++++++
+~~~~~~~~~~~~~~~
 
 The ``Expression`` node allows you to write Godot Shading Language (GLSL-like)
 expressions inside your visual shaders. The node has buttons to add any amount
@@ -175,7 +175,7 @@ procedures, and use all the power of text-based shaders, such as loops, the
 .. image:: img/vs_expression2.png
 
 Reroute node
-++++++++++++
+~~~~~~~~~~~~
 
 The ``Reroute`` node is used purely for organizational purposes. In a complicated
 shader with many nodes you may find that the paths between nodes can make
@@ -191,7 +191,7 @@ appears.
 .. image:: img/vs_reroute_handle.webp
 
 Fresnel node
-++++++++++++
+~~~~~~~~~~~~
 
 The ``Fresnel`` node is designed to accept normal and view vectors and produces
 a scalar which is the saturated dot product between them. Additionally, you can
@@ -201,7 +201,7 @@ adding a rim-like lighting effect to objects.
 .. image:: img/vs_fresnel.webp
 
 Boolean node
-++++++++++++
+~~~~~~~~~~~~
 
 The ``Boolean`` node can be converted to ``Scalar`` or ``Vector`` to represent
 ``0`` or ``1`` and ``(0, 0, 0)`` or ``(1, 1, 1)`` respectively. This property
@@ -210,7 +210,7 @@ can be used to enable or disable some effect parts with one click.
 .. image:: img/vs_boolean.gif
 
 If node
-+++++++
+~~~~~~~
 
 The ``If`` node allows you to setup a vector which will be returned the result
 of the comparison between ``a`` and ``b``. There are three vectors which can be
@@ -221,7 +221,7 @@ comparison threshold – by default it is equal to the minimal value, i.e.
 .. image:: img/vs_if.png
 
 Switch node
-+++++++++++
+~~~~~~~~~~~
 
 The ``Switch`` node returns a vector if the boolean condition is ``true`` or
 ``false``. ``Boolean`` was introduced above. If you convert a vector to a true

@@ -134,7 +134,7 @@ Hints for performance
 ---------------------
 
 RAM usage
-^^^^^^^^^
+~~~~~~~~~
 
 Building the documentation requires at least 8 GB of RAM to run without disk swapping,
 which slows it down.
@@ -160,7 +160,7 @@ threads, ``-j auto`` (which corresponds to ``-j 32`` here) can require 20+ GB of
 RAM for Sphinx alone.
 
 Specifying a list of files
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can specify a list of files to build, which can greatly speed up compilation:
 
