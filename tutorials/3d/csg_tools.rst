@@ -91,14 +91,31 @@ The :ref:`CSGPolygon3D <class_CSGPolygon3D>` node extrude along a Polygon drawn 
 Custom meshes
 ~~~~~~~~~~~~~
 
-Any mesh can be used for :ref:`CSGMesh3D <class_CSGMesh3D>`; the mesh can be
-modeled in other software and imported into Godot. Multiple materials are
-supported. There are some restrictions for geometry:
+Custom meshes can be used for :ref:`CSGMesh3D <class_CSGMesh3D>` as long as the
+mesh is *manifold*. The mesh can be modeled in other software and imported into
+Godot. Multiple materials are supported. 
 
-- it must be closed,
-- it must not self-intersect,
-- it must not contain internal faces,
-- every edge must connect to only two other faces.
+For a mesh to be used as a CSG mesh, it is required to:
+
+- be closed
+- have each edge connect to only two faces
+- have volume
+
+And it is recommended to avoid:
+
+- negative volume
+- self-intersection
+- interior faces
+
+Godot uses the `manifold <https://github.com/elalish/manifold>`__ library to
+implement CSG meshes. The technical definition of "manifold" used by Godot is
+the following, adapted from that library's `definition of "manifold"
+<https://github.com/elalish/manifold/wiki/Manifold-Library#manifoldness-definition>`__:
+
+  Every edge of every triangle must contain the same two vertices (by index) as
+  exactly one other triangle edge, and the start and end vertices must switch
+  places between these two edges. The triangle vertices must appear in clockwise
+  order when viewed from the outside of the Godot Engine manifold mesh.
 
 .. image:: img/csg_custom_mesh.png
 
