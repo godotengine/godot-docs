@@ -644,7 +644,7 @@ which accept positive and negative values:
 - **Top:** Additional spacing above glyphs. This is used for multiline text,
   but also to calculate the minimum size of controls such as :ref:`class_Label`
   and :ref:`class_Button`.
-- **Top:** Additional spacing below glyphs. This is used for multiline text,
+- **Bottom:** Additional spacing below glyphs. This is used for multiline text,
   but also to calculate the minimum size of controls such as :ref:`class_Label`
   and :ref:`class_Button`.
 
