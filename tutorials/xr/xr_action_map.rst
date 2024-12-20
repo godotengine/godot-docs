@@ -385,3 +385,124 @@ This is why many XR runtimes only use it as a last resort and will attempt to us
   This is our advice as well: limit your action map to the interaction profiles for devices you have actually tested your game with.
   The Oculus Touch controller is widely used as a fallback controller by many runtimes.
   If you are able to test your game using a Meta Rift or Quest and add this profile there is a high probability your game will work with other headsets.
+
+Binding Modifiers
+-----------------
+
+While one of the main goals of the action map is to remove the need for the application to know the hardware used, sometimes the hardware has physical differences that require inputs to be altered in ways other than how they are bound to actions. This need ranges from setting thresholds, to altering the inputs available on a controller.
+
+Currently OpenXR supports two binding modifiers that have been implemented in Godot but more are likely to follow in the future.
+
+These binding modifiers are not enabled by default and require enabling in the OpenXR project settings. Also there is no guarantee that these modifiers are supported by every runtime. You will need to consult the support for the runtimes you are targeting and decide whether to rely on the modifiers or implement some form of fallback mechanism.
+
+If you are targeting multiple runtimes that have support for the same controllers, you may need to create separate action maps for each runtime. You can control which action map Godot uses by using different export templates for each runtime and using a custom :ref:`feature tag <doc_feature_tags>` to set the action map.
+
+In Godot, Binding modifiers are divided into two groups. Modifiers that work on the interaction profile level, and modifiers that work on individual bindings.
+
+Binding modifiers on an interaction profile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Binding modifiers that are applied to the whole interaction profile can be accessed through the modifier button on the right side of the interaction profile editor.
+
+.. image:: img/openxr_ip_binding_modifier.webp
+
+You can add a new modifier by pressing the ``Add binding modifier`` button.
+
+.. warning::
+  As Godot doesn't know which controllers and runtimes support a modifier,
+  there is no restriction to adding modifiers.
+  Unsupported modifiers will be filtered out at runtime.
+
+Dpad Binding modifier
+"""""""""""""""""""""
+
+The Dpad binding modifier adds new inputs to an interaction profile for each joystick and thumbpad input on this controller. It turns the input into a Dpad with separate up, down, left and right inputs that are exposed as buttons:
+
+.. image:: img/openxr_thumbstick_dpad.webp
+
+.. note::
+  Inputs related to extensions are denoted with an asterix.
+
+In order to use the Dpad binding modifier you need to enable the Dpad binding modifier extension in project settings:
+
+.. image:: img/openxr_project_settings_dpad_modifier.webp
+
+Enabling the extension is enough to make this functionality work using default settings.
+
+Adding the modifier is optional and allows you to fine tune the way the Dpad functionality behaves. You can add the modifier multiple times to set different settings for different inputs.
+
+.. image:: img/openxr_dpad_modifier.webp
+
+These settings are used as follows:
+
+  * ``Action Set`` defines the action set to which these settings are applied.
+  * ``Input Path`` defines the original input that is mapped to the new Dpad inputs.
+  * ``Threshold`` specifies the threshold value that will enable a dpad action, e.g. a value of ``0.6`` means that if the distance from center goes above ``0.6`` the dpad action is pressed.
+  * ``Threshold Released`` specifies the threshold value that will disable a dpad action, e.g. a value of ``0.4`` means that if the distance from center goes below ``0.4`` the dpad action is released.
+  * ``Center Region`` specifies the distance from center that enabled the center action, this is only supported for trackpads.
+  * ``Wedge Angle`` specifies the angle of each wedge.
+    A value of ``90 degrees`` or lower means that up, down, left and right each have a separate slice in which they are in the pressed state.
+    A value above ``90 degrees`` means that the slices overlap and that multiple actions can be in the pressed state.
+  * ``Is Sticky``, when enabled means that an action stays in the pressed state until the thumbstick or trackpad moves into another wedge even if it has left the wedge for that action.
+  * ``On Haptic`` lets us define a haptic output that is automatically activated when an action becomes pressed.
+  * ``Off Haptic`` lets us define a haptic output that is automatically activated when a action is released.
+
+
+Binding modifiers on individual bindings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Binding modifiers that are applied to individual bindings can be accessed through the binding modifier button next to action attached to an input:
+
+.. image:: img/openxr_action_binding_modifier.webp
+
+You can add a new modifier by pressing the ``Add binding modifier`` button.
+
+.. warning::
+  As Godot doesn't know which inputs on each runtime support a modifier,
+  there is no restriction to adding modifiers.
+  If the modifier extension is unsupported, modifiers will be filtered out at runtime.
+  Modifiers added to the wrong input may result in a runtime error.
+
+  You should test your action map on the actual hardware and runtime to verify the proper setup.
+
+Analog threshold modifier
+"""""""""""""""""""""""""
+
+The analog threshold modifier allows you to specify the thresholds used for any analog input, like the trigger, that has a boolean input. This controls when the input is in the pressed state.
+
+In order to use this modifier you must enable the analog threshold extension in the project settings:
+
+.. image:: img/openxr_project_settings_analog_threshold_modifier.webp
+
+The analog threshold modifier has the following settings:
+
+.. image:: img/openxr_analog_threshold_modifier.webp
+
+These are defined as follows:
+
+  * ``On Threshold`` specifies the threshold value that will enable the action, e.g. a value of ``0.6`` means that when the analog value gets above ``0.6`` the action is set to the pressed state.
+  * ``Off Threshold`` specifies the threshold value that will disable the action, e.g. a value of ``0.4`` means that when the analog value goes below ``0.4`` the action is set in to the released state.
+  * ``On Haptic`` lets us define a haptic output that is automatically activated when the input is pressed.
+  * ``Off Haptic`` lets us define a haptic output that is automatically activated when the input is released.
+
+Haptics on modifiers
+^^^^^^^^^^^^^^^^^^^^
+
+Modifiers can support automatic haptic output that is triggered when thresholds are reached.
+
+.. note::
+  Currently both available modifiers support this feature however there is no rule future modifiers also have this capability.
+  Only one type of haptic feedback is supported but in the future other options may become available.
+
+Haptic vibration
+================
+
+The haptic vibration allows us to specify a simple haptic pulse:
+
+.. image:: img/openxr_haptic_vibration.webp
+
+It has the following options:
+
+  * ``Duration`` is the duration of the pulse in nanoseconds. ``-1`` lets the runtime choose an optimal value for a short pulse suitable for the current hardware.
+  * ``Frequency`` is the frequency of the pulse in Hz. ``0`` lets the runtime choose an optimal frequency for a short pulse suitable for the current hardware.
+  * ``Amplitude`` is the amplitude of the pulse.
