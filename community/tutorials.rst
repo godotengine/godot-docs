@@ -22,7 +22,7 @@ Some tutorials mentioned below cover more advanced subjects, e.g. on 3D or shade
 Video tutorials
 ---------------
 
-For video tutorials we recommend looking on `YouTube <https://www.youtube.com/>`_. There's many great
+For video tutorials we recommend looking on `YouTube <https://www.youtube.com/>`_. There are many great
 channels covering a wide array of subjects.
 
 Text tutorials
@@ -35,16 +35,12 @@ Text tutorials
 - `Game Dev Artisan website <https://gamedevartisan.com/>`__
 - `Night Quest Games Blog <https://www.nightquestgames.com/blog-articles/>`__
 
-Video tutorials
---------------
-
-- `Queble (2D, GDScript) <https://www.youtube.com/@queblegamedevelopment4143/videos>`_
-
 Devlogs
 -------
 
 - `bitbrain <https://www.youtube.com/@bitbraindev>`_
 - `DevDuck (2D) <https://www.youtube.com/@devduck/videos>`_
+- `Queble (2D) <https://www.youtube.com/@queblegamedevelopment4143/videos>`_
 
 Resources
 ---------
