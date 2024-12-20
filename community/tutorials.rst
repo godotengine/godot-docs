@@ -35,6 +35,11 @@ Text tutorials
 - `Game Dev Artisan website <https://gamedevartisan.com/>`__
 - `Night Quest Games Blog <https://www.nightquestgames.com/blog-articles/>`__
 
+Video tutorials
+--------------
+
+- `Queble (2D, GDScript) <https://www.youtube.com/@queblegamedevelopment4143/videos>`_
+
 Devlogs
 -------
 
