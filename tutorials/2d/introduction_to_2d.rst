@@ -71,7 +71,7 @@ from left to right:
   :ref:`doc_introduction_to_2d_the_viewport` for more details.
 - **Rotate Mode** (:kbd:`E`): Enables rotation mode for the selected nodes. See 
   :ref:`doc_introduction_to_2d_the_viewport` for more details.
-- **Scale Mode** (:kbd:`R`): Enables scaling and displays scaling gizmos in both 
+- **Scale Mode** (:kbd:`S`): Enables scaling and displays scaling gizmos in both 
   axes for the selected node(s). See :ref:`doc_introduction_to_2d_the_viewport` for more details.
 - **Show list of selectable nodes at position clicked**: As the description suggests, 
   this provides a list of selectable nodes at the clicked position as a context menu, if 
@@ -91,7 +91,7 @@ from left to right:
   x and y coordinates. Dragging from a position to another one measures the distance in pixels.
   If you drag diagonally, it will draw a triangle and show the separate distances in terms 
   of x, y, and total distance to the target, including the angles to the axes in degrees.
-  The :kbd:`R` key also activates the ruler. If snapping is enabled, it also displays the 
+  The :kbd:`R` key activates the ruler. If snapping is enabled, it also displays the 
   measurements in terms of grid count:
 
 .. figure:: img/2d_ruler_with_snap.webp
