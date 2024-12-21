@@ -147,6 +147,12 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`canvas_item_create<class_RenderingServer_method_canvas_item_create>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                                                    | :ref:`canvas_item_get_instance_shader_parameter<class_RenderingServer_method_canvas_item_get_instance_shader_parameter>`\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                                                    | :ref:`canvas_item_get_instance_shader_parameter_default_value<class_RenderingServer_method_canvas_item_get_instance_shader_parameter_default_value>`\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\]                 | :ref:`canvas_item_get_instance_shader_parameter_list<class_RenderingServer_method_canvas_item_get_instance_shader_parameter_list>`\ (\ instance\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`canvas_item_reset_physics_interpolation<class_RenderingServer_method_canvas_item_reset_physics_interpolation>`\ (\ item\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`canvas_item_set_canvas_group_mode<class_RenderingServer_method_canvas_item_set_canvas_group_mode>`\ (\ item\: :ref:`RID<class_RID>`, mode\: :ref:`CanvasGroupMode<enum_RenderingServer_CanvasGroupMode>`, clear_margin\: :ref:`float<class_float>` = 5.0, fit_empty\: :ref:`bool<class_bool>` = false, fit_margin\: :ref:`float<class_float>` = 0.0, blur_mipmaps\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                                                                                                                                                            |
@@ -166,6 +172,8 @@ Methods
    | |void|                                                                           | :ref:`canvas_item_set_draw_behind_parent<class_RenderingServer_method_canvas_item_set_draw_behind_parent>`\ (\ item\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`canvas_item_set_draw_index<class_RenderingServer_method_canvas_item_set_draw_index>`\ (\ item\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`canvas_item_set_instance_shader_parameter<class_RenderingServer_method_canvas_item_set_instance_shader_parameter>`\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`canvas_item_set_interpolated<class_RenderingServer_method_canvas_item_set_interpolated>`\ (\ item\: :ref:`RID<class_RID>`, interpolated\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -633,6 +641,8 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`mesh_surface_get_material<class_RenderingServer_method_mesh_surface_get_material>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`mesh_surface_remove<class_RenderingServer_method_mesh_surface_remove>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`mesh_surface_set_material<class_RenderingServer_method_mesh_surface_set_material>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`, material\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`mesh_surface_update_attribute_region<class_RenderingServer_method_mesh_surface_update_attribute_region>`\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`, offset\: :ref:`int<class_int>`, data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -958,6 +968,8 @@ Methods
    | |void|                                                                           | :ref:`viewport_remove_canvas<class_RenderingServer_method_viewport_remove_canvas>`\ (\ viewport\: :ref:`RID<class_RID>`, canvas\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`viewport_set_active<class_RenderingServer_method_viewport_set_active>`\ (\ viewport\: :ref:`RID<class_RID>`, active\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+   +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                           | :ref:`viewport_set_anisotropic_filtering_level<class_RenderingServer_method_viewport_set_anisotropic_filtering_level>`\ (\ viewport\: :ref:`RID<class_RID>`, anisotropic_filtering_level\: :ref:`ViewportAnisotropicFiltering<enum_RenderingServer_ViewportAnisotropicFiltering>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                    |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`viewport_set_canvas_cull_mask<class_RenderingServer_method_viewport_set_canvas_cull_mask>`\ (\ viewport\: :ref:`RID<class_RID>`, canvas_cull_mask\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3301,6 +3313,64 @@ Multisample antialiasing uses 8 samples per pixel for 3D. This has a very high i
 :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` **VIEWPORT_MSAA_MAX** = ``4``
 
 Represents the size of the :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` enum.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_RenderingServer_ViewportAnisotropicFiltering:
+
+.. rst-class:: classref-enumeration
+
+enum **ViewportAnisotropicFiltering**: :ref:`🔗<enum_RenderingServer_ViewportAnisotropicFiltering>`
+
+.. _class_RenderingServer_constant_VIEWPORT_ANISOTROPY_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportAnisotropicFiltering<enum_RenderingServer_ViewportAnisotropicFiltering>` **VIEWPORT_ANISOTROPY_DISABLED** = ``0``
+
+Anisotropic filtering is disabled.
+
+.. _class_RenderingServer_constant_VIEWPORT_ANISOTROPY_2X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportAnisotropicFiltering<enum_RenderingServer_ViewportAnisotropicFiltering>` **VIEWPORT_ANISOTROPY_2X** = ``1``
+
+Use 2× anisotropic filtering.
+
+.. _class_RenderingServer_constant_VIEWPORT_ANISOTROPY_4X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportAnisotropicFiltering<enum_RenderingServer_ViewportAnisotropicFiltering>` **VIEWPORT_ANISOTROPY_4X** = ``2``
+
+Use 4× anisotropic filtering. This is the default value.
+
+.. _class_RenderingServer_constant_VIEWPORT_ANISOTROPY_8X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportAnisotropicFiltering<enum_RenderingServer_ViewportAnisotropicFiltering>` **VIEWPORT_ANISOTROPY_8X** = ``3``
+
+Use 8× anisotropic filtering.
+
+.. _class_RenderingServer_constant_VIEWPORT_ANISOTROPY_16X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportAnisotropicFiltering<enum_RenderingServer_ViewportAnisotropicFiltering>` **VIEWPORT_ANISOTROPY_16X** = ``4``
+
+Use 16× anisotropic filtering.
+
+.. _class_RenderingServer_constant_VIEWPORT_ANISOTROPY_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportAnisotropicFiltering<enum_RenderingServer_ViewportAnisotropicFiltering>` **VIEWPORT_ANISOTROPY_MAX** = ``5``
+
+Represents the size of the :ref:`ViewportAnisotropicFiltering<enum_RenderingServer_ViewportAnisotropicFiltering>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -6514,6 +6584,44 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 ----
 
+.. _class_RenderingServer_method_canvas_item_get_instance_shader_parameter:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **canvas_item_get_instance_shader_parameter**\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_RenderingServer_method_canvas_item_get_instance_shader_parameter>`
+
+Returns the value of the per-instance shader uniform from the specified canvas item instance. Equivalent to :ref:`CanvasItem.get_instance_shader_parameter<class_CanvasItem_method_get_instance_shader_parameter>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_canvas_item_get_instance_shader_parameter_default_value:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **canvas_item_get_instance_shader_parameter_default_value**\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_RenderingServer_method_canvas_item_get_instance_shader_parameter_default_value>`
+
+Returns the default value of the per-instance shader uniform from the specified canvas item instance. Equivalent to :ref:`CanvasItem.get_instance_shader_parameter<class_CanvasItem_method_get_instance_shader_parameter>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_canvas_item_get_instance_shader_parameter_list:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **canvas_item_get_instance_shader_parameter_list**\ (\ instance\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_RenderingServer_method_canvas_item_get_instance_shader_parameter_list>`
+
+Returns a dictionary of per-instance shader uniform names of the per-instance shader uniform from the specified canvas item instance.
+
+The returned dictionary is in PropertyInfo format, with the keys ``name``, ``class_name``, ``type``, ``hint``, ``hint_string``, and ``usage``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_canvas_item_reset_physics_interpolation:
 
 .. rst-class:: classref-method
@@ -6635,6 +6743,18 @@ If ``enabled`` is ``true``, draws the canvas item specified by the ``item`` RID 
 |void| **canvas_item_set_draw_index**\ (\ item\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_set_draw_index>`
 
 Sets the index for the :ref:`CanvasItem<class_CanvasItem>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_canvas_item_set_instance_shader_parameter:
+
+.. rst-class:: classref-method
+
+|void| **canvas_item_set_instance_shader_parameter**\ (\ instance\: :ref:`RID<class_RID>`, parameter\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ ) :ref:`🔗<class_RenderingServer_method_canvas_item_set_instance_shader_parameter>`
+
+Sets the per-instance shader uniform on the specified canvas item instance. Equivalent to :ref:`CanvasItem.set_instance_shader_parameter<class_CanvasItem_method_set_instance_shader_parameter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9622,6 +9742,18 @@ Returns a mesh's surface's material.
 
 ----
 
+.. _class_RenderingServer_method_mesh_surface_remove:
+
+.. rst-class:: classref-method
+
+|void| **mesh_surface_remove**\ (\ mesh\: :ref:`RID<class_RID>`, surface\: :ref:`int<class_int>`\ ) :ref:`🔗<class_RenderingServer_method_mesh_surface_remove>`
+
+Removes the surface at the given index from the Mesh, shifting surfaces with higher index down by one.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_mesh_surface_set_material:
 
 .. rst-class:: classref-method
@@ -11777,6 +11909,24 @@ Detaches a viewport from a canvas.
 |void| **viewport_set_active**\ (\ viewport\: :ref:`RID<class_RID>`, active\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_active>`
 
 If ``true``, sets the viewport active, else sets it inactive.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_viewport_set_anisotropic_filtering_level:
+
+.. rst-class:: classref-method
+
+|void| **viewport_set_anisotropic_filtering_level**\ (\ viewport\: :ref:`RID<class_RID>`, anisotropic_filtering_level\: :ref:`ViewportAnisotropicFiltering<enum_RenderingServer_ViewportAnisotropicFiltering>`\ ) :ref:`🔗<class_RenderingServer_method_viewport_set_anisotropic_filtering_level>`
+
+Sets the maximum number of samples to take when using anisotropic filtering on textures (as a power of two). A higher sample count will result in sharper textures at oblique angles, but is more expensive to compute. A value of ``0`` forcibly disables anisotropic filtering, even on materials where it is enabled.
+
+The anisotropic filtering level also affects decals and light projectors if they are configured to use anisotropic filtering. See :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>` and :ref:`ProjectSettings.rendering/textures/light_projectors/filter<class_ProjectSettings_property_rendering/textures/light_projectors/filter>`.
+
+\ **Note:** In 3D, for this setting to have an effect, set :ref:`BaseMaterial3D.texture_filter<class_BaseMaterial3D_property_texture_filter>` to :ref:`BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC<class_BaseMaterial3D_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC>` or :ref:`BaseMaterial3D.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC<class_BaseMaterial3D_constant_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC>` on materials.
+
+\ **Note:** In 2D, for this setting to have an effect, set :ref:`CanvasItem.texture_filter<class_CanvasItem_property_texture_filter>` to :ref:`CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC<class_CanvasItem_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC>` or :ref:`CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC<class_CanvasItem_constant_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC>` on the :ref:`CanvasItem<class_CanvasItem>` node displaying the texture (or in :ref:`CanvasTexture<class_CanvasTexture>`). However, anisotropic filtering is rarely useful in 2D, so only enable it for textures in 2D if it makes a meaningful visual difference.
 
 .. rst-class:: classref-item-separator
 

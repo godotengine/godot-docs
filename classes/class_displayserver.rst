@@ -650,6 +650,14 @@ The display server supports initiating window drag operation on demand. See :ref
 
 Display server supports :ref:`WINDOW_FLAG_EXCLUDE_FROM_CAPTURE<class_DisplayServer_constant_WINDOW_FLAG_EXCLUDE_FROM_CAPTURE>` window flag.
 
+.. _class_DisplayServer_constant_FEATURE_WINDOW_EMBEDDING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_WINDOW_EMBEDDING** = ``29``
+
+Display server supports embedding a window from another process. **Windows, Linux (X11)**
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1890,7 +1898,7 @@ Returns OS theme accent color. Returns ``Color(0, 0, 0, 0)``, if accent color is
 
 Returns the OS theme base color (default control background). Returns ``Color(0, 0, 0, 0)`` if the base color is unknown.
 
-\ **Note:** This method is implemented on macOS and Windows.
+\ **Note:** This method is implemented on macOS, Windows, and Android.
 
 .. rst-class:: classref-item-separator
 
@@ -4597,7 +4605,7 @@ Sets the ``callback`` that will be called when an event occurs in the window spe
 
 Starts a drag operation on the window with the given ``window_id``, using the current mouse position. Call this method when handling a mouse button being pressed to simulate a pressed event on the window's title bar. Using this method allows the window to participate in space switching, tiling, and other system features.
 
-\ **Note:** This method is implemented only on macOS.
+\ **Note:** This method is implemented on Linux(X11/Wayland), macOS, and Windows.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

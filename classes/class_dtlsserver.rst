@@ -43,8 +43,8 @@ Below a small example of how to use it:
     
     func _process(delta):
         while server.is_connection_available():
-            var peer: PacketPeerUDP = server.take_connection()
-            var dtls_peer: PacketPeerDTLS = dtls.take_connection(peer)
+            var peer = server.take_connection()
+            var dtls_peer = dtls.take_connection(peer)
             if dtls_peer.get_status() != PacketPeerDTLS.STATUS_HANDSHAKING:
                 continue # It is normal that 50% of the connections fails due to cookie exchange.
             print("Peer connected!")

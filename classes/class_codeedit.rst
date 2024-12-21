@@ -74,6 +74,8 @@ Properties
    +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                  | :ref:`symbol_lookup_on_click<class_CodeEdit_property_symbol_lookup_on_click>`                                     | ``false``                                                                 |
    +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`symbol_tooltip_on_hover<class_CodeEdit_property_symbol_tooltip_on_hover>`                                   | ``false``                                                                 |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`TextDirection<enum_Control_TextDirection>`         | text_direction                                                                                                    | ``1`` (overrides :ref:`TextEdit<class_TextEdit_property_text_direction>`) |
    +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
@@ -326,6 +328,20 @@ Emitted when the user requests code completion. This signal will not be sent if 
 
 ----
 
+.. _class_CodeEdit_signal_symbol_hovered:
+
+.. rst-class:: classref-signal
+
+**symbol_hovered**\ (\ symbol\: :ref:`String<class_String>`, line\: :ref:`int<class_int>`, column\: :ref:`int<class_int>`\ ) :ref:`🔗<class_CodeEdit_signal_symbol_hovered>`
+
+Emitted when the user hovers over a symbol. Unlike :ref:`Control.mouse_entered<class_Control_signal_mouse_entered>`, this signal is not emitted immediately, but when the cursor is over the symbol for :ref:`ProjectSettings.gui/timers/tooltip_delay_sec<class_ProjectSettings_property_gui/timers/tooltip_delay_sec>` seconds.
+
+\ **Note:** :ref:`symbol_tooltip_on_hover<class_CodeEdit_property_symbol_tooltip_on_hover>` must be ``true`` for this signal to be emitted.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CodeEdit_signal_symbol_lookup:
 
 .. rst-class:: classref-signal
@@ -345,6 +361,8 @@ Emitted when the user has clicked on a valid symbol.
 **symbol_validate**\ (\ symbol\: :ref:`String<class_String>`\ ) :ref:`🔗<class_CodeEdit_signal_symbol_validate>`
 
 Emitted when the user hovers over a symbol. The symbol should be validated and responded to, by calling :ref:`set_symbol_lookup_word_as_valid<class_CodeEdit_method_set_symbol_lookup_word_as_valid>`.
+
+\ **Note:** :ref:`symbol_lookup_on_click<class_CodeEdit_property_symbol_lookup_on_click>` must be ``true`` for this signal to be emitted.
 
 .. rst-class:: classref-section-separator
 
@@ -827,6 +845,23 @@ Draws vertical lines at the provided columns. The first entry is considered a ma
 - :ref:`bool<class_bool>` **is_symbol_lookup_on_click_enabled**\ (\ )
 
 Set when a validated word from :ref:`symbol_validate<class_CodeEdit_signal_symbol_validate>` is clicked, the :ref:`symbol_lookup<class_CodeEdit_signal_symbol_lookup>` should be emitted.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CodeEdit_property_symbol_tooltip_on_hover:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **symbol_tooltip_on_hover** = ``false`` :ref:`🔗<class_CodeEdit_property_symbol_tooltip_on_hover>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_symbol_tooltip_on_hover_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_symbol_tooltip_on_hover_enabled**\ (\ )
+
+Set when a word is hovered, the :ref:`symbol_hovered<class_CodeEdit_signal_symbol_hovered>` should be emitted.
 
 .. rst-class:: classref-section-separator
 

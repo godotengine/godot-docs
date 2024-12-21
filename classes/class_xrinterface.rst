@@ -621,9 +621,9 @@ Sets the active environment blend mode.
 ::
 
     func _ready():
-        var xr_interface: XRInterface = XRServer.find_interface("OpenXR")
+        var xr_interface = XRServer.find_interface("OpenXR")
         if xr_interface and xr_interface.is_initialized():
-            var vp: Viewport = get_viewport()
+            var vp = get_viewport()
             vp.use_xr = true
             var acceptable_modes = [XRInterface.XR_ENV_BLEND_MODE_OPAQUE, XRInterface.XR_ENV_BLEND_MODE_ADDITIVE]
             var modes = xr_interface.get_supported_environment_blend_modes()

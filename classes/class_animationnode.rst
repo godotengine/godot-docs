@@ -12,7 +12,7 @@ AnimationNode
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AnimationNodeOutput<class_AnimationNodeOutput>`, :ref:`AnimationNodeSync<class_AnimationNodeSync>`, :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>`, :ref:`AnimationNodeTimeSeek<class_AnimationNodeTimeSeek>`, :ref:`AnimationRootNode<class_AnimationRootNode>`
+**Inherited By:** :ref:`AnimationNodeExtension<class_AnimationNodeExtension>`, :ref:`AnimationNodeOutput<class_AnimationNodeOutput>`, :ref:`AnimationNodeSync<class_AnimationNodeSync>`, :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>`, :ref:`AnimationNodeTimeSeek<class_AnimationNodeTimeSeek>`, :ref:`AnimationRootNode<class_AnimationRootNode>`
 
 Base class for :ref:`AnimationTree<class_AnimationTree>` nodes. Not related to scene nodes.
 
@@ -437,7 +437,7 @@ Gets the value of a parameter. Parameters are custom local memory used for your 
 
 Returns the object id of the :ref:`AnimationTree<class_AnimationTree>` that owns this node.
 
-\ **Note:** This method should only be called from within the :ref:`AnimationNodeExtension._process<class_AnimationNodeExtension_private_method__process>` method, and will return an invalid id otherwise.
+\ **Note:** This method should only be called from within the :ref:`AnimationNodeExtension._process_animation_node<class_AnimationNodeExtension_private_method__process_animation_node>` method, and will return an invalid id otherwise.
 
 .. rst-class:: classref-item-separator
 

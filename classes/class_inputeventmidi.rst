@@ -82,6 +82,8 @@ By default, Godot does not detect MIDI devices. You need to call :ref:`OS.open_m
 
 \ **Note:** Godot does not support MIDI output, so there is no way to emit MIDI messages from Godot. Only MIDI input is supported.
 
+\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`OS.open_midi_inputs<class_OS_method_open_midi_inputs>`. MIDI input will not work until the user accepts the permission request.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

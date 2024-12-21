@@ -1425,7 +1425,7 @@ Help key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_BACK** = ``4194376``
 
-Media back key. Not to be confused with the Back button on an Android device.
+Back key.
 
 .. _class_@GlobalScope_constant_KEY_FORWARD:
 
@@ -1433,7 +1433,7 @@ Media back key. Not to be confused with the Back button on an Android device.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_FORWARD** = ``4194377``
 
-Media forward key.
+Forward key.
 
 .. _class_@GlobalScope_constant_KEY_STOP:
 
@@ -1449,7 +1449,7 @@ Media stop key.
 
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_REFRESH** = ``4194379``
 
-Media refresh key.
+Refresh key.
 
 .. _class_@GlobalScope_constant_KEY_VOLUMEDOWN:
 
@@ -3879,7 +3879,7 @@ Hints that a property will be changed on its own after setting, such as :ref:`Au
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``41``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``42``
 
 Represents the size of the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` enum.
 

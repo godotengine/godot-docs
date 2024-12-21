@@ -75,7 +75,7 @@ Properties
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`              | :ref:`light_size<class_Light3D_property_light_size>`                                   | ``0.0``               |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`light_specular<class_Light3D_property_light_specular>`                           | ``0.5``               |
+   | :ref:`float<class_float>`              | :ref:`light_specular<class_Light3D_property_light_specular>`                           | ``1.0``               |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`              | :ref:`light_temperature<class_Light3D_property_light_temperature>`                     |                       |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
@@ -658,7 +658,7 @@ The size of the light in Godot units. Only available for :ref:`OmniLight3D<class
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **light_specular** = ``0.5`` :ref:`🔗<class_Light3D_property_light_specular>`
+:ref:`float<class_float>` **light_specular** = ``1.0`` :ref:`🔗<class_Light3D_property_light_specular>`
 
 .. rst-class:: classref-property-setget
 

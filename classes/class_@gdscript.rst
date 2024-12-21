@@ -803,7 +803,7 @@ Mark the following property as assigned when the :ref:`Node<class_Node>` is read
 
 ::
 
-    @onready var character_name: Label = $Label
+    @onready var character_name = $Label
 
 .. rst-class:: classref-item-separator
 

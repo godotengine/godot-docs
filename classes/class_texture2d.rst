@@ -240,7 +240,7 @@ Returns an :ref:`Image<class_Image>` that is a copy of data from this **Texture2
 
 \ **Note:** This will return ``null`` if this **Texture2D** is invalid.
 
-\ **Note:** This will fetch the texture data from the GPU, which might cause performance problems when overused.
+\ **Note:** This will fetch the texture data from the GPU, which might cause performance problems when overused. Avoid calling :ref:`get_image<class_Texture2D_method_get_image>` every frame, especially on large textures.
 
 .. rst-class:: classref-item-separator
 

@@ -58,6 +58,8 @@ Methods
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`call_recursive<class_TreeItem_method_call_recursive>`\ (\ method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg|                                                                                                                                       |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`clear_buttons<class_TreeItem_method_clear_buttons>`\ (\ )                                                                                                                                                                                                     |
+   +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`clear_custom_bg_color<class_TreeItem_method_clear_custom_bg_color>`\ (\ column\: :ref:`int<class_int>`\ )                                                                                                                                                     |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                            | :ref:`clear_custom_color<class_TreeItem_method_clear_custom_color>`\ (\ column\: :ref:`int<class_int>`\ )                                                                                                                                                           |
@@ -441,6 +443,18 @@ Adds a previously unparented **TreeItem** as a direct child of this one. The ``c
 |void| **call_recursive**\ (\ method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg| :ref:`🔗<class_TreeItem_method_call_recursive>`
 
 Calls the ``method`` on the actual TreeItem and its children recursively. Pass parameters as a comma separated list.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TreeItem_method_clear_buttons:
+
+.. rst-class:: classref-method
+
+|void| **clear_buttons**\ (\ ) :ref:`🔗<class_TreeItem_method_clear_buttons>`
+
+Removes all buttons from all columns of this item.
 
 .. rst-class:: classref-item-separator
 

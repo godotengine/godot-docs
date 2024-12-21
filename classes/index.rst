@@ -124,6 +124,7 @@ Nodes
     class_graphnode
     class_gridcontainer
     class_gridmap
+    class_gridmapeditorplugin
     class_groovejoint2d
     class_hboxcontainer
     class_hflowcontainer

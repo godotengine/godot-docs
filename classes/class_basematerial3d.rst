@@ -2738,6 +2738,8 @@ If ``true``, the proximity fade effect is enabled. The proximity fade effect fad
 
 If ``true``, the refraction effect is enabled. Distorts transparency based on light from behind the object.
 
+\ **Note:** Refraction is implemented using the screen texture. Only opaque materials will appear in the refraction, since transparent materials do not appear in the screen texture.
+
 .. rst-class:: classref-item-separator
 
 ----

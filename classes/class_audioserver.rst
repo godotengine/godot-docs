@@ -87,6 +87,8 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                             | :ref:`get_bus_volume_db<class_AudioServer_method_get_bus_volume_db>`\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const|                                                                              |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                             | :ref:`get_bus_volume_linear<class_AudioServer_method_get_bus_volume_linear>`\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const|                                                                      |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                           | :ref:`get_driver_name<class_AudioServer_method_get_driver_name>`\ (\ ) |const|                                                                                                                   |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`     | :ref:`get_input_device_list<class_AudioServer_method_get_input_device_list>`\ (\ )                                                                                                               |
@@ -140,6 +142,8 @@ Methods
    | |void|                                                | :ref:`set_bus_solo<class_AudioServer_method_set_bus_solo>`\ (\ bus_idx\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )                                                              |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`set_bus_volume_db<class_AudioServer_method_set_bus_volume_db>`\ (\ bus_idx\: :ref:`int<class_int>`, volume_db\: :ref:`float<class_float>`\ )                                               |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                | :ref:`set_bus_volume_linear<class_AudioServer_method_set_bus_volume_linear>`\ (\ bus_idx\: :ref:`int<class_int>`, volume_linear\: :ref:`float<class_float>`\ )                                   |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`set_enable_tagging_used_audio_streams<class_AudioServer_method_set_enable_tagging_used_audio_streams>`\ (\ enable\: :ref:`bool<class_bool>`\ )                                             |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -518,6 +522,20 @@ Returns the volume of the bus at index ``bus_idx`` in dB.
 
 ----
 
+.. _class_AudioServer_method_get_bus_volume_linear:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_bus_volume_linear**\ (\ bus_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioServer_method_get_bus_volume_linear>`
+
+Returns the volume of the bus at index ``bus_idx`` as a linear value.
+
+\ **Note:** The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` on the result of :ref:`get_bus_volume_db<class_AudioServer_method_get_bus_volume_db>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AudioServer_method_get_driver_name:
 
 .. rst-class:: classref-method
@@ -850,7 +868,21 @@ If ``true``, the bus at index ``bus_idx`` is in solo mode.
 
 |void| **set_bus_volume_db**\ (\ bus_idx\: :ref:`int<class_int>`, volume_db\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioServer_method_set_bus_volume_db>`
 
-Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
+Sets the volume in decibels of the bus at index ``bus_idx`` to ``volume_db``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioServer_method_set_bus_volume_linear:
+
+.. rst-class:: classref-method
+
+|void| **set_bus_volume_linear**\ (\ bus_idx\: :ref:`int<class_int>`, volume_linear\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioServer_method_set_bus_volume_linear>`
+
+Sets the volume as a linear value of the bus at index ``bus_idx`` to ``volume_linear``.
+
+\ **Note:** Using this method is equivalent to calling :ref:`set_bus_volume_db<class_AudioServer_method_set_bus_volume_db>` with the result of :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>` on a value.
 
 .. rst-class:: classref-item-separator
 
