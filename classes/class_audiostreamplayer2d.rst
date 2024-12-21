@@ -72,6 +72,8 @@ Properties
    +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
    | :ref:`float<class_float>`                          | :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>`               | ``0.0``       |
    +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                          | :ref:`volume_linear<class_AudioStreamPlayer2D_property_volume_linear>`       |               |
+   +----------------------------------------------------+------------------------------------------------------------------------------+---------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -340,7 +342,26 @@ If ``true``, the playback is paused. You can resume it by setting :ref:`stream_p
 - |void| **set_volume_db**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_volume_db**\ (\ )
 
-Base volume before attenuation.
+Base volume before attenuation, in decibels.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioStreamPlayer2D_property_volume_linear:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **volume_linear** :ref:`🔗<class_AudioStreamPlayer2D_property_volume_linear>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_volume_linear**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_volume_linear**\ (\ )
+
+Base volume before attenuation, as a linear value.
+
+\ **Note:** This member modifies :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` for convenience. The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` on :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>`. Setting this member is equivalent to setting :ref:`volume_db<class_AudioStreamPlayer2D_property_volume_db>` to the result of :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>` on a value.
 
 .. rst-class:: classref-section-separator
 

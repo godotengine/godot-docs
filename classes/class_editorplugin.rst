@@ -12,6 +12,8 @@ EditorPlugin
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`GridMapEditorPlugin<class_GridMapEditorPlugin>`
+
 Used by the editor to extend its functionality.
 
 .. rst-class:: classref-introduction-group

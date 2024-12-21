@@ -151,6 +151,8 @@ Methods
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_version<class_OS_method_get_version>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                               |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_version_alias<class_OS_method_get_version_alias>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                   |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_video_adapter_driver_info<class_OS_method_get_video_adapter_driver_info>`\ (\ ) |const|                                                                                                                                                                                                                                                                                           |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`has_environment<class_OS_method_has_environment>`\ (\ variable\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                                                                               |
@@ -464,7 +466,7 @@ Displays a modal dialog box using the host platform's implementation. The engine
 
 Shuts down the system MIDI driver. Godot will no longer receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>` and :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
 
 .. rst-class:: classref-item-separator
 
@@ -821,7 +823,11 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 Returns an array of connected MIDI device names, if they exist. Returns an empty array if the system MIDI driver has not previously been initialized with :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. See also :ref:`close_midi_inputs<class_OS_method_close_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
+
+\ **Note:** On the Web platform, Web MIDI needs to be supported by the browser. `For the time being <https://caniuse.com/midi>`__, it is currently supported by all major browsers, except Safari.
+
+\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. The browser will refrain from processing MIDI input until the user accepts the permission request.
 
 .. rst-class:: classref-item-separator
 
@@ -1417,6 +1423,20 @@ Returns the exact production and build version of the operating system. This is 
 
 ----
 
+.. _class_OS_method_get_version_alias:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_version_alias**\ (\ ) |const| :ref:`🔗<class_OS_method_get_version_alias>`
+
+Returns the branded version used in marketing, followed by the build number (on Windows) or the version number (on macOS). Examples include ``11 (build 22000)`` and ``Sequoia (15.0.0)``. This value can then be appended to :ref:`get_name<class_OS_method_get_name>` to get a full, human-readable operating system name and version combination for the operating system. Windows feature updates such as 24H2 are not contained in the resulting string, but Windows Server is recognized as such (e.g. ``2025 (build 26100)`` for Windows Server 2025).
+
+\ **Note:** This method is only supported on Windows and macOS. On other operating systems, it returns the same value as :ref:`get_version<class_OS_method_get_version>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OS_method_get_video_adapter_driver_info:
 
 .. rst-class:: classref-method
@@ -1635,7 +1655,11 @@ Returns :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` if the fi
 
 Initializes the singleton for the system MIDI driver, allowing Godot to receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>` and :ref:`close_midi_inputs<class_OS_method_close_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
+
+\ **Note:** On the Web platform, Web MIDI needs to be supported by the browser. `For the time being <https://caniuse.com/midi>`__, it is currently supported by all major browsers, except Safari.
+
+\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. The browser will refrain from processing MIDI input until the user accepts the permission request.
 
 .. rst-class:: classref-item-separator
 

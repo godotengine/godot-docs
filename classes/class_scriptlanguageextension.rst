@@ -251,9 +251,7 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 :ref:`LookupResultType<enum_ScriptLanguageExtension_LookupResultType>` **LOOKUP_RESULT_CLASS_TBD_GLOBALSCOPE** = ``7``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+**Deprecated:** This constant may be changed or removed in future versions.
 
 
 
@@ -269,11 +267,35 @@ enum **LookupResultType**: :ref:`🔗<enum_ScriptLanguageExtension_LookupResultT
 
 
 
+.. _class_ScriptLanguageExtension_constant_LOOKUP_RESULT_LOCAL_CONSTANT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LookupResultType<enum_ScriptLanguageExtension_LookupResultType>` **LOOKUP_RESULT_LOCAL_CONSTANT** = ``9``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_ScriptLanguageExtension_constant_LOOKUP_RESULT_LOCAL_VARIABLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LookupResultType<enum_ScriptLanguageExtension_LookupResultType>` **LOOKUP_RESULT_LOCAL_VARIABLE** = ``10``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
 .. _class_ScriptLanguageExtension_constant_LOOKUP_RESULT_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`LookupResultType<enum_ScriptLanguageExtension_LookupResultType>` **LOOKUP_RESULT_MAX** = ``9``
+:ref:`LookupResultType<enum_ScriptLanguageExtension_LookupResultType>` **LOOKUP_RESULT_MAX** = ``11``
 
 .. container:: contribute
 

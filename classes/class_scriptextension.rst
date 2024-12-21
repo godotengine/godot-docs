@@ -35,6 +35,8 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                              | :ref:`_get_constants<class_ScriptExtension_private_method__get_constants>`\ (\ ) |virtual| |const|                                                                                     |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`                              | :ref:`_get_doc_class_name<class_ScriptExtension_private_method__get_doc_class_name>`\ (\ ) |virtual| |const|                                                                           |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`_get_documentation<class_ScriptExtension_private_method__get_documentation>`\ (\ ) |virtual| |const|                                                                             |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>`                              | :ref:`_get_global_name<class_ScriptExtension_private_method__get_global_name>`\ (\ ) |virtual| |const|                                                                                 |
@@ -168,6 +170,20 @@ Method Descriptions
 .. rst-class:: classref-method
 
 :ref:`Dictionary<class_Dictionary>` **_get_constants**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_constants>`
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptExtension_private_method__get_doc_class_name:
+
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **_get_doc_class_name**\ (\ ) |virtual| |const| :ref:`🔗<class_ScriptExtension_private_method__get_doc_class_name>`
 
 .. container:: contribute
 

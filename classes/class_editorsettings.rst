@@ -729,6 +729,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`text_editor/completion/idle_parse_delay<class_EditorSettings_property_text_editor/completion/idle_parse_delay>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`text_editor/completion/idle_parse_delay_with_errors_found<class_EditorSettings_property_text_editor/completion/idle_parse_delay_with_errors_found>`                                                         |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/completion/put_callhint_tooltip_below_current_line<class_EditorSettings_property_text_editor/completion/put_callhint_tooltip_below_current_line>`                                               |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/completion/use_single_quotes<class_EditorSettings_property_text_editor/completion/use_single_quotes>`                                                                                           |
@@ -5198,6 +5200,18 @@ If ``true``, provides autocompletion suggestions for file paths in methods such 
 :ref:`float<class_float>` **text_editor/completion/idle_parse_delay** :ref:`🔗<class_EditorSettings_property_text_editor/completion/idle_parse_delay>`
 
 The delay in seconds after which the script editor should check for errors when the user stops typing.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/idle_parse_delay_with_errors_found:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **text_editor/completion/idle_parse_delay_with_errors_found** :ref:`🔗<class_EditorSettings_property_text_editor/completion/idle_parse_delay_with_errors_found>`
+
+The delay used instead of :ref:`text_editor/completion/idle_parse_delay<class_EditorSettings_property_text_editor/completion/idle_parse_delay>`, when the parser has found errors. A lower value should feel more responsive while fixing code, but may cause notable stuttering and increase CPU usage.
 
 .. rst-class:: classref-item-separator
 

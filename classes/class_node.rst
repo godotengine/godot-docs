@@ -363,6 +363,18 @@ Emitted when the node's editor description field changed.
 
 ----
 
+.. _class_Node_signal_editor_state_changed:
+
+.. rst-class:: classref-signal
+
+**editor_state_changed**\ (\ ) :ref:`🔗<class_Node_signal_editor_state_changed>`
+
+Emitted when an attribute of the node that is relevant to the editor is changed. Only emitted in the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node_signal_ready:
 
 .. rst-class:: classref-signal

@@ -27,12 +27,14 @@ To get a **ViewportTexture** in code, use the :ref:`Viewport.get_texture<class_V
 
 \ **Note:** Instantiating scenes containing a high-resolution **ViewportTexture** may cause noticeable stutter.
 
-\ **Note:** When using a :ref:`Viewport<class_Viewport>` with :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` set to ``true`` the returned texture will be an HDR image encoded in linear space. This may look darker than normal when displayed directly on screen. To convert to gamma space, you can do the following:
+\ **Note:** When using a :ref:`Viewport<class_Viewport>` with :ref:`Viewport.use_hdr_2d<class_Viewport_property_use_hdr_2d>` set to ``true``, the returned texture will be an HDR image encoded in linear space. This may look darker than normal when displayed directly on screen. To convert to gamma space, you can do the following:
 
 ::
 
     img.convert(Image.FORMAT_RGBA8)
     imb.linear_to_srgb()
+
+\ **Note:** Some nodes such as :ref:`Decal<class_Decal>`, :ref:`Light3D<class_Light3D>`, and :ref:`PointLight2D<class_PointLight2D>` do not support using **ViewportTexture** directly. To use texture data from a **ViewportTexture** in these nodes, you need to create an :ref:`ImageTexture<class_ImageTexture>` by calling :ref:`Texture2D.get_image<class_Texture2D_method_get_image>` on the **ViewportTexture** and passing the result to :ref:`ImageTexture.create_from_image<class_ImageTexture_method_create_from_image>`. This conversion is a slow operation, so it should not be performed every frame.
 
 .. rst-class:: classref-introduction-group
 

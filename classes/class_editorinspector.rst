@@ -58,6 +58,8 @@ Methods
    :widths: auto
 
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                      | :ref:`edit<class_EditorInspector_method_edit>`\ (\ object\: :ref:`Object<class_Object>`\ )                                                                                                                                                                                                                                                                                                                                    |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Object<class_Object>`                 | :ref:`get_edited_object<class_EditorInspector_method_get_edited_object>`\ (\ )                                                                                                                                                                                                                                                                                                                                                |
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                 | :ref:`get_selected_path<class_EditorInspector_method_get_selected_path>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                        |
@@ -188,6 +190,20 @@ Emitted when a property that requires a restart to be applied is edited in the i
 
 Method Descriptions
 -------------------
+
+.. _class_EditorInspector_method_edit:
+
+.. rst-class:: classref-method
+
+|void| **edit**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_EditorInspector_method_edit>`
+
+Shows the properties of the given ``object`` in this inspector for editing. To clear the inspector, call this method with ``null``.
+
+\ **Note:** If you want to edit an object in the editor's main inspector, use the ``edit_*`` methods in :ref:`EditorInterface<class_EditorInterface>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_EditorInspector_method_get_edited_object:
 

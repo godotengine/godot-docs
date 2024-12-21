@@ -23,34 +23,48 @@ A\* (A star) is a computer algorithm used in pathfinding and graph traversal, th
 
 You must add points manually with :ref:`add_point<class_AStar3D_method_add_point>` and create segments manually with :ref:`connect_points<class_AStar3D_method_connect_points>`. Once done, you can test if there is a path between two points with the :ref:`are_points_connected<class_AStar3D_method_are_points_connected>` function, get a path containing indices by :ref:`get_id_path<class_AStar3D_method_get_id_path>`, or one containing actual coordinates with :ref:`get_point_path<class_AStar3D_method_get_point_path>`.
 
-It is also possible to use non-Euclidean distances. To do so, create a class that extends **AStar3D** and override methods :ref:`_compute_cost<class_AStar3D_private_method__compute_cost>` and :ref:`_estimate_cost<class_AStar3D_private_method__estimate_cost>`. Both take two indices and return a length, as is shown in the following example.
+It is also possible to use non-Euclidean distances. To do so, create a script that extends **AStar3D** and override the methods :ref:`_compute_cost<class_AStar3D_private_method__compute_cost>` and :ref:`_estimate_cost<class_AStar3D_private_method__estimate_cost>`. Both should take two point IDs and return the distance between the corresponding points.
+
+\ **Example:** Use Manhattan distance instead of Euclidean distance:
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    class MyAStar:
-        extends AStar3D
+    class_name MyAStar3D
+    extends AStar3D
     
-        func _compute_cost(u, v):
-            return abs(u - v)
+    func _compute_cost(u, v):
+        var u_pos = get_point_position(u)
+        var v_pos = get_point_position(v)
+        return abs(u_pos.x - v_pos.x) + abs(u_pos.y - v_pos.y) + abs(u_pos.z - v_pos.z)
     
-        func _estimate_cost(u, v):
-            return min(0, abs(u - v) - 1)
+    func _estimate_cost(u, v):
+        var u_pos = get_point_position(u)
+        var v_pos = get_point_position(v)
+        return abs(u_pos.x - v_pos.x) + abs(u_pos.y - v_pos.y) + abs(u_pos.z - v_pos.z)
 
  .. code-tab:: csharp
 
-    public partial class MyAStar : AStar3D
+    using Godot;
+    
+    [GlobalClass]
+    public partial class MyAStar3D : AStar3D
     {
         public override float _ComputeCost(long fromId, long toId)
         {
-            return Mathf.Abs((int)(fromId - toId));
+            Vector3 fromPoint = GetPointPosition(fromId);
+            Vector3 toPoint = GetPointPosition(toId);
+    
+            return Mathf.Abs(fromPoint.X - toPoint.X) + Mathf.Abs(fromPoint.Y - toPoint.Y) + Mathf.Abs(fromPoint.Z - toPoint.Z);
         }
     
         public override float _EstimateCost(long fromId, long toId)
         {
-            return Mathf.Min(0, Mathf.Abs((int)(fromId - toId)) - 1);
+            Vector3 fromPoint = GetPointPosition(fromId);
+            Vector3 toPoint = GetPointPosition(toId);
+            return Mathf.Abs(fromPoint.X - toPoint.X) + Mathf.Abs(fromPoint.Y - toPoint.Y) + Mathf.Abs(fromPoint.Z - toPoint.Z);
         }
     }
 

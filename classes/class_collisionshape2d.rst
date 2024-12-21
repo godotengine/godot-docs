@@ -43,7 +43,7 @@ Properties
    :widths: auto
 
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`     | :ref:`debug_color<class_CollisionShape2D_property_debug_color>`                           | ``Color(0, 0, 0, 1)`` |
+   | :ref:`Color<class_Color>`     | :ref:`debug_color<class_CollisionShape2D_property_debug_color>`                           | ``Color(0, 0, 0, 0)`` |
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_property_disabled>`                                 | ``false``             |
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
@@ -67,16 +67,16 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **debug_color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_CollisionShape2D_property_debug_color>`
+:ref:`Color<class_Color>` **debug_color** = ``Color(0, 0, 0, 0)`` :ref:`🔗<class_CollisionShape2D_property_debug_color>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_debug_color**\ (\ value\: :ref:`Color<class_Color>`\ )
 - :ref:`Color<class_Color>` **get_debug_color**\ (\ )
 
-The collision shape debug color.
+The collision shape color that is displayed in the editor, or in the running project if **Debug > Visible Collision Shapes** is checked at the top of the editor.
 
-\ **Note:** The default value is :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>`. The ``Color(0, 0, 0, 1)`` value documented here is a placeholder, and not the actual default debug color.
+\ **Note:** The default value is :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>`. The ``Color(0, 0, 0, 0)`` value documented here is a placeholder, and not the actual default debug color.
 
 .. rst-class:: classref-item-separator
 

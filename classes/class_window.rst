@@ -436,6 +436,18 @@ Emitted when the :ref:`NOTIFICATION_THEME_CHANGED<class_Window_constant_NOTIFICA
 
 ----
 
+.. _class_Window_signal_title_changed:
+
+.. rst-class:: classref-signal
+
+**title_changed**\ (\ ) :ref:`🔗<class_Window_signal_title_changed>`
+
+Emitted when window title bar text is changed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_signal_titlebar_changed:
 
 .. rst-class:: classref-signal

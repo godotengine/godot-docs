@@ -88,7 +88,9 @@ Property Descriptions
 - |void| **set_debug_color**\ (\ value\: :ref:`Color<class_Color>`\ )
 - :ref:`Color<class_Color>` **get_debug_color**\ (\ )
 
-The collision shape color that is displayed in the editor, or in the running project if **Debug > Visible Collision Shapes** is checked at the top of the editor. If this is reset to its default value of ``Color(0, 0, 0, 0)``, the value of :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>` will be used instead.
+The collision shape color that is displayed in the editor, or in the running project if **Debug > Visible Collision Shapes** is checked at the top of the editor.
+
+\ **Note:** The default value is :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>`. The ``Color(0, 0, 0, 0)`` value documented here is a placeholder, and not the actual default debug color.
 
 .. rst-class:: classref-item-separator
 

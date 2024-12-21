@@ -477,6 +477,8 @@ If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emi
 
 Particle system starts as if it had already run for this many seconds.
 
+\ **Note:** This can be very expensive if set to a high number as it requires running the particle shader a number of times equal to the :ref:`fixed_fps<class_GPUParticles2D_property_fixed_fps>` (or 30, if :ref:`fixed_fps<class_GPUParticles2D_property_fixed_fps>` is 0) for every second. In extreme cases it can even lead to a GPU crash due to the volume of work done in a single frame.
+
 .. rst-class:: classref-item-separator
 
 ----

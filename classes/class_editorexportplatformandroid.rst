@@ -430,6 +430,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`version/name<class_EditorExportPlatformAndroid_property_version/name>`                                                                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`wear_os/swipe_to_dismiss<class_EditorExportPlatformAndroid_property_wear_os/swipe_to_dismiss>`                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr_features/xr_mode<class_EditorExportPlatformAndroid_property_xr_features/xr_mode>`                                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -2855,6 +2857,20 @@ Machine-readable application version. This must be incremented for every new rel
 :ref:`String<class_String>` **version/name** :ref:`🔗<class_EditorExportPlatformAndroid_property_version/name>`
 
 Application version visible to the user. Falls back to :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>` if left empty.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_wear_os/swipe_to_dismiss:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **wear_os/swipe_to_dismiss** :ref:`🔗<class_EditorExportPlatformAndroid_property_wear_os/swipe_to_dismiss>`
+
+If ``true``, `Swipe to dismiss <https://developer.android.com/design/ui/wear/guides/components/swipe-to-dismiss>`__ will be enabled on Wear OS.
+
+\ **Note:** This is ``true`` by default. To disable this behavior, :ref:`gradle_build/use_gradle_build<class_EditorExportPlatformAndroid_property_gradle_build/use_gradle_build>` is required.
 
 .. rst-class:: classref-item-separator
 

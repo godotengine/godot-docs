@@ -1489,6 +1489,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_performance/max_rays_per_probe_pass<class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_rays_per_probe_pass>`                                     | ``64``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_performance/max_transparency_rays<class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_transparency_rays>`                                         | ``8``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_performance/region_size<class_ProjectSettings_property_rendering/lightmapping/bake_performance/region_size>`                                                             | ``512``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/high_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/high_quality_probe_ray_count>`                                   | ``512``                                                                                          |
@@ -11140,6 +11142,18 @@ The maximum number of rays that can be thrown per pass when baking dynamic objec
 
 ----
 
+.. _class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_transparency_rays:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **rendering/lightmapping/bake_performance/max_transparency_rays** = ``8`` :ref:`🔗<class_ProjectSettings_property_rendering/lightmapping/bake_performance/max_transparency_rays>`
+
+The maximum number of retry rays that can be thrown per pass when hitting a transparent surface when baking lightmaps with :ref:`LightmapGI<class_LightmapGI>`. Depending on the scene, reducing this value may lead to faster bake times.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_rendering/lightmapping/bake_performance/region_size:
 
 .. rst-class:: classref-property
@@ -12352,9 +12366,11 @@ Sets the maximum number of samples to take when using anisotropic filtering on t
 
 The anisotropic filtering level also affects decals and light projectors if they are configured to use anisotropic filtering. See :ref:`rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>` and :ref:`rendering/textures/light_projectors/filter<class_ProjectSettings_property_rendering/textures/light_projectors/filter>`.
 
-\ **Note:** For performance reasons, anisotropic filtering *is not enabled by default* on 2D and 3D materials. For this setting to have an effect in 3D, set :ref:`BaseMaterial3D.texture_filter<class_BaseMaterial3D_property_texture_filter>` to :ref:`BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC<class_BaseMaterial3D_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC>` or :ref:`BaseMaterial3D.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC<class_BaseMaterial3D_constant_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC>` on materials. For this setting to have an effect in 2D, set :ref:`CanvasItem.texture_filter<class_CanvasItem_property_texture_filter>` to :ref:`CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC<class_CanvasItem_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC>` or :ref:`CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC<class_CanvasItem_constant_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC>` on the :ref:`CanvasItem<class_CanvasItem>` node displaying the texture (or in :ref:`CanvasTexture<class_CanvasTexture>`). However, anisotropic filtering is rarely useful in 2D, so only enable it for textures in 2D if it makes a meaningful visual difference.
+\ **Note:** In 3D, for this setting to have an effect, set :ref:`BaseMaterial3D.texture_filter<class_BaseMaterial3D_property_texture_filter>` to :ref:`BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC<class_BaseMaterial3D_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC>` or :ref:`BaseMaterial3D.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC<class_BaseMaterial3D_constant_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC>` on materials.
 
-\ **Note:** This property is only read when the project starts. There is currently no way to change this setting at run-time.
+\ **Note:** In 2D, for this setting to have an effect, set :ref:`CanvasItem.texture_filter<class_CanvasItem_property_texture_filter>` to :ref:`CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC<class_CanvasItem_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC>` or :ref:`CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC<class_CanvasItem_constant_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC>` on the :ref:`CanvasItem<class_CanvasItem>` node displaying the texture (or in :ref:`CanvasTexture<class_CanvasTexture>`). However, anisotropic filtering is rarely useful in 2D, so only enable it for textures in 2D if it makes a meaningful visual difference.
+
+\ **Note:** This property is only read when the project starts. To change the anisotropic filtering level at runtime, set :ref:`Viewport.anisotropic_filtering_level<class_Viewport_property_anisotropic_filtering_level>` on the root :ref:`Viewport<class_Viewport>` instead.
 
 .. rst-class:: classref-item-separator
 

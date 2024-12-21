@@ -74,6 +74,8 @@ Properties
    +----------------------------------------------------+----------------------------------------------------------------------+---------------+
    | :ref:`float<class_float>`                          | :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>`         | ``0.0``       |
    +----------------------------------------------------+----------------------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                          | :ref:`volume_linear<class_AudioStreamPlayer_property_volume_linear>` |               |
+   +----------------------------------------------------+----------------------------------------------------------------------+---------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -332,9 +334,28 @@ If ``true``, the sounds are paused. Setting :ref:`stream_paused<class_AudioStrea
 - |void| **set_volume_db**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_volume_db**\ (\ )
 
-Volume of sound, in decibel. This is an offset of the :ref:`stream<class_AudioStreamPlayer_property_stream>`'s volume.
+Volume of sound, in decibels. This is an offset of the :ref:`stream<class_AudioStreamPlayer_property_stream>`'s volume.
 
-\ **Note:** To convert between decibel and linear energy (like most volume sliders do), use :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` and :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>`.
+\ **Note:** To convert between decibel and linear energy (like most volume sliders do), use :ref:`volume_linear<class_AudioStreamPlayer_property_volume_linear>`, or :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` and :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioStreamPlayer_property_volume_linear:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **volume_linear** :ref:`🔗<class_AudioStreamPlayer_property_volume_linear>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_volume_linear**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_volume_linear**\ (\ )
+
+Volume of sound, as a linear value.
+
+\ **Note:** This member modifies :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>` for convenience. The returned value is equivalent to the result of :ref:`@GlobalScope.db_to_linear<class_@GlobalScope_method_db_to_linear>` on :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>`. Setting this member is equivalent to setting :ref:`volume_db<class_AudioStreamPlayer_property_volume_db>` to the result of :ref:`@GlobalScope.linear_to_db<class_@GlobalScope_method_linear_to_db>` on a value.
 
 .. rst-class:: classref-section-separator
 
