@@ -403,12 +403,6 @@ To cross-compile Godot for RISC-V devices, we need to setup the following items:
   If in doubt, `use this version <https://github.com/riscv-collab/riscv-gnu-toolchain/releases/tag/2021.12.22>`__,
   and download ``riscv64-glibc-ubuntu-18.04-nightly-2021.12.22-nightly.tar.gz``. Extract
   it somewhere and remember its path.
-- Clang. RISC-V GCC has
-  `bugs with its atomic operations <https://github.com/riscv-collab/riscv-gcc/issues/15>`__
-  which prevent it from compiling Godot correctly. Any version of Clang from 16.0.0 upwards
-  will suffice. Download it from the package manager of your distro, and make sure that
-  it *can* compile to RISC-V. You can verify by executing this command ``clang -print-targets``,
-  make sure you see ``riscv64`` on the list of targets.
 - `mold <https://github.com/rui314/mold/releases>`__. This fast linker,
   is the only one that correctly links the resulting binary. Download it, extract it,
   and make sure to add its ``bin`` folder to your PATH. Run
@@ -424,6 +418,20 @@ variable like this:
 
 This way, we won't have to manually set the directory location
 each time we want to reference it.
+
+You also need to add ``$RISCV_TOOLCHAIN_PATH/bin`` to your user's PATH environment variable.
+
+::
+
+	export PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH"
+
+.. warning:: Since riscv-gnu-toolchain uses its own Clang located
+			 in the ``bin`` folder, this command may block you from
+			 accessing another version of Clang if one is installed.
+			 So it's recommended to run this command every time
+			 before compiling Godot for RISC-V devices instead of adding it to the
+			 ``$HOME/.bash_profile`` file.
+
 
 With all the above setup, we are now ready to build Godot.
 
