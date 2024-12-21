@@ -518,12 +518,12 @@ The default value of Godot arrays is null. A different default can be specified:
 .. code-block:: csharp
 
     [Export]
-    public Godot.Collections.Array<string> CharacterNames { get; set; } = new Godot.Collections.Array<string>
-    {
+    public Godot.Collections.Array<string> CharacterNames { get; set; } =
+    [
         "Rebecca",
         "Mary",
         "Leah",
-    };
+    ];
 
 Arrays with specified types which inherit from resource can be set by
 drag-and-dropping multiple files from the FileSystem dock.
@@ -588,11 +588,11 @@ The default value of C# arrays is null. A different default can be specified:
 .. code-block:: csharp
 
     [Export]
-    public Vector3[] Vectors { get; set; } = new Vector3[]
-    {
+    public Vector3[] Vectors { get; set; } =
+    [
         new Vector3(1, 2, 3),
         new Vector3(3, 2, 1),
-    }
+    ];
 
 Setting exported variables from a tool script
 ---------------------------------------------
