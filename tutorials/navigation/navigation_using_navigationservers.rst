@@ -169,14 +169,14 @@ Afterwards the function waits for the next physics frame before continuing with 
             // Create a procedural navigation mesh for the region.
             var newNavigationMesh = new NavigationMesh()
             {
-                Vertices = new[]
-                {
+                Vertices =
+                [
                     new Vector3(0.0f, 0.0f, 0.0f),
                     new Vector3(9.0f, 0.0f, 0.0f),
                     new Vector3(0.0f, 0.0f, 9.0f),
-                },
+                ],
             };
-            int[] polygon = new[] { 0, 1, 2 };
+            int[] polygon = [0, 1, 2];
             newNavigationMesh.AddPolygon(polygon);
             NavigationServer3D.RegionSetNavigationMesh(region, newNavigationMesh);
 

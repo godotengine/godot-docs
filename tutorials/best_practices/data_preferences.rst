@@ -259,7 +259,7 @@ tree structures.
     {
         private TreeNode _parent = null;
 
-        private List<TreeNode> _children = new();
+        private List<TreeNode> _children = [];
 
         public override void _Notification(int what)
         {

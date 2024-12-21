@@ -377,7 +377,7 @@ like this:
         // We are going to paint with this color.
         Color godotBlue = new Color("478cbf");
         // We pass the array of Vector2 to draw the shape.
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
     }
 
 When running it you should see something like this:
@@ -474,7 +474,7 @@ draw the line, like this:
         Color white = Colors.White;
         Color godotBlue = new Color("478cbf");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
 
         // We draw the while line on top of the previous shape.
         DrawPolyline(_mouth, white, _mouthWidth);
@@ -535,7 +535,7 @@ its radius, and the third is its color:
         Color godotBlue = new Color("478cbf");
         Color grey = new Color("414042");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
 
         // Four circles for the 2 eyes: 2 white, 2 grey.
@@ -589,7 +589,7 @@ like this:
         Color godotBlue = new Color("478cbf");
         Color grey = new Color("414042");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
         DrawCircle(new Vector2(42.479f, 65.4825f), 9.3905f, white);
         DrawCircle(new Vector2(85.524f, 65.4825f), 9.3905f, white);
@@ -652,7 +652,7 @@ to do it, like this:
         Color godotBlue = new Color("478cbf");
         Color grey = new Color("414042");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
         DrawCircle(new Vector2(42.479f, 65.4825f), 9.3905f, white);
         DrawCircle(new Vector2(85.524f, 65.4825f), 9.3905f, white);

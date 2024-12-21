@@ -434,13 +434,13 @@ The following script uses the NavigationServer to parse source geometry from the
             // If we did not parse a TileMap with navigation mesh cells we may now only
             // have obstruction outlines so add at least one traversable outline
             // so the obstructions outlines have something to "cut" into.
-            _sourceGeometry.AddTraversableOutline(new Vector2[]
-            {
+            _sourceGeometry.AddTraversableOutline(
+            [
                 new Vector2(0.0f, 0.0f),
                 new Vector2(500.0f, 0.0f),
                 new Vector2(500.0f, 500.0f),
                 new Vector2(0.0f, 500.0f),
-            });
+            ]);
 
             // Bake the navigation mesh on a thread with the source geometry data.
             NavigationServer2D.BakeFromSourceGeometryDataAsync(_navigationMesh, _sourceGeometry, _callbackBaking);
@@ -615,16 +615,16 @@ The following script uses the NavigationServer to update a navigation region wit
             NavigationServer2D.RegionSetMap(_regionRid, GetWorld2D().NavigationMap);
 
             // Add vertices for a convex polygon.
-            _navigationMesh.Vertices = new Vector2[]
-            {
+            _navigationMesh.Vertices =
+            [
                 new Vector2(0, 0),
                 new Vector2(100.0f, 0),
                 new Vector2(100.0f, 100.0f),
                 new Vector2(0, 100.0f),
-            };
+            ];
 
             // Add indices for the polygon.
-            _navigationMesh.AddPolygon(new int[] { 0, 1, 2, 3 });
+            _navigationMesh.AddPolygon([0, 1, 2, 3]);
 
             NavigationServer2D.RegionSetNavigationPolygon(_regionRid, _navigationMesh);
         }
@@ -680,16 +680,16 @@ The following script uses the NavigationServer to update a navigation region wit
             NavigationServer3D.RegionSetMap(_regionRid, GetWorld3D().NavigationMap);
 
             // Add vertices for a convex polygon.
-            _navigationMesh.Vertices = new Vector3[]
-            {
+            _navigationMesh.Vertices =
+            [
                 new Vector3(-1.0f, 0.0f, 1.0f),
                 new Vector3(1.0f, 0.0f, 1.0f),
                 new Vector3(1.0f, 0.0f, -1.0f),
                 new Vector3(-1.0f, 0.0f, -1.0f),
-            };
+            ];
 
             // Add indices for the polygon.
-            _navigationMesh.AddPolygon(new int[] { 0, 1, 2, 3 });
+            _navigationMesh.AddPolygon([0, 1, 2, 3]);
 
             NavigationServer3D.RegionSetNavigationMesh(_regionRid, _navigationMesh);
         }

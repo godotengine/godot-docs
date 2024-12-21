@@ -212,7 +212,7 @@ to said method.
     // Outputs "Hello there!" twice, once per line.
     myGDScriptNode.Call("print_n_times", "Hello there!", 2);
 
-    string[] arr = new string[] { "a", "b", "c" };
+    string[] arr = ["a", "b", "c"];
     // Output: "a", "b", "c" (one per line).
     myGDScriptNode.Call("print_array", arr);
     // Output: "1", "2", "3"  (one per line).

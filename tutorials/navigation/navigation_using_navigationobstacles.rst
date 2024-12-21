@@ -81,13 +81,13 @@ Obstacles are not involved in the source geometry parsing so adding them just be
 
  .. code-tab:: csharp 2D C#
 
-    Vector2[] obstacleOutline = new Vector2[]
-    {
+    Vector2[] obstacleOutline
+    [
         new Vector2(-50, -50),
         new Vector2(50, -50),
         new Vector2(50, 50),
         new Vector2(-50, 50),
-    };
+    ];
 
     var navigationMesh = new NavigationPolygon();
     var sourceGeometry = new NavigationMeshSourceGeometryData2D();
@@ -123,13 +123,13 @@ Obstacles are not involved in the source geometry parsing so adding them just be
 
  .. code-tab:: csharp 3D C#
 
-    Vector3[] obstacleOutline = new Vector3[]
-    {
+    Vector3[] obstacleOutline =
+    [
         new Vector3(-5, 0, -5),
         new Vector3(5, 0, -5),
         new Vector3(5, 0, 5),
         new Vector3(-5, 0, 5),
-    };
+    ];
 
     var navigationMesh = new NavigationMesh();
     var sourceGeometry = new NavigationMeshSourceGeometryData3D();
@@ -234,13 +234,13 @@ For static use an array of ``vertices`` is required.
     NavigationServer2D.ObstacleSetRadius(newObstacleRid, 5.0f);
 
     // Use obstacle static by adding a square that pushes agents out.
-    Vector2[] outline = new Vector2[]
-    {
+    Vector2[] outline =
+    [
         new Vector2(-100, -100),
         new Vector2(100, -100),
         new Vector2(100, 100),
         new Vector2(-100, 100),
-    };
+    ];
     NavigationServer2D.ObstacleSetVertices(newObstacleRid, outline);
 
     // Enable the obstacle.
@@ -280,13 +280,13 @@ For static use an array of ``vertices`` is required.
     NavigationServer3D.ObstacleSetRadius(newObstacleRid, 5.0f);
 
     // Use obstacle static by adding a square that pushes agents out.
-    Vector3[] outline = new Vector3[]
-    {
+    Vector3[] outline =
+    [
         new Vector3(-5, 0, -5),
         new Vector3(5, 0, -5),
         new Vector3(5, 0, 5),
         new Vector3(-5, 0, 5),
-    };
+    ];
     NavigationServer3D.ObstacleSetVertices(newObstacleRid, outline);
     // Set the obstacle height on the y-axis.
     NavigationServer3D.ObstacleSetHeight(newObstacleRid, 1.0f);
