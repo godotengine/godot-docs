@@ -94,7 +94,7 @@ Under ``_ready()``, create a new Array.
   
   .. code-tab:: csharp C#
 
-    var surfaceArray = new Godot.Collections.Array();
+    Godot.Collections.Array surfaceArray = [];
 
 This will be the array that we keep our surface information in - it will hold
 all the arrays of data that the surface needs. Godot will expect it to be of
@@ -108,7 +108,7 @@ size ``Mesh.ARRAY_MAX``, so resize it accordingly.
   
  .. code-tab:: csharp C#
 
-    var surfaceArray = new Godot.Collections.Array();
+    Godot.Collections.Array surfaceArray = [];
     surfaceArray.Resize((int)Mesh.ArrayType.Max);
 
 Next create the arrays for each data type you will use.
@@ -123,10 +123,10 @@ Next create the arrays for each data type you will use.
 
  .. code-tab:: csharp C#
 
-    var verts = new List<Vector3>();
-    var uvs = new List<Vector2>();
-    var normals = new List<Vector3>();
-    var indices = new List<int>();
+    List<Vector3> verts = [];
+    List<Vector2> uvs = [];
+    List<Vector3> normals = [];
+    List<int> indices = [];
 
 Once you have filled your data arrays with your geometry you can create a mesh
 by adding each array to ``surface_array`` and then committing to the mesh.
@@ -196,14 +196,14 @@ Put together, the full code looks like:
     {
         public override void _Ready()
         {
-            var surfaceArray = new Godot.Collections.Array();
+            Godot.Collections.Array surfaceArray = [];
             surfaceArray.Resize((int)Mesh.ArrayType.Max);
 
             // C# arrays cannot be resized or expanded, so use Lists to create geometry.
-            var verts = new List<Vector3>();
-            var uvs = new List<Vector2>();
-            var normals = new List<Vector3>();
-            var indices = new List<int>();
+            List<Vector3> verts = [];
+            List<Vector2> uvs = [];
+            List<Vector3> normals = [];
+            List<int> indices = [];
 
             /***********************************
             * Insert code here to generate mesh.
