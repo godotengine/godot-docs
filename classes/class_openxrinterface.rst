@@ -19,9 +19,9 @@ Our OpenXR interface.
 Description
 -----------
 
-The OpenXR interface allows Godot to interact with OpenXR runtimes and make it possible to create XR experiences and games.
+The OpenXR interface allows Redot to interact with OpenXR runtimes and make it possible to create XR experiences and games.
 
-Due to the needs of OpenXR this interface works slightly different than other plugin based XR interfaces. It needs to be initialized when Godot starts. You need to enable OpenXR, settings for this can be found in your games project settings under the XR heading. You do need to mark a viewport for use with XR in order for Godot to know which render result should be output to the headset.
+Due to the needs of OpenXR this interface works slightly different than other plugin based XR interfaces. It needs to be initialized when Redot starts. You need to enable OpenXR, settings for this can be found in your games project settings under the XR heading. You do need to mark a viewport for use with XR in order for Redot to know which render result should be output to the headset.
 
 .. rst-class:: classref-introduction-group
 
@@ -736,7 +736,7 @@ Method Descriptions
 
 :ref:`Array<class_Array>` **get_action_sets**\ (\ ) |const| :ref:`🔗<class_OpenXRInterface_method_get_action_sets>`
 
-Returns a list of action sets registered with Godot (loaded from the action map at runtime).
+Returns a list of action sets registered with Redot (loaded from the action map at runtime).
 
 .. rst-class:: classref-item-separator
 

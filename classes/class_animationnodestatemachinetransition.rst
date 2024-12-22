@@ -300,7 +300,7 @@ The transition type.
 - |void| **set_xfade_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_xfade_curve**\ (\ )
 
-Ease curve for better control over cross-fade between this state and the next.
+Ease curve for better control over cross-fade between this state and the next. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 

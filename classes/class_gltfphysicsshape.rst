@@ -19,7 +19,7 @@ Represents a glTF physics shape.
 Description
 -----------
 
-Represents a physics shape as defined by the ``OMI_physics_shape`` or ``OMI_collider`` glTF extensions. This class is an intermediary between the glTF data and Godot's nodes, and it's abstracted in a way that allows adding support for different glTF physics extensions in the future.
+Represents a physics shape as defined by the ``OMI_physics_shape`` or ``OMI_collider`` glTF extensions. This class is an intermediary between the glTF data and Redot's nodes, and it's abstracted in a way that allows adding support for different glTF physics extensions in the future.
 
 .. rst-class:: classref-introduction-group
 
@@ -132,7 +132,7 @@ The :ref:`ImporterMesh<class_ImporterMesh>` resource of the shape. This is only 
 - |void| **set_is_trigger**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_is_trigger**\ (\ )
 
-If ``true``, indicates that this shape is a trigger. For Godot, this means that the shape should be a child of an Area3D node.
+If ``true``, indicates that this shape is a trigger. For Redot, this means that the shape should be a child of an Area3D node.
 
 This is the only variable not used in the :ref:`to_node<class_GLTFPhysicsShape_method_to_node>` method, it's intended to be used alongside when deciding where to add the generated node as a child.
 
@@ -231,7 +231,7 @@ Creates a new GLTFPhysicsShape instance by parsing the given :ref:`Dictionary<cl
 
 :ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_node**\ (\ shape_node\: :ref:`CollisionShape3D<class_CollisionShape3D>`\ ) |static| :ref:`🔗<class_GLTFPhysicsShape_method_from_node>`
 
-Creates a new GLTFPhysicsShape instance from the given Godot :ref:`CollisionShape3D<class_CollisionShape3D>` node.
+Creates a new GLTFPhysicsShape instance from the given Redot :ref:`CollisionShape3D<class_CollisionShape3D>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -243,7 +243,7 @@ Creates a new GLTFPhysicsShape instance from the given Godot :ref:`CollisionShap
 
 :ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_resource**\ (\ shape_resource\: :ref:`Shape3D<class_Shape3D>`\ ) |static| :ref:`🔗<class_GLTFPhysicsShape_method_from_resource>`
 
-Creates a new GLTFPhysicsShape instance from the given Godot :ref:`Shape3D<class_Shape3D>` resource.
+Creates a new GLTFPhysicsShape instance from the given Redot :ref:`Shape3D<class_Shape3D>` resource.
 
 .. rst-class:: classref-item-separator
 
@@ -267,7 +267,7 @@ Serializes this GLTFPhysicsShape instance into a :ref:`Dictionary<class_Dictiona
 
 :ref:`CollisionShape3D<class_CollisionShape3D>` **to_node**\ (\ cache_shapes\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_GLTFPhysicsShape_method_to_node>`
 
-Converts this GLTFPhysicsShape instance into a Godot :ref:`CollisionShape3D<class_CollisionShape3D>` node.
+Converts this GLTFPhysicsShape instance into a Redot :ref:`CollisionShape3D<class_CollisionShape3D>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -279,7 +279,7 @@ Converts this GLTFPhysicsShape instance into a Godot :ref:`CollisionShape3D<clas
 
 :ref:`Shape3D<class_Shape3D>` **to_resource**\ (\ cache_shapes\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_GLTFPhysicsShape_method_to_resource>`
 
-Converts this GLTFPhysicsShape instance into a Godot :ref:`Shape3D<class_Shape3D>` resource.
+Converts this GLTFPhysicsShape instance into a Redot :ref:`Shape3D<class_Shape3D>` resource.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

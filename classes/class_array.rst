@@ -444,17 +444,17 @@ The ``method`` should take one :ref:`Variant<class_Variant>` parameter (the curr
     
     public override void _Ready()
     {
-        // Prints true (3/3 elements evaluate to true).
+        // Prints True (3/3 elements evaluate to true).
         GD.Print(new Godot.Collections.Array>int< { 6, 10, 6 }.All(GreaterThan5));
-        // Prints false (1/3 elements evaluate to true).
+        // Prints False (1/3 elements evaluate to true).
         GD.Print(new Godot.Collections.Array>int< { 4, 10, 4 }.All(GreaterThan5));
-        // Prints false (0/3 elements evaluate to true).
+        // Prints False (0/3 elements evaluate to true).
         GD.Print(new Godot.Collections.Array>int< { 4, 4, 4 }.All(GreaterThan5));
-        // Prints true (0/0 elements evaluate to true).
+        // Prints True (0/0 elements evaluate to true).
         GD.Print(new Godot.Collections.Array>int< { }.All(GreaterThan5));
     
         // Same as the first line above, but using a lambda function.
-        GD.Print(new Godot.Collections.Array>int< { 6, 10, 6 }.All(element => element > 5)); // Prints true
+        GD.Print(new Godot.Collections.Array>int< { 6, 10, 6 }.All(element => element > 5)); // Prints True
     }
 
 
@@ -876,10 +876,10 @@ Returns ``true`` if the array contains the given ``value``.
 
     var arr = new Godot.Collections.Array { "inside", 7 };
     // By C# convention, this method is renamed to `Contains`.
-    GD.Print(arr.Contains("inside"));  // Prints true
-    GD.Print(arr.Contains("outside")); // Prints false
-    GD.Print(arr.Contains(7));         // Prints true
-    GD.Print(arr.Contains("7"));       // Prints false
+    GD.Print(arr.Contains("inside"));  // Prints True
+    GD.Print(arr.Contains("outside")); // Prints False
+    GD.Print(arr.Contains(7));         // Prints True
+    GD.Print(arr.Contains("7"));       // Prints False
 
 
 

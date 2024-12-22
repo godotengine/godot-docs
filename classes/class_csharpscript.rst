@@ -19,7 +19,7 @@ A script implemented in the C# programming language, saved with the ``.cs`` exte
 Description
 -----------
 
-This class represents a C# script. It is the C# equivalent of the :ref:`GDScript<class_GDScript>` class and is only available in Mono-enabled Godot builds.
+This class represents a C# script. It is the C# equivalent of the :ref:`GDScript<class_GDScript>` class and is only available in Mono-enabled Redot builds.
 
 .. rst-class:: classref-introduction-group
 

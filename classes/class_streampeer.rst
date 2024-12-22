@@ -62,6 +62,8 @@ Methods
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`             | :ref:`get_float<class_StreamPeer_method_get_float>`\ (\ )                                                                                    |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`             | :ref:`get_half<class_StreamPeer_method_get_half>`\ (\ )                                                                                      |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`             | :ref:`get_partial_data<class_StreamPeer_method_get_partial_data>`\ (\ bytes\: :ref:`int<class_int>`\ )                                       |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`           | :ref:`get_string<class_StreamPeer_method_get_string>`\ (\ bytes\: :ref:`int<class_int>` = -1\ )                                              |
@@ -91,6 +93,8 @@ Methods
    | |void|                                | :ref:`put_double<class_StreamPeer_method_put_double>`\ (\ value\: :ref:`float<class_float>`\ )                                               |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                | :ref:`put_float<class_StreamPeer_method_put_float>`\ (\ value\: :ref:`float<class_float>`\ )                                                 |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`put_half<class_StreamPeer_method_put_half>`\ (\ value\: :ref:`float<class_float>`\ )                                                   |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`             | :ref:`put_partial_data<class_StreamPeer_method_put_partial_data>`\ (\ data\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -231,6 +235,18 @@ Gets a double-precision float from the stream.
 :ref:`float<class_float>` **get_float**\ (\ ) :ref:`🔗<class_StreamPeer_method_get_float>`
 
 Gets a single-precision float from the stream.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StreamPeer_method_get_half:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_half**\ (\ ) :ref:`🔗<class_StreamPeer_method_get_half>`
+
+Gets a half-precision float from the stream.
 
 .. rst-class:: classref-item-separator
 
@@ -415,6 +431,18 @@ Puts a double-precision float into the stream.
 |void| **put_float**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_StreamPeer_method_put_float>`
 
 Puts a single-precision float into the stream.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StreamPeer_method_put_half:
+
+.. rst-class:: classref-method
+
+|void| **put_half**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_StreamPeer_method_put_half>`
+
+Puts a half-precision float into the stream.
 
 .. rst-class:: classref-item-separator
 

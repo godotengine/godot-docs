@@ -40,6 +40,10 @@ Properties
    :widths: auto
 
    +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                            | draw_focus_border      | ``true`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_draw_focus_border>`)   |
+   +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`           | focus_mode             | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)                             |
+   +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                            | follow_focus           | ``true`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_follow_focus>`)        |
    +----------------------------------------------------+------------------------+-------------------------------------------------------------------------------------------------+
    | :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` | horizontal_scroll_mode | ``0`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_horizontal_scroll_mode>`) |
@@ -53,11 +57,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+----------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>` | :ref:`get_edited_object<class_EditorInspector_method_get_edited_object>`\ (\ )         |
-   +-----------------------------+----------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`get_selected_path<class_EditorInspector_method_get_selected_path>`\ (\ ) |const| |
-   +-----------------------------+----------------------------------------------------------------------------------------+
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                      | :ref:`edit<class_EditorInspector_method_edit>`\ (\ object\: :ref:`Object<class_Object>`\ )                                                                                                                                                                                                                                                                                                                                    |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>`                 | :ref:`get_edited_object<class_EditorInspector_method_get_edited_object>`\ (\ )                                                                                                                                                                                                                                                                                                                                                |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                 | :ref:`get_selected_path<class_EditorInspector_method_get_selected_path>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                        |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`EditorProperty<class_EditorProperty>` | :ref:`instantiate_property_editor<class_EditorInspector_method_instantiate_property_editor>`\ (\ object\: :ref:`Object<class_Object>`, type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`, path\: :ref:`String<class_String>`, hint\: :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`, hint_text\: :ref:`String<class_String>`, usage\: :ref:`int<class_int>`, wide\: :ref:`bool<class_bool>` = false\ ) |static| |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -183,6 +191,20 @@ Emitted when a property that requires a restart to be applied is edited in the i
 Method Descriptions
 -------------------
 
+.. _class_EditorInspector_method_edit:
+
+.. rst-class:: classref-method
+
+|void| **edit**\ (\ object\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_EditorInspector_method_edit>`
+
+Shows the properties of the given ``object`` in this inspector for editing. To clear the inspector, call this method with ``null``.
+
+\ **Note:** If you want to edit an object in the editor's main inspector, use the ``edit_*`` methods in :ref:`EditorInterface<class_EditorInterface>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorInspector_method_get_edited_object:
 
 .. rst-class:: classref-method
@@ -202,6 +224,18 @@ Returns the object currently selected in this inspector.
 :ref:`String<class_String>` **get_selected_path**\ (\ ) |const| :ref:`🔗<class_EditorInspector_method_get_selected_path>`
 
 Gets the path of the currently selected property.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInspector_method_instantiate_property_editor:
+
+.. rst-class:: classref-method
+
+:ref:`EditorProperty<class_EditorProperty>` **instantiate_property_editor**\ (\ object\: :ref:`Object<class_Object>`, type\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`, path\: :ref:`String<class_String>`, hint\: :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`, hint_text\: :ref:`String<class_String>`, usage\: :ref:`int<class_int>`, wide\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_EditorInspector_method_instantiate_property_editor>`
+
+Creates a property editor that can be used by plugin UI to edit the specified property of an ``object``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

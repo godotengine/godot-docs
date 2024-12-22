@@ -787,7 +787,7 @@ Add a custom icon to the current script. The icon specified at ``icon_path`` is 
 
 \ **Note:** As annotations describe their subject, the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be placed before the class definition and inheritance.
 
-\ **Note:** Unlike other annotations, the argument of the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be a string literal (constant expressions are not supported).
+\ **Note:** Unlike most other annotations, the argument of the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be a string literal (constant expressions are not supported).
 
 .. rst-class:: classref-item-separator
 
@@ -803,7 +803,7 @@ Mark the following property as assigned when the :ref:`Node<class_Node>` is read
 
 ::
 
-    @onready var character_name: Label = $Label
+    @onready var character_name = $Label
 
 .. rst-class:: classref-item-separator
 
@@ -892,6 +892,48 @@ Mark the following statement to ignore the specified ``warning``. See :doc:`GDSc
         return
         @warning_ignore("unreachable_code")
         print("unreachable")
+
+See also :ref:`@warning_ignore_start<class_@GDScript_annotation_@warning_ignore_start>` and :ref:`@warning_ignore_restore<class_@GDScript_annotation_@warning_ignore_restore>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GDScript_annotation_@warning_ignore_restore:
+
+.. rst-class:: classref-annotation
+
+**@warning_ignore_restore**\ (\ warning\: :ref:`String<class_String>`, ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@warning_ignore_restore>`
+
+Stops ignoring the listed warning types after :ref:`@warning_ignore_start<class_@GDScript_annotation_@warning_ignore_start>`. Ignoring the specified warning types will be reset to Project Settings. This annotation can be omitted to ignore the warning types until the end of the file.
+
+\ **Note:** Unlike most other annotations, arguments of the :ref:`@warning_ignore_restore<class_@GDScript_annotation_@warning_ignore_restore>` annotation must be string literals (constant expressions are not supported).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GDScript_annotation_@warning_ignore_start:
+
+.. rst-class:: classref-annotation
+
+**@warning_ignore_start**\ (\ warning\: :ref:`String<class_String>`, ...\ ) |vararg| :ref:`🔗<class_@GDScript_annotation_@warning_ignore_start>`
+
+Starts ignoring the listed warning types until the end of the file or the :ref:`@warning_ignore_restore<class_@GDScript_annotation_@warning_ignore_restore>` annotation with the given warning type.
+
+::
+
+    func test():
+        var a = 1 # Warning (if enabled in the Project Settings).
+        @warning_ignore_start("unused_variable")
+        var b = 2 # No warning.
+        var c = 3 # No warning.
+        @warning_ignore_restore("unused_variable")
+        var d = 4 # Warning (if enabled in the Project Settings).
+
+\ **Note:** To suppress a single warning, use :ref:`@warning_ignore<class_@GDScript_annotation_@warning_ignore>` instead.
+
+\ **Note:** Unlike most other annotations, arguments of the :ref:`@warning_ignore_start<class_@GDScript_annotation_@warning_ignore_start>` annotation must be string literals (constant expressions are not supported).
 
 .. rst-class:: classref-section-separator
 

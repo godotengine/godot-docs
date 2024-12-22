@@ -23,6 +23,8 @@ A camera feed gives you access to a single physical camera attached to your devi
 
 \ **Note:** Many cameras will return YCbCr images which are split into two textures and need to be combined in a shader. Redot does this automatically for you if you set the environment to show the camera image in the background.
 
+\ **Note:** This class is currently only implemented on Linux, macOS, and iOS. On other platforms no **CameraFeed**\ s will be available. To get a **CameraFeed** on iOS, the camera plugin from `godot-ios-plugins <https://github.com/godotengine/godot-ios-plugins>`__ is required.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -47,6 +49,10 @@ Methods
 .. table::
    :widths: auto
 
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_activate_feed<class_CameraFeed_private_method__activate_feed>`\ (\ ) |virtual|                                                        |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`_deactivate_feed<class_CameraFeed_private_method__deactivate_feed>`\ (\ ) |virtual|                                                    |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`FeedDataType<enum_CameraFeed_FeedDataType>` | :ref:`get_datatype<class_CameraFeed_method_get_datatype>`\ (\ ) |const|                                                                      |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -252,6 +258,30 @@ Formats supported by the feed. Each entry is a :ref:`Dictionary<class_Dictionary
 
 Method Descriptions
 -------------------
+
+.. _class_CameraFeed_private_method__activate_feed:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_activate_feed**\ (\ ) |virtual| :ref:`🔗<class_CameraFeed_private_method__activate_feed>`
+
+Called when the camera feed is activated.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CameraFeed_private_method__deactivate_feed:
+
+.. rst-class:: classref-method
+
+|void| **_deactivate_feed**\ (\ ) |virtual| :ref:`🔗<class_CameraFeed_private_method__deactivate_feed>`
+
+Called when the camera feed is deactivated.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_CameraFeed_method_get_datatype:
 

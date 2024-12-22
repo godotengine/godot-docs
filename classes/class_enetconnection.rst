@@ -344,7 +344,7 @@ Destroys the host and all resources associated with it.
 
 :ref:`Error<enum_@GlobalScope_Error>` **dtls_client_setup**\ (\ hostname\: :ref:`String<class_String>`, client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ ) :ref:`🔗<class_ENetConnection_method_dtls_client_setup>`
 
-Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet clients. Call this before :ref:`connect_to_host<class_ENetConnection_method_connect_to_host>` to have ENet connect using DTLS validating the server certificate against ``hostname``. You can pass the optional ``client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
+Configure this ENetHost to use the custom Redot extension allowing DTLS encryption for ENet clients. Call this before :ref:`connect_to_host<class_ENetConnection_method_connect_to_host>` to have ENet connect using DTLS validating the server certificate against ``hostname``. You can pass the optional ``client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
 
 .. rst-class:: classref-item-separator
 
@@ -356,7 +356,7 @@ Configure this ENetHost to use the custom Godot extension allowing DTLS encrypti
 
 :ref:`Error<enum_@GlobalScope_Error>` **dtls_server_setup**\ (\ server_options\: :ref:`TLSOptions<class_TLSOptions>`\ ) :ref:`🔗<class_ENetConnection_method_dtls_server_setup>`
 
-Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet servers. Call this right after :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` to have ENet expect peers to connect using DTLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
+Configure this ENetHost to use the custom Redot extension allowing DTLS encryption for ENet servers. Call this right after :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` to have ENet expect peers to connect using DTLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
 
 .. rst-class:: classref-item-separator
 

@@ -203,6 +203,18 @@ Emitted when the pose is updated.
 
 ----
 
+.. _class_Skeleton3D_signal_rest_updated:
+
+.. rst-class:: classref-signal
+
+**rest_updated**\ (\ ) :ref:`🔗<class_Skeleton3D_signal_rest_updated>`
+
+Emitted when the rest is updated.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Skeleton3D_signal_show_rest_only_changed:
 
 .. rst-class:: classref-signal

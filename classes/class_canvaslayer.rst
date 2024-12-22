@@ -140,9 +140,9 @@ The custom :ref:`Viewport<class_Viewport>` node assigned to the **CanvasLayer**.
 - |void| **set_follow_viewport**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_following_viewport**\ (\ )
 
-If enabled, the **CanvasLayer** will use the viewport's transform, so it will move when camera moves instead of being anchored in a fixed position on the screen.
+If enabled, the **CanvasLayer** stays in a fixed position on the screen. If disabled, the **CanvasLayer** maintains its position in world space.
 
-Together with :ref:`follow_viewport_scale<class_CanvasLayer_property_follow_viewport_scale>` it can be used for a pseudo 3D effect.
+Together with :ref:`follow_viewport_scale<class_CanvasLayer_property_follow_viewport_scale>`, this can be used for a pseudo-3D effect.
 
 .. rst-class:: classref-item-separator
 

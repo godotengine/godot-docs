@@ -113,7 +113,7 @@ The :ref:`Color<class_Color>` of the light. Defaults to white. A black color cau
 
 The inner angle of the cone in a spotlight. Must be less than or equal to the outer cone angle.
 
-Within this angle, the light is at full brightness. Between the inner and outer cone angles, there is a transition from full brightness to zero brightness. When creating a Godot :ref:`SpotLight3D<class_SpotLight3D>`, the ratio between the inner and outer cone angles is used to calculate the attenuation of the light.
+Within this angle, the light is at full brightness. Between the inner and outer cone angles, there is a transition from full brightness to zero brightness. When creating a Redot :ref:`SpotLight3D<class_SpotLight3D>`, the ratio between the inner and outer cone angles is used to calculate the attenuation of the light.
 
 .. rst-class:: classref-item-separator
 
@@ -130,7 +130,7 @@ Within this angle, the light is at full brightness. Between the inner and outer 
 - |void| **set_intensity**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_intensity**\ (\ )
 
-The intensity of the light. This is expressed in candelas (lumens per steradian) for point and spot lights, and lux (lumens per m²) for directional lights. When creating a Godot light, this value is converted to a unitless multiplier.
+The intensity of the light. This is expressed in candelas (lumens per steradian) for point and spot lights, and lux (lumens per m²) for directional lights. When creating a Redot light, this value is converted to a unitless multiplier.
 
 .. rst-class:: classref-item-separator
 
@@ -147,7 +147,7 @@ The intensity of the light. This is expressed in candelas (lumens per steradian)
 - |void| **set_light_type**\ (\ value\: :ref:`String<class_String>`\ )
 - :ref:`String<class_String>` **get_light_type**\ (\ )
 
-The type of the light. The values accepted by Godot are "point", "spot", and "directional", which correspond to Godot's :ref:`OmniLight3D<class_OmniLight3D>`, :ref:`SpotLight3D<class_SpotLight3D>`, and :ref:`DirectionalLight3D<class_DirectionalLight3D>` respectively.
+The type of the light. The values accepted by Redot are "point", "spot", and "directional", which correspond to Redot's :ref:`OmniLight3D<class_OmniLight3D>`, :ref:`SpotLight3D<class_SpotLight3D>`, and :ref:`DirectionalLight3D<class_DirectionalLight3D>` respectively.
 
 .. rst-class:: classref-item-separator
 
@@ -166,7 +166,7 @@ The type of the light. The values accepted by Godot are "point", "spot", and "di
 
 The outer angle of the cone in a spotlight. Must be greater than or equal to the inner angle.
 
-At this angle, the light drops off to zero brightness. Between the inner and outer cone angles, there is a transition from full brightness to zero brightness. If this angle is a half turn, then the spotlight emits in all directions. When creating a Godot :ref:`SpotLight3D<class_SpotLight3D>`, the outer cone angle is used as the angle of the spotlight.
+At this angle, the light drops off to zero brightness. Between the inner and outer cone angles, there is a transition from full brightness to zero brightness. If this angle is a half turn, then the spotlight emits in all directions. When creating a Redot :ref:`SpotLight3D<class_SpotLight3D>`, the outer cone angle is used as the angle of the spotlight.
 
 .. rst-class:: classref-item-separator
 
@@ -183,7 +183,7 @@ At this angle, the light drops off to zero brightness. Between the inner and out
 - |void| **set_range**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_range**\ (\ )
 
-The range of the light, beyond which the light has no effect. glTF lights with no range defined behave like physical lights (which have infinite range). When creating a Godot light, the range is clamped to 4096.
+The range of the light, beyond which the light has no effect. glTF lights with no range defined behave like physical lights (which have infinite range). When creating a Redot light, the range is clamped to 4096.
 
 .. rst-class:: classref-section-separator
 
@@ -212,7 +212,7 @@ Creates a new GLTFLight instance by parsing the given :ref:`Dictionary<class_Dic
 
 :ref:`GLTFLight<class_GLTFLight>` **from_node**\ (\ light_node\: :ref:`Light3D<class_Light3D>`\ ) |static| :ref:`🔗<class_GLTFLight_method_from_node>`
 
-Create a new GLTFLight instance from the given Godot :ref:`Light3D<class_Light3D>` node.
+Create a new GLTFLight instance from the given Redot :ref:`Light3D<class_Light3D>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -264,7 +264,7 @@ Serializes this GLTFLight instance into a :ref:`Dictionary<class_Dictionary>`.
 
 :ref:`Light3D<class_Light3D>` **to_node**\ (\ ) |const| :ref:`🔗<class_GLTFLight_method_to_node>`
 
-Converts this GLTFLight instance into a Godot :ref:`Light3D<class_Light3D>` node.
+Converts this GLTFLight instance into a Redot :ref:`Light3D<class_Light3D>` node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

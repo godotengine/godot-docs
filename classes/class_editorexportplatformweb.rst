@@ -21,7 +21,7 @@ Description
 
 The Web exporter customizes how a web build is handled. In the editor's "Export" window, it is created when adding a new "Web" preset.
 
-\ **Note:** Godot on Web is rendered inside a ``<canvas>`` tag. Normally, the canvas cannot be positioned or resized manually, but otherwise acts as the main :ref:`Window<class_Window>` of the application.
+\ **Note:** Redot on Web is rendered inside a ``<canvas>`` tag. Normally, the canvas cannot be positioned or resized manually, but otherwise acts as the main :ref:`Window<class_Window>` of the application.
 
 .. rst-class:: classref-introduction-group
 
@@ -123,7 +123,7 @@ File path to the custom export template used for release builds. If left empty, 
 
 :ref:`int<class_int>` **html/canvas_resize_policy** :ref:`🔗<class_EditorExportPlatformWeb_property_html/canvas_resize_policy>`
 
-Determines how the canvas should be resized by Godot.
+Determines how the canvas should be resized by Redot.
 
 - **None:** The canvas is not automatically resized.
 

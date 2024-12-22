@@ -49,19 +49,21 @@ Properties
 .. table::
    :widths: auto
 
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                      | :ref:`autostart<class_Timer_property_autostart>`               | ``false`` |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                      | :ref:`one_shot<class_Timer_property_one_shot>`                 | ``false`` |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                      | :ref:`paused<class_Timer_property_paused>`                     |           |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` | :ref:`process_callback<class_Timer_property_process_callback>` | ``1``     |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                                    | :ref:`time_left<class_Timer_property_time_left>`               |           |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                                    | :ref:`wait_time<class_Timer_property_wait_time>`               | ``1.0``   |
-   +--------------------------------------------------------------+----------------------------------------------------------------+-----------+
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`autostart<class_Timer_property_autostart>`                 | ``false`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`ignore_time_scale<class_Timer_property_ignore_time_scale>` | ``false`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`one_shot<class_Timer_property_one_shot>`                   | ``false`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                      | :ref:`paused<class_Timer_property_paused>`                       |           |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` | :ref:`process_callback<class_Timer_property_process_callback>`   | ``1``     |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                    | :ref:`time_left<class_Timer_property_time_left>`                 |           |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                    | :ref:`wait_time<class_Timer_property_wait_time>`                 | ``1.0``   |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -152,6 +154,23 @@ If ``true``, the timer will start immediately when it enters the scene tree.
 \ **Note:** After the timer enters the tree, this property is automatically set to ``false``.
 
 \ **Note:** This property does nothing when the timer is running in the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Timer_property_ignore_time_scale:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **ignore_time_scale** = ``false`` :ref:`🔗<class_Timer_property_ignore_time_scale>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_ignore_time_scale**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_ignore_time_scale**\ (\ )
+
+If ``true``, the timer will ignore :ref:`Engine.time_scale<class_Engine_property_time_scale>` and update with the real, elapsed time.
 
 .. rst-class:: classref-item-separator
 

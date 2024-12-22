@@ -61,6 +61,8 @@ Properties
    :widths: auto
 
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`AnisotropicFiltering<enum_Viewport_AnisotropicFiltering>`                               | :ref:`anisotropic_filtering_level<class_Viewport_property_anisotropic_filtering_level>`               | ``2``                                                                         |
+   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`audio_listener_enable_2d<class_Viewport_property_audio_listener_enable_2d>`                     | ``false``                                                                     |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`audio_listener_enable_3d<class_Viewport_property_audio_listener_enable_3d>`                     | ``false``                                                                     |
@@ -190,6 +192,8 @@ Methods
    | :ref:`int<class_int>`                                                                         | :ref:`get_render_info<class_Viewport_method_get_render_info>`\ (\ type\: :ref:`RenderInfoType<enum_Viewport_RenderInfoType>`, info\: :ref:`RenderInfo<enum_Viewport_RenderInfo>`\ )                                                                                   |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform2D<class_Transform2D>`                                                         | :ref:`get_screen_transform<class_Viewport_method_get_screen_transform>`\ (\ ) |const|                                                                                                                                                                                 |
+   +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform2D<class_Transform2D>`                                                         | :ref:`get_stretch_transform<class_Viewport_method_get_stretch_transform>`\ (\ ) |const|                                                                                                                                                                               |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`ViewportTexture<class_ViewportTexture>`                                                 | :ref:`get_texture<class_Viewport_method_get_texture>`\ (\ ) |const|                                                                                                                                                                                                   |
    +-----------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -436,6 +440,64 @@ Represents the size of the :ref:`MSAA<enum_Viewport_MSAA>` enum.
 
 ----
 
+.. _enum_Viewport_AnisotropicFiltering:
+
+.. rst-class:: classref-enumeration
+
+enum **AnisotropicFiltering**: :ref:`🔗<enum_Viewport_AnisotropicFiltering>`
+
+.. _class_Viewport_constant_ANISOTROPY_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AnisotropicFiltering<enum_Viewport_AnisotropicFiltering>` **ANISOTROPY_DISABLED** = ``0``
+
+Anisotropic filtering is disabled.
+
+.. _class_Viewport_constant_ANISOTROPY_2X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AnisotropicFiltering<enum_Viewport_AnisotropicFiltering>` **ANISOTROPY_2X** = ``1``
+
+Use 2× anisotropic filtering.
+
+.. _class_Viewport_constant_ANISOTROPY_4X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AnisotropicFiltering<enum_Viewport_AnisotropicFiltering>` **ANISOTROPY_4X** = ``2``
+
+Use 4× anisotropic filtering. This is the default value.
+
+.. _class_Viewport_constant_ANISOTROPY_8X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AnisotropicFiltering<enum_Viewport_AnisotropicFiltering>` **ANISOTROPY_8X** = ``3``
+
+Use 8× anisotropic filtering.
+
+.. _class_Viewport_constant_ANISOTROPY_16X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AnisotropicFiltering<enum_Viewport_AnisotropicFiltering>` **ANISOTROPY_16X** = ``4``
+
+Use 16× anisotropic filtering.
+
+.. _class_Viewport_constant_ANISOTROPY_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AnisotropicFiltering<enum_Viewport_AnisotropicFiltering>` **ANISOTROPY_MAX** = ``5``
+
+Represents the size of the :ref:`AnisotropicFiltering<enum_Viewport_AnisotropicFiltering>` enum.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_Viewport_ScreenSpaceAA:
 
 .. rst-class:: classref-enumeration
@@ -599,6 +661,8 @@ Objects are displayed semi-transparent with additive blending so you can see whe
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_WIREFRAME** = ``4``
 
 Objects are displayed as wireframe models.
+
+\ **Note:** :ref:`RenderingServer.set_debug_generate_wireframes<class_RenderingServer_method_set_debug_generate_wireframes>` must be called before loading any meshes for wireframes to be visible when using the Compatibility renderer.
 
 .. _class_Viewport_constant_DEBUG_DRAW_NORMAL_BUFFER:
 
@@ -1060,6 +1124,29 @@ Represents the size of the :ref:`VRSUpdateMode<enum_Viewport_VRSUpdateMode>` enu
 
 Property Descriptions
 ---------------------
+
+.. _class_Viewport_property_anisotropic_filtering_level:
+
+.. rst-class:: classref-property
+
+:ref:`AnisotropicFiltering<enum_Viewport_AnisotropicFiltering>` **anisotropic_filtering_level** = ``2`` :ref:`🔗<class_Viewport_property_anisotropic_filtering_level>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_anisotropic_filtering_level**\ (\ value\: :ref:`AnisotropicFiltering<enum_Viewport_AnisotropicFiltering>`\ )
+- :ref:`AnisotropicFiltering<enum_Viewport_AnisotropicFiltering>` **get_anisotropic_filtering_level**\ (\ )
+
+Sets the maximum number of samples to take when using anisotropic filtering on textures (as a power of two). A higher sample count will result in sharper textures at oblique angles, but is more expensive to compute. A value of ``0`` forcibly disables anisotropic filtering, even on materials where it is enabled.
+
+The anisotropic filtering level also affects decals and light projectors if they are configured to use anisotropic filtering. See :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>` and :ref:`ProjectSettings.rendering/textures/light_projectors/filter<class_ProjectSettings_property_rendering/textures/light_projectors/filter>`.
+
+\ **Note:** In 3D, for this setting to have an effect, set :ref:`BaseMaterial3D.texture_filter<class_BaseMaterial3D_property_texture_filter>` to :ref:`BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC<class_BaseMaterial3D_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC>` or :ref:`BaseMaterial3D.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC<class_BaseMaterial3D_constant_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC>` on materials.
+
+\ **Note:** In 2D, for this setting to have an effect, set :ref:`CanvasItem.texture_filter<class_CanvasItem_property_texture_filter>` to :ref:`CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC<class_CanvasItem_constant_TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC>` or :ref:`CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC<class_CanvasItem_constant_TEXTURE_FILTER_NEAREST_WITH_MIPMAPS_ANISOTROPIC>` on the :ref:`CanvasItem<class_CanvasItem>` node displaying the texture (or in :ref:`CanvasTexture<class_CanvasTexture>`). However, anisotropic filtering is rarely useful in 2D, so only enable it for textures in 2D if it makes a meaningful visual difference.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_Viewport_property_audio_listener_enable_2d:
 
@@ -1749,7 +1836,7 @@ See also :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<cla
 
 If ``true``, 2D rendering will use an high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ renderer this will be an ``RGBA16`` framebuffer, while when using the Mobile renderer it will be an ``RGB10_A2`` framebuffer. Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen (if the Viewport is attached to the screen). Practically speaking, this means that the end result of the Viewport will not be clamped into the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
 
-\ **Note:** This setting will have no effect when using the GL Compatibility renderer as the GL Compatibility renderer always renders in low dynamic range for performance reasons.
+\ **Note:** This setting will have no effect when using the Compatibility renderer, which always renders in low dynamic range for performance reasons.
 
 .. rst-class:: classref-item-separator
 
@@ -2072,6 +2159,20 @@ Returns rendering statistics of the given type. See :ref:`RenderInfoType<enum_Vi
 :ref:`Transform2D<class_Transform2D>` **get_screen_transform**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_screen_transform>`
 
 Returns the transform from the Viewport's coordinates to the screen coordinates of the containing window manager window.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_method_get_stretch_transform:
+
+.. rst-class:: classref-method
+
+:ref:`Transform2D<class_Transform2D>` **get_stretch_transform**\ (\ ) |const| :ref:`🔗<class_Viewport_method_get_stretch_transform>`
+
+Returns the automatically computed 2D stretch transform, taking the **Viewport**'s stretch settings into account. The final value is multiplied by :ref:`Window.content_scale_factor<class_Window_property_content_scale_factor>`, but only for the root viewport. If this method is called on a :ref:`SubViewport<class_SubViewport>` (e.g., in a scene tree with :ref:`SubViewportContainer<class_SubViewportContainer>` and :ref:`SubViewport<class_SubViewport>`), the scale factor of the root window will not be applied. Using :ref:`Transform2D.get_scale<class_Transform2D_method_get_scale>` on the returned value, this can be used to compensate for scaling when zooming a :ref:`Camera2D<class_Camera2D>` node, or to scale down a :ref:`TextureRect<class_TextureRect>` to be pixel-perfect regardless of the automatically computed scale factor.
+
+\ **Note:** Due to how pixel scaling works, the returned transform's X and Y scale may differ slightly, even when :ref:`Window.content_scale_aspect<class_Window_property_content_scale_aspect>` is set to a mode that preserves the pixels' aspect ratio. If :ref:`Window.content_scale_aspect<class_Window_property_content_scale_aspect>` is :ref:`Window.CONTENT_SCALE_ASPECT_IGNORE<class_Window_constant_CONTENT_SCALE_ASPECT_IGNORE>`, the X and Y scale may differ *significantly*.
 
 .. rst-class:: classref-item-separator
 

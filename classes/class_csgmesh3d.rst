@@ -19,7 +19,7 @@ A CSG Mesh shape that uses a mesh resource.
 Description
 -----------
 
-This CSG node allows you to use any mesh resource as a CSG shape, provided it is closed, does not self-intersect, does not contain internal faces and has no edges that connect to more than two faces. See also :ref:`CSGPolygon3D<class_CSGPolygon3D>` for drawing 2D extruded polygons to be used as CSG nodes.
+This CSG node allows you to use any mesh resource as a CSG shape, provided it is *manifold*. A manifold shape is closed, does not self-intersect, does not contain internal faces and has no edges that connect to more than two faces. See also :ref:`CSGPolygon3D<class_CSGPolygon3D>` for drawing 2D extruded polygons to be used as CSG nodes.
 
 \ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance3D<class_MeshInstance3D>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
 
@@ -82,6 +82,8 @@ The :ref:`Material<class_Material>` used in drawing the CSG shape.
 - :ref:`Mesh<class_Mesh>` **get_mesh**\ (\ )
 
 The :ref:`Mesh<class_Mesh>` resource to use as a CSG shape.
+
+\ **Note:** Some :ref:`Mesh<class_Mesh>` types such as :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PointMesh<class_PointMesh>`, :ref:`QuadMesh<class_QuadMesh>`, and :ref:`RibbonTrailMesh<class_RibbonTrailMesh>` are excluded from the type hint for this property, as these primitives are non-*manifold* and thus not compatible with the CSG algorithm.
 
 \ **Note:** When using an :ref:`ArrayMesh<class_ArrayMesh>`, all vertex attributes except :ref:`Mesh.ARRAY_VERTEX<class_Mesh_constant_ARRAY_VERTEX>`, :ref:`Mesh.ARRAY_NORMAL<class_Mesh_constant_ARRAY_NORMAL>` and :ref:`Mesh.ARRAY_TEX_UV<class_Mesh_constant_ARRAY_TEX_UV>` are left unused. Only :ref:`Mesh.ARRAY_VERTEX<class_Mesh_constant_ARRAY_VERTEX>` and :ref:`Mesh.ARRAY_TEX_UV<class_Mesh_constant_ARRAY_TEX_UV>` will be passed to the GPU.
 

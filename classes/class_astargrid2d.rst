@@ -32,8 +32,8 @@ To use **AStarGrid2D**, you only need to set the :ref:`region<class_AStarGrid2D_
     astar_grid.region = Rect2i(0, 0, 32, 32)
     astar_grid.cell_size = Vector2(16, 16)
     astar_grid.update()
-    print(astar_grid.get_id_path(Vector2i(0, 0), Vector2i(3, 4))) # prints (0, 0), (1, 1), (2, 2), (3, 3), (3, 4)
-    print(astar_grid.get_point_path(Vector2i(0, 0), Vector2i(3, 4))) # prints (0, 0), (16, 16), (32, 32), (48, 48), (48, 64)
+    print(astar_grid.get_id_path(Vector2i(0, 0), Vector2i(3, 4))) # Prints [(0, 0), (1, 1), (2, 2), (3, 3), (3, 4)]
+    print(astar_grid.get_point_path(Vector2i(0, 0), Vector2i(3, 4))) # Prints [(0, 0), (16, 16), (32, 32), (48, 48), (48, 64)]
 
  .. code-tab:: csharp
 

@@ -14,14 +14,14 @@ GLTFDocument
 
 **Inherited By:** :ref:`FBXDocument<class_FBXDocument>`
 
-Class for importing and exporting glTF files in and out of Godot.
+Class for importing and exporting glTF files in and out of Redot.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-GLTFDocument supports reading data from a glTF file, buffer, or Godot scene. This data can then be written to the filesystem, buffer, or used to create a Godot scene.
+GLTFDocument supports reading data from a glTF file, buffer, or Redot scene. This data can then be written to the filesystem, buffer, or used to create a Redot scene.
 
 All of the data in a glTF scene is stored in the :ref:`GLTFState<class_GLTFState>` class. GLTFDocument processes state objects, but does not contain any scene data itself. GLTFDocument has member variables to store export configuration settings such as the image format, but is otherwise stateless. Multiple scenes can be processed with the same settings using the same GLTFDocument object and different :ref:`GLTFState<class_GLTFState>` objects.
 
@@ -107,7 +107,7 @@ enum **RootNodeMode**: :ref:`🔗<enum_GLTFDocument_RootNodeMode>`
 
 :ref:`RootNodeMode<enum_GLTFDocument_RootNodeMode>` **ROOT_NODE_MODE_SINGLE_ROOT** = ``0``
 
-Treat the Godot scene's root node as the root node of the glTF file, and mark it as the single root node via the ``GODOT_single_root`` glTF extension. This will be parsed the same as :ref:`ROOT_NODE_MODE_KEEP_ROOT<class_GLTFDocument_constant_ROOT_NODE_MODE_KEEP_ROOT>` if the implementation does not support ``GODOT_single_root``.
+Treat the Redot scene's root node as the root node of the glTF file, and mark it as the single root node via the ``GODOT_single_root`` glTF extension. This will be parsed the same as :ref:`ROOT_NODE_MODE_KEEP_ROOT<class_GLTFDocument_constant_ROOT_NODE_MODE_KEEP_ROOT>` if the implementation does not support ``GODOT_single_root``.
 
 .. _class_GLTFDocument_constant_ROOT_NODE_MODE_KEEP_ROOT:
 
@@ -115,7 +115,7 @@ Treat the Godot scene's root node as the root node of the glTF file, and mark it
 
 :ref:`RootNodeMode<enum_GLTFDocument_RootNodeMode>` **ROOT_NODE_MODE_KEEP_ROOT** = ``1``
 
-Treat the Godot scene's root node as the root node of the glTF file, but do not mark it as anything special. An extra root node will be generated when importing into Godot. This uses only vanilla glTF features. This is equivalent to the behavior in Godot 4.1 and earlier.
+Treat the Redot scene's root node as the root node of the glTF file, but do not mark it as anything special. An extra root node will be generated when importing into Redot. This uses only vanilla glTF features. This is equivalent to the behavior in Redot 4.1 and earlier.
 
 .. _class_GLTFDocument_constant_ROOT_NODE_MODE_MULTI_ROOT:
 
@@ -123,7 +123,7 @@ Treat the Godot scene's root node as the root node of the glTF file, but do not 
 
 :ref:`RootNodeMode<enum_GLTFDocument_RootNodeMode>` **ROOT_NODE_MODE_MULTI_ROOT** = ``2``
 
-Treat the Godot scene's root node as the name of the glTF scene, and add all of its children as root nodes of the glTF file. This uses only vanilla glTF features. This avoids an extra root node, but only the name of the Godot scene's root node will be preserved, as it will not be saved as a node.
+Treat the Redot scene's root node as the name of the glTF scene, and add all of its children as root nodes of the glTF file. This uses only vanilla glTF features. This avoids an extra root node, but only the name of the Redot scene's root node will be preserved, as it will not be saved as a node.
 
 .. rst-class:: classref-section-separator
 
@@ -147,7 +147,7 @@ Property Descriptions
 
 The user-friendly name of the export image format. This is used when exporting the glTF file, including writing to a file and writing to a byte array.
 
-By default, Godot allows the following options: "None", "PNG", "JPEG", "Lossless WebP", and "Lossy WebP". Support for more image formats can be added in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes.
+By default, Redot allows the following options: "None", "PNG", "JPEG", "Lossless WebP", and "Lossy WebP". Support for more image formats can be added in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes.
 
 .. rst-class:: classref-item-separator
 
@@ -228,7 +228,7 @@ Takes a path to a glTF file and imports the data at that file path to the given 
 
 :ref:`Error<enum_@GlobalScope_Error>` **append_from_scene**\ (\ node\: :ref:`Node<class_Node>`, state\: :ref:`GLTFState<class_GLTFState>`, flags\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_GLTFDocument_method_append_from_scene>`
 
-Takes a Godot Engine scene node and exports it and its descendants to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
+Takes a Redot Engine scene node and exports it and its descendants to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -240,7 +240,7 @@ Takes a Godot Engine scene node and exports it and its descendants to the given 
 
 :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` **export_object_model_property**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, node_path\: :ref:`NodePath<class_NodePath>`, godot_node\: :ref:`Node<class_Node>`, gltf_node_index\: :ref:`int<class_int>`\ ) |static| :ref:`🔗<class_GLTFDocument_method_export_object_model_property>`
 
-Determines a mapping between the given Godot ``node_path`` and the corresponding glTF Object Model JSON pointer(s) in the generated glTF file. The details of this mapping are returned in a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` object. Additional mappings can be supplied via the :ref:`GLTFDocumentExtension._import_object_model_property<class_GLTFDocumentExtension_private_method__import_object_model_property>` callback method.
+Determines a mapping between the given Redot ``node_path`` and the corresponding glTF Object Model JSON pointer(s) in the generated glTF file. The details of this mapping are returned in a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` object. Additional mappings can be supplied via the :ref:`GLTFDocumentExtension._import_object_model_property<class_GLTFDocumentExtension_private_method__import_object_model_property>` callback method.
 
 .. rst-class:: classref-item-separator
 
@@ -264,7 +264,7 @@ Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter
 
 :ref:`Node<class_Node>` **generate_scene**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, bake_fps\: :ref:`float<class_float>` = 30, trimming\: :ref:`bool<class_bool>` = false, remove_immutable_tracks\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_GLTFDocument_method_generate_scene>`
 
-Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and returns a Godot Engine scene node.
+Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and returns a Redot Engine scene node.
 
 The ``bake_fps`` parameter overrides the bake_fps in ``state``.
 
@@ -292,7 +292,7 @@ Returns a list of all support glTF extensions, including extensions supported di
 
 :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` **import_object_model_property**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, json_pointer\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_GLTFDocument_method_import_object_model_property>`
 
-Determines a mapping between the given glTF Object Model ``json_pointer`` and the corresponding Godot node path(s) in the generated Godot scene. The details of this mapping are returned in a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` object. Additional mappings can be supplied via the :ref:`GLTFDocumentExtension._export_object_model_property<class_GLTFDocumentExtension_private_method__export_object_model_property>` callback method.
+Determines a mapping between the given glTF Object Model ``json_pointer`` and the corresponding Redot node path(s) in the generated Redot scene. The details of this mapping are returned in a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` object. Additional mappings can be supplied via the :ref:`GLTFDocumentExtension._export_object_model_property<class_GLTFDocumentExtension_private_method__export_object_model_property>` callback method.
 
 .. rst-class:: classref-item-separator
 

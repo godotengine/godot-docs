@@ -187,40 +187,55 @@ Operators
 
 .. rst-class:: classref-descriptions-group
 
-Constants
----------
+Enumerations
+------------
+
+.. _enum_Vector4_Axis:
+
+.. rst-class:: classref-enumeration
+
+enum **Axis**: :ref:`🔗<enum_Vector4_Axis>`
 
 .. _class_Vector4_constant_AXIS_X:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**AXIS_X** = ``0`` :ref:`🔗<class_Vector4_constant_AXIS_X>`
+:ref:`Axis<enum_Vector4_Axis>` **AXIS_X** = ``0``
 
 Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4_method_min_axis_index>`.
 
 .. _class_Vector4_constant_AXIS_Y:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**AXIS_Y** = ``1`` :ref:`🔗<class_Vector4_constant_AXIS_Y>`
+:ref:`Axis<enum_Vector4_Axis>` **AXIS_Y** = ``1``
 
 Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4_method_min_axis_index>`.
 
 .. _class_Vector4_constant_AXIS_Z:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**AXIS_Z** = ``2`` :ref:`🔗<class_Vector4_constant_AXIS_Z>`
+:ref:`Axis<enum_Vector4_Axis>` **AXIS_Z** = ``2``
 
 Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4_method_min_axis_index>`.
 
 .. _class_Vector4_constant_AXIS_W:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**AXIS_W** = ``3`` :ref:`🔗<class_Vector4_constant_AXIS_W>`
+:ref:`Axis<enum_Vector4_Axis>` **AXIS_W** = ``3``
 
 Enumerated value for the W axis. Returned by :ref:`max_axis_index<class_Vector4_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4_method_min_axis_index>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Constants
+---------
 
 .. _class_Vector4_constant_ZERO:
 
@@ -794,7 +809,7 @@ Multiplies each component of the **Vector4** by the components of the given **Ve
 
 ::
 
-    print(Vector4(10, 20, 30, 40) * Vector4(3, 4, 5, 6)) # Prints "(30, 80, 150, 240)"
+    print(Vector4(10, 20, 30, 40) * Vector4(3, 4, 5, 6)) # Prints (30.0, 80.0, 150.0, 240.0)
 
 .. rst-class:: classref-item-separator
 
@@ -810,7 +825,7 @@ Multiplies each component of the **Vector4** by the given :ref:`float<class_floa
 
 ::
 
-    print(Vector4(10, 20, 30, 40) * 2) # Prints "(20, 40, 60, 80)"
+    print(Vector4(10, 20, 30, 40) * 2) # Prints (20.0, 40.0, 60.0, 80.0)
 
 .. rst-class:: classref-item-separator
 
@@ -838,7 +853,7 @@ Adds each component of the **Vector4** by the components of the given **Vector4*
 
 ::
 
-    print(Vector4(10, 20, 30, 40) + Vector4(3, 4, 5, 6)) # Prints "(13, 24, 35, 46)"
+    print(Vector4(10, 20, 30, 40) + Vector4(3, 4, 5, 6)) # Prints (13.0, 24.0, 35.0, 46.0)
 
 .. rst-class:: classref-item-separator
 
@@ -854,7 +869,7 @@ Subtracts each component of the **Vector4** by the components of the given **Vec
 
 ::
 
-    print(Vector4(10, 20, 30, 40) - Vector4(3, 4, 5, 6)) # Prints "(7, 16, 25, 34)"
+    print(Vector4(10, 20, 30, 40) - Vector4(3, 4, 5, 6)) # Prints (7.0, 16.0, 25.0, 34.0)
 
 .. rst-class:: classref-item-separator
 
@@ -870,7 +885,7 @@ Divides each component of the **Vector4** by the components of the given **Vecto
 
 ::
 
-    print(Vector4(10, 20, 30, 40) / Vector4(2, 5, 3, 4)) # Prints "(5, 4, 10, 10)"
+    print(Vector4(10, 20, 30, 40) / Vector4(2, 5, 3, 4)) # Prints (5.0, 4.0, 10.0, 10.0)
 
 .. rst-class:: classref-item-separator
 
@@ -886,7 +901,7 @@ Divides each component of the **Vector4** by the given :ref:`float<class_float>`
 
 ::
 
-    print(Vector4(10, 20, 30, 40) / 2 # Prints "(5, 10, 15, 20)"
+    print(Vector4(10, 20, 30, 40) / 2 # Prints (5.0, 10.0, 15.0, 20.0)
 
 .. rst-class:: classref-item-separator
 

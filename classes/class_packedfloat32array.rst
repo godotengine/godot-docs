@@ -437,7 +437,7 @@ Sorts the elements of the array in ascending order.
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array**\ (\ ) |const| :ref:`🔗<class_PackedFloat32Array_method_to_byte_array>`
 
-Returns a copy of the data converted to a :ref:`PackedByteArray<class_PackedByteArray>`, where each element have been encoded as 4 bytes.
+Returns a copy of the data converted to a :ref:`PackedByteArray<class_PackedByteArray>`, where each element has been encoded as 4 bytes.
 
 The size of the new array will be ``float32_array.size() * 4``.
 

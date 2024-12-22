@@ -223,7 +223,7 @@ Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property
 
 The body's drag coefficient. Higher values increase this body's air resistance.
 
-\ **Note:** This value is currently unused by Godot's default physics implementation.
+\ **Note:** This value is currently unused by Redot's default physics implementation.
 
 .. rst-class:: classref-item-separator
 

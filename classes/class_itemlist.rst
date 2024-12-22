@@ -185,45 +185,51 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_color<class_ItemList_theme_color_font_color>`                   | ``Color(0.65, 0.65, 0.65, 1)`` |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_hovered_color<class_ItemList_theme_color_font_hovered_color>`   | ``Color(0.95, 0.95, 0.95, 1)`` |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_ItemList_theme_color_font_outline_color>`   | ``Color(0, 0, 0, 1)``          |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_selected_color<class_ItemList_theme_color_font_selected_color>` | ``Color(1, 1, 1, 1)``          |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`guide_color<class_ItemList_theme_color_guide_color>`                 | ``Color(0.7, 0.7, 0.7, 0.25)`` |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`int<class_int>`           | :ref:`h_separation<class_ItemList_theme_constant_h_separation>`            | ``4``                          |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`int<class_int>`           | :ref:`icon_margin<class_ItemList_theme_constant_icon_margin>`              | ``4``                          |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`int<class_int>`           | :ref:`line_separation<class_ItemList_theme_constant_line_separation>`      | ``2``                          |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`int<class_int>`           | :ref:`outline_size<class_ItemList_theme_constant_outline_size>`            | ``0``                          |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`int<class_int>`           | :ref:`v_separation<class_ItemList_theme_constant_v_separation>`            | ``4``                          |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`Font<class_Font>`         | :ref:`font<class_ItemList_theme_font_font>`                                |                                |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`int<class_int>`           | :ref:`font_size<class_ItemList_theme_font_size_font_size>`                 |                                |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`cursor<class_ItemList_theme_style_cursor>`                           |                                |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`cursor_unfocused<class_ItemList_theme_style_cursor_unfocused>`       |                                |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ItemList_theme_style_focus>`                             |                                |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`hovered<class_ItemList_theme_style_hovered>`                         |                                |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_ItemList_theme_style_panel>`                             |                                |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`selected<class_ItemList_theme_style_selected>`                       |                                |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`selected_focus<class_ItemList_theme_style_selected_focus>`           |                                |
-   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color<class_ItemList_theme_color_font_color>`                                   | ``Color(0.65, 0.65, 0.65, 1)`` |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_hovered_color<class_ItemList_theme_color_font_hovered_color>`                   | ``Color(0.95, 0.95, 0.95, 1)`` |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_hovered_selected_color<class_ItemList_theme_color_font_hovered_selected_color>` | ``Color(1, 1, 1, 1)``          |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_ItemList_theme_color_font_outline_color>`                   | ``Color(0, 0, 0, 1)``          |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_selected_color<class_ItemList_theme_color_font_selected_color>`                 | ``Color(1, 1, 1, 1)``          |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`guide_color<class_ItemList_theme_color_guide_color>`                                 | ``Color(0.7, 0.7, 0.7, 0.25)`` |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`int<class_int>`           | :ref:`h_separation<class_ItemList_theme_constant_h_separation>`                            | ``4``                          |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`int<class_int>`           | :ref:`icon_margin<class_ItemList_theme_constant_icon_margin>`                              | ``4``                          |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`int<class_int>`           | :ref:`line_separation<class_ItemList_theme_constant_line_separation>`                      | ``2``                          |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`int<class_int>`           | :ref:`outline_size<class_ItemList_theme_constant_outline_size>`                            | ``0``                          |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`int<class_int>`           | :ref:`v_separation<class_ItemList_theme_constant_v_separation>`                            | ``4``                          |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Font<class_Font>`         | :ref:`font<class_ItemList_theme_font_font>`                                                |                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`int<class_int>`           | :ref:`font_size<class_ItemList_theme_font_size_font_size>`                                 |                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`cursor<class_ItemList_theme_style_cursor>`                                           |                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`cursor_unfocused<class_ItemList_theme_style_cursor_unfocused>`                       |                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ItemList_theme_style_focus>`                                             |                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hovered<class_ItemList_theme_style_hovered>`                                         |                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hovered_selected<class_ItemList_theme_style_hovered_selected>`                       |                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hovered_selected_focus<class_ItemList_theme_style_hovered_selected_focus>`           |                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_ItemList_theme_style_panel>`                                             |                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`selected<class_ItemList_theme_style_selected>`                                       |                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`selected_focus<class_ItemList_theme_style_selected_focus>`                           |                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------+--------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -352,6 +358,14 @@ Only allow selecting a single item.
 :ref:`SelectMode<enum_ItemList_SelectMode>` **SELECT_MULTI** = ``1``
 
 Allows selecting multiple items by holding :kbd:`Ctrl` or :kbd:`Shift`.
+
+.. _class_ItemList_constant_SELECT_TOGGLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SelectMode<enum_ItemList_SelectMode>` **SELECT_TOGGLE** = ``2``
+
+Allows selecting multiple items by toggling them on and off.
 
 .. rst-class:: classref-section-separator
 
@@ -1245,6 +1259,18 @@ Text :ref:`Color<class_Color>` used when the item is hovered and not selected ye
 
 ----
 
+.. _class_ItemList_theme_color_font_hovered_selected_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **font_hovered_selected_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_ItemList_theme_color_font_hovered_selected_color>`
+
+Text :ref:`Color<class_Color>` used when the item is hovered and selected.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ItemList_theme_color_font_outline_color:
 
 .. rst-class:: classref-themeproperty
@@ -1263,7 +1289,7 @@ The tint of text outline of the item.
 
 :ref:`Color<class_Color>` **font_selected_color** = ``Color(1, 1, 1, 1)`` :ref:`🔗<class_ItemList_theme_color_font_selected_color>`
 
-Text :ref:`Color<class_Color>` used when the item is selected.
+Text :ref:`Color<class_Color>` used when the item is selected, but not hovered.
 
 .. rst-class:: classref-item-separator
 
@@ -1410,6 +1436,30 @@ The focused style for the **ItemList**, drawn on top of the background, but belo
 :ref:`StyleBox<class_StyleBox>` **hovered** :ref:`🔗<class_ItemList_theme_style_hovered>`
 
 :ref:`StyleBox<class_StyleBox>` for the hovered, but not selected items.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ItemList_theme_style_hovered_selected:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hovered_selected** :ref:`🔗<class_ItemList_theme_style_hovered_selected>`
+
+:ref:`StyleBox<class_StyleBox>` for the hovered and selected items, used when the **ItemList** is not being focused.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ItemList_theme_style_hovered_selected_focus:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hovered_selected_focus** :ref:`🔗<class_ItemList_theme_style_hovered_selected_focus>`
+
+:ref:`StyleBox<class_StyleBox>` for the hovered and selected items, used when the **ItemList** is being focused.
 
 .. rst-class:: classref-item-separator
 

@@ -19,7 +19,7 @@ Provides methods for file reading and writing operations.
 Description
 -----------
 
-This class can be used to permanently store data in the user device's file system and to read from it. This is useful for store game save data or player configuration files.
+This class can be used to permanently store data in the user device's file system and to read from it. This is useful for storing game save data or player configuration files.
 
 Here's a sample on how to write and read from a file:
 
@@ -96,6 +96,8 @@ Methods
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                        | :ref:`close<class_FileAccess_method_close>`\ (\ )                                                                                                                                                                                                                                                       |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`FileAccess<class_FileAccess>`                                           | :ref:`create_temp<class_FileAccess_method_create_temp>`\ (\ mode_flags\: :ref:`int<class_int>`, prefix\: :ref:`String<class_String>` = "", extension\: :ref:`String<class_String>` = "", keep\: :ref:`bool<class_bool>` = false\ ) |static|                                                             |
+   +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                       | :ref:`eof_reached<class_FileAccess_method_eof_reached>`\ (\ ) |const|                                                                                                                                                                                                                                   |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                       | :ref:`file_exists<class_FileAccess_method_file_exists>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                                                                                                                                                                                              |
@@ -125,6 +127,8 @@ Methods
    | :ref:`String<class_String>`                                                   | :ref:`get_file_as_string<class_FileAccess_method_get_file_as_string>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                                                                                                                                                                                |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                                     | :ref:`get_float<class_FileAccess_method_get_float>`\ (\ ) |const|                                                                                                                                                                                                                                       |
+   +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                                     | :ref:`get_half<class_FileAccess_method_get_half>`\ (\ ) |const|                                                                                                                                                                                                                                         |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                       | :ref:`get_hidden_attribute<class_FileAccess_method_get_hidden_attribute>`\ (\ file\: :ref:`String<class_String>`\ ) |static|                                                                                                                                                                            |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -178,31 +182,33 @@ Methods
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`                                         | :ref:`set_unix_permissions<class_FileAccess_method_set_unix_permissions>`\ (\ file\: :ref:`String<class_String>`, permissions\: |bitfield|\[:ref:`UnixPermissionFlags<enum_FileAccess_UnixPermissionFlags>`\]\ ) |static|                                                                               |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_8<class_FileAccess_method_store_8>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                    |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_8<class_FileAccess_method_store_8>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                    |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_16<class_FileAccess_method_store_16>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                  |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_16<class_FileAccess_method_store_16>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_32<class_FileAccess_method_store_32>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                  |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_32<class_FileAccess_method_store_32>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_64<class_FileAccess_method_store_64>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                  |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_64<class_FileAccess_method_store_64>`\ (\ value\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_buffer<class_FileAccess_method_store_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                                                 |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_buffer<class_FileAccess_method_store_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                                                                                                                                                                                 |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_csv_line<class_FileAccess_method_store_csv_line>`\ (\ values\: :ref:`PackedStringArray<class_PackedStringArray>`, delim\: :ref:`String<class_String>` = ","\ )                                                                                                                              |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_csv_line<class_FileAccess_method_store_csv_line>`\ (\ values\: :ref:`PackedStringArray<class_PackedStringArray>`, delim\: :ref:`String<class_String>` = ","\ )                                                                                                                              |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_double<class_FileAccess_method_store_double>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                                                                                                      |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_double<class_FileAccess_method_store_double>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                                                                                                      |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_float<class_FileAccess_method_store_float>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                                                                                                        |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_float<class_FileAccess_method_store_float>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                                                                                                        |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_line<class_FileAccess_method_store_line>`\ (\ line\: :ref:`String<class_String>`\ )                                                                                                                                                                                                         |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_half<class_FileAccess_method_store_half>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                                                                                                          |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_pascal_string<class_FileAccess_method_store_pascal_string>`\ (\ string\: :ref:`String<class_String>`\ )                                                                                                                                                                                     |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_line<class_FileAccess_method_store_line>`\ (\ line\: :ref:`String<class_String>`\ )                                                                                                                                                                                                         |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_real<class_FileAccess_method_store_real>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                                                                                                          |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_pascal_string<class_FileAccess_method_store_pascal_string>`\ (\ string\: :ref:`String<class_String>`\ )                                                                                                                                                                                     |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_string<class_FileAccess_method_store_string>`\ (\ string\: :ref:`String<class_String>`\ )                                                                                                                                                                                                   |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_real<class_FileAccess_method_store_real>`\ (\ value\: :ref:`float<class_float>`\ )                                                                                                                                                                                                          |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                        | :ref:`store_var<class_FileAccess_method_store_var>`\ (\ value\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                        |
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_string<class_FileAccess_method_store_string>`\ (\ string\: :ref:`String<class_String>`\ )                                                                                                                                                                                                   |
+   +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                       | :ref:`store_var<class_FileAccess_method_store_var>`\ (\ value\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                        |
    +-------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -461,6 +467,26 @@ Closes the currently opened file and prevents subsequent read/write operations. 
 
 ----
 
+.. _class_FileAccess_method_create_temp:
+
+.. rst-class:: classref-method
+
+:ref:`FileAccess<class_FileAccess>` **create_temp**\ (\ mode_flags\: :ref:`int<class_int>`, prefix\: :ref:`String<class_String>` = "", extension\: :ref:`String<class_String>` = "", keep\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_FileAccess_method_create_temp>`
+
+Creates a temporary file. This file will be freed when the returned **FileAccess** is freed.
+
+If ``prefix`` is not empty, it will be prefixed to the file name, separated by a ``-``.
+
+If ``extension`` is not empty, it will be appended to the temporary file name.
+
+If ``keep`` is ``true``, the file is not deleted when the returned **FileAccess** is freed.
+
+Returns ``null`` if opening the file failed. You can use :ref:`get_open_error<class_FileAccess_method_get_open_error>` to check the error that occurred.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_FileAccess_method_eof_reached:
 
 .. rst-class:: classref-method
@@ -679,6 +705,18 @@ Returns an empty :ref:`String<class_String>` if an error occurred while opening 
 :ref:`float<class_float>` **get_float**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_float>`
 
 Returns the next 32 bits from the file as a floating-point number.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileAccess_method_get_half:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_half**\ (\ ) |const| :ref:`🔗<class_FileAccess_method_get_half>`
+
+Returns the next 16 bits from the file as a half-precision floating-point number.
 
 .. rst-class:: classref-item-separator
 
@@ -1034,11 +1072,13 @@ Sets file UNIX permissions.
 
 .. rst-class:: classref-method
 
-|void| **store_8**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_8>`
+:ref:`bool<class_bool>` **store_8**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_8>`
 
 Stores an integer as 8 bits in the file.
 
 \ **Note:** The ``value`` should lie in the interval ``[0, 255]``. Any other value will overflow and wrap around.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 To store a signed integer, use :ref:`store_64<class_FileAccess_method_store_64>`, or convert it manually (see :ref:`store_16<class_FileAccess_method_store_16>` for an example).
 
@@ -1050,11 +1090,13 @@ To store a signed integer, use :ref:`store_64<class_FileAccess_method_store_64>`
 
 .. rst-class:: classref-method
 
-|void| **store_16**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_16>`
+:ref:`bool<class_bool>` **store_16**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_16>`
 
 Stores an integer as 16 bits in the file.
 
 \ **Note:** The ``value`` should lie in the interval ``[0, 2^16 - 1]``. Any other value will overflow and wrap around.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 To store a signed integer, use :ref:`store_64<class_FileAccess_method_store_64>` or store a signed integer from the interval ``[-2^15, 2^15 - 1]`` (i.e. keeping one bit for the signedness) and compute its sign manually when reading. For example:
 
@@ -1103,11 +1145,13 @@ To store a signed integer, use :ref:`store_64<class_FileAccess_method_store_64>`
 
 .. rst-class:: classref-method
 
-|void| **store_32**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_32>`
+:ref:`bool<class_bool>` **store_32**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_32>`
 
 Stores an integer as 32 bits in the file.
 
 \ **Note:** The ``value`` should lie in the interval ``[0, 2^32 - 1]``. Any other value will overflow and wrap around.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 To store a signed integer, use :ref:`store_64<class_FileAccess_method_store_64>`, or convert it manually (see :ref:`store_16<class_FileAccess_method_store_16>` for an example).
 
@@ -1119,11 +1163,13 @@ To store a signed integer, use :ref:`store_64<class_FileAccess_method_store_64>`
 
 .. rst-class:: classref-method
 
-|void| **store_64**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_64>`
+:ref:`bool<class_bool>` **store_64**\ (\ value\: :ref:`int<class_int>`\ ) :ref:`🔗<class_FileAccess_method_store_64>`
 
 Stores an integer as 64 bits in the file.
 
 \ **Note:** The ``value`` must lie in the interval ``[-2^63, 2^63 - 1]`` (i.e. be a valid :ref:`int<class_int>` value).
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 .. rst-class:: classref-item-separator
 
@@ -1133,9 +1179,11 @@ Stores an integer as 64 bits in the file.
 
 .. rst-class:: classref-method
 
-|void| **store_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_FileAccess_method_store_buffer>`
+:ref:`bool<class_bool>` **store_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) :ref:`🔗<class_FileAccess_method_store_buffer>`
 
 Stores the given array of bytes in the file.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 .. rst-class:: classref-item-separator
 
@@ -1145,11 +1193,13 @@ Stores the given array of bytes in the file.
 
 .. rst-class:: classref-method
 
-|void| **store_csv_line**\ (\ values\: :ref:`PackedStringArray<class_PackedStringArray>`, delim\: :ref:`String<class_String>` = ","\ ) :ref:`🔗<class_FileAccess_method_store_csv_line>`
+:ref:`bool<class_bool>` **store_csv_line**\ (\ values\: :ref:`PackedStringArray<class_PackedStringArray>`, delim\: :ref:`String<class_String>` = ","\ ) :ref:`🔗<class_FileAccess_method_store_csv_line>`
 
 Store the given :ref:`PackedStringArray<class_PackedStringArray>` in the file as a line formatted in the CSV (Comma-Separated Values) format. You can pass a different delimiter ``delim`` to use other than the default ``","`` (comma). This delimiter must be one-character long.
 
 Text will be encoded as UTF-8.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 .. rst-class:: classref-item-separator
 
@@ -1159,9 +1209,11 @@ Text will be encoded as UTF-8.
 
 .. rst-class:: classref-method
 
-|void| **store_double**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_double>`
+:ref:`bool<class_bool>` **store_double**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_double>`
 
 Stores a floating-point number as 64 bits in the file.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 .. rst-class:: classref-item-separator
 
@@ -1171,9 +1223,23 @@ Stores a floating-point number as 64 bits in the file.
 
 .. rst-class:: classref-method
 
-|void| **store_float**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_float>`
+:ref:`bool<class_bool>` **store_float**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_float>`
 
 Stores a floating-point number as 32 bits in the file.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileAccess_method_store_half:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **store_half**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_half>`
+
+Stores a half-precision floating-point number as 16 bits in the file.
 
 .. rst-class:: classref-item-separator
 
@@ -1183,9 +1249,11 @@ Stores a floating-point number as 32 bits in the file.
 
 .. rst-class:: classref-method
 
-|void| **store_line**\ (\ line\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_line>`
+:ref:`bool<class_bool>` **store_line**\ (\ line\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_line>`
 
 Stores ``line`` in the file followed by a newline character (``\n``), encoding the text as UTF-8.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 .. rst-class:: classref-item-separator
 
@@ -1195,11 +1263,13 @@ Stores ``line`` in the file followed by a newline character (``\n``), encoding t
 
 .. rst-class:: classref-method
 
-|void| **store_pascal_string**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_pascal_string>`
+:ref:`bool<class_bool>` **store_pascal_string**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_pascal_string>`
 
 Stores the given :ref:`String<class_String>` as a line in the file in Pascal format (i.e. also store the length of the string).
 
 Text will be encoded as UTF-8.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 .. rst-class:: classref-item-separator
 
@@ -1209,9 +1279,11 @@ Text will be encoded as UTF-8.
 
 .. rst-class:: classref-method
 
-|void| **store_real**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_real>`
+:ref:`bool<class_bool>` **store_real**\ (\ value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_FileAccess_method_store_real>`
 
 Stores a floating-point number in the file.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 .. rst-class:: classref-item-separator
 
@@ -1221,11 +1293,13 @@ Stores a floating-point number in the file.
 
 .. rst-class:: classref-method
 
-|void| **store_string**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_string>`
+:ref:`bool<class_bool>` **store_string**\ (\ string\: :ref:`String<class_String>`\ ) :ref:`🔗<class_FileAccess_method_store_string>`
 
 Stores ``string`` in the file without a newline character (``\n``), encoding the text as UTF-8.
 
 \ **Note:** This method is intended to be used to write text files. The string is stored as a UTF-8 encoded buffer without string length or terminating zero, which means that it can't be loaded back easily. If you want to store a retrievable string in a binary file, consider using :ref:`store_pascal_string<class_FileAccess_method_store_pascal_string>` instead. For retrieving strings from a text file, you can use ``get_buffer(length).get_string_from_utf8()`` (if you know the length) or :ref:`get_as_text<class_FileAccess_method_get_as_text>`.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 .. rst-class:: classref-item-separator
 
@@ -1235,13 +1309,15 @@ Stores ``string`` in the file without a newline character (``\n``), encoding the
 
 .. rst-class:: classref-method
 
-|void| **store_var**\ (\ value\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_FileAccess_method_store_var>`
+:ref:`bool<class_bool>` **store_var**\ (\ value\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_FileAccess_method_store_var>`
 
 Stores any Variant value in the file. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
 
 Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_to_bytes<class_@GlobalScope_method_var_to_bytes>` method.
 
 \ **Note:** Not all properties are included. Only properties that are configured with the :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` flag set will be serialized. You can add a new usage flag to a property by overriding the :ref:`Object._get_property_list<class_Object_private_method__get_property_list>` method in your class. You can also check how property usage is configured by calling :ref:`Object._get_property_list<class_Object_private_method__get_property_list>`. See :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the possible usage flags.
+
+\ **Note:** If an error occurs, the resulting value of the file position indicator is indeterminate.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

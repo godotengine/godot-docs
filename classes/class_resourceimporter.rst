@@ -21,7 +21,7 @@ Base class for resource importers.
 Description
 -----------
 
-This is the base class for Godot's resource importers. To implement your own resource importers using editor plugins, see :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
+This is the base class for Redot's resource importers. To implement your own resource importers using editor plugins, see :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
 
 .. rst-class:: classref-introduction-group
 

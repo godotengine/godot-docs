@@ -19,11 +19,11 @@ Describes how to access a property as defined in the glTF object model.
 Description
 -----------
 
-GLTFObjectModelProperty defines a mapping between a property in the glTF object model and a NodePath in the Godot scene tree. This can be used to animate properties in a glTF file using the ``KHR_animation_pointer`` extension, or to access them through an engine-agnostic script such as a behavior graph as defined by the ``KHR_interactivity`` extension.
+GLTFObjectModelProperty defines a mapping between a property in the glTF object model and a NodePath in the Redot scene tree. This can be used to animate properties in a glTF file using the ``KHR_animation_pointer`` extension, or to access them through an engine-agnostic script such as a behavior graph as defined by the ``KHR_interactivity`` extension.
 
-The glTF property is identified by JSON pointer(s) stored in :ref:`json_pointers<class_GLTFObjectModelProperty_property_json_pointers>`, while the Godot property it maps to is defined by :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>`. In most cases :ref:`json_pointers<class_GLTFObjectModelProperty_property_json_pointers>` and :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>` will each only have one item, but in some cases a single glTF JSON pointer will map to multiple Godot properties, or a single Godot property will be mapped to multiple glTF JSON pointers, or it might be a many-to-many relationship.
+The glTF property is identified by JSON pointer(s) stored in :ref:`json_pointers<class_GLTFObjectModelProperty_property_json_pointers>`, while the Redot property it maps to is defined by :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>`. In most cases :ref:`json_pointers<class_GLTFObjectModelProperty_property_json_pointers>` and :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>` will each only have one item, but in some cases a single glTF JSON pointer will map to multiple Redot properties, or a single Redot property will be mapped to multiple glTF JSON pointers, or it might be a many-to-many relationship.
 
-\ :ref:`Expression<class_Expression>` objects can be used to define conversions between the data, such as when glTF defines an angle in radians and Godot uses degrees. The :ref:`object_model_type<class_GLTFObjectModelProperty_property_object_model_type>` property defines the type of data stored in the glTF file as defined by the object model, see :ref:`GLTFObjectModelType<enum_GLTFObjectModelProperty_GLTFObjectModelType>` for possible values.
+\ :ref:`Expression<class_Expression>` objects can be used to define conversions between the data, such as when glTF defines an angle in radians and Redot uses degrees. The :ref:`object_model_type<class_GLTFObjectModelProperty_property_object_model_type>` property defines the type of data stored in the glTF file as defined by the object model, see :ref:`GLTFObjectModelType<enum_GLTFObjectModelProperty_GLTFObjectModelType>` for possible values.
 
 .. rst-class:: classref-introduction-group
 
@@ -201,7 +201,7 @@ Property Descriptions
 - |void| **set_gltf_to_godot_expression**\ (\ value\: :ref:`Expression<class_Expression>`\ )
 - :ref:`Expression<class_Expression>` **get_gltf_to_godot_expression**\ (\ )
 
-If set, this :ref:`Expression<class_Expression>` will be used to convert the property value from the glTF object model to the value expected by the Godot property. This is useful when the glTF object model uses a different unit system, or when the data needs to be transformed in some way. If ``null``, the value will be copied as-is.
+If set, this :ref:`Expression<class_Expression>` will be used to convert the property value from the glTF object model to the value expected by the Redot property. This is useful when the glTF object model uses a different unit system, or when the data needs to be transformed in some way. If ``null``, the value will be copied as-is.
 
 .. rst-class:: classref-item-separator
 
@@ -218,7 +218,7 @@ If set, this :ref:`Expression<class_Expression>` will be used to convert the pro
 - |void| **set_godot_to_gltf_expression**\ (\ value\: :ref:`Expression<class_Expression>`\ )
 - :ref:`Expression<class_Expression>` **get_godot_to_gltf_expression**\ (\ )
 
-If set, this :ref:`Expression<class_Expression>` will be used to convert the property value from the Godot property to the value expected by the glTF object model. This is useful when the glTF object model uses a different unit system, or when the data needs to be transformed in some way. If ``null``, the value will be copied as-is.
+If set, this :ref:`Expression<class_Expression>` will be used to convert the property value from the Redot property to the value expected by the glTF object model. This is useful when the glTF object model uses a different unit system, or when the data needs to be transformed in some way. If ``null``, the value will be copied as-is.
 
 .. rst-class:: classref-item-separator
 
@@ -252,9 +252,9 @@ The glTF object model JSON pointers used to identify the property in the glTF ob
 - |void| **set_node_paths**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\]\ )
 - :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\] **get_node_paths**\ (\ )
 
-An array of :ref:`NodePath<class_NodePath>`\ s that point to a property, or multiple properties, in the Godot scene tree. On import, this will either be set by :ref:`GLTFDocument<class_GLTFDocument>`, or by a :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` class. For simple cases, use :ref:`append_path_to_property<class_GLTFObjectModelProperty_method_append_path_to_property>` to add properties to this array.
+An array of :ref:`NodePath<class_NodePath>`\ s that point to a property, or multiple properties, in the Redot scene tree. On import, this will either be set by :ref:`GLTFDocument<class_GLTFDocument>`, or by a :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` class. For simple cases, use :ref:`append_path_to_property<class_GLTFObjectModelProperty_method_append_path_to_property>` to add properties to this array.
 
-In most cases :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>` will only have one item, but in some cases a single glTF JSON pointer will map to multiple Godot properties. For example, a :ref:`GLTFCamera<class_GLTFCamera>` or :ref:`GLTFLight<class_GLTFLight>` used on multiple glTF nodes will be represented by multiple Godot nodes.
+In most cases :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>` will only have one item, but in some cases a single glTF JSON pointer will map to multiple Redot properties. For example, a :ref:`GLTFCamera<class_GLTFCamera>` or :ref:`GLTFLight<class_GLTFLight>` used on multiple glTF nodes will be represented by multiple Redot nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -288,7 +288,7 @@ The type of data stored in the glTF file as defined by the object model. This is
 - |void| **set_variant_type**\ (\ value\: :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`\ )
 - :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_variant_type**\ (\ )
 
-The type of data stored in the Godot property. This is the type of the property that the :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>` point to.
+The type of data stored in the Redot property. This is the type of the property that the :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>` point to.
 
 .. rst-class:: classref-section-separator
 
@@ -305,7 +305,7 @@ Method Descriptions
 
 |void| **append_node_path**\ (\ node_path\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_GLTFObjectModelProperty_method_append_node_path>`
 
-Appends a :ref:`NodePath<class_NodePath>` to :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>`. This can be used by :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes to define how a glTF object model property maps to a Godot property, or multiple Godot properties. Prefer using :ref:`append_path_to_property<class_GLTFObjectModelProperty_method_append_path_to_property>` for simple cases. Be sure to also call :ref:`set_types<class_GLTFObjectModelProperty_method_set_types>` once (the order does not matter).
+Appends a :ref:`NodePath<class_NodePath>` to :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>`. This can be used by :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes to define how a glTF object model property maps to a Redot property, or multiple Redot properties. Prefer using :ref:`append_path_to_property<class_GLTFObjectModelProperty_method_append_path_to_property>` for simple cases. Be sure to also call :ref:`set_types<class_GLTFObjectModelProperty_method_set_types>` once (the order does not matter).
 
 .. rst-class:: classref-item-separator
 
@@ -341,7 +341,7 @@ The GLTF accessor type associated with this property's :ref:`object_model_type<c
 
 :ref:`bool<class_bool>` **has_json_pointers**\ (\ ) |const| :ref:`🔗<class_GLTFObjectModelProperty_method_has_json_pointers>`
 
-Returns ``true`` if :ref:`json_pointers<class_GLTFObjectModelProperty_property_json_pointers>` is not empty. This is used during export to determine if a **GLTFObjectModelProperty** can handle converting a Godot property to a glTF object model property.
+Returns ``true`` if :ref:`json_pointers<class_GLTFObjectModelProperty_property_json_pointers>` is not empty. This is used during export to determine if a **GLTFObjectModelProperty** can handle converting a Redot property to a glTF object model property.
 
 .. rst-class:: classref-item-separator
 
@@ -353,7 +353,7 @@ Returns ``true`` if :ref:`json_pointers<class_GLTFObjectModelProperty_property_j
 
 :ref:`bool<class_bool>` **has_node_paths**\ (\ ) |const| :ref:`🔗<class_GLTFObjectModelProperty_method_has_node_paths>`
 
-Returns ``true`` if :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>` is not empty. This is used during import to determine if a **GLTFObjectModelProperty** can handle converting a glTF object model property to a Godot property.
+Returns ``true`` if :ref:`node_paths<class_GLTFObjectModelProperty_property_node_paths>` is not empty. This is used during import to determine if a **GLTFObjectModelProperty** can handle converting a glTF object model property to a Redot property.
 
 .. rst-class:: classref-item-separator
 

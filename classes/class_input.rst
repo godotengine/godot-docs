@@ -644,7 +644,9 @@ Returns the current value of the joypad axis at given index (see :ref:`JoyAxis<e
 
 :ref:`String<class_String>` **get_joy_guid**\ (\ device\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_Input_method_get_joy_guid>`
 
-Returns an SDL2-compatible device GUID on platforms that use gamepad remapping, e.g. ``030000004c050000c405000000010000``. Returns ``"Default Gamepad"`` otherwise. Redot uses the `SDL2 game controller database <https://github.com/gabomdq/SDL_GameControllerDB>`__ to determine gamepad names and mappings based on this GUID.
+Returns an SDL2-compatible device GUID on platforms that use gamepad remapping, e.g. ``030000004c050000c405000000010000``. Returns an empty string if it cannot be found. Redot uses the `SDL2 game controller database <https://github.com/gabomdq/SDL_GameControllerDB>`__ to determine gamepad names and mappings based on this GUID.
+
+On Windows, all XInput joypad GUIDs will be overridden by Redot to ``__XINPUT_DEVICE__``, because their mappings are the same.
 
 .. rst-class:: classref-item-separator
 
@@ -658,9 +660,13 @@ Returns an SDL2-compatible device GUID on platforms that use gamepad remapping, 
 
 Returns a dictionary with extra platform-specific information about the device, e.g. the raw gamepad name from the OS or the Steam Input index.
 
-On Windows the dictionary contains the following fields:
+On Windows, the dictionary contains the following fields:
 
-\ ``xinput_index``: The index of the controller in the XInput system.
+\ ``xinput_index``: The index of the controller in the XInput system. Undefined for DirectInput devices.
+
+\ ``vendor_id``: The USB vendor ID of the device.
+
+\ ``product_id``: The USB product ID of the device.
 
 On Linux:
 

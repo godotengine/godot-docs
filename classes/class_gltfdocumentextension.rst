@@ -107,7 +107,7 @@ Method Descriptions
 
 Part of the export process. This method is run after :ref:`_export_preflight<class_GLTFDocumentExtension_private_method__export_preflight>` and before :ref:`_export_post_convert<class_GLTFDocumentExtension_private_method__export_post_convert>`.
 
-Runs when converting the data from a Godot scene node. This method can be used to process the Godot scene node data into a format that can be used by :ref:`_export_node<class_GLTFDocumentExtension_private_method__export_node>`.
+Runs when converting the data from a Redot scene node. This method can be used to process the Redot scene node data into a format that can be used by :ref:`_export_node<class_GLTFDocumentExtension_private_method__export_node>`.
 
 .. rst-class:: classref-item-separator
 
@@ -121,7 +121,7 @@ Runs when converting the data from a Godot scene node. This method can be used t
 
 Part of the export process. This method is run after :ref:`_get_saveable_image_formats<class_GLTFDocumentExtension_private_method__get_saveable_image_formats>` and before :ref:`_export_post<class_GLTFDocumentExtension_private_method__export_post>`. If this **GLTFDocumentExtension** is used for exporting images, this runs after :ref:`_serialize_texture_json<class_GLTFDocumentExtension_private_method__serialize_texture_json>`.
 
-This method can be used to modify the final JSON of each node. Data should be primarily stored in ``gltf_node`` prior to serializing the JSON, but the original Godot :ref:`Node<class_Node>` is also provided if available. ``node`` may be ``null`` if not available, such as when exporting glTF data not generated from a Godot scene.
+This method can be used to modify the final JSON of each node. Data should be primarily stored in ``gltf_node`` prior to serializing the JSON, but the original Redot :ref:`Node<class_Node>` is also provided if available. ``node`` may be ``null`` if not available, such as when exporting glTF data not generated from a Redot scene.
 
 .. rst-class:: classref-item-separator
 
@@ -133,11 +133,11 @@ This method can be used to modify the final JSON of each node. Data should be pr
 
 :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` **_export_object_model_property**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, node_path\: :ref:`NodePath<class_NodePath>`, godot_node\: :ref:`Node<class_Node>`, gltf_node_index\: :ref:`int<class_int>`, target_object\: :ref:`Object<class_Object>`, target_depth\: :ref:`int<class_int>`\ ) |virtual| :ref:`🔗<class_GLTFDocumentExtension_private_method__export_object_model_property>`
 
-Part of the export process. Allows GLTFDocumentExtension classes to provide mappings for properties of nodes in the Godot scene tree, to JSON pointers to glTF properties, as defined by the glTF object model.
+Part of the export process. Allows GLTFDocumentExtension classes to provide mappings for properties of nodes in the Redot scene tree, to JSON pointers to glTF properties, as defined by the glTF object model.
 
 Returns a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` instance that defines how the property should be mapped. If your extension can't handle the property, return ``null`` or an instance without any JSON pointers (see :ref:`GLTFObjectModelProperty.has_json_pointers<class_GLTFObjectModelProperty_method_has_json_pointers>`). You should use :ref:`GLTFObjectModelProperty.set_types<class_GLTFObjectModelProperty_method_set_types>` to set the types, and set the JSON pointer(s) using the :ref:`GLTFObjectModelProperty.json_pointers<class_GLTFObjectModelProperty_property_json_pointers>` property.
 
-The parameters provide context for the property, including the NodePath, the Godot node, the GLTF node index, and the target object. The ``target_object`` will be equal to ``godot_node`` if no sub-object can be found, otherwise it will point to a sub-object. For example, if the path is ``^"A/B/C/MeshInstance3D:mesh:surface_0/material:emission_intensity"``, it will get the node, then the mesh, and then the material, so ``target_object`` will be the :ref:`Material<class_Material>` resource, and ``target_depth`` will be 2 because 2 levels were traversed to get to the target.
+The parameters provide context for the property, including the NodePath, the Redot node, the GLTF node index, and the target object. The ``target_object`` will be equal to ``godot_node`` if no sub-object can be found, otherwise it will point to a sub-object. For example, if the path is ``^"A/B/C/MeshInstance3D:mesh:surface_0/material:emission_intensity"``, it will get the node, then the mesh, and then the material, so ``target_object`` will be the :ref:`Material<class_Material>` resource, and ``target_depth`` will be 2 because 2 levels were traversed to get to the target.
 
 .. rst-class:: classref-item-separator
 
@@ -207,7 +207,7 @@ This method can be used to alter the state before performing serialization. It r
 
 Part of the import process. This method is run after :ref:`_import_pre_generate<class_GLTFDocumentExtension_private_method__import_pre_generate>` and before :ref:`_import_node<class_GLTFDocumentExtension_private_method__import_node>`.
 
-Runs when generating a Godot scene node from a GLTFNode. The returned node will be added to the scene tree. Multiple nodes can be generated in this step if they are added as a child of the returned node.
+Runs when generating a Redot scene node from a GLTFNode. The returned node will be added to the scene tree. Multiple nodes can be generated in this step if they are added as a child of the returned node.
 
 \ **Note:** The ``scene_parent`` parameter may be ``null`` if this is the single root node.
 
@@ -221,7 +221,7 @@ Runs when generating a Godot scene node from a GLTFNode. The returned node will 
 
 :ref:`String<class_String>` **_get_image_file_extension**\ (\ ) |virtual| :ref:`🔗<class_GLTFDocumentExtension_private_method__get_image_file_extension>`
 
-Returns the file extension to use for saving image data into, for example, ``".png"``. If defined, when this extension is used to handle images, and the images are saved to a separate file, the image bytes will be copied to a file with this extension. If this is set, there should be a :ref:`ResourceImporter<class_ResourceImporter>` class able to import the file. If not defined or empty, Godot will save the image into a PNG file.
+Returns the file extension to use for saving image data into, for example, ``".png"``. If defined, when this extension is used to handle images, and the images are saved to a separate file, the image bytes will be copied to a file with this extension. If this is set, there should be a :ref:`ResourceImporter<class_ResourceImporter>` class able to import the file. If not defined or empty, Redot will save the image into a PNG file.
 
 .. rst-class:: classref-item-separator
 
@@ -263,7 +263,7 @@ Returns an array of the glTF extensions supported by this GLTFDocumentExtension 
 
 Part of the import process. This method is run after :ref:`_generate_scene_node<class_GLTFDocumentExtension_private_method__generate_scene_node>` and before :ref:`_import_post<class_GLTFDocumentExtension_private_method__import_post>`.
 
-This method can be used to make modifications to each of the generated Godot scene nodes.
+This method can be used to make modifications to each of the generated Redot scene nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -275,11 +275,11 @@ This method can be used to make modifications to each of the generated Godot sce
 
 :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` **_import_object_model_property**\ (\ state\: :ref:`GLTFState<class_GLTFState>`, split_json_pointer\: :ref:`PackedStringArray<class_PackedStringArray>`, partial_paths\: :ref:`Array<class_Array>`\[:ref:`NodePath<class_NodePath>`\]\ ) |virtual| :ref:`🔗<class_GLTFDocumentExtension_private_method__import_object_model_property>`
 
-Part of the import process. Allows GLTFDocumentExtension classes to provide mappings for JSON pointers to glTF properties, as defined by the glTF object model, to properties of nodes in the Godot scene tree.
+Part of the import process. Allows GLTFDocumentExtension classes to provide mappings for JSON pointers to glTF properties, as defined by the glTF object model, to properties of nodes in the Redot scene tree.
 
 Returns a :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>` instance that defines how the property should be mapped. If your extension can't handle the property, return ``null`` or an instance without any NodePaths (see :ref:`GLTFObjectModelProperty.has_node_paths<class_GLTFObjectModelProperty_method_has_node_paths>`). You should use :ref:`GLTFObjectModelProperty.set_types<class_GLTFObjectModelProperty_method_set_types>` to set the types, and :ref:`GLTFObjectModelProperty.append_path_to_property<class_GLTFObjectModelProperty_method_append_path_to_property>` function is useful for most simple cases.
 
-In many cases, ``partial_paths`` will contain the start of a path, allowing the extension to complete the path. For example, for ``/nodes/3/extensions/MY_ext/prop``, Godot will pass you a NodePath that leads to node 3, so the GLTFDocumentExtension class only needs to resolve the last ``MY_ext/prop`` part of the path. In this example, the extension should check ``split.size() > 4 and split[0] == "nodes" and split[2] == "extensions" and split[3] == "MY_ext"`` at the start of the function to check if this JSON pointer applies to it, then it can use ``partial_paths`` and handle ``split[4]``.
+In many cases, ``partial_paths`` will contain the start of a path, allowing the extension to complete the path. For example, for ``/nodes/3/extensions/MY_ext/prop``, Redot will pass you a NodePath that leads to node 3, so the GLTFDocumentExtension class only needs to resolve the last ``MY_ext/prop`` part of the path. In this example, the extension should check ``split.size() > 4 and split[0] == "nodes" and split[2] == "extensions" and split[3] == "MY_ext"`` at the start of the function to check if this JSON pointer applies to it, then it can use ``partial_paths`` and handle ``split[4]``.
 
 .. rst-class:: classref-item-separator
 
@@ -293,7 +293,7 @@ In many cases, ``partial_paths`` will contain the start of a path, allowing the 
 
 Part of the import process. This method is run last, after all other parts of the import process.
 
-This method can be used to modify the final Godot scene generated by the import process.
+This method can be used to modify the final Redot scene generated by the import process.
 
 .. rst-class:: classref-item-separator
 

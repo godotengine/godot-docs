@@ -23,7 +23,7 @@ Description
 
 Contains all nodes and resources of a glTF file. This is used by :ref:`GLTFDocument<class_GLTFDocument>` as data storage, which allows :ref:`GLTFDocument<class_GLTFDocument>` and all :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes to remain stateless.
 
-GLTFState can be populated by :ref:`GLTFDocument<class_GLTFDocument>` reading a file or by converting a Godot scene. Then the data can either be used to create a Godot scene or save to a glTF file. The code that converts to/from a Godot scene can be intercepted at arbitrary points by :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes. This allows for custom data to be stored in the glTF file or for custom data to be converted to/from Godot nodes.
+GLTFState can be populated by :ref:`GLTFDocument<class_GLTFDocument>` reading a file or by converting a Redot scene. Then the data can either be used to create a Redot scene or save to a glTF file. The code that converts to/from a Redot scene can be intercepted at arbitrary points by :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes. This allows for custom data to be stored in the glTF file or for custom data to be converted to/from Redot nodes.
 
 .. rst-class:: classref-introduction-group
 
@@ -350,7 +350,7 @@ The binary buffer attached to a .glb file.
 - |void| **set_import_as_skeleton_bones**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_import_as_skeleton_bones**\ (\ )
 
-If ``true``, forces all GLTFNodes in the document to be bones of a single :ref:`Skeleton3D<class_Skeleton3D>` Godot node.
+If ``true``, forces all GLTFNodes in the document to be bones of a single :ref:`Skeleton3D<class_Skeleton3D>` Redot node.
 
 .. rst-class:: classref-item-separator
 
@@ -422,7 +422,7 @@ The original raw JSON document corresponding to this GLTFState.
 - |void| **set_root_nodes**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **get_root_nodes**\ (\ )
 
-The root nodes of the glTF file. Typically, a glTF file will only have one scene, and therefore one root node. However, a glTF file may have multiple scenes and therefore multiple root nodes, which will be generated as siblings of each other and as children of the root node of the generated Godot scene.
+The root nodes of the glTF file. Typically, a glTF file will only have one scene, and therefore one root node. However, a glTF file may have multiple scenes and therefore multiple root nodes, which will be generated as siblings of each other and as children of the root node of the generated Redot scene.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
 
@@ -501,9 +501,9 @@ Appends the given byte array data to the buffers and creates a :ref:`GLTFBufferV
 
 :ref:`int<class_int>` **append_gltf_node**\ (\ gltf_node\: :ref:`GLTFNode<class_GLTFNode>`, godot_scene_node\: :ref:`Node<class_Node>`, parent_node_index\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GLTFState_method_append_gltf_node>`
 
-Append the given :ref:`GLTFNode<class_GLTFNode>` to the state, and return its new index. This can be used to export one Godot node as multiple glTF nodes, or inject new glTF nodes at import time. On import, this must be called before :ref:`GLTFDocumentExtension._generate_scene_node<class_GLTFDocumentExtension_private_method__generate_scene_node>` finishes for the parent node. On export, this must be called before :ref:`GLTFDocumentExtension._export_node<class_GLTFDocumentExtension_private_method__export_node>` runs for the parent node.
+Append the given :ref:`GLTFNode<class_GLTFNode>` to the state, and return its new index. This can be used to export one Redot node as multiple glTF nodes, or inject new glTF nodes at import time. On import, this must be called before :ref:`GLTFDocumentExtension._generate_scene_node<class_GLTFDocumentExtension_private_method__generate_scene_node>` finishes for the parent node. On export, this must be called before :ref:`GLTFDocumentExtension._export_node<class_GLTFDocumentExtension_private_method__export_node>` runs for the parent node.
 
-The ``godot_scene_node`` parameter is the Godot scene node that corresponds to this glTF node. This is highly recommended to be set to a valid node, but may be ``null`` if there is no corresponding Godot scene node. One Godot scene node may be used for multiple glTF nodes, so if exporting multiple glTF nodes for one Godot scene node, use the same Godot scene node for each.
+The ``godot_scene_node`` parameter is the Redot scene node that corresponds to this glTF node. This is highly recommended to be set to a valid node, but may be ``null`` if there is no corresponding Redot scene node. One Redot scene node may be used for multiple glTF nodes, so if exporting multiple glTF nodes for one Redot scene node, use the same Redot scene node for each.
 
 The ``parent_node_index`` parameter is the index of the parent :ref:`GLTFNode<class_GLTFNode>` in the state. If ``-1``, the node will be a root node, otherwise the new node will be added to the parent's list of children. The index will also be written to the :ref:`GLTFNode.parent<class_GLTFNode_property_parent>` property of the new node.
 
@@ -545,7 +545,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`AnimationPlayer<class_AnimationPlayer>` **get_animation_player**\ (\ idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GLTFState_method_get_animation_player>`
 
-Returns the :ref:`AnimationPlayer<class_AnimationPlayer>` node with the given index. These nodes are only used during the export process when converting Godot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes to glTF animations.
+Returns the :ref:`AnimationPlayer<class_AnimationPlayer>` node with the given index. These nodes are only used during the export process when converting Redot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes to glTF animations.
 
 .. rst-class:: classref-item-separator
 
@@ -557,7 +557,7 @@ Returns the :ref:`AnimationPlayer<class_AnimationPlayer>` node with the given in
 
 :ref:`int<class_int>` **get_animation_players_count**\ (\ idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GLTFState_method_get_animation_players_count>`
 
-Returns the number of :ref:`AnimationPlayer<class_AnimationPlayer>` nodes in this **GLTFState**. These nodes are only used during the export process when converting Godot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes to glTF animations.
+Returns the number of :ref:`AnimationPlayer<class_AnimationPlayer>` nodes in this **GLTFState**. These nodes are only used during the export process when converting Redot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes to glTF animations.
 
 .. rst-class:: classref-item-separator
 
@@ -569,7 +569,7 @@ Returns the number of :ref:`AnimationPlayer<class_AnimationPlayer>` nodes in thi
 
 :ref:`Array<class_Array>`\[:ref:`GLTFAnimation<class_GLTFAnimation>`\] **get_animations**\ (\ ) :ref:`🔗<class_GLTFState_method_get_animations>`
 
-Returns an array of all :ref:`GLTFAnimation<class_GLTFAnimation>`\ s in the glTF file. When importing, these will be generated as animations in an :ref:`AnimationPlayer<class_AnimationPlayer>` node. When exporting, these will be generated from Godot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
+Returns an array of all :ref:`GLTFAnimation<class_GLTFAnimation>`\ s in the glTF file. When importing, these will be generated as animations in an :ref:`AnimationPlayer<class_AnimationPlayer>` node. When exporting, these will be generated from Redot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -671,9 +671,9 @@ Returns an array of all :ref:`GLTFMesh<class_GLTFMesh>`\ es in the glTF file. Th
 
 :ref:`int<class_int>` **get_node_index**\ (\ scene_node\: :ref:`Node<class_Node>`\ ) :ref:`🔗<class_GLTFState_method_get_node_index>`
 
-Returns the index of the :ref:`GLTFNode<class_GLTFNode>` corresponding to this Godot scene node. This is the inverse of :ref:`get_scene_node<class_GLTFState_method_get_scene_node>`. Useful during the export process.
+Returns the index of the :ref:`GLTFNode<class_GLTFNode>` corresponding to this Redot scene node. This is the inverse of :ref:`get_scene_node<class_GLTFState_method_get_scene_node>`. Useful during the export process.
 
-\ **Note:** Not every Godot scene node will have a corresponding :ref:`GLTFNode<class_GLTFNode>`, and not every :ref:`GLTFNode<class_GLTFNode>` will have a scene node generated. If there is no :ref:`GLTFNode<class_GLTFNode>` index for this scene node, ``-1`` is returned.
+\ **Note:** Not every Redot scene node will have a corresponding :ref:`GLTFNode<class_GLTFNode>`, and not every :ref:`GLTFNode<class_GLTFNode>` will have a scene node generated. If there is no :ref:`GLTFNode<class_GLTFNode>` index for this scene node, ``-1`` is returned.
 
 .. rst-class:: classref-item-separator
 
@@ -685,7 +685,7 @@ Returns the index of the :ref:`GLTFNode<class_GLTFNode>` corresponding to this G
 
 :ref:`Array<class_Array>`\[:ref:`GLTFNode<class_GLTFNode>`\] **get_nodes**\ (\ ) :ref:`🔗<class_GLTFState_method_get_nodes>`
 
-Returns an array of all :ref:`GLTFNode<class_GLTFNode>`\ s in the glTF file. These are the nodes that :ref:`GLTFNode.children<class_GLTFNode_property_children>` and :ref:`root_nodes<class_GLTFState_property_root_nodes>` refer to. This includes nodes that may not be generated in the Godot scene, or nodes that may generate multiple Godot scene nodes.
+Returns an array of all :ref:`GLTFNode<class_GLTFNode>`\ s in the glTF file. These are the nodes that :ref:`GLTFNode.children<class_GLTFNode_property_children>` and :ref:`root_nodes<class_GLTFState_property_root_nodes>` refer to. This includes nodes that may not be generated in the Redot scene, or nodes that may generate multiple Redot scene nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -697,7 +697,7 @@ Returns an array of all :ref:`GLTFNode<class_GLTFNode>`\ s in the glTF file. The
 
 :ref:`Node<class_Node>` **get_scene_node**\ (\ idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_GLTFState_method_get_scene_node>`
 
-Returns the Godot scene node that corresponds to the same index as the :ref:`GLTFNode<class_GLTFNode>` it was generated from. This is the inverse of :ref:`get_node_index<class_GLTFState_method_get_node_index>`. Useful during the import process.
+Returns the Redot scene node that corresponds to the same index as the :ref:`GLTFNode<class_GLTFNode>` it was generated from. This is the inverse of :ref:`get_node_index<class_GLTFState_method_get_node_index>`. Useful during the import process.
 
 \ **Note:** Not every :ref:`GLTFNode<class_GLTFNode>` will have a scene node generated, and not every generated scene node will have a corresponding :ref:`GLTFNode<class_GLTFNode>`. If there is no scene node for this :ref:`GLTFNode<class_GLTFNode>` index, ``null`` is returned.
 
@@ -813,7 +813,7 @@ The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentE
 
 |void| **set_animations**\ (\ animations\: :ref:`Array<class_Array>`\[:ref:`GLTFAnimation<class_GLTFAnimation>`\]\ ) :ref:`🔗<class_GLTFState_method_set_animations>`
 
-Sets the :ref:`GLTFAnimation<class_GLTFAnimation>`\ s in the state. When importing, these will be generated as animations in an :ref:`AnimationPlayer<class_AnimationPlayer>` node. When exporting, these will be generated from Godot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
+Sets the :ref:`GLTFAnimation<class_GLTFAnimation>`\ s in the state. When importing, these will be generated as animations in an :ref:`AnimationPlayer<class_AnimationPlayer>` node. When exporting, these will be generated from Redot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -915,7 +915,7 @@ Sets the :ref:`GLTFMesh<class_GLTFMesh>`\ es in the state. These are the meshes 
 
 |void| **set_nodes**\ (\ nodes\: :ref:`Array<class_Array>`\[:ref:`GLTFNode<class_GLTFNode>`\]\ ) :ref:`🔗<class_GLTFState_method_set_nodes>`
 
-Sets the :ref:`GLTFNode<class_GLTFNode>`\ s in the state. These are the nodes that :ref:`GLTFNode.children<class_GLTFNode_property_children>` and :ref:`root_nodes<class_GLTFState_property_root_nodes>` refer to. Some of the nodes set here may not be generated in the Godot scene, or may generate multiple Godot scene nodes.
+Sets the :ref:`GLTFNode<class_GLTFNode>`\ s in the state. These are the nodes that :ref:`GLTFNode.children<class_GLTFNode_property_children>` and :ref:`root_nodes<class_GLTFState_property_root_nodes>` refer to. Some of the nodes set here may not be generated in the Redot scene, or may generate multiple Redot scene nodes.
 
 .. rst-class:: classref-item-separator
 

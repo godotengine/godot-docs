@@ -282,7 +282,7 @@ The atlas texture.
 - |void| **set_texture_region_size**\ (\ value\: :ref:`Vector2i<class_Vector2i>`\ )
 - :ref:`Vector2i<class_Vector2i>` **get_texture_region_size**\ (\ )
 
-The base tile size in the texture (in pixel). This size must be bigger than the TileSet's ``tile_size`` value.
+The base tile size in the texture (in pixel). This size must be bigger than or equal to the TileSet's ``tile_size`` value.
 
 .. rst-class:: classref-item-separator
 

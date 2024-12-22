@@ -19,7 +19,7 @@ High-level multiplayer API implementation.
 Description
 -----------
 
-This class is the default implementation of :ref:`MultiplayerAPI<class_MultiplayerAPI>`, used to provide multiplayer functionalities in Godot Engine.
+This class is the default implementation of :ref:`MultiplayerAPI<class_MultiplayerAPI>`, used to provide multiplayer functionalities in Redot Engine.
 
 This implementation supports RPCs via :ref:`Node.rpc<class_Node_method_rpc>` and :ref:`Node.rpc_id<class_Node_method_rpc_id>` and requires :ref:`MultiplayerAPI.rpc<class_MultiplayerAPI_method_rpc>` to be passed a :ref:`Node<class_Node>` (it will fail for other object types).
 

@@ -36,13 +36,15 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`XRInterface<class_XRInterface>` | :ref:`primary_interface<class_XRServer_property_primary_interface>` |                                                     |
-   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`world_origin<class_XRServer_property_world_origin>`           | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
-   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`float<class_float>`             | :ref:`world_scale<class_XRServer_property_world_scale>`             | ``1.0``                                             |
-   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
+   +---------------------------------------+---------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`camera_locked_to_origin<class_XRServer_property_camera_locked_to_origin>` | ``false``                                           |
+   +---------------------------------------+---------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`XRInterface<class_XRInterface>` | :ref:`primary_interface<class_XRServer_property_primary_interface>`             |                                                     |
+   +---------------------------------------+---------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`world_origin<class_XRServer_property_world_origin>`                       | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
+   +---------------------------------------+---------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`             | :ref:`world_scale<class_XRServer_property_world_scale>`                         | ``1.0``                                             |
+   +---------------------------------------+---------------------------------------------------------------------------------+-----------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -296,6 +298,25 @@ Does not reset the orientation of the HMD, only the position of the player gets 
 
 Property Descriptions
 ---------------------
+
+.. _class_XRServer_property_camera_locked_to_origin:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **camera_locked_to_origin** = ``false`` :ref:`🔗<class_XRServer_property_camera_locked_to_origin>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_camera_locked_to_origin**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_camera_locked_to_origin**\ (\ )
+
+If set to ``true``, the scene will be rendered as if the camera is locked to the :ref:`XROrigin3D<class_XROrigin3D>`.
+
+\ **Note:** This doesn't provide a very comfortable experience for users. This setting exists for doing benchmarking or automated testing, where you want to control what is rendered via code.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_XRServer_property_primary_interface:
 

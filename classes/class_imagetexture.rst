@@ -43,7 +43,7 @@ This is because images have to be imported as a :ref:`CompressedTexture2D<class_
 ::
 
     var texture = load("res://icon.svg")
-    var image: Image = texture.get_image()
+    var image = texture.get_image()
 
 An **ImageTexture** is not meant to be operated from within the editor interface directly, and is mostly useful for rendering images on screen dynamically via code. If you need to generate images procedurally from within the editor, consider saving and importing images as custom texture resources implementing a new :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
 

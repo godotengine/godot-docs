@@ -12,16 +12,16 @@ TextServerFallback
 
 **Inherits:** :ref:`TextServerExtension<class_TextServerExtension>` **<** :ref:`TextServer<class_TextServer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A fallback implementation of Godot's text server, without support for BiDi and complex text layout.
+A fallback implementation of Redot's text server, without support for BiDi and complex text layout.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A fallback implementation of Godot's text server. This fallback is faster than :ref:`TextServerAdvanced<class_TextServerAdvanced>` for processing a lot of text, but it does not support BiDi and complex text layout.
+A fallback implementation of Redot's text server. This fallback is faster than :ref:`TextServerAdvanced<class_TextServerAdvanced>` for processing a lot of text, but it does not support BiDi and complex text layout.
 
-\ **Note:** This text server is not part of official Godot binaries. If you want to use it, compile the engine with the option ``module_text_server_fb_enabled=yes``.
+\ **Note:** This text server is not part of official Redot binaries. If you want to use it, compile the engine with the option ``module_text_server_fb_enabled=yes``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

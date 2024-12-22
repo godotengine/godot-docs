@@ -676,6 +676,8 @@ If ``true``, only the number of particles equal to :ref:`amount<class_GPUParticl
 
 Amount of time to preprocess the particles before animation starts. Lets you start the animation some time after particles have started emitting.
 
+\ **Note:** This can be very expensive if set to a high number as it requires running the particle shader a number of times equal to the :ref:`fixed_fps<class_GPUParticles3D_property_fixed_fps>` (or 30, if :ref:`fixed_fps<class_GPUParticles3D_property_fixed_fps>` is 0) for every second. In extreme cases it can even lead to a GPU crash due to the volume of work done in a single frame.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -866,6 +868,8 @@ Sets this node's properties to match a given :ref:`CPUParticles3D<class_CPUParti
 Emits a single particle. Whether ``xform``, ``velocity``, ``color`` and ``custom`` are applied depends on the value of ``flags``. See :ref:`EmitFlags<enum_GPUParticles3D_EmitFlags>`.
 
 The default ParticleProcessMaterial will overwrite ``color`` and use the contents of ``custom`` as ``(rotation, age, animation, lifetime)``.
+
+\ **Note:** :ref:`emit_particle<class_GPUParticles3D_method_emit_particle>` is only supported on the Forward+ and Mobile rendering methods, not Compatibility.
 
 .. rst-class:: classref-item-separator
 

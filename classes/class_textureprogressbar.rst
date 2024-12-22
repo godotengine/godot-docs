@@ -226,6 +226,8 @@ If ``true``, Redot treats the bar's textures like in :ref:`NinePatchRect<class_N
 
 Offsets :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` if :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE>`, :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_COUNTER_CLOCKWISE>`, or :ref:`FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE>`.
 
+\ **Note:** The effective radial center always stays within the :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` bounds. If you need to move it outside the texture's bounds, modify the :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` to contain additional empty space where needed.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -261,6 +263,8 @@ See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.max_value<class_
 - :ref:`float<class_float>` **get_radial_initial_angle**\ (\ )
 
 Starting angle for the fill of :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` if :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE>`, :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_COUNTER_CLOCKWISE>`, or :ref:`FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE>`. When the node's ``value`` is equal to its ``min_value``, the texture doesn't show up at all. When the ``value`` increases, the texture fills and tends towards :ref:`radial_fill_degrees<class_TextureProgressBar_property_radial_fill_degrees>`.
+
+\ **Note:** :ref:`radial_initial_angle<class_TextureProgressBar_property_radial_initial_angle>` is wrapped between ``0`` and ``360`` degrees (inclusive).
 
 .. rst-class:: classref-item-separator
 

@@ -231,7 +231,7 @@ If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_co
 - |void| **set_clip_text**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_clip_text**\ (\ )
 
-When this property is enabled, text that is too large to fit the button is clipped, when disabled the Button will always be wide enough to hold the text.
+If ``true``, text that is too large to fit the button is clipped horizontally. If ``false``, the button will always be wide enough to hold the text. The text is not vertically clipped, and the button's height is not affected by this property.
 
 .. rst-class:: classref-item-separator
 

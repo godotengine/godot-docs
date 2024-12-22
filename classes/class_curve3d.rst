@@ -31,13 +31,15 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+--------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>` | :ref:`bake_interval<class_Curve3D_property_bake_interval>`         | ``0.2``  |
-   +---------------------------+--------------------------------------------------------------------+----------+
-   | :ref:`int<class_int>`     | :ref:`point_count<class_Curve3D_property_point_count>`             | ``0``    |
-   +---------------------------+--------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`   | :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` | ``true`` |
-   +---------------------------+--------------------------------------------------------------------+----------+
+   +---------------------------+--------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`bake_interval<class_Curve3D_property_bake_interval>`         | ``0.2``   |
+   +---------------------------+--------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`closed<class_Curve3D_property_closed>`                       | ``false`` |
+   +---------------------------+--------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`     | :ref:`point_count<class_Curve3D_property_point_count>`             | ``0``     |
+   +---------------------------+--------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`up_vector_enabled<class_Curve3D_property_up_vector_enabled>` | ``true``  |
+   +---------------------------+--------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -118,6 +120,23 @@ Property Descriptions
 - :ref:`float<class_float>` **get_bake_interval**\ (\ )
 
 The distance in meters between two adjacent cached points. Changing it forces the cache to be recomputed the next time the :ref:`get_baked_points<class_Curve3D_method_get_baked_points>` or :ref:`get_baked_length<class_Curve3D_method_get_baked_length>` function is called. The smaller the distance, the more points in the cache and the more memory it will consume, so use with care.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Curve3D_property_closed:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **closed** = ``false`` :ref:`🔗<class_Curve3D_property_closed>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_closed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_closed**\ (\ )
+
+If ``true``, and the curve has more than 2 control points, the last point and the first one will be connected in a loop.
 
 .. rst-class:: classref-item-separator
 
