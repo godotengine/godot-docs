@@ -96,8 +96,8 @@ Now that we've downloaded our prerequisites, it is time to build the C++
 bindings.
 
 The repository contains a copy of the metadata for the current Godot release,
-but if you need to build these bindings for a newer version of Godot, simply
-call the Godot executable:
+but if you need to build these bindings for a newer version of Godot, call
+the Godot executable:
 
 .. code-block:: none
 

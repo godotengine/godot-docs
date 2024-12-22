@@ -25,6 +25,9 @@ browsers support WebAssembly threading and can therefore run the web editor:
 - Firefox 79 or later
 - Edge 79 or later
 
+.. UPDATE: Not supported yet. When Opera, Safari, or mobile browsers are
+.. supported, update or remove these paragraphs.
+
 Opera and Safari are not supported yet. Safari may work in the future once
 proper threading support is added.
 
@@ -115,6 +118,9 @@ Where are my project files?
 Due to browser security limitations, the editor will save the project files to
 the browser's IndexedDB storage. This storage isn't accessible as a regular folder
 on your machine, but is abstracted away in a database.
+
+.. UPDATE: Not supported yet. When exporting from the web editor is supported,
+.. update this paragraph.
 
 You can download the project files as a ZIP archive by using
 **Project > Tools > Download Project Source**. This can be used to export the

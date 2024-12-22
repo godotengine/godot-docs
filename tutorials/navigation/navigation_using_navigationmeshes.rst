@@ -694,4 +694,3 @@ The following script uses the NavigationServer to update a navigation region wit
             NavigationServer3D.RegionSetNavigationMesh(_regionRid, _navigationMesh);
         }
     }
-

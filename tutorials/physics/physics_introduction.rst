@@ -180,6 +180,21 @@ would be as follows::
     # (2^(1-1)) + (2^(3-1)) + (2^(4-1)) = 1 + 4 + 8 = 13
     pow(2, 1-1) + pow(2, 3-1) + pow(2, 4-1)
 
+You can also set bits independently by calling ``set_collision_layer_value(layer_number, value)``
+or ``set_collision_mask_value(layer_number, value)`` on any given :ref:`CollisionObject2D <class_CollisionObject2D>` as follows::
+
+    # Example: Setting mask value to enable layers 1, 3, and 4.
+
+    var collider: CollisionObject2D = $CollisionObject2D  # Any given collider.
+    collider.set_collision_mask_value(1, true)
+    collider.set_collision_mask_value(3, true)
+    collider.set_collision_mask_value(4, true)
+
+Export annotations can be used to export bitmasks in the editor with a user-friendly GUI::
+
+    @export_flags_2d_physics var layers_2d_physics
+
+Additional export annotations are available for render and navigation layers, in both 2D and 3D. See :ref:`doc_gdscript_exports_exporting_bit_flags`.
 
 Area2D
 ------

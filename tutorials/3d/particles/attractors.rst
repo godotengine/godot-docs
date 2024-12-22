@@ -13,6 +13,9 @@ and :ref:`class_GPUParticlesAttractorVectorField3D`. You can instantiate them at
 change their properties from gameplay code; you can even animate and combine them for complex
 attraction effects.
 
+.. UPDATE: Not implemented. When particle attractors are implemented for 2D
+.. particle systems, remove this note and remove this comment.
+
 .. note::
 
    Particle attractors are not yet implemented for 2D particle systems.

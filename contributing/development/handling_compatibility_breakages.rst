@@ -101,7 +101,7 @@ like ``core/math/a_star_grid_2d.compat.inc`` in this case:
 
     #endif // DISABLE_DEPRECATED
 
-Unless the change in compatibility is complex, the compatibility method should simply call the modified method directly,
+Unless the change in compatibility is complex, the compatibility method should call the modified method directly,
 instead of duplicating that method. Make sure to match the default arguments for that method (in the example above this would be ``false``).
 
 This file should always be placed next to the original file, and have ``.compat.inc`` at the end instead of ``.cpp`` or ``.h``.

@@ -11,7 +11,7 @@ custom shaped object) and checking what it hits. This enables complex
 behaviors, AI, etc. to take place. This tutorial will explain how to
 do this in 2D and 3D.
 
-Godot stores all the low level game information in servers, while the
+Godot stores all the low-level game information in servers, while the
 scene is only a frontend. As such, ray casting is generally a
 lower-level task. For simple raycasts, nodes like
 :ref:`RayCast3D <class_RayCast3D>` and :ref:`RayCast2D <class_RayCast2D>`
@@ -24,7 +24,7 @@ so a way to do this by code must exist.
 Space
 -----
 
-In the physics world, Godot stores all the low level collision and
+In the physics world, Godot stores all the low-level collision and
 physics information in a *space*. The current 2d space (for 2D Physics)
 can be obtained by accessing
 :ref:`CanvasItem.get_world_2d().space <class_CanvasItem_method_get_world_2d>`.

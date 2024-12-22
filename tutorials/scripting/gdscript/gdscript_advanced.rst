@@ -230,11 +230,9 @@ Or unordered sets:
 Dictionaries
 ------------
 
-Dictionaries are a powerful tool in dynamically typed languages.
-Most programmers that come from statically typed languages (such as C++
-or C#) ignore their existence and make their life unnecessarily more
-difficult. This datatype is generally not present in such languages (or
-only in limited form).
+Dictionaries are a powerful tool in dynamically typed languages. In
+GDScript, untyped dictionaries can be used for many cases where a statically
+typed language would tend to use another data structure.
 
 Dictionaries can map any value to any other value with complete
 disregard for the datatype used as either key or value. Contrary to
@@ -525,5 +523,4 @@ exists is desirable:
         if object.has_method("smash"):
             object.smash()
 
-Then, simply define that method and anything the rock touches can be
-smashed.
+Then, define that method and anything the rock touches can be smashed.

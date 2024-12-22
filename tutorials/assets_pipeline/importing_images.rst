@@ -79,8 +79,8 @@ It is possible to choose other types of imported resources in the Import dock:
   custom shaders.
 - **CubemapArray:** Import the texture as a collection of 6-sided cubemaps,
   which can be sampled in custom shaders. This resource type can only be
-  displayed when using the Forward+ or Forward Mobile rendering methods, not
-  Compatibility.
+  displayed when using the Forward+ or Mobile renderers, not the Compatibility
+  renderer.
 - **Font Data (Monospace Image Font):** Import the image as a bitmap font where
   all characters have the same width. See :ref:`doc_gui_using_fonts`.
 - **Image:** Import the image as-is. This resource type cannot be displayed
@@ -261,10 +261,10 @@ Compress > High Quality
 .. note::
 
     High-quality VRAM texture compression is only supported in the Forward+ and
-    Forward Mobile rendering methods.
+    Mobile renderers.
 
-    When using the Compatibility rendering method, this option is always
-    considered disabled.
+    When using the Compatibility renderer, this option is always considered
+    disabled.
 
 If enabled, uses BPTC compression on desktop platforms and :abbr:`ASTC (Adaptive
 Scalable Texture Compression)` compression on mobile platforms. When using BPTC,
@@ -376,6 +376,9 @@ mipmaps but memory usage will increase.
 
 Mipmaps > Limit
 ^^^^^^^^^^^^^^^
+
+.. UPDATE: Not implemented. When Mipmaps > Limit is implemented, remove this
+.. warning and remove this comment.
 
 .. warning::
 

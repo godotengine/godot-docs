@@ -179,7 +179,7 @@ they'll need to do* in the future?
 .. image:: img/best_practices6.png
 
 The answer to this question is that, to ensure users still can do what they want
-to do, we need to give them access to a *low level API* that they can use to
+to do, we need to give them access to a *low-level API* that they can use to
 achieve what they want, even if it's more work for them because it means
 reimplementing some logic that already exists.
 
@@ -219,7 +219,7 @@ is always the advised one.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Not every problem has a simple solution and, many times, the right choice is to
-use a third party library to solve the problem.
+use a third-party library to solve the problem.
 
 As Godot requires to be shipped in a large amount of platforms, we can't
 link libraries dynamically. Instead, we bundle them in our source tree.

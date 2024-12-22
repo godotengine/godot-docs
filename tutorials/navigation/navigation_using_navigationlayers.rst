@@ -37,7 +37,7 @@ In scripts the following helper functions can be used to work with the ``navigat
         var path_query_navigation_layers: int = 0
         path_query_navigation_layers = enable_bitmask_inx(path_query_navigation_layers, 2)
         # get a path that only considers 2-nd layer regions
-        var path: PoolVector2Array = NavigationServer2D.map_get_path(
+        var path: PackedVector2Array = NavigationServer2D.map_get_path(
             map,
             start_position,
             target_position,
@@ -120,7 +120,7 @@ In scripts the following helper functions can be used to work with the ``navigat
         var path_query_navigation_layers: int = 0
         path_query_navigation_layers = enable_bitmask_inx(path_query_navigation_layers, 2)
         # get a path that only considers 2-nd layer regions
-        var path: PoolVector3Array = NavigationServer3D.map_get_path(
+        var path: PackedVector3Array = NavigationServer3D.map_get_path(
             map,
             start_position,
             target_position,

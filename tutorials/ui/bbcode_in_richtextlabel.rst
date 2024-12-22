@@ -21,8 +21,11 @@ scrollbar is automatically displayed if the text does not fit within the
 control's size. The scrollbar can be disabled by unchecking the
 **Scroll Active** property in the RichTextLabel inspector.
 
-Note that the BBCode tags can also be used to some extent in the XML source of
-the class reference. For more information, see :ref:`doc_class_reference_primer`.
+Note that the BBCode tags can also be used to some extent for other use cases:
+
+- BBCode can be used to :ref:`format comments in the XML source of the class reference <doc_class_reference_bbcode>`.
+- BBCode can be used in :ref:`GDScript documentation comments <doc_gdscript_documentation_comments_bbcode_and_class_reference>`.
+- BBCode can be used when :ref:`printing rich text to the Output bottom panel <doc_output_panel_printing_rich_text>`.
 
 .. seealso::
 
@@ -812,10 +815,16 @@ Font options
 Named colors
 ~~~~~~~~~~~~
 
-For tags that allow specifying a color by name you can use names of the constants from
+For tags that allow specifying a color by name, you can use names of the constants from
 the built-in :ref:`class_Color` class. Named classes can be specified in a number of
 styles using different casings: ``DARK_RED``, ``DarkRed``, and ``darkred`` will give
 the same exact result.
+
+See this image for a list of color constants:
+
+.. image:: /img/color_constants.png
+
+`View at full size <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__
 
 .. _doc_bbcode_in_richtextlabel_hex_colors:
 
@@ -1043,7 +1052,7 @@ the Inspector by adding it to the **Markup > Custom Effects** array, or in code 
     tag will be left as-is.
 
 There is only one function that you need to extend: ``_process_custom_fx(char_fx)``.
-Optionally, you can also provide a custom BBCode identifier simply by adding a member
+Optionally, you can also provide a custom BBCode identifier by adding a member
 name ``bbcode``. The code will check the ``bbcode`` property automatically or will
 use the name of the file to determine what the BBCode tag should be.
 

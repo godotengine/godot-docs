@@ -136,7 +136,7 @@ Can I use my favorite library?
 ------------------------------
 
 You most likely can. First, you have to
-include your library in the page. You can simply customize the
+include your library in the page. You can customize the
 :ref:`Head Include <doc_javascript_export_options>` during export (see below),
 or even :ref:`write your own template <doc_customizing_html5_shell>`.
 

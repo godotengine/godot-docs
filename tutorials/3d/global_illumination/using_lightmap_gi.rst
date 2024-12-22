@@ -80,6 +80,13 @@ Setting up
     graphics API limitations on those devices. On Android and web platforms,
     only *rendering* lightmaps that were baked on a desktop PC is supported.
 
+.. note::
+
+    The LightmapGI node only bakes nodes that are on the same level as the
+    LightmapGI node (siblings), or nodes that are children of the
+    LightmapGI node. This allows you to use several LightmapGI nodes to bake
+    different parts of the scene, independently from each other.
+
 First of all, before the lightmapper can do anything, the objects to be baked need
 a UV2 layer and a texture size. A UV2 layer is a set of secondary texture coordinates
 that ensures any face in the object has its own place in the UV map. Faces must
@@ -194,6 +201,25 @@ increase **UV2 Padding**.
 lightmap texture, which varies depending on the mesh's size properties and the
 **UV2 Padding** value. **Lightmap Size Hint** should not be manually changed, as
 any modifications will be lost when the scene is reloaded.
+
+Generating UV2 for CSG nodes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Since Godot 4.4, you can
+:ref:`convert a CSG node and its children to a MeshInstance3D <doc_csg_tools_converting_to_mesh_instance_3d>`.
+This can be used to bake lightmaps on a CSG node by following these steps:
+
+- Select the root CSG node and choose **CSG > Bake Mesh Instance** at the top of the 3D editor viewport.
+- Hide the root CSG node that was just baked (it is not hidden automatically).
+- Select the newly created MeshInstance3D node and choose **Mesh > Unwrap UV2 for Lightmap/AO**.
+- Bake lightmaps.
+
+.. tip::
+
+    Remember to keep the original CSG node in the scene tree, so that you can
+    perform changes to the geometry later if needed. To make changes to the
+    geometry, remove the MeshInstance3D node and make the root CSG node visible
+    again.
 
 Checking UV2
 ^^^^^^^^^^^^

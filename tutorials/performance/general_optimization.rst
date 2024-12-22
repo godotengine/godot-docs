@@ -226,7 +226,7 @@ algorithms and data structures are the best they can be. Data access should be
 local (to make best use of CPU cache), and it can often be better to use compact
 storage of data (again, always profile to test results). Often, you precalculate
 heavy computations ahead of time. This can be done by performing the computation
-when loading a level, by loading a file containing precalculated data or simply
+when loading a level, by loading a file containing precalculated data, or
 by storing the results of complex calculations into a script constant and
 reading its value.
 

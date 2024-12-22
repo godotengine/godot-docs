@@ -86,6 +86,12 @@ a unique name and must be one of the following data types:
    not limited to the :ref:`Panel <class_Panel>` control, as styleboxes
    are used by many controls for their backgrounds and overlays.
 
+   Different controls will apply StyleBoxes in a different manner. Most notably,
+   ``focus`` styleboxes are drawn as an *overlay* to other styleboxes (such as
+   ``normal`` or ``pressed``) to allow the base stylebox to remain visible.
+   This means the focus stylebox should be designed as an outline or translucent
+   box, so that its background can remain visible.
+
 Theme types
 ~~~~~~~~~~~
 
@@ -125,12 +131,12 @@ is applied to them. Those methods accept the theme type as one of the arguments.
  .. code-tab:: gdscript
 
    var accent_color = get_theme_color("accent_color", "MyType")
-   label.add_color_override("font_color", accent_color)
+   label.add_theme_color_override("font_color", accent_color)
 
  .. code-tab:: csharp
 
    Color accentColor = GetThemeColor("accent_color", "MyType");
-   label.AddColorOverride("font_color", accentColor);
+   label.AddThemeColorOverride("font_color", accentColor);
 
 To give more customization opportunities types can also be linked together as
 type variations. This is another use-case for custom theme types. For example,

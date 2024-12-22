@@ -65,6 +65,11 @@ Some example **Exec Flags** for various editors include:
     For Emacs, you can call ``emacsclient`` instead of ``emacs`` if
     you use the server mode.
 
+Automatically reloading your changes
+------------------------------------
+To have the Godot Editor automatically reload any script that has been changed by an external text editor,
+enable **Editor > Editor Settings > Text Editor > Behavior > Auto Reload Scripts on External Change**.
+
 Using External Editor in Debugger
 ---------------------------------
 
@@ -119,4 +124,3 @@ Emacs
 ^^^^^
 
 Check the official instructions to configure `LSP <https://github.com/godotengine/emacs-gdscript-mode#auto-completion-with-the-language-server-protocol-lsp>`_, and `DAP <https://github.com/godotengine/emacs-gdscript-mode#using-the-debugger>`_.
-

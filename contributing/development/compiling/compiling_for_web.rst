@@ -121,7 +121,7 @@ server requirements.
         python platform/web/serve.py
 
     This will serve the contents of the ``bin/`` folder and open the default web
-    browser automatically. In the page that opens, access ``godot.tools.html``
+    browser automatically. In the page that opens, access ``godot.editor.html``
     and you should be able to test the web editor this way.
 
     Note that for production use cases, this Python-based web server should not

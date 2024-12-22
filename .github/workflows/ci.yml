@@ -15,19 +15,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Style checks via pre-commit
+        uses: pre-commit/action@v3.0.1
+
       - name: Install dependencies
-        run: |
-          # Install tools used by `_tools/format.sh`.
-          sudo apt-get -qq update
-          sudo apt-get -qq install dos2unix recode
-          sudo pip3 install -r requirements.txt
-          sudo pip3 install codespell
-
-      - name: Linter checks
-        run: |
-          bash _tools/format.sh
-
-          codespell -D- -D _tools/codespell-dict.txt -I _tools/codespell-ignore.txt -x _tools/codespell-ignore-lines.txt -S tutorials/i18n/locales.rst {about,community,contributing,getting_started,tutorials}/{*.rst,**/*.rst,**/**/*.rst,**/**/**/*.rst}
+        run: sudo pip3 install -r requirements.txt
 
       - name: Migrate to Redot
         run: |

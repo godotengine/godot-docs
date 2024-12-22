@@ -185,7 +185,7 @@ You can access this information through code:
     else:
         print("No hand tracker registered")
 
-This example simply logs the state for the left hand.
+This example logs the state for the left hand.
 
 If in this example no hand tracker is returned by ``get_tracker``,
 this means the hand tracking API is not supported on the XR runtime at all.

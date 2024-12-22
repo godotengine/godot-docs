@@ -58,16 +58,16 @@ performance gains.
 
 .. note::
 
-    When using the Clustered Forward rendering backend, the engine already
+    When using the Forward+ renderer, the engine already
     performs a *depth prepass*. This consists in rendering a depth-only version
     of the scene before rendering the scene's actual materials. This is used to
     ensure each opaque pixel is only shaded once, reducing the cost of overdraw
     significantly.
 
-    The greatest performance benefits can be observed when using the Forward
-    Mobile rendering backend, as it does not feature a
-    depth prepass for performance reasons. As a result, occlusion culling will
-    actively decrease shading overdraw with that rendering backend.
+    The greatest performance benefits can be observed when using the Mobile
+    renderer, as it does not feature a depth prepass for performance reasons. As
+    a result, occlusion culling will actively decrease shading overdraw with 
+    that renderer.
 
     Nonetheless, even when using a depth prepass, there is still a noticeable
     benefit to occlusion culling in complex 3D scenes. However, in scenes with
@@ -79,7 +79,8 @@ How occlusion culling works in Godot
 
 .. note::
 
-    *"occluder" refers to the shape blocking the view, while "occludee" refers to the object being hidden.*
+    "occluder" refers to the shape blocking the view, while "occludee" refers to
+    the object being hidden.
 
 In Godot, occlusion culling works by rasterizing the scene's occluder geometry
 to a low-resolution buffer on the CPU. This is done using
@@ -123,6 +124,10 @@ Automatically baking occluders (recommended)
     nodes are **not** taken into account when baking occluders. If you wish
     those to be treated as occluders, you have to manually create occluder
     shapes that (roughly) match their geometry.
+
+    Since Godot 4.4, CSG nodes can be taken into account in the baking process if they are
+    :ref:`converted to a MeshInstance3D <doc_csg_tools_converting_to_mesh_instance_3d>`
+    before baking occluders.
 
     This restriction does not apply to *occludees*. Any node type that inherits
     from GeometryInstance3D can be occluded.

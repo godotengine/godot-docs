@@ -274,7 +274,7 @@ References:
 Resources
 ----------
 
-:ref:`Resource <class_resource>` inherits from Reference, so all resources
+:ref:`Resource <class_resource>` inherits from RefCounted, so all resources
 are reference counted. Resources can optionally contain a path, which
 reference a file on disk. This can be set with ``resource.set_path(path)``,
 though this is normally done by the resource loader. No two different

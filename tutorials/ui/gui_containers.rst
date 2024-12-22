@@ -78,7 +78,7 @@ Arranges child controls vertically or horizontally (via :ref:`HBoxContainer <cla
 
    .. image:: img/containers_box.png
 
-These containers make use of the *Ratio* property for children with the *Expand* flag set.
+These containers make use of the *Stretch Ratio* property for children with the *Expand* flag set.
 
 Grid Container
 ^^^^^^^^^^^^^^
