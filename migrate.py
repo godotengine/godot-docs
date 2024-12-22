@@ -10,9 +10,9 @@ positional arguments:
   output          Output directory relative to current
 
 options:
-  -h, --help      show this help message and exit
-  -e, --extended  Include unimplemented substitutions, don't use in production
-  -t, --tiny      Exclude classes directory
+  -h, --help                Show this help message and exit
+  -e, --extended            Include unimplemented substitutions, don't use in production
+  -x, --exclude-classes     Exclude classes directory
   -v, --verbose
 
 Will replace specific godot strings with redot. It tries to ignore external projects and other things that shouldn't
@@ -288,6 +288,14 @@ def convertFile(root, filename, outputDirectory, includeUnimplemented, verbose):
         with open(outputName, mode = 'w', encoding = encoding) as output:
             output.write(data)
 
+def includeFile(root, filename, outputDirectory, verbose):
+    inputName = os.path.join(root, filename)
+    outputName = os.path.join('.', outputDirectory, root, filename)
+    ensureDirExists(outputName)
+
+    if verbose: print(f'Copying "{inputName}" to "{outputName}"')
+    shutil.copyfile(inputName, outputName)
+
 def copyGlobalDir(inputDirectory, inputMask, outputDirectory, verbose):
     for root, dirs, files in os.walk(inputDirectory):
         if (inputMask in root and outputDirectory not in root):
@@ -314,10 +322,13 @@ def migrate(inputDirectory, outputDirectory, includeUnimplemented, ignoreClasses
         if (root.startswith(outputsig)):
             continue
 
+        items = filter(is_target, files)
+
         if (ignoreClasses and 'classes' in root):
+            for item in items:
+                includeFile(root, item, outputDirectory, verbose)
             continue
 
-        items = filter(is_target, files)
         for item in items:
             convertFile(root, item, outputDirectory, includeUnimplemented, verbose)
 
@@ -335,8 +346,8 @@ def main():
     
     parser.add_argument('input', help='Input directory relative to current')
     parser.add_argument('output', help='Output directory relative to current')
-    parser.add_argument('-e', '--extended', action='store_true', help='Include unimplemented substitutions, don\'t use in production')
-    parser.add_argument('-t', '--tiny', action='store_true', help='Exclude classes directory')
+    parser.add_argument('-e', '--extended', default=defaultIncludeUnimplemented, help='Include unimplemented substitutions, don\'t use in production')
+    parser.add_argument('-x', '--exclude-classes', default=ignoreClasses, help='Exclude classes directory')
     parser.add_argument('-v', '--verbose', action='store_true') 
 
     args = parser.parse_args()
@@ -352,7 +363,7 @@ def main():
         print("output can't be . or start with /")
         exit(1)
     includeUnimplemented = args.extended
-    ignoreClasses = args.tiny
+    ignoreClasses = args.exclude_classes
 
     if (os.path.exists(outputDir)):
         print(f"Deleting {outputDir}")
