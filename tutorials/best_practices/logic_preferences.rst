@@ -19,8 +19,10 @@ corresponding values, and that code can be slow! For most cases, this code
 has no impact on your game's performance, but in heavy use cases such as
 procedural generation, it can bring your game to a crawl.
 
-For these reasons, it is always a best practice to set the initial values
-of a node before adding it to the scene tree.
+For these reasons, it is usually best practice to set the initial values
+of a node before adding it to the scene tree. There are some exceptions where
+values *can't* be set before being added to the scene tree, like setting global
+position.
 
 Loading vs. preloading
 ----------------------

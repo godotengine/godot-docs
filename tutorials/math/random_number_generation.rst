@@ -33,6 +33,9 @@ Global scope methods are easier to set up, but they don't offer as much control.
 RandomNumberGenerator requires more code to use, but allows creating
 multiple instances, each with their own seed and state.
 
+This tutorial uses global scope methods, except when the method only exists in
+the RandomNumberGenerator class.
+
 The randomize() method
 ----------------------
 
@@ -81,6 +84,7 @@ across runs:
     public override void _Ready()
     {
         GD.Seed(12345);
+        // To use a string as a seed, you can hash it to a number.
         GD.Seed("Hello world".Hash());
     }
 
@@ -105,9 +109,9 @@ Let's look at some of the most commonly used functions and methods to generate
 random numbers in Godot.
 
 The function :ref:`randi() <class_@GlobalScope_method_randi>` returns a random
-number between 0 and 2^32-1. Since the maximum value is huge, you most likely
-want to use the modulo operator (``%``) to bound the result between 0 and the
-denominator:
+number between ``0`` and ``2^32 - 1``. Since the maximum value is huge, you most
+likely want to use the modulo operator (``%``) to bound the result between 0 and
+the denominator:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -141,12 +145,12 @@ varying by the deviation (1.0 by default):
  .. code-tab:: gdscript GDScript
 
     # Prints a random floating-point number from a normal distribution with a mean 0.0 and deviation 1.0.
-    print(randfn())
+    print(randfn(0.0, 1.0))
 
  .. code-tab:: csharp
 
-    // Prints a normally distributed floating-point number between 0.0 and 1.0.
-    GD.Print(GD.Randfn());
+    // Prints a random floating-point number from a normal distribution with a mean 0.0 and deviation 1.0.
+    GD.Print(GD.Randfn(0.0, 1.0));
 
 :ref:`randf_range() <class_@GlobalScope_method_randf_range>` takes two arguments
 ``from`` and ``to``, and returns a random floating-point number between ``from``
@@ -161,7 +165,7 @@ and ``to``:
  .. code-tab:: csharp
 
     // Prints a random floating-point number between -4 and 6.5.
-    GD.Print(GD.RandfRange(-4, 6.5));
+    GD.Print(GD.RandRange(-4.0, 6.5));
 
 :ref:`randi_range() <class_@GlobalScope_method_randi_range>` takes two arguments ``from``
 and ``to``, and returns a random integer between ``from`` and ``to``:
@@ -175,7 +179,7 @@ and ``to``, and returns a random integer between ``from`` and ``to``:
  .. code-tab:: csharp
 
     // Prints a random integer number between -10 and 10.
-    GD.Print(GD.RandiRange(-10, 10));
+    GD.Print(GD.RandRange(-10, 10));
 
 Get a random array element
 --------------------------
@@ -255,7 +259,7 @@ prevent repetition:
     func get_fruit():
         var random_fruit = _fruits[randi() % _fruits.size()]
         while random_fruit == _last_fruit:
-            # The last fruit was picked, try again until we get a different fruit.
+            # The last fruit was picked. Try again until we get a different fruit.
             random_fruit = _fruits[randi() % _fruits.size()]
 
         # Note: if the random element to pick is passed by reference,
@@ -286,7 +290,7 @@ prevent repetition:
         string randomFruit = _fruits[GD.Randi() % _fruits.Length];
         while (randomFruit == _lastFruit)
         {
-            // The last fruit was picked, try again until we get a different fruit.
+            // The last fruit was picked. Try again until we get a different fruit.
             randomFruit = _fruits[GD.Randi() % _fruits.Length];
         }
 
@@ -310,7 +314,7 @@ We can apply similar logic from arrays to dictionaries as well:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var metals = {
+    var _metals = {
         "copper": {"quantity": 50, "price": 50},
         "silver": {"quantity": 20, "price": 150},
         "gold": {"quantity": 3, "price": 500},
@@ -323,10 +327,35 @@ We can apply similar logic from arrays to dictionaries as well:
 
 
     func get_metal():
-        var random_metal = metals.values()[randi() % metals.size()]
+        var random_metal = _metals.values()[randi() % metals.size()]
         # Returns a random metal value dictionary every time the code runs.
         # The same metal may be selected multiple times in succession.
         return random_metal
+
+ .. code-tab:: csharp
+
+    private Godot.Collections.Dictionary<string, Godot.Collections.Dictionary<string, int>> _metals = new()
+    {
+        {"copper", new Godot.Collections.Dictionary<string, int>{{"quantity", 50}, {"price", 50}}},
+        {"silver", new Godot.Collections.Dictionary<string, int>{{"quantity", 20}, {"price", 150}}},
+        {"gold", new Godot.Collections.Dictionary<string, int>{{"quantity", 3}, {"price", 500}}},
+    };
+
+    public override void _Ready()
+    {
+        for (int i = 0; i < 20; i++)
+        {
+            GD.Print(GetMetal());
+        }
+    }
+
+    public Godot.Collections.Dictionary<string, int> GetMetal()
+    {
+        var (_, randomMetal) = _metals.ElementAt((int)(GD.Randi() % _metals.Count));
+        // Returns a random metal value dictionary every time the code runs.
+        // The same metal may be selected multiple times in succession.
+        return randomMetal;
+    }
 
 .. _doc_random_number_generation_weighted_random_probability:
 
@@ -379,7 +408,7 @@ floating-point number between 0.0 and 1.0. We can use this to create a
         }
         else if (randomFloat < 0.95f)
         {
-            // 15% chance of being returned
+            // 15% chance of being returned.
             return "Uncommon";
         }
         else
@@ -388,6 +417,44 @@ floating-point number between 0.0 and 1.0. We can use this to create a
             return "Rare";
         }
     }
+
+You can also get a weighted random *index* using the
+:ref:`rand_weighted() <class_RandomNumberGenerator_method_rand_weighted>` method
+on a RandomNumberGenerator instance. This returns a random integer
+between 0 and the size of the array that is passed as a parameter. Each value in the
+array is a floating-point number that represents the *relative* likelihood that it
+will be returned as an index. A higher value means the value is more likely to be
+returned as an index, while a value of ``0`` means it will never be returned as an index.
+
+For example, if ``[0.5, 1, 1, 2]`` is passed as a parameter, then the method is twice
+as likely to return ``3`` (the index of the value ``2``) and twice as unlikely to return
+``0`` (the index of the value ``0.5``) compared to the indices ``1`` and ``2``.
+
+Since the returned value matches the array's size, it can be used as an index to
+get a value from another array as follows:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # Prints a random element using the weighted index that is returned by `rand_weighted()`.
+    # Here, "apple" will be returned twice as rarely as "orange" and "pear".
+    # "banana" is twice as common as "orange" and "pear", and four times as common as "apple".
+    var fruits = ["apple", "orange", "pear", "banana"]
+    var probabilities = [0.5, 1, 1, 2];
+
+    var random = RandomNumberGenerator.new()
+    print(fruits[random.rand_weighted(probabilities)])
+
+ .. code-tab:: csharp
+
+    // Prints a random element using the weighted index that is returned by `RandWeighted()`.
+    // Here, "apple" will be returned twice as rarely as "orange" and "pear".
+    // "banana" is twice as common as "orange" and "pear", and four times as common as "apple".
+    string[] fruits = { "apple", "orange", "pear", "banana" };
+    float[] probabilities = { 0.5, 1, 1, 2 };
+
+    var random = new RandomNumberGenerator();
+    GD.Print(fruits[random.RandWeighted(probabilities)]);
 
 .. _doc_random_number_generation_shuffle_bags:
 
@@ -401,7 +468,10 @@ could get the same fruit three or more times in a row.
 
 You can accomplish this using the *shuffle bag* pattern. It works by removing an
 element from the array after choosing it. After multiple selections, the array
-ends up empty. When that happens, you reinitialize it to its default value::
+ends up empty. When that happens, you reinitialize it to its default value:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var _fruits = ["apple", "orange", "pear", "banana"]
     # A copy of the fruits array so we can restore the original value into `fruits`.
@@ -425,8 +495,44 @@ ends up empty. When that happens, you reinitialize it to its default value::
         # Get a random fruit, since we shuffled the array,
         # and remove it from the `_fruits` array.
         var random_fruit = _fruits.pop_front()
-        # Prints "apple", "orange", "pear", or "banana" every time the code runs.
+        # Returns "apple", "orange", "pear", or "banana" every time the code runs, removing it from the array.
+        # When all fruit are removed, it refills the array.
         return random_fruit
+
+ .. code-tab:: csharp
+
+    private Godot.Collections.Array<string> _fruits = new() { "apple", "orange", "pear", "banana" };
+    // A copy of the fruits array so we can restore the original value into `fruits`.
+    private Godot.Collections.Array<string> _fruitsFull;
+
+    public override void _Ready()
+    {
+        _fruitsFull = _fruits.Duplicate();
+        _fruits.Shuffle();
+
+        for (int i = 0; i < 100; i++)
+        {
+            GD.Print(GetFruit());
+        }
+    }
+
+    public string GetFruit()
+    {
+        if(_fruits.Count == 0)
+        {
+            // Fill the fruits array again and shuffle it.
+            _fruits = _fruitsFull.Duplicate();
+            _fruits.Shuffle();
+        }
+
+        // Get a random fruit, since we shuffled the array,
+        string randomFruit = _fruits[0];
+        // and remove it from the `_fruits` array.
+        _fruits.RemoveAt(0);
+        // Returns "apple", "orange", "pear", or "banana" every time the code runs, removing it from the array.
+        // When all fruit are removed, it refills the array.
+        return randomFruit;
+    }
 
 When running the above code, there is a chance to get the same fruit twice in a
 row. Once we picked a fruit, it will no longer be a possible return value unless
@@ -469,7 +575,7 @@ terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
     public override void _Ready()
     {
         // Configure the FastNoiseLite instance.
-        _noise.NoiseType = NoiseTypeEnum.SimplexSmooth;
+        _noise.NoiseType = FastNoiseLite.NoiseTypeEnum.SimplexSmooth;
         _noise.Seed = (int)GD.Randi();
         _noise.FractalOctaves = 4;
         _noise.Frequency = 1.0f / 20.0f;

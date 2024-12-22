@@ -131,7 +131,7 @@ when:
 
 This function is
 :ref:`Control._gui_input() <class_Control_private_method__gui_input>`.
-Simply override it in your control. No processing needs to be set.
+To use it, override it in your control. No processing needs to be set.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

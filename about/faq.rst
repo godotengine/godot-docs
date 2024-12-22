@@ -167,6 +167,38 @@ The main reasons for creating a custom scripting language for Godot were:
 
 GDScript was designed to curtail the issues above, and more.
 
+.. _doc_faq_which_programming_language_is_fastest:
+
+Which programming language is fastest?
+--------------------------------------
+
+In most games, the *scripting language* itself is not the cause of performance
+problems. Instead, performance is slowed by inefficient algorithms (which are
+slow in all languages), by GPU performance, or by the common C++ engine code
+like physics or navigation. All languages supported by Godot are fast enough for
+general-purpose scripting. You should choose a language based on other factors,
+like ease-of-use, familiarity, platform support, or language features.
+
+In general, the performance of C# and GDScript is within the same order of
+magnitude, and C++ is faster than both.
+
+Comparing GDScript performance to C# is tricky, since C# can be faster in some
+specific cases. The C# *language* itself tends to be faster than GDScript, which
+means that C# can be faster in situations with few calls to Godot engine code.
+However, C# can be slower than GDScript when making many Godot API calls, due
+to the cost of *marshalling*. C#'s performance can also be brought down by garbage
+collection which occurs at random and unpredictable moments. This can result in
+stuttering issues in complex projects, and is not exclusive to Godot.
+
+C++, using :ref:`GDExtension <doc_what_is_gdextension>`, will almost always be
+faster than either C# or GDScript. However, C++ is less easy to use than C# or
+GDScript, and is slower to develop with.
+
+You can also use multiple languages within a single project, with
+:ref:`cross-language scripting <doc_cross_language_scripting>`, or by using
+GDExtension and scripting languages together. Be aware that doing so comes with
+its own complications.
+
 What 3D model formats does Godot support?
 -----------------------------------------
 
@@ -290,7 +322,7 @@ While Vulkan and OpenGL remain our primary focus for their open standard and
 cross-platform benefits, Godot 4.3 introduced experimental support for Direct3D 12.
 This addition aims to enhance performance and compatibility on platforms where
 Direct3D 12 is prevalent, such as Windows and Xbox. However, Vulkan and OpenGL
-will continue as the default rendering backends on all platforms, including Windows.
+will continue as the default rendering drivers on all platforms, including Windows.
 
 Why does Godot aim to keep its core feature set small?
 ------------------------------------------------------

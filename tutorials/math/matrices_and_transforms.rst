@@ -352,7 +352,7 @@ from X*1 + Y*-1, which is (1, 0) - (1, 1), or (1 - 1, 0 - 1), or (0, -1).
 This matches up with our observation of where the top-right corner
 of the image is.
 
-Hopefully you now fully understand the how a transformation matrix affects
+Hopefully you now fully understand how a transformation matrix affects
 the object, and the relationship between the basis vectors and how the
 object's "UV" or "intra-coordinates" have their world position changed.
 
@@ -606,6 +606,9 @@ to get an understanding of how they work. Godot allows you to edit
 this project which has colored lines and cubes to help visualize the
 :ref:`class_Basis` vectors and the origin in both 2D and 3D:
 https://github.com/godotengine/godot-demo-projects/tree/master/misc/matrix_transform
+
+.. UPDATE: May change in future. When you can edit a Node2D's transform matrix
+.. directly, remove or update this note.
 
 .. note:: You cannot edit Node2D's transform matrix directly in Godot 4.0's
           inspector. This may be changed in a future release of Godot.

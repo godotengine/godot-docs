@@ -223,6 +223,8 @@ This can be especially useful for plugin and library creators.
     While technically you can use both ``@deprecated`` and ``@experimental`` tags on the same
     class/member, this is not recommended as it is against common conventions.
 
+.. _doc_gdscript_documentation_comments_bbcode_and_class_reference:
+
 BBCode and class reference
 --------------------------
 

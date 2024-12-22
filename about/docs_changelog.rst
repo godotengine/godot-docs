@@ -16,10 +16,20 @@ added since version 3.0.
 New pages since version 4.3
 ---------------------------
 
+2D
+^^
+
+- :ref:`doc_introduction_to_2d`
+
 3D
 ^^
 
 - :ref:`doc_spring_arm`
+
+Debug
+^^^^^
+
+- :ref:`doc_output_panel`
 
 Editor
 ^^^^^^
@@ -31,10 +41,25 @@ Performance
 
 - :ref:`doc_pipeline_compilations`
 
+Physics
+^^^^^^^
+
+- :ref:`doc_physics_interpolation`
+- :ref:`doc_physics_interpolation_quick_start_guide`
+- :ref:`doc_physics_interpolation_introduction`
+- :ref:`doc_using_physics_interpolation`
+- :ref:`doc_advanced_physics_interpolation`
+- :ref:`doc_2d_and_3d_physics_interpolation`
+
 Rendering
 ^^^^^^^^^
 
 - :ref:`doc_renderers`
+
+Shaders
+^^^^^^^
+
+- :ref:`doc_shader_functions`
 
 New pages since version 4.2
 ---------------------------

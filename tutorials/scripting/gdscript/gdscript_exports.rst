@@ -298,6 +298,8 @@ It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
 in conjunction with a :ref:`script in "tool" mode <doc_gdscript_tool_mode>`.
 
+.. _doc_gdscript_exports_exporting_bit_flags:
+
 Exporting bit flags
 -------------------
 
@@ -387,6 +389,9 @@ The default value **must** be a constant expression.
 
     @export var a = [1, 2, 3]
 
+.. UPDATE: Not supported yet. When nested typed arrays are supported, update
+.. the example.
+
 Exported arrays can specify type (using the same hints as before).
 
 ::
@@ -474,6 +479,24 @@ for a list of parameters and their allowed values.
 
     When using ``@export_custom``, GDScript does not perform any validation on
     the syntax. Invalid syntax may have unexpected behavior in the inspector.
+
+``@export_tool_button``
+-----------------------
+
+If you need to create a clickable inspector button, you can use ``@export_tool_button``.
+This exports a ``Callable`` property as a clickable button. When the button is pressed, the callable is called.
+
+Export a button with label ``"Hello"`` and icon ``"Callable"``. When you press it, it will print ``"Hello world!"``.
+
+::
+
+    @tool
+    extends Node
+
+    @export_tool_button("Hello", "Callable") var hello_action = hello
+
+    func hello():
+        print("Hello world!")
 
 Setting exported variables from a tool script
 ---------------------------------------------

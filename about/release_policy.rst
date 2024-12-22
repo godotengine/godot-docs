@@ -63,6 +63,8 @@ further developed for maintenance releases in a Git branch of the same name
 Release support timeline
 ------------------------
 
+.. UPDATE: Table changes every minor version. Support policy may change.
+
 Stable branches are supported *at least* until the next stable branch is
 released and has received its first patch update. In practice, we support
 stable branches on a *best effort* basis for as long as they have active users
@@ -158,6 +160,8 @@ you are happy with how your project currently works.
 
 When is the next release out?
 -----------------------------
+
+.. UPDATE: Refers to specific current minor versions 3.6 and 3.7.
 
 While Godot contributors aren't working under any deadlines, we strive to
 publish minor releases relatively frequently.

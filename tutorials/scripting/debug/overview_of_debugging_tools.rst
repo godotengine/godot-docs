@@ -14,6 +14,12 @@ in the running game.
 Finally, you have options to debug the game running on a remote device
 and to reload changes to your scenes or your code while the game is running.
 
+Output Panel
+--------------
+
+The output panel allows you to see text printed by the project, but also by the editor (e.g. from ``@tool`` scripts).
+You can find information about in :ref:`doc_output_panel`.
+
 Debugger Panel
 --------------
 
@@ -223,7 +229,7 @@ The **Break** button causes a break in the script like a breakpoint would.
 a function if possible. Otherwise, it does the same thing as **Step Over**.
 
 The **Debug with External Editor** option lets you debug your game with an external editor.
-This option is also accessible in **Editor Settings > Debugger**.
+You can set a shortcut for it in **Editor Settings > Shortcuts > Debugger**.
 
 When the debugger breaks on a breakpoint, a green triangle arrow is visible in
 the script editor's gutter. This arrow indicates the line of code the debugger
@@ -251,7 +257,7 @@ GDScript
 ++++++++
 
 These settings allow you to toggle specific GDScript warnings, such as for
-unused variables. You can also turn off warnings completely. See 
+unused variables. You can also turn off warnings completely. See
 :ref:`doc_gdscript_warning_system` for more information.
 
 Shader Language

@@ -44,10 +44,11 @@ affect that pixel.
 This approach can greatly speed up rendering performance on desktop hardware,
 but is substantially less efficient on mobile.
 
-Forward Mobile
-^^^^^^^^^^^^^^
+Mobile
+^^^^^^
 
 This is a forward renderer that uses a traditional single-pass approach to lighting.
+Internally, it is called **Forward Mobile**.
 
 Intended for mobile platforms, but can also run on desktop platforms. This
 rendering method is optimized to perform well on mobile GPUs. Mobile GPUs have a
@@ -92,7 +93,7 @@ features result in a notable performance penalty.
 
 On desktop platforms, the use of sub-passes won't have any impact on
 performance. However, this rendering method can still perform better than
-Clustered Forward in simple scenes thanks to its lower complexity and lower
+Forward+ in simple scenes thanks to its lower complexity and lower
 bandwidth usage. This is especially noticeable on low-end GPUs, integrated
 graphics or in VR applications.
 
@@ -110,11 +111,11 @@ Compatibility
     This is the only rendering method available when using the OpenGL driver.
     This rendering method is not available when using Vulkan or Direct3D 12.
 
-This is a traditional (non-clustered) forward renderer. It's intended for old
-GPUs that don't have Vulkan support, but still works very efficiently on newer
-hardware. Specifically, it is optimized for older and lower-end mobile devices
-However, many optimizations carry over making it a good choice for older and
-lower-end desktop as well.
+This is a traditional (non-clustered) forward renderer. Internally, it is called
+**GL Compatibility**. It's intended for old GPUs that don't have Vulkan support,
+but still works very efficiently on newer hardware. Specifically, it is optimized
+for older and lower-end mobile devices. However, many optimizations carry over
+making it a good choice for older and lower-end desktop as well.
 
 Like the Mobile renderer, the Compatibility renderer uses an R10G10B10A2 UNORM
 texture for 3D rendering. Unlike the mobile renderer, colors are tonemapped and
@@ -134,7 +135,7 @@ looks and needs to be kept in mind when designing scenes for the Compatibility
 renderer.
 
 Given its low-end focus, this rendering method does not provide high-end
-rendering features (even less so compared to Forward Mobile). Most
+rendering features (even less so compared to Mobile). Most
 post-processing effects are not available.
 
 Why not deferred rendering?
@@ -217,6 +218,8 @@ wouldn't have. Both the clustered and mobile
 :ref:`doc_internal_rendering_architecture_methods` can be used with a Metal
 backend via MoltenVK.
 
+.. UPDATE: Planned feature. When the native Metal driver is implemented, update this.
+
 A native Metal driver is planned in the future for better performance and
 compatibility.
 
@@ -228,8 +231,8 @@ support Vulkan. OpenGL 3.3 Core Profile is used on desktop platforms to run this
 driver, as most graphics drivers on desktop don't support OpenGL ES.
 WebGL 2.0 is used for web exports.
 
-It is possible to use the use of OpenGL ES 3.0 directly on desktop platforms
-using the ``--rendering-driver opengl3_es`` command line argument, although this
+It is possible to use OpenGL ES 3.0 directly on desktop platforms
+by passing the ``--rendering-driver opengl3_es`` command line argument, although this
 will only work on graphics drivers that feature native OpenGL ES support (such
 as Mesa).
 
@@ -248,11 +251,11 @@ Summary of rendering drivers/methods
 The following rendering API + rendering method combinations are currently possible:
 
 - Vulkan + Forward+
-- Vulkan + Forward Mobile
+- Vulkan + Mobile
 - Direct3D 12 + Forward+
-- Direct3D 12 + Forward Mobile
+- Direct3D 12 + Mobile
 - Metal + Forward+ (via MoltenVK)
-- Metal + Forward Mobile (via MoltenVK)
+- Metal + Mobile (via MoltenVK)
 - OpenGL + Compatibility
 
 Each combination has its own limitations and performance characteristics. Make
@@ -350,14 +353,14 @@ this.
 **Core GLSL material shaders:**
 
 - Forward+: `servers/rendering/renderer_rd/shaders/forward_clustered/scene_forward_clustered.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/forward_clustered/scene_forward_clustered.glsl>`__
-- Forward Mobile: `servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl>`__
+- Mobile: `servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl>`__
 - Compatibility: `drivers/gles3/shaders/scene.glsl <https://github.com/godotengine/godot/blob/4.2/drivers/gles3/shaders/scene.glsl>`__
 
 **Material shader generation:**
 
 - `scene/resources/material.cpp <https://github.com/godotengine/godot/blob/4.2/scene/resources/material.cpp>`__
 
-**Other GLSL shaders for Forward+ and Forward Mobile rendering methods:**
+**Other GLSL shaders for Forward+ and Mobile rendering methods:**
 
 - `servers/rendering/renderer_rd/shaders/ <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/>`__
 - `modules/lightmapper_rd/ <https://github.com/godotengine/godot/blob/4.2/modules/lightmapper_rd>`__
@@ -371,9 +374,9 @@ this.
 
 .. note::
 
-    The following is only applicable in the Forward+ and Forward Mobile
+    The following is only applicable in the Forward+ and Mobile
     rendering methods, not in Compatibility. Multiple Viewports can be used to
-    emulate this when using the Compatibility backend, or to perform 2D
+    emulate this when using the Compatibility renderer, or to perform 2D
     resolution scaling.
 
 2D and 3D are rendered to separate buffers, as 2D rendering in Godot is performed
@@ -395,6 +398,9 @@ allows maximizing the performance of bilinear 3D scaling.
 The ``configure()`` function in RenderSceneBuffersRD reallocates the 2D/3D
 buffers when the resolution or scaling changes.
 
+.. UPDATE: Planned feature. When dynamic resolution scaling is supported,
+.. update this paragraph.
+
 Dynamic resolution scaling isn't supported yet, but is planned in a future Godot
 release.
 
@@ -413,10 +419,13 @@ release.
 2D light rendering is performed in a single pass to allow for better performance
 with large amounts of lights.
 
+.. UPDATE: Planned feature. When Forward+ and Mobile feature 2D batching,
+.. update this.
+
 The Forward+ and Mobile rendering methods don't feature 2D batching yet, but
 it's planned for a future release.
 
-The Compatibility backend features 2D batching to improve performance, which is
+The Compatibility renderer features 2D batching to improve performance, which is
 especially noticeable with lots of text on screen.
 
 MSAA can be enabled in 2D to provide "automatic" line and polygon antialiasing,
@@ -440,7 +449,7 @@ used to calculate particle collisions in 2D.
 Batching and instancing
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-In the Forward+ backend, Vulkan instancing is used to group rendering
+In the Forward+ renderer, Vulkan instancing is used to group rendering
 of identical objects for performance. This is not as fast as static mesh
 merging, but it still allows instances to be culled individually.
 
@@ -449,10 +458,9 @@ Light, decal and reflection probe rendering
 
 .. note::
 
-  Reflection probe and decal rendering are currently not available in the
-  Compatibility backend.
+  Decal rendering is currently not available in the Compatibility renderer.
 
-As its name implies, the Forward+ backend uses clustered lighting. This
+The Forward+ renderer uses clustered lighting. This
 allows using as many lights as you want; performance largely depends on screen
 coverage. Shadow-less lights can be almost free if they don't occupy much space
 on screen.
@@ -461,12 +469,12 @@ All rendering methods also support rendering up to 8 directional lights at the
 same time (albeit with lower shadow quality when more than one light has shadows
 enabled).
 
-The Forward Mobile backend uses a single-pass lighting approach, with a
+The Mobile renderer uses a single-pass lighting approach, with a
 limitation of 8 OmniLights + 8 SpotLights affecting each Mesh *resource* (plus a
 limitation of 256 OmniLights + 256 SpotLights in the camera view). These limits
 are hardcoded and can't be adjusted in the project settings.
 
-The Compatibility backend uses a hybrid single-pass + multi-pass lighting
+The Compatibility renderer uses a hybrid single-pass + multi-pass lighting
 approach. Lights without shadows are rendered in a single pass. Lights with
 shadows are rendered in multiple passes. This is required for performance
 reasons on mobile devices. As a result, performance does not scale well with
@@ -476,6 +484,9 @@ apart so that each object is only touched by 1 or 2 shadowed lights at a time.
 The maximum number of lights visible at once can be adjusted in the project
 settings.
 
+.. UPDATE: Planned feature. When static and dynamic shadow rendering are
+.. separated, update this paragraph.
+
 In all 3 methods, lights without shadows are much cheaper than lights with
 shadows. To improve performance, lights are only updated when the light is
 modified or when objects in its radius are modified. Godot currently doesn't
@@ -483,34 +494,34 @@ separate static shadow rendering from dynamic shadow rendering, but this is
 planned in a future release.
 
 Clustering is also used for reflection probes and decal rendering in the
-Forward+ backend.
+Forward+ renderer.
 
 Shadow mapping
 ^^^^^^^^^^^^^^
 
-Both Forward+ and Forward Mobile methods use
+Both Forward+ and Mobile methods use
 :abbr:`PCF (Percentage Closer Filtering)` to filter shadow maps and create a
 soft penumbra. Instead of using a fixed PCF pattern, these methods use a vogel
 disk pattern which allows for changing the number of samples and smoothly
 changing the quality.
 
 Godot also supports percentage-closer soft shadows (PCSS) for more realistic
-shadow penumbra rendering. PCSS shadows are limited to the Forward+
-backend as they're too demanding to be usable in the Forward Mobile backend.
+shadow penumbra rendering. PCSS shadows are limited to the Forward+ renderer
+as they're too demanding to be usable in the Mobile renderer.
 PCSS also uses a vogel-disk shaped kernel.
 
 Additionally, both shadow-mapping techniques rotate the kernel on a per-pixel
 basis to help soften under-sampling artifacts.
 
-The Compatibility backend doesn't support shadow mapping for any light types yet.
+The Compatibility renderer supports shadow mapping for DirectionalLight3D,
+OmniLight3D, and SpotLight3D lights.
 
 Temporal antialiasing
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
-    Only available in the Forward+ backend, not the Forward Mobile or
-    Compatibility methods.
+    Only available in the Forward+ renderer, not the Mobile or Compatibility renderers.
 
 Godot uses a custom TAA implementation based on the old TAA implementation from
 `Spartan Engine <https://github.com/PanosK92/SpartanEngine>`__.
@@ -542,13 +553,12 @@ Global illumination
 
 .. note::
 
-    VoxelGI and SDFGI are only available in the Forward+ backend, not the
-    Forward Mobile or Compatibility methods.
+    VoxelGI and SDFGI are only available in the Forward+ renderer, not the
+    Mobile or Compatibility renderers.
 
-    LightmapGI *baking* is only available in the Forward+ and Forward Mobile
-    methods, and can only be performed within the editor (not in an exported
-    project). LightmapGI *rendering* will eventually be supported by the
-    Compatibility backend.
+    LightmapGI *baking* is only available in the Forward+ and Mobile renderers,
+    and can only be performed within the editor (not in an exported
+    project). LightmapGI *rendering* is supported by the Compatibility renderer.
 
 Godot supports voxel-based GI (VoxelGI), signed distance field GI (SDFGI) and
 lightmap baking and rendering (LightmapGI). These techniques can be used
@@ -558,7 +568,7 @@ Lightmap baking happens on the GPU using Vulkan compute shaders. The GPU-based
 lightmapper is implemented in the LightmapperRD class, which inherits from the
 Lightmapper class. This allows for implementing additional lightmappers, paving
 the way for a future port of the CPU-based lightmapper present in Godot 3.x.
-This would allow baking lightmaps while using the Compatibility backend.
+This would allow baking lightmaps while using the Compatibility renderer.
 
 **Core GI C++ code:**
 
@@ -594,14 +604,13 @@ Depth of field
 
 .. note::
 
-    Only available in the Forward+ and Forward Mobile methods, not the
-    Compatibility backend.
+    Only available in the Forward+ and Mobile renderers, not the
+    Compatibility renderer.
 
-The Forward+ and Forward Mobile methods use different approaches to
-DOF rendering, with different visual results. This is done to best
-match the performance characteristics of the target hardware. In Clustered
-Forward, DOF is performed using a compute shader. In Forward Mobile, DOF is
-performed using a fragment shader (raster).
+The Forward+ and Mobile renderers use different approaches to DOF rendering, with
+different visual results. This is done to best match the performance characteristics
+of the target hardware. In Forward+, DOF is performed using a compute shader. In
+Mobile, DOF is performed using a fragment shader (raster).
 
 Box, hexagon and circle bokeh shapes are available (from fastest to slowest).
 Depth of field can optionally be jittered every frame to improve its appearance
@@ -615,7 +624,7 @@ when temporal antialiasing is enabled.
 
 - `servers/rendering/renderer_rd/shaders/effects/bokeh_dof.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/effects/bokeh_dof.glsl>`__
 
-**Depth of field GLSL shader (raster - used for Forward Mobile):**
+**Depth of field GLSL shader (raster - used for Mobile):**
 
 - `servers/rendering/renderer_rd/shaders/effects/bokeh_dof_raster.glsl <https://github.com/godotengine/godot/blob/4.2/servers/rendering/renderer_rd/shaders/effects/bokeh_dof_raster.glsl>`__
 
@@ -624,10 +633,9 @@ Screen-space effects (SSAO, SSIL, SSR, SSS)
 
 .. note::
 
-    Only available in the Forward+ backend, not the Forward Mobile or
-    Compatibility methods.
+    Only available in the Forward+ renderer, not the Mobile or Compatibility renderers.
 
-The Forward+ backend supports screen-space ambient occlusion,
+The Forward+ renderer supports screen-space ambient occlusion,
 screen-space indirect lighting, screen-space reflections and subsurface scattering.
 
 SSAO uses an implementation derived from Intel's
@@ -701,8 +709,7 @@ Volumetric fog
 
 .. note::
 
-    Only available in the Forward+ backend, not the Forward Mobile or
-    Compatibility methods.
+    Only available in the Forward+ renderer, not the Mobile or Compatibility renderers.
 
 .. seealso::
 

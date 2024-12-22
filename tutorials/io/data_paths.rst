@@ -183,6 +183,9 @@ You can use it to create a portable installation of the editor.
 The `Steam release of Godot <https://store.steampowered.com/app/404790/>`__ uses
 self-contained mode by default.
 
+.. UPDATE: Not supported yet. When self-contained mode is supported in exported
+.. projects, remove or update this note.
+
 .. note::
 
     Self-contained mode is not supported in exported projects yet.

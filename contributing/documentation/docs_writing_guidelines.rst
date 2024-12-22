@@ -507,6 +507,166 @@ examples with the ``:kbd:`` tag left as-is for better visibility:
 - Press ``:kbd:`Space``` and hold the left mouse button to pan in the 2D editor.
 - Press ``:kbd:`Shift + Up Arrow``` to move the node upwards by 8 pixels.
 
+
+Manual style guidelines
+-----------------------
+
+Follow these formatting and style guidelines when writing the manual.
+
+Use your best judgement. If you can write more clearly by breaking one of these
+guidelines, please do! But remember that the guidelines exist for a reason.
+
+.. note:: In many cases, the manual does not follow these guidelines. If you are
+    already making changes to a paragraph or section of the docs, update it to
+    follow these standards. Avoid making unrelated changes that *only* update style,
+    since every change will require the paragraph to be re-translated.
+
+Text styles
+~~~~~~~~~~~
+
+There are a few styles that the manual uses.
+
++---------------------+--------------------------+------------------------------------------------------------------------+
+| Style               | RST formatting           | Typical usage                                                          |
++=====================+==========================+========================================================================+
+| Plaintext           | ``text``                 | Used for most text.                                                    |
++---------------------+--------------------------+------------------------------------------------------------------------+
+| *Italics*           | ``*text*``               | Used for emphasis. Used for introducing new terms.                     |
++---------------------+--------------------------+------------------------------------------------------------------------+
+| **Bold**            | ``**text**``             | Used for emphasis, and for editor UI like menus and windows.           |
+|                     |                          |                                                                        |
++---------------------+--------------------------+------------------------------------------------------------------------+
+| ``Code``            | `` text ``               | Used for variable names, literal values, and code snippets. ``code`` is|
+|                     |                          | used in many cases where you would use "quoted plaintext" in typical   |
+|                     |                          | English.                                                               |
++---------------------+--------------------------+------------------------------------------------------------------------+
+| "Quotes"            | ``"text"``               | Used for some literal or quoted values. In many cases, another         |
+|                     |                          | style is preferred.                                                    |
++---------------------+--------------------------+------------------------------------------------------------------------+
+
+Emphasis
+~~~~~~~~
+
+Use either **bold style** or *italic style* to emphasize words or sentences.
+In most cases, either **bold** or *italics* is fine. Use whichever seems best,
+or whatever the page already uses. 
+
+Prefer using **bold style** for simple emphasis.
+
+    - Do **not** close the window without saving first.
+
+Use *italic style* or to emphasize one word in the context of a sentence.
+
+    - You can *add* a node to the scene (but you can't connect one).
+    - You can add a *node* to the scene (but you can't add a resource).
+    - You can add a node to the *scene* (but you can't add one to a resource).
+
+Use *italic style* when introducing new technical terms. **Bold style**
+is fine too.
+
+    - Godot uses *nodes* with *scripts* in a *scene tree*.
+    - Godot uses **nodes** with **scripts** in a **scene tree**.
+
+Literals
+~~~~~~~~
+
+Use ``code style`` for literal values. Literals include:
+
+    - Integer or ``int`` literals like ``0``, ``-2``, or ``100``
+    - Float literals like ``0.0``, ``0.5``, ``-2.0``, or ``100.0``
+    - Vector literals like ``(0.0, 0.0)``, ``(0.5, -0.5, 0.5)``, or ``(1.0, 2.0, 3.0, 4.0)``.
+
+Classes, properties, and methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Link to classes the first time that you mention them in a page. After the first
+mention, use ``code style``. For common classes, like ``Node``, ``Control``, or
+``Viewport``, you can also use plaintext.
+
+Link to class members (properties, methods, enums, and constants) the first time
+that you mention them in a page. After the first mention, use ``code style``. If
+the class member is very common, like a Node2D's ``position``, you don't have to
+link.
+
+When discussing properties in the context of the inspector, use **bold style**
+instead.
+
+Editor UI
+~~~~~~~~~
+
+Use **bold style** for editor UI, including window titles, menus, buttons, input
+fields, inspector properties, and inspector sections. Use the exact
+capitalization that the editor uses.
+
+    - Open the **Editor Settings** window.
+    - Press the **Confirm** button.
+    - Change the node's **Transform > Position** property to ``(0, 0)``.
+    - In the **Project Settings** window, enable the **Advanced Settings** toggle.
+
+Use **Bold > With > Separators** when describing sequence of menus that the
+reader must navigate. Use ``>`` as a separator. You can omit ellipses in menu names.
+
+    - In **Project > Project Settings > Input Map**, add a new input action.
+    - Select **Scene > Export As... > MeshLibrary...**.
+    - Select **Scene > Export As > MeshLibrary**.
+
+.. note:: Sometimes, ``->`` or ``→`` is used as a separator. This is nonstandard.
+    Replace it with ``>`` if you are already making changes to a section.
+
+Project settings
+~~~~~~~~~~~~~~~~
+
+Link to individual project settings. Either include the section and subsection
+in the link itself, or include the section and subsection separately from the
+link. Since long links are not split into multiple lines when the page is
+rendered, prefer splitting the setting name and the section when the link is long.
+
+    - Set the :ref:`Application > Run > Max FPS<class_ProjectSettings_property_application/run/max_fps>` setting to ``60``.
+    - In the project settings under **Application > Run**, set :ref:`Max FPS<class_ProjectSettings_property_application/run/max_fps>` to ``60``.
+    - In **Project Settings > Application > Run**, set :ref:`Max FPS<class_ProjectSettings_property_application/run/max_fps>` to ``60``.
+
+Manually wrapping lines
+~~~~~~~~~~~~~~~~~~~~~~~
+
+In the manual, lines must be manually wrapped to no more than 80-100 characters
+per line. However, links must not be split into multiple lines, and can exceed
+100 characters. Tables can also exceed 100 characters.
+
+When making small changes, you don't need to manually re-wrap the whole paragraph,
+as long as the lines don't exceed 100 characters.
+
+**Bad:** Line length exceeds 100 characters:
+
+.. code-block::
+
+    The best thing to do is to wrap lines to under 80 characters per line. Wrapping to around 80-90 characters per line is also fine.
+    If your lines exceed 100 characters, you definitely need to add a newline! Don't forget to remove trailing whitespace when you do.
+
+**Good:** Lines are wrapped to 80-90 characters:
+
+.. code-block::
+
+    The best thing to do is to wrap lines to under 80 characters per line. Wrapping to
+    around 80-90 characters per line is also fine. If your lines exceed 100 characters, you
+    definitely need to add a newline! Don't forget to remove trailing whitespace when you do.
+
+**Best:** Lines are wrapped to under 80 characters:
+
+.. code-block::
+
+    The best thing to do is to wrap lines to under 80 characters per line. Wrapping
+    to around 80-90 characters per line is also fine. If your lines exceed 100
+    characters, you definitely need to add a newline! Don't forget to remove
+    trailing whitespace when you do.
+
+.. tip:: In most text editors, you can add a vertical guide or "ruler" at 80
+    characters. For example, in Visual Studio Code, you can add the following to
+    your ``settings.json`` to add rulers at 80 and 100 characters:
+
+    .. code:: json
+
+        "editor.rulers": [80,100], 
+
 When to refer to a specific Godot version
 -----------------------------------------
 

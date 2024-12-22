@@ -33,6 +33,9 @@ AudioStreamPlayer
 This is the standard, non-positional stream player. It can play to any bus.
 In 5.1 sound setups, it can send audio to stereo mix or front speakers.
 
+.. UPDATE: Experimental. When Playback Type is no longer experimental, update
+.. this paragraph.
+
 Playback Type is an experimental setting, and could change in future versions
 of Godot. It exists so Web exports use Web Audio-API based samples instead of
 streaming all sounds to the browser, unlike most platforms. This prevents the

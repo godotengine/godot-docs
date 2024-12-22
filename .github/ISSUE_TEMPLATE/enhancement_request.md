@@ -2,7 +2,7 @@
 name: Enhancement request
 about: Suggest new documentation or improving existing documentation
 title: ''
-labels: enhancement
+labels: ''
 assignees: ''
 ---
 

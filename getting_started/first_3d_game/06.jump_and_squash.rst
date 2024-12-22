@@ -241,7 +241,11 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
             # We get one of the collisions with the player
             var collision = get_slide_collision(index)
 
-            # If the collision is with ground
+            # If there are duplicate collisions with a mob in a single frame
+            # the mob will be deleted after the first collision, and a second call to 
+            # get_collider will return null, leading to a null pointer when calling 
+            # collision.get_collider().is_in_group("mob").
+            # This block of code prevents processing duplicate collisions.
             if collision.get_collider() == null:
                 continue
 

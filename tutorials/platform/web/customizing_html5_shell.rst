@@ -62,8 +62,10 @@ The only required placeholders are:
 The following optional placeholders will enable some extra features in your custom HTML template.
 
 - ``$GODOT_PROJECT_NAME``:
-  The project name as defined in the Project Settings. It is a good idea to use it as a ``<title>``
-  in your template.
+  The project name as defined in the
+  :ref:`Name <class_ProjectSettings_property_application/config/name>` setting
+  in **Project Settings > Application > Config**.
+  It is a good idea to use it as a ``<title>`` in your template.
 
 - ``$GODOT_HEAD_INCLUDE``:
   A custom string to include in the HTML document just before the end of the ``<head>`` tag. It
@@ -72,7 +74,14 @@ The following optional placeholders will enable some extra features in your cust
   HTML ``head`` element from the Godot Editor, e.g. for different Web export presets.
 
 - ``$GODOT_SPLASH``:
-  Path to an image used as the boot splash as defined in the Project Settings.
+  The path to the image used as the boot splash as defined in the
+  :ref:`Image <class_ProjectSettings_property_application/boot_splash/image>` setting
+  in **Project Settings > Application > Boot Splash**.
+
+- ``$GODOT_SPLASH_COLOR``
+  The splash screen background color as defined in the
+  :ref:`BG Color <class_ProjectSettings_property_application/boot_splash/bg_color>` setting
+  in **Project Settings > Application > Boot Splash**, converted to a hex color code.
 
 When the custom page is ready, it can be selected in the export options under the *Html / Custom Html Shell*
 section.
