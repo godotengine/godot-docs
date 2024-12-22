@@ -232,24 +232,39 @@ Operators
 
 .. rst-class:: classref-descriptions-group
 
-Constants
----------
+Enumerations
+------------
+
+.. _enum_Vector2_Axis:
+
+.. rst-class:: classref-enumeration
+
+enum **Axis**: :ref:`🔗<enum_Vector2_Axis>`
 
 .. _class_Vector2_constant_AXIS_X:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**AXIS_X** = ``0`` :ref:`🔗<class_Vector2_constant_AXIS_X>`
+:ref:`Axis<enum_Vector2_Axis>` **AXIS_X** = ``0``
 
 Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector2_method_max_axis_index>` and :ref:`min_axis_index<class_Vector2_method_min_axis_index>`.
 
 .. _class_Vector2_constant_AXIS_Y:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**AXIS_Y** = ``1`` :ref:`🔗<class_Vector2_constant_AXIS_Y>`
+:ref:`Axis<enum_Vector2_Axis>` **AXIS_Y** = ``1``
 
 Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector2_method_max_axis_index>` and :ref:`min_axis_index<class_Vector2_method_min_axis_index>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Constants
+---------
 
 .. _class_Vector2_constant_ZERO:
 
@@ -658,9 +673,9 @@ Creates a unit **Vector2** rotated to the given ``angle`` in radians. This is eq
 
 ::
 
-    print(Vector2.from_angle(0)) # Prints (1, 0).
-    print(Vector2(1, 0).angle()) # Prints 0, which is the angle used above.
-    print(Vector2.from_angle(PI / 2)) # Prints (0, 1).
+    print(Vector2.from_angle(0)) # Prints (1.0, 0.0).
+    print(Vector2(1, 0).angle()) # Prints 0.0, which is the angle used above.
+    print(Vector2.from_angle(PI / 2)) # Prints (0.0, 1.0).
 
 .. rst-class:: classref-item-separator
 
@@ -760,7 +775,7 @@ Returns the result of the linear interpolation between this vector and ``to`` by
 
 :ref:`Vector2<class_Vector2>` **limit_length**\ (\ length\: :ref:`float<class_float>` = 1.0\ ) |const| :ref:`🔗<class_Vector2_method_limit_length>`
 
-Returns the vector with a maximum length by limiting its length to ``length``.
+Returns the vector with a maximum length by limiting its length to ``length``. If the vector is non-finite, the result is undefined.
 
 .. rst-class:: classref-item-separator
 
@@ -1063,7 +1078,7 @@ Multiplies each component of the **Vector2** by the components of the given **Ve
 
 ::
 
-    print(Vector2(10, 20) * Vector2(3, 4)) # Prints "(30, 80)"
+    print(Vector2(10, 20) * Vector2(3, 4)) # Prints (30.0, 80.0)
 
 .. rst-class:: classref-item-separator
 
@@ -1103,7 +1118,7 @@ Adds each component of the **Vector2** by the components of the given **Vector2*
 
 ::
 
-    print(Vector2(10, 20) + Vector2(3, 4)) # Prints "(13, 24)"
+    print(Vector2(10, 20) + Vector2(3, 4)) # Prints (13.0, 24.0)
 
 .. rst-class:: classref-item-separator
 
@@ -1119,7 +1134,7 @@ Subtracts each component of the **Vector2** by the components of the given **Vec
 
 ::
 
-    print(Vector2(10, 20) - Vector2(3, 4)) # Prints "(7, 16)"
+    print(Vector2(10, 20) - Vector2(3, 4)) # Prints (7.0, 16.0)
 
 .. rst-class:: classref-item-separator
 
@@ -1135,7 +1150,7 @@ Divides each component of the **Vector2** by the components of the given **Vecto
 
 ::
 
-    print(Vector2(10, 20) / Vector2(2, 5)) # Prints "(5, 4)"
+    print(Vector2(10, 20) / Vector2(2, 5)) # Prints (5.0, 4.0)
 
 .. rst-class:: classref-item-separator
 

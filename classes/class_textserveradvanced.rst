@@ -12,14 +12,14 @@ TextServerAdvanced
 
 **Inherits:** :ref:`TextServerExtension<class_TextServerExtension>` **<** :ref:`TextServer<class_TextServer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-An advanced text server with support for BiDi, complex text layout, and contextual OpenType features. Used in Godot by default.
+An advanced text server with support for BiDi, complex text layout, and contextual OpenType features. Used in Redot by default.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-An implementation of :ref:`TextServer<class_TextServer>` that uses HarfBuzz, ICU and SIL Graphite to support BiDi, complex text layouts and contextual OpenType features. This is Godot's default primary :ref:`TextServer<class_TextServer>` interface.
+An implementation of :ref:`TextServer<class_TextServer>` that uses HarfBuzz, ICU and SIL Graphite to support BiDi, complex text layouts and contextual OpenType features. This is Redot's default primary :ref:`TextServer<class_TextServer>` interface.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

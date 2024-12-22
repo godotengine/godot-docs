@@ -141,6 +141,8 @@ Methods
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_system_fonts<class_OS_method_get_system_fonts>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                     |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_temp_dir<class_OS_method_get_temp_dir>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                             |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_thread_caller_id<class_OS_method_get_thread_caller_id>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                             |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_unique_id<class_OS_method_get_unique_id>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                           |
@@ -148,6 +150,8 @@ Methods
    | :ref:`String<class_String>`                       | :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                   |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_version<class_OS_method_get_version>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                               |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_version_alias<class_OS_method_get_version_alias>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                   |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_video_adapter_driver_info<class_OS_method_get_video_adapter_driver_info>`\ (\ ) |const|                                                                                                                                                                                                                                                                                           |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -345,7 +349,7 @@ Standard I/O device is invalid. No data can be received from or sent to these st
 
 :ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_CONSOLE** = ``1``
 
-Standard I/O device is a console. This typically occurs when Godot is run from a terminal with no redirection. This is also used for all standard I/O devices when running Godot from the editor, at least on desktop platforms.
+Standard I/O device is a console. This typically occurs when Redot is run from a terminal with no redirection. This is also used for all standard I/O devices when running Redot from the editor, at least on desktop platforms.
 
 .. _class_OS_constant_STD_HANDLE_FILE:
 
@@ -353,7 +357,7 @@ Standard I/O device is a console. This typically occurs when Godot is run from a
 
 :ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_FILE** = ``2``
 
-Standard I/O device is a regular file. This typically occurs with redirection from a terminal, e.g. ``godot > stdout.txt``, ``godot < stdin.txt`` or ``godot > stdout_stderr.txt 2>&1``.
+Standard I/O device is a regular file. This typically occurs with redirection from a terminal, e.g. ``redot > stdout.txt``, ``redot < stdin.txt`` or ``redot > stdout_stderr.txt 2>&1``.
 
 .. _class_OS_constant_STD_HANDLE_PIPE:
 
@@ -361,7 +365,7 @@ Standard I/O device is a regular file. This typically occurs with redirection fr
 
 :ref:`StdHandleType<enum_OS_StdHandleType>` **STD_HANDLE_PIPE** = ``3``
 
-Standard I/O device is a FIFO/pipe. This typically occurs with pipe usage from a terminal, e.g. ``echo "Hello" | godot``.
+Standard I/O device is a FIFO/pipe. This typically occurs with pipe usage from a terminal, e.g. ``echo "Hello" | redot``.
 
 .. _class_OS_constant_STD_HANDLE_UNKNOWN:
 
@@ -462,7 +466,7 @@ Displays a modal dialog box using the host platform's implementation. The engine
 
 Shuts down the system MIDI driver. Redot will no longer receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>` and :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
 
 .. rst-class:: classref-item-separator
 
@@ -819,7 +823,11 @@ Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_di
 
 Returns an array of connected MIDI device names, if they exist. Returns an empty array if the system MIDI driver has not previously been initialized with :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. See also :ref:`close_midi_inputs<class_OS_method_close_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
+
+\ **Note:** On the Web platform, Web MIDI needs to be supported by the browser. `For the time being <https://caniuse.com/midi>`__, it is currently supported by all major browsers, except Safari.
+
+\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. The browser will refrain from processing MIDI input until the user accepts the permission request.
 
 .. rst-class:: classref-item-separator
 
@@ -1325,6 +1333,18 @@ Returns the list of font family names available.
 
 ----
 
+.. _class_OS_method_get_temp_dir:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_temp_dir**\ (\ ) |const| :ref:`🔗<class_OS_method_get_temp_dir>`
+
+Returns the *global* temporary data directory according to the operating system's standards.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OS_method_get_thread_caller_id:
 
 .. rst-class:: classref-method
@@ -1363,11 +1383,11 @@ Returns a string that is unique to the device.
 
 Returns the absolute directory path where user data is written (the ``user://`` directory in Redot). The path depends on the project name and :ref:`ProjectSettings.application/config/use_custom_user_dir<class_ProjectSettings_property_application/config/use_custom_user_dir>`.
 
-- On Windows, this is ``%AppData%\Godot\app_userdata\[project_name]``, or ``%AppData%\[custom_name]`` if ``use_custom_user_dir`` is set. ``%AppData%`` expands to ``%UserProfile%\AppData\Roaming``.
+- On Windows, this is ``%AppData%\Redot\app_userdata\[project_name]``, or ``%AppData%\[custom_name]`` if ``use_custom_user_dir`` is set. ``%AppData%`` expands to ``%UserProfile%\AppData\Roaming``.
 
-- On macOS, this is ``~/Library/Application Support/Godot/app_userdata/[project_name]``, or ``~/Library/Application Support/[custom_name]`` if ``use_custom_user_dir`` is set.
+- On macOS, this is ``~/Library/Application Support/Redot/app_userdata/[project_name]``, or ``~/Library/Application Support/[custom_name]`` if ``use_custom_user_dir`` is set.
 
-- On Linux and BSD, this is ``~/.local/share/godot/app_userdata/[project_name]``, or ``~/.local/share/[custom_name]`` if ``use_custom_user_dir`` is set.
+- On Linux and BSD, this is ``~/.local/share/redot/app_userdata/[project_name]``, or ``~/.local/share/[custom_name]`` if ``use_custom_user_dir`` is set.
 
 - On Android and iOS, this is a sandboxed directory in either internal or external storage, depending on the user's configuration.
 
@@ -1398,6 +1418,20 @@ Returns the exact production and build version of the operating system. This is 
 - For Android, the SDK version and the incremental build number are returned. If it's a custom ROM, it attempts to return its version instead.
 
 \ **Note:** This method is not supported on the Web platform. It returns an empty string.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_get_version_alias:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_version_alias**\ (\ ) |const| :ref:`🔗<class_OS_method_get_version_alias>`
+
+Returns the branded version used in marketing, followed by the build number (on Windows) or the version number (on macOS). Examples include ``11 (build 22000)`` and ``Sequoia (15.0.0)``. This value can then be appended to :ref:`get_name<class_OS_method_get_name>` to get a full, human-readable operating system name and version combination for the operating system. Windows feature updates such as 24H2 are not contained in the resulting string, but Windows Server is recognized as such (e.g. ``2025 (build 26100)`` for Windows Server 2025).
+
+\ **Note:** This method is only supported on Windows and macOS. On other operating systems, it returns the same value as :ref:`get_version<class_OS_method_get_version>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1487,10 +1521,10 @@ Returns ``true`` if the input keycode corresponds to a Unicode character. For a 
 
  .. code-tab:: csharp
 
-    GD.Print(OS.IsKeycodeUnicode((long)Key.G));      // Prints true
-    GD.Print(OS.IsKeycodeUnicode((long)Key.Kp4));    // Prints true
-    GD.Print(OS.IsKeycodeUnicode((long)Key.Tab));    // Prints false
-    GD.Print(OS.IsKeycodeUnicode((long)Key.Escape)); // Prints false
+    GD.Print(OS.IsKeycodeUnicode((long)Key.G));      // Prints True
+    GD.Print(OS.IsKeycodeUnicode((long)Key.Kp4));    // Prints True
+    GD.Print(OS.IsKeycodeUnicode((long)Key.Tab));    // Prints False
+    GD.Print(OS.IsKeycodeUnicode((long)Key.Escape)); // Prints False
 
 
 
@@ -1621,7 +1655,11 @@ Returns :ref:`@GlobalScope.FAILED<class_@GlobalScope_constant_FAILED>` if the fi
 
 Initializes the singleton for the system MIDI driver, allowing Redot to receive :ref:`InputEventMIDI<class_InputEventMIDI>`. See also :ref:`get_connected_midi_inputs<class_OS_method_get_connected_midi_inputs>` and :ref:`close_midi_inputs<class_OS_method_close_midi_inputs>`.
 
-\ **Note:** This method is implemented on Linux, macOS, and Windows.
+\ **Note:** This method is implemented on Linux, macOS, Windows, and Web.
+
+\ **Note:** On the Web platform, Web MIDI needs to be supported by the browser. `For the time being <https://caniuse.com/midi>`__, it is currently supported by all major browsers, except Safari.
+
+\ **Note:** On the Web platform, using MIDI input requires a browser permission to be granted first. This permission request is performed when calling :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>`. The browser will refrain from processing MIDI input until the user accepts the permission request.
 
 .. rst-class:: classref-item-separator
 
@@ -1662,6 +1700,8 @@ Reads a user input as a UTF-8 encoded string from the standard input. This opera
 - If standard input is pipe, this method will block until a specific amount of data is read or pipe is closed.
 
 - If standard input is a file, this method will read a specific amount of data (or less if end-of-file is reached) and return immediately.
+
+\ **Note:** This method automatically replaces ``\r\n`` line breaks with ``\n`` and removes them from the end of the string. Use :ref:`read_buffer_from_stdin<class_OS_method_read_buffer_from_stdin>` to read the unprocessed data.
 
 \ **Note:** This method is implemented on Linux, macOS, and Windows.
 

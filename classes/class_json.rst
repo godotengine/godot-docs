@@ -80,7 +80,7 @@ Methods
    :widths: auto
 
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`         | :ref:`from_native<class_JSON_method_from_native>`\ (\ variant\: :ref:`Variant<class_Variant>`, allow_classes\: :ref:`bool<class_bool>` = false, allow_scripts\: :ref:`bool<class_bool>` = false\ ) |static|                                 |
+   | :ref:`Variant<class_Variant>`         | :ref:`from_native<class_JSON_method_from_native>`\ (\ variant\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ ) |static|                                                                                   |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`get_error_line<class_JSON_method_get_error_line>`\ (\ ) |const|                                                                                                                                                                       |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -94,7 +94,7 @@ Methods
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`           | :ref:`stringify<class_JSON_method_stringify>`\ (\ data\: :ref:`Variant<class_Variant>`, indent\: :ref:`String<class_String>` = "", sort_keys\: :ref:`bool<class_bool>` = true, full_precision\: :ref:`bool<class_bool>` = false\ ) |static| |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`         | :ref:`to_native<class_JSON_method_to_native>`\ (\ json\: :ref:`Variant<class_Variant>`, allow_classes\: :ref:`bool<class_bool>` = false, allow_scripts\: :ref:`bool<class_bool>` = false\ ) |static|                                        |
+   | :ref:`Variant<class_Variant>`         | :ref:`to_native<class_JSON_method_to_native>`\ (\ json\: :ref:`Variant<class_Variant>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) |static|                                                                                         |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -132,11 +132,18 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **from_native**\ (\ variant\: :ref:`Variant<class_Variant>`, allow_classes\: :ref:`bool<class_bool>` = false, allow_scripts\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_JSON_method_from_native>`
+:ref:`Variant<class_Variant>` **from_native**\ (\ variant\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_JSON_method_from_native>`
 
-Converts a native engine type to a JSON-compliant dictionary.
+Converts a native engine type to a JSON-compliant value.
 
-By default, classes and scripts are ignored for security reasons, unless ``allow_classes`` or ``allow_scripts`` are specified.
+By default, objects are ignored for security reasons, unless ``full_objects`` is ``true``.
+
+You can convert a native value to a JSON string like this:
+
+::
+
+    func encode_data(value, full_objects = false):
+        return JSON.stringify(JSON.from_native(value, full_objects))
 
 .. rst-class:: classref-item-separator
 
@@ -269,11 +276,18 @@ The ``indent`` parameter controls if and how something is indented; its contents
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **to_native**\ (\ json\: :ref:`Variant<class_Variant>`, allow_classes\: :ref:`bool<class_bool>` = false, allow_scripts\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_JSON_method_to_native>`
+:ref:`Variant<class_Variant>` **to_native**\ (\ json\: :ref:`Variant<class_Variant>`, allow_objects\: :ref:`bool<class_bool>` = false\ ) |static| :ref:`🔗<class_JSON_method_to_native>`
 
-Converts a JSON-compliant dictionary that was created with :ref:`from_native<class_JSON_method_from_native>` back to native engine types.
+Converts a JSON-compliant value that was created with :ref:`from_native<class_JSON_method_from_native>` back to native engine types.
 
-By default, classes and scripts are ignored for security reasons, unless ``allow_classes`` or ``allow_scripts`` are specified.
+By default, objects are ignored for security reasons, unless ``allow_objects`` is ``true``.
+
+You can convert a JSON string back to a native value like this:
+
+::
+
+    func decode_data(string, allow_objects = false):
+        return JSON.to_native(JSON.parse_string(string), allow_objects)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

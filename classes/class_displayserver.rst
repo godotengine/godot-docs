@@ -32,6 +32,8 @@ Methods
    :widths: auto
 
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`beep<class_DisplayServer_method_beep>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                             | :ref:`clipboard_get<class_DisplayServer_method_clipboard_get>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Image<class_Image>`                                               | :ref:`clipboard_get_image<class_DisplayServer_method_clipboard_get_image>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -240,6 +242,8 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Image<class_Image>`                                               | :ref:`screen_get_image<class_DisplayServer_method_screen_get_image>`\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                             |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>`                                               | :ref:`screen_get_image_rect<class_DisplayServer_method_screen_get_image_rect>`\ (\ rect\: :ref:`Rect2i<class_Rect2i>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                               | :ref:`screen_get_max_scale<class_DisplayServer_method_screen_get_max_scale>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>`          | :ref:`screen_get_orientation<class_DisplayServer_method_screen_get_orientation>`\ (\ screen\: :ref:`int<class_int>` = -1\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -401,6 +405,8 @@ Methods
    | |void|                                                                  | :ref:`window_set_window_buttons_offset<class_DisplayServer_method_window_set_window_buttons_offset>`\ (\ offset\: :ref:`Vector2i<class_Vector2i>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                         |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`\ (\ callback\: :ref:`Callable<class_Callable>`, window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                       |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                  | :ref:`window_start_drag<class_DisplayServer_method_window_start_drag>`\ (\ window_id\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -627,6 +633,30 @@ Display server supports spawning dialogs for selecting files or directories usin
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG_FILE_EXTRA** = ``26``
 
 The display server supports all features of :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>`, with the added functionality of Options and native dialog file access to ``res://`` and ``user://`` paths. See :ref:`file_dialog_show<class_DisplayServer_method_file_dialog_show>` and :ref:`file_dialog_with_options_show<class_DisplayServer_method_file_dialog_with_options_show>`. **Windows, macOS, Linux (X11/Wayland)**
+
+.. _class_DisplayServer_constant_FEATURE_WINDOW_DRAG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_WINDOW_DRAG** = ``27``
+
+The display server supports initiating window drag operation on demand. See :ref:`window_start_drag<class_DisplayServer_method_window_start_drag>`.
+
+.. _class_DisplayServer_constant_FEATURE_SCREEN_EXCLUDE_FROM_CAPTURE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_SCREEN_EXCLUDE_FROM_CAPTURE** = ``28``
+
+Display server supports :ref:`WINDOW_FLAG_EXCLUDE_FROM_CAPTURE<class_DisplayServer_constant_WINDOW_FLAG_EXCLUDE_FROM_CAPTURE>` window flag.
+
+.. _class_DisplayServer_constant_FEATURE_WINDOW_EMBEDDING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_WINDOW_EMBEDDING** = ``29``
+
+Display server supports embedding a window from another process. **Windows, Linux (X11)**
 
 .. rst-class:: classref-item-separator
 
@@ -1192,11 +1222,23 @@ Window style is overridden, forcing sharp corners.
 
 \ **Note:** This flag is implemented only on Windows (11).
 
+.. _class_DisplayServer_constant_WINDOW_FLAG_EXCLUDE_FROM_CAPTURE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_EXCLUDE_FROM_CAPTURE** = ``9``
+
+Windows is excluded from screenshots taken by :ref:`screen_get_image<class_DisplayServer_method_screen_get_image>`, :ref:`screen_get_image_rect<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`screen_get_pixel<class_DisplayServer_method_screen_get_pixel>`.
+
+\ **Note:** This flag is implemented on macOS and Windows.
+
+\ **Note:** Setting this flag will **NOT** prevent other apps from capturing an image, it should not be used as a security measure.
+
 .. _class_DisplayServer_constant_WINDOW_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MAX** = ``9``
+:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MAX** = ``10``
 
 Max value of the :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`.
 
@@ -1376,7 +1418,7 @@ Window handle:
 
 Window view:
 
-- Windows: ``HDC`` for the window (only with the GL Compatibility renderer).
+- Windows: ``HDC`` for the window (only with the Compatibility renderer).
 
 - macOS: ``NSView*`` for the window main view.
 
@@ -1388,7 +1430,7 @@ Window view:
 
 :ref:`HandleType<enum_DisplayServer_HandleType>` **OPENGL_CONTEXT** = ``3``
 
-OpenGL context (only with the GL Compatibility renderer):
+OpenGL context (only with the Compatibility renderer):
 
 - Windows: ``HGLRC`` for the window (native GL), or ``EGLContext`` for the window (ANGLE).
 
@@ -1547,6 +1589,20 @@ The ID that refers to a nonexistent application status indicator.
 
 Method Descriptions
 -------------------
+
+.. _class_DisplayServer_method_beep:
+
+.. rst-class:: classref-method
+
+|void| **beep**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_beep>`
+
+Plays the beep sound from the operative system, if possible. Because it comes from the OS, the beep sound will be audible even if the application is muted. It may also be disabled for the entire OS by the user.
+
+\ **Note:** This method is implemented on macOS, Linux (X11/Wayland), and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_DisplayServer_method_clipboard_get:
 
@@ -1842,7 +1898,7 @@ Returns OS theme accent color. Returns ``Color(0, 0, 0, 0)``, if accent color is
 
 Returns the OS theme base color (default control background). Returns ``Color(0, 0, 0, 0)`` if the base color is unknown.
 
-\ **Note:** This method is implemented on macOS and Windows.
+\ **Note:** This method is implemented on macOS, Windows, and Android.
 
 .. rst-class:: classref-item-separator
 
@@ -3290,6 +3346,22 @@ Returns screenshot of the ``screen``.
 
 ----
 
+.. _class_DisplayServer_method_screen_get_image_rect:
+
+.. rst-class:: classref-method
+
+:ref:`Image<class_Image>` **screen_get_image_rect**\ (\ rect\: :ref:`Rect2i<class_Rect2i>`\ ) |const| :ref:`🔗<class_DisplayServer_method_screen_get_image_rect>`
+
+Returns screenshot of the screen ``rect``.
+
+\ **Note:** This method is implemented on macOS and Windows.
+
+\ **Note:** On macOS, this method requires "Screen Recording" permission, if permission is not granted it will return desktop wallpaper color.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DisplayServer_method_screen_get_max_scale:
 
 .. rst-class:: classref-method
@@ -3395,7 +3467,7 @@ Returns the scale factor of the specified screen by index.
 
 \ **Note:** On Linux (Wayland), the returned value is accurate only when ``screen`` is :ref:`SCREEN_OF_MAIN_WINDOW<class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW>`. Due to API limitations, passing a direct index will return a rounded-up integer, if the screen has a fractional scale (e.g. ``1.25`` would get rounded up to ``2.0``).
 
-\ **Note:** This method is implemented only on macOS and Linux (Wayland).
+\ **Note:** This method is implemented on Android, iOS, Web, macOS, and Linux (Wayland).
 
 .. rst-class:: classref-item-separator
 
@@ -4520,6 +4592,20 @@ When :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_
 Sets the ``callback`` that will be called when an event occurs in the window specified by ``window_id``.
 
 \ **Warning:** Advanced users only! Adding such a callback to a :ref:`Window<class_Window>` node will override its default implementation, which can introduce bugs.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_window_start_drag:
+
+.. rst-class:: classref-method
+
+|void| **window_start_drag**\ (\ window_id\: :ref:`int<class_int>` = 0\ ) :ref:`🔗<class_DisplayServer_method_window_start_drag>`
+
+Starts a drag operation on the window with the given ``window_id``, using the current mouse position. Call this method when handling a mouse button being pressed to simulate a pressed event on the window's title bar. Using this method allows the window to participate in space switching, tiling, and other system features.
+
+\ **Note:** This method is implemented on Linux(X11/Wayland), macOS, and Windows.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

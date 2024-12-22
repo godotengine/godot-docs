@@ -605,7 +605,7 @@ Set the value of a shader uniform for this instance only (`per-instance uniform 
 
 \ **Note:** ``name`` is case-sensitive and must match the name of the uniform in the code exactly (not the capitalized name in the inspector).
 
-\ **Note:** Per-instance shader uniforms are currently only available in 3D, so there is no 2D equivalent of this method.
+\ **Note:** Per-instance shader uniforms are only available in Spatial and CanvasItem shaders, but not for Fog, Sky, or Particles shaders.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

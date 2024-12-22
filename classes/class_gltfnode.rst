@@ -355,7 +355,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`NodePath<class_NodePath>` **get_scene_node_path**\ (\ gltf_state\: :ref:`GLTFState<class_GLTFState>`, handle_skeletons\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_GLTFNode_method_get_scene_node_path>`
 
-Returns the :ref:`NodePath<class_NodePath>` that this GLTF node will have in the Godot scene tree after being imported. This is useful when importing glTF object model pointers with :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>`, for handling extensions such as ``KHR_animation_pointer`` or ``KHR_interactivity``.
+Returns the :ref:`NodePath<class_NodePath>` that this GLTF node will have in the Redot scene tree after being imported. This is useful when importing glTF object model pointers with :ref:`GLTFObjectModelProperty<class_GLTFObjectModelProperty>`, for handling extensions such as ``KHR_animation_pointer`` or ``KHR_interactivity``.
 
 If ``handle_skeletons`` is ``true``, paths to skeleton bone glTF nodes will be resolved properly. For example, a path that would be ``^"A/B/C/Bone1/Bone2/Bone3"`` if ``false`` will become ``^"A/B/C/Skeleton3D:Bone3"``.
 

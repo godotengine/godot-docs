@@ -71,6 +71,8 @@ Properties
    +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                  | :ref:`allow_search<class_Tree_property_allow_search>`                           | ``true``                                                                  |
    +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`auto_tooltip<class_Tree_property_auto_tooltip>`                           | ``true``                                                                  |
+   +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                  | clip_contents                                                                   | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
    +------------------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                  | :ref:`column_titles_visible<class_Tree_property_column_titles_visible>`         | ``false``                                                                 |
@@ -649,6 +651,23 @@ If ``true``, a right mouse button click can select items.
 - :ref:`bool<class_bool>` **get_allow_search**\ (\ )
 
 If ``true``, allows navigating the **Tree** with letter keys through incremental search.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_property_auto_tooltip:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **auto_tooltip** = ``true`` :ref:`🔗<class_Tree_property_auto_tooltip>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_auto_tooltip**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_auto_tooltip_enabled**\ (\ )
+
+If ``true``, tree items with no tooltip assigned display their text as their tooltip. See also :ref:`TreeItem.get_tooltip_text<class_TreeItem_method_get_tooltip_text>` and :ref:`TreeItem.get_button_tooltip_text<class_TreeItem_method_get_button_tooltip_text>`.
 
 .. rst-class:: classref-item-separator
 

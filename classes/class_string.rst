@@ -21,7 +21,7 @@ This is the built-in string Variant type (and the one used by GDScript). Strings
 
 Some string methods have corresponding variations. Variations suffixed with ``n`` (:ref:`countn<class_String_method_countn>`, :ref:`findn<class_String_method_findn>`, :ref:`replacen<class_String_method_replacen>`, etc.) are **case-insensitive** (they make no distinction between uppercase and lowercase letters). Method variations prefixed with ``r`` (:ref:`rfind<class_String_method_rfind>`, :ref:`rsplit<class_String_method_rsplit>`, etc.) are reversed, and start from the end of the string, instead of the beginning.
 
-To convert any Variant to or from a string, see :ref:`@GlobalScope.str<class_@GlobalScope_method_str>`, :ref:`@GlobalScope.str_to_var<class_@GlobalScope_method_str_to_var>`, and :ref:`@GlobalScope.var_to_str<class_@GlobalScope_method_var_to_str>`.
+To convert any :ref:`Variant<class_Variant>` to or from a string, see :ref:`@GlobalScope.str<class_@GlobalScope_method_str>`, :ref:`@GlobalScope.str_to_var<class_@GlobalScope_method_str_to_var>`, and :ref:`@GlobalScope.var_to_str<class_@GlobalScope_method_var_to_str>`.
 
 \ **Note:** In a boolean context, a string will evaluate to ``false`` if it is empty (``""``). Otherwise, a string will always evaluate to ``true``.
 
@@ -536,8 +536,8 @@ Returns ``true`` if the string contains ``what``. In GDScript, this corresponds 
 
  .. code-tab:: csharp
 
-    GD.Print("Node".Contains("de")); // Prints true
-    GD.Print("team".Contains("I"));  // Prints false
+    GD.Print("Node".Contains("de")); // Prints True
+    GD.Print("team".Contains("I"));  // Prints False
 
 
 

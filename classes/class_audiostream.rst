@@ -45,6 +45,8 @@ Methods
    :widths: auto
 
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`_get_bar_beats<class_AudioStream_private_method__get_bar_beats>`\ (\ ) |virtual| |const|               |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`_get_beat_count<class_AudioStream_private_method__get_beat_count>`\ (\ ) |virtual| |const|             |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                        | :ref:`_get_bpm<class_AudioStream_private_method__get_bpm>`\ (\ ) |virtual| |const|                           |
@@ -54,6 +56,8 @@ Methods
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`_get_parameter_list<class_AudioStream_private_method__get_parameter_list>`\ (\ ) |virtual| |const|     |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                      | :ref:`_get_stream_name<class_AudioStream_private_method__get_stream_name>`\ (\ ) |virtual| |const|           |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`_has_loop<class_AudioStream_private_method__has_loop>`\ (\ ) |virtual| |const|                         |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
    | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`            | :ref:`_instantiate_playback<class_AudioStream_private_method__instantiate_playback>`\ (\ ) |virtual| |const| |
    +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
@@ -97,6 +101,18 @@ Signal to be emitted to notify when the parameter list changed.
 
 Method Descriptions
 -------------------
+
+.. _class_AudioStream_private_method__get_bar_beats:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_bar_beats**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioStream_private_method__get_bar_beats>`
+
+Override this method to return the bar beats of this stream.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_AudioStream_private_method__get_beat_count:
 
@@ -162,13 +178,25 @@ Override this method to customize the name assigned to this audio stream. Unused
 
 ----
 
+.. _class_AudioStream_private_method__has_loop:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_has_loop**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioStream_private_method__has_loop>`
+
+Override this method to return ``true`` if this stream has a loop.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AudioStream_private_method__instantiate_playback:
 
 .. rst-class:: classref-method
 
 :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **_instantiate_playback**\ (\ ) |virtual| |const| :ref:`🔗<class_AudioStream_private_method__instantiate_playback>`
 
-Override this method to customize the returned value of :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>`. Should returned a new :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` created when the stream is played (such as by an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`)..
+Override this method to customize the returned value of :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>`. Should return a new :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` created when the stream is played (such as by an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`).
 
 .. rst-class:: classref-item-separator
 

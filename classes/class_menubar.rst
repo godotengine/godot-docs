@@ -19,7 +19,7 @@ A horizontal menu bar that creates a menu for each :ref:`PopupMenu<class_PopupMe
 Description
 -----------
 
-A horizontal menu bar that creates a menu for each :ref:`PopupMenu<class_PopupMenu>` child. New items are created by adding :ref:`PopupMenu<class_PopupMenu>`\ s to this node.
+A horizontal menu bar that creates a menu for each :ref:`PopupMenu<class_PopupMenu>` child. New items are created by adding :ref:`PopupMenu<class_PopupMenu>`\ s to this node. Item title is determined by :ref:`Window.title<class_Window_property_title>`, or node name if :ref:`Window.title<class_Window_property_title>` is empty. Item title can be overridden using :ref:`set_menu_title<class_MenuBar_method_set_menu_title>`.
 
 .. rst-class:: classref-reftable-group
 

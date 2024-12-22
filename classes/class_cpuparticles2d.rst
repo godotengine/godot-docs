@@ -507,7 +507,7 @@ Number of particles emitted in one emission cycle.
 - |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
-Each particle's rotation will be animated along this :ref:`Curve<class_Curve>`.
+Each particle's rotation will be animated along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -558,7 +558,7 @@ Minimum equivalent of :ref:`angle_max<class_CPUParticles2D_property_angle_max>`.
 - |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
-Each particle's angular velocity will vary along this :ref:`Curve<class_Curve>`.
+Each particle's angular velocity will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -609,7 +609,7 @@ Minimum equivalent of :ref:`angular_velocity_max<class_CPUParticles2D_property_a
 - |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
-Each particle's animation offset will vary along this :ref:`Curve<class_Curve>`.
+Each particle's animation offset will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -660,7 +660,7 @@ Minimum equivalent of :ref:`anim_offset_max<class_CPUParticles2D_property_anim_o
 - |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
-Each particle's animation speed will vary along this :ref:`Curve<class_Curve>`.
+Each particle's animation speed will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -764,7 +764,7 @@ Each particle's color will vary along this :ref:`Gradient<class_Gradient>` (mult
 - |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
-Damping will vary along this :ref:`Curve<class_Curve>`.
+Damping will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1042,7 +1042,7 @@ Gravity applied to every particle.
 - |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
-Each particle's hue will vary along this :ref:`Curve<class_Curve>`.
+Each particle's hue will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1161,7 +1161,7 @@ Particle lifetime randomness ratio.
 - |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
-Each particle's linear acceleration will vary along this :ref:`Curve<class_Curve>`.
+Each particle's linear acceleration will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1246,7 +1246,7 @@ If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emi
 - |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
-Each particle's orbital velocity will vary along this :ref:`Curve<class_Curve>`.
+Each particle's orbital velocity will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1331,7 +1331,7 @@ Particle system starts as if it had already run for this many seconds.
 - |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
-Each particle's radial acceleration will vary along this :ref:`Curve<class_Curve>`.
+Each particle's radial acceleration will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1399,7 +1399,7 @@ Emission lifetime randomness ratio.
 - |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
-Each particle's scale will vary along this :ref:`Curve<class_Curve>`.
+Each particle's scale will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1450,7 +1450,7 @@ Minimum equivalent of :ref:`scale_amount_max<class_CPUParticles2D_property_scale
 - |void| **set_scale_curve_x**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_scale_curve_x**\ (\ )
 
-Each particle's horizontal scale will vary along this :ref:`Curve<class_Curve>`.
+Each particle's horizontal scale will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 \ :ref:`split_scale<class_CPUParticles2D_property_split_scale>` must be enabled.
 
@@ -1469,7 +1469,7 @@ Each particle's horizontal scale will vary along this :ref:`Curve<class_Curve>`.
 - |void| **set_scale_curve_y**\ (\ value\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_scale_curve_y**\ (\ )
 
-Each particle's vertical scale will vary along this :ref:`Curve<class_Curve>`.
+Each particle's vertical scale will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 \ :ref:`split_scale<class_CPUParticles2D_property_split_scale>` must be enabled.
 
@@ -1539,7 +1539,7 @@ Each particle's initial direction range from ``+spread`` to ``-spread`` degrees.
 - |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 - :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
-Each particle's tangential acceleration will vary along this :ref:`Curve<class_Curve>`.
+Each particle's tangential acceleration will vary along this :ref:`Curve<class_Curve>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1679,7 +1679,7 @@ Restarts the particle emitter.
 
 |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ ) :ref:`🔗<class_CPUParticles2D_method_set_param_curve>`
 
-Sets the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter<enum_CPUParticles2D_Parameter>`.
+Sets the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter<enum_CPUParticles2D_Parameter>`. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 

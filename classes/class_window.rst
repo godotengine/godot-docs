@@ -52,6 +52,8 @@ Properties
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`int<class_int>`                                           | :ref:`current_screen<class_Window_property_current_screen>`                       |                          |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`exclude_from_capture<class_Window_property_exclude_from_capture>`           | ``false``                |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`exclusive<class_Window_property_exclusive>`                                 | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`extend_to_title<class_Window_property_extend_to_title>`                     | ``false``                |
@@ -351,7 +353,7 @@ Emitted when files are dragged from the OS file manager and dropped in the game 
 ::
 
     func _ready():
-        get_viewport().files_dropped.connect(on_files_dropped)
+        get_window().files_dropped.connect(on_files_dropped)
     
     func on_files_dropped(files):
         print(files)
@@ -429,6 +431,18 @@ Emitted when the mouse cursor leaves the **Window**'s visible area, that is not 
 **theme_changed**\ (\ ) :ref:`🔗<class_Window_signal_theme_changed>`
 
 Emitted when the :ref:`NOTIFICATION_THEME_CHANGED<class_Window_constant_NOTIFICATION_THEME_CHANGED>` notification is sent.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_signal_title_changed:
+
+.. rst-class:: classref-signal
+
+**title_changed**\ (\ ) :ref:`🔗<class_Window_signal_title_changed>`
+
+Emitted when window title bar text is changed.
 
 .. rst-class:: classref-item-separator
 
@@ -515,6 +529,8 @@ Full screen mode with full multi-window support.
 
 Full screen window covers the entire display area of a screen and has no decorations. The display's video mode is not changed.
 
+\ **On Android:** This enables immersive mode.
+
 \ **On Windows:** Multi-window full-screen mode has a 1px border of the :ref:`ProjectSettings.rendering/environment/defaults/default_clear_color<class_ProjectSettings_property_rendering/environment/defaults/default_clear_color>` color.
 
 \ **On macOS:** A new desktop is used to display the running project.
@@ -530,6 +546,8 @@ Full screen window covers the entire display area of a screen and has no decorat
 A single window full screen mode. This mode has less overhead, but only one window can be open on a given screen at a time (opening a child window or application switching will trigger a full screen transition).
 
 Full screen window covers the entire display area of a screen and has no border or decorations. The display's video mode is not changed.
+
+\ **On Android:** This enables immersive mode.
 
 \ **On Windows:** Depending on video driver, full screen transition might cause screens to go black for a moment.
 
@@ -635,11 +653,23 @@ Window style is overridden, forcing sharp corners.
 
 \ **Note:** This flag is implemented only on Windows (11).
 
+.. _class_Window_constant_FLAG_EXCLUDE_FROM_CAPTURE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Window_Flags>` **FLAG_EXCLUDE_FROM_CAPTURE** = ``9``
+
+Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_image<class_DisplayServer_method_screen_get_image>`, :ref:`DisplayServer.screen_get_image_rect<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`DisplayServer.screen_get_pixel<class_DisplayServer_method_screen_get_pixel>`.
+
+\ **Note:** This flag is implemented on macOS and Windows.
+
+\ **Note:** Setting this flag will **NOT** prevent other apps from capturing an image, it should not be used as a security measure.
+
 .. _class_Window_constant_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Flags<enum_Window_Flags>` **FLAG_MAX** = ``9``
+:ref:`Flags<enum_Window_Flags>` **FLAG_MAX** = ``10``
 
 Max value of the :ref:`Flags<enum_Window_Flags>`.
 
@@ -1002,7 +1032,7 @@ Specifies how the content's aspect behaves when the **Window** is resized. The b
 - |void| **set_content_scale_factor**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_content_scale_factor**\ (\ )
 
-Specifies the base scale of **Window**'s content when its :ref:`size<class_Window_property_size>` is equal to :ref:`content_scale_size<class_Window_property_content_scale_size>`.
+Specifies the base scale of **Window**'s content when its :ref:`size<class_Window_property_size>` is equal to :ref:`content_scale_size<class_Window_property_content_scale_size>`. See also :ref:`Viewport.get_stretch_transform<class_Viewport_method_get_stretch_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1071,6 +1101,23 @@ The policy to use to determine the final scale factor for 2D elements. This affe
 - :ref:`int<class_int>` **get_current_screen**\ (\ )
 
 The screen the window is currently on.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_property_exclude_from_capture:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **exclude_from_capture** = ``false`` :ref:`🔗<class_Window_property_exclude_from_capture>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flags<enum_Window_Flags>`\ ) |const|
+
+Windows is excluded from screenshots taken by :ref:`DisplayServer.screen_get_image<class_DisplayServer_method_screen_get_image>`, :ref:`DisplayServer.screen_get_image_rect<class_DisplayServer_method_screen_get_image_rect>`, and :ref:`DisplayServer.screen_get_pixel<class_DisplayServer_method_screen_get_pixel>`.
 
 .. rst-class:: classref-item-separator
 

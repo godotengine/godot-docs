@@ -19,7 +19,7 @@ Collection of :ref:`OpenXRActionSet<class_OpenXRActionSet>` and :ref:`OpenXRInte
 Description
 -----------
 
-OpenXR uses an action system similar to Godots Input map system to bind inputs and outputs on various types of XR controllers to named actions. OpenXR specifies more detail on these inputs and outputs than Godot supports.
+OpenXR uses an action system similar to Redots Input map system to bind inputs and outputs on various types of XR controllers to named actions. OpenXR specifies more detail on these inputs and outputs than Redot supports.
 
 Another important distinction is that OpenXR offers no control over these bindings. The bindings we register are suggestions, it is up to the XR runtime to offer users the ability to change these bindings. This allows the XR runtime to fill in the gaps if new hardware becomes available.
 

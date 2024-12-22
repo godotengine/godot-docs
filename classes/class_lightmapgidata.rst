@@ -29,11 +29,13 @@ Properties
 .. table::
    :widths: auto
 
-   +--------------------------------------------------------------------------+---------------------------------------------------------------------------+--------+
-   | :ref:`TextureLayered<class_TextureLayered>`                              | :ref:`light_texture<class_LightmapGIData_property_light_texture>`         |        |
-   +--------------------------------------------------------------------------+---------------------------------------------------------------------------+--------+
-   | :ref:`Array<class_Array>`\[:ref:`TextureLayered<class_TextureLayered>`\] | :ref:`lightmap_textures<class_LightmapGIData_property_lightmap_textures>` | ``[]`` |
-   +--------------------------------------------------------------------------+---------------------------------------------------------------------------+--------+
+   +--------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------+
+   | :ref:`TextureLayered<class_TextureLayered>`                              | :ref:`light_texture<class_LightmapGIData_property_light_texture>`             |        |
+   +--------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------+
+   | :ref:`Array<class_Array>`\[:ref:`TextureLayered<class_TextureLayered>`\] | :ref:`lightmap_textures<class_LightmapGIData_property_lightmap_textures>`     | ``[]`` |
+   +--------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------+
+   | :ref:`Array<class_Array>`\[:ref:`TextureLayered<class_TextureLayered>`\] | :ref:`shadowmask_textures<class_LightmapGIData_property_shadowmask_textures>` | ``[]`` |
+   +--------------------------------------------------------------------------+-------------------------------------------------------------------------------+--------+
 
 .. rst-class:: classref-reftable-group
 
@@ -56,6 +58,45 @@ Methods
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                          | :ref:`set_uses_spherical_harmonics<class_LightmapGIData_method_set_uses_spherical_harmonics>`\ (\ uses_spherical_harmonics\: :ref:`bool<class_bool>`\ )                                                              |
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_LightmapGIData_ShadowmaskMode:
+
+.. rst-class:: classref-enumeration
+
+enum **ShadowmaskMode**: :ref:`🔗<enum_LightmapGIData_ShadowmaskMode>`
+
+.. _class_LightmapGIData_constant_SHADOWMASK_MODE_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowmaskMode<enum_LightmapGIData_ShadowmaskMode>` **SHADOWMASK_MODE_NONE** = ``0``
+
+Shadowmasking is disabled. No shadowmask texture will be created when baking lightmaps. Existing shadowmask textures will be removed during baking.
+
+.. _class_LightmapGIData_constant_SHADOWMASK_MODE_REPLACE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowmaskMode<enum_LightmapGIData_ShadowmaskMode>` **SHADOWMASK_MODE_REPLACE** = ``1``
+
+Shadowmasking is enabled. Directional shadows that are outside the :ref:`DirectionalLight3D.directional_shadow_max_distance<class_DirectionalLight3D_property_directional_shadow_max_distance>` will be rendered using the shadowmask texture. Shadows that are inside the range will be rendered using real-time shadows exclusively. This mode allows for more precise real-time shadows up close, without the potential "smearing" effect that can occur when using lightmaps with a high texel size. The downside is that when the camera moves fast, the transition between the real-time light and shadowmask can be obvious. Also, objects that only have shadows baked in the shadowmask (and no real-time shadows) won't display any shadows up close.
+
+.. _class_LightmapGIData_constant_SHADOWMASK_MODE_OVERLAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowmaskMode<enum_LightmapGIData_ShadowmaskMode>` **SHADOWMASK_MODE_OVERLAY** = ``2``
+
+Shadowmasking is enabled. Directional shadows will be rendered with real-time shadows overlaid on top of the shadowmask texture. This mode makes for smoother shadow transitions when the camera moves fast, at the cost of a potential smearing effect for directional shadows that are up close (due to the real-time shadow being mixed with a low-resolution shadowmask). Objects that only have shadows baked in the shadowmask (and no real-time shadows) will keep their shadows up close.
 
 .. rst-class:: classref-section-separator
 
@@ -97,6 +138,23 @@ The lightmap atlas texture generated by the lightmapper.
 - :ref:`Array<class_Array>`\[:ref:`TextureLayered<class_TextureLayered>`\] **get_lightmap_textures**\ (\ )
 
 The lightmap atlas textures generated by the lightmapper.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LightmapGIData_property_shadowmask_textures:
+
+.. rst-class:: classref-property
+
+:ref:`Array<class_Array>`\[:ref:`TextureLayered<class_TextureLayered>`\] **shadowmask_textures** = ``[]`` :ref:`🔗<class_LightmapGIData_property_shadowmask_textures>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_shadowmask_textures**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`TextureLayered<class_TextureLayered>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`TextureLayered<class_TextureLayered>`\] **get_shadowmask_textures**\ (\ )
+
+The shadowmask atlas textures generated by the lightmapper.
 
 .. rst-class:: classref-section-separator
 

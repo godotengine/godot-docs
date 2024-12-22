@@ -23,7 +23,7 @@ Scripts extending this class and implementing its :ref:`_run<class_EditorScript_
 
 \ **Note:** Extending scripts need to have ``tool`` mode enabled.
 
-\ **Example:** Running the following script prints "Hello from the Godot Editor!":
+\ **Example:** Running the following script prints "Hello from the Redot Editor!":
 
 
 .. tabs::
@@ -38,7 +38,7 @@ Scripts extending this class and implementing its :ref:`_run<class_EditorScript_
 
  .. code-tab:: csharp
 
-    using Redot;
+    using Godot;
     
     [Tool]
     public partial class HelloEditor : EditorScript

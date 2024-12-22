@@ -164,24 +164,39 @@ Operators
 
 .. rst-class:: classref-descriptions-group
 
-Constants
----------
+Enumerations
+------------
+
+.. _enum_Vector2i_Axis:
+
+.. rst-class:: classref-enumeration
+
+enum **Axis**: :ref:`🔗<enum_Vector2i_Axis>`
 
 .. _class_Vector2i_constant_AXIS_X:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**AXIS_X** = ``0`` :ref:`🔗<class_Vector2i_constant_AXIS_X>`
+:ref:`Axis<enum_Vector2i_Axis>` **AXIS_X** = ``0``
 
 Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector2i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector2i_method_min_axis_index>`.
 
 .. _class_Vector2i_constant_AXIS_Y:
 
-.. rst-class:: classref-constant
+.. rst-class:: classref-enumeration-constant
 
-**AXIS_Y** = ``1`` :ref:`🔗<class_Vector2i_constant_AXIS_Y>`
+:ref:`Axis<enum_Vector2i_Axis>` **AXIS_Y** = ``1``
 
 Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector2i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector2i_method_min_axis_index>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Constants
+---------
 
 .. _class_Vector2i_constant_ZERO:
 
@@ -567,7 +582,7 @@ Gets the remainder of each component of the **Vector2i** with the components of 
 
 ::
 
-    print(Vector2i(10, -20) % Vector2i(7, 8)) # Prints "(3, -4)"
+    print(Vector2i(10, -20) % Vector2i(7, 8)) # Prints (3, -4)
 
 .. rst-class:: classref-item-separator
 
@@ -583,7 +598,7 @@ Gets the remainder of each component of the **Vector2i** with the given :ref:`in
 
 ::
 
-    print(Vector2i(10, -20) % 7) # Prints "(3, -6)"
+    print(Vector2i(10, -20) % 7) # Prints (3, -6)
 
 .. rst-class:: classref-item-separator
 
@@ -599,7 +614,7 @@ Multiplies each component of the **Vector2i** by the components of the given **V
 
 ::
 
-    print(Vector2i(10, 20) * Vector2i(3, 4)) # Prints "(30, 80)"
+    print(Vector2i(10, 20) * Vector2i(3, 4)) # Prints (30, 80)
 
 .. rst-class:: classref-item-separator
 
@@ -615,7 +630,7 @@ Multiplies each component of the **Vector2i** by the given :ref:`float<class_flo
 
 ::
 
-    print(Vector2i(10, 15) * 0.9) # Prints "(9, 13.5)"
+    print(Vector2i(10, 15) * 0.9) # Prints (9.0, 13.5)
 
 .. rst-class:: classref-item-separator
 
@@ -643,7 +658,7 @@ Adds each component of the **Vector2i** by the components of the given **Vector2
 
 ::
 
-    print(Vector2i(10, 20) + Vector2i(3, 4)) # Prints "(13, 24)"
+    print(Vector2i(10, 20) + Vector2i(3, 4)) # Prints (13, 24)
 
 .. rst-class:: classref-item-separator
 
@@ -659,7 +674,7 @@ Subtracts each component of the **Vector2i** by the components of the given **Ve
 
 ::
 
-    print(Vector2i(10, 20) - Vector2i(3, 4)) # Prints "(7, 16)"
+    print(Vector2i(10, 20) - Vector2i(3, 4)) # Prints (7, 16)
 
 .. rst-class:: classref-item-separator
 
@@ -675,7 +690,7 @@ Divides each component of the **Vector2i** by the components of the given **Vect
 
 ::
 
-    print(Vector2i(10, 20) / Vector2i(2, 5)) # Prints "(5, 4)"
+    print(Vector2i(10, 20) / Vector2i(2, 5)) # Prints (5, 4)
 
 .. rst-class:: classref-item-separator
 
@@ -691,7 +706,7 @@ Divides each component of the **Vector2i** by the given :ref:`float<class_float>
 
 ::
 
-    print(Vector2i(10, 20) / 2.9) # Prints "(5, 10)"
+    print(Vector2i(10, 20) / 2.9) # Prints (5.0, 10.0)
 
 .. rst-class:: classref-item-separator
 

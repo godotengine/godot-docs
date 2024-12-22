@@ -369,6 +369,18 @@ Emitted when the node's editor description field changed.
 
 ----
 
+.. _class_Node_signal_editor_state_changed:
+
+.. rst-class:: classref-signal
+
+**editor_state_changed**\ (\ ) :ref:`🔗<class_Node_signal_editor_state_changed>`
+
+Emitted when an attribute of the node that is relevant to the editor is changed. Only emitted in the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node_signal_ready:
 
 .. rst-class:: classref-signal
@@ -642,7 +654,7 @@ Duplicate the node's script (also overriding the duplicated children's scripts, 
 
 :ref:`DuplicateFlags<enum_Node_DuplicateFlags>` **DUPLICATE_USE_INSTANTIATION** = ``8``
 
-Duplicate using :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`. If the node comes from a scene saved on disk, re-uses :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` as the base for the duplicated node and its children.
+Duplicate using :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>`. If the node comes from a scene saved on disk, reuses :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` as the base for the duplicated node and its children.
 
 .. rst-class:: classref-item-separator
 
@@ -1477,7 +1489,7 @@ For gameplay input, :ref:`_unhandled_input<class_Node_private_method__unhandled_
 
 |void| **_physics_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual| :ref:`🔗<class_Node_private_method__physics_process>`
 
-Called during the physics processing step of the main loop. Physics processing means that the frame rate is synced to the physics, i.e. the ``delta`` variable should be constant. ``delta`` is in seconds.
+Called during the physics processing step of the main loop. Physics processing means that the frame rate is synced to the physics, i.e. the ``delta`` parameter will *generally* be constant (see exceptions below). ``delta`` is in seconds.
 
 It is only called if physics processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_physics_process<class_Node_method_set_physics_process>`.
 
@@ -1486,6 +1498,8 @@ Processing happens in order of :ref:`process_physics_priority<class_Node_propert
 Corresponds to the :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` notification in :ref:`Object._notification<class_Object_private_method__notification>`.
 
 \ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
+
+\ **Note:** ``delta`` will be larger than expected if running at a framerate lower than :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` / :ref:`Engine.max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both :ref:`_process<class_Node_private_method__process>` and :ref:`_physics_process<class_Node_private_method__physics_process>`. As a result, avoid using ``delta`` for time measurements in real-world seconds. Use the :ref:`Time<class_Time>` singleton's methods for this purpose instead, such as :ref:`Time.get_ticks_usec<class_Time_method_get_ticks_usec>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1506,6 +1520,8 @@ Processing happens in order of :ref:`process_priority<class_Node_property_proces
 Corresponds to the :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` notification in :ref:`Object._notification<class_Object_private_method__notification>`.
 
 \ **Note:** This method is only called if the node is present in the scene tree (i.e. if it's not an orphan).
+
+\ **Note:** ``delta`` will be larger than expected if running at a framerate lower than :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` / :ref:`Engine.max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both :ref:`_process<class_Node_private_method__process>` and :ref:`_physics_process<class_Node_private_method__physics_process>`. As a result, avoid using ``delta`` for time measurements in real-world seconds. Use the :ref:`Time<class_Time>` singleton's methods for this purpose instead, such as :ref:`Time.get_ticks_usec<class_Time_method_get_ticks_usec>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1597,7 +1613,7 @@ For gameplay input, this and :ref:`_unhandled_input<class_Node_private_method__u
 
 |void| **_unhandled_picking_input**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |virtual| :ref:`🔗<class_Node_private_method__unhandled_picking_input>`
 
-Called when an :ref:`InputEventKey<class_InputEventKey>` hasn't been consumed by physics picking. The input event propagates up through the node tree in the current :ref:`Viewport<class_Viewport>` until a node consumes it.
+Called when an :ref:`InputEvent<class_InputEvent>` hasn't been consumed by physics picking. The input event propagates up through the node tree in the current :ref:`Viewport<class_Viewport>` until a node consumes it.
 
 It is only called if unhandled picking input processing is enabled, which is done automatically if this method is overridden, and can be toggled with :ref:`set_process_unhandled_picking_input<class_Node_method_set_process_unhandled_picking_input>`.
 
@@ -2179,6 +2195,8 @@ If ``use_unique_path`` is ``true``, returns the shortest path accounting for thi
 
 Returns the time elapsed (in seconds) since the last physics callback. This value is identical to :ref:`_physics_process<class_Node_private_method__physics_process>`'s ``delta`` parameter, and is often consistent at run-time, unless :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` is changed. See also :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>`.
 
+\ **Note:** The returned value will be larger than expected if running at a framerate lower than :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` / :ref:`Engine.max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both :ref:`_process<class_Node_private_method__process>` and :ref:`_physics_process<class_Node_private_method__physics_process>`. As a result, avoid using ``delta`` for time measurements in real-world seconds. Use the :ref:`Time<class_Time>` singleton's methods for this purpose instead, such as :ref:`Time.get_ticks_usec<class_Time_method_get_ticks_usec>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2190,6 +2208,8 @@ Returns the time elapsed (in seconds) since the last physics callback. This valu
 :ref:`float<class_float>` **get_process_delta_time**\ (\ ) |const| :ref:`🔗<class_Node_method_get_process_delta_time>`
 
 Returns the time elapsed (in seconds) since the last process callback. This value is identical to :ref:`_process<class_Node_private_method__process>`'s ``delta`` parameter, and may vary from frame to frame. See also :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`.
+
+\ **Note:** The returned value will be larger than expected if running at a framerate lower than :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` / :ref:`Engine.max_physics_steps_per_frame<class_Engine_property_max_physics_steps_per_frame>` FPS. This is done to avoid "spiral of death" scenarios where performance would plummet due to an ever-increasing number of physics steps per frame. This behavior affects both :ref:`_process<class_Node_private_method__process>` and :ref:`_physics_process<class_Node_private_method__physics_process>`. As a result, avoid using ``delta`` for time measurements in real-world seconds. Use the :ref:`Time<class_Time>` singleton's methods for this purpose instead, such as :ref:`Time.get_ticks_usec<class_Time_method_get_ticks_usec>`.
 
 .. rst-class:: classref-item-separator
 

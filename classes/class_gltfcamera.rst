@@ -124,7 +124,7 @@ The distance to the near culling boundary for this camera relative to its local 
 - |void| **set_fov**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_fov**\ (\ )
 
-The FOV of the camera. This class and glTF define the camera FOV in radians, while Godot uses degrees. This maps to glTF's ``yfov`` property. This value is only used for perspective cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is ``true``.
+The FOV of the camera. This class and glTF define the camera FOV in radians, while Redot uses degrees. This maps to glTF's ``yfov`` property. This value is only used for perspective cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -158,7 +158,7 @@ If ``true``, the camera is in perspective mode. Otherwise, the camera is in orth
 - |void| **set_size_mag**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_size_mag**\ (\ )
 
-The size of the camera. This class and glTF define the camera size magnitude as a radius in meters, while Godot defines it as a diameter in meters. This maps to glTF's ``ymag`` property. This value is only used for orthographic/orthogonal cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is ``false``.
+The size of the camera. This class and glTF define the camera size magnitude as a radius in meters, while Redot defines it as a diameter in meters. This maps to glTF's ``ymag`` property. This value is only used for orthographic/orthogonal cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is ``false``.
 
 .. rst-class:: classref-section-separator
 
@@ -187,7 +187,7 @@ Creates a new GLTFCamera instance by parsing the given :ref:`Dictionary<class_Di
 
 :ref:`GLTFCamera<class_GLTFCamera>` **from_node**\ (\ camera_node\: :ref:`Camera3D<class_Camera3D>`\ ) |static| :ref:`🔗<class_GLTFCamera_method_from_node>`
 
-Create a new GLTFCamera instance from the given Godot :ref:`Camera3D<class_Camera3D>` node.
+Create a new GLTFCamera instance from the given Redot :ref:`Camera3D<class_Camera3D>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -211,7 +211,7 @@ Serializes this GLTFCamera instance into a :ref:`Dictionary<class_Dictionary>`.
 
 :ref:`Camera3D<class_Camera3D>` **to_node**\ (\ ) |const| :ref:`🔗<class_GLTFCamera_method_to_node>`
 
-Converts this GLTFCamera instance into a Godot :ref:`Camera3D<class_Camera3D>` node.
+Converts this GLTFCamera instance into a Redot :ref:`Camera3D<class_Camera3D>` node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

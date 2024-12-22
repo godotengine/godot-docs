@@ -12,14 +12,14 @@ LookAtModifier3D
 
 **Inherits:** :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-The :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` rotates a bone to look a target.
+The **LookAtModifier3D** rotates a bone to look at a target.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` rotates a bone to look a target. This is helpful for moving character's head to look at the player, rotating a turret to look at a target, or any other case where you want to make a bone rotate towards something quickly and easily.
+This :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` rotates a bone to look at a target. This is helpful for moving a character's head to look at the player, rotating a turret to look at a target, or any other case where you want to make a bone rotate towards something quickly and easily.
 
 When applying multiple **LookAtModifier3D**\ s, the **LookAtModifier3D** assigned to the parent bone must be put above the **LookAtModifier3D** assigned to the child bone in the list in order for the child bone results to be correct.
 
@@ -32,7 +32,9 @@ Properties
    :widths: auto
 
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`                               | :ref:`bone<class_LookAtModifier3D_property_bone>`                                                           | ``0``                |
+   | :ref:`int<class_int>`                               | :ref:`bone<class_LookAtModifier3D_property_bone>`                                                           | ``-1``               |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`String<class_String>`                         | :ref:`bone_name<class_LookAtModifier3D_property_bone_name>`                                                 | ``""``               |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`float<class_float>`                           | :ref:`duration<class_LookAtModifier3D_property_duration>`                                                   | ``0.0``              |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
@@ -41,6 +43,8 @@ Properties
    | :ref:`BoneAxis<enum_LookAtModifier3D_BoneAxis>`     | :ref:`forward_axis<class_LookAtModifier3D_property_forward_axis>`                                           | ``4``                |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`int<class_int>`                               | :ref:`origin_bone<class_LookAtModifier3D_property_origin_bone>`                                             |                      |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`String<class_String>`                         | :ref:`origin_bone_name<class_LookAtModifier3D_property_origin_bone_name>`                                   |                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`NodePath<class_NodePath>`                     | :ref:`origin_external_node<class_LookAtModifier3D_property_origin_external_node>`                           |                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
@@ -62,7 +66,7 @@ Properties
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`float<class_float>`                           | :ref:`primary_positive_limit_angle<class_LookAtModifier3D_property_primary_positive_limit_angle>`           |                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
-   | Vector3.Axis                                        | :ref:`primary_rotation_axis<class_LookAtModifier3D_property_primary_rotation_axis>`                         | ``1``                |
+   | :ref:`Axis<enum_Vector3_Axis>`                      | :ref:`primary_rotation_axis<class_LookAtModifier3D_property_primary_rotation_axis>`                         | ``1``                |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`float<class_float>`                           | :ref:`secondary_damp_threshold<class_LookAtModifier3D_property_secondary_damp_threshold>`                   |                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
@@ -217,14 +221,31 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bone** = ``0`` :ref:`🔗<class_LookAtModifier3D_property_bone>`
+:ref:`int<class_int>` **bone** = ``-1`` :ref:`🔗<class_LookAtModifier3D_property_bone>`
 
 .. rst-class:: classref-property-setget
 
 - |void| **set_bone**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_bone**\ (\ )
 
-The bone index of the :ref:`Skeleton3D<class_Skeleton3D>` that the modification will operate on.
+Index of the :ref:`bone_name<class_LookAtModifier3D_property_bone_name>` in the parent :ref:`Skeleton3D<class_Skeleton3D>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LookAtModifier3D_property_bone_name:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **bone_name** = ``""`` :ref:`🔗<class_LookAtModifier3D_property_bone_name>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_bone_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_bone_name**\ (\ )
+
+The bone name of the :ref:`Skeleton3D<class_Skeleton3D>` that the modification will operate on.
 
 .. rst-class:: classref-item-separator
 
@@ -297,6 +318,23 @@ The forward axis of the bone. This :ref:`SkeletonModifier3D<class_SkeletonModifi
 
 - |void| **set_origin_bone**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_origin_bone**\ (\ )
+
+Index of the :ref:`origin_bone_name<class_LookAtModifier3D_property_origin_bone_name>` in the parent :ref:`Skeleton3D<class_Skeleton3D>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LookAtModifier3D_property_origin_bone_name:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **origin_bone_name** :ref:`🔗<class_LookAtModifier3D_property_origin_bone_name>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_origin_bone_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_origin_bone_name**\ (\ )
 
 If :ref:`origin_from<class_LookAtModifier3D_property_origin_from>` is :ref:`ORIGIN_FROM_SPECIFIC_BONE<class_LookAtModifier3D_constant_ORIGIN_FROM_SPECIFIC_BONE>`, the bone global pose position specified for this is used as origin.
 
@@ -482,12 +520,12 @@ The limit angle of positive side of the primary rotation when :ref:`symmetry_lim
 
 .. rst-class:: classref-property
 
-Vector3.Axis **primary_rotation_axis** = ``1`` :ref:`🔗<class_LookAtModifier3D_property_primary_rotation_axis>`
+:ref:`Axis<enum_Vector3_Axis>` **primary_rotation_axis** = ``1`` :ref:`🔗<class_LookAtModifier3D_property_primary_rotation_axis>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_primary_rotation_axis**\ (\ value\: Vector3.Axis\ )
-- Vector3.Axis **get_primary_rotation_axis**\ (\ )
+- |void| **set_primary_rotation_axis**\ (\ value\: :ref:`Axis<enum_Vector3_Axis>`\ )
+- :ref:`Axis<enum_Vector3_Axis>` **get_primary_rotation_axis**\ (\ )
 
 The axis of the first rotation. This :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` works by compositing the rotation by Euler angles to prevent to rotate the :ref:`forward_axis<class_LookAtModifier3D_property_forward_axis>`.
 

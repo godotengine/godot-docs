@@ -75,9 +75,9 @@ Returns the absolute path to the user's cache folder. This folder should be used
 
 .. code:: text
 
-    - Windows: %LOCALAPPDATA%\Godot\
-    - macOS: ~/Library/Caches/Godot/
-    - Linux: ~/.cache/godot/
+    - Windows: %LOCALAPPDATA%\Redot\
+    - macOS: ~/Library/Caches/Redot/
+    - Linux: ~/.cache/redot/
 
 .. rst-class:: classref-item-separator
 
@@ -95,9 +95,9 @@ Returns the absolute path to the user's configuration folder. This folder should
 
 .. code:: text
 
-    - Windows: %APPDATA%\Godot\                    (same as `get_data_dir()`)
-    - macOS: ~/Library/Application Support/Godot/  (same as `get_data_dir()`)
-    - Linux: ~/.config/godot/
+    - Windows: %APPDATA%\Redot\                    (same as `get_data_dir()`)
+    - macOS: ~/Library/Application Support/Redot/  (same as `get_data_dir()`)
+    - Linux: ~/.config/redot/
 
 .. rst-class:: classref-item-separator
 
@@ -115,9 +115,9 @@ Returns the absolute path to the user's data folder. This folder should be used 
 
 .. code:: text
 
-    - Windows: %APPDATA%\Godot\                    (same as `get_config_dir()`)
-    - macOS: ~/Library/Application Support/Godot/  (same as `get_config_dir()`)
-    - Linux: ~/.local/share/godot/
+    - Windows: %APPDATA%\Redot\                    (same as `get_config_dir()`)
+    - macOS: ~/Library/Application Support/Redot/  (same as `get_config_dir()`)
+    - Linux: ~/.local/share/redot/
 
 .. rst-class:: classref-item-separator
 

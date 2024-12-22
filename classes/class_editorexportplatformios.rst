@@ -56,6 +56,10 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/min_ios_version<class_EditorExportPlatformIOS_property_application/min_ios_version>`                                                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/provisioning_profile_specifier_debug<class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_debug>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`application/provisioning_profile_specifier_release<class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_release>`                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/provisioning_profile_uuid_debug<class_EditorExportPlatformIOS_property_application/provisioning_profile_uuid_debug>`                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/provisioning_profile_uuid_release<class_EditorExportPlatformIOS_property_application/provisioning_profile_uuid_release>`                                           |
@@ -72,15 +76,23 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`capabilities/access_wifi<class_EditorExportPlatformIOS_property_capabilities/access_wifi>`                                                                                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`capabilities/additional<class_EditorExportPlatformIOS_property_capabilities/additional>`                                                                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`capabilities/performance_a12<class_EditorExportPlatformIOS_property_capabilities/performance_a12>`                                                                             |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`capabilities/performance_gaming_tier<class_EditorExportPlatformIOS_property_capabilities/performance_gaming_tier>`                                                             |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`capabilities/push_notifications<class_EditorExportPlatformIOS_property_capabilities/push_notifications>`                                                                       |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`custom_template/debug<class_EditorExportPlatformIOS_property_custom_template/debug>`                                                                                           |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`custom_template/release<class_EditorExportPlatformIOS_property_custom_template/release>`                                                                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`entitlements/additional<class_EditorExportPlatformIOS_property_entitlements/additional>`                                                                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`entitlements/game_center<class_EditorExportPlatformIOS_property_entitlements/game_center>`                                                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`entitlements/increased_memory_limit<class_EditorExportPlatformIOS_property_entitlements/increased_memory_limit>`                                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`entitlements/push_notifications<class_EditorExportPlatformIOS_property_entitlements/push_notifications>`                                                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`icons/app_store_1024x1024<class_EditorExportPlatformIOS_property_icons/app_store_1024x1024>`                                                                                   |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -621,7 +633,7 @@ Application distribution target (release export).
 
 :ref:`bool<class_bool>` **application/export_project_only** :ref:`🔗<class_EditorExportPlatformIOS_property_application/export_project_only>`
 
-If ``true``, exports iOS project files without building an XCArchive or ``.ipa`` file. If ``false``, exports iOS project files and builds an XCArchive and ``.ipa`` file at the same time. When combining Godot with Fastlane or other build pipelines, you may want to set this to ``true``.
+If ``true``, exports iOS project files without building an XCArchive or ``.ipa`` file. If ``false``, exports iOS project files and builds an XCArchive and ``.ipa`` file at the same time. When combining Redot with Fastlane or other build pipelines, you may want to set this to ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -658,6 +670,34 @@ Interpolation method used to resize application icon.
 :ref:`String<class_String>` **application/min_ios_version** :ref:`🔗<class_EditorExportPlatformIOS_property_application/min_ios_version>`
 
 Minimum version of iOS required for this application to run in the ``major.minor.patch`` or ``major.minor`` format, can only contain numeric characters (``0-9``) and periods (``.``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_debug:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **application/provisioning_profile_specifier_debug** :ref:`🔗<class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_debug>`
+
+Name of the provisioning profile. Sets XCode PROVISIONING_PROFILE_SPECIFIER for debug. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
+
+Can be overridden with the environment variable ``GODOT_IOS_PROFILE_SPECIFIER_DEBUG``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_release:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **application/provisioning_profile_specifier_release** :ref:`🔗<class_EditorExportPlatformIOS_property_application/provisioning_profile_specifier_release>`
+
+Name of the provisioning profile. Sets XCode PROVISIONING_PROFILE_SPECIFIER for release. `Used for manual provisioning <https://developer.apple.com/documentation/xcode/build-settings-reference#Provisioning-Profile>`__.
+
+Can be overridden with the environment variable ``GODOT_IOS_PROFILE_SPECIFIER_RELEASE``.
 
 .. rst-class:: classref-item-separator
 
@@ -763,6 +803,20 @@ If ``true``, networking features related to Wi-Fi access are enabled. See `Requi
 
 ----
 
+.. _class_EditorExportPlatformIOS_property_capabilities/additional:
+
+.. rst-class:: classref-property
+
+:ref:`PackedStringArray<class_PackedStringArray>` **capabilities/additional** :ref:`🔗<class_EditorExportPlatformIOS_property_capabilities/additional>`
+
+Additional data added to the ``UIRequiredDeviceCapabilities`` array of the ``Info.plist`` file.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlatformIOS_property_capabilities/performance_a12:
 
 .. rst-class:: classref-property
@@ -791,18 +845,6 @@ Enabling this option limits supported devices to: iPhone 15 Pro and newer.
 
 ----
 
-.. _class_EditorExportPlatformIOS_property_capabilities/push_notifications:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **capabilities/push_notifications** :ref:`🔗<class_EditorExportPlatformIOS_property_capabilities/push_notifications>`
-
-If ``true``, push notifications are enabled. See `Required Device Capabilities <https://developer.apple.com/support/required-device-capabilities/>`__.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_EditorExportPlatformIOS_property_custom_template/debug:
 
 .. rst-class:: classref-property
@@ -822,6 +864,59 @@ Path to the custom export template. If left empty, default template is used.
 :ref:`String<class_String>` **custom_template/release** :ref:`🔗<class_EditorExportPlatformIOS_property_custom_template/release>`
 
 Path to the custom export template. If left empty, default template is used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_entitlements/additional:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **entitlements/additional** :ref:`🔗<class_EditorExportPlatformIOS_property_entitlements/additional>`
+
+Additional data added to the root ``<dict>`` section of the `.entitlements <https://developer.apple.com/documentation/bundleresources/entitlements>`__ file. The value should be an XML section with pairs of key-value elements, for example:
+
+.. code:: text
+
+    <key>key_name</key>
+    <string>value</string>
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_entitlements/game_center:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **entitlements/game_center** :ref:`🔗<class_EditorExportPlatformIOS_property_entitlements/game_center>`
+
+Enable to allow access to Game Center features. `com.apple.developer.game-center <https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_game-center>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_entitlements/increased_memory_limit:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **entitlements/increased_memory_limit** :ref:`🔗<class_EditorExportPlatformIOS_property_entitlements/increased_memory_limit>`
+
+Enable if app may perform better with a higher memory limit. `com.apple.developer.kernel.increased-memory-limit <https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_kernel_increased-memory-limit>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_entitlements/push_notifications:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **entitlements/push_notifications** :ref:`🔗<class_EditorExportPlatformIOS_property_entitlements/push_notifications>`
+
+Environment for Apple Push Notification service. See `aps-environment <https://developer.apple.com/documentation/bundleresources/entitlements/aps-environment>`__.
 
 .. rst-class:: classref-item-separator
 
