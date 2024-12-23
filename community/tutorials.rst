@@ -35,12 +35,6 @@ Text tutorials
 - `Game Dev Artisan website <https://gamedevartisan.com/>`__
 - `Night Quest Games Blog <https://www.nightquestgames.com/blog-articles/>`__
 
-Devlogs
--------
-
-- `bitbrain <https://www.youtube.com/@bitbraindev>`_
-- `DevDuck (2D) <https://www.youtube.com/@devduck/videos>`_
-
 Resources
 ---------
 
