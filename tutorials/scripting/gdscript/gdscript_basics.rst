@@ -890,6 +890,8 @@ native or user class, or enum. Nested array types (like ``Array[Array[int]]``) a
     The only exception was made for the ``Array`` (``Array[Variant]``) type, for user convenience
     and compatibility with old code. However, operations on untyped arrays are considered unsafe.
 
+.. _doc_gdscript_packed_arrays:
+
 Packed arrays
 ^^^^^^^^^^^^^
 
