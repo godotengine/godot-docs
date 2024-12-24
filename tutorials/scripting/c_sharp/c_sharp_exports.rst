@@ -573,7 +573,14 @@ The default value of Godot dictionaries is null. A different default can be spec
 Exporting C# arrays
 ^^^^^^^^^^^^^^^^^^^
 
-C# arrays can exported as long as the element type is a :ref:`Variant-compatible type <c_sharp_variant_compatible_types>`.
+..
+  See Godot.SourceGenerators.MarshalUtils.ConvertManagedTypeToMarshalType for the function which determines what can be marshalled
+
+C# arrays can exported as long as it not multi-dimensional, and the element type is one of the following:
+
+* A native C# ``byte``, ``int``/``Int32``, ``Int64``, ``float``, ``double``, or ``string``.
+* Anything derived from ``GodotObject``.
+* Godot's ``Vector2``, ``Vector3``, ``Vector4``, ``Color``, ``StringName``, ``NodePath``, or ``Rid``.
 
 .. code-block:: csharp
 
@@ -582,6 +589,9 @@ C# arrays can exported as long as the element type is a :ref:`Variant-compatible
 
     [Export]
     public NodePath[] NodePaths { get; set; }
+
+Other element types, even other :ref:`Variant-compatible types <c_sharp_variant_compatible_types>` such as ``Plane`` or ``Transform2D``, will not work.
+If you get a :ref:`GD0102 <doc_c_sharp_diagnostics_gd0102>` error, use a ``Godot.Collections.Array`` instead.
 
 The default value of C# arrays is null. A different default can be specified:
 
