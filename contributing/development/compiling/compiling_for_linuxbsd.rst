@@ -423,7 +423,7 @@ You also need to add ``$RISCV_TOOLCHAIN_PATH/bin`` to your user's PATH environme
 
 ::
 
-	export PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH"
+	PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH"
 
 .. warning:: Since riscv-gnu-toolchain uses its own Clang located
 			 in the ``bin`` folder, this command may block you from
@@ -442,6 +442,13 @@ Go to the root of the source code, and execute the following build command:
     scons arch=rv64 use_llvm=yes linker=mold lto=none target=editor \
         ccflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu" \
         linkflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu"
+
+.. note::
+
+    RISC-V GCC has `bugs with its atomic operations <https://github.com/riscv-collab/riscv-gcc/issues/15>`__
+    which prevent it from compiling Godot correctly. That's why Clang is used instead. Make sure that
+    it *can* compile to RISC-V. You can verify by executing this command ``clang -print-targets``,
+    make sure you see ``riscv64`` on the list of targets.
 
 The command is similar in nature, but with some key changes. ``ccflags`` and
 ``linkflags`` append additional flags to the build. ``--sysroot`` points to
