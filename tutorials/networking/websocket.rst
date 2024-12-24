@@ -33,7 +33,7 @@ details.
     blocked by Android.
 
 Minimal client example
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 This example will show you how to create a WebSocket connection to a remote server, and how to send and receive data.
 
@@ -96,7 +96,7 @@ This will print something similar to:
     Got data from server: Test packet
 
 Minimal server example
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 This example will show you how to create a WebSocket server that listens for remote connections, and how to send and receive data.
 
@@ -162,7 +162,7 @@ This will print (when a client connects) something similar to this:
     Got data from client 1348090059: Test packet ... echoing
 
 Advanced chat demo
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 A more advanced chat demo which optionally uses the multiplayer mid-level
 abstraction and a high-level multiplayer demo are available in the

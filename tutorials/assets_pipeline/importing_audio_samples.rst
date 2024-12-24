@@ -181,7 +181,7 @@ Import options (Ogg Vorbis and MP3)
 -----------------------------------
 
 Loop
-^^^^
+~~~~
 
 If enabled, the audio will begin playing at the beginning after playback ends by
 reaching the end of the audio.
@@ -193,7 +193,7 @@ reaching the end of the audio.
     playing indefinitely.
 
 Loop Offset
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 The loop offset determines where audio will start to loop after playback reaches
 the end of the audio. This can be used to only loop a part of the audio file,
@@ -208,7 +208,7 @@ A more convenient editor for **Loop Offset** is provided in the
 dialog, as it lets you preview your changes without having to reimport the audio.
 
 BPM
-^^^
+~~~
 
 The Beats Per Minute of the audio track. This should match the BPM measure that
 was used to compose the track. This is only relevant for music that wishes to
@@ -220,7 +220,7 @@ A more convenient editor for **BPM** is provided in the
 dialog, as it lets you preview your changes without having to reimport the audio.
 
 Beat Count
-^^^^^^^^^^
+~~~~~~~~~~
 
 The beat count of the audio track. This is only relevant for music that wishes
 to make use of interactive music functionality, not sound
@@ -231,7 +231,7 @@ A more convenient editor for **Beat Count** is provided in the
 dialog, as it lets you preview your changes without having to reimport the audio.
 
 Bar Beats
-^^^^^^^^^
+~~~~~~~~~
 
 The number of bars within a single beat in the audio track. This is only
 relevant for music that wishes to make use of interactive music functionality
@@ -273,7 +273,7 @@ Best practices
 --------------
 
 Use appropriate quality settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 While keeping pristine-quality audio sources is important if you're performing
 editing, using the same quality in the exported project is not necessary. For
@@ -299,7 +299,7 @@ sample rate and number of channels for your audio:
   very high-pitched). This is because most human voices never go past 11 kHz.
 
 Use real-time audio effects to reduce file size
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot has an :ref:`extensive bus system <doc_audio_buses>` with built-in effects.
 This saves SFX artists the need to add reverb to the sound effects,

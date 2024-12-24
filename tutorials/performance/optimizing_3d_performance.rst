@@ -15,7 +15,7 @@ take place in a small area, however things can quickly become problematic in
 larger levels.
 
 Occlusion culling
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Walking around a town for example, you may only be able to see a few buildings
 in the street you are in, as well as the sky and a few birds flying overhead. As
@@ -85,7 +85,7 @@ Visibility ranges are also a good way to set up *impostors* for distant geometry
 (see below).
 
 Billboards and imposters
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The simplest version of using transparency to deal with LOD is billboards. For
 example, you can use a single transparent quad to represent a tree at distance.
@@ -105,7 +105,7 @@ significantly. This can be complex to get working, but may be worth it depending
 on the type of project you are making.
 
 Use instancing (MultiMesh)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If several identical objects have to be drawn in the same place or nearby, try
 using :ref:`MultiMesh <class_MultiMesh>` instead. MultiMesh allows the drawing

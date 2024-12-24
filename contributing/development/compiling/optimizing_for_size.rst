@@ -271,7 +271,7 @@ Optimizing the distribution of your project
 -------------------------------------------
 
 Desktop
-^^^^^^^
+~~~~~~~
 
 .. note::
 
@@ -303,7 +303,7 @@ command:
     7z a -mx9 my_project.zip folder_containing_executable_and_pck
 
 Web
-^^^
+~~~
 
 Enabling gzip or Brotli compression for all file types from the web export
 (especially the ``.wasm`` and ``.pck``) can reduce the download size

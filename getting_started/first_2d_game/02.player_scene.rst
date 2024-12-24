@@ -11,7 +11,7 @@ creating a separate Player scene is that we can test it separately, even before
 we've created other parts of the game.
 
 Node structure
-~~~~~~~~~~~~~~
+--------------
 
 To begin, we need to choose a root node for the player object. As a general
 rule, a scene's root node should reflect the object's desired functionality -
@@ -60,7 +60,7 @@ or :kbd:`Cmd + S` on macOS.
 
 
 Sprite animation
-~~~~~~~~~~~~~~~~
+----------------
 
 Click on the ``Player`` node and add (:kbd:`Ctrl + A` on Windows/Linux or
 :kbd:`Cmd + A` on macOS) a child node :ref:`AnimatedSprite2D

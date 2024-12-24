@@ -102,7 +102,7 @@ and the :ref:`radiance size <class_Sky_property_radiance_size>` to get the
 desired balance between performance and visual fidelity.
 
 Render modes
-^^^^^^^^^^^^
+------------
 
 Subpasses allow you to do more expensive calculations at a lower resolution
 to speed up your shaders. For example the following code renders clouds at
@@ -137,14 +137,14 @@ a lower resolution than the rest of the sky:
 +--------------------------+-----------------------------------------------------------------------+
 
 Built-ins
-^^^^^^^^^
+---------
 
 Values marked as ``in`` are read-only. Values marked as ``out`` can optionally 
 be written to and will not necessarily contain sensible values. Samplers cannot 
 be written to so they are not marked.
 
 Global built-ins
-^^^^^^^^^^^^^^^^
+----------------
 
 Global built-ins are available everywhere, including in custom functions.
 
@@ -194,7 +194,7 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Sky built-ins
-^^^^^^^^^^^^^
+-------------
 
 +-------------------------------+-------------------------------------------------------------------------------------------------+
 | Built-in                      | Description                                                                                     |

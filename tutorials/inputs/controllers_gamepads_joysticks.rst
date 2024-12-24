@@ -39,7 +39,7 @@ Input actions are explained in detail on the :ref:`doc_inputevent` page.
     different code paths since these have to be handled separately.
 
 Which Input singleton method should I use?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are 3 ways to get input in an analog-aware way:
 
@@ -167,7 +167,7 @@ If you're used to handling keyboard and mouse input, you may be surprised by how
 controllers handle specific situations.
 
 Dead zone
-^^^^^^^^^
+~~~~~~~~~
 
 Unlike keyboards and mice, controllers offer axes with *analog* inputs. The
 upside of analog inputs is that they offer additional flexibility for actions.
@@ -195,7 +195,7 @@ specified as an optional 5th parameter. If not specified, it will calculate the
 average deadzone value from all of the actions in the vector.
 
 "Echo" events
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Unlike keyboard input, holding down a controller button such as a D-pad
 direction will **not** generate repeated input events at fixed intervals (also
@@ -209,7 +209,7 @@ at regular intervals. This can be accomplished
 with the help of a :ref:`class_Timer` node.
 
 Window focus
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 Unlike keyboard input, controller inputs can be seen by **all** windows on the
 operating system, including unfocused windows.
@@ -258,7 +258,7 @@ use ``Focus.event_is_action_pressed(event, action)`` where ``event`` is an
 InputEvent reference and ``action`` is the name of the input action.
 
 Power saving prevention
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Unlike keyboard and mouse input, controller inputs do **not** inhibit sleep and
 power saving measures (such as turning off the screen after a certain amount of
@@ -283,7 +283,7 @@ Troubleshooting
     on GitHub.
 
 My controller isn't recognized by Godot.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, check that your controller is recognized by other applications. You can
 use the `Gamepad Tester <https://gamepad-tester.com/>`__ website to confirm that
@@ -294,7 +294,7 @@ because Godot uses the XInput API, which is limited to supporting 4 controllers
 at once. Additional controllers above this limit are ignored by Godot.
 
 My controller has incorrectly mapped buttons or axes.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, if your controller provides some kind of firmware update utility,
 make sure to run it to get the latest fixes from the manufacturer. For instance,
@@ -337,10 +337,10 @@ additional controller mappings, you can add them by calling
 as early as possible in a script's ``_ready()`` function.
 
 My controller works on a given platform, but not on another platform.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Linux
-~~~~~
+^^^^^
 
 If you're using a self-compiled engine binary, make sure it was compiled with
 udev support. This is enabled by default, but it is possible to disable udev
@@ -353,7 +353,7 @@ regular polling must be used to check for controllers being connected or
 disconnected during gameplay (hotplugging).
 
 HTML5
-~~~~~
+^^^^^
 
 HTML5 controller support is often less reliable compared to "native" platforms.
 The quality of controller support tends to vary wildly across browsers. As a

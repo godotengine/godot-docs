@@ -260,7 +260,7 @@ the player around the screen in all directions.
             the name you see in the scene tree.
 
 Choosing animations
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Now that the player can move, we need to change which animation the
 AnimatedSprite2D is playing based on its direction. We have the "walk" animation,
@@ -341,7 +341,7 @@ When you're sure the movement is working correctly, add this line to
     Hide();
 
 Preparing for collisions
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 We want ``Player`` to detect when it's hit by an enemy, but we haven't made any
 enemies yet! That's OK, because we're going to use Godot's *signal*
