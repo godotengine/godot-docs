@@ -30,6 +30,7 @@ Here is a complete class example based on these guidelines:
 
     class_name StateMachine
     extends Node
+    uses Activatable
     ## Hierarchical State machine for the player.
     ##
     ## Initializes states and delegates engine callbacks ([method Node._physics_process],
@@ -629,6 +630,8 @@ code. As a summary table:
 +---------------+----------------+----------------------------------------------------+
 | Class names   | PascalCase     | ``class_name YAMLParser``                          |
 +---------------+----------------+----------------------------------------------------+
+| Trait names   | PascalCase     | ``trait_name Interactable``                        |
++---------------+----------------+----------------------------------------------------+
 | Node names    | PascalCase     | ``Camera3D``, ``Player``                           |
 +---------------+----------------+----------------------------------------------------+
 | Functions     | snake_case     | ``func load_level():``                             |
@@ -647,7 +650,7 @@ code. As a summary table:
 File names
 ~~~~~~~~~~
 
-Use snake_case for file names. For named classes, convert the PascalCase class
+Use snake_case for file names. For named classes and traits, convert the PascalCase class or trait
 name to snake_case::
 
     # This file should be saved as `weapon.gd`.
@@ -660,6 +663,12 @@ name to snake_case::
     class_name YAMLParser
     extends Object
 
+::
+    
+    # This file should be saved as `interactable.gdt`.
+    trait_name Interactable
+    extends Node
+
 This is consistent with how C++ files are named in Godot's source code. This
 also avoids case sensitivity issues that can crop up when exporting a project
 from Windows to other platforms.
@@ -667,13 +676,13 @@ from Windows to other platforms.
 Classes and nodes
 ~~~~~~~~~~~~~~~~~
 
-Use PascalCase for class and node names:
+Use PascalCase for class, trait, and node names:
 
 ::
 
     extends CharacterBody3D
 
-Also use PascalCase when loading a class into a constant or a variable:
+Also use PascalCase when loading a class or trait into a constant or a variable:
 
 ::
 
@@ -766,23 +775,24 @@ We suggest to organize GDScript code this way:
     01. @tool
     02. class_name
     03. extends
-    04. ## docstring
+    04. uses
+    05. ## docstring
 
-    05. signals
-    06. enums
-    07. constants
-    08. @export variables
-    09. public variables
-    10. private variables
-    11. @onready variables
+    06. signals
+    07. enums
+    08. constants
+    09. @export variables
+    10. public variables
+    11. private variables
+    12. @onready variables
 
-    12. optional built-in virtual _init method
-    13. optional built-in virtual _enter_tree() method
-    14. built-in virtual _ready method
-    15. remaining built-in virtual methods
-    16. public methods
-    17. private methods
-    18. subclasses
+    13. optional built-in virtual _init method
+    14. optional built-in virtual _enter_tree() method
+    15. built-in virtual _ready method
+    16. remaining built-in virtual methods
+    17. public methods
+    18. private methods
+    19. subclasses
 
 We optimized the order to make it easy to read the code from top to bottom, to
 help developers reading the code for the first time understand how it works, and
@@ -808,6 +818,8 @@ global type in your project using this feature. For more information, see
 :ref:`doc_gdscript`.
 
 Then, add the ``extends`` keyword if the class extends a built-in type.
+If the class uses any traits, add the ``uses`` keyword along with all of the trait
+names (or filepaths, if the traits are unnamed) of the traits it uses.
 
 Following that, you should have the class's optional
 :ref:`documentation comments <doc_gdscript_documentation_comments>`.
@@ -818,6 +830,7 @@ and how other developers should use it, for example.
 
     class_name MyNode
     extends Node
+    uses MyTrait
     ## A brief description of the class's role and functionality.
     ##
     ## The description of the script, what it can do,
