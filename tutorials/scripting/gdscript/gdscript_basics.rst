@@ -1535,49 +1535,30 @@ self
 
 ``self`` can be used to refer to the current instance and is often equivalent to directly referring to symbols available in
 the current script. However, ``self`` also allows you to access properties, methods, and other names that are defined dynamically
-(i.e. are expected to exist in subtypes of the current class, or are provided using :ref:`_set() <class_Object_private_method__set>` and :ref:`_get() <class_Object_private_method__get>`).
+(i.e. are expected to exist in subtypes of the current class, or are provided using :ref:`_set() <class_Object_private_method__set>`
+and/or :ref:`_get() <class_Object_private_method__get>`).
 
 ::
 
-    class_name Item extends Node
+    extends Node
 
-    # Returns the expected size an item will take up in player's inventory (or -1 if it cannot be collected).
-    func get_size() -> int:
-        var size = get(&"size")
+    func _ready():
+        # Compile time error, as `my_var` is not defined in the current class or its ancestors.
+        print(my_var)
+        # Checked at runtime, thus may work for dynamic properties or descendant classes.
+        print(self.my_var)
 
-        return size if size else -1
-
-    # When player touches an item, collect it if it is collectible (i.e. has a `collect` method).
-    func on_player_touch() -> void:
-        if has_method(&"collect"):
-            # collect() # Would be an error!
-            # self.collect() # An error, too! `self` only bypasses property checks.
-            call(&"collect")
-
-``size`` nor ``collect()`` are defined in the base ``Item`` class, but if they are defined at runtime, our code will
-react appropriately. For example::
-
-    class_name Potion extends Item
-
-    var size := 2
-
-    func collect() -> void:
-        print("Collected a potion!")
-
-If we call ``get_size`` on our ``Potion``, it will return ``2``, and if we (hypothetically) touch the potion with our
-character, we will see "Collected a potion!" in the logs.
+        # Compile time error, as `my_func()` is not defined in the current class or its ancestors.
+        my_func()
+        # Checked at runtime, thus may work for descendant classes.
+        self.my_func()
 
 .. warning::
 
     Beware that accessing members of child classes in the base class is often considered a bad practice because this
     makes the relationships between parts of your game's code harder to reason about. It is easy to forget to define
-    a variable that a base class expected, and more complex dependencies between classes cause the code to be
-    non-self-explanatory.
-
-    The above example isn't ideal too and is exaggerated for illustration purposes. In ``get_size``, instead of querying
-    for the ``size`` property, we could've instead made it return ``-1`` by default in our base class, and then in our
-    potion, we would've overridden it to return ``2``. Same for ``collect()`` - we could've defined it in our base class
-    but made it do nothing by default. Then, the potion subclass would've overridden it to do its own logic.
+    a variable that the base class expected or forget about an invariant that the base class assumed to be true when
+    implementing a function needed by the base class.
 
 if/else/elif
 ~~~~~~~~~~~~
