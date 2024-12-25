@@ -425,7 +425,7 @@ Go to the root of the source code, and execute the following build command:
 
 ::
 
-    PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH"
+    PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH" \
     scons arch=rv64 use_llvm=yes linker=mold lto=none target=editor \
         ccflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu" \
         linkflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu"
