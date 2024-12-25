@@ -1555,10 +1555,9 @@ and/or :ref:`_get() <class_Object_private_method__get>`).
 
 .. warning::
 
-    Beware that accessing members of child classes in the base class is often considered a bad practice because this
-    makes the relationships between parts of your game's code harder to reason about. It is easy to forget to define
-    a variable that the base class expected or forget about an invariant that the base class assumed to be true when
-    implementing a function needed by the base class.
+    Beware that accessing members of child classes in the base class is often considered a bad practice,
+    because this blurs the area of responsibility of any given piece of code, making the overall relationship
+    between parts of your game harder to reason about.
 
 if/else/elif
 ~~~~~~~~~~~~
