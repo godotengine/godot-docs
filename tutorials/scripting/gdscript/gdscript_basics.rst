@@ -1557,7 +1557,8 @@ and/or :ref:`_get() <class_Object_private_method__get>`).
 
     Beware that accessing members of child classes in the base class is often considered a bad practice,
     because this blurs the area of responsibility of any given piece of code, making the overall relationship
-    between parts of your game harder to reason about.
+    between parts of your game harder to reason about. Besides that, one can simply forget that the parent
+    class had some expectations about it's descendants.
 
 if/else/elif
 ~~~~~~~~~~~~
