@@ -6,7 +6,7 @@ Using Lightmap global illumination
 Baked lightmaps are a workflow for adding indirect (or fully baked)
 lighting to a scene. Unlike the :ref:`VoxelGI <doc_using_voxel_gi>` and
 :ref:`SDFGI <doc_using_sdfgi>` approaches, baked lightmaps work fine on low-end PCs
-and mobile devices, as they consume almost no resources at run-time. Also unlike
+and mobile devices, as they consume almost no resources at runtime. Also unlike
 VoxelGI and SDFGI, baked lightmaps can optionally be used to store direct
 lighting, which provides even further performance gains.
 
@@ -60,9 +60,6 @@ Visual comparison
    but lower quality visuals. Notice the blurrier sun shadow in the top-right
    corner.
 
-Visual comparison
------------------
-
 Here are some comparisons of how LightmapGI vs. VoxelGI look. Notice that
 lightmaps are more accurate, but also suffer from the fact
 that lighting is on an unwrapped texture, so transitions and resolution may not
@@ -77,8 +74,21 @@ large open worlds without any need for baking.
 Setting up
 ----------
 
+.. warning::
+
+    Baking lightmaps in the Android and web editors is not supported due to
+    graphics API limitations on those devices. On Android and web platforms,
+    only *rendering* lightmaps that were baked on a desktop PC is supported.
+
+.. note::
+
+    The LightmapGI node only bakes nodes that are on the same level as the
+    LightmapGI node (siblings), or nodes that are children of the
+    LightmapGI node. This allows you to use several LightmapGI nodes to bake
+    different parts of the scene, independently from each other.
+
 First of all, before the lightmapper can do anything, the objects to be baked need
-an UV2 layer and a texture size. An UV2 layer is a set of secondary texture coordinates
+a UV2 layer and a texture size. A UV2 layer is a set of secondary texture coordinates
 that ensures any face in the object has its own place in the UV map. Faces must
 not share pixels in the texture.
 
@@ -138,7 +148,7 @@ Godot has an option to unwrap meshes and visualize the UV channels. After
 selecting a MeshInstance3D node, it can be found in the **Mesh** menu at the top
 of the 3D editor viewport:
 
-.. image:: img/lightmap_gi_mesh_menu.png
+.. image:: img/lightmap_gi_mesh_menu.webp
 
 This will generate a second set of UV2 coordinates which can be used for baking.
 It will also set the texture size automatically.
@@ -154,12 +164,12 @@ it unwrapped before import can be faster.
 
 Simply do an unwrap on the second UV2 layer.
 
-.. image:: img/lightmap_gi_blender.png
+.. image:: img/lightmap_gi_blender.webp
 
 Then import the 3D scene normally. Remember you will need to set the texture
 size on the mesh after import.
 
-.. image:: img/lightmap_gi_lmsize.png
+.. image:: img/lightmap_gi_lmsize.webp
 
 If you use external meshes on import, the size will be kept. Be wary that most
 unwrappers in 3D modeling software are not quality-oriented, as they are meant
@@ -192,13 +202,32 @@ lightmap texture, which varies depending on the mesh's size properties and the
 **UV2 Padding** value. **Lightmap Size Hint** should not be manually changed, as
 any modifications will be lost when the scene is reloaded.
 
+Generating UV2 for CSG nodes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Since Godot 4.4, you can
+:ref:`convert a CSG node and its children to a MeshInstance3D <doc_csg_tools_converting_to_mesh_instance_3d>`.
+This can be used to bake lightmaps on a CSG node by following these steps:
+
+- Select the root CSG node and choose **CSG > Bake Mesh Instance** at the top of the 3D editor viewport.
+- Hide the root CSG node that was just baked (it is not hidden automatically).
+- Select the newly created MeshInstance3D node and choose **Mesh > Unwrap UV2 for Lightmap/AO**.
+- Bake lightmaps.
+
+.. tip::
+
+    Remember to keep the original CSG node in the scene tree, so that you can
+    perform changes to the geometry later if needed. To make changes to the
+    geometry, remove the MeshInstance3D node and make the root CSG node visible
+    again.
+
 Checking UV2
 ^^^^^^^^^^^^
 
 In the **Mesh** menu mentioned before, the UV2 texture coordinates can be visualized.
 If something is failing, double-check that the meshes have these UV2 coordinates:
 
-.. image:: img/lightmap_gi_uvchannel.png
+.. image:: img/lightmap_gi_uvchannel.webp
 
 Setting up the scene
 --------------------
@@ -207,7 +236,7 @@ Before anything is done, a **LightmapGI** node needs to be added to a scene.
 This will enable light baking on all nodes (and sub-nodes) in that scene, even
 on instanced scenes.
 
-.. image:: img/lightmap_gi_scene.png
+.. image:: img/lightmap_gi_scene.webp
 
 A sub-scene can be instanced several times, as this is supported by the baker.
 Each instance will be assigned a lightmap of its own. To avoid issues with
@@ -221,7 +250,7 @@ For a **MeshInstance3D** node to take part in the baking process, it needs to ha
 its bake mode set to **Static**. Meshes that have their bake mode set to **Disabled**
 or **Dynamic** will be ignored by the lightmapper.
 
-.. image:: img/lightmap_gi_use.png
+.. image:: img/lightmap_gi_use.webp
 
 When auto-generating lightmaps on scene import, this is enabled automatically.
 
@@ -235,7 +264,7 @@ that light will be baked.
 Lights can be disabled (no bake) or be fully baked (direct and indirect). This
 can be controlled from the **Bake Mode** menu in lights:
 
-.. image:: img/lightmap_gi_bake_mode.png
+.. image:: img/lightmap_gi_bake_mode.webp
 
 The modes are:
 
@@ -298,7 +327,7 @@ Baking
 To begin the bake process, click the **Bake Lightmaps** button at the top of the
 3D editor viewport when selecting the LightmapGI node:
 
-.. image:: img/lightmap_gi_bake.png
+.. image:: img/lightmap_gi_bake.webp
 
 This can take from seconds to minutes (or hours) depending on scene size, bake
 method and quality selected.
@@ -400,7 +429,7 @@ but doing so will increase bake times significantly.
 
 To combat noise without increasing bake times too much, a denoiser can be used.
 A denoiser is an algorithm that runs on the final baked lightmap, detects patterns of
-noise and softens them while attempting to best preseve detail.
+noise and softens them while attempting to best preserve detail.
 Godot offers two denoising algorithms:
 
 JNLM (Non-Local Means with Joint Filtering)

@@ -20,8 +20,16 @@ what the object *is*. Click the "Other Node" button and add an :ref:`Area2D
 
 .. image:: img/add_node.webp
 
-Godot will display a warning icon next to the node in the scene tree. You can
-ignore it for now. We will address it later.
+When you add the ``Area2D`` node, Godot will display the following **warning icon** 
+next to it in the scene tree:
+
+.. image:: img/no_shape_warning.webp
+
+This warning tells us that the ``Area2D`` node requires a shape to detect collisions or overlaps. 
+We can **ignore the warning temporarily** because we will first set up the player's visuals 
+(using an animated sprite). Once the visuals are ready, we will add a collision shape as a child 
+node. This will allow us to accurately size and position the shape based on the sprite’s appearance.
+
 
 With ``Area2D`` we can detect objects that overlap or run into the player.
 Change the node's name to ``Player`` by double-clicking on it. Now that we've
@@ -30,8 +38,9 @@ functionality.
 
 Before we add any children to the ``Player`` node, we want to make sure we don't
 accidentally move or resize them by clicking on them. Select the node and click
-the icon to the right of the lock. Its tooltip says "Make selected node's
-children not selectable."
+the icon to the right of the lock. Its tooltip says "Groups the selected node
+with its children. This causes the parent to be selected when any child
+node is clicked in 2D and 3D view."
 
 .. image:: img/lock_children.webp
 
@@ -60,17 +69,24 @@ appearance and animations for our player. Notice that there is a warning symbol
 next to the node. An ``AnimatedSprite2D`` requires a :ref:`SpriteFrames
 <class_SpriteFrames>` resource, which is a list of the animations it can
 display. To create one, find the ``Sprite Frames`` property under the ``Animation`` tab in the Inspector and click
-"[empty]" -> "New SpriteFrames". Click again to open the "SpriteFrames" panel:
+"[empty]" -> "New SpriteFrames":
+
+.. image:: img/new_spriteframes.webp
+
+Click on the ``SpriteFrames`` you just created to open the "SpriteFrames" panel:
 
 .. image:: img/spriteframes_panel.webp
 
+On the left is a list of animations. Click the ``default`` one and rename it to
+``walk``. Then click the **Add Animation** button to create a second animation
+named ``up``.
 
-On the left is a list of animations. Click the "default" one and rename it to
-"walk". Then click the "Add Animation" button to create a second animation named
-"up". Find the player images in the "FileSystem" tab - they're in the ``art``
-folder you unzipped earlier. Drag the two images for each animation, named
-``playerGrey_up[1/2]`` and ``playerGrey_walk[1/2]``, into the "Animation Frames"
-side of the panel for the corresponding animation:
+Find the player images in the FileSystem dock - they're in the ``art`` folder
+you unzipped earlier. Drag the two images for each animation, into the
+**Animation Frames** side of the panel for the corresponding animation:
+
+- ``playerGrey_walk1`` and ``playerGrey_walk2`` for the ``walk`` animation
+- ``playerGrey_up1`` and ``playerGrey_up2`` for the ``up`` animation
 
 .. image:: img/spriteframes_panel2.webp
 
@@ -93,6 +109,9 @@ sprite:
 When you're finished, your ``Player`` scene should look like this:
 
 .. image:: img/player_scene_nodes.webp
+
+Once this is done, the warning on the ``Area2D`` node will disappear, as it now has 
+a shape assigned and can interact with other objects.
 
 Make sure to save the scene again after these changes.
 

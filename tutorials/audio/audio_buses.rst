@@ -88,10 +88,20 @@ Finally, toggle the **Playing** property to **On** and sound will flow.
 Adding effects
 --------------
 
+.. warning::
+
+    This feature is not supported on the web platform if the AudioStreamPlayer's
+    playback mode is set to **Sample**, which is the default. It will only work if the
+    playback mode is set to **Stream**, at the cost of increased latency if threads
+    are not enabled.
+
+    See :ref:`Audio playback in the Exporting for the Web documentation <doc_exporting_for_web_audio_playback>`
+    for details.
+
 Audio buses can contain all sorts of effects. These effects modify the sound in
 one way or another and are applied in order.
 
-.. image:: img/audio_buses4.png
+.. image:: img/audio_buses4.webp
 
 For information on what each effect does, see :ref:`doc_audio_effects`.
 

@@ -37,12 +37,12 @@ density map linked at the bottom of this page:
 
 .. figure:: img/variable_rate_shading_textured_enabled.webp
    :align: center
-   :alt: Variable rate shading enabled in textured scene (lower quality but higher performance)
+   :alt: Variable rate shading enabled in textured scene (lower quality, but higher performance)
 
-   Variable rate shading enabled in textured scene (lower quality but higher performance)
+   Variable rate shading enabled in textured scene (lower quality, but higher performance)
 
 When used in scenes with low-frequency detail (such as scenes with a
-stylized/low-poly aesthetic), it's possible to achieve similar performance gains
+stylized/low-poly aesthetic), it's possible to achieve similar performance gains,
 but with less reduction in visual quality:
 
 .. figure:: img/variable_rate_shading_untextured_disabled.webp
@@ -53,9 +53,9 @@ but with less reduction in visual quality:
 
 .. figure:: img/variable_rate_shading_untextured_enabled.webp
    :align: center
-   :alt: Variable rate shading enabled in untextured scene (lower quality but higher performance)
+   :alt: Variable rate shading enabled in untextured scene (lower quality, but higher performance)
 
-   Variable rate shading enabled in untextured scene (lower quality but higher performance)
+   Variable rate shading enabled in untextured scene (lower quality, but higher performance)
 
 Hardware support
 ----------------
@@ -83,11 +83,12 @@ Using variable rate shading in Godot
 
 .. note::
 
-    Both Forward Plus and Forward Mobile rendering methods support variable rate
+    Both Forward+ and Mobile renderers support variable rate
     shading. VRS can be used in both pancake (non-XR) and XR display modes.
 
-    The Compatibility rendering method does **not** support variable rate
-    shading.
+    The Compatibility renderer does **not** support variable rate shading.
+    For XR, you can use :ref:`foveation level <doc_openxr_settings_foveation_level>`
+    as an alternative.
 
 In the advanced Project Settings, the **Rendering > VRS** section offers settings
 to control variable rate shading on the root viewport:

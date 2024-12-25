@@ -18,8 +18,8 @@ its performance requirements at the cost of quality.
 
 .. important::
 
-    SDFGI is only supported when using the Forward Plus rendering backend,
-    not the Forward Mobile or Compatibility backends.
+    SDFGI is only supported when using the Forward+ renderer, not the Mobile or
+    Compatibility renderers.
 
 .. seealso::
 

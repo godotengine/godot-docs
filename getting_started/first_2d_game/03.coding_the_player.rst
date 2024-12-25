@@ -48,9 +48,9 @@ Start by declaring the member variables this object will need:
 Using the ``export`` keyword on the first variable ``speed`` allows us to set
 its value in the Inspector. This can be handy for values that you want to be
 able to adjust just like a node's built-in properties. Click on the ``Player``
-node and you'll see the property now appears in the "Script Variables" section
-of the Inspector. Remember, if you change the value here, it will override the
-value written in the script.
+node and you'll see the property now appears in the Inspector in a new section
+with the name of the script. Remember, if you change the value here, it will
+override the value written in the script.
 
 .. warning::
 
@@ -247,7 +247,7 @@ the ``_process`` function (make sure it's not indented under the `else`):
         Using this value ensures that your movement will remain consistent even
         if the frame rate changes.
 
-Click "Play Scene" (:kbd:`F6`, :kbd:`Cmd + R` on macOS) and confirm you can move
+Click "Run Current Scene" (:kbd:`F6`, :kbd:`Cmd + R` on macOS) and confirm you can move
 the player around the screen in all directions.
 
 .. warning:: If you get an error in the "Debugger" panel that says
@@ -275,7 +275,7 @@ movement. Let's place this code at the end of the ``_process()`` function:
         if velocity.x != 0:
             $AnimatedSprite2D.animation = "walk"
             $AnimatedSprite2D.flip_v = false
-            # See the note below about boolean assignment.
+            # See the note below about the following boolean assignment.
             $AnimatedSprite2D.flip_h = velocity.x < 0
         elif velocity.y != 0:
             $AnimatedSprite2D.animation = "up"
@@ -287,7 +287,7 @@ movement. Let's place this code at the end of the ``_process()`` function:
         {
             animatedSprite2D.Animation = "walk";
             animatedSprite2D.FlipV = false;
-            // See the note below about boolean assignment.
+            // See the note below about the following boolean assignment.
             animatedSprite2D.FlipH = velocity.X < 0;
         }
         else if (velocity.Y != 0)
@@ -407,6 +407,7 @@ Next, add this code to the function:
 
  .. code-tab:: csharp
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnBodyEntered(Node2D body)
     {
         Hide(); // Player disappears after being hit.

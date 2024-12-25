@@ -61,7 +61,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **compress** = ``true``
+:ref:`bool<class_bool>` **compress** = ``true`` :ref:`🔗<class_ResourceImporterBMFont_property_compress>`
 
 If ``true``, uses lossless compression for the resulting font.
 
@@ -73,7 +73,7 @@ If ``true``, uses lossless compression for the resulting font.
 
 .. rst-class:: classref-property
 
-:ref:`Array<class_Array>` **fallbacks** = ``[]``
+:ref:`Array<class_Array>` **fallbacks** = ``[]`` :ref:`🔗<class_ResourceImporterBMFont_property_fallbacks>`
 
 List of font fallbacks to use if a glyph isn't found in this bitmap font. Fonts at the beginning of the array are attempted first.
 
@@ -85,7 +85,7 @@ List of font fallbacks to use if a glyph isn't found in this bitmap font. Fonts 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **scaling_mode** = ``2``
+:ref:`int<class_int>` **scaling_mode** = ``2`` :ref:`🔗<class_ResourceImporterBMFont_property_scaling_mode>`
 
 Font scaling mode.
 
@@ -96,3 +96,4 @@ Font scaling mode.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -15,7 +15,7 @@ On this page, you'll learn:
 
 .. seealso::
 
-    If you only need meshes to become less detailed over distance but don't have
+    If you only need meshes to become less detailed over distance, but don't have
     manually authored LOD meshes, consider relying on automatic
     :ref:`doc_mesh_lod` instead.
 
@@ -111,7 +111,7 @@ choose from:
 - **Disabled:** Uses hysteresis to switch between LOD levels instantly. This
   prevents situations where LOD levels are switched back and forth quickly when
   the player moves forward and then backward at the LOD transition point. The
-  hystereis distance is determined by **Visibility Range > Begin Margin** and
+  hysteresis distance is determined by **Visibility Range > Begin Margin** and
   **Visibility Range > End Margin**. This mode provides the best performance as
   it doesn't force rendering to become transparent during the fade transition.
 - **Self:** Uses alpha blending to smoothly fade between LOD levels. The node

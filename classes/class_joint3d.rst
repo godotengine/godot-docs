@@ -21,14 +21,14 @@ Abstract base class for all 3D physics joints.
 Description
 -----------
 
-Abstract base class for all joints in 3D physics. 3D joints bind together two physics bodies and apply a constraint.
+Abstract base class for all joints in 3D physics. 3D joints bind together two physics bodies (:ref:`node_a<class_Joint3D_property_node_a>` and :ref:`node_b<class_Joint3D_property_node_b>`) and apply a constraint. If only one body is defined, it is attached to a fixed :ref:`StaticBody3D<class_StaticBody3D>` without collision shapes.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`__
+- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/2752>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -56,9 +56,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------+------------------------------------------------------------------+
-   | :ref:`RID<class_RID>` | :ref:`get_rid<class_Joint3D_method_get_rid>` **(** **)** |const| |
-   +-----------------------+------------------------------------------------------------------+
+   +-----------------------+------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`get_rid<class_Joint3D_method_get_rid>`\ (\ ) |const| |
+   +-----------------------+------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -73,14 +73,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **exclude_nodes_from_collision** = ``true``
+:ref:`bool<class_bool>` **exclude_nodes_from_collision** = ``true`` :ref:`🔗<class_Joint3D_property_exclude_nodes_from_collision>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_exclude_nodes_from_collision** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_exclude_nodes_from_collision** **(** **)**
+- |void| **set_exclude_nodes_from_collision**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_exclude_nodes_from_collision**\ (\ )
 
-If ``true``, the two bodies of the nodes are not able to collide with each other.
+If ``true``, the two bodies bound together do not collide with each other.
 
 .. rst-class:: classref-item-separator
 
@@ -90,14 +90,16 @@ If ``true``, the two bodies of the nodes are not able to collide with each other
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **node_a** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **node_a** = ``NodePath("")`` :ref:`🔗<class_Joint3D_property_node_a>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_node_a** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_node_a** **(** **)**
+- |void| **set_node_a**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_node_a**\ (\ )
 
-The node attached to the first side (A) of the joint.
+Path to the first node (A) attached to the joint. The node must inherit :ref:`PhysicsBody3D<class_PhysicsBody3D>`.
+
+If left empty and :ref:`node_b<class_Joint3D_property_node_b>` is set, the body is attached to a fixed :ref:`StaticBody3D<class_StaticBody3D>` without collision shapes.
 
 .. rst-class:: classref-item-separator
 
@@ -107,14 +109,16 @@ The node attached to the first side (A) of the joint.
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **node_b** = ``NodePath("")``
+:ref:`NodePath<class_NodePath>` **node_b** = ``NodePath("")`` :ref:`🔗<class_Joint3D_property_node_b>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_node_b** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_node_b** **(** **)**
+- |void| **set_node_b**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_node_b**\ (\ )
 
-The node attached to the second side (B) of the joint.
+Path to the second node (B) attached to the joint. The node must inherit :ref:`PhysicsBody3D<class_PhysicsBody3D>`.
+
+If left empty and :ref:`node_a<class_Joint3D_property_node_a>` is set, the body is attached to a fixed :ref:`StaticBody3D<class_StaticBody3D>` without collision shapes.
 
 .. rst-class:: classref-item-separator
 
@@ -124,12 +128,12 @@ The node attached to the second side (B) of the joint.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **solver_priority** = ``1``
+:ref:`int<class_int>` **solver_priority** = ``1`` :ref:`🔗<class_Joint3D_property_solver_priority>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_solver_priority** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_solver_priority** **(** **)**
+- |void| **set_solver_priority**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_solver_priority**\ (\ )
 
 The priority used to define which solver is executed first for multiple joints. The lower the value, the higher the priority.
 
@@ -146,9 +150,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+:ref:`RID<class_RID>` **get_rid**\ (\ ) |const| :ref:`🔗<class_Joint3D_method_get_rid>`
 
-Returns the joint's :ref:`RID<class_RID>`.
+Returns the joint's internal :ref:`RID<class_RID>` from the :ref:`PhysicsServer3D<class_PhysicsServer3D>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -157,3 +161,4 @@ Returns the joint's :ref:`RID<class_RID>`.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

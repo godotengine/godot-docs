@@ -12,7 +12,7 @@ HBoxContainer
 
 **Inherits:** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`EditorResourcePicker<class_EditorResourcePicker>`
+**Inherited By:** :ref:`EditorResourcePicker<class_EditorResourcePicker>`, :ref:`EditorToaster<class_EditorToaster>`, :ref:`OpenXRInteractionProfileEditorBase<class_OpenXRInteractionProfileEditorBase>`
 
 A container that arranges its child controls horizontally.
 
@@ -37,3 +37,4 @@ Tutorials
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

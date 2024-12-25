@@ -65,12 +65,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **cone** = ``false``
+:ref:`bool<class_bool>` **cone** = ``false`` :ref:`🔗<class_CSGCylinder3D_property_cone>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_cone** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_cone** **(** **)**
+- |void| **set_cone**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_cone**\ (\ )
 
 If ``true`` a cone is created, the :ref:`radius<class_CSGCylinder3D_property_radius>` will only apply to one side.
 
@@ -82,12 +82,12 @@ If ``true`` a cone is created, the :ref:`radius<class_CSGCylinder3D_property_rad
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **height** = ``2.0``
+:ref:`float<class_float>` **height** = ``2.0`` :ref:`🔗<class_CSGCylinder3D_property_height>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_height** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_height** **(** **)**
+- |void| **set_height**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_height**\ (\ )
 
 The height of the cylinder.
 
@@ -99,12 +99,12 @@ The height of the cylinder.
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_CSGCylinder3D_property_material>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_material** **(** :ref:`Material<class_Material>` value **)**
-- :ref:`Material<class_Material>` **get_material** **(** **)**
+- |void| **set_material**\ (\ value\: :ref:`Material<class_Material>`\ )
+- :ref:`Material<class_Material>` **get_material**\ (\ )
 
 The material used to render the cylinder.
 
@@ -116,12 +116,12 @@ The material used to render the cylinder.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``0.5``
+:ref:`float<class_float>` **radius** = ``0.5`` :ref:`🔗<class_CSGCylinder3D_property_radius>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_radius** **(** **)**
+- |void| **set_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_radius**\ (\ )
 
 The radius of the cylinder.
 
@@ -133,12 +133,12 @@ The radius of the cylinder.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **sides** = ``8``
+:ref:`int<class_int>` **sides** = ``8`` :ref:`🔗<class_CSGCylinder3D_property_sides>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_sides** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_sides** **(** **)**
+- |void| **set_sides**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_sides**\ (\ )
 
 The number of sides of the cylinder, the higher this number the more detail there will be in the cylinder.
 
@@ -150,12 +150,12 @@ The number of sides of the cylinder, the higher this number the more detail ther
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **smooth_faces** = ``true``
+:ref:`bool<class_bool>` **smooth_faces** = ``true`` :ref:`🔗<class_CSGCylinder3D_property_smooth_faces>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_smooth_faces** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_smooth_faces** **(** **)**
+- |void| **set_smooth_faces**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_smooth_faces**\ (\ )
 
 If ``true`` the normals of the cylinder are set to give a smooth effect making the cylinder seem rounded. If ``false`` the cylinder will have a flat shaded look.
 
@@ -166,3 +166,4 @@ If ``true`` the normals of the cylinder are set to give a smooth effect making t
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

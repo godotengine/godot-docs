@@ -100,31 +100,31 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_voice_cutoff_hz<class_AudioEffectChorus_method_get_voice_cutoff_hz>` **(** :ref:`int<class_int>` voice_idx **)** |const|                              |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_voice_delay_ms<class_AudioEffectChorus_method_get_voice_delay_ms>` **(** :ref:`int<class_int>` voice_idx **)** |const|                                |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_voice_depth_ms<class_AudioEffectChorus_method_get_voice_depth_ms>` **(** :ref:`int<class_int>` voice_idx **)** |const|                                |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_voice_level_db<class_AudioEffectChorus_method_get_voice_level_db>` **(** :ref:`int<class_int>` voice_idx **)** |const|                                |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_voice_pan<class_AudioEffectChorus_method_get_voice_pan>` **(** :ref:`int<class_int>` voice_idx **)** |const|                                          |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_voice_rate_hz<class_AudioEffectChorus_method_get_voice_rate_hz>` **(** :ref:`int<class_int>` voice_idx **)** |const|                                  |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_voice_cutoff_hz<class_AudioEffectChorus_method_set_voice_cutoff_hz>` **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` cutoff_hz **)** |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_voice_delay_ms<class_AudioEffectChorus_method_set_voice_delay_ms>` **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` delay_ms **)**    |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_voice_depth_ms<class_AudioEffectChorus_method_set_voice_depth_ms>` **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` depth_ms **)**    |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_voice_level_db<class_AudioEffectChorus_method_set_voice_level_db>` **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` level_db **)**    |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_voice_pan<class_AudioEffectChorus_method_set_voice_pan>` **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` pan **)**                   |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_voice_rate_hz<class_AudioEffectChorus_method_set_voice_rate_hz>` **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` rate_hz **)**       |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_voice_cutoff_hz<class_AudioEffectChorus_method_get_voice_cutoff_hz>`\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|                                |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_voice_delay_ms<class_AudioEffectChorus_method_get_voice_delay_ms>`\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|                                  |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_voice_depth_ms<class_AudioEffectChorus_method_get_voice_depth_ms>`\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|                                  |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_voice_level_db<class_AudioEffectChorus_method_get_voice_level_db>`\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|                                  |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_voice_pan<class_AudioEffectChorus_method_get_voice_pan>`\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|                                            |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_voice_rate_hz<class_AudioEffectChorus_method_get_voice_rate_hz>`\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|                                    |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_voice_cutoff_hz<class_AudioEffectChorus_method_set_voice_cutoff_hz>`\ (\ voice_idx\: :ref:`int<class_int>`, cutoff_hz\: :ref:`float<class_float>`\ ) |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_voice_delay_ms<class_AudioEffectChorus_method_set_voice_delay_ms>`\ (\ voice_idx\: :ref:`int<class_int>`, delay_ms\: :ref:`float<class_float>`\ )    |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_voice_depth_ms<class_AudioEffectChorus_method_set_voice_depth_ms>`\ (\ voice_idx\: :ref:`int<class_int>`, depth_ms\: :ref:`float<class_float>`\ )    |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_voice_level_db<class_AudioEffectChorus_method_set_voice_level_db>`\ (\ voice_idx\: :ref:`int<class_int>`, level_db\: :ref:`float<class_float>`\ )    |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_voice_pan<class_AudioEffectChorus_method_set_voice_pan>`\ (\ voice_idx\: :ref:`int<class_int>`, pan\: :ref:`float<class_float>`\ )                   |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_voice_rate_hz<class_AudioEffectChorus_method_set_voice_rate_hz>`\ (\ voice_idx\: :ref:`int<class_int>`, rate_hz\: :ref:`float<class_float>`\ )       |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -139,12 +139,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **dry** = ``1.0``
+:ref:`float<class_float>` **dry** = ``1.0`` :ref:`🔗<class_AudioEffectChorus_property_dry>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_dry** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_dry** **(** **)**
+- |void| **set_dry**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_dry**\ (\ )
 
 The effect's raw signal.
 
@@ -156,12 +156,12 @@ The effect's raw signal.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/1/cutoff_hz** = ``8000.0``
+:ref:`float<class_float>` **voice/1/cutoff_hz** = ``8000.0`` :ref:`🔗<class_AudioEffectChorus_property_voice/1/cutoff_hz>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` cutoff_hz **)**
-- :ref:`float<class_float>` **get_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_cutoff_hz**\ (\ voice_idx\: :ref:`int<class_int>`, cutoff_hz\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_cutoff_hz**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's cutoff frequency.
 
@@ -173,12 +173,12 @@ The voice's cutoff frequency.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/1/delay_ms** = ``15.0``
+:ref:`float<class_float>` **voice/1/delay_ms** = ``15.0`` :ref:`🔗<class_AudioEffectChorus_property_voice/1/delay_ms>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` delay_ms **)**
-- :ref:`float<class_float>` **get_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_delay_ms**\ (\ voice_idx\: :ref:`int<class_int>`, delay_ms\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_delay_ms**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's signal delay.
 
@@ -190,12 +190,12 @@ The voice's signal delay.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/1/depth_ms** = ``2.0``
+:ref:`float<class_float>` **voice/1/depth_ms** = ``2.0`` :ref:`🔗<class_AudioEffectChorus_property_voice/1/depth_ms>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` depth_ms **)**
-- :ref:`float<class_float>` **get_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_depth_ms**\ (\ voice_idx\: :ref:`int<class_int>`, depth_ms\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_depth_ms**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice filter's depth.
 
@@ -207,12 +207,12 @@ The voice filter's depth.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/1/level_db** = ``0.0``
+:ref:`float<class_float>` **voice/1/level_db** = ``0.0`` :ref:`🔗<class_AudioEffectChorus_property_voice/1/level_db>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_level_db** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` level_db **)**
-- :ref:`float<class_float>` **get_voice_level_db** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_level_db**\ (\ voice_idx\: :ref:`int<class_int>`, level_db\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_level_db**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's volume.
 
@@ -224,12 +224,12 @@ The voice's volume.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/1/pan** = ``-0.5``
+:ref:`float<class_float>` **voice/1/pan** = ``-0.5`` :ref:`🔗<class_AudioEffectChorus_property_voice/1/pan>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_pan** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` pan **)**
-- :ref:`float<class_float>` **get_voice_pan** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_pan**\ (\ voice_idx\: :ref:`int<class_int>`, pan\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_pan**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's pan level.
 
@@ -241,12 +241,12 @@ The voice's pan level.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/1/rate_hz** = ``0.8``
+:ref:`float<class_float>` **voice/1/rate_hz** = ``0.8`` :ref:`🔗<class_AudioEffectChorus_property_voice/1/rate_hz>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` rate_hz **)**
-- :ref:`float<class_float>` **get_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_rate_hz**\ (\ voice_idx\: :ref:`int<class_int>`, rate_hz\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_rate_hz**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's filter rate.
 
@@ -258,12 +258,12 @@ The voice's filter rate.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/2/cutoff_hz** = ``8000.0``
+:ref:`float<class_float>` **voice/2/cutoff_hz** = ``8000.0`` :ref:`🔗<class_AudioEffectChorus_property_voice/2/cutoff_hz>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` cutoff_hz **)**
-- :ref:`float<class_float>` **get_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_cutoff_hz**\ (\ voice_idx\: :ref:`int<class_int>`, cutoff_hz\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_cutoff_hz**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's cutoff frequency.
 
@@ -275,12 +275,12 @@ The voice's cutoff frequency.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/2/delay_ms** = ``20.0``
+:ref:`float<class_float>` **voice/2/delay_ms** = ``20.0`` :ref:`🔗<class_AudioEffectChorus_property_voice/2/delay_ms>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` delay_ms **)**
-- :ref:`float<class_float>` **get_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_delay_ms**\ (\ voice_idx\: :ref:`int<class_int>`, delay_ms\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_delay_ms**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's signal delay.
 
@@ -292,12 +292,12 @@ The voice's signal delay.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/2/depth_ms** = ``3.0``
+:ref:`float<class_float>` **voice/2/depth_ms** = ``3.0`` :ref:`🔗<class_AudioEffectChorus_property_voice/2/depth_ms>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` depth_ms **)**
-- :ref:`float<class_float>` **get_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_depth_ms**\ (\ voice_idx\: :ref:`int<class_int>`, depth_ms\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_depth_ms**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice filter's depth.
 
@@ -309,12 +309,12 @@ The voice filter's depth.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/2/level_db** = ``0.0``
+:ref:`float<class_float>` **voice/2/level_db** = ``0.0`` :ref:`🔗<class_AudioEffectChorus_property_voice/2/level_db>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_level_db** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` level_db **)**
-- :ref:`float<class_float>` **get_voice_level_db** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_level_db**\ (\ voice_idx\: :ref:`int<class_int>`, level_db\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_level_db**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's volume.
 
@@ -326,12 +326,12 @@ The voice's volume.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/2/pan** = ``0.5``
+:ref:`float<class_float>` **voice/2/pan** = ``0.5`` :ref:`🔗<class_AudioEffectChorus_property_voice/2/pan>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_pan** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` pan **)**
-- :ref:`float<class_float>` **get_voice_pan** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_pan**\ (\ voice_idx\: :ref:`int<class_int>`, pan\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_pan**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's pan level.
 
@@ -343,12 +343,12 @@ The voice's pan level.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/2/rate_hz** = ``1.2``
+:ref:`float<class_float>` **voice/2/rate_hz** = ``1.2`` :ref:`🔗<class_AudioEffectChorus_property_voice/2/rate_hz>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` rate_hz **)**
-- :ref:`float<class_float>` **get_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_rate_hz**\ (\ voice_idx\: :ref:`int<class_int>`, rate_hz\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_rate_hz**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's filter rate.
 
@@ -360,12 +360,12 @@ The voice's filter rate.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/3/cutoff_hz**
+:ref:`float<class_float>` **voice/3/cutoff_hz** :ref:`🔗<class_AudioEffectChorus_property_voice/3/cutoff_hz>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` cutoff_hz **)**
-- :ref:`float<class_float>` **get_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_cutoff_hz**\ (\ voice_idx\: :ref:`int<class_int>`, cutoff_hz\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_cutoff_hz**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's cutoff frequency.
 
@@ -377,12 +377,12 @@ The voice's cutoff frequency.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/3/delay_ms**
+:ref:`float<class_float>` **voice/3/delay_ms** :ref:`🔗<class_AudioEffectChorus_property_voice/3/delay_ms>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` delay_ms **)**
-- :ref:`float<class_float>` **get_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_delay_ms**\ (\ voice_idx\: :ref:`int<class_int>`, delay_ms\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_delay_ms**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's signal delay.
 
@@ -394,12 +394,12 @@ The voice's signal delay.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/3/depth_ms**
+:ref:`float<class_float>` **voice/3/depth_ms** :ref:`🔗<class_AudioEffectChorus_property_voice/3/depth_ms>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` depth_ms **)**
-- :ref:`float<class_float>` **get_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_depth_ms**\ (\ voice_idx\: :ref:`int<class_int>`, depth_ms\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_depth_ms**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice filter's depth.
 
@@ -411,12 +411,12 @@ The voice filter's depth.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/3/level_db**
+:ref:`float<class_float>` **voice/3/level_db** :ref:`🔗<class_AudioEffectChorus_property_voice/3/level_db>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_level_db** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` level_db **)**
-- :ref:`float<class_float>` **get_voice_level_db** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_level_db**\ (\ voice_idx\: :ref:`int<class_int>`, level_db\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_level_db**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's volume.
 
@@ -428,12 +428,12 @@ The voice's volume.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/3/pan**
+:ref:`float<class_float>` **voice/3/pan** :ref:`🔗<class_AudioEffectChorus_property_voice/3/pan>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_pan** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` pan **)**
-- :ref:`float<class_float>` **get_voice_pan** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_pan**\ (\ voice_idx\: :ref:`int<class_int>`, pan\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_pan**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's pan level.
 
@@ -445,12 +445,12 @@ The voice's pan level.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/3/rate_hz**
+:ref:`float<class_float>` **voice/3/rate_hz** :ref:`🔗<class_AudioEffectChorus_property_voice/3/rate_hz>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` rate_hz **)**
-- :ref:`float<class_float>` **get_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_rate_hz**\ (\ voice_idx\: :ref:`int<class_int>`, rate_hz\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_rate_hz**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's filter rate.
 
@@ -462,12 +462,12 @@ The voice's filter rate.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/4/cutoff_hz**
+:ref:`float<class_float>` **voice/4/cutoff_hz** :ref:`🔗<class_AudioEffectChorus_property_voice/4/cutoff_hz>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` cutoff_hz **)**
-- :ref:`float<class_float>` **get_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_cutoff_hz**\ (\ voice_idx\: :ref:`int<class_int>`, cutoff_hz\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_cutoff_hz**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's cutoff frequency.
 
@@ -479,12 +479,12 @@ The voice's cutoff frequency.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/4/delay_ms**
+:ref:`float<class_float>` **voice/4/delay_ms** :ref:`🔗<class_AudioEffectChorus_property_voice/4/delay_ms>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` delay_ms **)**
-- :ref:`float<class_float>` **get_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_delay_ms**\ (\ voice_idx\: :ref:`int<class_int>`, delay_ms\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_delay_ms**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's signal delay.
 
@@ -496,12 +496,12 @@ The voice's signal delay.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/4/depth_ms**
+:ref:`float<class_float>` **voice/4/depth_ms** :ref:`🔗<class_AudioEffectChorus_property_voice/4/depth_ms>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` depth_ms **)**
-- :ref:`float<class_float>` **get_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_depth_ms**\ (\ voice_idx\: :ref:`int<class_int>`, depth_ms\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_depth_ms**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice filter's depth.
 
@@ -513,12 +513,12 @@ The voice filter's depth.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/4/level_db**
+:ref:`float<class_float>` **voice/4/level_db** :ref:`🔗<class_AudioEffectChorus_property_voice/4/level_db>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_level_db** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` level_db **)**
-- :ref:`float<class_float>` **get_voice_level_db** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_level_db**\ (\ voice_idx\: :ref:`int<class_int>`, level_db\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_level_db**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's volume.
 
@@ -530,12 +530,12 @@ The voice's volume.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/4/pan**
+:ref:`float<class_float>` **voice/4/pan** :ref:`🔗<class_AudioEffectChorus_property_voice/4/pan>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_pan** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` pan **)**
-- :ref:`float<class_float>` **get_voice_pan** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_pan**\ (\ voice_idx\: :ref:`int<class_int>`, pan\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_pan**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's pan level.
 
@@ -547,12 +547,12 @@ The voice's pan level.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **voice/4/rate_hz**
+:ref:`float<class_float>` **voice/4/rate_hz** :ref:`🔗<class_AudioEffectChorus_property_voice/4/rate_hz>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` rate_hz **)**
-- :ref:`float<class_float>` **get_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
+- |void| **set_voice_rate_hz**\ (\ voice_idx\: :ref:`int<class_int>`, rate_hz\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_voice_rate_hz**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const|
 
 The voice's filter rate.
 
@@ -564,12 +564,12 @@ The voice's filter rate.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **voice_count** = ``2``
+:ref:`int<class_int>` **voice_count** = ``2`` :ref:`🔗<class_AudioEffectChorus_property_voice_count>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_voice_count** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_voice_count** **(** **)**
+- |void| **set_voice_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_voice_count**\ (\ )
 
 The number of voices in the effect.
 
@@ -581,12 +581,12 @@ The number of voices in the effect.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **wet** = ``0.5``
+:ref:`float<class_float>` **wet** = ``0.5`` :ref:`🔗<class_AudioEffectChorus_property_wet>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_wet** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_wet** **(** **)**
+- |void| **set_wet**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_wet**\ (\ )
 
 The effect's processed signal.
 
@@ -603,7 +603,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
+:ref:`float<class_float>` **get_voice_cutoff_hz**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioEffectChorus_method_get_voice_cutoff_hz>`
 
 .. container:: contribute
 
@@ -617,7 +617,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
+:ref:`float<class_float>` **get_voice_delay_ms**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioEffectChorus_method_get_voice_delay_ms>`
 
 .. container:: contribute
 
@@ -631,7 +631,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx **)** |const|
+:ref:`float<class_float>` **get_voice_depth_ms**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioEffectChorus_method_get_voice_depth_ms>`
 
 .. container:: contribute
 
@@ -645,7 +645,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_voice_level_db** **(** :ref:`int<class_int>` voice_idx **)** |const|
+:ref:`float<class_float>` **get_voice_level_db**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioEffectChorus_method_get_voice_level_db>`
 
 .. container:: contribute
 
@@ -659,7 +659,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_voice_pan** **(** :ref:`int<class_int>` voice_idx **)** |const|
+:ref:`float<class_float>` **get_voice_pan**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioEffectChorus_method_get_voice_pan>`
 
 .. container:: contribute
 
@@ -673,7 +673,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx **)** |const|
+:ref:`float<class_float>` **get_voice_rate_hz**\ (\ voice_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_AudioEffectChorus_method_get_voice_rate_hz>`
 
 .. container:: contribute
 
@@ -687,7 +687,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **set_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` cutoff_hz **)**
+|void| **set_voice_cutoff_hz**\ (\ voice_idx\: :ref:`int<class_int>`, cutoff_hz\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioEffectChorus_method_set_voice_cutoff_hz>`
 
 .. container:: contribute
 
@@ -701,7 +701,7 @@ void **set_voice_cutoff_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<
 
 .. rst-class:: classref-method
 
-void **set_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` delay_ms **)**
+|void| **set_voice_delay_ms**\ (\ voice_idx\: :ref:`int<class_int>`, delay_ms\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioEffectChorus_method_set_voice_delay_ms>`
 
 .. container:: contribute
 
@@ -715,7 +715,7 @@ void **set_voice_delay_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<c
 
 .. rst-class:: classref-method
 
-void **set_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` depth_ms **)**
+|void| **set_voice_depth_ms**\ (\ voice_idx\: :ref:`int<class_int>`, depth_ms\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioEffectChorus_method_set_voice_depth_ms>`
 
 .. container:: contribute
 
@@ -729,7 +729,7 @@ void **set_voice_depth_ms** **(** :ref:`int<class_int>` voice_idx, :ref:`float<c
 
 .. rst-class:: classref-method
 
-void **set_voice_level_db** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` level_db **)**
+|void| **set_voice_level_db**\ (\ voice_idx\: :ref:`int<class_int>`, level_db\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioEffectChorus_method_set_voice_level_db>`
 
 .. container:: contribute
 
@@ -743,7 +743,7 @@ void **set_voice_level_db** **(** :ref:`int<class_int>` voice_idx, :ref:`float<c
 
 .. rst-class:: classref-method
 
-void **set_voice_pan** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` pan **)**
+|void| **set_voice_pan**\ (\ voice_idx\: :ref:`int<class_int>`, pan\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioEffectChorus_method_set_voice_pan>`
 
 .. container:: contribute
 
@@ -757,7 +757,7 @@ void **set_voice_pan** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_
 
 .. rst-class:: classref-method
 
-void **set_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<class_float>` rate_hz **)**
+|void| **set_voice_rate_hz**\ (\ voice_idx\: :ref:`int<class_int>`, rate_hz\: :ref:`float<class_float>`\ ) :ref:`🔗<class_AudioEffectChorus_method_set_voice_rate_hz>`
 
 .. container:: contribute
 
@@ -770,3 +770,4 @@ void **set_voice_rate_hz** **(** :ref:`int<class_int>` voice_idx, :ref:`float<cl
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

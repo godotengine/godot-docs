@@ -56,12 +56,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **bar_beats** = ``4``
+:ref:`int<class_int>` **bar_beats** = ``4`` :ref:`🔗<class_AudioStreamMP3_property_bar_beats>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_bar_beats** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_bar_beats** **(** **)**
+- |void| **set_bar_beats**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_bar_beats**\ (\ )
 
 .. container:: contribute
 
@@ -75,12 +75,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **beat_count** = ``0``
+:ref:`int<class_int>` **beat_count** = ``0`` :ref:`🔗<class_AudioStreamMP3_property_beat_count>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_beat_count** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_beat_count** **(** **)**
+- |void| **set_beat_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_beat_count**\ (\ )
 
 .. container:: contribute
 
@@ -94,12 +94,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **bpm** = ``0.0``
+:ref:`float<class_float>` **bpm** = ``0.0`` :ref:`🔗<class_AudioStreamMP3_property_bpm>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_bpm** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bpm** **(** **)**
+- |void| **set_bpm**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bpm**\ (\ )
 
 .. container:: contribute
 
@@ -113,12 +113,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()``
+:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()`` :ref:`🔗<class_AudioStreamMP3_property_data>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_data** **(** :ref:`PackedByteArray<class_PackedByteArray>` value **)**
-- :ref:`PackedByteArray<class_PackedByteArray>` **get_data** **(** **)**
+- |void| **set_data**\ (\ value\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_data**\ (\ )
 
 Contains the audio data in bytes.
 
@@ -147,6 +147,8 @@ You can load a file without having to import it beforehand using the code snippe
 
 
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -155,12 +157,12 @@ You can load a file without having to import it beforehand using the code snippe
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **loop** = ``false``
+:ref:`bool<class_bool>` **loop** = ``false`` :ref:`🔗<class_AudioStreamMP3_property_loop>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_loop** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **has_loop** **(** **)**
+- |void| **set_loop**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **has_loop**\ (\ )
 
 If ``true``, the stream will automatically loop when it reaches the end.
 
@@ -172,12 +174,12 @@ If ``true``, the stream will automatically loop when it reaches the end.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **loop_offset** = ``0.0``
+:ref:`float<class_float>` **loop_offset** = ``0.0`` :ref:`🔗<class_AudioStreamMP3_property_loop_offset>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_loop_offset** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_loop_offset** **(** **)**
+- |void| **set_loop_offset**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_loop_offset**\ (\ )
 
 Time in seconds at which the stream starts after being looped.
 
@@ -188,3 +190,4 @@ Time in seconds at which the stream starts after being looped.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

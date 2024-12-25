@@ -91,7 +91,7 @@ See also :ref:`AudioEffectSpectrumAnalyzer<class_AudioEffectSpectrumAnalyzer>` f
 Tutorials
 ---------
 
-- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`__
+- `Audio Generator Demo <https://godotengine.org/asset-library/asset/2759>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -120,12 +120,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **buffer_length** = ``0.5``
+:ref:`float<class_float>` **buffer_length** = ``0.5`` :ref:`🔗<class_AudioStreamGenerator_property_buffer_length>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_buffer_length** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_buffer_length** **(** **)**
+- |void| **set_buffer_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_buffer_length**\ (\ )
 
 The length of the buffer to generate (in seconds). Lower values result in less latency, but require the script to generate audio data faster, resulting in increased CPU usage and more risk for audio cracking if the CPU can't keep up.
 
@@ -137,12 +137,12 @@ The length of the buffer to generate (in seconds). Lower values result in less l
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **mix_rate** = ``44100.0``
+:ref:`float<class_float>` **mix_rate** = ``44100.0`` :ref:`🔗<class_AudioStreamGenerator_property_mix_rate>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_mix_rate** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_mix_rate** **(** **)**
+- |void| **set_mix_rate**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_mix_rate**\ (\ )
 
 The sample rate to use (in Hz). Higher values are more demanding for the CPU to generate, but result in better quality.
 
@@ -157,3 +157,4 @@ According to the `Nyquist-Shannon sampling theorem <https://en.wikipedia.org/wik
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

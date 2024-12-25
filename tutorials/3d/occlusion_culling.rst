@@ -58,16 +58,16 @@ performance gains.
 
 .. note::
 
-    When using the Clustered Forward rendering backend, the engine already
+    When using the Forward+ renderer, the engine already
     performs a *depth prepass*. This consists in rendering a depth-only version
     of the scene before rendering the scene's actual materials. This is used to
     ensure each opaque pixel is only shaded once, reducing the cost of overdraw
     significantly.
 
-    The greatest performance benefits can be observed when using the Forward
-    Mobile rendering backend, as it does not feature a
-    depth prepass for performance reasons. As a result, occlusion culling will
-    actively decrease shading overdraw with that rendering backend.
+    The greatest performance benefits can be observed when using the Mobile
+    renderer, as it does not feature a depth prepass for performance reasons. As
+    a result, occlusion culling will actively decrease shading overdraw with 
+    that renderer.
 
     Nonetheless, even when using a depth prepass, there is still a noticeable
     benefit to occlusion culling in complex 3D scenes. However, in scenes with
@@ -79,13 +79,14 @@ How occlusion culling works in Godot
 
 .. note::
 
-    *"occluder" refers to the shape blocking the view, while "occludee" refers to the object being hidden.*
+    "occluder" refers to the shape blocking the view, while "occludee" refers to
+    the object being hidden.
 
 In Godot, occlusion culling works by rasterizing the scene's occluder geometry
 to a low-resolution buffer on the CPU. This is done using
 the software raytracing library `Embree <https://github.com/embree/embree>`__.
 
-The engine then uses this low-resolution buffer to test occludees'
+The engine then uses this low-resolution buffer to test the occludee's
 :abbr:`AABB (Axis-Aligned Bounding Box)` against the occluder shapes.
 The occludee's :abbr:`AABB (Axis-Aligned Bounding Box)` must be *fully occluded*
 by the occluder shape to be culled.
@@ -123,6 +124,10 @@ Automatically baking occluders (recommended)
     nodes are **not** taken into account when baking occluders. If you wish
     those to be treated as occluders, you have to manually create occluder
     shapes that (roughly) match their geometry.
+
+    Since Godot 4.4, CSG nodes can be taken into account in the baking process if they are
+    :ref:`converted to a MeshInstance3D <doc_csg_tools_converting_to_mesh_instance_3d>`
+    before baking occluders.
 
     This restriction does not apply to *occludees*. Any node type that inherits
     from GeometryInstance3D can be occluded.
@@ -192,14 +197,20 @@ your scene. Note that the performance benefit highly depends on the 3D editor
 camera's view angle, as occlusion culling is only effective if there are
 occluders in front of the camera.
 
-To toggle occlusion culling at run-time, set ``use_occlusion_culling`` on the
+To toggle occlusion culling at runtime, set ``use_occlusion_culling`` on the
 root viewport as follows:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     get_tree().root.use_occlusion_culling = true
 
-Toggling occlusion culling at run-time is useful to compare performance on a
+ .. code-tab:: csharp
+
+    GetTree().Root.UseOcclusionCulling = true;
+
+
+Toggling occlusion culling at runtime is useful to compare performance on a
 running project.
 
 Performance considerations

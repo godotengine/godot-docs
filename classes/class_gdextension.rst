@@ -40,17 +40,11 @@ Methods
 .. table::
    :widths: auto
 
-   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                             | :ref:`close_library<class_GDExtension_method_close_library>` **(** **)**                                                                                  |
-   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` | :ref:`get_minimum_library_initialization_level<class_GDExtension_method_get_minimum_library_initialization_level>` **(** **)** |const|                    |
-   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                             | :ref:`initialize_library<class_GDExtension_method_initialize_library>` **(** :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` level **)** |
-   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                          | :ref:`is_library_open<class_GDExtension_method_is_library_open>` **(** **)** |const|                                                                      |
-   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                            | :ref:`open_library<class_GDExtension_method_open_library>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol **)**         |
-   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` | :ref:`get_minimum_library_initialization_level<class_GDExtension_method_get_minimum_library_initialization_level>`\ (\ ) |const| |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`is_library_open<class_GDExtension_method_is_library_open>`\ (\ ) |const|                                                   |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -65,7 +59,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **InitializationLevel**:
+enum **InitializationLevel**: :ref:`🔗<enum_GDExtension_InitializationLevel>`
 
 .. _class_GDExtension_constant_INITIALIZATION_LEVEL_CORE:
 
@@ -108,41 +102,13 @@ The library is initialized at the same time as the engine's editor classes. Only
 Method Descriptions
 -------------------
 
-.. _class_GDExtension_method_close_library:
-
-.. rst-class:: classref-method
-
-void **close_library** **(** **)**
-
-Closes the current library.
-
-\ **Note:** You normally should not call this method directly. This is handled automatically by :ref:`GDExtensionManager.unload_extension<class_GDExtensionManager_method_unload_extension>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_GDExtension_method_get_minimum_library_initialization_level:
 
 .. rst-class:: classref-method
 
-:ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` **get_minimum_library_initialization_level** **(** **)** |const|
+:ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` **get_minimum_library_initialization_level**\ (\ ) |const| :ref:`🔗<class_GDExtension_method_get_minimum_library_initialization_level>`
 
 Returns the lowest level required for this extension to be properly initialized (see the :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` enum).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_GDExtension_method_initialize_library:
-
-.. rst-class:: classref-method
-
-void **initialize_library** **(** :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` level **)**
-
-Initializes the library bound to this GDextension at the given initialization ``level``.
-
-\ **Note:** You normally should not call this method directly. This is handled automatically by :ref:`GDExtensionManager.load_extension<class_GDExtensionManager_method_load_extension>`.
 
 .. rst-class:: classref-item-separator
 
@@ -152,23 +118,9 @@ Initializes the library bound to this GDextension at the given initialization ``
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_library_open** **(** **)** |const|
+:ref:`bool<class_bool>` **is_library_open**\ (\ ) |const| :ref:`🔗<class_GDExtension_method_is_library_open>`
 
 Returns ``true`` if this extension's library has been opened.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_GDExtension_method_open_library:
-
-.. rst-class:: classref-method
-
-:ref:`Error<enum_@GlobalScope_Error>` **open_library** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol **)**
-
-Opens the library at the specified ``path``.
-
-\ **Note:** You normally should not call this method directly. This is handled automatically by :ref:`GDExtensionManager.load_extension<class_GDExtensionManager_method_load_extension>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -177,3 +129,4 @@ Opens the library at the specified ``path``.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

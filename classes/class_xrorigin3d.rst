@@ -61,12 +61,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **current** = ``false``
+:ref:`bool<class_bool>` **current** = ``false`` :ref:`🔗<class_XROrigin3D_property_current>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_current** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_current** **(** **)**
+- |void| **set_current**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_current**\ (\ )
 
 If ``true``, this origin node is currently being used by the :ref:`XRServer<class_XRServer>`. Only one origin point can be used at a time.
 
@@ -78,12 +78,12 @@ If ``true``, this origin node is currently being used by the :ref:`XRServer<clas
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **world_scale** = ``1.0``
+:ref:`float<class_float>` **world_scale** = ``1.0`` :ref:`🔗<class_XROrigin3D_property_world_scale>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_world_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_world_scale** **(** **)**
+- |void| **set_world_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_world_scale**\ (\ )
 
 The scale of the game world compared to the real world. This is the same as :ref:`XRServer.world_scale<class_XRServer_property_world_scale>`. By default, most AR/VR platforms assume that 1 game unit corresponds to 1 real world meter.
 
@@ -94,3 +94,4 @@ The scale of the game world compared to the real world. This is the same as :ref
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

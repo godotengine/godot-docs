@@ -13,6 +13,100 @@ added since version 3.0.
 .. note:: This document only contains new pages so not all changes are reflected,
           many pages have been substantially updated but are not reflected in this document.
 
+New pages since version 4.3
+---------------------------
+
+2D
+^^
+
+- :ref:`doc_introduction_to_2d`
+
+3D
+^^
+
+- :ref:`doc_spring_arm`
+
+Debug
+^^^^^
+
+- :ref:`doc_output_panel`
+
+Editor
+^^^^^^
+
+- :ref:`doc_using_the_xr_editor`
+
+Performance
+^^^^^^^^^^^
+
+- :ref:`doc_pipeline_compilations`
+
+Physics
+^^^^^^^
+
+- :ref:`doc_physics_interpolation`
+- :ref:`doc_physics_interpolation_quick_start_guide`
+- :ref:`doc_physics_interpolation_introduction`
+- :ref:`doc_using_physics_interpolation`
+- :ref:`doc_advanced_physics_interpolation`
+- :ref:`doc_2d_and_3d_physics_interpolation`
+
+Rendering
+^^^^^^^^^
+
+- :ref:`doc_renderers`
+
+Shaders
+^^^^^^^
+
+- :ref:`doc_shader_functions`
+
+New pages since version 4.2
+---------------------------
+
+About
+^^^^^
+
+- :ref:`doc_system_requirements`
+
+2D
+^^
+
+- :ref:`doc_2d_parallax`
+
+Contributing
+^^^^^^^^^^^^
+
+- :ref:`doc_handling_compatibility_breakages`
+- :ref:`doc_ways_to_contribute`
+
+GDExtension
+^^^^^^^^^^^
+
+- :ref:`doc_gdextension_file`
+- :ref:`doc_gdextension_docs_system`
+
+Migrating
+^^^^^^^^^
+
+- :ref:`doc_upgrading_to_godot_4.3`
+
+Rendering
+^^^^^^^^^
+
+- :ref:`doc_compositor`
+
+XR
+^^
+
+- :ref:`doc_a_better_xr_start_script`
+- :ref:`doc_openxr_passthrough`
+- :ref:`doc_xr_next_steps`
+- :ref:`doc_openxr_settings`
+- :ref:`doc_openxr_composition_layers`
+- :ref:`doc_openxr_body_tracking`
+
+
 New pages since version 4.1
 ---------------------------
 

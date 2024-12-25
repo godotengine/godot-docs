@@ -86,6 +86,12 @@ a unique name and must be one of the following data types:
    not limited to the :ref:`Panel <class_Panel>` control, as styleboxes
    are used by many controls for their backgrounds and overlays.
 
+   Different controls will apply StyleBoxes in a different manner. Most notably,
+   ``focus`` styleboxes are drawn as an *overlay* to other styleboxes (such as
+   ``normal`` or ``pressed``) to allow the base stylebox to remain visible.
+   This means the focus stylebox should be designed as an outline or translucent
+   box, so that its background can remain visible.
+
 Theme types
 ~~~~~~~~~~~
 
@@ -125,12 +131,12 @@ is applied to them. Those methods accept the theme type as one of the arguments.
  .. code-tab:: gdscript
 
    var accent_color = get_theme_color("accent_color", "MyType")
-   label.add_color_override("font_color", accent_color)
+   label.add_theme_color_override("font_color", accent_color)
 
  .. code-tab:: csharp
 
    Color accentColor = GetThemeColor("accent_color", "MyType");
-   label.AddColorOverride("font_color", accentColor);
+   label.AddThemeColorOverride("font_color", accentColor);
 
 To give more customization opportunities types can also be linked together as
 type variations. This is another use-case for custom theme types. For example,
@@ -184,8 +190,8 @@ with a custom theme. Custom themes can be applied in two ways: as a project sett
 and as a node property throughout the tree of control nodes.
 
 There are two project settings that can be adjusted to affect your entire project:
-:ref:`gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>` allows you to
-set a custom project-wide theme, and :ref:`gui/theme/custom_font<class_ProjectSettings_property_gui/theme/custom_font>`
+:ref:`GUI > Theme > Custom<class_ProjectSettings_property_gui/theme/custom>` allows you to
+set a custom project-wide theme, and :ref:`GUI > Theme > Custom Font<class_ProjectSettings_property_gui/theme/custom_font>`
 does the same to the default fallback font. When a theme item is requested by a control
 node the custom project theme, if present, is checked first. Only if it doesn't have
 the item the default theme is checked.

@@ -96,7 +96,7 @@ editor, and it must inherit from :ref:`class_EditorPlugin`.
 .. warning::
 
     In addition to the EditorPlugin script, any other GDScript that your plugin uses
-    must *also* be a tool. Any GDScript without ``@tool`` imported into the editor
+    must *also* be a tool. Any GDScript without ``@tool`` used by the editor
     will act like an empty file!
 
 It's important to deal with initialization and clean-up of resources.
@@ -214,7 +214,7 @@ don't have one, you can grab the default one from the engine and save it in your
 .. tip::
 
     SVG images that are used as custom node icons should have the
-    **Editor > Scale With Editor Scale** and **Editor > Convert Icons With Editor Theme**
+    **Editor > Scale With Editor Scale** and **Editor > Convert Colors With Editor Theme**
     :ref:`import options <doc_importing_images_editor_import_options>` enabled. This allows
     icons to follow the editor's scale and theming settings if the icons are designed with
     the same color palette as Godot's own icons.
@@ -282,7 +282,7 @@ click the button, you can see some text in the console:
 .. image:: img/making_plugins-custom_node_console.webp
 
 A custom dock
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Sometimes, you need to extend the editor and add tools that are always available.
 An easy way to do it is to add a new dock with a plugin. Docks are just scenes
@@ -413,18 +413,6 @@ the settings window. You should now have a custom dock:
 
 .. image:: img/making_plugins-custom_dock.webp
 
-Going beyond
-~~~~~~~~~~~~
-
-Now that you've learned how to make basic plugins, you can extend the editor in
-several ways. Lots of functionality can be added to the editor with GDScript;
-it is a powerful way to create specialized editors without having to delve into
-C++ modules.
-
-You can make your own plugins to help yourself and share them in the
-`Asset Library <https://godotengine.org/asset-library/>`_ so that people
-can benefit from your work.
-
 .. _doc_making_plugins_autoload:
 
 Registering autoloads/singletons in plugins
@@ -450,12 +438,12 @@ Use the following code to register a singleton from an editor plugin:
     const AUTOLOAD_NAME = "SomeAutoload"
 
 
-    func _enter_tree():
+    func _enable_plugin():
         # The autoload can be a scene or script file.
         add_autoload_singleton(AUTOLOAD_NAME, "res://addons/my_addon/some_autoload.tscn")
 
 
-    func _exit_tree():
+    func _disable_plugin():
         remove_autoload_singleton(AUTOLOAD_NAME)
 
  .. code-tab:: csharp
@@ -469,15 +457,62 @@ Use the following code to register a singleton from an editor plugin:
         // Replace this value with a PascalCase autoload name.
         private const string AutoloadName = "SomeAutoload";
 
-        public override void _EnterTree()
+        public override void _EnablePlugin()
         {
             // The autoload can be a scene or script file.
             AddAutoloadSingleton(AutoloadName, "res://addons/MyAddon/SomeAutoload.tscn");
         }
 
-        public override void _ExitTree()
+        public override void _DisablePlugin()
         {
             RemoveAutoloadSingleton(AutoloadName);
         }
     }
     #endif
+
+Using sub-plugins
+~~~~~~~~~~~~~~~~~
+
+Often a plugin adds multiple things, for example a custom node and a panel.
+In those cases it might be easier to have a separate plugin script for each of those features.
+Sub-plugins can be used for this.
+
+First create all plugins and sub plugins as normal plugins:
+
+.. image:: img/sub_plugin_creation.webp
+
+Then move the sub plugins into the main plugin folder:
+
+.. image:: img/sub_plugin_moved.webp
+
+Godot will hide sub-plugins from the plugin list, so that a user can't enable or disable them.
+Instead the main plugin script should enable and disable sub-plugins like this:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    @tool
+    extends EditorPlugin
+
+    # The main plugin is located at res://addons/my_plugin/
+    const PLUGIN_NAME = "my_plugin"
+
+    func _enable_plugin():
+        EditorInterface.set_plugin_enabled(PLUGIN_NAME + "/node", true)
+        EditorInterface.set_plugin_enabled(PLUGIN_NAME + "/panel", true)
+
+    func _disable_plugin():
+        EditorInterface.set_plugin_enabled(PLUGIN_NAME + "/node", false)
+        EditorInterface.set_plugin_enabled(PLUGIN_NAME + "/panel", false)
+
+Going beyond
+~~~~~~~~~~~~
+
+Now that you've learned how to make basic plugins, you can extend the editor in
+several ways. Lots of functionality can be added to the editor with GDScript;
+it is a powerful way to create specialized editors without having to delve into
+C++ modules.
+
+You can make your own plugins to help yourself and share them in the
+`Asset Library <https://godotengine.org/asset-library/>`_ so that people
+can benefit from your work.

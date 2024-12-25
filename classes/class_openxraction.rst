@@ -19,7 +19,7 @@ An OpenXR action.
 Description
 -----------
 
-This resource defines an OpenXR action. Actions can be used both for inputs (buttons/joystick/trigger/etc) and outputs (haptics).
+This resource defines an OpenXR action. Actions can be used both for inputs (buttons, joysticks, triggers, etc.) and outputs (haptics).
 
 OpenXR performs automatic conversion between action type and input type whenever possible. An analog trigger bound to a boolean action will thus return ``false`` if the trigger is depressed and ``true`` if pressed fully.
 
@@ -56,7 +56,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **ActionType**:
+enum **ActionType**: :ref:`🔗<enum_OpenXRAction_ActionType>`
 
 .. _class_OpenXRAction_constant_OPENXR_ACTION_BOOL:
 
@@ -107,12 +107,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ActionType<enum_OpenXRAction_ActionType>` **action_type** = ``1``
+:ref:`ActionType<enum_OpenXRAction_ActionType>` **action_type** = ``1`` :ref:`🔗<class_OpenXRAction_property_action_type>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_action_type** **(** :ref:`ActionType<enum_OpenXRAction_ActionType>` value **)**
-- :ref:`ActionType<enum_OpenXRAction_ActionType>` **get_action_type** **(** **)**
+- |void| **set_action_type**\ (\ value\: :ref:`ActionType<enum_OpenXRAction_ActionType>`\ )
+- :ref:`ActionType<enum_OpenXRAction_ActionType>` **get_action_type**\ (\ )
 
 The type of action.
 
@@ -124,12 +124,12 @@ The type of action.
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **localized_name** = ``""``
+:ref:`String<class_String>` **localized_name** = ``""`` :ref:`🔗<class_OpenXRAction_property_localized_name>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_localized_name** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_localized_name** **(** **)**
+- |void| **set_localized_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_localized_name**\ (\ )
 
 The localized description of this action.
 
@@ -141,14 +141,16 @@ The localized description of this action.
 
 .. rst-class:: classref-property
 
-:ref:`PackedStringArray<class_PackedStringArray>` **toplevel_paths** = ``PackedStringArray()``
+:ref:`PackedStringArray<class_PackedStringArray>` **toplevel_paths** = ``PackedStringArray()`` :ref:`🔗<class_OpenXRAction_property_toplevel_paths>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_toplevel_paths** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_toplevel_paths** **(** **)**
+- |void| **set_toplevel_paths**\ (\ value\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_toplevel_paths**\ (\ )
 
 A collections of toplevel paths to which this action can be bound.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -157,3 +159,4 @@ A collections of toplevel paths to which this action can be bound.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

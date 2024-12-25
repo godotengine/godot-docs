@@ -56,12 +56,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **constant_angular_velocity** = ``0.0``
+:ref:`float<class_float>` **constant_angular_velocity** = ``0.0`` :ref:`🔗<class_StaticBody2D_property_constant_angular_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_constant_angular_velocity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_constant_angular_velocity** **(** **)**
+- |void| **set_constant_angular_velocity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_constant_angular_velocity**\ (\ )
 
 The body's constant angular velocity. This does not rotate the body, but affects touching bodies, as if it were rotating.
 
@@ -73,12 +73,12 @@ The body's constant angular velocity. This does not rotate the body, but affects
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **constant_linear_velocity** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **constant_linear_velocity** = ``Vector2(0, 0)`` :ref:`🔗<class_StaticBody2D_property_constant_linear_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_constant_linear_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_constant_linear_velocity** **(** **)**
+- |void| **set_constant_linear_velocity**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_constant_linear_velocity**\ (\ )
 
 The body's constant linear velocity. This does not move the body, but affects touching bodies, as if it were moving.
 
@@ -90,12 +90,12 @@ The body's constant linear velocity. This does not move the body, but affects to
 
 .. rst-class:: classref-property
 
-:ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
+:ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override** :ref:`🔗<class_StaticBody2D_property_physics_material_override>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_physics_material_override** **(** :ref:`PhysicsMaterial<class_PhysicsMaterial>` value **)**
-- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_material_override** **(** **)**
+- |void| **set_physics_material_override**\ (\ value\: :ref:`PhysicsMaterial<class_PhysicsMaterial>`\ )
+- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_material_override**\ (\ )
 
 The physics material override for the body.
 
@@ -108,3 +108,4 @@ If a material is assigned to this property, it will be used instead of any other
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

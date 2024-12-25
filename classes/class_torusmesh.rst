@@ -52,12 +52,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **inner_radius** = ``0.5``
+:ref:`float<class_float>` **inner_radius** = ``0.5`` :ref:`🔗<class_TorusMesh_property_inner_radius>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_inner_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_inner_radius** **(** **)**
+- |void| **set_inner_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_inner_radius**\ (\ )
 
 The inner radius of the torus.
 
@@ -69,12 +69,12 @@ The inner radius of the torus.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **outer_radius** = ``1.0``
+:ref:`float<class_float>` **outer_radius** = ``1.0`` :ref:`🔗<class_TorusMesh_property_outer_radius>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_outer_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_outer_radius** **(** **)**
+- |void| **set_outer_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_outer_radius**\ (\ )
 
 The outer radius of the torus.
 
@@ -86,12 +86,12 @@ The outer radius of the torus.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **ring_segments** = ``32``
+:ref:`int<class_int>` **ring_segments** = ``32`` :ref:`🔗<class_TorusMesh_property_ring_segments>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_ring_segments** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_ring_segments** **(** **)**
+- |void| **set_ring_segments**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_ring_segments**\ (\ )
 
 The number of edges each ring of the torus is constructed of.
 
@@ -103,12 +103,12 @@ The number of edges each ring of the torus is constructed of.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rings** = ``64``
+:ref:`int<class_int>` **rings** = ``64`` :ref:`🔗<class_TorusMesh_property_rings>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_rings** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_rings** **(** **)**
+- |void| **set_rings**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_rings**\ (\ )
 
 The number of slices the torus is constructed of.
 
@@ -119,3 +119,4 @@ The number of slices the torus is constructed of.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

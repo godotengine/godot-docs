@@ -15,19 +15,15 @@ Requirements
 
 To compile export templates for the Web, the following is required:
 
-- `Emscripten 3.1.39+ <https://emscripten.org>`__.
-- `Python 3.6+ <https://www.python.org/>`__.
-- `SCons 3.0+ <https://scons.org/pages/download.html>`__ build system.
+- `Emscripten 3.1.62+ <https://emscripten.org>`__.
+- `Python 3.8+ <https://www.python.org/>`__.
+- `SCons 4.0+ <https://scons.org/pages/download.html>`__ build system.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.
 
              For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
-
-.. note:: Emscripten 3.1.39+ is recommended, but older 3.x versions are known to work.
-
-          Please note that the minimum requirement for GDExtension support is 3.1.14.
 
 Building export templates
 -------------------------
@@ -43,13 +39,19 @@ either ``template_release`` for a release build or ``template_debug`` for a debu
     scons platform=web target=template_release
     scons platform=web target=template_debug
 
-By default, the :ref:`JavaScript singleton <doc_javascript_eval>` will be built
+By default, the :ref:`JavaScriptBridge singleton <doc_web_javascript_bridge>` will be built
 into the engine. Official export templates also have the JavaScript singleton
 enabled. Since ``eval()`` calls can be a security concern, the
 ``javascript_eval`` option can be used to build without the singleton::
 
     scons platform=web target=template_release javascript_eval=no
     scons platform=web target=template_debug javascript_eval=no
+
+By default, WebWorker threads support is enabled. To disable it and only use a single thread,
+the ``threads`` option can be used to build the web template without threads support::
+
+    scons platform=web target=template_release threads=no
+    scons platform=web target=template_debug threads=no
 
 The engine will now be compiled to WebAssembly by Emscripten. Once finished,
 the resulting file will be placed in the ``bin`` subdirectory. Its name is
@@ -119,7 +121,7 @@ server requirements.
         python platform/web/serve.py
 
     This will serve the contents of the ``bin/`` folder and open the default web
-    browser automatically. In the page that opens, access ``godot.tools.html``
+    browser automatically. In the page that opens, access ``godot.editor.html``
     and you should be able to test the web editor this way.
 
     Note that for production use cases, this Python-based web server should not

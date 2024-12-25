@@ -38,7 +38,7 @@ There are several nodes involved in a complete 2D lighting setup:
 - :ref:`PointLight2D <class_PointLight2D>` (for omnidirectional or spot lights)
 - :ref:`DirectionalLight2D <class_DirectionalLight2D>` (for sunlight or moonlight)
 - :ref:`LightOccluder2D <class_LightOccluder2D>` (for light shadow casters)
-- Other 2D nodes that receive lighting, such as Sprite2D or TileMap.
+- Other 2D nodes that receive lighting, such as Sprite2D or TileMapLayer.
 
 :ref:`CanvasModulate <class_CanvasModulate>` is used to darken the scene by
 specifying a color that will act as the base "ambient" color. This is the final
@@ -55,7 +55,7 @@ to simulate lighting.
 
 :ref:`LightOccluder2Ds <class_LightOccluder2D>` are used to tell the shader
 which parts of the scene cast shadows. These occluders can be placed as
-independent nodes or can be part of a TileMap node.
+independent nodes or can be part of a TileMapLayer node.
 
 The shadows appear only on areas covered by the :ref:`PointLight2D
 <class_PointLight2D>` and their direction is based on the center of the

@@ -10,14 +10,14 @@ Godot provides 3 options to import your audio data: WAV, Ogg Vorbis and MP3.
 
 Each format has different advantages:
 
-- WAV files use raw data or light compression (IMA-ADPCM). They are lightweight
-  on the CPU to play back (hundreds of simultaneous voices in this format are
-  fine). The downside is that they take up a lot of disk space.
+- WAV files use raw data or light compression (IMA-ADPCM or QOA). They are 
+  lightweight to play back on the CPU (hundreds of simultaneous voices in this
+  format are fine). The downside is that they take up a lot of disk space.
 - Ogg Vorbis files use a stronger compression that results in much
   smaller file size, but require significantly more processing power to
   play back.
-- MP3 files use better compression than WAV with IMA-ADPCM, but worse than
-  Ogg Vorbis. This means that a MP3 file with roughly equal quality to
+- MP3 files use better compression than WAV with IMA-ADPCM or QOA, but worse 
+  than Ogg Vorbis. This means that an MP3 file with roughly equal quality to
   Ogg Vorbis will be significantly larger. On the bright side, MP3 requires
   less CPU usage to play back compared to Ogg Vorbis.
 
@@ -36,7 +36,9 @@ each format:
 +-----------------------------+-------------------+
 | WAV 16-bit, 44 kHz, mono    | 88 KB             |
 +-----------------------------+-------------------+
-| WAV 16-bit, IMA-ADPCM, mono | 22 KB             |
+| WAV IMA-ADPCM, 44 kHz, mono | 22 KB             |
++-----------------------------+-------------------+
+| WAV QOA, 44 kHz, mono       | 17 KB             |
 +-----------------------------+-------------------+
 | MP3 192 Kb/s, stereo        | 24 KB             |
 +-----------------------------+-------------------+
@@ -71,13 +73,13 @@ the FileSystem dock:
 
    Import options in the Import dock after selecting a WAV file in the FileSystem dock
 
-The set of options available after selecting a Ogg Vorbis or MP3 file is different:
+The set of options available after selecting an Ogg Vorbis or MP3 file is different:
 
 .. figure:: img/importing_audio_samples_import_options_mp3.webp
    :align: center
-   :alt: Import options in the Import dock after selecting a MP3 file in the FileSystem dock
+   :alt: Import options in the Import dock after selecting an MP3 file in the FileSystem dock
 
-   Import options in the Import dock after selecting a MP3 file in the
+   Import options in the Import dock after selecting an MP3 file in the
    FileSystem dock. Options are identical for Ogg Vorbis files.
 
 After importing a sound, you can play it back using the AudioStreamPlayer,
@@ -163,9 +165,12 @@ the end of the audio file if set to ``-1``.
 Compress > Mode
 ---------------
 
-Two compression modes can be chosen for WAV files: **Disabled** (default) or
-**RAM (Ima-ADPCM)**. **RAM (Ima-ADPCM)** reduces file size and memory usage a
-little, at the cost of decreasing quality in an audible manner.
+Three compression modes can be chosen from for WAV files: **Disabled** (default),
+**RAM (Ima-ADPCM)**, or **QOA (Quite OK Audio)**. **RAM (Ima-ADPCM)** reduces
+file size and memory usage a little, at the cost of decreasing quality in an
+audible manner. **QOA (Quite OK Audio)** reduces file size a bit more than
+**RAM (Ima-ADPCM)** and the quality decrease is much less noticeable, at the
+cost of higher CPU usage (still much lower than MP3).
 
 Ogg Vorbis and MP3 don't decrease quality as much and can provide greater file
 size reductions, at the cost of higher CPU usage during playback. This higher
@@ -207,7 +212,7 @@ BPM
 
 The Beats Per Minute of the audio track. This should match the BPM measure that
 was used to compose the track. This is only relevant for music that wishes to
-make use of interactive music functionality (not implemented yet), not sound
+make use of interactive music functionality, not sound
 effects.
 
 A more convenient editor for **BPM** is provided in the
@@ -218,7 +223,7 @@ Beat Count
 ^^^^^^^^^^
 
 The beat count of the audio track. This is only relevant for music that wishes
-to make use of interactive music functionality (not implemented yet), not sound
+to make use of interactive music functionality, not sound
 effects.
 
 A more convenient editor for **Beat Count** is provided in the
@@ -230,7 +235,7 @@ Bar Beats
 
 The number of bars within a single beat in the audio track. This is only
 relevant for music that wishes to make use of interactive music functionality
-(not implemented yet), not sound effects.
+, not sound effects.
 
 A more convenient editor for **Bar Beats** is provided in the
 :ref:`Advanced import settings <doc_importing_audio_samples_advanced_import_settings>`
@@ -246,9 +251,9 @@ If you double-click an Ogg Vorbis or MP3 file in the FileSystem dock (or choose
 
 .. figure:: img/importing_audio_samples_advanced_import_settings.webp
    :align: center
-   :alt: Advanced dialog when double-clicking a Ogg Vorbis or MP3 file in the FileSystem dock
+   :alt: Advanced dialog when double-clicking an Ogg Vorbis or MP3 file in the FileSystem dock
 
-   Advanced dialog when double-clicking a Ogg Vorbis or MP3 file in the FileSystem dock
+   Advanced dialog when double-clicking an Ogg Vorbis or MP3 file in the FileSystem dock
 
 This dialog allows you to edit the audio's loop point with a real-time preview,
 in addition to the :abbr:`BPM (Beats Per Minute)`, beat count and bar beats.
@@ -281,7 +286,7 @@ sample rate and number of channels for your audio:
 - There's no *audible* benefit to using 24-bit audio, especially in a game
   where several sounds are often playing at the same time (which makes it
   harder to appreciate individual sounds).
-- Unless you are slowing down the audio at run-time, there's no *audible*
+- Unless you are slowing down the audio at runtime, there's no *audible*
   benefit to using a sample rate greater than 48 kHz. If you wish to keep a
   source with a higher sample rate for editing, use the **Force > Max Rate**
   import option to limit the sample rate of the imported sound (only available

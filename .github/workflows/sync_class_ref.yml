@@ -15,6 +15,9 @@ concurrency:
 
 jobs:
   build:
+    # Don't run scheduled runs on forks unless the CI_SYNC_CLASS_REF_CRON variable is set to 'true'.
+    # Manual runs can still be triggered as normal.
+    if: ${{ github.repository_owner == 'godotengine' || github.event_name != 'schedule' || vars.CI_SYNC_CLASS_REF_CRON == 'true' }}
     name: Update class reference files based on the engine revision
     runs-on: ubuntu-latest
     env:
@@ -51,7 +54,7 @@ jobs:
           ./.engine-src/doc/tools/make_rst.py --color -o ./classes -l en ./.engine-src/doc/classes ./.engine-src/modules ./.engine-src/platform
 
       - name: Submit a pull-request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: 'classref: Sync with current ${{ env.engine_rev }} branch (${{ steps.engine.outputs.rev_hash_short }})'
           branch: 'classref/sync-${{ steps.engine.outputs.rev_hash_short }}'

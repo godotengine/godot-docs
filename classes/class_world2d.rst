@@ -59,11 +59,11 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **canvas**
+:ref:`RID<class_RID>` **canvas** :ref:`🔗<class_World2D_property_canvas>`
 
 .. rst-class:: classref-property-setget
 
-- :ref:`RID<class_RID>` **get_canvas** **(** **)**
+- :ref:`RID<class_RID>` **get_canvas**\ (\ )
 
 The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`RenderingServer<class_RenderingServer>` for 2D drawing.
 
@@ -75,11 +75,11 @@ The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`Ren
 
 .. rst-class:: classref-property
 
-:ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **direct_space_state**
+:ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **direct_space_state** :ref:`🔗<class_World2D_property_direct_space_state>`
 
 .. rst-class:: classref-property-setget
 
-- :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **get_direct_space_state** **(** **)**
+- :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **get_direct_space_state**\ (\ )
 
 Direct access to the world's physics 2D space state. Used for querying current and potential collisions. When using multi-threaded physics, access is limited to :ref:`Node._physics_process<class_Node_private_method__physics_process>` in the main thread.
 
@@ -91,11 +91,11 @@ Direct access to the world's physics 2D space state. Used for querying current a
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **navigation_map**
+:ref:`RID<class_RID>` **navigation_map** :ref:`🔗<class_World2D_property_navigation_map>`
 
 .. rst-class:: classref-property-setget
 
-- :ref:`RID<class_RID>` **get_navigation_map** **(** **)**
+- :ref:`RID<class_RID>` **get_navigation_map**\ (\ )
 
 The :ref:`RID<class_RID>` of this world's navigation map. Used by the :ref:`NavigationServer2D<class_NavigationServer2D>`.
 
@@ -107,11 +107,11 @@ The :ref:`RID<class_RID>` of this world's navigation map. Used by the :ref:`Navi
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **space**
+:ref:`RID<class_RID>` **space** :ref:`🔗<class_World2D_property_space>`
 
 .. rst-class:: classref-property-setget
 
-- :ref:`RID<class_RID>` **get_space** **(** **)**
+- :ref:`RID<class_RID>` **get_space**\ (\ )
 
 The :ref:`RID<class_RID>` of this world's physics space resource. Used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>` for 2D physics, treating it as both a space and an area.
 
@@ -122,3 +122,4 @@ The :ref:`RID<class_RID>` of this world's physics space resource. Used by the :r
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

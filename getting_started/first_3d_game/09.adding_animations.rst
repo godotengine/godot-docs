@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_character_animation:
 
 Character animation
@@ -45,7 +43,7 @@ time in seconds.
 We want the animation to start playback automatically at the start of the game.
 Also, it should loop.
 
-To do so, you can click the button with an "A+" icon in the animation toolbar
+To do so, you can click the autoplay button (|Autoplay|) in the animation toolbar
 and the looping arrows, respectively.
 
 |image5|
@@ -104,7 +102,11 @@ timeline.
 
 |timeline_05_click|
 
-In the *Inspector*, set the *Position*'s *Y* axis to ``0.65`` meters and the *Rotation*' *X* axis to ``8``.
+In the *Inspector*, set the *Position*'s *Y* axis to ``0.65`` meters and the
+*Rotation*' *X* axis to ``8``.
+
+If you don't see the properties in the *Inspector* panel, first click on the
+``Character`` node again in the *Scene* dock.
 
 |image13|
 
@@ -259,16 +261,22 @@ node structure, you can copy them to different scenes.
 For example, both the ``Mob`` and the ``Player`` scenes have a ``Pivot`` and a
 ``Character`` node, so we can reuse animations between them.
 
-Open the *Player* scene, select the AnimationPlayer node and open the "float"
-animation. Next, click on **Animation > Copy**. Then open ``mob.tscn``,
-create an AnimationPlayer child node and select it. Click **Animation > Paste**
-and make sure that the button with an "A+" icon (Autoplay on Load) and the
-looping arrows (Animation looping) are also turned on in the animation editor
-in the bottom panel. That's it; all monsters will now play the float animation.
+Open the *Player* scene, select the AnimationPlayer node and then click on
+**Animation > Manage Animations...**. Click the *Copy animation to clipboard* button
+(two small squares) alongside the *float* animation. Click OK to close the window.
+
+Then open ``mob.tscn``, create an :ref:`AnimationPlayer <class_AnimationPlayer>` child
+node and select it. Click **Animation > Manage Animations**, then **Add Library**. You
+should see the message "Global library will be created." Leave the text field blank and
+click OK. Click the *Paste* icon (clipboard) and it should appear in the window. Click OK
+to close the window.
+
+Next, make sure that the autoplay button (|Autoplay|) and the looping
+arrows (Animation looping) are also turned on in the animation editor in the bottom panel.
+That's it; all monsters will now play the float animation.
 
 We can change the playback speed based on the creature's ``random_speed``. Open
-the *Mob*'s script and at the end of the ``initialize()`` function, add the
-following line.
+the *Mob*'s script and at the end of the ``initialize()`` function, add the following line.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -290,8 +298,8 @@ And with that, you finished coding your first complete 3D game.
 **Congratulations**!
 
 In the next part, we'll quickly recap what you learned and give you some links
-to keep learning more. But for now, here are the complete ``Player.gd`` and
-``Mob.gd`` so you can check your code against them.
+to keep learning more. But for now, here are the complete ``player.gd`` and
+``mob.gd`` so you can check your code against them.
 
 Here's the *Player* script.
 
@@ -529,7 +537,7 @@ And the *Mob*'s script.
         # We position the mob by placing it at start_position
         # and rotate it towards player_position, so it looks at the player.
         look_at_from_position(start_position, player_position, Vector3.UP)
-        # Rotate this mob randomly within range of -90 and +90 degrees,
+        # Rotate this mob randomly within range of -45 and +45 degrees,
         # so that it doesn't move directly towards the player.
         rotate_y(randf_range(-PI / 4, PI / 4))
 
@@ -578,7 +586,7 @@ And the *Mob*'s script.
             // We position the mob by placing it at startPosition
             // and rotate it towards playerPosition, so it looks at the player.
             LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
-            // Rotate this mob randomly within range of -90 and +90 degrees,
+            // Rotate this mob randomly within range of -45 and +45 degrees,
             // so that it doesn't move directly towards the player.
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
@@ -631,3 +639,4 @@ And the *Mob*'s script.
 .. |animation_final_keyframes| image:: img/09.adding_animations/animation_final_keyframes.webp
 .. |second_keys_both| image:: img/09.adding_animations/second_keys_both.webp
 .. |timeline_05_click| image:: img/09.adding_animations/timeline_05_click.webp
+.. |Autoplay| image:: img/09.adding_animations/autoplay_button.webp

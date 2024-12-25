@@ -33,7 +33,7 @@ material, the material must be attached to each object.
 
 All objects derived from a :ref:`CanvasItem <class_CanvasItem>` have a material
 property. This includes all :ref:`GUI elements <class_Control>`, :ref:`Sprite2Ds
-<class_Sprite2D>`, :ref:`TileMaps <class_Tilemap>`, :ref:`MeshInstance2Ds
+<class_Sprite2D>`, :ref:`TileMapLayers <class_TileMapLayer>`, :ref:`MeshInstance2Ds
 <class_MeshInstance2D>` etc. They also have an option to inherit their parent's
 material. This can be useful if you have a large number of nodes that you want
 to use the same material.
@@ -197,10 +197,17 @@ You can change uniforms from code using the function ``set_shader_parameter()``
 which is called on the node's material resource. With a Sprite2D node, the
 following code can be used to set the ``blue`` uniform.
 
-::
+.. tabs::
+ 
+ .. code-tab:: gdscript
 
   var blue_value = 1.0
   material.set_shader_parameter("blue", blue_value)
+
+ .. code-tab:: csharp
+  
+  var blueValue = 1.0;
+  ((ShaderMaterial)Material).SetShaderParameter("blue", blueValue);
 
 Note that the name of the uniform is a string. The string must match exactly
 with how it is written in the shader, including spelling and case.

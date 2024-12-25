@@ -85,7 +85,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Mode**:
+enum **Mode**: :ref:`🔗<enum_CSGPolygon3D_Mode>`
 
 .. _class_CSGPolygon3D_constant_MODE_DEPTH:
 
@@ -119,7 +119,7 @@ The :ref:`polygon<class_CSGPolygon3D_property_polygon>` shape is extruded along 
 
 .. rst-class:: classref-enumeration
 
-enum **PathRotation**:
+enum **PathRotation**: :ref:`🔗<enum_CSGPolygon3D_PathRotation>`
 
 .. _class_CSGPolygon3D_constant_PATH_ROTATION_POLYGON:
 
@@ -157,7 +157,7 @@ The :ref:`polygon<class_CSGPolygon3D_property_polygon>` shape follows the path a
 
 .. rst-class:: classref-enumeration
 
-enum **PathIntervalType**:
+enum **PathIntervalType**: :ref:`🔗<enum_CSGPolygon3D_PathIntervalType>`
 
 .. _class_CSGPolygon3D_constant_PATH_INTERVAL_DISTANCE:
 
@@ -188,12 +188,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **depth** = ``1.0``
+:ref:`float<class_float>` **depth** = ``1.0`` :ref:`🔗<class_CSGPolygon3D_property_depth>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_depth** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_depth** **(** **)**
+- |void| **set_depth**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_depth**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_DEPTH<class_CSGPolygon3D_constant_MODE_DEPTH>`, the depth of the extrusion.
 
@@ -205,12 +205,12 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_DEPTH<class_CSG
 
 .. rst-class:: classref-property
 
-:ref:`Material<class_Material>` **material**
+:ref:`Material<class_Material>` **material** :ref:`🔗<class_CSGPolygon3D_property_material>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_material** **(** :ref:`Material<class_Material>` value **)**
-- :ref:`Material<class_Material>` **get_material** **(** **)**
+- |void| **set_material**\ (\ value\: :ref:`Material<class_Material>`\ )
+- :ref:`Material<class_Material>` **get_material**\ (\ )
 
 Material to use for the resulting mesh. The UV maps the top half of the material to the extruded shape (U along the length of the extrusions and V around the outline of the :ref:`polygon<class_CSGPolygon3D_property_polygon>`), the bottom-left quarter to the front end face, and the bottom-right quarter to the back end face.
 
@@ -222,12 +222,12 @@ Material to use for the resulting mesh. The UV maps the top half of the material
 
 .. rst-class:: classref-property
 
-:ref:`Mode<enum_CSGPolygon3D_Mode>` **mode** = ``0``
+:ref:`Mode<enum_CSGPolygon3D_Mode>` **mode** = ``0`` :ref:`🔗<class_CSGPolygon3D_property_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_mode** **(** :ref:`Mode<enum_CSGPolygon3D_Mode>` value **)**
-- :ref:`Mode<enum_CSGPolygon3D_Mode>` **get_mode** **(** **)**
+- |void| **set_mode**\ (\ value\: :ref:`Mode<enum_CSGPolygon3D_Mode>`\ )
+- :ref:`Mode<enum_CSGPolygon3D_Mode>` **get_mode**\ (\ )
 
 The :ref:`mode<class_CSGPolygon3D_property_mode>` used to extrude the :ref:`polygon<class_CSGPolygon3D_property_polygon>`.
 
@@ -239,12 +239,12 @@ The :ref:`mode<class_CSGPolygon3D_property_mode>` used to extrude the :ref:`poly
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **path_continuous_u**
+:ref:`bool<class_bool>` **path_continuous_u** :ref:`🔗<class_CSGPolygon3D_property_path_continuous_u>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_continuous_u** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_path_continuous_u** **(** **)**
+- |void| **set_path_continuous_u**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_path_continuous_u**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon3D_constant_MODE_PATH>`, by default, the top half of the :ref:`material<class_CSGPolygon3D_property_material>` is stretched along the entire length of the extruded shape. If ``false`` the top half of the material is repeated every step of the extrusion.
 
@@ -256,12 +256,12 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **path_interval**
+:ref:`float<class_float>` **path_interval** :ref:`🔗<class_CSGPolygon3D_property_path_interval>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_interval** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_path_interval** **(** **)**
+- |void| **set_path_interval**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_path_interval**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon3D_constant_MODE_PATH>`, the path interval or ratio of path points to extrusions.
 
@@ -273,12 +273,12 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`PathIntervalType<enum_CSGPolygon3D_PathIntervalType>` **path_interval_type**
+:ref:`PathIntervalType<enum_CSGPolygon3D_PathIntervalType>` **path_interval_type** :ref:`🔗<class_CSGPolygon3D_property_path_interval_type>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_interval_type** **(** :ref:`PathIntervalType<enum_CSGPolygon3D_PathIntervalType>` value **)**
-- :ref:`PathIntervalType<enum_CSGPolygon3D_PathIntervalType>` **get_path_interval_type** **(** **)**
+- |void| **set_path_interval_type**\ (\ value\: :ref:`PathIntervalType<enum_CSGPolygon3D_PathIntervalType>`\ )
+- :ref:`PathIntervalType<enum_CSGPolygon3D_PathIntervalType>` **get_path_interval_type**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon3D_constant_MODE_PATH>`, this will determine if the interval should be by distance (:ref:`PATH_INTERVAL_DISTANCE<class_CSGPolygon3D_constant_PATH_INTERVAL_DISTANCE>`) or subdivision fractions (:ref:`PATH_INTERVAL_SUBDIVIDE<class_CSGPolygon3D_constant_PATH_INTERVAL_SUBDIVIDE>`).
 
@@ -290,12 +290,12 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **path_joined**
+:ref:`bool<class_bool>` **path_joined** :ref:`🔗<class_CSGPolygon3D_property_path_joined>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_joined** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_path_joined** **(** **)**
+- |void| **set_path_joined**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_path_joined**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon3D_constant_MODE_PATH>`, if ``true`` the ends of the path are joined, by adding an extrusion between the last and first points of the path.
 
@@ -307,12 +307,12 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **path_local**
+:ref:`bool<class_bool>` **path_local** :ref:`🔗<class_CSGPolygon3D_property_path_local>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_local** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_path_local** **(** **)**
+- |void| **set_path_local**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_path_local**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon3D_constant_MODE_PATH>`, if ``true`` the :ref:`Transform3D<class_Transform3D>` of the **CSGPolygon3D** is used as the starting point for the extrusions, not the :ref:`Transform3D<class_Transform3D>` of the :ref:`path_node<class_CSGPolygon3D_property_path_node>`.
 
@@ -324,12 +324,12 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`NodePath<class_NodePath>` **path_node**
+:ref:`NodePath<class_NodePath>` **path_node** :ref:`🔗<class_CSGPolygon3D_property_path_node>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_node** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_path_node** **(** **)**
+- |void| **set_path_node**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_path_node**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon3D_constant_MODE_PATH>`, the location of the :ref:`Path3D<class_Path3D>` object used to extrude the :ref:`polygon<class_CSGPolygon3D_property_polygon>`.
 
@@ -341,12 +341,12 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`PathRotation<enum_CSGPolygon3D_PathRotation>` **path_rotation**
+:ref:`PathRotation<enum_CSGPolygon3D_PathRotation>` **path_rotation** :ref:`🔗<class_CSGPolygon3D_property_path_rotation>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_rotation** **(** :ref:`PathRotation<enum_CSGPolygon3D_PathRotation>` value **)**
-- :ref:`PathRotation<enum_CSGPolygon3D_PathRotation>` **get_path_rotation** **(** **)**
+- |void| **set_path_rotation**\ (\ value\: :ref:`PathRotation<enum_CSGPolygon3D_PathRotation>`\ )
+- :ref:`PathRotation<enum_CSGPolygon3D_PathRotation>` **get_path_rotation**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon3D_constant_MODE_PATH>`, the path rotation method used to rotate the :ref:`polygon<class_CSGPolygon3D_property_polygon>` as it is extruded.
 
@@ -358,12 +358,12 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **path_simplify_angle**
+:ref:`float<class_float>` **path_simplify_angle** :ref:`🔗<class_CSGPolygon3D_property_path_simplify_angle>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_simplify_angle** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_path_simplify_angle** **(** **)**
+- |void| **set_path_simplify_angle**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_path_simplify_angle**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon3D_constant_MODE_PATH>`, extrusions that are less than this angle, will be merged together to reduce polygon count.
 
@@ -375,12 +375,12 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **path_u_distance**
+:ref:`float<class_float>` **path_u_distance** :ref:`🔗<class_CSGPolygon3D_property_path_u_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_u_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_path_u_distance** **(** **)**
+- |void| **set_path_u_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_path_u_distance**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon3D_constant_MODE_PATH>`, this is the distance along the path, in meters, the texture coordinates will tile. When set to 0, texture coordinates will match geometry exactly with no tiling.
 
@@ -392,16 +392,18 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array(0, 0, 0, 1, 1, 1, 1, 0)``
+:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array(0, 0, 0, 1, 1, 1, 1, 0)`` :ref:`🔗<class_CSGPolygon3D_property_polygon>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_polygon** **(** **)**
+- |void| **set_polygon**\ (\ value\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_polygon**\ (\ )
 
 The point array that defines the 2D polygon that is extruded. This can be a convex or concave polygon with 3 or more points. The polygon must *not* have any intersecting edges. Otherwise, triangulation will fail and no mesh will be generated.
 
 \ **Note:** If only 1 or 2 points are defined in :ref:`polygon<class_CSGPolygon3D_property_polygon>`, no mesh will be generated.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -411,12 +413,12 @@ The point array that defines the 2D polygon that is extruded. This can be a conv
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **smooth_faces** = ``false``
+:ref:`bool<class_bool>` **smooth_faces** = ``false`` :ref:`🔗<class_CSGPolygon3D_property_smooth_faces>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_smooth_faces** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_smooth_faces** **(** **)**
+- |void| **set_smooth_faces**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_smooth_faces**\ (\ )
 
 If ``true``, applies smooth shading to the extrusions.
 
@@ -428,12 +430,12 @@ If ``true``, applies smooth shading to the extrusions.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **spin_degrees**
+:ref:`float<class_float>` **spin_degrees** :ref:`🔗<class_CSGPolygon3D_property_spin_degrees>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_spin_degrees** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_spin_degrees** **(** **)**
+- |void| **set_spin_degrees**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_spin_degrees**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_SPIN<class_CSGPolygon3D_constant_MODE_SPIN>`, the total number of degrees the :ref:`polygon<class_CSGPolygon3D_property_polygon>` is rotated when extruding.
 
@@ -445,12 +447,12 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_SPIN<class_CSGP
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **spin_sides**
+:ref:`int<class_int>` **spin_sides** :ref:`🔗<class_CSGPolygon3D_property_spin_sides>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_spin_sides** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_spin_sides** **(** **)**
+- |void| **set_spin_sides**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_spin_sides**\ (\ )
 
 When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_SPIN<class_CSGPolygon3D_constant_MODE_SPIN>`, the number of extrusions made.
 
@@ -461,3 +463,4 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_SPIN<class_CSGP
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

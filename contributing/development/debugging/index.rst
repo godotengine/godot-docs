@@ -28,7 +28,7 @@ For example, using ``gdb`` directly, you may do this:
 
 .. code-block:: none
 
-    $ gdb godot
+    gdb godot
     > run -e --path ~/myproject
 
 You can also run the editor directly from your project's folder. In that case,
@@ -36,8 +36,8 @@ only the ``-e`` option is required.
 
 .. code-block:: none
 
-    $ cd ~/myproject
-    $ gdb godot
+    cd ~/myproject
+    gdb godot
     > run -e
 
 You can learn more about these launch options and other command line arguments

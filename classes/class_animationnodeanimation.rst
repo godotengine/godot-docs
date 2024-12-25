@@ -28,9 +28,9 @@ Tutorials
 
 - :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -40,11 +40,23 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------+-------------------------------------------------------------------+---------+
-   | :ref:`StringName<class_StringName>`                   | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | ``&""`` |
-   +-------------------------------------------------------+-------------------------------------------------------------------+---------+
-   | :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` | :ref:`play_mode<class_AnimationNodeAnimation_property_play_mode>` | ``0``   |
-   +-------------------------------------------------------+-------------------------------------------------------------------+---------+
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                               | :ref:`advance_on_start<class_AnimationNodeAnimation_property_advance_on_start>`       | ``false`` |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
+   | :ref:`StringName<class_StringName>`                   | :ref:`animation<class_AnimationNodeAnimation_property_animation>`                     | ``&""``   |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
+   | :ref:`LoopMode<enum_Animation_LoopMode>`              | :ref:`loop_mode<class_AnimationNodeAnimation_property_loop_mode>`                     |           |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
+   | :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` | :ref:`play_mode<class_AnimationNodeAnimation_property_play_mode>`                     | ``0``     |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                             | :ref:`start_offset<class_AnimationNodeAnimation_property_start_offset>`               |           |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                               | :ref:`stretch_time_scale<class_AnimationNodeAnimation_property_stretch_time_scale>`   |           |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                             | :ref:`timeline_length<class_AnimationNodeAnimation_property_timeline_length>`         |           |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                               | :ref:`use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_timeline>` | ``false`` |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-section-separator
 
@@ -59,7 +71,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **PlayMode**:
+enum **PlayMode**: :ref:`🔗<enum_AnimationNodeAnimation_PlayMode>`
 
 .. _class_AnimationNodeAnimation_constant_PLAY_MODE_FORWARD:
 
@@ -86,18 +98,56 @@ Plays animation in backward direction.
 Property Descriptions
 ---------------------
 
+.. _class_AnimationNodeAnimation_property_advance_on_start:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **advance_on_start** = ``false`` :ref:`🔗<class_AnimationNodeAnimation_property_advance_on_start>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_advance_on_start**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_advance_on_start**\ (\ )
+
+If ``true``, on receiving a request to play an animation from the start, the first frame is not drawn, but only processed, and playback starts from the next frame.
+
+See also the notes of :ref:`AnimationPlayer.play<class_AnimationPlayer_method_play>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationNodeAnimation_property_animation:
 
 .. rst-class:: classref-property
 
-:ref:`StringName<class_StringName>` **animation** = ``&""``
+:ref:`StringName<class_StringName>` **animation** = ``&""`` :ref:`🔗<class_AnimationNodeAnimation_property_animation>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_animation** **(** :ref:`StringName<class_StringName>` value **)**
-- :ref:`StringName<class_StringName>` **get_animation** **(** **)**
+- |void| **set_animation**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_animation**\ (\ )
 
 Animation to use as an output. It is one of the animations provided by :ref:`AnimationTree.anim_player<class_AnimationTree_property_anim_player>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeAnimation_property_loop_mode:
+
+.. rst-class:: classref-property
+
+:ref:`LoopMode<enum_Animation_LoopMode>` **loop_mode** :ref:`🔗<class_AnimationNodeAnimation_property_loop_mode>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_loop_mode**\ (\ value\: :ref:`LoopMode<enum_Animation_LoopMode>`\ )
+- :ref:`LoopMode<enum_Animation_LoopMode>` **get_loop_mode**\ (\ )
+
+If :ref:`use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_timeline>` is ``true``, override the loop settings of the original :ref:`Animation<class_Animation>` resource with the value.
+
+\ **Note:** If the :ref:`Animation.loop_mode<class_Animation_property_loop_mode>` isn't set to looping, the :ref:`Animation.track_set_interpolation_loop_wrap<class_Animation_method_track_set_interpolation_loop_wrap>` option will not be respected. If you cannot get the expected behavior, consider duplicating the :ref:`Animation<class_Animation>` resource and changing the loop settings.
 
 .. rst-class:: classref-item-separator
 
@@ -107,14 +157,88 @@ Animation to use as an output. It is one of the animations provided by :ref:`Ani
 
 .. rst-class:: classref-property
 
-:ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **play_mode** = ``0``
+:ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **play_mode** = ``0`` :ref:`🔗<class_AnimationNodeAnimation_property_play_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_play_mode** **(** :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` value **)**
-- :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **get_play_mode** **(** **)**
+- |void| **set_play_mode**\ (\ value\: :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>`\ )
+- :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **get_play_mode**\ (\ )
 
 Determines the playback direction of the animation.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeAnimation_property_start_offset:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **start_offset** :ref:`🔗<class_AnimationNodeAnimation_property_start_offset>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_start_offset**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_start_offset**\ (\ )
+
+If :ref:`use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_timeline>` is ``true``, offset the start position of the animation.
+
+This is useful for adjusting which foot steps first in 3D walking animations.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeAnimation_property_stretch_time_scale:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **stretch_time_scale** :ref:`🔗<class_AnimationNodeAnimation_property_stretch_time_scale>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_stretch_time_scale**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_stretching_time_scale**\ (\ )
+
+If ``true``, scales the time so that the length specified in :ref:`timeline_length<class_AnimationNodeAnimation_property_timeline_length>` is one cycle.
+
+This is useful for matching the periods of walking and running animations.
+
+If ``false``, the original animation length is respected. If you set the loop to :ref:`loop_mode<class_AnimationNodeAnimation_property_loop_mode>`, the animation will loop in :ref:`timeline_length<class_AnimationNodeAnimation_property_timeline_length>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeAnimation_property_timeline_length:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **timeline_length** :ref:`🔗<class_AnimationNodeAnimation_property_timeline_length>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_timeline_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_timeline_length**\ (\ )
+
+If :ref:`use_custom_timeline<class_AnimationNodeAnimation_property_use_custom_timeline>` is ``true``, offset the start position of the animation.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeAnimation_property_use_custom_timeline:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_custom_timeline** = ``false`` :ref:`🔗<class_AnimationNodeAnimation_property_use_custom_timeline>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_custom_timeline**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_custom_timeline**\ (\ )
+
+If ``true``, :ref:`AnimationNode<class_AnimationNode>` provides an animation based on the :ref:`Animation<class_Animation>` resource with some parameters adjusted.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -123,3 +247,4 @@ Determines the playback direction of the animation.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -52,7 +52,7 @@ Godot will automatically create a default action map if no action map file is fo
   It prevents having to design a proper action map for their game/application first.
 
 For this walkthrough we're going to start with a blank action map.
-You can simply delete the "Godot action set" entry at the top by pressing the trash can icon.
+You can delete the "Godot action set" entry at the top by pressing the trash can icon.
 This will clear out all actions.
 You might also want to remove the controllers that you do not wish to setup, more on this later.
 
@@ -201,7 +201,7 @@ OpenXR defines a number of bindable input poses that are commonly available for 
 There are no rules for which poses are supported for different controllers.
 The poses OpenXR currently defines are:
 
-  * The aim pose on most controllers is positioned slightly infront of the controller and aims forward.
+  * The aim pose on most controllers is positioned slightly in front of the controller and aims forward.
     This is a great pose to use for laser pointers or to align the muzzle of a weapon with.
   * The grip pose on most controllers is positioned where the grip button is placed on the controller.
     The orientation of this pose differs between controllers and can differ for the same controller on different XR runtimes.
@@ -257,7 +257,7 @@ Profiles
 --------
 
 In OpenXR controller bindings are captured in so-called "Interaction Profiles".
-We've simply shortened it to "Profiles" because it takes up less space.
+We've shortened it to "Profiles" because it takes up less space.
 
 This generic name is chosen because controllers don't cover the entire system.
 Currently there are also profiles for trackers, remotes and tracked pens.
@@ -385,4 +385,3 @@ This is why many XR runtimes only use it as a last resort and will attempt to us
   This is our advice as well: limit your action map to the interaction profiles for devices you have actually tested your game with.
   The Oculus Touch controller is widely used as a fallback controller by many runtimes.
   If you are able to test your game using a Meta Rift or Quest and add this profile there is a high probability your game will work with other headsets.
-

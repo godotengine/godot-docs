@@ -24,23 +24,23 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`find_path<class_PolygonPathFinder_method_find_path>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**                                            |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Rect2<class_Rect2>`                           | :ref:`get_bounds<class_PolygonPathFinder_method_get_bounds>` **(** **)** |const|                                                                                                       |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                       | :ref:`get_closest_point<class_PolygonPathFinder_method_get_closest_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|                                                     |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_intersections<class_PolygonPathFinder_method_get_intersections>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)** |const|                    |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                           | :ref:`get_point_penalty<class_PolygonPathFinder_method_get_point_penalty>` **(** :ref:`int<class_int>` idx **)** |const|                                                               |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`is_point_inside<class_PolygonPathFinder_method_is_point_inside>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|                                                         |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_point_penalty<class_PolygonPathFinder_method_set_point_penalty>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` penalty **)**                                    |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`setup<class_PolygonPathFinder_method_setup>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedInt32Array<class_PackedInt32Array>` connections **)** |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`find_path<class_PolygonPathFinder_method_find_path>`\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`\ )                                            |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`                           | :ref:`get_bounds<class_PolygonPathFinder_method_get_bounds>`\ (\ ) |const|                                                                                                            |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`get_closest_point<class_PolygonPathFinder_method_get_closest_point>`\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                       |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_intersections<class_PolygonPathFinder_method_get_intersections>`\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`\ ) |const|                    |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`get_point_penalty<class_PolygonPathFinder_method_get_point_penalty>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                                                                 |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`is_point_inside<class_PolygonPathFinder_method_is_point_inside>`\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                           |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_point_penalty<class_PolygonPathFinder_method_set_point_penalty>`\ (\ idx\: :ref:`int<class_int>`, penalty\: :ref:`float<class_float>`\ )                                    |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`setup<class_PolygonPathFinder_method_setup>`\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, connections\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -55,7 +55,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **find_path** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**
+:ref:`PackedVector2Array<class_PackedVector2Array>` **find_path**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`\ ) :ref:`🔗<class_PolygonPathFinder_method_find_path>`
 
 .. container:: contribute
 
@@ -69,7 +69,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_bounds** **(** **)** |const|
+:ref:`Rect2<class_Rect2>` **get_bounds**\ (\ ) |const| :ref:`🔗<class_PolygonPathFinder_method_get_bounds>`
 
 .. container:: contribute
 
@@ -83,7 +83,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` point **)** |const|
+:ref:`Vector2<class_Vector2>` **get_closest_point**\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_PolygonPathFinder_method_get_closest_point>`
 
 .. container:: contribute
 
@@ -97,7 +97,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **get_intersections** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)** |const|
+:ref:`PackedVector2Array<class_PackedVector2Array>` **get_intersections**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_PolygonPathFinder_method_get_intersections>`
 
 .. container:: contribute
 
@@ -111,7 +111,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_point_penalty** **(** :ref:`int<class_int>` idx **)** |const|
+:ref:`float<class_float>` **get_point_penalty**\ (\ idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_PolygonPathFinder_method_get_point_penalty>`
 
 .. container:: contribute
 
@@ -125,11 +125,37 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_point_inside** **(** :ref:`Vector2<class_Vector2>` point **)** |const|
+:ref:`bool<class_bool>` **is_point_inside**\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_PolygonPathFinder_method_is_point_inside>`
 
-.. container:: contribute
+Returns ``true`` if ``point`` falls inside the polygon area.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var polygon_path_finder = PolygonPathFinder.new()
+    var points = [Vector2(0.0, 0.0), Vector2(1.0, 0.0), Vector2(0.0, 1.0)]
+    var connections = [0, 1, 1, 2, 2, 0]
+    polygon_path_finder.setup(points, connections)
+    print(polygon_path_finder.is_point_inside(Vector2(0.2, 0.2))) # Prints true
+    print(polygon_path_finder.is_point_inside(Vector2(1.0, 1.0))) # Prints false
+
+ .. code-tab:: csharp
+
+    var polygonPathFinder = new PolygonPathFinder();
+    var points = new Vector2[]
+    {
+        new Vector2(0.0f, 0.0f),
+        new Vector2(1.0f, 0.0f),
+        new Vector2(0.0f, 1.0f)
+    };
+    var connections = new int[] { 0, 1, 1, 2, 2, 0 };
+    polygonPathFinder.Setup(points, connections);
+    GD.Print(polygonPathFinder.IsPointInside(new Vector2(0.2f, 0.2f))); // Prints True
+    GD.Print(polygonPathFinder.IsPointInside(new Vector2(1.0f, 1.0f))); // Prints False
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -139,7 +165,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **set_point_penalty** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` penalty **)**
+|void| **set_point_penalty**\ (\ idx\: :ref:`int<class_int>`, penalty\: :ref:`float<class_float>`\ ) :ref:`🔗<class_PolygonPathFinder_method_set_point_penalty>`
 
 .. container:: contribute
 
@@ -153,11 +179,35 @@ void **set_point_penalty** **(** :ref:`int<class_int>` idx, :ref:`float<class_fl
 
 .. rst-class:: classref-method
 
-void **setup** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedInt32Array<class_PackedInt32Array>` connections **)**
+|void| **setup**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`, connections\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) :ref:`🔗<class_PolygonPathFinder_method_setup>`
 
-.. container:: contribute
+Sets up **PolygonPathFinder** with an array of points that define the vertices of the polygon, and an array of indices that determine the edges of the polygon.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The length of ``connections`` must be even, returns an error if odd.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var polygon_path_finder = PolygonPathFinder.new()
+    var points = [Vector2(0.0, 0.0), Vector2(1.0, 0.0), Vector2(0.0, 1.0)]
+    var connections = [0, 1, 1, 2, 2, 0]
+    polygon_path_finder.setup(points, connections)
+
+ .. code-tab:: csharp
+
+    var polygonPathFinder = new PolygonPathFinder();
+    var points = new Vector2[]
+    {
+        new Vector2(0.0f, 0.0f),
+        new Vector2(1.0f, 0.0f),
+        new Vector2(0.0f, 1.0f)
+    };
+    var connections = new int[] { 0, 1, 1, 2, 2, 0 };
+    polygonPathFinder.Setup(points, connections);
+
+
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -166,3 +216,4 @@ void **setup** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points,
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

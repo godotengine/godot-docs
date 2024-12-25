@@ -28,7 +28,7 @@ In computer programming, a Variant class is a class that is designed to store a 
     foo = "Now foo is a string!"
     foo = RefCounted.new() # foo is an Object
     var bar: int = 2 # bar is a statically typed integer.
-    # bar = "Uh oh! I can't make static variables become a different type!"
+    # bar = "Uh oh! I can't make statically typed variables become a different type!"
 
  .. code-tab:: csharp
 
@@ -62,14 +62,14 @@ The global :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>` function
     match typeof(foo):
         TYPE_NIL:
             print("foo is null")
-        TYPE_INTEGER:
+        TYPE_INT:
             print("foo is an integer")
         TYPE_OBJECT:
             # Note that Objects are their own special category.
             # To get the name of the underlying Object type, you need the `get_class()` method.
             print("foo is a(n) %s" % foo.get_class()) # inject the class name into a formatted string.
-            # Note also that there is not yet any way to get a script's `class_name` string easily.
-            # To fetch that value, you can use ProjectSettings.get_global_class_list().
+            # Note that this does not get the script's `class_name` global identifier.
+            # If the `class_name` is needed, use `foo.get_script().get_global_name()` instead.
 
  .. code-tab:: csharp
 
@@ -139,3 +139,4 @@ Tutorials
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

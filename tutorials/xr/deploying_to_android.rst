@@ -62,6 +62,12 @@ Enable the **GodotOpenXRVendors** plugin.
 
 .. image:: img/xr_enable_vendors_plugin.webp
 
+.. note::
+    This is no longer required from vendors plugin 2.0.3 onwards as it now uses GDExtension.
+    The plugin will not be shown in this list.
+    You can verify it is installed correctly by checking if the export presets contain
+    the entries described below.
+
 Creating the export presets
 ---------------------------
 You will need to setup a separate export preset for each device, as each device will need its own loader included.
@@ -72,7 +78,7 @@ Next change the name of the export preset for the device you're setting this up 
 And enable **Use Gradle Build**.
 If you want to use one-click deploy (described below), ensure that **Runnable** is enabled.
 
-If the loader plugins were installed correctly you should find entries for the different headsets, select the entry for meta:
+If the vendors plugins were installed correctly you should find entries for the different headsets, select the entry for meta:
 
 .. image:: img/android_meta_quest.webp
 

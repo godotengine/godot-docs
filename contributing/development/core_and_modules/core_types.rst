@@ -103,36 +103,12 @@ which are equivalent to new, delete, new[] and delete[].
 memnew/memdelete also use a little C++ magic and notify Objects right
 after they are created, and right before they are deleted.
 
-For dynamic memory, the PoolVector<> template is provided. PoolVector is a
-standard vector class, and is very similar to vector in the C++ standard library.
-To create a PoolVector buffer, use this:
-
-.. code-block:: cpp
-
-    PoolVector<int> data;
-
-PoolVector can be accessed using the [] operator and a few helpers exist for this:
-
-.. code-block:: cpp
-
-    PoolVector<int>::Read r = data.read()
-    int someint = r[4]
-
-.. code-block:: cpp
-
-    PoolVector<int>::Write w = data.write()
-    w[4] = 22;
-
-These operations allow fast read/write from PoolVectors and keep it
-locked until they go out of scope. However, PoolVectors should be used
-for small, dynamic memory operations, as read() and write() are too slow for a
-large amount of accesses.
+For dynamic memory, use Vector<>.
 
 References:
 ~~~~~~~~~~~
 
 -  `core/os/memory.h <https://github.com/godotengine/godot/blob/master/core/os/memory.h>`__
--  `core/pool_vector.h <https://github.com/godotengine/godot/blob/master/core/pool_vector.cpp>`__
 
 Containers
 ----------

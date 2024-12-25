@@ -74,11 +74,11 @@ Box Containers
 
 Arranges child controls vertically or horizontally (via :ref:`HBoxContainer <class_HBoxContainer>` and
 :ref:`VBoxContainer <class_VBoxContainer>`). In the opposite of the designated direction
-(as in, vertical for an horizontal container), it just expands the children.
+(as in, vertical for a horizontal container), it just expands the children.
 
    .. image:: img/containers_box.png
 
-These containers make use of the *Ratio* property for children with the *Expand* flag set.
+These containers make use of the *Stretch Ratio* property for children with the *Expand* flag set.
 
 Grid Container
 ^^^^^^^^^^^^^^
@@ -162,15 +162,15 @@ As in the example above, one of the most common ways to use this container is to
 AspectRatioContainer
 ^^^^^^^^^^^^^^^^^^^^
 
-A container type that arranges its child controls in a way that preserves their proportions 
+A container type that arranges its child controls in a way that preserves their proportions
 automatically when the container is resized.
 (via :ref:`AspectRatioContainer <class_AspectRatioContainer>`).
-It has multiple stretch modes, providing options for adjusting the child controls' sizes concerning the container: 
+It has multiple stretch modes, providing options for adjusting the child controls' sizes concerning the container:
 "fill," "width control height," "height control width," and "cover."
 
    .. image:: img/containers_aspectratio.webp
 
-useful when you have a container that needs to be dynamic and responsive to different screen sizes, 
+useful when you have a container that needs to be dynamic and responsive to different screen sizes,
 and you want the child elements to scale proportionally without losing their intended shapes.
 
    .. image:: img/containers_aspectratio_drag.webp
@@ -178,9 +178,9 @@ and you want the child elements to scale proportionally without losing their int
 FlowContainer
 ^^^^^^^^^^^^^^
 
-FlowContainer is a container that arranges its child controls either horizontally or vertically, 
+FlowContainer is a container that arranges its child controls either horizontally or vertically,
 (via :ref:`HFlowContainer <class_HFlowContainer>` and via :ref:`VFlowContainer <class_VFlowContainer>`).
-and when the available space runs out, it wraps the children to the next line or column, similar to how text wraps in a book. 
+and when the available space runs out, it wraps the children to the next line or column, similar to how text wraps in a book.
 
 
    .. image:: img/containers_hflow.webp
@@ -192,7 +192,7 @@ useful for creating flexible layouts where the child controls adjust automatical
 CenterContainer
 ^^^^^^^^^^^^^^^^^^^^
 
-CenterContainer is a container that automatically keeps all of its child controls centered within it at their minimum size. 
+CenterContainer is a container that automatically keeps all of its child controls centered within it at their minimum size.
 It ensures that the child controls are always aligned to the center, making it easier to create centered layouts without manual positioning.
 (via :ref:`CenterContainer <class_CenterContainer>`).
 

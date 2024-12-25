@@ -16,7 +16,7 @@ interacting with gameplay objects e.g. ladders, jump pads or teleports.
 :ref:`NavigationLink3D<class_NavigationLink3D>` respectively.
 
 Different NavigationRegions can connect their navigation meshes without the need for a NavigationLink
-as long as they are within navigation map ``edge_connection_margin`` and have compatible ``navigation_layers``.
+as long as they have overlapping edges or edges that are within navigation map ``edge_connection_margin``.
 As soon as the distance becomes too large, building valid connections becomes a problem - a problem that NavigationLinks can solve.
 
 See :ref:`doc_navigation_using_navigationregions` to learn more about the use of navigation regions.
@@ -88,6 +88,42 @@ The following script uses the NavigationServer to create a new navigation link.
         NavigationServer2D.link_set_start_position(link_rid, link_start_position)
         NavigationServer2D.link_set_end_position(link_rid, link_end_position)
 
+ .. code-tab:: csharp 2D C#
+
+    using Godot;
+
+    public partial class MyNode2D : Node2D
+    {
+        private Rid _linkRid;
+        private Vector2 _linkStartPosition;
+        private Vector2 _linkEndPosition;
+
+        public override void _Ready()
+        {
+            _linkRid = NavigationServer2D.LinkCreate();
+
+            ulong linkOwnerId = GetInstanceId();
+            float linkEnterCost = 1.0f;
+            float linkTravelCost = 1.0f;
+            uint linkNavigationLayers = 1;
+            bool linkBidirectional = true;
+
+            NavigationServer2D.LinkSetOwnerId(_linkRid, linkOwnerId);
+            NavigationServer2D.LinkSetEnterCost(_linkRid, linkEnterCost);
+            NavigationServer2D.LinkSetTravelCost(_linkRid, linkTravelCost);
+            NavigationServer2D.LinkSetNavigationLayers(_linkRid, linkNavigationLayers);
+            NavigationServer2D.LinkSetBidirectional(_linkRid, linkBidirectional);
+
+            // Enable the link and set it to the default navigation map.
+            NavigationServer2D.LinkSetEnabled(_linkRid, true);
+            NavigationServer2D.LinkSetMap(_linkRid, GetWorld2D().NavigationMap);
+
+            // Move the 2 link positions to their intended global positions.
+            NavigationServer2D.LinkSetStartPosition(_linkRid, _linkStartPosition);
+            NavigationServer2D.LinkSetEndPosition(_linkRid, _linkEndPosition);
+        }
+    }
+
  .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
@@ -118,3 +154,39 @@ The following script uses the NavigationServer to create a new navigation link.
         # Move the 2 link positions to their intended global positions.
         NavigationServer3D.link_set_start_position(link_rid, link_start_position)
         NavigationServer3D.link_set_end_position(link_rid, link_end_position)
+
+ .. code-tab:: csharp 3D C#
+
+    using Godot;
+
+    public partial class MyNode3D : Node3D
+    {
+        private Rid _linkRid;
+        private Vector3 _linkStartPosition;
+        private Vector3 _linkEndPosition;
+
+        public override void _Ready()
+        {
+            _linkRid = NavigationServer3D.LinkCreate();
+
+            ulong linkOwnerId = GetInstanceId();
+            float linkEnterCost = 1.0f;
+            float linkTravelCost = 1.0f;
+            uint linkNavigationLayers = 1;
+            bool linkBidirectional = true;
+
+            NavigationServer3D.LinkSetOwnerId(_linkRid, linkOwnerId);
+            NavigationServer3D.LinkSetEnterCost(_linkRid, linkEnterCost);
+            NavigationServer3D.LinkSetTravelCost(_linkRid, linkTravelCost);
+            NavigationServer3D.LinkSetNavigationLayers(_linkRid, linkNavigationLayers);
+            NavigationServer3D.LinkSetBidirectional(_linkRid, linkBidirectional);
+
+            // Enable the link and set it to the default navigation map.
+            NavigationServer3D.LinkSetEnabled(_linkRid, true);
+            NavigationServer3D.LinkSetMap(_linkRid, GetWorld3D().NavigationMap);
+
+            // Move the 2 link positions to their intended global positions.
+            NavigationServer3D.LinkSetStartPosition(_linkRid, _linkStartPosition);
+            NavigationServer3D.LinkSetEndPosition(_linkRid, _linkEndPosition);
+        }
+    }

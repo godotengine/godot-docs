@@ -50,7 +50,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **separation** = ``0``
+:ref:`int<class_int>` **separation** = ``0`` :ref:`🔗<class_Separator_theme_constant_separation>`
 
 The size of the area covered by the separator. Effectively works like a minimum width/height.
 
@@ -62,7 +62,7 @@ The size of the area covered by the separator. Effectively works like a minimum 
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **separator**
+:ref:`StyleBox<class_StyleBox>` **separator** :ref:`🔗<class_Separator_theme_style_separator>`
 
 The style for the separator line. Works best with :ref:`StyleBoxLine<class_StyleBoxLine>` (remember to enable :ref:`StyleBoxLine.vertical<class_StyleBoxLine_property_vertical>` for :ref:`VSeparator<class_VSeparator>`).
 
@@ -73,3 +73,4 @@ The style for the separator line. Works best with :ref:`StyleBoxLine<class_Style
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -13,8 +13,7 @@ and most 3D modeling applications support it. For 2D, as this function is not
 used as often, it's difficult to find mainstream software aimed for this.
 
 One option is to create animations in third-party software such as Spine or
-Dragonbones. From Godot 3.1 onwards, though, this functionality is supported
-built-in.
+Dragonbones. This functionality is also supported built-in.
 
 Why would you want to do skeletal animations directly in Godot? The answer is
 that there are many advantages to it:
@@ -142,12 +141,13 @@ Keep going and build the whole skeleton:
 
 .. image:: img/skel2d13.png
 
-You will notice that all bones raise an annoying warning about a missing rest
-pose. This means that it's time to set one. Go to the *skeleton* node and create
-a rest pose. This pose is the default one, you can come back to it anytime you
-want (which is very handy for animating):
+You will notice that all bones raise a warning about a missing rest pose. A rest
+pose is the default pose for a skeleton, you can come back to it anytime you want
+(which is very handy for animating). To set one click on the *skeleton* node in
+the scene tree, then click on the ``Skeleton2D`` button in the toolbar, and select
+``Overwrite Rest Pose`` from the dropdown menu.
 
-.. image:: img/skel2d14.png
+.. image:: img/skel2d14.webp
 
 The warnings will go away. If you modify the skeleton (add/remove bones) you
 will need to set the rest pose again.

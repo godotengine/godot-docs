@@ -54,12 +54,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Color<class_Color>` **color** = ``Color(0, 0, 0, 1)``
+:ref:`Color<class_Color>` **color** = ``Color(0, 0, 0, 1)`` :ref:`🔗<class_StyleBoxLine_property_color>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_color** **(** **)**
+- |void| **set_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_color**\ (\ )
 
 The line's color.
 
@@ -71,12 +71,12 @@ The line's color.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **grow_begin** = ``1.0``
+:ref:`float<class_float>` **grow_begin** = ``1.0`` :ref:`🔗<class_StyleBoxLine_property_grow_begin>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_grow_begin** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_grow_begin** **(** **)**
+- |void| **set_grow_begin**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_grow_begin**\ (\ )
 
 The number of pixels the line will extend before the **StyleBoxLine**'s bounds. If set to a negative value, the line will begin inside the **StyleBoxLine**'s bounds.
 
@@ -88,12 +88,12 @@ The number of pixels the line will extend before the **StyleBoxLine**'s bounds. 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **grow_end** = ``1.0``
+:ref:`float<class_float>` **grow_end** = ``1.0`` :ref:`🔗<class_StyleBoxLine_property_grow_end>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_grow_end** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_grow_end** **(** **)**
+- |void| **set_grow_end**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_grow_end**\ (\ )
 
 The number of pixels the line will extend past the **StyleBoxLine**'s bounds. If set to a negative value, the line will end inside the **StyleBoxLine**'s bounds.
 
@@ -105,12 +105,12 @@ The number of pixels the line will extend past the **StyleBoxLine**'s bounds. If
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **thickness** = ``1``
+:ref:`int<class_int>` **thickness** = ``1`` :ref:`🔗<class_StyleBoxLine_property_thickness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_thickness** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_thickness** **(** **)**
+- |void| **set_thickness**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_thickness**\ (\ )
 
 The line's thickness in pixels.
 
@@ -122,12 +122,12 @@ The line's thickness in pixels.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **vertical** = ``false``
+:ref:`bool<class_bool>` **vertical** = ``false`` :ref:`🔗<class_StyleBoxLine_property_vertical>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_vertical** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_vertical** **(** **)**
+- |void| **set_vertical**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_vertical**\ (\ )
 
 If ``true``, the line will be vertical. If ``false``, the line will be horizontal.
 
@@ -138,3 +138,4 @@ If ``true``, the line will be vertical. If ``false``, the line will be horizonta
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

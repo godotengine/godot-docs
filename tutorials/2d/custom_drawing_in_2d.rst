@@ -254,9 +254,9 @@ You will have to code a function to perform this and draw it yourself.
 
     The following instructions use a fixed set of coordinates that could be too small
     for high resolution screens (larger than 1080p). If that is your case, and the
-    drawing is too small consider increasing your window scale in
-    ``Menu > Project > Project settings > display/window/stretch/scale`` to adjust
-    the project to a higher resolution (a 2 or 4 scale tends to work well).
+    drawing is too small consider increasing your window scale in the project setting
+    :ref:`Display > Window > Stretch > Scale<class_ProjectSettings_property_display/window/stretch/scale>`
+    to adjust the project to a higher resolution (a 2 or 4 scale tends to work well).
 
 Drawing a custom polygon shape
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -377,7 +377,7 @@ like this:
         // We are going to paint with this color.
         Color godotBlue = new Color("478cbf");
         // We pass the array of Vector2 to draw the shape.
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
     }
 
 When running it you should see something like this:
@@ -474,7 +474,7 @@ draw the line, like this:
         Color white = Colors.White;
         Color godotBlue = new Color("478cbf");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
 
         // We draw the while line on top of the previous shape.
         DrawPolyline(_mouth, white, _mouthWidth);
@@ -487,7 +487,7 @@ You should get the following output:
 Unlike ``draw_polygon()``, polylines can only have a single unique color
 for all its points (the second argument). This method has 2 additional
 arguments: the width of the line (which is as small as possible by default)
-and enabling or disabling the anti-aliasing (it is disabled by default).
+and enabling or disabling the antialiasing (it is disabled by default).
 
 The order of the ``_draw`` calls is important- like with the Node positions on
 the tree hierarchy, the different shapes will be drawn from top to bottom,
@@ -535,7 +535,7 @@ its radius, and the third is its color:
         Color godotBlue = new Color("478cbf");
         Color grey = new Color("414042");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
 
         // Four circles for the 2 eyes: 2 white, 2 grey.
@@ -589,7 +589,7 @@ like this:
         Color godotBlue = new Color("478cbf");
         Color grey = new Color("414042");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
         DrawCircle(new Vector2(42.479f, 65.4825f), 9.3905f, white);
         DrawCircle(new Vector2(85.524f, 65.4825f), 9.3905f, white);
@@ -613,7 +613,7 @@ Drawing text
 ^^^^^^^^^^^^
 
 While using the :ref:`Label <class_Label>` Node is the most common way to add
-text to your application, the low level `_draw` function includes functionality
+text to your application, the low-level `_draw` function includes functionality
 to add text to your custom Node drawing. We will use it to add the name "GODOT"
 under the robot head.
 
@@ -652,7 +652,7 @@ to do it, like this:
         Color godotBlue = new Color("478cbf");
         Color grey = new Color("414042");
 
-        DrawPolygon(_head, new Color[]{ godotBlue });
+        DrawPolygon(_head, [godotBlue]);
         DrawPolyline(_mouth, white, _mouthWidth);
         DrawCircle(new Vector2(42.479f, 65.4825f), 9.3905f, white);
         DrawCircle(new Vector2(85.524f, 65.4825f), 9.3905f, white);
@@ -844,7 +844,7 @@ It will look somewhat like this when run:
 
 Please note that ``_mouth_width`` is a user defined property like any other
 and it or any other used as a drawing argument can be animated using more
-standard and high level methods such as a :ref:`Tween<class_Tween>` or an
+standard and high-level methods such as a :ref:`Tween<class_Tween>` or an
 :ref:`AnimationPlayer<class_AnimationPlayer>` Node. The only difference is
 that a ``queue_redraw()`` call is needed to apply those changes so they get
 shown on screen.

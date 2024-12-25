@@ -50,7 +50,7 @@ For this demo, we will use this :ref:`Sprite <class_Sprite2D>` of a sheep.
 
 Assign a new :ref:`Shader <class_Shader>` to the ``ColorRect``'s
 ``ShaderMaterial``. You can access the frame's texture and UV with a
-``sampler2D`` using ``hint_screen_texture`` and the built in ``SCREEN_UV``
+``sampler2D`` using ``hint_screen_texture`` and the built-in ``SCREEN_UV``
 uniforms.
 
 Copy the following code to your shader. The code below is a hex pixelization

@@ -48,9 +48,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+--------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`get_input_real_name<class_VisualShaderNodeInput_method_get_input_real_name>` **(** **)** |const| |
-   +-----------------------------+--------------------------------------------------------------------------------------------------------+
+   +-----------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_input_real_name<class_VisualShaderNodeInput_method_get_input_real_name>`\ (\ ) |const| |
+   +-----------------------------+--------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -65,7 +65,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**input_type_changed** **(** **)**
+**input_type_changed**\ (\ ) :ref:`🔗<class_VisualShaderNodeInput_signal_input_type_changed>`
 
 Emitted when input is changed via :ref:`input_name<class_VisualShaderNodeInput_property_input_name>`.
 
@@ -82,12 +82,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **input_name** = ``"[None]"``
+:ref:`String<class_String>` **input_name** = ``"[None]"`` :ref:`🔗<class_VisualShaderNodeInput_property_input_name>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_input_name** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_input_name** **(** **)**
+- |void| **set_input_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_input_name**\ (\ )
 
 One of the several input constants in lower-case style like: "vertex" (``VERTEX``) or "point_size" (``POINT_SIZE``).
 
@@ -104,7 +104,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_input_real_name** **(** **)** |const|
+:ref:`String<class_String>` **get_input_real_name**\ (\ ) |const| :ref:`🔗<class_VisualShaderNodeInput_method_get_input_real_name>`
 
 Returns a translated name of the current constant in the Godot Shader Language. E.g. ``"ALBEDO"`` if the :ref:`input_name<class_VisualShaderNodeInput_property_input_name>` equal to ``"albedo"``.
 
@@ -115,3 +115,4 @@ Returns a translated name of the current constant in the Godot Shader Language. 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

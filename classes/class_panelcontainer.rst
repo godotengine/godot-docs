@@ -12,7 +12,7 @@ PanelContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ScriptEditor<class_ScriptEditor>`
+**Inherited By:** :ref:`OpenXRBindingModifierEditor<class_OpenXRBindingModifierEditor>`, :ref:`ScriptEditor<class_ScriptEditor>`
 
 A container that keeps its child controls within the area of a :ref:`StyleBox<class_StyleBox>`.
 
@@ -30,7 +30,7 @@ Tutorials
 
 - :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
-- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`__
+- `2D Role Playing Game (RPG) Demo <https://godotengine.org/asset-library/asset/2729>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -69,7 +69,7 @@ Theme Property Descriptions
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **panel**
+:ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_PanelContainer_theme_style_panel>`
 
 The style of **PanelContainer**'s background.
 
@@ -80,3 +80,4 @@ The style of **PanelContainer**'s background.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

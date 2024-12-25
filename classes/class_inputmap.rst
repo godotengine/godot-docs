@@ -36,33 +36,33 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`action_add_event<class_InputMap_method_action_add_event>` **(** :ref:`StringName<class_StringName>` action, :ref:`InputEvent<class_InputEvent>` event **)**                                                  |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`action_erase_event<class_InputMap_method_action_erase_event>` **(** :ref:`StringName<class_StringName>` action, :ref:`InputEvent<class_InputEvent>` event **)**                                              |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`action_erase_events<class_InputMap_method_action_erase_events>` **(** :ref:`StringName<class_StringName>` action **)**                                                                                       |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`             | :ref:`action_get_deadzone<class_InputMap_method_action_get_deadzone>` **(** :ref:`StringName<class_StringName>` action **)**                                                                                       |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`InputEvent[]<class_InputEvent>` | :ref:`action_get_events<class_InputMap_method_action_get_events>` **(** :ref:`StringName<class_StringName>` action **)**                                                                                           |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`action_has_event<class_InputMap_method_action_has_event>` **(** :ref:`StringName<class_StringName>` action, :ref:`InputEvent<class_InputEvent>` event **)**                                                  |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`action_set_deadzone<class_InputMap_method_action_set_deadzone>` **(** :ref:`StringName<class_StringName>` action, :ref:`float<class_float>` deadzone **)**                                                   |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`add_action<class_InputMap_method_add_action>` **(** :ref:`StringName<class_StringName>` action, :ref:`float<class_float>` deadzone=0.5 **)**                                                                 |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`erase_action<class_InputMap_method_erase_action>` **(** :ref:`StringName<class_StringName>` action **)**                                                                                                     |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`event_is_action<class_InputMap_method_event_is_action>` **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`StringName<class_StringName>` action, :ref:`bool<class_bool>` exact_match=false **)** |const| |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName[]<class_StringName>` | :ref:`get_actions<class_InputMap_method_get_actions>` **(** **)**                                                                                                                                                  |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`has_action<class_InputMap_method_has_action>` **(** :ref:`StringName<class_StringName>` action **)** |const|                                                                                                 |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`load_from_project_settings<class_InputMap_method_load_from_project_settings>` **(** **)**                                                                                                                    |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`action_add_event<class_InputMap_method_action_add_event>`\ (\ action\: :ref:`StringName<class_StringName>`, event\: :ref:`InputEvent<class_InputEvent>`\ )                                                      |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`action_erase_event<class_InputMap_method_action_erase_event>`\ (\ action\: :ref:`StringName<class_StringName>`, event\: :ref:`InputEvent<class_InputEvent>`\ )                                                  |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`action_erase_events<class_InputMap_method_action_erase_events>`\ (\ action\: :ref:`StringName<class_StringName>`\ )                                                                                             |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`action_get_deadzone<class_InputMap_method_action_get_deadzone>`\ (\ action\: :ref:`StringName<class_StringName>`\ )                                                                                             |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`InputEvent<class_InputEvent>`\] | :ref:`action_get_events<class_InputMap_method_action_get_events>`\ (\ action\: :ref:`StringName<class_StringName>`\ )                                                                                                 |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`action_has_event<class_InputMap_method_action_has_event>`\ (\ action\: :ref:`StringName<class_StringName>`, event\: :ref:`InputEvent<class_InputEvent>`\ )                                                      |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`action_set_deadzone<class_InputMap_method_action_set_deadzone>`\ (\ action\: :ref:`StringName<class_StringName>`, deadzone\: :ref:`float<class_float>`\ )                                                       |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_action<class_InputMap_method_add_action>`\ (\ action\: :ref:`StringName<class_StringName>`, deadzone\: :ref:`float<class_float>` = 0.2\ )                                                                   |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`erase_action<class_InputMap_method_erase_action>`\ (\ action\: :ref:`StringName<class_StringName>`\ )                                                                                                           |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`event_is_action<class_InputMap_method_event_is_action>`\ (\ event\: :ref:`InputEvent<class_InputEvent>`, action\: :ref:`StringName<class_StringName>`, exact_match\: :ref:`bool<class_bool>` = false\ ) |const| |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] | :ref:`get_actions<class_InputMap_method_get_actions>`\ (\ )                                                                                                                                                           |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`has_action<class_InputMap_method_has_action>`\ (\ action\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                       |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`load_from_project_settings<class_InputMap_method_load_from_project_settings>`\ (\ )                                                                                                                             |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -77,7 +77,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **action_add_event** **(** :ref:`StringName<class_StringName>` action, :ref:`InputEvent<class_InputEvent>` event **)**
+|void| **action_add_event**\ (\ action\: :ref:`StringName<class_StringName>`, event\: :ref:`InputEvent<class_InputEvent>`\ ) :ref:`🔗<class_InputMap_method_action_add_event>`
 
 Adds an :ref:`InputEvent<class_InputEvent>` to an action. This :ref:`InputEvent<class_InputEvent>` will trigger the action.
 
@@ -89,7 +89,7 @@ Adds an :ref:`InputEvent<class_InputEvent>` to an action. This :ref:`InputEvent<
 
 .. rst-class:: classref-method
 
-void **action_erase_event** **(** :ref:`StringName<class_StringName>` action, :ref:`InputEvent<class_InputEvent>` event **)**
+|void| **action_erase_event**\ (\ action\: :ref:`StringName<class_StringName>`, event\: :ref:`InputEvent<class_InputEvent>`\ ) :ref:`🔗<class_InputMap_method_action_erase_event>`
 
 Removes an :ref:`InputEvent<class_InputEvent>` from an action.
 
@@ -101,7 +101,7 @@ Removes an :ref:`InputEvent<class_InputEvent>` from an action.
 
 .. rst-class:: classref-method
 
-void **action_erase_events** **(** :ref:`StringName<class_StringName>` action **)**
+|void| **action_erase_events**\ (\ action\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_InputMap_method_action_erase_events>`
 
 Removes all events from an action.
 
@@ -113,7 +113,7 @@ Removes all events from an action.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **action_get_deadzone** **(** :ref:`StringName<class_StringName>` action **)**
+:ref:`float<class_float>` **action_get_deadzone**\ (\ action\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_InputMap_method_action_get_deadzone>`
 
 Returns a deadzone value for the action.
 
@@ -125,7 +125,7 @@ Returns a deadzone value for the action.
 
 .. rst-class:: classref-method
 
-:ref:`InputEvent[]<class_InputEvent>` **action_get_events** **(** :ref:`StringName<class_StringName>` action **)**
+:ref:`Array<class_Array>`\[:ref:`InputEvent<class_InputEvent>`\] **action_get_events**\ (\ action\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_InputMap_method_action_get_events>`
 
 Returns an array of :ref:`InputEvent<class_InputEvent>`\ s associated with a given action.
 
@@ -139,7 +139,7 @@ Returns an array of :ref:`InputEvent<class_InputEvent>`\ s associated with a giv
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **action_has_event** **(** :ref:`StringName<class_StringName>` action, :ref:`InputEvent<class_InputEvent>` event **)**
+:ref:`bool<class_bool>` **action_has_event**\ (\ action\: :ref:`StringName<class_StringName>`, event\: :ref:`InputEvent<class_InputEvent>`\ ) :ref:`🔗<class_InputMap_method_action_has_event>`
 
 Returns ``true`` if the action has the given :ref:`InputEvent<class_InputEvent>` associated with it.
 
@@ -151,7 +151,7 @@ Returns ``true`` if the action has the given :ref:`InputEvent<class_InputEvent>`
 
 .. rst-class:: classref-method
 
-void **action_set_deadzone** **(** :ref:`StringName<class_StringName>` action, :ref:`float<class_float>` deadzone **)**
+|void| **action_set_deadzone**\ (\ action\: :ref:`StringName<class_StringName>`, deadzone\: :ref:`float<class_float>`\ ) :ref:`🔗<class_InputMap_method_action_set_deadzone>`
 
 Sets a deadzone value for the action.
 
@@ -163,7 +163,7 @@ Sets a deadzone value for the action.
 
 .. rst-class:: classref-method
 
-void **add_action** **(** :ref:`StringName<class_StringName>` action, :ref:`float<class_float>` deadzone=0.5 **)**
+|void| **add_action**\ (\ action\: :ref:`StringName<class_StringName>`, deadzone\: :ref:`float<class_float>` = 0.2\ ) :ref:`🔗<class_InputMap_method_add_action>`
 
 Adds an empty action to the **InputMap** with a configurable ``deadzone``.
 
@@ -177,7 +177,7 @@ An :ref:`InputEvent<class_InputEvent>` can then be added to this action with :re
 
 .. rst-class:: classref-method
 
-void **erase_action** **(** :ref:`StringName<class_StringName>` action **)**
+|void| **erase_action**\ (\ action\: :ref:`StringName<class_StringName>`\ ) :ref:`🔗<class_InputMap_method_erase_action>`
 
 Removes an action from the **InputMap**.
 
@@ -189,7 +189,7 @@ Removes an action from the **InputMap**.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **event_is_action** **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`StringName<class_StringName>` action, :ref:`bool<class_bool>` exact_match=false **)** |const|
+:ref:`bool<class_bool>` **event_is_action**\ (\ event\: :ref:`InputEvent<class_InputEvent>`, action\: :ref:`StringName<class_StringName>`, exact_match\: :ref:`bool<class_bool>` = false\ ) |const| :ref:`🔗<class_InputMap_method_event_is_action>`
 
 Returns ``true`` if the given event is part of an existing action. This method ignores keyboard modifiers if the given :ref:`InputEvent<class_InputEvent>` is not pressed (for proper release detection). See :ref:`action_has_event<class_InputMap_method_action_has_event>` if you don't want this behavior.
 
@@ -203,7 +203,7 @@ If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:
 
 .. rst-class:: classref-method
 
-:ref:`StringName[]<class_StringName>` **get_actions** **(** **)**
+:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_actions**\ (\ ) :ref:`🔗<class_InputMap_method_get_actions>`
 
 Returns an array of all actions in the **InputMap**.
 
@@ -215,7 +215,7 @@ Returns an array of all actions in the **InputMap**.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_action** **(** :ref:`StringName<class_StringName>` action **)** |const|
+:ref:`bool<class_bool>` **has_action**\ (\ action\: :ref:`StringName<class_StringName>`\ ) |const| :ref:`🔗<class_InputMap_method_has_action>`
 
 Returns ``true`` if the **InputMap** has a registered action with the given name.
 
@@ -227,7 +227,7 @@ Returns ``true`` if the **InputMap** has a registered action with the given name
 
 .. rst-class:: classref-method
 
-void **load_from_project_settings** **(** **)**
+|void| **load_from_project_settings**\ (\ ) :ref:`🔗<class_InputMap_method_load_from_project_settings>`
 
 Clears all :ref:`InputEventAction<class_InputEventAction>` in the **InputMap** and load it anew from :ref:`ProjectSettings<class_ProjectSettings>`.
 
@@ -238,3 +238,4 @@ Clears all :ref:`InputEventAction<class_InputEventAction>` in the **InputMap** a
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

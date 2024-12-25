@@ -11,7 +11,7 @@ Introduction
 In certain situations, it may be desirable to limit what features can be used
 in the Godot editor. For example, a UI designer on a team who doesn't need to
 see 3D features, or an educator slowly introducing features to students. Godot
-has a built in system called "feature profiles" to do this.
+has a built-in system called "feature profiles" to do this.
 
 With feature profiles, major features and nodes can be hidden from the editor.
 This only hides parts of the interface and does not actually remove support for

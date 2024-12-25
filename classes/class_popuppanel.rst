@@ -21,6 +21,35 @@ Description
 
 A popup with a configurable panel background. Any child controls added to this node will be stretched to fit the panel's size (similar to how :ref:`PanelContainer<class_PanelContainer>` works). If you are making windows, see :ref:`Window<class_Window>`.
 
+.. rst-class:: classref-reftable-group
+
+Theme Properties
+----------------
+
+.. table::
+   :widths: auto
+
+   +---------------------------------+--------------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PopupPanel_theme_style_panel>` |
+   +---------------------------------+--------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_PopupPanel_theme_style_panel:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **panel** :ref:`🔗<class_PopupPanel_theme_style_panel>`
+
+:ref:`StyleBox<class_StyleBox>` for the background panel.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
@@ -28,3 +57,4 @@ A popup with a configurable panel background. Any child controls added to this n
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

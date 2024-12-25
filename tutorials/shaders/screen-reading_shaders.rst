@@ -47,7 +47,7 @@ you.
 .. warning::
 
     If the filter mode is not changed to a filter mode that contains ``mipmap`` in its name,
-    ``textureLod`` with a LOD parameter greater than ``0.0`` will have the same appearance
+    ``textureLod`` with an LOD parameter greater than ``0.0`` will have the same appearance
     as with the ``0.0`` LOD parameter.
 
 Screen texture example

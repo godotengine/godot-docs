@@ -23,7 +23,7 @@ Description
 
 Abstract scene buffers object, created for each viewport for which 3D rendering is done. It manages any additional buffers used during rendering and will discard buffers when the viewport is resized.
 
-\ **Note:** this is an internal rendering server object only exposed for GDExtension plugins.
+\ **Note:** This is an internal rendering server object, do not instantiate this from script.
 
 .. rst-class:: classref-reftable-group
 
@@ -33,9 +33,9 @@ Methods
 .. table::
    :widths: auto
 
-   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`configure<class_RenderSceneBuffers_method_configure>` **(** :ref:`RenderSceneBuffersConfiguration<class_RenderSceneBuffersConfiguration>` config **)** |
-   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`configure<class_RenderSceneBuffers_method_configure>`\ (\ config\: :ref:`RenderSceneBuffersConfiguration<class_RenderSceneBuffersConfiguration>`\ ) |
+   +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -50,7 +50,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **configure** **(** :ref:`RenderSceneBuffersConfiguration<class_RenderSceneBuffersConfiguration>` config **)**
+|void| **configure**\ (\ config\: :ref:`RenderSceneBuffersConfiguration<class_RenderSceneBuffersConfiguration>`\ ) :ref:`🔗<class_RenderSceneBuffers_method_configure>`
 
 This method is called by the rendering server when the associated viewports configuration is changed. It will discard the old buffers and recreate the internal buffers used.
 
@@ -61,3 +61,4 @@ This method is called by the rendering server when the associated viewports conf
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

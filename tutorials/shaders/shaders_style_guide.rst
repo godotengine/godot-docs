@@ -9,9 +9,9 @@ discussions, and tutorials. Hopefully, this will also support the development of
 auto-formatting tools.
 
 Since the Godot shader language is close to C-style languages and GLSL, this
-guide is inspired by Godot's own GLSL formatting. You can view an example of a
-GLSL file in Godot's source code
-`here <https://github.com/godotengine/godot/blob/master/drivers/gles3/shaders/copy.glsl>`__.
+guide is inspired by Godot's own GLSL formatting. You can view examples of
+GLSL files in Godot's source code
+`here <https://github.com/godotengine/godot/blob/master/drivers/gles3/shaders/>`__.
 
 Style guides aren't meant as hard rulebooks. At times, you may not be able to
 apply some of the guidelines below. When that happens, use your best judgment,
@@ -217,6 +217,26 @@ Don't use multiline comment syntax if your comment can fit on a single line:
    In the shader editor, to make the selected code a comment (or uncomment it),
    press :kbd:`Ctrl + K`. This feature adds or removes ``//`` at the start of
    the selected lines.
+
+Documentation comments
+~~~~~~~~~~~~~~~~~~~~~~
+
+Use the following format for documentation comments above uniforms, with **two**
+leading asterisks (``/**``) and follow-up asterisks on every line:
+
+.. code-block:: glsl
+
+    /**
+     * This is a documentation comment.
+     * These lines will appear in the inspector when hovering the shader parameter
+     * named "Something".
+     * You can use [b]BBCode[/b] [i]formatting[/i] in the comment.
+     */
+    uniform int something = 1;
+
+These comments will appear when hovering a property in the inspector. If you
+don't wish the comment to be visible in the inspector, use the standard comment
+syntax instead (``// ...`` or ``/* ... */`` with only one leading asterisk).
 
 Whitespace
 ~~~~~~~~~~

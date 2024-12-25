@@ -26,7 +26,7 @@ A node that displays a 2D texture. The texture displayed can be a region from a 
 Tutorials
 ---------
 
-- `Instancing Demo <https://godotengine.org/asset-library/asset/148>`__
+- `Instancing Demo <https://godotengine.org/asset-library/asset/2716>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -70,11 +70,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Rect2<class_Rect2>` | :ref:`get_rect<class_Sprite2D_method_get_rect>` **(** **)** |const|                                                 |
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`is_pixel_opaque<class_Sprite2D_method_is_pixel_opaque>` **(** :ref:`Vector2<class_Vector2>` pos **)** |const| |
-   +---------------------------+---------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`get_rect<class_Sprite2D_method_get_rect>`\ (\ ) |const|                                                    |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`is_pixel_opaque<class_Sprite2D_method_is_pixel_opaque>`\ (\ pos\: :ref:`Vector2<class_Vector2>`\ ) |const| |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -89,7 +89,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**frame_changed** **(** **)**
+**frame_changed**\ (\ ) :ref:`🔗<class_Sprite2D_signal_frame_changed>`
 
 Emitted when the :ref:`frame<class_Sprite2D_property_frame>` changes.
 
@@ -101,7 +101,7 @@ Emitted when the :ref:`frame<class_Sprite2D_property_frame>` changes.
 
 .. rst-class:: classref-signal
 
-**texture_changed** **(** **)**
+**texture_changed**\ (\ ) :ref:`🔗<class_Sprite2D_signal_texture_changed>`
 
 Emitted when the :ref:`texture<class_Sprite2D_property_texture>` changes.
 
@@ -118,14 +118,16 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **centered** = ``true``
+:ref:`bool<class_bool>` **centered** = ``true`` :ref:`🔗<class_Sprite2D_property_centered>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_centered** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_centered** **(** **)**
+- |void| **set_centered**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_centered**\ (\ )
 
 If ``true``, texture is centered.
+
+\ **Note:** For games with a pixel art aesthetic, textures may appear deformed when centered. This is caused by their position being between pixels. To prevent this, set this property to ``false``, or consider enabling :ref:`ProjectSettings.rendering/2d/snap/snap_2d_vertices_to_pixel<class_ProjectSettings_property_rendering/2d/snap/snap_2d_vertices_to_pixel>` and :ref:`ProjectSettings.rendering/2d/snap/snap_2d_transforms_to_pixel<class_ProjectSettings_property_rendering/2d/snap/snap_2d_transforms_to_pixel>`.
 
 .. rst-class:: classref-item-separator
 
@@ -135,12 +137,12 @@ If ``true``, texture is centered.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_h** = ``false``
+:ref:`bool<class_bool>` **flip_h** = ``false`` :ref:`🔗<class_Sprite2D_property_flip_h>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flip_h** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_flipped_h** **(** **)**
+- |void| **set_flip_h**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_flipped_h**\ (\ )
 
 If ``true``, texture is flipped horizontally.
 
@@ -152,12 +154,12 @@ If ``true``, texture is flipped horizontally.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **flip_v** = ``false``
+:ref:`bool<class_bool>` **flip_v** = ``false`` :ref:`🔗<class_Sprite2D_property_flip_v>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flip_v** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_flipped_v** **(** **)**
+- |void| **set_flip_v**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_flipped_v**\ (\ )
 
 If ``true``, texture is flipped vertically.
 
@@ -169,12 +171,12 @@ If ``true``, texture is flipped vertically.
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **frame** = ``0``
+:ref:`int<class_int>` **frame** = ``0`` :ref:`🔗<class_Sprite2D_property_frame>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_frame** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_frame** **(** **)**
+- |void| **set_frame**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_frame**\ (\ )
 
 Current frame to display from sprite sheet. :ref:`hframes<class_Sprite2D_property_hframes>` or :ref:`vframes<class_Sprite2D_property_vframes>` must be greater than 1. This property is automatically adjusted when :ref:`hframes<class_Sprite2D_property_hframes>` or :ref:`vframes<class_Sprite2D_property_vframes>` are changed to keep pointing to the same visual frame (same column and row). If that's impossible, this value is reset to ``0``.
 
@@ -186,12 +188,12 @@ Current frame to display from sprite sheet. :ref:`hframes<class_Sprite2D_propert
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **frame_coords** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **frame_coords** = ``Vector2i(0, 0)`` :ref:`🔗<class_Sprite2D_property_frame_coords>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_frame_coords** **(** :ref:`Vector2i<class_Vector2i>` value **)**
-- :ref:`Vector2i<class_Vector2i>` **get_frame_coords** **(** **)**
+- |void| **set_frame_coords**\ (\ value\: :ref:`Vector2i<class_Vector2i>`\ )
+- :ref:`Vector2i<class_Vector2i>` **get_frame_coords**\ (\ )
 
 Coordinates of the frame to display from sprite sheet. This is as an alias for the :ref:`frame<class_Sprite2D_property_frame>` property. :ref:`hframes<class_Sprite2D_property_hframes>` or :ref:`vframes<class_Sprite2D_property_vframes>` must be greater than 1.
 
@@ -203,12 +205,12 @@ Coordinates of the frame to display from sprite sheet. This is as an alias for t
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **hframes** = ``1``
+:ref:`int<class_int>` **hframes** = ``1`` :ref:`🔗<class_Sprite2D_property_hframes>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_hframes** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_hframes** **(** **)**
+- |void| **set_hframes**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_hframes**\ (\ )
 
 The number of columns in the sprite sheet. When this property is changed, :ref:`frame<class_Sprite2D_property_frame>` is adjusted so that the same visual frame is maintained (same row and column). If that's impossible, :ref:`frame<class_Sprite2D_property_frame>` is reset to ``0``.
 
@@ -220,12 +222,12 @@ The number of columns in the sprite sheet. When this property is changed, :ref:`
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)`` :ref:`🔗<class_Sprite2D_property_offset>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_offset** **(** **)**
+- |void| **set_offset**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_offset**\ (\ )
 
 The texture's drawing offset.
 
@@ -237,12 +239,12 @@ The texture's drawing offset.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **region_enabled** = ``false``
+:ref:`bool<class_bool>` **region_enabled** = ``false`` :ref:`🔗<class_Sprite2D_property_region_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_region_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_region_enabled** **(** **)**
+- |void| **set_region_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_region_enabled**\ (\ )
 
 If ``true``, texture is cut from a larger atlas texture. See :ref:`region_rect<class_Sprite2D_property_region_rect>`.
 
@@ -254,14 +256,14 @@ If ``true``, texture is cut from a larger atlas texture. See :ref:`region_rect<c
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **region_filter_clip_enabled** = ``false``
+:ref:`bool<class_bool>` **region_filter_clip_enabled** = ``false`` :ref:`🔗<class_Sprite2D_property_region_filter_clip_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_region_filter_clip_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_region_filter_clip_enabled** **(** **)**
+- |void| **set_region_filter_clip_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_region_filter_clip_enabled**\ (\ )
 
-If ``true``, the outermost pixels get blurred out. :ref:`region_enabled<class_Sprite2D_property_region_enabled>` must be ``true``.
+If ``true``, the area outside of the :ref:`region_rect<class_Sprite2D_property_region_rect>` is clipped to avoid bleeding of the surrounding texture pixels. :ref:`region_enabled<class_Sprite2D_property_region_enabled>` must be ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -271,12 +273,12 @@ If ``true``, the outermost pixels get blurred out. :ref:`region_enabled<class_Sp
 
 .. rst-class:: classref-property
 
-:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2(0, 0, 0, 0)``
+:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2(0, 0, 0, 0)`` :ref:`🔗<class_Sprite2D_property_region_rect>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_region_rect** **(** :ref:`Rect2<class_Rect2>` value **)**
-- :ref:`Rect2<class_Rect2>` **get_region_rect** **(** **)**
+- |void| **set_region_rect**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
+- :ref:`Rect2<class_Rect2>` **get_region_rect**\ (\ )
 
 The region of the atlas texture to display. :ref:`region_enabled<class_Sprite2D_property_region_enabled>` must be ``true``.
 
@@ -288,12 +290,12 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite2D_
 
 .. rst-class:: classref-property
 
-:ref:`Texture2D<class_Texture2D>` **texture**
+:ref:`Texture2D<class_Texture2D>` **texture** :ref:`🔗<class_Sprite2D_property_texture>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** **)**
+- |void| **set_texture**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ )
 
 :ref:`Texture2D<class_Texture2D>` object to draw.
 
@@ -305,12 +307,12 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite2D_
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **vframes** = ``1``
+:ref:`int<class_int>` **vframes** = ``1`` :ref:`🔗<class_Sprite2D_property_vframes>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_vframes** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_vframes** **(** **)**
+- |void| **set_vframes**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_vframes**\ (\ )
 
 The number of rows in the sprite sheet. When this property is changed, :ref:`frame<class_Sprite2D_property_frame>` is adjusted so that the same visual frame is maintained (same row and column). If that's impossible, :ref:`frame<class_Sprite2D_property_frame>` is reset to ``0``.
 
@@ -327,11 +329,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_rect** **(** **)** |const|
+:ref:`Rect2<class_Rect2>` **get_rect**\ (\ ) |const| :ref:`🔗<class_Sprite2D_method_get_rect>`
 
-Returns a :ref:`Rect2<class_Rect2>` representing the Sprite2D's boundary in local coordinates. Can be used to detect if the Sprite2D was clicked.
+Returns a :ref:`Rect2<class_Rect2>` representing the Sprite2D's boundary in local coordinates.
 
-\ **Example:**\ 
+\ **Example:** Detect if the Sprite2D was clicked:
 
 
 .. tabs::
@@ -369,9 +371,9 @@ Returns a :ref:`Rect2<class_Rect2>` representing the Sprite2D's boundary in loca
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_pixel_opaque** **(** :ref:`Vector2<class_Vector2>` pos **)** |const|
+:ref:`bool<class_bool>` **is_pixel_opaque**\ (\ pos\: :ref:`Vector2<class_Vector2>`\ ) |const| :ref:`🔗<class_Sprite2D_method_is_pixel_opaque>`
 
-Returns ``true``, if the pixel at the given position is opaque and ``false`` in other case.
+Returns ``true``, if the pixel at the given position is opaque and ``false`` in other case. The position is in local coordinates.
 
 \ **Note:** It also returns ``false``, if the sprite's texture is ``null`` or if the given position is invalid.
 
@@ -382,3 +384,4 @@ Returns ``true``, if the pixel at the given position is opaque and ``false`` in 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

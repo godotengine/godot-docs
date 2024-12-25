@@ -25,11 +25,11 @@ There are several ways to improve performance and battery life:
   which can be up to 4 times faster.
 - Open the Editor Settings and increase the value of **Low Processor Mode Sleep (µsec)**
   to ``33000`` (30 FPS). This value determines the amount of *microseconds*
-  between frames to render. Higher values will make the editor feel less reactive
+  between frames to render. Higher values will make the editor feel less reactive,
   but will help decrease CPU and GPU usage significantly.
 - If you have a node that causes the editor to redraw continuously (such as
   particles), hide it and show it using a script in the ``_ready()`` method.
-  This way, it will be hidden in the editor but will still be visible in the
+  This way, it will be hidden in the editor, but will still be visible in the
   running project.
 
 The editor stutters and flickers on my variable refresh rate monitor (G-Sync/FreeSync)
@@ -49,7 +49,7 @@ There are several workarounds for this:
   alleviate this, you can increase **Low Processor Mode Sleep (µsec)** to
   ``33000`` (30 FPS) in the Editor Settings. This value determines the amount of
   *microseconds* between frames to render. Higher values will make the editor
-  feel less reactive but will help decrease CPU and GPU usage significantly.
+  feel less reactive, but will help decrease CPU and GPU usage significantly.
 - Alternatively, disable variable refresh rate on your monitor or in the graphics driver.
 - VRR flicker can be reduced on some displays using the **VRR Control** or
   **Fine Tune Dark Areas** options in your monitor's OSD. These options may
@@ -60,8 +60,8 @@ There are several workarounds for this:
 The editor or project takes a very long time to start
 -----------------------------------------------------
 
-When using one of the Vulkan-based renderers (Forward+ or Forward Mobile),
-the first startup is expected to be relatively long. This is because shaders
+When using one of the Vulkan-based renderers (Forward+ or Mobile), the first
+startup is expected to be relatively long. This is because shaders
 need to be compiled before they can be cached. Shaders also need to be cached
 again after updating Godot, after updating graphics drivers or after switching
 graphics cards.
@@ -80,6 +80,13 @@ unable to use debugging features in the editor (such as viewing ``print()``
 output). You can work this around by changing the debug port used by the project
 in the Editor Settings (**Network > Debug > Remote Port**). The default is
 ``6007``; try another value that is greater than ``1024``, such as ``7007``.
+
+On Windows, when loading the project for the first time after the PC is turned on,
+Windows Defender will cause the filesystem cache validation on project startup
+to take significantly longer. This is especially noticeable in projects with a
+large number of files. Consinder adding the project folder to the list of exclusions
+by going to Virus & threat protection > Virus & threat protection settings >
+Add or remove exclusions.
 
 The Godot editor appears frozen after clicking the system console
 -----------------------------------------------------------------
@@ -120,6 +127,22 @@ default values in the NVIDIA Control Panel.
 To disable this overlay on Linux, open ``nvidia-settings``, go to **X Screen 0 >
 OpenGL Settings** then uncheck **Enable Graphics API Visual Indicator**.
 
+A microphone or "refresh" icon appears in the bottom-right corner of the Project Manager and editor window
+----------------------------------------------------------------------------------------------------------
+
+This is caused by the NVIDIA graphics driver injecting an overlay to display
+instant replay information on ShadowPlay recording. This overlay can only be
+seen on Windows, as Linux does not have support for ShadowPlay.
+
+To disable this overlay, press :kbd:`Alt + Z` (default shortcut for the NVIDIA overlay)
+and disable **Settings > HUD Layout > Status Indicator** in the NVIDIA overlay.
+
+Alternatively, you can install the `new NVIDIA app
+<https://www.nvidia.com/en-us/software/nvidia-app/>` which replaces GeForce
+Experience and does not suffer from this issue. Unlike GeForce Experience, the
+NVIDIA app draws the replay indicator in the corner of the screen as opposed to
+the corner of each window.
+
 The editor or project appears overly sharp or blurry
 ----------------------------------------------------
 
@@ -154,7 +177,7 @@ OpenGL applications by your graphics driver.
 - **AMD (Windows):** Open the start menu and choose **AMD Software**. Click the
   settings "cog" icon in the top-right corner. Go to the **Graphics** tab,
   scroll to the bottom and click **Advanced** to unfold its settings. Disable
-  **Morphological Anti-Aliasing**.
+  **Morphological Antialiasing**.
 
 Third-party vendor-independent utilities such as vkBasalt may also force
 sharpening or FXAA on all Vulkan applications. You may want to check their
@@ -188,6 +211,9 @@ tonemapping (as opposed to :abbr:`DTM (Dynamic Tone Mapping)`), then
 It is also strongly recommended to use Windows 11 instead of Windows 10 when using HDR.
 The end result will still likely be inferior to disabling HDR on the display, though.
 
+.. UPDATE: Planned feature. When HDR output is implemented, remove or update
+.. this paragraph.
+
 Support for HDR *output* is planned in a future release.
 
 The editor/project freezes or displays glitched visuals after resuming the PC from suspend
@@ -197,7 +223,7 @@ This is a known issue on Linux with NVIDIA graphics when using the proprietary
 driver. There is no definitive fix yet, as suspend on Linux + NVIDIA is often
 buggy when OpenGL or Vulkan is involved. The Compatibility rendering method
 (which uses OpenGL) is generally less prone to suspend-related issues compared
-to the Forward+ and Forward Mobile rendering methods (which use Vulkan).
+to the Forward+ and Mobile renderers (which use Vulkan).
 
 The NVIDIA driver offers an *experimental*
 `option to preserve video memory after suspend <https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Preserve_video_memory_after_suspend>`__

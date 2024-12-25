@@ -209,31 +209,31 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`get_flag_x<class_Generic6DOFJoint3D_method_get_flag_x>` **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|                               |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`get_flag_y<class_Generic6DOFJoint3D_method_get_flag_y>` **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|                               |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`get_flag_z<class_Generic6DOFJoint3D_method_get_flag_z>` **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|                               |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_param_x<class_Generic6DOFJoint3D_method_get_param_x>` **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|                          |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_param_y<class_Generic6DOFJoint3D_method_get_param_y>` **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|                          |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_param_z<class_Generic6DOFJoint3D_method_get_param_z>` **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|                          |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_flag_x<class_Generic6DOFJoint3D_method_set_flag_x>` **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**        |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_flag_y<class_Generic6DOFJoint3D_method_set_flag_y>` **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**        |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_flag_z<class_Generic6DOFJoint3D_method_set_flag_z>` **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**        |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_param_x<class_Generic6DOFJoint3D_method_set_param_x>` **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)** |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_param_y<class_Generic6DOFJoint3D_method_set_param_y>` **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)** |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_param_z<class_Generic6DOFJoint3D_method_set_param_z>` **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)** |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`get_flag_x<class_Generic6DOFJoint3D_method_get_flag_x>`\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|                                 |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`get_flag_y<class_Generic6DOFJoint3D_method_get_flag_y>`\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|                                 |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`get_flag_z<class_Generic6DOFJoint3D_method_get_flag_z>`\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|                                 |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_param_x<class_Generic6DOFJoint3D_method_get_param_x>`\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|                            |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_param_y<class_Generic6DOFJoint3D_method_get_param_y>`\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|                            |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_param_z<class_Generic6DOFJoint3D_method_get_param_z>`\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|                            |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_flag_x<class_Generic6DOFJoint3D_method_set_flag_x>`\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )        |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_flag_y<class_Generic6DOFJoint3D_method_set_flag_y>`\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )        |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_flag_z<class_Generic6DOFJoint3D_method_set_flag_z>`\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )        |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_param_x<class_Generic6DOFJoint3D_method_set_param_x>`\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_param_y<class_Generic6DOFJoint3D_method_set_param_y>`\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_param_z<class_Generic6DOFJoint3D_method_set_param_z>`\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -248,7 +248,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **Param**:
+enum **Param**: :ref:`🔗<enum_Generic6DOFJoint3D_Param>`
 
 .. _class_Generic6DOFJoint3D_constant_PARAM_LINEAR_LOWER_LIMIT:
 
@@ -466,7 +466,7 @@ Represents the size of the :ref:`Param<enum_Generic6DOFJoint3D_Param>` enum.
 
 .. rst-class:: classref-enumeration
 
-enum **Flag**:
+enum **Flag**: :ref:`🔗<enum_Generic6DOFJoint3D_Flag>`
 
 .. _class_Generic6DOFJoint3D_constant_FLAG_ENABLE_LINEAR_LIMIT:
 
@@ -545,12 +545,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_x/damping** = ``1.0``
+:ref:`float<class_float>` **angular_limit_x/damping** = ``1.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_x/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of rotational damping across the X axis.
 
@@ -564,12 +564,12 @@ The lower, the longer an impulse from one side takes to travel to the other side
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_limit_x/enabled** = ``true``
+:ref:`bool<class_bool>` **angular_limit_x/enabled** = ``true`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_x/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, rotation across the X axis is limited.
 
@@ -581,12 +581,12 @@ If ``true``, rotation across the X axis is limited.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_x/erp** = ``0.5``
+:ref:`float<class_float>` **angular_limit_x/erp** = ``0.5`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_x/erp>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 When rotating across the X axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
@@ -598,12 +598,12 @@ When rotating across the X axis, this error tolerance factor defines how much th
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_x/force_limit** = ``0.0``
+:ref:`float<class_float>` **angular_limit_x/force_limit** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_x/force_limit>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The maximum amount of force that can occur, when rotating around the X axis.
 
@@ -615,12 +615,12 @@ The maximum amount of force that can occur, when rotating around the X axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_x/lower_angle** = ``0.0``
+:ref:`float<class_float>` **angular_limit_x/lower_angle** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_x/lower_angle>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The minimum rotation in negative direction to break loose and rotate around the X axis.
 
@@ -632,12 +632,12 @@ The minimum rotation in negative direction to break loose and rotate around the 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_x/restitution** = ``0.0``
+:ref:`float<class_float>` **angular_limit_x/restitution** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_x/restitution>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of rotational restitution across the X axis. The lower, the more restitution occurs.
 
@@ -649,12 +649,12 @@ The amount of rotational restitution across the X axis. The lower, the more rest
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_x/softness** = ``0.5``
+:ref:`float<class_float>` **angular_limit_x/softness** = ``0.5`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_x/softness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The speed of all rotations across the X axis.
 
@@ -666,12 +666,12 @@ The speed of all rotations across the X axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_x/upper_angle** = ``0.0``
+:ref:`float<class_float>` **angular_limit_x/upper_angle** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_x/upper_angle>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The minimum rotation in positive direction to break loose and rotate around the X axis.
 
@@ -683,12 +683,12 @@ The minimum rotation in positive direction to break loose and rotate around the 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_y/damping** = ``1.0``
+:ref:`float<class_float>` **angular_limit_y/damping** = ``1.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_y/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of rotational damping across the Y axis. The lower, the more damping occurs.
 
@@ -700,12 +700,12 @@ The amount of rotational damping across the Y axis. The lower, the more damping 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_limit_y/enabled** = ``true``
+:ref:`bool<class_bool>` **angular_limit_y/enabled** = ``true`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_y/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, rotation across the Y axis is limited.
 
@@ -717,12 +717,12 @@ If ``true``, rotation across the Y axis is limited.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_y/erp** = ``0.5``
+:ref:`float<class_float>` **angular_limit_y/erp** = ``0.5`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_y/erp>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 When rotating across the Y axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
@@ -734,12 +734,12 @@ When rotating across the Y axis, this error tolerance factor defines how much th
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_y/force_limit** = ``0.0``
+:ref:`float<class_float>` **angular_limit_y/force_limit** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_y/force_limit>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The maximum amount of force that can occur, when rotating around the Y axis.
 
@@ -751,12 +751,12 @@ The maximum amount of force that can occur, when rotating around the Y axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_y/lower_angle** = ``0.0``
+:ref:`float<class_float>` **angular_limit_y/lower_angle** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_y/lower_angle>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The minimum rotation in negative direction to break loose and rotate around the Y axis.
 
@@ -768,12 +768,12 @@ The minimum rotation in negative direction to break loose and rotate around the 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_y/restitution** = ``0.0``
+:ref:`float<class_float>` **angular_limit_y/restitution** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_y/restitution>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of rotational restitution across the Y axis. The lower, the more restitution occurs.
 
@@ -785,12 +785,12 @@ The amount of rotational restitution across the Y axis. The lower, the more rest
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_y/softness** = ``0.5``
+:ref:`float<class_float>` **angular_limit_y/softness** = ``0.5`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_y/softness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The speed of all rotations across the Y axis.
 
@@ -802,12 +802,12 @@ The speed of all rotations across the Y axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_y/upper_angle** = ``0.0``
+:ref:`float<class_float>` **angular_limit_y/upper_angle** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_y/upper_angle>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The minimum rotation in positive direction to break loose and rotate around the Y axis.
 
@@ -819,12 +819,12 @@ The minimum rotation in positive direction to break loose and rotate around the 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_z/damping** = ``1.0``
+:ref:`float<class_float>` **angular_limit_z/damping** = ``1.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_z/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of rotational damping across the Z axis. The lower, the more damping occurs.
 
@@ -836,12 +836,12 @@ The amount of rotational damping across the Z axis. The lower, the more damping 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_limit_z/enabled** = ``true``
+:ref:`bool<class_bool>` **angular_limit_z/enabled** = ``true`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_z/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, rotation across the Z axis is limited.
 
@@ -853,12 +853,12 @@ If ``true``, rotation across the Z axis is limited.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_z/erp** = ``0.5``
+:ref:`float<class_float>` **angular_limit_z/erp** = ``0.5`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_z/erp>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 When rotating across the Z axis, this error tolerance factor defines how much the correction gets slowed down. The lower, the slower.
 
@@ -870,12 +870,12 @@ When rotating across the Z axis, this error tolerance factor defines how much th
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_z/force_limit** = ``0.0``
+:ref:`float<class_float>` **angular_limit_z/force_limit** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_z/force_limit>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The maximum amount of force that can occur, when rotating around the Z axis.
 
@@ -887,12 +887,12 @@ The maximum amount of force that can occur, when rotating around the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_z/lower_angle** = ``0.0``
+:ref:`float<class_float>` **angular_limit_z/lower_angle** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_z/lower_angle>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The minimum rotation in negative direction to break loose and rotate around the Z axis.
 
@@ -904,12 +904,12 @@ The minimum rotation in negative direction to break loose and rotate around the 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_z/restitution** = ``0.0``
+:ref:`float<class_float>` **angular_limit_z/restitution** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_z/restitution>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of rotational restitution across the Z axis. The lower, the more restitution occurs.
 
@@ -921,12 +921,12 @@ The amount of rotational restitution across the Z axis. The lower, the more rest
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_z/softness** = ``0.5``
+:ref:`float<class_float>` **angular_limit_z/softness** = ``0.5`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_z/softness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The speed of all rotations across the Z axis.
 
@@ -938,12 +938,12 @@ The speed of all rotations across the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_z/upper_angle** = ``0.0``
+:ref:`float<class_float>` **angular_limit_z/upper_angle** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_limit_z/upper_angle>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The minimum rotation in positive direction to break loose and rotate around the Z axis.
 
@@ -955,12 +955,12 @@ The minimum rotation in positive direction to break loose and rotate around the 
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_motor_x/enabled** = ``false``
+:ref:`bool<class_bool>` **angular_motor_x/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_motor_x/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, a rotating motor at the X axis is enabled.
 
@@ -972,12 +972,12 @@ If ``true``, a rotating motor at the X axis is enabled.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_motor_x/force_limit** = ``300.0``
+:ref:`float<class_float>` **angular_motor_x/force_limit** = ``300.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_motor_x/force_limit>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 Maximum acceleration for the motor at the X axis.
 
@@ -989,12 +989,12 @@ Maximum acceleration for the motor at the X axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_motor_x/target_velocity** = ``0.0``
+:ref:`float<class_float>` **angular_motor_x/target_velocity** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_motor_x/target_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 Target speed for the motor at the X axis.
 
@@ -1006,12 +1006,12 @@ Target speed for the motor at the X axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_motor_y/enabled** = ``false``
+:ref:`bool<class_bool>` **angular_motor_y/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_motor_y/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, a rotating motor at the Y axis is enabled.
 
@@ -1023,12 +1023,12 @@ If ``true``, a rotating motor at the Y axis is enabled.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_motor_y/force_limit** = ``300.0``
+:ref:`float<class_float>` **angular_motor_y/force_limit** = ``300.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_motor_y/force_limit>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 Maximum acceleration for the motor at the Y axis.
 
@@ -1040,12 +1040,12 @@ Maximum acceleration for the motor at the Y axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_motor_y/target_velocity** = ``0.0``
+:ref:`float<class_float>` **angular_motor_y/target_velocity** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_motor_y/target_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 Target speed for the motor at the Y axis.
 
@@ -1057,12 +1057,12 @@ Target speed for the motor at the Y axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_motor_z/enabled** = ``false``
+:ref:`bool<class_bool>` **angular_motor_z/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_motor_z/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, a rotating motor at the Z axis is enabled.
 
@@ -1074,12 +1074,12 @@ If ``true``, a rotating motor at the Z axis is enabled.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_motor_z/force_limit** = ``300.0``
+:ref:`float<class_float>` **angular_motor_z/force_limit** = ``300.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_motor_z/force_limit>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 Maximum acceleration for the motor at the Z axis.
 
@@ -1091,12 +1091,12 @@ Maximum acceleration for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_motor_z/target_velocity** = ``0.0``
+:ref:`float<class_float>` **angular_motor_z/target_velocity** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_motor_z/target_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 Target speed for the motor at the Z axis.
 
@@ -1108,12 +1108,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_spring_x/damping** = ``0.0``
+:ref:`float<class_float>` **angular_spring_x/damping** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_x/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1127,12 +1127,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_spring_x/enabled** = ``false``
+:ref:`bool<class_bool>` **angular_spring_x/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_x/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 .. container:: contribute
 
@@ -1146,12 +1146,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_spring_x/equilibrium_point** = ``0.0``
+:ref:`float<class_float>` **angular_spring_x/equilibrium_point** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_x/equilibrium_point>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1165,12 +1165,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_spring_x/stiffness** = ``0.0``
+:ref:`float<class_float>` **angular_spring_x/stiffness** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_x/stiffness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1184,12 +1184,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_spring_y/damping** = ``0.0``
+:ref:`float<class_float>` **angular_spring_y/damping** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_y/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1203,12 +1203,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_spring_y/enabled** = ``false``
+:ref:`bool<class_bool>` **angular_spring_y/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_y/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 .. container:: contribute
 
@@ -1222,12 +1222,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_spring_y/equilibrium_point** = ``0.0``
+:ref:`float<class_float>` **angular_spring_y/equilibrium_point** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_y/equilibrium_point>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1241,12 +1241,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_spring_y/stiffness** = ``0.0``
+:ref:`float<class_float>` **angular_spring_y/stiffness** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_y/stiffness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1260,12 +1260,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_spring_z/damping** = ``0.0``
+:ref:`float<class_float>` **angular_spring_z/damping** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_z/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1279,12 +1279,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_spring_z/enabled** = ``false``
+:ref:`bool<class_bool>` **angular_spring_z/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_z/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 .. container:: contribute
 
@@ -1298,12 +1298,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_spring_z/equilibrium_point** = ``0.0``
+:ref:`float<class_float>` **angular_spring_z/equilibrium_point** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_z/equilibrium_point>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1317,12 +1317,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_spring_z/stiffness** = ``0.0``
+:ref:`float<class_float>` **angular_spring_z/stiffness** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_angular_spring_z/stiffness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1336,12 +1336,12 @@ Target speed for the motor at the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_x/damping** = ``1.0``
+:ref:`float<class_float>` **linear_limit_x/damping** = ``1.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_x/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of damping that happens at the X motion.
 
@@ -1353,12 +1353,12 @@ The amount of damping that happens at the X motion.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **linear_limit_x/enabled** = ``true``
+:ref:`bool<class_bool>` **linear_limit_x/enabled** = ``true`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_x/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, the linear motion across the X axis is limited.
 
@@ -1370,12 +1370,12 @@ If ``true``, the linear motion across the X axis is limited.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_x/lower_distance** = ``0.0``
+:ref:`float<class_float>` **linear_limit_x/lower_distance** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_x/lower_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The minimum difference between the pivot points' X axis.
 
@@ -1387,12 +1387,12 @@ The minimum difference between the pivot points' X axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_x/restitution** = ``0.5``
+:ref:`float<class_float>` **linear_limit_x/restitution** = ``0.5`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_x/restitution>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of restitution on the X axis movement. The lower, the more momentum gets lost.
 
@@ -1404,12 +1404,12 @@ The amount of restitution on the X axis movement. The lower, the more momentum g
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_x/softness** = ``0.7``
+:ref:`float<class_float>` **linear_limit_x/softness** = ``0.7`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_x/softness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 A factor applied to the movement across the X axis. The lower, the slower the movement.
 
@@ -1421,12 +1421,12 @@ A factor applied to the movement across the X axis. The lower, the slower the mo
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_x/upper_distance** = ``0.0``
+:ref:`float<class_float>` **linear_limit_x/upper_distance** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_x/upper_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The maximum difference between the pivot points' X axis.
 
@@ -1438,12 +1438,12 @@ The maximum difference between the pivot points' X axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_y/damping** = ``1.0``
+:ref:`float<class_float>` **linear_limit_y/damping** = ``1.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_y/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of damping that happens at the Y motion.
 
@@ -1455,12 +1455,12 @@ The amount of damping that happens at the Y motion.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **linear_limit_y/enabled** = ``true``
+:ref:`bool<class_bool>` **linear_limit_y/enabled** = ``true`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_y/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, the linear motion across the Y axis is limited.
 
@@ -1472,12 +1472,12 @@ If ``true``, the linear motion across the Y axis is limited.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_y/lower_distance** = ``0.0``
+:ref:`float<class_float>` **linear_limit_y/lower_distance** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_y/lower_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The minimum difference between the pivot points' Y axis.
 
@@ -1489,12 +1489,12 @@ The minimum difference between the pivot points' Y axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_y/restitution** = ``0.5``
+:ref:`float<class_float>` **linear_limit_y/restitution** = ``0.5`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_y/restitution>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of restitution on the Y axis movement. The lower, the more momentum gets lost.
 
@@ -1506,12 +1506,12 @@ The amount of restitution on the Y axis movement. The lower, the more momentum g
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_y/softness** = ``0.7``
+:ref:`float<class_float>` **linear_limit_y/softness** = ``0.7`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_y/softness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 A factor applied to the movement across the Y axis. The lower, the slower the movement.
 
@@ -1523,12 +1523,12 @@ A factor applied to the movement across the Y axis. The lower, the slower the mo
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_y/upper_distance** = ``0.0``
+:ref:`float<class_float>` **linear_limit_y/upper_distance** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_y/upper_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The maximum difference between the pivot points' Y axis.
 
@@ -1540,12 +1540,12 @@ The maximum difference between the pivot points' Y axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_z/damping** = ``1.0``
+:ref:`float<class_float>` **linear_limit_z/damping** = ``1.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_z/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of damping that happens at the Z motion.
 
@@ -1557,12 +1557,12 @@ The amount of damping that happens at the Z motion.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **linear_limit_z/enabled** = ``true``
+:ref:`bool<class_bool>` **linear_limit_z/enabled** = ``true`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_z/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, the linear motion across the Z axis is limited.
 
@@ -1574,12 +1574,12 @@ If ``true``, the linear motion across the Z axis is limited.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_z/lower_distance** = ``0.0``
+:ref:`float<class_float>` **linear_limit_z/lower_distance** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_z/lower_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The minimum difference between the pivot points' Z axis.
 
@@ -1591,12 +1591,12 @@ The minimum difference between the pivot points' Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_z/restitution** = ``0.5``
+:ref:`float<class_float>` **linear_limit_z/restitution** = ``0.5`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_z/restitution>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The amount of restitution on the Z axis movement. The lower, the more momentum gets lost.
 
@@ -1608,12 +1608,12 @@ The amount of restitution on the Z axis movement. The lower, the more momentum g
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_z/softness** = ``0.7``
+:ref:`float<class_float>` **linear_limit_z/softness** = ``0.7`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_z/softness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 A factor applied to the movement across the Z axis. The lower, the slower the movement.
 
@@ -1625,12 +1625,12 @@ A factor applied to the movement across the Z axis. The lower, the slower the mo
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_limit_z/upper_distance** = ``0.0``
+:ref:`float<class_float>` **linear_limit_z/upper_distance** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_limit_z/upper_distance>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The maximum difference between the pivot points' Z axis.
 
@@ -1642,12 +1642,12 @@ The maximum difference between the pivot points' Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **linear_motor_x/enabled** = ``false``
+:ref:`bool<class_bool>` **linear_motor_x/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_motor_x/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, then there is a linear motor on the X axis. It will attempt to reach the target velocity while staying within the force limits.
 
@@ -1659,12 +1659,12 @@ If ``true``, then there is a linear motor on the X axis. It will attempt to reac
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_motor_x/force_limit** = ``0.0``
+:ref:`float<class_float>` **linear_motor_x/force_limit** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_motor_x/force_limit>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The maximum force the linear motor can apply on the X axis while trying to reach the target velocity.
 
@@ -1676,12 +1676,12 @@ The maximum force the linear motor can apply on the X axis while trying to reach
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_motor_x/target_velocity** = ``0.0``
+:ref:`float<class_float>` **linear_motor_x/target_velocity** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_motor_x/target_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The speed that the linear motor will attempt to reach on the X axis.
 
@@ -1693,12 +1693,12 @@ The speed that the linear motor will attempt to reach on the X axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **linear_motor_y/enabled** = ``false``
+:ref:`bool<class_bool>` **linear_motor_y/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_motor_y/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, then there is a linear motor on the Y axis. It will attempt to reach the target velocity while staying within the force limits.
 
@@ -1710,12 +1710,12 @@ If ``true``, then there is a linear motor on the Y axis. It will attempt to reac
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_motor_y/force_limit** = ``0.0``
+:ref:`float<class_float>` **linear_motor_y/force_limit** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_motor_y/force_limit>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The maximum force the linear motor can apply on the Y axis while trying to reach the target velocity.
 
@@ -1727,12 +1727,12 @@ The maximum force the linear motor can apply on the Y axis while trying to reach
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_motor_y/target_velocity** = ``0.0``
+:ref:`float<class_float>` **linear_motor_y/target_velocity** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_motor_y/target_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The speed that the linear motor will attempt to reach on the Y axis.
 
@@ -1744,12 +1744,12 @@ The speed that the linear motor will attempt to reach on the Y axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **linear_motor_z/enabled** = ``false``
+:ref:`bool<class_bool>` **linear_motor_z/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_motor_z/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 If ``true``, then there is a linear motor on the Z axis. It will attempt to reach the target velocity while staying within the force limits.
 
@@ -1761,12 +1761,12 @@ If ``true``, then there is a linear motor on the Z axis. It will attempt to reac
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_motor_z/force_limit** = ``0.0``
+:ref:`float<class_float>` **linear_motor_z/force_limit** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_motor_z/force_limit>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The maximum force the linear motor can apply on the Z axis while trying to reach the target velocity.
 
@@ -1778,12 +1778,12 @@ The maximum force the linear motor can apply on the Z axis while trying to reach
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_motor_z/target_velocity** = ``0.0``
+:ref:`float<class_float>` **linear_motor_z/target_velocity** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_motor_z/target_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 The speed that the linear motor will attempt to reach on the Z axis.
 
@@ -1795,12 +1795,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_spring_x/damping** = ``0.01``
+:ref:`float<class_float>` **linear_spring_x/damping** = ``0.01`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_x/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1814,12 +1814,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **linear_spring_x/enabled** = ``false``
+:ref:`bool<class_bool>` **linear_spring_x/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_x/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 .. container:: contribute
 
@@ -1833,12 +1833,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_spring_x/equilibrium_point** = ``0.0``
+:ref:`float<class_float>` **linear_spring_x/equilibrium_point** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_x/equilibrium_point>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1852,12 +1852,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_spring_x/stiffness** = ``0.01``
+:ref:`float<class_float>` **linear_spring_x/stiffness** = ``0.01`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_x/stiffness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1871,12 +1871,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_spring_y/damping** = ``0.01``
+:ref:`float<class_float>` **linear_spring_y/damping** = ``0.01`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_y/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1890,12 +1890,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **linear_spring_y/enabled** = ``false``
+:ref:`bool<class_bool>` **linear_spring_y/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_y/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 .. container:: contribute
 
@@ -1909,12 +1909,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_spring_y/equilibrium_point** = ``0.0``
+:ref:`float<class_float>` **linear_spring_y/equilibrium_point** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_y/equilibrium_point>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1928,12 +1928,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_spring_y/stiffness** = ``0.01``
+:ref:`float<class_float>` **linear_spring_y/stiffness** = ``0.01`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_y/stiffness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1947,12 +1947,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_spring_z/damping** = ``0.01``
+:ref:`float<class_float>` **linear_spring_z/damping** = ``0.01`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_z/damping>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -1966,12 +1966,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **linear_spring_z/enabled** = ``false``
+:ref:`bool<class_bool>` **linear_spring_z/enabled** = ``false`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_z/enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const|
 
 .. container:: contribute
 
@@ -1985,12 +1985,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_spring_z/equilibrium_point** = ``0.0``
+:ref:`float<class_float>` **linear_spring_z/equilibrium_point** = ``0.0`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_z/equilibrium_point>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -2004,12 +2004,12 @@ The speed that the linear motor will attempt to reach on the Z axis.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **linear_spring_z/stiffness** = ``0.01``
+:ref:`float<class_float>` **linear_spring_z/stiffness** = ``0.01`` :ref:`🔗<class_Generic6DOFJoint3D_property_linear_spring_z/stiffness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+- |void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -2028,7 +2028,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+:ref:`bool<class_bool>` **get_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const| :ref:`🔗<class_Generic6DOFJoint3D_method_get_flag_x>`
 
 .. container:: contribute
 
@@ -2042,7 +2042,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+:ref:`bool<class_bool>` **get_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const| :ref:`🔗<class_Generic6DOFJoint3D_method_get_flag_y>`
 
 .. container:: contribute
 
@@ -2056,7 +2056,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag **)** |const|
+:ref:`bool<class_bool>` **get_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`\ ) |const| :ref:`🔗<class_Generic6DOFJoint3D_method_get_flag_z>`
 
 .. container:: contribute
 
@@ -2070,7 +2070,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+:ref:`float<class_float>` **get_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const| :ref:`🔗<class_Generic6DOFJoint3D_method_get_param_x>`
 
 .. container:: contribute
 
@@ -2084,7 +2084,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+:ref:`float<class_float>` **get_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const| :ref:`🔗<class_Generic6DOFJoint3D_method_get_param_y>`
 
 .. container:: contribute
 
@@ -2098,7 +2098,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
+:ref:`float<class_float>` **get_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`\ ) |const| :ref:`🔗<class_Generic6DOFJoint3D_method_get_param_z>`
 
 .. container:: contribute
 
@@ -2112,7 +2112,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **set_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
+|void| **set_flag_x**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Generic6DOFJoint3D_method_set_flag_x>`
 
 .. container:: contribute
 
@@ -2126,7 +2126,7 @@ void **set_flag_x** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`
 
 .. rst-class:: classref-method
 
-void **set_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
+|void| **set_flag_y**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Generic6DOFJoint3D_method_set_flag_y>`
 
 .. container:: contribute
 
@@ -2140,7 +2140,7 @@ void **set_flag_y** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`
 
 .. rst-class:: classref-method
 
-void **set_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`bool<class_bool>` value **)**
+|void| **set_flag_z**\ (\ flag\: :ref:`Flag<enum_Generic6DOFJoint3D_Flag>`, value\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_Generic6DOFJoint3D_method_set_flag_z>`
 
 .. container:: contribute
 
@@ -2154,7 +2154,7 @@ void **set_flag_z** **(** :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` flag, :ref:`
 
 .. rst-class:: classref-method
 
-void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
+|void| **set_param_x**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Generic6DOFJoint3D_method_set_param_x>`
 
 .. container:: contribute
 
@@ -2168,7 +2168,7 @@ void **set_param_x** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :r
 
 .. rst-class:: classref-method
 
-void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
+|void| **set_param_y**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Generic6DOFJoint3D_method_set_param_y>`
 
 .. container:: contribute
 
@@ -2182,7 +2182,7 @@ void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :r
 
 .. rst-class:: classref-method
 
-void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
+|void| **set_param_z**\ (\ param\: :ref:`Param<enum_Generic6DOFJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) :ref:`🔗<class_Generic6DOFJoint3D_method_set_param_z>`
 
 .. container:: contribute
 
@@ -2195,3 +2195,4 @@ void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :r
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

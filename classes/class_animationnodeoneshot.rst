@@ -79,7 +79,7 @@ Tutorials
 
 - :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -95,6 +95,8 @@ Properties
    | :ref:`float<class_float>`                         | :ref:`autorestart_delay<class_AnimationNodeOneShot_property_autorestart_delay>`               | ``1.0``   |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`float<class_float>`                         | :ref:`autorestart_random_delay<class_AnimationNodeOneShot_property_autorestart_random_delay>` | ``0.0``   |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                           | :ref:`break_loop_at_end<class_AnimationNodeOneShot_property_break_loop_at_end>`               | ``false`` |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`Curve<class_Curve>`                         | :ref:`fadein_curve<class_AnimationNodeOneShot_property_fadein_curve>`                         |           |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
@@ -120,7 +122,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **OneShotRequest**:
+enum **OneShotRequest**: :ref:`🔗<enum_AnimationNodeOneShot_OneShotRequest>`
 
 .. _class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_NONE:
 
@@ -162,7 +164,7 @@ The request to fade out the animation connected to "shot" port.
 
 .. rst-class:: classref-enumeration
 
-enum **MixMode**:
+enum **MixMode**: :ref:`🔗<enum_AnimationNodeOneShot_MixMode>`
 
 .. _class_AnimationNodeOneShot_constant_MIX_MODE_BLEND:
 
@@ -193,12 +195,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **autorestart** = ``false``
+:ref:`bool<class_bool>` **autorestart** = ``false`` :ref:`🔗<class_AnimationNodeOneShot_property_autorestart>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_autorestart** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **has_autorestart** **(** **)**
+- |void| **set_autorestart**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **has_autorestart**\ (\ )
 
 If ``true``, the sub-animation will restart automatically after finishing.
 
@@ -212,12 +214,12 @@ In other words, to start auto restarting, the animation must be played once with
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **autorestart_delay** = ``1.0``
+:ref:`float<class_float>` **autorestart_delay** = ``1.0`` :ref:`🔗<class_AnimationNodeOneShot_property_autorestart_delay>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_autorestart_delay** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_autorestart_delay** **(** **)**
+- |void| **set_autorestart_delay**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_autorestart_delay**\ (\ )
 
 The delay after which the automatic restart is triggered, in seconds.
 
@@ -229,14 +231,31 @@ The delay after which the automatic restart is triggered, in seconds.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **autorestart_random_delay** = ``0.0``
+:ref:`float<class_float>` **autorestart_random_delay** = ``0.0`` :ref:`🔗<class_AnimationNodeOneShot_property_autorestart_random_delay>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_autorestart_random_delay** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_autorestart_random_delay** **(** **)**
+- |void| **set_autorestart_random_delay**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_autorestart_random_delay**\ (\ )
 
 If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true``, a random additional delay (in seconds) between 0 and this value will be added to :ref:`autorestart_delay<class_AnimationNodeOneShot_property_autorestart_delay>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeOneShot_property_break_loop_at_end:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **break_loop_at_end** = ``false`` :ref:`🔗<class_AnimationNodeOneShot_property_break_loop_at_end>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_break_loop_at_end**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_loop_broken_at_end**\ (\ )
+
+If ``true``, breaks the loop at the end of the loop cycle for transition, even if the animation is looping.
 
 .. rst-class:: classref-item-separator
 
@@ -246,14 +265,14 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **fadein_curve**
+:ref:`Curve<class_Curve>` **fadein_curve** :ref:`🔗<class_AnimationNodeOneShot_property_fadein_curve>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_fadein_curve** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_fadein_curve** **(** **)**
+- |void| **set_fadein_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_fadein_curve**\ (\ )
 
-Determines how cross-fading between animations is eased. If empty, the transition will be linear.
+Determines how cross-fading between animations is eased. If empty, the transition will be linear. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -263,14 +282,16 @@ Determines how cross-fading between animations is eased. If empty, the transitio
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fadein_time** = ``0.0``
+:ref:`float<class_float>` **fadein_time** = ``0.0`` :ref:`🔗<class_AnimationNodeOneShot_property_fadein_time>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_fadein_time** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_fadein_time** **(** **)**
+- |void| **set_fadein_time**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_fadein_time**\ (\ )
 
 The fade-in duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a cross-fade that starts at 0 second and ends at 1 second during the animation.
+
+\ **Note:** **AnimationNodeOneShot** transitions the current state after the end of the fading. When :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` is considered as the most upstream, so the :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>` is scaled depending on the downstream delta. For example, if this value is set to ``1.0`` and a :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>` with a value of ``2.0`` is chained downstream, the actual processing time will be 0.5 second.
 
 .. rst-class:: classref-item-separator
 
@@ -280,14 +301,14 @@ The fade-in duration. For example, setting this to ``1.0`` for a 5 second length
 
 .. rst-class:: classref-property
 
-:ref:`Curve<class_Curve>` **fadeout_curve**
+:ref:`Curve<class_Curve>` **fadeout_curve** :ref:`🔗<class_AnimationNodeOneShot_property_fadeout_curve>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_fadeout_curve** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_fadeout_curve** **(** **)**
+- |void| **set_fadeout_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_fadeout_curve**\ (\ )
 
-Determines how cross-fading between animations is eased. If empty, the transition will be linear.
+Determines how cross-fading between animations is eased. If empty, the transition will be linear. Should be a unit :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-item-separator
 
@@ -297,14 +318,16 @@ Determines how cross-fading between animations is eased. If empty, the transitio
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **fadeout_time** = ``0.0``
+:ref:`float<class_float>` **fadeout_time** = ``0.0`` :ref:`🔗<class_AnimationNodeOneShot_property_fadeout_time>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_fadeout_time** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_fadeout_time** **(** **)**
+- |void| **set_fadeout_time**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_fadeout_time**\ (\ )
 
 The fade-out duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a cross-fade that starts at 4 second and ends at 5 second during the animation.
+
+\ **Note:** **AnimationNodeOneShot** transitions the current state after the end of the fading. When :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` is considered as the most upstream, so the :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>` is scaled depending on the downstream delta. For example, if this value is set to ``1.0`` and an :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>` with a value of ``2.0`` is chained downstream, the actual processing time will be 0.5 second.
 
 .. rst-class:: classref-item-separator
 
@@ -314,12 +337,12 @@ The fade-out duration. For example, setting this to ``1.0`` for a 5 second lengt
 
 .. rst-class:: classref-property
 
-:ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **mix_mode** = ``0``
+:ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **mix_mode** = ``0`` :ref:`🔗<class_AnimationNodeOneShot_property_mix_mode>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_mix_mode** **(** :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` value **)**
-- :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **get_mix_mode** **(** **)**
+- |void| **set_mix_mode**\ (\ value\: :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>`\ )
+- :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **get_mix_mode**\ (\ )
 
 The blend type.
 
@@ -330,3 +353,4 @@ The blend type.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

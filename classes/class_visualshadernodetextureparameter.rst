@@ -56,7 +56,7 @@ Enumerations
 
 .. rst-class:: classref-enumeration
 
-enum **TextureType**:
+enum **TextureType**: :ref:`🔗<enum_VisualShaderNodeTextureParameter_TextureType>`
 
 .. _class_VisualShaderNodeTextureParameter_constant_TYPE_DATA:
 
@@ -106,7 +106,7 @@ Represents the size of the :ref:`TextureType<enum_VisualShaderNodeTextureParamet
 
 .. rst-class:: classref-enumeration
 
-enum **ColorDefault**:
+enum **ColorDefault**: :ref:`🔗<enum_VisualShaderNodeTextureParameter_ColorDefault>`
 
 .. _class_VisualShaderNodeTextureParameter_constant_COLOR_DEFAULT_WHITE:
 
@@ -148,7 +148,7 @@ Represents the size of the :ref:`ColorDefault<enum_VisualShaderNodeTextureParame
 
 .. rst-class:: classref-enumeration
 
-enum **TextureFilter**:
+enum **TextureFilter**: :ref:`🔗<enum_VisualShaderNodeTextureParameter_TextureFilter>`
 
 .. _class_VisualShaderNodeTextureParameter_constant_FILTER_DEFAULT:
 
@@ -230,7 +230,7 @@ Represents the size of the :ref:`TextureFilter<enum_VisualShaderNodeTextureParam
 
 .. rst-class:: classref-enumeration
 
-enum **TextureRepeat**:
+enum **TextureRepeat**: :ref:`🔗<enum_VisualShaderNodeTextureParameter_TextureRepeat>`
 
 .. _class_VisualShaderNodeTextureParameter_constant_REPEAT_DEFAULT:
 
@@ -272,7 +272,7 @@ Represents the size of the :ref:`TextureRepeat<enum_VisualShaderNodeTextureParam
 
 .. rst-class:: classref-enumeration
 
-enum **TextureSource**:
+enum **TextureSource**: :ref:`🔗<enum_VisualShaderNodeTextureParameter_TextureSource>`
 
 .. _class_VisualShaderNodeTextureParameter_constant_SOURCE_NONE:
 
@@ -327,12 +327,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **color_default** = ``0``
+:ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **color_default** = ``0`` :ref:`🔗<class_VisualShaderNodeTextureParameter_property_color_default>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_color_default** **(** :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` value **)**
-- :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **get_color_default** **(** **)**
+- |void| **set_color_default**\ (\ value\: :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>`\ )
+- :ref:`ColorDefault<enum_VisualShaderNodeTextureParameter_ColorDefault>` **get_color_default**\ (\ )
 
 Sets the default color if no texture is assigned to the uniform.
 
@@ -344,12 +344,12 @@ Sets the default color if no texture is assigned to the uniform.
 
 .. rst-class:: classref-property
 
-:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **texture_filter** = ``0``
+:ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **texture_filter** = ``0`` :ref:`🔗<class_VisualShaderNodeTextureParameter_property_texture_filter>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_filter** **(** :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` value **)**
-- :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **get_texture_filter** **(** **)**
+- |void| **set_texture_filter**\ (\ value\: :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>`\ )
+- :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` **get_texture_filter**\ (\ )
 
 Sets the texture filtering mode. See :ref:`TextureFilter<enum_VisualShaderNodeTextureParameter_TextureFilter>` for options.
 
@@ -361,12 +361,12 @@ Sets the texture filtering mode. See :ref:`TextureFilter<enum_VisualShaderNodeTe
 
 .. rst-class:: classref-property
 
-:ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **texture_repeat** = ``0``
+:ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **texture_repeat** = ``0`` :ref:`🔗<class_VisualShaderNodeTextureParameter_property_texture_repeat>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_repeat** **(** :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` value **)**
-- :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **get_texture_repeat** **(** **)**
+- |void| **set_texture_repeat**\ (\ value\: :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>`\ )
+- :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **get_texture_repeat**\ (\ )
 
 Sets the texture repeating mode. See :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` for options.
 
@@ -378,12 +378,12 @@ Sets the texture repeating mode. See :ref:`TextureRepeat<enum_VisualShaderNodeTe
 
 .. rst-class:: classref-property
 
-:ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **texture_source** = ``0``
+:ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **texture_source** = ``0`` :ref:`🔗<class_VisualShaderNodeTextureParameter_property_texture_source>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_source** **(** :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` value **)**
-- :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **get_texture_source** **(** **)**
+- |void| **set_texture_source**\ (\ value\: :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>`\ )
+- :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **get_texture_source**\ (\ )
 
 Sets the texture source mode. Used for reading from the screen, depth, or normal_roughness texture. See :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` for options.
 
@@ -395,12 +395,12 @@ Sets the texture source mode. Used for reading from the screen, depth, or normal
 
 .. rst-class:: classref-property
 
-:ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **texture_type** = ``0``
+:ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **texture_type** = ``0`` :ref:`🔗<class_VisualShaderNodeTextureParameter_property_texture_type>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_type** **(** :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` value **)**
-- :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **get_texture_type** **(** **)**
+- |void| **set_texture_type**\ (\ value\: :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>`\ )
+- :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` **get_texture_type**\ (\ )
 
 Defines the type of data provided by the source texture. See :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>` for options.
 
@@ -411,3 +411,4 @@ Defines the type of data provided by the source texture. See :ref:`TextureType<e
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -185,7 +185,7 @@ Add the code below to ``HUD`` to update the score
     }
 
 Connect the ``pressed()`` signal of ``StartButton`` and the ``timeout()``
-signal of ``MessageTimer``, and add the following code to the new functions:
+signal of ``MessageTimer`` to the ``HUD`` node, and add the following code to the new functions:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -199,12 +199,14 @@ signal of ``MessageTimer``, and add the following code to the new functions:
 
  .. code-tab:: csharp
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnStartButtonPressed()
     {
         GetNode<Button>("StartButton").Hide();
         EmitSignal(SignalName.StartGame);
     }
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnMessageTimerTimeout()
     {
         GetNode<Label>("Message").Hide();
@@ -271,8 +273,7 @@ with the changing score:
     ``_ready()`` if you haven't already, otherwise
     your game will start automatically.
 
-Now you're ready to play! Click the "Play the Project" button. You will be asked
-to select a main scene, so choose ``main.tscn``.
+Now you're ready to play! Click the "Play the Project" button.
 
 Removing old creeps
 ~~~~~~~~~~~~~~~~~~~
@@ -284,12 +285,20 @@ mobs to remove themselves. We can do this with the "group" feature.
 
 In the ``Mob`` scene, select the root node and click the "Node" tab next to the
 Inspector (the same place where you find the node's signals). Next to "Signals",
-click "Groups" and you can type a new group name and click "Add".
+click "Groups" to open the group overview
+and the "+" button to open the "Create New Group" dialog.
 
 .. image:: img/group_tab.webp
 
-Now all mobs will be in the "mobs" group. We can then add the following line to
-the ``new_game()`` function in ``Main``:
+Name the group ``mobs`` and click "ok" to add a new scene group.
+
+.. image:: img/add_group_dialog.webp
+
+Now all mobs will be in the "mobs" group.
+
+.. image:: img/scene_group_mobs.webp
+
+We can then add the following line to the ``new_game()`` function in ``Main``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -12,12 +12,11 @@ translation effort of the community.
 
 These resources include:
 
-1. The `Godot editor's interface <https://hosted.weblate.org/projects/godot-engine/godot/>`__
-   (ca. 15,000 words).
-2. The `online documentation <https://hosted.weblate.org/projects/godot-engine/godot-docs/>`__
-   (editor manual and tutorials, ca. 300,000 words).
-3. The `class reference <https://hosted.weblate.org/projects/godot-engine/godot-class-reference/>`__,
-   available both online and in the editor (ca. 200,000 words).
+1. The `Godot editor's interface <https://hosted.weblate.org/projects/godot-engine/godot/>`__.
+2. The `class reference <https://hosted.weblate.org/projects/godot-engine/godot-class-reference/>`__,
+   available both online and in the editor.
+3. The `online documentation <https://hosted.weblate.org/projects/godot-engine/godot-docs/>`__
+   (editor manual and tutorials).
 
 To manage translations, we use the GNU gettext file format (``PO`` files), and
 the open source `Weblate <https://weblate.org>`__ web-based localization
@@ -33,8 +32,7 @@ localization of images.
 
     Translating all the official Godot content is a massive undertaking, so we
     advise prioritizing the resources as they are listed above: first the editor
-    interface, then the online documentation, and eventually the class reference
-    if there are enough translators to keep up with updates.
+    interface, then the class reference, then the online documentation.
 
 Using Weblate for translations
 ------------------------------

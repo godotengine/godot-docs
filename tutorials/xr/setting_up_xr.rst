@@ -31,16 +31,27 @@ There are other XR related nodes and there is much more to say about these three
 Prerequisites for XR in Godot 4
 -------------------------------
 
-While in Godot 3 most things worked out of the box, Godot 4 needs a little more setup. This is mainly due to the more advanced nature of the Vulkan renderer. There are many rendering features in Vulkan the XR system uses that aren't enabled by default. They are very easy to turn on, simply open up your project settings and tick the XR shaders tickbox in the XR section:
+While in Godot 3 most things worked out of the box, Godot 4 needs a little more
+setup. This is mainly due to the more advanced nature of the Vulkan renderer.
+There are many rendering features in Vulkan the XR system uses that aren't
+enabled by default. To turn them on, open up your project settings and tick
+:ref:`XR > Shaders > Enabled <class_ProjectSettings_property_xr/shaders/enabled>`:
 
 .. image:: img/xr_shaders.png
+
+.. UPDATE: Not supported yet. When all or most post process effects work in
+.. stereoscopic rendering, remove or update this note.
 
 .. warning::
     As Godot 4 is still in development, many post process effects have not yet been updated to support stereoscopic rendering. Using these will have adverse effects.
 
+.. UPDATE: Recommended renderer may change. If the Mobile renderer (or any other
+.. renderer) is recommended for all XR projects, update this note.
+
 .. note::
-    Godot 4 has 3 renderer options, Compatibility, Mobile, and Forward+. In the future XR desktop projects should use Forward+, and projects for stand-alone headsets
-    should use Mobile. However Compatibility is the recommended renderer for now due to it having the best XR performance.
+    Godot 4 has 3 renderer options, Compatibility, Mobile, and Forward+. In the future XR desktop projects should use Forward+, and projects for standalone headsets
+    should use Mobile. Currently Compatibility is the recommended renderer for standalone headsets, and ironically Mobile is the recommended renderer for desktop.
+    This is based on current XR performance on the different devices with each renderer.
 
 OpenXR
 ------

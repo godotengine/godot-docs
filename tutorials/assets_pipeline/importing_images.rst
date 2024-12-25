@@ -79,8 +79,8 @@ It is possible to choose other types of imported resources in the Import dock:
   custom shaders.
 - **CubemapArray:** Import the texture as a collection of 6-sided cubemaps,
   which can be sampled in custom shaders. This resource type can only be
-  displayed when using the Forward+ or Forward Mobile rendering methods, not
-  Compatibility.
+  displayed when using the Forward+ or Mobile renderers, not the Compatibility
+  renderer.
 - **Font Data (Monospace Image Font):** Import the image as a bitmap font where
   all characters have the same width. See :ref:`doc_gui_using_fonts`.
 - **Image:** Import the image as-is. This resource type cannot be displayed
@@ -97,11 +97,20 @@ It is possible to choose other types of imported resources in the Import dock:
   texture applied onto a 3D surface. Texture3D is similar to a texture array, but
   with interpolation between layers. Texture3D is typically used for
   :ref:`class_FogMaterial` density maps in :ref:`volumetric fog
-  <doc_volumetric_fog>`, :ref:`class_Environment` 3D LUT color correction and
-  custom shaders.
+  <doc_volumetric_fog>`, :ref:`particle attractor <doc_3d_particles_attractors>`
+  vector fields, :ref:`class_Environment` 3D LUT color correction, and custom shaders.
 - **TextureAtlas:** Import the image as an *atlas* of different textures. Can be
   used to reduce memory usage for animated 2D sprites. Only supported in 2D due
   to missing support in built-in 3D shaders.
+
+For **Cubemap**, the expected image order is X+, X-, Y+, Y-, Z+, Z-
+(in Godot's coordinate system, so Y+ is "up" and Z- is "forward").
+Here are templates you can use for cubemap images (right-click > **Save Link As…**):
+
+- :download:`2×3 cubemap template (default layout option) <img/cubemap_template_2x3.webp>`
+- :download:`3×2 cubemap template <img/cubemap_template_3x2.webp>`
+- :download:`1×6 cubemap template <img/cubemap_template_1x6.webp>`
+- :download:`6×1 cubemap template <img/cubemap_template_6x1.webp>`
 
 Detect 3D
 ^^^^^^^^^
@@ -252,10 +261,10 @@ Compress > High Quality
 .. note::
 
     High-quality VRAM texture compression is only supported in the Forward+ and
-    Forward Mobile rendering methods.
+    Mobile renderers.
 
-    When using the Compatibility rendering method, this option is always
-    considered disabled.
+    When using the Compatibility renderer, this option is always considered
+    disabled.
 
 If enabled, uses BPTC compression on desktop platforms and :abbr:`ASTC (Adaptive
 Scalable Texture Compression)` compression on mobile platforms. When using BPTC,
@@ -367,6 +376,9 @@ mipmaps but memory usage will increase.
 
 Mipmaps > Limit
 ^^^^^^^^^^^^^^^
+
+.. UPDATE: Not implemented. When Mipmaps > Limit is implemented, remove this
+.. warning and remove this comment.
 
 .. warning::
 
@@ -526,7 +538,7 @@ editing the original text afterwards:
 - Select your text object in Inkscape, then duplicate it in place by pressing
   :kbd:`Ctrl + D` and use **Path > Object to Path**. Hide the original text
   object afterwards using the **Layers and Objects** dock.
-- Use the Inkscape command line to export a SVG from another SVG file with text
+- Use the Inkscape command line to export an SVG from another SVG file with text
   converted to paths:
 
 ::

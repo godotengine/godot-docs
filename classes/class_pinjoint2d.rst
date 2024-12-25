@@ -56,12 +56,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **angular_limit_enabled** = ``false``
+:ref:`bool<class_bool>` **angular_limit_enabled** = ``false`` :ref:`🔗<class_PinJoint2D_property_angular_limit_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_limit_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_angular_limit_enabled** **(** **)**
+- |void| **set_angular_limit_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_angular_limit_enabled**\ (\ )
 
 If ``true``, the pin maximum and minimum rotation, defined by :ref:`angular_limit_lower<class_PinJoint2D_property_angular_limit_lower>` and :ref:`angular_limit_upper<class_PinJoint2D_property_angular_limit_upper>` are applied.
 
@@ -73,12 +73,12 @@ If ``true``, the pin maximum and minimum rotation, defined by :ref:`angular_limi
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_lower** = ``0.0``
+:ref:`float<class_float>` **angular_limit_lower** = ``0.0`` :ref:`🔗<class_PinJoint2D_property_angular_limit_lower>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_limit_lower** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_angular_limit_lower** **(** **)**
+- |void| **set_angular_limit_lower**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_angular_limit_lower**\ (\ )
 
 The minimum rotation. Only active if :ref:`angular_limit_enabled<class_PinJoint2D_property_angular_limit_enabled>` is ``true``.
 
@@ -90,12 +90,12 @@ The minimum rotation. Only active if :ref:`angular_limit_enabled<class_PinJoint2
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **angular_limit_upper** = ``0.0``
+:ref:`float<class_float>` **angular_limit_upper** = ``0.0`` :ref:`🔗<class_PinJoint2D_property_angular_limit_upper>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_limit_upper** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_angular_limit_upper** **(** **)**
+- |void| **set_angular_limit_upper**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_angular_limit_upper**\ (\ )
 
 The maximum rotation. Only active if :ref:`angular_limit_enabled<class_PinJoint2D_property_angular_limit_enabled>` is ``true``.
 
@@ -107,12 +107,12 @@ The maximum rotation. Only active if :ref:`angular_limit_enabled<class_PinJoint2
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **motor_enabled** = ``false``
+:ref:`bool<class_bool>` **motor_enabled** = ``false`` :ref:`🔗<class_PinJoint2D_property_motor_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_motor_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_motor_enabled** **(** **)**
+- |void| **set_motor_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_motor_enabled**\ (\ )
 
 When activated, a motor turns the pin.
 
@@ -124,12 +124,12 @@ When activated, a motor turns the pin.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **motor_target_velocity** = ``0.0``
+:ref:`float<class_float>` **motor_target_velocity** = ``0.0`` :ref:`🔗<class_PinJoint2D_property_motor_target_velocity>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_motor_target_velocity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_motor_target_velocity** **(** **)**
+- |void| **set_motor_target_velocity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_motor_target_velocity**\ (\ )
 
 Target speed for the motor. In radians per second.
 
@@ -141,12 +141,12 @@ Target speed for the motor. In radians per second.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **softness** = ``0.0``
+:ref:`float<class_float>` **softness** = ``0.0`` :ref:`🔗<class_PinJoint2D_property_softness>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_softness** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_softness** **(** **)**
+- |void| **set_softness**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_softness**\ (\ )
 
 The higher this value, the more the bond to the pinned partner can flex.
 
@@ -157,3 +157,4 @@ The higher this value, the more the bond to the pinned partner can flex.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

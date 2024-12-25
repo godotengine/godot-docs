@@ -185,7 +185,7 @@ of disk space.
 (GUI) and `FFmpeg <https://ffmpeg.org/>`__ (CLI) are popular open source tools
 for this purpose. FFmpeg has a steeper learning curve, but it's more powerful.
 
-Here are example FFmpeg commands to convert a MP4 video to Ogg Theora. Since
+Here are example FFmpeg commands to convert an MP4 video to Ogg Theora. Since
 FFmpeg supports a lot of input formats, you should be able to use the commands
 below with almost any input video format (AVI, MOV, WebM, …).
 
@@ -268,42 +268,42 @@ To implement the chroma key effect, follow these steps:
 
 2. In the "ChromaKeyShader.gdshader" file, write the custom shader code as shown below:
 
-.. code-block:: gd
+.. code-block:: glsl
 
    shader_type canvas_item;
 
-   # Uniform variables for chroma key effect
+   // Uniform variables for chroma key effect
    uniform vec3 chroma_key_color : source_color = vec3(0.0, 1.0, 0.0);
    uniform float pickup_range : hint_range(0.0, 1.0) = 0.1;
    uniform float fade_amount : hint_range(0.0, 1.0) = 0.1;
 
    void fragment() {
-       # Get the color from the texture at the given UV coordinates
+       // Get the color from the texture at the given UV coordinates
        vec4 color = texture(TEXTURE, UV);
 
-       # Calculate the distance between the current color and the chroma key color
+       // Calculate the distance between the current color and the chroma key color
        float distance = length(color.rgb - chroma_key_color);
 
-       # If the distance is within the pickup range, discard the pixel
-       # the lesser the distance more likely the colors are
+       // If the distance is within the pickup range, discard the pixel
+       // the lesser the distance more likely the colors are
        if (distance <= pickup_range) {
            discard;
        }
 
-       # Calculate the fade factor based on the pickup range and fade amount
+       // Calculate the fade factor based on the pickup range and fade amount
        float fade_factor = smoothstep(pickup_range, pickup_range + fade_amount, distance);
 
-       # Set the output color with the original RGB values and the calculated fade factor
+       // Set the output color with the original RGB values and the calculated fade factor
        COLOR = vec4(color.rgb, fade_factor);
    }
 
-The shader uses the distance calculation to identify pixels close to the chroma key color and discards them, 
-effectively removing the selected color. Pixels that are slightly further away from the chroma key color are 
-faded based on the fade_factor, blending them smoothly with the surrounding colors. 
-This process creates the desired chroma key effect, making it appear as if the background has been replaced with 
+The shader uses the distance calculation to identify pixels close to the chroma key color and discards them,
+effectively removing the selected color. Pixels that are slightly further away from the chroma key color are
+faded based on the fade_factor, blending them smoothly with the surrounding colors.
+This process creates the desired chroma key effect, making it appear as if the background has been replaced with
 another image or video.
 
-The code above represents a simple demonstration of the Chroma Key shader, 
+The code above represents a simple demonstration of the Chroma Key shader,
 and users can customize it according to their specific requirements.
 
 UI Controls
@@ -311,25 +311,64 @@ UI Controls
 
 To allow users to manipulate the chroma key effect in real-time, we created sliders in the `Control` node. The `Control` node's script contains the following functions:
 
-.. code-block:: gd
+.. tabs::
+ .. code-tab:: gdscript
 
-   extends Control
+    extends Control
 
-   func _on_color_picker_button_color_changed(color):
-       # Update the "chroma_key_color" shader parameter of the VideoStreamPlayer's material
-       $VideoStreamPlayer.material.set("shader_parameter/chroma_key_color", color)
+    func _on_color_picker_button_color_changed(color):
+        # Update the "chroma_key_color" shader parameter of the VideoStreamPlayer's material.
+        $VideoStreamPlayer.material.set("shader_parameter/chroma_key_color", color)
 
-   func _on_h_slider_value_changed(value):
-       # Update the "pickup_range" shader parameter of the VideoStreamPlayer's material
-       $VideoStreamPlayer.material.set("shader_parameter/pickup_range", value)
+    func _on_h_slider_value_changed(value):
+        # Update the "pickup_range" shader parameter of the VideoStreamPlayer's material.
+        $VideoStreamPlayer.material.set("shader_parameter/pickup_range", value)
 
-   func _on_h_slider_2_value_changed(value):
-       # Update the "fade_amount" shader parameter of the VideoStreamPlayer's material
-       $VideoStreamPlayer.material.set("shader_parameter/fade_amount", value)
+    func _on_h_slider_2_value_changed(value):
+        # Update the "fade_amount" shader parameter of the VideoStreamPlayer's material.
+        $VideoStreamPlayer.material.set("shader_parameter/fade_amount", value)
 
    func _on_video_stream_player_finished():
-       # Restart the video playback when it's finished
-       $VideoStreamPlayer.play()
+        # Restart the video playback when it's finished.
+        $VideoStreamPlayer.play()
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyControl : Control
+    {
+        private VideoStreamPlayer _videoStreamPlayer;
+
+        public override void _Ready()
+        {
+            _videoStreamPlayer = GetNode<VideoStreamPlayer>("VideoStreamPlayer");
+        }
+
+        private void OnColorPickerButtonColorChanged(Color color)
+        {
+            // Update the "chroma_key_color" shader parameter of the VideoStreamPlayer's material.
+            _videoStreamPlayer.Material.Set("shader_parameter/chroma_key_color", color);
+        }
+
+        private void OnHSliderValueChanged(double value)
+        {
+            // Update the "pickup_range" shader parameter of the VideoStreamPlayer's material.
+            _videoStreamPlayer.Material.Set("shader_parameter/pickup_range", value);
+        }
+
+        private void OnHSlider2ValueChanged(double value)
+        {
+            // Update the "fade_amount" shader parameter of the VideoStreamPlayer's material.
+            _videoStreamPlayer.Material.Set("shader_parameter/fade_amount", value);
+        }
+
+        private void OnVideoStreamPlayerFinished()
+        {
+            // Restart the video playback when it's finished.
+            _videoStreamPlayer.Play();
+        }
+    }
 
 also make sure that the range of the sliders are appropriate, our settings are :
 
@@ -338,11 +377,11 @@ also make sure that the range of the sliders are appropriate, our settings are :
 Signal Handling
 ^^^^^^^^^^^^^^^^
 
-Connect the appropriate signal from the UI elements to the `Control` node's script. 
-you created in the `Control` node's script to control the chroma key effect. 
-These signal handlers will update the shader's uniform variables 
+Connect the appropriate signal from the UI elements to the `Control` node's script.
+you created in the `Control` node's script to control the chroma key effect.
+These signal handlers will update the shader's uniform variables
 in response to user input.
 
-Save and run the scene to see the chroma key effect in action! With the provided UI controls, 
-you can now adjust the chroma key color, pickup range, and fade amount in real-time, achieving the desired 
+Save and run the scene to see the chroma key effect in action! With the provided UI controls,
+you can now adjust the chroma key color, pickup range, and fade amount in real-time, achieving the desired
 chroma key functionality for your video content.

@@ -555,10 +555,33 @@ For example, here's the `Inter V <https://rsms.me/inter/>`__ font with a
 
 .. tip::
 
-    While variable font axis names and scales aren't standardized, some common
-    conventions are usually followed by font designers. For instance, the
-    *weight* axis typically uses ``400`` as the "regular" font weight and
-    ``700`` as the "bold" font weight.
+    While variable font axis names and scales aren't standardized,
+    some common conventions are usually followed by font designers.
+    The *weight* axis is standardized in OpenType to work as follows:
+
+    +------------+--------------------------------+
+    | Axis value | Effective font weight          |
+    +============+================================+
+    | ``100``    | Thin (Hairline)                |
+    +------------+--------------------------------+
+    | ``200``    | Extra Light (Ultra Light)      |
+    +------------+--------------------------------+
+    | ``300``    | Light                          |
+    +------------+--------------------------------+
+    | ``400``    | **Regular (Normal)**           |
+    +------------+--------------------------------+
+    | ``500``    | Medium                         |
+    +------------+--------------------------------+
+    | ``600``    | Semi-Bold (Demi-Bold)          |
+    +------------+--------------------------------+
+    | ``700``    | **Bold**                       |
+    +------------+--------------------------------+
+    | ``800``    | Extra Bold (Ultra Bold)        |
+    +------------+--------------------------------+
+    | ``900``    | Black (Heavy)                  |
+    +------------+--------------------------------+
+    | ``950``    | Extra Black (Ultra Black)      |
+    +------------+--------------------------------+
 
 You can save the FontVariation to a ``.tres`` resource file to reuse it in other
 places:
@@ -621,7 +644,7 @@ which accept positive and negative values:
 - **Top:** Additional spacing above glyphs. This is used for multiline text,
   but also to calculate the minimum size of controls such as :ref:`class_Label`
   and :ref:`class_Button`.
-- **Top:** Additional spacing below glyphs. This is used for multiline text,
+- **Bottom:** Additional spacing below glyphs. This is used for multiline text,
   but also to calculate the minimum size of controls such as :ref:`class_Label`
   and :ref:`class_Button`.
 
@@ -727,7 +750,7 @@ System fonts
     in non-functional system font loading.
 
 System fonts are a different type of resource compared to imported fonts. They
-are never actually imported into the project, but are loaded at run-time. This
+are never actually imported into the project, but are loaded at runtime. This
 has 2 benefits:
 
 - The fonts are not included within the exported PCK file, leading to a smaller

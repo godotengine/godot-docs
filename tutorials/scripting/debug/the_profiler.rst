@@ -26,9 +26,11 @@ Godot's profiler does not automatically run because profiling is
 performance-intensive. It has to continually measure everything happening in the
 game and report back to the debugger, so it's off by default.
 
-To begin profiling, click on the **Start** button in the top-left. Run your game
-and data will start appearing. You can also start profiling at any time before
-or during gameplay, depending on if you want.
+To begin profiling, run your game then focus back on the editor. Click on the
+**Start** button in the top-left corner of the **Profiler** tab. You can also
+check **Autostart**, which will make the profiler automatically start when the
+project is run the next time. Note that the **Autostart** checkbox's state is not
+preserved across editor sessions.
 
 .. note::
 
@@ -59,8 +61,8 @@ The main measurements are frame time, physics frame, idle time, and physics time
 - **Physics time** is the time Godot took to update physics tasks, like
   `_physics_process` and built-in nodes set to **Physics** update.
 
-.. note:: In Godot 3, **Frame Time** includes rendering time. Say you find a
-          mysterious spike of lag in your game, but your physics and scripts are
+.. note:: **Frame Time** includes rendering time. Say you find a mysterious
+          spike of lag in your game, but your physics and scripts are
           all running fast. The delay could be due to the appearance of
           particles or visual effects!
 

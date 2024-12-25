@@ -82,7 +82,7 @@ Query available items
 *********************
 
 Once the API has connected, query SKUs using ``querySkuDetails()``. You must successfully complete
-a SKU query before calling the ``purchase()`` or ``queryPurchases()`` functions,
+an SKU query before calling the ``purchase()`` or ``queryPurchases()`` functions,
 or they will return an error. ``querySkuDetails()`` takes two parameters: an array
 of SKU name strings, and a string specifying the type of SKU being queried.
 The SKU type string should be ``"inapp"`` for normal in-app purchases or ``"subs"`` for subscriptions.
@@ -362,7 +362,7 @@ Example use of ``updateSubscription``:
 ::
 
     payment.updateSubscription(_active_subscription_purchase.purchase_token, \
-						"new_sub_sku", SubscriptionProrationMode.IMMEDIATE_WITH_TIME_PRORATION)
+                        "new_sub_sku", SubscriptionProrationMode.IMMEDIATE_WITH_TIME_PRORATION)
 
 
 The ``confirmPriceChange()`` function can be used to launch price change confirmation flow

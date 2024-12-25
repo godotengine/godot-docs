@@ -24,29 +24,29 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_add_ice_candidate<class_WebRTCPeerConnectionExtension_private_method__add_ice_candidate>` **(** :ref:`String<class_String>` p_sdp_mid_name, :ref:`int<class_int>` p_sdp_mline_index, :ref:`String<class_String>` p_sdp_name **)** |virtual| |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                              | :ref:`_close<class_WebRTCPeerConnectionExtension_private_method__close>` **(** **)** |virtual|                                                                                                                                                     |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`                 | :ref:`_create_data_channel<class_WebRTCPeerConnectionExtension_private_method__create_data_channel>` **(** :ref:`String<class_String>` p_label, :ref:`Dictionary<class_Dictionary>` p_config **)** |virtual|                                       |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_create_offer<class_WebRTCPeerConnectionExtension_private_method__create_offer>` **(** **)** |virtual|                                                                                                                                       |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` | :ref:`_get_connection_state<class_WebRTCPeerConnectionExtension_private_method__get_connection_state>` **(** **)** |virtual| |const|                                                                                                               |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`GatheringState<enum_WebRTCPeerConnection_GatheringState>`   | :ref:`_get_gathering_state<class_WebRTCPeerConnectionExtension_private_method__get_gathering_state>` **(** **)** |virtual| |const|                                                                                                                 |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>`   | :ref:`_get_signaling_state<class_WebRTCPeerConnectionExtension_private_method__get_signaling_state>` **(** **)** |virtual| |const|                                                                                                                 |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_initialize<class_WebRTCPeerConnectionExtension_private_method__initialize>` **(** :ref:`Dictionary<class_Dictionary>` p_config **)** |virtual|                                                                                              |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_poll<class_WebRTCPeerConnectionExtension_private_method__poll>` **(** **)** |virtual|                                                                                                                                                       |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_set_local_description<class_WebRTCPeerConnectionExtension_private_method__set_local_description>` **(** :ref:`String<class_String>` p_type, :ref:`String<class_String>` p_sdp **)** |virtual|                                               |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_set_remote_description<class_WebRTCPeerConnectionExtension_private_method__set_remote_description>` **(** :ref:`String<class_String>` p_type, :ref:`String<class_String>` p_sdp **)** |virtual|                                             |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_add_ice_candidate<class_WebRTCPeerConnectionExtension_private_method__add_ice_candidate>`\ (\ p_sdp_mid_name\: :ref:`String<class_String>`, p_sdp_mline_index\: :ref:`int<class_int>`, p_sdp_name\: :ref:`String<class_String>`\ ) |virtual| |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                            | :ref:`_close<class_WebRTCPeerConnectionExtension_private_method__close>`\ (\ ) |virtual|                                                                                                                                                            |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`                 | :ref:`_create_data_channel<class_WebRTCPeerConnectionExtension_private_method__create_data_channel>`\ (\ p_label\: :ref:`String<class_String>`, p_config\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual|                                         |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_create_offer<class_WebRTCPeerConnectionExtension_private_method__create_offer>`\ (\ ) |virtual|                                                                                                                                              |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` | :ref:`_get_connection_state<class_WebRTCPeerConnectionExtension_private_method__get_connection_state>`\ (\ ) |virtual| |const|                                                                                                                      |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`GatheringState<enum_WebRTCPeerConnection_GatheringState>`   | :ref:`_get_gathering_state<class_WebRTCPeerConnectionExtension_private_method__get_gathering_state>`\ (\ ) |virtual| |const|                                                                                                                        |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>`   | :ref:`_get_signaling_state<class_WebRTCPeerConnectionExtension_private_method__get_signaling_state>`\ (\ ) |virtual| |const|                                                                                                                        |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_initialize<class_WebRTCPeerConnectionExtension_private_method__initialize>`\ (\ p_config\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual|                                                                                                  |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_poll<class_WebRTCPeerConnectionExtension_private_method__poll>`\ (\ ) |virtual|                                                                                                                                                              |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_set_local_description<class_WebRTCPeerConnectionExtension_private_method__set_local_description>`\ (\ p_type\: :ref:`String<class_String>`, p_sdp\: :ref:`String<class_String>`\ ) |virtual|                                                 |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`_set_remote_description<class_WebRTCPeerConnectionExtension_private_method__set_remote_description>`\ (\ p_type\: :ref:`String<class_String>`, p_sdp\: :ref:`String<class_String>`\ ) |virtual|                                               |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -61,7 +61,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_add_ice_candidate** **(** :ref:`String<class_String>` p_sdp_mid_name, :ref:`int<class_int>` p_sdp_mline_index, :ref:`String<class_String>` p_sdp_name **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_add_ice_candidate**\ (\ p_sdp_mid_name\: :ref:`String<class_String>`, p_sdp_mline_index\: :ref:`int<class_int>`, p_sdp_name\: :ref:`String<class_String>`\ ) |virtual| :ref:`🔗<class_WebRTCPeerConnectionExtension_private_method__add_ice_candidate>`
 
 .. container:: contribute
 
@@ -75,7 +75,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **_close** **(** **)** |virtual|
+|void| **_close**\ (\ ) |virtual| :ref:`🔗<class_WebRTCPeerConnectionExtension_private_method__close>`
 
 .. container:: contribute
 
@@ -89,7 +89,7 @@ void **_close** **(** **)** |virtual|
 
 .. rst-class:: classref-method
 
-:ref:`WebRTCDataChannel<class_WebRTCDataChannel>` **_create_data_channel** **(** :ref:`String<class_String>` p_label, :ref:`Dictionary<class_Dictionary>` p_config **)** |virtual|
+:ref:`WebRTCDataChannel<class_WebRTCDataChannel>` **_create_data_channel**\ (\ p_label\: :ref:`String<class_String>`, p_config\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| :ref:`🔗<class_WebRTCPeerConnectionExtension_private_method__create_data_channel>`
 
 .. container:: contribute
 
@@ -103,7 +103,7 @@ void **_close** **(** **)** |virtual|
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_create_offer** **(** **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_create_offer**\ (\ ) |virtual| :ref:`🔗<class_WebRTCPeerConnectionExtension_private_method__create_offer>`
 
 .. container:: contribute
 
@@ -117,7 +117,7 @@ void **_close** **(** **)** |virtual|
 
 .. rst-class:: classref-method
 
-:ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **_get_connection_state** **(** **)** |virtual| |const|
+:ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **_get_connection_state**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCPeerConnectionExtension_private_method__get_connection_state>`
 
 .. container:: contribute
 
@@ -131,7 +131,7 @@ void **_close** **(** **)** |virtual|
 
 .. rst-class:: classref-method
 
-:ref:`GatheringState<enum_WebRTCPeerConnection_GatheringState>` **_get_gathering_state** **(** **)** |virtual| |const|
+:ref:`GatheringState<enum_WebRTCPeerConnection_GatheringState>` **_get_gathering_state**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCPeerConnectionExtension_private_method__get_gathering_state>`
 
 .. container:: contribute
 
@@ -145,7 +145,7 @@ void **_close** **(** **)** |virtual|
 
 .. rst-class:: classref-method
 
-:ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>` **_get_signaling_state** **(** **)** |virtual| |const|
+:ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>` **_get_signaling_state**\ (\ ) |virtual| |const| :ref:`🔗<class_WebRTCPeerConnectionExtension_private_method__get_signaling_state>`
 
 .. container:: contribute
 
@@ -159,7 +159,7 @@ void **_close** **(** **)** |virtual|
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_initialize** **(** :ref:`Dictionary<class_Dictionary>` p_config **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_initialize**\ (\ p_config\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| :ref:`🔗<class_WebRTCPeerConnectionExtension_private_method__initialize>`
 
 .. container:: contribute
 
@@ -173,7 +173,7 @@ void **_close** **(** **)** |virtual|
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_poll** **(** **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_poll**\ (\ ) |virtual| :ref:`🔗<class_WebRTCPeerConnectionExtension_private_method__poll>`
 
 .. container:: contribute
 
@@ -187,7 +187,7 @@ void **_close** **(** **)** |virtual|
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_set_local_description** **(** :ref:`String<class_String>` p_type, :ref:`String<class_String>` p_sdp **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_set_local_description**\ (\ p_type\: :ref:`String<class_String>`, p_sdp\: :ref:`String<class_String>`\ ) |virtual| :ref:`🔗<class_WebRTCPeerConnectionExtension_private_method__set_local_description>`
 
 .. container:: contribute
 
@@ -201,7 +201,7 @@ void **_close** **(** **)** |virtual|
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_set_remote_description** **(** :ref:`String<class_String>` p_type, :ref:`String<class_String>` p_sdp **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_set_remote_description**\ (\ p_type\: :ref:`String<class_String>`, p_sdp\: :ref:`String<class_String>`\ ) |virtual| :ref:`🔗<class_WebRTCPeerConnectionExtension_private_method__set_remote_description>`
 
 .. container:: contribute
 
@@ -214,3 +214,4 @@ void **_close** **(** **)** |virtual|
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

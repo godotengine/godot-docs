@@ -244,46 +244,60 @@ Shading
 Shading mode
 ~~~~~~~~~~~~
 
-Godot has a more or less uniform cost per pixel thanks to depth pre-pass. All
-lighting calculations are made by running the lighting shader on every pixel.
+Materials support three shading modes: **Per-Pixel**, **Per-Vertex**, and
+**Unshaded**.
 
-As these calculations are costly, performance can be brought down considerably
-in some corner cases such as drawing several layers of transparency (which is
-common in particle systems). Switching to per-vertex lighting may help in these
-cases.
+.. figure:: img/standard_material_shading_modes.webp
+  :align: center
+  :alt: Three spheres showing the Per-Pixel, Per-Vertex, and Unshaded modes.
 
-Additionally, on low-end or mobile devices, switching to vertex lighting
-can considerably increase rendering performance.
+The **Per-Pixel** shading mode calculates lighting for each pixel, and is a good
+fit for most use cases. However, in some cases you may want to increase
+performance by using another shading mode.
 
-.. image:: img/spatial_material2.png
+The **Per-Vertex** shading mode, often called "vertex shading" or "vertex lighting",
+instead calculates lighting once for each vertex, and interpolates the result
+between each pixel.
 
-Keep in mind that when vertex lighting is enabled, only directional lighting
-can produce shadows (for performance reasons).
+On low-end or mobile devices, using per-vertex lighting can considerably increase
+rendering performance. When rendering several layers of transparency,
+such as when using particle systems, using per-vertex shading can improve
+performance, especially when the camera is close to particles.
 
-However, in some cases you might want to show just the albedo (color) and
-ignore the rest. To do this you can set the shading mode to unshaded
+You can also use per-vertex lighting to achieve a retro look.
 
-.. image:: img/spatial_material26.png
+.. figure:: img/standard_material_shading_modes_textured.webp
+  :align: center
+  :alt: Two cubes with a brick texture, one shaded and one unshaded.
+  
+  Texture from `AmbientCG <https://ambientcg.com/view?id=Bricks051>`__
+
+The **Unshaded** shading mode does not calculate lighting at all. Instead, the
+**Albedo** color is output directly. Lights will not affect the material at all,
+and unshaded materials will tend to appear considerably brighter than shaded
+materials.
+
+Rendering unshaded is useful for some specific visual effects. If maximum
+performance is needed, it can also be used for particles, or low-end or
+mobile devices.
 
 Diffuse Mode
 ~~~~~~~~~~~~
 
 Specifies the algorithm used by diffuse scattering of light when hitting
-the object. The default is *Burley*. Other modes are also available:
+the object. The default is **Burley**. Other modes are also available:
 
 * **Burley:** Default mode, the original Disney Principled PBS diffuse algorithm.
 * **Lambert:** Is not affected by roughness.
 * **Lambert Wrap:** Extends Lambert to cover more than 90 degrees when
   roughness increases. Works great for hair and simulating cheap
   subsurface scattering. This implementation is energy conserving.
-* **Oren Nayar:** This implementation aims to take microsurfacing into account
-  (via roughness). Works well for clay-like materials and some types of cloth.
 * **Toon:** Provides a hard cut for lighting, with smoothing affected by roughness.
   It is recommended you disable sky contribution from your environment's
   ambient light settings or disable ambient light in the StandardMaterial3D
   to achieve a better effect.
 
-.. image:: img/spatial_material6.png
+.. image:: img/spatial_material6.webp
 
 Specular Mode
 ~~~~~~~~~~~~~
@@ -292,13 +306,10 @@ Specifies how the specular blob will be rendered. The specular blob
 represents the shape of a light source reflected in the object.
 
 * **SchlickGGX:** The most common blob used by PBR 3D engines nowadays.
-* **Blinn:** Common in previous-generation engines.
-  Not worth using nowadays, but left here for the sake of compatibility.
-* **Phong:** Same as above.
 * **Toon:** Creates a toon blob, which changes size depending on roughness.
 * **Disabled:** Sometimes the blob gets in the way. Begone!
 
-.. image:: img/spatial_material7.png
+.. image:: img/spatial_material7.webp
 
 Disable Ambient Light
 ~~~~~~~~~~~~~~~~~~~~~
@@ -452,18 +463,21 @@ AO map. It is recommended to bake ambient occlusion whenever possible.
 Height
 ------
 
-
-Setting a depth map on a material produces a ray-marched search to emulate the
-proper displacement of cavities along the view direction. This is not real
-added geometry, but an illusion of depth. It may not work for complex objects,
-but it produces a realistic depth effect for textures. For best results,
-*Depth* should be used together with normal mapping.
+Setting a height map on a material produces a ray-marched search to emulate the
+proper displacement of cavities along the view direction. This only creates an
+illusion of depth, and does not add real geometry — for a height map shape used
+for physics collision (such as terrain), see :ref:`class_HeightMapShape3D`. It
+may not work for complex objects, but it produces a realistic depth effect for
+textures. For best results, *Height* should be used together with normal
+mapping.
 
 .. image:: img/spatial_material20.png
 
 Subsurface Scattering
 ---------------------
 
+*This is only available in the Forward+ renderer, not the Mobile or Compatibility
+renderers.*
 
 This effect emulates light that penetrates an object's surface, is scattered,
 and then comes out. It is useful to create realistic skin, marble, colored
@@ -488,6 +502,12 @@ to refraction in real life.
 Remember to use a transparent albedo texture (or reduce the albedo color's alpha
 channel) to make refraction visible, as refraction relies on transparency to
 have a visible effect.
+
+Refraction also takes the material roughness into account. Higher roughness
+values will make the objects behind the refraction look blurrier, which
+simulates real life behavior. If you can't see behind the object when refraction
+is enabled and albedo transparency is reduced, decrease the material's
+**Roughness** value.
 
 A normal map can optionally be specified in the **Refraction Texture** property
 to allow distorting the refraction's direction on a per-pixel basis.
@@ -648,6 +668,12 @@ make it black and unshaded, reverse culling (Cull Front), and add some grow:
 
 .. image:: img/spatial_material11.png
 
+.. note::
+
+    For Grow to work as expected, the mesh must have connected faces with shared
+    vertices, or "smooth shading". If the mesh has disconnected faces with unique
+    vertices, or "flat shading", the mesh will appear to have gaps when using Grow.
+
 Transform
 ---------
 
@@ -695,9 +721,28 @@ Keep in mind enabling proximity fade or distance fade with **Pixel Alpha** mode
 enables alpha blending. Alpha blending is more GPU-intensive and can cause
 transparency sorting issues. Alpha blending also disables many material
 features such as the ability to cast shadows.
-To hide a character when they get too close to the camera, consider using
-**Pixel Dither** or better, **Object Dither** (which is even faster than
-**Pixel Dither**).
+
+.. note::
+
+    To hide a character when they get too close to the camera, consider using
+    **Pixel Dither** or better, **Object Dither** (which is even faster than
+    **Pixel Dither**).
+
+**Pixel Alpha** mode: The actual transparency of a pixel of the object changes
+with distance to the camera. This is the most effect, but forces the material
+into the transparency pipeline (which leads, for example, to no shadows).
+
+.. image:: img/standart_material_distance_fade_pixel_alpha_mode.webp
+
+**Pixel Dither** mode: What this does is sort of approximate the transparency
+by only having a fraction of the pixels rendered.
+
+.. image:: img/standart_material_distance_fade_pixel_dither_mode.webp
+
+**Object Dither** mode: Like the previous mode, but the calculated transparency
+is the same across the entire object's surface.
+
+.. image:: img/standart_material_distance_fade_object_dither_mode.webp
 
 Material Settings
 -----------------
@@ -709,8 +754,21 @@ The rendering order of objects can be changed, although this is mostly
 useful for transparent objects (or opaque objects that perform depth draw
 but no color draw, such as cracks on the floor).
 
+Objects are sorted by an opaque/transparent queue, then :ref:`render_priority<class_Material_property_render_priority>`,
+with higher priority being drawn later. Transparent objects are also sorted by depth.
+
+Depth testing overrules priority. Priority alone cannot force opaque objects to be drawn over each other.
+
 Next Pass
 ---------
 
-Sets the material to be used for the next pass. This renders the object
-again with a different material.
+Setting :ref:`next_pass<class_Material_property_next_pass>` on a material
+will cause an object to be rendered again with that next material.
+
+Materials are sorted by an opaque/transparent queue, then :ref:`render_priority<class_Material_property_render_priority>`,
+with higher priority being drawn later.
+
+.. image:: img/next_pass.webp
+
+Depth will test equal between both materials unless the grow setting or other vertex transformations are used.
+Multiple transparent passes should use :ref:`render_priority<class_Material_property_render_priority>` to ensure correct ordering.

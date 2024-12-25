@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_designing_the_mob_scene:
 
 Designing the mob scene
@@ -219,7 +217,7 @@ We still have to destroy the mobs when they leave the screen. To do so, we'll
 connect our :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>` node's ``screen_exited`` signal to the ``Mob``.
 
 Head back to the 3D viewport by clicking on the *3D* label at the top of the
-editor. You can also press :kbd:`Ctrl + F2` (:kbd:`Alt + 2` on macOS).
+editor. You can also press :kbd:`Ctrl + F2` (:kbd:`Opt + 2` on macOS).
 
 |image8|
 
@@ -232,9 +230,9 @@ Connect the signal to the ``Mob``
 
 |image10|
 
-This will take you back to the script editor and add a new function for you,
+This will add a new function for you in your mob script,
 ``_on_visible_on_screen_notifier_3d_screen_exited()``. From it, call the ``queue_free()``
-method. This function destroy the instance it's called on.
+method. This function destroys the instance it's called on.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -244,7 +242,7 @@ method. This function destroy the instance it's called on.
 
  .. code-tab:: csharp
 
-    // We also specified this function name in PascalCase in the editor's connection window
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnVisibilityNotifierScreenExited()
     {
         QueueFree();
@@ -254,7 +252,7 @@ method. This function destroy the instance it's called on.
 Our monster is ready to enter the game! In the next part, you will spawn
 monsters in the game level.
 
-Here is the complete ``Mob.gd`` script for reference.
+Here is the complete ``mob.gd`` script for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -274,7 +272,7 @@ Here is the complete ``Mob.gd`` script for reference.
         # We position the mob by placing it at start_position
         # and rotate it towards player_position, so it looks at the player.
         look_at_from_position(start_position, player_position, Vector3.UP)
-        # Rotate this mob randomly within range of -90 and +90 degrees,
+        # Rotate this mob randomly within range of -45 and +45 degrees,
         # so that it doesn't move directly towards the player.
         rotate_y(randf_range(-PI / 4, PI / 4))
 
@@ -313,7 +311,7 @@ Here is the complete ``Mob.gd`` script for reference.
             // We position the mob by placing it at startPosition
             // and rotate it towards playerPosition, so it looks at the player.
             LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
-            // Rotate this mob randomly within range of -90 and +90 degrees,
+            // Rotate this mob randomly within range of -45 and +45 degrees,
             // so that it doesn't move directly towards the player.
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
@@ -326,7 +324,7 @@ Here is the complete ``Mob.gd`` script for reference.
             Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
         }
 
-        // We also specified this function name in PascalCase in the editor's connection window
+        // We also specified this function name in PascalCase in the editor's connection window.
         private void OnVisibilityNotifierScreenExited()
         {
             QueueFree();

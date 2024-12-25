@@ -17,7 +17,8 @@ will detect suffixes in object names and will perform actions automatically.
 
 .. warning::
 
-    All the suffixes described below are **case-sensitive**.
+    All the suffixes described below can be used with ``-``, ``$``, and ``_`` and are
+    **case-insensitive**.
 
 Remove nodes (-noimp)
 ^^^^^^^^^^^^^^^^^^^^^

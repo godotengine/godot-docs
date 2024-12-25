@@ -109,7 +109,7 @@ edited in the Inspector dock instead.
 .. figure:: img/theme_item_inspector.png
    :align: center
 
-Styleboxes have an unique feature available, where you can pin an individual
+Styleboxes have a unique feature available, where you can pin an individual
 stylebox from the list. Pinned stylebox acts like the leader of the pack, and
 all styleboxes of the same type are updated alongside it when you change its
 properties. This allows you to edit properties of several styleboxes at the

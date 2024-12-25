@@ -120,7 +120,7 @@ If you run into errors, you may try the following command:
 
 If you get a ``MemoryError`` or ``EOFError``, you can remove the ``classes/`` folder and
 run ``make`` again.
-This will drop the class references from the final HTML documentation but will keep the
+This will drop the class references from the final HTML documentation, but will keep the
 rest intact.
 
 .. important::
@@ -166,4 +166,4 @@ You can specify a list of files to build, which can greatly speed up compilation
 
 .. code:: sh
 
-    make FILELIST='classes/class_node.rst classes/class_resource.rst' html
+    make html FILELIST='classes/class_node.rst classes/class_resource.rst'

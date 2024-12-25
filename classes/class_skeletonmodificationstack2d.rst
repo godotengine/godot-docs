@@ -10,6 +10,8 @@
 SkeletonModificationStack2D
 ===========================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A resource that holds a stack of :ref:`SkeletonModification2D<class_SkeletonModification2D>`\ s.
@@ -49,25 +51,25 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                        | :ref:`add_modification<class_SkeletonModificationStack2D_method_add_modification>` **(** :ref:`SkeletonModification2D<class_SkeletonModification2D>` modification **)**                                |
-   +-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                        | :ref:`delete_modification<class_SkeletonModificationStack2D_method_delete_modification>` **(** :ref:`int<class_int>` mod_idx **)**                                                                     |
-   +-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                        | :ref:`enable_all_modifications<class_SkeletonModificationStack2D_method_enable_all_modifications>` **(** :ref:`bool<class_bool>` enabled **)**                                                         |
-   +-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                        | :ref:`execute<class_SkeletonModificationStack2D_method_execute>` **(** :ref:`float<class_float>` delta, :ref:`int<class_int>` execution_mode **)**                                                     |
-   +-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                     | :ref:`get_is_setup<class_SkeletonModificationStack2D_method_get_is_setup>` **(** **)** |const|                                                                                                         |
-   +-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`SkeletonModification2D<class_SkeletonModification2D>` | :ref:`get_modification<class_SkeletonModificationStack2D_method_get_modification>` **(** :ref:`int<class_int>` mod_idx **)** |const|                                                                   |
-   +-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Skeleton2D<class_Skeleton2D>`                         | :ref:`get_skeleton<class_SkeletonModificationStack2D_method_get_skeleton>` **(** **)** |const|                                                                                                         |
-   +-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                        | :ref:`set_modification<class_SkeletonModificationStack2D_method_set_modification>` **(** :ref:`int<class_int>` mod_idx, :ref:`SkeletonModification2D<class_SkeletonModification2D>` modification **)** |
-   +-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                        | :ref:`setup<class_SkeletonModificationStack2D_method_setup>` **(** **)**                                                                                                                               |
-   +-------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                      | :ref:`add_modification<class_SkeletonModificationStack2D_method_add_modification>`\ (\ modification\: :ref:`SkeletonModification2D<class_SkeletonModification2D>`\ )                                  |
+   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                      | :ref:`delete_modification<class_SkeletonModificationStack2D_method_delete_modification>`\ (\ mod_idx\: :ref:`int<class_int>`\ )                                                                       |
+   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                      | :ref:`enable_all_modifications<class_SkeletonModificationStack2D_method_enable_all_modifications>`\ (\ enabled\: :ref:`bool<class_bool>`\ )                                                           |
+   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                      | :ref:`execute<class_SkeletonModificationStack2D_method_execute>`\ (\ delta\: :ref:`float<class_float>`, execution_mode\: :ref:`int<class_int>`\ )                                                     |
+   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                     | :ref:`get_is_setup<class_SkeletonModificationStack2D_method_get_is_setup>`\ (\ ) |const|                                                                                                              |
+   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SkeletonModification2D<class_SkeletonModification2D>` | :ref:`get_modification<class_SkeletonModificationStack2D_method_get_modification>`\ (\ mod_idx\: :ref:`int<class_int>`\ ) |const|                                                                     |
+   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Skeleton2D<class_Skeleton2D>`                         | :ref:`get_skeleton<class_SkeletonModificationStack2D_method_get_skeleton>`\ (\ ) |const|                                                                                                              |
+   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                      | :ref:`set_modification<class_SkeletonModificationStack2D_method_set_modification>`\ (\ mod_idx\: :ref:`int<class_int>`, modification\: :ref:`SkeletonModification2D<class_SkeletonModification2D>`\ ) |
+   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                      | :ref:`setup<class_SkeletonModificationStack2D_method_setup>`\ (\ )                                                                                                                                    |
+   +-------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -82,12 +84,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **enabled** = ``false``
+:ref:`bool<class_bool>` **enabled** = ``false`` :ref:`🔗<class_SkeletonModificationStack2D_property_enabled>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_enabled** **(** **)**
+- |void| **set_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enabled**\ (\ )
 
 If ``true``, the modification's in the stack will be called. This is handled automatically through the :ref:`Skeleton2D<class_Skeleton2D>` node.
 
@@ -99,12 +101,12 @@ If ``true``, the modification's in the stack will be called. This is handled aut
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **modification_count** = ``0``
+:ref:`int<class_int>` **modification_count** = ``0`` :ref:`🔗<class_SkeletonModificationStack2D_property_modification_count>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_modification_count** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_modification_count** **(** **)**
+- |void| **set_modification_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_modification_count**\ (\ )
 
 The number of modifications in the stack.
 
@@ -116,12 +118,12 @@ The number of modifications in the stack.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **strength** = ``1.0``
+:ref:`float<class_float>` **strength** = ``1.0`` :ref:`🔗<class_SkeletonModificationStack2D_property_strength>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_strength** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_strength** **(** **)**
+- |void| **set_strength**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_strength**\ (\ )
 
 The interpolation strength of the modifications in stack. A value of ``0`` will make it where the modifications are not applied, a strength of ``0.5`` will be half applied, and a strength of ``1`` will allow the modifications to be fully applied and override the :ref:`Skeleton2D<class_Skeleton2D>` :ref:`Bone2D<class_Bone2D>` poses.
 
@@ -138,7 +140,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_modification** **(** :ref:`SkeletonModification2D<class_SkeletonModification2D>` modification **)**
+|void| **add_modification**\ (\ modification\: :ref:`SkeletonModification2D<class_SkeletonModification2D>`\ ) :ref:`🔗<class_SkeletonModificationStack2D_method_add_modification>`
 
 Adds the passed-in :ref:`SkeletonModification2D<class_SkeletonModification2D>` to the stack.
 
@@ -150,7 +152,7 @@ Adds the passed-in :ref:`SkeletonModification2D<class_SkeletonModification2D>` t
 
 .. rst-class:: classref-method
 
-void **delete_modification** **(** :ref:`int<class_int>` mod_idx **)**
+|void| **delete_modification**\ (\ mod_idx\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SkeletonModificationStack2D_method_delete_modification>`
 
 Deletes the :ref:`SkeletonModification2D<class_SkeletonModification2D>` at the index position ``mod_idx``, if it exists.
 
@@ -162,7 +164,7 @@ Deletes the :ref:`SkeletonModification2D<class_SkeletonModification2D>` at the i
 
 .. rst-class:: classref-method
 
-void **enable_all_modifications** **(** :ref:`bool<class_bool>` enabled **)**
+|void| **enable_all_modifications**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_SkeletonModificationStack2D_method_enable_all_modifications>`
 
 Enables all :ref:`SkeletonModification2D<class_SkeletonModification2D>`\ s in the stack.
 
@@ -174,7 +176,7 @@ Enables all :ref:`SkeletonModification2D<class_SkeletonModification2D>`\ s in th
 
 .. rst-class:: classref-method
 
-void **execute** **(** :ref:`float<class_float>` delta, :ref:`int<class_int>` execution_mode **)**
+|void| **execute**\ (\ delta\: :ref:`float<class_float>`, execution_mode\: :ref:`int<class_int>`\ ) :ref:`🔗<class_SkeletonModificationStack2D_method_execute>`
 
 Executes all of the :ref:`SkeletonModification2D<class_SkeletonModification2D>`\ s in the stack that use the same execution mode as the passed-in ``execution_mode``, starting from index ``0`` to :ref:`modification_count<class_SkeletonModificationStack2D_property_modification_count>`.
 
@@ -188,7 +190,7 @@ Executes all of the :ref:`SkeletonModification2D<class_SkeletonModification2D>`\
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_is_setup** **(** **)** |const|
+:ref:`bool<class_bool>` **get_is_setup**\ (\ ) |const| :ref:`🔗<class_SkeletonModificationStack2D_method_get_is_setup>`
 
 Returns a boolean that indicates whether the modification stack is setup and can execute.
 
@@ -200,7 +202,7 @@ Returns a boolean that indicates whether the modification stack is setup and can
 
 .. rst-class:: classref-method
 
-:ref:`SkeletonModification2D<class_SkeletonModification2D>` **get_modification** **(** :ref:`int<class_int>` mod_idx **)** |const|
+:ref:`SkeletonModification2D<class_SkeletonModification2D>` **get_modification**\ (\ mod_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_SkeletonModificationStack2D_method_get_modification>`
 
 Returns the :ref:`SkeletonModification2D<class_SkeletonModification2D>` at the passed-in index, ``mod_idx``.
 
@@ -212,7 +214,7 @@ Returns the :ref:`SkeletonModification2D<class_SkeletonModification2D>` at the p
 
 .. rst-class:: classref-method
 
-:ref:`Skeleton2D<class_Skeleton2D>` **get_skeleton** **(** **)** |const|
+:ref:`Skeleton2D<class_Skeleton2D>` **get_skeleton**\ (\ ) |const| :ref:`🔗<class_SkeletonModificationStack2D_method_get_skeleton>`
 
 Returns the :ref:`Skeleton2D<class_Skeleton2D>` node that the SkeletonModificationStack2D is bound to.
 
@@ -224,7 +226,7 @@ Returns the :ref:`Skeleton2D<class_Skeleton2D>` node that the SkeletonModificati
 
 .. rst-class:: classref-method
 
-void **set_modification** **(** :ref:`int<class_int>` mod_idx, :ref:`SkeletonModification2D<class_SkeletonModification2D>` modification **)**
+|void| **set_modification**\ (\ mod_idx\: :ref:`int<class_int>`, modification\: :ref:`SkeletonModification2D<class_SkeletonModification2D>`\ ) :ref:`🔗<class_SkeletonModificationStack2D_method_set_modification>`
 
 Sets the modification at ``mod_idx`` to the passed-in modification, ``modification``.
 
@@ -236,7 +238,7 @@ Sets the modification at ``mod_idx`` to the passed-in modification, ``modificati
 
 .. rst-class:: classref-method
 
-void **setup** **(** **)**
+|void| **setup**\ (\ ) :ref:`🔗<class_SkeletonModificationStack2D_method_setup>`
 
 Sets up the modification stack so it can execute. This function should be called by :ref:`Skeleton2D<class_Skeleton2D>` and shouldn't be manually called unless you know what you are doing.
 
@@ -247,3 +249,4 @@ Sets up the modification stack so it can execute. This function should be called
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -10,6 +10,8 @@
 SkeletonModification2DPhysicalBones
 ===================================
 
+**Experimental:** Physical bones may be changed in the future to perform the position update of :ref:`Bone2D<class_Bone2D>` on their own, without needing this resource.
+
 **Inherits:** :ref:`SkeletonModification2D<class_SkeletonModification2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A modification that applies the transforms of :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes to :ref:`Bone2D<class_Bone2D>` nodes.
@@ -20,8 +22,6 @@ Description
 -----------
 
 This modification takes the transforms of :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes and applies them to :ref:`Bone2D<class_Bone2D>` nodes. This allows the :ref:`Bone2D<class_Bone2D>` nodes to react to physics thanks to the linked :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes.
-
-Experimental. Physical bones may be changed in the future to perform the position update of :ref:`Bone2D<class_Bone2D>` on their own.
 
 .. rst-class:: classref-reftable-group
 
@@ -43,17 +43,17 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`fetch_physical_bones<class_SkeletonModification2DPhysicalBones_method_fetch_physical_bones>` **(** **)**                                                                                          |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`NodePath<class_NodePath>` | :ref:`get_physical_bone_node<class_SkeletonModification2DPhysicalBones_method_get_physical_bone_node>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                              |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_physical_bone_node<class_SkeletonModification2DPhysicalBones_method_set_physical_bone_node>` **(** :ref:`int<class_int>` joint_idx, :ref:`NodePath<class_NodePath>` physicalbone2d_node **)** |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`start_simulation<class_SkeletonModification2DPhysicalBones_method_start_simulation>` **(** :ref:`StringName[]<class_StringName>` bones=[] **)**                                                   |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`stop_simulation<class_SkeletonModification2DPhysicalBones_method_stop_simulation>` **(** :ref:`StringName[]<class_StringName>` bones=[] **)**                                                     |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`fetch_physical_bones<class_SkeletonModification2DPhysicalBones_method_fetch_physical_bones>`\ (\ )                                                                                               |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`get_physical_bone_node<class_SkeletonModification2DPhysicalBones_method_get_physical_bone_node>`\ (\ joint_idx\: :ref:`int<class_int>`\ ) |const|                                                |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_physical_bone_node<class_SkeletonModification2DPhysicalBones_method_set_physical_bone_node>`\ (\ joint_idx\: :ref:`int<class_int>`, physicalbone2d_node\: :ref:`NodePath<class_NodePath>`\ ) |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`start_simulation<class_SkeletonModification2DPhysicalBones_method_start_simulation>`\ (\ bones\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = []\ )                        |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`stop_simulation<class_SkeletonModification2DPhysicalBones_method_stop_simulation>`\ (\ bones\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = []\ )                          |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -68,12 +68,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **physical_bone_chain_length** = ``0``
+:ref:`int<class_int>` **physical_bone_chain_length** = ``0`` :ref:`🔗<class_SkeletonModification2DPhysicalBones_property_physical_bone_chain_length>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_physical_bone_chain_length** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_physical_bone_chain_length** **(** **)**
+- |void| **set_physical_bone_chain_length**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_physical_bone_chain_length**\ (\ )
 
 The number of :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes linked in this modification.
 
@@ -90,7 +90,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **fetch_physical_bones** **(** **)**
+|void| **fetch_physical_bones**\ (\ ) :ref:`🔗<class_SkeletonModification2DPhysicalBones_method_fetch_physical_bones>`
 
 Empties the list of :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes and populates it with all :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes that are children of the :ref:`Skeleton2D<class_Skeleton2D>`.
 
@@ -102,7 +102,7 @@ Empties the list of :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes and popula
 
 .. rst-class:: classref-method
 
-:ref:`NodePath<class_NodePath>` **get_physical_bone_node** **(** :ref:`int<class_int>` joint_idx **)** |const|
+:ref:`NodePath<class_NodePath>` **get_physical_bone_node**\ (\ joint_idx\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_SkeletonModification2DPhysicalBones_method_get_physical_bone_node>`
 
 Returns the :ref:`PhysicalBone2D<class_PhysicalBone2D>` node at ``joint_idx``.
 
@@ -114,7 +114,7 @@ Returns the :ref:`PhysicalBone2D<class_PhysicalBone2D>` node at ``joint_idx``.
 
 .. rst-class:: classref-method
 
-void **set_physical_bone_node** **(** :ref:`int<class_int>` joint_idx, :ref:`NodePath<class_NodePath>` physicalbone2d_node **)**
+|void| **set_physical_bone_node**\ (\ joint_idx\: :ref:`int<class_int>`, physicalbone2d_node\: :ref:`NodePath<class_NodePath>`\ ) :ref:`🔗<class_SkeletonModification2DPhysicalBones_method_set_physical_bone_node>`
 
 Sets the :ref:`PhysicalBone2D<class_PhysicalBone2D>` node at ``joint_idx``.
 
@@ -128,7 +128,7 @@ Sets the :ref:`PhysicalBone2D<class_PhysicalBone2D>` node at ``joint_idx``.
 
 .. rst-class:: classref-method
 
-void **start_simulation** **(** :ref:`StringName[]<class_StringName>` bones=[] **)**
+|void| **start_simulation**\ (\ bones\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = []\ ) :ref:`🔗<class_SkeletonModification2DPhysicalBones_method_start_simulation>`
 
 Tell the :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes to start simulating and interacting with the physics world.
 
@@ -142,7 +142,7 @@ Optionally, an array of bone names can be passed to this function, and that will
 
 .. rst-class:: classref-method
 
-void **stop_simulation** **(** :ref:`StringName[]<class_StringName>` bones=[] **)**
+|void| **stop_simulation**\ (\ bones\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = []\ ) :ref:`🔗<class_SkeletonModification2DPhysicalBones_method_stop_simulation>`
 
 Tell the :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes to stop simulating and interacting with the physics world.
 
@@ -155,3 +155,4 @@ Optionally, an array of bone names can be passed to this function, and that will
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`
