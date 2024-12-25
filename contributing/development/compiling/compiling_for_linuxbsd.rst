@@ -419,26 +419,13 @@ variable like this:
 This way, we won't have to manually set the directory location
 each time we want to reference it.
 
-You also need to add ``$RISCV_TOOLCHAIN_PATH/bin`` to your user's PATH environment variable.
-
-::
-
-	PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH"
-
-.. warning:: Since riscv-gnu-toolchain uses its own Clang located
-			 in the ``bin`` folder, this command may block you from
-			 accessing another version of Clang if one is installed.
-			 So it's recommended to run this command every time
-			 before compiling Godot for RISC-V devices instead of adding it to the
-			 ``$HOME/.bash_profile`` file.
-
-
 With all the above setup, we are now ready to build Godot.
 
 Go to the root of the source code, and execute the following build command:
 
 ::
 
+    PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH"
     scons arch=rv64 use_llvm=yes linker=mold lto=none target=editor \
         ccflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu" \
         linkflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu"
@@ -449,6 +436,15 @@ Go to the root of the source code, and execute the following build command:
     which prevent it from compiling Godot correctly. That's why Clang is used instead. Make sure that
     it *can* compile to RISC-V. You can verify by executing this command ``clang -print-targets``,
     make sure you see ``riscv64`` on the list of targets.
+
+.. warning:: The code above includes adding ``$RISCV_TOOLCHAIN_PATH/bin`` to the PATH,
+             but only for the following ``scons`` command. Since riscv-gnu-toolchain uses
+             its own Clang located in the ``bin`` folder, adding ``$RISCV_TOOLCHAIN_PATH/bin``
+             to your user's PATH environment variable may block you from accessing another
+             version of Clang if one is installed. For this reason not recommended to make
+             it permanent. You can also omit the ``PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH"`` line
+             if you want to use scons with self-installed version of Clang, but it may have
+             compatibility issues with riscv-gnu-toolchain.
 
 The command is similar in nature, but with some key changes. ``ccflags`` and
 ``linkflags`` append additional flags to the build. ``--sysroot`` points to
