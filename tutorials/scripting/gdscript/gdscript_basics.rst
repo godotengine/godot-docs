@@ -1533,10 +1533,12 @@ an assignment.
 self
 ^^^^
 
-``self`` can be used to refer to the current instance and is often equivalent to directly referring to symbols available in
-the current script. However, ``self`` also allows you to access properties, methods, and other names that are defined dynamically
-(i.e. are expected to exist in subtypes of the current class, or are provided using :ref:`_set() <class_Object_private_method__set>`
-and/or :ref:`_get() <class_Object_private_method__get>`).
+``self`` can be used to refer to the current instance and is often equivalent to
+directly referring to symbols available in the current script. However, ``self``
+also allows you to access properties, methods, and other names that are defined
+dynamically (i.e. are expected to exist in subtypes of the current class, or are
+provided using :ref:`_set() <class_Object_private_method__set>` and/or
+:ref:`_get() <class_Object_private_method__get>`).
 
 ::
 
@@ -1555,10 +1557,11 @@ and/or :ref:`_get() <class_Object_private_method__get>`).
 
 .. warning::
 
-    Beware that accessing members of child classes in the base class is often considered a bad practice,
-    because this blurs the area of responsibility of any given piece of code, making the overall relationship
-    between parts of your game harder to reason about. Besides that, one can simply forget that the parent
-    class had some expectations about it's descendants.
+    Beware that accessing members of child classes in the base class is often
+    considered a bad practice, because this blurs the area of responsibility of
+    any given piece of code, making the overall relationship between parts of
+    your game harder to reason about. Besides that, one can simply forget that
+    the parent class had some expectations about it's descendants.
 
 if/else/elif
 ~~~~~~~~~~~~
