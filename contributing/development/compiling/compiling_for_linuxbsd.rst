@@ -441,8 +441,8 @@ Go to the root of the source code, and execute the following build command:
              but only for the following ``scons`` command. Since riscv-gnu-toolchain uses
              its own Clang located in the ``bin`` folder, adding ``$RISCV_TOOLCHAIN_PATH/bin``
              to your user's PATH environment variable may block you from accessing another
-             version of Clang if one is installed. For this reason not recommended to make
-             it permanent. You can also omit the ``PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH"`` line
+             version of Clang if one is installed. For this reason it's not recommended to make
+             adding the bin folder permanent. You can also omit the ``PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH"`` line
              if you want to use scons with self-installed version of Clang, but it may have
              compatibility issues with riscv-gnu-toolchain.
 
