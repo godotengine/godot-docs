@@ -576,7 +576,7 @@ listed in the :ref:`doc_compiling_for_linuxbsd_oneliners`:
         ::
 
             sudo dnf install -y \
-              embree3-devel \
+              embree-devel \
               enet-devel \
               glslang-devel \
               graphite2-devel \
