@@ -1326,13 +1326,13 @@ Passing an empty array will disable passthrough support (all mouse events will b
  .. code-tab:: csharp
 
     // Set region, using Path2D node.
-    GetNode<Window>("Window").MousePassthrough = GetNode<Path2D>("Path2D").Curve.GetBakedPoints();
+    GetNode<Window>("Window").MousePassthroughPolygon = GetNode<Path2D>("Path2D").Curve.GetBakedPoints();
     
     // Set region, using Polygon2D node.
-    GetNode<Window>("Window").MousePassthrough = GetNode<Polygon2D>("Polygon2D").Polygon;
+    GetNode<Window>("Window").MousePassthroughPolygon = GetNode<Polygon2D>("Polygon2D").Polygon;
     
     // Reset region to default.
-    GetNode<Window>("Window").MousePassthrough = new Vector2[] {};
+    GetNode<Window>("Window").MousePassthroughPolygon = [];
 
 
 

@@ -2329,7 +2329,7 @@ Key Code mask.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_MODIFIER_MASK** = ``532676608``
+:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_MODIFIER_MASK** = ``2130706432``
 
 Modifier key mask.
 
@@ -6452,7 +6452,7 @@ Converts one or more arguments of any type to string in the best way possible an
 
  .. code-tab:: csharp
 
-    var a = new Godot.Collections.Array { 1, 2, 3 };
+    Godot.Collections.Array a = [1, 2, 3];
     GD.Print("a", "b", a); // Prints ab[1, 2, 3]
 
 

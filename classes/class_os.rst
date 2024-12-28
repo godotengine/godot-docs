@@ -527,7 +527,7 @@ If the process is successfully created, this method returns its process ID, whic
 
  .. code-tab:: csharp
 
-    var pid = OS.CreateProcess(OS.GetExecutablePath(), new string[] {});
+    var pid = OS.CreateProcess(OS.GetExecutablePath(), []);
 
 
 
@@ -601,8 +601,8 @@ For example, to retrieve a list of the working directory's contents:
 
  .. code-tab:: csharp
 
-    var output = new Godot.Collections.Array();
-    int exitCode = OS.Execute("ls", new string[] {"-l", "/tmp"}, output);
+    Godot.Collections.Array output = [];
+    int exitCode = OS.Execute("ls", ["-l", "/tmp"], output);
 
 
 
@@ -618,8 +618,8 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 
  .. code-tab:: csharp
 
-    var output = new Godot.Collections.Array();
-    OS.Execute("CMD.exe", new string[] {"/C", "cd %TEMP% && dir"}, output);
+    Godot.Collections.Array output = [];
+    OS.Execute("CMD.exe", ["/C", "cd %TEMP% && dir"], output);
 
 
 

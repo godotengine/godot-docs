@@ -144,13 +144,13 @@ Returns ``true`` if ``point`` falls inside the polygon area.
  .. code-tab:: csharp
 
     var polygonPathFinder = new PolygonPathFinder();
-    var points = new Vector2[]
-    {
+    Vector2[] points =
+    [
         new Vector2(0.0f, 0.0f),
         new Vector2(1.0f, 0.0f),
         new Vector2(0.0f, 1.0f)
-    };
-    var connections = new int[] { 0, 1, 1, 2, 2, 0 };
+    ];
+    int[] connections = [0, 1, 1, 2, 2, 0];
     polygonPathFinder.Setup(points, connections);
     GD.Print(polygonPathFinder.IsPointInside(new Vector2(0.2f, 0.2f))); // Prints True
     GD.Print(polygonPathFinder.IsPointInside(new Vector2(1.0f, 1.0f))); // Prints False
@@ -198,13 +198,13 @@ The length of ``connections`` must be even, returns an error if odd.
  .. code-tab:: csharp
 
     var polygonPathFinder = new PolygonPathFinder();
-    var points = new Vector2[]
-    {
+    Vector2[] points =
+    [
         new Vector2(0.0f, 0.0f),
         new Vector2(1.0f, 0.0f),
         new Vector2(0.0f, 1.0f)
-    };
-    var connections = new int[] { 0, 1, 1, 2, 2, 0 };
+    ];
+    int[] connections = [0, 1, 1, 2, 2, 0];
     polygonPathFinder.Setup(points, connections);
 
 

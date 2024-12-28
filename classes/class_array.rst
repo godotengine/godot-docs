@@ -35,14 +35,14 @@ An array data structure that can contain a sequence of elements of any :ref:`Var
 
  .. code-tab:: csharp
 
-    var array = new Godot.Collections.Array{"First", 2, 3, "Last"};
+    Godot.Collections.Array array = ["First", 2, 3, "Last"];
     GD.Print(array[0]); // Prints "First"
     GD.Print(array[2]); // Prints 3
-    GD.Print(array[array.Count - 1]); // Prints "Last"
+    GD.Print(array[^1]); // Prints "Last"
     
-    array[2] = "Second";
+    array[1] = "Second";
     GD.Print(array[1]); // Prints "Second"
-    GD.Print(array[array.Count - 3]); // Prints "Second"
+    GD.Print(array[^3]); // Prints "Second"
 
 
 
@@ -707,7 +707,7 @@ This method can often be combined with :ref:`resize<class_Array_method_resize>` 
 
  .. code-tab:: csharp
 
-    var array = new Godot.Collections.Array();
+    Godot.Collections.Array array = [];
     array.Resize(5);
     array.Fill(2);
     GD.Print(array); // Prints [2, 2, 2, 2, 2]
@@ -874,7 +874,7 @@ Returns ``true`` if the array contains the given ``value``.
 
  .. code-tab:: csharp
 
-    var arr = new Godot.Collections.Array { "inside", 7 };
+    Godot.Collections.Array arr = ["inside", 7];
     // By C# convention, this method is renamed to `Contains`.
     GD.Print(arr.Contains("inside"));  // Prints True
     GD.Print(arr.Contains("outside")); // Prints False
@@ -1068,7 +1068,7 @@ Returns a random element from the array. Generates an error and returns ``null``
 
  .. code-tab:: csharp
 
-    var array = new Godot.Collections.Array { 1, 2, 3.25f, "Hi" };
+    Godot.Collections.Array array = [1, 2, 3.25f, "Hi"];
     GD.Print(array.PickRandom()); // May print 1, 2, 3.25, or "Hi".
 
 
@@ -1355,7 +1355,7 @@ Sorts the array in ascending order. The final order is dependent on the "less th
 
  .. code-tab:: csharp
 
-    var numbers = new Godot.Collections.Array { 10, 5, 2.5, 8 };
+    Godot.Collections.Array numbers = [10, 5, 2.5, 8];
     numbers.Sort();
     GD.Print(numbers); // Prints [2.5, 5, 8, 10]
 
@@ -1448,8 +1448,8 @@ Appends the ``right`` array to the left operand, creating a new **Array**. This 
  .. code-tab:: csharp
 
     // Note that concatenation is not possible with C#'s native Array type.
-    var array1 = new Godot.Collections.Array{"One", 2};
-    var array2 = new Godot.Collections.Array{3, "Four"};
+    Godot.Collections.Array array1 = ["One", 2];
+    Godot.Collections.Array array2 = [3, "Four"];
     GD.Print(array1 + array2); // Prints ["One", 2, 3, "Four"]
 
 

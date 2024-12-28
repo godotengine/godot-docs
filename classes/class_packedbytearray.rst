@@ -793,7 +793,7 @@ Returns a hexadecimal representation of this array as a :ref:`String<class_Strin
 
  .. code-tab:: csharp
 
-    var array = new byte[] {11, 46, 255};
+    byte[] array = [11, 46, 255];
     GD.Print(array.HexEncode()); // Prints: 0b2eff
 
 

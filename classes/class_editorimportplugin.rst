@@ -85,7 +85,7 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
     
         public override string[] _GetRecognizedExtensions()
         {
-            return new string[] { "special", "spec" };
+            return ["special", "spec"];
         }
     
         public override string _GetSaveExtension()
@@ -110,14 +110,14 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
     
         public override Godot.Collections.Array<Godot.Collections.Dictionary> _GetImportOptions(string path, int presetIndex)
         {
-            return new Godot.Collections.Array<Godot.Collections.Dictionary>
-            {
+            return
+            [
                 new Godot.Collections.Dictionary
                 {
                     { "name", "myOption" },
                     { "default_value", false },
-                }
-            };
+                },
+            ];
         }
     
         public override Error _Import(string sourceFile, string savePath, Godot.Collections.Dictionary options, Godot.Collections.Array<string> platformVariants, Godot.Collections.Array<string> genFiles)

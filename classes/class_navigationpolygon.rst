@@ -39,7 +39,7 @@ To bake a navigation mesh at least one outline needs to be added that defines th
  .. code-tab:: csharp
 
     var newNavigationMesh = new NavigationPolygon();
-    var boundingOutline = new Vector2[] { new Vector2(0, 0), new Vector2(0, 50), new Vector2(50, 50), new Vector2(50, 0) };
+    Vector2[] boundingOutline = [new Vector2(0, 0), new Vector2(0, 50), new Vector2(50, 50), new Vector2(50, 0)];
     newNavigationMesh.AddOutline(boundingOutline);
     NavigationServer2D.BakeFromSourceGeometryData(newNavigationMesh, new NavigationMeshSourceGeometryData2D());
     GetNode<NavigationRegion2D>("NavigationRegion2D").NavigationPolygon = newNavigationMesh;
@@ -63,9 +63,9 @@ Adding vertices and polygon indices manually.
  .. code-tab:: csharp
 
     var newNavigationMesh = new NavigationPolygon();
-    var newVertices = new Vector2[] { new Vector2(0, 0), new Vector2(0, 50), new Vector2(50, 50), new Vector2(50, 0) };
+    Vector2[] newVertices = [new Vector2(0, 0), new Vector2(0, 50), new Vector2(50, 50), new Vector2(50, 0)];
     newNavigationMesh.Vertices = newVertices;
-    var newPolygonIndices = new int[] { 0, 1, 2, 3 };
+    int[] newPolygonIndices = [0, 1, 2, 3];
     newNavigationMesh.AddPolygon(newPolygonIndices);
     GetNode<NavigationRegion2D>("NavigationRegion2D").NavigationPolygon = newNavigationMesh;
 
