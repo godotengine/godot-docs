@@ -1171,7 +1171,7 @@ Returns the concatenation of ``parts``' elements, with each element separated by
 
  .. code-tab:: csharp
 
-    var fruits = new string[] {"Apple", "Orange", "Pear", "Kiwi"};
+    string[] fruits = ["Apple", "Orange", "Pear", "Kiwi"];
     
     // In C#, this method is static.
     GD.Print(string.Join(", ", fruits));  // Prints "Apple, Orange, Pear, Kiwi"

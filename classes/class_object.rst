@@ -355,14 +355,14 @@ Combined with :ref:`_set<class_Object_private_method__set>` and :ref:`_get_prope
     
     public override Godot.Collections.Array<Godot.Collections.Dictionary> _GetPropertyList()
     {
-        return new Godot.Collections.Array<Godot.Collections.Dictionary>()
-        {
+        return
+        [
             new Godot.Collections.Dictionary()
             {
                 { "name", "FakeProperty" },
-                { "type", (int)Variant.Type.Int }
-            }
-        };
+                { "type", (int)Variant.Type.Int },
+            },
+        ];
     }
 
 
@@ -445,11 +445,11 @@ The example below displays a list of numbers shown as words going from ``ZERO`` 
             }
         }
     
-        private Godot.Collections.Array<int> _numbers = new();
+        private Godot.Collections.Array<int> _numbers = [];
     
         public override Godot.Collections.Array<Godot.Collections.Dictionary> _GetPropertyList()
         {
-            var properties = new Godot.Collections.Array<Godot.Collections.Dictionary>();
+            Godot.Collections.Array<Godot.Collections.Dictionary> properties = [];
     
             for (int i = 0; i < _numberCount; i++)
             {
@@ -690,14 +690,14 @@ Combined with :ref:`_get<class_Object_private_method__get>` and :ref:`_get_prope
     
     public override Godot.Collections.Array<Godot.Collections.Dictionary> _GetPropertyList()
     {
-        return new Godot.Collections.Array<Godot.Collections.Dictionary>()
-        {
+        return
+        [
             new Godot.Collections.Dictionary()
             {
                 { "name", "FakeProperty" },
-                { "type", (int)Variant.Type.Int }
-            }
-        };
+                { "type", (int)Variant.Type.Int },
+            },
+        ];
     }
 
 
@@ -810,19 +810,19 @@ Adds a user-defined signal named ``signal``. Optional arguments for the signal c
 
  .. code-tab:: csharp
 
-    AddUserSignal("Hurt", new Godot.Collections.Array()
-    {
+    AddUserSignal("Hurt",
+    [
         new Godot.Collections.Dictionary()
         {
             { "name", "damage" },
-            { "type", (int)Variant.Type.Int }
+            { "type", (int)Variant.Type.Int },
         },
         new Godot.Collections.Dictionary()
         {
             { "name", "source" },
-            { "type", (int)Variant.Type.Object }
-        }
-    });
+            { "type", (int)Variant.Type.Object },
+        },
+    ]);
 
 
 
@@ -924,7 +924,7 @@ Calls the ``method`` on the object and returns the result. Unlike :ref:`call<cla
  .. code-tab:: csharp
 
     var node = new Node3D();
-    node.Callv(Node3D.MethodName.Rotate, new Godot.Collections.Array { new Vector3(1f, 0f, 0f), 1.571f });
+    node.Callv(Node3D.MethodName.Rotate, [new Vector3(1f, 0f, 0f), 1.571f]);
 
 
 

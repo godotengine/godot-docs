@@ -199,6 +199,8 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]  | :ref:`map_get_regions<class_NavigationServer2D_method_map_get_regions>`\ (\ map\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                    |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`map_get_use_async_iterations<class_NavigationServer2D_method_map_get_use_async_iterations>`\ (\ map\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                          |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`map_get_use_edge_connections<class_NavigationServer2D_method_map_get_use_edge_connections>`\ (\ map\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                          |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`map_is_active<class_NavigationServer2D_method_map_is_active>`\ (\ map\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                        |
@@ -210,6 +212,8 @@ Methods
    | |void|                                              | :ref:`map_set_edge_connection_margin<class_NavigationServer2D_method_map_set_edge_connection_margin>`\ (\ map\: :ref:`RID<class_RID>`, margin\: :ref:`float<class_float>`\ )                                                                                                                                                                                                          |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`map_set_link_connection_radius<class_NavigationServer2D_method_map_set_link_connection_radius>`\ (\ map\: :ref:`RID<class_RID>`, radius\: :ref:`float<class_float>`\ )                                                                                                                                                                                                          |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`map_set_use_async_iterations<class_NavigationServer2D_method_map_set_use_async_iterations>`\ (\ map\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                               |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`map_set_use_edge_connections<class_NavigationServer2D_method_map_set_use_edge_connections>`\ (\ map\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                               |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1226,6 +1230,18 @@ Returns all navigation regions :ref:`RID<class_RID>`\ s that are currently assig
 
 ----
 
+.. _class_NavigationServer2D_method_map_get_use_async_iterations:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **map_get_use_async_iterations**\ (\ map\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer2D_method_map_get_use_async_iterations>`
+
+Returns ``true`` if the ``map`` synchronization uses an async process that runs on a background thread.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer2D_method_map_get_use_edge_connections:
 
 .. rst-class:: classref-method
@@ -1293,6 +1309,18 @@ Set the map edge connection margin used to weld the compatible region edges.
 |void| **map_set_link_connection_radius**\ (\ map\: :ref:`RID<class_RID>`, radius\: :ref:`float<class_float>`\ ) :ref:`🔗<class_NavigationServer2D_method_map_set_link_connection_radius>`
 
 Set the map's link connection radius used to connect links to navigation polygons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_map_set_use_async_iterations:
+
+.. rst-class:: classref-method
+
+|void| **map_set_use_async_iterations**\ (\ map\: :ref:`RID<class_RID>`, enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_NavigationServer2D_method_map_set_use_async_iterations>`
+
+If ``enabled`` is ``true`` the ``map`` synchronization uses an async process that runs on a background thread.
 
 .. rst-class:: classref-item-separator
 

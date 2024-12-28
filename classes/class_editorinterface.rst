@@ -699,6 +699,8 @@ Plays the main scene.
 
 |void| **popup_create_dialog**\ (\ callback\: :ref:`Callable<class_Callable>`, base_type\: :ref:`StringName<class_StringName>` = "", current_type\: :ref:`String<class_String>` = "", dialog_title\: :ref:`String<class_String>` = "", type_blocklist\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] = [], type_suffixes\: :ref:`Dictionary<class_Dictionary>` = {}\ ) :ref:`🔗<class_EditorInterface_method_popup_create_dialog>`
 
+**Experimental:** This method may be changed or removed in future versions.
+
 Pops up an editor dialog for creating an object.
 
 The ``callback`` must take a single argument of type :ref:`StringName<class_StringName>` which will contain the type name of the selected object or be empty if no item is selected.

@@ -273,8 +273,6 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/bone_mapper/handle_colors/unset<class_EditorSettings_property_editors/bone_mapper/handle_colors/unset>`                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`editors/grid_map/editor_side<class_EditorSettings_property_editors/grid_map/editor_side>`                                                                                                                   |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editors/grid_map/palette_min_width<class_EditorSettings_property_editors/grid_map/palette_min_width>`                                                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`editors/grid_map/pick_distance<class_EditorSettings_property_editors/grid_map/pick_distance>`                                                                                                               |
@@ -2270,18 +2268,6 @@ The modulate color to use for "past" frames displayed in the animation editor's 
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorSettings_property_editors/grid_map/editor_side:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **editors/grid_map/editor_side** :ref:`🔗<class_EditorSettings_property_editors/grid_map/editor_side>`
-
-Specifies the side of 3D editor's viewport where GridMap's mesh palette will appear.
 
 .. rst-class:: classref-item-separator
 

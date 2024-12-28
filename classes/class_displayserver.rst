@@ -4440,7 +4440,7 @@ Passing an empty array will disable passthrough support (all mouse events will b
     DisplayServer.WindowSetMousePassthrough(GetNode<Polygon2D>("Polygon2D").Polygon);
     
     // Reset region to default.
-    DisplayServer.WindowSetMousePassthrough(new Vector2[] {});
+    DisplayServer.WindowSetMousePassthrough([]);
 
 
 

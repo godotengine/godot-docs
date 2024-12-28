@@ -500,7 +500,7 @@ The operation may result in an outer polygon (boundary) and inner polygon (hole)
 
  .. code-tab:: csharp
 
-    var polygon = new Vector2[] { new Vector2(0, 0), new Vector2(100, 0), new Vector2(100, 100), new Vector2(0, 100) };
+    Vector2[] polygon = [new Vector2(0, 0), new Vector2(100, 0), new Vector2(100, 100), new Vector2(0, 100)];
     var offset = new Vector2(50, 50);
     polygon = new Transform2D(0, offset) * polygon;
     GD.Print((Variant)polygon); // Prints [(50, 50), (150, 50), (150, 150), (50, 150)]

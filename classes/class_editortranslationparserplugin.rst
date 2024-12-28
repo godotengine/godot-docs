@@ -69,7 +69,7 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
     
         public override string[] _GetRecognizedExtensions()
         {
-            return new string[] { "csv" };
+            return ["csv"];
         }
     }
 
@@ -92,11 +92,11 @@ To add a translatable string associated with context or plural, add it to ``msgi
  .. code-tab:: csharp
 
     // This will add a message with msgid "Test 1", msgctxt "context", and msgid_plural "test 1 plurals".
-    msgidsContextPlural.Add(new Godot.Collections.Array{"Test 1", "context", "test 1 Plurals"});
+    msgidsContextPlural.Add(["Test 1", "context", "test 1 Plurals"]);
     // This will add a message with msgid "A test without context" and msgid_plural "plurals".
-    msgidsContextPlural.Add(new Godot.Collections.Array{"A test without context", "", "plurals"});
+    msgidsContextPlural.Add(["A test without context", "", "plurals"]);
     // This will add a message with msgid "Only with context" and msgctxt "a friendly context".
-    msgidsContextPlural.Add(new Godot.Collections.Array{"Only with context", "a friendly context", ""});
+    msgidsContextPlural.Add(["Only with context", "a friendly context", ""]);
 
 
 
@@ -126,7 +126,7 @@ To add a translatable string associated with context or plural, add it to ``msgi
     
     public override string[] _GetRecognizedExtensions()
     {
-        return new string[] { "gd" };
+        return ["gd"];
     }
 
 

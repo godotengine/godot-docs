@@ -46,16 +46,16 @@ The most basic example is the creation of a single triangle:
 
  .. code-tab:: csharp
 
-    var vertices = new Vector3[]
-    {
+    Vector3[] vertices =
+    [
         new Vector3(0, 1, 0),
         new Vector3(1, 0, 0),
         new Vector3(0, 0, 1),
-    };
+    ];
     
     // Initialize the ArrayMesh.
     var arrMesh = new ArrayMesh();
-    var arrays = new Godot.Collections.Array();
+    Godot.Collections.Array arrays = [];
     arrays.Resize((int)Mesh.ArrayType.Max);
     arrays[(int)Mesh.ArrayType.Vertex] = vertices;
     
