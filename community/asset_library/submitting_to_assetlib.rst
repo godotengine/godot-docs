@@ -180,7 +180,7 @@ is required in the submission form here as well.
 
 .. note::
 
-    For icons hosted on GitHub, URLs must be provided in the form of `https://raw.githubusercontent.com/<user>/<project>/<branch>/Icon.png`.
+    For icons hosted on GitHub, URLs must be provided in the form of `https://raw.githubusercontent.com/<user>/<project>/refs/heads/<branch>/Icon.png`.
 
 * **License**:
     The license under which you are distributing the asset. The list
