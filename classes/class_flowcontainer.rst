@@ -247,7 +247,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **get_line_count**\ (\ ) |const| :ref:`🔗<class_FlowContainer_method_get_line_count>`
 
-Returns the current line count.
+Returns the number of wrapped lines. (Not the number of items in a line.)
 
 .. rst-class:: classref-section-separator
 
