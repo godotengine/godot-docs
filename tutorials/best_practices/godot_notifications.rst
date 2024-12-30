@@ -224,7 +224,7 @@ values will set up according to the following sequence:
 1. **Initial value assignment:** the property is assigned its initialization value,
    or its default value if one is not specified. If a setter exists, it is not used.
 
-2. **``_init()`` assignment:** the property's value is replaced by any assignments
+2. ``_init()`` **assignment:** the property's value is replaced by any assignments
    made in ``_init()``, triggering the setter.
 
 3. **Exported value assignment:** an exported property's value is again replaced by
