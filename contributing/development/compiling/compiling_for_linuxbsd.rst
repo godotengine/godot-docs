@@ -16,7 +16,7 @@ Requirements
 For compiling under Linux or other Unix variants, the following is
 required:
 
-- GCC 9+ or Clang 6+.
+- GCC 13+ or Clang 6+.
 - `Python 3.8+ <https://www.python.org/downloads/>`_.
 - `SCons 4.0+ <https://scons.org/pages/download.html>`_ build system.
 - pkg-config (used to detect the development libraries listed below).
@@ -42,6 +42,19 @@ Distro-specific one-liners
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
+    .. tab:: All distros x84_64
+
+        ::
+            mkdir -p ~/godot-toolchain/ && cd ~/godot-toolchain/
+            
+            # Download the Godot Engine's toolchain, extract it and configure it
+            wget https://github.com/godotengine/buildroot/releases/download/godot-2023.08.x-4/x86_64-godot-linux-gnu_sdk-buildroot.tar.bz2
+            tar xvf x86_64-godot-linux-gnu_sdk-buildroot.tar.bz2
+            cd x86_64-godot-linux-gnu_sdk-buildroot/ && ./relocate-sdk.sh
+
+            # Build Godot
+            export PATH="~/godot-toolchain/x86_64-godot-linux-gnu_sdk-buildroot/bin:${PATH}"
+            scons platform=linuxbsd
 
     .. tab:: Alpine Linux
 
