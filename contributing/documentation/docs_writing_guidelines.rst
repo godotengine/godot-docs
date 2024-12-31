@@ -665,7 +665,50 @@ as long as the lines don't exceed 100 characters.
 
     .. code:: json
 
-        "editor.rulers": [80,100], 
+        "editor.rulers": [80,100],
+
+Section header syntax
+~~~~~~~~~~~~~~~~~~~~~
+
+Use the following syntax for section headers:
+
+.. code-block::
+
+    Page title
+    ==========
+
+    Renders as h1.
+    Every page has this.
+
+    Section header
+    --------------
+
+    Renders as h2.
+    Usually appears in sidebar. Many pages only need one level of nested headers.
+
+    Sub-section header
+    ~~~~~~~~~~~~~~~~~~
+
+    Renders as h3.
+    Appears in sidebar in some pages, depending on how deeply nested the page is.
+
+    Sub-sub-section header
+    ^^^^^^^^^^^^^^^^^^^^^^
+
+    Renders as h4.
+    Usually won't appear in the sidebar.
+
+Currently, there are no cases of deeper header nesting than this. Avoid
+introducing any deeper nesting.
+
+Note that headers have no inherent meaning. In reStructuredText, headers are
+parsed based on the order that they initially appear within a page. Make sure
+that if you use an ``h3`` section header (``~~~``), you include an ``h2``
+sub-section header (``---``) first.
+
+See the `Sphinx documentation <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#sections>`__
+and the `reStructuredText documentation <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#sections>`__
+for more information.
 
 When to refer to a specific Godot version
 -----------------------------------------
