@@ -123,6 +123,8 @@ to the ``Mob`` and add this code:
         QueueFree();
     }
 
+``QueueFree()`` is a function that essentially 'frees', or deletes, the node at the end of the frame.
+
 This completes the `Mob` scene.
 
 With the player and enemies ready, in the next part, we'll bring them together
