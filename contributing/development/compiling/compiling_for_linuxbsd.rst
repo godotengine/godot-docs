@@ -612,3 +612,24 @@ running ``scons -h``, then looking for options starting with ``builtin_``.
     across Linux distributions anymore. Do not use this approach for creating
     binaries you intend to distribute to others, unless you're creating a
     package for a Linux distribution.
+
+Using Godot official toolchain for production build
+---------------------------------------------------
+
+Contains the Godot buildroot to generate toolchains for building the Godot engine in
+a portable way for Linux. Using these toolchains is the best way to distribute Linux
+builds of your custom-compiled Godot game.
+
+
+::
+
+    mkdir -p ~/godot-toolchain/ && cd ~/godot-toolchain/
+            
+    # Download the Godot Engine's toolchain, extract it and configure it
+    wget https://github.com/godotengine/buildroot/releases/download/godot-2023.08.x-4/x86_64-godot-linux-gnu_sdk-buildroot.tar.bz2
+    tar xvf x86_64-godot-linux-gnu_sdk-buildroot.tar.bz2
+    cd x86_64-godot-linux-gnu_sdk-buildroot/ && ./relocate-sdk.sh
+
+    # Build Godot
+    export PATH="~/godot-toolchain/x86_64-godot-linux-gnu_sdk-buildroot/bin:${PATH}"
+    scons platform=linuxbsd
