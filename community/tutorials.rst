@@ -22,8 +22,8 @@ Some tutorials mentioned below cover more advanced subjects, e.g. on 3D or shade
 Video tutorials
 ---------------
 
-For video tutorials we recommend looking on `YouTube <https://www.youtube.com/>`_. There's many great
-channels covering a wide array of subjects.
+For video tutorials we recommend looking on `YouTube <https://www.youtube.com/>`_.
+There are many great channels covering a wide array of subjects.
 
 Text tutorials
 --------------
