@@ -10,7 +10,7 @@ Before beginning the upgrade process, it's worth thinking about the advantages
 and disadvantages that upgrading would bring to your project.
 
 Advantages of upgrading
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Along with the
 `new features present in 4.0 <https://godotengine.org/article/godot-4-0-sets-sail>`__,
@@ -26,7 +26,7 @@ See :ref:`doc_docs_changelog` for a list of pages documenting new features in
 Godot 4.0, and :ref:`doc_list_of_features` for a list of all features in Godot.
 
 Disadvantages of upgrading
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you don't *need* any features present in Godot 4.0, you may want to stay on
 Godot 3.x for the following reasons:
@@ -61,7 +61,7 @@ Godot 3.x for the following reasons:
     can be used to bypass this limitation, but they're too slow for gaming.
 
 Caveats of upgrading
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 .. UPDATE: Planned feature. There are several planned or missing features that
 .. may be added back in the future. Check this section for accuracy and update
@@ -119,7 +119,7 @@ Running the project upgrade tool
     folder to another location.
 
 Using the Project Manager
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To use the project upgrade tool:
 
@@ -143,7 +143,7 @@ you can use the command line to upgrade the project (see below). This will allow
 you to override the converter's size limits.
 
 Using the command line
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 To use the project upgrade tool from the :ref:`command line <doc_command_line_tutorial>`,
 it's recommended to validate the project conversion by running the Godot editor binary with the following arguments:
@@ -196,7 +196,7 @@ cater to all situations. Therefore, a large part of the upgrade process remains
 manual.
 
 Automatically renamed nodes and resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The list below refers to nodes which were simply renamed for consistency or
 clarity in Godot 4.0. The project upgrade tool renames them automatically in
@@ -372,7 +372,7 @@ a ``3D`` suffix to the old name:
 .. _doc_upgrading_to_godot_4_manual_rename:
 
 Manually renaming methods, properties, signals and constants
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Due to how the project upgrade tool works, not all
 :abbr:`API (Application Programming Interface)` renames can be performed automatically.
@@ -488,7 +488,7 @@ table to find its new name.
 - MainLoop's ``NOTIFICATION_WM_QUIT_REQUEST`` is now ``NOTIFICATION_WM_CLOSE_REQUEST``.
 
 Checking project settings
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Several project settings were renamed, and some of them had their enums changed
 in incompatible ways (such as shadow filter quality). This means you may need to
@@ -496,7 +496,7 @@ set some project settings' values again. Make sure the **Advanced** toggle is
 enabled in the project settings dialog so you can see all project settings.
 
 Checking Environment settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Graphics quality settings were moved from Environment properties to project
 settings. This was done to make runtime quality adjustments easier, without
@@ -513,7 +513,7 @@ methods that affect environment effects' quality. Only the "base" toggle of each
 environment effect and its visual knobs remain within the Environment resource.
 
 Updating shaders
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 There have been some changes to shaders that aren't covered by the upgrade tool. 
 You will need to make some manual changes, especially if your shader uses coordinate
@@ -549,7 +549,7 @@ This list is not exhaustive. If you made all the changes mentioned here and your
 shader still doesn't work, try asking for help in one of the `community channels <https://godotengine.org/community/>`__.
 
 Updating scripts to take backwards-incompatible changes into account
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some changes performed between Godot 3.x and 4 are not renames, but they still
 break backwards compatibility due to different default behavior.
@@ -716,7 +716,7 @@ example, the following code snippet in Godot 3.x must be modified to work in 4.0
     for a full list of changes between Godot 3.x and 4.
 
 ArrayMesh resource compatibility breakage
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you've saved an ArrayMesh resource to a ``.res`` or ``.tres`` file, the
 format used in 4.0 is not compatible with the one used in 3.x. You will need to

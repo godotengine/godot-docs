@@ -70,7 +70,7 @@ This will simply play back the animation. Make sure that the ``AnimationTree`` i
 Following is a short description of available nodes:
 
 Blend2 / Blend3
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 These nodes will blend between two or three inputs by a user-specified blend value:
 
@@ -84,7 +84,7 @@ This is very useful for layering animations on top of each other.
 .. image:: img/animtree6.png
 
 OneShot
-^^^^^^^
+~~~~~~~
 
 This node will execute a sub-animation and return once it finishes. Blend times for fading in and out can be customized, as well as filters.
 
@@ -122,7 +122,7 @@ After setting the request and changing the animation playback, the one-shot node
     animationTree.Get("parameters/OneShot/active");
 
 TimeSeek
-^^^^^^^^
+~~~~~~~~
 
 This node can be used to cause a seek command to happen to any sub-children of the animation graph. Use this node type to play an ``Animation`` from the start or a certain playback position inside the ``AnimationNodeBlendTree``.
 
@@ -150,12 +150,12 @@ After setting the time and changing the animation playback, the seek node automa
     animationTree.Set("parameters/TimeSeek/seek_request", 12.0);
 
 TimeScale
-^^^^^^^^^
+~~~~~~~~~
 
 Allows scaling the speed of the animation (or reverse it) connected to the `in` input via the `scale` parameter. Setting the `scale` to 0 will pause the animation.
 
 Transition
-^^^^^^^^^^
+~~~~~~~~~~
 
 Very simple state machine (when you don't want to cope with a ``StateMachine`` node). Animations can be connected to the outputs and transition times can be specified.
 After setting the request and changing the animation playback, the transition node automatically clears the request on the next process frame by setting its ``transition_request`` value to an empty string (``""``).
@@ -190,7 +190,7 @@ After setting the request and changing the animation playback, the transition no
     animationTree.Get("parameters/Transition/current_index");
 
 BlendSpace2D
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 ``BlendSpace2D`` is a node to do advanced blending in two dimensions. Points are added to a two-dimensional space and then a position
 can be controlled to determine blending:
@@ -214,12 +214,12 @@ This mode can be changed in the *Blend* menu:
 .. image:: img/animtree10.png
 
 BlendSpace1D
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 This is similar to 2D blend spaces, but in one dimension (so triangles are not needed).
 
 StateMachine
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 This node acts as a state machine with root nodes as states. Root nodes can be created and connected via lines. States are connected via *Transitions*,
 which are connections with special properties. Transitions are uni-directional, but two can be used to connect in both directions.

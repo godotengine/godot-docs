@@ -31,7 +31,7 @@ Creating a new TileSet
 .. _doc_creating_tilesets_using_tilesheet:
 
 Using a tilesheet
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 This demonstration will use the following tiles taken from
 `Kenney's "Abstract Platformer" pack <https://kenney.nl/assets/abstract-platformer>`__.
@@ -155,7 +155,7 @@ three vertical dots menu button at the top of the TileSet editor and choose
    Recreating tiles automatically after changing atlas properties
 
 Using a collection of scenes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since Godot 4.0, you can place actual *scenes* as tiles. This allows you to use
 any collection of nodes as a tile. For example, you could use scene tiles to
@@ -522,7 +522,7 @@ There are two ways to assign properties to multiple tiles at once.
 Depending on your use cases, one method may be faster than the other:
 
 Using multiple tile selection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you wish to configure various properties on several tiles at once,
 choose the **Select** mode at the top of the TileSet editor:
@@ -550,7 +550,7 @@ property's value on all tiles in the atlas after editing a property:
 .. _doc_using_tilemaps_using_tile_property_painting:
 
 Using tile property painting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you wish to apply a single property to several tiles at once,
 you can use the *property painting* mode for this purpose.

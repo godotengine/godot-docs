@@ -24,7 +24,7 @@ relevant math written for game developers, not mathemeticians or engineers,
 check out :ref:`doc_vector_math` and :ref:`doc_using_transforms`.
 
 3D workspace
-~~~~~~~~~~~~
+------------
 
 Editing 3D scenes is done in the 3D workspace. This workspace can be selected
 manually, but it will be automatically selected when a Node3D node is
@@ -40,7 +40,7 @@ Below the scene selector, the main toolbar is visible, and beneath the main tool
 is the 3D viewport.
 
 Main toolbar
-------------
+~~~~~~~~~~~~
 
 Some buttons in the main toolbar are the same as those in the 2D workspace. A brief explanation
 is given with the shortcut if the mouse cursor is hovered over a button for one second. 
@@ -125,7 +125,7 @@ MeshInstance3D is selected. This menu provides some quick actions or tools to
 work on a specific node or selection.
 
 View menu of viewport
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 Below the *Select* tool, in the 3D viewport, clicking on the three dots opens the
 **View menu** for the viewport.
@@ -141,7 +141,7 @@ nodes within the viewport.
 .. _doc_introduction_to_3d_coordinate_system:
 
 Coordinate system
------------------
+~~~~~~~~~~~~~~~~~
 
 Godot uses the `metric <https://en.wikipedia.org/wiki/Metric_system>`__
 system for everything in 3D, with 1 unit being equal to 1 meter.
@@ -176,7 +176,7 @@ See this chart for comparison with other 3D software:
 .. _doc_introduction_to_3d_space_and_manipulation:
 
 Space and manipulation gizmos
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Moving, rotating, and scaling objects in the 3D view is done through the
 manipulator gizmos.
@@ -202,7 +202,7 @@ If the transform mode is changed from *Select Mode* to *Scale Mode*, the arrows 
 replaced by cubes, which can be dragged to scale an object as if the object is being moved.
 
 Navigating the 3D environment
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In 3D environments, it is often important to adjust the viewpoint or angle
 from which you are viewing the scene.
@@ -251,7 +251,7 @@ In orthogonal mode, holding the right mouse button will pan the view instead.
 Use :kbd:`Keypad 5` to toggle between perspective and orthogonal view.
 
 Using Blender-style transform shortcuts
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since Godot 4.2, you can enable Blender-style shortcuts for translating,
 rotating and scaling nodes. In Blender, these shortcuts are:
@@ -284,7 +284,7 @@ To use Blender-style transform shortcuts in Godot, go to the Editor Settings'
   :ref:`doc_default_key_mapping_shortcuts_spatial_editor` page.
 
 Node3D node
-~~~~~~~~~~~
+-----------
 
 :ref:`Node2D <class_Node2D>` is the base node for 2D.
 :ref:`Control <class_Control>` is the base node for everything GUI.
@@ -303,7 +303,7 @@ scale.
 .. image:: img/tuto_3d2.webp
 
 3D content
-~~~~~~~~~~
+----------
 
 Unlike 2D, where loading image content and drawing is straightforward, 3D is a
 little more difficult. The content needs to be created with special 3D tools
@@ -312,7 +312,7 @@ exchange file format to be imported in Godot. This is required since 3D formats
 are not as standardized as images.
 
 Manually authored models (using 3D modeling software)
------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. FIXME: Needs update to properly description Godot 3.x workflow
    (used to reference a non existing doc_importing_3d_meshes importer).
@@ -325,7 +325,7 @@ as simple resources.
 .. seealso:: See :ref:`doc_importing_3d_scenes` for more on importing.
 
 Generated geometry
-------------------
+~~~~~~~~~~~~~~~~~~
 
 It is possible to create custom geometry by using the
 :ref:`ArrayMesh <class_ArrayMesh>` resource directly. Simply create your arrays
@@ -343,7 +343,7 @@ submitting them to the 3D API has a significant performance cost.
 
 
 Immediate geometry
-------------------
+~~~~~~~~~~~~~~~~~~
 
 If, instead, you need to generate simple geometry that will be updated often,
 Godot provides a special :ref:`ImmediateMesh <class_ImmediateMesh>` resource
@@ -352,7 +352,7 @@ This provides an OpenGL 1.x-style immediate-mode API to create points, lines,
 triangles, etc.
 
 2D in 3D
---------
+~~~~~~~~
 
 While Godot packs a powerful 2D engine, many types of games use 2D in a
 3D environment. By using a fixed camera (either orthogonal or
@@ -367,7 +367,7 @@ performance in comparison to plain 2D, as well as the lack of reference
 of working in pixels.
 
 Environment
-~~~~~~~~~~~
+-----------
 
 Besides editing a scene, it is often common to edit the environment.
 Godot provides a :ref:`WorldEnvironment <class_WorldEnvironment>`
@@ -378,7 +378,7 @@ Environments can also be overridden in the Camera.
 .. _doc_introduction_to_3d_preview_environment_light:
 
 Preview environment and light
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default, any 3D scene that doesn't have a :ref:`WorldEnvironment <class_WorldEnvironment>`
 node, or a :ref:`DirectionalLight3D <class_DirectionalLight3D>`, will have
@@ -405,7 +405,7 @@ So only make adjustments that would apply to all of the scenes you will need a p
 light and environment for.
 
 Cameras
--------
+~~~~~~~
 
 No matter how many objects are placed in the 3D space, nothing will be
 displayed unless a :ref:`Camera3D <class_Camera3D>` is
@@ -435,7 +435,7 @@ each viewport:
    tree-order will take its place.
 
 Lights
-------
+~~~~~~
 
 The background environment emits some ambient light which appears on surfaces.
 Still, without any light sources placed in the scene, the scene will appear

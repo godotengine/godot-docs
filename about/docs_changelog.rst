@@ -27,7 +27,7 @@ New pages since version 4.3
 - :ref:`doc_spring_arm`
 
 Debug
-^^^^^
+~~~~~
 
 - :ref:`doc_output_panel`
 
@@ -42,7 +42,7 @@ Performance
 - :ref:`doc_pipeline_compilations`
 
 Physics
-^^^^^^^
+~~~~~~~
 
 - :ref:`doc_physics_interpolation`
 - :ref:`doc_physics_interpolation_quick_start_guide`

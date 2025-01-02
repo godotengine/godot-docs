@@ -4,7 +4,7 @@ Making plugins
 ==============
 
 About plugins
-~~~~~~~~~~~~~
+-------------
 
 A plugin is a great way to extend the editor with useful tools. It can be made
 entirely with GDScript and standard scenes, without even reloading the editor.
@@ -19,7 +19,7 @@ is a custom node that you can add to any scene in the project, and the
 other is a custom dock added to the editor.
 
 Creating a plugin
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Before starting, create a new empty project wherever you want. This will serve
 as a base to develop and test the plugins.
@@ -86,7 +86,7 @@ The main script file will instruct Godot what your plugin does in the editor
 once it is active.
 
 The script file
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Upon creation of the plugin, the dialog will automatically open the
 EditorPlugin script for you. The script has two requirements that you cannot
@@ -146,7 +146,7 @@ like this:
 This is a good template to use when creating new plugins.
 
 A custom node
-~~~~~~~~~~~~~
+-------------
 
 Sometimes you want a certain behavior in many nodes, such as a custom scene
 or control that can be reused. Instancing is helpful in a lot of cases, but
@@ -282,7 +282,7 @@ click the button, you can see some text in the console:
 .. image:: img/making_plugins-custom_node_console.webp
 
 A custom dock
-~~~~~~~~~~~~~
+-------------
 
 Sometimes, you need to extend the editor and add tools that are always available.
 An easy way to do it is to add a new dock with a plugin. Docks are just scenes
@@ -398,7 +398,7 @@ Note that, while the dock will initially appear at its specified position,
 the user can freely change its position and save the resulting layout.
 
 Checking the results
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 It's now time to check the results of your work. Open the **Project
 Settings** and click on the **Plugins** tab. Your plugin should be the only one
@@ -416,7 +416,7 @@ the settings window. You should now have a custom dock:
 .. _doc_making_plugins_autoload:
 
 Registering autoloads/singletons in plugins
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 It is possible for editor plugins to automatically register
 :ref:`autoloads <doc_singletons_autoload>` when the plugin is enabled.
@@ -471,7 +471,7 @@ Use the following code to register a singleton from an editor plugin:
     #endif
 
 Using sub-plugins
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Often a plugin adds multiple things, for example a custom node and a panel.
 In those cases it might be easier to have a separate plugin script for each of those features.
@@ -506,7 +506,7 @@ Instead the main plugin script should enable and disable sub-plugins like this:
         EditorInterface.set_plugin_enabled(PLUGIN_NAME + "/panel", false)
 
 Going beyond
-~~~~~~~~~~~~
+------------
 
 Now that you've learned how to make basic plugins, you can extend the editor in
 several ways. Lots of functionality can be added to the editor with GDScript;

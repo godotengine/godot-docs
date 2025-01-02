@@ -20,7 +20,7 @@ This page will show you the 2D workspace and how you can get to know it.
 .. tip:: If you would like to get an introduction to 3D, see :ref:`doc_introduction_to_3d`.
 
 2D workspace
-~~~~~~~~~~~~
+------------
 
 You will use the 2D workspace to work with 2D scenes, design levels, or create user 
 interfaces.
@@ -47,7 +47,7 @@ applicable.
 
 
 Main toolbar
-------------
+~~~~~~~~~~~~
 
 Some buttons in the main toolbar are the same as those in the 3D workspace. A brief explanation
 is given with the shortcut if the mouse cursor is hovered over a button for one second. 
@@ -182,7 +182,7 @@ provides buttons to add, modify, or remove points.
 
 
 Coordinate system
------------------
+~~~~~~~~~~~~~~~~~
 
 In the 2D editor, unlike 3D, there are only two axes: ``x`` and ``y``. Also, the viewing 
 angle is fixed.
@@ -206,7 +206,7 @@ Dragging in a negative direction flips the node horizontally or vertically.
 .. _doc_introduction_to_2d_the_viewport:
 
 2D Viewport
------------
+~~~~~~~~~~~
 
 The viewport will be the area you spend the most time if you plan to design levels or user 
 interfaces visually:
@@ -298,7 +298,7 @@ Viewport has a **View** menu which provides several options to change the look o
 
 
 Node2D and Control node
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 :ref:`CanvasItem <class_CanvasItem>` is the base node for 2D. :ref:`Node2D <class_Node2D>` is the base node
 for 2D game objects, and :ref:`Control <class_Control>` is the base node 
