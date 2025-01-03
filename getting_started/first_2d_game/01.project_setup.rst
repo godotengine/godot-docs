@@ -42,7 +42,7 @@ This game is designed for portrait mode, so we need to adjust the size of the
 game window. Click on *Project -> Project Settings* to open the project settings
 window, in the left column open the *Display -> Window* tab. There, set
 "Viewport Width" to ``480`` and "Viewport Height" to ``720``. You can see the 
-"Project" tab on the upper left corner.
+"Project" menu on the upper left corner.
 
 .. image:: img/setting-project-width-and-height.webp
 
