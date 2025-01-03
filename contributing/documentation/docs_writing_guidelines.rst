@@ -740,3 +740,110 @@ Follow these guidelines for when to refer to a specific Godot version:
 - If a feature was added in a 3.x major or minor version, **do not specify** when 
   the feature was added. These features are old enough that the exact version
   in which they were added is not relevant.
+
+Use roles for editor UI
+-----------------------
+
+Custom roles are defined for many editor UI elements. When referring to UI actions
+that the user must do, like pressing buttons, opening menus, or opening dialogs,
+use these tags. We do this for a few reasons:
+
+- Usages are tracked separately. It's easier to search for all usages of a single
+  editor UI element when they are tagged like this.
+- Style is consistent, and can be changed per-element.
+- In the future, we may add more complex custom roles, and tagging will make
+  replacing all usages later easier.
+
+When in doubt, use one of these roles:
+
+- ``:btn:``  A button, toggle, or most other clickable UI elements. If the reader
+  is meant to click on it, and it's not a menu, use this.
+- ``:menu:``  A series of menus to click through, or a single menu to click on.
+  When listing a series of menus, separate them with ``>``.
+- ``:uiproperty:`` A property in the inspector. Note that you can also link to a
+  property, or use ``code style`` to refer to a property when used in *code* rather
+  than the inspector.
+- ``:ui`` A catch-all role for any editor UI elements. Use this if you would have
+  otherwise just used **bold style**. It can be changed later, if necessary.
+
+There are several more specific roles, too. Most of these render the same as the
+more general roles, but exist for tagging purposes:
+
+- ``:field:`` An input field in the editor; anything that you type into. Excludes
+  properties, though.
+- ``:path:``  A UI navigation path in the editor. Use ``:uisection:`` instead for
+  nested sections in the inspector. Use ``:uiproperty:`` instead for inspector
+  properties that include a section like ``Process > Mode``. Use ``:projsection:``
+  for sections in the project settings.
+- ``:wndw:``  An editor window, popup dialog, or modal. Anything that can be
+  separately dragged and has a title.
+- ``:uisection:``  A section in the inspector.
+- ``:projsection:``  A section in the project settings.
+- ``:tab:`` A tab.
+- ``:dock:`` A dock.
+- ``:panel:`` A panel.
+
+Examples
+~~~~~~~~
+
+Adding a sprite and setting some properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the :dock:`Scene` dock, click :btn:`2D Scene` to create a new scene.
+
+Add a new :ref:`Sprite2D <class_Sprite2D>` to the scene by right-clicking on the
+root node and choosing :btn:`Add Child Node...`. In the :wndw:`Create New Node`
+window, search for "Sprite2D", select it, and then click :btn:`Create`.
+
+On the sprite, under :uisection:`Offset`, set :uiproperty:`Offset` to ``(16, 32)``
+and enable :uiproperty:`Flip H`. Set :uiproperty:`Animation > HFrames` to ``10``.
+In :uisection:`CanvasItem > Visibility`, set the :uiproperty:`Modulate` color to
+``ff0000``.
+
+.. tip:: 
+    
+    Don't forget to save your scene in :menu:`Scene > Save Scene...`. When the
+    :wndw:`Save Scene As...` window pops up, enter "my_scene.tscn" in the
+    :field:`File` field, then click :btn:`Save`.
+
+Setting project settings
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Go to :menu:`Project > Project Settings`, then select the
+:ref:`Max FPS <class_ProjectSettings_property_application/run/max_fps>`
+setting under :projsection:`Application > Run`. Don't forget to click the
+:btn:`Advanced Settings` toggle. Then, in :field:`Filter Settings`, search for
+"physics". Go to :projsection:`Physics > 3D > Solver`, and set
+:uiproperty:`Solver Iterations` to ``16``.
+
+All style roles
+~~~~~~~~~~~~~~~
+
+|styleroles|
+
+.. note::
+    
+    |styleroles|
+
+.. warning::
+
+    |styleroles|
+
+.. danger::
+
+    |styleroles|
+
+.. tip::
+
+    |styleroles|
+
+.. admonition:: Custom admonition
+
+    |styleroles|
+
+.. All the inline roles which are used in the docs. External links don't work in a substitution.
+.. |styleroles| replace:: Built-in styles: ``code``, **bold**, and *italics*.
+    Built-in roles: :kbd:`kbd`, :ref:`ref <doc_about_intro>`, :ref:`ref <class_node>`.
+    Custom roles: :btn:`btn`, :menu:`menu > menu > menu`, :uiproperty:`uiproperty`, :ui:`ui`,
+    :field:`field`, :path:`path > path > path`, :wndw:`wndw`, :uisection:`uisection`,
+    :projsection:`projsection`, :tab:`tab`, :dock:`dock`, :panel:`panel`.
