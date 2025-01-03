@@ -20,3 +20,4 @@ approach the project.
    pr_workflow
    pr_review_guidelines
    testing_pull_requests
+   tips_and_tricks
