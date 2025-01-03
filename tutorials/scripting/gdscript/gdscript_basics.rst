@@ -572,8 +572,8 @@ directly *above* a documentable item (such as a member variable), or at the top
 of a file. Dedicated formatting options are also available. See
 :ref:`doc_gdscript_documentation_comments` for details.
 
-
 ::
+
     ## This comment will appear in the script documentation.
     var value
 
