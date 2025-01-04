@@ -168,7 +168,7 @@ If ``true``, the timer will start immediately when it enters the scene tree.
 .. rst-class:: classref-property-setget
 
 - |void| **set_ignore_time_scale**\ (\ value\: :ref:`bool<class_bool>`\ )
-- :ref:`bool<class_bool>` **get_ignore_time_scale**\ (\ )
+- :ref:`bool<class_bool>` **is_ignoring_time_scale**\ (\ )
 
 If ``true``, the timer will ignore :ref:`Engine.time_scale<class_Engine_property_time_scale>` and update with the real, elapsed time.
 

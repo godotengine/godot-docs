@@ -35,11 +35,14 @@ You can retrieve the data by iterating on the container, which will work as if i
     var container = load("packed_data.res")
     for key in container:
         prints(key, container[key])
-    
-    # Prints:
-    # key value
-    # lock (0, 0)
-    # another_key 123
+
+Prints:
+
+.. code:: text
+
+    key value
+    lock (0, 0)
+    another_key 123
 
 Nested containers will be packed recursively. While iterating, they will be returned as :ref:`PackedDataContainerRef<class_PackedDataContainerRef>`.
 

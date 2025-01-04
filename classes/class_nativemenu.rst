@@ -785,7 +785,7 @@ Returns global menu minimum width.
 
 Returns global menu close callback.
 
-b]Note:** This method is implemented only on macOS.
+\ **Note:** This method is implemented on macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -1309,7 +1309,7 @@ Registers callable to emit when the menu is about to show.
 
 \ **Note:** The OS can simulate menu opening to track menu item changes and global shortcuts, in which case the corresponding close callback is not triggered. Use :ref:`is_opened<class_NativeMenu_method_is_opened>` to check if the menu is currently opened.
 
-\ **Note:** This method is implemented only on macOS.
+\ **Note:** This method is implemented on macOS and Windows.
 
 .. rst-class:: classref-item-separator
 

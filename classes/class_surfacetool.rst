@@ -341,7 +341,7 @@ Clear all information passed into the surface tool so far.
 
 Returns a constructed :ref:`ArrayMesh<class_ArrayMesh>` from current information passed in. If an existing :ref:`ArrayMesh<class_ArrayMesh>` is passed in as an argument, will add an extra surface to the existing :ref:`ArrayMesh<class_ArrayMesh>`.
 
-\ **FIXME:** Document possible values for ``flags``, it changed in 4.0. Likely some combinations of :ref:`ArrayFormat<enum_Mesh_ArrayFormat>`.
+The ``flags`` argument can be the bitwise OR of :ref:`Mesh.ARRAY_FLAG_USE_DYNAMIC_UPDATE<class_Mesh_constant_ARRAY_FLAG_USE_DYNAMIC_UPDATE>`, :ref:`Mesh.ARRAY_FLAG_USE_8_BONE_WEIGHTS<class_Mesh_constant_ARRAY_FLAG_USE_8_BONE_WEIGHTS>`, or :ref:`Mesh.ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY<class_Mesh_constant_ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY>`.
 
 .. rst-class:: classref-item-separator
 

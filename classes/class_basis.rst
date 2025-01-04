@@ -598,7 +598,9 @@ Creates a new **Basis** with a rotation such that the forward axis (-Z) points t
 
 By default, the -Z axis (camera forward) is treated as forward (implies +X is right). If ``use_model_front`` is ``true``, the +Z axis (asset front) is treated as forward (implies +X is left) and points toward the ``target`` position.
 
-The up axis (+Y) points as close to the ``up`` vector as possible while staying perpendicular to the forward axis. The returned basis is orthonormalized (see :ref:`orthonormalized<class_Basis_method_orthonormalized>`). The ``target`` and ``up`` vectors cannot be :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, and cannot be parallel to each other.
+The up axis (+Y) points as close to the ``up`` vector as possible while staying perpendicular to the forward axis. The returned basis is orthonormalized (see :ref:`orthonormalized<class_Basis_method_orthonormalized>`).
+
+The ``target`` and the ``up`` cannot be :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, and shouldn't be colinear to avoid unintended rotation around local Z axis.
 
 .. rst-class:: classref-item-separator
 

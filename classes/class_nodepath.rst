@@ -230,7 +230,7 @@ Returns a copy of this node path with a colon character (``:``) prefixed, transf
     
     // propertyPath points to the "position" in the "x" axis of this node.
     NodePath propertyPath = nodePath.GetAsPropertyPath();
-    GD.Print(propertyPath); // Prints ":position:x".
+    GD.Print(propertyPath); // Prints ":position:x"
 
 
 
@@ -264,12 +264,12 @@ Returns all property subnames concatenated with a colon character (``:``) as a s
  .. code-tab:: gdscript
 
     var node_path = ^"Sprite2D:texture:resource_name"
-    print(node_path.get_concatenated_subnames()) # Prints "texture:resource_name".
+    print(node_path.get_concatenated_subnames()) # Prints "texture:resource_name"
 
  .. code-tab:: csharp
 
     var nodePath = new NodePath("Sprite2D:texture:resource_name");
-    GD.Print(nodePath.GetConcatenatedSubnames()); // Prints "texture:resource_name".
+    GD.Print(nodePath.GetConcatenatedSubnames()); // Prints "texture:resource_name"
 
 
 
@@ -291,16 +291,16 @@ Returns the node name indicated by ``idx``, starting from 0. If ``idx`` is out o
  .. code-tab:: gdscript
 
     var sprite_path = NodePath("../RigidBody2D/Sprite2D")
-    print(sprite_path.get_name(0)) # Prints "..".
-    print(sprite_path.get_name(1)) # Prints "RigidBody2D".
-    print(sprite_path.get_name(2)) # Prints "Sprite".
+    print(sprite_path.get_name(0)) # Prints ".."
+    print(sprite_path.get_name(1)) # Prints "RigidBody2D"
+    print(sprite_path.get_name(2)) # Prints "Sprite"
 
  .. code-tab:: csharp
 
     var spritePath = new NodePath("../RigidBody2D/Sprite2D");
-    GD.Print(spritePath.GetName(0)); // Prints "..".
-    GD.Print(spritePath.GetName(1)); // Prints "PathFollow2D".
-    GD.Print(spritePath.GetName(2)); // Prints "Sprite".
+    GD.Print(spritePath.GetName(0)); // Prints ".."
+    GD.Print(spritePath.GetName(1)); // Prints "PathFollow2D"
+    GD.Print(spritePath.GetName(2)); // Prints "Sprite"
 
 
 
@@ -336,14 +336,14 @@ Returns the property name indicated by ``idx``, starting from 0. If ``idx`` is o
  .. code-tab:: gdscript
 
     var path_to_name = NodePath("Sprite2D:texture:resource_name")
-    print(path_to_name.get_subname(0)) # Prints "texture".
-    print(path_to_name.get_subname(1)) # Prints "resource_name".
+    print(path_to_name.get_subname(0)) # Prints "texture"
+    print(path_to_name.get_subname(1)) # Prints "resource_name"
 
  .. code-tab:: csharp
 
     var pathToName = new NodePath("Sprite2D:texture:resource_name");
-    GD.Print(pathToName.GetSubname(0)); // Prints "texture".
-    GD.Print(pathToName.GetSubname(1)); // Prints "resource_name".
+    GD.Print(pathToName.GetSubname(0)); // Prints "texture"
+    GD.Print(pathToName.GetSubname(1)); // Prints "resource_name"
 
 
 

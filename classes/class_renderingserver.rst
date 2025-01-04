@@ -1634,11 +1634,7 @@ Flag used to mark an index array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_BLEND_SHAPE_MASK** = ``7``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Mask of mesh channels permitted in blend shapes.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_CUSTOM_BASE:
 
@@ -1646,11 +1642,7 @@ Flag used to mark an index array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_CUSTOM_BASE** = ``13``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Shift of first custom channel.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_CUSTOM_BITS:
 
@@ -1658,11 +1650,7 @@ Flag used to mark an index array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_CUSTOM_BITS** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Number of format bits per custom channel. See :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>`.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_CUSTOM0_SHIFT:
 
@@ -1670,11 +1658,7 @@ Flag used to mark an index array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_CUSTOM0_SHIFT** = ``13``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Amount to shift :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` for custom channel index 0.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_CUSTOM1_SHIFT:
 
@@ -1682,11 +1666,7 @@ Flag used to mark an index array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_CUSTOM1_SHIFT** = ``16``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Amount to shift :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` for custom channel index 1.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_CUSTOM2_SHIFT:
 
@@ -1694,11 +1674,7 @@ Flag used to mark an index array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_CUSTOM2_SHIFT** = ``19``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Amount to shift :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` for custom channel index 2.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_CUSTOM3_SHIFT:
 
@@ -1706,11 +1682,7 @@ Flag used to mark an index array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_CUSTOM3_SHIFT** = ``22``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Amount to shift :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` for custom channel index 3.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_CUSTOM_MASK:
 
@@ -1718,11 +1690,7 @@ Flag used to mark an index array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_CUSTOM_MASK** = ``7``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Mask of custom format bits per custom channel. Must be shifted by one of the SHIFT constants. See :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>`.
 
 .. _class_RenderingServer_constant_ARRAY_COMPRESS_FLAGS_BASE:
 
@@ -1730,11 +1698,7 @@ Flag used to mark an index array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_COMPRESS_FLAGS_BASE** = ``25``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Shift of first compress flag. Compress flags should be passed to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` and :ref:`SurfaceTool.commit<class_SurfaceTool_method_commit>`.
 
 .. _class_RenderingServer_constant_ARRAY_FLAG_USE_2D_VERTICES:
 
@@ -1750,11 +1714,7 @@ Flag used to mark that the array contains 2D vertices.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_USE_DYNAMIC_UPDATE** = ``67108864``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Flag indices that the mesh data will use ``GL_DYNAMIC_DRAW`` on GLES. Unused on Vulkan.
 
 .. _class_RenderingServer_constant_ARRAY_FLAG_USE_8_BONE_WEIGHTS:
 
@@ -11759,16 +11719,14 @@ Copies the viewport to a region of the screen specified by ``rect``. If :ref:`vi
 
 For example, you can set the root viewport to not render at all with the following code:
 
-FIXME: The method seems to be non-existent.
-
 
 .. tabs::
 
  .. code-tab:: gdscript
 
     func _ready():
-        get_viewport().set_attach_to_screen_rect(Rect2())
-        $Viewport.set_attach_to_screen_rect(Rect2(0, 0, 600, 600))
+        RenderingServer.viewport_attach_to_screen(get_viewport().get_viewport_rid(), Rect2())
+        RenderingServer.viewport_attach_to_screen($Viewport.get_viewport_rid(), Rect2(0, 0, 600, 600))
 
 
 

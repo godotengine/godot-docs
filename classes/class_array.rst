@@ -784,7 +784,7 @@ Returns the index of the **first** element in the array that causes ``method`` t
         return number % 2 == 0
     
     func _ready():
-        print([1, 3, 4, 7].find_custom(is_even.bind())) # prints 2
+        print([1, 3, 4, 7].find_custom(is_even.bind())) # Prints 2
 
 
 
@@ -1172,10 +1172,10 @@ If :ref:`max<class_Array_method_max>` is not desirable, this method may also be 
 ::
 
     func _ready():
-        var arr = [Vector2(5, 0), Vector2(3, 4), Vector2(1, 2)]
+        var arr = [Vector2i(5, 0), Vector2i(3, 4), Vector2i(1, 2)]
     
         var longest_vec = arr.reduce(func(max, vec): return vec if is_length_greater(vec, max) else max)
-        print(longest_vec) # Prints Vector2(3, 4).
+        print(longest_vec) # Prints (3, 4)
     
     func is_length_greater(a, b):
         return a.length() > b.length()
@@ -1189,11 +1189,11 @@ This method can also be used to count how many elements in an array satisfy a ce
     
     func _ready():
         var arr = [1, 2, 3, 4, 5]
-        # Increment count if it's even, else leaves count the same.
+        # If the current element is even, increment count, otherwise leave count the same.
         var even_count = arr.reduce(func(count, next): return count + 1 if is_even(next) else count, 0)
         print(even_count) # Prints 2
 
-See also :ref:`map<class_Array_method_map>`, :ref:`filter<class_Array_method_filter>`, :ref:`any<class_Array_method_any>` and :ref:`all<class_Array_method_all>`.
+See also :ref:`map<class_Array_method_map>`, :ref:`filter<class_Array_method_filter>`, :ref:`any<class_Array_method_any>`, and :ref:`all<class_Array_method_all>`.
 
 .. rst-class:: classref-item-separator
 

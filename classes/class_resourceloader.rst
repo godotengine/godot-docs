@@ -234,9 +234,9 @@ Returns the dependencies for the resource at the given ``path``.
 
 ::
 
-    for dep in ResourceLoader.get_dependencies(path):
-        print(dep.get_slice("::", 0)) # Prints UID.
-        print(dep.get_slice("::", 2)) # Prints path.
+    for dependency in ResourceLoader.get_dependencies(path):
+        print(dependency.get_slice("::", 0)) # Prints the UID.
+        print(dependency.get_slice("::", 2)) # Prints the path.
 
 .. rst-class:: classref-item-separator
 

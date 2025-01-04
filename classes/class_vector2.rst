@@ -673,9 +673,9 @@ Creates a unit **Vector2** rotated to the given ``angle`` in radians. This is eq
 
 ::
 
-    print(Vector2.from_angle(0)) # Prints (1.0, 0.0).
+    print(Vector2.from_angle(0)) # Prints (1.0, 0.0)
     print(Vector2(1, 0).angle()) # Prints 0.0, which is the angle used above.
-    print(Vector2.from_angle(PI / 2)) # Prints (0.0, 1.0).
+    print(Vector2.from_angle(PI / 2)) # Prints (0.0, 1.0)
 
 .. rst-class:: classref-item-separator
 

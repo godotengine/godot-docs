@@ -134,7 +134,7 @@ The current state of the random number generator. Save and restore this property
     var saved_state = rng.state # Store current state.
     print(rng.randf()) # Advance internal state.
     rng.state = saved_state # Restore the state.
-    print(rng.randf()) # Prints the same value as in previous.
+    print(rng.randf()) # Prints the same value as previously.
 
 \ **Note:** Do not set state to arbitrary values, since the random number generator requires the state to have certain qualities to behave properly. It should only be set to values that came from the state property itself. To initialize the random number generator with arbitrary input, use :ref:`seed<class_RandomNumberGenerator_property_seed>` instead.
 

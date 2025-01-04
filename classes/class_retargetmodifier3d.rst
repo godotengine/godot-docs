@@ -33,17 +33,82 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                       | :ref:`position_enabled<class_RetargetModifier3D_property_position_enabled>` | ``true``  |
-   +-----------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`SkeletonProfile<class_SkeletonProfile>` | :ref:`profile<class_RetargetModifier3D_property_profile>`                   |           |
-   +-----------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                       | :ref:`rotation_enabled<class_RetargetModifier3D_property_rotation_enabled>` | ``true``  |
-   +-----------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                       | :ref:`scale_enabled<class_RetargetModifier3D_property_scale_enabled>`       | ``true``  |
-   +-----------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                       | :ref:`use_global_pose<class_RetargetModifier3D_property_use_global_pose>`   | ``false`` |
-   +-----------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   +---------------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+   | |bitfield|\[:ref:`TransformFlag<enum_RetargetModifier3D_TransformFlag>`\] | :ref:`enable<class_RetargetModifier3D_property_enable>`                   | ``7``     |
+   +---------------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`SkeletonProfile<class_SkeletonProfile>`                             | :ref:`profile<class_RetargetModifier3D_property_profile>`                 |           |
+   +---------------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                   | :ref:`use_global_pose<class_RetargetModifier3D_property_use_global_pose>` | ``false`` |
+   +---------------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_position_enabled<class_RetargetModifier3D_method_is_position_enabled>`\ (\ ) |const|                              |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_rotation_enabled<class_RetargetModifier3D_method_is_rotation_enabled>`\ (\ ) |const|                              |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_scale_enabled<class_RetargetModifier3D_method_is_scale_enabled>`\ (\ ) |const|                                    |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_position_enabled<class_RetargetModifier3D_method_set_position_enabled>`\ (\ enabled\: :ref:`bool<class_bool>`\ ) |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_rotation_enabled<class_RetargetModifier3D_method_set_rotation_enabled>`\ (\ enabled\: :ref:`bool<class_bool>`\ ) |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_scale_enabled<class_RetargetModifier3D_method_set_scale_enabled>`\ (\ enabled\: :ref:`bool<class_bool>`\ )       |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_RetargetModifier3D_TransformFlag:
+
+.. rst-class:: classref-enumeration
+
+flags **TransformFlag**: :ref:`🔗<enum_RetargetModifier3D_TransformFlag>`
+
+.. _class_RetargetModifier3D_constant_TRANSFORM_FLAG_POSITION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransformFlag<enum_RetargetModifier3D_TransformFlag>` **TRANSFORM_FLAG_POSITION** = ``1``
+
+If set, allows to retarget the position.
+
+.. _class_RetargetModifier3D_constant_TRANSFORM_FLAG_ROTATION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransformFlag<enum_RetargetModifier3D_TransformFlag>` **TRANSFORM_FLAG_ROTATION** = ``2``
+
+If set, allows to retarget the rotation.
+
+.. _class_RetargetModifier3D_constant_TRANSFORM_FLAG_SCALE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransformFlag<enum_RetargetModifier3D_TransformFlag>` **TRANSFORM_FLAG_SCALE** = ``4``
+
+If set, allows to retarget the scale.
+
+.. _class_RetargetModifier3D_constant_TRANSFORM_FLAG_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransformFlag<enum_RetargetModifier3D_TransformFlag>` **TRANSFORM_FLAG_ALL** = ``7``
+
+If set, allows to retarget the position/rotation/scale.
 
 .. rst-class:: classref-section-separator
 
@@ -54,18 +119,18 @@ Properties
 Property Descriptions
 ---------------------
 
-.. _class_RetargetModifier3D_property_position_enabled:
+.. _class_RetargetModifier3D_property_enable:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **position_enabled** = ``true`` :ref:`🔗<class_RetargetModifier3D_property_position_enabled>`
+|bitfield|\[:ref:`TransformFlag<enum_RetargetModifier3D_TransformFlag>`\] **enable** = ``7`` :ref:`🔗<class_RetargetModifier3D_property_enable>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_position_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
-- :ref:`bool<class_bool>` **is_position_enabled**\ (\ )
+- |void| **set_enable_flags**\ (\ value\: |bitfield|\[:ref:`TransformFlag<enum_RetargetModifier3D_TransformFlag>`\]\ )
+- |bitfield|\[:ref:`TransformFlag<enum_RetargetModifier3D_TransformFlag>`\] **get_enable_flags**\ (\ )
 
-If ``true``, allows to retarget the position.
+Flags to control the process of the transform elements individually when :ref:`use_global_pose<class_RetargetModifier3D_property_use_global_pose>` is disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -83,40 +148,6 @@ If ``true``, allows to retarget the position.
 - :ref:`SkeletonProfile<class_SkeletonProfile>` **get_profile**\ (\ )
 
 :ref:`SkeletonProfile<class_SkeletonProfile>` for retargeting bones with names matching the bone list.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_RetargetModifier3D_property_rotation_enabled:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **rotation_enabled** = ``true`` :ref:`🔗<class_RetargetModifier3D_property_rotation_enabled>`
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_rotation_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
-- :ref:`bool<class_bool>` **is_rotation_enabled**\ (\ )
-
-If ``true``, allows to retarget the rotation.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_RetargetModifier3D_property_scale_enabled:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **scale_enabled** = ``true`` :ref:`🔗<class_RetargetModifier3D_property_scale_enabled>`
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_scale_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
-- :ref:`bool<class_bool>` **is_scale_enabled**\ (\ )
-
-If ``true``, allows to retarget the scale.
 
 .. rst-class:: classref-item-separator
 
@@ -142,6 +173,83 @@ If ``true``, retargeting is performed taking into account global pose.
 In case the target skeleton has fewer bones than the source skeleton, the source bone parent's transform is taken into account. However, bone length between skeletons must match exactly, if not, the bones will be forced to expand or shrink.
 
 This is useful for using dummy bone with length ``0`` to match postures when retargeting between models with different number of bones.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_RetargetModifier3D_method_is_position_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_position_enabled**\ (\ ) |const| :ref:`🔗<class_RetargetModifier3D_method_is_position_enabled>`
+
+Returns ``true`` if :ref:`enable<class_RetargetModifier3D_property_enable>` has :ref:`TRANSFORM_FLAG_POSITION<class_RetargetModifier3D_constant_TRANSFORM_FLAG_POSITION>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RetargetModifier3D_method_is_rotation_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_rotation_enabled**\ (\ ) |const| :ref:`🔗<class_RetargetModifier3D_method_is_rotation_enabled>`
+
+Returns ``true`` if :ref:`enable<class_RetargetModifier3D_property_enable>` has :ref:`TRANSFORM_FLAG_ROTATION<class_RetargetModifier3D_constant_TRANSFORM_FLAG_ROTATION>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RetargetModifier3D_method_is_scale_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_scale_enabled**\ (\ ) |const| :ref:`🔗<class_RetargetModifier3D_method_is_scale_enabled>`
+
+Returns ``true`` if :ref:`enable<class_RetargetModifier3D_property_enable>` has :ref:`TRANSFORM_FLAG_SCALE<class_RetargetModifier3D_constant_TRANSFORM_FLAG_SCALE>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RetargetModifier3D_method_set_position_enabled:
+
+.. rst-class:: classref-method
+
+|void| **set_position_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RetargetModifier3D_method_set_position_enabled>`
+
+Sets :ref:`TRANSFORM_FLAG_POSITION<class_RetargetModifier3D_constant_TRANSFORM_FLAG_POSITION>` into :ref:`enable<class_RetargetModifier3D_property_enable>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RetargetModifier3D_method_set_rotation_enabled:
+
+.. rst-class:: classref-method
+
+|void| **set_rotation_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RetargetModifier3D_method_set_rotation_enabled>`
+
+Sets :ref:`TRANSFORM_FLAG_ROTATION<class_RetargetModifier3D_constant_TRANSFORM_FLAG_ROTATION>` into :ref:`enable<class_RetargetModifier3D_property_enable>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RetargetModifier3D_method_set_scale_enabled:
+
+.. rst-class:: classref-method
+
+|void| **set_scale_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ ) :ref:`🔗<class_RetargetModifier3D_method_set_scale_enabled>`
+
+Sets :ref:`TRANSFORM_FLAG_SCALE<class_RetargetModifier3D_constant_TRANSFORM_FLAG_SCALE>` into :ref:`enable<class_RetargetModifier3D_property_enable>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
