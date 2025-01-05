@@ -228,7 +228,7 @@ Multiplies each component of the :ref:`Color<class_Color>`, including the alpha,
 
 ::
 
-    print(1.5 * Color(0.5, 0.5, 0.5)) # Prints "(0.75, 0.75, 0.75, 1.5)"
+    print(1.5 * Color(0.5, 0.5, 0.5)) # Prints (0.75, 0.75, 0.75, 1.5)
 
 .. rst-class:: classref-item-separator
 
@@ -256,7 +256,7 @@ Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given **fl
 
 ::
 
-    print(2.5 * Vector2(1, 3)) # Prints "(2.5, 7.5)"
+    print(2.5 * Vector2(1, 3)) # Prints (2.5, 7.5)
 
 .. rst-class:: classref-item-separator
 

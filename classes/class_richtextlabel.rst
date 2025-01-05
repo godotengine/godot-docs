@@ -347,6 +347,8 @@ Signals
 
 Triggered when the document is fully loaded.
 
+\ **Note:** This can happen before the text is processed for drawing. Scrolling values may not be valid until the document is drawn for the first time after this signal.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -569,7 +569,7 @@ Gets the remainder of each component of the **Vector4i** with the components of 
 
 ::
 
-    print(Vector4i(10, -20, 30, -40) % Vector4i(7, 8, 9, 10))  # Prints (3, -4, 3, 0)
+    print(Vector4i(10, -20, 30, -40) % Vector4i(7, 8, 9, 10)) # Prints (3, -4, 3, 0)
 
 .. rst-class:: classref-item-separator
 
@@ -585,7 +585,7 @@ Gets the remainder of each component of the **Vector4i** with the given :ref:`in
 
 ::
 
-    print(Vector4i(10, -20, 30, -40) % 7)  # Prints (3, -6, 2, -5)
+    print(Vector4i(10, -20, 30, -40) % 7) # Prints (3, -6, 2, -5)
 
 .. rst-class:: classref-item-separator
 
@@ -697,7 +697,7 @@ Returns a Vector4 value due to floating-point operations.
 
 ::
 
-    print(Vector4i(10, 20, 30, 40) / 2 # Prints (5.0, 10.0, 15.0, 20.0)
+    print(Vector4i(10, 20, 30, 40) / 2) # Prints (5.0, 10.0, 15.0, 20.0)
 
 .. rst-class:: classref-item-separator
 

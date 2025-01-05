@@ -180,6 +180,8 @@ Methods
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Tween<class_Tween>`                     | :ref:`set_ease<class_Tween_method_set_ease>`\ (\ ease\: :ref:`EaseType<enum_Tween_EaseType>`\ )                                                                                                                                                                                                                                                                            |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Tween<class_Tween>`                     | :ref:`set_ignore_time_scale<class_Tween_method_set_ignore_time_scale>`\ (\ ignore\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                                                                                                      |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Tween<class_Tween>`                     | :ref:`set_loops<class_Tween_method_set_loops>`\ (\ loops\: :ref:`int<class_int>` = 0\ )                                                                                                                                                                                                                                                                                    |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Tween<class_Tween>`                     | :ref:`set_parallel<class_Tween_method_set_parallel>`\ (\ parallel\: :ref:`bool<class_bool>` = true\ )                                                                                                                                                                                                                                                                      |
@@ -686,6 +688,18 @@ Before this method is called, the default ease type is :ref:`EASE_IN_OUT<class_T
     tween.tween_property(self, "position", Vector2(300, 0), 0.5) # Uses EASE_IN_OUT.
     tween.set_ease(Tween.EASE_IN)
     tween.tween_property(self, "rotation_degrees", 45.0, 0.5) # Uses EASE_IN.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tween_method_set_ignore_time_scale:
+
+.. rst-class:: classref-method
+
+:ref:`Tween<class_Tween>` **set_ignore_time_scale**\ (\ ignore\: :ref:`bool<class_bool>` = true\ ) :ref:`🔗<class_Tween_method_set_ignore_time_scale>`
+
+If ``ignore`` is ``true``, the tween will ignore :ref:`Engine.time_scale<class_Engine_property_time_scale>` and update with the real, elapsed time. This affects all :ref:`Tweener<class_Tweener>`\ s and their delays. Default value is ``false``.
 
 .. rst-class:: classref-item-separator
 

@@ -37,7 +37,7 @@ The **JSON** class enables all data types to be converted to and from a JSON str
     if error == OK:
         var data_received = json.data
         if typeof(data_received) == TYPE_ARRAY:
-            print(data_received) # Prints array
+            print(data_received) # Prints the array.
         else:
             print("Unexpected data")
     else:

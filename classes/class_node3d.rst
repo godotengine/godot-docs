@@ -798,7 +798,9 @@ Rotates the node so that the local forward axis (-Z, :ref:`Vector3.FORWARD<class
 
 The local up axis (+Y) points as close to the ``up`` vector as possible while staying perpendicular to the local forward axis. The resulting transform is orthogonal, and the scale is preserved. Non-uniform scaling may not work correctly.
 
-The ``target`` position cannot be the same as the node's position, the ``up`` vector cannot be zero, and the direction from the node's position to the ``target`` vector cannot be parallel to the ``up`` vector.
+The ``target`` position cannot be the same as the node's position, the ``up`` vector cannot be zero.
+
+The ``target`` and the ``up`` cannot be :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, and shouldn't be colinear to avoid unintended rotation around local Z axis.
 
 Operations take place in global space, which means that the node must be in the scene tree.
 

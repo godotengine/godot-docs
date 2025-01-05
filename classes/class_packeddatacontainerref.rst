@@ -24,7 +24,7 @@ When packing nested containers using :ref:`PackedDataContainer<class_PackedDataC
 ::
 
     var packed = PackedDataContainer.new()
-    packed.pack([1, 2, 3, ["abc", "def"], 4, 5, 6])
+    packed.pack([1, 2, 3, ["nested1", "nested2"], 4, 5, 6])
     
     for element in packed:
         if element is PackedDataContainerRef:
@@ -32,16 +32,19 @@ When packing nested containers using :ref:`PackedDataContainer<class_PackedDataC
                 print("::", subelement)
         else:
             print(element)
-    
-    # Prints:
-    # 1
-    # 2
-    # 3
-    # ::abc
-    # ::def
-    # 4
-    # 5
-    # 6
+
+Prints:
+
+.. code:: text
+
+    1
+    2
+    3
+    ::nested1
+    ::nested2
+    4
+    5
+    6
 
 .. rst-class:: classref-reftable-group
 

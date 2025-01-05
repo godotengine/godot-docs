@@ -950,6 +950,8 @@ Method Descriptions
 
 :ref:`Color<class_Color>` **Color8**\ (\ r8\: :ref:`int<class_int>`, g8\: :ref:`int<class_int>`, b8\: :ref:`int<class_int>`, a8\: :ref:`int<class_int>` = 255\ ) :ref:`🔗<class_@GDScript_method_Color8>`
 
+**Deprecated:** Use :ref:`Color.from_rgba8<class_Color_method_from_rgba8>` instead.
+
 Returns a :ref:`Color<class_Color>` constructed from red (``r8``), green (``g8``), blue (``b8``), and optionally alpha (``a8``) integer channels, each divided by ``255.0`` for their final value. Using :ref:`Color8<class_@GDScript_method_Color8>` instead of the standard :ref:`Color<class_Color>` constructor is useful when you need to match exact color values in an :ref:`Image<class_Image>`.
 
 ::

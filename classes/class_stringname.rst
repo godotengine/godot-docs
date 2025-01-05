@@ -691,10 +691,10 @@ See also the :doc:`GDScript format string <../tutorials/scripting/gdscript/gdscr
 
 ::
 
-    print("{0} {1}".format(["{1}", "x"]))           # Prints "x x".
-    print("{0} {1}".format(["x", "{0}"]))           # Prints "x {0}".
-    print("{a} {b}".format({"a": "{b}", "b": "c"})) # Prints "c c".
-    print("{a} {b}".format({"b": "c", "a": "{b}"})) # Prints "{b} c".
+    print("{0} {1}".format(["{1}", "x"]))           # Prints "x x"
+    print("{0} {1}".format(["x", "{0}"]))           # Prints "x {0}"
+    print("{a} {b}".format({"a": "{b}", "b": "c"})) # Prints "c c"
+    print("{a} {b}".format({"b": "c", "a": "{b}"})) # Prints "{b} c"
 
 \ **Note:** In C#, it's recommended to `interpolate strings with "$" <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated>`__, instead.
 

@@ -121,6 +121,8 @@ Methods
    +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`   | :ref:`from_ok_hsl<class_Color_method_from_ok_hsl>`\ (\ h\: :ref:`float<class_float>`, s\: :ref:`float<class_float>`, l\: :ref:`float<class_float>`, alpha\: :ref:`float<class_float>` = 1.0\ ) |static| |
    +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`   | :ref:`from_rgba8<class_Color_method_from_rgba8>`\ (\ r8\: :ref:`int<class_int>`, g8\: :ref:`int<class_int>`, b8\: :ref:`int<class_int>`, a8\: :ref:`int<class_int>` = 255\ ) |static|                   |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`   | :ref:`from_rgbe9995<class_Color_method_from_rgbe9995>`\ (\ rgbe\: :ref:`int<class_int>`\ ) |static|                                                                                                     |
    +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`   | :ref:`from_string<class_Color_method_from_string>`\ (\ str\: :ref:`String<class_String>`, default\: :ref:`Color<class_Color>`\ ) |static|                                                               |
@@ -1788,6 +1790,26 @@ Constructs a color from an `OK HSL profile <https://bottosson.github.io/posts/co
     var color = Color.FromOkHsl(0.58f, 0.5f, 0.79f, 0.8f);
 
 
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Color_method_from_rgba8:
+
+.. rst-class:: classref-method
+
+:ref:`Color<class_Color>` **from_rgba8**\ (\ r8\: :ref:`int<class_int>`, g8\: :ref:`int<class_int>`, b8\: :ref:`int<class_int>`, a8\: :ref:`int<class_int>` = 255\ ) |static| :ref:`🔗<class_Color_method_from_rgba8>`
+
+Returns a **Color** constructed from red (``r8``), green (``g8``), blue (``b8``), and optionally alpha (``a8``) integer channels, each divided by ``255.0`` for their final value.
+
+::
+
+    var red = Color.from_rgba8(255, 0, 0)             # Same as Color(1, 0, 0).
+    var dark_blue = Color.from_rgba8(0, 0, 51)        # Same as Color(0, 0, 0.2).
+    var my_color = Color.from_rgba8(306, 255, 0, 102) # Same as Color(1.2, 1, 0, 0.4).
+
+\ **Note:** Due to the lower precision of :ref:`from_rgba8<class_Color_method_from_rgba8>` compared to the standard **Color** constructor, a color created with :ref:`from_rgba8<class_Color_method_from_rgba8>` will generally not be equal to the same color created with the standard **Color** constructor. Use :ref:`is_equal_approx<class_Color_method_is_equal_approx>` for comparisons to avoid issues with floating-point precision error.
 
 .. rst-class:: classref-item-separator
 

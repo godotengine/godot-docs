@@ -166,7 +166,7 @@ Add a submenu to the context menu of the plugin's specified slot. The submenu is
         popup_menu.add_item("White")
         popup_menu.id_pressed.connect(_on_color_submenu_option)
     
-        add_context_menu_item("Set Node Color", popup_menu)
+        add_context_submenu_item("Set Node Color", popup_menu)
 
 .. rst-class:: classref-item-separator
 
