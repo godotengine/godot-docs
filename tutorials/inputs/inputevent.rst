@@ -121,7 +121,7 @@ the following graphic, in a reverse depth-first order, starting with the node at
 the scene tree, and ending at the root node. Excluded from this process are Windows
 and SubViewports.
 
-.. image:: img/input_event_scene_flow.png
+.. image:: img/input_event_scene_flow.webp
 
 This order doesn't apply to :ref:`Control._gui_input() <class_Control_private_method__gui_input>`, which uses
 a different method based on event location or focused Control.

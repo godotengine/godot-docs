@@ -36,7 +36,7 @@ BaseMaterial 3D settings
 StandardMaterial3D has many settings that determine the look of a material. All of these are
 under the BaseMaterial3D category
 
-.. image:: img/spatial_material1.png
+.. image:: img/spatial_material1.webp
 
 ORM materials are almost exactly the same with one difference. Instead of separate settings
 and textures for occlusion, roughness, and metallic, there is a single ORM texture. The different
@@ -328,7 +328,7 @@ Vertex Color
 This setting allows choosing what is done by default to vertex colors that come
 from your 3D modeling application. By default, they are ignored.
 
-.. image:: img/spatial_material4.png
+.. image:: img/spatial_material4.webp
 
 Use as Albedo
 ~~~~~~~~~~~~~
@@ -647,7 +647,7 @@ faces the camera:
 * **Particle Billboard:** Most suited for particle systems, because it allows
   specifying :ref:`flipbook animation <doc_process_material_properties_animation>`.
 
-.. image:: img/spatial_material9.png
+.. image:: img/spatial_material9.webp
 
 The **Particles Anim** section is only visible when the billboard mode is **Particle Billboard**.
 

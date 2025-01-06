@@ -166,7 +166,7 @@ the Inspector dock, or scripts. This allows to make granular changes to a
 particular part of the UI, while not affecting anything else in the project,
 including this control's children.
 
-.. figure:: img/themecheck.png
+.. figure:: img/themecheck.webp
    :align: center
 
 Local overrides are less useful for the visual flair of your user interface,
