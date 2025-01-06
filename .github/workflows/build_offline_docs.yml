@@ -32,7 +32,7 @@ jobs:
           sudo apt install parallel libwebp7
 
       - name: Sphinx - Build HTML
-        run: make SPHINXOPTS='--color' html
+        run: make SPHINXOPTS='--color -j 4' html
 
       - uses: actions/upload-artifact@v4
         with:
@@ -54,7 +54,7 @@ jobs:
           sed -i 's/"godot_is_latest": True/"godot_is_latest": False/' conf.py
           sed -i 's/"godot_show_article_status": True/"godot_show_article_status": False/' conf.py
 
-          make SPHINXOPTS='--color' epub
+          make SPHINXOPTS='--color -j 4' epub
 
       - uses: actions/upload-artifact@v4
         with:

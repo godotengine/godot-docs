@@ -23,4 +23,4 @@ jobs:
 
       # Use dummy builder to improve performance as we don't need the generated HTML in this workflow.
       - name: Sphinx build
-        run: make SPHINXOPTS='--color -W' dummy
+        run: make SPHINXOPTS='--color -j 4 -W' dummy
