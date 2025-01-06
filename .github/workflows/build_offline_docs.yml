@@ -18,6 +18,8 @@ jobs:
           - master
           - stable
           - 3.6
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
