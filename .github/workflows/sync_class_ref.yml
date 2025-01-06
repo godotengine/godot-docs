@@ -19,7 +19,7 @@ jobs:
     # Manual runs can still be triggered as normal.
     if: ${{ github.repository_owner == 'godotengine' || github.event_name != 'schedule' || vars.CI_SYNC_CLASS_REF_CRON == 'true' }}
     name: Update class reference files based on the engine revision
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       engine_rev: 'master'
 
