@@ -11,7 +11,7 @@ on:
 
 # Make sure jobs cannot overlap.
 concurrency:
-  group: classref-sync-ci-master
+  group: classref-sync-ci-${{ github.ref_name }}
   cancel-in-progress: true
 
 jobs:
