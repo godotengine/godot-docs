@@ -3,9 +3,10 @@ name: Sync Class Reference
 on:
   workflow_dispatch:
   # Scheduled updates only run on the default/master branch.
+  # Other branches need to be run manually (usually after a new release for that branch).
   schedule:
-    # Run it at night (European time) every Saturday.
-    # The offset is there to try and avoid the high load times.
+    # Run it at (European) night time every Saturday.
+    # The offset is there to try and avoid high load times.
     - cron: '15 3 * * 6'
 
 # Make sure jobs cannot overlap.

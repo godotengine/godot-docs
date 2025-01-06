@@ -9,5 +9,7 @@ updates:
     schedule:
       interval: "daily"
     ignore:
-      # ReadTheDocs is staying on v1.
+      # We need to decide on when we upgrade Sphinx manually,
+      # as historically, this has been proven to often imply larger changes
+      # (RTD compat, upgrading extensions, other dependencies, our content, etc.).
       - dependency-name: "sphinx"
