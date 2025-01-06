@@ -19,6 +19,7 @@ jobs:
     # The cherrypick label is hardcoded because `contains()` doesn't seem to be able to use an environment variable as a second argument.
     if: ${{ github.event.pull_request.merged == true && contains( github.event.pull_request.labels.*.name, 'cherrypick:4.3' ) }}
     runs-on: ubuntu-24.04
+    timeout-minutes: 10
     env:
       # "Ternary" hack featured in the official docs.
       # When using "Squash and merge", the commit hash is the last merge commit of the pull request merge branch.
