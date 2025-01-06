@@ -18,9 +18,33 @@ jobs:
       - name: Style checks via pre-commit
         uses: pre-commit/action@v3.0.1
 
+      - name: Get Python version
+        id: pythonv
+        run: |
+          echo "PYTHON_VERSION=$(python --version)" >> $GITHUB_OUTPUT
+
+      - name: Restore cached virtualenv
+        uses: actions/cache/restore@v4
+        with:
+          key: venv-${{ runner.os }}-${{ steps.pythonv.outputs.PYTHON_VERSION }}-${{ hashFiles('requirements.txt') }}
+          path: .venv
+
       - name: Install dependencies
-        run: sudo pip3 install -r requirements.txt
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install -r requirements.txt
+          echo "$VIRTUAL_ENV/bin" >> $GITHUB_PATH
+          echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
+
+      - name: Save virtualenv cache
+        uses: actions/cache/save@v4
+        with:
+          key: venv-${{ runner.os }}-${{ steps.pythonv.outputs.PYTHON_VERSION }}-${{ hashFiles('requirements.txt') }}
+          path: .venv
 
       # Use dummy builder to improve performance as we don't need the generated HTML in this workflow.
       - name: Sphinx build
-        run: make SPHINXOPTS='--color -j 4 -W' dummy
+        run: |
+          source .venv/bin/activate
+          make SPHINXOPTS='--color -j 4 -W' dummy
