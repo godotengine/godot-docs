@@ -18,7 +18,8 @@ jobs:
   Create-cherrypick-PR:
     # The cherrypick label is hardcoded because `contains()` doesn't seem to be able to use an environment variable as a second argument.
     if: ${{ github.event.pull_request.merged == true && contains( github.event.pull_request.labels.*.name, 'cherrypick:4.3' ) }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
     env:
       # "Ternary" hack featured in the official docs.
       # When using "Squash and merge", the commit hash is the last merge commit of the pull request merge branch.
@@ -28,8 +29,11 @@ jobs:
       COMMIT_HASH: ${{ github.event.pull_request.commits > 1 && github.sha || github.event.pull_request.head.sha }}
       PR_NUMBER: ${{ github.event.number }}
 
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
-  
     - name: Checkout
       uses: actions/checkout@v4
       with:
