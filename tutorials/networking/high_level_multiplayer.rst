@@ -415,6 +415,7 @@ have loaded the game scene.
 
     func remove_multiplayer_peer():
         multiplayer.multiplayer_peer = null
+        players.clear()
 
 
     # When the server decides to start the game from a UI scene,
@@ -550,6 +551,7 @@ have loaded the game scene.
         private void RemoveMultiplayerPeer()
         {
             Multiplayer.MultiplayerPeer = null;
+            _players.Clear();
         }
 
         // When the server decides to start the game from a UI scene,
