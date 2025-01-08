@@ -12,7 +12,7 @@ RayCast3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A ray in 3D space, used to find the first :ref:`CollisionObject3D<class_CollisionObject3D>` it intersects.
+A ray in 3D space, used to find the first :ref:`Object<class_Object>` or :ref:`CollisionObject3D<class_CollisionObject3D>` it intersects.
 
 .. rst-class:: classref-introduction-group
 
@@ -348,7 +348,7 @@ Updates the collision information for the ray immediately, without waiting for t
 
 :ref:`Object<class_Object>` **get_collider**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collider>`
 
-Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
+Returns the first object intersected by the ray, if any (i.e. ``null`` if no object is intersecting the ray :ref:`is_colliding<class_RayCast3D_method_is_colliding>` and returns ``false``). This object is not guaranteed to be a :ref:`CollisionObject3D<class_CollisionObject3D>`. For instance, if the ray intersects a :ref:`CSGShape3D<class_csgshape3d>` or a :ref:`GridMap<class_gridmap>`, the method will return a :ref:`CSGShape3D<class_csgshape3d>` instance or :ref:`GridMap<class_gridmap>` instance both of which are not a :ref:`CollisionObject3D<class_CollisionObject3D>`. To validate and ensure type safety, you should explicitly check the type of the returned object before casting.
 
 .. rst-class:: classref-item-separator
 
