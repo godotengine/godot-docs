@@ -184,6 +184,28 @@ in many sections of the project settings.
 
 .. image:: img/feature_tags4.webp
 
+Taking feature tags into account when reading project settings
+--------------------------------------------------------------
+
+By default, feature tags are **not** taken into account when reading project settings
+using the typical approaches (:ref:`ProjectSettings.get_setting<class_ProjectSettings_method_get_setting>`
+or :ref:`ProjectSettings.get <class_Object_private_method__get>`).
+Instead, you must use :ref:`ProjectSettings.get_setting_with_override <class_ProjectSettings_method_get_setting>`.
+
+For example, with the following project settings:
+
+::
+
+    [section]
+
+    subsection/example = "Release"
+    subsection/example.debug = "Debug"
+
+Using ``ProjectSettings.get_setting("section/subsection/example")`` will return
+``"Release"`` regardless of whether a debug build is currently running. On the
+other hand, ``ProjectSettings.get_setting_with_override("section/subsection/example")``
+will obey feature tags and will return ``"Debug"`` if using a debug build.
+
 Customizing the build
 ---------------------
 
