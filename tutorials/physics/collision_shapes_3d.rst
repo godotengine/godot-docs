@@ -13,9 +13,10 @@ Godot provides many kinds of collision shapes, with different performance and
 accuracy tradeoffs.
 
 You can define the shape of a :ref:`class_PhysicsBody3D` by adding one or more
-:ref:`CollisionShape3Ds <class_CollisionShape3D>` as child nodes. Note that you must
-add a :ref:`class_Shape3D` *resource* to collision shape nodes in the Inspector
-dock.
+:ref:`CollisionShape3Ds <class_CollisionShape3D>` as *direct* child nodes.
+Indirect child nodes (i.e. children of child nodes) will be ignored and won't be
+used as collision shapes. Also, note that you must add a :ref:`class_Shape3D`
+*resource* to collision shape nodes in the Inspector dock.
 
 .. note::
 
