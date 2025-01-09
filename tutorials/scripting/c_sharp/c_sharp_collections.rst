@@ -67,7 +67,7 @@ Godot collections
 .. _doc_c_sharp_collections_packedarray:
 
 PackedArray
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Godot packed arrays are implemented as an array of a specific type, allowing it to be
 more tightly packed as each element has the size of the specific type, not ``Variant``.
@@ -95,7 +95,7 @@ does not exist. See the list of :ref:`c_sharp_variant_compatible_types`.
 .. _doc_c_sharp_collections_array:
 
 Array
-^^^^^
+~~~~~
 
 Godot arrays are implemented as an array of ``Variant`` and can contain several elements
 of any type. In C#, the equivalent type is ``Godot.Collections.Array``.
@@ -189,7 +189,7 @@ operator []              Array[int] indexer
 .. _doc_c_sharp_collections_dictionary:
 
 Dictionary
-^^^^^^^^^^
+~~~~~~~~~~
 
 Godot dictionaries are implemented as a dictionary with ``Variant`` keys and values.
 In C#, the equivalent type is ``Godot.Collections.Dictionary``.

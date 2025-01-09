@@ -1,0 +1,75 @@
+name: Create Cherrypick PR
+
+on:
+  pull_request:
+      types:
+        - closed
+      branches:
+        # TODO: Extract this to an env variable?
+        - 'master'
+
+env:
+  # TODO: Add a way to handle multiple potential cherrypick targets.
+  TARGET_BRANCH: '4.3'
+  USERNAME: 'Godot Organization'
+  EMAIL: 'noreply@godotengine.org'
+
+jobs:
+  Create-cherrypick-PR:
+    # The cherrypick label is hardcoded because `contains()` doesn't seem to be able to use an environment variable as a second argument.
+    if: ${{ github.event.pull_request.merged == true && contains( github.event.pull_request.labels.*.name, 'cherrypick:4.3' ) }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      # "Ternary" hack featured in the official docs.
+      # When using "Squash and merge", the commit hash is the last merge commit of the pull request merge branch.
+      # When using "Merge", the commit hash is the last commit to the head branch of the pull request.
+      # This is mildly error-prone, since in theory we could merge multiple commits without squashing.
+      # We are relying on human review of the generated PRs to catch that.
+      COMMIT_HASH: ${{ github.event.pull_request.commits > 1 && github.sha || github.event.pull_request.head.sha }}
+      PR_NUMBER: ${{ github.event.number }}
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ env.TARGET_BRANCH }}
+
+    - name: Cherrypick Commit
+      id: cherrypick_commit
+      continue-on-error: true
+      # TODO: Maybe only fetch some branches?
+      run: |
+        git config user.name "${{ env.USERNAME }}"
+        git config user.email "${{ env.EMAIL }}"
+        git fetch
+        git cherry-pick -m 1 ${{ env.COMMIT_HASH }}
+
+    - name: Create Pull Request
+      if: steps.cherrypick_commit.outcome == 'success'
+      uses: peter-evans/create-pull-request@v7
+      with:
+        commit-message: 'Cherrypick to ${{ env.TARGET_BRANCH }}'
+        branch: 'cherrypick-${{ env.PR_NUMBER }}-${{ env.TARGET_BRANCH }}'
+        delete-branch: true
+
+        # Configure the commit author.
+        author: '${{ env.USERNAME }} <${{ env.EMAIL }}>'
+        committer: '${{ env.USERNAME }} <${{ env.EMAIL }}>'
+
+        # Configure the pull request.
+        title: 'Cherrypick ${{ env.PR_NUMBER }} to ${{ env.TARGET_BRANCH }}'
+        body: 'Cherrypick #${{ env.PR_NUMBER }} to ${{ env.TARGET_BRANCH }}.'
+        # TODO: Only add the bug or enhancement label, depending on which the original PR uses.
+        labels: 'bug,enhancement'
+
+    - name: Handle failure
+      if: steps.cherrypick_commit.outcome == 'failure'
+      run: |
+        echo "Can't automatically cherrypick. Potential causes:"
+        echo "- PR has multiple commits. Did you squash and merge?"
+        echo "- Cherrypick did not apply cleanly and can't be auto-merged."

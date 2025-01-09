@@ -45,7 +45,7 @@ Setting up VideoStreamPlayer
    desired.
 
 Handling resizing and different aspect ratios
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By default in Godot 4.0, the VideoStreamPlayer will automatically be resized to match
 the video's resolution. You can make it follow usual :ref:`class_Control` sizing
@@ -85,7 +85,7 @@ to fit the whole screen while avoiding distortion.
     aspect ratios in your project.
 
 Displaying a video on a 3D surface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using a VideoStreamPlayer node as a child of a :ref:`class_SubViewport` node,
 it's possible to display any 2D node on a 3D surface. For example, this can be
@@ -117,7 +117,7 @@ See :ref:`doc_viewports` and the
 for more information on setting this up.
 
 Looping a video
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 For looping a video, the **Loop** property can be enabled. This will seamlessly
 restart the video when it reaches its end.
@@ -196,7 +196,7 @@ below with almost any input video format (AVI, MOV, WebM, …).
    at the ``configuration:`` line in the command output.
 
 Balancing quality and file size
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **video quality** level (``-q:v``) must be between ``1`` and ``10``. Quality
 ``6`` is a good compromise between quality and file size. If encoding at a high
@@ -218,7 +218,7 @@ for a table listing Ogg Vorbis audio quality presets and their respective
 variable bitrates.
 
 FFmpeg: Convert while preserving original video resolution
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following command converts the video while keeping its original resolution.
 The video and audio's bitrate will be variable to maximize quality while saving
@@ -230,7 +230,7 @@ static scenes).
     ffmpeg -i input.mp4 -q:v 6 -q:a 6 output.ogv
 
 FFmpeg: Resize the video then convert it
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following command resizes a video to be 720 pixels tall (720p), while
 preserving its existing aspect ratio. This helps decrease the file size
@@ -253,14 +253,14 @@ Chroma key, commonly known as the "green screen" or "blue screen" effect, allows
 We will achieve the chroma key effect by writing a custom shader in GDScript and using a `VideoStreamPlayer` node to display the video content.
 
 Scene Setup
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 Ensure that the scene contains a `VideoStreamPlayer` node to play the video and a `Control` node to hold the UI elements for controlling the chroma key effect.
 
    .. image:: img/chroma_key_scene.webp
 
 Writing the Custom Shader
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To implement the chroma key effect, follow these steps:
 
@@ -307,7 +307,7 @@ The code above represents a simple demonstration of the Chroma Key shader,
 and users can customize it according to their specific requirements.
 
 UI Controls
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 To allow users to manipulate the chroma key effect in real-time, we created sliders in the `Control` node. The `Control` node's script contains the following functions:
 
@@ -375,7 +375,7 @@ also make sure that the range of the sliders are appropriate, our settings are :
    .. image:: img/slider_range.webp
 
 Signal Handling
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Connect the appropriate signal from the UI elements to the `Control` node's script.
 you created in the `Control` node's script to control the chroma key effect.

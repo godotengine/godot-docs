@@ -21,6 +21,8 @@ For compiling under macOS, the following is required:
   (or the more lightweight Command Line Tools for Xcode).
 - `Vulkan SDK <https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.dmg>`_
   for MoltenVK (macOS doesn't support Vulkan out of the box).
+  The latest Vulkan SDK version can be installed quickly by running
+  ``misc/scripts/install_vulkan_sdk_macos.sh`` within the Godot source repository.
 
 .. note:: If you have `Homebrew <https://brew.sh/>`_ installed, you can easily
           install SCons using the following command::

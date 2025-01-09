@@ -148,7 +148,7 @@ the engine source code (using ``cd``) and type:
 
 .. tip::
     If you are compiling Godot to make changes or contribute to the engine,
-    you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``. 
+    you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``.
     See :ref:`doc_introduction_to_the_buildsystem_development_and_production_aliases`
     for more info.
 
@@ -182,7 +182,15 @@ Compiling with support for Direct3D 12
 By default, builds of Godot do not contain support for the Direct3D 12 graphics
 API.
 
-To compile Godot with Direct3D 12 support you need at least the following item:
+You can install the required dependencies by running
+``python misc/scripts/install_d3d12_sdk_windows.py``
+in the Godot source repository. After running this script, add the ``d3d12=yes``
+SCons option to enable Direct3D 12 support. This will use the default paths for
+the various dependencies, which match the ones used in the script.
+
+You can find the detailed steps below if you wish to set up dependencies
+manually, but the above script handles everything for you (including the
+optional PIX and Agility SDK components).
 
 - `godot-nir-static library <https://github.com/godotengine/godot-nir-static/releases/>`_.
   We compile the Mesa libraries you will need into a static library. Download it

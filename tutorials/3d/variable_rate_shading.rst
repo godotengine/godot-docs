@@ -111,7 +111,7 @@ For custom viewports, the VRS mode and texture must be set manually to the
     :ref:`command line argument <doc_command_line_tutorial>`.
 
 Creating a VRS density map
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If using the **Texture** VRS mode, you *must* set a texture to be used as a
 density map. Otherwise, no effect will be visible.
@@ -187,7 +187,7 @@ aspect ratio in your project (such as 16:9).
     low, or textures will appear grainy.
 
 Performance comparison
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 To give an idea of how much VRS can improve performance in theory, here's a
 performance comparison with the textured example scene shown at the top of this

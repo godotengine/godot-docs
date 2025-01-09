@@ -95,7 +95,7 @@ not share pixels in the texture.
 There are a few ways to ensure your object has a unique UV2 layer and texture size:
 
 Unwrap on scene import (recommended)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In most scenarios, this is the best approach to use. The only downside is that,
 on large models, unwrapping can take a while on import. Nonetheless, Godot will
@@ -137,7 +137,7 @@ their UV2 maps properly generated.
     and engine versions.
 
 Unwrap from within Godot
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
 
@@ -154,7 +154,7 @@ This will generate a second set of UV2 coordinates which can be used for baking.
 It will also set the texture size automatically.
 
 Unwrap from your 3D modeling software
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The last option is to do it from your favorite 3D app. This approach is
 generally **not recommended**, but it's explained so that you know it exists.
@@ -177,7 +177,7 @@ to work quickly. You will mostly need to use seams or other techniques to create
 better unwrapping.
 
 Generating UV2 for primitive meshes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -203,7 +203,7 @@ lightmap texture, which varies depending on the mesh's size properties and the
 any modifications will be lost when the scene is reloaded.
 
 Generating UV2 for CSG nodes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since Godot 4.4, you can
 :ref:`convert a CSG node and its children to a MeshInstance3D <doc_csg_tools_converting_to_mesh_instance_3d>`.
@@ -222,7 +222,7 @@ This can be used to bake lightmaps on a CSG node by following these steps:
     again.
 
 Checking UV2
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 In the **Mesh** menu mentioned before, the UV2 texture coordinates can be visualized.
 If something is failing, double-check that the meshes have these UV2 coordinates:
@@ -244,7 +244,7 @@ inconsistent lightmap texel scaling, make sure to respect the rule about mesh
 scaling mentioned before.
 
 Setting up meshes
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 For a **MeshInstance3D** node to take part in the baking process, it needs to have
 its bake mode set to **Static**. Meshes that have their bake mode set to **Disabled**
@@ -255,7 +255,7 @@ or **Dynamic** will be ignored by the lightmapper.
 When auto-generating lightmaps on scene import, this is enabled automatically.
 
 Setting up lights
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Lights are baked with indirect light only by default. This means that shadowmapping
 and lighting are still dynamic and affect moving objects, but light bounces from
@@ -269,7 +269,7 @@ can be controlled from the **Bake Mode** menu in lights:
 The modes are:
 
 Disabled
-^^^^^^^^
+~~~~~~~~
 
 The light is ignored when baking lightmaps. This is the mode to use for dynamic
 lighting effects such as explosions and weapon effects.
@@ -281,7 +281,7 @@ lighting effects such as explosions and weapon effects.
     disabling its **Visible** property.
 
 Dynamic
-^^^^^^^
+~~~~~~~
 
 This is the default mode, and is a compromise between performance and real-time
 friendliness. Only indirect lighting will be baked. Direct light and shadows are
@@ -291,8 +291,13 @@ This mode allows performing *subtle* changes to a light's color, energy and
 position while still looking fairly correct. For example, you can use this
 to create flickering static torches that have their indirect light baked.
 
+Depending on the value of **Shadowmask Mode**, it is possible to still get
+distant baked shadows for DirectionalLight3D. This allows shadows up close to be
+real-time and show dynamic objects, while allowing static objects in the
+distance to still cast shadows.
+
 Static
-^^^^^^
+~~~~~~
 
 Both indirect and direct lighting will be baked. Since static surfaces can skip
 lighting and shadow computations entirely, this mode provides the best
@@ -343,7 +348,7 @@ method and quality selected.
     set to a high enough value.
 
 Tweaks
-^^^^^^
+~~~~~~
 
 - **Quality:** Four bake quality modes are provided: Low, Medium, High, and
   Ultra. Higher quality takes more time, but result in a better-looking lightmap
@@ -364,6 +369,12 @@ Tweaks
   especially with fully baked lights (since they also have direct light baked).
   The downside is that directional lightmaps are slightly more expensive to render.
   They also require more time to bake and result in larger file sizes.
+- **Shadowmask Mode:** If set to a mode other than **None**, the first DirectionalLight3D
+  in the scene with the **Dynamic** global illumination mode will have its static shadows
+  baked to a separate texture called a *shadowmask*. This can be used to allow distant
+  static objects to cast shadows onto other static objects regardless of the distance
+  from the camera. See the :ref:`section on shadowmasking <doc_using_lightmap_gi_shadowmask>`
+  for further details.
 - **Interior:** If enabled, environment lighting will not be sourced. Use this
   for purely indoor scenes to avoid light leaks.
 - **Use Texture for Bounces:** If enabled, a texture with the lighting
@@ -396,6 +407,74 @@ Tweaks
   scene's environment sky.
 - **Gen Probes > Subdiv:** See :ref:`doc_using_lightmap_gi_dynamic_objects`.
 - **Data > Light Data:** See :ref:`doc_using_lightmap_gi_data`.
+
+.. _doc_using_lightmap_gi_shadowmask:
+
+Using shadowmasking for distant directional shadows
+---------------------------------------------------
+
+When using a DirectionalLight3D, the maximum distance at which it can draw
+real-time shadows is limited by its **Shadow Max Distance** property. This can
+be an issue in large scenes, as distant objects won't appear to have any shadows
+from the DirectionalLight3D. While this can be resolved by using the **Static**
+global illumination mode on the DirectionalLight3D, this has several downsides:
+
+- Since both direct and indirect light are baked, there is no way for dynamic
+  objects to cast shadows onto static surfaces in a realistic manner. Godot skips
+  shadow sampling entirely in this case to avoid "double lighting" artifacts.
+- Static shadows up close lack in detail, as they only rely on the lightmap texture
+  and not on real-time shadow cascades.
+
+We can avoid these downsides while still benefiting from distant shadows by
+using *shadowmasking*. While dynamic objects won't receive shadows from the
+shadowmask, it still greatly improves visuals since most scenes are primarily
+comprised of static objects.
+
+Since the lightmap texture alone doesn't contain shadow information, we can bake
+this shadow information to a separate texture called a *shadowmask*.
+
+Shadowmasking only affects the first DirectionalLight3D in the scene (determined
+by tree order) that has the **Dynamic** global illumination mode. It is not
+possible to use shadowmasking with the **Static** global illumination mode, as
+this mode skips shadow sampling on static objects entirely. This is because the
+Static global illumination mode bakes both direct and indirect light.
+
+Three shadowmasking modes are available:
+
+- **None (default):** Don't bake a shadowmask texture. Directional shadows will
+  not be visible outside the range specified by the DirectionalLight3D's
+  **Shadow Max Distance** property.
+- **Replace:** Bakes a shadowmask texture, and uses it to draw directional
+  shadows when outside the range specified by the DirectionalLight3D's **Shadow
+  Max Distance** property. Shadows within this range remain fully real-time.
+  This option generally makes the most sense for most scenes, as it can deal
+  well with static objects that exhibit subtle motion (e.g. foliage shadows).
+- **Overlay:** Bakes a shadowmask texture, and uses it to draw directional
+  shadows regardless of the distance from the camera. Shadows within the range
+  of the DirectionalLight3D's **Shadow Max Distance** property will be overlaid
+  with real-time shadows. This can make the transition between real-time and
+  baked shadows less jarring, at the cost of a "smearing" effect present on
+  static object shadows depending on lightmap texel density. Also, this mode
+  can't deal as well with static objects that exhibit subtle motion (such as
+  foliage), as the baked shadows can't be animated over time. Still, for scenes
+  where the camera moves quickly, this may be a better choice than **Replace**.
+
+Here's a visual comparison of the shadowmask modes with a scene where the
+**Shadow Max Distance** was set very low for comparison purposes. The blue boxes
+are dynamic objects, while the rest of the scene is a static object. There is
+only a single DirectionalLight3D in the scene with the Dynamic global
+illumination mode:
+
+.. figure:: img/lightmap_gi_shadowmask.webp
+   :align: center
+   :alt: Comparison between shadowmask modes
+
+   Comparison between shadowmask modes
+
+.. note::
+
+    It is possible to switch between the **Replace** and **Overlay** shadowmask
+    modes without having to bake lightmaps again.
 
 Balancing bake times with quality
 ---------------------------------
@@ -433,7 +512,7 @@ noise and softens them while attempting to best preserve detail.
 Godot offers two denoising algorithms:
 
 JNLM (Non-Local Means with Joint Filtering)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 JNLM is the default denoising method and is included in Godot. It uses a simple
 but efficient denoising algorithm known as *non-local means*. JNLM runs on the
@@ -451,7 +530,7 @@ removing noise, at the cost of suppressing shadow detail for static shadows.
    Comparison between JNLM denoiser strength values. Higher values can reduce detail.
 
 OIDN (Open Image Denoise)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Unlike JNLM, OIDN uses a machine learning approach to denoising lightmaps. It
 features a model specifically trained to remove noise from lightmaps while

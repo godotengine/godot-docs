@@ -149,6 +149,8 @@ avoid this, make sure to test the event type first:
         }
     }
 
+.. _doc_input_examples_input_map:
+
 InputMap
 --------
 

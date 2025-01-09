@@ -52,6 +52,16 @@
 
 {% if (not meta or meta.get('allow_comments') != 'False') and godot_show_article_comments %}
 <div id="godot-giscus">
+    {%- if (theme_prev_next_buttons_location == 'bottom' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
+      <div class="rst-footer-buttons" role="navigation">
+        {%- if prev %}
+          <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> {{ _('Previous') }}</a>
+        {%- endif %}
+        {%- if next %}
+          <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n" rel="next">{{ _('Next') }} <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        {%- endif %}
+      </div>
+    {%- endif %}
     <hr>
         <h2>User-contributed notes</h2>
     <p>

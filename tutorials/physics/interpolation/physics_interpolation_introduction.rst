@@ -43,7 +43,7 @@ What can we do about frames and ticks being out of sync?
 --------------------------------------------------------
 
 Lock the tick / frame rate together?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The most obvious solution is to get rid of the problem, by ensuring there is a
 physics tick that coincides with every frame. This used to be the approach on old
@@ -57,7 +57,7 @@ huge variations in performance, as well as different monitor refresh rates. We n
 to come up with a better way of dealing with the problem.
 
 Adapt the tick rate?
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Instead of designing the game at a fixed physics tick rate, we could allow the tick
 rate to scale according to the end users hardware. We could for example use a fixed
@@ -79,7 +79,7 @@ problematic for multiplayer games for competitive integrity, as running the game
 certain tick rates may be more advantageous than others.
 
 Lock the tick rate, but use interpolation to smooth frames in between physics ticks
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This has become one of the most popular approaches to deal with the problem,
 although it is optional and disabled by default.
@@ -104,7 +104,7 @@ our ideal world of smooth continuous movement.
 .. image:: img/fti_graph_interpolated.webp
 
 Linear interpolation
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 The simplest way to achieve this is linear interpolation, or lerping, which you may
 have used before.
@@ -119,7 +119,7 @@ is 30 units.
           the easiest in terms of explanation.
 
 The physics interpolation fraction
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If our physics ticks are happening 10 times per second (for this example), what
 happens if our rendered frame takes place at time 0.12 seconds? We can do some math
@@ -140,7 +140,7 @@ This is called the **physics interpolation fraction**, and is handily calculated
 for you by Godot. It can be retrieved on any frame by calling :ref:`Engine.get_physics_interpolation_fraction<class_Engine_method_get_physics_interpolation_fraction>`.
 
 Calculating the interpolated position
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once we have the interpolation fraction, we can insert it into a standard linear
 interpolation equation. The X coordinate would thus be:
@@ -171,7 +171,7 @@ Let's break that down:
           the details as Godot will do all this for you.
 
 Smoothed transformations between physics ticks?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Putting all this together shows that it should be possible to have a nice smooth
 estimation of the transform of objects between the current and previous physics
@@ -183,7 +183,7 @@ we are estimating the position of the object in the past. To be exact, we are
 estimating the position of the object *between 1 and 2 ticks* into the past.
 
 In the past
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 What does this mean? This scheme does work, but it does mean we are effectively
 introducing a delay between what we see on the screen, and where the objects
@@ -197,7 +197,7 @@ input situations, you may wish to turn off physics interpolation and use a
 different scheme, or use a high tick rate, which mitigates these delays.
 
 Why look into the past? Why not predict the future?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There is an alternative to this scheme, which is: instead of interpolating between
 the previous and current tick, we use maths to *extrapolate* into the future. We
@@ -215,7 +215,7 @@ significant downsides:
   the corrected path. This can be visually jarring.
 
 Fixed timestep interpolation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In Godot this whole system is referred to as physics interpolation, but you may
 also hear it referred to as **"fixed timestep interpolation"**, as it is

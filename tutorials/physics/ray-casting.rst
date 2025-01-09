@@ -224,7 +224,7 @@ from a CharacterBody2D or any other collision object node:
         {
             var spaceState = GetWorld2D().DirectSpaceState;
             var query = PhysicsRayQueryParameters2D.Create(globalPosition, playerPosition);
-            query.Exclude = new Godot.Collections.Array<Rid> { GetRid() };
+            query.Exclude = [GetRid()];
             var result = spaceState.IntersectRay(query);
         }
     }
@@ -263,7 +263,7 @@ member variable. The array of exceptions can be supplied as the last argument as
         {
             var spaceState = GetWorld2D().DirectSpaceState;
             var query = PhysicsRayQueryParameters2D.Create(globalPosition, targetPosition,
-                CollisionMask, new Godot.Collections.Array<Rid> { GetRid() });
+                CollisionMask, [GetRid()]);
             var result = spaceState.IntersectRay(query);
         }
     }

@@ -39,7 +39,6 @@ from shutil import copyfile
 import shutil
 import sys
 import codecs
-from distutils.dir_util import copy_tree
 
 defaultInputDirectory = '.'
 defaultOutputDirectory = '_migrated'

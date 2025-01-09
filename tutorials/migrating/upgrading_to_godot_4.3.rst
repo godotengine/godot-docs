@@ -22,7 +22,7 @@ the C# breaking change is *binary compatible* or *source compatible*:
   upgrading Godot.
 
 GDExtension
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -36,7 +36,7 @@ Method ``open_library`` removed                                                 
 Since it was basically impossible to use these methods in any useful way, these methods have been removed. Use ``GDExtensionManager::load_extension`` and ``GDExtensionManager::unload_extension`` instead to correctly load and unload a GDExtension.
 
 Animation
-^^^^^^^^^
+~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -59,7 +59,7 @@ Method ``on_bone_pose_update`` replaced by ``on_skeleton_update``               
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 GUI nodes
-^^^^^^^^^
+~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -70,7 +70,7 @@ Method ``remove_button`` changes parameter ``button`` type from ``Control`` to `
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 Physics
-^^^^^^^
+~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -85,7 +85,7 @@ Property ``motion`` changes type from ``Vector2`` to ``Vector3``                
     detects the enum prefix. New members were added in `GH-89851`_ to the enum that caused the enum members to be renamed.
 
 Rendering
-^^^^^^^^^
+~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -131,7 +131,7 @@ Method ``get_velocity_texture`` adds a new ``msaa`` optional parameter          
     renamed.
 
 Text
-^^^^
+~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -147,7 +147,7 @@ Method ``_shaped_text_get_word_breaks`` adds a new ``skip_grapheme_flags`` param
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 Audio
-^^^^^
+~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -157,7 +157,7 @@ Method ``play_stream`` adds new ``playback_type``, and ``bus`` optional paramete
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 Navigation
-^^^^^^^^^^
+~~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -184,7 +184,7 @@ Method ``set_avoidance_layer_value`` removed                                    
     replacement.
 
 TileMap
-^^^^^^^
+~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -195,7 +195,7 @@ Method ``get_occluder`` adds new ``flip_h``, ``flip_v``, and ``transpose`` optio
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 XR
-^^
+~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -207,7 +207,7 @@ Method ``get_tracker`` changes return type from ``XRPositionalTracker`` to ``XRT
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 Editor plugins
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 ========================================================================================================================  ===================  ====================  ====================  ===========
 Change                                                                                                                    GDScript Compatible  C# Binary Compatible  C# Source Compatible  Introduced
@@ -227,7 +227,7 @@ Behavior changes
 In 4.3 some behavior changes have been introduced, which might require you to adjust your project.
 
 Core
-^^^^
+~~~~
 
 .. note::
 
@@ -259,7 +259,7 @@ Core
     of the operating system that the program is running on.
 
 Animation
-^^^^^^^^^
+~~~~~~~~~
 
 .. note::
 
@@ -277,7 +277,7 @@ More information about the changes to Animation can be found in the
 article.
 
 GUI nodes
-^^^^^^^^^
+~~~~~~~~~
 
 .. note::
 
@@ -291,7 +291,7 @@ GUI nodes
     are children of a node with the ``auto_translate`` property set to ``false``.
 
 Multiplayer
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 .. note::
 
@@ -303,7 +303,7 @@ Multiplayer
     Note that high-level multiplayer facilities are only ever meant to be compatible with server and client using the same Godot version. It is recommended to implement some kind of version checking.
 
 Rendering
-^^^^^^^^^
+~~~~~~~~~
 
 .. note::
 
@@ -318,14 +318,14 @@ Rendering
     article for more information and guidance on how to fix common scenarios.
 
 TileMap
-^^^^^^^
+~~~~~~~
 
 .. note::
 
     ``TileMap`` layers were moved to individual nodes (`GH-87379`_ and `GH-89179`_).
 
 Android
-^^^^^^^
+~~~~~~~
 
 .. note::
 

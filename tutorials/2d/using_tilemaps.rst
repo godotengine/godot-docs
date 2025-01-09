@@ -55,7 +55,7 @@ Each TileMapLayer node has several properties you can adjust:
 - **TileSet** The tileset used by the TileMapLayer node.
 
 Rendering
-^^^^^^^^^
+~~~~~~~~~
 
 - **Y Sort Origin:** The vertical offset to use for Y-sorting on each tile (in pixels).
   Only effective if **Y Sort Enabled** under CanvasItem settings is ``true``.
@@ -67,7 +67,7 @@ Rendering
   TileMapLayer since tiles are grouped by Y position in that case.
 
 Physics
-^^^^^^^
+~~~~~~~
 - **Collision Enabled** Enables or disables collision.
 - **Use Kinematic Bodies** When true TileMapLayer collision shapes will be instantiated
   as kinematic bodies.
@@ -75,7 +75,7 @@ Physics
   visible. If set to default, then it depends on the show collision debug settings.
 
 Navigation
-^^^^^^^^^^
+~~~~~~~~~~
 
 - **Navigation Enabled** Whether or not navigation regions are enabled.
 - **Navigation Visible** Whether or not the TileMapLayer's navigation meshes are
@@ -91,7 +91,7 @@ Navigation
     2D navigation meshes can not be "layered" or stacked on top of each other like visuals or physic shapes. Attempting to stack navigation meshes on the same navigation map will result in merge and logical errors that break the pathfinding.
 
 Reordering layers
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 You can reorder layers by drag-and-dropping their node in the Scene tab. You can
 also switch between which TileMapLayer node you're working on by using the buttons
@@ -195,7 +195,7 @@ the 2D editor, **not** the TileMap panel itself.
 From left to right, the painting modes and tools you can choose are:
 
 Selection
-^^^^^^^^^
+~~~~~~~~~
 
 Select tiles by clicking a single tile, or by holding down the left mouse button to
 select multiple with a rectangle in the 2D editor. Note that empty space cannot be
@@ -221,7 +221,7 @@ then performing a selection.
     Right-click or press :kbd:`Escape` to cancel pasting.
 
 Paint
-^^^^^
+~~~~~
 
 The standard Paint mode allows you to place tiles by clicking or holding
 down the left mouse button.
@@ -250,7 +250,7 @@ the left mouse button.
     This is identical to using the Picker tool described below.
 
 Line
-^^^^
+~~~~
 
 After selecting Line Paint mode, you can draw in a line that is
 always 1 tile thick (no matter its orientation).
@@ -270,7 +270,7 @@ You can toggle this mode temporarily while in Paint or Eraser mode by holding
    Using the line tool after selecting two tiles to draw platforms diagonally
 
 Rectangle
-^^^^^^^^^
+~~~~~~~~~
 
 After selecting Rectangle Paint mode, you can draw in an axis-aligned
 rectangle.
@@ -285,7 +285,7 @@ You can toggle this mode temporarily while in Paint or Eraser mode by holding
 :kbd:`Ctrl` and :kbd:`Shift` then drawing.
 
 Bucket Fill
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 After selecting Bucket Fill mode, you can choose whether painting should be
 limited to contiguous areas only by toggling the **Contiguous** checkbox that
@@ -313,7 +313,7 @@ you can place them in a repeating pattern within the filled area.
    Using the Bucket Fill tool
 
 Picker
-^^^^^^
+~~~~~~
 
 After selecting Picker mode, you can pick existing tiles in the 2D editor by
 holding :kbd:`Ctrl` then clicking on a tile. This will switch the currently
@@ -325,7 +325,7 @@ You can toggle this mode temporarily while in Paint mode by holding :kbd:`Ctrl`
 then clicking or dragging the mouse.
 
 Eraser
-^^^^^^
+~~~~~~
 
 This mode is combined with any other painting mode (Paint, Line, Rectangle,
 Bucket Fill). When eraser mode is enabled, tiles will be replaced by empty tiles

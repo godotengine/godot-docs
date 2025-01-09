@@ -95,9 +95,10 @@ Arguments passed by JavaScript to the callback will be passed as a single Godot
 
 .. warning::
 
-    The number of arguments accepted by the callback method (``_my_callback`` in the above example)
-    **must** match the number of arguments sent by JavaScript. Otherwise, the callback method will
-    not be called.
+    Callback methods created via :ref:`JavaScriptBridge.get_interface() <class_JavaScriptBridge_method_get_interface>`
+    (``_my_callback`` in the above example) **must** take exactly one :ref:`Array<class_Array>`
+    argument, which is going to be the JavaScript `arguments object <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments>`__
+    converted to an array. Otherwise, the callback method will not be called.
 
 Here is another example that asks the user for the `Notification permission <https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API>`__
 and waits asynchronously to deliver a notification if the permission is

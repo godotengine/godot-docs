@@ -19,7 +19,7 @@ As of July 2023, there is only a Git plugin available, but the community may
 create additional VCS plugins.
 
 Official Git plugin
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 Using Git from inside the editor is supported with an official plugin.
 You can find the latest releases on
