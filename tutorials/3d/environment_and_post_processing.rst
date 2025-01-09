@@ -26,7 +26,7 @@ but you can enable it by using it in one of the following locations, in order
 of priority:
 
 Camera3D node (high priority)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An Environment can be set to a Camera3D node. It will have priority over any
 other setting.
@@ -37,7 +37,7 @@ This is mostly useful when you want to override an existing environment,
 but in general it's a better idea to use the option below.
 
 WorldEnvironment node (medium priority, recommended)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The WorldEnvironment node can be added to any scene, but only one can exist per
 active scene tree. Adding more than one will result in a warning.
@@ -49,7 +49,7 @@ Any Environment added has higher priority than the default Environment
 which makes it quite useful.
 
 Preview environment and sun (low priority)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -130,7 +130,7 @@ The following is a detailed description of all environment options and how
 they are intended to be used.
 
 Background
-^^^^^^^^^^
+~~~~~~~~~~
 
 The Background section contains settings on how to fill the background (parts of
 the screen where objects were not drawn). The background not only serves the
@@ -160,7 +160,7 @@ There are several background modes available:
   "hall of mirrors" visual glitch if the sky is visible at any time.
 
 Sky materials
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 When using the **Sky** background mode (or the ambient/reflected light mode is
 set to **Sky**), a Sky subresource becomes available to edit in the Environment
@@ -201,7 +201,7 @@ If you need a custom sky material (e.g. for procedural clouds), you can
 create a custom :ref:`sky shader <doc_sky_shader>`.
 
 Ambient light
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Ambient light (as defined here) is a type of light that affects every piece of
 geometry with the same intensity. It is global and independent of lights that
@@ -255,7 +255,7 @@ Using one of the methods described above will replace constant ambient
 lighting with ambient lighting from the probes.
 
 Reflected light
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Reflected light (also called specular light) is the other of the two components
 of image-based lighting.
@@ -271,7 +271,7 @@ Reflected light can be set to one of 3 modes:
   behaves identically to **Background**.
 
 Fog
-^^^
+~~~
 
 .. note::
 
@@ -308,7 +308,7 @@ In practice, it makes light stand out more across the fog.
     for guidance on reducing banding.
 
 Volumetric Fog
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Volumetric fog provides a realistic fog effect to the scene, with fog color
 being affected by the lights that traverse the fog.
@@ -318,7 +318,7 @@ being affected by the lights that traverse the fog.
   See :ref:`doc_volumetric_fog` for documentation on setting up volumetric fog.
 
 Tonemap
-^^^^^^^
+~~~~~~~
 
 Tonemap selects the tonemapping curve that will be applied to the scene, from a
 list of standard curves used in the film and game industries. Tonemapping operators
@@ -369,7 +369,7 @@ The Environment resource supports many popular mid- and post-processing effects.
     distracting changes during gameplay.
 
 Screen-Space Reflections (SSR)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
@@ -411,7 +411,7 @@ This also applies to shaders that use ``hint_screen_texture`` or ``hint_depth_te
 uniforms.
 
 Screen-Space Ambient Occlusion (SSAO)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
@@ -485,7 +485,7 @@ parameters:
 .. _doc_environment_and_post_processing_ssil:
 
 Screen-Space Indirect Lighting (SSIL)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
@@ -531,7 +531,7 @@ Tweaking :abbr:`SSIL (Screen-Space Indirect Lighting)` is possible with several 
 .. image:: img/environment_ssil.webp
 
 Signed Distance Field Global Illumination (SDFGI)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*
@@ -550,7 +550,7 @@ illumination for off-screen elements (unlike :abbr:`SSIL (Screen-Space Indirect 
 .. _doc_environment_and_post_processing_glow:
 
 Glow
-^^^^
+~~~~
 
 .. note::
 
@@ -641,7 +641,7 @@ There are 2 main use cases for a glow map texture:
 .. _doc_environment_and_post_processing_using_glow_in_2d:
 
 Using glow in 2D
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 There are 2 ways to use glow in 2D:
 
@@ -689,7 +689,7 @@ There are 2 ways to use glow in 2D:
 .. _doc_environment_and_post_processing_using_glow_to_blur_the_screen:
 
 Using glow to blur the screen
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Glow can be used to blur the whole viewport, which is useful for background blur
 when a menu is open. Only 3D rendering will be affected unless the environment's
@@ -715,7 +715,7 @@ To use glow as a blurring solution:
    Example of using glow to blur the 2D rendering in the menu's background
 
 Adjustments
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 At the end of processing, Godot offers the possibility to do some standard
 image adjustments.
@@ -797,7 +797,7 @@ Camera attribute options
 ------------------------
 
 Depth of Field / Far Blur
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This effect simulates focal distance on cameras. It blurs objects behind
 a given range. It has an initial **Distance** with a **Transition** region
@@ -810,7 +810,7 @@ the depth of field quality in the advanced project settings may be needed to
 avoid artifacts.
 
 Depth of Field / Near Blur
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This effect simulates focal distance on cameras. It blurs objects close
 to the camera (acts in the opposite direction as far blur).
@@ -834,13 +834,13 @@ given object, or create a so-called
     distance, focal length, and aperture.
 
 Exposure
-^^^^^^^^
+~~~~~~~~
 
 This multiplies the overall scene brightness visible from the camera. Higher
 values result in a visually brighter scene.
 
 Auto Exposure
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 *This feature is only available when using the Forward+ renderer, not
 Mobile or Compatibility.*

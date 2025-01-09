@@ -17,32 +17,32 @@ New pages since version 4.3
 ---------------------------
 
 2D
-^^
+~~
 
 - :ref:`doc_introduction_to_2d`
 
 3D
-^^
+~~
 
 - :ref:`doc_spring_arm`
 
 Debug
-^^^^^
+~~~~~
 
 - :ref:`doc_output_panel`
 
 Editor
-^^^^^^
+~~~~~~
 
 - :ref:`doc_using_the_xr_editor`
 
 Performance
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 - :ref:`doc_pipeline_compilations`
 
 Physics
-^^^^^^^
+~~~~~~~
 
 - :ref:`doc_physics_interpolation`
 - :ref:`doc_physics_interpolation_quick_start_guide`
@@ -52,12 +52,12 @@ Physics
 - :ref:`doc_2d_and_3d_physics_interpolation`
 
 Rendering
-^^^^^^^^^
+~~~~~~~~~
 
 - :ref:`doc_renderers`
 
 Shaders
-^^^^^^^
+~~~~~~~
 
 - :ref:`doc_shader_functions`
 
@@ -65,39 +65,39 @@ New pages since version 4.2
 ---------------------------
 
 About
-^^^^^
+~~~~~
 
 - :ref:`doc_system_requirements`
 
 2D
-^^
+~~
 
 - :ref:`doc_2d_parallax`
 
 Contributing
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 - :ref:`doc_handling_compatibility_breakages`
 - :ref:`doc_ways_to_contribute`
 
 GDExtension
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 - :ref:`doc_gdextension_file`
 - :ref:`doc_gdextension_docs_system`
 
 Migrating
-^^^^^^^^^
+~~~~~~~~~
 
 - :ref:`doc_upgrading_to_godot_4.3`
 
 Rendering
-^^^^^^^^^
+~~~~~~~~~
 
 - :ref:`doc_compositor`
 
 XR
-^^
+~~
 
 - :ref:`doc_a_better_xr_start_script`
 - :ref:`doc_openxr_passthrough`
@@ -111,27 +111,27 @@ New pages since version 4.1
 ---------------------------
 
 C#
-^^
+~~
 
 - :ref:`doc_c_sharp_diagnostics`
 
 Development
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 - :ref:`doc_2d_coordinate_systems`
 
 Migrating
-^^^^^^^^^
+~~~~~~~~~
 
 - :ref:`doc_upgrading_to_godot_4.2`
 
 I/O
-^^^
+~~~
 
 - :ref:`doc_runtime_loading_and_saving`
 
 Platform-specific
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 - :ref:`doc_android_library`
 
@@ -139,17 +139,17 @@ New pages since version 4.0
 ---------------------------
 
 Development
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 - :ref:`doc_internal_rendering_architecture`
 - :ref:`doc_using_sanitizers`
 
 Migrating
-^^^^^^^^^
+~~~~~~~~~
 
 - :ref:`doc_upgrading_to_godot_4.1`
 
 Physics
-^^^^^^^
+~~~~~~~
 
 - :ref:`doc_troubleshooting_physics_issues`

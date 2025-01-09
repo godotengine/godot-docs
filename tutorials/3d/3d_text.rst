@@ -36,7 +36,7 @@ remains customizable and uses the same font subresource as Control nodes
 rendering).
 
 Advantages
-^^^^^^^^^^
+~~~~~~~~~~
 
 - Label3D is faster to generate than TextMesh. While both use a caching
   mechanism to only render new glyphs once, Label3D will still be faster to
@@ -52,7 +52,7 @@ Advantages
     See :ref:`doc_gui_using_fonts` for guidelines on configuring font imports.
 
 Limitations
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 By default, Label3D has limited interaction with a 3D environment. It can be
 occluded by geometry and lit by light sources if the **Shaded** flag is enabled.
@@ -94,7 +94,7 @@ the texture below as a reference for the generated mesh's UV map:
 .. image:: img/text_mesh_textured.png
 
 Advantages
-^^^^^^^^^^
+~~~~~~~~~~
 
 TextMesh has a few advantages over Label3D:
 
@@ -103,7 +103,7 @@ TextMesh has a few advantages over Label3D:
 - TextMesh can use custom shaders, unlike Label3D.
 
 Limitations
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 There are some limitations to TextMesh:
 
@@ -133,7 +133,7 @@ See the `3D waypoints <https://github.com/godotengine/godot-demo-projects/tree/m
 demo for an example of this.
 
 Advantages
-^^^^^^^^^^
+~~~~~~~~~~
 
 - Any Control node can be used, including Label, RichTextLabel or even nodes such
   as Button. This allows for powerful formatting and GUI interaction.
@@ -144,7 +144,7 @@ Advantages
   applies to the project.
 
 Limitations
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 - Projected Controls cannot be occluded by 3D geometry in any way. You can use a
   RayCast to fully hide the control if its target position is occluded by a

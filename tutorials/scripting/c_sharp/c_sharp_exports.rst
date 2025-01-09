@@ -497,7 +497,7 @@ certain C# arrays and the collection types defined in the ``Godot.Collections``
 namespace are Variant-compatible, therefore, only those types can be exported.
 
 Exporting Godot arrays
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: csharp
 
@@ -518,12 +518,12 @@ The default value of Godot arrays is null. A different default can be specified:
 .. code-block:: csharp
 
     [Export]
-    public Godot.Collections.Array<string> CharacterNames { get; set; } = new Godot.Collections.Array<string>
-    {
+    public Godot.Collections.Array<string> CharacterNames { get; set; } =
+    [
         "Rebecca",
         "Mary",
         "Leah",
-    };
+    ];
 
 Arrays with specified types which inherit from resource can be set by
 drag-and-dropping multiple files from the FileSystem dock.
@@ -537,7 +537,7 @@ drag-and-dropping multiple files from the FileSystem dock.
     public Godot.Collections.Array<PackedScene> Scenes { get; set; }
 
 Exporting Godot dictionaries
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: csharp
 
@@ -571,7 +571,7 @@ The default value of Godot dictionaries is null. A different default can be spec
     };
 
 Exporting C# arrays
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 C# arrays can exported as long as the element type is a :ref:`Variant-compatible type <c_sharp_variant_compatible_types>`.
 
@@ -588,11 +588,11 @@ The default value of C# arrays is null. A different default can be specified:
 .. code-block:: csharp
 
     [Export]
-    public Vector3[] Vectors { get; set; } = new Vector3[]
-    {
+    public Vector3[] Vectors { get; set; } =
+    [
         new Vector3(1, 2, 3),
         new Vector3(3, 2, 1),
-    }
+    ];
 
 Setting exported variables from a tool script
 ---------------------------------------------

@@ -140,7 +140,7 @@ if not language in supported_languages.keys():
 is_i18n = tags.has("i18n")  # noqa: F821
 print("Build language: {}, i18n tag: {}".format(language, is_i18n))
 
-exclude_patterns = ["_build"]
+exclude_patterns = [".*", "**/.*", "_build", "_tools"]
 
 # fmt: off
 # These imports should *not* be moved to the start of the file,

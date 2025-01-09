@@ -30,7 +30,7 @@ Directives
 ----------
 
 General syntax
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 - Preprocessor directives do not use brackets (``{}``), but can use parentheses.
 - Preprocessor directives **never** end with semicolons (with the exception of ``#define``,
@@ -40,7 +40,7 @@ General syntax
   the preprocessor statement.
 
 #define
-^^^^^^^
+~~~~~~~
 
 **Syntax:** ``#define <identifier> [replacement_code]``.
 
@@ -110,7 +110,7 @@ Defining a ``#define`` for an identifier that is already defined results in an
 error. To prevent this, use ``#undef <identifier>``.
 
 #undef
-^^^^^^
+~~~~~~
 
 **Syntax:** ``#undef identifier``
 
@@ -138,7 +138,7 @@ The ``#undef`` directive may be used to cancel a previously defined ``#define`` 
 Without ``#undef`` in the above example, there would be a macro redefinition error.
 
 #if
-^^^
+~~~
 
 **Syntax:** ``#if <condition>``
 
@@ -232,7 +232,7 @@ high amounts of :abbr:`VGPRs (Vector General-Purpose Register)` (which can be ca
 having too many branches) can still slow down shader execution significantly.
 
 #elif
-^^^^^
+~~~~~
 
 The ``#elif`` directive stands for "else if" and checks the condition passed if
 the above ``#if`` evaluated to ``false``. ``#elif`` can only be used within an
@@ -267,7 +267,7 @@ Like with ``#if``, the ``defined()`` preprocessor function can be used:
     #endif
 
 #ifdef
-^^^^^^
+~~~~~~
 
 **Syntax:** ``#ifdef <identifier>``
 
@@ -303,7 +303,7 @@ than two branches:
     #endif // This ends `SHADOW_QUALITY_HIGH`'s branch.
 
 #ifndef
-^^^^^^^
+~~~~~~~
 
 **Syntax:** ``#ifndef <identifier>``
 
@@ -327,7 +327,7 @@ where ``#ifdef`` would never match, and vice versa.
     #endif
 
 #else
-^^^^^
+~~~~~
 
 **Syntax:** ``#else``
 
@@ -349,14 +349,14 @@ Defines the optional block which is included when the previously defined ``#if``
     }
 
 #endif
-^^^^^^
+~~~~~~
 
 **Syntax:** ``#endif``
 
 Used as terminator for the ``#if``, ``#ifdef``, ``#ifndef`` or subsequent ``#else`` directives.
 
 #error
-^^^^^^
+~~~~~~
 
 **Syntax:** ``#error <message>``
 
@@ -374,7 +374,7 @@ defined value.
     #endif
 
 #include
-^^^^^^^^
+~~~~~~~~
 
 **Syntax:** ``#include "path"``
 
@@ -440,7 +440,7 @@ Example base shader (using the include file we created above):
     }
 
 #pragma
-^^^^^^^
+~~~~~~~
 
 **Syntax:** ``#pragma value``
 
@@ -463,7 +463,7 @@ Built-in defines
 ----------------
 
 Current renderer
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 Since Godot 4.4, you can check which renderer is currently used with the built-in
 defines ``CURRENT_RENDERER``, ``RENDERER_COMPATIBILITY``, ``RENDERER_MOBILE``,

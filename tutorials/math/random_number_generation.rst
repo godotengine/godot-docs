@@ -212,7 +212,7 @@ to do it for us:
  .. code-tab:: csharp
 
     // Use Godot's Array type instead of a BCL type so we can use `PickRandom()` on it.
-    private Godot.Collections.Array<string> _fruits = new Godot.Collections.Array<string> { "apple", "orange", "pear", "banana" };
+    private Godot.Collections.Array<string> _fruits = ["apple", "orange", "pear", "banana"];
 
     public override void _Ready()
     {
@@ -273,7 +273,7 @@ prevent repetition:
 
  .. code-tab:: csharp
 
-    private string[] _fruits = { "apple", "orange", "pear", "banana" };
+    private string[] _fruits = ["apple", "orange", "pear", "banana"];
     private string _lastFruit = "";
 
     public override void _Ready()
@@ -450,8 +450,8 @@ get a value from another array as follows:
     // Prints a random element using the weighted index that is returned by `RandWeighted()`.
     // Here, "apple" will be returned twice as rarely as "orange" and "pear".
     // "banana" is twice as common as "orange" and "pear", and four times as common as "apple".
-    string[] fruits = { "apple", "orange", "pear", "banana" };
-    float[] probabilities = { 0.5, 1, 1, 2 };
+    string[] fruits = ["apple", "orange", "pear", "banana"];
+    float[] probabilities = [0.5f, 1, 1, 2];
 
     var random = new RandomNumberGenerator();
     GD.Print(fruits[random.RandWeighted(probabilities)]);
@@ -501,7 +501,7 @@ ends up empty. When that happens, you reinitialize it to its default value:
 
  .. code-tab:: csharp
 
-    private Godot.Collections.Array<string> _fruits = new() { "apple", "orange", "pear", "banana" };
+    private Godot.Collections.Array<string> _fruits = ["apple", "orange", "pear", "banana"];
     // A copy of the fruits array so we can restore the original value into `fruits`.
     private Godot.Collections.Array<string> _fruitsFull;
 

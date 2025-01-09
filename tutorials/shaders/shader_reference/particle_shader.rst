@@ -28,7 +28,7 @@ take place over multiple frames.
     on the CPU.
 
 Render modes
-^^^^^^^^^^^^
+------------
 
 +--------------------------+-------------------------------------------+
 | Render mode              | Description                               |
@@ -43,14 +43,14 @@ Render modes
 +--------------------------+-------------------------------------------+
 
 Built-ins
-^^^^^^^^^
+---------
 
 Values marked as ``in`` are read-only. Values marked as ``out`` can optionally be written to and will
 not necessarily contain sensible values. Values marked as ``inout`` provide a sensible default
 value, and can optionally be written to. Samplers cannot be written to so they are not marked.
 
 Global built-ins
-^^^^^^^^^^^^^^^^
+----------------
 
 Global built-ins are available everywhere, including custom functions.
 
@@ -76,7 +76,7 @@ Global built-ins are available everywhere, including custom functions.
 +-------------------+------------------------------------------------------------------------------------------+
 
 Start and Process built-ins
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------
 
 These properties can be accessed from both the ``start()`` and ``process()`` functions.
 
@@ -133,7 +133,7 @@ These properties can be accessed from both the ``start()`` and ``process()`` fun
           to ``true``. In a ShaderMaterial, access it with the ``COLOR`` variable.
 
 Start built-ins
-^^^^^^^^^^^^^^^
+---------------
 
 +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Built-in                        | Description                                                                                                                                                                           |
@@ -150,7 +150,7 @@ Start built-ins
 +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Process built-ins
-^^^^^^^^^^^^^^^^^
+-----------------
 
 +------------------------------------+-------------------------------------------------------------------------------------------------------+
 | Built-in                           | Description                                                                                           |
@@ -167,7 +167,7 @@ Process built-ins
 +------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 Process functions
-^^^^^^^^^^^^^^^^^
+-----------------
 
 ``emit_subparticle()`` is currently the only custom function supported by
 particles shaders. It allows users to add a new particle with specified

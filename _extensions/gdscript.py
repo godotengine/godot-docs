@@ -428,6 +428,8 @@ class GDScriptLexer(RegexLexer):
                         "@static_unload",
                         "@tool",
                         "@warning_ignore",
+                        "@warning_ignore_restore",
+                        "@warning_ignore_start",
                     ),
                     prefix=r"(?<!\.)",
                     suffix=r"\b",

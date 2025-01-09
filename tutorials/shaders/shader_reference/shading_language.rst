@@ -14,6 +14,8 @@ If you are already familiar with GLSL, the :ref:`Godot Shader Migration
 Guide<doc_converting_glsl_to_godot_shaders>` is a resource that will help you
 transition from regular GLSL to Godot's shading language.
 
+.. _doc_shading_language_data_types:
+
 Data types
 ----------
 
@@ -813,10 +815,11 @@ There are two possible interpolation qualifiers:
 Uniforms
 --------
 
-Passing values to shaders is possible. These are global to the whole shader and
-are called *uniforms*. When a shader is later assigned to a material, the
-uniforms will appear as editable parameters in it. Uniforms can't be written
-from within the shader. Any GLSL type except for ``void`` can be a uniform.
+Passing values to shaders is possible with *uniforms*, which are defined in the
+global scope of the shader, outside of functions. When a shader is later
+assigned to a material, the uniforms will appear as editable parameters in the
+material's inspector. Uniforms can't be written from within the shader. Any
+:ref:`data type <doc_shading_language_data_types>` except for ``void`` can be a uniform.
 
 .. code-block:: glsl
 
@@ -826,49 +829,8 @@ from within the shader. Any GLSL type except for ``void`` can be a uniform.
 
     uniform vec3 colors[3];
 
-You can set uniforms in the editor in the material. Or you can set them through
-GDScript:
-
-.. code-block:: gdscript
-
-  material.set_shader_parameter("some_value", some_value)
-
-  material.set_shader_parameter("colors", [Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1)])
-
-You can access ``int`` values as a readable dropdown widget using the ``hint_enum`` uniform:
-
-.. code-block:: glsl
-
-    uniform int noise_type : hint_enum("OpenSimplex2", "Cellular", "Perlin", "Value") = 0;
-
-.. note:: Unlike ``@export_enum`` in GDScript, the ``hint_enum`` uniform does not support
-          the use of ``String``\ s, it only supports ``int``\ s.
-
-You can assign explicit values to the ``hint_enum`` uniform using colon syntax similar to GDScript:
-
-.. code-block:: glsl
- 
-    uniform int character_speed: hint_enum("Slow:30", "Average:60", "Very Fast:200") = 60;
-
-The value will be stored as an integer, corresponding to the index of the selected option (i.e. 0, 1, or 2)
-or the value assigned by colon syntax (i.e. 30, 60, or 200).
-
-.. note:: The first argument to ``set_shader_parameter`` is the name of the uniform
-          in the shader. It must match *exactly* to the name of the uniform in
-          the shader or else it will not be recognized.
-
-.. note:: There is a limit to the total size of shader uniforms that you can use
-          in a single shader. On most desktop platforms, this limit is ``65536``
-          bytes, or 4096 ``vec4`` uniforms. On mobile platforms, the limit is
-          typically ``16384`` bytes, or 1024 ``vec4`` uniforms. Vector uniforms
-          smaller than a ``vec4``, such as ``vec2`` or ``vec3``, are padded to
-          the size of a ``vec4``. Scalar uniforms such as ``int`` or ``float``
-          are not padded, and ``bool`` is padded to the size of an ``int``.
-
-          Arrays count as the total size of their contents. If you need a uniform
-          array that is larger than this limit, consider packing the data into a
-          texture instead, since the *contents* of a texture do not count towards
-          this limit, only the size of the sampler uniform.
+You can set uniforms in the editor in the material's inspector. Alternately, you
+can set them :ref:`from code <doc_shading_language_setting_uniforms_from_code>`.
 
 Uniform hints
 ~~~~~~~~~~~~~
@@ -885,24 +847,16 @@ uniform is used for, and how the editor should allow users to modify it.
     uniform vec4 other_color : source_color = vec4(1.0); // Default values go after the hint.
     uniform sampler2D image : source_color;
 
-.. admonition:: Source Color
+Uniforms can also be assigned default values:
 
-    Any texture which contains *sRGB color data* requires a ``source_color`` hint
-    in order to be correctly sampled. This is because Godot renders in linear
-    color space, but some textures contain sRGB color data. If this hint is not
-    used, the texture will appear washed out.
+.. code-block:: glsl
 
-    Albedo and color textures should typically have a ``source_color`` hint. Normal,
-    roughness, metallic, and height textures typically do not need a ``source_color``
-    hint.
+    shader_type spatial;
 
-    Using ``source_color`` hint is required in the Forward+ and Mobile renderers,
-    and in ``canvas_item`` shaders when :ref:`HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
-    is enabled. The ``source_color`` hint is optional for the Compatibility renderer,
-    and for ``canvas_item`` shaders if ``HDR 2D`` is disabled. However, it is
-    recommended to always use the ``source_color`` hint, because it works even
-    if you change renderers or disable ``HDR 2D``.
+    uniform vec4 some_vector = vec4(0.0);
+    uniform vec4 some_color : source_color = vec4(1.0);
 
+Note that when adding a default value and a hint, the default value goes after the hint.
 
 Full list of uniform hints below:
 
@@ -942,114 +896,51 @@ Full list of uniform hints below:
 | **sampler2D**        | hint_normal_roughness_texture                    | Texture is the normal roughness texture (only supported in Forward+).       |
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 
-GDScript uses different variable types than GLSL does, so when passing variables
-from GDScript to shaders, Godot converts the type automatically. Below is a
-table of the corresponding types:
+Using ``hint_enum``
+^^^^^^^^^^^^^^^^^^^
 
-+------------------------+-------------------------+------------------------------------------------------------+
-| GLSL type              | GDScript type           | Notes                                                      |
-+========================+=========================+============================================================+
-| **bool**               | **bool**                |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **bvec2**              | **int**                 | Bitwise packed int where bit 0 (LSB) corresponds to x.     |
-|                        |                         |                                                            |
-|                        |                         | For example, a bvec2 of (bx, by) could be created in       |
-|                        |                         | the following way:                                         |
-|                        |                         |                                                            |
-|                        |                         | .. code-block:: gdscript                                   |
-|                        |                         |                                                            |
-|                        |                         |   bvec2_input: int = (int(bx)) | (int(by) << 1)            |
-|                        |                         |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **bvec3**              | **int**                 | Bitwise packed int where bit 0 (LSB) corresponds to x.     |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **bvec4**              | **int**                 | Bitwise packed int where bit 0 (LSB) corresponds to x.     |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **int**                | **int**                 |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **ivec2**              | **Vector2i**            |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **ivec3**              | **Vector3i**            |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **ivec4**              | **Vector4i**            |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **uint**               | **int**                 |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **uvec2**              | **Vector2i**            |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **uvec3**              | **Vector3i**            |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **uvec4**              | **Vector4i**            |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **float**              | **float**               |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **vec2**               | **Vector2**             |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **vec3**               | **Vector3**, **Color**  | When Color is used, it will be interpreted as (r, g, b).   |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **vec4**               | **Vector4**, **Color**, | When Color is used, it will be interpreted as (r, g, b, a).|
-|                        | **Rect2**, **Plane**,   |                                                            |
-|                        | **Quaternion**          | When Rect2 is used, it will be interpreted as              |
-|                        |                         | (position.x, position.y, size.x, size.y).                  |
-|                        |                         |                                                            |
-|                        |                         | When Plane is used it will be interpreted as               |
-|                        |                         | (normal.x, normal.y, normal.z, d).                         |
-|                        |                         |                                                            |
-|                        |                         |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **mat2**               | **Transform2D**         |                                                            |
-|                        |                         |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **mat3**               | **Basis**               |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **mat4**               | **Projection**,         | When a Transform3D is used, the w Vector is set to the     |
-|                        | **Transform3D**         | identity.                                                  |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **sampler2D**          | **Texture2D**           |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **isampler2D**         | **Texture2D**           |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **usampler2D**         | **Texture2D**           |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **sampler2DArray**     | **Texture2DArray**      |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **isampler2DArray**    | **Texture2DArray**      |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **usampler2DArray**    | **Texture2DArray**      |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **sampler3D**          | **Texture3D**           |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **isampler3D**         | **Texture3D**           |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **usampler3D**         | **Texture3D**           |                                                            |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **samplerCube**        | **Cubemap**             | See :ref:`doc_importing_images_changing_import_type` for   |
-|                        |                         | instructions on importing cubemaps for use in Godot.       |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **samplerCubeArray**   | **CubemapArray**        | Only supported in Forward+ and Mobile, not Compatibility.  |
-+------------------------+-------------------------+------------------------------------------------------------+
-| **samplerExternalOES** | **ExternalTexture**     | Only supported in Compatibility/Android platform.          |
-+------------------------+-------------------------+------------------------------------------------------------+
+You can access ``int`` values as a readable dropdown widget using the ``hint_enum`` uniform:
 
-.. note:: Be careful when setting shader uniforms from GDScript, no error will
-          be thrown if the type does not match. Your shader will just exhibit
-          undefined behavior.
+.. code-block::
 
-.. warning::
-    As with the last note, no error will be thrown if the typing does not match while setting a shader uniform, this unintuitively includes setting a (GDscript) 64 bit int/float into a Godot shader language int/float (32 bit). This may lead to unintentional consequences in cases where high precision is required.
+    uniform int noise_type : hint_enum("OpenSimplex2", "Cellular", "Perlin", "Value") = 0;
 
-Uniforms can also be assigned default values:
+You can assign explicit values to the ``hint_enum`` uniform using colon syntax similar to GDScript:
 
-.. code-block:: glsl
+.. code-block::
+ 
+    uniform int character_speed: hint_enum("Slow:30", "Average:60", "Very Fast:200") = 60;
 
-    shader_type spatial;
+The value will be stored as an integer, corresponding to the index of the selected
+option (i.e. ``0``, ``1``, or ``2``) or the value assigned by colon syntax
+(i.e. ``30``, ``60``, or ``200``). When setting the value with
+``set_shader_parameter()``, you must use the integer value, not the ``String``
+name.
 
-    uniform vec4 some_vector = vec4(0.0);
-    uniform vec4 some_color : source_color = vec4(1.0);
+Using ``source_color``
+^^^^^^^^^^^^^^^^^^^^^^
 
-Note that when adding a default value and a hint, the default value goes after the hint.
+Any texture which contains *sRGB color data* requires a ``source_color`` hint
+in order to be correctly sampled. This is because Godot renders in linear
+color space, but some textures contain sRGB color data. If this hint is not
+used, the texture will appear washed out.
 
-If you need to make multiple uniforms to be grouped in the specific category of an inspector, you can use a `group_uniform` keyword like:
+Albedo and color textures should typically have a ``source_color`` hint. Normal,
+roughness, metallic, and height textures typically do not need a ``source_color``
+hint.
+
+Using ``source_color`` hint is required in the Forward+ and Mobile renderers,
+and in ``canvas_item`` shaders when :ref:`HDR 2D<class_ProjectSettings_property_rendering/viewport/hdr_2d>`
+is enabled. The ``source_color`` hint is optional for the Compatibility renderer,
+and for ``canvas_item`` shaders if ``HDR 2D`` is disabled. However, it is
+recommended to always use the ``source_color`` hint, because it works even
+if you change renderers or disable ``HDR 2D``.
+
+Uniform groups
+~~~~~~~~~~~~~~
+
+To group multiple uniforms in a section in the inspector, you can use a
+``group_uniform`` keyword like this:
 
 .. code-block:: glsl
 
@@ -1083,6 +974,12 @@ every shader type (``canvas_item``, ``spatial``, ``particles``, ``sky`` and
 Global uniforms are especially useful for environmental effects that affect many
 objects in a scene, like having foliage bend when the player is nearby, or having
 objects move with the wind.
+
+.. note:: *Global uniforms* are not the same as *global scope* for an individual
+    shader. While regular uniforms are defined outside of shader functions and are
+    therefore the global scope of the shader, global uniforms are global to all
+    shaders in the entire project (but within each shader, are also in the global
+    scope).
 
 To create a global uniform, open the **Project Settings** then go to the
 **Shader Globals** tab. Specify a name for the uniform (case-sensitive) and a
@@ -1218,6 +1115,136 @@ When using per-instance uniforms, there are some restrictions you should be awar
 .. code-block:: glsl
 
     instance uniform vec4 my_color : source_color, instance_index(5);
+
+.. _doc_shading_language_setting_uniforms_from_code:
+
+Setting uniforms from code
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can set uniforms from GDScript:
+
+.. code-block:: gdscript
+
+  material.set_shader_parameter("some_value", some_value)
+
+  material.set_shader_parameter("colors", [Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1)])
+
+.. note:: The first argument to ``set_shader_parameter`` is the name of the uniform
+          in the shader. It must match *exactly* to the name of the uniform in
+          the shader or else it will not be recognized.
+
+GDScript uses different variable types than GLSL does, so when passing variables
+from GDScript to shaders, Godot converts the type automatically. Below is a
+table of the corresponding types:
+
++------------------------+-------------------------+------------------------------------------------------------+
+| GLSL type              | GDScript type           | Notes                                                      |
++========================+=========================+============================================================+
+| **bool**               | **bool**                |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **bvec2**              | **int**                 | Bitwise packed int where bit 0 (LSB) corresponds to x.     |
+|                        |                         |                                                            |
+|                        |                         | For example, a bvec2 of (bx, by) could be created in       |
+|                        |                         | the following way:                                         |
+|                        |                         |                                                            |
+|                        |                         | .. code-block:: gdscript                                   |
+|                        |                         |                                                            |
+|                        |                         |   bvec2_input: int = (int(bx)) | (int(by) << 1)            |
+|                        |                         |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **bvec3**              | **int**                 | Bitwise packed int where bit 0 (LSB) corresponds to x.     |
++------------------------+-------------------------+------------------------------------------------------------+
+| **bvec4**              | **int**                 | Bitwise packed int where bit 0 (LSB) corresponds to x.     |
++------------------------+-------------------------+------------------------------------------------------------+
+| **int**                | **int**                 |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **ivec2**              | **Vector2i**            |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **ivec3**              | **Vector3i**            |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **ivec4**              | **Vector4i**            |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **uint**               | **int**                 |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **uvec2**              | **Vector2i**            |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **uvec3**              | **Vector3i**            |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **uvec4**              | **Vector4i**            |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **float**              | **float**               |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **vec2**               | **Vector2**             |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **vec3**               | **Vector3**, **Color**  | When Color is used, it will be interpreted as (r, g, b).   |
++------------------------+-------------------------+------------------------------------------------------------+
+| **vec4**               | **Vector4**, **Color**, | When Color is used, it will be interpreted as (r, g, b, a).|
+|                        | **Rect2**, **Plane**,   |                                                            |
+|                        | **Quaternion**          | When Rect2 is used, it will be interpreted as              |
+|                        |                         | (position.x, position.y, size.x, size.y).                  |
+|                        |                         |                                                            |
+|                        |                         | When Plane is used it will be interpreted as               |
+|                        |                         | (normal.x, normal.y, normal.z, d).                         |
+|                        |                         |                                                            |
+|                        |                         |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **mat2**               | **Transform2D**         |                                                            |
+|                        |                         |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **mat3**               | **Basis**               |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **mat4**               | **Projection**,         | When a Transform3D is used, the w Vector is set to the     |
+|                        | **Transform3D**         | identity.                                                  |
++------------------------+-------------------------+------------------------------------------------------------+
+| **sampler2D**          | **Texture2D**           |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **isampler2D**         | **Texture2D**           |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **usampler2D**         | **Texture2D**           |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **sampler2DArray**     | **Texture2DArray**      |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **isampler2DArray**    | **Texture2DArray**      |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **usampler2DArray**    | **Texture2DArray**      |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **sampler3D**          | **Texture3D**           |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **isampler3D**         | **Texture3D**           |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **usampler3D**         | **Texture3D**           |                                                            |
++------------------------+-------------------------+------------------------------------------------------------+
+| **samplerCube**        | **Cubemap**             | See :ref:`doc_importing_images_changing_import_type` for   |
+|                        |                         | instructions on importing cubemaps for use in Godot.       |
++------------------------+-------------------------+------------------------------------------------------------+
+| **samplerCubeArray**   | **CubemapArray**        | Only supported in Forward+ and Mobile, not Compatibility.  |
++------------------------+-------------------------+------------------------------------------------------------+
+| **samplerExternalOES** | **ExternalTexture**     | Only supported in Compatibility/Android platform.          |
++------------------------+-------------------------+------------------------------------------------------------+
+
+.. note:: Be careful when setting shader uniforms from GDScript, no error will
+          be thrown if the type does not match. Your shader will just exhibit
+          undefined behavior.
+
+.. warning::
+    As with the last note, no error will be thrown if the typing does not match while setting a shader uniform, this unintuitively includes setting a (GDscript) 64 bit int/float into a Godot shader language int/float (32 bit). This may lead to unintentional consequences in cases where high precision is required.
+
+
+Uniform limits
+~~~~~~~~~~~~~~
+
+There is a limit to the total size of shader uniforms that you can use
+in a single shader. On most desktop platforms, this limit is ``65536``
+bytes, or 4096 ``vec4`` uniforms. On mobile platforms, the limit is
+typically ``16384`` bytes, or 1024 ``vec4`` uniforms. Vector uniforms
+smaller than a ``vec4``, such as ``vec2`` or ``vec3``, are padded to
+the size of a ``vec4``. Scalar uniforms such as ``int`` or ``float``
+are not padded, and ``bool`` is padded to the size of an ``int``.
+
+Arrays count as the total size of their contents. If you need a uniform
+array that is larger than this limit, consider packing the data into a
+texture instead, since the *contents* of a texture do not count towards
+this limit, only the size of the sampler uniform.
 
 Built-in variables
 ------------------

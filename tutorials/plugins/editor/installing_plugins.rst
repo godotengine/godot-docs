@@ -53,6 +53,8 @@ plugin's ``addons/`` folder into your project folder to merge the new folder
 contents with the existing one. Your file manager may ask you whether to write
 into the folder; answer **Yes**. No files will be overwritten in the process.
 
+.. _doc_installing_plugins_enabling_a_plugin:
+
 Enabling a plugin
 ~~~~~~~~~~~~~~~~~
 

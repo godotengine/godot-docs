@@ -180,7 +180,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | as         | Cast the value to a given type if possible.                                                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| self       | Refers to current class instance.                                                                                                                 |
+| self       | Refers to current class instance. See `self`_.                                                                                                    |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | super      | Resolves the scope of the parent method. See `Inheritance`_.                                                                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -572,8 +572,8 @@ directly *above* a documentable item (such as a member variable), or at the top
 of a file. Dedicated formatting options are also available. See
 :ref:`doc_gdscript_documentation_comments` for details.
 
-
 ::
+
     ## This comment will appear in the script documentation.
     var value
 
@@ -1326,9 +1326,9 @@ Functions
 
 Functions always belong to a `class <Classes_>`_. The scope priority for
 variable look-up is: local → class member → global. The ``self`` variable is
-always available and is provided as an option for accessing class members, but
-is not always required (and should *not* be sent as the function's first
-argument, unlike Python).
+always available and is provided as an option for accessing class members
+(see `self`_), but is not always required (and should *not* be sent as the
+function's first argument, unlike Python).
 
 ::
 
@@ -1529,6 +1529,39 @@ Here are some examples of expressions::
 
 Identifiers, attributes, and subscripts are valid assignment targets. Other expressions cannot be on the left side of
 an assignment.
+
+self
+^^^^
+
+``self`` can be used to refer to the current instance and is often equivalent to
+directly referring to symbols available in the current script. However, ``self``
+also allows you to access properties, methods, and other names that are defined
+dynamically (i.e. are expected to exist in subtypes of the current class, or are
+provided using :ref:`_set() <class_Object_private_method__set>` and/or
+:ref:`_get() <class_Object_private_method__get>`).
+
+::
+
+    extends Node
+
+    func _ready():
+        # Compile time error, as `my_var` is not defined in the current class or its ancestors.
+        print(my_var)
+        # Checked at runtime, thus may work for dynamic properties or descendant classes.
+        print(self.my_var)
+
+        # Compile time error, as `my_func()` is not defined in the current class or its ancestors.
+        my_func()
+        # Checked at runtime, thus may work for descendant classes.
+        self.my_func()
+
+.. warning::
+
+    Beware that accessing members of child classes in the base class is often
+    considered a bad practice, because this blurs the area of responsibility of
+    any given piece of code, making the overall relationship between parts of
+    your game harder to reason about. Besides that, one can simply forget that
+    the parent class had some expectations about it's descendants.
 
 if/else/elif
 ~~~~~~~~~~~~

@@ -38,7 +38,7 @@ Use cases
 ---------
 
 Static decoration
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Sometimes, the fastest way to add texture detail to a scene is to use decals.
 This is especially the case for organic detail, such as patches of dirt or sand
@@ -58,7 +58,7 @@ footprints or wet puddles.
    Dirt added on top of level geometry using decals
 
 Dynamic gameplay elements
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Decals can represent temporary or persistent gameplay effects such as bullet
 impacts and explosion scorches.
@@ -67,7 +67,7 @@ Using an AnimationPlayer node or a script, decals can be made to fade over time
 (and then be removed using ``queue_free()``) to improve performance.
 
 Blob shadows
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 Blob shadows are frequently used in mobile projects (or to follow a retro art
 style), as real-time lighting tends to be too expensive on low-end mobile
@@ -96,7 +96,7 @@ Quick start guide
 -----------------
 
 Creating decals in the editor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Create a Decal node in the 3D editor.
 2. In the inspector, expand the **Textures** section and load a texture in
@@ -121,7 +121,7 @@ Decal node properties
   culling opportunities, therefore improving performance.
 
 Textures
-^^^^^^^^
+~~~~~~~~
 
 - **Albedo:** The albedo (diffuse/color) map to use for the decal. In
   most situations, this is the texture you want to set first. If using a normal
@@ -141,7 +141,7 @@ Textures
   **Albedo**, this texture will appear to glow in the dark.
 
 Parameters
-^^^^^^^^^^
+~~~~~~~~~~
 
 - **Emission Energy:** The brightness of the emission texture.
 - **Modulate:** Multiplies the color of the albedo and emission textures. Use
@@ -160,7 +160,7 @@ Parameters
   added normal angle computations.
 
 Vertical Fade
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 - **Upper Fade:** The curve over which the decal will fade as the surface gets
   further from the center of the :abbr:`AABB (Axis-Aligned Bounding Box)`
@@ -170,7 +170,7 @@ Vertical Fade
   from the decal's projection angle). Only positive values are valid.
 
 Distance Fade
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 - **Enabled:** Controls whether distance fade (a form of :abbr:`LOD (Level of Detail)`)
   is enabled. The decal will fade out over **Begin + Length**, after which it
@@ -184,7 +184,7 @@ Distance Fade
   more suited when the camera moves fast.
 
 Cull Mask
-^^^^^^^^^
+~~~~~~~~~
 
 - **Cull Mask:** Specifies which VisualInstance3D layers this decal will project
   on. By default, decals affect all layers. This is used so you can specify which

@@ -84,39 +84,39 @@ how the text has to be included, but here are the most common approaches (you
 only need to implement one of them, not all).
 
 Credits screen
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Include the above license text somewhere in the credits screen. It can be at the
 bottom after showing the rest of the credits. Most large studios use this
 approach with open source licenses.
 
 Licenses screen
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Some games have a special menu (often in the settings) to display licenses.
 This menu is typically accessed with a button called **Third-party Licenses**
 or **Open Source Licenses**.
 
 Output log
-^^^^^^^^^^
+~~~~~~~~~~
 
 Printing the license text using the :ref:`print() <class_@GlobalScope_method_print>`
 function may be enough on platforms where a global output log is readable.
 This is the case on desktop platforms, Android and HTML5 (but not iOS).
 
 Accompanying file
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 If the game is distributed on desktop platforms, a file containing the license
 text can be added to the software that is installed to the user PC.
 
 Printed manual
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 If the game includes a printed manual, the license text can be included there.
 
 Link to the license
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 The Godot Engine developers consider that a link to ``godotengine.org/license``
 in your game documentation or credits would be an acceptable way to satisfy

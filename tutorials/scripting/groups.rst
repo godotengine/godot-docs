@@ -33,7 +33,7 @@ You can create new groups using the Groups tab in the Node dock.
 
 .. image:: img/groups_node_tab.webp
 
-Select one or more nodes in the Scene dock then click the add button with the + symbol.
+Select a node in the Scene dock then click the add button with the + symbol.
 
 .. image:: img/groups_add_new_group_button.webp
 
@@ -49,8 +49,8 @@ When done, press Ok to create it.
 You should see the new groups appear in the Groups tab under Scene Groups if the Global option was
 unmarked, or under Global Groups if that option was marked.
 
-Selected Node(s) from the Scene dock can be added into groups by marking the checkbox on the left side
-of the groups in the Groups dock. The node(s) you had selected when creating a new group will be automatically checked.
+A selected Node from the Scene dock can be added into groups by marking the checkbox on the left side
+of the groups in the Groups dock. The node you had selected when creating a new group will be automatically checked.
 
 .. image:: img/groups_node_tab_with_created_groups.webp
 

@@ -39,7 +39,7 @@ required:
 .. _doc_compiling_for_linuxbsd_oneliners:
 
 Distro-specific one-liners
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tabs::
 
@@ -403,12 +403,6 @@ To cross-compile Godot for RISC-V devices, we need to setup the following items:
   If in doubt, `use this version <https://github.com/riscv-collab/riscv-gnu-toolchain/releases/tag/2021.12.22>`__,
   and download ``riscv64-glibc-ubuntu-18.04-nightly-2021.12.22-nightly.tar.gz``. Extract
   it somewhere and remember its path.
-- Clang. RISC-V GCC has
-  `bugs with its atomic operations <https://github.com/riscv-collab/riscv-gcc/issues/15>`__
-  which prevent it from compiling Godot correctly. Any version of Clang from 16.0.0 upwards
-  will suffice. Download it from the package manager of your distro, and make sure that
-  it *can* compile to RISC-V. You can verify by executing this command ``clang -print-targets``,
-  make sure you see ``riscv64`` on the list of targets.
 - `mold <https://github.com/rui314/mold/releases>`__. This fast linker,
   is the only one that correctly links the resulting binary. Download it, extract it,
   and make sure to add its ``bin`` folder to your PATH. Run
@@ -431,9 +425,26 @@ Go to the root of the source code, and execute the following build command:
 
 ::
 
+    PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH" \
     scons arch=rv64 use_llvm=yes linker=mold lto=none target=editor \
         ccflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu" \
         linkflags="--sysroot=$RISCV_TOOLCHAIN_PATH/sysroot --gcc-toolchain=$RISCV_TOOLCHAIN_PATH -target riscv64-unknown-linux-gnu"
+
+.. note::
+
+    RISC-V GCC has `bugs with its atomic operations <https://github.com/riscv-collab/riscv-gcc/issues/15>`__
+    which prevent it from compiling Godot correctly. That's why Clang is used instead. Make sure that
+    it *can* compile to RISC-V. You can verify by executing this command ``clang -print-targets``,
+    make sure you see ``riscv64`` on the list of targets.
+
+.. warning:: The code above includes adding ``$RISCV_TOOLCHAIN_PATH/bin`` to the PATH,
+             but only for the following ``scons`` command. Since riscv-gnu-toolchain uses
+             its own Clang located in the ``bin`` folder, adding ``$RISCV_TOOLCHAIN_PATH/bin``
+             to your user's PATH environment variable may block you from accessing another
+             version of Clang if one is installed. For this reason it's not recommended to make
+             adding the bin folder permanent. You can also omit the ``PATH="$RISCV_TOOLCHAIN_PATH/bin:$PATH"`` line
+             if you want to use scons with self-installed version of Clang, but it may have
+             compatibility issues with riscv-gnu-toolchain.
 
 The command is similar in nature, but with some key changes. ``ccflags`` and
 ``linkflags`` append additional flags to the build. ``--sysroot`` points to
@@ -565,7 +576,7 @@ listed in the :ref:`doc_compiling_for_linuxbsd_oneliners`:
         ::
 
             sudo dnf install -y \
-              embree3-devel \
+              embree-devel \
               enet-devel \
               glslang-devel \
               graphite2-devel \

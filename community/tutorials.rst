@@ -22,24 +22,19 @@ Some tutorials mentioned below cover more advanced subjects, e.g. on 3D or shade
 Video tutorials
 ---------------
 
-For video tutorials we recommend looking on `YouTube <https://www.youtube.com/>`_. There's many great
-channels covering a wide array of subjects.
+For video tutorials we recommend looking on `YouTube <https://www.youtube.com/>`_.
+There are many great channels covering a wide array of subjects.
 
 Text tutorials
 --------------
 
 - `FinePointCGI website by Mitch <https://finepointcgi.io/>`__
+- `Catlike Coding by Jasper Flick <https://catlikecoding.com/godot/>`__
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
 - `Godot Recipes by KidsCanCode <https://kidscancode.org/godot_recipes/4.x/>`__
 - `Godot Tutorials by SomethingLikeGames <https://www.somethinglikegames.de/en/tags/godot-engine/>`__
 - `Game Dev Artisan website <https://gamedevartisan.com/>`__
 - `Night Quest Games Blog <https://www.nightquestgames.com/blog-articles/>`__
-
-Devlogs
--------
-
-- `bitbrain <https://www.youtube.com/@bitbraindev>`_
-- `DevDuck (2D) <https://www.youtube.com/@devduck/videos>`_
 
 Resources
 ---------
