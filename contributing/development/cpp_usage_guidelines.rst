@@ -100,6 +100,15 @@ pull request.
 To follow the existing style, please use standard ``#ifdef``-based include
 guards instead of ``#pragma once`` in new files.
 
+``try``-``catch`` blocks
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+C++ style exception handling using ``try`` and ``catch`` blocks is forbidden.
+This restriction is in place for several reasons, including performance, binary
+size and code complexity.
+Use :ref:`doc_common_engine_methods_and_macros_error_macros` instead.
+
+
 .. seealso::
 
     See :ref:`doc_code_style_guidelines_header_includes` for guidelines on sorting

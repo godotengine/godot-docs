@@ -182,6 +182,8 @@ repetition:
 It's recommended to use ``GLOBAL_DEF``/``EDITOR_DEF`` only once per setting and
 use ``GLOBAL_GET``/``EDITOR_GET`` in all other places where it's referenced.
 
+.. _doc_common_engine_methods_and_macros_error_macros:
+
 Error macros
 ------------
 
