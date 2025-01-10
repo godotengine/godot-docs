@@ -69,9 +69,10 @@ To list the available target platforms, use ``scons platform=list``::
     The following platforms are available:
 
         android
-        javascript
+        ios
         linuxbsd
-        server
+        macos
+        web
         windows
 
     Please run SCons again and select a valid platform: platform=<string>
