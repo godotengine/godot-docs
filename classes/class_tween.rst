@@ -204,6 +204,8 @@ Methods
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`tween_property<class_Tween_method_tween_property>`\ (\ object\: :ref:`Object<class_Object>`, property\: :ref:`NodePath<class_NodePath>`, final_val\: :ref:`Variant<class_Variant>`, duration\: :ref:`float<class_float>`\ )                                                                                                                                          |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SubtweenTweener<class_SubtweenTweener>` | :ref:`tween_subtween<class_Tween_method_tween_subtween>`\ (\ subtween\: :ref:`Tween<class_Tween>`\ )                                                                                                                                                                                                                                                                       |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -1048,6 +1050,35 @@ will move the sprite to position (100, 200) and then to (200, 300). If you use :
     tween.TweenProperty(GetNode("Sprite"), "position", Vector2.Right * 300.0f, 1.0f).AsRelative().FromCurrent().SetTrans(Tween.TransitionType.Expo);
 
 
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tween_method_tween_subtween:
+
+.. rst-class:: classref-method
+
+:ref:`SubtweenTweener<class_SubtweenTweener>` **tween_subtween**\ (\ subtween\: :ref:`Tween<class_Tween>`\ ) :ref:`🔗<class_Tween_method_tween_subtween>`
+
+Creates and appends a :ref:`SubtweenTweener<class_SubtweenTweener>`. This method can be used to nest ``subtween`` within this **Tween**, allowing for the creation of more complex and composable sequences.
+
+::
+
+    # Subtween will rotate the object.
+    var subtween = create_tween()
+    subtween.tween_property(self, "rotation_degrees", 45.0, 1.0)
+    subtween.tween_property(self, "rotation_degrees", 0.0, 1.0)
+    
+    # Parent tween will execute the subtween as one of its steps.
+    var tween = create_tween()
+    tween.tween_property(self, "position:x", 500, 3.0)
+    tween.tween_subtween(subtween)
+    tween.tween_property(self, "position:x", 300, 2.0)
+
+\ **Note:** The methods :ref:`pause<class_Tween_method_pause>`, :ref:`stop<class_Tween_method_stop>`, and :ref:`set_loops<class_Tween_method_set_loops>` can cause the parent **Tween** to get stuck on the subtween step; see the documentation for those methods for more information.
+
+\ **Note:** The pause and process modes set by :ref:`set_pause_mode<class_Tween_method_set_pause_mode>` and :ref:`set_process_mode<class_Tween_method_set_process_mode>` on ``subtween`` will be overridden by the parent **Tween**'s settings.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

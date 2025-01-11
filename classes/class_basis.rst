@@ -489,7 +489,7 @@ The order of each consecutive rotation can be changed with ``order`` (see :ref:`
 
 Returns this basis's rotation as a :ref:`Quaternion<class_Quaternion>`.
 
-\ **Note:** Quatenions are much more suitable for 3D math but are less intuitive. For user interfaces, consider using the :ref:`get_euler<class_Basis_method_get_euler>` method, which returns Euler angles.
+\ **Note:** Quaternions are much more suitable for 3D math but are less intuitive. For user interfaces, consider using the :ref:`get_euler<class_Basis_method_get_euler>` method, which returns Euler angles.
 
 .. rst-class:: classref-item-separator
 

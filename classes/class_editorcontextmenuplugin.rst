@@ -74,6 +74,14 @@ Context menu of Scene dock. :ref:`_popup_menu<class_EditorContextMenuPlugin_priv
 
 Context menu of FileSystem dock. :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>` and option callback will be called with list of paths of the currently selected files.
 
+.. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_SCRIPT_EDITOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_SCRIPT_EDITOR** = ``2``
+
+Context menu of Script editor's script tabs. :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with the path to the currently edited script, while option callback will receive reference to that script.
+
 .. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_FILESYSTEM_CREATE:
 
 .. rst-class:: classref-enumeration-constant
@@ -82,13 +90,43 @@ Context menu of FileSystem dock. :ref:`_popup_menu<class_EditorContextMenuPlugin
 
 The "Create..." submenu of FileSystem dock's context menu. :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>` and option callback will be called with list of paths of the currently selected files.
 
-.. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_SCRIPT_EDITOR:
+.. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_SCRIPT_EDITOR_CODE:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_SCRIPT_EDITOR** = ``2``
+:ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_SCRIPT_EDITOR_CODE** = ``4``
 
-Context menu of Scene dock. :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with the path to the currently edited script, while option callback will receive reference to that script.
+Context menu of Script editor's code editor. :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with the path to the :ref:`CodeEdit<class_CodeEdit>` node. You can fetch it using this code:
+
+::
+
+    func _popup_menu(paths):
+        var code_edit = Engine.get_main_loop().root.get_node(paths[0]);
+
+The option callback will receive reference to that node. You can use :ref:`CodeEdit<class_CodeEdit>` methods to perform symbol lookups etc.
+
+.. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_SCENE_TABS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_SCENE_TABS** = ``5``
+
+Context menu of scene tabs. :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with the path of the clicked scene, or empty :ref:`PackedStringArray<class_PackedStringArray>` if the menu was opened on empty space. The option callback will receive the path of the clicked scene, or empty :ref:`String<class_String>` if none was clicked.
+
+.. _class_EditorContextMenuPlugin_constant_CONTEXT_SLOT_2D_EDITOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ContextMenuSlot<enum_EditorContextMenuPlugin_ContextMenuSlot>` **CONTEXT_SLOT_2D_EDITOR** = ``6``
+
+Context menu of 2D editor's basic right-click menu. :ref:`_popup_menu<class_EditorContextMenuPlugin_private_method__popup_menu>` will be called with paths to all :ref:`CanvasItem<class_CanvasItem>` nodes under the cursor. You can fetch them using this code:
+
+::
+
+    func _popup_menu(paths):
+        var canvas_item = Engine.get_main_loop().root.get_node(paths[0]); # Replace 0 with the desired index.
+
+The paths array is empty if there weren't any nodes under cursor. The option callback will receive a typed array of :ref:`CanvasItem<class_CanvasItem>` nodes.
 
 .. rst-class:: classref-section-separator
 

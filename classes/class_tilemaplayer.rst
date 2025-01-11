@@ -25,6 +25,27 @@ For performance reasons, all TileMap updates are batched at the end of a frame. 
 
 To force an update earlier on, call :ref:`update_internals<class_TileMapLayer_method_update_internals>`.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using Tilemaps <../tutorials/2d/using_tilemaps>`
+
+- `2D Platformer Demo <https://godotengine.org/asset-library/asset/2727>`__
+
+- `2D Isometric Demo <https://godotengine.org/asset-library/asset/2718>`__
+
+- `2D Hexagonal Demo <https://godotengine.org/asset-library/asset/2717>`__
+
+- `2D Grid-based Navigation with AStarGrid2D Demo <https://godotengine.org/asset-library/asset/2723>`__
+
+- `2D Role Playing Game (RPG) Demo <https://godotengine.org/asset-library/asset/2729>`__
+
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2719>`__
+
+- `2D Dynamic TileMap Layers Demo <https://godotengine.org/asset-library/asset/2713>`__
+
 .. rst-class:: classref-reftable-group
 
 Properties

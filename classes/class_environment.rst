@@ -453,6 +453,14 @@ Use the Academy Color Encoding System tonemapper. ACES is slightly more expensiv
 
 \ **Note:** This tonemapping operator is called "ACES Fitted" in Godot 3.x.
 
+.. _class_Environment_constant_TONE_MAPPER_AGX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ToneMapper<enum_Environment_ToneMapper>` **TONE_MAPPER_AGX** = ``4``
+
+Use the AgX tonemapper. AgX is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. AgX is less likely to darken parts of the scene compared to :ref:`TONE_MAPPER_ACES<class_Environment_constant_TONE_MAPPER_ACES>` and can match the overall scene brightness of :ref:`TONE_MAPPER_FILMIC<class_Environment_constant_TONE_MAPPER_FILMIC>` more closely.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2077,7 +2085,9 @@ The tonemapping mode to use. Tonemapping is the process that "converts" HDR valu
 - |void| **set_tonemap_white**\ (\ value\: :ref:`float<class_float>`\ )
 - :ref:`float<class_float>` **get_tonemap_white**\ (\ )
 
-The white reference value for tonemapping (also called "whitepoint"). Higher values can make highlights look less blown out, and will also slightly darken the whole scene as a result. Only effective if the :ref:`tonemap_mode<class_Environment_property_tonemap_mode>` isn't set to :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>`. See also :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>`.
+The white reference value for tonemapping (also called "whitepoint"). Higher values can make highlights look less blown out, and will also slightly darken the whole scene as a result. See also :ref:`tonemap_exposure<class_Environment_property_tonemap_exposure>`.
+
+\ **Note:** :ref:`tonemap_white<class_Environment_property_tonemap_white>` is ignored when using :ref:`TONE_MAPPER_LINEAR<class_Environment_constant_TONE_MAPPER_LINEAR>` or :ref:`TONE_MAPPER_AGX<class_Environment_constant_TONE_MAPPER_AGX>`.
 
 .. rst-class:: classref-item-separator
 

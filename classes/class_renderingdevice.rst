@@ -4521,6 +4521,26 @@ Maximum viewport width (in pixels).
 
 Maximum viewport height (in pixels).
 
+.. _class_RenderingDevice_constant_LIMIT_METALFX_TEMPORAL_SCALER_MIN_SCALE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_METALFX_TEMPORAL_SCALER_MIN_SCALE** = ``46``
+
+Returns the smallest value for :ref:`ProjectSettings.rendering/scaling_3d/scale<class_ProjectSettings_property_rendering/scaling_3d/scale>` when using the MetalFX temporal upscaler.
+
+\ **Note:** The returned value is multiplied by a factor of ``1000000`` to preserve 6 digits of precision. It must be divided by ``1000000.0`` to convert the value to a floating point number.
+
+.. _class_RenderingDevice_constant_LIMIT_METALFX_TEMPORAL_SCALER_MAX_SCALE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_METALFX_TEMPORAL_SCALER_MAX_SCALE** = ``47``
+
+Returns the largest value for :ref:`ProjectSettings.rendering/scaling_3d/scale<class_ProjectSettings_property_rendering/scaling_3d/scale>` when using the MetalFX temporal upscaler.
+
+\ **Note:** The returned value is multiplied by a factor of ``1000000`` to preserve 6 digits of precision. It must be divided by ``1000000.0`` to convert the value to a floating point number.
+
 .. rst-class:: classref-item-separator
 
 ----

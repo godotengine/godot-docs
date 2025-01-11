@@ -546,6 +546,8 @@ Returns the horizontal field of view of the projection (in degrees).
 
 Returns the vertical field of view of the projection (in degrees) associated with the given horizontal field of view (in degrees) and aspect ratio.
 
+\ **Note:** Unlike most methods of **Projection**, ``aspect`` is expected to be 1 divided by the X:Y aspect ratio.
+
 .. rst-class:: classref-item-separator
 
 ----

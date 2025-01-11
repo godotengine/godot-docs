@@ -111,8 +111,6 @@ Theme Properties
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`color_hue<class_ColorPicker_theme_icon_color_hue>`                               |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`color_okhsl_hue<class_ColorPicker_theme_icon_color_okhsl_hue>`                   |         |
-   +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`expanded_arrow<class_ColorPicker_theme_icon_expanded_arrow>`                     |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`folded_arrow<class_ColorPicker_theme_icon_folded_arrow>`                         |         |
@@ -663,18 +661,6 @@ The texture for the arrow grabber.
 :ref:`Texture2D<class_Texture2D>` **color_hue** :ref:`🔗<class_ColorPicker_theme_icon_color_hue>`
 
 Custom texture for the hue selection slider on the right.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ColorPicker_theme_icon_color_okhsl_hue:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Texture2D<class_Texture2D>` **color_okhsl_hue** :ref:`🔗<class_ColorPicker_theme_icon_color_okhsl_hue>`
-
-Custom texture for the H slider in the OKHSL color mode.
 
 .. rst-class:: classref-item-separator
 

@@ -36,6 +36,10 @@ Properties
    +-----------------------------+-------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`     | :ref:`deletable<class_EditorProperty_property_deletable>`               | ``false`` |
    +-----------------------------+-------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`draw_background<class_EditorProperty_property_draw_background>`   | ``true``  |
+   +-----------------------------+-------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`draw_label<class_EditorProperty_property_draw_label>`             | ``true``  |
+   +-----------------------------+-------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`     | :ref:`draw_warning<class_EditorProperty_property_draw_warning>`         | ``false`` |
    +-----------------------------+-------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`     | :ref:`keying<class_EditorProperty_property_keying>`                     | ``false`` |
@@ -293,6 +297,40 @@ Used by the inspector, set to ``true`` when the property is checked.
 - :ref:`bool<class_bool>` **is_deletable**\ (\ )
 
 Used by the inspector, set to ``true`` when the property can be deleted by the user.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorProperty_property_draw_background:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **draw_background** = ``true`` :ref:`🔗<class_EditorProperty_property_draw_background>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_draw_background**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_draw_background**\ (\ )
+
+Used by the inspector, set to ``true`` when the property label is drawn.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorProperty_property_draw_label:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **draw_label** = ``true`` :ref:`🔗<class_EditorProperty_property_draw_label>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_draw_label**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_draw_label**\ (\ )
+
+Used by the inspector, set to ``true`` when the property background is drawn.
 
 .. rst-class:: classref-item-separator
 

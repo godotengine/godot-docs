@@ -265,6 +265,8 @@ Post process the scene. This function is called after the final scene has been c
 
 Pre Process the scene. This function is called right after the scene format loader loaded the scene and no changes have been made.
 
+Pre process may be used to adjust internal import options in the ``"nodes"``, ``"meshes"``, ``"animations"`` or ``"materials"`` keys inside ``get_option_value("_subresources")``.
+
 .. rst-class:: classref-item-separator
 
 ----

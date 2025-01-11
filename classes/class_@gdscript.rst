@@ -1040,6 +1040,8 @@ Converts ``what`` to ``type`` in the best way possible. The ``type`` uses the :r
 
 :ref:`Object<class_Object>` **dict_to_inst**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) :ref:`🔗<class_@GDScript_method_dict_to_inst>`
 
+**Deprecated:** Consider using :ref:`JSON.to_native<class_JSON_method_to_native>` or :ref:`Object.get_property_list<class_Object_method_get_property_list>` instead.
+
 Converts a ``dictionary`` (created with :ref:`inst_to_dict<class_@GDScript_method_inst_to_dict>`) back to an Object instance. Can be useful for deserializing.
 
 .. rst-class:: classref-item-separator
@@ -1085,9 +1087,9 @@ Starting from ``_ready()``, ``bar()`` would print:
 
 :ref:`Dictionary<class_Dictionary>` **inst_to_dict**\ (\ instance\: :ref:`Object<class_Object>`\ ) :ref:`🔗<class_@GDScript_method_inst_to_dict>`
 
-Returns the passed ``instance`` converted to a Dictionary. Can be useful for serializing.
+**Deprecated:** Consider using :ref:`JSON.from_native<class_JSON_method_from_native>` or :ref:`Object.get_property_list<class_Object_method_get_property_list>` instead.
 
-\ **Note:** Cannot be used to serialize objects with built-in scripts attached or objects allocated within built-in scripts.
+Returns the passed ``instance`` converted to a Dictionary. Can be useful for serializing.
 
 ::
 
@@ -1103,6 +1105,10 @@ Prints out:
 
     [@subpath, @path, foo]
     [, res://test.gd, bar]
+
+\ **Note:** This function can only be used to serialize objects with an attached :ref:`GDScript<class_GDScript>` stored in a separate file. Objects without an attached script, with a script written in another language, or with a built-in script are not supported.
+
+\ **Note:** This function is not recursive, which means that nested objects will not be represented as dictionaries. Also, properties passed by reference (:ref:`Object<class_Object>`, :ref:`Dictionary<class_Dictionary>`, :ref:`Array<class_Array>`, and packed arrays) are copied by reference, not duplicated.
 
 .. rst-class:: classref-item-separator
 

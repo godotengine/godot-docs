@@ -115,6 +115,8 @@ Properties
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`editable<class_LineEdit_property_editable>`                                                           | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`emoji_menu_enabled<class_LineEdit_property_emoji_menu_enabled>`                                       | ``true``                                                                            |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`expand_to_text_length<class_LineEdit_property_expand_to_text_length>`                                 | ``false``                                                                           |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`flat<class_LineEdit_property_flat>`                                                                   | ``false``                                                                           |
@@ -570,11 +572,19 @@ Inserts word joiner (WJ) character.
 
 Inserts soft hyphen (SHY) character.
 
+.. _class_LineEdit_constant_MENU_EMOJI_AND_SYMBOL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MenuItems<enum_LineEdit_MenuItems>` **MENU_EMOJI_AND_SYMBOL** = ``30``
+
+Opens system emoji and symbol picker.
+
 .. _class_LineEdit_constant_MENU_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_LineEdit_MenuItems>` **MENU_MAX** = ``30``
+:ref:`MenuItems<enum_LineEdit_MenuItems>` **MENU_MAX** = ``31``
 
 Represents the size of the :ref:`MenuItems<enum_LineEdit_MenuItems>` enum.
 
@@ -864,6 +874,23 @@ If ``true``, control characters are displayed.
 - :ref:`bool<class_bool>` **is_editable**\ (\ )
 
 If ``false``, existing text cannot be modified and new text cannot be added.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_property_emoji_menu_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **emoji_menu_enabled** = ``true`` :ref:`🔗<class_LineEdit_property_emoji_menu_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_emoji_menu_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_emoji_menu_enabled**\ (\ )
+
+If ``false``, "Emoji and Symbols" menu is enabled.
 
 .. rst-class:: classref-item-separator
 

@@ -378,11 +378,43 @@ Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. 
 
 Use AMD FidelityFX Super Resolution 2.2 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR2. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use FSR2 at native resolution as a TAA solution.
 
+.. _class_Viewport_constant_SCALING_3D_MODE_METALFX_SPATIAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_METALFX_SPATIAL** = ``3``
+
+Use the `MetalFX spatial upscaler <https://developer.apple.com/documentation/metalfx/mtlfxspatialscaler#overview>`__ for the viewport's 3D buffer.
+
+The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`.
+
+Values less than ``1.0`` will be result in the viewport being upscaled using MetalFX. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+
+More information: `MetalFX <https://developer.apple.com/documentation/metalfx>`__.
+
+\ **Note:** Only supported when the Metal rendering driver is in use, which limits this scaling mode to macOS and iOS.
+
+.. _class_Viewport_constant_SCALING_3D_MODE_METALFX_TEMPORAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_METALFX_TEMPORAL** = ``4``
+
+Use the `MetalFX temporal upscaler <https://developer.apple.com/documentation/metalfx/mtlfxtemporalscaler#overview>`__ for the viewport's 3D buffer.
+
+The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. To determine the minimum input scale, use the :ref:`RenderingDevice.limit_get<class_RenderingDevice_method_limit_get>` method with :ref:`RenderingDevice.LIMIT_METALFX_TEMPORAL_SCALER_MIN_SCALE<class_RenderingDevice_constant_LIMIT_METALFX_TEMPORAL_SCALER_MIN_SCALE>`.
+
+Values less than ``1.0`` will be result in the viewport being upscaled using MetalFX. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use MetalFX at native resolution as a TAA solution.
+
+More information: `MetalFX <https://developer.apple.com/documentation/metalfx>`__.
+
+\ **Note:** Only supported when the Metal rendering driver is in use, which limits this scaling mode to macOS and iOS.
+
 .. _class_Viewport_constant_SCALING_3D_MODE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``3``
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``5``
 
 Represents the size of the :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` enum.
 

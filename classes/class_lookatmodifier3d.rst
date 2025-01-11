@@ -40,7 +40,7 @@ Properties
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`EaseType<enum_Tween_EaseType>`                | :ref:`ease_type<class_LookAtModifier3D_property_ease_type>`                                                 | ``0``                |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`BoneAxis<enum_LookAtModifier3D_BoneAxis>`     | :ref:`forward_axis<class_LookAtModifier3D_property_forward_axis>`                                           | ``4``                |
+   | :ref:`BoneAxis<enum_SkeletonModifier3D_BoneAxis>`   | :ref:`forward_axis<class_LookAtModifier3D_property_forward_axis>`                                           | ``4``                |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`int<class_int>`                               | :ref:`origin_bone<class_LookAtModifier3D_property_origin_bone>`                                             |                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------+----------------------+
@@ -115,64 +115,6 @@ Methods
 
 Enumerations
 ------------
-
-.. _enum_LookAtModifier3D_BoneAxis:
-
-.. rst-class:: classref-enumeration
-
-enum **BoneAxis**: :ref:`🔗<enum_LookAtModifier3D_BoneAxis>`
-
-.. _class_LookAtModifier3D_constant_BONE_AXIS_PLUS_X:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`BoneAxis<enum_LookAtModifier3D_BoneAxis>` **BONE_AXIS_PLUS_X** = ``0``
-
-Enumerated value for the +X axis.
-
-.. _class_LookAtModifier3D_constant_BONE_AXIS_MINUS_X:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`BoneAxis<enum_LookAtModifier3D_BoneAxis>` **BONE_AXIS_MINUS_X** = ``1``
-
-Enumerated value for the -X axis.
-
-.. _class_LookAtModifier3D_constant_BONE_AXIS_PLUS_Y:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`BoneAxis<enum_LookAtModifier3D_BoneAxis>` **BONE_AXIS_PLUS_Y** = ``2``
-
-Enumerated value for the +Y axis.
-
-.. _class_LookAtModifier3D_constant_BONE_AXIS_MINUS_Y:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`BoneAxis<enum_LookAtModifier3D_BoneAxis>` **BONE_AXIS_MINUS_Y** = ``3``
-
-Enumerated value for the -Y axis.
-
-.. _class_LookAtModifier3D_constant_BONE_AXIS_PLUS_Z:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`BoneAxis<enum_LookAtModifier3D_BoneAxis>` **BONE_AXIS_PLUS_Z** = ``4``
-
-Enumerated value for the +Z axis.
-
-.. _class_LookAtModifier3D_constant_BONE_AXIS_MINUS_Z:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`BoneAxis<enum_LookAtModifier3D_BoneAxis>` **BONE_AXIS_MINUS_Z** = ``5``
-
-Enumerated value for the -Z axis.
-
-.. rst-class:: classref-item-separator
-
-----
 
 .. _enum_LookAtModifier3D_OriginFrom:
 
@@ -295,12 +237,12 @@ The ease type of the time-based interpolation. See also :ref:`EaseType<enum_Twee
 
 .. rst-class:: classref-property
 
-:ref:`BoneAxis<enum_LookAtModifier3D_BoneAxis>` **forward_axis** = ``4`` :ref:`🔗<class_LookAtModifier3D_property_forward_axis>`
+:ref:`BoneAxis<enum_SkeletonModifier3D_BoneAxis>` **forward_axis** = ``4`` :ref:`🔗<class_LookAtModifier3D_property_forward_axis>`
 
 .. rst-class:: classref-property-setget
 
-- |void| **set_forward_axis**\ (\ value\: :ref:`BoneAxis<enum_LookAtModifier3D_BoneAxis>`\ )
-- :ref:`BoneAxis<enum_LookAtModifier3D_BoneAxis>` **get_forward_axis**\ (\ )
+- |void| **set_forward_axis**\ (\ value\: :ref:`BoneAxis<enum_SkeletonModifier3D_BoneAxis>`\ )
+- :ref:`BoneAxis<enum_SkeletonModifier3D_BoneAxis>` **get_forward_axis**\ (\ )
 
 The forward axis of the bone. This :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` modifies the bone so that this axis points toward the :ref:`target_node<class_LookAtModifier3D_property_target_node>`.
 
