@@ -1311,7 +1311,7 @@ Returns the object's metadata value for the given entry ``name``. If the entry d
 
 :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_meta_list**\ (\ ) |const| :ref:`🔗<class_Object_method_get_meta_list>`
 
-Returns the object's metadata entry names as a :ref:`PackedStringArray<class_PackedStringArray>`.
+Returns the object's metadata entry names as an :ref:`Array<class_Array>` of :ref:`StringName<class_StringName>`\ s.
 
 .. rst-class:: classref-item-separator
 

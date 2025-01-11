@@ -363,7 +363,7 @@ If ``false``, the exported game will not support threads. As a result, it is mor
 
 :ref:`bool<class_bool>` **vram_texture_compression/for_desktop** :ref:`🔗<class_EditorExportPlatformWeb_property_vram_texture_compression/for_desktop>`
 
-If ``true``, allows textures to be optimized for desktop through the S3TC algorithm.
+If ``true``, allows textures to be optimized for desktop through the S3TC/BPTC algorithm.
 
 .. rst-class:: classref-item-separator
 
@@ -375,7 +375,7 @@ If ``true``, allows textures to be optimized for desktop through the S3TC algori
 
 :ref:`bool<class_bool>` **vram_texture_compression/for_mobile** :ref:`🔗<class_EditorExportPlatformWeb_property_vram_texture_compression/for_mobile>`
 
-If ``true`` allows textures to be optimized for mobile through the ETC2 algorithm.
+If ``true`` allows textures to be optimized for mobile through the ETC2/ASTC algorithm.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

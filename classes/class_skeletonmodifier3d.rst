@@ -14,7 +14,7 @@ SkeletonModifier3D
 
 **Inherited By:** :ref:`LookAtModifier3D<class_LookAtModifier3D>`, :ref:`PhysicalBoneSimulator3D<class_PhysicalBoneSimulator3D>`, :ref:`RetargetModifier3D<class_RetargetModifier3D>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`XRBodyModifier3D<class_XRBodyModifier3D>`, :ref:`XRHandModifier3D<class_XRHandModifier3D>`
 
-A Node that may modify Skeleton3D's bone.
+A node that may modify Skeleton3D's bone.
 
 .. rst-class:: classref-introduction-group
 
@@ -80,6 +80,69 @@ Signals
 Notifies when the modification have been finished.
 
 \ **Note:** If you want to get the modified bone pose by the modifier, you must use :ref:`Skeleton3D.get_bone_pose<class_Skeleton3D_method_get_bone_pose>` or :ref:`Skeleton3D.get_bone_global_pose<class_Skeleton3D_method_get_bone_global_pose>` at the moment this signal is fired.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_SkeletonModifier3D_BoneAxis:
+
+.. rst-class:: classref-enumeration
+
+enum **BoneAxis**: :ref:`🔗<enum_SkeletonModifier3D_BoneAxis>`
+
+.. _class_SkeletonModifier3D_constant_BONE_AXIS_PLUS_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BoneAxis<enum_SkeletonModifier3D_BoneAxis>` **BONE_AXIS_PLUS_X** = ``0``
+
+Enumerated value for the +X axis.
+
+.. _class_SkeletonModifier3D_constant_BONE_AXIS_MINUS_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BoneAxis<enum_SkeletonModifier3D_BoneAxis>` **BONE_AXIS_MINUS_X** = ``1``
+
+Enumerated value for the -X axis.
+
+.. _class_SkeletonModifier3D_constant_BONE_AXIS_PLUS_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BoneAxis<enum_SkeletonModifier3D_BoneAxis>` **BONE_AXIS_PLUS_Y** = ``2``
+
+Enumerated value for the +Y axis.
+
+.. _class_SkeletonModifier3D_constant_BONE_AXIS_MINUS_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BoneAxis<enum_SkeletonModifier3D_BoneAxis>` **BONE_AXIS_MINUS_Y** = ``3``
+
+Enumerated value for the -Y axis.
+
+.. _class_SkeletonModifier3D_constant_BONE_AXIS_PLUS_Z:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BoneAxis<enum_SkeletonModifier3D_BoneAxis>` **BONE_AXIS_PLUS_Z** = ``4``
+
+Enumerated value for the +Z axis.
+
+.. _class_SkeletonModifier3D_constant_BONE_AXIS_MINUS_Z:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BoneAxis<enum_SkeletonModifier3D_BoneAxis>` **BONE_AXIS_MINUS_Z** = ``5``
+
+Enumerated value for the -Z axis.
 
 .. rst-class:: classref-section-separator
 

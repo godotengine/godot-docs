@@ -337,6 +337,8 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`shaped_get_span_count<class_TextServer_method_shaped_get_span_count>`\ (\ shaped\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                 |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                                    | :ref:`shaped_get_span_embedded_object<class_TextServer_method_shaped_get_span_embedded_object>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                              |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                    | :ref:`shaped_get_span_meta<class_TextServer_method_shaped_get_span_meta>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                    |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`shaped_set_span_update_font<class_TextServer_method_shaped_set_span_update_font>`\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`, fonts\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\], size\: :ref:`int<class_int>`, opentype_features\: :ref:`Dictionary<class_Dictionary>` = {}\ )                                                                                      |
@@ -3389,6 +3391,18 @@ Saves optional TextServer database (e.g. ICU break iterators and dictionaries) t
 :ref:`int<class_int>` **shaped_get_span_count**\ (\ shaped\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_span_count>`
 
 Returns number of text spans added using :ref:`shaped_text_add_string<class_TextServer_method_shaped_text_add_string>` or :ref:`shaped_text_add_object<class_TextServer_method_shaped_text_add_object>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_get_span_embedded_object:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **shaped_get_span_embedded_object**\ (\ shaped\: :ref:`RID<class_RID>`, index\: :ref:`int<class_int>`\ ) |const| :ref:`🔗<class_TextServer_method_shaped_get_span_embedded_object>`
+
+Returns text embedded object key.
 
 .. rst-class:: classref-item-separator
 

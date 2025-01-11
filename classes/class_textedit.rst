@@ -73,6 +73,8 @@ Properties
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`editable<class_TextEdit_property_editable>`                                                           | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`emoji_menu_enabled<class_TextEdit_property_emoji_menu_enabled>`                                       | ``true``                                                                            |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`empty_selection_clipboard_enabled<class_TextEdit_property_empty_selection_clipboard_enabled>`         | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`FocusMode<enum_Control_FocusMode>`                          | focus_mode                                                                                                  | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)                 |
@@ -858,11 +860,19 @@ Inserts word joiner (WJ) character.
 
 Inserts soft hyphen (SHY) character.
 
+.. _class_TextEdit_constant_MENU_EMOJI_AND_SYMBOL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_EMOJI_AND_SYMBOL** = ``30``
+
+Opens system emoji and symbol picker.
+
 .. _class_TextEdit_constant_MENU_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_MAX** = ``30``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_MAX** = ``31``
 
 Represents the size of the :ref:`MenuItems<enum_TextEdit_MenuItems>` enum.
 
@@ -1358,6 +1368,23 @@ If ``true``, the "tab" character will have a visible representation.
 - :ref:`bool<class_bool>` **is_editable**\ (\ )
 
 If ``false``, existing text cannot be modified and new text cannot be added.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextEdit_property_emoji_menu_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **emoji_menu_enabled** = ``true`` :ref:`🔗<class_TextEdit_property_emoji_menu_enabled>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_emoji_menu_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_emoji_menu_enabled**\ (\ )
+
+If ``false``, "Emoji and Symbols" menu is enabled.
 
 .. rst-class:: classref-item-separator
 

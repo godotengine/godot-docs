@@ -72,6 +72,8 @@ Properties
    +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` | :ref:`text_overrun_behavior<class_ItemList_property_text_overrun_behavior>` | ``3``                                                                     |
    +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                 | :ref:`wraparound_items<class_ItemList_property_wraparound_items>`           | ``true``                                                                  |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -95,6 +97,8 @@ Methods
    | |void|                                                | :ref:`ensure_current_is_visible<class_ItemList_method_ensure_current_is_visible>`\ (\ )                                                                                                  |
    +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                | :ref:`force_update_list_size<class_ItemList_method_force_update_list_size>`\ (\ )                                                                                                        |
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`HScrollBar<class_HScrollBar>`                   | :ref:`get_h_scroll_bar<class_ItemList_method_get_h_scroll_bar>`\ (\ )                                                                                                                    |
    +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                 | :ref:`get_item_at_position<class_ItemList_method_get_item_at_position>`\ (\ position\: :ref:`Vector2<class_Vector2>`, exact\: :ref:`bool<class_bool>` = false\ ) |const|                 |
    +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -639,6 +643,25 @@ Allows single or multiple item selection. See the :ref:`SelectMode<enum_ItemList
 
 Sets the clipping behavior when the text exceeds an item's bounding rectangle. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ItemList_property_wraparound_items:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **wraparound_items** = ``true`` :ref:`🔗<class_ItemList_property_wraparound_items>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_wraparound_items**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **has_wraparound_items**\ (\ )
+
+If ``true``, the control will automatically move items into a new row to fit its content. See also :ref:`HFlowContainer<class_HFlowContainer>` for this behavior.
+
+If ``false``, the control will add a horizontal scrollbar to make all items visible.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -731,6 +754,20 @@ Ensure current selection is visible, adjusting the scroll position as necessary.
 |void| **force_update_list_size**\ (\ ) :ref:`🔗<class_ItemList_method_force_update_list_size>`
 
 Forces an update to the list size based on its items. This happens automatically whenever size of the items, or other relevant settings like :ref:`auto_height<class_ItemList_property_auto_height>`, change. The method can be used to trigger the update ahead of next drawing pass.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ItemList_method_get_h_scroll_bar:
+
+.. rst-class:: classref-method
+
+:ref:`HScrollBar<class_HScrollBar>` **get_h_scroll_bar**\ (\ ) :ref:`🔗<class_ItemList_method_get_h_scroll_bar>`
+
+Returns the horizontal scrollbar.
+
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 .. rst-class:: classref-item-separator
 

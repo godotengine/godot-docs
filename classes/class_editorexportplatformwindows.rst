@@ -299,8 +299,6 @@ Application executable architecture.
 
 Supported architectures: ``x86_32``, ``x86_64``, and ``arm64``.
 
-Official export templates include ``x86_32`` and ``x86_64`` binaries only.
-
 .. rst-class:: classref-item-separator
 
 ----

@@ -58,11 +58,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_buffer<class_AudioStreamOggVorbis_method_load_from_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| |
-   +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_file<class_AudioStreamOggVorbis_method_load_from_file>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                         |
-   +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_buffer<class_AudioStreamOggVorbis_method_load_from_buffer>`\ (\ stream_data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_file<class_AudioStreamOggVorbis_method_load_from_file>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                              |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -190,9 +190,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| :ref:`🔗<class_AudioStreamOggVorbis_method_load_from_buffer>`
+:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_buffer**\ (\ stream_data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| :ref:`🔗<class_AudioStreamOggVorbis_method_load_from_buffer>`
 
-Creates a new AudioStreamOggVorbis instance from the given buffer. The buffer must contain Ogg Vorbis data.
+Creates a new **AudioStreamOggVorbis** instance from the given buffer. The buffer must contain Ogg Vorbis data.
 
 .. rst-class:: classref-item-separator
 
@@ -204,7 +204,7 @@ Creates a new AudioStreamOggVorbis instance from the given buffer. The buffer mu
 
 :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_file**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_AudioStreamOggVorbis_method_load_from_file>`
 
-Creates a new AudioStreamOggVorbis instance from the given file path. The file must be in Ogg Vorbis format.
+Creates a new **AudioStreamOggVorbis** instance from the given file path. The file must be in Ogg Vorbis format.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

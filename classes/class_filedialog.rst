@@ -405,9 +405,9 @@ See also :ref:`filters<class_FileDialog_property_filters>`, which should be used
 - |void| **set_filters**\ (\ value\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_filters**\ (\ )
 
-The available file type filters. Each filter string in the array should be formatted like this: ``*.txt,*.doc;Text Files``. The description text of the filter is optional and can be omitted.
+The available file type filters. Each filter string in the array should be formatted like this: ``*.png,*.jpg,*.jpeg;Image Files;image/png,image/jpeg``. The description text of the filter is optional and can be omitted. Both file extensions and MIME type should be always set.
 
-\ **Note:** For android native dialog, MIME types are used like this: ``image/*, application/pdf``.
+\ **Note:** Embedded file dialog and Windows file dialog support only file extensions, while Android, Linux, and macOS file dialogs also support MIME types.
 
 **Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 

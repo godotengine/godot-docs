@@ -71,6 +71,8 @@ Methods
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                                   | :ref:`get_predicted_display_time<class_OpenXRAPIExtension_method_get_predicted_display_time>`\ (\ )                                                                                                                                                                                                                                                         |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                                   | :ref:`get_projection_layer<class_OpenXRAPIExtension_method_get_projection_layer>`\ (\ )                                                                                                                                                                                                                                                                     |
+   +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                                               | :ref:`get_render_state_z_far<class_OpenXRAPIExtension_method_get_render_state_z_far>`\ (\ )                                                                                                                                                                                                                                                                 |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                                               | :ref:`get_render_state_z_near<class_OpenXRAPIExtension_method_get_render_state_z_near>`\ (\ )                                                                                                                                                                                                                                                               |
@@ -112,6 +114,8 @@ Methods
    | |void|                                                                                  | :ref:`set_emulate_environment_blend_mode_alpha_blend<class_OpenXRAPIExtension_method_set_emulate_environment_blend_mode_alpha_blend>`\ (\ enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                              |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                                  | :ref:`set_object_name<class_OpenXRAPIExtension_method_set_object_name>`\ (\ object_type\: :ref:`int<class_int>`, object_handle\: :ref:`int<class_int>`, object_name\: :ref:`String<class_String>`\ )                                                                                                                                                        |
+   +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                                  | :ref:`set_render_region<class_OpenXRAPIExtension_method_set_render_region>`\ (\ render_region\: :ref:`Rect2i<class_Rect2i>`\ )                                                                                                                                                                                                                              |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                                  | :ref:`set_velocity_depth_texture<class_OpenXRAPIExtension_method_set_velocity_depth_texture>`\ (\ render_target\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                  |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -293,6 +297,20 @@ Returns the play space, which is an `XrSpace <https://registry.khronos.org/OpenX
 :ref:`int<class_int>` **get_predicted_display_time**\ (\ ) :ref:`🔗<class_OpenXRAPIExtension_method_get_predicted_display_time>`
 
 Returns the predicted display timing for the current frame.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRAPIExtension_method_get_projection_layer:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_projection_layer**\ (\ ) :ref:`🔗<class_OpenXRAPIExtension_method_get_projection_layer>`
+
+Returns a pointer to the render state's ``XrCompositionLayerProjection`` struct.
+
+\ **Note:** This method should only be called from the rendering thread.
 
 .. rst-class:: classref-item-separator
 
@@ -549,6 +567,18 @@ If set to ``true``, an OpenXR extension is loaded which is capable of emulating 
 |void| **set_object_name**\ (\ object_type\: :ref:`int<class_int>`, object_handle\: :ref:`int<class_int>`, object_name\: :ref:`String<class_String>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_set_object_name>`
 
 Set the object name of an OpenXR object, used for debug output. ``object_type`` must be a valid OpenXR ``XrObjectType`` enum and ``object_handle`` must be a valid OpenXR object handle.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRAPIExtension_method_set_render_region:
+
+.. rst-class:: classref-method
+
+|void| **set_render_region**\ (\ render_region\: :ref:`Rect2i<class_Rect2i>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_set_render_region>`
+
+Sets the render region to ``render_region``, overriding the normal render target's rect.
 
 .. rst-class:: classref-item-separator
 

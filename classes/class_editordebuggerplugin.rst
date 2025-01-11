@@ -181,7 +181,7 @@ Override this method to be notified when a breakpoint line has been clicked in t
 
 :ref:`bool<class_bool>` **_has_capture**\ (\ capture\: :ref:`String<class_String>`\ ) |virtual| |const| :ref:`🔗<class_EditorDebuggerPlugin_private_method__has_capture>`
 
-Override this method to enable receiving messages from the debugger. If ``capture`` is "my_message" then messages starting with "my_message:" will be passes to the :ref:`_capture<class_EditorDebuggerPlugin_private_method__capture>` method.
+Override this method to enable receiving messages from the debugger. If ``capture`` is "my_message" then messages starting with "my_message:" will be passed to the :ref:`_capture<class_EditorDebuggerPlugin_private_method__capture>` method.
 
 .. rst-class:: classref-item-separator
 

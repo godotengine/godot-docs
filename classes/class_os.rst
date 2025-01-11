@@ -1827,7 +1827,9 @@ This can useful when files may be opened by other applications, such as antiviru
 
 Requests the OS to open a resource identified by ``uri`` with the most appropriate program. For example:
 
-- ``OS.shell_open("C:\\Users\name\Downloads")`` on Windows opens the file explorer at the user's Downloads folder.
+- ``OS.shell_open("C:\\Users\\name\\Downloads")`` on Windows opens the file explorer at the user's Downloads folder.
+
+- ``OS.shell_open("C:/Users/name/Downloads")`` also works on Windows and opens the file explorer at the user's Downloads folder.
 
 - ``OS.shell_open("https://godotengine.org")`` opens the default web browser on the official Godot website.
 

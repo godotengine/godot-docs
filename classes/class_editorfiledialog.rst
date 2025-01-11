@@ -21,6 +21,8 @@ Description
 
 **EditorFileDialog** is an enhanced version of :ref:`FileDialog<class_FileDialog>` available only to editor plugins. Additional features include list of favorited/recent files and the ability to see files as thumbnails grid instead of list.
 
+Unlike :ref:`FileDialog<class_FileDialog>`, **EditorFileDialog** does not have a property for using native dialogs. Instead, native dialogs can be enabled globally via the :ref:`EditorSettings.interface/editor/use_native_file_dialogs<class_EditorSettings_property_interface/editor/use_native_file_dialogs>` editor setting. They are also enabled automatically when running in sandbox (e.g. on macOS).
+
 .. rst-class:: classref-reftable-group
 
 Properties

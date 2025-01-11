@@ -943,6 +943,7 @@ Other objects
     class_streampeergzip
     class_streampeertcp
     class_streampeertls
+    class_subtweentweener
     class_surfacetool
     class_tcpserver
     class_textline

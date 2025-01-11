@@ -60,11 +60,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_buffer<class_ResourceImporterOggVorbis_method_load_from_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_file<class_ResourceImporterOggVorbis_method_load_from_file>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                         |
-   +---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_buffer<class_ResourceImporterOggVorbis_method_load_from_buffer>`\ (\ stream_data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| |
+   +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_file<class_ResourceImporterOggVorbis_method_load_from_file>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                              |
+   +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -156,9 +156,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| :ref:`🔗<class_ResourceImporterOggVorbis_method_load_from_buffer>`
+:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_buffer**\ (\ stream_data\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| :ref:`🔗<class_ResourceImporterOggVorbis_method_load_from_buffer>`
 
-This method loads audio data from a PackedByteArray buffer into an AudioStreamOggVorbis object.
+**Deprecated:** Use :ref:`AudioStreamOggVorbis.load_from_buffer<class_AudioStreamOggVorbis_method_load_from_buffer>` instead.
+
+Creates a new :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` instance from the given buffer. The buffer must contain Ogg Vorbis data.
 
 .. rst-class:: classref-item-separator
 
@@ -170,7 +172,9 @@ This method loads audio data from a PackedByteArray buffer into an AudioStreamOg
 
 :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_file**\ (\ path\: :ref:`String<class_String>`\ ) |static| :ref:`🔗<class_ResourceImporterOggVorbis_method_load_from_file>`
 
-This method loads audio data from a file into an AudioStreamOggVorbis object. The file path is provided as a string.
+**Deprecated:** Use :ref:`AudioStreamOggVorbis.load_from_file<class_AudioStreamOggVorbis_method_load_from_file>` instead.
+
+Creates a new :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` instance from the given file path. The file must be in Ogg Vorbis format.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

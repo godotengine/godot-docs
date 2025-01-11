@@ -62,13 +62,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamWAV<class_AudioStreamWAV>` | :ref:`load_from_buffer<class_AudioStreamWAV_method_load_from_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, options\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static| |
-   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamWAV<class_AudioStreamWAV>` | :ref:`load_from_file<class_AudioStreamWAV_method_load_from_file>`\ (\ path\: :ref:`String<class_String>`, options\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static|                         |
-   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`save_to_wav<class_AudioStreamWAV_method_save_to_wav>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                            |
-   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamWAV<class_AudioStreamWAV>` | :ref:`load_from_buffer<class_AudioStreamWAV_method_load_from_buffer>`\ (\ stream_data\: :ref:`PackedByteArray<class_PackedByteArray>`, options\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static| |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamWAV<class_AudioStreamWAV>` | :ref:`load_from_file<class_AudioStreamWAV_method_load_from_file>`\ (\ path\: :ref:`String<class_String>`, options\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static|                              |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`save_to_wav<class_AudioStreamWAV_method_save_to_wav>`\ (\ path\: :ref:`String<class_String>`\ )                                                                                                 |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -306,11 +306,11 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamWAV<class_AudioStreamWAV>` **load_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`, options\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static| :ref:`🔗<class_AudioStreamWAV_method_load_from_buffer>`
+:ref:`AudioStreamWAV<class_AudioStreamWAV>` **load_from_buffer**\ (\ stream_data\: :ref:`PackedByteArray<class_PackedByteArray>`, options\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static| :ref:`🔗<class_AudioStreamWAV_method_load_from_buffer>`
 
-Creates a new **AudioStreamWAV** instance from the given buffer. The keys and values of ``options`` match the properties of :ref:`ResourceImporterWAV<class_ResourceImporterWAV>`.
+Creates a new **AudioStreamWAV** instance from the given buffer. The buffer must contain WAV data.
 
-The usage of ``options`` is identical to :ref:`load_from_file<class_AudioStreamWAV_method_load_from_file>`.
+The keys and values of ``options`` match the properties of :ref:`ResourceImporterWAV<class_ResourceImporterWAV>`. The usage of ``options`` is identical to :ref:`load_from_file<class_AudioStreamWAV_method_load_from_file>`.
 
 .. rst-class:: classref-item-separator
 
@@ -322,7 +322,9 @@ The usage of ``options`` is identical to :ref:`load_from_file<class_AudioStreamW
 
 :ref:`AudioStreamWAV<class_AudioStreamWAV>` **load_from_file**\ (\ path\: :ref:`String<class_String>`, options\: :ref:`Dictionary<class_Dictionary>` = {}\ ) |static| :ref:`🔗<class_AudioStreamWAV_method_load_from_file>`
 
-Creates a new **AudioStreamWAV** instance from the given file path. The keys and values of ``options`` match the properties of :ref:`ResourceImporterWAV<class_ResourceImporterWAV>`.
+Creates a new **AudioStreamWAV** instance from the given file path. The file must be in WAV format.
+
+The keys and values of ``options`` match the properties of :ref:`ResourceImporterWAV<class_ResourceImporterWAV>`.
 
 \ **Example:** Load the first file dropped as a WAV and play it:
 

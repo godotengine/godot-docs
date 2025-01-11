@@ -349,7 +349,7 @@ Methods
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_adjustment<class_RenderingServer_method_environment_set_adjustment>`\ (\ env\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`, brightness\: :ref:`float<class_float>`, contrast\: :ref:`float<class_float>`, saturation\: :ref:`float<class_float>`, use_1d_color_correction\: :ref:`bool<class_bool>`, color_correction\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                                                                                                      |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                                           | :ref:`environment_set_ambient_light<class_RenderingServer_method_environment_set_ambient_light>`\ (\ env\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`, ambient\: :ref:`EnvironmentAmbientSource<enum_RenderingServer_EnvironmentAmbientSource>` = 0, energy\: :ref:`float<class_float>` = 1.0, sky_contibution\: :ref:`float<class_float>` = 0.0, reflection_source\: :ref:`EnvironmentReflectionSource<enum_RenderingServer_EnvironmentReflectionSource>` = 0\ )                                                                                                                                                                                                                         |
+   | |void|                                                                           | :ref:`environment_set_ambient_light<class_RenderingServer_method_environment_set_ambient_light>`\ (\ env\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`, ambient\: :ref:`EnvironmentAmbientSource<enum_RenderingServer_EnvironmentAmbientSource>` = 0, energy\: :ref:`float<class_float>` = 1.0, sky_contribution\: :ref:`float<class_float>` = 0.0, reflection_source\: :ref:`EnvironmentReflectionSource<enum_RenderingServer_EnvironmentReflectionSource>` = 0\ )                                                                                                                                                                                                                        |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                           | :ref:`environment_set_background<class_RenderingServer_method_environment_set_background>`\ (\ env\: :ref:`RID<class_RID>`, bg\: :ref:`EnvironmentBG<enum_RenderingServer_EnvironmentBG>`\ )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2998,11 +2998,31 @@ Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. 
 
 Use AMD FidelityFX Super Resolution 2.2 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR2. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use FSR2 at native resolution as a TAA solution.
 
+.. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_METALFX_SPATIAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_METALFX_SPATIAL** = ``3``
+
+Use MetalFX spatial upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using MetalFX. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+
+\ **Note:** Only supported when the Metal rendering driver is in use, which limits this scaling mode to macOS and iOS.
+
+.. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_METALFX_TEMPORAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_METALFX_TEMPORAL** = ``4``
+
+Use MetalFX temporal upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using MetalFX. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use MetalFX at native resolution as a TAA solution.
+
+\ **Note:** Only supported when the Metal rendering driver is in use, which limits this scaling mode to macOS and iOS.
+
 .. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_MAX** = ``3``
+:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_MAX** = ``5``
 
 Represents the size of the :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` enum.
 
@@ -4219,6 +4239,14 @@ Use the filmic tonemapper. This avoids clipping bright highlights, with a result
 Use the Academy Color Encoding System tonemapper. ACES is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. ACES typically has a more contrasted output compared to :ref:`ENV_TONE_MAPPER_REINHARD<class_RenderingServer_constant_ENV_TONE_MAPPER_REINHARD>` and :ref:`ENV_TONE_MAPPER_FILMIC<class_RenderingServer_constant_ENV_TONE_MAPPER_FILMIC>`.
 
 \ **Note:** This tonemapping operator is called "ACES Fitted" in Godot 3.x.
+
+.. _class_RenderingServer_constant_ENV_TONE_MAPPER_AGX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EnvironmentToneMapper<enum_RenderingServer_EnvironmentToneMapper>` **ENV_TONE_MAPPER_AGX** = ``4``
+
+Use the AgX tonemapper. AgX is slightly more expensive than other options, but it handles bright lighting in a more realistic fashion by desaturating it as it becomes brighter. AgX is less likely to darken parts of the scene compared to :ref:`ENV_TONE_MAPPER_ACES<class_RenderingServer_constant_ENV_TONE_MAPPER_ACES>`, and can match :ref:`ENV_TONE_MAPPER_FILMIC<class_RenderingServer_constant_ENV_TONE_MAPPER_FILMIC>` more closely.
 
 .. rst-class:: classref-item-separator
 
@@ -7830,7 +7858,7 @@ Sets the values to be used with the "adjustments" post-process effect. See :ref:
 
 .. rst-class:: classref-method
 
-|void| **environment_set_ambient_light**\ (\ env\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`, ambient\: :ref:`EnvironmentAmbientSource<enum_RenderingServer_EnvironmentAmbientSource>` = 0, energy\: :ref:`float<class_float>` = 1.0, sky_contibution\: :ref:`float<class_float>` = 0.0, reflection_source\: :ref:`EnvironmentReflectionSource<enum_RenderingServer_EnvironmentReflectionSource>` = 0\ ) :ref:`🔗<class_RenderingServer_method_environment_set_ambient_light>`
+|void| **environment_set_ambient_light**\ (\ env\: :ref:`RID<class_RID>`, color\: :ref:`Color<class_Color>`, ambient\: :ref:`EnvironmentAmbientSource<enum_RenderingServer_EnvironmentAmbientSource>` = 0, energy\: :ref:`float<class_float>` = 1.0, sky_contribution\: :ref:`float<class_float>` = 0.0, reflection_source\: :ref:`EnvironmentReflectionSource<enum_RenderingServer_EnvironmentReflectionSource>` = 0\ ) :ref:`🔗<class_RenderingServer_method_environment_set_ambient_light>`
 
 Sets the values to be used for ambient light rendering. See :ref:`Environment<class_Environment>` for more details.
 

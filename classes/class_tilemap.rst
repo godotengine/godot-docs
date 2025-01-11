@@ -49,6 +49,8 @@ Tutorials
 
 - `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2719>`__
 
+- `2D Dynamic TileMap Layers Demo <https://godotengine.org/asset-library/asset/2713>`__
+
 .. rst-class:: classref-reftable-group
 
 Properties
