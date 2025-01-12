@@ -226,8 +226,6 @@ There are several types of ambient light to choose from:
   set to a mode other than **Sky**. If the background mode is already **Sky**,
   this mode behaves identically to **Background**.
 
-.. image:: img/environment_ambient.webp
-
 When the ambient light mode is set to Sky or Background (and background is set
 to Sky), it's possible to blend between the ambient color and sky using the
 **Sky Contribution** property. This value is set to ``1.0`` by default, which
@@ -481,6 +479,9 @@ parameters:
   make the :abbr:`SSAO (Screen-Space Ambient Occlusion)` effect visible in
   direct light. Values above ``0.0`` are not physically accurate, but some
   artists prefer this effect.
+- **AO Channel Affect** The screen-space ambient occlusion intensity on
+  materials that have an AO texture defined. Values higher than ``0.0`` will
+  make the SSAO effect visible in areas darkened by AO textures.
 
 .. _doc_environment_and_post_processing_ssil:
 
