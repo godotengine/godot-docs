@@ -49,10 +49,11 @@ is running.
 .. image:: img/icon_taskbar_icon.png
 
 To change the taskbar icon, go to
-**Project → Project Settings → Application → Config → Windows Native Icon**.
-Click on the folder icon and select your ICO file.
+**Project > Project Settings > Application > Config**, make sure
+**Advanced Settings** are enabled to see the setting, then go to
+``Windows Native Icon``. Click on the folder icon and select your ICO file.
 
-.. image:: img/icon_project_settings.png
+.. image:: img/icon_project_settings.webp
 
 This setting only changes the icon for your exported game on Windows.
 To set the icon for macOS, use ``Macos Native Icon``. And for any other platform,
@@ -84,7 +85,7 @@ You can download it `here <https://github.com/electron/rcedit/releases>`_.
 
 After downloading, you need to tell Godot the path to the rcedit executable
 on your computer.
-Go to **Editor → Editor Settings → Export → Windows**.
+Go to **Editor > Editor Settings > Export > Windows**.
 Click on the folder icon for the **rcedit** entry.
 Navigate to and select the rcedit executable.
 
@@ -96,13 +97,13 @@ Navigate to and select the rcedit executable.
     On macOS 10.15 (Catalina) or later, make sure to use a 64-bit version of
     both WINE and rcedit since 32-bit applications aren't supported anymore.
 
-.. image:: img/icon_rcedit.png
+.. image:: img/icon_rcedit.webp
 
 You should now have everything in place to change the file icon.
 To do that, you will need to specify the icon when exporting.
-Go to **Project → Export**. Assuming you have already created
+Go to **Project > Export**. Assuming you have already created
 a Windows Desktop preset, select your icon in ICO format in
-the **Application → Icon** field.
+the **Application > Icon** field.
 
 .. warning::
 
@@ -114,7 +115,7 @@ the **Application → Icon** field.
     If you provide invalid metadata in the export preset, the application icon
     won't change as rcedit will fail to change the executable's metadata.
 
-.. image:: img/icon_export_settings.png
+.. image:: img/icon_export_settings.webp
 
 .. note::
 
