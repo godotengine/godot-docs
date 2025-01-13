@@ -764,25 +764,26 @@ We suggest to organize GDScript code this way:
 ::
 
     01. @tool
-    02. class_name
-    03. extends
-    04. ## docstring
+    02. @icon
+    03. class_name
+    04. extends
+    05. ## docstring
 
-    05. signals
-    06. enums
-    07. constants
-    08. @export variables
-    09. public variables
-    10. private variables
-    11. @onready variables
+    06. signals
+    07. enums
+    08. constants
+    09. @export variables
+    10. public variables
+    11. private variables
+    12. @onready variables
 
-    12. optional built-in virtual _init method
-    13. optional built-in virtual _enter_tree() method
-    14. built-in virtual _ready method
-    15. remaining built-in virtual methods
-    16. public methods
-    17. private methods
-    18. subclasses
+    13. optional built-in virtual _init method
+    14. optional built-in virtual _enter_tree() method
+    15. built-in virtual _ready method
+    16. remaining built-in virtual methods
+    17. public methods
+    18. private methods
+    19. subclasses
 
 We optimized the order to make it easy to read the code from top to bottom, to
 help developers reading the code for the first time understand how it works, and
@@ -803,9 +804,9 @@ Class declaration
 If the code is meant to run in the editor, place the ``@tool`` annotation on the
 first line of the script.
 
-Follow with the ``class_name`` if necessary. You can turn a GDScript file into a
-global type in your project using this feature. For more information, see
-:ref:`doc_gdscript`.
+Follow with the optional ``@icon`` then the ``class_name`` if necessary. You can turn a
+GDScript file into a global type in your project using ``class_name``. For more
+information, see :ref:`doc_gdscript`.
 
 Then, add the ``extends`` keyword if the class extends a built-in type.
 
