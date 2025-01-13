@@ -289,9 +289,9 @@ First, we will add an :ref:`OmniLight3D<class_OmniLight3D>` to the scene.
 .. image:: img/light.png
 
 You can see the light affecting the terrain, but it looks odd. The problem is
-the light is affecting the terrain as if it were a flat plane. This is because
-the light shader uses the normals from the :ref:`Mesh <class_mesh>` to calculate
-light.
+the light is affecting the terrain as if it were made of a perfectly flat
+material without irregularities. This is because the light shader uses the
+normals from the :ref:`Mesh <class_mesh>` to calculate light.
 
 The normals are stored in the Mesh, but we are changing the shape of the Mesh in
 the shader, so the normals are no longer correct. To fix this, we can
