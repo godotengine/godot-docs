@@ -10,19 +10,38 @@ choose a random direction, and move in a straight line.
 We'll create a ``Mob`` scene, which we can then *instance* to create any number
 of independent mobs in the game.
 
+To create the ``Mob`` scene, click Scene > New Scene from the main menus at the top.
+
+You can switch Scenes using the tabs above the Toolbar. There should be a Player
+scene (from the previous section), and a new scene called "[empty]", which is what
+we've just created. Ensure you are editing the new "[empty]" scene by clicking
+on it. Save this scene as "Mob".
+
 Node setup
 ----------
 
-Click Scene -> New Scene from the top menu and add the following nodes:
+Add the following nodes to the mob's scene:
 
-- :ref:`RigidBody2D <class_RigidBody2D>` (named ``Mob``)
+- :ref:`RigidBody2D <class_RigidBody2D>` (rename it to ``Mob``)
 
    - :ref:`AnimatedSprite2D <class_AnimatedSprite2D>`
    - :ref:`CollisionShape2D <class_CollisionShape2D>`
    - :ref:`VisibleOnScreenNotifier2D <class_VisibleOnScreenNotifier2D>`
 
-Don't forget to set the children so they can't be selected, like you did with
+Don't forget to set the children so that they cannot be selected, like you did with
 the Player scene.
+
+.. tip::
+    Remember, to make the children unselectable: 
+
+    1. Ensure you are in the 2D workspace (check the Workspaces in the top-center)
+    2. Select the ``Mob`` node in the Scene tree
+    3. Click the icon to the right of the lock in the Toolbar. The icon's tooltip says "Groups the selected node with its children. This causes the parent to be selected when any child node is clicked in 2D and 3D view."
+
+    We do this because we do not want the ``Mob`` node's children, like the sprite or 
+    collision shape, to be accidentally moved or resized simply by clicking on them.
+    After the ``Mob`` node is grouped with its children, the only way to individually
+    move and resize them is to click them in the Scene tree first, which makes it a conscious action.
 
 Select the ``Mob`` node and set its ``Gravity Scale``
 property in the :ref:`RigidBody2D <class_RigidBody2D>`
@@ -32,8 +51,17 @@ This will prevent the mob from falling downwards.
 In addition, under the :ref:`CollisionObject2D <class_CollisionObject2D>`
 section just beneath the **RigidBody2D** section,
 expand the **Collision** group and
-uncheck the ``1`` inside the ``Mask`` property.
-This will ensure the mobs do not collide with each other.
+uncheck the ``1`` inside the ``Mask`` property, but keep the the ``1`` inside
+the ``Layer`` property checked. 
+
+If an object is active on Layer 1, that means it can interact/collide
+with other objects in Layer 1. If an object is active on Mask 1, that means it
+can "be hit by" objects in Layer 1. Your selection (Layer 1 checked, Mask 1 unchecked)
+ensures that the mobs can collide with the Player (because mobs are active on Layer 1
+and the player is active on Mask 1), but mobs cannot be hit by other mobs (because
+mobs are not active on any Mask). In addition to controlling collision behaviour 
+as we are doing now, this property can be used by developers to limit collisions
+for performance reasons. 
 
 .. image:: img/set_collision_mask.webp
 
@@ -41,11 +69,22 @@ Set up the :ref:`AnimatedSprite2D <class_AnimatedSprite2D>` like you did for the
 player. This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. There
 are two images for each animation in the art folder.
 
-The ``Animation Speed`` property has to be set for each individual animation. Adjust it to ``3`` for all 3 animations.
+.. tip::
+    Remember, to set up the :ref:`AnimatedSprite2D <class_AnimatedSprite2D>`: 
+
+    - Select ``AnimatedSprite2D`` in the Scene tree
+    - In the Inspector, find the ``Sprite Frames`` property under the ``Animation`` section and click "[empty]" > "New SpriteFrames"
+    - Click on the ``SpriteFrames`` you just created to open the "SpriteFrames" panel
+    - We want three different animations: ``fly``, ``swim``, and ``walk``, so rename the "default" animation to ``fly``, and click **Add Animation** button twice, name the new animations to ``swim``, and ``walk`` 
+    - Import the sprites from the FileSystem
+
+The ``Animation Speed`` property has to be set for each individual animation. 
+Adjust it to ``3`` for all 3 animations.
 
 .. image:: img/mob_animations.webp
 
-You can use the "Play Animation" buttons on the right of the ``Animation Speed`` input field to preview your animations.
+You can use the "Play Animation" buttons on the right of the ``Animation Speed`` 
+input field to preview your animations.
 
 We'll select one of these animations randomly so that the mobs will have some
 variety.
@@ -81,6 +120,11 @@ Add a script to the ``Mob`` like this:
 Now let's look at the rest of the script. In ``_ready()`` we play the animation
 and randomly choose one of the three animation types:
 
+..
+    The below code is different to the demo project.
+    https://github.com/godotengine/godot-demo-projects/blob/master/2d/dodge_the_creeps/mob.gd
+    Please consider updating it to match!
+
 .. tabs::
  .. code-tab:: gdscript GDScript
 
@@ -107,7 +151,14 @@ selects a random integer between ``0`` and ``n-1``.
 
 The last piece is to make the mobs delete themselves when they leave the screen.
 Connect the ``screen_exited()`` signal of the ``VisibleOnScreenNotifier2D`` node
-to the ``Mob`` and add this code:
+to the ``Mob``. 
+
+.. tip:: 
+    Remember, to connect the signal, first select ``VisibleOnScreenNotifier2D`` in the scene
+    tree. Then, click the Node tab next to the Inspector. There you'll find the ``screen_exited()``
+    signal. Right-click and select Connect... to connect it to your ``Mob`` node.
+
+Once the signal is connected, add this code in the signal callback:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -122,6 +173,11 @@ to the ``Mob`` and add this code:
     {
         QueueFree();
     }
+
+.. note:: To learn what ``queue_free()`` does, you can :kbd:`Ctrl + Click` on 
+    the function in the Script Editor, which will bring up the Godot built-in 
+    documentation that contains an explanation. Please read :ref:`doc_learning_new_features` 
+    for more resources and help with self-learning Godot.  
 
 This completes the `Mob` scene.
 
