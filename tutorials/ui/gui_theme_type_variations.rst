@@ -22,8 +22,8 @@ of being self-sufficient and standalone they extend another, base type.
 
 Following the previous example, your theme can have some styles, colors, and fonts
 defined for the ``Button`` type, customizing the looks of every button element in your UI.
-To then have a gray, red, or blue button you would create a new type, e.g. ``GrayButton``, and
-mark it as a variation of the base ``Button`` type.
+To then have a gray, red, or blue button you would create a new theme type, 
+e.g. ``GrayButton``, and mark it as a variation of the ``Button`` base type.
 
 Type variations can replace some aspects of the base type, but keep others.
 They can also define properties that the base style hasn't defined. For example,
@@ -38,6 +38,9 @@ a combination of both types giving priority to the type variation.
 
 Creating a type variation
 -------------------------
+
+Type variations are created from the theme editor and require both a name and
+a base type from which to extend.
 
 To create a type variation open the theme editor, then click the plus icon
 next to the **Type** dropdown on the right side of the editor. Type in what
@@ -67,7 +70,7 @@ you can find the **Theme Type Variation** property. It is empty by default,
 which means that only the base type has an effect on this node.
 
 You can either select a type variation from a dropdown list, or input its name
-manually. Variations appear on the list only if the type variation belongs to
+as free text. Variations appear on the list only if the type variation belongs to
 the project-wide theme, which you can configure in the project settings. For
 any other case you have to input the name of the variation manually. Click on
 the pencil icon to the right. Then type in the name of the type variation and click the
