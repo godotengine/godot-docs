@@ -348,8 +348,10 @@ does not use the blue channel.
 A third option **Normal Map (RG Channels)** is *only* available in layered
 textures (:ref:`class_Cubemap`, :ref:`class_CubemapArray`, :ref:`class_Texture2DArray`
 and :ref:`class_Texture3D`). This forces all layers from the texture to be imported
-with the RG color format to reduce memory usage, with only the red and green
-channels preserved. This only has an effect on textures with the **VRAM Compressed**
+with the RG color format, with only the red and green
+channels preserved. :abbr:`RGTC (Red-Green Texture Compression)` compression is able to
+preserve its detail much better, while using the same amount of memory as a standard
+RGBA VRAM-compressed texture This only has an effect on textures with the **VRAM Compressed**
 or **Basis Universal** compression modes.
 
 .. _doc_importing_images_mipmaps:
