@@ -7,7 +7,7 @@ OpenXR has its own set of settings that are applied when OpenXR starts.
 While it is possible for OpenXR extensions implemented through Godot plugins to add additional settings,
 we will only discuss the settings in the core of Godot here.
 
-.. image:: img/openxr_settings.png
+.. image:: img/openxr_settings.webp
 
 Enabled
 -------
