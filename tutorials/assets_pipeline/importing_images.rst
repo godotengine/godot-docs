@@ -351,7 +351,7 @@ and :ref:`class_Texture3D`). This forces all layers from the texture to be impor
 with the RG color format, with only the red and green
 channels preserved. :abbr:`RGTC (Red-Green Texture Compression)` compression is able to
 preserve its detail much better, while using the same amount of memory as a standard
-RGBA VRAM-compressed texture This only has an effect on textures with the **VRAM Compressed**
+RGBA VRAM-compressed texture. This only has an effect on textures with the **VRAM Compressed**
 or **Basis Universal** compression modes.
 
 .. _doc_importing_images_mipmaps:
