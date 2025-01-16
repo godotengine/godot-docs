@@ -224,7 +224,7 @@ Switch node
 ~~~~~~~~~~~
 
 The ``Switch`` node returns a vector if the boolean condition is ``true`` or
-``false``. ``Boolean`` was introduced above. If you convert a vector to a true
-boolean, all components of the vector should be above zero.
+``false``. ``Boolean`` was introduced above. If you want to convert a vector
+to a true boolean, all components of the vector should be non-zero.
 
 .. image:: img/vs_switch.webp
