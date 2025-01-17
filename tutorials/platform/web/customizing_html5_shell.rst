@@ -83,6 +83,20 @@ The following optional placeholders will enable some extra features in your cust
   :ref:`BG Color <class_ProjectSettings_property_application/boot_splash/bg_color>` setting
   in **Project Settings > Application > Boot Splash**, converted to a hex color code.
 
+- ``$GODOT_SPLASH_CLASSES``:
+  This placeholder provides a string of setting names and their values, which affect the splash screen.
+  This string is meant to be used as a set of CSS class names, which allows styling the splash image
+  based on the splash project settings.
+  The following settings from **Project Settings > Application > Boot Splash** are provided,
+  represented by the class names shown below depending on the setting's boolean value:
+  
+  - :ref:`Show Image <class_ProjectSettings_property_application/boot_splash/show_image>`:
+    ``show-image--true``, ``show-image--false``
+  - :ref:`Fullsize <class_ProjectSettings_property_application/boot_splash/fullsize>`:
+    ``fullsize--true``, ``fullsize--false``
+  - :ref:`Use Filter <class_ProjectSettings_property_application/boot_splash/use_filter>`:
+    ``use-filter--true``, ``use-filter--false``
+
 When the custom page is ready, it can be selected in the export options under the *Html / Custom Html Shell*
 section.
 
