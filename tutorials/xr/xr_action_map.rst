@@ -17,7 +17,7 @@ and binding these to the actual inputs and outputs on your XR devices.
 As the XR action map is currently part of the OpenXR module, OpenXR needs to be enabled
 in your project settings to expose it:
 
-.. image:: img/openxr_settings.png
+.. image:: img/openxr_settings.webp
 
 You will then find the XR Action Map interface in the bottom of the screen:
 

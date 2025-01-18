@@ -28,30 +28,14 @@ There are three XR specific node types that you will find in nearly all XR appli
 
 There are other XR related nodes and there is much more to say about these three nodes, but we'll get into that later on.
 
-Prerequisites for XR in Godot 4
--------------------------------
+Which Renderer to use
+---------------------
 
-While in Godot 3 most things worked out of the box, Godot 4 needs a little more
-setup. This is mainly due to the more advanced nature of the Vulkan renderer.
-There are many rendering features in Vulkan the XR system uses that aren't
-enabled by default. To turn them on, open up your project settings and tick
-:ref:`XR > Shaders > Enabled <class_ProjectSettings_property_xr/shaders/enabled>`:
-
-.. image:: img/xr_shaders.png
-
-.. UPDATE: Not supported yet. When all or most post process effects work in
-.. stereoscopic rendering, remove or update this note.
-
-.. warning::
-    As Godot 4 is still in development, many post process effects have not yet been updated to support stereoscopic rendering. Using these will have adverse effects.
-
-.. UPDATE: Recommended renderer may change. If the Mobile renderer (or any other
-.. renderer) is recommended for all XR projects, update this note.
-
-.. note::
-    Godot 4 has 3 renderer options, Compatibility, Mobile, and Forward+. In the future XR desktop projects should use Forward+, and projects for standalone headsets
-    should use Mobile. Currently Compatibility is the recommended renderer for standalone headsets, and ironically Mobile is the recommended renderer for desktop.
-    This is based on current XR performance on the different devices with each renderer.
+Godot has 3 renderer options for projects: Compatibility, Mobile, and Forward+.
+The current recommendation is to use the Mobile renderer for any desktop VR project,
+and use the Compatibility renderer for any project running on a standalone headset
+like the Meta Quest 3. XR projects will run with the Forward+ renderer, but it isn't
+well optimized for XR right now compared to the other two.
 
 OpenXR
 ------
@@ -60,27 +44,41 @@ OpenXR is a new industry standard that allows different XR platforms to present 
 
 The Vulkan implementation of OpenXR is closely integrated with Vulkan, taking over part of the Vulkan system. This requires tight integration of certain core graphics features in the Vulkan renderer which are needed before the XR system is setup. This was one of the main deciding factors to include OpenXR as a core interface.
 
-This also means OpenXR needs to be enabled when Godot starts in order to set things up correctly. The required setting can be found in your project settings:
+This also means OpenXR needs to be enabled when Godot starts in order to set things
+up correctly. Check the :ref:`Enabled<class_ProjectSettings_property_xr/openxr/enabled>`
+setting in your project settings under **XR > OpenXR**.
 
-.. image:: img/openxr_settings.png
+.. image:: img/openxr_settings.webp
 
-As setup is brought forward with OpenXR you can find several other settings related to OpenXR here as well. These can't be changed while your application is running.
-The default settings will get us started and we will go into detail in another section of the documentation.
+You can find several other settings related to OpenXR here as well. These can't be
+changed while your application is running. The default settings will get us started,
+but for more information on what's here see :ref:`doc_openxr_settings`.
+
+You'll also need to go to **XR > Shaders** in the project settings and check the
+:ref:`Enabled<class_ProjectSettings_property_xr/shaders/enabled>`
+box to enable them. Once you've done that click the **Save & Restart** button.
+
+.. image:: img/xr_shaders.webp
+
+.. warning::
+    Many post process effects have not yet been updated to support stereoscopic rendering. Using these will have adverse effects.
+
 
 Setting up the XR scene
 -----------------------
 
 Every XR application needs at least an :ref:`XROrigin3D <class_xrorigin3d>` and an :ref:`XRCamera3D <class_xrcamera3d>` node. Most will have two :ref:`XRController3D <class_xrcontroller3d>`, one for the left hand and one for the right. Keep in mind that the camera and controller nodes should be children of the origin node. Add these nodes to a new scene and rename the controller nodes to ``LeftHand`` and ``RightHand``, your scene should look something like this:
 
-.. image:: img/xr_basic_scene.png
+.. image:: img/xr_basic_scene.webp
 
-Next you need to configure the controllers, select the left hand and set it up as follows:
+The warning icons are expected and should go away after you configure the
+controllers. Select the left hand and set it up as follows:
 
-.. image:: img/xr_left_hand.png
+.. image:: img/xr_left_hand.webp
 
 And the right hand:
 
-.. image:: img/xr_right_hand.png
+.. image:: img/xr_right_hand.webp
 
 Right now all these nodes are on the floor, they will be positioned correctly in runtime. To help during development, it can be helpful to move the camera upwards so its ``y`` is set to ``1.7``, and move the controller nodes to ``-0.5, 1.0, -0.5`` and ``0.5, 1.0, -0.5`` for respectively the left and right hand.
 
