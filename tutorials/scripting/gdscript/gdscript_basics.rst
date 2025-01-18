@@ -2501,7 +2501,7 @@ If the signal emits a **single** argument, ``await`` returns a value with the sa
             print("User accepted analytics")
         return true
 
-However, if the signal emits **multiple** arguments, ``await`` returns an ``Array[Variant]`` containing the signal arguments in order::
+However, if the signal emits **multiple** arguments, ``await`` returns an :ref:`Array<class_Array>` containing the signal arguments in order::
 
     signal user_accepted(accepted_analytics, accepted_crash_report_upload)
 
