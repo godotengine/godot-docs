@@ -49,6 +49,7 @@ A humanoid skeleton profile contains 54 bones divided in 4 groups: ``"Body"``, `
                     │        └─ LeftHand
                     │           ├─ LeftThumbMetacarpal
                     │           │  └─ LeftThumbProximal
+                    │           │    └─ LeftThumbDistal
                     │           ├─ LeftIndexProximal
                     │           │  └─ LeftIndexIntermediate
                     │           │    └─ LeftIndexDistal
@@ -67,6 +68,7 @@ A humanoid skeleton profile contains 54 bones divided in 4 groups: ``"Body"``, `
                              └─ RightHand
                                 ├─ RightThumbMetacarpal
                                 │  └─ RightThumbProximal
+                                │     └─ RightThumbDistal
                                 ├─ RightIndexProximal
                                 │  └─ RightIndexIntermediate
                                 │     └─ RightIndexDistal

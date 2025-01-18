@@ -155,6 +155,8 @@ Properties
    +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
    | :ref:`Curve<class_Curve>`                               | :ref:`scale_curve_y<class_CPUParticles2D_property_scale_curve_y>`                   |                       |
    +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                   | :ref:`seed<class_CPUParticles2D_property_seed>`                                     | ``0``                 |
+   +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                               | :ref:`speed_scale<class_CPUParticles2D_property_speed_scale>`                       | ``1.0``               |
    +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                 | :ref:`split_scale<class_CPUParticles2D_property_split_scale>`                       | ``false``             |
@@ -168,6 +170,8 @@ Properties
    | :ref:`float<class_float>`                               | :ref:`tangential_accel_min<class_CPUParticles2D_property_tangential_accel_min>`     | ``0.0``               |
    +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
    | :ref:`Texture2D<class_Texture2D>`                       | :ref:`texture<class_CPUParticles2D_property_texture>`                               |                       |
+   +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                 | :ref:`use_fixed_seed<class_CPUParticles2D_property_use_fixed_seed>`                 | ``false``             |
    +---------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
@@ -189,7 +193,9 @@ Methods
    +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`   | :ref:`get_particle_flag<class_CPUParticles2D_method_get_particle_flag>`\ (\ particle_flag\: :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>`\ ) |const|                           |
    +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                    | :ref:`restart<class_CPUParticles2D_method_restart>`\ (\ )                                                                                                                                |
+   | |void|                    | :ref:`request_particles_process<class_CPUParticles2D_method_request_particles_process>`\ (\ process_time\: :ref:`float<class_float>`\ )                                                  |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`restart<class_CPUParticles2D_method_restart>`\ (\ keep_seed\: :ref:`bool<class_bool>` = false\ )                                                                                   |
    +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                    | :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>`\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )                    |
    +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1477,6 +1483,23 @@ Each particle's vertical scale will vary along this :ref:`Curve<class_Curve>`. S
 
 ----
 
+.. _class_CPUParticles2D_property_seed:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **seed** = ``0`` :ref:`🔗<class_CPUParticles2D_property_seed>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_seed**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_seed**\ (\ )
+
+Sets the random seed used by the particle system. Only effective if :ref:`use_fixed_seed<class_CPUParticles2D_property_use_fixed_seed>` is ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CPUParticles2D_property_speed_scale:
 
 .. rst-class:: classref-property
@@ -1592,6 +1615,23 @@ Minimum equivalent of :ref:`tangential_accel_max<class_CPUParticles2D_property_t
 
 Particle texture. If ``null``, particles will be squares.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CPUParticles2D_property_use_fixed_seed:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_fixed_seed** = ``false`` :ref:`🔗<class_CPUParticles2D_property_use_fixed_seed>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_fixed_seed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_use_fixed_seed**\ (\ )
+
+If ``true``, particles will use the same seed for every simulation using the seed defined in :ref:`seed<class_CPUParticles2D_property_seed>`. This is useful for situations where the visual outcome should be consistent across replays, for example when using Movie Maker mode.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -1661,13 +1701,29 @@ Returns the enabled state of the given particle flag (see :ref:`ParticleFlags<en
 
 ----
 
+.. _class_CPUParticles2D_method_request_particles_process:
+
+.. rst-class:: classref-method
+
+|void| **request_particles_process**\ (\ process_time\: :ref:`float<class_float>`\ ) :ref:`🔗<class_CPUParticles2D_method_request_particles_process>`
+
+Requests the particles to process for extra process time during a single frame.
+
+Useful for particle playback, if used in combination with :ref:`use_fixed_seed<class_CPUParticles2D_property_use_fixed_seed>` or by calling :ref:`restart<class_CPUParticles2D_method_restart>` with parameter ``keep_seed`` set to ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CPUParticles2D_method_restart:
 
 .. rst-class:: classref-method
 
-|void| **restart**\ (\ ) :ref:`🔗<class_CPUParticles2D_method_restart>`
+|void| **restart**\ (\ keep_seed\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_CPUParticles2D_method_restart>`
 
 Restarts the particle emitter.
+
+If ``keep_seed`` is ``true``, the current random seed will be preserved. Useful for seeking and playback.
 
 .. rst-class:: classref-item-separator
 

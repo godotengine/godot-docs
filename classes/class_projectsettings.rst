@@ -9418,9 +9418,13 @@ During each physics tick, Godot will multiply the linear velocity of RigidBodies
 
 Sets which physics engine to use for 2D physics.
 
-"DEFAULT" and "GodotPhysics2D" are the same, as there is currently no alternative 2D physics server implemented.
+\ **DEFAULT** is currently equivalent to **GodotPhysics2D**, but may change in future releases. Select an explicit implementation if you want to ensure that your project stays on the same engine.
 
-"Dummy" is a 2D physics server that does nothing and returns only dummy values, effectively disabling all 2D physics functionality.
+\ **GodotPhysics2D** is Godot's internal 2D physics engine.
+
+\ **Dummy** is a 2D physics server that does nothing and returns only dummy values, effectively disabling all 2D physics functionality.
+
+Third-party extensions and modules can add other physics engines to select with this setting.
 
 .. rst-class:: classref-item-separator
 
@@ -9656,9 +9660,15 @@ During each physics tick, Godot will multiply the linear velocity of RigidBodies
 
 Sets which physics engine to use for 3D physics.
 
-"DEFAULT" and "GodotPhysics3D" are the same, as there is currently no alternative 3D physics server implemented.
+\ **DEFAULT** is currently equivalent to **GodotPhysics3D**, but may change in future releases. Select an explicit implementation if you want to ensure that your project stays on the same engine.
 
-"Dummy" is a 3D physics server that does nothing and returns only dummy values, effectively disabling all 3D physics functionality.
+\ **GodotPhysics3D** is Godot's internal 3D physics engine.
+
+\ **Jolt Physics** is an alternative physics engine that is generally faster and more reliable than **GodotPhysics3D**. As it was recently implemented, it is currently considered experimental and its behavior may change in future releases.
+
+\ **Dummy** is a 3D physics server that does nothing and returns only dummy values, effectively disabling all 3D physics functionality.
+
+Third-party extensions and modules can add other physics engines to select with this setting.
 
 .. rst-class:: classref-item-separator
 
@@ -13109,6 +13119,8 @@ Loads the contents of the .pck or .zip file specified by ``pack`` into the resou
 \ **Note:** If a file from ``pack`` shares the same path as a file already in the resource filesystem, any attempts to load that file will use the file from ``pack`` unless ``replace_files`` is set to ``false``.
 
 \ **Note:** The optional ``offset`` parameter can be used to specify the offset in bytes to the start of the resource pack. This is only supported for .pck files.
+
+\ **Note:** :ref:`DirAccess<class_DirAccess>` will not show changes made to the contents of ``res://`` after calling this function.
 
 .. rst-class:: classref-item-separator
 

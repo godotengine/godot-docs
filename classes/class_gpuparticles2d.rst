@@ -77,6 +77,8 @@ Properties
    +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
    | :ref:`float<class_float>`                       | :ref:`randomness<class_GPUParticles2D_property_randomness>`                                 | ``0.0``                         |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`seed<class_GPUParticles2D_property_seed>`                                             | ``0``                           |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
    | :ref:`float<class_float>`                       | :ref:`speed_scale<class_GPUParticles2D_property_speed_scale>`                               | ``1.0``                         |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
    | :ref:`NodePath<class_NodePath>`                 | :ref:`sub_emitter<class_GPUParticles2D_property_sub_emitter>`                               | ``NodePath("")``                |
@@ -90,6 +92,8 @@ Properties
    | :ref:`int<class_int>`                           | :ref:`trail_section_subdivisions<class_GPUParticles2D_property_trail_section_subdivisions>` | ``4``                           |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
    | :ref:`int<class_int>`                           | :ref:`trail_sections<class_GPUParticles2D_property_trail_sections>`                         | ``8``                           |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`use_fixed_seed<class_GPUParticles2D_property_use_fixed_seed>`                         | ``false``                       |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
    | :ref:`Rect2<class_Rect2>`                       | :ref:`visibility_rect<class_GPUParticles2D_property_visibility_rect>`                       | ``Rect2(-100, -100, 200, 200)`` |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------+---------------------------------+
@@ -109,7 +113,9 @@ Methods
    +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                    | :ref:`emit_particle<class_GPUParticles2D_method_emit_particle>`\ (\ xform\: :ref:`Transform2D<class_Transform2D>`, velocity\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>`, custom\: :ref:`Color<class_Color>`, flags\: :ref:`int<class_int>`\ ) |
    +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                    | :ref:`restart<class_GPUParticles2D_method_restart>`\ (\ )                                                                                                                                                                                                            |
+   | |void|                    | :ref:`request_particles_process<class_GPUParticles2D_method_request_particles_process>`\ (\ process_time\: :ref:`float<class_float>`\ )                                                                                                                              |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`restart<class_GPUParticles2D_method_restart>`\ (\ keep_seed\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                               |
    +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -517,6 +523,23 @@ Emission lifetime randomness ratio.
 
 ----
 
+.. _class_GPUParticles2D_property_seed:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **seed** = ``0`` :ref:`🔗<class_GPUParticles2D_property_seed>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_seed**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_seed**\ (\ )
+
+Sets the random seed used by the particle system. Only effective if :ref:`use_fixed_seed<class_GPUParticles2D_property_use_fixed_seed>` is ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GPUParticles2D_property_speed_scale:
 
 .. rst-class:: classref-property
@@ -642,6 +665,23 @@ The number of sections to use for the particle trail rendering. Higher values ca
 
 ----
 
+.. _class_GPUParticles2D_property_use_fixed_seed:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_fixed_seed** = ``false`` :ref:`🔗<class_GPUParticles2D_property_use_fixed_seed>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_fixed_seed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_use_fixed_seed**\ (\ )
+
+If ``true``, particles will use the same seed for every simulation using the seed defined in :ref:`seed<class_GPUParticles2D_property_seed>`. This is useful for situations where the visual outcome should be consistent across replays, for example when using Movie Maker mode.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GPUParticles2D_property_visibility_rect:
 
 .. rst-class:: classref-property
@@ -708,15 +748,31 @@ The default ParticleProcessMaterial will overwrite ``color`` and use the content
 
 ----
 
+.. _class_GPUParticles2D_method_request_particles_process:
+
+.. rst-class:: classref-method
+
+|void| **request_particles_process**\ (\ process_time\: :ref:`float<class_float>`\ ) :ref:`🔗<class_GPUParticles2D_method_request_particles_process>`
+
+Requests the particles to process for extra process time during a single frame.
+
+Useful for particle playback, if used in combination with :ref:`use_fixed_seed<class_GPUParticles2D_property_use_fixed_seed>` or by calling :ref:`restart<class_GPUParticles2D_method_restart>` with parameter ``keep_seed`` set to ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GPUParticles2D_method_restart:
 
 .. rst-class:: classref-method
 
-|void| **restart**\ (\ ) :ref:`🔗<class_GPUParticles2D_method_restart>`
+|void| **restart**\ (\ keep_seed\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_GPUParticles2D_method_restart>`
 
 Restarts the particle emission cycle, clearing existing particles. To avoid particles vanishing from the viewport, wait for the :ref:`finished<class_GPUParticles2D_signal_finished>` signal before calling.
 
 \ **Note:** The :ref:`finished<class_GPUParticles2D_signal_finished>` signal is only emitted by :ref:`one_shot<class_GPUParticles2D_property_one_shot>` emitters.
+
+If ``keep_seed`` is ``true``, the current random seed will be preserved. Useful for seeking and playback.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

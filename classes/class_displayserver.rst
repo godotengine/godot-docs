@@ -644,7 +644,7 @@ The display server supports all features of :ref:`FEATURE_NATIVE_DIALOG_FILE<cla
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_WINDOW_DRAG** = ``27``
 
-The display server supports initiating window drag operation on demand. See :ref:`window_start_drag<class_DisplayServer_method_window_start_drag>`.
+The display server supports initiating window drag and resize operations on demand. See :ref:`window_start_drag<class_DisplayServer_method_window_start_drag>` and :ref:`window_start_resize<class_DisplayServer_method_window_start_resize>`.
 
 .. _class_DisplayServer_constant_FEATURE_SCREEN_EXCLUDE_FROM_CAPTURE:
 
@@ -1884,7 +1884,7 @@ Shows a text input dialog which uses the operating system's native look-and-feel
 
 Shows a text dialog which uses the operating system's native look-and-feel. ``callback`` should accept a single :ref:`int<class_int>` parameter which corresponds to the index of the pressed button.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include macOS and Windows.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include macOS, Windows, and Android.
 
 .. rst-class:: classref-item-separator
 
@@ -2031,6 +2031,8 @@ Returns an :ref:`Array<class_Array>` of :ref:`Rect2<class_Rect2>`, each of which
 :ref:`Rect2i<class_Rect2i>` **get_display_safe_area**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_get_display_safe_area>`
 
 Returns the unobscured area of the display where interactive controls should be rendered. See also :ref:`get_display_cutouts<class_DisplayServer_method_get_display_cutouts>`.
+
+\ **Note:** Currently only implemented on Android and iOS. On other platforms, ``screen_get_usable_rect(SCREEN_OF_MAIN_WINDOW)`` will be returned as a fallback. See also :ref:`screen_get_usable_rect<class_DisplayServer_method_screen_get_usable_rect>`.
 
 .. rst-class:: classref-item-separator
 

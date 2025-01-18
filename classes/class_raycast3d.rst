@@ -12,14 +12,14 @@ RayCast3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A ray in 3D space, used to find the first :ref:`CollisionObject3D<class_CollisionObject3D>` it intersects.
+A ray in 3D space, used to find the first object it intersects.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A raycast represents a ray from its origin to its :ref:`target_position<class_RayCast3D_property_target_position>` that finds the closest :ref:`CollisionObject3D<class_CollisionObject3D>` along its path, if it intersects any.
+A raycast represents a ray from its origin to its :ref:`target_position<class_RayCast3D_property_target_position>` that finds the closest object along its path, if it intersects any.
 
 \ **RayCast3D** can ignore some objects by adding them to an exception list, by making its detection reporting ignore :ref:`Area3D<class_Area3D>`\ s (:ref:`collide_with_areas<class_RayCast3D_property_collide_with_areas>`) or :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s (:ref:`collide_with_bodies<class_RayCast3D_property_collide_with_bodies>`), or by configuring physics layers.
 
@@ -349,6 +349,8 @@ Updates the collision information for the ray immediately, without waiting for t
 :ref:`Object<class_Object>` **get_collider**\ (\ ) |const| :ref:`🔗<class_RayCast3D_method_get_collider>`
 
 Returns the first object that the ray intersects, or ``null`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
+
+\ **Note:** This object is not guaranteed to be a :ref:`CollisionObject3D<class_CollisionObject3D>`. For example, if the ray intersects a :ref:`CSGShape3D<class_CSGShape3D>` or a :ref:`GridMap<class_GridMap>`, the method will return a :ref:`CSGShape3D<class_CSGShape3D>` or :ref:`GridMap<class_GridMap>` instance.
 
 .. rst-class:: classref-item-separator
 

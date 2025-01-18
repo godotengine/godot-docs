@@ -31,6 +31,7 @@ Here's a sample on how to use it to generate a sine wave:
     var playback # Will hold the AudioStreamGeneratorPlayback.
     @onready var sample_hz = $AudioStreamPlayer.stream.mix_rate
     var pulse_hz = 440.0 # The frequency of the sound wave.
+    var phase = 0.0
     
     func _ready():
         $AudioStreamPlayer.play()
@@ -38,7 +39,6 @@ Here's a sample on how to use it to generate a sine wave:
         fill_buffer()
     
     func fill_buffer():
-        var phase = 0.0
         var increment = pulse_hz / sample_hz
         var frames_available = playback.get_frames_available()
     
@@ -53,6 +53,7 @@ Here's a sample on how to use it to generate a sine wave:
     private AudioStreamGeneratorPlayback _playback; // Will hold the AudioStreamGeneratorPlayback.
     private float _sampleHz;
     private float _pulseHz = 440.0f; // The frequency of the sound wave.
+    private double phase = 0.0;
     
     public override void _Ready()
     {
@@ -67,7 +68,6 @@ Here's a sample on how to use it to generate a sine wave:
     
     public void FillBuffer()
     {
-        double phase = 0.0;
         float increment = _pulseHz / _sampleHz;
         int framesAvailable = _playback.GetFramesAvailable();
     

@@ -240,6 +240,11 @@ Nodes
     class_splitcontainer
     class_spotlight3d
     class_springarm3d
+    class_springbonecollision3d
+    class_springbonecollisioncapsule3d
+    class_springbonecollisionplane3d
+    class_springbonecollisionsphere3d
+    class_springbonesimulator3d
     class_sprite2d
     class_sprite3d
     class_spritebase3d
