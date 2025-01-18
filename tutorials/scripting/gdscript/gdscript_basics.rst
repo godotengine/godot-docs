@@ -2471,6 +2471,7 @@ Our ``BattleLog`` node receives each element in the binds array as an extra argu
         var damage = old_value - new_value
         label.text += character_name + " took " + str(damage) + " damage."
 
+.. _doc_gdscript_awaiting_signals_or_coroutines:
 
 Awaiting signals or coroutines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2490,11 +2491,11 @@ For example, to stop execution until the user presses a button, you can do somet
 
 If the signal emits a **single** argument, ``await`` returns a value with the same type as the argument::
 
-    signal user_accepted(accepted_analytics: bool)
+    signal user_accepted(accepted_analytics)
 
     func wait_confirmation():
         print("Prompting user")
-        var analytics: bool = await user_accepted
+        var analytics = await user_accepted
         print("User confirmed")
         if analytics:
             print("User accepted analytics")
@@ -2502,11 +2503,11 @@ If the signal emits a **single** argument, ``await`` returns a value with the sa
 
 However, if the signal emits **multiple** arguments, ``await`` returns an ``Array[Variant]`` containing the signal arguments in order::
 
-    signal user_accepted(accepted_analytics: bool, accepted_crash_report_upload: bool)
+    signal user_accepted(accepted_analytics, accepted_crash_report_upload)
 
     func wait_confirmation():
         print("Prompting user")
-        var result: Array[Variant] = await user_accepted
+        var result = await user_accepted
         print("User confirmed")
         if result[0]:
             print("User accepted analytics")
