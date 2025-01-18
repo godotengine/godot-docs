@@ -90,6 +90,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`get_terrain_peering_bit<class_TileData_method_get_terrain_peering_bit>`\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const|                                                                                                                                       |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`has_custom_data<class_TileData_method_has_custom_data>`\ (\ layer_name\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                           |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_collision_polygon_one_way<class_TileData_method_is_collision_polygon_one_way>`\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ ) |const|                                                                                                                  |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_valid_terrain_peering_bit<class_TileData_method_is_valid_terrain_peering_bit>`\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const|                                                                                                                             |
@@ -433,7 +435,7 @@ Returns the constant linear velocity applied to objects colliding with this tile
 
 :ref:`Variant<class_Variant>` **get_custom_data**\ (\ layer_name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TileData_method_get_custom_data>`
 
-Returns the custom data value for custom data layer named ``layer_name``.
+Returns the custom data value for custom data layer named ``layer_name``. To check if a custom data layer exists, use :ref:`has_custom_data<class_TileData_method_has_custom_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -514,6 +516,18 @@ Returns the number of occluder polygons of the tile in the TileSet occlusion lay
 :ref:`int<class_int>` **get_terrain_peering_bit**\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const| :ref:`🔗<class_TileData_method_get_terrain_peering_bit>`
 
 Returns the tile's terrain bit for the given ``peering_bit`` direction. To check that a direction is valid, use :ref:`is_valid_terrain_peering_bit<class_TileData_method_is_valid_terrain_peering_bit>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileData_method_has_custom_data:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_custom_data**\ (\ layer_name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TileData_method_has_custom_data>`
+
+Returns whether there exists a custom data layer named ``layer_name``.
 
 .. rst-class:: classref-item-separator
 

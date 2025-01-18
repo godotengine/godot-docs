@@ -973,7 +973,9 @@ Feeds an :ref:`InputEvent<class_InputEvent>` to the game. Can be used to artific
 
 |void| **remove_joy_mapping**\ (\ guid\: :ref:`String<class_String>`\ ) :ref:`🔗<class_Input_method_remove_joy_mapping>`
 
-Removes all mappings from the internal database that match the given GUID.
+Removes all mappings from the internal database that match the given GUID. All currently connected joypads that use this GUID will become unmapped.
+
+On Android, Godot will map to an internal fallback mapping.
 
 .. rst-class:: classref-item-separator
 

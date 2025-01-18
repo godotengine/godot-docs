@@ -161,6 +161,8 @@ Methods
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has_coords_level_tile_proxy<class_TileSet_method_has_coords_level_tile_proxy>`\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`\ )                                                                                                                                                                             |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`has_custom_data_layer_by_name<class_TileSet_method_has_custom_data_layer_by_name>`\ (\ layer_name\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                           |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has_source<class_TileSet_method_has_source>`\ (\ source_id\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                        |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has_source_level_tile_proxy<class_TileSet_method_has_source_level_tile_proxy>`\ (\ source_from\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                            |
@@ -1145,6 +1147,18 @@ Returns if there is an alternative-level proxy for the given identifiers.
 :ref:`bool<class_bool>` **has_coords_level_tile_proxy**\ (\ source_from\: :ref:`int<class_int>`, coords_from\: :ref:`Vector2i<class_Vector2i>`\ ) :ref:`🔗<class_TileSet_method_has_coords_level_tile_proxy>`
 
 Returns if there is a coodinates-level proxy for the given identifiers.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileSet_method_has_custom_data_layer_by_name:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_custom_data_layer_by_name**\ (\ layer_name\: :ref:`String<class_String>`\ ) |const| :ref:`🔗<class_TileSet_method_has_custom_data_layer_by_name>`
+
+Returns if there is a custom data layer named ``layer_name``.
 
 .. rst-class:: classref-item-separator
 

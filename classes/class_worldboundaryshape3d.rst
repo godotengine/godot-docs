@@ -21,6 +21,8 @@ Description
 
 A 3D world boundary shape, intended for use in physics. **WorldBoundaryShape3D** works like an infinite plane that forces all physics bodies to stay above it. The :ref:`plane<class_WorldBoundaryShape3D_property_plane>`'s normal determines which direction is considered as "above" and in the editor, the line over the plane represents this direction. It can for example be used for endless flat floors.
 
+\ **Note:** When the physics engine is set to **Jolt Physics** in the project settings (:ref:`ProjectSettings.physics/3d/physics_engine<class_ProjectSettings_property_physics/3d/physics_engine>`), **WorldBoundaryShape3D** has a finite size (centered at the world origin). It can be adjusted by changing :ref:`ProjectSettings.physics/jolt_physics_3d/limits/world_boundary_shape_size<class_ProjectSettings_property_physics/jolt_physics_3d/limits/world_boundary_shape_size>`.
+
 .. rst-class:: classref-reftable-group
 
 Properties

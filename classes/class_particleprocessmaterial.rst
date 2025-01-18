@@ -184,6 +184,8 @@ Properties
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`int<class_int>`                                              | :ref:`sub_emitter_amount_at_end<class_ParticleProcessMaterial_property_sub_emitter_amount_at_end>`                     |                         |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                                              | :ref:`sub_emitter_amount_at_start<class_ParticleProcessMaterial_property_sub_emitter_amount_at_start>`                 |                         |
+   +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`float<class_float>`                                          | :ref:`sub_emitter_frequency<class_ParticleProcessMaterial_property_sub_emitter_frequency>`                             |                         |
    +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                                            | :ref:`sub_emitter_keep_velocity<class_ParticleProcessMaterial_property_sub_emitter_keep_velocity>`                     | ``false``               |
@@ -267,6 +269,8 @@ Signals
 **emission_shape_changed**\ (\ ) :ref:`🔗<class_ParticleProcessMaterial_signal_emission_shape_changed>`
 
 Emitted when this material's emission shape is changed in any way. This includes changes to :ref:`emission_shape<class_ParticleProcessMaterial_property_emission_shape>`, :ref:`emission_shape_scale<class_ParticleProcessMaterial_property_emission_shape_scale>`, or :ref:`emission_sphere_radius<class_ParticleProcessMaterial_property_emission_sphere_radius>`, and any other property that affects the emission shape's offset, size, scale, or orientation.
+
+\ **Note:** This signal is only emitted inside the editor for performance reasons.
 
 .. rst-class:: classref-section-separator
 
@@ -621,11 +625,23 @@ enum **SubEmitterMode**: :ref:`🔗<enum_ParticleProcessMaterial_SubEmitterMode>
 
 
 
+.. _class_ParticleProcessMaterial_constant_SUB_EMITTER_AT_START:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_AT_START** = ``4``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
 .. _class_ParticleProcessMaterial_constant_SUB_EMITTER_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_MAX** = ``4``
+:ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_MAX** = ``5``
 
 Represents the size of the :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` enum.
 
@@ -2036,6 +2052,25 @@ The amount of particles to spawn from the subemitter node when a collision occur
 - :ref:`int<class_int>` **get_sub_emitter_amount_at_end**\ (\ )
 
 The amount of particles to spawn from the subemitter node when the particle expires.
+
+\ **Note:** This value shouldn't exceed :ref:`GPUParticles2D.amount<class_GPUParticles2D_property_amount>` or :ref:`GPUParticles3D.amount<class_GPUParticles3D_property_amount>` defined on the *subemitter node* (not the main node), relative to the subemitter's particle lifetime. If the number of particles is exceeded, no new particles will spawn from the subemitter until enough particles have expired.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ParticleProcessMaterial_property_sub_emitter_amount_at_start:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **sub_emitter_amount_at_start** :ref:`🔗<class_ParticleProcessMaterial_property_sub_emitter_amount_at_start>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_sub_emitter_amount_at_start**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_sub_emitter_amount_at_start**\ (\ )
+
+The amount of particles to spawn from the subemitter node when the particle spawns.
 
 \ **Note:** This value shouldn't exceed :ref:`GPUParticles2D.amount<class_GPUParticles2D_property_amount>` or :ref:`GPUParticles3D.amount<class_GPUParticles3D_property_amount>` defined on the *subemitter node* (not the main node), relative to the subemitter's particle lifetime. If the number of particles is exceeded, no new particles will spawn from the subemitter until enough particles have expired.
 

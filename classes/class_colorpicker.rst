@@ -121,6 +121,8 @@ Theme Properties
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`picker_cursor<class_ColorPicker_theme_icon_picker_cursor>`                       |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`picker_cursor_bg<class_ColorPicker_theme_icon_picker_cursor_bg>`                 |         |
+   +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`sample_bg<class_ColorPicker_theme_icon_sample_bg>`                               |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`sample_revert<class_ColorPicker_theme_icon_sample_revert>`                       |         |
@@ -721,6 +723,18 @@ The indicator used to signalize that the color value is outside the 0-1 range.
 :ref:`Texture2D<class_Texture2D>` **picker_cursor** :ref:`🔗<class_ColorPicker_theme_icon_picker_cursor>`
 
 The image displayed over the color box/circle (depending on the :ref:`picker_shape<class_ColorPicker_property_picker_shape>`), marking the currently selected color.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ColorPicker_theme_icon_picker_cursor_bg:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **picker_cursor_bg** :ref:`🔗<class_ColorPicker_theme_icon_picker_cursor_bg>`
+
+The fill image displayed behind the picker cursor.
 
 .. rst-class:: classref-item-separator
 

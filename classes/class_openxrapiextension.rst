@@ -51,11 +51,15 @@ Methods
    :widths: auto
 
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                                   | :ref:`action_get_handle<class_OpenXRAPIExtension_method_action_get_handle>`\ (\ action\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                                                           |
+   +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                                  | :ref:`begin_debug_label_region<class_OpenXRAPIExtension_method_begin_debug_label_region>`\ (\ label_name\: :ref:`String<class_String>`\ )                                                                                                                                                                                                                   |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                 | :ref:`can_render<class_OpenXRAPIExtension_method_can_render>`\ (\ )                                                                                                                                                                                                                                                                                         |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                                  | :ref:`end_debug_label_region<class_OpenXRAPIExtension_method_end_debug_label_region>`\ (\ )                                                                                                                                                                                                                                                                 |
+   +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                                   | :ref:`find_action<class_OpenXRAPIExtension_method_find_action>`\ (\ name\: :ref:`String<class_String>`, action_set\: :ref:`RID<class_RID>`\ )                                                                                                                                                                                                               |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                             | :ref:`get_error_string<class_OpenXRAPIExtension_method_get_error_string>`\ (\ result\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                                             |
    +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -180,6 +184,18 @@ Means that :ref:`XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_con
 Method Descriptions
 -------------------
 
+.. _class_OpenXRAPIExtension_method_action_get_handle:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **action_get_handle**\ (\ action\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_action_get_handle>`
+
+Returns the corresponding ``XrAction`` OpenXR handle for the given action RID.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OpenXRAPIExtension_method_begin_debug_label_region:
 
 .. rst-class:: classref-method
@@ -211,6 +227,18 @@ Returns ``true`` if OpenXR is initialized for rendering with an XR viewport.
 |void| **end_debug_label_region**\ (\ ) :ref:`🔗<class_OpenXRAPIExtension_method_end_debug_label_region>`
 
 Marks the end of a debug label region. Removes the latest debug label region added by calling :ref:`begin_debug_label_region<class_OpenXRAPIExtension_method_begin_debug_label_region>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRAPIExtension_method_find_action:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **find_action**\ (\ name\: :ref:`String<class_String>`, action_set\: :ref:`RID<class_RID>`\ ) :ref:`🔗<class_OpenXRAPIExtension_method_find_action>`
+
+Returns the :ref:`RID<class_RID>` corresponding to an ``Action`` of a matching name, optionally limited to a specified action set.
 
 .. rst-class:: classref-item-separator
 

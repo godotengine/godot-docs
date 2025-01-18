@@ -87,6 +87,8 @@ Properties
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
    | :ref:`float<class_float>`                                 | :ref:`randomness<class_GPUParticles3D_property_randomness>`                   | ``0.0``                       |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`int<class_int>`                                     | :ref:`seed<class_GPUParticles3D_property_seed>`                               | ``0``                         |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
    | :ref:`float<class_float>`                                 | :ref:`speed_scale<class_GPUParticles3D_property_speed_scale>`                 | ``1.0``                       |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
    | :ref:`NodePath<class_NodePath>`                           | :ref:`sub_emitter<class_GPUParticles3D_property_sub_emitter>`                 | ``NodePath("")``              |
@@ -96,6 +98,8 @@ Properties
    | :ref:`float<class_float>`                                 | :ref:`trail_lifetime<class_GPUParticles3D_property_trail_lifetime>`           | ``0.3``                       |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
    | :ref:`TransformAlign<enum_GPUParticles3D_TransformAlign>` | :ref:`transform_align<class_GPUParticles3D_property_transform_align>`         | ``0``                         |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`use_fixed_seed<class_GPUParticles3D_property_use_fixed_seed>`           | ``false``                     |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
    | :ref:`AABB<class_AABB>`                                   | :ref:`visibility_aabb<class_GPUParticles3D_property_visibility_aabb>`         | ``AABB(-4, -4, -4, 8, 8, 8)`` |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
@@ -117,7 +121,9 @@ Methods
    +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Mesh<class_Mesh>` | :ref:`get_draw_pass_mesh<class_GPUParticles3D_method_get_draw_pass_mesh>`\ (\ pass\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                |
    +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                  | :ref:`restart<class_GPUParticles3D_method_restart>`\ (\ )                                                                                                                                                                                                            |
+   | |void|                  | :ref:`request_particles_process<class_GPUParticles3D_method_request_particles_process>`\ (\ process_time\: :ref:`float<class_float>`\ )                                                                                                                              |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`restart<class_GPUParticles3D_method_restart>`\ (\ keep_seed\: :ref:`bool<class_bool>` = false\ )                                                                                                                                                               |
    +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                  | :ref:`set_draw_pass_mesh<class_GPUParticles3D_method_set_draw_pass_mesh>`\ (\ pass\: :ref:`int<class_int>`, mesh\: :ref:`Mesh<class_Mesh>`\ )                                                                                                                        |
    +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -716,6 +722,23 @@ Emission randomness ratio.
 
 ----
 
+.. _class_GPUParticles3D_property_seed:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **seed** = ``0`` :ref:`🔗<class_GPUParticles3D_property_seed>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_seed**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_seed**\ (\ )
+
+Sets the random seed used by the particle system. Only effective if :ref:`use_fixed_seed<class_GPUParticles3D_property_use_fixed_seed>` is ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GPUParticles3D_property_speed_scale:
 
 .. rst-class:: classref-property
@@ -809,6 +832,23 @@ The amount of time the particle's trail should represent (in seconds). Only effe
 
 ----
 
+.. _class_GPUParticles3D_property_use_fixed_seed:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_fixed_seed** = ``false`` :ref:`🔗<class_GPUParticles3D_property_use_fixed_seed>`
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_use_fixed_seed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_use_fixed_seed**\ (\ )
+
+If ``true``, particles will use the same seed for every simulation using the seed defined in :ref:`seed<class_GPUParticles3D_property_seed>`. This is useful for situations where the visual outcome should be consistent across replays, for example when using Movie Maker mode.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GPUParticles3D_property_visibility_aabb:
 
 .. rst-class:: classref-property
@@ -887,15 +927,31 @@ Returns the :ref:`Mesh<class_Mesh>` that is drawn at index ``pass``.
 
 ----
 
+.. _class_GPUParticles3D_method_request_particles_process:
+
+.. rst-class:: classref-method
+
+|void| **request_particles_process**\ (\ process_time\: :ref:`float<class_float>`\ ) :ref:`🔗<class_GPUParticles3D_method_request_particles_process>`
+
+Requests the particles to process for extra process time during a single frame.
+
+Useful for particle playback, if used in combination with :ref:`use_fixed_seed<class_GPUParticles3D_property_use_fixed_seed>` or by calling :ref:`restart<class_GPUParticles3D_method_restart>` with parameter ``keep_seed`` set to ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GPUParticles3D_method_restart:
 
 .. rst-class:: classref-method
 
-|void| **restart**\ (\ ) :ref:`🔗<class_GPUParticles3D_method_restart>`
+|void| **restart**\ (\ keep_seed\: :ref:`bool<class_bool>` = false\ ) :ref:`🔗<class_GPUParticles3D_method_restart>`
 
 Restarts the particle emission cycle, clearing existing particles. To avoid particles vanishing from the viewport, wait for the :ref:`finished<class_GPUParticles3D_signal_finished>` signal before calling.
 
 \ **Note:** The :ref:`finished<class_GPUParticles3D_signal_finished>` signal is only emitted by :ref:`one_shot<class_GPUParticles3D_property_one_shot>` emitters.
+
+If ``keep_seed`` is ``true``, the current random seed will be preserved. Useful for seeking and playback.
 
 .. rst-class:: classref-item-separator
 

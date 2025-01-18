@@ -293,6 +293,8 @@ Methods
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`region_create<class_NavigationServer3D_method_region_create>`\ (\ )                                                                                                                                                                                                                                                                                                    |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`                             | :ref:`region_get_bounds<class_NavigationServer3D_method_region_get_bounds>`\ (\ region\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                    |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`region_get_closest_point<class_NavigationServer3D_method_region_get_closest_point>`\ (\ region\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                                                                                                                                                            |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`region_get_closest_point_normal<class_NavigationServer3D_method_region_get_closest_point_normal>`\ (\ region\: :ref:`RID<class_RID>`, to_point\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                                                                                                                                              |
@@ -1950,6 +1952,18 @@ Bakes the ``navigation_mesh`` with bake source geometry collected starting from 
 :ref:`RID<class_RID>` **region_create**\ (\ ) :ref:`🔗<class_NavigationServer3D_method_region_create>`
 
 Creates a new region.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_region_get_bounds:
+
+.. rst-class:: classref-method
+
+:ref:`AABB<class_AABB>` **region_get_bounds**\ (\ region\: :ref:`RID<class_RID>`\ ) |const| :ref:`🔗<class_NavigationServer3D_method_region_get_bounds>`
+
+Returns the axis-aligned bounding box for the ``region``'s transformed navigation mesh.
 
 .. rst-class:: classref-item-separator
 
