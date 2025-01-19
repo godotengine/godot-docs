@@ -63,7 +63,6 @@ left to right:
 - **Scale Mode** (:kbd:`R`): Enables scaling and displays scaling gizmos in different 
   axes for the selected nodes. See :ref:`doc_introduction_to_3d_space_and_manipulation` 
   for more details.
-
 - **Show the list of selectable nodes at the clicked position**: As the description suggests,
   this provides a list of selectable nodes at the clicked position as a context menu,
   if there is more than one node in the clicked area.
@@ -76,14 +75,13 @@ left to right:
   any of the children are selected.
   Using :kbd:`Ctrl + G` ungroups them. Additionally, clicking the ungroup button in 
   the scene tree performs the same action.
+- **Ruler Mode** (:kbd:`M`): When enabled you can click and drag to measure distance in the scene
+  in meters.
 - **Use Local Space** (:kbd:`T`): If enabled, gizmos of a node are drawn using the current node's 
   rotation angle instead of the :ref:`global viewport axes <doc_introduction_to_3d_coordinate_system>`.
 - **Use Snap** (:kbd:`Y`): If enabled, movement, and rotation snap to grid. Snapping can also 
   temporarily be activated using :kbd:`Ctrl` while performing the action.
   The settings for changing snap options are explained below.
-- **Project Camera Override**: This action temporarily replaces the active camera in the level 
-  (e.g., the camera following the player) with the camera in the editor's viewport, allowing you 
-  to move freely and inspect the level's different parts, while game is running.
 - **Toggle preview sunlight**: If no DirectionalLight3D exist in the scene, a preview 
   of sunlight can be used as a light source. See 
   :ref:`doc_introduction_to_3d_preview_environment_light` for more details.
