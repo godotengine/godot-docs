@@ -54,7 +54,8 @@ Let's look at its main areas:
 .. image:: img/editor_intro_editor_empty.webp
 
 By default, along the window's top edge, it features **main menu** on the left, **workspace** switching 
-buttons in the center (active workspace is highlighted), and **playtest** buttons on the right:
+buttons in the center (active workspace is highlighted), and **playtest** buttons and the
+**Movie Maker Mode** toggle on the right:
 
 .. image:: img/editor_intro_top_menus.webp
 
@@ -78,7 +79,7 @@ Below is the 3D one:
 
 .. image:: img/editor_intro_toolbar_3d.webp
 
-.. seealso:: To learn more on workspaces, read :ref:`doc_intro_to_the_editor_interface_four_screens`.
+.. seealso:: To learn more on workspaces, read :ref:`doc_intro_to_the_editor_interface_five_screens`.
 
 .. seealso:: To learn more on the 3D viewport and 3D in general, read :ref:`doc_introduction_to_3d`.
 
@@ -115,13 +116,13 @@ When you click on one, it expands vertically. Below, you can see the animation e
 Bottom panels can also be shown or hidden using the shortcuts defined in 
 **Editor Settings > Shortcuts**, under the **Bottom Panels** category.
 
-.. _doc_intro_to_the_editor_interface_four_screens:
+.. _doc_intro_to_the_editor_interface_five_screens:
 
-The four main screens
+The five main screens
 ---------------------
 
-There are four main screen buttons centered at the top of the editor:
-2D, 3D, Script, and Asset Library.
+There are five main screen buttons centered at the top of the editor:
+2D, 3D, Script, Game and Asset Library.
 
 You'll use the **2D screen** for all types of games. In addition to 2D games,
 the 2D screen is where you'll build your interfaces.
@@ -135,6 +136,13 @@ In the **3D screen**, you can work with meshes, lights, and design levels for
 
 .. note:: Read :ref:`doc_introduction_to_3d` for more detail about the **3D
           main screen**.
+
+The **Game screen** is where your project will appear when running it from
+the editor. You can go through your project to test it, and pause it and
+adjust it in real time. Note that this is for testing how adjustments would
+work, any changes made here are not saved when the game stops running.
+
+.. image:: img/editor_intro_workspace_game.webp
 
 The **Script screen** is a complete code editor with a debugger, rich
 auto-completion, and built-in code reference.
