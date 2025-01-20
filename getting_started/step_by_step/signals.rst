@@ -544,7 +544,7 @@ To emit values along with the signal, add them as extra arguments to the
     }
 
 Awaiting signals
--------
+----------------
 
 The ``await`` keyword can be used to wait until a signal is emitted. If the signal emits one argument it will be returned by ``await``. If the signal emits multiple arguments ``await`` will return an :ref:`Array<class_Array>` containing the arguments in order.
 
