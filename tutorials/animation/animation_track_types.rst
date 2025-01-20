@@ -157,7 +157,8 @@ diamonds connected to them by a line control curve's shape.
 
 .. image:: img/bezier_curves.webp
 
-In the right click panel of the editor, you can select the handle mode:
+While a keyframe is selected (not the handle), in the right click panel of the
+editor, you can select the handle mode:
 
 - Free: Allows you to orient a manipulator in any direction without affecting the
   other's position.
