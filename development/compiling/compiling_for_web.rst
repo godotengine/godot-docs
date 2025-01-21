@@ -52,7 +52,7 @@ the resulting file will be placed in the ``bin`` subdirectory. Its name is
 ``godot.javascript.opt.zip`` for release or ``godot.javascript.opt.debug.zip``
 for debug.
 
-Finally, rename the zip archive to ``webassembly_release.zip`` for the
+Finally, rename the ZIP archive to ``webassembly_release.zip`` for the
 release template::
 
     mv bin/godot.javascript.opt.zip bin/webassembly_release.zip
@@ -80,13 +80,13 @@ You can build the export templates using the option ``threads_enabled=yes`` or
 Once finished, the resulting file will be placed in the ``bin`` subdirectory.
 Its name will have either the ``.threads`` or ``.gdnative`` suffix.
 
-Finally, rename the zip archives to ``webassembly_release_threads.zip`` and
-``webassembly_release_gdnative.zip`` for the release template::
+Finally, rename the ZIP archives to ``webassembly_threads_release.zip`` and
+``webassembly_gdnative_release.zip`` for the release template::
 
     mv bin/godot.javascript.opt.threads.zip bin/webassembly_threads_release.zip
     mv bin/godot.javascript.opt.gdnative.zip bin/webassembly_gdnative_release.zip
 
-And ``webassembly_debug_threads.zip`` and ``webassembly_debug_gdnative.zip`` for
+And ``webassembly_threads_debug.zip`` and ``webassembly_gdnative_debug.zip`` for
 the debug template::
 
     mv bin/godot.javascript.opt.debug.threads.zip bin/webassembly_threads_debug.zip
@@ -103,7 +103,7 @@ over the native build. You can build the editor with::
 
 Once finished, the resulting file will be placed in the ``bin`` subdirectory.
 Its name will be ``godot.javascript.opt.tools.threads.zip``. You can upload the
-zip content to your web server and visit it with your browser to use the editor.
+ZIP content to your web server and visit it with your browser to use the editor.
 
 Refer to the :ref:`export page <doc_javascript_export_options>` for the web
 server requirements.
