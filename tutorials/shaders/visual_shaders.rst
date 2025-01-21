@@ -35,8 +35,9 @@ in the dropdown, then give it a name.
 .. image:: img/visual_shader_create2.webp
 
 Click on the visual shader you just created to open the Shader Editor.
-The layout of the Shader Editor comprises two parts:
-the upper toolbar and the graph itself.
+The layout of the Shader Editor comprises four parts, a file list on
+the right, the upper toolbar, the graph itself, and a material preview
+on the right that can be toggled off
 
 .. image:: img/visual_shader_editor2.webp
 
@@ -54,7 +55,8 @@ From left to right in the toolbar:
   nodes you have selected as efficiently and cleanly as possible.
 - The Manage Varyings button opens a dropdown that lets you add or remove a
   varying.
-- The last icon shows the generated shader code corresponding to your graph.
+- The show generated code button shows shader code corresponding to your graph.
+- The last icon toggles the material preview on or off.
 
 .. note::
 
@@ -228,3 +230,18 @@ The ``Switch`` node returns a vector if the boolean condition is ``true`` or
 to a true boolean, all components of the vector should be non-zero.
 
 .. image:: img/vs_switch.webp
+
+Mesh Emitter
+~~~~~~~~~~~~
+
+The ``Mesh Emitter`` node is used for emitting particles from mesh vertices. This is
+only available for shaders that are in ``Particles`` mode.
+
+Keep in mind that not all 3D objects are mesh files. a glTF file can't be dragged
+and dropped into the graph. However, you can create an inherited scene from it,
+save the mesh in that scene as it's own file, and use that.
+
+.. image:: img/vs_meshemitter.webp
+
+You can also drag and drop obj files into the graph editor to add the node
+for that specific mesh, other mesh files will not work for this.
