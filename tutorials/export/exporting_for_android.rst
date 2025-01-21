@@ -61,9 +61,9 @@ Download and install the Android SDK.
 Setting it up in Godot
 ----------------------
 
-Enter the Editor Settings screen. This screen contains the editor
-settings for the user account in the computer (it's independent of the
-project).
+Enter the Editor Settings screen (under the Godot tab for macOS, or the Editor tab 
+for other platforms). This screen contains the editor settings for the user 
+account in the computer (it's independent of the project).
 
 .. image:: img/editorsettings.png
 
