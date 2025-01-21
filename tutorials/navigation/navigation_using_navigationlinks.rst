@@ -35,11 +35,12 @@ The polygon search radius can be configured globally in the ProjectSettings unde
 or set for each navigation **map** individually using the ``NavigationServer.map_set_link_connection_radius()`` function.
 
 Both ``start_position`` and ``end_position`` have debug markers in the Editor.
-The visible radius of a position shows the polygon search radius.
-All navigation mesh polygons inside are compared and the closest is picked for the edge connection.
-If no valid polygon is found within the search radius the navigation link gets disabled.
+The arrows indicate which direction the link can be travelled across, and the visible radius of
+a position shows the polygon search radius. All navigation mesh polygons inside are compared and
+the closest is picked for the edge connection. If no valid polygon is found within the search
+radius the navigation link gets disabled.
 
-.. image:: img/nav_link_debug_visuals.png
+.. image:: img/nav_link_debug_visuals.webp
 
 The link debug visuals can be changed in the Editor :ref:`ProjectSettings<class_ProjectSettings>` under ``debug/shapes/navigation``.
 The visibility of the debug can also be controlled in the Editor 3D Viewport gizmo menu.
