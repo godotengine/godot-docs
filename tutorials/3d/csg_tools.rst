@@ -117,6 +117,29 @@ the following, adapted from that library's `definition of "manifold"
 
 .. image:: img/csg_custom_mesh.png
 
+Making an existing mesh manifold with Blender
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. UPDATE: This relies on a specific Blender addon. If it becomes unsupported,
+.. we can remove this section.
+
+If you have an existing mesh that is not already manifold, you can make it
+manifold using Blender.
+
+In Blender, install and enable the
+`3D Print Toolbox <https://extensions.blender.org/add-ons/print3d-toolbox/>`_
+addon.
+
+Select the mesh you want to make manifold. Open the sidebar by clicking on the arrow:
+
+.. image:: img/csg_manifold_step_1.webp
+
+In the **3D Print** tab, under **Clean Up**, click the **Make Manifold** button:
+
+.. image:: img/csg_manifold_step_2.webp
+
+The mesh should now be manifold, and can be used as a custom mesh.
+
 CSGCombiner3D
 ~~~~~~~~~~~~~
 
