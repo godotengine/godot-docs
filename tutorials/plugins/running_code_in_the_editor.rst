@@ -552,40 +552,102 @@ of all OmniLight3D nodes:
 Instancing scenes
 -----------------
 
-You can instantiate packed scenes normally and add them to the scene currently
-opened in the editor. By default, nodes or scenes added with
-:ref:`Node.add_child(node) <class_Node_method_add_child>` are **not** visible
-in the Scene tree dock and are **not** persisted to disk. If you wish the node
-or scene to be visible in the scene tree dock and persisted to disk when saving
-the scene, you need to set the child node's :ref:`owner <class_Node_property_owner>`
-property to the currently edited scene root.
+You can 
+:ref:`create instances of a packed scene<_doc_nodes_and_scene_instances_instancing_scenes>`
+and add them to the scene tree using :ref:`add_child(node) <class_Node_method_add_child>`.
 
-If you are using ``@tool``:
+Instances can then be modified to create a fence for instance:
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript
 
+    # Define length and spacing of fence.
+    var length = 10
+    var offset = Vector3(2, 0, 0)
+    
     func _ready():
-        var node = Node3D.new()
-        add_child(node) # Parent could be any node in the scene
+        # Pre-loads a packed scene.
+        var packed_panel = preload("res://Models/Fence01.tscn")
 
-        # The line below is required to make the node visible in the Scene tree dock
-        # and persist changes made by the tool script to the saved scene file.
-        node.owner = get_tree().edited_scene_root
+        # Repeat for the number of panels needed to fit the length.
+        for i in range(length/offset.length()):
+
+            # Instances i fence panels.
+            var fence_instance = packed_panel.instantiate()
+            
+            # Adds instance as child to this script's node.
+            add_child(fence_instance)
+
+            # Applies correct positional offset for each panel.
+            fence_instance.position = i * offset
 
  .. code-tab:: csharp
 
+    // Define length and spacing of fence.
+    public float Length = 10.0;
+    public Vector3 Offset = new Vector3(2.0, 0.0, 0.0);
+
     public override void _Ready()
+    {
+        // Loads a packed scene.
+        var packed_panel = ResourceLoader.Load<PackedScene>("res://Models/Fence01.tscn");
+        
+        # Repeat for the number of panels needed to fit the length.
+        for (int index = 1; index <= Length/Offset.Length(); index++)
+        {
+            // Instances i fence panels.
+            var panel_instance = packed_panel.Instantiate();
+            
+            // Adds instance as child to this script's node.
+            add_child(panel_instance);
+
+            # Applies correct positional offset for each panel.
+            fence_instance.position = i * offset
+        }
+    }
+
+Remember that children added via code are **not** saved with the scene
+and therefore won't be visible in the scene dock.
+Tools can either generate dynamic instances during :ref:`_ready<class_Node_private_method__ready>`
+or make instances persistent by setting children's :ref:`owner<class_Node_property_owner>`
+as the scene root:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+    # Either add dynamic children at ready:
+    func _ready():
+        add_dynamic_fence()
+
+    # Or create a persistent fence once:
+    func add_persistent_fence():
+        var fence_instance = preload("res://Models/Fence01.tscn").instantiate()
+        add_child(fence_instance)
+
+        # Sets child owner to scene root so it is visible in the scene dock and persistent.
+        fence_instance.owner = get_tree().edited_scene_root
+
+ .. code-tab:: csharp C#
+    // Either add dynamic children at ready:
+    public override void _Ready()
+    {
+        AddDynamicFence();
+    }
+
+    // Or create a persistent fence once:
+    public void AddPersistentFence()
     {
         var node = new Node3D();
         AddChild(node); // Parent could be any node in the scene
 
-        // The line below is required to make the node visible in the Scene tree dock
-        // and persist changes made by the tool script to the saved scene file.
+        // Sets child owner to scene root so it is visible in the scene dock and persistent.
         node.Owner = GetTree().EditedSceneRoot;
     }
 
-If you are using :ref:`EditorScript<class_EditorScript>`:
+.. danger::
+    Instanced Scenes cannot set their children's :ref:`owner <class_Node_property_owner>`
+    as the scene root, but can store scene-specific persistent settings in their properties.
+
+You can also generate persistent children using :ref:`EditorScript<class_EditorScript>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -596,8 +658,8 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
         var node = Node3D.new()
         parent.add_child(node)
 
-        # The line below is required to make the node visible in the Scene tree dock
-        # and persist changes made by the tool script to the saved scene file.
+        # As Editor Scripts only run once, they must set child owner to the scene root.
+        # This makes a Node persistent and visible in the scene dock.
         node.owner = get_scene()
 
  .. code-tab:: csharp
@@ -609,8 +671,8 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
         var node = new Node3D();
         parent.AddChild(node);
 
-        // The line below is required to make the node visible in the Scene tree dock
-        // and persist changes made by the tool script to the saved scene file.
+        // As Editor Scripts only run once, they must set child owner to the scene root.
+        // This makes a Node persistent and visible in the scene dock.
         node.Owner = GetScene();
     }
 
