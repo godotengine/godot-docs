@@ -553,7 +553,7 @@ Instancing scenes
 -----------------
 
 You can 
-:ref:`create instances of a packed scene<_doc_nodes_and_scene_instances_instancing_scenes>`
+:ref:`create instances of a packed scene<doc_nodes_and_scene_instances_instancing_scenes>`
 and add them to the scene tree using :ref:`add_child(node) <class_Node_method_add_child>`.
 
 Instances can then be modified to create a fence for instance:

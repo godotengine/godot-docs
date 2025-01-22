@@ -175,6 +175,7 @@ an entire branch of the scene tree, you only have to free the topmost parent
 node.
 
 .. _doc_nodes_and_scene_instances_instancing_scenes:
+
 Instancing scenes
 -----------------
 
