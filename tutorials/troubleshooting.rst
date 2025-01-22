@@ -251,3 +251,12 @@ On Windows, this can also be due to :ref:`case sensitivity
 in your script with a different case than on the filesystem, loading will fail
 once you export the project. This is because the virtual PCK filesystem is
 case-sensitive, while Windows's filesystem is case-insensitive by default.
+
+The project crashes frequently or instantly after opening it from the project manager
+-------------------------------------------------------------------------------------
+
+This could be caused by a number of things such as an editor plugin, GDExtension
+addon, or something else. In this scenario it's recommended that you open the
+project in recovery mode, and attempt to find and fix whatever is causing the
+crashes. See the :ref:`Project Manager page <doc_project_manager>` for more
+information.

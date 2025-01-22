@@ -144,3 +144,29 @@ you created.
 To remove a tag from your project manager it must be removed from all the projects it's
 used by. Once that's done close the project manager, open it up again, and the tag should
 be gone.
+
+Recovery Mode
+-------------
+
+If a project is immediately crashing on startup, or crashing frequently during
+editing it can be opened in recovery mode, to attempt to make it more stable
+while looking for the source of the crashing to fix it.
+
+Usually a project should open in recovery mode automatically when you re-open it
+after a crash. If it doesn't you can manually open recovery mode by selecting the
+project in the project manager, to do that select the project from your list of
+projects, click the dropdown button next to the edit node, and select ``Edit in
+recovery mode``.
+
+.. image:: img/editor_ui_intro_project_manager_13.webp
+
+While in recovery mode the following are disabled:
+
+- Tool scripts
+- Editor plugins
+- GDExtension addons
+- Automatic scene restoring
+- Running the project
+
+It is recommended that you backup your project before editing it in recovery
+mode.
