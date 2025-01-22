@@ -1015,12 +1015,13 @@ Rainbow
 .. image:: img/bbcode_in_richtextlabel_effect_rainbow.webp
 
 Rainbow gives the text a rainbow color that changes over time. Its tag format is
-``[rainbow freq=1.0 sat=0.8 val=0.8]{text}[/rainbow]``.
+``[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]{text}[/rainbow]``.
 
-``freq`` is the number of full rainbow cycles per second, ``sat`` is the
-saturation of the rainbow, ``val`` is the value of the rainbow. A ``freq`` value
-of ``0`` will pause the animation, while negative ``freq`` will play the
-animation backwards.
+``freq`` determines how many letters the rainbow extends over before it repeats itself,
+``sat`` is the saturation of the rainbow, ``val`` is the value of the rainbow. ``speed``
+is the number of full rainbow cycles per second. A positive ``speed`` value will play
+the animation forwards, a value of ``0`` will pause the animation, and a negative
+``speed`` value will play the animation backwards.
 
 Font outlines are *not* affected by the rainbow effect (they keep their original color).
 Existing font colors are overridden by the rainbow effect. However, CanvasItem's
