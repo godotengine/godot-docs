@@ -616,6 +616,7 @@ as the scene root:
  .. code-tab:: gdscript GDScript
     # Either add dynamic children at ready:
     func _ready():
+        # Generates a fence each time the node is ready:
         add_dynamic_fence()
 
     # Or create a persistent fence once:
@@ -623,13 +624,14 @@ as the scene root:
         var fence_instance = preload("res://Models/Fence01.tscn").instantiate()
         add_child(fence_instance)
 
-        # Sets child owner to scene root so it is visible in the scene dock and persistent.
+        # Sets child owner to scene root so it is persistent.
         fence_instance.owner = get_tree().edited_scene_root
 
  .. code-tab:: csharp C#
     // Either add dynamic children at ready:
     public override void _Ready()
     {
+        // Generates a fence each time the node is ready:
         AddDynamicFence();
     }
 
@@ -639,11 +641,11 @@ as the scene root:
         var node = new Node3D();
         AddChild(node); // Parent could be any node in the scene
 
-        // Sets child owner to scene root so it is visible in the scene dock and persistent.
+        // Sets child owner to scene root so it is persistent.
         node.Owner = GetTree().EditedSceneRoot;
     }
 
-.. danger::
+.. tip::
     Instanced Scenes cannot set their children's :ref:`owner <class_Node_property_owner>`
     as the scene root, but can store scene-specific persistent settings in their properties.
 
