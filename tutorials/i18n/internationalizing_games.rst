@@ -58,6 +58,44 @@ Select the resource to be remapped then add some alternatives for each locale.
     the current language, making it ideal for things like multiplayer chat where
     the text language may not match the client's language.
 
+Automatically setting a language
+--------------------------------
+It is recommended to default to the user's preferred language which can be obtained via :ref:`OS.get_locale_language() <class_OS_method_get_locale_language>`.
+If your game is not available in that language, it will fall back to the :ref:`Fallback <class_ProjectSettings_property_internationalization/locale/fallback>`
+in **Project Settings > Internationalization > Locale**, or to ``en`` if empty.
+Nevertheless letting players change the language in game is recommended for various reasons (e.g. translation quality or player preference).
+
+.. tabs::
+ .. code-tab:: gdscript
+
+    var language = "automatic"
+    # Load here language from the user settings file
+    if language == "automatic":
+       var preferred_language = OS.get_locale_language()
+       TranslationServer.set_locale(preferred_language)
+    else:
+       TranslationServer.set_locale(language)
+
+Locale vs. language
+-------------------
+A :ref:`locale <doc_locales>` is commonly a combination of a language with a region or country, but can also contain information like a script or a variant.
+
+Examples:
+
+- ``en``: English language
+- ``en_GB``: English in Great Britain / British English
+- ``en_US``: English in the USA / American English
+- ``en_DE``: English in Germany
+
+Indie games generally only need to care about language, but read on for more information.
+
+Why locales exist can be illustrated through the USA and Great Britain. Both speak the same language (English), yet differ in many aspects:
+- Spelling: E.g. gray (USA), grey (GB)
+- Use of words: E.g. eggplant (USA), aubergine (GB)
+- Units or currencies: E.g. feet/inches (USA), metres/cm (GB)
+
+It can get more complex however. Imagine you offer different content in Europe and in China (e.g. in an MMO). You will need to translate each of those content variations into many languages and store and load them accordingly.
+
 Converting keys to text
 -----------------------
 
