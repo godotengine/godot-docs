@@ -76,7 +76,7 @@ Nevertheless letting players change the language in game is recommended for vari
 
 Locale vs. language
 -------------------
-A Locale is commonly a combination of a language with a region or country but can also contain more information like scripts.
+A :ref:`locale <doc_locales>` is commonly a combination of a language with a region or country, but can also contain information like a script or a variant.
 
 Examples:
 
