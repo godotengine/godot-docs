@@ -151,6 +151,10 @@ and open a script, and change it to this:
 Save the script and return to the editor. You should now see your object rotate.
 If you run the game, it will also rotate.
 
+.. warning::
+    You may need to restart the editor. This is a known bug found in all Godot 4 versions:
+    `GH-66381 <https://github.com/godotengine/godot/issues/66381>`_.
+
 .. image:: img/rotating_in_editor.gif
 
 .. note::
