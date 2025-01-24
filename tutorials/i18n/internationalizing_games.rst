@@ -60,7 +60,9 @@ Select the resource to be remapped then add some alternatives for each locale.
 
 Automatically setting a language
 --------------------------------
-It is recommended to default to the user's preferred language which can be obtained via :ref:`OS.get_locale_language() <class_OS_method_get_locale_language>`. If your game is not available in that language, it will fall back to the :ref:`Fallback <class_ProjectSettings_property_internationalization/locale/fallback>` in **Project Settings > Internationalization > Locale**, or to ``en`` if empty.
+It is recommended to default to the user's preferred language which can be obtained via :ref:`OS.get_locale_language() <class_OS_method_get_locale_language>`.
+If your game is not available in that language, it will fall back to the :ref:`Fallback <class_ProjectSettings_property_internationalization/locale/fallback>`
+in **Project Settings > Internationalization > Locale**, or to ``en`` if empty.
 Nevertheless letting players change the language in game is recommended for various reasons (e.g. translation quality or player preference).
 
 .. tabs::
