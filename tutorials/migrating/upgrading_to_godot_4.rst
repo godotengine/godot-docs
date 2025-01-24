@@ -228,6 +228,10 @@ a ``3D`` suffix to the old name:
 +-----------------------------------------+-------------------------------------------+
 | ARVRServer                              | XRServer                                  |
 +-----------------------------------------+-------------------------------------------+
+| BoxShape                                | BoxShape3D                                |
++-----------------------------------------+-------------------------------------------+
+| CapsuleShape                            | CapsuleShape3D                            |
++-----------------------------------------+-------------------------------------------+
 | CubeMesh                                | BoxMesh                                   |
 +-----------------------------------------+-------------------------------------------+
 | EditorSpatialGizmo                      | EditorNode3DGizmo                         |
@@ -414,11 +418,20 @@ table to find its new name.
 - AcceptDialog's ``set_autowrap()`` is now ``set_autowrap_mode()``.
 - AnimationNode's ``process()`` is now ``_process()``
   (note the leading underscore, which denotes a virtual method).
+- AnimationPlayer's ``add_animation()`` is now ``add_animation_library()`` and now uses an :ref:`class_AnimationLibrary`. 
+- AnimationTree's ``set_process_mode()`` is now ``set_process_callback()``.
+- Array's ``empty()`` is now ``is_empty()``.
+- Array's ``invert()`` is now ``reverse()``.
+- Array's ``remove()`` is now ``remove_at()``.
 - AStar2D and AStar3D's ``get_points()`` is now ``get_points_id()``.
 - BaseButton's ``set_event()`` is now ``set_shortcut()``.
+- Camera2D's ``get_h_offset()`` is now ``get_drag_horizontal_offset()``.
 - Camera2D's ``get_v_offset()`` is now ``get_drag_vertical_offset()``.
+- Camera2D's ``set_h_offset()`` is now ``set_drag_horizontal_offset()``.
 - Camera2D's ``set_v_offset()`` is now ``set_drag_vertical_offset()``.
+- CanvasItem's ``raise()`` is now ``move_to_front()``.
 - CanvasItem's ``update()`` is now ``queue_redraw()``.
+- Control's ``get_stylebox()`` is now ``get_theme_stylebox()``.
 - Control's ``set_tooltip()`` is now ``set_tooltip_text()``.
 - EditorNode3DGizmoPlugin's ``create_gizmo()`` is now ``_create_gizmo()``
   (note the leading underscore, which denotes a virtual method).
@@ -426,24 +439,35 @@ table to find its new name.
 - FileDialog's ``get_mode()`` is now ``get_file_mode()``.
 - FileDialog's ``set_mode()`` is now ``set_file_mode()``.
 - GraphNode's ``get_offset()`` is now ``get_position_offset()``.
-- GridMap's ``world_to_map()`` is now ``local_to_map()``.
 - GridMap's ``map_to_world()`` is now ``map_to_local()``.
+- GridMap's ``world_to_map()`` is now ``local_to_map()``.
 - Image's ``get_rect()`` is now ``get_region()``.
+- ImmediateGeometry's ``set_normal()`` is now ``surface_set_normal()``.
+- ImmediateMesh's ``set_color()`` is now ``surface_set_color()``.
+- ImmediateMesh's ``set_uv()`` is now ``surface_set_uv()``.
 - ItemList's ``get_v_scroll()`` is now ``get_v_scroll_bar()``.
 - MultiPlayerAPI's ``get_network_connected_peers()`` is now ``get_peers()``.
 - MultiPlayerAPI's ``get_network_peer()`` is now ``get_peer()``.
 - MultiPlayerAPI's ``get_network_unique_id()`` is now ``get_unique_id()``.
 - MultiPlayerAPI's ``has_network_peer()`` is now ``has_multiplayer_peer()``.
+- MultiplayerAPI's ``is_refusing_new_network_connections()`` is now ``is_refusing_new_connections()``.
 - PacketPeerUDP's ``is_listening()`` is now ``is_bound()``.
 - PacketPeerUDP's ``listen()`` is now ``bind()``.
 - ParticleProcessMaterial's ``set_flag()`` is now ``set_particle_flag()``.
+- PhysicsTestMotionResult2D's ``get_motion()`` is now ``get_travel()``.
+- RenderingServer's ``get_render_info()`` is now ``get_rendering_info()``.
 - ResourceFormatLoader's ``get_dependencies()`` is now ``_get_dependencies()``
   (note the leading underscore, which denotes a virtual method).
+- ResourceFormatLoader's ``load()`` is now ``_load()``.
 - SceneTree's ``change_scene()`` is now ``change_scene_to_file()``.
 - Shortcut's ``is_valid()`` is now ``has_valid_event()``.
-- TileMap's ``world_to_map()`` is now ``local_to_map()``.
 - TileMap's ``map_to_world()`` is now ``map_to_local()``.
+- TileMap's ``world_to_map()`` is now ``local_to_map()``.
 - Transform2D's ``xform()`` is ``mat * vec`` and ``xform_inv()`` is ``vec * mat``.
+- XRPositionalTracker's ``get_name()`` is now ``get_tracker_name()``.
+- XRPositionalTracker's ``get_type()`` is now ``get_tracker_type()``.
+- XRPositionalTracker's ``_set_name()`` is now ``get_tracker_name()``.
+
 
 **Properties**
 
@@ -454,11 +478,29 @@ table to find its new name.
     and PathFollow3D's ``set_offset()`` and ``get_offset()`` must be renamed to
     ``set_progress()`` and ``get_progress()`` respectively.
 
+- AudioServer's ``device`` is now ``output_device``.
+- BaseButton's ``group`` is now ``button_group``.
+- Camera3D's ``zfar`` is now ``far``.
+- Camera3D's ``znear`` is now ``near``
 - Control's ``margin`` is now ``offset``.
+- InputEventMouseButton's ``doubleclick`` is now ``double_click``.
+- InputEventWithModifiers's ``alt`` is now ``alt_pressed``.
+- InputEventWithModifiers's ``command`` is now ``command_pressed``.
+- InputEventWithModifiers's ``control`` is now ``ctrl_pressed``.
+- InputEventWithModifiers's ``meta`` is now ``meta_pressed``.
+- InputEventWithModifiers's ``shift`` is now ``shift_pressed``.
 - Label's ``percent_visible`` is now ``visible_ratio``.
 - MultiPlayerAPI's ``refuse_new_network_connections`` is now ``refuse_new_connections``.
+- Node's ``filename`` is now ``scene_file_path``.
+- PathFollow2D's ``rotate`` is now ``rotates``.
 - PathFollow2D and PathFollow3D's ``offset`` is now ``progress``.
+- RectangleShape2D's ``extents`` is now ``size``
 - TextureProgressBar's ``percent_visible`` is now ``show_percentage``.
+- Theme's ``off`` is now ``unchecked``.
+- Theme's ``ofs`` is now ``offset``.
+- Theme's ``on`` is now ``checked``.
+- Window's ``window_title`` is now ``title``.
+- WorldMarginShape2D's ``d`` is now ``distance``.
 - The ``extents`` property on CSG nodes and VoxelGI will have to be replaced
   with ``size``, with the set value halved (as they're no longer half-extents).
   This also affects its setter/getter methods ``set_extents()`` and
@@ -466,6 +508,7 @@ table to find its new name.
 - The ``Engine.editor_hint`` property was removed in favor of the
   ``Engine.is_editor_hint()`` *method*. This is because it's read-only, and
   properties in Godot are not used for read-only values.
+
 
 **Enums**
 
@@ -659,6 +702,10 @@ converter doesn't support updating existing setups:
 | DynamicFont         | FontFile              |                                                                            |
 +---------------------+-----------------------+                                                                            |
 | DynamicFontData     | FontFile              |                                                                            |
++---------------------+-----------------------+----------------------------------------------------------------------------+
+| ClippedCamera       | Camera2D or Camera3D  | Camera's pyramid shape was moved to :ref:'class_Camera3D'.                 |
++---------------------+-----------------------+                                                                            |
+| InterpolatedCamera  | Camera2D or Camera3D  |                                                                            |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
 | Navigation2D        | Node2D                | Replaced by :ref:`other 2D Navigation nodes <doc_navigation_overview_2d>`. |
 +---------------------+-----------------------+----------------------------------------------------------------------------+
