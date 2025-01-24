@@ -80,10 +80,10 @@ A Locale is commonly a combination of a language with a region or country but ca
 
 Examples:
 
-- `en`: English language
-- `en_GB`: English in Great Britain / British English
-- `en_US`: English in the USA / American English
-- `en_DE`: English in Germany
+- ``en``: English language
+- ``en_GB``: English in Great Britain / British English
+- ``en_US``: English in the USA / American English
+- ``en_DE``: English in Germany
 
 Indie games generally only need to care about language, but read on for more information.
 
