@@ -84,6 +84,27 @@ versions supporting WebGL 2.0. Note that Safari has several issues with WebGL
 2.0 support that other browsers don't have, so we recommend using a
 Chromium-based browser or Firefox if possible.
 
+Mobile considerations
+---------------------
+
+The Web export can run on mobile platforms with some caveats. While native
+:ref:`Android <doc_exporting_for_android>` and :ref:`iOS <doc_exporting_for_ios>`
+exports will always perform better by a significant margin, the Web export
+allows people to run your project without going through app stores.
+
+Remember that CPU and GPU performance is at a premium when running on mobile devices.
+This is even more the case when running a project exported to Web (as it's
+WebAssembly instead of native code). See :ref:`doc_performance` section of the
+documentation for advice on optimizing your project. If your project runs on
+platforms other than Web, you can use :ref:`doc_feature_tags` to apply
+low-end-oriented settings when running the project exported to Web.
+
+To speed up loading times on mobile devices, you should also
+:ref:`compile an optimized export template <doc_optimizing_for_size>`
+with unused features disabled. Depending on the features used by your project,
+this can reduce the size of the WebAssembly payload significantly,
+making it faster to download and initialize (even when cached).
+
 .. _doc_exporting_for_web_audio_playback:
 
 Audio playback
