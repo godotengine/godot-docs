@@ -440,6 +440,7 @@ Other export variants can also be used when exporting arrays:
 
 ``@export_storage``
 -------------------
+
 See :ref:`@export_storage <class_@GDScript_annotation_@export_storage>`.
 
 By default, exporting a property has two effects:
